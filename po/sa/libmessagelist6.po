@@ -1,0 +1,2205 @@
+# Sanskrit translations for messagelib package.
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the messagelib package.
+# Kali <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: messagelib\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-12-13 00:41+0000\n"
+"PO-Revision-Date: 2024-12-13 19:09+0530\n"
+"Last-Translator: Kali <EMAIL@ADDRESS>\n"
+"Language-Team: Sanskrit\n"
+"Language: sa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n>2);\n"
+
+#: core/aggregation.cpp:178
+#, kde-format
+msgctxt "No grouping of messages"
+msgid "None"
+msgstr ""
+
+#: core/aggregation.cpp:179
+#, kde-format
+msgid "By Exact Date (of Thread Leaders)"
+msgstr "सटीकतिथिनुसारं (धागानेतृणां)"
+
+#: core/aggregation.cpp:180
+#, kde-format
+msgid "By Smart Date Ranges (of Thread Leaders)"
+msgstr "स्मार्ट तिथिपरिधिभिः (धागानेतृणां)"
+
+#: core/aggregation.cpp:181 core/sortorder.cpp:70
+#, kde-format
+msgid "By Smart Sender/Receiver"
+msgstr "स्मार्ट प्रेषक/ग्राहक द्वारा"
+
+#: core/aggregation.cpp:182 core/sortorder.cpp:68
+#, kde-format
+msgid "By Sender"
+msgstr "प्रेषकेन"
+
+#: core/aggregation.cpp:183 core/sortorder.cpp:69
+#, kde-format
+msgid "By Receiver"
+msgstr "ग्राहक द्वारा"
+
+#: core/aggregation.cpp:192
+#, kde-format
+msgid "Never Expand Groups"
+msgstr "कदापि समूहानां विस्तारं न कुर्वन्तु"
+
+#: core/aggregation.cpp:194
+#, kde-format
+msgid "Expand Recent Groups"
+msgstr "अद्यतनसमूहानां विस्तारं कुर्वन्तु"
+
+#: core/aggregation.cpp:196
+#, kde-format
+msgid "Always Expand Groups"
+msgstr "सदैव समूहानां विस्तारं कुर्वन्तु"
+
+#: core/aggregation.cpp:202
+#, kde-format
+msgctxt "No threading of messages"
+msgid "None"
+msgstr ""
+
+#: core/aggregation.cpp:203
+#, kde-format
+msgid "Perfect Only"
+msgstr "परिपूर्णमात्रम्"
+
+#: core/aggregation.cpp:204
+#, kde-format
+msgid "Perfect and by References"
+msgstr "सिद्धं च सन्दर्भैः"
+
+#: core/aggregation.cpp:205
+#, kde-format
+msgid "Perfect, by References and by Subject"
+msgstr "सिद्धं, सन्दर्भैः विषयैः च"
+
+#: core/aggregation.cpp:214
+#, kde-format
+msgid "Topmost Message"
+msgstr "सर्वोच्चः सन्देशः"
+
+#: core/aggregation.cpp:218
+#, kde-format
+msgid "Most Recent Message"
+msgstr "अद्यतनतमः सन्देशः"
+
+#: core/aggregation.cpp:228
+#, kde-format
+msgid "Never Expand Threads"
+msgstr "कदापि सूत्राणां विस्तारं न कुर्वन्तु"
+
+#: core/aggregation.cpp:229
+#, kde-format
+msgid "Expand Threads With Unread Messages"
+msgstr "अपठितसन्देशैः सह धागान् विस्तारयन्तु"
+
+#: core/aggregation.cpp:230
+#, kde-format
+msgid "Expand Threads With Unread or Important Messages"
+msgstr "अपठित-अथवा महत्त्वपूर्णसन्देशैः सह धागान् विस्तारयन्तु"
+
+#: core/aggregation.cpp:231
+#, kde-format
+msgid "Always Expand Threads"
+msgstr "सदैव थ्रेड्स विस्तारयन्तु"
+
+#: core/aggregation.cpp:236
+#, kde-format
+msgid "Favor Interactivity"
+msgstr "अन्तरक्रियाशीलतायाः अनुकूलतां कुर्वन्तु"
+
+#: core/aggregation.cpp:236
+#, kde-format
+msgid "Favor Speed"
+msgstr "अनुकूल गति"
+
+#: core/aggregation.cpp:236
+#, kde-format
+msgid "Batch Job (No Interactivity)"
+msgstr "बैच जॉब् (कोऽपि अन्तरक्रियाशीलता) ."
+
+#: core/item.cpp:251 core/messageitem.cpp:489
+#, kde-format
+msgctxt "Status of an item"
+msgid "Read"
+msgstr ""
+
+#: core/item.cpp:253 core/messageitem.cpp:489
+#, kde-format
+msgctxt "Status of an item"
+msgid "Unread"
+msgstr "अपठित"
+
+#: core/item.cpp:257
+#, kde-format
+msgctxt "Status of an item"
+msgid "Has Attachment"
+msgstr ""
+
+#: core/item.cpp:261
+#, kde-format
+msgctxt "Status of an item"
+msgid "Action Item"
+msgstr "क्रिया मद"
+
+#: core/item.cpp:265 core/messageitem.cpp:487
+#, kde-format
+msgctxt "Status of an item"
+msgid "Replied"
+msgstr "प्रत्युवाच"
+
+#: core/item.cpp:269
+#, kde-format
+msgctxt "Status of an item"
+msgid "Forwarded"
+msgstr ""
+
+#: core/item.cpp:273
+#, kde-format
+msgctxt "Status of an item"
+msgid "Sent"
+msgstr ""
+
+#: core/item.cpp:277
+#, kde-format
+msgctxt "Status of an item"
+msgid "Important"
+msgstr ""
+
+#: core/item.cpp:281
+#, kde-format
+msgctxt "Status of an item"
+msgid "Spam"
+msgstr ""
+
+#: core/item.cpp:285
+#, kde-format
+msgctxt "Status of an item"
+msgid "Ham"
+msgstr ""
+
+#: core/item.cpp:289
+#, kde-format
+msgctxt "Status of an item"
+msgid "Watched"
+msgstr ""
+
+#: core/item.cpp:293
+#, kde-format
+msgctxt "Status of an item"
+msgid "Ignored"
+msgstr ""
+
+#: core/manager.cpp:34 core/model.cpp:334
+#, kde-format
+msgctxt "Unknown date"
+msgid "Unknown"
+msgstr ""
+
+#: core/manager.cpp:203
+#, kde-format
+msgid "Current Activity, Threaded"
+msgstr "वर्तमान गतिविधि, थ्रेडेड"
+
+#: core/manager.cpp:204
+#, kde-format
+msgid ""
+"This view uses smart date range groups. Messages are threaded. So for "
+"example, in \"Today\" you will find all the messages arrived today and all "
+"the threads that have been active today."
+msgstr ""
+"एतत् दृश्यं स्मार्ट-तिथि-परिधि-समूहानां उपयोगं करोति । सन्देशाः सूत्रिताः भवन्ति। अतः "
+"उदाहरणार्थं \"अद्य\" इत्यत्र भवन्तः अद्य आगताः सर्वे सन्देशाः अद्य सक्रियताम् अवाप्तवन्तः "
+"सर्वे सूत्राणि च प्राप्नुवन्ति ।"
+
+#: core/manager.cpp:216
+#, kde-format
+msgid "Current Activity, Flat"
+msgstr "वर्तमान गतिविधि, फ्लैट"
+
+#: core/manager.cpp:217
+#, kde-format
+msgid ""
+"This view uses smart date range groups. Messages are not threaded. So for "
+"example, in \"Today\" you will simply find all the messages arrived today."
+msgstr ""
+"एतत् दृश्यं स्मार्ट-तिथि-परिधि-समूहानां उपयोगं करोति । सन्देशाः सूत्रिताः न भवन्ति। अतः "
+"उदाहरणार्थं \"अद्य\" इत्यत्र भवन्तः केवलं अद्य आगताः सर्वे सन्देशाः प्राप्नुवन्ति ।"
+
+#: core/manager.cpp:228
+#, kde-format
+msgid "Activity by Date, Threaded"
+msgstr "तिथि द्वारा गतिविधि, सूत्रित"
+
+#: core/manager.cpp:229
+#, kde-format
+msgid ""
+"This view uses day-by-day groups. Messages are threaded. So for example, in "
+"\"Today\" you will find all the messages arrived today and all the threads "
+"that have been active today."
+msgstr ""
+"अस्मिन् दृश्ये दिने दिने समूहानां उपयोगः भवति । सन्देशाः सूत्रिताः भवन्ति। अतः उदाहरणार्थं "
+"\"Today\" इत्यस्मिन् भवन्तः अद्य आगताः सर्वे सन्देशाः अद्य सक्रियताम् अवाप्तवन्तः सर्वे "
+"सूत्राणि च प्राप्नुवन्ति ।"
+
+#: core/manager.cpp:241
+#, kde-format
+msgid "Activity by Date, Flat"
+msgstr "तिथि के अनुसार गतिविधि, फ्लैट"
+
+#: core/manager.cpp:242
+#, kde-format
+msgid ""
+"This view uses day-by-day groups. Messages are not threaded. So for example, "
+"in \"Today\" you will simply find all the messages arrived today."
+msgstr ""
+"अस्मिन् दृश्ये दिने दिने समूहानां उपयोगः भवति । सन्देशाः सूत्रिताः न भवन्ति। अतः उदाहरणार्थं "
+"\"अद्य\" इत्यत्र भवन्तः केवलं अद्य आगताः सर्वे सन्देशाः प्राप्नुवन्ति ।"
+
+#: core/manager.cpp:253
+#, kde-format
+msgid "Standard Mailing List"
+msgstr "मानक डाकसूची"
+
+#: core/manager.cpp:254
+#, kde-format
+msgid ""
+"This is a plain and old mailing list view: no groups and heavy threading."
+msgstr ""
+"इदं साधारणं पुरातनं च मेलसूचीदृश्यम् अस्ति: कोऽपि समूहः नास्ति तथा च भारी सूत्रीकरणं ।"
+
+#: core/manager.cpp:263
+#, kde-format
+msgid "Flat Date View"
+msgstr "सपाट तिथि दृश्य"
+
+#: core/manager.cpp:264
+#, kde-format
+msgid ""
+"This is a plain and old list of messages sorted by date: no groups and no "
+"threading."
+msgstr ""
+"एषा तिथिनुसारं क्रमबद्धानां सन्देशानां साधारणा पुरातना च सूची अस्ति: न समूहाः न च थ्रेडिंग् ।"
+
+#: core/manager.cpp:275
+#, kde-format
+msgid "Senders/Receivers, Flat"
+msgstr "प्रेषक/ग्राहक, फ्लैट"
+
+#: core/manager.cpp:276
+#, kde-format
+msgid ""
+"This view groups the messages by senders or receivers (depending on the "
+"folder type). Messages are not threaded."
+msgstr ""
+"एतत् दृश्यं प्रेषकैः ग्राहकैः वा (पुटप्रकारस्य आधारेण) सन्देशान् समूहयति । सन्देशाः सूत्रिताः न "
+"भवन्ति।"
+
+#: core/manager.cpp:287
+#, kde-format
+msgid "Thread Starters"
+msgstr "सूत्र प्रारम्भक"
+
+#: core/manager.cpp:288
+#, kde-format
+msgid ""
+"This view groups the messages in threads and then groups the threads by the "
+"starting user."
+msgstr "एतत् दृश्यं सन्देशान् सूत्रेषु समूहयति ततः आरम्भकप्रयोक्तृणा सूत्राणि समूहयति ।"
+
+#: core/manager.cpp:565
+#, kde-format
+msgctxt "Default theme name"
+msgid "Classic"
+msgstr ""
+
+#: core/manager.cpp:565
+#, kde-format
+msgid "A simple, backward compatible, single row theme"
+msgstr "एकः सरलः, पश्चात्तापसङ्गतः, एकपङ्क्तिविषयः"
+
+#: core/manager.cpp:569
+#, kde-format
+msgctxt "@title:column Subject of messages"
+msgid "Subject"
+msgstr ""
+
+#: core/manager.cpp:602 core/theme.cpp:112
+#, kde-format
+msgid "Sender/Receiver"
+msgstr "प्रेषक/ग्राहक"
+
+#: core/manager.cpp:609
+#, kde-format
+msgctxt "Sender of a message"
+msgid "Sender"
+msgstr "प्रेषकः"
+
+#: core/manager.cpp:611
+#, kde-format
+msgctxt "Receiver of a message"
+msgid "Receiver"
+msgstr "ग्राहकः"
+
+#: core/manager.cpp:617
+#, kde-format
+msgctxt "Date of a message"
+msgid "Date"
+msgstr "दिनाङ्कः"
+
+#: core/manager.cpp:619
+#, kde-format
+msgid "Most Recent Date"
+msgstr "अद्यतनतम तिथि"
+
+#: core/manager.cpp:625
+#, kde-format
+msgctxt "Size of a message"
+msgid "Size"
+msgstr "आकृति"
+
+#: core/manager.cpp:627
+#, kde-format
+msgctxt "Attachment indication"
+msgid "Attachment"
+msgstr ""
+
+#: core/manager.cpp:633
+#, kde-format
+msgid "Read/Unread"
+msgstr "पठित/अपठित"
+
+#: core/manager.cpp:638
+#, kde-format
+msgid "Replied"
+msgstr "प्रत्युवाच"
+
+#: core/manager.cpp:640
+#, kde-format
+msgctxt "Message importance indication"
+msgid "Important"
+msgstr ""
+
+#: core/manager.cpp:646
+#, kde-format
+msgid "Action Item"
+msgstr "क्रिया मद"
+
+#: core/manager.cpp:652
+#, kde-format
+msgid "Spam/Ham"
+msgstr "स्पैम/हिम्"
+
+#: core/manager.cpp:658
+#, kde-format
+msgid "Watched/Ignored"
+msgstr "अवलोकितम्/उपेक्षितम्"
+
+#: core/manager.cpp:664
+#, kde-format
+msgid "Encryption"
+msgstr "एन्क्रिप्शन"
+
+#: core/manager.cpp:670
+#, kde-format
+msgid "Signature"
+msgstr "हस्ताक्षर"
+
+#: core/manager.cpp:675
+#, kde-format
+msgid "Tag List"
+msgstr "टैग सूची"
+
+#: core/manager.cpp:683
+#, kde-format
+msgid "Smart"
+msgstr "पटु"
+
+#: core/manager.cpp:683
+#, kde-format
+msgid "A smart multiline and multi item theme"
+msgstr "एकः स्मार्टः बहुपङ्क्तिः बहु-वस्तु विषयः च"
+
+#: core/manager.cpp:687
+#, kde-format
+msgid "Message"
+msgstr "सन्देशः"
+
+#: core/manager.cpp:768
+#, kde-format
+msgid "Smart with Clickable Status"
+msgstr "क्लिक्-करणीय-स्थित्या सह स्मार्टः"
+
+#: core/manager.cpp:769
+#, kde-format
+msgid "A smart multiline and multi item theme with a clickable status column"
+msgstr "क्लिक् कर्तुं योग्यः स्थितिस्तम्भः सह एकः स्मार्टः बहुपङ्क्तिः बहु-वस्तु-विषयः च"
+
+#: core/manager.cpp:773 core/view.cpp:2256 core/view.cpp:2260
+#, kde-format
+msgid "Status"
+msgstr "स्थितिः"
+
+#: core/model.cpp:332
+#, kde-format
+msgid "Today"
+msgstr "अद्य"
+
+#: core/model.cpp:333
+#, kde-format
+msgid "Yesterday"
+msgstr "ह्यः"
+
+#: core/model.cpp:335
+#, kde-format
+msgid "Last Week"
+msgstr "गतसप्ताहे"
+
+#: core/model.cpp:336
+#, kde-format
+msgid "Two Weeks Ago"
+msgstr "सप्ताहद्वयं पूर्वं"
+
+#: core/model.cpp:337
+#, kde-format
+msgid "Three Weeks Ago"
+msgstr "सप्ताहत्रयपूर्वम्"
+
+#: core/model.cpp:338
+#, kde-format
+msgid "Four Weeks Ago"
+msgstr "चतुःसप्ताहपूर्वम्"
+
+#: core/model.cpp:339
+#, kde-format
+msgid "Five Weeks Ago"
+msgstr "पञ्चसप्ताहपूर्वम्"
+
+#: core/model.cpp:552 utils/themeeditor.cpp:187
+#, kde-format
+msgid "Receiver"
+msgstr "ग्राहकः"
+
+#: core/model.cpp:554 utils/themeeditor.cpp:186
+#, kde-format
+msgid "Sender"
+msgstr "प्रेषकः"
+
+#: core/model.cpp:1370
+#, kde-format
+msgctxt "Message Aggregation Group Header: Month name and Year number"
+msgid "%1 %2"
+msgstr ""
+
+#: core/model.cpp:3790
+#, kde-format
+msgid "Processed 1 Message of %2"
+msgid_plural "Processed %1 Messages of %2"
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/model.cpp:3796 core/model.cpp:3802
+#, kde-format
+msgid "Threaded 1 Message of %2"
+msgid_plural "Threaded %1 Messages of %2"
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/model.cpp:3808
+#, kde-format
+msgid "Grouped 1 Thread of %2"
+msgid_plural "Grouped %1 Threads of %2"
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/model.cpp:3814
+#, kde-format
+msgid "Updated 1 Group of %2"
+msgid_plural "Updated %1 Groups of %2"
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/model.cpp:3906
+#, kde-format
+msgctxt "@info:status Finished view fill"
+msgid "Ready"
+msgstr ""
+
+#. i18n: ectx: label, entry (MessageToolTipEnabled), group (MessageListView)
+#: core/settings.kcfg:11
+#, kde-format
+msgid "Display tooltips for messages and group headers"
+msgstr "सन्देशानां समूहशीर्षकाणां च कृते साधनसूचनानि प्रदर्शयन्तु"
+
+#. i18n: ectx: whatsthis, entry (MessageToolTipEnabled), group (MessageListView)
+#: core/settings.kcfg:12
+#, kde-format
+msgid ""
+"Enable this option to display tooltips when hovering over an item in the "
+"message list."
+msgstr ""
+"सन्देशसूचौ कस्यचित् द्रव्यस्य उपरि भ्रमन् उपकरणसूचनानि प्रदर्शयितुं एतत् विकल्पं सक्षमं कुर्वन्तु ।"
+
+#: core/sortorder.cpp:63 core/sortorder.cpp:107
+#, kde-format
+msgid "None (Storage Order)"
+msgstr "कोऽपि नास्ति (भण्डारणक्रमः) २."
+
+#: core/sortorder.cpp:64
+#, kde-format
+msgid "By Date/Time"
+msgstr "तिथि/समयानुसार"
+
+#: core/sortorder.cpp:66
+#, kde-format
+msgid "By Date/Time of Most Recent in Subtree"
+msgstr "उपवृक्षे अत्यन्तं नवीनतमस्य तिथि/समयानुसारम्"
+
+#: core/sortorder.cpp:71
+#, kde-format
+msgid "By Subject"
+msgstr "विषयेन"
+
+#: core/sortorder.cpp:72
+#, kde-format
+msgid "By Size"
+msgstr "आकारेण"
+
+#: core/sortorder.cpp:73
+#, kde-format
+msgid "By Action Item Status"
+msgstr "क्रिया मद स्थिति द्वारा"
+
+#: core/sortorder.cpp:74
+#, kde-format
+msgid "By Unread Status"
+msgstr "अपठितस्थित्या"
+
+#: core/sortorder.cpp:75
+#, kde-format
+msgid "By Important Status"
+msgstr "महत्त्वपूर्णस्थित्या"
+
+#: core/sortorder.cpp:76
+#, kde-format
+msgid "By Attachment Status"
+msgstr "आसक्तिस्थित्या"
+
+#: core/sortorder.cpp:88 core/sortorder.cpp:130
+#, kde-format
+msgid "Least Recent on Top"
+msgstr "उपरि न्यूनतमं हाले"
+
+#: core/sortorder.cpp:89 core/sortorder.cpp:131
+#, kde-format
+msgid "Most Recent on Top"
+msgstr "Top Recent on Top"
+
+#: core/sortorder.cpp:93
+#, kde-format
+msgctxt "Sort order for messages"
+msgid "Ascending"
+msgstr ""
+
+#: core/sortorder.cpp:94
+#, kde-format
+msgctxt "Sort order for messages"
+msgid "Descending"
+msgstr ""
+
+#: core/sortorder.cpp:105
+#, kde-format
+msgid "by Date/Time"
+msgstr "तिथि/समय द्वारा"
+
+#: core/sortorder.cpp:108
+#, kde-format
+msgid "by Date/Time of Most Recent Message in Group"
+msgstr "समूहे अद्यतनतमसन्देशस्य तिथि/समयानुसारम्"
+
+#: core/sortorder.cpp:112
+#, kde-format
+msgid "by Sender/Receiver"
+msgstr "प्रेषक/ग्राहक द्वारा"
+
+#: core/sortorder.cpp:114
+#, kde-format
+msgid "by Sender"
+msgstr "प्रेषकेन"
+
+#: core/sortorder.cpp:116
+#, kde-format
+msgid "by Receiver"
+msgstr "ग्राहक द्वारा"
+
+#: core/sortorder.cpp:134
+#, kde-format
+msgctxt "Sort order for mail groups"
+msgid "Ascending"
+msgstr ""
+
+#: core/sortorder.cpp:135
+#, kde-format
+msgctxt "Sort order for mail groups"
+msgid "Descending"
+msgstr ""
+
+#: core/theme.cpp:106
+#, kde-format
+msgctxt "Description of Type Subject"
+msgid "Subject"
+msgstr ""
+
+#: core/theme.cpp:109
+#, kde-format
+msgctxt "Description of Type Date"
+msgid "Date"
+msgstr "दिनाङ्कः"
+
+#: core/theme.cpp:115
+#, kde-format
+msgctxt "Description of Type Sender"
+msgid "Sender"
+msgstr "प्रेषकः"
+
+#: core/theme.cpp:118
+#, kde-format
+msgctxt "Description of Type Receiver"
+msgid "Receiver"
+msgstr "ग्राहकः"
+
+#: core/theme.cpp:121
+#, kde-format
+msgctxt "Description of Type Size"
+msgid "Size"
+msgstr "आकृति"
+
+#: core/theme.cpp:124
+#, kde-format
+msgid "Unread/Read Icon"
+msgstr "अपठित/पठित चिह्न"
+
+#: core/theme.cpp:127
+#, kde-format
+msgid "Attachment Icon"
+msgstr "आसक्ति चिह्न"
+
+#: core/theme.cpp:130
+#, kde-format
+msgid "Replied/Forwarded Icon"
+msgstr "उत्तरं दत्तम्/अग्रे प्रेषितम् चिह्नम्"
+
+#: core/theme.cpp:133
+#, kde-format
+msgid "Combined New/Unread/Read/Replied/Forwarded Icon"
+msgstr "संयुक्तं नवीनं/अपठितं/पठितं/उत्तरं/अग्रेषितं चिह्नम्"
+
+#: core/theme.cpp:136
+#, kde-format
+msgid "Action Item Icon"
+msgstr "क्रिया मद चिह्न"
+
+#: core/theme.cpp:139
+#, kde-format
+msgid "Important Icon"
+msgstr "महत्त्वपूर्ण चिह्न"
+
+#: core/theme.cpp:142
+#, kde-format
+msgid "Group Header Label"
+msgstr "समूहशीर्षकलेबलम्"
+
+#: core/theme.cpp:145
+#, kde-format
+msgid "Spam/Ham Icon"
+msgstr "स्पैम/हैम चिह्न"
+
+#: core/theme.cpp:148
+#, kde-format
+msgid "Watched/Ignored Icon"
+msgstr "अवलोकितम्/उपेक्षितम् चिह्नम्"
+
+#: core/theme.cpp:151
+#, kde-format
+msgid "Group Header Expand/Collapse Icon"
+msgstr "समूहशीर्षकं विस्तार/संकुचितं चिह्नम्"
+
+#: core/theme.cpp:154
+#, kde-format
+msgid "Encryption State Icon"
+msgstr "एन्क्रिप्शन राज्य चिह्न"
+
+#: core/theme.cpp:157
+#, kde-format
+msgid "Signature State Icon"
+msgstr "हस्ताक्षर राज्य चिह्न"
+
+#: core/theme.cpp:160
+#, kde-format
+msgid "Vertical Separation Line"
+msgstr "ऊर्ध्वाधर पृथक्करण रेखा"
+
+#: core/theme.cpp:163
+#, kde-format
+msgid "Horizontal Spacer"
+msgstr "क्षैतिज स्पेसर"
+
+#: core/theme.cpp:166
+#, kde-format
+msgid "Max Date"
+msgstr "अधिकतम तिथि"
+
+#: core/theme.cpp:169
+#, kde-format
+msgid "Message Tags"
+msgstr "सन्देश टैग्स"
+
+#: core/theme.cpp:172
+#, kde-format
+msgid "Invitation Icon"
+msgstr "निमन्त्रणचिह्नम्"
+
+#: core/theme.cpp:174
+#, kde-format
+msgctxt "Description of Type Folder"
+msgid "Folder"
+msgstr "फोल्डर"
+
+#: core/theme.cpp:176
+#, kde-format
+msgctxt "Description for an Unknown Type"
+msgid "Unknown"
+msgstr ""
+
+#: core/theme.cpp:835
+#, kde-format
+msgid "Unread"
+msgstr "अपठित"
+
+#: core/theme.cpp:1029
+#, kde-format
+msgid "Never Show"
+msgstr "कदापि न दर्शयतु"
+
+#: core/theme.cpp:1029
+#, kde-format
+msgid "Always Show"
+msgstr "सदा दर्शयतु"
+
+#: core/theme.cpp:1034
+#, kde-format
+msgid "Plain Rectangles"
+msgstr "सादे आयत"
+
+#: core/theme.cpp:1035
+#, kde-format
+msgid "Plain Joined Rectangle"
+msgstr "सादा संयुक्त आयत"
+
+#: core/theme.cpp:1036
+#, kde-format
+msgid "Rounded Rectangles"
+msgstr "गोल आयत"
+
+#: core/theme.cpp:1037
+#, kde-format
+msgid "Rounded Joined Rectangle"
+msgstr "गोल संयुक्त आयत"
+
+#: core/theme.cpp:1038
+#, kde-format
+msgid "Gradient Rectangles"
+msgstr "ढाल आयत"
+
+#: core/theme.cpp:1039
+#, kde-format
+msgid "Gradient Joined Rectangle"
+msgstr "ढाल संयुक्त आयत"
+
+#: core/theme.cpp:1040
+#, kde-format
+msgid "Styled Rectangles"
+msgstr "शैलीबद्ध आयत"
+
+#: core/theme.cpp:1041
+#, kde-format
+msgid "Styled Joined Rectangles"
+msgstr "शैलीबद्ध संयुक्त आयत"
+
+#: core/view.cpp:680 core/widgets/configurefilterswidget.cpp:152
+#, kde-format
+msgid "No result found"
+msgstr "न परिणामः प्राप्तः"
+
+#: core/view.cpp:759
+#, kde-format
+msgid "Adjust Column Sizes"
+msgstr "स्तम्भस्य आकारान् समायोजयन्तु"
+
+#: core/view.cpp:763
+#, kde-format
+msgid "Show Default Columns"
+msgstr "पूर्वनिर्धारितस्तम्भान् दर्शयतु"
+
+#: core/view.cpp:768
+#, kde-format
+msgid "Display Tooltips"
+msgstr "Tooltips प्रदर्शयन्तु"
+
+#: core/view.cpp:2237 core/view.cpp:2241
+#: core/widgets/searchmessagebybuttons.cpp:73
+#, kde-format
+msgid "From"
+msgstr "इत्यस्मात्‌"
+
+#: core/view.cpp:2238 core/view.cpp:2242
+#, kde-format
+msgctxt "Receiver of the email"
+msgid "To"
+msgstr "इत्यस्मै"
+
+#: core/view.cpp:2239 core/view.cpp:2243
+#, kde-format
+msgid "Date"
+msgstr "दिनाङ्कः"
+
+#: core/view.cpp:2257 core/view.cpp:2261
+#, kde-format
+msgid "Size"
+msgstr "आकृति"
+
+#: core/view.cpp:2258 core/view.cpp:2262 utils/themeeditor.cpp:189
+#, kde-format
+msgid "Folder"
+msgstr "फोल्डर"
+
+#: core/view.cpp:2268 core/view.cpp:2270
+#, kde-format
+msgid "Preview"
+msgstr "पूर्वावलोकनम्"
+
+#: core/view.cpp:2287
+#, kde-format
+msgid "<b>%1</b> reply"
+msgid_plural "<b>%1</b> replies"
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/view.cpp:2290
+#, kde-format
+msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
+msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/view.cpp:2327
+#, kde-format
+msgctxt ""
+"@info:tooltip Formats to something like 'Threads started on 2008-12-21'"
+msgid "Threads started on %1"
+msgstr ""
+
+#: core/view.cpp:2329
+#, kde-format
+msgctxt "@info:tooltip Formats to something like 'Threads started Yesterday'"
+msgid "Threads started %1"
+msgstr ""
+
+#: core/view.cpp:2333
+#, kde-format
+msgid "Threads with messages dated %1"
+msgstr "%1 दिनाङ्कितसन्देशयुक्ताः सूत्राः"
+
+#: core/view.cpp:2343
+#, kde-format
+msgctxt "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'"
+msgid "Messages sent on %1"
+msgstr ""
+
+#: core/view.cpp:2346
+#, kde-format
+msgctxt ""
+"@info:tooltip Formats to something like 'Messages received on 2008-12-21'"
+msgid "Messages received on %1"
+msgstr ""
+
+#: core/view.cpp:2350
+#, kde-format
+msgctxt "@info:tooltip Formats to something like 'Messages sent Yesterday'"
+msgid "Messages sent %1"
+msgstr ""
+
+#: core/view.cpp:2352
+#, kde-format
+msgctxt "@info:tooltip Formats to something like 'Messages received Yesterday'"
+msgid "Messages received %1"
+msgstr ""
+
+#: core/view.cpp:2361
+#, kde-format
+msgid "Threads started within %1"
+msgstr "%1 इत्यस्य अन्तः सूत्राणि आरब्धानि"
+
+#: core/view.cpp:2364
+#, kde-format
+msgid "Threads containing messages with dates within %1"
+msgstr "%1 इत्यस्य अन्तः तिथयः सह सन्देशाः समाविष्टाः सूत्राः"
+
+#: core/view.cpp:2372
+#, kde-format
+msgid "Messages sent within %1"
+msgstr "%1 इत्यस्य अन्तः प्रेषिताः सन्देशाः"
+
+#: core/view.cpp:2374
+#, kde-format
+msgid "Messages received within %1"
+msgstr "%1 इत्यस्य अन्तः प्राप्ताः सन्देशाः"
+
+#: core/view.cpp:2383
+#, kde-format
+msgid "Threads started by %1"
+msgstr "%1 द्वारा आरब्धाः सूत्राः"
+
+#: core/view.cpp:2386
+#, kde-format
+msgid "Threads with most recent message by %1"
+msgstr "%1 द्वारा अद्यतनतमसन्देशयुक्ताः सूत्राः"
+
+#: core/view.cpp:2395 core/view.cpp:2419
+#, kde-format
+msgid "Messages sent to %1"
+msgstr "%1 कृते प्रेषिताः सन्देशाः"
+
+#: core/view.cpp:2397
+#, kde-format
+msgid "Messages sent by %1"
+msgstr "%1 द्वारा प्रेषिताः सन्देशाः"
+
+#: core/view.cpp:2400
+#, kde-format
+msgid "Messages received from %1"
+msgstr "%1 तः प्राप्ताः सन्देशाः"
+
+#: core/view.cpp:2408
+#, kde-format
+msgid "Threads directed to %1"
+msgstr "%1 प्रति निर्देशिताः सूत्राः"
+
+#: core/view.cpp:2411
+#, kde-format
+msgid "Threads with most recent message directed to %1"
+msgstr "%1 प्रति निर्देशितस्य अद्यतनतमसन्देशयुक्ताः सूत्राः"
+
+#: core/view.cpp:2421
+#, kde-format
+msgid "Messages received by %1"
+msgstr "%1 द्वारा प्राप्ताः सन्देशाः"
+
+#: core/view.cpp:2447
+#, kde-format
+msgid "<b>%1</b> thread"
+msgid_plural "<b>%1</b> threads"
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/view.cpp:2452
+#, kde-format
+msgid "<b>%1</b> message (<b>%2</b> unread)"
+msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/widgetbase.cpp:198
+#, kde-format
+msgid "No filter defined."
+msgstr "न फ़िल्टर परिभाषितम्।"
+
+#: core/widgetbase.cpp:198
+#, kde-format
+msgctxt "@title:window"
+msgid "Create Filter"
+msgstr ""
+
+#: core/widgetbase.cpp:428 messagelistutil.cpp:114
+#, kde-format
+msgid "Theme"
+msgstr "विषयवस्तु"
+
+#: core/widgetbase.cpp:449 core/widgetbase.cpp:539
+#: core/widgets/configurefilterswidget.cpp:75
+#, kde-format
+msgid "Configure..."
+msgstr "विन्यस्तं कुर्वन्तु..."
+
+#: core/widgetbase.cpp:518 messagelistutil.cpp:109
+#, kde-format
+msgid "Aggregation"
+msgstr "समुच्चयः"
+
+#: core/widgetbase.cpp:601
+#, kde-format
+msgid "Message Sort Order"
+msgstr "सन्देशक्रमक्रमः"
+
+#: core/widgetbase.cpp:623
+#, kde-format
+msgid "Message Sort Direction"
+msgstr "सन्देशक्रमणदिशा"
+
+#: core/widgetbase.cpp:640
+#, kde-format
+msgid "Group Sort Order"
+msgstr "समूहक्रमक्रमः"
+
+#: core/widgetbase.cpp:657
+#, kde-format
+msgid "Group Sort Direction"
+msgstr "समूह क्रमाङ्कनदिशा"
+
+#: core/widgetbase.cpp:672
+#, kde-format
+msgid "Folder Always Uses This Sort Order"
+msgstr "फोल्डर् सर्वदा एतस्य क्रमाङ्कनस्य उपयोगं करोति"
+
+#: core/widgets/configurefiltersdialog.cpp:24
+#, kde-format
+msgctxt "@title:window"
+msgid "Configure Filter"
+msgstr ""
+
+#: core/widgets/configurefilterswidget.cpp:79
+#, kde-format
+msgid "Remove"
+msgstr "अपाकरोति"
+
+#: core/widgets/configurefilterswidget.cpp:82
+#, kde-format
+msgid "Do you want to delete this filter?"
+msgstr "किं भवान् एतत् फ़िल्टरं विलोपयितुम् इच्छति ?"
+
+#: core/widgets/configurefilterswidget.cpp:83
+#, kde-format
+msgctxt "@title:window"
+msgid "Remove Filter"
+msgstr ""
+
+#: core/widgets/filternamedialog.cpp:19
+#, kde-format
+msgctxt "@title:window"
+msgid "Edit Filter"
+msgstr ""
+
+#: core/widgets/filternamewidget.cpp:32
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Name:"
+msgstr ""
+
+#: core/widgets/filtersavedmenu.cpp:16
+#, kde-format
+msgctxt "@action"
+msgid "Save Filter..."
+msgstr ""
+
+#: core/widgets/filtersavedmenu.cpp:17
+#, kde-format
+msgctxt "@action"
+msgid "Configure..."
+msgstr "विन्यस्तं कुर्वन्तु..."
+
+#: core/widgets/quicksearchline.cpp:58
+#, kde-format
+msgctxt "Search for messages."
+msgid "Search"
+msgstr ""
+
+#: core/widgets/quicksearchwarning.cpp:21
+#, kde-format
+msgid "The words less than 3 letters are ignored."
+msgstr "३ अक्षराणाम् न्यूनाः शब्दाः उपेक्षिताः भवन्ति ।"
+
+#: core/widgets/quicksearchwarning.cpp:22
+#, kde-format
+msgctxt "@action"
+msgid "Do not show again"
+msgstr ""
+
+#: core/widgets/searchcollectionindexingwarning.cpp:37
+#, kde-format
+msgid ""
+"Some of the search folders in this query are still being indexed or are "
+"excluded from indexing completely. The results below may be incomplete."
+msgstr ""
+"अस्मिन् प्रश्ने केचन अन्वेषणपुटाः अद्यापि अनुक्रमणिकाः क्रियन्ते अथवा अनुक्रमणिकाकरणात् पूर्णतया "
+"बहिष्कृताः सन्ति । अधोलिखितानि परिणामानि अपूर्णानि भवेयुः।"
+
+#: core/widgets/searchlinecommand.cpp:75
+#, kde-format
+msgid "Literal string"
+msgstr "शाब्दिकः तारः"
+
+#: core/widgets/searchlinecommand.cpp:77
+#, kde-format
+msgid "Size is smaller than"
+msgstr "आकारः अपेक्षया लघुः भवति"
+
+#: core/widgets/searchlinecommand.cpp:79
+#, kde-format
+msgid "Size is larger than"
+msgstr "आकारः अपेक्षया बृहत्तरः अस्ति"
+
+#: core/widgets/searchlinecommand.cpp:81
+#, kde-format
+msgid "Size is"
+msgstr "आकारः अस्ति"
+
+#: core/widgets/searchlinecommand.cpp:83
+#, kde-format
+msgid "To contains"
+msgstr "To contains इति"
+
+#: core/widgets/searchlinecommand.cpp:85
+#, kde-format
+msgid "BCC contains"
+msgstr "बीसीसी अन्तर्भवति"
+
+#: core/widgets/searchlinecommand.cpp:87
+#, kde-format
+msgid "CC contains"
+msgstr "सीसी समाविष्टम् अस्ति"
+
+#: core/widgets/searchlinecommand.cpp:89
+#, kde-format
+msgid "From contains"
+msgstr "तः समाहितम्"
+
+#: core/widgets/searchlinecommand.cpp:91
+#, kde-format
+msgid "Subject contains"
+msgstr "विषयः समाहितः"
+
+#: core/widgets/searchlinecommand.cpp:93
+#, kde-format
+msgid "Body contains"
+msgstr "शरीरे समाहितम्"
+
+#: core/widgets/searchlinecommand.cpp:95
+#, kde-format
+msgid "Mail has tag"
+msgstr "मेलस्य टैग् अस्ति"
+
+#: core/widgets/searchlinecommand.cpp:97
+#, kde-format
+msgid "Mail has attachment"
+msgstr "मेलस्य आसक्तिः अस्ति"
+
+#: core/widgets/searchlinecommand.cpp:99
+#, kde-format
+msgid "Mail has invitation"
+msgstr "मेलस्य आमन्त्रणं भवति"
+
+#: core/widgets/searchlinecommand.cpp:101
+#, kde-format
+msgid "Mail is important"
+msgstr "मेल महत्त्वपूर्णा अस्ति"
+
+#: core/widgets/searchlinecommand.cpp:103
+#, kde-format
+msgid "Mail is read"
+msgstr "मेल पठ्यते"
+
+#: core/widgets/searchlinecommand.cpp:105
+#, kde-format
+msgid "Mail is Unread"
+msgstr "मेल अपठितः अस्ति"
+
+#: core/widgets/searchlinecommand.cpp:107
+#, kde-format
+msgid "Mail is Ignored"
+msgstr "मेल उपेक्षितः अस्ति"
+
+#: core/widgets/searchlinecommand.cpp:109
+#, kde-format
+msgid "Mail is Ham"
+msgstr "मेलः हाम् अस्ति"
+
+#: core/widgets/searchlinecommand.cpp:111
+#, kde-format
+msgid "Mail is Spam"
+msgstr "मेलः स्पैम अस्ति"
+
+#: core/widgets/searchlinecommand.cpp:113
+#, kde-format
+msgid "Mail is watched"
+msgstr "मेलः पश्यति"
+
+#: core/widgets/searchlinecommand.cpp:115
+#, kde-format
+msgid "Mail is replied"
+msgstr "मेलस्य उत्तरं भवति"
+
+#: core/widgets/searchlinecommand.cpp:117
+#, kde-format
+msgid "Mail is forwarded"
+msgstr "मेल अग्रे प्रेष्यते"
+
+#: core/widgets/searchlinecommand.cpp:127
+#, kde-format
+msgid "AND"
+msgstr "तथा"
+
+#: core/widgets/searchlinecommandbuttonswidget.cpp:47
+#, kde-format
+msgctxt "@action:button"
+msgid "Subject"
+msgstr ""
+
+#: core/widgets/searchlinecommandbuttonswidget.cpp:48
+#, kde-format
+msgctxt "@action:button"
+msgid "Body"
+msgstr ""
+
+#: core/widgets/searchlinecommandbuttonswidget.cpp:49
+#, kde-format
+msgctxt "@action:button"
+msgid "From"
+msgstr "इत्यस्मात्‌"
+
+#: core/widgets/searchlinecommandbuttonswidget.cpp:50
+#, kde-format
+msgctxt "@action:button"
+msgid "To"
+msgstr "इत्यस्मै"
+
+#: core/widgets/searchlinecommandbuttonswidget.cpp:51
+#, kde-format
+msgctxt "@action:button"
+msgid "Cc"
+msgstr ""
+
+#: core/widgets/searchlinecommandbuttonswidget.cpp:52
+#, kde-format
+msgctxt "@action:button"
+msgid "Bcc"
+msgstr ""
+
+#: core/widgets/searchlinecommandbuttonswidget.cpp:53
+#, kde-format
+msgctxt "@action:button"
+msgid "Has Attachment"
+msgstr ""
+
+#: core/widgets/searchlinecommandbuttonswidget.cpp:54
+#, kde-format
+msgctxt "@action:button"
+msgid "Has Invitation"
+msgstr ""
+
+#: core/widgets/searchlinecommandbuttonswidget.cpp:55
+#, kde-format
+msgctxt "@action:button"
+msgid "Read"
+msgstr ""
+
+#: core/widgets/searchlinecommandbuttonswidget.cpp:56
+#, kde-format
+msgctxt "@action:button"
+msgid "Unread"
+msgstr "अपठित"
+
+#: core/widgets/searchlinecommandbuttonswidget.cpp:57
+#, kde-format
+msgctxt "@action:button"
+msgid "Important"
+msgstr ""
+
+#: core/widgets/searchlinecommandbuttonswidget.cpp:58
+#, kde-format
+msgctxt "@action:button"
+msgid "Ignored"
+msgstr ""
+
+#: core/widgets/searchlinecommandbuttonswidget.cpp:59
+#, kde-format
+msgctxt "@action:button"
+msgid "Ham"
+msgstr ""
+
+#: core/widgets/searchlinecommandbuttonswidget.cpp:60
+#, kde-format
+msgctxt "@action:button"
+msgid "Spam"
+msgstr ""
+
+#: core/widgets/searchlinecommandbuttonswidget.cpp:61
+#, kde-format
+msgctxt "@action:button"
+msgid "Watched"
+msgstr ""
+
+#: core/widgets/searchlinecommandbuttonswidget.cpp:62
+#, kde-format
+msgctxt "@action:button"
+msgid "Replied"
+msgstr "प्रत्युवाच"
+
+#: core/widgets/searchlinecommandbuttonswidget.cpp:63
+#, kde-format
+msgctxt "@action:button"
+msgid "Forwarded"
+msgstr ""
+
+#: core/widgets/searchlinecommandbuttonswidget.cpp:65
+#, kde-format
+msgctxt "@action:button"
+msgid "Smaller"
+msgstr ""
+
+#: core/widgets/searchlinecommandbuttonswidget.cpp:66
+#, kde-format
+msgctxt "@action:button"
+msgid "Larger"
+msgstr ""
+
+#: core/widgets/searchlinecommandbuttonswidget.cpp:67
+#, kde-format
+msgctxt "@action:button"
+msgid "Size"
+msgstr "आकृति"
+
+#: core/widgets/searchlinecommandbuttonswidget.cpp:68
+#, kde-format
+msgctxt "@action:button"
+msgid "Older"
+msgstr ""
+
+#: core/widgets/searchlinecommandbuttonswidget.cpp:69
+#, kde-format
+msgctxt "@action:button"
+msgid "Newer"
+msgstr ""
+
+#: core/widgets/searchlinecommandbuttonswidget.cpp:70
+#, kde-format
+msgctxt "@action:button"
+msgid "Category"
+msgstr ""
+
+#: core/widgets/searchlinestatus.cpp:78
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Prevent the quick search field from being cleared when changing folders"
+msgstr ""
+
+#: core/widgets/searchlinestatus.cpp:81
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Clear the quick search field when changing folders"
+msgstr ""
+
+#: core/widgets/searchlinestatus.cpp:100
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid "Toggle this button if you want show or hide search command line widget."
+msgstr ""
+
+#: core/widgets/searchlinestatus.cpp:104
+#, kde-format
+msgctxt "@info:whatsthis"
+msgid ""
+"Toggle this button if you want to keep your quick search locked when moving "
+"to other folders or when narrowing the search by message status."
+msgstr ""
+
+#: core/widgets/searchlinestatus.cpp:112
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Saved Filter"
+msgstr ""
+
+#: core/widgets/searchlinestatus.cpp:190
+#, kde-format
+msgid "Clear History"
+msgstr "इतिहासं स्पष्टं कुरुत"
+
+#: core/widgets/searchmessagebybuttons.cpp:34
+#, kde-format
+msgctxt "@action"
+msgid "Full Message"
+msgstr ""
+
+#: core/widgets/searchmessagebybuttons.cpp:36
+#, kde-format
+msgctxt "@action"
+msgid "Body"
+msgstr ""
+
+#: core/widgets/searchmessagebybuttons.cpp:37
+#, kde-format
+msgctxt "@action"
+msgid "Subject"
+msgstr ""
+
+#: core/widgets/searchmessagebybuttons.cpp:39
+#, kde-format
+msgctxt "@action"
+msgid "BCC"
+msgstr ""
+
+#: core/widgets/searchmessagebybuttons.cpp:40
+#, kde-format
+msgctxt "@action"
+msgid "CC"
+msgstr ""
+
+#: core/widgets/searchmessagebybuttons.cpp:71
+#, kde-format
+msgid "To"
+msgstr "इत्यस्मै"
+
+#: core/widgets/searchstatusbuttons.cpp:35
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Unread"
+msgstr "अपठित"
+
+#: core/widgets/searchstatusbuttons.cpp:39
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Replied"
+msgstr "प्रत्युवाच"
+
+#: core/widgets/searchstatusbuttons.cpp:43
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Forwarded"
+msgstr ""
+
+#: core/widgets/searchstatusbuttons.cpp:47
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Important"
+msgstr ""
+
+#: core/widgets/searchstatusbuttons.cpp:51
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Action Item"
+msgstr "क्रिया मद"
+
+#: core/widgets/searchstatusbuttons.cpp:55
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Watched"
+msgstr ""
+
+#: core/widgets/searchstatusbuttons.cpp:59
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Ignored"
+msgstr ""
+
+#: core/widgets/searchstatusbuttons.cpp:63
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Has Attachment"
+msgstr ""
+
+#: core/widgets/searchstatusbuttons.cpp:67
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Has Invitation"
+msgstr ""
+
+#: core/widgets/searchstatusbuttons.cpp:71
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Spam"
+msgstr ""
+
+#: core/widgets/searchstatusbuttons.cpp:75
+#, kde-format
+msgctxt "@action:inmenu Status of a message"
+msgid "Ham"
+msgstr ""
+
+#: core/widgets/tablockedwarning.cpp:17
+#, kde-format
+msgid "Current Tab is locked."
+msgstr "वर्तमान ट्याब् ताडितम् अस्ति ।"
+
+#: core/widgets/tablockedwarning.cpp:17
+#, kde-format
+msgid "(Unlock it)"
+msgstr "(तस्य तालान् उद्घाटयन्तु)"
+
+#: messagelistutil.cpp:104
+#, kde-format
+msgid "Sorting"
+msgstr "क्रमाङ्कनम्"
+
+#: pane.cpp:124
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Open a new tab"
+msgstr ""
+
+#: pane.cpp:126
+#, kde-format
+msgid "New tab"
+msgstr "नवीनं ट्याब्"
+
+#: pane.cpp:136
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Close the current tab"
+msgstr ""
+
+#: pane.cpp:138
+#, kde-format
+msgid "Close tab"
+msgstr "ट्याब् बन्दं कुर्वन्तु"
+
+#: pane.cpp:180
+#, kde-format
+msgctxt "@action"
+msgid "Activate Tab %1"
+msgstr ""
+
+#: pane.cpp:200
+#, kde-format
+msgid "Show Quick Search Bar"
+msgstr "त्वरित अन्वेषणपट्टिकां दर्शयतु"
+
+#: pane.cpp:221
+#, kde-format
+msgid "Message List"
+msgstr "सन्देशसूची"
+
+#: pane.cpp:227
+#, kde-format
+msgctxt "@action"
+msgid "Create New Tab"
+msgstr ""
+
+#: pane.cpp:258
+#, kde-format
+msgctxt "@action"
+msgid "Activate Next Tab"
+msgstr ""
+
+#: pane.cpp:268
+#, kde-format
+msgctxt "@action"
+msgid "Activate Previous Tab"
+msgstr ""
+
+#: pane.cpp:280
+#, kde-format
+msgctxt "@action"
+msgid "Move Tab Left"
+msgstr ""
+
+#: pane.cpp:288
+#, kde-format
+msgctxt "@action"
+msgid "Move Tab Right"
+msgstr ""
+
+#: pane.cpp:298
+#, kde-format
+msgctxt "@action"
+msgid "Close Tab"
+msgstr ""
+
+#: pane.cpp:520 pane.cpp:812
+#, kde-format
+msgctxt "@title:tab Empty messagelist"
+msgid "Empty"
+msgstr ""
+
+#: pane.cpp:708
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Close Tab"
+msgstr ""
+
+#: pane.cpp:712
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Close All Other Tabs"
+msgstr ""
+
+#: pane.cpp:717
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Unlock Tab"
+msgstr ""
+
+#: pane.cpp:717
+#, kde-format
+msgctxt "@action:inmenu"
+msgid "Lock Tab"
+msgstr ""
+
+#: storagemodel.cpp:219
+#, kde-format
+msgctxt "displayed as subject when the subject of a mail is empty"
+msgid "No Subject"
+msgstr ""
+
+#: storagemodel.cpp:220
+#, kde-format
+msgctxt "displayed when a mail has unknown sender, receiver or date"
+msgid "Unknown"
+msgstr ""
+
+#: utils/aggregationconfigbutton.cpp:32 utils/themeconfigbutton.cpp:46
+#, kde-format
+msgctxt "@action:button"
+msgid "Configure..."
+msgstr "विन्यस्तं कुर्वन्तु..."
+
+#: utils/aggregationeditor.cpp:31
+#, kde-format
+msgid "Groups && Threading"
+msgstr "समूह && थ्रेडिंग"
+
+#: utils/aggregationeditor.cpp:35
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Grouping:"
+msgstr ""
+
+#: utils/aggregationeditor.cpp:41
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Group expand policy:"
+msgstr ""
+
+#: utils/aggregationeditor.cpp:45
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Threading:"
+msgstr ""
+
+#: utils/aggregationeditor.cpp:51
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Thread leader:"
+msgstr ""
+
+#: utils/aggregationeditor.cpp:55
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Thread expand policy:"
+msgstr ""
+
+#: utils/aggregationeditor.cpp:64
+#, kde-format
+msgctxt "@title:tab Advanced settings tab for aggregation mode"
+msgid "Advanced"
+msgstr ""
+
+#: utils/aggregationeditor.cpp:68
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Fill view strategy:"
+msgstr ""
+
+#: utils/configureaggregationsdialog.cpp:100
+#, kde-format
+msgctxt "@title:window"
+msgid "Customize Message Aggregation Modes"
+msgstr ""
+
+#: utils/configureaggregationsdialog.cpp:121
+#, kde-format
+msgctxt "@action:button"
+msgid "New Aggregation"
+msgstr "नवीन समुच्चयः"
+
+#: utils/configureaggregationsdialog.cpp:129
+#, kde-format
+msgctxt "@action:button"
+msgid "Clone Aggregation"
+msgstr ""
+
+#: utils/configureaggregationsdialog.cpp:142
+#, kde-format
+msgctxt "@action:button"
+msgid "Export Aggregation..."
+msgstr ""
+
+#: utils/configureaggregationsdialog.cpp:149
+#, kde-format
+msgctxt "@action:button"
+msgid "Import Aggregation..."
+msgstr ""
+
+#: utils/configureaggregationsdialog.cpp:160
+#, kde-format
+msgctxt "@action:button"
+msgid "Delete Aggregation"
+msgstr ""
+
+#: utils/configureaggregationsdialog.cpp:343
+#, kde-format
+msgid "Unnamed Aggregation"
+msgstr "अनाम समुच्चय"
+
+#: utils/configureaggregationsdialog.cpp:360
+#, kde-format
+msgid "New Aggregation"
+msgstr "नवीन समुच्चयः"
+
+#: utils/configureaggregationsdialog.cpp:413
+#, kde-format
+msgctxt "@title:window"
+msgid "Import Aggregation"
+msgstr ""
+
+#: utils/configureaggregationsdialog.cpp:446
+#, kde-format
+msgctxt "@title:window"
+msgid "Export Aggregation"
+msgstr ""
+
+#: utils/configureaggregationsdialog.cpp:446
+#: utils/configurethemesdialog.cpp:470
+#, kde-format
+msgid "All Files (*)"
+msgstr "सर्वाणि सञ्चिकाः (*) ."
+
+#: utils/configurethemesdialog.cpp:96
+#, kde-format
+msgctxt "@title:window"
+msgid "Customize Themes"
+msgstr ""
+
+#: utils/configurethemesdialog.cpp:117
+#, kde-format
+msgctxt "@action:button"
+msgid "New Theme"
+msgstr "नवीन विषय"
+
+#: utils/configurethemesdialog.cpp:125
+#, kde-format
+msgctxt "@action:button"
+msgid "Clone Theme"
+msgstr ""
+
+#: utils/configurethemesdialog.cpp:138
+#, kde-format
+msgctxt "@action:button"
+msgid "Export Theme..."
+msgstr ""
+
+#: utils/configurethemesdialog.cpp:145
+#, kde-format
+msgctxt "@action:button"
+msgid "Import Theme..."
+msgstr ""
+
+#: utils/configurethemesdialog.cpp:156
+#, kde-format
+msgctxt "@action:button"
+msgid "Delete Theme"
+msgstr ""
+
+#: utils/configurethemesdialog.cpp:335
+#, kde-format
+msgid "Unnamed Theme"
+msgstr "अनाम विषयः"
+
+#: utils/configurethemesdialog.cpp:353
+#, kde-format
+msgid "New Theme"
+msgstr "नवीन विषय"
+
+#: utils/configurethemesdialog.cpp:355 utils/themeeditor.cpp:1217
+#, kde-format
+msgid "New Column"
+msgstr "नव स्तम्भ"
+
+#: utils/configurethemesdialog.cpp:408
+#, kde-format
+msgid "Do you want to delete selected themes?"
+msgstr "चयनितविषयान् विलोपयितुम् इच्छति वा ?"
+
+#: utils/configurethemesdialog.cpp:408
+#, kde-format
+msgid "Do you want to delete \"%1\"?"
+msgstr "किं भवान् \"%1\" विलोपयितुम् इच्छति?"
+
+#: utils/configurethemesdialog.cpp:410
+#, kde-format
+msgctxt "@title:window"
+msgid "Delete Theme"
+msgstr ""
+
+#: utils/configurethemesdialog.cpp:436
+#, kde-format
+msgctxt "@title:window"
+msgid "Import Theme"
+msgstr ""
+
+#: utils/configurethemesdialog.cpp:470
+#, kde-format
+msgctxt "@title:window"
+msgid "Export Theme"
+msgstr ""
+
+#: utils/optionseteditor.cpp:27
+#, kde-format
+msgctxt "@title:tab General options of a view mode"
+msgid "General"
+msgstr ""
+
+#: utils/optionseteditor.cpp:31
+#, kde-format
+msgctxt "@label:textbox Name of the option"
+msgid "Name:"
+msgstr ""
+
+#: utils/optionseteditor.cpp:40
+#, kde-format
+msgctxt "@label:textbox Description of the option"
+msgid "Description:"
+msgstr ""
+
+#: utils/themeeditor.cpp:70
+#, kde-format
+msgctxt "@label:textbox Property name"
+msgid "Name:"
+msgstr ""
+
+#: utils/themeeditor.cpp:74
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The label that will be displayed in the column header."
+msgstr ""
+
+#: utils/themeeditor.cpp:77
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Header click sorts messages:"
+msgstr ""
+
+#: utils/themeeditor.cpp:81
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The sorting order that clicking on this column header will switch to."
+msgstr ""
+
+#: utils/themeeditor.cpp:84
+#, kde-format
+msgctxt "@option:check"
+msgid "Visible by default"
+msgstr ""
+
+#: utils/themeeditor.cpp:85
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Check this if this column should be visible when the theme is selected."
+msgstr ""
+
+#: utils/themeeditor.cpp:88
+#, kde-format
+msgctxt "@option:check"
+msgid "Contains \"Sender or Receiver\" field"
+msgstr ""
+
+#: utils/themeeditor.cpp:90
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"Check this if this column label should be updated depending on the folder "
+"\"inbound\"/\"outbound\" type."
+msgstr ""
+
+#: utils/themeeditor.cpp:110
+#, kde-format
+msgid "Unnamed Column"
+msgstr "अनाम स्तम्भ"
+
+#: utils/themeeditor.cpp:175
+#, kde-format
+msgid "Message Group"
+msgstr "सन्देशसमूहः"
+
+#: utils/themeeditor.cpp:179 utils/themeeditor.cpp:188
+#, kde-format
+msgid ""
+"Very long subject very long subject very long subject very long subject very "
+"long subject very long"
+msgstr ""
+"अतिदीर्घविषयः अतिदीर्घविषयः अतिदीर्घविषयः अतिदीर्घविषयः अतिदीर्घविषयः अतिदीर्घः"
+
+#: utils/themeeditor.cpp:194
+#, kde-format
+msgid "Sample Tag 1"
+msgstr "नमूना टैग 1"
+
+#: utils/themeeditor.cpp:195
+#, kde-format
+msgid "Sample Tag 2"
+msgstr "नमूना टैग 2"
+
+#: utils/themeeditor.cpp:196
+#, kde-format
+msgid "Sample Tag 3"
+msgstr "नमूना टैग 3"
+
+#: utils/themeeditor.cpp:411
+#, kde-format
+msgctxt "Indicates whether or not a header label is visible"
+msgid "Visible"
+msgstr ""
+
+#: utils/themeeditor.cpp:851
+#, kde-format
+msgctxt "@action:inmenu soften the text color"
+msgid "Soften"
+msgstr ""
+
+#: utils/themeeditor.cpp:858
+#, kde-format
+msgctxt "@action:inmenu Font setting"
+msgid "Bold"
+msgstr ""
+
+#: utils/themeeditor.cpp:862
+#, kde-format
+msgctxt "@action:inmenu Font setting"
+msgid "Italic"
+msgstr ""
+
+#: utils/themeeditor.cpp:869
+#, kde-format
+msgid "Font"
+msgstr "फॉन्ट्"
+
+#: utils/themeeditor.cpp:877
+#, kde-format
+msgctxt "@action:inmenu Foreground color setting"
+msgid "Default"
+msgstr ""
+
+#: utils/themeeditor.cpp:882
+#, kde-format
+msgctxt "@action:inmenu Foreground color setting"
+msgid "Custom..."
+msgstr ""
+
+#: utils/themeeditor.cpp:890
+#, kde-format
+msgid "Foreground Color"
+msgstr "अग्रभूमि वर्ण"
+
+#: utils/themeeditor.cpp:899
+#, kde-format
+msgctxt ""
+"Hide a mark if the mail does not have the attribute, e.g. Important mark on "
+"a non important mail"
+msgid "Hide"
+msgstr ""
+
+#: utils/themeeditor.cpp:906
+#, kde-format
+msgctxt ""
+"Keep a empty space in the list if the mail does not have the attribute, e.g. "
+"Important mark on a non important mail"
+msgid "Keep Empty Space"
+msgstr ""
+
+#: utils/themeeditor.cpp:913
+#, kde-format
+msgctxt ""
+"Show the icon softened in the list if the mail does not have the attribute, "
+"e.g. Important mark on a non important mail"
+msgid "Keep Softened Icon"
+msgstr ""
+
+#: utils/themeeditor.cpp:921
+#, kde-format
+msgid "When Disabled"
+msgstr "यदा अक्षमः भवति"
+
+#: utils/themeeditor.cpp:927
+#, kde-format
+msgid "Group Header"
+msgstr "समूहशीर्षकम्"
+
+#: utils/themeeditor.cpp:934
+#, kde-format
+msgctxt "@action:inmenu Group header background color setting"
+msgid "None"
+msgstr ""
+
+#: utils/themeeditor.cpp:939
+#, kde-format
+msgctxt "@action:inmenu Group header background color setting"
+msgid "Automatic"
+msgstr ""
+
+#: utils/themeeditor.cpp:944
+#, kde-format
+msgctxt "@action:inmenu Group header background color setting"
+msgid "Custom..."
+msgstr ""
+
+#: utils/themeeditor.cpp:952
+#, kde-format
+msgid "Background Color"
+msgstr "पृष्ठभूमि रंग"
+
+#: utils/themeeditor.cpp:972
+#, kde-format
+msgid "Background Style"
+msgstr "पृष्ठभूमिशैली"
+
+#: utils/themeeditor.cpp:1158
+#, kde-format
+msgid "Column Properties..."
+msgstr "स्तम्भ गुण..."
+
+#: utils/themeeditor.cpp:1161
+#, kde-format
+msgid "Add Column..."
+msgstr "स्तम्भं योजयतु..."
+
+#: utils/themeeditor.cpp:1164
+#, kde-format
+msgid "Delete Column"
+msgstr "स्तम्भं विलोपयन्तु"
+
+#: utils/themeeditor.cpp:1170
+#, kde-format
+msgid "Move Column to Left"
+msgstr "स्तम्भं वामभागे गच्छन्तु"
+
+#: utils/themeeditor.cpp:1174
+#, kde-format
+msgid "Move Column to Right"
+msgstr "स्तम्भं दक्षिणतः गच्छन्तु"
+
+#: utils/themeeditor.cpp:1223
+#, kde-format
+msgid "Add New Column"
+msgstr "New Column योजयतु"
+
+#: utils/themeeditor.cpp:1247
+#, kde-format
+msgid "Column Properties"
+msgstr "स्तम्भगुणाः"
+
+#: utils/themeeditor.cpp:1289
+#, kde-format
+msgid "Appearance"
+msgstr "स्वरूपम्‌"
+
+#: utils/themeeditor.cpp:1293
+#, kde-format
+msgid "Content Items"
+msgstr "सामग्री द्रव्यम्"
+
+#: utils/themeeditor.cpp:1420
+#, kde-format
+msgid ""
+"Right click on the header to add or modify columns. Drag the content items "
+"and drop them on the columns in order to compose your theme. Right click on "
+"the items inside the view for more options."
+msgstr ""
+"स्तम्भान् योजयितुं परिवर्तयितुं वा शीर्षके राइट् क्लिक् कुर्वन्तु । सामग्रीवस्तूनि कर्षयन्तु, स्तम्भेषु "
+"पातयन्तु च यत् भवतः विषयस्य रचना भवति । अधिकविकल्पानां कृते view इत्यस्य अन्तः वस्तूनि "
+"राइट् क्लिक् कुर्वन्तु ।"
+
+#: utils/themeeditor.cpp:1430
+#, kde-format
+msgctxt "@title:tab Advanced theme settings"
+msgid "Advanced"
+msgstr ""
+
+#: utils/themeeditor.cpp:1434
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Header:"
+msgstr ""
+
+#: utils/themeeditor.cpp:1440
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Icon size:"
+msgstr ""
+
+#: utils/themeeditor.cpp:1446
+#, kde-format
+msgctxt "suffix in a spinbox"
+msgid "%v pixel"
+msgid_plural "%v pixels"
+msgstr[0] ""
+msgstr[1] ""
+
+#: widget.cpp:220
+#, kde-format
+msgctxt "Item in list of Akonadi tags, to show all e-mails"
+msgid "All"
+msgstr ""
+
+#: widget.cpp:345
+#, kde-format
+msgid "Collapse Group"
+msgstr "पतन समूह"
+
+#: widget.cpp:348
+#, kde-format
+msgid "Expand Group"
+msgstr "समूहं विस्तारयतु"
+
+#: widget.cpp:354
+#, kde-format
+msgid "Expand All Groups"
+msgstr "सर्वेषां समूहानां विस्तारं कुर्वन्तु"
+
+#: widget.cpp:357
+#, kde-format
+msgid "Collapse All Groups"
+msgstr "सर्वेषां समूहानां पतनम्"
+
+#: widget.cpp:361
+#, kde-format
+msgid "Expand All Threads"
+msgstr "सर्वाणि सूत्राणि विस्तारयन्तु"
+
+#: widget.cpp:363
+#, kde-format
+msgid "Collapse All Threads"
+msgstr "All Threads संकुचितं कुर्वन्तु"
+
+#: widget.cpp:423
+#, kde-format
+msgid "&Move Here"
+msgstr "&अत्र गच्छतु"
+
+#: widget.cpp:424
+#, kde-format
+msgid "&Copy Here"
+msgstr "&अत्र प्रतिलिपि कुरुत"
+
+#: widget.cpp:426
+#, kde-format
+msgid "C&ancel"
+msgstr "निरसयतु"

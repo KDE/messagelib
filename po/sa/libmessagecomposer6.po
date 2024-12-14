@@ -1,0 +1,2363 @@
+# Sanskrit translations for messagelib package.
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the messagelib package.
+# Kali <EMAIL@ADDRESS>, 2024.
+#
+# SPDX-FileCopyrightText: 2024 kali <skkalwar999@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: messagelib\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-11-12 00:41+0000\n"
+"PO-Revision-Date: 2024-12-13 20:42+0530\n"
+"Last-Translator: kali <skkalwar999@gmail.com>\n"
+"Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
+"Language: sa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n>2);\n"
+"X-Generator: Poedit 3.5\n"
+
+#: attachment/attachmentcontrollerbase.cpp:166
+#, kde-format
+msgctxt "@title:window"
+msgid "Failed to compress attachment"
+msgstr ""
+
+#: attachment/attachmentcontrollerbase.cpp:177
+#, kde-format
+msgid ""
+"The compressed attachment is larger than the original. Do you want to keep "
+"the original one?"
+msgstr "संपीडितः आसक्तिः मूलस्य अपेक्षया बृहत्तरः भवति । किं भवन्तः मूलं स्थापयितुम् इच्छन्ति ?"
+
+#: attachment/attachmentcontrollerbase.cpp:180
+#, kde-format
+msgctxt "Do not compress"
+msgid "Keep"
+msgstr ""
+
+#: attachment/attachmentcontrollerbase.cpp:181
+#, kde-format
+msgctxt "@action:button"
+msgid "Compress"
+msgstr ""
+
+#: attachment/attachmentcontrollerbase.cpp:200
+#: attachment/attachmentcontrollerbase.cpp:960
+#, kde-format
+msgctxt "@title:window"
+msgid "Failed to attach file"
+msgstr ""
+
+#: attachment/attachmentcontrollerbase.cpp:273
+#, kde-format
+msgctxt "@title:window"
+msgid "Failed to reload attachment"
+msgstr ""
+
+#: attachment/attachmentcontrollerbase.cpp:320
+#, kde-format
+msgctxt "@title:menu"
+msgid "&Open With"
+msgstr ""
+
+#: attachment/attachmentcontrollerbase.cpp:340
+#, kde-format
+msgctxt "@action:inmenu Open With"
+msgid "&Other..."
+msgstr ""
+
+#: attachment/attachmentcontrollerbase.cpp:342
+#: attachment/attachmentcontrollerbase.cpp:350
+#, kde-format
+msgctxt "@title:menu"
+msgid "&Open With..."
+msgstr ""
+
+#: attachment/attachmentcontrollerbase.cpp:376
+#, kde-format
+msgctxt "@title:window"
+msgid "Failed to attach public key"
+msgstr ""
+
+#: attachment/attachmentcontrollerbase.cpp:390
+#, kde-format
+msgctxt "@title:window"
+msgid "Failed to attach vCard"
+msgstr ""
+
+#: attachment/attachmentcontrollerbase.cpp:403
+#, kde-format
+msgctxt "@title:window"
+msgid "Failed to attach text from clipboard"
+msgstr ""
+
+#: attachment/attachmentcontrollerbase.cpp:451
+#, kde-format
+msgctxt "@action"
+msgid "Attach &Public Key..."
+msgstr ""
+
+#: attachment/attachmentcontrollerbase.cpp:454
+#, kde-format
+msgctxt "@action"
+msgid "Attach &My Public Key"
+msgstr ""
+
+#: attachment/attachmentcontrollerbase.cpp:457
+#: attachment/attachmentcontrollerbase.cpp:462
+#: attachment/attachmentcontrollerbase.cpp:468
+#: attachment/attachmentcontrollerbase.cpp:477
+#, kde-format
+msgid "Attach"
+msgstr "आवप्"
+
+#: attachment/attachmentcontrollerbase.cpp:461
+#, kde-format
+msgid "&Attach File..."
+msgstr "&सञ्चिका संलग्नं कुर्वन्तु..."
+
+#: attachment/attachmentcontrollerbase.cpp:463
+#, kde-format
+msgid "Add Attachment..."
+msgstr "संलग्नकं योजयतु..."
+
+#: attachment/attachmentcontrollerbase.cpp:467
+#, kde-format
+msgid "&Attach Directory..."
+msgstr "&निर्देशिका संलग्न करें..."
+
+#: attachment/attachmentcontrollerbase.cpp:471
+#, kde-format
+msgctxt "@action"
+msgid "Attach Own vCard"
+msgstr ""
+
+#: attachment/attachmentcontrollerbase.cpp:472
+#, kde-format
+msgid "Own vCard"
+msgstr "स्वकीयं vCard"
+
+#: attachment/attachmentcontrollerbase.cpp:476
+#, kde-format
+msgid "&Attach vCards..."
+msgstr "&विकार्ड संलग्न करें..."
+
+#: attachment/attachmentcontrollerbase.cpp:480
+#, kde-format
+msgid "&Attach Text From Clipboard..."
+msgstr "&क्लिपबोर्डतः पाठं संलग्नं कुर्वन्तु..."
+
+#: attachment/attachmentcontrollerbase.cpp:481
+#, kde-format
+msgid "Attach Text From Clipboard"
+msgstr "क्लिप्बोर्डात् पाठं संलग्नं कुर्वन्तु"
+
+#: attachment/attachmentcontrollerbase.cpp:493
+#, kde-format
+msgid "&Remove Attachment"
+msgstr "&संलग्नकं निष्कासयतु"
+
+#: attachment/attachmentcontrollerbase.cpp:494
+#, kde-format
+msgid "Remove"
+msgstr "अपाकरोति"
+
+#: attachment/attachmentcontrollerbase.cpp:502
+#, kde-format
+msgctxt "to open"
+msgid "Open"
+msgstr ""
+
+#: attachment/attachmentcontrollerbase.cpp:507
+#, kde-format
+msgctxt "to view"
+msgid "View"
+msgstr ""
+
+#: attachment/attachmentcontrollerbase.cpp:512
+#, kde-format
+msgctxt "to edit"
+msgid "Edit"
+msgstr ""
+
+#: attachment/attachmentcontrollerbase.cpp:517
+#, kde-format
+msgctxt "@action"
+msgid "Edit With..."
+msgstr ""
+
+#: attachment/attachmentcontrollerbase.cpp:522
+#, kde-format
+msgid "&Save Attachment As..."
+msgstr "&संलग्नकं यथा..."
+
+#: attachment/attachmentcontrollerbase.cpp:523
+#, kde-format
+msgid "Save As..."
+msgstr "Save As..."
+
+#: attachment/attachmentcontrollerbase.cpp:531
+#, kde-format
+msgctxt "@action"
+msgid "Attachment Pr&operties..."
+msgstr ""
+
+#: attachment/attachmentcontrollerbase.cpp:532
+#, kde-format
+msgctxt "@action"
+msgid "Properties"
+msgstr ""
+
+#: attachment/attachmentcontrollerbase.cpp:540
+#, kde-format
+msgctxt "@action"
+msgid "Select All"
+msgstr ""
+
+#: attachment/attachmentcontrollerbase.cpp:543
+#, kde-format
+msgid "Reload"
+msgstr "पुनः लोड करें"
+
+#: attachment/attachmentcontrollerbase.cpp:677
+#: attachment/attachmentcontrollerbase.cpp:703
+#: attachment/attachmentcontrollerbase.cpp:753
+#, kde-format
+msgid "KMail was unable to write the attachment to a temporary file."
+msgstr "KMail अस्थायीसञ्चिकायां संलग्नकं लिखितुं असमर्थः आसीत् ।"
+
+#: attachment/attachmentcontrollerbase.cpp:678
+#: attachment/attachmentcontrollerbase.cpp:704
+#, kde-format
+msgctxt "@title:window"
+msgid "Unable to open attachment"
+msgstr ""
+
+#: attachment/attachmentcontrollerbase.cpp:713
+#, kde-format
+msgid "KMail was unable to open the attachment"
+msgstr "केमेलः संलग्नकं उद्घाटयितुं असमर्थः आसीत्"
+
+#: attachment/attachmentcontrollerbase.cpp:754 attachment/editorwatcher.cpp:196
+#, kde-format
+msgctxt "@title:window"
+msgid "Unable to edit attachment"
+msgstr ""
+
+#: attachment/attachmentcontrollerbase.cpp:795
+#, kde-format
+msgid "unnamed"
+msgstr "अनामिका"
+
+#: attachment/attachmentcontrollerbase.cpp:798
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Attachment As"
+msgstr ""
+
+#: attachment/attachmentcontrollerbase.cpp:821
+#, kde-format
+msgid ""
+"File %1 exists.\n"
+"Do you want to replace it?"
+msgstr ""
+"%1 सञ्चिका अस्ति ।\n"
+"किं भवन्तः तस्य स्थाने अन्यं स्थापयितुम् इच्छन्ति ?"
+
+#: attachment/attachmentcontrollerbase.cpp:822
+#, kde-format
+msgctxt "@title:window"
+msgid "Save to File"
+msgstr ""
+
+#: attachment/attachmentcontrollerbase.cpp:823
+#, kde-format
+msgctxt "@action:button"
+msgid "&Replace"
+msgstr ""
+
+#: attachment/attachmentcontrollerbase.cpp:850
+#: attachment/attachmentcontrollerbase.cpp:929
+#, kde-format
+msgid "Do you really want to attach this directory \"%1\"?"
+msgstr "किं भवान् वास्तवमेव एतत् निर्देशिकां \"%1\" संलग्नं कर्तुम् इच्छति?"
+
+#: attachment/attachmentcontrollerbase.cpp:851
+#: attachment/attachmentcontrollerbase.cpp:930
+#, kde-format
+msgctxt "@title:window"
+msgid "Attach directory"
+msgstr ""
+
+#: attachment/attachmentcontrollerbase.cpp:852
+#: attachment/attachmentcontrollerbase.cpp:931
+#, kde-format
+msgctxt "@action:button"
+msgid "Attach"
+msgstr "आवप्"
+
+#: attachment/attachmentcontrollerbase.cpp:887
+#, kde-format
+msgctxt "@title:window"
+msgid "Attach Directory"
+msgstr ""
+
+#: attachment/attachmentcontrollerbase.cpp:895
+#, kde-format
+msgctxt "@title:window"
+msgid "Attach File"
+msgstr ""
+
+#: attachment/attachmentcontrollerbase.cpp:984
+#, kde-format
+msgid "Attach Public OpenPGP Key"
+msgstr "सार्वजनिक OpenPGP कुञ्जी संलग्नं कुर्वन्तु"
+
+#: attachment/attachmentcontrollerbase.cpp:985
+#, kde-format
+msgid "Select the public key which should be attached."
+msgstr "सार्वजनिककुंजी चिनोतु यत् संलग्नं भवेत् ।"
+
+#: attachment/attachmentmodel.cpp:122
+#, kde-format
+msgid "unnamed attachment"
+msgstr "अनाम आसक्तिः"
+
+#: attachment/attachmentmodel.cpp:256
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Name: %1<br>Size: %2<br>Encoding: %3<br>MimeType=%4"
+msgstr ""
+
+#: attachment/attachmentmodel.cpp:439
+#, kde-format
+msgctxt "@title column attachment name."
+msgid "Name"
+msgstr ""
+
+#: attachment/attachmentmodel.cpp:441
+#, kde-format
+msgctxt "@title column attachment size."
+msgid "Size"
+msgstr ""
+
+#: attachment/attachmentmodel.cpp:443
+#, kde-format
+msgctxt "@title column attachment encoding."
+msgid "Encoding"
+msgstr ""
+
+#: attachment/attachmentmodel.cpp:445
+#, kde-format
+msgctxt "@title column attachment type."
+msgid "Type"
+msgstr ""
+
+#: attachment/attachmentmodel.cpp:447
+#, kde-format
+msgctxt "@title column attachment compression checkbox."
+msgid "Compress"
+msgstr ""
+
+#: attachment/attachmentmodel.cpp:449
+#, kde-format
+msgctxt "@title column attachment encryption checkbox."
+msgid "Encrypt"
+msgstr ""
+
+#: attachment/attachmentmodel.cpp:451
+#, kde-format
+msgctxt "@title column attachment signed checkbox."
+msgid "Sign"
+msgstr ""
+
+#: attachment/attachmentmodel.cpp:453
+#, kde-format
+msgctxt "@title column attachment inlined checkbox."
+msgid "Suggest Automatic Display"
+msgstr ""
+
+#: attachment/editorwatcher.cpp:60
+#, kde-format
+msgid "Edit with:"
+msgstr "सम्पादनं कुर्वन्तु:"
+
+#: attachment/editorwatcher.cpp:194
+#, kde-format
+msgid ""
+"KMail is unable to detect when the chosen editor is closed. To avoid data "
+"loss, editing the attachment will be aborted."
+msgstr ""
+"KMail चयनितः सम्पादकः कदा बन्दः भवति इति ज्ञातुं असमर्थः अस्ति । दत्तांशहानिः न भवेत् "
+"इति कृत्वा संलग्नकस्य सम्पादनं निरस्तं भविष्यति ।"
+
+#: composer/composer.cpp:288
+#, kde-format
+msgid "No key data for recipients found."
+msgstr "प्राप्तकर्तानां कृते कोऽपि प्रमुखदत्तांशः न प्राप्तः ।"
+
+#: composer/composerviewbase.cpp:325
+#, kde-format
+msgid "&Keep markup, do not sign/encrypt"
+msgstr "&मार्कअपं स्थापयन्तु, हस्ताक्षरं/गोपनं न कुर्वन्तु"
+
+#: composer/composerviewbase.cpp:325
+#, kde-format
+msgid "&Keep markup, do not encrypt"
+msgstr "&मार्कअपं स्थापयतु, एन्क्रिप्ट् न कुर्वन्तु"
+
+#: composer/composerviewbase.cpp:325
+#, kde-format
+msgid "&Keep markup, do not sign"
+msgstr "&मार्कअपं स्थापयन्तु, हस्ताक्षरं न कुर्वन्तु"
+
+#: composer/composerviewbase.cpp:326
+#, kde-format
+msgid "Sign/Encrypt (delete markup)"
+msgstr "हस्ताक्षर/गुप्तीकरण (मार्कअप विलोपनम्) २."
+
+#: composer/composerviewbase.cpp:326
+#, kde-format
+msgid "Encrypt (delete markup)"
+msgstr "एन्क्रिप्ट् (मार्कअप विलोपनम्) २."
+
+#: composer/composerviewbase.cpp:326
+#, kde-format
+msgid "Sign (delete markup)"
+msgstr "हस्ताक्षरं कुर्वन्तु (मार्कअपं विलोपयन्तु) २."
+
+#: composer/composerviewbase.cpp:328
+#, kde-format
+msgid ""
+"<qt><p>Inline signing/encrypting of HTML messages is not possible;</p><p>do "
+"you want to delete your markup?</p></qt>"
+msgstr ""
+"<qt><p>HTML सन्देशानां आन्तरिकहस्ताक्षरीकरणं/गोपनीकरणं सम्भवं नास्ति;</p><p> किं भवन्तः "
+"स्वस्य मार्कअपं विलोपयितुम् इच्छन्ति?</p></qt>"
+
+#: composer/composerviewbase.cpp:330
+#, kde-format
+msgctxt "@title:window"
+msgid "Sign/Encrypt Message?"
+msgstr ""
+
+#: composer/composerviewbase.cpp:506
+#, kde-format
+msgid "It was not possible to create a message composer."
+msgstr "सन्देशरचयिता निर्मातुं न शक्यते स्म ।"
+
+#: composer/composerviewbase.cpp:516
+#, kde-format
+msgid "Do you want to resize images?"
+msgstr "किं भवान् चित्राणां आकारं परिवर्तयितुम् इच्छति ?"
+
+#: composer/composerviewbase.cpp:517
+#, kde-format
+msgctxt "@title:window"
+msgid "Auto Resize Images"
+msgstr ""
+
+#: composer/composerviewbase.cpp:518
+#, kde-format
+msgctxt "@action:button"
+msgid "Auto Resize"
+msgstr ""
+
+#: composer/composerviewbase.cpp:519
+#, kde-format
+msgctxt "@action:button"
+msgid "Do Not Resize"
+msgstr ""
+
+#: composer/composerviewbase.cpp:721
+#, kde-format
+msgctxt "@title:window"
+msgid "OpenPGP Key Expired"
+msgstr ""
+
+#: composer/composerviewbase.cpp:721
+#, kde-format
+msgctxt "@title:window"
+msgid "S/MIME Certificate Expired"
+msgstr ""
+
+#: composer/composerviewbase.cpp:723
+#, kde-format
+msgctxt "@title:window"
+msgid "OpenPGP Key Expires Soon"
+msgstr ""
+
+#: composer/composerviewbase.cpp:724
+#, kde-format
+msgctxt "@title:window"
+msgid "S/MIME Certificate Expires Soon"
+msgstr ""
+
+#: composer/composerviewbase.cpp:798 composer/composerviewbase.cpp:812
+#: composer/composerviewbase.cpp:844
+#, kde-format
+msgid "Failed to resolve keys. Please report a bug."
+msgstr "कीलानां समाधानं कर्तुं असफलम्। कृपया दोषं निवेदयन्तु।"
+
+#: composer/composerviewbase.cpp:1049 composer/composerviewbase.cpp:1320
+#, kde-format
+msgid "Job cancelled by the user"
+msgstr "उपयोक्त्रा रद्दं कृतं कार्यम्"
+
+#: composer/composerviewbase.cpp:1054
+#, kde-format
+msgid ""
+"Could not compose message: %1 \n"
+" Please report this bug."
+msgstr ""
+"सन्देशं रचयितुं न शक्तवान्: %1 \n"
+" कृपया एतत् दोषं निवेदयन्तु।"
+
+#: composer/composerviewbase.cpp:1056
+#, kde-format
+msgid "Could not compose message: %1"
+msgstr "सन्देशं रचयितुं न शक्तवान्: %1"
+
+#: composer/composerviewbase.cpp:1159
+#, kde-format
+msgid "There were problems trying to queue the message for sending: %1"
+msgstr "प्रेषणार्थं सन्देशं कतारं स्थापयितुं प्रयतमाने समस्याः आसन्: %1"
+
+#: composer/composerviewbase.cpp:1323
+#, kde-format
+msgid "Could not autosave message: %1"
+msgstr "सन्देशं स्वयमेव रक्षितुं न शक्तम्: %1"
+
+#: composer/composerviewbase.cpp:1342
+#, kde-format
+msgid "Could not write all data to file."
+msgstr "सर्वाणि दत्तांशं सञ्चिकायां लिखितुं न शक्तवान् ।"
+
+#: composer/composerviewbase.cpp:1345
+#, kde-format
+msgid "Could not finalize the file."
+msgstr "सञ्चिकां अन्तिमरूपेण स्थापयितुं न शक्तवान् ।"
+
+#: composer/composerviewbase.cpp:1349
+#, kde-format
+msgid "Could not open file."
+msgstr "सञ्चिकां उद्घाटयितुं न शक्तवान्।"
+
+#: composer/composerviewbase.cpp:1356
+#, kde-format
+msgid ""
+"Autosaving the message as %1 failed.\n"
+"%2\n"
+"Reason: %3"
+msgstr ""
+"%1 इति सन्देशस्य स्वयमेव रक्षणं विफलम् ।\n"
+"%2\n"
+"कारणम् : %3"
+
+#: composer/composerviewbase.cpp:1362
+#, kde-format
+msgctxt "@title:window"
+msgid "Autosaving Message Failed"
+msgstr ""
+
+#: composer/composerviewbase.cpp:1475
+#, kde-format
+msgid "Failed to save the message: %1"
+msgstr "सन्देशं रक्षितुं असफलम्: %1"
+
+#: composer/composerviewbase.cpp:1896
+#, kde-format
+msgid ""
+"The message you have composed seems to refer to an attached file but you "
+"have not attached anything.\n"
+"Do you want to attach a file to your message?"
+msgstr ""
+"भवता रचितः सन्देशः संलग्नसञ्चिकां निर्दिशति इव किन्तु भवता किमपि संलग्नं न कृतम् ।\n"
+"किं भवान् स्वसन्देशे सञ्चिकां संलग्नं कर्तुम् इच्छति ?"
+
+#: composer/composerviewbase.cpp:1899
+#, kde-format
+msgctxt "@title:window"
+msgid "File Attachment Reminder"
+msgstr ""
+
+#: composer/composerviewbase.cpp:1900
+#, kde-format
+msgctxt "@action:button"
+msgid "&Attach File..."
+msgstr "&सञ्चिका संलग्नं कुर्वन्तु..."
+
+#: composer/composerviewbase.cpp:1901
+#, kde-format
+msgctxt "@action:button"
+msgid "&Send as Is"
+msgstr ""
+
+#: composer/composerviewbase.cpp:1953
+#, kde-format
+msgid ""
+"Examination of the recipient's signing preferences yielded that you be asked "
+"whether or not to sign this message.\n"
+"Sign this message?"
+msgstr ""
+"प्राप्तकस्य हस्ताक्षरप्राथमिकतानां परीक्षणेन भवन्तः पृष्टाः यत् अस्मिन् सन्देशे हस्ताक्षरं कर्तव्यं "
+"वा न वा इति ।\n"
+"अस्मिन् सन्देशे हस्ताक्षरं कुर्वन्तु?"
+
+#: composer/composerviewbase.cpp:1959 composer/composerviewbase.cpp:1987
+#, kde-format
+msgctxt "@title:window"
+msgid "Sign Message?"
+msgstr ""
+
+#: composer/composerviewbase.cpp:1960 composer/composerviewbase.cpp:1988
+#, kde-format
+msgctxt "to sign"
+msgid "&Sign"
+msgstr "&चिह्नम्‌"
+
+#: composer/composerviewbase.cpp:1961 composer/composerviewbase.cpp:1989
+#, kde-format
+msgctxt "@action:button"
+msgid "Do &Not Sign"
+msgstr ""
+
+#: composer/composerviewbase.cpp:1982
+#, kde-format
+msgid ""
+"There are conflicting signing preferences for these recipients.\n"
+"Sign this message?"
+msgstr ""
+"एतेषां प्राप्तकानां कृते परस्परविरोधिनः हस्ताक्षरप्राथमिकताः सन्ति ।\n"
+"अस्मिन् सन्देशे हस्ताक्षरं कुर्वन्तु?"
+
+#: composer/composerviewbase.cpp:2009
+#, kde-format
+msgid ""
+"You have requested to sign this message, but no valid signing keys have been "
+"configured for this identity."
+msgstr ""
+"भवता एतत् सन्देशं हस्ताक्षरं कर्तुं अनुरोधः कृतः, परन्तु अस्य परिचयस्य कृते वैधहस्ताक्षरकुंजी "
+"विन्यस्ताः न सन्ति ।"
+
+#: composer/composerviewbase.cpp:2014
+#, kde-format
+msgctxt "@title:window"
+msgid "Send Unsigned?"
+msgstr ""
+
+#: composer/composerviewbase.cpp:2015
+#, kde-format
+msgctxt "@action:button"
+msgid "Send &Unsigned"
+msgstr ""
+
+#: composer/composerviewbase.cpp:2030
+#, kde-format
+msgid ""
+"Some parts of this message will not be signed.\n"
+"Sending only partially signed messages might violate site policy.\n"
+"Sign all parts instead?"
+msgstr ""
+"अस्य सन्देशस्य केचन भागाः हस्ताक्षरिताः न भविष्यन्ति ।\n"
+"केवलं आंशिकरूपेण हस्ताक्षरितसन्देशान् प्रेषयित्वा साइट् नीतिस्य उल्लङ्घनं भवितुम् अर्हति ।\n"
+"तस्य स्थाने सर्वेषु भागेषु हस्ताक्षरं कुर्वन्तु?"
+
+#: composer/composerviewbase.cpp:2034
+#, kde-format
+msgid ""
+"This message will not be signed.\n"
+"Sending unsigned message might violate site policy.\n"
+"Sign message instead?"
+msgstr ""
+"अयं सन्देशः हस्ताक्षरितः न भविष्यति।\n"
+"अहस्ताक्षरितं सन्देशं प्रेषयित्वा साइट् नीतेः उल्लङ्घनं भवितुम् अर्हति ।\n"
+"तस्य स्थाने सन्देशे हस्ताक्षरं कुर्वन्तु?"
+
+#: composer/composerviewbase.cpp:2037
+#, kde-format
+msgid "&Sign All Parts"
+msgstr "&सभी भागों पर हस्ताक्षर करें"
+
+#: composer/composerviewbase.cpp:2037
+#, kde-format
+msgid "&Sign"
+msgstr "&चिह्नम्‌"
+
+#: composer/composerviewbase.cpp:2040
+#, kde-format
+msgctxt "@title:window"
+msgid "Unsigned-Message Warning"
+msgstr ""
+
+#: composer/composerviewbase.cpp:2042
+#, kde-format
+msgctxt "@action:button"
+msgid "Send &As Is"
+msgstr ""
+
+#: composer/composerviewbase.cpp:2089
+#, kde-format
+msgid ""
+"Valid trusted encryption keys were found for all recipients.\n"
+"Encrypt this message?"
+msgstr ""
+"सर्वेषां प्राप्तकर्तानां कृते वैधविश्वसनीयगुप्तीकरणकुंजीः प्राप्ताः ।\n"
+"एतत् सन्देशं एन्क्रिप्ट् कुर्वन्तु?"
+
+#: composer/composerviewbase.cpp:2092
+#, kde-format
+msgid ""
+"Examination of the recipient's encryption preferences yielded that you be "
+"asked whether or not to encrypt this message.\n"
+"Encrypt this message?"
+msgstr ""
+"प्राप्तकस्य गोपनप्राथमिकतानां परीक्षणेन भवन्तः पृष्टाः यत् एतत् सन्देशं गोपनं कर्तव्यं वा न वा "
+"इति ।\n"
+"एतत् सन्देशं एन्क्रिप्ट् कुर्वन्तु?"
+
+#: composer/composerviewbase.cpp:2098 composer/composerviewbase.cpp:2128
+#, kde-format
+msgid "Encrypt Message?"
+msgstr "सन्देशं एन्क्रिप्ट् कुर्वन्तु?"
+
+#: composer/composerviewbase.cpp:2099
+#, kde-format
+msgid "Sign && &Encrypt"
+msgstr "हस्ताक्षरं && &Encrypt"
+
+#: composer/composerviewbase.cpp:2099 composer/composerviewbase.cpp:2181
+#, kde-format
+msgid "&Encrypt"
+msgstr "&गुप्तीकरण"
+
+#: composer/composerviewbase.cpp:2100 composer/composerviewbase.cpp:2186
+#, kde-format
+msgid "&Sign Only"
+msgstr "&केवलं हस्ताक्षरं कुर्वन्तु"
+
+#: composer/composerviewbase.cpp:2100 composer/composerviewbase.cpp:2186
+#, kde-format
+msgid "&Send As-Is"
+msgstr "&यथावत् प्रेषयतु"
+
+#: composer/composerviewbase.cpp:2121
+#, kde-format
+msgid ""
+"There are conflicting encryption preferences for these recipients.\n"
+"Encrypt this message?"
+msgstr ""
+"एतेषां ग्राहकानाम् कृते परस्परविरोधिनः एन्क्रिप्शन-प्राथमिकताः सन्ति ।\n"
+"एतत् सन्देशं एन्क्रिप्ट् कुर्वन्तु?"
+
+#: composer/composerviewbase.cpp:2129 composer/keyresolver.cpp:1319
+#: composer/keyresolver.cpp:1360
+#, kde-format
+msgctxt "@action:button"
+msgid "&Encrypt"
+msgstr "&गुप्तीकरण"
+
+#: composer/composerviewbase.cpp:2130
+#, kde-format
+msgctxt "@action:button"
+msgid "Do &Not Encrypt"
+msgstr ""
+
+#: composer/composerviewbase.cpp:2150
+#, kde-format
+msgid ""
+"You have requested to encrypt this message, and to encrypt a copy to "
+"yourself, but no valid trusted encryption keys have been configured for this "
+"identity."
+msgstr ""
+"भवता एतत् सन्देशं गोपनीयं कर्तुं, प्रतिलिपिं च स्वस्य कृते गोपनं कर्तुं प्रार्थितं, परन्तु अस्य "
+"परिचयस्य कृते वैधविश्वसनीयगुप्तीकरणकुंजी विन्यस्तं नास्ति ।"
+
+#: composer/composerviewbase.cpp:2156
+#, kde-format
+msgctxt "@title:window"
+msgid "Send Unencrypted?"
+msgstr ""
+
+#: composer/composerviewbase.cpp:2157 composer/keyresolver.cpp:1345
+#, kde-format
+msgctxt "@action:button"
+msgid "Send &Unencrypted"
+msgstr ""
+
+#: composer/composerviewbase.cpp:2172
+#, kde-format
+msgid ""
+"Some parts of this message will not be encrypted.\n"
+"Sending only partially encrypted messages might violate site policy and/or "
+"leak sensitive information.\n"
+"Encrypt all parts instead?"
+msgstr ""
+"अस्य सन्देशस्य केचन भागाः गुप्तीकरणं न भविष्यन्ति ।\n"
+"केवलं आंशिकरूपेण एन्क्रिप्टेड् सन्देशान् प्रेषयित्वा साइट् नीतेः उल्लङ्घनं भवितुम् अर्हति तथा/वा "
+"संवेदनशीलसूचनाः लीकं कर्तुं शक्नुवन्ति ।\n"
+"तस्य स्थाने सर्वान् भागान् एन्क्रिप्ट् कुर्वन्तु?"
+
+#: composer/composerviewbase.cpp:2177
+#, kde-format
+msgid ""
+"This message will not be encrypted.\n"
+"Sending unencrypted messages might violate site policy and/or leak sensitive "
+"information.\n"
+"Encrypt messages instead?"
+msgstr ""
+"एषः सन्देशः गुप्तीकरणं न भविष्यति ।\n"
+"अगुप्तसन्देशप्रेषणेन साइटनीतेः उल्लङ्घनं भवितुम् अर्हति तथा/वा संवेदनशीलसूचनाः लीकं भवितुम् "
+"अर्हन्ति ।\n"
+"तस्य स्थाने सन्देशान् एन्क्रिप्ट् कुर्वन्तु?"
+
+#: composer/composerviewbase.cpp:2181
+#, kde-format
+msgid "&Encrypt All Parts"
+msgstr "&सर्वभागाः एन्क्रिप्ट् कुर्वन्तु"
+
+#: composer/composerviewbase.cpp:2184
+#, kde-format
+msgctxt "@title:window"
+msgid "Unencrypted Message Warning"
+msgstr ""
+
+#: composer/keyresolver.cpp:314
+#, kde-format
+msgid ""
+"One or more of your configured OpenPGP encryption keys or S/MIME "
+"certificates is not fully trusted for encryption."
+msgstr ""
+"भवतः विन्यस्तं OpenPGP गोपनकुंजी अथवा S/MIME प्रमाणपत्रं एकं वा अधिकं वा गोपनार्थं "
+"पूर्णतया विश्वसनीयं नास्ति ।"
+
+#: composer/keyresolver.cpp:318
+#, kde-format
+msgid ""
+"One or more of the OpenPGP encryption keys or S/MIME certificates for "
+"recipient \"%1\" is not fully trusted for encryption."
+msgstr ""
+"प्राप्तकर्ता \"%1\" कृते OpenPGP एन्क्रिप्शन कीलेषु एकं वा अधिकं वा S/MIME प्रमाणपत्रं "
+"गोपनार्थं पूर्णतया विश्वसनीयं नास्ति ।"
+
+#: composer/keyresolver.cpp:325
+#, kde-format
+msgid ""
+"\n"
+"The following keys are only marginally trusted: \n"
+msgstr ""
+"\n"
+"निम्नलिखितकुञ्जिकाः केवलं सीमान्तरूपेण विश्वसनीयाः सन्ति: \n"
+
+#: composer/keyresolver.cpp:329
+#, kde-format
+msgid ""
+"\n"
+"The following keys or certificates have unknown trust level: \n"
+msgstr ""
+"\n"
+"निम्नलिखितकुञ्जीनां प्रमाणपत्राणां वा विश्वासस्तरः अज्ञातः अस्ति: \n"
+
+#: composer/keyresolver.cpp:333
+#, kde-format
+msgid ""
+"\n"
+"The following keys or certificates are <b>revoked</b>: \n"
+msgstr ""
+"\n"
+"निम्नलिखित कुञ्जिकाः प्रमाणपत्राणि वा <b>निरस्तानि</b> भवन्ति : \n"
+
+#: composer/keyresolver.cpp:339
+#, kde-format
+msgctxt "@title:window"
+msgid "Not Fully Trusted Encryption Keys"
+msgstr ""
+
+#: composer/keyresolver.cpp:647
+#, kde-format
+msgid ""
+"One or more of your configured OpenPGP encryption keys or S/MIME "
+"certificates is not usable for encryption. Please reconfigure your "
+"encryption keys and certificates for this identity in the identity "
+"configuration dialog.\n"
+"If you choose to continue, and the keys are needed later on, you will be "
+"prompted to specify the keys to use."
+msgstr ""
+"भवतः विन्यस्तं OpenPGP गोपनकुंजी अथवा S/MIME प्रमाणपत्रं एकं वा अधिकं वा गोपनार्थं "
+"उपयोक्तुं न शक्यते । कृपया परिचयविन्याससंवादे अस्याः परिचयस्य कृते स्वस्य गोपनकुंजीः "
+"प्रमाणपत्राणि च पुनः विन्यस्यताम् ।\n"
+"यदि भवान् निरन्तरं कर्तुं चयनं करोति, पश्चात् कीलानां आवश्यकता भवति तर्हि भवान् उपयोक्तुं "
+"कीलानि निर्दिष्टुं प्रार्थयिष्यते ।"
+
+#: composer/keyresolver.cpp:657 composer/keyresolver.cpp:1010
+#: composer/keyresolver.cpp:1039
+#, kde-format
+msgctxt "@title:window"
+msgid "Unusable Encryption Keys"
+msgstr ""
+
+#: composer/keyresolver.cpp:689
+#, kde-format
+msgid ""
+"One or more of your configured OpenPGP signing keys or S/MIME signing "
+"certificates is not usable for signing. Please reconfigure your signing keys "
+"and certificates for this identity in the identity configuration dialog.\n"
+"If you choose to continue, and the keys are needed later on, you will be "
+"prompted to specify the keys to use."
+msgstr ""
+"भवतः विन्यस्तं OpenPGP हस्ताक्षरकुंजी अथवा S/MIME हस्ताक्षरप्रमाणपत्रेषु एकं वा अधिकं वा "
+"हस्ताक्षरार्थं उपयोगी नास्ति । कृपया परिचयविन्याससंवादे अस्याः परिचयस्य कृते स्वस्य "
+"हस्ताक्षरकुंजीः प्रमाणपत्राणि च पुनः विन्यस्यताम् ।\n"
+"यदि भवान् निरन्तरं कर्तुं चयनं करोति, पश्चात् कीलानां आवश्यकता भवति तर्हि भवान् उपयोक्तुं "
+"कीलानि निर्दिष्टुं प्रार्थयिष्यते ।"
+
+#: composer/keyresolver.cpp:699 composer/keyresolver.cpp:1068
+#: composer/keyresolver.cpp:1086
+#, kde-format
+msgctxt "@title:window"
+msgid "Unusable Signing Keys"
+msgstr ""
+
+#: composer/keyresolver.cpp:1000
+#, kde-format
+msgid ""
+"Examination of recipient's encryption preferences yielded that the message "
+"should be encrypted using OpenPGP, at least for some recipients;\n"
+"however, you have not configured valid trusted OpenPGP encryption keys for "
+"this identity.\n"
+"You may continue without encrypting to yourself, but be aware that you will "
+"not be able to read your own messages if you do so."
+msgstr ""
+"ग्राहकस्य गोपनप्राथमिकतानां परीक्षणेन ज्ञातं यत् सन्देशः OpenPGP इत्यस्य उपयोगेन गोपनं "
+"कर्तव्यः, न्यूनातिन्यूनं केषाञ्चन ग्राहकानाम् कृते;\n"
+"तथापि, भवता अस्याः परिचयस्य कृते वैधविश्वसनीयानि OpenPGP एन्क्रिप्शन-कुंजीः न विन्यस्तानि "
+"।\n"
+"भवन्तः स्वयमेव गुप्तीकरणं विना निरन्तरं कर्तुं शक्नुवन्ति, परन्तु एतत् कृत्वा स्वसन्देशान् पठितुं न "
+"शक्नुवन्ति इति अवगच्छन्तु ।"
+
+#: composer/keyresolver.cpp:1029
+#, kde-format
+msgid ""
+"Examination of recipient's encryption preferences yielded that the message "
+"should be encrypted using S/MIME, at least for some recipients;\n"
+"however, you have not configured valid S/MIME encryption certificates for "
+"this identity.\n"
+"You may continue without encrypting to yourself, but be aware that you will "
+"not be able to read your own messages if you do so."
+msgstr ""
+"ग्राहकस्य एन्क्रिप्शन-प्राथमिकतानां परीक्षणेन ज्ञातं यत् सन्देशः S/MIME इत्यस्य उपयोगेन "
+"एन्क्रिप्टेड् करणीयः, न्यूनातिन्यूनं केषाञ्चन ग्राहकानाम् कृते;\n"
+"तथापि, भवता अस्याः परिचयस्य कृते वैधं S/MIME एन्क्रिप्शन प्रमाणपत्राणि न विन्यस्तानि ।\n"
+"भवन्तः स्वयमेव गुप्तीकरणं विना निरन्तरं कर्तुं शक्नुवन्ति, परन्तु एतत् कृत्वा स्वसन्देशान् पठितुं न "
+"शक्नुवन्ति इति अवगच्छन्तु ।"
+
+#: composer/keyresolver.cpp:1061
+#, kde-format
+msgid ""
+"Examination of recipient's signing preferences yielded that the message "
+"should be signed using OpenPGP, at least for some recipients;\n"
+"however, you have not configured valid OpenPGP signing certificates for this "
+"identity."
+msgstr ""
+"ग्राहकस्य हस्ताक्षरप्राथमिकतानां परीक्षणेन ज्ञातं यत् सन्देशः OpenPGP इत्यस्य उपयोगेन "
+"हस्ताक्षरितः भवेत्, न्यूनातिन्यूनं केषाञ्चन प्राप्तकर्तानां कृते;\n"
+"तथापि, भवता अस्याः परिचयस्य कृते वैधं OpenPGP हस्ताक्षरप्रमाणपत्राणि न विन्यस्तानि ।"
+
+#: composer/keyresolver.cpp:1069
+#, kde-format
+msgctxt "@action:button"
+msgid "Do Not OpenPGP-Sign"
+msgstr ""
+
+#: composer/keyresolver.cpp:1079
+#, kde-format
+msgid ""
+"Examination of recipient's signing preferences yielded that the message "
+"should be signed using S/MIME, at least for some recipients;\n"
+"however, you have not configured valid S/MIME signing certificates for this "
+"identity."
+msgstr ""
+"प्राप्तकर्तायाः हस्ताक्षरप्राथमिकतानां परीक्षणेन ज्ञातं यत् सन्देशः S/MIME इत्यस्य उपयोगेन "
+"हस्ताक्षरितः भवेत्, न्यूनातिन्यूनं केषाञ्चन प्राप्तकर्तानां कृते;\n"
+"तथापि, भवता अस्याः परिचयस्य कृते वैधं S/MIME हस्ताक्षरप्रमाणपत्राणि न विन्यस्तानि ।"
+
+#: composer/keyresolver.cpp:1087
+#, kde-format
+msgctxt "@action:button"
+msgid "Do Not S/MIME-Sign"
+msgstr ""
+
+#: composer/keyresolver.cpp:1149
+#, kde-format
+msgid ""
+"Examination of recipient's signing preferences showed no common type of "
+"signature matching your available signing keys.\n"
+"Send message without signing?"
+msgstr ""
+"प्राप्तकर्तायाः हस्ताक्षरप्राथमिकतानां परीक्षणेन भवतः उपलब्धहस्ताक्षरकुंजीभिः सह मेलनं कुर्वन् "
+"कोऽपि सामान्यप्रकारस्य हस्ताक्षरः न दृश्यते स्म ।\n"
+"हस्ताक्षरं विना सन्देशं प्रेषयन्तु?"
+
+#: composer/keyresolver.cpp:1153
+#, kde-format
+msgctxt "@title:window"
+msgid "No signing possible"
+msgstr ""
+
+#: composer/keyresolver.cpp:1316
+#, kde-format
+msgid ""
+"You did not select an encryption key for yourself (encrypt to self). You "
+"will not be able to decrypt your own message if you encrypt it."
+msgstr ""
+"भवता स्वस्य कृते एन्क्रिप्शन-कुंजी न चिनोति (encrypt to self) । भवन्तः स्वस्य सन्देशं गोपनं "
+"कृत्वा विगुप्तं कर्तुं न शक्नुवन्ति ।"
+
+#: composer/keyresolver.cpp:1319 composer/keyresolver.cpp:1344
+#: composer/keyresolver.cpp:1360
+#, kde-format
+msgctxt "@title:window"
+msgid "Missing Key Warning"
+msgstr ""
+
+#: composer/keyresolver.cpp:1335
+#, kde-format
+msgid ""
+"You did not select an encryption key for the recipient of this message; "
+"therefore, the message will not be encrypted."
+msgstr ""
+"अस्य सन्देशस्य ग्राहकस्य कृते भवता गोपनकुंजी न चिनोति; अतः सन्देशः गुप्तः न भविष्यति ।"
+
+#: composer/keyresolver.cpp:1339
+#, kde-format
+msgid ""
+"You did not select an encryption key for any of the recipients of this "
+"message; therefore, the message will not be encrypted."
+msgstr ""
+"अस्य सन्देशस्य कस्यापि ग्राहकस्य कृते भवता गोपनकुंजी न चिनोति; अतः सन्देशः गुप्तः न भविष्यति "
+"।"
+
+#: composer/keyresolver.cpp:1352
+#, kde-format
+msgid ""
+"You did not select an encryption key for one of the recipients: this person "
+"will not be able to decrypt the message if you encrypt it."
+msgstr ""
+"भवान् एकस्य प्राप्तकर्तायाः कृते गोपनकुंजी न चिनोति: यदि भवान् गोपनं करोति तर्हि अयं "
+"व्यक्तिः सन्देशं विगुप्तं कर्तुं न शक्नोति ।"
+
+#: composer/keyresolver.cpp:1356
+#, kde-format
+msgid ""
+"You did not select encryption keys for some of the recipients: these persons "
+"will not be able to decrypt the message if you encrypt it."
+msgstr ""
+"भवता केषाञ्चन प्राप्तकर्तानां कृते एन्क्रिप्शन-कुंजीः न चिनोति: एते व्यक्तिः सन्देशं विगुप्तं कर्तुं "
+"न शक्ष्यन्ति यदि भवान् तम् एन्क्रिप्ट् करोति ।"
+
+#: composer/keyresolver.cpp:1433
+#, kde-format
+msgid "Encryption Key Selection"
+msgstr "एन्क्रिप्शन कुञ्जी चयनम्"
+
+#: composer/keyresolver.cpp:1477
+#, kde-format
+msgctxt ""
+"if in your language something like 'certificate(s)' is not possible please "
+"use the plural in the translation"
+msgid ""
+"There is a problem with the encryption certificate(s) for \"%1\".\n"
+"\n"
+"Please re-select the certificate(s) which should be used for this recipient."
+msgstr ""
+
+#: composer/keyresolver.cpp:1549
+#, kde-format
+msgctxt ""
+"if in your language something like 'certificate(s)' is not possible please "
+"use the plural in the translation"
+msgid ""
+"<qt>No valid and trusted encryption certificate was found for \"%1\".<br/"
+"><br/>Select the certificate(s) which should be used for this recipient. If "
+"there is no suitable certificate in the list you can also search for "
+"external certificates by clicking the button: search for external "
+"certificates.</qt>"
+msgstr ""
+
+#: composer/keyresolver.cpp:1559
+#, kde-format
+msgctxt ""
+"if in your language something like 'certificate(s)' is not possible please "
+"use the plural in the translation"
+msgid ""
+"More than one certificate matches \"%1\".\n"
+"\n"
+"Select the certificate(s) which should be used for this recipient."
+msgstr ""
+
+#: contactpreference/savecontactpreferencejob.cpp:70
+#, kde-format
+msgctxt "@title:window"
+msgid "Name Selection"
+msgstr ""
+
+#: contactpreference/savecontactpreferencejob.cpp:71
+#, kde-format
+msgid "Which name shall the contact '%1' have in your address book?"
+msgstr "भवतः पतापुस्तिकायां '%1' सम्पर्कस्य कः नाम भविष्यति?"
+
+#: contactpreference/savecontactpreferencejob.cpp:83
+#, kde-format
+msgid "Select the address book folder to store the new contact in:"
+msgstr "नूतनसम्पर्कं संग्रहीतुं पतापुस्तकपुटं चिनोतु:"
+
+#: followupreminder/followupremindercreatejob.cpp:76
+#, kde-format
+msgid "Wait answer from \"%1\" send to \"%2\""
+msgstr "\"%1\" तः उत्तरं प्रतीक्ष्यताम् \"%2\" प्रति प्रेषयतु।"
+
+#: followupreminder/followupremindercreatejob.cpp:99
+#, kde-format
+msgid ""
+"Failed to store a new reminder: an error occurred while trying to create a "
+"new to-do in your calendar: %1"
+msgstr ""
+"नूतनं स्मारकं संग्रहीतुं असफलम्: भवतः पञ्चाङ्गे नूतनं कार्यं निर्मातुं प्रयतमाने त्रुटिः अभवत्: %1"
+
+#: followupreminder/followupremindercreatejob.cpp:131
+#, kde-format
+msgid "Failed to store a new reminder: %1"
+msgstr "नूतनं स्मारकं संग्रहीतुं असफलम्: %1"
+
+#: followupreminder/followupreminderselectdatedialog.cpp:35
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Date"
+msgstr ""
+
+#: followupreminder/followupreminderselectdatedialog.cpp:63
+#, kde-format
+msgid "Date:"
+msgstr "दिनाङ्कः:"
+
+#: followupreminder/followupreminderselectdatedialog.cpp:71
+#, kde-format
+msgid "Store to-do in:"
+msgstr "कार्याणि भण्डारयन्तु :"
+
+#: followupreminder/followupreminderselectdatedialog.cpp:105
+#, kde-format
+msgid "The selected date must be greater than the current date."
+msgstr "चयनिततिथिः वर्तमानतिथितः अधिका भवितुमर्हति ।"
+
+#: followupreminder/followupreminderselectdatedialog.cpp:105
+#, kde-format
+msgctxt "@title:window"
+msgid "Invalid date"
+msgstr ""
+
+#: followupreminder/followupreminderselectdatedialog.cpp:109
+#, kde-format
+msgid "The selected folder is not valid."
+msgstr "चयनितं पुटं वैधं नास्ति ।"
+
+#: followupreminder/followupreminderselectdatedialog.cpp:109
+#, kde-format
+msgctxt "@title:window"
+msgid "Invalid folder"
+msgstr ""
+
+#: helper/messagefactoryng.cpp:406 helper/messagefactoryng.cpp:729
+#, kde-format
+msgid "forwarded message"
+msgstr "अग्रे प्रेषितः सन्देशः"
+
+#: helper/messagefactoryng.cpp:574
+#, kde-format
+msgid "Receipt: "
+msgstr "प्राप्त: "
+
+#: helper/messagefactoryng.cpp:701
+#, kde-format
+msgid ""
+"\n"
+"This is a MIME digest forward. The content of the message is contained in "
+"the attachment(s).\n"
+"\n"
+"\n"
+msgstr ""
+"\n"
+"इदं MIME digest forward अस्ति । सन्देशस्य विषयवस्तु संलग्नके (संलग्नकेषु) अस्ति ।\n"
+"\n"
+"\n"
+
+#: imagescaling/imagescalingselectformat.cpp:25
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Image Format"
+msgstr ""
+
+#: imagescaling/imagescalingselectformat.cpp:88
+#, kde-format
+msgctxt "@action:button"
+msgid "Select Format..."
+msgstr ""
+
+#: imagescaling/imagescalingwidget.cpp:107
+#, kde-format
+msgid "<a href=\"whatsthis\">How does this work?</a>"
+msgstr "<a href=\"whatsthis\">एतत् कथं कार्यं करोति ?</a>"
+
+#: imagescaling/imagescalingwidget.cpp:117
+#, kde-format
+msgid ""
+"<qt><p>Here you can define image filename. You can use:</p><ul><li>%t set "
+"current time</li><li>%d set current date</li><li>%n original filename</"
+"li><li>%e original extension</li><li>%x new extension</li></ul></qt>"
+msgstr ""
+"<qt><p>अत्र भवान् image filename परिभाषितुं शक्नोति । भवान् उपयोक्तुं शक्नोति:</"
+"p><ul><li> %t वर्तमानसमयं सेट् कुर्वन्तु</li><li> %d वर्तमानतिथिं सेट् कुर्वन्तु</li><li> %n "
+"मूलसञ्चिकानाम</li><li> %e मूलविस्तारः</li><li> %x नूतनविस्तारः</li></ul></qt>"
+
+#: imagescaling/imagescalingwidget.cpp:187
+#, kde-format
+msgid "Custom"
+msgstr "आचारः"
+
+#: imagescaling/imagescalingwidget.cpp:315
+#, kde-format
+msgid "Please verify minimum and maximum values."
+msgstr "कृपया न्यूनतमं अधिकतमं च मूल्यं सत्यापयन्तु।"
+
+#: imagescaling/imagescalingwidget.cpp:315
+#, kde-format
+msgctxt "@title:window"
+msgid "Error in minimum Maximum value"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, enabledAutoResize)
+#: imagescaling/ui/imagescalingwidget.ui:17
+#, kde-format
+msgid "Automatically resize images"
+msgstr "स्वयमेव चित्राणां आकारं परिवर्तयन्तु"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tab)
+#: imagescaling/ui/imagescalingwidget.ui:28
+#, kde-format
+msgid "General"
+msgstr "सामान्य"
+
+#. i18n: ectx: property (text), widget (QCheckBox, KeepImageRatio)
+#: imagescaling/ui/imagescalingwidget.ui:34
+#, kde-format
+msgid "Keep ratio"
+msgstr "अनुपातं रक्षतु"
+
+#. i18n: ectx: property (text), widget (QCheckBox, AskBeforeResizing)
+#: imagescaling/ui/imagescalingwidget.ui:41
+#, kde-format
+msgid "Ask before resizing"
+msgstr "आकारं परिवर्तयितुं पूर्वं पृच्छन्तु"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: imagescaling/ui/imagescalingwidget.ui:50
+#, kde-format
+msgid "Fallback to format:"
+msgstr "प्रारूपं प्रति पतनम् : १."
+
+#. i18n: ectx: attribute (title), widget (QWidget, tab_2)
+#: imagescaling/ui/imagescalingwidget.ui:89
+#, kde-format
+msgid "Image"
+msgstr "छवि"
+
+#. i18n: ectx: property (text), widget (QCheckBox, ReduceImageToMaximum)
+#: imagescaling/ui/imagescalingwidget.ui:95
+#, kde-format
+msgid "Reduce image to maximum dimension:"
+msgstr "चित्रं अधिकतमं आयामं यावत् न्यूनीकरोतु:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: imagescaling/ui/imagescalingwidget.ui:109
+#, kde-format
+msgid "Maximum width:"
+msgstr "अधिकतमं चौड़ाई : १."
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: imagescaling/ui/imagescalingwidget.ui:116
+#, kde-format
+msgid "Maximum height:"
+msgstr "अधिकतम ऊर्ध्वता : १."
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, customMaximumWidth)
+#. i18n: ectx: property (suffix), widget (QSpinBox, customMaximumHeight)
+#. i18n: ectx: property (suffix), widget (QSpinBox, customMinimumWidth)
+#. i18n: ectx: property (suffix), widget (QSpinBox, customMinimumHeight)
+#: imagescaling/ui/imagescalingwidget.ui:133
+#: imagescaling/ui/imagescalingwidget.ui:146
+#: imagescaling/ui/imagescalingwidget.ui:198
+#: imagescaling/ui/imagescalingwidget.ui:211
+#, kde-format
+msgid " px"
+msgstr " px"
+
+#. i18n: ectx: property (text), widget (QCheckBox, EnlargeImageToMinimum)
+#: imagescaling/ui/imagescalingwidget.ui:163
+#, kde-format
+msgid "Enlarge image to minimum dimension"
+msgstr "चित्रं न्यूनतमं आयामं यावत् विस्तारयन्तु"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: imagescaling/ui/imagescalingwidget.ui:174
+#, kde-format
+msgid "Minimum width:"
+msgstr "न्यूनतम चौड़ाई : १."
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: imagescaling/ui/imagescalingwidget.ui:181
+#, kde-format
+msgid "Minimum height:"
+msgstr "न्यूनतम ऊर्ध्वता : १."
+
+#. i18n: ectx: property (text), widget (QCheckBox, skipImageSizeLower)
+#: imagescaling/ui/imagescalingwidget.ui:230
+#, kde-format
+msgid "Skip image whose size of the source file is lower than:"
+msgstr "यस्य स्रोतसञ्चिकायाः आकारः न्यूनः अस्ति तस्य चित्रं त्यजन्तु:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, imageSize)
+#: imagescaling/ui/imagescalingwidget.ui:237
+#, kde-format
+msgid " KiB"
+msgstr " किब"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tab_3)
+#: imagescaling/ui/imagescalingwidget.ui:263
+#, kde-format
+msgid "Filename"
+msgstr "सञ्चिकानाम"
+
+#. i18n: ectx: property (title), widget (QGroupBox, filterSourceGroupBox)
+#: imagescaling/ui/imagescalingwidget.ui:269
+#, kde-format
+msgid "Source filter"
+msgstr "स्रोत फ़िल्टर"
+
+#. i18n: ectx: property (text), widget (QRadioButton, notFilterFilename)
+#: imagescaling/ui/imagescalingwidget.ui:275
+#, kde-format
+msgid "Do not filter (All files are included)"
+msgstr "न छानयन्तु (सर्वसञ्चिकाः समाविष्टाः सन्ति)"
+
+#. i18n: ectx: property (text), widget (QRadioButton, includeFilesWithPattern)
+#: imagescaling/ui/imagescalingwidget.ui:285
+#, kde-format
+msgid "Include all files whose names contains one of the patterns"
+msgstr "येषां नामेषु एकं प्रतिरूपं भवति तानि सर्वाणि सञ्चिकानि समाविष्टानि कुर्वन्तु"
+
+#. i18n: ectx: property (text), widget (QRadioButton, excludeFilesWithPattern)
+#: imagescaling/ui/imagescalingwidget.ui:292
+#, kde-format
+msgid "Exclude all files whose names contains one of the patterns"
+msgstr "येषां नामेषु एकं प्रतिरूपं भवति तानि सर्वाणि सञ्चिकानि बहिष्कृत्य"
+
+#. i18n: ectx: property (text), widget (QLabel, patternLabel)
+#: imagescaling/ui/imagescalingwidget.ui:301
+#, kde-format
+msgid "Pattern:"
+msgstr "प्रतिमानम्‌:"
+
+#. i18n: ectx: property (whatsThis), widget (QLineEdit, pattern)
+#: imagescaling/ui/imagescalingwidget.ui:308
+#, kde-format
+msgid "This line allows to define several pattern. Separate them with ';'."
+msgstr "एषा रेखा अनेकप्रतिमानं परिभाषितुं शक्नोति । तान् ';' इत्यनेन पृथक् कुर्वन्तु।"
+
+#. i18n: ectx: property (placeholderText), widget (QLineEdit, pattern)
+#. i18n: ectx: property (placeholderText), widget (QLineEdit, resizeEmailsPattern)
+#. i18n: ectx: property (placeholderText), widget (QLineEdit, doNotResizePattern)
+#: imagescaling/ui/imagescalingwidget.ui:311
+#: imagescaling/ui/imagescalingwidget.ui:419
+#: imagescaling/ui/imagescalingwidget.ui:443
+#, kde-format
+msgid "Specify patterns separate with ';'"
+msgstr "';' इत्यनेन पृथक् प्रतिमानाः निर्दिशन्तु।"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: imagescaling/ui/imagescalingwidget.ui:326
+#, kde-format
+msgid "Image Format"
+msgstr "चित्र प्रारूप"
+
+#. i18n: ectx: property (text), widget (QCheckBox, resizeImageWithFormats)
+#: imagescaling/ui/imagescalingwidget.ui:332
+#, kde-format
+msgid "Resize all images with one of these formats"
+msgstr "एतेषु एकेन प्रारूपेण सर्वाणि चित्राणि आकारं परिवर्तयन्तु"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: imagescaling/ui/imagescalingwidget.ui:345
+#, kde-format
+msgid "Resize filename"
+msgstr "सञ्चिकानाम आकारं परिवर्तयतु"
+
+#. i18n: ectx: property (text), widget (QCheckBox, renameResizedImage)
+#: imagescaling/ui/imagescalingwidget.ui:371
+#, kde-format
+msgid "Rename resized images with following pattern:"
+msgstr "आकारितचित्रस्य नामकरणं निम्नलिखितप्रतिमानेन सह पुनः ।"
+
+#. i18n: ectx: attribute (title), widget (QWidget, tab_4)
+#: imagescaling/ui/imagescalingwidget.ui:389
+#, kde-format
+msgid "Recipients"
+msgstr "प्राप्तकर्ता"
+
+#. i18n: ectx: property (text), widget (QRadioButton, doNotFilterRecipients)
+#: imagescaling/ui/imagescalingwidget.ui:395
+#, kde-format
+msgid "Do not filter (All recipients are allowed)"
+msgstr "न छानयन्तु (सर्वप्राप्तकर्तृणां अनुमतिः अस्ति)"
+
+#. i18n: ectx: property (text), widget (QRadioButton, resizeEachEmails)
+#: imagescaling/ui/imagescalingwidget.ui:405
+#, kde-format
+msgid "Resize if each emails address contains one of the pattern"
+msgstr "यदि प्रत्येकं ईमेल-सङ्केते प्रतिरूपस्य एकं भवति तर्हि आकारं परिवर्तयन्तु"
+
+#. i18n: ectx: property (text), widget (QRadioButton, resizeOneEmails)
+#: imagescaling/ui/imagescalingwidget.ui:412
+#, kde-format
+msgid "Resize if one emails address contains one of the pattern"
+msgstr "यदि एकस्मिन् ईमेल-सङ्केते प्रतिरूपस्य एकं भवति तर्हि आकारं परिवर्तयन्तु"
+
+#. i18n: ectx: property (text), widget (QRadioButton, doNotResizeEachEmails)
+#: imagescaling/ui/imagescalingwidget.ui:429
+#, kde-format
+msgid "Do not resize if each emails address contains one of the pattern"
+msgstr "यदि प्रत्येकं ईमेल-सङ्केतं प्रतिरूपस्य एकं भवति तर्हि आकारं न परिवर्तयन्तु"
+
+#. i18n: ectx: property (text), widget (QRadioButton, doNotResizeOneEmails)
+#: imagescaling/ui/imagescalingwidget.ui:436
+#, kde-format
+msgid "Do not resize if one emails address contains one of the pattern"
+msgstr "यदि एकस्मिन् ईमेल-सङ्केते प्रतिरूपस्य एकं भवति तर्हि आकारं न परिवर्तयन्तु"
+
+#: job/attachmentclipboardjob.cpp:42
+#, kde-format
+msgid "No text found in Clipboard"
+msgstr "Clipboard इत्यत्र कोऽपि पाठः न प्राप्यते"
+
+#: job/attachmentclipboardjob.cpp:46
+#, kde-format
+msgctxt "@title:window"
+msgid "Define Attachment Name"
+msgstr ""
+
+#: job/attachmentclipboardjob.cpp:46
+#, kde-format
+msgid "Attachment Name:"
+msgstr "आसक्तिनाम : १."
+
+#: job/attachmentclipboardjob.cpp:49
+#, kde-format
+msgid "Clipboard Text"
+msgstr "क्लिपबोर्ड पाठ"
+
+#: job/attachmentfrompublickeyjob.cpp:51
+#, kde-format
+msgid "OpenPGP key 0x%1"
+msgstr "OpenPGP कुञ्जी 0x%1"
+
+#: job/attachmentfrompublickeyjob.cpp:64 job/autocryptheadersjob.cpp:90
+#, kde-format
+msgid ""
+"<p>An error occurred while trying to export the key from the backend:</"
+"p><p><b>%1</b></p>"
+msgstr "<p>पृष्ठभागात् कीलं निर्यातयितुं प्रयतमाने त्रुटिः अभवत्:</p><p> <b>%1</b></p>"
+
+#: job/attachmentfrompublickeyjob.cpp:108
+#, kde-format
+msgid "Exporting key..."
+msgstr "कुञ्जी निर्यातयति..."
+
+#: job/attachmentvcardfromaddressbookjob.cpp:75
+#, kde-format
+msgid "Unknown Contact Type"
+msgstr "अज्ञात सम्पर्क प्रकार"
+
+#: job/attachmentvcardfromaddressbookjob.cpp:86
+#, kde-format
+msgid "Invalid Contact"
+msgstr "अमान्य सम्पर्क"
+
+#: job/attachmentvcardfromaddressbookjob.cpp:102
+#, kde-format
+msgid "Impossible to generate vCard."
+msgstr "vCard उत्पन्नं कर्तुं असम्भवम्।"
+
+#: job/autocryptheadersjob.cpp:103
+#, kde-format
+msgid ""
+"<p>An error occurred while trying to export the key from the backend:</"
+"p><p><b>No valid key found for user %1 (%2)</b></p>"
+msgstr ""
+"<p>पृष्ठभागात् कीलं निर्यातयितुं प्रयतमाने त्रुटिः अभवत्:</p><p> <b>उपयोक्तुः %1 (%2) कृते "
+"वैधः कुञ्जी न प्राप्ता ।</b></p>"
+
+#: job/maintextjob.cpp:58
+#, kde-format
+msgid "Asked to use word wrapping, but not given wrapped plain text."
+msgstr "शब्दवेष्टनस्य उपयोगं कर्तुं पृष्टः, परन्तु वेष्टितः साधारणः पाठः न दत्तः।"
+
+#: job/maintextjob.cpp:65
+#, kde-format
+msgid "Asked not to use word wrapping, but not given clean plain text."
+msgstr "शब्दवेष्टनस्य उपयोगं न कर्तुं पृष्टः, परन्तु स्वच्छः साधारणः पाठः न दत्तः।"
+
+#: job/maintextjob.cpp:92
+#, kde-format
+msgid "Could not get text codec for charset \"%1\"."
+msgstr "\"%1\" इति charset कृते पाठकोडेक् प्राप्तुं न शक्तवान् ।"
+
+#: job/singlepartjob.cpp:65
+#, kde-format
+msgid "%1 Content-Transfer-Encoding cannot correctly encode this message."
+msgstr "%1 Content-Transfer-Encoding एतत् सन्देशं सम्यक् एन्कोड् कर्तुं न शक्नोति ।"
+
+#: mdn/mdnadvicedialog.cpp:21
+#, kde-format
+msgctxt "@title:window"
+msgid "Message Disposition Notification Request"
+msgstr ""
+
+#: mdn/mdnadvicedialog.cpp:30
+#, kde-format
+msgid "Send \"&denied\""
+msgstr "\"&denied\" प्रेषयतु।"
+
+#: mdn/mdnadvicedialog.cpp:32
+#, kde-format
+msgid "&Ignore"
+msgstr "&उपेक्षा"
+
+#: mdn/mdnadvicedialog.cpp:34
+#, kde-format
+msgid "&Send"
+msgstr "&प्रेषयतु"
+
+#: mdn/mdnadvicehelper.cpp:27
+msgid ""
+"This message contains a request to return a notification about your "
+"reception of the message.\n"
+"You can either ignore the request or let the mail program send a \"denied\" "
+"or normal response."
+msgstr ""
+"अस्मिन् सन्देशे भवतः सन्देशस्य स्वागतविषये सूचनां प्रत्यागन्तुं अनुरोधः अस्ति ।\n"
+"भवान् अनुरोधस्य अवहेलनां कर्तुं शक्नोति अथवा मेलप्रोग्रामं \"अस्वीकृतम्\" अथवा सामान्यप्रतिसादं "
+"प्रेषयितुं शक्नोति ।"
+
+#: mdn/mdnadvicehelper.cpp:33
+msgid ""
+"This message contains a request to send a notification about your reception "
+"of the message.\n"
+"It contains a processing instruction that is marked as \"required\", but "
+"which is unknown to the mail program.\n"
+"You can either ignore the request or let the mail program send a \"failed\" "
+"response."
+msgstr ""
+"अस्मिन् सन्देशे भवतः सन्देशस्य स्वागतविषये सूचनां प्रेषयितुं अनुरोधः अस्ति ।\n"
+"अस्मिन् एकः संसाधननिर्देशः अस्ति यः \"आवश्यकः\" इति चिह्नितः अस्ति, परन्तु यः "
+"मेलकार्यक्रमाय अज्ञातः अस्ति ।\n"
+"भवान् अनुरोधं उपेक्षितुं वा मेलप्रोग्रामं \"विफलं\" प्रतिक्रियां प्रेषयितुं वा शक्नोति ।"
+
+#: mdn/mdnadvicehelper.cpp:41
+msgid ""
+"This message contains a request to send a notification about your reception "
+"of the message,\n"
+"but it is requested to send the notification to more than one address.\n"
+"You can either ignore the request or let the mail program send a \"denied\" "
+"or normal response."
+msgstr ""
+"अस्मिन् सन्देशे भवतः सन्देशस्य स्वागतविषये सूचनां प्रेषयितुं अनुरोधः अस्ति,\n"
+"परन्तु एकादशाधिकपतेः सूचनां प्रेषयितुं प्रार्थ्यते।\n"
+"भवान् अनुरोधस्य अवहेलनां कर्तुं शक्नोति अथवा मेलप्रोग्रामं \"अस्वीकृतम्\" अथवा सामान्यप्रतिसादं "
+"प्रेषयितुं शक्नोति ।"
+
+#: mdn/mdnadvicehelper.cpp:49
+msgid ""
+"This message contains a request to send a notification about your reception "
+"of the message,\n"
+"but there is no return-path set.\n"
+"You can either ignore the request or let the mail program send a \"denied\" "
+"or normal response."
+msgstr ""
+"अस्मिन् सन्देशे भवतः सन्देशस्य स्वागतविषये सूचनां प्रेषयितुं अनुरोधः अस्ति,\n"
+"परन्तु पुनरागमन-मार्ग-समूहः नास्ति ।\n"
+"भवान् अनुरोधस्य अवहेलनां कर्तुं शक्नोति अथवा मेलप्रोग्रामं \"अस्वीकृतम्\" अथवा सामान्यप्रतिसादं "
+"प्रेषयितुं शक्नोति ।"
+
+#: mdn/mdnadvicehelper.cpp:56
+msgid ""
+"This message contains a request to send a notification about your reception "
+"of the message,\n"
+"but the return-path address differs from the address the notification was "
+"requested to be sent to.\n"
+"You can either ignore the request or let the mail program send a \"denied\" "
+"or normal response."
+msgstr ""
+"अस्मिन् सन्देशे भवतः सन्देशस्य स्वागतविषये सूचनां प्रेषयितुं अनुरोधः अस्ति,\n"
+"परन्तु पुनरागमन-मार्ग-सङ्केतः सूचनायाः प्रेषणार्थं प्रार्थित-सङ्केतः भिन्नः भवति ।\n"
+"भवान् अनुरोधस्य अवहेलनां कर्तुं शक्नोति अथवा मेलप्रोग्रामं \"अस्वीकृतम्\" अथवा सामान्यप्रतिसादं "
+"प्रेषयितुं शक्नोति ।"
+
+#: recipient/distributionlistdialog.cpp:96
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Distribution List"
+msgstr ""
+
+#: recipient/distributionlistdialog.cpp:107
+#, kde-format
+msgctxt "@action:button"
+msgid "Save List"
+msgstr ""
+
+#: recipient/distributionlistdialog.cpp:121
+#, kde-format
+msgctxt "@label:textbox Name of the distribution list."
+msgid "&Name:"
+msgstr ""
+
+#: recipient/distributionlistdialog.cpp:125
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Name of Distribution List"
+msgstr ""
+
+#: recipient/distributionlistdialog.cpp:132
+#, kde-format
+msgctxt "@title:column Name of the recipient"
+msgid "Name"
+msgstr ""
+
+#: recipient/distributionlistdialog.cpp:133
+#, kde-format
+msgctxt "@title:column Email of the recipient"
+msgid "Email"
+msgstr ""
+
+#: recipient/distributionlistdialog.cpp:240
+#, kde-format
+msgctxt "@info"
+msgid ""
+"There are no recipients in your list. First select some recipients, then try "
+"again."
+msgstr ""
+
+#: recipient/distributionlistdialog.cpp:251
+#, kde-format
+msgctxt "@title:window"
+msgid "New Distribution List"
+msgstr ""
+
+#: recipient/distributionlistdialog.cpp:252
+#, kde-format
+msgctxt "@label:textbox"
+msgid "Please enter name:"
+msgstr ""
+
+#: recipient/distributionlistdialog.cpp:276
+#, kde-kuit-format
+msgctxt "@info"
+msgid ""
+"<para>Distribution list with the given name <resource>%1</resource> already "
+"exists. Please select a different name.</para>"
+msgstr ""
+
+#: recipient/distributionlistdialog.cpp:285
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Address Book"
+msgstr ""
+
+#: recipient/distributionlistdialog.cpp:286
+#, kde-format
+msgid "Select the address book folder to store the contact group in:"
+msgstr "सम्पर्कसमूहं संग्रहीतुं पतापुस्तकपुटं चिनोतु:"
+
+#: recipient/distributionlistdialog.cpp:322
+#, kde-format
+msgid "Unable to create distribution list: %1"
+msgstr "वितरणसूचीं निर्मातुं असमर्थः: %1"
+
+#: recipient/recipient.cpp:99
+#, kde-format
+msgctxt "@label:listbox Recipient of an email message."
+msgid "To"
+msgstr "इत्यस्मै"
+
+#: recipient/recipient.cpp:101
+#, kde-format
+msgctxt "@label:listbox Carbon Copy recipient of an email message."
+msgid "CC"
+msgstr "सीसी"
+
+#: recipient/recipient.cpp:103
+#, kde-format
+msgctxt "@label:listbox Blind carbon copy recipient of an email message."
+msgid "BCC"
+msgstr ""
+
+#: recipient/recipient.cpp:105
+#, kde-format
+msgctxt "@label:listbox Reply-To recipient of an email message."
+msgid "Reply-To"
+msgstr ""
+
+#: recipient/recipient.cpp:110
+#, kde-kuit-format
+msgctxt "@label:listbox"
+msgid "<placeholder>Undefined Recipient Type</placeholder>"
+msgstr ""
+
+#: recipient/recipientline.cpp:71
+#, kde-format
+msgctxt "@label:listbox"
+msgid "Select type of recipient"
+msgstr ""
+
+#: recipient/recipientline.cpp:72
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Set the list of email addresses to receive this message"
+msgstr ""
+
+#: recipient/recipientseditor.cpp:112
+#, kde-format
+msgctxt "@info:status"
+msgid "Truncating recipients list to %2 of %1 entry."
+msgid_plural "Truncating recipients list to %2 of %1 entries."
+msgstr[0] ""
+msgstr[1] ""
+
+#: recipient/recipientseditorsidewidget.cpp:28
+#, kde-format
+msgctxt "@action:button"
+msgid "Save List..."
+msgstr ""
+
+#: recipient/recipientseditorsidewidget.cpp:29
+#, kde-format
+msgctxt "@action:button Open recipient selection dialog."
+msgid "Se&lect..."
+msgstr ""
+
+#: recipient/recipientseditorsidewidget.cpp:46
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Save recipients as distribution list"
+msgstr ""
+
+#: recipient/recipientseditorsidewidget.cpp:50
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Select recipients from address book"
+msgstr ""
+
+#: recipient/recipientseditorsidewidget.cpp:77
+#, kde-format
+msgctxt "@info:status No recipients selected"
+msgid "No recipients"
+msgstr ""
+
+#: recipient/recipientseditorsidewidget.cpp:79
+#, kde-format
+msgctxt "@info:status Number of recipients selected"
+msgid "1 recipient"
+msgid_plural "%1 recipients"
+msgstr[0] ""
+msgstr[1] ""
+
+#: recipient/recipientseditorsidewidget.cpp:129
+#, kde-format
+msgctxt "@info:tooltip %1 list of emails"
+msgid "To:%1"
+msgstr ""
+
+#: recipient/recipientseditorsidewidget.cpp:131
+#, kde-format
+msgctxt "@info:tooltip %1 list of emails"
+msgid "CC:%1"
+msgstr ""
+
+#: recipient/recipientseditorsidewidget.cpp:134
+#, kde-format
+msgctxt "@info:tooltip %1 list of emails"
+msgid "BCC:%1"
+msgstr ""
+
+#: recipient/recipientseditorsidewidget.cpp:137
+#, kde-format
+msgctxt "@info:tooltip %1 list of emails"
+msgid "Reply-To:%1"
+msgstr ""
+
+#: recipient/recipientspicker.cpp:49
+#, kde-format
+msgctxt "@title:window"
+msgid "Select Recipient"
+msgstr ""
+
+#: recipient/recipientspicker.cpp:61
+#, kde-format
+msgctxt "@action:button"
+msgid "Search &Directory Service"
+msgstr ""
+
+#: recipient/recipientspicker.cpp:80
+#, kde-format
+msgid "Add as &Reply-To"
+msgstr "&Reply-To इति रूपेण योजयतु"
+
+#: recipient/recipientspicker.cpp:81
+#, kde-format
+msgid "Add as &To"
+msgstr "&To इति योजयतु"
+
+#: recipient/recipientspicker.cpp:82
+#, kde-format
+msgid "Add as CC"
+msgstr "सीसी इति योजयतु"
+
+#: recipient/recipientspicker.cpp:83
+#, kde-format
+msgid "Add as &BCC"
+msgstr "&BCC इति योजयन्तु"
+
+#: recipient/recipientspicker.cpp:106
+#, kde-format
+msgid "%1 selected email"
+msgid_plural "%1 selected emails"
+msgstr[0] ""
+msgstr[1] ""
+
+#: recipient/recipientspicker.cpp:173
+#, kde-format
+msgid ""
+"You selected 1 recipient. The maximum supported number of recipients is %2.\n"
+"Please adapt the selection."
+msgid_plural ""
+"You selected %1 recipients. The maximum supported number of recipients is "
+"%2.\n"
+"Please adapt the selection."
+msgstr[0] ""
+msgstr[1] ""
+
+#: recipient/recipientspicker.cpp:190
+#, kde-format
+msgid "You can not add more recipients."
+msgstr "भवन्तः अधिकान् प्राप्तकर्तान् योजयितुं न शक्नुवन्ति।"
+
+#: sendlater/sendlatercreatejob.cpp:33
+#, kde-format
+msgid "Failed to schedule message for sending later: %1"
+msgstr "पश्चात् प्रेषणार्थं सन्देशस्य समयनिर्धारणे असफलम्: %1"
+
+#: sendlater/sendlaterdialog.cpp:28
+#, kde-format
+msgctxt "@title:window"
+msgid "Send Later"
+msgstr "पश्चात् प्रेषयतु"
+
+#: sendlater/sendlaterdialog.cpp:48
+#, kde-format
+msgid "Send Later"
+msgstr "पश्चात् प्रेषयतु"
+
+#: sendlater/sendlaterdialog.cpp:49
+#, kde-format
+msgctxt "@option:check"
+msgid "Delay"
+msgstr ""
+
+#: sendlater/sendlaterdialog.cpp:65
+#, kde-format
+msgid "Days"
+msgstr "दिवसाः"
+
+#: sendlater/sendlaterdialog.cpp:65
+#, kde-format
+msgid "Weeks"
+msgstr "सप्ताहाः"
+
+#: sendlater/sendlaterdialog.cpp:65
+#, kde-format
+msgid "Months"
+msgstr "मासाः"
+
+#: sendlater/sendlaterdialog.cpp:65
+#, kde-format
+msgid "Years"
+msgstr "वर्षाः"
+
+#: sendlater/sendlaterjob.cpp:32
+#, kde-format
+msgid "The Send Later agent is not running."
+msgstr "Send Later एजेण्ट् न चाल्यते ।"
+
+#: sendlater/sendlaterremovejob.cpp:27
+#, kde-format
+msgid "Failed to removed message from send later schedule: %1"
+msgstr "पश्चात् प्रेषणकार्यक्रमात् सन्देशं निष्कासयितुं असफलम्: %1"
+
+#: sendlater/sendlatertimedatewidget.cpp:35
+#, kde-format
+msgid "You cannot select a date prior to the current date."
+msgstr "वर्तमानतिथितः पूर्वं तिथिं चिन्वितुं न शक्नुवन्ति ।"
+
+#. i18n: ectx: property (text), widget (QLabel, mLabel)
+#: sendlater/ui/sendlaterwidget.ui:29
+#, kde-format
+msgid "Send at:"
+msgstr "अत्र प्रेषयन्तु :"
+
+#. i18n: ectx: property (text), widget (QCheckBox, mRecurrence)
+#: sendlater/ui/sendlaterwidget.ui:39
+#, kde-format
+msgid "Repeat every:"
+msgstr "प्रत्येकं पुनः पुनः कुर्वन्तु : १."
+
+#. i18n: ectx: label, entry (QuoteSelectionOnly), group (Composer)
+#: settings/messagecomposer.kcfg.in:18
+#, kde-format
+msgid "Only quote selected text when replying"
+msgstr "उत्तरं ददाति समये केवलं चयनितं पाठं उद्धृतं कुर्वन्तु"
+
+#. i18n: ectx: label, entry (AutoTextSignature), group (Composer)
+#: settings/messagecomposer.kcfg.in:23
+#, kde-format
+msgid "A&utomatically insert signature"
+msgstr "A&automatically हस्ताक्षर सम्मिलित करें"
+
+#. i18n: ectx: label, entry (PrependSignature), group (Composer)
+#: settings/messagecomposer.kcfg.in:27
+#, kde-format
+msgid "Insert signature above quoted text"
+msgstr "उद्धृतपाठस्य उपरि हस्ताक्षरं सम्मिलितं कुर्वन्तु"
+
+#. i18n: ectx: label, entry (DashDashSignature), group (Composer)
+#: settings/messagecomposer.kcfg.in:31
+#, kde-format
+msgid "Prepend separator to signature"
+msgstr "हस्ताक्षरं प्रति विभाजकस्य पूर्ववर्तनं कुर्वन्तु"
+
+#. i18n: ectx: label, entry (ShowBalooSearchInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.in:36
+#, kde-format
+msgid "Use addresses indexed from emails for autocompletion"
+msgstr "स्वयमेव समाप्त्यर्थं ईमेल-पत्रेभ्यः अनुक्रमित-सङ्केतानां उपयोगं कुर्वन्तु"
+
+#. i18n: ectx: whatsthis, entry (ShowBalooSearchInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.in:37
+#, kde-format
+msgid ""
+"Disable this option if you only want contacts from your addressbooks to "
+"appear in the autocompletion list in the composer's address fields."
+msgstr ""
+"यदि भवान् केवलं स्वस्य पतापुस्तकानां सम्पर्काः रचनाकारस्य पताक्षेत्रेषु स्वसमापनसूचौ दृश्यन्ते इति "
+"इच्छति तर्हि एतत् विकल्पं निष्क्रियं कुर्वन्तु ।"
+
+#. i18n: ectx: label, entry (AllowSemicolonAsAddressSeparator), group (Composer)
+#: settings/messagecomposer.kcfg.in:43
+#, kde-format
+msgid ""
+"Allow the semicolon character (';') to be used as separator in the message "
+"composer"
+msgstr "सन्देशरचयितायां अर्धविरामवर्णं (';') विभाजकरूपेण उपयोक्तुं अनुमन्यताम्"
+
+#. i18n: ectx: label, entry (ShowRecentAddressesInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.in:46
+#, kde-format
+msgid "Use recent addresses for autocompletion"
+msgstr "स्वतःसमाप्त्यर्थं अद्यतनपत्तनानां उपयोगं कुर्वन्तु"
+
+#. i18n: ectx: whatsthis, entry (ShowRecentAddressesInComposer), group (Composer)
+#: settings/messagecomposer.kcfg.in:47
+#, kde-format
+msgid ""
+"Disable this option if you do not want recently used addresses to appear in "
+"the autocompletion list in the composer's address fields."
+msgstr ""
+"यदि भवान् न इच्छति यत् सद्यः प्रयुक्ताः पतयः रचयितस्य पताक्षेत्रेषु स्वसमापनसूचौ दृश्यन्ते ।"
+
+#. i18n: ectx: label, entry (MaximumRecipients), group (Composer)
+#: settings/messagecomposer.kcfg.in:52
+#, kde-format
+msgid "Maximum number of recipient entries:"
+msgstr "अधिकतमं प्राप्तकर्ताप्रविष्टीनां संख्या : १."
+
+#. i18n: ectx: label, entry (WordWrap), group (Composer)
+#: settings/messagecomposer.kcfg.in:57
+#, kde-format
+msgid "Word &wrap at column:"
+msgstr "स्तम्भे शब्द &wrap:"
+
+#. i18n: ectx: label, entry (ImprovePlainTextOfHtmlMessage), group (Composer)
+#: settings/messagecomposer.kcfg.in:67
+#, kde-format
+msgid "Improve plain text version of HTML message"
+msgstr "HTML सन्देशस्य साधारणपाठसंस्करणं सुदृढं कुर्वन्तु"
+
+#. i18n: ectx: label, entry (CryptoAutoSign), group (Composer)
+#: settings/messagecomposer.kcfg.in:71
+#, kde-format
+msgid "Sign all messages, if possible"
+msgstr "यदि सम्भवं तर्हि सर्वेषु सन्देशेषु हस्ताक्षरं कुर्वन्तु"
+
+#. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
+#: settings/messagecomposer.kcfg.in:75
+#, kde-format
+msgid "Enable encryption, if we found keys for all recipients"
+msgstr "एन्क्रिप्शन सक्षमं कुर्वन्तु, यदि वयं सर्वेषां ग्राहकानाम् कृते कीलानि प्राप्नुमः"
+
+#. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
+#: settings/messagecomposer.kcfg.in:79
+#, kde-format
+msgid "Warn before sending unencrypted messages"
+msgstr "अगुप्तसन्देशान् प्रेषयितुं पूर्वं चेतावनीम् अदातु"
+
+#. i18n: ectx: label, entry (CryptoWarningUnsigned), group (Composer)
+#: settings/messagecomposer.kcfg.in:83
+#, kde-format
+msgid "Warn before sending unsigned messages"
+msgstr "अहस्ताक्षरितसन्देशान् प्रेषयितुं पूर्वं चेतयन्तु"
+
+#. i18n: ectx: label, entry (CryptoWarnWhenNearExpire), group (Composer)
+#: settings/messagecomposer.kcfg.in:87
+#, kde-format
+msgid "Warn if certificates/keys expire soon (configure thresholds below)"
+msgstr ""
+"यदि प्रमाणपत्राणि/कुंजीः शीघ्रमेव समाप्ताः भवन्ति तर्हि चेतयन्तु (अधः सीमाः विन्यस्यताम्)"
+
+#. i18n: ectx: label, entry (CryptoWarnOwnEncrKeyNearExpiryThresholdDays), group (Composer)
+#. i18n: ectx: label, entry (CryptoWarnEncrKeyNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.in:91 settings/messagecomposer.kcfg.in:95
+#, kde-format
+msgid ""
+"The minimum number of days that the encryption certificate should be valid "
+"before issuing a warning"
+msgstr "चेतावनी निर्गन्तुं पूर्वं एन्क्रिप्शनप्रमाणपत्रं वैधं भवितुमर्हति इति न्यूनतमदिनसङ्ख्या"
+
+#. i18n: ectx: label, entry (CryptoWarnEncrChaincertNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.in:99
+#, kde-format
+msgid ""
+"The minimum number of days that all certificates in the chain should be "
+"valid before issuing a warning"
+msgstr ""
+"चेतावनी निर्गन्तुं पूर्वं श्रृङ्खलायां सर्वाणि प्रमाणपत्राणि वैधानि भवेयुः इति न्यूनतमदिनसङ्ख्या"
+
+#. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
+#: settings/messagecomposer.kcfg.in:103
+#, kde-format
+msgid ""
+"The minimum number of days that the root certificate should be valid before "
+"issuing a warning"
+msgstr "चेतावनी निर्गन्तुं पूर्वं मूलप्रमाणपत्रं वैधं भवितुमर्हति इति न्यूनतमदिनसङ्ख्या"
+
+#. i18n: ectx: label, entry (CryptoShowKeysForApproval), group (Composer)
+#: settings/messagecomposer.kcfg.in:107
+#, kde-format
+msgid ""
+"Always show the list of encryption keys to select the one which will be used"
+msgstr "यस्य उपयोगः भविष्यति तस्य चयनार्थं सर्वदा एन्क्रिप्शन कीलानां सूचीं दर्शयन्तु"
+
+#: snippet/convertsnippetvariablemenu.cpp:27
+#, kde-format
+msgid "To"
+msgstr "इत्यस्मै"
+
+#: snippet/convertsnippetvariablemenu.cpp:28
+#, kde-format
+msgid "To Field Address"
+msgstr "To Field Address इति"
+
+#: snippet/convertsnippetvariablemenu.cpp:31
+#, kde-format
+msgid "To Field Last Name"
+msgstr "To Field Last Name इति"
+
+#: snippet/convertsnippetvariablemenu.cpp:34
+#, kde-format
+msgid "To Field First Name"
+msgstr "To Field प्रथमनाम"
+
+#: snippet/convertsnippetvariablemenu.cpp:37
+#, kde-format
+msgid "To Field Name"
+msgstr "To Field Name इति"
+
+#: snippet/convertsnippetvariablemenu.cpp:42
+#, kde-format
+msgid "From"
+msgstr "इत्यस्मात्‌"
+
+#: snippet/convertsnippetvariablemenu.cpp:43
+#, kde-format
+msgid "From Field Address"
+msgstr "क्षेत्रसङ्केतः"
+
+#: snippet/convertsnippetvariablemenu.cpp:46
+#, kde-format
+msgid "From Field Last Name"
+msgstr "क्षेत्रस्य आख्यनामात्"
+
+#: snippet/convertsnippetvariablemenu.cpp:49
+#, kde-format
+msgid "From Field First Name"
+msgstr "क्षेत्रात् प्रथमनाम"
+
+#: snippet/convertsnippetvariablemenu.cpp:52
+#, kde-format
+msgid "From Field Name"
+msgstr "क्षेत्रनामात्"
+
+#: snippet/convertsnippetvariablemenu.cpp:57
+#, kde-format
+msgid "CC"
+msgstr "सीसी"
+
+#: snippet/convertsnippetvariablemenu.cpp:58
+#, kde-format
+msgid "CC Field Address"
+msgstr "सीसी क्षेत्र पता"
+
+#: snippet/convertsnippetvariablemenu.cpp:61
+#, kde-format
+msgid "CC Field Last Name"
+msgstr "सीसी क्षेत्र Last Name"
+
+#: snippet/convertsnippetvariablemenu.cpp:64
+#, kde-format
+msgid "CC Field First Name"
+msgstr "सीसी क्षेत्र प्रथम नाम"
+
+#: snippet/convertsnippetvariablemenu.cpp:67
+#, kde-format
+msgid "CC Field Name"
+msgstr "सी सी क्षेत्र नाम"
+
+#: snippet/convertsnippetvariablemenu.cpp:73
+#, kde-format
+msgid "Bcc"
+msgstr "Bcc"
+
+#: snippet/convertsnippetvariablemenu.cpp:74
+#, kde-format
+msgid "BCC Field Address"
+msgstr "बीसीसी क्षेत्र पता"
+
+#: snippet/convertsnippetvariablemenu.cpp:77
+#, kde-format
+msgid "BCC Field Last Name"
+msgstr "BCC Field Last Name"
+
+#: snippet/convertsnippetvariablemenu.cpp:80
+#, kde-format
+msgid "BCC Field First Name"
+msgstr "BCC Field प्रथम नाम"
+
+#: snippet/convertsnippetvariablemenu.cpp:83
+#, kde-format
+msgid "BCC Field Name"
+msgstr "बीसीसी क्षेत्र नाम"
+
+#: snippet/convertsnippetvariablemenu.cpp:89
+#, kde-format
+msgid "Attachment"
+msgstr "संलग्न"
+
+#: snippet/convertsnippetvariablemenu.cpp:90
+#, kde-format
+msgid "Number Of Attachments"
+msgstr "Number Of Attachments इति"
+
+#: snippet/convertsnippetvariablemenu.cpp:93
+#, kde-format
+msgid "Names"
+msgstr "नामानि"
+
+#: snippet/convertsnippetvariablemenu.cpp:96
+#, kde-format
+msgid "Filenames"
+msgstr "सञ्चिकानामानि"
+
+#: snippet/convertsnippetvariablemenu.cpp:99
+#, kde-format
+msgid "Names and Sizes"
+msgstr "नामानि आकाराणि च"
+
+#: snippet/convertsnippetvariablemenu.cpp:103
+#: snippet/convertsnippetvariablemenu.cpp:126
+#, kde-format
+msgid "Date/Time"
+msgstr "तिथि/समय"
+
+#: snippet/convertsnippetvariablemenu.cpp:104
+#: snippet/convertsnippetvariablemenu.cpp:157
+#, kde-format
+msgid "Day Of Week (%1)"
+msgstr "सप्ताहस्य दिवसः (%1) ."
+
+#: snippet/convertsnippetvariablemenu.cpp:107
+#, kde-format
+msgid "Date (%1)"
+msgstr "तिथि (%1) ."
+
+#: snippet/convertsnippetvariablemenu.cpp:110
+#, kde-format
+msgid "Long Date (%1)"
+msgstr "दीर्घतिथि (%1) २."
+
+#: snippet/convertsnippetvariablemenu.cpp:113
+#, kde-format
+msgid "Custom Date (%1)"
+msgstr "कस्टमतिथिः (%1) ."
+
+#: snippet/convertsnippetvariablemenu.cpp:116
+#, kde-format
+msgid "Short Time (%1)"
+msgstr "अल्पकाल (%1) २."
+
+#: snippet/convertsnippetvariablemenu.cpp:119
+#, kde-format
+msgid "Time (%1)"
+msgstr "समय (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:122
+#, kde-format
+msgid "Year (%1)"
+msgstr "वर्ष (%1) २."
+
+#: snippet/convertsnippetvariablemenu.cpp:130
+#, kde-format
+msgid "Last Year (%1)"
+msgstr "गतवर्षम् (%1) २."
+
+#: snippet/convertsnippetvariablemenu.cpp:133
+#, kde-format
+msgid "Next Year (%1)"
+msgstr "अग्रिमवर्षम् (%1) २."
+
+#: snippet/convertsnippetvariablemenu.cpp:136
+#, kde-format
+msgid "Month Number (%1)"
+msgstr "माससङ्ख्या (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:139
+#, kde-format
+msgid "Day Number (%1)"
+msgstr "दिवससङ्ख्या (%1) २."
+
+#: snippet/convertsnippetvariablemenu.cpp:142
+#, kde-format
+msgid "Day Of Month (%1)"
+msgstr "मासस्य दिवसः (%1) ."
+
+#: snippet/convertsnippetvariablemenu.cpp:145
+#, kde-format
+msgid "Week Number (%1)"
+msgstr "सप्ताहसङ्ख्या (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:148
+#, kde-format
+msgid "Month Name Short (%1)"
+msgstr "मासस्य नाम लघु (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:151
+#, kde-format
+msgid "Month Name Long (%1)"
+msgstr "मासस्य नाम दीर्घः (%1) ."
+
+#: snippet/convertsnippetvariablemenu.cpp:154
+#, kde-format
+msgid "Last Month Name Long (%1)"
+msgstr "अन्तिममासस्य नाम दीर्घः (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:160
+#, kde-format
+msgid "Day Of Week Name Short (%1)"
+msgstr "सप्ताहस्य दिवसस्य नाम लघु (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:163
+#, kde-format
+msgid "Day Of Week Name Long (%1)"
+msgstr "सप्ताहस्य दिवसस्य नाम दीर्घः (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:166
+#, kde-format
+msgid "Year Last Month (%1)"
+msgstr "वर्ष गतमास (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:171
+#, kde-format
+msgid "Misc"
+msgstr "विविधाः"
+
+#: snippet/convertsnippetvariablemenu.cpp:172
+#, kde-format
+msgid "Subject"
+msgstr "विषयः"
+
+#: utils/util.cpp:235
+#, kde-format
+msgctxt ""
+"comma-separated list of keywords that are used to detect whether the user "
+"forgot to attach his attachment. Do not add space between words."
+msgid "attachment,attached"
+msgstr ""
+
+#: utils/util.cpp:269
+#, kde-format
+msgid ""
+"The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
+"create a mail dispatcher?"
+msgstr ""
+"मेल प्रेषकः न स्थापितः अतः मेल प्रेषयितुं न शक्यते । किं भवान् मेल प्रेषकं निर्मातुम् इच्छति ?"
+
+#: utils/util.cpp:270
+#, kde-format
+msgctxt "@title:window"
+msgid "No mail dispatcher."
+msgstr ""
+
+#: utils/util.cpp:272
+#, kde-format
+msgctxt "@action:button"
+msgid "Create Mail Dispatcher"
+msgstr ""
+
+#: utils/util.cpp:287
+#, kde-format
+msgid ""
+"The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
+"it online?"
+msgstr ""
+"मेल प्रेषकः अफलाइनः अस्ति, अतः मेल प्रेषयितुं न शक्यते । किं भवन्तः तत् ऑनलाइन कर्तुम् "
+"इच्छन्ति ?"
+
+#: utils/util.cpp:288
+#, kde-format
+msgctxt "@title:window"
+msgid "Mail dispatcher offline."
+msgstr ""
+
+#: utils/util.cpp:289
+#, kde-format
+msgctxt "@action:button"
+msgid "Set Online"
+msgstr ""
