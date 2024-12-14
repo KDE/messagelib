@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-03 00:39+0000\n"
-"PO-Revision-Date: 2024-12-08 12:57+0100\n"
+"PO-Revision-Date: 2024-12-13 21:23+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -2027,7 +2027,7 @@ msgid ""
 msgstr ""
 "Desactive esta opción se quere que só se amosen os enderezos das súas "
 "axendas de enderezos na lista de completado automático dos campos de "
-"enderezo da xanela de edición de mensaxes."
+"enderezo do editor de mensaxes."
 
 #. i18n: ectx: label, entry (AllowSemicolonAsAddressSeparator), group (Composer)
 #: settings/messagecomposer.kcfg.in:43
@@ -2053,8 +2053,8 @@ msgid ""
 "the autocompletion list in the composer's address fields."
 msgstr ""
 "Desactive esta opción se non quere que se amosen os enderezos recentemente "
-"usados na lista de completado automático dos campos de enderezo da xanela de "
-"edición de mensaxes."
+"usados na lista de completado automático dos campos de enderezo do editor de "
+"mensaxes."
 
 #. i18n: ectx: label, entry (MaximumRecipients), group (Composer)
 #: settings/messagecomposer.kcfg.in:52
