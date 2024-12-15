@@ -19,12 +19,12 @@ msgstr ""
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr ""
+msgstr "भवतः नामानि"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
-msgstr ""
+msgstr "भवतः ईमेलपत्राणि"
 
 #: attachment/attachmentcompressjob.cpp:50
 #, kde-format
@@ -63,13 +63,13 @@ msgstr "पठनार्थं %1 उद्घाटयितुं न शक
 #, kde-format
 msgctxt "a file called 'unknown.ext'"
 msgid "unknown%1"
-msgstr ""
+msgstr "अज्ञात%1"
 
 #: attachment/attachmentfromurljob.cpp:70
 #, kde-format
 msgctxt "a file called 'unknown'"
 msgid "unknown"
-msgstr ""
+msgstr "अज्ञात"
 
 #: attachment/attachmentfromurljob.cpp:102
 #, kde-format
@@ -184,7 +184,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Attachment Properties"
-msgstr ""
+msgstr "आसक्तिगुणाः"
 
 #: attachment/attachmentupdatejob.cpp:40
 #, kde-format
@@ -197,7 +197,7 @@ msgstr "URL रिक्तम् अस्ति।"
 #, kde-format
 msgctxt "MIME type of this attachment"
 msgid "Type:"
-msgstr ""
+msgstr "प्रकारः:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: attachment/ui/attachmentpropertiesdialog.ui:82
@@ -205,7 +205,7 @@ msgstr ""
 #, kde-format
 msgctxt "size of the attachment"
 msgid "Size:"
-msgstr ""
+msgstr "आकृति:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: attachment/ui/attachmentpropertiesdialog.ui:109
@@ -213,7 +213,7 @@ msgstr ""
 #, kde-format
 msgctxt "file name of the attachment"
 msgid "Name:"
-msgstr ""
+msgstr "नामः:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #. i18n: ectx: property (text), widget (QLabel, descriptionLabel)
@@ -222,7 +222,7 @@ msgstr ""
 #, kde-format
 msgctxt "description of the attachment"
 msgid "Description:"
-msgstr ""
+msgstr "वर्णनम्‌:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: attachment/ui/attachmentpropertiesdialog.ui:169
@@ -230,7 +230,7 @@ msgstr ""
 #, kde-format
 msgctxt "encoding of the attachment"
 msgid "Encoding:"
-msgstr ""
+msgstr "एन्कोडिंग् : १."
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoDisplay)
 #: attachment/ui/attachmentpropertiesdialog.ui:187
@@ -308,7 +308,7 @@ msgstr "ईमेल-संलग्नकानाम् अनुमतं य
 #, kde-format
 msgctxt "invalid time specified"
 msgid "unknown"
-msgstr ""
+msgstr "अज्ञात"
 
 #: utils/dateformatter.cpp:175
 #, kde-format
@@ -324,10 +324,10 @@ msgstr "कालः %1"
 #, kde-format
 msgctxt "1. weekday, 2. time"
 msgid "%1 %2"
-msgstr ""
+msgstr "%1 %2"
 
 #: utils/stringutil.cpp:415
 #, kde-format
 msgctxt "signal that this email is defined in my identity"
 msgid "Me"
-msgstr ""
+msgstr "अहम्‌"

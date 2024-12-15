@@ -23,7 +23,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to compress attachment"
-msgstr ""
+msgstr "आसक्तिं संपीडयितुं असफलम्"
 
 #: attachment/attachmentcontrollerbase.cpp:177
 #, kde-format
@@ -36,75 +36,75 @@ msgstr "संपीडितः आसक्तिः मूलस्य अप
 #, kde-format
 msgctxt "Do not compress"
 msgid "Keep"
-msgstr ""
+msgstr "स्थापय"
 
 #: attachment/attachmentcontrollerbase.cpp:181
 #, kde-format
 msgctxt "@action:button"
 msgid "Compress"
-msgstr ""
+msgstr "संपीडयन्तु"
 
 #: attachment/attachmentcontrollerbase.cpp:200
 #: attachment/attachmentcontrollerbase.cpp:960
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach file"
-msgstr ""
+msgstr "सञ्चिकां संलग्नं कर्तुं असफलम्"
 
 #: attachment/attachmentcontrollerbase.cpp:273
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to reload attachment"
-msgstr ""
+msgstr "संलग्नकं पुनः लोड् कर्तुं असफलम्"
 
 #: attachment/attachmentcontrollerbase.cpp:320
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
-msgstr ""
+msgstr "&Open With"
 
 #: attachment/attachmentcontrollerbase.cpp:340
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
-msgstr ""
+msgstr "&इतर..."
 
 #: attachment/attachmentcontrollerbase.cpp:342
 #: attachment/attachmentcontrollerbase.cpp:350
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
-msgstr ""
+msgstr "&Open With..."
 
 #: attachment/attachmentcontrollerbase.cpp:376
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach public key"
-msgstr ""
+msgstr "सार्वजनिककुंजी संलग्नं कर्तुं असफलम्"
 
 #: attachment/attachmentcontrollerbase.cpp:390
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach vCard"
-msgstr ""
+msgstr "vCard संलग्नं कर्तुं असफलम्"
 
 #: attachment/attachmentcontrollerbase.cpp:403
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach text from clipboard"
-msgstr ""
+msgstr "क्लिप्बोर्डतः पाठं संलग्नं कर्तुं असफलम्"
 
 #: attachment/attachmentcontrollerbase.cpp:451
 #, kde-format
 msgctxt "@action"
 msgid "Attach &Public Key..."
-msgstr ""
+msgstr "संलग्न &सार्वजनिक कुंजी..."
 
 #: attachment/attachmentcontrollerbase.cpp:454
 #, kde-format
 msgctxt "@action"
 msgid "Attach &My Public Key"
-msgstr ""
+msgstr "संलग्नं &My Public Key"
 
 #: attachment/attachmentcontrollerbase.cpp:457
 #: attachment/attachmentcontrollerbase.cpp:462
@@ -133,7 +133,7 @@ msgstr "&निर्देशिका संलग्न करें..."
 #, kde-format
 msgctxt "@action"
 msgid "Attach Own vCard"
-msgstr ""
+msgstr "स्वस्य vCard संलग्नं कुर्वन्तु"
 
 #: attachment/attachmentcontrollerbase.cpp:472
 #, kde-format
@@ -169,25 +169,25 @@ msgstr "अपाकरोति"
 #, kde-format
 msgctxt "to open"
 msgid "Open"
-msgstr ""
+msgstr "उद्घाटित"
 
 #: attachment/attachmentcontrollerbase.cpp:507
 #, kde-format
 msgctxt "to view"
 msgid "View"
-msgstr ""
+msgstr "दृश्यं"
 
 #: attachment/attachmentcontrollerbase.cpp:512
 #, kde-format
 msgctxt "to edit"
 msgid "Edit"
-msgstr ""
+msgstr "सम्पादन"
 
 #: attachment/attachmentcontrollerbase.cpp:517
 #, kde-format
 msgctxt "@action"
 msgid "Edit With..."
-msgstr ""
+msgstr "सम्पादयतु सह..."
 
 #: attachment/attachmentcontrollerbase.cpp:522
 #, kde-format
@@ -203,19 +203,19 @@ msgstr "Save As..."
 #, kde-format
 msgctxt "@action"
 msgid "Attachment Pr&operties..."
-msgstr ""
+msgstr "लगाव Pr&operties..."
 
 #: attachment/attachmentcontrollerbase.cpp:532
 #, kde-format
 msgctxt "@action"
 msgid "Properties"
-msgstr ""
+msgstr "गुणाः"
 
 #: attachment/attachmentcontrollerbase.cpp:540
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
-msgstr ""
+msgstr "All इति चिनोतु"
 
 #: attachment/attachmentcontrollerbase.cpp:543
 #, kde-format
@@ -234,7 +234,7 @@ msgstr "KMail अस्थायीसञ्चिकायां संलग�
 #, kde-format
 msgctxt "@title:window"
 msgid "Unable to open attachment"
-msgstr ""
+msgstr "आसक्तिं उद्घाटयितुं असमर्थः"
 
 #: attachment/attachmentcontrollerbase.cpp:713
 #, kde-format
@@ -245,7 +245,7 @@ msgstr "केमेलः संलग्नकं उद्घाटयित�
 #, kde-format
 msgctxt "@title:window"
 msgid "Unable to edit attachment"
-msgstr ""
+msgstr "संलग्नकं सम्पादयितुं असमर्थः"
 
 #: attachment/attachmentcontrollerbase.cpp:795
 #, kde-format
@@ -256,7 +256,7 @@ msgstr "अनामिका"
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Attachment As"
-msgstr ""
+msgstr "आसक्तिः यथा रक्षतु"
 
 #: attachment/attachmentcontrollerbase.cpp:821
 #, kde-format
@@ -271,13 +271,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Save to File"
-msgstr ""
+msgstr "सञ्चिकायां रक्षतु"
 
 #: attachment/attachmentcontrollerbase.cpp:823
 #, kde-format
 msgctxt "@action:button"
 msgid "&Replace"
-msgstr ""
+msgstr "&प्रत्याहृ"
 
 #: attachment/attachmentcontrollerbase.cpp:850
 #: attachment/attachmentcontrollerbase.cpp:929
@@ -290,7 +290,7 @@ msgstr "किं भवान् वास्तवमेव एतत् न�
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach directory"
-msgstr ""
+msgstr "निर्देशिका संलग्नं कुर्वन्तु"
 
 #: attachment/attachmentcontrollerbase.cpp:852
 #: attachment/attachmentcontrollerbase.cpp:931
@@ -303,13 +303,13 @@ msgstr "आवप्"
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach Directory"
-msgstr ""
+msgstr "निर्देशिका संलग्नं कुर्वन्तु"
 
 #: attachment/attachmentcontrollerbase.cpp:895
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach File"
-msgstr ""
+msgstr "सञ्चिका संलग्नं कुर्वन्तु"
 
 #: attachment/attachmentcontrollerbase.cpp:984
 #, kde-format
@@ -330,55 +330,55 @@ msgstr "अनाम आसक्तिः"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Name: %1<br>Size: %2<br>Encoding: %3<br>MimeType=%4"
-msgstr ""
+msgstr "नाम: %1<br> आकारः %2<br> एन्कोडिंग्: %3<br> माइमप्रकार=%4"
 
 #: attachment/attachmentmodel.cpp:439
 #, kde-format
 msgctxt "@title column attachment name."
 msgid "Name"
-msgstr ""
+msgstr "नामः"
 
 #: attachment/attachmentmodel.cpp:441
 #, kde-format
 msgctxt "@title column attachment size."
 msgid "Size"
-msgstr ""
+msgstr "आकृति"
 
 #: attachment/attachmentmodel.cpp:443
 #, kde-format
 msgctxt "@title column attachment encoding."
 msgid "Encoding"
-msgstr ""
+msgstr "एन्कोडिंग्"
 
 #: attachment/attachmentmodel.cpp:445
 #, kde-format
 msgctxt "@title column attachment type."
 msgid "Type"
-msgstr ""
+msgstr "प्रकारः"
 
 #: attachment/attachmentmodel.cpp:447
 #, kde-format
 msgctxt "@title column attachment compression checkbox."
 msgid "Compress"
-msgstr ""
+msgstr "संपीडयन्तु"
 
 #: attachment/attachmentmodel.cpp:449
 #, kde-format
 msgctxt "@title column attachment encryption checkbox."
 msgid "Encrypt"
-msgstr ""
+msgstr "एन्क्रिप्ट् कुर्वन्तु"
 
 #: attachment/attachmentmodel.cpp:451
 #, kde-format
 msgctxt "@title column attachment signed checkbox."
 msgid "Sign"
-msgstr ""
+msgstr "चिह्नम्‌"
 
 #: attachment/attachmentmodel.cpp:453
 #, kde-format
 msgctxt "@title column attachment inlined checkbox."
 msgid "Suggest Automatic Display"
-msgstr ""
+msgstr "स्वचालितं प्रदर्शनं सुझातव्यम्"
 
 #: attachment/editorwatcher.cpp:60
 #, kde-format
@@ -442,7 +442,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Sign/Encrypt Message?"
-msgstr ""
+msgstr "सन्देशं हस्ताक्षरं/गोपनं कुर्वन्तु?"
 
 #: composer/composerviewbase.cpp:506
 #, kde-format
@@ -458,43 +458,43 @@ msgstr "किं भवान् चित्राणां आकारं �
 #, kde-format
 msgctxt "@title:window"
 msgid "Auto Resize Images"
-msgstr ""
+msgstr "स्वतः चित्राणि आकारान्तरं कुर्वन्तु"
 
 #: composer/composerviewbase.cpp:518
 #, kde-format
 msgctxt "@action:button"
 msgid "Auto Resize"
-msgstr ""
+msgstr "स्वतः आकारं परिवर्तयतु"
 
 #: composer/composerviewbase.cpp:519
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Resize"
-msgstr ""
+msgstr "आकारं न परिवर्तयन्तु"
 
 #: composer/composerviewbase.cpp:721
 #, kde-format
 msgctxt "@title:window"
 msgid "OpenPGP Key Expired"
-msgstr ""
+msgstr "OpenPGP कुञ्जी समाप्तम्"
 
 #: composer/composerviewbase.cpp:721
 #, kde-format
 msgctxt "@title:window"
 msgid "S/MIME Certificate Expired"
-msgstr ""
+msgstr "S/MIME प्रमाणपत्रस्य अवधिः समाप्तः"
 
 #: composer/composerviewbase.cpp:723
 #, kde-format
 msgctxt "@title:window"
 msgid "OpenPGP Key Expires Soon"
-msgstr ""
+msgstr "OpenPGP कीलस्य अवधिः शीघ्रमेव समाप्तः भवति"
 
 #: composer/composerviewbase.cpp:724
 #, kde-format
 msgctxt "@title:window"
 msgid "S/MIME Certificate Expires Soon"
-msgstr ""
+msgstr "S/MIME प्रमाणपत्रस्य अवधिः शीघ्रमेव समाप्तः भविष्यति"
 
 #: composer/composerviewbase.cpp:798 composer/composerviewbase.cpp:812
 #: composer/composerviewbase.cpp:844
@@ -561,7 +561,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Autosaving Message Failed"
-msgstr ""
+msgstr "स्वतः रक्षणं सन्देशं विफलम्"
 
 #: composer/composerviewbase.cpp:1475
 #, kde-format
@@ -582,7 +582,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "File Attachment Reminder"
-msgstr ""
+msgstr "सञ्चिका संलग्नक स्मरणम्"
 
 #: composer/composerviewbase.cpp:1900
 #, kde-format
@@ -594,7 +594,7 @@ msgstr "&सञ्चिका संलग्नं कुर्वन्तु
 #, kde-format
 msgctxt "@action:button"
 msgid "&Send as Is"
-msgstr ""
+msgstr "&Is इति प्रेषयतु"
 
 #: composer/composerviewbase.cpp:1953
 #, kde-format
@@ -611,7 +611,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Sign Message?"
-msgstr ""
+msgstr "हस्ताक्षरं सन्देशः?"
 
 #: composer/composerviewbase.cpp:1960 composer/composerviewbase.cpp:1988
 #, kde-format
@@ -623,7 +623,7 @@ msgstr "&चिह्नम्‌"
 #, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Sign"
-msgstr ""
+msgstr "हस्ताक्षरं कुर्वन्तु &न कुर्वन्तु"
 
 #: composer/composerviewbase.cpp:1982
 #, kde-format
@@ -647,13 +647,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Unsigned?"
-msgstr ""
+msgstr "अहस्ताक्षरितं प्रेषयतु?"
 
 #: composer/composerviewbase.cpp:2015
 #, kde-format
 msgctxt "@action:button"
 msgid "Send &Unsigned"
-msgstr ""
+msgstr "प्रेषयतु &अनहस्ताक्षरितम्"
 
 #: composer/composerviewbase.cpp:2030
 #, kde-format
@@ -691,13 +691,13 @@ msgstr "&चिह्नम्‌"
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsigned-Message Warning"
-msgstr ""
+msgstr "अहस्ताक्षरित-सन्देश चेतावनी"
 
 #: composer/composerviewbase.cpp:2042
 #, kde-format
 msgctxt "@action:button"
 msgid "Send &As Is"
-msgstr ""
+msgstr "प्रेषयतु &यथा अस्ति"
 
 #: composer/composerviewbase.cpp:2089
 #, kde-format
@@ -764,7 +764,7 @@ msgstr "&गुप्तीकरण"
 #, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Encrypt"
-msgstr ""
+msgstr "एन्क्रिप्ट् कुर्वन्तु &न कुर्वन्तु"
 
 #: composer/composerviewbase.cpp:2150
 #, kde-format
@@ -780,13 +780,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Unencrypted?"
-msgstr ""
+msgstr "अगुप्तं प्रेषयतु?"
 
 #: composer/composerviewbase.cpp:2157 composer/keyresolver.cpp:1345
 #, kde-format
 msgctxt "@action:button"
 msgid "Send &Unencrypted"
-msgstr ""
+msgstr "प्रेषयतु &अगुप्तम्"
 
 #: composer/composerviewbase.cpp:2172
 #, kde-format
@@ -823,7 +823,7 @@ msgstr "&सर्वभागाः एन्क्रिप्ट् कुर
 #, kde-format
 msgctxt "@title:window"
 msgid "Unencrypted Message Warning"
-msgstr ""
+msgstr "अगुप्तसन्देश चेतावनी"
 
 #: composer/keyresolver.cpp:314
 #, kde-format
@@ -874,7 +874,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Not Fully Trusted Encryption Keys"
-msgstr ""
+msgstr "न पूर्णतया विश्वसनीयाः एन्क्रिप्शन कुञ्जिकाः"
 
 #: composer/keyresolver.cpp:647
 #, kde-format
@@ -897,7 +897,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Unusable Encryption Keys"
-msgstr ""
+msgstr "अनुपयोगी एन्क्रिप्शन कुञ्जी"
 
 #: composer/keyresolver.cpp:689
 #, kde-format
@@ -919,7 +919,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Unusable Signing Keys"
-msgstr ""
+msgstr "अनुपयोगी हस्ताक्षरकुंजी"
 
 #: composer/keyresolver.cpp:1000
 #, kde-format
@@ -970,7 +970,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not OpenPGP-Sign"
-msgstr ""
+msgstr "OpenPGP-Sign न कुर्वन्तु"
 
 #: composer/keyresolver.cpp:1079
 #, kde-format
@@ -988,7 +988,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not S/MIME-Sign"
-msgstr ""
+msgstr "S/MIME-Sign न कुर्वन्तु"
 
 #: composer/keyresolver.cpp:1149
 #, kde-format
@@ -1005,7 +1005,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "No signing possible"
-msgstr ""
+msgstr "हस्ताक्षरं सम्भवं नास्ति"
 
 #: composer/keyresolver.cpp:1316
 #, kde-format
@@ -1021,7 +1021,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Missing Key Warning"
-msgstr ""
+msgstr "लापता कुञ्जी चेतावनी"
 
 #: composer/keyresolver.cpp:1335
 #, kde-format
@@ -1073,6 +1073,9 @@ msgid ""
 "\n"
 "Please re-select the certificate(s) which should be used for this recipient."
 msgstr ""
+"\"%1\" कृते गोपनप्रमाणपत्रस्य (प्रमाणपत्राणां) समस्या अस्ति ।\n"
+"\n"
+"कृपया प्रमाणपत्रं (प्रमाणपत्राणि) पुनः चयनं कुर्वन्तु यत् अस्य प्राप्तकर्तायाः कृते उपयोक्तव्यम् ।"
 
 #: composer/keyresolver.cpp:1549
 #, kde-format
@@ -1086,6 +1089,10 @@ msgid ""
 "external certificates by clicking the button: search for external "
 "certificates.</qt>"
 msgstr ""
+"<qt>&quot;%1&quot; कृते वैधं विश्वसनीयं च गोपनप्रमाणपत्रं न प्राप्तम् ।<br/><br/> अस्य "
+"प्राप्तकर्तायाः कृते यत् प्रमाणपत्रं (प्रमाणपत्राणि) उपयोक्तव्यानि तत् चिनोतु । यदि सूचीयां "
+"उपयुक्तं प्रमाणपत्रं नास्ति तर्हि भवान् बाह्यप्रमाणपत्राणि अपि अन्वेष्टुं शक्नोति बटनं नुत्वा: "
+"बाह्यप्रमाणपत्राणि अन्वेष्टुम् ।</qt>"
 
 #: composer/keyresolver.cpp:1559
 #, kde-format
@@ -1097,12 +1104,15 @@ msgid ""
 "\n"
 "Select the certificate(s) which should be used for this recipient."
 msgstr ""
+"एकादशाधिकं प्रमाणपत्रं \"%1\" इत्यनेन सह मेलति ।\n"
+"\n"
+"अस्य प्राप्तकर्तायाः कृते यत् प्रमाणपत्रं (प्रमाणपत्राणि) उपयोक्तव्यानि तत् चिनोतु ।"
 
 #: contactpreference/savecontactpreferencejob.cpp:70
 #, kde-format
 msgctxt "@title:window"
 msgid "Name Selection"
-msgstr ""
+msgstr "नाम चयनम्"
 
 #: contactpreference/savecontactpreferencejob.cpp:71
 #, kde-format
@@ -1136,7 +1146,7 @@ msgstr "नूतनं स्मारकं संग्रहीतुं अ
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Date"
-msgstr ""
+msgstr "तिथिं चिनोतु"
 
 #: followupreminder/followupreminderselectdatedialog.cpp:63
 #, kde-format
@@ -1157,7 +1167,7 @@ msgstr "चयनिततिथिः वर्तमानतिथितः �
 #, kde-format
 msgctxt "@title:window"
 msgid "Invalid date"
-msgstr ""
+msgstr "अमान्य तिथि"
 
 #: followupreminder/followupreminderselectdatedialog.cpp:109
 #, kde-format
@@ -1168,7 +1178,7 @@ msgstr "चयनितं पुटं वैधं नास्ति ।"
 #, kde-format
 msgctxt "@title:window"
 msgid "Invalid folder"
-msgstr ""
+msgstr "अमान्यपुटम्"
 
 #: helper/messagefactoryng.cpp:406 helper/messagefactoryng.cpp:729
 #, kde-format
@@ -1198,13 +1208,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Image Format"
-msgstr ""
+msgstr "Image Format इति चिनोतु"
 
 #: imagescaling/imagescalingselectformat.cpp:88
 #, kde-format
 msgctxt "@action:button"
 msgid "Select Format..."
-msgstr ""
+msgstr "Format इति चयनं कुर्वन्तु..."
 
 #: imagescaling/imagescalingwidget.cpp:107
 #, kde-format
@@ -1236,7 +1246,7 @@ msgstr "कृपया न्यूनतमं अधिकतमं च म�
 #, kde-format
 msgctxt "@title:window"
 msgid "Error in minimum Maximum value"
-msgstr ""
+msgstr "न्यूनतम अधिकतममूल्ये त्रुटिः"
 
 #. i18n: ectx: property (text), widget (QCheckBox, enabledAutoResize)
 #: imagescaling/ui/imagescalingwidget.ui:17
@@ -1455,7 +1465,7 @@ msgstr "Clipboard इत्यत्र कोऽपि पाठः न प्�
 #, kde-format
 msgctxt "@title:window"
 msgid "Define Attachment Name"
-msgstr ""
+msgstr "आसक्तिनाम परिभाषयतु"
 
 #: job/attachmentclipboardjob.cpp:46
 #, kde-format
@@ -1532,7 +1542,7 @@ msgstr "%1 Content-Transfer-Encoding एतत् सन्देशं सम�
 #, kde-format
 msgctxt "@title:window"
 msgid "Message Disposition Notification Request"
-msgstr ""
+msgstr "सन्देश निपटान अधिसूचना अनुरोध"
 
 #: mdn/mdnadvicedialog.cpp:30
 #, kde-format
@@ -1618,37 +1628,37 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Distribution List"
-msgstr ""
+msgstr "वितरण सूची रक्षतु"
 
 #: recipient/distributionlistdialog.cpp:107
 #, kde-format
 msgctxt "@action:button"
 msgid "Save List"
-msgstr ""
+msgstr "सूचीं रक्षन्तु"
 
 #: recipient/distributionlistdialog.cpp:121
 #, kde-format
 msgctxt "@label:textbox Name of the distribution list."
 msgid "&Name:"
-msgstr ""
+msgstr "&नामः:"
 
 #: recipient/distributionlistdialog.cpp:125
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Name of Distribution List"
-msgstr ""
+msgstr "वितरण सूची का नाम"
 
 #: recipient/distributionlistdialog.cpp:132
 #, kde-format
 msgctxt "@title:column Name of the recipient"
 msgid "Name"
-msgstr ""
+msgstr "नामः"
 
 #: recipient/distributionlistdialog.cpp:133
 #, kde-format
 msgctxt "@title:column Email of the recipient"
 msgid "Email"
-msgstr ""
+msgstr "ईमेल"
 
 #: recipient/distributionlistdialog.cpp:240
 #, kde-format
@@ -1657,18 +1667,20 @@ msgid ""
 "There are no recipients in your list. First select some recipients, then try "
 "again."
 msgstr ""
+"भवतः सूचीयां कोऽपि प्राप्तकर्ता नास्ति। प्रथमं केचन प्राप्तकर्ताः चिनोतु, ततः पुनः प्रयासं "
+"कुर्वन्तु ।"
 
 #: recipient/distributionlistdialog.cpp:251
 #, kde-format
 msgctxt "@title:window"
 msgid "New Distribution List"
-msgstr ""
+msgstr "नवीन वितरण सूची"
 
 #: recipient/distributionlistdialog.cpp:252
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Please enter name:"
-msgstr ""
+msgstr "कृपया नाम प्रविशतु :"
 
 #: recipient/distributionlistdialog.cpp:276
 #, kde-kuit-format
@@ -1677,12 +1689,14 @@ msgid ""
 "<para>Distribution list with the given name <resource>%1</resource> already "
 "exists. Please select a different name.</para>"
 msgstr ""
+"<para>दत्तनाम्ना सह वितरणसूची <resource>%1</resource> पूर्वमेव अस्ति । कृपया भिन्नं "
+"नाम चिनोतु ।</para>"
 
 #: recipient/distributionlistdialog.cpp:285
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Address Book"
-msgstr ""
+msgstr "पतापुस्तकं चिनोतु"
 
 #: recipient/distributionlistdialog.cpp:286
 #, kde-format
@@ -1710,113 +1724,113 @@ msgstr "सीसी"
 #, kde-format
 msgctxt "@label:listbox Blind carbon copy recipient of an email message."
 msgid "BCC"
-msgstr ""
+msgstr "बी.सी.सी"
 
 #: recipient/recipient.cpp:105
 #, kde-format
 msgctxt "@label:listbox Reply-To recipient of an email message."
 msgid "Reply-To"
-msgstr ""
+msgstr "उत्तरम्-To"
 
 #: recipient/recipient.cpp:110
 #, kde-kuit-format
 msgctxt "@label:listbox"
 msgid "<placeholder>Undefined Recipient Type</placeholder>"
-msgstr ""
+msgstr "<placeholder>अनिर्धारितः प्राप्तकर्ता प्रकारः</placeholder>"
 
 #: recipient/recipientline.cpp:71
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Select type of recipient"
-msgstr ""
+msgstr "प्राप्तकर्तायाः प्रकारं चिनोतु"
 
 #: recipient/recipientline.cpp:72
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Set the list of email addresses to receive this message"
-msgstr ""
+msgstr "एतत् सन्देशं प्राप्तुं ईमेल-सङ्केतानां सूचीं सेट् कुर्वन्तु"
 
 #: recipient/recipientseditor.cpp:112
 #, kde-format
 msgctxt "@info:status"
 msgid "Truncating recipients list to %2 of %1 entry."
 msgid_plural "Truncating recipients list to %2 of %1 entries."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 प्रविष्टेः %2 यावत् प्राप्तकर्तानां सूचीं कटयन् ।"
+msgstr[1] "%1 प्रविष्टीनां %2 यावत् प्राप्तकर्तानां सूचीं कटयन् ।"
 
 #: recipient/recipientseditorsidewidget.cpp:28
 #, kde-format
 msgctxt "@action:button"
 msgid "Save List..."
-msgstr ""
+msgstr "सूचीं रक्षतु..."
 
 #: recipient/recipientseditorsidewidget.cpp:29
 #, kde-format
 msgctxt "@action:button Open recipient selection dialog."
 msgid "Se&lect..."
-msgstr ""
+msgstr "विचि..."
 
 #: recipient/recipientseditorsidewidget.cpp:46
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save recipients as distribution list"
-msgstr ""
+msgstr "प्राप्तकर्तान् वितरणसूचीरूपेण रक्षन्तु"
 
 #: recipient/recipientseditorsidewidget.cpp:50
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select recipients from address book"
-msgstr ""
+msgstr "पतापुस्तकात् प्राप्तकर्तान् चिनुत"
 
 #: recipient/recipientseditorsidewidget.cpp:77
 #, kde-format
 msgctxt "@info:status No recipients selected"
 msgid "No recipients"
-msgstr ""
+msgstr "न ग्राहकाः"
 
 #: recipient/recipientseditorsidewidget.cpp:79
 #, kde-format
 msgctxt "@info:status Number of recipients selected"
 msgid "1 recipient"
 msgid_plural "%1 recipients"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "१ ग्राहकः"
+msgstr[1] "%1 प्राप्तकर्ताः"
 
 #: recipient/recipientseditorsidewidget.cpp:129
 #, kde-format
 msgctxt "@info:tooltip %1 list of emails"
 msgid "To:%1"
-msgstr ""
+msgstr "To:%1"
 
 #: recipient/recipientseditorsidewidget.cpp:131
 #, kde-format
 msgctxt "@info:tooltip %1 list of emails"
 msgid "CC:%1"
-msgstr ""
+msgstr "सीसी:%1"
 
 #: recipient/recipientseditorsidewidget.cpp:134
 #, kde-format
 msgctxt "@info:tooltip %1 list of emails"
 msgid "BCC:%1"
-msgstr ""
+msgstr "BCC:%1"
 
 #: recipient/recipientseditorsidewidget.cpp:137
 #, kde-format
 msgctxt "@info:tooltip %1 list of emails"
 msgid "Reply-To:%1"
-msgstr ""
+msgstr "उत्तरम्-To:%1"
 
 #: recipient/recipientspicker.cpp:49
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Recipient"
-msgstr ""
+msgstr "प्राप्तकर्ता चयन करें"
 
 #: recipient/recipientspicker.cpp:61
 #, kde-format
 msgctxt "@action:button"
 msgid "Search &Directory Service"
-msgstr ""
+msgstr "अन्वेषण &निर्देशिका सेवा"
 
 #: recipient/recipientspicker.cpp:80
 #, kde-format
@@ -1842,8 +1856,8 @@ msgstr "&BCC इति योजयन्तु"
 #, kde-format
 msgid "%1 selected email"
 msgid_plural "%1 selected emails"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%1 इत्यनेन चयनितं ईमेल"
+msgstr[1] "%1 चयनितं ईमेल"
 
 #: recipient/recipientspicker.cpp:173
 #, kde-format
@@ -1855,7 +1869,11 @@ msgid_plural ""
 "%2.\n"
 "Please adapt the selection."
 msgstr[0] ""
+"भवान् १ प्राप्तकर्ता चिनोति स्म । अधिकतमसमर्थितप्राप्तकानां संख्या %2 अस्ति ।\n"
+"कृपया चयनं अनुकूलितं कुर्वन्तु।"
 msgstr[1] ""
+"भवान् %1 प्राप्तकर्तान् चिनोति । अधिकतमसमर्थितप्राप्तकानां संख्या %2 अस्ति ।\n"
+"कृपया चयनं अनुकूलितं कुर्वन्तु।"
 
 #: recipient/recipientspicker.cpp:190
 #, kde-format
@@ -1882,7 +1900,7 @@ msgstr "पश्चात् प्रेषयतु"
 #, kde-format
 msgctxt "@option:check"
 msgid "Delay"
-msgstr ""
+msgstr "विलम्बः"
 
 #: sendlater/sendlaterdialog.cpp:65
 #, kde-format
@@ -2319,7 +2337,7 @@ msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
 "forgot to attach his attachment. Do not add space between words."
 msgid "attachment,attached"
-msgstr ""
+msgstr "आसक्तिः,सक्तः"
 
 #: utils/util.cpp:269
 #, kde-format
@@ -2333,13 +2351,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "No mail dispatcher."
-msgstr ""
+msgstr "मेल प्रेषकः नास्ति।"
 
 #: utils/util.cpp:272
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
-msgstr ""
+msgstr "मेल डिस्पैचर रचयन्तु"
 
 #: utils/util.cpp:287
 #, kde-format
@@ -2354,10 +2372,10 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
-msgstr ""
+msgstr "मेल प्रेषकः अफलाइन।"
 
 #: utils/util.cpp:289
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"
-msgstr ""
+msgstr "Online सेट् कुर्वन्तु"

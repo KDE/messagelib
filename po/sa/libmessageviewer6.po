@@ -38,29 +38,29 @@ msgstr "प्रमाणपत्रस्य आयातस्य स्थ�
 #, kde-format
 msgid "1 new certificate was imported."
 msgid_plural "%1 new certificates were imported."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "१ नूतनं प्रमाणपत्रं आयातितम् ।"
+msgstr[1] "%1 नूतनानि प्रमाणपत्राणि आयातानि।"
 
 #: messagepartthemes/default/templates/certmessagepart.html:16
 #, kde-format
 msgid "1 certificate was unchanged."
 msgid_plural "%1 certificates were unchanged."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "१ प्रमाणपत्रं अपरिवर्तितम् आसीत् ।"
+msgstr[1] "%1 प्रमाणपत्राणि अपरिवर्तितानि आसन्।"
 
 #: messagepartthemes/default/templates/certmessagepart.html:19
 #, kde-format
 msgid "1 new secret key was imported."
 msgid_plural "%1 new secret keys were imported."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "१ नूतनं गुप्तकुंजी आयातितम् ।"
+msgstr[1] "%1 नूतनाः गुप्तकुञ्जिकाः आयाताः ।"
 
 #: messagepartthemes/default/templates/certmessagepart.html:22
 #, kde-format
 msgid "1 secret key was unchanged."
 msgid_plural "%1 secret keys were unchanged."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "१ गुप्तकुंजी अपरिवर्तिता आसीत् ।"
+msgstr[1] "%1 गुप्तकुञ्जिकाः अपरिवर्तिताः आसन् ।"
 
 #: messagepartthemes/default/templates/certmessagepart.html:28
 msgid "Sorry, no details on certificate import available."
@@ -74,7 +74,7 @@ msgstr "प्रमाणपत्रस्य आयातविवरणम�
 #, kde-format
 msgctxt "Certificate import failed."
 msgid "Failed: %1 (%2)"
-msgstr ""
+msgstr "असफलम् : %1 (%2) ."
 
 #: messagepartthemes/default/templates/encapsulatedrfc822messagepart.html:5
 #: messagepartthemes/default/templates/encapsulatedrfc822messagepart.html:7
@@ -114,13 +114,13 @@ msgstr "अज्ञात कील"
 #, kde-format
 msgctxt "Compliance: status/type of compliance"
 msgid "Compliance: %1"
-msgstr ""
+msgstr "अनुपालनम् : %1"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:38
 #, kde-format
 msgctxt "Encrypted message (status/type of compliance)"
 msgid "Encrypted message (%1)"
-msgstr ""
+msgstr "एन्क्रिप्टेड् सन्देशः (%1) ."
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:40
 msgid "Encrypted message"
@@ -197,13 +197,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Key Changed"
-msgstr ""
+msgstr "कील परिवर्तिता"
 
 #: dkim-verify/dkimcheckfulljob.cpp:120
 #, kde-format
 msgctxt "@action:button"
 msgid "Store"
-msgstr ""
+msgstr "संग्रहः"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:77
 #, kde-format
@@ -240,22 +240,22 @@ msgstr "प्रतिलिपि कुञ्जी"
 #, kde-format
 msgid "Remove Key"
 msgid_plural "Remove Keys"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "कुञ्जी निष्कासयतु"
+msgstr[1] "कीलानि निष्कासयन्तु"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:81
 #, kde-format
 msgid "Do you want to delete this key?"
 msgid_plural "Do you want to delete these keys?"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "किं भवान् एतत् कुञ्जी विलोपयितुम् इच्छति ?"
+msgstr[1] "एतानि कीलानि विलोपयितुम् इच्छति वा ?"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:82
 #, kde-format
 msgid "Delete Key"
 msgid_plural "Delete Keys"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "कुञ्जी विलोपयतु"
+msgstr[1] "कुञ्जी विलोपयन्तु"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:92
 #: dkim-verify/dkimmanageruleswidget.cpp:223
@@ -272,13 +272,13 @@ msgstr "किं भवान् सर्वाणि कीलानि व�
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Keys"
-msgstr ""
+msgstr "कुञ्जी विलोपयन्तु"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:33
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search..."
-msgstr ""
+msgstr "अन्वेषण..."
 
 #: dkim-verify/dkimmanagerulescombobox.cpp:20
 #, kde-format
@@ -299,25 +299,25 @@ msgstr "यदि हस्ताक्षरं न कृतम् तर्�
 #, kde-format
 msgctxt "@action:button"
 msgid "Export..."
-msgstr ""
+msgstr "निर्यात..."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:31
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Rule"
-msgstr ""
+msgstr "नियमं विन्यस्तं कुर्वन्तु"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:42
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Rule..."
-msgstr ""
+msgstr "नियमं योजयतु..."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:47
 #, kde-format
 msgctxt "@action:button"
 msgid "Import..."
-msgstr ""
+msgstr "आयात..."
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
 #, kde-format
@@ -329,14 +329,14 @@ msgstr "न नियमाः प्राप्यन्ते"
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Rules"
-msgstr ""
+msgstr "निर्यात नियम"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
 #: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Rules"
-msgstr ""
+msgstr "आयात नियम"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:93
 #, kde-format
@@ -407,7 +407,7 @@ msgstr "किं भवन्तः एतत् नियमं विलो�
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Rule"
-msgstr ""
+msgstr "नियमः विलोपयतु"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:225
 #, kde-format
@@ -418,25 +418,25 @@ msgstr "किं भवन्तः सर्वान् नियमान्
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Rules"
-msgstr ""
+msgstr "नियमाः विलोपयन्तु"
 
 #: dkim-verify/dkimruledialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Rule"
-msgstr ""
+msgstr "नियमं योजयतु"
 
 #: dkim-verify/dkimruledialog.cpp:73
 #, kde-format
 msgctxt "@title:window"
 msgid "Modify Rule"
-msgstr ""
+msgstr "नियमं परिवर्तयतु"
 
 #: dkim-verify/dkimrulewidget.cpp:18
 #, kde-format
 msgctxt "@option:check"
 msgid "Enabled"
-msgstr ""
+msgstr "सक्षमम्"
 
 #: dkim-verify/dkimrulewidget.cpp:36
 #, kde-format
@@ -457,7 +457,7 @@ msgstr "इत्यस्मात्‌:"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Use '*' to specify all emails from domain"
-msgstr ""
+msgstr "डोमेनतः सर्वाणि ईमेल-पत्राणि निर्दिष्टुं '*' इत्यस्य उपयोगं कुर्वन्तु"
 
 #: dkim-verify/dkimrulewidget.cpp:51
 #, kde-format
@@ -643,7 +643,7 @@ msgstr "Public Key अतीव लघु"
 #, kde-format
 msgctxt "method name: info about it from parsing"
 msgid "%1: %2"
-msgstr ""
+msgstr "%1: %2"
 
 #: dkim-verify/dkimwidgetinfo.cpp:253
 #, kde-format
@@ -832,7 +832,7 @@ msgstr ""
 #, kde-format
 msgctxt "View->"
 msgid "&Headers"
-msgstr ""
+msgstr "&शीर्षकाः"
 
 #: header/headerstylemenumanager.cpp:109
 #, kde-format
@@ -858,7 +858,7 @@ msgstr "[vCard] ९."
 #, kde-format
 msgctxt "To-field of the mailheader."
 msgid "To: "
-msgstr ""
+msgstr "इत्यस्मै: "
 
 #: header/plainheaderstyle.cpp:128
 #, kde-format
@@ -879,19 +879,19 @@ msgstr "उत्तरं ददातु : १. "
 #, kde-format
 msgctxt "@action"
 msgid "Ignore"
-msgstr ""
+msgstr "उपेक्षा"
 
 #: mdn/mdnwarningwidget.cpp:15
 #, kde-format
 msgctxt "@action"
 msgid "Send"
-msgstr ""
+msgstr "प्रेषयतु"
 
 #: mdn/mdnwarningwidget.cpp:16
 #, kde-format
 msgctxt "@action"
 msgid "Send Deny"
-msgstr ""
+msgstr "अस्वीकारं प्रेषयतु"
 
 #: messagepartthemes/default/defaultrenderer.cpp:69
 #, kde-format
@@ -988,7 +988,7 @@ msgstr "दुष्टहस्ताक्षरम्।"
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Remote Content"
-msgstr ""
+msgstr "दूरस्थसामग्री विन्यस्तं कुर्वन्तु"
 
 #: remote-content/remotecontentconfigurewidget.cpp:52
 #, kde-format
@@ -1004,13 +1004,13 @@ msgstr "किं भवान् एतत् नियमं '%1' विलो
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Remote Content"
-msgstr ""
+msgstr "दूरस्थसामग्री सम्पादयतु"
 
 #: remote-content/remotecontentconfigurewidget.cpp:123
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Remote Content"
-msgstr ""
+msgstr "दूरस्थ सामग्री योजयतु"
 
 #: remote-content/remotecontentconfigurewidget.cpp:132
 #, kde-format
@@ -1021,7 +1021,7 @@ msgstr "एकः प्रविष्टिः पूर्वमेव एत
 #, kde-format
 msgctxt "@title:window"
 msgid "Add new Url"
-msgstr ""
+msgstr "नूतनं Url योजयन्तु"
 
 #: remote-content/remotecontentmenu.cpp:17
 #, kde-format
@@ -1063,7 +1063,7 @@ msgstr "क्षेत्र:"
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"
-msgstr ""
+msgstr "वर्णन"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:34
 #, kde-format
@@ -1074,25 +1074,25 @@ msgstr "एषः सन्देशः घोटाला भवितुम्
 #, kde-format
 msgctxt "@action"
 msgid "Move to Trash"
-msgstr ""
+msgstr "Trash इत्यत्र गच्छन्तु"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:44
 #, kde-format
 msgctxt "@action"
 msgid "I confirm it's not a scam"
-msgstr ""
+msgstr "अहं पुष्टिं करोमि यत् एतत् घोटाला नास्ति"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:48
 #, kde-format
 msgctxt "@action"
 msgid "Add email to whitelist"
-msgstr ""
+msgstr "श्वेतसूचौ ईमेलं योजयन्तु"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:52
 #, kde-format
 msgctxt "@action"
 msgid "Disable scam detection for all messages"
-msgstr ""
+msgstr "सर्वेषां सन्देशानां कृते घोटालेन अन्वेषणं निष्क्रियं कुर्वन्तु"
 
 #: scamdetection/scamdetectionwebengine.cpp:115
 #: scamdetection/scamdetectionwebengine.cpp:214
@@ -1628,7 +1628,7 @@ msgstr "\"%1\" इति सञ्चिका पूर्वमेव अस�
 #, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
-msgstr ""
+msgstr "सञ्चिकां अधिलेखयतु?"
 
 #: utils/messageviewerutil.cpp:159
 #, kde-format
@@ -1639,19 +1639,19 @@ msgstr "Seve Attachments To"
 #, kde-format
 msgctxt "filename for an unnamed attachment"
 msgid "attachment.1"
-msgstr ""
+msgstr "आसक्तिः ।१"
 
 #: utils/messageviewerutil.cpp:182
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Attachment"
-msgstr ""
+msgstr "आसक्तिं रक्षतु"
 
 #: utils/messageviewerutil.cpp:206
 #, kde-format
 msgctxt "filename for the %1-th unnamed attachment"
 msgid "attachment.%1"
-msgstr ""
+msgstr "आसक्तिः।%1"
 
 #: utils/messageviewerutil.cpp:304
 #, kde-format
@@ -1670,13 +1670,13 @@ msgstr "KMail प्रश्न"
 #, kde-format
 msgctxt "@action:button"
 msgid "Keep Encryption"
-msgstr ""
+msgstr "एन्क्रिप्शनं स्थापयन्तु"
 
 #: utils/messageviewerutil.cpp:307 utils/messageviewerutil.cpp:320
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Keep"
-msgstr ""
+msgstr "न स्थापयतु"
 
 #: utils/messageviewerutil.cpp:317
 #, kde-format
@@ -1690,7 +1690,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Keep Signature"
-msgstr ""
+msgstr "हस्ताक्षरं स्थापयन्तु"
 
 #: utils/messageviewerutil.cpp:383 utils/messageviewerutil.cpp:401
 #: utils/messageviewerutil.cpp:419 utils/messageviewerutil.cpp:538
@@ -1700,6 +1700,7 @@ msgid ""
 "<qt>Could not write to the file<br /><filename>%1</filename><br /><br />%2</"
 "qt>"
 msgstr ""
+"<qt>सञ्चिकायां लिखितुं न शक्तवान्<br /><filename> %1</filename><br /><br /> %2</qt>"
 
 #: utils/messageviewerutil.cpp:386
 #, kde-format
@@ -1731,8 +1732,8 @@ msgstr "ईमेल सन्देशाः (*.mbox);;सर्वसञ्च
 #, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "सन्देशं रक्षतु"
+msgstr[1] "सन्देशान् रक्षन्तु"
 
 #: utils/messageviewerutil.cpp:508
 #, kde-format
@@ -1743,7 +1744,7 @@ msgstr "%1 सञ्चिका लोड् कर्तुं न शक्�
 #, kde-format
 msgctxt "@title:window"
 msgid "Error loading message"
-msgstr ""
+msgstr "सन्देशं लोड् करणं त्रुटिः"
 
 #: utils/messageviewerutil.cpp:510
 #, kde-format
@@ -1770,7 +1771,7 @@ msgstr "सन्देशस्य रक्षणे त्रुटिः"
 #, kde-format
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
-msgstr ""
+msgstr "विलोपितम्: %1"
 
 #: utils/messageviewerutil.cpp:596
 #, kde-format
@@ -1788,7 +1789,7 @@ msgstr "&%1 इत्यनेन सह उद्घाटयन्तु"
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
-msgstr ""
+msgstr "%1"
 
 #: viewer/mimeparttree/mimetreemodel.cpp:59
 #, kde-format
@@ -1819,7 +1820,7 @@ msgstr "मुद्रणपूर्वावलोकनं जनयित�
 #, kde-format
 msgctxt "@title:window"
 msgid "Print Document"
-msgstr ""
+msgstr "दस्तावेजं मुद्रयन्तु"
 
 #: viewer/urlhandlermanager.cpp:407
 #, kde-format
@@ -1950,13 +1951,13 @@ msgstr "URL उद्घाटयति..."
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
-msgstr ""
+msgstr "किं भवान् वास्तवमेव <filename>%1</filename> निष्पादयितुम् इच्छति?"
 
 #: viewer/urlhandlermanager.cpp:866
 #, kde-format
 msgctxt "@action:button"
 msgid "Execute"
-msgstr ""
+msgstr "प्रभज्"
 
 #: viewer/viewer.cpp:146
 #, kde-format
@@ -1987,31 +1988,31 @@ msgstr "एन्क्रिप्टेड् अथवा पुरातन�
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
-msgstr ""
+msgstr "&Open With"
 
 #: viewer/viewer_p.cpp:447
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
-msgstr ""
+msgstr "&इतर..."
 
 #: viewer/viewer_p.cpp:449 viewer/viewer_p.cpp:462
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
-msgstr ""
+msgstr "&Open With..."
 
 #: viewer/viewer_p.cpp:526 viewer/viewer_p.cpp:1738
 #, kde-format
 msgctxt "to open"
 msgid "Open"
-msgstr ""
+msgstr "उद्घाटित"
 
 #: viewer/viewer_p.cpp:540 viewer/viewer_p.cpp:1745
 #, kde-format
 msgctxt "to view something"
 msgid "View"
-msgstr ""
+msgstr "दृश्यं"
 
 #: viewer/viewer_p.cpp:548
 #, kde-format
@@ -2062,13 +2063,13 @@ msgstr "KDE मेल क्लायन्ट्"
 #, kde-format
 msgctxt "@title:window"
 msgid "View Attachment: %1"
-msgstr ""
+msgstr "संलग्नकं पश्यन्तु: %1"
 
 #: viewer/viewer_p.cpp:1481
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
-msgstr ""
+msgstr "&संलग्नकाः"
 
 #: viewer/viewer_p.cpp:1483
 #, kde-format
@@ -2079,7 +2080,7 @@ msgstr "संलग्नकानां प्रदर्शनशैली�
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
-msgstr ""
+msgstr "&चिह्नरूपेण"
 
 #: viewer/viewer_p.cpp:1489
 #, kde-format
@@ -2090,7 +2091,7 @@ msgstr "सर्वाणि संलग्नकानि चिह्नर�
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
-msgstr ""
+msgstr "&पटु"
 
 #: viewer/viewer_p.cpp:1496
 #, kde-format
@@ -2101,7 +2102,7 @@ msgstr "प्रेषकेन यथा सूचितं तथा सं�
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
-msgstr ""
+msgstr "&इन्लाइन्"
 
 #: viewer/viewer_p.cpp:1503
 #, kde-format
@@ -2112,7 +2113,7 @@ msgstr "सर्वाणि संलग्नकानि इनलाइन�
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
-msgstr ""
+msgstr "&गोपयतु"
 
 #: viewer/viewer_p.cpp:1510
 #, kde-format
@@ -2123,7 +2124,7 @@ msgstr "सन्देशदर्शके संलग्नकानि न 
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
-msgstr ""
+msgstr "केवलं शीर्षके"
 
 #: viewer/viewer_p.cpp:1517
 #, kde-format
@@ -2150,7 +2151,7 @@ msgstr "पाठं प्रतिलिपितु"
 #, kde-format
 msgctxt "@action"
 msgid "Select All Text"
-msgstr ""
+msgstr "All Text इति चिनोतु"
 
 #: viewer/viewer_p.cpp:1549 viewer/viewer_p.cpp:2074
 #, kde-format
@@ -2171,7 +2172,7 @@ msgstr "सन्देशसंरचना दर्शयतु"
 #, kde-format
 msgctxt "@action"
 msgid "&View Source"
-msgstr ""
+msgstr "&स्रोत देखें"
 
 #: viewer/viewer_p.cpp:1575
 #, kde-format
@@ -2182,37 +2183,37 @@ msgstr "&सन्देशं रक्षतु..."
 #, kde-format
 msgctxt "@action"
 msgid "&Save Display Format"
-msgstr ""
+msgstr "&प्रदर्शन प्रारूपं रक्षतु"
 
 #: viewer/viewer_p.cpp:1585
 #, kde-format
 msgctxt "@action"
 msgid "&Reset Display Format"
-msgstr ""
+msgstr "&प्रदर्शन प्रारूपं पुनः सेट् कुर्वन्तु"
 
 #: viewer/viewer_p.cpp:1592
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up"
-msgstr ""
+msgstr "सन्देशं उपरि स्क्रॉल कुर्वन्तु"
 
 #: viewer/viewer_p.cpp:1597
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down"
-msgstr ""
+msgstr "सन्देशं अधः स्क्रॉल कुर्वन्तु"
 
 #: viewer/viewer_p.cpp:1602
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up (More)"
-msgstr ""
+msgstr "सन्देशं उपरि स्क्रॉल कुर्वन्तु (अधिकम्)"
 
 #: viewer/viewer_p.cpp:1607
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down (More)"
-msgstr ""
+msgstr "सन्देशं अधः स्क्रॉल कुर्वन्तु (अधिकम्)"
 
 #: viewer/viewer_p.cpp:1617
 #, kde-format
@@ -2228,7 +2229,7 @@ msgstr "HTML तथा साधारणपाठयोः मध्ये प�
 #, kde-format
 msgctxt "@action"
 msgid "Load external references"
-msgstr ""
+msgstr "बाह्यसन्दर्भान् लोडयन्तु"
 
 #: viewer/viewer_p.cpp:1630
 #, kde-format
@@ -2240,13 +2241,13 @@ msgstr "पाठं वदतु"
 #, kde-format
 msgctxt "@action"
 msgid "Share Text..."
-msgstr ""
+msgstr "पाठं साझां कुर्वन्तु..."
 
 #: viewer/viewer_p.cpp:1654
 #, kde-format
 msgctxt "@action"
 msgid "Copy Image Location"
-msgstr ""
+msgstr "प्रतिलिपि चित्रस्थानम्"
 
 #: viewer/viewer_p.cpp:1660
 #, kde-format
@@ -2282,7 +2283,7 @@ msgstr "जालं भग्नम् अस्ति।"
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
-msgstr ""
+msgstr "फिशिंग् URL पश्यन्तु"
 
 #: viewer/viewer_p.cpp:1997
 #, kde-format
@@ -2298,7 +2299,7 @@ msgstr "इदं जालस्थलं दुर्गन्धयुक्�
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
-msgstr ""
+msgstr "मालवेयर"
 
 #: viewer/viewer_p.cpp:2072
 #, kde-format
@@ -2309,7 +2310,7 @@ msgstr "ईमेल पता प्रतिलिपि कुर्वन्
 #, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
-msgstr ""
+msgstr "सादा पाठरूपेण सन्देशः"
 
 #: viewer/viewer_p.cpp:2726
 #, kde-format
@@ -2333,12 +2334,14 @@ msgid ""
 "Open attachment <filename>%1</filename>?<nl/>Note that opening an attachment "
 "may compromise your system's security."
 msgstr ""
+"संलग्नकं उद्घाटयतु <filename>%1</filename>?<nl/>अवलोकयन्तु यत् संलग्नकं उद्घाट्य भवतः "
+"प्रणाल्याः सुरक्षां क्षतिं कर्तुं शक्नोति ।"
 
 #: widgets/attachmentdialog.cpp:32
 #, kde-format
 msgctxt "@title:window"
 msgid "Open Attachment?"
-msgstr ""
+msgstr "Open Attachment ?"
 
 #: widgets/attachmentdialog.cpp:39
 #, kde-format
@@ -2363,6 +2366,8 @@ msgid ""
 "<qt><b><br />H<br />T<br />M<br />L<br /> <br />M<br />e<br />s<br />s<br /"
 ">a<br />g<br />e</b></qt>"
 msgstr ""
+"<qt><b><br />ह<br /> टी<br /> म<br /> ल<br /><br /> म<br /> ङ<br /> स<br /> "
+"स<br /> एकः<br /> छ<br /> ङ</b></qt>"
 
 #: widgets/htmlstatusbar.cpp:112
 #, kde-format
@@ -2371,6 +2376,8 @@ msgid ""
 "<qt><br />N<br />o<br /> <br />H<br />T<br />M<br />L<br /> <br />M<br /"
 ">e<br />s<br />s<br />a<br />g<br />e</qt>"
 msgstr ""
+"<qt><br />न॰<br /> o<br /><br /> ह<br /> टी<br /> म<br /> ल<br /><br /> "
+"म<br /> ङ<br /> स<br /> स<br /> एकः<br /> छ<br /> ङ</qt>"
 
 #: widgets/htmlstatusbar.cpp:117
 #, kde-format
@@ -2379,6 +2386,8 @@ msgid ""
 "<qt><br />P<br />l<br />a<br />i<br />n<br /> <br />M<br />e<br />s<br /"
 ">s<br />a<br />g<br />e<br /></qt>"
 msgstr ""
+"<qt><br />पु<br /> ल<br /> एकः<br /> अहम्‌<br /> न<br /><br /> म<br /> ङ<br /> "
+"स<br /> स<br /> एकः<br /> छ<br /> ङ<br /></qt>"
 
 #: widgets/htmlstatusbar.cpp:121
 #, kde-format
@@ -2387,6 +2396,8 @@ msgid ""
 "<qt><br />C<br />a<br />l<br />e<br />n<br />d<br />a<br />r<br /> <br /"
 ">M<br />e<br />s<br />s<br />a<br />g<br />e<br /></qt>"
 msgstr ""
+"<qt><br />ग<br /> एकः<br /> ल<br /> ङ<br /> न<br /> घ<br /> एकः<br /> र<br /"
+"><br /> म<br /> ङ<br /> स<br /> स<br /> एकः<br /> छ<br /> ङ<br /></qt>"
 
 #: widgets/htmlstatusbar.cpp:135
 #, kde-format
@@ -2422,7 +2433,7 @@ msgstr "पाठं वदतु"
 #, kde-format
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
-msgstr ""
+msgstr "कच्चा स्रोतः"
 
 #: widgets/mailsourcewebengineviewer.cpp:54
 #, kde-format
@@ -2433,7 +2444,7 @@ msgstr "कच्चा, अपरिवर्तितं मेलम् य�
 #, kde-format
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
-msgstr ""
+msgstr "HTML स्रोतः"
 
 #: widgets/mailsourcewebengineviewer.cpp:58
 #, kde-format
@@ -2444,27 +2455,27 @@ msgstr "उपयोक्त्रे सन्देशं प्रदर्�
 #, kde-format
 msgctxt "@action - For we don't know if it's one or many attachments"
 msgid "Open folder where attachment was saved"
-msgstr ""
+msgstr "यत्र संलग्नकं रक्षितम् आसीत् तत्र पुटं उद्घाटयन्तु"
 
 #: widgets/opensavedfilefolderwidget.cpp:27
 #, kde-format
 msgctxt "@action"
 msgid "Open File"
-msgstr ""
+msgstr "सञ्चिकां उद्घाटयन्तु"
 
 #: widgets/opensavedfilefolderwidget.cpp:62
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "यत्र संलग्नकं रक्षितम् आसीत् तत्र पुटं उद्घाटयन्तु"
+msgstr[1] "यत्र संलग्नकानि रक्षितानि आसन् तत्र पुटं उद्घाटयन्तु"
 
 #: widgets/opensavedfilefolderwidget.cpp:65
 #, kde-format
 msgctxt "@action"
 msgid "Open folder where PDF file was saved"
-msgstr ""
+msgstr "यत्र PDF सञ्चिका रक्षिता आसीत् तत्र पुटं उद्घाटयन्तु"
 
 #: widgets/opensavedfilefolderwidget.cpp:78
 #, kde-format
@@ -2475,10 +2486,10 @@ msgstr "केमेलः संलग्नकं उद्घाटयित�
 #, kde-format
 msgctxt "@action:button"
 msgid "Next Message"
-msgstr ""
+msgstr "अग्रिमः सन्देशः"
 
 #: widgets/shownextmessagewidget.cpp:16
 #, kde-format
 msgctxt "@action:button"
 msgid "Previous Message"
-msgstr ""
+msgstr "पूर्वसन्देशः"

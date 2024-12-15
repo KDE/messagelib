@@ -21,7 +21,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Developer Tool"
-msgstr ""
+msgstr "विकासक साधनम्"
 
 #: findbar/findbarbase.cpp:39
 #, kde-format
@@ -38,37 +38,37 @@ msgstr "पिधानं करोतु"
 #, kde-format
 msgctxt "Find text"
 msgid "F&ind:"
-msgstr ""
+msgstr "अन्वेषय:"
 
 #: findbar/findbarbase.cpp:53
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Text to search for"
-msgstr ""
+msgstr "अन्वेषणार्थं पाठः"
 
 #: findbar/findbarbase.cpp:58
 #, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
-msgstr ""
+msgstr "अग्रिम"
 
 #: findbar/findbarbase.cpp:59
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to next match"
-msgstr ""
+msgstr "अग्रिम-क्रीडायाः कृते कूदन्तु"
 
 #: findbar/findbarbase.cpp:64
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
-msgstr ""
+msgstr "पूर्वतनम्‌"
 
 #: findbar/findbarbase.cpp:65
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to previous match"
-msgstr ""
+msgstr "पूर्वमेलनं प्रति कूदन्तु"
 
 #: findbar/findbarbase.cpp:71
 #, kde-format
@@ -79,7 +79,7 @@ msgstr "विकल्पाः"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify search behavior"
-msgstr ""
+msgstr "अन्वेषणव्यवहारं परिवर्तयन्तु"
 
 #: findbar/findbarbase.cpp:74
 #, kde-format
@@ -95,7 +95,7 @@ msgstr "वाक्यं न लब्धम्"
 #, kde-format
 msgctxt "@title:window"
 msgid "Save HTML Page"
-msgstr ""
+msgstr "HTML पृष्ठं रक्षतु"
 
 #: widgets/submittedformwidgets/submittedformwarningwidget.cpp:22
 #, kde-format
@@ -106,7 +106,7 @@ msgstr "मेलकर्तायां प्रपत्रं प्रस�
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"
-msgstr ""
+msgstr "वर्णन"
 
 #: widgets/tracking/trackingwarningwidget.cpp:21
 #, kde-format
@@ -126,8 +126,8 @@ msgstr "वर्णन:"
 #, kde-format
 msgid "1 tracker from the company %2 (%3)"
 msgid_plural "%1 trackers from the company %2 (%3)"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "%2 (%3) कम्पनीतः १ ट्रैकरः ।"
+msgstr[1] "%1 कम्पनीतः अनुसरणकर्ताः %2 (%3)"
 
 #: widgets/zoomactionmenu.cpp:127
 #, kde-format

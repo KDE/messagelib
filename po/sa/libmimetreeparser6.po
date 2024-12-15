@@ -20,7 +20,7 @@ msgstr ""
 #, kde-format
 msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
-msgstr ""
+msgstr "अनामिका"
 
 #: src/messagepart.cpp:706 src/messagepart.cpp:751 src/messagepart.cpp:994
 #, kde-format
@@ -36,7 +36,7 @@ msgstr "कोऽपि समुचितः क्रिप्टो प्ल
 #, kde-format
 msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
 msgid "No %1 plug-in was found."
-msgstr ""
+msgstr "%1 प्लग्-इन् न प्राप्तम् ।"
 
 #: src/messagepart.cpp:822
 #, kde-format
