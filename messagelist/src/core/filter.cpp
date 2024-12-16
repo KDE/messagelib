@@ -219,6 +219,18 @@ QList<SearchLineCommand::SearchLineInfo> Filter::searchLineCommands() const
             if (i.isValid()) {
                 infos.append(std::move(i));
             }
+        } else if (status.isRead()) {
+            SearchLineCommand::SearchLineInfo i;
+            i.type = SearchLineCommand::SearchLineType::IsRead;
+            if (i.isValid()) {
+                infos.append(std::move(i));
+            }
+        } else if (status.isIgnored()) {
+            SearchLineCommand::SearchLineInfo i;
+            i.type = SearchLineCommand::SearchLineType::IsIgnored;
+            if (i.isValid()) {
+                infos.append(std::move(i));
+            }
         }
         // TODO add more
     }
