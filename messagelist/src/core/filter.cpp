@@ -179,7 +179,7 @@ QList<SearchLineCommand::SearchLineInfo> Filter::searchLineCommands() const
             infos.append(std::move(i));
         }
     }
-    if (mOptions & SearchMessageByButtons::SearchAgainstBcc) {
+    if (mOptions & SearchMessageByButtons::SearchAgainstCc) {
         SearchLineCommand::SearchLineInfo i;
         i.type = SearchLineCommand::SearchLineType::Cc;
         i.argument = mSearchString;
