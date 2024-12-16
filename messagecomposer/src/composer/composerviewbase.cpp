@@ -645,7 +645,7 @@ bool ComposerViewBase::addKeysToContext(const QString &gnupgHome,
                             Q_UNUSED(auditLogAsHtml);
                             Q_UNUSED(auditLogError);
                             if (result) {
-                                qCWarning(MESSAGECOMPOSER_LOG) << "Failed to export " << k.primaryFingerprint() << result.asString();
+                                qCWarning(MESSAGECOMPOSER_LOG) << "Failed to export " << k.primaryFingerprint() << result.asStdString();
                                 --runningJobs;
                                 if (runningJobs < 1) {
                                     loop.quit();
