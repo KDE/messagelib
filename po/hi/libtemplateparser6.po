@@ -1,4 +1,4 @@
-# Sanskrit translations for messagelib package.
+# Hindi translations for messagelib package.
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the messagelib package.
 # Kali <EMAIL@ADDRESS>, 2024.
@@ -8,43 +8,42 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-17 00:39+0000\n"
-"PO-Revision-Date: 2024-12-13 19:09+0530\n"
+"PO-Revision-Date: 2024-12-15 15:57+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
-"Language-Team: Sanskrit\n"
-"Language: sa\n"
+"Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
+"Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n>2);\n"
 
 #: customtemplates.cpp:72 customtemplates.cpp:123
 #, kde-format
 msgctxt "Message->"
 msgid "Universal"
-msgstr "सार्वभौमिक"
+msgstr ""
 
 #: customtemplates.cpp:73 customtemplates.cpp:129
 #, kde-format
 msgctxt "Message->"
 msgid "Reply"
-msgstr "उत्तरं"
+msgstr ""
 
 #: customtemplates.cpp:74 customtemplates.cpp:132
 #, kde-format
 msgctxt "Message->"
 msgid "Reply to All"
-msgstr "Reply to All"
+msgstr ""
 
 #: customtemplates.cpp:75 customtemplates.cpp:135
 #, kde-format
 msgctxt "Message->"
 msgid "Forward"
-msgstr "अग्रतः"
+msgstr ""
 
 #: customtemplates.cpp:77 templatesconfiguration.cpp:73
 #, kde-format
 msgid "<a href=\"whatsthis\">How does this work?</a>"
-msgstr "<a href=\"whatsthis\">एतत् कथं कार्यं करोति ?</a>"
+msgstr ""
 
 #: customtemplates.cpp:87
 #, kde-format
@@ -60,75 +59,66 @@ msgid ""
 "operations. You cannot bind a keyboard shortcut to <i>Universal</i> "
 "templates.</p></qt>"
 msgstr ""
-"<qt><p>अत्र भवान् उत्तरं रचयति वा अग्रे सन्देशं रचयति तदा उपयोक्तुं कस्टम् सन्देश टेम्पलेट् "
-"योजयितुं, सम्पादयितुं, विलोपयितुं च शक्नोति । इनपुट् बॉक्स् मध्ये नाम टङ्कयित्वा कस्टम् टेम्पलेट् "
-"रचयन्तु तथा च &#39;+&#39; बटन् नुदन्तु । अपि च, द्रुततरसञ्चालनार्थं कीबोर्डसंयोजनं टेम्पलेट् "
-"मध्ये बद्धुं शक्नुवन्ति ।</p><p> सन्देश-सारूप्याणि प्रतिस्थापन-आदेशानां समर्थनं कुर्वन्ति, केवलं "
-"तान् टङ्कयित्वा अथवा <i>Insert आदेश-</i> मेनूतः चयनं कृत्वा ।</p><p> कस्टम् टेम्पलेट् "
-"चत्वारः प्रकाराः सन्ति: used to <i>Reply</i> , <i>Reply to All</i> , "
-"<i>Forward</i> , तथा <i>Universal</i> येषां उपयोगः सर्वप्रकारस्य कार्याणां कृते कर्तुं "
-"शक्यते । कीबोर्ड-शॉर्टकट्-इत्येतत् <i>Universal</i> टेम्पलेट्-मध्ये बाध्यं कर्तुं न शक्नुथ ।</p></"
-"qt>"
 
 #: customtemplates.cpp:138
 #, kde-format
 msgctxt "Message->"
 msgid "Unknown"
-msgstr "अज्ञात"
+msgstr ""
 
 #: customtemplates.cpp:252
 #, kde-format
 msgid "A template with same name already exists."
-msgstr "समाननाम्नः एकः टेम्पलेट् पूर्वमेव विद्यते ।"
+msgstr ""
 
 #: customtemplates.cpp:252
 #, kde-format
 msgctxt "@title:window"
 msgid "Cannot create template"
-msgstr "टेम्पलेट् निर्मातुं न शक्यते"
+msgstr ""
 
 #: customtemplates.cpp:344
 #, kde-format
 msgctxt "@info"
 msgid "Do you really want to remove template \"%1\"?"
-msgstr "किं भवान् वास्तवमेव \"%1\" टेम्पलेट् अपसारयितुम् इच्छति?"
+msgstr ""
 
 #: customtemplates.cpp:345
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Template?"
-msgstr "टेम्पलेट् निष्कासयन्तु?"
+msgstr ""
 
 #: customtemplatesmenu.cpp:48
 #, kde-format
 msgid "With Custom Template"
-msgstr "कस्टम टेम्पलेट् सह"
+msgstr ""
 
 #: customtemplatesmenu.cpp:51
 #, kde-format
 msgid "Reply With Custom Template"
-msgstr "कस्टम टेम्पलेट् सह उत्तरं ददातु"
+msgstr ""
 
 #: customtemplatesmenu.cpp:54
 #, kde-format
 msgid "Reply to All With Custom Template"
-msgstr "Reply to All With Custom टेम्पलेट्"
+msgstr ""
 
 #: customtemplatesmenu.cpp:179 customtemplatesmenu.cpp:184
 #: customtemplatesmenu.cpp:189
 #, kde-format
 msgid "(no custom templates)"
-msgstr "(कोऽपि कस्टम् टेम्पलेट् नास्ति)"
+msgstr ""
 
 #: defaulttemplates.cpp:16
 #, kde-format
 msgid "Default new message template"
-msgstr "पूर्वनिर्धारित नवीन सन्देश टेम्पलेट"
+msgstr ""
 
 #: defaulttemplates.cpp:21
 #, kde-format
 msgid "Default reply template"
-msgstr "पूर्वनिर्धारित उत्तर टेम्पलेट"
+msgstr ""
 
 #: defaulttemplates.cpp:26
 #, kde-format
@@ -140,14 +130,11 @@ msgid ""
 "%3\n"
 "%4"
 msgstr ""
-"%1 %2 इत्यत्र भवान् लिखितवान्:\n"
-"%3\n"
-"%4"
 
 #: defaulttemplates.cpp:37
 #, kde-format
 msgid "Default reply all template"
-msgstr "पूर्वनिर्धारितं उत्तरं सर्वं टेम्पलेट्"
+msgstr ""
 
 #: defaulttemplates.cpp:41
 #, kde-format
@@ -159,14 +146,11 @@ msgid ""
 "%4\n"
 "%5"
 msgstr ""
-"%1 %2 %3 इत्यनेन लिखितम् :\n"
-"%4\n"
-"%5"
 
 #: defaulttemplates.cpp:53
 #, kde-format
 msgid "Default forward template"
-msgstr "पूर्वनिर्धारित अग्रे टेम्पलेट"
+msgstr ""
 
 #: defaulttemplates.cpp:60
 #, kde-format
@@ -186,46 +170,36 @@ msgid ""
 "%5\n"
 "-----------------------------------------"
 msgstr ""
-"\n"
-"---------- अग्रे प्रेषितः सन्देशः -----------\n"
-"\n"
-"विषयः %1\n"
-"तिथिः %2, %3\n"
-"तः : %4\n"
-"%OADDRESSEESADDR\n"
-"\n"
-"%5\n"
-"--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------"
 
 #. i18n: ectx: label, entry (Content), group (CTemplates #$(name))
 #: settings/customtemplates_kfg.kcfg:13
 #, kde-format
 msgid "Template content"
-msgstr "टेम्पलेट सामग्री"
+msgstr ""
 
 #. i18n: ectx: label, entry (Shortcut), group (CTemplates #$(name))
 #: settings/customtemplates_kfg.kcfg:17
 #, kde-format
 msgid "Template shortcut"
-msgstr "टेम्पलेट शॉर्टकट"
+msgstr ""
 
 #. i18n: ectx: label, entry (Type), group (CTemplates #$(name))
 #: settings/customtemplates_kfg.kcfg:21
 #, kde-format
 msgid "Template type"
-msgstr "टेम्पलेट प्रकार"
+msgstr ""
 
 #. i18n: ectx: label, entry (StripSignature), group (TemplateParser)
 #: settings/templateparser.kcfg:11
 #, kde-format
 msgid "Remove the signature when replying"
-msgstr "उत्तरं ददाति समये हस्ताक्षरं निष्कासयन्तु"
+msgstr ""
 
 #. i18n: ectx: label, entry (SmartQuote), group (TemplateParser)
 #: settings/templateparser.kcfg:15
 #, kde-format
 msgid "Use smart &quoting"
-msgstr "स्मार्ट &quoting इत्यस्य उपयोगं कुर्वन्तु"
+msgstr ""
 
 #. i18n: ectx: label, entry (ReplyUsingVisualFormat), group (TemplateParser)
 #: settings/templateparser.kcfg:19
@@ -234,297 +208,296 @@ msgid ""
 "Reply or forward using the same visual format as the original message (plain "
 "text or HTML)"
 msgstr ""
-"मूलसन्देशस्य (सादा पाठः अथवा HTML) इव दृश्यस्वरूपस्य उपयोगेन उत्तरं ददातु वा अग्रे प्रेषयतु वा"
 
 #. i18n: ectx: label, entry (TemplateNewMessage), group (TemplateParser)
 #: settings/templateparser.kcfg:26
 #, kde-format
 msgid "Message template for new message"
-msgstr "नूतनसन्देशस्य कृते सन्देशस्य टेम्पलेट्"
+msgstr ""
 
 #. i18n: ectx: label, entry (TemplateReply), group (TemplateParser)
 #: settings/templateparser.kcfg:30
 #, kde-format
 msgid "Message template for reply"
-msgstr "उत्तरार्थं सन्देशस्य टेम्पलेट्"
+msgstr ""
 
 #. i18n: ectx: label, entry (TemplateReplyAll), group (TemplateParser)
 #: settings/templateparser.kcfg:34
 #, kde-format
 msgid "Message template for reply to all"
-msgstr "सर्वेषां उत्तरार्थं सन्देशस्य टेम्पलेट्"
+msgstr ""
 
 #. i18n: ectx: label, entry (TemplateForward), group (TemplateParser)
 #: settings/templateparser.kcfg:38
 #, kde-format
 msgid "Message template for forward"
-msgstr "अग्रे कृते सन्देशस्य टेम्पलेट्"
+msgstr ""
 
 #. i18n: ectx: label, entry (QuoteString), group (TemplateParser)
 #: settings/templateparser.kcfg:42
 #, kde-format
 msgid "Quote characters"
-msgstr "उद्धरण वर्ण"
+msgstr ""
 
 #: templateparserjob.cpp:313
 #, kde-format
 msgctxt "@info"
 msgid "Cannot insert content from file %1: %2"
-msgstr "%1: %2 सञ्चिकातः सामग्रीं सम्मिलितुं न शक्यते"
+msgstr ""
 
 #: templateparserjob.cpp:483
 #, kde-format
 msgctxt "@item:intext email To"
 msgid "To:"
-msgstr "इत्यस्मै:"
+msgstr ""
 
 #: templateparserjob.cpp:494
 #, kde-format
 msgctxt "@item:intext email CC"
 msgid "CC:"
-msgstr "सी. सी. १."
+msgstr ""
 
 #: templateparserjob.cpp:1150
 #, kde-format
 msgctxt "@item:intext"
 msgid "Attachment %1"
-msgstr "आसक्तिः %1"
+msgstr ""
 
 #: templateparserjob.cpp:1357
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Pipe command <command>%1</command> failed."
-msgstr "पाइप् आदेशः <command>%1</command> विफलः ।"
+msgstr ""
 
 #: templatescommandmenu.cpp:28
 msgid "Quoted Message Text"
-msgstr "उद्धृत सन्देश पाठ"
+msgstr ""
 
 #: templatescommandmenu.cpp:30
 msgid "Message Text as Is"
-msgstr "सन्देशपाठः यथा अस्ति"
+msgstr ""
 
 #: templatescommandmenu.cpp:32
 msgid "Message Id"
-msgstr "सन्देश Id"
+msgstr ""
 
 #: templatescommandmenu.cpp:34 templatescommandmenu.cpp:87
 msgid "Date"
-msgstr "दिनाङ्कः"
+msgstr ""
 
 #: templatescommandmenu.cpp:36 templatescommandmenu.cpp:89
 msgid "Date in Short Format"
-msgstr "लघु प्रारूपे तिथि"
+msgstr ""
 
 #: templatescommandmenu.cpp:38 templatescommandmenu.cpp:91
 msgid "Date in C Locale"
-msgstr "C Locale इत्यत्र तिथिः"
+msgstr ""
 
 #: templatescommandmenu.cpp:40 templatescommandmenu.cpp:93
 msgid "Day of Week"
-msgstr "सप्ताहस्य दिवसः"
+msgstr ""
 
 #: templatescommandmenu.cpp:42 templatescommandmenu.cpp:95
 msgid "Time"
-msgstr "कालः"
+msgstr ""
 
 #: templatescommandmenu.cpp:44 templatescommandmenu.cpp:97
 msgid "Time in Long Format"
-msgstr "दीर्घ प्रारूपे समय"
+msgstr ""
 
 #: templatescommandmenu.cpp:46 templatescommandmenu.cpp:99
 msgid "Time in C Locale"
-msgstr "C Locale इत्यत्र समयः"
+msgstr ""
 
 #: templatescommandmenu.cpp:48 templatescommandmenu.cpp:100
 msgid "To Field Address"
-msgstr "To Field Address इति"
+msgstr ""
 
 #: templatescommandmenu.cpp:50 templatescommandmenu.cpp:102
 msgid "To Field Name"
-msgstr "To Field Name इति"
+msgstr ""
 
 #: templatescommandmenu.cpp:52 templatescommandmenu.cpp:104
 msgid "To Field First Name"
-msgstr "To Field प्रथमनाम"
+msgstr ""
 
 #: templatescommandmenu.cpp:54 templatescommandmenu.cpp:106
 msgid "To Field Last Name"
-msgstr "To Field Last Name इति"
+msgstr ""
 
 #: templatescommandmenu.cpp:56 templatescommandmenu.cpp:108
 msgid "CC Field Address"
-msgstr "सीसी क्षेत्र पता"
+msgstr ""
 
 #: templatescommandmenu.cpp:58 templatescommandmenu.cpp:110
 msgid "CC Field Name"
-msgstr "सी सी क्षेत्र नाम"
+msgstr ""
 
 #: templatescommandmenu.cpp:60 templatescommandmenu.cpp:112
 msgid "CC Field First Name"
-msgstr "सीसी क्षेत्र प्रथम नाम"
+msgstr ""
 
 #: templatescommandmenu.cpp:62 templatescommandmenu.cpp:114
 msgid "CC Field Last Name"
-msgstr "सीसी क्षेत्र Last Name"
+msgstr ""
 
 #: templatescommandmenu.cpp:64 templatescommandmenu.cpp:116
 msgid "From Field Address"
-msgstr "क्षेत्रसङ्केतः"
+msgstr ""
 
 #: templatescommandmenu.cpp:66
 msgid "From Field Name"
-msgstr "क्षेत्रनामात्"
+msgstr ""
 
 #: templatescommandmenu.cpp:68 templatescommandmenu.cpp:120
 msgid "From Field First Name"
-msgstr "क्षेत्रात् प्रथमनाम"
+msgstr ""
 
 #: templatescommandmenu.cpp:70 templatescommandmenu.cpp:122
 msgid "From Field Last Name"
-msgstr "क्षेत्रस्य आख्यनामात्"
+msgstr ""
 
 #: templatescommandmenu.cpp:72
 msgid "Addresses of all recipients"
-msgstr "सर्वेषां प्राप्तकर्तानां पत्तनम्"
+msgstr ""
 
 #: templatescommandmenu.cpp:74
 msgctxt "Template value for subject of the message"
 msgid "Subject"
-msgstr "विषयः"
+msgstr ""
 
 #: templatescommandmenu.cpp:76
 msgid "Quoted Headers"
-msgstr "उद्धृत शीर्षक"
+msgstr ""
 
 #: templatescommandmenu.cpp:78
 msgid "Headers as Is"
-msgstr "शीर्षकाणि यथा Is"
+msgstr ""
 
 #: templatescommandmenu.cpp:80 templatescommandmenu.cpp:126
 msgid "Header Content"
-msgstr "शीर्षक सामग्री"
+msgstr ""
 
 #: templatescommandmenu.cpp:82
 msgid "Reply as Quoted Plain Text"
-msgstr "Reply as Quoted सादा पाठ"
+msgstr ""
 
 #: templatescommandmenu.cpp:84
 msgid "Reply as Quoted HTML Text"
-msgstr "Quoted HTML Text इति उत्तरं ददातु"
+msgstr ""
 
 #: templatescommandmenu.cpp:118
 msgid "From field Name"
-msgstr "क्षेत्रात् नाम"
+msgstr ""
 
 #: templatescommandmenu.cpp:124
 msgctxt "Template subject command."
 msgid "Subject"
-msgstr "विषयः"
+msgstr ""
 
 #: templatescommandmenu.cpp:129
 msgid "Pipe Original Message Body and Insert Result as Quoted Text"
-msgstr "मूलसन्देशशरीरं पाइपं कृत्वा परिणामं उद्धृतपाठरूपेण सम्मिलितं कुर्वन्तु"
+msgstr ""
 
 #: templatescommandmenu.cpp:131
 msgid "Pipe Original Message Body and Insert Result as Is"
-msgstr "Pipe Original Message Body तथा Insert Result as Is"
+msgstr ""
 
 #: templatescommandmenu.cpp:133
 msgid "Pipe Original Message with Headers and Insert Result as Is"
-msgstr "हेडर् इत्यनेन सह मूलसन्देशं पाइपं कुर्वन्तु तथा च परिणामं यथा वर्तते तथा सम्मिलितं कुर्वन्तु"
+msgstr ""
 
 #: templatescommandmenu.cpp:135
 msgid "Pipe Current Message Body and Insert Result as Is"
-msgstr "वर्तमान सन्देशशरीरं पाइपं कृत्वा परिणामं यथा वर्तते तथा सम्मिलितं कुर्वन्तु"
+msgstr ""
 
 #: templatescommandmenu.cpp:137
 msgid "Pipe Current Message Body and Replace with Result"
-msgstr "Pipe Current Message Body कृत्वा Result इत्यनेन प्रतिस्थापयन्तु"
+msgstr ""
 
 #: templatescommandmenu.cpp:142
 msgctxt "Inserts user signature, also known as footer, into message"
 msgid "Signature"
-msgstr "हस्ताक्षर"
+msgstr ""
 
 #: templatescommandmenu.cpp:144
 msgid "Insert File Content"
-msgstr "सञ्चिकासामग्री सम्मिलितं कुर्वन्तु"
+msgstr ""
 
 #: templatescommandmenu.cpp:148
 msgctxt ""
 "All characters, up to and including the next newline, are discarded without "
 "performing any macro expansion"
 msgid "Discard to Next Line"
-msgstr "अग्रिमपङ्क्तौ परित्यजन्तु"
+msgstr ""
 
 #: templatescommandmenu.cpp:151
 msgid "Template Comment"
-msgstr "टेम्पलेट टिप्पणी"
+msgstr ""
 
 #: templatescommandmenu.cpp:153
 msgid "No Operation"
-msgstr "No Operation इति"
+msgstr ""
 
 #: templatescommandmenu.cpp:155
 msgid "Clear Generated Message"
-msgstr "उत्पन्नं सन्देशं स्वच्छं कुर्वन्तु"
+msgstr ""
 
 #: templatescommandmenu.cpp:156
 msgid "Cursor position"
-msgstr "कर्सर स्थिति"
+msgstr ""
 
 #: templatescommandmenu.cpp:158
 msgid "Blank text"
-msgstr "रिक्तः पाठः"
+msgstr ""
 
 #: templatescommandmenu.cpp:160
 msgid "Dictionary Language"
-msgstr "शब्दकोश भाषा"
+msgstr ""
 
 #: templatescommandmenu.cpp:161
 msgid "Language"
-msgstr "भाषा"
+msgstr ""
 
 #: templatescommandmenu.cpp:166
 msgid "Turn Debug On"
-msgstr "Debug चालू कुर्वन्तु"
+msgstr ""
 
 #: templatescommandmenu.cpp:168
 msgid "Turn Debug Off"
-msgstr "त्रुटिनिवारणं निष्क्रियं कुर्वन्तु"
+msgstr ""
 
 #: templatescommandmenu.cpp:201
 #, kde-format
 msgid "Insert Command"
-msgstr "Insert Command इति"
+msgstr ""
 
 #: templatescommandmenu.cpp:214
 #, kde-format
 msgid "Original Message"
-msgstr "मूल सन्देश"
+msgstr ""
 
 #: templatescommandmenu.cpp:228
 #, kde-format
 msgid "Current Message"
-msgstr "वर्तमान सन्देश"
+msgstr ""
 
 #: templatescommandmenu.cpp:241
 #, kde-format
 msgid "Process with External Programs"
-msgstr "बाह्यकार्यक्रमैः सह प्रक्रिया"
+msgstr ""
 
 #: templatescommandmenu.cpp:254
 #, kde-format
 msgctxt "Miscellaneous template commands menu"
 msgid "Miscellaneous"
-msgstr "विविध"
+msgstr ""
 
 #: templatescommandmenu.cpp:268
 #, kde-format
 msgctxt "Debug template commands menu"
 msgid "Debug"
-msgstr "त्रुटिनिवारणम्"
+msgstr ""
 
 #: templatesconfiguration.cpp:50
 #, kde-format
@@ -534,9 +507,6 @@ msgid ""
 "substitution commands, either simply type them or select them from the "
 "<i>Insert command</i> menu.</p>"
 msgstr ""
-"<p>अत्र भवान् नूतनसन्देशानां, उत्तराणां वा अग्रे प्रेषितसन्देशानां रचनायां उपयोगाय टेम्पलेट्-"
-"निर्माणं प्रबन्धयितुं च शक्नोति ।</p><p> सन्देश-सारूप्याणि प्रतिस्थापन-आदेशान् समर्थयन्ति, "
-"केवलं तान् टङ्कयन्तु अथवा <i>Insert आदेश-</i> मेनूतः तान् चिनोतु ।</p>"
 
 #: templatesconfiguration.cpp:58
 #, kde-format
@@ -544,8 +514,6 @@ msgid ""
 "<p>Templates specified here are folder-specific. They override both global "
 "templates and per-identity templates.</p>"
 msgstr ""
-"<p>अत्र निर्दिष्टाः टेम्पलेट्-विशिष्टाः सन्ति । ते वैश्विकसाचौ प्रतिपरिचयसाचौ च अधिलिखन्ति "
-"।</p>"
 
 #: templatesconfiguration.cpp:63
 #, kde-format
@@ -554,8 +522,6 @@ msgid ""
 "templates, but can be overridden by per-folder templates if they are "
 "specified.</p>"
 msgstr ""
-"<p>अत्र निर्दिष्टाः टेम्पलेट्-परिचय-विशिष्टाः सन्ति । ते वैश्विकसाचाम् अधिलिखन्ति, परन्तु "
-"यदि ते निर्दिष्टाः सन्ति तर्हि प्रति-पुट-सारूप्यैः अधिलिखितुं शक्यन्ते ।</p>"
 
 #: templatesconfiguration.cpp:68
 #, kde-format
@@ -563,32 +529,29 @@ msgid ""
 "<p>These are global (default) templates. They can be overridden by per-"
 "identity templates or per-folder templates if they are specified.</p>"
 msgstr ""
-"<p>एते वैश्विक (पूर्वनिर्धारित) टेम्पलेट् सन्ति । ते निर्दिष्टाः चेत् प्रति-परिचय-सारूप्यैः अथवा "
-"प्रति-पुट-सारूप्यैः अधिलिखितुं शक्यन्ते ।</p>"
 
 #: templatesconfiguration.cpp:100
 #, kde-format
 msgid "Do you want to reset current template or all templates to default?"
 msgstr ""
-"किं भवान् वर्तमान टेम्पलेट् अथवा सर्वाणि टेम्पलेट् पूर्वनिर्धारितरूपेण पुनः सेट् कर्तुम् इच्छति?"
 
 #: templatesconfiguration.cpp:101
 #, kde-format
 msgctxt "@title:window"
 msgid "Reset to default"
-msgstr "पूर्वनिर्धारितरूपेण पुनः सेट् कुर्वन्तु"
+msgstr ""
 
 #: templatesconfiguration.cpp:102
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset Current Template"
-msgstr "वर्तमान टेम्पलेट रीसेट करें"
+msgstr ""
 
 #: templatesconfiguration.cpp:103
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset All Templates"
-msgstr "सर्वाणि टेम्पलेट् पुनः सेट् कुर्वन्तु"
+msgstr ""
 
 #: templatesconfiguration.cpp:361
 #, kde-format
@@ -599,22 +562,17 @@ msgid ""
 "(a)Reply using plain text for quotes to be strictly in plain text\n"
 "(b)Reply using HTML text for quotes being in HTML format if present"
 msgstr ""
-"\"Reply using plain text\" तथा \"Reply using HTML text\" इत्येतयोः युग्मरूपेण "
-"उपयोगः सम्यक् नास्ति । पूर्वोक्तेषु आदेशेषु केवलमेकं \" Reply as Quoted Message command\" "
-"इत्यनेन सह स्वस्य आवश्यकतानुसारं उपयोगं कुर्वन्तु\n"
-"(क)उद्धरणानाम् कृते साधारणपाठस्य उपयोगेन उत्तरं दत्तं यत् सख्यं साधारणपाठे भवेत्\n"
-"(ख)उद्धरणानाम् HTML प्रारूपेण भवितुं HTML पाठस्य उपयोगेन उत्तरं ददातु यदि उपस्थितः अस्ति"
 
 #: templatesinsertcommandpushbutton.cpp:20
 #, kde-format
 msgid "&Insert Command"
-msgstr "&Insert Command इति"
+msgstr ""
 
 #: templatesinsertcommandpushbutton.cpp:28
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select a command to insert into the template"
-msgstr "टेम्पलेट् मध्ये सम्मिलितुं आदेशं चिनोतु"
+msgstr ""
 
 #: templatesinsertcommandpushbutton.cpp:30
 #, kde-format
@@ -624,16 +582,13 @@ msgid ""
 "being edited.  The command will be inserted at the cursor location, so you "
 "want to move your cursor to the desired insertion point first."
 msgstr ""
-"सम्पादितस्य वर्तमानस्य टेम्पलेट् मध्ये सम्मिलितुं आदेशं अन्वेष्टुं एतत् मेन्यू भ्रमन्तु ।  आदेशः "
-"कर्सरस्थाने सम्मिलितः भविष्यति, अतः भवान् प्रथमं स्वस्य कर्सरं इष्टं निवेशनबिन्दुं प्रति "
-"स्थापयितुम् इच्छति ।"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, mName)
 #: ui/customtemplates_base.ui:86
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Enter a name for the custom template"
-msgstr "कस्टम् टेम्पलेट् इत्यस्य नाम प्रविशन्तु"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, mName)
 #: ui/customtemplates_base.ui:89
@@ -642,14 +597,14 @@ msgctxt "@info:whatsthis"
 msgid ""
 "To create a custom template, first enter a name for that template and press "
 "the '+' button."
-msgstr "कस्टम् टेम्पलेट् निर्मातुं प्रथमं तस्य टेम्पलेट् इत्यस्य नाम प्रविश्य '+' बटन् नुदन्तु ।"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, mAdd)
 #: ui/customtemplates_base.ui:96
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Add a new custom template"
-msgstr "एकं नूतनं कस्टम् टेम्पलेट् योजयन्तु"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, mAdd)
 #: ui/customtemplates_base.ui:99
@@ -658,14 +613,14 @@ msgctxt "@info:whatsthis"
 msgid ""
 "Press this button if you want to create a new custom template with the "
 "specified name"
-msgstr "यदि भवान् निर्दिष्टनाम्ना नूतनं कस्टम् टेम्पलेट् निर्मातुम् इच्छति तर्हि एतत् बटन् नुदतु"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, mRemove)
 #: ui/customtemplates_base.ui:106
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Remove the selected custom template"
-msgstr "चयनितं कस्टम् टेम्पलेट् निष्कासयन्तु"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, mRemove)
 #: ui/customtemplates_base.ui:109
@@ -674,14 +629,14 @@ msgctxt "@info:whatsthis"
 msgid ""
 "Press this button if you want to remove the currently selected custom "
 "template"
-msgstr "यदि भवान् वर्तमानकाले चयनितं कस्टम् टेम्पलेट् अपसारयितुम् इच्छति तर्हि एतत् बटन् नुदतु"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, mDuplicate)
 #: ui/customtemplates_base.ui:116
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Duplicate the selected custom template"
-msgstr "चयनितं कस्टम् टेम्पलेट् डुप्लिकेट् कुर्वन्तु"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, mDuplicate)
 #: ui/customtemplates_base.ui:119
@@ -690,56 +645,56 @@ msgctxt "@info:whatsthis"
 msgid ""
 "Press this button if you want to duplicate the currently selected custom "
 "template"
-msgstr "यदि भवान् सम्प्रति चयनितं कस्टम् टेम्पलेट् डुप्लिकेट् कर्तुम् इच्छति तर्हि एतत् बटन् नुदतु"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, mList)
 #: ui/customtemplates_base.ui:134
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "List of custom templates available"
-msgstr "उपलब्धानां कस्टम् टेम्पलेट्-सूची"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QTreeWidget, mList)
 #: ui/customtemplates_base.ui:137
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This is a list of all the custom templates available."
-msgstr "एषा उपलब्धानां सर्वेषां कस्टम् टेम्पलेट्-सूची अस्ति ।"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, mList)
 #: ui/customtemplates_base.ui:147
 #, kde-format
 msgctxt "@title:column Type of custom template"
 msgid "Type"
-msgstr "प्रकारः"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QTreeWidget, mList)
 #: ui/customtemplates_base.ui:152
 #, kde-format
 msgctxt "@title:column Name of the custom template."
 msgid "Name"
-msgstr "नामः"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, mToLabel)
 #: ui/customtemplates_base.ui:195
 #, kde-format
 msgctxt "@label:textbox Recipient mail address"
 msgid "To:"
-msgstr "इत्यस्मै:"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, mCCLabel)
 #: ui/customtemplates_base.ui:202
 #, kde-format
 msgctxt "@label"
 msgid "CC:"
-msgstr "सी. सी. १."
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mToEdit)
 #: ui/customtemplates_base.ui:219
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Additional recipients of the message"
-msgstr "सन्देशस्य अतिरिक्तग्राहकाः"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mToEdit)
 #: ui/customtemplates_base.ui:222
@@ -749,15 +704,13 @@ msgid ""
 "When using this template, the default recipients are those you enter here.  "
 "This is a comma-separated list of mail addresses."
 msgstr ""
-"एतस्य टेम्पलेट् इत्यस्य उपयोगं कुर्वन् पूर्वनिर्धारिताः प्राप्तकर्ताः ते एव सन्ति ये भवन्तः अत्र "
-"प्रविशन्ति ।  एषा मेलसङ्केतानां अल्पविरामेन पृथक्कृता सूची अस्ति ।"
 
 #. i18n: ectx: property (toolTip), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mCCEdit)
 #: ui/customtemplates_base.ui:235
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Additional recipients who get a copy of the message"
-msgstr "अतिरिक्तग्राहकाः ये सन्देशस्य प्रतिलिपिं प्राप्नुवन्ति"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mCCEdit)
 #: ui/customtemplates_base.ui:238
@@ -767,85 +720,83 @@ msgid ""
 "When using this template, the recipients you enter here will by default get "
 "a copy of this message.  This is a comma-separated list of mail addresses."
 msgstr ""
-"एतस्य टेम्पलेट् इत्यस्य उपयोगं कुर्वन् भवता अत्र प्रविष्टाः प्राप्तकर्ताः पूर्वनिर्धारितरूपेण अस्य "
-"सन्देशस्य प्रतिलिपिं प्राप्नुयुः ।  एषा मेलसङ्केतानां अल्पविरामेन पृथक्कृता सूची अस्ति ।"
 
 #. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, mEdit)
 #: ui/customtemplates_base.ui:255
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The custom template"
-msgstr "कस्टम् टेम्पलेट्"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, mEdit)
 #: ui/customtemplates_base.ui:258
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This area contains the associated custom template."
-msgstr "अस्मिन् क्षेत्रे सम्बद्धं कस्टम् टेम्पलेट् अस्ति ।"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, mType)
 #: ui/customtemplates_base.ui:283
 #, kde-format
 msgctxt "@item:inlistbox Universal custom template type."
 msgid "Universal"
-msgstr "सार्वभौमिक"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, mType)
 #: ui/customtemplates_base.ui:288
 #, kde-format
 msgctxt "@item:inlistbox Custom template type for message replies"
 msgid "Reply"
-msgstr "उत्तरं"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, mType)
 #: ui/customtemplates_base.ui:293
 #, kde-format
 msgctxt "@item:inlistbox Custom template type for reply-to-all messages"
 msgid "Reply to All"
-msgstr "Reply to All"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, mType)
 #: ui/customtemplates_base.ui:298
 #, kde-format
 msgctxt "@item:inlistbox Custom template type for message forwards"
 msgid "Forward"
-msgstr "अग्रतः"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1_2)
 #: ui/customtemplates_base.ui:306
 #, kde-format
 msgctxt "@label"
 msgid "Shortc&ut:"
-msgstr "Shortc&ut: १."
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #: ui/customtemplates_base.ui:325
 #, kde-format
 msgctxt "@label"
 msgid "&Template type:"
-msgstr "&टेम्पलेट प्रकार: १."
+msgstr ""
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, TemplatesConfigurationBase)
 #: ui/templatesconfiguration_base.ui:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Template Configuration"
-msgstr "टेम्पलेट विन्यास"
+msgstr ""
 
 #. i18n: ectx: attribute (label), widget (QWidget, page_new)
 #: ui/templatesconfiguration_base.ui:77
 #, kde-format
 msgctxt "@title Message template"
 msgid "New Message"
-msgstr "नवीन सन्देश"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, textEdit_new)
 #: ui/templatesconfiguration_base.ui:89
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create the template for new messages"
-msgstr "नूतनसन्देशानां कृते टेम्पलेट् रचयन्तु"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, textEdit_new)
 #: ui/templatesconfiguration_base.ui:92
@@ -856,22 +807,20 @@ msgid ""
 "information about how to create the template, press the \"How does this work?"
 "\" link on this dialog."
 msgstr ""
-"अस्मिन् क्षेत्रे भवन्तः नूतनानां ईमेलसन्देशानां कृते टेम्पलेट् रचयन्ति ।  टेम्पलेट् कथं निर्मातव्यम् इति "
-"विषये अधिकाधिकजानकारीं प्राप्तुं \"एतत् कथं कार्यं करोति?\" अस्मिन् संवादे लिङ्क् कुर्वन्तु ।"
 
 #. i18n: ectx: attribute (label), widget (QWidget, page_reply)
 #: ui/templatesconfiguration_base.ui:108
 #, kde-format
 msgctxt "@title Message template"
 msgid "Reply to Sender"
-msgstr "प्रेषकं प्रति उत्तरं ददातु"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, textEdit_reply)
 #: ui/templatesconfiguration_base.ui:146
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create the template for message replies"
-msgstr "सन्देशप्रतिसादानां कृते टेम्पलेट् रचयन्तु"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, textEdit_reply)
 #: ui/templatesconfiguration_base.ui:149
@@ -882,22 +831,20 @@ msgid ""
 "information about how to create the template, press the \"How does this work?"
 "\" link on this dialog."
 msgstr ""
-"अस्मिन् क्षेत्रे भवान् सन्देशानां उत्तराणां कृते टेम्पलेट् रचयति । टेम्पलेट् कथं निर्मातव्यम् इति विषये "
-"अधिकाधिकजानकारीं प्राप्तुं \"एतत् कथं कार्यं करोति?\" अस्मिन् संवादे लिङ्क् कुर्वन्तु ।"
 
 #. i18n: ectx: attribute (label), widget (QWidget, page_reply_all)
 #: ui/templatesconfiguration_base.ui:165
 #, kde-format
 msgctxt "@title Message template"
 msgid "Reply to All / Reply to List"
-msgstr "सर्वेषां प्रति उत्तरं / सूचीं प्रति उत्तरं ददातु"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, textEdit_reply_all)
 #: ui/templatesconfiguration_base.ui:203
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create the template for replying to all recipients or to a mailing list"
-msgstr "सर्वेषां प्राप्तकर्तानां वा मेलसूचीं वा उत्तरं दातुं टेम्पलेट् रचयन्तु"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, textEdit_reply_all)
 #: ui/templatesconfiguration_base.ui:206
@@ -908,23 +855,20 @@ msgid ""
 "a mailing list.  For more information about how to create the template, "
 "press the \"How does this work?\" link on this dialog."
 msgstr ""
-"अस्मिन् क्षेत्रे भवान् सर्वेषां उत्तर-सन्देशानां अथवा मेल-सूचिकायाः उत्तराणां कृते टेम्पलेट् निर्माति "
-"।  टेम्पलेट् कथं निर्मातव्यम् इति विषये अधिकाधिकजानकारीं प्राप्तुं \"एतत् कथं कार्यं करोति?\" "
-"अस्मिन् संवादे लिङ्क् कुर्वन्तु ।"
 
 #. i18n: ectx: attribute (label), widget (QWidget, page_forward)
 #: ui/templatesconfiguration_base.ui:222
 #, kde-format
 msgctxt "@title Message template"
 msgid "Forward Message"
-msgstr "अग्रे सन्देशः"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, textEdit_forward)
 #: ui/templatesconfiguration_base.ui:260
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create the template for message forwards"
-msgstr "सन्देशस्य अग्रे प्रेषणार्थं टेम्पलेट् रचयन्तु"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, textEdit_forward)
 #: ui/templatesconfiguration_base.ui:263
@@ -935,22 +879,20 @@ msgid ""
 "information about how to create the template, press the \"How does this work?"
 "\" link on this dialog."
 msgstr ""
-"अस्मिन् क्षेत्रे भवान् सन्देशस्य अग्रे प्रेषणार्थं टेम्पलेट् निर्माति ।  टेम्पलेट् कथं निर्मातव्यम् इति "
-"विषये अधिकाधिकजानकारीं प्राप्तुं \"एतत् कथं कार्यं करोति?\" अस्मिन् संवादे लिङ्क् कुर्वन्तु ।"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #: ui/templatesconfiguration_base.ui:303
 #, kde-format
 msgctxt "@label:textbox Prefix for quoted message lines"
 msgid "&Quote indicator:"
-msgstr "&उद्धरण सूचकः : १."
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, lineEdit_quote)
 #: ui/templatesconfiguration_base.ui:316
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Set the Prefix for quoted message lines"
-msgstr "उद्धृतसन्देशपङ्क्तयः कृते Prefix सेट् कुर्वन्तु"
+msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, lineEdit_quote)
 #: ui/templatesconfiguration_base.ui:326
@@ -967,8 +909,3 @@ msgid ""
 "             </ul></qt>\n"
 "           "
 msgstr ""
-"\n"
-"             <qt>उद्धरणसूचके निम्नलिखितस्थानधारकाः समर्थिताः सन्ति ।<ul><li> %f: "
-"प्रेषकस्य आद्याक्षराणि</li><li> %%: प्रतिशतं चिह्नम्</li><li> %_: स्थानं</li></ul></"
-"qt>\n"
-"           "

@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-12 00:41+0000\n"
-"PO-Revision-Date: 2024-12-13 21:23+0100\n"
+"PO-Revision-Date: 2024-12-16 01:06+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.08.3\n"
+"X-Generator: Lokalize 24.12.0\n"
 
 #: attachment/attachmentcontrollerbase.cpp:166
 #, kde-format
@@ -124,7 +124,7 @@ msgstr "&Anexar un ficheiro…"
 #: attachment/attachmentcontrollerbase.cpp:463
 #, kde-format
 msgid "Add Attachment..."
-msgstr "Engadir un ficheiro anexo…"
+msgstr "Engadir un anexo…"
 
 #: attachment/attachmentcontrollerbase.cpp:467
 #, kde-format
@@ -160,7 +160,7 @@ msgstr "Anexar texto do portapapeis"
 #: attachment/attachmentcontrollerbase.cpp:493
 #, kde-format
 msgid "&Remove Attachment"
-msgstr "&Retirar o ficheiro anexo"
+msgstr "&Retirar o anexo"
 
 #: attachment/attachmentcontrollerbase.cpp:494
 #, kde-format
@@ -258,7 +258,7 @@ msgstr "sen nome"
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Attachment As"
-msgstr "Gardar o ficheiro anexo como"
+msgstr "Gardar o anexo como"
 
 #: attachment/attachmentcontrollerbase.cpp:821
 #, kde-format
@@ -917,8 +917,8 @@ msgid ""
 "prompted to specify the keys to use."
 msgstr ""
 "Unha ou máis das súas chaves de sinatura OpenPGP ou dos seus certificados S/"
-"MIME de sinatura configurados están inutilizábeis para o cifrado. Por favor, "
-"reconfigure as súas chaves e certificados de cifrado para esta identidade no "
+"MIME de sinatura configurados están inutilizábeis para o asinado. "
+"Reconfigure as súas chaves e certificados de asinado para esta identidade no "
 "diálogo de configuración de identidades.\n"
 "Se escolle continuar, e as chaves se precisan máis adiante, solicitaráselle "
 "que indique as chaves para usar."
@@ -1219,7 +1219,7 @@ msgid ""
 msgstr ""
 "\n"
 "Isto é un reenvío de resumo en formato MIME. O contido da mensaxe está "
-"no(s)ficheiro(s) anexo(s).\n"
+"anexo.\n"
 "\n"
 "\n"
 
