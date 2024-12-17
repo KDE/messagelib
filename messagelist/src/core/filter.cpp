@@ -231,7 +231,20 @@ QList<SearchLineCommand::SearchLineInfo> Filter::searchLineCommands() const
             if (i.isValid()) {
                 infos.append(std::move(i));
             }
+        } else if (status.isSpam()) {
+            SearchLineCommand::SearchLineInfo i;
+            i.type = SearchLineCommand::SearchLineType::IsSpam;
+            if (i.isValid()) {
+                infos.append(std::move(i));
+            }
+        } else if (status.isHam()) {
+            SearchLineCommand::SearchLineInfo i;
+            i.type = SearchLineCommand::SearchLineType::IsHam;
+            if (i.isValid()) {
+                infos.append(std::move(i));
+            }
         }
+
         // TODO add more
     }
 
