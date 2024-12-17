@@ -30,6 +30,7 @@ QMap<QString, SearchLineCommand::SearchLineType> SearchLineCommand::mKeyList = {
     {"is:watched"_L1, SearchLineCommand::SearchLineType::IsWatched},
     {"is:replied"_L1, SearchLineCommand::SearchLineType::IsReplied},
     {"is:forwarded"_L1, SearchLineCommand::SearchLineType::IsForwarded},
+    {"is:encrypted"_L1, SearchLineCommand::SearchLineType::IsEncrypted},
     {"size"_L1, SearchLineCommand::SearchLineType::Size},
     {"smaller"_L1, SearchLineCommand::SearchLineType::Larger},
     {"larger"_L1, SearchLineCommand::SearchLineType::Smaller},
@@ -115,6 +116,8 @@ QString SearchLineCommand::convertSearchLinetypeToTranslatedString(SearchLineCom
         return i18n("Mail is replied");
     case IsForwarded:
         return i18n("Mail is forwarded");
+    case IsEncrypted:
+        return i18n("Mail is encrypted");
     }
     return {};
 }
@@ -380,7 +383,7 @@ bool SearchLineCommand::SearchLineInfo::isValidDate() const
 bool SearchLineCommand::SearchLineInfo::mustBeUnique() const
 {
     return type == HasAttachment || type == IsImportant || type == IsRead || type == IsUnRead || type == IsIgnored || type == IsHam || type == IsSpam
-        || type == IsWatched || type == IsReplied || type == IsForwarded;
+        || type == IsWatched || type == IsReplied || type == IsForwarded || type == IsEncrypted;
 }
 
 qint64 SearchLineCommand::SearchLineInfo::convertArgumentAsSize() const

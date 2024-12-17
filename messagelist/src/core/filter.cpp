@@ -207,6 +207,12 @@ QList<SearchLineCommand::SearchLineInfo> Filter::searchLineCommands() const
             if (i.isValid()) {
                 infos.append(std::move(i));
             }
+        } else if (status.isEncrypted()) {
+            SearchLineCommand::SearchLineInfo i;
+            i.type = SearchLineCommand::SearchLineType::IsEncrypted;
+            if (i.isValid()) {
+                infos.append(std::move(i));
+            }
         } else if (status.isReplied()) {
             SearchLineCommand::SearchLineInfo i;
             i.type = SearchLineCommand::SearchLineType::IsReplied;
@@ -442,6 +448,12 @@ void Filter::setSearchString(const SearchLineCommand &command)
         case SearchLineCommand::IsReplied: {
             Akonadi::MessageStatus status;
             status.setReplied(true);
+            lstStatus.append(status);
+            break;
+        }
+        case SearchLineCommand::IsEncrypted: {
+            Akonadi::MessageStatus status;
+            status.setEncrypted(true);
             lstStatus.append(status);
             break;
         }

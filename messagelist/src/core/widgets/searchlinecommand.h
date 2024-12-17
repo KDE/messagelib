@@ -41,6 +41,7 @@ public:
         IsWatched,
         IsReplied,
         IsForwarded,
+        IsEncrypted,
         Larger,
         Smaller,
         OlderThan,
