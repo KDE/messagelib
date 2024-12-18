@@ -13,35 +13,36 @@
 using namespace Qt::Literals::StringLiterals;
 using namespace MessageList::Core;
 QMap<QString, SearchLineCommand::SearchLineType> SearchLineCommand::mKeyList = {
-    {"subject"_L1, SearchLineCommand::SearchLineType::Subject},
-    {"body"_L1, SearchLineCommand::SearchLineType::Body},
-    {"to"_L1, SearchLineCommand::SearchLineType::To},
-    {"cc"_L1, SearchLineCommand::SearchLineType::Cc},
-    {"bcc"_L1, SearchLineCommand::SearchLineType::Bcc},
-    {"from"_L1, SearchLineCommand::SearchLineType::From},
-    {"has:attachment"_L1, SearchLineCommand::SearchLineType::HasAttachment},
-    {"has:invitation"_L1, SearchLineCommand::SearchLineType::HasInvitation},
-    {"is:unread"_L1, SearchLineCommand::SearchLineType::IsUnRead},
-    {"is:read"_L1, SearchLineCommand::SearchLineType::IsRead},
-    {"is:important"_L1, SearchLineCommand::SearchLineType::IsImportant},
-    {"is:ignored"_L1, SearchLineCommand::SearchLineType::IsIgnored},
-    {"is:ham"_L1, SearchLineCommand::SearchLineType::IsHam},
-    {"is:spam"_L1, SearchLineCommand::SearchLineType::IsSpam},
-    {"is:watched"_L1, SearchLineCommand::SearchLineType::IsWatched},
-    {"is:replied"_L1, SearchLineCommand::SearchLineType::IsReplied},
-    {"is:forwarded"_L1, SearchLineCommand::SearchLineType::IsForwarded},
-    {"is:encrypted"_L1, SearchLineCommand::SearchLineType::IsEncrypted},
-    {"is:queued"_L1, SearchLineCommand::SearchLineType::IsQueued},
-    {"size"_L1, SearchLineCommand::SearchLineType::Size},
-    {"smaller"_L1, SearchLineCommand::SearchLineType::Larger},
-    {"larger"_L1, SearchLineCommand::SearchLineType::Smaller},
-    {"older_than"_L1, SearchLineCommand::SearchLineType::OlderThan},
-    {"newer_than"_L1, SearchLineCommand::SearchLineType::NewerThan},
-    {"category"_L1, SearchLineCommand::SearchLineType::Category},
+    {SearchLineCommand::searchLineTypeToString(Subject), SearchLineCommand::SearchLineType::Subject},
+    {SearchLineCommand::searchLineTypeToString(Body), SearchLineCommand::SearchLineType::Body},
+    {SearchLineCommand::searchLineTypeToString(To), SearchLineCommand::SearchLineType::To},
+    {SearchLineCommand::searchLineTypeToString(Cc), SearchLineCommand::SearchLineType::Cc},
+    {SearchLineCommand::searchLineTypeToString(Bcc), SearchLineCommand::SearchLineType::Bcc},
+    {SearchLineCommand::searchLineTypeToString(From), SearchLineCommand::SearchLineType::From},
+    {SearchLineCommand::searchLineTypeToString(HasAttachment), SearchLineCommand::SearchLineType::HasAttachment},
+    {SearchLineCommand::searchLineTypeToString(HasInvitation), SearchLineCommand::SearchLineType::HasInvitation},
+    {SearchLineCommand::searchLineTypeToString(IsUnRead), SearchLineCommand::SearchLineType::IsUnRead},
+    {SearchLineCommand::searchLineTypeToString(IsRead), SearchLineCommand::SearchLineType::IsRead},
+    {SearchLineCommand::searchLineTypeToString(IsImportant), SearchLineCommand::SearchLineType::IsImportant},
+    {SearchLineCommand::searchLineTypeToString(IsIgnored), SearchLineCommand::SearchLineType::IsIgnored},
+    {SearchLineCommand::searchLineTypeToString(IsHam), SearchLineCommand::SearchLineType::IsHam},
+    {SearchLineCommand::searchLineTypeToString(IsSpam), SearchLineCommand::SearchLineType::IsSpam},
+    {SearchLineCommand::searchLineTypeToString(IsWatched), SearchLineCommand::SearchLineType::IsWatched},
+    {SearchLineCommand::searchLineTypeToString(IsReplied), SearchLineCommand::SearchLineType::IsReplied},
+    {SearchLineCommand::searchLineTypeToString(IsForwarded), SearchLineCommand::SearchLineType::IsForwarded},
+    {SearchLineCommand::searchLineTypeToString(IsEncrypted), SearchLineCommand::SearchLineType::IsEncrypted},
+    {SearchLineCommand::searchLineTypeToString(IsQueued), SearchLineCommand::SearchLineType::IsQueued},
+    {SearchLineCommand::searchLineTypeToString(Size), SearchLineCommand::SearchLineType::Size},
+    {SearchLineCommand::searchLineTypeToString(Smaller), SearchLineCommand::SearchLineType::Larger},
+    {SearchLineCommand::searchLineTypeToString(Larger), SearchLineCommand::SearchLineType::Smaller},
+    {SearchLineCommand::searchLineTypeToString(OlderThan), SearchLineCommand::SearchLineType::OlderThan},
+    {SearchLineCommand::searchLineTypeToString(NewerThan), SearchLineCommand::SearchLineType::NewerThan},
+    {SearchLineCommand::searchLineTypeToString(Category), SearchLineCommand::SearchLineType::Category},
     // after:before:older:newer:
     // category:
     // TODO add support for OR
 };
+
 SearchLineCommand::SearchLineCommand() = default;
 
 SearchLineCommand::~SearchLineCommand() = default;
@@ -60,6 +61,68 @@ bool SearchLineCommand::hasSubType(SearchLineCommand::SearchLineType type)
 bool SearchLineCommand::isEmpty() const
 {
     return mSearchLineInfo.isEmpty();
+}
+
+QString SearchLineCommand::searchLineTypeToString(SearchLineType type)
+{
+    switch (type) {
+    case Unknown:
+    case HasStateOrAttachment:
+    case Literal:
+    case Date:
+        return {};
+    case OlderThan:
+        return QStringLiteral("older_than");
+    case NewerThan:
+        return QStringLiteral("newer_than");
+    case Smaller:
+        return QStringLiteral("smaller");
+    case Larger:
+        return QStringLiteral("larger");
+    case Size:
+        return QStringLiteral("size");
+    case To:
+        return QStringLiteral("to");
+    case Bcc:
+        return QStringLiteral("bcc");
+    case Cc:
+        return QStringLiteral("cc");
+    case From:
+        return QStringLiteral("from");
+    case Subject:
+        return QStringLiteral("subject");
+    case Body:
+        return QStringLiteral("body");
+    case Category:
+        return QStringLiteral("category");
+    case HasAttachment:
+        return QStringLiteral("has:attachment");
+    case HasInvitation:
+        return QStringLiteral("has:invitation");
+    case IsImportant:
+        return QStringLiteral("is:important");
+    case IsRead:
+        return QStringLiteral("is:read");
+    case IsUnRead:
+        return QStringLiteral("is:unread");
+    case IsIgnored:
+        return QStringLiteral("is:ignored");
+    case IsHam:
+        return QStringLiteral("is:ham");
+    case IsSpam:
+        return QStringLiteral("is:spam");
+    case IsWatched:
+        return QStringLiteral("is:watched");
+    case IsReplied:
+        return QStringLiteral("is:replied");
+    case IsForwarded:
+        return QStringLiteral("is:forwarded");
+    case IsEncrypted:
+        return QStringLiteral("is:encrypted");
+    case IsQueued:
+        return QStringLiteral("is:queued");
+    }
+    return {};
 }
 
 QString SearchLineCommand::convertSearchLinetypeToTranslatedString(SearchLineCommand::SearchLineType type) const

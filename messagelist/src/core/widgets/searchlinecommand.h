@@ -75,6 +75,8 @@ public:
 
     [[nodiscard]] bool isEmpty() const;
 
+    static QString searchLineTypeToString(SearchLineCommand::SearchLineType type);
+
 private:
     [[nodiscard]] MESSAGELIST_NO_EXPORT QString convertSearchLinetypeToTranslatedString(SearchLineCommand::SearchLineType type) const;
     [[nodiscard]] MESSAGELIST_NO_EXPORT SearchLineInfo isAnotherInfo(QString tmp, SearchLineInfo searchLineInfo);
