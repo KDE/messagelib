@@ -61,6 +61,7 @@ void SearchLineCommandButtonsWidget::fillWidgets()
         {true, QStringLiteral("is:watched"), i18nc("@action:button", "Watched")},
         {true, QStringLiteral("is:replied"), i18nc("@action:button", "Replied")},
         {true, QStringLiteral("is:forwarded"), i18nc("@action:button", "Forwarded")},
+        {true, QStringLiteral("is:encrypted"), i18nc("@action:button", "Encrypted")},
 #if 0 // Reactivate when we implemented it.
         {false, QStringLiteral("smaller:"), i18nc("@action:button", "Smaller")},
         {false, QStringLiteral("larger:"), i18nc("@action:button", "Larger")},
