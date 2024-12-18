@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-13 00:41+0000\n"
+"POT-Creation-Date: 2024-12-18 00:41+0000\n"
 "PO-Revision-Date: 2024-10-30 04:25+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -1150,117 +1150,123 @@ msgstr ""
 "ამ მოთხოვნაში ზოგიერთი საძებნი საქაღალდე ჯერ კიდევ ინდექსდება ან ამოღებულია "
 "დაინდექსებიდან. შედეგები შეიძლება არასრული იყოს."
 
-#: core/widgets/searchlinecommand.cpp:75
+#: core/widgets/searchlinecommand.cpp:76
 #, kde-format
 msgid "Literal string"
 msgstr "სტრიქონი (Literal)"
 
-#: core/widgets/searchlinecommand.cpp:77
+#: core/widgets/searchlinecommand.cpp:78
 #, kde-format
 msgid "Size is smaller than"
 msgstr "ზომა მცირეა, ვიდრე"
 
-#: core/widgets/searchlinecommand.cpp:79
+#: core/widgets/searchlinecommand.cpp:80
 #, kde-format
 msgid "Size is larger than"
 msgstr "ზომა დიდია, ვიდრე"
 
-#: core/widgets/searchlinecommand.cpp:81
+#: core/widgets/searchlinecommand.cpp:82
 #, kde-format
 msgid "Size is"
 msgstr "ზომაა"
 
-#: core/widgets/searchlinecommand.cpp:83
+#: core/widgets/searchlinecommand.cpp:84
 #, kde-format
 msgid "To contains"
 msgstr "ველი ვის შეიცავს"
 
-#: core/widgets/searchlinecommand.cpp:85
+#: core/widgets/searchlinecommand.cpp:86
 #, kde-format
 msgid "BCC contains"
 msgstr "ველი ბრმა ასლი შეიცავს"
 
-#: core/widgets/searchlinecommand.cpp:87
+#: core/widgets/searchlinecommand.cpp:88
 #, kde-format
 msgid "CC contains"
 msgstr "ველი ასლი შეიცავს"
 
-#: core/widgets/searchlinecommand.cpp:89
+#: core/widgets/searchlinecommand.cpp:90
 #, kde-format
 msgid "From contains"
 msgstr "ველი ვისგან შეიცავს"
 
-#: core/widgets/searchlinecommand.cpp:91
+#: core/widgets/searchlinecommand.cpp:92
 #, kde-format
 msgid "Subject contains"
 msgstr "თემა შეიცავს"
 
-#: core/widgets/searchlinecommand.cpp:93
+#: core/widgets/searchlinecommand.cpp:94
 #, kde-format
 msgid "Body contains"
 msgstr "სხეული შეიცავს"
 
-#: core/widgets/searchlinecommand.cpp:95
+#: core/widgets/searchlinecommand.cpp:96
 #, kde-format
 msgid "Mail has tag"
 msgstr "ელფოსტას აქვს ჭდე"
 
-#: core/widgets/searchlinecommand.cpp:97
+#: core/widgets/searchlinecommand.cpp:98
 #, kde-format
 msgid "Mail has attachment"
 msgstr "ელფოსტას აქვს მიმაგრებები"
 
-#: core/widgets/searchlinecommand.cpp:99
+#: core/widgets/searchlinecommand.cpp:100
 #, kde-format
 msgid "Mail has invitation"
 msgstr "ელფოსტას აქვს მოსაწვევი"
 
-#: core/widgets/searchlinecommand.cpp:101
+#: core/widgets/searchlinecommand.cpp:102
 #, kde-format
 msgid "Mail is important"
 msgstr "ელფოსტა მნიშვნელოვანია"
 
-#: core/widgets/searchlinecommand.cpp:103
+#: core/widgets/searchlinecommand.cpp:104
 #, kde-format
 msgid "Mail is read"
 msgstr "ელფოსტა წაკითხულია"
 
-#: core/widgets/searchlinecommand.cpp:105
+#: core/widgets/searchlinecommand.cpp:106
 #, kde-format
 msgid "Mail is Unread"
 msgstr "ელფოსტა წაუკითხავია"
 
-#: core/widgets/searchlinecommand.cpp:107
+#: core/widgets/searchlinecommand.cpp:108
 #, kde-format
 msgid "Mail is Ignored"
 msgstr "ელფოსტა გამოტოვებულია"
 
-#: core/widgets/searchlinecommand.cpp:109
+#: core/widgets/searchlinecommand.cpp:110
 #, kde-format
 msgid "Mail is Ham"
 msgstr "ელფოსტა შუალედურია"
 
-#: core/widgets/searchlinecommand.cpp:111
+#: core/widgets/searchlinecommand.cpp:112
 #, kde-format
 msgid "Mail is Spam"
 msgstr "ელფოსტა სპამია"
 
-#: core/widgets/searchlinecommand.cpp:113
+#: core/widgets/searchlinecommand.cpp:114
 #, kde-format
 msgid "Mail is watched"
 msgstr "ელფოსტას ყურადღებას აქცევენ"
 
-#: core/widgets/searchlinecommand.cpp:115
+#: core/widgets/searchlinecommand.cpp:116
 #, kde-format
 msgid "Mail is replied"
 msgstr "ელფოსტა ნაპასუხებია"
 
-#: core/widgets/searchlinecommand.cpp:117
+#: core/widgets/searchlinecommand.cpp:118
 #, kde-format
 msgid "Mail is forwarded"
 msgstr "ელფოსტა გადაგზავნილია"
 
-#: core/widgets/searchlinecommand.cpp:127
+#: core/widgets/searchlinecommand.cpp:120
+#, fuzzy, kde-format
+#| msgid "Mail is Unread"
+msgid "Mail is encrypted"
+msgstr "ელფოსტა წაუკითხავია"
+
+#: core/widgets/searchlinecommand.cpp:130
 #, kde-format
 msgid "AND"
 msgstr "და"

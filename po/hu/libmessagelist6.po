@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-13 00:41+0000\n"
+"POT-Creation-Date: 2024-12-18 00:41+0000\n"
 "PO-Revision-Date: 2024-11-18 22:16+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -1152,117 +1152,123 @@ msgstr ""
 "vagy teljesen ki vannak zárva az indexelésből. Az alábbi eredmények "
 "hiányosak lehetnek."
 
-#: core/widgets/searchlinecommand.cpp:75
+#: core/widgets/searchlinecommand.cpp:76
 #, kde-format
 msgid "Literal string"
 msgstr "Literálkarakterlánc"
 
-#: core/widgets/searchlinecommand.cpp:77
+#: core/widgets/searchlinecommand.cpp:78
 #, kde-format
 msgid "Size is smaller than"
 msgstr "Méret kisebb, mint"
 
-#: core/widgets/searchlinecommand.cpp:79
+#: core/widgets/searchlinecommand.cpp:80
 #, kde-format
 msgid "Size is larger than"
 msgstr "Méret nagyobb, mint"
 
-#: core/widgets/searchlinecommand.cpp:81
+#: core/widgets/searchlinecommand.cpp:82
 #, kde-format
 msgid "Size is"
 msgstr "Méret"
 
-#: core/widgets/searchlinecommand.cpp:83
+#: core/widgets/searchlinecommand.cpp:84
 #, kde-format
 msgid "To contains"
 msgstr "Címzett tartalmazza"
 
-#: core/widgets/searchlinecommand.cpp:85
+#: core/widgets/searchlinecommand.cpp:86
 #, kde-format
 msgid "BCC contains"
 msgstr "Titkos másolattartalmazza"
 
-#: core/widgets/searchlinecommand.cpp:87
+#: core/widgets/searchlinecommand.cpp:88
 #, kde-format
 msgid "CC contains"
 msgstr "Másolat tartalmazza"
 
-#: core/widgets/searchlinecommand.cpp:89
+#: core/widgets/searchlinecommand.cpp:90
 #, kde-format
 msgid "From contains"
 msgstr "Feladó tartalmazza"
 
-#: core/widgets/searchlinecommand.cpp:91
+#: core/widgets/searchlinecommand.cpp:92
 #, kde-format
 msgid "Subject contains"
 msgstr "Tárgy tartalmazza"
 
-#: core/widgets/searchlinecommand.cpp:93
+#: core/widgets/searchlinecommand.cpp:94
 #, kde-format
 msgid "Body contains"
 msgstr "Törzs tartalmazza"
 
-#: core/widgets/searchlinecommand.cpp:95
+#: core/widgets/searchlinecommand.cpp:96
 #, kde-format
 msgid "Mail has tag"
 msgstr "A levélnek van címkéje"
 
-#: core/widgets/searchlinecommand.cpp:97
+#: core/widgets/searchlinecommand.cpp:98
 #, kde-format
 msgid "Mail has attachment"
 msgstr "A levélnek van melléklete"
 
-#: core/widgets/searchlinecommand.cpp:99
+#: core/widgets/searchlinecommand.cpp:100
 #, kde-format
 msgid "Mail has invitation"
 msgstr "A levél meghívóval rendelkezik"
 
-#: core/widgets/searchlinecommand.cpp:101
+#: core/widgets/searchlinecommand.cpp:102
 #, kde-format
 msgid "Mail is important"
 msgstr "A levél fontos"
 
-#: core/widgets/searchlinecommand.cpp:103
+#: core/widgets/searchlinecommand.cpp:104
 #, kde-format
 msgid "Mail is read"
 msgstr "A levél olvasott"
 
-#: core/widgets/searchlinecommand.cpp:105
+#: core/widgets/searchlinecommand.cpp:106
 #, kde-format
 msgid "Mail is Unread"
 msgstr "A levél olvasatlan"
 
-#: core/widgets/searchlinecommand.cpp:107
+#: core/widgets/searchlinecommand.cpp:108
 #, kde-format
 msgid "Mail is Ignored"
 msgstr "A levél mellőzött"
 
-#: core/widgets/searchlinecommand.cpp:109
+#: core/widgets/searchlinecommand.cpp:110
 #, kde-format
 msgid "Mail is Ham"
 msgstr "A levél ál-levélszemét"
 
-#: core/widgets/searchlinecommand.cpp:111
+#: core/widgets/searchlinecommand.cpp:112
 #, kde-format
 msgid "Mail is Spam"
 msgstr "A levél levelszemét"
 
-#: core/widgets/searchlinecommand.cpp:113
+#: core/widgets/searchlinecommand.cpp:114
 #, kde-format
 msgid "Mail is watched"
 msgstr "A levél figyelt"
 
-#: core/widgets/searchlinecommand.cpp:115
+#: core/widgets/searchlinecommand.cpp:116
 #, kde-format
 msgid "Mail is replied"
 msgstr "A levél megválaszolt"
 
-#: core/widgets/searchlinecommand.cpp:117
+#: core/widgets/searchlinecommand.cpp:118
 #, kde-format
 msgid "Mail is forwarded"
 msgstr "A levél továbbított"
 
-#: core/widgets/searchlinecommand.cpp:127
+#: core/widgets/searchlinecommand.cpp:120
+#, fuzzy, kde-format
+#| msgid "Mail is Unread"
+msgid "Mail is encrypted"
+msgstr "A levél olvasatlan"
+
+#: core/widgets/searchlinecommand.cpp:130
 #, kde-format
 msgid "AND"
 msgstr "ÉS"

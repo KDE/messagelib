@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-13 00:41+0000\n"
+"POT-Creation-Date: 2024-12-18 00:41+0000\n"
 "PO-Revision-Date: 2024-11-12 20:48+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -1161,117 +1161,123 @@ msgstr ""
 "Dažas no meklēšanas mapēm šajā vaicājumā vēl tiek indeksētas vai indeksēšanā "
 "nav iekļautas. Zemāk norādītie rezultāti var nebūt pilnīgi."
 
-#: core/widgets/searchlinecommand.cpp:75
+#: core/widgets/searchlinecommand.cpp:76
 #, kde-format
 msgid "Literal string"
 msgstr "Simbolu virkne"
 
-#: core/widgets/searchlinecommand.cpp:77
+#: core/widgets/searchlinecommand.cpp:78
 #, kde-format
 msgid "Size is smaller than"
 msgstr "Izmērs ir mazāks par"
 
-#: core/widgets/searchlinecommand.cpp:79
+#: core/widgets/searchlinecommand.cpp:80
 #, kde-format
 msgid "Size is larger than"
 msgstr "Izmērs ir lielāks par"
 
-#: core/widgets/searchlinecommand.cpp:81
+#: core/widgets/searchlinecommand.cpp:82
 #, kde-format
 msgid "Size is"
 msgstr "Izmērs ir"
 
-#: core/widgets/searchlinecommand.cpp:83
+#: core/widgets/searchlinecommand.cpp:84
 #, kde-format
 msgid "To contains"
 msgstr "„Kam“ satur"
 
-#: core/widgets/searchlinecommand.cpp:85
+#: core/widgets/searchlinecommand.cpp:86
 #, kde-format
 msgid "BCC contains"
 msgstr "„BCC“ satur"
 
-#: core/widgets/searchlinecommand.cpp:87
+#: core/widgets/searchlinecommand.cpp:88
 #, kde-format
 msgid "CC contains"
 msgstr "„CC“ satur"
 
-#: core/widgets/searchlinecommand.cpp:89
+#: core/widgets/searchlinecommand.cpp:90
 #, kde-format
 msgid "From contains"
 msgstr "„No“ satur"
 
-#: core/widgets/searchlinecommand.cpp:91
+#: core/widgets/searchlinecommand.cpp:92
 #, kde-format
 msgid "Subject contains"
 msgstr "„Temats“ satur"
 
-#: core/widgets/searchlinecommand.cpp:93
+#: core/widgets/searchlinecommand.cpp:94
 #, kde-format
 msgid "Body contains"
 msgstr "Pamatteksts satur"
 
-#: core/widgets/searchlinecommand.cpp:95
+#: core/widgets/searchlinecommand.cpp:96
 #, kde-format
 msgid "Mail has tag"
 msgstr "Vēstulei ir birkas"
 
-#: core/widgets/searchlinecommand.cpp:97
+#: core/widgets/searchlinecommand.cpp:98
 #, kde-format
 msgid "Mail has attachment"
 msgstr "Vēstulei ir pielikumi"
 
-#: core/widgets/searchlinecommand.cpp:99
+#: core/widgets/searchlinecommand.cpp:100
 #, kde-format
 msgid "Mail has invitation"
 msgstr "Vēstulē ir uzaicinājums"
 
-#: core/widgets/searchlinecommand.cpp:101
+#: core/widgets/searchlinecommand.cpp:102
 #, kde-format
 msgid "Mail is important"
 msgstr "Vēstule ir svarīga"
 
-#: core/widgets/searchlinecommand.cpp:103
+#: core/widgets/searchlinecommand.cpp:104
 #, kde-format
 msgid "Mail is read"
 msgstr "Vēstule ir lasīta"
 
-#: core/widgets/searchlinecommand.cpp:105
+#: core/widgets/searchlinecommand.cpp:106
 #, kde-format
 msgid "Mail is Unread"
 msgstr "Vēstule nav lasīta"
 
-#: core/widgets/searchlinecommand.cpp:107
+#: core/widgets/searchlinecommand.cpp:108
 #, kde-format
 msgid "Mail is Ignored"
 msgstr "Vēstule ir ignorēta"
 
-#: core/widgets/searchlinecommand.cpp:109
+#: core/widgets/searchlinecommand.cpp:110
 #, kde-format
 msgid "Mail is Ham"
 msgstr "Vēstule nav mēstule"
 
-#: core/widgets/searchlinecommand.cpp:111
+#: core/widgets/searchlinecommand.cpp:112
 #, kde-format
 msgid "Mail is Spam"
 msgstr "Vēstule ir mēstule"
 
-#: core/widgets/searchlinecommand.cpp:113
+#: core/widgets/searchlinecommand.cpp:114
 #, kde-format
 msgid "Mail is watched"
 msgstr "Vēstule ir uzraudzīta"
 
-#: core/widgets/searchlinecommand.cpp:115
+#: core/widgets/searchlinecommand.cpp:116
 #, kde-format
 msgid "Mail is replied"
 msgstr "Vēstule ir atbildēta"
 
-#: core/widgets/searchlinecommand.cpp:117
+#: core/widgets/searchlinecommand.cpp:118
 #, kde-format
 msgid "Mail is forwarded"
 msgstr "Vēstule ir pārsūtīta"
 
-#: core/widgets/searchlinecommand.cpp:127
+#: core/widgets/searchlinecommand.cpp:120
+#, fuzzy, kde-format
+#| msgid "Mail is Unread"
+msgid "Mail is encrypted"
+msgstr "Vēstule nav lasīta"
+
+#: core/widgets/searchlinecommand.cpp:130
 #, kde-format
 msgid "AND"
 msgstr "UN"

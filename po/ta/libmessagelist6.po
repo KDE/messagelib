@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-13 00:41+0000\n"
+"POT-Creation-Date: 2024-12-18 00:41+0000\n"
 "PO-Revision-Date: 2024-11-17 21:52+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -1152,118 +1152,124 @@ msgstr ""
 "இந்த வினாவிற்கான சில தேடல் அடைவுகளின் அட்டவணையாக்கம் இன்னும் முடியவில்லை அல்லது "
 "முடக்கப்பட்டுள்ளது. கீழுள்ள முடிவுகள் அரைகுறையாக இருக்கலாம்."
 
-#: core/widgets/searchlinecommand.cpp:75
+#: core/widgets/searchlinecommand.cpp:76
 #, kde-format
 msgid "Literal string"
 msgstr "சரம் அப்படியே"
 
-#: core/widgets/searchlinecommand.cpp:77
+#: core/widgets/searchlinecommand.cpp:78
 #, kde-format
 msgid "Size is smaller than"
 msgstr "அளவு இதைவிட சிறியது"
 
-#: core/widgets/searchlinecommand.cpp:79
+#: core/widgets/searchlinecommand.cpp:80
 #, kde-format
 msgid "Size is larger than"
 msgstr "அளவு இதைவிட பெரியது"
 
-#: core/widgets/searchlinecommand.cpp:81
+#: core/widgets/searchlinecommand.cpp:82
 #, kde-format
 msgid "Size is"
 msgstr "அளவு"
 
-#: core/widgets/searchlinecommand.cpp:83
+#: core/widgets/searchlinecommand.cpp:84
 #, kde-format
 msgid "To contains"
 msgstr "பெறுநர் இதைக் கொண்டது"
 
-#: core/widgets/searchlinecommand.cpp:85
+#: core/widgets/searchlinecommand.cpp:86
 #, kde-format
 msgid "BCC contains"
 msgstr "மறைநகல் இதைக் கொண்டது"
 
-#: core/widgets/searchlinecommand.cpp:87
+#: core/widgets/searchlinecommand.cpp:88
 #, kde-format
 msgid "CC contains"
 msgstr "நகல் இதைக் கொண்டது"
 
-#: core/widgets/searchlinecommand.cpp:89
+#: core/widgets/searchlinecommand.cpp:90
 #, kde-format
 msgid "From contains"
 msgstr "அனுப்புநர் இதைக் கொண்டது"
 
-#: core/widgets/searchlinecommand.cpp:91
+#: core/widgets/searchlinecommand.cpp:92
 #, kde-format
 msgid "Subject contains"
 msgstr "தலைப்பு இதைக் கொண்டது"
 
-#: core/widgets/searchlinecommand.cpp:93
+#: core/widgets/searchlinecommand.cpp:94
 #, kde-format
 msgid "Body contains"
 msgstr "உடல் இதைக் கொண்டது"
 
-#: core/widgets/searchlinecommand.cpp:95
+#: core/widgets/searchlinecommand.cpp:96
 #, kde-format
 msgid "Mail has tag"
 msgstr "இக்குறிச்சொல்லை கொண்ட அஞ்சல்"
 
-#: core/widgets/searchlinecommand.cpp:97
+#: core/widgets/searchlinecommand.cpp:98
 #, kde-format
 msgid "Mail has attachment"
 msgstr "உடனிணைப்பைக் கொண்ட அஞ்சல்"
 
-#: core/widgets/searchlinecommand.cpp:99
+#: core/widgets/searchlinecommand.cpp:100
 #, kde-format
 msgid "Mail has invitation"
 msgstr "அழைப்பிதழைக் கொண்ட அஞ்சல்"
 
-#: core/widgets/searchlinecommand.cpp:101
+#: core/widgets/searchlinecommand.cpp:102
 #, kde-format
 msgid "Mail is important"
 msgstr "முக்கியமான அஞ்சல்"
 
-#: core/widgets/searchlinecommand.cpp:103
+#: core/widgets/searchlinecommand.cpp:104
 #, kde-format
 msgid "Mail is read"
 msgstr "படித்த அஞ்சல்"
 
-#: core/widgets/searchlinecommand.cpp:105
+#: core/widgets/searchlinecommand.cpp:106
 #, kde-format
 msgid "Mail is Unread"
 msgstr "படிக்காத அஞ்சல்"
 
-#: core/widgets/searchlinecommand.cpp:107
+#: core/widgets/searchlinecommand.cpp:108
 #, kde-format
 msgid "Mail is Ignored"
 msgstr "பொருட்படுத்தப்படாத அஞ்சல்"
 
-#: core/widgets/searchlinecommand.cpp:109
+#: core/widgets/searchlinecommand.cpp:110
 #, fuzzy, kde-format
 #| msgid "Mail"
 msgid "Mail is Ham"
 msgstr "அஞ்சல்"
 
-#: core/widgets/searchlinecommand.cpp:111
+#: core/widgets/searchlinecommand.cpp:112
 #, kde-format
 msgid "Mail is Spam"
 msgstr "ஸ்பேம் அஞ்சல்"
 
-#: core/widgets/searchlinecommand.cpp:113
+#: core/widgets/searchlinecommand.cpp:114
 #, kde-format
 msgid "Mail is watched"
 msgstr "கவனிக்கப்படும் அஞ்சல்"
 
-#: core/widgets/searchlinecommand.cpp:115
+#: core/widgets/searchlinecommand.cpp:116
 #, kde-format
 msgid "Mail is replied"
 msgstr "பதிலளித்த அஞ்சல்"
 
-#: core/widgets/searchlinecommand.cpp:117
+#: core/widgets/searchlinecommand.cpp:118
 #, kde-format
 msgid "Mail is forwarded"
 msgstr "முன்னனுப்பிய அஞ்சல்"
 
-#: core/widgets/searchlinecommand.cpp:127
+#: core/widgets/searchlinecommand.cpp:120
+#, fuzzy, kde-format
+#| msgid "Mail is Unread"
+msgid "Mail is encrypted"
+msgstr "படிக்காத அஞ்சல்"
+
+#: core/widgets/searchlinecommand.cpp:130
 #, kde-format
 msgid "AND"
 msgstr "மற்றும்"

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-13 00:41+0000\n"
+"POT-Creation-Date: 2024-12-18 00:41+0000\n"
 "PO-Revision-Date: 2024-10-30 05:53+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -1176,117 +1176,123 @@ msgstr ""
 "ali pa so izločene iz ustvarjanja kazala. Spodnji rezultati bodo morda "
 "nepopolni."
 
-#: core/widgets/searchlinecommand.cpp:75
+#: core/widgets/searchlinecommand.cpp:76
 #, kde-format
 msgid "Literal string"
 msgstr "Dobesedni niz"
 
-#: core/widgets/searchlinecommand.cpp:77
+#: core/widgets/searchlinecommand.cpp:78
 #, kde-format
 msgid "Size is smaller than"
 msgstr "Velikost je manjša kot"
 
-#: core/widgets/searchlinecommand.cpp:79
+#: core/widgets/searchlinecommand.cpp:80
 #, kde-format
 msgid "Size is larger than"
 msgstr "Velikost je večja kot"
 
-#: core/widgets/searchlinecommand.cpp:81
+#: core/widgets/searchlinecommand.cpp:82
 #, kde-format
 msgid "Size is"
 msgstr "Velikost je"
 
-#: core/widgets/searchlinecommand.cpp:83
+#: core/widgets/searchlinecommand.cpp:84
 #, kde-format
 msgid "To contains"
 msgstr "Za vsebuje"
 
-#: core/widgets/searchlinecommand.cpp:85
+#: core/widgets/searchlinecommand.cpp:86
 #, kde-format
 msgid "BCC contains"
 msgstr "Skp vsebuje"
 
-#: core/widgets/searchlinecommand.cpp:87
+#: core/widgets/searchlinecommand.cpp:88
 #, kde-format
 msgid "CC contains"
 msgstr "Kp vsebuje"
 
-#: core/widgets/searchlinecommand.cpp:89
+#: core/widgets/searchlinecommand.cpp:90
 #, kde-format
 msgid "From contains"
 msgstr "Od vsebuje"
 
-#: core/widgets/searchlinecommand.cpp:91
+#: core/widgets/searchlinecommand.cpp:92
 #, kde-format
 msgid "Subject contains"
 msgstr "Zadeva vsebuje"
 
-#: core/widgets/searchlinecommand.cpp:93
+#: core/widgets/searchlinecommand.cpp:94
 #, kde-format
 msgid "Body contains"
 msgstr "Telo vsebuje"
 
-#: core/widgets/searchlinecommand.cpp:95
+#: core/widgets/searchlinecommand.cpp:96
 #, kde-format
 msgid "Mail has tag"
 msgstr "Pismo ima oznako"
 
-#: core/widgets/searchlinecommand.cpp:97
+#: core/widgets/searchlinecommand.cpp:98
 #, kde-format
 msgid "Mail has attachment"
 msgstr "Pismo ima prilogo"
 
-#: core/widgets/searchlinecommand.cpp:99
+#: core/widgets/searchlinecommand.cpp:100
 #, kde-format
 msgid "Mail has invitation"
 msgstr "Pismo ima povabilo"
 
-#: core/widgets/searchlinecommand.cpp:101
+#: core/widgets/searchlinecommand.cpp:102
 #, kde-format
 msgid "Mail is important"
 msgstr "Pismo je pomembno"
 
-#: core/widgets/searchlinecommand.cpp:103
+#: core/widgets/searchlinecommand.cpp:104
 #, kde-format
 msgid "Mail is read"
 msgstr "Pismo je prebrano"
 
-#: core/widgets/searchlinecommand.cpp:105
+#: core/widgets/searchlinecommand.cpp:106
 #, kde-format
 msgid "Mail is Unread"
 msgstr "Pismo je neprebrano"
 
-#: core/widgets/searchlinecommand.cpp:107
+#: core/widgets/searchlinecommand.cpp:108
 #, kde-format
 msgid "Mail is Ignored"
 msgstr "Pismo je prezrto"
 
-#: core/widgets/searchlinecommand.cpp:109
+#: core/widgets/searchlinecommand.cpp:110
 #, kde-format
 msgid "Mail is Ham"
 msgstr "Pismo je želeno"
 
-#: core/widgets/searchlinecommand.cpp:111
+#: core/widgets/searchlinecommand.cpp:112
 #, kde-format
 msgid "Mail is Spam"
 msgstr "Pismo je nezaželeno"
 
-#: core/widgets/searchlinecommand.cpp:113
+#: core/widgets/searchlinecommand.cpp:114
 #, kde-format
 msgid "Mail is watched"
 msgstr "Pismo je opazovano"
 
-#: core/widgets/searchlinecommand.cpp:115
+#: core/widgets/searchlinecommand.cpp:116
 #, kde-format
 msgid "Mail is replied"
 msgstr "Pismo je odgovorjeno"
 
-#: core/widgets/searchlinecommand.cpp:117
+#: core/widgets/searchlinecommand.cpp:118
 #, kde-format
 msgid "Mail is forwarded"
 msgstr "Pismo je posredovano"
 
-#: core/widgets/searchlinecommand.cpp:127
+#: core/widgets/searchlinecommand.cpp:120
+#, fuzzy, kde-format
+#| msgid "Mail is Unread"
+msgid "Mail is encrypted"
+msgstr "Pismo je neprebrano"
+
+#: core/widgets/searchlinecommand.cpp:130
 #, kde-format
 msgid "AND"
 msgstr "IN"

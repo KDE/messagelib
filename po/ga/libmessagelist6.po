@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim/kmail.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-13 00:41+0000\n"
+"POT-Creation-Date: 2024-12-18 00:41+0000\n"
 "PO-Revision-Date: 2004-12-03 14:52-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -1171,146 +1171,152 @@ msgid ""
 "excluded from indexing completely. The results below may be incomplete."
 msgstr ""
 
-#: core/widgets/searchlinecommand.cpp:75
+#: core/widgets/searchlinecommand.cpp:76
 #, fuzzy, kde-format
 #| msgid "Filtering"
 msgid "Literal string"
 msgstr "Scagadh"
 
-#: core/widgets/searchlinecommand.cpp:77
+#: core/widgets/searchlinecommand.cpp:78
 #, fuzzy, kde-format
 #| msgid "is greater than"
 msgid "Size is smaller than"
 msgstr "atá níos mó ná"
 
-#: core/widgets/searchlinecommand.cpp:79
+#: core/widgets/searchlinecommand.cpp:80
 #, fuzzy, kde-format
 #| msgid "is greater than"
 msgid "Size is larger than"
 msgstr "atá níos mó ná"
 
-#: core/widgets/searchlinecommand.cpp:81
+#: core/widgets/searchlinecommand.cpp:82
 #, fuzzy, kde-format
 #| msgid "Size"
 msgid "Size is"
 msgstr "Méid"
 
-#: core/widgets/searchlinecommand.cpp:83
+#: core/widgets/searchlinecommand.cpp:84
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "To contains"
 msgstr "ina bhfuil"
 
-#: core/widgets/searchlinecommand.cpp:85
+#: core/widgets/searchlinecommand.cpp:86
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "BCC contains"
 msgstr "ina bhfuil"
 
-#: core/widgets/searchlinecommand.cpp:87
+#: core/widgets/searchlinecommand.cpp:88
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "CC contains"
 msgstr "ina bhfuil"
 
-#: core/widgets/searchlinecommand.cpp:89
+#: core/widgets/searchlinecommand.cpp:90
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "From contains"
 msgstr "ina bhfuil"
 
-#: core/widgets/searchlinecommand.cpp:91
+#: core/widgets/searchlinecommand.cpp:92
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "Subject contains"
 msgstr "ina bhfuil"
 
-#: core/widgets/searchlinecommand.cpp:93
+#: core/widgets/searchlinecommand.cpp:94
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "Body contains"
 msgstr "ina bhfuil"
 
-#: core/widgets/searchlinecommand.cpp:95
+#: core/widgets/searchlinecommand.cpp:96
 #, fuzzy, kde-format
 #| msgid "has an attachment"
 msgid "Mail has tag"
 msgstr "a bhfuil iatán aige"
 
-#: core/widgets/searchlinecommand.cpp:97
+#: core/widgets/searchlinecommand.cpp:98
 #, fuzzy, kde-format
 #| msgid "has an attachment"
 msgid "Mail has attachment"
 msgstr "a bhfuil iatán aige"
 
-#: core/widgets/searchlinecommand.cpp:99
+#: core/widgets/searchlinecommand.cpp:100
 #, fuzzy, kde-format
 #| msgid "has an attachment"
 msgid "Mail has invitation"
 msgstr "a bhfuil iatán aige"
 
-#: core/widgets/searchlinecommand.cpp:101
+#: core/widgets/searchlinecommand.cpp:102
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Important"
 msgid "Mail is important"
 msgstr "Tábhachtach"
 
-#: core/widgets/searchlinecommand.cpp:103
+#: core/widgets/searchlinecommand.cpp:104
 #, fuzzy, kde-format
 #| msgctxt "type of folder storage"
 #| msgid "Maildir"
 msgid "Mail is read"
 msgstr "Maildir"
 
-#: core/widgets/searchlinecommand.cpp:105
+#: core/widgets/searchlinecommand.cpp:106
 #, fuzzy, kde-format
 #| msgid "Unread"
 msgid "Mail is Unread"
 msgstr "Gan Léamh"
 
-#: core/widgets/searchlinecommand.cpp:107
+#: core/widgets/searchlinecommand.cpp:108
 #, fuzzy, kde-format
 #| msgid "Unread"
 msgid "Mail is Ignored"
 msgstr "Gan Léamh"
 
-#: core/widgets/searchlinecommand.cpp:109
+#: core/widgets/searchlinecommand.cpp:110
 #, fuzzy, kde-format
 #| msgctxt "type of folder storage"
 #| msgid "Maildir"
 msgid "Mail is Ham"
 msgstr "Maildir"
 
-#: core/widgets/searchlinecommand.cpp:111
+#: core/widgets/searchlinecommand.cpp:112
 #, fuzzy, kde-format
 #| msgctxt "type of folder storage"
 #| msgid "Maildir"
 msgid "Mail is Spam"
 msgstr "Maildir"
 
-#: core/widgets/searchlinecommand.cpp:113
+#: core/widgets/searchlinecommand.cpp:114
 #, fuzzy, kde-format
 #| msgctxt "type of folder storage"
 #| msgid "Maildir"
 msgid "Mail is watched"
 msgstr "Maildir"
 
-#: core/widgets/searchlinecommand.cpp:115
+#: core/widgets/searchlinecommand.cpp:116
 #, fuzzy, kde-format
 #| msgctxt "type of folder storage"
 #| msgid "Maildir"
 msgid "Mail is replied"
 msgstr "Maildir"
 
-#: core/widgets/searchlinecommand.cpp:117
+#: core/widgets/searchlinecommand.cpp:118
 #, fuzzy, kde-format
 #| msgctxt "type of folder storage"
 #| msgid "Maildir"
 msgid "Mail is forwarded"
 msgstr "Maildir"
 
-#: core/widgets/searchlinecommand.cpp:127
+#: core/widgets/searchlinecommand.cpp:120
+#, fuzzy, kde-format
+#| msgid "Unread"
+msgid "Mail is encrypted"
+msgstr "Gan Léamh"
+
+#: core/widgets/searchlinecommand.cpp:130
 #, kde-format
 msgid "AND"
 msgstr ""

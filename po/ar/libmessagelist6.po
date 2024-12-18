@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-13 00:41+0000\n"
+"POT-Creation-Date: 2024-12-18 00:41+0000\n"
 "PO-Revision-Date: 2024-10-14 20:54+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -1180,140 +1180,146 @@ msgid ""
 "excluded from indexing completely. The results below may be incomplete."
 msgstr ""
 
-#: core/widgets/searchlinecommand.cpp:75
+#: core/widgets/searchlinecommand.cpp:76
 #, fuzzy, kde-format
 #| msgid "&Filtering"
 msgid "Literal string"
 msgstr "التصف&ية"
 
-#: core/widgets/searchlinecommand.cpp:77
+#: core/widgets/searchlinecommand.cpp:78
 #, fuzzy, kde-format
 #| msgid "is greater than"
 msgid "Size is smaller than"
 msgstr "أكثر من"
 
-#: core/widgets/searchlinecommand.cpp:79
+#: core/widgets/searchlinecommand.cpp:80
 #, fuzzy, kde-format
 #| msgid "is greater than"
 msgid "Size is larger than"
 msgstr "أكثر من"
 
-#: core/widgets/searchlinecommand.cpp:81
+#: core/widgets/searchlinecommand.cpp:82
 #, fuzzy, kde-format
 #| msgid "Size"
 msgid "Size is"
 msgstr "الحجم"
 
-#: core/widgets/searchlinecommand.cpp:83
+#: core/widgets/searchlinecommand.cpp:84
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "To contains"
 msgstr "يحتوي"
 
-#: core/widgets/searchlinecommand.cpp:85
+#: core/widgets/searchlinecommand.cpp:86
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "BCC contains"
 msgstr "يحتوي"
 
-#: core/widgets/searchlinecommand.cpp:87
+#: core/widgets/searchlinecommand.cpp:88
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "CC contains"
 msgstr "يحتوي"
 
-#: core/widgets/searchlinecommand.cpp:89
+#: core/widgets/searchlinecommand.cpp:90
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "From contains"
 msgstr "يحتوي"
 
-#: core/widgets/searchlinecommand.cpp:91
+#: core/widgets/searchlinecommand.cpp:92
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "Subject contains"
 msgstr "يحتوي"
 
-#: core/widgets/searchlinecommand.cpp:93
+#: core/widgets/searchlinecommand.cpp:94
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "Body contains"
 msgstr "يحتوي"
 
-#: core/widgets/searchlinecommand.cpp:95
+#: core/widgets/searchlinecommand.cpp:96
 #, fuzzy, kde-format
 #| msgid "has an attachment"
 msgid "Mail has tag"
 msgstr "لديه ملحق"
 
-#: core/widgets/searchlinecommand.cpp:97
+#: core/widgets/searchlinecommand.cpp:98
 #, fuzzy, kde-format
 #| msgid "has an attachment"
 msgid "Mail has attachment"
 msgstr "لديه ملحق"
 
-#: core/widgets/searchlinecommand.cpp:99
+#: core/widgets/searchlinecommand.cpp:100
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu Status of a message"
 #| msgid "Has Invitation"
 msgid "Mail has invitation"
 msgstr "التي فيها دعوة"
 
-#: core/widgets/searchlinecommand.cpp:101
+#: core/widgets/searchlinecommand.cpp:102
 #, fuzzy, kde-format
 #| msgid "&Mail Transport"
 msgid "Mail is important"
 msgstr "نقل ال&بريد"
 
-#: core/widgets/searchlinecommand.cpp:103
+#: core/widgets/searchlinecommand.cpp:104
 #, fuzzy, kde-format
 #| msgid "Mail"
 msgid "Mail is read"
 msgstr "بريد"
 
-#: core/widgets/searchlinecommand.cpp:105
+#: core/widgets/searchlinecommand.cpp:106
 #, fuzzy, kde-format
 #| msgid "Mark Thread as &Unread"
 msgid "Mail is Unread"
 msgstr "علًم الخيط ك&غير مقروء"
 
-#: core/widgets/searchlinecommand.cpp:107
+#: core/widgets/searchlinecommand.cpp:108
 #, fuzzy, kde-format
 #| msgid "Mark Thread as &Unread"
 msgid "Mail is Ignored"
 msgstr "علًم الخيط ك&غير مقروء"
 
-#: core/widgets/searchlinecommand.cpp:109
+#: core/widgets/searchlinecommand.cpp:110
 #, fuzzy, kde-format
 #| msgid "Mail"
 msgid "Mail is Ham"
 msgstr "بريد"
 
-#: core/widgets/searchlinecommand.cpp:111
+#: core/widgets/searchlinecommand.cpp:112
 #, fuzzy, kde-format
 #| msgid "Mail"
 msgid "Mail is Spam"
 msgstr "بريد"
 
-#: core/widgets/searchlinecommand.cpp:113
+#: core/widgets/searchlinecommand.cpp:114
 #, fuzzy, kde-format
 #| msgid "Mail"
 msgid "Mail is watched"
 msgstr "بريد"
 
-#: core/widgets/searchlinecommand.cpp:115
+#: core/widgets/searchlinecommand.cpp:116
 #, fuzzy, kde-format
 #| msgid "Mail"
 msgid "Mail is replied"
 msgstr "بريد"
 
-#: core/widgets/searchlinecommand.cpp:117
+#: core/widgets/searchlinecommand.cpp:118
 #, fuzzy, kde-format
 #| msgid "Mail"
 msgid "Mail is forwarded"
 msgstr "بريد"
 
-#: core/widgets/searchlinecommand.cpp:127
+#: core/widgets/searchlinecommand.cpp:120
+#, fuzzy, kde-format
+#| msgid "Mark Thread as &Unread"
+msgid "Mail is encrypted"
+msgstr "علًم الخيط ك&غير مقروء"
+
+#: core/widgets/searchlinecommand.cpp:130
 #, kde-format
 msgid "AND"
 msgstr "وَ"
