@@ -292,6 +292,9 @@ QString Item::statusDescription() const
     if (status().isIgnored()) {
         append_string(ret, i18nc("Status of an item", "Ignored"));
     }
+    if (status().isQueued()) {
+        append_string(ret, i18nc("Status of an item", "Queued"));
+    }
 
     return ret;
 }

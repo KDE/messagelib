@@ -42,6 +42,7 @@ public:
         IsReplied,
         IsForwarded,
         IsEncrypted,
+        IsQueued,
         Larger,
         Smaller,
         OlderThan,
