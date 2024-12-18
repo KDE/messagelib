@@ -5,6 +5,7 @@
 */
 
 #include "searchlinecommandbuttonswidget.h"
+#include "searchlinecommand.h"
 #include "searchlinecommandflowlayout.h"
 #include <KLocalizedString>
 #include <QEvent>
@@ -35,7 +36,7 @@ QPushButton *SearchLineCommandButtonsWidget::createPushButton(bool needSpace, co
     pushButton->setObjectName(commandStr);
     pushButton->setToolTip(commandStr);
     connect(pushButton, &QPushButton::clicked, this, [this, commandStr, needSpace]() {
-        const QString str = commandStr + (needSpace ? QStringLiteral(" ") : QString());
+        const QString str = commandStr + (needSpace ? QStringLiteral(": ") : QString());
         Q_EMIT insertCommand(str);
     });
     return pushButton;
@@ -44,25 +45,25 @@ QPushButton *SearchLineCommandButtonsWidget::createPushButton(bool needSpace, co
 void SearchLineCommandButtonsWidget::fillWidgets()
 {
     mButtonsList = {
-        {false, QStringLiteral("subject:"), i18nc("@action:button", "Subject")},
-        {false, QStringLiteral("body:"), i18nc("@action:button", "Body")},
-        {false, QStringLiteral("from:"), i18nc("@action:button", "From")},
-        {false, QStringLiteral("to:"), i18nc("@action:button", "To")},
-        {false, QStringLiteral("cc:"), i18nc("@action:button", "Cc")},
-        {false, QStringLiteral("bcc:"), i18nc("@action:button", "Bcc")},
-        {true, QStringLiteral("has:attachment"), i18nc("@action:button", "Has Attachment")},
-        {true, QStringLiteral("has:invitation"), i18nc("@action:button", "Has Invitation")},
-        {true, QStringLiteral("is:read"), i18nc("@action:button", "Read")},
-        {true, QStringLiteral("is:unread"), i18nc("@action:button", "Unread")},
-        {true, QStringLiteral("is:important"), i18nc("@action:button", "Important")},
-        {true, QStringLiteral("is:ignored"), i18nc("@action:button", "Ignored")},
-        {true, QStringLiteral("is:ham"), i18nc("@action:button", "Ham")},
-        {true, QStringLiteral("is:spam"), i18nc("@action:button", "Spam")},
-        {true, QStringLiteral("is:watched"), i18nc("@action:button", "Watched")},
-        {true, QStringLiteral("is:replied"), i18nc("@action:button", "Replied")},
-        {true, QStringLiteral("is:forwarded"), i18nc("@action:button", "Forwarded")},
-        {true, QStringLiteral("is:encrypted"), i18nc("@action:button", "Encrypted")},
-        {true, QStringLiteral("is:queued"), i18nc("@action:button", "Queued")},
+        {false, SearchLineCommand::searchLineTypeToString(SearchLineCommand::Subject), i18nc("@action:button", "Subject")},
+        {false, SearchLineCommand::searchLineTypeToString(SearchLineCommand::Body), i18nc("@action:button", "Body")},
+        {false, SearchLineCommand::searchLineTypeToString(SearchLineCommand::From), i18nc("@action:button", "From")},
+        {false, SearchLineCommand::searchLineTypeToString(SearchLineCommand::To), i18nc("@action:button", "To")},
+        {false, SearchLineCommand::searchLineTypeToString(SearchLineCommand::Cc), i18nc("@action:button", "Cc")},
+        {false, SearchLineCommand::searchLineTypeToString(SearchLineCommand::Bcc), i18nc("@action:button", "Bcc")},
+        {true, SearchLineCommand::searchLineTypeToString(SearchLineCommand::HasAttachment), i18nc("@action:button", "Has Attachment")},
+        {true, SearchLineCommand::searchLineTypeToString(SearchLineCommand::HasInvitation), i18nc("@action:button", "Has Invitation")},
+        {true, SearchLineCommand::searchLineTypeToString(SearchLineCommand::IsRead), i18nc("@action:button", "Read")},
+        {true, SearchLineCommand::searchLineTypeToString(SearchLineCommand::IsUnRead), i18nc("@action:button", "Unread")},
+        {true, SearchLineCommand::searchLineTypeToString(SearchLineCommand::IsImportant), i18nc("@action:button", "Important")},
+        {true, SearchLineCommand::searchLineTypeToString(SearchLineCommand::IsIgnored), i18nc("@action:button", "Ignored")},
+        {true, SearchLineCommand::searchLineTypeToString(SearchLineCommand::IsHam), i18nc("@action:button", "Ham")},
+        {true, SearchLineCommand::searchLineTypeToString(SearchLineCommand::IsSpam), i18nc("@action:button", "Spam")},
+        {true, SearchLineCommand::searchLineTypeToString(SearchLineCommand::IsWatched), i18nc("@action:button", "Watched")},
+        {true, SearchLineCommand::searchLineTypeToString(SearchLineCommand::IsReplied), i18nc("@action:button", "Replied")},
+        {true, SearchLineCommand::searchLineTypeToString(SearchLineCommand::IsForwarded), i18nc("@action:button", "Forwarded")},
+        {true, SearchLineCommand::searchLineTypeToString(SearchLineCommand::IsEncrypted), i18nc("@action:button", "Encrypted")},
+        {true, SearchLineCommand::searchLineTypeToString(SearchLineCommand::IsQueued), i18nc("@action:button", "Queued")},
 #if 0 // Reactivate when we implemented it.
         {false, QStringLiteral("smaller:"), i18nc("@action:button", "Smaller")},
         {false, QStringLiteral("larger:"), i18nc("@action:button", "Larger")},
