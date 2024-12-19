@@ -43,6 +43,7 @@ public:
         IsForwarded,
         IsEncrypted,
         IsQueued,
+        IsSent,
         Larger,
         Smaller,
         OlderThan,

@@ -64,6 +64,7 @@ void SearchLineCommandButtonsWidget::fillWidgets()
         {true, SearchLineCommand::searchLineTypeToString(SearchLineCommand::IsForwarded), i18nc("@action:button", "Forwarded")},
         {true, SearchLineCommand::searchLineTypeToString(SearchLineCommand::IsEncrypted), i18nc("@action:button", "Encrypted")},
         {true, SearchLineCommand::searchLineTypeToString(SearchLineCommand::IsQueued), i18nc("@action:button", "Queued")},
+        {true, SearchLineCommand::searchLineTypeToString(SearchLineCommand::IsSent), i18nc("@action:button", "Sent")},
 #if 0 // Reactivate when we implemented it.
         {false, QStringLiteral("smaller:"), i18nc("@action:button", "Smaller")},
         {false, QStringLiteral("larger:"), i18nc("@action:button", "Larger")},
