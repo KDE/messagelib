@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-18 00:41+0000\n"
+"POT-Creation-Date: 2024-12-19 00:41+0000\n"
 "PO-Revision-Date: 2024-11-18 22:16+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -201,6 +201,14 @@ msgstr "Figyelt"
 msgctxt "Status of an item"
 msgid "Ignored"
 msgstr "Nem figyelt"
+
+#: core/item.cpp:296
+#, fuzzy, kde-format
+#| msgctxt "message status"
+#| msgid "Queued"
+msgctxt "Status of an item"
+msgid "Queued"
+msgstr "Elküldési sorba került"
 
 #: core/manager.cpp:34 core/model.cpp:334
 #, kde-format
@@ -1152,260 +1160,281 @@ msgstr ""
 "vagy teljesen ki vannak zárva az indexelésből. Az alábbi eredmények "
 "hiányosak lehetnek."
 
-#: core/widgets/searchlinecommand.cpp:76
+#: core/widgets/searchlinecommand.cpp:140
 #, kde-format
 msgid "Literal string"
 msgstr "Literálkarakterlánc"
 
-#: core/widgets/searchlinecommand.cpp:78
+#: core/widgets/searchlinecommand.cpp:142
 #, kde-format
 msgid "Size is smaller than"
 msgstr "Méret kisebb, mint"
 
-#: core/widgets/searchlinecommand.cpp:80
+#: core/widgets/searchlinecommand.cpp:144
 #, kde-format
 msgid "Size is larger than"
 msgstr "Méret nagyobb, mint"
 
-#: core/widgets/searchlinecommand.cpp:82
+#: core/widgets/searchlinecommand.cpp:146
 #, kde-format
 msgid "Size is"
 msgstr "Méret"
 
-#: core/widgets/searchlinecommand.cpp:84
+#: core/widgets/searchlinecommand.cpp:148
 #, kde-format
 msgid "To contains"
 msgstr "Címzett tartalmazza"
 
-#: core/widgets/searchlinecommand.cpp:86
+#: core/widgets/searchlinecommand.cpp:150
 #, kde-format
 msgid "BCC contains"
 msgstr "Titkos másolattartalmazza"
 
-#: core/widgets/searchlinecommand.cpp:88
+#: core/widgets/searchlinecommand.cpp:152
 #, kde-format
 msgid "CC contains"
 msgstr "Másolat tartalmazza"
 
-#: core/widgets/searchlinecommand.cpp:90
+#: core/widgets/searchlinecommand.cpp:154
 #, kde-format
 msgid "From contains"
 msgstr "Feladó tartalmazza"
 
-#: core/widgets/searchlinecommand.cpp:92
+#: core/widgets/searchlinecommand.cpp:156
 #, kde-format
 msgid "Subject contains"
 msgstr "Tárgy tartalmazza"
 
-#: core/widgets/searchlinecommand.cpp:94
+#: core/widgets/searchlinecommand.cpp:158
 #, kde-format
 msgid "Body contains"
 msgstr "Törzs tartalmazza"
 
-#: core/widgets/searchlinecommand.cpp:96
+#: core/widgets/searchlinecommand.cpp:160
 #, kde-format
 msgid "Mail has tag"
 msgstr "A levélnek van címkéje"
 
-#: core/widgets/searchlinecommand.cpp:98
+#: core/widgets/searchlinecommand.cpp:162
 #, kde-format
 msgid "Mail has attachment"
 msgstr "A levélnek van melléklete"
 
-#: core/widgets/searchlinecommand.cpp:100
+#: core/widgets/searchlinecommand.cpp:164
 #, kde-format
 msgid "Mail has invitation"
 msgstr "A levél meghívóval rendelkezik"
 
-#: core/widgets/searchlinecommand.cpp:102
+#: core/widgets/searchlinecommand.cpp:166
 #, kde-format
 msgid "Mail is important"
 msgstr "A levél fontos"
 
-#: core/widgets/searchlinecommand.cpp:104
+#: core/widgets/searchlinecommand.cpp:168
 #, kde-format
 msgid "Mail is read"
 msgstr "A levél olvasott"
 
-#: core/widgets/searchlinecommand.cpp:106
+#: core/widgets/searchlinecommand.cpp:170
 #, kde-format
 msgid "Mail is Unread"
 msgstr "A levél olvasatlan"
 
-#: core/widgets/searchlinecommand.cpp:108
+#: core/widgets/searchlinecommand.cpp:172
 #, kde-format
 msgid "Mail is Ignored"
 msgstr "A levél mellőzött"
 
-#: core/widgets/searchlinecommand.cpp:110
+#: core/widgets/searchlinecommand.cpp:174
 #, kde-format
 msgid "Mail is Ham"
 msgstr "A levél ál-levélszemét"
 
-#: core/widgets/searchlinecommand.cpp:112
+#: core/widgets/searchlinecommand.cpp:176
 #, kde-format
 msgid "Mail is Spam"
 msgstr "A levél levelszemét"
 
-#: core/widgets/searchlinecommand.cpp:114
+#: core/widgets/searchlinecommand.cpp:178
 #, kde-format
 msgid "Mail is watched"
 msgstr "A levél figyelt"
 
-#: core/widgets/searchlinecommand.cpp:116
+#: core/widgets/searchlinecommand.cpp:180
 #, kde-format
 msgid "Mail is replied"
 msgstr "A levél megválaszolt"
 
-#: core/widgets/searchlinecommand.cpp:118
+#: core/widgets/searchlinecommand.cpp:182
 #, kde-format
 msgid "Mail is forwarded"
 msgstr "A levél továbbított"
 
-#: core/widgets/searchlinecommand.cpp:120
+#: core/widgets/searchlinecommand.cpp:184
 #, fuzzy, kde-format
 #| msgid "Mail is Unread"
 msgid "Mail is encrypted"
 msgstr "A levél olvasatlan"
 
-#: core/widgets/searchlinecommand.cpp:130
+#: core/widgets/searchlinecommand.cpp:186
+#, fuzzy, kde-format
+#| msgid "Mail is read"
+msgid "Mail is queued"
+msgstr "A levél olvasott"
+
+#: core/widgets/searchlinecommand.cpp:196
 #, kde-format
 msgid "AND"
 msgstr "ÉS"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:47
+#: core/widgets/searchlinecommandbuttonswidget.cpp:48
 #, kde-format
 msgctxt "@action:button"
 msgid "Subject"
 msgstr "Tárgy"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:48
+#: core/widgets/searchlinecommandbuttonswidget.cpp:49
 #, kde-format
 msgctxt "@action:button"
 msgid "Body"
 msgstr "Törzs"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:49
+#: core/widgets/searchlinecommandbuttonswidget.cpp:50
 #, kde-format
 msgctxt "@action:button"
 msgid "From"
 msgstr "Feladó"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:50
+#: core/widgets/searchlinecommandbuttonswidget.cpp:51
 #, kde-format
 msgctxt "@action:button"
 msgid "To"
 msgstr "Címzett"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:51
+#: core/widgets/searchlinecommandbuttonswidget.cpp:52
 #, kde-format
 msgctxt "@action:button"
 msgid "Cc"
 msgstr "Másolat"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:52
+#: core/widgets/searchlinecommandbuttonswidget.cpp:53
 #, kde-format
 msgctxt "@action:button"
 msgid "Bcc"
 msgstr "Titkos másolat"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:53
+#: core/widgets/searchlinecommandbuttonswidget.cpp:54
 #, kde-format
 msgctxt "@action:button"
 msgid "Has Attachment"
 msgstr "Van melléklete"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:54
+#: core/widgets/searchlinecommandbuttonswidget.cpp:55
 #, kde-format
 msgctxt "@action:button"
 msgid "Has Invitation"
 msgstr "Meghívóval rendelkezik"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:55
+#: core/widgets/searchlinecommandbuttonswidget.cpp:56
 #, kde-format
 msgctxt "@action:button"
 msgid "Read"
 msgstr "Olvasott"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:56
+#: core/widgets/searchlinecommandbuttonswidget.cpp:57
 #, kde-format
 msgctxt "@action:button"
 msgid "Unread"
 msgstr "Olvasatlan"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:57
+#: core/widgets/searchlinecommandbuttonswidget.cpp:58
 #, kde-format
 msgctxt "@action:button"
 msgid "Important"
 msgstr "Fontos"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:58
+#: core/widgets/searchlinecommandbuttonswidget.cpp:59
 #, kde-format
 msgctxt "@action:button"
 msgid "Ignored"
 msgstr "Nem figyelt"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:59
+#: core/widgets/searchlinecommandbuttonswidget.cpp:60
 #, kde-format
 msgctxt "@action:button"
 msgid "Ham"
 msgstr "Ál-kéretlen"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:60
+#: core/widgets/searchlinecommandbuttonswidget.cpp:61
 #, kde-format
 msgctxt "@action:button"
 msgid "Spam"
 msgstr "Levélszemét"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:61
+#: core/widgets/searchlinecommandbuttonswidget.cpp:62
 #, kde-format
 msgctxt "@action:button"
 msgid "Watched"
 msgstr "Figyelt"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:62
+#: core/widgets/searchlinecommandbuttonswidget.cpp:63
 #, kde-format
 msgctxt "@action:button"
 msgid "Replied"
 msgstr "Megválaszolt"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:63
+#: core/widgets/searchlinecommandbuttonswidget.cpp:64
 #, kde-format
 msgctxt "@action:button"
 msgid "Forwarded"
 msgstr "Továbbított"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:65
+#, fuzzy, kde-format
+#| msgid "Encrypt"
+msgctxt "@action:button"
+msgid "Encrypted"
+msgstr "Titkosítás"
+
+#: core/widgets/searchlinecommandbuttonswidget.cpp:66
+#, fuzzy, kde-format
+#| msgctxt "message status"
+#| msgid "Queued"
+msgctxt "@action:button"
+msgid "Queued"
+msgstr "Elküldési sorba került"
+
+#: core/widgets/searchlinecommandbuttonswidget.cpp:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Smaller"
 msgstr "Kisebb"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:66
+#: core/widgets/searchlinecommandbuttonswidget.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "Larger"
 msgstr "Nagyobb"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:67
+#: core/widgets/searchlinecommandbuttonswidget.cpp:70
 #, kde-format
 msgctxt "@action:button"
 msgid "Size"
 msgstr "Méret"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:68
+#: core/widgets/searchlinecommandbuttonswidget.cpp:71
 #, kde-format
 msgctxt "@action:button"
 msgid "Older"
 msgstr "Régebbi"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:69
+#: core/widgets/searchlinecommandbuttonswidget.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Newer"
 msgstr "Újabb"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:70
+#: core/widgets/searchlinecommandbuttonswidget.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Category"
@@ -6895,10 +6924,6 @@ msgstr "&Mégsem"
 #~ msgstr "Továbbított"
 
 #~ msgctxt "message status"
-#~ msgid "Queued"
-#~ msgstr "Elküldési sorba került"
-
-#~ msgctxt "message status"
 #~ msgid "Sent"
 #~ msgstr "Elküldött"
 
@@ -12336,9 +12361,6 @@ msgstr "&Mégsem"
 
 #~ msgid "&Encrypt Message"
 #~ msgstr "Az üzenet &titkosítása"
-
-#~ msgid "Encrypt"
-#~ msgstr "Titkosítás"
 
 #~ msgid "&Sign Message"
 #~ msgstr "Az üzenet elektronikus a&láírása"
