@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-20 00:41+0000\n"
-"PO-Revision-Date: 2024-12-19 01:19+0100\n"
+"PO-Revision-Date: 2024-12-20 02:58+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -209,7 +209,7 @@ msgstr "Ignorado"
 #, kde-format
 msgctxt "Status of an item"
 msgid "Queued"
-msgstr ""
+msgstr "En cola"
 
 #: core/manager.cpp:34 core/model.cpp:334
 #, kde-format
@@ -1282,16 +1282,14 @@ msgid "Mail is encrypted"
 msgstr "El mensaje está cifrado"
 
 #: core/widgets/searchlinecommand.cpp:189
-#, fuzzy, kde-format
-#| msgid "Mail is read"
+#, kde-format
 msgid "Mail is queued"
-msgstr "El mensaje está leído"
+msgstr "El mensaje está en cola"
 
 #: core/widgets/searchlinecommand.cpp:191
-#, fuzzy, kde-format
-#| msgid "Mail is encrypted"
+#, kde-format
 msgid "Mail is sent"
-msgstr "El mensaje está cifrado"
+msgstr "El mensaje se ha enviado"
 
 #: core/widgets/searchlinecommand.cpp:201
 #, kde-format
@@ -1401,8 +1399,7 @@ msgid "Forwarded"
 msgstr "Reenviado"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Encryption"
+#, kde-format
 msgctxt "@action:button"
 msgid "Encrypted"
 msgstr "Cifrado"
@@ -1411,12 +1408,10 @@ msgstr "Cifrado"
 #, kde-format
 msgctxt "@action:button"
 msgid "Queued"
-msgstr ""
+msgstr "En cola"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Sent"
+#, kde-format
 msgctxt "@action:button"
 msgid "Sent"
 msgstr "Enviado"

@@ -3,19 +3,21 @@
 # This file is distributed under the same license as the messagelib package.
 # Kali <EMAIL@ADDRESS>, 2024.
 #
+# SPDX-FileCopyrightText: 2024 kali <skkalwar999@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-17 00:39+0000\n"
-"PO-Revision-Date: 2024-12-13 19:09+0530\n"
-"Last-Translator: Kali <EMAIL@ADDRESS>\n"
-"Language-Team: Sanskrit\n"
+"PO-Revision-Date: 2024-12-20 21:53+0530\n"
+"Last-Translator: kali <skkalwar999@gmail.com>\n"
+"Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n>2);\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #: customtemplates.cpp:72 customtemplates.cpp:123
 #, kde-format
@@ -282,7 +284,7 @@ msgstr "इत्यस्मै:"
 #, kde-format
 msgctxt "@item:intext email CC"
 msgid "CC:"
-msgstr "सी. सी. १."
+msgstr "सी. सी."
 
 #: templateparserjob.cpp:1150
 #, kde-format
@@ -732,7 +734,7 @@ msgstr "इत्यस्मै:"
 #, kde-format
 msgctxt "@label"
 msgid "CC:"
-msgstr "सी. सी. १."
+msgstr "सी. सी."
 
 #. i18n: ectx: property (toolTip), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mToEdit)
 #: ui/customtemplates_base.ui:219
@@ -817,14 +819,14 @@ msgstr "अग्रतः"
 #, kde-format
 msgctxt "@label"
 msgid "Shortc&ut:"
-msgstr "Shortc&ut: १."
+msgstr "Shortc&ut:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #: ui/customtemplates_base.ui:325
 #, kde-format
 msgctxt "@label"
 msgid "&Template type:"
-msgstr "&टेम्पलेट प्रकार: १."
+msgstr "&टेम्पलेट प्रकार:"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, TemplatesConfigurationBase)
 #: ui/templatesconfiguration_base.ui:26
@@ -943,7 +945,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:textbox Prefix for quoted message lines"
 msgid "&Quote indicator:"
-msgstr "&उद्धरण सूचकः : १."
+msgstr "&उद्धरण सूचकः :"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, lineEdit_quote)
 #: ui/templatesconfiguration_base.ui:316

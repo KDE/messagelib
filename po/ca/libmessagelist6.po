@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-20 00:41+0000\n"
-"PO-Revision-Date: 2024-12-19 09:41+0100\n"
+"PO-Revision-Date: 2024-12-20 10:31+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -1287,10 +1287,9 @@ msgid "Mail is queued"
 msgstr "El correu està a la cua"
 
 #: core/widgets/searchlinecommand.cpp:191
-#, fuzzy, kde-format
-#| msgid "Mail is encrypted"
+#, kde-format
 msgid "Mail is sent"
-msgstr "El correu està encriptat"
+msgstr "El correu s'ha enviat"
 
 #: core/widgets/searchlinecommand.cpp:201
 #, kde-format
@@ -1412,9 +1411,7 @@ msgid "Queued"
 msgstr "A la cua"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Sent"
+#, kde-format
 msgctxt "@action:button"
 msgid "Sent"
 msgstr "Enviat"

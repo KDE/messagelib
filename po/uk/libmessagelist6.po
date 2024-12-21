@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-20 00:41+0000\n"
-"PO-Revision-Date: 2024-12-19 22:27+0200\n"
+"PO-Revision-Date: 2024-12-20 08:45+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -1306,10 +1306,9 @@ msgid "Mail is queued"
 msgstr "Пошта у черзі обробки"
 
 #: core/widgets/searchlinecommand.cpp:191
-#, fuzzy, kde-format
-#| msgid "Mail is encrypted"
+#, kde-format
 msgid "Mail is sent"
-msgstr "Пошту зашифровано"
+msgstr "Пошту надіслано"
 
 #: core/widgets/searchlinecommand.cpp:201
 #, kde-format
@@ -1431,12 +1430,10 @@ msgid "Queued"
 msgstr "У черзі"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Sent"
+#, kde-format
 msgctxt "@action:button"
 msgid "Sent"
-msgstr "Надіслане"
+msgstr "Надіслано"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:69
 #, kde-format

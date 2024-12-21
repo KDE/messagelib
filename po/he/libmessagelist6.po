@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-20 00:41+0000\n"
-"PO-Revision-Date: 2024-12-18 08:33+0200\n"
+"PO-Revision-Date: 2024-12-20 09:16+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -219,7 +219,7 @@ msgstr "נתעלמה"
 #, kde-format
 msgctxt "Status of an item"
 msgid "Queued"
-msgstr ""
+msgstr "בתור"
 
 #: core/manager.cpp:34 core/model.cpp:334
 #, kde-format
@@ -1298,16 +1298,14 @@ msgid "Mail is encrypted"
 msgstr "הדוא״ל מוצפן"
 
 #: core/widgets/searchlinecommand.cpp:189
-#, fuzzy, kde-format
-#| msgid "Mail is read"
+#, kde-format
 msgid "Mail is queued"
-msgstr "ההודעה נקראה"
+msgstr "ההודעה ממתינה בתור"
 
 #: core/widgets/searchlinecommand.cpp:191
-#, fuzzy, kde-format
-#| msgid "Mail is encrypted"
+#, kde-format
 msgid "Mail is sent"
-msgstr "הדוא״ל מוצפן"
+msgstr "הדוא״ל נשלח"
 
 #: core/widgets/searchlinecommand.cpp:201
 #, kde-format
@@ -1417,25 +1415,22 @@ msgid "Forwarded"
 msgstr "הועברה"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Encryption"
+#, kde-format
 msgctxt "@action:button"
 msgid "Encrypted"
-msgstr "הצפנה"
+msgstr "מוצפנת"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Queued"
-msgstr ""
+msgstr "בתור"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Sent"
+#, kde-format
 msgctxt "@action:button"
 msgid "Sent"
-msgstr "נשלחה"
+msgstr "נשלח"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:69
 #, kde-format

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-20 00:41+0000\n"
-"PO-Revision-Date: 2024-12-19 10:19+0100\n"
+"PO-Revision-Date: 2024-12-20 12:28+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -1281,10 +1281,9 @@ msgid "Mail is queued"
 msgstr "Posta es in cauda"
 
 #: core/widgets/searchlinecommand.cpp:191
-#, fuzzy, kde-format
-#| msgid "Mail is encrypted"
+#, kde-format
 msgid "Mail is sent"
-msgstr "Posta es cryptate"
+msgstr "Posta es inviate"
 
 #: core/widgets/searchlinecommand.cpp:201
 #, kde-format
@@ -1406,9 +1405,7 @@ msgid "Queued"
 msgstr "Ponite in cauda"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Sent"
+#, kde-format
 msgctxt "@action:button"
 msgid "Sent"
 msgstr "Inviate"

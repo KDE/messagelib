@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-12 00:41+0000\n"
-"PO-Revision-Date: 2024-12-13 20:42+0530\n"
+"PO-Revision-Date: 2024-12-20 21:53+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n>2);\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #: attachment/attachmentcontrollerbase.cpp:166
 #, kde-format
@@ -417,17 +417,17 @@ msgstr "&मार्कअपं स्थापयन्तु, हस्त�
 #: composer/composerviewbase.cpp:326
 #, kde-format
 msgid "Sign/Encrypt (delete markup)"
-msgstr "हस्ताक्षर/गुप्तीकरण (मार्कअप विलोपनम्) २."
+msgstr "हस्ताक्षर/गुप्तीकरण (मार्कअप विलोपनम्)"
 
 #: composer/composerviewbase.cpp:326
 #, kde-format
 msgid "Encrypt (delete markup)"
-msgstr "एन्क्रिप्ट् (मार्कअप विलोपनम्) २."
+msgstr "एन्क्रिप्ट् (मार्कअप विलोपनम्)"
 
 #: composer/composerviewbase.cpp:326
 #, kde-format
 msgid "Sign (delete markup)"
-msgstr "हस्ताक्षरं कुर्वन्तु (मार्कअपं विलोपयन्तु) २."
+msgstr "हस्ताक्षरं कुर्वन्तु (मार्कअपं विलोपयन्तु)"
 
 #: composer/composerviewbase.cpp:328
 #, kde-format
@@ -1276,7 +1276,7 @@ msgstr "आकारं परिवर्तयितुं पूर्वं 
 #: imagescaling/ui/imagescalingwidget.ui:50
 #, kde-format
 msgid "Fallback to format:"
-msgstr "प्रारूपं प्रति पतनम् : १."
+msgstr "प्रारूपं प्रति पतनम् :"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_2)
 #: imagescaling/ui/imagescalingwidget.ui:89
@@ -1294,13 +1294,13 @@ msgstr "चित्रं अधिकतमं आयामं यावत्
 #: imagescaling/ui/imagescalingwidget.ui:109
 #, kde-format
 msgid "Maximum width:"
-msgstr "अधिकतमं चौड़ाई : १."
+msgstr "अधिकतमं चौड़ाई :"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: imagescaling/ui/imagescalingwidget.ui:116
 #, kde-format
 msgid "Maximum height:"
-msgstr "अधिकतम ऊर्ध्वता : १."
+msgstr "अधिकतम ऊर्ध्वता :"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, customMaximumWidth)
 #. i18n: ectx: property (suffix), widget (QSpinBox, customMaximumHeight)
@@ -1324,13 +1324,13 @@ msgstr "चित्रं न्यूनतमं आयामं यावत
 #: imagescaling/ui/imagescalingwidget.ui:174
 #, kde-format
 msgid "Minimum width:"
-msgstr "न्यूनतम चौड़ाई : १."
+msgstr "न्यूनतम चौड़ाई :"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: imagescaling/ui/imagescalingwidget.ui:181
 #, kde-format
 msgid "Minimum height:"
-msgstr "न्यूनतम ऊर्ध्वता : १."
+msgstr "न्यूनतम ऊर्ध्वता :"
 
 #. i18n: ectx: property (text), widget (QCheckBox, skipImageSizeLower)
 #: imagescaling/ui/imagescalingwidget.ui:230
@@ -1470,7 +1470,7 @@ msgstr "आसक्तिनाम परिभाषयतु"
 #: job/attachmentclipboardjob.cpp:46
 #, kde-format
 msgid "Attachment Name:"
-msgstr "आसक्तिनाम : १."
+msgstr "आसक्तिनाम :"
 
 #: job/attachmentclipboardjob.cpp:49
 #, kde-format
@@ -1947,7 +1947,7 @@ msgstr "अत्र प्रेषयन्तु :"
 #: sendlater/ui/sendlaterwidget.ui:39
 #, kde-format
 msgid "Repeat every:"
-msgstr "प्रत्येकं पुनः पुनः कुर्वन्तु : १."
+msgstr "प्रत्येकं पुनः पुनः कुर्वन्तु :"
 
 #. i18n: ectx: label, entry (QuoteSelectionOnly), group (Composer)
 #: settings/messagecomposer.kcfg.in:18
@@ -2016,7 +2016,7 @@ msgstr ""
 #: settings/messagecomposer.kcfg.in:52
 #, kde-format
 msgid "Maximum number of recipient entries:"
-msgstr "अधिकतमं प्राप्तकर्ताप्रविष्टीनां संख्या : १."
+msgstr "अधिकतमं प्राप्तकर्ताप्रविष्टीनां संख्या :"
 
 #. i18n: ectx: label, entry (WordWrap), group (Composer)
 #: settings/messagecomposer.kcfg.in:57
@@ -2239,7 +2239,7 @@ msgstr "तिथि (%1) ."
 #: snippet/convertsnippetvariablemenu.cpp:110
 #, kde-format
 msgid "Long Date (%1)"
-msgstr "दीर्घतिथि (%1) २."
+msgstr "दीर्घतिथि (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:113
 #, kde-format
@@ -2249,7 +2249,7 @@ msgstr "कस्टमतिथिः (%1) ."
 #: snippet/convertsnippetvariablemenu.cpp:116
 #, kde-format
 msgid "Short Time (%1)"
-msgstr "अल्पकाल (%1) २."
+msgstr "अल्पकाल (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:119
 #, kde-format
@@ -2259,17 +2259,17 @@ msgstr "समय (%1)"
 #: snippet/convertsnippetvariablemenu.cpp:122
 #, kde-format
 msgid "Year (%1)"
-msgstr "वर्ष (%1) २."
+msgstr "वर्ष (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:130
 #, kde-format
 msgid "Last Year (%1)"
-msgstr "गतवर्षम् (%1) २."
+msgstr "गतवर्षम् (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:133
 #, kde-format
 msgid "Next Year (%1)"
-msgstr "अग्रिमवर्षम् (%1) २."
+msgstr "अग्रिमवर्षम् (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:136
 #, kde-format
@@ -2279,7 +2279,7 @@ msgstr "माससङ्ख्या (%1)"
 #: snippet/convertsnippetvariablemenu.cpp:139
 #, kde-format
 msgid "Day Number (%1)"
-msgstr "दिवससङ्ख्या (%1) २."
+msgstr "दिवससङ्ख्या (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:142
 #, kde-format

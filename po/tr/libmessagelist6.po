@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kdepim-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-20 00:41+0000\n"
-"PO-Revision-Date: 2024-12-19 16:55+0300\n"
+"PO-Revision-Date: 2024-12-20 14:24+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -1284,10 +1284,9 @@ msgid "Mail is queued"
 msgstr "Posta kuyruğa eklendi"
 
 #: core/widgets/searchlinecommand.cpp:191
-#, fuzzy, kde-format
-#| msgid "Mail is encrypted"
+#, kde-format
 msgid "Mail is sent"
-msgstr "Posta şifrelenmiş"
+msgstr "Posta gönderildi"
 
 #: core/widgets/searchlinecommand.cpp:201
 #, kde-format
@@ -1409,9 +1408,7 @@ msgid "Queued"
 msgstr "Kuyrukta"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Sent"
+#, kde-format
 msgctxt "@action:button"
 msgid "Sent"
 msgstr "Gönderildi"

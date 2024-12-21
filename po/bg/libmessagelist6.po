@@ -9,14 +9,14 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-20 00:41+0000\n"
-"PO-Revision-Date: 2024-11-10 15:23+0100\n"
+"PO-Revision-Date: 2024-12-20 17:54+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.11.70\n"
+"X-Generator: Lokalize 25.03.70\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: core/aggregation.cpp:178
@@ -207,7 +207,7 @@ msgstr "Игнориран"
 #, kde-format
 msgctxt "Status of an item"
 msgid "Queued"
-msgstr ""
+msgstr "На опашка"
 
 #: core/manager.cpp:34 core/model.cpp:334
 #, kde-format
@@ -1270,22 +1270,19 @@ msgid "Mail is forwarded"
 msgstr "Писмото е препратено"
 
 #: core/widgets/searchlinecommand.cpp:187
-#, fuzzy, kde-format
-#| msgid "Mail is Unread"
+#, kde-format
 msgid "Mail is encrypted"
-msgstr "Писмото е непрочетено"
+msgstr "Писмото е криптирано"
 
 #: core/widgets/searchlinecommand.cpp:189
-#, fuzzy, kde-format
-#| msgid "Mail is read"
+#, kde-format
 msgid "Mail is queued"
-msgstr "Писмото е прочетено"
+msgstr "Писмото е на опашка"
 
 #: core/widgets/searchlinecommand.cpp:191
-#, fuzzy, kde-format
-#| msgid "Mail is Unread"
+#, kde-format
 msgid "Mail is sent"
-msgstr "Писмото е непрочетено"
+msgstr "Писмото е изпратено"
 
 #: core/widgets/searchlinecommand.cpp:201
 #, kde-format
@@ -1395,22 +1392,19 @@ msgid "Forwarded"
 msgstr "Препратено"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Encryption"
+#, kde-format
 msgctxt "@action:button"
 msgid "Encrypted"
-msgstr "Шифроване"
+msgstr "Шифрирано"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Queued"
-msgstr ""
+msgstr "На опашка"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Sent"
+#, kde-format
 msgctxt "@action:button"
 msgid "Sent"
 msgstr "Изпратено"

@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-12 00:41+0000\n"
-"PO-Revision-Date: 2024-12-19 21:41+0530\n"
+"PO-Revision-Date: 2024-12-20 22:01+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
@@ -34,7 +34,7 @@ msgstr "क्षम्यतां, अस्मिन् सन्देशे
 
 #: messagepartthemes/default/templates/certmessagepart.html:9
 msgid "Certificate import status:"
-msgstr "प्रमाणपत्रस्य आयातस्य स्थितिः : १."
+msgstr "प्रमाणपत्रस्य आयातस्य स्थितिः :"
 
 #: messagepartthemes/default/templates/certmessagepart.html:13
 #, kde-format
@@ -70,7 +70,7 @@ msgstr "क्षम्यतां, प्रमाणपत्रस्य आ
 
 #: messagepartthemes/default/templates/certmessagepart.html:30
 msgid "Certificate import details:"
-msgstr "प्रमाणपत्रस्य आयातविवरणम् : १."
+msgstr "प्रमाणपत्रस्य आयातविवरणम् :"
 
 #: messagepartthemes/default/templates/certmessagepart.html:34
 #, kde-format
@@ -448,7 +448,7 @@ msgstr "क्षेत्र:"
 #: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:182
 #, kde-format
 msgid "List-Id:"
-msgstr "सूची-परिचयः : १."
+msgstr "सूची-परिचयः :"
 
 #: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:271
 #, kde-format
@@ -464,7 +464,7 @@ msgstr "डोमेनतः सर्वाणि ईमेल-पत्रा
 #: dkim-verify/dkimrulewidget.cpp:51
 #, kde-format
 msgid "SDID:"
-msgstr "एसडीआईडी : १."
+msgstr "एसडीआईडी :"
 
 #: dkim-verify/dkimrulewidget.cpp:54
 #, kde-format
@@ -680,7 +680,7 @@ msgstr "दिनाङ्कः:"
 #: header/grantleeheaderformatter.cpp:239
 #, kde-format
 msgid "Message-Id:"
-msgstr "सन्देश-परिचयः : १."
+msgstr "सन्देश-परिचयः :"
 
 #: header/grantleeheaderformatter.cpp:263
 #, kde-format
@@ -695,17 +695,17 @@ msgstr "Reply To:"
 #: header/grantleeheaderformatter.cpp:267
 #, kde-format
 msgid "CC:"
-msgstr "सी. सी. १."
+msgstr "सी. सी."
 
 #: header/grantleeheaderformatter.cpp:269
 #, kde-format
 msgid "BCC:"
-msgstr "बीसीसी : १."
+msgstr "बीसीसी :"
 
 #: header/grantleeheaderformatter.cpp:273
 #, kde-format
 msgid "Sender:"
-msgstr "प्रेषकः : १."
+msgstr "प्रेषकः :"
 
 #: header/grantleeheaderformatter.cpp:275
 #, kde-format
@@ -731,7 +731,7 @@ msgstr "न विषयः"
 #: header/grantleeheaderformatter.cpp:453
 #, kde-format
 msgid "Spam Status:"
-msgstr "स्पैम स्थितिः : १."
+msgstr "स्पैम स्थितिः :"
 
 #: header/grantleeheaderformatter.cpp:465
 #, kde-format
@@ -741,12 +741,12 @@ msgstr "मुद्रणविधिः"
 #: header/grantleeheaderformatter.cpp:507
 #, kde-format
 msgid "[vcard]"
-msgstr "[vcard] ९."
+msgstr "[vcard]"
 
 #: header/grantleeheaderformatter.cpp:514
 #, kde-format
 msgid "Attachments:"
-msgstr "संलग्नकाः : १."
+msgstr "संलग्नकाः :"
 
 #: header/grantleeheaderformatter.cpp:540
 #, kde-format
@@ -854,7 +854,7 @@ msgstr "इत्यस्मात्‌: "
 #: header/plainheaderstyle.cpp:109
 #, kde-format
 msgid "[vCard]"
-msgstr "[vCard] ९."
+msgstr "[vCard]"
 
 #: header/plainheaderstyle.cpp:121
 #, kde-format
@@ -1249,7 +1249,7 @@ msgstr ""
 #: settings/messageviewer.kcfg.in:76
 #, kde-format
 msgid "Automatic collapse level:"
-msgstr "स्वचालितं पतनस्तरः : १."
+msgstr "स्वचालितं पतनस्तरः :"
 
 #. i18n: ectx: label, entry (ShrinkQuotes), group (Reader)
 #: settings/messageviewer.kcfg.in:83
@@ -1588,7 +1588,7 @@ msgstr "दर्शक सेटिंग्स्"
 #: ui/settings.ui:47
 #, kde-format
 msgid "O&verride character encoding:"
-msgstr "O&verride वर्णसङ्केतनम् : १."
+msgstr "O&verride वर्णसङ्केतनम् :"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_AccessKeyEnabled)
 #: ui/settings.ui:79
@@ -1618,7 +1618,7 @@ msgstr "स्वचालित पतन &स्तर: ."
 #: ui/settings.ui:190
 #, kde-format
 msgid "&Minimum font size:"
-msgstr "&न्यूनतमः फ़ॉन्ट् आकारः : १."
+msgstr "&न्यूनतमः फ़ॉन्ट् आकारः :"
 
 #: utils/messageviewerutil.cpp:123
 #, kde-format
