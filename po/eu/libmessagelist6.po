@@ -15,14 +15,14 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-20 00:41+0000\n"
-"PO-Revision-Date: 2024-11-09 11:18+0100\n"
+"PO-Revision-Date: 2024-12-22 14:17+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.08.3\n"
+"X-Generator: Lokalize 24.12.0\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: core/aggregation.cpp:178
@@ -210,8 +210,7 @@ msgid "Ignored"
 msgstr "Ez ikusi egina"
 
 #: core/item.cpp:296
-#, fuzzy, kde-format
-#| msgid "Queued"
+#, kde-format
 msgctxt "Status of an item"
 msgid "Queued"
 msgstr "Ilaran"
@@ -1281,22 +1280,19 @@ msgid "Mail is forwarded"
 msgstr "Posta birbidali da"
 
 #: core/widgets/searchlinecommand.cpp:187
-#, fuzzy, kde-format
-#| msgid "Mail is Unread"
+#, kde-format
 msgid "Mail is encrypted"
-msgstr "Posta ez da irakurri"
+msgstr "Posta zifratuta dago"
 
 #: core/widgets/searchlinecommand.cpp:189
-#, fuzzy, kde-format
-#| msgid "Mail is read"
+#, kde-format
 msgid "Mail is queued"
-msgstr "Posta irakurri da"
+msgstr "Posta ilaran dago"
 
 #: core/widgets/searchlinecommand.cpp:191
-#, fuzzy, kde-format
-#| msgid "Mail is Unread"
+#, kde-format
 msgid "Mail is sent"
-msgstr "Posta ez da irakurri"
+msgstr "Posta bidali da"
 
 #: core/widgets/searchlinecommand.cpp:201
 #, kde-format
@@ -1406,26 +1402,22 @@ msgid "Forwarded"
 msgstr "Birbidalia"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Encrypt"
+#, kde-format
 msgctxt "@action:button"
 msgid "Encrypted"
-msgstr "Enkriptatu"
+msgstr "Zifratua"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:66
-#, fuzzy, kde-format
-#| msgid "Queued"
+#, kde-format
 msgctxt "@action:button"
 msgid "Queued"
 msgstr "Ilaran"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Sent"
+#, kde-format
 msgctxt "@action:button"
 msgid "Sent"
-msgstr "Bidalita"
+msgstr "Bidalia"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:69
 #, kde-format

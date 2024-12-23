@@ -28,7 +28,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-20 00:41+0000\n"
-"PO-Revision-Date: 2024-12-20 08:52+0100\n"
+"PO-Revision-Date: 2024-12-21 08:51+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -1316,10 +1316,9 @@ msgid "Mail is queued"
 msgstr "Le courriel est mis en file d'attente."
 
 #: core/widgets/searchlinecommand.cpp:191
-#, fuzzy, kde-format
-#| msgid "Mail is Unread"
+#, kde-format
 msgid "Mail is sent"
-msgstr "Le courriel est non lu."
+msgstr "Le courriel est envoyé."
 
 #: core/widgets/searchlinecommand.cpp:201
 #, kde-format
@@ -1441,9 +1440,7 @@ msgid "Queued"
 msgstr "Mis en file d'attente"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Sent"
+#, kde-format
 msgctxt "@action:button"
 msgid "Sent"
 msgstr "Envoyé"
