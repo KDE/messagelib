@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-20 00:41+0000\n"
-"PO-Revision-Date: 2024-12-20 21:53+0530\n"
-"Last-Translator: kali <skkalwar999@gmail.com>\n"
+"PO-Revision-Date: 2024-12-25 19:45+0530\n"
+"Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
 "MIME-Version: 1.0\n"
@@ -782,7 +782,7 @@ msgstr "निमन्त्रणचिह्नम्"
 #, kde-format
 msgctxt "Description of Type Folder"
 msgid "Folder"
-msgstr "फोल्डर"
+msgstr "समुच्चय"
 
 #: core/theme.cpp:176
 #, kde-format
@@ -890,7 +890,7 @@ msgstr "आकृति"
 #: core/view.cpp:2258 core/view.cpp:2262 utils/themeeditor.cpp:189
 #, kde-format
 msgid "Folder"
-msgstr "फोल्डर"
+msgstr "समुच्चय"
 
 #: core/view.cpp:2268 core/view.cpp:2270
 #, kde-format
@@ -1078,7 +1078,7 @@ msgstr "समूह क्रमाङ्कनदिशा"
 #: core/widgetbase.cpp:672
 #, kde-format
 msgid "Folder Always Uses This Sort Order"
-msgstr "फोल्डर् सर्वदा एतस्य क्रमाङ्कनस्य उपयोगं करोति"
+msgstr "समुच्चय सर्वदा एतस्य क्रमाङ्कनस्य उपयोगं करोति"
 
 #: core/widgets/configurefiltersdialog.cpp:24
 #, kde-format
