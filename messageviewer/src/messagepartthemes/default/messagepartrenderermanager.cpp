@@ -146,7 +146,7 @@ KTextTemplate::Context MessagePartRendererManager::createContext()
 
     // careful, m_engine->localizer() is actually a factory function!
     auto localizer = m_engine->localizer();
-    localizer->setApplicationDomain(QByteArrayLiteral("libmessageviewer"));
+    localizer->setApplicationDomain(QByteArrayLiteral("libmessageviewer6"));
     c.setLocalizer(localizer);
 
     c.insert(QStringLiteral("global"), m_globalContext);
