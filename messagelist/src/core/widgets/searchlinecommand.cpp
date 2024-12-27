@@ -33,6 +33,7 @@ QMap<QString, SearchLineCommand::SearchLineType> SearchLineCommand::mKeyList = {
     {SearchLineCommand::searchLineTypeToString(IsEncrypted), SearchLineCommand::SearchLineType::IsEncrypted},
     {SearchLineCommand::searchLineTypeToString(IsQueued), SearchLineCommand::SearchLineType::IsQueued},
     {SearchLineCommand::searchLineTypeToString(IsSent), SearchLineCommand::SearchLineType::IsSent},
+    {SearchLineCommand::searchLineTypeToString(IsDeleted), SearchLineCommand::SearchLineType::IsDeleted},
     {SearchLineCommand::searchLineTypeToString(Size), SearchLineCommand::SearchLineType::Size},
     {SearchLineCommand::searchLineTypeToString(Smaller), SearchLineCommand::SearchLineType::Larger},
     {SearchLineCommand::searchLineTypeToString(Larger), SearchLineCommand::SearchLineType::Smaller},
@@ -124,6 +125,8 @@ QString SearchLineCommand::searchLineTypeToString(SearchLineType type)
         return QStringLiteral("is:queued");
     case IsSent:
         return QStringLiteral("is:sent");
+    case IsDeleted:
+        return QStringLiteral("is:deleted");
     }
     return {};
 }
@@ -189,6 +192,8 @@ QString SearchLineCommand::convertSearchLinetypeToTranslatedString(SearchLineCom
         return i18n("Mail is queued");
     case IsSent:
         return i18n("Mail is sent");
+    case IsDeleted:
+        return i18n("Mail is deleted");
     }
     return {};
 }
@@ -454,7 +459,7 @@ bool SearchLineCommand::SearchLineInfo::isValidDate() const
 bool SearchLineCommand::SearchLineInfo::mustBeUnique() const
 {
     return type == HasAttachment || type == IsImportant || type == IsRead || type == IsUnRead || type == IsIgnored || type == IsHam || type == IsSpam
-        || type == IsWatched || type == IsReplied || type == IsForwarded || type == IsEncrypted || type == IsQueued || type == IsSent;
+        || type == IsWatched || type == IsReplied || type == IsForwarded || type == IsEncrypted || type == IsQueued || type == IsSent || type == IsDeleted;
 }
 
 qint64 SearchLineCommand::SearchLineInfo::convertArgumentAsSize() const

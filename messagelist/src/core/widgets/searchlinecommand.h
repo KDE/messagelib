@@ -44,6 +44,7 @@ public:
         IsEncrypted,
         IsQueued,
         IsSent,
+        IsDeleted,
         Larger,
         Smaller,
         OlderThan,
