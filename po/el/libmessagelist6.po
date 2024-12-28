@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-20 00:41+0000\n"
+"POT-Creation-Date: 2024-12-28 00:42+0000\n"
 "PO-Revision-Date: 2024-09-19 17:23+0300\n"
 "Last-Translator: Antonis Geralis <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -1180,165 +1180,172 @@ msgstr ""
 "δεικτοδότηση ή εξαιρούνται της δεικτοδότησης πλήρως. Τα παρακάτω "
 "αποτελέσματα ίσως είναι ελλιπή."
 
-#: core/widgets/searchlinecommand.cpp:143
+#: core/widgets/searchlinecommand.cpp:146
 #, fuzzy, kde-format
 #| msgid "Filtering"
 msgid "Literal string"
 msgstr "Φιλτράρισμα"
 
-#: core/widgets/searchlinecommand.cpp:145
+#: core/widgets/searchlinecommand.cpp:148
 #, fuzzy, kde-format
 #| msgid "is greater than"
 msgid "Size is smaller than"
 msgstr "είναι μεγαλύτερο από"
 
-#: core/widgets/searchlinecommand.cpp:147
+#: core/widgets/searchlinecommand.cpp:150
 #, fuzzy, kde-format
 #| msgid "is greater than"
 msgid "Size is larger than"
 msgstr "είναι μεγαλύτερο από"
 
-#: core/widgets/searchlinecommand.cpp:149
+#: core/widgets/searchlinecommand.cpp:152
 #, fuzzy, kde-format
 #| msgid "Size"
 msgid "Size is"
 msgstr "Μέγεθος"
 
-#: core/widgets/searchlinecommand.cpp:151
+#: core/widgets/searchlinecommand.cpp:154
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "To contains"
 msgstr "περιέχει"
 
-#: core/widgets/searchlinecommand.cpp:153
+#: core/widgets/searchlinecommand.cpp:156
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "BCC contains"
 msgstr "περιέχει"
 
-#: core/widgets/searchlinecommand.cpp:155
+#: core/widgets/searchlinecommand.cpp:158
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "CC contains"
 msgstr "περιέχει"
 
-#: core/widgets/searchlinecommand.cpp:157
+#: core/widgets/searchlinecommand.cpp:160
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "From contains"
 msgstr "περιέχει"
 
-#: core/widgets/searchlinecommand.cpp:159
+#: core/widgets/searchlinecommand.cpp:162
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "Subject contains"
 msgstr "περιέχει"
 
-#: core/widgets/searchlinecommand.cpp:161
+#: core/widgets/searchlinecommand.cpp:164
 #, fuzzy, kde-format
 #| msgid "contains"
 msgid "Body contains"
 msgstr "περιέχει"
 
-#: core/widgets/searchlinecommand.cpp:163
+#: core/widgets/searchlinecommand.cpp:166
 #, fuzzy, kde-format
 #| msgid "has an attachment"
 msgid "Mail has tag"
 msgstr "έχει συνημμένο"
 
-#: core/widgets/searchlinecommand.cpp:165
+#: core/widgets/searchlinecommand.cpp:168
 #, fuzzy, kde-format
 #| msgid "has an attachment"
 msgid "Mail has attachment"
 msgstr "έχει συνημμένο"
 
-#: core/widgets/searchlinecommand.cpp:167
+#: core/widgets/searchlinecommand.cpp:170
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu Status of a message"
 #| msgid "Has Invitation"
 msgid "Mail has invitation"
 msgstr "Έχει μια πρόσκληση"
 
-#: core/widgets/searchlinecommand.cpp:169
+#: core/widgets/searchlinecommand.cpp:172
 #, fuzzy, kde-format
 #| msgid "&Mail Transport"
 msgid "Mail is important"
 msgstr "Μεταφορέας &αλληλογραφίας"
 
-#: core/widgets/searchlinecommand.cpp:171
+#: core/widgets/searchlinecommand.cpp:174
 #, fuzzy, kde-format
 #| msgctxt "type of folder storage"
 #| msgid "Maildir"
 msgid "Mail is read"
 msgstr "Maildir"
 
-#: core/widgets/searchlinecommand.cpp:173
+#: core/widgets/searchlinecommand.cpp:176
 #, fuzzy, kde-format
 #| msgid "Mark Thread as &Unread"
 msgid "Mail is Unread"
 msgstr "Σημείωση νήματος σαν μη &αναγνωσμένο"
 
-#: core/widgets/searchlinecommand.cpp:175
+#: core/widgets/searchlinecommand.cpp:178
 #, fuzzy, kde-format
 #| msgid "Mark Thread as &Unread"
 msgid "Mail is Ignored"
 msgstr "Σημείωση νήματος σαν μη &αναγνωσμένο"
 
-#: core/widgets/searchlinecommand.cpp:177
+#: core/widgets/searchlinecommand.cpp:180
 #, fuzzy, kde-format
 #| msgctxt "type of folder storage"
 #| msgid "Maildir"
 msgid "Mail is Ham"
 msgstr "Maildir"
 
-#: core/widgets/searchlinecommand.cpp:179
+#: core/widgets/searchlinecommand.cpp:182
 #, fuzzy, kde-format
 #| msgctxt "type of folder storage"
 #| msgid "Maildir"
 msgid "Mail is Spam"
 msgstr "Maildir"
 
-#: core/widgets/searchlinecommand.cpp:181
+#: core/widgets/searchlinecommand.cpp:184
 #, fuzzy, kde-format
 #| msgctxt "type of folder storage"
 #| msgid "Maildir"
 msgid "Mail is watched"
 msgstr "Maildir"
 
-#: core/widgets/searchlinecommand.cpp:183
+#: core/widgets/searchlinecommand.cpp:186
 #, fuzzy, kde-format
 #| msgctxt "type of folder storage"
 #| msgid "Maildir"
 msgid "Mail is replied"
 msgstr "Maildir"
 
-#: core/widgets/searchlinecommand.cpp:185
+#: core/widgets/searchlinecommand.cpp:188
 #, fuzzy, kde-format
 #| msgctxt "type of folder storage"
 #| msgid "Maildir"
 msgid "Mail is forwarded"
 msgstr "Maildir"
 
-#: core/widgets/searchlinecommand.cpp:187
+#: core/widgets/searchlinecommand.cpp:190
 #, fuzzy, kde-format
 #| msgid "Mark Thread as &Unread"
 msgid "Mail is encrypted"
 msgstr "Σημείωση νήματος σαν μη &αναγνωσμένο"
 
-#: core/widgets/searchlinecommand.cpp:189
+#: core/widgets/searchlinecommand.cpp:192
 #, fuzzy, kde-format
 #| msgctxt "type of folder storage"
 #| msgid "Maildir"
 msgid "Mail is queued"
 msgstr "Maildir"
 
-#: core/widgets/searchlinecommand.cpp:191
+#: core/widgets/searchlinecommand.cpp:194
 #, fuzzy, kde-format
 #| msgid "Mark Thread as &Unread"
 msgid "Mail is sent"
 msgstr "Σημείωση νήματος σαν μη &αναγνωσμένο"
 
-#: core/widgets/searchlinecommand.cpp:201
+#: core/widgets/searchlinecommand.cpp:196
+#, fuzzy, kde-format
+#| msgctxt "type of folder storage"
+#| msgid "Maildir"
+msgid "Mail is deleted"
+msgstr "Maildir"
+
+#: core/widgets/searchlinecommand.cpp:206
 #, kde-format
 msgid "AND"
 msgstr ""
@@ -1468,38 +1475,46 @@ msgctxt "@action:button"
 msgid "Sent"
 msgstr "Απεσταλμένο"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:69
+#: core/widgets/searchlinecommandbuttonswidget.cpp:68
+#, fuzzy, kde-format
+#| msgctxt "MDN type"
+#| msgid "Deleted"
+msgctxt "@action:button"
+msgid "Deleted"
+msgstr "Διαγράφηκε"
+
+#: core/widgets/searchlinecommandbuttonswidget.cpp:70
 #, kde-format
 msgctxt "@action:button"
 msgid "Smaller"
 msgstr ""
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:70
+#: core/widgets/searchlinecommandbuttonswidget.cpp:71
 #, kde-format
 msgctxt "@action:button"
 msgid "Larger"
 msgstr ""
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:71
+#: core/widgets/searchlinecommandbuttonswidget.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Size"
 msgstr "Μέγεθος"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:72
+#: core/widgets/searchlinecommandbuttonswidget.cpp:73
 #, fuzzy, kde-format
 #| msgid "Folder"
 msgctxt "@action:button"
 msgid "Older"
 msgstr "Φάκελος"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:73
+#: core/widgets/searchlinecommandbuttonswidget.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Newer"
 msgstr ""
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:74
+#: core/widgets/searchlinecommandbuttonswidget.cpp:75
 #, fuzzy, kde-format
 #| msgid "is in category"
 msgctxt "@action:button"
@@ -6611,10 +6626,6 @@ msgstr "&Ακύρωση"
 #~ msgctxt "MDN type"
 #~ msgid "Displayed"
 #~ msgstr "Εμφανίστηκε"
-
-#~ msgctxt "MDN type"
-#~ msgid "Deleted"
-#~ msgstr "Διαγράφηκε"
 
 #~ msgctxt "MDN type"
 #~ msgid "Dispatched"

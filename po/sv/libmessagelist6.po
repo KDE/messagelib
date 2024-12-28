@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-20 00:41+0000\n"
+"POT-Creation-Date: 2024-12-28 00:42+0000\n"
 "PO-Revision-Date: 2024-11-24 19:35+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -1155,135 +1155,141 @@ msgstr ""
 "Vissa av sökkatalogerna i förfrågan indexeras fortfarande eller har helt "
 "undantagits från indexering. Resultaten nedan kan vara ofullständiga."
 
-#: core/widgets/searchlinecommand.cpp:143
+#: core/widgets/searchlinecommand.cpp:146
 #, kde-format
 msgid "Literal string"
 msgstr "Bokstavlig sträng"
 
-#: core/widgets/searchlinecommand.cpp:145
+#: core/widgets/searchlinecommand.cpp:148
 #, kde-format
 msgid "Size is smaller than"
 msgstr "Storleken är mindre än"
 
-#: core/widgets/searchlinecommand.cpp:147
+#: core/widgets/searchlinecommand.cpp:150
 #, kde-format
 msgid "Size is larger than"
 msgstr "Storleken är större än"
 
-#: core/widgets/searchlinecommand.cpp:149
+#: core/widgets/searchlinecommand.cpp:152
 #, kde-format
 msgid "Size is"
 msgstr "Storleken är"
 
-#: core/widgets/searchlinecommand.cpp:151
+#: core/widgets/searchlinecommand.cpp:154
 #, kde-format
 msgid "To contains"
 msgstr "Till innehåller"
 
-#: core/widgets/searchlinecommand.cpp:153
+#: core/widgets/searchlinecommand.cpp:156
 #, kde-format
 msgid "BCC contains"
 msgstr "Dold kopia innehåller"
 
-#: core/widgets/searchlinecommand.cpp:155
+#: core/widgets/searchlinecommand.cpp:158
 #, kde-format
 msgid "CC contains"
 msgstr "Kopia innehåller"
 
-#: core/widgets/searchlinecommand.cpp:157
+#: core/widgets/searchlinecommand.cpp:160
 #, kde-format
 msgid "From contains"
 msgstr "Från innehåller"
 
-#: core/widgets/searchlinecommand.cpp:159
+#: core/widgets/searchlinecommand.cpp:162
 #, kde-format
 msgid "Subject contains"
 msgstr "Rubrik innehåller"
 
-#: core/widgets/searchlinecommand.cpp:161
+#: core/widgets/searchlinecommand.cpp:164
 #, kde-format
 msgid "Body contains"
 msgstr "Texten innehåller"
 
-#: core/widgets/searchlinecommand.cpp:163
+#: core/widgets/searchlinecommand.cpp:166
 #, kde-format
 msgid "Mail has tag"
 msgstr "Brevet har etikett"
 
-#: core/widgets/searchlinecommand.cpp:165
+#: core/widgets/searchlinecommand.cpp:168
 #, kde-format
 msgid "Mail has attachment"
 msgstr "Brevet har bilaga"
 
-#: core/widgets/searchlinecommand.cpp:167
+#: core/widgets/searchlinecommand.cpp:170
 #, kde-format
 msgid "Mail has invitation"
 msgstr "Brevet har inbjudan"
 
-#: core/widgets/searchlinecommand.cpp:169
+#: core/widgets/searchlinecommand.cpp:172
 #, kde-format
 msgid "Mail is important"
 msgstr "Brevet är viktigt"
 
-#: core/widgets/searchlinecommand.cpp:171
+#: core/widgets/searchlinecommand.cpp:174
 #, kde-format
 msgid "Mail is read"
 msgstr "Brevet är läst"
 
-#: core/widgets/searchlinecommand.cpp:173
+#: core/widgets/searchlinecommand.cpp:176
 #, kde-format
 msgid "Mail is Unread"
 msgstr "Brevet är oläst"
 
-#: core/widgets/searchlinecommand.cpp:175
+#: core/widgets/searchlinecommand.cpp:178
 #, kde-format
 msgid "Mail is Ignored"
 msgstr "Brevet är ignorerat"
 
-#: core/widgets/searchlinecommand.cpp:177
+#: core/widgets/searchlinecommand.cpp:180
 #, kde-format
 msgid "Mail is Ham"
 msgstr "Brevet är önskat"
 
-#: core/widgets/searchlinecommand.cpp:179
+#: core/widgets/searchlinecommand.cpp:182
 #, kde-format
 msgid "Mail is Spam"
 msgstr "Brevet är skräp"
 
-#: core/widgets/searchlinecommand.cpp:181
+#: core/widgets/searchlinecommand.cpp:184
 #, kde-format
 msgid "Mail is watched"
 msgstr "Brevet är bevakat"
 
-#: core/widgets/searchlinecommand.cpp:183
+#: core/widgets/searchlinecommand.cpp:186
 #, kde-format
 msgid "Mail is replied"
 msgstr "Brevet har besvarats"
 
-#: core/widgets/searchlinecommand.cpp:185
+#: core/widgets/searchlinecommand.cpp:188
 #, kde-format
 msgid "Mail is forwarded"
 msgstr "Brevet har vidarebefordrats"
 
-#: core/widgets/searchlinecommand.cpp:187
+#: core/widgets/searchlinecommand.cpp:190
 #, fuzzy, kde-format
 #| msgid "Mail is Unread"
 msgid "Mail is encrypted"
 msgstr "Brevet är oläst"
 
-#: core/widgets/searchlinecommand.cpp:189
+#: core/widgets/searchlinecommand.cpp:192
 #, fuzzy, kde-format
 #| msgid "Mail is read"
 msgid "Mail is queued"
 msgstr "Brevet är läst"
 
-#: core/widgets/searchlinecommand.cpp:191
+#: core/widgets/searchlinecommand.cpp:194
 #, fuzzy, kde-format
 #| msgid "Mail is Unread"
 msgid "Mail is sent"
 msgstr "Brevet är oläst"
 
-#: core/widgets/searchlinecommand.cpp:201
+#: core/widgets/searchlinecommand.cpp:196
+#, fuzzy, kde-format
+#| msgid "Mail is replied"
+msgid "Mail is deleted"
+msgstr "Brevet har besvarats"
+
+#: core/widgets/searchlinecommand.cpp:206
 #, kde-format
 msgid "AND"
 msgstr "OCH"
@@ -1411,37 +1417,45 @@ msgctxt "@action:button"
 msgid "Sent"
 msgstr "Skickat"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:69
+#: core/widgets/searchlinecommandbuttonswidget.cpp:68
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Delete Theme"
+msgctxt "@action:button"
+msgid "Deleted"
+msgstr "Ta bort tema"
+
+#: core/widgets/searchlinecommandbuttonswidget.cpp:70
 #, kde-format
 msgctxt "@action:button"
 msgid "Smaller"
 msgstr "Mindre"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:70
+#: core/widgets/searchlinecommandbuttonswidget.cpp:71
 #, kde-format
 msgctxt "@action:button"
 msgid "Larger"
 msgstr "Större"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:71
+#: core/widgets/searchlinecommandbuttonswidget.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Size"
 msgstr "Storlek"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:72
+#: core/widgets/searchlinecommandbuttonswidget.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Older"
 msgstr "Äldre"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:73
+#: core/widgets/searchlinecommandbuttonswidget.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Newer"
 msgstr "Nyare"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:74
+#: core/widgets/searchlinecommandbuttonswidget.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Category"
