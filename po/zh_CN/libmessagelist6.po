@@ -1392,12 +1392,10 @@ msgid "Sent"
 msgstr ""
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:68
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Delete Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "Deleted"
-msgstr "删除主题"
+msgstr ""
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:70
 #, kde-format

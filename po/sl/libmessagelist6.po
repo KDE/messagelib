@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-28 00:42+0000\n"
-"PO-Revision-Date: 2024-12-20 06:54+0100\n"
+"PO-Revision-Date: 2024-12-28 08:07+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -1308,10 +1308,9 @@ msgid "Mail is sent"
 msgstr "Pismo je posano"
 
 #: core/widgets/searchlinecommand.cpp:196
-#, fuzzy, kde-format
-#| msgid "Mail is replied"
+#, kde-format
 msgid "Mail is deleted"
-msgstr "Pismo je odgovorjeno"
+msgstr "Pismo je izbrisano"
 
 #: core/widgets/searchlinecommand.cpp:206
 #, kde-format
@@ -1439,12 +1438,10 @@ msgid "Sent"
 msgstr "Poslano"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:68
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Delete Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "Deleted"
-msgstr "Izbriši temo"
+msgstr "Izbrsano"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:70
 #, kde-format

@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-28 00:42+0000\n"
-"PO-Revision-Date: 2024-12-20 02:58+0100\n"
+"PO-Revision-Date: 2024-12-29 00:57+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -1292,10 +1292,9 @@ msgid "Mail is sent"
 msgstr "El mensaje se ha enviado"
 
 #: core/widgets/searchlinecommand.cpp:196
-#, fuzzy, kde-format
-#| msgid "Mail is replied"
+#, kde-format
 msgid "Mail is deleted"
-msgstr "El mensaje ha sido respondido"
+msgstr "El mensaje ha sido borrado"
 
 #: core/widgets/searchlinecommand.cpp:206
 #, kde-format
@@ -1423,12 +1422,10 @@ msgid "Sent"
 msgstr "Enviado"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:68
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Delete Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "Deleted"
-msgstr "Borrar tema"
+msgstr "Borrado"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:70
 #, kde-format

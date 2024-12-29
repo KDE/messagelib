@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-28 00:42+0000\n"
-"PO-Revision-Date: 2024-12-21 13:11+0100\n"
+"PO-Revision-Date: 2024-12-28 13:11+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -1290,10 +1290,9 @@ msgid "Mail is sent"
 msgstr "A mensaxe enviouse"
 
 #: core/widgets/searchlinecommand.cpp:196
-#, fuzzy, kde-format
-#| msgid "Mail is replied"
+#, kde-format
 msgid "Mail is deleted"
-msgstr "A mensaxe ten resposta"
+msgstr "A mensaxe eliminouse"
 
 #: core/widgets/searchlinecommand.cpp:206
 #, kde-format
@@ -1421,12 +1420,10 @@ msgid "Sent"
 msgstr "Enviada"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:68
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Delete Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "Deleted"
-msgstr "Eliminar este tema"
+msgstr "Eliminada"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:70
 #, kde-format

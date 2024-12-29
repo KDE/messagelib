@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-28 00:42+0000\n"
-"PO-Revision-Date: 2024-12-19 17:34+0900\n"
+"PO-Revision-Date: 2024-12-29 01:38+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -1268,16 +1268,14 @@ msgid "Mail is queued"
 msgstr "郵件已排入佇列"
 
 #: core/widgets/searchlinecommand.cpp:194
-#, fuzzy, kde-format
-#| msgid "Mail is encrypted"
+#, kde-format
 msgid "Mail is sent"
-msgstr "郵件已加密"
+msgstr "郵件已送出"
 
 #: core/widgets/searchlinecommand.cpp:196
-#, fuzzy, kde-format
-#| msgid "Mail is replied"
+#, kde-format
 msgid "Mail is deleted"
-msgstr "郵件已回覆"
+msgstr "郵件已刪除"
 
 #: core/widgets/searchlinecommand.cpp:206
 #, kde-format
@@ -1399,20 +1397,16 @@ msgid "Queued"
 msgstr "已排入佇列"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Sent"
+#, kde-format
 msgctxt "@action:button"
 msgid "Sent"
-msgstr "已傳送"
+msgstr "已送出"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:68
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Delete Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "Deleted"
-msgstr "刪除主題"
+msgstr "已刪除"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:70
 #, kde-format

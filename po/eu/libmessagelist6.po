@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-28 00:42+0000\n"
-"PO-Revision-Date: 2024-12-22 14:17+0100\n"
+"PO-Revision-Date: 2024-12-28 08:33+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -1295,10 +1295,9 @@ msgid "Mail is sent"
 msgstr "Posta bidali da"
 
 #: core/widgets/searchlinecommand.cpp:196
-#, fuzzy, kde-format
-#| msgid "Mail is replied"
+#, kde-format
 msgid "Mail is deleted"
-msgstr "Posta erantzun da"
+msgstr "Posta ezabatu da"
 
 #: core/widgets/searchlinecommand.cpp:206
 #, kde-format
@@ -1426,9 +1425,7 @@ msgid "Sent"
 msgstr "Bidalia"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:68
-#, fuzzy, kde-format
-#| msgctxt "MDN type"
-#| msgid "Deleted"
+#, kde-format
 msgctxt "@action:button"
 msgid "Deleted"
 msgstr "Ezabatuta"

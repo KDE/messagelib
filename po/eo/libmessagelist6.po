@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-28 00:42+0000\n"
-"PO-Revision-Date: 2024-08-23 21:45+0200\n"
+"PO-Revision-Date: 2024-12-28 20:45+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -210,7 +210,7 @@ msgstr "Ignorita"
 #, kde-format
 msgctxt "Status of an item"
 msgid "Queued"
-msgstr ""
+msgstr "Vicigita"
 
 #: core/manager.cpp:34 core/model.cpp:334
 #, kde-format
@@ -1166,189 +1166,158 @@ msgstr ""
 #: core/widgets/searchlinecommand.cpp:146
 #, kde-format
 msgid "Literal string"
-msgstr ""
+msgstr "Laŭvorta ĉeno"
 
 #: core/widgets/searchlinecommand.cpp:148
 #, kde-format
 msgid "Size is smaller than"
-msgstr ""
+msgstr "Grandeco estas malpli ol"
 
 #: core/widgets/searchlinecommand.cpp:150
 #, kde-format
 msgid "Size is larger than"
-msgstr ""
+msgstr "Grandeco estas pli ol"
 
 #: core/widgets/searchlinecommand.cpp:152
-#, fuzzy, kde-format
-#| msgid "Size"
+#, kde-format
 msgid "Size is"
-msgstr "Grandeco"
+msgstr "Grandeco estas"
 
 #: core/widgets/searchlinecommand.cpp:154
 #, kde-format
 msgid "To contains"
-msgstr ""
+msgstr "Al enhavas"
 
 #: core/widgets/searchlinecommand.cpp:156
 #, kde-format
 msgid "BCC contains"
-msgstr ""
+msgstr "BCC enhavas"
 
 #: core/widgets/searchlinecommand.cpp:158
 #, kde-format
 msgid "CC contains"
-msgstr ""
+msgstr "CC enhavas"
 
 #: core/widgets/searchlinecommand.cpp:160
 #, kde-format
 msgid "From contains"
-msgstr ""
+msgstr "De enhavas"
 
 #: core/widgets/searchlinecommand.cpp:162
-#, fuzzy, kde-format
-#| msgctxt "@title:column Subject of messages"
-#| msgid "Subject"
+#, kde-format
 msgid "Subject contains"
-msgstr "Temo"
+msgstr "Temo enhavas"
 
 #: core/widgets/searchlinecommand.cpp:164
-#, fuzzy, kde-format
-#| msgctxt "@title:column Subject of messages"
-#| msgid "Subject"
+#, kde-format
 msgid "Body contains"
-msgstr "Temo"
+msgstr "Korpo enhavas"
 
 #: core/widgets/searchlinecommand.cpp:166
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Has Attachment"
+#, kde-format
 msgid "Mail has tag"
-msgstr "Kun kunsendaĵo"
+msgstr "Poŝto havas etikedon"
 
 #: core/widgets/searchlinecommand.cpp:168
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Has Attachment"
+#, kde-format
 msgid "Mail has attachment"
-msgstr "Kun kunsendaĵo"
+msgstr "Poŝto havas kunsendaĵon"
 
 #: core/widgets/searchlinecommand.cpp:170
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Status of a message"
-#| msgid "Has Invitation"
+#, kde-format
 msgid "Mail has invitation"
-msgstr "Havas Inviton"
+msgstr "Poŝto havas inviton"
 
 #: core/widgets/searchlinecommand.cpp:172
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Important"
+#, kde-format
 msgid "Mail is important"
-msgstr "Grava"
+msgstr "Poŝto estas grava"
 
 #: core/widgets/searchlinecommand.cpp:174
 #, kde-format
 msgid "Mail is read"
-msgstr ""
+msgstr "Poŝto estas legita"
 
 #: core/widgets/searchlinecommand.cpp:176
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgid "Mail is Unread"
-msgstr "Nelegita"
+msgstr "Poŝto estas nelegita"
 
 #: core/widgets/searchlinecommand.cpp:178
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgid "Mail is Ignored"
-msgstr "Nelegita"
+msgstr "Poŝto estas ignorita"
 
 #: core/widgets/searchlinecommand.cpp:180
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgid "Mail is Ham"
-msgstr "Nelegita"
+msgstr "Poŝto estas Malspamo"
 
 #: core/widgets/searchlinecommand.cpp:182
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgid "Mail is Spam"
-msgstr "Nelegita"
+msgstr "Poŝto estas Spamo"
 
 #: core/widgets/searchlinecommand.cpp:184
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Has Attachment"
+#, kde-format
 msgid "Mail is watched"
-msgstr "Kun kunsendaĵo"
+msgstr "Poŝto estas observita"
 
 #: core/widgets/searchlinecommand.cpp:186
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgid "Mail is replied"
-msgstr "Nelegita"
+msgstr "Poŝto estas prirespondita"
 
 #: core/widgets/searchlinecommand.cpp:188
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgid "Mail is forwarded"
-msgstr "Nelegita"
+msgstr "Poŝto estas plusendita"
 
 #: core/widgets/searchlinecommand.cpp:190
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgid "Mail is encrypted"
-msgstr "Nelegita"
+msgstr "Poŝto estas ĉifrita"
 
 #: core/widgets/searchlinecommand.cpp:192
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgid "Mail is queued"
-msgstr "Nelegita"
+msgstr "Poŝto estas vicigita"
 
 #: core/widgets/searchlinecommand.cpp:194
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgid "Mail is sent"
-msgstr "Nelegita"
+msgstr "Poŝto estas sendita"
 
 #: core/widgets/searchlinecommand.cpp:196
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgid "Mail is deleted"
-msgstr "Nelegita"
+msgstr "Poŝto estas forigita"
 
 #: core/widgets/searchlinecommand.cpp:206
 #, kde-format
 msgid "AND"
-msgstr ""
+msgstr "KAJ"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "@title:column Subject of messages"
-#| msgid "Subject"
+#, kde-format
 msgctxt "@action:button"
 msgid "Subject"
 msgstr "Temo"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Body"
+#, kde-format
 msgctxt "@action:button"
 msgid "Body"
 msgstr "Korpo"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:50
-#, fuzzy, kde-format
-#| msgid "From"
+#, kde-format
 msgctxt "@action:button"
 msgid "From"
 msgstr "De"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:51
-#, fuzzy, kde-format
-#| msgid "To"
+#, kde-format
 msgctxt "@action:button"
 msgid "To"
 msgstr "Al"
@@ -1357,166 +1326,139 @@ msgstr "Al"
 #, kde-format
 msgctxt "@action:button"
 msgid "Cc"
-msgstr ""
+msgstr "Cc"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:53
 #, kde-format
 msgctxt "@action:button"
 msgid "Bcc"
-msgstr ""
+msgstr "Bcc"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:54
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Has Attachment"
+#, kde-format
 msgctxt "@action:button"
 msgid "Has Attachment"
 msgstr "Kun kunsendaĵo"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:55
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Status of a message"
-#| msgid "Has Invitation"
+#, kde-format
 msgctxt "@action:button"
 msgid "Has Invitation"
 msgstr "Havas Inviton"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Read"
+#, kde-format
 msgctxt "@action:button"
 msgid "Read"
 msgstr "Legi"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:57
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgctxt "@action:button"
 msgid "Unread"
 msgstr "Nelegita"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:58
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Important"
+#, kde-format
 msgctxt "@action:button"
 msgid "Important"
 msgstr "Grava"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Ignored"
+#, kde-format
 msgctxt "@action:button"
 msgid "Ignored"
 msgstr "Ignorita"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Ham"
+#, kde-format
 msgctxt "@action:button"
 msgid "Ham"
 msgstr "Fimesaĝa"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:61
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Spam"
+#, kde-format
 msgctxt "@action:button"
 msgid "Spam"
 msgstr "Fimesaĝa"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Watched"
+#, kde-format
 msgctxt "@action:button"
 msgid "Watched"
 msgstr "Observata"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:63
-#, fuzzy, kde-format
-#| msgid "Replied"
+#, kde-format
 msgctxt "@action:button"
 msgid "Replied"
 msgstr "Respondita"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Forwarded"
+#, kde-format
 msgctxt "@action:button"
 msgid "Forwarded"
 msgstr "Plusendita"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Encryption"
+#, kde-format
 msgctxt "@action:button"
 msgid "Encrypted"
-msgstr "Ĉifrado"
+msgstr "Ĉifrita"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Queued"
-msgstr ""
+msgstr "Vicigita"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Sent"
+#, kde-format
 msgctxt "@action:button"
 msgid "Sent"
 msgstr "Sendita"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:68
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Delete Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "Deleted"
-msgstr "Forigi Etoson"
+msgstr "Forigita"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:70
 #, kde-format
 msgctxt "@action:button"
 msgid "Smaller"
-msgstr ""
+msgstr "Pli malgranda"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:71
 #, kde-format
 msgctxt "@action:button"
 msgid "Larger"
-msgstr ""
+msgstr "Pli granda"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:72
-#, fuzzy, kde-format
-#| msgid "Size"
+#, kde-format
 msgctxt "@action:button"
 msgid "Size"
 msgstr "Grandeco"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:73
-#, fuzzy, kde-format
-#| msgid "Folder"
+#, kde-format
 msgctxt "@action:button"
 msgid "Older"
-msgstr "Leterujo"
+msgstr "Pli malnova"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Newer"
-msgstr ""
+msgstr "Pli nova"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Category"
-msgstr ""
+msgstr "Kategorio"
 
 #: core/widgets/searchlinestatus.cpp:78
 #, kde-format
@@ -1536,6 +1478,8 @@ msgstr "Purigi la rapidan serĉkampon dum ŝanĝado de dosierujoj"
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
 msgstr ""
+"Baskuligu ĉi butonon se vi volas montri aŭ kaŝi fenestraĵon de serĉa "
+"komandlinio."
 
 #: core/widgets/searchlinestatus.cpp:104
 #, kde-format
@@ -1584,9 +1528,7 @@ msgid "BCC"
 msgstr "BCC"
 
 #: core/widgets/searchmessagebybuttons.cpp:40
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "BCC"
+#, kde-format
 msgctxt "@action"
 msgid "CC"
 msgstr "BCC"

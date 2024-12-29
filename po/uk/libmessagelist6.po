@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-28 00:42+0000\n"
-"PO-Revision-Date: 2024-12-20 08:45+0200\n"
+"PO-Revision-Date: 2024-12-28 08:38+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -1311,10 +1311,9 @@ msgid "Mail is sent"
 msgstr "Пошту надіслано"
 
 #: core/widgets/searchlinecommand.cpp:196
-#, fuzzy, kde-format
-#| msgid "Mail is replied"
+#, kde-format
 msgid "Mail is deleted"
-msgstr "Повідомлення з відповіддю"
+msgstr "Повідомлення вилучено"
 
 #: core/widgets/searchlinecommand.cpp:206
 #, kde-format
@@ -1442,12 +1441,10 @@ msgid "Sent"
 msgstr "Надіслано"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:68
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Delete Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "Deleted"
-msgstr "Вилучити тему"
+msgstr "Вилучено"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:70
 #, kde-format
