@@ -29,6 +29,8 @@ void SearchLineCommandTest::initTestCase()
 void SearchLineCommandTest::shouldHaveDefaultValues()
 {
     MessageList::Core::SearchLineCommand command;
+    QVERIFY(command.isEmpty());
+    QVERIFY(!command.hasOnlyOneLiteralCommand());
     QVERIFY(command.searchLineInfo().isEmpty());
 
     MessageList::Core::SearchLineCommand::SearchLineInfo info;

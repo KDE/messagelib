@@ -258,6 +258,11 @@ SearchLineCommand::SearchLineInfo SearchLineCommand::isAnotherInfo(QString tmp, 
     return {};
 }
 
+bool SearchLineCommand::hasOnlyOneLiteralCommand() const
+{
+    return mSearchLineInfo.count() == 1 && (mSearchLineInfo.at(0).type == SearchLineType::Literal);
+}
+
 void SearchLineCommand::parseSearchLineCommand(const QString &str)
 {
     mSearchLineInfo.clear();
