@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-28 00:42+0000\n"
-"PO-Revision-Date: 2024-12-25 19:45+0530\n"
+"PO-Revision-Date: 2024-12-29 22:52+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
@@ -1278,10 +1278,9 @@ msgid "Mail is sent"
 msgstr "मेल प्रेष्यते"
 
 #: core/widgets/searchlinecommand.cpp:196
-#, fuzzy, kde-format
-#| msgid "Mail is replied"
+#, kde-format
 msgid "Mail is deleted"
-msgstr "मेलस्य उत्तरं भवति"
+msgstr "सन्देशः लोपितः भवति"
 
 #: core/widgets/searchlinecommand.cpp:206
 #, kde-format
@@ -1409,12 +1408,10 @@ msgid "Sent"
 msgstr "प्रेषितम्"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:68
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Delete Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "Deleted"
-msgstr "विषयः विलोपयन्तु"
+msgstr "विलोपितम्"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:70
 #, kde-format
