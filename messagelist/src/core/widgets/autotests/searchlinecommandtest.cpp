@@ -45,7 +45,6 @@ void SearchLineCommandTest::shouldParseInfo_data()
     QTest::addColumn<QList<MessageList::Core::SearchLineCommand::SearchLineInfo>>("infos");
     QTest::addColumn<int>("numberElement");
     QTest::addColumn<QString>("convertedToString");
-#if 1
     {
         QString str;
         QList<MessageList::Core::SearchLineCommand::SearchLineInfo> lstInfo;
@@ -345,7 +344,6 @@ void SearchLineCommandTest::shouldParseInfo_data()
         const QString convertStr{QStringLiteral("Subject contains ddd ffff AND Mail has attachment")};
         QTest::newRow("subject with space2") << str << lstInfo << 2 << convertStr;
     }
-#endif
     {
         const QString str{QStringLiteral("voiture subject:ddd ffff has:attachment")};
         QList<MessageList::Core::SearchLineCommand::SearchLineInfo> lstInfo;
