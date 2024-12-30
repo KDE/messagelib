@@ -242,7 +242,6 @@ SearchLineCommand::SearchLineInfo SearchLineCommand::isAnotherInfo(QString tmp, 
             if (!searchLineInfo.argument.isEmpty() && searchLineInfo.type == Unknown) {
                 searchLineInfo.type = Literal;
             }
-            // qDebug() << " AAAAAAAAAAAAAAAAAAAAAAAAAAA " << searchLineInfo;
             if (searchLineInfo.isValid()) {
                 appendSearchLineInfo(searchLineInfo);
             }
@@ -282,7 +281,6 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
             if (newInfo.type != Unknown) {
                 tmp.clear();
                 searchLineInfo = newInfo;
-                // qDebug() << " vxvxcvxcvxcv " << tmp;
             } else if (mKeyList.contains(tmp.trimmed())) {
 #ifdef DEBUG_COMMAND_PARSER
                 qDebug() << " contains " << tmp;
@@ -301,7 +299,6 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
             if (newInfo.type != Unknown) {
                 tmp.clear();
                 searchLineInfo = newInfo;
-                // qDebug() << " vxvxcvxcvxcv " << tmp;
             } else if (mKeyList.contains(tmp)) { // We can use is:... or has:...
                 searchLineInfo.type = mKeyList.value(tmp);
                 tmp.clear();
