@@ -1030,7 +1030,13 @@ void Widget::searchTimerFired()
     d->mFilter->setCurrentFolder(d->mCurrentFolder);
     SearchLineCommand command;
     command.parseSearchLineCommand(text);
+    if (command.hasOnlyOneLiteralCommand()) {
+        // TODO verify searchoptions
+        const SearchMessageByButtons::SearchOptions options = d->quickSearchLine->searchOptions();
+        // TODO
+    }
     // qDebug() << " text " << text << " command " << command.searchLineInfo();
+
     d->mFilter->setSearchString(command);
     if (d->mFilter->isEmpty()) {
         resetFilter();
