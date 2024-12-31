@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-28 00:42+0000\n"
-"PO-Revision-Date: 2024-12-20 17:54+0100\n"
+"PO-Revision-Date: 2024-12-30 22:59+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -1285,10 +1285,9 @@ msgid "Mail is sent"
 msgstr "Писмото е изпратено"
 
 #: core/widgets/searchlinecommand.cpp:196
-#, fuzzy, kde-format
-#| msgid "Mail is replied"
+#, kde-format
 msgid "Mail is deleted"
-msgstr "Писмото е отговорено"
+msgstr "Писмото е изтрито"
 
 #: core/widgets/searchlinecommand.cpp:206
 #, kde-format
@@ -1416,12 +1415,10 @@ msgid "Sent"
 msgstr "Изпратено"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:68
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Delete Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "Deleted"
-msgstr "Изтриване на тема"
+msgstr "Изтрито"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:70
 #, kde-format
