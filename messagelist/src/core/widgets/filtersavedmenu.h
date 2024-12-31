@@ -23,7 +23,6 @@ public:
 Q_SIGNALS:
     void saveFilter();
     void configureFilters();
-    void filterSelected(const QString &identifier);
 
 private:
     MESSAGELIST_NO_EXPORT void slotShowMenu();

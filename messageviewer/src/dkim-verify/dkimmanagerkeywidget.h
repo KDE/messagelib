@@ -28,7 +28,6 @@ public:
     void restoreHeaders(const QByteArray &header);
 
 private:
-    MESSAGEVIEWER_NO_EXPORT void slotCustomContextMenuRequested(const QPoint &);
     DKIMManagerKeyTreeView *const mDKIMManagerKeyTreeView;
 };
 }
