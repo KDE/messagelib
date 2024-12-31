@@ -1031,9 +1031,27 @@ void Widget::searchTimerFired()
     SearchLineCommand command;
     command.parseSearchLineCommand(text);
     if (command.hasOnlyOneLiteralCommand()) {
-        // TODO verify searchoptions
+        SearchLineCommand commandChanged;
         const SearchMessageByButtons::SearchOptions options = d->quickSearchLine->searchOptions();
-        // TODO
+        SearchLineCommand::SearchLineInfo info;
+        info.argument = command.searchLineInfo().at(0).argument;
+        if (options & SearchMessageByButtons::SearchEveryWhere) {
+            info.type = SearchLineCommand::SearchLineType::Literal;
+        } else if (options & SearchMessageByButtons::SearchAgainstSubject) {
+            info.type = SearchLineCommand::SearchLineType::Subject;
+        } else if (options & SearchMessageByButtons::SearchAgainstBody) {
+            info.type = SearchLineCommand::SearchLineType::Body;
+        } else if (options & SearchMessageByButtons::SearchAgainstFrom) {
+            info.type = SearchLineCommand::SearchLineType::From;
+        } else if (options & SearchMessageByButtons::SearchAgainstBcc) {
+            info.type = SearchLineCommand::SearchLineType::Bcc;
+        } else if (options & SearchMessageByButtons::SearchAgainstCc) {
+            info.type = SearchLineCommand::SearchLineType::Cc;
+        } else if (options & SearchMessageByButtons::SearchAgainstTo) {
+            info.type = SearchLineCommand::SearchLineType::To;
+        }
+        commandChanged.setSearchLineInfo({info});
+        command = commandChanged;
     }
     // qDebug() << " text " << text << " command " << command.searchLineInfo();
 
