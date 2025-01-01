@@ -28,7 +28,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-28 00:42+0000\n"
-"PO-Revision-Date: 2024-12-21 08:51+0100\n"
+"PO-Revision-Date: 2024-12-29 11:18+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -1321,10 +1321,9 @@ msgid "Mail is sent"
 msgstr "Le courriel est envoyé."
 
 #: core/widgets/searchlinecommand.cpp:196
-#, fuzzy, kde-format
-#| msgid "Mail is replied"
+#, kde-format
 msgid "Mail is deleted"
-msgstr "Le courriel est répondu."
+msgstr "Le courriel est supprimé."
 
 #: core/widgets/searchlinecommand.cpp:206
 #, kde-format
@@ -1452,9 +1451,7 @@ msgid "Sent"
 msgstr "Envoyé"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:68
-#, fuzzy, kde-format
-#| msgctxt "MDN type"
-#| msgid "Deleted"
+#, kde-format
 msgctxt "@action:button"
 msgid "Deleted"
 msgstr "Supprimé"
