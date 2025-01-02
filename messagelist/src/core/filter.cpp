@@ -497,22 +497,26 @@ void Filter::setSearchString(const SearchLineCommand &command)
             lstStatus.append(status);
             break;
         }
-        case SearchLineCommand::To:
+        case SearchLineCommand::To: {
             mSearchString = info.argument;
             query.addTo(info.argument);
             break;
-        case SearchLineCommand::Bcc:
+        }
+        case SearchLineCommand::Bcc: {
             mSearchString = info.argument;
             query.addBcc(info.argument);
             break;
-        case SearchLineCommand::From:
+        }
+        case SearchLineCommand::From: {
             mSearchString = info.argument;
             query.addFrom(info.argument);
             break;
-        case SearchLineCommand::Cc:
+        }
+        case SearchLineCommand::Cc: {
             mSearchString = info.argument;
             query.addCc(info.argument);
             break;
+        }
         }
     }
 
