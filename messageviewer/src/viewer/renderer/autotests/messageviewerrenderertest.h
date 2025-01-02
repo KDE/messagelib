@@ -1,5 +1,5 @@
 /*
-   SPDX-FileCopyrightText: 2019-2024 Laurent Montel <montel@kde.org>
+   SPDX-FileCopyrightText: 2019-2025 Laurent Montel <montel@kde.org>
 
    Code based on ARHParser.jsm from dkim_verifier (Copyright (c) Philippe Lieser)
    (This software is licensed under the terms of the MIT License.)
