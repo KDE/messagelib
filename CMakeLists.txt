@@ -169,7 +169,7 @@ endif()
 
 find_package(OpenSSL ${OPENSSL_VERSION} REQUIRED)
 
-ecm_set_disabled_deprecation_versions(QT 6.8.1 KF 6.9.0)
+ecm_set_disabled_deprecation_versions(QT 6.8.1 KF 6.10.0)
 add_definitions(-DQT_NO_CONTEXTLESS_CONNECT)
 # -fhardened increase compilation time and produce a lot of warning
 option(OPTION_DISABLE_HARDENED_OPTIMIZATION "Disable -fhardened" OFF)
