@@ -1175,7 +1175,6 @@ msgstr ""
 
 #: core/widgets/searchlinecommand.cpp:152
 #, fuzzy, kde-format
-#| msgid "Size"
 msgid "Size is"
 msgstr "Sturrodat"
 
@@ -1202,40 +1201,30 @@ msgstr ""
 # unreviewed-context
 #: core/widgets/searchlinecommand.cpp:162
 #, fuzzy, kde-format
-#| msgctxt "@title:column Subject of messages"
-#| msgid "Subject"
 msgid "Subject contains"
 msgstr "Fáddá"
 
 # unreviewed-context
 #: core/widgets/searchlinecommand.cpp:164
 #, fuzzy, kde-format
-#| msgctxt "@title:column Subject of messages"
-#| msgid "Subject"
 msgid "Body contains"
 msgstr "Fáddá"
 
 # unreviewed-context
 #: core/widgets/searchlinecommand.cpp:166
 #, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Has Attachment"
 msgid "Mail has tag"
 msgstr "Lea mielddus"
 
 # unreviewed-context
 #: core/widgets/searchlinecommand.cpp:168
 #, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Has Attachment"
 msgid "Mail has attachment"
 msgstr "Lea mielddus"
 
 # unreviewed-context
 #: core/widgets/searchlinecommand.cpp:170
 #, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Has Attachment"
 msgid "Mail has invitation"
 msgstr "Lea mielddus"
 
@@ -1251,69 +1240,57 @@ msgstr ""
 
 #: core/widgets/searchlinecommand.cpp:176
 #, fuzzy, kde-format
-#| msgid "Unread"
 msgid "Mail is Unread"
 msgstr "Logakeahtes"
 
 #: core/widgets/searchlinecommand.cpp:178
 #, fuzzy, kde-format
-#| msgid "Unread"
 msgid "Mail is Ignored"
 msgstr "Logakeahtes"
 
 #: core/widgets/searchlinecommand.cpp:180
 #, fuzzy, kde-format
-#| msgid "Unread"
 msgid "Mail is Ham"
 msgstr "Logakeahtes"
 
 #: core/widgets/searchlinecommand.cpp:182
 #, fuzzy, kde-format
-#| msgid "Unread"
 msgid "Mail is Spam"
 msgstr "Logakeahtes"
 
 # unreviewed-context
 #: core/widgets/searchlinecommand.cpp:184
 #, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Has Attachment"
 msgid "Mail is watched"
 msgstr "Lea mielddus"
 
 #: core/widgets/searchlinecommand.cpp:186
 #, fuzzy, kde-format
-#| msgid "Unread"
 msgid "Mail is replied"
 msgstr "Logakeahtes"
 
 #: core/widgets/searchlinecommand.cpp:188
 #, fuzzy, kde-format
-#| msgid "Unread"
 msgid "Mail is forwarded"
 msgstr "Logakeahtes"
 
 #: core/widgets/searchlinecommand.cpp:190
 #, fuzzy, kde-format
-#| msgid "Unread"
 msgid "Mail is encrypted"
 msgstr "Logakeahtes"
 
 #: core/widgets/searchlinecommand.cpp:192
 #, fuzzy, kde-format
-#| msgid "Unread"
 msgid "Mail is queued"
 msgstr "Logakeahtes"
 
 #: core/widgets/searchlinecommand.cpp:194
 #, fuzzy, kde-format
-#| msgid "Unread"
 msgid "Mail is sent"
 msgstr "Logakeahtes"
 
 #: core/widgets/searchlinecommand.cpp:196
 #, fuzzy, kde-format
-#| msgid "Unread"
 msgid "Mail is deleted"
 msgstr "Logakeahtes"
 
@@ -1325,8 +1302,6 @@ msgstr ""
 # unreviewed-context
 #: core/widgets/searchlinecommandbuttonswidget.cpp:48
 #, fuzzy, kde-format
-#| msgctxt "@title:column Subject of messages"
-#| msgid "Subject"
 msgctxt "@action:button"
 msgid "Subject"
 msgstr "Fáddá"
@@ -1345,7 +1320,6 @@ msgstr ""
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:51
 #, fuzzy, kde-format
-#| msgid "To"
 msgctxt "@action:button"
 msgid "To"
 msgstr "Vuostáiváldi"
@@ -1365,8 +1339,6 @@ msgstr ""
 # unreviewed-context
 #: core/widgets/searchlinecommandbuttonswidget.cpp:54
 #, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Has Attachment"
 msgctxt "@action:button"
 msgid "Has Attachment"
 msgstr "Lea mielddus"
@@ -1374,8 +1346,6 @@ msgstr "Lea mielddus"
 # unreviewed-context
 #: core/widgets/searchlinecommandbuttonswidget.cpp:55
 #, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Has Attachment"
 msgctxt "@action:button"
 msgid "Has Invitation"
 msgstr "Lea mielddus"
@@ -1388,7 +1358,6 @@ msgstr ""
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:57
 #, fuzzy, kde-format
-#| msgid "Unread"
 msgctxt "@action:button"
 msgid "Unread"
 msgstr "Logakeahtes"
@@ -1401,7 +1370,6 @@ msgstr ""
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:59
 #, fuzzy, kde-format
-#| msgid "Unread"
 msgctxt "@action:button"
 msgid "Ignored"
 msgstr "Logakeahtes"
@@ -1409,8 +1377,6 @@ msgstr "Logakeahtes"
 # unreviewed-context
 #: core/widgets/searchlinecommandbuttonswidget.cpp:60
 #, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Ham"
 msgctxt "@action:button"
 msgid "Ham"
 msgstr "Ii ruskaboasta"
@@ -1418,8 +1384,6 @@ msgstr "Ii ruskaboasta"
 # unreviewed-context
 #: core/widgets/searchlinecommandbuttonswidget.cpp:61
 #, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Spam"
 msgctxt "@action:button"
 msgid "Spam"
 msgstr "Ruskaboasta"
@@ -1427,8 +1391,6 @@ msgstr "Ruskaboasta"
 # unreviewed-context
 #: core/widgets/searchlinecommandbuttonswidget.cpp:62
 #, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Watched"
 msgctxt "@action:button"
 msgid "Watched"
 msgstr "Gozihuvvon"
@@ -1436,7 +1398,6 @@ msgstr "Gozihuvvon"
 # unreviewed-context
 #: core/widgets/searchlinecommandbuttonswidget.cpp:63
 #, fuzzy, kde-format
-#| msgid "Replied"
 msgctxt "@action:button"
 msgid "Replied"
 msgstr "Vástiduvvon"
@@ -1444,15 +1405,12 @@ msgstr "Vástiduvvon"
 # unreviewed-context
 #: core/widgets/searchlinecommandbuttonswidget.cpp:64
 #, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Forwarded"
 msgctxt "@action:button"
 msgid "Forwarded"
 msgstr "Viidásit sáddejuvvon"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:65
 #, fuzzy, kde-format
-#| msgid "Encryption"
 msgctxt "@action:button"
 msgid "Encrypted"
 msgstr "Krypteren"
@@ -1466,8 +1424,6 @@ msgstr ""
 # unreviewed-context
 #: core/widgets/searchlinecommandbuttonswidget.cpp:67
 #, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Sent"
 msgctxt "@action:button"
 msgid "Sent"
 msgstr "Sáddejuvvon e-boasta"
@@ -1492,14 +1448,12 @@ msgstr ""
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:72
 #, fuzzy, kde-format
-#| msgid "Size"
 msgctxt "@action:button"
 msgid "Size"
 msgstr "Sturrodat"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:73
 #, fuzzy, kde-format
-#| msgid "Folder"
 msgctxt "@action:button"
 msgid "Older"
 msgstr "Máhppa"
