@@ -273,6 +273,12 @@ QList<SearchLineCommand::SearchLineInfo> Filter::searchLineCommands() const
             if (i.isValid()) {
                 infos.append(std::move(i));
             }
+        } else if (status.isToAct()) {
+            SearchLineCommand::SearchLineInfo i;
+            i.type = SearchLineCommand::SearchLineType::IsAction;
+            if (i.isValid()) {
+                infos.append(std::move(i));
+            }
         }
     }
 
@@ -482,6 +488,12 @@ void Filter::setSearchString(const SearchLineCommand &command)
         case SearchLineCommand::IsQueued: {
             Akonadi::MessageStatus status;
             status.setQueued(true);
+            lstStatus.append(status);
+            break;
+        }
+        case SearchLineCommand::IsAction: {
+            Akonadi::MessageStatus status;
+            status.setToAct(true);
             lstStatus.append(status);
             break;
         }

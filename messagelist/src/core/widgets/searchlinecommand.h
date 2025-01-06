@@ -45,6 +45,7 @@ public:
         IsQueued,
         IsSent,
         IsDeleted,
+        IsAction,
         Larger,
         Smaller,
         OlderThan,
