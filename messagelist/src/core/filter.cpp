@@ -267,6 +267,12 @@ QList<SearchLineCommand::SearchLineInfo> Filter::searchLineCommands() const
             if (i.isValid()) {
                 infos.append(std::move(i));
             }
+        } else if (status.isWatched()) {
+            SearchLineCommand::SearchLineInfo i;
+            i.type = SearchLineCommand::SearchLineType::IsWatched;
+            if (i.isValid()) {
+                infos.append(std::move(i));
+            }
         }
     }
 
