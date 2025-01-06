@@ -1033,6 +1033,7 @@ void Widget::searchTimerFired()
     if (command.hasOnlyOneLiteralCommand()) {
         SearchLineCommand commandChanged;
         const SearchMessageByButtons::SearchOptions options = d->quickSearchLine->searchOptions();
+        d->mFilter->setOptions(options);
         SearchLineCommand::SearchLineInfo info;
         info.argument = command.searchLineInfo().at(0).argument;
         if (options & SearchMessageByButtons::SearchEveryWhere) {
