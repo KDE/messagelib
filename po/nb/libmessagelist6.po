@@ -1169,7 +1169,6 @@ msgstr ""
 
 #: core/widgets/searchlinecommand.cpp:81
 #, fuzzy, kde-format
-#| msgid "Size"
 msgid "Size is"
 msgstr "Størrelse"
 
@@ -1195,43 +1194,31 @@ msgstr ""
 
 #: core/widgets/searchlinecommand.cpp:91
 #, fuzzy, kde-format
-#| msgctxt "@title:column Subject of messages"
-#| msgid "Subject"
 msgid "Subject contains"
 msgstr "Emne"
 
 #: core/widgets/searchlinecommand.cpp:93
 #, fuzzy, kde-format
-#| msgctxt "@title:column Subject of messages"
-#| msgid "Subject"
 msgid "Body contains"
 msgstr "Emne"
 
 #: core/widgets/searchlinecommand.cpp:95
 #, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Has Attachment"
 msgid "Mail has tag"
 msgstr "Har vedlegg"
 
 #: core/widgets/searchlinecommand.cpp:97
 #, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Has Attachment"
 msgid "Mail has attachment"
 msgstr "Har vedlegg"
 
 #: core/widgets/searchlinecommand.cpp:99
 #, fuzzy, kde-format
-#| msgctxt "@action:inmenu Status of a message"
-#| msgid "Has Invitation"
 msgid "Mail has invitation"
 msgstr "Har invitasjon"
 
 #: core/widgets/searchlinecommand.cpp:101
 #, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Important"
 msgid "Mail is important"
 msgstr "Viktig"
 
@@ -1242,44 +1229,36 @@ msgstr ""
 
 #: core/widgets/searchlinecommand.cpp:105
 #, fuzzy, kde-format
-#| msgid "Unread"
 msgid "Mail is Unread"
 msgstr "Ulest"
 
 #: core/widgets/searchlinecommand.cpp:107
 #, fuzzy, kde-format
-#| msgid "Unread"
 msgid "Mail is Ignored"
 msgstr "Ulest"
 
 #: core/widgets/searchlinecommand.cpp:109
 #, fuzzy, kde-format
-#| msgid "Unread"
 msgid "Mail is Ham"
 msgstr "Ulest"
 
 #: core/widgets/searchlinecommand.cpp:111
 #, fuzzy, kde-format
-#| msgid "Unread"
 msgid "Mail is Spam"
 msgstr "Ulest"
 
 #: core/widgets/searchlinecommand.cpp:113
 #, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Has Attachment"
 msgid "Mail is watched"
 msgstr "Har vedlegg"
 
 #: core/widgets/searchlinecommand.cpp:115
 #, fuzzy, kde-format
-#| msgid "Unread"
 msgid "Mail is replied"
 msgstr "Ulest"
 
 #: core/widgets/searchlinecommand.cpp:117
 #, fuzzy, kde-format
-#| msgid "Unread"
 msgid "Mail is forwarded"
 msgstr "Ulest"
 
@@ -1290,8 +1269,6 @@ msgstr ""
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:47
 #, fuzzy, kde-format
-#| msgctxt "@title:column Subject of messages"
-#| msgid "Subject"
 msgctxt "@action:button"
 msgid "Subject"
 msgstr "Emne"
@@ -1304,14 +1281,12 @@ msgstr "Kropp"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:49
 #, fuzzy, kde-format
-#| msgid "From"
 msgctxt "@action:button"
 msgid "From"
 msgstr "Fra"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:50
 #, fuzzy, kde-format
-#| msgid "To"
 msgctxt "@action:button"
 msgid "To"
 msgstr "Til"
@@ -1330,86 +1305,66 @@ msgstr ""
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:53
 #, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Has Attachment"
 msgctxt "@action:button"
 msgid "Has Attachment"
 msgstr "Har vedlegg"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:54
 #, fuzzy, kde-format
-#| msgctxt "@action:inmenu Status of a message"
-#| msgid "Has Invitation"
 msgctxt "@action:button"
 msgid "Has Invitation"
 msgstr "Har invitasjon"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:55
 #, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Read"
 msgctxt "@action:button"
 msgid "Read"
 msgstr "Lest"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:56
 #, fuzzy, kde-format
-#| msgid "Unread"
 msgctxt "@action:button"
 msgid "Unread"
 msgstr "Ulest"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:57
 #, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Important"
 msgctxt "@action:button"
 msgid "Important"
 msgstr "Viktig"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:58
 #, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Ignored"
 msgctxt "@action:button"
 msgid "Ignored"
 msgstr "Ignorert"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:59
 #, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Ham"
 msgctxt "@action:button"
 msgid "Ham"
 msgstr "Ikke-søppelpost"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:60
 #, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Spam"
 msgctxt "@action:button"
 msgid "Spam"
 msgstr "Søppelpost"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:61
 #, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Watched"
 msgctxt "@action:button"
 msgid "Watched"
 msgstr "Overvåket"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:62
 #, fuzzy, kde-format
-#| msgid "Replied"
 msgctxt "@action:button"
 msgid "Replied"
 msgstr "Besvart"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:63
 #, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Forwarded"
 msgctxt "@action:button"
 msgid "Forwarded"
 msgstr "Videresendt"
@@ -1428,7 +1383,6 @@ msgstr ""
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:67
 #, fuzzy, kde-format
-#| msgid "Size"
 msgctxt "@action:button"
 msgid "Size"
 msgstr "Størrelse"
