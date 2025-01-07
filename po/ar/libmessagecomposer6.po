@@ -1,14 +1,14 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 # Safa Alfulaij <safa1996alfulaij@gmail.com>, 2017.
-# SPDX-FileCopyrightText: 2021, 2024 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2021, 2024, 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-12 00:41+0000\n"
-"PO-Revision-Date: 2024-10-14 20:56+0400\n"
+"PO-Revision-Date: 2025-01-06 22:34+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -20,8 +20,7 @@ msgstr ""
 "X-Generator: Lokalize 23.08.5\n"
 
 #: attachment/attachmentcontrollerbase.cpp:166
-#, fuzzy, kde-format
-#| msgid "Failed to compress attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to compress attachment"
 msgstr "فشل ضغط المرفق"
@@ -84,29 +83,25 @@ msgid "Failed to attach public key"
 msgstr "فشل إرفاق المفتاح العموميّ"
 
 #: attachment/attachmentcontrollerbase.cpp:390
-#, fuzzy, kde-format
-#| msgid "Failed to attach file"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach vCard"
-msgstr "فشل إرفاق الملفّ"
+msgstr "فشل إرفاق vCard"
 
 #: attachment/attachmentcontrollerbase.cpp:403
-#, fuzzy, kde-format
-#| msgid "Failed to attach file"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach text from clipboard"
-msgstr "فشل إرفاق الملفّ"
+msgstr "فشل إرفاق الملفّ من الحافظة"
 
 #: attachment/attachmentcontrollerbase.cpp:451
-#, fuzzy, kde-format
-#| msgid "Attach &Public Key..."
+#, kde-format
 msgctxt "@action"
 msgid "Attach &Public Key..."
 msgstr "أرفق المفتاح ال&عموميّ..."
 
 #: attachment/attachmentcontrollerbase.cpp:454
-#, fuzzy, kde-format
-#| msgid "Attach &My Public Key"
+#, kde-format
 msgctxt "@action"
 msgid "Attach &My Public Key"
 msgstr "أرفق م&فتاحي العمومي"
@@ -138,30 +133,27 @@ msgstr "أرفق &دليلًا..."
 #, kde-format
 msgctxt "@action"
 msgid "Attach Own vCard"
-msgstr ""
+msgstr "إرفاق vCard الخاصة"
 
 #: attachment/attachmentcontrollerbase.cpp:472
 #, kde-format
 msgid "Own vCard"
-msgstr ""
+msgstr "vCard الخاصة"
 
 #: attachment/attachmentcontrollerbase.cpp:476
 #, kde-format
 msgid "&Attach vCards..."
-msgstr ""
+msgstr "&أرفق vCards..."
 
 #: attachment/attachmentcontrollerbase.cpp:480
-#, fuzzy, kde-format
-#| msgid "&Attach Directory..."
+#, kde-format
 msgid "&Attach Text From Clipboard..."
-msgstr "أرفق &دليلًا..."
+msgstr "&أرفق نص من الحافظة..."
 
 #: attachment/attachmentcontrollerbase.cpp:481
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Attach directory"
+#, kde-format
 msgid "Attach Text From Clipboard"
-msgstr "إرفاق دليل"
+msgstr "أرفق نص من الحافظة"
 
 #: attachment/attachmentcontrollerbase.cpp:493
 #, kde-format
@@ -239,8 +231,7 @@ msgstr "تعذّر على «بريدك» كتابة المرفق في ملفّ �
 
 #: attachment/attachmentcontrollerbase.cpp:678
 #: attachment/attachmentcontrollerbase.cpp:704
-#, fuzzy, kde-format
-#| msgid "Unable to open attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unable to open attachment"
 msgstr "تعذّر فتح المرفق"
@@ -251,8 +242,7 @@ msgid "KMail was unable to open the attachment"
 msgstr "تعذّر على «بريدك» فتح المرفق"
 
 #: attachment/attachmentcontrollerbase.cpp:754 attachment/editorwatcher.cpp:196
-#, fuzzy, kde-format
-#| msgid "Unable to edit attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unable to edit attachment"
 msgstr "تعذّر تحرير المرفق"
@@ -337,7 +327,7 @@ msgid "unnamed attachment"
 msgstr "مرفق غير مسمًّى"
 
 #: attachment/attachmentmodel.cpp:256
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Name: %1<br>Size: %2<br>Encoding: %3<br>MimeType=%4"
 msgstr "الاسم: %1<br>الحجم: %2<br>التّرميز: %3<br>نوع MIME=%4"
@@ -391,10 +381,9 @@ msgid "Suggest Automatic Display"
 msgstr "اقترح عرضًا آليًّا"
 
 #: attachment/editorwatcher.cpp:60
-#, fuzzy, kde-format
-#| msgid "Edit With..."
+#, kde-format
 msgid "Edit with:"
-msgstr "حرّر ب‍..."
+msgstr "حرّر ب‍:"
 
 #: attachment/editorwatcher.cpp:194
 #, kde-format
@@ -402,6 +391,8 @@ msgid ""
 "KMail is unable to detect when the chosen editor is closed. To avoid data "
 "loss, editing the attachment will be aborted."
 msgstr ""
+"لا يمكنه «بريدك» اكتشاف وقت إغلاق المحرّر المنتقى. لتجنّب فقد البيانات سيُجهض "
+"تحرير المرفق."
 
 #: composer/composer.cpp:288
 #, kde-format
@@ -446,8 +437,7 @@ msgid ""
 msgstr ""
 
 #: composer/composerviewbase.cpp:330
-#, fuzzy, kde-format
-#| msgid "Sign/Encrypt Message?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sign/Encrypt Message?"
 msgstr "أأوقّع/أعمّي الرّسالة؟"
@@ -463,8 +453,7 @@ msgid "Do you want to resize images?"
 msgstr "أتريد تغيير حجم الصّور؟"
 
 #: composer/composerviewbase.cpp:517
-#, fuzzy, kde-format
-#| msgid "Auto Resize Images"
+#, kde-format
 msgctxt "@title:window"
 msgid "Auto Resize Images"
 msgstr "غيّر حجم الصّور آليًّا"
@@ -476,18 +465,16 @@ msgid "Auto Resize"
 msgstr "تحجيم آلي"
 
 #: composer/composerviewbase.cpp:519
-#, fuzzy, kde-format
-#| msgid "Do &Not Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not Resize"
-msgstr "لا &توقّع"
+msgstr "لا تغير الحجم"
 
 #: composer/composerviewbase.cpp:721
-#, fuzzy, kde-format
-#| msgid "OpenPGP Key Expires Soon"
+#, kde-format
 msgctxt "@title:window"
 msgid "OpenPGP Key Expired"
-msgstr "ستنتهي صلاحيّة مفتاح OpenPGP قريبًا"
+msgstr "انتهت صلاحيّة مفتاح OpenPGP"
 
 #: composer/composerviewbase.cpp:721
 #, kde-format
@@ -533,9 +520,9 @@ msgid "Could not compose message: %1"
 msgstr "تعذّر إنشاء الرّسالة: %1"
 
 #: composer/composerviewbase.cpp:1159
-#, fuzzy, kde-format
+#, kde-format
 msgid "There were problems trying to queue the message for sending: %1"
-msgstr "حدثت مشاكل أثناء محاولة صفّ الرّسالة لإرسالها: %1"
+msgstr "كانت هناك مشاكل أثناء محاولة وضع الرسالة في قائمة الانتظار للإرسال: %1"
 
 #: composer/composerviewbase.cpp:1323
 #, kde-format
@@ -569,8 +556,7 @@ msgstr ""
 "السّبب: %3"
 
 #: composer/composerviewbase.cpp:1362
-#, fuzzy, kde-format
-#| msgid "Autosaving Message Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Autosaving Message Failed"
 msgstr "فشل حفظ الرّسالة آليًّا"
@@ -591,8 +577,7 @@ msgstr ""
 "أتريد إرفاق ملفّ إلى رسالتك؟"
 
 #: composer/composerviewbase.cpp:1899
-#, fuzzy, kde-format
-#| msgid "File Attachment Reminder"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Attachment Reminder"
 msgstr "تذكير بإرفاق الملفّات"
@@ -836,13 +821,13 @@ msgid "Unencrypted Message Warning"
 msgstr "تحذير برسالة غير معمّاة"
 
 #: composer/keyresolver.cpp:314
-#, fuzzy, kde-format
+#, kde-format
 msgid ""
 "One or more of your configured OpenPGP encryption keys or S/MIME "
 "certificates is not fully trusted for encryption."
 msgstr ""
-"أحد مفاتيح تعمية OpenPGP أو شهادات S/MIME المضبوطة أو أكثر ليست موثوقة تمامًا "
-"للتّعمية."
+"واحد أو أكثر من مفاتيح تعمية OpenPGP المضبوطة أو شهادات S/MIME غير موثوق بها "
+"بشكل كامل للتعمية."
 
 #: composer/keyresolver.cpp:318
 #, kde-format
@@ -857,6 +842,8 @@ msgid ""
 "\n"
 "The following keys are only marginally trusted: \n"
 msgstr ""
+"\n"
+"المفاتيح التالية موثوقة بشكل هامشي فقط: \n"
 
 #: composer/keyresolver.cpp:329
 #, kde-format
@@ -873,10 +860,11 @@ msgid ""
 "\n"
 "The following keys or certificates are <b>revoked</b>: \n"
 msgstr ""
+"\n"
+"<b>أُبطل</b> المفاتيح أو الشهادات التالية: \n"
 
 #: composer/keyresolver.cpp:339
-#, fuzzy, kde-format
-#| msgid "Not Fully Trusted Encryption Keys"
+#, kde-format
 msgctxt "@title:window"
 msgid "Not Fully Trusted Encryption Keys"
 msgstr "مواقع تعمية غير موثوقة تمامًا"
@@ -891,11 +879,15 @@ msgid ""
 "If you choose to continue, and the keys are needed later on, you will be "
 "prompted to specify the keys to use."
 msgstr ""
+"لا يمكن استخدام مفتاح أو أكثر من مفاتيح تعمية OpenPGP التي ضبطها أو شهادات S/"
+"MIME للتعمية. يرجى إعادة ضبط مفاتيح التعمية والشهادات الخاصة بهذه الهوية في "
+"مربع حوار ضبط الهوية.\n"
+"إذا اخترت الاستمرار، وكانت المفاتيح مطلوبة لاحقًا، فسوف يُطلب منك تحديد "
+"المفاتيح التي تريد استخدامها."
 
 #: composer/keyresolver.cpp:657 composer/keyresolver.cpp:1010
 #: composer/keyresolver.cpp:1039
-#, fuzzy, kde-format
-#| msgid "Unusable Encryption Keys"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unusable Encryption Keys"
 msgstr "مفاتيح تعمية لا يمكن استخدامها"
@@ -909,11 +901,15 @@ msgid ""
 "If you choose to continue, and the keys are needed later on, you will be "
 "prompted to specify the keys to use."
 msgstr ""
+"لا يمكن استخدام مفتاح أو أكثر من مفاتيح توقيع OpenPGP التي ضبطها أو شهادات "
+"توقيع S/MIME للتوقيع. يرجى إعادة ضبط مفاتيح التوقيع والشهادات الخاصة بهذه "
+"الهوية في مربع حوار ضبط الهوية.\n"
+"إذا اخترت الاستمرار، وكانت المفاتيح مطلوبة لاحقًا، فسوف يُطلب منك تحديد "
+"المفاتيح التي تريد استخدامها."
 
 #: composer/keyresolver.cpp:699 composer/keyresolver.cpp:1068
 #: composer/keyresolver.cpp:1086
-#, fuzzy, kde-format
-#| msgid "Unusable Signing Keys"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unusable Signing Keys"
 msgstr "مفاتيح توقيع لا يمكن استخدامها"
@@ -928,6 +924,11 @@ msgid ""
 "You may continue without encrypting to yourself, but be aware that you will "
 "not be able to read your own messages if you do so."
 msgstr ""
+"أدى فحص تفضيلات التعمية المستلم إلى ضرورة تعمية الرسالة باستخدام OpenPGP، "
+"على الأقل بالنسبة لبعض المستلمين؛\n"
+"ومع ذلك، لم تضبط مفاتيح تعمية OpenPGP موثوقة صالحة لهذه الهوية.\n"
+"يمكنك الاستمرار دون تعمية نفسك، ولكن كن على علم بأنك لن تتمكن من قراءة "
+"رسائلك إذا قمت بذلك."
 
 #: composer/keyresolver.cpp:1029
 #, kde-format
@@ -939,6 +940,11 @@ msgid ""
 "You may continue without encrypting to yourself, but be aware that you will "
 "not be able to read your own messages if you do so."
 msgstr ""
+"أدى فحص تفضيلات التعمية المستلم إلى ضرورة تعمية الرسالة باستخدام S/MIME، على "
+"الأقل بالنسبة لبعض المستلمين؛\n"
+"ومع ذلك، لم تضبط شهادات تعمية S/MIME صالحة لهذه الهوية.\n"
+"يمكنك الاستمرار دون تعمية نفسك، ولكن كن على علم بأنك لن تتمكن من قراءة "
+"رسائلك إذا قمت بذلك."
 
 #: composer/keyresolver.cpp:1061
 #, kde-format
@@ -948,13 +954,15 @@ msgid ""
 "however, you have not configured valid OpenPGP signing certificates for this "
 "identity."
 msgstr ""
+"أدى فحص تفضيلات التوقيع للمستلم إلى ضرورة توقيع الرسالة باستخدام OpenPGP، "
+"على الأقل بالنسبة لبعض المستلمين؛\n"
+"ومع ذلك، لم تضبط شهادات توقيع OpenPGP صالحة لهذه الهوية."
 
 #: composer/keyresolver.cpp:1069
-#, fuzzy, kde-format
-#| msgid "Do &Not Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not OpenPGP-Sign"
-msgstr "لا &توقّع"
+msgstr "لا تقم بالتوقيع بـ OpenPGP"
 
 #: composer/keyresolver.cpp:1079
 #, kde-format
@@ -964,13 +972,15 @@ msgid ""
 "however, you have not configured valid S/MIME signing certificates for this "
 "identity."
 msgstr ""
+"أدى فحص تفضيلات التوقيع للمستلم إلى ضرورة توقيع الرسالة باستخدام S/MIME، على "
+"الأقل بالنسبة لبعض المستلمين؛\n"
+"ومع ذلك، لم تضبط شهادات توقيع S/MIME صالحة لهذه الهوية."
 
 #: composer/keyresolver.cpp:1087
-#, fuzzy, kde-format
-#| msgid "Do &Not Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not S/MIME-Sign"
-msgstr "لا &توقّع"
+msgstr "لا توقع بـ S/MIME"
 
 #: composer/keyresolver.cpp:1149
 #, kde-format
@@ -979,12 +989,15 @@ msgid ""
 "signature matching your available signing keys.\n"
 "Send message without signing?"
 msgstr ""
+"أظهر فحص تفضيلات التوقيع للمستلم عدم وجود نوع شائع من التوقيع يطابق مفاتيح "
+"التوقيع المتوفرة لديك.\n"
+"هل تريد إرسال رسالة بدون توقيع؟"
 
 #: composer/keyresolver.cpp:1153
 #, kde-format
 msgctxt "@title:window"
 msgid "No signing possible"
-msgstr ""
+msgstr "لا يوجد توقيع ممكن"
 
 #: composer/keyresolver.cpp:1316
 #, kde-format
@@ -992,11 +1005,12 @@ msgid ""
 "You did not select an encryption key for yourself (encrypt to self). You "
 "will not be able to decrypt your own message if you encrypt it."
 msgstr ""
+"لم تحدد مفتاح تعمية لنفسك (تعمية ذاتية). لن تتمكن من فك تعمية رسالتك إذا "
+"عميتها."
 
 #: composer/keyresolver.cpp:1319 composer/keyresolver.cpp:1344
 #: composer/keyresolver.cpp:1360
-#, fuzzy, kde-format
-#| msgid "Missing Key Warning"
+#, kde-format
 msgctxt "@title:window"
 msgid "Missing Key Warning"
 msgstr "تحذير بمفتاح ناقص"
@@ -1049,6 +1063,9 @@ msgid ""
 "\n"
 "Please re-select the certificate(s) which should be used for this recipient."
 msgstr ""
+"توجد مشكلة في شهادة (شهادات) التعمية لـ \"%1\".\n"
+"\n"
+" الرجاء إعادة تحديد الشهادة (الشهادات) التي يجب استخدامها لهذا المستلم."
 
 #: composer/keyresolver.cpp:1549
 #, kde-format
@@ -1077,27 +1094,30 @@ msgid ""
 "\n"
 "Select the certificate(s) which should be used for this recipient."
 msgstr ""
+"أكثر من شهادة تطابق \"%1\".\n"
+"\n"
+" حدد الشهادة (الشهادات) التي يجب استخدامها لهذا المستلم."
 
 #: contactpreference/savecontactpreferencejob.cpp:70
 #, kde-format
 msgctxt "@title:window"
 msgid "Name Selection"
-msgstr ""
+msgstr "تحديد الاسم"
 
 #: contactpreference/savecontactpreferencejob.cpp:71
 #, kde-format
 msgid "Which name shall the contact '%1' have in your address book?"
-msgstr ""
+msgstr "ما هو الاسم الذي يجب أن يكون لجهة الاتصال '%1' في دفتر عناوينك؟"
 
 #: contactpreference/savecontactpreferencejob.cpp:83
 #, kde-format
 msgid "Select the address book folder to store the new contact in:"
-msgstr ""
+msgstr "حدد مجلد دفتر العناوين لتخزين جهة الاتصال الجديدة في:"
 
 #: followupreminder/followupremindercreatejob.cpp:76
 #, kde-format
 msgid "Wait answer from \"%1\" send to \"%2\""
-msgstr ""
+msgstr "انتظر الإجابة من \"%1\" وأرسلها إلى \"%2\""
 
 #: followupreminder/followupremindercreatejob.cpp:99
 #, kde-format
@@ -1105,19 +1125,18 @@ msgid ""
 "Failed to store a new reminder: an error occurred while trying to create a "
 "new to-do in your calendar: %1"
 msgstr ""
+"فشل في تخزين تذكير جديد: حدث خطأ أثناء محاولة إنشاء مهمة جديدة في تقويمك: %1"
 
 #: followupreminder/followupremindercreatejob.cpp:131
-#, fuzzy, kde-format
-#| msgid "Failed to save the message: %1"
+#, kde-format
 msgid "Failed to store a new reminder: %1"
-msgstr "فشل حفظ الرّسالة :%1"
+msgstr "فشل تخزين تذكير جديد: %1"
 
 #: followupreminder/followupreminderselectdatedialog.cpp:35
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Date"
-msgstr "حدّد الكلّ"
+msgstr "حدّد التاريخ"
 
 #: followupreminder/followupreminderselectdatedialog.cpp:63
 #, kde-format
@@ -1127,12 +1146,12 @@ msgstr "التّاريخ:"
 #: followupreminder/followupreminderselectdatedialog.cpp:71
 #, kde-format
 msgid "Store to-do in:"
-msgstr ""
+msgstr "تخزين المهام في:"
 
 #: followupreminder/followupreminderselectdatedialog.cpp:105
 #, kde-format
 msgid "The selected date must be greater than the current date."
-msgstr ""
+msgstr "التاريخ المحدد يجب أن يكون أكبر من التاريخ الحالي."
 
 #: followupreminder/followupreminderselectdatedialog.cpp:105
 #, kde-format
@@ -1143,19 +1162,18 @@ msgstr "تاريخ غير صالح"
 #: followupreminder/followupreminderselectdatedialog.cpp:109
 #, kde-format
 msgid "The selected folder is not valid."
-msgstr ""
+msgstr "المجلد المحدد غير صالح."
 
 #: followupreminder/followupreminderselectdatedialog.cpp:109
-#, fuzzy, kde-format
-#| msgid "Invalid date"
+#, kde-format
 msgctxt "@title:window"
 msgid "Invalid folder"
-msgstr "التاريخ غير صالح"
+msgstr "مجلد غير صالح"
 
 #: helper/messagefactoryng.cpp:406 helper/messagefactoryng.cpp:729
 #, kde-format
 msgid "forwarded message"
-msgstr ""
+msgstr "رسالة موجهة"
 
 #: helper/messagefactoryng.cpp:574
 #, kde-format
@@ -1171,20 +1189,22 @@ msgid ""
 "\n"
 "\n"
 msgstr ""
+"\n"
+"هذا ملخص MIME. محتوى الرسالة موجود في المرفقات.\n"
+"\n"
+"\n"
 
 #: imagescaling/imagescalingselectformat.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Image Format"
-msgstr ""
+msgstr "حدد تنسيق الصورة"
 
 #: imagescaling/imagescalingselectformat.cpp:88
-#, fuzzy, kde-format
-#| msgctxt "@action:button Open recipient selection dialog."
-#| msgid "Se&lect..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Select Format..."
-msgstr "ا&ختر..."
+msgstr "حدد التنسيق..."
 
 #: imagescaling/imagescalingwidget.cpp:107
 #, kde-format
@@ -1198,6 +1218,9 @@ msgid ""
 "current time</li><li>%d set current date</li><li>%n original filename</"
 "li><li>%e original extension</li><li>%x new extension</li></ul></qt>"
 msgstr ""
+"<qt><p>يمكنك هنا تحديد اسم ملف الصورة. يمكنك استخدام:</p><ul><li>%t لتعيين "
+"الوقت الحالي</li><li>%d لتعيين التاريخ الحالي</li><li>%n اسم الملف الأصلي</"
+"li><li>%e الامتداد الأصلي</li><li>%x امتداد جديد</li></ul></qt>"
 
 #: imagescaling/imagescalingwidget.cpp:187
 #, kde-format
@@ -1207,19 +1230,19 @@ msgstr "مخصّص"
 #: imagescaling/imagescalingwidget.cpp:315
 #, kde-format
 msgid "Please verify minimum and maximum values."
-msgstr ""
+msgstr "يرجى التحقق من القيم الدنيا والقصوى."
 
 #: imagescaling/imagescalingwidget.cpp:315
 #, kde-format
 msgctxt "@title:window"
 msgid "Error in minimum Maximum value"
-msgstr ""
+msgstr "خطأ في الحد الأدنى للقيمة القصوى"
 
 #. i18n: ectx: property (text), widget (QCheckBox, enabledAutoResize)
 #: imagescaling/ui/imagescalingwidget.ui:17
 #, kde-format
 msgid "Automatically resize images"
-msgstr ""
+msgstr "تغيير حجم الصور تلقائيا"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
 #: imagescaling/ui/imagescalingwidget.ui:28
@@ -1237,13 +1260,13 @@ msgstr "أبق التناسب"
 #: imagescaling/ui/imagescalingwidget.ui:41
 #, kde-format
 msgid "Ask before resizing"
-msgstr ""
+msgstr "اسأل قبل تغيير الحجم"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: imagescaling/ui/imagescalingwidget.ui:50
 #, kde-format
 msgid "Fallback to format:"
-msgstr ""
+msgstr "الرجوع إلى التنسيق:"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_2)
 #: imagescaling/ui/imagescalingwidget.ui:89
@@ -1255,7 +1278,7 @@ msgstr "صورة"
 #: imagescaling/ui/imagescalingwidget.ui:95
 #, kde-format
 msgid "Reduce image to maximum dimension:"
-msgstr ""
+msgstr "تصغير الصورة إلى أقصى أبعادها:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: imagescaling/ui/imagescalingwidget.ui:109
@@ -1267,7 +1290,7 @@ msgstr "أقصى عرض:"
 #: imagescaling/ui/imagescalingwidget.ui:116
 #, kde-format
 msgid "Maximum height:"
-msgstr ""
+msgstr "أقصى ارتفاع:"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, customMaximumWidth)
 #. i18n: ectx: property (suffix), widget (QSpinBox, customMaximumHeight)
@@ -1303,7 +1326,7 @@ msgstr "أدنى ارتفاع:"
 #: imagescaling/ui/imagescalingwidget.ui:230
 #, kde-format
 msgid "Skip image whose size of the source file is lower than:"
-msgstr ""
+msgstr "تخطي الصورة التي يكون حجم الملف المصدر فيها أقل من:"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, imageSize)
 #: imagescaling/ui/imagescalingwidget.ui:237
@@ -1321,25 +1344,25 @@ msgstr "اسم الملفّ"
 #: imagescaling/ui/imagescalingwidget.ui:269
 #, kde-format
 msgid "Source filter"
-msgstr ""
+msgstr "مرشح المصدر"
 
 #. i18n: ectx: property (text), widget (QRadioButton, notFilterFilename)
 #: imagescaling/ui/imagescalingwidget.ui:275
 #, kde-format
 msgid "Do not filter (All files are included)"
-msgstr ""
+msgstr "لا تقم بالتصفية (جميع الملفات مضمنة)"
 
 #. i18n: ectx: property (text), widget (QRadioButton, includeFilesWithPattern)
 #: imagescaling/ui/imagescalingwidget.ui:285
 #, kde-format
 msgid "Include all files whose names contains one of the patterns"
-msgstr ""
+msgstr "تضمين كافة الملفات التي تحتوي أسماؤها على أحد الأنماط"
 
 #. i18n: ectx: property (text), widget (QRadioButton, excludeFilesWithPattern)
 #: imagescaling/ui/imagescalingwidget.ui:292
 #, kde-format
 msgid "Exclude all files whose names contains one of the patterns"
-msgstr ""
+msgstr "استبعاد كافة الملفات التي تحتوي أسماؤها على أحد الأنماط"
 
 #. i18n: ectx: property (text), widget (QLabel, patternLabel)
 #: imagescaling/ui/imagescalingwidget.ui:301
@@ -1351,7 +1374,7 @@ msgstr "النمط:"
 #: imagescaling/ui/imagescalingwidget.ui:308
 #, kde-format
 msgid "This line allows to define several pattern. Separate them with ';'."
-msgstr ""
+msgstr "يسمح هذا الخط بتعريف عدة أنماط. أفصلهم بـ ';'."
 
 #. i18n: ectx: property (placeholderText), widget (QLineEdit, pattern)
 #. i18n: ectx: property (placeholderText), widget (QLineEdit, resizeEmailsPattern)
@@ -1361,7 +1384,7 @@ msgstr ""
 #: imagescaling/ui/imagescalingwidget.ui:443
 #, kde-format
 msgid "Specify patterns separate with ';'"
-msgstr ""
+msgstr "حدد أنماط منفصلة بـ ';'"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: imagescaling/ui/imagescalingwidget.ui:326
@@ -1373,19 +1396,19 @@ msgstr "وصف"
 #: imagescaling/ui/imagescalingwidget.ui:332
 #, kde-format
 msgid "Resize all images with one of these formats"
-msgstr ""
+msgstr "تغيير حجم كافة الصور بأحد هذه التنسيقات"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: imagescaling/ui/imagescalingwidget.ui:345
 #, kde-format
 msgid "Resize filename"
-msgstr ""
+msgstr "تغيير حجم اسم الملف"
 
 #. i18n: ectx: property (text), widget (QCheckBox, renameResizedImage)
 #: imagescaling/ui/imagescalingwidget.ui:371
 #, kde-format
 msgid "Rename resized images with following pattern:"
-msgstr ""
+msgstr "أعد تسمية الصور التي تم تغيير حجمها بالنمط التالي:"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_4)
 #: imagescaling/ui/imagescalingwidget.ui:389
@@ -1397,43 +1420,43 @@ msgstr "المستلمون"
 #: imagescaling/ui/imagescalingwidget.ui:395
 #, kde-format
 msgid "Do not filter (All recipients are allowed)"
-msgstr ""
+msgstr "عدم التصفية (مسموح لجميع المستلمين)"
 
 #. i18n: ectx: property (text), widget (QRadioButton, resizeEachEmails)
 #: imagescaling/ui/imagescalingwidget.ui:405
 #, kde-format
 msgid "Resize if each emails address contains one of the pattern"
-msgstr ""
+msgstr "غيّر الحجم إذا كان كل عنوان بريد إلكتروني يحتوي على أحد الأنماط"
 
 #. i18n: ectx: property (text), widget (QRadioButton, resizeOneEmails)
 #: imagescaling/ui/imagescalingwidget.ui:412
 #, kde-format
 msgid "Resize if one emails address contains one of the pattern"
-msgstr ""
+msgstr "غيّر الحجم إذا كان أحد عناوين البريد الإلكتروني يحتوي على أحد الأنماط"
 
 #. i18n: ectx: property (text), widget (QRadioButton, doNotResizeEachEmails)
 #: imagescaling/ui/imagescalingwidget.ui:429
 #, kde-format
 msgid "Do not resize if each emails address contains one of the pattern"
-msgstr ""
+msgstr "لا تغير الحجم إذا كان كل عنوان بريد إلكتروني يحتوي على أحد الأنماط"
 
 #. i18n: ectx: property (text), widget (QRadioButton, doNotResizeOneEmails)
 #: imagescaling/ui/imagescalingwidget.ui:436
 #, kde-format
 msgid "Do not resize if one emails address contains one of the pattern"
 msgstr ""
+"لا تغير الحجم إذا كان أحد عناوين البريد الإلكتروني يحتوي على أحد الأنماط"
 
 #: job/attachmentclipboardjob.cpp:42
 #, kde-format
 msgid "No text found in Clipboard"
-msgstr ""
+msgstr "لم يعثر على نص في الحافظة"
 
 #: job/attachmentclipboardjob.cpp:46
-#, fuzzy, kde-format
-#| msgid "File Attachment Reminder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Define Attachment Name"
-msgstr "تذكير بإرفاق الملفّات"
+msgstr "تحديد اسم المرفق"
 
 #: job/attachmentclipboardjob.cpp:46
 #, kde-format
@@ -1443,12 +1466,12 @@ msgstr "اسم المرفق:"
 #: job/attachmentclipboardjob.cpp:49
 #, kde-format
 msgid "Clipboard Text"
-msgstr ""
+msgstr "نص الحافظة"
 
 #: job/attachmentfrompublickeyjob.cpp:51
 #, kde-format
 msgid "OpenPGP key 0x%1"
-msgstr ""
+msgstr "مفتاح OpenPGP 0x%1"
 
 #: job/attachmentfrompublickeyjob.cpp:64 job/autocryptheadersjob.cpp:90
 #, kde-format
@@ -1465,64 +1488,62 @@ msgstr "يصدّر المفتاح..."
 #: job/attachmentvcardfromaddressbookjob.cpp:75
 #, kde-format
 msgid "Unknown Contact Type"
-msgstr ""
+msgstr "نوع جهة اتصال غير معروف"
 
 #: job/attachmentvcardfromaddressbookjob.cpp:86
 #, kde-format
 msgid "Invalid Contact"
-msgstr ""
+msgstr "جهة اتصال غير صالحة"
 
 #: job/attachmentvcardfromaddressbookjob.cpp:102
 #, kde-format
 msgid "Impossible to generate vCard."
-msgstr ""
+msgstr "من المستحيل إنشاء vCard."
 
 #: job/autocryptheadersjob.cpp:103
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>An error occurred while trying to export the key from the backend:</"
-#| "p><p><b>%1</b></p>"
+#, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
 "p><p><b>No valid key found for user %1 (%2)</b></p>"
-msgstr "<p>حدث خطأ أثناء محاولة تصدير المفتاح من السّند</p><p><b>%1</b></p>"
+msgstr ""
+"<p>حدث خطأ أثناء محاولة تصدير المفتاح من الواجهة الخلفية:</p><p><b>لم يعثر "
+"على مفتاح صالح للمستخدم %1 (%2)</b></p>"
 
 #: job/maintextjob.cpp:58
 #, kde-format
 msgid "Asked to use word wrapping, but not given wrapped plain text."
-msgstr ""
+msgstr "طُلب استخدام التفاف الكلمات، ولكن لم يعطى نص عادي ملفوف."
 
 #: job/maintextjob.cpp:65
 #, kde-format
 msgid "Asked not to use word wrapping, but not given clean plain text."
-msgstr ""
+msgstr "طلب عدم استخدام التفاف الكلمات، ولكن لم يعطى نصًا عاديًا نظيفًا."
 
 #: job/maintextjob.cpp:92
 #, kde-format
 msgid "Could not get text codec for charset \"%1\"."
-msgstr ""
+msgstr "تعذر الحصول على برنامج ترميز النص لمجموعة المحارف \"%1\"."
 
 #: job/singlepartjob.cpp:65
 #, kde-format
 msgid "%1 Content-Transfer-Encoding cannot correctly encode this message."
-msgstr ""
+msgstr "لا يمكن لترميز نقل المحتوى %1 ترميز هذه الرسالة بشكل صحيح."
 
 #: mdn/mdnadvicedialog.cpp:21
 #, kde-format
 msgctxt "@title:window"
 msgid "Message Disposition Notification Request"
-msgstr ""
+msgstr "طلب إعلام بالتخلص من الرسالة"
 
 #: mdn/mdnadvicedialog.cpp:30
-#, fuzzy, kde-format
-#| msgid "Send &Unsigned"
+#, kde-format
 msgid "Send \"&denied\""
-msgstr "أرسلها &غير موقّعة"
+msgstr "أرسل \"&مرفوض\""
 
 #: mdn/mdnadvicedialog.cpp:32
 #, kde-format
 msgid "&Ignore"
-msgstr ""
+msgstr "ت&جاهل"
 
 #: mdn/mdnadvicedialog.cpp:34
 #, kde-format
@@ -1536,6 +1557,9 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"denied\" "
 "or normal response."
 msgstr ""
+"تحتوي هذه الرسالة على طلب لإرجاع إعلام حول استقبالك للرسالة.\n"
+" يمكنك إما تجاهل الطلب أو السماح لبرنامج البريد بإرسال استجابة \"مرفوضة\" أو "
+"عادية."
 
 #: mdn/mdnadvicehelper.cpp:33
 msgid ""
@@ -1546,6 +1570,10 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"failed\" "
 "response."
 msgstr ""
+"تحتوي هذه الرسالة على طلب لإرسال إعلام حول استقبالك للرسالة.\n"
+" تحتوي على تعليمات معالجة وُضع علامة \"مطلوبة\" عليها، ولكن برنامج البريد غير "
+"معروف لها.\n"
+" يمكنك إما تجاهل الطلب أو السماح لبرنامج البريد بإرسال استجابة \"فاشلة\"."
 
 #: mdn/mdnadvicehelper.cpp:41
 msgid ""
@@ -1555,6 +1583,9 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"denied\" "
 "or normal response."
 msgstr ""
+"تحتوي هذه الرسالة على طلب لإرسال إعلام حول استقبالك للرسالة،\n"
+" لكن مطلوب إرسال الإعلام إلى أكثر من عنوان.\n"
+"يمكنك إما تجاهل الطلب أو السماح لبرنامج البريد بإرسال \"رفض\"."
 
 #: mdn/mdnadvicehelper.cpp:49
 msgid ""
@@ -1564,6 +1595,10 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"denied\" "
 "or normal response."
 msgstr ""
+"تحتوي هذه الرسالة على طلب لإرسال إعلام حول استقبالك للرسالة،\n"
+" ولكن لا يوجد مسار إرجاع محدد.\n"
+"يمكنك إما تجاهل الطلب أو السماح لبرنامج البريد بإرسال استجابة \"مرفوضة\" أو "
+"عادية."
 
 #: mdn/mdnadvicehelper.cpp:56
 msgid ""
@@ -1574,6 +1609,10 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"denied\" "
 "or normal response."
 msgstr ""
+"تحتوي هذه الرسالة على طلب لإرسال إعلام حول استقبالك للرسالة،\n"
+"لكن عنوان مسار الإرجاع يختلف عن العنوان الذي تم طلب إرسال الإعلام إليه.\n"
+"بإمكانك إما تجاهل الطلب أو السماح لبرنامج البريد بإرسال استجابة \"مرفوضة\" "
+"أو عادية."
 
 #: recipient/distributionlistdialog.cpp:96
 #, kde-format
@@ -1594,12 +1633,10 @@ msgid "&Name:"
 msgstr "الا&سم:"
 
 #: recipient/distributionlistdialog.cpp:125
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Save Distribution List"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Name of Distribution List"
-msgstr "احفظ قائمة التّوزيع"
+msgstr "اسم قائمة التّوزيع"
 
 #: recipient/distributionlistdialog.cpp:132
 #, kde-format
@@ -1619,19 +1656,19 @@ msgctxt "@info"
 msgid ""
 "There are no recipients in your list. First select some recipients, then try "
 "again."
-msgstr ""
+msgstr "لا يوجد مستلمون في قائمتك. حدد أولاً بعض المستلمين، ثم حاول مرة أخرى."
 
 #: recipient/distributionlistdialog.cpp:251
 #, kde-format
 msgctxt "@title:window"
 msgid "New Distribution List"
-msgstr ""
+msgstr "قائمة توزيع جديدة"
 
 #: recipient/distributionlistdialog.cpp:252
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Please enter name:"
-msgstr ""
+msgstr "الرجاء إدخال اسم:"
 
 #: recipient/distributionlistdialog.cpp:276
 #, kde-kuit-format
@@ -1640,6 +1677,8 @@ msgid ""
 "<para>Distribution list with the given name <resource>%1</resource> already "
 "exists. Please select a different name.</para>"
 msgstr ""
+"<para>قائمة التوزيع بالاسم المحدد <resource>%1</resource> موجودة بالفعل. "
+"الرجاء اختيار اسم مختلف.</para>"
 
 #: recipient/distributionlistdialog.cpp:285
 #, kde-format
@@ -1650,12 +1689,12 @@ msgstr "اختيار دفتر عناوين"
 #: recipient/distributionlistdialog.cpp:286
 #, kde-format
 msgid "Select the address book folder to store the contact group in:"
-msgstr ""
+msgstr "حدد مجلد دفتر العناوين لتخزين مجموعة جهات الاتصال في:"
 
 #: recipient/distributionlistdialog.cpp:322
 #, kde-format
 msgid "Unable to create distribution list: %1"
-msgstr ""
+msgstr "غير قادر على إنشاء قائمة التوزيع: %1"
 
 #: recipient/recipient.cpp:99
 #, kde-format
@@ -1685,7 +1724,7 @@ msgstr "ردّ على: "
 #, kde-kuit-format
 msgctxt "@label:listbox"
 msgid "<placeholder>Undefined Recipient Type</placeholder>"
-msgstr ""
+msgstr "<placeholder>نوع المستلم غير المحدد</placeholder>"
 
 #: recipient/recipientline.cpp:71
 #, kde-format
@@ -1697,7 +1736,7 @@ msgstr "اختر نوع المستلم"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Set the list of email addresses to receive this message"
-msgstr ""
+msgstr "عيّن قائمة عناوين البريد الإلكتروني لتلقي هذه الرسالة"
 
 #: recipient/recipientseditor.cpp:112
 #, kde-format
@@ -1727,7 +1766,7 @@ msgstr "ا&ختر..."
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save recipients as distribution list"
-msgstr ""
+msgstr "حفظ المستلمين كقائمة توزيع"
 
 #: recipient/recipientseditorsidewidget.cpp:50
 #, kde-format
@@ -1778,9 +1817,7 @@ msgid "Reply-To:%1"
 msgstr "ردّ على: :%1"
 
 #: recipient/recipientspicker.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox"
-#| msgid "Select type of recipient"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Recipient"
 msgstr "اختر المستلم:"
@@ -1794,22 +1831,22 @@ msgstr "ابحث &خدمة الدليل"
 #: recipient/recipientspicker.cpp:80
 #, kde-format
 msgid "Add as &Reply-To"
-msgstr ""
+msgstr "أضف كـ&رد على"
 
 #: recipient/recipientspicker.cpp:81
 #, kde-format
 msgid "Add as &To"
-msgstr ""
+msgstr "أضف كـ إ&لى"
 
 #: recipient/recipientspicker.cpp:82
 #, kde-format
 msgid "Add as CC"
-msgstr ""
+msgstr "أضف ك&نسخة"
 
 #: recipient/recipientspicker.cpp:83
 #, kde-format
 msgid "Add as &BCC"
-msgstr ""
+msgstr "أضف كنسخة &مخفية"
 
 #: recipient/recipientspicker.cpp:106
 #, kde-format
@@ -1823,13 +1860,7 @@ msgstr[4] ""
 msgstr[5] ""
 
 #: recipient/recipientspicker.cpp:173
-#, fuzzy, kde-format
-#| msgid ""
-#| "You selected 1 recipient. The maximum supported number of recipients is "
-#| "%2. Please adapt the selection."
-#| msgid_plural ""
-#| "You selected %1 recipients. The maximum supported number of recipients is "
-#| "%2. Please adapt the selection."
+#, kde-format
 msgid ""
 "You selected 1 recipient. The maximum supported number of recipients is %2.\n"
 "Please adapt the selection."
@@ -1838,28 +1869,33 @@ msgid_plural ""
 "%2.\n"
 "Please adapt the selection."
 msgstr[0] ""
-"لم تحدّد أيّ مستلم. أقصى عدد مدعوم من المستلمين هو %2. رجاءً عدّل التّحديد."
+"لم تحدّد أيّ مستلم. أقصى عدد مدعوم من المستلمين هو %2.\n"
+" رجاءً عدّل التّحديد."
 msgstr[1] ""
-"حدّدت مستلمًا واحدًا. أقصى عدد مدعوم من المستلمين هو %2. رجاءً عدّل التّحديد."
+"حدّدت مستلمًا واحدًا. أقصى عدد مدعوم من المستلمين هو %2.\n"
+" رجاءً عدّل التّحديد."
 msgstr[2] ""
-"حدّدت مستلمين إثنين. أقصى عدد مدعوم من المستلمين هو %2. رجاءً عدّل التّحديد."
+"حدّدت مستلمين إثنين. أقصى عدد مدعوم من المستلمين هو %2.\n"
+" رجاءً عدّل التّحديد."
 msgstr[3] ""
-"حدّدت %1 مستلمين. أقصى عدد مدعوم من المستلمين هو %2. رجاءً عدّل التّحديد."
+"حدّدت %1 مستلمين. أقصى عدد مدعوم من المستلمين هو %2.\n"
+" رجاءً عدّل التّحديد."
 msgstr[4] ""
-"حدّدت %1 مستلمًا. أقصى عدد مدعوم من المستلمين هو %2. رجاءً عدّل التّحديد."
-msgstr[5] "حدّدت %1 مستلم. أقصى عدد مدعوم من المستلمين هو %2. رجاءً عدّل التّحديد."
+"حدّدت %1 مستلمًا. أقصى عدد مدعوم من المستلمين هو %2.\n"
+" رجاءً عدّل التّحديد."
+msgstr[5] ""
+"حدّدت %1 مستلم. أقصى عدد مدعوم من المستلمين هو %2.\n"
+" رجاءً عدّل التّحديد."
 
 #: recipient/recipientspicker.cpp:190
-#, fuzzy, kde-format
-#| msgid "No key data for recipients found."
+#, kde-format
 msgid "You can not add more recipients."
-msgstr "لم يُعثر على بيانات المفاتيح للمستلمين."
+msgstr "يمكنك إضافة المزيد من المستلمين."
 
 #: sendlater/sendlatercreatejob.cpp:33
-#, fuzzy, kde-format
-#| msgid "Failed to save the message: %1"
+#, kde-format
 msgid "Failed to schedule message for sending later: %1"
-msgstr "فشل حفظ الرّسالة :%1"
+msgstr "فشل جدولة الرسالة لإرسالها لاحقًا: %1"
 
 #: sendlater/sendlaterdialog.cpp:28
 #, kde-format
@@ -1873,8 +1909,7 @@ msgid "Send Later"
 msgstr "أرسل لاحقًا"
 
 #: sendlater/sendlaterdialog.cpp:49
-#, fuzzy, kde-format
-#| msgid "Delay"
+#, kde-format
 msgctxt "@option:check"
 msgid "Delay"
 msgstr "التّأخير"
@@ -1916,10 +1951,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, mLabel)
 #: sendlater/ui/sendlaterwidget.ui:29
-#, fuzzy, kde-format
-#| msgid "&Send as Is"
+#, kde-format
 msgid "Send at:"
-msgstr "أر&سلها كما هي"
+msgstr "أُرسل في:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mRecurrence)
 #: sendlater/ui/sendlaterwidget.ui:39
@@ -2013,14 +2047,9 @@ msgstr ""
 
 #. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
 #: settings/messagecomposer.kcfg.in:75
-#, fuzzy, kde-format
-#| msgid ""
-#| "Valid trusted encryption keys were found for all recipients.\n"
-#| "Encrypt this message?"
+#, kde-format
 msgid "Enable encryption, if we found keys for all recipients"
-msgstr ""
-"عُثر على مفاتيح تعمية موثوقة وصالحة لكلّ المستلمين.\n"
-"أأعمّي هذه الرّسالة؟"
+msgstr "مكّن التعمية إذا وجدنا مفاتيح لجميع المستلمين"
 
 #. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
 #: settings/messagecomposer.kcfg.in:79
@@ -2032,13 +2061,14 @@ msgstr ""
 #: settings/messagecomposer.kcfg.in:83
 #, kde-format
 msgid "Warn before sending unsigned messages"
-msgstr ""
+msgstr "تحذير قبل إرسال رسائل غير موقعة"
 
 #. i18n: ectx: label, entry (CryptoWarnWhenNearExpire), group (Composer)
 #: settings/messagecomposer.kcfg.in:87
 #, kde-format
 msgid "Warn if certificates/keys expire soon (configure thresholds below)"
 msgstr ""
+"حذرني إذا كانت صَلاحيَّة الشَّهادات/ المفاتيح ستنتهي قريبًا (اضبط العتبات بالأسفل)"
 
 #. i18n: ectx: label, entry (CryptoWarnOwnEncrKeyNearExpiryThresholdDays), group (Composer)
 #. i18n: ectx: label, entry (CryptoWarnEncrKeyNearExpiryThresholdDays), group (Composer)
@@ -2048,6 +2078,8 @@ msgid ""
 "The minimum number of days that the encryption certificate should be valid "
 "before issuing a warning"
 msgstr ""
+"الحد الأدنى لعدد الأيام التي يجب أن تكون فيها شهادة التعمية صالحة قبل إصدار "
+"التحذير"
 
 #. i18n: ectx: label, entry (CryptoWarnEncrChaincertNearExpiryThresholdDays), group (Composer)
 #: settings/messagecomposer.kcfg.in:99
@@ -2056,6 +2088,8 @@ msgid ""
 "The minimum number of days that all certificates in the chain should be "
 "valid before issuing a warning"
 msgstr ""
+"الحد الأدنى لعدد الأيام التي يجب أن تكون فيها جميع الشهادات في السلسلة صالحة "
+"قبل إصدار التحذير"
 
 #. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
 #: settings/messagecomposer.kcfg.in:103
@@ -2064,13 +2098,15 @@ msgid ""
 "The minimum number of days that the root certificate should be valid before "
 "issuing a warning"
 msgstr ""
+"الحد الأدنى لعدد الأيام التي يجب أن تكون فيها شهادة الجذر صالحة قبل إصدار "
+"التحذير"
 
 #. i18n: ectx: label, entry (CryptoShowKeysForApproval), group (Composer)
 #: settings/messagecomposer.kcfg.in:107
 #, kde-format
 msgid ""
 "Always show the list of encryption keys to select the one which will be used"
-msgstr ""
+msgstr "اعرض دائمًا قائمة مفاتيح التعمية لاختيار المفتاح الذي سيستخدم"
 
 #: snippet/convertsnippetvariablemenu.cpp:27
 #, kde-format
@@ -2155,12 +2191,12 @@ msgstr "ن‌ك‌ع"
 #: snippet/convertsnippetvariablemenu.cpp:74
 #, kde-format
 msgid "BCC Field Address"
-msgstr ""
+msgstr "عنوان حقل نسخة مخفية"
 
 #: snippet/convertsnippetvariablemenu.cpp:77
 #, kde-format
 msgid "BCC Field Last Name"
-msgstr ""
+msgstr "الاسم الأخير لحقل ”ن‌م“"
 
 #: snippet/convertsnippetvariablemenu.cpp:80
 #, kde-format
@@ -2170,7 +2206,7 @@ msgstr ""
 #: snippet/convertsnippetvariablemenu.cpp:83
 #, kde-format
 msgid "BCC Field Name"
-msgstr ""
+msgstr "اسم حقل نسخة مخفية الوجهة"
 
 #: snippet/convertsnippetvariablemenu.cpp:89
 #, kde-format
@@ -2178,10 +2214,9 @@ msgid "Attachment"
 msgstr "مرفقات"
 
 #: snippet/convertsnippetvariablemenu.cpp:90
-#, fuzzy, kde-format
-#| msgid "&Remove Attachment"
+#, kde-format
 msgid "Number Of Attachments"
-msgstr "أ&زل المرفق"
+msgstr "عدد المرفقات"
 
 #: snippet/convertsnippetvariablemenu.cpp:93
 #, kde-format
@@ -2196,7 +2231,7 @@ msgstr "أسماء الملفات"
 #: snippet/convertsnippetvariablemenu.cpp:99
 #, kde-format
 msgid "Names and Sizes"
-msgstr ""
+msgstr "الأسماء والأحجام"
 
 #: snippet/convertsnippetvariablemenu.cpp:103
 #: snippet/convertsnippetvariablemenu.cpp:126
@@ -2221,15 +2256,14 @@ msgid "Long Date (%1)"
 msgstr "التاريخ الطويل (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:113
-#, fuzzy, kde-format
-#| msgid "Long Date (%1)"
+#, kde-format
 msgid "Custom Date (%1)"
-msgstr "التاريخ الطويل (%1)"
+msgstr "تاريخ مخصص (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:116
 #, kde-format
 msgid "Short Time (%1)"
-msgstr ""
+msgstr "وقت قصير (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:119
 #, kde-format
@@ -2254,53 +2288,52 @@ msgstr "السنة القادمة (%1)"
 #: snippet/convertsnippetvariablemenu.cpp:136
 #, kde-format
 msgid "Month Number (%1)"
-msgstr ""
+msgstr "رقم الشهر (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:139
-#, fuzzy, kde-format
-#| msgid "Date (%1)"
+#, kde-format
 msgid "Day Number (%1)"
-msgstr "التاريخ (%1)"
+msgstr "رقم اليوم  (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:142
 #, kde-format
 msgid "Day Of Month (%1)"
-msgstr ""
+msgstr "يوم من الشهر (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:145
 #, kde-format
 msgid "Week Number (%1)"
-msgstr ""
+msgstr "رقم الأسبوع (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:148
 #, kde-format
 msgid "Month Name Short (%1)"
-msgstr ""
+msgstr "اسم الشهر قصير (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:151
 #, kde-format
 msgid "Month Name Long (%1)"
-msgstr ""
+msgstr "اسم الشهر طويل (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:154
 #, kde-format
 msgid "Last Month Name Long (%1)"
-msgstr ""
+msgstr "اسم الشهر الأخير طويل (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:160
 #, kde-format
 msgid "Day Of Week Name Short (%1)"
-msgstr ""
+msgstr "اسم يوم الأسبوع قصير (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:163
 #, kde-format
 msgid "Day Of Week Name Long (%1)"
-msgstr ""
+msgstr "اسم يوم الأسبوع طويل (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:166
 #, kde-format
 msgid "Year Last Month (%1)"
-msgstr ""
+msgstr "الشهر الماضي (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:171
 #, kde-format
@@ -2318,26 +2351,26 @@ msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
 "forgot to attach his attachment. Do not add space between words."
 msgid "attachment,attached"
-msgstr ""
+msgstr "مرفق,المرفق"
 
 #: utils/util.cpp:269
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
 "create a mail dispatcher?"
-msgstr ""
+msgstr "لم يعد مرسل بريد، لذا لا يمكن إرسال البريد. هل تريد إنشاء مرسل بريد؟"
 
 #: utils/util.cpp:270
 #, kde-format
 msgctxt "@title:window"
 msgid "No mail dispatcher."
-msgstr ""
+msgstr "لا يوجد مرسل بريد."
 
 #: utils/util.cpp:272
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
-msgstr ""
+msgstr "أنشئ مرسل بريد"
 
 #: utils/util.cpp:287
 #, kde-format
@@ -2345,18 +2378,20 @@ msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
 "it online?"
 msgstr ""
+"إن مرسل البريد غير متصل بالإنترنت، لذا لا يمكن إرسال البريد. هل تريد إرساله "
+"عبر الإنترنت؟"
 
 #: utils/util.cpp:288
 #, kde-format
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
-msgstr ""
+msgstr "مرسل البريد غير متصل."
 
 #: utils/util.cpp:289
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"
-msgstr ""
+msgstr "اجعله على الإنترنت"
 
 #~ msgid "Failed to attach file"
 #~ msgstr "فشل إرفاق الملفّ"

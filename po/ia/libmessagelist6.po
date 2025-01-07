@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-28 00:42+0000\n"
+"POT-Creation-Date: 2025-01-07 00:42+0000\n"
 "PO-Revision-Date: 2024-12-20 12:28+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -1160,138 +1160,144 @@ msgstr ""
 "excludite completemente ex le indicisar. Le exitos a basso pote esser "
 "incomplete."
 
-#: core/widgets/searchlinecommand.cpp:146
+#: core/widgets/searchlinecommand.cpp:149
 #, kde-format
 msgid "Literal string"
 msgstr "Catena litteral"
 
-#: core/widgets/searchlinecommand.cpp:148
+#: core/widgets/searchlinecommand.cpp:151
 #, kde-format
 msgid "Size is smaller than"
 msgstr "Grandor es minor que"
 
-#: core/widgets/searchlinecommand.cpp:150
+#: core/widgets/searchlinecommand.cpp:153
 #, kde-format
 msgid "Size is larger than"
 msgstr "Grandor es major que"
 
-#: core/widgets/searchlinecommand.cpp:152
+#: core/widgets/searchlinecommand.cpp:155
 #, kde-format
 msgid "Size is"
 msgstr "Grandor es"
 
-#: core/widgets/searchlinecommand.cpp:154
+#: core/widgets/searchlinecommand.cpp:157
 #, kde-format
 msgid "To contains"
 msgstr "A contine"
 
-#: core/widgets/searchlinecommand.cpp:156
+#: core/widgets/searchlinecommand.cpp:159
 #, kde-format
 msgid "BCC contains"
 msgstr "BCC contine"
 
-#: core/widgets/searchlinecommand.cpp:158
+#: core/widgets/searchlinecommand.cpp:161
 #, kde-format
 msgid "CC contains"
 msgstr "CC contine"
 
-#: core/widgets/searchlinecommand.cpp:160
+#: core/widgets/searchlinecommand.cpp:163
 #, kde-format
 msgid "From contains"
 msgstr "Ex contine"
 
-#: core/widgets/searchlinecommand.cpp:162
+#: core/widgets/searchlinecommand.cpp:165
 #, kde-format
 msgid "Subject contains"
 msgstr "Subjecto contine"
 
-#: core/widgets/searchlinecommand.cpp:164
+#: core/widgets/searchlinecommand.cpp:167
 #, kde-format
 msgid "Body contains"
 msgstr "Corpore contine"
 
-#: core/widgets/searchlinecommand.cpp:166
+#: core/widgets/searchlinecommand.cpp:169
 #, kde-format
 msgid "Mail has tag"
 msgstr "Posta ha etiquetta (tag)"
 
-#: core/widgets/searchlinecommand.cpp:168
+#: core/widgets/searchlinecommand.cpp:171
 #, kde-format
 msgid "Mail has attachment"
 msgstr "Posta ha attachamento"
 
-#: core/widgets/searchlinecommand.cpp:170
+#: core/widgets/searchlinecommand.cpp:173
 #, kde-format
 msgid "Mail has invitation"
 msgstr "Posta ha Invitation"
 
-#: core/widgets/searchlinecommand.cpp:172
+#: core/widgets/searchlinecommand.cpp:175
 #, kde-format
 msgid "Mail is important"
 msgstr "Posta es Importante"
 
-#: core/widgets/searchlinecommand.cpp:174
+#: core/widgets/searchlinecommand.cpp:177
 #, kde-format
 msgid "Mail is read"
 msgstr "Posta es legite"
 
-#: core/widgets/searchlinecommand.cpp:176
+#: core/widgets/searchlinecommand.cpp:179
 #, kde-format
 msgid "Mail is Unread"
 msgstr "Posta es non Legite"
 
-#: core/widgets/searchlinecommand.cpp:178
+#: core/widgets/searchlinecommand.cpp:181
 #, kde-format
 msgid "Mail is Ignored"
 msgstr "Posta es ignorate"
 
-#: core/widgets/searchlinecommand.cpp:180
+#: core/widgets/searchlinecommand.cpp:183
 #, kde-format
 msgid "Mail is Ham"
 msgstr "Posta es Ham"
 
-#: core/widgets/searchlinecommand.cpp:182
+#: core/widgets/searchlinecommand.cpp:185
 #, kde-format
 msgid "Mail is Spam"
 msgstr "Posta es Spam"
 
-#: core/widgets/searchlinecommand.cpp:184
+#: core/widgets/searchlinecommand.cpp:187
 #, kde-format
 msgid "Mail is watched"
 msgstr "Posta es observate"
 
-#: core/widgets/searchlinecommand.cpp:186
+#: core/widgets/searchlinecommand.cpp:189
 #, kde-format
 msgid "Mail is replied"
 msgstr "Posta es respondite"
 
-#: core/widgets/searchlinecommand.cpp:188
+#: core/widgets/searchlinecommand.cpp:191
 #, kde-format
 msgid "Mail is forwarded"
 msgstr "Posta es reexpedite"
 
-#: core/widgets/searchlinecommand.cpp:190
+#: core/widgets/searchlinecommand.cpp:193
 #, kde-format
 msgid "Mail is encrypted"
 msgstr "Posta es cryptate"
 
-#: core/widgets/searchlinecommand.cpp:192
+#: core/widgets/searchlinecommand.cpp:195
 #, kde-format
 msgid "Mail is queued"
 msgstr "Posta es in cauda"
 
-#: core/widgets/searchlinecommand.cpp:194
+#: core/widgets/searchlinecommand.cpp:197
 #, kde-format
 msgid "Mail is sent"
 msgstr "Posta es inviate"
 
-#: core/widgets/searchlinecommand.cpp:196
+#: core/widgets/searchlinecommand.cpp:199
 #, fuzzy, kde-format
 #| msgid "Mail is replied"
 msgid "Mail is deleted"
 msgstr "Posta es respondite"
 
-#: core/widgets/searchlinecommand.cpp:206
+#: core/widgets/searchlinecommand.cpp:201
+#, fuzzy, kde-format
+#| msgid "Mail has invitation"
+msgid "Mail is action"
+msgstr "Posta ha Invitation"
+
+#: core/widgets/searchlinecommand.cpp:211
 #, kde-format
 msgid "AND"
 msgstr "AND"
@@ -1424,37 +1430,44 @@ msgctxt "@action:button"
 msgid "Deleted"
 msgstr "Deler Thema"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:70
+#: core/widgets/searchlinecommandbuttonswidget.cpp:69
+#, fuzzy, kde-format
+#| msgid "Action Item"
+msgctxt "@action:button"
+msgid "Action"
+msgstr "Elemento de Action"
+
+#: core/widgets/searchlinecommandbuttonswidget.cpp:71
 #, kde-format
 msgctxt "@action:button"
 msgid "Smaller"
 msgstr "Plus parve"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:71
+#: core/widgets/searchlinecommandbuttonswidget.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Larger"
 msgstr "Plus grande"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:72
+#: core/widgets/searchlinecommandbuttonswidget.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Size"
 msgstr "Grandor"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:73
+#: core/widgets/searchlinecommandbuttonswidget.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Older"
 msgstr "Plus vetere"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:74
+#: core/widgets/searchlinecommandbuttonswidget.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Newer"
 msgstr "Plus nove"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:75
+#: core/widgets/searchlinecommandbuttonswidget.cpp:76
 #, kde-format
 msgctxt "@action:button"
 msgid "Category"
