@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-03 00:39+0000\n"
-"PO-Revision-Date: 2025-01-06 22:34+0400\n"
+"PO-Revision-Date: 2025-01-07 18:31+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -402,32 +402,32 @@ msgstr "لم يُعثر على بيانات المفاتيح للمستلمين.
 #: composer/composerviewbase.cpp:325
 #, kde-format
 msgid "&Keep markup, do not sign/encrypt"
-msgstr ""
+msgstr "ا&حتفظ بالعلامات، لا توقع/تعمِ"
 
 #: composer/composerviewbase.cpp:325
 #, kde-format
 msgid "&Keep markup, do not encrypt"
-msgstr ""
+msgstr "ا&حتفظ بالعلامات، لا تعمِ"
 
 #: composer/composerviewbase.cpp:325
 #, kde-format
 msgid "&Keep markup, do not sign"
-msgstr ""
+msgstr "ا&حتفظ بالعلامات، لا توقع"
 
 #: composer/composerviewbase.cpp:326
 #, kde-format
 msgid "Sign/Encrypt (delete markup)"
-msgstr ""
+msgstr "وقع/تعمِ (احذف العلامات))"
 
 #: composer/composerviewbase.cpp:326
 #, kde-format
 msgid "Encrypt (delete markup)"
-msgstr ""
+msgstr "عمِ (احذف العلامات))"
 
 #: composer/composerviewbase.cpp:326
 #, kde-format
 msgid "Sign (delete markup)"
-msgstr ""
+msgstr "وقع (احذف العلامات))"
 
 #: composer/composerviewbase.cpp:328
 #, kde-format
@@ -435,6 +435,8 @@ msgid ""
 "<qt><p>Inline signing/encrypting of HTML messages is not possible;</p><p>do "
 "you want to delete your markup?</p></qt>"
 msgstr ""
+"<qt><p>لا يمكن التوقيع/التشفير المباشر لرسائل HTML؛</p><p>هل تريد حذف "
+"العلامات الخاصة بك؟</p></qt>"
 
 #: composer/composerviewbase.cpp:330
 #, kde-format
@@ -480,7 +482,7 @@ msgstr "انتهت صلاحيّة مفتاح OpenPGP"
 #, kde-format
 msgctxt "@title:window"
 msgid "S/MIME Certificate Expired"
-msgstr ""
+msgstr "انتهت صلاحية شهادة S/MIME"
 
 #: composer/composerviewbase.cpp:723
 #, kde-format
@@ -492,7 +494,7 @@ msgstr "ستنتهي صلاحيّة مفتاح OpenPGP قريبًا"
 #, kde-format
 msgctxt "@title:window"
 msgid "S/MIME Certificate Expires Soon"
-msgstr ""
+msgstr "شهادة S/MIME تنتهي صلاحيتها قريبًا"
 
 #: composer/composerviewbase.cpp:799 composer/composerviewbase.cpp:813
 #: composer/composerviewbase.cpp:845
@@ -537,7 +539,7 @@ msgstr "تعذّرت كتابة كلّ البيانات في الملفّ."
 #: composer/composerviewbase.cpp:1346
 #, kde-format
 msgid "Could not finalize the file."
-msgstr ""
+msgstr "لم يتمكن من إنهاء الملف."
 
 #: composer/composerviewbase.cpp:1350
 #, kde-format
@@ -835,6 +837,8 @@ msgid ""
 "One or more of the OpenPGP encryption keys or S/MIME certificates for "
 "recipient \"%1\" is not fully trusted for encryption."
 msgstr ""
+"واحد أو أكثر من مفاتيح تعمية OpenPGP أو شهادات S/MIME للمستلم \"%1\" غير "
+"موثوق به بشكل كامل للتعمية."
 
 #: composer/keyresolver.cpp:322
 #, kde-format
@@ -1743,12 +1747,12 @@ msgstr "عيّن قائمة عناوين البريد الإلكتروني لت�
 msgctxt "@info:status"
 msgid "Truncating recipients list to %2 of %1 entry."
 msgid_plural "Truncating recipients list to %2 of %1 entries."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "تقليل قائمة المستلمين إلى %2 من %1."
+msgstr[1] "تقليل قائمة المستلمين إلى %2 من %1."
+msgstr[2] "تقليل قائمة المستلمين إلى %2 من %1."
+msgstr[3] "تقليل قائمة المستلمين إلى %2 من %1."
+msgstr[4] "تقليل قائمة المستلمين إلى %2 من %1."
+msgstr[5] "تقليل قائمة المستلمين إلى %2 من %1."
 
 #: recipient/recipientseditorsidewidget.cpp:28
 #, kde-format
@@ -1852,12 +1856,12 @@ msgstr "أضف كنسخة &مخفية"
 #, kde-format
 msgid "%1 selected email"
 msgid_plural "%1 selected emails"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "%1 بريد إلكتروني محدد"
+msgstr[1] "بريد إلكتروني واحد محدد"
+msgstr[2] "بريدان إلكترونيان محددان"
+msgstr[3] "%1 بريد إلكتروني محدد"
+msgstr[4] "%1 بريد إلكتروني محدد"
+msgstr[5] "%1 بريد إلكتروني محدد"
 
 #: recipient/recipientspicker.cpp:173
 #, kde-format
@@ -1937,17 +1941,17 @@ msgstr "السنوات"
 #: sendlater/sendlaterjob.cpp:32
 #, kde-format
 msgid "The Send Later agent is not running."
-msgstr ""
+msgstr "وكيل الإرسال لاحقًا لا يعمل."
 
 #: sendlater/sendlaterremovejob.cpp:27
 #, kde-format
 msgid "Failed to removed message from send later schedule: %1"
-msgstr ""
+msgstr "فشل في إزالة الرسالة من جدول الإرسال لاحقًا: %1"
 
 #: sendlater/sendlatertimedatewidget.cpp:35
 #, kde-format
 msgid "You cannot select a date prior to the current date."
-msgstr ""
+msgstr "لا يمكنك تحديد تاريخ قبل التاريخ الحالي."
 
 #. i18n: ectx: property (text), widget (QLabel, mLabel)
 #: sendlater/ui/sendlaterwidget.ui:29
@@ -1971,25 +1975,25 @@ msgstr "اقتبس النّصّ المحدّد فقط عند الرّدّ"
 #: settings/messagecomposer.kcfg.in:23
 #, kde-format
 msgid "A&utomatically insert signature"
-msgstr ""
+msgstr "أ&درج التوقيع تلقائيًا"
 
 #. i18n: ectx: label, entry (PrependSignature), group (Composer)
 #: settings/messagecomposer.kcfg.in:27
 #, kde-format
 msgid "Insert signature above quoted text"
-msgstr ""
+msgstr "أدخل التوقيع أعلى النص المقتبس"
 
 #. i18n: ectx: label, entry (DashDashSignature), group (Composer)
 #: settings/messagecomposer.kcfg.in:31
 #, kde-format
 msgid "Prepend separator to signature"
-msgstr ""
+msgstr "أدرج فاصلًا قبل التوقيع"
 
 #. i18n: ectx: label, entry (ShowBalooSearchInComposer), group (Composer)
 #: settings/messagecomposer.kcfg.in:36
 #, kde-format
 msgid "Use addresses indexed from emails for autocompletion"
-msgstr ""
+msgstr "استخدم العناوين المُفهرسة من رسائل البريد الإلكتروني للإكمال التلقائي"
 
 #. i18n: ectx: whatsthis, entry (ShowBalooSearchInComposer), group (Composer)
 #: settings/messagecomposer.kcfg.in:37
@@ -1998,6 +2002,8 @@ msgid ""
 "Disable this option if you only want contacts from your addressbooks to "
 "appear in the autocompletion list in the composer's address fields."
 msgstr ""
+"عطّل هذا الخيار إذا كنت تريد فقط ظهور جهات الاتصال من دفاتر عناوينك في قائمة "
+"الإكمال التلقائي في حقول عنوان المؤلف."
 
 #. i18n: ectx: label, entry (AllowSemicolonAsAddressSeparator), group (Composer)
 #: settings/messagecomposer.kcfg.in:43
@@ -2005,13 +2011,13 @@ msgstr ""
 msgid ""
 "Allow the semicolon character (';') to be used as separator in the message "
 "composer"
-msgstr ""
+msgstr "السماح باستخدام علامة الفاصلة المنقوطة (';') كفاصل في مؤلف الرسالة"
 
 #. i18n: ectx: label, entry (ShowRecentAddressesInComposer), group (Composer)
 #: settings/messagecomposer.kcfg.in:46
 #, kde-format
 msgid "Use recent addresses for autocompletion"
-msgstr ""
+msgstr "استخدم العناوين الأخيرة للإكمال التلقائي"
 
 #. i18n: ectx: whatsthis, entry (ShowRecentAddressesInComposer), group (Composer)
 #: settings/messagecomposer.kcfg.in:47
@@ -2020,30 +2026,32 @@ msgid ""
 "Disable this option if you do not want recently used addresses to appear in "
 "the autocompletion list in the composer's address fields."
 msgstr ""
+"عطّل هذا الخيار إذا كنت لا تريد ظهور العناوين المستخدمة مؤخرًا في قائمة "
+"الإكمال التلقائي في حقول عناوين المؤلف."
 
 #. i18n: ectx: label, entry (MaximumRecipients), group (Composer)
 #: settings/messagecomposer.kcfg.in:52
 #, kde-format
 msgid "Maximum number of recipient entries:"
-msgstr ""
+msgstr "الحد الأقصى لعدد إدخالات المستلمين:"
 
 #. i18n: ectx: label, entry (WordWrap), group (Composer)
 #: settings/messagecomposer.kcfg.in:57
 #, kde-format
 msgid "Word &wrap at column:"
-msgstr ""
+msgstr "الت&فاف الكلمات في العمود:"
 
 #. i18n: ectx: label, entry (ImprovePlainTextOfHtmlMessage), group (Composer)
 #: settings/messagecomposer.kcfg.in:67
 #, kde-format
 msgid "Improve plain text version of HTML message"
-msgstr ""
+msgstr "حسّن إصدار النص العادي لرسالة HTML"
 
 #. i18n: ectx: label, entry (CryptoAutoSign), group (Composer)
 #: settings/messagecomposer.kcfg.in:71
 #, kde-format
 msgid "Sign all messages, if possible"
-msgstr ""
+msgstr "وقّع جميع الرسائل، إذا كان ذلك ممكنا"
 
 #. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
 #: settings/messagecomposer.kcfg.in:75
@@ -2055,7 +2063,7 @@ msgstr "مكّن التعمية إذا وجدنا مفاتيح لجميع الم
 #: settings/messagecomposer.kcfg.in:79
 #, kde-format
 msgid "Warn before sending unencrypted messages"
-msgstr ""
+msgstr "حذّر قبل إرسال رسائل غير معماة"
 
 #. i18n: ectx: label, entry (CryptoWarningUnsigned), group (Composer)
 #: settings/messagecomposer.kcfg.in:83
@@ -2201,7 +2209,7 @@ msgstr "الاسم الأخير لحقل ”ن‌م“"
 #: snippet/convertsnippetvariablemenu.cpp:80
 #, kde-format
 msgid "BCC Field First Name"
-msgstr ""
+msgstr "الاسم الأول في حقل ن‌ك‌ع"
 
 #: snippet/convertsnippetvariablemenu.cpp:83
 #, kde-format

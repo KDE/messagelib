@@ -1,14 +1,14 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 # Safa Alfulaij <safa1996alfulaij@gmail.com>, 2016, 2018.
-# SPDX-FileCopyrightText: 2024 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2024, 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-01 00:41+0000\n"
-"PO-Revision-Date: 2024-10-14 20:49+0400\n"
+"PO-Revision-Date: 2025-01-07 18:27+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -102,7 +102,7 @@ msgstr "احفظ صفحة HTML"
 #: widgets/submittedformwidgets/submittedformwarningwidget.cpp:22
 #, kde-format
 msgid "Submit form is not allowed in mailer. Please open url in a browser."
-msgstr ""
+msgstr "لا يُسمح بإرسال النموذج في البريد الإلكتروني. يُرجى فتح الرابط في متصفح."
 
 #: widgets/tracking/trackingdetailsdialog.cpp:27
 #, kde-format
@@ -116,6 +116,8 @@ msgid ""
 "Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
 "\">(Details...)"
 msgstr ""
+"عثر على بعض برامج تعقب البريد الإلكتروني وحظرها.<a href=\"mailtrackingdetails"
+"\">(التفاصيل...)"
 
 #: widgets/tracking/trackingwarningwidget.cpp:40
 #, kde-format
@@ -126,12 +128,12 @@ msgstr "التّفاصيل:"
 #, kde-format
 msgid "1 tracker from the company %2 (%3)"
 msgid_plural "%1 trackers from the company %2 (%3)"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "لا يوجد أي متتبع من الشركة %2 (%3)"
+msgstr[1] "متتبع واحد من الشركة %2 (%3)"
+msgstr[2] "متتبعان من الشركة %2 (%3)"
+msgstr[3] "%1 متتبعات من الشركة %2 (%3)"
+msgstr[4] "%1 متتبعًا من الشركة %2 (%3)"
+msgstr[5] "%1 متتبع من الشركة %2 (%3)"
 
 #: widgets/zoomactionmenu.cpp:127
 #, kde-format

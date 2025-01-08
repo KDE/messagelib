@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-13 02:31+0000\n"
-"PO-Revision-Date: 2025-01-06 23:18+0400\n"
+"PO-Revision-Date: 2025-01-07 18:31+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -27,7 +27,7 @@ msgstr ""
 #, kde-format
 msgctxt "No grouping of messages"
 msgid "None"
-msgstr "بلا"
+msgstr "لا يوجد شيء"
 
 #: core/aggregation.cpp:179
 #, kde-format
@@ -73,7 +73,7 @@ msgstr "وسّع المجموعات دائمًا"
 #, kde-format
 msgctxt "No threading of messages"
 msgid "None"
-msgstr "بلا"
+msgstr "لا يوجد شيء"
 
 #: core/aggregation.cpp:203
 #, kde-format
@@ -523,34 +523,34 @@ msgstr[5] "عالجتُ %1 رسالة من أصل %2"
 #, kde-format
 msgid "Threaded 1 Message of %2"
 msgid_plural "Threaded %1 Messages of %2"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "لم أسلس أي رسالة من %2"
+msgstr[1] "سلستُ رسالة واحدة من %2"
+msgstr[2] "سلستُ رسالتين من %2"
+msgstr[3] "سلستُ %1 رسائل من %2"
+msgstr[4] "سلستُ %1 رسالة من %2"
+msgstr[5] "سلستُ %1 رسالة من %2"
 
 #: core/model.cpp:3808
 #, kde-format
 msgid "Grouped 1 Thread of %2"
 msgid_plural "Grouped %1 Threads of %2"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "لم أجمع أي سلسلة من %2"
+msgstr[1] "جمعتُ سلسلة واحدة من %2"
+msgstr[2] "جمعتُ سلسلتين من %2"
+msgstr[3] "جمعتُ %1 سلسل من %2"
+msgstr[4] "جمعتُ %1 سلسلة من %2"
+msgstr[5] "جمعتُ %1 سلسلة من %2"
 
 #: core/model.cpp:3814
 #, kde-format
 msgid "Updated 1 Group of %2"
 msgid_plural "Updated %1 Groups of %2"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "لم أحدث أي مجموعة من %2"
+msgstr[1] "حدثتُ مجموعة واحدة من %2"
+msgstr[2] "حدثتُ مجموعتين من %2"
+msgstr[3] "حدثتُ %1 مجموعات من %2"
+msgstr[4] "حدثتُ %1 مجموعة من %2"
+msgstr[5] "حدثتُ %1 مجموعة من %2"
 
 #: core/model.cpp:3906
 #, kde-format
@@ -621,12 +621,12 @@ msgstr "بحالة المرفقات"
 #: core/sortorder.cpp:88 core/sortorder.cpp:130
 #, kde-format
 msgid "Least Recent on Top"
-msgstr ""
+msgstr "الأقدم في الأعلى"
 
 #: core/sortorder.cpp:89 core/sortorder.cpp:131
 #, kde-format
 msgid "Most Recent on Top"
-msgstr ""
+msgstr "الأحدث في الأعلى"
 
 #: core/sortorder.cpp:93
 #, kde-format
@@ -926,12 +926,12 @@ msgstr[5] "<b>%1</b> ردّ"
 #, kde-format
 msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "<b>لا يوجد رسائل</b> في شجرة فرعية (<b>%2</b> غير مقروءة)"
+msgstr[1] "<b>رسالة واحدة</b> في شجرة فرعية (<b>%2</b> غير مقروءة)"
+msgstr[2] "<b>رسالتان</b> في شجرة فرعية (<b>%2</b> غير مقروءة)"
+msgstr[3] "<b>%1</b> رسائل في شجرة فرعية (<b>%2</b> غير مقروءة)"
+msgstr[4] "<b>%1</b> رسالة في شجرة فرعية (<b>%2</b> غير مقروءة)"
+msgstr[5] "<b>%1</b> رسالة في شجرة فرعية (<b>%2</b> غير مقروءة)"
 
 #: core/view.cpp:2327
 #, kde-format
@@ -1051,12 +1051,12 @@ msgstr[5] "<b>%1</b> موضوع"
 #, kde-format
 msgid "<b>%1</b> message (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "<b>لا يوجد</b> رسائل (<b>%2</b> غير مقروءة)"
+msgstr[1] "<b>رسالة واحدة</b> (<b>%2</b> غير مقروءة)"
+msgstr[2] "<b>رسالتان</b> (<b>%2</b> غير مقروءة)"
+msgstr[3] "<b>%1</b> رسائل (<b>%2</b> غير مقروءة)"
+msgstr[4] "<b>%1</b> رسالة (<b>%2</b> غير مقروءة)"
+msgstr[5] "<b>%1</b> رسالة (<b>%2</b> غير مقروءة)"
 
 #: core/widgetbase.cpp:198
 #, kde-format
