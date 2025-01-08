@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-07 00:42+0000\n"
-"PO-Revision-Date: 2024-12-28 08:07+0100\n"
+"PO-Revision-Date: 2025-01-07 07:00+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -1313,10 +1313,9 @@ msgid "Mail is deleted"
 msgstr "Pismo je izbrisano"
 
 #: core/widgets/searchlinecommand.cpp:201
-#, fuzzy, kde-format
-#| msgid "Mail has invitation"
+#, kde-format
 msgid "Mail is action"
-msgstr "Pismo ima povabilo"
+msgstr "Pismo je dejanje"
 
 #: core/widgets/searchlinecommand.cpp:211
 #, kde-format
@@ -1450,11 +1449,10 @@ msgid "Deleted"
 msgstr "Izbrsano"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:69
-#, fuzzy, kde-format
-#| msgid "Action Item"
+#, kde-format
 msgctxt "@action:button"
 msgid "Action"
-msgstr "Opravilo"
+msgstr "Dejanje"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:71
 #, kde-format

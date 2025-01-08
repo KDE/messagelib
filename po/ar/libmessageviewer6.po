@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-12 00:41+0000\n"
-"PO-Revision-Date: 2025-01-06 22:57+0400\n"
+"PO-Revision-Date: 2025-01-07 18:28+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -553,7 +553,7 @@ msgstr "DKIM: يجب أن توقع عليه بواسطة %1"
 #: dkim-verify/dkimwidgetinfo.cpp:131
 #, kde-format
 msgid "Body Hash was corrupted."
-msgstr "تجميعة التحقق للمتن تآلفة."
+msgstr "تلبيدة المتن تآلفة."
 
 #: dkim-verify/dkimwidgetinfo.cpp:134
 #, kde-format
@@ -588,7 +588,7 @@ msgstr "توصيف المتن غير صالح."
 #: dkim-verify/dkimwidgetinfo.cpp:152
 #, kde-format
 msgid "Unknown Body Hash Algorithm."
-msgstr "خوارزمية تجزئة المتن غير معروفة."
+msgstr "خوارزمية تلبيدة المتن غير معروفة."
 
 #: dkim-verify/dkimwidgetinfo.cpp:155
 #, kde-format
@@ -608,7 +608,7 @@ msgstr "التوقيع كبير جدًا."
 #: dkim-verify/dkimwidgetinfo.cpp:164
 #, kde-format
 msgid "Hash Algorithm is unsupported."
-msgstr "خوارزمية التجزئة غير مدعومة."
+msgstr "خوارزمية تلبيدة غير مدعومة."
 
 #: dkim-verify/dkimwidgetinfo.cpp:167
 #, kde-format
@@ -639,7 +639,7 @@ msgstr "من المستحيل تنزيل المفتاح."
 #: dkim-verify/dkimwidgetinfo.cpp:182 dkim-verify/dkimwidgetinfo.cpp:206
 #, kde-format
 msgid "Hash Algorithm unsafe (sha1)"
-msgstr "خوارزمية التجزئة غير آمنة (sha1)"
+msgstr "خوارزمية التلبيدة غير آمنة (sha1)"
 
 #: dkim-verify/dkimwidgetinfo.cpp:185
 #, kde-format

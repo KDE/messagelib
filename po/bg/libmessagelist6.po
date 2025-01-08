@@ -3,13 +3,13 @@
 #
 # Krasimir Arnaudov <texas_kia@yahoo.com>, 2005.
 # Zlatko Popov <zlatkopopov@fsa-bg.org>, 2005, 2006, 2007, 2008.
-# SPDX-FileCopyrightText: 2022, 2023, 2024 Mincho Kondarev <mkondarev@yahoo.de>
+# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025 Mincho Kondarev <mkondarev@yahoo.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-07 00:42+0000\n"
-"PO-Revision-Date: 2024-12-30 22:59+0100\n"
+"PO-Revision-Date: 2025-01-07 22:56+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -1290,10 +1290,9 @@ msgid "Mail is deleted"
 msgstr "Писмото е изтрито"
 
 #: core/widgets/searchlinecommand.cpp:201
-#, fuzzy, kde-format
-#| msgid "Mail has invitation"
+#, kde-format
 msgid "Mail is action"
-msgstr "Писмото е с покана"
+msgstr "Писмото е с действие"
 
 #: core/widgets/searchlinecommand.cpp:211
 #, kde-format
@@ -1427,8 +1426,7 @@ msgid "Deleted"
 msgstr "Изтрито"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:69
-#, fuzzy, kde-format
-#| msgid "Action Item"
+#, kde-format
 msgctxt "@action:button"
 msgid "Action"
 msgstr "Действие"

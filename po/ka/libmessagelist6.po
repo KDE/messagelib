@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-07 00:42+0000\n"
-"PO-Revision-Date: 2024-12-29 03:38+0100\n"
+"PO-Revision-Date: 2025-01-07 05:29+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1287,10 +1287,9 @@ msgid "Mail is deleted"
 msgstr "ფოსტა წაშლილია"
 
 #: core/widgets/searchlinecommand.cpp:201
-#, fuzzy, kde-format
-#| msgid "Mail has invitation"
+#, kde-format
 msgid "Mail is action"
-msgstr "ელფოსტას აქვს მოსაწვევი"
+msgstr "ელფოსტა არის ქმედება"
 
 #: core/widgets/searchlinecommand.cpp:211
 #, kde-format
@@ -1424,11 +1423,10 @@ msgid "Deleted"
 msgstr "წაშლილია"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:69
-#, fuzzy, kde-format
-#| msgid "Action Item"
+#, kde-format
 msgctxt "@action:button"
 msgid "Action"
-msgstr "ქმედების ელემენტი"
+msgstr "ქმედება"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:71
 #, kde-format

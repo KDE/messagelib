@@ -12,7 +12,7 @@
 # Antoon Tolboom <atolboo@casema.nl>, 2008.
 # Antoon Tolboom <atolboo@gmail.com>, 2008.
 # Kristof Bal <kristof.bal@gmail.com>, 2009.
-# SPDX-FileCopyrightText: 2009, 2023, 2024 Freek de Kruijf <freekdekruijf@kde.nl>
+# SPDX-FileCopyrightText: 2009, 2023, 2024, 2025 Freek de Kruijf <freekdekruijf@kde.nl>
 # Jaap Woldringh <jjh punt woldringh op planet punt nl>, 2009.
 # Freek de Kruijf <freekdekruijf@kde.nl>, 2009, 2010, 2011, 2012.
 # Freek de Kruijf <freekdekruijf@kde.nl>, 2011, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2023.
@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-07 00:42+0000\n"
-"PO-Revision-Date: 2024-12-28 11:12+0100\n"
+"PO-Revision-Date: 2025-01-07 11:10+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -1310,10 +1310,9 @@ msgid "Mail is deleted"
 msgstr "E-mail is verwijderd"
 
 #: core/widgets/searchlinecommand.cpp:201
-#, fuzzy, kde-format
-#| msgid "Mail has invitation"
+#, kde-format
 msgid "Mail is action"
-msgstr "E-mail bevat uitnodiging"
+msgstr "E-mail is actie"
 
 #: core/widgets/searchlinecommand.cpp:211
 #, kde-format
@@ -1447,11 +1446,10 @@ msgid "Deleted"
 msgstr "Verwijderd"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:69
-#, fuzzy, kde-format
-#| msgid "Action Item"
+#, kde-format
 msgctxt "@action:button"
 msgid "Action"
-msgstr "Actie-item"
+msgstr "Actie"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:71
 #, kde-format
