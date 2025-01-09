@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-07 00:42+0000\n"
-"PO-Revision-Date: 2024-12-28 10:42+0200\n"
+"PO-Revision-Date: 2025-01-08 16:37+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -1313,10 +1313,9 @@ msgid "Mail is deleted"
 msgstr "ההודעה נמחקה"
 
 #: core/widgets/searchlinecommand.cpp:201
-#, fuzzy, kde-format
-#| msgid "Mail has invitation"
+#, kde-format
 msgid "Mail is action"
-msgstr "בהודעה יש הזמנה"
+msgstr "דוא״ל הוא פעולה"
 
 #: core/widgets/searchlinecommand.cpp:211
 #, kde-format
@@ -1450,11 +1449,10 @@ msgid "Deleted"
 msgstr "נמחקה"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:69
-#, fuzzy, kde-format
-#| msgid "Action Item"
+#, kde-format
 msgctxt "@action:button"
 msgid "Action"
-msgstr "משימה לביצוע"
+msgstr "פעולה"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:71
 #, kde-format

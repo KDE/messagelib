@@ -28,7 +28,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-07 00:42+0000\n"
-"PO-Revision-Date: 2025-01-06 12:26+0100\n"
+"PO-Revision-Date: 2025-01-08 09:11+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -1326,10 +1326,9 @@ msgid "Mail is deleted"
 msgstr "Le courriel est supprimé."
 
 #: core/widgets/searchlinecommand.cpp:201
-#, fuzzy, kde-format
-#| msgid "Mail has invitation"
+#, kde-format
 msgid "Mail is action"
-msgstr "Le courriel contient une invitation."
+msgstr "Le courriel contient une action."
 
 #: core/widgets/searchlinecommand.cpp:211
 #, kde-format
@@ -1463,11 +1462,10 @@ msgid "Deleted"
 msgstr "Supprimé"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:69
-#, fuzzy, kde-format
-#| msgid "Action Item"
+#, kde-format
 msgctxt "@action:button"
 msgid "Action"
-msgstr "Action à effectuer"
+msgstr "Action"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:71
 #, kde-format
