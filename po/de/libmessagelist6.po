@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2024 Johannes Obermayr <johannesobermayr@gmx.de>
+# SPDX-FileCopyrightText: 2024, 2025 Johannes Obermayr <johannesobermayr@gmx.de>
 # Frank Schütte <F.Schuette@t-online.de>, 2002, 2003, 2004, 2005.
 # Thomas Diehl <thd@kde.org>, 2002, 2003, 2004, 2005.
 # Stephan Johach <hunsum@gmx.de>, 2003, 2004, 2005, 2006, 2007.
@@ -16,7 +16,7 @@ msgstr ""
 "Project-Id-Version: libmessagelist6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-07 00:42+0000\n"
-"PO-Revision-Date: 2024-11-11 18:52+0100\n"
+"PO-Revision-Date: 2025-01-08 15:43+0100\n"
 "Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Lokalize 25.03.70\n"
 
 #: core/aggregation.cpp:178
 #, kde-format
@@ -211,9 +211,7 @@ msgid "Ignored"
 msgstr "Ignoriert"
 
 #: core/item.cpp:296
-#, fuzzy, kde-format
-#| msgctxt "message status"
-#| msgid "Queued"
+#, kde-format
 msgctxt "Status of an item"
 msgid "Queued"
 msgstr "Im Postausgang"
@@ -1287,34 +1285,29 @@ msgid "Mail is forwarded"
 msgstr "E-Mail wurde weitergeleitet"
 
 #: core/widgets/searchlinecommand.cpp:193
-#, fuzzy, kde-format
-#| msgid "Mail is Unread"
+#, kde-format
 msgid "Mail is encrypted"
-msgstr "E-Mail ist ungelesen"
+msgstr "E-Mail ist verschlüsselt"
 
 #: core/widgets/searchlinecommand.cpp:195
-#, fuzzy, kde-format
-#| msgid "Mail is read"
+#, kde-format
 msgid "Mail is queued"
-msgstr "E-Mail ist gelesen"
+msgstr "E-Mail ist im Postausgang"
 
 #: core/widgets/searchlinecommand.cpp:197
-#, fuzzy, kde-format
-#| msgid "Mail is Unread"
+#, kde-format
 msgid "Mail is sent"
-msgstr "E-Mail ist ungelesen"
+msgstr "E-Mail wurde versendet"
 
 #: core/widgets/searchlinecommand.cpp:199
-#, fuzzy, kde-format
-#| msgid "Mail is replied"
+#, kde-format
 msgid "Mail is deleted"
-msgstr "Auf E-Mail wurde geantwortet"
+msgstr "E-Mail wurde gelöscht"
 
 #: core/widgets/searchlinecommand.cpp:201
-#, fuzzy, kde-format
-#| msgid "Mail has invitation"
+#, kde-format
 msgid "Mail is action"
-msgstr "E-Mail hat eine Einladung"
+msgstr "E-Mail ist eine Aktion"
 
 #: core/widgets/searchlinecommand.cpp:211
 #, kde-format
@@ -1424,42 +1417,34 @@ msgid "Forwarded"
 msgstr "Weitergeleitet"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Encrypt"
+#, kde-format
 msgctxt "@action:button"
 msgid "Encrypted"
-msgstr "Verschlüsseln"
+msgstr "Verschlüsselt"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:66
-#, fuzzy, kde-format
-#| msgctxt "message status"
-#| msgid "Queued"
+#, kde-format
 msgctxt "@action:button"
 msgid "Queued"
 msgstr "Im Postausgang"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Sent"
+#, kde-format
 msgctxt "@action:button"
 msgid "Sent"
 msgstr "Versendet"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:68
-#, fuzzy, kde-format
-#| msgctxt "MDN type"
-#| msgid "Deleted"
+#, kde-format
 msgctxt "@action:button"
 msgid "Deleted"
 msgstr "Gelöscht"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:69
-#, fuzzy, kde-format
-#| msgid "Action Item"
+#, kde-format
 msgctxt "@action:button"
 msgid "Action"
-msgstr "Aufgabe"
+msgstr "Aktion"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:71
 #, kde-format
