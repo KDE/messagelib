@@ -9,7 +9,7 @@
 #include "qtest_messagecomposer.h"
 #include "setupenv.h"
 
-#include <MessageComposer/Composer>
+#include <MessageComposer/ComposerJob>
 #include <MessageComposer/ComposerViewBase>
 #include <MessageComposer/MessageComposerSettings>
 #include <MessageComposer/RecipientsEditor>
@@ -123,14 +123,14 @@ void ComposerViewBaseTest::testAutoSaveMessage()
     composerViewBase.autoSaveMessage();
 
     // It may be possible that we need to wait till the autosave message is ready composed.
-    if (composerViewBase.m_composers.size() > 0) {
+    if (composerViewBase.m_composerJobs.size() > 0) {
         QEventLoop loop;
         bool notFinished = false;
-        for (const auto composer : composerViewBase.m_composers) {
-            if (!composer->finished()) {
+        for (const auto composerJob : composerViewBase.m_composerJobs) {
+            if (!composerJob->finished()) {
                 notFinished = true;
-                connect(composer, &MessageComposer::Composer::result, this, [&composerViewBase, &loop]() {
-                    if (composerViewBase.m_composers.size() < 1) {
+                connect(composerJob, &MessageComposer::ComposerJob::result, this, [&composerViewBase, &loop]() {
+                    if (composerViewBase.m_composerJobs.size() < 1) {
                         loop.quit();
                     }
                 });
@@ -195,14 +195,14 @@ void ComposerViewBaseTest::testGenerateCryptoMessagesAutocrypt()
 
     QCOMPARE(composers.size(), 1); // No additional composers are created
 
-    auto composer = composers.first();
-    composerViewBase.fillComposer(composer);
+    auto composerJob = composers.first();
+    composerViewBase.fillComposer(composerJob);
 
-    VERIFYEXEC(composer);
+    VERIFYEXEC(composerJob);
 
-    QCOMPARE(composer->resultMessages().size(), 1);
+    QCOMPARE(composerJob->resultMessages().size(), 1);
 
-    auto msg = composer->resultMessages().first();
+    auto msg = composerJob->resultMessages().first();
     msg->assemble();
 
     // Every message should have an Autocrypt in the outer message structure
@@ -266,14 +266,14 @@ void ComposerViewBaseTest::testGenerateCryptoMessagesAutocryptSMime()
 
     QCOMPARE(composers.size(), 1); // No additional composers are created
 
-    auto composer = composers.first();
-    composerViewBase.fillComposer(composer);
+    auto composerJob = composers.first();
+    composerViewBase.fillComposer(composerJob);
 
-    VERIFYEXEC(composer);
+    VERIFYEXEC(composerJob);
 
-    QCOMPARE(composer->resultMessages().size(), 1);
+    QCOMPARE(composerJob->resultMessages().size(), 1);
 
-    auto msg = composer->resultMessages().first();
+    auto msg = composerJob->resultMessages().first();
     msg->assemble();
 
     QCOMPARE(QString::fromUtf8(msg->decodedContent()), data);
@@ -313,18 +313,18 @@ void ComposerViewBaseTest::testAutocryptKey()
 
     QCOMPARE(composers.size(), 1); // No additional composers are created
 
-    auto composer = composers.first();
-    composerViewBase.fillComposer(composer);
+    auto composerJob = composers.first();
+    composerViewBase.fillComposer(composerJob);
 
-    VERIFYEXEC(composer);
+    VERIFYEXEC(composerJob);
 
-    QCOMPARE(composer->resultMessages().size(), 1);
+    QCOMPARE(composerJob->resultMessages().size(), 1);
 
     // The key for recipient@autocrypt.example is only available in Autocrypt
     // test is we created a special GNUPGHOME to contain all needed keys.
-    QVERIFY(!composer->gnupgHome().isEmpty());
+    QVERIFY(!composerJob->gnupgHome().isEmpty());
 
-    auto msg = composer->resultMessages().first();
+    auto msg = composerJob->resultMessages().first();
     msg->assemble();
 
     // Every message should have an Autocrypt in the outer message structure

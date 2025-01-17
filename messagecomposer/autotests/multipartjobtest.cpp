@@ -10,20 +10,21 @@
 #include <QTest>
 
 #include <KMime/Content>
-using namespace KMime;
 
-#include <MessageComposer/Composer>
+#include <MessageComposer/ComposerJob>
 #include <MessageComposer/GlobalPart>
 #include <MessageComposer/MultipartJob>
 #include <MessageComposer/SinglepartJob>
+
+using namespace KMime;
 using namespace MessageComposer;
 
 QTEST_MAIN(MultipartJobTest)
 
 void MultipartJobTest::testMultipartMixed()
 {
-    Composer composer;
-    auto mjob = new MultipartJob(&composer);
+    ComposerJob composerJob;
+    auto mjob = new MultipartJob(&composerJob);
     mjob->setMultipartSubtype("mixed");
 
     QByteArray data1("one");

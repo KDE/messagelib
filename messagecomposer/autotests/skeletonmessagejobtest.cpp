@@ -11,10 +11,11 @@
 
 #include <KMime/Message>
 
-#include <MessageComposer/Composer>
+#include <MessageComposer/ComposerJob>
 #include <MessageComposer/GlobalPart>
 #include <MessageComposer/InfoPart>
 #include <MessageComposer/SkeletonMessageJob>
+
 using namespace MessageComposer;
 
 QTEST_MAIN(SkeletonMessageJobTest)
@@ -31,22 +32,21 @@ void SkeletonMessageJobTest::testSubject_data()
 void SkeletonMessageJobTest::testSubject()
 {
     // An InfoPart should belong to a Composer, even if we don't use the composer itself.
-    auto composer = new Composer;
-    InfoPart *infoPart = composer->infoPart();
-    GlobalPart *globalPart = composer->globalPart();
+    ComposerJob composerJob;
+    InfoPart *infoPart = composerJob.infoPart();
+    GlobalPart *globalPart = composerJob.globalPart();
     Q_ASSERT(infoPart);
 
     QFETCH(QString, subject);
     // qDebug() << subject;
     infoPart->setSubject(subject);
-    auto sjob = new SkeletonMessageJob(infoPart, globalPart, composer);
+    auto sjob = new SkeletonMessageJob(infoPart, globalPart, &composerJob);
     QVERIFY(sjob->exec());
     KMime::Message *message = sjob->message();
     QVERIFY(message->subject(false));
     qDebug() << message->subject(false)->asUnicodeString();
     QCOMPARE(subject, message->subject(false)->asUnicodeString());
     delete message;
-    delete composer;
 }
 
 void SkeletonMessageJobTest::testAddresses_data()
@@ -122,9 +122,9 @@ void SkeletonMessageJobTest::testAddresses_data()
 void SkeletonMessageJobTest::testAddresses()
 {
     // An InfoPart should belong to a Composer, even if we don't use the composer itself.
-    auto composer = new Composer;
-    InfoPart *infoPart = composer->infoPart();
-    GlobalPart *globalPart = composer->globalPart();
+    ComposerJob composerJob;
+    InfoPart *infoPart = composerJob.infoPart();
+    GlobalPart *globalPart = composerJob.globalPart();
     Q_ASSERT(infoPart);
 
     QFETCH(QString, from);
@@ -137,7 +137,7 @@ void SkeletonMessageJobTest::testAddresses()
     infoPart->setTo(to);
     infoPart->setCc(cc);
     infoPart->setBcc(bcc);
-    auto sjob = new SkeletonMessageJob(infoPart, globalPart, composer);
+    auto sjob = new SkeletonMessageJob(infoPart, globalPart, &composerJob);
     QVERIFY(sjob->exec());
     KMime::Message *message = sjob->message();
 
@@ -189,24 +189,22 @@ void SkeletonMessageJobTest::testAddresses()
         QVERIFY(bcc.isEmpty());
     }
     delete message;
-    delete composer;
 }
 
 void SkeletonMessageJobTest::testMessageID()
 {
-    auto composer = new Composer();
-    InfoPart *infoPart = composer->infoPart();
-    GlobalPart *globalPart = composer->globalPart();
+    ComposerJob composerJob;
+    InfoPart *infoPart = composerJob.infoPart();
+    GlobalPart *globalPart = composerJob.globalPart();
     Q_ASSERT(infoPart);
 
-    auto sjob = new SkeletonMessageJob(infoPart, globalPart, composer);
+    auto sjob = new SkeletonMessageJob(infoPart, globalPart, &composerJob);
     QVERIFY(sjob->exec());
     KMime::Message *message = sjob->message();
     QVERIFY(message->messageID(false));
     QVERIFY(!message->messageID(false)->isEmpty());
     delete message;
     delete sjob;
-    delete composer;
 }
 
 #include "moc_skeletonmessagejobtest.cpp"

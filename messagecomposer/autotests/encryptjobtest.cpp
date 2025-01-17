@@ -15,7 +15,7 @@
 
 #include <Libkleo/Enum>
 
-#include <MessageComposer/Composer>
+#include <MessageComposer/ComposerJob>
 #include <MessageComposer/EncryptJob>
 #include <MessageComposer/GlobalPart>
 #include <MessageComposer/MainTextJob>
@@ -48,13 +48,13 @@ void EncryptJobTest::initTestCase()
 
 void EncryptJobTest::testContentDirect()
 {
-    Composer composer;
+    ComposerJob composerJob;
 
     TextPart part;
     part.setWordWrappingEnabled(false);
     part.setCleanPlainText(QStringLiteral("one flew over the cuckoo's nest"));
 
-    auto mainTextJob = new MainTextJob(&part, &composer);
+    auto mainTextJob = new MainTextJob(&part, &composerJob);
 
     QVERIFY(mainTextJob);
 
@@ -62,7 +62,7 @@ void EncryptJobTest::testContentDirect()
 
     const std::vector<GpgME::Key> &keys = Test::getKeys();
 
-    auto eJob = new EncryptJob(&composer);
+    auto eJob = new EncryptJob(&composerJob);
 
     QVERIFY(eJob);
 
@@ -78,20 +78,20 @@ void EncryptJobTest::testContentDirect()
 
 void EncryptJobTest::testContentChained()
 {
-    Composer composer;
+    ComposerJob composerJob;
 
     TextPart part;
     part.setWordWrappingEnabled(false);
     part.setCleanPlainText(QStringLiteral("one flew over the cuckoo's nest"));
 
-    auto mainTextJob = new MainTextJob(&part, &composer);
+    auto mainTextJob = new MainTextJob(&part, &composerJob);
 
     QVERIFY(mainTextJob);
 
     VERIFYEXEC(mainTextJob);
 
     const std::vector<GpgME::Key> &keys = Test::getKeys();
-    auto eJob = new EncryptJob(&composer);
+    auto eJob = new EncryptJob(&composerJob);
 
     const QStringList recipients = {QStringLiteral("test@kolab.org")};
 
@@ -119,8 +119,8 @@ void EncryptJobTest::testContentSubjobChained()
 
     const QStringList recipients = {QStringLiteral("test@kolab.org")};
 
-    Composer composer;
-    auto eJob = new EncryptJob(&composer);
+    ComposerJob composerJob;
+    auto eJob = new EncryptJob(&composerJob);
 
     eJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
     eJob->setRecipients(recipients);
@@ -185,8 +185,8 @@ void EncryptJobTest::testProtectedHeaders()
 
     const std::vector<GpgME::Key> &keys = Test::getKeys();
 
-    Composer composer;
-    auto eJob = new EncryptJob(&composer);
+    ComposerJob composerJob;
+    auto eJob = new EncryptJob(&composerJob);
 
     QVERIFY(eJob);
 
@@ -247,7 +247,7 @@ void EncryptJobTest::testProtectedHeaders()
 
 void EncryptJobTest::testSetGnupgHome()
 {
-    Composer composer;
+    ComposerJob composerJob;
 
     KMime::Content content;
     content.setBody("one flew over the cuckoo's nest");
@@ -258,7 +258,7 @@ void EncryptJobTest::testSetGnupgHome()
 
     QTemporaryDir dir;
     {
-        auto eJob = new EncryptJob(&composer);
+        auto eJob = new EncryptJob(&composerJob);
         QVERIFY(eJob);
 
         eJob->setContent(&content);
@@ -272,7 +272,7 @@ void EncryptJobTest::testSetGnupgHome()
     for (const auto &key : keys) {
         Test::populateKeyring(dir.path(), key);
     }
-    auto eJob = new EncryptJob(&composer);
+    auto eJob = new EncryptJob(&composerJob);
     QVERIFY(eJob);
 
     eJob->setContent(&content);

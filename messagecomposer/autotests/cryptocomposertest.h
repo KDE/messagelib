@@ -11,7 +11,7 @@
 
 namespace MessageComposer
 {
-class Composer;
+class ComposerJob;
 }
 
 class CryptoComposerTest : public QObject
@@ -73,8 +73,8 @@ private Q_SLOTS:
 
     // TODO test the code for autodetecting the charset of a text attachment.
 private:
-    void fillComposerData(MessageComposer::Composer *composer, const QString &data);
-    void fillComposerCryptoData(MessageComposer::Composer *composer);
+    void fillComposerData(MessageComposer::ComposerJob *composerJob, const QString &data);
+    void fillComposerCryptoData(MessageComposer::ComposerJob *composerJob);
 
     // convenience, shared code
     void runSMIMETest(bool sign, bool enc, bool opaque);

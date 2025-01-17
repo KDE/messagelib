@@ -22,7 +22,7 @@
 
 namespace MessageComposer
 {
-class ComposerPrivate;
+class ComposerJobPrivate;
 class GlobalPart;
 class InfoPart;
 class TextPart;
@@ -31,13 +31,13 @@ class ItipPart;
 /**
  * @brief The Composer class
  */
-class MESSAGECOMPOSER_EXPORT Composer : public JobBase
+class MESSAGECOMPOSER_EXPORT ComposerJob : public JobBase
 {
     Q_OBJECT
 
 public:
-    explicit Composer(QObject *parent = nullptr);
-    ~Composer() override;
+    explicit ComposerJob(QObject *parent = nullptr);
+    ~ComposerJob() override;
 
     [[nodiscard]] QList<KMime::Message::Ptr> resultMessages() const;
 
@@ -79,7 +79,7 @@ protected Q_SLOTS:
     void slotResult(KJob *job) override;
 
 private:
-    Q_DECLARE_PRIVATE(Composer)
+    Q_DECLARE_PRIVATE(ComposerJob)
 
     Q_PRIVATE_SLOT(d_func(), void doStart())
     Q_PRIVATE_SLOT(d_func(), void contentJobFinished(KJob *))

@@ -14,7 +14,7 @@
 #include "MessageComposer/AttachmentFromPublicKeyJob"
 #include "MessageComposer/AttachmentJob"
 #include "MessageComposer/AttachmentVcardFromAddressBookJob"
-#include "MessageComposer/Composer"
+#include "MessageComposer/ComposerJob"
 #include "MessageComposer/GlobalPart"
 #include <MessageComposer/AttachmentModel>
 
@@ -723,7 +723,7 @@ void AttachmentControllerBase::openAttachment(const AttachmentPart::Ptr &part)
 
 void AttachmentControllerBase::viewAttachment(const AttachmentPart::Ptr &part)
 {
-    auto composer = new MessageComposer::Composer;
+    auto composer = new MessageComposer::ComposerJob;
     auto attachmentJob = new MessageComposer::AttachmentJob(part, composer);
     connect(attachmentJob, &AttachmentJob::result, this, [this](KJob *job) {
         d->slotAttachmentContentCreated(job);

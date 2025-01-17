@@ -15,7 +15,7 @@
 
 #include <Libkleo/Enum>
 
-#include <MessageComposer/Composer>
+#include <MessageComposer/ComposerJob>
 #include <MessageComposer/EncryptJob>
 #include <MessageComposer/GlobalPart>
 #include <MessageComposer/MainTextJob>
@@ -38,15 +38,15 @@ void SignAndEncryptTest::testContent()
 {
     const std::vector<GpgME::Key> &keys = Test::getKeys();
 
-    Composer composer;
+    ComposerJob composerJob;
 
     TextPart part;
     part.setWordWrappingEnabled(false);
     part.setCleanPlainText(QStringLiteral("one flew over the cuckoo's nest"));
 
-    auto mainTextJob = new MainTextJob(&part, &composer);
-    auto sJob = new SignJob(&composer);
-    auto eJob = new EncryptJob(&composer);
+    auto mainTextJob = new MainTextJob(&part, &composerJob);
+    auto sJob = new SignJob(&composerJob);
+    auto eJob = new EncryptJob(&composerJob);
 
     QVERIFY(mainTextJob);
 
@@ -79,9 +79,9 @@ void SignAndEncryptTest::testHeaders()
 {
     const std::vector<GpgME::Key> &keys = Test::getKeys();
 
-    Composer composer;
-    auto sJob = new SignJob(&composer);
-    auto eJob = new EncryptJob(&composer);
+    ComposerJob composerJob;
+    auto sJob = new SignJob(&composerJob);
+    auto eJob = new EncryptJob(&composerJob);
 
     QVERIFY(sJob);
     QVERIFY(eJob);

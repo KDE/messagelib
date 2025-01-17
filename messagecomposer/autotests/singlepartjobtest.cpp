@@ -10,19 +10,20 @@
 #include <QTest>
 
 #include <KMime/Content>
-using namespace KMime;
 
-#include <MessageComposer/Composer>
+#include <MessageComposer/ComposerJob>
 #include <MessageComposer/GlobalPart>
 #include <MessageComposer/SinglepartJob>
+
+using namespace KMime;
 using namespace MessageComposer;
 
 QTEST_MAIN(SinglepartJobTest)
 
 void SinglepartJobTest::testContent()
 {
-    auto composer = new Composer;
-    auto cjob = new SinglepartJob(composer);
+    ComposerJob composerJob;
+    auto cjob = new SinglepartJob(&composerJob);
     QByteArray data("birds came flying from the underground");
     cjob->setData(data);
     QVERIFY(cjob->exec());
@@ -34,13 +35,12 @@ void SinglepartJobTest::testContent()
     QVERIFY(result->contentType(false) == nullptr); // Not created unless demanded.
     QVERIFY(result->contentTransferEncoding(false)); // KMime gives it a default one (7bit).
     delete cjob;
-    delete composer;
 }
 
 void SinglepartJobTest::testContentDisposition()
 {
-    auto composer = new Composer;
-    auto cjob = new SinglepartJob(composer);
+    ComposerJob composerJob;
+    auto cjob = new SinglepartJob(&composerJob);
     QByteArray data("birds came flying from the underground");
     cjob->setData(data);
     QString filename = QStringLiteral("test_ăîşţâ.txt");
@@ -55,13 +55,12 @@ void SinglepartJobTest::testContentDisposition()
     QCOMPARE(result->contentDisposition()->disposition(), Headers::CDattachment);
     QCOMPARE(result->contentDisposition()->filename(), filename);
     delete cjob;
-    delete composer;
 }
 
 void SinglepartJobTest::testContentID()
 {
-    auto composer = new Composer;
-    auto cjob = new SinglepartJob(composer);
+    ComposerJob composerJob;
+    auto cjob = new SinglepartJob(&composerJob);
     QByteArray data("birds came flying from the underground");
     QByteArray id("play@cold");
     cjob->setData(data);
@@ -74,14 +73,12 @@ void SinglepartJobTest::testContentID()
     QVERIFY(result->header<Headers::ContentID>());
     QCOMPARE(result->header<Headers::ContentID>()->identifier(), id);
     delete cjob;
-
-    delete composer;
 }
 
 void SinglepartJobTest::testContentType()
 {
-    auto composer = new Composer;
-    auto cjob = new SinglepartJob(composer);
+    ComposerJob composerJob;
+    auto cjob = new SinglepartJob(&composerJob);
     QByteArray data("birds came flying from the underground");
     cjob->setData(data);
     QByteArray mimeType("text/plain");
@@ -97,17 +94,15 @@ void SinglepartJobTest::testContentType()
     QCOMPARE(result->contentType()->mimeType(), mimeType);
     QCOMPARE(result->contentType()->charset(), charset);
     delete cjob;
-
-    delete composer;
 }
 
 void SinglepartJobTest::testContentTransferEncoding()
 {
-    auto composer = new Composer;
+    ComposerJob composerJob;
 
     // 7bit if possible.
     {
-        auto cjob = new SinglepartJob(composer);
+        auto cjob = new SinglepartJob(&composerJob);
         QByteArray data("and the sun will set for you...");
         cjob->setData(data);
         QVERIFY(cjob->exec());
@@ -122,7 +117,7 @@ void SinglepartJobTest::testContentTransferEncoding()
 
     // quoted-printable if text doesn't fit in 7bit.
     {
-        auto cjob = new SinglepartJob(composer);
+        auto cjob = new SinglepartJob(&composerJob);
         QByteArray data("some long text to make qupr more compact than base64 [ăîşţâ]"); // utf-8
         cjob->setData(data);
         QVERIFY(cjob->exec());
@@ -137,7 +132,7 @@ void SinglepartJobTest::testContentTransferEncoding()
 
     // base64 if it's shorter than quoted-printable
     {
-        auto cjob = new SinglepartJob(composer);
+        auto cjob = new SinglepartJob(&composerJob);
         QByteArray data("[ăîşţâ]"); // utf-8
         cjob->setData(data);
         QVERIFY(cjob->exec());
@@ -149,8 +144,6 @@ void SinglepartJobTest::testContentTransferEncoding()
         QCOMPARE(result->body(), data);
         delete cjob;
     }
-
-    delete composer;
 }
 
 #include "moc_singlepartjobtest.cpp"

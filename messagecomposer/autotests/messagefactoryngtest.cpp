@@ -12,18 +12,16 @@
 #include "qtest_messagecomposer.h"
 #include "setupenv.h"
 
+#include <MessageCore/DateFormatter>
 #include <MessageCore/StringUtil>
 
-#include <MessageComposer/Composer>
+#include <MessageComposer/ComposerJob>
 #include <MessageComposer/GlobalPart>
+#include <MessageComposer/InfoPart>
 #include <MessageComposer/MessageComposerSettings>
 #include <MessageComposer/MessageFactoryNG>
-#include <MessageComposer/Util>
-
-#include <MessageComposer/InfoPart>
 #include <MessageComposer/TextPart>
-
-#include <MessageCore/DateFormatter>
+#include <MessageComposer/Util>
 
 #include <KIdentityManagementCore/Identity>
 #include <KIdentityManagementCore/IdentityManager>
@@ -837,36 +835,36 @@ void MessageFactoryTest::testCreateMDN()
 
 KMime::Message::Ptr MessageFactoryTest::createPlainTestMessage()
 {
-    auto composer = new Composer;
-    composer->infoPart()->setFrom(QStringLiteral("me@me.me"));
-    composer->infoPart()->setTo(QStringList(QStringLiteral("you@you.you")));
-    composer->infoPart()->setCc(QStringList(QStringLiteral("cc@cc.cc")));
-    composer->infoPart()->setBcc(QStringList(QStringLiteral("bcc@bcc.bcc")));
-    composer->textPart()->setWrappedPlainText(QStringLiteral("All happy families are alike; each unhappy family is unhappy in its own way."));
-    composer->infoPart()->setSubject(QStringLiteral("Test Email Subject"));
-    composer->globalPart()->setMDNRequested(true);
-    composer->exec();
+    auto composerJob = new ComposerJob;
+    composerJob->infoPart()->setFrom(QStringLiteral("me@me.me"));
+    composerJob->infoPart()->setTo(QStringList(QStringLiteral("you@you.you")));
+    composerJob->infoPart()->setCc(QStringList(QStringLiteral("cc@cc.cc")));
+    composerJob->infoPart()->setBcc(QStringList(QStringLiteral("bcc@bcc.bcc")));
+    composerJob->textPart()->setWrappedPlainText(QStringLiteral("All happy families are alike; each unhappy family is unhappy in its own way."));
+    composerJob->infoPart()->setSubject(QStringLiteral("Test Email Subject"));
+    composerJob->globalPart()->setMDNRequested(true);
+    composerJob->exec();
 
-    KMime::Message::Ptr message = KMime::Message::Ptr(composer->resultMessages().first());
-    delete composer;
+    KMime::Message::Ptr message = KMime::Message::Ptr(composerJob->resultMessages().first());
+    delete composerJob;
 
     return message;
 }
 
 KMime::Message::Ptr MessageFactoryTest::createPlainTestMessageWithMultiEmails()
 {
-    auto composer = new Composer;
-    composer->infoPart()->setFrom(QStringLiteral("me@me.me"));
-    composer->infoPart()->setTo(QStringList() << QStringLiteral("you@you.you") << QStringLiteral("you2@you.you"));
-    composer->infoPart()->setCc(QStringList() << QStringLiteral("cc@cc.cc") << QStringLiteral("cc2@cc.cc"));
-    composer->infoPart()->setBcc(QStringList() << QStringLiteral("bcc@bcc.bcc") << QStringLiteral("bcc2@bcc.bcc"));
-    composer->textPart()->setWrappedPlainText(QStringLiteral("All happy families are alike; each unhappy family is unhappy in its own way."));
-    composer->infoPart()->setSubject(QStringLiteral("Test Email Subject"));
-    composer->globalPart()->setMDNRequested(true);
-    composer->exec();
+    auto composerJob = new ComposerJob;
+    composerJob->infoPart()->setFrom(QStringLiteral("me@me.me"));
+    composerJob->infoPart()->setTo(QStringList() << QStringLiteral("you@you.you") << QStringLiteral("you2@you.you"));
+    composerJob->infoPart()->setCc(QStringList() << QStringLiteral("cc@cc.cc") << QStringLiteral("cc2@cc.cc"));
+    composerJob->infoPart()->setBcc(QStringList() << QStringLiteral("bcc@bcc.bcc") << QStringLiteral("bcc2@bcc.bcc"));
+    composerJob->textPart()->setWrappedPlainText(QStringLiteral("All happy families are alike; each unhappy family is unhappy in its own way."));
+    composerJob->infoPart()->setSubject(QStringLiteral("Test Email Subject"));
+    composerJob->globalPart()->setMDNRequested(true);
+    composerJob->exec();
 
-    const KMime::Message::Ptr message = KMime::Message::Ptr(composer->resultMessages().constFirst());
-    delete composer;
+    const KMime::Message::Ptr message = KMime::Message::Ptr(composerJob->resultMessages().constFirst());
+    delete composerJob;
 
     return message;
 }

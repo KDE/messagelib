@@ -15,7 +15,7 @@
 
 #include <Libkleo/Enum>
 
-#include <MessageComposer/Composer>
+#include <MessageComposer/ComposerJob>
 #include <MessageComposer/SignJob>
 #include <MessageComposer/TransparentJob>
 
@@ -36,8 +36,8 @@ void SignJobTest::testContentDirect()
 {
     const std::vector<GpgME::Key> &keys = Test::getKeys();
 
-    Composer composer;
-    auto sJob = new SignJob(&composer);
+    ComposerJob composerJob;
+    auto sJob = new SignJob(&composerJob);
 
     QVERIFY(sJob);
 
@@ -63,8 +63,8 @@ void SignJobTest::testContentChained()
     auto tJob = new TransparentJob;
     tJob->setContent(content);
 
-    Composer composer;
-    auto sJob = new SignJob(&composer);
+    ComposerJob composerJob;
+    auto sJob = new SignJob(&composerJob);
 
     sJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
     sJob->setSigningKeys(keys);
@@ -78,8 +78,8 @@ void SignJobTest::testHeaders()
 {
     const std::vector<GpgME::Key> &keys = Test::getKeys();
 
-    Composer composer;
-    auto sJob = new SignJob(&composer);
+    ComposerJob composerJob;
+    auto sJob = new SignJob(&composerJob);
 
     QVERIFY(sJob);
 
@@ -113,8 +113,8 @@ void SignJobTest::testRecommentationRFC3156()
     const QString data = QStringLiteral("=2D Magic foo\nFrom test\n\n-- quaak\nOhno");
     KMime::Headers::contentEncoding cte = KMime::Headers::CEquPr;
 
-    Composer composer;
-    auto sJob = new SignJob(&composer);
+    ComposerJob composerJob;
+    auto sJob = new SignJob(&composerJob);
 
     QVERIFY(sJob);
 
@@ -144,8 +144,8 @@ void SignJobTest::testMixedContent()
 
     const QString data = QStringLiteral("=2D Magic foo\nFrom test\n\n-- quaak\nOhno");
 
-    Composer composer;
-    auto sJob = new SignJob(&composer);
+    ComposerJob composerJob;
+    auto sJob = new SignJob(&composerJob);
 
     QVERIFY(sJob);
 
@@ -217,8 +217,8 @@ void SignJobTest::testProtectedHeaders()
 
     const std::vector<GpgME::Key> &keys = Test::getKeys();
 
-    Composer composer;
-    auto sJob = new SignJob(&composer);
+    ComposerJob composerJob;
+    auto sJob = new SignJob(&composerJob);
 
     QVERIFY(sJob);
 
@@ -257,8 +257,8 @@ void SignJobTest::testProtectedHeadersOverwrite()
     const std::vector<GpgME::Key> &keys = Test::getKeys();
     const auto referenceFile = QStringLiteral("protected_headers-non-obvoscate.mbox");
 
-    Composer composer;
-    auto sJob = new SignJob(&composer);
+    ComposerJob composerJob;
+    auto sJob = new SignJob(&composerJob);
 
     QVERIFY(sJob);
 
@@ -301,8 +301,8 @@ void SignJobTest::testProtectedHeadersSkipLong()
     const std::vector<GpgME::Key> &keys = Test::getKeys();
     const auto referenceFile = QStringLiteral("protected_headers-non-obvoscate.mbox");
 
-    Composer composer;
-    auto sJob = new SignJob(&composer);
+    ComposerJob composerJob;
+    auto sJob = new SignJob(&composerJob);
 
     QVERIFY(sJob);
 

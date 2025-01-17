@@ -12,13 +12,13 @@
 
 #include <KMime/Content>
 #include <KMime/Headers>
-using namespace KMime;
 
-#include <MessageComposer/Composer>
+#include <MessageComposer/ComposerJob>
 #include <MessageComposer/GlobalPart>
 #include <MessageComposer/ItipJob>
 #include <MessageComposer/ItipPart>
 
+using namespace KMime;
 using namespace MessageComposer;
 using namespace MessageCore;
 
@@ -49,8 +49,8 @@ void ItipJobTest::testInvitationWithAttachment()
     part->setInvitation(testItip);
     part->setInvitationBody(testItipMessage);
 
-    Composer composer;
-    ItipJob job(part.get(), &composer);
+    ComposerJob composerJob;
+    ItipJob job(part.get(), &composerJob);
     job.setAutoDelete(false);
     QVERIFY(job.exec());
 
@@ -81,8 +81,8 @@ void ItipJobTest::testInvitationWithoutAttachment()
     part->setOutlookConformInvitation(false);
     part->setInvitationBody(testItipMessage);
 
-    Composer composer;
-    ItipJob job(part.get(), &composer);
+    ComposerJob composerJob;
+    ItipJob job(part.get(), &composerJob);
     job.setAutoDelete(false);
     QVERIFY(job.exec());
 
@@ -102,8 +102,8 @@ void ItipJobTest::testOutlookInvitationWithAttachment()
     part->setInvitation(testItip);
     part->setInvitationBody(testItipMessage);
 
-    Composer composer;
-    ItipJob job(part.get(), &composer);
+    ComposerJob composerJob;
+    ItipJob job(part.get(), &composerJob);
     job.setAutoDelete(false);
     QVERIFY(job.exec());
 
@@ -125,8 +125,8 @@ void ItipJobTest::testOutlookInvitationWithoutAttachment()
     part->setOutlookConformInvitation(true);
     part->setInvitationBody(testItipMessage);
 
-    Composer composer;
-    ItipJob job(part.get(), &composer);
+    ComposerJob composerJob;
+    ItipJob job(part.get(), &composerJob);
     job.setAutoDelete(false);
     QVERIFY(job.exec());
 

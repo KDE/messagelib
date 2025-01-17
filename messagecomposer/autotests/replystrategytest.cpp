@@ -14,7 +14,7 @@
 #include <KIdentityManagementCore/Identity>
 #include <KIdentityManagementCore/IdentityManager>
 
-#include <MessageComposer/Composer>
+#include <MessageComposer/ComposerJob>
 #include <MessageComposer/GlobalPart>
 #include <MessageComposer/InfoPart>
 #include <MessageComposer/TextPart>
@@ -43,14 +43,14 @@ using namespace MessageComposer;
 
 static KMime::Message::Ptr basicMessage(const QString &fromAddress, const QStringList &toAddresses)
 {
-    Composer composer;
-    composer.infoPart()->setFrom(fromAddress);
-    composer.infoPart()->setTo(toAddresses);
-    composer.infoPart()->setSubject(QStringLiteral("Test Email Subject"));
-    composer.textPart()->setWrappedPlainText(QStringLiteral("Test email body."));
-    composer.exec();
+    ComposerJob composerJob;
+    composerJob.infoPart()->setFrom(fromAddress);
+    composerJob.infoPart()->setTo(toAddresses);
+    composerJob.infoPart()->setSubject(QStringLiteral("Test Email Subject"));
+    composerJob.textPart()->setWrappedPlainText(QStringLiteral("Test email body."));
+    composerJob.exec();
 
-    return composer.resultMessages().first();
+    return composerJob.resultMessages().first();
 }
 
 #define COMPARE_ADDRESSES(actual, expected)                                                                                                                    \

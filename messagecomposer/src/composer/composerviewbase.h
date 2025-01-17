@@ -60,7 +60,7 @@ class RecipientsEditor;
 class RichTextComposerNg;
 class InfoPart;
 class GlobalPart;
-class Composer;
+class ComposerJob;
 class AttachmentControllerBase;
 class AttachmentModel;
 class SignatureController;
@@ -117,7 +117,7 @@ public:
     void addAttachment(const QString &name, const QString &filename, const QString &charset, const QByteArray &data, const QByteArray &mimeType);
     void addAttachmentPart(KMime::Content *part);
 
-    void fillComposer(MessageComposer::Composer *composer);
+    void fillComposer(MessageComposer::ComposerJob *composer);
 
     /**
      * Header fields in recipients editor.
@@ -297,11 +297,11 @@ private:
         UseExpandedRecipients,
         UseUnExpandedRecipients,
     };
-    void fillComposer(MessageComposer::Composer *composer, ComposerViewBase::RecipientExpansion expansion, bool autoresize);
-    [[nodiscard]] QList<MessageComposer::Composer *> generateCryptoMessages(bool &wasCanceled);
+    void fillComposer(MessageComposer::ComposerJob *composer, ComposerViewBase::RecipientExpansion expansion, bool autoresize);
+    [[nodiscard]] QList<MessageComposer::ComposerJob *> generateCryptoMessages(bool &wasCanceled);
     void fillGlobalPart(MessageComposer::GlobalPart *globalPart);
     void fillInfoPart(MessageComposer::InfoPart *part, RecipientExpansion expansion);
-    void queueMessage(const KMime::Message::Ptr &message, MessageComposer::Composer *composer);
+    void queueMessage(const KMime::Message::Ptr &message, MessageComposer::ComposerJob *composer);
     void saveMessage(const KMime::Message::Ptr &message, MessageComposer::MessageSender::SaveIn saveIn);
     void saveRecentAddresses(const KMime::Message::Ptr &ptr);
     void
@@ -354,7 +354,7 @@ private:
     // List of active composer jobs. For example, saving as draft, autosaving and printing
     // all create a composer, which is added to this list as long as it is active.
     // Used mainly to prevent closing the window if a composer is active
-    QList<MessageComposer::Composer *> m_composers;
+    QList<MessageComposer::ComposerJob *> m_composerJobs;
 
     bool m_sign = false;
     bool m_encrypt = false;

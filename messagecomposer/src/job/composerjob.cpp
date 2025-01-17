@@ -6,7 +6,7 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 
-#include "composer.h"
+#include "composerjob.h"
 
 #include "imagescaling/imagescaling.h"
 #include "imagescaling/imagescalingutils.h"
@@ -32,15 +32,15 @@
 using namespace MessageComposer;
 using MessageCore::AttachmentPart;
 
-class MessageComposer::ComposerPrivate : public JobBasePrivate
+class MessageComposer::ComposerJobPrivate : public JobBasePrivate
 {
 public:
-    explicit ComposerPrivate(Composer *qq)
+    explicit ComposerJobPrivate(ComposerJob *qq)
         : JobBasePrivate(qq)
     {
     }
 
-    ~ComposerPrivate() override
+    ~ComposerJobPrivate() override
     {
         delete skeletonMessage;
     }
@@ -88,14 +88,14 @@ public:
     bool noCrypto = false;
     bool autoSaving = false;
     bool autocryptEnabled = false;
-    Q_DECLARE_PUBLIC(Composer)
+    Q_DECLARE_PUBLIC(ComposerJob)
 };
 
-void ComposerPrivate::init()
+void ComposerJobPrivate::init()
 {
-    Q_Q(Composer);
+    Q_Q(ComposerJob);
 
-    // We cannot create these in ComposerPrivate's constructor, because
+    // We cannot create these in ComposerJobPrivate's constructor, because
     // their parent q is not fully constructed at that time.
     globalPart = new GlobalPart(q);
     infoPart = new InfoPart(q);
@@ -103,16 +103,16 @@ void ComposerPrivate::init()
     itipPart = nullptr;
 }
 
-void ComposerPrivate::doStart()
+void ComposerJobPrivate::doStart()
 {
     Q_ASSERT(!started);
     started = true;
     composeStep1();
 }
 
-void ComposerPrivate::composeStep1()
+void ComposerJobPrivate::composeStep1()
 {
-    Q_Q(Composer);
+    Q_Q(ComposerJob);
 
     // Create skeleton message (containing headers only; no content).
     auto skeletonJob = new SkeletonMessageJob(infoPart, globalPart, q);
@@ -133,9 +133,9 @@ void ComposerPrivate::composeStep1()
     skeletonJob->start();
 }
 
-void ComposerPrivate::composeStep2()
+void ComposerJobPrivate::composeStep2()
 {
-    Q_Q(Composer);
+    Q_Q(ComposerJob);
 
     ContentJobBase *mainJob = nullptr;
     ContentJobBase *mainContentJob = nullptr;
@@ -271,9 +271,9 @@ void ComposerPrivate::composeStep2()
     mainJob->start();
 }
 
-QList<ContentJobBase *> ComposerPrivate::createEncryptJobs(ContentJobBase *contentJob, bool sign)
+QList<ContentJobBase *> ComposerJobPrivate::createEncryptJobs(ContentJobBase *contentJob, bool sign)
 {
-    Q_Q(Composer);
+    Q_Q(ComposerJob);
 
     QList<ContentJobBase *> jobs;
 
@@ -286,7 +286,7 @@ QList<ContentJobBase *> ComposerPrivate::createEncryptJobs(ContentJobBase *conte
 
     if (encData.isEmpty()) { // no key data! bail!
         q->setErrorText(i18n("No key data for recipients found."));
-        q->setError(Composer::IncompleteError);
+        q->setError(ComposerJob::IncompleteError);
         q->emitResult();
         return jobs;
     }
@@ -324,7 +324,7 @@ QList<ContentJobBase *> ComposerPrivate::createEncryptJobs(ContentJobBase *conte
     return jobs;
 }
 
-void ComposerPrivate::contentJobFinished(KJob *job)
+void ComposerJobPrivate::contentJobFinished(KJob *job)
 {
     if (job->error()) {
         return; // KCompositeJob takes care of the error.
@@ -383,13 +383,13 @@ void ComposerPrivate::contentJobFinished(KJob *job)
     }
 }
 
-void ComposerPrivate::composeWithLateAttachments(KMime::Message *headers,
-                                                 KMime::Content *content,
-                                                 const AttachmentPart::List &parts,
-                                                 const std::vector<GpgME::Key> &keys,
-                                                 const QStringList &recipients)
+void ComposerJobPrivate::composeWithLateAttachments(KMime::Message *headers,
+                                                    KMime::Content *content,
+                                                    const AttachmentPart::List &parts,
+                                                    const std::vector<GpgME::Key> &keys,
+                                                    const QStringList &recipients)
 {
-    Q_Q(Composer);
+    Q_Q(ComposerJob);
 
     auto multiJob = new MultipartJob(q);
     multiJob->setMultipartSubtype("mixed");
@@ -451,7 +451,7 @@ void ComposerPrivate::composeWithLateAttachments(KMime::Message *headers,
     multiJob->start();
 }
 
-void ComposerPrivate::attachmentsFinished(KJob *job)
+void ComposerJobPrivate::attachmentsFinished(KJob *job)
 {
     if (job->error()) {
         return; // KCompositeJob takes care of the error.
@@ -467,7 +467,7 @@ void ComposerPrivate::attachmentsFinished(KJob *job)
     composeFinalStep(headers, content);
 }
 
-void ComposerPrivate::composeFinalStep(KMime::Content *headers, KMime::Content *content)
+void ComposerJobPrivate::composeFinalStep(KMime::Content *headers, KMime::Content *content)
 {
     content->assemble();
 
@@ -481,78 +481,78 @@ void ComposerPrivate::composeFinalStep(KMime::Content *headers, KMime::Content *
     resultMessages.append(resultMessage);
 }
 
-Composer::Composer(QObject *parent)
-    : JobBase(*new ComposerPrivate(this), parent)
+ComposerJob::ComposerJob(QObject *parent)
+    : JobBase(*new ComposerJobPrivate(this), parent)
 {
-    Q_D(Composer);
+    Q_D(ComposerJob);
     d->init();
 }
 
-Composer::~Composer() = default;
+ComposerJob::~ComposerJob() = default;
 
-QList<KMime::Message::Ptr> Composer::resultMessages() const
+QList<KMime::Message::Ptr> ComposerJob::resultMessages() const
 {
-    Q_D(const Composer);
+    Q_D(const ComposerJob);
     Q_ASSERT(d->finished);
     Q_ASSERT(!error());
     return d->resultMessages;
 }
 
-GlobalPart *Composer::globalPart() const
+GlobalPart *ComposerJob::globalPart() const
 {
-    Q_D(const Composer);
+    Q_D(const ComposerJob);
     return d->globalPart;
 }
 
-InfoPart *Composer::infoPart() const
+InfoPart *ComposerJob::infoPart() const
 {
-    Q_D(const Composer);
+    Q_D(const ComposerJob);
     return d->infoPart;
 }
 
-TextPart *Composer::textPart() const
+TextPart *ComposerJob::textPart() const
 {
-    Q_D(const Composer);
+    Q_D(const ComposerJob);
     if (!d->textPart) {
-        auto *self = const_cast<Composer *>(this);
+        auto *self = const_cast<ComposerJob *>(this);
         self->d_func()->textPart = new TextPart(self);
     }
     return d->textPart;
 }
 
-void Composer::clearTextPart()
+void ComposerJob::clearTextPart()
 {
-    Q_D(Composer);
+    Q_D(ComposerJob);
     delete d->textPart;
     d->textPart = nullptr;
 }
 
-ItipPart *Composer::itipPart() const
+ItipPart *ComposerJob::itipPart() const
 {
-    Q_D(const Composer);
+    Q_D(const ComposerJob);
     if (!d->itipPart) {
-        auto *self = const_cast<Composer *>(this);
+        auto *self = const_cast<ComposerJob *>(this);
         self->d_func()->itipPart = new ItipPart(self);
     }
     return d->itipPart;
 }
 
-void Composer::clearItipPart()
+void ComposerJob::clearItipPart()
 {
-    Q_D(Composer);
+    Q_D(ComposerJob);
     delete d->itipPart;
     d->itipPart = nullptr;
 }
 
-AttachmentPart::List Composer::attachmentParts() const
+AttachmentPart::List ComposerJob::attachmentParts() const
 {
-    Q_D(const Composer);
+    Q_D(const ComposerJob);
     return d->attachmentParts;
 }
 
-void Composer::addAttachmentPart(AttachmentPart::Ptr part, bool autoresizeImage)
+void ComposerJob::addAttachmentPart(AttachmentPart::Ptr part, bool autoresizeImage)
 {
-    Q_D(Composer);
+    Q_D(ComposerJob);
     Q_ASSERT(!d->started);
     Q_ASSERT(!d->attachmentParts.contains(part));
     if (autoresizeImage) {
@@ -574,16 +574,16 @@ void Composer::addAttachmentPart(AttachmentPart::Ptr part, bool autoresizeImage)
     d->attachmentParts.append(part);
 }
 
-void Composer::addAttachmentParts(const AttachmentPart::List &parts, bool autoresizeImage)
+void ComposerJob::addAttachmentParts(const AttachmentPart::List &parts, bool autoresizeImage)
 {
     for (const AttachmentPart::Ptr &part : parts) {
         addAttachmentPart(part, autoresizeImage);
     }
 }
 
-void Composer::removeAttachmentPart(AttachmentPart::Ptr part)
+void ComposerJob::removeAttachmentPart(AttachmentPart::Ptr part)
 {
-    Q_D(Composer);
+    Q_D(ComposerJob);
     Q_ASSERT(!d->started);
     const int numberOfElements = d->attachmentParts.removeAll(part);
     if (numberOfElements <= 0) {
@@ -593,99 +593,99 @@ void Composer::removeAttachmentPart(AttachmentPart::Ptr part)
     }
 }
 
-void Composer::setSignAndEncrypt(const bool doSign, const bool doEncrypt)
+void ComposerJob::setSignAndEncrypt(const bool doSign, const bool doEncrypt)
 {
-    Q_D(Composer);
+    Q_D(ComposerJob);
     d->sign = doSign;
     d->encrypt = doEncrypt;
 }
 
-void Composer::setCryptoMessageFormat(Kleo::CryptoMessageFormat format)
+void ComposerJob::setCryptoMessageFormat(Kleo::CryptoMessageFormat format)
 {
-    Q_D(Composer);
+    Q_D(ComposerJob);
 
     d->format = format;
 }
 
-void Composer::setSigningKeys(const std::vector<GpgME::Key> &signers)
+void ComposerJob::setSigningKeys(const std::vector<GpgME::Key> &signers)
 {
-    Q_D(Composer);
+    Q_D(ComposerJob);
 
     d->signers = signers;
 }
 
-void Composer::setEncryptionKeys(const QList<QPair<QStringList, std::vector<GpgME::Key>>> &encData)
+void ComposerJob::setEncryptionKeys(const QList<QPair<QStringList, std::vector<GpgME::Key>>> &encData)
 {
-    Q_D(Composer);
+    Q_D(ComposerJob);
 
     d->encData = encData;
 }
 
-void Composer::setNoCrypto(bool noCrypto)
+void ComposerJob::setNoCrypto(bool noCrypto)
 {
-    Q_D(Composer);
+    Q_D(ComposerJob);
 
     d->noCrypto = noCrypto;
 }
 
-void Composer::setAutocryptEnabled(bool autocryptEnabled)
+void ComposerJob::setAutocryptEnabled(bool autocryptEnabled)
 {
-    Q_D(Composer);
+    Q_D(ComposerJob);
 
     d->autocryptEnabled = autocryptEnabled;
 }
 
-void Composer::setSenderEncryptionKey(const GpgME::Key &senderKey)
+void ComposerJob::setSenderEncryptionKey(const GpgME::Key &senderKey)
 {
-    Q_D(Composer);
+    Q_D(ComposerJob);
 
     d->senderEncryptionKey = senderKey;
 }
 
-void Composer::setGnupgHome(const QString &path)
+void ComposerJob::setGnupgHome(const QString &path)
 {
-    Q_D(Composer);
+    Q_D(ComposerJob);
 
     d->gnupgHome = path;
 }
 
-QString Composer::gnupgHome() const
+QString ComposerJob::gnupgHome() const
 {
-    Q_D(const Composer);
+    Q_D(const ComposerJob);
 
     return d->gnupgHome;
 }
 
-bool Composer::finished() const
+bool ComposerJob::finished() const
 {
-    Q_D(const Composer);
+    Q_D(const ComposerJob);
 
     return d->finished;
 }
 
-bool Composer::autoSave() const
+bool ComposerJob::autoSave() const
 {
-    Q_D(const Composer);
+    Q_D(const ComposerJob);
 
     return d->autoSaving;
 }
 
-void Composer::setAutoSave(bool isAutoSave)
+void ComposerJob::setAutoSave(bool isAutoSave)
 {
-    Q_D(Composer);
+    Q_D(ComposerJob);
 
     d->autoSaving = isAutoSave;
 }
 
-void Composer::start()
+void ComposerJob::start()
 {
-    Q_D(Composer);
+    Q_D(ComposerJob);
     d->doStart();
 }
 
-void Composer::slotResult(KJob *job)
+void ComposerJob::slotResult(KJob *job)
 {
-    Q_D(Composer);
+    Q_D(ComposerJob);
     JobBase::slotResult(job);
 
     if (!hasSubjobs()) {
@@ -694,4 +694,4 @@ void Composer::slotResult(KJob *job)
     }
 }
 
-#include "moc_composer.cpp"
+#include "moc_composerjob.cpp"

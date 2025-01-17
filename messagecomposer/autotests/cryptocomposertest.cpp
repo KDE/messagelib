@@ -15,21 +15,18 @@
 #include <Libkleo/Enum>
 
 #include <KMime/Headers>
-using namespace KMime;
 
 #include <MessageComposer/AttachmentControllerBase>
 #include <MessageComposer/AttachmentModel>
-#include <MessageComposer/Composer>
+#include <MessageComposer/ComposerJob>
 #include <MessageComposer/ComposerViewBase>
 #include <MessageComposer/GlobalPart>
 #include <MessageComposer/InfoPart>
 #include <MessageComposer/RichTextComposerNg>
 #include <MessageComposer/TextPart>
 #include <MessageComposer/Util>
-using namespace MessageComposer;
 
 #include <MessageCore/AttachmentPart>
-using namespace MessageCore;
 
 #include <MimeTreeParser/ObjectTreeParser>
 #include <MimeTreeParser/SimpleObjectTreeSource>
@@ -41,6 +38,10 @@ using namespace MessageCore;
 
 #include <QDebug>
 #include <QTest>
+
+using namespace KMime;
+using namespace MessageComposer;
+using namespace MessageCore;
 
 Q_DECLARE_METATYPE(MessageCore::AttachmentPart)
 
@@ -74,20 +75,20 @@ void CryptoComposerTest::testOpenPGPMime()
     QFETCH(bool, encrypt);
     QFETCH(Headers::contentEncoding, cte);
 
-    auto composer = new Composer;
+    auto composerJob = new ComposerJob;
 
-    fillComposerData(composer, data);
-    fillComposerCryptoData(composer);
+    fillComposerData(composerJob, data);
+    fillComposerCryptoData(composerJob);
 
-    composer->setSignAndEncrypt(sign, encrypt);
-    composer->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
+    composerJob->setSignAndEncrypt(sign, encrypt);
+    composerJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
 
-    VERIFYEXEC(composer);
-    QCOMPARE(composer->resultMessages().size(), 1);
+    VERIFYEXEC(composerJob);
+    QCOMPARE(composerJob->resultMessages().size(), 1);
 
-    KMime::Message::Ptr message = composer->resultMessages().first();
-    delete composer;
-    composer = nullptr;
+    KMime::Message::Ptr message = composerJob->resultMessages().first();
+    delete composerJob;
+    composerJob = nullptr;
 
     // qDebug()<< "message:" << message.data()->encodedContent();
     ComposerTestUtil::verify(sign, encrypt, message.data(), data.toUtf8(), Kleo::OpenPGPMIMEFormat, cte);
@@ -109,10 +110,10 @@ void CryptoComposerTest::testEncryptSameAttachments_data()
 void CryptoComposerTest::testEncryptSameAttachments()
 {
     QFETCH(int, format);
-    auto composer = new Composer;
+    auto composerJob = new ComposerJob;
     QString data(QStringLiteral("All happy families are alike; each unhappy family is unhappy in its own way."));
-    fillComposerData(composer, data);
-    fillComposerCryptoData(composer);
+    fillComposerData(composerJob, data);
+    fillComposerCryptoData(composerJob);
 
     AttachmentPart::Ptr attachment = AttachmentPart::Ptr(new AttachmentPart);
     attachment->setData("abc");
@@ -120,17 +121,17 @@ void CryptoComposerTest::testEncryptSameAttachments()
     attachment->setFileName(QString::fromLocal8Bit("anattachment.txt"));
     attachment->setEncrypted(true);
     attachment->setSigned(false);
-    composer->addAttachmentPart(attachment);
+    composerJob->addAttachmentPart(attachment);
 
-    composer->setSignAndEncrypt(false, true);
-    composer->setCryptoMessageFormat((Kleo::CryptoMessageFormat)format);
+    composerJob->setSignAndEncrypt(false, true);
+    composerJob->setCryptoMessageFormat((Kleo::CryptoMessageFormat)format);
 
-    VERIFYEXEC(composer);
-    QCOMPARE(composer->resultMessages().size(), 1);
+    VERIFYEXEC(composerJob);
+    QCOMPARE(composerJob->resultMessages().size(), 1);
 
-    KMime::Message::Ptr message = composer->resultMessages().constFirst();
-    delete composer;
-    composer = nullptr;
+    KMime::Message::Ptr message = composerJob->resultMessages().constFirst();
+    delete composerJob;
+    composerJob = nullptr;
 
     // qDebug()<< "message:" << message.data()->encodedContent();
     ComposerTestUtil::verifyEncryption(message.data(), data.toUtf8(), (Kleo::CryptoMessageFormat)format, true);
@@ -162,10 +163,10 @@ void CryptoComposerTest::testEditEncryptAttachments_data()
 void CryptoComposerTest::testEditEncryptAttachments()
 {
     QFETCH(int, format);
-    auto composer = new Composer;
+    auto composerJob = new ComposerJob;
     QString data(QStringLiteral("All happy families are alike; each unhappy family is unhappy in its own way."));
-    fillComposerData(composer, data);
-    fillComposerCryptoData(composer);
+    fillComposerData(composerJob, data);
+    fillComposerCryptoData(composerJob);
 
     AttachmentPart::Ptr attachment = AttachmentPart::Ptr(new AttachmentPart);
     const QString fileName = QStringLiteral("anattachment.txt");
@@ -175,17 +176,17 @@ void CryptoComposerTest::testEditEncryptAttachments()
     attachment->setFileName(fileName);
     attachment->setEncrypted(true);
     attachment->setSigned(false);
-    composer->addAttachmentPart(attachment);
+    composerJob->addAttachmentPart(attachment);
 
-    composer->setSignAndEncrypt(false, true);
-    composer->setCryptoMessageFormat((Kleo::CryptoMessageFormat)format);
+    composerJob->setSignAndEncrypt(false, true);
+    composerJob->setCryptoMessageFormat((Kleo::CryptoMessageFormat)format);
 
-    VERIFYEXEC(composer);
-    QCOMPARE(composer->resultMessages().size(), 1);
+    VERIFYEXEC(composerJob);
+    QCOMPARE(composerJob->resultMessages().size(), 1);
 
-    KMime::Message::Ptr message = composer->resultMessages().first();
-    delete composer;
-    composer = nullptr;
+    KMime::Message::Ptr message = composerJob->resultMessages().first();
+    delete composerJob;
+    composerJob = nullptr;
 
     // setup a viewer
     ComposerViewBase view(this, nullptr);
@@ -218,10 +219,10 @@ void CryptoComposerTest::testEditEncryptAndLateAttachments_data()
 void CryptoComposerTest::testEditEncryptAndLateAttachments()
 {
     QFETCH(int, format);
-    auto composer = new Composer;
+    auto composerJob = new ComposerJob;
     QString data(QStringLiteral("All happy families are alike; each unhappy family is unhappy in its own way."));
-    fillComposerData(composer, data);
-    fillComposerCryptoData(composer);
+    fillComposerData(composerJob, data);
+    fillComposerCryptoData(composerJob);
 
     AttachmentPart::Ptr attachment = AttachmentPart::Ptr(new AttachmentPart);
     const QString fileName = QStringLiteral("anattachment.txt");
@@ -233,7 +234,7 @@ void CryptoComposerTest::testEditEncryptAndLateAttachments()
     attachment->setFileName(fileName);
     attachment->setEncrypted(true);
     attachment->setSigned(false);
-    composer->addAttachmentPart(attachment);
+    composerJob->addAttachmentPart(attachment);
 
     attachment = AttachmentPart::Ptr(new AttachmentPart);
     attachment->setData(fileData2);
@@ -241,17 +242,17 @@ void CryptoComposerTest::testEditEncryptAndLateAttachments()
     attachment->setFileName(fileName2);
     attachment->setEncrypted(false);
     attachment->setSigned(false);
-    composer->addAttachmentPart(attachment);
+    composerJob->addAttachmentPart(attachment);
 
-    composer->setSignAndEncrypt(false, true);
-    composer->setCryptoMessageFormat((Kleo::CryptoMessageFormat)format);
+    composerJob->setSignAndEncrypt(false, true);
+    composerJob->setCryptoMessageFormat((Kleo::CryptoMessageFormat)format);
 
-    VERIFYEXEC(composer);
-    QCOMPARE(composer->resultMessages().size(), 1);
+    VERIFYEXEC(composerJob);
+    QCOMPARE(composerJob->resultMessages().size(), 1);
 
-    KMime::Message::Ptr message = composer->resultMessages().constFirst();
-    delete composer;
-    composer = nullptr;
+    KMime::Message::Ptr message = composerJob->resultMessages().constFirst();
+    delete composerJob;
+    composerJob = nullptr;
 
     // setup a viewer
     ComposerViewBase view(this, nullptr);
@@ -287,10 +288,10 @@ void CryptoComposerTest::testSignEncryptLateAttachments_data()
 void CryptoComposerTest::testSignEncryptLateAttachments()
 {
     QFETCH(int, format);
-    auto composer = new Composer;
+    auto composerJob = new ComposerJob;
     QString data(QStringLiteral("All happy families are alike; each unhappy family is unhappy in its own way."));
-    fillComposerData(composer, data);
-    fillComposerCryptoData(composer);
+    fillComposerData(composerJob, data);
+    fillComposerCryptoData(composerJob);
 
     AttachmentPart::Ptr attachment = AttachmentPart::Ptr(new AttachmentPart);
     attachment->setData("abc");
@@ -298,17 +299,17 @@ void CryptoComposerTest::testSignEncryptLateAttachments()
     attachment->setFileName(QString::fromLocal8Bit("anattachment.txt"));
     attachment->setEncrypted(false);
     attachment->setSigned(false);
-    composer->addAttachmentPart(attachment);
+    composerJob->addAttachmentPart(attachment);
 
-    composer->setSignAndEncrypt(true, true);
-    composer->setCryptoMessageFormat((Kleo::CryptoMessageFormat)format);
+    composerJob->setSignAndEncrypt(true, true);
+    composerJob->setCryptoMessageFormat((Kleo::CryptoMessageFormat)format);
 
-    VERIFYEXEC(composer);
-    QCOMPARE(composer->resultMessages().size(), 1);
+    VERIFYEXEC(composerJob);
+    QCOMPARE(composerJob->resultMessages().size(), 1);
 
-    KMime::Message::Ptr message = composer->resultMessages().constFirst();
-    delete composer;
-    composer = nullptr;
+    KMime::Message::Ptr message = composerJob->resultMessages().constFirst();
+    delete composerJob;
+    composerJob = nullptr;
 
     // as we have an additional attachment, just ignore it when checking for sign/encrypt
     QVERIFY(message->contents().size() >= 2);
@@ -343,18 +344,18 @@ void CryptoComposerTest::testProtectedHeaders()
     QFETCH(bool, encrypt);
     QFETCH(Headers::contentEncoding, cte);
 
-    auto composer = new Composer;
+    auto composerJob = new ComposerJob;
 
-    fillComposerData(composer, data);
-    fillComposerCryptoData(composer);
+    fillComposerData(composerJob, data);
+    fillComposerCryptoData(composerJob);
 
-    composer->setSignAndEncrypt(sign, encrypt);
-    composer->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
+    composerJob->setSignAndEncrypt(sign, encrypt);
+    composerJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
 
-    VERIFYEXEC(composer);
-    QCOMPARE(composer->resultMessages().size(), 1);
+    VERIFYEXEC(composerJob);
+    QCOMPARE(composerJob->resultMessages().size(), 1);
 
-    KMime::Message::Ptr message = composer->resultMessages().first();
+    KMime::Message::Ptr message = composerJob->resultMessages().first();
 
     // parse the result and make sure it is valid in various ways
     MimeTreeParser::SimpleObjectTreeSource testSource;
@@ -406,10 +407,10 @@ void CryptoComposerTest::testBCCEncrypt_data()
 void CryptoComposerTest::testBCCEncrypt()
 {
     QFETCH(int, format);
-    auto composer = new Composer;
+    auto composerJob = new ComposerJob;
     QString data(QStringLiteral("All happy families are alike; each unhappy family is unhappy in its own way."));
-    fillComposerData(composer, data);
-    composer->infoPart()->setBcc(QStringList(QStringLiteral("bcc@bcc.org")));
+    fillComposerData(composerJob, data);
+    composerJob->infoPart()->setBcc(QStringList(QStringLiteral("bcc@bcc.org")));
 
     std::vector<GpgME::Key> keys = MessageComposer::Test::getKeys();
 
@@ -427,19 +428,19 @@ void CryptoComposerTest::testBCCEncrypt()
     encKeys.append(QPair<QStringList, std::vector<GpgME::Key>>(primRecipients, pkeys));
     encKeys.append(QPair<QStringList, std::vector<GpgME::Key>>(secondRecipients, skeys));
 
-    composer->setSignAndEncrypt(true, true);
-    composer->setCryptoMessageFormat((Kleo::CryptoMessageFormat)format);
+    composerJob->setSignAndEncrypt(true, true);
+    composerJob->setCryptoMessageFormat((Kleo::CryptoMessageFormat)format);
 
-    composer->setEncryptionKeys(encKeys);
-    composer->setSigningKeys(keys);
+    composerJob->setEncryptionKeys(encKeys);
+    composerJob->setSigningKeys(keys);
 
-    VERIFYEXEC(composer);
-    QCOMPARE(composer->resultMessages().size(), 2);
+    VERIFYEXEC(composerJob);
+    QCOMPARE(composerJob->resultMessages().size(), 2);
 
-    KMime::Message::Ptr primMessage = composer->resultMessages().constFirst();
-    KMime::Message::Ptr secMessage = composer->resultMessages()[1];
-    delete composer;
-    composer = nullptr;
+    KMime::Message::Ptr primMessage = composerJob->resultMessages().constFirst();
+    KMime::Message::Ptr secMessage = composerJob->resultMessages()[1];
+    delete composerJob;
+    composerJob = nullptr;
 
     ComposerTestUtil::verifySignatureAndEncryption(primMessage.data(), data.toUtf8(), (Kleo::CryptoMessageFormat)format);
 
@@ -473,20 +474,20 @@ void CryptoComposerTest::testOpenPGPInline()
     QFETCH(bool, encrypt);
     QFETCH(Headers::contentEncoding, cte);
 
-    auto composer = new Composer;
+    auto composerJob = new ComposerJob;
 
-    fillComposerData(composer, data);
-    fillComposerCryptoData(composer);
+    fillComposerData(composerJob, data);
+    fillComposerCryptoData(composerJob);
 
-    composer->setSignAndEncrypt(sign, encrypt);
-    composer->setCryptoMessageFormat(Kleo::InlineOpenPGPFormat);
+    composerJob->setSignAndEncrypt(sign, encrypt);
+    composerJob->setCryptoMessageFormat(Kleo::InlineOpenPGPFormat);
 
-    VERIFYEXEC(composer);
-    QCOMPARE(composer->resultMessages().size(), 1);
+    VERIFYEXEC(composerJob);
+    QCOMPARE(composerJob->resultMessages().size(), 1);
 
-    KMime::Message::Ptr message = composer->resultMessages().constFirst();
-    delete composer;
-    composer = nullptr;
+    KMime::Message::Ptr message = composerJob->resultMessages().constFirst();
+    delete composerJob;
+    composerJob = nullptr;
 
     if (sign && !encrypt) {
         data += QLatin1Char('\n');
@@ -617,16 +618,16 @@ void CryptoComposerTest::testSetGnupgHome()
     KMime::Message::Ptr message;
     QTemporaryDir dir;
     {
-        auto composer = new Composer;
+        auto composerJob = new ComposerJob;
 
-        fillComposerData(composer, data);
-        fillComposerCryptoData(composer);
+        fillComposerData(composerJob, data);
+        fillComposerCryptoData(composerJob);
 
-        composer->setGnupgHome(dir.path());
-        composer->setSignAndEncrypt(sign, encrypt);
-        composer->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
+        composerJob->setGnupgHome(dir.path());
+        composerJob->setSignAndEncrypt(sign, encrypt);
+        composerJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
 
-        QCOMPARE(composer->exec(), false);
+        QCOMPARE(composerJob->exec(), false);
     }
 
     const std::vector<GpgME::Key> &keys = Test::getKeys();
@@ -635,19 +636,19 @@ void CryptoComposerTest::testSetGnupgHome()
     }
 
     {
-        auto composer = new Composer;
+        auto composerJob = new ComposerJob;
 
-        fillComposerData(composer, data);
-        fillComposerCryptoData(composer);
+        fillComposerData(composerJob, data);
+        fillComposerCryptoData(composerJob);
 
-        composer->setGnupgHome(dir.path());
-        composer->setSignAndEncrypt(sign, encrypt);
-        composer->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
+        composerJob->setGnupgHome(dir.path());
+        composerJob->setSignAndEncrypt(sign, encrypt);
+        composerJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
 
-        VERIFYEXEC((composer));
-        QCOMPARE(composer->resultMessages().size(), 1);
+        VERIFYEXEC((composerJob));
+        QCOMPARE(composerJob->resultMessages().size(), 1);
 
-        message = composer->resultMessages().first();
+        message = composerJob->resultMessages().first();
     }
 
     ComposerTestUtil::verify(sign, encrypt, message.data(), data.toUtf8(), Kleo::OpenPGPMIMEFormat, Headers::CE7Bit);
@@ -681,18 +682,18 @@ void CryptoComposerTest::testAutocryptHeaders()
     KMime::Message::Ptr message;
     QTemporaryDir dir;
     {
-        auto composer = new Composer;
+        auto composerJob = new ComposerJob;
 
-        fillComposerData(composer, data);
-        fillComposerCryptoData(composer);
+        fillComposerData(composerJob, data);
+        fillComposerCryptoData(composerJob);
 
-        composer->setAutocryptEnabled(true);
-        composer->setSenderEncryptionKey(keys[0]);
-        composer->setGnupgHome(dir.path());
-        composer->setSignAndEncrypt(sign, encrypt);
-        composer->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
+        composerJob->setAutocryptEnabled(true);
+        composerJob->setSenderEncryptionKey(keys[0]);
+        composerJob->setGnupgHome(dir.path());
+        composerJob->setSignAndEncrypt(sign, encrypt);
+        composerJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
 
-        QCOMPARE(composer->exec(), false);
+        QCOMPARE(composerJob->exec(), false);
     }
 
     for (const auto &key : keys) {
@@ -700,21 +701,21 @@ void CryptoComposerTest::testAutocryptHeaders()
     }
 
     {
-        auto composer = new Composer;
+        auto composerJob = new ComposerJob;
 
-        fillComposerData(composer, data);
-        fillComposerCryptoData(composer);
+        fillComposerData(composerJob, data);
+        fillComposerCryptoData(composerJob);
 
-        composer->setAutocryptEnabled(true);
-        composer->setSenderEncryptionKey(keys[0]);
-        composer->setGnupgHome(dir.path());
-        composer->setSignAndEncrypt(sign, encrypt);
-        composer->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
+        composerJob->setAutocryptEnabled(true);
+        composerJob->setSenderEncryptionKey(keys[0]);
+        composerJob->setGnupgHome(dir.path());
+        composerJob->setSignAndEncrypt(sign, encrypt);
+        composerJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
 
-        VERIFYEXEC((composer));
-        QCOMPARE(composer->resultMessages().size(), 1);
+        VERIFYEXEC((composerJob));
+        QCOMPARE(composerJob->resultMessages().size(), 1);
 
-        message = composer->resultMessages().first();
+        message = composerJob->resultMessages().first();
     }
 
     if (sign || encrypt) {
@@ -763,11 +764,11 @@ void CryptoComposerTest::testAutocryptGossip()
     KMime::Message::Ptr message;
 
     {
-        auto composer = new Composer;
+        auto composerJob = new ComposerJob;
 
-        fillComposerData(composer, data);
-        composer->infoPart()->setTo(recipients);
-        fillComposerCryptoData(composer);
+        fillComposerData(composerJob, data);
+        composerJob->infoPart()->setTo(recipients);
+        fillComposerCryptoData(composerJob);
 
         if (recipients.size() > 1) {
             auto job = QGpgME::openpgp()->keyListJob(false);
@@ -783,17 +784,17 @@ void CryptoComposerTest::testAutocryptGossip()
             QList<QPair<QStringList, std::vector<GpgME::Key>>> encKeys;
             encKeys.append({recipients, eKeys});
 
-            composer->setEncryptionKeys(encKeys);
+            composerJob->setEncryptionKeys(encKeys);
         }
-        composer->setAutocryptEnabled(true);
-        composer->setSenderEncryptionKey(keys[0]);
-        composer->setSignAndEncrypt(sign, encrypt);
-        composer->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
+        composerJob->setAutocryptEnabled(true);
+        composerJob->setSenderEncryptionKey(keys[0]);
+        composerJob->setSignAndEncrypt(sign, encrypt);
+        composerJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
 
-        VERIFYEXEC((composer));
-        QCOMPARE(composer->resultMessages().size(), 1);
+        VERIFYEXEC((composerJob));
+        QCOMPARE(composerJob->resultMessages().size(), 1);
 
-        message = composer->resultMessages().first();
+        message = composerJob->resultMessages().first();
     }
 
     if (sign || encrypt) {
@@ -829,14 +830,14 @@ void CryptoComposerTest::testAutocryptGossip()
 }
 
 // Helper methods
-void CryptoComposerTest::fillComposerData(Composer *composer, const QString &data)
+void CryptoComposerTest::fillComposerData(ComposerJob *composerJob, const QString &data)
 {
-    composer->infoPart()->setFrom(QStringLiteral("me@me.me"));
-    composer->infoPart()->setTo(QStringList(QStringLiteral("you@you.you")));
-    composer->textPart()->setWrappedPlainText(data);
+    composerJob->infoPart()->setFrom(QStringLiteral("me@me.me"));
+    composerJob->infoPart()->setTo(QStringList(QStringLiteral("you@you.you")));
+    composerJob->textPart()->setWrappedPlainText(data);
 }
 
-void CryptoComposerTest::fillComposerCryptoData(Composer *composer)
+void CryptoComposerTest::fillComposerCryptoData(ComposerJob *composerJob)
 {
     std::vector<GpgME::Key> keys = MessageComposer::Test::getKeys();
 
@@ -848,8 +849,8 @@ void CryptoComposerTest::fillComposerCryptoData(Composer *composer)
     QList<QPair<QStringList, std::vector<GpgME::Key>>> encKeys;
     encKeys.append(QPair<QStringList, std::vector<GpgME::Key>>(recipients, keys));
 
-    composer->setEncryptionKeys(encKeys);
-    composer->setSigningKeys(keys);
+    composerJob->setEncryptionKeys(encKeys);
+    composerJob->setSigningKeys(keys);
 }
 
 void CryptoComposerTest::runSMIMETest(bool sign, bool enc, bool opaque)
@@ -857,35 +858,35 @@ void CryptoComposerTest::runSMIMETest(bool sign, bool enc, bool opaque)
     QFETCH(QString, data);
     QFETCH(Headers::contentEncoding, cte);
 
-    auto composer = new Composer;
+    auto composerJob = new ComposerJob;
 
-    fillComposerData(composer, data);
-    composer->infoPart()->setFrom(QStringLiteral("test@example.com"));
+    fillComposerData(composerJob, data);
+    composerJob->infoPart()->setFrom(QStringLiteral("test@example.com"));
 
     std::vector<GpgME::Key> keys = MessageComposer::Test::getKeys(true);
     QStringList recipients;
     recipients << QString::fromLocal8Bit("you@you.you");
     QList<QPair<QStringList, std::vector<GpgME::Key>>> encKeys;
     encKeys.append(QPair<QStringList, std::vector<GpgME::Key>>(recipients, keys));
-    composer->setEncryptionKeys(encKeys);
-    composer->setSigningKeys(keys);
-    composer->setSignAndEncrypt(sign, enc);
+    composerJob->setEncryptionKeys(encKeys);
+    composerJob->setSigningKeys(keys);
+    composerJob->setSignAndEncrypt(sign, enc);
     Kleo::CryptoMessageFormat f;
     if (opaque) {
         f = Kleo::SMIMEOpaqueFormat;
     } else {
         f = Kleo::SMIMEFormat;
     }
-    composer->setCryptoMessageFormat(f);
+    composerJob->setCryptoMessageFormat(f);
 
-    const bool result = composer->exec();
+    const bool result = composerJob->exec();
     // QEXPECT_FAIL("", "GPG setup problems", Continue);
     QVERIFY(result);
     if (result) {
-        QCOMPARE(composer->resultMessages().size(), 1);
-        KMime::Message::Ptr message = composer->resultMessages().constFirst();
-        delete composer;
-        composer = nullptr;
+        QCOMPARE(composerJob->resultMessages().size(), 1);
+        KMime::Message::Ptr message = composerJob->resultMessages().constFirst();
+        delete composerJob;
+        composerJob = nullptr;
 
         // qDebug() << "message:" << message->encodedContent();
 

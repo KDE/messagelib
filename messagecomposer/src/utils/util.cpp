@@ -11,7 +11,7 @@
 #include "utils/util.h"
 #include "util_p.h"
 
-#include "composer/composer.h"
+#include "job/composerjob.h"
 #include "job/singlepartjob.h"
 
 #include <QRegularExpression>
@@ -34,8 +34,8 @@
 
 KMime::Content *setBodyAndCTE(QByteArray &encodedBody, KMime::Headers::ContentType *contentType, KMime::Content *ret)
 {
-    MessageComposer::Composer composer;
-    MessageComposer::SinglepartJob cteJob(&composer);
+    MessageComposer::ComposerJob composerJob;
+    MessageComposer::SinglepartJob cteJob(&composerJob);
 
     cteJob.contentType()->setMimeType(contentType->mimeType());
     cteJob.contentType()->setCharset(contentType->charset());

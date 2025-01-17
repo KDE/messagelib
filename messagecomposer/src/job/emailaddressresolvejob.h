@@ -18,7 +18,6 @@
 
 namespace MessageComposer
 {
-class Composer;
 
 class EmailAddressResolveJobPrivate;
 /**
