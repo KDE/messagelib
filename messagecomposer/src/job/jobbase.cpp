@@ -6,8 +6,8 @@
 
 #include "jobbase.h"
 
-#include "composer/composer.h"
-#include "job/jobbase_p.h"
+#include "composerjob.h"
+#include "jobbase_p.h"
 
 #include "messagecomposer_debug.h"
 
@@ -33,9 +33,9 @@ JobBase::~JobBase()
 GlobalPart *JobBase::globalPart()
 {
     for (QObject *obj = this; obj != nullptr; obj = obj->parent()) {
-        auto composer = qobject_cast<Composer *>(obj);
-        if (composer) {
-            return composer->globalPart();
+        auto composerJob = qobject_cast<ComposerJob *>(obj);
+        if (composerJob) {
+            return composerJob->globalPart();
         }
     }
 

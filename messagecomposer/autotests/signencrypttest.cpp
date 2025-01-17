@@ -14,7 +14,7 @@
 
 #include <Libkleo/Enum>
 
-#include <MessageComposer/Composer>
+#include <MessageComposer/ComposerJob>
 #include <MessageComposer/GlobalPart>
 #include <MessageComposer/MainTextJob>
 #include <MessageComposer/SignEncryptJob>
@@ -60,14 +60,14 @@ void SignEncryptTest::testContent()
     const std::vector<GpgME::Key> &keys = Test::getKeys();
     const QString data(QString::fromLocal8Bit("one flew over the cuckoo's nest"));
 
-    Composer composer;
+    ComposerJob composerJob;
 
     TextPart part;
     part.setWordWrappingEnabled(false);
     part.setCleanPlainText(data);
 
-    auto mainTextJob = new MainTextJob(&part, &composer);
-    auto seJob = new SignEncryptJob(&composer);
+    auto mainTextJob = new MainTextJob(&part, &composerJob);
+    auto seJob = new SignEncryptJob(&composerJob);
 
     QVERIFY(mainTextJob);
 
@@ -113,8 +113,8 @@ void SignEncryptTest::testContentSubjobChained()
 
     const QStringList recipients = {QString::fromLocal8Bit("test@kolab.org")};
 
-    Composer composer;
-    auto seJob = new SignEncryptJob(&composer);
+    ComposerJob composerJob;
+    auto seJob = new SignEncryptJob(&composerJob);
 
     seJob->setSigningKeys(keys);
     seJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
@@ -137,8 +137,8 @@ void SignEncryptTest::testHeaders()
 {
     const std::vector<GpgME::Key> &keys = Test::getKeys();
 
-    Composer composer;
-    auto seJob = new SignEncryptJob(&composer);
+    ComposerJob composerJob;
+    auto seJob = new SignEncryptJob(&composerJob);
 
     QVERIFY(seJob);
 
@@ -197,8 +197,8 @@ void SignEncryptTest::testProtectedHeaders()
 
     const std::vector<GpgME::Key> &keys = Test::getKeys();
 
-    Composer composer;
-    auto seJob = new SignEncryptJob(&composer);
+    ComposerJob composerJob;
+    auto seJob = new SignEncryptJob(&composerJob);
 
     QVERIFY(seJob);
 

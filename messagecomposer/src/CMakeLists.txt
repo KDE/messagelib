@@ -41,6 +41,7 @@ qt_add_dbus_interface(messagecomposer_interface_SRCS
 target_sources(KPim6MessageComposer PRIVATE
     ${messagecomposer_interface_SRCS}
     job/jobbase.cpp
+    job/composerjob.cpp
     job/contentjobbase.cpp
     job/attachmentjob.cpp
     job/singlepartjob.cpp
@@ -63,7 +64,6 @@ target_sources(KPim6MessageComposer PRIVATE
     job/itipjob.cpp
     statusbarwidget/statusbarlabeltoggledstate.cpp
     composer/autocryptkeyresolvercore.cpp
-    composer/composer.cpp
     composer/signaturecontroller.cpp
     composer/composerlineedit.cpp
     composer/composerviewbase.cpp
@@ -147,6 +147,7 @@ target_sources(KPim6MessageComposer PRIVATE
     helper/messagefactoryforwardjob.h
     job/distributionlistexpandjob.h
     job/contentjobbase.h
+    job/composerjob.h
     job/attachmentclipboardjob.h
     job/multipartjob.h
     job/aliasesexpandjob.h
@@ -205,7 +206,6 @@ target_sources(KPim6MessageComposer PRIVATE
     recipient/recipientline.h
     composer/autocryptkeyresolvercore.h
     composer/composerviewinterface.h
-    composer/composer.h
     composer/keyresolver.h
     composer/composerattachmentinterface.h
     composer/signaturecontroller.h
@@ -435,7 +435,6 @@ ecm_generate_headers(MessageComposer_Camelcaseattachement_HEADERS
 ecm_generate_headers(MessageComposer_Camelcasecomposer_HEADERS
     HEADER_NAMES
     AutocryptKeyResolverCore
-    Composer
     ComposerLineEdit
     ComposerViewBase
     ComposerViewInterface
@@ -558,6 +557,7 @@ ecm_generate_headers(MessageComposer_Camelcasejob_HEADERS
     JobBase
     AbstractEncryptJob
     ContentJobBase
+    ComposerJob
     InsertTextFileJob
     AttachmentJob
     SinglepartJob

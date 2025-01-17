@@ -12,14 +12,15 @@
 
 #include <KMime/Content>
 #include <KMime/Headers>
-using namespace KMime;
 
 #include <MessageComposer/AttachmentJob>
-#include <MessageComposer/Composer>
+#include <MessageComposer/ComposerJob>
 #include <MessageComposer/GlobalPart>
-using namespace MessageComposer;
 
 #include <MessageCore/AttachmentPart>
+
+using namespace KMime;
+using namespace MessageComposer;
 using namespace MessageCore;
 
 #define PATH_ATTACHMENTS QLatin1StringView(KDESRCDIR "/attachments/")
@@ -41,8 +42,8 @@ void AttachmentJobTest::testAttachment()
     part->setMimeType(mimeType);
     part->setData(data);
 
-    Composer composer;
-    auto ajob = new AttachmentJob(part, &composer);
+    ComposerJob composerJob;
+    auto ajob = new AttachmentJob(part, &composerJob);
     QVERIFY(ajob->exec());
     Content *result = ajob->content();
     result->assemble();
@@ -87,8 +88,8 @@ void AttachmentJobTest::testTextCharsetAutodetect()
     ljob = 0;
 
     Composer *composer = new Composer;
-    composer->globalPart()->setFallbackCharsetEnabled(true);
-    AttachmentJob *ajob = new AttachmentJob(part, composer);
+    composerJob->globalPart()->setFallbackCharsetEnabled(true);
+    AttachmentJob *ajob = new AttachmentJob(part, composerJob);
     VERIFYEXEC(ajob);
     Content *result = ajob->content();
     delete ajob;

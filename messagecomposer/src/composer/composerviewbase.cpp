@@ -11,11 +11,11 @@
 #include "attachment/attachmentmodel.h"
 #include "composer-ng/richtextcomposerng.h"
 #include "composer-ng/richtextcomposersignatures.h"
-#include "composer.h"
 #include "composer/keyresolver.h"
 #include "composer/signaturecontroller.h"
 #include "draftstatus/draftstatus.h"
 #include "imagescaling/imagescalingutils.h"
+#include "job/composerjob.h"
 #include "job/emailaddressresolvejob.h"
 #include "part/globalpart.h"
 #include "part/infopart.h"
@@ -94,7 +94,7 @@ ComposerViewBase::~ComposerViewBase() = default;
 
 bool ComposerViewBase::isComposing() const
 {
-    return !m_composers.isEmpty();
+    return !m_composerJobs.isEmpty();
 }
 
 void ComposerViewBase::setMessage(const KMime::Message::Ptr &msg, bool allowDecryption)
@@ -374,9 +374,9 @@ void ComposerViewBase::readyForSending()
         return;
     }
 
-    if (!m_composers.isEmpty()) {
+    if (!m_composerJobs.isEmpty()) {
         // This may happen if e.g. the autosave timer calls applyChanges.
-        qCDebug(MESSAGECOMPOSER_LOG) << "ready for sending: Called while composer active; ignoring. Number of composer " << m_composers.count();
+        qCDebug(MESSAGECOMPOSER_LOG) << "ready for sending: Called while composer active; ignoring. Number of composer " << m_composerJobs.count();
         return;
     }
 
@@ -483,7 +483,7 @@ void ComposerViewBase::slotEmailAddressResolved(KJob *job)
         autoresizeImage = false;
     }
 
-    Q_ASSERT(m_composers.isEmpty()); // composers should be empty. The caller of this function
+    Q_ASSERT(m_composerJobs.isEmpty()); // composers should be empty. The caller of this function
     // checks for emptiness before calling it
     // so just ensure it actually is empty
     // and document it
@@ -491,18 +491,18 @@ void ComposerViewBase::slotEmailAddressResolved(KJob *job)
     // if so, we create a composer per format
     // if we aren't signing or encrypting, this just returns a single empty message
     if (m_neverEncrypt && mSaveIn != MessageComposer::MessageSender::SaveInNone && !mSendLaterInfo) {
-        auto composer = new MessageComposer::Composer;
-        composer->setNoCrypto(true);
-        m_composers.append(composer);
+        auto composerJob = new MessageComposer::ComposerJob;
+        composerJob->setNoCrypto(true);
+        m_composerJobs.append(composerJob);
     } else {
         bool wasCanceled = false;
-        m_composers = generateCryptoMessages(wasCanceled);
+        m_composerJobs = generateCryptoMessages(wasCanceled);
         if (wasCanceled) {
             return;
         }
     }
 
-    if (m_composers.isEmpty()) {
+    if (m_composerJobs.isEmpty()) {
         Q_EMIT failed(i18n("It was not possible to create a message composer."));
         return;
     }
@@ -531,11 +531,11 @@ void ComposerViewBase::slotEmailAddressResolved(KJob *job)
     // Compose each message and prepare it for queueing, sending, or storing
 
     // working copy in case composers instantly emit result
-    const auto composers = m_composers;
-    for (MessageComposer::Composer *composer : composers) {
-        fillComposer(composer, UseExpandedRecipients, autoresizeImage);
-        connect(composer, &MessageComposer::Composer::result, this, &ComposerViewBase::slotSendComposeResult);
-        composer->start();
+    const auto composerJobs = m_composerJobs;
+    for (MessageComposer::ComposerJob *composerJob : composerJobs) {
+        fillComposer(composerJob, UseExpandedRecipients, autoresizeImage);
+        connect(composerJob, &MessageComposer::ComposerJob::result, this, &ComposerViewBase::slotSendComposeResult);
+        composerJob->start();
         qCDebug(MESSAGECOMPOSER_LOG) << "Started a composer for sending!";
     }
 }
@@ -691,7 +691,7 @@ void ComposerViewBase::setAkonadiLookupEnabled(bool akonadiLookupEnabled)
     m_akonadiLookupEnabled = akonadiLookupEnabled;
 }
 
-QList<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bool &wasCanceled)
+QList<MessageComposer::ComposerJob *> ComposerViewBase::generateCryptoMessages(bool &wasCanceled)
 {
     const auto id = currentIdentity();
 
@@ -818,19 +818,19 @@ QList<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bool
         return {};
     }
 
-    QList<MessageComposer::Composer *> composers;
+    QList<MessageComposer::ComposerJob *> composerJobs;
 
     // No encryption or signing is needed
     if (!signSomething && !encryptSomething) {
-        auto composer = new MessageComposer::Composer;
+        auto composerJob = new MessageComposer::ComposerJob;
         if (m_cryptoMessageFormat & Kleo::OpenPGPMIMEFormat) {
-            composer->setAutocryptEnabled(autocryptEnabled());
+            composerJob->setAutocryptEnabled(autocryptEnabled());
             if (keyResolver->encryptToSelfKeysFor(Kleo::OpenPGPMIMEFormat).size() > 0) {
-                composer->setSenderEncryptionKey(keyResolver->encryptToSelfKeysFor(Kleo::OpenPGPMIMEFormat)[0]);
+                composerJob->setSenderEncryptionKey(keyResolver->encryptToSelfKeysFor(Kleo::OpenPGPMIMEFormat)[0]);
             }
         }
-        composers.append(composer);
-        return composers;
+        composerJobs.append(composerJob);
+        return composerJobs;
     }
 
     canceled = false;
@@ -860,7 +860,7 @@ QList<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bool
                 continue;
             }
 
-            auto composer = new MessageComposer::Composer;
+            auto composerJob = new MessageComposer::ComposerJob;
 
             if (encryptSomething || autocryptEnabled()) {
                 auto end(encData.end());
@@ -871,15 +871,15 @@ QList<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bool
                     data.append(p);
                     qCDebug(MESSAGECOMPOSER_LOG) << "got resolved keys for:" << it->recipients;
                 }
-                composer->setEncryptionKeys(data);
+                composerJob->setEncryptionKeys(data);
                 if (concreteFormat & Kleo::OpenPGPMIMEFormat && autocryptEnabled()) {
-                    composer->setAutocryptEnabled(autocryptEnabled());
-                    composer->setSenderEncryptionKey(keyResolver->encryptToSelfKeysFor(concreteFormat)[0]);
+                    composerJob->setAutocryptEnabled(autocryptEnabled());
+                    composerJob->setSenderEncryptionKey(keyResolver->encryptToSelfKeysFor(concreteFormat)[0]);
                     QTemporaryDir dir;
                     bool specialGnupgHome = addKeysToContext(dir.path(), data, keyResolver->useAutocrypt());
                     if (specialGnupgHome) {
                         dir.setAutoRemove(false);
-                        composer->setGnupgHome(dir.path());
+                        composerJob->setGnupgHome(dir.path());
                     }
                 }
             }
@@ -887,27 +887,27 @@ QList<MessageComposer::Composer *> ComposerViewBase::generateCryptoMessages(bool
             if (signSomething) {
                 // find signing keys for this format
                 std::vector<GpgME::Key> signingKeys = keyResolver->signingKeys(concreteFormat);
-                composer->setSigningKeys(signingKeys);
+                composerJob->setSigningKeys(signingKeys);
             }
 
-            composer->setCryptoMessageFormat(concreteFormat);
-            composer->setSignAndEncrypt(signSomething, encryptSomething);
+            composerJob->setCryptoMessageFormat(concreteFormat);
+            composerJob->setSignAndEncrypt(signSomething, encryptSomething);
 
-            composers.append(composer);
+            composerJobs.append(composerJob);
         }
     } else {
-        auto composer = new MessageComposer::Composer;
-        composers.append(composer);
+        auto composerJob = new MessageComposer::ComposerJob;
+        composerJobs.append(composerJob);
         // If we canceled sign or encrypt be sure to change status in attachment.
         markAllAttachmentsForSigning(false);
         markAllAttachmentsForEncryption(false);
     }
 
-    if (composers.isEmpty() && (signSomething || encryptSomething)) {
+    if (composerJobs.isEmpty() && (signSomething || encryptSomething)) {
         Q_ASSERT_X(false, "ComposerViewBase::generateCryptoMessages", "No concrete sign or encrypt method selected");
     }
 
-    return composers;
+    return composerJobs;
 }
 
 void ComposerViewBase::fillGlobalPart(MessageComposer::GlobalPart *globalPart)
@@ -1023,34 +1023,34 @@ void ComposerViewBase::fillInfoPart(MessageComposer::InfoPart *infoPart, Compose
 
 void ComposerViewBase::slotSendComposeResult(KJob *job)
 {
-    Q_ASSERT(dynamic_cast<MessageComposer::Composer *>(job));
-    auto composer = static_cast<MessageComposer::Composer *>(job);
-    if (composer->error() != MessageComposer::Composer::NoError) {
+    Q_ASSERT(dynamic_cast<MessageComposer::ComposerJob *>(job));
+    auto composerJob = static_cast<MessageComposer::ComposerJob *>(job);
+    if (composerJob->error() != MessageComposer::ComposerJob::NoError) {
         qCDebug(MESSAGECOMPOSER_LOG) << "compose job might have error: " << job->error() << " errorString: " << job->errorString();
     }
 
-    if (composer->error() == MessageComposer::Composer::NoError) {
-        Q_ASSERT(m_composers.contains(composer));
+    if (composerJob->error() == MessageComposer::ComposerJob::NoError) {
+        Q_ASSERT(m_composerJobs.contains(composerJob));
         // The messages were composed successfully.
         qCDebug(MESSAGECOMPOSER_LOG) << "NoError.";
-        const int numberOfMessage(composer->resultMessages().size());
+        const int numberOfMessage(composerJob->resultMessages().size());
         for (int i = 0; i < numberOfMessage; ++i) {
             if (mSaveIn == MessageComposer::MessageSender::SaveInNone) {
-                queueMessage(composer->resultMessages().at(i), composer);
+                queueMessage(composerJob->resultMessages().at(i), composerJob);
             } else {
-                saveMessage(composer->resultMessages().at(i), mSaveIn);
+                saveMessage(composerJob->resultMessages().at(i), mSaveIn);
             }
         }
-        saveRecentAddresses(composer->resultMessages().at(0));
-    } else if (composer->error() == MessageComposer::Composer::UserCancelledError) {
+        saveRecentAddresses(composerJob->resultMessages().at(0));
+    } else if (composerJob->error() == MessageComposer::ComposerJob::UserCancelledError) {
         // The job warned the user about something, and the user chose to return
         // to the message.  Nothing to do.
         qCDebug(MESSAGECOMPOSER_LOG) << "UserCancelledError.";
         Q_EMIT failed(i18n("Job cancelled by the user"));
     } else {
-        qCDebug(MESSAGECOMPOSER_LOG) << "other Error." << composer->error();
+        qCDebug(MESSAGECOMPOSER_LOG) << "other Error." << composerJob->error();
         QString msg;
-        if (composer->error() == MessageComposer::Composer::BugError) {
+        if (composerJob->error() == MessageComposer::ComposerJob::BugError) {
             msg = i18n("Could not compose message: %1 \n Please report this bug.", job->errorString());
         } else {
             msg = i18n("Could not compose message: %1", job->errorString());
@@ -1058,12 +1058,12 @@ void ComposerViewBase::slotSendComposeResult(KJob *job)
         Q_EMIT failed(msg);
     }
 
-    if (!composer->gnupgHome().isEmpty()) {
-        QDir dir(composer->gnupgHome());
+    if (!composerJob->gnupgHome().isEmpty()) {
+        QDir dir(composerJob->gnupgHome());
         dir.removeRecursively();
     }
 
-    m_composers.removeAll(composer);
+    m_composerJobs.removeAll(composerJob);
 }
 
 void ComposerViewBase::saveRecentAddresses(const KMime::Message::Ptr &msg)
@@ -1089,9 +1089,9 @@ void ComposerViewBase::saveRecentAddresses(const KMime::Message::Ptr &msg)
     }
 }
 
-void ComposerViewBase::queueMessage(const KMime::Message::Ptr &message, MessageComposer::Composer *composer)
+void ComposerViewBase::queueMessage(const KMime::Message::Ptr &message, MessageComposer::ComposerJob *composerJob)
 {
-    const MessageComposer::InfoPart *infoPart = composer->infoPart();
+    const MessageComposer::InfoPart *infoPart = composerJob->infoPart();
     auto qjob = new Akonadi::MessageQueueJob(this);
     qjob->setMessage(message);
     qjob->transportAttribute().setTransportId(infoPart->transportId());
@@ -1272,19 +1272,19 @@ void ComposerViewBase::autoSaveMessage()
         m_autoSaveTimer->stop();
     }
 
-    if (!m_composers.isEmpty()) {
+    if (!m_composerJobs.isEmpty()) {
         // This may happen if e.g. the autosave timer calls applyChanges.
-        qCDebug(MESSAGECOMPOSER_LOG) << "Autosave: Called while composer active; ignoring. Number of composer " << m_composers.count();
+        qCDebug(MESSAGECOMPOSER_LOG) << "Autosave: Called while composer active; ignoring. Number of composer " << m_composerJobs.count();
         return;
     }
 
-    auto composer = new Composer();
-    fillComposer(composer);
-    composer->setAutoSave(true);
-    composer->setAutocryptEnabled(autocryptEnabled());
-    m_composers.append(composer);
-    connect(composer, &MessageComposer::Composer::result, this, &ComposerViewBase::slotAutoSaveComposeResult);
-    composer->start();
+    auto composerJob = new ComposerJob();
+    fillComposer(composerJob);
+    composerJob->setAutoSave(true);
+    composerJob->setAutocryptEnabled(autocryptEnabled());
+    m_composerJobs.append(composerJob);
+    connect(composerJob, &MessageComposer::ComposerJob::result, this, &ComposerViewBase::slotAutoSaveComposeResult);
+    composerJob->start();
 }
 
 void ComposerViewBase::setAutoSaveFileName(const QString &fileName)
@@ -1296,24 +1296,24 @@ void ComposerViewBase::setAutoSaveFileName(const QString &fileName)
 
 void ComposerViewBase::slotAutoSaveComposeResult(KJob *job)
 {
-    using MessageComposer::Composer;
+    using MessageComposer::ComposerJob;
 
-    Q_ASSERT(dynamic_cast<Composer *>(job));
-    auto composer = static_cast<Composer *>(job);
+    Q_ASSERT(dynamic_cast<ComposerJob *>(job));
+    auto composerJob = static_cast<ComposerJob *>(job);
 
-    if (composer->error() == Composer::NoError) {
-        Q_ASSERT(m_composers.contains(composer));
+    if (composerJob->error() == ComposerJob::NoError) {
+        Q_ASSERT(m_composerJobs.contains(composerJob));
 
         // The messages were composed successfully. Only save the first message, there should
         // only be one anyway, since crypto is disabled.
         qCDebug(MESSAGECOMPOSER_LOG) << "NoError.";
-        writeAutoSaveToDisk(composer->resultMessages().constFirst());
-        Q_ASSERT(composer->resultMessages().size() == 1);
+        writeAutoSaveToDisk(composerJob->resultMessages().constFirst());
+        Q_ASSERT(composerJob->resultMessages().size() == 1);
 
         if (m_autoSaveInterval > 0) {
             updateAutoSave();
         }
-    } else if (composer->error() == MessageComposer::Composer::UserCancelledError) {
+    } else if (composerJob->error() == MessageComposer::ComposerJob::UserCancelledError) {
         // The job warned the user about something, and the user chose to return
         // to the message.  Nothing to do.
         qCDebug(MESSAGECOMPOSER_LOG) << "UserCancelledError.";
@@ -1323,7 +1323,7 @@ void ComposerViewBase::slotAutoSaveComposeResult(KJob *job)
         Q_EMIT failed(i18n("Could not autosave message: %1", job->errorString()), AutoSave);
     }
 
-    m_composers.removeAll(composer);
+    m_composerJobs.removeAll(composerJob);
 }
 
 void ComposerViewBase::writeAutoSaveToDisk(const KMime::Message::Ptr &message)
@@ -1549,18 +1549,18 @@ void ComposerViewBase::addAttachmentPart(KMime::Content *partToAttach)
     m_attachmentController->addAttachment(part);
 }
 
-void ComposerViewBase::fillComposer(MessageComposer::Composer *composer)
+void ComposerViewBase::fillComposer(MessageComposer::ComposerJob *composerJob)
 {
-    fillComposer(composer, UseUnExpandedRecipients, false);
+    fillComposer(composerJob, UseUnExpandedRecipients, false);
 }
 
-void ComposerViewBase::fillComposer(MessageComposer::Composer *composer, ComposerViewBase::RecipientExpansion expansion, bool autoresize)
+void ComposerViewBase::fillComposer(MessageComposer::ComposerJob *composerJob, ComposerViewBase::RecipientExpansion expansion, bool autoresize)
 {
-    fillGlobalPart(composer->globalPart());
-    m_editor->fillComposerTextPart(composer->textPart());
-    fillInfoPart(composer->infoPart(), expansion);
+    fillGlobalPart(composerJob->globalPart());
+    m_editor->fillComposerTextPart(composerJob->textPart());
+    fillInfoPart(composerJob->infoPart(), expansion);
     if (m_attachmentModel) {
-        composer->addAttachmentParts(m_attachmentModel->attachments(), autoresize);
+        composerJob->addAttachmentParts(m_attachmentModel->attachments(), autoresize);
     }
 }
 

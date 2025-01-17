@@ -15,7 +15,8 @@
 #include <Libkleo/Enum>
 
 #include <MessageComposer/AutocryptHeadersJob>
-#include <MessageComposer/Composer>
+#include <MessageComposer/ComposerJob>
+#include <MessageComposer/TransparentJob>
 #include <MessageComposer/Util>
 
 #include <QGpgME/KeyListJob>
@@ -27,7 +28,6 @@
 
 #include <cstdlib>
 
-#include <MessageComposer/TransparentJob>
 #include <QTest>
 
 QTEST_MAIN(AutocryptHeadersJobTest)
@@ -41,7 +41,7 @@ void AutocryptHeadersJobTest::initTestCase()
 
 void AutocryptHeadersJobTest::testAutocryptHeader()
 {
-    Composer composer;
+    ComposerJob composerJob;
 
     KMime::Message skeletonMessage;
     skeletonMessage.from(true)->from7BitString("Alice <alice@autocrypt.example>");
@@ -58,7 +58,7 @@ void AutocryptHeadersJobTest::testAutocryptHeader()
     std::vector<GpgME::Key> ownKeys;
     auto res = job->exec(QStringList(QString::fromLatin1(skeletonMessage.from()[0].addresses()[0])), false, ownKeys);
 
-    auto aJob = new AutocryptHeadersJob(&composer);
+    auto aJob = new AutocryptHeadersJob(&composerJob);
 
     QVERIFY(aJob);
 
@@ -83,7 +83,7 @@ void AutocryptHeadersJobTest::testAutocryptHeader()
 
 void AutocryptHeadersJobTest::testContentChained()
 {
-    Composer composer;
+    ComposerJob composerJob;
 
     KMime::Message skeletonMessage;
     skeletonMessage.from(true)->from7BitString("Alice <alice@autocrypt.example>");
@@ -100,7 +100,7 @@ void AutocryptHeadersJobTest::testContentChained()
     std::vector<GpgME::Key> ownKeys;
     auto res = job->exec(QStringList(QString::fromLatin1(skeletonMessage.from()[0].addresses()[0])), false, ownKeys);
 
-    auto aJob = new AutocryptHeadersJob(&composer);
+    auto aJob = new AutocryptHeadersJob(&composerJob);
     QVERIFY(aJob);
 
     auto tJob = new TransparentJob;
@@ -127,7 +127,7 @@ void AutocryptHeadersJobTest::testContentChained()
 
 void AutocryptHeadersJobTest::testAutocryptGossipHeader()
 {
-    Composer composer;
+    ComposerJob composerJob;
 
     KMime::Message skeletonMessage;
     skeletonMessage.from(true)->from7BitString("Alice <alice@autocrypt.example>");
@@ -147,7 +147,7 @@ void AutocryptHeadersJobTest::testAutocryptGossipHeader()
     std::vector<GpgME::Key> keys;
     job->exec(QStringList({QStringLiteral("bob@autocrypt.example"), QStringLiteral("carol@autocrypt.example")}), false, keys);
 
-    auto aJob = new AutocryptHeadersJob(&composer);
+    auto aJob = new AutocryptHeadersJob(&composerJob);
 
     QVERIFY(aJob);
 
@@ -167,7 +167,7 @@ void AutocryptHeadersJobTest::testAutocryptGossipHeader()
 
 void AutocryptHeadersJobTest::testSetGnupgHome()
 {
-    Composer composer;
+    ComposerJob composerJob;
 
     KMime::Message skeletonMessage;
     skeletonMessage.from(true)->from7BitString("Alice <alice@autocrypt.example>");
@@ -189,7 +189,7 @@ void AutocryptHeadersJobTest::testSetGnupgHome()
 
     QTemporaryDir dir;
     { // test with an empty gnupg Home
-        auto aJob = new AutocryptHeadersJob(&composer);
+        auto aJob = new AutocryptHeadersJob(&composerJob);
         QVERIFY(aJob);
 
         aJob->setContent(&content);
@@ -206,7 +206,7 @@ void AutocryptHeadersJobTest::testSetGnupgHome()
     for (const auto &key : keys) {
         Test::populateKeyring(dir.path(), key);
     }
-    auto aJob = new AutocryptHeadersJob(&composer);
+    auto aJob = new AutocryptHeadersJob(&composerJob);
     QVERIFY(aJob);
 
     aJob->setContent(&content);
@@ -227,7 +227,7 @@ void AutocryptHeadersJobTest::testSetGnupgHome()
 
 void AutocryptHeadersJobTest::testStripSenderKey()
 {
-    Composer composer;
+    ComposerJob composerJob;
 
     KMime::Message skeletonMessage;
     skeletonMessage.from(true)->from7BitString("Alice <alice@autocrypt.example>");
@@ -248,7 +248,7 @@ void AutocryptHeadersJobTest::testStripSenderKey()
     job->exec(QStringList({QStringLiteral("bob@autocrypt.example"), QStringLiteral("carol@autocrypt.example")}), false, keys);
     keys.push_back(ownKeys[0]);
 
-    auto aJob = new AutocryptHeadersJob(&composer);
+    auto aJob = new AutocryptHeadersJob(&composerJob);
 
     QVERIFY(aJob);
 

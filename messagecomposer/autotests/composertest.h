@@ -11,7 +11,7 @@
 
 namespace MessageComposer
 {
-class Composer;
+class ComposerJob;
 }
 
 class ComposerTest : public QObject
@@ -26,5 +26,5 @@ private Q_SLOTS:
     // TODO test the code for autodetecting the charset of a text attachment.
     // TODO figure out what CTE testing has to be done.
 private:
-    void fillComposerData(MessageComposer::Composer *composer);
+    void fillComposerData(MessageComposer::ComposerJob *composerJob);
 };

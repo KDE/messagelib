@@ -14,7 +14,7 @@
 #include <KMime/Headers>
 using namespace KMime;
 
-#include <MessageComposer/Composer>
+#include <MessageComposer/ComposerJob>
 #include <MessageComposer/GlobalPart>
 #include <MessageComposer/InfoPart>
 #include <MessageComposer/TextPart>
@@ -27,18 +27,16 @@ QTEST_MAIN(ComposerTest)
 
 void ComposerTest::testAttachments()
 {
-    auto composer = new Composer;
-    fillComposerData(composer);
+    ComposerJob composerJob;
+    fillComposerData(&composerJob);
     AttachmentPart::Ptr attachment = AttachmentPart::Ptr(new AttachmentPart);
     attachment->setData("abc");
     attachment->setMimeType("x-some/x-type");
-    composer->addAttachmentPart(attachment);
+    composerJob.addAttachmentPart(attachment);
 
-    QVERIFY(composer->exec());
-    QCOMPARE(composer->resultMessages().size(), 1);
-    KMime::Message::Ptr message = composer->resultMessages().constFirst();
-    delete composer;
-    composer = nullptr;
+    QVERIFY(composerJob.exec());
+    QCOMPARE(composerJob.resultMessages().size(), 1);
+    KMime::Message::Ptr message = composerJob.resultMessages().constFirst();
 
     // multipart/mixed
     {
@@ -62,27 +60,25 @@ void ComposerTest::testAttachments()
 
 void ComposerTest::testAutoSave()
 {
-    auto composer = new Composer;
-    fillComposerData(composer);
+    ComposerJob composerJob;
+    fillComposerData(&composerJob);
     AttachmentPart::Ptr attachment = AttachmentPart::Ptr(new AttachmentPart);
     attachment->setData("abc");
     attachment->setMimeType("x-some/x-type");
-    composer->addAttachmentPart(attachment);
+    composerJob.addAttachmentPart(attachment);
 
     // This tests if autosave in crash mode works without invoking an event loop, since using an
     // event loop in the crash handler would be a pretty bad idea
-    composer->setAutoSave(true);
-    composer->start();
-    QVERIFY(composer->finished());
-    QCOMPARE(composer->resultMessages().size(), 1);
-    delete composer;
-    composer = nullptr;
+    composerJob.setAutoSave(true);
+    composerJob.start();
+    QVERIFY(composerJob.finished());
+    QCOMPARE(composerJob.resultMessages().size(), 1);
 }
 
 void ComposerTest::testNonAsciiHeaders()
 {
-    Composer composer;
-    fillComposerData(&composer);
+    ComposerJob composerJob;
+    fillComposerData(&composerJob);
 
     const QString mailbox = QStringLiteral(" <bla@example.com>");
     const QString fromDisplayName = QStringLiteral("Hellö");
@@ -96,15 +92,15 @@ void ComposerTest::testNonAsciiHeaders()
     const QString bcc = bccDisplayName + mailbox;
     const QStringList replyto = QStringList{replyToDisplayName + mailbox};
 
-    composer.infoPart()->setFrom(from);
-    composer.infoPart()->setTo(QStringList() << to);
-    composer.infoPart()->setCc(QStringList() << cc);
-    composer.infoPart()->setBcc(QStringList() << bcc);
-    composer.infoPart()->setReplyTo(replyto);
+    composerJob.infoPart()->setFrom(from);
+    composerJob.infoPart()->setTo(QStringList() << to);
+    composerJob.infoPart()->setCc(QStringList() << cc);
+    composerJob.infoPart()->setBcc(QStringList() << bcc);
+    composerJob.infoPart()->setReplyTo(replyto);
 
-    QVERIFY(composer.exec());
-    QCOMPARE(composer.resultMessages().size(), 1);
-    const KMime::Message::Ptr message = composer.resultMessages().constFirst();
+    QVERIFY(composerJob.exec());
+    QCOMPARE(composerJob.resultMessages().size(), 1);
+    const KMime::Message::Ptr message = composerJob.resultMessages().constFirst();
     message->assemble();
     message->parse();
     QCOMPARE(message->bcc(false)->displayNames().size(), 1);
@@ -124,23 +120,21 @@ void ComposerTest::testBug271192()
 {
     const QString displayName = QStringLiteral("Интернет-компания example");
     const QString mailbox = QStringLiteral("example@example.com");
-    auto composer = new Composer;
-    fillComposerData(composer);
-    composer->infoPart()->setTo(QStringList() << (displayName + QLatin1StringView(" <") + mailbox + QLatin1StringView(">")));
-    QVERIFY(composer->exec());
-    QCOMPARE(composer->resultMessages().size(), 1);
-    const KMime::Message::Ptr message = composer->resultMessages().constFirst();
+    ComposerJob composerJob;
+    fillComposerData(&composerJob);
+    composerJob.infoPart()->setTo(QStringList() << (displayName + QLatin1StringView(" <") + mailbox + QLatin1StringView(">")));
+    QVERIFY(composerJob.exec());
+    QCOMPARE(composerJob.resultMessages().size(), 1);
+    const KMime::Message::Ptr message = composerJob.resultMessages().constFirst();
     QCOMPARE(message->to()->displayNames().size(), 1);
     QCOMPARE(message->to()->displayNames().first().toUtf8(), displayName.toUtf8());
-    delete composer;
-    composer = nullptr;
 }
 
-void ComposerTest::fillComposerData(Composer *composer)
+void ComposerTest::fillComposerData(ComposerJob *composerJob)
 {
-    composer->infoPart()->setFrom(QStringLiteral("me@me.me"));
-    composer->infoPart()->setTo(QStringList(QStringLiteral("you@you.you")));
-    composer->textPart()->setWrappedPlainText(QStringLiteral("All happy families are alike; each unhappy family is unhappy in its own way."));
+    composerJob->infoPart()->setFrom(QStringLiteral("me@me.me"));
+    composerJob->infoPart()->setTo(QStringList(QStringLiteral("you@you.you")));
+    composerJob->textPart()->setWrappedPlainText(QStringLiteral("All happy families are alike; each unhappy family is unhappy in its own way."));
 }
 
 #include "moc_composertest.cpp"

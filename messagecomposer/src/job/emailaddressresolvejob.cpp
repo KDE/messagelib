@@ -11,10 +11,6 @@
 #include "job/emailaddressresolvejob.h"
 
 #include "aliasesexpandjob.h"
-#include "settings/messagecomposersettings.h"
-
-#include "MessageComposer/Composer"
-#include "MessageComposer/InfoPart"
 
 #include <KEmailAddress>
 #include <QVariant>
