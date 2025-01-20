@@ -3,14 +3,14 @@
 # Xosé <xosecalvo@gmail.com>, 2010, 2011, 2012, 2013, 2014.
 # Marce Villarino <mvillarino@kde-espana.es>, 2012, 2013, 2014.
 # Adrian Chaves Fernandez <adriyetichaves@gmail.com>, 2013, 2015, 2017.
-# SPDX-FileCopyrightText: 2023, 2024 Adrián Chaves (Gallaecio)
+# SPDX-FileCopyrightText: 2023, 2024, 2025 Adrián Chaves (Gallaecio)
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-03 00:39+0000\n"
-"PO-Revision-Date: 2024-12-16 01:06+0100\n"
+"PO-Revision-Date: 2025-01-19 12:47+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -222,7 +222,7 @@ msgstr "Seleccionalo todo"
 #: attachment/attachmentcontrollerbase.cpp:543
 #, kde-format
 msgid "Reload"
-msgstr "Actualizar"
+msgstr "Recargar"
 
 #: attachment/attachmentcontrollerbase.cpp:677
 #: attachment/attachmentcontrollerbase.cpp:703

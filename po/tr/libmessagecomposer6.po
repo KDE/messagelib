@@ -4,13 +4,13 @@
 # H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2011.
 # Volkan Gezer <volkangezer@gmail.com>, 2013, 2014, 2015, 2017.
 # Kaan Ozdincer <kaanozdincer@gmail.com>, 2014.
-# SPDX-FileCopyrightText: 2022, 2023, 2024 Emir SARI <emir_sari@icloud.com>
+# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-03 00:39+0000\n"
-"PO-Revision-Date: 2024-08-16 12:04+0300\n"
+"PO-Revision-Date: 2025-01-19 13:51+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.11.70\n"
+"X-Generator: Lokalize 25.03.70\n"
 "X-POOTLE-MTIME: 1413111292.000000\n"
 
 #: attachment/attachmentcontrollerbase.cpp:166
@@ -1396,7 +1396,7 @@ msgstr "Dizgi:"
 #: imagescaling/ui/imagescalingwidget.ui:308
 #, kde-format
 msgid "This line allows to define several pattern. Separate them with ';'."
-msgstr "Bu satır çeşitli dizgileri tanımlamanızı sağlar. ‘;’ ile ayırın."
+msgstr "Bu satır çeşitli dizgileri tanımlamanızı sağlar. “;” ile ayırın."
 
 #. i18n: ectx: property (placeholderText), widget (QLineEdit, pattern)
 #. i18n: ectx: property (placeholderText), widget (QLineEdit, resizeEmailsPattern)
@@ -1406,7 +1406,7 @@ msgstr "Bu satır çeşitli dizgileri tanımlamanızı sağlar. ‘;’ ile ayı
 #: imagescaling/ui/imagescalingwidget.ui:443
 #, kde-format
 msgid "Specify patterns separate with ';'"
-msgstr "Belirtilen dizgileri ‘;’ ile ayırın"
+msgstr "Belirtilen dizgileri “;” ile ayırın"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: imagescaling/ui/imagescalingwidget.ui:326
@@ -2018,7 +2018,7 @@ msgid ""
 "Allow the semicolon character (';') to be used as separator in the message "
 "composer"
 msgstr ""
-"İleti düzenlerken noktalı virgül karakterini (‘;’) ayırıcı olarak kullanmaya "
+"İleti düzenlerken noktalı virgül karakterini (“;”) ayırıcı olarak kullanmaya "
 "izin ver"
 
 #. i18n: ectx: label, entry (ShowRecentAddressesInComposer), group (Composer)
