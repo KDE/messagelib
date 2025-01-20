@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kdepim-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-07 00:42+0000\n"
-"PO-Revision-Date: 2025-01-07 15:07+0300\n"
+"PO-Revision-Date: 2025-01-19 13:53+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -233,7 +233,7 @@ msgid ""
 "the threads that have been active today."
 msgstr ""
 "Bu görünüm, akıllı tarih erimli grupları kullanır. İletiler konulara "
-"ayrılır. Örneğin, ‘Bugün’ başlığı altında bugün gelen tüm iletileri ve etkin "
+"ayrılır. Örneğin, “Bugün” başlığı altında bugün gelen tüm iletileri ve etkin "
 "olan ileti dizilerini bulacaksınız."
 
 #: core/manager.cpp:216
@@ -248,7 +248,8 @@ msgid ""
 "example, in \"Today\" you will simply find all the messages arrived today."
 msgstr ""
 "Bu görünüm, akıllı tarih erimli grupları kullanır. İletiler konulara "
-"ayrılmaz. Örneğin, ‘Bugün’ içinde, bugün gelen tüm iletileri bulacaksınız."
+"ayrılmaz. Örneğin, “Bugün” başlığı altında, bugün gelen tüm iletileri "
+"bulacaksınız."
 
 #: core/manager.cpp:228
 #, kde-format
@@ -263,7 +264,7 @@ msgid ""
 "that have been active today."
 msgstr ""
 "Bu görünüm, grupları günbegün gösterir. İletiler konu başlıklarına ayrılır. "
-"Örneğin, ‘Bugün’ başlığı altında bugün gelen tüm iletileri ve etkin olan "
+"Örneğin, “Bugün” başlığı altında bugün gelen tüm iletileri ve etkin olan "
 "başlıkları bulacaksınız."
 
 #: core/manager.cpp:241
@@ -278,7 +279,7 @@ msgid ""
 "in \"Today\" you will simply find all the messages arrived today."
 msgstr ""
 "Bu görünüm, grupları günbegün gösterir. İletiler konulara ayrılmaz. Örneğin, "
-"‘Bugün’ içinde, bugün gelen tüm iletileri bulacaksınız."
+"“Bugün” başlığı altında, bugün gelen tüm iletileri bulacaksınız."
 
 #: core/manager.cpp:253
 #, kde-format
