@@ -6,6 +6,9 @@ type: functional
 group: kdepim
 platforms:
     - name: Linux
+    - name: FreeBSD
+    - name: macOS
+    - name: Windows    
 irc: akonadi
 portingAid: false
 deprecated: false
