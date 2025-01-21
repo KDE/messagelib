@@ -48,6 +48,11 @@ void FindBarBaseTest::shouldHaveDefaultValue()
 
 void FindBarBaseTest::shouldClearLineWhenClose()
 {
+#ifdef Q_OS_WIN
+    if (qgetenv("KDECI_CANNOT_CREATE_WINDOWS") == "1") {
+        QSKIP("KDE CI can't create a window on this platform, skipping some gui tests");
+    }
+#endif
     WebEngineViewer::FindBarBase bar;
     bar.show();
     bar.activateWindow();
@@ -67,6 +72,11 @@ void FindBarBaseTest::shouldClearLineWhenClose()
 
 void FindBarBaseTest::shouldEnableDisableNextPreviousButton()
 {
+#ifdef Q_OS_WIN
+    if (qgetenv("KDECI_CANNOT_CREATE_WINDOWS") == "1") {
+        QSKIP("KDE CI can't create a window on this platform, skipping some gui tests");
+    }
+#endif
     WebEngineViewer::FindBarBase bar;
     bar.show();
     bar.activateWindow();
@@ -86,6 +96,11 @@ void FindBarBaseTest::shouldEnableDisableNextPreviousButton()
 
 void FindBarBaseTest::shouldClearAllWhenShowBar()
 {
+#ifdef Q_OS_WIN
+    if (qgetenv("KDECI_CANNOT_CREATE_WINDOWS") == "1") {
+        QSKIP("KDE CI can't create a window on this platform, skipping some gui tests");
+    }
+#endif
     WebEngineViewer::FindBarBase bar;
     bar.show();
     QVERIFY(QTest::qWaitForWindowExposed(&bar));
