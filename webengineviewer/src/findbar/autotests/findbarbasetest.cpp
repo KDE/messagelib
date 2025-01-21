@@ -48,6 +48,9 @@ void FindBarBaseTest::shouldHaveDefaultValue()
 
 void FindBarBaseTest::shouldClearLineWhenClose()
 {
+#ifdef Q_OS_WIN
+    QSKIP("Impossible to wait for window exposed on Windows CI.");
+#endif
     WebEngineViewer::FindBarBase bar;
     bar.show();
     bar.activateWindow();
@@ -67,6 +70,9 @@ void FindBarBaseTest::shouldClearLineWhenClose()
 
 void FindBarBaseTest::shouldEnableDisableNextPreviousButton()
 {
+#ifdef Q_OS_WIN
+    QSKIP("Impossible to wait for window exposed on Windows CI.");
+#endif
     WebEngineViewer::FindBarBase bar;
     bar.show();
     bar.activateWindow();
@@ -86,6 +92,9 @@ void FindBarBaseTest::shouldEnableDisableNextPreviousButton()
 
 void FindBarBaseTest::shouldClearAllWhenShowBar()
 {
+#ifdef Q_OS_WIN
+    QSKIP("Impossible to wait for window exposed on Windows CI.");
+#endif
     WebEngineViewer::FindBarBase bar;
     bar.show();
     QVERIFY(QTest::qWaitForWindowExposed(&bar));

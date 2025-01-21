@@ -55,6 +55,10 @@ void WebEngineExportPdfPageJobTest::shouldEmitSignalFailed()
 
 void WebEngineExportPdfPageJobTest::shouldEmitSignalSuccess()
 {
+#ifdef Q_OS_WIN
+    QSKIP("QPageSetupDialog: Cannot be used on non-native printers");
+#endif
+
     WebEngineViewer::WebEngineExportPdfPageJob job;
     QSignalSpy spyFailed(&job, &WebEngineViewer::WebEngineExportPdfPageJob::exportPdfFailed);
     QSignalSpy spySuccess(&job, &WebEngineViewer::WebEngineExportPdfPageJob::exportToPdfSuccess);
