@@ -14,6 +14,9 @@
 #include <QStandardPaths>
 #include <QTest>
 #include <TextAutoCorrectionCore/AutoCorrection>
+
+using namespace Qt::StringLiterals;
+
 RichTextComposerNgTest::RichTextComposerNgTest(QObject *parent)
     : QObject(parent)
 {
@@ -415,6 +418,10 @@ void RichTextComposerNgTest::shouldLoadSignatureFromFile()
         break;
     }
 
+#ifdef Q_OS_WIN
+    expected.replace(u'\n', u"\r\n"_s);
+#endif
+
     richtextComposerNg.insertSignature(newSignature, signatureplacement, signatureaddtext);
     QCOMPARE(richtextComposerNg.toPlainText(), expected);
 
@@ -501,6 +508,10 @@ void RichTextComposerNgTest::shouldLoadSignatureFromCommand()
     case KIdentityManagementCore::Signature::AtCursor:
         break;
     }
+
+#ifdef Q_OS_WIN
+    expected.replace(u'\n', u"\r\n"_s);
+#endif
 
     richtextComposerNg.insertSignature(newSignature, signatureplacement, signatureaddtext);
     QCOMPARE(richtextComposerNg.toPlainText(), expected);
