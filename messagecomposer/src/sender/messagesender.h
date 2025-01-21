@@ -14,6 +14,7 @@ namespace MessageComposer
 {
 class MessageSender
 {
+    Q_GADGET
 protected:
     virtual ~MessageSender() = 0;
 
@@ -23,12 +24,16 @@ public:
         SendImmediate = true,
         SendLater = false,
     };
+    Q_ENUM(SendMethod)
+
     enum SaveIn : uint8_t {
         SaveInNone,
         SaveInDrafts,
         SaveInTemplates,
         SaveInOutbox,
     };
+    Q_ENUM(SaveIn)
+
     /**
        Send given message.
 
