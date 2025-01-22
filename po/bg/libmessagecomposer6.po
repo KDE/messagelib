@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 00:41+0000\n"
+"POT-Creation-Date: 2025-01-22 00:42+0000\n"
 "PO-Revision-Date: 2024-11-09 20:09+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -393,11 +393,6 @@ msgid ""
 msgstr ""
 "KMail не може да открие кога избраният редактор е затворен. За да се избегне "
 "загуба на данни, редактирането на прикачения файл ще бъде прекратено."
-
-#: composer/composer.cpp:288
-#, kde-format
-msgid "No key data for recipients found."
-msgstr "Няма намерени ключови данни за получатели."
 
 #: composer/composerviewbase.cpp:325
 #, kde-format
@@ -1541,6 +1536,11 @@ msgid ""
 msgstr ""
 "<p>Възникна грешка при опит за експортиране на ключа от бекенда:</"
 "p><p><b>Няма валиден ключ за потребител %1 (%2)</b></p>"
+
+#: job/composerjob.cpp:288
+#, kde-format
+msgid "No key data for recipients found."
+msgstr "Няма намерени ключови данни за получатели."
 
 #: job/maintextjob.cpp:58
 #, kde-format

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 00:41+0000\n"
+"POT-Creation-Date: 2025-01-22 00:42+0000\n"
 "PO-Revision-Date: 2025-01-07 18:31+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -393,11 +393,6 @@ msgid ""
 msgstr ""
 "لا يمكنه «بريدك» اكتشاف وقت إغلاق المحرّر المنتقى. لتجنّب فقد البيانات سيُجهض "
 "تحرير المرفق."
-
-#: composer/composer.cpp:288
-#, kde-format
-msgid "No key data for recipients found."
-msgstr "لم يُعثر على بيانات المفاتيح للمستلمين."
 
 #: composer/composerviewbase.cpp:325
 #, kde-format
@@ -1512,6 +1507,11 @@ msgid ""
 msgstr ""
 "<p>حدث خطأ أثناء محاولة تصدير المفتاح من الواجهة الخلفية:</p><p><b>لم يعثر "
 "على مفتاح صالح للمستخدم %1 (%2)</b></p>"
+
+#: job/composerjob.cpp:288
+#, kde-format
+msgid "No key data for recipients found."
+msgstr "لم يُعثر على بيانات المفاتيح للمستلمين."
 
 #: job/maintextjob.cpp:58
 #, kde-format

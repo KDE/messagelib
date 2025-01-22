@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 00:41+0000\n"
+"POT-Creation-Date: 2025-01-22 00:42+0000\n"
 "PO-Revision-Date: 2024-11-10 11:07+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -397,11 +397,6 @@ msgid ""
 msgstr ""
 "KMail ei kykene havaitsemaan valitun muokkaimen sulkemista. Jottei tietoja "
 "menetettäisi, liitteen muokkaus keskeytetään."
-
-#: composer/composer.cpp:288
-#, kde-format
-msgid "No key data for recipients found."
-msgstr "Vastaanottajille ei löytynyt avaimia."
 
 #: composer/composerviewbase.cpp:325
 #, kde-format
@@ -1535,6 +1530,11 @@ msgid ""
 msgstr ""
 "<p>Sattui virhe yritettäessä viedä avainta taustaosasta:</p><p><b>Ei "
 "kelvollista avainta käyttäjälle %1 (%2)</b></p>"
+
+#: job/composerjob.cpp:288
+#, kde-format
+msgid "No key data for recipients found."
+msgstr "Vastaanottajille ei löytynyt avaimia."
 
 #: job/maintextjob.cpp:58
 #, kde-format

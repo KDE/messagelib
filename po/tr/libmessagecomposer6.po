@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 00:41+0000\n"
+"POT-Creation-Date: 2025-01-22 00:42+0000\n"
 "PO-Revision-Date: 2025-01-19 13:51+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -396,11 +396,6 @@ msgid ""
 msgstr ""
 "K Posta, seçili düzenleyicinin kapatıldığını algılayamaz. Veri kaybını "
 "engellemek için eki düzenleme iptal edilecek."
-
-#: composer/composer.cpp:288
-#, kde-format
-msgid "No key data for recipients found."
-msgstr "Alıcıların anahtar verileri bulunamadı."
 
 #: composer/composerviewbase.cpp:325
 #, kde-format
@@ -1531,6 +1526,11 @@ msgid ""
 msgstr ""
 "<p>Arka uçtan anahtar dışa aktarılmaya çalışılırken bir hata oluştu:</"
 "p><p><b>%1 kullanıcısı için geçerli bir anahtar bulunamadı (%2)</b></p>"
+
+#: job/composerjob.cpp:288
+#, kde-format
+msgid "No key data for recipients found."
+msgstr "Alıcıların anahtar verileri bulunamadı."
 
 #: job/maintextjob.cpp:58
 #, kde-format

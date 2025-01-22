@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 00:41+0000\n"
+"POT-Creation-Date: 2025-01-22 00:42+0000\n"
 "PO-Revision-Date: 2024-08-16 10:49+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -396,11 +396,6 @@ msgstr ""
 "KMail merkt het niet wanneer de geselecteerde editor wordt afgesloten. Om "
 "gegevensverlies te voorkomen zal het bewerken van de bijlage worden "
 "afgebroken."
-
-#: composer/composer.cpp:288
-#, kde-format
-msgid "No key data for recipients found."
-msgstr "Geen sleutelgegevens voor ontvangers gevonden."
 
 #: composer/composerviewbase.cpp:325
 #, kde-format
@@ -1556,6 +1551,11 @@ msgstr ""
 "<p>Er is een fout opgetreden bij de poging de sleutel te exporteren van de "
 "backend:</p><p><b>Geen geldige sleutel voor gebruiker %1 (%2) gevonden</b></"
 "p>"
+
+#: job/composerjob.cpp:288
+#, kde-format
+msgid "No key data for recipients found."
+msgstr "Geen sleutelgegevens voor ontvangers gevonden."
 
 #: job/maintextjob.cpp:58
 #, kde-format

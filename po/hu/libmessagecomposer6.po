@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 00:41+0000\n"
+"POT-Creation-Date: 2025-01-22 00:42+0000\n"
 "PO-Revision-Date: 2024-11-16 20:25+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -395,11 +395,6 @@ msgid ""
 msgstr ""
 "A KMail nem képes érzékelni, ha a kiválasztott szerkesztő bezárásra került. "
 "Az adatvesztés elkerülése érdekében a melléklet szerkesztése megszakad."
-
-#: composer/composer.cpp:288
-#, kde-format
-msgid "No key data for recipients found."
-msgstr "Nem találhatók kulcsadatok a címzettekhez."
 
 #: composer/composerviewbase.cpp:325
 #, kde-format
@@ -1535,6 +1530,11 @@ msgid ""
 msgstr ""
 "<p>Hiba történt a kulcsnak a modulból történő exportálásakor:</p><p><b>Nem "
 "található érvényes kulcs a(z) %1 felhasználóhoz (%2)</b></p>"
+
+#: job/composerjob.cpp:288
+#, kde-format
+msgid "No key data for recipients found."
+msgstr "Nem találhatók kulcsadatok a címzettekhez."
 
 #: job/maintextjob.cpp:58
 #, kde-format

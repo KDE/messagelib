@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 00:41+0000\n"
+"POT-Creation-Date: 2025-01-22 00:42+0000\n"
 "PO-Revision-Date: 2024-08-16 09:38+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -396,11 +396,6 @@ msgid ""
 msgstr ""
 "KMail ez da, aukeratutako editorea itxita noiz dagoen antzemateko gai. Datu "
 "galera saihesteko, eranskina editatzea bertan behera utziko da."
-
-#: composer/composer.cpp:288
-#, kde-format
-msgid "No key data for recipients found."
-msgstr "Ez da hartzaileentzako gako-daturik aurkitu."
 
 #: composer/composerviewbase.cpp:325
 #, kde-format
@@ -1537,6 +1532,11 @@ msgid ""
 msgstr ""
 "<p>Errore bat gertatu da bizkarraldekotik gakoa esportatzen saiatzean:</"
 "p><p><b>Ez da aurkitu %1 (%2) erabiltzailearentzako gako baliodunik</b></p>"
+
+#: job/composerjob.cpp:288
+#, kde-format
+msgid "No key data for recipients found."
+msgstr "Ez da hartzaileentzako gako-daturik aurkitu."
 
 #: job/maintextjob.cpp:58
 #, kde-format

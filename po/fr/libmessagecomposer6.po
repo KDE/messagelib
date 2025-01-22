@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 00:41+0000\n"
+"POT-Creation-Date: 2025-01-22 00:42+0000\n"
 "PO-Revision-Date: 2024-08-17 10:06+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -404,11 +404,6 @@ msgstr ""
 "Il est impossible pour KMail de détecter la fermeture de l'éditeur choisi. "
 "Pour éviter la perte de données, la modification de la pièce jointe sera "
 "annulée."
-
-#: composer/composer.cpp:288
-#, kde-format
-msgid "No key data for recipients found."
-msgstr "Aucune donnée de clé pour le destinataire n'a été trouvé."
 
 #: composer/composerviewbase.cpp:325
 #, kde-format
@@ -1561,6 +1556,11 @@ msgstr ""
 "<p>Une erreur est survenue pendant la tentative d'exportation de la clé à "
 "partir du moteur : </p><p><b>Aucune clé valable n'a été trouvée pour "
 "l'utilisateur %1 (%2)</b></p>"
+
+#: job/composerjob.cpp:288
+#, kde-format
+msgid "No key data for recipients found."
+msgstr "Aucune donnée de clé pour le destinataire n'a été trouvé."
 
 #: job/maintextjob.cpp:58
 #, kde-format

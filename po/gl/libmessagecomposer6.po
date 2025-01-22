@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 00:41+0000\n"
+"POT-Creation-Date: 2025-01-22 00:42+0000\n"
 "PO-Revision-Date: 2025-01-19 12:47+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -395,11 +395,6 @@ msgid ""
 msgstr ""
 "KMail non pode detectar cando está pechado o editor escollido. Para evitar "
 "que se perdan datos hase interromper a edición do anexo."
-
-#: composer/composer.cpp:288
-#, kde-format
-msgid "No key data for recipients found."
-msgstr "Non se atoparon datos de chaves para os destinatarios."
 
 #: composer/composerviewbase.cpp:325
 #, kde-format
@@ -1540,6 +1535,11 @@ msgstr ""
 "<p>Produciuse un erro ao intentar exportar a chave desde a infraestrutura:</"
 "p><p><b>Non se atopou unha chave válida para a persoa usuaria %1 (%2).</b></"
 "p>"
+
+#: job/composerjob.cpp:288
+#, kde-format
+msgid "No key data for recipients found."
+msgstr "Non se atoparon datos de chaves para os destinatarios."
 
 #: job/maintextjob.cpp:58
 #, kde-format

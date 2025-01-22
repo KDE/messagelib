@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 00:41+0000\n"
+"POT-Creation-Date: 2025-01-22 00:42+0000\n"
 "PO-Revision-Date: 2024-09-05 15:35+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -395,11 +395,6 @@ msgid ""
 msgstr ""
 "„KMail“ nespēj noteikt, vai izvēlētais redaktors ir aizvērts. Lai izvairītos "
 "no informācijas zuduma, pielikuma rediģēšana tiks atcelta."
-
-#: composer/composer.cpp:288
-#, kde-format
-msgid "No key data for recipients found."
-msgstr "Nav atrasti saņēmēju atslēgas dati."
 
 #: composer/composerviewbase.cpp:325
 #, kde-format
@@ -1531,6 +1526,11 @@ msgid ""
 msgstr ""
 "<p>Notika kļūda, mēģinot eksportēt atslēgu no aizmugursistēmas:</p><p><b> %1 "
 "lietotājam nav atrasta derīga atslēga (%2)</b></p>"
+
+#: job/composerjob.cpp:288
+#, kde-format
+msgid "No key data for recipients found."
+msgstr "Nav atrasti saņēmēju atslēgas dati."
 
 #: job/maintextjob.cpp:58
 #, kde-format

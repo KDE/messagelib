@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 00:41+0000\n"
+"POT-Creation-Date: 2025-01-22 00:42+0000\n"
 "PO-Revision-Date: 2024-12-03 15:41+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -400,11 +400,6 @@ msgid ""
 msgstr ""
 "Невозможно определить, что внешний редактор закрыт. Для предотвращения "
 "потери данных редактирование вложения будет прервано."
-
-#: composer/composer.cpp:288
-#, kde-format
-msgid "No key data for recipients found."
-msgstr "Нет данных о криптографических ключах получателей."
 
 #: composer/composerviewbase.cpp:325
 #, kde-format
@@ -1535,6 +1530,11 @@ msgid ""
 msgstr ""
 "<p>При попытке экспорта ключа произошла ошибка:</p><p><b>Не найден "
 "действительный ключ для пользователя %1 (%2)</b></p>"
+
+#: job/composerjob.cpp:288
+#, kde-format
+msgid "No key data for recipients found."
+msgstr "Нет данных о криптографических ключах получателей."
 
 #: job/maintextjob.cpp:58
 #, kde-format

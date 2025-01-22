@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 00:41+0000\n"
+"POT-Creation-Date: 2025-01-22 00:42+0000\n"
 "PO-Revision-Date: 2024-11-11 19:06+0100\n"
 "Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -398,11 +398,6 @@ msgid ""
 msgstr ""
 "KMail kann nicht feststellen, wenn der ausgewählte Editor beendet wurde. Um "
 "Datenverlust zu vermeiden, wird das Bearbeiten des Anhangs abgebrochen."
-
-#: composer/composer.cpp:288
-#, kde-format
-msgid "No key data for recipients found."
-msgstr "Keine Schlüsseldaten für die Empfänger gefunden."
 
 #: composer/composerviewbase.cpp:325
 #, kde-format
@@ -1561,6 +1556,11 @@ msgstr ""
 "<p>Beim Exportieren des Schlüssels vom Backend ist ein Fehler aufgetreten:</"
 "p><p><b>Es wurde kein gültiger Schlüssel für Benutzer %1 (%2) gefunden</b></"
 "p>"
+
+#: job/composerjob.cpp:288
+#, kde-format
+msgid "No key data for recipients found."
+msgstr "Keine Schlüsseldaten für die Empfänger gefunden."
 
 #: job/maintextjob.cpp:58
 #, kde-format

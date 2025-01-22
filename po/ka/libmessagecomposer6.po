@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 00:41+0000\n"
+"POT-Creation-Date: 2025-01-22 00:42+0000\n"
 "PO-Revision-Date: 2024-08-16 05:09+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -393,11 +393,6 @@ msgid ""
 msgstr ""
 "KMail-მა ვერ აღმოაჩინა, როდის დაიხურება არჩეული რედაქტორი. მონაცემების "
 "კარგვის თავიდან ასაცილებლად მიმაგრებული ფაილის ჩასწორება გაუქმდება."
-
-#: composer/composer.cpp:288
-#, kde-format
-msgid "No key data for recipients found."
-msgstr "მიმღებებისთვის საჭირო მონაცემები ვერ ვიპოვე."
 
 #: composer/composerviewbase.cpp:325
 #, kde-format
@@ -1532,6 +1527,11 @@ msgid ""
 msgstr ""
 "<p>აღმოჩენილია შეცდომა გასაღების გატანისას უკანაბოლოდან:</p><p><b>სწორი "
 "გასაღები არ არსებობს მომხმარებლისთვის %1 (%2)</b></p>"
+
+#: job/composerjob.cpp:288
+#, kde-format
+msgid "No key data for recipients found."
+msgstr "მიმღებებისთვის საჭირო მონაცემები ვერ ვიპოვე."
 
 #: job/maintextjob.cpp:58
 #, kde-format

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 00:41+0000\n"
+"POT-Creation-Date: 2025-01-22 00:42+0000\n"
 "PO-Revision-Date: 2020-05-15 08:18+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -412,11 +412,6 @@ msgid ""
 "KMail is unable to detect when the chosen editor is closed. To avoid data "
 "loss, editing the attachment will be aborted."
 msgstr ""
-
-#: composer/composer.cpp:288
-#, kde-format
-msgid "No key data for recipients found."
-msgstr "Saajate võtmeandmeid ei leitud."
 
 #: composer/composerviewbase.cpp:325
 #, kde-format
@@ -1591,6 +1586,11 @@ msgid ""
 "p><p><b>No valid key found for user %1 (%2)</b></p>"
 msgstr ""
 "<p>Tekkis viga võtme eksportimisel taustaprogrammist:</p><p><b>%1</b></p>"
+
+#: job/composerjob.cpp:288
+#, kde-format
+msgid "No key data for recipients found."
+msgstr "Saajate võtmeandmeid ei leitud."
 
 #: job/maintextjob.cpp:58
 #, kde-format

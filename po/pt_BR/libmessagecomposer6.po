@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 00:41+0000\n"
+"POT-Creation-Date: 2025-01-22 00:42+0000\n"
 "PO-Revision-Date: 2023-11-14 13:53-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -410,11 +410,6 @@ msgid ""
 msgstr ""
 "O KMail não consegue detectar quando o editor selecionado é fechado. Para "
 "evitar a perda de dados, a edição do anexo será cancelada."
-
-#: composer/composer.cpp:288
-#, kde-format
-msgid "No key data for recipients found."
-msgstr "Nenhum dados chave para os destinatários foram encontrados."
 
 #: composer/composerviewbase.cpp:325
 #, kde-format
@@ -1575,6 +1570,11 @@ msgid ""
 msgstr ""
 "<p>Ocorreu um erro ao tentar exportar a chave a partir da infraestrutura:</"
 "p><p><b>Nenhuma chave válida encontrada para o usuário %1 (%2)</b></p>"
+
+#: job/composerjob.cpp:288
+#, kde-format
+msgid "No key data for recipients found."
+msgstr "Nenhum dados chave para os destinatários foram encontrados."
 
 #: job/maintextjob.cpp:58
 #, kde-format

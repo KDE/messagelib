@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 00:41+0000\n"
+"POT-Creation-Date: 2025-01-22 00:42+0000\n"
 "PO-Revision-Date: 2013-03-20 15:50+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -392,11 +392,6 @@ msgstr ""
 msgid ""
 "KMail is unable to detect when the chosen editor is closed. To avoid data "
 "loss, editing the attachment will be aborted."
-msgstr ""
-
-#: composer/composer.cpp:288
-#, kde-format
-msgid "No key data for recipients found."
 msgstr ""
 
 #: composer/composerviewbase.cpp:325
@@ -1416,6 +1411,11 @@ msgstr ""
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
 "p><p><b>No valid key found for user %1 (%2)</b></p>"
+msgstr ""
+
+#: job/composerjob.cpp:288
+#, kde-format
+msgid "No key data for recipients found."
 msgstr ""
 
 #: job/maintextjob.cpp:58

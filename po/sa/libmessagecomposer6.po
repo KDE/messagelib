@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 00:41+0000\n"
+"POT-Creation-Date: 2025-01-22 00:42+0000\n"
 "PO-Revision-Date: 2024-12-20 21:53+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -393,11 +393,6 @@ msgid ""
 msgstr ""
 "KMail चयनितः सम्पादकः कदा बन्दः भवति इति ज्ञातुं असमर्थः अस्ति । दत्तांशहानिः न भवेत् "
 "इति कृत्वा संलग्नकस्य सम्पादनं निरस्तं भविष्यति ।"
-
-#: composer/composer.cpp:288
-#, kde-format
-msgid "No key data for recipients found."
-msgstr "प्राप्तकर्तानां कृते कोऽपि प्रमुखदत्तांशः न प्राप्तः ।"
 
 #: composer/composerviewbase.cpp:325
 #, kde-format
@@ -1517,6 +1512,11 @@ msgid ""
 msgstr ""
 "<p>पृष्ठभागात् कीलं निर्यातयितुं प्रयतमाने त्रुटिः अभवत्:</p><p> <b>उपयोक्तुः %1 (%2) कृते "
 "वैधः कुञ्जी न प्राप्ता ।</b></p>"
+
+#: job/composerjob.cpp:288
+#, kde-format
+msgid "No key data for recipients found."
+msgstr "प्राप्तकर्तानां कृते कोऽपि प्रमुखदत्तांशः न प्राप्तः ।"
 
 #: job/maintextjob.cpp:58
 #, kde-format

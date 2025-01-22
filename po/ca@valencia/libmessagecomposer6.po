@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 00:41+0000\n"
+"POT-Creation-Date: 2025-01-22 00:42+0000\n"
 "PO-Revision-Date: 2024-11-17 20:49+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -397,11 +397,6 @@ msgid ""
 msgstr ""
 "KMail no pot detectar quan es tanca l'editor seleccionat. Per a evitar la "
 "pèrdua de dades, s'ha interromput l'edició de l'adjunt."
-
-#: composer/composer.cpp:288
-#, kde-format
-msgid "No key data for recipients found."
-msgstr "No s'han trobat dades de les claus per als destinataris."
 
 #: composer/composerviewbase.cpp:325
 #, kde-format
@@ -1549,6 +1544,11 @@ msgid ""
 msgstr ""
 "<p>S'ha produït un error en intentar exportar la clau des del dorsal:</"
 "p><p><b>No s'ha trobat cap clau vàlida per a l'usuari %1 (%2)</b></p>"
+
+#: job/composerjob.cpp:288
+#, kde-format
+msgid "No key data for recipients found."
+msgstr "No s'han trobat dades de les claus per als destinataris."
 
 #: job/maintextjob.cpp:58
 #, kde-format

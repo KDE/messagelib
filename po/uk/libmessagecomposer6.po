@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 00:41+0000\n"
+"POT-Creation-Date: 2025-01-22 00:42+0000\n"
 "PO-Revision-Date: 2024-08-16 21:48+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -395,11 +395,6 @@ msgid ""
 msgstr ""
 "KMail не може визначити момент закриття вибраного редактора. Щоб уникнути "
 "втратам даних, редагування долучення буде припинено."
-
-#: composer/composer.cpp:288
-#, kde-format
-msgid "No key data for recipients found."
-msgstr "Не знайдено ключових даних щодо отримувачів."
 
 #: composer/composerviewbase.cpp:325
 #, kde-format
@@ -1545,6 +1540,11 @@ msgstr ""
 "<p>Під час спроби експортування ключа за допомогою допоміжної програми "
 "сталася помилка:</p><p><b>Не знайдено чинного ключа для користувача %1 (%2)</"
 "b></p>"
+
+#: job/composerjob.cpp:288
+#, kde-format
+msgid "No key data for recipients found."
+msgstr "Не знайдено ключових даних щодо отримувачів."
 
 #: job/maintextjob.cpp:58
 #, kde-format

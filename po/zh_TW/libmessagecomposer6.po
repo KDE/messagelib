@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 00:41+0000\n"
+"POT-Creation-Date: 2025-01-22 00:42+0000\n"
 "PO-Revision-Date: 2024-08-25 02:07+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -391,11 +391,6 @@ msgid ""
 "KMail is unable to detect when the chosen editor is closed. To avoid data "
 "loss, editing the attachment will be aborted."
 msgstr "KMail 無法偵測指定編輯器何時關閉。為了避免資料遺失，將會中止附件編輯。"
-
-#: composer/composer.cpp:288
-#, kde-format
-msgid "No key data for recipients found."
-msgstr "找不到收件者的金鑰資料。"
 
 #: composer/composerviewbase.cpp:325
 #, kde-format
@@ -1483,6 +1478,11 @@ msgid ""
 msgstr ""
 "<p>從後端匯出金鑰時發生錯誤：</p><p><b>沒有找到使用者 %1 的有效金鑰 (%2)</"
 "b></p>"
+
+#: job/composerjob.cpp:288
+#, kde-format
+msgid "No key data for recipients found."
+msgstr "找不到收件者的金鑰資料。"
 
 #: job/maintextjob.cpp:58
 #, kde-format

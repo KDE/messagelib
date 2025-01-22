@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 00:41+0000\n"
+"POT-Creation-Date: 2025-01-22 00:42+0000\n"
 "PO-Revision-Date: 2024-12-24 18:07+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -391,11 +391,6 @@ msgid ""
 msgstr ""
 "KMail에서 선택한 편집기가 닫힌 시점을 알 수 없습니다. 데이터가 손실되지 않도"
 "록 첨부 파일 편집을 중단합니다."
-
-#: composer/composer.cpp:288
-#, kde-format
-msgid "No key data for recipients found."
-msgstr "받는 사람의 키를 찾을 수 없습니다."
 
 #: composer/composerviewbase.cpp:325
 #, kde-format
@@ -1511,6 +1506,11 @@ msgid ""
 msgstr ""
 "<p>백엔드에서 키를 내보내는 중 오류가 발생했습니다:</p><p><b>사용자 %1(%2)의 "
 "유효한 키 없음</b></p>"
+
+#: job/composerjob.cpp:288
+#, kde-format
+msgid "No key data for recipients found."
+msgstr "받는 사람의 키를 찾을 수 없습니다."
 
 #: job/maintextjob.cpp:58
 #, kde-format

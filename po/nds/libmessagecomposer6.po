@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 00:41+0000\n"
+"POT-Creation-Date: 2025-01-22 00:42+0000\n"
 "PO-Revision-Date: 2014-09-18 22:36+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -423,11 +423,6 @@ msgid ""
 "KMail is unable to detect when the chosen editor is closed. To avoid data "
 "loss, editing the attachment will be aborted."
 msgstr ""
-
-#: composer/composer.cpp:288
-#, kde-format
-msgid "No key data for recipients found."
-msgstr "Keen Slöteldaten för Adressaten funnen."
 
 #: composer/composerviewbase.cpp:325
 #, kde-format
@@ -1600,6 +1595,11 @@ msgid ""
 msgstr ""
 "<p>Dat geev en Fehler bi't Exporteren vun den Slötel ut dat Hülpprogramm:</"
 "p><p><b>%1</b></p>"
+
+#: job/composerjob.cpp:288
+#, kde-format
+msgid "No key data for recipients found."
+msgstr "Keen Slöteldaten för Adressaten funnen."
 
 #: job/maintextjob.cpp:58
 #, kde-format

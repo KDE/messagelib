@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 00:41+0000\n"
+"POT-Creation-Date: 2025-01-22 00:42+0000\n"
 "PO-Revision-Date: 2024-08-16 14:41+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -395,11 +395,6 @@ msgid ""
 msgstr ""
 "KMail nedokáže poznat kdy zvolený editor ukončíte. Aby se předešlo ztrátě "
 "dat, úprava přílohy bude zrušena."
-
-#: composer/composer.cpp:288
-#, kde-format
-msgid "No key data for recipients found."
-msgstr ""
 
 #: composer/composerviewbase.cpp:325
 #, kde-format
@@ -1497,6 +1492,11 @@ msgid ""
 msgstr ""
 "<p>Během pokusu o export klíče z podpůrné vrstvy došlo k chybě:</p><p><b>Pro "
 "uživatele %1 (%2) nebyl nalezen žádný platný klíč</b></p>"
+
+#: job/composerjob.cpp:288
+#, kde-format
+msgid "No key data for recipients found."
+msgstr ""
 
 #: job/maintextjob.cpp:58
 #, kde-format

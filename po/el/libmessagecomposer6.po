@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 00:41+0000\n"
+"POT-Creation-Date: 2025-01-22 00:42+0000\n"
 "PO-Revision-Date: 2024-09-19 17:22+0300\n"
 "Last-Translator: Antonis Geralis <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -394,11 +394,6 @@ msgid ""
 "KMail is unable to detect when the chosen editor is closed. To avoid data "
 "loss, editing the attachment will be aborted."
 msgstr ""
-
-#: composer/composer.cpp:288
-#, kde-format
-msgid "No key data for recipients found."
-msgstr "Δεν βρέθηκαν δεδομένα κλειδιού για τον παραλήπτη."
 
 #: composer/composerviewbase.cpp:325
 #, kde-format
@@ -1564,6 +1559,11 @@ msgid ""
 msgstr ""
 "<p>Παρουσιάστηκε ένα σφάλμα κατά την προσπάθεια εξαγωγής του κλειδιού από το "
 "σύστημα:</p><p><b>Δεν βρέθηκε έγκυρο κλειδί για τον χρήστη %1 (%2)</b></p>"
+
+#: job/composerjob.cpp:288
+#, kde-format
+msgid "No key data for recipients found."
+msgstr "Δεν βρέθηκαν δεδομένα κλειδιού για τον παραλήπτη."
 
 #: job/maintextjob.cpp:58
 #, kde-format

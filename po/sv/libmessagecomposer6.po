@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 00:41+0000\n"
+"POT-Creation-Date: 2025-01-22 00:42+0000\n"
 "PO-Revision-Date: 2024-08-16 09:32+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -394,11 +394,6 @@ msgid ""
 msgstr ""
 "Kmail kan inte detektera när den valda editorn stängs. För att undvika "
 "dataförlust, avbryts redigering av bilagan."
-
-#: composer/composer.cpp:288
-#, kde-format
-msgid "No key data for recipients found."
-msgstr "Ingen nyckeldata för mottagare hittades."
 
 #: composer/composerviewbase.cpp:325
 #, kde-format
@@ -1532,6 +1527,11 @@ msgid ""
 msgstr ""
 "<p>Ett fel uppstod vid försök att exportera nyckeln från bakgrundsprogrammet:"
 "</p><p><b>Ingen giltig nyckel hittades för användare %1 (%2)</b></p>"
+
+#: job/composerjob.cpp:288
+#, kde-format
+msgid "No key data for recipients found."
+msgstr "Ingen nyckeldata för mottagare hittades."
 
 #: job/maintextjob.cpp:58
 #, kde-format

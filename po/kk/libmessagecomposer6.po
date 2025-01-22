@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 00:41+0000\n"
+"POT-Creation-Date: 2025-01-22 00:42+0000\n"
 "PO-Revision-Date: 2013-10-10 05:09+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -420,11 +420,6 @@ msgid ""
 "KMail is unable to detect when the chosen editor is closed. To avoid data "
 "loss, editing the attachment will be aborted."
 msgstr ""
-
-#: composer/composer.cpp:288
-#, kde-format
-msgid "No key data for recipients found."
-msgstr "Алушыларға арналған кілт дерегі жоқ."
 
 #: composer/composerviewbase.cpp:325
 #, kde-format
@@ -1581,6 +1576,11 @@ msgid ""
 msgstr ""
 "<p>Орындаушы бағдарламадан кілтті экспорттау кезде бір қате орын алды:</p> "
 "<p><b>%1</b></p>"
+
+#: job/composerjob.cpp:288
+#, kde-format
+msgid "No key data for recipients found."
+msgstr "Алушыларға арналған кілт дерегі жоқ."
 
 #: job/maintextjob.cpp:58
 #, kde-format

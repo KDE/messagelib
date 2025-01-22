@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 00:41+0000\n"
+"POT-Creation-Date: 2025-01-22 00:42+0000\n"
 "PO-Revision-Date: 2024-09-08 12:49+0200\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -393,11 +393,6 @@ msgid ""
 msgstr ""
 "தேரந்தெடுத்துள்ள உரைதிருத்தி மூடப்படுவதை கேமெயிலால் கண்டறிய முடியாது. தரவிழப்பைத் "
 "தவிர்க்க, உடனிணைப்பைத் திருத்துவது கைவிடப்படும்."
-
-#: composer/composer.cpp:288
-#, kde-format
-msgid "No key data for recipients found."
-msgstr "பெறுநர்களுக்கான சாவி விவரங்கள் கண்டுபிடிக்கப்படவில்லை."
 
 #: composer/composerviewbase.cpp:325
 #, kde-format
@@ -1489,6 +1484,11 @@ msgid ""
 msgstr ""
 "<p>பின்நிலையிலிருந்து சாவியை ஏற்றுமதி செய்வதில் சிக்கல் நேர்ந்த‍து:</p><p><b>%1 (%2) "
 "என்ற பயனருக்கான செல்லுபடியாகும் சாவி ஏதுமில்லை</b></p>"
+
+#: job/composerjob.cpp:288
+#, kde-format
+msgid "No key data for recipients found."
+msgstr "பெறுநர்களுக்கான சாவி விவரங்கள் கண்டுபிடிக்கப்படவில்லை."
 
 #: job/maintextjob.cpp:58
 #, kde-format
