@@ -1,5 +1,5 @@
 name: messagelib
-description: Messagelib Library which contains MessageComposer, MessageCore, MessageList, MessageViewer, MimeTreeParser, TemplateParser and WebEngineViewer 
+description: Messagelib Library which contains MessageComposer, MessageCore, MessageList, MessageViewer, MimeTreeParser, TemplateParser and WebEngineViewer
 maintainer: mlaurent
 public_lib: true
 type: functional
@@ -8,18 +8,18 @@ platforms:
     - name: Linux
     - name: FreeBSD
     - name: macOS
-    - name: Windows    
+    - name: Windows
 irc: akonadi
 portingAid: false
 deprecated: false
 libraries:
- - cmake: "KPim6::MessageComposer"
- - cmake: "KPim6::MessageCore"
- - cmake: "KPim6::MessageList"
- - cmake: "KPim6::MessageViewer"
- - cmake: "KPim6::MimeTreeParser"
- - cmake: "KPim6::TemplateParser"
- - cmake: "KPim6::WebEngineViewer"
+    - cmake: "KPim6::MessageComposer"
+    - cmake: "KPim6::MessageCore"
+    - cmake: "KPim6::MessageList"
+    - cmake: "KPim6::MessageViewer"
+    - cmake: "KPim6::MimeTreeParser"
+    - cmake: "KPim6::TemplateParser"
+    - cmake: "KPim6::WebEngineViewer"
 cmakename: KPim6MessageCore
 # FIXME kapidox does not support more than one cmake module per repo yet
 #cmakename: KPim6MessageComposer
@@ -30,10 +30,10 @@ cmakename: KPim6MessageCore
 #cmakename: KPim6TemplateParser
 
 public_source_dirs:
- - messagecomposer
- - messagecore
- - messagelist
- - messageviewer
- - mimetreeparser
- - templateparser
- - webengineviewer
+    - messagecomposer
+    - messagecore
+    - messagelist
+    - messageviewer
+    - mimetreeparser
+    - templateparser
+    - webengineviewer

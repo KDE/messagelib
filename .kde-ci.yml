@@ -2,33 +2,33 @@
 # SPDX-License-Identifier: CC0-1.0
 
 Dependencies:
-- 'on': ['Linux', 'FreeBSD', 'Windows']
-  'require':
+ - 'on': ['Linux', 'FreeBSD', 'Windows']
+   'require':
     'frameworks/ktexttemplate': '@latest-kf6'
     'frameworks/extra-cmake-modules': '@latest-kf6'
-    'frameworks/kcontacts' : '@latest-kf6'
-    'frameworks/kservice' : '@latest-kf6'
-    'pim/akonadi' : '@same'
-    'pim/akonadi-contacts' : '@same'
-    'pim/akonadi-mime' : '@same'
-    'pim/grantleetheme' : '@same'
-    'pim/kidentitymanagement' : '@same'
-    'pim/kmailtransport' : '@same'
-    'pim/kmbox' : '@same'
-    'pim/kmime' : '@same'
-    'pim/kpimtextedit' : '@same'
-    'pim/libgravatar' : '@same'
-    'pim/libkdepim' : '@same'
-    'pim/libkleo' : '@same'
-    'pim/pimcommon' : '@same'
+    'frameworks/kcontacts': '@latest-kf6'
+    'frameworks/kservice': '@latest-kf6'
+    'pim/akonadi': '@same'
+    'pim/akonadi-contacts': '@same'
+    'pim/akonadi-mime': '@same'
+    'pim/grantleetheme': '@same'
+    'pim/kidentitymanagement': '@same'
+    'pim/kmailtransport': '@same'
+    'pim/kmbox': '@same'
+    'pim/kmime': '@same'
+    'pim/kpimtextedit': '@same'
+    'pim/libgravatar': '@same'
+    'pim/libkdepim': '@same'
+    'pim/libkleo': '@same'
+    'pim/pimcommon': '@same'
     'frameworks/kcolorscheme': '@latest-kf6'
-    'libraries/qca' : '@latest-kf6'
+    'libraries/qca': '@latest-kf6'
     'libraries/ktextaddons': '@latest-kf6'
 
-- 'on': ['Linux', 'FreeBSD']
-  'require':
-    'pim/akonadi-search' : '@same'
+ - 'on': ['Linux', 'FreeBSD']
+   'require':
+    'pim/akonadi-search': '@same'
 
 
 Options:
-  json-validate-ignore: ['webengineviewer/src/checkphishingurl/autotests/data/empty2.json']
+ json-validate-ignore: ['webengineviewer/src/checkphishingurl/autotests/data/empty2.json']

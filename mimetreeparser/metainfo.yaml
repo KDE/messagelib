@@ -1,5 +1,5 @@
 maintainer:
-description: MimeTreeParser Library 
+description: MimeTreeParser Library
 tier: 3
 type: functional
 platforms:
@@ -8,6 +8,5 @@ portingAid: false
 deprecated: false
 release: false
 libraries:
- - cmake: "KF6::MimeTreeParser"
+    - cmake: "KF6::MimeTreeParser"
 cmakename: KF6MimeTreeParser
-

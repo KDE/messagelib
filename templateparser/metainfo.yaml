@@ -1,5 +1,5 @@
 maintainer: mlaurent
-description: TemplateParser Library 
+description: TemplateParser Library
 tier: 3
 type: functional
 platforms:
@@ -8,6 +8,5 @@ portingAid: false
 deprecated: false
 release: false
 libraries:
- - cmake: "KF6::TemplateParser"
+    - cmake: "KF6::TemplateParser"
 cmakename: KF6TemplateParser
-

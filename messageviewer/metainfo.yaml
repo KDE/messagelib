@@ -1,5 +1,5 @@
 maintainer: mlaurent
-description: MessageViewer Library 
+description: MessageViewer Library
 tier: 3
 type: functional
 platforms:
@@ -8,6 +8,5 @@ portingAid: false
 deprecated: false
 release: false
 libraries:
- - cmake: "KF6::MessageViewer"
+    - cmake: "KF6::MessageViewer"
 cmakename: KF6MessageViewer
-

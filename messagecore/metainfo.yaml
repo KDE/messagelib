@@ -1,5 +1,5 @@
 maintainer: mlaurent
-description: MessageCore Library 
+description: MessageCore Library
 tier: 3
 type: functional
 platforms:
@@ -8,6 +8,5 @@ portingAid: false
 deprecated: false
 release: false
 libraries:
- - cmake: "KF6::MessageCore"
+    - cmake: "KF6::MessageCore"
 cmakename: KF6MessageCore
-
