@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-22 00:42+0000\n"
-"PO-Revision-Date: 2024-09-18 22:31+0300\n"
+"PO-Revision-Date: 2025-01-24 09:27+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 24.12.0\n"
 
 #: attachment/attachmentcontrollerbase.cpp:166
 #, kde-format
@@ -54,7 +54,7 @@ msgstr "צירוף הקובץ נכשל"
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to reload attachment"
-msgstr "רענון הקובץ המצורף נכשל"
+msgstr "ריענון הקובץ המצורף נכשל"
 
 #: attachment/attachmentcontrollerbase.cpp:320
 #, kde-format
@@ -219,7 +219,7 @@ msgstr "בחירה בהכול"
 #: attachment/attachmentcontrollerbase.cpp:543
 #, kde-format
 msgid "Reload"
-msgstr "רענון"
+msgstr "ריענון"
 
 #: attachment/attachmentcontrollerbase.cpp:677
 #: attachment/attachmentcontrollerbase.cpp:703
