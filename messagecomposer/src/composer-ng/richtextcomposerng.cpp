@@ -127,47 +127,52 @@ static bool isSpecial(const QTextCharFormat &charFormat)
 
 bool RichTextComposerNg::processModifyText(QKeyEvent *e)
 {
-    if (d->autoCorrection && d->autoCorrection->autoCorrectionSettings()->isEnabledAutoCorrection()) {
-        if ((e->key() == Qt::Key_Space) || (e->key() == Qt::Key_Enter) || (e->key() == Qt::Key_Return)) {
-            if (!isLineQuoted(textCursor().block().text()) && !textCursor().hasSelection()) {
-                const QTextCharFormat initialTextFormat = textCursor().charFormat();
-                const bool richText = (textMode() == RichTextComposer::Rich);
-                int position = textCursor().position();
-                const bool addSpace = d->autoCorrection->autocorrect(richText, *document(), position);
-                QTextCursor cur = textCursor();
-                cur.setPosition(position);
-                const bool spacePressed = (e->key() == Qt::Key_Space);
-                if (overwriteMode() && spacePressed) {
-                    if (addSpace) {
-                        const QChar insertChar = u' ';
-                        if (!cur.atBlockEnd()) {
-                            cur.movePosition(QTextCursor::NextCharacter, QTextCursor::KeepAnchor, 1);
-                        }
-                        if (richText && !isSpecial(initialTextFormat)) {
-                            cur.insertText(insertChar, initialTextFormat);
-                        } else {
-                            cur.insertText(insertChar);
-                        }
-                        setTextCursor(cur);
-                    }
-                } else {
-                    const QChar insertChar = spacePressed ? u' ' : u'\n';
-                    if (richText && !isSpecial(initialTextFormat)) {
-                        if ((spacePressed && addSpace) || !spacePressed) {
-                            cur.insertText(insertChar, initialTextFormat);
-                        }
-                    } else {
-                        if ((spacePressed && addSpace) || !spacePressed) {
-                            cur.insertText(insertChar);
-                        }
-                    }
-                    setTextCursor(cur);
-                }
-                return true;
+    if (!d->autoCorrection || !d->autoCorrection->autoCorrectionSettings()->isEnabledAutoCorrection()) {
+        return false;
+    }
+
+    if ((e->key() != Qt::Key_Space) && (e->key() != Qt::Key_Enter) && (e->key() != Qt::Key_Return)) {
+        return false;
+    }
+
+    if (isLineQuoted(textCursor().block().text()) || textCursor().hasSelection()) {
+        return false;
+    }
+
+    const QTextCharFormat initialTextFormat = textCursor().charFormat();
+    const bool richText = (textMode() == RichTextComposer::Rich);
+    int position = textCursor().position();
+    const bool addSpace = d->autoCorrection->autocorrect(richText, *document(), position);
+    QTextCursor cur = textCursor();
+    cur.setPosition(position);
+    const bool spacePressed = (e->key() == Qt::Key_Space);
+    if (overwriteMode() && spacePressed) {
+        if (addSpace) {
+            const QChar insertChar = u' ';
+            if (!cur.atBlockEnd()) {
+                cur.movePosition(QTextCursor::NextCharacter, QTextCursor::KeepAnchor, 1);
+            }
+            if (richText && !isSpecial(initialTextFormat)) {
+                cur.insertText(insertChar, initialTextFormat);
+            } else {
+                cur.insertText(insertChar);
+            }
+            setTextCursor(cur);
+        }
+    } else {
+        const QChar insertChar = spacePressed ? u' ' : u'\n';
+        if (richText && !isSpecial(initialTextFormat)) {
+            if ((spacePressed && addSpace) || !spacePressed) {
+                cur.insertText(insertChar, initialTextFormat);
+            }
+        } else {
+            if ((spacePressed && addSpace) || !spacePressed) {
+                cur.insertText(insertChar);
             }
         }
+        setTextCursor(cur);
     }
-    return false;
+    return true;
 }
 
 void RichTextComposerNgPrivate::fixHtmlFontSize(QString &cleanHtml) const
@@ -294,25 +299,20 @@ static void insertSignatureHelper(const QString &signature,
                                   bool isHtml,
                                   bool addNewlines)
 {
-    if (!signature.isEmpty()) {
-        // Save the modified state of the document, as inserting a signature
-        // shouldn't change this. Restore it at the end of this function.
-        bool isModified = textEdit->document()->isModified();
+    if (signature.isEmpty()) {
+        return;
+    }
 
-        // Move to the desired position, where the signature should be inserted
-        QTextCursor cursor = textEdit->textCursor();
-        QTextCursor oldCursor = cursor;
-        cursor.beginEditBlock();
+    // Save the modified state of the document, as inserting a signature
+    // shouldn't change this. Restore it at the end of this function.
+    bool isModified = textEdit->document()->isModified();
 
-        if (placement == KIdentityManagementCore::Signature::End) {
-            cursor.movePosition(QTextCursor::End);
-        } else if (placement == KIdentityManagementCore::Signature::Start) {
-            cursor.movePosition(QTextCursor::Start);
-        } else if (placement == KIdentityManagementCore::Signature::AtCursor) {
-            cursor.movePosition(QTextCursor::StartOfLine);
-        }
-        textEdit->setTextCursor(cursor);
+    // Move to the desired position, where the signature should be inserted
+    QTextCursor cursor = textEdit->textCursor();
+    QTextCursor oldCursor = cursor;
+    cursor.beginEditBlock();
 
+<<<<<<< HEAD
         QString lineSep;
         if (addNewlines) {
             if (isHtml) {
@@ -321,57 +321,84 @@ static void insertSignatureHelper(const QString &signature,
                 lineSep = u'\n';
             }
         }
-
-        // Insert the signature and newlines depending on where it was inserted.
-        int newCursorPos = -1;
-        QString headSep;
-        QString tailSep;
-
-        if (placement == KIdentityManagementCore::Signature::End) {
-            // There is one special case when re-setting the old cursor: The cursor
-            // was at the end. In this case, QTextEdit has no way to know
-            // if the signature was added before or after the cursor, and just
-            // decides that it was added before (and the cursor moves to the end,
-            // but it should not when appending a signature). See bug 167961
-            if (oldCursor.position() == textEdit->toPlainText().length()) {
-                newCursorPos = oldCursor.position();
-            }
-            headSep = lineSep;
-        } else if (placement == KIdentityManagementCore::Signature::Start) {
-            // When prepending signatures, add a couple of new lines before
-            // the signature, and move the cursor to the beginning of the QTextEdit.
-            // People tends to insert new text there.
-            newCursorPos = 0;
-            headSep = lineSep + lineSep;
-            if (!isCursorAtEndOfLine(cursor)) {
-                tailSep = lineSep;
-            }
-        } else if (placement == KIdentityManagementCore::Signature::AtCursor) {
-            if (!isCursorAtEndOfLine(cursor)) {
-                tailSep = lineSep;
+||||||| parent of 6bd01c1a2 (richtextcomposerng: Use early return)
+        QString lineSep;
+        if (addNewlines) {
+            if (isHtml) {
+                lineSep = QStringLiteral("<br>");
+            } else {
+                lineSep = QLatin1Char('\n');
             }
         }
+=======
+    if (placement == KIdentityManagementCore::Signature::End) {
+        cursor.movePosition(QTextCursor::End);
+    } else if (placement == KIdentityManagementCore::Signature::Start) {
+        cursor.movePosition(QTextCursor::Start);
+    } else if (placement == KIdentityManagementCore::Signature::AtCursor) {
+        cursor.movePosition(QTextCursor::StartOfLine);
+    }
+    textEdit->setTextCursor(cursor);
+>>>>>>> 6bd01c1a2 (richtextcomposerng: Use early return)
 
-        const QString full_signature = headSep + signature + tailSep;
+    QString lineSep;
+    if (addNewlines) {
         if (isHtml) {
-            textEdit->insertHtml(full_signature);
+            lineSep = QStringLiteral("<br>");
         } else {
-            textEdit->insertPlainText(full_signature);
+            lineSep = QLatin1Char('\n');
         }
+    }
 
-        cursor.endEditBlock();
-        if (newCursorPos != -1) {
-            oldCursor.setPosition(newCursorPos);
+    // Insert the signature and newlines depending on where it was inserted.
+    int newCursorPos = -1;
+    QString headSep;
+    QString tailSep;
+
+    if (placement == KIdentityManagementCore::Signature::End) {
+        // There is one special case when re-setting the old cursor: The cursor
+        // was at the end. In this case, QTextEdit has no way to know
+        // if the signature was added before or after the cursor, and just
+        // decides that it was added before (and the cursor moves to the end,
+        // but it should not when appending a signature). See bug 167961
+        if (oldCursor.position() == textEdit->toPlainText().length()) {
+            newCursorPos = oldCursor.position();
         }
-
-        textEdit->setTextCursor(oldCursor);
-        textEdit->ensureCursorVisible();
-
-        textEdit->document()->setModified(isModified);
-
-        if (isHtml) {
-            textEdit->activateRichText();
+        headSep = lineSep;
+    } else if (placement == KIdentityManagementCore::Signature::Start) {
+        // When prepending signatures, add a couple of new lines before
+        // the signature, and move the cursor to the beginning of the QTextEdit.
+        // People tends to insert new text there.
+        newCursorPos = 0;
+        headSep = lineSep + lineSep;
+        if (!isCursorAtEndOfLine(cursor)) {
+            tailSep = lineSep;
         }
+    } else if (placement == KIdentityManagementCore::Signature::AtCursor) {
+        if (!isCursorAtEndOfLine(cursor)) {
+            tailSep = lineSep;
+        }
+    }
+
+    const QString full_signature = headSep + signature + tailSep;
+    if (isHtml) {
+        textEdit->insertHtml(full_signature);
+    } else {
+        textEdit->insertPlainText(full_signature);
+    }
+
+    cursor.endEditBlock();
+    if (newCursorPos != -1) {
+        oldCursor.setPosition(newCursorPos);
+    }
+
+    textEdit->setTextCursor(oldCursor);
+    textEdit->ensureCursorVisible();
+
+    textEdit->document()->setModified(isModified);
+
+    if (isHtml) {
+        textEdit->activateRichText();
     }
 }
 
@@ -379,32 +406,33 @@ void RichTextComposerNg::insertSignature(const KIdentityManagementCore::Signatur
                                          KIdentityManagementCore::Signature::Placement placement,
                                          KIdentityManagementCore::Signature::AddedText addedText)
 {
-    if (signature.isEnabledSignature()) {
-        QString signatureStr;
-        bool ok = false;
-        QString errorMessage;
-        if (addedText & KIdentityManagementCore::Signature::AddSeparator) {
-            signatureStr = signature.withSeparator(&ok, &errorMessage);
-        } else {
-            signatureStr = signature.rawText(&ok, &errorMessage);
-        }
+    if (!signature.isEnabledSignature()) {
+        return;
+    }
+    QString signatureStr;
+    bool ok = false;
+    QString errorMessage;
+    if (addedText & KIdentityManagementCore::Signature::AddSeparator) {
+        signatureStr = signature.withSeparator(&ok, &errorMessage);
+    } else {
+        signatureStr = signature.rawText(&ok, &errorMessage);
+    }
 
-        if (!ok && !errorMessage.isEmpty()) {
-            KMessageBox::error(nullptr, errorMessage);
-        }
+    if (!ok && !errorMessage.isEmpty()) {
+        KMessageBox::error(nullptr, errorMessage);
+    }
 
-        insertSignatureHelper(signatureStr,
-                              this,
-                              placement,
-                              (signature.isInlinedHtml() && signature.type() == KIdentityManagementCore::Signature::Inlined),
-                              (addedText & KIdentityManagementCore::Signature::AddNewLines));
+    insertSignatureHelper(signatureStr,
+                          this,
+                          placement,
+                          (signature.isInlinedHtml() && signature.type() == KIdentityManagementCore::Signature::Inlined),
+                          (addedText & KIdentityManagementCore::Signature::AddNewLines));
 
-        // We added the text of the signature above, now it is time to add the images as well.
-        if (signature.isInlinedHtml()) {
-            const QList<KIdentityManagementCore::Signature::EmbeddedImagePtr> embeddedImages = signature.embeddedImages();
-            for (const KIdentityManagementCore::Signature::EmbeddedImagePtr &image : embeddedImages) {
-                composerControler()->composerImages()->loadImage(image->image, image->name, image->name);
-            }
+    // We added the text of the signature above, now it is time to add the images as well.
+    if (signature.isInlinedHtml()) {
+        const QList<KIdentityManagementCore::Signature::EmbeddedImagePtr> embeddedImages = signature.embeddedImages();
+        for (const KIdentityManagementCore::Signature::EmbeddedImagePtr &image : embeddedImages) {
+            composerControler()->composerImages()->loadImage(image->image, image->name, image->name);
         }
     }
 }
@@ -421,45 +449,44 @@ void RichTextComposerNg::fixHtmlFontSize(QString &cleanHtml) const
 
 void RichTextComposerNg::forceAutoCorrection(bool selectedText)
 {
-    if (document()->isEmpty()) {
+    if (document()->isEmpty() || !d->autoCorrection || !d->autoCorrection->autoCorrectionSettings()->isEnabledAutoCorrection()) {
         return;
     }
-    if (d->autoCorrection && d->autoCorrection->autoCorrectionSettings()->isEnabledAutoCorrection()) {
-        const bool richText = (textMode() == RichTextComposer::Rich);
-        const int initialPosition = textCursor().position();
-        QTextCursor cur = textCursor();
-        cur.beginEditBlock();
-        if (selectedText && cur.hasSelection()) {
-            const int positionStart = qMin(cur.selectionEnd(), cur.selectionStart());
-            const int positionEnd = qMax(cur.selectionEnd(), cur.selectionStart());
-            cur.setPosition(positionStart);
-            int cursorPosition = positionStart;
-            while (cursorPosition < positionEnd) {
-                if (isLineQuoted(cur.block().text())) {
-                    cur.movePosition(QTextCursor::NextBlock);
-                } else {
-                    cur.movePosition(QTextCursor::NextWord);
-                }
-                cursorPosition = cur.position();
-                (void)d->autoCorrection->autocorrect(richText, *document(), cursorPosition);
+
+    const bool richText = (textMode() == RichTextComposer::Rich);
+    const int initialPosition = textCursor().position();
+    QTextCursor cur = textCursor();
+    cur.beginEditBlock();
+    if (selectedText && cur.hasSelection()) {
+        const int positionStart = qMin(cur.selectionEnd(), cur.selectionStart());
+        const int positionEnd = qMax(cur.selectionEnd(), cur.selectionStart());
+        cur.setPosition(positionStart);
+        int cursorPosition = positionStart;
+        while (cursorPosition < positionEnd) {
+            if (isLineQuoted(cur.block().text())) {
+                cur.movePosition(QTextCursor::NextBlock);
+            } else {
+                cur.movePosition(QTextCursor::NextWord);
             }
-        } else {
-            cur.movePosition(QTextCursor::Start);
-            while (!cur.atEnd()) {
-                if (isLineQuoted(cur.block().text())) {
-                    cur.movePosition(QTextCursor::NextBlock);
-                } else {
-                    cur.movePosition(QTextCursor::NextWord);
-                }
-                int cursorPosition = cur.position();
-                (void)d->autoCorrection->autocorrect(richText, *document(), cursorPosition);
+            cursorPosition = cur.position();
+            (void)d->autoCorrection->autocorrect(richText, *document(), cursorPosition);
+        }
+    } else {
+        cur.movePosition(QTextCursor::Start);
+        while (!cur.atEnd()) {
+            if (isLineQuoted(cur.block().text())) {
+                cur.movePosition(QTextCursor::NextBlock);
+            } else {
+                cur.movePosition(QTextCursor::NextWord);
             }
+            int cursorPosition = cur.position();
+            (void)d->autoCorrection->autocorrect(richText, *document(), cursorPosition);
         }
-        cur.endEditBlock();
-        if (cur.position() != initialPosition) {
-            cur.setPosition(initialPosition);
-            setTextCursor(cur);
-        }
+    }
+    cur.endEditBlock();
+    if (cur.position() != initialPosition) {
+        cur.setPosition(initialPosition);
+        setTextCursor(cur);
     }
 }
 
