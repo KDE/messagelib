@@ -18,13 +18,13 @@
 # Vasee Vaseeharan <vasee@ieee.org>, 2004.
 # Ambalam <tamilpc@ambalam.com>, 2004.
 # root <root@localhost.localdomain>, 2004.
-# SPDX-FileCopyrightText: 2022, 2023, 2024 Kishore G <kishore96@gmail.com>
+# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025 Kishore G <kishore96@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-07 00:42+0000\n"
-"PO-Revision-Date: 2024-11-17 21:52+0530\n"
+"PO-Revision-Date: 2025-01-26 17:43+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -32,7 +32,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.08.3\n"
+"X-Generator: Lokalize 24.12.1\n"
 
 #: core/aggregation.cpp:178
 #, kde-format
@@ -220,8 +220,7 @@ msgid "Ignored"
 msgstr "பொருட்படுத்தாதது"
 
 #: core/item.cpp:296
-#, fuzzy, kde-format
-#| msgid "Queued"
+#, kde-format
 msgctxt "Status of an item"
 msgid "Queued"
 msgstr "வரிசையாக்கப்பட்டது"
@@ -1271,34 +1270,29 @@ msgid "Mail is forwarded"
 msgstr "முன்னனுப்பிய அஞ்சல்"
 
 #: core/widgets/searchlinecommand.cpp:193
-#, fuzzy, kde-format
-#| msgid "Mail is Unread"
+#, kde-format
 msgid "Mail is encrypted"
-msgstr "படிக்காத அஞ்சல்"
+msgstr "மறையாக்கப்பட்ட அஞ்சல்"
 
 #: core/widgets/searchlinecommand.cpp:195
-#, fuzzy, kde-format
-#| msgid "Mail is read"
+#, kde-format
 msgid "Mail is queued"
-msgstr "படித்த அஞ்சல்"
+msgstr "வரிசைப்படுத்தப்பட்ட அஞ்சல்"
 
 #: core/widgets/searchlinecommand.cpp:197
-#, fuzzy, kde-format
-#| msgid "Mail is Unread"
+#, kde-format
 msgid "Mail is sent"
-msgstr "படிக்காத அஞ்சல்"
+msgstr "அனுப்பிய அஞ்சல்"
 
 #: core/widgets/searchlinecommand.cpp:199
-#, fuzzy, kde-format
-#| msgid "Mail is replied"
+#, kde-format
 msgid "Mail is deleted"
-msgstr "பதிலளித்த அஞ்சல்"
+msgstr "நீக்கப்பட்ட அஞ்சல்"
 
 #: core/widgets/searchlinecommand.cpp:201
-#, fuzzy, kde-format
-#| msgid "Mail has invitation"
+#, kde-format
 msgid "Mail is action"
-msgstr "அழைப்பிதழைக் கொண்ட அஞ்சல்"
+msgstr "செயலுக்கான அஞ்சல்"
 
 #: core/widgets/searchlinecommand.cpp:211
 #, kde-format
@@ -1409,41 +1403,34 @@ msgid "Forwarded"
 msgstr "முன்னனுப்பப்பட்டது"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Encrypt"
+#, kde-format
 msgctxt "@action:button"
 msgid "Encrypted"
-msgstr "மறையாக்கம்"
+msgstr "மறையாக்கப்பட்டது"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:66
-#, fuzzy, kde-format
-#| msgid "Queued"
+#, kde-format
 msgctxt "@action:button"
 msgid "Queued"
-msgstr "வரிசையாக்கப்பட்டது"
+msgstr "வரிசைப்படுத்தப்பட்டது"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Sent"
+#, kde-format
 msgctxt "@action:button"
 msgid "Sent"
-msgstr "அனுப்பப்பட்டது"
+msgstr "அனுப்பியது"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:68
-#, fuzzy, kde-format
-#| msgctxt "MDN type"
-#| msgid "Deleted"
+#, kde-format
 msgctxt "@action:button"
 msgid "Deleted"
 msgstr "நீக்கப்பட்டது"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:69
-#, fuzzy, kde-format
-#| msgid "Action Item"
+#, kde-format
 msgctxt "@action:button"
 msgid "Action"
-msgstr "செயலுக்கான ஒன்று"
+msgstr "செயலுக்கானது"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:71
 #, kde-format
