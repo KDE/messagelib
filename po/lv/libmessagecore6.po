@@ -1,7 +1,7 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# SPDX-FileCopyrightText: 2024 Toms Trasūns <toms.trasuns@posteo.net>
+# SPDX-FileCopyrightText: 2024, 2025 Toms Trasūns <toms.trasuns@posteo.net>
 # Viesturs Zarins <viesturs.zarins@mii.lu.lv>, 2010.
 # Māris Nartišs <maris.kde@gmail.com>, 2024.
 msgid ""
@@ -9,14 +9,14 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-14 00:40+0000\n"
-"PO-Revision-Date: 2024-09-05 15:36+0300\n"
+"PO-Revision-Date: 2025-01-27 17:20+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.08.0\n"
+"X-Generator: Lokalize 24.12.1\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
 
@@ -33,12 +33,12 @@ msgstr "viesturs.zarins@mii.lu.lv, toms.trasuns@posteo.net"
 #: attachment/attachmentcompressjob.cpp:50
 #, kde-format
 msgid "Could not initiate attachment compression."
-msgstr "Neizdevās uzsākt pielikuma saspiešanu."
+msgstr "Neizdevās uzsākt piesaistnes saspiešanu."
 
 #: attachment/attachmentcompressjob.cpp:60
 #, kde-format
 msgid "Could not compress the attachment."
-msgstr "Neizdevās saspiest pielikumu."
+msgstr "Neizdevās saspiest piesaistni."
 
 #: attachment/attachmentfromfolderjob.cpp:51
 #, kde-format
@@ -51,7 +51,7 @@ msgid ""
 "The resulting attachment would be larger than the maximum allowed size, "
 "aborting."
 msgstr ""
-"Rezultātā pielikums pārsniegtu maksimālo atļauto izmēru. Darbība tiek "
+"Rezultātā piesaistne pārsniegtu maksimālo atļauto izmēru. Darbība tiek "
 "atcelta."
 
 #: attachment/attachmentfromfolderjob.cpp:100
@@ -108,9 +108,9 @@ msgid ""
 "message, a binary file encoded with base64 will take up four thirds the "
 "actual size of the file.</p>"
 msgstr ""
-"<p>Aptuvens pielikuma izmērs:</p><p>ņemiet vērā ka e-pastā binārie dati tiek "
-"kodēti ar „base64“ un aizņems līdz pat četrām trešdaļām no datnes sākotnējā "
-"izmēra.</p>"
+"<p>Aptuvens piesaistnes izmērs:</p><p>ņemiet vērā ka e-pastā binārie dati "
+"tiek kodēti ar „base64“ un aizņems līdz pat četrām trešdaļām no datnes "
+"sākotnējā izmēra.</p>"
 
 #: attachment/attachmentpropertiesdialog.cpp:147
 #, kde-format
@@ -133,9 +133,9 @@ msgid ""
 "most mail agents will show this information in their message previews "
 "alongside the attachment's icon.</p>"
 msgstr ""
-"<p>Daļas apraksts:</p><p>šis ir vienkārši informatīvs apraksts, tāpat kā "
-"visai vēstulei ir temats. Vairums pasta aģentu šo informāciju parādīs "
-"vēstuļu priekšskatījumā pie pielikuma ikonas.</p>"
+"<p>Daļas apraksts:</p><p>šis ir vienkārši informatīvs apraksts līdzīgi kā "
+"temats vēstulei. Vairums e-pasta aģentu šo informāciju parādīs vēstuļu "
+"priekšskatījumā pie piesaistnes ikonas.</p>"
 
 #: attachment/attachmentpropertiesdialog.cpp:161
 #, kde-format
@@ -165,8 +165,8 @@ msgid ""
 msgstr ""
 "<p>Atzīmējiet šo, ja vēlaties saņēmējam ieteikt automātisku (iekļautu) šīs "
 "daļas parādīšanu vēstulē, bet ne noklusēto ikonas skatu.</p><p>Tehniski šis "
-"tiek realizēts, uzstādot pielikuma <em>Content-Disposition</em> galveni uz "
-"„iekļauts“ („inline“) noklusētā „pielikums“ („attachment“) vietā.</p>"
+"tiek realizēts, uzstādot piesaistnes <em>Content-Disposition</em> galveni uz "
+"„iekļauts“ („inline“) noklusētās „piesaistne“ („attachment“) vietā.</p>"
 
 #: attachment/attachmentpropertiesdialog.cpp:180
 #, kde-format
@@ -192,7 +192,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Attachment Properties"
-msgstr "Pielikuma īpašības"
+msgstr "Piesaistnes īpašības"
 
 #: attachment/attachmentupdatejob.cpp:40
 #, kde-format
@@ -250,13 +250,13 @@ msgstr "Ieteikt automātisku parādīšanu"
 #: attachment/ui/attachmentpropertiesdialog.ui:194
 #, kde-format
 msgid "Encrypt this attachment"
-msgstr "Šifrēt šo pielikumu"
+msgstr "Šifrēt šo piesaistni"
 
 #. i18n: ectx: property (text), widget (QCheckBox, sign)
 #: attachment/ui/attachmentpropertiesdialog.ui:201
 #, kde-format
 msgid "Sign this attachment"
-msgstr "Parakstīt šo pielikumu"
+msgstr "Parakstīt šo piesaistne"
 
 #. i18n: ectx: whatsthis, entry (OverrideCharacterEncoding), group (Reader)
 #: settings/messagecore.kcfg:32
@@ -311,7 +311,7 @@ msgid ""
 "The maximum size in bits that email attachments are allowed to have (-1 for "
 "no limit)"
 msgstr ""
-"Maksimālais izmērs bitos, kas ir atļauti e-pasta pielikumiem (-1 nozīmē "
+"Maksimālais izmērs bitos, kas ir atļauti e-pasta piesaistnei (-1 nozīmē "
 "neierobežotu)"
 
 #: utils/dateformatter.cpp:163

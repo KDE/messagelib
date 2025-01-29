@@ -1,14 +1,14 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the messagelib package.
 #
-# SPDX-FileCopyrightText: 2024 Toms Trasuns <toms.trasuns@posteo.net>
+# SPDX-FileCopyrightText: 2024, 2025 Toms Trasuns <toms.trasuns@posteo.net>
 # Māris Nartišs <maris.kde@gmail.com>, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-22 00:42+0000\n"
-"PO-Revision-Date: 2024-09-05 15:35+0300\n"
+"PO-Revision-Date: 2025-01-27 17:18+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -17,13 +17,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 24.08.0\n"
+"X-Generator: Lokalize 24.12.1\n"
 
 #: attachment/attachmentcontrollerbase.cpp:166
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to compress attachment"
-msgstr "Neizdevās saspiest pielikumu"
+msgstr "Neizdevās saspiest piesaistni"
 
 #: attachment/attachmentcontrollerbase.cpp:177
 #, kde-format
@@ -31,7 +31,7 @@ msgid ""
 "The compressed attachment is larger than the original. Do you want to keep "
 "the original one?"
 msgstr ""
-"Saspiestais pielikums ir lielāks par oriģinālu. Vai vēlaties paturēt "
+"Saspiestā piesaistne ir lielāka par oriģinālu. Vai vēlaties paturēt "
 "oriģinālu?"
 
 #: attachment/attachmentcontrollerbase.cpp:180
@@ -57,7 +57,7 @@ msgstr "Neizdevās pievienot datni"
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to reload attachment"
-msgstr "Neizdevās pārlādēt pielikumu"
+msgstr "Neizdevās pārlādēt piesaistni"
 
 #: attachment/attachmentcontrollerbase.cpp:320
 #, kde-format
@@ -124,7 +124,7 @@ msgstr "&Pievienot datni..."
 #: attachment/attachmentcontrollerbase.cpp:463
 #, kde-format
 msgid "Add Attachment..."
-msgstr "Pievienot pielikumu..."
+msgstr "Pievienot piesaistni..."
 
 #: attachment/attachmentcontrollerbase.cpp:467
 #, kde-format
@@ -160,7 +160,7 @@ msgstr "Pievienot tekstu un starpliktuves"
 #: attachment/attachmentcontrollerbase.cpp:493
 #, kde-format
 msgid "&Remove Attachment"
-msgstr "&Noņemt pielikumu"
+msgstr "&Noņemt piesaistni"
 
 #: attachment/attachmentcontrollerbase.cpp:494
 #, kde-format
@@ -194,7 +194,7 @@ msgstr "Rediģēt ar..."
 #: attachment/attachmentcontrollerbase.cpp:522
 #, kde-format
 msgid "&Save Attachment As..."
-msgstr "&Saglabāt pielikumu kā..."
+msgstr "&Saglabāt piesaistni kā..."
 
 #: attachment/attachmentcontrollerbase.cpp:523
 #, kde-format
@@ -205,7 +205,7 @@ msgstr "Saglabāt kā..."
 #, kde-format
 msgctxt "@action"
 msgid "Attachment Pr&operties..."
-msgstr "Pie&likuma īpašības..."
+msgstr "Piesaist&nes īpašības..."
 
 #: attachment/attachmentcontrollerbase.cpp:532
 #, kde-format
@@ -229,25 +229,25 @@ msgstr "Pārlādēt"
 #: attachment/attachmentcontrollerbase.cpp:753
 #, kde-format
 msgid "KMail was unable to write the attachment to a temporary file."
-msgstr "„KMail“ neizdevās rakstīt pielikumu pagaidu datnē."
+msgstr "„KMail“ neizdevās ierakstīt piesaistni pagaidu datnē."
 
 #: attachment/attachmentcontrollerbase.cpp:678
 #: attachment/attachmentcontrollerbase.cpp:704
 #, kde-format
 msgctxt "@title:window"
 msgid "Unable to open attachment"
-msgstr "Nevar atvērt pielikumu"
+msgstr "Nevar atvērt piesaistni"
 
 #: attachment/attachmentcontrollerbase.cpp:713
 #, kde-format
 msgid "KMail was unable to open the attachment"
-msgstr "„KMail“ nevar atvērt pielikumu"
+msgstr "„KMail“ nevar atvērt piesaistni"
 
 #: attachment/attachmentcontrollerbase.cpp:754 attachment/editorwatcher.cpp:196
 #, kde-format
 msgctxt "@title:window"
 msgid "Unable to edit attachment"
-msgstr "Nevar rediģēt pielikumu"
+msgstr "Nevar rediģēt piesaistni"
 
 #: attachment/attachmentcontrollerbase.cpp:795
 #, kde-format
@@ -258,7 +258,7 @@ msgstr "nenosaukts"
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Attachment As"
-msgstr "Saglabāt pielikumu kā"
+msgstr "Saglabāt piesaistni kā"
 
 #: attachment/attachmentcontrollerbase.cpp:821
 #, kde-format
@@ -326,7 +326,7 @@ msgstr "Atlasiet pievienojamo publisko atslēgu."
 #: attachment/attachmentmodel.cpp:122
 #, kde-format
 msgid "unnamed attachment"
-msgstr "nenosaukts pielikums"
+msgstr "nenosaukta piesaistne"
 
 #: attachment/attachmentmodel.cpp:256
 #, kde-format
@@ -394,7 +394,7 @@ msgid ""
 "loss, editing the attachment will be aborted."
 msgstr ""
 "„KMail“ nespēj noteikt, vai izvēlētais redaktors ir aizvērts. Lai izvairītos "
-"no informācijas zuduma, pielikuma rediģēšana tiks atcelta."
+"no informācijas zuduma, piesaistnes rediģēšana tiks atcelta."
 
 #: composer/composerviewbase.cpp:325
 #, kde-format
@@ -572,7 +572,7 @@ msgid ""
 "have not attached anything.\n"
 "Do you want to attach a file to your message?"
 msgstr ""
-"Izskatās, ka jūsu uzrakstītajai vēstulei vajadzētu saturēt pielikumu, tomēr "
+"Izskatās, ka jūsu uzrakstītajai vēstulei vajadzētu saturēt piesaistni, tomēr "
 "neesat tai neko pievienojis.\n"
 "Vai vēlaties vēstulei pievienot datni?"
 
@@ -1206,7 +1206,7 @@ msgid ""
 msgstr ""
 "\n"
 "Šis ir MIME kopsavilkuma pārsūtījums. Vēstules saturs ir pievienots "
-"pielikumā(-os).\n"
+"piesaistnei(-ēm).\n"
 "\n"
 "\n"
 
@@ -1472,12 +1472,12 @@ msgstr "Starpliktuvē nav atrasts teksts"
 #, kde-format
 msgctxt "@title:window"
 msgid "Define Attachment Name"
-msgstr "Definēt pielikuma nosaukumu"
+msgstr "Definēt piesaistnes nosaukumu"
 
 #: job/attachmentclipboardjob.cpp:46
 #, kde-format
 msgid "Attachment Name:"
-msgstr "Pielikuma nosaukums:"
+msgstr "Piesaistnes nosaukums:"
 
 #: job/attachmentclipboardjob.cpp:49
 #, kde-format
@@ -2225,12 +2225,12 @@ msgstr "BCC lauka nosaukums"
 #: snippet/convertsnippetvariablemenu.cpp:89
 #, kde-format
 msgid "Attachment"
-msgstr "Pielikums"
+msgstr "Piesaistne"
 
 #: snippet/convertsnippetvariablemenu.cpp:90
 #, kde-format
 msgid "Number Of Attachments"
-msgstr "Pielikumu skaits"
+msgstr "Piesaistņu skaits"
 
 #: snippet/convertsnippetvariablemenu.cpp:93
 #, kde-format
@@ -2365,7 +2365,7 @@ msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
 "forgot to attach his attachment. Do not add space between words."
 msgid "attachment,attached"
-msgstr "pielikums,pievienots"
+msgstr "pielikums,pievienots,piesaistne,piesaistņu"
 
 #: utils/util.cpp:269
 #, kde-format
