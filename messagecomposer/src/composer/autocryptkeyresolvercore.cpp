@@ -53,7 +53,7 @@ Kleo::KeyResolverCore::Result AutocryptKeyResolverCore::resolve()
     const auto storage = MessageCore::AutocryptStorage::self();
     for (const auto &recipient : solution->encryptionKeys.keys()) {
         auto &keys = solution->encryptionKeys[recipient];
-        if (keys.size() > 0) { // already keys found
+        if (!keys.empty()) { // already keys found
             continue;
         }
         if (recipient == normalizedSender()) { // Own key needs to be in normal key store (Autocrypt do not offer private keys)
