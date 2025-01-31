@@ -494,7 +494,7 @@ QList<MessagePart::Ptr> NodeHelper::messagePartsOfMailHeader(const char *header,
 QList<KMime::Headers::Base *> NodeHelper::headers(const char *header, const KMime::Content *message)
 {
     const auto mp = messagePartsOfMailHeader(header, message);
-    if (mp.size() > 0) {
+    if (!mp.isEmpty()) {
         return mp.value(0)->headers(header);
     }
 

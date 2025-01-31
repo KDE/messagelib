@@ -1126,7 +1126,7 @@ bool EncryptedMessagePart::okDecryptMIME(KMime::Content &data)
         const QByteArray &plainText = decryptMemento->plainText();
         const GpgME::DecryptionResult &decryptResult = decryptMemento->decryptResult();
         const GpgME::VerificationResult &verifyResult = decryptMemento->verifyResult();
-        partMetaData()->isSigned = verifyResult.signatures().size() > 0;
+        partMetaData()->isSigned = !verifyResult.signatures().empty();
 
         if (partMetaData()->isSigned) {
             auto subPart = SignedMessagePart::Ptr(new SignedMessagePart(mOtp, MessagePart::text(), mCryptoProto, mFromAddress, content()));

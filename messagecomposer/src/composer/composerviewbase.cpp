@@ -825,7 +825,7 @@ QList<MessageComposer::ComposerJob *> ComposerViewBase::generateCryptoMessages(b
         auto composerJob = new MessageComposer::ComposerJob;
         if (m_cryptoMessageFormat & Kleo::OpenPGPMIMEFormat) {
             composerJob->setAutocryptEnabled(autocryptEnabled());
-            if (keyResolver->encryptToSelfKeysFor(Kleo::OpenPGPMIMEFormat).size() > 0) {
+            if (!keyResolver->encryptToSelfKeysFor(Kleo::OpenPGPMIMEFormat).empty()) {
                 composerJob->setSenderEncryptionKey(keyResolver->encryptToSelfKeysFor(Kleo::OpenPGPMIMEFormat)[0]);
             }
         }
