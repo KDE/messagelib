@@ -123,7 +123,7 @@ void ComposerViewBaseTest::testAutoSaveMessage()
     composerViewBase.autoSaveMessage();
 
     // It may be possible that we need to wait till the autosave message is ready composed.
-    if (composerViewBase.m_composerJobs.size() > 0) {
+    if (!composerViewBase.m_composerJobs.isEmpty()) {
         QEventLoop loop;
         bool notFinished = false;
         for (const auto composerJob : composerViewBase.m_composerJobs) {
