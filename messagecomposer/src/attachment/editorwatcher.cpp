@@ -29,6 +29,10 @@
 #include <unistd.h>
 #endif
 
+#include <chrono>
+
+using namespace std::chrono_literals;
+
 using namespace MessageComposer;
 
 EditorWatcher::EditorWatcher(const QUrl &url, const QString &mimeType, OpenWithOption option, QObject *parent, QWidget *parentWidget)
@@ -160,13 +164,13 @@ void EditorWatcher::inotifyEvent()
         }
     }
 #endif
-    mTimer.start(500);
+    mTimer.start(500ms);
 }
 
 void EditorWatcher::editorExited()
 {
     mEditorRunning = false;
-    mTimer.start(500);
+    mTimer.start(500ms);
 }
 
 void EditorWatcher::checkEditDone()
