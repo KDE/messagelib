@@ -35,7 +35,7 @@
 #include <cstdlib>
 
 #include <QTest>
-#include <decryptionresult.h>
+#include <gpgme++/decryptionresult.h>
 
 QTEST_MAIN(EncryptJobTest)
 
