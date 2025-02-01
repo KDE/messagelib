@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-22 00:42+0000\n"
+"POT-Creation-Date: 2025-02-01 00:42+0000\n"
 "PO-Revision-Date: 2024-08-16 13:39+0200\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -246,7 +246,7 @@ msgstr "Impossibile aprire l'allegato"
 msgid "KMail was unable to open the attachment"
 msgstr "KMail non è riuscito ad aprire l'allegato"
 
-#: attachment/attachmentcontrollerbase.cpp:754 attachment/editorwatcher.cpp:196
+#: attachment/attachmentcontrollerbase.cpp:754 attachment/editorwatcher.cpp:200
 #, kde-format
 msgctxt "@title:window"
 msgid "Unable to edit attachment"
@@ -385,12 +385,12 @@ msgctxt "@title column attachment inlined checkbox."
 msgid "Suggest Automatic Display"
 msgstr "Suggerisci visualizzazione automatica"
 
-#: attachment/editorwatcher.cpp:60
+#: attachment/editorwatcher.cpp:64
 #, kde-format
 msgid "Edit with:"
 msgstr "Modifica con:"
 
-#: attachment/editorwatcher.cpp:194
+#: attachment/editorwatcher.cpp:198
 #, kde-format
 msgid ""
 "KMail is unable to detect when the chosen editor is closed. To avoid data "

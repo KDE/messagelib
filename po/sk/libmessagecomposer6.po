@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-22 00:42+0000\n"
+"POT-Creation-Date: 2025-02-01 00:42+0000\n"
 "PO-Revision-Date: 2021-11-15 09:14+0100\n"
 "Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -254,7 +254,7 @@ msgstr "Nepodarilo sa otvoriť prílohu"
 msgid "KMail was unable to open the attachment"
 msgstr "KMail nebol schopný otvoriť prílohu."
 
-#: attachment/attachmentcontrollerbase.cpp:754 attachment/editorwatcher.cpp:196
+#: attachment/attachmentcontrollerbase.cpp:754 attachment/editorwatcher.cpp:200
 #, fuzzy, kde-format
 #| msgid "Unable to edit attachment"
 msgctxt "@title:window"
@@ -397,13 +397,13 @@ msgctxt "@title column attachment inlined checkbox."
 msgid "Suggest Automatic Display"
 msgstr "Naznačiť automatické zobrazenie"
 
-#: attachment/editorwatcher.cpp:60
+#: attachment/editorwatcher.cpp:64
 #, fuzzy, kde-format
 #| msgid "Edit With..."
 msgid "Edit with:"
 msgstr "Upraviť pomocou..."
 
-#: attachment/editorwatcher.cpp:194
+#: attachment/editorwatcher.cpp:198
 #, kde-format
 msgid ""
 "KMail is unable to detect when the chosen editor is closed. To avoid data "

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-22 00:42+0000\n"
+"POT-Creation-Date: 2025-02-01 00:42+0000\n"
 "PO-Revision-Date: 2010-12-26 08:52+0530\n"
 "Last-Translator: A S Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
@@ -256,7 +256,7 @@ msgstr "ਫਾਇਲ ਅਟੈਚ ਕਰਨ ਲਈ ਫੇਲ੍ਹ ਹੈ"
 msgid "KMail was unable to open the attachment"
 msgstr "ਫਾਇਲ ਅਟੈਚ ਕਰਨ ਲਈ ਫੇਲ੍ਹ ਹੈ"
 
-#: attachment/attachmentcontrollerbase.cpp:754 attachment/editorwatcher.cpp:196
+#: attachment/attachmentcontrollerbase.cpp:754 attachment/editorwatcher.cpp:200
 #, fuzzy, kde-format
 #| msgid "Failed to attach file"
 msgctxt "@title:window"
@@ -403,12 +403,12 @@ msgctxt "@title column attachment inlined checkbox."
 msgid "Suggest Automatic Display"
 msgstr ""
 
-#: attachment/editorwatcher.cpp:60
+#: attachment/editorwatcher.cpp:64
 #, kde-format
 msgid "Edit with:"
 msgstr ""
 
-#: attachment/editorwatcher.cpp:194
+#: attachment/editorwatcher.cpp:198
 #, kde-format
 msgid ""
 "KMail is unable to detect when the chosen editor is closed. To avoid data "
