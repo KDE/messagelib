@@ -19,7 +19,7 @@
 
 using namespace MessageCore;
 
-QTEST_MAIN(AutocryptUtilsTest)
+QTEST_GUILESS_MAIN(AutocryptUtilsTest)
 
 KMime::Message::Ptr readAndParseMail(const QString &mailFile)
 {
