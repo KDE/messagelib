@@ -222,6 +222,7 @@ void DKIMWidgetInfo::updateToolTip()
                     break;
                 }
                 case DKIMCheckSignatureJob::AuthenticationMethod::Spf:
+                case DKIMCheckSignatureJob::AuthenticationMethod::XTls:
                 case DKIMCheckSignatureJob::AuthenticationMethod::Dkim:
                 case DKIMCheckSignatureJob::AuthenticationMethod::Dmarc:
                 case DKIMCheckSignatureJob::AuthenticationMethod::Auth:
@@ -246,6 +247,7 @@ void DKIMWidgetInfo::updateToolTip()
                     break;
                 }
                 case DKIMCheckSignatureJob::AuthenticationMethod::Spf:
+                case DKIMCheckSignatureJob::AuthenticationMethod::XTls:
                 case DKIMCheckSignatureJob::AuthenticationMethod::Dkim:
                 case DKIMCheckSignatureJob::AuthenticationMethod::Dmarc:
                 case DKIMCheckSignatureJob::AuthenticationMethod::Auth:
@@ -283,6 +285,7 @@ void DKIMWidgetInfo::updateToolTip()
                     break;
                 }
                 case DKIMCheckSignatureJob::AuthenticationMethod::Auth:
+                case DKIMCheckSignatureJob::AuthenticationMethod::XTls:
                 case DKIMCheckSignatureJob::AuthenticationMethod::Dkimatps:
                 case DKIMCheckSignatureJob::AuthenticationMethod::Dmarc: {
                     const QString str = i18n("%1: Valid", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method));
