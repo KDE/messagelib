@@ -292,7 +292,6 @@ void DKIMWidgetInfo::updateToolTip()
                     if (!tooltipList.contains(str)) {
                         tooltipList.append(str);
                     }
-
                     break;
                 }
                 }
