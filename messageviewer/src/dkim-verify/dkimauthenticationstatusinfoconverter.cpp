@@ -68,6 +68,7 @@ QList<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> DKIMAuthent
             if (!info.reason.isEmpty()) {
                 convertedResult.errorStr = info.reason;
             }
+            // TODO softfail
         } else {
             qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Invalid result type " << infoResult;
             continue;

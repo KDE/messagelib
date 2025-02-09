@@ -195,6 +195,7 @@ MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod MessageViewer::DKIMUt
         return MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Dkimatps;
     } else if (str == QLatin1StringView("auth")) {
         return MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Auth;
+        // TODO x-tls
     } else {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Undefined type " << str;
         return MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Unknown;
