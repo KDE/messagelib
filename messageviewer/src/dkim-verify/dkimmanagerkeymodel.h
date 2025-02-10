@@ -19,6 +19,8 @@ public:
         SelectorRole,
         KeyRole,
         StoredAtDateTimeRole,
+        StoredAtDateTimeRoleStr,
+        LastUsedDateTimeRoleStr,
         LastUsedDateTimeRole,
         LastColumn = LastUsedDateTimeRole,
     };

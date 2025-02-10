@@ -58,9 +58,13 @@ QVariant DKIMManagerKeyModel::data(const QModelIndex &index, int role) const
         return keyInfo.selector;
     case DomainRole:
         return keyInfo.domain;
-    case StoredAtDateTimeRole:
+    case StoredAtDateTimeRoleStr:
         return QLocale().toString(keyInfo.storedAtDateTime);
+    case StoredAtDateTimeRole:
+        return keyInfo.storedAtDateTime;
     case LastUsedDateTimeRole:
+        return keyInfo.lastUsedDateTime;
+    case LastUsedDateTimeRoleStr:
         return QLocale().toString(keyInfo.lastUsedDateTime);
     }
     return {};
@@ -80,7 +84,9 @@ QVariant DKIMManagerKeyModel::headerData(int section, Qt::Orientation orientatio
     case DomainRole:
         return i18n("SDID");
     case StoredAtDateTimeRole:
+    case StoredAtDateTimeRoleStr:
         return i18n("Inserted");
+    case LastUsedDateTimeRoleStr:
     case LastUsedDateTimeRole:
         return i18n("Last Used");
     }

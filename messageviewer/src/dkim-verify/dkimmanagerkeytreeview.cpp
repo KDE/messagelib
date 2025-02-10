@@ -54,6 +54,8 @@ void DKIMManagerKeyTreeView::setKeyModel(DKIMManagerKeyModel *model)
     mManagerKeyModel = model;
     mManagerKeyProxyModel->setSourceModel(mManagerKeyModel);
     setModel(mManagerKeyProxyModel);
+    setColumnHidden(DKIMManagerKeyModel::LastUsedDateTimeRole, true);
+    setColumnHidden(DKIMManagerKeyModel::StoredAtDateTimeRole, true);
 }
 
 void DKIMManagerKeyTreeView::slotCustomContextMenuRequested(const QPoint &pos)

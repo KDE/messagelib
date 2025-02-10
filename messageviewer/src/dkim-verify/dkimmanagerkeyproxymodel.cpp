@@ -16,8 +16,17 @@ DKIMManagerKeyProxyModel::~DKIMManagerKeyProxyModel() = default;
 
 bool DKIMManagerKeyProxyModel::lessThan(const QModelIndex &source_left, const QModelIndex &source_right) const
 {
-    //    const auto leftData = source_left.data(MessageViewer::DKIMManagerKeyModel::StoredAtDateTimeRole).value<Akonadi::Collection>();
-    //    const auto rightData = source_right.data(MessageViewer::DKIMManagerKeyModel::StoredAtDateTimeRole).value<Akonadi::Collection>();
+    const int leftColumn{source_left.column()};
+    if (leftColumn == MessageViewer::DKIMManagerKeyModel::StoredAtDateTimeRoleStr) {
+        const QModelIndex leftMessageModelIndex = sourceModel()->index(source_left.row(), MessageViewer::DKIMManagerKeyModel::StoredAtDateTimeRole);
+        const QModelIndex rightMessageModelIndex = sourceModel()->index(source_right.row(), MessageViewer::DKIMManagerKeyModel::StoredAtDateTimeRole);
+        return QSortFilterProxyModel::lessThan(leftMessageModelIndex, rightMessageModelIndex);
+    }
+    if (leftColumn == MessageViewer::DKIMManagerKeyModel::LastUsedDateTimeRoleStr) {
+        const QModelIndex leftMessageModelIndex = sourceModel()->index(source_left.row(), MessageViewer::DKIMManagerKeyModel::LastUsedDateTimeRole);
+        const QModelIndex rightMessageModelIndex = sourceModel()->index(source_right.row(), MessageViewer::DKIMManagerKeyModel::LastUsedDateTimeRole);
+        return QSortFilterProxyModel::lessThan(leftMessageModelIndex, rightMessageModelIndex);
+    }
     return QSortFilterProxyModel::lessThan(source_left, source_right);
 }
 
