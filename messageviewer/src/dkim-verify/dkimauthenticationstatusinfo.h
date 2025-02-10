@@ -62,6 +62,8 @@ public:
     [[nodiscard]] QList<AuthStatusInfo> listAuthStatusInfo() const;
     void setListAuthStatusInfo(const QList<AuthStatusInfo> &listAuthStatusInfo);
 
+    [[nodiscard]] bool checkResultKeyword(const QString &value, const QString &resultKeyword) const;
+
 private:
     [[nodiscard]] AuthStatusInfo parseAuthResultInfo(QString &valueKey, bool relaxingParsing);
     QList<AuthStatusInfo> mListAuthStatusInfo;

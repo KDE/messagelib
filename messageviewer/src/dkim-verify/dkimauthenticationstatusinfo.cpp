@@ -66,8 +66,74 @@ bool DKIMAuthenticationStatusInfo::parseAuthenticationStatus(const QString &key,
     return true;
 }
 
+bool DKIMAuthenticationStatusInfo::checkResultKeyword(const QString &method, const QString &resultKeyword) const
+{
+    QStringList allowedKeywords;
+
+    // DKIM and DomainKeys (RFC 8601 section 2.7.1.)
+    if (method == QStringLiteral("dkim") || method == QStringLiteral("domainkeys")) {
+        allowedKeywords = {QStringLiteral("none"),
+                           QStringLiteral("pass"),
+                           QStringLiteral("fail"),
+                           QStringLiteral("policy"),
+                           QStringLiteral("neutral"),
+                           QStringLiteral("temperror"),
+                           QStringLiteral("permerror")};
+    }
+
+    // SPF and Sender ID (RFC 8601 section 2.7.2.)
+    if (method == QStringLiteral("spf") || method == QStringLiteral("sender-id")) {
+        allowedKeywords = {QStringLiteral("none"),
+                           QStringLiteral("pass"),
+                           QStringLiteral("fail"),
+                           QStringLiteral("softfail"),
+                           QStringLiteral("policy"),
+                           QStringLiteral("neutral"),
+                           QStringLiteral("temperror"),
+                           QStringLiteral("permerror")
+                           // Deprecated from older ARH RFC 5451.
+                           ,
+                           QStringLiteral("hardfail")
+                           // Older SPF specs (e.g. RFC 4408) used mixed case.
+                           ,
+                           QStringLiteral("None"),
+                           QStringLiteral("Pass"),
+                           QStringLiteral("Fail"),
+                           QStringLiteral("SoftFail"),
+                           QStringLiteral("Neutral"),
+                           QStringLiteral("TempError"),
+                           QStringLiteral("PermError")};
+    }
+
+    // DMARC (RFC 7489 section 11.2.)
+    if (method == QStringLiteral("dmarc")) {
+        allowedKeywords = {QStringLiteral("none"), QStringLiteral("pass"), QStringLiteral("fail"), QStringLiteral("temperror"), QStringLiteral("permerror")};
+    }
+
+    // BIMI (https://datatracker.ietf.org/doc/draft-brand-indicators-for-message-identification/04/ section 7.7.)
+    if (method == QStringLiteral("bimi")) {
+        allowedKeywords = {QStringLiteral("pass"),
+                           QStringLiteral("none"),
+                           QStringLiteral("fail"),
+                           QStringLiteral("temperror"),
+                           QStringLiteral("declined"),
+                           QStringLiteral("skipped")};
+    }
+
+    // Note: Both the ARH RFC and the IANA registry contain keywords for more than the above methods.
+    // As we don't really care about them, for simplicity we treat them the same as unknown methods,
+    // And don't restrict the keyword.
+
+    if (!allowedKeywords.contains(resultKeyword)) {
+        qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Result keyword " << resultKeyword << " is not allowed for method " << method;
+        return false;
+    }
+    return true;
+}
+
 DKIMAuthenticationStatusInfo::AuthStatusInfo DKIMAuthenticationStatusInfo::parseAuthResultInfo(QString &valueKey, bool relaxingParsing)
 {
+    // qDebug() << " valueKey *****************" << valueKey;
     DKIMAuthenticationStatusInfo::AuthStatusInfo authStatusInfo;
     // 2) extract methodspec
     const QString methodVersionp =
