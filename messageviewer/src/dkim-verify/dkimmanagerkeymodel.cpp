@@ -83,12 +83,13 @@ QVariant DKIMManagerKeyModel::headerData(int section, Qt::Orientation orientatio
         return i18n("Selector");
     case DomainRole:
         return i18n("SDID");
-    case StoredAtDateTimeRole:
     case StoredAtDateTimeRoleStr:
         return i18n("Inserted");
     case LastUsedDateTimeRoleStr:
-    case LastUsedDateTimeRole:
         return i18n("Last Used");
+    case StoredAtDateTimeRole:
+    case LastUsedDateTimeRole:
+        break;
     }
     return {};
 }
