@@ -114,6 +114,7 @@ void DKIMManagerKeyTreeView::deleteSelectedItems()
         return;
     }
     QStringList lst;
+    lst.reserve(selectedIndexes.count());
     for (const auto &index : selectedIndexes) {
         const auto info = mManagerKeyProxyModel->mapToSource(mManagerKeyProxyModel->index(index.row(), DKIMManagerKeyModel::KeyRole));
         lst.append(info.data().toString());
