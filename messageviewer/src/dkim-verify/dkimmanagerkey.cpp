@@ -125,8 +125,10 @@ void DKIMManagerKey::saveKeys()
 
 void DKIMManagerKey::saveKeys(const QList<MessageViewer::KeyInfo> &lst)
 {
-    mKeys = lst;
-    saveKeys();
+    if (mKeys != lst) {
+        mKeys = lst;
+        saveKeys();
+    }
 }
 
 bool KeyInfo::operator==(const KeyInfo &other) const
