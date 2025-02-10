@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 00:41+0000\n"
+"POT-Creation-Date: 2025-02-10 00:41+0000\n"
 "PO-Revision-Date: 2020-07-31 19:58+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -667,28 +667,28 @@ msgstr "Signaturen er for lille"
 msgid "Public Key too small"
 msgstr "Den offentlige nøgle er for lille"
 
-#: dkim-verify/dkimwidgetinfo.cpp:230 dkim-verify/dkimwidgetinfo.cpp:276
+#: dkim-verify/dkimwidgetinfo.cpp:231 dkim-verify/dkimwidgetinfo.cpp:278
 #, kde-format
 msgctxt "method name: info about it from parsing"
 msgid "%1: %2"
 msgstr "%1: %2"
 
-#: dkim-verify/dkimwidgetinfo.cpp:253
+#: dkim-verify/dkimwidgetinfo.cpp:255
 #, kde-format
 msgid "%1: None"
 msgstr "%1: Ingen"
 
-#: dkim-verify/dkimwidgetinfo.cpp:268
+#: dkim-verify/dkimwidgetinfo.cpp:270
 #, kde-format
 msgid "%1: Valid (Signed by %2)"
 msgstr "%1: Gyldig (signeret af %2)"
 
-#: dkim-verify/dkimwidgetinfo.cpp:288
+#: dkim-verify/dkimwidgetinfo.cpp:291
 #, kde-format
 msgid "%1: Valid"
 msgstr "%1: Gyldig"
 
-#: dkim-verify/dkimwidgetinfo.cpp:303
+#: dkim-verify/dkimwidgetinfo.cpp:305
 #, kde-format
 msgid "Not Signed"
 msgstr "Ikke signeret"

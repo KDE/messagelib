@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 00:41+0000\n"
+"POT-Creation-Date: 2025-02-10 00:41+0000\n"
 "PO-Revision-Date: 2023-11-14 13:54-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -659,28 +659,28 @@ msgstr "A assinatura é muito curta"
 msgid "Public Key too small"
 msgstr "A chave pública é muito curta"
 
-#: dkim-verify/dkimwidgetinfo.cpp:230 dkim-verify/dkimwidgetinfo.cpp:276
+#: dkim-verify/dkimwidgetinfo.cpp:231 dkim-verify/dkimwidgetinfo.cpp:278
 #, kde-format
 msgctxt "method name: info about it from parsing"
 msgid "%1: %2"
 msgstr "%1: %2"
 
-#: dkim-verify/dkimwidgetinfo.cpp:253
+#: dkim-verify/dkimwidgetinfo.cpp:255
 #, kde-format
 msgid "%1: None"
 msgstr "%1: Nenhuma"
 
-#: dkim-verify/dkimwidgetinfo.cpp:268
+#: dkim-verify/dkimwidgetinfo.cpp:270
 #, kde-format
 msgid "%1: Valid (Signed by %2)"
 msgstr "%1: Válida (assinada por %2)"
 
-#: dkim-verify/dkimwidgetinfo.cpp:288
+#: dkim-verify/dkimwidgetinfo.cpp:291
 #, kde-format
 msgid "%1: Valid"
 msgstr "%1: Válida"
 
-#: dkim-verify/dkimwidgetinfo.cpp:303
+#: dkim-verify/dkimwidgetinfo.cpp:305
 #, kde-format
 msgid "Not Signed"
 msgstr "Não assinada"

@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 00:41+0000\n"
+"POT-Creation-Date: 2025-02-10 00:41+0000\n"
 "PO-Revision-Date: 2008-01-31 22:13+0200\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -756,30 +756,30 @@ msgstr "Подпісы"
 msgid "Public Key too small"
 msgstr "Подпісы"
 
-#: dkim-verify/dkimwidgetinfo.cpp:230 dkim-verify/dkimwidgetinfo.cpp:276
+#: dkim-verify/dkimwidgetinfo.cpp:231 dkim-verify/dkimwidgetinfo.cpp:278
 #, kde-format
 msgctxt "method name: info about it from parsing"
 msgid "%1: %2"
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:253
+#: dkim-verify/dkimwidgetinfo.cpp:255
 #, fuzzy, kde-format
 #| msgid "None"
 msgid "%1: None"
 msgstr "Няма"
 
-#: dkim-verify/dkimwidgetinfo.cpp:268
+#: dkim-verify/dkimwidgetinfo.cpp:270
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "%1: Valid (Signed by %2)"
 msgstr "Паведамленне падпісана %1."
 
-#: dkim-verify/dkimwidgetinfo.cpp:288
+#: dkim-verify/dkimwidgetinfo.cpp:291
 #, kde-format
 msgid "%1: Valid"
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:303
+#: dkim-verify/dkimwidgetinfo.cpp:305
 #, fuzzy, kde-format
 #| msgid "Do &Not Sign"
 msgid "Not Signed"

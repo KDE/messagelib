@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 00:41+0000\n"
+"POT-Creation-Date: 2025-02-10 00:41+0000\n"
 "PO-Revision-Date: 2012-01-28 16:35-0800\n"
 "Last-Translator: Fumiaki Okushi <okushi@kde.gr.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -695,29 +695,29 @@ msgstr "署名は有効です。"
 msgid "Public Key too small"
 msgstr "署名は有効です。"
 
-#: dkim-verify/dkimwidgetinfo.cpp:230 dkim-verify/dkimwidgetinfo.cpp:276
+#: dkim-verify/dkimwidgetinfo.cpp:231 dkim-verify/dkimwidgetinfo.cpp:278
 #, kde-format
 msgctxt "method name: info about it from parsing"
 msgid "%1: %2"
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:253
+#: dkim-verify/dkimwidgetinfo.cpp:255
 #, kde-format
 msgid "%1: None"
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:268
+#: dkim-verify/dkimwidgetinfo.cpp:270
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "%1: Valid (Signed by %2)"
 msgstr "メッセージは %1 によって署名されています。"
 
-#: dkim-verify/dkimwidgetinfo.cpp:288
+#: dkim-verify/dkimwidgetinfo.cpp:291
 #, kde-format
 msgid "%1: Valid"
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:303
+#: dkim-verify/dkimwidgetinfo.cpp:305
 #, kde-format
 msgid "Not Signed"
 msgstr ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-12 00:41+0000\n"
+"POT-Creation-Date: 2025-02-10 00:41+0000\n"
 "PO-Revision-Date: 2021-11-05 12:48+0100\n"
 "Last-Translator: Eduard Werner/Edward Wornar <edi.werner@gmx.de>\n"
 "Language-Team: <hsb@li.org>\n"
@@ -687,29 +687,29 @@ msgstr "Signatura je zestarjena."
 msgid "Public Key too small"
 msgstr "Signatura je zestarjena."
 
-#: dkim-verify/dkimwidgetinfo.cpp:230 dkim-verify/dkimwidgetinfo.cpp:276
+#: dkim-verify/dkimwidgetinfo.cpp:231 dkim-verify/dkimwidgetinfo.cpp:278
 #, kde-format
 msgctxt "method name: info about it from parsing"
 msgid "%1: %2"
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:253
+#: dkim-verify/dkimwidgetinfo.cpp:255
 #, fuzzy, kde-format
 msgid "%1: None"
 msgstr "&Žane"
 
-#: dkim-verify/dkimwidgetinfo.cpp:268
+#: dkim-verify/dkimwidgetinfo.cpp:270
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "%1: Valid (Signed by %2)"
 msgstr "Powěsć bu podpisana wot %1."
 
-#: dkim-verify/dkimwidgetinfo.cpp:288
+#: dkim-verify/dkimwidgetinfo.cpp:291
 #, kde-format
 msgid "%1: Valid"
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:303
+#: dkim-verify/dkimwidgetinfo.cpp:305
 #, kde-format
 msgid "Not Signed"
 msgstr "Njepodpisane"
