@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-10 00:41+0000\n"
+"POT-Creation-Date: 2025-02-11 00:42+0000\n"
 "PO-Revision-Date: 2006-02-06 01:01-0600\n"
 "Last-Translator: Deepayan Sarkar <deepayan@bengalinux.org>\n"
 "Language-Team: Bengali <kde-translation@bengalinux.org>\n"
@@ -244,74 +244,74 @@ msgctxt "@action:button"
 msgid "Store"
 msgstr "সঞ্চিত :"
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:77
+#: dkim-verify/dkimmanagerkeymodel.cpp:81
 #, kde-format
 msgid "DKIM Key"
 msgstr ""
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:79
+#: dkim-verify/dkimmanagerkeymodel.cpp:83
 #, fuzzy, kde-format
 #| msgid "Select Folder"
 msgid "Selector"
 msgstr "ফোল্ডার নির্বাচন করো"
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:81
+#: dkim-verify/dkimmanagerkeymodel.cpp:85
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "SDID"
 msgstr ""
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:83
+#: dkim-verify/dkimmanagerkeymodel.cpp:87
 #, fuzzy, kde-format
 msgid "Inserted"
 msgstr "ফাইল অন্তর্ভুক্ত করো"
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:85
+#: dkim-verify/dkimmanagerkeymodel.cpp:89
 #, fuzzy, kde-format
 #| msgid "Last Search"
 msgid "Last Used"
 msgstr "শেষ সন্ধান"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:69
+#: dkim-verify/dkimmanagerkeytreeview.cpp:71
 #, fuzzy, kde-format
 #| msgid "&Copy To"
 msgid "Copy Key"
 msgstr "কপি পাঠা&ও"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:76
+#: dkim-verify/dkimmanagerkeytreeview.cpp:78
 #, fuzzy, kde-format
 msgid "Remove Key"
 msgid_plural "Remove Keys"
 msgstr[0] "&সরিয়ে ফেলো"
 msgstr[1] "&সরিয়ে ফেলো"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:81
+#: dkim-verify/dkimmanagerkeytreeview.cpp:83
 #, kde-format
 msgid "Do you want to delete this key?"
 msgid_plural "Do you want to delete these keys?"
 msgstr[0] ""
 msgstr[1] ""
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:82
+#: dkim-verify/dkimmanagerkeytreeview.cpp:84
 #, fuzzy, kde-format
 msgid "Delete Key"
 msgid_plural "Delete Keys"
 msgstr[0] "মুছে ফেলা"
 msgstr[1] "মুছে ফেলা"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:92
+#: dkim-verify/dkimmanagerkeytreeview.cpp:94
 #: dkim-verify/dkimmanageruleswidget.cpp:223
 #, fuzzy, kde-format
 msgid "Delete All"
 msgstr "মুছে ফেলা"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:94
+#: dkim-verify/dkimmanagerkeytreeview.cpp:96
 #, fuzzy, kde-format
 #| msgid "<qt>Do you really want to remove the identity named <b>%1</b>?</qt>"
 msgid "Do you want to delete all keys?"
 msgstr "<qt>আপনি কি সত্যিই <b>%1</b> নামক পরিচিতিটি সরিয়ে ফেলতে চান?</qt>"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:95
+#: dkim-verify/dkimmanagerkeytreeview.cpp:97
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Delete Keys"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-10 00:41+0000\n"
+"POT-Creation-Date: 2025-02-11 00:42+0000\n"
 "PO-Revision-Date: 2013-11-06 03:17+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -225,73 +225,73 @@ msgctxt "@action:button"
 msgid "Store"
 msgstr "сақталған: "
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:77
+#: dkim-verify/dkimmanagerkeymodel.cpp:81
 #, kde-format
 msgid "DKIM Key"
 msgstr ""
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:79
+#: dkim-verify/dkimmanagerkeymodel.cpp:83
 #, fuzzy, kde-format
 #| msgid "Select Folder"
 msgid "Selector"
 msgstr "Қапшықты таңдау"
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:81
+#: dkim-verify/dkimmanagerkeymodel.cpp:85
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "SDID"
 msgstr ""
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:83
+#: dkim-verify/dkimmanagerkeymodel.cpp:87
 #, fuzzy, kde-format
 msgid "Inserted"
 msgstr "&Файлды ендіру..."
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:85
+#: dkim-verify/dkimmanagerkeymodel.cpp:89
 #, fuzzy, kde-format
 #| msgid "Last Search"
 msgid "Last Used"
 msgstr "Соңғы іздеу"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:69
+#: dkim-verify/dkimmanagerkeytreeview.cpp:71
 #, fuzzy, kde-format
 #| msgid "&Copy To"
 msgid "Copy Key"
 msgstr "Мынаған &көшірмелеу"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:76
+#: dkim-verify/dkimmanagerkeytreeview.cpp:78
 #, fuzzy, kde-format
 #| msgid "Remove"
 msgid "Remove Key"
 msgid_plural "Remove Keys"
 msgstr[0] "Өшіру"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:81
+#: dkim-verify/dkimmanagerkeytreeview.cpp:83
 #, fuzzy, kde-format
 #| msgid "Do you want to delete list \"%1\"?"
 msgid "Do you want to delete this key?"
 msgid_plural "Do you want to delete these keys?"
 msgstr[0] "\"%1\" тізімін өшірмексіз бе?"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:82
+#: dkim-verify/dkimmanagerkeytreeview.cpp:84
 #, fuzzy, kde-format
 msgid "Delete Key"
 msgid_plural "Delete Keys"
 msgstr[0] "Жойылған"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:92
+#: dkim-verify/dkimmanagerkeytreeview.cpp:94
 #: dkim-verify/dkimmanageruleswidget.cpp:223
 #, fuzzy, kde-format
 msgid "Delete All"
 msgstr "Жойылған"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:94
+#: dkim-verify/dkimmanagerkeytreeview.cpp:96
 #, fuzzy, kde-format
 #| msgid "Do you want to delete list \"%1\"?"
 msgid "Do you want to delete all keys?"
 msgstr "\"%1\" тізімін өшірмексіз бе?"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:95
+#: dkim-verify/dkimmanagerkeytreeview.cpp:97
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Delete Keys"

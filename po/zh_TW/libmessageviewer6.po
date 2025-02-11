@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-10 00:41+0000\n"
+"POT-Creation-Date: 2025-02-11 00:42+0000\n"
 "PO-Revision-Date: 2024-08-03 14:40+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -208,67 +208,67 @@ msgctxt "@action:button"
 msgid "Store"
 msgstr "保存"
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:77
+#: dkim-verify/dkimmanagerkeymodel.cpp:81
 #, kde-format
 msgid "DKIM Key"
 msgstr "DKIM 金鑰"
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:79
+#: dkim-verify/dkimmanagerkeymodel.cpp:83
 #, kde-format
 msgid "Selector"
 msgstr "選擇器"
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:81
+#: dkim-verify/dkimmanagerkeymodel.cpp:85
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "SDID"
 msgstr "SDID"
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:83
+#: dkim-verify/dkimmanagerkeymodel.cpp:87
 #, kde-format
 msgid "Inserted"
 msgstr "已插入"
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:85
+#: dkim-verify/dkimmanagerkeymodel.cpp:89
 #, kde-format
 msgid "Last Used"
 msgstr "上次使用"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:69
+#: dkim-verify/dkimmanagerkeytreeview.cpp:71
 #, kde-format
 msgid "Copy Key"
 msgstr "複製金鑰"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:76
+#: dkim-verify/dkimmanagerkeytreeview.cpp:78
 #, kde-format
 msgid "Remove Key"
 msgid_plural "Remove Keys"
 msgstr[0] "移除金鑰"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:81
+#: dkim-verify/dkimmanagerkeytreeview.cpp:83
 #, kde-format
 msgid "Do you want to delete this key?"
 msgid_plural "Do you want to delete these keys?"
 msgstr[0] "您真的要刪除這些金鑰嗎？"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:82
+#: dkim-verify/dkimmanagerkeytreeview.cpp:84
 #, kde-format
 msgid "Delete Key"
 msgid_plural "Delete Keys"
 msgstr[0] "刪除金鑰"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:92
+#: dkim-verify/dkimmanagerkeytreeview.cpp:94
 #: dkim-verify/dkimmanageruleswidget.cpp:223
 #, kde-format
 msgid "Delete All"
 msgstr "全部刪除"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:94
+#: dkim-verify/dkimmanagerkeytreeview.cpp:96
 #, kde-format
 msgid "Do you want to delete all keys?"
 msgstr "您真的要刪除所有金鑰嗎？"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:95
+#: dkim-verify/dkimmanagerkeytreeview.cpp:97
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Keys"

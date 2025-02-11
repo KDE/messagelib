@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-10 00:41+0000\n"
+"POT-Creation-Date: 2025-02-11 00:42+0000\n"
 "PO-Revision-Date: 2009-08-15 14:38+0300\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Română <kde-i18n-ro@kde.org>\n"
@@ -236,42 +236,42 @@ msgctxt "@action:button"
 msgid "Store"
 msgstr "stocat: "
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:77
+#: dkim-verify/dkimmanagerkeymodel.cpp:81
 #, kde-format
 msgid "DKIM Key"
 msgstr ""
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:79
+#: dkim-verify/dkimmanagerkeymodel.cpp:83
 #, fuzzy, kde-format
 #| msgid "Select Folder"
 msgid "Selector"
 msgstr "Selectare dosar"
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:81
+#: dkim-verify/dkimmanagerkeymodel.cpp:85
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "SDID"
 msgstr ""
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:83
+#: dkim-verify/dkimmanagerkeymodel.cpp:87
 #, fuzzy, kde-format
 #| msgid "Insert Command..."
 msgid "Inserted"
 msgstr "Inserare comandă..."
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:85
+#: dkim-verify/dkimmanagerkeymodel.cpp:89
 #, fuzzy, kde-format
 #| msgid "Last Week"
 msgid "Last Used"
 msgstr "Săptămâna trecută"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:69
+#: dkim-verify/dkimmanagerkeytreeview.cpp:71
 #, fuzzy, kde-format
 #| msgid "&Copy To"
 msgid "Copy Key"
 msgstr "&Copiază în"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:76
+#: dkim-verify/dkimmanagerkeytreeview.cpp:78
 #, fuzzy, kde-format
 #| msgid "Remove"
 msgid "Remove Key"
@@ -280,7 +280,7 @@ msgstr[0] "Elimină"
 msgstr[1] "Elimină"
 msgstr[2] "Elimină"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:81
+#: dkim-verify/dkimmanagerkeytreeview.cpp:83
 #, kde-format
 msgid "Do you want to delete this key?"
 msgid_plural "Do you want to delete these keys?"
@@ -288,7 +288,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:82
+#: dkim-verify/dkimmanagerkeytreeview.cpp:84
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Delete"
@@ -298,20 +298,20 @@ msgstr[0] "Șterge"
 msgstr[1] "Șterge"
 msgstr[2] "Șterge"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:92
+#: dkim-verify/dkimmanagerkeytreeview.cpp:94
 #: dkim-verify/dkimmanageruleswidget.cpp:223
 #, fuzzy, kde-format
 #| msgid "Delete"
 msgid "Delete All"
 msgstr "Șterge"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:94
+#: dkim-verify/dkimmanagerkeytreeview.cpp:96
 #, fuzzy, kde-format
 #| msgid "Are you sure you want to expire all old messages?"
 msgid "Do you want to delete all keys?"
 msgstr "Sigur doriți să expir toate mesajele vechi?"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:95
+#: dkim-verify/dkimmanagerkeytreeview.cpp:97
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Delete"

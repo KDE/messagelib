@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-10 00:41+0000\n"
+"POT-Creation-Date: 2025-02-11 00:42+0000\n"
 "PO-Revision-Date: 2024-09-19 17:23+0300\n"
 "Last-Translator: Antonis Geralis <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -230,42 +230,42 @@ msgctxt "@action:button"
 msgid "Store"
 msgstr "αποθηκεύτηκε: "
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:77
+#: dkim-verify/dkimmanagerkeymodel.cpp:81
 #, kde-format
 msgid "DKIM Key"
 msgstr ""
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:79
+#: dkim-verify/dkimmanagerkeymodel.cpp:83
 #, fuzzy, kde-format
 #| msgid "Select Folder"
 msgid "Selector"
 msgstr "Επιλογή φακέλου"
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:81
+#: dkim-verify/dkimmanagerkeymodel.cpp:85
 #: dkim-verify/dkimmanageruleswidget.cpp:73
 #, kde-format
 msgid "SDID"
 msgstr ""
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:83
+#: dkim-verify/dkimmanagerkeymodel.cpp:87
 #, fuzzy, kde-format
 #| msgid "Insert Command"
 msgid "Inserted"
 msgstr "Εισαγωγή εντολής"
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:85
+#: dkim-verify/dkimmanagerkeymodel.cpp:89
 #, fuzzy, kde-format
 #| msgid "Last Week"
 msgid "Last Used"
 msgstr "Τελευταία εβδομάδα"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:69
+#: dkim-verify/dkimmanagerkeytreeview.cpp:71
 #, fuzzy, kde-format
 #| msgid "&Copy To"
 msgid "Copy Key"
 msgstr "&Αντιγραφή σε"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:76
+#: dkim-verify/dkimmanagerkeytreeview.cpp:78
 #, fuzzy, kde-format
 #| msgid "Remove"
 msgid "Remove Key"
@@ -273,7 +273,7 @@ msgid_plural "Remove Keys"
 msgstr[0] "Αφαίρεση"
 msgstr[1] "Αφαίρεση"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:81
+#: dkim-verify/dkimmanagerkeytreeview.cpp:83
 #, fuzzy, kde-format
 #| msgid "Do you want to delete list \"%1\"?"
 msgid "Do you want to delete this key?"
@@ -281,7 +281,7 @@ msgid_plural "Do you want to delete these keys?"
 msgstr[0] "Επιθυμείτε τη διαγραφή της λίστας «%1»;"
 msgstr[1] "Επιθυμείτε τη διαγραφή της λίστας «%1»;"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:82
+#: dkim-verify/dkimmanagerkeytreeview.cpp:84
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Delete"
@@ -290,20 +290,20 @@ msgid_plural "Delete Keys"
 msgstr[0] "Διαγραφή"
 msgstr[1] "Διαγραφή"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:92
+#: dkim-verify/dkimmanagerkeytreeview.cpp:94
 #: dkim-verify/dkimmanageruleswidget.cpp:223
 #, fuzzy, kde-format
 #| msgid "Delete"
 msgid "Delete All"
 msgstr "Διαγραφή"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:94
+#: dkim-verify/dkimmanagerkeytreeview.cpp:96
 #, fuzzy, kde-format
 #| msgid "Do you want to delete list \"%1\"?"
 msgid "Do you want to delete all keys?"
 msgstr "Επιθυμείτε τη διαγραφή της λίστας «%1»;"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:95
+#: dkim-verify/dkimmanagerkeytreeview.cpp:97
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Delete"

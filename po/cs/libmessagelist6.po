@@ -1161,10 +1161,9 @@ msgid "Size is larger than"
 msgstr ""
 
 #: core/widgets/searchlinecommand.cpp:155
-#, fuzzy, kde-format
-#| msgid "Size"
+#, kde-format
 msgid "Size is"
-msgstr "Velikost"
+msgstr ""
 
 #: core/widgets/searchlinecommand.cpp:157
 #, kde-format
@@ -1293,12 +1292,10 @@ msgid "Subject"
 msgstr ""
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "Body"
+#, kde-format
 msgctxt "@action:button"
 msgid "Body"
-msgstr "Tělo"
+msgstr ""
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:50
 #, kde-format
@@ -1391,11 +1388,10 @@ msgid "Forwarded"
 msgstr ""
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Encryption"
+#, kde-format
 msgctxt "@action:button"
 msgid "Encrypted"
-msgstr "Šifrování"
+msgstr ""
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:66
 #, kde-format
@@ -1404,27 +1400,22 @@ msgid "Queued"
 msgstr ""
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Sent"
+#, kde-format
 msgctxt "@action:button"
 msgid "Sent"
-msgstr "Odeslána"
+msgstr ""
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:68
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Delete Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "Deleted"
-msgstr "Smazat motiv"
+msgstr ""
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:69
-#, fuzzy, kde-format
-#| msgid "Action Item"
+#, kde-format
 msgctxt "@action:button"
 msgid "Action"
-msgstr "Úkol"
+msgstr ""
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:71
 #, kde-format
@@ -1439,18 +1430,16 @@ msgid "Larger"
 msgstr ""
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:73
-#, fuzzy, kde-format
-#| msgid "Size"
+#, kde-format
 msgctxt "@action:button"
 msgid "Size"
-msgstr "Velikost"
+msgstr ""
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:74
-#, fuzzy, kde-format
-#| msgid "Folder"
+#, kde-format
 msgctxt "@action:button"
 msgid "Older"
-msgstr "Složka"
+msgstr ""
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:75
 #, kde-format
@@ -1526,12 +1515,10 @@ msgid "BCC"
 msgstr "Skrytá kopie"
 
 #: core/widgets/searchmessagebybuttons.cpp:40
-#, fuzzy, kde-format
-#| msgctxt "@action"
-#| msgid "BCC"
+#, kde-format
 msgctxt "@action"
 msgid "CC"
-msgstr "Skrytá kopie"
+msgstr ""
 
 #: core/widgets/searchmessagebybuttons.cpp:71
 #, kde-format
