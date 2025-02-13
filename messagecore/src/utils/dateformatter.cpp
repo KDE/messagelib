@@ -152,7 +152,7 @@ QByteArray DateFormatterPrivate::zone(const QDateTime &t)
     const auto mins = std::abs((secs - hours * 3600) / 60);
 
     QByteArray ret(6, 0);
-    qsnprintf(ret.data(), ret.size(), "%c%.2d%.2d", (secs < 0) ? '-' : '+', hours, mins);
+    std::snprintf(ret.data(), ret.size(), "%c%.2d%.2d", (secs < 0) ? '-' : '+', hours, mins);
     ret.chop(1);
     return ret;
 }
