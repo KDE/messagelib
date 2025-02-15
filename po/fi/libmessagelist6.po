@@ -2,7 +2,7 @@
 # KDE Finnish translation sprint participants:
 # Author: Artnay
 # Author: Lliehu
-# SPDX-FileCopyrightText: 2009, 2010, 2011, 2012, 2013, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Tommi Nieminen <translator@legisign.org>
+# SPDX-FileCopyrightText: 2009, 2010, 2011, 2012, 2013, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Tommi Nieminen <translator@legisign.org>
 # Teemu Rytilahti <teemu.rytilahti@d5k.net>, 2003.
 # Eero Häkkinen <eero.hakkinen@iki.fi>, 2003.
 # Kim Enkovaara <kim.enkovaara@iki.fi>, 2003, 2005, 2006.
@@ -19,7 +19,7 @@ msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-07 00:42+0000\n"
-"PO-Revision-Date: 2024-11-07 17:07+0200\n"
+"PO-Revision-Date: 2025-01-12 16:57+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -217,7 +217,7 @@ msgstr "Ohitettu"
 #, kde-format
 msgctxt "Status of an item"
 msgid "Queued"
-msgstr ""
+msgstr "Jonossa"
 
 #: core/manager.cpp:34 core/model.cpp:334
 #, kde-format
@@ -1280,34 +1280,29 @@ msgid "Mail is forwarded"
 msgstr "Viesti on edennetty"
 
 #: core/widgets/searchlinecommand.cpp:193
-#, fuzzy, kde-format
-#| msgid "Mail is Unread"
+#, kde-format
 msgid "Mail is encrypted"
-msgstr "Viesti on lukematta"
+msgstr "Viesti on salattu"
 
 #: core/widgets/searchlinecommand.cpp:195
-#, fuzzy, kde-format
-#| msgid "Mail is read"
+#, kde-format
 msgid "Mail is queued"
-msgstr "Viesti on luettu"
+msgstr "Viesti on jonossa"
 
 #: core/widgets/searchlinecommand.cpp:197
-#, fuzzy, kde-format
-#| msgid "Mail is Unread"
+#, kde-format
 msgid "Mail is sent"
-msgstr "Viesti on lukematta"
+msgstr "Viesti on lähetetty"
 
 #: core/widgets/searchlinecommand.cpp:199
-#, fuzzy, kde-format
-#| msgid "Mail is replied"
+#, kde-format
 msgid "Mail is deleted"
-msgstr "Viestiin on vastattu"
+msgstr "Viestiin on poistettu"
 
 #: core/widgets/searchlinecommand.cpp:201
-#, fuzzy, kde-format
-#| msgid "Mail has invitation"
+#, kde-format
 msgid "Mail is action"
-msgstr "Viestissä on kutsu"
+msgstr "Viesti sisältää toiminnon"
 
 #: core/widgets/searchlinecommand.cpp:211
 #, kde-format
@@ -1417,40 +1412,34 @@ msgid "Forwarded"
 msgstr "Edennetty"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Encryption"
+#, kde-format
 msgctxt "@action:button"
 msgid "Encrypted"
-msgstr "Salaus"
+msgstr "Salattu"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Queued"
-msgstr ""
+msgstr "Jonossa"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Sent"
+#, kde-format
 msgctxt "@action:button"
 msgid "Sent"
 msgstr "Lähetetty"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:68
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Delete Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "Deleted"
-msgstr "Poista teema"
+msgstr "Poistettu"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:69
-#, fuzzy, kde-format
-#| msgid "Action Item"
+#, kde-format
 msgctxt "@action:button"
 msgid "Action"
-msgstr "Tehtävä"
+msgstr "Toiminto"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:71
 #, kde-format
