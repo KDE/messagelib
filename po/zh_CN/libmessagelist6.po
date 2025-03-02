@@ -1580,7 +1580,7 @@ msgstr "信件列表"
 #, kde-format
 msgctxt "@action"
 msgid "Create New Tab"
-msgstr ""
+msgstr "新建标签页"
 
 #: pane.cpp:258
 #, kde-format
@@ -1610,7 +1610,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Close Tab"
-msgstr ""
+msgstr "关闭标签页"
 
 #: pane.cpp:520 pane.cpp:812
 #, kde-format
