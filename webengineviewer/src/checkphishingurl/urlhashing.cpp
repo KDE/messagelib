@@ -8,6 +8,7 @@
 #include <QCryptographicHash>
 #include <QDebug>
 
+using namespace Qt::Literals;
 using namespace WebEngineViewer;
 
 UrlHashing::UrlHashing(const QUrl &url)
@@ -30,6 +31,11 @@ QString UrlHashing::canonicalizeUrl(QUrl url)
         path.remove(QLatin1Char('\t'));
         path.remove(QLatin1Char('\r'));
         path.remove(QLatin1Char('\n'));
+
+        // remove repeated leading slashes
+        while (path.startsWith("//"_L1)) {
+            path.removeAt(0);
+        }
 
         // In the URL, percent-escape all characters that are <= ASCII 32, >= 127, "#", or "%". The escapes should use uppercase hex characters.
         // TODO
