@@ -5,19 +5,20 @@
 # ถนอมทรัพย์ นพบูรณ์ <donga_n@yahoo.com>, 2005.
 # Sahachart Anukulkitch <drrider@gmail.com>, 2006.
 # Thanomsub Noppaburana <donga.nb@gmail.com>, 2008, 2010.
+# SPDX-FileCopyrightText: 2025 Pongsakorn S. <kde@xerusion.me>
 msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-07 00:42+0000\n"
-"PO-Revision-Date: 2010-02-28 19:34+0700\n"
-"Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
-"Language-Team: Thai <thai-l10n@googlegroups.com>\n"
+"PO-Revision-Date: 2025-03-03 20:07+0700\n"
+"Last-Translator: Pongsakorn S. <kde@xerusion.me>\n"
+"Language-Team: Thai\n"
 "Language: th\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
+"X-Generator: Lokalize 24.12.2\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: core/aggregation.cpp:178
@@ -336,7 +337,7 @@ msgstr "คลาสสิก"
 #: core/manager.cpp:565
 #, kde-format
 msgid "A simple, backward compatible, single row theme"
-msgstr "ชุดตกแต่งที่เรียบง่าย, เข้ากันได้กับรุ่นเก่า และใช้แถวเดียว"
+msgstr "ธีมที่เรียบง่าย, เข้ากันได้กับรุ่นเก่า และใช้แถวเดียว"
 
 #: core/manager.cpp:569
 #, kde-format
@@ -444,7 +445,7 @@ msgstr "ตามแบบที่กำหนด"
 #, fuzzy, kde-format
 #| msgid "A fancy multiline and multi item theme"
 msgid "A smart multiline and multi item theme"
-msgstr "ชุดตกแต่งแฟนซีแบบหลายบรรทัดและหลายรายการ"
+msgstr "ธีมแฟนซีแบบหลายบรรทัดและหลายรายการ"
 
 #: core/manager.cpp:687
 #, kde-format
@@ -462,7 +463,7 @@ msgstr "แฟนซีพร้อมด้วยสถานะที่คล
 #| msgid ""
 #| "A fancy multiline and multi item theme with a clickable status column"
 msgid "A smart multiline and multi item theme with a clickable status column"
-msgstr "ชุดตกแต่งแฟนซีแบบหลายบรรทัดและหลายรายการ พร้อมด้วยคอลัมน์สถานะที่สามารถคลิกได้"
+msgstr "ธีมแฟนซีแบบหลายบรรทัดและหลายรายการ พร้อมด้วยคอลัมน์สถานะที่สามารถคลิกได้"
 
 #: core/manager.cpp:773 core/view.cpp:2256 core/view.cpp:2260
 #, kde-format
@@ -1065,7 +1066,7 @@ msgstr "สร้างตัวกรองใหม่"
 #: core/widgetbase.cpp:428 messagelistutil.cpp:114
 #, kde-format
 msgid "Theme"
-msgstr "ชุดตกแต่ง"
+msgstr "ธีม"
 
 #: core/widgetbase.cpp:449 core/widgetbase.cpp:539
 #: core/widgets/configurefilterswidget.cpp:75
@@ -1989,21 +1990,21 @@ msgstr "ทุกช่องข้อมูล"
 #| msgid "Customize Themes"
 msgctxt "@title:window"
 msgid "Customize Themes"
-msgstr "กำหนดชุดตกแต่งต่าง ๆ เอง"
+msgstr "กำหนดธีมต่าง ๆ เอง"
 
 #: utils/configurethemesdialog.cpp:117
 #, fuzzy, kde-format
 #| msgid "New Theme"
 msgctxt "@action:button"
 msgid "New Theme"
-msgstr "ชุดตกแต่งตัวใหม่"
+msgstr "ธีมตัวใหม่"
 
 #: utils/configurethemesdialog.cpp:125
 #, fuzzy, kde-format
 #| msgid "Clone Theme"
 msgctxt "@action:button"
 msgid "Clone Theme"
-msgstr "โคลนชุดตกแต่ง"
+msgstr "โคลนธีม"
 
 #: utils/configurethemesdialog.cpp:138
 #, fuzzy, kde-format
@@ -2024,17 +2025,17 @@ msgstr "นำเข้า..."
 #| msgid "Delete Theme"
 msgctxt "@action:button"
 msgid "Delete Theme"
-msgstr "ลบชุดตกแต่ง"
+msgstr "ลบธีม"
 
 #: utils/configurethemesdialog.cpp:335
 #, kde-format
 msgid "Unnamed Theme"
-msgstr "ชุดตกแต่งที่ยังไม่มีชื่อ"
+msgstr "ธีมที่ยังไม่มีชื่อ"
 
 #: utils/configurethemesdialog.cpp:353
 #, kde-format
 msgid "New Theme"
-msgstr "ชุดตกแต่งตัวใหม่"
+msgstr "ธีมตัวใหม่"
 
 #: utils/configurethemesdialog.cpp:355 utils/themeeditor.cpp:1217
 #, kde-format
@@ -2056,7 +2057,7 @@ msgstr ""
 #| msgid "Delete Theme"
 msgctxt "@title:window"
 msgid "Delete Theme"
-msgstr "ลบชุดตกแต่ง"
+msgstr "ลบธีม"
 
 #: utils/configurethemesdialog.cpp:436
 #, fuzzy, kde-format
@@ -2131,7 +2132,7 @@ msgstr "มองเห็นได้โดยปริยาย"
 #| "Check this if this column should be visible when the theme is selected."
 msgctxt "@info:tooltip"
 msgid "Check this if this column should be visible when the theme is selected."
-msgstr "กาเลือกตัวเลือกนี้หากต้องการให้มองเห็นคอลัมน์ได้เมื่อมีการเลือกชุดตกแต่งแล้ว"
+msgstr "กาเลือกตัวเลือกนี้หากต้องการให้มองเห็นคอลัมน์ได้เมื่อมีการเลือกธีมแล้ว"
 
 #: utils/themeeditor.cpp:88
 #, fuzzy, kde-format
@@ -2351,7 +2352,7 @@ msgid ""
 "the items inside the view for more options."
 msgstr ""
 "คลิกเมาส์ปุ่มขวาบนส่วนหัวเพื่อทำการเพิ่มหรือแก้ไขคอลัมน์ต่าง ๆ ลากรายการต่าง ๆ ของเนื้อหา "
-"และหย่อนพวกมันไปบนคอลัมน์เพื่อประกอบเป็นชุดตกแต่งของคุณเอง "
+"และหย่อนพวกมันไปบนคอลัมน์เพื่อประกอบเป็นธีมของคุณเอง "
 "คลิกเมาส์ปุ่มขวาบนรายการภายในมุมมองเพื่อดูตัวเลือกอื่น ๆ เพิ่มเติม"
 
 #: utils/themeeditor.cpp:1430
