@@ -40,7 +40,7 @@ msgstr "不压缩"
 #, kde-format
 msgctxt "@action:button"
 msgid "Compress"
-msgstr ""
+msgstr "压缩"
 
 #: attachment/attachmentcontrollerbase.cpp:200
 #: attachment/attachmentcontrollerbase.cpp:960
@@ -53,7 +53,7 @@ msgstr "无法附加文件"
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to reload attachment"
-msgstr ""
+msgstr "无法重新加载附件"
 
 #: attachment/attachmentcontrollerbase.cpp:320
 #, kde-format
@@ -78,31 +78,31 @@ msgstr "打开方式(&O)..."
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach public key"
-msgstr ""
+msgstr "无法添加公钥"
 
 #: attachment/attachmentcontrollerbase.cpp:390
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach vCard"
-msgstr ""
+msgstr "无法添加 vCard"
 
 #: attachment/attachmentcontrollerbase.cpp:403
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach text from clipboard"
-msgstr ""
+msgstr "无法从剪贴板添加文本"
 
 #: attachment/attachmentcontrollerbase.cpp:451
 #, kde-format
 msgctxt "@action"
 msgid "Attach &Public Key..."
-msgstr ""
+msgstr "附加公钥(&P)..."
 
 #: attachment/attachmentcontrollerbase.cpp:454
 #, kde-format
 msgctxt "@action"
 msgid "Attach &My Public Key"
-msgstr ""
+msgstr "附加我的公钥(&M)"
 
 #: attachment/attachmentcontrollerbase.cpp:457
 #: attachment/attachmentcontrollerbase.cpp:462
@@ -131,7 +131,7 @@ msgstr "附加目录(&A)..."
 #, kde-format
 msgctxt "@action"
 msgid "Attach Own vCard"
-msgstr ""
+msgstr "添加我的vCard"
 
 #: attachment/attachmentcontrollerbase.cpp:472
 #, kde-format
@@ -185,7 +185,7 @@ msgstr "编辑"
 #, kde-format
 msgctxt "@action"
 msgid "Edit With..."
-msgstr ""
+msgstr "编辑方式..."
 
 #: attachment/attachmentcontrollerbase.cpp:522
 #, kde-format
@@ -201,19 +201,19 @@ msgstr "另存为..."
 #, kde-format
 msgctxt "@action"
 msgid "Attachment Pr&operties..."
-msgstr ""
+msgstr "附件属性(&O)..."
 
 #: attachment/attachmentcontrollerbase.cpp:532
 #, kde-format
 msgctxt "@action"
 msgid "Properties"
-msgstr ""
+msgstr "属性"
 
 #: attachment/attachmentcontrollerbase.cpp:540
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
-msgstr ""
+msgstr "全选"
 
 #: attachment/attachmentcontrollerbase.cpp:543
 #, kde-format
@@ -237,7 +237,7 @@ msgstr "无法打开附件"
 #: attachment/attachmentcontrollerbase.cpp:713
 #, kde-format
 msgid "KMail was unable to open the attachment"
-msgstr ""
+msgstr "KMail 无法打开附件"
 
 #: attachment/attachmentcontrollerbase.cpp:754 attachment/editorwatcher.cpp:200
 #, kde-format
@@ -254,7 +254,7 @@ msgstr "未命名"
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Attachment As"
-msgstr ""
+msgstr "附件另存为"
 
 #: attachment/attachmentcontrollerbase.cpp:821
 #, kde-format
@@ -275,7 +275,7 @@ msgstr "保存到文件"
 #, kde-format
 msgctxt "@action:button"
 msgid "&Replace"
-msgstr ""
+msgstr "替换(&R)"
 
 #: attachment/attachmentcontrollerbase.cpp:850
 #: attachment/attachmentcontrollerbase.cpp:929
@@ -381,7 +381,7 @@ msgstr "建议自动显示"
 #: attachment/editorwatcher.cpp:64
 #, kde-format
 msgid "Edit with:"
-msgstr ""
+msgstr "编辑方式："
 
 #: attachment/editorwatcher.cpp:198
 #, kde-format
@@ -389,6 +389,7 @@ msgid ""
 "KMail is unable to detect when the chosen editor is closed. To avoid data "
 "loss, editing the attachment will be aborted."
 msgstr ""
+"KMail 无法检测选定的编辑器何时关闭。为避免数据丢失，对附件的编辑将会中止。"
 
 #: composer/composerviewbase.cpp:325
 #, kde-format
@@ -455,37 +456,37 @@ msgstr "自动调整图像大小"
 #, kde-format
 msgctxt "@action:button"
 msgid "Auto Resize"
-msgstr ""
+msgstr "自动调整大小"
 
 #: composer/composerviewbase.cpp:519
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Resize"
-msgstr ""
+msgstr "禁用自动调整大小"
 
 #: composer/composerviewbase.cpp:721
 #, kde-format
 msgctxt "@title:window"
 msgid "OpenPGP Key Expired"
-msgstr ""
+msgstr "OpenPGP 密钥已过期"
 
 #: composer/composerviewbase.cpp:721
 #, kde-format
 msgctxt "@title:window"
 msgid "S/MIME Certificate Expired"
-msgstr ""
+msgstr "S/MIME 证书已过期"
 
 #: composer/composerviewbase.cpp:723
 #, kde-format
 msgctxt "@title:window"
 msgid "OpenPGP Key Expires Soon"
-msgstr ""
+msgstr "OpenPGP 密钥即将过期"
 
 #: composer/composerviewbase.cpp:724
 #, kde-format
 msgctxt "@title:window"
 msgid "S/MIME Certificate Expires Soon"
-msgstr ""
+msgstr "S/MIME 证书即将过期"
 
 #: composer/composerviewbase.cpp:798 composer/composerviewbase.cpp:812
 #: composer/composerviewbase.cpp:844
@@ -579,13 +580,13 @@ msgstr "文件附件提醒"
 #, kde-format
 msgctxt "@action:button"
 msgid "&Attach File..."
-msgstr ""
+msgstr "添加文件(&A)..."
 
 #: composer/composerviewbase.cpp:1901
 #, kde-format
 msgctxt "@action:button"
 msgid "&Send as Is"
-msgstr ""
+msgstr "原样发送(&S)"
 
 #: composer/composerviewbase.cpp:1953
 #, kde-format
@@ -613,7 +614,7 @@ msgstr "签名(&S)"
 #, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Sign"
-msgstr ""
+msgstr "不签名(&N)"
 
 #: composer/composerviewbase.cpp:1982
 #, kde-format
@@ -641,7 +642,7 @@ msgstr "不签名发送？"
 #, kde-format
 msgctxt "@action:button"
 msgid "Send &Unsigned"
-msgstr ""
+msgstr "不签名发送(&U)"
 
 #: composer/composerviewbase.cpp:2030
 #, kde-format
@@ -685,7 +686,7 @@ msgstr "未签名信件警告"
 #, kde-format
 msgctxt "@action:button"
 msgid "Send &As Is"
-msgstr ""
+msgstr "原样发送(&A)"
 
 #: composer/composerviewbase.cpp:2089
 #, kde-format
@@ -745,13 +746,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "&Encrypt"
-msgstr ""
+msgstr "加密(&E)"
 
 #: composer/composerviewbase.cpp:2130
 #, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Encrypt"
-msgstr ""
+msgstr "禁用加密(&N)"
 
 #: composer/composerviewbase.cpp:2150
 #, kde-format
@@ -771,7 +772,7 @@ msgstr "不加密发送吗？"
 #, kde-format
 msgctxt "@action:button"
 msgid "Send &Unencrypted"
-msgstr ""
+msgstr "不加密发送(&U)"
 
 #: composer/composerviewbase.cpp:2172
 #, kde-format
@@ -943,7 +944,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not OpenPGP-Sign"
-msgstr ""
+msgstr "不使用 OpenPGP 签名"
 
 #: composer/keyresolver.cpp:1079
 #, kde-format
@@ -961,7 +962,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not S/MIME-Sign"
-msgstr ""
+msgstr "不使用 S/MIME 签名"
 
 #: composer/keyresolver.cpp:1149
 #, kde-format
@@ -1079,7 +1080,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Name Selection"
-msgstr ""
+msgstr "姓名选择"
 
 #: contactpreference/savecontactpreferencejob.cpp:71
 #, kde-format
@@ -1101,7 +1102,7 @@ msgstr "等待“%1”发给“%2”的回复"
 msgid ""
 "Failed to store a new reminder: an error occurred while trying to create a "
 "new to-do in your calendar: %1"
-msgstr ""
+msgstr "保存新提醒失败：尝试在日历中创建新待办事宜时发生错误: %1"
 
 #: followupreminder/followupremindercreatejob.cpp:131
 #, kde-format
@@ -1122,7 +1123,7 @@ msgstr "日期："
 #: followupreminder/followupreminderselectdatedialog.cpp:71
 #, kde-format
 msgid "Store to-do in:"
-msgstr ""
+msgstr "存储待办到："
 
 #: followupreminder/followupreminderselectdatedialog.cpp:105
 #, kde-format
@@ -1180,7 +1181,7 @@ msgstr "选择图片格式"
 #, kde-format
 msgctxt "@action:button"
 msgid "Select Format..."
-msgstr ""
+msgstr "选择格式..."
 
 #: imagescaling/imagescalingwidget.cpp:107
 #, kde-format
@@ -1431,7 +1432,7 @@ msgstr "剪贴板中未发现文本"
 #, kde-format
 msgctxt "@title:window"
 msgid "Define Attachment Name"
-msgstr ""
+msgstr "定义附件名称"
 
 #: job/attachmentclipboardjob.cpp:46
 #, kde-format
@@ -1481,6 +1482,7 @@ msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
 "p><p><b>No valid key found for user %1 (%2)</b></p>"
 msgstr ""
+"<p>试图从后端导出密钥时发生错误：</p><p><b>用户%1 (%2)无可用密钥</b></p>"
 
 #: job/composerjob.cpp:288
 #, kde-format
@@ -1511,7 +1513,7 @@ msgstr "%1 内容传输编码(Content-Transfer-Encoding)无法正确编码此信
 #, kde-format
 msgctxt "@title:window"
 msgid "Message Disposition Notification Request"
-msgstr ""
+msgstr "信件处理回执申请"
 
 #: mdn/mdnadvicedialog.cpp:30
 #, kde-format
