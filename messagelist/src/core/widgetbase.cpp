@@ -361,14 +361,16 @@ void Widget::saveCurrentSelection()
 void Widget::setStorageModel(StorageModel *storageModel, PreSelectionMode preSelectionMode)
 {
     if (storageModel == d->mStorageModel) {
-        return; // nuthin to do here
+        return; // nothing to do here
     }
 
     d->setDefaultAggregationForStorageModel(storageModel);
     d->setDefaultThemeForStorageModel(storageModel);
     d->setDefaultSortOrderForStorageModel(storageModel);
 
-    if (!d->quickSearchLine->searchEdit()->locked()) {
+    const bool isLocked = d->quickSearchLine->searchEdit()->locked();
+    // qDebug() << " isLocked " << isLocked;
+    if (!isLocked) {
         if (d->mSearchTimer) {
             d->mSearchTimer->stop();
             delete d->mSearchTimer;
