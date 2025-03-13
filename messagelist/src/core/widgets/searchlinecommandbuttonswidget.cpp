@@ -67,13 +67,13 @@ void SearchLineCommandButtonsWidget::fillWidgets()
         {true, SearchLineCommand::searchLineTypeToString(SearchLineCommand::IsSent), i18nc("@action:button", "Sent")},
         {true, SearchLineCommand::searchLineTypeToString(SearchLineCommand::IsDeleted), i18nc("@action:button", "Deleted")},
         {true, SearchLineCommand::searchLineTypeToString(SearchLineCommand::IsAction), i18nc("@action:button", "Action")},
+        {false, SearchLineCommand::searchLineTypeToString(SearchLineCommand::Category), i18nc("@action:button", "Category")},
 #if 0 // Reactivate when we implemented it.
         {false, QStringLiteral("smaller:"), i18nc("@action:button", "Smaller")},
         {false, QStringLiteral("larger:"), i18nc("@action:button", "Larger")},
         {false, QStringLiteral("size:"), i18nc("@action:button", "Size")},
         {false, QStringLiteral("older_than:"), i18nc("@action:button", "Older")},
         {false, QStringLiteral("newer_than:"), i18nc("@action:button", "Newer")},
-        {false, QStringLiteral("category:"), i18nc("@action:button", "Category")},
 #endif
     };
 }
