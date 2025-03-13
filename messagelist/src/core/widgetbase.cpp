@@ -124,7 +124,7 @@ Widget::Widget(QWidget *pParent)
     g->setContentsMargins({});
     g->setSpacing(0);
 
-    d->quickSearchLine = new QuickSearchLine;
+    d->quickSearchLine = new QuickSearchLine(this);
     d->quickSearchLine->setObjectName(QLatin1StringView("quicksearchline"));
     connect(d->quickSearchLine, &QuickSearchLine::clearButtonClicked, this, &Widget::searchEditClearButtonClicked);
 
