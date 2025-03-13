@@ -382,6 +382,8 @@ void Widget::setStorageModel(StorageModel *storageModel, PreSelectionMode preSel
         if (d->mFilter) {
             resetFilter();
         }
+    } else {
+        searchTimerFired();
     }
     StorageModel *oldModel = d->mStorageModel;
 
