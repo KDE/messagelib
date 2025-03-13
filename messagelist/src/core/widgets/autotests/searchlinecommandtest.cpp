@@ -436,6 +436,22 @@ void SearchLineCommandTest::shouldBeValid()
         info.argument = QStringLiteral("ddd");
         QVERIFY(info.isValid());
     }
+    {
+        MessageList::Core::SearchLineCommand::SearchLineInfo info;
+        info.type = MessageList::Core::SearchLineCommand::Subject;
+        QVERIFY(!info.isValid());
+    }
+    {
+        MessageList::Core::SearchLineCommand::SearchLineInfo info;
+        info.type = MessageList::Core::SearchLineCommand::Category;
+        QVERIFY(!info.isValid());
+    }
+    {
+        MessageList::Core::SearchLineCommand::SearchLineInfo info;
+        info.type = MessageList::Core::SearchLineCommand::Category;
+        info.argument = QStringLiteral("ddd");
+        QVERIFY(info.isValid());
+    }
 }
 
 void SearchLineCommandTest::mustBeUnique()
@@ -474,6 +490,21 @@ void SearchLineCommandTest::mustBeUnique()
         MessageList::Core::SearchLineCommand::SearchLineInfo info;
         info.type = MessageList::Core::SearchLineCommand::IsIgnored;
         QVERIFY(info.mustBeUnique());
+    }
+    {
+        MessageList::Core::SearchLineCommand::SearchLineInfo info;
+        info.type = MessageList::Core::SearchLineCommand::Category;
+        QVERIFY(!info.mustBeUnique());
+    }
+    {
+        MessageList::Core::SearchLineCommand::SearchLineInfo info;
+        info.type = MessageList::Core::SearchLineCommand::Bcc;
+        QVERIFY(!info.mustBeUnique());
+    }
+    {
+        MessageList::Core::SearchLineCommand::SearchLineInfo info;
+        info.type = MessageList::Core::SearchLineCommand::From;
+        QVERIFY(!info.mustBeUnique());
     }
 }
 #include "moc_searchlinecommandtest.cpp"
