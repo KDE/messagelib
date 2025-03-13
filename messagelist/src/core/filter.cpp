@@ -415,6 +415,7 @@ void Filter::setSearchString(const SearchLineCommand &command)
         case SearchLineCommand::NewerThan:
         case SearchLineCommand::Date:
         case SearchLineCommand::Size:
+            break;
         case SearchLineCommand::Category:
             // TODO implement tag support
             break;
