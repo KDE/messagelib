@@ -369,6 +369,39 @@ void SearchLineCommandTest::shouldParseInfo_data()
         const QString convertStr{QStringLiteral("Literal string voiture AND Subject contains ddd ffff AND Mail has attachment")};
         QTest::newRow("literal2") << str << lstInfo << 3 << convertStr;
     }
+
+    {
+        const QString str{QStringLiteral("voiture subject:ddd ffff has:attachment category:testcategory")};
+        QList<MessageList::Core::SearchLineCommand::SearchLineInfo> lstInfo;
+        {
+            MessageList::Core::SearchLineCommand::SearchLineInfo info;
+            info.type = MessageList::Core::SearchLineCommand::SearchLineType::Literal;
+            info.argument = QStringLiteral("voiture");
+            lstInfo.append(info);
+        }
+
+        {
+            MessageList::Core::SearchLineCommand::SearchLineInfo info;
+            info.type = MessageList::Core::SearchLineCommand::SearchLineType::Subject;
+            info.argument = QStringLiteral("ddd ffff");
+            lstInfo.append(info);
+        }
+        {
+            MessageList::Core::SearchLineCommand::SearchLineInfo info;
+            info.type = MessageList::Core::SearchLineCommand::SearchLineType::HasAttachment;
+            lstInfo.append(info);
+        }
+
+        {
+            MessageList::Core::SearchLineCommand::SearchLineInfo info;
+            info.type = MessageList::Core::SearchLineCommand::SearchLineType::Category;
+            info.argument = QStringLiteral("testcategory");
+            lstInfo.append(info);
+        }
+
+        const QString convertStr{QStringLiteral("Literal string voiture AND Subject contains ddd ffff AND Mail has attachment AND Mail has tag testcategory")};
+        QTest::newRow("literal2") << str << lstInfo << 4 << convertStr;
+    }
 }
 
 void SearchLineCommandTest::shouldParseInfo()
