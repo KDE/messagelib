@@ -99,11 +99,13 @@ bool Filter::match(const MessageItem *item) const
         }
     }
 
-    if (!mTagId.isEmpty()) {
-        // mTagId is a Akonadi::Tag::url
-        const bool tagMatches = item->findTag(mTagId) != nullptr;
-        if (!tagMatches) {
-            return false;
+    if (!mTagIds.isEmpty()) {
+        // mTagIds is a Akonadi::Tag::url
+        for (const auto &tag : mTagIds) {
+            const bool tagMatches = item->findTag(tag) != nullptr;
+            if (!tagMatches) {
+                return false;
+            }
         }
     }
 
@@ -130,7 +132,7 @@ bool Filter::isEmpty() const
         return false;
     }
 
-    if (!mTagId.isEmpty()) {
+    if (!mTagIds.isEmpty()) {
         return false;
     }
 
@@ -141,7 +143,7 @@ void Filter::clear()
 {
     mStatus.clear();
     mSearchString.clear();
-    mTagId.clear();
+    mTagIds.clear();
     mMatchingItemIds.clear();
     mSearchList.clear();
 }
@@ -317,7 +319,7 @@ void Filter::save(const KSharedConfig::Ptr &config, const QString &filtername, c
     }
     newGroup.writeEntry("searchString", mSearchString);
     newGroup.writeEntry("searchOptions", static_cast<int>(mOptions));
-    newGroup.writeEntry("tagId", mTagId);
+    newGroup.writeEntry("tagId", mTagIds);
     newGroup.writeEntry("identifier", mIdentifier);
     QList<qint32> lst;
     lst.reserve(mStatus.count());
@@ -347,7 +349,7 @@ Filter *Filter::loadFromConfigGroup(const KConfigGroup &newGroup)
     auto filter = new Filter();
     filter->setSearchString(newGroup.readEntry("searchString"),
                             static_cast<SearchMessageByButtons::SearchOptions>(newGroup.readEntry("searchOptions").toInt()));
-    filter->setTagId(newGroup.readEntry("tagId"));
+    filter->setTagId(newGroup.readEntry("tagId", QStringList()));
     filter->setIdentifier(newGroup.readEntry("identifier"));
     filter->setFilterName(newGroup.readEntry("name"));
     filter->setIconName(newGroup.readEntry("iconName"));
@@ -416,9 +418,11 @@ void Filter::setSearchString(const SearchLineCommand &command)
         case SearchLineCommand::Date:
         case SearchLineCommand::Size:
             break;
-        case SearchLineCommand::Category:
-            // TODO implement tag support
+        case SearchLineCommand::Category: {
+            // TODO get correct url
+            addTagId(info.argument);
             break;
+        }
         case SearchLineCommand::HasAttachment: {
             Akonadi::MessageStatus status;
             status.setHasAttachment(true);
@@ -621,14 +625,19 @@ void Filter::setSearchString(const QString &search, SearchMessageByButtons::Sear
 #endif
 }
 
-const QString &Filter::tagId() const
+const QStringList &Filter::tagId() const
 {
-    return mTagId;
+    return mTagIds;
 }
 
-void Filter::setTagId(const QString &tagId)
+void Filter::setTagId(const QStringList &tagId)
 {
-    mTagId = tagId;
+    mTagIds = tagId;
+}
+
+void Filter::addTagId(const QString &tagId)
+{
+    mTagIds.append(tagId);
 }
 
 void Filter::generateRandomIdentifier()

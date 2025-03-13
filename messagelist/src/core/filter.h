@@ -72,12 +72,14 @@ public:
     /**
      * Returns the currently set MessageItem::Tag id
      */
-    [[nodiscard]] const QString &tagId() const;
+    [[nodiscard]] const QStringList &tagId() const;
 
     /**
      * Sets the id of a MessageItem::Tag that the matching messages must contain.
      */
-    void setTagId(const QString &tagId);
+    void setTagId(const QStringList &tagId);
+
+    void addTagId(const QString &tagId);
 
     /**
      * Clears this filter (sets status to 0, search string and tag id to empty strings)
@@ -116,7 +118,7 @@ private:
     [[nodiscard]] bool containString(const QString &searchInString) const;
     QList<Akonadi::MessageStatus> mStatus; ///< Messages must match these statuses, if non 0
     QString mSearchString; ///< Messages must match this search string, if not empty
-    QString mTagId; ///< Messages must have this tag, if not empty. Contains a tag url.
+    QStringList mTagIds; ///< Messages must have this tag, if not empty. Contains a tag url.
     Akonadi::Collection mCurrentFolder;
     QSet<qint64> mMatchingItemIds;
     SearchMessageByButtons::SearchOptions mOptions;

@@ -928,7 +928,7 @@ void Widget::tagIdSelected(const QVariant &data)
         if (!d->mFilter) {
             d->mFilter = new Filter();
         }
-        d->mFilter->setTagId(tagId);
+        d->mFilter->setTagId({tagId});
     }
 
     d->mView->model()->setFilter(d->mFilter);
@@ -982,7 +982,7 @@ void Widget::slotStatusButtonsClicked()
     // We also arbitrarily set tagId to an empty string, though we *could* allow filtering
     // by status AND tag...
     if (d->mFilter) {
-        d->mFilter->setTagId(QString());
+        d->mFilter->setTagId(QStringList());
     }
 
     auto lst = d->quickSearchLine->status();
