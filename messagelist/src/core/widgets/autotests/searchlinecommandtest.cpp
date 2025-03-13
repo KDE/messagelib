@@ -412,6 +412,8 @@ void SearchLineCommandTest::shouldHaveSubType()
     QVERIFY(MessageList::Core::SearchLineCommand::hasSubType(MessageList::Core::SearchLineCommand::Smaller));
     QVERIFY(MessageList::Core::SearchLineCommand::hasSubType(MessageList::Core::SearchLineCommand::OlderThan));
     QVERIFY(MessageList::Core::SearchLineCommand::hasSubType(MessageList::Core::SearchLineCommand::NewerThan));
+
+    QVERIFY(MessageList::Core::SearchLineCommand::hasSubType(MessageList::Core::SearchLineCommand::Category));
 }
 
 void SearchLineCommandTest::shouldBeValid()
