@@ -88,10 +88,6 @@ public:
     [[nodiscard]] QString currentFilterSearchString() const;
 
     [[nodiscard]] QList<SearchLineCommand::SearchLineInfo> searchLineCommands() const;
-    /**
-     * Returns the id of the MessageItem::Tag currently set in the quicksearch field.
-     */
-    [[nodiscard]] QString currentFilterTagId() const;
 
     /**
      * Sets the focus on the quick search line of the currently active tab.

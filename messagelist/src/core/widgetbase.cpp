@@ -284,15 +284,6 @@ QString Widget::currentFilterSearchString() const
     return {};
 }
 
-QString Widget::currentFilterTagId() const
-{
-    if (d->mFilter) {
-        return d->mFilter->tagId();
-    }
-
-    return {};
-}
-
 void Widget::WidgetPrivate::setDefaultAggregationForStorageModel(const StorageModel *storageModel)
 {
     const Aggregation *opt = Manager::instance()->aggregationForStorageModel(storageModel, &mStorageUsesPrivateAggregation);
