@@ -420,6 +420,7 @@ void Filter::setSearchString(const SearchLineCommand &command)
             break;
         case SearchLineCommand::Category: {
             // TODO get correct url
+            // We need to use info.argument for finding akonadi tag url first
             addTagId(info.argument);
             break;
         }
