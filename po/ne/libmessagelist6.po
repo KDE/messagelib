@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-07 00:42+0000\n"
+"POT-Creation-Date: 2025-03-14 02:43+0000\n"
 "PO-Revision-Date: 2007-09-10 16:41+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -1176,48 +1176,48 @@ msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "फिल्टर सिर्जना गर्नुहोस्"
 
-#: core/widgetbase.cpp:428 messagelistutil.cpp:114
+#: core/widgetbase.cpp:430 messagelistutil.cpp:114
 #, fuzzy, kde-format
 #| msgid "Time"
 msgid "Theme"
 msgstr "समय"
 
-#: core/widgetbase.cpp:449 core/widgetbase.cpp:539
+#: core/widgetbase.cpp:451 core/widgetbase.cpp:541
 #: core/widgets/configurefilterswidget.cpp:75
 #, fuzzy, kde-format
 #| msgid "Configure KMail..."
 msgid "Configure..."
 msgstr "केडीई मेल कन्फिगर गर्नुहोस्..."
 
-#: core/widgetbase.cpp:518 messagelistutil.cpp:109
+#: core/widgetbase.cpp:520 messagelistutil.cpp:109
 #, fuzzy, kde-format
 #| msgid "Suggestions"
 msgid "Aggregation"
 msgstr "सुझावहरू"
 
-#: core/widgetbase.cpp:601
+#: core/widgetbase.cpp:603
 #, fuzzy, kde-format
 #| msgid "Message Part Properties"
 msgid "Message Sort Order"
 msgstr "सन्देश भाग विशेषता"
 
-#: core/widgetbase.cpp:623
+#: core/widgetbase.cpp:625
 #, fuzzy, kde-format
 msgid "Message Sort Direction"
 msgstr "सन्देश पाठ"
 
-#: core/widgetbase.cpp:640
+#: core/widgetbase.cpp:642
 #, fuzzy, kde-format
 #| msgid "Delete Folder"
 msgid "Group Sort Order"
 msgstr "फोल्डर मेट्नुहोस्"
 
-#: core/widgetbase.cpp:657
+#: core/widgetbase.cpp:659
 #, fuzzy, kde-format
 msgid "Group Sort Direction"
 msgstr "सन्देश पाठ"
 
-#: core/widgetbase.cpp:672
+#: core/widgetbase.cpp:674
 #, kde-format
 msgid "Folder Always Uses This Sort Order"
 msgstr ""

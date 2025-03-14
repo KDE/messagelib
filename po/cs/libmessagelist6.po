@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-07 00:42+0000\n"
+"POT-Creation-Date: 2025-03-14 02:43+0000\n"
 "PO-Revision-Date: 2024-08-20 08:41+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -1034,43 +1034,43 @@ msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "Vytvořit filtr"
 
-#: core/widgetbase.cpp:428 messagelistutil.cpp:114
+#: core/widgetbase.cpp:430 messagelistutil.cpp:114
 #, kde-format
 msgid "Theme"
 msgstr "Motiv"
 
-#: core/widgetbase.cpp:449 core/widgetbase.cpp:539
+#: core/widgetbase.cpp:451 core/widgetbase.cpp:541
 #: core/widgets/configurefilterswidget.cpp:75
 #, kde-format
 msgid "Configure..."
 msgstr "Nastavit..."
 
-#: core/widgetbase.cpp:518 messagelistutil.cpp:109
+#: core/widgetbase.cpp:520 messagelistutil.cpp:109
 #, kde-format
 msgid "Aggregation"
 msgstr "Agregace"
 
-#: core/widgetbase.cpp:601
+#: core/widgetbase.cpp:603
 #, kde-format
 msgid "Message Sort Order"
 msgstr "Pořadí třídění zpráv"
 
-#: core/widgetbase.cpp:623
+#: core/widgetbase.cpp:625
 #, kde-format
 msgid "Message Sort Direction"
 msgstr "Směr třídění zpráv"
 
-#: core/widgetbase.cpp:640
+#: core/widgetbase.cpp:642
 #, kde-format
 msgid "Group Sort Order"
 msgstr "Pořadí třídění skupin"
 
-#: core/widgetbase.cpp:657
+#: core/widgetbase.cpp:659
 #, kde-format
 msgid "Group Sort Direction"
 msgstr "Směr třídění skupin"
 
-#: core/widgetbase.cpp:672
+#: core/widgetbase.cpp:674
 #, kde-format
 msgid "Folder Always Uses This Sort Order"
 msgstr "Složka vždy používá toto pořadí třídění"

@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-07 00:42+0000\n"
+"POT-Creation-Date: 2025-03-14 02:43+0000\n"
 "PO-Revision-Date: 2007-04-27 11:01+0100\n"
 "Last-Translator: Berend Ytsma <berendy@gmail.com>\n"
 "Language-Team: Frysk <kde-i18n-fry@kde.org>\n"
@@ -1184,50 +1184,50 @@ msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "&Filter oanmeitsje"
 
-#: core/widgetbase.cpp:428 messagelistutil.cpp:114
+#: core/widgetbase.cpp:430 messagelistutil.cpp:114
 #, fuzzy, kde-format
 #| msgid "Time"
 msgid "Theme"
 msgstr "Tiid"
 
-#: core/widgetbase.cpp:449 core/widgetbase.cpp:539
+#: core/widgetbase.cpp:451 core/widgetbase.cpp:541
 #: core/widgets/configurefilterswidget.cpp:75
 #, fuzzy, kde-format
 #| msgid "Configure KMail..."
 msgid "Configure..."
 msgstr "KMail ynstelle..."
 
-#: core/widgetbase.cpp:518 messagelistutil.cpp:109
+#: core/widgetbase.cpp:520 messagelistutil.cpp:109
 #, fuzzy, kde-format
 #| msgid "Suggestions"
 msgid "Aggregation"
 msgstr "Sugestjes"
 
-#: core/widgetbase.cpp:601
+#: core/widgetbase.cpp:603
 #, fuzzy, kde-format
 #| msgid "Message Part Properties"
 msgid "Message Sort Order"
 msgstr "Eigenschippen fan taheaksels"
 
-#: core/widgetbase.cpp:623
+#: core/widgetbase.cpp:625
 #, fuzzy, kde-format
 #| msgid "Message Text as Is"
 msgid "Message Sort Direction"
 msgstr "Berjochttekst lykas it is"
 
-#: core/widgetbase.cpp:640
+#: core/widgetbase.cpp:642
 #, fuzzy, kde-format
 #| msgid "Delete Folder"
 msgid "Group Sort Order"
 msgstr "Map wiskje"
 
-#: core/widgetbase.cpp:657
+#: core/widgetbase.cpp:659
 #, fuzzy, kde-format
 #| msgid "Message Text as Is"
 msgid "Group Sort Direction"
 msgstr "Berjochttekst lykas it is"
 
-#: core/widgetbase.cpp:672
+#: core/widgetbase.cpp:674
 #, kde-format
 msgid "Folder Always Uses This Sort Order"
 msgstr ""
