@@ -218,7 +218,7 @@ void MessageList::Widget::slotTagsFetched(KJob *job)
 
     addMessageTagItem(QIcon::fromTheme(QStringLiteral("mail-flag")).pixmap(16, 16),
                       i18nc("Item in list of Akonadi tags, to show all e-mails", "All"),
-                      QString());
+                      QVariant());
 
     QStringList tagFound;
     const auto tags{fetchJob->tags()};
