@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-stable/messages/messagelib/libtemplateparser6.pot\n"
-"X-Crowdin-File-ID: 52594\n"
+"X-Crowdin-File: /kf6-trunk/messages/messagelib/libtemplateparser6.pot\n"
+"X-Crowdin-File-ID: 49098\n"
 
 #: customtemplates.cpp:72 customtemplates.cpp:123
 #, kde-format

@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-07 00:42+0000\n"
+"POT-Creation-Date: 2025-03-14 00:43+0000\n"
 "PO-Revision-Date: 2007-04-27 11:01+0100\n"
 "Last-Translator: Berend Ytsma <berendy@gmail.com>\n"
 "Language-Team: Frysk <kde-i18n-fry@kde.org>\n"
@@ -1184,50 +1184,50 @@ msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "&Filter oanmeitsje"
 
-#: core/widgetbase.cpp:428 messagelistutil.cpp:114
+#: core/widgetbase.cpp:423 messagelistutil.cpp:114
 #, fuzzy, kde-format
 #| msgid "Time"
 msgid "Theme"
 msgstr "Tiid"
 
-#: core/widgetbase.cpp:449 core/widgetbase.cpp:539
+#: core/widgetbase.cpp:444 core/widgetbase.cpp:534
 #: core/widgets/configurefilterswidget.cpp:75
 #, fuzzy, kde-format
 #| msgid "Configure KMail..."
 msgid "Configure..."
 msgstr "KMail ynstelle..."
 
-#: core/widgetbase.cpp:518 messagelistutil.cpp:109
+#: core/widgetbase.cpp:513 messagelistutil.cpp:109
 #, fuzzy, kde-format
 #| msgid "Suggestions"
 msgid "Aggregation"
 msgstr "Sugestjes"
 
-#: core/widgetbase.cpp:601
+#: core/widgetbase.cpp:596
 #, fuzzy, kde-format
 #| msgid "Message Part Properties"
 msgid "Message Sort Order"
 msgstr "Eigenschippen fan taheaksels"
 
-#: core/widgetbase.cpp:623
+#: core/widgetbase.cpp:618
 #, fuzzy, kde-format
 #| msgid "Message Text as Is"
 msgid "Message Sort Direction"
 msgstr "Berjochttekst lykas it is"
 
-#: core/widgetbase.cpp:640
+#: core/widgetbase.cpp:635
 #, fuzzy, kde-format
 #| msgid "Delete Folder"
 msgid "Group Sort Order"
 msgstr "Map wiskje"
 
-#: core/widgetbase.cpp:657
+#: core/widgetbase.cpp:652
 #, fuzzy, kde-format
 #| msgid "Message Text as Is"
 msgid "Group Sort Direction"
 msgstr "Berjochttekst lykas it is"
 
-#: core/widgetbase.cpp:672
+#: core/widgetbase.cpp:667
 #, kde-format
 msgid "Folder Always Uses This Sort Order"
 msgstr ""
@@ -1638,44 +1638,44 @@ msgctxt "@action:button"
 msgid "Action"
 msgstr "Markearring foar wicht&ich berjocht fuortsmite"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:71
+#: core/widgets/searchlinecommandbuttonswidget.cpp:70
+#, fuzzy, kde-format
+#| msgid "is in category"
+msgctxt "@action:button"
+msgid "Category"
+msgstr "sit yn kategory"
+
+#: core/widgets/searchlinecommandbuttonswidget.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Smaller"
 msgstr ""
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:72
+#: core/widgets/searchlinecommandbuttonswidget.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Larger"
 msgstr ""
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:73
+#: core/widgets/searchlinecommandbuttonswidget.cpp:74
 #, fuzzy, kde-format
 #| msgid "Size"
 msgctxt "@action:button"
 msgid "Size"
 msgstr "Grutte"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:74
+#: core/widgets/searchlinecommandbuttonswidget.cpp:75
 #, fuzzy, kde-format
 #| msgid "Folder"
 msgctxt "@action:button"
 msgid "Older"
 msgstr "Map"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:75
+#: core/widgets/searchlinecommandbuttonswidget.cpp:76
 #, kde-format
 msgctxt "@action:button"
 msgid "Newer"
 msgstr ""
-
-#: core/widgets/searchlinecommandbuttonswidget.cpp:76
-#, fuzzy, kde-format
-#| msgid "is in category"
-msgctxt "@action:button"
-msgid "Category"
-msgstr "sit yn kategory"
 
 #: core/widgets/searchlinestatus.cpp:78
 #, kde-format

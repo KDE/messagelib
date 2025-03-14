@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-07 00:42+0000\n"
+"POT-Creation-Date: 2025-03-14 00:43+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-stable/messages/messagelib/libmessagelist6.pot\n"
-"X-Crowdin-File-ID: 52642\n"
+"X-Crowdin-File: /kf6-trunk/messages/messagelib/libmessagelist6.pot\n"
+"X-Crowdin-File-ID: 49082\n"
 
 #: core/aggregation.cpp:178
 #, kde-format
@@ -1024,43 +1024,43 @@ msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "创建过滤"
 
-#: core/widgetbase.cpp:428 messagelistutil.cpp:114
+#: core/widgetbase.cpp:423 messagelistutil.cpp:114
 #, kde-format
 msgid "Theme"
 msgstr "主题"
 
-#: core/widgetbase.cpp:449 core/widgetbase.cpp:539
+#: core/widgetbase.cpp:444 core/widgetbase.cpp:534
 #: core/widgets/configurefilterswidget.cpp:75
 #, kde-format
 msgid "Configure..."
 msgstr "配置..."
 
-#: core/widgetbase.cpp:518 messagelistutil.cpp:109
+#: core/widgetbase.cpp:513 messagelistutil.cpp:109
 #, kde-format
 msgid "Aggregation"
 msgstr "聚合"
 
-#: core/widgetbase.cpp:601
+#: core/widgetbase.cpp:596
 #, kde-format
 msgid "Message Sort Order"
 msgstr "信件排列顺序"
 
-#: core/widgetbase.cpp:623
+#: core/widgetbase.cpp:618
 #, kde-format
 msgid "Message Sort Direction"
 msgstr "信件排列方向"
 
-#: core/widgetbase.cpp:640
+#: core/widgetbase.cpp:635
 #, kde-format
 msgid "Group Sort Order"
 msgstr "分组排列顺序"
 
-#: core/widgetbase.cpp:657
+#: core/widgetbase.cpp:652
 #, kde-format
 msgid "Group Sort Direction"
 msgstr "分组排列方向"
 
-#: core/widgetbase.cpp:672
+#: core/widgetbase.cpp:667
 #, kde-format
 msgid "Folder Always Uses This Sort Order"
 msgstr "文件夹总是使用此排列顺序"
@@ -1408,40 +1408,40 @@ msgctxt "@action:button"
 msgid "Action"
 msgstr ""
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:71
+#: core/widgets/searchlinecommandbuttonswidget.cpp:70
 #, kde-format
 msgctxt "@action:button"
-msgid "Smaller"
+msgid "Category"
 msgstr ""
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:72
 #, kde-format
 msgctxt "@action:button"
-msgid "Larger"
+msgid "Smaller"
 msgstr ""
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:73
 #, kde-format
 msgctxt "@action:button"
-msgid "Size"
+msgid "Larger"
 msgstr ""
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:74
 #, kde-format
 msgctxt "@action:button"
-msgid "Older"
+msgid "Size"
 msgstr ""
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:75
 #, kde-format
 msgctxt "@action:button"
-msgid "Newer"
+msgid "Older"
 msgstr ""
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:76
 #, kde-format
 msgctxt "@action:button"
-msgid "Category"
+msgid "Newer"
 msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:78

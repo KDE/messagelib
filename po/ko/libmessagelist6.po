@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-07 00:42+0000\n"
+"POT-Creation-Date: 2025-03-14 00:43+0000\n"
 "PO-Revision-Date: 2024-12-24 18:53+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1034,43 +1034,43 @@ msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "필터 만들기"
 
-#: core/widgetbase.cpp:428 messagelistutil.cpp:114
+#: core/widgetbase.cpp:423 messagelistutil.cpp:114
 #, kde-format
 msgid "Theme"
 msgstr "테마"
 
-#: core/widgetbase.cpp:449 core/widgetbase.cpp:539
+#: core/widgetbase.cpp:444 core/widgetbase.cpp:534
 #: core/widgets/configurefilterswidget.cpp:75
 #, kde-format
 msgid "Configure..."
 msgstr "설정..."
 
-#: core/widgetbase.cpp:518 messagelistutil.cpp:109
+#: core/widgetbase.cpp:513 messagelistutil.cpp:109
 #, kde-format
 msgid "Aggregation"
 msgstr "분류"
 
-#: core/widgetbase.cpp:601
+#: core/widgetbase.cpp:596
 #, kde-format
 msgid "Message Sort Order"
 msgstr "메시지 정렬 순서"
 
-#: core/widgetbase.cpp:623
+#: core/widgetbase.cpp:618
 #, kde-format
 msgid "Message Sort Direction"
 msgstr "메시지 정렬 방향"
 
-#: core/widgetbase.cpp:640
+#: core/widgetbase.cpp:635
 #, kde-format
 msgid "Group Sort Order"
 msgstr "그룹 정렬 순서"
 
-#: core/widgetbase.cpp:657
+#: core/widgetbase.cpp:652
 #, kde-format
 msgid "Group Sort Direction"
 msgstr "그룹 정렬 방향"
 
-#: core/widgetbase.cpp:672
+#: core/widgetbase.cpp:667
 #, kde-format
 msgid "Folder Always Uses This Sort Order"
 msgstr "폴더에서 항상 이 정렬 순서 사용"
@@ -1424,41 +1424,41 @@ msgctxt "@action:button"
 msgid "Action"
 msgstr "동작 항목"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:71
+#: core/widgets/searchlinecommandbuttonswidget.cpp:70
+#, kde-format
+msgctxt "@action:button"
+msgid "Category"
+msgstr "분류"
+
+#: core/widgets/searchlinecommandbuttonswidget.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Smaller"
 msgstr "더 작음"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:72
+#: core/widgets/searchlinecommandbuttonswidget.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Larger"
 msgstr "더 큼"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:73
+#: core/widgets/searchlinecommandbuttonswidget.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Size"
 msgstr "크기"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:74
+#: core/widgets/searchlinecommandbuttonswidget.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Older"
 msgstr "오래됨"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:75
+#: core/widgets/searchlinecommandbuttonswidget.cpp:76
 #, kde-format
 msgctxt "@action:button"
 msgid "Newer"
 msgstr "새로움"
-
-#: core/widgets/searchlinecommandbuttonswidget.cpp:76
-#, kde-format
-msgctxt "@action:button"
-msgid "Category"
-msgstr "분류"
 
 #: core/widgets/searchlinestatus.cpp:78
 #, kde-format

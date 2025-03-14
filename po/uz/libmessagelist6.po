@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-07 00:42+0000\n"
+"POT-Creation-Date: 2025-03-14 00:43+0000\n"
 "PO-Revision-Date: 2006-12-17 13:32+0000\n"
 "Last-Translator: Mashrab Kuvatov <kmashrab@uni-bremen.de>\n"
 "Language-Team: Uzbek <floss-uz-l10n@googlegroups.com>\n"
@@ -1127,46 +1127,46 @@ msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "F&ilter yaratish"
 
-#: core/widgetbase.cpp:428 messagelistutil.cpp:114
+#: core/widgetbase.cpp:423 messagelistutil.cpp:114
 #, kde-format
 msgid "Theme"
 msgstr ""
 
-#: core/widgetbase.cpp:449 core/widgetbase.cpp:539
+#: core/widgetbase.cpp:444 core/widgetbase.cpp:534
 #: core/widgets/configurefilterswidget.cpp:75
 #, fuzzy, kde-format
 msgid "Configure..."
 msgstr "KMail moslama&si"
 
-#: core/widgetbase.cpp:518 messagelistutil.cpp:109
+#: core/widgetbase.cpp:513 messagelistutil.cpp:109
 #, fuzzy, kde-format
 #| msgid "Suggestions"
 msgid "Aggregation"
 msgstr "Takliflar"
 
-#: core/widgetbase.cpp:601
+#: core/widgetbase.cpp:596
 #, fuzzy, kde-format
 #| msgid "Message Body"
 msgid "Message Sort Order"
 msgstr "Xabar tarkibi"
 
-#: core/widgetbase.cpp:623
+#: core/widgetbase.cpp:618
 #, fuzzy, kde-format
 msgid "Message Sort Direction"
 msgstr "Xabarlar roʻyxati"
 
-#: core/widgetbase.cpp:640
+#: core/widgetbase.cpp:635
 #, fuzzy, kde-format
 #| msgid "Delete Folder"
 msgid "Group Sort Order"
 msgstr "Jildni oʻchirish"
 
-#: core/widgetbase.cpp:657
+#: core/widgetbase.cpp:652
 #, fuzzy, kde-format
 msgid "Group Sort Direction"
 msgstr "Xabarlar roʻyxati"
 
-#: core/widgetbase.cpp:672
+#: core/widgetbase.cpp:667
 #, kde-format
 msgid "Folder Always Uses This Sort Order"
 msgstr ""
@@ -1573,44 +1573,44 @@ msgctxt "@action:button"
 msgid "Action"
 msgstr "Muhim xabar"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:71
+#: core/widgets/searchlinecommandbuttonswidget.cpp:70
+#, fuzzy, kde-format
+#| msgid "is in category"
+msgctxt "@action:button"
+msgid "Category"
+msgstr "turkumda mavjud"
+
+#: core/widgets/searchlinecommandbuttonswidget.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Smaller"
 msgstr ""
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:72
+#: core/widgets/searchlinecommandbuttonswidget.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Larger"
 msgstr ""
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:73
+#: core/widgets/searchlinecommandbuttonswidget.cpp:74
 #, fuzzy, kde-format
 #| msgid "Size"
 msgctxt "@action:button"
 msgid "Size"
 msgstr "Hajmi"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:74
+#: core/widgets/searchlinecommandbuttonswidget.cpp:75
 #, fuzzy, kde-format
 #| msgid "Folder"
 msgctxt "@action:button"
 msgid "Older"
 msgstr "Jild"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:75
+#: core/widgets/searchlinecommandbuttonswidget.cpp:76
 #, kde-format
 msgctxt "@action:button"
 msgid "Newer"
 msgstr ""
-
-#: core/widgets/searchlinecommandbuttonswidget.cpp:76
-#, fuzzy, kde-format
-#| msgid "is in category"
-msgctxt "@action:button"
-msgid "Category"
-msgstr "turkumda mavjud"
 
 #: core/widgets/searchlinestatus.cpp:78
 #, kde-format

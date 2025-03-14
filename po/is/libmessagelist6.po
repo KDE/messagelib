@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-07 00:42+0000\n"
+"POT-Creation-Date: 2025-03-14 00:43+0000\n"
 "PO-Revision-Date: 2009-06-13 16:16+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: icelandic <kde-isl@molar.is>\n"
@@ -1181,46 +1181,46 @@ msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "Búa til sí&u"
 
-#: core/widgetbase.cpp:428 messagelistutil.cpp:114
+#: core/widgetbase.cpp:423 messagelistutil.cpp:114
 #, fuzzy, kde-format
 msgid "Theme"
 msgstr "Þema"
 
-#: core/widgetbase.cpp:449 core/widgetbase.cpp:539
+#: core/widgetbase.cpp:444 core/widgetbase.cpp:534
 #: core/widgets/configurefilterswidget.cpp:75
 #, fuzzy, kde-format
 msgid "Configure..."
 msgstr "Stilla &KMail..."
 
-#: core/widgetbase.cpp:518 messagelistutil.cpp:109
+#: core/widgetbase.cpp:513 messagelistutil.cpp:109
 #, fuzzy, kde-format
 #| msgid "Suggestions"
 msgid "Aggregation"
 msgstr "Ábendingar"
 
-#: core/widgetbase.cpp:601
+#: core/widgetbase.cpp:596
 #, fuzzy, kde-format
 #| msgid "Message Part Properties"
 msgid "Message Sort Order"
 msgstr "Stillingar bréfhluta"
 
-#: core/widgetbase.cpp:623
+#: core/widgetbase.cpp:618
 #, fuzzy, kde-format
 msgid "Message Sort Direction"
 msgstr "Bréfalisti"
 
-#: core/widgetbase.cpp:640
+#: core/widgetbase.cpp:635
 #, fuzzy, kde-format
 #| msgid "Delete Folder"
 msgid "Group Sort Order"
 msgstr "Eyða möppu"
 
-#: core/widgetbase.cpp:657
+#: core/widgetbase.cpp:652
 #, fuzzy, kde-format
 msgid "Group Sort Direction"
 msgstr "Bréfalisti"
 
-#: core/widgetbase.cpp:672
+#: core/widgetbase.cpp:667
 #, kde-format
 msgid "Folder Always Uses This Sort Order"
 msgstr ""
@@ -1628,44 +1628,44 @@ msgctxt "@action:button"
 msgid "Action"
 msgstr "Fjarlægja áríðandimerk&i af bréfi"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:71
+#: core/widgets/searchlinecommandbuttonswidget.cpp:70
+#, fuzzy, kde-format
+#| msgid "is in category"
+msgctxt "@action:button"
+msgid "Category"
+msgstr "er í flokknum"
+
+#: core/widgets/searchlinecommandbuttonswidget.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Smaller"
 msgstr ""
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:72
+#: core/widgets/searchlinecommandbuttonswidget.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Larger"
 msgstr ""
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:73
+#: core/widgets/searchlinecommandbuttonswidget.cpp:74
 #, fuzzy, kde-format
 #| msgid "Size"
 msgctxt "@action:button"
 msgid "Size"
 msgstr "Stærð"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:74
+#: core/widgets/searchlinecommandbuttonswidget.cpp:75
 #, fuzzy, kde-format
 #| msgid "Folder"
 msgctxt "@action:button"
 msgid "Older"
 msgstr "Mappa"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:75
+#: core/widgets/searchlinecommandbuttonswidget.cpp:76
 #, kde-format
 msgctxt "@action:button"
 msgid "Newer"
 msgstr ""
-
-#: core/widgets/searchlinecommandbuttonswidget.cpp:76
-#, fuzzy, kde-format
-#| msgid "is in category"
-msgctxt "@action:button"
-msgid "Category"
-msgstr "er í flokknum"
 
 #: core/widgets/searchlinestatus.cpp:78
 #, kde-format

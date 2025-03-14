@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-07 00:42+0000\n"
+"POT-Creation-Date: 2025-03-14 00:43+0000\n"
 "PO-Revision-Date: 2025-01-26 17:43+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -1045,43 +1045,43 @@ msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "வடிகட்டியை உருவாக்குவது"
 
-#: core/widgetbase.cpp:428 messagelistutil.cpp:114
+#: core/widgetbase.cpp:423 messagelistutil.cpp:114
 #, kde-format
 msgid "Theme"
 msgstr "தோற்றத்திட்டம்"
 
-#: core/widgetbase.cpp:449 core/widgetbase.cpp:539
+#: core/widgetbase.cpp:444 core/widgetbase.cpp:534
 #: core/widgets/configurefilterswidget.cpp:75
 #, kde-format
 msgid "Configure..."
 msgstr "அமை..."
 
-#: core/widgetbase.cpp:518 messagelistutil.cpp:109
+#: core/widgetbase.cpp:513 messagelistutil.cpp:109
 #, kde-format
 msgid "Aggregation"
 msgstr "தொகுப்புமுறை"
 
-#: core/widgetbase.cpp:601
+#: core/widgetbase.cpp:596
 #, kde-format
 msgid "Message Sort Order"
 msgstr "அஞ்சல்களை வரிசைப்படுத்தும் முறை"
 
-#: core/widgetbase.cpp:623
+#: core/widgetbase.cpp:618
 #, kde-format
 msgid "Message Sort Direction"
 msgstr "அஞ்சல்களை வரிசைப்படுத்துவதன் திசை"
 
-#: core/widgetbase.cpp:640
+#: core/widgetbase.cpp:635
 #, kde-format
 msgid "Group Sort Order"
 msgstr "தொகுப்புகளை வரிசைப்படுத்தும் முறை"
 
-#: core/widgetbase.cpp:657
+#: core/widgetbase.cpp:652
 #, kde-format
 msgid "Group Sort Direction"
 msgstr "தொகுப்புகளை வரிசைப்படுத்துவதற்கான திசை"
 
-#: core/widgetbase.cpp:672
+#: core/widgetbase.cpp:667
 #, kde-format
 msgid "Folder Always Uses This Sort Order"
 msgstr "இவ்வடைவு எப்போதும் இம்முறையிலேயே வரிசைப்படுத்துப்பட வேண்டும்"
@@ -1432,41 +1432,41 @@ msgctxt "@action:button"
 msgid "Action"
 msgstr "செயலுக்கானது"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:71
+#: core/widgets/searchlinecommandbuttonswidget.cpp:70
+#, kde-format
+msgctxt "@action:button"
+msgid "Category"
+msgstr "பகுப்பு"
+
+#: core/widgets/searchlinecommandbuttonswidget.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Smaller"
 msgstr "சிறியது"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:72
+#: core/widgets/searchlinecommandbuttonswidget.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Larger"
 msgstr "பெரியது"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:73
+#: core/widgets/searchlinecommandbuttonswidget.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Size"
 msgstr "அளவு"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:74
+#: core/widgets/searchlinecommandbuttonswidget.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Older"
 msgstr "பழையது"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:75
+#: core/widgets/searchlinecommandbuttonswidget.cpp:76
 #, kde-format
 msgctxt "@action:button"
 msgid "Newer"
 msgstr "புதியது"
-
-#: core/widgets/searchlinecommandbuttonswidget.cpp:76
-#, kde-format
-msgctxt "@action:button"
-msgid "Category"
-msgstr "பகுப்பு"
 
 #: core/widgets/searchlinestatus.cpp:78
 #, kde-format

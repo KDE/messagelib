@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-stable/messages/messagelib/libwebengineviewer6.pot\n"
-"X-Crowdin-File-ID: 51134\n"
+"X-Crowdin-File: /kf6-trunk/messages/messagelib/libwebengineviewer6.pot\n"
+"X-Crowdin-File-ID: 49088\n"
 
 #: developertool/developertooldialog.cpp:26
 #, kde-format

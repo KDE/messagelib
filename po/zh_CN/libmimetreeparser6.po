@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-stable/messages/messagelib/libmimetreeparser6.pot\n"
-"X-Crowdin-File-ID: 52794\n"
+"X-Crowdin-File: /kf6-trunk/messages/messagelib/libmimetreeparser6.pot\n"
+"X-Crowdin-File-ID: 49096\n"
 
 #: src/messagepart.cpp:438
 #, kde-format
