@@ -9,7 +9,8 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX MESSAGELIST
 
 option(KDEPIM_FOLDEROPEN_PROFILE "Enable debug output for timing folder loading" FALSE)
 configure_file(config-messagelist.h.in ${CMAKE_CURRENT_BINARY_DIR}/config-messagelist.h)
-add_library(KPim6MessageList)
+add_library(KPim6MessageList
+    tagmanager.h tagmanager.cpp)
 add_library(KPim6::MessageList ALIAS KPim6MessageList)
 
 add_definitions(-DTRANSLATION_DOMAIN=\"libmessagelist6\")
