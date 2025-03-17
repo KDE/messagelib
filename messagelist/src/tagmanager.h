@@ -11,6 +11,7 @@ namespace Akonadi
 {
 class Monitor;
 }
+class KJob;
 namespace MessageList
 {
 namespace Core
@@ -29,6 +30,7 @@ Q_SIGNALS:
 
 private:
     void init();
+    void slotTagsFetched(KJob *job);
     void slotTagsChanged();
     Akonadi::Monitor *const mMonitor;
 };
