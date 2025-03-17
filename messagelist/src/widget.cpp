@@ -226,13 +226,10 @@ void MessageList::Widget::slotTagsFetched(KJob *job)
         const QString tagUrl = akonadiTag.url().url();
         if (tagSelectedLst.contains(tagUrl)) {
             tagFound.append(akonadiTag.url().url());
-            QString iconName = QStringLiteral("mail-tagged");
             const QString label = akonadiTag.name();
             const QString id = tagUrl;
             const auto attr = akonadiTag.attribute<Akonadi::TagAttribute>();
-            if (attr) {
-                iconName = attr->iconName();
-            }
+            const QString iconName = attr ? attr->iconName() : QStringLiteral("mail-tagged");
             addMessageTagItem(QIcon::fromTheme(iconName).pixmap(16, 16), label, QVariant(id));
         }
     }
