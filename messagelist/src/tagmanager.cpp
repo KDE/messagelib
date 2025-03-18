@@ -32,6 +32,7 @@ void TagManager::init()
     connect(mMonitor, &Akonadi::Monitor::tagAdded, this, &TagManager::slotTagsChanged);
     connect(mMonitor, &Akonadi::Monitor::tagRemoved, this, &TagManager::slotTagsChanged);
     connect(mMonitor, &Akonadi::Monitor::tagChanged, this, &TagManager::slotTagsChanged);
+    slotTagsChanged();
 }
 
 void TagManager::slotTagsChanged()
@@ -39,8 +40,16 @@ void TagManager::slotTagsChanged()
     auto fetchJob = new Akonadi::TagFetchJob(this);
     fetchJob->fetchScope().fetchAttribute<Akonadi::TagAttribute>();
     connect(fetchJob, &Akonadi::TagFetchJob::result, this, &TagManager::slotTagsFetched);
+}
 
-    // TODO
+QMap<QString, QString> TagManager::mapTag() const
+{
+    return mMapTag;
+}
+
+void TagManager::setMapTag(const QMap<QString, QString> &newMapTag)
+{
+    mMapTag = newMapTag;
 }
 
 void TagManager::slotTagsFetched(KJob *job)
@@ -49,39 +58,13 @@ void TagManager::slotTagsFetched(KJob *job)
         qCWarning(MESSAGELIST_LOG) << "Failed to load tags " << job->errorString();
         return;
     }
+    mMapTag.clear();
     auto fetchJob = static_cast<Akonadi::TagFetchJob *>(job);
-    /*
-
-        KConfigGroup conf(MessageList::MessageListSettings::self()->config(), QStringLiteral("MessageListView"));
-        const QString tagSelected = conf.readEntry(QStringLiteral("TagSelected"));
-        if (tagSelected.isEmpty()) {
-            setCurrentStatusFilterItem();
-            return;
-        }
-        const QStringList tagSelectedLst = tagSelected.split(QLatin1Char(','));
-
-        addMessageTagItem(QIcon::fromTheme(QStringLiteral("mail-flag")).pixmap(16, 16),
-                          i18nc("Item in list of Akonadi tags, to show all e-mails", "All"),
-                          QVariant());
-
-        QStringList tagFound;
-        const auto tags{fetchJob->tags()};
-        for (const Akonadi::Tag &akonadiTag : tags) {
-            const QString tagUrl = akonadiTag.url().url();
-            if (tagSelectedLst.contains(tagUrl)) {
-                tagFound.append(akonadiTag.url().url());
-                const QString label = akonadiTag.name();
-                const QString id = tagUrl;
-                const auto attr = akonadiTag.attribute<Akonadi::TagAttribute>();
-                const QString iconName = attr ? attr->iconName() : QStringLiteral("mail-tagged");
-                addMessageTagItem(QIcon::fromTheme(iconName).pixmap(16, 16), label, QVariant(id));
-            }
-        }
-        conf.writeEntry(QStringLiteral("TagSelected"), tagFound);
-        conf.sync();
-
-        setCurrentStatusFilterItem();
-        */
+    const auto tags{fetchJob->tags()};
+    for (const Akonadi::Tag &akonadiTag : tags) {
+        const QString tagUrl = akonadiTag.url().url();
+        mMapTag.insert(akonadiTag.name(), tagUrl);
+    }
 }
 
 #include "moc_tagmanager.cpp"

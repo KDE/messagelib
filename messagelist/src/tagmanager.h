@@ -6,6 +6,7 @@
 
 #pragma once
 
+#include <QMap>
 #include <QObject>
 namespace Akonadi
 {
@@ -25,6 +26,9 @@ public:
 
     static TagManager *self();
 
+    [[nodiscard]] QMap<QString, QString> mapTag() const;
+    void setMapTag(const QMap<QString, QString> &newMapTag);
+
 Q_SIGNALS:
     void tagsChanged();
 
@@ -33,6 +37,7 @@ private:
     void slotTagsFetched(KJob *job);
     void slotTagsChanged();
     Akonadi::Monitor *const mMonitor;
+    QMap<QString, QString> mMapTag;
 };
 }
 }
