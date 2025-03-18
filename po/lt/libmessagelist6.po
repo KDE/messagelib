@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-14 00:43+0000\n"
+"POT-Creation-Date: 2025-03-18 00:43+0000\n"
 "PO-Revision-Date: 2015-12-29 18:21+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
@@ -2341,49 +2341,49 @@ msgctxt "Item in list of Akonadi tags, to show all e-mails"
 msgid "All"
 msgstr ""
 
-#: widget.cpp:345
+#: widget.cpp:343
 #, kde-format
 msgid "Collapse Group"
 msgstr "Sutraukti grupę"
 
-#: widget.cpp:348
+#: widget.cpp:346
 #, kde-format
 msgid "Expand Group"
 msgstr "Išplėsti grupę"
 
-#: widget.cpp:354
+#: widget.cpp:352
 #, kde-format
 msgid "Expand All Groups"
 msgstr "Išskleisti visas grupes"
 
-#: widget.cpp:357
+#: widget.cpp:355
 #, kde-format
 msgid "Collapse All Groups"
 msgstr "Sutraukti visas grupes"
 
-#: widget.cpp:361
+#: widget.cpp:359
 #, fuzzy, kde-format
 #| msgid "Expand All Groups"
 msgid "Expand All Threads"
 msgstr "Išskleisti visas grupes"
 
-#: widget.cpp:363
+#: widget.cpp:361
 #, fuzzy, kde-format
 #| msgid "Collapse All Groups"
 msgid "Collapse All Threads"
 msgstr "Sutraukti visas grupes"
 
-#: widget.cpp:423
+#: widget.cpp:421
 #, kde-format
 msgid "&Move Here"
 msgstr "&Perkelti čia"
 
-#: widget.cpp:424
+#: widget.cpp:422
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Kopijuoti čia"
 
-#: widget.cpp:426
+#: widget.cpp:424
 #, kde-format
 msgid "C&ancel"
 msgstr "&Atšaukti"

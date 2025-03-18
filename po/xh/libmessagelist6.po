@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-14 00:43+0000\n"
+"POT-Creation-Date: 2025-03-18 00:43+0000\n"
 "PO-Revision-Date: 2002-11-04 10:19SAST\n"
 "Last-Translator: Lwandle Mgidlana <lwandle@translate.org.za>\n"
 "Language-Team: Xhosa <xhosa@translate.org.za>\n"
@@ -2389,59 +2389,59 @@ msgctxt "Item in list of Akonadi tags, to show all e-mails"
 msgid "All"
 msgstr "Amaphawu emifanekiso encwadi eneenkcukacha yesiko"
 
-#: widget.cpp:345
+#: widget.cpp:343
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "C&ollapse All Threads"
 msgid "Collapse Group"
 msgstr "Wi&sa Yonke Imisonto"
 
-#: widget.cpp:348
+#: widget.cpp:346
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "Ex&pand All Threads"
 msgid "Expand Group"
 msgstr "Ya&ndisa Yonke Imisoto"
 
-#: widget.cpp:354
+#: widget.cpp:352
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "Ex&pand All Threads"
 msgid "Expand All Groups"
 msgstr "Ya&ndisa Yonke Imisoto"
 
-#: widget.cpp:357
+#: widget.cpp:355
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "C&ollapse All Threads"
 msgid "Collapse All Groups"
 msgstr "Wi&sa Yonke Imisonto"
 
-#: widget.cpp:361
+#: widget.cpp:359
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "Ex&pand All Threads"
 msgid "Expand All Threads"
 msgstr "Ya&ndisa Yonke Imisoto"
 
-#: widget.cpp:363
+#: widget.cpp:361
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "C&ollapse All Threads"
 msgid "Collapse All Threads"
 msgstr "Wi&sa Yonke Imisonto"
 
-#: widget.cpp:423
+#: widget.cpp:421
 #, fuzzy, kde-format
 msgid "&Move Here"
 msgstr "&Yiya Ku"
 
-#: widget.cpp:424
+#: widget.cpp:422
 #, fuzzy, kde-format
 msgid "&Copy Here"
 msgstr "&Khuphela okubhaliweyo"
 
-#: widget.cpp:426
+#: widget.cpp:424
 #, fuzzy, kde-format
 msgid "C&ancel"
 msgstr "Irhoxisiwe."
