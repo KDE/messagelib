@@ -15,6 +15,7 @@ TagManager::TagManager(QObject *parent)
     : QObject{parent}
     , mMonitor(new Akonadi::Monitor(this))
 {
+    init();
 }
 
 TagManager::~TagManager() = default;
