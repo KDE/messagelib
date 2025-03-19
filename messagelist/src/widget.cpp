@@ -60,7 +60,6 @@ public:
     int mLastSelectedMessage = -1;
     KXMLGUIClient *mXmlGuiClient = nullptr;
     QModelIndex mGroupHeaderItemIndex;
-    Akonadi::Monitor *mMonitor = nullptr;
 };
 } // namespace MessageList
 
@@ -73,15 +72,9 @@ MessageList::Widget::Widget(QWidget *parent)
 {
     // Init it.
     (void)Core::TagManager::self();
+    connect(Core::TagManager::self(), &Core::TagManager::tagsFetched, this, &MessageList::Widget::slotTagsFetched);
     // TODO connect it
-    populateStatusFilterCombo();
-
-    d->mMonitor = new Akonadi::Monitor(this);
-    d->mMonitor->setObjectName(QLatin1StringView("MessageListTagMonitor"));
-    d->mMonitor->setTypeMonitored(Akonadi::Monitor::Tags);
-    connect(d->mMonitor, &Akonadi::Monitor::tagAdded, this, &Widget::populateStatusFilterCombo);
-    connect(d->mMonitor, &Akonadi::Monitor::tagRemoved, this, &Widget::populateStatusFilterCombo);
-    connect(d->mMonitor, &Akonadi::Monitor::tagChanged, this, &Widget::populateStatusFilterCombo);
+    //    populateStatusFilterCombo();
 }
 
 MessageList::Widget::~Widget() = default;
@@ -199,19 +192,12 @@ void MessageList::Widget::setQuickSearchClickMessage(const QString &msg)
 
 void MessageList::Widget::fillMessageTagCombo()
 {
-    auto fetchJob = new Akonadi::TagFetchJob(this);
-    fetchJob->fetchScope().fetchAttribute<Akonadi::TagAttribute>();
-    connect(fetchJob, &Akonadi::TagFetchJob::result, this, &Widget::slotTagsFetched);
+    Core::TagManager::self()->slotTagsChanged();
 }
 
-void MessageList::Widget::slotTagsFetched(KJob *job)
+void MessageList::Widget::slotTagsFetched(const Akonadi::Tag::List &tags)
 {
-    if (job->error()) {
-        qCWarning(MESSAGELIST_LOG) << "Failed to load tags " << job->errorString();
-        return;
-    }
-    auto fetchJob = static_cast<Akonadi::TagFetchJob *>(job);
-
+    // populateStatusFilterCombo();
     KConfigGroup conf(MessageList::MessageListSettings::self()->config(), QStringLiteral("MessageListView"));
     const QString tagSelected = conf.readEntry(QStringLiteral("TagSelected"));
     if (tagSelected.isEmpty()) {
@@ -225,7 +211,6 @@ void MessageList::Widget::slotTagsFetched(KJob *job)
                       QVariant());
 
     QStringList tagFound;
-    const auto tags{fetchJob->tags()};
     for (const Akonadi::Tag &akonadiTag : tags) {
         const QString tagUrl = akonadiTag.url().url();
         if (tagSelectedLst.contains(tagUrl)) {

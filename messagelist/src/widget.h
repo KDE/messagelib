@@ -372,7 +372,7 @@ protected:
 private:
     MESSAGELIST_NO_EXPORT void slotCollapseItem();
     MESSAGELIST_NO_EXPORT void slotExpandItem();
-    MESSAGELIST_NO_EXPORT void slotTagsFetched(KJob *job);
+    MESSAGELIST_NO_EXPORT void slotTagsFetched(const Akonadi::Tag::List &tags);
 
 Q_SIGNALS:
     /**

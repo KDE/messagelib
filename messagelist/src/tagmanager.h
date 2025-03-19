@@ -33,13 +33,13 @@ public:
 
     [[nodiscard]] QString tagFromName(const QString &name) const;
 
+    void slotTagsChanged();
 Q_SIGNALS:
     void tagsFetched(const Akonadi::Tag::List &lst);
 
 private:
     void init();
     void slotTagsFetched(KJob *job);
-    void slotTagsChanged();
     Akonadi::Monitor *const mMonitor;
     QMap<QString, QString> mMapTag;
 };
