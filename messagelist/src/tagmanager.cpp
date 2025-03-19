@@ -62,6 +62,8 @@ void TagManager::slotTagsFetched(KJob *job)
     mMapTag.clear();
     auto fetchJob = static_cast<Akonadi::TagFetchJob *>(job);
     const auto tags{fetchJob->tags()};
+    Q_EMIT tagsFetched(tags);
+
     for (const Akonadi::Tag &akonadiTag : tags) {
         const QString tagUrl = akonadiTag.url().url();
         mMapTag.insert(akonadiTag.name(), tagUrl);

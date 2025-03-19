@@ -7,6 +7,7 @@
 #pragma once
 
 #include "messagelist_export.h"
+#include <Akonadi/Tag>
 #include <QMap>
 #include <QObject>
 namespace Akonadi
@@ -33,7 +34,7 @@ public:
     [[nodiscard]] QString tagFromName(const QString &name) const;
 
 Q_SIGNALS:
-    void tagsChanged();
+    void tagsFetched(const Akonadi::Tag::List &lst);
 
 private:
     void init();
