@@ -9,6 +9,7 @@
 #include "core/filter.h"
 #include "config-messagelist.h"
 #include "core/messageitem.h"
+#include "tagmanager.h"
 #include <MessageCore/StringUtil>
 #include <TextUtils/ConvertText>
 
@@ -419,9 +420,8 @@ void Filter::setSearchString(const SearchLineCommand &command)
         case SearchLineCommand::Size:
             break;
         case SearchLineCommand::Category: {
-            // TODO get correct url
-            // We need to use info.argument for finding akonadi tag url first
-            addTagId(info.argument);
+            const QString name = TagManager::self()->tagFromName(info.argument);
+            addTagId(name.isEmpty() ? info.argument : name);
             break;
         }
         case SearchLineCommand::HasAttachment: {
