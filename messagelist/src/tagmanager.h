@@ -6,6 +6,7 @@
 
 #pragma once
 
+#include "messagelist_export.h"
 #include <QMap>
 #include <QObject>
 namespace Akonadi
@@ -17,7 +18,7 @@ namespace MessageList
 {
 namespace Core
 {
-class TagManager : public QObject
+class MESSAGELIST_EXPORT TagManager : public QObject
 {
     Q_OBJECT
 public:
@@ -28,6 +29,8 @@ public:
 
     [[nodiscard]] QMap<QString, QString> mapTag() const;
     void setMapTag(const QMap<QString, QString> &newMapTag);
+
+    [[nodiscard]] QString tagFromName(const QString &name) const;
 
 Q_SIGNALS:
     void tagsChanged();
