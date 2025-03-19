@@ -69,7 +69,7 @@ void TagManager::slotTagsFetched(KJob *job)
 
 QString TagManager::tagFromName(const QString &name) const
 {
-    return {};
+    return mMapTag.value(name);
 }
 
 #include "moc_tagmanager.cpp"
