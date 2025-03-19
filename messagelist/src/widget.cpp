@@ -33,6 +33,7 @@
 #include <QUrl>
 
 #include "core/groupheaderitem.h"
+#include "tagmanager.h"
 
 #include <Akonadi/Monitor>
 #include <Akonadi/Tag>
@@ -70,6 +71,9 @@ MessageList::Widget::Widget(QWidget *parent)
     : Core::Widget(parent)
     , d(new WidgetPrivate(this))
 {
+    // Init it.
+    (void)Core::TagManager::self();
+    // TODO connect it
     populateStatusFilterCombo();
 
     d->mMonitor = new Akonadi::Monitor(this);
