@@ -189,7 +189,7 @@ void QuickSearchLine::setContainsOutboundMessages(bool containsOutboundMessages)
 
 void QuickSearchLine::updateComboboxVisibility()
 {
-    mTagFilterCombo->setVisible(!mSearchEdit->isHidden() && mTagFilterCombo->count());
+    mTagFilterCombo->setVisible(!mSearchEdit->isHidden() && (mTagFilterCombo->count() > 0));
 }
 
 bool QuickSearchLine::eventFilter(QObject *object, QEvent *e)
