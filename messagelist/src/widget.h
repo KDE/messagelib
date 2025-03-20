@@ -317,11 +317,6 @@ protected:
     /**
      * Reimplemented from MessageList::Core::Widget
      */
-    void fillMessageTagCombo() override;
-
-    /**
-     * Reimplemented from MessageList::Core::Widget
-     */
     void viewMessageSelected(MessageList::Core::MessageItem *msg) override;
 
     /**

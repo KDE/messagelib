@@ -73,8 +73,6 @@ MessageList::Widget::Widget(QWidget *parent)
     // Init it.
     (void)Core::TagManager::self();
     connect(Core::TagManager::self(), &Core::TagManager::tagsFetched, this, &MessageList::Widget::slotTagsFetched);
-    // TODO connect it
-    //    populateStatusFilterCombo();
 }
 
 MessageList::Widget::~Widget() = default;
@@ -190,14 +188,9 @@ void MessageList::Widget::setQuickSearchClickMessage(const QString &msg)
     view()->setQuickSearchClickMessage(msg);
 }
 
-void MessageList::Widget::fillMessageTagCombo()
-{
-    Core::TagManager::self()->slotTagsChanged();
-}
-
 void MessageList::Widget::slotTagsFetched(const Akonadi::Tag::List &tags)
 {
-    // populateStatusFilterCombo();
+    populateStatusFilterCombo();
     KConfigGroup conf(MessageList::MessageListSettings::self()->config(), QStringLiteral("MessageListView"));
     const QString tagSelected = conf.readEntry(QStringLiteral("TagSelected"));
     if (tagSelected.isEmpty()) {
