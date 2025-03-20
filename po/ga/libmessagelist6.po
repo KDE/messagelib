@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim/kmail.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-18 00:43+0000\n"
+"POT-Creation-Date: 2025-03-20 00:43+0000\n"
 "PO-Revision-Date: 2004-12-03 14:52-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -2365,7 +2365,7 @@ msgstr[2] " phicteilín"
 msgstr[3] " bpicteilín"
 msgstr[4] " picteilín"
 
-#: widget.cpp:220
+#: widget.cpp:210
 #, fuzzy, kde-format
 #| msgctxt "Permissions"
 #| msgid "All"
@@ -2373,49 +2373,49 @@ msgctxt "Item in list of Akonadi tags, to show all e-mails"
 msgid "All"
 msgstr "Uile"
 
-#: widget.cpp:343
+#: widget.cpp:332
 #, kde-format
 msgid "Collapse Group"
 msgstr "Laghdaigh Grúpa"
 
-#: widget.cpp:346
+#: widget.cpp:335
 #, kde-format
 msgid "Expand Group"
 msgstr "Leathnaigh Grúpa"
 
-#: widget.cpp:352
+#: widget.cpp:341
 #, kde-format
 msgid "Expand All Groups"
 msgstr "Leathnaigh Gach Grúpa"
 
-#: widget.cpp:355
+#: widget.cpp:344
 #, kde-format
 msgid "Collapse All Groups"
 msgstr "Laghdaigh Gach Grúpa"
 
-#: widget.cpp:359
+#: widget.cpp:348
 #, fuzzy, kde-format
 #| msgid "Expand All Groups"
 msgid "Expand All Threads"
 msgstr "Leathnaigh Gach Grúpa"
 
-#: widget.cpp:361
+#: widget.cpp:350
 #, fuzzy, kde-format
 #| msgid "Collapse All Groups"
 msgid "Collapse All Threads"
 msgstr "Laghdaigh Gach Grúpa"
 
-#: widget.cpp:421
+#: widget.cpp:410
 #, kde-format
 msgid "&Move Here"
 msgstr "&Bog Anseo"
 
-#: widget.cpp:422
+#: widget.cpp:411
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Cóipeáil Anseo"
 
-#: widget.cpp:424
+#: widget.cpp:413
 #, kde-format
 msgid "C&ancel"
 msgstr "C&ealaigh"

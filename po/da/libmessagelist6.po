@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-18 00:43+0000\n"
+"POT-Creation-Date: 2025-03-20 00:43+0000\n"
 "PO-Revision-Date: 2020-07-31 18:55+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -2377,57 +2377,57 @@ msgid_plural "%v pixels"
 msgstr[0] " pixel"
 msgstr[1] " pixels"
 
-#: widget.cpp:220
+#: widget.cpp:210
 #, kde-format
 msgctxt "Item in list of Akonadi tags, to show all e-mails"
 msgid "All"
 msgstr "Alle"
 
-#: widget.cpp:343
+#: widget.cpp:332
 #, kde-format
 msgid "Collapse Group"
 msgstr "Fold gruppe sammen"
 
-#: widget.cpp:346
+#: widget.cpp:335
 #, kde-format
 msgid "Expand Group"
 msgstr "Fold gruppe ud"
 
-#: widget.cpp:352
+#: widget.cpp:341
 #, kde-format
 msgid "Expand All Groups"
 msgstr "Fold alle grupper ud"
 
-#: widget.cpp:355
+#: widget.cpp:344
 #, kde-format
 msgid "Collapse All Groups"
 msgstr "Fold alle grupper sammen"
 
-#: widget.cpp:359
+#: widget.cpp:348
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "Ex&pand All Threads"
 msgid "Expand All Threads"
 msgstr "Eks&pandér alle tråde"
 
-#: widget.cpp:361
+#: widget.cpp:350
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "C&ollapse All Threads"
 msgid "Collapse All Threads"
 msgstr "K&ollaps alle tråde"
 
-#: widget.cpp:421
+#: widget.cpp:410
 #, kde-format
 msgid "&Move Here"
 msgstr "&Flyt hertil"
 
-#: widget.cpp:422
+#: widget.cpp:411
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Kopiér hertil"
 
-#: widget.cpp:424
+#: widget.cpp:413
 #, kde-format
 msgid "C&ancel"
 msgstr "&Annullér"

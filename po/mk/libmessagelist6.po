@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-18 00:43+0000\n"
+"POT-Creation-Date: 2025-03-20 00:43+0000\n"
 "PO-Revision-Date: 2007-02-28 14:08+0100\n"
 "Last-Translator: Bozidar Proevski <bobibobi@freemail.com.mk>\n"
 "Language-Team: Macedonian <mkde-l10n@lists.sourceforge.net>\n"
@@ -2499,7 +2499,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: widget.cpp:220
+#: widget.cpp:210
 #, fuzzy, kde-format
 #| msgctxt "Permissions"
 #| msgid "All"
@@ -2507,50 +2507,50 @@ msgctxt "Item in list of Akonadi tags, to show all e-mails"
 msgid "All"
 msgstr "Сите"
 
-#: widget.cpp:343
+#: widget.cpp:332
 #, fuzzy, kde-format
 #| msgid "Remove Header"
 msgid "Collapse Group"
 msgstr "Отстрани заглавие"
 
-#: widget.cpp:346
+#: widget.cpp:335
 #, fuzzy, kde-format
 #| msgid "Remove Header"
 msgid "Expand Group"
 msgstr "Отстрани заглавие"
 
-#: widget.cpp:352
+#: widget.cpp:341
 #, kde-format
 msgid "Expand All Groups"
 msgstr ""
 
-#: widget.cpp:355
+#: widget.cpp:344
 #, kde-format
 msgid "Collapse All Groups"
 msgstr ""
 
-#: widget.cpp:359
+#: widget.cpp:348
 #, fuzzy, kde-format
 #| msgid "Always &keep threads open"
 msgid "Expand All Threads"
 msgstr "Секогаш &држи ги нишките отворени"
 
-#: widget.cpp:361
+#: widget.cpp:350
 #, kde-format
 msgid "Collapse All Threads"
 msgstr ""
 
-#: widget.cpp:421
+#: widget.cpp:410
 #, kde-format
 msgid "&Move Here"
 msgstr "Пре&мести тука"
 
-#: widget.cpp:422
+#: widget.cpp:411
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Копирај тука"
 
-#: widget.cpp:424
+#: widget.cpp:413
 #, kde-format
 msgid "C&ancel"
 msgstr "Отк&ажи"

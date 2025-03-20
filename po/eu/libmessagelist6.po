@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-18 00:43+0000\n"
+"POT-Creation-Date: 2025-03-20 00:43+0000\n"
 "PO-Revision-Date: 2025-01-07 19:28+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -2243,53 +2243,53 @@ msgid_plural "%v pixels"
 msgstr[0] "pixel %v"
 msgstr[1] "%v pixel"
 
-#: widget.cpp:220
+#: widget.cpp:210
 #, kde-format
 msgctxt "Item in list of Akonadi tags, to show all e-mails"
 msgid "All"
 msgstr "Guztia"
 
-#: widget.cpp:343
+#: widget.cpp:332
 #, kde-format
 msgid "Collapse Group"
 msgstr "Tolestu taldea"
 
-#: widget.cpp:346
+#: widget.cpp:335
 #, kde-format
 msgid "Expand Group"
 msgstr "Zabaldu taldea"
 
-#: widget.cpp:352
+#: widget.cpp:341
 #, kde-format
 msgid "Expand All Groups"
 msgstr "Zabaldu talde guztiak"
 
-#: widget.cpp:355
+#: widget.cpp:344
 #, kde-format
 msgid "Collapse All Groups"
 msgstr "Tolestu talde guztiak"
 
-#: widget.cpp:359
+#: widget.cpp:348
 #, kde-format
 msgid "Expand All Threads"
 msgstr "Zabaldu hari guztiak"
 
-#: widget.cpp:361
+#: widget.cpp:350
 #, kde-format
 msgid "Collapse All Threads"
 msgstr "Tolestu hari guztiak"
 
-#: widget.cpp:421
+#: widget.cpp:410
 #, kde-format
 msgid "&Move Here"
 msgstr "&Mugitu hona"
 
-#: widget.cpp:422
+#: widget.cpp:411
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Kopiatu hemen"
 
-#: widget.cpp:424
+#: widget.cpp:413
 #, kde-format
 msgid "C&ancel"
 msgstr "&Utzi"
