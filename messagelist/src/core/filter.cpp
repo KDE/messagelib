@@ -420,8 +420,8 @@ void Filter::setSearchString(const SearchLineCommand &command)
         case SearchLineCommand::Size:
             break;
         case SearchLineCommand::Category: {
-            const QString name = TagManager::self()->tagFromName(info.argument);
-            addTagId(name.isEmpty() ? info.argument : name);
+            const QString tagUrl = TagManager::self()->tagFromName(info.argument);
+            addTagId(tagUrl.isEmpty() ? info.argument : tagUrl);
             break;
         }
         case SearchLineCommand::HasAttachment: {
