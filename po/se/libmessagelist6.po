@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-20 00:43+0000\n"
+"POT-Creation-Date: 2025-03-21 00:42+0000\n"
 "PO-Revision-Date: 2009-06-03 01:28+0200\n"
 "Last-Translator: Børre Gaup <boerre@skolelinux.no>\n"
 "Language-Team: Northern Sami <l10n-no@lister.huftis.org>\n"
@@ -2243,53 +2243,53 @@ msgid_plural "%v pixels"
 msgstr[0] ""
 msgstr[1] ""
 
-#: widget.cpp:210
+#: widget.cpp:203
 #, kde-format
 msgctxt "Item in list of Akonadi tags, to show all e-mails"
 msgid "All"
 msgstr ""
 
-#: widget.cpp:332
+#: widget.cpp:325
 #, kde-format
 msgid "Collapse Group"
 msgstr ""
 
-#: widget.cpp:335
+#: widget.cpp:328
 #, kde-format
 msgid "Expand Group"
 msgstr ""
 
-#: widget.cpp:341
+#: widget.cpp:334
 #, kde-format
 msgid "Expand All Groups"
 msgstr ""
 
-#: widget.cpp:344
+#: widget.cpp:337
 #, kde-format
 msgid "Collapse All Groups"
 msgstr ""
 
-#: widget.cpp:348
+#: widget.cpp:341
 #, kde-format
 msgid "Expand All Threads"
 msgstr ""
 
-#: widget.cpp:350
+#: widget.cpp:343
 #, kde-format
 msgid "Collapse All Threads"
 msgstr ""
 
-#: widget.cpp:410
+#: widget.cpp:403
 #, kde-format
 msgid "&Move Here"
 msgstr "&Sirdde dása"
 
-#: widget.cpp:411
+#: widget.cpp:404
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Máŋge dása"
 
-#: widget.cpp:413
+#: widget.cpp:406
 #, kde-format
 msgid "C&ancel"
 msgstr "&Orustahte barggu"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-20 00:43+0000\n"
+"POT-Creation-Date: 2025-03-21 00:42+0000\n"
 "PO-Revision-Date: 2025-03-03 20:07+0700\n"
 "Last-Translator: Pongsakorn S. <kde@xerusion.me>\n"
 "Language-Team: Thai\n"
@@ -2385,7 +2385,7 @@ msgid "%v pixel"
 msgid_plural "%v pixels"
 msgstr[0] " พิกเซล"
 
-#: widget.cpp:210
+#: widget.cpp:203
 #, fuzzy, kde-format
 #| msgctxt "Permissions"
 #| msgid "All"
@@ -2393,53 +2393,53 @@ msgctxt "Item in list of Akonadi tags, to show all e-mails"
 msgid "All"
 msgstr "ทั้งหมด"
 
-#: widget.cpp:332
+#: widget.cpp:325
 #, fuzzy, kde-format
 #| msgid "Collapse All Groups"
 msgid "Collapse Group"
 msgstr "ย่อเก็บกลุ่มทั้งหมด"
 
-#: widget.cpp:335
+#: widget.cpp:328
 #, fuzzy, kde-format
 #| msgid "Expand All Groups"
 msgid "Expand Group"
 msgstr "ขยายกลุ่มทั้งหมด"
 
-#: widget.cpp:341
+#: widget.cpp:334
 #, kde-format
 msgid "Expand All Groups"
 msgstr "ขยายกลุ่มทั้งหมด"
 
-#: widget.cpp:344
+#: widget.cpp:337
 #, kde-format
 msgid "Collapse All Groups"
 msgstr "ย่อเก็บกลุ่มทั้งหมด"
 
-#: widget.cpp:348
+#: widget.cpp:341
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "Ex&pand All Threads"
 msgid "Expand All Threads"
 msgstr "ขยายเธรดทั้งหมด"
 
-#: widget.cpp:350
+#: widget.cpp:343
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "C&ollapse All Threads"
 msgid "Collapse All Threads"
 msgstr "ย่อเก็บเธรดทั้งหมด"
 
-#: widget.cpp:410
+#: widget.cpp:403
 #, kde-format
 msgid "&Move Here"
 msgstr "ย้าย&มาไว้ที่นี่"
 
-#: widget.cpp:411
+#: widget.cpp:404
 #, kde-format
 msgid "&Copy Here"
 msgstr "&คัดลอกไว้ที่นี่"
 
-#: widget.cpp:413
+#: widget.cpp:406
 #, kde-format
 msgid "C&ancel"
 msgstr "&ยกเลิก"

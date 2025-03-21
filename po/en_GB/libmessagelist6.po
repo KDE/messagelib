@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-20 00:43+0000\n"
+"POT-Creation-Date: 2025-03-21 00:42+0000\n"
 "PO-Revision-Date: 2024-11-01 13:56+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -2243,53 +2243,53 @@ msgid_plural "%v pixels"
 msgstr[0] "%v pixel"
 msgstr[1] "%v pixels"
 
-#: widget.cpp:210
+#: widget.cpp:203
 #, kde-format
 msgctxt "Item in list of Akonadi tags, to show all e-mails"
 msgid "All"
 msgstr "All"
 
-#: widget.cpp:332
+#: widget.cpp:325
 #, kde-format
 msgid "Collapse Group"
 msgstr "Collapse Group"
 
-#: widget.cpp:335
+#: widget.cpp:328
 #, kde-format
 msgid "Expand Group"
 msgstr "Expand Group"
 
-#: widget.cpp:341
+#: widget.cpp:334
 #, kde-format
 msgid "Expand All Groups"
 msgstr "Expand All Groups"
 
-#: widget.cpp:344
+#: widget.cpp:337
 #, kde-format
 msgid "Collapse All Groups"
 msgstr "Collapse All Groups"
 
-#: widget.cpp:348
+#: widget.cpp:341
 #, kde-format
 msgid "Expand All Threads"
 msgstr "Expand All Threads"
 
-#: widget.cpp:350
+#: widget.cpp:343
 #, kde-format
 msgid "Collapse All Threads"
 msgstr "Collapse All Threads"
 
-#: widget.cpp:410
+#: widget.cpp:403
 #, kde-format
 msgid "&Move Here"
 msgstr "&Move Here"
 
-#: widget.cpp:411
+#: widget.cpp:404
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Copy Here"
 
-#: widget.cpp:413
+#: widget.cpp:406
 #, kde-format
 msgid "C&ancel"
 msgstr "C&ancel"

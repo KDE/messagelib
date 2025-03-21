@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-20 00:43+0000\n"
+"POT-Creation-Date: 2025-03-21 00:42+0000\n"
 "PO-Revision-Date: 2006-02-06 01:01-0600\n"
 "Last-Translator: Deepayan Sarkar <deepayan@bengalinux.org>\n"
 "Language-Team: Bengali <kde-translation@bengalinux.org>\n"
@@ -2489,65 +2489,65 @@ msgid_plural "%v pixels"
 msgstr[0] ""
 msgstr[1] ""
 
-#: widget.cpp:210
+#: widget.cpp:203
 #, kde-format
 msgctxt "Item in list of Akonadi tags, to show all e-mails"
 msgid "All"
 msgstr ""
 
-#: widget.cpp:332
+#: widget.cpp:325
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "C&ollapse All Threads"
 msgid "Collapse Group"
 msgstr "স&ব সূত্র গুটিয়ে নাও"
 
-#: widget.cpp:335
+#: widget.cpp:328
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "Ex&pand All Threads"
 msgid "Expand Group"
 msgstr "সব সূত্র সম্প্রসার&ণ করো"
 
-#: widget.cpp:341
+#: widget.cpp:334
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "Ex&pand All Threads"
 msgid "Expand All Groups"
 msgstr "সব সূত্র সম্প্রসার&ণ করো"
 
-#: widget.cpp:344
+#: widget.cpp:337
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "C&ollapse All Threads"
 msgid "Collapse All Groups"
 msgstr "স&ব সূত্র গুটিয়ে নাও"
 
-#: widget.cpp:348
+#: widget.cpp:341
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "Ex&pand All Threads"
 msgid "Expand All Threads"
 msgstr "সব সূত্র সম্প্রসার&ণ করো"
 
-#: widget.cpp:350
+#: widget.cpp:343
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "C&ollapse All Threads"
 msgid "Collapse All Threads"
 msgstr "স&ব সূত্র গুটিয়ে নাও"
 
-#: widget.cpp:410
+#: widget.cpp:403
 #, kde-format
 msgid "&Move Here"
 msgstr "এখানে &সরাও"
 
-#: widget.cpp:411
+#: widget.cpp:404
 #, kde-format
 msgid "&Copy Here"
 msgstr "&এখানে কপি করো"
 
-#: widget.cpp:413
+#: widget.cpp:406
 #, kde-format
 msgid "C&ancel"
 msgstr "বাতি&ল"

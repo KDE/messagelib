@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-20 00:43+0000\n"
+"POT-Creation-Date: 2025-03-21 00:42+0000\n"
 "PO-Revision-Date: 2017-08-05 19:10+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -2415,55 +2415,55 @@ msgstr[1] " piksela"
 msgstr[2] " piksela"
 msgstr[3] " piksel"
 
-#: widget.cpp:210
+#: widget.cpp:203
 #, kde-format
 msgctxt "Item in list of Akonadi tags, to show all e-mails"
 msgid "All"
 msgstr "sve"
 
-#: widget.cpp:332
+#: widget.cpp:325
 #, kde-format
 msgid "Collapse Group"
 msgstr "Sažmi grupu"
 
-#: widget.cpp:335
+#: widget.cpp:328
 #, kde-format
 msgid "Expand Group"
 msgstr "Raširi grupu"
 
-#: widget.cpp:341
+#: widget.cpp:334
 #, kde-format
 msgid "Expand All Groups"
 msgstr "Raširi sve grupe"
 
-#: widget.cpp:344
+#: widget.cpp:337
 #, kde-format
 msgid "Collapse All Groups"
 msgstr "Sažmi sve grupe"
 
-#: widget.cpp:348
+#: widget.cpp:341
 #, fuzzy, kde-format
 #| msgid "Expand All Groups"
 msgid "Expand All Threads"
 msgstr "Raširi sve grupe"
 
-#: widget.cpp:350
+#: widget.cpp:343
 #, fuzzy, kde-format
 #| msgid "Collapse All Groups"
 msgid "Collapse All Threads"
 msgstr "Sažmi sve grupe"
 
-#: widget.cpp:410
+#: widget.cpp:403
 #, kde-format
 msgid "&Move Here"
 msgstr "&Premesti ovde"
 
-#: widget.cpp:411
+#: widget.cpp:404
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Kopiraj ovde"
 
-#: widget.cpp:413
+#: widget.cpp:406
 #, kde-format
 msgid "C&ancel"
 msgstr "Otk&aži"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-20 00:43+0000\n"
+"POT-Creation-Date: 2025-03-21 00:42+0000\n"
 "PO-Revision-Date: 2008-01-20 16:51+0530\n"
 "Last-Translator: Ravishankar Shrivastava <raviratlami@yahoo.com>\n"
 "Language-Team: Hindi <indlinux-hindi@lists.sourceforge.net>\n"
@@ -2514,7 +2514,7 @@ msgid_plural "%v pixels"
 msgstr[0] ""
 msgstr[1] ""
 
-#: widget.cpp:210
+#: widget.cpp:203
 #, fuzzy, kde-format
 #| msgctxt "Permissions"
 #| msgid "All"
@@ -2522,59 +2522,59 @@ msgctxt "Item in list of Akonadi tags, to show all e-mails"
 msgid "All"
 msgstr "सभी"
 
-#: widget.cpp:332
+#: widget.cpp:325
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "C&ollapse All Threads"
 msgid "Collapse Group"
 msgstr "सभी लड़ियाँ समेटें (&o)"
 
-#: widget.cpp:335
+#: widget.cpp:328
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "Ex&pand All Threads"
 msgid "Expand Group"
 msgstr "सभी लड़ी फैलाएँ (&p)"
 
-#: widget.cpp:341
+#: widget.cpp:334
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "Ex&pand All Threads"
 msgid "Expand All Groups"
 msgstr "सभी लड़ी फैलाएँ (&p)"
 
-#: widget.cpp:344
+#: widget.cpp:337
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "C&ollapse All Threads"
 msgid "Collapse All Groups"
 msgstr "सभी लड़ियाँ समेटें (&o)"
 
-#: widget.cpp:348
+#: widget.cpp:341
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "Ex&pand All Threads"
 msgid "Expand All Threads"
 msgstr "सभी लड़ी फैलाएँ (&p)"
 
-#: widget.cpp:350
+#: widget.cpp:343
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "C&ollapse All Threads"
 msgid "Collapse All Threads"
 msgstr "सभी लड़ियाँ समेटें (&o)"
 
-#: widget.cpp:410
+#: widget.cpp:403
 #, kde-format
 msgid "&Move Here"
 msgstr "यहाँ खिसकाएँ (&M)"
 
-#: widget.cpp:411
+#: widget.cpp:404
 #, kde-format
 msgid "&Copy Here"
 msgstr "यहाँ नक़ल करें (&C)"
 
-#: widget.cpp:413
+#: widget.cpp:406
 #, kde-format
 msgid "C&ancel"
 msgstr "रद्द करें (&a)"

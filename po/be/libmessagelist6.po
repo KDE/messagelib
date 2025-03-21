@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-20 00:43+0000\n"
+"POT-Creation-Date: 2025-03-21 00:42+0000\n"
 "PO-Revision-Date: 2008-01-31 22:13+0200\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -2475,14 +2475,14 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: widget.cpp:210
+#: widget.cpp:203
 #, fuzzy, kde-format
 #| msgid "All"
 msgctxt "Item in list of Akonadi tags, to show all e-mails"
 msgid "All"
 msgstr "Усе"
 
-#: widget.cpp:332
+#: widget.cpp:325
 #, fuzzy, kde-format
 #| msgid ""
 #| "_: View->\n"
@@ -2490,7 +2490,7 @@ msgstr "Усе"
 msgid "Collapse Group"
 msgstr "Згар&нуць усе тэмы"
 
-#: widget.cpp:335
+#: widget.cpp:328
 #, fuzzy, kde-format
 #| msgid ""
 #| "_: View->\n"
@@ -2498,7 +2498,7 @@ msgstr "Згар&нуць усе тэмы"
 msgid "Expand Group"
 msgstr "Раз&гарнуць усе тэмы"
 
-#: widget.cpp:341
+#: widget.cpp:334
 #, fuzzy, kde-format
 #| msgid ""
 #| "_: View->\n"
@@ -2506,7 +2506,7 @@ msgstr "Раз&гарнуць усе тэмы"
 msgid "Expand All Groups"
 msgstr "Раз&гарнуць усе тэмы"
 
-#: widget.cpp:344
+#: widget.cpp:337
 #, fuzzy, kde-format
 #| msgid ""
 #| "_: View->\n"
@@ -2514,7 +2514,7 @@ msgstr "Раз&гарнуць усе тэмы"
 msgid "Collapse All Groups"
 msgstr "Згар&нуць усе тэмы"
 
-#: widget.cpp:348
+#: widget.cpp:341
 #, fuzzy, kde-format
 #| msgid ""
 #| "_: View->\n"
@@ -2522,7 +2522,7 @@ msgstr "Згар&нуць усе тэмы"
 msgid "Expand All Threads"
 msgstr "Раз&гарнуць усе тэмы"
 
-#: widget.cpp:350
+#: widget.cpp:343
 #, fuzzy, kde-format
 #| msgid ""
 #| "_: View->\n"
@@ -2530,17 +2530,17 @@ msgstr "Раз&гарнуць усе тэмы"
 msgid "Collapse All Threads"
 msgstr "Згар&нуць усе тэмы"
 
-#: widget.cpp:410
+#: widget.cpp:403
 #, kde-format
 msgid "&Move Here"
 msgstr "&Перамясціць сюды"
 
-#: widget.cpp:411
+#: widget.cpp:404
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Скапіраваць сюды"
 
-#: widget.cpp:413
+#: widget.cpp:406
 #, kde-format
 msgid "C&ancel"
 msgstr "&Адмяніць"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-20 00:43+0000\n"
+"POT-Creation-Date: 2025-03-21 00:42+0000\n"
 "PO-Revision-Date: 2022-02-17 14:12+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian\n"
@@ -2375,7 +2375,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: widget.cpp:210
+#: widget.cpp:203
 #, fuzzy, kde-format
 #| msgctxt "Permissions"
 #| msgid "All"
@@ -2383,53 +2383,53 @@ msgctxt "Item in list of Akonadi tags, to show all e-mails"
 msgid "All"
 msgstr "Tot"
 
-#: widget.cpp:332
+#: widget.cpp:325
 #, fuzzy, kde-format
 #| msgid "Collapse All Groups"
 msgid "Collapse Group"
 msgstr "Restrânge toate grupurile"
 
-#: widget.cpp:335
+#: widget.cpp:328
 #, fuzzy, kde-format
 #| msgid "Expand All Groups"
 msgid "Expand Group"
 msgstr "Desfășoară toate grupurile"
 
-#: widget.cpp:341
+#: widget.cpp:334
 #, kde-format
 msgid "Expand All Groups"
 msgstr "Desfășoară toate grupurile"
 
-#: widget.cpp:344
+#: widget.cpp:337
 #, kde-format
 msgid "Collapse All Groups"
 msgstr "Restrânge toate grupurile"
 
-#: widget.cpp:348
+#: widget.cpp:341
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "Ex&pand All Threads"
 msgid "Expand All Threads"
 msgstr "Des&fășoară toate firele"
 
-#: widget.cpp:350
+#: widget.cpp:343
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "C&ollapse All Threads"
 msgid "Collapse All Threads"
 msgstr "Res&trânge toate firele"
 
-#: widget.cpp:410
+#: widget.cpp:403
 #, kde-format
 msgid "&Move Here"
 msgstr "&Mută aici"
 
-#: widget.cpp:411
+#: widget.cpp:404
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Copiază aici"
 
-#: widget.cpp:413
+#: widget.cpp:406
 #, kde-format
 msgid "C&ancel"
 msgstr "R&enunță"
