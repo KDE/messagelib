@@ -1426,7 +1426,6 @@ msgstr "Slett tema"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:69
 #, fuzzy, kde-format
-#| msgid "Action Item"
 msgctxt "@action:button"
 msgid "Action"
 msgstr "Handlingspunkt"
