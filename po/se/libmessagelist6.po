@@ -1442,7 +1442,6 @@ msgstr ""
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:69
 #, fuzzy, kde-format
-#| msgid "Encryption"
 msgctxt "@action:button"
 msgid "Action"
 msgstr "Krypteren"
