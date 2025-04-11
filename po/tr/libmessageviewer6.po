@@ -1333,7 +1333,7 @@ msgstr "Başlıkların ne kadarının gösterileceği"
 #: settings/messageviewer.kcfg.in:123
 #, kde-format
 msgid "Prefer HTML to plain text"
-msgstr "HTML iletileri düz metne tercih et"
+msgstr "Düz metin yerine HTML’yi tercih et"
 
 #. i18n: ectx: label, entry (htmlLoadExternal), group (Reader)
 #: settings/messageviewer.kcfg.in:127
