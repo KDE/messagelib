@@ -507,7 +507,7 @@ void DKIMCheckSignatureJob::verifyEd25519Signature()
 
 using EVPPKeyPtr = std::unique_ptr<EVP_PKEY, decltype(&EVP_PKEY_free)>;
 
-EVPPKeyPtr loadRSAPublicKey(const QByteArray &der)
+static EVPPKeyPtr loadRSAPublicKey(const QByteArray &der)
 {
     EVP_PKEY *pubKey = nullptr;
     std::unique_ptr<OSSL_DECODER_CTX, decltype(&OSSL_DECODER_CTX_free)> decoderCtx(
@@ -529,7 +529,7 @@ EVPPKeyPtr loadRSAPublicKey(const QByteArray &der)
     return {pubKey, EVP_PKEY_free};
 }
 
-const EVP_MD *evpAlgo(DKIMInfo::HashingAlgorithmType algo)
+static const EVP_MD *evpAlgo(DKIMInfo::HashingAlgorithmType algo)
 {
     switch (algo) {
     case DKIMInfo::HashingAlgorithmType::Sha1:
@@ -543,7 +543,7 @@ const EVP_MD *evpAlgo(DKIMInfo::HashingAlgorithmType algo)
     return nullptr;
 }
 
-std::optional<bool> doVerifySignature(EVP_PKEY *key, const EVP_MD *md, const QByteArray &signature, const QByteArray &message)
+static std::optional<bool> doVerifySignature(EVP_PKEY *key, const EVP_MD *md, const QByteArray &signature, const QByteArray &message)
 {
     std::unique_ptr<EVP_MD_CTX, decltype(&EVP_MD_CTX_free)> ctx(EVP_MD_CTX_new(), EVP_MD_CTX_free);
     if (!EVP_MD_CTX_init(ctx.get())) {
@@ -573,7 +573,7 @@ std::optional<bool> doVerifySignature(EVP_PKEY *key, const EVP_MD *md, const QBy
     return true;
 }
 
-uint64_t getKeyE(EVP_PKEY *key)
+static uint64_t getKeyE(EVP_PKEY *key)
 {
     BIGNUM *bne = nullptr;
     EVP_PKEY_get_bn_param(key, OSSL_PKEY_PARAM_RSA_E, &bne);

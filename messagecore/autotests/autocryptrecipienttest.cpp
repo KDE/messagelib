@@ -23,7 +23,7 @@
 #include <QStandardPaths>
 #include <QTest>
 
-KMime::Message::Ptr readAndParseMail(const QString &mailFile)
+static KMime::Message::Ptr readAndParseMail(const QString &mailFile)
 {
     QFile file(QLatin1StringView(MAIL_DATA_DIR) + QLatin1Char('/') + mailFile);
     file.open(QIODevice::ReadOnly);

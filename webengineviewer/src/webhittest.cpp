@@ -23,7 +23,7 @@ struct InvokeWrapperWebhittest {
 
 template<typename Arg, typename R, typename C>
 
-InvokeWrapperWebhittest<Arg, R, C> invoke(R *receiver, void (C::*memberFunction)(Arg))
+static InvokeWrapperWebhittest<Arg, R, C> invoke(R *receiver, void (C::*memberFunction)(Arg))
 {
     InvokeWrapperWebhittest<Arg, R, C> wrapper = {receiver, memberFunction};
     return wrapper;

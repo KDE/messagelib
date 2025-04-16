@@ -84,7 +84,7 @@ static const char s_mail2[] =
     "This is the second message.\n"
     "\n";
 
-KMime::Message::Ptr createMsg(const char *data)
+static KMime::Message::Ptr createMsg(const char *data)
 {
     KMime::Message::Ptr msgPtr(new KMime::Message());
     msgPtr->setContent(QByteArray(data));

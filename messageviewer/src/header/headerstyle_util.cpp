@@ -212,7 +212,7 @@ QString HeaderStyleUtil::dateShortStr(const QDateTime &dateTime)
     return formatter.dateString(dateTime);
 }
 
-QSharedPointer<KMime::Headers::Generics::MailboxList> mailboxesFromHeader(const KMime::Headers::Base *hrd)
+static QSharedPointer<KMime::Headers::Generics::MailboxList> mailboxesFromHeader(const KMime::Headers::Base *hrd)
 {
     QSharedPointer<KMime::Headers::Generics::MailboxList> mailboxList(new KMime::Headers::Generics::MailboxList());
     const QByteArray &data = hrd->as7BitString(false);

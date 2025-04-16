@@ -14,7 +14,7 @@
 #include <QSignalSpy>
 #include <QTest>
 Q_DECLARE_METATYPE(QList<WebEngineViewer::Addition>)
-QByteArray readJsonFile(const QString &jsonFile)
+static QByteArray readJsonFile(const QString &jsonFile)
 {
     QFile file(QLatin1StringView(CHECKPHISHINGURL_DATA_DIR) + QLatin1Char('/') + jsonFile);
     file.open(QIODevice::ReadOnly);

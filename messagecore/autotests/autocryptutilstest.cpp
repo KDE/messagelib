@@ -21,7 +21,7 @@ using namespace MessageCore;
 
 QTEST_GUILESS_MAIN(AutocryptUtilsTest)
 
-KMime::Message::Ptr readAndParseMail(const QString &mailFile)
+static KMime::Message::Ptr readAndParseMail(const QString &mailFile)
 {
     QFile file(QLatin1StringView(MAIL_DATA_DIR) + QLatin1Char('/') + mailFile);
     file.open(QIODevice::ReadOnly);

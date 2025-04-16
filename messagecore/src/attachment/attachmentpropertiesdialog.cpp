@@ -370,7 +370,7 @@ void AttachmentPropertiesDialog::accept()
 
 // Copy from PimCommon::Util::invokeHelp
 // Avoid to add PimCommon dep for this method
-void invokeHelp(const QString &docfile, const QString &anchor)
+static void invokeHelp(const QString &docfile, const QString &anchor)
 {
     if (!docfile.isEmpty()) {
         QUrl url;

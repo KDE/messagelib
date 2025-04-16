@@ -20,7 +20,7 @@ struct InvokeWrapperFunction {
 };
 
 template<typename Arg, typename R, typename C>
-InvokeWrapperFunction<Arg, R, C> invokeFunction(R *receiver, void (C::*memberFun)(Arg))
+static InvokeWrapperFunction<Arg, R, C> invokeFunction(R *receiver, void (C::*memberFun)(Arg))
 {
     InvokeWrapperFunction<Arg, R, C> wrapper = {receiver, memberFun};
     return wrapper;
@@ -51,7 +51,7 @@ void TemplateExtractHtmlElementFromMail::setHtmlContent(const QString &html)
     mPage->setHtml(html);
 }
 
-QString extractHeaderBodyScript()
+static QString extractHeaderBodyScript()
 {
     const QString source = QStringLiteral(
         "(function() {"

@@ -21,7 +21,7 @@ using namespace MessageViewer;
 
 QTEST_MAIN(GrantleeHeaderStyleTest)
 
-void testHeaderFile(const HeaderStyle &style, KMime::Message *msg, const QString &name)
+static void testHeaderFile(const HeaderStyle &style, KMime::Message *msg, const QString &name)
 {
     QString header = QStringLiteral(
         "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n"
@@ -68,7 +68,7 @@ void testHeaderFile(const HeaderStyle &style, KMime::Message *msg, const QString
     }
 }
 
-KMime::Message::Ptr readAndParseMail(const QString &mailFile)
+static KMime::Message::Ptr readAndParseMail(const QString &mailFile)
 {
     QFile file(QStringLiteral(HEADER_DATA_DIR) + QLatin1Char('/') + mailFile);
     bool openFile = file.open(QIODevice::ReadOnly);
@@ -122,7 +122,7 @@ void GrantleeHeaderStyleTest::cleanupTestCase()
     }
 }
 
-const GrantleeTheme::Theme defaultTheme(const QString &name = QStringLiteral("5.2"))
+static const GrantleeTheme::Theme defaultTheme(const QString &name = QStringLiteral("5.2"))
 {
     const QStringList defaultThemePath =
         QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QStringLiteral("messageviewer/defaultthemes/"), QStandardPaths::LocateDirectory);

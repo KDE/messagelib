@@ -832,7 +832,7 @@ bool SignedMessagePart::okVerify(const QByteArray &data, const QByteArray &signa
     return partMetaData()->isSigned;
 }
 
-QString prettifyDN(const char *uid)
+static QString prettifyDN(const char *uid)
 {
     return QGpgME::DN(uid).prettyDN();
 }

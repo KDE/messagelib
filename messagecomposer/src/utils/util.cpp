@@ -32,7 +32,7 @@
 #include <KMime/Headers>
 #include <MessageCore/StringUtil>
 
-KMime::Content *setBodyAndCTE(QByteArray &encodedBody, KMime::Headers::ContentType *contentType, KMime::Content *ret)
+static KMime::Content *setBodyAndCTE(QByteArray &encodedBody, KMime::Headers::ContentType *contentType, KMime::Content *ret)
 {
     MessageComposer::ComposerJob composerJob;
     MessageComposer::SinglepartJob cteJob(&composerJob);

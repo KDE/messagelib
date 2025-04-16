@@ -27,7 +27,7 @@ void ObjectTreeParserTest::initTestCase()
     qputenv("TZ", "GMT");
 }
 
-QString stringifyMessagePartTree(const MimeTreeParser::MessagePart::Ptr &messagePart, QString indent)
+static QString stringifyMessagePartTree(const MimeTreeParser::MessagePart::Ptr &messagePart, QString indent)
 {
     const QString line = QStringLiteral("%1 * %3\n").arg(indent, QString::fromUtf8(messagePart->metaObject()->className()));
     QString ret = line;
@@ -40,7 +40,7 @@ QString stringifyMessagePartTree(const MimeTreeParser::MessagePart::Ptr &message
     return ret;
 }
 
-void testMessagePartTree(const MessagePart::Ptr &messagePart, const QString &mailFileName)
+static void testMessagePartTree(const MessagePart::Ptr &messagePart, const QString &mailFileName)
 {
     QString renderedTree = stringifyMessagePartTree(messagePart, QString());
 

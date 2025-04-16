@@ -9,7 +9,7 @@
 
 #include <QTest>
 QTEST_MAIN(SearchLineCommandTest)
-void initLocale()
+static void initLocale()
 {
     qputenv("LANG", "en_US.utf-8");
 }

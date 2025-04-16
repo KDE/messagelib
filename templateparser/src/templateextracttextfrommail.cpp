@@ -21,7 +21,7 @@ struct InvokeWrapper {
 };
 
 template<typename Arg, typename R, typename C>
-InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFun)(Arg))
+static InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFun)(Arg))
 {
     InvokeWrapper<Arg, R, C> wrapper = {receiver, memberFun};
     return wrapper;

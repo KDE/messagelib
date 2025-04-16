@@ -30,7 +30,7 @@ struct InvokeWrapperWebAccessKey {
 
 template<typename Arg, typename R, typename C>
 
-InvokeWrapperWebAccessKey<Arg, R, C> invokeWebAccessKey(R *receiver, void (C::*memberFunction)(Arg))
+static InvokeWrapperWebAccessKey<Arg, R, C> invokeWebAccessKey(R *receiver, void (C::*memberFunction)(Arg))
 {
     InvokeWrapperWebAccessKey<Arg, R, C> wrapper = {receiver, memberFunction};
     return wrapper;

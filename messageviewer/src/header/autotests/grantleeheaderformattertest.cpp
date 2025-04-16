@@ -27,7 +27,7 @@ GrantleeHeaderFormatterTest::GrantleeHeaderFormatterTest(QObject *parent)
     QStandardPaths::setTestModeEnabled(true);
 }
 
-void testHeaderFile(const QString &data, const QString &absolutePath, const QString &name)
+static void testHeaderFile(const QString &data, const QString &absolutePath, const QString &name)
 {
     QString header = QStringLiteral(
         "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n"
@@ -74,7 +74,7 @@ void testHeaderFile(const QString &data, const QString &absolutePath, const QStr
     }
 }
 
-KMime::Message::Ptr readAndParseMail(const QString &mailFile)
+static KMime::Message::Ptr readAndParseMail(const QString &mailFile)
 {
     QFile file(QStringLiteral(HEADER_DATA_DIR) + QLatin1Char('/') + mailFile);
     bool openFile = file.open(QIODevice::ReadOnly);

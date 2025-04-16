@@ -53,7 +53,7 @@ static const int SIG_FRAME_COL_UNDEF = 99;
 #define SIG_FRAME_COL_RED -1
 #define SIG_FRAME_COL_YELLOW 0
 #define SIG_FRAME_COL_GREEN 1
-QString sigStatusToString(const QGpgME::Protocol *cryptProto, int status_code, GpgME::Signature::Summary summary, int &frameColor, bool &showKeyInfos)
+static QString sigStatusToString(const QGpgME::Protocol *cryptProto, int status_code, GpgME::Signature::Summary summary, int &frameColor, bool &showKeyInfos)
 {
     // note: At the moment frameColor and showKeyInfos are
     //       used for CMS only but not for PGP signatures
@@ -872,7 +872,7 @@ void DefaultRenderer::setCreateMessageHeader(const std::function<QString(KMime::
     d->mCreateMessageHeader = createMessageHeader;
 }
 
-QString renderTreeHelper(const MimeTreeParser::MessagePart::Ptr &messagePart, QString indent)
+static QString renderTreeHelper(const MimeTreeParser::MessagePart::Ptr &messagePart, QString indent)
 {
     QString ret = QStringLiteral("%1 * %3\n").arg(indent, QString::fromUtf8(messagePart->metaObject()->className()));
     indent += QLatin1Char(' ');

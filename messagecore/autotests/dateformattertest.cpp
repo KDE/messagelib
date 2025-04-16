@@ -13,7 +13,7 @@
 
 using namespace MessageCore;
 
-void initLocale()
+static void initLocale()
 {
     qputenv("LANG", "en_US.utf-8");
 }

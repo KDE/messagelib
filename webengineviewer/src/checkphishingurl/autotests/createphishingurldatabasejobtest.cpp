@@ -13,7 +13,7 @@
 
 extern WEBENGINEVIEWER_EXPORT bool webengineview_useCompactJson_CreatePhishingUrlDataBaseJob;
 
-QByteArray readJsonFile(const QString &jsonFile)
+static QByteArray readJsonFile(const QString &jsonFile)
 {
     QFile file(QLatin1StringView(CHECKPHISHINGURL_DATA_DIR) + QLatin1Char('/') + jsonFile);
     file.open(QIODevice::ReadOnly);
@@ -23,7 +23,7 @@ QByteArray readJsonFile(const QString &jsonFile)
     return data;
 }
 
-QByteArray createHash(const QByteArray &ba)
+static QByteArray createHash(const QByteArray &ba)
 {
     QByteArray b = QCryptographicHash::hash(ba, QCryptographicHash::Sha256);
     return b.toBase64();

@@ -219,7 +219,7 @@ void RenderTest::testRenderHeaderOnly()
     testRender();
 }
 
-QString renderTreeHelper(const MimeTreeParser::MessagePart::Ptr &messagePart, QString indent)
+static QString renderTreeHelper(const MimeTreeParser::MessagePart::Ptr &messagePart, QString indent)
 {
     const QString line = QStringLiteral("%1 * %3\n").arg(indent, QString::fromUtf8(messagePart->metaObject()->className()));
     QString ret = line;

@@ -29,7 +29,7 @@
 //    was the case, then the previous line will be shorter than the wrap size (which we already
 //    know because of item 2 above), but adding the first word from the next line will make it
 //    longer than the wrap size.
-bool looksLikeParaBreak(const QString &s, int newLinePos)
+static bool looksLikeParaBreak(const QString &s, int newLinePos)
 {
     const int WRAP_COL = 78;
 

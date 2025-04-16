@@ -172,7 +172,7 @@ void TemplateParserJob::processWithIdentity(uint uoid, const KMime::Message::Ptr
     process(aorig_msg, afolder);
 }
 
-MimeTreeParser::MessagePart::Ptr toplevelTextNode(MimeTreeParser::MessagePart::Ptr messageTree)
+static MimeTreeParser::MessagePart::Ptr toplevelTextNode(MimeTreeParser::MessagePart::Ptr messageTree)
 {
     const auto subParts = messageTree->subParts();
     for (const auto &mp : subParts) {

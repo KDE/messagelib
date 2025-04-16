@@ -185,7 +185,7 @@ void AutocryptRecipient::setChangedFlag(bool changed)
     d->changed = changed;
 }
 
-GpgME::Key gpgKey(const QByteArray &keydata)
+static GpgME::Key gpgKey(const QByteArray &keydata)
 {
     assert(QGpgME::openpgp()); // Make sure, that openpgp backend is loaded
     auto context = GpgME::Context::create(GpgME::OpenPGP);
