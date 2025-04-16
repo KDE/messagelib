@@ -28,8 +28,7 @@ public:
 };
 
 GrantleeHeaderStyle::GrantleeHeaderStyle()
-    : HeaderStyle()
-    , d(new MessageViewer::GrantleeHeaderStylePrivate)
+    : d(new MessageViewer::GrantleeHeaderStylePrivate)
 {
 }
 

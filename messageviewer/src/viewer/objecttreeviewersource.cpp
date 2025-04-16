@@ -19,8 +19,7 @@
 using namespace MessageViewer;
 
 MailViewerSource::MailViewerSource(ViewerPrivate *viewer)
-    : MessageViewer::EmptySource()
-    , mViewer(viewer)
+    : mViewer(viewer)
 {
 }
 

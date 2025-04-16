@@ -256,7 +256,7 @@ class Q_DECL_HIDDEN MessageCore::MailingList::MailingListPrivate : public QShare
 public:
     MailingListPrivate()
         : mFeatures(None)
-        , mHandler(KMail)
+
     {
     }
 
@@ -276,7 +276,7 @@ public:
     }
 
     Features mFeatures;
-    Handler mHandler;
+    Handler mHandler{KMail};
     QList<QUrl> mPostUrls;
     QList<QUrl> mSubscribeUrls;
     QList<QUrl> mUnsubscribeUrls;

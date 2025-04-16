@@ -232,7 +232,7 @@ Item *ThemePreviewDelegate::itemFromIndex(const QModelIndex &index) const
 
 ThemePreviewWidget::ThemePreviewWidget(QWidget *parent)
     : QTreeWidget(parent)
-    , mTheme(nullptr)
+
 {
     mSelectedThemeContentItem = nullptr;
     mSelectedThemeColumn = nullptr;

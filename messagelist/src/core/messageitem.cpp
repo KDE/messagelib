@@ -26,7 +26,7 @@ class MessageItem::Tag::TagPrivate
 {
 public:
     TagPrivate()
-        : mPriority(0) // Initialize it
+
     {
     }
 
@@ -36,7 +36,7 @@ public:
     QColor mTextColor;
     QColor mBackgroundColor;
     QFont mFont;
-    int mPriority;
+    int mPriority{0};
 };
 
 MessageItem::Tag::Tag(const QPixmap &pix, const QString &tagName, const QString &tagId)
@@ -218,13 +218,13 @@ bool MessageItemPrivate::tagListInitialized() const
 
 MessageItem::MessageItem()
     : Item(Message, new MessageItemPrivate(this))
-    , ModelInvariantIndex()
+
 {
 }
 
 MessageItem::MessageItem(MessageItemPrivate *dd)
     : Item(Message, dd)
-    , ModelInvariantIndex()
+
 {
 }
 
@@ -598,8 +598,7 @@ void FakeItem::setFakeTags(const QList<MessageItem::Tag *> &tagList)
 }
 
 TagCache::TagCache()
-    : QObject()
-    , mMonitor(new Akonadi::Monitor(this))
+    : mMonitor(new Akonadi::Monitor(this))
 {
     mCache.setMaxCost(100);
     mMonitor->setObjectName(QLatin1StringView("MessageListTagCacheMonitor"));

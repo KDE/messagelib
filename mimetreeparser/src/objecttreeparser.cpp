@@ -43,8 +43,7 @@ ObjectTreeParser::ObjectTreeParser(const ObjectTreeParser *topLevelParser)
 ObjectTreeParser::ObjectTreeParser(Interface::ObjectTreeSource *source, MimeTreeParser::NodeHelper *nodeHelper)
     : mSource(source)
     , mNodeHelper(nodeHelper)
-    , mTopLevelContent(nullptr)
-    , mAllowAsync(false)
+
 {
     init();
 }

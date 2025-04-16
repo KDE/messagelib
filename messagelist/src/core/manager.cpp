@@ -29,8 +29,7 @@ using namespace MessageList::Core;
 Manager *Manager::mInstance = nullptr;
 
 Manager::Manager()
-    : QObject()
-    , mDateFormatter(new MessageCore::DateFormatter())
+    : mDateFormatter(new MessageCore::DateFormatter())
     , mCachedLocalizedUnknownText(i18nc("Unknown date", "Unknown"))
 {
     mInstance = this;

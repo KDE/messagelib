@@ -45,8 +45,7 @@ Aggregation::Aggregation(const Aggregation &opt)
     = default;
 
 Aggregation::Aggregation()
-    : OptionSet()
-    , mGrouping(NoGrouping)
+    : mGrouping(NoGrouping)
     , mGroupExpandPolicy(NeverExpandGroups)
     , mThreading(NoThreading)
     , mThreadLeader(TopmostMessage)
