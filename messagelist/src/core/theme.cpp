@@ -889,7 +889,7 @@ bool Theme::Column::load(QDataStream &stream, int themeVersion)
 }
 
 Theme::Theme()
-    : OptionSet()
+
 {
     mGroupHeaderBackgroundMode = AutoColor;
     mViewHeaderPolicy = ShowHeaderAlways;

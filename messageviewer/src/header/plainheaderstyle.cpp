@@ -45,8 +45,7 @@ QString PlainHeaderStylePrivate::formatAllMessageHeaders(KMime::Message *message
 }
 
 PlainHeaderStyle::PlainHeaderStyle()
-    : HeaderStyle()
-    , d(new MessageViewer::PlainHeaderStylePrivate)
+    : d(new MessageViewer::PlainHeaderStylePrivate)
 {
 }
 

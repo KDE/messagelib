@@ -11,7 +11,7 @@
 using namespace MimeTreeParser;
 
 NodeHelperTest::NodeHelperTest()
-    : QObject()
+
 {
 }
 

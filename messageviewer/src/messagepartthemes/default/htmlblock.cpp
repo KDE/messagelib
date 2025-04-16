@@ -79,8 +79,7 @@ QString AttachmentMarkBlock::exitString() const
 }
 
 RootBlock::RootBlock(HtmlWriter *writer)
-    : HTMLBlock()
-    , mWriter(writer)
+    : mWriter(writer)
 {
     internalEnter();
 }

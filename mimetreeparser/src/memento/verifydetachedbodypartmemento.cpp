@@ -18,8 +18,7 @@ using namespace GpgME;
 using namespace MimeTreeParser;
 
 VerifyDetachedBodyPartMemento::VerifyDetachedBodyPartMemento(VerifyDetachedJob *job, KeyListJob *klj, const QByteArray &signature, const QByteArray &plainText)
-    : CryptoBodyPartMemento()
-    , m_signature(signature)
+    : m_signature(signature)
     , m_plainText(plainText)
     , m_job(job)
     , m_keylistjob(klj)

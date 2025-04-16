@@ -32,8 +32,7 @@ public:
 };
 
 GrantleeHeaderTestStyle::GrantleeHeaderTestStyle()
-    : HeaderStyle()
-    , d(new MessageViewer::GrantleeHeaderTestStylePrivate)
+    : d(new MessageViewer::GrantleeHeaderTestStylePrivate)
 {
 }
 

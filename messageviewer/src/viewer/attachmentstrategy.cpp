@@ -55,7 +55,7 @@ class IconicAttachmentStrategy : public AttachmentStrategy
 
 protected:
     IconicAttachmentStrategy()
-        : AttachmentStrategy()
+
     {
     }
 
@@ -96,7 +96,7 @@ class SmartAttachmentStrategy : public AttachmentStrategy
 
 protected:
     SmartAttachmentStrategy()
-        : AttachmentStrategy()
+
     {
     }
 
@@ -130,7 +130,7 @@ class InlinedAttachmentStrategy : public AttachmentStrategy
 
 protected:
     InlinedAttachmentStrategy()
-        : AttachmentStrategy()
+
     {
     }
 
@@ -164,7 +164,7 @@ class HiddenAttachmentStrategy : public AttachmentStrategy
 
 protected:
     HiddenAttachmentStrategy()
-        : AttachmentStrategy()
+
     {
     }
 
@@ -206,7 +206,7 @@ class HeaderOnlyAttachmentStrategy : public AttachmentStrategy
 
 protected:
     HeaderOnlyAttachmentStrategy()
-        : AttachmentStrategy()
+
     {
     }
 

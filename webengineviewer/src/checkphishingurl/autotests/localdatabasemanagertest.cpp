@@ -14,7 +14,7 @@ class TestLocalDatabaseManagerPrivate : public WebEngineViewer::LocalDataBaseMan
 {
 public:
     TestLocalDatabaseManagerPrivate()
-        : WebEngineViewer::LocalDataBaseManagerPrivate()
+
     {
     }
 

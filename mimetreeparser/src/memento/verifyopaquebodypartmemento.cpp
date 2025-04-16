@@ -18,8 +18,7 @@ using namespace GpgME;
 using namespace MimeTreeParser;
 
 VerifyOpaqueBodyPartMemento::VerifyOpaqueBodyPartMemento(VerifyOpaqueJob *job, KeyListJob *klj, const QByteArray &signature)
-    : CryptoBodyPartMemento()
-    , m_signature(signature)
+    : m_signature(signature)
     , m_job(job)
     , m_keylistjob(klj)
 {

@@ -13,8 +13,7 @@ using namespace GpgME;
 using namespace MimeTreeParser;
 
 DecryptVerifyBodyPartMemento::DecryptVerifyBodyPartMemento(DecryptVerifyJob *job, const QByteArray &cipherText)
-    : CryptoBodyPartMemento()
-    , m_cipherText(cipherText)
+    : m_cipherText(cipherText)
     , m_job(job)
 {
     Q_ASSERT(m_job);

@@ -29,8 +29,7 @@ static const char *const richHeaders[] = {"subject",
 static const int numRichHeaders = sizeof richHeaders / sizeof *richHeaders;
 
 RichHeaderStrategy::RichHeaderStrategy()
-    : HeaderStrategy()
-    , mHeadersToDisplay(stringList(richHeaders, numRichHeaders))
+    : mHeadersToDisplay(stringList(richHeaders, numRichHeaders))
 {
 }
 
