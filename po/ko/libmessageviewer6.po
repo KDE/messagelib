@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-11 00:42+0000\n"
+"POT-Creation-Date: 2025-04-17 00:42+0000\n"
 "PO-Revision-Date: 2024-08-20 00:34+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -833,38 +833,38 @@ msgstr "헤더(&H)"
 msgid "Choose display style of message headers"
 msgstr "메시지 헤더 표시 형식 선택"
 
-#: header/plainheaderstyle.cpp:103
+#: header/plainheaderstyle.cpp:102
 #, kde-format
 msgid "Date: "
 msgstr "날짜: "
 
-#: header/plainheaderstyle.cpp:107
+#: header/plainheaderstyle.cpp:106
 #, kde-format
 msgid "From: "
 msgstr "보낸 사람:"
 
-#: header/plainheaderstyle.cpp:109
+#: header/plainheaderstyle.cpp:108
 #, kde-format
 msgid "[vCard]"
 msgstr "[vCard]"
 
-#: header/plainheaderstyle.cpp:121
+#: header/plainheaderstyle.cpp:120
 #, kde-format
 msgctxt "To-field of the mailheader."
 msgid "To: "
 msgstr "받는 사람:"
 
-#: header/plainheaderstyle.cpp:128
+#: header/plainheaderstyle.cpp:127
 #, kde-format
 msgid "CC: "
 msgstr "참조:"
 
-#: header/plainheaderstyle.cpp:135
+#: header/plainheaderstyle.cpp:134
 #, kde-format
 msgid "BCC: "
 msgstr "숨은 참조:"
 
-#: header/plainheaderstyle.cpp:140
+#: header/plainheaderstyle.cpp:139
 #, kde-format
 msgid "Reply to: "
 msgstr "답장 주소: "

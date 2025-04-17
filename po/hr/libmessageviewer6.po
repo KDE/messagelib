@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-11 00:42+0000\n"
+"POT-Creation-Date: 2025-04-17 00:42+0000\n"
 "PO-Revision-Date: 2011-06-22 22:30+0200\n"
 "Last-Translator: Marko Dimjašević <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -899,39 +899,39 @@ msgstr "&Zaglavlja"
 msgid "Choose display style of message headers"
 msgstr "Odaberite stil prikaza zaglavlja poruka"
 
-#: header/plainheaderstyle.cpp:103
+#: header/plainheaderstyle.cpp:102
 #, fuzzy, kde-format
 msgid "Date: "
 msgstr "Datum: "
 
-#: header/plainheaderstyle.cpp:107
+#: header/plainheaderstyle.cpp:106
 #, fuzzy, kde-format
 msgid "From: "
 msgstr "Od: "
 
-#: header/plainheaderstyle.cpp:109
+#: header/plainheaderstyle.cpp:108
 #, fuzzy, kde-format
 msgid "[vCard]"
 msgstr "[vCard]"
 
-#: header/plainheaderstyle.cpp:121
+#: header/plainheaderstyle.cpp:120
 #, fuzzy, kde-format
 #| msgid "To: "
 msgctxt "To-field of the mailheader."
 msgid "To: "
 msgstr "Za: "
 
-#: header/plainheaderstyle.cpp:128
+#: header/plainheaderstyle.cpp:127
 #, fuzzy, kde-format
 msgid "CC: "
 msgstr "CC: "
 
-#: header/plainheaderstyle.cpp:135
+#: header/plainheaderstyle.cpp:134
 #, fuzzy, kde-format
 msgid "BCC: "
 msgstr "BCC: "
 
-#: header/plainheaderstyle.cpp:140
+#: header/plainheaderstyle.cpp:139
 #, fuzzy, kde-format
 msgid "Reply to: "
 msgstr "Odgovori na: "

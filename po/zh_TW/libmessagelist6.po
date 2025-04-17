@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-21 00:42+0000\n"
+"POT-Creation-Date: 2025-04-17 00:42+0000\n"
 "PO-Revision-Date: 2025-01-08 17:45+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -28,114 +28,114 @@ msgstr ""
 "X-Generator: Lokalize 25.03.70\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: core/aggregation.cpp:178
+#: core/aggregation.cpp:177
 #, kde-format
 msgctxt "No grouping of messages"
 msgid "None"
 msgstr "無"
 
-#: core/aggregation.cpp:179
+#: core/aggregation.cpp:178
 #, kde-format
 msgid "By Exact Date (of Thread Leaders)"
 msgstr "依日期（串列發起者）"
 
-#: core/aggregation.cpp:180
+#: core/aggregation.cpp:179
 #, kde-format
 msgid "By Smart Date Ranges (of Thread Leaders)"
 msgstr "依聰明判斷日期範圍（串列發起者）"
 
-#: core/aggregation.cpp:181 core/sortorder.cpp:70
+#: core/aggregation.cpp:180 core/sortorder.cpp:70
 #, kde-format
 msgid "By Smart Sender/Receiver"
 msgstr "依聰明判斷寄件者/收件者"
 
-#: core/aggregation.cpp:182 core/sortorder.cpp:68
+#: core/aggregation.cpp:181 core/sortorder.cpp:68
 #, kde-format
 msgid "By Sender"
 msgstr "依寄件者"
 
-#: core/aggregation.cpp:183 core/sortorder.cpp:69
+#: core/aggregation.cpp:182 core/sortorder.cpp:69
 #, kde-format
 msgid "By Receiver"
 msgstr "依收件者"
 
-#: core/aggregation.cpp:192
+#: core/aggregation.cpp:191
 #, kde-format
 msgid "Never Expand Groups"
 msgstr "永不展開群組"
 
-#: core/aggregation.cpp:194
+#: core/aggregation.cpp:193
 #, kde-format
 msgid "Expand Recent Groups"
 msgstr "展開最新的群組"
 
-#: core/aggregation.cpp:196
+#: core/aggregation.cpp:195
 #, kde-format
 msgid "Always Expand Groups"
 msgstr "總是展開群組"
 
-#: core/aggregation.cpp:202
+#: core/aggregation.cpp:201
 #, kde-format
 msgctxt "No threading of messages"
 msgid "None"
 msgstr "無"
 
-#: core/aggregation.cpp:203
+#: core/aggregation.cpp:202
 #, kde-format
 msgid "Perfect Only"
 msgstr "只有完整的"
 
-#: core/aggregation.cpp:204
+#: core/aggregation.cpp:203
 #, kde-format
 msgid "Perfect and by References"
 msgstr "完整的及依參考"
 
-#: core/aggregation.cpp:205
+#: core/aggregation.cpp:204
 #, kde-format
 msgid "Perfect, by References and by Subject"
 msgstr "完整的，依參考與依主旨"
 
-#: core/aggregation.cpp:214
+#: core/aggregation.cpp:213
 #, kde-format
 msgid "Topmost Message"
 msgstr "最頂端信件"
 
-#: core/aggregation.cpp:218
+#: core/aggregation.cpp:217
 #, kde-format
 msgid "Most Recent Message"
 msgstr "最新信件"
 
-#: core/aggregation.cpp:228
+#: core/aggregation.cpp:227
 #, kde-format
 msgid "Never Expand Threads"
 msgstr "永不展開信件串列"
 
-#: core/aggregation.cpp:229
+#: core/aggregation.cpp:228
 #, kde-format
 msgid "Expand Threads With Unread Messages"
 msgstr "展開有未讀信件的串列"
 
-#: core/aggregation.cpp:230
+#: core/aggregation.cpp:229
 #, kde-format
 msgid "Expand Threads With Unread or Important Messages"
 msgstr "展開有未讀或重要信件的串列"
 
-#: core/aggregation.cpp:231
+#: core/aggregation.cpp:230
 #, kde-format
 msgid "Always Expand Threads"
 msgstr " 總是展開討論串"
 
-#: core/aggregation.cpp:236
+#: core/aggregation.cpp:235
 #, kde-format
 msgid "Favor Interactivity"
 msgstr "喜好的互動"
 
-#: core/aggregation.cpp:236
+#: core/aggregation.cpp:235
 #, kde-format
 msgid "Favor Speed"
 msgstr "喜好速度"
 
-#: core/aggregation.cpp:236
+#: core/aggregation.cpp:235
 #, kde-format
 msgid "Batch Job (No Interactivity)"
 msgstr "批次工作（不互動）"
@@ -218,18 +218,18 @@ msgctxt "Status of an item"
 msgid "Queued"
 msgstr "已排入佇列"
 
-#: core/manager.cpp:34 core/model.cpp:334
+#: core/manager.cpp:33 core/model.cpp:334
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "未知"
 
-#: core/manager.cpp:203
+#: core/manager.cpp:202
 #, kde-format
 msgid "Current Activity, Threaded"
 msgstr "目前，串列式"
 
-#: core/manager.cpp:204
+#: core/manager.cpp:203
 #, kde-format
 msgid ""
 "This view uses smart date range groups. Messages are threaded. So for "
@@ -239,12 +239,12 @@ msgstr ""
 "此檢視使用聰明日期範圍來分類。信件會串列起來。所以比方說，「今天」群組內，您"
 "可以看到今天收到的信件，還有所有今天啟動的串列。"
 
-#: core/manager.cpp:216
+#: core/manager.cpp:215
 #, kde-format
 msgid "Current Activity, Flat"
 msgstr "目前，平面式"
 
-#: core/manager.cpp:217
+#: core/manager.cpp:216
 #, kde-format
 msgid ""
 "This view uses smart date range groups. Messages are not threaded. So for "
@@ -253,12 +253,12 @@ msgstr ""
 "此檢視使用聰明日期範圍來分類信件。信件本身不串起來。所以比方說，「今天」群組"
 "內您會看到今天收到的信件。"
 
-#: core/manager.cpp:228
+#: core/manager.cpp:227
 #, kde-format
 msgid "Activity by Date, Threaded"
 msgstr "依日期，串列式"
 
-#: core/manager.cpp:229
+#: core/manager.cpp:228
 #, kde-format
 msgid ""
 "This view uses day-by-day groups. Messages are threaded. So for example, in "
@@ -268,12 +268,12 @@ msgstr ""
 "此檢視依每一天來分類。信件會串列起來。所以比方說，「今天」群組內，您可以看到"
 "今天收到的信件，還有所有今天啟動的串列。"
 
-#: core/manager.cpp:241
+#: core/manager.cpp:240
 #, kde-format
 msgid "Activity by Date, Flat"
 msgstr "依日期，平面式"
 
-#: core/manager.cpp:242
+#: core/manager.cpp:241
 #, kde-format
 msgid ""
 "This view uses day-by-day groups. Messages are not threaded. So for example, "
@@ -282,35 +282,35 @@ msgstr ""
 "此檢視依每一天來分類信件。信件本身不串起來。所以比方說，「今天」群組內您會看"
 "到今天收到的信件。"
 
-#: core/manager.cpp:253
+#: core/manager.cpp:252
 #, kde-format
 msgid "Standard Mailing List"
 msgstr "標準郵件論壇"
 
-#: core/manager.cpp:254
+#: core/manager.cpp:253
 #, kde-format
 msgid ""
 "This is a plain and old mailing list view: no groups and heavy threading."
 msgstr "這是舊式的，樸素的郵件論壇式的檢視：信件會串在一起。"
 
-#: core/manager.cpp:263
+#: core/manager.cpp:262
 #, kde-format
 msgid "Flat Date View"
 msgstr "平面日期檢視"
 
-#: core/manager.cpp:264
+#: core/manager.cpp:263
 #, kde-format
 msgid ""
 "This is a plain and old list of messages sorted by date: no groups and no "
 "threading."
 msgstr "這是舊式的，樸素的信件列表，依日期排序。不分類、不串在一起。"
 
-#: core/manager.cpp:275
+#: core/manager.cpp:274
 #, kde-format
 msgid "Senders/Receivers, Flat"
 msgstr "寄件者/收件者，平面模式"
 
-#: core/manager.cpp:276
+#: core/manager.cpp:275
 #, kde-format
 msgid ""
 "This view groups the messages by senders or receivers (depending on the "
@@ -318,147 +318,147 @@ msgid ""
 msgstr ""
 "此檢視將信件依發信人或收信人分類（根據資料夾型態而定）。信件本身不串在一起。"
 
-#: core/manager.cpp:287
+#: core/manager.cpp:286
 #, kde-format
 msgid "Thread Starters"
 msgstr "串列發起者"
 
-#: core/manager.cpp:288
+#: core/manager.cpp:287
 #, kde-format
 msgid ""
 "This view groups the messages in threads and then groups the threads by the "
 "starting user."
 msgstr "此檢視將信件串列起來，並將串列依發起者來分類。"
 
-#: core/manager.cpp:565
+#: core/manager.cpp:564
 #, kde-format
 msgctxt "Default theme name"
 msgid "Classic"
 msgstr "傳統"
 
-#: core/manager.cpp:565
+#: core/manager.cpp:564
 #, kde-format
 msgid "A simple, backward compatible, single row theme"
 msgstr "簡單，向後相容，單一列的主題"
 
-#: core/manager.cpp:569
+#: core/manager.cpp:568
 #, kde-format
 msgctxt "@title:column Subject of messages"
 msgid "Subject"
 msgstr "主題"
 
-#: core/manager.cpp:602 core/theme.cpp:112
+#: core/manager.cpp:601 core/theme.cpp:112
 #, kde-format
 msgid "Sender/Receiver"
 msgstr "寄件者/收件者"
 
-#: core/manager.cpp:609
+#: core/manager.cpp:608
 #, kde-format
 msgctxt "Sender of a message"
 msgid "Sender"
 msgstr "寄件者"
 
-#: core/manager.cpp:611
+#: core/manager.cpp:610
 #, kde-format
 msgctxt "Receiver of a message"
 msgid "Receiver"
 msgstr "收件者"
 
-#: core/manager.cpp:617
+#: core/manager.cpp:616
 #, kde-format
 msgctxt "Date of a message"
 msgid "Date"
 msgstr "日期"
 
-#: core/manager.cpp:619
+#: core/manager.cpp:618
 #, kde-format
 msgid "Most Recent Date"
 msgstr "最近日期"
 
-#: core/manager.cpp:625
+#: core/manager.cpp:624
 #, kde-format
 msgctxt "Size of a message"
 msgid "Size"
 msgstr "大小"
 
-#: core/manager.cpp:627
+#: core/manager.cpp:626
 #, kde-format
 msgctxt "Attachment indication"
 msgid "Attachment"
 msgstr "附件"
 
-#: core/manager.cpp:633
+#: core/manager.cpp:632
 #, kde-format
 msgid "Read/Unread"
 msgstr "讀取/未讀"
 
-#: core/manager.cpp:638
+#: core/manager.cpp:637
 #, kde-format
 msgid "Replied"
 msgstr "已回覆"
 
-#: core/manager.cpp:640
+#: core/manager.cpp:639
 #, kde-format
 msgctxt "Message importance indication"
 msgid "Important"
 msgstr "重要"
 
-#: core/manager.cpp:646
+#: core/manager.cpp:645
 #, kde-format
 msgid "Action Item"
 msgstr "動作項目"
 
-#: core/manager.cpp:652
+#: core/manager.cpp:651
 #, kde-format
 msgid "Spam/Ham"
 msgstr "垃圾信/正常信"
 
-#: core/manager.cpp:658
+#: core/manager.cpp:657
 #, kde-format
 msgid "Watched/Ignored"
 msgstr "監測/忽略"
 
-#: core/manager.cpp:664
+#: core/manager.cpp:663
 #, kde-format
 msgid "Encryption"
 msgstr "加密"
 
-#: core/manager.cpp:670
+#: core/manager.cpp:669
 #, kde-format
 msgid "Signature"
 msgstr "簽名"
 
-#: core/manager.cpp:675
+#: core/manager.cpp:674
 #, kde-format
 msgid "Tag List"
 msgstr "標籤清單"
 
-#: core/manager.cpp:683
+#: core/manager.cpp:682
 #, kde-format
 msgid "Smart"
 msgstr "智慧型"
 
-#: core/manager.cpp:683
+#: core/manager.cpp:682
 #, kde-format
 msgid "A smart multiline and multi item theme"
 msgstr "智慧型多行與多項目主題"
 
-#: core/manager.cpp:687
+#: core/manager.cpp:686
 #, kde-format
 msgid "Message"
 msgstr "信件"
 
-#: core/manager.cpp:768
+#: core/manager.cpp:767
 #, kde-format
 msgid "Smart with Clickable Status"
 msgstr "有可點擊狀態的智慧型主題"
 
-#: core/manager.cpp:769
+#: core/manager.cpp:768
 #, kde-format
 msgid "A smart multiline and multi item theme with a clickable status column"
 msgstr "有可點擊狀態，多行與多項目的智慧型主題"
 
-#: core/manager.cpp:773 core/view.cpp:2256 core/view.cpp:2260
+#: core/manager.cpp:772 core/view.cpp:2256 core/view.cpp:2260
 #, kde-format
 msgid "Status"
 msgstr "狀態"

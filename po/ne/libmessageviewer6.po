@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-11 00:42+0000\n"
+"POT-Creation-Date: 2025-04-17 00:42+0000\n"
 "PO-Revision-Date: 2007-09-10 16:41+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -945,39 +945,39 @@ msgstr "हेडर"
 msgid "Choose display style of message headers"
 msgstr "सन्देश हेडरको प्रदर्शन शैली रोज्नुहोस्"
 
-#: header/plainheaderstyle.cpp:103
+#: header/plainheaderstyle.cpp:102
 #, kde-format
 msgid "Date: "
 msgstr "मिति: "
 
-#: header/plainheaderstyle.cpp:107
+#: header/plainheaderstyle.cpp:106
 #, kde-format
 msgid "From: "
 msgstr "बाट: "
 
-#: header/plainheaderstyle.cpp:109
+#: header/plainheaderstyle.cpp:108
 #, kde-format
 msgid "[vCard]"
 msgstr "[vCard]"
 
-#: header/plainheaderstyle.cpp:121
+#: header/plainheaderstyle.cpp:120
 #, fuzzy, kde-format
 #| msgid "To: "
 msgctxt "To-field of the mailheader."
 msgid "To: "
 msgstr "लाई: "
 
-#: header/plainheaderstyle.cpp:128
+#: header/plainheaderstyle.cpp:127
 #, kde-format
 msgid "CC: "
 msgstr "बोधार्थ प्रतिलिपि: "
 
-#: header/plainheaderstyle.cpp:135
+#: header/plainheaderstyle.cpp:134
 #, kde-format
 msgid "BCC: "
 msgstr "गुप्त बोधार्थ प्रतिलिपि: "
 
-#: header/plainheaderstyle.cpp:140
+#: header/plainheaderstyle.cpp:139
 #, kde-format
 msgid "Reply to: "
 msgstr "यसलाई जवाफ दिनुहोस्: "

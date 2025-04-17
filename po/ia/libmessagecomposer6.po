@@ -1,7 +1,7 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# SPDX-FileCopyrightText: 2011, 2012, 2013, 2020, 2021, 2022, 2023, 2024 g.sora <g.sora@tiscali.it>
+# SPDX-FileCopyrightText: 2011, 2012, 2013, 2020, 2021, 2022, 2023, 2024, 2025 g.sora <g.sora@tiscali.it>
 # Giovanni Sora <g.sora@tioscali.it>, 2014, 2020, 2021.
 # giovanni <g.sora@tiscali.it>, 2024.
 msgid ""
@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-01 00:42+0000\n"
-"PO-Revision-Date: 2024-09-02 15:57+0200\n"
+"PO-Revision-Date: 2025-04-16 11:56+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -1280,7 +1280,7 @@ msgstr "General"
 #: imagescaling/ui/imagescalingwidget.ui:34
 #, kde-format
 msgid "Keep ratio"
-msgstr "Mantene rata de aspecto"
+msgstr "Mantene proportiones"
 
 #. i18n: ectx: property (text), widget (QCheckBox, AskBeforeResizing)
 #: imagescaling/ui/imagescalingwidget.ui:41

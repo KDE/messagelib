@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-21 00:42+0000\n"
+"POT-Creation-Date: 2025-04-17 00:42+0000\n"
 "PO-Revision-Date: 2021-01-26 11:41+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -20,114 +20,114 @@ msgstr ""
 "X-Generator: Lokalize 20.12.1\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: core/aggregation.cpp:178
+#: core/aggregation.cpp:177
 #, kde-format
 msgctxt "No grouping of messages"
 msgid "None"
 msgstr "Žiadne"
 
-#: core/aggregation.cpp:179
+#: core/aggregation.cpp:178
 #, kde-format
 msgid "By Exact Date (of Thread Leaders)"
 msgstr "Podľa presného dátumu (vedúcich vlákien)"
 
-#: core/aggregation.cpp:180
+#: core/aggregation.cpp:179
 #, kde-format
 msgid "By Smart Date Ranges (of Thread Leaders)"
 msgstr "Podľa inteligentných rozsahov dátumu (vedúcich vlákien)"
 
-#: core/aggregation.cpp:181 core/sortorder.cpp:70
+#: core/aggregation.cpp:180 core/sortorder.cpp:70
 #, kde-format
 msgid "By Smart Sender/Receiver"
 msgstr "Podľa inteligentného odosielateľa/prijímateľa"
 
-#: core/aggregation.cpp:182 core/sortorder.cpp:68
+#: core/aggregation.cpp:181 core/sortorder.cpp:68
 #, kde-format
 msgid "By Sender"
 msgstr "podľa odosielateľa"
 
-#: core/aggregation.cpp:183 core/sortorder.cpp:69
+#: core/aggregation.cpp:182 core/sortorder.cpp:69
 #, kde-format
 msgid "By Receiver"
 msgstr "podľa prijímateľa"
 
-#: core/aggregation.cpp:192
+#: core/aggregation.cpp:191
 #, kde-format
 msgid "Never Expand Groups"
 msgstr "Nikdy nerozvinúť skupiny"
 
-#: core/aggregation.cpp:194
+#: core/aggregation.cpp:193
 #, kde-format
 msgid "Expand Recent Groups"
 msgstr "Rozvinúť nedávne skupiny"
 
-#: core/aggregation.cpp:196
+#: core/aggregation.cpp:195
 #, kde-format
 msgid "Always Expand Groups"
 msgstr "Vždy rozvinúť skupiny"
 
-#: core/aggregation.cpp:202
+#: core/aggregation.cpp:201
 #, kde-format
 msgctxt "No threading of messages"
 msgid "None"
 msgstr "Žiadne"
 
-#: core/aggregation.cpp:203
+#: core/aggregation.cpp:202
 #, kde-format
 msgid "Perfect Only"
 msgstr "Iba dokonalé"
 
-#: core/aggregation.cpp:204
+#: core/aggregation.cpp:203
 #, kde-format
 msgid "Perfect and by References"
 msgstr "Dokonalé a podľa odkazov"
 
-#: core/aggregation.cpp:205
+#: core/aggregation.cpp:204
 #, kde-format
 msgid "Perfect, by References and by Subject"
 msgstr "Dokonalé, podľa odkazov a podľa predmetu"
 
-#: core/aggregation.cpp:214
+#: core/aggregation.cpp:213
 #, kde-format
 msgid "Topmost Message"
 msgstr "Najvyššia správa"
 
-#: core/aggregation.cpp:218
+#: core/aggregation.cpp:217
 #, kde-format
 msgid "Most Recent Message"
 msgstr "Posledná správa"
 
-#: core/aggregation.cpp:228
+#: core/aggregation.cpp:227
 #, kde-format
 msgid "Never Expand Threads"
 msgstr "Nikdy nerozvinúť vlákna"
 
-#: core/aggregation.cpp:229
+#: core/aggregation.cpp:228
 #, kde-format
 msgid "Expand Threads With Unread Messages"
 msgstr "Rozvinúť vlákna s neprečítanými správami"
 
-#: core/aggregation.cpp:230
+#: core/aggregation.cpp:229
 #, kde-format
 msgid "Expand Threads With Unread or Important Messages"
 msgstr "Rozvinúť vlákna s neprečítanými alebo dôležitými správami"
 
-#: core/aggregation.cpp:231
+#: core/aggregation.cpp:230
 #, kde-format
 msgid "Always Expand Threads"
 msgstr "Vždy rozvinúť vlákna"
 
-#: core/aggregation.cpp:236
+#: core/aggregation.cpp:235
 #, kde-format
 msgid "Favor Interactivity"
 msgstr "Uprednostniť interaktivitu"
 
-#: core/aggregation.cpp:236
+#: core/aggregation.cpp:235
 #, kde-format
 msgid "Favor Speed"
 msgstr "Uprednostniť rýchlosť"
 
-#: core/aggregation.cpp:236
+#: core/aggregation.cpp:235
 #, kde-format
 msgid "Batch Job (No Interactivity)"
 msgstr "Dávková úloha (žiadna interaktivita)"
@@ -210,18 +210,18 @@ msgctxt "Status of an item"
 msgid "Queued"
 msgstr ""
 
-#: core/manager.cpp:34 core/model.cpp:334
+#: core/manager.cpp:33 core/model.cpp:334
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "Neznáme"
 
-#: core/manager.cpp:203
+#: core/manager.cpp:202
 #, kde-format
 msgid "Current Activity, Threaded"
 msgstr "Aktuálna aktivita, vlákna"
 
-#: core/manager.cpp:204
+#: core/manager.cpp:203
 #, kde-format
 msgid ""
 "This view uses smart date range groups. Messages are threaded. So for "
@@ -232,12 +232,12 @@ msgstr ""
 "tvoria vlákna. Tak napríklad, v \"Dnes\" nájdete všetky správy, ktoré dnes "
 "prišli a všetky vlákna, ktoré boli dnes aktívne."
 
-#: core/manager.cpp:216
+#: core/manager.cpp:215
 #, kde-format
 msgid "Current Activity, Flat"
 msgstr "Aktuálna aktivitu, jednoducho"
 
-#: core/manager.cpp:217
+#: core/manager.cpp:216
 #, kde-format
 msgid ""
 "This view uses smart date range groups. Messages are not threaded. So for "
@@ -247,12 +247,12 @@ msgstr ""
 "netvoria vlákna. Tak napríklad, v \"Dnes\" jednoducho nájdete všetky správy, "
 "ktoré dnes prišli."
 
-#: core/manager.cpp:228
+#: core/manager.cpp:227
 #, kde-format
 msgid "Activity by Date, Threaded"
 msgstr "Aktivita podľa dátumu, vlákna"
 
-#: core/manager.cpp:229
+#: core/manager.cpp:228
 #, kde-format
 msgid ""
 "This view uses day-by-day groups. Messages are threaded. So for example, in "
@@ -263,12 +263,12 @@ msgstr ""
 "napríklad, v \"Dnes\" nájdete všetky správy, ktoré dnes prišli a všetky "
 "vlákna, ktoré boli dnes aktívne."
 
-#: core/manager.cpp:241
+#: core/manager.cpp:240
 #, kde-format
 msgid "Activity by Date, Flat"
 msgstr "Aktivita podľa dátumu, jednoducho"
 
-#: core/manager.cpp:242
+#: core/manager.cpp:241
 #, kde-format
 msgid ""
 "This view uses day-by-day groups. Messages are not threaded. So for example, "
@@ -277,12 +277,12 @@ msgstr ""
 "Toto zobrazenie používa skupiny deň za dňom. Správy netvoria vlákna. Tak "
 "napríklad, v \"Dnes\" jednoducho nájdete všetky správy, ktoré dnes prišli."
 
-#: core/manager.cpp:253
+#: core/manager.cpp:252
 #, kde-format
 msgid "Standard Mailing List"
 msgstr "Štandardná e-mailová konferencia"
 
-#: core/manager.cpp:254
+#: core/manager.cpp:253
 #, kde-format
 msgid ""
 "This is a plain and old mailing list view: no groups and heavy threading."
@@ -290,12 +290,12 @@ msgstr ""
 "Toto je jednoduché a staré zobrazenie e-mailovej konferencie: žiadne skupiny "
 "a ťažkopádna tvorba vlákien."
 
-#: core/manager.cpp:263
+#: core/manager.cpp:262
 #, kde-format
 msgid "Flat Date View"
 msgstr "Jednoduché zobrazenie dátumu"
 
-#: core/manager.cpp:264
+#: core/manager.cpp:263
 #, kde-format
 msgid ""
 "This is a plain and old list of messages sorted by date: no groups and no "
@@ -304,12 +304,12 @@ msgstr ""
 "Toto je jednoduchý a starý zoznam správ triedených podľa dátumu: žiadne "
 "skupiny a žiadna tvorba vlákien."
 
-#: core/manager.cpp:275
+#: core/manager.cpp:274
 #, kde-format
 msgid "Senders/Receivers, Flat"
 msgstr "Odosielatelia/Prijímatelia, jednoducho"
 
-#: core/manager.cpp:276
+#: core/manager.cpp:275
 #, kde-format
 msgid ""
 "This view groups the messages by senders or receivers (depending on the "
@@ -318,12 +318,12 @@ msgstr ""
 "Toto zobrazenie zoskupuje správy podľa odosielateľov alebo prijímateľov (v "
 "závislosti na type priečinka). Správy netvoria vlákna."
 
-#: core/manager.cpp:287
+#: core/manager.cpp:286
 #, kde-format
 msgid "Thread Starters"
 msgstr "Začínajúci vlákno"
 
-#: core/manager.cpp:288
+#: core/manager.cpp:287
 #, kde-format
 msgid ""
 "This view groups the messages in threads and then groups the threads by the "
@@ -332,136 +332,136 @@ msgstr ""
 "Toto zobrazenie zoskupí správy vo vláknach a potom zoskupí vlákna podľa "
 "začínajúceho používateľa."
 
-#: core/manager.cpp:565
+#: core/manager.cpp:564
 #, kde-format
 msgctxt "Default theme name"
 msgid "Classic"
 msgstr "Klasika"
 
-#: core/manager.cpp:565
+#: core/manager.cpp:564
 #, kde-format
 msgid "A simple, backward compatible, single row theme"
 msgstr "Jednoduchá, spätne kompatibilná, téma jedného riadka"
 
-#: core/manager.cpp:569
+#: core/manager.cpp:568
 #, kde-format
 msgctxt "@title:column Subject of messages"
 msgid "Subject"
 msgstr "Predmet"
 
-#: core/manager.cpp:602 core/theme.cpp:112
+#: core/manager.cpp:601 core/theme.cpp:112
 #, kde-format
 msgid "Sender/Receiver"
 msgstr "Odosielateľ/prijímateľ"
 
-#: core/manager.cpp:609
+#: core/manager.cpp:608
 #, kde-format
 msgctxt "Sender of a message"
 msgid "Sender"
 msgstr "Odosielateľ"
 
-#: core/manager.cpp:611
+#: core/manager.cpp:610
 #, kde-format
 msgctxt "Receiver of a message"
 msgid "Receiver"
 msgstr "Príjemca"
 
-#: core/manager.cpp:617
+#: core/manager.cpp:616
 #, kde-format
 msgctxt "Date of a message"
 msgid "Date"
 msgstr "Dátum"
 
-#: core/manager.cpp:619
+#: core/manager.cpp:618
 #, kde-format
 msgid "Most Recent Date"
 msgstr "Najnovší dátum"
 
-#: core/manager.cpp:625
+#: core/manager.cpp:624
 #, kde-format
 msgctxt "Size of a message"
 msgid "Size"
 msgstr "Veľkosť"
 
-#: core/manager.cpp:627
+#: core/manager.cpp:626
 #, kde-format
 msgctxt "Attachment indication"
 msgid "Attachment"
 msgstr "Príloha"
 
-#: core/manager.cpp:633
+#: core/manager.cpp:632
 #, kde-format
 msgid "Read/Unread"
 msgstr "Prečítané/neprečítané"
 
-#: core/manager.cpp:638
+#: core/manager.cpp:637
 #, kde-format
 msgid "Replied"
 msgstr "Odpovedané"
 
-#: core/manager.cpp:640
+#: core/manager.cpp:639
 #, kde-format
 msgctxt "Message importance indication"
 msgid "Important"
 msgstr "Dôležité"
 
-#: core/manager.cpp:646
+#: core/manager.cpp:645
 #, kde-format
 msgid "Action Item"
 msgstr "Akčná položka"
 
-#: core/manager.cpp:652
+#: core/manager.cpp:651
 #, kde-format
 msgid "Spam/Ham"
 msgstr "Spam/Ham"
 
-#: core/manager.cpp:658
+#: core/manager.cpp:657
 #, kde-format
 msgid "Watched/Ignored"
 msgstr "Sledované/Ignorované"
 
-#: core/manager.cpp:664
+#: core/manager.cpp:663
 #, kde-format
 msgid "Encryption"
 msgstr "Šifrovanie"
 
-#: core/manager.cpp:670
+#: core/manager.cpp:669
 #, kde-format
 msgid "Signature"
 msgstr "Podpis"
 
-#: core/manager.cpp:675
+#: core/manager.cpp:674
 #, kde-format
 msgid "Tag List"
 msgstr "Zoznam značiek"
 
-#: core/manager.cpp:683
+#: core/manager.cpp:682
 #, kde-format
 msgid "Smart"
 msgstr "Inteligentné"
 
-#: core/manager.cpp:683
+#: core/manager.cpp:682
 #, kde-format
 msgid "A smart multiline and multi item theme"
 msgstr "Inteligentná viacriadková a viacpoložková téma"
 
-#: core/manager.cpp:687
+#: core/manager.cpp:686
 #, kde-format
 msgid "Message"
 msgstr "Správa"
 
-#: core/manager.cpp:768
+#: core/manager.cpp:767
 #, kde-format
 msgid "Smart with Clickable Status"
 msgstr "Inteligentné s klikateľným stavom"
 
-#: core/manager.cpp:769
+#: core/manager.cpp:768
 #, kde-format
 msgid "A smart multiline and multi item theme with a clickable status column"
 msgstr ""
 "Inteligentná viacriadková a viacpoložková téma s klikateľným stavovým stĺpcom"
 
-#: core/manager.cpp:773 core/view.cpp:2256 core/view.cpp:2260
+#: core/manager.cpp:772 core/view.cpp:2256 core/view.cpp:2260
 #, kde-format
 msgid "Status"
 msgstr "Stav"

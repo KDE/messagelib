@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-11 00:42+0000\n"
+"POT-Creation-Date: 2025-04-17 00:42+0000\n"
 "PO-Revision-Date: 2011-10-30 01:38+0200\n"
 "Last-Translator: Børre Gaup <boerre@skolelinux.no>\n"
 "Language-Team: Northern Sami <l10n-no@lister.huftis.org>\n"
@@ -820,39 +820,39 @@ msgstr "&Bajilčállagat"
 msgid "Choose display style of message headers"
 msgstr "Vállje man láhkái reivebajilčállagat čájehuvvojit"
 
-#: header/plainheaderstyle.cpp:103
+#: header/plainheaderstyle.cpp:102
 #, kde-format
 msgid "Date: "
 msgstr "Beaivi: "
 
-#: header/plainheaderstyle.cpp:107
+#: header/plainheaderstyle.cpp:106
 #, kde-format
 msgid "From: "
 msgstr "Sáddejeaddji: "
 
-#: header/plainheaderstyle.cpp:109
+#: header/plainheaderstyle.cpp:108
 #, kde-format
 msgid "[vCard]"
 msgstr "[vCard]"
 
 # unreviewed-context
-#: header/plainheaderstyle.cpp:121
+#: header/plainheaderstyle.cpp:120
 #, kde-format
 msgctxt "To-field of the mailheader."
 msgid "To: "
 msgstr "Vuostáiváldi: "
 
-#: header/plainheaderstyle.cpp:128
+#: header/plainheaderstyle.cpp:127
 #, kde-format
 msgid "CC: "
 msgstr "Máŋggus: "
 
-#: header/plainheaderstyle.cpp:135
+#: header/plainheaderstyle.cpp:134
 #, kde-format
 msgid "BCC: "
 msgstr "Čiegus máŋggus:"
 
-#: header/plainheaderstyle.cpp:140
+#: header/plainheaderstyle.cpp:139
 #, kde-format
 msgid "Reply to: "
 msgstr "Vástádusčujuhus: "

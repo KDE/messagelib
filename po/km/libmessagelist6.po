@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-21 00:42+0000\n"
+"POT-Creation-Date: 2025-04-17 00:42+0000\n"
 "PO-Revision-Date: 2012-12-28 16:26+0700\n"
 "Last-Translator: sutha <sutha@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros>\n"
@@ -21,114 +21,114 @@ msgstr ""
 "X-Generator: WordForge 0.8 RC1\n"
 "X-Language: km-KH\n"
 
-#: core/aggregation.cpp:178
+#: core/aggregation.cpp:177
 #, kde-format
 msgctxt "No grouping of messages"
 msgid "None"
 msgstr "គ្មាន"
 
-#: core/aggregation.cpp:179
+#: core/aggregation.cpp:178
 #, kde-format
 msgid "By Exact Date (of Thread Leaders)"
 msgstr "តាម​កាលបរិច្ឆេទ​ជាក់លាក់ (នៃ​ក្បាល​ខ្សែ​ស្រឡាយ)"
 
-#: core/aggregation.cpp:180
+#: core/aggregation.cpp:179
 #, kde-format
 msgid "By Smart Date Ranges (of Thread Leaders)"
 msgstr "តាម​ជួរ​កាលបរិច្ឆេទ​ឆ្លាត (នៃ​ក្បាលសែស្រឡាយ)"
 
-#: core/aggregation.cpp:181 core/sortorder.cpp:70
+#: core/aggregation.cpp:180 core/sortorder.cpp:70
 #, kde-format
 msgid "By Smart Sender/Receiver"
 msgstr "តាម​អ្នក​ផ្ញើ/អ្នក​ទទួល​ឆ្លាត"
 
-#: core/aggregation.cpp:182 core/sortorder.cpp:68
+#: core/aggregation.cpp:181 core/sortorder.cpp:68
 #, kde-format
 msgid "By Sender"
 msgstr "តាម​​អ្នក​ផ្ញើ"
 
-#: core/aggregation.cpp:183 core/sortorder.cpp:69
+#: core/aggregation.cpp:182 core/sortorder.cpp:69
 #, kde-format
 msgid "By Receiver"
 msgstr "តាម​អ្នកទទួល"
 
-#: core/aggregation.cpp:192
+#: core/aggregation.cpp:191
 #, kde-format
 msgid "Never Expand Groups"
 msgstr "កុំ​ពន្លា​ក្រុម"
 
-#: core/aggregation.cpp:194
+#: core/aggregation.cpp:193
 #, kde-format
 msgid "Expand Recent Groups"
 msgstr "ពង្រីក​ក្រុម​ថ្មីៗ"
 
-#: core/aggregation.cpp:196
+#: core/aggregation.cpp:195
 #, kde-format
 msgid "Always Expand Groups"
 msgstr "ពង្រីក​ក្រុម​ជានិច្ច"
 
-#: core/aggregation.cpp:202
+#: core/aggregation.cpp:201
 #, kde-format
 msgctxt "No threading of messages"
 msgid "None"
 msgstr "គ្មាន"
 
-#: core/aggregation.cpp:203
+#: core/aggregation.cpp:202
 #, kde-format
 msgid "Perfect Only"
 msgstr "តែ​ល្អ​ឥត​ខ្ចោះ​ប៉ុណ្ណោះ"
 
-#: core/aggregation.cpp:204
+#: core/aggregation.cpp:203
 #, kde-format
 msgid "Perfect and by References"
 msgstr "ល្អ​ឥត​ខ្ចោះ និង​តាម​សេចក្ដី​យោង"
 
-#: core/aggregation.cpp:205
+#: core/aggregation.cpp:204
 #, kde-format
 msgid "Perfect, by References and by Subject"
 msgstr "ល្អឥត​ខ្ចោះ ដោយ​សេចក្ដី​យោង និង​តាម​ប្រធានបទ"
 
-#: core/aggregation.cpp:214
+#: core/aggregation.cpp:213
 #, kde-format
 msgid "Topmost Message"
 msgstr "សារ​លើ​គេ​បំផុត"
 
-#: core/aggregation.cpp:218
+#: core/aggregation.cpp:217
 #, kde-format
 msgid "Most Recent Message"
 msgstr "សារ​ថ្មីៗ​បំផុត"
 
-#: core/aggregation.cpp:228
+#: core/aggregation.cpp:227
 #, kde-format
 msgid "Never Expand Threads"
 msgstr "កុំ​ពន្លា​ខ្សែ​ស្រឡាយ"
 
-#: core/aggregation.cpp:229
+#: core/aggregation.cpp:228
 #, kde-format
 msgid "Expand Threads With Unread Messages"
 msgstr "ពន្លា​ខ្សែ​ស្រឡាយ​ជាមួយ​សារ​មិន​ទាន់​អាន"
 
-#: core/aggregation.cpp:230
+#: core/aggregation.cpp:229
 #, kde-format
 msgid "Expand Threads With Unread or Important Messages"
 msgstr "ពន្លា​ខ្សែ​ស្រឡាយ​ដែល​មាន​សារ​សំខាន់ ឬ​មិន​ទាន់អាន"
 
-#: core/aggregation.cpp:231
+#: core/aggregation.cpp:230
 #, kde-format
 msgid "Always Expand Threads"
 msgstr "ពន្លា​ខ្សែ​ស្រឡាយ​ជានិច្ច"
 
-#: core/aggregation.cpp:236
+#: core/aggregation.cpp:235
 #, kde-format
 msgid "Favor Interactivity"
 msgstr "អន្តរសកម្មភាព​​ពេញចិត្ត"
 
-#: core/aggregation.cpp:236
+#: core/aggregation.cpp:235
 #, kde-format
 msgid "Favor Speed"
 msgstr "ល្បឿន​ដែល​ពេញចិត្ត"
 
-#: core/aggregation.cpp:236
+#: core/aggregation.cpp:235
 #, kde-format
 msgid "Batch Job (No Interactivity)"
 msgstr "ការងារ​កញ្ចប់ (គ្មាន​អន្តរ​សកម្មភាព)"
@@ -211,18 +211,18 @@ msgctxt "Status of an item"
 msgid "Queued"
 msgstr ""
 
-#: core/manager.cpp:34 core/model.cpp:334
+#: core/manager.cpp:33 core/model.cpp:334
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "មិន​ស្គាល់"
 
-#: core/manager.cpp:203
+#: core/manager.cpp:202
 #, kde-format
 msgid "Current Activity, Threaded"
 msgstr "សកម្មភាព​បច្ចុប្បន្ន ដាក់​ជា​សែ​"
 
-#: core/manager.cpp:204
+#: core/manager.cpp:203
 #, kde-format
 msgid ""
 "This view uses smart date range groups. Messages are threaded. So for "
@@ -233,12 +233,12 @@ msgstr ""
 "នេះ\" អ្នក​នឹង​ឃើញ​សារ​ទាំងអស់​ដែល​បាន​ទទួល​នៅ​ថ្ងៃ​នេះ និង​ខ្សែ​ស្រឡាយ​ទាំងអស់ ដែល​ត្រូវបាន​ធ្វើ​ឲ្យ​សកម្ម​នៅ​"
 "ថ្ងៃ​នេះ ។"
 
-#: core/manager.cpp:216
+#: core/manager.cpp:215
 #, kde-format
 msgid "Current Activity, Flat"
 msgstr "សកម្មភាព​បច្ចុប្បន្ន ធម្មតា"
 
-#: core/manager.cpp:217
+#: core/manager.cpp:216
 #, kde-format
 msgid ""
 "This view uses smart date range groups. Messages are not threaded. So for "
@@ -247,12 +247,12 @@ msgstr ""
 "ទិដ្ឋភាព​នេះ​ប្រើ​ក្រុម​ជួរ​កាលបរិច្ឆេទ​ឆ្លាត ។ សារ​មិនត្រូវបាន​ដាក់​ជា​ខ្សែស្រឡាយ​ទេ ។ ឧទាហរណ៍ នៅ​ក្នុង "
 "\"ថ្ងៃនេះ\" អ្នក​នឹង​ឃើញ​សារ​ទាំងអស់​ដែល​ទទួលបាន​នៅ​ថ្ងៃ​នេះ ។"
 
-#: core/manager.cpp:228
+#: core/manager.cpp:227
 #, kde-format
 msgid "Activity by Date, Threaded"
 msgstr "សកម្មភាព​តាម​កាលបរិច្ឆេទ ក្រង​ជា​ខ្សែ​ស្រឡាយ"
 
-#: core/manager.cpp:229
+#: core/manager.cpp:228
 #, kde-format
 msgid ""
 "This view uses day-by-day groups. Messages are threaded. So for example, in "
@@ -262,12 +262,12 @@ msgstr ""
 "ទិដ្ឋភាព​នេះ​ប្រើ​ក្រុម​ ពី​មួយ​ថ្ងៃ​ទៅ​មួយ​ថ្ងៃ ។ សារ​គឺ​ត្រូវបាន​ក្រង​ជា​ខ្សែ​ស្រឡាយ ។ ឧទាហរណ៍ នៅ​ក្នុង \"ថ្ងៃ​"
 "នេះ\" អ្នក​នឹង​រកឃើញ​សារ​ដែល​ទទួលបាន​នៅ​ថ្ងៃ​នេះ និង​ខ្សែស្រឡាយ​ទាំងអស់​ដែល​បាន​ធ្វើ​ឲ្យ​សកម្ម​នៅ​ថ្ងៃ​នេះ ។"
 
-#: core/manager.cpp:241
+#: core/manager.cpp:240
 #, kde-format
 msgid "Activity by Date, Flat"
 msgstr "សកម្មភាព​តាម​កាលបរិច្ឆេទ ធម្មតា"
 
-#: core/manager.cpp:242
+#: core/manager.cpp:241
 #, kde-format
 msgid ""
 "This view uses day-by-day groups. Messages are not threaded. So for example, "
@@ -276,23 +276,23 @@ msgstr ""
 "ទិដ្ឋភាព​នេះ ប្រើ​ក្រុម ពី​មួយ​ថ្ងៃ​ទៅ​មួយ​ថ្ងៃ ។ សារ​មិនត្រូវបាន​ក្រង​ទេ ។ ឧទាហរណ៍ នៅ​ក្នុង \"ថ្ងៃនេះ\" "
 "អ្នក​នឹង​រកឃើញ​សារ​ទាំងអស់​ដែល​ទទួល​បាន​ថ្ងៃ​នេះ ។"
 
-#: core/manager.cpp:253
+#: core/manager.cpp:252
 #, kde-format
 msgid "Standard Mailing List"
 msgstr "បញ្ជី​សំបុត្រ​រួម​ស្តង់ដារ"
 
-#: core/manager.cpp:254
+#: core/manager.cpp:253
 #, kde-format
 msgid ""
 "This is a plain and old mailing list view: no groups and heavy threading."
 msgstr "នេះ​ជា​ទិដ្ឋភាព​បញ្ជី​សំបុត្រ​រួម​ចាស់ និង​ធម្មតា ៖ គ្មាន​ក្រុម និង​ខ្សែ​ស្រឡាយ​ធំៗ"
 
-#: core/manager.cpp:263
+#: core/manager.cpp:262
 #, kde-format
 msgid "Flat Date View"
 msgstr "ទិដ្ឋភាព​កាលបរិច្ឆេទ​ស្មើ"
 
-#: core/manager.cpp:264
+#: core/manager.cpp:263
 #, kde-format
 msgid ""
 "This is a plain and old list of messages sorted by date: no groups and no "
@@ -300,12 +300,12 @@ msgid ""
 msgstr ""
 "នេះ​ជា​បញ្ជី​សារ​ចាស់ៗ​ និង​ធម្មតា​ដែល​បាន​តម្រៀប​តាម​កាលបរិច្ឆេទ ៖ គ្មាន​ក្រុម និង​គ្មាន​ខ្សែស្រឡាយ​ទេ"
 
-#: core/manager.cpp:275
+#: core/manager.cpp:274
 #, kde-format
 msgid "Senders/Receivers, Flat"
 msgstr "អ្នក​ផ្ញើ​/អ្នក​ទទួល ធម្មតា"
 
-#: core/manager.cpp:276
+#: core/manager.cpp:275
 #, kde-format
 msgid ""
 "This view groups the messages by senders or receivers (depending on the "
@@ -314,12 +314,12 @@ msgstr ""
 "ទិដ្ឋភាព​នេះ​ដាក់​ក្រុម​សារ​តាម​អ្នក​ផ្ញើ និង​អ្នក​ទទួល (អាស្រ័យលើ​ប្រភេទ​ថត) ។ សារ​គឺ​មិនត្រូវបាន​ក្រង​ជា​ខ្សែ​"
 "ស្រឡាយ​ទេ ។"
 
-#: core/manager.cpp:287
+#: core/manager.cpp:286
 #, kde-format
 msgid "Thread Starters"
 msgstr "កម្មវិធី​ចាប់ផ្ដើម​ខ្សែ​ស្រឡាយ"
 
-#: core/manager.cpp:288
+#: core/manager.cpp:287
 #, kde-format
 msgid ""
 "This view groups the messages in threads and then groups the threads by the "
@@ -327,58 +327,58 @@ msgid ""
 msgstr ""
 "ទិដ្ឋភាព​នេះ​ដាក់​សារ​ជា​ក្រុម​ក្នុង​​សែស្រឡាយ​ ហើយ​បន្ទាប់​មក​ដាក់​ក្រុម​សែស្រឡាយ​​ដោយ​ចាប់ផ្ដើម​អ្នកប្រើ ។"
 
-#: core/manager.cpp:565
+#: core/manager.cpp:564
 #, kde-format
 msgctxt "Default theme name"
 msgid "Classic"
 msgstr "ក្លាស៊ីក"
 
-#: core/manager.cpp:565
+#: core/manager.cpp:564
 #, kde-format
 msgid "A simple, backward compatible, single row theme"
 msgstr "ស្បែក​ជួរ​ដេក​ទោល ឆប​គ្នា​ខាងក្រោយ និង​សាមញ្ញ"
 
-#: core/manager.cpp:569
+#: core/manager.cpp:568
 #, kde-format
 msgctxt "@title:column Subject of messages"
 msgid "Subject"
 msgstr "ប្រធាន​បទ"
 
-#: core/manager.cpp:602 core/theme.cpp:112
+#: core/manager.cpp:601 core/theme.cpp:112
 #, kde-format
 msgid "Sender/Receiver"
 msgstr "អ្នកផ្ញើ​/​អ្នកទទួល"
 
-#: core/manager.cpp:609
+#: core/manager.cpp:608
 #, kde-format
 msgctxt "Sender of a message"
 msgid "Sender"
 msgstr "​អ្នក​ផ្ញើ"
 
-#: core/manager.cpp:611
+#: core/manager.cpp:610
 #, kde-format
 msgctxt "Receiver of a message"
 msgid "Receiver"
 msgstr "អ្នកទទួល"
 
-#: core/manager.cpp:617
+#: core/manager.cpp:616
 #, kde-format
 msgctxt "Date of a message"
 msgid "Date"
 msgstr "កាលបរិច្ឆេទ"
 
-#: core/manager.cpp:619
+#: core/manager.cpp:618
 #, kde-format
 msgid "Most Recent Date"
 msgstr "កាលបរិច្ឆេទ​ថ្មី​បំផុត"
 
-#: core/manager.cpp:625
+#: core/manager.cpp:624
 #, kde-format
 msgctxt "Size of a message"
 msgid "Size"
 msgstr "ទំហំ"
 
-#: core/manager.cpp:627
+#: core/manager.cpp:626
 #, fuzzy, kde-format
 #| msgctxt "Attachement indication"
 #| msgid "Attachment"
@@ -386,82 +386,82 @@ msgctxt "Attachment indication"
 msgid "Attachment"
 msgstr "​ឯកសារ​ភ្ជាប់"
 
-#: core/manager.cpp:633
+#: core/manager.cpp:632
 #, kde-format
 msgid "Read/Unread"
 msgstr "អាន/​មិន​ទាន់​អាន"
 
-#: core/manager.cpp:638
+#: core/manager.cpp:637
 #, kde-format
 msgid "Replied"
 msgstr "បានឆ្លើយតប"
 
-#: core/manager.cpp:640
+#: core/manager.cpp:639
 #, kde-format
 msgctxt "Message importance indication"
 msgid "Important"
 msgstr "សំខាន់"
 
-#: core/manager.cpp:646
+#: core/manager.cpp:645
 #, kde-format
 msgid "Action Item"
 msgstr "ធាតុ​សកម្មភាព"
 
-#: core/manager.cpp:652
+#: core/manager.cpp:651
 #, kde-format
 msgid "Spam/Ham"
 msgstr "សារ​ឥតបានការ/សារ​បន្លំ"
 
-#: core/manager.cpp:658
+#: core/manager.cpp:657
 #, kde-format
 msgid "Watched/Ignored"
 msgstr "បានឃ្លាំមើល/មិនអើពើ"
 
-#: core/manager.cpp:664
+#: core/manager.cpp:663
 #, kde-format
 msgid "Encryption"
 msgstr "​ការ​អ៊ិនគ្រីប"
 
-#: core/manager.cpp:670
+#: core/manager.cpp:669
 #, kde-format
 msgid "Signature"
 msgstr "​ហត្ថលេខា"
 
-#: core/manager.cpp:675
+#: core/manager.cpp:674
 #, kde-format
 msgid "Tag List"
 msgstr "បញ្ជី​ស្លាក"
 
-#: core/manager.cpp:683
+#: core/manager.cpp:682
 #, kde-format
 msgid "Smart"
 msgstr ""
 
-#: core/manager.cpp:683
+#: core/manager.cpp:682
 #, fuzzy, kde-format
 #| msgid "A fancy multiline and multi item theme"
 msgid "A smart multiline and multi item theme"
 msgstr "បន្ទាត់​ច្រើន​មាន​ក្បាច់ក្បូរ និង​ស្បែក​ធាតុ​ច្រើន"
 
-#: core/manager.cpp:687
+#: core/manager.cpp:686
 #, kde-format
 msgid "Message"
 msgstr "សារ"
 
-#: core/manager.cpp:768
+#: core/manager.cpp:767
 #, fuzzy, kde-format
 #| msgid "Fancy with Clickable Status"
 msgid "Smart with Clickable Status"
 msgstr "ស្អាត​មាន​ស្ថានភាព​ដែល​អាច​ចុច​បាន"
 
-#: core/manager.cpp:769
+#: core/manager.cpp:768
 #, fuzzy, kde-format
 #| msgid ""
 #| "A fancy multiline and multi item theme with a clickable status column"
 msgid "A smart multiline and multi item theme with a clickable status column"
 msgstr "បន្ទាត់​ច្រើន​ស្អាត និង​ស្បែក​ធាតុ​ច្រើន​ដែល​មាន​ជួរ​ឈរ​ដែល​អាច​ចុច​បាន"
 
-#: core/manager.cpp:773 core/view.cpp:2256 core/view.cpp:2260
+#: core/manager.cpp:772 core/view.cpp:2256 core/view.cpp:2260
 #, kde-format
 msgid "Status"
 msgstr "​ស្ថានភាព"
