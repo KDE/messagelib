@@ -2,13 +2,13 @@
 # Marcell Lengyel <miketkf@yahoo.com>, 1999.
 # Kristóf Kiszel <ulysses@kubuntu.org>, 2011, 2012, 2014.
 # Balázs Úr <urbalazs@gmail.com>, 2012, 2013, 2014.
-# SPDX-FileCopyrightText: 2024 Kristof Kiszel <ulysses@fsf.hu>
+# SPDX-FileCopyrightText: 2024, 2025 Kristof Kiszel <ulysses@fsf.hu>
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-04-17 00:42+0000\n"
-"PO-Revision-Date: 2024-11-18 22:16+0100\n"
+"PO-Revision-Date: 2025-04-21 22:18+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.08.3\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: core/aggregation.cpp:177
 #, kde-format
@@ -203,9 +203,7 @@ msgid "Ignored"
 msgstr "Nem figyelt"
 
 #: core/item.cpp:296
-#, fuzzy, kde-format
-#| msgctxt "message status"
-#| msgid "Queued"
+#, kde-format
 msgctxt "Status of an item"
 msgid "Queued"
 msgstr "Elküldési sorba került"
@@ -1271,34 +1269,29 @@ msgid "Mail is forwarded"
 msgstr "A levél továbbított"
 
 #: core/widgets/searchlinecommand.cpp:193
-#, fuzzy, kde-format
-#| msgid "Mail is Unread"
+#, kde-format
 msgid "Mail is encrypted"
-msgstr "A levél olvasatlan"
+msgstr "A levél titkosított"
 
 #: core/widgets/searchlinecommand.cpp:195
-#, fuzzy, kde-format
-#| msgid "Mail is read"
+#, kde-format
 msgid "Mail is queued"
-msgstr "A levél olvasott"
+msgstr "A levél elküldési sorba került"
 
 #: core/widgets/searchlinecommand.cpp:197
-#, fuzzy, kde-format
-#| msgid "Mail is Unread"
+#, kde-format
 msgid "Mail is sent"
-msgstr "A levél olvasatlan"
+msgstr "A levél elküldött"
 
 #: core/widgets/searchlinecommand.cpp:199
-#, fuzzy, kde-format
-#| msgid "Mail is replied"
+#, kde-format
 msgid "Mail is deleted"
-msgstr "A levél megválaszolt"
+msgstr "A levél törölt"
 
 #: core/widgets/searchlinecommand.cpp:201
-#, fuzzy, kde-format
-#| msgid "Mail has invitation"
+#, kde-format
 msgid "Mail is action"
-msgstr "A levél meghívóval rendelkezik"
+msgstr "A levél művelet"
 
 #: core/widgets/searchlinecommand.cpp:211
 #, kde-format
@@ -1408,42 +1401,34 @@ msgid "Forwarded"
 msgstr "Továbbított"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Encrypt"
+#, kde-format
 msgctxt "@action:button"
 msgid "Encrypted"
-msgstr "Titkosítás"
+msgstr "Titkosított"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:66
-#, fuzzy, kde-format
-#| msgctxt "message status"
-#| msgid "Queued"
+#, kde-format
 msgctxt "@action:button"
 msgid "Queued"
 msgstr "Elküldési sorba került"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Sent"
+#, kde-format
 msgctxt "@action:button"
 msgid "Sent"
 msgstr "Elküldött"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:68
-#, fuzzy, kde-format
-#| msgctxt "MDN type"
-#| msgid "Deleted"
+#, kde-format
 msgctxt "@action:button"
 msgid "Deleted"
-msgstr "Törölve"
+msgstr "Törölt"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:69
-#, fuzzy, kde-format
-#| msgid "Action Item"
+#, kde-format
 msgctxt "@action:button"
 msgid "Action"
-msgstr "Műveletelem"
+msgstr "Művelet"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:70
 #, kde-format
