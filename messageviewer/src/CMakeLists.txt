@@ -425,6 +425,7 @@ target_link_libraries(KPim6MessageViewer
     Qt::PrintSupport
     KF6::Notifications
     KF6::TextAddonsWidgets
+    KF6::ColorScheme
     OpenSSL::SSL
 )
 

@@ -181,6 +181,7 @@ target_link_libraries(KPim6MessageList
     KF6::I18n
     KF6::TextWidgets
     KF6::TextUtils
+    KF6::ColorScheme
 )
 
 if(NOT FORCE_DISABLE_AKONADI_SEARCH)
