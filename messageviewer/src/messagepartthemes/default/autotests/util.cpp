@@ -58,6 +58,7 @@ void Test::compareFile(const QString &outFile, const QString &referenceFile)
         QString content = QString::fromUtf8(f.readAll());
         f.close();
         content.replace(QRegularExpression(QStringLiteral("\"file:[^\"]*[/(?:%2F)]([^\"/(?:%2F)]*)\"")), QStringLiteral("\"file:\\1\""));
+        content.replace(QRegularExpression(QStringLiteral("src=\"/[^\"]*/([^\"/(?:%2F)]*)\"")), QStringLiteral("src=\"file:\\1\""));
         content.replace(QRegularExpression(QStringLiteral("\"qrc:[^\"]*[/(?:%2F)]([^\"/(?:%2F)]*)\"")), QStringLiteral("\"file:\\1\""));
         content.replace(QRegularExpression(QStringLiteral("(file:///tmp/messageviewer)(_[^\"]+)(\\.index\\.[^\"]*)")), QStringLiteral("\\1\\3"));
         content.replace(QLatin1StringView("NBSP_ENTITY_PLACEHOLDER"), QLatin1StringView("&nbsp;")); // undo above transformation for xmllint
