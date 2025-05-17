@@ -469,7 +469,7 @@ bool Util::saveMessageInMboxAndGetUrl(QUrl &url, const Akonadi::Item::List &retr
     const Akonadi::Item msgBase = retrievedMsgs.first();
     QString fileName = generateMboxFileName(msgBase);
 
-    const QString filter = i18n("email messages (*.mbox);;all files (*)");
+    const QString filter = i18n("Mailbox file (*.mbox);;All Files (*)");
 
     QString fileClass;
     const QUrl startUrl = KFileWidget::getStartUrl(QUrl(QStringLiteral("kfiledialog:///savemessage")), fileClass);
