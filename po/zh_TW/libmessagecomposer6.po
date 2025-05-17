@@ -3,13 +3,13 @@
 #
 # Franklin Weng <franklin@goodhorse.idv.tw>, 2010, 2011, 2012, 2013, 2014, 2015.
 # Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv dot tw>, 2010.
-# SPDX-FileCopyrightText: 2023, 2024 Kisaragi Hiu <mail@kisaragi-hiu.com>
+# SPDX-FileCopyrightText: 2023, 2024, 2025 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-01 00:42+0000\n"
-"PO-Revision-Date: 2024-08-25 02:07+0900\n"
+"PO-Revision-Date: 2025-05-17 10:02+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 24.04.70\n"
+"X-Generator: Lokalize 25.07.70\n"
 
 #: attachment/attachmentcontrollerbase.cpp:166
 #, kde-format
@@ -631,7 +631,7 @@ msgstr ""
 msgid ""
 "You have requested to sign this message, but no valid signing keys have been "
 "configured for this identity."
-msgstr "您已要求簽署此信件，但是此身份沒有設定合法的簽署金鑰。"
+msgstr "您已要求簽署此信件，但是此身份沒有設定有效的簽署金鑰。"
 
 #: composer/composerviewbase.cpp:2014
 #, kde-format
@@ -695,7 +695,7 @@ msgid ""
 "Valid trusted encryption keys were found for all recipients.\n"
 "Encrypt this message?"
 msgstr ""
-"所有的收件人都有合法受信任的加密金鑰。\n"
+"所有的收件人都有有效受信任的加密金鑰。\n"
 "要加密此信件嗎？"
 
 #: composer/composerviewbase.cpp:2092
@@ -762,7 +762,7 @@ msgid ""
 "yourself, but no valid trusted encryption keys have been configured for this "
 "identity."
 msgstr ""
-"您已要求加密此信件，並傳送加密過的複本給您自己，但是此身份沒有設定合法受信任"
+"您已要求加密此信件，並傳送加密過的複本給您自己，但是此身份沒有設定有效受信任"
 "的加密金鑰。"
 
 #: composer/composerviewbase.cpp:2156
@@ -1053,7 +1053,7 @@ msgid ""
 "external certificates by clicking the button: search for external "
 "certificates.</qt>"
 msgstr ""
-"<qt>找不到 %1 的合法與受信任的加密憑證。<br/> <br/>請選擇要對此收件者使用的憑"
+"<qt>找不到 %1 的有效與受信任的加密憑證。<br/> <br/>請選擇要對此收件者使用的憑"
 "證。若沒有適合的憑證，您可以點擊「搜尋外部憑證」按鈕。</qt>"
 
 #: composer/keyresolver.cpp:1559
