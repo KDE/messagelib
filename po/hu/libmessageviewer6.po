@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-17 00:42+0000\n"
+"POT-Creation-Date: 2025-05-18 00:43+0000\n"
 "PO-Revision-Date: 2024-11-16 20:25+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -1751,8 +1751,9 @@ msgid "message"
 msgstr "üzenet"
 
 #: utils/messageviewerutil.cpp:472
-#, kde-format
-msgid "email messages (*.mbox);;all files (*)"
+#, fuzzy, kde-format
+#| msgid "email messages (*.mbox);;all files (*)"
+msgid "Mailbox file (*.mbox);;All Files (*)"
 msgstr "e-mail üzenetek (*.mbox);;minden fájl (*)"
 
 #: utils/messageviewerutil.cpp:483

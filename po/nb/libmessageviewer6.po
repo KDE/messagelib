@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-17 00:42+0000\n"
+"POT-Creation-Date: 2025-05-18 00:43+0000\n"
 "PO-Revision-Date: 2014-09-13 18:21+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -1731,7 +1731,7 @@ msgstr "melding"
 
 #: utils/messageviewerutil.cpp:472
 #, kde-format
-msgid "email messages (*.mbox);;all files (*)"
+msgid "Mailbox file (*.mbox);;All Files (*)"
 msgstr ""
 
 #: utils/messageviewerutil.cpp:483

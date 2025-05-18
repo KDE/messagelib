@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-17 00:42+0000\n"
+"POT-Creation-Date: 2025-05-18 00:43+0000\n"
 "PO-Revision-Date: 2024-11-11 18:33+0100\n"
 "Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -1778,8 +1778,9 @@ msgid "message"
 msgstr "Nachricht"
 
 #: utils/messageviewerutil.cpp:472
-#, kde-format
-msgid "email messages (*.mbox);;all files (*)"
+#, fuzzy, kde-format
+#| msgid "email messages (*.mbox);;all files (*)"
+msgid "Mailbox file (*.mbox);;All Files (*)"
 msgstr "E-Mail-Nachrichten (*.mbox);;*|Alle Dateien (*)"
 
 #: utils/messageviewerutil.cpp:483

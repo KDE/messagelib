@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-17 00:42+0000\n"
+"POT-Creation-Date: 2025-05-18 00:43+0000\n"
 "PO-Revision-Date: 2025-01-07 18:28+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -1756,8 +1756,9 @@ msgid "message"
 msgstr "رسالة"
 
 #: utils/messageviewerutil.cpp:472
-#, kde-format
-msgid "email messages (*.mbox);;all files (*)"
+#, fuzzy, kde-format
+#| msgid "email messages (*.mbox);;all files (*)"
+msgid "Mailbox file (*.mbox);;All Files (*)"
 msgstr "رسائل البريد (*.mbox);;كلّ الرّسائل (*)"
 
 #: utils/messageviewerutil.cpp:483

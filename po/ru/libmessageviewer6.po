@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-17 00:42+0000\n"
+"POT-Creation-Date: 2025-05-18 00:43+0000\n"
 "PO-Revision-Date: 2024-12-03 15:13+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -1769,8 +1769,9 @@ msgstr "письмо"
 
 # BUGME: please capitalize names --aspotashev
 #: utils/messageviewerutil.cpp:472
-#, kde-format
-msgid "email messages (*.mbox);;all files (*)"
+#, fuzzy, kde-format
+#| msgid "email messages (*.mbox);;all files (*)"
+msgid "Mailbox file (*.mbox);;All Files (*)"
 msgstr "Электронные письма (*.mbox);;Все файлы (*)"
 
 #: utils/messageviewerutil.cpp:483

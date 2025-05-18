@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-17 00:42+0000\n"
+"POT-Creation-Date: 2025-05-18 00:43+0000\n"
 "PO-Revision-Date: 2009-08-15 14:38+0300\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Română <kde-i18n-ro@kde.org>\n"
@@ -1860,7 +1860,7 @@ msgstr " mesaje"
 
 #: utils/messageviewerutil.cpp:472
 #, kde-format
-msgid "email messages (*.mbox);;all files (*)"
+msgid "Mailbox file (*.mbox);;All Files (*)"
 msgstr ""
 
 #: utils/messageviewerutil.cpp:483
