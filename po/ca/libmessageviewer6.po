@@ -1,27 +1,26 @@
 # Translation of libmessageviewer6.po to Catalan
-# Copyright (C) 1998-2024 This_file_is_part_of_KDE
+# Copyright (C) 1998-2025 This_file_is_part_of_KDE
 #
-# SPDX-FileCopyrightText: 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Josep M. Ferrer <txemaq@gmail.com>
 # Sebastià Pla i Sanz <sps@sastia.com>, 1998, 1999, 2000, 2004, 2005, 2006.
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2002, 2003, 2004, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2023.
 # Albert Astals Cid <aacid@kde.org>, 2004, 2005, 2009.
 # David Gil <al016950@yahoo.es>, 2005.
 # Joan Maspons <joanmaspons@gmail.com>, 2009.
 # Manuel Tortosa Moreno <manutortosa@chakra-project.org>, 2009, 2010.
-# Josep M. Ferrer <txemaq@gmail.com>, 2024.
+# Josep M. Ferrer <txemaq@gmail.com>, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-18 00:43+0000\n"
-"PO-Revision-Date: 2024-07-30 11:17+0200\n"
+"PO-Revision-Date: 2025-05-18 09:11+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 22.12.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
 
@@ -1777,11 +1776,11 @@ msgstr "No s'ha trobat cap adjunt a desar."
 msgid "message"
 msgstr "missatge"
 
+# skip-rule: kct-mailbox
 #: utils/messageviewerutil.cpp:472
-#, fuzzy, kde-format
-#| msgid "email messages (*.mbox);;all files (*)"
+#, kde-format
 msgid "Mailbox file (*.mbox);;All Files (*)"
-msgstr "Missatges de correu (*.mbox);;Tots els fitxers (*)"
+msgstr "Fitxer «mailbox» (*.mbox);;Tots els fitxers (*)"
 
 #: utils/messageviewerutil.cpp:483
 #, kde-format
@@ -2560,128 +2559,3 @@ msgstr "Missatge següent"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Missatge anterior"
-
-#~ msgid "Not enough information to check signature. %1"
-#~ msgstr "No hi ha prou informació per a comprovar la signatura. %1"
-
-#~ msgid "Message was signed by %1."
-#~ msgstr "Missatge signat per %1."
-
-#~ msgid "Message was signed with unknown key."
-#~ msgstr "Missatge signat amb una clau desconeguda."
-
-#~ msgid "Message was signed with key %1."
-#~ msgstr "Missatge signat amb la clau %1."
-
-#~ msgid "Message was signed by %3 on %1 with key %2"
-#~ msgstr "El missatge el va signar %3 el %1 amb la clau %2"
-
-#~ msgid "Message was signed on %1 with key %2."
-#~ msgstr "El missatge es va signar el %1 amb la clau %2."
-
-#~ msgid "Message was signed by %2 with key %1."
-#~ msgstr "El missatge el va signar %2 amb la clau %1."
-
-#~ msgid "Status: "
-#~ msgstr "Estat: "
-
-#~ msgid "Message was signed by %2 (Key ID: %1)."
-#~ msgstr "Missatge signat per %2 (ID de la clau: %1)."
-
-#~ msgid "Message was signed on %1 with unknown key %2."
-#~ msgstr "El missatge es va signar el %1 amb la clau desconeguda %2."
-
-#~ msgid "Message was signed with unknown key %1."
-#~ msgstr "Missatge signat amb una clau desconeguda %1."
-
-#~ msgid "The validity of the signature cannot be verified."
-#~ msgstr "No es pot comprovar la validesa de la signatura."
-
-#~ msgid "The signature is valid, but the key's validity is unknown."
-#~ msgstr "La signatura és vàlida, però no es coneix la validesa de la clau."
-
-#~ msgid "The signature is valid and the key is marginally trusted."
-#~ msgstr "La signatura és vàlida, però la clau és de confiança parcial."
-
-#~ msgid "The signature is valid and the key is fully trusted."
-#~ msgstr "La signatura és vàlida i la clau és de plena confiança."
-
-#~ msgid "The signature is valid and the key is ultimately trusted."
-#~ msgstr "La signatura és vàlida i la clau és de confiança absoluta."
-
-#~ msgid "The signature is valid, but the key is untrusted."
-#~ msgstr "La signatura és vàlida, però la clau no és de confiança."
-
-#~ msgid "Warning: The signature is bad."
-#~ msgstr "Atenció: Signatura errònia."
-
-#~ msgid "Compliance: %1"
-#~ msgstr "Conformitat: %1"
-
-#~ msgid "Invalid signature"
-#~ msgstr "Signatura no vàlida"
-
-#~ msgid "Not enough information to check signature validity"
-#~ msgstr ""
-#~ "No hi ha prou informació per a comprovar la validesa de la signatura"
-
-#~ msgid "Signed by <a href='mailto:%1'>%1</a>"
-#~ msgstr "Signat per <a href='mailto:%1'>%1</a>"
-
-#~ msgid "Signature is valid"
-#~ msgstr "La signatura és vàlida"
-
-#~ msgid "Unknown signature state"
-#~ msgstr "Estat desconegut de la signatura"
-
-#~ msgctxt "Status of signature (status/type of compliance)"
-#~ msgid "%1 (%2)"
-#~ msgstr "%1 (%2)"
-
-#~ msgid "certificate"
-#~ msgstr "certificat"
-
-#~ msgctxt "Start of warning message."
-#~ msgid "Warning:"
-#~ msgstr "Avís:"
-
-#~ msgid "Sender's mail address is not stored in the %1 used for signing."
-#~ msgstr ""
-#~ "L'adreça de correu del remitent no està desada en el %1, que s'empra per "
-#~ "a signar."
-
-#~ msgid "sender: "
-#~ msgstr "remitent: "
-
-#~ msgid "stored: "
-#~ msgstr "desat: "
-
-#~ msgid ""
-#~ "No mail address is stored in the %1 used for signing, so we cannot "
-#~ "compare it to the sender's address %2."
-#~ msgstr ""
-#~ "No hi ha adreces de correu desades en el %1, que s'empra per a signar, "
-#~ "per tant, no es pot comparar amb l'adreça del remitent %2."
-
-#~ msgid "Export Rules"
-#~ msgstr "Exporta les regles"
-
-#~ msgid "Import Rules"
-#~ msgstr "Importa algunes regles"
-
-#~ msgid "Check Phishing URL"
-#~ msgstr "Comprovació d'URL de pesca"
-
-#~ msgid ""
-#~ "Specifies the default policy to use, for the Message Disposition "
-#~ "Notifications (for internal use only)"
-#~ msgstr ""
-#~ "Especifica la política predeterminada a usar, per a les notificacions de "
-#~ "processament de missatge (només per a ús intern)"
-
-#~ msgid ""
-#~ "Specifies the default quoting action to take, when replying to a message "
-#~ "(for internal use only)"
-#~ msgstr ""
-#~ "Especifica l'acció de citació predeterminada a prendre, en respondre a un "
-#~ "missatge (només per a ús intern)"

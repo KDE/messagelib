@@ -1,25 +1,23 @@
-# translation of libmessageviewer.po to Spanish
-# translation of kmail.po to
-# Copyright (C) 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010 Free Software Foundation, Inc.
+# Spanish translations for libmessageviewer6.po package.
+# Copyright (C) 2003-2025 This file is copyright:
+# This file is distributed under the same license as the messagelib package.
 #
-# Jaime Robles <jaime@kde.org>, 2003, 2009.
-# Pablo de Vicente <pvicentea@wanadoo.es>, 2004.
-# Juan Manuel Garcia Molina <juanma@superiodico.net>, 2003, 2004, 2005, 2006, 2007.
-# Pablo de Vicente <p.devicente@wanadoo.es>, 2005.
-# Pablo de Vicente <pablo.devicente@gmail.com>, 2005, 2006.
-# Juan Manuel García Molina <juanma@superiodico.net>, 2006, 2007.
-# SPDX-FileCopyrightText: 2008, 2009, 2010, 2014, 2019, 2020, 2021, 2022, 2023, 2024 Eloy Cuadra <ecuadra@eloihr.net>
-# Franco Mariluis <fmariluis@gmail.com>, 2008, 2009.
-# Dario Andres Rodriguez <andrebajotierra@gmail.com>, 2009.
-# Javier Vinal <fjvinalgmail.com>, 2009, 2010, 2011.
-# Javier Viñal <fjvinal@gmail.com>, 2010, 2012, 2013, 2014.
-# Javier Vinal <fjvinalgmail.com>, 2010, 2012, 2014, 2015, 2016, 2017, 2018, 2019.
+# SPDX-FileCopyrightText: 2003, 2009 Jaime Robles <jaime@kde.org>
+# SPDX-FileCopyrightText: 2004 Pablo de Vicente <pvicentea@wanadoo.es>
+# SPDX-FileCopyrightText: 2003, 2004, 2005, 2006, 2007 Juan Manuel Garcia Molina <juanma@superiodico.net>
+# SPDX-FileCopyrightText: 2005 Pablo de Vicente <p.devicente@wanadoo.es>
+# SPDX-FileCopyrightText: 2005, 2006 Pablo de Vicente <pablo.devicente@gmail.com>
+# SPDX-FileCopyrightText: 2006, 2007 Juan Manuel García Molina <juanma@superiodico.net>
+# SPDX-FileCopyrightText: 2008, 2009, 2010, 2014, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2008, 2009 Franco Mariluis <fmariluis@gmail.com>
+# SPDX-FileCopyrightText: 2009 Dario Andres Rodriguez <andrebajotierra@gmail.com>
+# SPDX-FileCopyrightText: 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019 Javier Viñal <fjvinal@gmail.com>
 msgid ""
 msgstr ""
-"Project-Id-Version: libmessageviewer\n"
+"Project-Id-Version: libmessageviewer6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-18 00:43+0000\n"
-"PO-Revision-Date: 2024-08-01 04:34+0200\n"
+"PO-Revision-Date: 2025-05-18 12:28+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -27,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "First-Translator: Jaime Robles <jaime@kde.org>\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 25.04.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
@@ -108,7 +106,7 @@ msgstr "Descifrar mensaje"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:14
 msgid "Please wait while the message is being decrypted..."
-msgstr "Espere mientras se descifra el mensaje..."
+msgstr "Espere mientras se descifra el mensaje…"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:18
 msgid "The message is encrypted for the following keys:"
@@ -194,7 +192,7 @@ msgstr ""
 
 #: messagepartthemes/default/templates/signedmessagepart.html:5
 msgid "Please wait while the signature is being verified..."
-msgstr "Espere mientras se verifica la firma..."
+msgstr "Espere mientras se verifica la firma…"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:17
 msgid "End of signed message"
@@ -293,7 +291,7 @@ msgstr "Borrar claves"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search..."
-msgstr "Buscar..."
+msgstr "Buscar…"
 
 #: dkim-verify/dkimmanagerulescombobox.cpp:20
 #, kde-format
@@ -314,7 +312,7 @@ msgstr "Ignorar si no está firmado"
 #, kde-format
 msgctxt "@action:button"
 msgid "Export..."
-msgstr "Exportar..."
+msgstr "Exportar…"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:31
 #, kde-format
@@ -326,13 +324,13 @@ msgstr "Configurar regla"
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Rule..."
-msgstr "Añadir regla..."
+msgstr "Añadir regla…"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:47
 #, kde-format
 msgctxt "@action:button"
 msgid "Import..."
-msgstr "Importar..."
+msgstr "Importar…"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
 #, kde-format
@@ -393,13 +391,13 @@ msgstr "Prioridad"
 #: remote-content/remotecontentconfigurewidget.cpp:80
 #, kde-format
 msgid "Add..."
-msgstr "Añadir..."
+msgstr "Añadir…"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:201
 #: remote-content/remotecontentconfigurewidget.cpp:83
 #, kde-format
 msgid "Modify..."
-msgstr "Modificar..."
+msgstr "Modificar…"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:205
 #, kde-format
@@ -507,7 +505,7 @@ msgstr "Actualizar clave DKIM"
 #: dkim-verify/dkimviewermenu.cpp:43
 #, kde-format
 msgid "Rules..."
-msgstr "Reglas..."
+msgstr "Reglas…"
 
 #: dkim-verify/dkimwidgetinfo.cpp:94
 #, kde-format
@@ -1088,7 +1086,7 @@ msgstr "Detalles"
 msgid "This message may be a scam. <a href=\"scamdetails\">(Details...)</a>"
 msgstr ""
 "Este mensaje podría ser una suplantación. <a href=\"scamdetails"
-"\">(Detalles...)</a>"
+"\">(Detalles…)</a>"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:39
 #, kde-format
@@ -1779,10 +1777,9 @@ msgid "message"
 msgstr "mensaje"
 
 #: utils/messageviewerutil.cpp:472
-#, fuzzy, kde-format
-#| msgid "email messages (*.mbox);;all files (*)"
+#, kde-format
 msgid "Mailbox file (*.mbox);;All Files (*)"
-msgstr "mensajes de correo (*.mbox);;todos los archivos (*)"
+msgstr "Archivo de buzón de correo (*.mbox);;Todos los archivos (*)"
 
 #: utils/messageviewerutil.cpp:483
 #, kde-format
@@ -2005,7 +2002,7 @@ msgstr "Mostrar el registro de auditoría GnuPG para esta operación"
 #: viewer/urlhandlermanager.cpp:855
 #, kde-format
 msgid "Opening URL..."
-msgstr "Abriendo URL..."
+msgstr "Abriendo URL…"
 
 #: viewer/urlhandlermanager.cpp:864
 #, kde-kuit-format
@@ -2022,7 +2019,7 @@ msgstr "Ejecutar"
 #: viewer/viewer.cpp:146
 #, kde-format
 msgid "Loading message..."
-msgstr "Cargando mensaje..."
+msgstr "Cargando mensaje…"
 
 #: viewer/viewer_p.cpp:345
 #, kde-format
@@ -2057,13 +2054,13 @@ msgstr "&Abrir con"
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
-msgstr "&Otro..."
+msgstr "&Otro…"
 
 #: viewer/viewer_p.cpp:449 viewer/viewer_p.cpp:462
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
-msgstr "&Abrir con..."
+msgstr "&Abrir con…"
 
 #: viewer/viewer_p.cpp:526 viewer/viewer_p.cpp:1738
 #, kde-format
@@ -2085,7 +2082,7 @@ msgstr "Desplazar hasta"
 #: viewer/viewer_p.cpp:553
 #, kde-format
 msgid "Save As..."
-msgstr "Guardar como..."
+msgstr "Guardar como…"
 
 #: viewer/viewer_p.cpp:559 viewer/viewer_p.cpp:1755
 #, kde-format
@@ -2240,7 +2237,7 @@ msgstr "&Ver fuente"
 #: viewer/viewer_p.cpp:1575
 #, kde-format
 msgid "&Save Message..."
-msgstr "&Guardar mensaje..."
+msgstr "&Guardar mensaje…"
 
 #: viewer/viewer_p.cpp:1581
 #, kde-format
@@ -2304,7 +2301,7 @@ msgstr "Leer texto"
 #, kde-format
 msgctxt "@action"
 msgid "Share Text..."
-msgstr "Compartir texto..."
+msgstr "Compartir texto…"
 
 #: viewer/viewer_p.cpp:1654
 #, kde-format
@@ -2315,7 +2312,7 @@ msgstr "Copiar ubicación de la imagen"
 #: viewer/viewer_p.cpp:1660
 #, kde-format
 msgid "&Find in Message..."
-msgstr "&Buscar en el mensaje..."
+msgstr "&Buscar en el mensaje…"
 
 #: viewer/viewer_p.cpp:1669
 #, kde-format
@@ -2325,17 +2322,17 @@ msgstr "Desactivar emoticono"
 #: viewer/viewer_p.cpp:1735
 #, kde-format
 msgid "Save &As..."
-msgstr "Gu&ardar como..."
+msgstr "Gu&ardar como…"
 
 #: viewer/viewer_p.cpp:1743
 #, kde-format
 msgid "Open With..."
-msgstr "Abrir con..."
+msgstr "Abrir con…"
 
 #: viewer/viewer_p.cpp:1750
 #, kde-format
 msgid "Save All Attachments..."
-msgstr "Guardar todos los adjuntos..."
+msgstr "Guardar todos los adjuntos…"
 
 #: viewer/viewer_p.cpp:1994
 #, kde-format
@@ -2415,7 +2412,7 @@ msgstr "Abrir c&on «%1»"
 #: widgets/attachmentdialog.cpp:46
 #, kde-format
 msgid "Open &With..."
-msgstr "A&brir con..."
+msgstr "A&brir con…"
 
 #: widgets/attachmentdialog.cpp:68
 #, kde-format
@@ -2561,233 +2558,3 @@ msgstr "Mensaje siguiente"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Mensaje anterior"
-
-#~ msgid "Not enough information to check signature. %1"
-#~ msgstr "No hay información suficiente para comprobar la firma. %1"
-
-#~ msgid "Message was signed by %1."
-#~ msgstr "Mensaje firmado por %1."
-
-#~ msgid "Message was signed with unknown key."
-#~ msgstr "Mensaje firmado con una clave desconocida."
-
-#~ msgid "Message was signed with key %1."
-#~ msgstr "Mensaje firmado con la clave %1."
-
-#~ msgid "Message was signed by %3 on %1 with key %2"
-#~ msgstr "El mensaje fue firmado por %3 el %1 con la clave %2"
-
-#~ msgid "Message was signed on %1 with key %2."
-#~ msgstr "El mensaje fue firmado el %1 con la clave %2."
-
-#~ msgid "Message was signed by %2 with key %1."
-#~ msgstr "El mensaje fue firmado por %2 con la clave %1."
-
-#~ msgid "Status: "
-#~ msgstr "Estado: "
-
-#~ msgid "Message was signed by %2 (Key ID: %1)."
-#~ msgstr "Mensaje firmado por %2 (ID de la Clave: %1)."
-
-#~ msgid "Message was signed on %1 with unknown key %2."
-#~ msgstr "El mensaje fue firmado el %1 con una clave desconocida %2."
-
-#~ msgid "Message was signed with unknown key %1."
-#~ msgstr "El mensaje fue firmado con una clave desconocida %1."
-
-#~ msgid "The validity of the signature cannot be verified."
-#~ msgstr "La validez de la firma no puede ser verificada."
-
-#~ msgid "The signature is valid, but the key's validity is unknown."
-#~ msgstr "La firma es válida, pero no se conoce la validez de la clave."
-
-#~ msgid "The signature is valid and the key is marginally trusted."
-#~ msgstr "La firma es válida, pero la clave es de confianza mínima."
-
-#~ msgid "The signature is valid and the key is fully trusted."
-#~ msgstr "La firma es válida y la clave es de plena confianza."
-
-#~ msgid "The signature is valid and the key is ultimately trusted."
-#~ msgstr "La firma es válida y la clave es de confianza absoluta."
-
-#~ msgid "The signature is valid, but the key is untrusted."
-#~ msgstr "La firma es válida, pero la firma no es de confianza."
-
-#~ msgid "Warning: The signature is bad."
-#~ msgstr "Advertencia: Firma errónea."
-
-#~ msgid "Compliance: %1"
-#~ msgstr "Conformidad: %1"
-
-#~ msgid "Invalid signature"
-#~ msgstr "Firma no válida"
-
-#~ msgid "Not enough information to check signature validity"
-#~ msgstr "No hay información suficiente para comprobar la validez de la firma"
-
-#~ msgid "Signed by <a href='mailto:%1'>%1</a>"
-#~ msgstr "Firmado por <a href='mailto:%1'>%1</a>"
-
-#~ msgid "Signature is valid"
-#~ msgstr "La firma es válida"
-
-#~ msgid "Unknown signature state"
-#~ msgstr "Estado de firma desconocido"
-
-#~ msgctxt "Status of signature (status/type of compliance)"
-#~ msgid "%1 (%2)"
-#~ msgstr "%1 (%2)"
-
-#~ msgid "certificate"
-#~ msgstr "certificado"
-
-#~ msgctxt "Start of warning message."
-#~ msgid "Warning:"
-#~ msgstr "Advertencia:"
-
-#~ msgid "Sender's mail address is not stored in the %1 used for signing."
-#~ msgstr ""
-#~ "La dirección de correo del remitente no está guardada en el %1 usado para "
-#~ "firmar."
-
-#~ msgid "sender: "
-#~ msgstr "remitente: "
-
-#~ msgid "stored: "
-#~ msgstr "guardado: "
-
-#~ msgid ""
-#~ "No mail address is stored in the %1 used for signing, so we cannot "
-#~ "compare it to the sender's address %2."
-#~ msgstr ""
-#~ "No hay una dirección de correo almacenada en el %1 usada para firmar, por "
-#~ "lo que no podemos compararla con la dirección del remitente %2."
-
-#~ msgid "Export Rules"
-#~ msgstr "Exportar reglas"
-
-#~ msgid "Import Rules"
-#~ msgstr "Importar reglas"
-
-#~ msgid "Check Phishing URL"
-#~ msgstr "Comprobar URL engañoso"
-
-#~ msgid ""
-#~ "Specifies the default policy to use, for the Message Disposition "
-#~ "Notifications (for internal use only)"
-#~ msgstr ""
-#~ "Especifica la política predeterminada a usar para las notificaciones de "
-#~ "disposición de mensajes (solo para uso interno)"
-
-#~ msgid ""
-#~ "Specifies the default quoting action to take, when replying to a message "
-#~ "(for internal use only)"
-#~ msgstr ""
-#~ "Especifica la acción predeterminada de citado cuando se responda a un "
-#~ "mensaje (solo para uso interno)"
-
-#~ msgid "Edit with:"
-#~ msgstr "Editar con"
-
-#~ msgid ""
-#~ "KMail is unable to detect when the chosen editor is closed. To avoid data "
-#~ "loss, editing the attachment will be aborted."
-#~ msgstr ""
-#~ "KMail no puede detectar cuándo se ha cerrado el editor seleccionado. Se "
-#~ "interrumpirá la edición del adjunto para evitar la pérdida de datos."
-
-#~ msgid "Unable to edit attachment"
-#~ msgstr "No se puede editar el adjunto"
-
-#~ msgctxt "@title:window"
-#~ msgid "vCard Viewer"
-#~ msgstr "Visor de vCard"
-
-#~ msgid "&Import"
-#~ msgstr "&Importar"
-
-#~ msgid "&Next Card"
-#~ msgstr "Siguie&nte tarjeta"
-
-#~ msgid "&Previous Card"
-#~ msgstr "An&terior tarjeta"
-
-#~ msgid "Reply From:"
-#~ msgstr "Responder desde:"
-
-#~ msgid "Submit form is not allowed in mailer. Please open url in a browser."
-#~ msgstr ""
-#~ "El envío de formulario no se permite en el gestor de correo. Por favor, "
-#~ "abra el URL en un navegador."
-
-#~ msgid ""
-#~ "Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
-#~ "\">(Details...)"
-#~ msgstr ""
-#~ "Algún registrador de correo se encontró y se bloqueó.<a href="
-#~ "\"mailtrackingdetails\">(Detalles...)"
-
-#~ msgid "1 tracker from the company %2 (%3)"
-#~ msgid_plural "%1 trackers from the company %2 (%3)"
-#~ msgstr[0] "1 registrador desde la compañia %2 (%3)"
-#~ msgstr[1] "%1 registradores desde la compañía %2 (%3)"
-
-#~ msgid "Url:"
-#~ msgstr "URL:"
-
-#~ msgid "Url"
-#~ msgstr "URL"
-
-#~ msgid "&Open With..."
-#~ msgstr "&Abrir con..."
-
-#~ msgid "Do you want to all rules?"
-#~ msgstr "¿Desea borrar todas las reglas?"
-
-#~ msgid "Enable Mail Tracking Url"
-#~ msgstr "Activar Url de seguimiento del correo"
-
-#~ msgid "receiver was"
-#~ msgid_plural "receivers were"
-#~ msgstr[0] "el destinatario fue"
-#~ msgstr[1] "los destinatarios fueron"
-
-#~ msgid "Hide full \"To\" list"
-#~ msgstr "Ocultar lista «A» completa"
-
-#~ msgid "Show full \"To\" list"
-#~ msgstr "Mostrar lista «A» completa"
-
-#~ msgid "Hide full \"Cc\" list"
-#~ msgstr "Ocultar lista «Cc» completa"
-
-#~ msgid "Show full \"Cc\" list"
-#~ msgstr "Mostrar lista «Cc» completa"
-
-#~ msgid "Hide attachment list."
-#~ msgstr "Ocultar lista de adjuntos."
-
-#~ msgid "Show attachment list."
-#~ msgstr "Mostrar lista de adjuntos."
-
-#~ msgid ""
-#~ "Modifying an attachment might invalidate any digital signature on this "
-#~ "message."
-#~ msgstr ""
-#~ "Modificar un adjunto puede invalidar cualquier firma digital en el "
-#~ "mensaje."
-
-#~ msgid "Edit Attachment"
-#~ msgstr "Editar adjunto"
-
-#~ msgid "Edit"
-#~ msgstr "Editar"
-
-#~ msgid "Allow to edit attachments of existing mails."
-#~ msgstr "Permitir editar adjuntos de correos existentes."
-
-#~ msgid "Show HTML Side Bar"
-#~ msgstr "Mostrar panel lateral HTML"
-
-#~ msgid "Show &HTML Side Bar"
-#~ msgstr "Mostrar panel lateral &HTML"
