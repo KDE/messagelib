@@ -18,13 +18,13 @@
 # Vasee Vaseeharan <vasee@ieee.org>, 2004.
 # Ambalam <tamilpc@ambalam.com>, 2004.
 # root <root@localhost.localdomain>, 2004.
-# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Kishore G <kishore96@gmail.com>
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025 Kishore G <kishore96@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-11 00:42+0000\n"
-"PO-Revision-Date: 2024-09-08 12:45+0200\n"
+"PO-Revision-Date: 2025-05-18 19:02+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -32,7 +32,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.08.0\n"
+"X-Generator: Lokalize 25.04.1\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
@@ -1492,19 +1492,15 @@ msgstr "செய்யவேண்டியதற்கு மிக சமீ�
 
 #. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
 #: settings/messageviewer.kcfg.in:241
-#, fuzzy, kde-format
-#| msgid "The most recently selected folder in the folder selection dialog."
+#, kde-format
 msgid "The most recent selected folder used for Event."
-msgstr ""
-"ஆவணத் தேர்ந்தெடுப்பு உரையாடல் பெட்டியில் இருந்து மிக அண்மையில் தேர்ந்தெடுக்கப்பட்ட அடைவு"
+msgstr "நிகழ்வுக்கு மிக சமீபமாக தேர்ந்தெடுத்த அடைவு."
 
 #. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
 #: settings/messageviewer.kcfg.in:247
-#, fuzzy, kde-format
-#| msgid "The most recently selected folder in the folder selection dialog."
+#, kde-format
 msgid "The most recent selected folder used for Notes."
-msgstr ""
-"ஆவணத் தேர்ந்தெடுப்பு உரையாடல் பெட்டியில் இருந்து மிக அண்மையில் தேர்ந்தெடுக்கப்பட்ட அடைவு"
+msgstr "குறிப்புக்கு மிக சமீபமாக தேர்ந்தெடுத்த அடைவு."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: ui/invitationsettings.ui:17
