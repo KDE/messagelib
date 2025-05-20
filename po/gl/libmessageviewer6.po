@@ -13,22 +13,22 @@
 # Marce Villarino <mvillarino@gmail.com>, 2009.
 # Marce Villarino <mvillarino@kde-espana.es>, 2012, 2013, 2014.
 # Adrian Chaves Fernandez <adriyetichaves@gmail.com>, 2013, 2015, 2016, 2017.
-# SPDX-FileCopyrightText: 2023, 2024 Adrián Chaves (Gallaecio)
+# SPDX-FileCopyrightText: 2023, 2024, 2025 Adrián Chaves (Gallaecio)
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-18 00:43+0000\n"
-"PO-Revision-Date: 2024-08-03 12:17+0200\n"
-"Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
+"PO-Revision-Date: 2025-05-19 10:18+0200\n"
+"Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 25.04.1\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
@@ -1765,10 +1765,10 @@ msgid "message"
 msgstr "mensaxe"
 
 #: utils/messageviewerutil.cpp:472
-#, fuzzy, kde-format
-#| msgid "email messages (*.mbox);;all files (*)"
+#, kde-format
 msgid "Mailbox file (*.mbox);;All Files (*)"
-msgstr "mensaxes de correo (*.mbox);;todos os ficheiros (*)"
+msgstr ""
+"Ficheiro de caixa de entrada de correo (*.mbox);;Todos os ficheiros (*)"
 
 #: utils/messageviewerutil.cpp:483
 #, kde-format

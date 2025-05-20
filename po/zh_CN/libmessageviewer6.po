@@ -1685,10 +1685,9 @@ msgid "message"
 msgstr "信件"
 
 #: utils/messageviewerutil.cpp:472
-#, fuzzy, kde-format
-#| msgid "email messages (*.mbox);;all files (*)"
+#, kde-format
 msgid "Mailbox file (*.mbox);;All Files (*)"
-msgstr "电子邮件 (*.mbox);;所有文件(*)"
+msgstr ""
 
 #: utils/messageviewerutil.cpp:483
 #, kde-format
