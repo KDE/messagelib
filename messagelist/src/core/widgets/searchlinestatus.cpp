@@ -5,6 +5,7 @@
 */
 
 #include "searchlinestatus.h"
+#include "searchlinecommand.h"
 
 #include "configurefiltersdialog.h"
 #include "core/filtersavedmanager.h"
@@ -47,6 +48,7 @@ SearchLineStatus::SearchLineStatus(QWidget *parent)
         qCWarning(MESSAGELIST_LOG) << "Clear button name was changed ! Please verify qt code";
     }
     connect(FilterSavedManager::self(), &FilterSavedManager::activateFilter, this, &SearchLineStatus::slotActivateFilter);
+    loadSearchLineCommand();
 }
 
 SearchLineStatus::~SearchLineStatus() = default;
@@ -179,7 +181,7 @@ void SearchLineStatus::addCompletionItem(const QString &str)
     while (mListCompetion.size() > MAX_COMPLETION_ITEMS) {
         mListCompetion.removeLast();
     }
-    mCompleterListModel->setStringList(mListCompetion);
+    mCompleterListModel->setStringList(mListCompetion + mCommandLineListCompletion);
 }
 
 void SearchLineStatus::contextMenuEvent(QContextMenuEvent *e)
@@ -196,7 +198,7 @@ void SearchLineStatus::contextMenuEvent(QContextMenuEvent *e)
 void SearchLineStatus::slotClearHistory()
 {
     mListCompetion.clear();
-    mCompleterListModel->setStringList(mListCompetion);
+    mCompleterListModel->setStringList(mCommandLineListCompletion);
 }
 
 void SearchLineStatus::slotInsertCommand(const QString &command)
@@ -205,6 +207,13 @@ void SearchLineStatus::slotInsertCommand(const QString &command)
         insert(QStringLiteral(" "));
     }
     insert(command);
+}
+
+void SearchLineStatus::loadSearchLineCommand()
+{
+    for (int i = SearchLineCommand::SearchLineType::To; i <= SearchLineCommand::SearchLineType::Category; ++i) {
+        mCommandLineListCompletion.append(SearchLineCommand::generateCommandText(static_cast<SearchLineCommand::SearchLineType>(i)));
+    }
 }
 
 #include "moc_searchlinestatus.cpp"

@@ -61,6 +61,13 @@ bool SearchLineCommand::hasSubType(SearchLineCommand::SearchLineType type)
         || type == OlderThan || type == NewerThan || type == Body || type == Category;
 }
 
+bool SearchLineCommand::mustBeUnique(SearchLineType type)
+{
+    return type == HasAttachment || type == IsImportant || type == IsRead || type == IsUnRead || type == IsIgnored || type == IsHam || type == IsSpam
+        || type == IsWatched || type == IsReplied || type == IsForwarded || type == IsEncrypted || type == IsQueued || type == IsSent || type == IsDeleted
+        || type == IsAction;
+}
+
 bool SearchLineCommand::isEmpty() const
 {
     return mSearchLineInfo.isEmpty();
@@ -465,9 +472,7 @@ bool SearchLineCommand::SearchLineInfo::isValidDate() const
 
 bool SearchLineCommand::SearchLineInfo::mustBeUnique() const
 {
-    return type == HasAttachment || type == IsImportant || type == IsRead || type == IsUnRead || type == IsIgnored || type == IsHam || type == IsSpam
-        || type == IsWatched || type == IsReplied || type == IsForwarded || type == IsEncrypted || type == IsQueued || type == IsSent || type == IsDeleted
-        || type == IsAction;
+    return SearchLineCommand::mustBeUnique(type);
 }
 
 qint64 SearchLineCommand::SearchLineInfo::convertArgumentAsSize() const
@@ -481,6 +486,12 @@ QDebug operator<<(QDebug d, const MessageList::Core::SearchLineCommand::SearchLi
     d << " type " << info.type;
     d << " argument " << info.argument;
     return d;
+}
+
+QString SearchLineCommand::generateCommandText(SearchLineCommand::SearchLineType type)
+{
+    bool needSpace = SearchLineCommand::mustBeUnique(type);
+    return SearchLineCommand::searchLineTypeToString(type) + (needSpace ? QStringLiteral(" ") : QStringLiteral(":"));
 }
 
 #include "moc_searchlinecommand.cpp"

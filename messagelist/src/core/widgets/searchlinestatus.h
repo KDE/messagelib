@@ -55,6 +55,7 @@ private:
     MESSAGELIST_NO_EXPORT void showSavedFiltersMenu();
     MESSAGELIST_NO_EXPORT void slotConfigureFilters();
     MESSAGELIST_NO_EXPORT void slotActivateFilter(const QString &identifier);
+    MESSAGELIST_NO_EXPORT void loadSearchLineCommand();
 
     bool mLocked = false;
     bool mHasFilter = false;
@@ -65,6 +66,7 @@ private:
     QStringListModel *const mCompleterListModel;
     FilterSavedMenu *mFilterSavedMenu = nullptr;
     QStringList mListCompetion;
+    QStringList mCommandLineListCompletion;
     QString mColorName;
 };
 }

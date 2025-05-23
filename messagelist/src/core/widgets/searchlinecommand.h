@@ -46,11 +46,11 @@ public:
         IsSent,
         IsDeleted,
         IsAction,
+        Category,
         Larger,
         Smaller,
         OlderThan,
         NewerThan,
-        Category,
     };
     Q_ENUM(SearchLineType)
     struct MESSAGELIST_EXPORT SearchLineInfo {
@@ -75,11 +75,13 @@ public:
 
     [[nodiscard]] static bool hasSubType(const QString &v);
     [[nodiscard]] static bool hasSubType(SearchLineCommand::SearchLineType type);
+    [[nodiscard]] static bool mustBeUnique(SearchLineCommand::SearchLineType type);
 
     [[nodiscard]] bool isEmpty() const;
 
     static QString searchLineTypeToString(SearchLineCommand::SearchLineType type);
 
+    static QString generateCommandText(SearchLineCommand::SearchLineType type);
     [[nodiscard]] bool hasOnlyOneLiteralCommand() const;
 
 private:

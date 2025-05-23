@@ -25,15 +25,12 @@ Q_SIGNALS:
     void insertCommand(const QString &commandStr);
 
 private:
-    MESSAGELIST_NO_EXPORT void fillWidgets();
-    MESSAGELIST_NO_EXPORT QPushButton *createPushButton(bool needSpace, const QString &i18nStr, const QString &commandStr);
     struct ButtonInfo {
-        bool needSpace = false;
         QString identifier;
         QString i18n;
     };
-
-    QList<ButtonInfo> mButtonsList;
+    MESSAGELIST_NO_EXPORT QList<ButtonInfo> fillCommandLineText() const;
+    [[nodiscard]] MESSAGELIST_NO_EXPORT QPushButton *createPushButton(const QString &i18nStr, const QString &commandStr);
 };
 }
 }
