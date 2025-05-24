@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-17 00:42+0000\n"
+"POT-Creation-Date: 2025-05-24 00:43+0000\n"
 "PO-Revision-Date: 2025-04-07 01:13+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1147,333 +1147,333 @@ msgstr ""
 "이 질의에 포함된 일부 검색 폴더의 색인 작업이 진행 중이거나 색인에서 제외되었"
 "습니다. 아래 결과가 불완전할 수도 있습니다."
 
-#: core/widgets/searchlinecommand.cpp:149
+#: core/widgets/searchlinecommand.cpp:156
 #, kde-format
 msgid "Literal string"
 msgstr "문자열 리터럴"
 
-#: core/widgets/searchlinecommand.cpp:151
+#: core/widgets/searchlinecommand.cpp:158
 #, kde-format
 msgid "Size is smaller than"
 msgstr "크기가 다음보다 작음"
 
-#: core/widgets/searchlinecommand.cpp:153
+#: core/widgets/searchlinecommand.cpp:160
 #, kde-format
 msgid "Size is larger than"
 msgstr "크기가 다음보다 큼"
 
-#: core/widgets/searchlinecommand.cpp:155
+#: core/widgets/searchlinecommand.cpp:162
 #, kde-format
 msgid "Size is"
 msgstr "크기가 다음과 같음"
 
-#: core/widgets/searchlinecommand.cpp:157
+#: core/widgets/searchlinecommand.cpp:164
 #, kde-format
 msgid "To contains"
 msgstr "받는 사람이 다음을 포함함"
 
-#: core/widgets/searchlinecommand.cpp:159
+#: core/widgets/searchlinecommand.cpp:166
 #, kde-format
 msgid "BCC contains"
 msgstr "숨은 참조가 다음을 포함함"
 
-#: core/widgets/searchlinecommand.cpp:161
+#: core/widgets/searchlinecommand.cpp:168
 #, kde-format
 msgid "CC contains"
 msgstr "참조가 다음을 포함함"
 
-#: core/widgets/searchlinecommand.cpp:163
+#: core/widgets/searchlinecommand.cpp:170
 #, kde-format
 msgid "From contains"
 msgstr "보낸 사람이 다음을 포함함"
 
-#: core/widgets/searchlinecommand.cpp:165
+#: core/widgets/searchlinecommand.cpp:172
 #, kde-format
 msgid "Subject contains"
 msgstr "제목이 다음을 포함함"
 
-#: core/widgets/searchlinecommand.cpp:167
+#: core/widgets/searchlinecommand.cpp:174
 #, kde-format
 msgid "Body contains"
 msgstr "본문에 다음이 포함됨"
 
-#: core/widgets/searchlinecommand.cpp:169
+#: core/widgets/searchlinecommand.cpp:176
 #, kde-format
 msgid "Mail has tag"
 msgstr "메일에 태그가 포함됨"
 
-#: core/widgets/searchlinecommand.cpp:171
+#: core/widgets/searchlinecommand.cpp:178
 #, kde-format
 msgid "Mail has attachment"
 msgstr "메일에 첨부 파일이 포함됨"
 
-#: core/widgets/searchlinecommand.cpp:173
+#: core/widgets/searchlinecommand.cpp:180
 #, kde-format
 msgid "Mail has invitation"
 msgstr "메일에 초대장이 포함됨"
 
-#: core/widgets/searchlinecommand.cpp:175
+#: core/widgets/searchlinecommand.cpp:182
 #, kde-format
 msgid "Mail is important"
 msgstr "메일이 중요함"
 
-#: core/widgets/searchlinecommand.cpp:177
+#: core/widgets/searchlinecommand.cpp:184
 #, kde-format
 msgid "Mail is read"
 msgstr "메일을 읽음"
 
-#: core/widgets/searchlinecommand.cpp:179
+#: core/widgets/searchlinecommand.cpp:186
 #, kde-format
 msgid "Mail is Unread"
 msgstr "메일을 읽지 않음"
 
-#: core/widgets/searchlinecommand.cpp:181
+#: core/widgets/searchlinecommand.cpp:188
 #, kde-format
 msgid "Mail is Ignored"
 msgstr "메일이 무시됨"
 
-#: core/widgets/searchlinecommand.cpp:183
+#: core/widgets/searchlinecommand.cpp:190
 #, kde-format
 msgid "Mail is Ham"
 msgstr "메일이 햄임"
 
-#: core/widgets/searchlinecommand.cpp:185
+#: core/widgets/searchlinecommand.cpp:192
 #, kde-format
 msgid "Mail is Spam"
 msgstr "메일이 스팸임"
 
-#: core/widgets/searchlinecommand.cpp:187
+#: core/widgets/searchlinecommand.cpp:194
 #, kde-format
 msgid "Mail is watched"
 msgstr "메일이 주시 목록에 있음"
 
-#: core/widgets/searchlinecommand.cpp:189
+#: core/widgets/searchlinecommand.cpp:196
 #, kde-format
 msgid "Mail is replied"
 msgstr "메일에 답장을 보냈음"
 
-#: core/widgets/searchlinecommand.cpp:191
+#: core/widgets/searchlinecommand.cpp:198
 #, kde-format
 msgid "Mail is forwarded"
 msgstr "메일이 전달됨"
 
-#: core/widgets/searchlinecommand.cpp:193
+#: core/widgets/searchlinecommand.cpp:200
 #, kde-format
 msgid "Mail is encrypted"
 msgstr "메일이 암호화됨"
 
-#: core/widgets/searchlinecommand.cpp:195
+#: core/widgets/searchlinecommand.cpp:202
 #, kde-format
 msgid "Mail is queued"
 msgstr "메일이 대기열에 있음"
 
-#: core/widgets/searchlinecommand.cpp:197
+#: core/widgets/searchlinecommand.cpp:204
 #, kde-format
 msgid "Mail is sent"
 msgstr "메일이 보내짐"
 
-#: core/widgets/searchlinecommand.cpp:199
+#: core/widgets/searchlinecommand.cpp:206
 #, kde-format
 msgid "Mail is deleted"
 msgstr "메일이 삭제됨"
 
-#: core/widgets/searchlinecommand.cpp:201
+#: core/widgets/searchlinecommand.cpp:208
 #, kde-format
 msgid "Mail is action"
 msgstr "메일이 동작 항목임"
 
-#: core/widgets/searchlinecommand.cpp:211
+#: core/widgets/searchlinecommand.cpp:218
 #, kde-format
 msgid "AND"
 msgstr "그리고"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:48
+#: core/widgets/searchlinecommandbuttonswidget.cpp:47
 #, kde-format
 msgctxt "@action:button"
 msgid "Subject"
 msgstr "제목"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:49
+#: core/widgets/searchlinecommandbuttonswidget.cpp:48
 #, kde-format
 msgctxt "@action:button"
 msgid "Body"
 msgstr "본문"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:50
+#: core/widgets/searchlinecommandbuttonswidget.cpp:49
 #, kde-format
 msgctxt "@action:button"
 msgid "From"
 msgstr "보낸 사람"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:51
+#: core/widgets/searchlinecommandbuttonswidget.cpp:50
 #, kde-format
 msgctxt "@action:button"
 msgid "To"
 msgstr "받는 사람"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:52
+#: core/widgets/searchlinecommandbuttonswidget.cpp:51
 #, kde-format
 msgctxt "@action:button"
 msgid "Cc"
 msgstr "참조"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:53
+#: core/widgets/searchlinecommandbuttonswidget.cpp:52
 #, kde-format
 msgctxt "@action:button"
 msgid "Bcc"
 msgstr "숨은 참조"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:54
+#: core/widgets/searchlinecommandbuttonswidget.cpp:53
 #, kde-format
 msgctxt "@action:button"
 msgid "Has Attachment"
 msgstr "첨부 파일 포함"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:55
+#: core/widgets/searchlinecommandbuttonswidget.cpp:54
 #, kde-format
 msgctxt "@action:button"
 msgid "Has Invitation"
 msgstr "초대장 포함"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:56
+#: core/widgets/searchlinecommandbuttonswidget.cpp:55
 #, kde-format
 msgctxt "@action:button"
 msgid "Read"
 msgstr "읽음"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:57
+#: core/widgets/searchlinecommandbuttonswidget.cpp:56
 #, kde-format
 msgctxt "@action:button"
 msgid "Unread"
 msgstr "읽지 않음"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:58
+#: core/widgets/searchlinecommandbuttonswidget.cpp:57
 #, kde-format
 msgctxt "@action:button"
 msgid "Important"
 msgstr "중요함"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:59
+#: core/widgets/searchlinecommandbuttonswidget.cpp:58
 #, kde-format
 msgctxt "@action:button"
 msgid "Ignored"
 msgstr "무시됨"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:60
+#: core/widgets/searchlinecommandbuttonswidget.cpp:59
 #, kde-format
 msgctxt "@action:button"
 msgid "Ham"
 msgstr "햄"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:61
+#: core/widgets/searchlinecommandbuttonswidget.cpp:60
 #, kde-format
 msgctxt "@action:button"
 msgid "Spam"
 msgstr "스팸"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:62
+#: core/widgets/searchlinecommandbuttonswidget.cpp:61
 #, kde-format
 msgctxt "@action:button"
 msgid "Watched"
 msgstr "주시함"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:63
+#: core/widgets/searchlinecommandbuttonswidget.cpp:62
 #, kde-format
 msgctxt "@action:button"
 msgid "Replied"
 msgstr "답장 보냈음"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:64
+#: core/widgets/searchlinecommandbuttonswidget.cpp:63
 #, kde-format
 msgctxt "@action:button"
 msgid "Forwarded"
 msgstr "전달됨"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:65
+#: core/widgets/searchlinecommandbuttonswidget.cpp:64
 #, kde-format
 msgctxt "@action:button"
 msgid "Encrypted"
 msgstr "암호화됨"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:66
+#: core/widgets/searchlinecommandbuttonswidget.cpp:65
 #, kde-format
 msgctxt "@action:button"
 msgid "Queued"
 msgstr "대기열에 추가됨"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:67
+#: core/widgets/searchlinecommandbuttonswidget.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Sent"
 msgstr "보냄"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:68
+#: core/widgets/searchlinecommandbuttonswidget.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Deleted"
 msgstr "삭제됨"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:69
+#: core/widgets/searchlinecommandbuttonswidget.cpp:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Action"
 msgstr "동작 항목"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:70
+#: core/widgets/searchlinecommandbuttonswidget.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "Category"
 msgstr "분류"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:72
+#: core/widgets/searchlinecommandbuttonswidget.cpp:71
 #, kde-format
 msgctxt "@action:button"
 msgid "Smaller"
 msgstr "더 작음"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:73
+#: core/widgets/searchlinecommandbuttonswidget.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Larger"
 msgstr "더 큼"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:74
+#: core/widgets/searchlinecommandbuttonswidget.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Size"
 msgstr "크기"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:75
+#: core/widgets/searchlinecommandbuttonswidget.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Older"
 msgstr "오래됨"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:76
+#: core/widgets/searchlinecommandbuttonswidget.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Newer"
 msgstr "새로움"
 
-#: core/widgets/searchlinestatus.cpp:78
+#: core/widgets/searchlinestatus.cpp:80
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Prevent the quick search field from being cleared when changing folders"
 msgstr "폴더를 변경할 때 빠른 검색 필드 내용 유지하기"
 
-#: core/widgets/searchlinestatus.cpp:81
+#: core/widgets/searchlinestatus.cpp:83
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear the quick search field when changing folders"
 msgstr "폴더를 변경할 때 빠른 검색 비우기"
 
-#: core/widgets/searchlinestatus.cpp:100
+#: core/widgets/searchlinestatus.cpp:102
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
 msgstr "검색 명령행 위젯을 표시하거나 숨기려면 이 단추를 전환하십시오."
 
-#: core/widgets/searchlinestatus.cpp:104
+#: core/widgets/searchlinestatus.cpp:106
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1483,13 +1483,13 @@ msgstr ""
 "다른 폴더로 이동하거나 메시지 상태별로 검색을 좁혀 나갈 때 빠른 검색의 내용"
 "을 고정하려면 전환하십시오."
 
-#: core/widgets/searchlinestatus.cpp:112
+#: core/widgets/searchlinestatus.cpp:114
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "저장된 필터"
 
-#: core/widgets/searchlinestatus.cpp:190
+#: core/widgets/searchlinestatus.cpp:192
 #, kde-format
 msgid "Clear History"
 msgstr "과거 기록 비우기"

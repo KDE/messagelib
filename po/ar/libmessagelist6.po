@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-17 00:42+0000\n"
+"POT-Creation-Date: 2025-05-24 00:43+0000\n"
 "PO-Revision-Date: 2025-01-07 18:31+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -1188,333 +1188,333 @@ msgstr ""
 "لا تزال بعض مجلدات البحث في هذا الاستعلام قيد الفهرسة أو مستبعدة من الفهرسة "
 "تمامًا. قد تكون النتائج أدناه غير كاملة."
 
-#: core/widgets/searchlinecommand.cpp:149
+#: core/widgets/searchlinecommand.cpp:156
 #, kde-format
 msgid "Literal string"
 msgstr "سلسلة حرفية"
 
-#: core/widgets/searchlinecommand.cpp:151
+#: core/widgets/searchlinecommand.cpp:158
 #, kde-format
 msgid "Size is smaller than"
 msgstr "الحجم أصغر من"
 
-#: core/widgets/searchlinecommand.cpp:153
+#: core/widgets/searchlinecommand.cpp:160
 #, kde-format
 msgid "Size is larger than"
 msgstr "الحجم أكبر من"
 
-#: core/widgets/searchlinecommand.cpp:155
+#: core/widgets/searchlinecommand.cpp:162
 #, kde-format
 msgid "Size is"
 msgstr "الحجم هو"
 
-#: core/widgets/searchlinecommand.cpp:157
+#: core/widgets/searchlinecommand.cpp:164
 #, kde-format
 msgid "To contains"
 msgstr "يحتوي على"
 
-#: core/widgets/searchlinecommand.cpp:159
+#: core/widgets/searchlinecommand.cpp:166
 #, kde-format
 msgid "BCC contains"
 msgstr "تحتوي نسخة مخفية الوجهة"
 
-#: core/widgets/searchlinecommand.cpp:161
+#: core/widgets/searchlinecommand.cpp:168
 #, kde-format
 msgid "CC contains"
 msgstr "ن‌ك يحتوي على"
 
-#: core/widgets/searchlinecommand.cpp:163
+#: core/widgets/searchlinecommand.cpp:170
 #, kde-format
 msgid "From contains"
 msgstr "من يحتوي"
 
-#: core/widgets/searchlinecommand.cpp:165
+#: core/widgets/searchlinecommand.cpp:172
 #, kde-format
 msgid "Subject contains"
 msgstr "الموضوع يحتوي على"
 
-#: core/widgets/searchlinecommand.cpp:167
+#: core/widgets/searchlinecommand.cpp:174
 #, kde-format
 msgid "Body contains"
 msgstr "المتن يحتوي"
 
-#: core/widgets/searchlinecommand.cpp:169
+#: core/widgets/searchlinecommand.cpp:176
 #, kde-format
 msgid "Mail has tag"
 msgstr "البريد له وسم"
 
-#: core/widgets/searchlinecommand.cpp:171
+#: core/widgets/searchlinecommand.cpp:178
 #, kde-format
 msgid "Mail has attachment"
 msgstr "البريد به مرفق"
 
-#: core/widgets/searchlinecommand.cpp:173
+#: core/widgets/searchlinecommand.cpp:180
 #, kde-format
 msgid "Mail has invitation"
 msgstr "البريد به دعوة"
 
-#: core/widgets/searchlinecommand.cpp:175
+#: core/widgets/searchlinecommand.cpp:182
 #, kde-format
 msgid "Mail is important"
 msgstr "البريد مهم"
 
-#: core/widgets/searchlinecommand.cpp:177
+#: core/widgets/searchlinecommand.cpp:184
 #, kde-format
 msgid "Mail is read"
 msgstr "البريد مقروء"
 
-#: core/widgets/searchlinecommand.cpp:179
+#: core/widgets/searchlinecommand.cpp:186
 #, kde-format
 msgid "Mail is Unread"
 msgstr "البريد غير مقروء"
 
-#: core/widgets/searchlinecommand.cpp:181
+#: core/widgets/searchlinecommand.cpp:188
 #, kde-format
 msgid "Mail is Ignored"
 msgstr "البريد المتجاهل"
 
-#: core/widgets/searchlinecommand.cpp:183
+#: core/widgets/searchlinecommand.cpp:190
 #, kde-format
 msgid "Mail is Ham"
 msgstr "البريد مرغوب"
 
-#: core/widgets/searchlinecommand.cpp:185
+#: core/widgets/searchlinecommand.cpp:192
 #, kde-format
 msgid "Mail is Spam"
 msgstr "البريد غير مرغوب فيه"
 
-#: core/widgets/searchlinecommand.cpp:187
+#: core/widgets/searchlinecommand.cpp:194
 #, kde-format
 msgid "Mail is watched"
 msgstr "البريد مراقب"
 
-#: core/widgets/searchlinecommand.cpp:189
+#: core/widgets/searchlinecommand.cpp:196
 #, kde-format
 msgid "Mail is replied"
 msgstr "البريد مردود عليه"
 
-#: core/widgets/searchlinecommand.cpp:191
+#: core/widgets/searchlinecommand.cpp:198
 #, kde-format
 msgid "Mail is forwarded"
 msgstr "البريد معاد توجيه"
 
-#: core/widgets/searchlinecommand.cpp:193
+#: core/widgets/searchlinecommand.cpp:200
 #, kde-format
 msgid "Mail is encrypted"
 msgstr "البريد معمى"
 
-#: core/widgets/searchlinecommand.cpp:195
+#: core/widgets/searchlinecommand.cpp:202
 #, kde-format
 msgid "Mail is queued"
 msgstr "البريد في قائمة الانتظار"
 
-#: core/widgets/searchlinecommand.cpp:197
+#: core/widgets/searchlinecommand.cpp:204
 #, kde-format
 msgid "Mail is sent"
 msgstr "البريد مرسل"
 
-#: core/widgets/searchlinecommand.cpp:199
+#: core/widgets/searchlinecommand.cpp:206
 #, kde-format
 msgid "Mail is deleted"
 msgstr "البريد محذوف"
 
-#: core/widgets/searchlinecommand.cpp:201
+#: core/widgets/searchlinecommand.cpp:208
 #, kde-format
 msgid "Mail is action"
 msgstr "البريد إجراء"
 
-#: core/widgets/searchlinecommand.cpp:211
+#: core/widgets/searchlinecommand.cpp:218
 #, kde-format
 msgid "AND"
 msgstr "وَ"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:48
+#: core/widgets/searchlinecommandbuttonswidget.cpp:47
 #, kde-format
 msgctxt "@action:button"
 msgid "Subject"
 msgstr "الموضوع"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:49
+#: core/widgets/searchlinecommandbuttonswidget.cpp:48
 #, kde-format
 msgctxt "@action:button"
 msgid "Body"
 msgstr "المتن"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:50
+#: core/widgets/searchlinecommandbuttonswidget.cpp:49
 #, kde-format
 msgctxt "@action:button"
 msgid "From"
 msgstr "من"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:51
+#: core/widgets/searchlinecommandbuttonswidget.cpp:50
 #, kde-format
 msgctxt "@action:button"
 msgid "To"
 msgstr "إلى"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:52
+#: core/widgets/searchlinecommandbuttonswidget.cpp:51
 #, kde-format
 msgctxt "@action:button"
 msgid "Cc"
 msgstr "ن‌ك"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:53
+#: core/widgets/searchlinecommandbuttonswidget.cpp:52
 #, kde-format
 msgctxt "@action:button"
 msgid "Bcc"
 msgstr "ن‌ك‌ع"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:54
+#: core/widgets/searchlinecommandbuttonswidget.cpp:53
 #, kde-format
 msgctxt "@action:button"
 msgid "Has Attachment"
 msgstr "فيها مرفقات"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:55
+#: core/widgets/searchlinecommandbuttonswidget.cpp:54
 #, kde-format
 msgctxt "@action:button"
 msgid "Has Invitation"
 msgstr "التي فيها دعوة"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:56
+#: core/widgets/searchlinecommandbuttonswidget.cpp:55
 #, kde-format
 msgctxt "@action:button"
 msgid "Read"
 msgstr "مقروءة"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:57
+#: core/widgets/searchlinecommandbuttonswidget.cpp:56
 #, kde-format
 msgctxt "@action:button"
 msgid "Unread"
 msgstr "غير المقروء"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:58
+#: core/widgets/searchlinecommandbuttonswidget.cpp:57
 #, kde-format
 msgctxt "@action:button"
 msgid "Important"
 msgstr "مهمّة"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:59
+#: core/widgets/searchlinecommandbuttonswidget.cpp:58
 #, kde-format
 msgctxt "@action:button"
 msgid "Ignored"
 msgstr "متجاهلة"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:60
+#: core/widgets/searchlinecommandbuttonswidget.cpp:59
 #, kde-format
 msgctxt "@action:button"
 msgid "Ham"
 msgstr "البريد المرغوب فيه"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:61
+#: core/widgets/searchlinecommandbuttonswidget.cpp:60
 #, kde-format
 msgctxt "@action:button"
 msgid "Spam"
 msgstr "سخام"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:62
+#: core/widgets/searchlinecommandbuttonswidget.cpp:61
 #, kde-format
 msgctxt "@action:button"
 msgid "Watched"
 msgstr "مراقبة"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:63
+#: core/widgets/searchlinecommandbuttonswidget.cpp:62
 #, kde-format
 msgctxt "@action:button"
 msgid "Replied"
 msgstr "رُدّ عليها"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:64
+#: core/widgets/searchlinecommandbuttonswidget.cpp:63
 #, kde-format
 msgctxt "@action:button"
 msgid "Forwarded"
 msgstr "مُرّرت"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:65
+#: core/widgets/searchlinecommandbuttonswidget.cpp:64
 #, kde-format
 msgctxt "@action:button"
 msgid "Encrypted"
 msgstr "معماة"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:66
+#: core/widgets/searchlinecommandbuttonswidget.cpp:65
 #, kde-format
 msgctxt "@action:button"
 msgid "Queued"
 msgstr "مصطفّ"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:67
+#: core/widgets/searchlinecommandbuttonswidget.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Sent"
 msgstr "أُرسلت"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:68
+#: core/widgets/searchlinecommandbuttonswidget.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Deleted"
 msgstr "حُذفت"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:69
+#: core/widgets/searchlinecommandbuttonswidget.cpp:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Action"
 msgstr "إجراء"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:70
+#: core/widgets/searchlinecommandbuttonswidget.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "Category"
 msgstr "الفئة"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:72
+#: core/widgets/searchlinecommandbuttonswidget.cpp:71
 #, kde-format
 msgctxt "@action:button"
 msgid "Smaller"
 msgstr "أصغر"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:73
+#: core/widgets/searchlinecommandbuttonswidget.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Larger"
 msgstr "أكبر"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:74
+#: core/widgets/searchlinecommandbuttonswidget.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Size"
 msgstr "الحجم"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:75
+#: core/widgets/searchlinecommandbuttonswidget.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Older"
 msgstr "الأقدم"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:76
+#: core/widgets/searchlinecommandbuttonswidget.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Newer"
 msgstr "أحدث"
 
-#: core/widgets/searchlinestatus.cpp:78
+#: core/widgets/searchlinestatus.cpp:80
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Prevent the quick search field from being cleared when changing folders"
 msgstr "منع مسح حقل البحث السريع عند تغيير المجلدات"
 
-#: core/widgets/searchlinestatus.cpp:81
+#: core/widgets/searchlinestatus.cpp:83
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear the quick search field when changing folders"
 msgstr "امسح حقل البحث السريع عند تغيير المجلدات"
 
-#: core/widgets/searchlinestatus.cpp:100
+#: core/widgets/searchlinestatus.cpp:102
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
 msgstr "بدّل هذا الزر إذا كنت تريد إظهار أو إخفاء أداة سطر أوامر البحث."
 
-#: core/widgets/searchlinestatus.cpp:104
+#: core/widgets/searchlinestatus.cpp:106
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1524,13 +1524,13 @@ msgstr ""
 "بدّل هذا الزر إذا كنت تريد إبقاء البحث السريع مغلقًا عند الانتقال إلى مجلدات "
 "أخرى أو عند تضييق نطاق البحث حسب حالة الرسالة."
 
-#: core/widgets/searchlinestatus.cpp:112
+#: core/widgets/searchlinestatus.cpp:114
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "مرشح محفوظ"
 
-#: core/widgets/searchlinestatus.cpp:190
+#: core/widgets/searchlinestatus.cpp:192
 #, kde-format
 msgid "Clear History"
 msgstr "امسح التّأريخ"

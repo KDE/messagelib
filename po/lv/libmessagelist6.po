@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-04-17 00:42+0000\n"
+"POT-Creation-Date: 2025-05-24 00:43+0000\n"
 "PO-Revision-Date: 2025-01-27 17:02+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -1167,327 +1167,327 @@ msgstr ""
 "Dažas no meklēšanas mapēm šajā vaicājumā vēl tiek indeksētas vai indeksēšanā "
 "nav iekļautas. Zemāk norādītie rezultāti var nebūt pilnīgi."
 
-#: core/widgets/searchlinecommand.cpp:149
+#: core/widgets/searchlinecommand.cpp:156
 #, kde-format
 msgid "Literal string"
 msgstr "Simbolu virkne"
 
-#: core/widgets/searchlinecommand.cpp:151
+#: core/widgets/searchlinecommand.cpp:158
 #, kde-format
 msgid "Size is smaller than"
 msgstr "Izmērs ir mazāks par"
 
-#: core/widgets/searchlinecommand.cpp:153
+#: core/widgets/searchlinecommand.cpp:160
 #, kde-format
 msgid "Size is larger than"
 msgstr "Izmērs ir lielāks par"
 
-#: core/widgets/searchlinecommand.cpp:155
+#: core/widgets/searchlinecommand.cpp:162
 #, kde-format
 msgid "Size is"
 msgstr "Izmērs ir"
 
-#: core/widgets/searchlinecommand.cpp:157
+#: core/widgets/searchlinecommand.cpp:164
 #, kde-format
 msgid "To contains"
 msgstr "„Kam“ satur"
 
-#: core/widgets/searchlinecommand.cpp:159
+#: core/widgets/searchlinecommand.cpp:166
 #, kde-format
 msgid "BCC contains"
 msgstr "„BCC“ satur"
 
-#: core/widgets/searchlinecommand.cpp:161
+#: core/widgets/searchlinecommand.cpp:168
 #, kde-format
 msgid "CC contains"
 msgstr "„CC“ satur"
 
-#: core/widgets/searchlinecommand.cpp:163
+#: core/widgets/searchlinecommand.cpp:170
 #, kde-format
 msgid "From contains"
 msgstr "„No“ satur"
 
-#: core/widgets/searchlinecommand.cpp:165
+#: core/widgets/searchlinecommand.cpp:172
 #, kde-format
 msgid "Subject contains"
 msgstr "„Temats“ satur"
 
-#: core/widgets/searchlinecommand.cpp:167
+#: core/widgets/searchlinecommand.cpp:174
 #, kde-format
 msgid "Body contains"
 msgstr "Pamatteksts satur"
 
-#: core/widgets/searchlinecommand.cpp:169
+#: core/widgets/searchlinecommand.cpp:176
 #, kde-format
 msgid "Mail has tag"
 msgstr "Vēstulei ir birkas"
 
-#: core/widgets/searchlinecommand.cpp:171
+#: core/widgets/searchlinecommand.cpp:178
 #, kde-format
 msgid "Mail has attachment"
 msgstr "Vēstulei ir piesaistnes"
 
-#: core/widgets/searchlinecommand.cpp:173
+#: core/widgets/searchlinecommand.cpp:180
 #, kde-format
 msgid "Mail has invitation"
 msgstr "Vēstulē ir uzaicinājums"
 
-#: core/widgets/searchlinecommand.cpp:175
+#: core/widgets/searchlinecommand.cpp:182
 #, kde-format
 msgid "Mail is important"
 msgstr "Vēstule ir svarīga"
 
-#: core/widgets/searchlinecommand.cpp:177
+#: core/widgets/searchlinecommand.cpp:184
 #, kde-format
 msgid "Mail is read"
 msgstr "Vēstule ir lasīta"
 
-#: core/widgets/searchlinecommand.cpp:179
+#: core/widgets/searchlinecommand.cpp:186
 #, kde-format
 msgid "Mail is Unread"
 msgstr "Vēstule nav lasīta"
 
-#: core/widgets/searchlinecommand.cpp:181
+#: core/widgets/searchlinecommand.cpp:188
 #, kde-format
 msgid "Mail is Ignored"
 msgstr "Vēstule ir ignorēta"
 
-#: core/widgets/searchlinecommand.cpp:183
+#: core/widgets/searchlinecommand.cpp:190
 #, kde-format
 msgid "Mail is Ham"
 msgstr "Vēstule nav mēstule"
 
-#: core/widgets/searchlinecommand.cpp:185
+#: core/widgets/searchlinecommand.cpp:192
 #, kde-format
 msgid "Mail is Spam"
 msgstr "Vēstule ir mēstule"
 
-#: core/widgets/searchlinecommand.cpp:187
+#: core/widgets/searchlinecommand.cpp:194
 #, kde-format
 msgid "Mail is watched"
 msgstr "Vēstule ir uzraudzīta"
 
-#: core/widgets/searchlinecommand.cpp:189
+#: core/widgets/searchlinecommand.cpp:196
 #, kde-format
 msgid "Mail is replied"
 msgstr "Vēstule ir atbildēta"
 
-#: core/widgets/searchlinecommand.cpp:191
+#: core/widgets/searchlinecommand.cpp:198
 #, kde-format
 msgid "Mail is forwarded"
 msgstr "Vēstule ir pārsūtīta"
 
-#: core/widgets/searchlinecommand.cpp:193
+#: core/widgets/searchlinecommand.cpp:200
 #, kde-format
 msgid "Mail is encrypted"
 msgstr "Vēstule ir šifrēta"
 
-#: core/widgets/searchlinecommand.cpp:195
+#: core/widgets/searchlinecommand.cpp:202
 #, kde-format
 msgid "Mail is queued"
 msgstr "Vēstule ir ierindota"
 
-#: core/widgets/searchlinecommand.cpp:197
+#: core/widgets/searchlinecommand.cpp:204
 #, kde-format
 msgid "Mail is sent"
 msgstr "Vēstule ir nosūtīta"
 
-#: core/widgets/searchlinecommand.cpp:199
+#: core/widgets/searchlinecommand.cpp:206
 #, kde-format
 msgid "Mail is deleted"
 msgstr "Vēstule ir dzēsta"
 
-#: core/widgets/searchlinecommand.cpp:201
+#: core/widgets/searchlinecommand.cpp:208
 #, kde-format
 msgid "Mail is action"
 msgstr "Vēstule ir darbība"
 
-#: core/widgets/searchlinecommand.cpp:211
+#: core/widgets/searchlinecommand.cpp:218
 #, kde-format
 msgid "AND"
 msgstr "UN"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:48
+#: core/widgets/searchlinecommandbuttonswidget.cpp:47
 #, kde-format
 msgctxt "@action:button"
 msgid "Subject"
 msgstr "Temats"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:49
+#: core/widgets/searchlinecommandbuttonswidget.cpp:48
 #, kde-format
 msgctxt "@action:button"
 msgid "Body"
 msgstr "Pamatteksts"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:50
+#: core/widgets/searchlinecommandbuttonswidget.cpp:49
 #, kde-format
 msgctxt "@action:button"
 msgid "From"
 msgstr "No"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:51
+#: core/widgets/searchlinecommandbuttonswidget.cpp:50
 #, kde-format
 msgctxt "@action:button"
 msgid "To"
 msgstr "Kam"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:52
+#: core/widgets/searchlinecommandbuttonswidget.cpp:51
 #, kde-format
 msgctxt "@action:button"
 msgid "Cc"
 msgstr "Cc"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:53
+#: core/widgets/searchlinecommandbuttonswidget.cpp:52
 #, kde-format
 msgctxt "@action:button"
 msgid "Bcc"
 msgstr "Bcc"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:54
+#: core/widgets/searchlinecommandbuttonswidget.cpp:53
 #, kde-format
 msgctxt "@action:button"
 msgid "Has Attachment"
 msgstr "Ir piesaistne"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:55
+#: core/widgets/searchlinecommandbuttonswidget.cpp:54
 #, kde-format
 msgctxt "@action:button"
 msgid "Has Invitation"
 msgstr "Ir uzaicinājums"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:56
+#: core/widgets/searchlinecommandbuttonswidget.cpp:55
 #, kde-format
 msgctxt "@action:button"
 msgid "Read"
 msgstr "Lasīta"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:57
+#: core/widgets/searchlinecommandbuttonswidget.cpp:56
 #, kde-format
 msgctxt "@action:button"
 msgid "Unread"
 msgstr "Nelasīta"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:58
+#: core/widgets/searchlinecommandbuttonswidget.cpp:57
 #, kde-format
 msgctxt "@action:button"
 msgid "Important"
 msgstr "Svarīga"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:59
+#: core/widgets/searchlinecommandbuttonswidget.cpp:58
 #, kde-format
 msgctxt "@action:button"
 msgid "Ignored"
 msgstr "Ignorēta"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:60
+#: core/widgets/searchlinecommandbuttonswidget.cpp:59
 #, kde-format
 msgctxt "@action:button"
 msgid "Ham"
 msgstr "Nav mēstule"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:61
+#: core/widgets/searchlinecommandbuttonswidget.cpp:60
 #, kde-format
 msgctxt "@action:button"
 msgid "Spam"
 msgstr "Mēstule"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:62
+#: core/widgets/searchlinecommandbuttonswidget.cpp:61
 #, kde-format
 msgctxt "@action:button"
 msgid "Watched"
 msgstr "Uzraudzīta"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:63
+#: core/widgets/searchlinecommandbuttonswidget.cpp:62
 #, kde-format
 msgctxt "@action:button"
 msgid "Replied"
 msgstr "Atbildēta"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:64
+#: core/widgets/searchlinecommandbuttonswidget.cpp:63
 #, kde-format
 msgctxt "@action:button"
 msgid "Forwarded"
 msgstr "Pārsūtīta"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:65
+#: core/widgets/searchlinecommandbuttonswidget.cpp:64
 #, kde-format
 msgctxt "@action:button"
 msgid "Encrypted"
 msgstr "Šifrēta"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:66
+#: core/widgets/searchlinecommandbuttonswidget.cpp:65
 #, kde-format
 msgctxt "@action:button"
 msgid "Queued"
 msgstr "Ierindota"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:67
+#: core/widgets/searchlinecommandbuttonswidget.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Sent"
 msgstr "Nosūtīta"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:68
+#: core/widgets/searchlinecommandbuttonswidget.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Deleted"
 msgstr "Dzēsta"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:69
+#: core/widgets/searchlinecommandbuttonswidget.cpp:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Action"
 msgstr "Darbība"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:70
+#: core/widgets/searchlinecommandbuttonswidget.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "Category"
 msgstr "Kategorija"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:72
+#: core/widgets/searchlinecommandbuttonswidget.cpp:71
 #, kde-format
 msgctxt "@action:button"
 msgid "Smaller"
 msgstr "Mazāka"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:73
+#: core/widgets/searchlinecommandbuttonswidget.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Larger"
 msgstr "Lielāka"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:74
+#: core/widgets/searchlinecommandbuttonswidget.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Size"
 msgstr "Izmērs"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:75
+#: core/widgets/searchlinecommandbuttonswidget.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Older"
 msgstr "Vecāka"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:76
+#: core/widgets/searchlinecommandbuttonswidget.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Newer"
 msgstr "Jaunāka"
 
-#: core/widgets/searchlinestatus.cpp:78
+#: core/widgets/searchlinestatus.cpp:80
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Prevent the quick search field from being cleared when changing folders"
 msgstr "Novērst ātrās meklēšanas lauka notīrīšanos, mainot mapes"
 
-#: core/widgets/searchlinestatus.cpp:81
+#: core/widgets/searchlinestatus.cpp:83
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear the quick search field when changing folders"
 msgstr "Notīrīt ātrās meklēšanas lauku, mainot mapes"
 
-#: core/widgets/searchlinestatus.cpp:100
+#: core/widgets/searchlinestatus.cpp:102
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
@@ -1495,7 +1495,7 @@ msgstr ""
 "Pārslēdziet šo pogu, ja vēlaties parādīt vai paslēpt meklēšanas komandrindas "
 "logdaļu."
 
-#: core/widgets/searchlinestatus.cpp:104
+#: core/widgets/searchlinestatus.cpp:106
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1505,13 +1505,13 @@ msgstr ""
 "Ieslēdzot šo pogu, ja vēlaties, lai ātrās meklēšanas lauciņš nemainītos, kad "
 "pārvietojaties starp mapēm vai ierobežojat meklēšanu pēc vēstules statusa."
 
-#: core/widgets/searchlinestatus.cpp:112
+#: core/widgets/searchlinestatus.cpp:114
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "Saglabāt filtru"
 
-#: core/widgets/searchlinestatus.cpp:190
+#: core/widgets/searchlinestatus.cpp:192
 #, kde-format
 msgid "Clear History"
 msgstr "Notīrīt vēsturi"
