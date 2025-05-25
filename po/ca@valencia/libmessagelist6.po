@@ -1977,14 +1977,15 @@ msgstr "L'etiqueta que es visualitzarà en la capçalera de la columna."
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Header click sorts messages:"
-msgstr "Un clic en la capçalera ordena els missatges:"
+msgstr "Un clic damunt de la capçalera ordena els missatges:"
 
 #: utils/themeeditor.cpp:81
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The sorting order that clicking on this column header will switch to."
 msgstr ""
-"Clicant en la capçalera de la columna s'utilitzarà com a criteri d'ordenació."
+"Quan es clique damunt de la capçalera de la columna s'utilitzarà com a "
+"criteri d'ordenació."
 
 #: utils/themeeditor.cpp:84
 #, kde-format
@@ -2211,8 +2212,8 @@ msgid ""
 msgstr ""
 "Cliqueu amb el botó dret damunt de la capçalera per a afegir o modificar les "
 "columnes. Arrossegueu els elements de contingut i deixeu-los anar damunt de "
-"les columnes per tal de compondre el vostre tema. Per a més opcions, feu "
-"clic dret en els elements dins la vista."
+"les columnes per tal de compondre el vostre tema. Cliqueu amb el botó dret "
+"damunt dels elements dins la vista per a més opcions."
 
 #: utils/themeeditor.cpp:1430
 #, kde-format

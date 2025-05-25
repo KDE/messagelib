@@ -1109,7 +1109,7 @@ msgstr ""
 "<qt>No s'ha trobat cap certificat d'encriptació vàlid i de confiança per a "
 "«%1».<br/> <br/>Seleccioneu els certificats que s'haurien d'utilitzar per a "
 "este destinatari. Si no hi ha cap certificat adequat en la llista, també "
-"podreu buscar certificats externs clicant en el botó: busca certificats "
+"podreu buscar certificats externs clicant damunt del botó: busca certificats "
 "externs.</qt>"
 
 #: composer/keyresolver.cpp:1559
@@ -1124,7 +1124,7 @@ msgid ""
 msgstr ""
 "Més d'un certificat coincidix amb «%1».\n"
 "\n"
-"Escolliu els certificats que s'han d'utilitzar per a este destinatari."
+"Trieu els certificats que s'han d'utilitzar per a este destinatari."
 
 #: contactpreference/savecontactpreferencejob.cpp:70
 #, kde-format
