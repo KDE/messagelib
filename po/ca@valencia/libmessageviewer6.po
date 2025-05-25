@@ -172,7 +172,7 @@ msgstr ""
 "<b>Nota:</b> Este és un missatge HTML. Per motius de seguretat, només es "
 "mostrarà el codi HTML pur. Si teniu confiança en el remitent d'este "
 "missatge, llavors podeu activar la visualització amb format de l'HTML d'este "
-"missatge <a href='kmail:showHTML'>fent clic ací</a>."
+"missatge <a href='kmail:showHTML'>clicant ací</a>."
 
 #: messagepartthemes/default/templates/htmlmessagepart.html:12
 msgid ""
@@ -184,7 +184,7 @@ msgstr ""
 "<b>Nota:</b> Este missatge HTML pot contindre referències externes a "
 "imatges. Per motius de seguretat i privadesa no es carreguen les referències "
 "externes. Si teniu confiança en el remitent d'este missatge, podeu carregar "
-"les referències externes del missatge <a href='kmail:loadExternal'>fent clic "
+"les referències externes del missatge <a href='kmail:loadExternal'>clicant "
 "ací</a>."
 
 #: messagepartthemes/default/templates/signedmessagepart.html:5
@@ -852,7 +852,7 @@ msgstr "Cap&çaleres"
 #: header/headerstylemenumanager.cpp:109
 #, kde-format
 msgid "Choose display style of message headers"
-msgstr "Escolliu amb quin estil es mostraran les capçaleres"
+msgstr "Trieu amb quin estil es mostraran les capçaleres"
 
 #: header/plainheaderstyle.cpp:103
 #, kde-format
@@ -2133,7 +2133,7 @@ msgstr "&Adjunts"
 #: viewer/viewer_p.cpp:1483
 #, kde-format
 msgid "Choose display style of attachments"
-msgstr "Escolliu l'estil de visualització dels adjunts"
+msgstr "Trieu l'estil de visualització dels adjunts"
 
 #: viewer/viewer_p.cpp:1486
 #, kde-format
@@ -2144,7 +2144,7 @@ msgstr "Com a i&cones"
 #: viewer/viewer_p.cpp:1489
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
-msgstr "Mostra tots els adjunts com a icones. Feu clic per a veure'ls."
+msgstr "Mostra tots els adjunts com a icones. Cliqueu per a veure'ls."
 
 #: viewer/viewer_p.cpp:1493
 #, kde-format
@@ -2462,7 +2462,7 @@ msgstr ""
 #: widgets/htmlstatusbar.cpp:135
 #, kde-format
 msgid "Click to toggle between HTML, plain text and calendar."
-msgstr "Feu clic per a canviar entre HTML, text net i calendari."
+msgstr "Cliqueu per a canviar entre HTML, text net i calendari."
 
 #: widgets/invitationsettings.cpp:70
 #, kde-format
