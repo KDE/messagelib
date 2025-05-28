@@ -1,14 +1,14 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# SPDX-FileCopyrightText: 2010, 2011, 2012, 2013, 2014, 2020, 2021, 2022, 2023, 2024 g.sora <g.sora@tiscali.it>
+# SPDX-FileCopyrightText: 2010, 2011, 2012, 2013, 2014, 2020, 2021, 2022, 2023, 2024, 2025 g.sora <g.sora@tiscali.it>
 # giovanni <g.sora@tiscali.it>, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-18 00:43+0000\n"
-"PO-Revision-Date: 2024-08-01 15:41+0200\n"
+"PO-Revision-Date: 2025-05-27 12:37+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -1766,10 +1766,9 @@ msgid "message"
 msgstr "message"
 
 #: utils/messageviewerutil.cpp:472
-#, fuzzy, kde-format
-#| msgid "email messages (*.mbox);;all files (*)"
+#, kde-format
 msgid "Mailbox file (*.mbox);;All Files (*)"
-msgstr "messages de eposta (*.mbox);;all files (*)"
+msgstr "Fille de casse de eposta  (Mailbox)  (*.mbox);; Omne files (*)"
 
 #: utils/messageviewerutil.cpp:483
 #, kde-format
