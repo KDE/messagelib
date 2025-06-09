@@ -455,7 +455,7 @@ bool ModelPrivate::applyFilterToSubtree(Item *item, const QModelIndex &parentInd
         mView->setRowHidden(thisIndex.row(), parentIndex, false);
 
         if (!mView->isExpanded(thisIndex)) {
-            mView->expand(thisIndex);
+            expandViewNoninteractive(thisIndex);
         }
         return true;
     }
@@ -737,6 +737,16 @@ void ModelPrivate::clear()
     // Q_EMIT headerDataChanged();
 
     mView->selectionModel()->clearSelection();
+}
+
+void ModelPrivate::expandViewNoninteractive(const QModelIndex &index)
+{
+    // isAnimated() and setAnimated() are cheap: they just get or set one boolean
+    const bool animatedSave = mView->isAnimated();
+    // Animations, however, are expensive: each one caches a QPixmap for smooth rendering
+    mView->setAnimated(false);
+    mView->expand(index);
+    mView->setAnimated(animatedSave);
 }
 
 void Model::setStorageModel(StorageModel *storageModel, PreSelectionMode preSelectionMode)
@@ -1273,7 +1283,7 @@ void ModelPrivate::syncExpandedStateOfSubtree(Item *root)
     QModelIndex idx = q->index(root, 0);
 
     // if ( !mView->isExpanded( idx ) ) // this is O(logN!) in Qt.... very ugly... but it should never happen here
-    mView->expand(idx); // sync the real state in the view
+    expandViewNoninteractive(idx); // sync the real state in the view
     root->setInitialExpandStatus(Item::ExpandExecuted);
 
     auto children = root->childItems();
@@ -2342,7 +2352,7 @@ void ModelPrivate::attachMessageToParent(Item *pParent, MessageItem *mi, AttachO
                     break;
                 }
 
-                mView->expand(q->index(parentToExpand, 0));
+                expandViewNoninteractive(q->index(parentToExpand, 0));
 
                 parentToExpand->setInitialExpandStatus(Item::ExpandExecuted);
                 parentToExpand = parentToExpand->parent();

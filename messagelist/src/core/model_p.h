@@ -90,6 +90,11 @@ public:
     void removeMessageFromSubjectBasedThreadingCache(MessageItem *mi);
     void clear();
     /**
+     * Expand the view while temporarily disabling animations - for expansion *not* triggered by the user
+     * clicking on expand, which is often a mass operation, and animations are expensive.
+     */
+    void expandViewNoninteractive(const QModelIndex &index);
+    /**
      * Sync the expanded state of the subtree with the specified root.
      * This will cause the items that are marked with Item::ExpandNeeded to be
      * expanded also in the view. For optimization purposes the specified root
