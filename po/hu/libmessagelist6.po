@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-24 00:43+0000\n"
+"POT-Creation-Date: 2025-06-10 00:43+0000\n"
 "PO-Revision-Date: 2025-04-21 22:18+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -509,41 +509,41 @@ msgstr "Címzett"
 msgid "Sender"
 msgstr "Feladó"
 
-#: core/model.cpp:1370
+#: core/model.cpp:1380
 #, kde-format
 msgctxt "Message Aggregation Group Header: Month name and Year number"
 msgid "%1 %2"
 msgstr "%2 %1"
 
-#: core/model.cpp:3790
+#: core/model.cpp:3800
 #, kde-format
 msgid "Processed 1 Message of %2"
 msgid_plural "Processed %1 Messages of %2"
 msgstr[0] "1 / %2 üzenet feldolgozva"
 msgstr[1] "%1 / %2 üzenet feldolgozva"
 
-#: core/model.cpp:3796 core/model.cpp:3802
+#: core/model.cpp:3806 core/model.cpp:3812
 #, kde-format
 msgid "Threaded 1 Message of %2"
 msgid_plural "Threaded %1 Messages of %2"
 msgstr[0] "Szálakra bontva 1 / %2 üzenet"
 msgstr[1] "Szálakra bontva %1 / %2 üzenet"
 
-#: core/model.cpp:3808
+#: core/model.cpp:3818
 #, kde-format
 msgid "Grouped 1 Thread of %2"
 msgid_plural "Grouped %1 Threads of %2"
 msgstr[0] "Csoportosítva 1 / %2 üzenetszál"
 msgstr[1] "Csoportosítva %1 / %2 üzenetszál"
 
-#: core/model.cpp:3814
+#: core/model.cpp:3824
 #, kde-format
 msgid "Updated 1 Group of %2"
 msgid_plural "Updated %1 Groups of %2"
 msgstr[0] "Frissítve 1 / %2 csoport"
 msgstr[1] "Frissítve %1 / %2 csoport"
 
-#: core/model.cpp:3906
+#: core/model.cpp:3916
 #, kde-format
 msgctxt "@info:status Finished view fill"
 msgid "Ready"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail-1.1\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-24 00:43+0000\n"
+"POT-Creation-Date: 2025-06-10 00:43+0000\n"
 "PO-Revision-Date: 2005-01-23 05:51+0100\n"
 "Last-Translator: Jañ-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
@@ -553,7 +553,7 @@ msgstr "Degemerer"
 msgid "Sender"
 msgstr "Kaser"
 
-#: core/model.cpp:1370
+#: core/model.cpp:1380
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "%1: name; %2: number appended to it to make it unique among a list of "
@@ -563,7 +563,7 @@ msgctxt "Message Aggregation Group Header: Month name and Year number"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: core/model.cpp:3790
+#: core/model.cpp:3800
 #, fuzzy, kde-format
 #| msgid "&Thread Messages"
 msgid "Processed 1 Message of %2"
@@ -571,7 +571,7 @@ msgid_plural "Processed %1 Messages of %2"
 msgstr[0] "&Strobañ ar c'hemennadoù"
 msgstr[1] ""
 
-#: core/model.cpp:3796 core/model.cpp:3802
+#: core/model.cpp:3806 core/model.cpp:3812
 #, fuzzy, kde-format
 #| msgid "&Thread Messages"
 msgid "Threaded 1 Message of %2"
@@ -579,7 +579,7 @@ msgid_plural "Threaded %1 Messages of %2"
 msgstr[0] "&Strobañ ar c'hemennadoù"
 msgstr[1] ""
 
-#: core/model.cpp:3808
+#: core/model.cpp:3818
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "&Expand Thread"
@@ -588,7 +588,7 @@ msgid_plural "Grouped %1 Threads of %2"
 msgstr[0] "&Digeriñ an neudenn"
 msgstr[1] ""
 
-#: core/model.cpp:3814
+#: core/model.cpp:3824
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "&Expand Thread"
@@ -597,7 +597,7 @@ msgid_plural "Updated %1 Groups of %2"
 msgstr[0] "&Digeriñ an neudenn"
 msgstr[1] ""
 
-#: core/model.cpp:3906
+#: core/model.cpp:3916
 #, fuzzy, kde-format
 #| msgid "Ready."
 msgctxt "@info:status Finished view fill"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-24 00:43+0000\n"
+"POT-Creation-Date: 2025-06-10 00:43+0000\n"
 "PO-Revision-Date: 2025-01-07 19:49+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -513,41 +513,41 @@ msgstr "Destinatario"
 msgid "Sender"
 msgstr "Remitente"
 
-#: core/model.cpp:1370
+#: core/model.cpp:1380
 #, kde-format
 msgctxt "Message Aggregation Group Header: Month name and Year number"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: core/model.cpp:3790
+#: core/model.cpp:3800
 #, kde-format
 msgid "Processed 1 Message of %2"
 msgid_plural "Processed %1 Messages of %2"
 msgstr[0] "Procesouse %1 mensaxe de %2"
 msgstr[1] "Procesáronse %1 mensaxes de %2"
 
-#: core/model.cpp:3796 core/model.cpp:3802
+#: core/model.cpp:3806 core/model.cpp:3812
 #, kde-format
 msgid "Threaded 1 Message of %2"
 msgid_plural "Threaded %1 Messages of %2"
 msgstr[0] "Enfiouse %1 mensaxe de %2"
 msgstr[1] "Enfiáronse %1 mensaxes de %2"
 
-#: core/model.cpp:3808
+#: core/model.cpp:3818
 #, kde-format
 msgid "Grouped 1 Thread of %2"
 msgid_plural "Grouped %1 Threads of %2"
 msgstr[0] "Agrupouse %1 fío de %2"
 msgstr[1] "Agrupáronse %1 fíos de %2"
 
-#: core/model.cpp:3814
+#: core/model.cpp:3824
 #, kde-format
 msgid "Updated 1 Group of %2"
 msgid_plural "Updated %1 Groups of %2"
 msgstr[0] "Actualizouse %1 grupo de %2"
 msgstr[1] "Actualizáronse %1 grupos de %2"
 
-#: core/model.cpp:3906
+#: core/model.cpp:3916
 #, kde-format
 msgctxt "@info:status Finished view fill"
 msgid "Ready"

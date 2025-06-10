@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-24 00:43+0000\n"
+"POT-Creation-Date: 2025-06-10 00:43+0000\n"
 "PO-Revision-Date: 2008-01-31 22:13+0200\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -551,13 +551,13 @@ msgstr "Прыём"
 msgid "Sender"
 msgstr "Адпраўнік"
 
-#: core/model.cpp:1370
+#: core/model.cpp:1380
 #, fuzzy, kde-format
 msgctxt "Message Aggregation Group Header: Month name and Year number"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: core/model.cpp:3790
+#: core/model.cpp:3800
 #, fuzzy, kde-format
 #| msgid "&Thread Messages"
 msgid "Processed 1 Message of %2"
@@ -566,7 +566,7 @@ msgstr[0] "Групіраваць &тэмы паведамленняў"
 msgstr[1] "Групіраваць &тэмы паведамленняў"
 msgstr[2] "Групіраваць &тэмы паведамленняў"
 
-#: core/model.cpp:3796 core/model.cpp:3802
+#: core/model.cpp:3806 core/model.cpp:3812
 #, fuzzy, kde-format
 #| msgid "&Thread Messages"
 msgid "Threaded 1 Message of %2"
@@ -575,7 +575,7 @@ msgstr[0] "Групіраваць &тэмы паведамленняў"
 msgstr[1] "Групіраваць &тэмы паведамленняў"
 msgstr[2] "Групіраваць &тэмы паведамленняў"
 
-#: core/model.cpp:3808
+#: core/model.cpp:3818
 #, fuzzy, kde-format
 #| msgid ""
 #| "_: View->\n"
@@ -586,7 +586,7 @@ msgstr[0] "&Разгарнуць тэму"
 msgstr[1] "&Разгарнуць тэму"
 msgstr[2] "&Разгарнуць тэму"
 
-#: core/model.cpp:3814
+#: core/model.cpp:3824
 #, fuzzy, kde-format
 #| msgid ""
 #| "_: View->\n"
@@ -597,7 +597,7 @@ msgstr[0] "&Разгарнуць тэму"
 msgstr[1] "&Разгарнуць тэму"
 msgstr[2] "&Разгарнуць тэму"
 
-#: core/model.cpp:3906
+#: core/model.cpp:3916
 #, fuzzy, kde-format
 #| msgid "Ready."
 msgctxt "@info:status Finished view fill"

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-24 00:43+0000\n"
+"POT-Creation-Date: 2025-06-10 00:43+0000\n"
 "PO-Revision-Date: 2025-01-27 17:02+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -509,13 +509,13 @@ msgstr "Saņēmējs"
 msgid "Sender"
 msgstr "Sūtītājs"
 
-#: core/model.cpp:1370
+#: core/model.cpp:1380
 #, kde-format
 msgctxt "Message Aggregation Group Header: Month name and Year number"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: core/model.cpp:3790
+#: core/model.cpp:3800
 #, kde-format
 msgid "Processed 1 Message of %2"
 msgid_plural "Processed %1 Messages of %2"
@@ -523,7 +523,7 @@ msgstr[0] "Apstrādāta %1 no %2 vēstulēm"
 msgstr[1] "Apstrādātas %1 no %2 vēstulēm"
 msgstr[2] "Apstrādātas %1 no %2 vēstulēm"
 
-#: core/model.cpp:3796 core/model.cpp:3802
+#: core/model.cpp:3806 core/model.cpp:3812
 #, kde-format
 msgid "Threaded 1 Message of %2"
 msgid_plural "Threaded %1 Messages of %2"
@@ -531,7 +531,7 @@ msgstr[0] "Pavedienā %1 no %2 vēstulēm"
 msgstr[1] "Pavedienā %1 no %2 vēstulēm"
 msgstr[2] "Pavedienā %1 no %2 vēstulēm"
 
-#: core/model.cpp:3808
+#: core/model.cpp:3818
 #, kde-format
 msgid "Grouped 1 Thread of %2"
 msgid_plural "Grouped %1 Threads of %2"
@@ -539,7 +539,7 @@ msgstr[0] "Grupēts %1 pavediens no %2"
 msgstr[1] "Grupēti %1 pavedieni no %2"
 msgstr[2] "Grupēti %1 pavedienu no %2"
 
-#: core/model.cpp:3814
+#: core/model.cpp:3824
 #, kde-format
 msgid "Updated 1 Group of %2"
 msgid_plural "Updated %1 Groups of %2"
@@ -547,7 +547,7 @@ msgstr[0] "Atjaunināta %1 no %2 grupām"
 msgstr[1] "Atjauninātas %1 no %2 grupām"
 msgstr[2] "Atjauninātas %1 no %2 grupām"
 
-#: core/model.cpp:3906
+#: core/model.cpp:3916
 #, kde-format
 msgctxt "@info:status Finished view fill"
 msgid "Ready"

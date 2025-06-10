@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail 3_3_branch\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-24 00:43+0000\n"
+"POT-Creation-Date: 2025-06-10 00:43+0000\n"
 "PO-Revision-Date: 2004-11-10 16:33+0200\n"
 "Last-Translator: Frikkie Thirion <frix@expertron.co.za>\n"
 "Language-Team: AFRIKAANS <AF@lia.org.za>\n"
@@ -519,28 +519,28 @@ msgstr "Ontvanger"
 msgid "Sender"
 msgstr "Stuurder"
 
-#: core/model.cpp:1370
+#: core/model.cpp:1380
 #, fuzzy, kde-format
 #| msgid "Mail"
 msgctxt "Message Aggregation Group Header: Month name and Year number"
 msgid "%1 %2"
 msgstr "Pos"
 
-#: core/model.cpp:3790
+#: core/model.cpp:3800
 #, fuzzy, kde-format
 msgid "Processed 1 Message of %2"
 msgid_plural "Processed %1 Messages of %2"
 msgstr[0] "Gesprekslyn boodskappe"
 msgstr[1] "Gesprekslyn boodskappe"
 
-#: core/model.cpp:3796 core/model.cpp:3802
+#: core/model.cpp:3806 core/model.cpp:3812
 #, fuzzy, kde-format
 msgid "Threaded 1 Message of %2"
 msgid_plural "Threaded %1 Messages of %2"
 msgstr[0] "Gesprekslyn boodskappe"
 msgstr[1] "Gesprekslyn boodskappe"
 
-#: core/model.cpp:3808
+#: core/model.cpp:3818
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "&Expand Thread"
@@ -549,7 +549,7 @@ msgid_plural "Grouped %1 Threads of %2"
 msgstr[0] "Vou gesprekslyn uit"
 msgstr[1] "Vou gesprekslyn uit"
 
-#: core/model.cpp:3814
+#: core/model.cpp:3824
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "&Expand Thread"
@@ -558,7 +558,7 @@ msgid_plural "Updated %1 Groups of %2"
 msgstr[0] "Vou gesprekslyn uit"
 msgstr[1] "Vou gesprekslyn uit"
 
-#: core/model.cpp:3906
+#: core/model.cpp:3916
 #, fuzzy, kde-format
 msgctxt "@info:status Finished view fill"
 msgid "Ready"

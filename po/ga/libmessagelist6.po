@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim/kmail.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-24 00:43+0000\n"
+"POT-Creation-Date: 2025-06-10 00:43+0000\n"
 "PO-Revision-Date: 2004-12-03 14:52-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -494,13 +494,13 @@ msgstr "Faighteoir"
 msgid "Sender"
 msgstr "Seoltóir"
 
-#: core/model.cpp:1370
+#: core/model.cpp:1380
 #, kde-format
 msgctxt "Message Aggregation Group Header: Month name and Year number"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: core/model.cpp:3790
+#: core/model.cpp:3800
 #, kde-format
 msgid "Processed 1 Message of %2"
 msgid_plural "Processed %1 Messages of %2"
@@ -510,7 +510,7 @@ msgstr[2] "Próiseáladh %1 Theachtaireacht as %2"
 msgstr[3] "Próiseáladh %1 dTeachtaireacht as %2"
 msgstr[4] "Próiseáladh %1 Teachtaireacht as %2"
 
-#: core/model.cpp:3796 core/model.cpp:3802
+#: core/model.cpp:3806 core/model.cpp:3812
 #, kde-format
 msgid "Threaded 1 Message of %2"
 msgid_plural "Threaded %1 Messages of %2"
@@ -520,7 +520,7 @@ msgstr[2] ""
 msgstr[3] ""
 msgstr[4] ""
 
-#: core/model.cpp:3808
+#: core/model.cpp:3818
 #, kde-format
 msgid "Grouped 1 Thread of %2"
 msgid_plural "Grouped %1 Threads of %2"
@@ -530,7 +530,7 @@ msgstr[2] "Grúpáladh %1 Shnáithe as %2"
 msgstr[3] "Grúpáladh %1 Snáithe as %2"
 msgstr[4] "Grúpáladh %1 Snáithe as %2"
 
-#: core/model.cpp:3814
+#: core/model.cpp:3824
 #, kde-format
 msgid "Updated 1 Group of %2"
 msgid_plural "Updated %1 Groups of %2"
@@ -540,7 +540,7 @@ msgstr[2] "Nuashonraíodh %1 Ghrúpa as %2"
 msgstr[3] "Nuashonraíodh %1 nGrúpa as %2"
 msgstr[4] "Nuashonraíodh %1 Grúpa as %2"
 
-#: core/model.cpp:3906
+#: core/model.cpp:3916
 #, kde-format
 msgctxt "@info:status Finished view fill"
 msgid "Ready"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-24 00:43+0000\n"
+"POT-Creation-Date: 2025-06-10 00:43+0000\n"
 "PO-Revision-Date: 2009-01-18 17:38+0530\n"
 "Last-Translator: Amanpreet Singh Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjab-l10n@list.sf.net>\n"
@@ -508,7 +508,7 @@ msgstr "ਪ੍ਰਾਪਤ ਕਰਤਾ"
 msgid "Sender"
 msgstr "ਭੇਜਣ ਵਾਲਾ"
 
-#: core/model.cpp:1370
+#: core/model.cpp:1380
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "%1: name; %2: number appended to it to make it uniqueamong a list of names"
@@ -517,7 +517,7 @@ msgctxt "Message Aggregation Group Header: Month name and Year number"
 msgid "%1 %2"
 msgstr "%1 #%2"
 
-#: core/model.cpp:3790
+#: core/model.cpp:3800
 #, fuzzy, kde-format
 #| msgid "Threaded %1 Messages of %2"
 msgid "Processed 1 Message of %2"
@@ -525,7 +525,7 @@ msgid_plural "Processed %1 Messages of %2"
 msgstr[0] "%1 ਥਰਿੱਡ %2 ਦੇ ਸੁਨੇਹੇ"
 msgstr[1] "%1 ਥਰਿੱਡ %2 ਦੇ ਸੁਨੇਹੇ"
 
-#: core/model.cpp:3796 core/model.cpp:3802
+#: core/model.cpp:3806 core/model.cpp:3812
 #, fuzzy, kde-format
 #| msgid "Threaded %1 Messages of %2"
 msgid "Threaded 1 Message of %2"
@@ -533,7 +533,7 @@ msgid_plural "Threaded %1 Messages of %2"
 msgstr[0] "%1 ਥਰਿੱਡ %2 ਦੇ ਸੁਨੇਹੇ"
 msgstr[1] "%1 ਥਰਿੱਡ %2 ਦੇ ਸੁਨੇਹੇ"
 
-#: core/model.cpp:3808
+#: core/model.cpp:3818
 #, fuzzy, kde-format
 #| msgid "Grouped %1 Threads of %2"
 msgid "Grouped 1 Thread of %2"
@@ -541,7 +541,7 @@ msgid_plural "Grouped %1 Threads of %2"
 msgstr[0] "%2 ਦੇ ਥਰਿੱਡ %1 ਗਰੁੱਪ"
 msgstr[1] "%2 ਦੇ ਥਰਿੱਡ %1 ਗਰੁੱਪ"
 
-#: core/model.cpp:3814
+#: core/model.cpp:3824
 #, fuzzy, kde-format
 #| msgid "Grouped %1 Threads of %2"
 msgid "Updated 1 Group of %2"
@@ -549,7 +549,7 @@ msgid_plural "Updated %1 Groups of %2"
 msgstr[0] "%2 ਦੇ ਥਰਿੱਡ %1 ਗਰੁੱਪ"
 msgstr[1] "%2 ਦੇ ਥਰਿੱਡ %1 ਗਰੁੱਪ"
 
-#: core/model.cpp:3906
+#: core/model.cpp:3916
 #, kde-format
 msgctxt "@info:status Finished view fill"
 msgid "Ready"
