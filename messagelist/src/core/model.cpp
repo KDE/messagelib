@@ -3630,10 +3630,10 @@ static const char *jobDescription[numberOfPasses] = {"Creating items from messag
                                                      "Group resorting + cleanup"};
 
 // Timer to track time between start of first job and end of last job
-static QTime firstStartTime;
+static QElapsedTimer firstStartTime;
 
 // Timer to track time the current job takes
-static QTime currentJobStartTime;
+static QElapsedTimer currentJobStartTime;
 
 // Zeros the stats, to be called when the first job starts
 static void resetStats()
@@ -3848,7 +3848,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternal()
                 // This is why when mModelForItemFunctions was 0 we didn't actually expand them
                 // but we just set a "ExpandNeeded" mark...
 #ifdef KDEPIM_FOLDEROPEN_PROFILE
-                QTime layoutChangedTimer;
+                QElapsedTimer layoutChangedTimer;
                 layoutChangedTimer.start();
 #endif
                 mView->modelAboutToEmitLayoutChanged();
@@ -3857,7 +3857,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternal()
 
 #ifdef KDEPIM_FOLDEROPEN_PROFILE
                 Stats::layoutChangeTime = layoutChangedTimer.elapsed();
-                QTime expandingTime;
+                QElapsedTimer expandingTime;
                 expandingTime.start();
 #endif
 
