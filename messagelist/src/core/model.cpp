@@ -169,27 +169,27 @@ private:
 
     // The maximum time that we can spend "at once" inside viewItemJobStep() (milliseconds)
     // The bigger this value, the larger chunks of work we do at once and less the time
-    // we loose in "breaking and resuming" the job. On the other side large values tend
+    // we lose in "breaking and resuming" the job. On the other hand, large values tend
     // to make the view less responsive up to a "freeze" perception if this value is larger
     // than 2000.
     int mChunkTimeout;
 
     // The interval between two fillView steps. The larger the interval, the more interactivity
-    // we have. The shorter the interval the more work we get done per second.
+    // we have. The shorter the interval, the more work we get done per second.
     int mIdleInterval;
 
     // The minimum number of messages we process in every viewItemJobStep() call
-    // The larger this value the less time we loose in checking the timeout every N messages.
-    // On the other side, making this very large may make the view less responsive
+    // The larger this value, the less time we lose in checking the timeout every N messages.
+    // On the other hand, making this very large may make the view less responsive
     // if we're processing very few messages at a time and very high values (say > 10000) may
-    // eventually make our job unbreakable until the end.
+    // eventually make our job un-cancelable.
     int mMessageCheckCount;
     Pass mCurrentPass;
 
     // If this parameter is true then this job uses a "disconnected" UI.
     // It's FAR faster since we don't need to call beginInsertRows()/endInsertRows()
     // and we simply Q_EMIT a layoutChanged() at the end. It can be done only as the first
-    // job though: subsequent jobs can't use layoutChanged() as it looses the expanded
+    // job though: subsequent jobs can't use layoutChanged() as it loses the expanded
     // state of items.
     bool mDisconnectUI;
 

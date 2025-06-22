@@ -42,7 +42,7 @@ class Widget;
 /**
  * The MessageList::View is the real display of the message list. It is
  * based on QTreeView, has a Model that manipulates the underlying message storage
- * and a Delegate that is responsible of painting the items.
+ * and a Delegate that is responsible for painting the items.
  */
 class View : public QTreeView
 {
@@ -66,7 +66,8 @@ public:
     [[nodiscard]] Delegate *delegate() const;
 
     /**
-     * Sets the StorageModel to be displayed in this view. The StorageModel may be 0 (so no content is displayed).
+     * Sets the StorageModel to be displayed in this view. The StorageModel may be nullptr
+     * (so no content is displayed).
      * Setting the StorageModel will obviously trigger a view reload.
      * Be sure to set the Aggregation and the Theme BEFORE calling this function.
      *
@@ -76,7 +77,7 @@ public:
     void setStorageModel(StorageModel *storageModel, PreSelectionMode preSelectionMode = PreSelectLastSelected);
 
     /**
-     * Returns the currently displayed StorageModel. May be 0.
+     * Returns the currently displayed StorageModel. May be nullptr.
      */
     [[nodiscard]] StorageModel *storageModel() const;
 

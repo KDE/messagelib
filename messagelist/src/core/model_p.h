@@ -374,7 +374,7 @@ public:
     /**
      * We need to save the current item before each job step. This is because
      * our job may cause items to be reparented (thus removed and read with the current Qt API)
-     * and QTreeView will loose the current setting. We also use this to force the current
+     * and QTreeView will lose the current setting. We also use this to force the current
      * to a specific item after a cleanup job.
      */
     Item *mCurrentItemToRestoreAfterViewItemJobStep = nullptr;
