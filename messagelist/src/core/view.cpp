@@ -183,7 +183,7 @@ void View::ignoreUpdateGeometries(bool ignore)
     d->mIgnoreUpdateGeometries = ignore;
 }
 
-bool View::isScrollingLocked() const
+int View::scrollingLockDirection() const
 {
     // There is another popular requisite: people want the view to automatically
     // scroll in order to show new arriving mail. This actually makes sense
@@ -202,24 +202,29 @@ bool View::isScrollingLocked() const
     // The "locking" also doesn't make sense in the first big fill view job.
     // [Well this concept is pre-akonadi. Now the loading is all async anyway...
     //  So all this code is actually triggered during the initial loading, too.]
-    const int scrollBarPosition = verticalScrollBar()->value();
-    const int scrollBarMaximum = verticalScrollBar()->maximum();
-    const SortOrder *sortOrder = d->mModel->sortOrder();
-
     const bool notFirstLoadingJob = !d->mModel->isLoading();
 
+    const SortOrder *sortOrder = d->mModel->sortOrder();
     const SortOrder::MessageSorting msgSort = sortOrder->messageSorting();
     const bool sortByDate = //
         msgSort == SortOrder::SortMessagesByDateTime || //
         msgSort == SortOrder::SortMessagesByDateTimeOfMostRecent;
 
-    const SortOrder::SortDirection sortDirection = sortOrder->messageSortDirection();
-    const bool stayAtTop = scrollBarPosition == 0 && sortDirection == SortOrder::Descending;
-    const bool stayAtBottom = scrollBarPosition == scrollBarMaximum && sortDirection == SortOrder::Ascending;
+    if (notFirstLoadingJob && sortByDate) {
+        const int scrollBarPosition = verticalScrollBar()->value();
+        const int scrollBarMaximum = verticalScrollBar()->maximum();
 
-    const bool lockView = notFirstLoadingJob && sortByDate && (stayAtTop || stayAtBottom);
+        const SortOrder::SortDirection sortDirection = sortOrder->messageSortDirection();
+        const bool stayAtTop = scrollBarPosition == 0 && sortDirection == SortOrder::Descending;
+        const bool stayAtBottom = scrollBarPosition == scrollBarMaximum && sortDirection == SortOrder::Ascending;
+        if (stayAtTop) {
+            return -1;
+        } else if (stayAtBottom) {
+            return 1;
+        }
+    }
 
-    return lockView;
+    return 0;
 }
 
 void View::updateGeometries()
@@ -228,14 +233,13 @@ void View::updateGeometries()
         return;
     }
 
-    const int scrollBarPositionBefore = verticalScrollBar()->value();
-    const bool lockView = isScrollingLocked();
+    const int scrollLockDirection = scrollingLockDirection();
 
     QTreeView::updateGeometries();
 
-    if (lockView) {
+    if (scrollLockDirection != 0) {
         // we prefer to keep the view locked to the top or bottom
-        if (scrollBarPositionBefore != 0) {
+        if (scrollLockDirection == 1) {
             // we wanted the view to be locked to the bottom
             if (verticalScrollBar()->value() != verticalScrollBar()->maximum()) {
                 verticalScrollBar()->setValue(verticalScrollBar()->maximum());

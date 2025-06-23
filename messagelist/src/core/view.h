@@ -415,10 +415,10 @@ protected:
     void updateGeometries() override;
 
     /**
-     * Returns true if the vertical scrollbar should keep to the top or bottom
-     * while inserting items.
+     * Returns -1 if the view should stay scrolled to the top, 1 if it should stay scrolled to the bottom,
+     * and 0 if scrolling should not stay locked at one end.
      */
-    bool isScrollingLocked() const;
+    int scrollingLockDirection() const;
 
     /**
      *  Used to enable/disable the ignoring of updateGeometries() calls.

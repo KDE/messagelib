@@ -3946,10 +3946,10 @@ void ModelPrivate::viewItemJobStep()
     // the current item in the sample place when items are added or removed...
     QRect rectBeforeViewItemJobStep;
 
-    const bool lockView = mView->isScrollingLocked();
+    const int lockViewDirection = mView->scrollingLockDirection();
 
     // This is generally SLOW AS HELL... (so we avoid it if we lock the view and thus don't need it)
-    if (mCurrentItemToRestoreAfterViewItemJobStep && (!lockView)) {
+    if (mCurrentItemToRestoreAfterViewItemJobStep && (lockViewDirection == 0)) {
         rectBeforeViewItemJobStep = mView->visualRect(currentIndexBeforeStep);
     }
 
