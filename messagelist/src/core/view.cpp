@@ -205,17 +205,20 @@ bool View::isScrollingLocked() const
     const int scrollBarPosition = verticalScrollBar()->value();
     const int scrollBarMaximum = verticalScrollBar()->maximum();
     const SortOrder *sortOrder = d->mModel->sortOrder();
-    const bool lockView = (
-                              // not the first loading job
-                              !d->mModel->isLoading())
-        && (
-                              // messages sorted by date
-                              (sortOrder->messageSorting() == SortOrder::SortMessagesByDateTime)
-                              || (sortOrder->messageSorting() == SortOrder::SortMessagesByDateTimeOfMostRecent))
-        && (
-                              // scrollbar at top (Descending order) or bottom (Ascending order)
-                              (scrollBarPosition == 0 && sortOrder->messageSortDirection() == SortOrder::Descending)
-                              || (scrollBarPosition == scrollBarMaximum && sortOrder->messageSortDirection() == SortOrder::Ascending));
+
+    const bool notFirstLoadingJob = !d->mModel->isLoading();
+
+    const SortOrder::MessageSorting msgSort = sortOrder->messageSorting();
+    const bool sortByDate = //
+        msgSort == SortOrder::SortMessagesByDateTime || //
+        msgSort == SortOrder::SortMessagesByDateTimeOfMostRecent;
+
+    const SortOrder::SortDirection sortDirection = sortOrder->messageSortDirection();
+    const bool stayAtTop = scrollBarPosition == 0 && sortDirection == SortOrder::Descending;
+    const bool stayAtBottom = scrollBarPosition == scrollBarMaximum && sortDirection == SortOrder::Ascending;
+
+    const bool lockView = notFirstLoadingJob && sortByDate && (stayAtTop || stayAtBottom);
+
     return lockView;
 }
 
