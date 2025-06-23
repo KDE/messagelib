@@ -202,7 +202,6 @@ int View::scrollingLockDirection() const
     // The "locking" also doesn't make sense in the first big fill view job.
     // [Well this concept is pre-akonadi. Now the loading is all async anyway...
     //  So all this code is actually triggered during the initial loading, too.]
-    const bool notFirstLoadingJob = !d->mModel->isLoading();
 
     const SortOrder *sortOrder = d->mModel->sortOrder();
     const SortOrder::MessageSorting msgSort = sortOrder->messageSorting();
@@ -210,7 +209,7 @@ int View::scrollingLockDirection() const
         msgSort == SortOrder::SortMessagesByDateTime || //
         msgSort == SortOrder::SortMessagesByDateTimeOfMostRecent;
 
-    if (notFirstLoadingJob && sortByDate) {
+    if (sortByDate) {
         const int scrollBarPosition = verticalScrollBar()->value();
         const int scrollBarMaximum = verticalScrollBar()->maximum();
 
