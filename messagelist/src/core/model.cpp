@@ -803,39 +803,34 @@ void Model::setStorageModel(StorageModel *storageModel, PreSelectionMode preSele
     d->mPreSelectionMode = preSelectionMode;
     d->mStorageModelContainsOutboundMessages = d->mStorageModel->containsOutboundMessages();
 
-    d->mStorageModelConnections = {connect(d->mStorageModel,
-                                           &StorageModel::rowsInserted,
-                                           this,
-                                           [this](const QModelIndex &parent, int first, int last) {
-                                               d->slotStorageModelRowsInserted(parent, first, last);
-                                           }),
-                                   connect(d->mStorageModel,
-                                           &StorageModel::rowsRemoved,
-                                           this,
-                                           [this](const QModelIndex &parent, int first, int last) {
-                                               d->slotStorageModelRowsRemoved(parent, first, last);
-                                           }),
-                                   connect(d->mStorageModel,
-                                           &StorageModel::layoutChanged,
-                                           this,
-                                           [this]() {
-                                               d->slotStorageModelLayoutChanged();
-                                           }),
-                                   connect(d->mStorageModel,
-                                           &StorageModel::modelReset,
-                                           this,
-                                           [this]() {
-                                               d->slotStorageModelLayoutChanged();
-                                           }),
-                                   connect(d->mStorageModel,
-                                           &StorageModel::dataChanged,
-                                           this,
-                                           [this](const QModelIndex &topLeft, const QModelIndex &bottomRight) {
-                                               d->slotStorageModelDataChanged(topLeft, bottomRight);
-                                           }),
-                                   connect(d->mStorageModel, &StorageModel::headerDataChanged, this, [this](Qt::Orientation orientation, int first, int last) {
-                                       d->slotStorageModelHeaderDataChanged(orientation, first, last);
-                                   })};
+    // clang-format off
+    d->mStorageModelConnections = {
+        connect(d->mStorageModel,  &StorageModel::rowsInserted,
+                this, [this](const QModelIndex &parent, int first, int last) {
+            d->slotStorageModelRowsInserted(parent, first, last);
+        }),
+        connect(d->mStorageModel, &StorageModel::rowsRemoved,
+                this, [this](const QModelIndex &parent, int first, int last) {
+            d->slotStorageModelRowsRemoved(parent, first, last);
+        }),
+        connect(d->mStorageModel, &StorageModel::layoutChanged,
+                this, [this]() {
+            d->slotStorageModelLayoutChanged();
+        }),
+        connect(d->mStorageModel, &StorageModel::modelReset,
+                this, [this]() {
+            d->slotStorageModelLayoutChanged();
+        }),
+        connect(d->mStorageModel, &StorageModel::dataChanged,
+                this, [this](const QModelIndex &topLeft, const QModelIndex &bottomRight) {
+            d->slotStorageModelDataChanged(topLeft, bottomRight);
+        }),
+        connect(d->mStorageModel, &StorageModel::headerDataChanged,
+                this, [this](Qt::Orientation orientation, int first, int last) {
+            d->slotStorageModelHeaderDataChanged(orientation, first, last);
+        })
+    };
+    // clang-format on
 
     if (d->mStorageModel->rowCount() == 0) {
         return; // folder empty: nothing to fill
