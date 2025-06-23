@@ -4099,7 +4099,7 @@ void ModelPrivate::viewItemJobStep()
         }
 
         // FIXME: If it was selected before the change, then re-select it (it may happen that it's not)
-        if (!lockView) {
+        if (lockViewDirection == 0) {
             // we prefer to keep the currently selected item steady in the view
             QRect rectAfterViewItemJobStep = mView->visualRect(q->index(mCurrentItemToRestoreAfterViewItemJobStep, 0));
             if (rectBeforeViewItemJobStep.y() != rectAfterViewItemJobStep.y()) {
