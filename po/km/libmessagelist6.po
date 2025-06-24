@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-10 00:43+0000\n"
+"POT-Creation-Date: 2025-06-24 00:43+0000\n"
 "PO-Revision-Date: 2012-12-28 16:26+0700\n"
 "Last-Translator: sutha <sutha@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros>\n"
@@ -461,7 +461,7 @@ msgstr "ស្អាត​មាន​ស្ថានភាព​ដែល​អ
 msgid "A smart multiline and multi item theme with a clickable status column"
 msgstr "បន្ទាត់​ច្រើន​ស្អាត និង​ស្បែក​ធាតុ​ច្រើន​ដែល​មាន​ជួរ​ឈរ​ដែល​អាច​ចុច​បាន"
 
-#: core/manager.cpp:772 core/view.cpp:2256 core/view.cpp:2260
+#: core/manager.cpp:772 core/view.cpp:2262 core/view.cpp:2266
 #, kde-format
 msgid "Status"
 msgstr "​ស្ថានភាព"
@@ -511,37 +511,37 @@ msgstr "អ្នកទទួល"
 msgid "Sender"
 msgstr "​អ្នក​ផ្ញើ"
 
-#: core/model.cpp:1380
+#: core/model.cpp:1375
 #, kde-format
 msgctxt "Message Aggregation Group Header: Month name and Year number"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: core/model.cpp:3800
+#: core/model.cpp:3795
 #, kde-format
 msgid "Processed 1 Message of %2"
 msgid_plural "Processed %1 Messages of %2"
 msgstr[0] "បាន​ចូល​ដំណើរការ​សារ %1 នៃ %2"
 
-#: core/model.cpp:3806 core/model.cpp:3812
+#: core/model.cpp:3801 core/model.cpp:3807
 #, kde-format
 msgid "Threaded 1 Message of %2"
 msgid_plural "Threaded %1 Messages of %2"
 msgstr[0] "បាន​ក្រង​ខ្សែស្រឡាយ​សារ %1 នៃ %2"
 
-#: core/model.cpp:3818
+#: core/model.cpp:3813
 #, kde-format
 msgid "Grouped 1 Thread of %2"
 msgid_plural "Grouped %1 Threads of %2"
 msgstr[0] "បាន​ដាក់ក្រុម​ខ្សែស្រឡាយ %1 នៃ %2"
 
-#: core/model.cpp:3824
+#: core/model.cpp:3819
 #, kde-format
 msgid "Updated 1 Group of %2"
 msgid_plural "Updated %1 Groups of %2"
 msgstr[0] "បាន​ធ្វើ​​បច្ចុប្បន្នភាព​ក្រុម %1 នៃ %2 "
 
-#: core/model.cpp:3916
+#: core/model.cpp:3911
 #, kde-format
 msgctxt "@info:status Finished view fill"
 msgid "Ready"
@@ -848,180 +848,180 @@ msgstr "Styled Rectangles"
 msgid "Styled Joined Rectangles"
 msgstr "Styled Joined Rectangles"
 
-#: core/view.cpp:680 core/widgets/configurefilterswidget.cpp:152
+#: core/view.cpp:686 core/widgets/configurefilterswidget.cpp:152
 #, kde-format
 msgid "No result found"
 msgstr ""
 
-#: core/view.cpp:759
+#: core/view.cpp:765
 #, kde-format
 msgid "Adjust Column Sizes"
 msgstr "លៃតម្រូវ​ទំហំ​ជួរ​ឈរ"
 
-#: core/view.cpp:763
+#: core/view.cpp:769
 #, kde-format
 msgid "Show Default Columns"
 msgstr "បង្ហាញ​ជួរ​ឈរ​លំនាំដើម"
 
-#: core/view.cpp:768
+#: core/view.cpp:774
 #, kde-format
 msgid "Display Tooltips"
 msgstr "បង្ហាញ​ព័ត៌មាន​ជំនួយ"
 
-#: core/view.cpp:2237 core/view.cpp:2241
+#: core/view.cpp:2243 core/view.cpp:2247
 #: core/widgets/searchmessagebybuttons.cpp:73
 #, kde-format
 msgid "From"
 msgstr "ពី"
 
-#: core/view.cpp:2238 core/view.cpp:2242
+#: core/view.cpp:2244 core/view.cpp:2248
 #, kde-format
 msgctxt "Receiver of the email"
 msgid "To"
 msgstr "​ជូន​ចំពោះ"
 
-#: core/view.cpp:2239 core/view.cpp:2243
+#: core/view.cpp:2245 core/view.cpp:2249
 #, kde-format
 msgid "Date"
 msgstr "កាលបរិច្ឆេទ"
 
-#: core/view.cpp:2257 core/view.cpp:2261
+#: core/view.cpp:2263 core/view.cpp:2267
 #, kde-format
 msgid "Size"
 msgstr "ទំហំ"
 
-#: core/view.cpp:2258 core/view.cpp:2262 utils/themeeditor.cpp:189
+#: core/view.cpp:2264 core/view.cpp:2268 utils/themeeditor.cpp:189
 #, kde-format
 msgid "Folder"
 msgstr ""
 
-#: core/view.cpp:2268 core/view.cpp:2270
+#: core/view.cpp:2274 core/view.cpp:2276
 #, kde-format
 msgid "Preview"
 msgstr "មុន​"
 
-#: core/view.cpp:2287
+#: core/view.cpp:2293
 #, kde-format
 msgid "<b>%1</b> reply"
 msgid_plural "<b>%1</b> replies"
 msgstr[0] "<b>%1</b> ចម្លើយតប"
 
-#: core/view.cpp:2290
+#: core/view.cpp:2296
 #, kde-format
 msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
 msgstr[0] "<b>%1</b> សារ​នៅក្នុង​មែកធាងរង​​ (<b>%2</b> មិនទាន់​អាន​)"
 
-#: core/view.cpp:2327
+#: core/view.cpp:2333
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Threads started on 2008-12-21'"
 msgid "Threads started on %1"
 msgstr "បាន​ចាប់ផ្ដើម​ខ្សែ​ស្រឡាយ​នៅ %1"
 
-#: core/view.cpp:2329
+#: core/view.cpp:2335
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Threads started Yesterday'"
 msgid "Threads started %1"
 msgstr "បាន​ចាប់ផ្ដើម​ខ្សែ​ស្រឡាយ %1"
 
-#: core/view.cpp:2333
+#: core/view.cpp:2339
 #, kde-format
 msgid "Threads with messages dated %1"
 msgstr "ខ្សែ​ស្រឡាយ​ដែល​មាន​សារ​មាន​កាលបរិច្ឆេទ %1"
 
-#: core/view.cpp:2343
+#: core/view.cpp:2349
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'"
 msgid "Messages sent on %1"
 msgstr "សារ​ត្រូវបាន​ផ្ញើ​នៅ %1។"
 
-#: core/view.cpp:2346
+#: core/view.cpp:2352
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Messages received on 2008-12-21'"
 msgid "Messages received on %1"
 msgstr "បាន​ទទួល​សារ​នៅ %1"
 
-#: core/view.cpp:2350
+#: core/view.cpp:2356
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent Yesterday'"
 msgid "Messages sent %1"
 msgstr "សារ​បាន​ផ្ញើ %1"
 
-#: core/view.cpp:2352
+#: core/view.cpp:2358
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages received Yesterday'"
 msgid "Messages received %1"
 msgstr "បាន​ទទួលសារ %1"
 
-#: core/view.cpp:2361
+#: core/view.cpp:2367
 #, kde-format
 msgid "Threads started within %1"
 msgstr "ខ្សែ​ស្រឡាយ​បាន​ចាប់ផ្ដើម​នៅ​ក្នុង %1"
 
-#: core/view.cpp:2364
+#: core/view.cpp:2370
 #, kde-format
 msgid "Threads containing messages with dates within %1"
 msgstr "ខ្សែ​ស្រឡាយ​មាន​សារ​ដែល​មាន​កាលបរិច្ឆេទ​ក្នុង %1"
 
-#: core/view.cpp:2372
+#: core/view.cpp:2378
 #, kde-format
 msgid "Messages sent within %1"
 msgstr "សារ​ត្រូវបាន​ផ្ញើ​នៅ​ក្នុង %1"
 
-#: core/view.cpp:2374
+#: core/view.cpp:2380
 #, kde-format
 msgid "Messages received within %1"
 msgstr "សារ​ត្រូវ​បាន​ទទួល​នៅ​ក្នុង %1"
 
-#: core/view.cpp:2383
+#: core/view.cpp:2389
 #, kde-format
 msgid "Threads started by %1"
 msgstr "ខ្សែស្រឡាយ​ត្រូវបាន​ចាប់ផ្ដើម​ដោយ %1"
 
-#: core/view.cpp:2386
+#: core/view.cpp:2392
 #, kde-format
 msgid "Threads with most recent message by %1"
 msgstr "ខ្សែស្រឡាយ​ដែល​មាន​សារ​ថ្មីៗ​បំផុត​ដោយ %1"
 
-#: core/view.cpp:2395 core/view.cpp:2419
+#: core/view.cpp:2401 core/view.cpp:2425
 #, kde-format
 msgid "Messages sent to %1"
 msgstr "សារ​ត្រូវបាន​ផ្ញើ​ទៅ %1"
 
-#: core/view.cpp:2397
+#: core/view.cpp:2403
 #, kde-format
 msgid "Messages sent by %1"
 msgstr "សារ​ត្រូវ​បាន​ផ្ញើ​ដោយ %1"
 
-#: core/view.cpp:2400
+#: core/view.cpp:2406
 #, kde-format
 msgid "Messages received from %1"
 msgstr "បាន​ទទួល​សារ​ពី %1"
 
-#: core/view.cpp:2408
+#: core/view.cpp:2414
 #, kde-format
 msgid "Threads directed to %1"
 msgstr "ខ្សែស្រឡាយ​បាន​បញ្ជូន​ទៅ %1"
 
-#: core/view.cpp:2411
+#: core/view.cpp:2417
 #, kde-format
 msgid "Threads with most recent message directed to %1"
 msgstr "ខ្សែ​ស្រឡាយ​ដែល​មាន​សារ​ថ្មីៗ​បំផុត​ត្រូវបាន​បញ្ជូន​ទៅ %1"
 
-#: core/view.cpp:2421
+#: core/view.cpp:2427
 #, kde-format
 msgid "Messages received by %1"
 msgstr "បាន​ទទួល​សារ​ដោយ %1"
 
-#: core/view.cpp:2447
+#: core/view.cpp:2453
 #, kde-format
 msgid "<b>%1</b> thread"
 msgid_plural "<b>%1</b> threads"
 msgstr[0] "ខ្សែ​ស្រឡាយ <b>%1</b>"
 
-#: core/view.cpp:2452
+#: core/view.cpp:2458
 #, kde-format
 msgid "<b>%1</b> message (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"

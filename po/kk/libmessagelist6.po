@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-10 00:43+0000\n"
+"POT-Creation-Date: 2025-06-24 00:43+0000\n"
 "PO-Revision-Date: 2013-10-16 04:42+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -460,7 +460,7 @@ msgstr "Күшті, түртетін күй-жайы"
 msgid "A smart multiline and multi item theme with a clickable status column"
 msgstr "Күшті, көпжолды, мәліметі толық, түртетін бағанды нақышы"
 
-#: core/manager.cpp:772 core/view.cpp:2256 core/view.cpp:2260
+#: core/manager.cpp:772 core/view.cpp:2262 core/view.cpp:2266
 #, kde-format
 msgid "Status"
 msgstr "Күй-жайы"
@@ -510,37 +510,37 @@ msgstr "Алушы"
 msgid "Sender"
 msgstr "Жіберуші"
 
-#: core/model.cpp:1380
+#: core/model.cpp:1375
 #, kde-format
 msgctxt "Message Aggregation Group Header: Month name and Year number"
 msgid "%1 %2"
 msgstr "%1 %2 жыл"
 
-#: core/model.cpp:3800
+#: core/model.cpp:3795
 #, kde-format
 msgid "Processed 1 Message of %2"
 msgid_plural "Processed %1 Messages of %2"
 msgstr[0] "%2 хаттан %1 өңделді"
 
-#: core/model.cpp:3806 core/model.cpp:3812
+#: core/model.cpp:3801 core/model.cpp:3807
 #, kde-format
 msgid "Threaded 1 Message of %2"
 msgid_plural "Threaded %1 Messages of %2"
 msgstr[0] "%2 хаттан %1 ілеспелерге жіктелді"
 
-#: core/model.cpp:3818
+#: core/model.cpp:3813
 #, kde-format
 msgid "Grouped 1 Thread of %2"
 msgid_plural "Grouped %1 Threads of %2"
 msgstr[0] "%2 ілеспелерден %1 топталды"
 
-#: core/model.cpp:3824
+#: core/model.cpp:3819
 #, kde-format
 msgid "Updated 1 Group of %2"
 msgid_plural "Updated %1 Groups of %2"
 msgstr[0] "%2 топтан %1 жаңартылды"
 
-#: core/model.cpp:3916
+#: core/model.cpp:3911
 #, kde-format
 msgctxt "@info:status Finished view fill"
 msgid "Ready"
@@ -850,181 +850,181 @@ msgstr "Мәнерленген тікбұрыштар"
 msgid "Styled Joined Rectangles"
 msgstr "Мәнерленген жабысқан тікбұрыштар"
 
-#: core/view.cpp:680 core/widgets/configurefilterswidget.cpp:152
+#: core/view.cpp:686 core/widgets/configurefilterswidget.cpp:152
 #, fuzzy, kde-format
 #| msgid "No signature found"
 msgid "No result found"
 msgstr "Қолтаңба табылмады"
 
-#: core/view.cpp:759
+#: core/view.cpp:765
 #, kde-format
 msgid "Adjust Column Sizes"
 msgstr "Баған өлшемін шақтау"
 
-#: core/view.cpp:763
+#: core/view.cpp:769
 #, kde-format
 msgid "Show Default Columns"
 msgstr "Әдетті бағандарды көрсету"
 
-#: core/view.cpp:768
+#: core/view.cpp:774
 #, kde-format
 msgid "Display Tooltips"
 msgstr "Ишараларды көрсету"
 
-#: core/view.cpp:2237 core/view.cpp:2241
+#: core/view.cpp:2243 core/view.cpp:2247
 #: core/widgets/searchmessagebybuttons.cpp:73
 #, kde-format
 msgid "From"
 msgstr "Кімден"
 
-#: core/view.cpp:2238 core/view.cpp:2242
+#: core/view.cpp:2244 core/view.cpp:2248
 #, kde-format
 msgctxt "Receiver of the email"
 msgid "To"
 msgstr "Кімге"
 
-#: core/view.cpp:2239 core/view.cpp:2243
+#: core/view.cpp:2245 core/view.cpp:2249
 #, kde-format
 msgid "Date"
 msgstr "Кезі"
 
-#: core/view.cpp:2257 core/view.cpp:2261
+#: core/view.cpp:2263 core/view.cpp:2267
 #, kde-format
 msgid "Size"
 msgstr "Өлшемі"
 
-#: core/view.cpp:2258 core/view.cpp:2262 utils/themeeditor.cpp:189
+#: core/view.cpp:2264 core/view.cpp:2268 utils/themeeditor.cpp:189
 #, kde-format
 msgid "Folder"
 msgstr "Қапшық"
 
-#: core/view.cpp:2268 core/view.cpp:2270
+#: core/view.cpp:2274 core/view.cpp:2276
 #, kde-format
 msgid "Preview"
 msgstr "Қарап-шығу"
 
-#: core/view.cpp:2287
+#: core/view.cpp:2293
 #, kde-format
 msgid "<b>%1</b> reply"
 msgid_plural "<b>%1</b> replies"
 msgstr[0] "<b>%1</b> жауап"
 
-#: core/view.cpp:2290
+#: core/view.cpp:2296
 #, kde-format
 msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
 msgstr[0] "Бұтақта <b>%1</b> хат (<b>%2</b> оқылмаған)"
 
-#: core/view.cpp:2327
+#: core/view.cpp:2333
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Threads started on 2008-12-21'"
 msgid "Threads started on %1"
 msgstr "%1 басталған ілеспелер"
 
-#: core/view.cpp:2329
+#: core/view.cpp:2335
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Threads started Yesterday'"
 msgid "Threads started %1"
 msgstr "%1 басталған ілеспелер"
 
-#: core/view.cpp:2333
+#: core/view.cpp:2339
 #, kde-format
 msgid "Threads with messages dated %1"
 msgstr "Кезі %1 деп белгіенгн ілеспелер"
 
-#: core/view.cpp:2343
+#: core/view.cpp:2349
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'"
 msgid "Messages sent on %1"
 msgstr "%1 жіберілген хаттар"
 
-#: core/view.cpp:2346
+#: core/view.cpp:2352
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Messages received on 2008-12-21'"
 msgid "Messages received on %1"
 msgstr "%1 қабылданған хаттар"
 
-#: core/view.cpp:2350
+#: core/view.cpp:2356
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent Yesterday'"
 msgid "Messages sent %1"
 msgstr "%1 жіберілген хат"
 
-#: core/view.cpp:2352
+#: core/view.cpp:2358
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages received Yesterday'"
 msgid "Messages received %1"
 msgstr "%1 қабылданған хат"
 
-#: core/view.cpp:2361
+#: core/view.cpp:2367
 #, kde-format
 msgid "Threads started within %1"
 msgstr "%1 кезінде басталған ілеспелер"
 
-#: core/view.cpp:2364
+#: core/view.cpp:2370
 #, kde-format
 msgid "Threads containing messages with dates within %1"
 msgstr "Кезі %1 дегені бар ілеспелер"
 
-#: core/view.cpp:2372
+#: core/view.cpp:2378
 #, kde-format
 msgid "Messages sent within %1"
 msgstr "Жіберілген кезі %1 деген хаттар"
 
-#: core/view.cpp:2374
+#: core/view.cpp:2380
 #, kde-format
 msgid "Messages received within %1"
 msgstr "Қабылданған кезі %1 деген хаттар"
 
-#: core/view.cpp:2383
+#: core/view.cpp:2389
 #, kde-format
 msgid "Threads started by %1"
 msgstr "%1 бастаған ілеспелер"
 
-#: core/view.cpp:2386
+#: core/view.cpp:2392
 #, kde-format
 msgid "Threads with most recent message by %1"
 msgstr "Жуырдағы хаттары бар %1 бастаған ілеспелер"
 
-#: core/view.cpp:2395 core/view.cpp:2419
+#: core/view.cpp:2401 core/view.cpp:2425
 #, kde-format
 msgid "Messages sent to %1"
 msgstr "%1 дегене жіберілген хаттар"
 
-#: core/view.cpp:2397
+#: core/view.cpp:2403
 #, kde-format
 msgid "Messages sent by %1"
 msgstr "%1 жіберген хаттар"
 
-#: core/view.cpp:2400
+#: core/view.cpp:2406
 #, kde-format
 msgid "Messages received from %1"
 msgstr "%1 дегеннен келген хаттар"
 
-#: core/view.cpp:2408
+#: core/view.cpp:2414
 #, kde-format
 msgid "Threads directed to %1"
 msgstr "%1 дегенге арналған ілеспелер"
 
-#: core/view.cpp:2411
+#: core/view.cpp:2417
 #, kde-format
 msgid "Threads with most recent message directed to %1"
 msgstr "Жуырдағы хаттары бар %1 дегенге арналған ілеспелер"
 
-#: core/view.cpp:2421
+#: core/view.cpp:2427
 #, kde-format
 msgid "Messages received by %1"
 msgstr "%1 қабылдаған хаттар"
 
-#: core/view.cpp:2447
+#: core/view.cpp:2453
 #, kde-format
 msgid "<b>%1</b> thread"
 msgid_plural "<b>%1</b> threads"
 msgstr[0] "<b>%1</b> ілеспе тобы"
 
-#: core/view.cpp:2452
+#: core/view.cpp:2458
 #, kde-format
 msgid "<b>%1</b> message (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
