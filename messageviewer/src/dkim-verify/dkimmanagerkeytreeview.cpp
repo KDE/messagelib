@@ -76,20 +76,16 @@ void DKIMManagerKeyTreeView::slotCustomContextMenuRequested(const QPoint &pos)
             menu.addSeparator();
         }
 
-        menu.addAction(QIcon::fromTheme(u"edit-delete"_s),
-                       i18np("Remove Key", "Remove Keys", selectedItemCount),
-                       this,
-                       [this, selectedItemCount]() {
-                           const int answer =
-                               KMessageBox::questionTwoActions(this,
+        menu.addAction(QIcon::fromTheme(u"edit-delete"_s), i18np("Remove Key", "Remove Keys", selectedItemCount), this, [this, selectedItemCount]() {
+            const int answer = KMessageBox::questionTwoActions(this,
                                                                i18np("Do you want to delete this key?", "Do you want to delete these keys?", selectedItemCount),
                                                                i18np("Delete Key", "Delete Keys", selectedItemCount),
                                                                KStandardGuiItem::del(),
                                                                KStandardGuiItem::cancel());
-                           if (answer == KMessageBox::ButtonCode::PrimaryAction) {
-                               deleteSelectedItems();
-                           }
-                       });
+            if (answer == KMessageBox::ButtonCode::PrimaryAction) {
+                deleteSelectedItems();
+            }
+        });
         menu.addSeparator();
     }
     if (mManagerKeyProxyModel->rowCount() > 0) {
