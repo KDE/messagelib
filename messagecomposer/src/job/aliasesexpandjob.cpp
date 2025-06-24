@@ -34,7 +34,7 @@ void AliasesExpandJob::start()
     // or nick name and save the results in a map for later lookup
     for (const QString &recipient : std::as_const(mRecipients)) {
         // speedup: assume aliases and list names don't contain '@'
-        if (recipient.isEmpty() || recipient.contains(QLatin1Char('@'))) {
+        if (recipient.isEmpty() || recipient.contains(u'@')) {
             continue;
         }
 
@@ -165,9 +165,9 @@ void AliasesExpandJob::finishExpansion()
 
         // check whether the address is missing the domain part
         KEmailAddress::splitAddress(receiver, displayName, addrSpec, comment);
-        if (!addrSpec.contains(QLatin1Char('@'))) {
+        if (!addrSpec.contains(u'@')) {
             if (!mDefaultDomain.isEmpty()) {
-                mEmailAddresses += KEmailAddress::normalizedAddress(displayName, addrSpec + QLatin1Char('@') + mDefaultDomain, comment);
+                mEmailAddresses += KEmailAddress::normalizedAddress(displayName, addrSpec + u'@' + mDefaultDomain, comment);
             } else {
                 mEmailAddresses += MessageCore::StringUtil::guessEmailAddressFromLoginName(addrSpec);
             }

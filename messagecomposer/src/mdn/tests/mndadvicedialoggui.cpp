@@ -5,6 +5,7 @@
 */
 
 #include "mdn/mdnadvicedialog.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <QApplication>
 #include <QDebug>
@@ -12,7 +13,7 @@ int main(int argc, char **argv)
 {
     QApplication app(argc, argv);
 
-    auto w = new MessageComposer::MDNAdviceDialog(QStringLiteral("test mnda"), true);
+    auto w = new MessageComposer::MDNAdviceDialog(u"test mnda"_s, true);
     MessageComposer::MDNAdvice rc = MessageComposer::MDNIgnore;
     if (w->exec()) {
         rc = w->result();

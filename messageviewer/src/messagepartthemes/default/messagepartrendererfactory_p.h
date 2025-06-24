@@ -7,6 +7,8 @@
 #pragma once
 
 #include <QByteArray>
+using namespace Qt::Literals::StringLiterals;
+
 #include <QHash>
 #include <QString>
 
@@ -32,6 +34,6 @@ public:
     void insert(const QByteArray &type, MessagePartRendererBase *formatter, const QString &mimeType = QString(), int priority = 0);
 
     QHash<QByteArray, std::vector<RendererInfo>> m_renderers;
-    QString m_pluginSubdir = QStringLiteral("pim6/messageviewer/bodypartformatter");
+    QString m_pluginSubdir = u"pim6/messageviewer/bodypartformatter"_s;
 };
 }

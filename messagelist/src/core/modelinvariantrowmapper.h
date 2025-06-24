@@ -9,6 +9,8 @@
 #pragma once
 
 #include <QHash>
+using namespace Qt::Literals::StringLiterals;
+
 #include <QList>
 #include <QObject>
 

@@ -22,6 +22,7 @@
 #include <QRegularExpression>
 
 using namespace MessageComposer;
+using namespace Qt::Literals::StringLiterals;
 
 class MessageComposer::RichTextComposerNgPrivate
 {
@@ -91,7 +92,7 @@ bool RichTextComposerNg::processModifyText(QKeyEvent *e)
                 const bool spacePressed = (e->key() == Qt::Key_Space);
                 if (overwriteMode() && spacePressed) {
                     if (addSpace) {
-                        const QChar insertChar = QLatin1Char(' ');
+                        const QChar insertChar = u' ';
                         if (!cur.atBlockEnd()) {
                             cur.movePosition(QTextCursor::NextCharacter, QTextCursor::KeepAnchor, 1);
                         }
@@ -103,7 +104,7 @@ bool RichTextComposerNg::processModifyText(QKeyEvent *e)
                         setTextCursor(cur);
                     }
                 } else {
-                    const QChar insertChar = spacePressed ? QLatin1Char(' ') : QLatin1Char('\n');
+                    const QChar insertChar = spacePressed ? u' ' : u'\n';
                     if (richText && !isSpecial(initialTextFormat)) {
                         if ((spacePressed && addSpace) || !spacePressed) {
                             cur.insertText(insertChar, initialTextFormat);
@@ -125,7 +126,7 @@ bool RichTextComposerNg::processModifyText(QKeyEvent *e)
 void RichTextComposerNgPrivate::fixHtmlFontSize(QString &cleanHtml) const
 {
     // non-greedy matching
-    static const QRegularExpression styleRegex(QStringLiteral("<span style=\".*?font-size:(.*?)pt;.*?</span>"));
+    static const QRegularExpression styleRegex(u"<span style=\".*?font-size:(.*?)pt;.*?</span>"_s);
 
     QRegularExpressionMatch rmatch;
     int offset = 0;
@@ -185,8 +186,7 @@ void RichTextComposerNg::fillComposerTextPart(MessageComposer::TextPart *textPar
         KPIMTextEdit::MarkupDirector pmd(&pb);
         pmd.processDocument(document());
         QString cleanHtml =
-            QStringLiteral("<html>\n<head>\n<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>%1</body>\n</html>")
-                .arg(pb.getResult());
+            u"<html>\n<head>\n<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>%1</body>\n</html>"_s.arg(pb.getResult());
         d->fixHtmlFontSize(cleanHtml);
         textPart->setCleanHtml(cleanHtml);
         // qDebug() << " cleanHtml  grantlee builder" << cleanHtml;
@@ -206,15 +206,15 @@ QString RichTextComposerNgPrivate::toCleanHtml() const
     // Qt inserts various style properties based on the current mode of the editor (underline,
     // bold, etc), but only empty paragraphs *also* have qt-paragraph-type set to 'empty'.
     // Minimal/non-greedy matching
-    static const QString EMPTYLINEREGEX = QStringLiteral("<p style=\"-qt-paragraph-type:empty;(?:.*?)</p>");
+    static const QString EMPTYLINEREGEX = u"<p style=\"-qt-paragraph-type:empty;(?:.*?)</p>"_s;
 
-    static const QString OLLISTPATTERNQT = QStringLiteral("<ol style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px;");
+    static const QString OLLISTPATTERNQT = u"<ol style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px;"_s;
 
-    static const QString ULLISTPATTERNQT = QStringLiteral("<ul style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px;");
+    static const QString ULLISTPATTERNQT = u"<ul style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px;"_s;
 
-    static const QString ORDEREDLISTHTML = QStringLiteral("<ol style=\"margin-top: 0px; margin-bottom: 0px;");
+    static const QString ORDEREDLISTHTML = u"<ol style=\"margin-top: 0px; margin-bottom: 0px;"_s;
 
-    static const QString UNORDEREDLISTHTML = QStringLiteral("<ul style=\"margin-top: 0px; margin-bottom: 0px;");
+    static const QString UNORDEREDLISTHTML = u"<ul style=\"margin-top: 0px; margin-bottom: 0px;"_s;
 
     // fix 1 - empty lines should show as empty lines - MS Outlook treats margin-top:0px; as
     // a non-existing line.
@@ -270,9 +270,9 @@ static void insertSignatureHelper(const QString &signature,
         QString lineSep;
         if (addNewlines) {
             if (isHtml) {
-                lineSep = QStringLiteral("<br>");
+                lineSep = u"<br>"_s;
             } else {
-                lineSep = QLatin1Char('\n');
+                lineSep = u'\n';
             }
         }
 

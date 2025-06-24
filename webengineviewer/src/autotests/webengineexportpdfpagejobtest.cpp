@@ -5,6 +5,8 @@
 */
 
 #include "webengineexportpdfpagejobtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "webengineexportpdfpagejob.h"
 #include <QDialog>
 #include <QSignalSpy>
@@ -31,7 +33,7 @@ void WebEngineExportPdfPageJobTest::shouldBeAbleToExport()
 {
     WebEngineViewer::WebEngineExportPdfPageJob job;
     QVERIFY(!job.canStart());
-    job.setPdfPath(QStringLiteral("foo"));
+    job.setPdfPath(u"foo"_s);
     QVERIFY(!job.canStart());
     auto webEngine = new QWebEngineView;
 
@@ -56,7 +58,7 @@ void WebEngineExportPdfPageJobTest::shouldEmitSignalSuccess()
     WebEngineViewer::WebEngineExportPdfPageJob job;
     QSignalSpy spyFailed(&job, &WebEngineViewer::WebEngineExportPdfPageJob::exportPdfFailed);
     QSignalSpy spySuccess(&job, &WebEngineViewer::WebEngineExportPdfPageJob::exportToPdfSuccess);
-    job.setPdfPath(QDir::tempPath() + QStringLiteral("/test-webengine-export-test.pdf"));
+    job.setPdfPath(QDir::tempPath() + u"/test-webengine-export-test.pdf"_s);
     auto webEngine = new QWebEngineView;
     job.setEngineView(webEngine);
 

@@ -5,6 +5,8 @@
 */
 
 #include "dmarclookupkey.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "dkim-verify/dmarcrecordjob.h"
 #include <QCommandLineParser>
 #include <QCoreApplication>
@@ -40,7 +42,7 @@ int main(int argc, char **argv)
     QCommandLineParser parser;
     parser.addVersionOption();
     parser.addHelpOption();
-    parser.addPositionalArgument(QStringLiteral("server address"), QStringLiteral("add specific server address"));
+    parser.addPositionalArgument(u"server address"_s, u"add specific server address"_s);
     parser.process(app);
 
     if (!parser.positionalArguments().isEmpty()) {

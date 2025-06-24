@@ -5,6 +5,7 @@
 */
 
 #include "savecontactpreferencejob.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <KJob>
 #include <KLocalizedString>

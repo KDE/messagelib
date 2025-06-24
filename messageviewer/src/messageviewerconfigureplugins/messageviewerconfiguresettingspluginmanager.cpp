@@ -5,6 +5,8 @@
 */
 
 #include "messageviewerconfiguresettingspluginmanager.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "messageviewer_debug.h"
 #include "messageviewerconfiguresettingsplugin.h"
 #include <KPluginFactory>
@@ -51,7 +53,7 @@ namespace
 {
 QString configurePluginVersion()
 {
-    return QStringLiteral("1.0");
+    return u"1.0"_s;
 }
 }
 
@@ -62,17 +64,17 @@ QList<PimCommon::PluginUtilData> MessageViewerConfigureSettingsPluginManagerPriv
 
 QString MessageViewerConfigureSettingsPluginManagerPrivate::configGroupName() const
 {
-    return QStringLiteral("MessageViewerConfigureSettingsPlugins");
+    return u"MessageViewerConfigureSettingsPlugins"_s;
 }
 
 QString MessageViewerConfigureSettingsPluginManagerPrivate::configPrefixSettingKey() const
 {
-    return QStringLiteral("MessageViewerConfigureSettingsPlugin");
+    return u"MessageViewerConfigureSettingsPlugin"_s;
 }
 
 void MessageViewerConfigureSettingsPluginManagerPrivate::initializePluginList()
 {
-    const QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("pim6/messageviewer/configuresettings"));
+    const QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(u"pim6/messageviewer/configuresettings"_s);
 
     QListIterator<KPluginMetaData> i(plugins);
     i.toBack();
@@ -91,7 +93,7 @@ void MessageViewerConfigureSettingsPluginManagerPrivate::initializePluginList()
         info.data = data;
         const QString version = data.version();
         if (configurePluginVersion() == version) {
-            const QVariant p = data.rawData().value(QStringLiteral("X-KDE-MessageViewer-Configure-Order")).toVariant();
+            const QVariant p = data.rawData().value(u"X-KDE-MessageViewer-Configure-Order"_s).toVariant();
             int order = -1;
             if (p.isValid()) {
                 order = p.toInt();

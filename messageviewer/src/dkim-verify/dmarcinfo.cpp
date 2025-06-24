@@ -5,6 +5,8 @@
 */
 
 #include "dmarcinfo.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "messageviewer_dkimcheckerdebug.h"
 
 using namespace MessageViewer;
@@ -18,7 +20,7 @@ bool DMARCInfo::parseDMARC(const QString &key)
     }
     QString cleanKey = key;
     cleanKey.replace(QLatin1StringView("; "), QLatin1StringView(";"));
-    const QStringList items = cleanKey.split(QLatin1Char(';'), Qt::SkipEmptyParts);
+    const QStringList items = cleanKey.split(u';', Qt::SkipEmptyParts);
     for (int i = 0; i < items.count(); ++i) {
         const QString elem = items.at(i).trimmed();
         if (elem.startsWith(QLatin1StringView("v="))) {
@@ -92,7 +94,7 @@ bool DMARCInfo::parseDMARC(const QString &key)
         }
     }
     if (mAdkim.isEmpty() && mVersion == QLatin1StringView("DMARC1")) {
-        mAdkim = QLatin1Char('r');
+        mAdkim = u'r';
     }
 
     return true;

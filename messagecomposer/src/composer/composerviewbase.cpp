@@ -125,7 +125,7 @@ void ComposerViewBase::setMessage(const KMime::Message::Ptr &msg, bool allowDecr
         if (!resultTooManyRecipients) {
             // If we are loading from a draft, load unexpanded aliases as well
             if (auto hrd = m_msg->headerByType("X-KMail-UnExpanded-To")) {
-                const QStringList spl = hrd->asUnicodeString().split(QLatin1Char(','));
+                const QStringList spl = hrd->asUnicodeString().split(u',');
                 for (const QString &addr : spl) {
                     if (m_recipientsEditor->addRecipient(addr, MessageComposer::Recipient::To)) {
                         resultTooManyRecipients = true;
@@ -137,7 +137,7 @@ void ComposerViewBase::setMessage(const KMime::Message::Ptr &msg, bool allowDecr
         }
         if (!resultTooManyRecipients) {
             if (auto hrd = m_msg->headerByType("X-KMail-UnExpanded-CC")) {
-                const QStringList spl = hrd->asUnicodeString().split(QLatin1Char(','));
+                const QStringList spl = hrd->asUnicodeString().split(u',');
                 for (const QString &addr : spl) {
                     if (m_recipientsEditor->addRecipient(addr, MessageComposer::Recipient::Cc)) {
                         qCWarning(MESSAGECOMPOSER_LOG) << "Impossible to add recipient.";
@@ -149,7 +149,7 @@ void ComposerViewBase::setMessage(const KMime::Message::Ptr &msg, bool allowDecr
         }
         if (!resultTooManyRecipients) {
             if (auto hrd = m_msg->headerByType("X-KMail-UnExpanded-BCC")) {
-                const QStringList spl = hrd->asUnicodeString().split(QLatin1Char(','));
+                const QStringList spl = hrd->asUnicodeString().split(u',');
                 for (const QString &addr : spl) {
                     if (m_recipientsEditor->addRecipient(addr, MessageComposer::Recipient::Bcc)) {
                         qCWarning(MESSAGECOMPOSER_LOG) << "Impossible to add recipient.";
@@ -161,7 +161,7 @@ void ComposerViewBase::setMessage(const KMime::Message::Ptr &msg, bool allowDecr
         }
         if (!resultTooManyRecipients) {
             if (auto hrd = m_msg->headerByType("X-KMail-UnExpanded-Reply-To")) {
-                const QStringList spl = hrd->asUnicodeString().split(QLatin1Char(','));
+                const QStringList spl = hrd->asUnicodeString().split(u',');
                 for (const QString &addr : spl) {
                     if (m_recipientsEditor->addRecipient(addr, MessageComposer::Recipient::ReplyTo)) {
                         qCWarning(MESSAGECOMPOSER_LOG) << "Impossible to add recipient.";
@@ -214,7 +214,7 @@ void ComposerViewBase::setMessage(const KMime::Message::Ptr &msg, bool allowDecr
         m_editor->setPlainText(otp.plainTextContent());
     } else {
         // Bug 372085 <div id="name"> is replaced in qtextedit by <a id="name">... => break url
-        htmlContent.replace(QRegularExpression(QStringLiteral("<div\\s*id=\".*\">")), QStringLiteral("<div>"));
+        htmlContent.replace(QRegularExpression(u"<div\\s*id=\".*\">"_s), QStringLiteral("<div>"));
         m_editor->setHtml(htmlContent);
         Q_EMIT enableHtml();
         collectImages(m_msg.data());
@@ -290,7 +290,7 @@ void ComposerViewBase::saveMailSettings()
     if (m_editor->composerControler()->isFormattingUsed()) {
         qCDebug(MESSAGECOMPOSER_LOG) << "HTML mode";
         header = new KMime::Headers::Generic("X-KMail-Markup");
-        header->fromUnicodeString(QStringLiteral("true"));
+        header->fromUnicodeString(u"true"_s);
         m_msg->setHeader(header);
     } else {
         m_msg->removeHeader("X-KMail-Markup");
@@ -712,9 +712,9 @@ QList<MessageComposer::ComposerJob *> ComposerViewBase::generateCryptoMessages(b
                 QString title;
                 QString dontAskAgainName;
                 if (info == Kleo::ExpiryChecker::OwnKeyExpired || info == Kleo::ExpiryChecker::OwnKeyNearExpiry) {
-                    dontAskAgainName = QStringLiteral("own key expires soon warning");
+                    dontAskAgainName = u"own key expires soon warning"_s;
                 } else {
-                    dontAskAgainName = QStringLiteral("other encryption key near expiry warning");
+                    dontAskAgainName = u"other encryption key near expiry warning"_s;
                 }
                 if (info == Kleo::ExpiryChecker::OwnKeyExpired || info == Kleo::ExpiryChecker::OtherKeyExpired) {
                     title =
@@ -945,7 +945,7 @@ void ComposerViewBase::fillInfoPart(MessageComposer::InfoPart *infoPart, Compose
         infoPart->setReplyTo(m_recipientsEditor->recipientStringList(MessageComposer::Recipient::ReplyTo));
     }
     infoPart->setSubject(subject());
-    infoPart->setUserAgent(QStringLiteral("KMail"));
+    infoPart->setUserAgent(u"KMail"_s);
     infoPart->setUrgent(m_urgent);
 
     if (auto inReplyTo = m_msg->inReplyTo(false)) {
@@ -1120,7 +1120,7 @@ void ComposerViewBase::queueMessage(const KMime::Message::Ptr &message, MessageC
     // if this header is not empty, it contains the real recipient of the message, either the primary or one of the
     //  secondary recipients. so we set that to the transport job, while leaving the message itself alone.
     if (KMime::Headers::Base *realTo = message->headerByType("X-KMail-EncBccRecipients")) {
-        qjob->addressAttribute().setTo(MessageComposer::Util::cleanUpEmailListAndEncoding(realTo->asUnicodeString().split(QLatin1Char('%'))));
+        qjob->addressAttribute().setTo(MessageComposer::Util::cleanUpEmailListAndEncoding(realTo->asUnicodeString().split(u'%')));
         message->removeHeader("X-KMail-EncBccRecipients");
         message->assemble();
         qCDebug(MESSAGECOMPOSER_LOG) << "sending with-bcc encr mail to a/n recipient:" << qjob->addressAttribute().to();
@@ -1176,9 +1176,9 @@ void ComposerViewBase::initAutoSave()
 
     // Ensure that the autosave directory exists.
     QDir dataDirectory(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1StringView("/kmail2/"));
-    if (!dataDirectory.exists(QStringLiteral("autosave"))) {
+    if (!dataDirectory.exists(u"autosave"_s)) {
         qCDebug(MESSAGECOMPOSER_LOG) << "Creating autosave directory.";
-        dataDirectory.mkdir(QStringLiteral("autosave"));
+        dataDirectory.mkdir(u"autosave"_s);
     }
 
     // Construct a file name
@@ -1390,7 +1390,7 @@ void ComposerViewBase::saveMessage(const KMime::Message::Ptr &message, MessageCo
     message->assemble();
 
     Akonadi::Item item;
-    item.setMimeType(QStringLiteral("message/rfc822"));
+    item.setMimeType(u"message/rfc822"_s);
     item.setPayload(message);
     Akonadi::MessageFlags::copyMessageFlags(*message, item);
 
@@ -2220,7 +2220,7 @@ void ComposerViewBase::addFollowupReminder(const QString &messageId)
             auto job = new MessageComposer::FollowupReminderCreateJob;
             job->setSubject(m_subject);
             job->setMessageId(messageId);
-            job->setTo(mExpandedReplyTo.isEmpty() ? mExpandedTo.join(QLatin1Char(',')) : mExpandedReplyTo.join(QLatin1Char(',')));
+            job->setTo(mExpandedReplyTo.isEmpty() ? mExpandedTo.join(QLatin1Char(',')) : mExpandedReplyTo.join(u','));
             job->setFollowUpReminderDate(mFollowUpDate);
             job->setCollectionToDo(mFollowUpCollection);
             job->start();

@@ -4,6 +4,8 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "mdnwarningwidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "mdn/mdnwarningwidget.h"
 
 #include <QAction>
@@ -29,7 +31,7 @@ void MDNWarningWidgetTest::shouldHaveDefaultValues()
     QCOMPARE(w.messageType(), KMessageWidget::Information);
     QCOMPARE(w.actions().count(), 3);
     const auto acts{w.actions()};
-    for (const auto &name : {QStringLiteral("mIgnoreAction"), QStringLiteral("mSendAction"), QStringLiteral("mSendDenyAction")}) {
+    for (const auto &name : {u"mIgnoreAction"_s, u"mSendAction"_s, QStringLiteral("mSendDenyAction")}) {
         bool found = false;
         for (auto a : acts) {
             if (a->objectName() == name) {
@@ -87,7 +89,7 @@ void MDNWarningWidgetTest::shouldEmitSignals()
 void MDNWarningWidgetTest::shouldChangeInformation()
 {
     MessageViewer::MDNWarningWidget w;
-    const QString str{QStringLiteral("bla-bla")};
+    const QString str{u"bla-bla"_s};
     w.setInformation(str);
     QCOMPARE(w.text(), str);
 }

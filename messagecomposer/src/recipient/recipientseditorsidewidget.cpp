@@ -10,6 +10,7 @@
 */
 
 #include "recipientseditorsidewidget.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include "kwindowpositioner.h"
 #include "recipientspicker.h"
@@ -137,7 +138,7 @@ void RecipientsEditorSideWidget::updateTotalToolTip()
         text += i18nc("@info:tooltip %1 list of emails", "Reply-To:%1", replyTo);
     }
 
-    mTotalLabel->setToolTip(QStringLiteral("<html><head><body>%1</body></head></html>").arg(text));
+    mTotalLabel->setToolTip(u"<html><head><body>%1</body></head></html>"_s.arg(text));
 }
 
 void RecipientsEditorSideWidget::pickRecipient()

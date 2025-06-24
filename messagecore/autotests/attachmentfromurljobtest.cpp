@@ -5,6 +5,8 @@
 */
 
 #include "attachmentfromurljobtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "qtest_messagecore.h"
 
 #include <QTest>
@@ -24,12 +26,9 @@ void AttachmentFromUrlJobTest::testAttachments_data()
     QTest::addColumn<QByteArray>("mimetype");
 
     // PATH_ATTACHMENTS is defined by CMake.
-    QTest::newRow("png image") << QUrl::fromLocalFile(PATH_ATTACHMENTS + QLatin1StringView("image.png")) << QStringLiteral("image.png")
-                               << QByteArray("image/png");
-    QTest::newRow("pdf doc") << QUrl::fromLocalFile(PATH_ATTACHMENTS + QLatin1StringView("doc.pdf")) << QStringLiteral("doc.pdf")
-                             << QByteArray("application/pdf");
-    QTest::newRow("text file") << QUrl::fromLocalFile(PATH_ATTACHMENTS + QLatin1StringView("file.txt")) << QStringLiteral("file.txt")
-                               << QByteArray("text/plain");
+    QTest::newRow("png image") << QUrl::fromLocalFile(PATH_ATTACHMENTS + QLatin1StringView("image.png")) << u"image.png"_s << QByteArray("image/png");
+    QTest::newRow("pdf doc") << QUrl::fromLocalFile(PATH_ATTACHMENTS + QLatin1StringView("doc.pdf")) << u"doc.pdf"_s << QByteArray("application/pdf");
+    QTest::newRow("text file") << QUrl::fromLocalFile(PATH_ATTACHMENTS + QLatin1StringView("file.txt")) << u"file.txt"_s << QByteArray("text/plain");
 }
 
 void AttachmentFromUrlJobTest::testAttachments()
@@ -68,7 +67,7 @@ void AttachmentFromUrlJobTest::testAttachmentTooBig()
 void AttachmentFromUrlJobTest::testAttachmentCharset()
 {
     const QByteArray charset("iso-8859-2");
-    const QString filename = QStringLiteral("file.txt");
+    const QString filename = u"file.txt"_s;
     QUrl url = QUrl::fromLocalFile(PATH_ATTACHMENTS + filename);
     MessageCore::StringUtil::setEncodingFile(url, QString::fromLatin1(charset));
 

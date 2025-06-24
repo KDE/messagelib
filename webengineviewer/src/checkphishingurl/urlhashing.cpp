@@ -5,6 +5,8 @@
 */
 
 #include "urlhashing.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <QCryptographicHash>
 #include <QDebug>
 
@@ -25,12 +27,12 @@ QString UrlHashing::canonicalizeUrl(QUrl url)
     }
     QString path = url.path();
     if (url.path().isEmpty()) {
-        url.setPath(QStringLiteral("/"));
+        url.setPath(u"/"_s);
     } else {
         // First, remove tab (0x09), CR (0x0d), and LF (0x0a) characters from the URL. Do not remove escape sequences for these characters (e.g. '%0a').
-        path.remove(QLatin1Char('\t'));
-        path.remove(QLatin1Char('\r'));
-        path.remove(QLatin1Char('\n'));
+        path.remove(u'\t');
+        path.remove(u'\r');
+        path.remove(u'\n');
 
         // remove repeated leading slashes
         while (path.startsWith("//"_L1)) {
@@ -46,12 +48,12 @@ QString UrlHashing::canonicalizeUrl(QUrl url)
 #if 0
     QString hostname = url.host();
     qDebug() << " hostname" << hostname;
-    while (!hostname.isEmpty() && hostname.at(0) == QLatin1Char('.')) {
+    while (!hostname.isEmpty() && hostname.at(0) == u'.') {
         hostname.remove(0, 1);
     }
     qDebug() << "BEFORE hostname" << hostname;
     for (int i = hostname.length(); i >= 0; --i) {
-        if (hostname.at(i) == QLatin1Char('.')) {
+        if (hostname.at(i) == u'.') {
             hostname.remove(i);
         } else {
             break;
@@ -80,9 +82,9 @@ QStringList UrlHashing::generatePathsToCheck(const QString &str, const QString &
         if (pathToCheck.count() == 4) {
             break;
         }
-        if (str.at(i) == QLatin1Char('/')) {
+        if (str.at(i) == u'/') {
             if (i == 0) {
-                pathToCheck << QStringLiteral("/");
+                pathToCheck << u"/"_s;
             } else {
                 pathToCheck << str.left(i + 1);
             }
@@ -92,7 +94,7 @@ QStringList UrlHashing::generatePathsToCheck(const QString &str, const QString &
         pathToCheck << str;
     }
     if (!query.isEmpty()) {
-        pathToCheck << str + QLatin1Char('?') + query;
+        pathToCheck << str + u'?' + query;
     }
     return pathToCheck;
 }
@@ -110,7 +112,7 @@ QStringList UrlHashing::generateHostsToCheck(const QString &str)
         if (hostToCheck.count() == 4) {
             break;
         }
-        if (str.at(i) == QLatin1Char('.')) {
+        if (str.at(i) == u'.') {
             if (lastElement) {
                 lastElement = false;
             } else {

@@ -5,6 +5,8 @@
 */
 
 #include "testselectedtextwebengine.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "webengineview.h"
 #include <QApplication>
 #include <QMessageBox>
@@ -18,20 +20,20 @@ TestSelectedTextWebEngine::TestSelectedTextWebEngine(QWidget *parent)
     auto hboxLayout = new QVBoxLayout(this);
     pageView = new WebEngineViewer::WebEngineView(this);
     hboxLayout->addWidget(pageView);
-    auto showSelectedText = new QPushButton(QStringLiteral("Show Selected Text"), this);
+    auto showSelectedText = new QPushButton(u"Show Selected Text"_s, this);
     connect(showSelectedText, &QPushButton::clicked, this, &TestSelectedTextWebEngine::slotSlowSelectedText);
     hboxLayout->addWidget(showSelectedText);
 
     mEnginePage = new WebEngineViewer::WebEnginePage(this);
     // pageView->setPage(mEnginePage);
-    pageView->load(QUrl(QStringLiteral("http://www.kde.org")));
+    pageView->load(QUrl(u"http://www.kde.org"_s));
 }
 
 TestSelectedTextWebEngine::~TestSelectedTextWebEngine() = default;
 
 void TestSelectedTextWebEngine::slotSlowSelectedText()
 {
-    QMessageBox::information(this, QStringLiteral("selected text"), pageView->selectedText());
+    QMessageBox::information(this, u"selected text"_s, pageView->selectedText());
 }
 
 int main(int argc, char *argv[])

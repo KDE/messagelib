@@ -5,6 +5,8 @@
 */
 
 #include "templateextracthtmlelementfrommailtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "templateextracthtmlelementfrommail.h"
 #include <QSignalSpy>
 #include <QTest>
@@ -27,7 +29,7 @@ void TemplateExtractHtmlElementFromMailTest::shouldExtractHtml_data()
     QTest::addColumn<QString>("html");
     QTest::addColumn<QString>("body");
     QTest::addColumn<QString>("header");
-    QTest::newRow("test1") << QStringLiteral("<html><head></head><body>HTML Text</body></html>") << QStringLiteral("HTML Text") << QString();
+    QTest::newRow("test1") << u"<html><head></head><body>HTML Text</body></html>"_s << u"HTML Text"_s << QString();
     QTest::newRow("empty") << QString() << QString() << QString();
 }
 

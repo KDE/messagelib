@@ -5,6 +5,8 @@
 */
 
 #include "dkimcheckpolicyjob.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "dkim-verify/dkimmanagerrules.h"
 #include "dkim-verify/dmarcmanager.h"
 #include "messageviewer_dkimcheckerdebug.h"
@@ -61,7 +63,7 @@ void DKIMCheckPolicyJob::compareWithDefaultRules()
     const QList<DKIMRule> rules = DKIMManagerRules::self()->rules();
     for (const DKIMRule &rule : rules) {
         if (rule.enabled()) {
-            if (rule.from() == mEmailAddress || rule.from() == QLatin1Char('*')) {
+            if (rule.from() == mEmailAddress || rule.from() == u'*') {
                 // Check SDID
                 const QStringList signedDomainIdentifier = rule.signedDomainIdentifier();
                 for (const QString &ssid : signedDomainIdentifier) {

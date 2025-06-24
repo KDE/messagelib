@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "webengineaccesskeyanchorfromhtmltest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../webengineaccesskeyutils.h"
 #include <QHBoxLayout>
 #include <QSignalSpy>
@@ -78,7 +80,7 @@ void WebEngineAccessKeyAnchorFromHtmlTest::shouldNotShowAccessKeyWhenHtmlAsNotAn
 {
     TestWebEngineAccessKey w;
     QSignalSpy accessKeySpy(&w, &TestWebEngineAccessKey::accessKeySearchFinished);
-    w.setHtml(QStringLiteral("<body>foo</body>"));
+    w.setHtml(u"<body>foo</body>"_s);
     QVERIFY(accessKeySpy.wait());
     QCOMPARE(accessKeySpy.count(), 1);
     const auto resultLst = accessKeySpy.at(0).at(0).value<QList<WebEngineViewer::WebEngineAccessKeyAnchor>>();
@@ -89,7 +91,7 @@ void WebEngineAccessKeyAnchorFromHtmlTest::shouldReturnOneAnchor()
 {
     TestWebEngineAccessKey w;
     QSignalSpy accessKeySpy(&w, &TestWebEngineAccessKey::accessKeySearchFinished);
-    w.setHtml(QStringLiteral("<body>foo<a href=\"http://www.kde.org\">foo</a></body>"));
+    w.setHtml(u"<body>foo<a href=\"http://www.kde.org\">foo</a></body>"_s);
     QVERIFY(accessKeySpy.wait());
     QCOMPARE(accessKeySpy.count(), 1);
     const auto resultLst = accessKeySpy.at(0).at(0).value<QList<WebEngineViewer::WebEngineAccessKeyAnchor>>();
@@ -100,7 +102,7 @@ void WebEngineAccessKeyAnchorFromHtmlTest::shouldReturnTwoAnchor()
 {
     TestWebEngineAccessKey w;
     QSignalSpy accessKeySpy(&w, &TestWebEngineAccessKey::accessKeySearchFinished);
-    w.setHtml(QStringLiteral("<body>foo<a href=\"http://www.kde.org\">foo</a><a href=\"http://www.kde.vv\">foo</a></body>"));
+    w.setHtml(u"<body>foo<a href=\"http://www.kde.org\">foo</a><a href=\"http://www.kde.vv\">foo</a></body>"_s);
     QVERIFY(accessKeySpy.wait());
     QCOMPARE(accessKeySpy.count(), 1);
     const auto resultLst = accessKeySpy.at(0).at(0).value<QList<WebEngineViewer::WebEngineAccessKeyAnchor>>();

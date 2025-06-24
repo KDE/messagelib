@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "searchlinecommandwidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "searchlinecommandbuttonswidget.h"
 #include <QLabel>
 #include <QVBoxLayout>
@@ -15,13 +17,13 @@ SearchLineCommandWidget::SearchLineCommandWidget(QWidget *parent)
     , mLabel(new QLabel(this))
 {
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mainLayout->setObjectName(u"mainLayout"_s);
     mainLayout->setContentsMargins({});
 
-    mSearchLineCommandButtonsWidget->setObjectName(QStringLiteral("mSearchLineCommandButtonsWidget"));
+    mSearchLineCommandButtonsWidget->setObjectName(u"mSearchLineCommandButtonsWidget"_s);
     mainLayout->addWidget(mSearchLineCommandButtonsWidget);
 
-    mLabel->setObjectName(QStringLiteral("mLabel"));
+    mLabel->setObjectName(u"mLabel"_s);
     mainLayout->addWidget(mLabel);
     mLabel->setWordWrap(true);
 

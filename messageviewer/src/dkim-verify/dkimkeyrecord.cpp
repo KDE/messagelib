@@ -5,6 +5,8 @@
 */
 
 #include "dkimkeyrecord.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "messageviewer_dkimcheckerdebug.h"
 
 using namespace MessageViewer;
@@ -20,29 +22,29 @@ bool DKIMKeyRecord::parseKey(const QString &key)
         return false;
     }
     newKey.replace(QLatin1StringView("; "), QLatin1StringView(";"));
-    const QStringList items = newKey.split(QLatin1Char(';'));
+    const QStringList items = newKey.split(u';');
     for (int i = 0; i < items.count(); ++i) {
         const QString elem = items.at(i).trimmed();
         if (elem.startsWith(QLatin1StringView("v="))) {
             mVersion = elem.right(elem.length() - 2);
         } else if (elem.startsWith(QLatin1StringView("h="))) {
             // Parse multi array.
-            mHashAlgorithm = elem.right(elem.length() - 2).split(QLatin1Char(':'));
+            mHashAlgorithm = elem.right(elem.length() - 2).split(u':');
         } else if (elem.startsWith(QLatin1StringView("k="))) { // Key type (rsa by default)
             mKeyType = elem.right(elem.length() - 2);
         } else if (elem.startsWith(QLatin1StringView("n="))) { // Notes (optional empty by default)
             mNote = elem.right(elem.length() - 2);
         } else if (elem.startsWith(QLatin1StringView("p="))) { // Public key
-            mPublicKey = elem.right(elem.length() - 2).remove(QLatin1Char(' '));
+            mPublicKey = elem.right(elem.length() - 2).remove(u' ');
         } else if (elem.startsWith(QLatin1StringView("s="))) { // Service Default is "*"
             // Service Type (plain-text; OPTIONAL; default is "*").  A colon-
             // separated list of service types to which this record applies.
             // Verifiers for a given service type MUST ignore this record if the
             // appropriate type is not listed.  Unrecognized service types MUST
             // be ignored.  Currently defined service types are as follows:
-            const QStringList lst = elem.right(elem.length() - 2).split(QLatin1Char(':'));
+            const QStringList lst = elem.right(elem.length() - 2).split(u':');
             for (const QString &service : lst) {
-                if (service == QLatin1Char('*') || service == QLatin1StringView("email")) {
+                if (service == u'*' || service == QLatin1StringView("email")) {
                     mService = service;
                 }
             }
@@ -61,17 +63,17 @@ bool DKIMKeyRecord::parseKey(const QString &key)
             //                     "i=" tag and the value of the "d=" tag.  That is, the "i="
             //                     domain MUST NOT be a subdomain of "d=".  Use of this flag is
             //                     RECOMMENDED unless subdomaining is required.
-            mFlags = elem.right(elem.length() - 2).split(QLatin1Char(':'));
+            mFlags = elem.right(elem.length() - 2).split(u':');
         }
     }
     if (mVersion.isEmpty()) { // It's optional
-        mVersion = QStringLiteral("DKIM1");
+        mVersion = u"DKIM1"_s;
     }
     if (mKeyType.isEmpty()) { // Rsa by default
-        mKeyType = QStringLiteral("rsa");
+        mKeyType = u"rsa"_s;
     }
     if (mService.isEmpty()) {
-        mService = QLatin1Char('*');
+        mService = u'*';
     }
     return true;
 }

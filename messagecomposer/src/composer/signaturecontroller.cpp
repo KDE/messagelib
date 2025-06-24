@@ -11,6 +11,8 @@
  */
 
 #include "signaturecontroller.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "composer-ng/richtextcomposerng.h"
 #include "composer-ng/richtextcomposersignatures.h"
 #include "settings/messagecomposersettings.h"

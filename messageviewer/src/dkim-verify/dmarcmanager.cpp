@@ -5,6 +5,8 @@
 */
 
 #include "dmarcmanager.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "dkimutil.h"
 #include <KConfigGroup>
 #include <KSharedConfig>
@@ -40,13 +42,13 @@ void DMARCManager::addNoDMarcServerAddress(const QString &address)
 void DMARCManager::saveNoServerKeys()
 {
     const KSharedConfig::Ptr &config = KSharedConfig::openConfig(MessageViewer::DKIMUtil::defaultConfigFileName(), KConfig::NoGlobals);
-    KConfigGroup grp(config, QStringLiteral("NoExistingDmarcServer"));
+    KConfigGroup grp(config, u"NoExistingDmarcServer"_s);
     grp.writeEntry("AddressList", mNoDMarcServer);
 }
 
 void DMARCManager::loadNoServerKeys()
 {
     const KSharedConfig::Ptr &config = KSharedConfig::openConfig(MessageViewer::DKIMUtil::defaultConfigFileName(), KConfig::NoGlobals);
-    KConfigGroup grp(config, QStringLiteral("NoExistingDmarcServer"));
+    KConfigGroup grp(config, u"NoExistingDmarcServer"_s);
     mNoDMarcServer = grp.readEntry("AddressList", QStringList());
 }

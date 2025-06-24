@@ -5,6 +5,8 @@
 */
 
 #include "imagescalingwidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "settings/messagecomposersettings.h"
 #include "ui_imagescalingwidget.h"
 #include <KLineEditEventHandler>
@@ -182,7 +184,7 @@ void ImageScalingWidget::initComboBox(QComboBox *combo)
 {
     const QList<int> size = {240, 320, 512, 640, 800, 1024, 1600, 2048};
     for (int val : size) {
-        combo->addItem(QStringLiteral("%1 px").arg(QString::number(val)), val);
+        combo->addItem(u"%1 px"_s.arg(QString::number(val)), val);
     }
     combo->addItem(i18n("Custom"), -1);
 }
@@ -196,8 +198,8 @@ void ImageScalingWidget::initWriteImageFormat()
     }
     */
     // known by several mailer.
-    d->ui->WriteToImageFormat->addItem(QStringLiteral("JPG"));
-    d->ui->WriteToImageFormat->addItem(QStringLiteral("PNG"));
+    d->ui->WriteToImageFormat->addItem(u"JPG"_s);
+    d->ui->WriteToImageFormat->addItem(u"PNG"_s);
 }
 
 void ImageScalingWidget::updateSettings()

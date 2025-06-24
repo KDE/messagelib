@@ -7,6 +7,8 @@
 #pragma once
 
 #include "templateparserextracthtmlinforesult.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "templateparserjob.h"
 
 #include <KMime/Message>
@@ -37,7 +39,7 @@ public:
     MimeTreeParser::ObjectTreeParser *mOtp = nullptr;
     MimeTreeParser::SimpleObjectTreeSource *mEmptySource = nullptr;
     QString mSelection;
-    QString mQuoteString = QStringLiteral("> ");
+    QString mQuoteString = u"> "_s;
     QString mTo;
     QString mCC;
     QString mHeadElement;

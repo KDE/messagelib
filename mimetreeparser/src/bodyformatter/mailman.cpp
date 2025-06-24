@@ -5,6 +5,7 @@
 */
 
 #include "mailman.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include "utils.h"
 
@@ -87,7 +88,7 @@ MessagePart::Ptr MailmanBodyPartFormatter::process(Interface::BodyPart &part) co
     //  curNode = curNode->mRoot;
 
     // at least one message found: build a mime tree
-    digestHeaderStr = QStringLiteral("Content-Type: text/plain\nContent-Description: digest header\n\n");
+    digestHeaderStr = u"Content-Type: text/plain\nContent-Description: digest header\n\n"_s;
     digestHeaderStr += QStringView(str).mid(0, thisDelim);
 
     MessagePartList::Ptr mpl(new MessagePartList(part.objectTreeParser()));
@@ -106,7 +107,7 @@ MessagePart::Ptr MailmanBodyPartFormatter::process(Interface::BodyPart &part) co
                 thisDelim = thisEoL + 1;
             }
         }
-        thisEoL = str.indexOf(QLatin1Char('\n'), thisDelim);
+        thisEoL = str.indexOf(u'\n', thisDelim);
         if (-1 < thisEoL) {
             thisDelim = thisEoL + 1;
         } else {
@@ -115,14 +116,14 @@ MessagePart::Ptr MailmanBodyPartFormatter::process(Interface::BodyPart &part) co
         // while( thisDelim < cstr.size() && '\n' == cstr[thisDelim] )
         //  ++thisDelim;
 
-        partStr = QStringLiteral("Content-Type: message/rfc822\nContent-Description: embedded message\n\n");
+        partStr = u"Content-Type: message/rfc822\nContent-Description: embedded message\n\n"_s;
         partStr += QStringView(str).mid(thisDelim, nextDelim - thisDelim);
-        QString subject = QStringLiteral("embedded message");
-        QString subSearch = QStringLiteral("\nSubject:");
+        QString subject = u"embedded message"_s;
+        QString subSearch = u"\nSubject:"_s;
         int subPos = partStr.indexOf(subSearch, 0, Qt::CaseInsensitive);
         if (-1 < subPos) {
             subject = partStr.mid(subPos + subSearch.length());
-            thisEoL = subject.indexOf(QLatin1Char('\n'));
+            thisEoL = subject.indexOf(u'\n');
             if (-1 < thisEoL) {
                 subject.truncate(thisEoL);
             }
@@ -147,14 +148,14 @@ MessagePart::Ptr MailmanBodyPartFormatter::process(Interface::BodyPart &part) co
     int thisEoL = str.indexOf(QLatin1StringView("_____________"), thisDelim);
     if (-1 < thisEoL) {
         thisDelim = thisEoL;
-        thisEoL = str.indexOf(QLatin1Char('\n'), thisDelim);
+        thisEoL = str.indexOf(u'\n', thisDelim);
         if (-1 < thisEoL) {
             thisDelim = thisEoL + 1;
         }
     } else {
         thisDelim = thisDelim + 1;
     }
-    partStr = QStringLiteral("Content-Type: text/plain\nContent-Description: digest footer\n\n");
+    partStr = u"Content-Type: text/plain\nContent-Description: digest footer\n\n"_s;
     partStr += QStringView(str).mid(thisDelim);
     mpl->appendSubPart(createAndParseTempNode(part, part.topLevelContent(), partStr.toLatin1().constData(), "Digest Footer"));
     return mpl;

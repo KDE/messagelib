@@ -8,6 +8,8 @@
 #pragma once
 
 #include <MimeTreeParser/BodyPartFormatterFactory>
+using namespace Qt::Literals::StringLiterals;
+
 #include <MimeTreeParser/ObjectTreeSource>
 #include <gpgme++/key.h>
 
@@ -32,7 +34,7 @@ public:
     ObjectTreeSource(HtmlWriter *writer, MessageViewer::CSSHelperBase *cssHelper)
         : mWriter(writer)
         , mCSSHelper(cssHelper)
-        , mAttachmentStrategy(QStringLiteral("smart"))
+        , mAttachmentStrategy(u"smart"_s)
         , mHtmlLoadExternal(false)
         , mDecryptMessage(false)
         , mShowSignatureDetails(false)

@@ -5,6 +5,8 @@
 */
 
 #include "scamdetectionwebengine_gui.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "scamdetection/scamdetectionwarningwidget.h"
 #include "scamdetection/scamdetectionwebengine.h"
 
@@ -41,7 +43,7 @@ ScamDetectionWebEngineTestWidget::ScamDetectionWebEngineTestWidget(const QString
     mWebEngineView->load(QUrl::fromLocalFile(filename));
 
     auto hbox = new QHBoxLayout;
-    auto openFile = new QPushButton(QStringLiteral("Open html..."));
+    auto openFile = new QPushButton(u"Open html..."_s);
     connect(openFile, &QPushButton::clicked, this, &ScamDetectionWebEngineTestWidget::slotOpenHtml);
     hbox->addWidget(openFile);
     lay->addLayout(hbox);
@@ -56,7 +58,7 @@ void ScamDetectionWebEngineTestWidget::slotLoadFinished()
 
 void ScamDetectionWebEngineTestWidget::slotOpenHtml()
 {
-    const QString fileName = QFileDialog::getOpenFileName(nullptr, QString(), QString(), QStringLiteral("*.html"));
+    const QString fileName = QFileDialog::getOpenFileName(nullptr, QString(), QString(), u"*.html"_s);
     if (!fileName.isEmpty()) {
         mScamWarningWidget->setVisible(false);
         mWebEngineView->load(QUrl::fromLocalFile(fileName));
@@ -71,14 +73,14 @@ int main(int argc, char **argv)
     QCommandLineParser parser;
     parser.addVersionOption();
     parser.addHelpOption();
-    parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("+[url]"), QStringLiteral("URL of an html file to be opened")));
+    parser.addOption(QCommandLineOption(QStringList() << u"+[url]"_s, u"URL of an html file to be opened"_s));
     parser.process(app);
 
     QString fileName;
     if (!parser.positionalArguments().isEmpty()) {
         fileName = parser.positionalArguments().at(0);
     } else {
-        fileName = QFileDialog::getOpenFileName(nullptr, QString(), QString(), QStringLiteral("HTML File (*.html)"));
+        fileName = QFileDialog::getOpenFileName(nullptr, QString(), QString(), u"HTML File (*.html)"_s);
     }
     if (fileName.isEmpty()) {
         return 0;

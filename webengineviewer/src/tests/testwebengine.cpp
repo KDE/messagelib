@@ -5,6 +5,8 @@
 */
 
 #include "testwebengine.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "webengineviewer/webhittest.h"
 #include <QApplication>
 #include <QContextMenuEvent>
@@ -22,7 +24,7 @@ TestWebEngine::TestWebEngine(QWidget *parent)
     hboxLayout->addWidget(pageView);
     mEnginePage = new WebEngineViewer::WebEnginePage(this);
     pageView->setPage(mEnginePage);
-    pageView->load(QUrl(QStringLiteral("http://www.kde.org")));
+    pageView->load(QUrl(u"http://www.kde.org"_s));
 }
 
 TestWebEngine::~TestWebEngine() = default;

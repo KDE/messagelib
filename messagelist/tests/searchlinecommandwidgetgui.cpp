@@ -10,6 +10,8 @@
 #include <QVBoxLayout>
 #include <core/widgets/searchlinecommand.h>
 #include <core/widgets/searchlinecommandbuttonswidget.h>
+using namespace Qt::Literals::StringLiterals;
+
 SearchLineCommandWidgetGui::SearchLineCommandWidgetGui(QWidget *parent)
     : QWidget{parent}
     , mLineEdit(new QLineEdit(this))
@@ -26,8 +28,8 @@ SearchLineCommandWidgetGui::SearchLineCommandWidgetGui(QWidget *parent)
     mLineEdit->setClearButtonEnabled(true);
     label->setWordWrap(true);
     connect(w, &MessageList::Core::SearchLineCommandButtonsWidget::insertCommand, this, [this](const QString &commandStr) {
-        if (!mLineEdit->text().isEmpty() && mLineEdit->text().back() != QLatin1Char(' ')) {
-            mLineEdit->insert(QStringLiteral(" "));
+        if (!mLineEdit->text().isEmpty() && mLineEdit->text().back() != u' ') {
+            mLineEdit->insert(u" "_s);
         }
         mLineEdit->insert(commandStr);
     });

@@ -5,6 +5,8 @@
 */
 
 #include "templateparseremailaddressrequesterlineedittest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "templateparseremailaddressrequesterlineedit.h"
 #include <QHBoxLayout>
 #include <QLineEdit>
@@ -20,11 +22,11 @@ void TemplateParserEmailAddressRequesterLineEditTest::shouldHaveDefaultValue()
 {
     TemplateParser::TemplateParserEmailAddressRequesterLineEdit w;
 
-    auto mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainlayout"));
+    auto mainLayout = w.findChild<QHBoxLayout *>(u"mainlayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins(0, 0, 0, 0));
 
-    auto mLineEdit = w.findChild<QLineEdit *>(QStringLiteral("lineedit"));
+    auto mLineEdit = w.findChild<QLineEdit *>(u"lineedit"_s);
     QVERIFY(mLineEdit);
     QVERIFY(mLineEdit->text().isEmpty());
 }
@@ -32,8 +34,8 @@ void TemplateParserEmailAddressRequesterLineEditTest::shouldHaveDefaultValue()
 void TemplateParserEmailAddressRequesterLineEditTest::shouldAssignValue()
 {
     TemplateParser::TemplateParserEmailAddressRequesterLineEdit w;
-    auto mLineEdit = w.findChild<QLineEdit *>(QStringLiteral("lineedit"));
-    const QString str{QStringLiteral("foo")};
+    auto mLineEdit = w.findChild<QLineEdit *>(u"lineedit"_s);
+    const QString str{u"foo"_s};
     w.setText(str);
     QCOMPARE(w.text(), str);
     QCOMPARE(mLineEdit->text(), str);
@@ -42,8 +44,8 @@ void TemplateParserEmailAddressRequesterLineEditTest::shouldAssignValue()
 void TemplateParserEmailAddressRequesterLineEditTest::shouldClearValue()
 {
     TemplateParser::TemplateParserEmailAddressRequesterLineEdit w;
-    auto mLineEdit = w.findChild<QLineEdit *>(QStringLiteral("lineedit"));
-    const QString str{QStringLiteral("foo")};
+    auto mLineEdit = w.findChild<QLineEdit *>(u"lineedit"_s);
+    const QString str{u"foo"_s};
     w.setText(str);
     QCOMPARE(w.text(), str);
     w.clear();
@@ -55,11 +57,11 @@ void TemplateParserEmailAddressRequesterLineEditTest::shouldEmitSignal()
 {
     TemplateParser::TemplateParserEmailAddressRequesterLineEdit w;
     QSignalSpy spy(&w, &TemplateParser::TemplateParserEmailAddressRequesterBase::textChanged);
-    w.setText(QStringLiteral("foo"));
+    w.setText(u"foo"_s);
     QCOMPARE(spy.count(), 1);
     w.clear();
     QCOMPARE(spy.count(), 2);
-    w.setText(QStringLiteral("foo"));
+    w.setText(u"foo"_s);
     QCOMPARE(spy.count(), 3);
 }
 

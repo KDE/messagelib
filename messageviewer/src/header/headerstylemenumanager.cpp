@@ -5,6 +5,8 @@
 */
 
 #include "headerstylemenumanager.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "headerstyleinterface.h"
 #include "headerstyleplugin.h"
 #include "headerstylepluginmanager.h"
@@ -67,21 +69,21 @@ void HeaderStyleMenuManagerPrivate::readSettings()
         const QString headerSetDisplayed = MessageViewer::MessageViewerSettings::self()->headerSetDisplayed();
 
         if ((headerStyle == QLatin1StringView("custom")) && (headerSetDisplayed == QLatin1StringView("custom"))) { // Custom
-            headerStyleName = QStringLiteral("custom");
+            headerStyleName = u"custom"_s;
         } else if ((headerStyle == QLatin1StringView("plain")) && (headerSetDisplayed == QLatin1StringView("all"))) { // all
-            headerStyleName = QStringLiteral("all-headers");
+            headerStyleName = u"all-headers"_s;
         } else if ((headerStyle == QLatin1StringView("brief")) && (headerSetDisplayed == QLatin1StringView("brief"))) { // brief
-            headerStyleName = QStringLiteral("brief");
+            headerStyleName = u"brief"_s;
         } else if ((headerStyle == QLatin1StringView("enterprise")) && (headerSetDisplayed == QLatin1StringView("rich"))) { // enterprise
-            headerStyleName = QStringLiteral("enterprise");
+            headerStyleName = u"enterprise"_s;
         } else if ((headerStyle == QLatin1StringView("fancy")) && (headerSetDisplayed == QLatin1StringView("rich"))) { // fancy
-            headerStyleName = QStringLiteral("fancy");
+            headerStyleName = u"fancy"_s;
         } else if ((headerStyle == QLatin1StringView("grantlee")) && (headerSetDisplayed == QLatin1StringView("grantlee"))) { // grantlee
-            headerStyleName = QStringLiteral("grantlee");
+            headerStyleName = u"grantlee"_s;
         } else if ((headerStyle == QLatin1StringView("plain")) && (headerSetDisplayed == QLatin1StringView("rich"))) { // longheader
-            headerStyleName = QStringLiteral("long-header");
+            headerStyleName = u"long-header"_s;
         } else if ((headerStyle == QLatin1StringView("plain")) && (headerSetDisplayed == QLatin1StringView("standard"))) { // Standard
-            headerStyleName = QStringLiteral("standards-header");
+            headerStyleName = u"standards-header"_s;
         } else {
             qCDebug(MESSAGEVIEWER_LOG) << "unknown style : headerstyle " << headerStyle << " headerstrategy :" << headerSetDisplayed;
         }
@@ -89,7 +91,7 @@ void HeaderStyleMenuManagerPrivate::readSettings()
     }
     // Fallback
     if (headerStyleName.isEmpty()) {
-        headerStyleName = QStringLiteral("fancy");
+        headerStyleName = u"fancy"_s;
     }
     setPluginName(headerStyleName);
 }
@@ -104,7 +106,7 @@ void HeaderStyleMenuManagerPrivate::initialize(KActionCollection *ac)
 {
     headerMenu = new KActionMenu(i18nc("View->", "&Headers"), q);
     if (ac) {
-        ac->addAction(QStringLiteral("view_headers"), headerMenu);
+        ac->addAction(u"view_headers"_s, headerMenu);
     }
     MessageViewer::Util::addHelpTextAction(headerMenu, i18n("Choose display style of message headers"));
     group = new QActionGroup(q);

@@ -5,6 +5,8 @@
 */
 
 #include "dkimmanagerkey.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "dkimutil.h"
 #include <KConfig>
 #include <KConfigGroup>
@@ -79,7 +81,7 @@ QList<KeyInfo> DKIMManagerKey::keys() const
 QStringList DKIMManagerKey::keyRecorderList(KSharedConfig::Ptr &config) const
 {
     config = KSharedConfig::openConfig(MessageViewer::DKIMUtil::defaultConfigFileName(), KConfig::NoGlobals);
-    const QStringList keyGroups = config->groupList().filter(QRegularExpression(QStringLiteral("DKIM Key Record #\\d+")));
+    const QStringList keyGroups = config->groupList().filter(QRegularExpression(u"DKIM Key Record #\\d+"_s));
     return keyGroups;
 }
 
@@ -91,11 +93,11 @@ void DKIMManagerKey::loadKeys()
     mKeys.clear();
     for (const QString &groupName : keyGroups) {
         KConfigGroup group = config->group(groupName);
-        const QString selector = group.readEntry(QStringLiteral("Selector"), QString());
-        const QString domain = group.readEntry(QStringLiteral("Domain"), QString());
-        const QString key = group.readEntry(QStringLiteral("Key"), QString());
-        const QDateTime storedAt = QDateTime::fromString(group.readEntry(QStringLiteral("StoredAt"), QString()), Qt::ISODate);
-        QDateTime lastUsed = QDateTime::fromString(group.readEntry(QStringLiteral("LastUsed"), QString()), Qt::ISODate);
+        const QString selector = group.readEntry(u"Selector"_s, QString());
+        const QString domain = group.readEntry(u"Domain"_s, QString());
+        const QString key = group.readEntry(u"Key"_s, QString());
+        const QDateTime storedAt = QDateTime::fromString(group.readEntry(u"StoredAt"_s, QString()), Qt::ISODate);
+        QDateTime lastUsed = QDateTime::fromString(group.readEntry(u"LastUsed"_s, QString()), Qt::ISODate);
         if (!lastUsed.isValid()) {
             lastUsed = storedAt;
         }
@@ -112,14 +114,14 @@ void DKIMManagerKey::saveKeys()
         config->deleteGroup(group);
     }
     for (int i = 0, total = mKeys.count(); i < total; ++i) {
-        const QString groupName = QStringLiteral("DKIM Key Record #%1").arg(i);
+        const QString groupName = u"DKIM Key Record #%1"_s.arg(i);
         KConfigGroup group = config->group(groupName);
         const KeyInfo &info = mKeys.at(i);
-        group.writeEntry(QStringLiteral("Selector"), info.selector);
-        group.writeEntry(QStringLiteral("Domain"), info.domain);
-        group.writeEntry(QStringLiteral("Key"), info.keyValue);
-        group.writeEntry(QStringLiteral("StoredAt"), info.storedAtDateTime.toString(Qt::ISODate));
-        group.writeEntry(QStringLiteral("LastUsed"), info.lastUsedDateTime.toString(Qt::ISODate));
+        group.writeEntry(u"Selector"_s, info.selector);
+        group.writeEntry(u"Domain"_s, info.domain);
+        group.writeEntry(u"Key"_s, info.keyValue);
+        group.writeEntry(u"StoredAt"_s, info.storedAtDateTime.toString(Qt::ISODate));
+        group.writeEntry(u"LastUsed"_s, info.lastUsedDateTime.toString(Qt::ISODate));
     }
 }
 

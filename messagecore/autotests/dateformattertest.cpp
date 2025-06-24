@@ -5,6 +5,7 @@
 */
 
 #include <utils/dateformatter.h>
+using namespace Qt::Literals::StringLiterals;
 
 #include <QDateTime>
 #include <QObject>
@@ -32,17 +33,17 @@ private Q_SLOTS:
         auto dt = QDateTime::currentDateTime();
         const auto today = dt.date();
         dt.setTime(QTime(12, 34, 56));
-        QCOMPARE(f.dateString(dt), QStringLiteral("Today 12:34 PM"));
+        QCOMPARE(f.dateString(dt), u"Today 12:34 PM"_s);
 
         dt.setDate(dt.date().addDays(-1));
-        QCOMPARE(f.dateString(dt), QStringLiteral("Yesterday 12:34 PM"));
+        QCOMPARE(f.dateString(dt), u"Yesterday 12:34 PM"_s);
 
         dt.setDate(dt.date().addDays(-1));
         QVERIFY(f.dateString(dt).startsWith(QLocale::c().toString(dt, QLatin1StringView("dddd"))));
 
-        QCOMPARE(f.dateString(QDateTime(today, QTime(0, 0))), QStringLiteral("Today 12:00 AM"));
-        QCOMPARE(f.dateString(QDateTime(today, QTime(23, 59, 59))), QStringLiteral("Today 11:59 PM"));
-        QCOMPARE(f.dateString(QDateTime(today, QTime(23, 59, 59, 999))), QStringLiteral("Today 11:59 PM"));
+        QCOMPARE(f.dateString(QDateTime(today, QTime(0, 0))), u"Today 12:00 AM"_s);
+        QCOMPARE(f.dateString(QDateTime(today, QTime(23, 59, 59))), u"Today 11:59 PM"_s);
+        QCOMPARE(f.dateString(QDateTime(today, QTime(23, 59, 59, 999))), u"Today 11:59 PM"_s);
     }
 
     void testLocalizedFormat()
@@ -59,7 +60,7 @@ private Q_SLOTS:
         QTest::addColumn<QDateTime>("dt");
         QTest::addColumn<QString>("output");
 
-        QTest::newRow("ctime") << DateFormatter::CTime << QDateTime(QDate(2023, 11, 18), QTime(17, 34, 56)) << QStringLiteral("Sat Nov 18 17:34:56 2023");
+        QTest::newRow("ctime") << DateFormatter::CTime << QDateTime(QDate(2023, 11, 18), QTime(17, 34, 56)) << u"Sat Nov 18 17:34:56 2023"_s;
     }
 
     void testFormat()
@@ -75,7 +76,7 @@ private Q_SLOTS:
     void testCustomFormat()
     {
         DateFormatter f(DateFormatter::Custom);
-        f.setCustomFormat(QStringLiteral("hh:mm Z"));
+        f.setCustomFormat(u"hh:mm Z"_s);
         auto dt = QDateTime(QDate(2023, 11, 18), QTime(17, 34, 56), QTimeZone("Europe/Brussels"));
         QCOMPARE(f.dateString(dt), QLatin1StringView("17:34 +0100"));
     }

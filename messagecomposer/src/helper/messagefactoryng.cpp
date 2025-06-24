@@ -32,6 +32,7 @@
 #include <QStringEncoder>
 
 using namespace MessageComposer;
+using namespace Qt::Literals::StringLiterals;
 
 namespace KMime
 {
@@ -133,7 +134,7 @@ void MessageFactoryNG::createReplyAsync()
     msg->contentType()->setCharset("utf-8");
 
     if (auto hdr = mOrigMsg->headerByType("List-Post")) {
-        static const QRegularExpression rx{QStringLiteral("<\\s*mailto\\s*:([^@>]+@[^>]+)>"), QRegularExpression::CaseInsensitiveOption};
+        static const QRegularExpression rx{u"<\\s*mailto\\s*:([^@>]+@[^>]+)>"_s, QRegularExpression::CaseInsensitiveOption};
         const auto match = rx.match(hdr->asUnicodeString());
         if (match.hasMatch()) {
             KMime::Types::Mailbox mailbox;
@@ -478,7 +479,7 @@ MessageFactoryNG::createRedirect(const QString &toStr, const QString &ccStr, con
     // in unit-tests. Unfortunately RFC2822Date is not enough for us, we need the
     // composition hack below
     const QDateTime dt = QDateTime::currentDateTime();
-    const QString newDate = QLocale::c().toString(dt, QStringLiteral("ddd, ")) + dt.toString(Qt::RFC2822Date);
+    const QString newDate = QLocale::c().toString(dt, u"ddd, "_s) + dt.toString(Qt::RFC2822Date);
 
     // Clean up any resent headers
     msg->removeHeader("Resent-Cc");
@@ -544,7 +545,7 @@ MessageFactoryNG::createRedirect(const QString &toStr, const QString &ccStr, con
     const bool fccIsDisabled = ident.disabledFcc();
     if (fccIsDisabled) {
         header = new KMime::Headers::Generic("X-KMail-FccDisabled");
-        header->fromUnicodeString(QStringLiteral("true"));
+        header->fromUnicodeString(u"true"_s);
         msg->setHeader(header);
     } else {
         msg->removeHeader("X-KMail-FccDisabled");
@@ -565,7 +566,7 @@ KMime::Message::Ptr MessageFactoryNG::createDeliveryReceipt()
     if (receiptTo.trimmed().isEmpty()) {
         return {};
     }
-    receiptTo.remove(QLatin1Char('\n'));
+    receiptTo.remove(u'\n');
 
     KMime::Message::Ptr receipt(new KMime::Message);
     const uint originalIdentity = identityUoid(mOrigMsg);
@@ -573,7 +574,7 @@ KMime::Message::Ptr MessageFactoryNG::createDeliveryReceipt()
     receipt->to()->fromUnicodeString(receiptTo);
     receipt->subject()->fromUnicodeString(i18n("Receipt: ") + mOrigMsg->subject()->asUnicodeString());
 
-    QString str = QStringLiteral("Your message was successfully delivered.");
+    QString str = u"Your message was successfully delivered."_s;
     str += QLatin1StringView("\n\n---------- Message header follows ----------\n");
     str += QString::fromLatin1(mOrigMsg->head());
     str += QLatin1StringView("--------------------------------------------\n");
@@ -600,7 +601,7 @@ KMime::Message::Ptr MessageFactoryNG::createMDN(KMime::MDN::ActionMode a,
     if (receiptTo.trimmed().isEmpty()) {
         return KMime::Message::Ptr(new KMime::Message);
     }
-    receiptTo.remove(QLatin1Char('\n'));
+    receiptTo.remove(u'\n');
 
     QString special; // fill in case of error, warning or failure
 
@@ -620,7 +621,7 @@ KMime::Message::Ptr MessageFactoryNG::createMDN(KMime::MDN::ActionMode a,
     contentType->setCharset("us-ascii");
     receipt->removeHeader<KMime::Headers::ContentTransferEncoding>();
     // Modify the ContentType directly (replaces setAutomaticFields(true))
-    contentType->setParameter(QByteArrayLiteral("report-type"), QStringLiteral("disposition-notification"));
+    contentType->setParameter(QByteArrayLiteral("report-type"), u"disposition-notification"_s);
 
     const QString description = replaceHeadersInString(mOrigMsg, KMime::MDN::descriptionFor(d, m));
 
@@ -704,8 +705,8 @@ QPair<KMime::Message::Ptr, KMime::Content *> MessageFactoryNG::createForwardDige
     auto ct = digest->contentType();
     ct->setMimeType("multipart/digest");
     ct->setBoundary(KMime::multiPartBoundary());
-    digest->contentDescription()->fromUnicodeString(QStringLiteral("Digest of %1 messages.").arg(items.count()));
-    digest->contentDisposition()->setFilename(QStringLiteral("digest"));
+    digest->contentDescription()->fromUnicodeString(u"Digest of %1 messages."_s.arg(items.count()));
+    digest->contentDisposition()->setFilename(u"digest"_s);
     digest->fromUnicodeString(mainPartText);
 
     int id = 0;
@@ -792,7 +793,7 @@ bool MessageFactoryNG::MDNRequested(const KMime::Message::Ptr &msg)
     if (receiptTo.trimmed().isEmpty()) {
         return false;
     }
-    receiptTo.remove(QLatin1Char('\n'));
+    receiptTo.remove(u'\n');
     return !receiptTo.isEmpty();
 }
 
@@ -806,12 +807,12 @@ bool MessageFactoryNG::MDNConfirmMultipleRecipients(const KMime::Message::Ptr &m
     if (receiptTo.trimmed().isEmpty()) {
         return false;
     }
-    receiptTo.remove(QLatin1Char('\n'));
+    receiptTo.remove(u'\n');
 
     // RFC 2298: [ Confirmation from the user SHOULD be obtained (or no
     // MDN sent) ] if there is more than one distinct address in the
     // Disposition-Notification-To header.
-    qCDebug(MESSAGECOMPOSER_LOG) << "KEmailAddress::splitAddressList(receiptTo):" << KEmailAddress::splitAddressList(receiptTo).join(QLatin1Char('\n'));
+    qCDebug(MESSAGECOMPOSER_LOG) << "KEmailAddress::splitAddressList(receiptTo):" << KEmailAddress::splitAddressList(receiptTo).join(u'\n');
 
     return KEmailAddress::splitAddressList(receiptTo).count() > 1;
 }
@@ -826,7 +827,7 @@ bool MessageFactoryNG::MDNReturnPathEmpty(const KMime::Message::Ptr &msg)
     if (receiptTo.trimmed().isEmpty()) {
         return false;
     }
-    receiptTo.remove(QLatin1Char('\n'));
+    receiptTo.remove(u'\n');
 
     // RFC 2298: MDNs SHOULD NOT be sent automatically if the address in
     // the Disposition-Notification-To header differs from the address
@@ -834,7 +835,7 @@ bool MessageFactoryNG::MDNReturnPathEmpty(const KMime::Message::Ptr &msg)
     // SHOULD be obtained (or no MDN sent) if there is no Return-Path
     // header in the message [...]
     KMime::Types::AddrSpecList returnPathList = MessageHelper::extractAddrSpecs(msg, "Return-Path");
-    const QString returnPath = returnPathList.isEmpty() ? QString() : returnPathList.front().localPart + QLatin1Char('@') + returnPathList.front().domain;
+    const QString returnPath = returnPathList.isEmpty() ? QString() : returnPathList.front().localPart + u'@' + returnPathList.front().domain;
     qCDebug(MESSAGECOMPOSER_LOG) << "clean return path:" << returnPath;
     return returnPath.isEmpty();
 }
@@ -849,15 +850,15 @@ bool MessageFactoryNG::MDNReturnPathNotInRecieptTo(const KMime::Message::Ptr &ms
     if (receiptTo.trimmed().isEmpty()) {
         return false;
     }
-    receiptTo.remove(QLatin1Char('\n'));
+    receiptTo.remove(u'\n');
 
     // RFC 2298: MDNs SHOULD NOT be sent automatically if the address in
     // the Disposition-Notification-To header differs from the address
     // in the Return-Path header. [...] Confirmation from the user
     // SHOULD be obtained (or no MDN sent) if there is no Return-Path
     // header in the message [...]
-    KMime::Types::AddrSpecList returnPathList = MessageHelper::extractAddrSpecs(msg, QStringLiteral("Return-Path").toLatin1());
-    const QString returnPath = returnPathList.isEmpty() ? QString() : returnPathList.front().localPart + QLatin1Char('@') + returnPathList.front().domain;
+    KMime::Types::AddrSpecList returnPathList = MessageHelper::extractAddrSpecs(msg, u"Return-Path"_s.toLatin1());
+    const QString returnPath = returnPathList.isEmpty() ? QString() : returnPathList.front().localPart + u'@' + returnPathList.front().domain;
     qCDebug(MESSAGECOMPOSER_LOG) << "clean return path:" << returnPath;
     return !receiptTo.contains(returnPath, Qt::CaseSensitive);
 }
@@ -901,12 +902,12 @@ uint MessageFactoryNG::identityUoid(const KMime::Message::Ptr &msg)
 QString MessageFactoryNG::replaceHeadersInString(const KMime::Message::Ptr &msg, const QString &s)
 {
     QString result = s;
-    static QRegularExpression rx{QStringLiteral("\\$\\{([a-z0-9-]+)\\}"), QRegularExpression::CaseInsensitiveOption};
+    static QRegularExpression rx{u"\\$\\{([a-z0-9-]+)\\}"_s, QRegularExpression::CaseInsensitiveOption};
 
     const QString sDate = MessageCore::DateFormatter::formatDate(MessageCore::DateFormatter::Localized, msg->date()->dateTime());
     qCDebug(MESSAGECOMPOSER_LOG) << "creating mdn date:" << msg->date()->dateTime().toSecsSinceEpoch() << sDate;
 
-    result.replace(QStringLiteral("${date}"), sDate);
+    result.replace(u"${date}"_s, sDate);
 
     int idx = 0;
     for (auto match = rx.match(result); match.hasMatch(); match = rx.match(result, idx)) {

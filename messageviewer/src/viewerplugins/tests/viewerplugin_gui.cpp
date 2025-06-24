@@ -5,6 +5,8 @@
 */
 
 #include "viewerplugin_gui.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "viewerplugins/viewerplugintoolmanager.h"
 #include <KActionCollection>
 #include <QStandardPaths>
@@ -35,30 +37,30 @@ ViewerPluginTest::ViewerPluginTest(QWidget *parent)
     auto toolManager = new MessageViewer::ViewerPluginToolManager(toolManagerWidget, this);
     connect(toolManager, &MessageViewer::ViewerPluginToolManager::activatePlugin, this, &ViewerPluginTest::slotActivatePlugin);
 
-    toolManager->setPluginName(QStringLiteral("messageviewer"));
-    toolManager->setPluginDirectory(QStringLiteral("pim6/messageviewer/viewerplugin"));
+    toolManager->setPluginName(u"messageviewer"_s);
+    toolManager->setPluginDirectory(u"pim6/messageviewer/viewerplugin"_s);
     if (!toolManager->initializePluginList()) {
         qDebug() << " Impossible to initialize plugins";
     }
     toolManager->setActionCollection(new KActionCollection(this));
     toolManager->createView();
     auto menu = new QMenu(this);
-    menu->setTitle(QStringLiteral("tools"));
+    menu->setTitle(u"tools"_s);
     menu->addActions(toolManager->viewerPluginActionList(MessageViewer::ViewerPluginInterface::All));
     menuBar->addMenu(menu);
 
     menu = new QMenu(this);
-    menu->setTitle(QStringLiteral("selected tools"));
+    menu->setTitle(u"selected tools"_s);
     menu->addActions(toolManager->viewerPluginActionList(MessageViewer::ViewerPluginInterface::NeedSelection));
     menuBar->addMenu(menu);
 
     menu = new QMenu(this);
-    menu->setTitle(QStringLiteral("message tools"));
+    menu->setTitle(u"message tools"_s);
     menu->addActions(toolManager->viewerPluginActionList(MessageViewer::ViewerPluginInterface::NeedMessage));
     menuBar->addMenu(menu);
 
     menu = new QMenu(this);
-    menu->setTitle(QStringLiteral("message tools and selected tools"));
+    menu->setTitle(u"message tools and selected tools"_s);
     MessageViewer::ViewerPluginInterface::SpecificFeatureTypes featureTypes;
     featureTypes |= MessageViewer::ViewerPluginInterface::NeedMessage;
     featureTypes |= MessageViewer::ViewerPluginInterface::NeedSelection;

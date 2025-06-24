@@ -5,6 +5,8 @@
 */
 
 #include "developertooldialogtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "developertool/developertooldialog.h"
 #include "developertool/developertoolwidget.h"
 #include <QDialogButtonBox>
@@ -21,13 +23,13 @@ DeveloperToolDialogTest::DeveloperToolDialogTest(QObject *parent)
 void DeveloperToolDialogTest::shouldHaveDefaultValues()
 {
     WebEngineViewer::DeveloperToolDialog d;
-    auto mainLayout = d.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = d.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
 
-    auto mDeveloperToolWidget = d.findChild<WebEngineViewer::DeveloperToolWidget *>(QStringLiteral("mDeveloperToolWidget"));
+    auto mDeveloperToolWidget = d.findChild<WebEngineViewer::DeveloperToolWidget *>(u"mDeveloperToolWidget"_s);
     QVERIFY(mDeveloperToolWidget);
 
-    auto buttonBox = d.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
+    auto buttonBox = d.findChild<QDialogButtonBox *>(u"buttonBox"_s);
     QVERIFY(buttonBox);
 }
 

@@ -5,6 +5,7 @@
 */
 
 #include "util.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include "mimetreeparser_debug.h"
 
@@ -64,27 +65,27 @@ QString MimeTreeParser::Util::iconNameForMimetype(const QString &mimeType, const
 
     // convert non-registered types to registered types
     if (mimeType == QLatin1StringView("application/x-vnd.kolab.contact")) {
-        tMimeType = QStringLiteral("text/x-vcard");
+        tMimeType = u"text/x-vcard"_s;
     } else if (mimeType == QLatin1StringView("application/x-vnd.kolab.event")) {
-        tMimeType = QStringLiteral("application/x-vnd.akonadi.calendar.event");
+        tMimeType = u"application/x-vnd.akonadi.calendar.event"_s;
     } else if (mimeType == QLatin1StringView("application/x-vnd.kolab.task")) {
-        tMimeType = QStringLiteral("application/x-vnd.akonadi.calendar.todo");
+        tMimeType = u"application/x-vnd.akonadi.calendar.todo"_s;
     } else if (mimeType == QLatin1StringView("application/x-vnd.kolab.journal")) {
-        tMimeType = QStringLiteral("application/x-vnd.akonadi.calendar.journal");
+        tMimeType = u"application/x-vnd.akonadi.calendar.journal"_s;
     } else if (mimeType == QLatin1StringView("application/x-vnd.kolab.note")) {
-        tMimeType = QStringLiteral("application/x-vnd.akonadi.note");
+        tMimeType = u"application/x-vnd.akonadi.note"_s;
     } else if (mimeType == QLatin1StringView("image/jpg")) {
-        tMimeType = QStringLiteral("image/jpeg");
+        tMimeType = u"image/jpeg"_s;
     } else if (mimeType == QLatin1StringView("application/x-pkcs7-signature")) {
-        tMimeType = QStringLiteral("application/pkcs7-signature");
+        tMimeType = u"application/pkcs7-signature"_s;
     } else if (mimeType == QLatin1StringView("message/global")) {
-        tMimeType = QStringLiteral("message/rfc822");
+        tMimeType = u"message/rfc822"_s;
     } else if (mimeType == QLatin1StringView("text/x-moz-deleted")) {
         // Avoid debug warning about unknown mimetype
         // Bug: 468801
         // We need to show unknown icon
         tMimeType.clear();
-        fileName = QStringLiteral("unknown");
+        fileName = u"unknown"_s;
     }
     QMimeDatabase mimeDb;
     if (!tMimeType.isEmpty()) {
@@ -92,7 +93,7 @@ QString MimeTreeParser::Util::iconNameForMimetype(const QString &mimeType, const
         if (mime.isValid()) {
             fileName = mime.iconName();
         } else {
-            fileName = QStringLiteral("unknown");
+            fileName = u"unknown"_s;
             if (!tMimeType.isEmpty()) {
                 qCWarning(MIMETREEPARSER_LOG) << "unknown mimetype" << tMimeType;
             }
@@ -100,7 +101,7 @@ QString MimeTreeParser::Util::iconNameForMimetype(const QString &mimeType, const
     }
     // WorkAround for #199083
     if (fileName == QLatin1StringView("text-vcard")) {
-        fileName = QStringLiteral("text-x-vcard");
+        fileName = u"text-x-vcard"_s;
     }
 
     if (fileName.isEmpty()) {
@@ -139,15 +140,15 @@ QString MimeTreeParser::Util::htmlModeToString(HtmlMode mode)
 {
     switch (mode) {
     case Normal: ///< A normal plaintext message, non-multipart
-        return QStringLiteral("Normal PlainText Message, non-multipart");
+        return u"Normal PlainText Message, non-multipart"_s;
     case Html: ///< A HTML message, non-multipart
-        return QStringLiteral("A HTML message, non-multipart");
+        return u"A HTML message, non-multipart"_s;
     case MultipartPlain: ///< A multipart/alternative message, the plain text part is currently displayed
-        return QStringLiteral("A multipart/alternative message, the plain text part is currently displayed");
+        return u"A multipart/alternative message, the plain text part is currently displayed"_s;
     case MultipartHtml: ///< A multipart/alternative message, the HTML part is currently displayed
-        return QStringLiteral("A multipart/alternative message, the HTML part is currently displayed");
+        return u"A multipart/alternative message, the HTML part is currently displayed"_s;
     case MultipartIcal: ///< A multipart/alternative message, the ICal part is currently displayed
-        return QStringLiteral("A multipart/alternative message, the ICal part is currently displayed");
+        return u"A multipart/alternative message, the ICal part is currently displayed"_s;
     }
     return {};
 }

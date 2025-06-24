@@ -5,6 +5,8 @@
 */
 
 #include "localdatabasefiletest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../createdatabasefilejob.h"
 #include "../localdatabasefile.h"
 #include <QSignalSpy>
@@ -15,14 +17,14 @@ LocalDataBaseFileTest::LocalDataBaseFileTest(QObject *parent)
     : QObject(parent)
 {
     QStandardPaths::setTestModeEnabled(true);
-    QDir().mkpath(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/phishingurl"));
+    QDir().mkpath(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + u"/phishingurl"_s);
 }
 
 LocalDataBaseFileTest::~LocalDataBaseFileTest() = default;
 
 void LocalDataBaseFileTest::shouldBeInvalidWithUnExistingFile()
 {
-    WebEngineViewer::LocalDataBaseFile f(QStringLiteral("foo"));
+    WebEngineViewer::LocalDataBaseFile f(u"foo"_s);
     QVERIFY(!f.isValid());
     QVERIFY(!f.fileExists());
 }
@@ -75,12 +77,12 @@ void LocalDataBaseFileTest::shouldCheckHashBinaryFile()
     QList<WebEngineViewer::Addition> lst;
     lst << a << b << c << d;
     info.additionList = lst;
-    info.minimumWaitDuration = QStringLiteral("593.440s");
-    info.threatType = QStringLiteral("MALWARE");
-    info.threatEntryType = QStringLiteral("URL");
+    info.minimumWaitDuration = u"593.440s"_s;
+    info.threatType = u"MALWARE"_s;
+    info.threatEntryType = u"URL"_s;
     info.responseType = WebEngineViewer::UpdateDataBaseInfo::FullUpdate;
-    info.platformType = QStringLiteral("WINDOWS");
-    info.newClientState = QStringLiteral("ChAIBRADGAEiAzAwMSiAEDABEAFGpqhd");
+    info.platformType = u"WINDOWS"_s;
+    info.newClientState = u"ChAIBRADGAEiAzAwMSiAEDABEAFGpqhd"_s;
     info.sha256 = QByteArrayLiteral("vLPta+N40Sip7Xo3XXgYvW5dpahS96vPwaOjxVospm8=");
 
     databasejob.setUpdateDataBaseInfo(info);

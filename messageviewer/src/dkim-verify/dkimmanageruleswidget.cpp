@@ -5,6 +5,8 @@
 */
 
 #include "dkimmanageruleswidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "dkimmanagerulescombobox.h"
 #include "dkimruledialog.h"
 #include "messageviewer_dkimcheckerdebug.h"
@@ -37,7 +39,7 @@ MessageViewer::DKIMRule DKIMManageRulesWidgetItem::rule() const
     rule.setListId(text(ColumnType::ListId));
     rule.setPriority(text(ColumnType::Priority).toInt());
     rule.setRuleType(mRuleTypeCombobox->ruleType());
-    rule.setSignedDomainIdentifier(text(ColumnType::SDid).split(QLatin1Char(' ')));
+    rule.setSignedDomainIdentifier(text(ColumnType::SDid).split(u' '));
     return rule;
 }
 
@@ -55,7 +57,7 @@ void DKIMManageRulesWidgetItem::updateInfo()
     setText(ColumnType::Domain, mRule.domain());
     setText(ColumnType::ListId, mRule.listId());
     setText(ColumnType::From, mRule.from());
-    setText(ColumnType::SDid, mRule.signedDomainIdentifier().join(QLatin1Char(' ')));
+    setText(ColumnType::SDid, mRule.signedDomainIdentifier().join(u' '));
     setText(ColumnType::Priority, QString::number(mRule.priority()));
     mRuleTypeCombobox->setRuleType(mRule.ruleType());
 }
@@ -193,20 +195,20 @@ void DKIMManageRulesWidget::slotCustomContextMenuRequested(const QPoint &pos)
 {
     QTreeWidgetItem *item = mTreeWidget->itemAt(pos);
     QMenu menu(this);
-    menu.addAction(QIcon::fromTheme(QStringLiteral("list-add")), i18n("Add..."), this, [this]() {
+    menu.addAction(QIcon::fromTheme(u"list-add"_s), i18n("Add..."), this, [this]() {
         addRule();
     });
     auto rulesItem = dynamic_cast<DKIMManageRulesWidgetItem *>(item);
     if (rulesItem) {
-        menu.addAction(QIcon::fromTheme(QStringLiteral("document-edit")), i18n("Modify..."), this, [this, rulesItem]() {
+        menu.addAction(QIcon::fromTheme(u"document-edit"_s), i18n("Modify..."), this, [this, rulesItem]() {
             modifyRule(rulesItem);
         });
         menu.addSeparator();
-        menu.addAction(QIcon::fromTheme(QStringLiteral("edit-duplicate")), i18n("Duplicate Rule"), this, [this, rulesItem]() {
+        menu.addAction(QIcon::fromTheme(u"edit-duplicate"_s), i18n("Duplicate Rule"), this, [this, rulesItem]() {
             duplicateRule(rulesItem);
         });
         menu.addSeparator();
-        menu.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Remove Rule"), this, [this, item]() {
+        menu.addAction(QIcon::fromTheme(u"edit-delete"_s), i18n("Remove Rule"), this, [this, item]() {
             const int answer = KMessageBox::warningTwoActions(this,
                                                               i18n("Do you want to delete this rule?"),
                                                               i18nc("@title:window", "Delete Rule"),

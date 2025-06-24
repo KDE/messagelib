@@ -5,6 +5,8 @@
 */
 
 #include "sendlaterdialogtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "sendlater/sendlaterdialog.h"
 
 #include <KDateComboBox>
@@ -29,12 +31,12 @@ void SendLaterDialogTest::initTestCase()
 void SendLaterDialogTest::shouldHaveDefaultValue()
 {
     MessageComposer::SendLaterDialog dlg(nullptr);
-    auto timeCombo = dlg.findChild<KTimeComboBox *>(QStringLiteral("time_sendlater"));
+    auto timeCombo = dlg.findChild<KTimeComboBox *>(u"time_sendlater"_s);
     QVERIFY(timeCombo);
-    auto dateCombo = dlg.findChild<KDateComboBox *>(QStringLiteral("date_sendlater"));
+    auto dateCombo = dlg.findChild<KDateComboBox *>(u"date_sendlater"_s);
     QVERIFY(dateCombo);
     QVERIFY(dateCombo->date().isValid());
-    auto okButton = dlg.findChild<QPushButton *>(QStringLiteral("okbutton"));
+    auto okButton = dlg.findChild<QPushButton *>(u"okbutton"_s);
     QVERIFY(okButton);
     QVERIFY(okButton->isEnabled());
     dateCombo->lineEdit()->clear();

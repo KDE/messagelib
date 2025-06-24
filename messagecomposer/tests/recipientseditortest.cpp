@@ -7,6 +7,8 @@
 */
 
 #include "recipientseditortest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <MessageComposer/RecipientsEditor>
 
 #include <QDebug>
@@ -31,7 +33,7 @@ Composer::Composer(QWidget *parent)
     topLayout->setContentsMargins(4, 4, 4, 4);
     topLayout->setSpacing(4);
 
-    auto label = new QLabel(QStringLiteral("From:"), this);
+    auto label = new QLabel(u"From:"_s, this);
     topLayout->addWidget(label, 0, 0);
     auto edit = new QLineEdit(this);
     topLayout->addWidget(edit, 0, 1);
@@ -46,7 +48,7 @@ Composer::Composer(QWidget *parent)
     topLayout->addWidget(editor, 2, 0, 1, 2);
     topLayout->setRowStretch(2, 1);
 
-    auto button = new QPushButton(QStringLiteral("&Close"), this);
+    auto button = new QPushButton(u"&Close"_s, this);
     topLayout->addWidget(button, 3, 0, 1, 2);
     connect(button, &QPushButton::clicked, this, &Composer::slotClose);
 }

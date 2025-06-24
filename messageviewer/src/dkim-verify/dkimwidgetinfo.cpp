@@ -5,6 +5,8 @@
 */
 
 #include "dkimwidgetinfo.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "dkimmanager.h"
 #include "dkimutil.h"
 #include "messageviewer_dkimcheckerdebug.h"
@@ -194,19 +196,19 @@ void DKIMWidgetInfo::updateToolTip()
     case DKIMCheckSignatureJob::DKIMWarning::Any:
         break;
     case DKIMCheckSignatureJob::DKIMWarning::SignatureExpired:
-        tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n')) + i18n("Signature expired");
+        tooltip += (tooltip.isEmpty() ? QChar() : u'\n') + i18n("Signature expired");
         break;
     case DKIMCheckSignatureJob::DKIMWarning::SignatureCreatedInFuture:
-        tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n')) + i18n("Signature created in the future");
+        tooltip += (tooltip.isEmpty() ? QChar() : u'\n') + i18n("Signature created in the future");
         break;
     case DKIMCheckSignatureJob::DKIMWarning::SignatureTooSmall:
-        tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n')) + i18n("Signature too small");
+        tooltip += (tooltip.isEmpty() ? QChar() : u'\n') + i18n("Signature too small");
         break;
     case DKIMCheckSignatureJob::DKIMWarning::HashAlgorithmUnsafe:
-        tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n')) + i18n("Hash Algorithm unsafe (sha1)");
+        tooltip += (tooltip.isEmpty() ? QChar() : u'\n') + i18n("Hash Algorithm unsafe (sha1)");
         break;
     case DKIMCheckSignatureJob::DKIMWarning::PublicRsaKeyTooSmall:
-        tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n')) + i18n("Public Key too small");
+        tooltip += (tooltip.isEmpty() ? QChar() : u'\n') + i18n("Public Key too small");
         break;
     }
 
@@ -299,10 +301,10 @@ void DKIMWidgetInfo::updateToolTip()
             }
         }
         if (!tooltipList.isEmpty()) {
-            tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n')) + tooltipList.join(QLatin1Char('\n'));
+            tooltip += (tooltip.isEmpty() ? QChar() : u'\n') + tooltipList.join(u'\n');
         }
         if (mResult.listSignatureAuthenticationResult.isEmpty()) {
-            tooltip += (tooltip.isEmpty() ? QChar() : QLatin1Char('\n')) + i18n("Not Signed");
+            tooltip += (tooltip.isEmpty() ? QChar() : u'\n') + i18n("Not Signed");
         }
     }
     qCDebug(MESSAGEVIEWER_DKIMCHECKER_LOG) << "mResult.authentication " << mResult.listSignatureAuthenticationResult;

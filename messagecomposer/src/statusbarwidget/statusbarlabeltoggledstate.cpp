@@ -5,6 +5,8 @@
 */
 
 #include "statusbarlabeltoggledstate.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "messagecomposer_debug.h"
 #include <QMouseEvent>
 using namespace MessageComposer;

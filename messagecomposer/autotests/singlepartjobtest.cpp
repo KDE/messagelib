@@ -5,6 +5,7 @@
 */
 
 #include "singlepartjobtest.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <QDebug>
 #include <QTest>
@@ -43,7 +44,7 @@ void SinglepartJobTest::testContentDisposition()
     auto cjob = new SinglepartJob(&composerJob);
     QByteArray data("birds came flying from the underground");
     cjob->setData(data);
-    QString filename = QStringLiteral("test_ăîşţâ.txt");
+    QString filename = u"test_ăîşţâ.txt"_s;
     cjob->contentDisposition()->setDisposition(Headers::CDattachment);
     cjob->contentDisposition()->setFilename(filename);
     QVERIFY(cjob->exec());

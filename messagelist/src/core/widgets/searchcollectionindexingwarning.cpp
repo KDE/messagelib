@@ -6,6 +6,8 @@
  */
 
 #include "searchcollectionindexingwarning.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "messagelist_debug.h"
 
 #include <Akonadi/CachePolicy>
@@ -47,7 +49,7 @@ Akonadi::CollectionFetchJob *SearchCollectionIndexingWarning::fetchCollections(c
     const Akonadi::CollectionFetchJob::Type type = recursive ? Akonadi::CollectionFetchJob::Recursive : Akonadi::CollectionFetchJob::Base;
     auto fetch = new Akonadi::CollectionFetchJob(cols, type, this);
     fetch->fetchScope().setAncestorRetrieval(Akonadi::CollectionFetchScope::None);
-    fetch->fetchScope().setContentMimeTypes(QStringList() << Akonadi::Collection::mimeType() << QStringLiteral("message/rfc822"));
+    fetch->fetchScope().setContentMimeTypes(QStringList() << Akonadi::Collection::mimeType() << u"message/rfc822"_s);
     fetch->fetchScope().setIncludeStatistics(true);
     return fetch;
 }

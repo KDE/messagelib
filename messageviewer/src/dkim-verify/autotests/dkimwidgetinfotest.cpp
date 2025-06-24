@@ -5,6 +5,8 @@
 */
 
 #include "dkimwidgetinfotest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "dkim-verify/dkimwidgetinfo.h"
 #include <MessageViewer/DKIMCheckSignatureJob>
 #include <QHBoxLayout>
@@ -21,11 +23,11 @@ void DKIMWidgetInfoTest::shouldHaveDefaultValues()
 {
     MessageViewer::DKIMWidgetInfo w;
 
-    auto mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = w.findChild<QHBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins(0, 0, 0, 0));
 
-    auto mLabel = w.findChild<QLabel *>(QStringLiteral("label"));
+    auto mLabel = w.findChild<QLabel *>(u"label"_s);
     QVERIFY(mLabel);
     QVERIFY(mLabel->text().isEmpty());
 
@@ -35,10 +37,10 @@ void DKIMWidgetInfoTest::shouldHaveDefaultValues()
 void DKIMWidgetInfoTest::shouldClearWidget()
 {
     MessageViewer::DKIMWidgetInfo w;
-    auto mLabel = w.findChild<QLabel *>(QStringLiteral("label"));
+    auto mLabel = w.findChild<QLabel *>(u"label"_s);
     MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult result;
-    result.fromEmail = QStringLiteral("bla");
-    result.sdid = QStringLiteral("bli");
+    result.fromEmail = u"bla"_s;
+    result.sdid = u"bli"_s;
     result.status = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::NeedToBeSigned;
     result.error = MessageViewer::DKIMCheckSignatureJob::DKIMError::CorruptedBodyHash;
     result.warning = MessageViewer::DKIMCheckSignatureJob::DKIMWarning::HashAlgorithmUnsafe;

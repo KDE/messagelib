@@ -5,6 +5,8 @@
 */
 
 #include "plugineditormanager.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "messagecomposer_debug.h"
 #include "plugineditor.h"
 #include <KPluginFactory>
@@ -30,7 +32,7 @@ namespace
 {
 QString pluginEditorVersion()
 {
-    return QStringLiteral("1.0");
+    return u"1.0"_s;
 }
 }
 
@@ -60,7 +62,7 @@ private:
 
 void PluginEditorManagerPrivate::initializePlugins()
 {
-    const QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("pim6/kmail/plugineditor"));
+    const QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(u"pim6/kmail/plugineditor"_s);
 
     const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
 
@@ -79,7 +81,7 @@ void PluginEditorManagerPrivate::initializePlugins()
         info.metaDataFileNameBaseName = QFileInfo(data.fileName()).baseName();
         info.metaDataFileName = data.fileName();
         info.data = data;
-        const QVariant p = data.rawData().value(QStringLiteral("X-KDE-KMailEditor-Order")).toVariant();
+        const QVariant p = data.rawData().value(u"X-KDE-KMailEditor-Order"_s).toVariant();
         int order = -1;
         if (p.isValid()) {
             order = p.toInt();
@@ -128,12 +130,12 @@ QList<PimCommon::PluginUtilData> PluginEditorManagerPrivate::pluginDataList() co
 
 QString PluginEditorManagerPrivate::configGroupName() const
 {
-    return QStringLiteral("KMailPluginEditor");
+    return u"KMailPluginEditor"_s;
 }
 
 QString PluginEditorManagerPrivate::configPrefixSettingKey() const
 {
-    return QStringLiteral("KMailEditorPlugin");
+    return u"KMailEditorPlugin"_s;
 }
 
 PluginEditor *PluginEditorManagerPrivate::pluginFromIdentifier(const QString &id)

@@ -5,6 +5,8 @@
 */
 
 #include "networkurlinterceptorpluginmanager.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "networkpluginurlinterceptor.h"
 #include "webengineviewer_debug.h"
 
@@ -32,7 +34,7 @@ namespace
 {
 QString pluginVersion()
 {
-    return QStringLiteral("1.0");
+    return u"1.0"_s;
 }
 }
 
@@ -61,12 +63,12 @@ private:
 
 QString NetworkUrlInterceptorPluginManagerPrivate::configGroupName() const
 {
-    return QStringLiteral("NetworkUrlInterceptorPlugins");
+    return u"NetworkUrlInterceptorPlugins"_s;
 }
 
 QString NetworkUrlInterceptorPluginManagerPrivate::configPrefixSettingKey() const
 {
-    return QStringLiteral("PluginsNetworkUrlInterceptor");
+    return u"PluginsNetworkUrlInterceptor"_s;
 }
 
 QList<PimCommon::PluginUtilData> NetworkUrlInterceptorPluginManagerPrivate::pluginDataList() const
@@ -76,7 +78,7 @@ QList<PimCommon::PluginUtilData> NetworkUrlInterceptorPluginManagerPrivate::plug
 
 void NetworkUrlInterceptorPluginManagerPrivate::initializePluginList()
 {
-    const QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("pim6/webengineviewer/urlinterceptor"));
+    const QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(u"pim6/webengineviewer/urlinterceptor"_s);
 
     QListIterator<KPluginMetaData> i(plugins);
     i.toBack();

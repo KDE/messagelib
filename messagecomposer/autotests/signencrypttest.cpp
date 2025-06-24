@@ -5,6 +5,7 @@
 */
 
 #include "signencrypttest.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include "cryptofunctions.h"
 #include "qtest_messagecomposer.h"
@@ -48,8 +49,8 @@ void SignEncryptTest::testContent_data()
 
     QTest::newRow("OpenPGPMimeFormat") << (int)Kleo::OpenPGPMIMEFormat << QString();
     QTest::newRow("InlineOpenPGPFormat") << (int)Kleo::InlineOpenPGPFormat << QString();
-    QTest::newRow("SMIMEFormat") << (int)Kleo::SMIMEFormat << QStringLiteral("Not implemented");
-    QTest::newRow("SMIMEOpaqueFormat") << (int)Kleo::SMIMEOpaqueFormat << QStringLiteral("Not implemented");
+    QTest::newRow("SMIMEFormat") << (int)Kleo::SMIMEFormat << u"Not implemented"_s;
+    QTest::newRow("SMIMEOpaqueFormat") << (int)Kleo::SMIMEOpaqueFormat << u"Not implemented"_s;
 }
 
 void SignEncryptTest::testContent()
@@ -160,7 +161,7 @@ void SignEncryptTest::testHeaders()
     QVERIFY(result);
     result->assemble();
 
-    QFile f(QStringLiteral("test"));
+    QFile f(u"test"_s);
     QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
     const QByteArray encodedContent(result->encodedContent());
     f.write(encodedContent);
@@ -184,9 +185,9 @@ void SignEncryptTest::testProtectedHeaders_data()
     QTest::addColumn<bool>("protectedHeadersObvoscate");
     QTest::addColumn<QString>("referenceFile");
 
-    QTest::newRow("simple-obvoscate") << true << true << QStringLiteral("protected_headers-obvoscate.mbox");
-    QTest::newRow("simple-non-obvoscate") << true << false << QStringLiteral("protected_headers-non-obvoscate.mbox");
-    QTest::newRow("non-protected_headers") << false << false << QStringLiteral("non-protected_headers.mbox");
+    QTest::newRow("simple-obvoscate") << true << true << u"protected_headers-obvoscate.mbox"_s;
+    QTest::newRow("simple-non-obvoscate") << true << false << u"protected_headers-non-obvoscate.mbox"_s;
+    QTest::newRow("non-protected_headers") << false << false << u"non-protected_headers.mbox"_s;
 }
 
 void SignEncryptTest::testProtectedHeaders()
@@ -202,8 +203,8 @@ void SignEncryptTest::testProtectedHeaders()
 
     QVERIFY(seJob);
 
-    const QByteArray data(QStringLiteral("one flew over the cuckoo's nest").toUtf8());
-    const QString subject(QStringLiteral("asdfghjklö"));
+    const QByteArray data(u"one flew over the cuckoo's nest"_s.toUtf8());
+    const QString subject(u"asdfghjklö"_s);
 
     auto content = new KMime::Content;
     content->contentType(true)->setMimeType("text/plain");
@@ -216,7 +217,7 @@ void SignEncryptTest::testProtectedHeaders()
     skeletonMessage.bcc(true)->from7BitString("bcc@test.de, bcc2@test.de");
     skeletonMessage.subject(true)->fromUnicodeString(subject);
 
-    const QStringList recipients = {QStringLiteral("test@kolab.org")};
+    const QStringList recipients = {u"test@kolab.org"_s};
 
     seJob->setContent(content);
     seJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);

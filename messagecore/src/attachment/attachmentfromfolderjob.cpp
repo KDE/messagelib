@@ -5,6 +5,7 @@
 */
 
 #include "attachmentfromfolderjob.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include "messagecore_debug.h"
 #include <KLocalizedString>
@@ -58,8 +59,7 @@ void AttachmentFromFolderJob::AttachmentLoadJobPrivate::compressFolder()
         qCWarning(MESSAGECORE_LOG) << " Impossible to write file " << fileName;
     }
     qCDebug(MESSAGECORE_LOG) << "writing root directory : " << filename;
-    addEntity(QDir(q->url().path()).entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot | QDir::NoSymLinks | QDir::Files, QDir::DirsFirst),
-              fileName + QLatin1Char('/'));
+    addEntity(QDir(q->url().path()).entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot | QDir::NoSymLinks | QDir::Files, QDir::DirsFirst), fileName + u'/');
     mZip->close();
 
     Q_ASSERT(mCompressedFolder == nullptr);
@@ -102,7 +102,7 @@ void AttachmentFromFolderJob::AttachmentLoadJobPrivate::addEntity(const QFileInf
                 return;
             }
             addEntity(QDir(info.filePath()).entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot | QDir::NoSymLinks | QDir::Files, QDir::DirsFirst),
-                      path + infoFileName + QLatin1Char('/'));
+                      path + infoFileName + u'/');
         }
 
         if (info.isFile()) {

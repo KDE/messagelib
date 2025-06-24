@@ -6,6 +6,8 @@
 */
 
 #include "scamdetectionwarningwidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "settings/messageviewersettings.h"
 
 #include <KLocalizedString>

@@ -5,6 +5,8 @@
 */
 
 #include "followupremindercreatejob.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "followupreminderinterface.h"
 #include "messagecomposer_debug.h"
 
@@ -109,8 +111,8 @@ void FollowupReminderCreateJob::slotCreateNewTodo(KJob *job)
 void FollowupReminderCreateJob::writeFollowupReminderInfo()
 {
     std::unique_ptr<org::freedesktop::Akonadi::FollowUpReminderAgent> iface{new org::freedesktop::Akonadi::FollowUpReminderAgent{
-        Akonadi::ServerManager::agentServiceName(Akonadi::ServerManager::Agent, QStringLiteral("akonadi_followupreminder_agent")),
-        QStringLiteral("/FollowUpReminder"),
+        Akonadi::ServerManager::agentServiceName(Akonadi::ServerManager::Agent, u"akonadi_followupreminder_agent"_s),
+        u"/FollowUpReminder"_s,
         QDBusConnection::sessionBus()}};
 
     if (!iface->isValid()) {

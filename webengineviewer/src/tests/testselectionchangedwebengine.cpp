@@ -5,6 +5,7 @@
 */
 
 #include "testselectionchangedwebengine.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include "webengineview.h"
 #include <QApplication>
@@ -19,7 +20,7 @@ TestSelectionChangedEngine::TestSelectionChangedEngine(QWidget *parent)
     auto layout = new QHBoxLayout;
     vbox->addLayout(layout);
     pageView = new WebEngineViewer::WebEngineView(this);
-    pageView->load(QUrl(QStringLiteral("http://www.planetkde.org")));
+    pageView->load(QUrl(u"http://www.planetkde.org"_s));
     connect(pageView, &WebEngineViewer::WebEngineView::selectionChanged, this, &TestSelectionChangedEngine::slotSelectionChanged);
     layout->addWidget(pageView);
 

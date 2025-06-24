@@ -5,6 +5,8 @@
 */
 
 #include "templateparseremailaddressrequesterinterfacewidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "templateparseremailaddressrequesterlineedit.h"
 #include <KPluginFactory>
 #include <QHBoxLayout>
@@ -24,7 +26,7 @@ TemplateParserEmailAddressRequesterInterfaceWidget::TemplateParserEmailAddressRe
 
 void TemplateParserEmailAddressRequesterInterfaceWidget::initializeEmailWidget()
 {
-    const KPluginMetaData editWidgetPlugin(QStringLiteral("pim6/templateparser/templateparseraddressrequesterplugin"));
+    const KPluginMetaData editWidgetPlugin(u"pim6/templateparser/templateparseraddressrequesterplugin"_s);
 
     const auto result = KPluginFactory::instantiatePlugin<TemplateParser::TemplateParserEmailAddressRequesterBase>(editWidgetPlugin, this);
     if (result) {

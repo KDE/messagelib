@@ -5,6 +5,8 @@
 */
 
 #include "sendlaterinfotest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "sendlater/sendlaterinfo.h"
 
 #include <QDateTime>
@@ -34,9 +36,9 @@ void SendLaterInfoTest::shouldHaveDefaultValue()
 void SendLaterInfoTest::shouldNotValidIfIdIsNotValid()
 {
     MessageComposer::SendLaterInfo info;
-    const QString to = QStringLiteral("kde.org");
+    const QString to = u"kde.org"_s;
     info.setTo(to);
-    info.setSubject(QStringLiteral("Subject"));
+    info.setSubject(u"Subject"_s);
     info.setRecurrence(true);
     info.setRecurrenceEachValue(5);
     info.setRecurrenceUnit(MessageComposer::SendLaterInfo::Years);
@@ -49,10 +51,10 @@ void SendLaterInfoTest::shouldNotValidIfIdIsNotValid()
 void SendLaterInfoTest::shouldNotValidIfDateIsNotValid()
 {
     MessageComposer::SendLaterInfo info;
-    const QString to = QStringLiteral("kde.org");
+    const QString to = u"kde.org"_s;
     info.setTo(to);
     info.setItemId(Akonadi::Item::Id(42));
-    info.setSubject(QStringLiteral("Subject"));
+    info.setSubject(u"Subject"_s);
     info.setRecurrence(true);
     info.setRecurrenceEachValue(5);
     info.setRecurrenceUnit(MessageComposer::SendLaterInfo::Years);
@@ -64,10 +66,10 @@ void SendLaterInfoTest::shouldNotValidIfDateIsNotValid()
 void SendLaterInfoTest::shouldCopyInfo()
 {
     MessageComposer::SendLaterInfo info;
-    const QString to = QStringLiteral("kde.org");
+    const QString to = u"kde.org"_s;
     info.setTo(to);
     info.setItemId(Akonadi::Item::Id(42));
-    info.setSubject(QStringLiteral("Subject"));
+    info.setSubject(u"Subject"_s);
     info.setRecurrence(true);
     info.setRecurrenceEachValue(5);
     info.setRecurrenceUnit(MessageComposer::SendLaterInfo::Years);

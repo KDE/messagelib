@@ -17,6 +17,7 @@
 #include <QVBoxLayout>
 
 using namespace MessageComposer;
+using namespace Qt::Literals::StringLiterals;
 
 ImageScalingSelectFormatDialog::ImageScalingSelectFormatDialog(QWidget *parent)
     : QDialog(parent)
@@ -49,10 +50,10 @@ void ImageScalingSelectFormatDialog::addImageFormat(const QString &format, const
 
 void ImageScalingSelectFormatDialog::initialize()
 {
-    addImageFormat(QStringLiteral("PNG"), QStringLiteral("image/png"));
-    addImageFormat(QStringLiteral("JPEG"), QStringLiteral("image/jpeg"));
-    addImageFormat(QStringLiteral("GIF"), QStringLiteral("image/gif"));
-    addImageFormat(QStringLiteral("BMP"), QStringLiteral("image/bmp"));
+    addImageFormat(u"PNG"_s, QStringLiteral("image/png"));
+    addImageFormat(u"JPEG"_s, QStringLiteral("image/jpeg"));
+    addImageFormat(u"GIF"_s, QStringLiteral("image/gif"));
+    addImageFormat(u"BMP"_s, QStringLiteral("image/bmp"));
 }
 
 QString ImageScalingSelectFormatDialog::format() const
@@ -62,7 +63,7 @@ QString ImageScalingSelectFormatDialog::format() const
     for (int i = 0; i < numberOfElement; ++i) {
         if (mListWidget->item(i)->checkState() == Qt::Checked) {
             if (!formatStr.isEmpty()) {
-                formatStr += QLatin1Char(';');
+                formatStr += u';';
             }
             formatStr += mListWidget->item(i)->data(ImageScalingSelectFormatDialog::ImageRole).toString();
         }
@@ -72,7 +73,7 @@ QString ImageScalingSelectFormatDialog::format() const
 
 void ImageScalingSelectFormatDialog::setFormat(const QString &format)
 {
-    const QList<QStringView> listFormat = QStringView(format).split(QLatin1Char(';'));
+    const QList<QStringView> listFormat = QStringView(format).split(u';');
     const int numberOfElement(mListWidget->count());
     for (int i = 0; i < numberOfElement; ++i) {
         QListWidgetItem *item = mListWidget->item(i);

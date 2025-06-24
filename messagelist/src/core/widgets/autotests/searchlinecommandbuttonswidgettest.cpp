@@ -5,6 +5,8 @@
 */
 
 #include "searchlinecommandbuttonswidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "core/widgets/searchlinecommandbuttonswidget.h"
 #include "core/widgets/searchlinecommandflowlayout.h"
 #include <QTest>
@@ -19,7 +21,7 @@ void SearchLineCommandButtonsWidgetTest::shouldHaveDefaultValues()
 {
     MessageList::Core::SearchLineCommandButtonsWidget w;
 
-    auto flowLayout = w.findChild<MessageList::Core::SearchLineCommandFlowLayout *>(QStringLiteral("flowLayout"));
+    auto flowLayout = w.findChild<MessageList::Core::SearchLineCommandFlowLayout *>(u"flowLayout"_s);
     QVERIFY(flowLayout);
     QCOMPARE(flowLayout->contentsMargins(), QMargins{});
     QCOMPARE(flowLayout->spacing(), 0);

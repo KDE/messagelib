@@ -6,6 +6,8 @@
 */
 
 #include "scamcheckshorturlmanager.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "scamcheckshorturl.h"
 
 using namespace MessageViewer;

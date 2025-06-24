@@ -5,6 +5,8 @@
 */
 
 #include "testmailwebengine.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "viewer/printmessage.h"
 #include "webenginescript.h"
 
@@ -26,7 +28,7 @@ TestMailWebEngine::TestMailWebEngine(QWidget *parent)
     auto vbox = new QVBoxLayout(this);
     mTestWebEngine = new MessageViewer::MailWebEngineView(new KActionCollection(this), this);
     connect(mTestWebEngine, &MessageViewer::MailWebEngineView::openUrl, this, &TestMailWebEngine::slotOpenUrl);
-    // mTestWebEngine->load(QUrl(QStringLiteral("http://www.kde.org")));
+    // mTestWebEngine->load(QUrl(u"http://www.kde.org"_s));
     QString str = QStringLiteral(
         "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" "
         "\"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\n\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n<head>\n  <style type=\"text/css\">\n  "
@@ -39,32 +41,32 @@ TestMailWebEngine::TestMailWebEngine(QWidget *parent)
         "you.</p>\n    <p> For more information about using Akregator, check the <a href='http://akregator.kde.org/'>Akregator website</a>. If you do not want "
         "to see this page anymore, <a href='config:/disable_introduction'>click here</a>.</p>\n    <p>We hope that you will enjoy Akregator.</p>\n    <p>Thank "
         "you, The Akregator Team </p>\n</div>\n\n    </div>\n  </div>\n</body>\n</html>\n\n<!-- vim:set sw=2 et nocindent smartindent: -->\n");
-    mTestWebEngine->setHtml(str, QUrl(QStringLiteral("file:///")));
+    mTestWebEngine->setHtml(str, QUrl(u"file:///"_s));
     mTestWebEngine->settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
     vbox->addWidget(mTestWebEngine);
     auto hButtonBox = new QHBoxLayout;
     vbox->addLayout(hButtonBox);
 
-    auto scrollUp = new QPushButton(QStringLiteral("scrollUp 10px"), this);
+    auto scrollUp = new QPushButton(u"scrollUp 10px"_s, this);
     connect(scrollUp, &QPushButton::clicked, this, &TestMailWebEngine::slotScrollUp);
     hButtonBox->addWidget(scrollUp);
 
-    auto scrollDown = new QPushButton(QStringLiteral("scrollDown 10px"), this);
+    auto scrollDown = new QPushButton(u"scrollDown 10px"_s, this);
     connect(scrollDown, &QPushButton::clicked, this, &TestMailWebEngine::slotScrollDown);
     hButtonBox->addWidget(scrollDown);
 
     hButtonBox = new QHBoxLayout;
     vbox->addLayout(hButtonBox);
 
-    auto zoomUp = new QPushButton(QStringLiteral("zoom Up"), this);
+    auto zoomUp = new QPushButton(u"zoom Up"_s, this);
     connect(zoomUp, &QPushButton::clicked, this, &TestMailWebEngine::slotZoomUp);
     hButtonBox->addWidget(zoomUp);
 
-    auto zoomDown = new QPushButton(QStringLiteral("zoom Down"), this);
+    auto zoomDown = new QPushButton(u"zoom Down"_s, this);
     connect(zoomDown, &QPushButton::clicked, this, &TestMailWebEngine::slotZoomDown);
     hButtonBox->addWidget(zoomDown);
 
-    auto printPreview = new QPushButton(QStringLiteral("Print Preview"), this);
+    auto printPreview = new QPushButton(u"Print Preview"_s, this);
     connect(printPreview, &QPushButton::clicked, this, &TestMailWebEngine::slotPrintPreview);
     hButtonBox->addWidget(printPreview);
 }

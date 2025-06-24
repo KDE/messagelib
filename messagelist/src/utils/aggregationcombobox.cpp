@@ -3,6 +3,8 @@
    SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
 #include "aggregationcombobox.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "aggregationcombobox_p.h"
 
 #include "core/aggregation.h"
@@ -33,10 +35,10 @@ QString AggregationComboBox::currentAggregation() const
 
 void AggregationComboBox::writeDefaultConfig() const
 {
-    KConfigGroup group(MessageListSettings::self()->config(), QStringLiteral("MessageListView::StorageModelAggregations"));
+    KConfigGroup group(MessageListSettings::self()->config(), u"MessageListView::StorageModelAggregations"_s);
 
     const QString aggregationID = currentAggregation();
-    group.writeEntry(QStringLiteral("DefaultSet"), aggregationID);
+    group.writeEntry(u"DefaultSet"_s, aggregationID);
 
     if (Manager::instance()) {
         Manager::instance()->aggregationsConfigurationCompleted();

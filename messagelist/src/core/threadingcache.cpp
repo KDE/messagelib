@@ -7,6 +7,8 @@
  *******************************************************************************/
 
 #include "threadingcache.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "aggregation.h"
 #include "messagelist_debug.h"
 
@@ -83,8 +85,7 @@ void ThreadingCache::load(const QString &id, const Aggregation *aggregation)
         return;
     }
 
-    const QString cacheFileName =
-        QStandardPaths::locate(QStandardPaths::CacheLocation, QStringLiteral("messagelist/threading/%1").arg(id), QStandardPaths::LocateFile);
+    const QString cacheFileName = QStandardPaths::locate(QStandardPaths::CacheLocation, u"messagelist/threading/%1"_s.arg(id), QStandardPaths::LocateFile);
     if (cacheFileName.isEmpty()) {
         qCDebug(MESSAGELIST_LOG) << "No threading cache file for collection" << id;
         return;
@@ -146,14 +147,14 @@ void ThreadingCache::save()
         return;
     }
     const QDir cacheDir = QStandardPaths::writableLocation(QStandardPaths::CacheLocation);
-    if (!cacheDir.exists(QStringLiteral("messagelist/threading"))) {
-        if (!cacheDir.mkpath(QStringLiteral("messagelist/threading"))) {
+    if (!cacheDir.exists(u"messagelist/threading"_s)) {
+        if (!cacheDir.mkpath(u"messagelist/threading"_s)) {
             qCWarning(MESSAGELIST_LOG) << "Failed to create cache directory.";
             return;
         }
     }
 
-    QFile cacheFile(cacheDir.filePath(QStringLiteral("messagelist/threading/%1").arg(mCacheId)));
+    QFile cacheFile(cacheDir.filePath(u"messagelist/threading/%1"_s.arg(mCacheId)));
     if (!cacheFile.open(QIODevice::WriteOnly | QIODevice::Truncate)) {
         qCWarning(MESSAGELIST_LOG) << "Failed to create cache file:" << cacheFile.errorString() << " mCacheId " << mCacheId;
         return;

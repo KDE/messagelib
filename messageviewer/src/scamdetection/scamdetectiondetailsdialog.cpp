@@ -6,6 +6,8 @@
 */
 
 #include "scamdetectiondetailsdialog.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "messageviewer_debug.h"
 #include "settings/messageviewersettings.h"
 
@@ -66,7 +68,7 @@ void ScamDetectionDetailsDialog::slotSaveAs()
     std::unique_ptr<QFileDialog> fdlg(new QFileDialog(this, QString(), url.path()));
     fdlg->setAcceptMode(QFileDialog::AcceptSave);
     fdlg->setFileMode(QFileDialog::AnyFile);
-    fdlg->selectFile(QStringLiteral("scam-detection.html"));
+    fdlg->selectFile(u"scam-detection.html"_s);
     if (fdlg->exec() == QDialog::Accepted) {
         const QStringList fileNames = fdlg->selectedFiles();
         if (!fileNames.isEmpty()) {

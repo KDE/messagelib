@@ -5,6 +5,8 @@
 */
 
 #include "messageviewercheckbeforedeletingpluginmanager.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "messageviewer_debug.h"
 #include "messageviewercheckbeforedeletingplugin.h"
 #include <KPluginFactory>
@@ -52,7 +54,7 @@ namespace
 {
 QString pluginVersion()
 {
-    return QStringLiteral("1.0");
+    return u"1.0"_s;
 }
 }
 
@@ -63,17 +65,17 @@ QList<PimCommon::PluginUtilData> MessageViewerCheckBeforeDeletingPluginManagerPr
 
 QString MessageViewerCheckBeforeDeletingPluginManagerPrivate::configGroupName() const
 {
-    return QStringLiteral("MessageViewerCheckBeforeDeletingPlugins");
+    return u"MessageViewerCheckBeforeDeletingPlugins"_s;
 }
 
 QString MessageViewerCheckBeforeDeletingPluginManagerPrivate::configPrefixSettingKey() const
 {
-    return QStringLiteral("MessageViewerCheckBeforeDeletingPlugin");
+    return u"MessageViewerCheckBeforeDeletingPlugin"_s;
 }
 
 void MessageViewerCheckBeforeDeletingPluginManagerPrivate::initializePluginList()
 {
-    const QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("pim6/messageviewer/checkbeforedeleting"));
+    const QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(u"pim6/messageviewer/checkbeforedeleting"_s);
     QListIterator<KPluginMetaData> i(plugins);
     i.toBack();
     const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
@@ -95,7 +97,7 @@ void MessageViewerCheckBeforeDeletingPluginManagerPrivate::initializePluginList(
         info.metaDataFileName = data.fileName();
         const QString version = data.version();
         if (pluginVersion() == version) {
-            const QVariant p = data.rawData().value(QStringLiteral("X-KDE-MessageViewer-Configure-Order")).toVariant();
+            const QVariant p = data.rawData().value(u"X-KDE-MessageViewer-Configure-Order"_s).toVariant();
             int order = -1;
             if (p.isValid()) {
                 order = p.toInt();

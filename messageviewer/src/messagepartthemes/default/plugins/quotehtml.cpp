@@ -15,6 +15,7 @@
 #include <KTextToHTML>
 
 #include <QSharedPointer>
+using namespace Qt::Literals::StringLiterals;
 
 /** Check if the newline at position @p newLinePos in string @p s
     seems to separate two paragraphs (important for correct BiDi
@@ -42,7 +43,7 @@ static bool looksLikeParaBreak(const QString &s, int newLinePos)
     // 2. Is the previous line really a paragraph -- longer than the wrap size?
 
     // First char of prev line -- works also for first line
-    int prevStart = s.lastIndexOf(QLatin1Char('\n'), newLinePos - 1) + 1;
+    int prevStart = s.lastIndexOf(u'\n', newLinePos - 1) + 1;
     int prevLineLength = newLinePos - prevStart;
     if (prevLineLength > WRAP_COL) {
         return true;
@@ -50,7 +51,7 @@ static bool looksLikeParaBreak(const QString &s, int newLinePos)
 
     // find next line to delimit search for first word
     int nextStart = newLinePos + 1;
-    int nextEnd = s.indexOf(QLatin1Char('\n'), nextStart);
+    int nextEnd = s.indexOf(u'\n', nextStart);
     if (nextEnd == -1) {
         nextEnd = length;
     }
@@ -82,7 +83,7 @@ static bool looksLikeParaBreak(const QString &s, int newLinePos)
     // Note: flowText (in kmmessage.cpp) separates words for wrap by
     // spaces only. This should be consistent, which calls for some
     // refactoring.
-    int wordEnd = nextLine.indexOf(QLatin1Char(' '), wordStart);
+    int wordEnd = nextLine.indexOf(u' ', wordStart);
     if (wordEnd == (-1)) {
         wordEnd = length;
     }
@@ -111,8 +112,8 @@ void quotedHTML(const QString &s, MessageViewer::RenderContext *context, Message
         quoteFontTag[i] = cssHelper->quoteFontTag(i);
         deepQuoteFontTag[i] = cssHelper->quoteFontTag(i + 3);
     }
-    const QString normalEndTag = QStringLiteral("</div>");
-    const QString quoteEnd = QStringLiteral("</div>");
+    const QString normalEndTag = u"</div>"_s;
+    const QString quoteEnd = u"</div>"_s;
 
     const int length = s.length();
     bool paraIsRTL = false;
@@ -121,8 +122,8 @@ void quotedHTML(const QString &s, MessageViewer::RenderContext *context, Message
     int beg;
 
     // skip leading empty lines
-    for (pos = 0; pos < length && s[pos] <= QLatin1Char(' '); ++pos) { }
-    while (pos > 0 && (s[pos - 1] == QLatin1Char(' ') || s[pos - 1] == QLatin1Char('\t'))) {
+    for (pos = 0; pos < length && s[pos] <= u' '; ++pos) { }
+    while (pos > 0 && (s[pos - 1] == u' ' || s[pos - 1] == u'\t')) {
         pos--;
     }
     beg = pos;
@@ -133,14 +134,14 @@ void quotedHTML(const QString &s, MessageViewer::RenderContext *context, Message
     QString collapseIconPath;
     QString expandIconPath;
     if (context->showExpandQuotesMark()) {
-        collapseIconPath = MessageViewer::IconNameCache::instance()->iconPathFromLocal(QStringLiteral("quotecollapse.png"));
-        expandIconPath = MessageViewer::IconNameCache::instance()->iconPathFromLocal(QStringLiteral("quoteexpand.png"));
+        collapseIconPath = MessageViewer::IconNameCache::instance()->iconPathFromLocal(u"quotecollapse.png"_s);
+        expandIconPath = MessageViewer::IconNameCache::instance()->iconPathFromLocal(u"quoteexpand.png"_s);
     }
 
     int previousQuoteDepth = -1;
     while (beg < length) {
         /* search next occurrence of '\n' */
-        pos = s.indexOf(QLatin1Char('\n'), beg, Qt::CaseInsensitive);
+        pos = s.indexOf(u'\n', beg, Qt::CaseInsensitive);
         if (pos == -1) {
             pos = length;
         }
@@ -207,20 +208,20 @@ void quotedHTML(const QString &s, MessageViewer::RenderContext *context, Message
                         // only show the QuoteMark when is the first line of the level hidden
                         if (!curHidden) {
                             // Expand all quotes
-                            htmlWriter->write(QStringLiteral("<div class=\"quotelevelmark\" >"));
+                            htmlWriter->write(u"<div class=\"quotelevelmark\" >"_s);
                             htmlWriter->write(QStringLiteral("<a href=\"kmail:levelquote?%1 \">"
                                                              "<img src=\"%2\"/></a>")
                                                   .arg(-1)
                                                   .arg(expandIconPath));
-                            htmlWriter->write(QStringLiteral("</div><br/>"));
+                            htmlWriter->write(u"</div><br/>"_s);
                         }
                     } else {
-                        htmlWriter->write(QStringLiteral("<div class=\"quotelevelmark\" >"));
+                        htmlWriter->write(u"<div class=\"quotelevelmark\" >"_s);
                         htmlWriter->write(QStringLiteral("<a href=\"kmail:levelquote?%1 \">"
                                                          "<img src=\"%2\"/></a>")
                                               .arg(actQuoteLevel)
                                               .arg(collapseIconPath));
-                        htmlWriter->write(QStringLiteral("</div>"));
+                        htmlWriter->write(u"</div>"_s);
                         if (actQuoteLevel < 3) {
                             htmlWriter->write(quoteFontTag[actQuoteLevel]);
                         } else {
@@ -247,32 +248,32 @@ void quotedHTML(const QString &s, MessageViewer::RenderContext *context, Message
         if (!actHidden) {
             // don't write empty <div ...></div> blocks (they have zero height)
             // ignore ^M DOS linebreaks
-            if (!line.remove(QLatin1Char('\015')).isEmpty()) {
+            if (!line.remove(u'\015').isEmpty()) {
                 if (startNewPara) {
                     paraIsRTL = line.isRightToLeft();
                 }
-                htmlWriter->write(QStringLiteral("<div dir=\"%1\">").arg(paraIsRTL ? QStringLiteral("rtl") : QStringLiteral("ltr")));
+                htmlWriter->write(u"<div dir=\"%1\">"_s.arg(paraIsRTL ? u"rtl"_s : QStringLiteral("ltr")));
                 // if quoteLengh == 0 && foundQuote => a simple quote
                 if (foundQuote) {
                     quoteLength++;
                     const int rightString = (line.length()) - quoteLength;
                     if (rightString > 0) {
-                        htmlWriter->write(QStringLiteral("<span class=\"quotemarks\">%1</span>").arg(line.left(quoteLength)));
-                        htmlWriter->write(QStringLiteral("<font color=\"%1\">").arg(cssHelper->quoteColorName(actQuoteLevel)));
+                        htmlWriter->write(u"<span class=\"quotemarks\">%1</span>"_s.arg(line.left(quoteLength)));
+                        htmlWriter->write(u"<font color=\"%1\">"_s.arg(cssHelper->quoteColorName(actQuoteLevel)));
                         const QString str = KTextToHTML::convertToHtml(line.right(rightString), convertFlags, 4096, 512);
                         htmlWriter->write(str);
-                        htmlWriter->write(QStringLiteral("</font>"));
+                        htmlWriter->write(u"</font>"_s);
                     } else {
-                        htmlWriter->write(QStringLiteral("<span class=\"quotemarksemptyline\">%1</span>").arg(line.left(quoteLength)));
+                        htmlWriter->write(u"<span class=\"quotemarksemptyline\">%1</span>"_s.arg(line.left(quoteLength)));
                     }
                 } else {
                     htmlWriter->write(KTextToHTML::convertToHtml(line, convertFlags, 4096, 512));
                 }
 
-                htmlWriter->write(QStringLiteral("</div>"));
+                htmlWriter->write(u"</div>"_s);
                 startNewPara = looksLikeParaBreak(s, pos);
             } else {
-                htmlWriter->write(QStringLiteral("<br/>"));
+                htmlWriter->write(u"<br/>"_s);
                 // after an empty line, always start a new paragraph
                 startNewPara = true;
             }

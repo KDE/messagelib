@@ -5,6 +5,7 @@
 */
 
 #include "htmlwriter.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <QTextStream>
 

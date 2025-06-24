@@ -6,6 +6,8 @@
 */
 
 #include "basicobjecttreeparsertest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "setupenv.h"
 #include "util.h"
 
@@ -29,10 +31,10 @@ void ObjectTreeParserTest::initTestCase()
 
 static QString stringifyMessagePartTree(const MimeTreeParser::MessagePart::Ptr &messagePart, QString indent)
 {
-    const QString line = QStringLiteral("%1 * %3\n").arg(indent, QString::fromUtf8(messagePart->metaObject()->className()));
+    const QString line = u"%1 * %3\n"_s.arg(indent, QString::fromUtf8(messagePart->metaObject()->className()));
     QString ret = line;
 
-    indent += QLatin1Char(' ');
+    indent += u' ';
     const auto subParts = messagePart->subParts();
     for (const auto &subPart : subParts) {
         ret += stringifyMessagePartTree(subPart, indent);
@@ -44,8 +46,8 @@ static void testMessagePartTree(const MessagePart::Ptr &messagePart, const QStri
 {
     QString renderedTree = stringifyMessagePartTree(messagePart, QString());
 
-    const QString treeFileName = QLatin1StringView(MAIL_DATA_DIR) + QLatin1Char('/') + mailFileName + QStringLiteral(".tree");
-    const QString outTreeFileName = mailFileName + QStringLiteral(".tree");
+    const QString treeFileName = QLatin1StringView(MAIL_DATA_DIR) + u'/' + mailFileName + u".tree"_s;
+    const QString outTreeFileName = mailFileName + u".tree"_s;
 
     {
         QFile f(outTreeFileName);
@@ -54,10 +56,10 @@ static void testMessagePartTree(const MessagePart::Ptr &messagePart, const QStri
         f.close();
     }
     // compare to reference file
-    const QStringList args = QStringList() << QStringLiteral("-u") << treeFileName << outTreeFileName;
+    const QStringList args = QStringList() << u"-u"_s << treeFileName << outTreeFileName;
     QProcess proc;
     proc.setProcessChannelMode(QProcess::ForwardedChannels);
-    proc.start(QStringLiteral("diff"), args);
+    proc.start(u"diff"_s, args);
     QVERIFY(proc.waitForFinished());
 
     QCOMPARE(proc.exitCode(), 0);
@@ -65,7 +67,7 @@ static void testMessagePartTree(const MessagePart::Ptr &messagePart, const QStri
 
 void ObjectTreeParserTest::testMailWithoutEncryption()
 {
-    KMime::Message::Ptr originalMessage = readAndParseMail(QStringLiteral("encapsulated-with-attachment.mbox"));
+    KMime::Message::Ptr originalMessage = readAndParseMail(u"encapsulated-with-attachment.mbox"_s);
     NodeHelper nodeHelper;
     SimpleObjectTreeSource testSource;
     ObjectTreeParser otp(&testSource, &nodeHelper);
@@ -75,7 +77,7 @@ void ObjectTreeParserTest::testMailWithoutEncryption()
 
 void ObjectTreeParserTest::testBinaryAttachmentNotPGP()
 {
-    KMime::Message::Ptr originalMessage = readAndParseMail(QStringLiteral("binary-attachment-not-pgp.mbox"));
+    KMime::Message::Ptr originalMessage = readAndParseMail(u"binary-attachment-not-pgp.mbox"_s);
     NodeHelper nodeHelper;
     SimpleObjectTreeSource testSource;
     ObjectTreeParser otp(&testSource, &nodeHelper);
@@ -92,7 +94,7 @@ void ObjectTreeParserTest::testBinaryAttachmentNotPGP()
 
 void ObjectTreeParserTest::testSignedForwardedOpenPGPSignedEncrypted()
 {
-    KMime::Message::Ptr originalMessage = readAndParseMail(QStringLiteral("signed-forward-openpgp-signed-encrypted.mbox"));
+    KMime::Message::Ptr originalMessage = readAndParseMail(u"signed-forward-openpgp-signed-encrypted.mbox"_s);
 
     NodeHelper nodeHelper;
     SimpleObjectTreeSource testSource;
@@ -109,7 +111,7 @@ void ObjectTreeParserTest::testSignedForwardedOpenPGPSignedEncrypted()
 
 void ObjectTreeParserTest::testForwardedOpenPGPSignedEncrypted()
 {
-    KMime::Message::Ptr originalMessage = readAndParseMail(QStringLiteral("forward-openpgp-signed-encrypted.mbox"));
+    KMime::Message::Ptr originalMessage = readAndParseMail(u"forward-openpgp-signed-encrypted.mbox"_s);
 
     NodeHelper nodeHelper;
     SimpleObjectTreeSource testSource;
@@ -142,7 +144,7 @@ void ObjectTreeParserTest::testForwardedOpenPGPSignedEncrypted()
 
 void ObjectTreeParserTest::testSMIMESignedEncrypted()
 {
-    KMime::Message::Ptr originalMessage = readAndParseMail(QStringLiteral("smime-signed-encrypted.mbox"));
+    KMime::Message::Ptr originalMessage = readAndParseMail(u"smime-signed-encrypted.mbox"_s);
 
     NodeHelper nodeHelper;
     SimpleObjectTreeSource testSource;
@@ -168,7 +170,7 @@ void ObjectTreeParserTest::testSMIMESignedEncrypted()
 
 void ObjectTreeParserTest::testOpenPGPSignedEncrypted()
 {
-    KMime::Message::Ptr originalMessage = readAndParseMail(QStringLiteral("openpgp-signed-encrypted.mbox"));
+    KMime::Message::Ptr originalMessage = readAndParseMail(u"openpgp-signed-encrypted.mbox"_s);
 
     NodeHelper nodeHelper;
     SimpleObjectTreeSource testSource;
@@ -194,7 +196,7 @@ void ObjectTreeParserTest::testOpenPGPSignedEncrypted()
 
 void ObjectTreeParserTest::testOpenPGPEncryptedAndSigned()
 {
-    KMime::Message::Ptr originalMessage = readAndParseMail(QStringLiteral("openpgp-encrypted+signed.mbox"));
+    KMime::Message::Ptr originalMessage = readAndParseMail(u"openpgp-encrypted+signed.mbox"_s);
 
     NodeHelper nodeHelper;
     SimpleObjectTreeSource testSource;
@@ -218,7 +220,7 @@ void ObjectTreeParserTest::testOpenPGPEncryptedAndSigned()
 
 void ObjectTreeParserTest::testOpenPGPEncrypted()
 {
-    KMime::Message::Ptr originalMessage = readAndParseMail(QStringLiteral("openpgp-encrypted.mbox"));
+    KMime::Message::Ptr originalMessage = readAndParseMail(u"openpgp-encrypted.mbox"_s);
 
     NodeHelper nodeHelper;
     SimpleObjectTreeSource testSource;
@@ -238,7 +240,7 @@ void ObjectTreeParserTest::testOpenPGPEncrypted()
 
 void ObjectTreeParserTest::testOpenPGPEncryptedNotDecrypted()
 {
-    KMime::Message::Ptr originalMessage = readAndParseMail(QStringLiteral("openpgp-encrypted.mbox"));
+    KMime::Message::Ptr originalMessage = readAndParseMail(u"openpgp-encrypted.mbox"_s);
 
     NodeHelper nodeHelper;
     SimpleObjectTreeSource testSource;
@@ -254,7 +256,7 @@ void ObjectTreeParserTest::testOpenPGPEncryptedNotDecrypted()
 
 void ObjectTreeParserTest::testOpenPGPEncryptedOverrideEncoding()
 {
-    KMime::Message::Ptr originalMessage = readAndParseMail(QStringLiteral("openpgp-encrypted-attachment-iso-8859-15-encoded.mbox"));
+    KMime::Message::Ptr originalMessage = readAndParseMail(u"openpgp-encrypted-attachment-iso-8859-15-encoded.mbox"_s);
 
     NodeHelper nodeHelper;
     SimpleObjectTreeSource testSource;
@@ -278,11 +280,10 @@ void ObjectTreeParserTest::testAsync_data()
     QTest::addColumn<QString>("mailFileName");
     QTest::addColumn<QString>("output");
 
-    QTest::newRow("openpgp-encrypt") << QStringLiteral("openpgp-encrypted.mbox") << QStringLiteral("encrypted message text");
-    QTest::newRow("smime-opaque-sign") << QStringLiteral("smime-opaque-sign.mbox") << QStringLiteral("A simple signed only test.");
-    QTest::newRow("smime-encrypt") << QStringLiteral("smime-encrypted.mbox") << QStringLiteral("The quick brown fox jumped over the lazy dog.");
-    QTest::newRow("openpgp-inline-encrypt") << QStringLiteral("openpgp-inline-charset-encrypted.mbox")
-                                            << QStringLiteral("asdasd asd asd asdf sadf sdaf sadf \u00F6\u00E4\u00FC");
+    QTest::newRow("openpgp-encrypt") << u"openpgp-encrypted.mbox"_s << u"encrypted message text"_s;
+    QTest::newRow("smime-opaque-sign") << u"smime-opaque-sign.mbox"_s << u"A simple signed only test."_s;
+    QTest::newRow("smime-encrypt") << u"smime-encrypted.mbox"_s << u"The quick brown fox jumped over the lazy dog."_s;
+    QTest::newRow("openpgp-inline-encrypt") << u"openpgp-inline-charset-encrypted.mbox"_s << u"asdasd asd asd asdf sadf sdaf sadf \u00F6\u00E4\u00FC"_s;
 }
 
 void ObjectTreeParserTest::testAsync()
@@ -317,9 +318,9 @@ void ObjectTreeParserTest::testHtmlContent_data()
     QTest::addColumn<QString>("mailFileName");
     QTest::addColumn<QString>("output");
 
-    QTest::newRow("html-attachments1") << QStringLiteral("html-attachment1.mbox")
-                                       << QStringLiteral("<html><head></head><body><p><span style=\"font-family:Arial;\">A Body Text</span></p></body></html>");
-    QTest::newRow("html-attachments2") << QStringLiteral("html-attachment2.mbox") << QStringLiteral("<html><head></head><body>HTML Text</body></html>");
+    QTest::newRow("html-attachments1") << u"html-attachment1.mbox"_s
+                                       << u"<html><head></head><body><p><span style=\"font-family:Arial;\">A Body Text</span></p></body></html>"_s;
+    QTest::newRow("html-attachments2") << u"html-attachment2.mbox"_s << u"<html><head></head><body>HTML Text</body></html>"_s;
 }
 
 void ObjectTreeParserTest::testHtmlContent()
@@ -343,9 +344,9 @@ void ObjectTreeParserTest::testRenderedTree_data()
     QTest::addColumn<QString>("mailFileName");
 
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
-    const auto l = dir.entryList(QStringList(QStringLiteral("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
+    const auto l = dir.entryList(QStringList(u"*.mbox"_s), QDir::Files | QDir::Readable | QDir::NoSymLinks);
     for (const QString &file : l) {
-        if (!QFile::exists(dir.path() + QLatin1Char('/') + file + QStringLiteral(".tree"))) {
+        if (!QFile::exists(dir.path() + u'/' + file + u".tree"_s)) {
             continue;
         }
         QTest::newRow(file.toLatin1().constData()) << file;
@@ -389,7 +390,7 @@ void ObjectTreeParserTest::testParsePlainMessage()
     otp.parseObjectTree(msg.data());
 
     // Check that the textual content and the charset have the expected values
-    QCOMPARE(otp.plainTextContent(), QStringLiteral("This is the message text.\n"));
+    QCOMPARE(otp.plainTextContent(), u"This is the message text.\n"_s);
     QVERIFY(otp.htmlContent().isEmpty());
 
     // Check that the message was not modified in any way
@@ -413,7 +414,7 @@ void ObjectTreeParserTest::testParsePlainMessage()
 
 void ObjectTreeParserTest::testParseEncapsulatedMessage()
 {
-    KMime::Message::Ptr msg = readAndParseMail(QStringLiteral("encapsulated-with-attachment.mbox"));
+    KMime::Message::Ptr msg = readAndParseMail(u"encapsulated-with-attachment.mbox"_s);
     QCOMPARE(msg->subject()->as7BitString(false).constData(), "Fwd: Test with attachment");
     QCOMPARE(msg->contents().size(), 2);
 
@@ -432,7 +433,7 @@ void ObjectTreeParserTest::testParseEncapsulatedMessage()
     QCOMPARE(msg->contents().at(1)->contents().first()->contents().at(1)->contents().size(), 0);
 
     // Check that the textual content and the charset have the expected values
-    QCOMPARE(otp.plainTextContent(), QStringLiteral("This is the first encapsulating message.\n"));
+    QCOMPARE(otp.plainTextContent(), u"This is the first encapsulating message.\n"_s);
     QVERIFY(otp.htmlContent().isEmpty());
 
     // Check that the objecttreeparser did process the encapsulated message
@@ -446,7 +447,7 @@ void ObjectTreeParserTest::testParseEncapsulatedMessage()
 
 void ObjectTreeParserTest::testMissingContentTypeHeader()
 {
-    KMime::Message::Ptr msg = readAndParseMail(QStringLiteral("no-content-type.mbox"));
+    KMime::Message::Ptr msg = readAndParseMail(u"no-content-type.mbox"_s);
     QCOMPARE(msg->subject()->as7BitString(false).constData(), "Simple Mail Without Content-Type Header");
     QCOMPARE(msg->contents().size(), 0);
 
@@ -461,7 +462,7 @@ void ObjectTreeParserTest::testMissingContentTypeHeader()
 
 void ObjectTreeParserTest::testInlinePGPDecryption()
 {
-    KMime::Message::Ptr msg = readAndParseMail(QStringLiteral("inlinepgpencrypted.mbox"));
+    KMime::Message::Ptr msg = readAndParseMail(u"inlinepgpencrypted.mbox"_s);
 
     QCOMPARE(msg->subject()->as7BitString(false).constData(), "inlinepgpencrypted");
     QCOMPARE(msg->contents().size(), 0);
@@ -484,7 +485,7 @@ void ObjectTreeParserTest::testInlinePGPDecryption()
 
 void ObjectTreeParserTest::testInlinePGPSigned()
 {
-    KMime::Message::Ptr msg = readAndParseMail(QStringLiteral("openpgp-inline-signed.mbox"));
+    KMime::Message::Ptr msg = readAndParseMail(u"openpgp-inline-signed.mbox"_s);
 
     QCOMPARE(msg->subject()->as7BitString(false).constData(), "test");
     QCOMPARE(msg->contents().size(), 0);
@@ -502,7 +503,7 @@ void ObjectTreeParserTest::testInlinePGPSigned()
 
 void ObjectTreeParserTest::testHTML()
 {
-    KMime::Message::Ptr msg = readAndParseMail(QStringLiteral("html.mbox"));
+    KMime::Message::Ptr msg = readAndParseMail(u"html.mbox"_s);
 
     QCOMPARE(msg->subject()->as7BitString(false).constData(), "HTML test");
     QCOMPARE(msg->contents().size(), 2);
@@ -518,7 +519,7 @@ void ObjectTreeParserTest::testHTML()
 
 void ObjectTreeParserTest::testHTMLasText()
 {
-    KMime::Message::Ptr msg = readAndParseMail(QStringLiteral("html.mbox"));
+    KMime::Message::Ptr msg = readAndParseMail(u"html.mbox"_s);
 
     QCOMPARE(msg->subject()->as7BitString(false).constData(), "HTML test");
     QCOMPARE(msg->contents().size(), 2);
@@ -535,7 +536,7 @@ void ObjectTreeParserTest::testHTMLasText()
 
 void ObjectTreeParserTest::testHTMLOnly()
 {
-    KMime::Message::Ptr msg = readAndParseMail(QStringLiteral("htmlonly.mbox"));
+    KMime::Message::Ptr msg = readAndParseMail(u"htmlonly.mbox"_s);
 
     QCOMPARE(msg->subject()->as7BitString(false).constData(), "HTML test");
     QCOMPARE(msg->contents().size(), 0);

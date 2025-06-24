@@ -5,6 +5,8 @@
 */
 
 #include "mailsourceviewtextbrowserwidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../src/findbar/findbarsourceview.h"
 #include "../src/widgets/mailsourceviewtextbrowserwidget.h"
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
@@ -21,17 +23,17 @@ MailSourceViewTextBrowserWidgetTest::~MailSourceViewTextBrowserWidgetTest() = de
 
 void MailSourceViewTextBrowserWidgetTest::shouldHaveDefaultValue()
 {
-    MessageViewer::MailSourceViewTextBrowserWidget widget(QStringLiteral("Email"));
+    MessageViewer::MailSourceViewTextBrowserWidget widget(u"Email"_s);
 
-    auto textbrowser = widget.findChild<MessageViewer::MailSourceViewTextBrowser *>(QStringLiteral("textbrowser"));
+    auto textbrowser = widget.findChild<MessageViewer::MailSourceViewTextBrowser *>(u"textbrowser"_s);
     QVERIFY(textbrowser);
     QVERIFY(!textbrowser->isHidden());
-    auto findbar = widget.findChild<MessageViewer::FindBarSourceView *>(QStringLiteral("findbar"));
+    auto findbar = widget.findChild<MessageViewer::FindBarSourceView *>(u"findbar"_s);
     QVERIFY(findbar);
     QVERIFY(findbar->isHidden());
 
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
-    auto TextToSpeechContainerWidget = widget.findChild<TextEditTextToSpeech::TextToSpeechContainerWidget *>(QStringLiteral("texttospeech"));
+    auto TextToSpeechContainerWidget = widget.findChild<TextEditTextToSpeech::TextToSpeechContainerWidget *>(u"texttospeech"_s);
     QVERIFY(TextToSpeechContainerWidget);
     QVERIFY(TextToSpeechContainerWidget->isHidden());
 #endif

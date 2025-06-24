@@ -6,6 +6,7 @@
 */
 
 #include "signandencrypttest.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include "cryptofunctions.h"
 #include "qtest_messagecomposer.h"
@@ -42,7 +43,7 @@ void SignAndEncryptTest::testContent()
 
     TextPart part;
     part.setWordWrappingEnabled(false);
-    part.setCleanPlainText(QStringLiteral("one flew over the cuckoo's nest"));
+    part.setCleanPlainText(u"one flew over the cuckoo's nest"_s);
 
     auto mainTextJob = new MainTextJob(&part, &composerJob);
     auto sJob = new SignJob(&composerJob);
@@ -52,7 +53,7 @@ void SignAndEncryptTest::testContent()
 
     VERIFYEXEC(mainTextJob);
 
-    const QStringList recipients = {QStringLiteral("test@kolab.org")};
+    const QStringList recipients = {u"test@kolab.org"_s};
 
     sJob->setContent(mainTextJob->content());
     sJob->setSigningKeys(keys);
@@ -70,7 +71,7 @@ void SignAndEncryptTest::testContent()
     QVERIFY(result);
     result->assemble();
 
-    ComposerTestUtil::verifySignatureAndEncryption(result, QStringLiteral("one flew over the cuckoo's nest").toUtf8(), Kleo::OpenPGPMIMEFormat);
+    ComposerTestUtil::verifySignatureAndEncryption(result, u"one flew over the cuckoo's nest"_s.toUtf8(), Kleo::OpenPGPMIMEFormat);
 
     delete result;
 }
@@ -86,11 +87,11 @@ void SignAndEncryptTest::testHeaders()
     QVERIFY(sJob);
     QVERIFY(eJob);
 
-    const QByteArray data(QStringLiteral("one flew over the cuckoo's nest").toUtf8());
+    const QByteArray data(u"one flew over the cuckoo's nest"_s.toUtf8());
     auto content = new KMime::Content;
     content->setBody(data);
 
-    const QStringList recipients = {QStringLiteral("test@kolab.org")};
+    const QStringList recipients = {u"test@kolab.org"_s};
 
     sJob->setContent(content);
     sJob->setSigningKeys(keys);
@@ -111,7 +112,7 @@ void SignAndEncryptTest::testHeaders()
     QVERIFY(result->contentType(false));
     QCOMPARE(result->contentType()->mimeType(), "multipart/encrypted");
     QCOMPARE(result->contentType()->charset(), "UTF-8");
-    QCOMPARE(result->contentType()->parameter("protocol"), QStringLiteral("application/pgp-encrypted"));
+    QCOMPARE(result->contentType()->parameter("protocol"), u"application/pgp-encrypted"_s);
     QCOMPARE(result->contentTransferEncoding()->encoding(), KMime::Headers::CE7Bit);
 
     delete result;

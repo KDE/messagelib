@@ -5,6 +5,8 @@
 
 */
 #include "scamattributetest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../scamattribute.h"
 #include <QTest>
 ScamAttributeTest::ScamAttributeTest(QObject *parent)

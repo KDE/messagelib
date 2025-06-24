@@ -5,6 +5,7 @@
 */
 
 #include "job/singlepartjob.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include "contentjobbase_p.h"
 #include "part/globalpart.h"

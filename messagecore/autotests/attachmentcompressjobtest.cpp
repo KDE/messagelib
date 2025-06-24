@@ -5,6 +5,8 @@
 */
 
 #include "attachmentcompressjobtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "qtest_messagecore.h"
 
 #include "messagecore_debug.h"
@@ -24,9 +26,9 @@ void AttachmentCompressJobTest::testCompress()
     for (int i = 0; i < 100; ++i) {
         data += "This is some highly compressible text...\n";
     }
-    const QString name = QStringLiteral("name");
-    const QString fileName = QStringLiteral("name.txt");
-    const QString description = QStringLiteral("description");
+    const QString name = u"name"_s;
+    const QString fileName = u"name.txt"_s;
+    const QString description = u"description"_s;
 
     // Create the original part.
     AttachmentPart::Ptr origPart = AttachmentPart::Ptr(new AttachmentPart);
@@ -71,8 +73,8 @@ void AttachmentCompressJobTest::testCompressedSizeLarger()
 {
     // Some data.
     QByteArray data("This is short enough that compressing it is not efficient.");
-    const QString name = QStringLiteral("name.txt");
-    const QString description = QStringLiteral("description");
+    const QString name = u"name.txt"_s;
+    const QString description = u"description"_s;
 
     // Create the original part.
     AttachmentPart::Ptr origPart = AttachmentPart::Ptr(new AttachmentPart);

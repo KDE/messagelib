@@ -62,7 +62,7 @@ void CryptoComposerTest::testOpenPGPMime_data()
     QTest::addColumn<bool>("encrypt");
     QTest::addColumn<Headers::contentEncoding>("cte");
 
-    QString data(QStringLiteral("All happy families are alike; each unhappy family is unhappy in its own way."));
+    QString data(u"All happy families are alike; each unhappy family is unhappy in its own way."_s);
     QTest::newRow("SignOpenPGPMime") << data << true << false << Headers::CE7Bit;
     QTest::newRow("EncryptOpenPGPMime") << data << false << true << Headers::CE7Bit;
     QTest::newRow("SignEncryptOpenPGPMime") << data << true << true << Headers::CE7Bit;
@@ -111,7 +111,7 @@ void CryptoComposerTest::testEncryptSameAttachments()
 {
     QFETCH(int, format);
     auto composerJob = new ComposerJob;
-    QString data(QStringLiteral("All happy families are alike; each unhappy family is unhappy in its own way."));
+    QString data(u"All happy families are alike; each unhappy family is unhappy in its own way."_s);
     fillComposerData(composerJob, data);
     fillComposerCryptoData(composerJob);
 
@@ -164,12 +164,12 @@ void CryptoComposerTest::testEditEncryptAttachments()
 {
     QFETCH(int, format);
     auto composerJob = new ComposerJob;
-    QString data(QStringLiteral("All happy families are alike; each unhappy family is unhappy in its own way."));
+    QString data(u"All happy families are alike; each unhappy family is unhappy in its own way."_s);
     fillComposerData(composerJob, data);
     fillComposerCryptoData(composerJob);
 
     AttachmentPart::Ptr attachment = AttachmentPart::Ptr(new AttachmentPart);
-    const QString fileName = QStringLiteral("anattachment.txt");
+    const QString fileName = u"anattachment.txt"_s;
     const QByteArray fileData = "abc";
     attachment->setData(fileData);
     attachment->setMimeType("x-some/x-type");
@@ -220,14 +220,14 @@ void CryptoComposerTest::testEditEncryptAndLateAttachments()
 {
     QFETCH(int, format);
     auto composerJob = new ComposerJob;
-    QString data(QStringLiteral("All happy families are alike; each unhappy family is unhappy in its own way."));
+    QString data(u"All happy families are alike; each unhappy family is unhappy in its own way."_s);
     fillComposerData(composerJob, data);
     fillComposerCryptoData(composerJob);
 
     AttachmentPart::Ptr attachment = AttachmentPart::Ptr(new AttachmentPart);
-    const QString fileName = QStringLiteral("anattachment.txt");
+    const QString fileName = u"anattachment.txt"_s;
     const QByteArray fileData = "abc";
-    const QString fileName2 = QStringLiteral("nonencrypt.txt");
+    const QString fileName2 = u"nonencrypt.txt"_s;
     const QByteArray fileData2 = "readable";
     attachment->setData(fileData);
     attachment->setMimeType("x-some/x-type");
@@ -289,7 +289,7 @@ void CryptoComposerTest::testSignEncryptLateAttachments()
 {
     QFETCH(int, format);
     auto composerJob = new ComposerJob;
-    QString data(QStringLiteral("All happy families are alike; each unhappy family is unhappy in its own way."));
+    QString data(u"All happy families are alike; each unhappy family is unhappy in its own way."_s);
     fillComposerData(composerJob, data);
     fillComposerCryptoData(composerJob);
 
@@ -331,7 +331,7 @@ void CryptoComposerTest::testProtectedHeaders_data()
     QTest::addColumn<bool>("encrypt");
     QTest::addColumn<Headers::contentEncoding>("cte");
 
-    QString data(QStringLiteral("All happy families are alike; each unhappy family is unhappy in its own way."));
+    QString data(u"All happy families are alike; each unhappy family is unhappy in its own way."_s);
     QTest::newRow("SignOpenPGPMime") << data << true << false << Headers::CE7Bit;
     QTest::newRow("EncryptOpenPGPMime") << data << false << true << Headers::CE7Bit;
     QTest::newRow("SignEncryptOpenPGPMime") << data << true << true << Headers::CE7Bit;
@@ -389,9 +389,9 @@ void CryptoComposerTest::testProtectedHeaders()
         }
     }
     QVERIFY(part);
-    QCOMPARE(part->contentType(false)->parameter("protected-headers"), QStringLiteral("v1"));
-    QCOMPARE(part->headerByType("to")->asUnicodeString(), QStringLiteral("you@you.you"));
-    QCOMPARE(part->headerByType("from")->asUnicodeString(), QStringLiteral("me@me.me"));
+    QCOMPARE(part->contentType(false)->parameter("protected-headers"), u"v1"_s);
+    QCOMPARE(part->headerByType("to")->asUnicodeString(), u"you@you.you"_s);
+    QCOMPARE(part->headerByType("from")->asUnicodeString(), u"me@me.me"_s);
 }
 
 void CryptoComposerTest::testBCCEncrypt_data()
@@ -408,9 +408,9 @@ void CryptoComposerTest::testBCCEncrypt()
 {
     QFETCH(int, format);
     auto composerJob = new ComposerJob;
-    QString data(QStringLiteral("All happy families are alike; each unhappy family is unhappy in its own way."));
+    QString data(u"All happy families are alike; each unhappy family is unhappy in its own way."_s);
     fillComposerData(composerJob, data);
-    composerJob->infoPart()->setBcc(QStringList(QStringLiteral("bcc@bcc.org")));
+    composerJob->infoPart()->setBcc(QStringList(u"bcc@bcc.org"_s));
 
     std::vector<GpgME::Key> keys = MessageComposer::Test::getKeys();
 
@@ -461,7 +461,7 @@ void CryptoComposerTest::testOpenPGPInline_data()
     QTest::addColumn<bool>("encrypt");
     QTest::addColumn<Headers::contentEncoding>("cte");
 
-    QString data(QStringLiteral("All happy families are alike; each unhappy family is unhappy in its own way."));
+    QString data(u"All happy families are alike; each unhappy family is unhappy in its own way."_s);
     QTest::newRow("SignOpenPGPInline") << data << true << false << Headers::CE7Bit;
     QTest::newRow("EncryptOpenPGPInline") << data << false << true << Headers::CE7Bit;
     QTest::newRow("SignEncryptOpenPGPInline") << data << true << true << Headers::CE7Bit;
@@ -490,7 +490,7 @@ void CryptoComposerTest::testOpenPGPInline()
     composerJob = nullptr;
 
     if (sign && !encrypt) {
-        data += QLatin1Char('\n');
+        data += u'\n';
     }
     // qDebug() << "message:" << message->encodedContent();
     ComposerTestUtil::verify(sign, encrypt, message.data(), data.toUtf8(), Kleo::InlineOpenPGPFormat, cte);
@@ -508,7 +508,7 @@ void CryptoComposerTest::testSMIME_data()
     QTest::addColumn<bool>("encrypt");
     QTest::addColumn<Headers::contentEncoding>("cte");
 
-    QString data(QStringLiteral("All happy families are alike; each unhappy family is unhappy in its own way."));
+    QString data(u"All happy families are alike; each unhappy family is unhappy in its own way."_s);
     QTest::newRow("SignSMIME") << data << true << false << Headers::CE7Bit;
     QTest::newRow("EncryptSMIME") << data << false << true << Headers::CE7Bit;
     QTest::newRow("SignEncryptSMIME") << data << true << true << Headers::CE7Bit;
@@ -529,7 +529,7 @@ void CryptoComposerTest::testSMIMEOpaque_data()
     QTest::addColumn<bool>("encrypt");
     QTest::addColumn<Headers::contentEncoding>("cte");
 
-    QString data(QStringLiteral("All happy families are alike; each unhappy family is unhappy in its own way."));
+    QString data(u"All happy families are alike; each unhappy family is unhappy in its own way."_s);
     QTest::newRow("SignSMIMEOpaque") << data << true << false << Headers::CE7Bit;
     QTest::newRow("EncryptSMIMEOpaque") << data << false << true << Headers::CE7Bit;
     QTest::newRow("SignEncryptSMIMEOpaque") << data << true << true << Headers::CE7Bit;
@@ -602,7 +602,7 @@ void CryptoComposerTest::testSetGnupgHome_data()
     QTest::addColumn<QString>("data");
     QTest::addColumn<bool>("sign");
 
-    QString data(QStringLiteral("All happy families are alike; each unhappy family is unhappy in its own way."));
+    QString data(u"All happy families are alike; each unhappy family is unhappy in its own way."_s);
 
     QTest::newRow("sign") << data << true;
     QTest::newRow("notsign") << data << false;
@@ -663,7 +663,7 @@ void CryptoComposerTest::testAutocryptHeaders_data()
     QTest::addColumn<bool>("encrypt");
     QTest::addColumn<bool>("sign");
 
-    QString data(QStringLiteral("All happy families are alike; each unhappy family is unhappy in its own way."));
+    QString data(u"All happy families are alike; each unhappy family is unhappy in its own way."_s);
 
     QTest::newRow("encrypt+sign") << data << true << true;
     QTest::newRow("encrypt") << data << true << false;
@@ -725,7 +725,7 @@ void CryptoComposerTest::testAutocryptHeaders()
     QVERIFY(message->headerByType("autocrypt"));
     QVERIFY(message->headerByType("Autocrypt")
                 ->asUnicodeString()
-                .startsWith(QStringLiteral("addr=me@me.me; keydata= mQENBEr9ij4BCADaFvyhzV7IrCAr/sCvfoPerAd4dYIGTeCeBmInu3p4oEG0rXTB2zL2t9zd7jV")));
+                .startsWith(u"addr=me@me.me; keydata= mQENBEr9ij4BCADaFvyhzV7IrCAr/sCvfoPerAd4dYIGTeCeBmInu3p4oEG0rXTB2zL2t9zd7jV"_s));
     QVERIFY(!message->headerByType("autocrypt-gossip"));
     QCOMPARE(message->from()->asUnicodeString(), QString::fromLocal8Bit("me@me.me"));
     QCOMPARE(message->to()->asUnicodeString(), QString::fromLocal8Bit("you@you.you"));
@@ -738,15 +738,15 @@ void CryptoComposerTest::testAutocryptGossip_data()
     QTest::addColumn<bool>("sign");
     QTest::addColumn<QStringList>("recipients");
 
-    QString data(QStringLiteral("All happy families are alike; each unhappy family is unhappy in its own way."));
+    QString data(u"All happy families are alike; each unhappy family is unhappy in its own way."_s);
 
-    QStringList recipients({QStringLiteral("you@you.you")});
+    QStringList recipients({u"you@you.you"_s});
 
     QTest::newRow("encrypt") << data << true << false << recipients;
     QTest::newRow("encrypt+sign") << data << true << true << recipients;
     QTest::newRow("sign") << data << false << true << recipients;
 
-    recipients.append(QStringLiteral("leo@kdab.com"));
+    recipients.append(u"leo@kdab.com"_s);
     QTest::newRow("encrypt-multiple") << data << true << false << recipients;
     QTest::newRow("encrypt+sign-multiple") << data << true << true << recipients;
     QTest::newRow("sign-multiple") << data << false << true << recipients;
@@ -818,22 +818,20 @@ void CryptoComposerTest::testAutocryptGossip()
 
         headers.sort();
 
-        QVERIFY(
-            headers[0].startsWith(QStringLiteral("addr=leo@kdab.com; keydata= mQINBEr4pSwBEADG/B1VaoxT7mnQfwekkY+f8wkqFVLvTwN0W59Ze/pxmuRf/iS0tZjsEiPK0za")));
-        QVERIFY(
-            headers[1].startsWith(QStringLiteral("addr=you@you.com; keydata= mI0ESw2YuAEEALakcld4goNkwIL5gMETM3R+zI+AoJcuQWUpvS7AqwyR9/UAkVd3D+r32CgWhFi")));
+        QVERIFY(headers[0].startsWith(u"addr=leo@kdab.com; keydata= mQINBEr4pSwBEADG/B1VaoxT7mnQfwekkY+f8wkqFVLvTwN0W59Ze/pxmuRf/iS0tZjsEiPK0za"_s));
+        QVERIFY(headers[1].startsWith(u"addr=you@you.com; keydata= mI0ESw2YuAEEALakcld4goNkwIL5gMETM3R+zI+AoJcuQWUpvS7AqwyR9/UAkVd3D+r32CgWhFi"_s));
     } else {
         QCOMPARE(nh.headers("autocrypt-gossip", message.data()).size(), 0);
     }
     QCOMPARE(message->from()->asUnicodeString(), QString::fromLocal8Bit("me@me.me"));
-    QCOMPARE(message->to()->asUnicodeString(), recipients.join(QStringLiteral(", ")));
+    QCOMPARE(message->to()->asUnicodeString(), recipients.join(u", "_s));
 }
 
 // Helper methods
 void CryptoComposerTest::fillComposerData(ComposerJob *composerJob, const QString &data)
 {
-    composerJob->infoPart()->setFrom(QStringLiteral("me@me.me"));
-    composerJob->infoPart()->setTo(QStringList(QStringLiteral("you@you.you")));
+    composerJob->infoPart()->setFrom(u"me@me.me"_s);
+    composerJob->infoPart()->setTo(QStringList(u"you@you.you"_s));
     composerJob->textPart()->setWrappedPlainText(data);
 }
 
@@ -861,7 +859,7 @@ void CryptoComposerTest::runSMIMETest(bool sign, bool enc, bool opaque)
     auto composerJob = new ComposerJob;
 
     fillComposerData(composerJob, data);
-    composerJob->infoPart()->setFrom(QStringLiteral("test@example.com"));
+    composerJob->infoPart()->setFrom(u"test@example.com"_s);
 
     std::vector<GpgME::Key> keys = MessageComposer::Test::getKeys(true);
     QStringList recipients;

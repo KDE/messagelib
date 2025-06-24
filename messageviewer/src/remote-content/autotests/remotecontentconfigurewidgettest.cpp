@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "remotecontentconfigurewidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "remote-content/remotecontentconfigurewidget.h"
 #include <KTreeWidgetSearchLine>
 #include <QStandardPaths>
@@ -20,16 +22,16 @@ RemoteContentConfigureWidgetTest::RemoteContentConfigureWidgetTest(QObject *pare
 void RemoteContentConfigureWidgetTest::shouldHaveDefaultValues()
 {
     MessageViewer::RemoteContentConfigureWidget w;
-    auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = w.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 
-    auto mTreeWidget = w.findChild<QTreeWidget *>(QStringLiteral("treewidget"));
+    auto mTreeWidget = w.findChild<QTreeWidget *>(u"treewidget"_s);
     QVERIFY(mTreeWidget);
     QVERIFY(mTreeWidget->alternatingRowColors());
     QVERIFY(!mTreeWidget->rootIsDecorated());
 
-    auto searchLineEdit = w.findChild<KTreeWidgetSearchLine *>(QStringLiteral("searchlineedit"));
+    auto searchLineEdit = w.findChild<KTreeWidgetSearchLine *>(u"searchlineedit"_s);
     QVERIFY(searchLineEdit);
     QVERIFY(searchLineEdit->isClearButtonEnabled());
 }

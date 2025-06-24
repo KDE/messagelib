@@ -5,6 +5,8 @@
 */
 
 #include "remotecontentwidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "remote-content/remotecontentstatustypecombobox.h"
 #include "remote-content/remotecontentwidget.h"
 #include <QHBoxLayout>
@@ -19,15 +21,15 @@ RemoteContentWidgetTest::RemoteContentWidgetTest(QObject *parent)
 void RemoteContentWidgetTest::shouldHaveDefaultValues()
 {
     MessageViewer::RemoteContentWidget w;
-    auto mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = w.findChild<QHBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 
-    auto mLineEdit = w.findChild<QLineEdit *>(QStringLiteral("mLineEdit"));
+    auto mLineEdit = w.findChild<QLineEdit *>(u"mLineEdit"_s);
     QVERIFY(mLineEdit);
     QVERIFY(mLineEdit->text().isEmpty());
 
-    auto mStatusComboBox = w.findChild<MessageViewer::RemoteContentStatusTypeComboBox *>(QStringLiteral("mStatusComboBox"));
+    auto mStatusComboBox = w.findChild<MessageViewer::RemoteContentStatusTypeComboBox *>(u"mStatusComboBox"_s);
     QVERIFY(mStatusComboBox);
 }
 

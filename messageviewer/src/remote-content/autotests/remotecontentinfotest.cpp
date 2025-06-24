@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "remotecontentinfotest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "remote-content/remotecontentinfo.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(RemoteContentInfoTest)
@@ -25,7 +27,7 @@ void RemoteContentInfoTest::shouldVerifyIsValid()
     MessageViewer::RemoteContentInfo info;
     QCOMPARE(info.status(), MessageViewer::RemoteContentInfo::RemoteContentInfoStatus::Unknown);
     QVERIFY(!info.isValid());
-    info.setUrl(QStringLiteral("bla"));
+    info.setUrl(u"bla"_s);
     QVERIFY(!info.isValid());
     info.setStatus(MessageViewer::RemoteContentInfo::RemoteContentInfoStatus::Blocked);
     QVERIFY(info.isValid());

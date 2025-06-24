@@ -5,6 +5,7 @@
 */
 
 #include "templateparserjobtest.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include "templateparserjob.h"
 #include "templateparserjob_p.h"
@@ -38,10 +39,9 @@ void TemplateParserJobTest::test_convertedHtml_data()
     QTest::addColumn<QString>("referenceFileName");
 
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
-    const auto l = dir.entryList(QStringList(QStringLiteral("plain*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
+    const auto l = dir.entryList(QStringList(u"plain*.mbox"_s), QDir::Files | QDir::Readable | QDir::NoSymLinks);
     for (const QString &file : l) {
-        QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + QLatin1Char('/') + file)
-                                                   << QString(dir.path() + QLatin1Char('/') + file + QLatin1StringView(".html"));
+        QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + u'/' + file) << QString(dir.path() + u'/' + file + QLatin1StringView(".html"));
     }
 }
 
@@ -96,13 +96,13 @@ void TemplateParserJobTest::test_replyHtml_data()
     QTest::addColumn<QString>("referenceFileName");
 
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
-    const auto l = dir.entryList(QStringList(QStringLiteral("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
+    const auto l = dir.entryList(QStringList(u"*.mbox"_s), QDir::Files | QDir::Readable | QDir::NoSymLinks);
     for (const QString &file : l) {
-        const QString expectedFile = dir.path() + QLatin1Char('/') + file + QStringLiteral(".html.reply");
+        const QString expectedFile = dir.path() + u'/' + file + u".html.reply"_s;
         if (!QFile::exists(expectedFile)) {
             continue;
         }
-        QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + QLatin1Char('/') + file) << expectedFile;
+        QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + u'/' + file) << expectedFile;
     }
 }
 
@@ -142,8 +142,8 @@ void TemplateParserJobTest::test_replyHtml()
     QVERIFY(!convertedHtmlContent.isEmpty());
 
     // referenceData is read from a file and most text editors add a \n at the end of the last line
-    if (!convertedHtmlContent.endsWith(QLatin1Char('\n'))) {
-        convertedHtmlContent += QStringLiteral("\n");
+    if (!convertedHtmlContent.endsWith(u'\n')) {
+        convertedHtmlContent += u"\n"_s;
     }
 
     QCOMPARE(convertedHtmlContent, referenceData);
@@ -158,13 +158,13 @@ void TemplateParserJobTest::test_replyPlain_data()
     QTest::addColumn<QString>("referenceFileName");
 
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
-    const auto l = dir.entryList(QStringList(QStringLiteral("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
+    const auto l = dir.entryList(QStringList(u"*.mbox"_s), QDir::Files | QDir::Readable | QDir::NoSymLinks);
     for (const QString &file : l) {
-        const QString expectedFile = dir.path() + QLatin1Char('/') + file + QStringLiteral(".plain.reply");
+        const QString expectedFile = dir.path() + u'/' + file + u".plain.reply"_s;
         if (!QFile::exists(expectedFile)) {
             continue;
         }
-        QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + QLatin1Char('/') + file) << expectedFile;
+        QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + u'/' + file) << expectedFile;
     }
 }
 
@@ -211,13 +211,13 @@ void TemplateParserJobTest::test_forwardPlain_data()
     QTest::addColumn<QString>("referenceFileName");
 
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
-    const auto l = dir.entryList(QStringList(QStringLiteral("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
+    const auto l = dir.entryList(QStringList(u"*.mbox"_s), QDir::Files | QDir::Readable | QDir::NoSymLinks);
     for (const QString &file : l) {
-        const QString expectedFile = dir.path() + QLatin1Char('/') + file + QStringLiteral(".plain.reply");
+        const QString expectedFile = dir.path() + u'/' + file + u".plain.reply"_s;
         if (!QFile::exists(expectedFile)) {
             continue;
         }
-        QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + QLatin1Char('/') + file) << expectedFile;
+        QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + u'/' + file) << expectedFile;
     }
 }
 
@@ -264,13 +264,13 @@ void TemplateParserJobTest::test_forwardHtml_data()
     QTest::addColumn<QString>("referenceFileName");
 
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
-    const auto l = dir.entryList(QStringList(QStringLiteral("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
+    const auto l = dir.entryList(QStringList(u"*.mbox"_s), QDir::Files | QDir::Readable | QDir::NoSymLinks);
     for (const QString &file : l) {
-        const QString expectedFile = dir.path() + QLatin1Char('/') + file + QStringLiteral(".html.reply");
+        const QString expectedFile = dir.path() + u'/' + file + u".html.reply"_s;
         if (!QFile::exists(expectedFile)) {
             continue;
         }
-        QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + QLatin1Char('/') + file) << expectedFile;
+        QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + u'/' + file) << expectedFile;
     }
 }
 
@@ -305,8 +305,8 @@ void TemplateParserJobTest::test_forwardHtml()
 
     QString convertedHtmlContent = parser->htmlMessageText(false, TemplateParser::TemplateParserJob::NoSelectionAllowed);
     // referenceData is read from a file and most text editors add a \n at the end of the last line
-    if (!convertedHtmlContent.endsWith(QLatin1Char('\n'))) {
-        convertedHtmlContent += QStringLiteral("\n");
+    if (!convertedHtmlContent.endsWith(u'\n')) {
+        convertedHtmlContent += u"\n"_s;
     }
 
     QCOMPARE(convertedHtmlContent, referenceData);
@@ -321,13 +321,13 @@ void TemplateParserJobTest::test_forwardedAttachments_data()
     QTest::addColumn<QString>("referenceFileName");
 
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
-    const auto l = dir.entryList(QStringList(QStringLiteral("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
+    const auto l = dir.entryList(QStringList(u"*.mbox"_s), QDir::Files | QDir::Readable | QDir::NoSymLinks);
     for (const QString &file : l) {
-        if (!QFile::exists(dir.path() + QLatin1Char('/') + file + QStringLiteral(".html.reply"))) {
+        if (!QFile::exists(dir.path() + u'/' + file + u".html.reply"_s)) {
             continue;
         }
-        QString expectedFile = dir.path() + QLatin1Char('/') + file + QStringLiteral(".forwarded.mbox");
-        QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + QLatin1Char('/') + file) << expectedFile;
+        QString expectedFile = dir.path() + u'/' + file + u".forwarded.mbox"_s;
+        QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + u'/' + file) << expectedFile;
     }
 }
 
@@ -444,8 +444,8 @@ void TemplateParserJobTest::test_processWithTemplatesForContent_data()
     QTest::addColumn<bool>("hasDictionary");
     qputenv("TZ", "Europe/Paris");
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
-    const QString file = QStringLiteral("plain-message.mbox");
-    const QString fileName = QString(dir.path() + QLatin1Char('/') + file);
+    const QString file = u"plain-message.mbox"_s;
+    const QString fileName = QString(dir.path() + u'/' + file);
     QTest::newRow("%OTIME") << "%OTIME" << fileName << QLocale().toString(QTime(8, 0, 27), QLocale::ShortFormat) << false;
     QTest::newRow("%OTIMELONG") << "%OTIMELONG" << fileName << QLocale().toString(QTime(8, 0, 27), QLocale::LongFormat) << false;
     QTest::newRow("%OTIMELONGEN") << "%OTIMELONGEN" << fileName << QLocale(QLocale::C).toString(QTime(8, 0, 27), QLocale::LongFormat) << false;
@@ -469,16 +469,16 @@ void TemplateParserJobTest::test_processWithTemplatesForContent_data()
     QTest::newRow("%DICTIONARYLANGUAGE=\"en\"") << "%DICTIONARYLANGUAGE=\"en\"" << fileName << "" << true;
     QTest::newRow("%DICTIONARYLANGUAGE=\"\"") << "%DICTIONARYLANGUAGE=\"\"" << fileName << "" << false;
     QTest::newRow("%OTIMELONG %OFULLSUBJECT") << "%OTIMELONG %OFULLSUBJECT" << fileName
-                                              << QLocale().toString(QTime(8, 0, 27), QLocale::LongFormat) + QStringLiteral(" Plain Message Test") << false;
+                                              << QLocale().toString(QTime(8, 0, 27), QLocale::LongFormat) + u" Plain Message Test"_s << false;
     QTest::newRow("%OTIMELONG\n%OFULLSUBJECT") << "%OTIMELONG\n%OFULLSUBJECT" << fileName
-                                               << QLocale().toString(QTime(8, 0, 27), QLocale::LongFormat) + QStringLiteral("\nPlain Message Test") << false;
+                                               << QLocale().toString(QTime(8, 0, 27), QLocale::LongFormat) + u"\nPlain Message Test"_s << false;
     QTest::newRow("%REM=\"sdfsfsdsdfsdf\"") << "%REM=\"sdfsfsdsdfsdf\"" << fileName << "" << false;
     QTest::newRow("%CLEAR") << "%CLEAR" << fileName << "" << false;
     QTest::newRow("FOO foo") << "FOO foo" << fileName << "FOO foo" << false;
-    const QString insertFileName = QString(dir.path() + QLatin1Char('/') + QLatin1StringView("insert-file.txt"));
-    QString insertFileNameCommand = QStringLiteral("%INSERT=\"%1\"").arg(insertFileName);
+    const QString insertFileName = QString(dir.path() + u'/' + QLatin1StringView("insert-file.txt"));
+    QString insertFileNameCommand = u"%INSERT=\"%1\""_s.arg(insertFileName);
     QTest::newRow("%INSERT") << insertFileNameCommand << fileName << "test insert file!\n" << false;
-    insertFileNameCommand = QStringLiteral("%PUT=\"%1\"").arg(insertFileName);
+    insertFileNameCommand = u"%PUT=\"%1\""_s.arg(insertFileName);
     QTest::newRow("%PUT") << insertFileNameCommand << fileName << "test insert file!\n" << false;
     QTest::newRow("%OMSGID") << "%OMSGID" << fileName << "<20150@foo.kde.org>" << false;
     QTest::newRow("%SYSTEM") << "%SYSTEM=\"echo foo\"" << fileName << "foo\n" << false;
@@ -494,8 +494,8 @@ void TemplateParserJobTest::test_processWithTemplatesForContent_data()
     QTest::newRow("unknown command") << "%GGGGG" << fileName << "%GGGGG" << false;
 
     // Test bug 308444
-    const QString file2 = QStringLiteral("plain-message-timezone.mbox");
-    const QString fileName2 = QString(dir.path() + QLatin1Char('/') + file2);
+    const QString file2 = u"plain-message-timezone.mbox"_s;
+    const QString fileName2 = QString(dir.path() + u'/' + file2);
     QTest::newRow("bug308444-%OTIMELONG") << "%OTIMELONG" << fileName2 << QLocale::system().toString(QTime(20, 31, 25), QLocale::LongFormat) << false;
 }
 
@@ -539,8 +539,8 @@ void TemplateParserJobTest::test_processWithTemplatesForContentOtherTimeZone_dat
     qputenv("TZ", "America/New_York");
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
     // Test bug 308444
-    const QString file2 = QStringLiteral("plain-message-timezone.mbox");
-    const QString fileName2 = QString(dir.path() + QLatin1Char('/') + file2);
+    const QString file2 = u"plain-message-timezone.mbox"_s;
+    const QString fileName2 = QString(dir.path() + u'/' + file2);
     QTest::newRow("bug308444-%OTIMELONG") << "%OTIMELONG" << fileName2 << QLocale::system().toString(QTime(14, 31, 25), QLocale::LongFormat) << false;
 }
 
@@ -580,15 +580,14 @@ void TemplateParserJobTest::test_makeValidHtml_data()
     QTest::addColumn<QString>("message");
     QTest::addColumn<QString>("expected");
 
-    QTest::newRow("plain text") << QStringLiteral("Some text\n-- \nSignature")
+    QTest::newRow("plain text") << u"Some text\n-- \nSignature"_s
                                 << QStringLiteral(
                                        "<html><head></head><body>Some text\n"
                                        "-- \nSignature<br/></body></html>");
 
-    QTest::newRow("existing HTML tag") << QStringLiteral("<html><body>Some text\n-- \nSignature</body></html>")
-                                       << QStringLiteral("<html><body>Some text\n-- \nSignature</body></html>");
+    QTest::newRow("existing HTML tag") << u"<html><body>Some text\n-- \nSignature</body></html>"_s << u"<html><body>Some text\n-- \nSignature</body></html>"_s;
 
-    QTest::newRow("existing body tag, no html") << QStringLiteral("<body>Some text\n-- \nSignature</body>")
+    QTest::newRow("existing body tag, no html") << u"<body>Some text\n-- \nSignature</body>"_s
                                                 << QStringLiteral(
                                                        "<html><head></head><body>Some text\n"
                                                        "-- \nSignature</body></html>");

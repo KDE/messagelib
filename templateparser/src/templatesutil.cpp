@@ -5,6 +5,8 @@
 */
 
 #include "templatesutil.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "templatesutil_p.h"
 
 #include <KConfigGroup>
@@ -17,9 +19,9 @@ using namespace TemplateParser;
 
 void TemplateParser::Util::deleteTemplate(const QString &id)
 {
-    KSharedConfig::Ptr config = KSharedConfig::openConfig(QStringLiteral("templatesconfigurationrc"), KConfig::NoGlobals);
+    KSharedConfig::Ptr config = KSharedConfig::openConfig(u"templatesconfigurationrc"_s, KConfig::NoGlobals);
 
-    const QString key = QStringLiteral("Templates #%1").arg(id);
+    const QString key = u"Templates #%1"_s.arg(id);
     if (config->hasGroup(key)) {
         KConfigGroup group = config->group(key);
         group.deleteGroup();
@@ -30,31 +32,27 @@ void TemplateParser::Util::deleteTemplate(const QString &id)
 QStringList TemplateParser::Util::keywordsWithArgs()
 {
     const QStringList keywordsWithArgs = QStringList()
-        << QStringLiteral("%REM=\"\"%-") << QStringLiteral("%INSERT=\"\"") << QStringLiteral("%SYSTEM=\"\"") << QStringLiteral("%QUOTEPIPE=\"\"")
-        << QStringLiteral("%MSGPIPE=\"\"") << QStringLiteral("%BODYPIPE=\"\"") << QStringLiteral("%CLEARPIPE=\"\"") << QStringLiteral("%TEXTPIPE=\"\"")
-        << QStringLiteral("%OHEADER=\"\"") << QStringLiteral("%HEADER=\"\"") << QStringLiteral("%DICTIONARYLANGUAGE=\"\"") << QStringLiteral("%LANGUAGE=\"\"");
+        << u"%REM=\"\"%-"_s << u"%INSERT=\"\""_s << QStringLiteral("%SYSTEM=\"\"") << QStringLiteral("%QUOTEPIPE=\"\"") << u"%MSGPIPE=\"\""_s
+        << u"%BODYPIPE=\"\""_s << QStringLiteral("%CLEARPIPE=\"\"") << QStringLiteral("%TEXTPIPE=\"\"") << u"%OHEADER=\"\""_s << u"%HEADER=\"\""_s
+        << QStringLiteral("%DICTIONARYLANGUAGE=\"\"") << QStringLiteral("%LANGUAGE=\"\"");
     return keywordsWithArgs;
 }
 
 QStringList TemplateParser::Util::keywords()
 {
     const QStringList keywords =
-        QStringList() << QStringLiteral("%QUOTE") << QStringLiteral("%FORCEDPLAIN") << QStringLiteral("%FORCEDHTML") << QStringLiteral("%QHEADERS")
-                      << QStringLiteral("%HEADERS") << QStringLiteral("%TEXT") << QStringLiteral("%OTEXTSIZE") << QStringLiteral("%OTEXT")
-                      << QStringLiteral("%OADDRESSEESADDR") << QStringLiteral("%CCADDR") << QStringLiteral("%CCNAME") << QStringLiteral("%CCFNAME")
-                      << QStringLiteral("%CCLNAME") << QStringLiteral("%TOADDR") << QStringLiteral("%TONAME") << QStringLiteral("%TOFNAME")
-                      << QStringLiteral("%TOLNAME") << QStringLiteral("%TOLIST") << QStringLiteral("%FROMADDR") << QStringLiteral("%FROMNAME")
-                      << QStringLiteral("%FROMFNAME") << QStringLiteral("%FROMLNAME") << QStringLiteral("%FULLSUBJECT") << QStringLiteral("%MSGID")
-                      << QStringLiteral("%HEADER\\( ") << QStringLiteral("%OCCADDR") << QStringLiteral("%OCCNAME") << QStringLiteral("%OCCFNAME")
-                      << QStringLiteral("%OCCLNAME") << QStringLiteral("%OTOADDR") << QStringLiteral("%OTONAME") << QStringLiteral("%OTOFNAME")
-                      << QStringLiteral("%OTOLNAME") << QStringLiteral("%OTOLIST") << QStringLiteral("%OTO") << QStringLiteral("%OFROMADDR")
-                      << QStringLiteral("%OFROMNAME") << QStringLiteral("%OFROMFNAME") << QStringLiteral("%OFROMLNAME") << QStringLiteral("%OFULLSUBJECT")
-                      << QStringLiteral("%OFULLSUBJ") << QStringLiteral("%OMSGID") << QStringLiteral("%DATEEN") << QStringLiteral("%DATESHORT")
-                      << QStringLiteral("%DATE") << QStringLiteral("%DOW") << QStringLiteral("%TIMELONGEN") << QStringLiteral("%TIMELONG")
-                      << QStringLiteral("%TIME") << QStringLiteral("%ODATEEN") << QStringLiteral("%ODATESHORT") << QStringLiteral("%ODATE")
-                      << QStringLiteral("%ODOW") << QStringLiteral("%OTIMELONGEN") << QStringLiteral("%OTIMELONG") << QStringLiteral("%OTIME")
-                      << QStringLiteral("%BLANK") << QStringLiteral("%NOP") << QStringLiteral("%CLEAR") << QStringLiteral("%DEBUGOFF")
-                      << QStringLiteral("%DEBUG") << QStringLiteral("%CURSOR") << QStringLiteral("%SIGNATURE");
+        QStringList() << u"%QUOTE"_s << u"%FORCEDPLAIN"_s << QStringLiteral("%FORCEDHTML") << QStringLiteral("%QHEADERS") << u"%HEADERS"_s << u"%TEXT"_s
+                      << QStringLiteral("%OTEXTSIZE") << QStringLiteral("%OTEXT") << u"%OADDRESSEESADDR"_s << u"%CCADDR"_s << QStringLiteral("%CCNAME")
+                      << QStringLiteral("%CCFNAME") << u"%CCLNAME"_s << u"%TOADDR"_s << QStringLiteral("%TONAME") << QStringLiteral("%TOFNAME") << u"%TOLNAME"_s
+                      << u"%TOLIST"_s << QStringLiteral("%FROMADDR") << QStringLiteral("%FROMNAME") << u"%FROMFNAME"_s << u"%FROMLNAME"_s
+                      << QStringLiteral("%FULLSUBJECT") << QStringLiteral("%MSGID") << u"%HEADER\\( "_s << u"%OCCADDR"_s << QStringLiteral("%OCCNAME")
+                      << QStringLiteral("%OCCFNAME") << u"%OCCLNAME"_s << u"%OTOADDR"_s << QStringLiteral("%OTONAME") << QStringLiteral("%OTOFNAME")
+                      << u"%OTOLNAME"_s << u"%OTOLIST"_s << QStringLiteral("%OTO") << QStringLiteral("%OFROMADDR") << u"%OFROMNAME"_s << u"%OFROMFNAME"_s
+                      << QStringLiteral("%OFROMLNAME") << QStringLiteral("%OFULLSUBJECT") << u"%OFULLSUBJ"_s << u"%OMSGID"_s << QStringLiteral("%DATEEN")
+                      << QStringLiteral("%DATESHORT") << u"%DATE"_s << u"%DOW"_s << QStringLiteral("%TIMELONGEN") << QStringLiteral("%TIMELONG") << u"%TIME"_s
+                      << u"%ODATEEN"_s << QStringLiteral("%ODATESHORT") << QStringLiteral("%ODATE") << u"%ODOW"_s << u"%OTIMELONGEN"_s
+                      << QStringLiteral("%OTIMELONG") << QStringLiteral("%OTIME") << u"%BLANK"_s << u"%NOP"_s << QStringLiteral("%CLEAR")
+                      << QStringLiteral("%DEBUGOFF") << u"%DEBUG"_s << u"%CURSOR"_s << QStringLiteral("%SIGNATURE");
     return keywords;
 }
 
@@ -76,7 +74,7 @@ QString TemplateParser::Util::getFirstNameFromEmail(const QString &str)
         int nameLength = name.length();
         int sep_pos = -1;
         int i;
-        if ((sep_pos = name.indexOf(QLatin1Char(','))) < 0) {
+        if ((sep_pos = name.indexOf(u',')) < 0) {
             // no comma, start at the beginning of the string and return the first sequence
             // of non-whitespace characters
             for (i = 0; i < nameLength; i++) {
@@ -94,7 +92,7 @@ QString TemplateParser::Util::getFirstNameFromEmail(const QString &str)
     } else if (!mail.isEmpty()) {
         // extract the part of the mail address before the '@'
         int sep_pos = -1;
-        if ((sep_pos = mail.indexOf(QLatin1Char('@'))) < 0) {
+        if ((sep_pos = mail.indexOf(u'@')) < 0) {
             // no '@', this should actually never happen, but just in case we return the
             // full address
             sep_pos = mail.length();
@@ -122,7 +120,7 @@ QString TemplateParser::Util::getLastNameFromEmail(const QString &str)
         int nameLength = name.length();
         int sep_pos = -1;
         int i;
-        if ((sep_pos = name.indexOf(QLatin1Char(','))) < 0) {
+        if ((sep_pos = name.indexOf(u',')) < 0) {
             // no comma, start at the end of the string and return the last sequence
             // of non-whitespace characters
             for (i = nameLength - 1; i >= 0; i--) {
@@ -146,8 +144,8 @@ QString TemplateParser::Util::removeSpaceAtBegin(const QString &selection)
 {
     QString content = selection;
     // Remove blank lines at the beginning:
-    const int firstNonWS = content.indexOf(QRegularExpression(QStringLiteral("\\S")));
-    const int lineStart = content.lastIndexOf(QLatin1Char('\n'), firstNonWS);
+    const int firstNonWS = content.indexOf(QRegularExpression(u"\\S"_s));
+    const int lineStart = content.lastIndexOf(u'\n', firstNonWS);
     if (lineStart >= 0) {
         content.remove(0, lineStart);
     }

@@ -5,6 +5,7 @@
 */
 
 #include "urlhandlermanagertest.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include "util.h"
 #include "viewer/urlhandlermanager_p.h"
@@ -25,7 +26,7 @@ class TestBodyPartURLHandler : public Interface::BodyPartURLHandler
 public:
     [[nodiscard]] QString name() const override
     {
-        return QStringLiteral("TestBodyPartURLHandler");
+        return u"TestBodyPartURLHandler"_s;
     }
 
     void testPath(const QString &path) const
@@ -87,12 +88,10 @@ void BodyPartUrlHandlerManagerTest::testHandleClick_data()
     QTest::addColumn<bool>("ret");
 
     QTest::newRow("completely_empty") << QString() << QString() << KMime::ContentIndex() << false;
-    QTest::newRow("empty") << QStringLiteral("x-kmail:") << QString() << KMime::ContentIndex() << false;
-    QTest::newRow("pgpkey") << QStringLiteral("x-kmail:/bodypart/1234/2/pgpkey") << QStringLiteral("pgpkey") << KMime::ContentIndex(QStringLiteral("2"))
-                            << true;
-    QTest::newRow("test") << QStringLiteral("x-kmail:/bodypart/1234/1/test") << QStringLiteral("test") << KMime::ContentIndex(QStringLiteral("1")) << true;
-    QTest::newRow("test_with_arguments") << QStringLiteral("x-kmail:/bodypart/1234/1/test?foo=qua") << QStringLiteral("test?foo=qua")
-                                         << KMime::ContentIndex(QStringLiteral("1")) << true;
+    QTest::newRow("empty") << u"x-kmail:"_s << QString() << KMime::ContentIndex() << false;
+    QTest::newRow("pgpkey") << u"x-kmail:/bodypart/1234/2/pgpkey"_s << u"pgpkey"_s << KMime::ContentIndex(QStringLiteral("2")) << true;
+    QTest::newRow("test") << u"x-kmail:/bodypart/1234/1/test"_s << u"test"_s << KMime::ContentIndex(QStringLiteral("1")) << true;
+    QTest::newRow("test_with_arguments") << u"x-kmail:/bodypart/1234/1/test?foo=qua"_s << u"test?foo=qua"_s << KMime::ContentIndex(u"1"_s) << true;
 }
 
 void BodyPartUrlHandlerManagerTest::testHandleClick()
@@ -108,7 +107,7 @@ void BodyPartUrlHandlerManagerTest::testHandleClick()
     manager.registerHandler(&handler, QLatin1StringView(""));
     Viewer v(nullptr);
     ViewerPrivate vp(&v, nullptr, nullptr);
-    const KMime::Message::Ptr msg(Test::readAndParseMail(QStringLiteral("encapsulated-with-attachment.mbox")));
+    const KMime::Message::Ptr msg(Test::readAndParseMail(u"encapsulated-with-attachment.mbox"_s));
     vp.setMessage(msg, MimeTreeParser::Delayed);
 
     handler.mViewerInstance = &v;

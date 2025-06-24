@@ -5,6 +5,8 @@
 */
 
 #include "composerviewinterface.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "composerviewbase.h"
 #include "snippet/convertsnippetvariablesutil.h"
 #include <KIO/Global>
@@ -82,7 +84,7 @@ MessageComposer::ComposerAttachmentInterface ComposerViewInterface::attachments(
         for (const MessageCore::AttachmentPart::Ptr &attachment : attachments) {
             fileNames.append(attachment->fileName());
             names.append(attachment->name());
-            nameAndSize.append(QStringLiteral("%1 (%2)").arg(attachment->name(), KIO::convertSize(attachment->size())));
+            nameAndSize.append(u"%1 (%2)"_s.arg(attachment->name(), KIO::convertSize(attachment->size())));
         }
         attachmentInterface.setNames(names);
         attachmentInterface.setNamesAndSize(nameAndSize);

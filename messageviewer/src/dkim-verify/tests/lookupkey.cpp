@@ -5,6 +5,8 @@
 */
 
 #include "lookupkey.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <QDebug>
 #include <QDnsLookup>
 LookUpKey::LookUpKey(QObject *parent)
@@ -20,7 +22,7 @@ void LookUpKey::lookUpServer(const QString &addr)
     connect(mDnsLookup, &QDnsLookup::finished, this, &LookUpKey::handleServers);
 
     mDnsLookup->setType(QDnsLookup::TXT);
-    // mDnsLookup->setName(QStringLiteral("s2048._domainkey.yahoo.fr"));
+    // mDnsLookup->setName(u"s2048._domainkey.yahoo.fr"_s);
     mDnsLookup->setName(addr);
     mDnsLookup->lookup();
 }

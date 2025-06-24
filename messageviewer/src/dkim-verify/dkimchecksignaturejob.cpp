@@ -5,6 +5,8 @@
 */
 
 #include "dkimchecksignaturejob.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "dkimdownloadkeyjob.h"
 #include "dkiminfo.h"
 #include "dkimkeyrecord.h"
@@ -134,20 +136,19 @@ void DKIMCheckSignatureJob::start()
     }
     // It seems that kmail add a space before this line => it breaks check
     if (mBodyCanonizationResult.startsWith(QLatin1StringView(" This is a multi-part message in MIME format"))) { // Remove it from start
-        mBodyCanonizationResult.replace(QStringLiteral(" This is a multi-part message in MIME format"),
-                                        QStringLiteral("This is a multi-part message in MIME format"));
+        mBodyCanonizationResult.replace(u" This is a multi-part message in MIME format"_s, u"This is a multi-part message in MIME format"_s);
     }
     // It seems that kmail add a space before this line => it breaks check
     if (mBodyCanonizationResult.startsWith(QLatin1StringView(" This is a cryptographically signed message in MIME format."))) { // Remove it from start
-        mBodyCanonizationResult.replace(QStringLiteral(" This is a cryptographically signed message in MIME format."),
-                                        QStringLiteral("This is a cryptographically signed message in MIME format."));
+        mBodyCanonizationResult.replace(u" This is a cryptographically signed message in MIME format."_s,
+                                        u"This is a cryptographically signed message in MIME format."_s);
     }
     if (mBodyCanonizationResult.startsWith(QLatin1StringView(" \r\n"))) { // Remove it from start
-        static const QRegularExpression reg{QStringLiteral("^ \r\n")};
+        static const QRegularExpression reg{u"^ \r\n"_s};
         mBodyCanonizationResult.remove(reg);
     }
 #ifdef DEBUG_SIGNATURE_DKIM
-    QFile caFile(QStringLiteral("/tmp/bodycanon-kmail.txt"));
+    QFile caFile(u"/tmp/bodycanon-kmail.txt"_s);
     caFile.open(QIODevice::WriteOnly | QIODevice::Text);
     QTextStream outStream(&caFile);
     outStream << mBodyCanonizationResult;
@@ -249,16 +250,15 @@ void DKIMCheckSignatureJob::computeHeaderCanonization(bool removeQuoteOnContentT
     case MessageViewer::DKIMInfo::CanonicalizationType::Unknown:
         return;
     case MessageViewer::DKIMInfo::CanonicalizationType::Simple:
-        mHeaderCanonizationResult += QLatin1StringView("\r\n") + MessageViewer::DKIMUtil::headerCanonizationSimple(QStringLiteral("dkim-signature"), dkimValue);
+        mHeaderCanonizationResult += QLatin1StringView("\r\n") + MessageViewer::DKIMUtil::headerCanonizationSimple(u"dkim-signature"_s, dkimValue);
         break;
     case MessageViewer::DKIMInfo::CanonicalizationType::Relaxed:
-        mHeaderCanonizationResult += QLatin1StringView("\r\n")
-            + MessageViewer::DKIMUtil::headerCanonizationRelaxed(QStringLiteral("dkim-signature"), dkimValue, removeQuoteOnContentType);
+        mHeaderCanonizationResult +=
+            QLatin1StringView("\r\n") + MessageViewer::DKIMUtil::headerCanonizationRelaxed(u"dkim-signature"_s, dkimValue, removeQuoteOnContentType);
         break;
     }
 #ifdef DEBUG_SIGNATURE_DKIM
-    QFile headerFile(
-        QStringLiteral("/tmp/headercanon-kmail-%1.txt").arg(removeQuoteOnContentType ? QLatin1StringView("removequote") : QLatin1StringView("withquote")));
+    QFile headerFile(u"/tmp/headercanon-kmail-%1.txt"_s.arg(removeQuoteOnContentType ? QLatin1StringView("removequote") : QLatin1StringView("withquote")));
     headerFile.open(QIODevice::WriteOnly | QIODevice::Text);
     QTextStream outHeaderStream(&headerFile);
     outHeaderStream << mHeaderCanonizationResult;
@@ -618,7 +618,7 @@ void DKIMCheckSignatureJob::verifyRSASignature()
         return verificationFailed(DKIMError::InvalidBodyHashAlgorithm);
     }
 
-    const auto signature = QByteArray::fromBase64(mDkimInfo.signature().remove(QLatin1Char(' ')).toLatin1());
+    const auto signature = QByteArray::fromBase64(mDkimInfo.signature().remove(u' ').toLatin1());
     if (const auto result = doVerifySignature(publicKey.get(), md, signature, mHeaderCanonizationResult.toLatin1()); !result.has_value()) {
         // OpenSSL failure
         return verificationFailed(DKIMError::ImpossibleToVerifySignature);

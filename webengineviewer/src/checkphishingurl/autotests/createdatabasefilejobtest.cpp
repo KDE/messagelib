@@ -5,6 +5,8 @@
 */
 
 #include "createdatabasefilejobtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../createdatabasefilejob.h"
 #include "../createphishingurldatabasejob.h"
 #include "../localdatabasefile.h"
@@ -16,7 +18,7 @@
 Q_DECLARE_METATYPE(QList<WebEngineViewer::Addition>)
 static QByteArray readJsonFile(const QString &jsonFile)
 {
-    QFile file(QLatin1StringView(CHECKPHISHINGURL_DATA_DIR) + QLatin1Char('/') + jsonFile);
+    QFile file(QLatin1StringView(CHECKPHISHINGURL_DATA_DIR) + u'/' + jsonFile);
     file.open(QIODevice::ReadOnly);
     Q_ASSERT(file.isOpen());
     const QByteArray data = file.readAll();
@@ -28,7 +30,7 @@ CreateDatabaseFileJobTest::CreateDatabaseFileJobTest(QObject *parent)
     : QObject(parent)
 {
     QStandardPaths::setTestModeEnabled(true);
-    QDir().mkpath(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/phishingurl"));
+    QDir().mkpath(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + u"/phishingurl"_s);
 }
 
 CreateDatabaseFileJobTest::~CreateDatabaseFileJobTest() = default;
@@ -51,9 +53,9 @@ void CreateDatabaseFileJobTest::shouldCreateFile_data()
     QTest::addColumn<QString>("filename");
     QTest::addColumn<quint64>("numberOfElement");
     QTest::addColumn<bool>("success");
-    QTest::newRow("correctdatabase") << QStringLiteral("current.json") << static_cast<quint64>(580600) << true;
-    QTest::newRow("correctdatabase2") << QStringLiteral("newdatabase2.json") << static_cast<quint64>(579416) << true;
-    QTest::newRow("incorrectdatabase") << QStringLiteral("incorrectdatabase2.json") << static_cast<quint64>(0) << false;
+    QTest::newRow("correctdatabase") << u"current.json"_s << static_cast<quint64>(580600) << true;
+    QTest::newRow("correctdatabase2") << u"newdatabase2.json"_s << static_cast<quint64>(579416) << true;
+    QTest::newRow("incorrectdatabase") << u"incorrectdatabase2.json"_s << static_cast<quint64>(0) << false;
 }
 
 void CreateDatabaseFileJobTest::shouldCreateFile()
@@ -194,12 +196,12 @@ void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase()
     QList<WebEngineViewer::Addition> lst;
     lst << a << b << c << d;
     info.additionList = lst;
-    info.minimumWaitDuration = QStringLiteral("593.440s");
-    info.threatType = QStringLiteral("MALWARE");
-    info.threatEntryType = QStringLiteral("URL");
+    info.minimumWaitDuration = u"593.440s"_s;
+    info.threatType = u"MALWARE"_s;
+    info.threatEntryType = u"URL"_s;
     info.responseType = WebEngineViewer::UpdateDataBaseInfo::FullUpdate;
-    info.platformType = QStringLiteral("WINDOWS");
-    info.newClientState = QStringLiteral("ChAIBRADGAEiAzAwMSiAEDABEAFGpqhd");
+    info.platformType = u"WINDOWS"_s;
+    info.newClientState = u"ChAIBRADGAEiAzAwMSiAEDABEAFGpqhd"_s;
     info.sha256 = QByteArrayLiteral("vLPta+N40Sip7Xo3XXgYvW5dpahS96vPwaOjxVospm8=");
 
     databasejob.setUpdateDataBaseInfo(info);
@@ -274,12 +276,12 @@ void CreateDatabaseFileJobTest::shouldRemoveElementInDataBase()
     lstRemovals << r;
     updateinfo.additionList = listElementToAdd;
     updateinfo.removalList = lstRemovals;
-    updateinfo.minimumWaitDuration = QStringLiteral("593.440s");
-    updateinfo.threatType = QStringLiteral("MALWARE");
-    updateinfo.threatEntryType = QStringLiteral("URL");
+    updateinfo.minimumWaitDuration = u"593.440s"_s;
+    updateinfo.threatType = u"MALWARE"_s;
+    updateinfo.threatEntryType = u"URL"_s;
     updateinfo.responseType = WebEngineViewer::UpdateDataBaseInfo::PartialUpdate;
-    updateinfo.platformType = QStringLiteral("WINDOWS");
-    updateinfo.newClientState = QStringLiteral("ChAIBRADGAEiAzAwMSiAEDABEAFGpqhd");
+    updateinfo.platformType = u"WINDOWS"_s;
+    updateinfo.newClientState = u"ChAIBRADGAEiAzAwMSiAEDABEAFGpqhd"_s;
     updateinfo.sha256 = /*QByteArrayLiteral("yTnyjAgIFeS6Cv+b4IJHngYbdvp5uz1bx9V4el5CyeE=")*/ newssha;
 
     WebEngineViewer::CreateDatabaseFileJob updateDatabasejob;
@@ -328,12 +330,12 @@ void CreateDatabaseFileJobTest::shouldCreateCorrectBinaryFile()
     QList<WebEngineViewer::Addition> lst;
     lst << a << b << c << d;
     info.additionList = lst;
-    info.minimumWaitDuration = QStringLiteral("593.440s");
-    info.threatType = QStringLiteral("MALWARE");
-    info.threatEntryType = QStringLiteral("URL");
+    info.minimumWaitDuration = u"593.440s"_s;
+    info.threatType = u"MALWARE"_s;
+    info.threatEntryType = u"URL"_s;
     info.responseType = WebEngineViewer::UpdateDataBaseInfo::FullUpdate;
-    info.platformType = QStringLiteral("WINDOWS");
-    info.newClientState = QStringLiteral("ChAIBRADGAEiAzAwMSiAEDABEAFGpqhd");
+    info.platformType = u"WINDOWS"_s;
+    info.newClientState = u"ChAIBRADGAEiAzAwMSiAEDABEAFGpqhd"_s;
     info.sha256 = QByteArrayLiteral("vLPta+N40Sip7Xo3XXgYvW5dpahS96vPwaOjxVospm8=");
 
     databasejob.setUpdateDataBaseInfo(info);
@@ -377,7 +379,7 @@ void CreateDatabaseFileJobTest::shouldCreateCorrectBinaryFile()
 
 void CreateDatabaseFileJobTest::shouldUpdateDataBase()
 {
-    QString firstFilename = QStringLiteral("newdatabase2.json");
+    QString firstFilename = u"newdatabase2.json"_s;
     const QByteArray ba = readJsonFile(firstFilename);
     WebEngineViewer::CreatePhishingUrlDataBaseJob job;
     QSignalSpy spy1(&job, &WebEngineViewer::CreatePhishingUrlDataBaseJob::finished);
@@ -404,7 +406,7 @@ void CreateDatabaseFileJobTest::shouldUpdateDataBase()
     QCOMPARE(newFile.getUint64(4), static_cast<quint64>(579416));
     newFile.close();
 
-    QString updateFilename = QStringLiteral("partial_download3.json");
+    QString updateFilename = u"partial_download3.json"_s;
     const QByteArray baUpdate = readJsonFile(updateFilename);
 
     WebEngineViewer::CreatePhishingUrlDataBaseJob jobUpdate;

@@ -3,6 +3,7 @@
    SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
 #include "cryptohelpertest.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include "cryptohelper.h"
 
@@ -26,36 +27,36 @@ void CryptoHelperTest::testPMFDWithNoPGPBlock()
 
 void CryptoHelperTest::testPGPBlockType()
 {
-    const QString blockText = QStringLiteral("text");
-    const QString preString = QStringLiteral("before\n");
+    const QString blockText = u"text"_s;
+    const QString preString = u"before\n"_s;
     for (int i = 1; i <= PrivateKeyBlock; ++i) {
         QString name;
         switch (i) {
         case PgpMessageBlock:
-            name = QStringLiteral("MESSAGE");
+            name = u"MESSAGE"_s;
             break;
         case MultiPgpMessageBlock:
-            name = QStringLiteral("MESSAGE PART");
+            name = u"MESSAGE PART"_s;
             break;
         case SignatureBlock:
-            name = QStringLiteral("SIGNATURE");
+            name = u"SIGNATURE"_s;
             break;
         case ClearsignedBlock:
-            name = QStringLiteral("SIGNED MESSAGE");
+            name = u"SIGNED MESSAGE"_s;
             break;
         case PublicKeyBlock:
-            name = QStringLiteral("PUBLIC KEY BLOCK");
+            name = u"PUBLIC KEY BLOCK"_s;
             break;
         case PrivateKeyBlock:
-            name = QStringLiteral("PRIVATE KEY BLOCK");
+            name = u"PRIVATE KEY BLOCK"_s;
             break;
         }
-        QString text = QLatin1StringView("-----BEGIN PGP ") + name + QLatin1Char('\n') + blockText;
+        QString text = QLatin1StringView("-----BEGIN PGP ") + name + u'\n' + blockText;
         QList<Block> blocks = prepareMessageForDecryption(preString.toLatin1() + text.toLatin1());
         QCOMPARE(blocks.count(), 1);
         QCOMPARE(blocks[0].type(), UnknownBlock);
 
-        text += QLatin1StringView("\n-----END PGP ") + name + QLatin1Char('\n');
+        text += QLatin1StringView("\n-----END PGP ") + name + u'\n';
         blocks = prepareMessageForDecryption(preString.toLatin1() + text.toLatin1());
         QCOMPARE(blocks.count(), 2);
         QCOMPARE(blocks[1].text(), text.toLatin1());
@@ -65,30 +66,30 @@ void CryptoHelperTest::testPGPBlockType()
 
 void CryptoHelperTest::testDeterminePGPBlockType()
 {
-    const QString blockText = QStringLiteral("text");
+    const QString blockText = u"text"_s;
     for (int i = 1; i <= PrivateKeyBlock; ++i) {
         QString name;
         switch (i) {
         case PgpMessageBlock:
-            name = QStringLiteral("MESSAGE");
+            name = u"MESSAGE"_s;
             break;
         case MultiPgpMessageBlock:
-            name = QStringLiteral("MESSAGE PART");
+            name = u"MESSAGE PART"_s;
             break;
         case SignatureBlock:
-            name = QStringLiteral("SIGNATURE");
+            name = u"SIGNATURE"_s;
             break;
         case ClearsignedBlock:
-            name = QStringLiteral("SIGNED MESSAGE");
+            name = u"SIGNED MESSAGE"_s;
             break;
         case PublicKeyBlock:
-            name = QStringLiteral("PUBLIC KEY BLOCK");
+            name = u"PUBLIC KEY BLOCK"_s;
             break;
         case PrivateKeyBlock:
-            name = QStringLiteral("PRIVATE KEY BLOCK");
+            name = u"PRIVATE KEY BLOCK"_s;
             break;
         }
-        const QString text = QLatin1StringView("-----BEGIN PGP ") + name + QLatin1Char('\n') + blockText + QLatin1Char('\n');
+        const QString text = QLatin1StringView("-----BEGIN PGP ") + name + u'\n' + blockText + u'\n';
         const Block block = Block(text.toLatin1());
         QCOMPARE(block.text(), text.toLatin1());
         QCOMPARE(block.type(), static_cast<PGPBlockType>(i));

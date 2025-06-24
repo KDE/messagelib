@@ -5,6 +5,8 @@
 */
 
 #include "viewerpluginmanager.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "messageviewer_debug.h"
 #include "viewerplugin.h"
 
@@ -58,18 +60,18 @@ namespace
 {
 QString pluginVersion()
 {
-    return QStringLiteral("2.0");
+    return u"2.0"_s;
 }
 }
 
 QString ViewerPluginManagerPrivate::configGroupName() const
 {
-    return QStringLiteral("PluginMessageViewer%1").arg(pluginName);
+    return u"PluginMessageViewer%1"_s.arg(pluginName);
 }
 
 QString ViewerPluginManagerPrivate::configPrefixSettingKey() const
 {
-    return QStringLiteral("MessageViewerPlugins");
+    return u"MessageViewerPlugins"_s;
 }
 
 bool ViewerPluginManagerPrivate::initializePluginList()
@@ -84,7 +86,7 @@ bool ViewerPluginManagerPrivate::initializePluginList()
     QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(pluginDirectory);
 
     // We need common plugin to avoid to duplicate code between akregator/kmail
-    plugins += KPluginMetaData::findPlugins(QStringLiteral("pim6/messageviewer/viewercommonplugin"));
+    plugins += KPluginMetaData::findPlugins(u"pim6/messageviewer/viewercommonplugin"_s);
 
     const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
     QListIterator<KPluginMetaData> i(plugins);

@@ -7,6 +7,8 @@
 #pragma once
 
 #include "cryptobodypartmemento.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <QStringList>
 #include <gpgme++/key.h>
 #include <gpgme++/verificationresult.h>

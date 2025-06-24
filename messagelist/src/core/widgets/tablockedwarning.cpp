@@ -6,6 +6,8 @@
 */
 
 #include "tablockedwarning.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <KLocalizedString>
 using namespace MessageList::Core;
 TabLockedWarning::TabLockedWarning(QWidget *parent)
@@ -14,7 +16,7 @@ TabLockedWarning::TabLockedWarning(QWidget *parent)
     setCloseButtonVisible(false);
     setMessageType(Warning);
     setWordWrap(true);
-    setText(QStringLiteral("%1 <a href=\"unlock\">%2</a>").arg(i18n("Current Tab is locked."), i18n("(Unlock it)")));
+    setText(u"%1 <a href=\"unlock\">%2</a>"_s.arg(i18n("Current Tab is locked."), i18n("(Unlock it)")));
     setVisible(false);
     setPosition(KMessageWidget::Header);
     connect(this, &TabLockedWarning::linkActivated, this, &TabLockedWarning::slotLinkActivated);

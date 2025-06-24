@@ -7,6 +7,8 @@
  *******************************************************************************/
 
 #include "core/themedelegate.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "core/groupheaderitem.h"
 #include "core/messageitem.h"
 #include "messagelistsettings.h"

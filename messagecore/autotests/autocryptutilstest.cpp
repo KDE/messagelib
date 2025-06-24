@@ -3,6 +3,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "autocryptutilstest.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include "autocrypt/autocryptrecipient_p.h"
 #include "autocrypt/autocryptstorage.h"
@@ -23,7 +24,7 @@ QTEST_GUILESS_MAIN(AutocryptUtilsTest)
 
 static KMime::Message::Ptr readAndParseMail(const QString &mailFile)
 {
-    QFile file(QLatin1StringView(MAIL_DATA_DIR) + QLatin1Char('/') + mailFile);
+    QFile file(QLatin1StringView(MAIL_DATA_DIR) + u'/' + mailFile);
     file.open(QIODevice::ReadOnly);
     Q_ASSERT(file.isOpen());
     const QByteArray data = KMime::CRLFtoLF(file.readAll());
@@ -39,13 +40,13 @@ void AutocryptUtilsTest::initTestCase()
     qputenv("LC_ALL", "en_US.UTF-8");
     QStandardPaths::setTestModeEnabled(true);
     const QDir genericDataLocation(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation));
-    baseDir = QDir(genericDataLocation.filePath(QStringLiteral("autocrypt")));
+    baseDir = QDir(genericDataLocation.filePath(u"autocrypt"_s));
 }
 
 void AutocryptUtilsTest::init()
 {
     baseDir.removeRecursively();
-    baseDir.mkpath(QStringLiteral("."));
+    baseDir.mkpath(u"."_s);
 }
 
 void AutocryptUtilsTest::cleanup()
@@ -58,7 +59,7 @@ void AutocryptUtilsTest::cleanup()
 void AutocryptUtilsTest::test_header()
 {
     MimeTreeParser::NodeHelper nodeHelper;
-    auto message = readAndParseMail(QStringLiteral("autocrypt/header.mbox"));
+    auto message = readAndParseMail(u"autocrypt/header.mbox"_s);
     HeaderMixupNodeHelper gossipMixin(&nodeHelper, message.data());
 
     MimeTreeParser::SimpleObjectTreeSource testSource;
@@ -72,12 +73,12 @@ void AutocryptUtilsTest::test_header()
     QCOMPARE(storage->d_func()->recipients.keys().size(), 1);
 
     const QByteArray addr("alice@autocrypt.example");
-    QVERIFY2(storage->getRecipient(addr), qPrintable(QStringLiteral("storage missing %1").arg(QString::fromLatin1(addr))));
+    QVERIFY2(storage->getRecipient(addr), qPrintable(u"storage missing %1"_s.arg(QString::fromLatin1(addr))));
 
     QCOMPARE(storage->getRecipient(addr)->gpgKey().isNull(), false);
     QCOMPARE(storage->getRecipient(addr)->gossipKey().isNull(), true);
 
-    QFile data(QLatin1StringView(DATA_DIR) + QStringLiteral("/autocrypt/alice.json"));
+    QFile data(QLatin1StringView(DATA_DIR) + u"/autocrypt/alice.json"_s);
     QVERIFY(data.open(QIODevice::ReadOnly | QIODevice::Text));
     QCOMPARE(storage->getRecipient(addr)->toJson(QJsonDocument::Compact), data.readAll().trimmed());
     data.close();
@@ -86,7 +87,7 @@ void AutocryptUtilsTest::test_header()
 void AutocryptUtilsTest::test_gossip()
 {
     MimeTreeParser::NodeHelper nodeHelper;
-    auto message = readAndParseMail(QStringLiteral("autocrypt/gossipheader.mbox"));
+    auto message = readAndParseMail(u"autocrypt/gossipheader.mbox"_s);
     HeaderMixupNodeHelper gossipMixin(&nodeHelper, message.data());
 
     MimeTreeParser::SimpleObjectTreeSource testSource;
@@ -105,7 +106,7 @@ void AutocryptUtilsTest::test_gossip()
     QCOMPARE(storage->d_func()->recipients.keys().size(), expectedKeys.size());
 
     for (const auto &addr : std::as_const(expectedKeys)) {
-        QVERIFY2(storage->getRecipient(addr), qPrintable(QStringLiteral("storage missing %1").arg(QString::fromLatin1(addr))));
+        QVERIFY2(storage->getRecipient(addr), qPrintable(u"storage missing %1"_s.arg(QString::fromLatin1(addr))));
     }
 
     QCOMPARE(storage->getRecipient("alice@autocrypt.example")->gossipKey().isNull(), true);
@@ -120,7 +121,7 @@ void AutocryptUtilsTest::test_gossipIgnoreNonExcrypted()
     // Only parse Autocrypt-Gossip headers in the encrypted payload.
 
     MimeTreeParser::NodeHelper nodeHelper;
-    auto message = readAndParseMail(QStringLiteral("autocrypt/gossipheader-nonencrypted.mbox"));
+    auto message = readAndParseMail(u"autocrypt/gossipheader-nonencrypted.mbox"_s);
     HeaderMixupNodeHelper gossipMixin(&nodeHelper, message.data());
 
     MimeTreeParser::SimpleObjectTreeSource testSource;
@@ -137,7 +138,7 @@ void AutocryptUtilsTest::test_gossipIgnoreNonExcrypted()
 void AutocryptUtilsTest::test_draft()
 {
     MimeTreeParser::NodeHelper nodeHelper;
-    auto message = readAndParseMail(QStringLiteral("autocrypt/draft.mbox"));
+    auto message = readAndParseMail(u"autocrypt/draft.mbox"_s);
     HeaderMixupNodeHelper gossipMixin(&nodeHelper, message.data());
 
     MimeTreeParser::SimpleObjectTreeSource testSource;
@@ -157,7 +158,7 @@ void AutocryptUtilsTest::test_report()
 
     MimeTreeParser::NodeHelper nodeHelper;
     {
-        auto message = readAndParseMail(QStringLiteral("autocrypt/header.mbox"));
+        auto message = readAndParseMail(u"autocrypt/header.mbox"_s);
         HeaderMixupNodeHelper mixin(&nodeHelper, message.data());
 
         processAutocryptfromMail(mixin);
@@ -170,7 +171,7 @@ void AutocryptUtilsTest::test_report()
     QCOMPARE(alice->count_no_ach(), 0);
 
     {
-        auto message = readAndParseMail(QStringLiteral("autocrypt/mdn.mbox"));
+        auto message = readAndParseMail(u"autocrypt/mdn.mbox"_s);
         HeaderMixupNodeHelper mixin(&nodeHelper, message.data());
 
         processAutocryptfromMail(mixin);
@@ -185,7 +186,7 @@ void AutocryptUtilsTest::test_multiple_headers()
     // error, and all Autocrypt headers discarded as invalid.
 
     MimeTreeParser::NodeHelper nodeHelper;
-    auto message = readAndParseMail(QStringLiteral("autocrypt/multiple_autocryptheaders.mbox"));
+    auto message = readAndParseMail(u"autocrypt/multiple_autocryptheaders.mbox"_s);
     HeaderMixupNodeHelper mixin(&nodeHelper, message.data());
 
     processAutocryptfromMail(mixin);
@@ -202,7 +203,7 @@ void AutocryptUtilsTest::test_multiple_headers_invalid()
     // encounters a “critical” attribute that it doesn’t support.
 
     MimeTreeParser::NodeHelper nodeHelper;
-    auto message = readAndParseMail(QStringLiteral("autocrypt/multiple_autocryptheaders_invalid.mbox"));
+    auto message = readAndParseMail(u"autocrypt/multiple_autocryptheaders_invalid.mbox"_s);
     HeaderMixupNodeHelper mixin(&nodeHelper, message.data());
 
     processAutocryptfromMail(mixin);
@@ -220,7 +221,7 @@ void AutocryptUtilsTest::test_multiple_headers_invalid_from()
     // invalid.
 
     MimeTreeParser::NodeHelper nodeHelper;
-    auto message = readAndParseMail(QStringLiteral("autocrypt/multiple_autocryptheaders_invalid_from.mbox"));
+    auto message = readAndParseMail(u"autocrypt/multiple_autocryptheaders_invalid_from.mbox"_s);
     HeaderMixupNodeHelper mixin(&nodeHelper, message.data());
 
     processAutocryptfromMail(mixin);
@@ -234,7 +235,7 @@ void AutocryptUtilsTest::test_multiple_from()
     // From header.
 
     MimeTreeParser::NodeHelper nodeHelper;
-    auto message = readAndParseMail(QStringLiteral("autocrypt/multiple_from.mbox"));
+    auto message = readAndParseMail(u"autocrypt/multiple_from.mbox"_s);
     HeaderMixupNodeHelper mixin(&nodeHelper, message.data());
 
     processAutocryptfromMail(mixin);
@@ -245,7 +246,7 @@ void AutocryptUtilsTest::test_multiple_from()
 void AutocryptUtilsTest::test_non_autocrypt()
 {
     MimeTreeParser::NodeHelper nodeHelper;
-    auto message = readAndParseMail(QStringLiteral("html.mbox"));
+    auto message = readAndParseMail(u"html.mbox"_s);
     HeaderMixupNodeHelper mixin(&nodeHelper, message.data());
 
     processAutocryptfromMail(mixin);
@@ -256,7 +257,7 @@ void AutocryptUtilsTest::test_non_autocrypt()
 void AutocryptUtilsTest::test_update_autocrypt()
 {
     MimeTreeParser::NodeHelper nodeHelper;
-    auto message = readAndParseMail(QStringLiteral("autocrypt/header.mbox"));
+    auto message = readAndParseMail(u"autocrypt/header.mbox"_s);
     HeaderMixupNodeHelper mixin(&nodeHelper, message.data());
     auto messageDate = QDateTime::currentDateTime().addYears(-1);
 
@@ -281,7 +282,7 @@ void AutocryptUtilsTest::test_update_non_autocrypt()
     auto messageDate = QDateTime::currentDateTime().addYears(-1);
     auto newDate = messageDate.addDays(2);
     {
-        auto message = readAndParseMail(QStringLiteral("autocrypt/header.mbox"));
+        auto message = readAndParseMail(u"autocrypt/header.mbox"_s);
         HeaderMixupNodeHelper mixin(&nodeHelper, message.data());
 
         message->date()->setDateTime(messageDate);
@@ -289,7 +290,7 @@ void AutocryptUtilsTest::test_update_non_autocrypt()
     }
 
     {
-        auto message = readAndParseMail(QStringLiteral("html.mbox"));
+        auto message = readAndParseMail(u"html.mbox"_s);
         HeaderMixupNodeHelper noAutocrypt(&nodeHelper, message.data());
         message->from()->from7BitString("alice@autocrypt.example");
         message->date()->setDateTime(newDate);
@@ -310,7 +311,7 @@ void AutocryptUtilsTest::test_update_autocrypt_gossip()
     auto messageDate = QDateTime::currentDateTime().addYears(-1);
     auto newDate = messageDate.addDays(2);
     {
-        auto message = readAndParseMail(QStringLiteral("autocrypt/header.mbox"));
+        auto message = readAndParseMail(u"autocrypt/header.mbox"_s);
         HeaderMixupNodeHelper mixin(&nodeHelper, message.data());
 
         message->date()->setDateTime(messageDate);
@@ -318,7 +319,7 @@ void AutocryptUtilsTest::test_update_autocrypt_gossip()
     }
 
     {
-        auto message = readAndParseMail(QStringLiteral("autocrypt/alice_gossip.mbox"));
+        auto message = readAndParseMail(u"autocrypt/alice_gossip.mbox"_s);
         HeaderMixupNodeHelper mixin(&nodeHelper, message.data());
 
         message->date()->setDateTime(newDate);

@@ -5,6 +5,8 @@
 */
 
 #include "messagepartrenderermanager.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "messageviewer_debug.h"
 #include <GrantleeTheme/GrantleeKi18nLocalizer>
 #include <GrantleeTheme/GrantleeThemeEngine>
@@ -84,7 +86,7 @@ public:
 
     [[nodiscard]] QString layoutDirection() const
     {
-        return QGuiApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr");
+        return QGuiApplication::isRightToLeft() ? u"rtl"_s : u"ltr"_s;
     }
 
     [[nodiscard]] int iconSize() const
@@ -121,14 +123,14 @@ void MessagePartRendererManager::initializeRenderer()
     KTextTemplate::registerMetaType<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key>>();
     m_engine = new GrantleeTheme::Engine;
     const auto libraryPaths = QCoreApplication::libraryPaths();
-    const QString subPath = QStringLiteral("/pim6/messageviewer");
+    const QString subPath = u"/pim6/messageviewer"_s;
     for (const auto &p : libraryPaths) {
         m_engine->addPluginPath(p + subPath);
     }
-    m_engine->addDefaultLibrary(QStringLiteral("messageviewer_ktexttemplate_extension"));
+    m_engine->addDefaultLibrary(u"messageviewer_ktexttemplate_extension"_s);
     m_engine->localizer()->setApplicationDomain(QByteArrayLiteral("libmessageviewer6"));
     auto loader = QSharedPointer<KTextTemplate::FileSystemTemplateLoader>(new KTextTemplate::FileSystemTemplateLoader());
-    loader->setTemplateDirs({QStringLiteral(":/")});
+    loader->setTemplateDirs({u":/"_s});
     m_engine->addTemplateLoader(loader);
 }
 KTextTemplate::Template MessagePartRendererManager::loadByName(const QString &name)
@@ -149,7 +151,7 @@ KTextTemplate::Context MessagePartRendererManager::createContext()
     localizer->setApplicationDomain(QByteArrayLiteral("libmessageviewer6"));
     c.setLocalizer(localizer);
 
-    c.insert(QStringLiteral("global"), m_globalContext);
+    c.insert(u"global"_s, m_globalContext);
     return c;
 }
 

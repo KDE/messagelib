@@ -6,6 +6,8 @@
 */
 
 #include "scamdetectioninfotest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "scamdetection/scamdetectioninfo.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(ScamDetectionInfoTest)
@@ -29,7 +31,7 @@ void ScamDetectionInfoTest::shouldMakeValid()
     QVERIFY(!info.isValid());
     info.setEnabled(true);
     QVERIFY(!info.isValid());
-    info.setDomainOrEmail(QStringLiteral("bla"));
+    info.setDomainOrEmail(u"bla"_s);
     QVERIFY(info.isValid());
 }
 

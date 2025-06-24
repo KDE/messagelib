@@ -5,6 +5,8 @@
 */
 
 #include "remotecontentmanager.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "remotecontentinfo.h"
 #include <KConfigGroup>
 #include <KSharedConfig>

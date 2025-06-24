@@ -5,6 +5,8 @@
 */
 
 #include "searchstatusbuttons.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "messagelist_debug.h"
 #include <KLocalizedString>
 #include <QButtonGroup>
@@ -16,11 +18,11 @@ SearchStatusButtons::SearchStatusButtons(QWidget *parent)
     , mButtonGroup(new QButtonGroup(this))
     , mMainLayout(new QHBoxLayout(this))
 {
-    mMainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mMainLayout->setObjectName(u"mainLayout"_s);
     mMainLayout->setContentsMargins({});
     mMainLayout->setSpacing(0);
 
-    mButtonGroup->setObjectName(QStringLiteral("mButtonGroup"));
+    mButtonGroup->setObjectName(u"mButtonGroup"_s);
     mButtonGroup->setExclusive(false);
 
     connect(mButtonGroup, &QButtonGroup::idClicked, this, &SearchStatusButtons::updateFilters);
@@ -31,47 +33,47 @@ SearchStatusButtons::~SearchStatusButtons() = default;
 
 void SearchStatusButtons::createAction()
 {
-    createFilterAction(QIcon::fromTheme(QStringLiteral("mail-unread")),
+    createFilterAction(QIcon::fromTheme(u"mail-unread"_s),
                        i18nc("@action:inmenu Status of a message", "Unread"),
                        Akonadi::MessageStatus::statusUnread().toQInt32());
 
-    createFilterAction(QIcon::fromTheme(QStringLiteral("mail-replied")),
+    createFilterAction(QIcon::fromTheme(u"mail-replied"_s),
                        i18nc("@action:inmenu Status of a message", "Replied"),
                        Akonadi::MessageStatus::statusReplied().toQInt32());
 
-    createFilterAction(QIcon::fromTheme(QStringLiteral("mail-forwarded")),
+    createFilterAction(QIcon::fromTheme(u"mail-forwarded"_s),
                        i18nc("@action:inmenu Status of a message", "Forwarded"),
                        Akonadi::MessageStatus::statusForwarded().toQInt32());
 
-    createFilterAction(QIcon::fromTheme(QStringLiteral("mail-mark-important")),
+    createFilterAction(QIcon::fromTheme(u"mail-mark-important"_s),
                        i18nc("@action:inmenu Status of a message", "Important"),
                        Akonadi::MessageStatus::statusImportant().toQInt32());
 
-    createFilterAction(QIcon::fromTheme(QStringLiteral("mail-task")),
+    createFilterAction(QIcon::fromTheme(u"mail-task"_s),
                        i18nc("@action:inmenu Status of a message", "Action Item"),
                        Akonadi::MessageStatus::statusToAct().toQInt32());
 
-    createFilterAction(QIcon::fromTheme(QStringLiteral("mail-thread-watch")),
+    createFilterAction(QIcon::fromTheme(u"mail-thread-watch"_s),
                        i18nc("@action:inmenu Status of a message", "Watched"),
                        Akonadi::MessageStatus::statusWatched().toQInt32());
 
-    createFilterAction(QIcon::fromTheme(QStringLiteral("mail-thread-ignored")),
+    createFilterAction(QIcon::fromTheme(u"mail-thread-ignored"_s),
                        i18nc("@action:inmenu Status of a message", "Ignored"),
                        Akonadi::MessageStatus::statusIgnored().toQInt32());
 
-    createFilterAction(QIcon::fromTheme(QStringLiteral("mail-attachment")),
+    createFilterAction(QIcon::fromTheme(u"mail-attachment"_s),
                        i18nc("@action:inmenu Status of a message", "Has Attachment"),
                        Akonadi::MessageStatus::statusHasAttachment().toQInt32());
 
-    createFilterAction(QIcon::fromTheme(QStringLiteral("mail-invitation")),
+    createFilterAction(QIcon::fromTheme(u"mail-invitation"_s),
                        i18nc("@action:inmenu Status of a message", "Has Invitation"),
                        Akonadi::MessageStatus::statusHasInvitation().toQInt32());
 
-    createFilterAction(QIcon::fromTheme(QStringLiteral("mail-mark-junk")),
+    createFilterAction(QIcon::fromTheme(u"mail-mark-junk"_s),
                        i18nc("@action:inmenu Status of a message", "Spam"),
                        Akonadi::MessageStatus::statusSpam().toQInt32());
 
-    createFilterAction(QIcon::fromTheme(QStringLiteral("mail-mark-notjunk")),
+    createFilterAction(QIcon::fromTheme(u"mail-mark-notjunk"_s),
                        i18nc("@action:inmenu Status of a message", "Ham"),
                        Akonadi::MessageStatus::statusHam().toQInt32());
 }

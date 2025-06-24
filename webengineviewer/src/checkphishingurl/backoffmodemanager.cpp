@@ -5,6 +5,8 @@
 */
 
 #include "backoffmodemanager.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "checkphishingurlutil.h"
 #include "webengineviewer_debug.h"
 
@@ -46,7 +48,7 @@ public:
 void BackOffModeManagerPrivate::save()
 {
     KConfig phishingurlKConfig(WebEngineViewer::CheckPhishingUrlUtil::configFileName());
-    KConfigGroup grp = phishingurlKConfig.group(QStringLiteral("BackOffMode"));
+    KConfigGroup grp = phishingurlKConfig.group(u"BackOffMode"_s);
     grp.writeEntry("Enabled", isInOffMode);
     if (isInOffMode) {
         const int calculateTimeInSeconds = calculateBackModeTime();
@@ -78,7 +80,7 @@ void BackOffModeManagerPrivate::updateTimer(int seconds)
 void BackOffModeManagerPrivate::load()
 {
     KConfig phishingurlKConfig(WebEngineViewer::CheckPhishingUrlUtil::configFileName());
-    KConfigGroup grp = phishingurlKConfig.group(QStringLiteral("BackOffMode"));
+    KConfigGroup grp = phishingurlKConfig.group(u"BackOffMode"_s);
     isInOffMode = grp.readEntry("Enabled", false);
     if (isInOffMode) {
         const qint64 delay = grp.readEntry("Delay", 0);

@@ -5,6 +5,8 @@
 */
 
 #include "hashcachemanager.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "checkphishingurlutil.h"
 #include "webengineviewer_debug.h"
 #include <KConfig>
@@ -59,7 +61,7 @@ void HashCacheManagerPrivate::clearCache()
 void HashCacheManagerPrivate::save()
 {
     KConfig phishingurlKConfig(WebEngineViewer::CheckPhishingUrlUtil::configFileName());
-    KConfigGroup grp = phishingurlKConfig.group(QStringLiteral("Hash"));
+    KConfigGroup grp = phishingurlKConfig.group(u"Hash"_s);
 
     QList<QByteArray> lstMalware;
     QList<double> lstMalwareDuration;
@@ -95,7 +97,7 @@ void HashCacheManagerPrivate::load()
 {
     clear();
     KConfig phishingurlKConfig(WebEngineViewer::CheckPhishingUrlUtil::configFileName());
-    KConfigGroup grp = phishingurlKConfig.group(QStringLiteral("Hash"));
+    KConfigGroup grp = phishingurlKConfig.group(u"Hash"_s);
     QList<QByteArray> lstMalware = grp.readEntry("malware", QList<QByteArray>());
     QList<double> lstMalwareDuration = grp.readEntry("malwareCacheDuration", QList<double>());
 

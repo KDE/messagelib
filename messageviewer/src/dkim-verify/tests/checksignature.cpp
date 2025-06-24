@@ -5,6 +5,7 @@
 */
 
 #include "checksignature.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <QCommandLineParser>
 #include <QCoreApplication>
@@ -44,7 +45,7 @@ int main(int argc, char **argv)
     QCommandLineParser parser;
     parser.addVersionOption();
     parser.addHelpOption();
-    parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("+[file]"), QStringLiteral("File containing an email")));
+    parser.addOption(QCommandLineOption(QStringList() << u"+[file]"_s, u"File containing an email"_s));
 
     parser.process(app);
 

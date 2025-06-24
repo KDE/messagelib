@@ -9,6 +9,8 @@
 */
 
 #include "bodypartformatterfactory.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "bodypartformatterfactory_p.h"
 #include "interfaces/bodypartformatter.h"
 #include "mimetreeparser_debug.h"
@@ -126,10 +128,10 @@ QList<const Interface::BodyPartFormatter *> BodyPartFormatterFactory::formatters
     // make sure we always have a suitable fallback formatter
     if (mimeType.startsWith(QLatin1StringView("multipart/"))) {
         if (mimeType != QLatin1StringView("multipart/mixed")) {
-            d->appendFormattersForType(QStringLiteral("multipart/mixed"), r);
+            d->appendFormattersForType(u"multipart/mixed"_s, r);
         }
     } else {
-        d->appendFormattersForType(QStringLiteral("application/octet-stream"), r);
+        d->appendFormattersForType(u"application/octet-stream"_s, r);
     }
     assert(!r.empty());
     return r;
@@ -137,7 +139,7 @@ QList<const Interface::BodyPartFormatter *> BodyPartFormatterFactory::formatters
 
 void BodyPartFormatterFactory::loadPlugins()
 {
-    const QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("pim6/messageviewer/bodypartformatter"));
+    const QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(u"pim6/messageviewer/bodypartformatter"_s);
     for (const auto &md : plugins) {
         const auto formatterData = md.rawData().value(QLatin1StringView("formatter")).toArray();
         if (formatterData.isEmpty()) {

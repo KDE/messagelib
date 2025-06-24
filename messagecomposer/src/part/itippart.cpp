@@ -5,6 +5,7 @@
 */
 
 #include "itippart.h"
+using namespace Qt::Literals::StringLiterals;
 
 using namespace MessageComposer;
 
@@ -13,7 +14,7 @@ class ItipPart::ItipPartPrivate
 public:
     QString invitation;
     QString invitationBody;
-    QString method = QStringLiteral("request");
+    QString method = u"request"_s;
     bool outlookComnformInvitation = false;
 };
 

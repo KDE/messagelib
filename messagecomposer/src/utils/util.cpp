@@ -31,6 +31,7 @@
 #include <KMime/Content>
 #include <KMime/Headers>
 #include <MessageCore/StringUtil>
+using namespace Qt::Literals::StringLiterals;
 
 static KMime::Content *setBodyAndCTE(QByteArray &encodedBody, KMime::Headers::ContentType *contentType, KMime::Content *ret)
 {
@@ -107,7 +108,7 @@ KMime::Content *MessageComposer::Util::composeHeadersAndBody(KMime::Content *ori
             result->contentTransferEncoding()->setEncoding(KMime::Headers::CEbase64);
             auto ct = result->contentDisposition(); // Create
             ct->setDisposition(KMime::Headers::CDattachment);
-            ct->setFilename(QStringLiteral("smime.p7m"));
+            ct->setFilename(u"smime.p7m"_s);
 
             result->assemble();
             // qCDebug(MESSAGECOMPOSER_LOG) << "processed header:" << result->head();
@@ -134,11 +135,11 @@ void MessageComposer::Util::makeToplevelContentType(KMime::Content *content, Kle
         auto ct = content->contentType(); // Create
         if (sign) {
             ct->setMimeType(QByteArrayLiteral("multipart/signed"));
-            ct->setParameter(QByteArrayLiteral("protocol"), QStringLiteral("application/pgp-signature"));
+            ct->setParameter(QByteArrayLiteral("protocol"), u"application/pgp-signature"_s);
             ct->setParameter(QByteArrayLiteral("micalg"), QString::fromLatin1(QByteArray(QByteArrayLiteral("pgp-") + hashAlgo)).toLower());
         } else {
             ct->setMimeType(QByteArrayLiteral("multipart/encrypted"));
-            ct->setParameter(QByteArrayLiteral("protocol"), QStringLiteral("application/pgp-encrypted"));
+            ct->setParameter(QByteArrayLiteral("protocol"), u"application/pgp-encrypted"_s);
         }
     }
         return;
@@ -147,7 +148,7 @@ void MessageComposer::Util::makeToplevelContentType(KMime::Content *content, Kle
             auto ct = content->contentType(); // Create
             qCDebug(MESSAGECOMPOSER_LOG) << "setting headers for SMIME";
             ct->setMimeType(QByteArrayLiteral("multipart/signed"));
-            ct->setParameter(QByteArrayLiteral("protocol"), QStringLiteral("application/pkcs7-signature"));
+            ct->setParameter(QByteArrayLiteral("protocol"), u"application/pkcs7-signature"_s);
             ct->setParameter(QByteArrayLiteral("micalg"), QString::fromLatin1(hashAlgo).toLower());
             return;
         }
@@ -163,11 +164,11 @@ void MessageComposer::Util::makeToplevelContentType(KMime::Content *content, Kle
         ct->setMimeType(QByteArrayLiteral("application/pkcs7-mime"));
 
         if (sign) {
-            ct->setParameter(QByteArrayLiteral("smime-type"), QStringLiteral("signed-data"));
+            ct->setParameter(QByteArrayLiteral("smime-type"), u"signed-data"_s);
         } else {
-            ct->setParameter(QByteArrayLiteral("smime-type"), QStringLiteral("enveloped-data"));
+            ct->setParameter(QByteArrayLiteral("smime-type"), u"enveloped-data"_s);
         }
-        ct->setParameter(QByteArrayLiteral("name"), QStringLiteral("smime.p7m"));
+        ct->setParameter(QByteArrayLiteral("name"), u"smime.p7m"_s);
     }
 }
 
@@ -178,7 +179,7 @@ void MessageComposer::Util::setNestedContentType(KMime::Content *content, Kleo::
         auto ct = content->contentType(); // Create
         if (sign) {
             ct->setMimeType(QByteArrayLiteral("application/pgp-signature"));
-            ct->setParameter(QByteArrayLiteral("name"), QStringLiteral("signature.asc"));
+            ct->setParameter(QByteArrayLiteral("name"), u"signature.asc"_s);
             content->contentDescription()->from7BitString("This is a digitally signed message part.");
         } else {
             ct->setMimeType(QByteArrayLiteral("application/octet-stream"));
@@ -189,7 +190,7 @@ void MessageComposer::Util::setNestedContentType(KMime::Content *content, Kleo::
         if (sign) {
             auto ct = content->contentType(); // Create
             ct->setMimeType(QByteArrayLiteral("application/pkcs7-signature"));
-            ct->setParameter(QByteArrayLiteral("name"), QStringLiteral("smime.p7s"));
+            ct->setParameter(QByteArrayLiteral("name"), u"smime.p7s"_s);
             return;
         }
     }
@@ -206,10 +207,10 @@ void MessageComposer::Util::setNestedContentDisposition(KMime::Content *content,
     auto ct = content->contentDisposition();
     if (!sign && format & Kleo::OpenPGPMIMEFormat) {
         ct->setDisposition(KMime::Headers::CDinline);
-        ct->setFilename(QStringLiteral("msg.asc"));
+        ct->setFilename(u"msg.asc"_s);
     } else if (sign && format & Kleo::SMIMEFormat) {
         ct->setDisposition(KMime::Headers::CDattachment);
-        ct->setFilename(QStringLiteral("smime.p7s"));
+        ct->setFilename(u"smime.p7s"_s);
     }
 }
 
@@ -233,15 +234,15 @@ QStringList MessageComposer::Util::AttachmentKeywords()
                "comma-separated list of keywords that are used to detect whether "
                "the user forgot to attach his attachment. Do not add space between words.",
                "attachment,attached")
-        .split(QLatin1Char(','));
+        .split(u',');
 }
 
 QString MessageComposer::Util::cleanedUpHeaderString(const QString &s)
 {
     // remove invalid characters from the header strings
     QString res(s);
-    res.remove(QLatin1Char('\r'));
-    res.replace(QLatin1Char('\n'), QLatin1Char(' '));
+    res.remove(u'\r');
+    res.replace(QLatin1Char('\n'), u' ');
     return res.trimmed();
 }
 
@@ -262,18 +263,18 @@ void MessageComposer::Util::addSendReplyForwardAction(const KMime::Message::Ptr 
 
 bool MessageComposer::Util::sendMailDispatcherIsOnline(QWidget *parent)
 {
-    Akonadi::AgentInstance instance = Akonadi::AgentManager::self()->instance(QStringLiteral("akonadi_maildispatcher_agent"));
+    Akonadi::AgentInstance instance = Akonadi::AgentManager::self()->instance(u"akonadi_maildispatcher_agent"_s);
     if (!instance.isValid()) {
         const int rc =
             KMessageBox::warningTwoActions(parent,
                                            i18n("The mail dispatcher is not set up, so mails cannot be sent. Do you want to create a mail dispatcher?"),
                                            i18nc("@title:window", "No mail dispatcher."),
 
-                                           KGuiItem(i18nc("@action:button", "Create Mail Dispatcher"), QIcon::fromTheme(QStringLiteral("mail-folder-outbox"))),
+                                           KGuiItem(i18nc("@action:button", "Create Mail Dispatcher"), QIcon::fromTheme(u"mail-folder-outbox"_s)),
                                            KStandardGuiItem::cancel(),
-                                           QStringLiteral("no_maildispatcher"));
+                                           u"no_maildispatcher"_s);
         if (rc == KMessageBox::ButtonCode::PrimaryAction) {
-            const Akonadi::AgentType type = Akonadi::AgentManager::self()->type(QStringLiteral("akonadi_maildispatcher_agent"));
+            const Akonadi::AgentType type = Akonadi::AgentManager::self()->type(u"akonadi_maildispatcher_agent"_s);
             Q_ASSERT(type.isValid());
             auto job = new Akonadi::AgentInstanceCreateJob(type); // async. We'll have to try again later.
             job->start();
@@ -286,9 +287,9 @@ bool MessageComposer::Util::sendMailDispatcherIsOnline(QWidget *parent)
         const int rc = KMessageBox::warningTwoActions(parent,
                                                       i18n("The mail dispatcher is offline, so mails cannot be sent. Do you want to make it online?"),
                                                       i18nc("@title:window", "Mail dispatcher offline."),
-                                                      KGuiItem(i18nc("@action:button", "Set Online"), QIcon::fromTheme(QStringLiteral("user-online"))),
+                                                      KGuiItem(i18nc("@action:button", "Set Online"), QIcon::fromTheme(u"user-online"_s)),
                                                       KStandardGuiItem::cancel(),
-                                                      QStringLiteral("maildispatcher_put_online"));
+                                                      u"maildispatcher_put_online"_s);
         if (rc == KMessageBox::ButtonCode::PrimaryAction) {
             instance.setIsOnline(true);
             return true;
@@ -330,7 +331,7 @@ void MessageComposer::Util::addLinkInformation(const KMime::Message::Ptr &msg, A
         message = hrd->asUnicodeString();
     }
     if (!message.isEmpty()) {
-        message += QLatin1Char(',');
+        message += u',';
     }
 
     QString type;
@@ -338,7 +339,7 @@ void MessageComposer::Util::addLinkInformation(const KMime::Message::Ptr &msg, A
         type = hrd->asUnicodeString();
     }
     if (!type.isEmpty()) {
-        type += QLatin1Char(',');
+        type += u',';
     }
 
     message += QString::number(id);
@@ -365,8 +366,8 @@ bool MessageComposer::Util::getLinkInformation(const KMime::Message::Ptr &msg, Q
         return false;
     }
 
-    const QStringList messages = hrdLinkMsg->asUnicodeString().split(QLatin1Char(','), Qt::SkipEmptyParts);
-    const QStringList types = hrdLinkType->asUnicodeString().split(QLatin1Char(','), Qt::SkipEmptyParts);
+    const QStringList messages = hrdLinkMsg->asUnicodeString().split(u',', Qt::SkipEmptyParts);
+    const QStringList types = hrdLinkType->asUnicodeString().split(u',', Qt::SkipEmptyParts);
 
     if (messages.isEmpty() || types.isEmpty()) {
         return false;
@@ -419,7 +420,7 @@ bool MessageComposer::Util::hasMissingAttachments(const QStringList &attachmentK
     if (!gotMatch) {
         // check whether the non-quoted text contains one of the attachment key
         // words
-        static QRegularExpression quotationRx(QStringLiteral("^([ \\t]*([|>:}#]|[A-Za-z]+>))+"));
+        static QRegularExpression quotationRx(u"^([ \\t]*([|>:}#]|[A-Za-z]+>))+"_s);
         QTextBlock end(doc->end());
         for (QTextBlock it = doc->begin(); it != end; it = it.next()) {
             const QString line = it.text();

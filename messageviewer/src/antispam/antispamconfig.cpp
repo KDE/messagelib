@@ -9,6 +9,7 @@
 */
 
 #include "antispamconfig.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <KConfig>
 #include <KConfigGroup>
@@ -36,11 +37,11 @@ AntiSpamConfig::~AntiSpamConfig() = default;
 void AntiSpamConfig::readConfig()
 {
     mAgents.clear();
-    KConfig config(QStringLiteral("kmail.antispamrc"));
-    KConfigGroup general(&config, QStringLiteral("General"));
+    KConfig config(u"kmail.antispamrc"_s);
+    KConfigGroup general(&config, u"General"_s);
     int totalTools = general.readEntry("tools", 0);
     for (int i = 1; i <= totalTools; ++i) {
-        KConfigGroup tool(&config, QStringLiteral("Spamtool #%1").arg(i));
+        KConfigGroup tool(&config, u"Spamtool #%1"_s.arg(i));
         if (tool.hasKey("ScoreHeader")) {
             const QString name = tool.readEntry("ScoreName");
             const QByteArray header = tool.readEntry("ScoreHeader").toLatin1();

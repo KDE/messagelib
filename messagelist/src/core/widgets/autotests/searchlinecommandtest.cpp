@@ -5,6 +5,8 @@
 */
 
 #include "searchlinecommandtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "core/widgets/searchlinecommand.h"
 
 #include <QTest>
@@ -51,45 +53,45 @@ void SearchLineCommandTest::shouldParseInfo_data()
         QTest::newRow("empty") << str << lstInfo << 0 << QString();
     }
     {
-        const QString str{QStringLiteral("subject:foo")};
+        const QString str{u"subject:foo"_s};
         QList<MessageList::Core::SearchLineCommand::SearchLineInfo> lstInfo;
         MessageList::Core::SearchLineCommand::SearchLineInfo info;
         info.type = MessageList::Core::SearchLineCommand::SearchLineType::Subject;
-        info.argument = QStringLiteral("foo");
+        info.argument = u"foo"_s;
         lstInfo.append(info);
-        const QString convertStr = QStringLiteral("Subject contains foo");
+        const QString convertStr = u"Subject contains foo"_s;
         QTest::newRow("test1") << str << lstInfo << 1 << convertStr;
     }
     {
-        const QString str{QStringLiteral("subject:foo from:bli")};
+        const QString str{u"subject:foo from:bli"_s};
         QList<MessageList::Core::SearchLineCommand::SearchLineInfo> lstInfo;
         {
             MessageList::Core::SearchLineCommand::SearchLineInfo info;
             info.type = MessageList::Core::SearchLineCommand::SearchLineType::Subject;
-            info.argument = QStringLiteral("foo");
+            info.argument = u"foo"_s;
             lstInfo.append(info);
         }
         {
             MessageList::Core::SearchLineCommand::SearchLineInfo info;
             info.type = MessageList::Core::SearchLineCommand::SearchLineType::From;
-            info.argument = QStringLiteral("bli");
+            info.argument = u"bli"_s;
             lstInfo.append(info);
         }
-        const QString convertStr{QStringLiteral("Subject contains foo AND From contains bli")};
+        const QString convertStr{u"Subject contains foo AND From contains bli"_s};
         QTest::newRow("test2") << str << lstInfo << 2 << convertStr;
     }
     {
-        const QString str{QStringLiteral("is:important")};
+        const QString str{u"is:important"_s};
         QList<MessageList::Core::SearchLineCommand::SearchLineInfo> lstInfo;
         MessageList::Core::SearchLineCommand::SearchLineInfo info;
         info.type = MessageList::Core::SearchLineCommand::SearchLineType::IsImportant;
         lstInfo.append(info);
-        const QString convertStr{QStringLiteral("Mail is important")};
+        const QString convertStr{u"Mail is important"_s};
         QTest::newRow("test is important") << str << lstInfo << 1 << convertStr;
     }
 
     {
-        const QString str{QStringLiteral("has:attachment subject:bla")};
+        const QString str{u"has:attachment subject:bla"_s};
         QList<MessageList::Core::SearchLineCommand::SearchLineInfo> lstInfo;
         {
             MessageList::Core::SearchLineCommand::SearchLineInfo info;
@@ -99,149 +101,149 @@ void SearchLineCommandTest::shouldParseInfo_data()
         {
             MessageList::Core::SearchLineCommand::SearchLineInfo info;
             info.type = MessageList::Core::SearchLineCommand::SearchLineType::Subject;
-            info.argument = QStringLiteral("bla");
+            info.argument = u"bla"_s;
             lstInfo.append(info);
         }
-        const QString convertStr{QStringLiteral("Mail has attachment AND Subject contains bla")};
+        const QString convertStr{u"Mail has attachment AND Subject contains bla"_s};
         QTest::newRow("test several1") << str << lstInfo << 2 << convertStr;
     }
 
     {
-        const QString str{QStringLiteral(" bli bli bli")};
+        const QString str{u" bli bli bli"_s};
         QList<MessageList::Core::SearchLineCommand::SearchLineInfo> lstInfo;
         MessageList::Core::SearchLineCommand::SearchLineInfo info;
         info.type = MessageList::Core::SearchLineCommand::SearchLineType::Literal;
-        info.argument = QStringLiteral(" bli bli bli");
+        info.argument = u" bli bli bli"_s;
         lstInfo.append(info);
-        const QString convertStr{QStringLiteral("Literal string  bli bli bli")};
+        const QString convertStr{u"Literal string  bli bli bli"_s};
         QTest::newRow("literal1") << str << lstInfo << 1 << convertStr;
     }
     {
-        const QString str{QStringLiteral("subject:(goo bla)")};
+        const QString str{u"subject:(goo bla)"_s};
         QList<MessageList::Core::SearchLineCommand::SearchLineInfo> lstInfo;
         MessageList::Core::SearchLineCommand::SearchLineInfo info;
         info.type = MessageList::Core::SearchLineCommand::SearchLineType::Subject;
-        info.argument = QStringLiteral("goo bla");
+        info.argument = u"goo bla"_s;
         lstInfo.append(info);
-        const QString convertStr{QStringLiteral("Subject contains goo bla")};
+        const QString convertStr{u"Subject contains goo bla"_s};
         QTest::newRow("test parenthese1") << str << lstInfo << 1 << convertStr;
     }
 
     {
-        const QString str{QStringLiteral("subject:(goo bla) from:(dddd ddd)")};
+        const QString str{u"subject:(goo bla) from:(dddd ddd)"_s};
         QList<MessageList::Core::SearchLineCommand::SearchLineInfo> lstInfo;
         {
             MessageList::Core::SearchLineCommand::SearchLineInfo info;
             info.type = MessageList::Core::SearchLineCommand::SearchLineType::Subject;
-            info.argument = QStringLiteral("goo bla");
+            info.argument = u"goo bla"_s;
             lstInfo.append(info);
         }
         {
             MessageList::Core::SearchLineCommand::SearchLineInfo info;
             info.type = MessageList::Core::SearchLineCommand::SearchLineType::From;
-            info.argument = QStringLiteral("dddd ddd");
+            info.argument = u"dddd ddd"_s;
             lstInfo.append(info);
         }
-        const QString convertStr{QStringLiteral("Subject contains goo bla AND From contains dddd ddd")};
+        const QString convertStr{u"Subject contains goo bla AND From contains dddd ddd"_s};
         QTest::newRow("test parenthese2") << str << lstInfo << 2 << convertStr;
     }
     {
-        const QString str{QStringLiteral("subject:(goo (bla))")};
+        const QString str{u"subject:(goo (bla))"_s};
         QList<MessageList::Core::SearchLineCommand::SearchLineInfo> lstInfo;
         MessageList::Core::SearchLineCommand::SearchLineInfo info;
         info.type = MessageList::Core::SearchLineCommand::SearchLineType::Subject;
-        info.argument = QStringLiteral("goo (bla)");
+        info.argument = u"goo (bla)"_s;
         lstInfo.append(info);
-        const QString convertStr{QStringLiteral("Subject contains goo (bla)")};
+        const QString convertStr{u"Subject contains goo (bla)"_s};
         QTest::newRow("test parenthese3") << str << lstInfo << 1 << convertStr;
     }
 
     {
-        const QString str{QStringLiteral("subject: bla")};
+        const QString str{u"subject: bla"_s};
         QList<MessageList::Core::SearchLineCommand::SearchLineInfo> lstInfo;
         {
             MessageList::Core::SearchLineCommand::SearchLineInfo info;
             info.type = MessageList::Core::SearchLineCommand::SearchLineType::Literal;
-            info.argument = QStringLiteral("bla");
+            info.argument = u"bla"_s;
             lstInfo.append(info);
         }
 
-        const QString convertStr{QStringLiteral("Literal string bla")};
+        const QString convertStr{u"Literal string bla"_s};
         QTest::newRow("extra space") << str << lstInfo << 1 << convertStr;
     }
     {
-        const QString str{QStringLiteral("size:1M")};
+        const QString str{u"size:1M"_s};
         QList<MessageList::Core::SearchLineCommand::SearchLineInfo> lstInfo;
         {
             MessageList::Core::SearchLineCommand::SearchLineInfo info;
             info.type = MessageList::Core::SearchLineCommand::SearchLineType::Size;
-            info.argument = QStringLiteral("1M");
+            info.argument = u"1M"_s;
             lstInfo.append(info);
         }
 
-        const QString convertStr{QStringLiteral("Size is 1M")};
+        const QString convertStr{u"Size is 1M"_s};
         QTest::newRow("size") << str << lstInfo << 1 << convertStr;
     }
 
     {
-        const QString str{QStringLiteral("subject:ddd ffff")};
+        const QString str{u"subject:ddd ffff"_s};
         QList<MessageList::Core::SearchLineCommand::SearchLineInfo> lstInfo;
         {
             MessageList::Core::SearchLineCommand::SearchLineInfo info;
             info.type = MessageList::Core::SearchLineCommand::SearchLineType::Subject;
-            info.argument = QStringLiteral("ddd ffff");
+            info.argument = u"ddd ffff"_s;
             lstInfo.append(info);
         }
 
-        const QString convertStr{QStringLiteral("Subject contains ddd ffff")};
+        const QString convertStr{u"Subject contains ddd ffff"_s};
         QTest::newRow("subject with space") << str << lstInfo << 1 << convertStr;
     }
 
     {
-        const QString str{QStringLiteral("subject:ddd ffff from:laurent <foo@kde.org> cc:test@kde.org")};
+        const QString str{u"subject:ddd ffff from:laurent <foo@kde.org> cc:test@kde.org"_s};
         QList<MessageList::Core::SearchLineCommand::SearchLineInfo> lstInfo;
         {
             MessageList::Core::SearchLineCommand::SearchLineInfo info;
             info.type = MessageList::Core::SearchLineCommand::SearchLineType::Subject;
-            info.argument = QStringLiteral("ddd ffff");
+            info.argument = u"ddd ffff"_s;
             lstInfo.append(info);
         }
         {
             MessageList::Core::SearchLineCommand::SearchLineInfo info;
             info.type = MessageList::Core::SearchLineCommand::SearchLineType::From;
-            info.argument = QStringLiteral("laurent <foo@kde.org>");
+            info.argument = u"laurent <foo@kde.org>"_s;
             lstInfo.append(info);
         }
         {
             MessageList::Core::SearchLineCommand::SearchLineInfo info;
             info.type = MessageList::Core::SearchLineCommand::SearchLineType::Cc;
-            info.argument = QStringLiteral("test@kde.org");
+            info.argument = u"test@kde.org"_s;
             lstInfo.append(info);
         }
 
-        const QString convertStr{QStringLiteral("Subject contains ddd ffff AND From contains laurent <foo@kde.org> AND CC contains test@kde.org")};
+        const QString convertStr{u"Subject contains ddd ffff AND From contains laurent <foo@kde.org> AND CC contains test@kde.org"_s};
         QTest::newRow("multiple elements") << str << lstInfo << 3 << convertStr;
     }
 
     {
-        const QString str{QStringLiteral("subject:ddd ffff from:laurent <foo@kde.org> cc:test@kde.org has:attachment literal")};
+        const QString str{u"subject:ddd ffff from:laurent <foo@kde.org> cc:test@kde.org has:attachment literal"_s};
         QList<MessageList::Core::SearchLineCommand::SearchLineInfo> lstInfo;
         {
             MessageList::Core::SearchLineCommand::SearchLineInfo info;
             info.type = MessageList::Core::SearchLineCommand::SearchLineType::Subject;
-            info.argument = QStringLiteral("ddd ffff");
+            info.argument = u"ddd ffff"_s;
             lstInfo.append(info);
         }
         {
             MessageList::Core::SearchLineCommand::SearchLineInfo info;
             info.type = MessageList::Core::SearchLineCommand::SearchLineType::From;
-            info.argument = QStringLiteral("laurent <foo@kde.org>");
+            info.argument = u"laurent <foo@kde.org>"_s;
             lstInfo.append(info);
         }
         {
             MessageList::Core::SearchLineCommand::SearchLineInfo info;
             info.type = MessageList::Core::SearchLineCommand::SearchLineType::Cc;
-            info.argument = QStringLiteral("test@kde.org");
+            info.argument = u"test@kde.org"_s;
             lstInfo.append(info);
         }
         {
@@ -252,7 +254,7 @@ void SearchLineCommandTest::shouldParseInfo_data()
         {
             MessageList::Core::SearchLineCommand::SearchLineInfo info;
             info.type = MessageList::Core::SearchLineCommand::SearchLineType::Literal;
-            info.argument = QStringLiteral("literal");
+            info.argument = u"literal"_s;
             lstInfo.append(info);
         }
 
@@ -263,7 +265,7 @@ void SearchLineCommandTest::shouldParseInfo_data()
     }
 
     {
-        const QString str{QStringLiteral("has:attachment subject:ddd ffff has:attachment from:laurent <foo@kde.org> cc:test@kde.org")};
+        const QString str{u"has:attachment subject:ddd ffff has:attachment from:laurent <foo@kde.org> cc:test@kde.org"_s};
         QList<MessageList::Core::SearchLineCommand::SearchLineInfo> lstInfo;
         {
             MessageList::Core::SearchLineCommand::SearchLineInfo info;
@@ -273,29 +275,28 @@ void SearchLineCommandTest::shouldParseInfo_data()
         {
             MessageList::Core::SearchLineCommand::SearchLineInfo info;
             info.type = MessageList::Core::SearchLineCommand::SearchLineType::Subject;
-            info.argument = QStringLiteral("ddd ffff");
+            info.argument = u"ddd ffff"_s;
             lstInfo.append(info);
         }
         {
             MessageList::Core::SearchLineCommand::SearchLineInfo info;
             info.type = MessageList::Core::SearchLineCommand::SearchLineType::From;
-            info.argument = QStringLiteral("laurent <foo@kde.org>");
+            info.argument = u"laurent <foo@kde.org>"_s;
             lstInfo.append(info);
         }
         {
             MessageList::Core::SearchLineCommand::SearchLineInfo info;
             info.type = MessageList::Core::SearchLineCommand::SearchLineType::Cc;
-            info.argument = QStringLiteral("test@kde.org");
+            info.argument = u"test@kde.org"_s;
             lstInfo.append(info);
         }
 
-        const QString convertStr{
-            QStringLiteral("Mail has attachment AND Subject contains ddd ffff AND From contains laurent <foo@kde.org> AND CC contains test@kde.org")};
+        const QString convertStr{u"Mail has attachment AND Subject contains ddd ffff AND From contains laurent <foo@kde.org> AND CC contains test@kde.org"_s};
         QTest::newRow("multiple elements duplicate") << str << lstInfo << 4 << convertStr;
     }
 
     {
-        const QString str{QStringLiteral("has:attachment has:attachment subject:ddd ffff has:attachment from:laurent <foo@kde.org> cc:test@kde.org")};
+        const QString str{u"has:attachment has:attachment subject:ddd ffff has:attachment from:laurent <foo@kde.org> cc:test@kde.org"_s};
         QList<MessageList::Core::SearchLineCommand::SearchLineInfo> lstInfo;
         {
             MessageList::Core::SearchLineCommand::SearchLineInfo info;
@@ -306,33 +307,32 @@ void SearchLineCommandTest::shouldParseInfo_data()
         {
             MessageList::Core::SearchLineCommand::SearchLineInfo info;
             info.type = MessageList::Core::SearchLineCommand::SearchLineType::Subject;
-            info.argument = QStringLiteral("ddd ffff");
+            info.argument = u"ddd ffff"_s;
             lstInfo.append(info);
         }
         {
             MessageList::Core::SearchLineCommand::SearchLineInfo info;
             info.type = MessageList::Core::SearchLineCommand::SearchLineType::From;
-            info.argument = QStringLiteral("laurent <foo@kde.org>");
+            info.argument = u"laurent <foo@kde.org>"_s;
             lstInfo.append(info);
         }
         {
             MessageList::Core::SearchLineCommand::SearchLineInfo info;
             info.type = MessageList::Core::SearchLineCommand::SearchLineType::Cc;
-            info.argument = QStringLiteral("test@kde.org");
+            info.argument = u"test@kde.org"_s;
             lstInfo.append(info);
         }
 
-        const QString convertStr{
-            QStringLiteral("Mail has attachment AND Subject contains ddd ffff AND From contains laurent <foo@kde.org> AND CC contains test@kde.org")};
+        const QString convertStr{u"Mail has attachment AND Subject contains ddd ffff AND From contains laurent <foo@kde.org> AND CC contains test@kde.org"_s};
         QTest::newRow("multiple elements duplicate2") << str << lstInfo << 4 << convertStr;
     }
     {
-        const QString str{QStringLiteral("subject:ddd ffff has:attachment")};
+        const QString str{u"subject:ddd ffff has:attachment"_s};
         QList<MessageList::Core::SearchLineCommand::SearchLineInfo> lstInfo;
         {
             MessageList::Core::SearchLineCommand::SearchLineInfo info;
             info.type = MessageList::Core::SearchLineCommand::SearchLineType::Subject;
-            info.argument = QStringLiteral("ddd ffff");
+            info.argument = u"ddd ffff"_s;
             lstInfo.append(info);
         }
         {
@@ -341,23 +341,23 @@ void SearchLineCommandTest::shouldParseInfo_data()
             lstInfo.append(info);
         }
 
-        const QString convertStr{QStringLiteral("Subject contains ddd ffff AND Mail has attachment")};
+        const QString convertStr{u"Subject contains ddd ffff AND Mail has attachment"_s};
         QTest::newRow("subject with space2") << str << lstInfo << 2 << convertStr;
     }
     {
-        const QString str{QStringLiteral("voiture subject:ddd ffff has:attachment")};
+        const QString str{u"voiture subject:ddd ffff has:attachment"_s};
         QList<MessageList::Core::SearchLineCommand::SearchLineInfo> lstInfo;
         {
             MessageList::Core::SearchLineCommand::SearchLineInfo info;
             info.type = MessageList::Core::SearchLineCommand::SearchLineType::Literal;
-            info.argument = QStringLiteral("voiture");
+            info.argument = u"voiture"_s;
             lstInfo.append(info);
         }
 
         {
             MessageList::Core::SearchLineCommand::SearchLineInfo info;
             info.type = MessageList::Core::SearchLineCommand::SearchLineType::Subject;
-            info.argument = QStringLiteral("ddd ffff");
+            info.argument = u"ddd ffff"_s;
             lstInfo.append(info);
         }
         {
@@ -366,24 +366,24 @@ void SearchLineCommandTest::shouldParseInfo_data()
             lstInfo.append(info);
         }
 
-        const QString convertStr{QStringLiteral("Literal string voiture AND Subject contains ddd ffff AND Mail has attachment")};
+        const QString convertStr{u"Literal string voiture AND Subject contains ddd ffff AND Mail has attachment"_s};
         QTest::newRow("literal2") << str << lstInfo << 3 << convertStr;
     }
 
     {
-        const QString str{QStringLiteral("voiture subject:ddd ffff has:attachment category:testcategory")};
+        const QString str{u"voiture subject:ddd ffff has:attachment category:testcategory"_s};
         QList<MessageList::Core::SearchLineCommand::SearchLineInfo> lstInfo;
         {
             MessageList::Core::SearchLineCommand::SearchLineInfo info;
             info.type = MessageList::Core::SearchLineCommand::SearchLineType::Literal;
-            info.argument = QStringLiteral("voiture");
+            info.argument = u"voiture"_s;
             lstInfo.append(info);
         }
 
         {
             MessageList::Core::SearchLineCommand::SearchLineInfo info;
             info.type = MessageList::Core::SearchLineCommand::SearchLineType::Subject;
-            info.argument = QStringLiteral("ddd ffff");
+            info.argument = u"ddd ffff"_s;
             lstInfo.append(info);
         }
         {
@@ -395,11 +395,11 @@ void SearchLineCommandTest::shouldParseInfo_data()
         {
             MessageList::Core::SearchLineCommand::SearchLineInfo info;
             info.type = MessageList::Core::SearchLineCommand::SearchLineType::Category;
-            info.argument = QStringLiteral("testcategory");
+            info.argument = u"testcategory"_s;
             lstInfo.append(info);
         }
 
-        const QString convertStr{QStringLiteral("Literal string voiture AND Subject contains ddd ffff AND Mail has attachment AND Mail has tag testcategory")};
+        const QString convertStr{u"Literal string voiture AND Subject contains ddd ffff AND Mail has attachment AND Mail has tag testcategory"_s};
         QTest::newRow("literal2") << str << lstInfo << 4 << convertStr;
     }
 }
@@ -419,9 +419,9 @@ void SearchLineCommandTest::shouldParseInfo()
 
 void SearchLineCommandTest::shouldHaveSubType()
 {
-    QVERIFY(MessageList::Core::SearchLineCommand::hasSubType(QStringLiteral("has")));
-    QVERIFY(MessageList::Core::SearchLineCommand::hasSubType(QStringLiteral("is")));
-    QVERIFY(!MessageList::Core::SearchLineCommand::hasSubType(QStringLiteral("foo")));
+    QVERIFY(MessageList::Core::SearchLineCommand::hasSubType(u"has"_s));
+    QVERIFY(MessageList::Core::SearchLineCommand::hasSubType(u"is"_s));
+    QVERIFY(!MessageList::Core::SearchLineCommand::hasSubType(u"foo"_s));
 
     QVERIFY(MessageList::Core::SearchLineCommand::hasSubType(MessageList::Core::SearchLineCommand::Bcc));
     QVERIFY(MessageList::Core::SearchLineCommand::hasSubType(MessageList::Core::SearchLineCommand::To));
@@ -468,7 +468,7 @@ void SearchLineCommandTest::shouldBeValid()
     {
         MessageList::Core::SearchLineCommand::SearchLineInfo info;
         info.type = MessageList::Core::SearchLineCommand::Subject;
-        info.argument = QStringLiteral("ddd");
+        info.argument = u"ddd"_s;
         QVERIFY(info.isValid());
     }
     {
@@ -484,7 +484,7 @@ void SearchLineCommandTest::shouldBeValid()
     {
         MessageList::Core::SearchLineCommand::SearchLineInfo info;
         info.type = MessageList::Core::SearchLineCommand::Category;
-        info.argument = QStringLiteral("ddd");
+        info.argument = u"ddd"_s;
         QVERIFY(info.isValid());
     }
 }

@@ -5,6 +5,8 @@
 */
 
 #include "urlhashingtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../urlhashing.h"
 #include <QTest>
 #include <QUrl>
@@ -59,46 +61,44 @@ void UrlHashingTest::shouldCanonicalizeUrl_data()
 
     QTest::newRow("empty") << QString() << QString();
 
-    QTest::newRow("http://host/%25%32%35") << QStringLiteral("http://host/%25%32%35") << QStringLiteral("http://host/%25");
-    QTest::newRow("http://host/%25%32%35%25%32%35") << QStringLiteral("http://host/%25%32%35%25%32%35") << QStringLiteral("http://host/%25%25");
-    QTest::newRow("http://host/%2525252525252525") << QStringLiteral("http://host/%2525252525252525") << QStringLiteral("http://host/%25");
-    QTest::newRow("http://host/asdf%25%32%35asd") << QStringLiteral("http://host/asdf%25%32%35asd") << QStringLiteral("http://host/asdf%25asd");
-    QTest::newRow("http://host/%%%25%32%35asd%%") << QStringLiteral("http://host/%%%25%32%35asd%%") << QStringLiteral("http://host/%25%25%25asd%25%25");
-    QTest::newRow("http://www.google.com/") << QStringLiteral("http://www.google.com/") << QStringLiteral("http://www.google.com/");
+    QTest::newRow("http://host/%25%32%35") << u"http://host/%25%32%35"_s << u"http://host/%25"_s;
+    QTest::newRow("http://host/%25%32%35%25%32%35") << u"http://host/%25%32%35%25%32%35"_s << u"http://host/%25%25"_s;
+    QTest::newRow("http://host/%2525252525252525") << u"http://host/%2525252525252525"_s << u"http://host/%25"_s;
+    QTest::newRow("http://host/asdf%25%32%35asd") << u"http://host/asdf%25%32%35asd"_s << u"http://host/asdf%25asd"_s;
+    QTest::newRow("http://host/%%%25%32%35asd%%") << u"http://host/%%%25%32%35asd%%"_s << u"http://host/%25%25%25asd%25%25"_s;
+    QTest::newRow("http://www.google.com/") << u"http://www.google.com/"_s << u"http://www.google.com/"_s;
     QTest::newRow("http://%31%36%38%2e%31%38%38%2e%39%39%2e%32%36/%2E%73%65%63%75%72%65/%77%77%77%2E%65%62%61%79%2E%63%6F%6D/")
-        << QStringLiteral("http://%31%36%38%2e%31%38%38%2e%39%39%2e%32%36/%2E%73%65%63%75%72%65/%77%77%77%2E%65%62%61%79%2E%63%6F%6D/")
-        << QStringLiteral("http://168.188.99.26/.secure/www.ebay.com/");
-    QTest::newRow("test8")
-        << QStringLiteral("http://195.127.0.11/uploads/%20%20%20%20/.verify/.eBaysecure=updateuserdataxplimnbqmn-xplmvalidateinfoswqpcmlx=hgplmcx/")
-        << QStringLiteral("http://195.127.0.11/uploads/%20%20%20%20/.verify/.eBaysecure=updateuserdataxplimnbqmn-xplmvalidateinfoswqpcmlx=hgplmcx/");
-    QTest::newRow("test9") << QStringLiteral("http://host%23.com/%257Ea%2521b%2540c%2523d%2524e%25f%255E00%252611%252A22%252833%252944_55%252B")
-                           << QStringLiteral("http://host%23.com/~a!b@c%23d$e%25f^00&11*22(33)44_55+");
-    QTest::newRow("http://3279880203/blah") << QStringLiteral("http://3279880203/blah") << QStringLiteral("http://195.127.0.11/blah");
-    QTest::newRow("http://www.google.com/blah/..") << QStringLiteral("http://www.google.com/blah/..") << QStringLiteral("http://www.google.com/");
-    QTest::newRow("www.google.com/") << QStringLiteral("www.google.com/") << QStringLiteral("http://www.google.com/");
-    QTest::newRow("www.google.com") << QStringLiteral("www.google.com") << QStringLiteral("http://www.google.com/");
-    QTest::newRow("http://www.evil.com/blah#frag") << QStringLiteral("http://www.evil.com/blah#frag") << QStringLiteral("http://www.evil.com/blah");
-    QTest::newRow("http://www.GOOgle.com/") << QStringLiteral("http://www.GOOgle.com/") << QStringLiteral("http://www.google.com/");
-    QTest::newRow("http://www.google.com.../") << QStringLiteral("http://www.google.com.../") << QStringLiteral("http://www.google.com/");
-    QTest::newRow("http://www.google.com/foo\tbar\rbaz\n2")
-        << QStringLiteral("http://www.google.com/foo\tbar\rbaz\n2") << QStringLiteral("http://www.google.com/foobarbaz2");
-    QTest::newRow("http://www.google.com/q?") << QStringLiteral("http://www.google.com/q?") << QStringLiteral("http://www.google.com/q?");
-    QTest::newRow("http://www.google.com/q?r?") << QStringLiteral("http://www.google.com/q?r?") << QStringLiteral("http://www.google.com/q?r?");
-    QTest::newRow("http://www.google.com/q?r?s") << QStringLiteral("http://www.google.com/q?r?s") << QStringLiteral("http://www.google.com/q?r?s");
-    QTest::newRow("http://evil.com/foo#bar#baz") << QStringLiteral("http://evil.com/foo#bar#baz") << QStringLiteral("http://evil.com/foo");
-    QTest::newRow("http://evil.com/foo;") << QStringLiteral("http://evil.com/foo;") << QStringLiteral("http://evil.com/foo;");
-    QTest::newRow("http://evil.com/foo?bar;") << QStringLiteral("http://evil.com/foo?bar;") << QStringLiteral("http://evil.com/foo?bar;");
-    QTest::newRow("http://\x01\x80.com/") << QStringLiteral("http://\x01\x80.com/") << QStringLiteral("http://%01%80.com/");
-    QTest::newRow("http://notrailingslash.com") << QStringLiteral("http://notrailingslash.com") << QStringLiteral("http://notrailingslash.com/");
-    QTest::newRow("http://www.gotaport.com:1234/") << QStringLiteral("http://www.gotaport.com:1234/") << QStringLiteral("http://www.gotaport.com/");
-    QTest::newRow("  http://www.google.com/  ") << QStringLiteral("  http://www.google.com/  ") << QStringLiteral("http://www.google.com/");
-    QTest::newRow("http:// leadingspace.com/") << QStringLiteral("http:// leadingspace.com/") << QStringLiteral("http://%20leadingspace.com/");
-    QTest::newRow("http://%20leadingspace.com/") << QStringLiteral("http://%20leadingspace.com/") << QStringLiteral("http://%20leadingspace.com/");
-    QTest::newRow("%20leadingspace.com/") << QStringLiteral("%20leadingspace.com/") << QStringLiteral("http://%20leadingspace.com/");
-    QTest::newRow("https://www.securesite.com/") << QStringLiteral("https://www.securesite.com/") << QStringLiteral("https://www.securesite.com/");
-    QTest::newRow("http://host.com/ab%23cd") << QStringLiteral("http://host.com/ab%23cd") << QStringLiteral("http://host.com/ab%23cd");
+        << u"http://%31%36%38%2e%31%38%38%2e%39%39%2e%32%36/%2E%73%65%63%75%72%65/%77%77%77%2E%65%62%61%79%2E%63%6F%6D/"_s
+        << u"http://168.188.99.26/.secure/www.ebay.com/"_s;
+    QTest::newRow("test8") << u"http://195.127.0.11/uploads/%20%20%20%20/.verify/.eBaysecure=updateuserdataxplimnbqmn-xplmvalidateinfoswqpcmlx=hgplmcx/"_s
+                           << u"http://195.127.0.11/uploads/%20%20%20%20/.verify/.eBaysecure=updateuserdataxplimnbqmn-xplmvalidateinfoswqpcmlx=hgplmcx/"_s;
+    QTest::newRow("test9") << u"http://host%23.com/%257Ea%2521b%2540c%2523d%2524e%25f%255E00%252611%252A22%252833%252944_55%252B"_s
+                           << u"http://host%23.com/~a!b@c%23d$e%25f^00&11*22(33)44_55+"_s;
+    QTest::newRow("http://3279880203/blah") << u"http://3279880203/blah"_s << u"http://195.127.0.11/blah"_s;
+    QTest::newRow("http://www.google.com/blah/..") << u"http://www.google.com/blah/.."_s << u"http://www.google.com/"_s;
+    QTest::newRow("www.google.com/") << u"www.google.com/"_s << u"http://www.google.com/"_s;
+    QTest::newRow("www.google.com") << u"www.google.com"_s << u"http://www.google.com/"_s;
+    QTest::newRow("http://www.evil.com/blah#frag") << u"http://www.evil.com/blah#frag"_s << u"http://www.evil.com/blah"_s;
+    QTest::newRow("http://www.GOOgle.com/") << u"http://www.GOOgle.com/"_s << u"http://www.google.com/"_s;
+    QTest::newRow("http://www.google.com.../") << u"http://www.google.com.../"_s << u"http://www.google.com/"_s;
+    QTest::newRow("http://www.google.com/foo\tbar\rbaz\n2") << u"http://www.google.com/foo\tbar\rbaz\n2"_s << u"http://www.google.com/foobarbaz2"_s;
+    QTest::newRow("http://www.google.com/q?") << u"http://www.google.com/q?"_s << u"http://www.google.com/q?"_s;
+    QTest::newRow("http://www.google.com/q?r?") << u"http://www.google.com/q?r?"_s << u"http://www.google.com/q?r?"_s;
+    QTest::newRow("http://www.google.com/q?r?s") << u"http://www.google.com/q?r?s"_s << u"http://www.google.com/q?r?s"_s;
+    QTest::newRow("http://evil.com/foo#bar#baz") << u"http://evil.com/foo#bar#baz"_s << u"http://evil.com/foo"_s;
+    QTest::newRow("http://evil.com/foo;") << u"http://evil.com/foo;"_s << u"http://evil.com/foo;"_s;
+    QTest::newRow("http://evil.com/foo?bar;") << u"http://evil.com/foo?bar;"_s << u"http://evil.com/foo?bar;"_s;
+    QTest::newRow("http://\x01\x80.com/") << u"http://\x01\x80.com/"_s << u"http://%01%80.com/"_s;
+    QTest::newRow("http://notrailingslash.com") << u"http://notrailingslash.com"_s << u"http://notrailingslash.com/"_s;
+    QTest::newRow("http://www.gotaport.com:1234/") << u"http://www.gotaport.com:1234/"_s << u"http://www.gotaport.com/"_s;
+    QTest::newRow("  http://www.google.com/  ") << u"  http://www.google.com/  "_s << u"http://www.google.com/"_s;
+    QTest::newRow("http:// leadingspace.com/") << u"http:// leadingspace.com/"_s << u"http://%20leadingspace.com/"_s;
+    QTest::newRow("http://%20leadingspace.com/") << u"http://%20leadingspace.com/"_s << u"http://%20leadingspace.com/"_s;
+    QTest::newRow("%20leadingspace.com/") << u"%20leadingspace.com/"_s << u"http://%20leadingspace.com/"_s;
+    QTest::newRow("https://www.securesite.com/") << u"https://www.securesite.com/"_s << u"https://www.securesite.com/"_s;
+    QTest::newRow("http://host.com/ab%23cd") << u"http://host.com/ab%23cd"_s << u"http://host.com/ab%23cd"_s;
     QTest::newRow("http://host.com//twoslashes?more//slashes")
-        << QStringLiteral("http://host.com//twoslashes?more//slashes") << QStringLiteral("http://host.com/twoslashes?more//slashes");
+        << u"http://host.com//twoslashes?more//slashes"_s << u"http://host.com/twoslashes?more//slashes"_s;
 }
 
 void UrlHashingTest::shouldCanonicalizeUrl()
@@ -128,20 +128,20 @@ void UrlHashingTest::shouldGenerateHostPath_data()
     QTest::newRow("empty") << QString() << QStringList() << QStringList();
     QStringList hosts;
     QStringList paths;
-    hosts << QStringLiteral("b.c") << QStringLiteral("a.b.c");
-    paths << QStringLiteral("/") << QStringLiteral("/1/") << QStringLiteral("/1/2.html") << QStringLiteral("/1/2.html?param=1");
-    QTest::newRow("http://a.b.c/1/2.html?param=1") << QStringLiteral("http://a.b.c/1/2.html?param=1") << hosts << paths;
+    hosts << u"b.c"_s << u"a.b.c"_s;
+    paths << u"/"_s << u"/1/"_s << QStringLiteral("/1/2.html") << QStringLiteral("/1/2.html?param=1");
+    QTest::newRow("http://a.b.c/1/2.html?param=1") << u"http://a.b.c/1/2.html?param=1"_s << hosts << paths;
     hosts.clear();
     paths.clear();
-    hosts << QStringLiteral("f.g") << QStringLiteral("e.f.g") << QStringLiteral("d.e.f.g") << QStringLiteral("c.d.e.f.g") << QStringLiteral("a.b.c.d.e.f.g");
-    paths << QStringLiteral("/") << QStringLiteral("/1.html");
-    QTest::newRow("http://a.b.c.d.e.f.g/1.html") << QStringLiteral("http://a.b.c.d.e.f.g/1.html") << hosts << paths;
+    hosts << u"f.g"_s << u"e.f.g"_s << QStringLiteral("d.e.f.g") << QStringLiteral("c.d.e.f.g") << QStringLiteral("a.b.c.d.e.f.g");
+    paths << u"/"_s << u"/1.html"_s;
+    QTest::newRow("http://a.b.c.d.e.f.g/1.html") << u"http://a.b.c.d.e.f.g/1.html"_s << hosts << paths;
 
     hosts.clear();
     paths.clear();
-    hosts << QStringLiteral("a.b");
-    paths << QStringLiteral("/") << QStringLiteral("/saw-cgi/") << QStringLiteral("/saw-cgi/eBayISAPI.dll/");
-    QTest::newRow("http://a.b/saw-cgi/eBayISAPI.dll/") << QStringLiteral("http://a.b/saw-cgi/eBayISAPI.dll/") << hosts << paths;
+    hosts << u"a.b"_s;
+    paths << u"/"_s << u"/saw-cgi/"_s << QStringLiteral("/saw-cgi/eBayISAPI.dll/");
+    QTest::newRow("http://a.b/saw-cgi/eBayISAPI.dll/") << u"http://a.b/saw-cgi/eBayISAPI.dll/"_s << hosts << paths;
 }
 
 void UrlHashingTest::shouldGenerateHostPath()
@@ -160,7 +160,7 @@ void UrlHashingTest::shouldGenerateHashList_data()
 {
     QTest::addColumn<QUrl>("input");
     QTest::addColumn<int>("numberItems");
-    QTest::newRow("http://a.b/saw-cgi/eBayISAPI.dll/") << QUrl(QStringLiteral("http://a.b/saw-cgi/eBayISAPI.dll/")) << 3;
+    QTest::newRow("http://a.b/saw-cgi/eBayISAPI.dll/") << QUrl(u"http://a.b/saw-cgi/eBayISAPI.dll/"_s) << 3;
 }
 
 void UrlHashingTest::shouldGenerateHashList()

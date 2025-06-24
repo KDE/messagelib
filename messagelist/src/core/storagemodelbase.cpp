@@ -7,6 +7,8 @@
  *******************************************************************************/
 
 #include "core/storagemodelbase.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "messagelistsettings.h"
 #include "messagelistutil_p.h"
 

@@ -7,6 +7,8 @@
  *******************************************************************************/
 
 #include "utils/configureaggregationsdialog.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "utils/configureaggregationsdialog_p.h"
 
 #include "core/aggregation.h"
@@ -119,7 +121,7 @@ ConfigureAggregationsDialog::ConfigureAggregationsDialog(QWidget *parent)
     });
 
     d->mNewAggregationButton = new QPushButton(i18nc("@action:button", "New Aggregation"), base);
-    d->mNewAggregationButton->setIcon(QIcon::fromTheme(QStringLiteral("document-new")));
+    d->mNewAggregationButton->setIcon(QIcon::fromTheme(u"document-new"_s));
     g->addWidget(d->mNewAggregationButton, 0, 1);
 
     connect(d->mNewAggregationButton, &QPushButton::clicked, this, [this]() {
@@ -127,7 +129,7 @@ ConfigureAggregationsDialog::ConfigureAggregationsDialog(QWidget *parent)
     });
 
     d->mCloneAggregationButton = new QPushButton(i18nc("@action:button", "Clone Aggregation"), base);
-    d->mCloneAggregationButton->setIcon(QIcon::fromTheme(QStringLiteral("edit-copy")));
+    d->mCloneAggregationButton->setIcon(QIcon::fromTheme(u"edit-copy"_s));
     g->addWidget(d->mCloneAggregationButton, 1, 1);
 
     connect(d->mCloneAggregationButton, &QPushButton::clicked, this, [this]() {
@@ -158,7 +160,7 @@ ConfigureAggregationsDialog::ConfigureAggregationsDialog(QWidget *parent)
     g->addWidget(f, 5, 1, Qt::AlignVCenter);
 
     d->mDeleteAggregationButton = new QPushButton(i18nc("@action:button", "Delete Aggregation"), base);
-    d->mDeleteAggregationButton->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")));
+    d->mDeleteAggregationButton->setIcon(QIcon::fromTheme(u"edit-delete"_s));
     g->addWidget(d->mDeleteAggregationButton, 6, 1);
 
     connect(d->mDeleteAggregationButton, &QPushButton::clicked, this, [this]() {
@@ -348,7 +350,7 @@ QString ConfigureAggregationsDialog::ConfigureAggregationsDialogPrivate::uniqueN
     AggregationListWidgetItem *item = findAggregationItemByName(ret, skipAggregation);
     while (item) {
         idx++;
-        ret = QStringLiteral("%1 %2").arg(baseName).arg(idx);
+        ret = u"%1 %2"_s.arg(baseName).arg(idx);
         item = findAggregationItemByName(ret, skipAggregation);
     }
     return ret;
@@ -414,12 +416,12 @@ void ConfigureAggregationsDialog::ConfigureAggregationsDialogPrivate::importAggr
     if (!filename.isEmpty()) {
         KConfig config(filename);
 
-        if (config.hasGroup(QStringLiteral("MessageListView::Aggregations"))) {
-            KConfigGroup grp(&config, QStringLiteral("MessageListView::Aggregations"));
+        if (config.hasGroup(u"MessageListView::Aggregations"_s)) {
+            KConfigGroup grp(&config, u"MessageListView::Aggregations"_s);
             const int cnt = grp.readEntry("Count", 0);
             int idx = 0;
             while (idx < cnt) {
-                const QString data = grp.readEntry(QStringLiteral("Set%1").arg(idx), QString());
+                const QString data = grp.readEntry(u"Set%1"_s.arg(idx), QString());
                 if (!data.isEmpty()) {
                     auto set = new Aggregation();
                     if (set->loadFromString(data)) {
@@ -447,13 +449,13 @@ void ConfigureAggregationsDialog::ConfigureAggregationsDialogPrivate::exportAggr
     if (!filename.isEmpty()) {
         KConfig config(filename);
 
-        KConfigGroup grp(&config, QStringLiteral("MessageListView::Aggregations"));
+        KConfigGroup grp(&config, u"MessageListView::Aggregations"_s);
         grp.writeEntry("Count", list.count());
 
         int idx = 0;
         for (QListWidgetItem *item : list) {
             auto themeItem = static_cast<AggregationListWidgetItem *>(item);
-            grp.writeEntry(QStringLiteral("Set%1").arg(idx), themeItem->aggregation()->saveToString());
+            grp.writeEntry(u"Set%1"_s.arg(idx), themeItem->aggregation()->saveToString());
             ++idx;
         }
     }

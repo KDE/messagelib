@@ -19,6 +19,7 @@
 #include <PIM/resultiterator.h>
 #endif
 using namespace MessageList::Core;
+using namespace Qt::Literals::StringLiterals;
 
 Filter::Filter(QObject *parent)
     : QObject(parent)
@@ -311,9 +312,9 @@ SearchMessageByButtons::SearchOptions Filter::currentOptions() const
 
 void Filter::save(const KSharedConfig::Ptr &config, const QString &filtername, const QString &iconName, int numFilter)
 {
-    KConfigGroup grp(config, QStringLiteral("General"));
+    KConfigGroup grp(config, u"General"_s);
     int numberFilter = (numFilter == -1) ? grp.readEntry("NumberFilter").toInt() : numFilter;
-    KConfigGroup newGroup(config, QStringLiteral("Filter_%1").arg(numberFilter++));
+    KConfigGroup newGroup(config, u"Filter_%1"_s.arg(numberFilter++));
     newGroup.writeEntry("name", filtername);
     if (!iconName.isEmpty()) {
         newGroup.writeEntry("iconName", iconName);
@@ -336,10 +337,10 @@ void Filter::save(const KSharedConfig::Ptr &config, const QString &filtername, c
 
 Filter *Filter::load(const KSharedConfig::Ptr &config, int filternumber)
 {
-    KConfigGroup grp(config, QStringLiteral("General"));
+    KConfigGroup grp(config, u"General"_s);
     int numberFilter = grp.readEntry("NumberFilter").toInt();
     if (filternumber < numberFilter) {
-        KConfigGroup newGroup(config, QStringLiteral("Filter_%1").arg(filternumber));
+        KConfigGroup newGroup(config, u"Filter_%1"_s.arg(filternumber));
         return loadFromConfigGroup(newGroup);
     }
     return nullptr;
@@ -381,12 +382,12 @@ void Filter::setSearchString(const SearchLineCommand &command)
         switch (info.type) {
         case SearchLineCommand::Literal: {
             QString newStr;
-            const QStringList searchListTmp = info.argument.split(QLatin1Char(' '), Qt::SkipEmptyParts);
+            const QStringList searchListTmp = info.argument.split(u' ', Qt::SkipEmptyParts);
             bool needToSplitString = false;
             for (const QString &text : searchListTmp) {
                 if (text.size() >= 3) {
                     if (!newStr.isEmpty()) {
-                        newStr += QLatin1Char(' ');
+                        newStr += u' ';
                     }
                     newStr += text;
                 }
@@ -574,19 +575,19 @@ void Filter::setSearchString(const QString &search, SearchMessageByButtons::Sear
     }
     bool needToSplitString = false;
     QString newStr = mSearchString;
-    if (mSearchString.startsWith(QLatin1Char('"')) && mSearchString.startsWith(QLatin1Char('"'))) {
+    if (mSearchString.startsWith(QLatin1Char('"')) && mSearchString.startsWith(u'"')) {
         newStr.remove(0, 1);
         newStr.remove(newStr.length() - 1, 1);
         mSearchList = QStringList() << newStr;
     } else {
-        const QStringList searchListTmp = mSearchString.split(QLatin1Char(' '), Qt::SkipEmptyParts);
+        const QStringList searchListTmp = mSearchString.split(u' ', Qt::SkipEmptyParts);
         mSearchList.clear();
         newStr.clear();
         for (const QString &text : searchListTmp) {
             if (text.size() >= 3) {
                 mSearchList << text;
                 if (!newStr.isEmpty()) {
-                    newStr += QLatin1Char(' ');
+                    newStr += u' ';
                 }
                 newStr += text;
             }

@@ -5,6 +5,8 @@
 */
 
 #include "composerviewbasetest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "cryptofunctions.h"
 #include "qtest_messagecomposer.h"
 #include "setupenv.h"
@@ -63,13 +65,13 @@ void ComposerViewBaseTest::initTestCase()
     MessageComposerSettings::self()->setCryptoShowKeysForApproval(false);
 
     const QDir genericDataLocation(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation));
-    autocryptDir = QDir(genericDataLocation.filePath(QStringLiteral("autocrypt")));
+    autocryptDir = QDir(genericDataLocation.filePath(u"autocrypt"_s));
 }
 
 void ComposerViewBaseTest::init()
 {
     autocryptDir.removeRecursively();
-    autocryptDir.mkpath(QStringLiteral("."));
+    autocryptDir.mkpath(u"."_s);
 }
 
 void ComposerViewBaseTest::cleanup()
@@ -101,7 +103,7 @@ void ComposerViewBaseTest::shouldHaveDefaultValue()
 
 void ComposerViewBaseTest::testAutoSaveMessage()
 {
-    QString fileName(QStringLiteral("testfile"));
+    QString fileName(u"testfile"_s);
 
     MessageComposer::RichTextComposerNg editor;
     MessageComposer::RecipientsEditor recipientsEditor;
@@ -114,11 +116,11 @@ void ComposerViewBaseTest::testAutoSaveMessage()
     composerViewBase.setEditor(&editor);
     composerViewBase.setTransportCombo(&transpCombo);
     composerViewBase.setRecipientsEditor(&recipientsEditor);
-    composerViewBase.setFrom(QStringLiteral("me@me.example"));
+    composerViewBase.setFrom(u"me@me.example"_s);
     KMime::Types::Mailbox mb;
     mb.from7BitString("to@to.example");
     recipientsEditor.setRecipientString({mb}, Recipient::To);
-    editor.setPlainText(QStringLiteral("Hello,\n\nThis is a test message\n\nGreez"));
+    editor.setPlainText(u"Hello,\n\nThis is a test message\n\nGreez"_s);
 
     composerViewBase.autoSaveMessage();
 
@@ -156,7 +158,7 @@ void ComposerViewBaseTest::testGenerateCryptoMessagesAutocrypt_data()
     QTest::addColumn<bool>("encrypt");
     QTest::addColumn<Kleo::CryptoMessageFormat>("format");
 
-    QString data = QStringLiteral("Hello,\n\nThis is a test message\n\nGreez");
+    QString data = u"Hello,\n\nThis is a test message\n\nGreez"_s;
 
     QTest::newRow("Plain") << data << false << false << Kleo::AutoFormat;
     QTest::newRow("Sign") << data << true << false << Kleo::AutoFormat;
@@ -180,8 +182,8 @@ void ComposerViewBaseTest::testGenerateCryptoMessagesAutocrypt()
     composerViewBase.setEditor(&editor);
     composerViewBase.setTransportCombo(&transpCombo);
     composerViewBase.setRecipientsEditor(&recipientsEditor);
-    composerViewBase.setFrom(QStringLiteral("me@me.example"));
-    composerViewBase.mExpandedTo << QStringLiteral("you@you.com");
+    composerViewBase.setFrom(u"me@me.example"_s);
+    composerViewBase.mExpandedTo << u"you@you.com"_s;
     composerViewBase.setAkonadiLookupEnabled(false);
     KMime::Types::Mailbox mb;
     mb.from7BitString("you@you.com");
@@ -240,7 +242,7 @@ void ComposerViewBaseTest::testGenerateCryptoMessagesAutocrypt()
 
 void ComposerViewBaseTest::testGenerateCryptoMessagesAutocryptSMime()
 {
-    QString data = QStringLiteral("Hello,\n\nThis is a test message\n\nGreez");
+    QString data = u"Hello,\n\nThis is a test message\n\nGreez"_s;
 
     MessageComposer::RichTextComposerNg editor;
     MessageComposer::RecipientsEditor recipientsEditor;
@@ -251,8 +253,8 @@ void ComposerViewBaseTest::testGenerateCryptoMessagesAutocryptSMime()
     composerViewBase.setEditor(&editor);
     composerViewBase.setTransportCombo(&transpCombo);
     composerViewBase.setRecipientsEditor(&recipientsEditor);
-    composerViewBase.setFrom(QStringLiteral("me@me.example"));
-    composerViewBase.mExpandedTo << QStringLiteral("you@you.com");
+    composerViewBase.setFrom(u"me@me.example"_s);
+    composerViewBase.mExpandedTo << u"you@you.com"_s;
     composerViewBase.setAkonadiLookupEnabled(false);
     KMime::Types::Mailbox mb;
     mb.from7BitString("you@you.com");
@@ -282,12 +284,12 @@ void ComposerViewBaseTest::testGenerateCryptoMessagesAutocryptSMime()
 
 void ComposerViewBaseTest::testAutocryptKey()
 {
-    QFile file(QLatin1StringView(MESSAGECORE_DATA_DIR) + QStringLiteral("/autocrypt/recipient.json"));
-    QVERIFY(file.copy(autocryptDir.path() + QStringLiteral("/recipient%40autocrypt.example.json")));
+    QFile file(QLatin1StringView(MESSAGECORE_DATA_DIR) + u"/autocrypt/recipient.json"_s);
+    QVERIFY(file.copy(autocryptDir.path() + u"/recipient%40autocrypt.example.json"_s));
 
     qDebug() << autocryptDir.path();
 
-    QString data = QStringLiteral("Hello,\n\nThis is a test message\n\nGreez");
+    QString data = u"Hello,\n\nThis is a test message\n\nGreez"_s;
 
     MessageComposer::RichTextComposerNg editor;
     MessageComposer::RecipientsEditor recipientsEditor;
@@ -298,8 +300,8 @@ void ComposerViewBaseTest::testAutocryptKey()
     composerViewBase.setEditor(&editor);
     composerViewBase.setTransportCombo(&transpCombo);
     composerViewBase.setRecipientsEditor(&recipientsEditor);
-    composerViewBase.setFrom(QStringLiteral("me@me.example"));
-    composerViewBase.mExpandedTo << QStringLiteral("recipient@autocrypt.example");
+    composerViewBase.setFrom(u"me@me.example"_s);
+    composerViewBase.mExpandedTo << u"recipient@autocrypt.example"_s;
     composerViewBase.setAkonadiLookupEnabled(false);
     KMime::Types::Mailbox mb;
     mb.from7BitString("recipient@autocrypt.example");

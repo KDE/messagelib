@@ -5,6 +5,8 @@
 */
 
 #include "quicksearchwarningtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../src/core/widgets/quicksearchwarning.h"
 #include <QAction>
 #include <QTest>
@@ -19,14 +21,14 @@ void QuickSearchWarningTest::shouldHaveDefaultValue()
 {
     MessageList::Core::QuickSearchWarning w;
     QVERIFY(!w.isVisible());
-    auto act = w.findChild<QAction *>(QStringLiteral("donotshowagain"));
+    auto act = w.findChild<QAction *>(u"donotshowagain"_s);
     QVERIFY(act);
 }
 
 void QuickSearchWarningTest::shouldSetVisible()
 {
     MessageList::Core::QuickSearchWarning w;
-    w.setSearchText(QStringLiteral("1"));
+    w.setSearchText(u"1"_s);
     QVERIFY(w.isVisible());
 }
 
@@ -43,12 +45,12 @@ void QuickSearchWarningTest::shouldSetSearchText_data()
 {
     QTest::addColumn<QString>("input");
     QTest::addColumn<bool>("visible");
-    QTest::newRow("bigword") << QStringLiteral("foofoofoo") << false;
-    QTest::newRow("1character") << QStringLiteral("f") << true;
-    QTest::newRow("multibigword") << QStringLiteral("foo foo foo") << false;
-    QTest::newRow("multibigwordwithasmallone") << QStringLiteral("foo foo foo 1") << true;
-    QTest::newRow("aspace") << QStringLiteral(" ") << false;
-    QTest::newRow("multispace") << QStringLiteral("            ") << false;
+    QTest::newRow("bigword") << u"foofoofoo"_s << false;
+    QTest::newRow("1character") << u"f"_s << true;
+    QTest::newRow("multibigword") << u"foo foo foo"_s << false;
+    QTest::newRow("multibigwordwithasmallone") << u"foo foo foo 1"_s << true;
+    QTest::newRow("aspace") << u" "_s << false;
+    QTest::newRow("multispace") << u"            "_s << false;
 }
 
 QTEST_MAIN(QuickSearchWarningTest)

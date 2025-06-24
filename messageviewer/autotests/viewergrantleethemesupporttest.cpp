@@ -5,6 +5,8 @@
 */
 
 #include "viewergrantleethemesupporttest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "messageviewer/viewer.h"
 
 #include <KActionCollection>
@@ -28,7 +30,7 @@ void ViewerGrantleeThemeSupportTest::initTestCase()
     QStandardPaths::setTestModeEnabled(true);
 
     // Point the test to our dummy icon theme
-    KConfigGroup cg(KSharedConfig::openConfig(), QStringLiteral("Icons"));
+    KConfigGroup cg(KSharedConfig::openConfig(), u"Icons"_s);
     cg.writeEntry("Theme", "dummyTheme");
     qputenv("XDG_DATA_DIRS", GRANTLEETHEME_DATA_DIR);
 }

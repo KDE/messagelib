@@ -5,6 +5,8 @@
 */
 
 #include "dkimutil.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "messageviewer_dkimcheckerdebug.h"
 #include <QRegularExpression>
 
@@ -30,13 +32,13 @@ QString MessageViewer::DKIMUtil::bodyCanonizationRelaxed(QString body)
             mechanisms.)
         */
 
-    body.replace(QStringLiteral("\n"), QStringLiteral("\r\n"));
-    static const QRegularExpression reg1(QStringLiteral("[ \t]+\r\n"));
-    body.replace(reg1, QStringLiteral("\r\n"));
-    static const QRegularExpression reg2(QStringLiteral("[ \t]+"));
-    body.replace(reg2, QStringLiteral(" "));
-    static const QRegularExpression reg3(QStringLiteral("((\r\n)+?)$"));
-    body.replace(QRegularExpression(reg3), QStringLiteral("\r\n"));
+    body.replace(u"\n"_s, u"\r\n"_s);
+    static const QRegularExpression reg1(u"[ \t]+\r\n"_s);
+    body.replace(reg1, u"\r\n"_s);
+    static const QRegularExpression reg2(u"[ \t]+"_s);
+    body.replace(reg2, u" "_s);
+    static const QRegularExpression reg3(u"((\r\n)+?)$"_s);
+    body.replace(QRegularExpression(reg3), u"\r\n"_s);
     if (body == QLatin1StringView("\r\n")) {
         body.clear();
     }
@@ -55,14 +57,14 @@ QString MessageViewer::DKIMUtil::bodyCanonizationSimple(QString body)
 
     //       Note that a completely empty or missing body is canonicalized as a
     //       single "CRLF"; that is, the canonicalized length will be 2 octets.
-    body.replace(QStringLiteral("\n"), QStringLiteral("\r\n"));
-    static const QRegularExpression reg(QStringLiteral("((\r\n)+)?$"));
-    body.replace(reg, QStringLiteral("\r\n"));
+    body.replace(u"\n"_s, u"\r\n"_s);
+    static const QRegularExpression reg(u"((\r\n)+)?$"_s);
+    body.replace(reg, u"\r\n"_s);
     if (body.endsWith(QLatin1StringView("\r\n"))) { // Remove it from start
         body.chop(2);
     }
     if (body.isEmpty()) {
-        body = QStringLiteral("\r\n");
+        body = u"\r\n"_s;
     }
     return body;
 }
@@ -75,7 +77,7 @@ QByteArray MessageViewer::DKIMUtil::generateHash(const QByteArray &body, QCrypto
 QString MessageViewer::DKIMUtil::headerCanonizationSimple(const QString &headerName, const QString &headerValue)
 {
     // TODO verify it lower it ?
-    return headerName + QLatin1Char(':') + headerValue;
+    return headerName + u':' + headerValue;
 }
 
 QString MessageViewer::DKIMUtil::headerCanonizationRelaxed(const QString &headerName, const QString &headerValue, bool removeQuoteOnContentType)
@@ -104,45 +106,45 @@ QString MessageViewer::DKIMUtil::headerCanonizationRelaxed(const QString &header
     //          colon separator MUST be retained.
     QString newHeaderName = headerName.toLower();
     QString newHeaderValue = headerValue;
-    static const QRegularExpression reg1(QStringLiteral("\r\n[ \t]+"));
-    newHeaderValue.replace(reg1, QStringLiteral(" "));
-    static const QRegularExpression reg2(QStringLiteral("[ \t]+"));
-    newHeaderValue.replace(reg2, QStringLiteral(" "));
-    static const QRegularExpression reg3(QStringLiteral("[ \t]+\r\n"));
-    newHeaderValue.replace(reg3, QStringLiteral("\r\n"));
+    static const QRegularExpression reg1(u"\r\n[ \t]+"_s);
+    newHeaderValue.replace(reg1, u" "_s);
+    static const QRegularExpression reg2(u"[ \t]+"_s);
+    newHeaderValue.replace(reg2, u" "_s);
+    static const QRegularExpression reg3(u"[ \t]+\r\n"_s);
+    newHeaderValue.replace(reg3, u"\r\n"_s);
     // Perhaps remove tab after headername and before value name
-    // newHeaderValue.replace(QRegularExpression(QStringLiteral("[ \t]*:[ \t]")), QStringLiteral(":"));
+    // newHeaderValue.replace(QRegularExpression(u"[ \t]*:[ \t]"_s), u":"_s);
     if (newHeaderName == QLatin1StringView("content-type") && removeQuoteOnContentType) { // Remove quote in charset
         if (newHeaderValue.contains(QLatin1StringView("charset=\""))) {
-            newHeaderValue.remove(QLatin1Char('"'));
+            newHeaderValue.remove(u'"');
         }
     }
     // Remove extra space.
     newHeaderValue = newHeaderValue.trimmed();
-    return newHeaderName + QLatin1Char(':') + newHeaderValue;
+    return newHeaderName + u':' + newHeaderValue;
 }
 
 QString MessageViewer::DKIMUtil::cleanString(QString str)
 {
     // Move as static ?
     // WSP help pattern as specified in Section 2.8 of RFC 6376
-    const QString pattWSP = QStringLiteral("[ \t]");
+    const QString pattWSP = u"[ \t]"_s;
     // FWS help pattern as specified in Section 2.8 of RFC 6376
-    const QString pattFWS = QStringLiteral("(?:") + pattWSP + QStringLiteral("*(?:\r\n)?") + pattWSP + QStringLiteral("+)");
+    const QString pattFWS = u"(?:"_s + pattWSP + u"*(?:\r\n)?"_s + pattWSP + QStringLiteral("+)");
     str.replace(QRegularExpression(pattFWS), QString());
     return str;
 }
 
 QString MessageViewer::DKIMUtil::emailDomain(const QString &emailDomain)
 {
-    return emailDomain.right(emailDomain.length() - emailDomain.indexOf(QLatin1Char('@')) - 1);
+    return emailDomain.right(emailDomain.length() - emailDomain.indexOf(u'@') - 1);
 }
 
 QString MessageViewer::DKIMUtil::emailSubDomain(const QString &emailDomain)
 {
     int dotNumber = 0;
     for (int i = emailDomain.length() - 1; i >= 0; --i) {
-        if (emailDomain.at(i) == QLatin1Char('.')) {
+        if (emailDomain.at(i) == u'.') {
             dotNumber++;
             if (dotNumber == 2) {
                 return emailDomain.right(emailDomain.length() - i - 1);
@@ -154,7 +156,7 @@ QString MessageViewer::DKIMUtil::emailSubDomain(const QString &emailDomain)
 
 QString MessageViewer::DKIMUtil::defaultConfigFileName()
 {
-    return QStringLiteral("dkimsettingsrc");
+    return u"dkimsettingsrc"_s;
 }
 
 QString MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod method)
@@ -165,22 +167,22 @@ QString MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(Message
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Undefined type";
         break;
     case MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Dkim:
-        methodStr = QStringLiteral("dkim");
+        methodStr = u"dkim"_s;
         break;
     case MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Spf:
-        methodStr = QStringLiteral("spf");
+        methodStr = u"spf"_s;
         break;
     case MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Dmarc:
-        methodStr = QStringLiteral("dmarc");
+        methodStr = u"dmarc"_s;
         break;
     case MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Dkimatps:
-        methodStr = QStringLiteral("dkim-atps");
+        methodStr = u"dkim-atps"_s;
         break;
     case MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Auth:
-        methodStr = QStringLiteral("auth");
+        methodStr = u"auth"_s;
         break;
     case MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::XTls:
-        methodStr = QStringLiteral("x-tls");
+        methodStr = u"x-tls"_s;
         break;
     }
     return methodStr;

@@ -5,6 +5,8 @@
 */
 
 #include "checkphishingurlcache.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "checkphishingurlutil.h"
 #include "webengineviewer_debug.h"
 #include <KConfig>
@@ -60,7 +62,7 @@ void CheckPhishingUrlCachePrivate::load()
 {
     mCacheCheckedUrl.clear();
     KConfig phishingurlKConfig(WebEngineViewer::CheckPhishingUrlUtil::configFileName());
-    KConfigGroup grp = phishingurlKConfig.group(QStringLiteral("MalwareUrl"));
+    KConfigGroup grp = phishingurlKConfig.group(u"MalwareUrl"_s);
     const QList<QUrl> listMalware = grp.readEntry("Url", QList<QUrl>());
     const QList<double> listMalwareCachedTime = grp.readEntry("CachedTime", QList<double>());
     if (listMalware.count() != listMalwareCachedTime.count()) {
@@ -81,7 +83,7 @@ void CheckPhishingUrlCachePrivate::load()
 void CheckPhishingUrlCachePrivate::save()
 {
     KConfig phishingurlKConfig(WebEngineViewer::CheckPhishingUrlUtil::configFileName());
-    KConfigGroup grp = phishingurlKConfig.group(QStringLiteral("MalwareUrl"));
+    KConfigGroup grp = phishingurlKConfig.group(u"MalwareUrl"_s);
 
     QList<QUrl> listMalware;
     QList<double> listMalwareCachedTime;

@@ -6,6 +6,7 @@
 */
 
 #include "messagehelper.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include "MessageCore/MailingList"
 #include "MessageCore/StringUtil"
@@ -119,7 +120,7 @@ void applyIdentity(const KMime::Message::Ptr &message, const KIdentityManagement
 
     if (ident.disabledFcc()) {
         auto header = new KMime::Headers::Generic("X-KMail-FccDisabled");
-        header->fromUnicodeString(QStringLiteral("true"));
+        header->fromUnicodeString(u"true"_s);
         message->setHeader(header);
     } else {
         message->removeHeader("X-KMail-FccDisabled");

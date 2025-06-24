@@ -4,6 +4,8 @@
  */
 
 #include "messageviewer/messageviewerutil.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "MessageCore/MessageCoreSettings"
 #include "MessageCore/StringUtil"
 #include "messageviewer_debug.h"
@@ -83,7 +85,7 @@ bool Util::containsExternalReferences(const QString &str, const QString &extraHe
     if (startImgIndex != -1) {
         for (int i = startImgIndex, total = str.length(); i < total; ++i) {
             const QChar charStr = str.at(i);
-            if (charStr == QLatin1Char('>')) {
+            if (charStr == u'>') {
                 newStringImg += charStr;
                 break;
             } else {
@@ -91,12 +93,10 @@ bool Util::containsExternalReferences(const QString &str, const QString &extraHe
             }
         }
         if (!newStringImg.isEmpty()) {
-            static QRegularExpression image1RegularExpression =
-                QRegularExpression(QStringLiteral("<img.*src=\"https?:/.*\".*>"), QRegularExpression::CaseInsensitiveOption);
+            static QRegularExpression image1RegularExpression = QRegularExpression(u"<img.*src=\"https?:/.*\".*>"_s, QRegularExpression::CaseInsensitiveOption);
             const bool containsReg2 = newStringImg.contains(image1RegularExpression, &rmatch);
             if (!containsReg2) {
-                static QRegularExpression image2RegularExpression =
-                    QRegularExpression(QStringLiteral("<img.*src=https?:/.*>"), QRegularExpression::CaseInsensitiveOption);
+                static QRegularExpression image2RegularExpression = QRegularExpression(u"<img.*src=https?:/.*>"_s, QRegularExpression::CaseInsensitiveOption);
                 const bool containsReg = newStringImg.contains(image2RegularExpression, &rmatch);
                 return containsReg;
             } else {
@@ -157,14 +157,14 @@ bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, Q
         // get the dir
         dirUrl = QFileDialog::getExistingDirectoryUrl(parent,
                                                       i18n("Save Attachments To"),
-                                                      KFileWidget::getStartUrl(QUrl(QStringLiteral("kfiledialog:///attachmentDir")), recentDirClass));
+                                                      KFileWidget::getStartUrl(QUrl(u"kfiledialog:///attachmentDir"_s), recentDirClass));
         if (!dirUrl.isValid()) {
             return false;
         }
 
         // we may not get a slash-terminated url out of KFileDialog
-        if (!dirUrl.path().endsWith(QLatin1Char('/'))) {
-            dirUrl.setPath(dirUrl.path() + QLatin1Char('/'));
+        if (!dirUrl.path().endsWith(u'/')) {
+            dirUrl.setPath(dirUrl.path() + u'/');
         }
         currentFolder = dirUrl;
     } else {
@@ -176,8 +176,8 @@ bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, Q
             fileName = i18nc("filename for an unnamed attachment", "attachment.1");
         }
 
-        QUrl localUrl = KFileWidget::getStartUrl(QUrl(QStringLiteral("kfiledialog:///attachmentDir")), recentDirClass);
-        localUrl.setPath(localUrl.path() + QLatin1Char('/') + fileName);
+        QUrl localUrl = KFileWidget::getStartUrl(QUrl(u"kfiledialog:///attachmentDir"_s), recentDirClass);
+        localUrl.setPath(localUrl.path() + u'/' + fileName);
         QFileDialog::Options options = QFileDialog::DontConfirmOverwrite;
         url = QFileDialog::getSaveFileUrl(parent, i18nc("@title:window", "Save Attachment"), localUrl, QString(), nullptr, options);
         if (url.isEmpty()) {
@@ -205,8 +205,8 @@ bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, Q
                 ++unnamedAtmCount;
                 fileName = i18nc("filename for the %1-th unnamed attachment", "attachment.%1", unnamedAtmCount);
             }
-            if (!curUrl.path().endsWith(QLatin1Char('/'))) {
-                curUrl.setPath(curUrl.path() + QLatin1Char('/'));
+            if (!curUrl.path().endsWith(u'/')) {
+                curUrl.setPath(curUrl.path() + u'/');
             }
             curUrl.setPath(curUrl.path() + fileName);
         } else {
@@ -225,11 +225,11 @@ bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, Q
             while (renameNumbering.contains(file)) {
                 file = origFile;
                 int num = renameNumbering[file] + 1;
-                int dotIdx = file.lastIndexOf(QLatin1Char('.'));
-                file.insert((dotIdx >= 0) ? dotIdx : file.length(), QLatin1Char('_') + QString::number(num));
+                int dotIdx = file.lastIndexOf(u'.');
+                file.insert((dotIdx >= 0) ? dotIdx : file.length(), u'_' + QString::number(num));
             }
             curUrl = curUrl.adjusted(QUrl::RemoveFilename | QUrl::StripTrailingSlash);
-            curUrl.setPath(curUrl.path() + QLatin1Char('/') + file);
+            curUrl.setPath(curUrl.path() + u'/' + file);
 
             // Increment the counter for both the old and the new filename
             if (!renameNumbering.contains(origFile)) {
@@ -445,7 +445,7 @@ QString Util::generateFileNameForExtension(const Akonadi::Item &msgBase, const Q
 
     if (msgBase.hasPayload<KMime::Message::Ptr>()) {
         fileName = MessageCore::StringUtil::cleanFileName(MessageCore::StringUtil::cleanSubject(msgBase.payload<KMime::Message::Ptr>().data()).trimmed());
-        fileName.remove(QLatin1Char('\"'));
+        fileName.remove(u'\"');
     } else {
         fileName = i18n("message");
     }
@@ -458,7 +458,7 @@ QString Util::generateFileNameForExtension(const Akonadi::Item &msgBase, const Q
 
 QString Util::generateMboxFileName(const Akonadi::Item &msgBase)
 {
-    return Util::generateFileNameForExtension(msgBase, QStringLiteral(".mbox"));
+    return Util::generateFileNameForExtension(msgBase, u".mbox"_s);
 }
 
 bool Util::saveMessageInMboxAndGetUrl(QUrl &url, const Akonadi::Item::List &retrievedMsgs, QWidget *parent, bool appendMessages)
@@ -472,9 +472,9 @@ bool Util::saveMessageInMboxAndGetUrl(QUrl &url, const Akonadi::Item::List &retr
     const QString filter = i18n("Mailbox file (*.mbox);;All Files (*)");
 
     QString fileClass;
-    const QUrl startUrl = KFileWidget::getStartUrl(QUrl(QStringLiteral("kfiledialog:///savemessage")), fileClass);
+    const QUrl startUrl = KFileWidget::getStartUrl(QUrl(u"kfiledialog:///savemessage"_s), fileClass);
     QUrl localUrl;
-    localUrl.setPath(startUrl.path() + QLatin1Char('/') + fileName);
+    localUrl.setPath(startUrl.path() + u'/' + fileName);
     QFileDialog::Options opt;
     if (appendMessages) {
         opt |= QFileDialog::DontConfirmOverwrite;
@@ -618,7 +618,7 @@ int Util::deleteAttachments(const KMime::Content::List &nodes)
 
 QAction *Util::createAppAction(const KService::Ptr &service, bool singleOffer, QActionGroup *actionGroup, QObject *parent)
 {
-    QString actionName(service->name().replace(QLatin1Char('&'), QStringLiteral("&&")));
+    QString actionName(service->name().replace(u'&', u"&&"_s));
     if (singleOffer) {
         actionName = i18n("Open &with %1", actionName);
     } else {
@@ -635,11 +635,11 @@ QAction *Util::createAppAction(const KService::Ptr &service, bool singleOffer, Q
 
 bool Util::excludeExtraHeader(const QString &s)
 {
-    static QRegularExpression divRef(QStringLiteral("</div>"), QRegularExpression::CaseInsensitiveOption);
+    static QRegularExpression divRef(u"</div>"_s, QRegularExpression::CaseInsensitiveOption);
     if (s.contains(divRef)) {
         return true;
     }
-    static QRegularExpression bodyRef(QStringLiteral("body.s*>.s*div"), QRegularExpression::CaseInsensitiveOption);
+    static QRegularExpression bodyRef(u"body.s*>.s*div"_s, QRegularExpression::CaseInsensitiveOption);
     if (s.contains(bodyRef)) {
         return true;
     }
@@ -668,10 +668,10 @@ QString Util::parseBodyStyle(const QString &style)
     const int indexStyle = style.indexOf(QLatin1StringView("style=\""));
     if (indexStyle != -1) {
         // qDebug() << " style " << style;
-        const int indexEnd = style.indexOf(QLatin1Char('"'), indexStyle + 7);
+        const int indexEnd = style.indexOf(u'"', indexStyle + 7);
         if (indexEnd != -1) {
             const QStringView styleStr = QStringView(style).mid(indexStyle + 7, indexEnd - (indexStyle + 7));
-            const auto lstStyle = styleStr.split(QLatin1Char(';'), Qt::SkipEmptyParts);
+            const auto lstStyle = styleStr.split(u';', Qt::SkipEmptyParts);
             QStringList lst;
             for (const auto &style : lstStyle) {
                 // qDebug() << " style : " << style;
@@ -681,7 +681,7 @@ QString Util::parseBodyStyle(const QString &style)
             }
             if (!lst.isEmpty()) {
                 // qDebug() << " lst " << lst;
-                return QStringLiteral(" style=\"%1").arg(lst.join(QLatin1Char(';'))) + QStringLiteral(";\"");
+                return u" style=\"%1"_s.arg(lst.join(u';')) + u";\""_s;
             }
         }
     }
@@ -696,7 +696,7 @@ Util::HtmlMessageInfo Util::processHtml(const QString &htmlSource)
 {
     Util::HtmlMessageInfo messageInfo;
     QString s = htmlSource.trimmed();
-    static QRegularExpression docTypeRegularExpression = QRegularExpression(QStringLiteral("<!DOCTYPE[^>]*>"), QRegularExpression::CaseInsensitiveOption);
+    static QRegularExpression docTypeRegularExpression = QRegularExpression(u"<!DOCTYPE[^>]*>"_s, QRegularExpression::CaseInsensitiveOption);
     QRegularExpressionMatch matchDocType;
     const int indexDoctype = s.indexOf(docTypeRegularExpression, 0, &matchDocType);
     QString textBeforeDoctype;
@@ -708,10 +708,10 @@ Util::HtmlMessageInfo Util::processHtml(const QString &htmlSource)
     if (!capturedString.isEmpty()) {
         s = s.remove(capturedString).trimmed();
     }
-    static QRegularExpression htmlRegularExpression = QRegularExpression(QStringLiteral("<html[^>]*>"), QRegularExpression::CaseInsensitiveOption);
+    static QRegularExpression htmlRegularExpression = QRegularExpression(u"<html[^>]*>"_s, QRegularExpression::CaseInsensitiveOption);
     s = s.remove(htmlRegularExpression).trimmed();
     // head
-    static QRegularExpression headEndRegularExpression = QRegularExpression(QStringLiteral("^<head/>"), QRegularExpression::CaseInsensitiveOption);
+    static QRegularExpression headEndRegularExpression = QRegularExpression(u"^<head/>"_s, QRegularExpression::CaseInsensitiveOption);
     s = s.remove(headEndRegularExpression).trimmed();
     const int startIndex = s.indexOf(QLatin1StringView("<head>"), Qt::CaseInsensitive);
     if (startIndex >= 0) {
@@ -729,7 +729,7 @@ Util::HtmlMessageInfo Util::processHtml(const QString &htmlSource)
         s = s.remove(startIndex, endIndex - startIndex + 7).trimmed();
         // qDebug() << "BEFORE messageInfo.extraHead**********" << messageInfo.extraHead;
         static QRegularExpression styleBodyRegularExpression =
-            QRegularExpression(QStringLiteral("<style>\\s*body\\s*{"), QRegularExpression::CaseInsensitiveOption | QRegularExpression::MultilineOption);
+            QRegularExpression(u"<style>\\s*body\\s*{"_s, QRegularExpression::CaseInsensitiveOption | QRegularExpression::MultilineOption);
         QRegularExpressionMatch matchBodyStyle;
         const int bodyStyleStartIndex = messageInfo.extraHead.indexOf(styleBodyRegularExpression, 0, &matchBodyStyle);
         if (bodyStyleStartIndex > 0) {
@@ -740,7 +740,7 @@ Util::HtmlMessageInfo Util::processHtml(const QString &htmlSource)
         // qDebug() << "AFTER messageInfo.extraHead**********" << messageInfo.extraHead;
     }
     // body
-    static QRegularExpression body = QRegularExpression(QStringLiteral("<body[^>]*>"), QRegularExpression::CaseInsensitiveOption);
+    static QRegularExpression body = QRegularExpression(u"<body[^>]*>"_s, QRegularExpression::CaseInsensitiveOption);
     QRegularExpressionMatch matchBody;
     const int bodyStartIndex = s.indexOf(body, 0, &matchBody);
     if (bodyStartIndex >= 0) {
@@ -750,11 +750,10 @@ Util::HtmlMessageInfo Util::processHtml(const QString &htmlSource)
         messageInfo.bodyStyle = matchBody.captured();
     }
     // Some mail has </div>$ at end
-    static QRegularExpression htmlDivRegularExpression =
-        QRegularExpression(QStringLiteral("(</html></div>|</html>)$"), QRegularExpression::CaseInsensitiveOption);
+    static QRegularExpression htmlDivRegularExpression = QRegularExpression(u"(</html></div>|</html>)$"_s, QRegularExpression::CaseInsensitiveOption);
     s = s.remove(htmlDivRegularExpression).trimmed();
-    // s = s.remove(QRegularExpression(QStringLiteral("</html>$"), QRegularExpression::CaseInsensitiveOption)).trimmed();
-    static QRegularExpression bodyEndRegularExpression = QRegularExpression(QStringLiteral("</body>$"), QRegularExpression::CaseInsensitiveOption);
+    // s = s.remove(QRegularExpression(u"</html>$"_s, QRegularExpression::CaseInsensitiveOption)).trimmed();
+    static QRegularExpression bodyEndRegularExpression = QRegularExpression(u"</body>$"_s, QRegularExpression::CaseInsensitiveOption);
     s = s.remove(bodyEndRegularExpression).trimmed();
     messageInfo.htmlSource = textBeforeDoctype + s;
     return messageInfo;

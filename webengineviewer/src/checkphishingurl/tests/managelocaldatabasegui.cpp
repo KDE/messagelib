@@ -5,6 +5,8 @@
 */
 
 #include "managelocaldatabasegui.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../localdatabasemanager.h"
 #include <QStandardPaths>
 
@@ -23,7 +25,7 @@ ManageLocalDataBaseGui::ManageLocalDataBaseGui(QWidget *parent)
     mResult->setReadOnly(true);
     layout->addWidget(mResult);
 
-    auto button = new QPushButton(QStringLiteral("Create Database"), this);
+    auto button = new QPushButton(u"Create Database"_s, this);
     connect(button, &QPushButton::clicked, this, &ManageLocalDataBaseGui::slotDownloadFullDatabase);
     layout->addWidget(button);
 }

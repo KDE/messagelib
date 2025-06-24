@@ -6,6 +6,8 @@
  */
 
 #include "templatesconfiguration.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "globalsettings_templateparser.h"
 #include "templatesconfiguration_kfg.h"
 #include <TextCustomEditor/PlainTextEditor>
@@ -375,14 +377,14 @@ void TemplatesConfiguration::slotInsertCommand(const QString &cmd, int adjustCur
 QString TemplatesConfiguration::strOrBlank(const QString &str)
 {
     if (str.trimmed().isEmpty()) {
-        return QStringLiteral("%BLANK");
+        return u"%BLANK"_s;
     }
     return str;
 }
 
 QString TemplatesConfiguration::configIdString(uint id)
 {
-    return QStringLiteral("IDENTITY_%1").arg(id);
+    return u"IDENTITY_%1"_s.arg(id);
 }
 
 #include "moc_templatesconfiguration.cpp"

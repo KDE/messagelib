@@ -5,6 +5,7 @@
 */
 
 #include "autocryptheadersjobtest.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include "cryptofunctions.h"
 #include "qtest_messagecomposer.h"
@@ -71,7 +72,7 @@ void AutocryptHeadersJobTest::testAutocryptHeader()
     skeletonMessage.assemble();
     content.assemble();
 
-    auto referenceFile = QStringLiteral("autcryptheader.mbox");
+    auto referenceFile = u"autcryptheader.mbox"_s;
     QFile f(referenceFile);
     QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
     f.write(skeletonMessage.head());
@@ -115,7 +116,7 @@ void AutocryptHeadersJobTest::testContentChained()
     skeletonMessage.assemble();
     content.assemble();
 
-    auto referenceFile = QStringLiteral("autcryptheader.mbox");
+    auto referenceFile = u"autcryptheader.mbox"_s;
     QFile f(referenceFile);
     QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
     f.write(skeletonMessage.head());
@@ -145,7 +146,7 @@ void AutocryptHeadersJobTest::testAutocryptGossipHeader()
     std::vector<GpgME::Key> ownKeys;
     job->exec(QStringList(QString::fromLatin1(skeletonMessage.from()[0].addresses()[0])), false, ownKeys);
     std::vector<GpgME::Key> keys;
-    job->exec(QStringList({QStringLiteral("bob@autocrypt.example"), QStringLiteral("carol@autocrypt.example")}), false, keys);
+    job->exec(QStringList({u"bob@autocrypt.example"_s, QStringLiteral("carol@autocrypt.example")}), false, keys);
 
     auto aJob = new AutocryptHeadersJob(&composerJob);
 
@@ -161,7 +162,7 @@ void AutocryptHeadersJobTest::testAutocryptGossipHeader()
     content.contentType(true)->from7BitString("text/plain");
     content.assemble();
 
-    auto referenceFile = QStringLiteral("autocryptgossipheader.mbox");
+    auto referenceFile = u"autocryptgossipheader.mbox"_s;
     Test::compareFile(&content, QStringLiteral(MAIL_DATA_DIR "/") + referenceFile);
 }
 
@@ -185,7 +186,7 @@ void AutocryptHeadersJobTest::testSetGnupgHome()
     std::vector<GpgME::Key> ownKeys;
     exportJob->exec(QStringList(QString::fromLatin1(skeletonMessage.from()[0].addresses()[0])), false, ownKeys);
     std::vector<GpgME::Key> keys;
-    exportJob->exec(QStringList({QStringLiteral("bob@autocrypt.example"), QStringLiteral("carol@autocrypt.example")}), false, keys);
+    exportJob->exec(QStringList({u"bob@autocrypt.example"_s, QStringLiteral("carol@autocrypt.example")}), false, keys);
 
     QTemporaryDir dir;
     { // test with an empty gnupg Home
@@ -221,7 +222,7 @@ void AutocryptHeadersJobTest::testSetGnupgHome()
     content.contentType(true)->from7BitString("text/plain");
     content.assemble();
 
-    auto referenceFile = QStringLiteral("autocryptgossipheader.mbox");
+    auto referenceFile = u"autocryptgossipheader.mbox"_s;
     Test::compareFile(&content, QStringLiteral(MAIL_DATA_DIR "/") + referenceFile);
 }
 
@@ -245,7 +246,7 @@ void AutocryptHeadersJobTest::testStripSenderKey()
     std::vector<GpgME::Key> ownKeys;
     job->exec(QStringList(QString::fromLatin1(skeletonMessage.from()[0].addresses()[0])), false, ownKeys);
     std::vector<GpgME::Key> keys;
-    job->exec(QStringList({QStringLiteral("bob@autocrypt.example"), QStringLiteral("carol@autocrypt.example")}), false, keys);
+    job->exec(QStringList({u"bob@autocrypt.example"_s, QStringLiteral("carol@autocrypt.example")}), false, keys);
     keys.push_back(ownKeys[0]);
 
     auto aJob = new AutocryptHeadersJob(&composerJob);
@@ -262,7 +263,7 @@ void AutocryptHeadersJobTest::testStripSenderKey()
     content.contentType(true)->from7BitString("text/plain");
     content.assemble();
 
-    auto referenceFile = QStringLiteral("autocryptgossipheader.mbox");
+    auto referenceFile = u"autocryptgossipheader.mbox"_s;
     Test::compareFile(&content, QStringLiteral(MAIL_DATA_DIR "/") + referenceFile);
 }
 

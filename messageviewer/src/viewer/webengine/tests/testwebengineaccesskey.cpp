@@ -5,6 +5,8 @@
 */
 
 #include "testwebengineaccesskey.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../mailwebengineview.h"
 
 #include "messageviewer/messageviewersettings.h"
@@ -37,14 +39,14 @@ TestWebEngineAccesskey::TestWebEngineAccesskey(QWidget *parent)
     : QWidget(parent)
 {
     QVBoxLayout *vboxLayout = new QVBoxLayout(this);
-    QLabel *label = new QLabel(QStringLiteral("WebEngine"));
+    QLabel *label = new QLabel(u"WebEngine"_s);
     vboxLayout->addWidget(label);
 
     mTestWebEngine = new WebEngineViewer::MailWebEngineView(new KActionCollection(this), this);
     mTestWebEngine->settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
     vboxLayout->addWidget(mTestWebEngine);
-    mTestWebEngine->load(QUrl(QStringLiteral("http://www.kde.org")));
-    QPushButton *searchAccessKey = new QPushButton(QStringLiteral("AccessKey"), this);
+    mTestWebEngine->load(QUrl(u"http://www.kde.org"_s));
+    QPushButton *searchAccessKey = new QPushButton(u"AccessKey"_s, this);
     vboxLayout->addWidget(searchAccessKey);
     connect(searchAccessKey, &QPushButton::clicked, this, &TestWebEngineAccesskey::slotShowAccessKey);
 }

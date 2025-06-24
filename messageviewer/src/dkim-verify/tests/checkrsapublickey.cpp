@@ -5,6 +5,8 @@
 */
 
 #include "checkrsapublickey.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <QCommandLineParser>
 #include <QCoreApplication>
 #include <QDebug>
@@ -50,7 +52,7 @@ int main(int argc, char **argv)
     parser.addVersionOption();
     parser.addHelpOption();
     //    parser.addPositionalArgument(
-    //                QStringLiteral("server address"), QStringLiteral("add specific server address"));
+    //                u"server address"_s, u"add specific server address"_s);
     parser.process(app);
 
     (void)new CheckRSAPublicKey;

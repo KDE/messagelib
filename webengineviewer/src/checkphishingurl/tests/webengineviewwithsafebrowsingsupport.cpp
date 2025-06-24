@@ -5,6 +5,8 @@
 */
 
 #include "webengineviewwithsafebrowsingsupport.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../localdatabasemanager.h"
 
 #include "webenginepage.h"
@@ -28,8 +30,8 @@ WebEngineViewWithSafeBrowsingSupport::WebEngineViewWithSafeBrowsingSupport(QWidg
     layout->addWidget(pageView);
     auto mEnginePage = new WebEngineViewer::WebEnginePage(this);
     pageView->setPage(mEnginePage);
-    // pageView->load(QUrl(QStringLiteral("http://www.kde.org")));
-    const QString urlPage = QLatin1StringView(CHECKPHISHINGURL_TEST_DATA_DIR) + QStringLiteral("/test-url.html");
+    // pageView->load(QUrl(u"http://www.kde.org"_s));
+    const QString urlPage = QLatin1StringView(CHECKPHISHINGURL_TEST_DATA_DIR) + u"/test-url.html"_s;
     qDebug() << " urlPage" << urlPage;
     pageView->load(QUrl::fromLocalFile(urlPage));
     connect(mEnginePage, &WebEngineViewer::WebEnginePage::urlClicked, this, &WebEngineViewWithSafeBrowsingSupport::slotUrlClicked);
@@ -52,24 +54,24 @@ void WebEngineViewWithSafeBrowsingSupport::slotCheckedUrlFinished(const QUrl &ur
     QString statusStr;
     switch (status) {
     case WebEngineViewer::CheckPhishingUrlUtil::Unknown:
-        statusStr = QStringLiteral("Unknown Status");
+        statusStr = u"Unknown Status"_s;
         break;
     case WebEngineViewer::CheckPhishingUrlUtil::Ok:
-        statusStr = QStringLiteral("Url Ok");
+        statusStr = u"Url Ok"_s;
         break;
     case WebEngineViewer::CheckPhishingUrlUtil::MalWare:
-        statusStr = QStringLiteral("MalWare");
+        statusStr = u"MalWare"_s;
         break;
     case WebEngineViewer::CheckPhishingUrlUtil::InvalidUrl:
-        statusStr = QStringLiteral("Invalid Url");
+        statusStr = u"Invalid Url"_s;
         break;
     case WebEngineViewer::CheckPhishingUrlUtil::BrokenNetwork:
-        statusStr = QStringLiteral("Broken Network");
+        statusStr = u"Broken Network"_s;
         break;
     }
 
     qDebug() << " checked url: " << url << " result : " << statusStr;
-    mDebug->setPlainText(QStringLiteral("Url: %1 , Status %2").arg(url.toDisplayString(), statusStr));
+    mDebug->setPlainText(u"Url: %1 , Status %2"_s.arg(url.toDisplayString(), statusStr));
     if (status != WebEngineViewer::CheckPhishingUrlUtil::MalWare) {
         pageView->load(url);
     }

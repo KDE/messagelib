@@ -5,6 +5,8 @@
 */
 
 #include "dkimruledialogtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "dkim-verify/dkimruledialog.h"
 #include "dkim-verify/dkimrulewidget.h"
 #include <QDialogButtonBox>
@@ -25,13 +27,13 @@ void DKIMRuleDialogTest::shouldHaveDefaultValues()
     MessageViewer::DKIMRuleDialog dlg;
     QVERIFY(!dlg.windowTitle().isEmpty());
 
-    auto mainLayout = dlg.findChild<QVBoxLayout *>(QStringLiteral("mainlayout"));
+    auto mainLayout = dlg.findChild<QVBoxLayout *>(u"mainlayout"_s);
     QVERIFY(mainLayout);
 
-    auto rulewidget = dlg.findChild<MessageViewer::DKIMRuleWidget *>(QStringLiteral("rulewidget"));
+    auto rulewidget = dlg.findChild<MessageViewer::DKIMRuleWidget *>(u"rulewidget"_s);
     QVERIFY(rulewidget);
 
-    auto buttonBox = dlg.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
+    auto buttonBox = dlg.findChild<QDialogButtonBox *>(u"buttonBox"_s);
     QVERIFY(buttonBox);
     QCOMPARE(buttonBox->standardButtons(), QDialogButtonBox::StandardButtons{QDialogButtonBox::Ok | QDialogButtonBox::Cancel});
 }

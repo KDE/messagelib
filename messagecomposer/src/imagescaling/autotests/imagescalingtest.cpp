@@ -5,6 +5,8 @@
 */
 
 #include "imagescalingtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../imagescaling.h"
 #include "settings/messagecomposersettings.h"
 #include <QStandardPaths>
@@ -36,12 +38,12 @@ void ImageScalingTest::shouldHaveRenameFile_data()
     QTest::addColumn<QString>("output");
     QTest::addColumn<QByteArray>("format");
     QTest::addColumn<QString>("saveasformat");
-    QTest::newRow("no rename png when file is empty") << QString() << QString() << QByteArray("image/png") << QStringLiteral("PNG");
-    QTest::newRow("no rename jpg when file is empty") << QString() << QString() << QByteArray("image/jpeg") << QStringLiteral("PNG");
-    QTest::newRow("no rename to png") << QStringLiteral("foo.jpeg") << QStringLiteral("foo.jpeg") << QByteArray("image/jpeg") << QStringLiteral("PNG");
-    QTest::newRow("no rename to jpeg") << QStringLiteral("foo.png") << QStringLiteral("foo.png") << QByteArray("image/png") << QStringLiteral("JPG");
-    QTest::newRow("rename to jpeg") << QStringLiteral("foo.png") << QStringLiteral("foo.jpg") << QByteArray("image/mng") << QStringLiteral("JPG");
-    QTest::newRow("rename to png") << QStringLiteral("foo.jpg") << QStringLiteral("foo.png") << QByteArray("image/mng") << QStringLiteral("PNG");
+    QTest::newRow("no rename png when file is empty") << QString() << QString() << QByteArray("image/png") << u"PNG"_s;
+    QTest::newRow("no rename jpg when file is empty") << QString() << QString() << QByteArray("image/jpeg") << u"PNG"_s;
+    QTest::newRow("no rename to png") << u"foo.jpeg"_s << QStringLiteral("foo.jpeg") << QByteArray("image/jpeg") << QStringLiteral("PNG");
+    QTest::newRow("no rename to jpeg") << u"foo.png"_s << QStringLiteral("foo.png") << QByteArray("image/png") << QStringLiteral("JPG");
+    QTest::newRow("rename to jpeg") << u"foo.png"_s << QStringLiteral("foo.jpg") << QByteArray("image/mng") << QStringLiteral("JPG");
+    QTest::newRow("rename to png") << u"foo.jpg"_s << QStringLiteral("foo.png") << QByteArray("image/mng") << QStringLiteral("PNG");
 }
 
 void ImageScalingTest::shouldHaveRenameFile()
@@ -65,16 +67,16 @@ void ImageScalingTest::shouldHaveChangeMimetype_data()
     QTest::addColumn<QByteArray>("newmimetype");
     QTest::addColumn<QString>("format");
 
-    QTest::newRow("no change mimetype when empty") << QByteArray() << QByteArray() << QStringLiteral("PNG");
-    QTest::newRow("no change mimetype when empty jpeg") << QByteArray() << QByteArray() << QStringLiteral("JPG");
-    QTest::newRow("no change mimetype when jpeg (same)") << QByteArray("image/jpeg") << QByteArray("image/jpeg") << QStringLiteral("JPG");
-    QTest::newRow("no change mimetype when jpeg") << QByteArray("image/jpeg") << QByteArray("image/jpeg") << QStringLiteral("PNG");
+    QTest::newRow("no change mimetype when empty") << QByteArray() << QByteArray() << u"PNG"_s;
+    QTest::newRow("no change mimetype when empty jpeg") << QByteArray() << QByteArray() << u"JPG"_s;
+    QTest::newRow("no change mimetype when jpeg (same)") << QByteArray("image/jpeg") << QByteArray("image/jpeg") << u"JPG"_s;
+    QTest::newRow("no change mimetype when jpeg") << QByteArray("image/jpeg") << QByteArray("image/jpeg") << u"PNG"_s;
 
-    QTest::newRow("no change mimetype when png (same)") << QByteArray("image/png") << QByteArray("image/png") << QStringLiteral("JPG");
-    QTest::newRow("no change mimetype when png") << QByteArray("image/png") << QByteArray("image/png") << QStringLiteral("PNG");
+    QTest::newRow("no change mimetype when png (same)") << QByteArray("image/png") << QByteArray("image/png") << u"JPG"_s;
+    QTest::newRow("no change mimetype when png") << QByteArray("image/png") << QByteArray("image/png") << u"PNG"_s;
 
-    QTest::newRow("change mimetype when png") << QByteArray("image/mng") << QByteArray("image/png") << QStringLiteral("PNG");
-    QTest::newRow("change mimetype when jpeg") << QByteArray("image/mng") << QByteArray("image/jpeg") << QStringLiteral("JPG");
+    QTest::newRow("change mimetype when png") << QByteArray("image/mng") << QByteArray("image/png") << u"PNG"_s;
+    QTest::newRow("change mimetype when jpeg") << QByteArray("image/mng") << QByteArray("image/jpeg") << u"JPG"_s;
 
     QTest::newRow("When format is not defined but png") << QByteArray("image/png") << QByteArray("image/png") << QString();
     QTest::newRow("When format is not defined but jpeg") << QByteArray("image/jpeg") << QByteArray("image/jpeg") << QString();

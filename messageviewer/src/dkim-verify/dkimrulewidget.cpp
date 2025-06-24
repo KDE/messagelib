@@ -5,6 +5,8 @@
 */
 
 #include "dkimrulewidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "dkimmanagerulescombobox.h"
 #include <KLocalizedString>
 #include <QCheckBox>
@@ -71,7 +73,7 @@ void DKIMRuleWidget::loadRule(const MessageViewer::DKIMRule &rule)
 {
     mEnabled->setChecked(rule.enabled());
     mDomain->setText(rule.domain());
-    mSignatureDomainIdentifier->setText(rule.signedDomainIdentifier().join(QLatin1Char(' ')));
+    mSignatureDomainIdentifier->setText(rule.signedDomainIdentifier().join(u' '));
     mFrom->setText(rule.from());
     mListId->setText(rule.listId());
     mRuleType->setRuleType(rule.ruleType());
@@ -83,7 +85,7 @@ MessageViewer::DKIMRule DKIMRuleWidget::rule() const
     MessageViewer::DKIMRule rule;
     rule.setEnabled(mEnabled->isChecked());
     rule.setDomain(mDomain->text());
-    rule.setSignedDomainIdentifier(mSignatureDomainIdentifier->text().split(QLatin1Char(' ')));
+    rule.setSignedDomainIdentifier(mSignatureDomainIdentifier->text().split(u' '));
     rule.setFrom(mFrom->text());
     rule.setListId(mListId->text());
     rule.setRuleType(mRuleType->ruleType());

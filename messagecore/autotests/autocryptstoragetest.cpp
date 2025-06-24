@@ -3,6 +3,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "autocryptstoragetest.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include "autocrypt/autocryptstorage.h"
 #include "autocrypt/autocryptstorage_p.h"
@@ -21,13 +22,13 @@ void AutocryptStorageTest::initTestCase()
     qputenv("LC_ALL", "en_US.UTF-8");
     QStandardPaths::setTestModeEnabled(true);
     const QDir genericDataLocation(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation));
-    baseDir = QDir(genericDataLocation.filePath(QStringLiteral("autocrypt")));
+    baseDir = QDir(genericDataLocation.filePath(u"autocrypt"_s));
 }
 
 void AutocryptStorageTest::init()
 {
     baseDir.removeRecursively();
-    baseDir.mkpath(QStringLiteral("."));
+    baseDir.mkpath(u"."_s);
 }
 
 void AutocryptStorageTest::cleanup()
@@ -55,8 +56,8 @@ void AutocryptStorageTest::test_unknown()
 void AutocryptStorageTest::test_existing()
 {
     auto storage = AutocryptStorage::self();
-    QFile file(QLatin1StringView(DATA_DIR) + QStringLiteral("/autocrypt/empty.json"));
-    QVERIFY(file.copy(baseDir.path() + QStringLiteral("/empty%40autocrypt.example.json")));
+    QFile file(QLatin1StringView(DATA_DIR) + u"/autocrypt/empty.json"_s);
+    QVERIFY(file.copy(baseDir.path() + u"/empty%40autocrypt.example.json"_s));
 
     const auto recipient = storage->getRecipient("empty@autocrypt.example");
     const auto recipient2 = storage->getRecipient("empty@autocrypt.example");
@@ -68,9 +69,9 @@ void AutocryptStorageTest::test_existing()
 void AutocryptStorageTest::test_store()
 {
     auto storage = AutocryptStorage::self();
-    QFile data(QLatin1StringView(DATA_DIR) + QStringLiteral("/autocrypt/empty.json"));
+    QFile data(QLatin1StringView(DATA_DIR) + u"/autocrypt/empty.json"_s);
 
-    const QString fileName(QStringLiteral("store%40autocrypt.example.json"));
+    const QString fileName(u"store%40autocrypt.example.json"_s);
     QFile file(baseDir.filePath(fileName));
 
     QVERIFY(data.copy(baseDir.filePath(fileName)));
@@ -112,7 +113,7 @@ void AutocryptStorageTest::test_store()
 
 void AutocryptStorageTest::test_addRecipient()
 {
-    const QString fileName(QStringLiteral("add%40autocrypt.example.json"));
+    const QString fileName(u"add%40autocrypt.example.json"_s);
     baseDir.remove(fileName);
 
     auto storage = AutocryptStorage::self();
@@ -124,13 +125,13 @@ void AutocryptStorageTest::test_addRecipient()
     QVERIFY(document.isObject());
     const auto &obj = document.object();
 
-    QCOMPARE(obj.value(QStringLiteral("addr")).toString(), QStringLiteral("add@autocrypt.example"));
+    QCOMPARE(obj.value(u"addr"_s).toString(), u"add@autocrypt.example"_s);
 }
 
 void AutocryptStorageTest::test_deleteRecipient()
 {
     const QByteArray addr("delete@autocrypt.example");
-    const QString fileName(QStringLiteral("delete%40autocrypt.example.json"));
+    const QString fileName(u"delete%40autocrypt.example.json"_s);
     auto storage = AutocryptStorage::self();
     QVERIFY(storage->addRecipient(addr));
     QVERIFY(storage->getRecipient(addr));
@@ -145,7 +146,7 @@ void AutocryptStorageTest::test_deleteRecipient()
 void AutocryptStorageTest::test_create_basedir()
 {
     const QByteArray addr("recipient@autocrypt.example");
-    const QString fileName(QStringLiteral("recipient%40autocrypt.example.json"));
+    const QString fileName(u"recipient%40autocrypt.example.json"_s);
     auto storage = AutocryptStorage::self();
     QVERIFY(storage->addRecipient(addr));
     baseDir.removeRecursively();

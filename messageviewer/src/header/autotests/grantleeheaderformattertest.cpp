@@ -4,6 +4,7 @@
    SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
 #include "grantleeheaderformattertest.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include "../grantleeheaderformatter.h"
 #include <MessageViewer/GrantleeHeaderStyle>
@@ -33,19 +34,19 @@ static void testHeaderFile(const QString &data, const QString &absolutePath, con
         "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n"
         "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
         "<body>\n");
-    header += data + QStringLiteral("</div>\n</div>");
-    header += QStringLiteral("\n</body>\n</html>\n");
+    header += data + u"</div>\n</div>"_s;
+    header += u"\n</body>\n</html>\n"_s;
 
-    header.replace(QStringLiteral("file://") + absolutePath, QStringLiteral("file://PATHTOSTYLE"));
-    header.replace(QRegularExpression(QStringLiteral("[\t ]+")), QStringLiteral(" "));
-    header.replace(QRegularExpression(QStringLiteral("[\t ]*\n+[\t ]*")), QStringLiteral("\n"));
-    header.replace(QRegularExpression(QStringLiteral("([\n\t ])\\1+")), QStringLiteral("\\1"));
-    header.replace(QRegularExpression(QStringLiteral(">\n+[\t ]*")), QStringLiteral(">"));
-    header.replace(QRegularExpression(QStringLiteral("[\t ]*\n+[\t ]*<")), QStringLiteral("<"));
+    header.replace(u"file://"_s + absolutePath, u"file://PATHTOSTYLE"_s);
+    header.replace(QRegularExpression(u"[\t ]+"_s), u" "_s);
+    header.replace(QRegularExpression(u"[\t ]*\n+[\t ]*"_s), u"\n"_s);
+    header.replace(QRegularExpression(u"([\n\t ])\\1+"_s), u"\\1"_s);
+    header.replace(QRegularExpression(u">\n+[\t ]*"_s), u">"_s);
+    header.replace(QRegularExpression(u"[\t ]*\n+[\t ]*<"_s), u"<"_s);
     header.replace(QLatin1StringView("&nbsp;"), QLatin1StringView("NBSP_ENTITY_PLACEHOLDER")); // xmlling chokes on &nbsp;
 
-    QString outName = name + QStringLiteral(".out.html");
-    QString fName = name + QStringLiteral(".html");
+    QString outName = name + u".out.html"_s;
+    QString fName = name + u".html"_s;
 
     QVERIFY(QFile(QStringLiteral(HEADER_DATA_DIR "/") + fName).exists());
 
@@ -57,17 +58,16 @@ static void testHeaderFile(const QString &data, const QString &absolutePath, con
     }
     // TODO add proper cmake check for xmllint and diff
     {
-        const QStringList args = QStringList() << QStringLiteral("--format") << QStringLiteral("--encode") << QStringLiteral("UTF8")
-                                               << QStringLiteral("--output") << fName << outName;
-        QCOMPARE(QProcess::execute(QStringLiteral("xmllint"), args), 0);
+        const QStringList args = QStringList() << u"--format"_s << u"--encode"_s << QStringLiteral("UTF8") << u"--output"_s << fName << outName;
+        QCOMPARE(QProcess::execute(u"xmllint"_s, args), 0);
     }
 
     {
         // compare to reference file
-        const QStringList args = QStringList() << QStringLiteral("-u") << fName << QStringLiteral(HEADER_DATA_DIR "/") + fName;
+        const QStringList args = QStringList() << u"-u"_s << fName << QStringLiteral(HEADER_DATA_DIR "/") + fName;
         QProcess proc;
         proc.setProcessChannelMode(QProcess::ForwardedChannels);
-        proc.start(QStringLiteral("diff"), args);
+        proc.start(u"diff"_s, args);
         QVERIFY(proc.waitForFinished());
 
         QCOMPARE(proc.exitCode(), 0);
@@ -76,7 +76,7 @@ static void testHeaderFile(const QString &data, const QString &absolutePath, con
 
 static KMime::Message::Ptr readAndParseMail(const QString &mailFile)
 {
-    QFile file(QStringLiteral(HEADER_DATA_DIR) + QLatin1Char('/') + mailFile);
+    QFile file(QStringLiteral(HEADER_DATA_DIR) + u'/' + mailFile);
     bool openFile = file.open(QIODevice::ReadOnly);
     Q_ASSERT(openFile);
     const QByteArray data = KMime::CRLFtoLF(file.readAll());
@@ -93,18 +93,18 @@ void GrantleeHeaderFormatterTest::testInvalid()
     auto formatter = GrantleeHeaderFormatter();
     MimeTreeParser::NodeHelper nodeHelper;
     style.setNodeHelper(&nodeHelper);
-    auto aMsg = readAndParseMail(QStringLiteral("allheaders.mbox"));
+    auto aMsg = readAndParseMail(u"allheaders.mbox"_s);
 
-    QString filename = QStringLiteral("invalid");
-    QString absolutePath = QStringLiteral(HEADER_DATA_DIR) + QLatin1Char('/') + filename;
+    QString filename = u"invalid"_s;
+    QString absolutePath = QStringLiteral(HEADER_DATA_DIR) + u'/' + filename;
     QString data = formatter.toHtml(QStringList(), absolutePath, filename, &style, aMsg.data(), false);
 
-    QCOMPARE(data, QStringLiteral("Template not found, invalid"));
+    QCOMPARE(data, u"Template not found, invalid"_s);
 }
 
 void GrantleeHeaderFormatterTest::testPrint()
 {
-    QString tmplName = QStringLiteral("printtest.tmpl");
+    QString tmplName = u"printtest.tmpl"_s;
 
     auto style = GrantleeHeaderStyle();
     auto formatter = GrantleeHeaderFormatter();
@@ -112,22 +112,22 @@ void GrantleeHeaderFormatterTest::testPrint()
     style.setNodeHelper(&nodeHelper);
     KMime::Message::Ptr aMsg(new KMime::Message);
 
-    const QString &absolutePath = QStringLiteral(HEADER_DATA_DIR) + QLatin1Char('/') + tmplName;
+    const QString &absolutePath = QStringLiteral(HEADER_DATA_DIR) + u'/' + tmplName;
 
     {
         const QString &data = formatter.toHtml(QStringList(), QStringLiteral(HEADER_DATA_DIR), tmplName, &style, aMsg.data(), false);
-        testHeaderFile(QStringLiteral("<div><div>") + data, absolutePath, QStringLiteral("printtest.off"));
+        testHeaderFile(u"<div><div>"_s + data, absolutePath, u"printtest.off"_s);
     }
 
     {
         const QString &data = formatter.toHtml(QStringList(), QStringLiteral(HEADER_DATA_DIR), tmplName, &style, aMsg.data(), true);
-        testHeaderFile(QStringLiteral("<div><div>") + data, absolutePath, QStringLiteral("printtest.on"));
+        testHeaderFile(u"<div><div>"_s + data, absolutePath, u"printtest.on"_s);
     }
 }
 
 void GrantleeHeaderFormatterTest::testFancyDate()
 {
-    QString tmplName = QStringLiteral("fancydate.tmpl");
+    QString tmplName = u"fancydate.tmpl"_s;
 
     auto style = GrantleeHeaderStyle();
     auto formatter = GrantleeHeaderFormatter();
@@ -145,10 +145,10 @@ void GrantleeHeaderFormatterTest::testFancyDate()
         msg->parse();
     }
 
-    const QString &absolutePath = QStringLiteral(HEADER_DATA_DIR) + QLatin1Char('/') + tmplName;
+    const QString &absolutePath = QStringLiteral(HEADER_DATA_DIR) + u'/' + tmplName;
 
     const QString &data = formatter.toHtml(QStringList(), QStringLiteral(HEADER_DATA_DIR), tmplName, &style, msg.data(), false);
-    testHeaderFile(QStringLiteral("<div><div>") + data, absolutePath, QStringLiteral("fancydate"));
+    testHeaderFile(u"<div><div>"_s + data, absolutePath, u"fancydate"_s);
 }
 
 void GrantleeHeaderFormatterTest::testBlock_data()
@@ -156,9 +156,9 @@ void GrantleeHeaderFormatterTest::testBlock_data()
     QTest::addColumn<QString>("tmplName");
 
     QDir dir(QStringLiteral(HEADER_DATA_DIR));
-    const auto l = dir.entryList(QStringList(QStringLiteral("*.tmpl")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
+    const auto l = dir.entryList(QStringList(u"*.tmpl"_s), QDir::Files | QDir::Readable | QDir::NoSymLinks);
     for (const QString &file : l) {
-        if (!QFile::exists(dir.path() + QLatin1Char('/') + file + QStringLiteral(".html"))) {
+        if (!QFile::exists(dir.path() + u'/' + file + u".html"_s)) {
             continue;
         }
         QTest::newRow(file.toLatin1().constData()) << file;
@@ -173,12 +173,12 @@ void GrantleeHeaderFormatterTest::testBlock()
     auto formatter = GrantleeHeaderFormatter();
     MimeTreeParser::NodeHelper nodeHelper;
     style.setNodeHelper(&nodeHelper);
-    auto aMsg = readAndParseMail(QStringLiteral("headertest.mbox"));
+    auto aMsg = readAndParseMail(u"headertest.mbox"_s);
 
-    QString absolutePath = QStringLiteral(HEADER_DATA_DIR) + QLatin1Char('/') + tmplName;
+    QString absolutePath = QStringLiteral(HEADER_DATA_DIR) + u'/' + tmplName;
     QString data = formatter.toHtml(QStringList(), QStringLiteral(HEADER_DATA_DIR), tmplName, &style, aMsg.data(), false);
 
-    testHeaderFile(QStringLiteral("<div><div>") + data, absolutePath, tmplName);
+    testHeaderFile(u"<div><div>"_s + data, absolutePath, tmplName);
 }
 
 #include "moc_grantleeheaderformattertest.cpp"

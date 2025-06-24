@@ -5,6 +5,8 @@
 */
 
 #include "createphishingurldatabasejob.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "checkphishingurlutil.h"
 #include "updatedatabaseinfo.h"
 #include "webengineviewer_debug.h"
@@ -58,12 +60,12 @@ void CreatePhishingUrlDataBaseJob::start()
         deleteLater();
     } else {
         QUrlQuery query;
-        query.addQueryItem(QStringLiteral("key"), WebEngineViewer::CheckPhishingUrlUtil::apiKey());
-        QUrl safeUrl = QUrl(QStringLiteral("https://safebrowsing.googleapis.com/v4/threatListUpdates:fetch"));
+        query.addQueryItem(u"key"_s, WebEngineViewer::CheckPhishingUrlUtil::apiKey());
+        QUrl safeUrl = QUrl(u"https://safebrowsing.googleapis.com/v4/threatListUpdates:fetch"_s);
         safeUrl.setQuery(query);
         // qCDebug(WEBENGINEVIEWER_LOG) << " safeUrl" << safeUrl;
         QNetworkRequest request(safeUrl);
-        request.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
+        request.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
 
         const QByteArray baPostData = jsonRequest();
         Q_EMIT debugJson(baPostData);
@@ -114,16 +116,16 @@ QByteArray CreatePhishingUrlDataBaseJob::jsonRequest() const
     QVariantMap clientMap;
     QVariantMap map;
 
-    clientMap.insert(QStringLiteral("clientId"), QStringLiteral("KDE"));
-    clientMap.insert(QStringLiteral("clientVersion"), CheckPhishingUrlUtil::versionApps());
-    map.insert(QStringLiteral("client"), clientMap);
+    clientMap.insert(u"clientId"_s, u"KDE"_s);
+    clientMap.insert(u"clientVersion"_s, CheckPhishingUrlUtil::versionApps());
+    map.insert(u"client"_s, clientMap);
 
     QVariantList listUpdateRequests;
 
     QVariantMap threatMap;
-    threatMap.insert(QStringLiteral("platformType"), QStringLiteral("WINDOWS"));
-    threatMap.insert(QStringLiteral("threatType"), QStringLiteral("MALWARE"));
-    threatMap.insert(QStringLiteral("threatEntryType"), QStringLiteral("URL"));
+    threatMap.insert(u"platformType"_s, u"WINDOWS"_s);
+    threatMap.insert(u"threatType"_s, u"MALWARE"_s);
+    threatMap.insert(u"threatEntryType"_s, u"URL"_s);
 
     // Contrainsts
     QVariantMap contraintsMap;
@@ -131,34 +133,34 @@ QByteArray CreatePhishingUrlDataBaseJob::jsonRequest() const
     QString compressionStr;
     switch (d->mContraintsCompressionType) {
     case RiceCompression:
-        compressionStr = QStringLiteral("RICE");
+        compressionStr = u"RICE"_s;
         break;
     case RawCompression:
-        compressionStr = QStringLiteral("RAW");
+        compressionStr = u"RAW"_s;
         break;
     }
     contraintsCompressionList.append(compressionStr);
-    contraintsMap.insert(QStringLiteral("supportedCompressions"), contraintsCompressionList);
-    threatMap.insert(QStringLiteral("constraints"), contraintsMap);
+    contraintsMap.insert(u"supportedCompressions"_s, contraintsCompressionList);
+    threatMap.insert(u"constraints"_s, contraintsMap);
 
     // Define state when we want to define update database. Empty is full.
     switch (d->mDataBaseDownloadNeeded) {
     case FullDataBase:
         qCDebug(WEBENGINEVIEWER_LOG) << " full update";
-        threatMap.insert(QStringLiteral("state"), QString());
+        threatMap.insert(u"state"_s, QString());
         break;
     case UpdateDataBase:
         qCDebug(WEBENGINEVIEWER_LOG) << " update database";
         if (d->mDataBaseState.isEmpty()) {
             qCWarning(WEBENGINEVIEWER_LOG) << "Partial Download asked but database set is empty";
         }
-        threatMap.insert(QStringLiteral("state"), d->mDataBaseState);
+        threatMap.insert(u"state"_s, d->mDataBaseState);
         break;
     }
 
     listUpdateRequests.append(threatMap);
 
-    map.insert(QStringLiteral("listUpdateRequests"), listUpdateRequests);
+    map.insert(u"listUpdateRequests"_s, listUpdateRequests);
 
     const QJsonDocument postData = QJsonDocument::fromVariant(map);
     const QByteArray baPostData = postData.toJson(webengineview_useCompactJson_CreatePhishingUrlDataBaseJob ? QJsonDocument::Compact : QJsonDocument::Indented);

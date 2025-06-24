@@ -5,6 +5,8 @@
 #pragma once
 
 #include <QDir>
+using namespace Qt::Literals::StringLiterals;
+
 #include <QObject>
 
 class AutocryptStorageTest : public QObject

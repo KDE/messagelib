@@ -5,6 +5,7 @@
 */
 
 #include "defaultrenderer.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include "defaultrenderer_p.h"
 
@@ -286,15 +287,15 @@ void DefaultRendererPrivate::render(const EncapsulatedRfc822MessagePart::Ptr &mp
     if (!mp->hasSubParts()) {
         return;
     }
-    KTextTemplate::Template t = MessagePartRendererManager::self()->loadByName(QStringLiteral("encapsulatedrfc822messagepart.html"));
+    KTextTemplate::Template t = MessagePartRendererManager::self()->loadByName(u"encapsulatedrfc822messagepart.html"_s);
     KTextTemplate::Context c = MessagePartRendererManager::self()->createContext();
     QObject block;
 
-    c.insert(QStringLiteral("block"), &block);
-    block.setProperty("link", mp->nodeHelper()->asHREF(mp->message().data(), QStringLiteral("body")));
+    c.insert(u"block"_s, &block);
+    block.setProperty("link", mp->nodeHelper()->asHREF(mp->message().data(), u"body"_s));
 
-    c.insert(QStringLiteral("msgHeader"), mCreateMessageHeader(mp->message().data()));
-    c.insert(QStringLiteral("content"), QVariant::fromValue<KTextTemplateCallback>([this, mp, htmlWriter](KTextTemplate::OutputStream *) {
+    c.insert(u"msgHeader"_s, mCreateMessageHeader(mp->message().data()));
+    c.insert(u"content"_s, QVariant::fromValue<KTextTemplateCallback>([this, mp, htmlWriter](KTextTemplate::OutputStream *) {
                  renderSubParts(mp, htmlWriter);
              }));
     HTMLBlock::Ptr aBlock;
@@ -307,11 +308,11 @@ void DefaultRendererPrivate::render(const EncapsulatedRfc822MessagePart::Ptr &mp
 
 void DefaultRendererPrivate::render(const HtmlMessagePart::Ptr &mp, HtmlWriter *htmlWriter)
 {
-    KTextTemplate::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral("htmlmessagepart.html"));
+    KTextTemplate::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(u"htmlmessagepart.html"_s);
     KTextTemplate::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
     QObject block;
 
-    c.insert(QStringLiteral("block"), &block);
+    c.insert(u"block"_s, &block);
 
     auto preferredMode = mp->source()->preferredMode();
     const bool isHtmlPreferred = (preferredMode == MimeTreeParser::Util::Html) || (preferredMode == MimeTreeParser::Util::MultipartHtml);
@@ -329,15 +330,15 @@ void DefaultRendererPrivate::render(const HtmlMessagePart::Ptr &mp, HtmlWriter *
         }
 
         block.setProperty("containsExternalReferences", Util::containsExternalReferences(messageInfo.htmlSource, messageInfo.extraHead));
-        c.insert(QStringLiteral("content"), messageInfo.htmlSource);
+        c.insert(u"content"_s, messageInfo.htmlSource);
     }
 
     {
         ConvertHtmlToPlainText convert;
         convert.setHtmlString(mp->bodyHtml());
         QString plaintext = convert.generatePlainText();
-        plaintext.replace(QLatin1Char('\n'), QStringLiteral("<br>"));
-        c.insert(QStringLiteral("plaintext"), plaintext);
+        plaintext.replace(u'\n', u"<br>"_s);
+        c.insert(u"plaintext"_s, plaintext);
     }
     mp->source()->setHtmlMode(MimeTreeParser::Util::Html,
                               QList<MimeTreeParser::Util::HtmlMode>() << MimeTreeParser::Util::Html << MimeTreeParser::Util::Normal);
@@ -354,11 +355,11 @@ void DefaultRendererPrivate::renderEncrypted(const EncryptedMessagePart::Ptr &mp
 {
     KMime::Content *node = mp->content();
     const auto metaData = *mp->partMetaData();
-    KTextTemplate::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral("encryptedmessagepart.html"));
+    KTextTemplate::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(u"encryptedmessagepart.html"_s);
     KTextTemplate::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
     QObject block;
     if (node || mp->hasSubParts()) {
-        c.insert(QStringLiteral("content"), QVariant::fromValue<KTextTemplateCallback>([this, mp, htmlWriter](KTextTemplate::OutputStream *) {
+        c.insert(u"content"_s, QVariant::fromValue<KTextTemplateCallback>([this, mp, htmlWriter](KTextTemplate::OutputStream *) {
                      HTMLBlock::Ptr rBlock;
                      if (mp->content() && mp->isRoot()) {
                          rBlock = HTMLBlock::Ptr(new RootBlock(htmlWriter));
@@ -366,22 +367,22 @@ void DefaultRendererPrivate::renderEncrypted(const EncryptedMessagePart::Ptr &mp
                      renderSubParts(mp, htmlWriter);
                  }));
     } else if (!metaData.inProgress) {
-        c.insert(QStringLiteral("content"), QVariant::fromValue<KTextTemplateCallback>([this, mp, htmlWriter](KTextTemplate::OutputStream *) {
+        c.insert(u"content"_s, QVariant::fromValue<KTextTemplateCallback>([this, mp, htmlWriter](KTextTemplate::OutputStream *) {
                      renderWithFactory<MimeTreeParser::MessagePart>(mp, htmlWriter);
                  }));
     }
-    c.insert(QStringLiteral("cryptoProto"), QVariant::fromValue(mp->cryptoProto()));
+    c.insert(u"cryptoProto"_s, QVariant::fromValue(mp->cryptoProto()));
     if (!mp->decryptRecipients().empty()) {
-        c.insert(QStringLiteral("decryptedRecipients"), QVariant::fromValue(mp->decryptRecipients()));
+        c.insert(u"decryptedRecipients"_s, QVariant::fromValue(mp->decryptRecipients()));
     }
-    c.insert(QStringLiteral("block"), &block);
+    c.insert(u"block"_s, &block);
 
     block.setProperty("isPrinting", isPrinting());
     block.setProperty("detailHeader", showEncryptionDetails());
     block.setProperty("inProgress", metaData.inProgress);
     block.setProperty("isDecrypted", mp->decryptMessage());
     block.setProperty("isDecryptable", metaData.isDecryptable);
-    block.setProperty("decryptIcon", QUrl::fromLocalFile(IconNameCache::instance()->iconPath(QStringLiteral("document-decrypt"), KIconLoader::Small)).url());
+    block.setProperty("decryptIcon", QUrl::fromLocalFile(IconNameCache::instance()->iconPath(u"document-decrypt"_s, KIconLoader::Small)).url());
     block.setProperty("errorText", metaData.errorText);
     block.setProperty("noSecKey", mp->isNoSecKey());
     block.setProperty("isCompliant", metaData.isCompliant);
@@ -397,12 +398,12 @@ void DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp, Html
     auto cryptoProto = mp->cryptoProto();
 
     const bool isSMIME = cryptoProto && (cryptoProto == QGpgME::smime());
-    KTextTemplate::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral("signedmessagepart.html"));
+    KTextTemplate::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(u"signedmessagepart.html"_s);
     KTextTemplate::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
     QObject block;
 
     if (node) {
-        c.insert(QStringLiteral("content"), QVariant::fromValue<KTextTemplateCallback>([this, mp, htmlWriter](KTextTemplate::OutputStream *) {
+        c.insert(u"content"_s, QVariant::fromValue<KTextTemplateCallback>([this, mp, htmlWriter](KTextTemplate::OutputStream *) {
                      HTMLBlock::Ptr rBlock;
                      if (mp->isRoot()) {
                          rBlock = HTMLBlock::Ptr(new RootBlock(htmlWriter));
@@ -410,12 +411,12 @@ void DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp, Html
                      renderSubParts(mp, htmlWriter);
                  }));
     } else if (!metaData.inProgress) {
-        c.insert(QStringLiteral("content"), QVariant::fromValue<KTextTemplateCallback>([this, mp, htmlWriter](KTextTemplate::OutputStream *) {
+        c.insert(u"content"_s, QVariant::fromValue<KTextTemplateCallback>([this, mp, htmlWriter](KTextTemplate::OutputStream *) {
                      renderWithFactory<MimeTreeParser::MessagePart>(mp, htmlWriter);
                  }));
     }
-    c.insert(QStringLiteral("cryptoProto"), QVariant::fromValue(cryptoProto));
-    c.insert(QStringLiteral("block"), &block);
+    c.insert(u"cryptoProto"_s, QVariant::fromValue(cryptoProto));
+    c.insert(u"block"_s, &block);
 
     block.setProperty("inProgress", metaData.inProgress);
     block.setProperty("errorText", metaData.errorText);
@@ -436,9 +437,9 @@ void DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp, Html
     {
         QString keyWithWithoutURL;
         if (cryptoProto) {
-            startKeyHREF = QStringLiteral("<a href=\"key:#%1\">").arg(QString::fromLatin1(metaData.keyId));
+            startKeyHREF = u"<a href=\"key:#%1\">"_s.arg(QString::fromLatin1(metaData.keyId));
 
-            keyWithWithoutURL = QStringLiteral("%1%2</a>").arg(startKeyHREF, QString::fromLatin1(QByteArray(QByteArrayLiteral("0x") + metaData.keyId)));
+            keyWithWithoutURL = u"%1%2</a>"_s.arg(startKeyHREF, QString::fromLatin1(QByteArray(QByteArrayLiteral("0x") + metaData.keyId)));
         } else {
             keyWithWithoutURL = QLatin1StringView("0x") + QString::fromUtf8(metaData.keyId);
         }
@@ -450,7 +451,7 @@ void DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp, Html
 
     const auto signatures = metaData.verificationResult.signatures();
     if (metaData.inProgress) {
-        mClass = QStringLiteral("signInProgress");
+        mClass = u"signInProgress"_s;
     } else {
         Q_ASSERT(!signatures.empty());
         const auto signature = signatures.front(); // TODO add support for multiple signature
@@ -459,11 +460,11 @@ void DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp, Html
         statusStr = Kleo::Formatting::prettySignature(signature, {});
 
         if (summary & GpgME::Signature::Summary::Red) {
-            mClass = QStringLiteral("signErr");
+            mClass = u"signErr"_s;
         } else if (summary & GpgME::Signature::Summary::Valid) {
-            mClass = QStringLiteral("signOkKeyOk");
+            mClass = u"signOkKeyOk"_s;
         } else {
-            mClass = QStringLiteral("signWarn");
+            mClass = u"signWarn"_s;
         }
     }
 
@@ -549,11 +550,11 @@ void DefaultRendererPrivate::render(const AlternativeMessagePart::Ptr &mp, HtmlW
 void DefaultRendererPrivate::render(const CertMessagePart::Ptr &mp, HtmlWriter *htmlWriter)
 {
     const GpgME::ImportResult &importResult(mp->importResult());
-    KTextTemplate::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral("certmessagepart.html"));
+    KTextTemplate::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(u"certmessagepart.html"_s);
     KTextTemplate::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
     QObject block;
 
-    c.insert(QStringLiteral("block"), &block);
+    c.insert(u"block"_s, &block);
     block.setProperty("importError", Kleo::Formatting::errorAsString(importResult.error()));
     block.setProperty("nImp", importResult.numImported());
     block.setProperty("nUnc", importResult.numUnchanged());
@@ -874,8 +875,8 @@ void DefaultRenderer::setCreateMessageHeader(const std::function<QString(KMime::
 
 static QString renderTreeHelper(const MimeTreeParser::MessagePart::Ptr &messagePart, QString indent)
 {
-    QString ret = QStringLiteral("%1 * %3\n").arg(indent, QString::fromUtf8(messagePart->metaObject()->className()));
-    indent += QLatin1Char(' ');
+    QString ret = u"%1 * %3\n"_s.arg(indent, QString::fromUtf8(messagePart->metaObject()->className()));
+    indent += u' ';
     for (const auto &subPart : messagePart->subParts()) {
         ret += renderTreeHelper(subPart, indent);
     }

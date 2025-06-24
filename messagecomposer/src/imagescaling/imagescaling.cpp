@@ -5,6 +5,8 @@
 */
 
 #include "imagescaling.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "settings/messagecomposersettings.h"
 #include <QBuffer>
 #include <QImage>
@@ -156,7 +158,7 @@ QString ImageScaling::generateNewName()
     }
     QString type = MessageComposer::MessageComposerSettings::self()->writeFormat();
     if (type.isEmpty()) {
-        type = QStringLiteral("PNG");
+        type = u"PNG"_s;
     }
     if (d->mName.endsWith(QLatin1StringView(".png"))) {
         if (type != QLatin1StringView("PNG")) {

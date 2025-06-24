@@ -5,6 +5,8 @@
 */
 
 #include "grantleeheaderformatter.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "headerstyle_util.h"
 #include "settings/messageviewersettings.h"
 #include "utils/iconnamecache.h"
@@ -52,7 +54,7 @@ inline QVariant TypeAccessor<const KMime::Headers::Generics::AddressList *>::loo
                                                                        QString(),
                                                                        MessageCore::StringUtil::ShowLink,
                                                                        MessageCore::StringUtil::ExpandableAddresses,
-                                                                       QStringLiteral("Full") + name + QStringLiteral("AddressList"));
+                                                                       u"Full"_s + name + u"AddressList"_s);
         return val;
     }
     return {};
@@ -80,7 +82,7 @@ if (property == QLatin1StringView("nameOnly")) {
                                                                    QString(),
                                                                    MessageCore::StringUtil::ShowLink,
                                                                    MessageCore::StringUtil::ExpandableAddresses,
-                                                                   QStringLiteral("Full") + name + QStringLiteral("AddressList"));
+                                                                   u"Full"_s + name + u"AddressList"_s);
     return val;
 }
 KTEXTTEMPLATE_END_LOOKUP
@@ -107,7 +109,7 @@ inline QVariant TypeAccessor<const KMime::Headers::Generics::MailboxList *>::loo
                                                                        QString(),
                                                                        MessageCore::StringUtil::ShowLink,
                                                                        MessageCore::StringUtil::ExpandableAddresses,
-                                                                       QStringLiteral("Full") + name + QStringLiteral("AddressList"));
+                                                                       u"Full"_s + name + u"AddressList"_s);
         return val;
     }
     return {};
@@ -129,7 +131,7 @@ if (property == QLatin1StringView("nameOnly")) {
                                                                    QString(),
                                                                    MessageCore::StringUtil::ShowLink,
                                                                    MessageCore::StringUtil::ExpandableAddresses,
-                                                                   QStringLiteral("Full") + name + QStringLiteral("AddressList"));
+                                                                   u"Full"_s + name + u"AddressList"_s);
     return val;
 }
 KTEXTTEMPLATE_END_LOOKUP
@@ -404,12 +406,12 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath,
     // the "Re:" and "Fwd:" prefixes would always cause the subject to be
     // considered left-to-right, they are ignored when determining its
     // direction.
-    const QString absoluteThemePath = QUrl::fromLocalFile(absolutePath + QLatin1Char('/')).url();
-    headerObject.insert(QStringLiteral("absoluteThemePath"), absoluteThemePath);
-    headerObject.insert(QStringLiteral("applicationDir"), QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr"));
+    const QString absoluteThemePath = QUrl::fromLocalFile(absolutePath + u'/').url();
+    headerObject.insert(u"absoluteThemePath"_s, absoluteThemePath);
+    headerObject.insert(u"applicationDir"_s, QApplication::isRightToLeft() ? u"rtl"_s : QStringLiteral("ltr"));
 
     // TODO: use correct subject from nodeHelper->mailHeader
-    headerObject.insert(QStringLiteral("subjectDir"), d->headerStyleUtil.subjectDirectionString(message));
+    headerObject.insert(u"subjectDir"_s, d->headerStyleUtil.subjectDirectionString(message));
 
     QList<QByteArray> defaultHeaders;
     defaultHeaders << "to"
@@ -434,43 +436,43 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath,
             formatter = QSharedPointer<HeaderFormatter>(new DefaultHeaderFormatter(header));
         }
         const auto i18nName = formatter->i18nName();
-        const auto objectName = QString::fromUtf8(header).remove(QLatin1Char('-'));
+        const auto objectName = QString::fromUtf8(header).remove(u'-');
         if (nodeHelper->hasMailHeader(header.constData(), message)) {
             const auto value = formatter->format(message, nodeHelper, showEmoticons);
             headerObject.insert(objectName, value);
         }
         if (!i18nName.isEmpty()) {
-            headerObject.insert(objectName + QStringLiteral("i18n"), i18nName);
+            headerObject.insert(objectName + u"i18n"_s, i18nName);
         }
     }
 
     if (!nodeHelper->hasMailHeader("subject", message)) {
-        headerObject.insert(QStringLiteral("subject"), i18n("No Subject"));
+        headerObject.insert(u"subject"_s, i18n("No Subject"));
     }
 
     const QString spamHtml = d->headerStyleUtil.spamStatus(message);
     if (!spamHtml.isEmpty()) {
-        headerObject.insert(QStringLiteral("spamstatusi18n"), i18n("Spam Status:"));
-        headerObject.insert(QStringLiteral("spamHTML"), spamHtml);
+        headerObject.insert(u"spamstatusi18n"_s, i18n("Spam Status:"));
+        headerObject.insert(u"spamHTML"_s, spamHtml);
     }
 
     if (!style->vCardName().isEmpty()) {
-        headerObject.insert(QStringLiteral("vcardname"), style->vCardName());
+        headerObject.insert(u"vcardname"_s, style->vCardName());
     }
 
     if (isPrinting) {
         // provide a bit more left padding when printing
         // kolab/issue3254 (printed mail cut at the left side)
         // Use it just for testing if we are in printing mode
-        headerObject.insert(QStringLiteral("isprinting"), i18n("Printing mode"));
-        headerObject.insert(QStringLiteral("printmode"), QStringLiteral("printmode"));
+        headerObject.insert(u"isprinting"_s, i18n("Printing mode"));
+        headerObject.insert(u"printmode"_s, u"printmode"_s);
     } else {
-        headerObject.insert(QStringLiteral("screenmode"), QStringLiteral("screenmode"));
+        headerObject.insert(u"screenmode"_s, u"screenmode"_s);
     }
 
     // colors depend on if it is encapsulated or not
     QColor fontColor(Qt::white);
-    QString linkColor = QStringLiteral("white");
+    QString linkColor = u"white"_s;
 
     if (!d->activeColor.isValid()) {
         d->activeColor = KColorScheme(QPalette::Active, KColorScheme::Selection).background().color();
@@ -480,67 +482,67 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath,
     if (!style->isTopLevel()) {
         activeColorDark = d->activeColor.darker(50);
         fontColor = QColor(Qt::black);
-        linkColor = QStringLiteral("black");
+        linkColor = u"black"_s;
     }
 
     // 3D borders
-    headerObject.insert(QStringLiteral("activecolordark"), activeColorDark.name());
-    headerObject.insert(QStringLiteral("fontcolor"), fontColor.name());
-    headerObject.insert(QStringLiteral("linkcolor"), linkColor);
+    headerObject.insert(u"activecolordark"_s, activeColorDark.name());
+    headerObject.insert(u"fontcolor"_s, fontColor.name());
+    headerObject.insert(u"linkcolor"_s, linkColor);
 
     MessageViewer::HeaderStyleUtil::xfaceSettings xface = d->headerStyleUtil.xface(style, message);
     if (!xface.photoURL.isEmpty()) {
-        headerObject.insert(QStringLiteral("photowidth"), xface.photoWidth);
-        headerObject.insert(QStringLiteral("photoheight"), xface.photoHeight);
-        headerObject.insert(QStringLiteral("photourl"), xface.photoURL);
+        headerObject.insert(u"photowidth"_s, xface.photoWidth);
+        headerObject.insert(u"photoheight"_s, xface.photoHeight);
+        headerObject.insert(u"photourl"_s, xface.photoURL);
     }
 
     for (QString header : std::as_const(displayExtraHeaders)) {
         const QByteArray baHeader = header.toLocal8Bit();
         if (auto hrd = message->headerByType(baHeader.constData())) {
             // Grantlee doesn't support '-' in variable name => remove it.
-            header.remove(QLatin1Char('-'));
+            header.remove(u'-');
             headerObject.insert(header, hrd->asUnicodeString());
         }
     }
 
-    headerObject.insert(QStringLiteral("vcardi18n"), i18n("[vcard]"));
-    headerObject.insert(QStringLiteral("readOnlyMessage"), style->readOnlyMessage());
+    headerObject.insert(u"vcardi18n"_s, i18n("[vcard]"));
+    headerObject.insert(u"readOnlyMessage"_s, style->readOnlyMessage());
 
     const QString attachmentHtml = style->attachmentHtml();
     const bool messageHasAttachment = !attachmentHtml.isEmpty();
-    headerObject.insert(QStringLiteral("hasAttachment"), messageHasAttachment);
-    headerObject.insert(QStringLiteral("attachmentHtml"), attachmentHtml);
-    headerObject.insert(QStringLiteral("attachmentI18n"), i18n("Attachments:"));
+    headerObject.insert(u"hasAttachment"_s, messageHasAttachment);
+    headerObject.insert(u"attachmentHtml"_s, attachmentHtml);
+    headerObject.insert(u"attachmentI18n"_s, i18n("Attachments:"));
 
     if (messageHasAttachment) {
-        const QString iconPath = MessageViewer::IconNameCache::instance()->iconPath(QStringLiteral("mail-attachment"), KIconLoader::Toolbar);
-        const QString html = QStringLiteral("<img height=\"%2\" width=\"%2\" src=\"%1\"></a>").arg(iconPath, QString::number(d->iconSize));
-        headerObject.insert(QStringLiteral("attachmentIcon"), html);
+        const QString iconPath = MessageViewer::IconNameCache::instance()->iconPath(u"mail-attachment"_s, KIconLoader::Toolbar);
+        const QString html = u"<img height=\"%2\" width=\"%2\" src=\"%1\"></a>"_s.arg(iconPath, QString::number(d->iconSize));
+        headerObject.insert(u"attachmentIcon"_s, html);
     }
 
     const bool messageIsSigned = KMime::isSigned(message);
-    headerObject.insert(QStringLiteral("messageIsSigned"), messageIsSigned);
+    headerObject.insert(u"messageIsSigned"_s, messageIsSigned);
     if (messageIsSigned) {
-        const QString iconPath = MessageViewer::IconNameCache::instance()->iconPath(QStringLiteral("mail-signed"), KIconLoader::Toolbar);
-        const QString html = QStringLiteral("<img height=\"%2\" width=\"%2\" src=\"%1\"></a>").arg(iconPath, QString::number(d->iconSize));
-        headerObject.insert(QStringLiteral("signedIcon"), html);
+        const QString iconPath = MessageViewer::IconNameCache::instance()->iconPath(u"mail-signed"_s, KIconLoader::Toolbar);
+        const QString html = u"<img height=\"%2\" width=\"%2\" src=\"%1\"></a>"_s.arg(iconPath, QString::number(d->iconSize));
+        headerObject.insert(u"signedIcon"_s, html);
     }
 
     const bool messageIsEncrypted = KMime::isEncrypted(message);
-    headerObject.insert(QStringLiteral("messageIsEncrypted"), messageIsEncrypted);
+    headerObject.insert(u"messageIsEncrypted"_s, messageIsEncrypted);
     if (messageIsEncrypted) {
-        const QString iconPath = MessageViewer::IconNameCache::instance()->iconPath(QStringLiteral("mail-encrypted"), KIconLoader::Toolbar);
-        const QString html = QStringLiteral("<img height=\"%2\" width=\"%2\" src=\"%1\"></a>").arg(iconPath, QString::number(d->iconSize));
-        headerObject.insert(QStringLiteral("encryptedIcon"), html);
+        const QString iconPath = MessageViewer::IconNameCache::instance()->iconPath(u"mail-encrypted"_s, KIconLoader::Toolbar);
+        const QString html = u"<img height=\"%2\" width=\"%2\" src=\"%1\"></a>"_s.arg(iconPath, QString::number(d->iconSize));
+        headerObject.insert(u"encryptedIcon"_s, html);
     }
 
     const bool messageHasSecurityInfo = messageIsEncrypted || messageIsSigned;
-    headerObject.insert(QStringLiteral("messageHasSecurityInfo"), messageHasSecurityInfo);
-    headerObject.insert(QStringLiteral("messageHasSecurityInfoI18n"), i18n("Security:"));
+    headerObject.insert(u"messageHasSecurityInfo"_s, messageHasSecurityInfo);
+    headerObject.insert(u"messageHasSecurityInfoI18n"_s, i18n("Security:"));
 
     QVariantHash mapping;
-    mapping.insert(QStringLiteral("header"), headerObject);
+    mapping.insert(u"header"_s, headerObject);
     KTextTemplate::Context context(mapping);
 
     return headerTemplate->render(&context);

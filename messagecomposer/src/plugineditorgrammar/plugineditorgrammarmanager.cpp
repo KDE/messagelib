@@ -5,6 +5,8 @@
 */
 
 #include "plugineditorgrammarmanager.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "messagecomposer_debug.h"
 #include "plugineditorgrammarcustomtoolsviewinterface.h"
 #include <KPluginFactory>
@@ -31,7 +33,7 @@ namespace
 {
 QString pluginEditorGrammarVersion()
 {
-    return QStringLiteral("1.0");
+    return u"1.0"_s;
 }
 }
 
@@ -61,12 +63,12 @@ private:
 
 QString PluginEditorGrammarManagerPrivate::configGroupName() const
 {
-    return QStringLiteral("KMailPluginEditorGrammar");
+    return u"KMailPluginEditorGrammar"_s;
 }
 
 QString PluginEditorGrammarManagerPrivate::configPrefixSettingKey() const
 {
-    return QStringLiteral("PluginEditorGrammar");
+    return u"PluginEditorGrammar"_s;
 }
 
 QList<PimCommon::PluginUtilData> PluginEditorGrammarManagerPrivate::pluginsDataList() const
@@ -76,7 +78,7 @@ QList<PimCommon::PluginUtilData> PluginEditorGrammarManagerPrivate::pluginsDataL
 
 void PluginEditorGrammarManagerPrivate::initializePlugins()
 {
-    const QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("pim6/kmail/plugineditorgrammar"));
+    const QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(u"pim6/kmail/plugineditorgrammar"_s);
 
     const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
 

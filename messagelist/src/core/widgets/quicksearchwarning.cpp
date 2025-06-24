@@ -30,7 +30,7 @@ QuickSearchWarning::~QuickSearchWarning() = default;
 void QuickSearchWarning::setSearchText(const QString &text)
 {
     if (!MessageList::MessageListSettings::quickSearchWarningDoNotShowAgain()) {
-        const QList<QStringView> lstText = QStringView(text).split(QLatin1Char(' '), Qt::SkipEmptyParts);
+        const QList<QStringView> lstText = QStringView(text).split(u' ', Qt::SkipEmptyParts);
         bool foundLessThanThreeCharacters = false;
         for (const QStringView splitText : lstText) {
             if (splitText.trimmed().size() < 3) {

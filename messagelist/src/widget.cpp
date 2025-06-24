@@ -40,6 +40,7 @@
 #include <Akonadi/TagAttribute>
 #include <Akonadi/TagFetchJob>
 #include <Akonadi/TagFetchScope>
+using namespace Qt::Literals::StringLiterals;
 
 namespace MessageList
 {
@@ -106,7 +107,7 @@ bool MessageList::Widget::canAcceptDrag(const QDropEvent *e)
             return false;
         } else { // Yay, this is an item!
             QUrlQuery query(url);
-            const QString type = query.queryItemValue(QStringLiteral("type"));
+            const QString type = query.queryItemValue(u"type"_s);
             if (!target.contentMimeTypes().contains(type)) {
                 return false;
             }
@@ -191,17 +192,15 @@ void MessageList::Widget::setQuickSearchClickMessage(const QString &msg)
 void MessageList::Widget::slotTagsFetched(const Akonadi::Tag::List &tags)
 {
     populateStatusFilterCombo();
-    KConfigGroup conf(MessageList::MessageListSettings::self()->config(), QStringLiteral("MessageListView"));
-    const QString tagSelected = conf.readEntry(QStringLiteral("TagSelected"));
+    KConfigGroup conf(MessageList::MessageListSettings::self()->config(), u"MessageListView"_s);
+    const QString tagSelected = conf.readEntry(u"TagSelected"_s);
     if (tagSelected.isEmpty()) {
         setCurrentStatusFilterItem();
         return;
     }
-    const QStringList tagSelectedLst = tagSelected.split(QLatin1Char(','));
+    const QStringList tagSelectedLst = tagSelected.split(u',');
 
-    addMessageTagItem(QIcon::fromTheme(QStringLiteral("mail-flag")).pixmap(16, 16),
-                      i18nc("Item in list of Akonadi tags, to show all e-mails", "All"),
-                      QVariant());
+    addMessageTagItem(QIcon::fromTheme(u"mail-flag"_s).pixmap(16, 16), i18nc("Item in list of Akonadi tags, to show all e-mails", "All"), QVariant());
 
     QStringList tagFound;
     for (const Akonadi::Tag &akonadiTag : tags) {
@@ -211,11 +210,11 @@ void MessageList::Widget::slotTagsFetched(const Akonadi::Tag::List &tags)
             const QString label = akonadiTag.name();
             const QString id = tagUrl;
             const auto attr = akonadiTag.attribute<Akonadi::TagAttribute>();
-            const QString iconName = attr ? attr->iconName() : QStringLiteral("mail-tagged");
+            const QString iconName = attr ? attr->iconName() : u"mail-tagged"_s;
             addMessageTagItem(QIcon::fromTheme(iconName).pixmap(16, 16), label, QVariant(id));
         }
     }
-    conf.writeEntry(QStringLiteral("TagSelected"), tagFound);
+    conf.writeEntry(u"TagSelected"_s, tagFound);
     conf.sync();
 
     setCurrentStatusFilterItem();
@@ -286,7 +285,7 @@ void MessageList::Widget::viewMessageListContextPopupRequest(const QList<Message
         return;
     }
 
-    QMenu *popup = static_cast<QMenu *>(d->mXmlGuiClient->factory()->container(QStringLiteral("akonadi_messagelist_contextmenu"), d->mXmlGuiClient));
+    QMenu *popup = static_cast<QMenu *>(d->mXmlGuiClient->factory()->container(u"akonadi_messagelist_contextmenu"_s, d->mXmlGuiClient));
     if (popup) {
         popup->exec(globalPos);
     }
@@ -399,11 +398,10 @@ void MessageList::Widget::viewDropEvent(QDropEvent *e)
             action = DragMove;
         } else {
             QMenu menu;
-            QAction *moveAction =
-                menu.addAction(QIcon::fromTheme(QStringLiteral("edit-move"), QIcon::fromTheme(QStringLiteral("go-jump"))), i18n("&Move Here"));
-            QAction *copyAction = menu.addAction(QIcon::fromTheme(QStringLiteral("edit-copy")), i18n("&Copy Here"));
+            QAction *moveAction = menu.addAction(QIcon::fromTheme(u"edit-move"_s, QIcon::fromTheme(QStringLiteral("go-jump"))), i18n("&Move Here"));
+            QAction *copyAction = menu.addAction(QIcon::fromTheme(u"edit-copy"_s), i18n("&Copy Here"));
             menu.addSeparator();
-            menu.addAction(QIcon::fromTheme(QStringLiteral("dialog-cancel")), i18n("C&ancel"));
+            menu.addAction(QIcon::fromTheme(u"dialog-cancel"_s), i18n("C&ancel"));
 
             QAction *menuChoice = menu.exec(QCursor::pos());
             if (menuChoice == moveAction) {
@@ -464,7 +462,7 @@ void MessageList::Widget::viewStartDragRequest()
         const Akonadi::Item i = d->itemForRow(mi->currentModelIndexRow());
         QUrl url = i.url(Akonadi::Item::UrlWithMimeType);
         QUrlQuery query(url);
-        query.addQueryItem(QStringLiteral("parent"), QString::number(mi->parentCollectionId()));
+        query.addQueryItem(u"parent"_s, QString::number(mi->parentCollectionId()));
         url.setQuery(query);
         urls << url;
     }
@@ -478,9 +476,9 @@ void MessageList::Widget::viewStartDragRequest()
     // Set pixmap
     QPixmap pixmap;
     if (selection.size() == 1) {
-        pixmap = QIcon::fromTheme(QStringLiteral("mail-message")).pixmap(style()->pixelMetric(QStyle::PM_SmallIconSize));
+        pixmap = QIcon::fromTheme(u"mail-message"_s).pixmap(style()->pixelMetric(QStyle::PM_SmallIconSize));
     } else {
-        pixmap = QIcon::fromTheme(QStringLiteral("document-multiple")).pixmap(style()->pixelMetric(QStyle::PM_SmallIconSize));
+        pixmap = QIcon::fromTheme(u"document-multiple"_s).pixmap(style()->pixelMetric(QStyle::PM_SmallIconSize));
     }
 
     // Calculate hotspot (as in Konqueror)

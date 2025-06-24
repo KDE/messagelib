@@ -3,6 +3,8 @@
    SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
 #include "objecttreeparsertest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "setupenv.h"
 #include "util.h"
 
@@ -23,7 +25,7 @@ void ObjectTreeParserTester::initTestCase()
 
 void ObjectTreeParserTester::test_HTMLOnlyText()
 {
-    KMime::Message::Ptr msg = Test::readAndParseMail(QStringLiteral("htmlonly.mbox"));
+    KMime::Message::Ptr msg = Test::readAndParseMail(u"htmlonly.mbox"_s);
 
     QCOMPARE(msg->subject()->as7BitString(false).constData(), "HTML test");
     QCOMPARE(msg->contents().size(), 0);
@@ -49,7 +51,7 @@ void ObjectTreeParserTester::test_HTMLOnlyText()
 
 void ObjectTreeParserTester::test_HTMLExternal()
 {
-    KMime::Message::Ptr msg = Test::readAndParseMail(QStringLiteral("htmlonlyexternal.mbox"));
+    KMime::Message::Ptr msg = Test::readAndParseMail(u"htmlonlyexternal.mbox"_s);
 
     QCOMPARE(msg->subject()->as7BitString(false).constData(), "HTML test");
     QCOMPARE(msg->contents().size(), 0);
@@ -95,7 +97,7 @@ void ObjectTreeParserTester::test_HTMLExternal()
 
 void ObjectTreeParserTester::test_Alternative()
 {
-    KMime::Message::Ptr msg = Test::readAndParseMail(QStringLiteral("alternative.mbox"));
+    KMime::Message::Ptr msg = Test::readAndParseMail(u"alternative.mbox"_s);
     QCOMPARE(msg->contents().size(), 2);
     {
         BufferedHtmlWriter testWriter;
@@ -136,7 +138,7 @@ void ObjectTreeParserTester::test_Alternative()
     }
 
     msg.clear();
-    msg = Test::readAndParseMail(QStringLiteral("alternative-notext.mbox"));
+    msg = Test::readAndParseMail(u"alternative-notext.mbox"_s);
     QCOMPARE(msg->contents().size(), 1);
     {
         BufferedHtmlWriter testWriter;

@@ -5,6 +5,8 @@
 */
 
 #include "developertoolwidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "developertool/developertoolwidget.h"
 #include <QTest>
 #include <QVBoxLayout>
@@ -19,14 +21,14 @@ DeveloperToolWidgetTest::DeveloperToolWidgetTest(QObject *parent)
 void DeveloperToolWidgetTest::shouldHaveDefaultValues()
 {
     WebEngineViewer::DeveloperToolWidget w;
-    auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = w.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins(0, 0, 0, 0));
 
-    auto mWebEngineView = w.findChild<QWebEngineView *>(QStringLiteral("mWebEngineView"));
+    auto mWebEngineView = w.findChild<QWebEngineView *>(u"mWebEngineView"_s);
     QVERIFY(mWebEngineView);
     mainLayout->addWidget(mWebEngineView);
-    auto mEnginePage = w.findChild<QWebEnginePage *>(QStringLiteral("mEnginePage"));
+    auto mEnginePage = w.findChild<QWebEnginePage *>(u"mEnginePage"_s);
     QVERIFY(mEnginePage);
     QCOMPARE(mWebEngineView->page(), mEnginePage);
     QVERIFY(mEnginePage->settings()->testAttribute(QWebEngineSettings::JavascriptEnabled));

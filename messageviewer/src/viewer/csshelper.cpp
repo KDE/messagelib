@@ -8,6 +8,8 @@
 */
 
 #include "csshelper.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "settings/messageviewersettings.h"
 
 #include <MessageCore/ColorUtil>
@@ -64,8 +66,8 @@ CSSHelper::CSSHelper(const QPaintDevice *pd)
 
     KConfig *config = MessageViewer::MessageViewerSettings::self()->config();
 
-    KConfigGroup reader(config, QStringLiteral("Reader"));
-    KConfigGroup fonts(config, QStringLiteral("Fonts"));
+    KConfigGroup reader(config, u"Reader"_s);
+    KConfigGroup fonts(config, u"Fonts"_s);
 
     mRecycleQuoteColors = reader.readEntry("RecycleQuoteColors", false);
 
@@ -122,5 +124,5 @@ QString CSSHelper::htmlHead(const HtmlHeadSettings &htmlHeadSettings) const
 
 QString CSSHelper::endBodyHtml() const
 {
-    return QStringLiteral("</body></html>");
+    return u"</body></html>"_s;
 }

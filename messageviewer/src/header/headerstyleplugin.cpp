@@ -5,6 +5,7 @@
 */
 
 #include "headerstyleplugin.h"
+using namespace Qt::Literals::StringLiterals;
 
 using namespace MessageViewer;
 class MessageViewer::HeaderStylePluginPrivate
@@ -31,7 +32,7 @@ bool HeaderStylePlugin::hasMargin() const
 
 QString HeaderStylePlugin::alignment() const
 {
-    return QStringLiteral("left");
+    return u"left"_s;
 }
 
 int HeaderStylePlugin::elidedTextSize() const

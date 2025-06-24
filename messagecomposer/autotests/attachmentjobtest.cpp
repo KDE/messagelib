@@ -5,6 +5,8 @@
 */
 
 #include "attachmentjobtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "qtest_messagecomposer.h"
 
 #include <QDebug>
@@ -29,9 +31,9 @@ QTEST_MAIN(AttachmentJobTest)
 
 void AttachmentJobTest::testAttachment()
 {
-    const QString name = QStringLiteral("name");
-    const QString fileName = QStringLiteral("filename");
-    const QString description = QStringLiteral("long long long description...");
+    const QString name = u"name"_s;
+    const QString fileName = u"filename"_s;
+    const QString description = u"long long long description..."_s;
     const QByteArray mimeType("x-some/x-type");
     const QByteArray data("la la la");
 

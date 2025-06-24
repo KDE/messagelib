@@ -5,6 +5,8 @@
 */
 
 #include "templateparserextracthtmlinfotest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "templateparserextracthtmlinfo.h"
 
 #include <QSignalSpy>
@@ -37,7 +39,7 @@ void TemplateParserExtractHtmlInfoTest::shouldReturnNullResult()
 void TemplateParserExtractHtmlInfoTest::shouldReturnNullButWithTemplate()
 {
     auto info = new TemplateParser::TemplateParserExtractHtmlInfo;
-    const QString templateStr = QStringLiteral("foo");
+    const QString templateStr = u"foo"_s;
     info->setTemplate(templateStr);
     QSignalSpy spy(info, &TemplateParser::TemplateParserExtractHtmlInfo::finished);
     info->start();

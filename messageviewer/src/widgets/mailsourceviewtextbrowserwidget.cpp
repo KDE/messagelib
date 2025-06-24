@@ -9,6 +9,8 @@
  */
 
 #include "mailsourceviewtextbrowserwidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "findbar/findbarsourceview.h"
 #include "messageviewer/messageviewerutil.h"
 #include "messageviewer_debug.h"
@@ -129,10 +131,7 @@ void MailSourceViewTextBrowser::contextMenuEvent(QContextMenuEvent *event)
         popup->addAction(KStandardActions::find(this, &MailSourceViewTextBrowser::findText, this));
 #ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
         popup->addSeparator();
-        popup->addAction(QIcon::fromTheme(QStringLiteral("preferences-desktop-text-to-speech")),
-                         i18n("Speak Text"),
-                         this,
-                         &MailSourceViewTextBrowser::slotSpeakText);
+        popup->addAction(QIcon::fromTheme(u"preferences-desktop-text-to-speech"_s), i18n("Speak Text"), this, &MailSourceViewTextBrowser::slotSpeakText);
 #endif
         popup->addSeparator();
         popup->addAction(KStandardActions::saveAs(this, &MailSourceViewTextBrowser::slotSaveAs, this));

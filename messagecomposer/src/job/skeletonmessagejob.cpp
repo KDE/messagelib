@@ -5,6 +5,8 @@
 */
 
 #include "job/skeletonmessagejob.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "settings/messagecomposersettings.h"
 
 #include "job/jobbase_p.h"
@@ -207,9 +209,9 @@ void SkeletonMessageJobPrivate::doStart()
     // Urgent header
     if (infoPart->urgent()) {
         auto urg1 = new KMime::Headers::Generic("X-PRIORITY");
-        urg1->fromUnicodeString(QStringLiteral("2 (High)"));
+        urg1->fromUnicodeString(u"2 (High)"_s);
         auto urg2 = new KMime::Headers::Generic("Priority");
-        urg2->fromUnicodeString(QStringLiteral("urgent"));
+        urg2->fromUnicodeString(u"urgent"_s);
         message->setHeader(urg1);
         message->setHeader(urg2);
     }

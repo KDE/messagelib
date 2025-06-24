@@ -5,6 +5,8 @@
 */
 
 #include "protectedheaderstest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "setupenv.h"
 #include "util.h"
 
@@ -29,9 +31,9 @@ void ProtectedHeadersTest::testMailHeaderAsBase_data()
 {
     QTest::addColumn<QString>("mailFileName");
 
-    QTest::newRow("encrypted") << QStringLiteral("openpgp-encrypted-protected-headers.mbox");
-    QTest::newRow("signed") << QStringLiteral("openpgp-signed-protected-headers.mbox");
-    QTest::newRow("encrypted+signed") << QStringLiteral("openpgp-encrypted+signed-protected-headers.mbox");
+    QTest::newRow("encrypted") << u"openpgp-encrypted-protected-headers.mbox"_s;
+    QTest::newRow("signed") << u"openpgp-signed-protected-headers.mbox"_s;
+    QTest::newRow("encrypted+signed") << u"openpgp-encrypted+signed-protected-headers.mbox"_s;
 }
 
 void ProtectedHeadersTest::testMailHeaderAsBase()
@@ -45,32 +47,32 @@ void ProtectedHeadersTest::testMailHeaderAsBase()
     otp.parseObjectTree(originalMessage.data());
 
     // test overwrite
-    QCOMPARE(nodeHelper.mailHeaderAsBase("from", originalMessage.data())->asUnicodeString(), QStringLiteral("you@example.com"));
-    QCOMPARE(nodeHelper.mailHeaderAsBase("to", originalMessage.data())->asUnicodeString(), QStringLiteral("me@example.com"));
-    QCOMPARE(nodeHelper.mailHeaderAsBase("subject", originalMessage.data())->asUnicodeString(), QStringLiteral("hidden subject"));
-    QCOMPARE(nodeHelper.mailHeaderAsBase("cc", originalMessage.data())->asUnicodeString(), QStringLiteral("cc@example.com"));
+    QCOMPARE(nodeHelper.mailHeaderAsBase("from", originalMessage.data())->asUnicodeString(), u"you@example.com"_s);
+    QCOMPARE(nodeHelper.mailHeaderAsBase("to", originalMessage.data())->asUnicodeString(), u"me@example.com"_s);
+    QCOMPARE(nodeHelper.mailHeaderAsBase("subject", originalMessage.data())->asUnicodeString(), u"hidden subject"_s);
+    QCOMPARE(nodeHelper.mailHeaderAsBase("cc", originalMessage.data())->asUnicodeString(), u"cc@example.com"_s);
     QCOMPARE(nodeHelper.dateHeader(originalMessage.data()), QDateTime(QDate(2018, 1, 2), QTime(3, 4, 5)));
 
     // test protected only headers
-    QCOMPARE(nodeHelper.mailHeaderAsBase("message-id", originalMessage.data())->asUnicodeString(), QStringLiteral("<myhiddenreference@me>"));
-    QCOMPARE(nodeHelper.mailHeaderAsBase("references", originalMessage.data())->asUnicodeString(), QStringLiteral("<hiddenreference@hidden>"));
-    QCOMPARE(nodeHelper.mailHeaderAsBase("in-reply-to", originalMessage.data())->asUnicodeString(), QStringLiteral("<hiddenreference@hidden>"));
+    QCOMPARE(nodeHelper.mailHeaderAsBase("message-id", originalMessage.data())->asUnicodeString(), u"<myhiddenreference@me>"_s);
+    QCOMPARE(nodeHelper.mailHeaderAsBase("references", originalMessage.data())->asUnicodeString(), u"<hiddenreference@hidden>"_s);
+    QCOMPARE(nodeHelper.mailHeaderAsBase("in-reply-to", originalMessage.data())->asUnicodeString(), u"<hiddenreference@hidden>"_s);
 
     // test non-existing headers
     QCOMPARE(nodeHelper.mailHeaderAsBase("invalid", originalMessage.data()), nullptr);
 
     // test envelope headers
     QCOMPARE(nodeHelper.mailHeaderAsBase("user-agent", originalMessage.data())->asUnicodeString(),
-             QStringLiteral("KMail/4.6 pre (Linux/2.6.34-rc2-2-default; KDE/4.5.60; x86_64; ; )"));
+             u"KMail/4.6 pre (Linux/2.6.34-rc2-2-default; KDE/4.5.60; x86_64; ; )"_s);
 }
 
 void ProtectedHeadersTest::testHeaders_data()
 {
     QTest::addColumn<QString>("mailFileName");
 
-    QTest::newRow("encrypted") << QStringLiteral("openpgp-encrypted-protected-headers.mbox");
-    QTest::newRow("signed") << QStringLiteral("openpgp-signed-protected-headers.mbox");
-    QTest::newRow("encrypted+signed") << QStringLiteral("openpgp-encrypted+signed-protected-headers.mbox");
+    QTest::newRow("encrypted") << u"openpgp-encrypted-protected-headers.mbox"_s;
+    QTest::newRow("signed") << u"openpgp-signed-protected-headers.mbox"_s;
+    QTest::newRow("encrypted+signed") << u"openpgp-encrypted+signed-protected-headers.mbox"_s;
 }
 
 void ProtectedHeadersTest::testHeaders()
@@ -85,23 +87,23 @@ void ProtectedHeadersTest::testHeaders()
 
     // test overwrite
     QCOMPARE(nodeHelper.headers("from", originalMessage.data()).size(), 1);
-    QCOMPARE(nodeHelper.headers("from", originalMessage.data())[0]->asUnicodeString(), QStringLiteral("you@example.com"));
+    QCOMPARE(nodeHelper.headers("from", originalMessage.data())[0]->asUnicodeString(), u"you@example.com"_s);
     QCOMPARE(nodeHelper.headers("to", originalMessage.data()).size(), 1);
-    QCOMPARE(nodeHelper.headers("to", originalMessage.data())[0]->asUnicodeString(), QStringLiteral("me@example.com"));
+    QCOMPARE(nodeHelper.headers("to", originalMessage.data())[0]->asUnicodeString(), u"me@example.com"_s);
     QCOMPARE(nodeHelper.headers("subject", originalMessage.data()).size(), 1);
-    QCOMPARE(nodeHelper.headers("subject", originalMessage.data())[0]->asUnicodeString(), QStringLiteral("hidden subject"));
+    QCOMPARE(nodeHelper.headers("subject", originalMessage.data())[0]->asUnicodeString(), u"hidden subject"_s);
     QCOMPARE(nodeHelper.headers("cc", originalMessage.data()).size(), 1);
-    QCOMPARE(nodeHelper.headers("cc", originalMessage.data())[0]->asUnicodeString(), QStringLiteral("cc@example.com"));
+    QCOMPARE(nodeHelper.headers("cc", originalMessage.data())[0]->asUnicodeString(), u"cc@example.com"_s);
     QCOMPARE(nodeHelper.headers("date", originalMessage.data()).size(), 1);
     QCOMPARE(nodeHelper.dateHeader(originalMessage.data()), QDateTime(QDate(2018, 1, 2), QTime(3, 4, 5)));
 
     // test protected only headers
     QCOMPARE(nodeHelper.headers("message-id", originalMessage.data()).size(), 1);
-    QCOMPARE(nodeHelper.headers("message-id", originalMessage.data())[0]->asUnicodeString(), QStringLiteral("<myhiddenreference@me>"));
+    QCOMPARE(nodeHelper.headers("message-id", originalMessage.data())[0]->asUnicodeString(), u"<myhiddenreference@me>"_s);
     QCOMPARE(nodeHelper.headers("references", originalMessage.data()).size(), 1);
-    QCOMPARE(nodeHelper.headers("references", originalMessage.data())[0]->asUnicodeString(), QStringLiteral("<hiddenreference@hidden>"));
+    QCOMPARE(nodeHelper.headers("references", originalMessage.data())[0]->asUnicodeString(), u"<hiddenreference@hidden>"_s);
     QCOMPARE(nodeHelper.headers("in-reply-to", originalMessage.data()).size(), 1);
-    QCOMPARE(nodeHelper.headers("in-reply-to", originalMessage.data())[0]->asUnicodeString(), QStringLiteral("<hiddenreference@hidden>"));
+    QCOMPARE(nodeHelper.headers("in-reply-to", originalMessage.data())[0]->asUnicodeString(), u"<hiddenreference@hidden>"_s);
 
     // test non-existing headers
     QCOMPARE(nodeHelper.headers("invalid", originalMessage.data()).isEmpty(), true);
@@ -109,16 +111,16 @@ void ProtectedHeadersTest::testHeaders()
     // test envelope headers
     QCOMPARE(nodeHelper.headers("user-agent", originalMessage.data()).size(), 1);
     QCOMPARE(nodeHelper.headers("user-agent", originalMessage.data())[0]->asUnicodeString(),
-             QStringLiteral("KMail/4.6 pre (Linux/2.6.34-rc2-2-default; KDE/4.5.60; x86_64; ; )"));
+             u"KMail/4.6 pre (Linux/2.6.34-rc2-2-default; KDE/4.5.60; x86_64; ; )"_s);
 }
 
 void ProtectedHeadersTest::testMailHeaderAsAddresslist_data()
 {
     QTest::addColumn<QString>("mailFileName");
 
-    QTest::newRow("encrypted") << QStringLiteral("openpgp-encrypted-protected-headers.mbox");
-    QTest::newRow("signed") << QStringLiteral("openpgp-signed-protected-headers.mbox");
-    QTest::newRow("encrypted+signed") << QStringLiteral("openpgp-encrypted+signed-protected-headers.mbox");
+    QTest::newRow("encrypted") << u"openpgp-encrypted-protected-headers.mbox"_s;
+    QTest::newRow("signed") << u"openpgp-signed-protected-headers.mbox"_s;
+    QTest::newRow("encrypted+signed") << u"openpgp-encrypted+signed-protected-headers.mbox"_s;
 }
 
 void ProtectedHeadersTest::testMailHeaderAsAddresslist()
@@ -132,11 +134,11 @@ void ProtectedHeadersTest::testMailHeaderAsAddresslist()
     otp.parseObjectTree(originalMessage.data());
 
     // test overwrite
-    QCOMPARE(nodeHelper.mailHeaderAsAddressList("from", originalMessage.data())->displayNames(), QStringList() << QStringLiteral("you@example.com"));
+    QCOMPARE(nodeHelper.mailHeaderAsAddressList("from", originalMessage.data())->displayNames(), QStringList() << u"you@example.com"_s);
     QVERIFY(nodeHelper.mailHeaderAsAddressList("subject", originalMessage.data()));
 
     // test protected only headers
-    QCOMPARE(nodeHelper.mailHeaderAsAddressList("message-id", originalMessage.data())->displayNames(), QStringList() << QStringLiteral("myhiddenreference@me"));
+    QCOMPARE(nodeHelper.mailHeaderAsAddressList("message-id", originalMessage.data())->displayNames(), QStringList() << u"myhiddenreference@me"_s);
 
     // test non-existing headers
     QCOMPARE(nodeHelper.mailHeaderAsAddressList("invalid", originalMessage.data()), nullptr);
@@ -149,9 +151,9 @@ void ProtectedHeadersTest::testhasMailHeader_data()
 {
     QTest::addColumn<QString>("mailFileName");
 
-    QTest::newRow("encrypted") << QStringLiteral("openpgp-encrypted-protected-headers.mbox");
-    QTest::newRow("signed") << QStringLiteral("openpgp-signed-protected-headers.mbox");
-    QTest::newRow("encrypted+signed") << QStringLiteral("openpgp-encrypted+signed-protected-headers.mbox");
+    QTest::newRow("encrypted") << u"openpgp-encrypted-protected-headers.mbox"_s;
+    QTest::newRow("signed") << u"openpgp-signed-protected-headers.mbox"_s;
+    QTest::newRow("encrypted+signed") << u"openpgp-encrypted+signed-protected-headers.mbox"_s;
 }
 
 void ProtectedHeadersTest::testhasMailHeader()
@@ -184,12 +186,12 @@ void ProtectedHeadersTest::testMessagePartsOfMailHeader_data()
 
     QStringList encryptedPart;
     QStringList signedPart;
-    encryptedPart << QStringLiteral("MimeTreeParser::EncryptedMessagePart");
-    signedPart << QStringLiteral("MimeTreeParser::SignedMessagePart");
+    encryptedPart << u"MimeTreeParser::EncryptedMessagePart"_s;
+    signedPart << u"MimeTreeParser::SignedMessagePart"_s;
 
-    QTest::newRow("encrypted") << QStringLiteral("openpgp-encrypted-protected-headers.mbox") << encryptedPart;
-    QTest::newRow("signed") << QStringLiteral("openpgp-signed-protected-headers.mbox") << signedPart;
-    QTest::newRow("encrypted+signed") << QStringLiteral("openpgp-encrypted+signed-protected-headers.mbox") << encryptedPart;
+    QTest::newRow("encrypted") << u"openpgp-encrypted-protected-headers.mbox"_s << encryptedPart;
+    QTest::newRow("signed") << u"openpgp-signed-protected-headers.mbox"_s << signedPart;
+    QTest::newRow("encrypted+signed") << u"openpgp-encrypted+signed-protected-headers.mbox"_s << encryptedPart;
 }
 
 void ProtectedHeadersTest::testMessagePartsOfMailHeader()

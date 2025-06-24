@@ -5,6 +5,8 @@
 */
 
 #include "testwebenginescript.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "webenginescript.h"
 
 #include <QApplication>
@@ -65,7 +67,7 @@ TestWebEngineScript::TestWebEngineScript(QWidget *parent)
     auto page = new TestWebEngineScriptPage(this);
     mTestWebEngine->setPage(page);
     vboxLayout->addWidget(mTestWebEngine);
-    mTestWebEngine->load(QUrl(QStringLiteral("http://www.kde.org")));
+    mTestWebEngine->load(QUrl(u"http://www.kde.org"_s));
 
     mTestScriptWidget = new TestScriptWidget(this);
     vboxLayout->addWidget(mTestScriptWidget);
@@ -128,7 +130,7 @@ TestScriptWidget::TestScriptWidget(QWidget *parent)
     mResultEdit = new QTextEdit;
     mResultEdit->setReadOnly(true);
     vboxLayout->addWidget(mResultEdit);
-    auto button = new QPushButton(QStringLiteral("Execute Script"), this);
+    auto button = new QPushButton(u"Execute Script"_s, this);
     connect(button, &QPushButton::clicked, this, &TestScriptWidget::executeScript);
     vboxLayout->addWidget(button);
 }
@@ -143,16 +145,16 @@ void TestScriptWidget::slotCurrentIndexChanged(int index)
 
 void TestScriptWidget::fillScriptCombo(QComboBox *scriptCombo)
 {
-    scriptCombo->addItem(QStringLiteral("find all images"), WebEngineViewer::WebEngineScript::findAllImages());
-    scriptCombo->addItem(QStringLiteral("find all scripts"), WebEngineViewer::WebEngineScript::findAllScripts());
-    scriptCombo->addItem(QStringLiteral("find all anchors"), WebEngineViewer::WebEngineScript::findAllAnchors());
-    scriptCombo->addItem(QStringLiteral("find all anchors and forms"), WebEngineViewer::WebEngineScript::findAllAnchorsAndForms());
-    scriptCombo->addItem(QStringLiteral("search element position"), WebEngineViewer::WebEngineScript::searchElementPosition(QStringLiteral("elements")));
-    scriptCombo->addItem(QStringLiteral("scroll to position"), WebEngineViewer::WebEngineScript::scrollToPosition(QPoint()));
-    scriptCombo->addItem(QStringLiteral("scroll down"), WebEngineViewer::WebEngineScript::scrollDown(0));
-    scriptCombo->addItem(QStringLiteral("scroll up"), WebEngineViewer::WebEngineScript::scrollUp(0));
-    scriptCombo->addItem(QStringLiteral("scroll percentage"), WebEngineViewer::WebEngineScript::scrollPercentage(0));
-    scriptCombo->addItem(QStringLiteral("Test is bottom"), WebEngineViewer::WebEngineScript::isScrolledToBottom());
+    scriptCombo->addItem(u"find all images"_s, WebEngineViewer::WebEngineScript::findAllImages());
+    scriptCombo->addItem(u"find all scripts"_s, WebEngineViewer::WebEngineScript::findAllScripts());
+    scriptCombo->addItem(u"find all anchors"_s, WebEngineViewer::WebEngineScript::findAllAnchors());
+    scriptCombo->addItem(u"find all anchors and forms"_s, WebEngineViewer::WebEngineScript::findAllAnchorsAndForms());
+    scriptCombo->addItem(u"search element position"_s, WebEngineViewer::WebEngineScript::searchElementPosition(u"elements"_s));
+    scriptCombo->addItem(u"scroll to position"_s, WebEngineViewer::WebEngineScript::scrollToPosition(QPoint()));
+    scriptCombo->addItem(u"scroll down"_s, WebEngineViewer::WebEngineScript::scrollDown(0));
+    scriptCombo->addItem(u"scroll up"_s, WebEngineViewer::WebEngineScript::scrollUp(0));
+    scriptCombo->addItem(u"scroll percentage"_s, WebEngineViewer::WebEngineScript::scrollPercentage(0));
+    scriptCombo->addItem(u"Test is bottom"_s, WebEngineViewer::WebEngineScript::isScrolledToBottom());
 #if 0
     WebEngineViewer::WebEngineScript::setElementByIdVisible(const QString &elementStr, bool visibility);
     WebEngineViewer::WebEngineScript::setStyleToElement(const QString &elementStr, const QString &style);

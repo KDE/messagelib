@@ -5,6 +5,8 @@
 */
 
 #include "webenginepage.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "webenginemanagescript.h"
 #include "webhittest.h"
 
@@ -63,7 +65,7 @@ void WebEnginePage::init()
     qGuiApp->installEventFilter(this);
 
     // Expose main colors from KColorScheme
-    d->refreshScript.setName(QStringLiteral("injectColorScheme"));
+    d->refreshScript.setName(u"injectColorScheme"_s);
     d->refreshScript.setSourceCode(refreshCssVariablesScript());
     d->refreshScript.setInjectionPoint(QWebEngineScript::DocumentReady);
     d->refreshScript.setRunsOnSubFrames(true);

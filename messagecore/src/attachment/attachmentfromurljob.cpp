@@ -7,6 +7,7 @@
 */
 
 #include "attachmentfromurljob.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include "messagecore_debug.h"
 #include <KIO/TransferJob>
@@ -60,7 +61,7 @@ void AttachmentFromUrlJob::AttachmentLoadJobPrivate::transferJobResult(KJob *job
     qCDebug(MESSAGECORE_LOG) << "Mimetype is" << mimeTypeName;
 
     QString fileName = q->url().fileName();
-    fileName.replace(QLatin1Char('\n'), QLatin1Char('_'));
+    fileName.replace(u'\n', u'_');
     if (fileName.isEmpty()) {
         QMimeDatabase db;
         const auto mimeType = db.mimeTypeForName(mimeTypeName);
@@ -76,7 +77,7 @@ void AttachmentFromUrlJob::AttachmentLoadJobPrivate::transferJobResult(KJob *job
 
     AttachmentPart::Ptr part = AttachmentPart::Ptr(new AttachmentPart);
     QUrlQuery query(q->url());
-    const QString value = query.queryItemValue(QStringLiteral("charset"));
+    const QString value = query.queryItemValue(u"charset"_s);
     part->setCharset(value.toLatin1());
     part->setMimeType(mimeTypeName.toLatin1());
     part->setName(fileName);

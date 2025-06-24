@@ -18,15 +18,16 @@
 #include <MessageComposer/GlobalPart>
 #include <MessageComposer/InfoPart>
 #include <MessageComposer/TextPart>
+using namespace Qt::Literals::StringLiterals;
 
-const auto defaultAddress{QStringLiteral("default@example.org")};
-const auto nondefaultAddress{QStringLiteral("nondefault@example.com")};
-const auto friend1Address{QStringLiteral("friend1@example.net")};
-const auto friend2Address{QStringLiteral("friend2@example.net")};
-const auto replyAddress{QStringLiteral("reply@example.com")};
-const auto followupAddress{QStringLiteral("followup@example.org")};
-const auto listAddress{QStringLiteral("list@example.com")};
-const auto mailReplyAddress{QStringLiteral("mailreply@example.com")};
+const auto defaultAddress{u"default@example.org"_s};
+const auto nondefaultAddress{u"nondefault@example.com"_s};
+const auto friend1Address{u"friend1@example.net"_s};
+const auto friend2Address{u"friend2@example.net"_s};
+const auto replyAddress{u"reply@example.com"_s};
+const auto followupAddress{u"followup@example.org"_s};
+const auto listAddress{u"list@example.com"_s};
+const auto mailReplyAddress{u"mailreply@example.com"_s};
 const QStringList nobody{};
 
 static inline const QStringList only(const QString &address)
@@ -46,8 +47,8 @@ static KMime::Message::Ptr basicMessage(const QString &fromAddress, const QStrin
     ComposerJob composerJob;
     composerJob.infoPart()->setFrom(fromAddress);
     composerJob.infoPart()->setTo(toAddresses);
-    composerJob.infoPart()->setSubject(QStringLiteral("Test Email Subject"));
-    composerJob.textPart()->setWrappedPlainText(QStringLiteral("Test email body."));
+    composerJob.infoPart()->setSubject(u"Test Email Subject"_s);
+    composerJob.textPart()->setWrappedPlainText(u"Test email body."_s);
     composerJob.exec();
 
     return composerJob.resultMessages().first();
@@ -55,7 +56,7 @@ static KMime::Message::Ptr basicMessage(const QString &fromAddress, const QStrin
 
 #define COMPARE_ADDRESSES(actual, expected)                                                                                                                    \
     if (!compareAddresses(actual, expected)) {                                                                                                                 \
-        QFAIL(qPrintable(QStringLiteral("%1 is \"%2\"").arg(QString::fromLatin1(#actual), actual->displayString())));                                          \
+        QFAIL(qPrintable(u"%1 is \"%2\""_s.arg(QString::fromLatin1(#actual), actual->displayString())));                                                       \
         return;                                                                                                                                                \
     }
 
@@ -89,17 +90,17 @@ ReplyStrategyTest::~ReplyStrategyTest()
 
 void ReplyStrategyTest::initTestCase()
 {
-    QFile::remove(QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation) + QStringLiteral("/emailidentities"));
-    QFile::remove(QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation) + QStringLiteral("/emaildefaults"));
+    QFile::remove(QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation) + u"/emailidentities"_s);
+    QFile::remove(QStandardPaths::writableLocation(QStandardPaths::GenericConfigLocation) + u"/emaildefaults"_s);
 
     mIdentityManager = new KIdentityManagementCore::IdentityManager;
 
     auto homeIdentity =
-        mIdentityManager->newFromExisting(KIdentityManagementCore::Identity{QStringLiteral("Home Identity"), QStringLiteral("Full Home Name"), defaultAddress});
+        mIdentityManager->newFromExisting(KIdentityManagementCore::Identity{u"Home Identity"_s, QStringLiteral("Full Home Name"), defaultAddress});
     QVERIFY(mIdentityManager->setAsDefault(homeIdentity.uoid()));
 
-    auto workIdentity = mIdentityManager->newFromExisting(
-        KIdentityManagementCore::Identity{QStringLiteral("Work Identity"), QStringLiteral("Full Work Name"), nondefaultAddress});
+    auto workIdentity =
+        mIdentityManager->newFromExisting(KIdentityManagementCore::Identity{u"Work Identity"_s, QStringLiteral("Full Work Name"), nondefaultAddress});
 
     mIdentityManager->commit();
 }
@@ -331,7 +332,7 @@ void ReplyStrategyTest::testReply()
     }
     if (!oMFT.isEmpty()) {
         auto mailFollowupTo = new KMime::Headers::Generic("Mail-Followup-To");
-        mailFollowupTo->from7BitString(oMFT.join(QLatin1Char(',')).toLatin1());
+        mailFollowupTo->from7BitString(oMFT.join(u',').toLatin1());
         original->setHeader(mailFollowupTo);
     }
     if (!oLP.isEmpty()) {
@@ -341,7 +342,7 @@ void ReplyStrategyTest::testReply()
     }
     if (!oMRT.isEmpty()) {
         auto mailReplyTo = new KMime::Headers::Generic("Mail-Reply-To");
-        mailReplyTo->from7BitString(oMRT.join(QLatin1Char(',')).toLatin1());
+        mailReplyTo->from7BitString(oMRT.join(u',').toLatin1());
         original->setHeader(mailReplyTo);
     }
 

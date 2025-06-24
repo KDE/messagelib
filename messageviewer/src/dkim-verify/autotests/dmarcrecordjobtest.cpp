@@ -5,6 +5,8 @@
 */
 
 #include "dmarcrecordjobtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "dkim-verify/dmarcrecordjob.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(DMARCRecordJobTest)
@@ -25,7 +27,7 @@ void DMARCRecordJobTest::shouldBeAbleToStart()
 {
     MessageViewer::DMARCRecordJob job;
     QVERIFY(!job.canStart());
-    job.setDomainName(QStringLiteral("bla"));
+    job.setDomainName(u"bla"_s);
     QVERIFY(job.canStart());
     job.setDomainName(QString());
     QVERIFY(!job.canStart());

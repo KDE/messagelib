@@ -7,6 +7,7 @@
  *******************************************************************************/
 
 #include "core/optionset.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <ctime> // for ::time( time_t * )
 
@@ -41,7 +42,7 @@ void OptionSet::generateUniqueId()
 {
     static int nextUniqueId = 0;
     nextUniqueId++;
-    mId = QStringLiteral("%1-%2").arg((unsigned int)::time(nullptr)).arg(nextUniqueId);
+    mId = u"%1-%2"_s.arg((unsigned int)::time(nullptr)).arg(nextUniqueId);
 }
 
 QString OptionSet::saveToString() const

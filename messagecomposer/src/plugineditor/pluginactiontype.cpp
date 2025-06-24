@@ -5,6 +5,7 @@
 */
 
 #include "pluginactiontype.h"
+using namespace Qt::Literals::StringLiterals;
 
 using namespace MessageComposer;
 
@@ -30,23 +31,23 @@ QString PluginActionType::actionXmlExtension(PluginActionType::Type type)
 {
     switch (type) {
     case MessageComposer::PluginActionType::Tools:
-        return QStringLiteral("_plugins_tools");
+        return u"_plugins_tools"_s;
     case MessageComposer::PluginActionType::Edit:
-        return QStringLiteral("_plugins_edit");
+        return u"_plugins_edit"_s;
     case MessageComposer::PluginActionType::File:
-        return QStringLiteral("_plugins_file");
+        return u"_plugins_file"_s;
     case MessageComposer::PluginActionType::Action:
-        return QStringLiteral("_plugins_actions");
+        return u"_plugins_actions"_s;
     case MessageComposer::PluginActionType::PopupMenu:
-        return QStringLiteral("_popupmenu_actions");
+        return u"_popupmenu_actions"_s;
     case MessageComposer::PluginActionType::ToolBar:
-        return QStringLiteral("_toolbar_actions");
+        return u"_toolbar_actions"_s;
     case MessageComposer::PluginActionType::Options:
-        return QStringLiteral("_plugins_options");
+        return u"_plugins_options"_s;
     case MessageComposer::PluginActionType::Insert:
-        return QStringLiteral("_plugins_insert");
+        return u"_plugins_insert"_s;
     case MessageComposer::PluginActionType::View:
-        return QStringLiteral("_plugins_view");
+        return u"_plugins_view"_s;
     case MessageComposer::PluginActionType::None:
         return {};
     }

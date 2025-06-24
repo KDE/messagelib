@@ -3,6 +3,8 @@
 */
 
 #include "invitationsettings.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "settings/messageviewersettings.h"
 #include "ui_invitationsettings.h"
 #include <PimCommon/ConfigureImmutableWidgetUtils>
@@ -78,7 +80,7 @@ void InvitationSettings::slotLegacyBodyInvitesToggled(bool on)
             "resulting messages look very odd.<br />People that have email "
             "programs that do understand invitations will still "
             "be able to work with this.</qt>");
-        KMessageBox::information(this, txt, QString(), QStringLiteral("LegacyBodyInvitesWarning"));
+        KMessageBox::information(this, txt, QString(), u"LegacyBodyInvitesWarning"_s);
     }
     // Invitations in the body are autosent in any case (no point in editing raw ICAL)
     // So the autosend option is only available if invitations are sent as attachment.
@@ -109,7 +111,7 @@ void InvitationSettings::save()
 
 QString InvitationSettings::helpAnchor() const
 {
-    return QStringLiteral("configure-misc-invites");
+    return u"configure-misc-invites"_s;
 }
 
 void InvitationSettings::doResetToDefaultsOther()

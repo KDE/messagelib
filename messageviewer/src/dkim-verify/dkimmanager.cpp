@@ -5,6 +5,8 @@
 */
 
 #include "dkimmanager.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "dkimcheckfulljob.h"
 #include "dkimmanagerkey.h"
 #include "dkimresultattribute.h"

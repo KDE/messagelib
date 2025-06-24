@@ -5,6 +5,8 @@
 */
 
 #include "zoomactionmenu.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <KActionCollection>
 #include <KLocalizedString>
 
@@ -51,13 +53,13 @@ void ZoomActionMenu::createZoomActions()
 {
     // Zoom actions
     d->mZoomInAction = KStandardActions::zoomIn(this, &ZoomActionMenu::slotZoomIn, this);
-    d->mActionCollection->addAction(QStringLiteral("zoom_in"), d->mZoomInAction);
+    d->mActionCollection->addAction(u"zoom_in"_s, d->mZoomInAction);
 
     d->mZoomOutAction = KStandardActions::zoomOut(this, &ZoomActionMenu::slotZoomOut, this);
-    d->mActionCollection->addAction(QStringLiteral("zoom_out"), d->mZoomOutAction);
+    d->mActionCollection->addAction(u"zoom_out"_s, d->mZoomOutAction);
 
     d->mZoomResetAction = KStandardActions::actualSize(this, &ZoomActionMenu::slotZoomReset, this);
-    d->mActionCollection->addAction(QStringLiteral("zoom_reset"), d->mZoomResetAction);
+    d->mActionCollection->addAction(u"zoom_reset"_s, d->mZoomResetAction);
 
     d->createMenu();
 }
@@ -129,7 +131,7 @@ void ZoomActionMenuPrivate::createMenu()
     q->addAction(mZoomOutAction);
     q->addSeparator();
     q->addAction(mZoomResetAction);
-    mActionCollection->addAction(QStringLiteral("zoom_menu"), q);
+    mActionCollection->addAction(u"zoom_menu"_s, q);
 }
 
 #include "moc_zoomactionmenu.cpp"

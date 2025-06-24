@@ -7,6 +7,8 @@
  *******************************************************************************/
 
 #include "utils/configurethemesdialog.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "utils/configurethemesdialog_p.h"
 
 #include "core/theme.h"
@@ -115,7 +117,7 @@ ConfigureThemesDialog::ConfigureThemesDialog(QWidget *parent)
     });
 
     d->mNewThemeButton = new QPushButton(i18nc("@action:button", "New Theme"), base);
-    d->mNewThemeButton->setIcon(QIcon::fromTheme(QStringLiteral("document-new")));
+    d->mNewThemeButton->setIcon(QIcon::fromTheme(u"document-new"_s));
     g->addWidget(d->mNewThemeButton, 0, 1);
 
     connect(d->mNewThemeButton, &QPushButton::clicked, this, [this]() {
@@ -123,7 +125,7 @@ ConfigureThemesDialog::ConfigureThemesDialog(QWidget *parent)
     });
 
     d->mCloneThemeButton = new QPushButton(i18nc("@action:button", "Clone Theme"), base);
-    d->mCloneThemeButton->setIcon(QIcon::fromTheme(QStringLiteral("edit-copy")));
+    d->mCloneThemeButton->setIcon(QIcon::fromTheme(u"edit-copy"_s));
     g->addWidget(d->mCloneThemeButton, 1, 1);
 
     connect(d->mCloneThemeButton, &QPushButton::clicked, this, [this]() {
@@ -154,7 +156,7 @@ ConfigureThemesDialog::ConfigureThemesDialog(QWidget *parent)
     g->addWidget(f, 5, 1, Qt::AlignVCenter);
 
     d->mDeleteThemeButton = new QPushButton(i18nc("@action:button", "Delete Theme"), base);
-    d->mDeleteThemeButton->setIcon(QIcon::fromTheme(QStringLiteral("edit-delete")));
+    d->mDeleteThemeButton->setIcon(QIcon::fromTheme(u"edit-delete"_s));
     g->addWidget(d->mDeleteThemeButton, 6, 1);
 
     connect(d->mDeleteThemeButton, &QPushButton::clicked, this, [this]() {
@@ -340,7 +342,7 @@ QString ConfigureThemesDialog::ConfigureThemesDialogPrivate::uniqueNameForTheme(
     ThemeListWidgetItem *item = findThemeItemByName(ret, skipTheme);
     while (item) {
         idx++;
-        ret = QStringLiteral("%1 %2").arg(baseName, QString::number(idx));
+        ret = u"%1 %2"_s.arg(baseName, QString::number(idx));
         item = findThemeItemByName(ret, skipTheme);
     }
     return ret;
@@ -437,12 +439,12 @@ void ConfigureThemesDialog::ConfigureThemesDialogPrivate::importThemeButtonClick
     if (!filename.isEmpty()) {
         KConfig config(filename);
 
-        if (config.hasGroup(QStringLiteral("MessageListView::Themes"))) {
-            KConfigGroup grp(&config, QStringLiteral("MessageListView::Themes"));
+        if (config.hasGroup(u"MessageListView::Themes"_s)) {
+            KConfigGroup grp(&config, u"MessageListView::Themes"_s);
             const int cnt = grp.readEntry("Count", 0);
             int idx = 0;
             while (idx < cnt) {
-                const QString data = grp.readEntry(QStringLiteral("Set%1").arg(idx), QString());
+                const QString data = grp.readEntry(u"Set%1"_s.arg(idx), QString());
                 if (!data.isEmpty()) {
                     auto set = new Theme();
                     if (set->loadFromString(data)) {
@@ -471,13 +473,13 @@ void ConfigureThemesDialog::ConfigureThemesDialogPrivate::exportThemeButtonClick
     if (!filename.isEmpty()) {
         KConfig config(filename);
 
-        KConfigGroup grp(&config, QStringLiteral("MessageListView::Themes"));
+        KConfigGroup grp(&config, u"MessageListView::Themes"_s);
         grp.writeEntry("Count", list.count());
 
         int idx = 0;
         for (QListWidgetItem *item : list) {
             auto themeItem = static_cast<ThemeListWidgetItem *>(item);
-            grp.writeEntry(QStringLiteral("Set%1").arg(idx), themeItem->theme()->saveToString());
+            grp.writeEntry(u"Set%1"_s.arg(idx), themeItem->theme()->saveToString());
             ++idx;
         }
     }

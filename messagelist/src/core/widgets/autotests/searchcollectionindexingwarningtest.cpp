@@ -6,6 +6,8 @@
 */
 
 #include "searchcollectionindexingwarningtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "core/widgets/searchcollectionindexingwarning.h"
 #include <QTest>
 

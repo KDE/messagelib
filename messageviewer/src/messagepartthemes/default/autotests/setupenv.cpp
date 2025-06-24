@@ -6,6 +6,8 @@
 */
 
 #include "setupenv.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "messagepartthemes/default/messagepartrendererfactory.h"
 
 #include <QStandardPaths>
@@ -17,8 +19,8 @@ void MessageViewer::Test::setupEnv()
 {
     qputenv("TZ", "UTC");
     QStandardPaths::setTestModeEnabled(true);
-    QIcon::setThemeName(QStringLiteral("breeze"));
-    QLocale::setDefault(QLocale(QStringLiteral("en_US")));
+    QIcon::setThemeName(u"breeze"_s);
+    QLocale::setDefault(QLocale(u"en_US"_s));
 
     // disable plugin loading, so kdepim-addons doesn't interfere with our tests
     MessagePartRendererFactory::instance()->setPluginPath(QString());

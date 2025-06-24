@@ -5,6 +5,8 @@
  */
 
 #include "findbarbase.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <KStatefulBrush>
 
 #include <PimCommon/LineEditWithCompleterNg>
@@ -33,7 +35,7 @@ FindBarBase::FindBarBase(QWidget *parent)
     lay->setContentsMargins({});
 
     auto closeBtn = new QToolButton(this);
-    closeBtn->setIcon(QIcon::fromTheme(QStringLiteral("dialog-close")));
+    closeBtn->setIcon(QIcon::fromTheme(u"dialog-close"_s));
     closeBtn->setObjectName(QLatin1StringView("close"));
     closeBtn->setIconSize(QSize(16, 16));
     closeBtn->setToolTip(i18nc("@info:tooltip", "Close"));
@@ -55,13 +57,13 @@ FindBarBase::FindBarBase(QWidget *parent)
     label->setBuddy(mSearch);
     lay->addWidget(mSearch);
 
-    mFindNextBtn = new QPushButton(QIcon::fromTheme(QStringLiteral("go-down-search")), i18nc("Find and go to the next search match", "Next"), this);
+    mFindNextBtn = new QPushButton(QIcon::fromTheme(u"go-down-search"_s), i18nc("Find and go to the next search match", "Next"), this);
     mFindNextBtn->setToolTip(i18nc("@info:tooltip", "Jump to next match"));
     mFindNextBtn->setObjectName(QLatin1StringView("findnext"));
     lay->addWidget(mFindNextBtn);
     mFindNextBtn->setEnabled(false);
 
-    mFindPrevBtn = new QPushButton(QIcon::fromTheme(QStringLiteral("go-up-search")), i18nc("Find and go to the previous search match", "Previous"), this);
+    mFindPrevBtn = new QPushButton(QIcon::fromTheme(u"go-up-search"_s), i18nc("Find and go to the previous search match", "Previous"), this);
     mFindPrevBtn->setToolTip(i18nc("@info:tooltip", "Jump to previous match"));
     mFindPrevBtn->setObjectName(QLatin1StringView("findprevious"));
     lay->addWidget(mFindPrevBtn);
@@ -151,9 +153,9 @@ void FindBarBase::slotSearchText(bool backward, bool isAutoSearch)
 void FindBarBase::updatePalette()
 {
     KStatefulBrush bgBrush(KColorScheme::View, KColorScheme::PositiveBackground);
-    mPositiveBackground = QStringLiteral("QLineEdit{ background-color:%1 }").arg(bgBrush.brush(mSearch->palette()).color().name());
+    mPositiveBackground = u"QLineEdit{ background-color:%1 }"_s.arg(bgBrush.brush(mSearch->palette()).color().name());
     bgBrush = KStatefulBrush(KColorScheme::View, KColorScheme::NegativeBackground);
-    mNegativeBackground = QStringLiteral("QLineEdit{ background-color:%1 }").arg(bgBrush.brush(mSearch->palette()).color().name());
+    mNegativeBackground = u"QLineEdit{ background-color:%1 }"_s.arg(bgBrush.brush(mSearch->palette()).color().name());
 }
 
 void FindBarBase::setFoundMatch(bool match)

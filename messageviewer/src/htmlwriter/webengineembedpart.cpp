@@ -5,6 +5,7 @@
 */
 
 #include "webengineembedpart.h"
+using namespace Qt::Literals::StringLiterals;
 
 using namespace MessageViewer;
 

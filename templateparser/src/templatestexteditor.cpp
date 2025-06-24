@@ -5,6 +5,8 @@
 */
 
 #include "templatestexteditor.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "templatesutil_p.h"
 
 #include <TextCustomEditor/PlainTextSyntaxSpellCheckingHighlighter>
@@ -29,7 +31,7 @@ TemplatesTextEditor::TemplatesTextEditor(QWidget *parent)
     const QStringList lst = TemplateParser::Util::keywords();
     excludeKeyWord.reserve(lst.count() * 2);
     for (QString str : lst) {
-        excludeKeyWord << str.remove(QLatin1Char('%'));
+        excludeKeyWord << str.remove(u'%');
         excludeKeyWord << str.replace(QLatin1StringView("\\("), QLatin1StringView("("));
     }
     addIgnoreWords(excludeKeyWord);
@@ -58,7 +60,7 @@ void TemplatesTextEditor::createHighlighter()
     auto highlighter = new TextCustomEditor::PlainTextSyntaxSpellCheckingHighlighter(this);
     highlighter->toggleSpellHighlighting(checkSpellingEnabled());
     highlighter->setCurrentLanguage(spellCheckingLanguage());
-    highlighter->setDefinition(mSyntaxRepo.definitionForName(QStringLiteral("KMail Template")));
+    highlighter->setDefinition(mSyntaxRepo.definitionForName(u"KMail Template"_s));
     highlighter->setTheme((palette().color(QPalette::Base).lightness() < 128) ? mSyntaxRepo.defaultTheme(KSyntaxHighlighting::Repository::DarkTheme)
                                                                               : mSyntaxRepo.defaultTheme(KSyntaxHighlighting::Repository::LightTheme));
     setHighlighter(highlighter);
@@ -78,7 +80,7 @@ void TemplatesTextEditor::initCompleter()
 
     mTextEditorCompleter = new TextCustomEditor::TextEditorCompleter(this, this);
     mTextEditorCompleter->setCompleterStringList(listWord);
-    mTextEditorCompleter->setExcludeOfCharacters(QStringLiteral("~!@#$^&*()+{}|\"<>,./;'[]\\-= "));
+    mTextEditorCompleter->setExcludeOfCharacters(u"~!@#$^&*()+{}|\"<>,./;'[]\\-= "_s);
 }
 
 void TemplatesTextEditor::keyPressEvent(QKeyEvent *e)

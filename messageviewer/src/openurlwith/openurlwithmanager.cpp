@@ -5,6 +5,8 @@
 */
 
 #include "openurlwithmanager.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "messageviewer_debug.h"
 #include <KConfigGroup>
 #include <KSharedConfig>
@@ -63,17 +65,17 @@ void OpenUrlWithManager::loadUserSettings()
 
 QStringList OpenUrlWithManager::openUrlWithListPath() const
 {
-    return QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QStringLiteral("messageviewer/openurlwith/"), QStandardPaths::LocateDirectory);
+    return QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, u"messageviewer/openurlwith/"_s, QStandardPaths::LocateDirectory);
 }
 
 void OpenUrlWithManager::loadGlobalSettings()
 {
     for (const QString &path : openUrlWithListPath()) {
         QDir dir(path);
-        const QStringList entries = dir.entryList({QStringLiteral("*.openurl")});
+        const QStringList entries = dir.entryList({u"*.openurl"_s});
         for (const QString &entry : entries) {
             qCDebug(MESSAGEVIEWER_LOG) << "files: " << entry;
-            QSettings settings(path + QLatin1Char('/') + entry, QSettings::IniFormat);
+            QSettings settings(path + u'/' + entry, QSettings::IniFormat);
             OpenWithUrlInfo info;
             info.setIsLocalOpenWithInfo(false);
             info.setCommand(settings.value("Command").toString());

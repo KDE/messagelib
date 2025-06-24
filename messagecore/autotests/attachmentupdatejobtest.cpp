@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-only
 */
 #include "attachmentupdatejobtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "attachment/attachmentupdatejob.h"
 #include "qtest_messagecore.h"
 #include <MessageCore/AttachmentPart>
@@ -34,8 +36,8 @@ void AttachmentUpdateJobTest::shouldUpdateAttachment()
 
     // Some data.
     QByteArray data("This is short enough that compressing it is not efficient.");
-    const QString name = QStringLiteral("name.txt");
-    const QString description = QStringLiteral("description");
+    const QString name = u"name.txt"_s;
+    const QString description = u"description"_s;
 
     // Create the original part.
     MessageCore::AttachmentPart::Ptr origPart = MessageCore::AttachmentPart::Ptr(new MessageCore::AttachmentPart);
@@ -59,9 +61,9 @@ void AttachmentUpdateJobTest::shouldHaveSameNameDescriptionAfterUpdate()
 
     // Some data.
     QByteArray data("This is short enough that compressing it is not efficient.");
-    const QString name = QStringLiteral("name.txt");
-    const QString description = QStringLiteral("description");
-    const QString filename = QStringLiteral("filename");
+    const QString name = u"name.txt"_s;
+    const QString description = u"description"_s;
+    const QString filename = u"filename"_s;
 
     // Create the original part.
     MessageCore::AttachmentPart::Ptr origPart = MessageCore::AttachmentPart::Ptr(new MessageCore::AttachmentPart);
@@ -87,8 +89,8 @@ void AttachmentUpdateJobTest::shouldHaveSameCryptoSignStatusAfterUpdate()
 
     // Some data.
     QByteArray data("This is short enough that compressing it is not efficient.");
-    const QString name = QStringLiteral("name.txt");
-    const QString description = QStringLiteral("description");
+    const QString name = u"name.txt"_s;
+    const QString description = u"description"_s;
 
     // Create the original part.
     MessageCore::AttachmentPart::Ptr origPart = MessageCore::AttachmentPart::Ptr(new MessageCore::AttachmentPart);
@@ -114,8 +116,8 @@ void AttachmentUpdateJobTest::shouldHaveSameEncodingAfterUpdate()
 
     // Some data.
     QByteArray data("This is short enough that compressing it is not efficient.");
-    const QString name = QStringLiteral("name.txt");
-    const QString description = QStringLiteral("description");
+    const QString name = u"name.txt"_s;
+    const QString description = u"description"_s;
 
     // Create the original part.
     MessageCore::AttachmentPart::Ptr origPart = MessageCore::AttachmentPart::Ptr(new MessageCore::AttachmentPart);
@@ -140,8 +142,8 @@ void AttachmentUpdateJobTest::shouldHaveSameMimetypeAfterUpdate()
 
     // Some data.
     QByteArray data("This is short enough that compressing it is not efficient.");
-    const QString name = QStringLiteral("name.txt");
-    const QString description = QStringLiteral("description");
+    const QString name = u"name.txt"_s;
+    const QString description = u"description"_s;
 
     // Create the original part.
     MessageCore::AttachmentPart::Ptr origPart = MessageCore::AttachmentPart::Ptr(new MessageCore::AttachmentPart);
@@ -163,8 +165,8 @@ void AttachmentUpdateJobTest::shouldHaveSameMimetypeAfterUpdate()
 void AttachmentUpdateJobTest::shouldNotUpdateWhenUrlIsEmpty()
 {
     QByteArray data("This is short enough that compressing it is not efficient.");
-    const QString name = QStringLiteral("name.txt");
-    const QString description = QStringLiteral("description");
+    const QString name = u"name.txt"_s;
+    const QString description = u"description"_s;
 
     // Create the original part.
     MessageCore::AttachmentPart::Ptr origPart = MessageCore::AttachmentPart::Ptr(new MessageCore::AttachmentPart);
@@ -185,8 +187,8 @@ void AttachmentUpdateJobTest::shouldHaveSameInlineStatus()
 
     // Some data.
     QByteArray data("This is short enough that compressing it is not efficient.");
-    const QString name = QStringLiteral("name.txt");
-    const QString description = QStringLiteral("description");
+    const QString name = u"name.txt"_s;
+    const QString description = u"description"_s;
 
     // Create the original part.
     MessageCore::AttachmentPart::Ptr origPart = MessageCore::AttachmentPart::Ptr(new MessageCore::AttachmentPart);

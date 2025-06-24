@@ -5,6 +5,8 @@
 */
 
 #include "remotecontentmanagertest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "remote-content/remotecontentinfo.h"
 #include <QStandardPaths>
 #include <QTest>
@@ -32,17 +34,17 @@ void RemoteContentManagerTest::shouldIsBlocked_data()
     QTest::addColumn<bool>("contains");
     QTest::newRow("empty") << QUrl() << false << false;
     MessageViewer::RemoteContentInfo info;
-    info.setUrl(QStringLiteral("http://www.kde.org"));
+    info.setUrl(u"http://www.kde.org"_s);
     info.setStatus(MessageViewer::RemoteContentInfo::RemoteContentInfoStatus::Blocked);
 
     mRemoveContentManager.addRemoteContent(info);
-    QTest::newRow("kde-blocked") << QUrl(QStringLiteral("http://www.kde.org")) << false << true;
+    QTest::newRow("kde-blocked") << QUrl(u"http://www.kde.org"_s) << false << true;
     MessageViewer::RemoteContentInfo info2;
-    info2.setUrl(QStringLiteral("http://www.kde2.org"));
+    info2.setUrl(u"http://www.kde2.org"_s);
     info2.setStatus(MessageViewer::RemoteContentInfo::RemoteContentInfoStatus::Authorized);
     mRemoveContentManager.addRemoteContent(info2);
 
-    QTest::newRow("kde-authorized") << QUrl(QStringLiteral("http://www.kde2.org")) << true << true;
+    QTest::newRow("kde-authorized") << QUrl(u"http://www.kde2.org"_s) << true << true;
 }
 
 void RemoteContentManagerTest::shouldIsBlocked()

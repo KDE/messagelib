@@ -7,6 +7,7 @@
  *******************************************************************************/
 
 #include "core/manager.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include "core/aggregation.h"
 #include "core/storagemodelbase.h"
@@ -89,7 +90,7 @@ const Aggregation *Manager::defaultAggregation()
 {
     KConfigGroup conf(MessageListSettings::self()->config(), MessageList::Util::storageModelAggregationsGroup());
 
-    const QString aggregationId = conf.readEntry(QStringLiteral("DefaultSet"), "");
+    const QString aggregationId = conf.readEntry(u"DefaultSet"_s, "");
 
     Aggregation *opt = nullptr;
 
@@ -137,7 +138,7 @@ void Manager::saveAggregationForStorageModel(const QString &modelId, const QStri
     }
 
     if (!storageUsesPrivateAggregation) {
-        conf.writeEntry(QStringLiteral("DefaultSet"), id);
+        conf.writeEntry(u"DefaultSet"_s, id);
     }
     conf.sync();
 }
@@ -371,7 +372,7 @@ const Theme *Manager::defaultTheme()
 {
     KConfigGroup conf(MessageListSettings::self()->config(), MessageList::Util::storageModelThemesGroup());
 
-    const QString themeId = conf.readEntry(QStringLiteral("DefaultSet"), "");
+    const QString themeId = conf.readEntry(u"DefaultSet"_s, "");
 
     Theme *opt = nullptr;
 
@@ -420,7 +421,7 @@ void Manager::saveThemeForStorageModel(const QString &storageModelIndex, const Q
     }
 
     if (!storageUsesPrivateTheme) {
-        conf.writeEntry(QStringLiteral("DefaultSet"), id);
+        conf.writeEntry(u"DefaultSet"_s, id);
     }
     conf.sync();
 }
@@ -624,54 +625,39 @@ void Manager::createDefaultThemes()
     add_theme_simple_text_column(s, i18nc("Size of a message", "Size"), Theme::ContentItem::Size, false, SortOrder::SortMessagesBySize, false, false);
     add_theme_simple_icon_column(s,
                                  i18nc("Attachment indication", "Attachment"),
-                                 QStringLiteral("mail-attachment"),
+                                 u"mail-attachment"_s,
                                  Theme::ContentItem::AttachmentStateIcon,
                                  false,
                                  SortOrder::SortMessagesByAttachmentStatus);
     add_theme_simple_icon_column(s,
                                  i18n("Read/Unread"),
-                                 QStringLiteral("mail-mark-unread-new"),
+                                 u"mail-mark-unread-new"_s,
                                  Theme::ContentItem::ReadStateIcon,
                                  false,
                                  SortOrder::SortMessagesByUnreadStatus);
-    add_theme_simple_icon_column(s, i18n("Replied"), QStringLiteral("mail-replied"), Theme::ContentItem::RepliedStateIcon, false, SortOrder::NoMessageSorting);
+    add_theme_simple_icon_column(s, i18n("Replied"), u"mail-replied"_s, Theme::ContentItem::RepliedStateIcon, false, SortOrder::NoMessageSorting);
     add_theme_simple_icon_column(s,
                                  i18nc("Message importance indication", "Important"),
-                                 QStringLiteral("mail-mark-important"),
+                                 u"mail-mark-important"_s,
                                  Theme::ContentItem::ImportantStateIcon,
                                  false,
                                  SortOrder::SortMessagesByImportantStatus);
     add_theme_simple_icon_column(s,
                                  i18n("Action Item"),
-                                 QStringLiteral("mail-task"),
+                                 u"mail-task"_s,
                                  Theme::ContentItem::ActionItemStateIcon,
                                  false,
                                  SortOrder::SortMessagesByActionItemStatus);
-    add_theme_simple_icon_column(s,
-                                 i18n("Spam/Ham"),
-                                 QStringLiteral("mail-mark-junk"),
-                                 Theme::ContentItem::SpamHamStateIcon,
-                                 false,
-                                 SortOrder::NoMessageSorting);
+    add_theme_simple_icon_column(s, i18n("Spam/Ham"), u"mail-mark-junk"_s, Theme::ContentItem::SpamHamStateIcon, false, SortOrder::NoMessageSorting);
     add_theme_simple_icon_column(s,
                                  i18n("Watched/Ignored"),
-                                 QStringLiteral("mail-thread-watch"),
+                                 u"mail-thread-watch"_s,
                                  Theme::ContentItem::WatchedIgnoredStateIcon,
                                  false,
                                  SortOrder::NoMessageSorting);
-    add_theme_simple_icon_column(s,
-                                 i18n("Encryption"),
-                                 QStringLiteral("mail-encrypted-full"),
-                                 Theme::ContentItem::EncryptionStateIcon,
-                                 false,
-                                 SortOrder::NoMessageSorting);
-    add_theme_simple_icon_column(s,
-                                 i18n("Signature"),
-                                 QStringLiteral("mail-signed-verified"),
-                                 Theme::ContentItem::SignatureStateIcon,
-                                 false,
-                                 SortOrder::NoMessageSorting);
-    add_theme_simple_icon_column(s, i18n("Tag List"), QStringLiteral("feed-subscribe"), Theme::ContentItem::TagList, false, SortOrder::NoMessageSorting);
+    add_theme_simple_icon_column(s, i18n("Encryption"), u"mail-encrypted-full"_s, Theme::ContentItem::EncryptionStateIcon, false, SortOrder::NoMessageSorting);
+    add_theme_simple_icon_column(s, i18n("Signature"), u"mail-signed-verified"_s, Theme::ContentItem::SignatureStateIcon, false, SortOrder::NoMessageSorting);
+    add_theme_simple_icon_column(s, i18n("Tag List"), u"feed-subscribe"_s, Theme::ContentItem::TagList, false, SortOrder::NoMessageSorting);
 
     s->resetColumnState(); // so it's initially set from defaults
 
@@ -857,7 +843,7 @@ void Manager::loadConfiguration()
     {
         // load Aggregations
 
-        KConfigGroup conf(MessageListSettings::self()->config(), QStringLiteral("MessageListView::Aggregations"));
+        KConfigGroup conf(MessageListSettings::self()->config(), u"MessageListView::Aggregations"_s);
 
         mAggregations.clear();
 
@@ -865,7 +851,7 @@ void Manager::loadConfiguration()
 
         int idx = 0;
         while (idx < cnt) {
-            const QString data = conf.readEntry(QStringLiteral("Set%1").arg(idx), QString());
+            const QString data = conf.readEntry(u"Set%1"_s.arg(idx), QString());
             if (!data.isEmpty()) {
                 auto set = new Aggregation();
                 if (set->loadFromString(data)) {
@@ -889,7 +875,7 @@ void Manager::loadConfiguration()
     {
         // load Themes
 
-        KConfigGroup conf(MessageListSettings::self()->config(), QStringLiteral("MessageListView::Themes"));
+        KConfigGroup conf(MessageListSettings::self()->config(), u"MessageListView::Themes"_s);
 
         mThemes.clear();
 
@@ -897,7 +883,7 @@ void Manager::loadConfiguration()
 
         int idx = 0;
         while (idx < cnt) {
-            const QString data = conf.readEntry(QStringLiteral("Set%1").arg(idx), QString());
+            const QString data = conf.readEntry(u"Set%1"_s.arg(idx), QString());
             if (!data.isEmpty()) {
                 auto set = new Theme();
                 if (set->loadFromString(data)) {
@@ -932,7 +918,7 @@ void Manager::saveConfiguration()
     {
         // store aggregations
 
-        KConfigGroup conf(MessageListSettings::self()->config(), QStringLiteral("MessageListView::Aggregations"));
+        KConfigGroup conf(MessageListSettings::self()->config(), u"MessageListView::Aggregations"_s);
         // conf.clear();
 
         conf.writeEntry("Count", mAggregations.count());
@@ -940,7 +926,7 @@ void Manager::saveConfiguration()
         int idx = 0;
         QMap<QString, Aggregation *>::ConstIterator end(mAggregations.end());
         for (QMap<QString, Aggregation *>::ConstIterator it = mAggregations.constBegin(); it != end; ++it) {
-            conf.writeEntry(QStringLiteral("Set%1").arg(idx), (*it)->saveToString());
+            conf.writeEntry(u"Set%1"_s.arg(idx), (*it)->saveToString());
             ++idx;
         }
     }
@@ -948,7 +934,7 @@ void Manager::saveConfiguration()
     {
         // store themes
 
-        KConfigGroup conf(MessageListSettings::self()->config(), QStringLiteral("MessageListView::Themes"));
+        KConfigGroup conf(MessageListSettings::self()->config(), u"MessageListView::Themes"_s);
         // conf.clear();
 
         conf.writeEntry("Count", mThemes.count());
@@ -956,7 +942,7 @@ void Manager::saveConfiguration()
         int idx = 0;
         QMap<QString, Theme *>::ConstIterator end(mThemes.constEnd());
         for (QMap<QString, Theme *>::ConstIterator it = mThemes.constBegin(); it != end; ++it) {
-            conf.writeEntry(QStringLiteral("Set%1").arg(idx), (*it)->saveToString());
+            conf.writeEntry(u"Set%1"_s.arg(idx), (*it)->saveToString());
             ++idx;
         }
     }

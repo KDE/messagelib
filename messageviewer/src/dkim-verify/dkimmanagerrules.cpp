@@ -5,6 +5,8 @@
 */
 
 #include "dkimmanagerrules.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "dkimutil.h"
 #include <KConfigGroup>
 #include <QRegularExpression>
@@ -47,7 +49,7 @@ QList<DKIMRule> DKIMManagerRules::rules() const
 
 QStringList DKIMManagerRules::ruleGroups(const KSharedConfig::Ptr &config) const
 {
-    return config->groupList().filter(QRegularExpression(QStringLiteral("DKIM Rule #\\d+")));
+    return config->groupList().filter(QRegularExpression(u"DKIM Rule #\\d+"_s));
 }
 
 int DKIMManagerRules::loadRules(const QString &fileName)
@@ -62,13 +64,13 @@ int DKIMManagerRules::loadRules(const QString &fileName)
     int numberOfRulesAdded = 0;
     for (const QString &groupName : rulesGroups) {
         KConfigGroup group = config->group(groupName);
-        const QStringList signedDomainIdentifier = group.readEntry(QStringLiteral("SignedDomainIdentifier"), QStringList());
-        const QString from = group.readEntry(QStringLiteral("From"), QString());
-        const QString domain = group.readEntry(QStringLiteral("Domain"), QString());
-        const bool enabled = group.readEntry(QStringLiteral("Enabled"), true);
-        const int ruleType = group.readEntry(QStringLiteral("RuleType"), 0);
-        const QString listId = group.readEntry(QStringLiteral("List-Id"), QString());
-        const int priority = group.readEntry(QStringLiteral("Priority"), 1000);
+        const QStringList signedDomainIdentifier = group.readEntry(u"SignedDomainIdentifier"_s, QStringList());
+        const QString from = group.readEntry(u"From"_s, QString());
+        const QString domain = group.readEntry(u"Domain"_s, QString());
+        const bool enabled = group.readEntry(u"Enabled"_s, true);
+        const int ruleType = group.readEntry(u"RuleType"_s, 0);
+        const QString listId = group.readEntry(u"List-Id"_s, QString());
+        const int priority = group.readEntry(u"Priority"_s, 1000);
         DKIMRule rule;
         rule.setEnabled(enabled);
         rule.setDomain(domain);
@@ -121,17 +123,17 @@ void DKIMManagerRules::save(const QString &fileName, const QList<DKIMRule> &lst)
         rules = mRules;
     }
     for (int i = 0, total = rules.count(); i < total; ++i) {
-        const QString groupName = QStringLiteral("DKIM Rule #%1").arg(i);
+        const QString groupName = u"DKIM Rule #%1"_s.arg(i);
         KConfigGroup group = config->group(groupName);
         const DKIMRule &rule = rules.at(i);
 
-        group.writeEntry(QStringLiteral("SignedDomainIdentifier"), rule.signedDomainIdentifier());
-        group.writeEntry(QStringLiteral("From"), rule.from());
-        group.writeEntry(QStringLiteral("Domain"), rule.domain());
-        group.writeEntry(QStringLiteral("Enabled"), rule.enabled());
-        group.writeEntry(QStringLiteral("RuleType"), static_cast<int>(rule.ruleType()));
-        group.writeEntry(QStringLiteral("List-Id"), rule.listId());
-        group.writeEntry(QStringLiteral("Priority"), rule.priority());
+        group.writeEntry(u"SignedDomainIdentifier"_s, rule.signedDomainIdentifier());
+        group.writeEntry(u"From"_s, rule.from());
+        group.writeEntry(u"Domain"_s, rule.domain());
+        group.writeEntry(u"Enabled"_s, rule.enabled());
+        group.writeEntry(u"RuleType"_s, static_cast<int>(rule.ruleType()));
+        group.writeEntry(u"List-Id"_s, rule.listId());
+        group.writeEntry(u"Priority"_s, rule.priority());
     }
 }
 

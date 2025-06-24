@@ -5,6 +5,7 @@
 */
 
 #include "job/itipjob.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include "contentjobbase_p.h"
 #include "job/multipartjob.h"
@@ -53,7 +54,7 @@ SinglepartJob *ItipJobPrivate::createInvitationJob()
     auto job = new SinglepartJob;
     job->contentType()->setMimeType("text/calendar");
     job->contentType()->setCharset("utf-8");
-    job->contentType()->setName(QStringLiteral("cal.ics"));
+    job->contentType()->setName(u"cal.ics"_s);
     job->contentType()->setParameter(QByteArrayLiteral("method"), itipPart->method());
     job->contentDisposition()->setDisposition(KMime::Headers::CDattachment);
     job->contentTransferEncoding()->setEncoding(KMime::Headers::CEquPr);
@@ -79,8 +80,8 @@ SinglepartJob *ItipJobPrivate::createOutlookItipJob()
 {
     auto job = new SinglepartJob;
     job->contentType()->setMimeType("text/calendar");
-    job->contentType()->setName(QStringLiteral("cal.ics"));
-    job->contentType()->setParameter(QByteArrayLiteral("method"), QStringLiteral("request"));
+    job->contentType()->setName(u"cal.ics"_s);
+    job->contentType()->setParameter(QByteArrayLiteral("method"), u"request"_s);
     job->contentType()->setCharset("utf-8");
 
     if (!itipPart->invitation().isEmpty()) {

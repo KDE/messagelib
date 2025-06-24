@@ -5,6 +5,8 @@
 */
 
 #include "dkimmanagerkeydialogtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "dkim-verify/dkimmanagerkeydialog.h"
 #include "dkim-verify/dkimmanagerkeywidget.h"
 #include <QDialogButtonBox>
@@ -26,13 +28,13 @@ void DKIMManagerKeyDialogTest::shouldHaveDefaultValue()
 {
     MessageViewer::DKIMManagerKeyDialog dlg;
 
-    auto mainLayout = dlg.findChild<QVBoxLayout *>(QStringLiteral("mainlayout"));
+    auto mainLayout = dlg.findChild<QVBoxLayout *>(u"mainlayout"_s);
     QVERIFY(mainLayout);
 
-    auto w = dlg.findChild<MessageViewer::DKIMManagerKeyWidget *>(QStringLiteral("managerWidget"));
+    auto w = dlg.findChild<MessageViewer::DKIMManagerKeyWidget *>(u"managerWidget"_s);
     QVERIFY(w);
 
-    auto buttonBox = dlg.findChild<QDialogButtonBox *>(QStringLiteral("buttonbox"));
+    auto buttonBox = dlg.findChild<QDialogButtonBox *>(u"buttonbox"_s);
     QVERIFY(buttonBox);
     QCOMPARE(buttonBox->standardButtons(), QDialogButtonBox::StandardButtons{QDialogButtonBox::Close});
 }

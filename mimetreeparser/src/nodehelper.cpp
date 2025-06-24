@@ -6,6 +6,8 @@
 */
 
 #include "nodehelper.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "interfaces/bodypart.h"
 #include "messagepart.h"
 #include "mimetreeparser_debug.h"
@@ -177,7 +179,7 @@ QString NodeHelper::writeFileToTempFile(KMime::Content *node, const QString &fil
     if (fname.isEmpty()) {
         return {};
     }
-    fname += QLatin1Char('/') + filename;
+    fname += u'/' + filename;
     QFile f(fname);
     if (!f.open(QIODevice::WriteOnly)) {
         qCWarning(MIMETREEPARSER_LOG) << "Failed to write note to file:" << f.errorString();
@@ -211,14 +213,14 @@ QString NodeHelper::writeNodeToTempFile(KMime::Content *node)
 
     QString fileName = NodeHelper::fileName(node);
     // strip off a leading path
-    int slashPos = fileName.lastIndexOf(QLatin1Char('/'));
+    int slashPos = fileName.lastIndexOf(u'/');
     if (-1 != slashPos) {
         fileName = fileName.mid(slashPos + 1);
     }
     if (fileName.isEmpty()) {
-        fileName = QStringLiteral("unnamed");
+        fileName = u"unnamed"_s;
     }
-    fname += QLatin1Char('/') + fileName;
+    fname += u'/' + fileName;
 
     qCDebug(MIMETREEPARSER_LOG) << "Create temp file: " << fname;
     QByteArray data = node->decodedContent();
@@ -252,7 +254,7 @@ QUrl NodeHelper::tempFileUrlFromNode(const KMime::Content *node)
 
     const QStringList temporaryFiles = mAttachmentFilesDir->temporaryFiles();
     for (const QString &path : temporaryFiles) {
-        const int right = path.lastIndexOf(QLatin1Char('/'));
+        const int right = path.lastIndexOf(u'/');
         int left = path.lastIndexOf(QLatin1StringView(".index."), right);
         if (left != -1) {
             left += 7;
@@ -676,10 +678,10 @@ QString NodeHelper::persistentIndex(const KMime::Content *node) const
             const auto &extraNodes = it.value();
             for (int i = 0; i < extraNodes.size(); ++i) {
                 if (extraNodes[i] == node) {
-                    indexStr = QStringLiteral("e%1").arg(i);
+                    indexStr = u"e%1"_s.arg(i);
                     const QString parentIndex = persistentIndex(it.key());
                     if (!parentIndex.isEmpty()) {
-                        indexStr = QStringLiteral("%1:%2").arg(parentIndex, indexStr);
+                        indexStr = u"%1:%2"_s.arg(parentIndex, indexStr);
                     }
                     return indexStr;
                 }
@@ -695,10 +697,10 @@ QString NodeHelper::persistentIndex(const KMime::Content *node) const
             for (int i = 0; i < extraNodes.size(); ++i) {
                 KMime::Content *const extraNode = extraNodes[i];
                 if (topLevel == extraNode) {
-                    indexStr.prepend(QStringLiteral("e%1:").arg(i));
+                    indexStr.prepend(u"e%1:"_s.arg(i));
                     const QString parentIndex = persistentIndex(it.key());
                     if (!parentIndex.isEmpty()) {
-                        indexStr = QStringLiteral("%1:%2").arg(parentIndex, indexStr);
+                        indexStr = u"%1:%2"_s.arg(parentIndex, indexStr);
                     }
                     return indexStr;
                 }
@@ -716,11 +718,11 @@ KMime::Content *NodeHelper::contentFromIndex(KMime::Content *node, const QString
     }
     KMime::Content *c = node->topLevel();
     if (c) {
-        const QStringList pathParts = persistentIndex.split(QLatin1Char(':'), Qt::SkipEmptyParts);
+        const QStringList pathParts = persistentIndex.split(u':', Qt::SkipEmptyParts);
         const int pathPartsSize(pathParts.size());
         for (int i = 0; i < pathPartsSize; ++i) {
             const QString &path = pathParts[i];
-            if (path.startsWith(QLatin1Char('e'))) {
+            if (path.startsWith(u'e')) {
                 const QList<KMime::Content *> &extraParts = mExtraContents.value(c);
                 const int idx = QStringView(path).mid(1).toInt();
                 c = (idx < extraParts.size()) ? extraParts[idx] : nullptr;
@@ -737,12 +739,12 @@ KMime::Content *NodeHelper::contentFromIndex(KMime::Content *node, const QString
 
 QString NodeHelper::asHREF(const KMime::Content *node, const QString &place) const
 {
-    return QStringLiteral("attachment:%1?place=%2").arg(persistentIndex(node), place);
+    return u"attachment:%1?place=%2"_s.arg(persistentIndex(node), place);
 }
 
 QString NodeHelper::asHREF(const KMime::Content *node) const
 {
-    return QStringLiteral("attachment:%1").arg(persistentIndex(node));
+    return u"attachment:%1"_s.arg(persistentIndex(node));
 }
 
 KMime::Content *NodeHelper::fromHREF(const KMime::Message::Ptr &mMessage, const QUrl &url) const
@@ -769,7 +771,7 @@ QString NodeHelper::extractAttachmentIndex(const QString &path) const
     // start of the index is something that is not a number followed by a dot: \D.
     // index is only made of numbers,"." and ":": ([0-9.:]+)
     // index is the last part of the folder name: /
-    static const QRegularExpression re(QStringLiteral("\\D\\.([e0-9.:]+)/"));
+    static const QRegularExpression re(u"\\D\\.([e0-9.:]+)/"_s);
     QRegularExpressionMatch rmatch;
     path.lastIndexOf(re, -1, &rmatch);
     if (rmatch.hasMatch()) {
@@ -786,7 +788,7 @@ QString NodeHelper::fixEncoding(const QString &encoding)
     const QString returnEncodingToUpper = returnEncoding.toUpper();
     if (returnEncodingToUpper.contains(QLatin1StringView("ISO "))) {
         returnEncoding = returnEncodingToUpper;
-        returnEncoding.replace(QLatin1StringView("ISO "), QStringLiteral("ISO-"));
+        returnEncoding.replace(QLatin1StringView("ISO "), u"ISO-"_s);
     }
     return returnEncoding;
 }

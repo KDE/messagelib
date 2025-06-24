@@ -5,6 +5,8 @@
 */
 
 #include "templateparserutiltest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "templatesutil.h"
 #include "templatesutil_p.h"
 #include <QTest>
@@ -19,13 +21,12 @@ void TemplateParserUtilTest::shouldRemoveSpaceAtBegin_data()
     QTest::addColumn<QString>("selection");
     QTest::addColumn<QString>("cleanedString");
     QTest::newRow("empty") << QString() << QString();
-    QTest::newRow("tabatbegin") << QStringLiteral("\t\t  foo") << QStringLiteral("\t\t  foo");
-    QTest::newRow("newlinetabatbegin") << QStringLiteral("\n\n\n\n\t\t  foo") << QStringLiteral("\n\t\t  foo");
-    QTest::newRow("newlinetabatbeginwithspace") << QStringLiteral("        \n\n\n\n\t\t  foo") << QStringLiteral("\n\t\t  foo");
-    QTest::newRow("newlinetabatbeginwithspace2") << QStringLiteral("        \n     \n\n\n\t\t  foo") << QStringLiteral("\n\t\t  foo");
-    QTest::newRow("newlinetabatbeginwithspace3") << QStringLiteral("ddd        \n     \n\n\n\t\t  foo") << QStringLiteral("ddd        \n     \n\n\n\t\t  foo");
-    QTest::newRow("newlinetabatbeginwithspace4") << QStringLiteral("    ddd        \n     \n\n\n\t\t  foo")
-                                                 << QStringLiteral("    ddd        \n     \n\n\n\t\t  foo");
+    QTest::newRow("tabatbegin") << u"\t\t  foo"_s << u"\t\t  foo"_s;
+    QTest::newRow("newlinetabatbegin") << u"\n\n\n\n\t\t  foo"_s << u"\n\t\t  foo"_s;
+    QTest::newRow("newlinetabatbeginwithspace") << u"        \n\n\n\n\t\t  foo"_s << u"\n\t\t  foo"_s;
+    QTest::newRow("newlinetabatbeginwithspace2") << u"        \n     \n\n\n\t\t  foo"_s << u"\n\t\t  foo"_s;
+    QTest::newRow("newlinetabatbeginwithspace3") << u"ddd        \n     \n\n\n\t\t  foo"_s << u"ddd        \n     \n\n\n\t\t  foo"_s;
+    QTest::newRow("newlinetabatbeginwithspace4") << u"    ddd        \n     \n\n\n\t\t  foo"_s << u"    ddd        \n     \n\n\n\t\t  foo"_s;
 }
 
 void TemplateParserUtilTest::shouldRemoveSpaceAtBegin()
@@ -50,18 +51,18 @@ void TemplateParserUtilTest::shouldGetFirstNameFromEmail_data()
     QTest::addColumn<QString>("email");
     QTest::addColumn<QString>("firstName");
     QTest::newRow("empty") << QString() << QString();
-    QTest::newRow("test1") << QStringLiteral("foo.bar-baz@kde.org") << QStringLiteral("foo.bar-baz");
-    QTest::newRow("test2") << QStringLiteral("bla, bli <foo@kde.org>") << QStringLiteral("bli");
-    QTest::newRow("test3") << QStringLiteral("\"bla, bli\" <foo@kde.org>") << QStringLiteral("bli");
-    QTest::newRow("test4") << QStringLiteral("\"bla bli\" <foo@kde.org>") << QStringLiteral("bla");
-    QTest::newRow("test5") << QStringLiteral("bla bli") << QStringLiteral("bla");
-    QTest::newRow("test6") << QStringLiteral("bla, bli") << QStringLiteral("bli");
-    QTest::newRow("test7") << QStringLiteral("\"bla, bli-blo\" <foo@kde.org>") << QStringLiteral("bli-blo");
-    QTest::newRow("test8") << QStringLiteral("\"bla-blo bli\" <foo@kde.org>") << QStringLiteral("bla-blo");
-    QTest::newRow("test9") << QStringLiteral("bla-blo bli") << QStringLiteral("bla-blo");
-    QTest::newRow("test10") << QStringLiteral("bla, bli-blo") << QStringLiteral("bli-blo");
-    QTest::newRow("test11") << QStringLiteral("\"bla, bli blo\" <foo@kde.org>") << QStringLiteral("bli blo");
-    QTest::newRow("test12") << QStringLiteral("bla blo bli") << QStringLiteral("bla");
+    QTest::newRow("test1") << u"foo.bar-baz@kde.org"_s << u"foo.bar-baz"_s;
+    QTest::newRow("test2") << u"bla, bli <foo@kde.org>"_s << u"bli"_s;
+    QTest::newRow("test3") << u"\"bla, bli\" <foo@kde.org>"_s << u"bli"_s;
+    QTest::newRow("test4") << u"\"bla bli\" <foo@kde.org>"_s << u"bla"_s;
+    QTest::newRow("test5") << u"bla bli"_s << u"bla"_s;
+    QTest::newRow("test6") << u"bla, bli"_s << u"bli"_s;
+    QTest::newRow("test7") << u"\"bla, bli-blo\" <foo@kde.org>"_s << u"bli-blo"_s;
+    QTest::newRow("test8") << u"\"bla-blo bli\" <foo@kde.org>"_s << u"bla-blo"_s;
+    QTest::newRow("test9") << u"bla-blo bli"_s << u"bla-blo"_s;
+    QTest::newRow("test10") << u"bla, bli-blo"_s << u"bli-blo"_s;
+    QTest::newRow("test11") << u"\"bla, bli blo\" <foo@kde.org>"_s << u"bli blo"_s;
+    QTest::newRow("test12") << u"bla blo bli"_s << u"bla"_s;
 }
 
 void TemplateParserUtilTest::shouldGetFirstNameFromEmail()
@@ -76,13 +77,13 @@ void TemplateParserUtilTest::shouldGetLastNameFromEmail_data()
     QTest::addColumn<QString>("email");
     QTest::addColumn<QString>("lastName");
     QTest::newRow("empty") << QString() << QString();
-    QTest::newRow("test1") << QStringLiteral("foo@kde.org") << QString();
-    QTest::newRow("test2") << QStringLiteral("bla, bli <foo@kde.org>") << QStringLiteral("bli"); // ',' without quote is not allowed
-    QTest::newRow("test3") << QStringLiteral("\"bla, bli\" <foo@kde.org>") << QStringLiteral("bla");
-    QTest::newRow("test4") << QStringLiteral("\"bla bli\" <foo@kde.org>") << QStringLiteral("bli");
-    QTest::newRow("test5") << QStringLiteral("bla-blo, bli <foo@kde.org>") << QStringLiteral("bli"); // ',' without quote is not allowed
-    QTest::newRow("test6") << QStringLiteral("\"bla-blo, bli\" <foo@kde.org>") << QStringLiteral("bla-blo");
-    QTest::newRow("test7") << QStringLiteral("\"bla bli-blo\" <foo@kde.org>") << QStringLiteral("bli-blo");
+    QTest::newRow("test1") << u"foo@kde.org"_s << QString();
+    QTest::newRow("test2") << u"bla, bli <foo@kde.org>"_s << u"bli"_s; // ',' without quote is not allowed
+    QTest::newRow("test3") << u"\"bla, bli\" <foo@kde.org>"_s << u"bla"_s;
+    QTest::newRow("test4") << u"\"bla bli\" <foo@kde.org>"_s << u"bli"_s;
+    QTest::newRow("test5") << u"bla-blo, bli <foo@kde.org>"_s << u"bli"_s; // ',' without quote is not allowed
+    QTest::newRow("test6") << u"\"bla-blo, bli\" <foo@kde.org>"_s << u"bla-blo"_s;
+    QTest::newRow("test7") << u"\"bla bli-blo\" <foo@kde.org>"_s << u"bli-blo"_s;
 }
 
 void TemplateParserUtilTest::shouldGetLastNameFromEmail()

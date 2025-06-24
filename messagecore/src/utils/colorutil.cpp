@@ -6,6 +6,7 @@
  */
 
 #include "colorutil.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <KColorScheme>
 #include <QApplication>

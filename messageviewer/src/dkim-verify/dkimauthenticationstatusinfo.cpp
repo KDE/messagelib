@@ -9,6 +9,8 @@
 #include "messageviewer_dkimcheckerdebug.h"
 
 #include <QRegularExpressionMatch>
+using namespace Qt::Literals::StringLiterals;
+
 using namespace MessageViewer;
 // see https://tools.ietf.org/html/rfc7601
 DKIMAuthenticationStatusInfo::DKIMAuthenticationStatusInfo() = default;
@@ -71,53 +73,42 @@ bool DKIMAuthenticationStatusInfo::checkResultKeyword(const QString &method, con
     QStringList allowedKeywords;
 
     // DKIM and DomainKeys (RFC 8601 section 2.7.1.)
-    if (method == QStringLiteral("dkim") || method == QStringLiteral("domainkeys")) {
-        allowedKeywords = {QStringLiteral("none"),
-                           QStringLiteral("pass"),
-                           QStringLiteral("fail"),
-                           QStringLiteral("policy"),
-                           QStringLiteral("neutral"),
-                           QStringLiteral("temperror"),
-                           QStringLiteral("permerror")};
+    if (method == u"dkim"_s || method == u"domainkeys"_s) {
+        allowedKeywords = {u"none"_s, u"pass"_s, u"fail"_s, u"policy"_s, u"neutral"_s, u"temperror"_s, u"permerror"_s};
     }
 
     // SPF and Sender ID (RFC 8601 section 2.7.2.)
-    if (method == QStringLiteral("spf") || method == QStringLiteral("sender-id")) {
-        allowedKeywords = {QStringLiteral("none"),
-                           QStringLiteral("pass"),
-                           QStringLiteral("fail"),
-                           QStringLiteral("softfail"),
-                           QStringLiteral("policy"),
-                           QStringLiteral("neutral"),
-                           QStringLiteral("temperror"),
-                           QStringLiteral("permerror")
+    if (method == u"spf"_s || method == u"sender-id"_s) {
+        allowedKeywords = {u"none"_s,
+                           u"pass"_s,
+                           u"fail"_s,
+                           u"softfail"_s,
+                           u"policy"_s,
+                           u"neutral"_s,
+                           u"temperror"_s,
+                           u"permerror"_s
                            // Deprecated from older ARH RFC 5451.
                            ,
-                           QStringLiteral("hardfail")
+                           u"hardfail"_s
                            // Older SPF specs (e.g. RFC 4408) used mixed case.
                            ,
-                           QStringLiteral("None"),
-                           QStringLiteral("Pass"),
-                           QStringLiteral("Fail"),
-                           QStringLiteral("SoftFail"),
-                           QStringLiteral("Neutral"),
-                           QStringLiteral("TempError"),
-                           QStringLiteral("PermError")};
+                           u"None"_s,
+                           u"Pass"_s,
+                           u"Fail"_s,
+                           u"SoftFail"_s,
+                           u"Neutral"_s,
+                           u"TempError"_s,
+                           u"PermError"_s};
     }
 
     // DMARC (RFC 7489 section 11.2.)
-    if (method == QStringLiteral("dmarc")) {
-        allowedKeywords = {QStringLiteral("none"), QStringLiteral("pass"), QStringLiteral("fail"), QStringLiteral("temperror"), QStringLiteral("permerror")};
+    if (method == u"dmarc"_s) {
+        allowedKeywords = {u"none"_s, u"pass"_s, QStringLiteral("fail"), QStringLiteral("temperror"), QStringLiteral("permerror")};
     }
 
     // BIMI (https://datatracker.ietf.org/doc/draft-brand-indicators-for-message-identification/04/ section 7.7.)
-    if (method == QStringLiteral("bimi")) {
-        allowedKeywords = {QStringLiteral("pass"),
-                           QStringLiteral("none"),
-                           QStringLiteral("fail"),
-                           QStringLiteral("temperror"),
-                           QStringLiteral("declined"),
-                           QStringLiteral("skipped")};
+    if (method == u"bimi"_s) {
+        allowedKeywords = {u"pass"_s, u"none"_s, u"fail"_s, u"temperror"_s, u"declined"_s, u"skipped"_s};
     }
 
     // Note: Both the ARH RFC and the IANA registry contain keywords for more than the above methods.
@@ -137,15 +128,13 @@ DKIMAuthenticationStatusInfo::AuthStatusInfo DKIMAuthenticationStatusInfo::parse
     DKIMAuthenticationStatusInfo::AuthStatusInfo authStatusInfo;
     // 2) extract methodspec
     const QString methodVersionp =
-        DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('/') + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1StringView("([0-9]+)");
-    const QString method_p =
-        QLatin1Char('(') + DKIMAuthenticationStatusInfoUtil::keyword_p() + QLatin1StringView(")(?:") + methodVersionp + QLatin1StringView(")?");
-    QString Keyword_result_p = QStringLiteral("none|pass|fail|softfail|policy|neutral|temperror|permerror");
+        DKIMAuthenticationStatusInfoUtil::cfws_op() + u'/' + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1StringView("([0-9]+)");
+    const QString method_p = u'(' + DKIMAuthenticationStatusInfoUtil::keyword_p() + QLatin1StringView(")(?:") + methodVersionp + QLatin1StringView(")?");
+    QString Keyword_result_p = u"none|pass|fail|softfail|policy|neutral|temperror|permerror"_s;
     // older SPF specs (e.g. RFC 4408) use mixed case
     Keyword_result_p += QLatin1StringView("|None|Pass|Fail|SoftFail|Neutral|TempError|PermError");
-    const QString result_p = QLatin1Char('=') + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('(') + Keyword_result_p + QLatin1Char(')');
-    const QString methodspec_p =
-        QLatin1Char(';') + DKIMAuthenticationStatusInfoUtil::cfws_op() + method_p + DKIMAuthenticationStatusInfoUtil::cfws_op() + result_p;
+    const QString result_p = QLatin1Char('=') + DKIMAuthenticationStatusInfoUtil::cfws_op() + u'(' + Keyword_result_p + u')';
+    const QString methodspec_p = u';' + DKIMAuthenticationStatusInfoUtil::cfws_op() + method_p + DKIMAuthenticationStatusInfoUtil::cfws_op() + result_p;
 
     // qDebug() << "methodspec_p " << methodspec_p;
     QRegularExpressionMatch match;
@@ -171,7 +160,7 @@ DKIMAuthenticationStatusInfo::AuthStatusInfo DKIMAuthenticationStatusInfo::parse
 
     // 3) extract reasonspec (optional)
     const QString reasonspec_p =
-        DKIMAuthenticationStatusInfoUtil::regexMatchO(QLatin1StringView("reason") + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('=')
+        DKIMAuthenticationStatusInfoUtil::regexMatchO(QLatin1StringView("reason") + DKIMAuthenticationStatusInfoUtil::cfws_op() + u'='
                                                       + DKIMAuthenticationStatusInfoUtil::cfws_op() + DKIMAuthenticationStatusInfoUtil::value_cp());
     static const QRegularExpression reg31(reasonspec_p);
     index = valueKey.indexOf(reg31, 0, &match);
@@ -182,17 +171,16 @@ DKIMAuthenticationStatusInfo::AuthStatusInfo DKIMAuthenticationStatusInfo::parse
     }
     // 4) extract propspec (optional)
     QString pvalue_p = DKIMAuthenticationStatusInfoUtil::value_p() + QLatin1StringView("|(?:(?:") + DKIMAuthenticationStatusInfoUtil::localPart_p()
-        + QLatin1StringView("?@)?") + DKIMAuthenticationStatusInfoUtil::domainName_p() + QLatin1Char(')');
+        + QLatin1StringView("?@)?") + DKIMAuthenticationStatusInfoUtil::domainName_p() + u')';
     if (relaxingParsing) {
         // Allow "/" in the header.b (or other) property, even if it is not in a quoted-string
-        pvalue_p += QStringLiteral("|[^ \\x00-\\x1F\\x7F()<>@,;:\\\\\"[\\]?=]+");
+        pvalue_p += u"|[^ \\x00-\\x1F\\x7F()<>@,;:\\\\\"[\\]?=]+"_s;
     }
 
-    const QString property_p = QLatin1StringView("mailfrom|rcptto") + QLatin1Char('|') + DKIMAuthenticationStatusInfoUtil::keyword_p();
-    const QString propspec_p = QLatin1Char('(') + DKIMAuthenticationStatusInfoUtil::keyword_p() + QLatin1Char(')') + DKIMAuthenticationStatusInfoUtil::cfws_op()
-        + QLatin1StringView("\\.") + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('(') + property_p + QLatin1Char(')')
-        + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('=') + DKIMAuthenticationStatusInfoUtil::cfws_op() + QLatin1Char('(')
-        + pvalue_p /*+ QLatin1Char(')')*/;
+    const QString property_p = QLatin1StringView("mailfrom|rcptto") + u'|' + DKIMAuthenticationStatusInfoUtil::keyword_p();
+    const QString propspec_p = u'(' + DKIMAuthenticationStatusInfoUtil::keyword_p() + u')' + DKIMAuthenticationStatusInfoUtil::cfws_op()
+        + QLatin1StringView("\\.") + DKIMAuthenticationStatusInfoUtil::cfws_op() + u'(' + property_p + u')' + DKIMAuthenticationStatusInfoUtil::cfws_op() + u'='
+        + DKIMAuthenticationStatusInfoUtil::cfws_op() + u'(' + pvalue_p /*+ u')'*/;
 
     // qDebug() << "propspec_p " << propspec_p;
 

@@ -7,6 +7,8 @@
  *******************************************************************************/
 
 #include "utils/themeeditor.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "core/groupheaderitem.h"
 #include "core/messageitem.h"
 #include "core/modelinvariantrowmapper.h"
@@ -191,9 +193,9 @@ ThemePreviewDelegate::ThemePreviewDelegate(QAbstractItemView *parent)
     mSampleMessageItem->setEncryptionState(MessageItem::FullyEncrypted);
 
     QList<MessageItem::Tag *> list;
-    list.append(new MessageItem::Tag(QIcon::fromTheme(QStringLiteral("feed-subscribe")).pixmap(KIconLoader::SizeSmall), i18n("Sample Tag 1"), QString()));
-    list.append(new MessageItem::Tag(QIcon::fromTheme(QStringLiteral("feed-subscribe")).pixmap(KIconLoader::SizeSmall), i18n("Sample Tag 2"), QString()));
-    list.append(new MessageItem::Tag(QIcon::fromTheme(QStringLiteral("feed-subscribe")).pixmap(KIconLoader::SizeSmall), i18n("Sample Tag 3"), QString()));
+    list.append(new MessageItem::Tag(QIcon::fromTheme(u"feed-subscribe"_s).pixmap(KIconLoader::SizeSmall), i18n("Sample Tag 1"), QString()));
+    list.append(new MessageItem::Tag(QIcon::fromTheme(u"feed-subscribe"_s).pixmap(KIconLoader::SizeSmall), i18n("Sample Tag 2"), QString()));
+    list.append(new MessageItem::Tag(QIcon::fromTheme(u"feed-subscribe"_s).pixmap(KIconLoader::SizeSmall), i18n("Sample Tag 3"), QString()));
     mSampleMessageItem->setFakeTags(list);
 
     mRowMapper->createModelInvariantIndex(0, mSampleMessageItem);
@@ -408,7 +410,7 @@ void ThemePreviewWidget::setTheme(Theme *theme)
     for (QList<Theme::Column *>::ConstIterator it = columns.constBegin(); it != end; ++it) {
         QString label = (*it)->label();
         if ((*it)->visibleByDefault()) {
-            label += QStringLiteral(" (%1)").arg(i18nc("Indicates whether or not a header label is visible", "Visible"));
+            label += u" (%1)"_s.arg(i18nc("Indicates whether or not a header label is visible", "Visible"));
         }
 
         headerLabels.append(label);

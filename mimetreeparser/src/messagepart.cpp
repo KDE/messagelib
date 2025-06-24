@@ -5,6 +5,8 @@
 */
 
 #include "messagepart.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "cryptohelper.h"
 #include "job/qgpgmejobexecutor.h"
 #include "memento/compositememento.h"
@@ -133,7 +135,7 @@ QString MessagePart::attachmentIndex() const
 
 QString MessagePart::attachmentLink() const
 {
-    return mOtp->nodeHelper()->asHREF(content(), QStringLiteral("body"));
+    return mOtp->nodeHelper()->asHREF(content(), u"body"_s);
 }
 
 QString MessagePart::makeLink(const QString &path) const
@@ -143,9 +145,7 @@ QString MessagePart::makeLink(const QString &path) const
     if (path.isEmpty()) {
         return {};
     }
-    return QStringLiteral("x-kmail:/bodypart/%1/%2/%3")
-        .arg(serial++)
-        .arg(mOtp->nodeHelper()->asHREF(content()), QString::fromLatin1(QUrl::toPercentEncoding(path, "/")));
+    return u"x-kmail:/bodypart/%1/%2/%3"_s.arg(serial++).arg(mOtp->nodeHelper()->asHREF(content()), QString::fromLatin1(QUrl::toPercentEncoding(path, "/")));
 }
 
 void MessagePart::setIsRoot(bool root)

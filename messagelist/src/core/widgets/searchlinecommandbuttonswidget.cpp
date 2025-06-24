@@ -5,6 +5,8 @@
 */
 
 #include "searchlinecommandbuttonswidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "searchlinecommand.h"
 #include "searchlinecommandflowlayout.h"
 #include <KLocalizedString>
@@ -16,7 +18,7 @@ SearchLineCommandButtonsWidget::SearchLineCommandButtonsWidget(QWidget *parent)
     : QFrame{parent}
 {
     auto flowLayout = new SearchLineCommandFlowLayout(this);
-    flowLayout->setObjectName(QStringLiteral("flowLayout"));
+    flowLayout->setObjectName(u"flowLayout"_s);
     flowLayout->setContentsMargins({});
     flowLayout->setSpacing(0);
     flowLayout->setHorizontalSpacing(0);
@@ -68,11 +70,11 @@ QList<SearchLineCommandButtonsWidget::ButtonInfo> SearchLineCommandButtonsWidget
         {SearchLineCommand::generateCommandText(SearchLineCommand::IsAction), i18nc("@action:button", "Action")},
         {SearchLineCommand::generateCommandText(SearchLineCommand::Category), i18nc("@action:button", "Category")},
 #if 0 // Reactivate when we implemented it.
-        {false, QStringLiteral("smaller:"), i18nc("@action:button", "Smaller")},
-        {false, QStringLiteral("larger:"), i18nc("@action:button", "Larger")},
-        {false, QStringLiteral("size:"), i18nc("@action:button", "Size")},
-        {false, QStringLiteral("older_than:"), i18nc("@action:button", "Older")},
-        {false, QStringLiteral("newer_than:"), i18nc("@action:button", "Newer")},
+        {false, u"smaller:"_s, i18nc("@action:button", "Smaller")},
+        {false, u"larger:"_s, i18nc("@action:button", "Larger")},
+        {false, u"size:"_s, i18nc("@action:button", "Size")},
+        {false, u"older_than:"_s, i18nc("@action:button", "Older")},
+        {false, u"newer_than:"_s, i18nc("@action:button", "Newer")},
 #endif
     };
     return buttonInfo;

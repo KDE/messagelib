@@ -5,6 +5,8 @@
 */
 
 #include "defaultgrantleeheaderstyleplugin.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "defaultgrantleeheaderstrategy.h"
 #include "defaultgrantleeheaderstyleinterface.h"
 #include "globalsettings_base.h"
@@ -53,7 +55,7 @@ HeaderStyleInterface *DefaultGrantleeHeaderStylePlugin::createView(KActionMenu *
 
 QString DefaultGrantleeHeaderStylePlugin::name() const
 {
-    return QStringLiteral("defaultgrantlee");
+    return u"defaultgrantlee"_s;
 }
 
 #include "defaultgrantleeheaderstyleplugin.moc"

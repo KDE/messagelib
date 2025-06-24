@@ -107,7 +107,7 @@ int TemplateParserJob::parseQuotes(const QString &prefix, const QString &str, QS
 
     // Also allow the german lower double-quote sign as quote separator, not only
     // the standard ASCII quote ("). This fixes bug 166728.
-    const QList<QChar> quoteChars = {QLatin1Char('"'), QChar(0x201C)};
+    const QList<QChar> quoteChars = {u'"', QChar(0x201C)};
 
     QChar prev(QChar::Null);
 
@@ -124,7 +124,7 @@ int TemplateParserJob::parseQuotes(const QString &prefix, const QString &str, QS
             quote.append(c);
             prev = QChar::Null;
         } else {
-            if (c == QLatin1Char('\\')) {
+            if (c == u'\\') {
                 prev = c;
             } else if (quoteChars.contains(c)) {
                 break;
@@ -222,8 +222,8 @@ void TemplateParserJob::processWithTemplate(const QString &tmpl)
         }
     } else { // plain mails only
         QString htmlReplace = plainText.toHtmlEscaped();
-        htmlReplace.replace(QLatin1Char('\n'), QStringLiteral("<br />"));
-        htmlElement = QStringLiteral("<html><head></head><body>%1</body></html>\n").arg(htmlReplace);
+        htmlReplace.replace(u'\n', u"<br />"_s);
+        htmlElement = u"<html><head></head><body>%1</body></html>\n"_s.arg(htmlReplace);
     }
 
     auto job = new TemplateParserExtractHtmlInfo(this);
@@ -254,10 +254,10 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
     for (int i = 0; i < tmpl_len; ++i) {
         QChar c = tmpl[i];
         // qCDebug(TEMPLATEPARSER_LOG) << "Next char: " << c;
-        if (c == QLatin1Char('%')) {
+        if (c == u'%') {
             const QString cmd = tmpl.mid(i + 1);
 
-            if (cmd.startsWith(QLatin1Char('-'))) {
+            if (cmd.startsWith(u'-')) {
                 // dnl
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: -";
                 dnl = true;
@@ -266,18 +266,18 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 // comments
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: REM=";
                 QString q;
-                const int len = parseQuotes(QStringLiteral("REM="), cmd, q);
+                const int len = parseQuotes(u"REM="_s, cmd, q);
                 i += len;
             } else if (cmd.startsWith(QLatin1StringView("LANGUAGE="))) {
                 QString q;
-                const int len = parseQuotes(QStringLiteral("LANGUAGE="), cmd, q);
+                const int len = parseQuotes(u"LANGUAGE="_s, cmd, q);
                 i += len;
                 if (!q.isEmpty()) {
                     definedLocale = QLocale(q);
                 }
             } else if (cmd.startsWith(QLatin1StringView("DICTIONARYLANGUAGE="))) {
                 QString q;
-                const int len = parseQuotes(QStringLiteral("DICTIONARYLANGUAGE="), cmd, q);
+                const int len = parseQuotes(u"DICTIONARYLANGUAGE="_s, cmd, q);
                 i += len;
                 if (!q.isEmpty()) {
                     auto header = new KMime::Headers::Generic("X-KMail-Dictionary");
@@ -290,17 +290,17 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 if (cmd.startsWith(QLatin1StringView("INSERT="))) {
                     // insert content of specified file as is
                     qCDebug(TEMPLATEPARSER_LOG) << "Command: INSERT=";
-                    len = parseQuotes(QStringLiteral("INSERT="), cmd, q);
+                    len = parseQuotes(u"INSERT="_s, cmd, q);
                 } else {
                     // insert content of specified file as is
                     qCDebug(TEMPLATEPARSER_LOG) << "Command: PUT=";
-                    len = parseQuotes(QStringLiteral("PUT="), cmd, q);
+                    len = parseQuotes(u"PUT="_s, cmd, q);
                 }
                 i += len;
                 QString path = KShell::tildeExpand(q);
                 QFileInfo finfo(path);
                 if (finfo.isRelative()) {
-                    path = QDir::homePath() + QLatin1Char('/') + q;
+                    path = QDir::homePath() + u'/' + q;
                 }
                 QFile file(path);
                 if (file.open(QIODevice::ReadOnly)) {
@@ -316,7 +316,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 // insert content of specified file as is
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: SYSTEM=";
                 QString q;
-                const int len = parseQuotes(QStringLiteral("SYSTEM="), cmd, q);
+                const int len = parseQuotes(u"SYSTEM="_s, cmd, q);
                 i += len;
                 const QString pipe_cmd = q;
                 const QString str = pipe(pipe_cmd, QString());
@@ -327,13 +327,13 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 // pipe message body through command and insert it as quotation
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: QUOTEPIPE=";
                 QString q;
-                const int len = parseQuotes(QStringLiteral("QUOTEPIPE="), cmd, q);
+                const int len = parseQuotes(u"QUOTEPIPE="_s, cmd, q);
                 i += len;
                 const QString pipe_cmd = q;
                 if (d->mOrigMsg) {
                     const QString plainStr = pipe(pipe_cmd, plainMessageText(shouldStripSignature(), NoSelectionAllowed));
                     QString plainQuote = quotedPlainText(plainStr);
-                    if (plainQuote.endsWith(QLatin1Char('\n'))) {
+                    if (plainQuote.endsWith(u'\n')) {
                         plainQuote.chop(1);
                     }
                     plainBody.append(plainQuote);
@@ -347,7 +347,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 i += strlen("QUOTE");
                 if (d->mOrigMsg) {
                     QString plainQuote = quotedPlainText(plainMessageText(shouldStripSignature(), SelectionAllowed));
-                    if (plainQuote.endsWith(QLatin1Char('\n'))) {
+                    if (plainQuote.endsWith(u'\n')) {
                         plainQuote.chop(1);
                     }
                     plainBody.append(plainQuote);
@@ -369,7 +369,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 if (d->mOrigMsg) {
                     const QString headerStr = QString::fromLatin1(MessageCore::StringUtil::headerAsSendableString(d->mOrigMsg));
                     QString plainQuote = quotedPlainText(headerStr);
-                    if (plainQuote.endsWith(QLatin1Char('\n'))) {
+                    if (plainQuote.endsWith(u'\n')) {
                         plainQuote.chop(1);
                     }
                     plainBody.append(plainQuote);
@@ -391,7 +391,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 // pipe message body through command and insert it as is
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: TEXTPIPE=";
                 QString q;
-                const int len = parseQuotes(QStringLiteral("TEXTPIPE="), cmd, q);
+                const int len = parseQuotes(u"TEXTPIPE="_s, cmd, q);
                 i += len;
                 const QString pipe_cmd = q;
                 if (d->mOrigMsg) {
@@ -405,7 +405,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 // pipe full message through command and insert result as is
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: MSGPIPE=";
                 QString q;
-                const int len = parseQuotes(QStringLiteral("MSGPIPE="), cmd, q);
+                const int len = parseQuotes(u"MSGPIPE="_s, cmd, q);
                 i += len;
                 if (d->mOrigMsg) {
                     const QString str = pipe(q, QString::fromLatin1(d->mOrigMsg->encodedContent()));
@@ -418,7 +418,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 // pipe message body generated so far through command and insert result as is
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: BODYPIPE=";
                 QString q;
-                const int len = parseQuotes(QStringLiteral("BODYPIPE="), cmd, q);
+                const int len = parseQuotes(u"BODYPIPE="_s, cmd, q);
                 i += len;
                 const QString pipe_cmd = q;
                 const QString plainStr = pipe(q, plainBody);
@@ -432,7 +432,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 // insert result as is replacing current body
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: CLEARPIPE=";
                 QString q;
-                const int len = parseQuotes(QStringLiteral("CLEARPIPE="), cmd, q);
+                const int len = parseQuotes(u"CLEARPIPE="_s, cmd, q);
                 i += len;
                 const QString pipe_cmd = q;
                 const QString plainStr = pipe(pipe_cmd, plainBody);
@@ -458,7 +458,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OTEXTSIZE";
                 i += strlen("OTEXTSIZE");
                 if (d->mOrigMsg) {
-                    const QString str = QStringLiteral("%1").arg(d->mOrigMsg->body().length());
+                    const QString str = u"%1"_s.arg(d->mOrigMsg->body().length());
                     plainBody.append(str);
                     const QString body = plainTextToHtml(str);
                     htmlBody.append(body);
@@ -480,18 +480,18 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString to = d->mOrigMsg->to()->asUnicodeString();
                     const QString cc = d->mOrigMsg->cc()->asUnicodeString();
                     if (!to.isEmpty()) {
-                        const QString toLine = i18nc("@item:intext email To", "To:") + QLatin1Char(' ') + to;
+                        const QString toLine = i18nc("@item:intext email To", "To:") + u' ' + to;
                         plainBody.append(toLine);
                         const QString body = plainTextToHtml(toLine);
                         htmlBody.append(body);
                     }
                     if (!to.isEmpty() && !cc.isEmpty()) {
-                        plainBody.append(QLatin1Char('\n'));
-                        const QString str = plainTextToHtml(QString(QLatin1Char('\n')));
+                        plainBody.append(u'\n');
+                        const QString str = plainTextToHtml(QString(u'\n'));
                         htmlBody.append(str);
                     }
                     if (!cc.isEmpty()) {
-                        const QString ccLine = i18nc("@item:intext email CC", "CC:") + QLatin1Char(' ') + cc;
+                        const QString ccLine = i18nc("@item:intext email CC", "CC:") + u' ' + cc;
                         plainBody.append(ccLine);
                         const QString str = plainTextToHtml(ccLine);
                         htmlBody.append(str);
@@ -614,7 +614,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 // insert specified content of header from original message
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OHEADER=";
                 QString q;
-                const int len = parseQuotes(QStringLiteral("OHEADER="), cmd, q);
+                const int len = parseQuotes(u"OHEADER="_s, cmd, q);
                 i += len;
                 if (d->mOrigMsg) {
                     const QString hdr = q;
@@ -630,7 +630,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 // insert specified content of header from current message
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: HEADER=";
                 QString q;
-                const int len = parseQuotes(QStringLiteral("HEADER="), cmd, q);
+                const int len = parseQuotes(u"HEADER="_s, cmd, q);
                 i += len;
                 const QString hdr = q;
                 QString str;
@@ -644,7 +644,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 // insert specified content of header from current message
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: HEADER(";
                 QRegularExpressionMatch match;
-                static QRegularExpression reg(QStringLiteral("^HEADER\\((.+)\\)"));
+                static QRegularExpression reg(u"^HEADER\\((.+)\\)"_s);
                 const int res = cmd.indexOf(reg, 0, &match);
                 if (res != 0) {
                     // something wrong
@@ -981,8 +981,8 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                  *
                  * Make sure there is an empty line for the cursor otherwise it will be placed at the end of FOOBAR
                  */
-                if (oldI > 0 && tmpl[oldI - 1] == QLatin1Char('\n') && i == tmpl_len - 1) {
-                    plainBody.append(QLatin1Char('\n'));
+                if (oldI > 0 && tmpl[oldI - 1] == u'\n' && i == tmpl_len - 1) {
+                    plainBody.append(u'\n');
                 }
                 d->mMsg->setHeader(header);
                 d->mForceCursorPosition = true;
@@ -997,21 +997,19 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 plainBody.append(c);
                 htmlBody.append(c);
             }
-        } else if (dnl && (c == QLatin1Char('\n') || c == QLatin1Char('\r'))) {
+        } else if (dnl && (c == u'\n' || c == u'\r')) {
             // skip
-            if ((tmpl.size() > i + 1)
-                && ((c == QLatin1Char('\n') && tmpl[i + 1] == QLatin1Char('\r')) || (c == QLatin1Char('\r') && tmpl[i + 1] == QLatin1Char('\n')))) {
+            if ((tmpl.size() > i + 1) && ((c == u'\n' && tmpl[i + 1] == u'\r') || (c == u'\r' && tmpl[i + 1] == u'\n'))) {
                 // skip one more
                 i += 1;
             }
             dnl = false;
         } else {
             plainBody.append(c);
-            if (c == QLatin1Char('\n') || c == QLatin1Char('\r')) {
+            if (c == u'\n' || c == u'\r') {
                 htmlBody.append(QLatin1StringView("<br />"));
                 htmlBody.append(c);
-                if (tmpl.size() > i + 1
-                    && ((c == QLatin1Char('\n') && tmpl[i + 1] == QLatin1Char('\r')) || (c == QLatin1Char('\r') && tmpl[i + 1] == QLatin1Char('\n')))) {
+                if (tmpl.size() > i + 1 && ((c == u'\n' && tmpl[i + 1] == u'\r') || (c == u'\r' && tmpl[i + 1] == u'\n'))) {
                     htmlBody.append(tmpl[i + 1]);
                     plainBody.append(tmpl[i + 1]);
                     i += 1;
@@ -1072,7 +1070,7 @@ QString TemplateParserJob::getHtmlSignature() const
 
     if (!signature.isInlinedHtml()) {
         signature = signature.rawText().toHtmlEscaped();
-        return signature.rawText().replace(QLatin1Char('\n'), QStringLiteral("<br />"));
+        return signature.rawText().replace(u'\n', u"<br />"_s);
     }
     return signature.rawText();
 }
@@ -1092,11 +1090,11 @@ void TemplateParserJob::addProcessedBodyToMessage(const QString &plainBody, cons
 
     // Set To and CC from the template
     if (!d->mTo.isEmpty()) {
-        d->mMsg->to()->fromUnicodeString(d->mMsg->to()->asUnicodeString() + QLatin1Char(',') + d->mTo);
+        d->mMsg->to()->fromUnicodeString(d->mMsg->to()->asUnicodeString() + u',' + d->mTo);
     }
 
     if (!d->mCC.isEmpty()) {
-        d->mMsg->cc()->fromUnicodeString(d->mMsg->cc()->asUnicodeString() + QLatin1Char(',') + d->mCC);
+        d->mMsg->cc()->fromUnicodeString(d->mMsg->cc()->asUnicodeString() + u',' + d->mCC);
     }
 
     d->mMsg->removeHeader<KMime::Headers::ContentType>(); // to get rid of old boundary
@@ -1266,7 +1264,7 @@ QString TemplateParserJob::findTemplate()
     if (d->mIdentity) {
         iid = TemplatesConfiguration::configIdString(d->mIdentity); // templates ID for that identity
     } else {
-        iid = QStringLiteral("IDENTITY_NO_IDENTITY"); // templates ID for no identity
+        iid = u"IDENTITY_NO_IDENTITY"_s; // templates ID for no identity
     }
 
     Templates iconf(iid);
@@ -1423,9 +1421,9 @@ QString TemplateParserJob::quotedPlainText(const QString &selection) const
     if (TemplateParserSettings::self()->smartQuote() && d->mWrap) {
         content = MessageCore::StringUtil::smartQuote(content, d->mColWrap - indentStr.length());
     }
-    content.replace(QLatin1Char('\n'), QLatin1Char('\n') + indentStr);
+    content.replace(u'\n', u'\n' + indentStr);
     content.prepend(indentStr);
-    content += QLatin1Char('\n');
+    content += u'\n';
 
     return content;
 }
@@ -1440,7 +1438,7 @@ QString TemplateParserJob::quotedHtmlText(const QString &selection) const
 
     // Add blockquote tag, so that quoted message can be differentiated from normal message
     // Bug 419978 remove \n by <br>
-    content = QLatin1StringView("<blockquote>") + content.replace(QStringLiteral("\n"), QStringLiteral("<br>")) + QLatin1StringView("</blockquote>");
+    content = QLatin1StringView("<blockquote>") + content.replace(u"\n"_s, u"<br>"_s) + QLatin1StringView("</blockquote>");
     return content;
 }
 
@@ -1477,7 +1475,7 @@ QString TemplateParserJob::plainTextToHtml(const QString &body)
 {
     QString str = body;
     str = str.toHtmlEscaped();
-    str.replace(QLatin1Char('\n'), QStringLiteral("<br />\n"));
+    str.replace(u'\n', u"<br />\n"_s);
     return str;
 }
 
@@ -1489,13 +1487,13 @@ void TemplateParserJob::makeValidHtml(QString &body)
 
     QRegularExpression regEx;
 
-    regEx.setPattern(QStringLiteral("<html.*?>"));
+    regEx.setPattern(u"<html.*?>"_s);
     if (!body.contains(regEx)) {
-        regEx.setPattern(QStringLiteral("<body.*?>"));
+        regEx.setPattern(u"<body.*?>"_s);
         if (!body.contains(regEx)) {
             body = QLatin1StringView("<body>") + body + QLatin1StringView("<br/></body>");
         }
-        regEx.setPattern(QStringLiteral("<head.*?>"));
+        regEx.setPattern(u"<head.*?>"_s);
         if (!body.contains(regEx)) {
             body = QLatin1StringView("<head>") + d->mHeadElement + QLatin1StringView("</head>") + body;
         }

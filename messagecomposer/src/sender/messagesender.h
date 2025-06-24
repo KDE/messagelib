@@ -10,6 +10,8 @@
 #pragma once
 
 #include <KMime/Message>
+using namespace Qt::Literals::StringLiterals;
+
 namespace MessageComposer
 {
 class MessageSender

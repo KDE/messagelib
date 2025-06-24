@@ -5,6 +5,7 @@
 */
 
 #include "draftstatus.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <MessageCore/AutocryptUtils>
 
@@ -25,7 +26,7 @@ DraftEncryptionState::DraftEncryptionState(const KMime::Message::Ptr &msg)
 void DraftEncryptionState::setState(bool encrypt)
 {
     auto hdr = new KMime::Headers::Generic("X-KMail-EncryptActionEnabled");
-    hdr->fromUnicodeString(encrypt ? QStringLiteral("true") : QStringLiteral("false"));
+    hdr->fromUnicodeString(encrypt ? u"true"_s : QStringLiteral("false"));
     mMsg->setHeader(hdr);
 }
 
@@ -57,7 +58,7 @@ DraftSignatureState::DraftSignatureState(const KMime::Message::Ptr &msg)
 void DraftSignatureState::setState(bool sign)
 {
     auto hdr = new KMime::Headers::Generic("X-KMail-SignatureActionEnabled");
-    hdr->fromUnicodeString(sign ? QStringLiteral("true") : QStringLiteral("false"));
+    hdr->fromUnicodeString(sign ? u"true"_s : QStringLiteral("false"));
     mMsg->setHeader(hdr);
 }
 

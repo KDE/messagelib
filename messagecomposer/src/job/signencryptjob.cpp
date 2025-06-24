@@ -6,6 +6,7 @@
 */
 
 #include "job/signencryptjob.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include "contentjobbase_p.h"
 #include "job/protectedheadersjob.h"

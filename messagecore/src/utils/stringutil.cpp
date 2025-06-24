@@ -26,7 +26,7 @@
 using namespace KMime;
 using namespace KMime::Types;
 using namespace KMime::HeaderParsing;
-
+using namespace Qt::Literals::StringLiterals;
 namespace MessageCore
 {
 namespace StringUtil
@@ -35,7 +35,7 @@ namespace StringUtil
 static void removeTrailingSpace(QString &line)
 {
     int i = line.length() - 1;
-    while ((i >= 0) && ((line[i] == QLatin1Char(' ')) || (line[i] == QLatin1Char('\t')))) {
+    while ((i >= 0) && ((line[i] == u' ') || (line[i] == u'\t'))) {
         i--;
     }
     line.truncate(i + 1);
@@ -57,8 +57,7 @@ static QString splitLine(QString &line)
     const int lineLength(line.length());
     while (i < lineLength) {
         const QChar c = line[i];
-        const bool isAllowedQuoteChar =
-            (c == QLatin1Char('>')) || (c == QLatin1Char(':')) || (c == QLatin1Char('|')) || (c == QLatin1Char(' ')) || (c == QLatin1Char('\t'));
+        const bool isAllowedQuoteChar = (c == u'>') || (c == u':') || (c == u'|') || (c == u' ') || (c == u'\t');
         if (isAllowedQuoteChar) {
             startOfActualText = i + 1;
         } else {
@@ -126,21 +125,21 @@ static bool flushPart(QString &msg, QStringList &textParts, const QString &inden
         // Therefore, we write all of our text so far to the msg.
         if (line.isEmpty()) {
             if (!text.isEmpty()) {
-                msg += KPIMTextEdit::TextUtils::flowText(text, indent, maxLength) + QLatin1Char('\n');
+                msg += KPIMTextEdit::TextUtils::flowText(text, indent, maxLength) + u'\n';
             }
-            msg += indent + QLatin1Char('\n');
+            msg += indent + u'\n';
         } else {
             if (text.isEmpty()) {
                 text = line;
             } else {
-                text += QLatin1Char(' ') + line.trimmed();
+                text += u' ' + line.trimmed();
             }
             // If the line doesn't need to be wrapped at all, just write it out as-is.
             // When a line exceeds the maximum length and therefore needs to be broken, this statement
             // if false, and therefore we keep adding lines to our text, so they get ran together in the
             // next flowText call, as "text" contains several text parts/lines then.
             if ((text.length() < maxLength) || (line.length() < (maxLength - 10))) {
-                msg += KPIMTextEdit::TextUtils::flowText(text, indent, maxLength) + QLatin1Char('\n');
+                msg += KPIMTextEdit::TextUtils::flowText(text, indent, maxLength) + u'\n';
             }
         }
     }
@@ -169,12 +168,12 @@ QList<QPair<QString, QString>> parseMailtoUrl(const QUrl &url)
     // String can be encoded.
     str = KCodecs::decodeRFC2047String(str);
     // Bug 427697
-    str.replace(QStringLiteral("&#38;"), QStringLiteral("&"));
+    str.replace(u"&#38;"_s, u"&"_s);
     const QUrl newUrl = QUrl::fromUserInput(str);
 
     int indexTo = -1;
     // Workaround line with # see bug 406208
-    const int indexOf = str.indexOf(QLatin1Char('?'));
+    const int indexOf = str.indexOf(u'?');
     if (indexOf != -1) {
         str.remove(0, indexOf + 1);
         QUrlQuery query(str);
@@ -187,7 +186,7 @@ QList<QPair<QString, QString>> parseMailtoUrl(const QUrl &url)
                 if (queryItem.second.isEmpty()) {
                     // Bug 206269 => A%26B => encoded '&'
                     if (i >= 1) {
-                        values[i - 1].second = values[i - 1].second + QStringLiteral("&") + queryItem.first;
+                        values[i - 1].second = values[i - 1].second + u"&"_s + queryItem.first;
                     }
                 } else {
                     QPair<QString, QString> pairElement;
@@ -206,7 +205,7 @@ QList<QPair<QString, QString>> parseMailtoUrl(const QUrl &url)
     const QString fullTo = to.join(QLatin1StringView(", "));
     if (!fullTo.isEmpty()) {
         QPair<QString, QString> pairElement;
-        pairElement.first = QStringLiteral("to");
+        pairElement.first = u"to"_s;
         pairElement.second = fullTo;
         if (indexTo != -1) {
             values.insert(indexTo, pairElement);
@@ -221,9 +220,9 @@ QString stripSignature(const QString &msg)
 {
     // Following RFC 3676, only > before --
     // I prefer to not delete a SB instead of delete good mail content.
-    static const QRegularExpression sbDelimiterSearch(QStringLiteral("(^|\n)[> ]*-- \n"));
+    static const QRegularExpression sbDelimiterSearch(u"(^|\n)[> ]*-- \n"_s);
     // The regular expression to look for prefix change
-    static const QRegularExpression commonReplySearch(QStringLiteral("^[ ]*>"));
+    static const QRegularExpression commonReplySearch(u"^[ ]*>"_s);
 
     QString res = msg;
     int posDeletingStart = 1; // to start looking at 0
@@ -235,19 +234,19 @@ QString stripSignature(const QString &msg)
         int posNewLine = -1;
 
         // Look for the SB beginning
-        const int posSignatureBlock = res.indexOf(QLatin1Char('-'), posDeletingStart);
+        const int posSignatureBlock = res.indexOf(u'-', posDeletingStart);
         // The prefix before "-- "$
-        if (res.at(posDeletingStart) == QLatin1Char('\n')) {
+        if (res.at(posDeletingStart) == u'\n') {
             ++posDeletingStart;
         }
 
         prefix = res.mid(posDeletingStart, posSignatureBlock - posDeletingStart);
-        posNewLine = res.indexOf(QLatin1Char('\n'), posSignatureBlock) + 1;
+        posNewLine = res.indexOf(u'\n', posSignatureBlock) + 1;
 
         // now go to the end of the SB
         while (posNewLine < res.size() && posNewLine > 0) {
             // handle the undefined case for mid ( x , -n ) where n>1
-            int nextPosNewLine = res.indexOf(QLatin1Char('\n'), posNewLine);
+            int nextPosNewLine = res.indexOf(u'\n', posNewLine);
 
             if (nextPosNewLine < 0) {
                 nextPosNewLine = posNewLine - 1;
@@ -260,7 +259,7 @@ QString stripSignature(const QString &msg)
             // * starts with prefix+(any substring of prefix)
             if ((prefix.isEmpty() && line.indexOf(commonReplySearch) < 0)
                 || (!prefix.isEmpty() && line.startsWith(prefix) && line.mid(prefix.size()).indexOf(commonReplySearch) < 0)) {
-                posNewLine = res.indexOf(QLatin1Char('\n'), posNewLine) + 1;
+                posNewLine = res.indexOf(u'\n', posNewLine) + 1;
             } else {
                 break; // end of the SB
             }
@@ -298,15 +297,15 @@ QString generateMessageId(const QString &address, const QString &suffix)
 {
     const QDateTime dateTime = QDateTime::currentDateTime();
 
-    QString msgIdStr = QLatin1Char('<') + dateTime.toString(QStringLiteral("yyyyMMddhhmm.sszzz"));
+    QString msgIdStr = u'<' + dateTime.toString(u"yyyyMMddhhmm.sszzz"_s);
 
     if (!suffix.isEmpty()) {
-        msgIdStr += QLatin1Char('@') + suffix;
+        msgIdStr += u'@' + suffix;
     } else {
-        msgIdStr += QLatin1Char('.') + KEmailAddress::toIdn(address);
+        msgIdStr += u'.' + KEmailAddress::toIdn(address);
     }
 
-    msgIdStr += QLatin1Char('>');
+    msgIdStr += u'>';
 
     return msgIdStr;
 }
@@ -424,19 +423,19 @@ QString emailAddrAsAnchor(const KMime::Types::Mailbox::List &mailboxList,
                 if (link == ShowLink) {
                     shortListAddress.truncate(result.length() - 2);
                 }
-                result = QStringLiteral("<span><input type=\"checkbox\" class=\"addresslist_checkbox\" id=\"%1\" checked=\"checked\"/><span class=\"short%1\">")
-                             .arg(fieldName)
+                result =
+                    u"<span><input type=\"checkbox\" class=\"addresslist_checkbox\" id=\"%1\" checked=\"checked\"/><span class=\"short%1\">"_s.arg(fieldName)
                     + shortListAddress;
-                result += QStringLiteral("<label class=\"addresslist_label_short\" for=\"%1\"></label></span>").arg(fieldName);
+                result += u"<label class=\"addresslist_label_short\" for=\"%1\"></label></span>"_s.arg(fieldName);
                 expandableInserted = true;
-                result += QStringLiteral("<span class=\"full%1\">").arg(fieldName) + actualListAddress;
+                result += u"<span class=\"full%1\">"_s.arg(fieldName) + actualListAddress;
             }
 
             if (link == ShowLink) {
                 result += QLatin1StringView("<a href=\"mailto:")
                     + QString::fromLatin1(
                               QUrl::toPercentEncoding(KEmailAddress::encodeMailtoUrl(mailbox.prettyAddress(KMime::Types::Mailbox::QuoteWhenNecessary)).path()))
-                    + QLatin1StringView("\" ") + cssStyle + QLatin1Char('>');
+                    + QLatin1StringView("\" ") + cssStyle + u'>';
             }
             const bool foundMe = !MessageCore::MessageCoreSettings::self()->displayOwnIdentity() && onlyOneIdentity
                 && (im->identityForAddress(prettyAddressStr) != KIdentityManagementCore::Identity::null());
@@ -461,7 +460,7 @@ QString emailAddrAsAnchor(const KMime::Types::Mailbox::List &mailboxList,
     }
 
     if (expandableInserted) {
-        result += QStringLiteral("<label class=\"addresslist_label_full\" for=\"%1\"></label></span></span>").arg(fieldName);
+        result += u"<label class=\"addresslist_label_full\" for=\"%1\"></label></span></span>"_s.arg(fieldName);
     }
     return result;
 }
@@ -511,14 +510,14 @@ QString guessEmailAddressFromLoginName(const QString &loginName)
     }
 
     QString address = loginName;
-    address += QLatin1Char('@');
+    address += u'@';
     address += QHostInfo::localHostName();
 
     // try to determine the real name
     const KUser user(loginName);
     if (user.isValid()) {
         const QString fullName = user.property(KUser::FullName).toString();
-        address = KEmailAddress::quoteNameIfNecessary(fullName) + QLatin1StringView(" <") + address + QLatin1Char('>');
+        address = KEmailAddress::quoteNameIfNecessary(fullName) + QLatin1StringView(" <") + address + u'>';
     }
 
     return address;
@@ -541,9 +540,9 @@ QString smartQuote(const QString &msg, int maxLineLength)
     QString result;
 
     int lineStart = 0;
-    int lineEnd = msg.indexOf(QLatin1Char('\n'));
+    int lineEnd = msg.indexOf(u'\n');
     bool needToContinue = true;
-    for (; needToContinue; lineStart = lineEnd + 1, lineEnd = msg.indexOf(QLatin1Char('\n'), lineStart)) {
+    for (; needToContinue; lineStart = lineEnd + 1, lineEnd = msg.indexOf(u'\n', lineStart)) {
         QString line;
         if (lineEnd == -1) {
             if (lineStart == 0) {
@@ -586,8 +585,8 @@ QString smartQuote(const QString &msg, int maxLineLength)
                 for (int i = textParts.count() - 1; i >= 0; i--) {
                     // Check if we have found the From line
                     const QString textPartElement(textParts[i]);
-                    if (textPartElement.endsWith(QLatin1Char(':'))) {
-                        fromLine = oldIndent + textPartElement + QLatin1Char('\n');
+                    if (textPartElement.endsWith(u':')) {
+                        fromLine = oldIndent + textPartElement + u'\n';
                         textParts.removeAt(i);
                         break;
                     }
@@ -603,9 +602,9 @@ QString smartQuote(const QString &msg, int maxLineLength)
             // is cleared for us.
             if (flushPart(result, textParts, oldIndent, maxLineLength)) {
                 if (oldIndent.length() > indent.length()) {
-                    result += indent + QLatin1Char('\n');
+                    result += indent + u'\n';
                 } else {
-                    result += oldIndent + QLatin1Char('\n');
+                    result += oldIndent + u'\n';
                 }
             }
 
@@ -623,7 +622,7 @@ QString smartQuote(const QString &msg, int maxLineLength)
     flushPart(result, textParts, oldIndent, maxLineLength);
 
     // Remove superfluous newline which was appended in flowText
-    if (!result.isEmpty() && result.endsWith(QLatin1Char('\n'))) {
+    if (!result.isEmpty() && result.endsWith(u'\n')) {
         result.chop(1);
     }
 
@@ -641,7 +640,7 @@ QString formatQuotePrefix(const QString &wildString, const QString &fromDisplayS
     int strLength(wildString.length());
     for (int i = 0; i < strLength;) {
         QChar ch = wildString[i++];
-        if (ch == QLatin1Char('%') && i < strLength) {
+        if (ch == u'%' && i < strLength) {
             ch = wildString[i++];
             switch (ch.toLatin1()) {
             case 'f': { // sender's initials
@@ -651,26 +650,26 @@ QString formatQuotePrefix(const QString &wildString, const QString &fromDisplayS
 
                 int j = 0;
                 const int strLengthFromDisplayString(fromDisplayString.length());
-                for (; j < strLengthFromDisplayString && fromDisplayString[j] > QLatin1Char(' '); ++j) { }
-                for (; j < strLengthFromDisplayString && fromDisplayString[j] <= QLatin1Char(' '); ++j) { }
+                for (; j < strLengthFromDisplayString && fromDisplayString[j] > u' '; ++j) { }
+                for (; j < strLengthFromDisplayString && fromDisplayString[j] <= u' '; ++j) { }
                 result += fromDisplayString[0];
-                if (j < strLengthFromDisplayString && fromDisplayString[j] > QLatin1Char(' ')) {
+                if (j < strLengthFromDisplayString && fromDisplayString[j] > u' ') {
                     result += fromDisplayString[j];
                 } else if (strLengthFromDisplayString > 1) {
-                    if (fromDisplayString[1] > QLatin1Char(' ')) {
+                    if (fromDisplayString[1] > u' ') {
                         result += fromDisplayString[1];
                     }
                 }
                 break;
             }
             case '_':
-                result += QLatin1Char(' ');
+                result += u' ';
                 break;
             case '%':
-                result += QLatin1Char('%');
+                result += u'%';
                 break;
             default:
-                result += QLatin1Char('%');
+                result += u'%';
                 result += ch;
                 break;
             }
@@ -690,29 +689,29 @@ QString cleanFileName(const QString &name)
     // We also look at the special case of ": ", since converting that to "_ "
     // would look strange, simply "_" looks better.
     // https://issues.kolab.org/issue3805
-    fileName.replace(QLatin1StringView(": "), QStringLiteral("_"));
+    fileName.replace(QLatin1StringView(": "), u"_"_s);
     // replace all ':' with '_' because ':' isn't allowed on FAT volumes
-    fileName.replace(QLatin1Char(':'), QLatin1Char('_'));
+    fileName.replace(u':', u'_');
     // better not use a dir-delimiter in a filename
-    fileName.replace(QLatin1Char('/'), QLatin1Char('_'));
-    fileName.replace(QLatin1Char('\\'), QLatin1Char('_'));
+    fileName.replace(u'/', u'_');
+    fileName.replace(u'\\', u'_');
 
 #ifdef Q_OS_WINDOWS
     // replace all '.' with '_', not just at the start of the filename
     // but don't replace the last '.' before the file extension.
-    int i = fileName.lastIndexOf(QLatin1Char('.'));
+    int i = fileName.lastIndexOf(u'.');
     if (i != -1) {
-        i = fileName.lastIndexOf(QLatin1Char('.'), i - 1);
+        i = fileName.lastIndexOf(u'.', i - 1);
     }
 
     while (i != -1) {
-        fileName.replace(i, 1, QLatin1Char('_'));
-        i = fileName.lastIndexOf(QLatin1Char('.'), i - 1);
+        fileName.replace(i, 1, u'_');
+        i = fileName.lastIndexOf(u'.', i - 1);
     }
 #endif
 
     // replace all '~' with '_', not just leading '~' either.
-    fileName.replace(QLatin1Char('~'), QLatin1Char('_'));
+    fileName.replace(u'~', u'_');
 
     return fileName;
 }
@@ -740,7 +739,7 @@ QString forwardSubject(KMime::Message *msg)
     return cleanSubject(msg,
                         MessageCore::MessageCoreSettings::self()->forwardPrefixes(),
                         MessageCore::MessageCoreSettings::self()->replaceForwardPrefix(),
-                        QStringLiteral("Fwd:"));
+                        u"Fwd:"_s);
 }
 
 QString replySubject(KMime::Message *msg)
@@ -748,7 +747,7 @@ QString replySubject(KMime::Message *msg)
     return cleanSubject(msg,
                         MessageCore::MessageCoreSettings::self()->replyPrefixes(),
                         MessageCore::MessageCoreSettings::self()->replaceReplyPrefix(),
-                        QStringLiteral("Re:"));
+                        u"Re:"_s);
 }
 
 QString replacePrefixes(const QString &str, const QStringList &prefixRegExps, bool replace, const QString &newPrefix)
@@ -757,7 +756,7 @@ QString replacePrefixes(const QString &str, const QStringList &prefixRegExps, bo
     // construct a big regexp that
     // 1. is anchored to the beginning of str (sans whitespace)
     // 2. matches at least one of the part regexps in prefixRegExps
-    const QString bigRegExp = QStringLiteral("^(?:\\s+|(?:%1))+\\s*").arg(prefixRegExps.join(QStringLiteral(")|(?:")));
+    const QString bigRegExp = u"^(?:\\s+|(?:%1))+\\s*"_s.arg(prefixRegExps.join(u")|(?:"_s));
     const QRegularExpression rx(bigRegExp, QRegularExpression::CaseInsensitiveOption);
     if (rx.isValid()) {
         QString tmp = str;
@@ -765,7 +764,7 @@ QString replacePrefixes(const QString &str, const QStringList &prefixRegExps, bo
         if (match.hasMatch()) {
             recognized = true;
             if (replace) {
-                return tmp.replace(0, match.capturedLength(0), newPrefix + QLatin1Char(' '));
+                return tmp.replace(0, match.capturedLength(0), newPrefix + u' ');
             }
         }
     } else {
@@ -776,7 +775,7 @@ QString replacePrefixes(const QString &str, const QStringList &prefixRegExps, bo
     }
 
     if (!recognized) {
-        return newPrefix + QLatin1Char(' ') + str;
+        return newPrefix + u' ' + str;
     } else {
         return str;
     }
@@ -793,7 +792,7 @@ QString stripOffPrefixes(const QString &subject)
     // construct a big regexp that
     // 1. is anchored to the beginning of str (sans whitespace)
     // 2. matches at least one of the part regexps in prefixRegExps
-    const QString bigRegExp = QStringLiteral("^(?:\\s+|(?:%1))+\\s*").arg(prefixRegExps.join(QStringLiteral(")|(?:")));
+    const QString bigRegExp = u"^(?:\\s+|(?:%1))+\\s*"_s.arg(prefixRegExps.join(u")|(?:"_s));
 
     static QRegularExpression regex;
 
@@ -819,7 +818,7 @@ QString stripOffPrefixes(const QString &subject)
 void setEncodingFile(QUrl &url, const QString &encoding)
 {
     QUrlQuery query;
-    query.addQueryItem(QStringLiteral("charset"), encoding);
+    query.addQueryItem(u"charset"_s, encoding);
     url.setQuery(query);
 }
 }

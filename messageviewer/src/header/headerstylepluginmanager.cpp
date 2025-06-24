@@ -5,6 +5,8 @@
 */
 
 #include "headerstylepluginmanager.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "headerstyleplugin.h"
 #include "messageviewer_debug.h"
 #include <KPluginFactory>
@@ -52,7 +54,7 @@ namespace
 {
 QString pluginVersion()
 {
-    return QStringLiteral("1.0");
+    return u"1.0"_s;
 }
 }
 
@@ -63,17 +65,17 @@ QList<PimCommon::PluginUtilData> HeaderStylePluginManagerPrivate::pluginDataList
 
 QString HeaderStylePluginManagerPrivate::configGroupName() const
 {
-    return QStringLiteral("HeaderStylePlugins");
+    return u"HeaderStylePlugins"_s;
 }
 
 QString HeaderStylePluginManagerPrivate::configPrefixSettingKey() const
 {
-    return QStringLiteral("PluginHeaderStyle");
+    return u"PluginHeaderStyle"_s;
 }
 
 void HeaderStylePluginManagerPrivate::initializePluginList()
 {
-    const QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("pim6/messageviewer/headerstyle"));
+    const QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(u"pim6/messageviewer/headerstyle"_s);
 
     QListIterator<KPluginMetaData> i(plugins);
     i.toBack();
@@ -95,7 +97,7 @@ void HeaderStylePluginManagerPrivate::initializePluginList()
         info.data = data;
         const QString version = data.version();
         if (pluginVersion() == version) {
-            const QVariant p = data.rawData().value(QStringLiteral("X-KDE-MessageViewer-Header-Order")).toVariant();
+            const QVariant p = data.rawData().value(u"X-KDE-MessageViewer-Header-Order"_s).toVariant();
             int order = -1;
             if (p.isValid()) {
                 order = p.toInt();

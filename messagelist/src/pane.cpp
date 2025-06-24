@@ -33,6 +33,7 @@
 #include "widget.h"
 #include <Akonadi/ETMViewStateSaver>
 #include <Akonadi/MessageStatus>
+using namespace Qt::Literals::StringLiterals;
 
 namespace MessageList
 {
@@ -119,7 +120,7 @@ Pane::Pane(bool restoreSession, QAbstractItemModel *model, QItemSelectionModel *
     } // Proxy stack done
 
     d->mNewTabButton = new QToolButton(this);
-    d->mNewTabButton->setIcon(QIcon::fromTheme(QStringLiteral("tab-new")));
+    d->mNewTabButton->setIcon(QIcon::fromTheme(u"tab-new"_s));
     d->mNewTabButton->adjustSize();
     d->mNewTabButton->setToolTip(i18nc("@info:tooltip", "Open a new tab"));
 #ifndef QT_NO_ACCESSIBILITY
@@ -131,7 +132,7 @@ Pane::Pane(bool restoreSession, QAbstractItemModel *model, QItemSelectionModel *
     });
 
     d->mCloseTabButton = new QToolButton(this);
-    d->mCloseTabButton->setIcon(QIcon::fromTheme(QStringLiteral("tab-close")));
+    d->mCloseTabButton->setIcon(QIcon::fromTheme(u"tab-close"_s));
     d->mCloseTabButton->adjustSize();
     d->mCloseTabButton->setToolTip(i18nc("@info:tooltip", "Close the current tab"));
 #ifndef QT_NO_ACCESSIBILITY
@@ -179,7 +180,7 @@ void Pane::PanePrivate::addActivateTabAction(int i)
     const QString actionname = QString::asprintf("activate_tab_%02d", i);
     auto action = new QAction(i18nc("@action", "Activate Tab %1", i), q);
     mXmlGuiClient->actionCollection()->addAction(actionname, action);
-    mXmlGuiClient->actionCollection()->setDefaultShortcut(action, QKeySequence(QStringLiteral("Alt+%1").arg(i)));
+    mXmlGuiClient->actionCollection()->setDefaultShortcut(action, QKeySequence(u"Alt+%1"_s.arg(i)));
     connect(action, &QAction::triggered, q, [this]() {
         activateTab();
     });
@@ -201,7 +202,7 @@ void Pane::setXmlGuiClient(KXMLGUIClient *xmlGuiClient)
     d->mXmlGuiClient->actionCollection()->setDefaultShortcut(showHideQuicksearch, Qt::CTRL | Qt::Key_H);
     showHideQuicksearch->setChecked(MessageListSettings::showQuickSearch());
 
-    d->mXmlGuiClient->actionCollection()->addAction(QStringLiteral("show_quick_search"), showHideQuicksearch);
+    d->mXmlGuiClient->actionCollection()->addAction(u"show_quick_search"_s, showHideQuicksearch);
     connect(showHideQuicksearch, &KToggleAction::triggered, this, [this](bool state) {
         d->changeQuicksearchVisibility(state);
     });
@@ -219,13 +220,13 @@ void Pane::setXmlGuiClient(KXMLGUIClient *xmlGuiClient)
             d->mXmlGuiClient->actionCollection()->removeAction(d->mActionMenu);
         }
         d->mActionMenu = new KActionMenu(QIcon(), i18n("Message List"), this);
-        d->mXmlGuiClient->actionCollection()->addAction(QStringLiteral("view_message_list"), d->mActionMenu);
+        d->mXmlGuiClient->actionCollection()->addAction(u"view_message_list"_s, d->mActionMenu);
         MessageList::Util::fillViewMenu(d->mActionMenu->menu(), this);
 
         d->mActionMenu->addSeparator();
 
         auto action = new QAction(i18nc("@action", "Create New Tab"), this);
-        d->mXmlGuiClient->actionCollection()->addAction(QStringLiteral("create_new_tab"), action);
+        d->mXmlGuiClient->actionCollection()->addAction(u"create_new_tab"_s, action);
         d->mXmlGuiClient->actionCollection()->setDefaultShortcut(action, QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_O));
         connect(action, &QAction::triggered, this, [this]() {
             d->onNewTabClicked();
@@ -246,17 +247,17 @@ void Pane::setXmlGuiClient(KXMLGUIClient *xmlGuiClient)
         if (QApplication::isRightToLeft()) {
             nextShortcut.append(KStandardShortcut::tabPrev());
             prevShortcut.append(KStandardShortcut::tabNext());
-            nextIcon = QStringLiteral("go-previous-view");
-            prevIcon = QStringLiteral("go-next-view");
+            nextIcon = u"go-previous-view"_s;
+            prevIcon = u"go-next-view"_s;
         } else {
             nextShortcut.append(KStandardShortcut::tabNext());
             prevShortcut.append(KStandardShortcut::tabPrev());
-            nextIcon = QStringLiteral("go-next-view");
-            prevIcon = QStringLiteral("go-previous-view");
+            nextIcon = u"go-next-view"_s;
+            prevIcon = u"go-previous-view"_s;
         }
 
         d->mActivateNextTabAction = new QAction(i18nc("@action", "Activate Next Tab"), this);
-        d->mXmlGuiClient->actionCollection()->addAction(QStringLiteral("activate_next_tab"), d->mActivateNextTabAction);
+        d->mXmlGuiClient->actionCollection()->addAction(u"activate_next_tab"_s, d->mActivateNextTabAction);
         d->mActivateNextTabAction->setEnabled(false);
         d->mActivateNextTabAction->setIcon(QIcon::fromTheme(nextIcon));
         d->mXmlGuiClient->actionCollection()->setDefaultShortcuts(d->mActivateNextTabAction, nextShortcut);
@@ -266,7 +267,7 @@ void Pane::setXmlGuiClient(KXMLGUIClient *xmlGuiClient)
         d->mActionMenu->addAction(d->mActivateNextTabAction);
 
         d->mActivatePreviousTabAction = new QAction(i18nc("@action", "Activate Previous Tab"), this);
-        d->mXmlGuiClient->actionCollection()->addAction(QStringLiteral("activate_previous_tab"), d->mActivatePreviousTabAction);
+        d->mXmlGuiClient->actionCollection()->addAction(u"activate_previous_tab"_s, d->mActivatePreviousTabAction);
         d->mXmlGuiClient->actionCollection()->setDefaultShortcuts(d->mActivatePreviousTabAction, prevShortcut);
         d->mActivatePreviousTabAction->setIcon(QIcon::fromTheme(prevIcon));
         d->mActivatePreviousTabAction->setEnabled(false);
@@ -278,7 +279,7 @@ void Pane::setXmlGuiClient(KXMLGUIClient *xmlGuiClient)
         d->mActionMenu->addSeparator();
 
         d->mMoveTabLeftAction = new QAction(i18nc("@action", "Move Tab Left"), this);
-        d->mXmlGuiClient->actionCollection()->addAction(QStringLiteral("move_tab_left"), d->mMoveTabLeftAction);
+        d->mXmlGuiClient->actionCollection()->addAction(u"move_tab_left"_s, d->mMoveTabLeftAction);
         d->mMoveTabLeftAction->setEnabled(false);
         connect(d->mMoveTabLeftAction, &QAction::triggered, this, [this]() {
             d->moveTabLeft();
@@ -286,7 +287,7 @@ void Pane::setXmlGuiClient(KXMLGUIClient *xmlGuiClient)
         d->mActionMenu->addAction(d->mMoveTabLeftAction);
 
         d->mMoveTabRightAction = new QAction(i18nc("@action", "Move Tab Right"), this);
-        d->mXmlGuiClient->actionCollection()->addAction(QStringLiteral("move_tab_right"), d->mMoveTabRightAction);
+        d->mXmlGuiClient->actionCollection()->addAction(u"move_tab_right"_s, d->mMoveTabRightAction);
         d->mMoveTabRightAction->setEnabled(false);
         connect(d->mMoveTabRightAction, &QAction::triggered, this, [this]() {
             d->moveTabRight();
@@ -296,7 +297,7 @@ void Pane::setXmlGuiClient(KXMLGUIClient *xmlGuiClient)
         d->mActionMenu->addSeparator();
 
         d->mCloseTabAction = new QAction(i18nc("@action", "Close Tab"), this);
-        d->mXmlGuiClient->actionCollection()->addAction(QStringLiteral("close_current_tab"), d->mCloseTabAction);
+        d->mXmlGuiClient->actionCollection()->addAction(u"close_current_tab"_s, d->mCloseTabAction);
         d->mXmlGuiClient->actionCollection()->setDefaultShortcuts(d->mCloseTabAction,
                                                                   QList<QKeySequence>()
                                                                       << QKeySequence(Qt::CTRL | Qt::SHIFT | Qt::Key_W) << QKeySequence(Qt::CTRL | Qt::Key_W));
@@ -524,11 +525,11 @@ void Pane::PanePrivate::setCurrentFolder(const QModelIndex &etmIndex)
         QModelIndex idx = s->selectedRows().first().parent();
         toolTip = label;
         while (idx != QModelIndex()) {
-            toolTip = idx.data().toString() + QLatin1Char('/') + toolTip;
+            toolTip = idx.data().toString() + u'/' + toolTip;
             idx = idx.parent();
         }
     } else {
-        icon = QIcon::fromTheme(QStringLiteral("folder"));
+        icon = QIcon::fromTheme(u"folder"_s);
     }
 
     const int index = q->indexOf(w);
@@ -706,16 +707,16 @@ void Pane::PanePrivate::onTabContextMenuRequest(const QPoint &pos)
     QAction *closeTabAction = nullptr;
     if (!w->isLocked()) {
         closeTabAction = menu.addAction(i18nc("@action:inmenu", "Close Tab"));
-        closeTabAction->setIcon(QIcon::fromTheme(QStringLiteral("tab-close")));
+        closeTabAction->setIcon(QIcon::fromTheme(u"tab-close"_s));
     }
 
     QAction *allOtherAction = menu.addAction(i18nc("@action:inmenu", "Close All Other Tabs"));
-    allOtherAction->setIcon(QIcon::fromTheme(QStringLiteral("tab-close-other")));
+    allOtherAction->setIcon(QIcon::fromTheme(u"tab-close-other"_s));
 
     menu.addSeparator();
 
     QAction *lockTabAction = menu.addAction(w->isLocked() ? i18nc("@action:inmenu", "Unlock Tab") : i18nc("@action:inmenu", "Lock Tab"));
-    lockTabAction->setIcon(w->isLocked() ? QIcon::fromTheme(QStringLiteral("lock")) : QIcon::fromTheme(QStringLiteral("unlock")));
+    lockTabAction->setIcon(w->isLocked() ? QIcon::fromTheme(u"lock"_s) : QIcon::fromTheme(QStringLiteral("unlock")));
 
     QAction *action = menu.exec(q->mapToGlobal(pos));
 
@@ -747,7 +748,7 @@ void Pane::PanePrivate::onTabContextMenuRequest(const QPoint &pos)
         auto tab = qobject_cast<Widget *>(q->widget(indexBar));
         const bool isLocked = !tab->isLocked();
         tab->setLockTab(isLocked);
-        q->setTabIcon(indexBar, isLocked ? QIcon::fromTheme(QStringLiteral("lock")) : QIcon::fromTheme(QStringLiteral("unlock")));
+        q->setTabIcon(indexBar, isLocked ? QIcon::fromTheme(u"lock"_s) : QIcon::fromTheme(QStringLiteral("unlock")));
         q->tabBar()->tabButton(indexBar, QTabBar::RightSide)->setEnabled(!isLocked);
         if (q->tabBar()->currentIndex() == indexBar) {
             mCloseTabButton->setEnabled(!isLocked);
@@ -837,7 +838,7 @@ QItemSelectionModel *Pane::createNewTab()
     connect(w, &Core::Widget::unlockTabRequested, this, [this, w]() {
         for (int i = 0; i < count(); ++i) {
             if (w == qobject_cast<Widget *>(widget(i))) {
-                setTabIcon(i, QIcon::fromTheme(QStringLiteral("unlock")));
+                setTabIcon(i, QIcon::fromTheme(u"unlock"_s));
             }
         }
     });
@@ -1143,37 +1144,37 @@ void Pane::updateTagComboBox()
 
 void Pane::writeConfig(bool restoreSession)
 {
-    KConfigGroup conf(MessageList::MessageListSettings::self()->config(), QStringLiteral("MessageListPane"));
+    KConfigGroup conf(MessageList::MessageListSettings::self()->config(), u"MessageListPane"_s);
 
     // Delete list before
-    const QStringList list = MessageList::MessageListSettings::self()->config()->groupList().filter(QRegularExpression(QStringLiteral("MessageListTab\\d+")));
+    const QStringList list = MessageList::MessageListSettings::self()->config()->groupList().filter(QRegularExpression(u"MessageListTab\\d+"_s));
     for (const QString &group : list) {
         MessageList::MessageListSettings::self()->config()->deleteGroup(group);
     }
 
     if (restoreSession) {
-        conf.writeEntry(QStringLiteral("currentIndex"), currentIndex());
+        conf.writeEntry(u"currentIndex"_s, currentIndex());
 
         int elementTab = 0;
         for (int i = 0; i < count(); ++i) {
             auto w = qobject_cast<Widget *>(widget(i));
             if (w && w->currentCollection().isValid()) {
-                KConfigGroup grp(MessageList::MessageListSettings::self()->config(), QStringLiteral("MessageListTab%1").arg(elementTab));
-                grp.writeEntry(QStringLiteral("collectionId"), w->currentCollection().id());
-                grp.writeEntry(QStringLiteral("HeaderState"), w->view()->header()->saveState());
+                KConfigGroup grp(MessageList::MessageListSettings::self()->config(), u"MessageListTab%1"_s.arg(elementTab));
+                grp.writeEntry(u"collectionId"_s, w->currentCollection().id());
+                grp.writeEntry(u"HeaderState"_s, w->view()->header()->saveState());
                 elementTab++;
             }
         }
-        conf.writeEntry(QStringLiteral("tabNumber"), elementTab);
+        conf.writeEntry(u"tabNumber"_s, elementTab);
     }
     conf.sync();
 }
 
 void Pane::readConfig(bool restoreSession)
 {
-    if (MessageList::MessageListSettings::self()->config()->hasGroup(QStringLiteral("MessageListPane"))) {
-        KConfigGroup conf(MessageList::MessageListSettings::self()->config(), QStringLiteral("MessageListPane"));
-        const int numberOfTab = conf.readEntry(QStringLiteral("tabNumber"), 0);
+    if (MessageList::MessageListSettings::self()->config()->hasGroup(u"MessageListPane"_s)) {
+        KConfigGroup conf(MessageList::MessageListSettings::self()->config(), u"MessageListPane"_s);
+        const int numberOfTab = conf.readEntry(u"tabNumber"_s, 0);
         if (numberOfTab == 0) {
             createNewTab();
         } else {
@@ -1181,7 +1182,7 @@ void Pane::readConfig(bool restoreSession)
                 createNewTab();
                 restoreHeaderSettings(i, restoreSession);
             }
-            setCurrentIndex(conf.readEntry(QStringLiteral("currentIndex"), 0));
+            setCurrentIndex(conf.readEntry(u"currentIndex"_s, 0));
         }
     } else {
         createNewTab();
@@ -1191,14 +1192,14 @@ void Pane::readConfig(bool restoreSession)
 
 void Pane::restoreHeaderSettings(int index, bool restoreSession)
 {
-    KConfigGroup grp(MessageList::MessageListSettings::self()->config(), QStringLiteral("MessageListTab%1").arg(index));
+    KConfigGroup grp(MessageList::MessageListSettings::self()->config(), u"MessageListTab%1"_s.arg(index));
     if (grp.exists()) {
         auto w = qobject_cast<Widget *>(widget(index));
         if (w) {
-            w->view()->header()->restoreState(grp.readEntry(QStringLiteral("HeaderState"), QByteArray()));
+            w->view()->header()->restoreState(grp.readEntry(u"HeaderState"_s, QByteArray()));
         }
         if (restoreSession) {
-            const Akonadi::Collection::Id id = grp.readEntry(QStringLiteral("collectionId"), -1);
+            const Akonadi::Collection::Id id = grp.readEntry(u"collectionId"_s, -1);
             if (id != -1) {
                 auto saver = new Akonadi::ETMViewStateSaver;
                 saver->setSelectionModel(d->mSelectionModel);

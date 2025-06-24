@@ -6,6 +6,8 @@
 */
 
 #include "configurewidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "messageviewer_debug.h"
 #include "settings/messageviewersettings.h"
 #include "ui_settings.h"

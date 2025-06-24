@@ -5,6 +5,7 @@
 */
 
 #include "convertsnippetvariablesutil.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <QDateTime>
 #include <QLocale>
@@ -13,87 +14,87 @@ QString MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(Me
 {
     switch (type) {
     case CcAddr:
-        return QStringLiteral("%CCADDR");
+        return u"%CCADDR"_s;
     case CcLname:
-        return QStringLiteral("%CCLNAME");
+        return u"%CCLNAME"_s;
     case CcFname:
-        return QStringLiteral("%CCFNAME");
+        return u"%CCFNAME"_s;
     case CcName:
-        return QStringLiteral("%CCNAME");
+        return u"%CCNAME"_s;
     case BccAddr:
-        return QStringLiteral("%BCCADDR");
+        return u"%BCCADDR"_s;
     case BccLname:
-        return QStringLiteral("%BCCLNAME");
+        return u"%BCCLNAME"_s;
     case BccFname:
-        return QStringLiteral("%BCCFNAME");
+        return u"%BCCFNAME"_s;
     case BccName:
-        return QStringLiteral("%BCCNAME");
+        return u"%BCCNAME"_s;
     case FullSubject:
-        return QStringLiteral("%FULLSUBJECT");
+        return u"%FULLSUBJECT"_s;
     case ToAddr:
-        return QStringLiteral("%TOADDR");
+        return u"%TOADDR"_s;
     case ToFname:
-        return QStringLiteral("%TOFNAME");
+        return u"%TOFNAME"_s;
     case ToLname:
-        return QStringLiteral("%TOLNAME");
+        return u"%TOLNAME"_s;
     case ToName:
-        return QStringLiteral("%TONAME");
+        return u"%TONAME"_s;
     case FromAddr:
-        return QStringLiteral("%FROMADDR");
+        return u"%FROMADDR"_s;
     case FromLname:
-        return QStringLiteral("%FROMLNAME");
+        return u"%FROMLNAME"_s;
     case FromFname:
-        return QStringLiteral("%FROMFNAME");
+        return u"%FROMFNAME"_s;
     case FromName:
-        return QStringLiteral("%FROMNAME");
+        return u"%FROMNAME"_s;
     case Dow:
-        return QStringLiteral("%DOW");
+        return u"%DOW"_s;
     case Date:
-        return QStringLiteral("%DATE");
+        return u"%DATE"_s;
     case ShortDate:
-        return QStringLiteral("%SHORTDATE");
+        return u"%SHORTDATE"_s;
     case Time:
-        return QStringLiteral("%TIME");
+        return u"%TIME"_s;
     case TimeLong:
-        return QStringLiteral("%TIMELONG");
+        return u"%TIMELONG"_s;
     case AttachmentCount:
-        return QStringLiteral("%ATTACHMENTCOUNT");
+        return u"%ATTACHMENTCOUNT"_s;
     case AttachmentName:
-        return QStringLiteral("%ATTACHMENTNAMES");
+        return u"%ATTACHMENTNAMES"_s;
     case AttachmentFilenames:
-        return QStringLiteral("%ATTACHMENTFILENAMES");
+        return u"%ATTACHMENTFILENAMES"_s;
     case AttachmentNamesAndSizes:
-        return QStringLiteral("%ATTACHMENTNAMESANDSIZES");
+        return u"%ATTACHMENTNAMESANDSIZES"_s;
     case Year:
-        return QStringLiteral("%YEAR");
+        return u"%YEAR"_s;
     case LastYear:
-        return QStringLiteral("%LASTYEAR");
+        return u"%LASTYEAR"_s;
     case NextYear:
-        return QStringLiteral("%NEXTYEAR");
+        return u"%NEXTYEAR"_s;
     case MonthNumber:
-        return QStringLiteral("%MONTHNUMBER"); // 1-12
+        return u"%MONTHNUMBER"_s; // 1-12
     case DayNumber:
-        return QStringLiteral("%DAYNUMBER"); // 1-28 to 31
+        return u"%DAYNUMBER"_s; // 1-28 to 31
     case CustomDate:
-        return QStringLiteral("%CUSTOMDATE"); // dd MMM yyyy
+        return u"%CUSTOMDATE"_s; // dd MMM yyyy
     case DayOfMonth:
-        return QStringLiteral("%DAYOFMONTH"); // 1-31
+        return u"%DAYOFMONTH"_s; // 1-31
     case WeekNumber:
-        return QStringLiteral("%WEEKNUMBER"); // 1-52
+        return u"%WEEKNUMBER"_s; // 1-52
     case MonthNameShort:
-        return QStringLiteral("%MONTHNAMESHORT"); //(Jan-Dec)
+        return u"%MONTHNAMESHORT"_s; //(Jan-Dec)
     case MonthNameLong:
-        return QStringLiteral("%MONTHNAMELONG"); //(January-December)
+        return u"%MONTHNAMELONG"_s; //(January-December)
     case DayOfWeek:
-        return QStringLiteral("%DAYOFWEEK"); //(1-7)
+        return u"%DAYOFWEEK"_s; //(1-7)
     case DayOfWeekNameShort:
-        return QStringLiteral("%DAYOFWEEKNAMESHORT"); //(Mon-Sun)
+        return u"%DAYOFWEEKNAMESHORT"_s; //(Mon-Sun)
     case DayOfWeekNameLong:
-        return QStringLiteral("%DAYOFWEEKNAMELONG"); //(Monday-Sunday)
+        return u"%DAYOFWEEKNAMELONG"_s; //(Monday-Sunday)
     case YearLastMonth:
-        return QStringLiteral("%YEARLASTMONTH"); // january 2020 will how 2019-12
+        return u"%YEARLASTMONTH"_s; // january 2020 will how 2019-12
     case LastMonthNameLong:
-        return QStringLiteral("%LASTMONTHNAMELONG");
+        return u"%LASTMONTHNAMELONG"_s;
     }
     return {};
 }
@@ -113,7 +114,7 @@ QString MessageComposer::ConvertSnippetVariablesUtil::longDate()
 QString MessageComposer::ConvertSnippetVariablesUtil::customDate()
 {
     QLocale locale;
-    return locale.toString(QDate::currentDate(), QStringLiteral("dd MMM yyyy"));
+    return locale.toString(QDate::currentDate(), u"dd MMM yyyy"_s);
 }
 
 QString MessageComposer::ConvertSnippetVariablesUtil::shortTime()
@@ -174,37 +175,37 @@ QString MessageComposer::ConvertSnippetVariablesUtil::weekNumber()
 QString MessageComposer::ConvertSnippetVariablesUtil::monthNameShort()
 {
     const QDate date = QDate::currentDate();
-    return date.toString(QStringLiteral("MMM"));
+    return date.toString(u"MMM"_s);
 }
 
 QString MessageComposer::ConvertSnippetVariablesUtil::monthNameLong()
 {
     const QDate date = QDate::currentDate();
-    return date.toString(QStringLiteral("MMMM"));
+    return date.toString(u"MMMM"_s);
 }
 
 QString MessageComposer::ConvertSnippetVariablesUtil::lastMonthNameLong()
 {
     const QDate date = QDate::currentDate().addMonths(-1);
-    return date.toString(QStringLiteral("MMMM"));
+    return date.toString(u"MMMM"_s);
 }
 
 QString MessageComposer::ConvertSnippetVariablesUtil::dayOfWeekNameShort()
 {
     const QDate date = QDate::currentDate();
-    return date.toString(QStringLiteral("ddd"));
+    return date.toString(u"ddd"_s);
 }
 
 QString MessageComposer::ConvertSnippetVariablesUtil::dayOfWeekNameLong()
 {
     const QDate date = QDate::currentDate();
-    return date.toString(QStringLiteral("dddd"));
+    return date.toString(u"dddd"_s);
 }
 
 QString MessageComposer::ConvertSnippetVariablesUtil::yearLastMonth()
 {
     const QDate date = QDate::currentDate();
-    return date.toString(date.toString(QStringLiteral("yyyy-MMM")));
+    return date.toString(date.toString(u"yyyy-MMM"_s));
 }
 
 QString MessageComposer::ConvertSnippetVariablesUtil::year()

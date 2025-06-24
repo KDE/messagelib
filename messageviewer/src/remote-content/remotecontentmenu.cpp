@@ -5,6 +5,8 @@
 */
 
 #include "remotecontentmenu.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "remote-content/remotecontentmanager.h"
 #include "remotecontentconfiguredialog.h"
 #include "remotecontentinfo.h"
@@ -14,7 +16,7 @@
 using namespace MessageViewer;
 RemoteContentMenu::RemoteContentMenu(QWidget *parent)
     : QMenu(parent)
-    , mConfigureRemoteContentAction(new QAction(QIcon::fromTheme(QStringLiteral("settings-configure")), i18n("Configure"), this))
+    , mConfigureRemoteContentAction(new QAction(QIcon::fromTheme(u"settings-configure"_s), i18n("Configure"), this))
 {
     setTitle(i18n("Remote Content"));
     connect(this, &QMenu::aboutToShow, this, &RemoteContentMenu::updateMenu);

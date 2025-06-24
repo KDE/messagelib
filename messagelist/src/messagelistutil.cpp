@@ -15,55 +15,56 @@
 #include <KMime/Message>
 #include <QIcon>
 #include <QMenu>
+using namespace Qt::Literals::StringLiterals;
 
 QString MessageList::Util::messageSortingConfigName()
 {
-    return QStringLiteral("MessageSorting");
+    return u"MessageSorting"_s;
 }
 
 QString MessageList::Util::messageSortDirectionConfigName()
 {
-    return QStringLiteral("MessageSortDirection");
+    return u"MessageSortDirection"_s;
 }
 
 QString MessageList::Util::groupSortingConfigName()
 {
-    return QStringLiteral("GroupSorting");
+    return u"GroupSorting"_s;
 }
 
 QString MessageList::Util::groupSortDirectionConfigName()
 {
-    return QStringLiteral("GroupSortDirection");
+    return u"GroupSortDirection"_s;
 }
 
 QString MessageList::Util::messageUniqueIdConfigName()
 {
-    return QStringLiteral("MessageUniqueIdForStorageModel%1");
+    return u"MessageUniqueIdForStorageModel%1"_s;
 }
 
 QString MessageList::Util::storageModelSortOrderGroup()
 {
-    return QStringLiteral("MessageListView::StorageModelSortOrder");
+    return u"MessageListView::StorageModelSortOrder"_s;
 }
 
 QString MessageList::Util::storageModelThemesGroup()
 {
-    return QStringLiteral("MessageListView::StorageModelThemes");
+    return u"MessageListView::StorageModelThemes"_s;
 }
 
 QString MessageList::Util::storageModelAggregationsGroup()
 {
-    return QStringLiteral("MessageListView::StorageModelAggregations");
+    return u"MessageListView::StorageModelAggregations"_s;
 }
 
 QString MessageList::Util::setForStorageModelConfigName()
 {
-    return QStringLiteral("SetForStorageModel%1");
+    return u"SetForStorageModel%1"_s;
 }
 
 QString MessageList::Util::storageModelSelectedMessageGroup()
 {
-    return QStringLiteral("MessageListView::StorageModelSelectedMessages");
+    return u"MessageListView::StorageModelSelectedMessages"_s;
 }
 
 void MessageList::Util::deleteConfig(const QString &collectionId)
@@ -102,17 +103,17 @@ QColor MessageList::Util::todoDefaultMessageColor()
 void MessageList::Util::fillViewMenu(QMenu *menu, QObject *receiver)
 {
     auto sortingMenu = new QMenu(i18n("Sorting"), menu);
-    sortingMenu->setIcon(QIcon::fromTheme(QStringLiteral("view-sort-ascending")));
+    sortingMenu->setIcon(QIcon::fromTheme(u"view-sort-ascending"_s));
     menu->addMenu(sortingMenu);
     QObject::connect(sortingMenu, SIGNAL(aboutToShow()), receiver, SLOT(sortOrderMenuAboutToShow()));
 
     auto aggregationMenu = new QMenu(i18n("Aggregation"), menu);
-    aggregationMenu->setIcon(QIcon::fromTheme(QStringLiteral("view-process-tree")));
+    aggregationMenu->setIcon(QIcon::fromTheme(u"view-process-tree"_s));
     menu->addMenu(aggregationMenu);
     QObject::connect(aggregationMenu, SIGNAL(aboutToShow()), receiver, SLOT(aggregationMenuAboutToShow()));
 
     auto themeMenu = new QMenu(i18n("Theme"), menu);
-    themeMenu->setIcon(QIcon::fromTheme(QStringLiteral("preferences-desktop-theme")));
+    themeMenu->setIcon(QIcon::fromTheme(u"preferences-desktop-theme"_s));
     menu->addMenu(themeMenu);
     QObject::connect(themeMenu, SIGNAL(aboutToShow()), receiver, SLOT(themeMenuAboutToShow()));
 }
@@ -136,7 +137,7 @@ QString MessageList::Util::contentSummary(const Akonadi::Item &item)
     // Extract the first 5 non-empty, non-quoted lines from the content and return it
     int numLines = 0;
     const int maxLines = 5;
-    const QStringList lines = content.split(QLatin1Char('\n'));
+    const QStringList lines = content.split(u'\n');
     if (lines.isEmpty()) {
         return {};
     }
@@ -146,9 +147,9 @@ QString MessageList::Util::contentSummary(const Akonadi::Item &item)
     QString ret;
     for (const QString &line : lines) {
         const QString lineTrimmed = line.trimmed();
-        const bool isQuoted = lineTrimmed.startsWith(QLatin1Char('>')) || lineTrimmed.startsWith(QLatin1Char('|'));
+        const bool isQuoted = lineTrimmed.startsWith(QLatin1Char('>')) || lineTrimmed.startsWith(u'|');
         if (!isQuoted && !lineTrimmed.isEmpty()) {
-            ret += line + QLatin1Char('\n');
+            ret += line + u'\n';
             numLines++;
             if (numLines >= maxLines) {
                 break;

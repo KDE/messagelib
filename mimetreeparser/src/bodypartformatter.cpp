@@ -8,6 +8,8 @@
 */
 
 #include "bodyformatter/applicationpgpencrypted.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "bodyformatter/applicationpkcs7mime.h"
 #include "bodyformatter/encrypted.h"
 #include "bodyformatter/mailman.h"
@@ -123,31 +125,31 @@ MessagePart::Ptr MessageRfc822BodyPartFormatter::process(Interface::BodyPart &pa
 
 void BodyPartFormatterFactoryPrivate::messageviewer_create_builtin_bodypart_formatters()
 {
-    insert(QStringLiteral("application/pkcs7-mime"), ApplicationPkcs7MimeBodyPartFormatter::create());
-    insert(QStringLiteral("application/x-pkcs7-mime"), ApplicationPkcs7MimeBodyPartFormatter::create());
-    insert(QStringLiteral("application/pgp-encrypted"), ApplicationPGPEncryptedBodyPartFormatter::create());
+    insert(u"application/pkcs7-mime"_s, ApplicationPkcs7MimeBodyPartFormatter::create());
+    insert(u"application/x-pkcs7-mime"_s, ApplicationPkcs7MimeBodyPartFormatter::create());
+    insert(u"application/pgp-encrypted"_s, ApplicationPGPEncryptedBodyPartFormatter::create());
 
-    insert(QStringLiteral("application/octet-stream"), ApplicationPkcs7MimeBodyPartFormatter::create());
-    insert(QStringLiteral("application/octet-stream"), EncryptedBodyPartFormatter::create(EncryptedBodyPartFormatter::AutoPGP));
-    insert(QStringLiteral("application/octet-stream"), AnyTypeBodyPartFormatter::create());
+    insert(u"application/octet-stream"_s, ApplicationPkcs7MimeBodyPartFormatter::create());
+    insert(u"application/octet-stream"_s, EncryptedBodyPartFormatter::create(EncryptedBodyPartFormatter::AutoPGP));
+    insert(u"application/octet-stream"_s, AnyTypeBodyPartFormatter::create());
 
-    insert(QStringLiteral("text/pgp"), EncryptedBodyPartFormatter::create(EncryptedBodyPartFormatter::ForcePGP));
-    insert(QStringLiteral("text/html"), TextHtmlBodyPartFormatter::create());
-    insert(QStringLiteral("text/rtf"), AnyTypeBodyPartFormatter::create());
-    insert(QStringLiteral("text/plain"), MailmanBodyPartFormatter::create());
-    insert(QStringLiteral("text/plain"), TextPlainBodyPartFormatter::create());
+    insert(u"text/pgp"_s, EncryptedBodyPartFormatter::create(EncryptedBodyPartFormatter::ForcePGP));
+    insert(u"text/html"_s, TextHtmlBodyPartFormatter::create());
+    insert(u"text/rtf"_s, AnyTypeBodyPartFormatter::create());
+    insert(u"text/plain"_s, MailmanBodyPartFormatter::create());
+    insert(u"text/plain"_s, TextPlainBodyPartFormatter::create());
 
-    insert(QStringLiteral("image/png"), ImageTypeBodyPartFormatter::create());
-    insert(QStringLiteral("image/jpeg"), ImageTypeBodyPartFormatter::create());
-    insert(QStringLiteral("image/gif"), ImageTypeBodyPartFormatter::create());
-    insert(QStringLiteral("image/svg+xml"), ImageTypeBodyPartFormatter::create());
-    insert(QStringLiteral("image/bmp"), ImageTypeBodyPartFormatter::create());
-    insert(QStringLiteral("image/vnd.microsoft.icon"), ImageTypeBodyPartFormatter::create());
+    insert(u"image/png"_s, ImageTypeBodyPartFormatter::create());
+    insert(u"image/jpeg"_s, ImageTypeBodyPartFormatter::create());
+    insert(u"image/gif"_s, ImageTypeBodyPartFormatter::create());
+    insert(u"image/svg+xml"_s, ImageTypeBodyPartFormatter::create());
+    insert(u"image/bmp"_s, ImageTypeBodyPartFormatter::create());
+    insert(u"image/vnd.microsoft.icon"_s, ImageTypeBodyPartFormatter::create());
 
-    insert(QStringLiteral("message/rfc822"), MessageRfc822BodyPartFormatter::create());
+    insert(u"message/rfc822"_s, MessageRfc822BodyPartFormatter::create());
 
-    insert(QStringLiteral("multipart/alternative"), MultiPartAlternativeBodyPartFormatter::create());
-    insert(QStringLiteral("multipart/encrypted"), MultiPartEncryptedBodyPartFormatter::create());
-    insert(QStringLiteral("multipart/signed"), MultiPartSignedBodyPartFormatter::create());
-    insert(QStringLiteral("multipart/mixed"), MultiPartMixedBodyPartFormatter::create());
+    insert(u"multipart/alternative"_s, MultiPartAlternativeBodyPartFormatter::create());
+    insert(u"multipart/encrypted"_s, MultiPartEncryptedBodyPartFormatter::create());
+    insert(u"multipart/signed"_s, MultiPartSignedBodyPartFormatter::create());
+    insert(u"multipart/mixed"_s, MultiPartMixedBodyPartFormatter::create());
 }

@@ -40,7 +40,7 @@
 #include <KLocalizedString>
 
 using namespace MessageList::Core;
-
+using namespace Qt::Literals::StringLiterals;
 class View::ViewPrivate
 {
 public:
@@ -2204,9 +2204,9 @@ bool View::event(QEvent *e)
     QString txtColorName = txtColor.name();
     QString darkerColorName = darkerColor.name();
     const bool textIsLeftToRight = (QApplication::layoutDirection() == Qt::LeftToRight);
-    const QString textDirection = textIsLeftToRight ? QStringLiteral("left") : QStringLiteral("right");
+    const QString textDirection = textIsLeftToRight ? u"left"_s : QStringLiteral("right");
 
-    QString tip = QStringLiteral("<table width=\"100%\" border=\"0\" cellpadding=\"2\" cellspacing=\"0\">");
+    QString tip = u"<table width=\"100%\" border=\"0\" cellpadding=\"2\" cellspacing=\"0\">"_s;
 
     switch (it->type()) {
     case Item::Message: {
@@ -2271,9 +2271,9 @@ bool View::event(QEvent *e)
         QString content = MessageList::Util::contentSummary(mi->akonadiItem());
         if (!content.trimmed().isEmpty()) {
             if (textIsLeftToRight) {
-                tip += htmlCodeForStandardRow.arg(i18n("Preview"), content.replace(QLatin1Char('\n'), QStringLiteral("<br>")));
+                tip += htmlCodeForStandardRow.arg(i18n("Preview"), content.replace(u'\n', u"<br>"_s));
             } else {
-                tip += htmlCodeForStandardRow.arg(content.replace(QLatin1Char('\n'), QStringLiteral("<br>"))).arg(i18n("Preview"));
+                tip += htmlCodeForStandardRow.arg(content.replace(u'\n', u"<br>"_s)).arg(i18n("Preview"));
             }
         }
 
@@ -2329,7 +2329,7 @@ bool View::event(QEvent *e)
             if (d->mAggregation->threading() != Aggregation::NoThreading) {
                 switch (d->mAggregation->threadLeader()) {
                 case Aggregation::TopmostMessage:
-                    if (ghi->label().contains(QRegularExpression(QStringLiteral("[0-9]")))) {
+                    if (ghi->label().contains(QRegularExpression(u"[0-9]"_s))) {
                         description = i18nc("@info:tooltip Formats to something like 'Threads started on 2008-12-21'", "Threads started on %1", ghi->label());
                     } else {
                         description = i18nc("@info:tooltip Formats to something like 'Threads started Yesterday'", "Threads started %1", ghi->label());
@@ -2343,7 +2343,7 @@ bool View::event(QEvent *e)
                     break;
                 }
             } else {
-                static const QRegularExpression reg(QStringLiteral("[0-9]"));
+                static const QRegularExpression reg(u"[0-9]"_s);
                 if (ghi->label().contains(reg)) {
                     if (storageModel()->containsOutboundMessages()) {
                         description = i18nc("@info:tooltip Formats to something like 'Messages sent on 2008-12-21'", "Messages sent on %1", ghi->label());

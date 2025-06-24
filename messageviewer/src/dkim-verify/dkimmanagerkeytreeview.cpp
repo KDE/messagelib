@@ -5,6 +5,8 @@
 */
 
 #include "dkimmanagerkeytreeview.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "dkimmanagerkeymodel.h"
 #include "dkimmanagerkeyproxymodel.h"
 #include <KLocalizedString>
@@ -68,13 +70,13 @@ void DKIMManagerKeyTreeView::slotCustomContextMenuRequested(const QPoint &pos)
 
     if (index.isValid()) {
         if (selectedItemCount == 1) {
-            menu.addAction(QIcon::fromTheme(QStringLiteral("edit-copy")), i18n("Copy Key"), this, [index, this]() {
+            menu.addAction(QIcon::fromTheme(u"edit-copy"_s), i18n("Copy Key"), this, [index, this]() {
                 QApplication::clipboard()->setText(mManagerKeyModel->index(index.row()).data(DKIMManagerKeyModel::KeyRole).toString());
             });
             menu.addSeparator();
         }
 
-        menu.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")),
+        menu.addAction(QIcon::fromTheme(u"edit-delete"_s),
                        i18np("Remove Key", "Remove Keys", selectedItemCount),
                        this,
                        [this, selectedItemCount]() {

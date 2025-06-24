@@ -5,6 +5,8 @@
 */
 
 #include "autocryptstorage.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocryptrecipient_p.h"
 #include "autocryptstorage_p.h"
 
@@ -18,7 +20,7 @@
 using namespace MessageCore;
 
 AutocryptStoragePrivate::AutocryptStoragePrivate()
-    : basePath(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/autocrypt"))
+    : basePath(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + u"/autocrypt"_s)
 {
 }
 
@@ -110,7 +112,7 @@ void AutocryptStorage::save()
         const auto recipient = d->recipients.value(addr);
         const QString fileName(address2Filename(addr));
         if (recipient->hasChanged() || !d->basePath.exists(fileName)) {
-            QTemporaryFile file(d->basePath.path() + QLatin1Char('/'));
+            QTemporaryFile file(d->basePath.path() + u'/');
             if (!file.open()) {
                 continue;
             }

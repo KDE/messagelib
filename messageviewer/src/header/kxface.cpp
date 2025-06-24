@@ -11,6 +11,7 @@
 */
 
 #include "kxface.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <QBuffer>
 #include <QImage>
@@ -80,55 +81,55 @@ QString KXFace::fromImage(const QImage &image)
     QString xbm(QString::fromLatin1(ba));
     xbm.remove(0, xbm.indexOf(QLatin1StringView("{")) + 1);
     xbm.truncate(xbm.indexOf(QLatin1StringView("}")));
-    xbm.remove(QLatin1Char(' '));
-    xbm.remove(QLatin1Char(','));
-    xbm.remove(QStringLiteral("0x"));
-    xbm.remove(QLatin1Char('\n'));
+    xbm.remove(u' ');
+    xbm.remove(u',');
+    xbm.remove(u"0x"_s);
+    xbm.remove(u'\n');
     xbm.truncate(576);
     QString tmp = QLatin1StringView(xbm.toLatin1());
     int len = tmp.length();
     for (int i = 0; i < len; ++i) {
         switch (tmp[i].toLatin1()) {
         case '1':
-            tmp[i] = QLatin1Char('8');
+            tmp[i] = u'8';
             break;
         case '2':
-            tmp[i] = QLatin1Char('4');
+            tmp[i] = u'4';
             break;
         case '3':
-            tmp[i] = QLatin1Char('c');
+            tmp[i] = u'c';
             break;
         case '4':
-            tmp[i] = QLatin1Char('2');
+            tmp[i] = u'2';
             break;
         case '5':
-            tmp[i] = QLatin1Char('a');
+            tmp[i] = u'a';
             break;
         case '7':
-            tmp[i] = QLatin1Char('e');
+            tmp[i] = u'e';
             break;
         case '8':
-            tmp[i] = QLatin1Char('1');
+            tmp[i] = u'1';
             break;
         case 'A':
         case 'a':
-            tmp[i] = QLatin1Char('5');
+            tmp[i] = u'5';
             break;
         case 'B':
         case 'b':
-            tmp[i] = QLatin1Char('d');
+            tmp[i] = u'd';
             break;
         case 'C':
         case 'c':
-            tmp[i] = QLatin1Char('3');
+            tmp[i] = u'3';
             break;
         case 'D':
         case 'd':
-            tmp[i] = QLatin1Char('b');
+            tmp[i] = u'b';
             break;
         case 'E':
         case 'e':
-            tmp[i] = QLatin1Char('7');
+            tmp[i] = u'7';
             break;
         }
         if (i % 2) {
@@ -137,8 +138,8 @@ QString KXFace::fromImage(const QImage &image)
             tmp[i - 1] = t;
         }
     }
-    tmp.replace(QRegularExpression(QStringLiteral("(\\w{12})")), QStringLiteral("\\1\n"));
-    tmp.replace(QRegularExpression(QStringLiteral("(\\w{4})")), QStringLiteral("0x\\1,"));
+    tmp.replace(QRegularExpression(u"(\\w{12})"_s), u"\\1\n"_s);
+    tmp.replace(QRegularExpression(u"(\\w{4})"_s), u"0x\\1,"_s);
     len = tmp.length();
     char *fbuf = (char *)malloc(len + 1);
     strncpy(fbuf, tmp.toLatin1().constData(), len);

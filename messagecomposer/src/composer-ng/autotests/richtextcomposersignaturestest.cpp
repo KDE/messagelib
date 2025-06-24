@@ -5,6 +5,8 @@
 */
 
 #include "richtextcomposersignaturestest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../richtextcomposerng.h"
 #include "../richtextcomposersignatures.h"
 #include <KActionCollection>
@@ -27,12 +29,12 @@ void RichTextComposerSignaturesTest::shouldCleanSignature()
     QVERIFY(composerSignature);
 
     KIdentityManagementCore::Signature signature1;
-    signature1.setText(QStringLiteral("bla      Bla\t"));
+    signature1.setText(u"bla      Bla\t"_s);
     signature1.setEnabledSignature(true);
     signature1.setInlinedHtml(false);
 
-    KIdentityManagementCore::Signature signature2(QStringLiteral("Signature"));
-    signature2.setText(QStringLiteral("Foo      Bla\t"));
+    KIdentityManagementCore::Signature signature2(u"Signature"_s);
+    signature2.setText(u"Foo      Bla\t"_s);
     signature2.setEnabledSignature(true);
     signature2.setInlinedHtml(false);
 
@@ -40,30 +42,30 @@ void RichTextComposerSignaturesTest::shouldCleanSignature()
     composerSignature->cleanWhitespace(signature2);
 
     QVERIFY(!composerSignature->replaceSignature(signature1, signature2));
-    QCOMPARE(richtextComposerNg.toPlainText(), QStringLiteral("\n\nbla Bla "));
+    QCOMPARE(richtextComposerNg.toPlainText(), u"\n\nbla Bla "_s);
 
     for (int i = 0; i < 10; i++) {
         QVERIFY(!composerSignature->replaceSignature(signature2, signature1));
         QVERIFY(!composerSignature->replaceSignature(signature1, signature2));
     }
-    QCOMPARE(richtextComposerNg.toPlainText(), QStringLiteral("\n\nbla Bla "));
+    QCOMPARE(richtextComposerNg.toPlainText(), u"\n\nbla Bla "_s);
 }
 
 void RichTextComposerSignaturesTest::shouldReplaceSignatureWhenText()
 {
     MessageComposer::RichTextComposerNg richtextComposerNg;
-    richtextComposerNg.setText(QStringLiteral("foo\nbla  \nfoo"));
+    richtextComposerNg.setText(u"foo\nbla  \nfoo"_s);
     richtextComposerNg.createActions(new KActionCollection(this));
     MessageComposer::RichTextComposerSignatures *composerSignature = richtextComposerNg.composerSignature();
     QVERIFY(composerSignature);
 
     KIdentityManagementCore::Signature signature1;
-    signature1.setText(QStringLiteral("bla      Bla\t"));
+    signature1.setText(u"bla      Bla\t"_s);
     signature1.setEnabledSignature(true);
     signature1.setInlinedHtml(false);
 
-    KIdentityManagementCore::Signature signature2(QStringLiteral("Signature"));
-    signature2.setText(QStringLiteral("Foo      Bla\t"));
+    KIdentityManagementCore::Signature signature2(u"Signature"_s);
+    signature2.setText(u"Foo      Bla\t"_s);
     signature2.setEnabledSignature(true);
     signature2.setInlinedHtml(false);
 
@@ -71,7 +73,7 @@ void RichTextComposerSignaturesTest::shouldReplaceSignatureWhenText()
     composerSignature->cleanWhitespace(signature2);
 
     QVERIFY(!composerSignature->replaceSignature(signature1, signature2));
-    const QString result = QStringLiteral("foo\nbla\nfoo--\nbla Bla ");
+    const QString result = u"foo\nbla\nfoo--\nbla Bla "_s;
     QCOMPARE(richtextComposerNg.toPlainText(), result);
 
     for (int i = 0; i < 10; i++) {

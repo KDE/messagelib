@@ -5,6 +5,8 @@
 */
 
 #include "templatesinsertcommandpushbuttontest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "templatescommandmenu.h"
 #include "templatesinsertcommandpushbutton.h"
 
@@ -24,7 +26,7 @@ void TemplatesInsertCommandPushButtonTest::shouldHaveDefaultValue()
     QVERIFY(act.menu());
     QVERIFY(!act.menu()->isEmpty());
     QCOMPARE(act.type(), TemplateParser::TemplatesCommandMenu::Default);
-    auto menu = act.findChild<TemplateParser::TemplatesCommandMenu *>(QStringLiteral("templatescommandmenu"));
+    auto menu = act.findChild<TemplateParser::TemplatesCommandMenu *>(u"templatescommandmenu"_s);
     QVERIFY(menu);
 }
 

@@ -5,6 +5,8 @@
 */
 
 #include "remotecontentconfigurewidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "remotecontentdialog.h"
 #include "remotecontentmanager.h"
 #include "remotecontentstatustypecombobox.h"
@@ -77,14 +79,14 @@ void RemoteContentConfigureWidget::slotCustomContextMenuRequested(const QPoint &
 {
     QTreeWidgetItem *item = mTreeWidget->itemAt(pos);
     QMenu menu(this);
-    menu.addAction(QIcon::fromTheme(QStringLiteral("list-add")), i18n("Add..."), this, &RemoteContentConfigureWidget::slotAdd);
+    menu.addAction(QIcon::fromTheme(u"list-add"_s), i18n("Add..."), this, &RemoteContentConfigureWidget::slotAdd);
     if (item) {
         menu.addSeparator();
-        menu.addAction(QIcon::fromTheme(QStringLiteral("document-edit")), i18n("Modify..."), this, [this, item]() {
+        menu.addAction(QIcon::fromTheme(u"document-edit"_s), i18n("Modify..."), this, [this, item]() {
             modifyRemoteContent(static_cast<RemoteContentWidgetItem *>(item));
         });
         menu.addSeparator();
-        menu.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Remove Rule"), this, [this, item]() {
+        menu.addAction(QIcon::fromTheme(u"edit-delete"_s), i18n("Remove Rule"), this, [this, item]() {
             const int answer = KMessageBox::warningTwoActions(this,
                                                               i18n("Do you want to delete this rule '%1'?", item->text(0)),
                                                               i18nc("@title:window", "Delete Rule"),

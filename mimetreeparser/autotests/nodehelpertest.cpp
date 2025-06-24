@@ -3,6 +3,7 @@
    SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
 #include "nodehelpertest.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include "nodehelper.h"
 
@@ -96,35 +97,35 @@ void NodeHelperTest::testPersistentIndex()
     QCOMPARE(helper.persistentIndex(node), QString());
     QCOMPARE(helper.contentFromIndex(node, QString()), node);
 
-    QCOMPARE(helper.persistentIndex(node->contents()[0]), QStringLiteral("1"));
-    QCOMPARE(helper.contentFromIndex(node, QStringLiteral("1")), node->contents()[0]);
+    QCOMPARE(helper.persistentIndex(node->contents()[0]), u"1"_s);
+    QCOMPARE(helper.contentFromIndex(node, u"1"_s), node->contents()[0]);
 
-    QCOMPARE(helper.persistentIndex(subNode2), QStringLiteral("2"));
-    QCOMPARE(helper.contentFromIndex(node, QStringLiteral("2")), subNode2);
+    QCOMPARE(helper.persistentIndex(subNode2), u"2"_s);
+    QCOMPARE(helper.contentFromIndex(node, u"2"_s), subNode2);
 
-    QCOMPARE(helper.persistentIndex(subsubNode1), QStringLiteral("2.2"));
-    QCOMPARE(helper.contentFromIndex(node, QStringLiteral("2.2")), subsubNode1);
+    QCOMPARE(helper.persistentIndex(subsubNode1), u"2.2"_s);
+    QCOMPARE(helper.contentFromIndex(node, u"2.2"_s), subsubNode1);
 
-    QCOMPARE(helper.persistentIndex(subsubNode2), QStringLiteral("2.3"));
-    QCOMPARE(helper.contentFromIndex(node, QStringLiteral("2.3")), subsubNode2);
+    QCOMPARE(helper.persistentIndex(subsubNode2), u"2.3"_s);
+    QCOMPARE(helper.contentFromIndex(node, u"2.3"_s), subsubNode2);
 
-    QCOMPARE(helper.persistentIndex(extra), QStringLiteral("e0"));
-    QCOMPARE(helper.contentFromIndex(node, QStringLiteral("e0")), extra);
+    QCOMPARE(helper.persistentIndex(extra), u"e0"_s);
+    QCOMPARE(helper.contentFromIndex(node, u"e0"_s), extra);
 
-    QCOMPARE(helper.persistentIndex(extra2), QStringLiteral("e1"));
-    QCOMPARE(helper.contentFromIndex(node, QStringLiteral("e1")), extra2);
+    QCOMPARE(helper.persistentIndex(extra2), u"e1"_s);
+    QCOMPARE(helper.contentFromIndex(node, u"e1"_s), extra2);
 
-    QCOMPARE(helper.persistentIndex(subExtra), QStringLiteral("2:e0"));
-    QCOMPARE(helper.contentFromIndex(node, QStringLiteral("2:e0")), subExtra);
+    QCOMPARE(helper.persistentIndex(subExtra), u"2:e0"_s);
+    QCOMPARE(helper.contentFromIndex(node, u"2:e0"_s), subExtra);
 
-    QCOMPARE(helper.persistentIndex(subsubExtra), QStringLiteral("2.3:e0"));
-    QCOMPARE(helper.contentFromIndex(node, QStringLiteral("2.3:e0")), subsubExtra);
+    QCOMPARE(helper.persistentIndex(subsubExtra), u"2.3:e0"_s);
+    QCOMPARE(helper.contentFromIndex(node, u"2.3:e0"_s), subsubExtra);
 
-    QCOMPARE(helper.persistentIndex(subsubExtraNode2), QStringLiteral("2.3:e0:2"));
-    QCOMPARE(helper.contentFromIndex(node, QStringLiteral("2.3:e0:2")), subsubExtraNode2);
+    QCOMPARE(helper.persistentIndex(subsubExtraNode2), u"2.3:e0:2"_s);
+    QCOMPARE(helper.contentFromIndex(node, u"2.3:e0:2"_s), subsubExtraNode2);
 
-    QCOMPARE(helper.persistentIndex(node2ExtraSubsubNode2), QStringLiteral("e0:2.3"));
-    QCOMPARE(helper.contentFromIndex(node2, QStringLiteral("e0:2.3")), node2ExtraSubsubNode2);
+    QCOMPARE(helper.persistentIndex(node2ExtraSubsubNode2), u"e0:2.3"_s);
+    QCOMPARE(helper.contentFromIndex(node2, u"e0:2.3"_s), node2ExtraSubsubNode2);
 
     helper.clear();
     delete node2;
@@ -165,19 +166,19 @@ void NodeHelperTest::testHREF()
     url = QUrl(QString());
     QCOMPARE(helper.fromHREF(msg, url), node);
 
-    url = QUrl(QStringLiteral("attachment:e0?place=body"));
+    url = QUrl(u"attachment:e0?place=body"_s);
     QCOMPARE(helper.fromHREF(msg, url), extra);
 
-    url = QUrl(QStringLiteral("attachment:2.2?place=body"));
+    url = QUrl(u"attachment:2.2?place=body"_s);
     QCOMPARE(helper.fromHREF(msg, url), subsubNode);
 
-    url = QUrl(QStringLiteral("attachment:2.3:e0:2?place=body"));
+    url = QUrl(u"attachment:2.3:e0:2?place=body"_s);
     QCOMPARE(helper.fromHREF(msg, url), subsubExtraNode);
 
-    QCOMPARE(helper.asHREF(node, QStringLiteral("body")), QStringLiteral("attachment:?place=body"));
-    QCOMPARE(helper.asHREF(extra, QStringLiteral("body")), QStringLiteral("attachment:e0?place=body"));
-    QCOMPARE(helper.asHREF(subsubNode, QStringLiteral("body")), QStringLiteral("attachment:2.2?place=body"));
-    QCOMPARE(helper.asHREF(subsubExtraNode, QStringLiteral("body")), QStringLiteral("attachment:2.3:e0:2?place=body"));
+    QCOMPARE(helper.asHREF(node, u"body"_s), u"attachment:?place=body"_s);
+    QCOMPARE(helper.asHREF(extra, u"body"_s), u"attachment:e0?place=body"_s);
+    QCOMPARE(helper.asHREF(subsubNode, u"body"_s), u"attachment:2.2?place=body"_s);
+    QCOMPARE(helper.asHREF(subsubExtraNode, u"body"_s), u"attachment:2.3:e0:2?place=body"_s);
 }
 
 void NodeHelperTest::testLocalFiles()
@@ -233,7 +234,7 @@ void NodeHelperTest::testCreateTempDir()
     QString path;
     {
         NodeHelper helper;
-        path = helper.createTempDir(QStringLiteral("foo"));
+        path = helper.createTempDir(u"foo"_s);
 
         QVERIFY(path.endsWith(QLatin1StringView(".index.foo")));
         QVERIFY(QDir(path).exists());
@@ -246,8 +247,8 @@ void NodeHelperTest::testCreateTempDir()
 
 void NodeHelperTest::testFromAsString()
 {
-    const QString tlSender = QStringLiteral("Foo <foo@example.com>");
-    const QString encSender = QStringLiteral("Bar <bar@example.com>");
+    const QString tlSender = u"Foo <foo@example.com>"_s;
+    const QString encSender = u"Bar <bar@example.com>"_s;
 
     NodeHelper helper;
 
@@ -300,10 +301,10 @@ void NodeHelperTest::shouldTestExtractAttachmentIndex_data()
     QTest::addColumn<QString>("path");
     QTest::addColumn<QString>("extractedPath");
     QTest::newRow("empty") << QString() << QString();
-    QTest::newRow("test1") << QStringLiteral("/bla/qttestn28554.index.2.3:0:2/unnamed") << QStringLiteral("2.3:0:2");
-    QTest::newRow("test2") << QStringLiteral("/bla/qttestn28554.dd.2.3:0:2/unnamed") << QStringLiteral("2.3:0:2");
-    QTest::newRow("test3") << QStringLiteral("/bla/qttestn28554.dd.2.3:0/unnamed") << QStringLiteral("2.3:0");
-    QTest::newRow("test4") << QStringLiteral("/bla/qttestn28554.dd.2.3:0:2:4/unnamed") << QStringLiteral("2.3:0:2:4");
+    QTest::newRow("test1") << u"/bla/qttestn28554.index.2.3:0:2/unnamed"_s << u"2.3:0:2"_s;
+    QTest::newRow("test2") << u"/bla/qttestn28554.dd.2.3:0:2/unnamed"_s << u"2.3:0:2"_s;
+    QTest::newRow("test3") << u"/bla/qttestn28554.dd.2.3:0/unnamed"_s << u"2.3:0"_s;
+    QTest::newRow("test4") << u"/bla/qttestn28554.dd.2.3:0:2:4/unnamed"_s << u"2.3:0:2:4"_s;
 }
 
 void NodeHelperTest::shouldTestExtractAttachmentIndex()

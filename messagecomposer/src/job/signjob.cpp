@@ -6,6 +6,7 @@
 */
 
 #include "job/signjob.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include "contentjobbase_p.h"
 #include "job/protectedheadersjob.h"

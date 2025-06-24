@@ -6,6 +6,7 @@
 */
 
 #include "composertest.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include "qtest_messagecomposer.h"
 
@@ -80,12 +81,12 @@ void ComposerTest::testNonAsciiHeaders()
     ComposerJob composerJob;
     fillComposerData(&composerJob);
 
-    const QString mailbox = QStringLiteral(" <bla@example.com>");
-    const QString fromDisplayName = QStringLiteral("Hellö");
-    const QString toDisplayName = QStringLiteral("æſłĸð");
-    const QString ccDisplayName = QStringLiteral("Вася");
-    const QString bccDisplayName = QStringLiteral("ĸłſðđøþĸµ»«„¢þµ¢”«ł„·ĸ”");
-    const QString replyToDisplayName = QStringLiteral("æĸſłð˝đВасяðæĸđ");
+    const QString mailbox = u" <bla@example.com>"_s;
+    const QString fromDisplayName = u"Hellö"_s;
+    const QString toDisplayName = u"æſłĸð"_s;
+    const QString ccDisplayName = u"Вася"_s;
+    const QString bccDisplayName = u"ĸłſðđøþĸµ»«„¢þµ¢”«ł„·ĸ”"_s;
+    const QString replyToDisplayName = u"æĸſłð˝đВасяðæĸđ"_s;
     const QString from = fromDisplayName + mailbox;
     const QString to = toDisplayName + mailbox;
     const QString cc = ccDisplayName + mailbox;
@@ -118,8 +119,8 @@ void ComposerTest::testNonAsciiHeaders()
 
 void ComposerTest::testBug271192()
 {
-    const QString displayName = QStringLiteral("Интернет-компания example");
-    const QString mailbox = QStringLiteral("example@example.com");
+    const QString displayName = u"Интернет-компания example"_s;
+    const QString mailbox = u"example@example.com"_s;
     ComposerJob composerJob;
     fillComposerData(&composerJob);
     composerJob.infoPart()->setTo(QStringList() << (displayName + QLatin1StringView(" <") + mailbox + QLatin1StringView(">")));
@@ -132,9 +133,9 @@ void ComposerTest::testBug271192()
 
 void ComposerTest::fillComposerData(ComposerJob *composerJob)
 {
-    composerJob->infoPart()->setFrom(QStringLiteral("me@me.me"));
-    composerJob->infoPart()->setTo(QStringList(QStringLiteral("you@you.you")));
-    composerJob->textPart()->setWrappedPlainText(QStringLiteral("All happy families are alike; each unhappy family is unhappy in its own way."));
+    composerJob->infoPart()->setFrom(u"me@me.me"_s);
+    composerJob->infoPart()->setTo(QStringList(u"you@you.you"_s));
+    composerJob->textPart()->setWrappedPlainText(u"All happy families are alike; each unhappy family is unhappy in its own way."_s);
 }
 
 #include "moc_composertest.cpp"

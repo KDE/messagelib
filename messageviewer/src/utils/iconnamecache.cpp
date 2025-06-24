@@ -4,6 +4,7 @@
 */
 
 #include "iconnamecache.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <KIconLoader>
 #include <QStandardPaths>
@@ -40,7 +41,7 @@ QString IconNameCache::iconPath(const QString &name, int size) const
 
     QString fileName = KIconLoader::global()->iconPath(name, size);
     if (fileName.startsWith(QLatin1StringView(":/"))) {
-        fileName = QStringLiteral("qrc") + fileName;
+        fileName = u"qrc"_s + fileName;
     }
     mCachedEntries.insert(entry, fileName);
     return fileName;
@@ -65,7 +66,7 @@ QString IconNameCache::iconPathFromLocal(const QString &name) const
 QString IconNameCache::picsPath() const
 {
     if (mPicsPath.isEmpty()) {
-        mPicsPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("libmessageviewer/pics/"), QStandardPaths::LocateDirectory);
+        mPicsPath = QStandardPaths::locate(QStandardPaths::GenericDataLocation, u"libmessageviewer/pics/"_s, QStandardPaths::LocateDirectory);
     }
     return mPicsPath;
 }

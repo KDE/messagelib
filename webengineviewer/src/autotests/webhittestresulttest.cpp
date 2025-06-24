@@ -5,6 +5,8 @@
 */
 
 #include "webhittestresulttest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../webhittestresult.h"
 #include <QTest>
 
@@ -37,7 +39,7 @@ void WebHitTestResultTest::shouldHaveDefaultValues()
 void WebHitTestResultTest::shouldAssignPosAndUrl()
 {
     QPoint pos(5, 5);
-    QUrl url(QStringLiteral("http://www.kde.org"));
+    QUrl url(u"http://www.kde.org"_s);
     WebEngineViewer::WebHitTestResult result(pos, url, QVariant());
     QVERIFY(result.alternateText().isEmpty());
     QVERIFY(result.boundingRect().isNull());
@@ -59,33 +61,33 @@ void WebHitTestResultTest::shouldAssignPosAndUrl()
 void WebHitTestResultTest::shouldAssignFromQVariant()
 {
     QPoint pos(5, 5);
-    QUrl pageUrl(QStringLiteral("http://www.kde.org"));
+    QUrl pageUrl(u"http://www.kde.org"_s);
 
     QVariantMap map;
-    QString alternateText = QStringLiteral("FOO");
-    map.insert(QStringLiteral("alternateText"), alternateText);
+    QString alternateText = u"FOO"_s;
+    map.insert(u"alternateText"_s, alternateText);
     bool contentEditable = true;
-    map.insert(QStringLiteral("contentEditable"), contentEditable);
+    map.insert(u"contentEditable"_s, contentEditable);
     bool contentSelected = true;
-    map.insert(QStringLiteral("contentSelected"), contentSelected);
-    QString linkTitle = QStringLiteral("GGGG");
-    map.insert(QStringLiteral("linkTitle"), linkTitle);
-    QUrl imageUrl(QStringLiteral("https://www.foo.net"));
-    map.insert(QStringLiteral("imageUrl"), imageUrl);
-    QUrl linkUrl(QStringLiteral("https://www.linux.org"));
-    map.insert(QStringLiteral("linkUrl"), linkUrl);
-    QUrl mediaUrl(QStringLiteral("https://www.media.org"));
-    map.insert(QStringLiteral("mediaUrl"), mediaUrl);
+    map.insert(u"contentSelected"_s, contentSelected);
+    QString linkTitle = u"GGGG"_s;
+    map.insert(u"linkTitle"_s, linkTitle);
+    QUrl imageUrl(u"https://www.foo.net"_s);
+    map.insert(u"imageUrl"_s, imageUrl);
+    QUrl linkUrl(u"https://www.linux.org"_s);
+    map.insert(u"linkUrl"_s, linkUrl);
+    QUrl mediaUrl(u"https://www.media.org"_s);
+    map.insert(u"mediaUrl"_s, mediaUrl);
     bool mediaPaused = true;
-    map.insert(QStringLiteral("mediaPaused"), mediaPaused);
+    map.insert(u"mediaPaused"_s, mediaPaused);
     bool mediaMuted = true;
-    map.insert(QStringLiteral("mediaMuted"), mediaMuted);
-    QString tagName = QStringLiteral("HHHHHH");
-    map.insert(QStringLiteral("tagName"), tagName);
+    map.insert(u"mediaMuted"_s, mediaMuted);
+    QString tagName = u"HHHHHH"_s;
+    map.insert(u"tagName"_s, tagName);
     QRect boundingRect(5, 7, 9, 11);
     QVariantList lstRect;
     lstRect << boundingRect.left() << boundingRect.top() << boundingRect.width() << boundingRect.height();
-    map.insert(QStringLiteral("boundingRect"), lstRect);
+    map.insert(u"boundingRect"_s, lstRect);
 
     WebEngineViewer::WebHitTestResult result(pos, pageUrl, map);
 
@@ -108,33 +110,33 @@ void WebHitTestResultTest::shouldAssignFromQVariant()
 void WebHitTestResultTest::shouldCopyWebHitTestResult()
 {
     QPoint pos(5, 5);
-    QUrl pageUrl(QStringLiteral("http://www.kde.org"));
+    QUrl pageUrl(u"http://www.kde.org"_s);
 
     QVariantMap map;
-    QString alternateText = QStringLiteral("FOO");
-    map.insert(QStringLiteral("alternateText"), alternateText);
+    QString alternateText = u"FOO"_s;
+    map.insert(u"alternateText"_s, alternateText);
     bool contentEditable = true;
-    map.insert(QStringLiteral("contentEditable"), contentEditable);
+    map.insert(u"contentEditable"_s, contentEditable);
     bool contentSelected = true;
-    map.insert(QStringLiteral("contentSelected"), contentSelected);
-    QString linkTitle = QStringLiteral("GGGG");
-    map.insert(QStringLiteral("linkTitle"), linkTitle);
-    QUrl imageUrl(QStringLiteral("https://www.foo.net"));
-    map.insert(QStringLiteral("imageUrl"), imageUrl);
-    QUrl linkUrl(QStringLiteral("https://www.linux.org"));
-    map.insert(QStringLiteral("linkUrl"), linkUrl);
-    QUrl mediaUrl(QStringLiteral("https://www.media.org"));
-    map.insert(QStringLiteral("mediaUrl"), mediaUrl);
+    map.insert(u"contentSelected"_s, contentSelected);
+    QString linkTitle = u"GGGG"_s;
+    map.insert(u"linkTitle"_s, linkTitle);
+    QUrl imageUrl(u"https://www.foo.net"_s);
+    map.insert(u"imageUrl"_s, imageUrl);
+    QUrl linkUrl(u"https://www.linux.org"_s);
+    map.insert(u"linkUrl"_s, linkUrl);
+    QUrl mediaUrl(u"https://www.media.org"_s);
+    map.insert(u"mediaUrl"_s, mediaUrl);
     bool mediaPaused = true;
-    map.insert(QStringLiteral("mediaPaused"), mediaPaused);
+    map.insert(u"mediaPaused"_s, mediaPaused);
     bool mediaMuted = true;
-    map.insert(QStringLiteral("mediaMuted"), mediaMuted);
-    QString tagName = QStringLiteral("HHHHHH");
-    map.insert(QStringLiteral("tagName"), tagName);
+    map.insert(u"mediaMuted"_s, mediaMuted);
+    QString tagName = u"HHHHHH"_s;
+    map.insert(u"tagName"_s, tagName);
     QRect boundingRect(5, 7, 9, 11);
     QVariantList lstRect;
     lstRect << boundingRect.left() << boundingRect.top() << boundingRect.width() << boundingRect.height();
-    map.insert(QStringLiteral("boundingRect"), lstRect);
+    map.insert(u"boundingRect"_s, lstRect);
 
     const WebEngineViewer::WebHitTestResult result1(pos, pageUrl, map);
     WebEngineViewer::WebHitTestResult result = result1;

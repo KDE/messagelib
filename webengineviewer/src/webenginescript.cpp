@@ -4,6 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "webenginescript.h"
+using namespace Qt::Literals::StringLiterals;
+
 using namespace WebEngineViewer;
 
 QString WebEngineScript::findAllImages()
@@ -122,12 +124,12 @@ QString WebEngineScript::searchElementPosition(const QString &elementStr)
 
 static QString scrollTop()
 {
-    return QStringLiteral("document.documentElement.scrollTop");
+    return u"document.documentElement.scrollTop"_s;
 }
 
 QString WebEngineScript::scrollPercentage(int percent)
 {
-    const QString source = QStringLiteral("var current = ") + scrollTop()
+    const QString source = u"var current = "_s + scrollTop()
         + QStringLiteral(
               ";"
               "var docElement = document.documentElement;"
@@ -140,19 +142,19 @@ QString WebEngineScript::scrollPercentage(int percent)
 
 QString WebEngineScript::scrollUp(int pixel)
 {
-    const QString source = QStringLiteral("window.scrollBy(0, %1);").arg(-pixel);
+    const QString source = u"window.scrollBy(0, %1);"_s.arg(-pixel);
     return source;
 }
 
 QString WebEngineScript::scrollDown(int pixel)
 {
-    const QString source = QStringLiteral("window.scrollBy(0, %1);").arg(pixel);
+    const QString source = u"window.scrollBy(0, %1);"_s.arg(pixel);
     return source;
 }
 
 QString WebEngineScript::scrollToPosition(const QPoint &pos)
 {
-    const QString source = QStringLiteral("window.scrollTo(%1, %2); [window.scrollX, window.scrollY];").arg(pos.x()).arg(pos.y());
+    const QString source = u"window.scrollTo(%1, %2); [window.scrollX, window.scrollY];"_s.arg(pos.x()).arg(pos.y());
     return source;
 }
 
@@ -180,7 +182,7 @@ QString WebEngineScript::setStyleToElement(const QString &elementStr, const QStr
 
 QString WebEngineScript::scrollToRelativePosition(qreal pos)
 {
-    const QString source = QStringLiteral("window.scrollTo(window.scrollX, %1); [window.scrollX, window.scrollY];").arg(pos);
+    const QString source = u"window.scrollTo(window.scrollX, %1); [window.scrollX, window.scrollY];"_s.arg(pos);
     return source;
 }
 

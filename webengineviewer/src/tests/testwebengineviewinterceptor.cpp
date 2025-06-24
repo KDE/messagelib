@@ -5,6 +5,8 @@
 */
 
 #include "testwebengineviewinterceptor.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <QApplication>
 #include <QBuffer>
 #include <QVBoxLayout>
@@ -57,7 +59,7 @@ void CidUrlRequestInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
             QUrl r;
             if (urlRequestUrl.url() == QLatin1StringView("cid:resource_src")) {
                 qDebug() << " from resource src";
-                r = QUrl(QStringLiteral("qrc:audio-volume-medium.png"));
+                r = QUrl(u"qrc:audio-volume-medium.png"_s);
             } else if (urlRequestUrl.url() == QLatin1StringView("cid:local_src")) {
                 qDebug() << " from local file";
 #ifdef LOAD_FROM_FILE
@@ -106,7 +108,7 @@ TestWebEngineViewInterceptor::TestWebEngineViewInterceptor(QWidget *parent)
         "<br /></body>"
         "</html>");
 
-    mWebEngineView->setHtml(htmlStr /*, QUrl(QStringLiteral("file:///"))*/);
+    mWebEngineView->setHtml(htmlStr /*, QUrl(u"file:///"_s)*/);
     vbox->addWidget(mWebEngineView);
 }
 

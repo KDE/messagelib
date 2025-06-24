@@ -5,6 +5,8 @@
 */
 
 #include "webengineembedparttest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../webengineembedpart.h"
 #include <QTest>
 
@@ -24,7 +26,7 @@ void WebEngineEmbedPartTest::shouldHaveDefaultValue()
 void WebEngineEmbedPartTest::shouldClearValue()
 {
     MessageViewer::WebEngineEmbedPart part;
-    part.addEmbedPart(QByteArrayLiteral("foo"), QStringLiteral("bla"));
+    part.addEmbedPart(QByteArrayLiteral("foo"), u"bla"_s);
     QVERIFY(!part.isEmpty());
     QCOMPARE(part.embeddedPartMap().count(), 1);
 
@@ -35,20 +37,20 @@ void WebEngineEmbedPartTest::shouldClearValue()
 void WebEngineEmbedPartTest::shouldAddValues()
 {
     MessageViewer::WebEngineEmbedPart part;
-    part.addEmbedPart(QByteArrayLiteral("foo"), QStringLiteral("bla"));
+    part.addEmbedPart(QByteArrayLiteral("foo"), u"bla"_s);
     QVERIFY(!part.isEmpty());
     QCOMPARE(part.embeddedPartMap().count(), 1);
-    part.addEmbedPart(QByteArrayLiteral("foo1"), QStringLiteral("bla"));
+    part.addEmbedPart(QByteArrayLiteral("foo1"), u"bla"_s);
     QCOMPARE(part.embeddedPartMap().count(), 2);
 }
 
 void WebEngineEmbedPartTest::shouldAddTwoIdenticalValues()
 {
     MessageViewer::WebEngineEmbedPart part;
-    part.addEmbedPart(QByteArrayLiteral("foo"), QStringLiteral("bla"));
+    part.addEmbedPart(QByteArrayLiteral("foo"), u"bla"_s);
     QVERIFY(!part.isEmpty());
     QCOMPARE(part.embeddedPartMap().count(), 1);
-    part.addEmbedPart(QByteArrayLiteral("foo"), QStringLiteral("bla"));
+    part.addEmbedPart(QByteArrayLiteral("foo"), u"bla"_s);
     QCOMPARE(part.embeddedPartMap().count(), 1);
 }
 

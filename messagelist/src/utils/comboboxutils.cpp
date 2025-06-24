@@ -12,6 +12,7 @@
 
 #include <QComboBox>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageList::Utils;
 
 void ComboBoxUtils::fillIntegerOptionCombo(QComboBox *combo, const QList<QPair<QString, int>> &optionDescriptors)
@@ -31,7 +32,7 @@ void ComboBoxUtils::fillIntegerOptionCombo(QComboBox *combo, const QList<QPair<Q
         ++idx;
     }
     if (idx == 0) {
-        combo->addItem(QStringLiteral("-"), QVariant((int)0)); // always default to 0
+        combo->addItem(u"-"_s, QVariant((int)0)); // always default to 0
         combo->setEnabled(false);
     } else {
         if (!combo->isEnabled()) {

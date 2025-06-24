@@ -5,6 +5,7 @@
 */
 
 #include "verifyopaquebodypartmemento.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <QGpgME/KeyListJob>
 #include <QGpgME/VerifyOpaqueJob>

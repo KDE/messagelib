@@ -12,6 +12,7 @@
 #include <QRegularExpression>
 #include <QTextBlock>
 using namespace MessageComposer;
+using namespace Qt::Literals::StringLiterals;
 
 class RichTextComposerSignatures::RichTextComposerSignaturesPrivate
 {
@@ -84,13 +85,13 @@ void RichTextComposerSignatures::cleanWhitespace(const KIdentityManagementCore::
     cursor.beginEditBlock();
 
     // Squeeze tabs and spaces
-    d->cleanWhitespaceHelper(QRegularExpression(QLatin1StringView("[\t ]+")), QStringLiteral(" "), sig);
+    d->cleanWhitespaceHelper(QRegularExpression(QLatin1StringView("[\t ]+")), u" "_s, sig);
 
     // Remove trailing whitespace
-    d->cleanWhitespaceHelper(QRegularExpression(QLatin1StringView("[\t ][\n]")), QStringLiteral("\n"), sig);
+    d->cleanWhitespaceHelper(QRegularExpression(QLatin1StringView("[\t ][\n]")), u"\n"_s, sig);
 
     // Single space lines
-    d->cleanWhitespaceHelper(QRegularExpression(QLatin1StringView("[\n]{3,}")), QStringLiteral("\n\n"), sig);
+    d->cleanWhitespaceHelper(QRegularExpression(QLatin1StringView("[\n]{3,}")), u"\n\n"_s, sig);
 
     if (!d->richTextComposer->textCursor().hasSelection()) {
         d->richTextComposer->textCursor().clearSelection();
@@ -152,7 +153,7 @@ bool RichTextComposerSignatures::replaceSignature(const KIdentityManagementCore:
         if (newSig.rawText().isEmpty() && text.mid(currentMatch - 4, 4) == QLatin1StringView("-- \n")) {
             cursor.movePosition(QTextCursor::PreviousCharacter, QTextCursor::MoveAnchor, 4);
             additionalMove = 4;
-        } else if (newSig.rawText().isEmpty() && text.mid(currentMatch - 1, 1) == QLatin1Char('\n')) {
+        } else if (newSig.rawText().isEmpty() && text.mid(currentMatch - 1, 1) == u'\n') {
             cursor.movePosition(QTextCursor::PreviousCharacter, QTextCursor::MoveAnchor, 1);
             additionalMove = 1;
         }

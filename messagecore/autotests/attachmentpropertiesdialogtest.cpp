@@ -5,6 +5,8 @@
 */
 
 #include "attachmentpropertiesdialogtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "qtest_messagecore.h"
 
 #include <QCheckBox>
@@ -31,10 +33,10 @@ AttachmentPropertiesDialogTest::AttachmentPropertiesDialogTest(QObject *parent)
 void AttachmentPropertiesDialogTest::testAttachmentPartReadWrite()
 {
     // Sample data.
-    const QString name = QStringLiteral("old name");
-    const QString newName = QStringLiteral("new name");
-    const QString description = QStringLiteral("old description");
-    const QString newDescription = QStringLiteral("new description");
+    const QString name = u"old name"_s;
+    const QString newName = u"new name"_s;
+    const QString description = u"old description"_s;
+    const QString newDescription = u"new description"_s;
     const QByteArray data("12345");
     const QByteArray mimeType("text/plain");
     const QByteArray newMimeType("x-weird/x-type");
@@ -58,25 +60,25 @@ void AttachmentPropertiesDialogTest::testAttachmentPartReadWrite()
     // Show the dialog and verify that it is accurate.
     auto dialog = new AttachmentPropertiesDialog(part);
     dialog->show();
-    auto nameEdit = dialog->findChild<QLineEdit *>(QStringLiteral("name"));
+    auto nameEdit = dialog->findChild<QLineEdit *>(u"name"_s);
     Q_ASSERT(nameEdit);
     QCOMPARE(nameEdit->text(), name);
-    auto descriptionEdit = dialog->findChild<QLineEdit *>(QStringLiteral("description"));
+    auto descriptionEdit = dialog->findChild<QLineEdit *>(u"description"_s);
     Q_ASSERT(descriptionEdit);
     QCOMPARE(descriptionEdit->text(), description);
-    auto mimeTypeCombo = dialog->findChild<QComboBox *>(QStringLiteral("mimeType"));
+    auto mimeTypeCombo = dialog->findChild<QComboBox *>(u"mimeType"_s);
     Q_ASSERT(mimeTypeCombo);
     QCOMPARE(mimeTypeCombo->currentText().toLatin1(), mimeType);
-    auto encodingCombo = dialog->findChild<QComboBox *>(QStringLiteral("encoding"));
+    auto encodingCombo = dialog->findChild<QComboBox *>(u"encoding"_s);
     Q_ASSERT(encodingCombo);
     QCOMPARE(encodingCombo->currentIndex(), int(encoding));
-    auto autoDisplayCheck = dialog->findChild<QCheckBox *>(QStringLiteral("autoDisplay"));
+    auto autoDisplayCheck = dialog->findChild<QCheckBox *>(u"autoDisplay"_s);
     Q_ASSERT(autoDisplayCheck);
     QCOMPARE(autoDisplayCheck->isChecked(), autoDisplay);
-    auto encryptCheck = dialog->findChild<QCheckBox *>(QStringLiteral("encrypt"));
+    auto encryptCheck = dialog->findChild<QCheckBox *>(u"encrypt"_s);
     Q_ASSERT(encryptCheck);
     QCOMPARE(encryptCheck->isChecked(), encrypt);
-    auto signCheck = dialog->findChild<QCheckBox *>(QStringLiteral("sign"));
+    auto signCheck = dialog->findChild<QCheckBox *>(u"sign"_s);
     Q_ASSERT(signCheck);
     QCOMPARE(signCheck->isChecked(), sign);
     // QTest::qWait( 5000 );
@@ -113,7 +115,7 @@ void AttachmentPropertiesDialogTest::testAttachmentPartReadWrite()
 void AttachmentPropertiesDialogTest::testAttachmentPartReadOnly()
 {
     // Sample data.
-    const QString name = QStringLiteral("old name");
+    const QString name = u"old name"_s;
 
     // Create the part.
     AttachmentPart::Ptr part = AttachmentPart::Ptr(new AttachmentPart);
@@ -131,8 +133,8 @@ void AttachmentPropertiesDialogTest::testAttachmentPartReadOnly()
 void AttachmentPropertiesDialogTest::testAttachmentPartCancel()
 {
     // Sample data.
-    const QString name = QStringLiteral("old name");
-    const QString newName = QStringLiteral("new name");
+    const QString name = u"old name"_s;
+    const QString newName = u"new name"_s;
 
     // Create the part.
     AttachmentPart::Ptr part = AttachmentPart::Ptr(new AttachmentPart);
@@ -141,7 +143,7 @@ void AttachmentPropertiesDialogTest::testAttachmentPartCancel()
     // Show the (read-write) dialog and do some changes.
     auto dialog = new AttachmentPropertiesDialog(part);
     dialog->show();
-    auto nameEdit = dialog->findChild<QLineEdit *>(QStringLiteral("name"));
+    auto nameEdit = dialog->findChild<QLineEdit *>(u"name"_s);
     Q_ASSERT(nameEdit);
     nameEdit->setText(newName);
 
@@ -154,7 +156,7 @@ void AttachmentPropertiesDialogTest::testAttachmentPartCancel()
 void AttachmentPropertiesDialogTest::testMimeContentReadOnly()
 {
     // Sample data.
-    const QString name = QStringLiteral("old name");
+    const QString name = u"old name"_s;
     const QByteArray charset("us-ascii");
 
     // Create the MIME Content.

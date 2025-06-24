@@ -6,6 +6,8 @@
 */
 
 #include "converthtmltoplaintexttest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../converthtmltoplaintext.h"
 #include <QTest>
 
@@ -32,25 +34,22 @@ void ConvertHtmlToPlainTextTest::shouldReturnEmptyStringIfInputTextIsEmpty()
 void ConvertHtmlToPlainTextTest::shouldReturnNotEmptyStringIfInputTextIsNotEmpty()
 {
     MimeTreeParser::ConvertHtmlToPlainText convert;
-    const QString str = QStringLiteral("foo bla");
+    const QString str = u"foo bla"_s;
     convert.setHtmlString(str);
     const QString result = convert.generatePlainText();
     QVERIFY(!result.isEmpty());
-    QCOMPARE(result, QString(str + QLatin1Char('\n')));
+    QCOMPARE(result, QString(str + u'\n'));
 }
 
 void ConvertHtmlToPlainTextTest::shouldConvertToPlainText_data()
 {
     QTest::addColumn<QString>("inputText");
     QTest::addColumn<QString>("convertedText");
-    QTest::newRow("plainText") << QStringLiteral("foo") << QStringLiteral("foo\n");
-    QTest::newRow("htmlText") << QStringLiteral("<html><body>Hi! This is a KDE test</body></html>") << QStringLiteral("Hi! This is a KDE test\n");
-    QTest::newRow("htmlTextWithBold") << QStringLiteral("<html><body><b>Hi!</b> This is a KDE test</body></html>")
-                                      << QStringLiteral("*Hi!* This is a KDE test\n");
-    QTest::newRow("htmlTextWithH1") << QStringLiteral("<html><body><h1>Hi!</h1> This is a KDE test</body></html>")
-                                    << QStringLiteral("*Hi!*\nThis is a KDE test\n");
-    QTest::newRow("htmlTextWithUnderLine") << QStringLiteral("<html><body><u>Hi!</u> This is a KDE test</body></html>")
-                                           << QStringLiteral("_Hi!_ This is a KDE test\n");
+    QTest::newRow("plainText") << u"foo"_s << u"foo\n"_s;
+    QTest::newRow("htmlText") << u"<html><body>Hi! This is a KDE test</body></html>"_s << u"Hi! This is a KDE test\n"_s;
+    QTest::newRow("htmlTextWithBold") << u"<html><body><b>Hi!</b> This is a KDE test</body></html>"_s << u"*Hi!* This is a KDE test\n"_s;
+    QTest::newRow("htmlTextWithH1") << u"<html><body><h1>Hi!</h1> This is a KDE test</body></html>"_s << u"*Hi!*\nThis is a KDE test\n"_s;
+    QTest::newRow("htmlTextWithUnderLine") << u"<html><body><u>Hi!</u> This is a KDE test</body></html>"_s << u"_Hi!_ This is a KDE test\n"_s;
     QTest::newRow("bug345360") << QStringLiteral(
         "<html><head><title>Changes to Zoho Privacy Policy and Terms of Service</title></head><body><center><table width=\"600\" style=\"margin-top:20px;\"  "
         "cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><tr><td style=\"text-align:left;\"><div id=\"_zc_default\" style=\"font-family: "

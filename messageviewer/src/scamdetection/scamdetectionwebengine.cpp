@@ -5,6 +5,8 @@
 
 */
 #include "scamdetectionwebengine.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "MessageViewer/ScamCheckShortUrl"
 #include "scamdetectiondetailsdialog.h"
 #include "settings/messageviewersettings.h"
@@ -41,7 +43,7 @@ static InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFunction)(Ar
 
 static QString addWarningColor(const QString &url)
 {
-    const QString error = QStringLiteral("<font color=#FF0000>%1</font>").arg(url);
+    const QString error = u"<font color=#FF0000>%1</font>"_s.arg(url);
     return error;
 }
 
@@ -81,16 +83,16 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
         Q_EMIT resultScanDetection(foundScam);
         return;
     }
-    static const QRegularExpression ip4regExp(QStringLiteral("\\b[0-9]{1,3}\\.[0-9]{1,3}(?:\\.[0-9]{0,3})?(?:\\.[0-9]{0,3})?"));
+    static const QRegularExpression ip4regExp(u"\\b[0-9]{1,3}\\.[0-9]{1,3}(?:\\.[0-9]{0,3})?(?:\\.[0-9]{0,3})?"_s);
     const QVariantMap mapResult = resultList.at(0).toMap();
-    const QList<QVariant> lst = mapResult.value(QStringLiteral("anchors")).toList();
+    const QList<QVariant> lst = mapResult.value(u"anchors"_s).toList();
     for (const QVariant &var : lst) {
         QMap<QString, QVariant> mapVariant = var.toMap();
         // qDebug()<<" mapVariant"<<mapVariant;
 
         // 1) detect if title has a url and title != href
-        const QString title = mapVariant.value(QStringLiteral("title")).toString();
-        QString href = mapVariant.value(QStringLiteral("src")).toString();
+        const QString title = mapVariant.value(u"title"_s).toString();
+        QString href = mapVariant.value(u"src"_s).toString();
         if (!QUrl(href).toString().contains(QLatin1StringView("kmail:showAuditLog"))) {
             href = href.toLower();
         }
@@ -99,13 +101,13 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
             if (title.startsWith(QLatin1StringView("http:")) || title.startsWith(QLatin1StringView("https:")) || title.startsWith(QLatin1StringView("www."))) {
                 if (title.startsWith(QLatin1StringView("www."))) {
                     const QString completUrl = url.scheme() + QLatin1StringView("://") + title;
-                    if (completUrl != href && href != (completUrl + QLatin1Char('/'))) {
+                    if (completUrl != href && href != (completUrl + u'/')) {
                         foundScam = true;
                     }
                 } else {
                     if (href != title) {
                         // http://www.kde.org == http://www.kde.org/
-                        if (href != (title + QLatin1Char('/'))) {
+                        if (href != (title + u'/')) {
                             foundScam = true;
                         }
                     }
@@ -130,7 +132,7 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
                            addWarningColor(hostname))
                     + QLatin1StringView("</li>");
                 foundScam = true;
-            } else if (hostname.contains(QLatin1Char('%'))) { // Hexa value for ip
+            } else if (hostname.contains(u'%')) { // Hexa value for ip
                 d->mDetails += QLatin1StringView("<li>")
                     + i18n("This email contains a link which points to a hexadecimal IP address (%1) instead of a typical textual website address. This is "
                            "often the case in scam emails.",
@@ -141,8 +143,7 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
                 d->mDetails += QLatin1StringView("<li>") + i18n("This email contains a link (%1) which has a redirection", addWarningColor(url.toString()))
                     + QLatin1StringView("</li>");
                 foundScam = true;
-            } else if ((url.toString().count(QStringLiteral("http://")) > 1)
-                       || (url.toString().count(QStringLiteral("https://")) > 1)) { // 5) more that 1 http in url.
+            } else if ((url.toString().count(u"http://"_s) > 1) || (url.toString().count(u"https://"_s) > 1)) { // 5) more that 1 http in url.
                 if (!url.toString().contains(QLatin1StringView("kmail:showAuditLog"))) {
                     d->mDetails += QLatin1StringView("<li>")
                         + i18n("This email contains a link (%1) which contains multiple http://. This is often the case in scam emails.",
@@ -162,7 +163,7 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
             }
         }
         if (!foundScam) {
-            QUrl displayUrl = QUrl(mapVariant.value(QStringLiteral("text")).toString());
+            QUrl displayUrl = QUrl(mapVariant.value(u"text"_s).toString());
             // Special case if https + port 443 it will return url without port
             QString text = (displayUrl.port() == 443 && displayUrl.scheme() == QLatin1StringView("https"))
                 ? displayUrl.toDisplayString(QUrl::StripTrailingSlash | QUrl::NormalizePathSegments | QUrl::RemovePort)
@@ -173,8 +174,8 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
             const QUrl normalizedHrefUrl = QUrl(href.toLower());
             QString normalizedHref = normalizedHrefUrl.toDisplayString(QUrl::StripTrailingSlash | QUrl::NormalizePathSegments);
             if (text != normalizedHref) {
-                if (normalizedHref.contains(QStringLiteral("%5C"))) {
-                    normalizedHref.replace(QStringLiteral("%5C"), QStringLiteral("/"));
+                if (normalizedHref.contains(u"%5C"_s)) {
+                    normalizedHref.replace(u"%5C"_s, u"/"_s);
                 }
             }
             if (normalizedHref.endsWith(QLatin1StringView("%22"))) {
@@ -186,7 +187,7 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
                 if (text.startsWith(QLatin1StringView("http:/")) || text.startsWith(QLatin1StringView("https:/"))) {
                     if (text.toLower() != normalizedHref.toLower()) {
                         if (text != normalizedHref) {
-                            if (normalizedHref != (text + QLatin1Char('/'))) {
+                            if (normalizedHref != (text + u'/')) {
                                 if (normalizedHref.toHtmlEscaped() != text) {
                                     if (QString::fromUtf8(QUrl(text).toEncoded()) != normalizedHref) {
                                         if (QUrl(normalizedHref).toDisplayString() != text) {
@@ -201,9 +202,9 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
                                             // hrefUrlWithoutQuery << " text " << text;
                                             // qDebug() << " qurlqueryequal " << qurlqueryequal << " hrefUrlWithoutQuery " << hrefUrlWithoutQuery;
 
-                                            if (qurlqueryequal && (displayUrlWithoutQuery + QLatin1Char('/') != hrefUrlWithoutQuery)) {
+                                            if (qurlqueryequal && (displayUrlWithoutQuery + u'/' != hrefUrlWithoutQuery)) {
                                                 foundScam = true;
-                                            } else if ((displayUrlWithoutQuery + QLatin1Char('/') != hrefUrlWithoutQuery)) {
+                                            } else if ((displayUrlWithoutQuery + u'/' != hrefUrlWithoutQuery)) {
                                                 // qDebug() << " displayUrlWithoutQuery********** "<< displayUrlWithoutQuery << " hrefUrlWithoutQuery***" <<
                                                 // hrefUrlWithoutQuery;
                                                 foundScam = true;
@@ -228,7 +229,7 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
             }
         }
     }
-    if (mapResult.value(QStringLiteral("forms")).toInt() > 0) {
+    if (mapResult.value(u"forms"_s).toInt() > 0) {
         d->mDetails +=
             QLatin1StringView("<li></b>") + i18n("Message contains form element. This is often the case in scam emails.") + QLatin1StringView("</b></li>");
         foundScam = true;

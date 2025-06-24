@@ -3,6 +3,8 @@
  *
  */
 #include <MessageCore/DateFormatter>
+using namespace Qt::Literals::StringLiterals;
+
 #include <QDebug>
 
 using namespace MessageCore;
@@ -29,7 +31,7 @@ int main()
     t.setFormat(DateFormatter::CTime);
     qDebug() << "tCTime : \t" << t.dateString(ntime);
 
-    t.setCustomFormat(QStringLiteral("MMMM dddd yyyy Z"));
+    t.setCustomFormat(u"MMMM dddd yyyy Z"_s);
     qDebug() << "tCustom : \t" << t.dateString(ntime);
 
     ntime = ntime.addSecs(24 * 3600 + 1);
@@ -40,7 +42,7 @@ int main()
     qDebug() << "tLocalized : \t" << t.dateString(ntime);
     t.setFormat(DateFormatter::CTime);
     qDebug() << "tCTime : \t" << t.dateString(ntime);
-    t.setCustomFormat(QStringLiteral("MMMM dddd Z yyyy"));
+    t.setCustomFormat(u"MMMM dddd Z yyyy"_s);
     qDebug() << "tCustom : \t" << t.dateString(ntime);
 
     t.setFormat(DateFormatter::Fancy);
@@ -51,14 +53,14 @@ int main()
     qDebug() << "tLocalized : \t" << t.dateString(ntime);
     t.setFormat(DateFormatter::CTime);
     qDebug() << "tCTime : \t" << t.dateString(ntime);
-    t.setCustomFormat(QStringLiteral("MMMM Z dddd yyyy"));
+    t.setCustomFormat(u"MMMM Z dddd yyyy"_s);
     qDebug() << "tCustom : \t" << t.dateString(ntime);
 
     qDebug() << "Static functions (dates like in the last test):";
     qDebug() << "tFancy : \t" << DateFormatter::formatDate(DateFormatter::Fancy, ntime);
     qDebug() << "tLocalized : \t" << DateFormatter::formatDate(DateFormatter::Localized, ntime);
     qDebug() << "tCTime : \t" << DateFormatter::formatDate(DateFormatter::CTime, ntime);
-    qDebug() << "tCustom : \t" << DateFormatter::formatDate(DateFormatter::Custom, ntime, QStringLiteral("Z MMMM dddd yyyy"));
+    qDebug() << "tCustom : \t" << DateFormatter::formatDate(DateFormatter::Custom, ntime, u"Z MMMM dddd yyyy"_s);
     t.setFormat(DateFormatter::Fancy);
     qDebug() << "QDateTime taking: (dates as in first test)";
     qDebug() << "tFancy : \t" << t.dateString((QDateTime::currentDateTime()));
@@ -66,6 +68,6 @@ int main()
     qDebug() << "tLocalized : \t" << t.dateString(QDateTime::currentDateTime());
     t.setFormat(DateFormatter::CTime);
     qDebug() << "tCTime : \t" << t.dateString(QDateTime::currentDateTime());
-    t.setCustomFormat(QStringLiteral("MMMM d dddd yyyy Z"));
+    t.setCustomFormat(u"MMMM d dddd yyyy Z"_s);
     qDebug() << "tCustom : \t" << t.dateString(QDateTime::currentDateTime());
 }

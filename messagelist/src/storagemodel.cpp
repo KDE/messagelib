@@ -32,6 +32,7 @@
 #include <QHash>
 #include <QItemSelectionModel>
 #include <QMimeData>
+using namespace Qt::Literals::StringLiterals;
 
 namespace MessageList
 {
@@ -91,7 +92,7 @@ MessageList::StorageModel::StorageModel(QAbstractItemModel *model, QItemSelectio
     auto itemFilter = new EntityMimeTypeFilterModel(this);
     itemFilter->setSourceModel(childrenFilter);
     itemFilter->addMimeTypeExclusionFilter(Collection::mimeType());
-    itemFilter->addMimeTypeInclusionFilter(QStringLiteral("message/rfc822"));
+    itemFilter->addMimeTypeInclusionFilter(u"message/rfc822"_s);
     itemFilter->setHeaderGroup(EntityTreeModel::ItemListHeaders);
 
     d->mModel = itemFilter;
@@ -155,7 +156,7 @@ QString MessageList::StorageModel::id() const
     }
 
     ids.sort();
-    return ids.join(QLatin1Char(':'));
+    return ids.join(u':');
 }
 
 bool MessageList::StorageModel::isOutBoundFolder(const Akonadi::Collection &c) const
@@ -234,7 +235,7 @@ bool MessageList::StorageModel::initializeMessageItem(MessageList::Core::Message
     if (auto subjectMail = mail->subject(false)) {
         subject = subjectMail->asUnicodeString();
         if (subject.isEmpty()) {
-            subject = QLatin1Char('(') + noSubject + QLatin1Char(')');
+            subject = QLatin1Char('(') + noSubject + u')';
         }
     }
 
@@ -245,7 +246,7 @@ bool MessageList::StorageModel::initializeMessageItem(MessageList::Core::Message
         QString folder;
         Collection collection = collectionForId(item.storageCollectionId());
         while (collection.parentCollection().isValid()) {
-            folder = collection.displayName() + QLatin1Char('/') + folder;
+            folder = collection.displayName() + u'/' + folder;
             collection = collection.parentCollection();
         }
         folder.chop(1);

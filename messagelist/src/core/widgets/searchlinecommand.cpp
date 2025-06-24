@@ -82,61 +82,61 @@ QString SearchLineCommand::searchLineTypeToString(SearchLineType type)
     case Date:
         return {};
     case OlderThan:
-        return QStringLiteral("older_than");
+        return u"older_than"_s;
     case NewerThan:
-        return QStringLiteral("newer_than");
+        return u"newer_than"_s;
     case Smaller:
-        return QStringLiteral("smaller");
+        return u"smaller"_s;
     case Larger:
-        return QStringLiteral("larger");
+        return u"larger"_s;
     case Size:
-        return QStringLiteral("size");
+        return u"size"_s;
     case To:
-        return QStringLiteral("to");
+        return u"to"_s;
     case Bcc:
-        return QStringLiteral("bcc");
+        return u"bcc"_s;
     case Cc:
-        return QStringLiteral("cc");
+        return u"cc"_s;
     case From:
-        return QStringLiteral("from");
+        return u"from"_s;
     case Subject:
-        return QStringLiteral("subject");
+        return u"subject"_s;
     case Body:
-        return QStringLiteral("body");
+        return u"body"_s;
     case Category:
-        return QStringLiteral("category");
+        return u"category"_s;
     case HasAttachment:
-        return QStringLiteral("has:attachment");
+        return u"has:attachment"_s;
     case HasInvitation:
-        return QStringLiteral("has:invitation");
+        return u"has:invitation"_s;
     case IsImportant:
-        return QStringLiteral("is:important");
+        return u"is:important"_s;
     case IsRead:
-        return QStringLiteral("is:read");
+        return u"is:read"_s;
     case IsUnRead:
-        return QStringLiteral("is:unread");
+        return u"is:unread"_s;
     case IsIgnored:
-        return QStringLiteral("is:ignored");
+        return u"is:ignored"_s;
     case IsHam:
-        return QStringLiteral("is:ham");
+        return u"is:ham"_s;
     case IsSpam:
-        return QStringLiteral("is:spam");
+        return u"is:spam"_s;
     case IsWatched:
-        return QStringLiteral("is:watched");
+        return u"is:watched"_s;
     case IsReplied:
-        return QStringLiteral("is:replied");
+        return u"is:replied"_s;
     case IsForwarded:
-        return QStringLiteral("is:forwarded");
+        return u"is:forwarded"_s;
     case IsEncrypted:
-        return QStringLiteral("is:encrypted");
+        return u"is:encrypted"_s;
     case IsQueued:
-        return QStringLiteral("is:queued");
+        return u"is:queued"_s;
     case IsSent:
-        return QStringLiteral("is:sent");
+        return u"is:sent"_s;
     case IsAction:
-        return QStringLiteral("is:action");
+        return u"is:action"_s;
     case IsDeleted:
-        return QStringLiteral("is:deleted");
+        return u"is:deleted"_s;
     }
     return {};
 }
@@ -215,7 +215,7 @@ QString SearchLineCommand::generateCommadLineStr() const
     QString result;
     for (const auto &info : mSearchLineInfo) {
         if (!result.isEmpty()) {
-            result += QLatin1Char(' ') + i18n("AND") + QLatin1Char(' ');
+            result += QLatin1Char(' ') + i18n("AND") + u' ';
         }
         const QString translatedType = convertSearchLinetypeToTranslatedString(info.type);
         if (!translatedType.isEmpty()) {
@@ -223,7 +223,7 @@ QString SearchLineCommand::generateCommadLineStr() const
         }
         if (!info.argument.isEmpty()) {
             if (!translatedType.isEmpty()) {
-                result += QLatin1Char(' ');
+                result += u' ';
             }
             result += info.argument;
         }
@@ -233,7 +233,7 @@ QString SearchLineCommand::generateCommadLineStr() const
 
 SearchLineCommand::SearchLineInfo SearchLineCommand::isAnotherInfo(QString tmp, SearchLineInfo searchLineInfo)
 {
-    if (!tmp.contains(QLatin1Char(' '))) {
+    if (!tmp.contains(u' ')) {
         return {};
     }
     if (tmp.endsWith(QLatin1StringView("is")) || tmp.endsWith(QLatin1StringView("has"))) {
@@ -285,7 +285,7 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
     int parentheses = 0;
     for (int i = 0, total = str.length(); i < total; ++i) {
         const QChar ch = str.at(i);
-        if (ch == QLatin1Char(':')) {
+        if (ch == u':') {
 #ifdef DEBUG_COMMAND_PARSER
             qDebug() << " tmp ! " << tmp;
 #endif
@@ -341,7 +341,7 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
                 searchLineInfo.clear();
                 tmp.clear();
             }
-        } else if (ch == QLatin1Char('(')) {
+        } else if (ch == u'(') {
             parentheses++;
             if (parentheses > 1) {
                 tmp += ch;
@@ -349,7 +349,7 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
 #ifdef DEBUG_COMMAND_PARSER
             qDebug() << " parenthese ( equal " << parentheses;
 #endif
-        } else if (ch == QLatin1Char(')')) {
+        } else if (ch == u')') {
             parentheses--;
             if (parentheses > 0) {
                 tmp += ch;
@@ -491,7 +491,7 @@ QDebug operator<<(QDebug d, const MessageList::Core::SearchLineCommand::SearchLi
 QString SearchLineCommand::generateCommandText(SearchLineCommand::SearchLineType type)
 {
     bool needSpace = SearchLineCommand::mustBeUnique(type);
-    return SearchLineCommand::searchLineTypeToString(type) + (needSpace ? QStringLiteral(" ") : QStringLiteral(":"));
+    return SearchLineCommand::searchLineTypeToString(type) + (needSpace ? u" "_s : QStringLiteral(":"));
 }
 
 #include "moc_searchlinecommand.cpp"

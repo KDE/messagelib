@@ -5,6 +5,8 @@
 */
 
 #include "headerstyle_util.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "messageviewer_debug.h"
 
 #include "contactdisplaymessagememento.h"
@@ -34,7 +36,7 @@ HeaderStyleUtil::HeaderStyleUtil() = default;
 
 QString HeaderStyleUtil::directionOf(const QString &str) const
 {
-    return str.isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr");
+    return str.isRightToLeft() ? u"rtl"_s : u"ltr"_s;
 }
 
 QString HeaderStyleUtil::strToHtml(const QString &str, KTextToHTML::Options flags)
@@ -104,8 +106,7 @@ QString HeaderStyleUtil::spamStatus(KMime::Message *message) const
     const SpamScores scores = SpamHeaderAnalyzer::getSpamScores(message);
 
     for (SpamScores::const_iterator it = scores.constBegin(), end = scores.constEnd(); it != end; ++it) {
-        spamHTML +=
-            (*it).agent() + QLatin1Char(' ') + drawSpamMeter((*it).error(), (*it).score(), (*it).confidence(), (*it).spamHeader(), (*it).confidenceHeader());
+        spamHTML += (*it).agent() + u' ' + drawSpamMeter((*it).error(), (*it).score(), (*it).confidence(), (*it).spamHeader(), (*it).confidenceHeader());
     }
     return spamHTML;
 }
@@ -185,8 +186,10 @@ HeaderStyleUtil::drawSpamMeter(SpamError spamError, double percent, double confi
             errorMsg,
             filterHeader);
     }
-    return QStringLiteral("<img src=\"%1\" width=\"%2\" height=\"%3\" style=\"border: 1px solid black;\" title=\"%4\" />")
-               .arg(imgToDataUrl(meterBar), QString::number(meterWidth), QString::number(meterHeight), titleText)
+    return u"<img src=\"%1\" width=\"%2\" height=\"%3\" style=\"border: 1px solid black;\" title=\"%4\" />"_s.arg(imgToDataUrl(meterBar),
+                                                                                                                  QString::number(meterWidth),
+                                                                                                                  QString::number(meterHeight),
+                                                                                                                  titleText)
         + confidenceString;
 }
 
@@ -196,7 +199,7 @@ QString HeaderStyleUtil::imgToDataUrl(const QImage &image) const
     QBuffer buffer(&ba);
     buffer.open(QIODevice::WriteOnly);
     image.save(&buffer, "PNG");
-    return QStringLiteral("data:image/%1;base64,%2").arg(QStringLiteral("PNG"), QString::fromLatin1(ba.toBase64()));
+    return u"data:image/%1;base64,%2"_s.arg(u"PNG"_s, QString::fromLatin1(ba.toBase64()));
 }
 
 QString HeaderStyleUtil::dateStr(const QDateTime &dateTime)
@@ -287,7 +290,7 @@ HeaderStyleUtil::xfaceSettings HeaderStyleUtil::xface(const MessageViewer::Heade
                 updateXFaceSettings(photoMemento->imageFromUrl(), settings);
             } else if (!photoMemento->photo().url().isEmpty()) {
                 settings.photoURL = photoMemento->photo().url();
-                if (settings.photoURL.startsWith(QLatin1Char('/'))) {
+                if (settings.photoURL.startsWith(u'/')) {
                     settings.photoURL.prepend(QLatin1StringView("file:"));
                 }
             } else if (!photoMemento->gravatarPixmap().isNull()) {

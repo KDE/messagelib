@@ -5,6 +5,8 @@
 */
 
 #include "attachmentfrommimecontentjobtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "qtest_messagecore.h"
 
 #include "messagecore_debug.h"
@@ -22,10 +24,10 @@ QTEST_MAIN(AttachmentFromMimeContentJobTest)
 void AttachmentFromMimeContentJobTest::testAttachment()
 {
     const QByteArray mimeType("x-some/x-type");
-    const QString name = QStringLiteral("name abcd");
-    const QString description = QStringLiteral("description");
+    const QString name = u"name abcd"_s;
+    const QString description = u"description"_s;
     const QByteArray charset("utf-8");
-    const QString fileName = QStringLiteral("filename abcd");
+    const QString fileName = u"filename abcd"_s;
     const Headers::contentEncoding encoding = Headers::CEquPr;
     const Headers::contentDisposition disposition = Headers::CDinline;
     const QByteArray data("ocean soul");

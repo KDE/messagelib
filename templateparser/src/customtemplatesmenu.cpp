@@ -5,6 +5,8 @@
  */
 
 #include "customtemplatesmenu.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "customtemplates.h"
 #include "customtemplates_kfg.h"
 #include "globalsettings_templateparser.h"
@@ -45,14 +47,14 @@ CustomTemplatesMenu::CustomTemplatesMenu(QWidget *owner, KActionCollection *ac)
 {
     d->mOwnerActionCollection = ac;
 
-    d->mCustomForwardActionMenu = new KActionMenu(QIcon::fromTheme(QStringLiteral("mail-forward-custom")), i18n("With Custom Template"), owner);
-    d->mOwnerActionCollection->addAction(QStringLiteral("custom_forward"), d->mCustomForwardActionMenu);
+    d->mCustomForwardActionMenu = new KActionMenu(QIcon::fromTheme(u"mail-forward-custom"_s), i18n("With Custom Template"), owner);
+    d->mOwnerActionCollection->addAction(u"custom_forward"_s, d->mCustomForwardActionMenu);
 
-    d->mCustomReplyActionMenu = new KActionMenu(QIcon::fromTheme(QStringLiteral("mail-reply-custom")), i18n("Reply With Custom Template"), owner);
-    d->mOwnerActionCollection->addAction(QStringLiteral("custom_reply"), d->mCustomReplyActionMenu);
+    d->mCustomReplyActionMenu = new KActionMenu(QIcon::fromTheme(u"mail-reply-custom"_s), i18n("Reply With Custom Template"), owner);
+    d->mOwnerActionCollection->addAction(u"custom_reply"_s, d->mCustomReplyActionMenu);
 
-    d->mCustomReplyAllActionMenu = new KActionMenu(QIcon::fromTheme(QStringLiteral("mail-reply-all-custom")), i18n("Reply to All With Custom Template"), owner);
-    d->mOwnerActionCollection->addAction(QStringLiteral("custom_reply_all"), d->mCustomReplyAllActionMenu);
+    d->mCustomReplyAllActionMenu = new KActionMenu(QIcon::fromTheme(u"mail-reply-all-custom"_s), i18n("Reply to All With Custom Template"), owner);
+    d->mOwnerActionCollection->addAction(u"custom_reply_all"_s, d->mCustomReplyAllActionMenu);
 
     update();
 }
@@ -103,9 +105,9 @@ void CustomTemplatesMenu::update()
         CTemplates t(*it);
         d->mCustomTemplates.append(*it);
         QString nameAction(*it);
-        nameAction.replace(QLatin1Char('&'), QStringLiteral("&&"));
+        nameAction.replace(u'&', u"&&"_s);
 
-        const QString nameActionName = nameAction.replace(QLatin1Char(' '), QLatin1Char('_'));
+        const QString nameActionName = nameAction.replace(u' ', u'_');
 
         QAction *action = nullptr;
         switch (t.type()) {

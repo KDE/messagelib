@@ -10,6 +10,7 @@
 #include <QFileInfo>
 
 using namespace MessageComposer;
+using namespace Qt::Literals::StringLiterals;
 
 bool Utils::resizeImage(MessageCore::AttachmentPart::Ptr part)
 {
@@ -18,7 +19,7 @@ bool Utils::resizeImage(MessageCore::AttachmentPart::Ptr part)
 
     if (!pattern.isEmpty()) {
         // TODO use regexp ?
-        const QStringList lstPattern = pattern.split(QLatin1Char(';'));
+        const QStringList lstPattern = pattern.split(u';');
         for (const QString &patternStr : lstPattern) {
             switch (MessageComposer::MessageComposerSettings::self()->filterSourceType()) {
             case MessageComposer::MessageComposerSettings::EnumFilterSourceType::NoFilter:
@@ -40,7 +41,7 @@ bool Utils::resizeImage(MessageCore::AttachmentPart::Ptr part)
     if (MessageComposer::MessageComposerSettings::self()->resizeImagesWithFormats()) {
         const QString formatsType = MessageComposer::MessageComposerSettings::self()->resizeImagesWithFormatsType();
         if (!formatsType.isEmpty()) {
-            const QStringList lstFormat = formatsType.split(QLatin1Char(';'));
+            const QStringList lstFormat = formatsType.split(u';');
             bool willResizeImage = false;
             for (const QString &type : lstFormat) {
                 if (QLatin1StringView(part->mimeType()) == type) {
@@ -82,9 +83,9 @@ void Utils::changeFileName(MessageCore::AttachmentPart::Ptr part)
             const QString type = MessageComposer::MessageComposerSettings::self()->writeFormat();
             QString newExtension;
             if (type == QLatin1StringView("JPG")) {
-                newExtension = QStringLiteral("jpg");
+                newExtension = u"jpg"_s;
             } else if (type == QLatin1StringView("PNG")) {
-                newExtension = QStringLiteral("png");
+                newExtension = u"png"_s;
             }
             if (!newExtension.isEmpty()) {
                 pattern.replace(QLatin1StringView("%x"), newExtension); // new Extension

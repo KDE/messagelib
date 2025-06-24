@@ -22,6 +22,8 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  * ============================================================ */
 #include "webhittestresult.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <QDebug>
 
 using namespace WebEngineViewer;
@@ -60,18 +62,18 @@ void WebHitTestResultPrivate::init(const QVariantMap &map)
         return;
     }
     // qDebug()<<" void WebHitTestResult::init(const QVariantMap &map)"<<map;
-    mAlternateText = map.value(QStringLiteral("alternateText")).toString();
-    mImageUrl = map.value(QStringLiteral("imageUrl")).toUrl();
-    mIsContentEditable = map.value(QStringLiteral("contentEditable")).toBool();
-    mIsContentSelected = map.value(QStringLiteral("contentSelected")).toBool();
-    mLinkTitle = map.value(QStringLiteral("linkTitle")).toString();
-    mLinkUrl = map.value(QStringLiteral("linkUrl")).toUrl();
-    mMediaUrl = map.value(QStringLiteral("mediaUrl")).toUrl();
-    mMediaPaused = map.value(QStringLiteral("mediaPaused")).toBool();
-    mMediaMuted = map.value(QStringLiteral("mediaMuted")).toBool();
-    mTagName = map.value(QStringLiteral("tagName")).toString();
+    mAlternateText = map.value(u"alternateText"_s).toString();
+    mImageUrl = map.value(u"imageUrl"_s).toUrl();
+    mIsContentEditable = map.value(u"contentEditable"_s).toBool();
+    mIsContentSelected = map.value(u"contentSelected"_s).toBool();
+    mLinkTitle = map.value(u"linkTitle"_s).toString();
+    mLinkUrl = map.value(u"linkUrl"_s).toUrl();
+    mMediaUrl = map.value(u"mediaUrl"_s).toUrl();
+    mMediaPaused = map.value(u"mediaPaused"_s).toBool();
+    mMediaMuted = map.value(u"mediaMuted"_s).toBool();
+    mTagName = map.value(u"tagName"_s).toString();
 
-    const QVariantList &rect = map.value(QStringLiteral("boundingRect")).toList();
+    const QVariantList &rect = map.value(u"boundingRect"_s).toList();
     if (rect.size() == 4) {
         mBoundingRect = QRect(rect.at(0).toInt(), rect.at(1).toInt(), rect.at(2).toInt(), rect.at(3).toInt());
     }

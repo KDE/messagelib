@@ -5,6 +5,8 @@
 */
 
 #include "editorwatcher.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <config-messagecomposer.h>
 
 #include "messagecomposer_debug.h"
@@ -181,7 +183,7 @@ void EditorWatcher::checkEditDone()
 
     static QStringList readOnlyMimeTypes;
     if (readOnlyMimeTypes.isEmpty()) {
-        readOnlyMimeTypes << QStringLiteral("message/rfc822") << QStringLiteral("application/pdf");
+        readOnlyMimeTypes << u"message/rfc822"_s << QStringLiteral("application/pdf");
     }
 
     // protect us against double-deletion by calling this method again while
@@ -198,7 +200,7 @@ void EditorWatcher::checkEditDone()
                                  i18n("KMail is unable to detect when the chosen editor is closed. "
                                       "To avoid data loss, editing the attachment will be aborted."),
                                  i18nc("@title:window", "Unable to edit attachment"),
-                                 QStringLiteral("UnableToEditAttachment"));
+                                 u"UnableToEditAttachment"_s);
     }
 
     Q_EMIT editDone(this);

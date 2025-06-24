@@ -5,6 +5,8 @@
 */
 
 #include "dkimdownloadkeyjobtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "dkim-verify/dkimdownloadkeyjob.h"
 #include <QTest>
 QTEST_MAIN(DKIMDownloadKeyJobTest)
@@ -27,9 +29,9 @@ void DKIMDownloadKeyJobTest::shouldTestCanStart()
 {
     MessageViewer::DKIMDownloadKeyJob job;
     QVERIFY(!job.canStart());
-    job.setDomainName(QStringLiteral("bla"));
+    job.setDomainName(u"bla"_s);
     QVERIFY(!job.canStart());
-    job.setSelectorName(QStringLiteral("bli"));
+    job.setSelectorName(u"bli"_s);
     QVERIFY(job.canStart());
     job.setDomainName(QString());
     QVERIFY(!job.canStart());
@@ -38,9 +40,9 @@ void DKIMDownloadKeyJobTest::shouldTestCanStart()
 void DKIMDownloadKeyJobTest::shouldVerifyResolveDns()
 {
     MessageViewer::DKIMDownloadKeyJob job;
-    job.setDomainName(QStringLiteral("bla"));
-    job.setSelectorName(QStringLiteral("bli"));
-    QCOMPARE(job.resolvDnsValue(), QStringLiteral("bli._domainkey.bla"));
+    job.setDomainName(u"bla"_s);
+    job.setSelectorName(u"bli"_s);
+    QCOMPARE(job.resolvDnsValue(), u"bli._domainkey.bla"_s);
 }
 
 #include "moc_dkimdownloadkeyjobtest.cpp"

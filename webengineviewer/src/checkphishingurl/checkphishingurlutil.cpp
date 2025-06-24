@@ -5,13 +5,15 @@
 */
 
 #include "checkphishingurlutil.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <QDateTime>
 #include <QtMath>
 
 using namespace WebEngineViewer;
 QString CheckPhishingUrlUtil::apiKey()
 {
-    return QStringLiteral("AIzaSyBS62pXATjabbH2RM_jO2EzDg1mTMHlnyo");
+    return u"AIzaSyBS62pXATjabbH2RM_jO2EzDg1mTMHlnyo"_s;
 }
 
 QString CheckPhishingUrlUtil::versionApps()
@@ -21,7 +23,7 @@ QString CheckPhishingUrlUtil::versionApps()
 
 QString CheckPhishingUrlUtil::databaseFileName()
 {
-    return QStringLiteral("malware.db");
+    return u"malware.db"_s;
 }
 
 quint16 CheckPhishingUrlUtil::majorVersion()
@@ -36,7 +38,7 @@ quint16 CheckPhishingUrlUtil::minorVersion()
 
 QString CheckPhishingUrlUtil::configFileName()
 {
-    return QStringLiteral("phishingurlrc");
+    return u"phishingurlrc"_s;
 }
 
 double CheckPhishingUrlUtil::convertToSecond(const QString &str)
@@ -44,7 +46,7 @@ double CheckPhishingUrlUtil::convertToSecond(const QString &str)
     QString minimumDuration = str;
 
     if (!minimumDuration.isEmpty()) {
-        if (minimumDuration.endsWith(QLatin1Char('s'))) {
+        if (minimumDuration.endsWith(u's')) {
             minimumDuration = minimumDuration.left(minimumDuration.length() - 1);
         }
         bool ok;

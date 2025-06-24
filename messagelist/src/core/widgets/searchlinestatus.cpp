@@ -25,6 +25,7 @@
 #include <QStandardPaths>
 #include <QStringListModel>
 #include <QWidgetAction>
+using namespace Qt::Literals::StringLiterals;
 
 static const char qLineEditclearButtonActionNameC[] = "_q_qlineeditclearaction";
 #define MAX_COMPLETION_ITEMS 20
@@ -76,10 +77,10 @@ void SearchLineStatus::slotClear()
 void SearchLineStatus::updateLockAction()
 {
     if (mLocked) {
-        mLockAction->setIcon(QIcon::fromTheme(QStringLiteral("object-locked")));
+        mLockAction->setIcon(QIcon::fromTheme(u"object-locked"_s));
         mLockAction->setToolTip(i18nc("@info:tooltip", "Prevent the quick search field from being cleared when changing folders"));
     } else {
-        mLockAction->setIcon(QIcon::fromTheme(QStringLiteral("object-unlocked")));
+        mLockAction->setIcon(QIcon::fromTheme(u"object-unlocked"_s));
         mLockAction->setToolTip(i18nc("@info:tooltip", "Clear the quick search field when changing folders"));
     }
 }
@@ -98,10 +99,10 @@ bool SearchLineStatus::locked() const
 
 void SearchLineStatus::initializeActions()
 {
-    mSearchCommandAction = addAction(QIcon::fromTheme(QStringLiteral("settings-configure")), QLineEdit::TrailingPosition);
+    mSearchCommandAction = addAction(QIcon::fromTheme(u"settings-configure"_s), QLineEdit::TrailingPosition);
     mSearchCommandAction->setWhatsThis(i18nc("@info:whatsthis", "Toggle this button if you want show or hide search command line widget."));
     connect(mSearchCommandAction, &QAction::triggered, this, &SearchLineStatus::searchCommandActionRequested);
-    mLockAction = addAction(QIcon::fromTheme(QStringLiteral("object-locked")), QLineEdit::TrailingPosition);
+    mLockAction = addAction(QIcon::fromTheme(u"object-locked"_s), QLineEdit::TrailingPosition);
     mLockAction->setWhatsThis(i18nc("@info:whatsthis",
                                     "Toggle this button if you want to keep your quick search "
                                     "locked when moving to other folders or when narrowing the search "
@@ -110,7 +111,7 @@ void SearchLineStatus::initializeActions()
     connect(mLockAction, &QAction::triggered, this, &SearchLineStatus::slotToggledLockAction);
     updateLockAction();
 
-    mSaveFilterAction = addAction(QIcon::fromTheme(QStringLiteral("edit-find")), QLineEdit::LeadingPosition);
+    mSaveFilterAction = addAction(QIcon::fromTheme(u"edit-find"_s), QLineEdit::LeadingPosition);
     mSaveFilterAction->setToolTip(i18nc("@info:tooltip", "Saved Filter"));
     mFilterSavedMenu = new FilterSavedMenu(this);
     mSaveFilterAction->setMenu(mFilterSavedMenu);
@@ -159,7 +160,7 @@ void SearchLineStatus::updateFilterLineEditBackgroundColor()
         KStatefulBrush bgBrush(KColorScheme::View, bgColorScheme);
         mColorName = bgBrush.brush(palette()).color().name();
     }
-    setStyleSheet(mHasFilter ? QStringLiteral("QLineEdit{ background-color:%1 }").arg(mColorName) : QString());
+    setStyleSheet(mHasFilter ? u"QLineEdit{ background-color:%1 }"_s.arg(mColorName) : QString());
 }
 
 void SearchLineStatus::clearFilterButtonClicked()
@@ -189,7 +190,7 @@ void SearchLineStatus::contextMenuEvent(QContextMenuEvent *e)
     QMenu *popup = QLineEdit::createStandardContextMenu();
     if (popup) {
         popup->addSeparator();
-        popup->addAction(QIcon::fromTheme(QStringLiteral("edit-clear-locationbar-rtl")), i18n("Clear History"), this, &SearchLineStatus::slotClearHistory);
+        popup->addAction(QIcon::fromTheme(u"edit-clear-locationbar-rtl"_s), i18n("Clear History"), this, &SearchLineStatus::slotClearHistory);
         popup->exec(e->globalPos());
         delete popup;
     }
@@ -203,8 +204,8 @@ void SearchLineStatus::slotClearHistory()
 
 void SearchLineStatus::slotInsertCommand(const QString &command)
 {
-    if (!text().isEmpty() && text().back() != QLatin1Char(' ')) {
-        insert(QStringLiteral(" "));
+    if (!text().isEmpty() && text().back() != u' ') {
+        insert(u" "_s);
     }
     insert(command);
 }

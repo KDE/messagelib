@@ -6,6 +6,8 @@
  */
 
 #include "customtemplates.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "customtemplates_kfg.h"
 #include "globalsettings_templateparser.h"
 #include "templateparser/templatesinsertcommandpushbutton.h"
@@ -28,10 +30,10 @@ CustomTemplates::CustomTemplates(const QList<KActionCollection *> &actionCollect
 {
     mUi->setupUi(this);
 
-    mUi->mAdd->setIcon(QIcon::fromTheme(QStringLiteral("list-add")));
+    mUi->mAdd->setIcon(QIcon::fromTheme(u"list-add"_s));
     mUi->mAdd->setEnabled(false);
-    mUi->mRemove->setIcon(QIcon::fromTheme(QStringLiteral("list-remove")));
-    mUi->mDuplicate->setIcon(QIcon::fromTheme(QStringLiteral("edit-copy")));
+    mUi->mRemove->setIcon(QIcon::fromTheme(u"list-remove"_s));
+    mUi->mDuplicate->setIcon(QIcon::fromTheme(u"edit-copy"_s));
 
     mUi->mList->setColumnWidth(0, 100);
     mUi->mList->header()->setStretchLastSection(true);
@@ -64,9 +66,9 @@ CustomTemplates::CustomTemplates(const QList<KActionCollection *> &actionCollect
 
     mUi->mKeySequenceWidget->setCheckActionCollections(actionCollection);
 
-    mReplyPix = QIcon::fromTheme(QStringLiteral("mail-reply-sender"));
-    mReplyAllPix = QIcon::fromTheme(QStringLiteral("mail-reply-all"));
-    mForwardPix = QIcon::fromTheme(QStringLiteral("mail-forward"));
+    mReplyPix = QIcon::fromTheme(u"mail-reply-sender"_s);
+    mReplyAllPix = QIcon::fromTheme(u"mail-reply-all"_s);
+    mForwardPix = QIcon::fromTheme(u"mail-forward"_s);
 
     mUi->mType->clear();
     mUi->mType->addItem(QPixmap(), i18nc("Message->", "Universal"));
@@ -199,7 +201,7 @@ void CustomTemplates::save()
 {
     // Before saving the new templates, delete the old ones. That needs to be done before
     // saving, since otherwise a new template with the new name wouldn't get saved.
-    KSharedConfig::Ptr config = KSharedConfig::openConfig(QStringLiteral("customtemplatesrc"), KConfig::NoGlobals);
+    KSharedConfig::Ptr config = KSharedConfig::openConfig(u"customtemplatesrc"_s, KConfig::NoGlobals);
     for (const QString &item : std::as_const(mItemsToDelete)) {
         CTemplates t(item);
         const QString configGroup = t.currentGroup();
@@ -216,7 +218,7 @@ void CustomTemplates::save()
         CTemplates t(name);
         QString content = it->content();
         if (content.trimmed().isEmpty()) {
-            content = QStringLiteral("%BLANK");
+            content = u"%BLANK"_s;
         }
 
         t.setContent(content);

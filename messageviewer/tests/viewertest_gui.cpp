@@ -4,6 +4,8 @@
 */
 
 #include "messageviewer/headerstylepluginmanager.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "messageviewer/viewer.h"
 #include <KActionCollection>
 
@@ -33,18 +35,15 @@ int main(int argc, char **argv)
     QCommandLineParser parser;
     parser.addVersionOption();
     parser.addHelpOption();
-    parser.addOption(QCommandLineOption(QStringList() << QStringLiteral("+[file]"), QStringLiteral("File containing an email")));
+    parser.addOption(QCommandLineOption(QStringList() << u"+[file]"_s, u"File containing an email"_s));
 
-    QCommandLineOption headerStylePluginOption(QStringList() << QStringLiteral("headerstyleplugin"),
-                                               QStringLiteral("Header Style Plugin"),
-                                               QStringLiteral("headerstyleplugin"));
+    QCommandLineOption headerStylePluginOption(QStringList() << u"headerstyleplugin"_s, u"Header Style Plugin"_s, u"headerstyleplugin"_s);
     parser.addOption(headerStylePluginOption);
 
-    QCommandLineOption listOption(QStringList() << QStringLiteral("list"), QStringLiteral("Show list of plugins installed."));
+    QCommandLineOption listOption(QStringList() << u"list"_s, u"Show list of plugins installed."_s);
     parser.addOption(listOption);
 
-    QCommandLineOption developerToolsOption(QStringList() << QStringLiteral("d") << QStringLiteral("developer-tools"),
-                                            QStringLiteral("Activate Developer tools"));
+    QCommandLineOption developerToolsOption(QStringList() << u"d"_s << u"developer-tools"_s, u"Activate Developer tools"_s);
     parser.addOption(developerToolsOption);
 
     parser.process(app);

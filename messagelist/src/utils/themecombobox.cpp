@@ -3,6 +3,7 @@
    SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
 #include "themecombobox.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include "utils/themecombobox.h"
 #include "utils/themecombobox_p.h"
@@ -35,10 +36,10 @@ QString ThemeComboBox::currentTheme() const
 
 void ThemeComboBox::writeDefaultConfig() const
 {
-    KConfigGroup group(MessageListSettings::self()->config(), QStringLiteral("MessageListView::StorageModelThemes"));
+    KConfigGroup group(MessageListSettings::self()->config(), u"MessageListView::StorageModelThemes"_s);
 
     const QString themeID = currentTheme();
-    group.writeEntry(QStringLiteral("DefaultSet"), themeID);
+    group.writeEntry(u"DefaultSet"_s, themeID);
     if (Manager::instance()) {
         Manager::instance()->themesConfigurationCompleted();
     }

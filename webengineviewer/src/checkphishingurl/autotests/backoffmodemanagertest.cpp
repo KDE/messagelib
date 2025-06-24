@@ -5,6 +5,8 @@
 */
 
 #include "backoffmodemanagertest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../backoffmodemanager.h"
 #include "../checkphishingurlutil.h"
 
@@ -19,7 +21,7 @@ BackOffModeManagerTest::BackOffModeManagerTest(QObject *parent)
     QStandardPaths::setTestModeEnabled(true);
 
     KConfig config(WebEngineViewer::CheckPhishingUrlUtil::configFileName());
-    config.deleteGroup(QStringLiteral("BackOffMode"));
+    config.deleteGroup(u"BackOffMode"_s);
 }
 
 BackOffModeManagerTest::~BackOffModeManagerTest() = default;

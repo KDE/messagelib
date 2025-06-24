@@ -5,6 +5,7 @@
 */
 
 #include "createphishingurldatabasegui.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <QApplication>
 #include <QComboBox>
@@ -24,8 +25,8 @@ CreatePhisingUrlDataBaseGui::CreatePhisingUrlDataBaseGui(QWidget *parent)
     auto layout = new QVBoxLayout(this);
 
     mCompressionType = new QComboBox(this);
-    mCompressionType->addItem(QStringLiteral("RAW"));
-    mCompressionType->addItem(QStringLiteral("RICE"));
+    mCompressionType->addItem(u"RAW"_s);
+    mCompressionType->addItem(u"RICE"_s);
     layout->addWidget(mCompressionType);
 
     mResult = new QPlainTextEdit(this);
@@ -38,15 +39,15 @@ CreatePhisingUrlDataBaseGui::CreatePhisingUrlDataBaseGui(QWidget *parent)
 
     auto buttonLayout = new QHBoxLayout;
     layout->addLayout(buttonLayout);
-    auto button = new QPushButton(QStringLiteral("DownLoad full database"), this);
+    auto button = new QPushButton(u"DownLoad full database"_s, this);
     connect(button, &QPushButton::clicked, this, &CreatePhisingUrlDataBaseGui::slotDownloadFullDatabase);
     buttonLayout->addWidget(button);
 
-    auto button2 = new QPushButton(QStringLiteral("DownLoad partial database"), this);
+    auto button2 = new QPushButton(u"DownLoad partial database"_s, this);
     connect(button2, &QPushButton::clicked, this, &CreatePhisingUrlDataBaseGui::slotDownloadPartialDatabase);
     buttonLayout->addWidget(button2);
 
-    auto save = new QPushButton(QStringLiteral("Save result to disk"), this);
+    auto save = new QPushButton(u"Save result to disk"_s, this);
     connect(save, &QPushButton::clicked, this, &CreatePhisingUrlDataBaseGui::slotSaveResultToDisk);
     buttonLayout->addWidget(save);
 }
@@ -72,7 +73,7 @@ WebEngineViewer::CreatePhishingUrlDataBaseJob::ContraintsCompressionType CreateP
 
 void CreatePhisingUrlDataBaseGui::slotDownloadPartialDatabase()
 {
-    const QString newValue = QInputDialog::getText(this, QStringLiteral("Define database newClientState"), QStringLiteral("newClientState:"));
+    const QString newValue = QInputDialog::getText(this, u"Define database newClientState"_s, u"newClientState:"_s);
     if (!newValue.isEmpty()) {
         clear();
         auto job = new WebEngineViewer::CreatePhishingUrlDataBaseJob(this);
@@ -98,7 +99,7 @@ void CreatePhisingUrlDataBaseGui::slotDownloadFullDatabase()
 void CreatePhisingUrlDataBaseGui::slotSaveResultToDisk()
 {
     if (!mResult->document()->isEmpty()) {
-        const QString filename = QFileDialog::getSaveFileName(this, QStringLiteral("save result to disk"));
+        const QString filename = QFileDialog::getSaveFileName(this, u"save result to disk"_s);
         QTextStream ds;
         QFile file;
         file.setFileName(filename);

@@ -5,6 +5,8 @@
 */
 
 #include "filtersavedmenu.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "core/filtersavedmanager.h"
 #include <KLocalizedString>
 #include <QAction>
@@ -13,8 +15,8 @@ using namespace MessageList::Core;
 
 FilterSavedMenu::FilterSavedMenu(QWidget *parent)
     : QMenu(parent)
-    , mSaveAction(new QAction(QIcon::fromTheme(QStringLiteral("document-save-as")), i18nc("@action", "Save Filter..."), this))
-    , mConfigureAction(new QAction(QIcon::fromTheme(QStringLiteral("settings-configure")), i18nc("@action", "Configure..."), this))
+    , mSaveAction(new QAction(QIcon::fromTheme(u"document-save-as"_s), i18nc("@action", "Save Filter..."), this))
+    , mConfigureAction(new QAction(QIcon::fromTheme(u"settings-configure"_s), i18nc("@action", "Configure..."), this))
 {
     connect(this, &FilterSavedMenu::aboutToShow, this, &FilterSavedMenu::slotShowMenu);
 }

@@ -5,6 +5,8 @@
 */
 
 #include "plugineditorcheckbeforesendparamstest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <MessageComposer/PluginEditorCheckBeforeSendParams>
 #include <QTest>
 
@@ -33,15 +35,15 @@ void PluginEditorCheckBeforeSendParamsTest::shouldHaveDefaultValues()
 void PluginEditorCheckBeforeSendParamsTest::shouldBeEqual()
 {
     MessageComposer::PluginEditorCheckBeforeSendParams params1;
-    const QString subject(QStringLiteral("foo"));
-    const QString plainText(QStringLiteral("bla"));
-    const QString defaultDomain(QStringLiteral("bli"));
+    const QString subject(u"foo"_s);
+    const QString plainText(u"bla"_s);
+    const QString defaultDomain(u"bli"_s);
     bool isHmlMail = true;
     bool hasAttachment = true;
     int transportId = 5;
-    QString to(QStringLiteral("to"));
-    QString cc(QStringLiteral("cc"));
-    QString bcc(QStringLiteral("bcc"));
+    QString to(u"to"_s);
+    QString cc(u"cc"_s);
+    QString bcc(u"bcc"_s);
     params1.setSubject(subject);
     params1.setHtmlMail(isHmlMail);
     params1.setPlainText(plainText);
@@ -68,16 +70,16 @@ void PluginEditorCheckBeforeSendParamsTest::shouldBeEqual()
 void PluginEditorCheckBeforeSendParamsTest::shouldAssignValue()
 {
     MessageComposer::PluginEditorCheckBeforeSendParams params1;
-    const QString subject(QStringLiteral("foo"));
-    const QString plainText(QStringLiteral("bla"));
-    const QString defaultDomain(QStringLiteral("bli"));
+    const QString subject(u"foo"_s);
+    const QString plainText(u"bla"_s);
+    const QString defaultDomain(u"bli"_s);
     bool isHmlMail = true;
     bool hasAttachment = true;
     uint identity = 5;
     int transportId = 6;
-    QString to(QStringLiteral("to"));
-    QString cc(QStringLiteral("cc"));
-    QString bcc(QStringLiteral("bcc"));
+    QString to(u"to"_s);
+    QString cc(u"cc"_s);
+    QString bcc(u"bcc"_s);
 
     params1.setSubject(subject);
     params1.setHtmlMail(isHmlMail);

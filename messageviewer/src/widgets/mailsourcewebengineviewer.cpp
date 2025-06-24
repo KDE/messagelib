@@ -5,6 +5,7 @@
 */
 
 #include "mailsourcewebengineviewer.h"
+using namespace Qt::Literals::StringLiterals;
 
 using namespace MessageViewer;
 
@@ -38,7 +39,7 @@ static const char myMailSourceWebEngineViewerConfigGroupName[] = "MailSourceWebE
 }
 MailSourceWebEngineViewer::MailSourceWebEngineViewer(QWidget *parent)
     : QDialog(parent)
-    , mRawBrowser(new MailSourceViewTextBrowserWidget(QStringLiteral("Email"), this))
+    , mRawBrowser(new MailSourceViewTextBrowserWidget(u"Email"_s, this))
 {
     setAttribute(Qt::WA_DeleteOnClose);
     auto mainLayout = new QVBoxLayout(this);
@@ -53,7 +54,7 @@ MailSourceWebEngineViewer::MailSourceWebEngineViewer(QWidget *parent)
         mTabWidget->addTab(mRawBrowser, i18nc("Unchanged mail message", "Raw Source"));
         mTabWidget->setTabToolTip(0, i18n("Raw, unmodified mail as it is stored on the filesystem or on the server"));
 
-        mHtmlBrowser = new MailSourceViewTextBrowserWidget(QStringLiteral("HTML"), this);
+        mHtmlBrowser = new MailSourceViewTextBrowserWidget(u"HTML"_s, this);
         mTabWidget->addTab(mHtmlBrowser, i18nc("Mail message as shown, in HTML format", "HTML Source"));
         mTabWidget->setTabToolTip(1, i18n("HTML code for displaying the message to the user"));
 

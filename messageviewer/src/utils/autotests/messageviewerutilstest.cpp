@@ -5,6 +5,8 @@
 */
 
 #include "messageviewerutilstest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "utils/messageviewerutil.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(MessageViewerUtilsTest)
@@ -19,8 +21,8 @@ void MessageViewerUtilsTest::shouldExcludeHeader_data()
     QTest::addColumn<QString>("header");
     QTest::addColumn<bool>("exclude");
     QTest::newRow("emptylist") << QString() << false;
-    QTest::newRow("div1") << QStringLiteral("<div><p>ff</p></div></head>") << true;
-    QTest::newRow("body1") << QStringLiteral("<style>\nbody > div:nth-child(2) {\ndisplay: none !important;\n}\n</style>") << true;
+    QTest::newRow("div1") << u"<div><p>ff</p></div></head>"_s << true;
+    QTest::newRow("body1") << u"<style>\nbody > div:nth-child(2) {\ndisplay: none !important;\n}\n</style>"_s << true;
 }
 
 void MessageViewerUtilsTest::shouldExcludeHeader()
@@ -35,11 +37,11 @@ void MessageViewerUtilsTest::shouldContainsExternalReferences_data()
     QTest::addColumn<QString>("filename");
     QTest::addColumn<QString>("extraHead");
     QTest::addColumn<bool>("hasExternalReference");
-    QTest::newRow("noimage.txt") << QStringLiteral("noimage.txt") << QString() << false;
-    QTest::newRow("image.txt") << QStringLiteral("image.txt") << QString() << true;
-    QTest::newRow("image2.txt") << QStringLiteral("image2.txt") << QString() << true;
-    QTest::newRow("noimage2.txt") << QStringLiteral("noimage2.txt") << QString() << false;
-    QTest::newRow("noimage3.txt") << QStringLiteral("noimage3.txt") << QString() << false;
+    QTest::newRow("noimage.txt") << u"noimage.txt"_s << QString() << false;
+    QTest::newRow("image.txt") << u"image.txt"_s << QString() << true;
+    QTest::newRow("image2.txt") << u"image2.txt"_s << QString() << true;
+    QTest::newRow("noimage2.txt") << u"noimage2.txt"_s << QString() << false;
+    QTest::newRow("noimage3.txt") << u"noimage3.txt"_s << QString() << false;
     //    before
     //      PASS   : MessageViewerUtilsTest::shouldContainsExternalReferences(noimage.txt)
     //      RESULT : MessageViewerUtilsTest::shouldContainsExternalReferences():"noimage.txt":
@@ -106,17 +108,17 @@ void MessageViewerUtilsTest::shouldExtractHtml_data()
     QTest::addColumn<MessageViewer::Util::HtmlMessageInfo>("output");
     QTest::newRow("empty") << QString() << MessageViewer::Util::HtmlMessageInfo();
     {
-        const QString input = QStringLiteral("<html><head></head><body>foo</body></html>");
+        const QString input = u"<html><head></head><body>foo</body></html>"_s;
         MessageViewer::Util::HtmlMessageInfo output;
-        output.htmlSource = QStringLiteral("foo");
-        output.bodyStyle = QStringLiteral("<body>");
+        output.htmlSource = u"foo"_s;
+        output.bodyStyle = u"<body>"_s;
         QTest::newRow("test1") << input << output;
     }
     {
-        const QString input = QStringLiteral("<html><head></head><body>foo</body></html></div>");
+        const QString input = u"<html><head></head><body>foo</body></html></div>"_s;
         MessageViewer::Util::HtmlMessageInfo output;
-        output.htmlSource = QStringLiteral("foo");
-        output.bodyStyle = QStringLiteral("<body>");
+        output.htmlSource = u"foo"_s;
+        output.bodyStyle = u"<body>"_s;
         QTest::newRow("test2") << input << output;
     }
     {
@@ -137,8 +139,8 @@ void MessageViewerUtilsTest::shouldExtractHtml_data()
             "@coogor</p>\r\n<p>Matrix: @docb:matrix.org</p>\r\n<p>PGP Fingerprint: 2E7F 3A19 A4A4 844A 3D09 7656 822D EB64 A3BA "
             "290D</p>\r\n<p>&nbsp;</p>\r\n<p>http://gnuhealth.ghf2020.org</p></body></html></div>");
         MessageViewer::Util::HtmlMessageInfo output;
-        output.extraHead = QStringLiteral("<meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\r\np, li { white-space: pre-wrap; }\r\n</style>");
-        output.bodyStyle = QStringLiteral("<body>");
+        output.extraHead = u"<meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\r\np, li { white-space: pre-wrap; }\r\n</style>"_s;
+        output.bodyStyle = u"<body>"_s;
         output.htmlSource = QStringLiteral(
             "That's interesting. I don't see new commits or anything relevant to it on the author's releases. I don't actually know why the author uses the "
             "other library as they do seem to have similar data... Maybe some other functions that are easier to use.<br><br><br>All the "
@@ -164,8 +166,8 @@ void MessageViewerUtilsTest::shouldExtractHtml_data()
         output.htmlSource = QStringLiteral(
             "HTML REPLY<br>\nSECOND LINE<br>\n-- <br>\n<div>You wrote:<blockquote style=\"margin: 0.8ex 0pt 0pt 0.8ex; border-left: 1px solid rgb(204, 204, "
             "204); padding-left: 1ex;\">HTML QUOTE\n\nSECOND LINE\n</blockquote></div>");
-        output.bodyStyle = QStringLiteral("<body  style=\"overflow-wrap:break-word; word-break: break-word;white-space:pre-wrap;\">");
-        output.extraHead = QStringLiteral("<meta http-equiv=\"Content-Type\" content=\"text/plain; charset=utf-8\" />");
+        output.bodyStyle = u"<body  style=\"overflow-wrap:break-word; word-break: break-word;white-space:pre-wrap;\">"_s;
+        output.extraHead = u"<meta http-equiv=\"Content-Type\" content=\"text/plain; charset=utf-8\" />"_s;
         QTest::newRow("bug419949") << input << output;
     }
     {
@@ -175,7 +177,7 @@ void MessageViewerUtilsTest::shouldExtractHtml_data()
             "none;}\n</style>\n<div>\n<p><b>goo<\b></p></div><p>ff</p></head><body></body></html>");
         MessageViewer::Util::HtmlMessageInfo output;
         output.htmlSource = QString();
-        output.bodyStyle = QStringLiteral("<body>");
+        output.bodyStyle = u"<body>"_s;
         output.extraHead = QString();
         QTest::newRow("headdiv") << input << output;
     }
@@ -193,8 +195,8 @@ void MessageViewerUtilsTest::shouldExtractBodyStyle_data()
     QTest::addColumn<QString>("input");
     QTest::addColumn<QString>("output");
     QTest::newRow("empty") << QString() << QString();
-    QTest::newRow("test1") << QStringLiteral("<body  style=\"overflow-wrap:break-word; word-break: break-word;white-space:pre-wrap;\">")
-                           << QStringLiteral(" style=\"overflow-wrap:break-word;word-break: break-word;\"");
+    QTest::newRow("test1") << u"<body  style=\"overflow-wrap:break-word; word-break: break-word;white-space:pre-wrap;\">"_s
+                           << u" style=\"overflow-wrap:break-word;word-break: break-word;\""_s;
 }
 
 void MessageViewerUtilsTest::shouldExtractHtmlBenchmark()
@@ -218,17 +220,17 @@ void MessageViewerUtilsTest::shouldExtractHtmlBenchmark_data()
     QTest::addColumn<MessageViewer::Util::HtmlMessageInfo>("output");
     QTest::newRow("empty") << QString() << MessageViewer::Util::HtmlMessageInfo();
     {
-        const QString input = QStringLiteral("<html><head></head><body>foo</body></html>");
+        const QString input = u"<html><head></head><body>foo</body></html>"_s;
         MessageViewer::Util::HtmlMessageInfo output;
-        output.htmlSource = QStringLiteral("foo");
-        output.bodyStyle = QStringLiteral("<body>");
+        output.htmlSource = u"foo"_s;
+        output.bodyStyle = u"<body>"_s;
         QTest::newRow("test1") << input << output;
     }
     {
-        const QString input = QStringLiteral("<html><head></head><body>foo</body></html></div>");
+        const QString input = u"<html><head></head><body>foo</body></html></div>"_s;
         MessageViewer::Util::HtmlMessageInfo output;
-        output.htmlSource = QStringLiteral("foo");
-        output.bodyStyle = QStringLiteral("<body>");
+        output.htmlSource = u"foo"_s;
+        output.bodyStyle = u"<body>"_s;
         QTest::newRow("test2") << input << output;
     }
     {
@@ -249,8 +251,8 @@ void MessageViewerUtilsTest::shouldExtractHtmlBenchmark_data()
             "@coogor</p>\r\n<p>Matrix: @docb:matrix.org</p>\r\n<p>PGP Fingerprint: 2E7F 3A19 A4A4 844A 3D09 7656 822D EB64 A3BA "
             "290D</p>\r\n<p>&nbsp;</p>\r\n<p>http://gnuhealth.ghf2020.org</p></body></html></div>");
         MessageViewer::Util::HtmlMessageInfo output;
-        output.extraHead = QStringLiteral("<meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\r\np, li { white-space: pre-wrap; }\r\n</style>");
-        output.bodyStyle = QStringLiteral("<body>");
+        output.extraHead = u"<meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\r\np, li { white-space: pre-wrap; }\r\n</style>"_s;
+        output.bodyStyle = u"<body>"_s;
 
         output.htmlSource = QStringLiteral(
             "That's interesting. I don't see new commits or anything relevant to it on the author's releases. I don't actually know why the author uses the "
@@ -277,8 +279,8 @@ void MessageViewerUtilsTest::shouldExtractHtmlBenchmark_data()
         output.htmlSource = QStringLiteral(
             "HTML REPLY<br>\nSECOND LINE<br>\n-- <br>\n<div>You wrote:<blockquote style=\"margin: 0.8ex 0pt 0pt 0.8ex; border-left: 1px solid rgb(204, 204, "
             "204); padding-left: 1ex;\">HTML QUOTE\n\nSECOND LINE\n</blockquote></div>");
-        output.bodyStyle = QStringLiteral("<body  style=\"overflow-wrap:break-word; word-break: break-word;white-space:pre-wrap;\">");
-        output.extraHead = QStringLiteral("<meta http-equiv=\"Content-Type\" content=\"text/plain; charset=utf-8\" />");
+        output.bodyStyle = u"<body  style=\"overflow-wrap:break-word; word-break: break-word;white-space:pre-wrap;\">"_s;
+        output.extraHead = u"<meta http-equiv=\"Content-Type\" content=\"text/plain; charset=utf-8\" />"_s;
         QTest::newRow("bug419949") << input << output;
     }
     // Before

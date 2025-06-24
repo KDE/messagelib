@@ -5,6 +5,7 @@
 */
 
 #include "searchfullhashgui.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <QApplication>
 #include <QLabel>
@@ -24,19 +25,19 @@ SearchFullHashGui::SearchFullHashGui(QWidget *parent)
 
     auto checkHashLayout = new QHBoxLayout;
     layout->addLayout(checkHashLayout);
-    auto lab = new QLabel(QStringLiteral("Hash from Url to Check:"), this);
+    auto lab = new QLabel(u"Hash from Url to Check:"_s, this);
     checkHashLayout->addWidget(lab);
     mCheckHashLineEdit = new QLineEdit(this);
     checkHashLayout->addWidget(mCheckHashLineEdit);
 
     auto databaseHashLayout = new QHBoxLayout;
     layout->addLayout(databaseHashLayout);
-    lab = new QLabel(QStringLiteral("Database hash:"), this);
+    lab = new QLabel(u"Database hash:"_s, this);
     checkHashLayout->addWidget(lab);
     mDataBaseHashLineEdit = new QLineEdit(this);
     checkHashLayout->addWidget(mDataBaseHashLineEdit);
 
-    auto button = new QPushButton(QStringLiteral("Check"), this);
+    auto button = new QPushButton(u"Check"_s, this);
     checkHashLayout->addWidget(button);
     connect(button, &QPushButton::clicked, this, &SearchFullHashGui::slotCheckUrl);
     connect(mCheckHashLineEdit, &QLineEdit::returnPressed, this, &SearchFullHashGui::slotCheckUrl);
@@ -88,19 +89,19 @@ void SearchFullHashGui::slotGetResult(WebEngineViewer::CheckPhishingUrlUtil::Url
     QString resultStr;
     switch (result) {
     case WebEngineViewer::CheckPhishingUrlUtil::Ok:
-        resultStr = QStringLiteral("Url ok");
+        resultStr = u"Url ok"_s;
         break;
     case WebEngineViewer::CheckPhishingUrlUtil::MalWare:
-        resultStr = QStringLiteral("Url MalWare");
+        resultStr = u"Url MalWare"_s;
         break;
     case WebEngineViewer::CheckPhishingUrlUtil::Unknown:
-        resultStr = QStringLiteral("Url Unknown state");
+        resultStr = u"Url Unknown state"_s;
         break;
     case WebEngineViewer::CheckPhishingUrlUtil::BrokenNetwork:
-        resultStr = QStringLiteral("Broken Network");
+        resultStr = u"Broken Network"_s;
         break;
     case WebEngineViewer::CheckPhishingUrlUtil::InvalidUrl:
-        resultStr = QStringLiteral("Invalid Url");
+        resultStr = u"Invalid Url"_s;
         break;
     }
     mResult->setPlainText(resultStr);

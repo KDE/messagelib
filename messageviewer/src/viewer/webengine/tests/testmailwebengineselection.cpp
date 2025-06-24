@@ -4,6 +4,7 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "testmailwebengineselection.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <KActionCollection>
 #include <QApplication>
@@ -33,17 +34,17 @@ TestMailWebEngineSelection::TestMailWebEngineSelection(QWidget *parent)
         "you.</p>\n    <p> For more information about using Akregator, check the <a href='http://akregator.kde.org/'>Akregator website</a>. If you do not want "
         "to see this page anymore, <a href='config:/disable_introduction'>click here</a>.</p>\n    <p>We hope that you will enjoy Akregator.</p>\n    <p>Thank "
         "you, The Akregator Team </p>\n</div>\n\n    </div>\n  </div>\n</body>\n</html>\n\n<!-- vim:set sw=2 et nocindent smartindent: -->\n");
-    mTestWebEngine->setHtml(str, QUrl(QStringLiteral("file:///")));
+    mTestWebEngine->setHtml(str, QUrl(u"file:///"_s));
     mTestWebEngine->settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
     vbox->addWidget(mTestWebEngine);
     auto hButtonBox = new QHBoxLayout;
     vbox->addLayout(hButtonBox);
 
-    auto changeHtml = new QPushButton(QStringLiteral("switch html"), this);
+    auto changeHtml = new QPushButton(u"switch html"_s, this);
     connect(changeHtml, &QPushButton::clicked, this, &TestMailWebEngineSelection::slotSwitchHtml);
     hButtonBox->addWidget(changeHtml);
 
-    auto showSelection = new QPushButton(QStringLiteral("Show Selection"), this);
+    auto showSelection = new QPushButton(u"Show Selection"_s, this);
     connect(showSelection, &QPushButton::clicked, this, &TestMailWebEngineSelection::slotShowSelection);
     hButtonBox->addWidget(showSelection);
 }
@@ -66,13 +67,13 @@ void TestMailWebEngineSelection::slotSwitchHtml()
                       "href='config:/disable_introduction'>click here</a>.</p>\n    <p>We hope that you will enjoy Akregator.</p>\n    <p>Thank you, number %1 "
                       "</p>\n</div>\n\n    </div>\n  </div>\n</body>\n</html>\n\n<!-- vim:set sw=2 et nocindent smartindent: -->\n")
                       .arg(mNumber);
-    mTestWebEngine->setHtml(str, QUrl(QStringLiteral("file:///")));
+    mTestWebEngine->setHtml(str, QUrl(u"file:///"_s));
     mNumber++;
 }
 
 void TestMailWebEngineSelection::slotShowSelection()
 {
-    QMessageBox::information(this, QStringLiteral("selection"), mTestWebEngine->selectedText());
+    QMessageBox::information(this, u"selection"_s, mTestWebEngine->selectedText());
 }
 
 void TestMailWebEngineSelection::slotOpenUrl(const QUrl &url)

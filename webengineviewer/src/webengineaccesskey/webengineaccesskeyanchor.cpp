@@ -5,6 +5,7 @@
 */
 
 #include "webengineaccesskeyanchor.h"
+using namespace Qt::Literals::StringLiterals;
 
 using namespace WebEngineViewer;
 
@@ -19,15 +20,15 @@ void WebEngineAccessKeyAnchor::initialize(const QVariant &result)
 {
     if (result.isValid()) {
         const QVariantMap map = result.toMap();
-        const QVariantList &rect = map.value(QStringLiteral("boundingRect")).toList();
+        const QVariantList &rect = map.value(u"boundingRect"_s).toList();
         if (rect.size() == 4) {
             mBoundingRect = QRect(rect.at(0).toInt(), rect.at(1).toInt(), rect.at(2).toInt(), rect.at(3).toInt());
         }
-        mHref = map.value(QStringLiteral("src")).toString();
-        mAccessKey = map.value(QStringLiteral("accessKey")).toString();
-        mTarget = map.value(QStringLiteral("target")).toString();
-        mTagName = map.value(QStringLiteral("tagName")).toString();
-        mInnerText = map.value(QStringLiteral("text")).toString();
+        mHref = map.value(u"src"_s).toString();
+        mAccessKey = map.value(u"accessKey"_s).toString();
+        mTarget = map.value(u"target"_s).toString();
+        mTagName = map.value(u"tagName"_s).toString();
+        mInnerText = map.value(u"text"_s).toString();
     }
 }
 

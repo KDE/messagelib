@@ -5,6 +5,8 @@
 */
 
 #include "configurefilterswidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "core/widgets/configurefilterswidget.h"
 #include <QListWidget>
 #include <QTest>
@@ -18,10 +20,10 @@ ConfigureFiltersWidgetTest::ConfigureFiltersWidgetTest(QObject *parent)
 void ConfigureFiltersWidgetTest::shouldHaveDefaultValues()
 {
     MessageList::Core::ConfigureFiltersWidget w;
-    auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = w.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
 
-    auto mListFiltersWidget = w.findChild<QListWidget *>(QStringLiteral("mListFiltersWidget"));
+    auto mListFiltersWidget = w.findChild<QListWidget *>(u"mListFiltersWidget"_s);
     QVERIFY(mListFiltersWidget);
     QCOMPARE(mListFiltersWidget->count(), 0);
 }

@@ -5,6 +5,7 @@
 */
 
 #include "maintextjobtest.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <QDebug>
 #include <QStandardPaths>
@@ -38,7 +39,7 @@ void MainTextJobTest::testPlainText()
     ComposerJob composerJob;
     composerJob.globalPart()->setGuiEnabled(false);
     auto textPart = new TextPart;
-    QString data = QStringLiteral("they said their never they slept their dream");
+    QString data = u"they said their never they slept their dream"_s;
     textPart->setWrappedPlainText(data);
     auto mjob = new MainTextJob(textPart, &composerJob);
     QVERIFY(mjob->exec());
@@ -58,7 +59,7 @@ void MainTextJobTest::testWrappingErrors()
         ComposerJob composerJob;
         composerJob.globalPart()->setGuiEnabled(false);
         auto textPart = new TextPart;
-        QString data = QStringLiteral("they said their never they slept their dream");
+        QString data = u"they said their never they slept their dream"_s;
         textPart->setWordWrappingEnabled(false);
         textPart->setWrappedPlainText(data);
         auto mjob = new MainTextJob(textPart, &composerJob);
@@ -71,7 +72,7 @@ void MainTextJobTest::testWrappingErrors()
         composerJob.globalPart()->setGuiEnabled(false);
         auto textPart = new TextPart;
         textPart->setWordWrappingEnabled(true);
-        QString data = QStringLiteral("they said their never they slept their dream");
+        QString data = u"they said their never they slept their dream"_s;
         textPart->setCleanPlainText(data);
         auto mjob = new MainTextJob(textPart, &composerJob);
         QVERIFY(!mjob->exec()); // error: UseWrapping but given only clean text
@@ -85,7 +86,7 @@ void MainTextJobTest::testCustomCharset()
     ComposerJob composerJob;
     composerJob.globalPart()->setGuiEnabled(false);
     auto textPart = new TextPart;
-    QString data = QStringLiteral("şi el o să se-nchidă cu o frunză de pelin");
+    QString data = u"şi el o să se-nchidă cu o frunză de pelin"_s;
     textPart->setWrappedPlainText(data);
     auto mjob = new MainTextJob(textPart, &composerJob);
     QVERIFY(mjob->exec());
@@ -108,7 +109,7 @@ void MainTextJobTest::testNoCharset()
     ComposerJob composerJob;
     composerJob.globalPart()->setGuiEnabled(false);
     auto textPart = new TextPart;
-    QString data = QStringLiteral("do you still play the accordion?");
+    QString data = u"do you still play the accordion?"_s;
     textPart->setWrappedPlainText(data);
     auto mjob = new MainTextJob(textPart, &composerJob);
     QSKIP("This tests has been failing for a long time, please someone fix it", SkipSingle);
@@ -123,7 +124,7 @@ void MainTextJobTest::testBadCharset()
     ComposerJob composerJob;
     composerJob.globalPart()->setGuiEnabled(false);
     auto textPart = new TextPart;
-    QString data = QStringLiteral("el a plâns peste ţară cu lacrima limbii noastre");
+    QString data = u"el a plâns peste ţară cu lacrima limbii noastre"_s;
     textPart->setWrappedPlainText(data);
     auto mjob = new MainTextJob(textPart, &composerJob);
     QSKIP("This tests has been failing for a long time, please someone fix it", SkipSingle);
@@ -138,7 +139,7 @@ void MainTextJobTest::testFallbackCharset()
     ComposerJob composerJob;
     composerJob.globalPart()->setGuiEnabled(false);
     auto textPart = new TextPart;
-    QString data = QStringLiteral("and when he falleth...");
+    QString data = u"and when he falleth..."_s;
     textPart->setWrappedPlainText(data);
     auto mjob = new MainTextJob(textPart, &composerJob);
     QVERIFY(mjob->exec());
@@ -212,7 +213,7 @@ void MainTextJobTest::testHtmlWithImages()
     const QString image2Path = QCoreApplication::applicationDirPath() + QLatin1StringView("/image2.png");
     image2.save(image2Path);
 
-    QString data = QStringLiteral("dust in the wind");
+    QString data = u"dust in the wind"_s;
     editor.setTextOrHtml(data);
     editor.composerControler()->composerImages()->addImage(QUrl::fromLocalFile(image1Path));
     editor.composerControler()->composerImages()->addImage(QUrl::fromLocalFile(image1Path));
@@ -261,8 +262,8 @@ void MainTextJobTest::testHtmlWithImages()
                 Content *html = alternative->contents().at(1);
                 QCOMPARE(html->contentType()->mimeType(), QByteArray("text/html"));
                 QString data = QString::fromLatin1(html->body());
-                const int idx1 = data.indexOf(QStringLiteral("cid:%1").arg(cid1));
-                const int idx2 = data.indexOf(QStringLiteral("cid:%1").arg(cid2));
+                const int idx1 = data.indexOf(u"cid:%1"_s.arg(cid1));
+                const int idx2 = data.indexOf(u"cid:%1"_s.arg(cid2));
                 // qDebug() << " cid1 " << cid1 << "cid2 " << cid2 << " data " << data;
                 QVERIFY(idx1 > 0);
                 QVERIFY(idx2 > 0);

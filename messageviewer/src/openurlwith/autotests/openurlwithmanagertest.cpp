@@ -5,6 +5,8 @@
 */
 
 #include "openurlwithmanagertest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "openurlwith/openurlwithmanager.h"
 #include <QStandardPaths>
 #include <QTest>
@@ -20,7 +22,7 @@ void OpenUrlWithManagerTest::shouldHaveDefaultValues()
 {
     MessageViewer::OpenUrlWithManager w;
     // QVERIFY(w.openWithUrlInfo().isEmpty());
-    QVERIFY(!w.alwaysRuleForHost(QUrl(QStringLiteral("http://www.kde.org"))));
+    QVERIFY(!w.alwaysRuleForHost(QUrl(u"http://www.kde.org"_s)));
     // QVERIFY(w.hosts().isEmpty());
 }
 
@@ -46,14 +48,14 @@ void OpenUrlWithManagerTest::shouldSearchOpenWithInfo_data()
     {
         QList<MessageViewer::OpenWithUrlInfo> lst;
         MessageViewer::OpenWithUrlInfo i;
-        i.setUrl(QStringLiteral("http://www.kde.org"));
-        i.setCommand(QStringLiteral("bla"));
+        i.setUrl(u"http://www.kde.org"_s);
+        i.setCommand(u"bla"_s);
         lst.append(i);
 
         QTest::newRow("empty-1") << lst << QUrl() << false;
 
-        QTest::newRow("valid-1") << lst << QUrl(QStringLiteral("http://www.kde.org")) << true;
-        QTest::newRow("invalid-1") << lst << QUrl(QStringLiteral("http://www.bla.org")) << false;
+        QTest::newRow("valid-1") << lst << QUrl(u"http://www.kde.org"_s) << true;
+        QTest::newRow("invalid-1") << lst << QUrl(u"http://www.bla.org"_s) << false;
     }
 }
 
@@ -79,27 +81,27 @@ void OpenUrlWithManagerTest::shouldSearchOpenWithInfoEnabled_data()
     {
         QList<MessageViewer::OpenWithUrlInfo> lst;
         MessageViewer::OpenWithUrlInfo i;
-        i.setUrl(QStringLiteral("http://www.kde.org"));
-        i.setCommand(QStringLiteral("bla"));
+        i.setUrl(u"http://www.kde.org"_s);
+        i.setCommand(u"bla"_s);
         lst.append(i);
 
         QTest::newRow("empty-1") << lst << QUrl() << false;
 
-        QTest::newRow("valid-1") << lst << QUrl(QStringLiteral("http://www.kde.org")) << true;
-        QTest::newRow("invalid-1") << lst << QUrl(QStringLiteral("http://www.bla.org")) << false;
+        QTest::newRow("valid-1") << lst << QUrl(u"http://www.kde.org"_s) << true;
+        QTest::newRow("invalid-1") << lst << QUrl(u"http://www.bla.org"_s) << false;
     }
     {
         QList<MessageViewer::OpenWithUrlInfo> lst;
         MessageViewer::OpenWithUrlInfo i;
-        i.setUrl(QStringLiteral("http://www.kde.org"));
-        i.setCommand(QStringLiteral("bla"));
+        i.setUrl(u"http://www.kde.org"_s);
+        i.setCommand(u"bla"_s);
         i.setEnabled(false);
         lst.append(i);
 
         QTest::newRow("empty-2") << lst << QUrl() << false;
 
-        QTest::newRow("valid-2") << lst << QUrl(QStringLiteral("http://www.kde.org")) << false;
-        QTest::newRow("invalid-2") << lst << QUrl(QStringLiteral("http://www.bla.org")) << false;
+        QTest::newRow("valid-2") << lst << QUrl(u"http://www.kde.org"_s) << false;
+        QTest::newRow("invalid-2") << lst << QUrl(u"http://www.bla.org"_s) << false;
     }
 }
 
@@ -109,29 +111,29 @@ void OpenUrlWithManagerTest::shouldTestAlreadyRuleForHost()
     QList<MessageViewer::OpenWithUrlInfo> infos;
     {
         MessageViewer::OpenWithUrlInfo info;
-        info.setUrl(QStringLiteral("http://www.kde.org"));
-        info.setCommand(QStringLiteral("bla"));
+        info.setUrl(u"http://www.kde.org"_s);
+        info.setCommand(u"bla"_s);
         QVERIFY(info.isValid());
         infos.append(info);
     }
     {
         MessageViewer::OpenWithUrlInfo info;
-        info.setUrl(QStringLiteral("http://www.kde1.org"));
-        info.setCommand(QStringLiteral("bla"));
+        info.setUrl(u"http://www.kde1.org"_s);
+        info.setCommand(u"bla"_s);
         QVERIFY(info.isValid());
         infos.append(info);
     }
     {
         MessageViewer::OpenWithUrlInfo info;
-        info.setUrl(QStringLiteral("http://www.bla.org"));
-        info.setCommand(QStringLiteral("bla"));
+        info.setUrl(u"http://www.bla.org"_s);
+        info.setCommand(u"bla"_s);
         QVERIFY(info.isValid());
         infos.append(info);
     }
     w.setOpenWithUrlInfo(infos);
-    QVERIFY(!w.alwaysRuleForHost(QUrl(QStringLiteral("http://www.jjo.org"))));
-    QVERIFY(w.alwaysRuleForHost(QUrl(QStringLiteral("http://www.kde1.org"))));
-    QVERIFY(w.alwaysRuleForHost(QUrl(QStringLiteral("http://www.kde.org"))));
+    QVERIFY(!w.alwaysRuleForHost(QUrl(u"http://www.jjo.org"_s)));
+    QVERIFY(w.alwaysRuleForHost(QUrl(u"http://www.kde1.org"_s)));
+    QVERIFY(w.alwaysRuleForHost(QUrl(u"http://www.kde.org"_s)));
 }
 
 #include "moc_openurlwithmanagertest.cpp"

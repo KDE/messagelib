@@ -7,6 +7,8 @@
 #pragma once
 
 #include "interfaces/htmlwriter.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <MessageViewer/CSSHelper>
 #include <MessageViewer/CSSHelperBase>
 
@@ -31,12 +33,12 @@ public:
 
     QString nonQuotedFontTag() const
     {
-        return QStringLiteral("<");
+        return u"<"_s;
     }
 
     QString quoteFontTag(int) const
     {
-        return QStringLiteral("<");
+        return u"<"_s;
     }
 };
 

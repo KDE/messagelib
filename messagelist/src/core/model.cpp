@@ -26,6 +26,8 @@
 //   Copyright: (c) 2004 Till Adam < adam at kde dot org >
 //
 #include "core/model.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "core/filter.h"
 #include "core/groupheaderitem.h"
 #include "core/item_p.h"
@@ -513,7 +515,7 @@ QVariant Model::data(const QModelIndex &index, int role) const
         break;
     case Qt::UserRole + 3: // EntityTreeModel::MimeTypeRole
         if (item->type() == MessageList::Core::Item::Message) {
-            return QStringLiteral("message/rfc822");
+            return u"message/rfc822"_s;
         } else {
             return {};
         }

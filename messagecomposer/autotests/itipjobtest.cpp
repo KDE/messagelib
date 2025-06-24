@@ -5,6 +5,8 @@
 */
 
 #include "itipjobtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "qtest_messagecomposer.h"
 
 #include <QDebug>
@@ -40,7 +42,7 @@ DTEND;VALUE=DATE:20230520
 END:VEVENT
 END:VCALENDAR)");
 
-static QString testItipMessage = QStringLiteral("Hi all, let's do some crypto partying!");
+static QString testItipMessage = u"Hi all, let's do some crypto partying!"_s;
 
 void ItipJobTest::testInvitationWithAttachment()
 {
@@ -68,8 +70,8 @@ void ItipJobTest::testInvitationWithAttachment()
 
     const auto itipPart = subparts[1];
     QCOMPARE(itipPart->contentType(false)->mimeType(), "text/calendar");
-    QCOMPARE(itipPart->contentType(false)->name(), QStringLiteral("cal.ics"));
-    QCOMPARE(itipPart->contentType(false)->parameter("method"), QStringLiteral("request"));
+    QCOMPARE(itipPart->contentType(false)->name(), u"cal.ics"_s);
+    QCOMPARE(itipPart->contentType(false)->parameter("method"), u"request"_s);
     QCOMPARE(itipPart->contentType(false)->charset(), "utf-8");
     QCOMPARE(itipPart->contentDisposition(false)->disposition(), KMime::Headers::CDattachment);
     QCOMPARE(itipPart->decodedText(), testItip);
@@ -112,8 +114,8 @@ void ItipJobTest::testOutlookInvitationWithAttachment()
     QVERIFY(content);
 
     QCOMPARE(content->contentType(false)->mimeType(), "text/calendar");
-    QCOMPARE(content->contentType(false)->name(), QStringLiteral("cal.ics"));
-    QCOMPARE(content->contentType(false)->parameter("method"), QStringLiteral("request"));
+    QCOMPARE(content->contentType(false)->name(), u"cal.ics"_s);
+    QCOMPARE(content->contentType(false)->parameter("method"), u"request"_s);
     QCOMPARE(content->contentType(false)->charset(), "utf-8");
     QCOMPARE(content->contentDisposition(false)->disposition(), KMime::Headers::CDinline);
     QCOMPARE(content->decodedText(), testItip);
@@ -135,8 +137,8 @@ void ItipJobTest::testOutlookInvitationWithoutAttachment()
     QVERIFY(content);
 
     QCOMPARE(content->contentType(false)->mimeType(), "text/calendar");
-    QCOMPARE(content->contentType(false)->name(), QStringLiteral("cal.ics"));
-    QCOMPARE(content->contentType(false)->parameter("method"), QStringLiteral("request"));
+    QCOMPARE(content->contentType(false)->name(), u"cal.ics"_s);
+    QCOMPARE(content->contentType(false)->parameter("method"), u"request"_s);
     QCOMPARE(content->contentType(false)->charset(), "utf-8");
     QVERIFY(content->decodedText().isEmpty());
 }

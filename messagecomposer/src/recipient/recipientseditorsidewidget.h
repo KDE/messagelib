@@ -12,6 +12,7 @@
 #pragma once
 
 #include "recipientseditor.h"
+using namespace Qt::Literals::StringLiterals;
 
 class QLabel;
 class QPushButton;

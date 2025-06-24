@@ -5,6 +5,7 @@
 */
 
 #include "searchlinecommandflowlayout.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <QStyle>
 #include <QWidget>

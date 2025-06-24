@@ -6,6 +6,7 @@
 */
 
 #include "showonlymimeparttest.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include "setupenv.h"
 #include "testcsshelper.h"
@@ -43,14 +44,13 @@ void ShowOnlyMimePartTest::testDrawFrame()
     QFETCH(int, content);
     QFETCH(bool, showOnlyMimePart);
 
-    QString commonName(QStringLiteral("frametest.mbox.html.content.") + QString::number(content)
-                       + ((showOnlyMimePart) ? QStringLiteral(".single") : QStringLiteral(".full")));
+    QString commonName(u"frametest.mbox.html.content."_s + QString::number(content) + ((showOnlyMimePart) ? u".single"_s : u".full"_s));
 
     QString outFileName(commonName);
 
-    QString referenceFileName(QStringLiteral(MAIL_DATA_DIR) + QLatin1Char('/') + commonName);
+    QString referenceFileName(QStringLiteral(MAIL_DATA_DIR) + u'/' + commonName);
     // load input mail
-    KMime::Message::Ptr msg(Test::readAndParseMail(QStringLiteral("frametest.mbox")));
+    KMime::Message::Ptr msg(Test::readAndParseMail(u"frametest.mbox"_s));
 
     // render the mail
     FileHtmlWriter fileWriter(outFileName);
@@ -69,7 +69,7 @@ void ShowOnlyMimePartTest::testDrawFrame()
     CSSHelperBase::HtmlHeadSettings htmlHeadSettings;
     fileWriter.write(cssHelper.htmlHead(htmlHeadSettings));
     testSource.render(otp.parsedPart(), showOnlyMimePart);
-    fileWriter.write(QStringLiteral("</body></html>"));
+    fileWriter.write(u"</body></html>"_s);
     fileWriter.end();
 
     Test::compareFile(outFileName, referenceFileName);
@@ -92,14 +92,13 @@ void ShowOnlyMimePartTest::testRelated()
     QFETCH(int, content);
     QFETCH(bool, showOnlyMimePart);
 
-    QString commonName(QStringLiteral("html-multipart-related.mbox.html.content.") + QString::number(content)
-                       + ((showOnlyMimePart) ? QStringLiteral(".single") : QStringLiteral(".full")));
+    QString commonName(u"html-multipart-related.mbox.html.content."_s + QString::number(content) + ((showOnlyMimePart) ? u".single"_s : u".full"_s));
 
     QString outFileName(commonName);
 
-    QString referenceFileName(QStringLiteral(MAIL_DATA_DIR) + QLatin1Char('/') + commonName);
+    QString referenceFileName(QStringLiteral(MAIL_DATA_DIR) + u'/' + commonName);
     // load input mail
-    KMime::Message::Ptr msg(Test::readAndParseMail(QStringLiteral("html-multipart-related.mbox")));
+    KMime::Message::Ptr msg(Test::readAndParseMail(u"html-multipart-related.mbox"_s));
 
     // render the mail
     FileHtmlWriter fileWriter(outFileName);
@@ -118,7 +117,7 @@ void ShowOnlyMimePartTest::testRelated()
     CSSHelperBase::HtmlHeadSettings htmlHeadSettings;
     fileWriter.write(cssHelper.htmlHead(htmlHeadSettings));
     testSource.render(otp.parsedPart(), showOnlyMimePart);
-    fileWriter.write(QStringLiteral("</body></html>"));
+    fileWriter.write(u"</body></html>"_s);
     fileWriter.end();
 
     Test::compareFile(outFileName, referenceFileName);

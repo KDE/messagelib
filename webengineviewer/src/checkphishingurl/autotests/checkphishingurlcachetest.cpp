@@ -5,6 +5,8 @@
 */
 
 #include "checkphishingurlcachetest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../checkphishingurlcache.h"
 #include "../checkphishingurlutil.h"
 #include <KConfig>
@@ -23,7 +25,7 @@ CheckPhishingUrlCacheTest::~CheckPhishingUrlCacheTest() = default;
 void CheckPhishingUrlCacheTest::shouldNotBeAMalware()
 {
     auto cache = WebEngineViewer::CheckPhishingUrlCache::self();
-    QCOMPARE(cache->urlStatus(QUrl(QStringLiteral("http://www.kde.org"))), WebEngineViewer::CheckPhishingUrlCache::UrlStatus::Unknown);
+    QCOMPARE(cache->urlStatus(QUrl(u"http://www.kde.org"_s)), WebEngineViewer::CheckPhishingUrlCache::UrlStatus::Unknown);
 }
 
 void CheckPhishingUrlCacheTest::shouldAddValue_data()
@@ -33,10 +35,10 @@ void CheckPhishingUrlCacheTest::shouldAddValue_data()
     QTest::addColumn<uint>("seconds");
     QTest::addColumn<WebEngineViewer::CheckPhishingUrlCache::UrlStatus>("status");
     uint currentValue = QDateTime::currentDateTimeUtc().toSecsSinceEpoch();
-    QTest::newRow("valid") << QUrl(QStringLiteral("http://www.kde.org")) << true << currentValue << WebEngineViewer::CheckPhishingUrlCache::UrlStatus::UrlOk;
-    QTest::newRow("malware1validcache") << QUrl(QStringLiteral("http://www.kde.org")) << false << (currentValue + 2000)
+    QTest::newRow("valid") << QUrl(u"http://www.kde.org"_s) << true << currentValue << WebEngineViewer::CheckPhishingUrlCache::UrlStatus::UrlOk;
+    QTest::newRow("malware1validcache") << QUrl(u"http://www.kde.org"_s) << false << (currentValue + 2000)
                                         << WebEngineViewer::CheckPhishingUrlCache::UrlStatus::MalWare;
-    QTest::newRow("malware1invalidcache") << QUrl(QStringLiteral("http://www.kde.org")) << false << (currentValue - 2000)
+    QTest::newRow("malware1invalidcache") << QUrl(u"http://www.kde.org"_s) << false << (currentValue - 2000)
                                           << WebEngineViewer::CheckPhishingUrlCache::UrlStatus::Unknown;
 }
 
@@ -56,14 +58,14 @@ void CheckPhishingUrlCacheTest::shouldAddValue()
 void CheckPhishingUrlCacheTest::shouldStoreValues()
 {
     auto cache = WebEngineViewer::CheckPhishingUrlCache::self();
-    QUrl url = QUrl(QStringLiteral("http://www.kde.org"));
+    QUrl url = QUrl(u"http://www.kde.org"_s);
 
     uint currentValue = QDateTime::currentDateTimeUtc().toSecsSinceEpoch();
     cache->addCheckingUrlResult(url, false, currentValue + 2000);
 
     // Add malware
     KConfig phishingurlKConfig(WebEngineViewer::CheckPhishingUrlUtil::configFileName());
-    KConfigGroup grp = phishingurlKConfig.group(QStringLiteral("MalwareUrl"));
+    KConfigGroup grp = phishingurlKConfig.group(u"MalwareUrl"_s);
     QList<QUrl> listMalware = grp.readEntry("Url", QList<QUrl>());
     QList<double> listMalwareCachedTime = grp.readEntry("CachedTime", QList<double>());
 
@@ -73,7 +75,7 @@ void CheckPhishingUrlCacheTest::shouldStoreValues()
     // Clear cache
     cache->clearCache();
     KConfig phishingurlKConfig2(WebEngineViewer::CheckPhishingUrlUtil::configFileName());
-    grp = phishingurlKConfig2.group(QStringLiteral("MalwareUrl"));
+    grp = phishingurlKConfig2.group(u"MalwareUrl"_s);
     listMalware = grp.readEntry("Url", QList<QUrl>());
     listMalwareCachedTime = grp.readEntry("CachedTime", QList<double>());
 
@@ -86,7 +88,7 @@ void CheckPhishingUrlCacheTest::shouldStoreValues()
     cache->addCheckingUrlResult(url, true, 0);
 
     KConfig phishingurlKConfig3(WebEngineViewer::CheckPhishingUrlUtil::configFileName());
-    grp = phishingurlKConfig3.group(QStringLiteral("MalwareUrl"));
+    grp = phishingurlKConfig3.group(u"MalwareUrl"_s);
     listMalware = grp.readEntry("Url", QList<QUrl>());
     listMalwareCachedTime = grp.readEntry("CachedTime", QList<double>());
 
@@ -100,7 +102,7 @@ void CheckPhishingUrlCacheTest::shouldStoreValues()
 
     WebEngineViewer::CheckPhishingUrlCache cache2;
     KConfig phishingurlKConfig4(WebEngineViewer::CheckPhishingUrlUtil::configFileName());
-    grp = phishingurlKConfig4.group(QStringLiteral("MalwareUrl"));
+    grp = phishingurlKConfig4.group(u"MalwareUrl"_s);
     listMalware = grp.readEntry("Url", QList<QUrl>());
     listMalwareCachedTime = grp.readEntry("CachedTime", QList<double>());
 

@@ -18,6 +18,8 @@
 #include <KLocalizedString>
 #include <QIcon>
 #include <QPointer>
+using namespace Qt::Literals::StringLiterals;
+
 using namespace MessageList::Core;
 
 Q_GLOBAL_STATIC(TagCache, s_tagCache)
@@ -172,7 +174,7 @@ void MessageItemPrivate::fillTagList(const Akonadi::Tag::List &taglist)
     // Priority sort this and make bestTag more efficient
 
     for (const Akonadi::Tag &tag : taglist) {
-        QString symbol = QStringLiteral("mail-tagged");
+        QString symbol = u"mail-tagged"_s;
         const auto attr = tag.attribute<Akonadi::TagAttribute>();
         if (attr) {
             if (!attr->iconName().isEmpty()) {
@@ -515,10 +517,10 @@ QString MessageItem::accessibleText(const Theme *theme, int columnIndex)
             rightStrings.insert(rightStrings.begin(), accessibleTextForField(contentItem->type()));
         }
 
-        rowsTexts.append((leftStrings + rightStrings).join(QLatin1Char(' ')));
+        rowsTexts.append((leftStrings + rightStrings).join(u' '));
     }
 
-    return rowsTexts.join(QLatin1Char(' '));
+    return rowsTexts.join(u' ');
 }
 
 void MessageItem::subTreeToList(QList<MessageItem *> &list)

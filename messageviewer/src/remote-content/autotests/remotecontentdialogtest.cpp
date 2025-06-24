@@ -5,6 +5,8 @@
 */
 
 #include "remotecontentdialogtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "remote-content/remotecontentdialog.h"
 #include "remote-content/remotecontentwidget.h"
 #include <QDialogButtonBox>
@@ -23,13 +25,13 @@ void RemoteContentDialogTest::shouldHaveDefaultValues()
 
     QVERIFY(w.windowTitle().isEmpty());
 
-    auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = w.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
 
-    auto mRemoveContentWidget = w.findChild<MessageViewer::RemoteContentWidget *>(QStringLiteral("mRemoveContentWidget"));
+    auto mRemoveContentWidget = w.findChild<MessageViewer::RemoteContentWidget *>(u"mRemoveContentWidget"_s);
     QVERIFY(mRemoveContentWidget);
 
-    auto buttonBox = w.findChild<QDialogButtonBox *>(QStringLiteral("buttonBox"));
+    auto buttonBox = w.findChild<QDialogButtonBox *>(u"buttonBox"_s);
     QVERIFY(buttonBox);
     QCOMPARE(buttonBox->standardButtons(), QDialogButtonBox::StandardButtons{QDialogButtonBox::Ok | QDialogButtonBox::Cancel});
 }

@@ -6,6 +6,7 @@
 */
 
 #include "submittedformwarningwidget.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <KLocalizedString>
 

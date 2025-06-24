@@ -5,6 +5,8 @@
 */
 
 #include "filternamewidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "core/widgets/filternamewidget.h"
 #include <KIconButton>
 #include <QHBoxLayout>
@@ -19,16 +21,16 @@ FilterNameWidgetTest::FilterNameWidgetTest(QObject *parent)
 void FilterNameWidgetTest::shouldHaveDefaultValues()
 {
     MessageList::Core::FilterNameWidget w;
-    auto mainLayout = w.findChild<QHBoxLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = w.findChild<QHBoxLayout *>(u"mainLayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 
-    auto mName = w.findChild<QLineEdit *>(QStringLiteral("mName"));
+    auto mName = w.findChild<QLineEdit *>(u"mName"_s);
     QVERIFY(mName);
     QVERIFY(mName->text().isEmpty());
     QVERIFY(mName->isClearButtonEnabled());
 
-    auto mIconButton = w.findChild<KIconButton *>(QStringLiteral("mIconButton"));
+    auto mIconButton = w.findChild<KIconButton *>(u"mIconButton"_s);
     QVERIFY(mIconButton);
 }
 

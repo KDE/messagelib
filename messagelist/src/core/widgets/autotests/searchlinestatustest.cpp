@@ -5,6 +5,8 @@
 */
 
 #include "searchlinestatustest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../src/core/widgets/searchlinestatus.h"
 #include <QCompleter>
 #include <QMenu>
@@ -27,21 +29,21 @@ void SearchLineStatusTest::shouldHaveDefaultValue()
     QCOMPARE(w.completer()->model()->rowCount(), 0);
 
     // Verify if qt qlineedit name changed
-    auto act = w.findChild<QAction *>(QStringLiteral("_q_qlineeditclearaction"));
+    auto act = w.findChild<QAction *>(u"_q_qlineeditclearaction"_s);
     QVERIFY(act);
 }
 
 void SearchLineStatusTest::shouldAddCompletionItem()
 {
     MessageList::Core::SearchLineStatus w;
-    w.addCompletionItem(QStringLiteral("ff"));
+    w.addCompletionItem(u"ff"_s);
     QCOMPARE(w.completer()->model()->rowCount(), 26);
 
     // Don't add same element
-    w.addCompletionItem(QStringLiteral("ff"));
+    w.addCompletionItem(u"ff"_s);
     QCOMPARE(w.completer()->model()->rowCount(), 26);
 
-    w.addCompletionItem(QStringLiteral("ffss"));
+    w.addCompletionItem(u"ffss"_s);
     QCOMPARE(w.completer()->model()->rowCount(), 27);
 }
 
@@ -49,7 +51,7 @@ void SearchLineStatusTest::shouldClearCompleter()
 {
     MessageList::Core::SearchLineStatus w;
     for (int i = 0; i < 10; ++i) {
-        w.addCompletionItem(QStringLiteral("ff%1").arg(i));
+        w.addCompletionItem(u"ff%1"_s.arg(i));
     }
     QCOMPARE(w.completer()->model()->rowCount(), 35);
     w.slotClearHistory();

@@ -5,6 +5,8 @@
 */
 
 #include "checkphishingurljob.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <PimCommon/NetworkManager>
 #include <QJsonDocument>
 #include <QNetworkAccessManager>
@@ -57,11 +59,11 @@ void CheckPhishingUrlJob::parse(const QByteArray &replyStr)
             Q_EMIT result(WebEngineViewer::CheckPhishingUrlUtil::Ok, d->mUrl);
             return;
         } else {
-            const QVariantList info = answer.value(QStringLiteral("matches")).toList();
+            const QVariantList info = answer.value(u"matches"_s).toList();
             if (info.count() == 1) {
                 const QVariantMap map = info.at(0).toMap();
-                const QString threatTypeStr = map[QStringLiteral("threatType")].toString();
-                const QString cacheDuration = map[QStringLiteral("cacheDuration")].toString();
+                const QString threatTypeStr = map[u"threatType"_s].toString();
+                const QString cacheDuration = map[u"cacheDuration"_s].toString();
                 uint verifyCacheAfterThisTime = 0;
                 if (!cacheDuration.isEmpty()) {
                     double cacheDurationValue = WebEngineViewer::CheckPhishingUrlUtil::convertToSecond(cacheDuration);
@@ -70,9 +72,9 @@ void CheckPhishingUrlJob::parse(const QByteArray &replyStr)
                     }
                 }
                 if (threatTypeStr == QLatin1StringView("MALWARE")) {
-                    const QVariantMap urlMap = map[QStringLiteral("threat")].toMap();
+                    const QVariantMap urlMap = map[u"threat"_s].toMap();
                     if (urlMap.count() == 1) {
-                        if (urlMap[QStringLiteral("url")].toString() == d->mUrl.toString()) {
+                        if (urlMap[u"url"_s].toString() == d->mUrl.toString()) {
                             Q_EMIT result(WebEngineViewer::CheckPhishingUrlUtil::MalWare, d->mUrl, verifyCacheAfterThisTime);
                             return;
                         }
@@ -103,25 +105,25 @@ QByteArray CheckPhishingUrlJob::jsonRequest() const
     QVariantMap clientMap;
     QVariantMap map;
 
-    clientMap.insert(QStringLiteral("clientId"), QStringLiteral("KDE"));
-    clientMap.insert(QStringLiteral("clientVersion"), CheckPhishingUrlUtil::versionApps());
-    map.insert(QStringLiteral("client"), clientMap);
+    clientMap.insert(u"clientId"_s, u"KDE"_s);
+    clientMap.insert(u"clientVersion"_s, CheckPhishingUrlUtil::versionApps());
+    map.insert(u"client"_s, clientMap);
 
     QVariantMap threatMap;
-    const QVariantList platformList = {QStringLiteral("WINDOWS")};
-    threatMap.insert(QStringLiteral("platformTypes"), platformList);
+    const QVariantList platformList = {u"WINDOWS"_s};
+    threatMap.insert(u"platformTypes"_s, platformList);
 
-    const QVariantList threatTypesList = {QStringLiteral("MALWARE")};
-    threatMap.insert(QStringLiteral("threatTypes"), threatTypesList);
-    const QVariantList threatEntryTypesList = {QStringLiteral("URL")};
-    threatMap.insert(QStringLiteral("threatEntryTypes"), threatEntryTypesList);
+    const QVariantList threatTypesList = {u"MALWARE"_s};
+    threatMap.insert(u"threatTypes"_s, threatTypesList);
+    const QVariantList threatEntryTypesList = {u"URL"_s};
+    threatMap.insert(u"threatEntryTypes"_s, threatEntryTypesList);
     QVariantList threatEntriesList;
     QVariantMap urlMap;
-    urlMap.insert(QStringLiteral("url"), d->mUrl.toString());
+    urlMap.insert(u"url"_s, d->mUrl.toString());
     threatEntriesList.append(urlMap);
-    threatMap.insert(QStringLiteral("threatEntries"), threatEntriesList);
+    threatMap.insert(u"threatEntries"_s, threatEntriesList);
 
-    map.insert(QStringLiteral("threatInfo"), threatMap);
+    map.insert(u"threatInfo"_s, threatMap);
 
     const QJsonDocument postData = QJsonDocument::fromVariant(map);
     const QByteArray baPostData = postData.toJson(webengineview_useCompactJson ? QJsonDocument::Compact : QJsonDocument::Indented);
@@ -135,11 +137,11 @@ void CheckPhishingUrlJob::start()
         deleteLater();
     } else if (canStart()) {
         QUrlQuery query;
-        query.addQueryItem(QStringLiteral("key"), WebEngineViewer::CheckPhishingUrlUtil::apiKey());
-        QUrl safeUrl = QUrl(QStringLiteral("https://safebrowsing.googleapis.com/v4/threatMatches:find"));
+        query.addQueryItem(u"key"_s, WebEngineViewer::CheckPhishingUrlUtil::apiKey());
+        QUrl safeUrl = QUrl(u"https://safebrowsing.googleapis.com/v4/threatMatches:find"_s);
         safeUrl.setQuery(query);
         QNetworkRequest request(safeUrl);
-        request.setHeader(QNetworkRequest::ContentTypeHeader, QStringLiteral("application/json"));
+        request.setHeader(QNetworkRequest::ContentTypeHeader, u"application/json"_s);
 
         const QByteArray baPostData = jsonRequest();
         qCDebug(WEBENGINEVIEWER_LOG) << " postData.toJson()" << baPostData;

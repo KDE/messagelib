@@ -5,6 +5,8 @@
 */
 
 #include "templateextracthtmlelementfrommail.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "templateparser_debug.h"
 #include "templatewebenginepage.h"
 #include <QWebEngineScript>
@@ -79,8 +81,8 @@ void TemplateExtractHtmlElementFromMail::handleHtmlInfo(const QVariant &result)
 {
     if (result.isValid()) {
         const QVariantMap map = result.toMap();
-        mBodyElement = map.value(QStringLiteral("body")).toString();
-        mHeaderElement = map.value(QStringLiteral("header")).toString();
+        mBodyElement = map.value(u"body"_s).toString();
+        mHeaderElement = map.value(u"header"_s).toString();
         Q_EMIT loadContentDone(true);
     } else {
         qCWarning(TEMPLATEPARSER_LOG) << "Impossible to get value";

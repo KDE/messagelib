@@ -6,6 +6,7 @@
 */
 
 #include "setupenv.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <QGpgME/ExportJob>
 #include <QGpgME/ImportJob>
@@ -111,10 +112,10 @@ void Test::compareFile(const QString &outFile, const QString &referenceFile)
     QVERIFY(QFile::exists(outFile));
 
     // compare to reference file
-    const auto args = QStringList() << QStringLiteral("-u") << referenceFile << outFile;
+    const auto args = QStringList() << u"-u"_s << referenceFile << outFile;
     QProcess proc;
     proc.setProcessChannelMode(QProcess::ForwardedChannels);
-    proc.start(QStringLiteral("diff"), args);
+    proc.start(u"diff"_s, args);
     QVERIFY(proc.waitForFinished());
 
     QCOMPARE(proc.exitCode(), 0);

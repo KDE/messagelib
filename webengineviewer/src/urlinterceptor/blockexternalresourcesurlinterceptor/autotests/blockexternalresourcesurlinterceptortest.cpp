@@ -5,6 +5,8 @@
 */
 
 #include "blockexternalresourcesurlinterceptortest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <QStandardPaths>
 #include <QTest>
 #include <WebEngineViewer/BlockExternalResourcesUrlInterceptor>
@@ -18,22 +20,22 @@ BlockExternalResourcesUrlInterceptorTest::BlockExternalResourcesUrlInterceptorTe
 void BlockExternalResourcesUrlInterceptorTest::shouldIntercept()
 {
     WebEngineViewer::BlockExternalResourcesUrlInterceptor interceptor;
-    QVERIFY(!interceptor.interceptRequest(QUrl(QStringLiteral("file://")),
+    QVERIFY(!interceptor.interceptRequest(QUrl(u"file://"_s),
                                           QWebEngineUrlRequestInfo::ResourceType::ResourceTypeMedia,
                                           QWebEngineUrlRequestInfo::NavigationType::NavigationTypeReload));
-    QVERIFY(!interceptor.interceptRequest(QUrl(QStringLiteral("data://")),
+    QVERIFY(!interceptor.interceptRequest(QUrl(u"data://"_s),
                                           QWebEngineUrlRequestInfo::ResourceType::ResourceTypeMedia,
                                           QWebEngineUrlRequestInfo::NavigationType::NavigationTypeReload));
-    QVERIFY(interceptor.interceptRequest(QUrl(QStringLiteral("ftp://")),
+    QVERIFY(interceptor.interceptRequest(QUrl(u"ftp://"_s),
                                          QWebEngineUrlRequestInfo::ResourceType::ResourceTypeUnknown,
                                          QWebEngineUrlRequestInfo::NavigationType::NavigationTypeReload));
-    QVERIFY(interceptor.interceptRequest(QUrl(QStringLiteral("ftp://")),
+    QVERIFY(interceptor.interceptRequest(QUrl(u"ftp://"_s),
                                          QWebEngineUrlRequestInfo::ResourceType::ResourceTypePing,
                                          QWebEngineUrlRequestInfo::NavigationType::NavigationTypeReload));
-    QVERIFY(!interceptor.interceptRequest(QUrl(QStringLiteral("ftp://")),
+    QVERIFY(!interceptor.interceptRequest(QUrl(u"ftp://"_s),
                                           QWebEngineUrlRequestInfo::ResourceType::ResourceTypeMainFrame,
                                           QWebEngineUrlRequestInfo::NavigationType::NavigationTypeLink));
-    QVERIFY(interceptor.interceptRequest(QUrl(QStringLiteral("ftp://")),
+    QVERIFY(interceptor.interceptRequest(QUrl(u"ftp://"_s),
                                          QWebEngineUrlRequestInfo::ResourceType::ResourceTypeMainFrame,
                                          QWebEngineUrlRequestInfo::NavigationType::NavigationTypeRedirect));
 }

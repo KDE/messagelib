@@ -5,6 +5,8 @@
 */
 
 #include "templateextracttextfrommailtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "templateextracttextfrommail.h"
 #include <QSignalSpy>
 #include <QTest>
@@ -27,12 +29,12 @@ void TemplateExtractTextFromMailTest::shouldExtractHtml()
     TemplateParser::TemplateExtractTextFromMail w;
     QVERIFY(w.plainText().isEmpty());
     QSignalSpy spy(&w, &TemplateParser::TemplateExtractTextFromMail::loadContentDone);
-    w.setHtmlContent(QStringLiteral("<html><head></head><body>HTML Text</body></html>"));
+    w.setHtmlContent(u"<html><head></head><body>HTML Text</body></html>"_s);
     QVERIFY(spy.wait());
     QCOMPARE(spy.count(), 1);
     const bool result = spy.at(0).at(0).toBool();
     QVERIFY(result);
-    QCOMPARE(w.plainText(), QStringLiteral("HTML Text"));
+    QCOMPARE(w.plainText(), u"HTML Text"_s);
 }
 
 QTEST_MAIN(TemplateExtractTextFromMailTest)

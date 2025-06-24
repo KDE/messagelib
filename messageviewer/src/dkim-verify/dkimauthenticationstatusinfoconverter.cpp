@@ -8,6 +8,8 @@
 */
 
 #include "dkimauthenticationstatusinfoconverter.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "dkimutil.h"
 #include "messageviewer_dkimcheckerdebug.h"
 using namespace MessageViewer;
@@ -42,9 +44,9 @@ QList<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> DKIMAuthent
             QString sdid;
             QString auid;
             for (const DKIMAuthenticationStatusInfo::AuthStatusInfo::Property &prop : info.header) {
-                if (prop.type == QLatin1Char('d')) {
+                if (prop.type == u'd') {
                     sdid = prop.value;
-                } else if (prop.type == QLatin1Char('i')) {
+                } else if (prop.type == u'i') {
                     auid = prop.value;
                 }
             }
@@ -52,7 +54,7 @@ QList<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> DKIMAuthent
                 if (sdid.isEmpty()) {
                     sdid = MessageViewer::DKIMUtil::emailDomain(auid);
                 } else if (auid.isEmpty()) {
-                    auid = QLatin1Char('@') + sdid;
+                    auid = u'@' + sdid;
                 }
                 convertedResult.sdid = sdid;
                 convertedResult.auid = auid;

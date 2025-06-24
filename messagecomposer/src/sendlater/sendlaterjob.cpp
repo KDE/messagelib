@@ -5,6 +5,8 @@
 */
 
 #include "sendlaterjob.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "messagecomposer_debug.h"
 #include "sendlaterinterface.h"
 #include "sendlaterutil_p.h"

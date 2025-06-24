@@ -5,6 +5,8 @@
 */
 
 #include "dkimcheckauthenticationstatusjob.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "dkimauthenticationstatusinfo.h"
 #include "messageviewer_dkimcheckerdebug.h"
 #include <KMime/Message>
@@ -26,7 +28,7 @@ void DKIMCheckAuthenticationStatusJob::start()
         return;
     }
 
-    const QString strAuthenticationHeader = QStringLiteral("authentication-results");
+    const QString strAuthenticationHeader = u"authentication-results"_s;
     QString str = mHeaderParser.headerType(strAuthenticationHeader);
     DKIMAuthenticationStatusInfo info;
     while (!str.isEmpty()) {

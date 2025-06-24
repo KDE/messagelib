@@ -5,6 +5,8 @@
 */
 
 #include "shownextmessagewidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <KLocalizedString>
 #include <QHBoxLayout>
 #include <QPushButton>

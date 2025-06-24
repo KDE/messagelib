@@ -8,6 +8,8 @@
 #pragma once
 
 #include "MessageComposer/Recipient"
+using namespace Qt::Literals::StringLiterals;
+
 #include "messagecomposer/messagesender.h"
 #include "messagecomposer_export.h"
 #include <Akonadi/Collection>

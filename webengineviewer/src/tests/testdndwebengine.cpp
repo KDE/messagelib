@@ -5,6 +5,7 @@
 */
 
 #include "testdndwebengine.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include "webengineview.h"
 #include <QApplication>
@@ -19,11 +20,11 @@ TestDndWebEngine::TestDndWebEngine(QWidget *parent)
     auto layout = new QHBoxLayout;
     vbox->addLayout(layout);
     pageView = new WebEngineViewer::WebEngineView(this);
-    pageView->load(QUrl(QStringLiteral("http://www.planetkde.org")));
+    pageView->load(QUrl(u"http://www.planetkde.org"_s));
     layout->addWidget(pageView);
 
     webEngineView = new WebEngineViewBase(this);
-    webEngineView->load(QUrl(QStringLiteral("http://www.kde.org")));
+    webEngineView->load(QUrl(u"http://www.kde.org"_s));
     layout->addWidget(webEngineView);
 
     auto edit = new QTextEdit(this);

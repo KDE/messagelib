@@ -5,6 +5,8 @@
 */
 
 #include "dkimauthenticationstatusinfotest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "dkim-verify/dkimauthenticationstatusinfo.h"
 #include <QTest>
 
@@ -102,60 +104,60 @@ void DKIMAuthenticationStatusInfoTest::shouldParseKey_data()
     {
         MessageViewer::DKIMAuthenticationStatusInfo info;
         info.setAuthVersion(1);
-        info.setAuthservId(QStringLiteral("in68.mail.ovh.net"));
+        info.setAuthservId(u"in68.mail.ovh.net"_s);
         QList<MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo> lst;
         MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo property;
-        property.method = QStringLiteral("dkim");
-        property.result = QStringLiteral("pass");
+        property.method = u"dkim"_s;
+        property.result = u"pass"_s;
         property.methodVersion = 1;
         {
             MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo::Property prop;
-            prop.type = QStringLiteral("d");
-            prop.value = QStringLiteral("kde.org");
+            prop.type = u"d"_s;
+            prop.value = u"kde.org"_s;
             property.header.append(prop);
         }
         {
             MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo::Property prop;
-            prop.type = QStringLiteral("i");
-            prop.value = QStringLiteral("@kde.org");
+            prop.type = u"i"_s;
+            prop.value = u"@kde.org"_s;
             property.header.append(prop);
         }
         {
             MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo::Property prop;
-            prop.type = QStringLiteral("b");
-            prop.value = QStringLiteral("\"GMG2ucPx\"");
+            prop.type = u"b"_s;
+            prop.value = u"\"GMG2ucPx\""_s;
             property.header.append(prop);
         }
         lst.append(property);
 
         MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo property2;
-        property2.method = QStringLiteral("dkim");
-        property2.result = QStringLiteral("pass");
+        property2.method = u"dkim"_s;
+        property2.result = u"pass"_s;
         property2.methodVersion = 1;
 
         {
             MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo::Property prop;
-            prop.type = QStringLiteral("d");
-            prop.value = QStringLiteral("kde.org");
+            prop.type = u"d"_s;
+            prop.value = u"kde.org"_s;
             property2.header.append(prop);
         }
         {
             MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo::Property prop;
-            prop.type = QStringLiteral("i");
-            prop.value = QStringLiteral("@kde.org");
+            prop.type = u"i"_s;
+            prop.value = u"@kde.org"_s;
             property2.header.append(prop);
         }
         {
             MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo::Property prop;
-            prop.type = QStringLiteral("b");
-            prop.value = QStringLiteral("\"I3t3p7Up\"");
+            prop.type = u"b"_s;
+            prop.value = u"\"I3t3p7Up\""_s;
             property2.header.append(prop);
         }
         lst.append(property2);
 
         MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo property3;
-        property3.method = QStringLiteral("dkim-atps");
-        property3.result = QStringLiteral("neutral");
+        property3.method = u"dkim-atps"_s;
+        property3.result = u"neutral"_s;
         property3.methodVersion = 1;
         lst.append(property3);
 
@@ -168,48 +170,48 @@ void DKIMAuthenticationStatusInfoTest::shouldParseKey_data()
     {
         MessageViewer::DKIMAuthenticationStatusInfo info;
         info.setAuthVersion(1);
-        info.setAuthservId(QStringLiteral("example.org"));
+        info.setAuthservId(u"example.org"_s);
 
-        QTest::addRow("none") << QStringLiteral("example.org 1; none;") << info << false << false;
+        QTest::addRow("none") << u"example.org 1; none;"_s << info << false << false;
     }
     {
         MessageViewer::DKIMAuthenticationStatusInfo info;
         info.setAuthVersion(1);
-        info.setAuthservId(QStringLiteral("example.org"));
+        info.setAuthservId(u"example.org"_s);
 
-        QTest::addRow("none2") << QStringLiteral("example.org 1; none") << info << false << false;
+        QTest::addRow("none2") << u"example.org 1; none"_s << info << false << false;
     }
     {
         MessageViewer::DKIMAuthenticationStatusInfo info;
         info.setAuthVersion(1);
-        info.setAuthservId(QStringLiteral("example.com"));
+        info.setAuthservId(u"example.com"_s);
 
         QList<MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo> lst;
         {
             MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo property;
-            property.method = QStringLiteral("dkim");
-            property.result = QStringLiteral("pass");
-            property.reason = QStringLiteral("good signature");
+            property.method = u"dkim"_s;
+            property.result = u"pass"_s;
+            property.reason = u"good signature"_s;
             property.methodVersion = 1;
             {
                 MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo::Property prop;
-                prop.type = QStringLiteral("i");
-                prop.value = QStringLiteral("@mail-router.example.net");
+                prop.type = u"i"_s;
+                prop.value = u"@mail-router.example.net"_s;
                 property.header.append(prop);
             }
             lst.append(property);
         }
         {
             MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo property2;
-            property2.method = QStringLiteral("dkim");
-            property2.result = QStringLiteral("fail");
-            property2.reason = QStringLiteral("bad signature");
+            property2.method = u"dkim"_s;
+            property2.result = u"fail"_s;
+            property2.reason = u"bad signature"_s;
             property2.methodVersion = 1;
 
             {
                 MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo::Property prop;
-                prop.type = QStringLiteral("i");
-                prop.value = QStringLiteral("@newyork.example.com");
+                prop.type = u"i"_s;
+                prop.value = u"@newyork.example.com"_s;
                 property2.header.append(prop);
             }
             lst.append(property2);
@@ -226,34 +228,34 @@ void DKIMAuthenticationStatusInfoTest::shouldParseKey_data()
     {
         MessageViewer::DKIMAuthenticationStatusInfo info;
         info.setAuthVersion(1);
-        info.setAuthservId(QStringLiteral("example.com"));
+        info.setAuthservId(u"example.com"_s);
 
         QList<MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo> lst;
         {
             MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo property;
-            property.method = QStringLiteral("dkim");
-            property.result = QStringLiteral("pass");
-            property.reason = QStringLiteral("good signature");
+            property.method = u"dkim"_s;
+            property.result = u"pass"_s;
+            property.reason = u"good signature"_s;
             property.methodVersion = 1;
             {
                 MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo::Property prop;
-                prop.type = QStringLiteral("i");
-                prop.value = QStringLiteral("@mail-router.example.net");
+                prop.type = u"i"_s;
+                prop.value = u"@mail-router.example.net"_s;
                 property.header.append(prop);
             }
             lst.append(property);
         }
         {
             MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo property2;
-            property2.method = QStringLiteral("dkim");
-            property2.result = QStringLiteral("fail");
-            property2.reason = QStringLiteral("bad signature");
+            property2.method = u"dkim"_s;
+            property2.result = u"fail"_s;
+            property2.reason = u"bad signature"_s;
             property2.methodVersion = 1;
 
             {
                 MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo::Property prop;
-                prop.type = QStringLiteral("i");
-                prop.value = QStringLiteral("@newyork.example.com");
+                prop.type = u"i"_s;
+                prop.value = u"@newyork.example.com"_s;
                 property2.header.append(prop);
             }
             lst.append(property2);
@@ -268,24 +270,24 @@ void DKIMAuthenticationStatusInfoTest::shouldParseKey_data()
     {
         MessageViewer::DKIMAuthenticationStatusInfo info;
         info.setAuthVersion(1);
-        info.setAuthservId(QStringLiteral("letterbox.kde.org"));
+        info.setAuthservId(u"letterbox.kde.org"_s);
         QList<MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo> lst;
         {
             MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo property;
-            property.method = QStringLiteral("dmarc");
-            property.result = QStringLiteral("pass");
+            property.method = u"dmarc"_s;
+            property.result = u"pass"_s;
             property.methodVersion = 1;
             {
                 MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo::Property prop;
-                prop.type = QStringLiteral("from");
-                prop.value = QStringLiteral("gmail.com");
+                prop.type = u"from"_s;
+                prop.value = u"gmail.com"_s;
                 property.header.append(prop);
             }
             lst.append(property);
         }
         info.setListAuthStatusInfo(lst);
 
-        QTest::addRow("gmails") << QStringLiteral("letterbox.kde.org; dmarc=pass (p=none dis=none) header.from=gmail.com\r\n") << info << true << true;
+        QTest::addRow("gmails") << u"letterbox.kde.org; dmarc=pass (p=none dis=none) header.from=gmail.com\r\n"_s << info << true << true;
     }
 }
 

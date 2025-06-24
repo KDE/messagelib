@@ -13,6 +13,7 @@
 */
 
 #include "dateformatter.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <KLocalizedString>
 
@@ -116,7 +117,7 @@ QString DateFormatterPrivate::custom(const QDateTime &t) const
         return {};
     }
 
-    int z = mCustomFormat.indexOf(QLatin1Char('Z'));
+    int z = mCustomFormat.indexOf(u'Z');
     QDateTime dt;
     QString ret = mCustomFormat;
 
@@ -206,7 +207,7 @@ QString DateFormatterPrivate::localized(const QDateTime &t, bool shortFormat, co
 
 QString DateFormatterPrivate::cTime(const QDateTime &t)
 {
-    return t.toString(QStringLiteral("ddd MMM dd hh:mm:ss yyyy"));
+    return t.toString(u"ddd MMM dd hh:mm:ss yyyy"_s);
 }
 
 QString DateFormatter::formatDate(FormatType ftype, const QDateTime &t, const QString &data, bool shortFormat)

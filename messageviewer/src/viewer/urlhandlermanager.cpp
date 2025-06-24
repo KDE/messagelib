@@ -10,6 +10,8 @@
 */
 
 #include "urlhandlermanager.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../utils/messageviewerutil_p.h"
 #include "interfaces/bodyparturlhandler.h"
 #include "messageviewer/messageviewerutil.h"
@@ -123,7 +125,7 @@ static KMime::Content *partNodeFromXKMailUrl(const QUrl &url, ViewerPrivate *w, 
         return nullptr;
     }
 
-    const QStringList urlParts = urlPath.mid(10).split(QLatin1Char('/'));
+    const QStringList urlParts = urlPath.mid(10).split(u'/');
     if (urlParts.size() != 3) {
         return nullptr;
     }
@@ -458,7 +460,7 @@ QString ExpandCollapseQuoteURLManager::statusBarMessage(const QUrl &url, ViewerP
     if (url.scheme() == QLatin1StringView("kmail") && url.path() == QLatin1StringView("levelquote")) {
         const QString query = url.query();
         if (query.length() >= 1) {
-            if (query[0] == QLatin1Char('-')) {
+            if (query[0] == u'-') {
                 return i18n("Expand all quoted text.");
             } else {
                 return i18n("Collapse quoted text.");
@@ -480,10 +482,9 @@ bool SMimeURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
     }
 
     QStringList lst;
-    lst << QStringLiteral("--parent-windowid") << QString::number(static_cast<qlonglong>(w->viewer()->mainWindow()->winId())) << QStringLiteral("--query")
-        << keyId;
+    lst << u"--parent-windowid"_s << QString::number(static_cast<qlonglong>(w->viewer()->mainWindow()->winId())) << u"--query"_s << keyId;
 
-    const QString exec = PimCommon::Util::findExecutable(QStringLiteral("kleopatra"));
+    const QString exec = PimCommon::Util::findExecutable(u"kleopatra"_s);
 
     if (exec.isEmpty()) {
         qCWarning(MESSAGEVIEWER_LOG) << "Could not find kleopatra executable in PATH";
@@ -566,9 +567,9 @@ bool ContactUidURLHandler::handleContextMenuRequest(const QUrl &url, const QPoin
     }
 
     QMenu menu;
-    QAction *open = menu.addAction(QIcon::fromTheme(QStringLiteral("view-pim-contacts")), i18n("&Open in Address Book"));
+    QAction *open = menu.addAction(QIcon::fromTheme(u"view-pim-contacts"_s), i18n("&Open in Address Book"));
 #ifndef QT_NO_CLIPBOARD
-    QAction *copy = menu.addAction(QIcon::fromTheme(QStringLiteral("edit-copy")), i18n("&Copy Email Address"));
+    QAction *copy = menu.addAction(QIcon::fromTheme(u"edit-copy"_s), i18n("&Copy Email Address"));
 #endif
 
     QAction *a = menu.exec(p);
@@ -614,7 +615,7 @@ bool AttachmentURLHandler::attachmentIsInHeader(const QUrl &url) const
 {
     bool inHeader = false;
     QUrlQuery query(url);
-    const QString place = query.queryItemValue(QStringLiteral("place")).toLower();
+    const QString place = query.queryItemValue(u"place"_s).toLower();
     if (!place.isNull()) {
         inHeader = (place == QLatin1StringView("header"));
     }
@@ -785,8 +786,8 @@ static QString extractAuditLog(const QUrl &url)
         return {};
     }
     QUrlQuery query(url);
-    Q_ASSERT(!query.queryItemValue(QStringLiteral("log")).isEmpty());
-    return query.queryItemValue(QStringLiteral("log"));
+    Q_ASSERT(!query.queryItemValue(u"log"_s).isEmpty());
+    return query.queryItemValue(u"log"_s);
 }
 
 bool ShowAuditLogURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
@@ -839,8 +840,7 @@ bool InternalImageURLHandler::willHandleDrag(const QUrl &url, ViewerPrivate *win
         return true;
     }
 
-    const QString imagePath =
-        QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("libmessageviewer/pics/"), QStandardPaths::LocateDirectory);
+    const QString imagePath = QStandardPaths::locate(QStandardPaths::GenericDataLocation, u"libmessageviewer/pics/"_s, QStandardPaths::LocateDirectory);
     return url.path().contains(imagePath);
 }
 

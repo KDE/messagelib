@@ -5,6 +5,8 @@
 */
 
 #include "tagmanager.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "messagelist_debug.h"
 #include <Akonadi/Monitor>
 #include <Akonadi/TagAttribute>

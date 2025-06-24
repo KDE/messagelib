@@ -6,6 +6,8 @@
 */
 
 #include "unencryptedmessagetest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "setupenv.h"
 #include "util.h"
 
@@ -29,13 +31,13 @@ void UnencryptedMessageTest::testNotDecrypted_data()
     QTest::addColumn<QString>("mailFileName");
     QTest::addColumn<bool>("decryptMessage");
 
-    QTest::newRow("openpgp-inline") << QStringLiteral("inlinepgpencrypted.mbox") << true;
-    QTest::newRow("openpgp-encrypt") << QStringLiteral("openpgp-encrypted.mbox") << true;
-    QTest::newRow("smime-encrypt") << QStringLiteral("smime-encrypted.mbox") << true;
-    QTest::newRow("openpgp-inline-encrypt") << QStringLiteral("openpgp-inline-charset-encrypted.mbox") << true;
-    QTest::newRow("smime-opaque-sign") << QStringLiteral("smime-opaque-sign.mbox") << false;
-    QTest::newRow("openpgp-inline-signed") << QStringLiteral("openpgp-inline-signed.mbox") << false;
-    QTest::newRow("openpgp-mime-signed") << QStringLiteral("openpgp-signed-mailinglist.mbox") << false;
+    QTest::newRow("openpgp-inline") << u"inlinepgpencrypted.mbox"_s << true;
+    QTest::newRow("openpgp-encrypt") << u"openpgp-encrypted.mbox"_s << true;
+    QTest::newRow("smime-encrypt") << u"smime-encrypted.mbox"_s << true;
+    QTest::newRow("openpgp-inline-encrypt") << u"openpgp-inline-charset-encrypted.mbox"_s << true;
+    QTest::newRow("smime-opaque-sign") << u"smime-opaque-sign.mbox"_s << false;
+    QTest::newRow("openpgp-inline-signed") << u"openpgp-inline-signed.mbox"_s << false;
+    QTest::newRow("openpgp-mime-signed") << u"openpgp-signed-mailinglist.mbox"_s << false;
 }
 
 void UnencryptedMessageTest::testNotDecrypted()
@@ -71,7 +73,7 @@ void UnencryptedMessageTest::testNotDecrypted()
 
 void UnencryptedMessageTest::testSMimeAutoCertImport()
 {
-    KMime::Message::Ptr originalMessage = Test::readAndParseMail(QStringLiteral("smime-cert.mbox"));
+    KMime::Message::Ptr originalMessage = Test::readAndParseMail(u"smime-cert.mbox"_s);
 
     MimeTreeParser::NodeHelper nodeHelper;
     BufferedHtmlWriter testWriter;

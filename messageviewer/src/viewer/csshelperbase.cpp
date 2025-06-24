@@ -8,6 +8,8 @@
 */
 
 #include "csshelperbase.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "header/headerstyleplugin.h"
 #include "utils/iconnamecache.h"
 
@@ -69,8 +71,8 @@ static const struct {
 CSSHelperBase::CSSHelperBase(const QPaintDevice *pd)
     : mPaintDevice(pd)
 {
-    const QString imgSrcShow = QStringLiteral("quicklistClosed.png");
-    const QString imgSrcHide = QStringLiteral("quicklistOpened.png");
+    const QString imgSrcShow = u"quicklistClosed.png"_s;
+    const QString imgSrcHide = u"quicklistOpened.png"_s;
     imgShowUrl = QUrl::fromLocalFile(MessageViewer::IconNameCache::instance()->iconPathFromLocal(imgSrcShow)).url();
     imgHideUrl = QUrl::fromLocalFile(MessageViewer::IconNameCache::instance()->iconPathFromLocal(imgSrcHide)).url();
 }
@@ -207,9 +209,9 @@ QString CSSHelperBase::quoteFontTag(int level) const
     static const int numQuoteLevels = 3;
     const int effectiveLevel = mRecycleQuoteColors ? level % numQuoteLevels + 1 : qMin(level + 1, numQuoteLevels);
     if (level >= numQuoteLevels) {
-        return QStringLiteral("<div class=\"deepquotelevel%1\">").arg(effectiveLevel);
+        return u"<div class=\"deepquotelevel%1\">"_s.arg(effectiveLevel);
     } else {
-        return QStringLiteral("<div class=\"quotelevel%1\">").arg(effectiveLevel);
+        return u"<div class=\"quotelevel%1\">"_s.arg(effectiveLevel);
     }
 }
 
@@ -219,9 +221,9 @@ QString CSSHelperBase::fullAddressList() const
         "input[type=checkbox].addresslist_checkbox {display: none}\n"
         ".addresslist_label_short {border: 1px; border-radius: 5px; padding: 0px 10px 0px 10px; white-space: nowrap}\n"
         ".addresslist_label_full {border: 1px; border-radius: 5px; padding: 0px 10px 0px 10px; white-space: nowrap}\n");
-    css += QStringLiteral(".addresslist_label_short {background-image:url(%1);\nbackground-repeat: no-repeat}\n").arg(imgShowUrl);
-    css += QStringLiteral(".addresslist_label_full {background-image:url(%1);\nbackground-repeat: no-repeat}\n\n").arg(imgHideUrl);
-    for (const QString &str : {QStringLiteral("Cc"), QStringLiteral("To"), QStringLiteral("Bcc")}) {
+    css += u".addresslist_label_short {background-image:url(%1);\nbackground-repeat: no-repeat}\n"_s.arg(imgShowUrl);
+    css += u".addresslist_label_full {background-image:url(%1);\nbackground-repeat: no-repeat}\n\n"_s.arg(imgHideUrl);
+    for (const QString &str : {u"Cc"_s, u"To"_s, QStringLiteral("Bcc")}) {
         css += QStringLiteral(
                    "input ~ span.fullFull%1AddressList {display: block}\n"
                    "input ~ span.shortFull%1AddressList {display: none}\n"
@@ -234,7 +236,7 @@ QString CSSHelperBase::fullAddressList() const
 
 QString CSSHelperBase::nonQuotedFontTag() const
 {
-    return QStringLiteral("<div class=\"noquote\">");
+    return u"<div class=\"noquote\">"_s;
 }
 
 QFont CSSHelperBase::bodyFont(bool fixed, bool print) const
@@ -339,7 +341,7 @@ QString CSSHelperBase::linkColorDefinition(const HtmlHeadSettings &htmlHeadSetti
     const QString linkColor = mLinkColor.name();
     if (useBrowserColor(htmlHeadSettings)) {
         const QString bgColor = mBackgroundColor.name();
-        const QString background = QStringLiteral("  background: %1 ! important;\n").arg(bgColor);
+        const QString background = u"  background: %1 ! important;\n"_s.arg(bgColor);
 
         return QStringLiteral(
                    "div#headerbox a:link {\n"
@@ -372,7 +374,7 @@ QString CSSHelperBase::quoteCssDefinition() const
     QString quoteCSS;
     QString blockQuote;
     for (int i = 0; i < 9; ++i) {
-        blockQuote += QStringLiteral("blockquote ");
+        blockQuote += u"blockquote "_s;
         quoteCSS += QStringLiteral(
                         "%2{\n"
                         "  margin: 4pt 0 4pt 0;\n"
@@ -430,13 +432,13 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, const H
 {
     const QString bgColor = mBackgroundColor.name();
     const QString headerFont = defaultScreenHeaderFont();
-    const QString fgColor = useBrowserColor(htmlHeadSettings) ? QStringLiteral("black") : mForegroundColor.name();
-    const QString background = useBrowserColor(htmlHeadSettings) ? QString() : QStringLiteral("  background-color: %1 ! important;\n").arg(bgColor);
-    const QString signWarnBColorName = useBrowserColor(htmlHeadSettings) ? QStringLiteral("white") : cPgpWarnB.name();
-    const QString cPgpErrBColorName = useBrowserColor(htmlHeadSettings) ? QStringLiteral("white") : cPgpErrB.name();
-    const QString cPgpEncrBColorName = useBrowserColor(htmlHeadSettings) ? QStringLiteral("white") : cPgpEncrB.name();
-    const QString cPgpOk1BColorName = useBrowserColor(htmlHeadSettings) ? QStringLiteral("white") : cPgpOk1B.name();
-    const QString cPgpOk0BColorName = useBrowserColor(htmlHeadSettings) ? QStringLiteral("white") : cPgpOk0B.name();
+    const QString fgColor = useBrowserColor(htmlHeadSettings) ? u"black"_s : mForegroundColor.name();
+    const QString background = useBrowserColor(htmlHeadSettings) ? QString() : u"  background-color: %1 ! important;\n"_s.arg(bgColor);
+    const QString signWarnBColorName = useBrowserColor(htmlHeadSettings) ? u"white"_s : cPgpWarnB.name();
+    const QString cPgpErrBColorName = useBrowserColor(htmlHeadSettings) ? u"white"_s : cPgpErrB.name();
+    const QString cPgpEncrBColorName = useBrowserColor(htmlHeadSettings) ? u"white"_s : cPgpEncrB.name();
+    const QString cPgpOk1BColorName = useBrowserColor(htmlHeadSettings) ? u"white"_s : cPgpOk1B.name();
+    const QString cPgpOk0BColorName = useBrowserColor(htmlHeadSettings) ? u"white"_s : cPgpOk0B.name();
     const QString bodyFontSize = QString::number(pointsToPixel(helper->mPaintDevice, fontSize(htmlHeadSettings.fixedFont))) + QLatin1StringView("px");
     const QPalette &pal = QApplication::palette();
 
@@ -458,15 +460,15 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, const H
                         "  color: %2 ! important;\n")
                         .arg(QString::number(i + 1), quoteColorName(i));
         if (mQuoteFont.italic()) {
-            quoteCSS += QStringLiteral("  font-style: italic ! important;\n");
+            quoteCSS += u"  font-style: italic ! important;\n"_s;
         }
         if (mQuoteFont.bold()) {
-            quoteCSS += QStringLiteral("  font-weight: bold ! important;\n");
+            quoteCSS += u"  font-weight: bold ! important;\n"_s;
         }
         if (mShrinkQuotes) {
             quoteCSS += QLatin1StringView("  font-size: ") + QString::fromLatin1(quoteFontSizes[i]) + QLatin1StringView("% ! important;\n");
         }
-        quoteCSS += QStringLiteral("}\n\n");
+        quoteCSS += u"}\n\n"_s;
     }
 
     // CSS definitions for quote levels 4+
@@ -476,13 +478,13 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, const H
                         "  color: %2 ! important;\n")
                         .arg(QString::number(i + 1), quoteColorName(i));
         if (mQuoteFont.italic()) {
-            quoteCSS += QStringLiteral("  font-style: italic ! important;\n");
+            quoteCSS += u"  font-style: italic ! important;\n"_s;
         }
         if (mQuoteFont.bold()) {
-            quoteCSS += QStringLiteral("  font-weight: bold ! important;\n");
+            quoteCSS += u"  font-weight: bold ! important;\n"_s;
         }
         if (mShrinkQuotes) {
-            quoteCSS += QStringLiteral("  font-size: 70% ! important;\n");
+            quoteCSS += u"  font-size: 70% ! important;\n"_s;
         }
         quoteCSS += QLatin1StringView("}\n\n");
     }

@@ -5,6 +5,7 @@
 */
 
 #include "attachmentmessagepartrenderer.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include "../messagepartrenderermanager.h"
 #include "utils/mimetype.h"
@@ -39,9 +40,9 @@ bool AttachmentMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr 
         return context->renderWithFactory<MimeTreeParser::TextMessagePart>(mp, htmlWriter);
     }
 
-    KTextTemplate::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(QStringLiteral("asiconpart.html"));
+    KTextTemplate::Template t = MessageViewer::MessagePartRendererManager::self()->loadByName(u"asiconpart.html"_s);
     KTextTemplate::Context c = MessageViewer::MessagePartRendererManager::self()->createContext();
-    c.insert(QStringLiteral("block"), msgPart.data());
+    c.insert(u"block"_s, msgPart.data());
 
     msgPart->setProperty("inline", (tmpAsIcon == MimeTreeParser::IconInline));
 

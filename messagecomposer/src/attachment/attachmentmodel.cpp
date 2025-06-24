@@ -18,7 +18,7 @@
 
 #include <KMime/Headers>
 #include <KMime/Util>
-
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageComposer;
 using namespace MessageCore;
 
@@ -124,7 +124,7 @@ QMimeData *AttachmentModel::mimeData(const QModelIndexList &indexes) const
 
         auto tempDir = new QTemporaryDir; // Will remove the directory on destruction.
         d->tempDirs.append(tempDir);
-        const QString fileName = tempDir->path() + QLatin1Char('/') + attachmentName;
+        const QString fileName = tempDir->path() + u'/' + attachmentName;
         QFile f(fileName);
         if (!f.open(QIODevice::WriteOnly)) {
             qCWarning(MESSAGECOMPOSER_LOG) << "Cannot write attachment:" << f.errorString();
@@ -150,7 +150,7 @@ QMimeData *AttachmentModel::mimeData(const QModelIndexList &indexes) const
 
 QStringList AttachmentModel::mimeTypes() const
 {
-    const QStringList types = {QStringLiteral("text/uri-list")};
+    const QStringList types = {u"text/uri-list"_s};
     return types;
 }
 

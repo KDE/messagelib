@@ -5,6 +5,8 @@
 */
 
 #include "convertvariablesjobtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "composer/composerviewbase.h"
 #include "composer/composerviewinterface.h"
 #include "snippet/convertsnippetvariablesjob.h"
@@ -28,7 +30,7 @@ void ConvertVariablesJobTest::shouldCanStart()
 {
     MessageComposer::ConvertSnippetVariablesJob job;
     QVERIFY(!job.canStart());
-    job.setText(QStringLiteral("bla"));
+    job.setText(u"bla"_s);
     QVERIFY(!job.canStart());
     MessageComposer::ComposerViewBase b;
     auto interface = new MessageComposer::ComposerViewInterface(&b);
@@ -44,8 +46,8 @@ void ConvertVariablesJobTest::shouldConvertVariables()
     auto interface = new MessageComposer::ComposerViewInterface(&b);
     MessageComposer::ConvertSnippetVariablesJob job;
     job.setComposerViewInterface(interface);
-    b.setSubject(QStringLiteral("Subject!!!!"));
-    b.setFrom(QStringLiteral("from!!"));
+    b.setSubject(u"Subject!!!!"_s);
+    b.setFrom(u"from!!"_s);
     // TODO add CC/BCC/TO
 
     job.setText(original);
@@ -57,8 +59,8 @@ void ConvertVariablesJobTest::shouldConvertVariables_data()
     QTest::addColumn<QString>("original");
     QTest::addColumn<QString>("expected");
     QTest::newRow("empty") << QString() << QString();
-    QTest::newRow("novariable") << QStringLiteral("bla bli blo") << QStringLiteral("bla bli blo");
-    QTest::newRow("subject") << QStringLiteral("bla bli blo %FULLSUBJECT") << QStringLiteral("bla bli blo Subject!!!!");
+    QTest::newRow("novariable") << u"bla bli blo"_s << QStringLiteral("bla bli blo");
+    QTest::newRow("subject") << u"bla bli blo %FULLSUBJECT"_s << QStringLiteral("bla bli blo Subject!!!!");
     // TODO add more autotests !
 }
 

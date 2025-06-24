@@ -5,6 +5,8 @@
 */
 
 #include "dmarcinfotest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "dkim-verify/dmarcinfo.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(DMARCInfoTest)
@@ -48,23 +50,23 @@ void DMARCInfoTest::shouldTestExtractDkimKeyRecord_data()
     QTest::addColumn<bool>("isValid");
     QTest::addRow("empty") << QString() << MessageViewer::DMARCInfo() << false;
     MessageViewer::DMARCInfo info;
-    info.setVersion(QStringLiteral("DMARC1"));
-    info.setAdkim(QStringLiteral("r"));
-    info.setPolicy(QStringLiteral("reject"));
-    QTest::addRow("google.com") << QStringLiteral("v=DMARC1; p=reject; rua=mailto:mailauth-reports@google.com") << info << true;
+    info.setVersion(u"DMARC1"_s);
+    info.setAdkim(u"r"_s);
+    info.setPolicy(u"reject"_s);
+    QTest::addRow("google.com") << u"v=DMARC1; p=reject; rua=mailto:mailauth-reports@google.com"_s << info << true;
 
     MessageViewer::DMARCInfo info2;
-    info2.setVersion(QStringLiteral("DMARC1"));
-    info2.setAdkim(QStringLiteral("r"));
-    info2.setPolicy(QStringLiteral("reject"));
-    QTest::addRow("yahoo.com") << QStringLiteral("v=DMARC1; p=reject; pct=100; rua=mailto:dmarc_y_rua@yahoo.com;") << info2 << true;
+    info2.setVersion(u"DMARC1"_s);
+    info2.setAdkim(u"r"_s);
+    info2.setPolicy(u"reject"_s);
+    QTest::addRow("yahoo.com") << u"v=DMARC1; p=reject; pct=100; rua=mailto:dmarc_y_rua@yahoo.com;"_s << info2 << true;
 
     MessageViewer::DMARCInfo info3;
-    info3.setVersion(QStringLiteral("DMARC1"));
-    info3.setAdkim(QStringLiteral("r"));
-    info3.setPolicy(QStringLiteral("none"));
-    info3.setSubDomainPolicy(QStringLiteral("none"));
-    QTest::addRow("intel.com") << QStringLiteral("v=DMARC1;p=none;sp=none;fo=1;rua=mailto:dmarc.notification@intel.com") << info3 << true;
+    info3.setVersion(u"DMARC1"_s);
+    info3.setAdkim(u"r"_s);
+    info3.setPolicy(u"none"_s);
+    info3.setSubDomainPolicy(u"none"_s);
+    QTest::addRow("intel.com") << u"v=DMARC1;p=none;sp=none;fo=1;rua=mailto:dmarc.notification@intel.com"_s << info3 << true;
 }
 
 #include "moc_dmarcinfotest.cpp"

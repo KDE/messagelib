@@ -50,7 +50,7 @@
 #include <map>
 #include <memory>
 #include <set>
-
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageComposer;
 using namespace Kleo;
 
@@ -323,15 +323,15 @@ static std::vector<GpgME::Key> trustedOrConfirmed(const std::vector<GpgME::Key> 
     if (!fishies.empty()) {
         // certificates can't have marginal trust
         msg += i18n("\nThe following keys are only marginally trusted: \n");
-        msg += keysAsStrings(fishies).join(QLatin1Char(','));
+        msg += keysAsStrings(fishies).join(u',');
     }
     if (!ickies.empty()) {
         msg += i18n("\nThe following keys or certificates have unknown trust level: \n");
-        msg += keysAsStrings(ickies).join(QLatin1Char(','));
+        msg += keysAsStrings(ickies).join(u',');
     }
     if (!rewookies.empty()) {
         msg += i18n("\nThe following keys or certificates are <b>revoked</b>: \n");
-        msg += keysAsStrings(rewookies).join(QLatin1Char(','));
+        msg += keysAsStrings(rewookies).join(u',');
     }
 
     if (KMessageBox::warningContinueCancel(nullptr,
@@ -339,7 +339,7 @@ static std::vector<GpgME::Key> trustedOrConfirmed(const std::vector<GpgME::Key> 
                                            i18nc("@title:window", "Not Fully Trusted Encryption Keys"),
                                            KStandardGuiItem::cont(),
                                            KStandardGuiItem::cancel(),
-                                           QStringLiteral("not fully trusted encryption key warning"))
+                                           u"not fully trusted encryption key warning"_s)
         == KMessageBox::Continue) {
         return keys;
     } else {
@@ -580,7 +580,7 @@ void SigningFormatPreferenceCounter::operator()(const KeyResolver::Item &item)
 static QString canonicalAddress(const QString &_address)
 {
     const QString address = KEmailAddress::extractEmailAddress(_address);
-    if (!address.contains(QLatin1Char('@'))) {
+    if (!address.contains(u'@')) {
         // local address
         // return address + '@' + KNetwork::KResolver::localHostName();
         return address + QLatin1StringView("@localdomain");
@@ -657,7 +657,7 @@ ResolverResult KeyResolver::setEncryptToSelfKeys(const QStringList &fingerprints
                                                   i18nc("@title:window", "Unusable Encryption Keys"),
                                                   KStandardGuiItem::cont(),
                                                   KStandardGuiItem::cancel(),
-                                                  QStringLiteral("unusable own encryption key warning"))
+                                                  u"unusable own encryption key warning"_s)
                 == KMessageBox::Continue
             ? Ok
             : Canceled;
@@ -699,7 +699,7 @@ ResolverResult KeyResolver::setSigningKeys(const QStringList &fingerprints)
                                                   i18nc("@title:window", "Unusable Signing Keys"),
                                                   KStandardGuiItem::cont(),
                                                   KStandardGuiItem::cancel(),
-                                                  QStringLiteral("unusable signing key warning"))
+                                                  u"unusable signing key warning"_s)
                 == KMessageBox::Continue
             ? Ok
             : Canceled;
@@ -1010,7 +1010,7 @@ ResolverResult KeyResolver::resolveEncryptionKeys(bool signingRequested, bool &f
                                                    i18nc("@title:window", "Unusable Encryption Keys"),
                                                    KStandardGuiItem::cont(),
                                                    KStandardGuiItem::cancel(),
-                                                   QStringLiteral("encrypt-to-self will fail warning"))
+                                                   u"encrypt-to-self will fail warning"_s)
                 == KMessageBox::Cancel) {
                 return Canceled;
             }
@@ -1039,7 +1039,7 @@ ResolverResult KeyResolver::resolveEncryptionKeys(bool signingRequested, bool &f
                                                    i18nc("@title:window", "Unusable Encryption Keys"),
                                                    KStandardGuiItem::cont(),
                                                    KStandardGuiItem::cancel(),
-                                                   QStringLiteral("encrypt-to-self will fail warning"))
+                                                   u"encrypt-to-self will fail warning"_s)
                 == KMessageBox::Cancel) {
                 return Canceled;
             }
@@ -1068,7 +1068,7 @@ ResolverResult KeyResolver::resolveSigningKeysForEncryption()
                                                i18nc("@title:window", "Unusable Signing Keys"),
                                                KGuiItem(i18nc("@action:button", "Do Not OpenPGP-Sign")),
                                                KStandardGuiItem::cancel(),
-                                               QStringLiteral("signing will fail warning"))
+                                               u"signing will fail warning"_s)
             == KMessageBox::Cancel) {
             return Canceled;
         }
@@ -1086,7 +1086,7 @@ ResolverResult KeyResolver::resolveSigningKeysForEncryption()
                                                i18nc("@title:window", "Unusable Signing Keys"),
                                                KGuiItem(i18nc("@action:button", "Do Not S/MIME-Sign")),
                                                KStandardGuiItem::cancel(),
-                                               QStringLiteral("signing will fail warning"))
+                                               u"signing will fail warning"_s)
             == KMessageBox::Cancel) {
             return Canceled;
         }

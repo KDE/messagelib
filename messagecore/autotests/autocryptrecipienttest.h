@@ -5,6 +5,7 @@
 #pragma once
 
 #include <QObject>
+using namespace Qt::Literals::StringLiterals;
 
 class AutocryptRecipientTest : public QObject
 {

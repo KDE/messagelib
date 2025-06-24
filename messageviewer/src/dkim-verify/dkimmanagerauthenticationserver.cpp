@@ -5,6 +5,8 @@
 */
 
 #include "dkimmanagerauthenticationserver.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "dkimutil.h"
 #include <KConfigGroup>
 #include <KSharedConfig>

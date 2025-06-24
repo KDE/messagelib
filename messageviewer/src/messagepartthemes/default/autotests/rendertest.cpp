@@ -6,6 +6,8 @@
 */
 
 #include "rendertest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "setupenv.h"
 #include "testcsshelper.h"
 #include "util.h"
@@ -39,13 +41,13 @@ void RenderTest::testRenderSmart_data()
     QTest::addColumn<QString>("asyncFileName");
 
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
-    const auto l = dir.entryList(QStringList(QStringLiteral("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
+    const auto l = dir.entryList(QStringList(u"*.mbox"_s), QDir::Files | QDir::Readable | QDir::NoSymLinks);
     for (const QString &file : l) {
-        if (!QFile::exists(dir.path() + QLatin1Char('/') + file + QStringLiteral(".html"))) {
+        if (!QFile::exists(dir.path() + u'/' + file + u".html"_s)) {
             continue;
         }
-        QTest::newRow(file.toLatin1().constData()) << file << QString(dir.path() + QLatin1Char('/') + file + QStringLiteral(".html"))
-                                                   << QString(file + QStringLiteral(".out")) << QStringLiteral("smart") << false << QString();
+        QTest::newRow(file.toLatin1().constData()) << file << QString(dir.path() + u'/' + file + u".html"_s) << QString(file + u".out"_s) << u"smart"_s << false
+                                                   << QString();
     }
 }
 
@@ -64,14 +66,13 @@ void RenderTest::testRenderSmartAsync_data()
     QTest::addColumn<QString>("asyncFileName");
 
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
-    const auto l = dir.entryList(QStringList(QStringLiteral("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
+    const auto l = dir.entryList(QStringList(u"*.mbox"_s), QDir::Files | QDir::Readable | QDir::NoSymLinks);
     for (const QString &file : l) {
-        if (!QFile::exists(dir.path() + QLatin1Char('/') + file + QStringLiteral(".inProgress.html"))) {
+        if (!QFile::exists(dir.path() + u'/' + file + u".inProgress.html"_s)) {
             continue;
         }
-        QTest::newRow(file.toLatin1().constData()) << file << QString(dir.path() + QLatin1Char('/') + file + QStringLiteral(".html"))
-                                                   << QString(file + QStringLiteral(".out")) << QStringLiteral("smart") << false
-                                                   << QString(dir.path() + QLatin1Char('/') + file + QStringLiteral(".inProgress.html"));
+        QTest::newRow(file.toLatin1().constData()) << file << QString(dir.path() + u'/' + file + u".html"_s) << QString(file + u".out"_s) << u"smart"_s << false
+                                                   << QString(dir.path() + u'/' + file + u".inProgress.html"_s);
     }
 }
 
@@ -90,13 +91,13 @@ void RenderTest::testRenderSmartDetails_data()
     QTest::addColumn<QString>("asyncFileName");
 
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
-    const auto l = dir.entryList(QStringList(QStringLiteral("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
+    const auto l = dir.entryList(QStringList(u"*.mbox"_s), QDir::Files | QDir::Readable | QDir::NoSymLinks);
     for (const QString &file : l) {
         QString fname = dir.path() + QLatin1StringView("/details/") + file + QLatin1StringView(".html");
         if (!QFile::exists(fname)) {
             continue;
         }
-        QTest::newRow(file.toLatin1().constData()) << file << fname << QString(file + QStringLiteral(".out")) << QStringLiteral("smart") << true << QString();
+        QTest::newRow(file.toLatin1().constData()) << file << fname << QString(file + u".out"_s) << u"smart"_s << true << QString();
     }
 }
 
@@ -115,17 +116,16 @@ void RenderTest::testRenderInlined_data()
     QTest::addColumn<QString>("asyncFileName");
 
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
-    const auto l = dir.entryList(QStringList(QStringLiteral("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
+    const auto l = dir.entryList(QStringList(u"*.mbox"_s), QDir::Files | QDir::Readable | QDir::NoSymLinks);
     for (const QString &file : l) {
         QString fname = dir.path() + QLatin1StringView("/inlined/") + file + QLatin1StringView(".html");
         if (!QFile::exists(fname)) {
-            fname = dir.path() + QLatin1Char('/') + file + QLatin1StringView(".html");
+            fname = dir.path() + u'/' + file + QLatin1StringView(".html");
             if (!QFile::exists(fname)) {
                 continue;
             }
         }
-        QTest::newRow(file.toLatin1().constData()) << file << fname << QString(file + QStringLiteral(".out")) << QStringLiteral("inlined") << false
-                                                   << QString();
+        QTest::newRow(file.toLatin1().constData()) << file << fname << QString(file + u".out"_s) << u"inlined"_s << false << QString();
     }
 }
 
@@ -144,16 +144,16 @@ void RenderTest::testRenderIconic_data()
     QTest::addColumn<QString>("asyncFileName");
 
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
-    const auto l = dir.entryList(QStringList(QStringLiteral("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
+    const auto l = dir.entryList(QStringList(u"*.mbox"_s), QDir::Files | QDir::Readable | QDir::NoSymLinks);
     for (const QString &file : l) {
         QString fname = dir.path() + QLatin1StringView("/iconic/") + file + QLatin1StringView(".html");
         if (!QFile::exists(fname)) {
-            fname = dir.path() + QLatin1Char('/') + file + QLatin1StringView(".html");
+            fname = dir.path() + u'/' + file + QLatin1StringView(".html");
             if (!QFile::exists(fname)) {
                 continue;
             }
         }
-        QTest::newRow(file.toLatin1().constData()) << file << fname << QString(file + QStringLiteral(".out")) << QStringLiteral("iconic") << false << QString();
+        QTest::newRow(file.toLatin1().constData()) << file << fname << QString(file + u".out"_s) << u"iconic"_s << false << QString();
     }
 }
 
@@ -172,16 +172,16 @@ void RenderTest::testRenderHidden_data()
     QTest::addColumn<QString>("asyncFileName");
 
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
-    const auto l = dir.entryList(QStringList(QStringLiteral("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
+    const auto l = dir.entryList(QStringList(u"*.mbox"_s), QDir::Files | QDir::Readable | QDir::NoSymLinks);
     for (const QString &file : l) {
         QString fname = dir.path() + QLatin1StringView("/hidden/") + file + QLatin1StringView(".html");
         if (!QFile::exists(fname)) {
-            fname = dir.path() + QLatin1Char('/') + file + QLatin1StringView(".html");
+            fname = dir.path() + u'/' + file + QLatin1StringView(".html");
             if (!QFile::exists(fname)) {
                 continue;
             }
         }
-        QTest::newRow(file.toLatin1().constData()) << file << fname << QString(file + QStringLiteral(".out")) << QStringLiteral("hidden") << false << QString();
+        QTest::newRow(file.toLatin1().constData()) << file << fname << QString(file + u".out"_s) << u"hidden"_s << false << QString();
     }
 }
 
@@ -200,17 +200,16 @@ void RenderTest::testRenderHeaderOnly_data()
     QTest::addColumn<QString>("asyncFileName");
 
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
-    const auto l = dir.entryList(QStringList(QStringLiteral("*.mbox")), QDir::Files | QDir::Readable | QDir::NoSymLinks);
+    const auto l = dir.entryList(QStringList(u"*.mbox"_s), QDir::Files | QDir::Readable | QDir::NoSymLinks);
     for (const QString &file : l) {
-        QString fname = dir.path() + QLatin1StringView("/headeronly/") + file + QStringLiteral(".html");
+        QString fname = dir.path() + QLatin1StringView("/headeronly/") + file + u".html"_s;
         if (!QFile::exists(fname)) {
-            fname = dir.path() + QLatin1Char('/') + file + QLatin1StringView(".html");
+            fname = dir.path() + u'/' + file + QLatin1StringView(".html");
             if (!QFile::exists(fname)) {
                 continue;
             }
         }
-        QTest::newRow(file.toLatin1().constData()) << file << fname << QString(file + QStringLiteral(".out")) << QStringLiteral("headeronly") << false
-                                                   << QString();
+        QTest::newRow(file.toLatin1().constData()) << file << fname << QString(file + u".out"_s) << u"headeronly"_s << false << QString();
     }
 }
 
@@ -221,10 +220,10 @@ void RenderTest::testRenderHeaderOnly()
 
 static QString renderTreeHelper(const MimeTreeParser::MessagePart::Ptr &messagePart, QString indent)
 {
-    const QString line = QStringLiteral("%1 * %3\n").arg(indent, QString::fromUtf8(messagePart->metaObject()->className()));
+    const QString line = u"%1 * %3\n"_s.arg(indent, QString::fromUtf8(messagePart->metaObject()->className()));
     QString ret = line;
 
-    indent += QLatin1Char(' ');
+    indent += u' ';
     const auto subParts = messagePart->subParts();
     for (const auto &subPart : subParts) {
         ret += renderTreeHelper(subPart, indent);
@@ -238,8 +237,8 @@ void RenderTest::testRenderTree(const MimeTreeParser::MessagePart::Ptr &messageP
 
     QFETCH(QString, mailFileName);
     QFETCH(QString, outFileName);
-    const QString treeFileName = QLatin1StringView(MAIL_DATA_DIR) + QLatin1Char('/') + mailFileName + QStringLiteral(".tree");
-    const QString outTreeFileName = outFileName + QStringLiteral(".tree");
+    const QString treeFileName = QLatin1StringView(MAIL_DATA_DIR) + u'/' + mailFileName + u".tree"_s;
+    const QString outTreeFileName = outFileName + u".tree"_s;
 
     {
         QFile f(outTreeFileName);
@@ -248,10 +247,10 @@ void RenderTest::testRenderTree(const MimeTreeParser::MessagePart::Ptr &messageP
         f.close();
     }
     // compare to reference file
-    const QStringList args = QStringList() << QStringLiteral("-u") << treeFileName << outTreeFileName;
+    const QStringList args = QStringList() << u"-u"_s << treeFileName << outTreeFileName;
     QProcess proc;
     proc.setProcessChannelMode(QProcess::ForwardedChannels);
-    proc.start(QStringLiteral("diff"), args);
+    proc.start(u"diff"_s, args);
     QVERIFY(proc.waitForFinished());
 
     QCOMPARE(proc.exitCode(), 0);
@@ -266,7 +265,7 @@ void RenderTest::testRender()
     QFETCH(bool, showSignatureDetails);
     QFETCH(QString, asyncFileName);
 
-    // const QString htmlFileName = outFileName + QStringLiteral(".html");
+    // const QString htmlFileName = outFileName + u".html"_s;
     const bool bAsync = !asyncFileName.isEmpty();
 
     // load input mail
@@ -293,7 +292,7 @@ void RenderTest::testRender()
     CSSHelperBase::HtmlHeadSettings htmlHeadSettings;
     fileWriter.write(cssHelper.htmlHead(htmlHeadSettings));
     testSource.render(otp.parsedPart(), false);
-    fileWriter.write(QStringLiteral("</body></html>"));
+    fileWriter.write(u"</body></html>"_s);
     fileWriter.end();
 
     if (!bAsync) {
@@ -311,7 +310,7 @@ void RenderTest::testRender()
         CSSHelperBase::HtmlHeadSettings htmlHeadSettings;
         fileWriter.write(cssHelper.htmlHead(htmlHeadSettings));
         testSource.render(otp.parsedPart(), false);
-        fileWriter.write(QStringLiteral("</body></html>"));
+        fileWriter.write(u"</body></html>"_s);
         fileWriter.end();
 
         testRenderTree(otp.parsedPart());

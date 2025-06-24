@@ -4,12 +4,13 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "util.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <QFile>
 
 KMime::Message::Ptr readAndParseMail(const QString &mailFile)
 {
-    QFile file(QLatin1StringView(MAIL_DATA_DIR) + QLatin1Char('/') + mailFile);
+    QFile file(QLatin1StringView(MAIL_DATA_DIR) + u'/' + mailFile);
     file.open(QIODevice::ReadOnly);
     Q_ASSERT(file.isOpen());
     const QByteArray data = KMime::CRLFtoLF(file.readAll());

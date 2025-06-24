@@ -5,6 +5,8 @@
 */
 
 #include "plugineditorcheckbeforesendmanager.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "messagecomposer_debug.h"
 #include "plugineditorcheckbeforesend.h"
 #include <KPluginFactory>
@@ -30,7 +32,7 @@ namespace
 {
 QString pluginVersion()
 {
-    return QStringLiteral("1.0");
+    return u"1.0"_s;
 }
 }
 
@@ -59,12 +61,12 @@ private:
 
 QString PluginEditorCheckBeforeSendManagerPrivate::configGroupName() const
 {
-    return QStringLiteral("KMailPluginCheckBefore");
+    return u"KMailPluginCheckBefore"_s;
 }
 
 QString PluginEditorCheckBeforeSendManagerPrivate::configPrefixSettingKey() const
 {
-    return QStringLiteral("PluginCheckBefore");
+    return u"PluginCheckBefore"_s;
 }
 
 QList<PimCommon::PluginUtilData> PluginEditorCheckBeforeSendManagerPrivate::pluginsDataList() const
@@ -74,7 +76,7 @@ QList<PimCommon::PluginUtilData> PluginEditorCheckBeforeSendManagerPrivate::plug
 
 void PluginEditorCheckBeforeSendManagerPrivate::initializePlugins()
 {
-    const QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("pim6/kmail/plugincheckbeforesend"));
+    const QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(u"pim6/kmail/plugincheckbeforesend"_s);
 
     const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
 

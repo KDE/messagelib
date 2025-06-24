@@ -6,6 +6,8 @@
 */
 
 #include "scamcheckshorturl.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "messageviewer_debug.h"
 #include "scamexpandurljob.h"
 
@@ -33,7 +35,7 @@ void ScamCheckShortUrl::expandedUrl(const QUrl &url)
 
 bool ScamCheckShortUrl::isShortUrl(const QUrl &url)
 {
-    if (!url.path().isEmpty() && QString::compare(url.path(), QStringLiteral("/")) && sSupportedServices.contains(url.host())) {
+    if (!url.path().isEmpty() && QString::compare(url.path(), u"/"_s) && sSupportedServices.contains(url.host())) {
         return true;
     } else {
         return false;
@@ -42,7 +44,7 @@ bool ScamCheckShortUrl::isShortUrl(const QUrl &url)
 
 void ScamCheckShortUrl::loadLongUrlServices()
 {
-    QFile servicesFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("messageviewer/longurlServices.json")));
+    QFile servicesFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, u"messageviewer/longurlServices.json"_s));
     if (servicesFile.open(QIODevice::ReadOnly)) {
         QJsonParseError error;
         const QJsonDocument json = QJsonDocument::fromJson(servicesFile.readAll(), &error);

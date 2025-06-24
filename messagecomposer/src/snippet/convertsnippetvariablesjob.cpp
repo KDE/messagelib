@@ -12,6 +12,8 @@
 #include <QDebug>
 #include <TemplateParser/TemplatesUtil>
 using namespace MessageComposer;
+using namespace Qt::Literals::StringLiterals;
+
 ConvertSnippetVariablesJob::ConvertSnippetVariablesJob(QObject *parent)
     : QObject(parent)
 {
@@ -121,7 +123,7 @@ QString ConvertSnippetVariablesJob::convertVariables(MessageComposer::ComposerVi
     const int tmpl_len = text.length();
     for (int i = 0; i < tmpl_len; ++i) {
         const QChar c = text[i];
-        if (c == QLatin1Char('%')) {
+        if (c == u'%') {
             const QString cmd = text.mid(i + 1);
             if (composerView) {
                 if (cmd.startsWith(QLatin1StringView("CCADDR"))) {
@@ -218,15 +220,15 @@ QString ConvertSnippetVariablesJob::convertVariables(MessageComposer::ComposerVi
                     result.append(str);
                 } else if (cmd.startsWith(QLatin1StringView("ATTACHMENTNAMES"))) {
                     i += strlen("ATTACHMENTNAMES");
-                    const QString str = composerView->attachments().names().join(QLatin1Char(','));
+                    const QString str = composerView->attachments().names().join(u',');
                     result.append(str);
                 } else if (cmd.startsWith(QLatin1StringView("ATTACHMENTFILENAMES"))) {
                     i += strlen("ATTACHMENTFILENAMES");
-                    const QString str = composerView->attachments().fileNames().join(QLatin1Char(','));
+                    const QString str = composerView->attachments().fileNames().join(u',');
                     result.append(str);
                 } else if (cmd.startsWith(QLatin1StringView("ATTACHMENTNAMESANDSIZES"))) {
                     i += strlen("ATTACHMENTNAMESANDSIZES");
-                    const QString str = composerView->attachments().namesAndSize().join(QLatin1Char(','));
+                    const QString str = composerView->attachments().namesAndSize().join(u',');
                     result.append(str);
                 } else {
                     result.append(convertVariables(cmd, i, c));
@@ -243,7 +245,7 @@ QString ConvertSnippetVariablesJob::convertVariables(MessageComposer::ComposerVi
 
 QString ConvertSnippetVariablesJob::getNameFromEmail(const QString &address)
 {
-    const QStringList lst = address.split(QStringLiteral(", "));
+    const QStringList lst = address.split(u", "_s);
     QStringList resultName;
     for (const QString &str : lst) {
         KMime::Types::Mailbox mailBoxAddress;
@@ -254,7 +256,7 @@ QString ConvertSnippetVariablesJob::getNameFromEmail(const QString &address)
         }
     }
 
-    const QString str = resultName.isEmpty() ? QString() : resultName.join(QStringLiteral(", "));
+    const QString str = resultName.isEmpty() ? QString() : resultName.join(u", "_s);
     return str;
 }
 
@@ -271,7 +273,7 @@ QString ConvertSnippetVariablesJob::getFirstNameFromEmail(const QString &address
         }
     }
 
-    const QString str = resultName.isEmpty() ? QString() : resultName.join(QStringLiteral(", "));
+    const QString str = resultName.isEmpty() ? QString() : resultName.join(u", "_s);
     return str;
 }
 
@@ -289,7 +291,7 @@ QString ConvertSnippetVariablesJob::getLastNameFromEmail(const QString &address)
         }
     }
 
-    const QString str = resultName.isEmpty() ? QString() : resultName.join(QStringLiteral(", "));
+    const QString str = resultName.isEmpty() ? QString() : resultName.join(u", "_s);
     return str;
 }
 

@@ -5,6 +5,8 @@
 */
 
 #include "plugineditorinitmanager.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "messagecomposer_debug.h"
 #include "plugineditorinit.h"
 #include <KPluginFactory>
@@ -30,7 +32,7 @@ namespace
 {
 QString pluginEditorInitVersion()
 {
-    return QStringLiteral("1.0");
+    return u"1.0"_s;
 }
 }
 
@@ -60,12 +62,12 @@ private:
 
 QString PluginEditorInitManagerPrivate::configGroupName() const
 {
-    return QStringLiteral("KMailPluginEditorInit");
+    return u"KMailPluginEditorInit"_s;
 }
 
 QString PluginEditorInitManagerPrivate::configPrefixSettingKey() const
 {
-    return QStringLiteral("PluginEditorInit");
+    return u"PluginEditorInit"_s;
 }
 
 QList<PimCommon::PluginUtilData> PluginEditorInitManagerPrivate::pluginsDataList() const
@@ -75,7 +77,7 @@ QList<PimCommon::PluginUtilData> PluginEditorInitManagerPrivate::pluginsDataList
 
 void PluginEditorInitManagerPrivate::initializePlugins()
 {
-    const QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("pim6/kmail/plugineditorinit"));
+    const QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(u"pim6/kmail/plugineditorinit"_s);
 
     const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
 

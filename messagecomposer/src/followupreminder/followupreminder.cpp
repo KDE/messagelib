@@ -5,19 +5,20 @@
 */
 
 #include "followupreminder.h"
+
 #include "followupreminderinterface.h"
 
 #include <Akonadi/ServerManager>
 
 using namespace MessageComposer;
+using namespace Qt::Literals::StringLiterals;
 
 bool FollowUpReminder::isAvailableAndEnabled()
 {
     using Akonadi::ServerManager;
-    org::freedesktop::Akonadi::FollowUpReminderAgent iface{
-        ServerManager::agentServiceName(ServerManager::Agent, QStringLiteral("akonadi_followupreminder_agent")),
-        QStringLiteral("/FollowUpReminder"),
-        QDBusConnection::sessionBus()};
+    org::freedesktop::Akonadi::FollowUpReminderAgent iface{ServerManager::agentServiceName(ServerManager::Agent, u"akonadi_followupreminder_agent"_s),
+                                                           u"/FollowUpReminder"_s,
+                                                           QDBusConnection::sessionBus()};
 
     return iface.isValid() && iface.enabledAgent();
 }

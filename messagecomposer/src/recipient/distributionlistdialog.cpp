@@ -177,7 +177,7 @@ void DistributionListDialog::slotDelayedSetRecipients(KJob *job)
     const QString email = searchJob->property("email").toString();
     QString name = searchJob->property("name").toString();
     if (name.isEmpty()) {
-        const int index = email.indexOf(QLatin1Char('@'));
+        const int index = email.indexOf(u'@');
         if (index != -1) {
             name = email.left(index);
         } else {

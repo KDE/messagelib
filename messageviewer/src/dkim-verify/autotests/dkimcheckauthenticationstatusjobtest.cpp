@@ -5,6 +5,8 @@
 */
 
 #include "dkimcheckauthenticationstatusjobtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "dkim-verify/dkimauthenticationstatusinfo.h"
 #include "dkim-verify/dkimcheckauthenticationstatusjob.h"
 #include <KMime/Message>
@@ -41,9 +43,9 @@ void DKIMCheckAuthenticationStatusJobTest::shouldTestMail_data()
     QTest::addColumn<bool>("relaxedParsing");
     const QString curPath = QStringLiteral(DKIM_DATA_DIR "/");
 
-    QTest::addRow("dkim2") << QStringLiteral("dkim2.mbox") << curPath << false;
-    QTest::addRow("notsigned") << QStringLiteral("notsigned.mbox") << curPath << false;
-    QTest::addRow("broken1") << QStringLiteral("broken1.mbox") << curPath << false;
+    QTest::addRow("dkim2") << u"dkim2.mbox"_s << curPath << false;
+    QTest::addRow("notsigned") << u"notsigned.mbox"_s << curPath << false;
+    QTest::addRow("broken1") << u"broken1.mbox"_s << curPath << false;
 }
 
 void DKIMCheckAuthenticationStatusJobTest::shouldTestMail()

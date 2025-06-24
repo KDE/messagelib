@@ -5,6 +5,8 @@
 */
 
 #include "defaultgrantleeheaderstyleinterface.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "globalsettings_base.h"
 #include "messageviewer/headerstyle.h"
 #include "messageviewer/headerstyleplugin.h"
@@ -24,15 +26,14 @@ DefaultGrantleeHeaderStyleInterface::~DefaultGrantleeHeaderStyleInterface() = de
 void DefaultGrantleeHeaderStyleInterface::createAction(KActionMenu *menu, QActionGroup *actionGroup, KActionCollection *ac)
 {
     const QStringList defaultThemePath =
-        QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, QStringLiteral("messageviewer/defaultthemes/"), QStandardPaths::LocateDirectory);
+        QStandardPaths::locateAll(QStandardPaths::GenericDataLocation, u"messageviewer/defaultthemes/"_s, QStandardPaths::LocateDirectory);
     if (!defaultThemePath.isEmpty()) {
         const QString themeName = DefaultGrantleeHeaderStylePluginSettings::self()->themeName();
-        mDefaultTheme =
-            GrantleeTheme::ThemeManager::loadTheme(defaultThemePath.at(0) + QLatin1Char('/') + themeName, themeName, QStringLiteral("kmail_default.desktop"));
+        mDefaultTheme = GrantleeTheme::ThemeManager::loadTheme(defaultThemePath.at(0) + u'/' + themeName, themeName, u"kmail_default.desktop"_s);
     }
     mHeaderStylePlugin->headerStyle()->setTheme(mDefaultTheme);
     auto act = new KToggleAction(mDefaultTheme.name(), this);
-    ac->addAction(QStringLiteral("default_grantlee_theme"), act);
+    ac->addAction(u"default_grantlee_theme"_s, act);
     connect(act, &KToggleAction::triggered, this, &DefaultGrantleeHeaderStyleInterface::slotDefaultGrantleeHeaders);
     mAction.append(act);
     addActionToMenu(menu, actionGroup);

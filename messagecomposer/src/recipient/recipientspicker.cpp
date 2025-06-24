@@ -7,6 +7,8 @@
 */
 
 #include "recipientspicker.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "settings/messagecomposersettings.h"
 
 #include <Akonadi/EmailAddressSelectionWidget>
@@ -62,8 +64,8 @@ RecipientsPicker::RecipientsPicker(QWidget *parent)
     connect(searchLDAPButton, &QPushButton::clicked, this, &RecipientsPicker::slotSearchLDAP);
     mainLayout->addWidget(searchLDAPButton);
 
-    KConfig config(QStringLiteral("kabldaprc"));
-    KConfigGroup group = config.group(QStringLiteral("LDAP"));
+    KConfig config(u"kabldaprc"_s);
+    KConfigGroup group = config.group(u"LDAP"_s);
     int numHosts = group.readEntry("NumSelectedHosts", 0);
     if (!numHosts) {
         searchLDAPButton->setVisible(false);

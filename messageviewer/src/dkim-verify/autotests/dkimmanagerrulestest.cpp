@@ -5,6 +5,8 @@
 */
 
 #include "dkimmanagerrulestest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "dkim-verify/dkimmanagerrules.h"
 #include <QStandardPaths>
 #include <QTest>
@@ -27,8 +29,8 @@ void DKIMManagerRulesTest::shouldAddRules()
     MessageViewer::DKIMManagerRules r;
     QVERIFY(r.isEmpty());
     MessageViewer::DKIMRule rule;
-    rule.setDomain(QStringLiteral("bla"));
-    rule.setFrom(QStringLiteral("foo"));
+    rule.setDomain(u"bla"_s);
+    rule.setFrom(u"foo"_s);
     rule.setRuleType(MessageViewer::DKIMRule::RuleType::MustBeSigned);
     r.addRule(rule);
     QVERIFY(!r.isEmpty());
@@ -40,8 +42,8 @@ void DKIMManagerRulesTest::shouldClearRules()
     MessageViewer::DKIMManagerRules r;
     QVERIFY(r.isEmpty());
     MessageViewer::DKIMRule rule;
-    rule.setDomain(QStringLiteral("bla"));
-    rule.setFrom(QStringLiteral("foo"));
+    rule.setDomain(u"bla"_s);
+    rule.setFrom(u"foo"_s);
     rule.setRuleType(MessageViewer::DKIMRule::RuleType::MustBeSigned);
     r.addRule(rule);
     QVERIFY(!r.isEmpty());

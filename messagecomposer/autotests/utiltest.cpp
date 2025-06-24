@@ -6,6 +6,7 @@
 */
 
 #include "utiltest.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <QStandardPaths>
 #include <QTest>
@@ -29,22 +30,22 @@ void UtilTest::shouldTestHasMissingAttachment_data()
     QTest::addColumn<QString>("body");
     QTest::addColumn<bool>("hasMissingAttachment");
 
-    QStringList lstDefaultAttachement{QStringLiteral("attachment"), QStringLiteral("att2")};
-    QTest::newRow("emptybody") << lstDefaultAttachement << QStringLiteral("foo") << QString() << false;
+    QStringList lstDefaultAttachement{u"attachment"_s, QStringLiteral("att2")};
+    QTest::newRow("emptybody") << lstDefaultAttachement << u"foo"_s << QString() << false;
     QTest::newRow("emptybodyandsubject") << lstDefaultAttachement << QString() << QString() << false;
-    QTest::newRow("subjectwithattachmentkeyword") << lstDefaultAttachement << QStringLiteral("attachment foo") << QString() << true;
-    QTest::newRow("subjectwithattachmentkeywordonly") << lstDefaultAttachement << QStringLiteral("attachment") << QString() << true;
-    QTest::newRow("subjectwithattachmentkeywordbutreply") << lstDefaultAttachement << QStringLiteral("Re: attachment") << QString() << false;
+    QTest::newRow("subjectwithattachmentkeyword") << lstDefaultAttachement << u"attachment foo"_s << QString() << true;
+    QTest::newRow("subjectwithattachmentkeywordonly") << lstDefaultAttachement << u"attachment"_s << QString() << true;
+    QTest::newRow("subjectwithattachmentkeywordbutreply") << lstDefaultAttachement << u"Re: attachment"_s << QString() << false;
     QTest::newRow("subjectwithattachmentkeywordbutreplywithoutattachement")
-        << lstDefaultAttachement << QStringLiteral("Re: attachment") << QStringLiteral("foo bla\n bli") << false;
+        << lstDefaultAttachement << u"Re: attachment"_s << QStringLiteral("foo bla\n bli") << false;
     QTest::newRow("subjectwithattachmentkeywordbutreplywithattachement")
-        << lstDefaultAttachement << QStringLiteral("Re: attachment") << QStringLiteral("foo bla\n attachment:") << true;
+        << lstDefaultAttachement << u"Re: attachment"_s << QStringLiteral("foo bla\n attachment:") << true;
     QTest::newRow("subjectwithattachmentkeywordbutreplywithattachement2")
-        << lstDefaultAttachement << QStringLiteral("Re: attachment") << QStringLiteral("foo bla att2\n bli:") << true;
-    QTest::newRow("excludequotedstr") << lstDefaultAttachement << QStringLiteral("Re: attachment") << QStringLiteral("> foo bla att2\n bli:") << false;
-    QTest::newRow("excludequotedstr2") << lstDefaultAttachement << QStringLiteral("Re: attachment") << QStringLiteral("> foo bla att2\n att2:") << true;
-    QTest::newRow("excludequotedstr3") << lstDefaultAttachement << QStringLiteral("Re: attachment") << QStringLiteral("| foo bla att2\n att2:") << true;
-    QTest::newRow("subjectwithattachmentkeywordbutforward") << lstDefaultAttachement << QStringLiteral("Fwd: attachment") << QString() << false;
+        << lstDefaultAttachement << u"Re: attachment"_s << QStringLiteral("foo bla att2\n bli:") << true;
+    QTest::newRow("excludequotedstr") << lstDefaultAttachement << u"Re: attachment"_s << QStringLiteral("> foo bla att2\n bli:") << false;
+    QTest::newRow("excludequotedstr2") << lstDefaultAttachement << u"Re: attachment"_s << QStringLiteral("> foo bla att2\n att2:") << true;
+    QTest::newRow("excludequotedstr3") << lstDefaultAttachement << u"Re: attachment"_s << QStringLiteral("| foo bla att2\n att2:") << true;
+    QTest::newRow("subjectwithattachmentkeywordbutforward") << lstDefaultAttachement << u"Fwd: attachment"_s << QString() << false;
 }
 
 void UtilTest::shouldTestHasMissingAttachment()

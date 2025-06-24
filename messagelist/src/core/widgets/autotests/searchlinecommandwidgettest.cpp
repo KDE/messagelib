@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "searchlinecommandwidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "core/widgets/searchlinecommandbuttonswidget.h"
 #include "core/widgets/searchlinecommandwidget.h"
 #include <QLabel>
@@ -20,13 +22,13 @@ void SearchLineCommandWidgetTest::shouldHaveDefaultValues()
 {
     MessageList::Core::SearchLineCommandWidget w;
 
-    auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainLayout"));
+    auto mainLayout = w.findChild<QVBoxLayout *>(u"mainLayout"_s);
     QCOMPARE(mainLayout->contentsMargins(), QMargins{});
 
-    auto mSearchLineCommandButtonsWidget = w.findChild<MessageList::Core::SearchLineCommandButtonsWidget *>(QStringLiteral("mSearchLineCommandButtonsWidget"));
+    auto mSearchLineCommandButtonsWidget = w.findChild<MessageList::Core::SearchLineCommandButtonsWidget *>(u"mSearchLineCommandButtonsWidget"_s);
     QVERIFY(mSearchLineCommandButtonsWidget);
 
-    auto mLabel = w.findChild<QLabel *>(QStringLiteral("mLabel"));
+    auto mLabel = w.findChild<QLabel *>(u"mLabel"_s);
     QVERIFY(mLabel);
     QVERIFY(mLabel->text().isEmpty());
     QVERIFY(mLabel->wordWrap());

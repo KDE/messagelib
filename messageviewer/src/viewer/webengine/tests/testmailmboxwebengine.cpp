@@ -5,6 +5,7 @@
 */
 
 #include "testmailmboxwebengine.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <KActionCollection>
 #include <KMime/Content>
@@ -22,15 +23,15 @@ TestMailMBoxWebEngine::TestMailMBoxWebEngine(QWidget *parent)
     auto vbox = new QVBoxLayout(this);
     auto viewer = new MessageViewer::Viewer(nullptr, nullptr, new KActionCollection(this));
     vbox->addWidget(viewer);
-    viewer->setMessage(readAndParseMail(QStringLiteral("html.mbox")));
-    viewer->setPluginName(QStringLiteral("longheaderstyleplugin"));
+    viewer->setMessage(readAndParseMail(u"html.mbox"_s));
+    viewer->setPluginName(u"longheaderstyleplugin"_s);
 }
 
 TestMailMBoxWebEngine::~TestMailMBoxWebEngine() = default;
 
 KMime::Message::Ptr TestMailMBoxWebEngine::readAndParseMail(const QString &mailFile)
 {
-    QFile file(QLatin1StringView(MAIL_DATA_DIR) + QLatin1Char('/') + mailFile);
+    QFile file(QLatin1StringView(MAIL_DATA_DIR) + u'/' + mailFile);
     file.open(QIODevice::ReadOnly);
     QByteArray ba = file.readAll();
     qDebug() << ba;

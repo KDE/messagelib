@@ -5,6 +5,8 @@
 */
 
 #include "openurlwithjob.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "messageviewer_debug.h"
 #include <KIO/CommandLauncherJob>
 #include <KMacroExpander>
@@ -31,7 +33,7 @@ void OpenUrlWithJob::start()
         return;
     }
     QHash<QChar, QString> map;
-    map.insert(QLatin1Char('u'), mUrl.toString());
+    map.insert(u'u', mUrl.toString());
 
     const QString commandLine = mInfo.commandLine();
     const QString cmd = KMacroExpander::expandMacrosShellQuote(commandLine, map);

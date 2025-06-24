@@ -5,6 +5,8 @@
 */
 
 #include "dkimmanagerkeywidgettest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "dkim-verify/dkimmanagerkeytreeview.h"
 #include "dkim-verify/dkimmanagerkeywidget.h"
 #include <QLineEdit>
@@ -20,16 +22,16 @@ void DKIMManagerKeyWidgetTest::shouldHaveDefaultValue()
 {
     MessageViewer::DKIMManagerKeyWidget w;
 
-    auto mainLayout = w.findChild<QVBoxLayout *>(QStringLiteral("mainlayout"));
+    auto mainLayout = w.findChild<QVBoxLayout *>(u"mainlayout"_s);
     QVERIFY(mainLayout);
     QCOMPARE(mainLayout->contentsMargins(), QMargins(0, 0, 0, 0));
 
-    auto searchLineEdit = w.findChild<QLineEdit *>(QStringLiteral("searchlineedit"));
+    auto searchLineEdit = w.findChild<QLineEdit *>(u"searchlineedit"_s);
     QVERIFY(searchLineEdit);
     QVERIFY(searchLineEdit->isClearButtonEnabled());
     mainLayout->addWidget(searchLineEdit);
 
-    auto mDKIMManagerKeyTreeView = w.findChild<MessageViewer::DKIMManagerKeyTreeView *>(QStringLiteral("mDKIMManagerKeyTreeView"));
+    auto mDKIMManagerKeyTreeView = w.findChild<MessageViewer::DKIMManagerKeyTreeView *>(u"mDKIMManagerKeyTreeView"_s);
     QVERIFY(mDKIMManagerKeyTreeView);
 }
 

@@ -5,6 +5,8 @@
 */
 
 #include "configurefilterswidget.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "core/filtersavedmanager.h"
 #include "filternamedialog.h"
 #include <KLocalizedString>
@@ -72,11 +74,11 @@ void ConfigureFiltersWidget::slotCustomContextMenuRequested(const QPoint &pos)
     auto item = static_cast<FilterListWidgetItem *>(mListFiltersWidget->itemAt(pos));
     if (item) {
         QMenu menu(this);
-        menu.addAction(QIcon::fromTheme(QStringLiteral("edit-rename")), i18n("Configure..."), this, [this, item]() {
+        menu.addAction(QIcon::fromTheme(u"edit-rename"_s), i18n("Configure..."), this, [this, item]() {
             slotConfigureFilter(item);
         });
         menu.addSeparator();
-        menu.addAction(QIcon::fromTheme(QStringLiteral("edit-delete")), i18n("Remove"), this, [this, item]() {
+        menu.addAction(QIcon::fromTheme(u"edit-delete"_s), i18n("Remove"), this, [this, item]() {
             const QString identifier = item->identifier();
             const int answer = KMessageBox::questionTwoActions(this,
                                                                i18n("Do you want to delete this filter?"),

@@ -5,6 +5,7 @@
 */
 
 #include "sendlatertimedatewidget_p.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <KDateComboBox>
 #include <KLocalizedString>

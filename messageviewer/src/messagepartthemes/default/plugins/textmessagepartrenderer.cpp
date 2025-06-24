@@ -5,6 +5,7 @@
 */
 
 #include "textmessagepartrenderer.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include "../messagepartrenderermanager.h"
 
@@ -36,13 +37,13 @@ bool TextMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr &msgPa
     }
     KTextTemplate::Template t;
     KTextTemplate::Context c = MessagePartRendererManager::self()->createContext();
-    c.insert(QStringLiteral("block"), msgPart.data());
-    c.insert(QStringLiteral("showOnlyOneMimePart"), context->showOnlyOneMimePart());
-    c.insert(QStringLiteral("content"), QVariant::fromValue<KTextTemplateCallback>([mp, htmlWriter, context](KTextTemplate::OutputStream *) {
+    c.insert(u"block"_s, msgPart.data());
+    c.insert(u"showOnlyOneMimePart"_s, context->showOnlyOneMimePart());
+    c.insert(u"content"_s, QVariant::fromValue<KTextTemplateCallback>([mp, htmlWriter, context](KTextTemplate::OutputStream *) {
                  context->renderSubParts(mp, htmlWriter);
              }));
 
-    t = MessagePartRendererManager::self()->loadByName(QStringLiteral("textmessagepart.html"));
+    t = MessagePartRendererManager::self()->loadByName(u"textmessagepart.html"_s);
     KTextTemplate::OutputStream s(htmlWriter->stream());
     t->render(&s, &c);
     return true;

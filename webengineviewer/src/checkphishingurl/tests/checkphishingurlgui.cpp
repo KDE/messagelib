@@ -5,6 +5,7 @@
 */
 
 #include "checkphishingurlgui.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <QApplication>
 #include <QLabel>
@@ -24,11 +25,11 @@ CheckPhishingUrlGui::CheckPhishingUrlGui(QWidget *parent)
 
     auto checkUrlLayout = new QHBoxLayout;
     layout->addLayout(checkUrlLayout);
-    auto lab = new QLabel(QStringLiteral("Url to Check:"), this);
+    auto lab = new QLabel(u"Url to Check:"_s, this);
     checkUrlLayout->addWidget(lab);
     mCheckUrlLineEdit = new QLineEdit(this);
     checkUrlLayout->addWidget(mCheckUrlLineEdit);
-    auto button = new QPushButton(QStringLiteral("Check"), this);
+    auto button = new QPushButton(u"Check"_s, this);
     checkUrlLayout->addWidget(button);
     connect(button, &QPushButton::clicked, this, &CheckPhishingUrlGui::slotCheckUrl);
     connect(mCheckUrlLineEdit, &QLineEdit::returnPressed, this, &CheckPhishingUrlGui::slotCheckUrl);
@@ -69,22 +70,22 @@ void CheckPhishingUrlGui::slotGetResult(WebEngineViewer::CheckPhishingUrlUtil::U
     QString resultStr;
     switch (result) {
     case WebEngineViewer::CheckPhishingUrlUtil::Ok:
-        resultStr = QStringLiteral("Url ok");
+        resultStr = u"Url ok"_s;
         break;
     case WebEngineViewer::CheckPhishingUrlUtil::MalWare:
-        resultStr = QStringLiteral("Url MalWare");
+        resultStr = u"Url MalWare"_s;
         break;
     case WebEngineViewer::CheckPhishingUrlUtil::Unknown:
-        resultStr = QStringLiteral("Url Unknown state");
+        resultStr = u"Url Unknown state"_s;
         break;
     case WebEngineViewer::CheckPhishingUrlUtil::BrokenNetwork:
-        resultStr = QStringLiteral("Broken Network");
+        resultStr = u"Broken Network"_s;
         break;
     case WebEngineViewer::CheckPhishingUrlUtil::InvalidUrl:
-        resultStr = QStringLiteral("Invalid Url");
+        resultStr = u"Invalid Url"_s;
         break;
     }
-    const QString str = QStringLiteral("\nurl: %1, verifyCacheAfterThisTime: %2").arg(url.toDisplayString()).arg(verifyCacheAfterThisTime);
+    const QString str = u"\nurl: %1, verifyCacheAfterThisTime: %2"_s.arg(url.toDisplayString()).arg(verifyCacheAfterThisTime);
     mResult->setPlainText(resultStr + str);
 }
 

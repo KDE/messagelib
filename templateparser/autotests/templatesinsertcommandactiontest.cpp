@@ -5,6 +5,8 @@
 */
 
 #include "templatesinsertcommandactiontest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "templatescommandmenu.h"
 #include "templatesinsertcommandaction.h"
 #include <QMenu>
@@ -21,7 +23,7 @@ void TemplatesInsertCommandActionTest::shouldHaveDefaultValue()
     TemplateParser::TemplatesInsertCommandAction act;
     QVERIFY(act.menu());
     QVERIFY(!act.menu()->isEmpty());
-    auto menu = act.findChild<TemplateParser::TemplatesCommandMenu *>(QStringLiteral("templatescommandmenu"));
+    auto menu = act.findChild<TemplateParser::TemplatesCommandMenu *>(u"templatescommandmenu"_s);
     QVERIFY(menu);
 }
 

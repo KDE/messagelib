@@ -5,6 +5,7 @@
 */
 
 #include "testwebenginescrolladdattachment.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <KActionCollection>
 #include <QApplication>
@@ -40,15 +41,15 @@ TestWebEngineScrollAddAttachment::TestWebEngineScrollAddAttachment(QWidget *pare
     mTestWebEngine = new MessageViewer::MailWebEngineView(new KActionCollection(this), this);
     mTestWebEngine->settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
     vboxLayout->addWidget(mTestWebEngine);
-    mTestWebEngine->load(QUrl(QStringLiteral("http://www.kde.org")));
-    auto scrollToButton = new QPushButton(QStringLiteral("Scroll to Attachment"), this);
+    mTestWebEngine->load(QUrl(u"http://www.kde.org"_s));
+    auto scrollToButton = new QPushButton(u"Scroll to Attachment"_s, this);
     vboxLayout->addWidget(scrollToButton);
     connect(scrollToButton, &QPushButton::clicked, this, &TestWebEngineScrollAddAttachment::slotScrollToAttachment);
 }
 
 void TestWebEngineScrollAddAttachment::slotScrollToAttachment()
 {
-    mTestWebEngine->scrollToAnchor(QStringLiteral("module"));
+    mTestWebEngine->scrollToAnchor(u"module"_s);
 }
 
 int main(int argc, char *argv[])

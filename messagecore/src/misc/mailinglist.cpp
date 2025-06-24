@@ -4,6 +4,7 @@
  */
 
 #include "mailinglist.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include "messagecore_debug.h"
 #include <KConfig>
@@ -29,7 +30,7 @@ static QString check_sender(const KMime::Message::Ptr &message, QByteArray &head
     if (header.left(6) == QLatin1StringView("owner-")) {
         headerName = "Sender";
         headerValue = header;
-        header = header.mid(6, header.indexOf(QLatin1Char('@')) - 6);
+        header = header.mid(6, header.indexOf(u'@') - 6);
     } else {
         const int index = header.indexOf(QLatin1StringView("-owner@ "));
         if (index == -1) {
@@ -51,13 +52,13 @@ static QString check_x_beenthere(const KMime::Message::Ptr &message, QByteArray 
     if (auto hrd = message->headerByType("X-BeenThere")) {
         header = hrd->asUnicodeString();
     }
-    if (header.isNull() || header.indexOf(QLatin1Char('@')) == -1) {
+    if (header.isNull() || header.indexOf(u'@') == -1) {
         return {};
     }
 
     headerName = "X-BeenThere";
     headerValue = header;
-    header.truncate(header.indexOf(QLatin1Char('@')));
+    header.truncate(header.indexOf(u'@'));
 
     return header;
 }
@@ -69,14 +70,14 @@ static QString check_delivered_to(const KMime::Message::Ptr &message, QByteArray
     if (auto hrd = message->headerByType("Delivered-To")) {
         header = hrd->asUnicodeString();
     }
-    if (header.isNull() || header.left(13) != QLatin1StringView("mailing list") || header.indexOf(QLatin1Char('@')) == -1) {
+    if (header.isNull() || header.left(13) != QLatin1StringView("mailing list") || header.indexOf(u'@') == -1) {
         return {};
     }
 
     headerName = "Delivered-To";
     headerValue = header;
 
-    return header.mid(13, header.indexOf(QLatin1Char('@')) - 13);
+    return header.mid(13, header.indexOf(u'@') - 13);
 }
 
 /* X-Mailing-List: <?([^@]+) */
@@ -90,16 +91,16 @@ static QString check_x_mailing_list(const KMime::Message::Ptr &message, QByteArr
         return {};
     }
 
-    if (header.indexOf(QLatin1Char('@')) < 1) {
+    if (header.indexOf(u'@') < 1) {
         return {};
     }
 
     headerName = "X-Mailing-List";
     headerValue = header;
-    if (header[0] == QLatin1Char('<')) {
-        header = header.mid(1, header.indexOf(QLatin1Char('@')) - 1);
+    if (header[0] == u'<') {
+        header = header.mid(1, header.indexOf(u'@') - 1);
     } else {
-        header.truncate(header.indexOf(QLatin1Char('@')));
+        header.truncate(header.indexOf(u'@'));
     }
 
     return header;
@@ -116,12 +117,12 @@ static QString check_list_id(const KMime::Message::Ptr &message, QByteArray &hea
         return {};
     }
 
-    const int leftAnglePos = header.indexOf(QLatin1Char('<'));
+    const int leftAnglePos = header.indexOf(u'<');
     if (leftAnglePos < 0) {
         return {};
     }
 
-    const int firstDotPos = header.indexOf(QLatin1Char('.'), leftAnglePos);
+    const int firstDotPos = header.indexOf(u'.', leftAnglePos);
     if (firstDotPos < 0) {
         return {};
     }
@@ -152,7 +153,7 @@ static QString check_list_post(const KMime::Message::Ptr &message, QByteArray &h
     headerName = "List-Post";
     headerValue = header;
     header = header.mid(leftAnglePos + 8, header.length());
-    header.truncate(header.indexOf(QLatin1Char('@')));
+    header.truncate(header.indexOf(u'@'));
 
     return header;
 }
@@ -168,13 +169,13 @@ static QString check_mailing_list(const KMime::Message::Ptr &message, QByteArray
         return {};
     }
 
-    if (header.left(5) != QLatin1StringView("list ") || header.indexOf(QLatin1Char('@')) < 5) {
+    if (header.left(5) != QLatin1StringView("list ") || header.indexOf(u'@') < 5) {
         return {};
     }
 
     headerName = "Mailing-List";
     headerValue = header;
-    header = header.mid(5, header.indexOf(QLatin1Char('@')) - 5);
+    header = header.mid(5, header.indexOf(u'@') - 5);
 
     return header;
 }
@@ -190,7 +191,7 @@ static QString check_x_loop(const KMime::Message::Ptr &message, QByteArray &head
         return {};
     }
 
-    const int indexOfHeader(header.indexOf(QLatin1Char('@')));
+    const int indexOfHeader(header.indexOf(u'@'));
     if (indexOfHeader < 2) {
         return {};
     }
@@ -215,7 +216,7 @@ static QString check_x_ml_name(const KMime::Message::Ptr &message, QByteArray &h
 
     headerName = "X-ML-Name";
     headerValue = header;
-    header.truncate(header.indexOf(QLatin1Char('@')));
+    header.truncate(header.indexOf(u'@'));
 
     return header;
 }
@@ -238,9 +239,9 @@ static QStringList headerToAddress(const QString &header)
     }
 
     int start = 0;
-    while ((start = header.indexOf(QLatin1Char('<'), start)) != -1) {
+    while ((start = header.indexOf(u'<', start)) != -1) {
         int end = 0;
-        if ((end = header.indexOf(QLatin1Char('>'), ++start)) == -1) {
+        if ((end = header.indexOf(u'>', ++start)) == -1) {
             qCWarning(MESSAGECORE_LOG) << "Serious mailing list header parsing error!";
             return addresses;
         }

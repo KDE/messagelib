@@ -5,6 +5,8 @@
  */
 
 #include "contactdisplaymessagememento.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "messageviewer_debug.h"
 #include <Akonadi/ContactSearchJob>
 #include <Gravatar/GravatarResolvUrlJob>
@@ -146,7 +148,7 @@ void ContactDisplayMessageMemento::processAddress(const KContacts::Addressee &ad
     const QStringList customs = addressee.customs();
     for (const QString &custom : customs) {
         if (custom.contains(QLatin1StringView("MailPreferedFormatting"))) {
-            const QString value = addressee.custom(QStringLiteral("KADDRESSBOOK"), QStringLiteral("MailPreferedFormatting"));
+            const QString value = addressee.custom(u"KADDRESSBOOK"_s, u"MailPreferedFormatting"_s);
             if (value == QLatin1StringView("TEXT")) {
                 forceDisplayTo = Viewer::Text;
             } else if (value == QLatin1StringView("HTML")) {
@@ -155,7 +157,7 @@ void ContactDisplayMessageMemento::processAddress(const KContacts::Addressee &ad
                 forceDisplayTo = Viewer::UseGlobalSetting;
             }
         } else if (custom.contains(QLatin1StringView("MailAllowToRemoteContent"))) {
-            const QString value = addressee.custom(QStringLiteral("KADDRESSBOOK"), QStringLiteral("MailAllowToRemoteContent"));
+            const QString value = addressee.custom(u"KADDRESSBOOK"_s, u"MailAllowToRemoteContent"_s);
             mailAllowToRemoteContent = (value == QLatin1StringView("TRUE"));
         }
     }

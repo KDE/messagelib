@@ -5,6 +5,7 @@
 */
 
 #include "ktexttemplateextension.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <KTextTemplate/Exception>
 #include <KTextTemplate/Parser>
@@ -27,7 +28,7 @@ void CallbackTag::render(KTextTemplate::OutputStream *stream, KTextTemplate::Con
 
 KTextTemplate::Node *CallbackTagFactory::getNode(const QString &tagContent, KTextTemplate::Parser *parser) const
 {
-    auto expr = tagContent.split(QLatin1Char(' '), Qt::SkipEmptyParts);
+    auto expr = tagContent.split(u' ', Qt::SkipEmptyParts);
     if (expr.size() != 2) {
         return nullptr;
     }
@@ -44,7 +45,7 @@ QHash<QString, KTextTemplate::AbstractNodeFactory *> KTextTemplateTagLibrary::no
 {
     Q_UNUSED(name)
     QHash<QString, KTextTemplate::AbstractNodeFactory *> nodeFactories;
-    nodeFactories.insert(QStringLiteral("callback"), new CallbackTagFactory());
+    nodeFactories.insert(u"callback"_s, new CallbackTagFactory());
     return nodeFactories;
 }
 

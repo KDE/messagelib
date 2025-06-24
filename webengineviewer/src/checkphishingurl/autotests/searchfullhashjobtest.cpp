@@ -5,6 +5,8 @@
 */
 
 #include "searchfullhashjobtest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../checkphishingurlutil.h"
 #include "../searchfullhashjob.h"
 #include <QTest>
@@ -30,25 +32,24 @@ void SearchFullHashJobTest::shouldCreateRequest_data()
     QTest::addColumn<QUrl>("url");
     QTest::addColumn<bool>("canStart");
     QTest::newRow("no hash") << QHash<QByteArray, QByteArray>() << QStringList() << QString() << QUrl() << false;
-    QTest::newRow("database hash but not hash and not url")
-        << QHash<QByteArray, QByteArray>() << QStringList{QStringLiteral("boo")} << QString() << QUrl() << false;
+    QTest::newRow("database hash but not hash and not url") << QHash<QByteArray, QByteArray>() << QStringList{u"boo"_s} << QString() << QUrl() << false;
     QHash<QByteArray, QByteArray> hashes;
     hashes.insert(QByteArrayLiteral("bla"), QByteArrayLiteral("bla"));
-    QTest::newRow("database hash but hash and not url") << hashes << QStringList{QStringLiteral("boo")} << QString() << QUrl() << false;
+    QTest::newRow("database hash but hash and not url") << hashes << QStringList{u"boo"_s} << QString() << QUrl() << false;
     QTest::newRow("database hash and hash")
-        << hashes << QStringList{QStringLiteral("boo")}
+        << hashes << QStringList{u"boo"_s}
         << QStringLiteral(
                "{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"%1\"},\"clientStates\":[\"boo\"],\"threatInfo\":{\"platformTypes\":[\"WINDOWS\"],"
                "\"threatEntries\":[{\"hash\":\"bla\"}],\"threatEntryTypes\":[\"URL\"],\"threatTypes\":[\"MALWARE\"]}}")
                .arg(WebEngineViewer::CheckPhishingUrlUtil::versionApps())
-        << QUrl(QStringLiteral("http://www.kde.org")) << true;
+        << QUrl(u"http://www.kde.org"_s) << true;
     QTest::newRow("multi database hash and hash")
-        << hashes << (QStringList() << QStringLiteral("boo") << QStringLiteral("bli"))
+        << hashes << (QStringList() << u"boo"_s << u"bli"_s)
         << QStringLiteral(
                "{\"client\":{\"clientId\":\"KDE\",\"clientVersion\":\"%1\"},\"clientStates\":[\"boo\",\"bli\"],\"threatInfo\":{\"platformTypes\":[\"WINDOWS\"],"
                "\"threatEntries\":[{\"hash\":\"bla\"}],\"threatEntryTypes\":[\"URL\"],\"threatTypes\":[\"MALWARE\"]}}")
                .arg(WebEngineViewer::CheckPhishingUrlUtil::versionApps())
-        << QUrl(QStringLiteral("http://www.kde.org")) << true;
+        << QUrl(u"http://www.kde.org"_s) << true;
 }
 
 void SearchFullHashJobTest::shouldCreateRequest()

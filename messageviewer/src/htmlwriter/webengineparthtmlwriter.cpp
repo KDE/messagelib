@@ -4,6 +4,8 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "webengineparthtmlwriter.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "webengineembedpart.h"
 
 #include "messageviewer/messageviewerutil.h"
@@ -69,7 +71,7 @@ void WebEnginePartHtmlWriter::end()
         mHtmlView->show();
         mTempFile->close();
     } else {
-        mHtmlView->setContent(data(), QStringLiteral("text/html;charset=UTF-8"), QUrl(QStringLiteral("file:///")));
+        mHtmlView->setContent(data(), u"text/html;charset=UTF-8"_s, QUrl(u"file:///"_s));
         mHtmlView->show();
     }
     clear();

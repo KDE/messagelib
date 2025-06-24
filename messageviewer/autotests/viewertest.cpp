@@ -5,6 +5,8 @@
 */
 
 #include "viewertest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "messageviewer/viewer.h"
 #include <KActionCollection>
 #include <QTest>
@@ -23,21 +25,21 @@ void ViewerTest::shouldHaveDefaultValuesOnCreation()
     viewer->show();
     QVERIFY(QTest::qWaitForWindowExposed(viewer));
 
-    auto mViewer = viewer->findChild<QWidget *>(QStringLiteral("mViewer"));
+    auto mViewer = viewer->findChild<QWidget *>(u"mViewer"_s);
     QVERIFY(mViewer);
     QCOMPARE(mViewer->isVisible(), true);
 
-    auto sliderContainer = viewer->findChild<QWidget *>(QStringLiteral("slidercontainer"));
+    auto sliderContainer = viewer->findChild<QWidget *>(u"slidercontainer"_s);
     QVERIFY(sliderContainer);
     QCOMPARE(sliderContainer->isVisible(), false);
 
-    auto colorBar = viewer->findChild<QWidget *>(QStringLiteral("mColorBar"));
+    auto colorBar = viewer->findChild<QWidget *>(u"mColorBar"_s);
     QVERIFY(colorBar);
 
-    auto scandetectionWidget = viewer->findChild<QWidget *>(QStringLiteral("scandetectionwarning"));
+    auto scandetectionWidget = viewer->findChild<QWidget *>(u"scandetectionwarning"_s);
     QVERIFY(!scandetectionWidget); // loaded on demand
 
-    auto opensavefilefolderwidget = viewer->findChild<QWidget *>(QStringLiteral("opensavefilefolderwidget"));
+    auto opensavefilefolderwidget = viewer->findChild<QWidget *>(u"opensavefilefolderwidget"_s);
     QVERIFY(!opensavefilefolderwidget); // loaded on demand
 
     QVERIFY(viewer->toggleFixFontAction());

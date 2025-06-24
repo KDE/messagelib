@@ -29,7 +29,7 @@
 #include <QVBoxLayout>
 
 using namespace MessageCore;
-
+using namespace Qt::Literals::StringLiterals;
 class Q_DECL_HIDDEN MessageCore::AttachmentPropertiesDialog::AttachmentPropertiesDialogPrivate
 {
 public:
@@ -116,8 +116,7 @@ void AttachmentPropertiesDialog::AttachmentPropertiesDialogPrivate::mimeTypeChan
 {
     QMimeDatabase db;
     const QMimeType mimeType = db.mimeTypeForName(type);
-    QPixmap pix =
-        QIcon::fromTheme(mimeType.iconName(), QIcon::fromTheme(QStringLiteral("unknown"))).pixmap(q->style()->pixelMetric(QStyle::PM_MessageBoxIconSize));
+    QPixmap pix = QIcon::fromTheme(mimeType.iconName(), QIcon::fromTheme(u"unknown"_s)).pixmap(q->style()->pixelMetric(QStyle::PM_MessageBoxIconSize));
 
     if (mReadOnly) {
         uiReadOnly->mimeIcon->setPixmap(pix);
@@ -224,9 +223,8 @@ void AttachmentPropertiesDialog::AttachmentPropertiesDialogPrivate::populateEnco
 
 void AttachmentPropertiesDialog::AttachmentPropertiesDialogPrivate::populateMimeTypes()
 {
-    const QStringList list = QStringList() << QStringLiteral("text/html") << QStringLiteral("text/plain") << QStringLiteral("image/gif")
-                                           << QStringLiteral("image/jpeg") << QStringLiteral("image/png") << QStringLiteral("application/octet-stream")
-                                           << QStringLiteral("application/x-gunzip") << QStringLiteral("application/zip");
+    const QStringList list = QStringList() << u"text/html"_s << u"text/plain"_s << QStringLiteral("image/gif") << u"image/jpeg"_s << u"image/png"_s
+                                           << QStringLiteral("application/octet-stream") << u"application/x-gunzip"_s << u"application/zip"_s;
 
     ui->mimeType->addItems(list);
 }
@@ -269,7 +267,7 @@ void AttachmentPropertiesDialog::AttachmentPropertiesDialogPrivate::loadFromPart
 static QString removeNewlines(const QString &input)
 {
     QString ret(input);
-    ret.replace(QLatin1Char('\n'), QLatin1Char(' '));
+    ret.replace(u'\n', u' ');
     return ret;
 }
 
@@ -374,10 +372,10 @@ static void invokeHelp(const QString &docfile, const QString &anchor)
 {
     if (!docfile.isEmpty()) {
         QUrl url;
-        url = QUrl(QStringLiteral("help:/")).resolved(QUrl(docfile));
+        url = QUrl(u"help:/"_s).resolved(QUrl(docfile));
         if (!anchor.isEmpty()) {
             QUrlQuery query(url);
-            query.addQueryItem(QStringLiteral("anchor"), anchor);
+            query.addQueryItem(u"anchor"_s, anchor);
             url.setQuery(query);
         }
         // launch khelpcenter, or a browser for URIs not handled by khelpcenter
@@ -387,7 +385,7 @@ static void invokeHelp(const QString &docfile, const QString &anchor)
 
 void AttachmentPropertiesDialog::slotHelp()
 {
-    invokeHelp(QStringLiteral("kmail2/the-composer-window.html"), QStringLiteral("attachments"));
+    invokeHelp(u"kmail2/the-composer-window.html"_s, u"attachments"_s);
 }
 
 #include "moc_attachmentpropertiesdialog.cpp"

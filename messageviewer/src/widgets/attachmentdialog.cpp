@@ -6,6 +6,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 */
 
 #include "attachmentdialog.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <KConfigGroup>
 #include <KGuiItem>
@@ -44,7 +45,7 @@ AttachmentDialog::AttachmentDialog(QWidget *parent, const QString &filenameText,
     auto user2Button = new QPushButton;
     mButtonBox->addButton(user2Button, QDialogButtonBox::ActionRole);
     user2Button->setText(i18n("Open &With..."));
-    user2Button->setIcon(QIcon::fromTheme(QStringLiteral("document-open")));
+    user2Button->setIcon(QIcon::fromTheme(u"document-open"_s));
     connect(user2Button, &QPushButton::clicked, this, &AttachmentDialog::openWithClicked);
 
     auto user3Button = new QPushButton;
@@ -58,7 +59,7 @@ AttachmentDialog::AttachmentDialog(QWidget *parent, const QString &filenameText,
 
 int AttachmentDialog::exec()
 {
-    KConfigGroup cg(KSharedConfig::openConfig().data(), QStringLiteral("Notification Messages"));
+    KConfigGroup cg(KSharedConfig::openConfig().data(), u"Notification Messages"_s);
     if (cg.hasKey(dontAskName)) {
         return cg.readEntry(dontAskName, 0);
     }
@@ -72,7 +73,7 @@ int AttachmentDialog::exec()
     } else {
         if (again) {
             KConfigGroup::WriteConfigFlags flags = KConfig::Persistent;
-            KConfigGroup configGroup(KSharedConfig::openConfig().data(), QStringLiteral("Notification Messages"));
+            KConfigGroup configGroup(KSharedConfig::openConfig().data(), u"Notification Messages"_s);
             configGroup.writeEntry(dontAskName, static_cast<int>(ret), flags);
             configGroup.sync();
         }

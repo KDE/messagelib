@@ -5,6 +5,8 @@
 */
 
 #include "autocryptrecipient.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "autocryptrecipient_p.h"
 #include "autocryptutils.h"
 
@@ -21,24 +23,24 @@ AutocryptRecipientPrivate::AutocryptRecipientPrivate() = default;
 QByteArray AutocryptRecipientPrivate::toJson(QJsonDocument::JsonFormat format) const
 {
     QJsonObject entry;
-    entry.insert(QStringLiteral("addr"), QString::fromLatin1(addr));
-    entry.insert(QStringLiteral("prefer_encrypt"), prefer_encrypt);
-    entry.insert(QStringLiteral("keydata"), QString::fromLatin1(keydata));
-    entry.insert(QStringLiteral("autocrypt_timestamp"), autocrypt_timestamp.toString(Qt::ISODate));
-    entry.insert(QStringLiteral("count_have_ach"), count_have_ach);
-    entry.insert(QStringLiteral("count_no_ach"), count_no_ach);
+    entry.insert(u"addr"_s, QString::fromLatin1(addr));
+    entry.insert(u"prefer_encrypt"_s, prefer_encrypt);
+    entry.insert(u"keydata"_s, QString::fromLatin1(keydata));
+    entry.insert(u"autocrypt_timestamp"_s, autocrypt_timestamp.toString(Qt::ISODate));
+    entry.insert(u"count_have_ach"_s, count_have_ach);
+    entry.insert(u"count_no_ach"_s, count_no_ach);
     if (last_seen.isValid()) {
-        entry.insert(QStringLiteral("last_seen"), last_seen.toString(Qt::ISODate));
+        entry.insert(u"last_seen"_s, last_seen.toString(Qt::ISODate));
     }
     if (counting_since.isValid()) {
-        entry.insert(QStringLiteral("counting_since"), counting_since.toString(Qt::ISODate));
+        entry.insert(u"counting_since"_s, counting_since.toString(Qt::ISODate));
     }
     if (!bad_user_agent.isEmpty()) {
-        entry.insert(QStringLiteral("bad_user_agent"), QString::fromLatin1(bad_user_agent));
+        entry.insert(u"bad_user_agent"_s, QString::fromLatin1(bad_user_agent));
     }
     if (gossip_timestamp.isValid()) {
-        entry.insert(QStringLiteral("gossip_timestamp"), gossip_timestamp.toString(Qt::ISODate));
-        entry.insert(QStringLiteral("gossip_key"), QString::fromLatin1(gossip_key));
+        entry.insert(u"gossip_timestamp"_s, gossip_timestamp.toString(Qt::ISODate));
+        entry.insert(u"gossip_key"_s, QString::fromLatin1(gossip_key));
     }
     QJsonDocument document;
     document.setObject(entry);
@@ -51,34 +53,34 @@ void AutocryptRecipientPrivate::fromJson(const QByteArray &json)
     assert(document.isObject());
     const auto &obj = document.object();
 
-    addr = obj.value(QStringLiteral("addr")).toString().toLatin1();
-    count_have_ach = obj.value(QStringLiteral("count_have_ach")).toInt();
-    count_no_ach = obj.value(QStringLiteral("count_no_ach")).toInt();
-    prefer_encrypt = obj.value(QStringLiteral("prefer_encrypt")).toBool();
-    keydata = obj.value(QStringLiteral("keydata")).toString().toLatin1();
-    autocrypt_timestamp = QDateTime::fromString(obj.value(QStringLiteral("autocrypt_timestamp")).toString(), Qt::ISODate);
+    addr = obj.value(u"addr"_s).toString().toLatin1();
+    count_have_ach = obj.value(u"count_have_ach"_s).toInt();
+    count_no_ach = obj.value(u"count_no_ach"_s).toInt();
+    prefer_encrypt = obj.value(u"prefer_encrypt"_s).toBool();
+    keydata = obj.value(u"keydata"_s).toString().toLatin1();
+    autocrypt_timestamp = QDateTime::fromString(obj.value(u"autocrypt_timestamp"_s).toString(), Qt::ISODate);
 
-    if (obj.contains(QStringLiteral("last_seen"))) {
-        last_seen = QDateTime::fromString(obj.value(QStringLiteral("last_seen")).toString(), Qt::ISODate);
+    if (obj.contains(u"last_seen"_s)) {
+        last_seen = QDateTime::fromString(obj.value(u"last_seen"_s).toString(), Qt::ISODate);
     } else {
         last_seen = QDateTime();
     }
 
-    if (obj.contains(QStringLiteral("counting_since"))) {
-        counting_since = QDateTime::fromString(obj.value(QStringLiteral("counting_since")).toString(), Qt::ISODate);
+    if (obj.contains(u"counting_since"_s)) {
+        counting_since = QDateTime::fromString(obj.value(u"counting_since"_s).toString(), Qt::ISODate);
     } else {
         counting_since = QDateTime();
     }
 
-    if (obj.contains(QStringLiteral("bad_user_agent"))) {
-        bad_user_agent = obj.value(QStringLiteral("bad_user_agent")).toString().toLatin1();
+    if (obj.contains(u"bad_user_agent"_s)) {
+        bad_user_agent = obj.value(u"bad_user_agent"_s).toString().toLatin1();
     } else {
         bad_user_agent = "";
     }
 
-    if (obj.contains(QStringLiteral("gossip_timestamp"))) {
-        gossip_timestamp = QDateTime::fromString(obj.value(QStringLiteral("gossip_timestamp")).toString(), Qt::ISODate);
-        gossip_key = obj.value(QStringLiteral("gossip_key")).toString().toLatin1();
+    if (obj.contains(u"gossip_timestamp"_s)) {
+        gossip_timestamp = QDateTime::fromString(obj.value(u"gossip_timestamp"_s).toString(), Qt::ISODate);
+        gossip_key = obj.value(u"gossip_key"_s).toString().toLatin1();
     } else {
         gossip_timestamp = QDateTime();
         gossip_key = "";

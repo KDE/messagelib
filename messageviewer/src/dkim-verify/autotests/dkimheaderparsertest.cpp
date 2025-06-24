@@ -5,6 +5,8 @@
 */
 
 #include "dkimheaderparsertest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "dkim-verify/dkimheaderparser.h"
 #include <QTest>
 
@@ -18,7 +20,7 @@ void DKIMHeaderParserTest::shouldHaveDefaultValues()
 {
     MessageViewer::DKIMHeaderParser parser;
     QVERIFY(parser.head().isEmpty());
-    QVERIFY(parser.headerType(QStringLiteral("bla")).isEmpty());
+    QVERIFY(parser.headerType(u"bla"_s).isEmpty());
     QVERIFY(!parser.wasAlreadyParsed());
 }
 

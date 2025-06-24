@@ -6,6 +6,7 @@
 */
 
 #include "signjobtest.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include "cryptofunctions.h"
 #include "qtest_messagecomposer.h"
@@ -110,7 +111,7 @@ void SignJobTest::testRecommentationRFC3156()
 {
     const std::vector<GpgME::Key> &keys = Test::getKeys();
 
-    const QString data = QStringLiteral("=2D Magic foo\nFrom test\n\n-- quaak\nOhno");
+    const QString data = u"=2D Magic foo\nFrom test\n\n-- quaak\nOhno"_s;
     KMime::Headers::contentEncoding cte = KMime::Headers::CEquPr;
 
     ComposerJob composerJob;
@@ -132,7 +133,7 @@ void SignJobTest::testRecommentationRFC3156()
 
     QVERIFY(!result->contents().isEmpty());
     const QByteArray body = result->contents().at(0)->body();
-    QCOMPARE(QString::fromUtf8(body), QStringLiteral("=3D2D Magic foo\n=46rom test\n\n=2D- quaak\nOhno"));
+    QCOMPARE(QString::fromUtf8(body), u"=3D2D Magic foo\n=46rom test\n\n=2D- quaak\nOhno"_s);
 
     ComposerTestUtil::verify(true, false, result, data.toUtf8(), Kleo::OpenPGPMIMEFormat, cte);
     delete result;
@@ -142,7 +143,7 @@ void SignJobTest::testMixedContent()
 {
     const std::vector<GpgME::Key> &keys = Test::getKeys();
 
-    const QString data = QStringLiteral("=2D Magic foo\nFrom test\n\n-- quaak\nOhno");
+    const QString data = u"=2D Magic foo\nFrom test\n\n-- quaak\nOhno"_s;
 
     ComposerJob composerJob;
     auto sJob = new SignJob(&composerJob);
@@ -206,8 +207,8 @@ void SignJobTest::testProtectedHeaders_data()
     QTest::addColumn<bool>("protectedHeaders");
     QTest::addColumn<QString>("referenceFile");
 
-    QTest::newRow("simple-non-obvoscate") << true << QStringLiteral("protected_headers-non-obvoscate.mbox");
-    QTest::newRow("non-protected_headers") << false << QStringLiteral("non-protected_headers.mbox");
+    QTest::newRow("simple-non-obvoscate") << true << u"protected_headers-non-obvoscate.mbox"_s;
+    QTest::newRow("non-protected_headers") << false << u"non-protected_headers.mbox"_s;
 }
 
 void SignJobTest::testProtectedHeaders()
@@ -223,7 +224,7 @@ void SignJobTest::testProtectedHeaders()
     QVERIFY(sJob);
 
     const QByteArray data(QString::fromLocal8Bit("one flew over the cuckoo's nest").toUtf8());
-    const QString subject(QStringLiteral("asdfghjklö"));
+    const QString subject(u"asdfghjklö"_s);
 
     auto content = new KMime::Content;
     content->contentType(true)->setMimeType("text/plain");
@@ -255,7 +256,7 @@ void SignJobTest::testProtectedHeaders()
 void SignJobTest::testProtectedHeadersOverwrite()
 {
     const std::vector<GpgME::Key> &keys = Test::getKeys();
-    const auto referenceFile = QStringLiteral("protected_headers-non-obvoscate.mbox");
+    const auto referenceFile = u"protected_headers-non-obvoscate.mbox"_s;
 
     ComposerJob composerJob;
     auto sJob = new SignJob(&composerJob);
@@ -263,7 +264,7 @@ void SignJobTest::testProtectedHeadersOverwrite()
     QVERIFY(sJob);
 
     const QByteArray data(QString::fromLocal8Bit("one flew over the cuckoo's nest").toUtf8());
-    const QString subject(QStringLiteral("asdfghjklö"));
+    const QString subject(u"asdfghjklö"_s);
 
     auto content = new KMime::Content;
     content->contentType(true)->setMimeType("text/plain");
@@ -288,7 +289,7 @@ void SignJobTest::testProtectedHeadersOverwrite()
     skeletonMessage.to()->from7BitString("overwrite@example.org");
     skeletonMessage.cc()->from7BitString("cc_overwrite@example.org");
     skeletonMessage.bcc()->from7BitString("bcc_overwrite@example.org");
-    skeletonMessage.subject()->fromUnicodeString(subject + QStringLiteral("_owerwrite"));
+    skeletonMessage.subject()->fromUnicodeString(subject + u"_owerwrite"_s);
 
     KMime::Content *result = sJob->content();
     result->assemble();
@@ -299,7 +300,7 @@ void SignJobTest::testProtectedHeadersOverwrite()
 void SignJobTest::testProtectedHeadersSkipLong()
 {
     const std::vector<GpgME::Key> &keys = Test::getKeys();
-    const auto referenceFile = QStringLiteral("protected_headers-non-obvoscate.mbox");
+    const auto referenceFile = u"protected_headers-non-obvoscate.mbox"_s;
 
     ComposerJob composerJob;
     auto sJob = new SignJob(&composerJob);
@@ -307,7 +308,7 @@ void SignJobTest::testProtectedHeadersSkipLong()
     QVERIFY(sJob);
 
     const QByteArray data(QString::fromLocal8Bit("one flew over the cuckoo's nest").toUtf8());
-    const QString subject(QStringLiteral("asdfghjklö"));
+    const QString subject(u"asdfghjklö"_s);
 
     auto content = new KMime::Content;
     content->contentType(true)->setMimeType("text/plain");

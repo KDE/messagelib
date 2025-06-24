@@ -5,6 +5,7 @@
 */
 
 #include "sendlaterutil.h"
+
 #include "sendlaterinterface.h"
 #include "sendlaterutil_p.h"
 
@@ -12,17 +13,18 @@
 
 #include <Akonadi/ServerManager>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageComposer;
 
 QString SendLaterUtil::agentServiceName()
 {
     using Akonadi::ServerManager;
-    return ServerManager::agentServiceName(ServerManager::Agent, QStringLiteral("akonadi_sendlater_agent"));
+    return ServerManager::agentServiceName(ServerManager::Agent, u"akonadi_sendlater_agent"_s);
 }
 
 QString SendLaterUtil::dbusPath()
 {
-    return QStringLiteral("/SendLaterAgent");
+    return u"/SendLaterAgent"_s;
 }
 
 bool SendLaterUtil::sentLaterAgentWasRegistered()

@@ -5,6 +5,7 @@
 */
 
 #include "htmlblock.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include "interfaces/htmlwriter.h"
 
@@ -20,7 +21,7 @@ HTMLBlock::~HTMLBlock() = default;
 
 QString HTMLBlock::dir() const
 {
-    return QApplication::isRightToLeft() ? QStringLiteral("rtl") : QStringLiteral("ltr");
+    return QApplication::isRightToLeft() ? u"rtl"_s : u"ltr"_s;
 }
 
 QString HTMLBlock::enter()
@@ -70,12 +71,12 @@ void AttachmentMarkBlock::internalExit()
 QString AttachmentMarkBlock::enterString() const
 {
     const QString index = mNode->index().toString();
-    return QStringLiteral("<a name=\"att%1\"></a>").arg(index) + QStringLiteral("<div id=\"attachmentDiv%1\">\n").arg(index);
+    return u"<a name=\"att%1\"></a>"_s.arg(index) + u"<div id=\"attachmentDiv%1\">\n"_s.arg(index);
 }
 
 QString AttachmentMarkBlock::exitString() const
 {
-    return QStringLiteral("</div>");
+    return u"</div>"_s;
 }
 
 RootBlock::RootBlock(HtmlWriter *writer)
@@ -105,10 +106,10 @@ void RootBlock::internalExit()
 
 QString RootBlock::enterString() const
 {
-    return QStringLiteral("<div style=\"position: relative; word-wrap: break-word\">\n");
+    return u"<div style=\"position: relative; word-wrap: break-word\">\n"_s;
 }
 
 QString RootBlock::exitString() const
 {
-    return QStringLiteral("</div>\n");
+    return u"</div>\n"_s;
 }

@@ -5,6 +5,7 @@
 */
 
 #include "keyresolvertest.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include "../src/composer/keyresolver.h"
 
@@ -27,13 +28,13 @@ void KeyResolverTest::initTestCase()
     Test::setupFullEnv();
 
     const QDir genericDataLocation(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation));
-    baseDir = QDir(genericDataLocation.filePath(QStringLiteral("autocrypt")));
+    baseDir = QDir(genericDataLocation.filePath(u"autocrypt"_s));
 }
 
 void KeyResolverTest::init()
 {
     baseDir.removeRecursively();
-    baseDir.mkpath(QStringLiteral("."));
+    baseDir.mkpath(u"."_s);
 }
 
 void KeyResolverTest::cleanup()
@@ -50,12 +51,12 @@ void KeyResolverTest::testAutocrypt()
     KeyResolver keyResolver(true, false, true, Kleo::OpenPGPMIMEFormat, expiryChecker);
     keyResolver.setAkonadiLookupEnabled(false);
 
-    QStringList recipients = {QStringLiteral("recipient@autocrypt.example"), QStringLiteral("recipient2@autocrypt.example")};
+    QStringList recipients = {u"recipient@autocrypt.example"_s, QStringLiteral("recipient2@autocrypt.example")};
 
-    QFile file1(QLatin1StringView(MAIL_DATA_DIR) + QStringLiteral("/autocrypt/recipient%40autocrypt.example.json"));
-    QVERIFY(file1.copy(baseDir.filePath(QStringLiteral("recipient%40autocrypt.example.json"))));
-    QFile file2(QLatin1StringView(MAIL_DATA_DIR) + QStringLiteral("/autocrypt/recipient2%40autocrypt.example.json"));
-    QVERIFY(file2.copy(baseDir.filePath(QStringLiteral("recipient2%40autocrypt.example.json"))));
+    QFile file1(QLatin1StringView(MAIL_DATA_DIR) + u"/autocrypt/recipient%40autocrypt.example.json"_s);
+    QVERIFY(file1.copy(baseDir.filePath(u"recipient%40autocrypt.example.json"_s)));
+    QFile file2(QLatin1StringView(MAIL_DATA_DIR) + u"/autocrypt/recipient2%40autocrypt.example.json"_s);
+    QVERIFY(file2.copy(baseDir.filePath(u"recipient2%40autocrypt.example.json"_s)));
 
     QCOMPARE(keyResolver.setEncryptToSelfKeys({QString::fromLatin1(keys[0].primaryFingerprint())}), ResolverResult::Ok);
     QCOMPARE(keyResolver.setSigningKeys({QString::fromLatin1(keys[0].primaryFingerprint())}), ResolverResult::Ok);

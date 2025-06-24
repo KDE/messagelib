@@ -7,6 +7,8 @@
  *******************************************************************************/
 
 #include "core/item.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "core/item_p.h"
 #include "core/manager.h"
 
@@ -622,7 +624,7 @@ int Item::appendChildItem(Model *model, Item *child)
 
 void Item::dump(const QString &prefix)
 {
-    QString out = QStringLiteral("%1 %x VIEWABLE:%2").arg(prefix, d_ptr->mIsViewable ? QStringLiteral("yes") : QStringLiteral("no"));
+    QString out = u"%1 %x VIEWABLE:%2"_s.arg(prefix, d_ptr->mIsViewable ? QStringLiteral("yes") : QStringLiteral("no"));
     qDebug(out.toUtf8().data(), this);
 
     QString nPrefix(prefix);

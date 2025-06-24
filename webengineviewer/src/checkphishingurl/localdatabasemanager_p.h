@@ -7,6 +7,8 @@
 #pragma once
 
 #include "downloadlocaldatabasethread.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "localdatabasefile.h"
 #include "webengineviewer_debug.h"
 
@@ -21,12 +23,12 @@ namespace
 {
 inline QString localDataBasePath()
 {
-    return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QStringLiteral("/phishingurl/");
+    return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + u"/phishingurl/"_s;
 }
 
 inline QString databaseFullPath()
 {
-    return localDataBasePath() + QLatin1Char('/') + WebEngineViewer::CheckPhishingUrlUtil::databaseFileName();
+    return localDataBasePath() + u'/' + WebEngineViewer::CheckPhishingUrlUtil::databaseFileName();
 }
 }
 
@@ -111,9 +113,9 @@ public:
     void readConfig()
     {
         KConfig phishingurlKConfig(WebEngineViewer::CheckPhishingUrlUtil::configFileName());
-        KConfigGroup grp = phishingurlKConfig.group(QStringLiteral("General"));
-        mNewClientState = grp.readEntry(QStringLiteral("DataBaseState"));
-        mMinimumWaitDuration = grp.readEntry(QStringLiteral("RefreshDataBase"));
+        KConfigGroup grp = phishingurlKConfig.group(u"General"_s);
+        mNewClientState = grp.readEntry(u"DataBaseState"_s);
+        mMinimumWaitDuration = grp.readEntry(u"RefreshDataBase"_s);
         if (!mMinimumWaitDuration.isEmpty()) {
             mSecondToStartRefreshing = WebEngineViewer::CheckPhishingUrlUtil::refreshingCacheAfterThisTime(
                 WebEngineViewer::CheckPhishingUrlUtil::convertToSecond(mMinimumWaitDuration));
@@ -123,9 +125,9 @@ public:
     void saveConfig()
     {
         KConfig phishingurlKConfig(WebEngineViewer::CheckPhishingUrlUtil::configFileName());
-        KConfigGroup grp = phishingurlKConfig.group(QStringLiteral("General"));
-        grp.writeEntry(QStringLiteral("DataBaseState"), mNewClientState);
-        grp.writeEntry(QStringLiteral("RefreshDataBase"), mMinimumWaitDuration);
+        KConfigGroup grp = phishingurlKConfig.group(u"General"_s);
+        grp.writeEntry(u"DataBaseState"_s, mNewClientState);
+        grp.writeEntry(u"RefreshDataBase"_s, mMinimumWaitDuration);
     }
 
     LocalDataBaseFile mFile;

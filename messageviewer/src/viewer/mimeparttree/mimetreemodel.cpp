@@ -5,6 +5,8 @@
 */
 
 #include "mimetreemodel.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "messageviewer_debug.h"
 
 #include <MimeTreeParser/NodeHelper>
@@ -101,7 +103,7 @@ public:
             }
 
             if (mimeType.isValid() && mimeType.name().startsWith(QLatin1StringView("multipart/"))) {
-                return QIcon::fromTheme(QStringLiteral("folder"));
+                return QIcon::fromTheme(u"folder"_s);
             } else if (!iconName.isEmpty() && iconName != QLatin1StringView("unknown")) {
                 return QIcon::fromTheme(iconName);
             } else if (mimeType.isValid() && !mimeType.iconName().isEmpty()) {
@@ -288,7 +290,7 @@ QMimeData *MimeTreeModel::mimeData(const QModelIndexList &indexes) const
 
         auto tempDir = new QTemporaryDir; // Will remove the directory on destruction.
         d->tempDirs.append(tempDir);
-        const QString fileName = tempDir->path() + QLatin1Char('/') + d->descriptionForContent(content);
+        const QString fileName = tempDir->path() + u'/' + d->descriptionForContent(content);
         QFile f(fileName);
         if (!f.open(QIODevice::WriteOnly)) {
             qCWarning(MESSAGEVIEWER_LOG) << "Cannot write attachment:" << f.errorString();
@@ -318,7 +320,7 @@ Qt::ItemFlags MimeTreeModel::flags(const QModelIndex &index) const
 
 QStringList MimeTreeModel::mimeTypes() const
 {
-    const QStringList types = {QStringLiteral("text/uri-list")};
+    const QStringList types = {u"text/uri-list"_s};
     return types;
 }
 

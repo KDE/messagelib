@@ -6,6 +6,7 @@
 */
 
 #include "converthtmltoplaintext.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include <KPIMTextEdit/MarkupDirector>
 #include <KPIMTextEdit/PlainTextMarkupBuilder>
@@ -58,5 +59,5 @@ void ConvertHtmlToPlainText::toCleanPlainText(QString &text)
     text.remove(QChar(0xFFFC));
 
     // In plaintext mode, each space is non-breaking.
-    text.replace(QChar::Nbsp, QLatin1Char(' '));
+    text.replace(QChar::Nbsp, u' ');
 }

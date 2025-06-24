@@ -5,6 +5,8 @@
 */
 
 #include "plugineditorconverttextmanager.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "messagecomposer_debug.h"
 #include "plugineditorconverttext.h"
 #include <KPluginFactory>
@@ -30,7 +32,7 @@ namespace
 {
 QString pluginVersion()
 {
-    return QStringLiteral("1.0");
+    return u"1.0"_s;
 }
 }
 
@@ -59,12 +61,12 @@ private:
 
 QString PluginEditorConvertTextManagerPrivate::configGroupName() const
 {
-    return QStringLiteral("KMailPluginEditorConvertText");
+    return u"KMailPluginEditorConvertText"_s;
 }
 
 QString PluginEditorConvertTextManagerPrivate::configPrefixSettingKey() const
 {
-    return QStringLiteral("PluginEditorConvertText");
+    return u"PluginEditorConvertText"_s;
 }
 
 QList<PimCommon::PluginUtilData> PluginEditorConvertTextManagerPrivate::pluginsDataList() const
@@ -74,7 +76,7 @@ QList<PimCommon::PluginUtilData> PluginEditorConvertTextManagerPrivate::pluginsD
 
 void PluginEditorConvertTextManagerPrivate::initializePlugins()
 {
-    const QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("pim6/kmail/plugineditorconverttext"));
+    const QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(u"pim6/kmail/plugineditorconverttext"_s);
 
     const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
 

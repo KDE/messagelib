@@ -6,6 +6,8 @@
 */
 
 #include "scamexpandurljob.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "messageviewer_debug.h"
 
 #include <PimCommon/BroadcastStatus>
@@ -48,7 +50,7 @@ void ScamExpandUrlJob::expandedUrl(const QUrl &url)
         deleteLater();
         return;
     }
-    const QUrl newUrl(QStringLiteral("https://lengthenurl.info/api/longurl/shorturl/?inputURL=%1&format=json").arg(url.url()));
+    const QUrl newUrl(u"https://lengthenurl.info/api/longurl/shorturl/?inputURL=%1&format=json"_s.arg(url.url()));
 
     qCDebug(MESSAGEVIEWER_LOG) << " newUrl " << newUrl;
     QNetworkReply *reply = d->mNetworkAccessManager->get(QNetworkRequest(newUrl));
@@ -69,7 +71,7 @@ void ScamExpandUrlJob::slotExpandFinished(QNetworkReply *reply)
     if (!jsonDoc.isNull()) {
         const QMap<QString, QVariant> map = jsonDoc.toVariant().toMap();
         QUrl longUrl;
-        const QVariant longUrlVar = map.value(QStringLiteral("LongURL"));
+        const QVariant longUrlVar = map.value(u"LongURL"_s);
         if (longUrlVar.isValid()) {
             longUrl.setUrl(longUrlVar.toString());
         } else {

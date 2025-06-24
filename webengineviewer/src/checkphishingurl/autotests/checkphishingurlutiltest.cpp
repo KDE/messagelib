@@ -5,6 +5,8 @@
 */
 
 #include "checkphishingurlutiltest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "../checkphishingurlutil.h"
 
 #include <QTest>
@@ -21,8 +23,8 @@ void CheckPhishingUrlUtilTest::shouldConvertToSecond_data()
     QTest::addColumn<QString>("value");
     QTest::addColumn<double>("result");
     QTest::newRow("empty") << QString() << (double)-1;
-    QTest::newRow("test1") << QStringLiteral("459.123s") << 459.123;
-    QTest::newRow("test2") << QStringLiteral("459s") << 459.;
+    QTest::newRow("test1") << u"459.123s"_s << 459.123;
+    QTest::newRow("test2") << u"459s"_s << 459.;
 }
 
 void CheckPhishingUrlUtilTest::shouldConvertToSecond()

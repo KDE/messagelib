@@ -5,6 +5,8 @@
 */
 
 #include "sendlaterdialog.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "sendlaterinfo.h"
 #include "sendlatertimedatewidget_p.h"
 #include "ui_sendlaterwidget.h"
@@ -26,7 +28,7 @@ SendLaterDialog::SendLaterDialog(SendLaterInfo *info, QWidget *parent)
     , mInfo(info)
 {
     setWindowTitle(i18nc("@title:window", "Send Later"));
-    setWindowIcon(QIcon::fromTheme(QStringLiteral("kmail")));
+    setWindowIcon(QIcon::fromTheme(u"kmail"_s));
 
     auto mainLayout = new QVBoxLayout(this);
 

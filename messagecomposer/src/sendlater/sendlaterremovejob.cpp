@@ -5,6 +5,8 @@
 */
 
 #include "sendlaterremovejob.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "sendlaterinterface.h"
 
 #include <KLocalizedString>

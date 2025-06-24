@@ -5,6 +5,8 @@
 */
 
 #include "webengineaccesskey.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "webengineaccesskeyanchor.h"
 #include "webengineaccesskeyutils.h"
 #include "webenginemanagescript.h"
@@ -70,7 +72,7 @@ static QString linkElementKey(const WebEngineViewer::WebEngineAccessKeyAnchor &e
         // qDebug()<< "URL " << url;
         QString linkKey(url.toString());
         if (!element.target().isEmpty()) {
-            linkKey += QLatin1Char('+');
+            linkKey += u'+';
             linkKey += element.target();
         }
         return linkKey;
@@ -105,12 +107,12 @@ static bool isHiddenElement(const WebEngineViewer::WebEngineAccessKeyAnchor &ele
 #if 0
 
     // visibility set to 'hidden' in the element itself or its parent elements.
-    if (element.styleProperty(QStringLiteral("visibility"), QWebElement::ComputedStyle).compare(QLatin1StringView("hidden"), Qt::CaseInsensitive) == 0) {
+    if (element.styleProperty(u"visibility"_s, QWebElement::ComputedStyle).compare(QLatin1StringView("hidden"), Qt::CaseInsensitive) == 0) {
         return true;
     }
 
     // display set to 'none' in the element itself or its parent elements.
-    if (element.styleProperty(QStringLiteral("display"), QWebElement::ComputedStyle).compare(QLatin1StringView("none"), Qt::CaseInsensitive) == 0) {
+    if (element.styleProperty(u"display"_s, QWebElement::ComputedStyle).compare(QLatin1StringView("none"), Qt::CaseInsensitive) == 0) {
         return true;
     }
 #endif
@@ -151,7 +153,7 @@ void WebEngineAccessKeyPrivate::makeAccessKeyLabel(QChar accessKey, const WebEng
     label->setFont(font);
     label->setText(accessKey);
     QFontMetrics metric(label->font());
-    label->setFixedWidth(metric.boundingRect(QStringLiteral("WW")).width());
+    label->setFixedWidth(metric.boundingRect(u"WW"_s).width());
     label->setPalette(QToolTip::palette());
     label->setAutoFillBackground(true);
     label->setFrameStyle(QFrame::Box | QFrame::Plain);

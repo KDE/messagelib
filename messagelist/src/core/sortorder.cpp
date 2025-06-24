@@ -6,6 +6,7 @@
  *
  *******************************************************************************/
 #include "core/sortorder.h"
+using namespace Qt::Literals::StringLiterals;
 
 #include "messagelistutil_p.h"
 
@@ -234,7 +235,7 @@ void SortOrder::readConfig(KConfigGroup &conf, const QString &storageId, bool *s
 {
     SortOrder privateSortOrder;
     SortOrder globalSortOrder;
-    globalSortOrder.readConfigHelper(conf, QStringLiteral("GlobalSortOrder"));
+    globalSortOrder.readConfigHelper(conf, u"GlobalSortOrder"_s);
     *storageUsesPrivateSortOrder = privateSortOrder.readConfigHelper(conf, storageId);
     if (*storageUsesPrivateSortOrder) {
         *this = privateSortOrder;
@@ -247,7 +248,7 @@ void SortOrder::writeConfig(KConfigGroup &conf, const QString &storageId, bool s
 {
     QString id = storageId;
     if (!storageUsesPrivateSortOrder) {
-        id = QStringLiteral("GlobalSortOrder");
+        id = u"GlobalSortOrder"_s;
         conf.deleteEntry(storageId + MessageList::Util::messageSortingConfigName());
         conf.deleteEntry(storageId + MessageList::Util::messageSortDirectionConfigName());
         conf.deleteEntry(storageId + MessageList::Util::groupSortingConfigName());

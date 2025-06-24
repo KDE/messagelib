@@ -6,6 +6,8 @@
 */
 
 #include "messagepartrendererfactory.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "messagepartrendererbase.h"
 #include "messagepartrendererfactory_p.h"
 #include "messagepartrenderplugin.h"

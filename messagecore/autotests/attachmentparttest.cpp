@@ -5,6 +5,8 @@
 */
 
 #include "attachmentparttest.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include "qtest_messagecore.h"
 
 #include <QHash>
@@ -19,7 +21,7 @@ QTEST_MAIN(AttachmentPartTest)
 
 void AttachmentPartTest::testApi()
 {
-    const QString str = QStringLiteral("test");
+    const QString str = u"test"_s;
     AttachmentPart::Ptr part = AttachmentPart::Ptr(new AttachmentPart);
 
     // Test that an AttachmentPart::Ptr can be put in a QHash.

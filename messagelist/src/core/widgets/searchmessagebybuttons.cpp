@@ -5,6 +5,8 @@
 */
 
 #include "searchmessagebybuttons.h"
+using namespace Qt::Literals::StringLiterals;
+
 #include <KLocalizedString>
 #include <QButtonGroup>
 #include <QHBoxLayout>
@@ -17,11 +19,11 @@ SearchMessageByButtons::SearchMessageByButtons(QWidget *parent)
     , mMainLayout(new QHBoxLayout(this))
     , mButtonGroup(new QButtonGroup(this))
 {
-    mMainLayout->setObjectName(QStringLiteral("mainLayout"));
+    mMainLayout->setObjectName(u"mainLayout"_s);
     mMainLayout->setContentsMargins({});
     mMainLayout->setSpacing(0);
 
-    mButtonGroup->setObjectName(QStringLiteral("mButtonGroup"));
+    mButtonGroup->setObjectName(u"mButtonGroup"_s);
     connect(mButtonGroup, &QButtonGroup::idClicked, this, &SearchMessageByButtons::searchOptionChanged);
     createButtons();
     mMainLayout->addStretch(0);
