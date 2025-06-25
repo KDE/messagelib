@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-01 00:42+0000\n"
+"POT-Creation-Date: 2025-06-25 00:43+0000\n"
 "PO-Revision-Date: 2024-08-16 10:49+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -19,13 +19,13 @@ msgstr ""
 "X-Generator: Lokalize 24.05.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: attachment/attachmentcontrollerbase.cpp:166
+#: attachment/attachmentcontrollerbase.cpp:167
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to compress attachment"
 msgstr "Bijlage comprimeren is mislukt"
 
-#: attachment/attachmentcontrollerbase.cpp:177
+#: attachment/attachmentcontrollerbase.cpp:178
 #, kde-format
 msgid ""
 "The compressed attachment is larger than the original. Do you want to keep "
@@ -34,233 +34,233 @@ msgstr ""
 "De gecomprimeerde bijlage is groter dan het origineel. Wilt u de originele "
 "bijlage behouden?"
 
-#: attachment/attachmentcontrollerbase.cpp:180
+#: attachment/attachmentcontrollerbase.cpp:181
 #, kde-format
 msgctxt "Do not compress"
 msgid "Keep"
 msgstr "Behouden"
 
-#: attachment/attachmentcontrollerbase.cpp:181
+#: attachment/attachmentcontrollerbase.cpp:182
 #, kde-format
 msgctxt "@action:button"
 msgid "Compress"
 msgstr "Comprimeren"
 
-#: attachment/attachmentcontrollerbase.cpp:200
-#: attachment/attachmentcontrollerbase.cpp:960
+#: attachment/attachmentcontrollerbase.cpp:201
+#: attachment/attachmentcontrollerbase.cpp:961
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach file"
 msgstr "Bestand bijvoegen is mislukt"
 
-#: attachment/attachmentcontrollerbase.cpp:273
+#: attachment/attachmentcontrollerbase.cpp:274
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to reload attachment"
 msgstr "Bijlage opnieuw laden is mislukt"
 
-#: attachment/attachmentcontrollerbase.cpp:320
+#: attachment/attachmentcontrollerbase.cpp:321
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
 msgstr "&Openen met"
 
-#: attachment/attachmentcontrollerbase.cpp:340
+#: attachment/attachmentcontrollerbase.cpp:341
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
 msgstr "&Anders..."
 
-#: attachment/attachmentcontrollerbase.cpp:342
-#: attachment/attachmentcontrollerbase.cpp:350
+#: attachment/attachmentcontrollerbase.cpp:343
+#: attachment/attachmentcontrollerbase.cpp:351
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "&Openen met..."
 
-#: attachment/attachmentcontrollerbase.cpp:376
+#: attachment/attachmentcontrollerbase.cpp:377
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach public key"
 msgstr "Bijvoegen publieke sleutel mislukt"
 
-#: attachment/attachmentcontrollerbase.cpp:390
+#: attachment/attachmentcontrollerbase.cpp:391
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach vCard"
 msgstr "vCard bijvoegen is mislukt"
 
-#: attachment/attachmentcontrollerbase.cpp:403
+#: attachment/attachmentcontrollerbase.cpp:404
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach text from clipboard"
 msgstr "Tekst uit klembord bijvoegen is mislukt"
 
-#: attachment/attachmentcontrollerbase.cpp:451
+#: attachment/attachmentcontrollerbase.cpp:452
 #, kde-format
 msgctxt "@action"
 msgid "Attach &Public Key..."
 msgstr "&Publieke sleutel bijvoegen..."
 
-#: attachment/attachmentcontrollerbase.cpp:454
+#: attachment/attachmentcontrollerbase.cpp:455
 #, kde-format
 msgctxt "@action"
 msgid "Attach &My Public Key"
 msgstr "&Mijn publieke sleutel bijvoegen"
 
-#: attachment/attachmentcontrollerbase.cpp:457
-#: attachment/attachmentcontrollerbase.cpp:462
-#: attachment/attachmentcontrollerbase.cpp:468
-#: attachment/attachmentcontrollerbase.cpp:477
+#: attachment/attachmentcontrollerbase.cpp:458
+#: attachment/attachmentcontrollerbase.cpp:463
+#: attachment/attachmentcontrollerbase.cpp:469
+#: attachment/attachmentcontrollerbase.cpp:478
 #, kde-format
 msgid "Attach"
 msgstr "Bijvoegen"
 
-#: attachment/attachmentcontrollerbase.cpp:461
+#: attachment/attachmentcontrollerbase.cpp:462
 #, kde-format
 msgid "&Attach File..."
 msgstr "&Bestand bijvoegen..."
 
-#: attachment/attachmentcontrollerbase.cpp:463
+#: attachment/attachmentcontrollerbase.cpp:464
 #, kde-format
 msgid "Add Attachment..."
 msgstr "Bijlage bijvoegen..."
 
-#: attachment/attachmentcontrollerbase.cpp:467
+#: attachment/attachmentcontrollerbase.cpp:468
 #, kde-format
 msgid "&Attach Directory..."
 msgstr "Map &bijvoegen..."
 
-#: attachment/attachmentcontrollerbase.cpp:471
+#: attachment/attachmentcontrollerbase.cpp:472
 #, kde-format
 msgctxt "@action"
 msgid "Attach Own vCard"
 msgstr "Eigen vCard bijvoegen"
 
-#: attachment/attachmentcontrollerbase.cpp:472
+#: attachment/attachmentcontrollerbase.cpp:473
 #, kde-format
 msgid "Own vCard"
 msgstr "Eigen vCard"
 
-#: attachment/attachmentcontrollerbase.cpp:476
+#: attachment/attachmentcontrollerbase.cpp:477
 #, kde-format
 msgid "&Attach vCards..."
 msgstr "vCards &bijvoegen..."
 
-#: attachment/attachmentcontrollerbase.cpp:480
+#: attachment/attachmentcontrollerbase.cpp:481
 #, kde-format
 msgid "&Attach Text From Clipboard..."
 msgstr "Tekst uit klembord &bijvoegen..."
 
-#: attachment/attachmentcontrollerbase.cpp:481
+#: attachment/attachmentcontrollerbase.cpp:482
 #, kde-format
 msgid "Attach Text From Clipboard"
 msgstr "Tekst uit klembord bijvoegen"
 
-#: attachment/attachmentcontrollerbase.cpp:493
+#: attachment/attachmentcontrollerbase.cpp:494
 #, kde-format
 msgid "&Remove Attachment"
 msgstr "Bijlage &verwijderen"
 
-#: attachment/attachmentcontrollerbase.cpp:494
+#: attachment/attachmentcontrollerbase.cpp:495
 #, kde-format
 msgid "Remove"
 msgstr "Verwijderen"
 
-#: attachment/attachmentcontrollerbase.cpp:502
+#: attachment/attachmentcontrollerbase.cpp:503
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Openen"
 
-#: attachment/attachmentcontrollerbase.cpp:507
+#: attachment/attachmentcontrollerbase.cpp:508
 #, kde-format
 msgctxt "to view"
 msgid "View"
 msgstr "Bekijken"
 
-#: attachment/attachmentcontrollerbase.cpp:512
+#: attachment/attachmentcontrollerbase.cpp:513
 #, kde-format
 msgctxt "to edit"
 msgid "Edit"
 msgstr "Bewerken"
 
-#: attachment/attachmentcontrollerbase.cpp:517
+#: attachment/attachmentcontrollerbase.cpp:518
 #, kde-format
 msgctxt "@action"
 msgid "Edit With..."
 msgstr "Bewerken met..."
 
-#: attachment/attachmentcontrollerbase.cpp:522
+#: attachment/attachmentcontrollerbase.cpp:523
 #, kde-format
 msgid "&Save Attachment As..."
 msgstr "Bijlage &opslaan als..."
 
-#: attachment/attachmentcontrollerbase.cpp:523
+#: attachment/attachmentcontrollerbase.cpp:524
 #, kde-format
 msgid "Save As..."
 msgstr "Opslaan als..."
 
-#: attachment/attachmentcontrollerbase.cpp:531
+#: attachment/attachmentcontrollerbase.cpp:532
 #, kde-format
 msgctxt "@action"
 msgid "Attachment Pr&operties..."
 msgstr "Eigenschappen van &bijlagen..."
 
-#: attachment/attachmentcontrollerbase.cpp:532
+#: attachment/attachmentcontrollerbase.cpp:533
 #, kde-format
 msgctxt "@action"
 msgid "Properties"
 msgstr "Eigenschappen"
 
-#: attachment/attachmentcontrollerbase.cpp:540
+#: attachment/attachmentcontrollerbase.cpp:541
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
 msgstr "Alles selecteren"
 
-#: attachment/attachmentcontrollerbase.cpp:543
+#: attachment/attachmentcontrollerbase.cpp:544
 #, kde-format
 msgid "Reload"
 msgstr "Opnieuw laden"
 
-#: attachment/attachmentcontrollerbase.cpp:677
-#: attachment/attachmentcontrollerbase.cpp:703
-#: attachment/attachmentcontrollerbase.cpp:753
+#: attachment/attachmentcontrollerbase.cpp:678
+#: attachment/attachmentcontrollerbase.cpp:704
+#: attachment/attachmentcontrollerbase.cpp:754
 #, kde-format
 msgid "KMail was unable to write the attachment to a temporary file."
 msgstr "Kmail kon de bijlage niet wegschrijven naar een tijdelijk bestand."
 
-#: attachment/attachmentcontrollerbase.cpp:678
-#: attachment/attachmentcontrollerbase.cpp:704
+#: attachment/attachmentcontrollerbase.cpp:679
+#: attachment/attachmentcontrollerbase.cpp:705
 #, kde-format
 msgctxt "@title:window"
 msgid "Unable to open attachment"
 msgstr "Kon bijlage niet openen"
 
-#: attachment/attachmentcontrollerbase.cpp:713
+#: attachment/attachmentcontrollerbase.cpp:714
 #, kde-format
 msgid "KMail was unable to open the attachment"
 msgstr "KMail kon de bijlage niet openen"
 
-#: attachment/attachmentcontrollerbase.cpp:754 attachment/editorwatcher.cpp:200
+#: attachment/attachmentcontrollerbase.cpp:755 attachment/editorwatcher.cpp:202
 #, kde-format
 msgctxt "@title:window"
 msgid "Unable to edit attachment"
 msgstr "Kon bijlage niet bewerken"
 
-#: attachment/attachmentcontrollerbase.cpp:795
+#: attachment/attachmentcontrollerbase.cpp:796
 #, kde-format
 msgid "unnamed"
 msgstr "naamloos"
 
-#: attachment/attachmentcontrollerbase.cpp:798
+#: attachment/attachmentcontrollerbase.cpp:799
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Attachment As"
 msgstr "Bijlage opslaan als"
 
-#: attachment/attachmentcontrollerbase.cpp:821
+#: attachment/attachmentcontrollerbase.cpp:822
 #, kde-format
 msgid ""
 "File %1 exists.\n"
@@ -269,56 +269,56 @@ msgstr ""
 "Bestand %1 bestaat al.\n"
 "Wilt u het vervangen?"
 
-#: attachment/attachmentcontrollerbase.cpp:822
+#: attachment/attachmentcontrollerbase.cpp:823
 #, kde-format
 msgctxt "@title:window"
 msgid "Save to File"
 msgstr "Naar bestand opslaan"
 
-#: attachment/attachmentcontrollerbase.cpp:823
+#: attachment/attachmentcontrollerbase.cpp:824
 #, kde-format
 msgctxt "@action:button"
 msgid "&Replace"
 msgstr "Ve&rvangen"
 
-#: attachment/attachmentcontrollerbase.cpp:850
-#: attachment/attachmentcontrollerbase.cpp:929
+#: attachment/attachmentcontrollerbase.cpp:851
+#: attachment/attachmentcontrollerbase.cpp:930
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
 msgstr "Wilt u deze map \"%1\" echt bijvoegen?"
 
-#: attachment/attachmentcontrollerbase.cpp:851
-#: attachment/attachmentcontrollerbase.cpp:930
+#: attachment/attachmentcontrollerbase.cpp:852
+#: attachment/attachmentcontrollerbase.cpp:931
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach directory"
 msgstr "Map bijvoegen"
 
-#: attachment/attachmentcontrollerbase.cpp:852
-#: attachment/attachmentcontrollerbase.cpp:931
+#: attachment/attachmentcontrollerbase.cpp:853
+#: attachment/attachmentcontrollerbase.cpp:932
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach"
 msgstr "Bijvoegen"
 
-#: attachment/attachmentcontrollerbase.cpp:887
+#: attachment/attachmentcontrollerbase.cpp:888
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach Directory"
 msgstr "Map bijvoegen"
 
-#: attachment/attachmentcontrollerbase.cpp:895
+#: attachment/attachmentcontrollerbase.cpp:896
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach File"
 msgstr "Bestand bijvoegen"
 
-#: attachment/attachmentcontrollerbase.cpp:984
+#: attachment/attachmentcontrollerbase.cpp:985
 #, kde-format
 msgid "Attach Public OpenPGP Key"
 msgstr "Publieke OpenPGP-sleutel bijvoegen"
 
-#: attachment/attachmentcontrollerbase.cpp:985
+#: attachment/attachmentcontrollerbase.cpp:986
 #, kde-format
 msgid "Select the public key which should be attached."
 msgstr "Selecteer de sleutel die moet worden bijgevoegd."
@@ -382,12 +382,12 @@ msgctxt "@title column attachment inlined checkbox."
 msgid "Suggest Automatic Display"
 msgstr "Automatische weergave voorstellen"
 
-#: attachment/editorwatcher.cpp:64
+#: attachment/editorwatcher.cpp:66
 #, kde-format
 msgid "Edit with:"
 msgstr "Bewerken met:"
 
-#: attachment/editorwatcher.cpp:198
+#: attachment/editorwatcher.cpp:200
 #, kde-format
 msgid ""
 "KMail is unable to detect when the chosen editor is closed. To avoid data "
@@ -1130,29 +1130,29 @@ msgstr ""
 "Selecteer het/de certifica(a)t(en) die gebruikt moet(en) worden voor deze "
 "ontvanger."
 
-#: contactpreference/savecontactpreferencejob.cpp:70
+#: contactpreference/savecontactpreferencejob.cpp:71
 #, kde-format
 msgctxt "@title:window"
 msgid "Name Selection"
 msgstr "Naamselectie"
 
-#: contactpreference/savecontactpreferencejob.cpp:71
+#: contactpreference/savecontactpreferencejob.cpp:72
 #, kde-format
 msgid "Which name shall the contact '%1' have in your address book?"
 msgstr "Welke naam krijgt contact '%1' in uw adresboek?"
 
-#: contactpreference/savecontactpreferencejob.cpp:83
+#: contactpreference/savecontactpreferencejob.cpp:84
 #, kde-format
 msgid "Select the address book folder to store the new contact in:"
 msgstr ""
 "Selecteer de adresboekmap waarin het nieuwe contact moet worden opgeslagen:"
 
-#: followupreminder/followupremindercreatejob.cpp:76
+#: followupreminder/followupremindercreatejob.cpp:78
 #, kde-format
 msgid "Wait answer from \"%1\" send to \"%2\""
 msgstr "Wacht op antwoord van \"%1\" verzonden naar \"%2\""
 
-#: followupreminder/followupremindercreatejob.cpp:99
+#: followupreminder/followupremindercreatejob.cpp:101
 #, kde-format
 msgid ""
 "Failed to store a new reminder: an error occurred while trying to create a "
@@ -1161,7 +1161,7 @@ msgstr ""
 "Een nieuwe herinnering opslaan is mislukt: er deed zich een fout voor "
 "tijdens de poging om een nieuwe te-doen in uw agenda aan te maken: %1"
 
-#: followupreminder/followupremindercreatejob.cpp:131
+#: followupreminder/followupremindercreatejob.cpp:133
 #, kde-format
 msgid "Failed to store a new reminder: %1"
 msgstr "Een nieuwe herinnering opslaan is mislukt: %1"
@@ -1204,17 +1204,17 @@ msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "Ongeldige map"
 
-#: helper/messagefactoryng.cpp:406 helper/messagefactoryng.cpp:729
+#: helper/messagefactoryng.cpp:407 helper/messagefactoryng.cpp:730
 #, kde-format
 msgid "forwarded message"
 msgstr "verzonden berichten"
 
-#: helper/messagefactoryng.cpp:574
+#: helper/messagefactoryng.cpp:575
 #, kde-format
 msgid "Receipt: "
 msgstr "Ontvangst: "
 
-#: helper/messagefactoryng.cpp:701
+#: helper/messagefactoryng.cpp:702
 #, kde-format
 msgid ""
 "\n"
@@ -1229,24 +1229,24 @@ msgstr ""
 "\n"
 "\n"
 
-#: imagescaling/imagescalingselectformat.cpp:25
+#: imagescaling/imagescalingselectformat.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Image Format"
 msgstr "Indeling van afbeelding selecteren"
 
-#: imagescaling/imagescalingselectformat.cpp:88
+#: imagescaling/imagescalingselectformat.cpp:89
 #, kde-format
 msgctxt "@action:button"
 msgid "Select Format..."
 msgstr "Indeling selecteren..."
 
-#: imagescaling/imagescalingwidget.cpp:107
+#: imagescaling/imagescalingwidget.cpp:109
 #, kde-format
 msgid "<a href=\"whatsthis\">How does this work?</a>"
 msgstr "<a href=\"whatsthis\">Hoe werkt dit?</a>"
 
-#: imagescaling/imagescalingwidget.cpp:117
+#: imagescaling/imagescalingwidget.cpp:119
 #, kde-format
 msgid ""
 "<qt><p>Here you can define image filename. You can use:</p><ul><li>%t set "
@@ -1258,17 +1258,17 @@ msgstr ""
 "datum</li><li>%n originele bestandsnaam</li><li>%e oorspronkelijke extensie</"
 "li><li>%x nieuwe extensie</li></ul></qt>"
 
-#: imagescaling/imagescalingwidget.cpp:187
+#: imagescaling/imagescalingwidget.cpp:189
 #, kde-format
 msgid "Custom"
 msgstr "Aangepast"
 
-#: imagescaling/imagescalingwidget.cpp:315
+#: imagescaling/imagescalingwidget.cpp:317
 #, kde-format
 msgid "Please verify minimum and maximum values."
 msgstr "Minimum and maximum waarden controleren."
 
-#: imagescaling/imagescalingwidget.cpp:315
+#: imagescaling/imagescalingwidget.cpp:317
 #, kde-format
 msgctxt "@title:window"
 msgid "Error in minimum Maximum value"
@@ -1527,17 +1527,17 @@ msgstr ""
 msgid "Exporting key..."
 msgstr "Sleutel wordt geëxporteerd..."
 
-#: job/attachmentvcardfromaddressbookjob.cpp:75
+#: job/attachmentvcardfromaddressbookjob.cpp:77
 #, kde-format
 msgid "Unknown Contact Type"
 msgstr "Onbekend type contactpersoon"
 
-#: job/attachmentvcardfromaddressbookjob.cpp:86
+#: job/attachmentvcardfromaddressbookjob.cpp:88
 #, kde-format
 msgid "Invalid Contact"
 msgstr "Ongeldige contactpersoon"
 
-#: job/attachmentvcardfromaddressbookjob.cpp:102
+#: job/attachmentvcardfromaddressbookjob.cpp:104
 #, kde-format
 msgid "Impossible to generate vCard."
 msgstr "vCard genereren is onmogelijk."
@@ -1576,7 +1576,7 @@ msgstr ""
 msgid "Could not get text codec for charset \"%1\"."
 msgstr "Kon tekst-codec voor tekenset \"%1\" niet verkrijgen."
 
-#: job/singlepartjob.cpp:65
+#: job/singlepartjob.cpp:66
 #, kde-format
 msgid "%1 Content-Transfer-Encoding cannot correctly encode this message."
 msgstr "%1 Inhoud-Overdracht-Codering kan dit bericht niet juist coderen."
@@ -1803,37 +1803,37 @@ msgstr[0] ""
 "Lijst met geadresseerden wordt ingekort tot %2 van %1 geadresseerden."
 msgstr[1] "Lijst ontvangers inkorten naar %2 van %1 items."
 
-#: recipient/recipientseditorsidewidget.cpp:28
+#: recipient/recipientseditorsidewidget.cpp:29
 #, kde-format
 msgctxt "@action:button"
 msgid "Save List..."
 msgstr "Lijst opslaan..."
 
-#: recipient/recipientseditorsidewidget.cpp:29
+#: recipient/recipientseditorsidewidget.cpp:30
 #, kde-format
 msgctxt "@action:button Open recipient selection dialog."
 msgid "Se&lect..."
 msgstr "Se&lecteren..."
 
-#: recipient/recipientseditorsidewidget.cpp:46
+#: recipient/recipientseditorsidewidget.cpp:47
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save recipients as distribution list"
 msgstr "Ontvangers als distributielijst opslaan"
 
-#: recipient/recipientseditorsidewidget.cpp:50
+#: recipient/recipientseditorsidewidget.cpp:51
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select recipients from address book"
 msgstr "Selecteer ontvangers uit het adresboek"
 
-#: recipient/recipientseditorsidewidget.cpp:77
+#: recipient/recipientseditorsidewidget.cpp:78
 #, kde-format
 msgctxt "@info:status No recipients selected"
 msgid "No recipients"
 msgstr "Geen ontvangers"
 
-#: recipient/recipientseditorsidewidget.cpp:79
+#: recipient/recipientseditorsidewidget.cpp:80
 #, kde-format
 msgctxt "@info:status Number of recipients selected"
 msgid "1 recipient"
@@ -1841,70 +1841,70 @@ msgid_plural "%1 recipients"
 msgstr[0] "1 ontvanger"
 msgstr[1] "%1 ontvangers"
 
-#: recipient/recipientseditorsidewidget.cpp:129
+#: recipient/recipientseditorsidewidget.cpp:130
 #, kde-format
 msgctxt "@info:tooltip %1 list of emails"
 msgid "To:%1"
 msgstr "Aan:%1"
 
-#: recipient/recipientseditorsidewidget.cpp:131
+#: recipient/recipientseditorsidewidget.cpp:132
 #, kde-format
 msgctxt "@info:tooltip %1 list of emails"
 msgid "CC:%1"
 msgstr "CC:%1"
 
-#: recipient/recipientseditorsidewidget.cpp:134
+#: recipient/recipientseditorsidewidget.cpp:135
 #, kde-format
 msgctxt "@info:tooltip %1 list of emails"
 msgid "BCC:%1"
 msgstr "BCC:%1"
 
-#: recipient/recipientseditorsidewidget.cpp:137
+#: recipient/recipientseditorsidewidget.cpp:138
 #, kde-format
 msgctxt "@info:tooltip %1 list of emails"
 msgid "Reply-To:%1"
 msgstr "Antwoord-aan:%1"
 
-#: recipient/recipientspicker.cpp:49
+#: recipient/recipientspicker.cpp:51
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Recipient"
 msgstr "Ontvanger selecteren"
 
-#: recipient/recipientspicker.cpp:61
+#: recipient/recipientspicker.cpp:63
 #, kde-format
 msgctxt "@action:button"
 msgid "Search &Directory Service"
 msgstr "&Directoryservice doorzoeken"
 
-#: recipient/recipientspicker.cpp:80
+#: recipient/recipientspicker.cpp:82
 #, kde-format
 msgid "Add as &Reply-To"
 msgstr "Toevoegen als &Antwoord-aan"
 
-#: recipient/recipientspicker.cpp:81
+#: recipient/recipientspicker.cpp:83
 #, kde-format
 msgid "Add as &To"
 msgstr "Toevoegen als &Aan"
 
-#: recipient/recipientspicker.cpp:82
+#: recipient/recipientspicker.cpp:84
 #, kde-format
 msgid "Add as CC"
 msgstr "Toevoegen als CC"
 
-#: recipient/recipientspicker.cpp:83
+#: recipient/recipientspicker.cpp:85
 #, kde-format
 msgid "Add as &BCC"
 msgstr "Toevoegen als &BCC"
 
-#: recipient/recipientspicker.cpp:106
+#: recipient/recipientspicker.cpp:108
 #, kde-format
 msgid "%1 selected email"
 msgid_plural "%1 selected emails"
 msgstr[0] "%1 geselecteerd e-mailbericht"
 msgstr[1] "%1 geselecteerde e-mailberichten"
 
-#: recipient/recipientspicker.cpp:173
+#: recipient/recipientspicker.cpp:175
 #, kde-format
 msgid ""
 "You selected 1 recipient. The maximum supported number of recipients is %2.\n"
@@ -1922,64 +1922,64 @@ msgstr[1] ""
 "wordt is %2.\n"
 "Pas de selectie aan."
 
-#: recipient/recipientspicker.cpp:190
+#: recipient/recipientspicker.cpp:192
 #, kde-format
 msgid "You can not add more recipients."
 msgstr "U kunt geen ontvangers meer toevoegen."
 
-#: sendlater/sendlatercreatejob.cpp:33
+#: sendlater/sendlatercreatejob.cpp:35
 #, kde-format
 msgid "Failed to schedule message for sending later: %1"
 msgstr "Het bericht inplannen voor later verzenden is mislukt: %1"
 
-#: sendlater/sendlaterdialog.cpp:28
+#: sendlater/sendlaterdialog.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Later"
 msgstr "Later verzenden"
 
-#: sendlater/sendlaterdialog.cpp:48
+#: sendlater/sendlaterdialog.cpp:50
 #, kde-format
 msgid "Send Later"
 msgstr "Later verzenden"
 
-#: sendlater/sendlaterdialog.cpp:49
+#: sendlater/sendlaterdialog.cpp:51
 #, kde-format
 msgctxt "@option:check"
 msgid "Delay"
 msgstr "Vertraging"
 
-#: sendlater/sendlaterdialog.cpp:65
+#: sendlater/sendlaterdialog.cpp:67
 #, kde-format
 msgid "Days"
 msgstr "Dagen"
 
-#: sendlater/sendlaterdialog.cpp:65
+#: sendlater/sendlaterdialog.cpp:67
 #, kde-format
 msgid "Weeks"
 msgstr "Weken"
 
-#: sendlater/sendlaterdialog.cpp:65
+#: sendlater/sendlaterdialog.cpp:67
 #, kde-format
 msgid "Months"
 msgstr "Maanden"
 
-#: sendlater/sendlaterdialog.cpp:65
+#: sendlater/sendlaterdialog.cpp:67
 #, kde-format
 msgid "Years"
 msgstr "Jaren"
 
-#: sendlater/sendlaterjob.cpp:32
+#: sendlater/sendlaterjob.cpp:34
 #, kde-format
 msgid "The Send Later agent is not running."
 msgstr "De agent voor later verzenden is niet actief."
 
-#: sendlater/sendlaterremovejob.cpp:27
+#: sendlater/sendlaterremovejob.cpp:29
 #, kde-format
 msgid "Failed to removed message from send later schedule: %1"
 msgstr "Verwijderen van bericht ingepland voor later verzenden is mislukt: %1"
 
-#: sendlater/sendlatertimedatewidget.cpp:35
+#: sendlater/sendlatertimedatewidget.cpp:36
 #, kde-format
 msgid "You cannot select a date prior to the current date."
 msgstr "U kunt geen datum selecteren vóór de huidige datum."
@@ -2393,7 +2393,7 @@ msgstr "Diversen"
 msgid "Subject"
 msgstr "Onderwerp"
 
-#: utils/util.cpp:235
+#: utils/util.cpp:236
 #, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
@@ -2401,7 +2401,7 @@ msgctxt ""
 msgid "attachment,attached"
 msgstr "attachment,attached,bijlage,bijgevoegd,meegestuurd"
 
-#: utils/util.cpp:269
+#: utils/util.cpp:270
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
@@ -2410,19 +2410,19 @@ msgstr ""
 "Het verzendprogramma voor e-mail is niet ingesteld, e-mails kunnen niet "
 "worden verzonden. Wilt een verzendprogramma instellen?"
 
-#: utils/util.cpp:270
+#: utils/util.cpp:271
 #, kde-format
 msgctxt "@title:window"
 msgid "No mail dispatcher."
 msgstr "Er is geen e-mailverzendprogramma."
 
-#: utils/util.cpp:272
+#: utils/util.cpp:273
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "E-mailverzendprogramma aanmaken"
 
-#: utils/util.cpp:287
+#: utils/util.cpp:288
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
@@ -2431,13 +2431,13 @@ msgstr ""
 "Het verzendprogramma voor e-mail is offline, e-mails kunnen niet worden "
 "verzonden. Wilt u het online zetten?"
 
-#: utils/util.cpp:288
+#: utils/util.cpp:289
 #, kde-format
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "E-mailverzendprogramma is offline."
 
-#: utils/util.cpp:289
+#: utils/util.cpp:290
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"

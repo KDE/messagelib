@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libwebengineviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"POT-Creation-Date: 2025-06-25 00:43+0000\n"
 "PO-Revision-Date: 2024-08-03 14:40+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -23,81 +23,81 @@ msgctxt "@title:window"
 msgid "Developer Tool"
 msgstr "開發者工具"
 
-#: findbar/findbarbase.cpp:39
+#: findbar/findbarbase.cpp:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "關閉"
 
-#: findbar/findbarbase.cpp:42
+#: findbar/findbarbase.cpp:44
 #, kde-format
 msgid "Close"
 msgstr "關閉"
 
-#: findbar/findbarbase.cpp:48
+#: findbar/findbarbase.cpp:50
 #, kde-format
 msgctxt "Find text"
 msgid "F&ind:"
 msgstr "尋找(&I)："
 
-#: findbar/findbarbase.cpp:53
+#: findbar/findbarbase.cpp:55
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "要搜尋的文字"
 
-#: findbar/findbarbase.cpp:58
+#: findbar/findbarbase.cpp:60
 #, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
 msgstr "下一個"
 
-#: findbar/findbarbase.cpp:59
+#: findbar/findbarbase.cpp:61
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "跳至下一個符合"
 
-#: findbar/findbarbase.cpp:64
+#: findbar/findbarbase.cpp:66
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
 msgstr "前一個"
 
-#: findbar/findbarbase.cpp:65
+#: findbar/findbarbase.cpp:67
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "跳至上一個符合"
 
-#: findbar/findbarbase.cpp:71
+#: findbar/findbarbase.cpp:73
 #, kde-format
 msgid "Options"
 msgstr "選項"
 
-#: findbar/findbarbase.cpp:72
+#: findbar/findbarbase.cpp:74
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "變更搜尋行為"
 
-#: findbar/findbarbase.cpp:74
+#: findbar/findbarbase.cpp:76
 #, kde-format
 msgid "Case sensitive"
 msgstr "區分大小寫"
 
-#: findbar/findbarbase.cpp:91
+#: findbar/findbarbase.cpp:93
 #, kde-format
 msgid "Phrase not found"
 msgstr "找不到該片語"
 
-#: webenginepage.cpp:152
+#: webenginepage.cpp:154
 #, kde-format
 msgctxt "@title:window"
 msgid "Save HTML Page"
 msgstr "儲存 HTML 頁面"
 
-#: widgets/submittedformwidgets/submittedformwarningwidget.cpp:22
+#: widgets/submittedformwidgets/submittedformwarningwidget.cpp:23
 #, kde-format
 msgid "Submit form is not allowed in mailer. Please open url in a browser."
 msgstr "郵件工具裡不允許提交表單。請在瀏覽器開啟網址。"
@@ -127,7 +127,7 @@ msgid "1 tracker from the company %2 (%3)"
 msgid_plural "%1 trackers from the company %2 (%3)"
 msgstr[0] "%1 個追蹤器，來自公司 %2 (%3)"
 
-#: widgets/zoomactionmenu.cpp:127
+#: widgets/zoomactionmenu.cpp:129
 #, kde-format
 msgid "Zoom"
 msgstr "縮放"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-17 00:39+0000\n"
+"POT-Creation-Date: 2025-06-25 00:43+0000\n"
 "PO-Revision-Date: 2024-12-03 12:44+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -25,37 +25,37 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 
-#: customtemplates.cpp:72 customtemplates.cpp:123
+#: customtemplates.cpp:74 customtemplates.cpp:125
 #, kde-format
 msgctxt "Message->"
 msgid "Universal"
 msgstr "Универсальный"
 
-#: customtemplates.cpp:73 customtemplates.cpp:129
+#: customtemplates.cpp:75 customtemplates.cpp:131
 #, kde-format
 msgctxt "Message->"
 msgid "Reply"
 msgstr "Ответ отправителю"
 
-#: customtemplates.cpp:74 customtemplates.cpp:132
+#: customtemplates.cpp:76 customtemplates.cpp:134
 #, kde-format
 msgctxt "Message->"
 msgid "Reply to All"
 msgstr "Ответ всем"
 
-#: customtemplates.cpp:75 customtemplates.cpp:135
+#: customtemplates.cpp:77 customtemplates.cpp:137
 #, kde-format
 msgctxt "Message->"
 msgid "Forward"
 msgstr "Пересылка"
 
-#: customtemplates.cpp:77 templatesconfiguration.cpp:73
+#: customtemplates.cpp:79 templatesconfiguration.cpp:75
 #, kde-format
 msgid "<a href=\"whatsthis\">How does this work?</a>"
 msgstr "<a href=\"whatsthis\">Как это работает?</a>"
 
 # BUGME: "right button menu" (context menu) does not work. --aspotashev
-#: customtemplates.cpp:87
+#: customtemplates.cpp:89
 #, kde-format
 msgid ""
 "<qt><p>Here you can add, edit, and delete custom message templates to use "
@@ -79,68 +79,68 @@ msgstr ""
 "отправителю</i>, <i>Ответ всем</i>, <i>Пересылка</i> и <i>Универсальный</i>, "
 "который можно использовать для написания письма любого типа.</p></qt>"
 
-#: customtemplates.cpp:138
+#: customtemplates.cpp:140
 #, kde-format
 msgctxt "Message->"
 msgid "Unknown"
 msgstr "Неизвестный"
 
-#: customtemplates.cpp:252
+#: customtemplates.cpp:254
 #, kde-format
 msgid "A template with same name already exists."
 msgstr "Шаблон с таким именем уже существует."
 
-#: customtemplates.cpp:252
+#: customtemplates.cpp:254
 #, kde-format
 msgctxt "@title:window"
 msgid "Cannot create template"
 msgstr "Ошибка создания шаблона"
 
-#: customtemplates.cpp:344
+#: customtemplates.cpp:346
 #, kde-format
 msgctxt "@info"
 msgid "Do you really want to remove template \"%1\"?"
 msgstr "Действительно удалить шаблон «%1»?"
 
-#: customtemplates.cpp:345
+#: customtemplates.cpp:347
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Template?"
 msgstr "Удаление шаблона"
 
-#: customtemplatesmenu.cpp:48
+#: customtemplatesmenu.cpp:50
 #, kde-format
 msgid "With Custom Template"
 msgstr "С пользовательским шаблоном"
 
-#: customtemplatesmenu.cpp:51
+#: customtemplatesmenu.cpp:53
 #, kde-format
 msgid "Reply With Custom Template"
 msgstr "Ответить, используя шаблон"
 
-#: customtemplatesmenu.cpp:54
+#: customtemplatesmenu.cpp:56
 #, kde-format
 msgid "Reply to All With Custom Template"
 msgstr "Ответить всем, используя шаблон"
 
-#: customtemplatesmenu.cpp:179 customtemplatesmenu.cpp:184
-#: customtemplatesmenu.cpp:189
+#: customtemplatesmenu.cpp:181 customtemplatesmenu.cpp:186
+#: customtemplatesmenu.cpp:191
 #, kde-format
 msgid "(no custom templates)"
 msgstr "(нет пользовательских шаблонов)"
 
-#: defaulttemplates.cpp:16
+#: defaulttemplates.cpp:17
 #, kde-format
 msgid "Default new message template"
 msgstr "Шаблон нового письма по умолчанию"
 
-#: defaulttemplates.cpp:21
+#: defaulttemplates.cpp:22
 #, kde-format
 msgid "Default reply template"
 msgstr "Шаблон ответа отправителю по умолчанию"
 
 # BUGME: вы -> Вы?; "в сообщении" -> "в письме"? --aspotashev
-#: defaulttemplates.cpp:26
+#: defaulttemplates.cpp:27
 #, kde-format
 msgctxt ""
 "Default reply template.%1: date of original message, %2: time of original "
@@ -154,12 +154,12 @@ msgstr ""
 "%3\n"
 "%4"
 
-#: defaulttemplates.cpp:37
+#: defaulttemplates.cpp:38
 #, kde-format
 msgid "Default reply all template"
 msgstr "Шаблон ответа всем по умолчанию"
 
-#: defaulttemplates.cpp:41
+#: defaulttemplates.cpp:42
 #, kde-format
 msgctxt ""
 "Default reply all template: %1: date, %2: time, %3: name of original sender, "
@@ -173,12 +173,12 @@ msgstr ""
 "%4\n"
 "%5"
 
-#: defaulttemplates.cpp:53
+#: defaulttemplates.cpp:54
 #, kde-format
 msgid "Default forward template"
 msgstr "Шаблон пересылаемых писем по умолчанию"
 
-#: defaulttemplates.cpp:60
+#: defaulttemplates.cpp:61
 #, kde-format
 msgctxt ""
 "Default forward template: %1: subject of original message, %2: date of "
@@ -294,252 +294,252 @@ msgctxt "@item:intext email CC"
 msgid "CC:"
 msgstr "Копия:"
 
-#: templateparserjob.cpp:1150
+#: templateparserjob.cpp:1148
 #, kde-format
 msgctxt "@item:intext"
 msgid "Attachment %1"
 msgstr "Вложение %1"
 
-#: templateparserjob.cpp:1357
+#: templateparserjob.cpp:1355
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Pipe command <command>%1</command> failed."
 msgstr "Ошибка в конвейерной команде <command>%1</command>."
 
-#: templatescommandmenu.cpp:28
+#: templatescommandmenu.cpp:29
 msgid "Quoted Message Text"
 msgstr "Текст цитируемого письма"
 
-#: templatescommandmenu.cpp:30
+#: templatescommandmenu.cpp:31
 msgid "Message Text as Is"
 msgstr "Текст письма как есть"
 
-#: templatescommandmenu.cpp:32
+#: templatescommandmenu.cpp:33
 msgid "Message Id"
 msgstr "Идентификатор письма"
 
-#: templatescommandmenu.cpp:34 templatescommandmenu.cpp:87
+#: templatescommandmenu.cpp:35 templatescommandmenu.cpp:88
 msgid "Date"
 msgstr "Дата"
 
-#: templatescommandmenu.cpp:36 templatescommandmenu.cpp:89
+#: templatescommandmenu.cpp:37 templatescommandmenu.cpp:90
 msgid "Date in Short Format"
 msgstr "Дата в кратком формате"
 
-#: templatescommandmenu.cpp:38 templatescommandmenu.cpp:91
+#: templatescommandmenu.cpp:39 templatescommandmenu.cpp:92
 msgid "Date in C Locale"
 msgstr "Дата в международном формате"
 
-#: templatescommandmenu.cpp:40 templatescommandmenu.cpp:93
+#: templatescommandmenu.cpp:41 templatescommandmenu.cpp:94
 msgid "Day of Week"
 msgstr "День недели"
 
-#: templatescommandmenu.cpp:42 templatescommandmenu.cpp:95
+#: templatescommandmenu.cpp:43 templatescommandmenu.cpp:96
 msgid "Time"
 msgstr "Время"
 
-#: templatescommandmenu.cpp:44 templatescommandmenu.cpp:97
+#: templatescommandmenu.cpp:45 templatescommandmenu.cpp:98
 msgid "Time in Long Format"
 msgstr "Время в длинном формате"
 
-#: templatescommandmenu.cpp:46 templatescommandmenu.cpp:99
+#: templatescommandmenu.cpp:47 templatescommandmenu.cpp:100
 msgid "Time in C Locale"
 msgstr "Время в международном формате"
 
-#: templatescommandmenu.cpp:48 templatescommandmenu.cpp:100
+#: templatescommandmenu.cpp:49 templatescommandmenu.cpp:101
 msgid "To Field Address"
 msgstr "Адрес получателя"
 
-#: templatescommandmenu.cpp:50 templatescommandmenu.cpp:102
+#: templatescommandmenu.cpp:51 templatescommandmenu.cpp:103
 msgid "To Field Name"
 msgstr "Полное имя получателя"
 
-#: templatescommandmenu.cpp:52 templatescommandmenu.cpp:104
+#: templatescommandmenu.cpp:53 templatescommandmenu.cpp:105
 msgid "To Field First Name"
 msgstr "Имя получателя"
 
-#: templatescommandmenu.cpp:54 templatescommandmenu.cpp:106
+#: templatescommandmenu.cpp:55 templatescommandmenu.cpp:107
 msgid "To Field Last Name"
 msgstr "Фамилия получателя"
 
-#: templatescommandmenu.cpp:56 templatescommandmenu.cpp:108
+#: templatescommandmenu.cpp:57 templatescommandmenu.cpp:109
 msgid "CC Field Address"
 msgstr "Адрес получателя копии"
 
-#: templatescommandmenu.cpp:58 templatescommandmenu.cpp:110
+#: templatescommandmenu.cpp:59 templatescommandmenu.cpp:111
 msgid "CC Field Name"
 msgstr "Полное имя получателя копии"
 
-#: templatescommandmenu.cpp:60 templatescommandmenu.cpp:112
+#: templatescommandmenu.cpp:61 templatescommandmenu.cpp:113
 msgid "CC Field First Name"
 msgstr "Имя получателя копии"
 
-#: templatescommandmenu.cpp:62 templatescommandmenu.cpp:114
+#: templatescommandmenu.cpp:63 templatescommandmenu.cpp:115
 msgid "CC Field Last Name"
 msgstr "Фамилия получателя копии"
 
-#: templatescommandmenu.cpp:64 templatescommandmenu.cpp:116
+#: templatescommandmenu.cpp:65 templatescommandmenu.cpp:117
 msgid "From Field Address"
 msgstr "Адрес отправителя"
 
 # BUGME: add msgctxt ("First Name + Last Name"?) --aspotashev
-#: templatescommandmenu.cpp:66
+#: templatescommandmenu.cpp:67
 msgid "From Field Name"
 msgstr "Полное имя отправителя"
 
-#: templatescommandmenu.cpp:68 templatescommandmenu.cpp:120
+#: templatescommandmenu.cpp:69 templatescommandmenu.cpp:121
 msgid "From Field First Name"
 msgstr "Имя отправителя"
 
-#: templatescommandmenu.cpp:70 templatescommandmenu.cpp:122
+#: templatescommandmenu.cpp:71 templatescommandmenu.cpp:123
 msgid "From Field Last Name"
 msgstr "Фамилия отправителя"
 
-#: templatescommandmenu.cpp:72
+#: templatescommandmenu.cpp:73
 msgid "Addresses of all recipients"
 msgstr "Адреса всех получателей"
 
-#: templatescommandmenu.cpp:74
+#: templatescommandmenu.cpp:75
 msgctxt "Template value for subject of the message"
 msgid "Subject"
 msgstr "Тема"
 
-#: templatescommandmenu.cpp:76
+#: templatescommandmenu.cpp:77
 msgid "Quoted Headers"
 msgstr "Процитированные заголовки"
 
-#: templatescommandmenu.cpp:78
+#: templatescommandmenu.cpp:79
 msgid "Headers as Is"
 msgstr "Заголовки как есть"
 
-#: templatescommandmenu.cpp:80 templatescommandmenu.cpp:126
+#: templatescommandmenu.cpp:81 templatescommandmenu.cpp:127
 msgid "Header Content"
 msgstr "Содержимое заголовка"
 
-#: templatescommandmenu.cpp:82
+#: templatescommandmenu.cpp:83
 msgid "Reply as Quoted Plain Text"
 msgstr "Ответить в виде процитированного простого текста"
 
-#: templatescommandmenu.cpp:84
+#: templatescommandmenu.cpp:85
 msgid "Reply as Quoted HTML Text"
 msgstr "Ответить в виде процитированного HTML-текста"
 
-#: templatescommandmenu.cpp:118
+#: templatescommandmenu.cpp:119
 msgid "From field Name"
 msgstr "Полное имя отправителя"
 
-#: templatescommandmenu.cpp:124
+#: templatescommandmenu.cpp:125
 msgctxt "Template subject command."
 msgid "Subject"
 msgstr "Тема"
 
-#: templatescommandmenu.cpp:129
+#: templatescommandmenu.cpp:130
 msgid "Pipe Original Message Body and Insert Result as Quoted Text"
 msgstr ""
 "Передать тело исходного письма и вставить результат как процитированный текст"
 
-#: templatescommandmenu.cpp:131
+#: templatescommandmenu.cpp:132
 msgid "Pipe Original Message Body and Insert Result as Is"
 msgstr "Передать тело исходного письма и вставить результат как есть"
 
-#: templatescommandmenu.cpp:133
+#: templatescommandmenu.cpp:134
 msgid "Pipe Original Message with Headers and Insert Result as Is"
 msgstr "Передать исходное письмо с заголовком и вставить результат как есть"
 
-#: templatescommandmenu.cpp:135
+#: templatescommandmenu.cpp:136
 msgid "Pipe Current Message Body and Insert Result as Is"
 msgstr "Передать тело текущего письма и вставить результат как есть"
 
-#: templatescommandmenu.cpp:137
+#: templatescommandmenu.cpp:138
 msgid "Pipe Current Message Body and Replace with Result"
 msgstr "Передать тело текущего письма и заменить результатом"
 
-#: templatescommandmenu.cpp:142
+#: templatescommandmenu.cpp:143
 msgctxt "Inserts user signature, also known as footer, into message"
 msgid "Signature"
 msgstr "Подпись"
 
-#: templatescommandmenu.cpp:144
+#: templatescommandmenu.cpp:145
 msgid "Insert File Content"
 msgstr "Вставить содержимое файла"
 
-#: templatescommandmenu.cpp:148
+#: templatescommandmenu.cpp:149
 msgctxt ""
 "All characters, up to and including the next newline, are discarded without "
 "performing any macro expansion"
 msgid "Discard to Next Line"
 msgstr "Сбросить на следующую строку"
 
-#: templatescommandmenu.cpp:151
+#: templatescommandmenu.cpp:152
 msgid "Template Comment"
 msgstr "Комментарий"
 
-#: templatescommandmenu.cpp:153
+#: templatescommandmenu.cpp:154
 msgid "No Operation"
 msgstr "Нет операции"
 
-#: templatescommandmenu.cpp:155
+#: templatescommandmenu.cpp:156
 msgid "Clear Generated Message"
 msgstr "Очистить созданное письмо"
 
-#: templatescommandmenu.cpp:156
+#: templatescommandmenu.cpp:157
 msgid "Cursor position"
 msgstr "Положение курсора"
 
-#: templatescommandmenu.cpp:158
+#: templatescommandmenu.cpp:159
 msgid "Blank text"
 msgstr "Пустой текст"
 
-#: templatescommandmenu.cpp:160
+#: templatescommandmenu.cpp:161
 msgid "Dictionary Language"
 msgstr "Язык словаря"
 
-#: templatescommandmenu.cpp:161
+#: templatescommandmenu.cpp:162
 msgid "Language"
 msgstr "Язык"
 
-#: templatescommandmenu.cpp:166
+#: templatescommandmenu.cpp:167
 msgid "Turn Debug On"
 msgstr "Включить режим отладки"
 
-#: templatescommandmenu.cpp:168
+#: templatescommandmenu.cpp:169
 msgid "Turn Debug Off"
 msgstr "Выключить режим отладки"
 
 # Уже "проходили": https://bugs.kde.org/show_bug.cgi?id=188395 --aspotashev
-#: templatescommandmenu.cpp:201
+#: templatescommandmenu.cpp:202
 #, kde-format
 msgid "Insert Command"
 msgstr "Вставить переменную"
 
-#: templatescommandmenu.cpp:214
+#: templatescommandmenu.cpp:215
 #, kde-format
 msgid "Original Message"
 msgstr "Исходное письмо"
 
-#: templatescommandmenu.cpp:228
+#: templatescommandmenu.cpp:229
 #, kde-format
 msgid "Current Message"
 msgstr "Текущее письмо"
 
-#: templatescommandmenu.cpp:241
+#: templatescommandmenu.cpp:242
 #, kde-format
 msgid "Process with External Programs"
 msgstr "Процесс с внешними программами"
 
-#: templatescommandmenu.cpp:254
+#: templatescommandmenu.cpp:255
 #, kde-format
 msgctxt "Miscellaneous template commands menu"
 msgid "Miscellaneous"
 msgstr "Разное"
 
-#: templatescommandmenu.cpp:268
+#: templatescommandmenu.cpp:269
 #, kde-format
 msgctxt "Debug template commands menu"
 msgid "Debug"
 msgstr "Отладка"
 
-#: templatesconfiguration.cpp:50
+#: templatesconfiguration.cpp:52
 #, kde-format
 msgid ""
 "<p>Here you can create and manage templates to use when composing new "
@@ -552,7 +552,7 @@ msgstr ""
 "переменных путем простого ввода или выбора их из меню <i>Вставить "
 "переменную</i>.</p>"
 
-#: templatesconfiguration.cpp:58
+#: templatesconfiguration.cpp:60
 #, kde-format
 msgid ""
 "<p>Templates specified here are folder-specific. They override both global "
@@ -561,7 +561,7 @@ msgstr ""
 "<p>Указанные здесь шаблоны являются специальными папками. Они переопределяют "
 "общие шаблоны и шаблоны профилей.</p>"
 
-#: templatesconfiguration.cpp:63
+#: templatesconfiguration.cpp:65
 #, kde-format
 msgid ""
 "<p>Templates specified here are identity-specific. They override global "
@@ -571,7 +571,7 @@ msgstr ""
 "<p>Указанные здесь шаблоны являются специальными папками. Они переопределяют "
 "общие шаблоны, но могут быть заменены заданными шаблонами папок.</p>"
 
-#: templatesconfiguration.cpp:68
+#: templatesconfiguration.cpp:70
 #, kde-format
 msgid ""
 "<p>These are global (default) templates. They can be overridden by per-"
@@ -580,30 +580,30 @@ msgstr ""
 "<p>Эти шаблоны являются общими (по умолчанию) шаблонами. Они могут быть "
 "переопределены заданными шаблонами профилей или шаблонами папок.</p>"
 
-#: templatesconfiguration.cpp:100
+#: templatesconfiguration.cpp:102
 #, kde-format
 msgid "Do you want to reset current template or all templates to default?"
 msgstr "Сбросить в настройки по умолчанию текущий шаблон или все шаблоны?"
 
-#: templatesconfiguration.cpp:101
+#: templatesconfiguration.cpp:103
 #, kde-format
 msgctxt "@title:window"
 msgid "Reset to default"
 msgstr "Возврат к параметрам по умолчанию"
 
-#: templatesconfiguration.cpp:102
+#: templatesconfiguration.cpp:104
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset Current Template"
 msgstr "Сбросить текущий шаблон"
 
-#: templatesconfiguration.cpp:103
+#: templatesconfiguration.cpp:105
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset All Templates"
 msgstr "Сбросить все шаблоны"
 
-#: templatesconfiguration.cpp:361
+#: templatesconfiguration.cpp:363
 #, kde-format
 msgid ""
 "Use of \"Reply using plain text\" and \"Reply using HTML text\" in pairs is "

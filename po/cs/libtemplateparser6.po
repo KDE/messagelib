@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-17 00:39+0000\n"
+"POT-Creation-Date: 2025-06-25 00:43+0000\n"
 "PO-Revision-Date: 2024-06-05 09:25+0200\n"
 "Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -20,36 +20,36 @@ msgstr ""
 "X-Generator: Lokalize 24.05.0\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: customtemplates.cpp:72 customtemplates.cpp:123
+#: customtemplates.cpp:74 customtemplates.cpp:125
 #, kde-format
 msgctxt "Message->"
 msgid "Universal"
 msgstr "Univerzální"
 
-#: customtemplates.cpp:73 customtemplates.cpp:129
+#: customtemplates.cpp:75 customtemplates.cpp:131
 #, kde-format
 msgctxt "Message->"
 msgid "Reply"
 msgstr "Odpověď"
 
-#: customtemplates.cpp:74 customtemplates.cpp:132
+#: customtemplates.cpp:76 customtemplates.cpp:134
 #, kde-format
 msgctxt "Message->"
 msgid "Reply to All"
 msgstr "Odpověď všem"
 
-#: customtemplates.cpp:75 customtemplates.cpp:135
+#: customtemplates.cpp:77 customtemplates.cpp:137
 #, kde-format
 msgctxt "Message->"
 msgid "Forward"
 msgstr "Přeposlání"
 
-#: customtemplates.cpp:77 templatesconfiguration.cpp:73
+#: customtemplates.cpp:79 templatesconfiguration.cpp:75
 #, kde-format
 msgid "<a href=\"whatsthis\">How does this work?</a>"
 msgstr "<a href=\"whatsthis\">Jak to funguje?</a>"
 
-#: customtemplates.cpp:87
+#: customtemplates.cpp:89
 #, kde-format
 msgid ""
 "<qt><p>Here you can add, edit, and delete custom message templates to use "
@@ -64,67 +64,67 @@ msgid ""
 "templates.</p></qt>"
 msgstr ""
 
-#: customtemplates.cpp:138
+#: customtemplates.cpp:140
 #, kde-format
 msgctxt "Message->"
 msgid "Unknown"
 msgstr "Neznámý"
 
-#: customtemplates.cpp:252
+#: customtemplates.cpp:254
 #, kde-format
 msgid "A template with same name already exists."
 msgstr ""
 
-#: customtemplates.cpp:252
+#: customtemplates.cpp:254
 #, kde-format
 msgctxt "@title:window"
 msgid "Cannot create template"
 msgstr "Šablonu nelze vytvořit"
 
-#: customtemplates.cpp:344
+#: customtemplates.cpp:346
 #, kde-format
 msgctxt "@info"
 msgid "Do you really want to remove template \"%1\"?"
 msgstr ""
 
-#: customtemplates.cpp:345
+#: customtemplates.cpp:347
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Template?"
 msgstr "Odstranit šablonu?"
 
-#: customtemplatesmenu.cpp:48
+#: customtemplatesmenu.cpp:50
 #, kde-format
 msgid "With Custom Template"
 msgstr "Pomocí vlastní šablony"
 
-#: customtemplatesmenu.cpp:51
+#: customtemplatesmenu.cpp:53
 #, kde-format
 msgid "Reply With Custom Template"
 msgstr "Odpovědět pomocí vlastní šablony"
 
-#: customtemplatesmenu.cpp:54
+#: customtemplatesmenu.cpp:56
 #, kde-format
 msgid "Reply to All With Custom Template"
 msgstr "Odpovědět všem pomocí vlastní šablony"
 
-#: customtemplatesmenu.cpp:179 customtemplatesmenu.cpp:184
-#: customtemplatesmenu.cpp:189
+#: customtemplatesmenu.cpp:181 customtemplatesmenu.cpp:186
+#: customtemplatesmenu.cpp:191
 #, kde-format
 msgid "(no custom templates)"
 msgstr "(žádné vlastní šablony)"
 
-#: defaulttemplates.cpp:16
+#: defaulttemplates.cpp:17
 #, kde-format
 msgid "Default new message template"
 msgstr "Výchozí šablona nové zprávy"
 
-#: defaulttemplates.cpp:21
+#: defaulttemplates.cpp:22
 #, kde-format
 msgid "Default reply template"
 msgstr "Výchozí šablona odpovědi"
 
-#: defaulttemplates.cpp:26
+#: defaulttemplates.cpp:27
 #, kde-format
 msgctxt ""
 "Default reply template.%1: date of original message, %2: time of original "
@@ -138,12 +138,12 @@ msgstr ""
 "%3\n"
 "%4"
 
-#: defaulttemplates.cpp:37
+#: defaulttemplates.cpp:38
 #, kde-format
 msgid "Default reply all template"
 msgstr "Výchozí šablona odpovědi všem"
 
-#: defaulttemplates.cpp:41
+#: defaulttemplates.cpp:42
 #, kde-format
 msgctxt ""
 "Default reply all template: %1: date, %2: time, %3: name of original sender, "
@@ -157,12 +157,12 @@ msgstr ""
 "%4\n"
 "%5"
 
-#: defaulttemplates.cpp:53
+#: defaulttemplates.cpp:54
 #, kde-format
 msgid "Default forward template"
 msgstr "Výchozí šablona přeposílání"
 
-#: defaulttemplates.cpp:60
+#: defaulttemplates.cpp:61
 #, kde-format
 msgctxt ""
 "Default forward template: %1: subject of original message, %2: date of "
@@ -279,250 +279,250 @@ msgctxt "@item:intext email CC"
 msgid "CC:"
 msgstr "Kopie: "
 
-#: templateparserjob.cpp:1150
+#: templateparserjob.cpp:1148
 #, kde-format
 msgctxt "@item:intext"
 msgid "Attachment %1"
 msgstr "Příloha %1"
 
-#: templateparserjob.cpp:1357
+#: templateparserjob.cpp:1355
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Pipe command <command>%1</command> failed."
 msgstr "Příkaz roury <command>%1</command> selhal."
 
-#: templatescommandmenu.cpp:28
+#: templatescommandmenu.cpp:29
 msgid "Quoted Message Text"
 msgstr "Citovaný text zprávy"
 
-#: templatescommandmenu.cpp:30
+#: templatescommandmenu.cpp:31
 msgid "Message Text as Is"
 msgstr "Text zprávy jak je"
 
-#: templatescommandmenu.cpp:32
+#: templatescommandmenu.cpp:33
 msgid "Message Id"
 msgstr "ID zprávy"
 
-#: templatescommandmenu.cpp:34 templatescommandmenu.cpp:87
+#: templatescommandmenu.cpp:35 templatescommandmenu.cpp:88
 msgid "Date"
 msgstr "Datum"
 
-#: templatescommandmenu.cpp:36 templatescommandmenu.cpp:89
+#: templatescommandmenu.cpp:37 templatescommandmenu.cpp:90
 msgid "Date in Short Format"
 msgstr "Krátký formát data"
 
-#: templatescommandmenu.cpp:38 templatescommandmenu.cpp:91
+#: templatescommandmenu.cpp:39 templatescommandmenu.cpp:92
 msgid "Date in C Locale"
 msgstr "Datum v C Locale"
 
-#: templatescommandmenu.cpp:40 templatescommandmenu.cpp:93
+#: templatescommandmenu.cpp:41 templatescommandmenu.cpp:94
 msgid "Day of Week"
 msgstr "Den týdne"
 
-#: templatescommandmenu.cpp:42 templatescommandmenu.cpp:95
+#: templatescommandmenu.cpp:43 templatescommandmenu.cpp:96
 msgid "Time"
 msgstr "Čas"
 
-#: templatescommandmenu.cpp:44 templatescommandmenu.cpp:97
+#: templatescommandmenu.cpp:45 templatescommandmenu.cpp:98
 msgid "Time in Long Format"
 msgstr "Dlouhý formát data"
 
-#: templatescommandmenu.cpp:46 templatescommandmenu.cpp:99
+#: templatescommandmenu.cpp:47 templatescommandmenu.cpp:100
 msgid "Time in C Locale"
 msgstr "Čas v C Locale"
 
-#: templatescommandmenu.cpp:48 templatescommandmenu.cpp:100
+#: templatescommandmenu.cpp:49 templatescommandmenu.cpp:101
 msgid "To Field Address"
 msgstr "Adresa z pole Komu"
 
-#: templatescommandmenu.cpp:50 templatescommandmenu.cpp:102
+#: templatescommandmenu.cpp:51 templatescommandmenu.cpp:103
 msgid "To Field Name"
 msgstr "Jméno z pole Komu"
 
-#: templatescommandmenu.cpp:52 templatescommandmenu.cpp:104
+#: templatescommandmenu.cpp:53 templatescommandmenu.cpp:105
 msgid "To Field First Name"
 msgstr "Křestní jméno z pole Komu"
 
-#: templatescommandmenu.cpp:54 templatescommandmenu.cpp:106
+#: templatescommandmenu.cpp:55 templatescommandmenu.cpp:107
 msgid "To Field Last Name"
 msgstr "Příjmení z pole Komu"
 
-#: templatescommandmenu.cpp:56 templatescommandmenu.cpp:108
+#: templatescommandmenu.cpp:57 templatescommandmenu.cpp:109
 msgid "CC Field Address"
 msgstr "Adresa z pole Kopie"
 
-#: templatescommandmenu.cpp:58 templatescommandmenu.cpp:110
+#: templatescommandmenu.cpp:59 templatescommandmenu.cpp:111
 msgid "CC Field Name"
 msgstr "Jméno z pole Kopie"
 
-#: templatescommandmenu.cpp:60 templatescommandmenu.cpp:112
+#: templatescommandmenu.cpp:61 templatescommandmenu.cpp:113
 msgid "CC Field First Name"
 msgstr "Křestní jméno z pole Kopie"
 
-#: templatescommandmenu.cpp:62 templatescommandmenu.cpp:114
+#: templatescommandmenu.cpp:63 templatescommandmenu.cpp:115
 msgid "CC Field Last Name"
 msgstr "Příjmení z pole Kopie"
 
-#: templatescommandmenu.cpp:64 templatescommandmenu.cpp:116
+#: templatescommandmenu.cpp:65 templatescommandmenu.cpp:117
 msgid "From Field Address"
 msgstr "Adresa z pole Odesílatel"
 
-#: templatescommandmenu.cpp:66
+#: templatescommandmenu.cpp:67
 msgid "From Field Name"
 msgstr "Jméno z pole Odesílatel"
 
-#: templatescommandmenu.cpp:68 templatescommandmenu.cpp:120
+#: templatescommandmenu.cpp:69 templatescommandmenu.cpp:121
 msgid "From Field First Name"
 msgstr "Křestní jméno z pole Odesílatel"
 
-#: templatescommandmenu.cpp:70 templatescommandmenu.cpp:122
+#: templatescommandmenu.cpp:71 templatescommandmenu.cpp:123
 msgid "From Field Last Name"
 msgstr "Příjmení z pole Odesílatel"
 
-#: templatescommandmenu.cpp:72
+#: templatescommandmenu.cpp:73
 msgid "Addresses of all recipients"
 msgstr "Adresy všech příjemců"
 
-#: templatescommandmenu.cpp:74
+#: templatescommandmenu.cpp:75
 msgctxt "Template value for subject of the message"
 msgid "Subject"
 msgstr "Předmět"
 
-#: templatescommandmenu.cpp:76
+#: templatescommandmenu.cpp:77
 msgid "Quoted Headers"
 msgstr "Citované hlavičky"
 
-#: templatescommandmenu.cpp:78
+#: templatescommandmenu.cpp:79
 msgid "Headers as Is"
 msgstr "Hlavičky jak jsou"
 
-#: templatescommandmenu.cpp:80 templatescommandmenu.cpp:126
+#: templatescommandmenu.cpp:81 templatescommandmenu.cpp:127
 msgid "Header Content"
 msgstr "Obsah hlavičky"
 
-#: templatescommandmenu.cpp:82
+#: templatescommandmenu.cpp:83
 msgid "Reply as Quoted Plain Text"
 msgstr "Odpovědět jako citaci prostého textu"
 
-#: templatescommandmenu.cpp:84
+#: templatescommandmenu.cpp:85
 msgid "Reply as Quoted HTML Text"
 msgstr "Odpovědět jako citaci textu HTML"
 
-#: templatescommandmenu.cpp:118
+#: templatescommandmenu.cpp:119
 msgid "From field Name"
 msgstr "Jméno  z pole Odesílatel"
 
-#: templatescommandmenu.cpp:124
+#: templatescommandmenu.cpp:125
 msgctxt "Template subject command."
 msgid "Subject"
 msgstr "Předmět"
 
-#: templatescommandmenu.cpp:129
+#: templatescommandmenu.cpp:130
 msgid "Pipe Original Message Body and Insert Result as Quoted Text"
 msgstr ""
 "Odeslat původní tělo zprávy do roury a vložit výsledek jako citovaný text"
 
-#: templatescommandmenu.cpp:131
+#: templatescommandmenu.cpp:132
 msgid "Pipe Original Message Body and Insert Result as Is"
 msgstr "Odeslat tělo původní zprávy do roury a vložit výsledek tak jak je"
 
-#: templatescommandmenu.cpp:133
+#: templatescommandmenu.cpp:134
 msgid "Pipe Original Message with Headers and Insert Result as Is"
 msgstr "Odeslat zprávu s hlavičkami do roury a vložit výsledek tak jak je"
 
-#: templatescommandmenu.cpp:135
+#: templatescommandmenu.cpp:136
 msgid "Pipe Current Message Body and Insert Result as Is"
 msgstr "Odeslat současné tělo zprávy do roury a vložit výsledek tak jak je"
 
-#: templatescommandmenu.cpp:137
+#: templatescommandmenu.cpp:138
 msgid "Pipe Current Message Body and Replace with Result"
 msgstr "Odeslat současné tělo zprávy do roury a nahradit výsledkem"
 
-#: templatescommandmenu.cpp:142
+#: templatescommandmenu.cpp:143
 msgctxt "Inserts user signature, also known as footer, into message"
 msgid "Signature"
 msgstr "Podpis"
 
-#: templatescommandmenu.cpp:144
+#: templatescommandmenu.cpp:145
 msgid "Insert File Content"
 msgstr "Vložit obsah souboru"
 
-#: templatescommandmenu.cpp:148
+#: templatescommandmenu.cpp:149
 msgctxt ""
 "All characters, up to and including the next newline, are discarded without "
 "performing any macro expansion"
 msgid "Discard to Next Line"
 msgstr "Zahodit po příští řádek"
 
-#: templatescommandmenu.cpp:151
+#: templatescommandmenu.cpp:152
 msgid "Template Comment"
 msgstr "Komentář šablony"
 
-#: templatescommandmenu.cpp:153
+#: templatescommandmenu.cpp:154
 msgid "No Operation"
 msgstr "Žádná operace"
 
-#: templatescommandmenu.cpp:155
+#: templatescommandmenu.cpp:156
 msgid "Clear Generated Message"
 msgstr "Vyčistit vygenerovanou zprávu"
 
-#: templatescommandmenu.cpp:156
+#: templatescommandmenu.cpp:157
 msgid "Cursor position"
 msgstr "Pozice kurzoru"
 
-#: templatescommandmenu.cpp:158
+#: templatescommandmenu.cpp:159
 msgid "Blank text"
 msgstr "Prázdný text"
 
-#: templatescommandmenu.cpp:160
+#: templatescommandmenu.cpp:161
 msgid "Dictionary Language"
 msgstr ""
 
-#: templatescommandmenu.cpp:161
+#: templatescommandmenu.cpp:162
 msgid "Language"
 msgstr "Jazyk"
 
-#: templatescommandmenu.cpp:166
+#: templatescommandmenu.cpp:167
 msgid "Turn Debug On"
 msgstr "Zapnout ladění"
 
-#: templatescommandmenu.cpp:168
+#: templatescommandmenu.cpp:169
 msgid "Turn Debug Off"
 msgstr "Vypnout ladění"
 
-#: templatescommandmenu.cpp:201
+#: templatescommandmenu.cpp:202
 #, kde-format
 msgid "Insert Command"
 msgstr "Vložit příkaz"
 
-#: templatescommandmenu.cpp:214
+#: templatescommandmenu.cpp:215
 #, kde-format
 msgid "Original Message"
 msgstr "Původní zpráva"
 
-#: templatescommandmenu.cpp:228
+#: templatescommandmenu.cpp:229
 #, kde-format
 msgid "Current Message"
 msgstr "Současná zpráva"
 
-#: templatescommandmenu.cpp:241
+#: templatescommandmenu.cpp:242
 #, kde-format
 msgid "Process with External Programs"
 msgstr "Zpracovat externími programy"
 
-#: templatescommandmenu.cpp:254
+#: templatescommandmenu.cpp:255
 #, kde-format
 msgctxt "Miscellaneous template commands menu"
 msgid "Miscellaneous"
 msgstr "Různé"
 
-#: templatescommandmenu.cpp:268
+#: templatescommandmenu.cpp:269
 #, kde-format
 msgctxt "Debug template commands menu"
 msgid "Debug"
 msgstr "Ladit"
 
-#: templatesconfiguration.cpp:50
+#: templatesconfiguration.cpp:52
 #, kde-format
 msgid ""
 "<p>Here you can create and manage templates to use when composing new "
@@ -535,7 +535,7 @@ msgstr ""
 "zástupné hodnoty, buď je jednoduše napište nebo je vyberte z nabídky "
 "<i>vložit hodnotu</i>.</p>"
 
-#: templatesconfiguration.cpp:58
+#: templatesconfiguration.cpp:60
 #, kde-format
 msgid ""
 "<p>Templates specified here are folder-specific. They override both global "
@@ -544,7 +544,7 @@ msgstr ""
 "<p>Šablony zde zadané jsou vázané ke složce. Mají větší prioritu než "
 "globální šablony nebo šablony vázané k identitám.</p>"
 
-#: templatesconfiguration.cpp:63
+#: templatesconfiguration.cpp:65
 #, kde-format
 msgid ""
 "<p>Templates specified here are identity-specific. They override global "
@@ -554,7 +554,7 @@ msgstr ""
 "<p>Šablony zde zadané jsou vázány na identitu. Mají větší prioritu než "
 "globální šablony, ale menší než šablony vázané na složky.</p>"
 
-#: templatesconfiguration.cpp:68
+#: templatesconfiguration.cpp:70
 #, kde-format
 msgid ""
 "<p>These are global (default) templates. They can be overridden by per-"
@@ -563,30 +563,30 @@ msgstr ""
 "<p>Toto jsou globální (výchozí) šablony. Mají nejnižší prioritu a mohou být "
 "překryty než šablony vázané na identity nebo složky.</p>"
 
-#: templatesconfiguration.cpp:100
+#: templatesconfiguration.cpp:102
 #, kde-format
 msgid "Do you want to reset current template or all templates to default?"
 msgstr ""
 
-#: templatesconfiguration.cpp:101
+#: templatesconfiguration.cpp:103
 #, kde-format
 msgctxt "@title:window"
 msgid "Reset to default"
 msgstr "Obnovit výchozí"
 
-#: templatesconfiguration.cpp:102
+#: templatesconfiguration.cpp:104
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset Current Template"
 msgstr "Odstranit současnou šablonu"
 
-#: templatesconfiguration.cpp:103
+#: templatesconfiguration.cpp:105
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset All Templates"
 msgstr "Odstranit všechny šablony"
 
-#: templatesconfiguration.cpp:361
+#: templatesconfiguration.cpp:363
 #, kde-format
 msgid ""
 "Use of \"Reply using plain text\" and \"Reply using HTML text\" in pairs is "

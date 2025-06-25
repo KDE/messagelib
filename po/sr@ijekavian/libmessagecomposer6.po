@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-01 00:42+0000\n"
+"POT-Creation-Date: 2025-06-25 00:43+0000\n"
 "PO-Revision-Date: 2017-12-15 12:38+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -20,14 +20,14 @@ msgstr ""
 "X-Environment: kde\n"
 "X-Generator: Lokalize 1.0\n"
 
-#: attachment/attachmentcontrollerbase.cpp:166
+#: attachment/attachmentcontrollerbase.cpp:167
 #, fuzzy, kde-format
 #| msgid "Failed to compress attachment"
 msgctxt "@title:window"
 msgid "Failed to compress attachment"
 msgstr "Неуспело компресовање прилога"
 
-#: attachment/attachmentcontrollerbase.cpp:177
+#: attachment/attachmentcontrollerbase.cpp:178
 #, kde-format
 msgid ""
 "The compressed attachment is larger than the original. Do you want to keep "
@@ -35,27 +35,27 @@ msgid ""
 msgstr ""
 "Компресовани фајл је већи од оригиналног. Желите ли да задржите оригинални?"
 
-#: attachment/attachmentcontrollerbase.cpp:180
+#: attachment/attachmentcontrollerbase.cpp:181
 #, kde-format
 msgctxt "Do not compress"
 msgid "Keep"
 msgstr "Задржи"
 
-#: attachment/attachmentcontrollerbase.cpp:181
+#: attachment/attachmentcontrollerbase.cpp:182
 #, fuzzy, kde-format
 #| msgid "Compress"
 msgctxt "@action:button"
 msgid "Compress"
 msgstr "Компресуј"
 
-#: attachment/attachmentcontrollerbase.cpp:200
-#: attachment/attachmentcontrollerbase.cpp:960
+#: attachment/attachmentcontrollerbase.cpp:201
+#: attachment/attachmentcontrollerbase.cpp:961
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach file"
 msgstr "Не могу да приложим фајл"
 
-#: attachment/attachmentcontrollerbase.cpp:273
+#: attachment/attachmentcontrollerbase.cpp:274
 #, fuzzy, kde-format
 #| msgid "Failed to reload attachment"
 msgctxt "@title:window"
@@ -63,158 +63,158 @@ msgid "Failed to reload attachment"
 msgstr "Неуспело поновно учитавање прилога"
 
 # >! Filtering message on items.
-#: attachment/attachmentcontrollerbase.cpp:320
+#: attachment/attachmentcontrollerbase.cpp:321
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
 msgstr "&Отвори помоћу"
 
-#: attachment/attachmentcontrollerbase.cpp:340
+#: attachment/attachmentcontrollerbase.cpp:341
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
 msgstr "&другог..."
 
-#: attachment/attachmentcontrollerbase.cpp:342
-#: attachment/attachmentcontrollerbase.cpp:350
+#: attachment/attachmentcontrollerbase.cpp:343
+#: attachment/attachmentcontrollerbase.cpp:351
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "&Отвори помоћу..."
 
-#: attachment/attachmentcontrollerbase.cpp:376
+#: attachment/attachmentcontrollerbase.cpp:377
 #, fuzzy, kde-format
 #| msgid "Failed to attach public key"
 msgctxt "@title:window"
 msgid "Failed to attach public key"
 msgstr "Не могу да приложим јавни кључ"
 
-#: attachment/attachmentcontrollerbase.cpp:390
+#: attachment/attachmentcontrollerbase.cpp:391
 #, fuzzy, kde-format
 #| msgid "Failed to attach file"
 msgctxt "@title:window"
 msgid "Failed to attach vCard"
 msgstr "Не могу да приложим фајл"
 
-#: attachment/attachmentcontrollerbase.cpp:403
+#: attachment/attachmentcontrollerbase.cpp:404
 #, fuzzy, kde-format
 #| msgid "Failed to attach file"
 msgctxt "@title:window"
 msgid "Failed to attach text from clipboard"
 msgstr "Не могу да приложим фајл"
 
-#: attachment/attachmentcontrollerbase.cpp:451
+#: attachment/attachmentcontrollerbase.cpp:452
 #, fuzzy, kde-format
 #| msgid "Attach &Public Key..."
 msgctxt "@action"
 msgid "Attach &Public Key..."
 msgstr "Приложи &јавни кључ..."
 
-#: attachment/attachmentcontrollerbase.cpp:454
+#: attachment/attachmentcontrollerbase.cpp:455
 #, fuzzy, kde-format
 #| msgid "Attach &My Public Key"
 msgctxt "@action"
 msgid "Attach &My Public Key"
 msgstr "Приложи &мој јавни кључ"
 
-#: attachment/attachmentcontrollerbase.cpp:457
-#: attachment/attachmentcontrollerbase.cpp:462
-#: attachment/attachmentcontrollerbase.cpp:468
-#: attachment/attachmentcontrollerbase.cpp:477
+#: attachment/attachmentcontrollerbase.cpp:458
+#: attachment/attachmentcontrollerbase.cpp:463
+#: attachment/attachmentcontrollerbase.cpp:469
+#: attachment/attachmentcontrollerbase.cpp:478
 #, kde-format
 msgid "Attach"
 msgstr "Приложи"
 
-#: attachment/attachmentcontrollerbase.cpp:461
+#: attachment/attachmentcontrollerbase.cpp:462
 #, kde-format
 msgid "&Attach File..."
 msgstr "&Приложи фајл..."
 
-#: attachment/attachmentcontrollerbase.cpp:463
+#: attachment/attachmentcontrollerbase.cpp:464
 #, kde-format
 msgid "Add Attachment..."
 msgstr "Додај прилог..."
 
-#: attachment/attachmentcontrollerbase.cpp:467
+#: attachment/attachmentcontrollerbase.cpp:468
 #, kde-format
 msgid "&Attach Directory..."
 msgstr "&Приложи фасциклу..."
 
-#: attachment/attachmentcontrollerbase.cpp:471
+#: attachment/attachmentcontrollerbase.cpp:472
 #, fuzzy, kde-format
 #| msgid "Attach Own vCard"
 msgctxt "@action"
 msgid "Attach Own vCard"
 msgstr "Приложи мој в‑кард"
 
-#: attachment/attachmentcontrollerbase.cpp:472
+#: attachment/attachmentcontrollerbase.cpp:473
 #, kde-format
 msgid "Own vCard"
 msgstr "Мој в‑кард"
 
-#: attachment/attachmentcontrollerbase.cpp:476
+#: attachment/attachmentcontrollerbase.cpp:477
 #, kde-format
 msgid "&Attach vCards..."
 msgstr "&Приложи в‑кардове..."
 
-#: attachment/attachmentcontrollerbase.cpp:480
+#: attachment/attachmentcontrollerbase.cpp:481
 #, fuzzy, kde-format
 #| msgid "&Attach vCards..."
 msgid "&Attach Text From Clipboard..."
 msgstr "&Приложи в‑кардове..."
 
-#: attachment/attachmentcontrollerbase.cpp:481
+#: attachment/attachmentcontrollerbase.cpp:482
 #, kde-format
 msgid "Attach Text From Clipboard"
 msgstr ""
 
-#: attachment/attachmentcontrollerbase.cpp:493
+#: attachment/attachmentcontrollerbase.cpp:494
 #, kde-format
 msgid "&Remove Attachment"
 msgstr "&Уклони прилог"
 
-#: attachment/attachmentcontrollerbase.cpp:494
+#: attachment/attachmentcontrollerbase.cpp:495
 #, kde-format
 msgid "Remove"
 msgstr "Уклони"
 
-#: attachment/attachmentcontrollerbase.cpp:502
+#: attachment/attachmentcontrollerbase.cpp:503
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Отвори"
 
 # skip-rule: t-view_menu
-#: attachment/attachmentcontrollerbase.cpp:507
+#: attachment/attachmentcontrollerbase.cpp:508
 #, kde-format
 msgctxt "to view"
 msgid "View"
 msgstr "Прикажи"
 
-#: attachment/attachmentcontrollerbase.cpp:512
+#: attachment/attachmentcontrollerbase.cpp:513
 #, kde-format
 msgctxt "to edit"
 msgid "Edit"
 msgstr "Уреди"
 
-#: attachment/attachmentcontrollerbase.cpp:517
+#: attachment/attachmentcontrollerbase.cpp:518
 #, fuzzy, kde-format
 #| msgid "Edit With..."
 msgctxt "@action"
 msgid "Edit With..."
 msgstr "Уреди помоћу..."
 
-#: attachment/attachmentcontrollerbase.cpp:522
+#: attachment/attachmentcontrollerbase.cpp:523
 #, kde-format
 msgid "&Save Attachment As..."
 msgstr "&Сачувај прилог као..."
 
-#: attachment/attachmentcontrollerbase.cpp:523
+#: attachment/attachmentcontrollerbase.cpp:524
 #, kde-format
 msgid "Save As..."
 msgstr "Сачувај као..."
 
-#: attachment/attachmentcontrollerbase.cpp:531
+#: attachment/attachmentcontrollerbase.cpp:532
 #, fuzzy, kde-format
 #| msgid "Attachment Pr&operties..."
 msgctxt "@action"
@@ -222,68 +222,68 @@ msgid "Attachment Pr&operties..."
 msgstr "&Својства прилога..."
 
 # >> @item:inlistbox
-#: attachment/attachmentcontrollerbase.cpp:532
+#: attachment/attachmentcontrollerbase.cpp:533
 #, fuzzy, kde-format
 #| msgid "Properties"
 msgctxt "@action"
 msgid "Properties"
 msgstr "Својства"
 
-#: attachment/attachmentcontrollerbase.cpp:540
+#: attachment/attachmentcontrollerbase.cpp:541
 #, fuzzy, kde-format
 #| msgid "Select All"
 msgctxt "@action"
 msgid "Select All"
 msgstr "Изабери све"
 
-#: attachment/attachmentcontrollerbase.cpp:543
+#: attachment/attachmentcontrollerbase.cpp:544
 #, kde-format
 msgid "Reload"
 msgstr "Учитај поново"
 
-#: attachment/attachmentcontrollerbase.cpp:677
-#: attachment/attachmentcontrollerbase.cpp:703
-#: attachment/attachmentcontrollerbase.cpp:753
+#: attachment/attachmentcontrollerbase.cpp:678
+#: attachment/attachmentcontrollerbase.cpp:704
+#: attachment/attachmentcontrollerbase.cpp:754
 #, kde-format
 msgid "KMail was unable to write the attachment to a temporary file."
 msgstr "К‑пошта не може да упише прилог у привремени фајл."
 
-#: attachment/attachmentcontrollerbase.cpp:678
-#: attachment/attachmentcontrollerbase.cpp:704
+#: attachment/attachmentcontrollerbase.cpp:679
+#: attachment/attachmentcontrollerbase.cpp:705
 #, fuzzy, kde-format
 #| msgid "Unable to open attachment"
 msgctxt "@title:window"
 msgid "Unable to open attachment"
 msgstr "Не могу да отворим прилог"
 
-#: attachment/attachmentcontrollerbase.cpp:713
+#: attachment/attachmentcontrollerbase.cpp:714
 #, fuzzy, kde-format
 #| msgid "KMail was unable to open the attachment."
 msgid "KMail was unable to open the attachment"
 msgstr "К‑пошта не може да отвори прилог."
 
 # >> @title:window
-#: attachment/attachmentcontrollerbase.cpp:754 attachment/editorwatcher.cpp:200
+#: attachment/attachmentcontrollerbase.cpp:755 attachment/editorwatcher.cpp:202
 #, fuzzy, kde-format
 #| msgid "Unable to edit attachment"
 msgctxt "@title:window"
 msgid "Unable to edit attachment"
 msgstr "Прилог не може бити уређен"
 
-#: attachment/attachmentcontrollerbase.cpp:795
+#: attachment/attachmentcontrollerbase.cpp:796
 #, kde-format
 msgid "unnamed"
 msgstr "неименован"
 
 # >> @title:window
-#: attachment/attachmentcontrollerbase.cpp:798
+#: attachment/attachmentcontrollerbase.cpp:799
 #, fuzzy, kde-format
 #| msgid "Save Attachment As"
 msgctxt "@title:window"
 msgid "Save Attachment As"
 msgstr "Уписивање прилога као"
 
-#: attachment/attachmentcontrollerbase.cpp:821
+#: attachment/attachmentcontrollerbase.cpp:822
 #, kde-format
 msgid ""
 "File %1 exists.\n"
@@ -293,60 +293,60 @@ msgstr ""
 "Желите ли да га замените?"
 
 # >> @title:window
-#: attachment/attachmentcontrollerbase.cpp:822
+#: attachment/attachmentcontrollerbase.cpp:823
 #, fuzzy, kde-format
 #| msgid "Save to File"
 msgctxt "@title:window"
 msgid "Save to File"
 msgstr "Уписивање у фајл"
 
-#: attachment/attachmentcontrollerbase.cpp:823
+#: attachment/attachmentcontrollerbase.cpp:824
 #, fuzzy, kde-format
 #| msgid "&Replace"
 msgctxt "@action:button"
 msgid "&Replace"
 msgstr "&Замени"
 
-#: attachment/attachmentcontrollerbase.cpp:850
-#: attachment/attachmentcontrollerbase.cpp:929
+#: attachment/attachmentcontrollerbase.cpp:851
+#: attachment/attachmentcontrollerbase.cpp:930
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
 msgstr "Желите ли заиста да приложите фасциклу „%1“?"
 
-#: attachment/attachmentcontrollerbase.cpp:851
-#: attachment/attachmentcontrollerbase.cpp:930
+#: attachment/attachmentcontrollerbase.cpp:852
+#: attachment/attachmentcontrollerbase.cpp:931
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach directory"
 msgstr "Прилагање фасцикле"
 
-#: attachment/attachmentcontrollerbase.cpp:852
-#: attachment/attachmentcontrollerbase.cpp:931
+#: attachment/attachmentcontrollerbase.cpp:853
+#: attachment/attachmentcontrollerbase.cpp:932
 #, fuzzy, kde-format
 #| msgid "Attach"
 msgctxt "@action:button"
 msgid "Attach"
 msgstr "Приложи"
 
-#: attachment/attachmentcontrollerbase.cpp:887
+#: attachment/attachmentcontrollerbase.cpp:888
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach Directory"
 msgstr "Прилагање фасцикле"
 
-#: attachment/attachmentcontrollerbase.cpp:895
+#: attachment/attachmentcontrollerbase.cpp:896
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach File"
 msgstr "Прилагање фајла"
 
 # >> @title:window
-#: attachment/attachmentcontrollerbase.cpp:984
+#: attachment/attachmentcontrollerbase.cpp:985
 #, kde-format
 msgid "Attach Public OpenPGP Key"
 msgstr "Прилагање јавног опенПГП кључа"
 
-#: attachment/attachmentcontrollerbase.cpp:985
+#: attachment/attachmentcontrollerbase.cpp:986
 #, kde-format
 msgid "Select the public key which should be attached."
 msgstr "Изаберите јавни кључ који треба приложити."
@@ -418,13 +418,13 @@ msgctxt "@title column attachment inlined checkbox."
 msgid "Suggest Automatic Display"
 msgstr "предлаже аутоматски приказ"
 
-#: attachment/editorwatcher.cpp:64
+#: attachment/editorwatcher.cpp:66
 #, fuzzy, kde-format
 #| msgid "Edit With..."
 msgid "Edit with:"
 msgstr "Уреди помоћу..."
 
-#: attachment/editorwatcher.cpp:198
+#: attachment/editorwatcher.cpp:200
 #, kde-format
 msgid ""
 "KMail is unable to detect when the chosen editor is closed. To avoid data "
@@ -1184,37 +1184,37 @@ msgstr ""
 "\n"
 "Изаберите сертификате које треба користити за овог примаоца."
 
-#: contactpreference/savecontactpreferencejob.cpp:70
+#: contactpreference/savecontactpreferencejob.cpp:71
 #, fuzzy, kde-format
 #| msgid "Name Selection"
 msgctxt "@title:window"
 msgid "Name Selection"
 msgstr "Избор имена"
 
-#: contactpreference/savecontactpreferencejob.cpp:71
+#: contactpreference/savecontactpreferencejob.cpp:72
 #, kde-format
 msgid "Which name shall the contact '%1' have in your address book?"
 msgstr "Које име ће контакт %1 имати у вашем адресару?"
 
-#: contactpreference/savecontactpreferencejob.cpp:83
+#: contactpreference/savecontactpreferencejob.cpp:84
 #, kde-format
 msgid "Select the address book folder to store the new contact in:"
 msgstr "Изаберите фасциклу адресара где ћете сместити нови контакт:"
 
 # >?
-#: followupreminder/followupremindercreatejob.cpp:76
+#: followupreminder/followupremindercreatejob.cpp:78
 #, kde-format
 msgid "Wait answer from \"%1\" send to \"%2\""
 msgstr "Чека одговор од „%1“ за „%2“"
 
-#: followupreminder/followupremindercreatejob.cpp:99
+#: followupreminder/followupremindercreatejob.cpp:101
 #, kde-format
 msgid ""
 "Failed to store a new reminder: an error occurred while trying to create a "
 "new to-do in your calendar: %1"
 msgstr ""
 
-#: followupreminder/followupremindercreatejob.cpp:131
+#: followupreminder/followupremindercreatejob.cpp:133
 #, fuzzy, kde-format
 #| msgid "Failed to save the message: %1"
 msgid "Failed to store a new reminder: %1"
@@ -1263,17 +1263,17 @@ msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "Лоша фасцикла"
 
-#: helper/messagefactoryng.cpp:406 helper/messagefactoryng.cpp:729
+#: helper/messagefactoryng.cpp:407 helper/messagefactoryng.cpp:730
 #, kde-format
 msgid "forwarded message"
 msgstr "прослеђена порука"
 
-#: helper/messagefactoryng.cpp:574
+#: helper/messagefactoryng.cpp:575
 #, kde-format
 msgid "Receipt: "
 msgstr "Потврда: "
 
-#: helper/messagefactoryng.cpp:701
+#: helper/messagefactoryng.cpp:702
 #, kde-format
 msgid ""
 "\n"
@@ -1287,25 +1287,25 @@ msgstr ""
 "\n"
 "\n"
 
-#: imagescaling/imagescalingselectformat.cpp:25
+#: imagescaling/imagescalingselectformat.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Image Format"
 msgstr "Избор формата слике"
 
-#: imagescaling/imagescalingselectformat.cpp:88
+#: imagescaling/imagescalingselectformat.cpp:89
 #, fuzzy, kde-format
 #| msgid "Select Format..."
 msgctxt "@action:button"
 msgid "Select Format..."
 msgstr "Изабери формат..."
 
-#: imagescaling/imagescalingwidget.cpp:107
+#: imagescaling/imagescalingwidget.cpp:109
 #, kde-format
 msgid "<a href=\"whatsthis\">How does this work?</a>"
 msgstr "<a href=\"whatsthis\">Како ово ради?</a>"
 
-#: imagescaling/imagescalingwidget.cpp:117
+#: imagescaling/imagescalingwidget.cpp:119
 #, kde-format
 msgid ""
 "<qt><p>Here you can define image filename. You can use:</p><ul><li>%t set "
@@ -1318,18 +1318,18 @@ msgstr ""
 "<tt>%x</tt>, нови наставак</li></ul></qt>"
 
 # >> custom image size
-#: imagescaling/imagescalingwidget.cpp:187
+#: imagescaling/imagescalingwidget.cpp:189
 #, kde-format
 msgid "Custom"
 msgstr "посебна"
 
-#: imagescaling/imagescalingwidget.cpp:315
+#: imagescaling/imagescalingwidget.cpp:317
 #, kde-format
 msgid "Please verify minimum and maximum values."
 msgstr "Проверите најмању и највећу вредност."
 
 # >> @title:window
-#: imagescaling/imagescalingwidget.cpp:315
+#: imagescaling/imagescalingwidget.cpp:317
 #, fuzzy, kde-format
 #| msgid "Error in minimum Maximum value"
 msgctxt "@title:window"
@@ -1586,17 +1586,17 @@ msgstr "<p>Грешка у покушају извожења кључа из п�
 msgid "Exporting key..."
 msgstr "Извозим кључ..."
 
-#: job/attachmentvcardfromaddressbookjob.cpp:75
+#: job/attachmentvcardfromaddressbookjob.cpp:77
 #, kde-format
 msgid "Unknown Contact Type"
 msgstr "Непознат тип контакта"
 
-#: job/attachmentvcardfromaddressbookjob.cpp:86
+#: job/attachmentvcardfromaddressbookjob.cpp:88
 #, kde-format
 msgid "Invalid Contact"
 msgstr "Лош контакт"
 
-#: job/attachmentvcardfromaddressbookjob.cpp:102
+#: job/attachmentvcardfromaddressbookjob.cpp:104
 #, kde-format
 msgid "Impossible to generate vCard."
 msgstr "Није могуће генерисати в‑кард"
@@ -1632,7 +1632,7 @@ msgstr ""
 msgid "Could not get text codec for charset \"%1\"."
 msgstr "Не могу да узмем кодек текста за кодирање „%1“."
 
-#: job/singlepartjob.cpp:65
+#: job/singlepartjob.cpp:66
 #, kde-format
 msgid "%1 Content-Transfer-Encoding cannot correctly encode this message."
 msgstr ""
@@ -1846,37 +1846,37 @@ msgstr[1] "Скраћујем листу прималаца на %2 од %1 ун
 msgstr[2] "Скраћујем листу прималаца на %2 од %1 уноса."
 msgstr[3] "Скраћујем листу прималаца на %2 од %1 уноса."
 
-#: recipient/recipientseditorsidewidget.cpp:28
+#: recipient/recipientseditorsidewidget.cpp:29
 #, kde-format
 msgctxt "@action:button"
 msgid "Save List..."
 msgstr "Сачувај листу..."
 
-#: recipient/recipientseditorsidewidget.cpp:29
+#: recipient/recipientseditorsidewidget.cpp:30
 #, kde-format
 msgctxt "@action:button Open recipient selection dialog."
 msgid "Se&lect..."
 msgstr "Иза&бери..."
 
-#: recipient/recipientseditorsidewidget.cpp:46
+#: recipient/recipientseditorsidewidget.cpp:47
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save recipients as distribution list"
 msgstr "Сачувај примаоце као дистрибуциону листу"
 
-#: recipient/recipientseditorsidewidget.cpp:50
+#: recipient/recipientseditorsidewidget.cpp:51
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select recipients from address book"
 msgstr "Изаберите примаоце из адресара"
 
-#: recipient/recipientseditorsidewidget.cpp:77
+#: recipient/recipientseditorsidewidget.cpp:78
 #, kde-format
 msgctxt "@info:status No recipients selected"
 msgid "No recipients"
 msgstr "Нема прималаца"
 
-#: recipient/recipientseditorsidewidget.cpp:79
+#: recipient/recipientseditorsidewidget.cpp:80
 #, kde-format
 msgctxt "@info:status Number of recipients selected"
 msgid "1 recipient"
@@ -1886,67 +1886,67 @@ msgstr[1] "%1 примаоца"
 msgstr[2] "%1 прималаца"
 msgstr[3] "1 прималац"
 
-#: recipient/recipientseditorsidewidget.cpp:129
+#: recipient/recipientseditorsidewidget.cpp:130
 #, kde-format
 msgctxt "@info:tooltip %1 list of emails"
 msgid "To:%1"
 msgstr ""
 
-#: recipient/recipientseditorsidewidget.cpp:131
+#: recipient/recipientseditorsidewidget.cpp:132
 #, kde-format
 msgctxt "@info:tooltip %1 list of emails"
 msgid "CC:%1"
 msgstr ""
 
-#: recipient/recipientseditorsidewidget.cpp:134
+#: recipient/recipientseditorsidewidget.cpp:135
 #, kde-format
 msgctxt "@info:tooltip %1 list of emails"
 msgid "BCC:%1"
 msgstr ""
 
-#: recipient/recipientseditorsidewidget.cpp:137
+#: recipient/recipientseditorsidewidget.cpp:138
 #, kde-format
 msgctxt "@info:tooltip %1 list of emails"
 msgid "Reply-To:%1"
 msgstr ""
 
 # >> @title:window
-#: recipient/recipientspicker.cpp:49
+#: recipient/recipientspicker.cpp:51
 #, fuzzy, kde-format
 #| msgid "Select Recipient"
 msgctxt "@title:window"
 msgid "Select Recipient"
 msgstr "Избор примаоца"
 
-#: recipient/recipientspicker.cpp:61
+#: recipient/recipientspicker.cpp:63
 #, fuzzy, kde-format
 #| msgid "Search &Directory Service"
 msgctxt "@action:button"
 msgid "Search &Directory Service"
 msgstr "Сервис претраге &именика"
 
-#: recipient/recipientspicker.cpp:80
+#: recipient/recipientspicker.cpp:82
 #, fuzzy, kde-format
 #| msgid "Add as &To"
 msgid "Add as &Reply-To"
 msgstr "Додај под &за"
 
-#: recipient/recipientspicker.cpp:81
+#: recipient/recipientspicker.cpp:83
 #, kde-format
 msgid "Add as &To"
 msgstr "Додај под &за"
 
-#: recipient/recipientspicker.cpp:82
+#: recipient/recipientspicker.cpp:84
 #, kde-format
 msgid "Add as CC"
 msgstr "Додај под ЦЦ"
 
-#: recipient/recipientspicker.cpp:83
+#: recipient/recipientspicker.cpp:85
 #, kde-format
 msgid "Add as &BCC"
 msgstr "Додај под БЦЦ"
 
-#: recipient/recipientspicker.cpp:106
+#: recipient/recipientspicker.cpp:108
 #, kde-format
 msgid "%1 selected email"
 msgid_plural "%1 selected emails"
@@ -1955,7 +1955,7 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: recipient/recipientspicker.cpp:173
+#: recipient/recipientspicker.cpp:175
 #, fuzzy, kde-format
 #| msgid ""
 #| "You selected 1 recipient. The maximum supported number of recipients is "
@@ -1983,66 +1983,66 @@ msgstr[3] ""
 "Изабрали сте једног примаоца, а подржано је максимално %2. Прилагодите свој "
 "избор."
 
-#: recipient/recipientspicker.cpp:190
+#: recipient/recipientspicker.cpp:192
 #, fuzzy, kde-format
 #| msgid "No key data for recipients found."
 msgid "You can not add more recipients."
 msgstr "Нема података о кључу примаоца."
 
-#: sendlater/sendlatercreatejob.cpp:33
+#: sendlater/sendlatercreatejob.cpp:35
 #, fuzzy, kde-format
 #| msgid "Failed to save the message: %1"
 msgid "Failed to schedule message for sending later: %1"
 msgstr "Неуспело уписивање поруке: %1"
 
-#: sendlater/sendlaterdialog.cpp:28
+#: sendlater/sendlaterdialog.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Later"
 msgstr ""
 
-#: sendlater/sendlaterdialog.cpp:48
+#: sendlater/sendlaterdialog.cpp:50
 #, kde-format
 msgid "Send Later"
 msgstr ""
 
-#: sendlater/sendlaterdialog.cpp:49
+#: sendlater/sendlaterdialog.cpp:51
 #, kde-format
 msgctxt "@option:check"
 msgid "Delay"
 msgstr ""
 
-#: sendlater/sendlaterdialog.cpp:65
+#: sendlater/sendlaterdialog.cpp:67
 #, kde-format
 msgid "Days"
 msgstr ""
 
-#: sendlater/sendlaterdialog.cpp:65
+#: sendlater/sendlaterdialog.cpp:67
 #, kde-format
 msgid "Weeks"
 msgstr ""
 
-#: sendlater/sendlaterdialog.cpp:65
+#: sendlater/sendlaterdialog.cpp:67
 #, kde-format
 msgid "Months"
 msgstr ""
 
-#: sendlater/sendlaterdialog.cpp:65
+#: sendlater/sendlaterdialog.cpp:67
 #, kde-format
 msgid "Years"
 msgstr ""
 
-#: sendlater/sendlaterjob.cpp:32
+#: sendlater/sendlaterjob.cpp:34
 #, kde-format
 msgid "The Send Later agent is not running."
 msgstr ""
 
-#: sendlater/sendlaterremovejob.cpp:27
+#: sendlater/sendlaterremovejob.cpp:29
 #, kde-format
 msgid "Failed to removed message from send later schedule: %1"
 msgstr ""
 
-#: sendlater/sendlatertimedatewidget.cpp:35
+#: sendlater/sendlatertimedatewidget.cpp:36
 #, fuzzy, kde-format
 #| msgid "The selected date must be greater than the current date."
 msgid "You cannot select a date prior to the current date."
@@ -2464,7 +2464,7 @@ msgid "Subject"
 msgstr ""
 
 # well-spelled: прилож
-#: utils/util.cpp:235
+#: utils/util.cpp:236
 #, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
@@ -2472,7 +2472,7 @@ msgctxt ""
 msgid "attachment,attached"
 msgstr "attachment,attached,прилог,прилож"
 
-#: utils/util.cpp:269
+#: utils/util.cpp:270
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
@@ -2482,7 +2482,7 @@ msgstr ""
 "направите?"
 
 # >> @title:window
-#: utils/util.cpp:270
+#: utils/util.cpp:271
 #, fuzzy, kde-format
 #| msgid "No mail dispatcher."
 msgctxt "@title:window"
@@ -2490,14 +2490,14 @@ msgid "No mail dispatcher."
 msgstr "Нема отправника поште"
 
 # >> @title:window
-#: utils/util.cpp:272
+#: utils/util.cpp:273
 #, fuzzy, kde-format
 #| msgid "No mail dispatcher."
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "Нема отправника поште"
 
-#: utils/util.cpp:287
+#: utils/util.cpp:288
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
@@ -2506,14 +2506,14 @@ msgstr ""
 "Отправник поште је ван везе, па се поруке не могу слати. Желите ли да пређе "
 "на везу?"
 
-#: utils/util.cpp:288
+#: utils/util.cpp:289
 #, fuzzy, kde-format
 #| msgid "Mail dispatcher offline."
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "Отправник поште ван везе"
 
-#: utils/util.cpp:289
+#: utils/util.cpp:290
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"

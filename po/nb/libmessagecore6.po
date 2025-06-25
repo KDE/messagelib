@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-14 00:40+0000\n"
+"POT-Creation-Date: 2025-06-25 00:43+0000\n"
 "PO-Revision-Date: 2014-04-26 10:27+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -39,7 +39,7 @@ msgstr "Klarte ikke starte komprimering av vedlegg."
 msgid "Could not compress the attachment."
 msgstr "Klarte ikke å komprimere vedlegg."
 
-#: attachment/attachmentfromfolderjob.cpp:51
+#: attachment/attachmentfromfolderjob.cpp:52
 #, kde-format
 msgid "Could not create compressed file."
 msgstr "Klarte ikke å opprette en komprimert fil."
@@ -63,30 +63,30 @@ msgstr "Klarte ikke å legge til %1 til arkivet."
 msgid "Could not open %1 for reading."
 msgstr "Klarte ikke å åpne %1 for lesing."
 
-#: attachment/attachmentfromurljob.cpp:68
+#: attachment/attachmentfromurljob.cpp:69
 #, kde-format
 msgctxt "a file called 'unknown.ext'"
 msgid "unknown%1"
 msgstr "ukjent%1"
 
-#: attachment/attachmentfromurljob.cpp:70
+#: attachment/attachmentfromurljob.cpp:71
 #, kde-format
 msgctxt "a file called 'unknown'"
 msgid "unknown"
 msgstr "ukjent"
 
-#: attachment/attachmentfromurljob.cpp:102
+#: attachment/attachmentfromurljob.cpp:103
 #, kde-format
 msgid "\"%1\" not found. Please specify the full path."
 msgstr "«%1» ikke funnet. Oppgi fullstendig sti."
 
-#: attachment/attachmentfromurljob.cpp:111
+#: attachment/attachmentfromurljob.cpp:112
 #, kde-format
 msgid "You may not attach files bigger than %1. Share it with storage service."
 msgstr ""
 "Du kan ikke legge ved filer større enn %1. Del den med lagringstjenesten."
 
-#: attachment/attachmentpropertiesdialog.cpp:134
+#: attachment/attachmentpropertiesdialog.cpp:133
 #, kde-format
 msgid ""
 "<p>The <em>MIME type</em> of the file:</p><p>Normally, you do not need to "
@@ -98,7 +98,7 @@ msgstr ""
 "innstillinga. Filtypen sjekkes automatisk, men noen ganger gjenkjenner "
 "ikke %1 typen riktig. Her kan du ordne dette.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:142
+#: attachment/attachmentpropertiesdialog.cpp:141
 #, kde-format
 msgid ""
 "<p>The estimated size of the attachment:</p><p>Note that, in an email "
@@ -108,7 +108,7 @@ msgstr ""
 "<p>Anslått størrelse på vedlegget:</p> <p>Merk at i en e-postmelding vil en "
 "binær fil kodet med base64 ta fire tredeler av filas egentlige størrelse.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:147
+#: attachment/attachmentpropertiesdialog.cpp:146
 #, kde-format
 msgid ""
 "<p>The file name of the part:</p><p>Although this defaults to the name of "
@@ -121,7 +121,7 @@ msgstr ""
 "forslag til filnavn som mottagerens e-postprogram kan bruke når fila lagres "
 "på harddisken.</p> "
 
-#: attachment/attachmentpropertiesdialog.cpp:154
+#: attachment/attachmentpropertiesdialog.cpp:153
 #, kde-format
 msgid ""
 "<p>A description of the part:</p><p>This is just an informational "
@@ -134,7 +134,7 @@ msgstr ""
 "vil vise denne informasjonen ved forhåndsvisning av brevet ved siden av "
 "ikonet for vedlegget.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:161
+#: attachment/attachmentpropertiesdialog.cpp:160
 #, kde-format
 msgid ""
 "<p>The transport encoding of this part:</p><p>Normally, you do not need to "
@@ -153,7 +153,7 @@ msgstr ""
 "valg av «quoted-printable» istedenfor standarden «base64» spare opptil 25% i "
 "forhold til opprinnelig størrelse.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:172
+#: attachment/attachmentpropertiesdialog.cpp:171
 #, kde-format
 msgid ""
 "<p>Check this option if you want to suggest to the recipient the automatic "
@@ -168,7 +168,7 @@ msgstr ""
 "feltet til denne meldingsdelen til «inline» (inni) i stedet for "
 "«attachment» (vedlegg).</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:180
+#: attachment/attachmentpropertiesdialog.cpp:179
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be signed.</p><p>The "
@@ -179,7 +179,7 @@ msgstr ""
 "<p>Underskrifta blir laget med nøkkelen du har valgt for den identiteten du "
 "bruker.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:186
+#: attachment/attachmentpropertiesdialog.cpp:185
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be encrypted.</"
@@ -188,8 +188,8 @@ msgstr ""
 "<p>Kryss av her om du vil at denne delen av brevet skal krypteres.</p> "
 "<p>Denne delen vil bli kryptert til mottakerne av brevet.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:307
-#: attachment/attachmentpropertiesdialog.cpp:322
+#: attachment/attachmentpropertiesdialog.cpp:305
+#: attachment/attachmentpropertiesdialog.cpp:320
 #, kde-format
 msgctxt "@title:window"
 msgid "Attachment Properties"
@@ -313,29 +313,29 @@ msgid ""
 "no limit)"
 msgstr ""
 
-#: utils/dateformatter.cpp:163
+#: utils/dateformatter.cpp:164
 #, fuzzy, kde-format
 msgctxt "invalid time specified"
 msgid "unknown"
 msgstr "ukjent"
 
-#: utils/dateformatter.cpp:175
+#: utils/dateformatter.cpp:176
 #, kde-format
 msgid "Today %1"
 msgstr ""
 
-#: utils/dateformatter.cpp:178
+#: utils/dateformatter.cpp:179
 #, kde-format
 msgid "Yesterday %1"
 msgstr ""
 
-#: utils/dateformatter.cpp:183
+#: utils/dateformatter.cpp:184
 #, kde-format
 msgctxt "1. weekday, 2. time"
 msgid "%1 %2"
 msgstr ""
 
-#: utils/stringutil.cpp:415
+#: utils/stringutil.cpp:414
 #, kde-format
 msgctxt "signal that this email is defined in my identity"
 msgid "Me"

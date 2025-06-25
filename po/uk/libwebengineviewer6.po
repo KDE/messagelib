@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libwebengineviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"POT-Creation-Date: 2025-06-25 00:43+0000\n"
 "PO-Revision-Date: 2024-08-01 20:31+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -26,81 +26,81 @@ msgctxt "@title:window"
 msgid "Developer Tool"
 msgstr "Інструмент розробника"
 
-#: findbar/findbarbase.cpp:39
+#: findbar/findbarbase.cpp:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Закрити"
 
-#: findbar/findbarbase.cpp:42
+#: findbar/findbarbase.cpp:44
 #, kde-format
 msgid "Close"
 msgstr "Закрити"
 
-#: findbar/findbarbase.cpp:48
+#: findbar/findbarbase.cpp:50
 #, kde-format
 msgctxt "Find text"
 msgid "F&ind:"
 msgstr "З&найти:"
 
-#: findbar/findbarbase.cpp:53
+#: findbar/findbarbase.cpp:55
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "Текст, який слід шукати"
 
-#: findbar/findbarbase.cpp:58
+#: findbar/findbarbase.cpp:60
 #, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
 msgstr "Далі"
 
-#: findbar/findbarbase.cpp:59
+#: findbar/findbarbase.cpp:61
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "Перейти до наступного збігу"
 
-#: findbar/findbarbase.cpp:64
+#: findbar/findbarbase.cpp:66
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
 msgstr "Назад"
 
-#: findbar/findbarbase.cpp:65
+#: findbar/findbarbase.cpp:67
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "Перейти до попереднього збігу"
 
-#: findbar/findbarbase.cpp:71
+#: findbar/findbarbase.cpp:73
 #, kde-format
 msgid "Options"
 msgstr "Параметри"
 
-#: findbar/findbarbase.cpp:72
+#: findbar/findbarbase.cpp:74
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "Змінити поведінку пошуку"
 
-#: findbar/findbarbase.cpp:74
+#: findbar/findbarbase.cpp:76
 #, kde-format
 msgid "Case sensitive"
 msgstr "З урахуванням регістру"
 
-#: findbar/findbarbase.cpp:91
+#: findbar/findbarbase.cpp:93
 #, kde-format
 msgid "Phrase not found"
 msgstr "Фразу не знайдено"
 
-#: webenginepage.cpp:152
+#: webenginepage.cpp:154
 #, kde-format
 msgctxt "@title:window"
 msgid "Save HTML Page"
 msgstr "Збереження сторінки HTML"
 
-#: widgets/submittedformwidgets/submittedformwarningwidget.cpp:22
+#: widgets/submittedformwidgets/submittedformwarningwidget.cpp:23
 #, kde-format
 msgid "Submit form is not allowed in mailer. Please open url in a browser."
 msgstr ""
@@ -136,7 +136,7 @@ msgstr[1] "%1 засоби стеження від компанії %2 (%3)"
 msgstr[2] "%1 засобів стеження від компанії %2 (%3)"
 msgstr[3] "1 засіб стеження від компанії %2 (%3)"
 
-#: widgets/zoomactionmenu.cpp:127
+#: widgets/zoomactionmenu.cpp:129
 #, kde-format
 msgid "Zoom"
 msgstr "Масштаб"

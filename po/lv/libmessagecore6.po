@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-14 00:40+0000\n"
+"POT-Creation-Date: 2025-06-25 00:43+0000\n"
 "PO-Revision-Date: 2025-01-27 17:20+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -40,7 +40,7 @@ msgstr "Neizdevās uzsākt piesaistnes saspiešanu."
 msgid "Could not compress the attachment."
 msgstr "Neizdevās saspiest piesaistni."
 
-#: attachment/attachmentfromfolderjob.cpp:51
+#: attachment/attachmentfromfolderjob.cpp:52
 #, kde-format
 msgid "Could not create compressed file."
 msgstr "Neizdevās izveidot saspiestu datni."
@@ -65,31 +65,31 @@ msgstr "Neizdevās arhīvam pievienot %1"
 msgid "Could not open %1 for reading."
 msgstr "Nevarēja atvērt %1 lasīšanai."
 
-#: attachment/attachmentfromurljob.cpp:68
+#: attachment/attachmentfromurljob.cpp:69
 #, kde-format
 msgctxt "a file called 'unknown.ext'"
 msgid "unknown%1"
 msgstr "nezināms%1"
 
-#: attachment/attachmentfromurljob.cpp:70
+#: attachment/attachmentfromurljob.cpp:71
 #, kde-format
 msgctxt "a file called 'unknown'"
 msgid "unknown"
 msgstr "nezināms"
 
-#: attachment/attachmentfromurljob.cpp:102
+#: attachment/attachmentfromurljob.cpp:103
 #, kde-format
 msgid "\"%1\" not found. Please specify the full path."
 msgstr "„%1“ nav atrasts. Norādiet pilnu ceļu."
 
-#: attachment/attachmentfromurljob.cpp:111
+#: attachment/attachmentfromurljob.cpp:112
 #, kde-format
 msgid "You may not attach files bigger than %1. Share it with storage service."
 msgstr ""
 "Nevarat pievienot datni, kuras lielums pārsniedz %1. Nosūtiet to caur datņu "
 "glabāšanas pakalpojumu sniedzēju."
 
-#: attachment/attachmentpropertiesdialog.cpp:134
+#: attachment/attachmentpropertiesdialog.cpp:133
 #, kde-format
 msgid ""
 "<p>The <em>MIME type</em> of the file:</p><p>Normally, you do not need to "
@@ -101,7 +101,7 @@ msgstr ""
 "iestatījums, jo tas tiek noteikts automātiski. Bet dažreiz, „%1“ nespēj "
 "korekti noteikt tipu — tad jūs to šeit varat izlabot.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:142
+#: attachment/attachmentpropertiesdialog.cpp:141
 #, kde-format
 msgid ""
 "<p>The estimated size of the attachment:</p><p>Note that, in an email "
@@ -112,7 +112,7 @@ msgstr ""
 "tiek kodēti ar „base64“ un aizņems līdz pat četrām trešdaļām no datnes "
 "sākotnējā izmēra.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:147
+#: attachment/attachmentpropertiesdialog.cpp:146
 #, kde-format
 msgid ""
 "<p>The file name of the part:</p><p>Although this defaults to the name of "
@@ -125,7 +125,7 @@ msgstr ""
 "iesaka, kādu datnes nosaukumu izmantot saņēmēja e-pasta programmai, "
 "saglabājot datnes daļu diskā.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:154
+#: attachment/attachmentpropertiesdialog.cpp:153
 #, kde-format
 msgid ""
 "<p>A description of the part:</p><p>This is just an informational "
@@ -137,7 +137,7 @@ msgstr ""
 "temats vēstulei. Vairums e-pasta aģentu šo informāciju parādīs vēstuļu "
 "priekšskatījumā pie piesaistnes ikonas.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:161
+#: attachment/attachmentpropertiesdialog.cpp:160
 #, kde-format
 msgid ""
 "<p>The transport encoding of this part:</p><p>Normally, you do not need to "
@@ -154,7 +154,7 @@ msgstr ""
 "satur tikai tekstu, bez bināriem datiem, to var sūtīt kā „Quoted printable“, "
 "nevis noklusēto „Base64“, kas samazinās tā izmēru par līdz 25%.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:172
+#: attachment/attachmentpropertiesdialog.cpp:171
 #, kde-format
 msgid ""
 "<p>Check this option if you want to suggest to the recipient the automatic "
@@ -168,7 +168,7 @@ msgstr ""
 "tiek realizēts, uzstādot piesaistnes <em>Content-Disposition</em> galveni uz "
 "„iekļauts“ („inline“) noklusētās „piesaistne“ („attachment“) vietā.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:180
+#: attachment/attachmentpropertiesdialog.cpp:179
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be signed.</p><p>The "
@@ -178,7 +178,7 @@ msgstr ""
 "<p>Atzīmējiet šo, ja vēlaties parakstīt šo vēstules daļu.</p><p>Parakstu "
 "programma izveidos ar aktīvajai identitātei piesaistīto atslēgu.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:186
+#: attachment/attachmentpropertiesdialog.cpp:185
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be encrypted.</"
@@ -187,8 +187,8 @@ msgstr ""
 "<p>Atzīmējiet šo, ja vēlaties šifrēt šo vēstules daļu.</p><p>Tā tiks šifrēta "
 "visiem vēstules saņēmējiem.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:307
-#: attachment/attachmentpropertiesdialog.cpp:322
+#: attachment/attachmentpropertiesdialog.cpp:305
+#: attachment/attachmentpropertiesdialog.cpp:320
 #, kde-format
 msgctxt "@title:window"
 msgid "Attachment Properties"
@@ -314,29 +314,29 @@ msgstr ""
 "Maksimālais izmērs bitos, kas ir atļauti e-pasta piesaistnei (-1 nozīmē "
 "neierobežotu)"
 
-#: utils/dateformatter.cpp:163
+#: utils/dateformatter.cpp:164
 #, kde-format
 msgctxt "invalid time specified"
 msgid "unknown"
 msgstr "nezināms"
 
-#: utils/dateformatter.cpp:175
+#: utils/dateformatter.cpp:176
 #, kde-format
 msgid "Today %1"
 msgstr "Šodien %1"
 
-#: utils/dateformatter.cpp:178
+#: utils/dateformatter.cpp:179
 #, kde-format
 msgid "Yesterday %1"
 msgstr "Vakar %1"
 
-#: utils/dateformatter.cpp:183
+#: utils/dateformatter.cpp:184
 #, kde-format
 msgctxt "1. weekday, 2. time"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: utils/stringutil.cpp:415
+#: utils/stringutil.cpp:414
 #, kde-format
 msgctxt "signal that this email is defined in my identity"
 msgid "Me"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-14 00:40+0000\n"
+"POT-Creation-Date: 2025-06-25 00:43+0000\n"
 "PO-Revision-Date: 2024-08-14 11:15+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -39,7 +39,7 @@ msgstr "Nelze zahájit kompresi přílohy."
 msgid "Could not compress the attachment."
 msgstr "Nelze zkomprimovat přílohu."
 
-#: attachment/attachmentfromfolderjob.cpp:51
+#: attachment/attachmentfromfolderjob.cpp:52
 #, kde-format
 msgid "Could not create compressed file."
 msgstr "Nelze vytvořit zkomprimovaný soubor."
@@ -63,30 +63,30 @@ msgstr "Do archívu nelze přidat %1"
 msgid "Could not open %1 for reading."
 msgstr "Nelze otevřít %1 pro čtení."
 
-#: attachment/attachmentfromurljob.cpp:68
+#: attachment/attachmentfromurljob.cpp:69
 #, kde-format
 msgctxt "a file called 'unknown.ext'"
 msgid "unknown%1"
 msgstr "neznámé%1"
 
-#: attachment/attachmentfromurljob.cpp:70
+#: attachment/attachmentfromurljob.cpp:71
 #, kde-format
 msgctxt "a file called 'unknown'"
 msgid "unknown"
 msgstr "neznámé"
 
-#: attachment/attachmentfromurljob.cpp:102
+#: attachment/attachmentfromurljob.cpp:103
 #, kde-format
 msgid "\"%1\" not found. Please specify the full path."
 msgstr "\"%1\" nenalezeno. Zadejte prosím úplnou cestu."
 
-#: attachment/attachmentfromurljob.cpp:111
+#: attachment/attachmentfromurljob.cpp:112
 #, kde-format
 msgid "You may not attach files bigger than %1. Share it with storage service."
 msgstr ""
 "Nemůžete přiložit soubory větší než %1. Sdílejte je pomocí úložné služby."
 
-#: attachment/attachmentpropertiesdialog.cpp:134
+#: attachment/attachmentpropertiesdialog.cpp:133
 #, kde-format
 msgid ""
 "<p>The <em>MIME type</em> of the file:</p><p>Normally, you do not need to "
@@ -98,7 +98,7 @@ msgstr ""
 "protože typy souborů jsou zjišťovány automaticky. Někdy ale může dojít k "
 "tomu, že %1 nezjistí typ korektně. Zde to pak můžete napravit</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:142
+#: attachment/attachmentpropertiesdialog.cpp:141
 #, kde-format
 msgid ""
 "<p>The estimated size of the attachment:</p><p>Note that, in an email "
@@ -109,7 +109,7 @@ msgstr ""
 "zprávě bude binární soubor kódovaný base64 zabírat čtyři třetiny původní "
 "velikosti souboru.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:147
+#: attachment/attachmentpropertiesdialog.cpp:146
 #, kde-format
 msgid ""
 "<p>The file name of the part:</p><p>Although this defaults to the name of "
@@ -121,7 +121,7 @@ msgstr ""
 "souboru, není tomu tak. Přesněji řečeno - jde o jméno souboru, použité v "
 "poštovním agentovi příjemce při ukládání části na disk.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:154
+#: attachment/attachmentpropertiesdialog.cpp:153
 #, kde-format
 msgid ""
 "<p>A description of the part:</p><p>This is just an informational "
@@ -133,7 +133,7 @@ msgstr ""
 "předmět informativním popisem pro celou zprávu. Většina poštovních agentů "
 "zobrazí tuto informaci ve svých náhledech zpráv vedle ikony příloh.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:161
+#: attachment/attachmentpropertiesdialog.cpp:160
 #, kde-format
 msgid ""
 "<p>The transport encoding of this part:</p><p>Normally, you do not need to "
@@ -151,7 +151,7 @@ msgstr ""
 "\"quoted-printable\", namísto implicitního \"base64\", ušetří cca 25% místa "
 "ve výsledné zprávě.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:172
+#: attachment/attachmentpropertiesdialog.cpp:171
 #, kde-format
 msgid ""
 "<p>Check this option if you want to suggest to the recipient the automatic "
@@ -166,7 +166,7 @@ msgstr ""
 "Disposition</em> této části na \"inline\" namísto implicitního \"attachment"
 "\".</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:180
+#: attachment/attachmentpropertiesdialog.cpp:179
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be signed.</p><p>The "
@@ -177,7 +177,7 @@ msgstr ""
 "p><p>Podpis bude vytvořen za pomoci klíče, který jste svázali s aktuálně "
 "vybranou identitou.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:186
+#: attachment/attachmentpropertiesdialog.cpp:185
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be encrypted.</"
@@ -186,8 +186,8 @@ msgstr ""
 "<p>Zvolte tuto možnost, pokud si přejete tuto část zprávy šifrovat. </"
 "p><p>Část bude šifrována pro příjemce této zprávy.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:307
-#: attachment/attachmentpropertiesdialog.cpp:322
+#: attachment/attachmentpropertiesdialog.cpp:305
+#: attachment/attachmentpropertiesdialog.cpp:320
 #, kde-format
 msgctxt "@title:window"
 msgid "Attachment Properties"
@@ -313,29 +313,29 @@ msgstr ""
 "Maximální velikost povolené přílohy zprávy v bitech (-1 pro neomezenou "
 "velikost)"
 
-#: utils/dateformatter.cpp:163
+#: utils/dateformatter.cpp:164
 #, kde-format
 msgctxt "invalid time specified"
 msgid "unknown"
 msgstr "neznámý"
 
-#: utils/dateformatter.cpp:175
+#: utils/dateformatter.cpp:176
 #, kde-format
 msgid "Today %1"
 msgstr "Dnes %1"
 
-#: utils/dateformatter.cpp:178
+#: utils/dateformatter.cpp:179
 #, kde-format
 msgid "Yesterday %1"
 msgstr "Včera %1"
 
-#: utils/dateformatter.cpp:183
+#: utils/dateformatter.cpp:184
 #, kde-format
 msgctxt "1. weekday, 2. time"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: utils/stringutil.cpp:415
+#: utils/stringutil.cpp:414
 #, kde-format
 msgctxt "signal that this email is defined in my identity"
 msgid "Me"

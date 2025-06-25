@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-01 00:42+0000\n"
+"POT-Creation-Date: 2025-06-25 00:43+0000\n"
 "PO-Revision-Date: 2024-11-10 11:07+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -20,13 +20,13 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 24.08.2\n"
 
-#: attachment/attachmentcontrollerbase.cpp:166
+#: attachment/attachmentcontrollerbase.cpp:167
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to compress attachment"
 msgstr "Liitteen pakkaaminen epäonnistui"
 
-#: attachment/attachmentcontrollerbase.cpp:177
+#: attachment/attachmentcontrollerbase.cpp:178
 #, kde-format
 msgid ""
 "The compressed attachment is larger than the original. Do you want to keep "
@@ -34,233 +34,233 @@ msgid ""
 msgstr ""
 "Pakattu liite on alkuperäistä suurempi. Haluatko säilyttää alkuperäisen?"
 
-#: attachment/attachmentcontrollerbase.cpp:180
+#: attachment/attachmentcontrollerbase.cpp:181
 #, kde-format
 msgctxt "Do not compress"
 msgid "Keep"
 msgstr "Säilytä"
 
-#: attachment/attachmentcontrollerbase.cpp:181
+#: attachment/attachmentcontrollerbase.cpp:182
 #, kde-format
 msgctxt "@action:button"
 msgid "Compress"
 msgstr "Pakkaa"
 
-#: attachment/attachmentcontrollerbase.cpp:200
-#: attachment/attachmentcontrollerbase.cpp:960
+#: attachment/attachmentcontrollerbase.cpp:201
+#: attachment/attachmentcontrollerbase.cpp:961
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach file"
 msgstr "Tiedoston liittäminen epäonnistui"
 
-#: attachment/attachmentcontrollerbase.cpp:273
+#: attachment/attachmentcontrollerbase.cpp:274
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to reload attachment"
 msgstr "Liitteen uudelleenlataaminen epäonnistui"
 
-#: attachment/attachmentcontrollerbase.cpp:320
+#: attachment/attachmentcontrollerbase.cpp:321
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
 msgstr "&Avaa ohjelmalla"
 
-#: attachment/attachmentcontrollerbase.cpp:340
+#: attachment/attachmentcontrollerbase.cpp:341
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
 msgstr "&Muu…"
 
-#: attachment/attachmentcontrollerbase.cpp:342
-#: attachment/attachmentcontrollerbase.cpp:350
+#: attachment/attachmentcontrollerbase.cpp:343
+#: attachment/attachmentcontrollerbase.cpp:351
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "Avaa &ohjelmalla…"
 
-#: attachment/attachmentcontrollerbase.cpp:376
+#: attachment/attachmentcontrollerbase.cpp:377
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach public key"
 msgstr "Julkisen avaimen liittäminen epäonnistui"
 
-#: attachment/attachmentcontrollerbase.cpp:390
+#: attachment/attachmentcontrollerbase.cpp:391
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach vCard"
 msgstr "vCardin liittäminen epäonnistui"
 
-#: attachment/attachmentcontrollerbase.cpp:403
+#: attachment/attachmentcontrollerbase.cpp:404
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach text from clipboard"
 msgstr "Leikepöydän tekstin liittäminen epäonnistui"
 
-#: attachment/attachmentcontrollerbase.cpp:451
+#: attachment/attachmentcontrollerbase.cpp:452
 #, kde-format
 msgctxt "@action"
 msgid "Attach &Public Key..."
 msgstr "Liitä &julkinen avain…"
 
-#: attachment/attachmentcontrollerbase.cpp:454
+#: attachment/attachmentcontrollerbase.cpp:455
 #, kde-format
 msgctxt "@action"
 msgid "Attach &My Public Key"
 msgstr "Liitä &julkinen avaimeni"
 
-#: attachment/attachmentcontrollerbase.cpp:457
-#: attachment/attachmentcontrollerbase.cpp:462
-#: attachment/attachmentcontrollerbase.cpp:468
-#: attachment/attachmentcontrollerbase.cpp:477
+#: attachment/attachmentcontrollerbase.cpp:458
+#: attachment/attachmentcontrollerbase.cpp:463
+#: attachment/attachmentcontrollerbase.cpp:469
+#: attachment/attachmentcontrollerbase.cpp:478
 #, kde-format
 msgid "Attach"
 msgstr "Liitä"
 
-#: attachment/attachmentcontrollerbase.cpp:461
+#: attachment/attachmentcontrollerbase.cpp:462
 #, kde-format
 msgid "&Attach File..."
 msgstr "&Liitä tiedosto…"
 
-#: attachment/attachmentcontrollerbase.cpp:463
+#: attachment/attachmentcontrollerbase.cpp:464
 #, kde-format
 msgid "Add Attachment..."
 msgstr "Lisää liite…"
 
-#: attachment/attachmentcontrollerbase.cpp:467
+#: attachment/attachmentcontrollerbase.cpp:468
 #, kde-format
 msgid "&Attach Directory..."
 msgstr "&Liitä kansio…"
 
-#: attachment/attachmentcontrollerbase.cpp:471
+#: attachment/attachmentcontrollerbase.cpp:472
 #, kde-format
 msgctxt "@action"
 msgid "Attach Own vCard"
 msgstr "Liitä vCardini"
 
-#: attachment/attachmentcontrollerbase.cpp:472
+#: attachment/attachmentcontrollerbase.cpp:473
 #, kde-format
 msgid "Own vCard"
 msgstr "Oma vCard"
 
-#: attachment/attachmentcontrollerbase.cpp:476
+#: attachment/attachmentcontrollerbase.cpp:477
 #, kde-format
 msgid "&Attach vCards..."
 msgstr "&Liitä vCardeja…"
 
-#: attachment/attachmentcontrollerbase.cpp:480
+#: attachment/attachmentcontrollerbase.cpp:481
 #, kde-format
 msgid "&Attach Text From Clipboard..."
 msgstr "L&iitä tekstiä leikepöydältä…"
 
-#: attachment/attachmentcontrollerbase.cpp:481
+#: attachment/attachmentcontrollerbase.cpp:482
 #, kde-format
 msgid "Attach Text From Clipboard"
 msgstr "Liitä teksti leikepöydältä"
 
-#: attachment/attachmentcontrollerbase.cpp:493
+#: attachment/attachmentcontrollerbase.cpp:494
 #, kde-format
 msgid "&Remove Attachment"
 msgstr "&Poista liite"
 
-#: attachment/attachmentcontrollerbase.cpp:494
+#: attachment/attachmentcontrollerbase.cpp:495
 #, kde-format
 msgid "Remove"
 msgstr "Poista"
 
-#: attachment/attachmentcontrollerbase.cpp:502
+#: attachment/attachmentcontrollerbase.cpp:503
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Avaa"
 
-#: attachment/attachmentcontrollerbase.cpp:507
+#: attachment/attachmentcontrollerbase.cpp:508
 #, kde-format
 msgctxt "to view"
 msgid "View"
 msgstr "Näytä"
 
-#: attachment/attachmentcontrollerbase.cpp:512
+#: attachment/attachmentcontrollerbase.cpp:513
 #, kde-format
 msgctxt "to edit"
 msgid "Edit"
 msgstr "Muokkaa"
 
-#: attachment/attachmentcontrollerbase.cpp:517
+#: attachment/attachmentcontrollerbase.cpp:518
 #, kde-format
 msgctxt "@action"
 msgid "Edit With..."
 msgstr "Muokkaa sovelluksella…"
 
-#: attachment/attachmentcontrollerbase.cpp:522
+#: attachment/attachmentcontrollerbase.cpp:523
 #, kde-format
 msgid "&Save Attachment As..."
 msgstr "&Tallenna liite nimellä…"
 
-#: attachment/attachmentcontrollerbase.cpp:523
+#: attachment/attachmentcontrollerbase.cpp:524
 #, kde-format
 msgid "Save As..."
 msgstr "Tallenna nimellä…"
 
-#: attachment/attachmentcontrollerbase.cpp:531
+#: attachment/attachmentcontrollerbase.cpp:532
 #, kde-format
 msgctxt "@action"
 msgid "Attachment Pr&operties..."
 msgstr "Liitteen &ominaisuudet"
 
-#: attachment/attachmentcontrollerbase.cpp:532
+#: attachment/attachmentcontrollerbase.cpp:533
 #, kde-format
 msgctxt "@action"
 msgid "Properties"
 msgstr "Ominaisuudet"
 
-#: attachment/attachmentcontrollerbase.cpp:540
+#: attachment/attachmentcontrollerbase.cpp:541
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
 msgstr "Valitse kaikki"
 
-#: attachment/attachmentcontrollerbase.cpp:543
+#: attachment/attachmentcontrollerbase.cpp:544
 #, kde-format
 msgid "Reload"
 msgstr "Lataa uudelleen"
 
-#: attachment/attachmentcontrollerbase.cpp:677
-#: attachment/attachmentcontrollerbase.cpp:703
-#: attachment/attachmentcontrollerbase.cpp:753
+#: attachment/attachmentcontrollerbase.cpp:678
+#: attachment/attachmentcontrollerbase.cpp:704
+#: attachment/attachmentcontrollerbase.cpp:754
 #, kde-format
 msgid "KMail was unable to write the attachment to a temporary file."
 msgstr "KMail ei kyennyt kirjoittamaan liitettä väliaikaistiedostoon."
 
-#: attachment/attachmentcontrollerbase.cpp:678
-#: attachment/attachmentcontrollerbase.cpp:704
+#: attachment/attachmentcontrollerbase.cpp:679
+#: attachment/attachmentcontrollerbase.cpp:705
 #, kde-format
 msgctxt "@title:window"
 msgid "Unable to open attachment"
 msgstr "Liitettä ei voi avata"
 
-#: attachment/attachmentcontrollerbase.cpp:713
+#: attachment/attachmentcontrollerbase.cpp:714
 #, kde-format
 msgid "KMail was unable to open the attachment"
 msgstr "KMail ei kyennyt avaamaan liitettä"
 
-#: attachment/attachmentcontrollerbase.cpp:754 attachment/editorwatcher.cpp:200
+#: attachment/attachmentcontrollerbase.cpp:755 attachment/editorwatcher.cpp:202
 #, kde-format
 msgctxt "@title:window"
 msgid "Unable to edit attachment"
 msgstr "Liitettä ei voi muokata"
 
-#: attachment/attachmentcontrollerbase.cpp:795
+#: attachment/attachmentcontrollerbase.cpp:796
 #, kde-format
 msgid "unnamed"
 msgstr "nimetön"
 
-#: attachment/attachmentcontrollerbase.cpp:798
+#: attachment/attachmentcontrollerbase.cpp:799
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Attachment As"
 msgstr "Tallenna liite nimellä"
 
-#: attachment/attachmentcontrollerbase.cpp:821
+#: attachment/attachmentcontrollerbase.cpp:822
 #, kde-format
 msgid ""
 "File %1 exists.\n"
@@ -269,56 +269,56 @@ msgstr ""
 "Tiedosto %1 on olemassa.\n"
 "Korvataanko se?"
 
-#: attachment/attachmentcontrollerbase.cpp:822
+#: attachment/attachmentcontrollerbase.cpp:823
 #, kde-format
 msgctxt "@title:window"
 msgid "Save to File"
 msgstr "Tallenna tiedostoon"
 
-#: attachment/attachmentcontrollerbase.cpp:823
+#: attachment/attachmentcontrollerbase.cpp:824
 #, kde-format
 msgctxt "@action:button"
 msgid "&Replace"
 msgstr "Ko&rvaa"
 
-#: attachment/attachmentcontrollerbase.cpp:850
-#: attachment/attachmentcontrollerbase.cpp:929
+#: attachment/attachmentcontrollerbase.cpp:851
+#: attachment/attachmentcontrollerbase.cpp:930
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
 msgstr "Haluatko varmasti liittää tämän kansion ”%1”?"
 
-#: attachment/attachmentcontrollerbase.cpp:851
-#: attachment/attachmentcontrollerbase.cpp:930
+#: attachment/attachmentcontrollerbase.cpp:852
+#: attachment/attachmentcontrollerbase.cpp:931
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach directory"
 msgstr "Liitä kansio"
 
-#: attachment/attachmentcontrollerbase.cpp:852
-#: attachment/attachmentcontrollerbase.cpp:931
+#: attachment/attachmentcontrollerbase.cpp:853
+#: attachment/attachmentcontrollerbase.cpp:932
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach"
 msgstr "Liitä"
 
-#: attachment/attachmentcontrollerbase.cpp:887
+#: attachment/attachmentcontrollerbase.cpp:888
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach Directory"
 msgstr "Liitä kansio"
 
-#: attachment/attachmentcontrollerbase.cpp:895
+#: attachment/attachmentcontrollerbase.cpp:896
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach File"
 msgstr "Liitä tiedosto"
 
-#: attachment/attachmentcontrollerbase.cpp:984
+#: attachment/attachmentcontrollerbase.cpp:985
 #, kde-format
 msgid "Attach Public OpenPGP Key"
 msgstr "Liitä julkinen OpenPGP-avain"
 
-#: attachment/attachmentcontrollerbase.cpp:985
+#: attachment/attachmentcontrollerbase.cpp:986
 #, kde-format
 msgid "Select the public key which should be attached."
 msgstr "Valitse liitettävä julkinen avain."
@@ -384,12 +384,12 @@ msgctxt "@title column attachment inlined checkbox."
 msgid "Suggest Automatic Display"
 msgstr "Ehdota automaattista näkymää"
 
-#: attachment/editorwatcher.cpp:64
+#: attachment/editorwatcher.cpp:66
 #, kde-format
 msgid "Edit with:"
 msgstr "Muokkaa sovelluksella:"
 
-#: attachment/editorwatcher.cpp:198
+#: attachment/editorwatcher.cpp:200
 #, kde-format
 msgid ""
 "KMail is unable to detect when the chosen editor is closed. To avoid data "
@@ -1116,28 +1116,28 @@ msgstr ""
 "\n"
 "Valitse varmenne tai varmenteet, joita tälle vastaanottajalle tulisi käyttää."
 
-#: contactpreference/savecontactpreferencejob.cpp:70
+#: contactpreference/savecontactpreferencejob.cpp:71
 #, kde-format
 msgctxt "@title:window"
 msgid "Name Selection"
 msgstr "Nimen valinta"
 
-#: contactpreference/savecontactpreferencejob.cpp:71
+#: contactpreference/savecontactpreferencejob.cpp:72
 #, kde-format
 msgid "Which name shall the contact '%1' have in your address book?"
 msgstr "Mikä nimi yhteystiedolle ”%1” annetaan osoitekirjassasi?"
 
-#: contactpreference/savecontactpreferencejob.cpp:83
+#: contactpreference/savecontactpreferencejob.cpp:84
 #, kde-format
 msgid "Select the address book folder to store the new contact in:"
 msgstr "Valitse osoitekirja, johon uusi yhteystieto tallennetaan:"
 
-#: followupreminder/followupremindercreatejob.cpp:76
+#: followupreminder/followupremindercreatejob.cpp:78
 #, kde-format
 msgid "Wait answer from \"%1\" send to \"%2\""
 msgstr "Odota vastausta aiheesta ”%1” osoitteeseen ”%2”"
 
-#: followupreminder/followupremindercreatejob.cpp:99
+#: followupreminder/followupremindercreatejob.cpp:101
 #, kde-format
 msgid ""
 "Failed to store a new reminder: an error occurred while trying to create a "
@@ -1146,7 +1146,7 @@ msgstr ""
 "Uuden muistutuksen tallennus epäonnistui: yritettäessä luoda uutta tehtävää "
 "kalenteriin sattui virhe: %1"
 
-#: followupreminder/followupremindercreatejob.cpp:131
+#: followupreminder/followupremindercreatejob.cpp:133
 #, kde-format
 msgid "Failed to store a new reminder: %1"
 msgstr "Uutta muistutusta ei voitu tallentaa: %1"
@@ -1189,17 +1189,17 @@ msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "Virheellinen kansio"
 
-#: helper/messagefactoryng.cpp:406 helper/messagefactoryng.cpp:729
+#: helper/messagefactoryng.cpp:407 helper/messagefactoryng.cpp:730
 #, kde-format
 msgid "forwarded message"
 msgstr "välitetty viesti"
 
-#: helper/messagefactoryng.cpp:574
+#: helper/messagefactoryng.cpp:575
 #, kde-format
 msgid "Receipt: "
 msgstr "Kuittaus: "
 
-#: helper/messagefactoryng.cpp:701
+#: helper/messagefactoryng.cpp:702
 #, kde-format
 msgid ""
 "\n"
@@ -1213,24 +1213,24 @@ msgstr ""
 "\n"
 "\n"
 
-#: imagescaling/imagescalingselectformat.cpp:25
+#: imagescaling/imagescalingselectformat.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Image Format"
 msgstr "Valitse kuvamuoto"
 
-#: imagescaling/imagescalingselectformat.cpp:88
+#: imagescaling/imagescalingselectformat.cpp:89
 #, kde-format
 msgctxt "@action:button"
 msgid "Select Format..."
 msgstr "Valitse muoto…"
 
-#: imagescaling/imagescalingwidget.cpp:107
+#: imagescaling/imagescalingwidget.cpp:109
 #, kde-format
 msgid "<a href=\"whatsthis\">How does this work?</a>"
 msgstr "<a href=\"whatsthis\">Kuinka tämä toimii?</a>"
 
-#: imagescaling/imagescalingwidget.cpp:117
+#: imagescaling/imagescalingwidget.cpp:119
 #, kde-format
 msgid ""
 "<qt><p>Here you can define image filename. You can use:</p><ul><li>%t set "
@@ -1242,18 +1242,18 @@ msgstr ""
 "tiedostonimi</li> <li>%e alkuperäinen tunnisteosa</li> <li>%x uusi "
 "tunnisteosa</li> </ul> </qt>"
 
-#: imagescaling/imagescalingwidget.cpp:187
+#: imagescaling/imagescalingwidget.cpp:189
 #, kde-format
 msgid "Custom"
 msgstr "Mukautettu"
 
-#: imagescaling/imagescalingwidget.cpp:315
+#: imagescaling/imagescalingwidget.cpp:317
 #, kde-format
 msgid "Please verify minimum and maximum values."
 msgstr "Tarkista vähimmäis- ja enimmäisarvot."
 
 # Ikkunan otsikko virheilmoituksessa, joka näytetään, jos vähimmäisarvo  ≥ enimmäisarvo.
-#: imagescaling/imagescalingwidget.cpp:315
+#: imagescaling/imagescalingwidget.cpp:317
 #, kde-format
 msgctxt "@title:window"
 msgid "Error in minimum Maximum value"
@@ -1507,17 +1507,17 @@ msgstr ""
 msgid "Exporting key..."
 msgstr "Viedään avainta…"
 
-#: job/attachmentvcardfromaddressbookjob.cpp:75
+#: job/attachmentvcardfromaddressbookjob.cpp:77
 #, kde-format
 msgid "Unknown Contact Type"
 msgstr "Tuntematon yhteystiedon tyyppi"
 
-#: job/attachmentvcardfromaddressbookjob.cpp:86
+#: job/attachmentvcardfromaddressbookjob.cpp:88
 #, kde-format
 msgid "Invalid Contact"
 msgstr "Virheellinen yhteystieto"
 
-#: job/attachmentvcardfromaddressbookjob.cpp:102
+#: job/attachmentvcardfromaddressbookjob.cpp:104
 #, kde-format
 msgid "Impossible to generate vCard."
 msgstr "vCardin luominen on mahdotonta."
@@ -1551,7 +1551,7 @@ msgstr "Pyydetty rivittämään, muttei annettu paljasta tekstiä."
 msgid "Could not get text codec for charset \"%1\"."
 msgstr "Ei saatu tekstikoodekkia merkistölle ”%1”."
 
-#: job/singlepartjob.cpp:65
+#: job/singlepartjob.cpp:66
 #, kde-format
 msgid "%1 Content-Transfer-Encoding cannot correctly encode this message."
 msgstr "Content-Transfer-Encoding %1 ei voi koodata tätä viestiä oikein."
@@ -1778,37 +1778,37 @@ msgid_plural "Truncating recipients list to %2 of %1 entries."
 msgstr[0] "Katkaistaan vastaanottajalista %2:een %1:stä vastaanottajasta."
 msgstr[1] "Katkaistaan vastaanottajalista %2:een %1:stä vastaanottajasta."
 
-#: recipient/recipientseditorsidewidget.cpp:28
+#: recipient/recipientseditorsidewidget.cpp:29
 #, kde-format
 msgctxt "@action:button"
 msgid "Save List..."
 msgstr "Tallenna lista…"
 
-#: recipient/recipientseditorsidewidget.cpp:29
+#: recipient/recipientseditorsidewidget.cpp:30
 #, kde-format
 msgctxt "@action:button Open recipient selection dialog."
 msgid "Se&lect..."
 msgstr "&Valitse…"
 
-#: recipient/recipientseditorsidewidget.cpp:46
+#: recipient/recipientseditorsidewidget.cpp:47
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save recipients as distribution list"
 msgstr "Tallenna vastaanottajat jakelulistaksi"
 
-#: recipient/recipientseditorsidewidget.cpp:50
+#: recipient/recipientseditorsidewidget.cpp:51
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select recipients from address book"
 msgstr "Valitse vastaanottajat osoitekirjasta"
 
-#: recipient/recipientseditorsidewidget.cpp:77
+#: recipient/recipientseditorsidewidget.cpp:78
 #, kde-format
 msgctxt "@info:status No recipients selected"
 msgid "No recipients"
 msgstr "Ei vastaanottajia"
 
-#: recipient/recipientseditorsidewidget.cpp:79
+#: recipient/recipientseditorsidewidget.cpp:80
 #, kde-format
 msgctxt "@info:status Number of recipients selected"
 msgid "1 recipient"
@@ -1816,70 +1816,70 @@ msgid_plural "%1 recipients"
 msgstr[0] "1 vastaanottaja"
 msgstr[1] "%1 vastaanottajaa"
 
-#: recipient/recipientseditorsidewidget.cpp:129
+#: recipient/recipientseditorsidewidget.cpp:130
 #, kde-format
 msgctxt "@info:tooltip %1 list of emails"
 msgid "To:%1"
 msgstr "Vastaanottaja: %1"
 
-#: recipient/recipientseditorsidewidget.cpp:131
+#: recipient/recipientseditorsidewidget.cpp:132
 #, kde-format
 msgctxt "@info:tooltip %1 list of emails"
 msgid "CC:%1"
 msgstr "Kopio: %1"
 
-#: recipient/recipientseditorsidewidget.cpp:134
+#: recipient/recipientseditorsidewidget.cpp:135
 #, kde-format
 msgctxt "@info:tooltip %1 list of emails"
 msgid "BCC:%1"
 msgstr "Piilokopio: %1"
 
-#: recipient/recipientseditorsidewidget.cpp:137
+#: recipient/recipientseditorsidewidget.cpp:138
 #, kde-format
 msgctxt "@info:tooltip %1 list of emails"
 msgid "Reply-To:%1"
 msgstr "Vastausosoite: %1"
 
-#: recipient/recipientspicker.cpp:49
+#: recipient/recipientspicker.cpp:51
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Recipient"
 msgstr "Valitse vastaanottaja"
 
-#: recipient/recipientspicker.cpp:61
+#: recipient/recipientspicker.cpp:63
 #, kde-format
 msgctxt "@action:button"
 msgid "Search &Directory Service"
 msgstr "Etsi &hakemistopalvelusta"
 
-#: recipient/recipientspicker.cpp:80
+#: recipient/recipientspicker.cpp:82
 #, kde-format
 msgid "Add as &Reply-To"
 msgstr "Lisää &vastausosoitteeksi"
 
-#: recipient/recipientspicker.cpp:81
+#: recipient/recipientspicker.cpp:83
 #, kde-format
 msgid "Add as &To"
 msgstr "Lisää &vastaanottajaksi"
 
-#: recipient/recipientspicker.cpp:82
+#: recipient/recipientspicker.cpp:84
 #, kde-format
 msgid "Add as CC"
 msgstr "Lisää kopionsaajaksi"
 
-#: recipient/recipientspicker.cpp:83
+#: recipient/recipientspicker.cpp:85
 #, kde-format
 msgid "Add as &BCC"
 msgstr "Lisää piilokopionsaajaksi"
 
-#: recipient/recipientspicker.cpp:106
+#: recipient/recipientspicker.cpp:108
 #, kde-format
 msgid "%1 selected email"
 msgid_plural "%1 selected emails"
 msgstr[0] "%1 valittu viesti"
 msgstr[1] "%1 valittua viestiä"
 
-#: recipient/recipientspicker.cpp:173
+#: recipient/recipientspicker.cpp:175
 #, kde-format
 msgid ""
 "You selected 1 recipient. The maximum supported number of recipients is %2.\n"
@@ -1895,64 +1895,64 @@ msgstr[1] ""
 "Valitsit %1 vastaanottajaa. Vastaanottajien suurin tuettu määrä on %2.\n"
 "Mukauta valintaa."
 
-#: recipient/recipientspicker.cpp:190
+#: recipient/recipientspicker.cpp:192
 #, kde-format
 msgid "You can not add more recipients."
 msgstr "Vastaanottajia ei voi lisätä enempää."
 
-#: sendlater/sendlatercreatejob.cpp:33
+#: sendlater/sendlatercreatejob.cpp:35
 #, kde-format
 msgid "Failed to schedule message for sending later: %1"
 msgstr "Viestin ajastaminen myöhemmin lähetettäväksi epäonnistui: %1"
 
-#: sendlater/sendlaterdialog.cpp:28
+#: sendlater/sendlaterdialog.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Later"
 msgstr "Lähetä myöhemmin"
 
-#: sendlater/sendlaterdialog.cpp:48
+#: sendlater/sendlaterdialog.cpp:50
 #, kde-format
 msgid "Send Later"
 msgstr "Lähetä myöhemmin"
 
-#: sendlater/sendlaterdialog.cpp:49
+#: sendlater/sendlaterdialog.cpp:51
 #, kde-format
 msgctxt "@option:check"
 msgid "Delay"
 msgstr "Viive"
 
-#: sendlater/sendlaterdialog.cpp:65
+#: sendlater/sendlaterdialog.cpp:67
 #, kde-format
 msgid "Days"
 msgstr "Päivät"
 
-#: sendlater/sendlaterdialog.cpp:65
+#: sendlater/sendlaterdialog.cpp:67
 #, kde-format
 msgid "Weeks"
 msgstr "Viikot"
 
-#: sendlater/sendlaterdialog.cpp:65
+#: sendlater/sendlaterdialog.cpp:67
 #, kde-format
 msgid "Months"
 msgstr "Kuukaudet"
 
-#: sendlater/sendlaterdialog.cpp:65
+#: sendlater/sendlaterdialog.cpp:67
 #, kde-format
 msgid "Years"
 msgstr "Vuodet"
 
-#: sendlater/sendlaterjob.cpp:32
+#: sendlater/sendlaterjob.cpp:34
 #, kde-format
 msgid "The Send Later agent is not running."
 msgstr "Lähetä myöhemmin -agentti ei ole käynnissä."
 
-#: sendlater/sendlaterremovejob.cpp:27
+#: sendlater/sendlaterremovejob.cpp:29
 #, kde-format
 msgid "Failed to removed message from send later schedule: %1"
 msgstr "Viestin poistaminen lähetysjonosta epäonnistui: %1"
 
-#: sendlater/sendlatertimedatewidget.cpp:35
+#: sendlater/sendlatertimedatewidget.cpp:36
 #, kde-format
 msgid "You cannot select a date prior to the current date."
 msgstr "Valitun päivän täytyy olla nykyistä päivää myöhempi."
@@ -2360,7 +2360,7 @@ msgstr "Sekalaista"
 msgid "Subject"
 msgstr "Aihe"
 
-#: utils/util.cpp:235
+#: utils/util.cpp:236
 #, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
@@ -2368,7 +2368,7 @@ msgctxt ""
 msgid "attachment,attached"
 msgstr "liite,liitetty"
 
-#: utils/util.cpp:269
+#: utils/util.cpp:270
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
@@ -2377,19 +2377,19 @@ msgstr ""
 "Viestinvälitystä ei ole asetettu, joten postia ei voi lähettää. Haluatko "
 "määrittää viestinvälityksen?"
 
-#: utils/util.cpp:270
+#: utils/util.cpp:271
 #, kde-format
 msgctxt "@title:window"
 msgid "No mail dispatcher."
 msgstr "Ei viestinvälitystä."
 
-#: utils/util.cpp:272
+#: utils/util.cpp:273
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "Luo viestinvälitys"
 
-#: utils/util.cpp:287
+#: utils/util.cpp:288
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
@@ -2398,13 +2398,13 @@ msgstr ""
 "Viestinvälitys ei ole verkossa, joten postia ei voi lähettää. Haluatko "
 "yhdistää viestinvälityksen verkkoon?"
 
-#: utils/util.cpp:288
+#: utils/util.cpp:289
 #, kde-format
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "Viestinvälitys ei toiminnassa."
 
-#: utils/util.cpp:289
+#: utils/util.cpp:290
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"

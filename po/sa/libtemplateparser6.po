@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-17 00:39+0000\n"
+"POT-Creation-Date: 2025-06-25 00:43+0000\n"
 "PO-Revision-Date: 2024-12-20 21:53+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -19,36 +19,36 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n>2);\n"
 "X-Generator: Lokalize 24.08.2\n"
 
-#: customtemplates.cpp:72 customtemplates.cpp:123
+#: customtemplates.cpp:74 customtemplates.cpp:125
 #, kde-format
 msgctxt "Message->"
 msgid "Universal"
 msgstr "सार्वभौमिक"
 
-#: customtemplates.cpp:73 customtemplates.cpp:129
+#: customtemplates.cpp:75 customtemplates.cpp:131
 #, kde-format
 msgctxt "Message->"
 msgid "Reply"
 msgstr "उत्तरं"
 
-#: customtemplates.cpp:74 customtemplates.cpp:132
+#: customtemplates.cpp:76 customtemplates.cpp:134
 #, kde-format
 msgctxt "Message->"
 msgid "Reply to All"
 msgstr "Reply to All"
 
-#: customtemplates.cpp:75 customtemplates.cpp:135
+#: customtemplates.cpp:77 customtemplates.cpp:137
 #, kde-format
 msgctxt "Message->"
 msgid "Forward"
 msgstr "अग्रतः"
 
-#: customtemplates.cpp:77 templatesconfiguration.cpp:73
+#: customtemplates.cpp:79 templatesconfiguration.cpp:75
 #, kde-format
 msgid "<a href=\"whatsthis\">How does this work?</a>"
 msgstr "<a href=\"whatsthis\">एतत् कथं कार्यं करोति ?</a>"
 
-#: customtemplates.cpp:87
+#: customtemplates.cpp:89
 #, kde-format
 msgid ""
 "<qt><p>Here you can add, edit, and delete custom message templates to use "
@@ -72,67 +72,67 @@ msgstr ""
 "शक्यते । कीबोर्ड-शॉर्टकट्-इत्येतत् <i>Universal</i> टेम्पलेट्-मध्ये बाध्यं कर्तुं न शक्नुथ ।</p></"
 "qt>"
 
-#: customtemplates.cpp:138
+#: customtemplates.cpp:140
 #, kde-format
 msgctxt "Message->"
 msgid "Unknown"
 msgstr "अज्ञात"
 
-#: customtemplates.cpp:252
+#: customtemplates.cpp:254
 #, kde-format
 msgid "A template with same name already exists."
 msgstr "समाननाम्नः एकः टेम्पलेट् पूर्वमेव विद्यते ।"
 
-#: customtemplates.cpp:252
+#: customtemplates.cpp:254
 #, kde-format
 msgctxt "@title:window"
 msgid "Cannot create template"
 msgstr "टेम्पलेट् निर्मातुं न शक्यते"
 
-#: customtemplates.cpp:344
+#: customtemplates.cpp:346
 #, kde-format
 msgctxt "@info"
 msgid "Do you really want to remove template \"%1\"?"
 msgstr "किं भवान् वास्तवमेव \"%1\" टेम्पलेट् अपसारयितुम् इच्छति?"
 
-#: customtemplates.cpp:345
+#: customtemplates.cpp:347
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Template?"
 msgstr "टेम्पलेट् निष्कासयन्तु?"
 
-#: customtemplatesmenu.cpp:48
+#: customtemplatesmenu.cpp:50
 #, kde-format
 msgid "With Custom Template"
 msgstr "कस्टम टेम्पलेट् सह"
 
-#: customtemplatesmenu.cpp:51
+#: customtemplatesmenu.cpp:53
 #, kde-format
 msgid "Reply With Custom Template"
 msgstr "कस्टम टेम्पलेट् सह उत्तरं ददातु"
 
-#: customtemplatesmenu.cpp:54
+#: customtemplatesmenu.cpp:56
 #, kde-format
 msgid "Reply to All With Custom Template"
 msgstr "Reply to All With Custom टेम्पलेट्"
 
-#: customtemplatesmenu.cpp:179 customtemplatesmenu.cpp:184
-#: customtemplatesmenu.cpp:189
+#: customtemplatesmenu.cpp:181 customtemplatesmenu.cpp:186
+#: customtemplatesmenu.cpp:191
 #, kde-format
 msgid "(no custom templates)"
 msgstr "(कोऽपि कस्टम् टेम्पलेट् नास्ति)"
 
-#: defaulttemplates.cpp:16
+#: defaulttemplates.cpp:17
 #, kde-format
 msgid "Default new message template"
 msgstr "पूर्वनिर्धारित नवीन सन्देश टेम्पलेट"
 
-#: defaulttemplates.cpp:21
+#: defaulttemplates.cpp:22
 #, kde-format
 msgid "Default reply template"
 msgstr "पूर्वनिर्धारित उत्तर टेम्पलेट"
 
-#: defaulttemplates.cpp:26
+#: defaulttemplates.cpp:27
 #, kde-format
 msgctxt ""
 "Default reply template.%1: date of original message, %2: time of original "
@@ -146,12 +146,12 @@ msgstr ""
 "%3\n"
 "%4"
 
-#: defaulttemplates.cpp:37
+#: defaulttemplates.cpp:38
 #, kde-format
 msgid "Default reply all template"
 msgstr "पूर्वनिर्धारितं उत्तरं सर्वं टेम्पलेट्"
 
-#: defaulttemplates.cpp:41
+#: defaulttemplates.cpp:42
 #, kde-format
 msgctxt ""
 "Default reply all template: %1: date, %2: time, %3: name of original sender, "
@@ -165,12 +165,12 @@ msgstr ""
 "%4\n"
 "%5"
 
-#: defaulttemplates.cpp:53
+#: defaulttemplates.cpp:54
 #, kde-format
 msgid "Default forward template"
 msgstr "पूर्वनिर्धारित अग्रे टेम्पलेट"
 
-#: defaulttemplates.cpp:60
+#: defaulttemplates.cpp:61
 #, kde-format
 msgctxt ""
 "Default forward template: %1: subject of original message, %2: date of "
@@ -286,249 +286,249 @@ msgctxt "@item:intext email CC"
 msgid "CC:"
 msgstr "सी. सी."
 
-#: templateparserjob.cpp:1150
+#: templateparserjob.cpp:1148
 #, kde-format
 msgctxt "@item:intext"
 msgid "Attachment %1"
 msgstr "आसक्तिः %1"
 
-#: templateparserjob.cpp:1357
+#: templateparserjob.cpp:1355
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Pipe command <command>%1</command> failed."
 msgstr "पाइप् आदेशः <command>%1</command> विफलः ।"
 
-#: templatescommandmenu.cpp:28
+#: templatescommandmenu.cpp:29
 msgid "Quoted Message Text"
 msgstr "उद्धृत सन्देश पाठ"
 
-#: templatescommandmenu.cpp:30
+#: templatescommandmenu.cpp:31
 msgid "Message Text as Is"
 msgstr "सन्देशपाठः यथा अस्ति"
 
-#: templatescommandmenu.cpp:32
+#: templatescommandmenu.cpp:33
 msgid "Message Id"
 msgstr "सन्देश Id"
 
-#: templatescommandmenu.cpp:34 templatescommandmenu.cpp:87
+#: templatescommandmenu.cpp:35 templatescommandmenu.cpp:88
 msgid "Date"
 msgstr "दिनाङ्कः"
 
-#: templatescommandmenu.cpp:36 templatescommandmenu.cpp:89
+#: templatescommandmenu.cpp:37 templatescommandmenu.cpp:90
 msgid "Date in Short Format"
 msgstr "लघु प्रारूपे तिथि"
 
-#: templatescommandmenu.cpp:38 templatescommandmenu.cpp:91
+#: templatescommandmenu.cpp:39 templatescommandmenu.cpp:92
 msgid "Date in C Locale"
 msgstr "C Locale इत्यत्र तिथिः"
 
-#: templatescommandmenu.cpp:40 templatescommandmenu.cpp:93
+#: templatescommandmenu.cpp:41 templatescommandmenu.cpp:94
 msgid "Day of Week"
 msgstr "सप्ताहस्य दिवसः"
 
-#: templatescommandmenu.cpp:42 templatescommandmenu.cpp:95
+#: templatescommandmenu.cpp:43 templatescommandmenu.cpp:96
 msgid "Time"
 msgstr "कालः"
 
-#: templatescommandmenu.cpp:44 templatescommandmenu.cpp:97
+#: templatescommandmenu.cpp:45 templatescommandmenu.cpp:98
 msgid "Time in Long Format"
 msgstr "दीर्घ प्रारूपे समय"
 
-#: templatescommandmenu.cpp:46 templatescommandmenu.cpp:99
+#: templatescommandmenu.cpp:47 templatescommandmenu.cpp:100
 msgid "Time in C Locale"
 msgstr "C Locale इत्यत्र समयः"
 
-#: templatescommandmenu.cpp:48 templatescommandmenu.cpp:100
+#: templatescommandmenu.cpp:49 templatescommandmenu.cpp:101
 msgid "To Field Address"
 msgstr "To Field Address इति"
 
-#: templatescommandmenu.cpp:50 templatescommandmenu.cpp:102
+#: templatescommandmenu.cpp:51 templatescommandmenu.cpp:103
 msgid "To Field Name"
 msgstr "To Field Name इति"
 
-#: templatescommandmenu.cpp:52 templatescommandmenu.cpp:104
+#: templatescommandmenu.cpp:53 templatescommandmenu.cpp:105
 msgid "To Field First Name"
 msgstr "To Field प्रथमनाम"
 
-#: templatescommandmenu.cpp:54 templatescommandmenu.cpp:106
+#: templatescommandmenu.cpp:55 templatescommandmenu.cpp:107
 msgid "To Field Last Name"
 msgstr "To Field Last Name इति"
 
-#: templatescommandmenu.cpp:56 templatescommandmenu.cpp:108
+#: templatescommandmenu.cpp:57 templatescommandmenu.cpp:109
 msgid "CC Field Address"
 msgstr "सीसी क्षेत्र पता"
 
-#: templatescommandmenu.cpp:58 templatescommandmenu.cpp:110
+#: templatescommandmenu.cpp:59 templatescommandmenu.cpp:111
 msgid "CC Field Name"
 msgstr "सी सी क्षेत्र नाम"
 
-#: templatescommandmenu.cpp:60 templatescommandmenu.cpp:112
+#: templatescommandmenu.cpp:61 templatescommandmenu.cpp:113
 msgid "CC Field First Name"
 msgstr "सीसी क्षेत्र प्रथम नाम"
 
-#: templatescommandmenu.cpp:62 templatescommandmenu.cpp:114
+#: templatescommandmenu.cpp:63 templatescommandmenu.cpp:115
 msgid "CC Field Last Name"
 msgstr "सीसी क्षेत्र Last Name"
 
-#: templatescommandmenu.cpp:64 templatescommandmenu.cpp:116
+#: templatescommandmenu.cpp:65 templatescommandmenu.cpp:117
 msgid "From Field Address"
 msgstr "क्षेत्रसङ्केतः"
 
-#: templatescommandmenu.cpp:66
+#: templatescommandmenu.cpp:67
 msgid "From Field Name"
 msgstr "क्षेत्रनामात्"
 
-#: templatescommandmenu.cpp:68 templatescommandmenu.cpp:120
+#: templatescommandmenu.cpp:69 templatescommandmenu.cpp:121
 msgid "From Field First Name"
 msgstr "क्षेत्रात् प्रथमनाम"
 
-#: templatescommandmenu.cpp:70 templatescommandmenu.cpp:122
+#: templatescommandmenu.cpp:71 templatescommandmenu.cpp:123
 msgid "From Field Last Name"
 msgstr "क्षेत्रस्य आख्यनामात्"
 
-#: templatescommandmenu.cpp:72
+#: templatescommandmenu.cpp:73
 msgid "Addresses of all recipients"
 msgstr "सर्वेषां प्राप्तकर्तानां पत्तनम्"
 
-#: templatescommandmenu.cpp:74
+#: templatescommandmenu.cpp:75
 msgctxt "Template value for subject of the message"
 msgid "Subject"
 msgstr "विषयः"
 
-#: templatescommandmenu.cpp:76
+#: templatescommandmenu.cpp:77
 msgid "Quoted Headers"
 msgstr "उद्धृत शीर्षक"
 
-#: templatescommandmenu.cpp:78
+#: templatescommandmenu.cpp:79
 msgid "Headers as Is"
 msgstr "शीर्षकाणि यथा Is"
 
-#: templatescommandmenu.cpp:80 templatescommandmenu.cpp:126
+#: templatescommandmenu.cpp:81 templatescommandmenu.cpp:127
 msgid "Header Content"
 msgstr "शीर्षक सामग्री"
 
-#: templatescommandmenu.cpp:82
+#: templatescommandmenu.cpp:83
 msgid "Reply as Quoted Plain Text"
 msgstr "Reply as Quoted सादा पाठ"
 
-#: templatescommandmenu.cpp:84
+#: templatescommandmenu.cpp:85
 msgid "Reply as Quoted HTML Text"
 msgstr "Quoted HTML Text इति उत्तरं ददातु"
 
-#: templatescommandmenu.cpp:118
+#: templatescommandmenu.cpp:119
 msgid "From field Name"
 msgstr "क्षेत्रात् नाम"
 
-#: templatescommandmenu.cpp:124
+#: templatescommandmenu.cpp:125
 msgctxt "Template subject command."
 msgid "Subject"
 msgstr "विषयः"
 
-#: templatescommandmenu.cpp:129
+#: templatescommandmenu.cpp:130
 msgid "Pipe Original Message Body and Insert Result as Quoted Text"
 msgstr "मूलसन्देशशरीरं पाइपं कृत्वा परिणामं उद्धृतपाठरूपेण सम्मिलितं कुर्वन्तु"
 
-#: templatescommandmenu.cpp:131
+#: templatescommandmenu.cpp:132
 msgid "Pipe Original Message Body and Insert Result as Is"
 msgstr "Pipe Original Message Body तथा Insert Result as Is"
 
-#: templatescommandmenu.cpp:133
+#: templatescommandmenu.cpp:134
 msgid "Pipe Original Message with Headers and Insert Result as Is"
 msgstr "हेडर् इत्यनेन सह मूलसन्देशं पाइपं कुर्वन्तु तथा च परिणामं यथा वर्तते तथा सम्मिलितं कुर्वन्तु"
 
-#: templatescommandmenu.cpp:135
+#: templatescommandmenu.cpp:136
 msgid "Pipe Current Message Body and Insert Result as Is"
 msgstr "वर्तमान सन्देशशरीरं पाइपं कृत्वा परिणामं यथा वर्तते तथा सम्मिलितं कुर्वन्तु"
 
-#: templatescommandmenu.cpp:137
+#: templatescommandmenu.cpp:138
 msgid "Pipe Current Message Body and Replace with Result"
 msgstr "Pipe Current Message Body कृत्वा Result इत्यनेन प्रतिस्थापयन्तु"
 
-#: templatescommandmenu.cpp:142
+#: templatescommandmenu.cpp:143
 msgctxt "Inserts user signature, also known as footer, into message"
 msgid "Signature"
 msgstr "हस्ताक्षर"
 
-#: templatescommandmenu.cpp:144
+#: templatescommandmenu.cpp:145
 msgid "Insert File Content"
 msgstr "सञ्चिकासामग्री सम्मिलितं कुर्वन्तु"
 
-#: templatescommandmenu.cpp:148
+#: templatescommandmenu.cpp:149
 msgctxt ""
 "All characters, up to and including the next newline, are discarded without "
 "performing any macro expansion"
 msgid "Discard to Next Line"
 msgstr "अग्रिमपङ्क्तौ परित्यजन्तु"
 
-#: templatescommandmenu.cpp:151
+#: templatescommandmenu.cpp:152
 msgid "Template Comment"
 msgstr "टेम्पलेट टिप्पणी"
 
-#: templatescommandmenu.cpp:153
+#: templatescommandmenu.cpp:154
 msgid "No Operation"
 msgstr "No Operation इति"
 
-#: templatescommandmenu.cpp:155
+#: templatescommandmenu.cpp:156
 msgid "Clear Generated Message"
 msgstr "उत्पन्नं सन्देशं स्वच्छं कुर्वन्तु"
 
-#: templatescommandmenu.cpp:156
+#: templatescommandmenu.cpp:157
 msgid "Cursor position"
 msgstr "कर्सर स्थिति"
 
-#: templatescommandmenu.cpp:158
+#: templatescommandmenu.cpp:159
 msgid "Blank text"
 msgstr "रिक्तः पाठः"
 
-#: templatescommandmenu.cpp:160
+#: templatescommandmenu.cpp:161
 msgid "Dictionary Language"
 msgstr "शब्दकोश भाषा"
 
-#: templatescommandmenu.cpp:161
+#: templatescommandmenu.cpp:162
 msgid "Language"
 msgstr "भाषा"
 
-#: templatescommandmenu.cpp:166
+#: templatescommandmenu.cpp:167
 msgid "Turn Debug On"
 msgstr "Debug चालू कुर्वन्तु"
 
-#: templatescommandmenu.cpp:168
+#: templatescommandmenu.cpp:169
 msgid "Turn Debug Off"
 msgstr "त्रुटिनिवारणं निष्क्रियं कुर्वन्तु"
 
-#: templatescommandmenu.cpp:201
+#: templatescommandmenu.cpp:202
 #, kde-format
 msgid "Insert Command"
 msgstr "Insert Command इति"
 
-#: templatescommandmenu.cpp:214
+#: templatescommandmenu.cpp:215
 #, kde-format
 msgid "Original Message"
 msgstr "मूल सन्देश"
 
-#: templatescommandmenu.cpp:228
+#: templatescommandmenu.cpp:229
 #, kde-format
 msgid "Current Message"
 msgstr "वर्तमान सन्देश"
 
-#: templatescommandmenu.cpp:241
+#: templatescommandmenu.cpp:242
 #, kde-format
 msgid "Process with External Programs"
 msgstr "बाह्यकार्यक्रमैः सह प्रक्रिया"
 
-#: templatescommandmenu.cpp:254
+#: templatescommandmenu.cpp:255
 #, kde-format
 msgctxt "Miscellaneous template commands menu"
 msgid "Miscellaneous"
 msgstr "विविध"
 
-#: templatescommandmenu.cpp:268
+#: templatescommandmenu.cpp:269
 #, kde-format
 msgctxt "Debug template commands menu"
 msgid "Debug"
 msgstr "त्रुटिनिवारणम्"
 
-#: templatesconfiguration.cpp:50
+#: templatesconfiguration.cpp:52
 #, kde-format
 msgid ""
 "<p>Here you can create and manage templates to use when composing new "
@@ -540,7 +540,7 @@ msgstr ""
 "निर्माणं प्रबन्धयितुं च शक्नोति ।</p><p> सन्देश-सारूप्याणि प्रतिस्थापन-आदेशान् समर्थयन्ति, "
 "केवलं तान् टङ्कयन्तु अथवा <i>Insert आदेश-</i> मेनूतः तान् चिनोतु ।</p>"
 
-#: templatesconfiguration.cpp:58
+#: templatesconfiguration.cpp:60
 #, kde-format
 msgid ""
 "<p>Templates specified here are folder-specific. They override both global "
@@ -549,7 +549,7 @@ msgstr ""
 "<p>अत्र निर्दिष्टाः टेम्पलेट्-विशिष्टाः सन्ति । ते वैश्विकसाचौ प्रतिपरिचयसाचौ च अधिलिखन्ति "
 "।</p>"
 
-#: templatesconfiguration.cpp:63
+#: templatesconfiguration.cpp:65
 #, kde-format
 msgid ""
 "<p>Templates specified here are identity-specific. They override global "
@@ -559,7 +559,7 @@ msgstr ""
 "<p>अत्र निर्दिष्टाः टेम्पलेट्-परिचय-विशिष्टाः सन्ति । ते वैश्विकसाचाम् अधिलिखन्ति, परन्तु "
 "यदि ते निर्दिष्टाः सन्ति तर्हि प्रति-पुट-सारूप्यैः अधिलिखितुं शक्यन्ते ।</p>"
 
-#: templatesconfiguration.cpp:68
+#: templatesconfiguration.cpp:70
 #, kde-format
 msgid ""
 "<p>These are global (default) templates. They can be overridden by per-"
@@ -568,31 +568,31 @@ msgstr ""
 "<p>एते वैश्विक (पूर्वनिर्धारित) टेम्पलेट् सन्ति । ते निर्दिष्टाः चेत् प्रति-परिचय-सारूप्यैः अथवा "
 "प्रति-पुट-सारूप्यैः अधिलिखितुं शक्यन्ते ।</p>"
 
-#: templatesconfiguration.cpp:100
+#: templatesconfiguration.cpp:102
 #, kde-format
 msgid "Do you want to reset current template or all templates to default?"
 msgstr ""
 "किं भवान् वर्तमान टेम्पलेट् अथवा सर्वाणि टेम्पलेट् पूर्वनिर्धारितरूपेण पुनः सेट् कर्तुम् इच्छति?"
 
-#: templatesconfiguration.cpp:101
+#: templatesconfiguration.cpp:103
 #, kde-format
 msgctxt "@title:window"
 msgid "Reset to default"
 msgstr "पूर्वनिर्धारितरूपेण पुनः सेट् कुर्वन्तु"
 
-#: templatesconfiguration.cpp:102
+#: templatesconfiguration.cpp:104
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset Current Template"
 msgstr "वर्तमान टेम्पलेट रीसेट करें"
 
-#: templatesconfiguration.cpp:103
+#: templatesconfiguration.cpp:105
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset All Templates"
 msgstr "सर्वाणि टेम्पलेट् पुनः सेट् कुर्वन्तु"
 
-#: templatesconfiguration.cpp:361
+#: templatesconfiguration.cpp:363
 #, kde-format
 msgid ""
 "Use of \"Reply using plain text\" and \"Reply using HTML text\" in pairs is "

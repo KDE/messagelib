@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-17 00:39+0000\n"
+"POT-Creation-Date: 2025-06-25 00:43+0000\n"
 "PO-Revision-Date: 2024-10-27 13:59+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -22,36 +22,36 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
 
-#: customtemplates.cpp:72 customtemplates.cpp:123
+#: customtemplates.cpp:74 customtemplates.cpp:125
 #, kde-format
 msgctxt "Message->"
 msgid "Universal"
 msgstr "Universal"
 
-#: customtemplates.cpp:73 customtemplates.cpp:129
+#: customtemplates.cpp:75 customtemplates.cpp:131
 #, kde-format
 msgctxt "Message->"
 msgid "Reply"
 msgstr "Respon"
 
-#: customtemplates.cpp:74 customtemplates.cpp:132
+#: customtemplates.cpp:76 customtemplates.cpp:134
 #, kde-format
 msgctxt "Message->"
 msgid "Reply to All"
 msgstr "Respon a tots"
 
-#: customtemplates.cpp:75 customtemplates.cpp:135
+#: customtemplates.cpp:77 customtemplates.cpp:137
 #, kde-format
 msgctxt "Message->"
 msgid "Forward"
 msgstr "Reenvia"
 
-#: customtemplates.cpp:77 templatesconfiguration.cpp:73
+#: customtemplates.cpp:79 templatesconfiguration.cpp:75
 #, kde-format
 msgid "<a href=\"whatsthis\">How does this work?</a>"
 msgstr "<a href=\"whatsthis\">Com funciona açò?</a>"
 
-#: customtemplates.cpp:87
+#: customtemplates.cpp:89
 #, kde-format
 msgid ""
 "<qt><p>Here you can add, edit, and delete custom message templates to use "
@@ -77,67 +77,67 @@ msgstr ""
 "utilitzar per a qualsevol classe d'operació. No podeu assignar una drecera "
 "de teclat a les plantilles <i>universal</i>.</p></qt>"
 
-#: customtemplates.cpp:138
+#: customtemplates.cpp:140
 #, kde-format
 msgctxt "Message->"
 msgid "Unknown"
 msgstr "Desconegut"
 
-#: customtemplates.cpp:252
+#: customtemplates.cpp:254
 #, kde-format
 msgid "A template with same name already exists."
 msgstr "Ja existix una plantilla amb el mateix nom."
 
-#: customtemplates.cpp:252
+#: customtemplates.cpp:254
 #, kde-format
 msgctxt "@title:window"
 msgid "Cannot create template"
 msgstr "No s'ha pogut crear la plantilla"
 
-#: customtemplates.cpp:344
+#: customtemplates.cpp:346
 #, kde-format
 msgctxt "@info"
 msgid "Do you really want to remove template \"%1\"?"
 msgstr "Segur que voleu eliminar la plantilla «%1»?"
 
-#: customtemplates.cpp:345
+#: customtemplates.cpp:347
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Template?"
 msgstr "Voleu eliminar la plantilla?"
 
-#: customtemplatesmenu.cpp:48
+#: customtemplatesmenu.cpp:50
 #, kde-format
 msgid "With Custom Template"
 msgstr "Amb una plantilla personalitzada"
 
-#: customtemplatesmenu.cpp:51
+#: customtemplatesmenu.cpp:53
 #, kde-format
 msgid "Reply With Custom Template"
 msgstr "Respon amb una plantilla personalitzada"
 
-#: customtemplatesmenu.cpp:54
+#: customtemplatesmenu.cpp:56
 #, kde-format
 msgid "Reply to All With Custom Template"
 msgstr "Respon a tots amb una plantilla personalitzada"
 
-#: customtemplatesmenu.cpp:179 customtemplatesmenu.cpp:184
-#: customtemplatesmenu.cpp:189
+#: customtemplatesmenu.cpp:181 customtemplatesmenu.cpp:186
+#: customtemplatesmenu.cpp:191
 #, kde-format
 msgid "(no custom templates)"
 msgstr "(cap plantilla personalitzada)"
 
-#: defaulttemplates.cpp:16
+#: defaulttemplates.cpp:17
 #, kde-format
 msgid "Default new message template"
 msgstr "Plantilla predeterminada de missatge nou"
 
-#: defaulttemplates.cpp:21
+#: defaulttemplates.cpp:22
 #, kde-format
 msgid "Default reply template"
 msgstr "Plantilla predeterminada de resposta"
 
-#: defaulttemplates.cpp:26
+#: defaulttemplates.cpp:27
 #, kde-format
 msgctxt ""
 "Default reply template.%1: date of original message, %2: time of original "
@@ -151,12 +151,12 @@ msgstr ""
 "%3\n"
 "%4"
 
-#: defaulttemplates.cpp:37
+#: defaulttemplates.cpp:38
 #, kde-format
 msgid "Default reply all template"
 msgstr "Plantilla predeterminada de resposta a tots"
 
-#: defaulttemplates.cpp:41
+#: defaulttemplates.cpp:42
 #, kde-format
 msgctxt ""
 "Default reply all template: %1: date, %2: time, %3: name of original sender, "
@@ -170,12 +170,12 @@ msgstr ""
 "%4\n"
 "%5"
 
-#: defaulttemplates.cpp:53
+#: defaulttemplates.cpp:54
 #, kde-format
 msgid "Default forward template"
 msgstr "Plantilla predeterminada de reenviament"
 
-#: defaulttemplates.cpp:60
+#: defaulttemplates.cpp:61
 #, kde-format
 msgctxt ""
 "Default forward template: %1: subject of original message, %2: date of "
@@ -292,254 +292,254 @@ msgctxt "@item:intext email CC"
 msgid "CC:"
 msgstr "CC:"
 
-#: templateparserjob.cpp:1150
+#: templateparserjob.cpp:1148
 #, kde-format
 msgctxt "@item:intext"
 msgid "Attachment %1"
 msgstr "Adjunt %1"
 
-#: templateparserjob.cpp:1357
+#: templateparserjob.cpp:1355
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Pipe command <command>%1</command> failed."
 msgstr "Ha fallat la canalització de l'ordre <command>%1</command>."
 
-#: templatescommandmenu.cpp:28
+#: templatescommandmenu.cpp:29
 msgid "Quoted Message Text"
 msgstr "Text citat del missatge"
 
-#: templatescommandmenu.cpp:30
+#: templatescommandmenu.cpp:31
 msgid "Message Text as Is"
 msgstr "Missatge de text tal com és"
 
-#: templatescommandmenu.cpp:32
+#: templatescommandmenu.cpp:33
 msgid "Message Id"
 msgstr "ID del missatge"
 
-#: templatescommandmenu.cpp:34 templatescommandmenu.cpp:87
+#: templatescommandmenu.cpp:35 templatescommandmenu.cpp:88
 msgid "Date"
 msgstr "Data"
 
-#: templatescommandmenu.cpp:36 templatescommandmenu.cpp:89
+#: templatescommandmenu.cpp:37 templatescommandmenu.cpp:90
 msgid "Date in Short Format"
 msgstr "Data en format curt"
 
-#: templatescommandmenu.cpp:38 templatescommandmenu.cpp:91
+#: templatescommandmenu.cpp:39 templatescommandmenu.cpp:92
 msgid "Date in C Locale"
 msgstr "Data en format de configuració regional C"
 
-#: templatescommandmenu.cpp:40 templatescommandmenu.cpp:93
+#: templatescommandmenu.cpp:41 templatescommandmenu.cpp:94
 msgid "Day of Week"
 msgstr "Dia de la setmana"
 
-#: templatescommandmenu.cpp:42 templatescommandmenu.cpp:95
+#: templatescommandmenu.cpp:43 templatescommandmenu.cpp:96
 msgid "Time"
 msgstr "Temps"
 
-#: templatescommandmenu.cpp:44 templatescommandmenu.cpp:97
+#: templatescommandmenu.cpp:45 templatescommandmenu.cpp:98
 msgid "Time in Long Format"
 msgstr "Temps en format llarg"
 
-#: templatescommandmenu.cpp:46 templatescommandmenu.cpp:99
+#: templatescommandmenu.cpp:47 templatescommandmenu.cpp:100
 msgid "Time in C Locale"
 msgstr "Temps en format configuració regional C"
 
-#: templatescommandmenu.cpp:48 templatescommandmenu.cpp:100
+#: templatescommandmenu.cpp:49 templatescommandmenu.cpp:101
 msgid "To Field Address"
 msgstr "Adreça en el camp A"
 
-#: templatescommandmenu.cpp:50 templatescommandmenu.cpp:102
+#: templatescommandmenu.cpp:51 templatescommandmenu.cpp:103
 msgid "To Field Name"
 msgstr "Nom en el camp A"
 
-#: templatescommandmenu.cpp:52 templatescommandmenu.cpp:104
+#: templatescommandmenu.cpp:53 templatescommandmenu.cpp:105
 msgid "To Field First Name"
 msgstr "Primer nom en el camp A"
 
-#: templatescommandmenu.cpp:54 templatescommandmenu.cpp:106
+#: templatescommandmenu.cpp:55 templatescommandmenu.cpp:107
 msgid "To Field Last Name"
 msgstr "Cognom en el camp A"
 
-#: templatescommandmenu.cpp:56 templatescommandmenu.cpp:108
+#: templatescommandmenu.cpp:57 templatescommandmenu.cpp:109
 msgid "CC Field Address"
 msgstr "Adreça en el camp CC"
 
-#: templatescommandmenu.cpp:58 templatescommandmenu.cpp:110
+#: templatescommandmenu.cpp:59 templatescommandmenu.cpp:111
 msgid "CC Field Name"
 msgstr "Nom en el camp CC"
 
-#: templatescommandmenu.cpp:60 templatescommandmenu.cpp:112
+#: templatescommandmenu.cpp:61 templatescommandmenu.cpp:113
 msgid "CC Field First Name"
 msgstr "Primer nom en el camp CC"
 
-#: templatescommandmenu.cpp:62 templatescommandmenu.cpp:114
+#: templatescommandmenu.cpp:63 templatescommandmenu.cpp:115
 msgid "CC Field Last Name"
 msgstr "Cognom en el camp CC"
 
-#: templatescommandmenu.cpp:64 templatescommandmenu.cpp:116
+#: templatescommandmenu.cpp:65 templatescommandmenu.cpp:117
 msgid "From Field Address"
 msgstr "Adreça en el camp De"
 
-#: templatescommandmenu.cpp:66
+#: templatescommandmenu.cpp:67
 msgid "From Field Name"
 msgstr "Nom en el camp De"
 
-#: templatescommandmenu.cpp:68 templatescommandmenu.cpp:120
+#: templatescommandmenu.cpp:69 templatescommandmenu.cpp:121
 msgid "From Field First Name"
 msgstr "Primer nom en el camp De"
 
-#: templatescommandmenu.cpp:70 templatescommandmenu.cpp:122
+#: templatescommandmenu.cpp:71 templatescommandmenu.cpp:123
 msgid "From Field Last Name"
 msgstr "Cognom en el camp De"
 
-#: templatescommandmenu.cpp:72
+#: templatescommandmenu.cpp:73
 msgid "Addresses of all recipients"
 msgstr "Adreces de tots els destinataris"
 
-#: templatescommandmenu.cpp:74
+#: templatescommandmenu.cpp:75
 msgctxt "Template value for subject of the message"
 msgid "Subject"
 msgstr "Assumpte"
 
-#: templatescommandmenu.cpp:76
+#: templatescommandmenu.cpp:77
 msgid "Quoted Headers"
 msgstr "Capçaleres citades"
 
-#: templatescommandmenu.cpp:78
+#: templatescommandmenu.cpp:79
 msgid "Headers as Is"
 msgstr "Capçaleres tal com són"
 
-#: templatescommandmenu.cpp:80 templatescommandmenu.cpp:126
+#: templatescommandmenu.cpp:81 templatescommandmenu.cpp:127
 msgid "Header Content"
 msgstr "Contingut de la capçalera"
 
-#: templatescommandmenu.cpp:82
+#: templatescommandmenu.cpp:83
 msgid "Reply as Quoted Plain Text"
 msgstr "Respon com a text net citat"
 
-#: templatescommandmenu.cpp:84
+#: templatescommandmenu.cpp:85
 msgid "Reply as Quoted HTML Text"
 msgstr "Respon com a text HTML citat"
 
-#: templatescommandmenu.cpp:118
+#: templatescommandmenu.cpp:119
 msgid "From field Name"
 msgstr "Nom en el camp De"
 
-#: templatescommandmenu.cpp:124
+#: templatescommandmenu.cpp:125
 msgctxt "Template subject command."
 msgid "Subject"
 msgstr "Assumpte"
 
-#: templatescommandmenu.cpp:129
+#: templatescommandmenu.cpp:130
 msgid "Pipe Original Message Body and Insert Result as Quoted Text"
 msgstr ""
 "Canalitza el cos del missatge original i inserix el resultat com a text citat"
 
-#: templatescommandmenu.cpp:131
+#: templatescommandmenu.cpp:132
 msgid "Pipe Original Message Body and Insert Result as Is"
 msgstr ""
 "Canalitza el cos del missatge original i inserix el resultat tal com és"
 
-#: templatescommandmenu.cpp:133
+#: templatescommandmenu.cpp:134
 msgid "Pipe Original Message with Headers and Insert Result as Is"
 msgstr ""
 "Canalitza el missatge original amb les capçaleres i inserix el resultat tal "
 "com és"
 
-#: templatescommandmenu.cpp:135
+#: templatescommandmenu.cpp:136
 msgid "Pipe Current Message Body and Insert Result as Is"
 msgstr ""
 "Canalitza el cos del missatge original i inserix el resultat tal com és"
 
-#: templatescommandmenu.cpp:137
+#: templatescommandmenu.cpp:138
 msgid "Pipe Current Message Body and Replace with Result"
 msgstr "Canalitza el cos del missatge original i el substituïx amb el resultat"
 
-#: templatescommandmenu.cpp:142
+#: templatescommandmenu.cpp:143
 msgctxt "Inserts user signature, also known as footer, into message"
 msgid "Signature"
 msgstr "Signatura"
 
-#: templatescommandmenu.cpp:144
+#: templatescommandmenu.cpp:145
 msgid "Insert File Content"
 msgstr "Inserix el contingut d'un fitxer"
 
-#: templatescommandmenu.cpp:148
+#: templatescommandmenu.cpp:149
 msgctxt ""
 "All characters, up to and including the next newline, are discarded without "
 "performing any macro expansion"
 msgid "Discard to Next Line"
 msgstr "Descarta fins a la línia següent"
 
-#: templatescommandmenu.cpp:151
+#: templatescommandmenu.cpp:152
 msgid "Template Comment"
 msgstr "Comentari de la plantilla"
 
-#: templatescommandmenu.cpp:153
+#: templatescommandmenu.cpp:154
 msgid "No Operation"
 msgstr "Cap operació"
 
-#: templatescommandmenu.cpp:155
+#: templatescommandmenu.cpp:156
 msgid "Clear Generated Message"
 msgstr "Neteja el missatge generat"
 
-#: templatescommandmenu.cpp:156
+#: templatescommandmenu.cpp:157
 msgid "Cursor position"
 msgstr "Posició del cursor"
 
-#: templatescommandmenu.cpp:158
+#: templatescommandmenu.cpp:159
 msgid "Blank text"
 msgstr "Text en blanc"
 
-#: templatescommandmenu.cpp:160
+#: templatescommandmenu.cpp:161
 msgid "Dictionary Language"
 msgstr "Idioma del diccionari"
 
-#: templatescommandmenu.cpp:161
+#: templatescommandmenu.cpp:162
 msgid "Language"
 msgstr "Idioma"
 
-#: templatescommandmenu.cpp:166
+#: templatescommandmenu.cpp:167
 msgid "Turn Debug On"
 msgstr "Habilita la depuració"
 
-#: templatescommandmenu.cpp:168
+#: templatescommandmenu.cpp:169
 msgid "Turn Debug Off"
 msgstr "Inhabilita la depuració"
 
-#: templatescommandmenu.cpp:201
+#: templatescommandmenu.cpp:202
 #, kde-format
 msgid "Insert Command"
 msgstr "Inserix una ordre"
 
-#: templatescommandmenu.cpp:214
+#: templatescommandmenu.cpp:215
 #, kde-format
 msgid "Original Message"
 msgstr "Missatge original"
 
-#: templatescommandmenu.cpp:228
+#: templatescommandmenu.cpp:229
 #, kde-format
 msgid "Current Message"
 msgstr "Missatge actual"
 
-#: templatescommandmenu.cpp:241
+#: templatescommandmenu.cpp:242
 #, kde-format
 msgid "Process with External Programs"
 msgstr "Processa amb programes externs"
 
-#: templatescommandmenu.cpp:254
+#: templatescommandmenu.cpp:255
 #, kde-format
 msgctxt "Miscellaneous template commands menu"
 msgid "Miscellaneous"
 msgstr "Miscel·lània"
 
-#: templatescommandmenu.cpp:268
+#: templatescommandmenu.cpp:269
 #, kde-format
 msgctxt "Debug template commands menu"
 msgid "Debug"
 msgstr "Depura"
 
-#: templatesconfiguration.cpp:50
+#: templatesconfiguration.cpp:52
 #, kde-format
 msgid ""
 "<p>Here you can create and manage templates to use when composing new "
@@ -552,7 +552,7 @@ msgstr ""
 "missatge permeten substitució d'ordres, senzillament escrivint-les o "
 "seleccionant-les des del menú <i>Inserix una ordre</i>.</p>"
 
-#: templatesconfiguration.cpp:58
+#: templatesconfiguration.cpp:60
 #, kde-format
 msgid ""
 "<p>Templates specified here are folder-specific. They override both global "
@@ -561,7 +561,7 @@ msgstr ""
 "<p>Les plantilles seleccionades són específiques de la carpeta. Superposen "
 "les plantilles globals i les plantilles per identitat.</p>"
 
-#: templatesconfiguration.cpp:63
+#: templatesconfiguration.cpp:65
 #, kde-format
 msgid ""
 "<p>Templates specified here are identity-specific. They override global "
@@ -572,7 +572,7 @@ msgstr ""
 "superposen les plantilles globals, però poden esdevindre superposades per "
 "les plantilles de carpetes si s'han especificat.</p>"
 
-#: templatesconfiguration.cpp:68
+#: templatesconfiguration.cpp:70
 #, kde-format
 msgid ""
 "<p>These are global (default) templates. They can be overridden by per-"
@@ -582,32 +582,32 @@ msgstr ""
 "substituïdes per les plantilles per identitat o per carpeta si s'han "
 "especificat.</p>"
 
-#: templatesconfiguration.cpp:100
+#: templatesconfiguration.cpp:102
 #, kde-format
 msgid "Do you want to reset current template or all templates to default?"
 msgstr ""
 "Voleu restablir la plantilla actual o totes les plantilles al valor "
 "predeterminat?"
 
-#: templatesconfiguration.cpp:101
+#: templatesconfiguration.cpp:103
 #, kde-format
 msgctxt "@title:window"
 msgid "Reset to default"
 msgstr "Restablix als valors predeterminats"
 
-#: templatesconfiguration.cpp:102
+#: templatesconfiguration.cpp:104
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset Current Template"
 msgstr "Restaura la plantilla personalitzada"
 
-#: templatesconfiguration.cpp:103
+#: templatesconfiguration.cpp:105
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset All Templates"
 msgstr "Restaura totes les plantilles"
 
-#: templatesconfiguration.cpp:361
+#: templatesconfiguration.cpp:363
 #, kde-format
 msgid ""
 "Use of \"Reply using plain text\" and \"Reply using HTML text\" in pairs is "

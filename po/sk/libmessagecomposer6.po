@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-01 00:42+0000\n"
+"POT-Creation-Date: 2025-06-25 00:43+0000\n"
 "PO-Revision-Date: 2021-11-15 09:14+0100\n"
 "Last-Translator: Dušan Kazik <prescott66@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -17,263 +17,263 @@ msgstr ""
 "X-Generator: Poedit 3.0\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: attachment/attachmentcontrollerbase.cpp:166
+#: attachment/attachmentcontrollerbase.cpp:167
 #, fuzzy, kde-format
 #| msgid "Failed to compress attachment"
 msgctxt "@title:window"
 msgid "Failed to compress attachment"
 msgstr "Zlyhalo komprimovanie prílohy"
 
-#: attachment/attachmentcontrollerbase.cpp:177
+#: attachment/attachmentcontrollerbase.cpp:178
 #, kde-format
 msgid ""
 "The compressed attachment is larger than the original. Do you want to keep "
 "the original one?"
 msgstr "Komprimovaná príloha je väčšia ako originál. Chcete zachovať originál?"
 
-#: attachment/attachmentcontrollerbase.cpp:180
+#: attachment/attachmentcontrollerbase.cpp:181
 #, kde-format
 msgctxt "Do not compress"
 msgid "Keep"
 msgstr "Ponechať"
 
-#: attachment/attachmentcontrollerbase.cpp:181
+#: attachment/attachmentcontrollerbase.cpp:182
 #, fuzzy, kde-format
 #| msgid "Compress"
 msgctxt "@action:button"
 msgid "Compress"
 msgstr "Komprimovať"
 
-#: attachment/attachmentcontrollerbase.cpp:200
-#: attachment/attachmentcontrollerbase.cpp:960
+#: attachment/attachmentcontrollerbase.cpp:201
+#: attachment/attachmentcontrollerbase.cpp:961
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach file"
 msgstr "Zlyhalo pripojenie súboru"
 
-#: attachment/attachmentcontrollerbase.cpp:273
+#: attachment/attachmentcontrollerbase.cpp:274
 #, fuzzy, kde-format
 #| msgid "Failed to reload attachment"
 msgctxt "@title:window"
 msgid "Failed to reload attachment"
 msgstr "Zlyhalo nové načítanie prílohy"
 
-#: attachment/attachmentcontrollerbase.cpp:320
+#: attachment/attachmentcontrollerbase.cpp:321
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
 msgstr "&Otvoriť pomocou"
 
-#: attachment/attachmentcontrollerbase.cpp:340
+#: attachment/attachmentcontrollerbase.cpp:341
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
 msgstr "&Iný..."
 
-#: attachment/attachmentcontrollerbase.cpp:342
-#: attachment/attachmentcontrollerbase.cpp:350
+#: attachment/attachmentcontrollerbase.cpp:343
+#: attachment/attachmentcontrollerbase.cpp:351
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "&Otvoriť pomocou..."
 
-#: attachment/attachmentcontrollerbase.cpp:376
+#: attachment/attachmentcontrollerbase.cpp:377
 #, fuzzy, kde-format
 #| msgid "Failed to attach public key"
 msgctxt "@title:window"
 msgid "Failed to attach public key"
 msgstr "Zlyhalo pripojenie verejného kľúča"
 
-#: attachment/attachmentcontrollerbase.cpp:390
+#: attachment/attachmentcontrollerbase.cpp:391
 #, fuzzy, kde-format
 #| msgid "Failed to attach vCard"
 msgctxt "@title:window"
 msgid "Failed to attach vCard"
 msgstr "Nepodarilo sa pripojiť vCard"
 
-#: attachment/attachmentcontrollerbase.cpp:403
+#: attachment/attachmentcontrollerbase.cpp:404
 #, fuzzy, kde-format
 #| msgid "Failed to attach text from clipboard"
 msgctxt "@title:window"
 msgid "Failed to attach text from clipboard"
 msgstr "Nepodarilo sa pripojiť text zo schránky"
 
-#: attachment/attachmentcontrollerbase.cpp:451
+#: attachment/attachmentcontrollerbase.cpp:452
 #, fuzzy, kde-format
 #| msgid "Attach &Public Key..."
 msgctxt "@action"
 msgid "Attach &Public Key..."
 msgstr "&Pripojiť verejný kľúč..."
 
-#: attachment/attachmentcontrollerbase.cpp:454
+#: attachment/attachmentcontrollerbase.cpp:455
 #, fuzzy, kde-format
 #| msgid "Attach &My Public Key"
 msgctxt "@action"
 msgid "Attach &My Public Key"
 msgstr "Pripojiť &môj verejný kľúč"
 
-#: attachment/attachmentcontrollerbase.cpp:457
-#: attachment/attachmentcontrollerbase.cpp:462
-#: attachment/attachmentcontrollerbase.cpp:468
-#: attachment/attachmentcontrollerbase.cpp:477
+#: attachment/attachmentcontrollerbase.cpp:458
+#: attachment/attachmentcontrollerbase.cpp:463
+#: attachment/attachmentcontrollerbase.cpp:469
+#: attachment/attachmentcontrollerbase.cpp:478
 #, kde-format
 msgid "Attach"
 msgstr "Pripojiť"
 
-#: attachment/attachmentcontrollerbase.cpp:461
+#: attachment/attachmentcontrollerbase.cpp:462
 #, kde-format
 msgid "&Attach File..."
 msgstr "Pripojiť &súbor..."
 
-#: attachment/attachmentcontrollerbase.cpp:463
+#: attachment/attachmentcontrollerbase.cpp:464
 #, kde-format
 msgid "Add Attachment..."
 msgstr "Pridať prílohu..."
 
-#: attachment/attachmentcontrollerbase.cpp:467
+#: attachment/attachmentcontrollerbase.cpp:468
 #, kde-format
 msgid "&Attach Directory..."
 msgstr "Priložiť adresár..."
 
-#: attachment/attachmentcontrollerbase.cpp:471
+#: attachment/attachmentcontrollerbase.cpp:472
 #, fuzzy, kde-format
 #| msgid "Attach Own vCard"
 msgctxt "@action"
 msgid "Attach Own vCard"
 msgstr "Pripojiť vlastnú vCard"
 
-#: attachment/attachmentcontrollerbase.cpp:472
+#: attachment/attachmentcontrollerbase.cpp:473
 #, kde-format
 msgid "Own vCard"
 msgstr "Vlastná vCard"
 
-#: attachment/attachmentcontrollerbase.cpp:476
+#: attachment/attachmentcontrollerbase.cpp:477
 #, kde-format
 msgid "&Attach vCards..."
 msgstr "Priložiť vCard..."
 
-#: attachment/attachmentcontrollerbase.cpp:480
+#: attachment/attachmentcontrollerbase.cpp:481
 #, kde-format
 msgid "&Attach Text From Clipboard..."
 msgstr "Pripojiť text zo schránky..."
 
-#: attachment/attachmentcontrollerbase.cpp:481
+#: attachment/attachmentcontrollerbase.cpp:482
 #, kde-format
 msgid "Attach Text From Clipboard"
 msgstr "Pripojiť text zo schránky"
 
-#: attachment/attachmentcontrollerbase.cpp:493
+#: attachment/attachmentcontrollerbase.cpp:494
 #, kde-format
 msgid "&Remove Attachment"
 msgstr "Odstrániť prílohu"
 
-#: attachment/attachmentcontrollerbase.cpp:494
+#: attachment/attachmentcontrollerbase.cpp:495
 #, kde-format
 msgid "Remove"
 msgstr "Odstrániť"
 
-#: attachment/attachmentcontrollerbase.cpp:502
+#: attachment/attachmentcontrollerbase.cpp:503
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Otvoriť"
 
-#: attachment/attachmentcontrollerbase.cpp:507
+#: attachment/attachmentcontrollerbase.cpp:508
 #, kde-format
 msgctxt "to view"
 msgid "View"
 msgstr "Zobrazenie"
 
-#: attachment/attachmentcontrollerbase.cpp:512
+#: attachment/attachmentcontrollerbase.cpp:513
 #, kde-format
 msgctxt "to edit"
 msgid "Edit"
 msgstr "Upraviť"
 
-#: attachment/attachmentcontrollerbase.cpp:517
+#: attachment/attachmentcontrollerbase.cpp:518
 #, fuzzy, kde-format
 #| msgid "Edit With..."
 msgctxt "@action"
 msgid "Edit With..."
 msgstr "Upraviť pomocou..."
 
-#: attachment/attachmentcontrollerbase.cpp:522
+#: attachment/attachmentcontrollerbase.cpp:523
 #, kde-format
 msgid "&Save Attachment As..."
 msgstr "&Uložiť prílohu ako..."
 
-#: attachment/attachmentcontrollerbase.cpp:523
+#: attachment/attachmentcontrollerbase.cpp:524
 #, kde-format
 msgid "Save As..."
 msgstr "Uložiť ako..."
 
-#: attachment/attachmentcontrollerbase.cpp:531
+#: attachment/attachmentcontrollerbase.cpp:532
 #, fuzzy, kde-format
 #| msgid "Attachment Pr&operties..."
 msgctxt "@action"
 msgid "Attachment Pr&operties..."
 msgstr "Vlastnosti prílohy..."
 
-#: attachment/attachmentcontrollerbase.cpp:532
+#: attachment/attachmentcontrollerbase.cpp:533
 #, fuzzy, kde-format
 #| msgid "Properties"
 msgctxt "@action"
 msgid "Properties"
 msgstr "Vlastnosti"
 
-#: attachment/attachmentcontrollerbase.cpp:540
+#: attachment/attachmentcontrollerbase.cpp:541
 #, fuzzy, kde-format
 #| msgid "Select All"
 msgctxt "@action"
 msgid "Select All"
 msgstr "Vybrať všetko"
 
-#: attachment/attachmentcontrollerbase.cpp:543
+#: attachment/attachmentcontrollerbase.cpp:544
 #, kde-format
 msgid "Reload"
 msgstr "Znovu načítať"
 
-#: attachment/attachmentcontrollerbase.cpp:677
-#: attachment/attachmentcontrollerbase.cpp:703
-#: attachment/attachmentcontrollerbase.cpp:753
+#: attachment/attachmentcontrollerbase.cpp:678
+#: attachment/attachmentcontrollerbase.cpp:704
+#: attachment/attachmentcontrollerbase.cpp:754
 #, kde-format
 msgid "KMail was unable to write the attachment to a temporary file."
 msgstr "KMail nebol schopný zapísať prílohu do dočasného súboru."
 
-#: attachment/attachmentcontrollerbase.cpp:678
-#: attachment/attachmentcontrollerbase.cpp:704
+#: attachment/attachmentcontrollerbase.cpp:679
+#: attachment/attachmentcontrollerbase.cpp:705
 #, fuzzy, kde-format
 #| msgid "Unable to open attachment"
 msgctxt "@title:window"
 msgid "Unable to open attachment"
 msgstr "Nepodarilo sa otvoriť prílohu"
 
-#: attachment/attachmentcontrollerbase.cpp:713
+#: attachment/attachmentcontrollerbase.cpp:714
 #, fuzzy, kde-format
 #| msgid "KMail was unable to open the attachment."
 msgid "KMail was unable to open the attachment"
 msgstr "KMail nebol schopný otvoriť prílohu."
 
-#: attachment/attachmentcontrollerbase.cpp:754 attachment/editorwatcher.cpp:200
+#: attachment/attachmentcontrollerbase.cpp:755 attachment/editorwatcher.cpp:202
 #, fuzzy, kde-format
 #| msgid "Unable to edit attachment"
 msgctxt "@title:window"
 msgid "Unable to edit attachment"
 msgstr "Nepodarilo sa upraviť prílohu"
 
-#: attachment/attachmentcontrollerbase.cpp:795
+#: attachment/attachmentcontrollerbase.cpp:796
 #, kde-format
 msgid "unnamed"
 msgstr "bez mena"
 
-#: attachment/attachmentcontrollerbase.cpp:798
+#: attachment/attachmentcontrollerbase.cpp:799
 #, fuzzy, kde-format
 #| msgid "Save Attachment As"
 msgctxt "@title:window"
 msgid "Save Attachment As"
 msgstr "Uložiť prílohu ako"
 
-#: attachment/attachmentcontrollerbase.cpp:821
+#: attachment/attachmentcontrollerbase.cpp:822
 #, kde-format
 msgid ""
 "File %1 exists.\n"
@@ -282,58 +282,58 @@ msgstr ""
 "Súbor %1 existuje.\n"
 "Chcete ho prepísať?"
 
-#: attachment/attachmentcontrollerbase.cpp:822
+#: attachment/attachmentcontrollerbase.cpp:823
 #, fuzzy, kde-format
 #| msgid "Save to File"
 msgctxt "@title:window"
 msgid "Save to File"
 msgstr "Uložiť do súboru"
 
-#: attachment/attachmentcontrollerbase.cpp:823
+#: attachment/attachmentcontrollerbase.cpp:824
 #, fuzzy, kde-format
 #| msgid "&Replace"
 msgctxt "@action:button"
 msgid "&Replace"
 msgstr "&Nahradiť"
 
-#: attachment/attachmentcontrollerbase.cpp:850
-#: attachment/attachmentcontrollerbase.cpp:929
+#: attachment/attachmentcontrollerbase.cpp:851
+#: attachment/attachmentcontrollerbase.cpp:930
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
 msgstr "Naozaj chcete pripojiť tento adresár \"%1\" ?"
 
-#: attachment/attachmentcontrollerbase.cpp:851
-#: attachment/attachmentcontrollerbase.cpp:930
+#: attachment/attachmentcontrollerbase.cpp:852
+#: attachment/attachmentcontrollerbase.cpp:931
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach directory"
 msgstr "Priložiť adresár"
 
-#: attachment/attachmentcontrollerbase.cpp:852
-#: attachment/attachmentcontrollerbase.cpp:931
+#: attachment/attachmentcontrollerbase.cpp:853
+#: attachment/attachmentcontrollerbase.cpp:932
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach"
 msgstr "Pripojiť"
 
-#: attachment/attachmentcontrollerbase.cpp:887
+#: attachment/attachmentcontrollerbase.cpp:888
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach Directory"
 msgstr "Priložiť adresár"
 
-#: attachment/attachmentcontrollerbase.cpp:895
+#: attachment/attachmentcontrollerbase.cpp:896
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach File"
 msgstr "Pripojiť súbor"
 
-#: attachment/attachmentcontrollerbase.cpp:984
+#: attachment/attachmentcontrollerbase.cpp:985
 #, kde-format
 msgid "Attach Public OpenPGP Key"
 msgstr "Pripojiť verejný OpenPGP kľúč"
 
-#: attachment/attachmentcontrollerbase.cpp:985
+#: attachment/attachmentcontrollerbase.cpp:986
 #, kde-format
 msgid "Select the public key which should be attached."
 msgstr "Vybrať verejný kľúč, ktorý by mal byť pripojený."
@@ -397,13 +397,13 @@ msgctxt "@title column attachment inlined checkbox."
 msgid "Suggest Automatic Display"
 msgstr "Naznačiť automatické zobrazenie"
 
-#: attachment/editorwatcher.cpp:64
+#: attachment/editorwatcher.cpp:66
 #, fuzzy, kde-format
 #| msgid "Edit With..."
 msgid "Edit with:"
 msgstr "Upraviť pomocou..."
 
-#: attachment/editorwatcher.cpp:198
+#: attachment/editorwatcher.cpp:200
 #, kde-format
 msgid ""
 "KMail is unable to detect when the chosen editor is closed. To avoid data "
@@ -1156,36 +1156,36 @@ msgstr ""
 "\n"
 "Vybrať certifikát(y), ktoré by mal byť použité pre tohto príjemcu."
 
-#: contactpreference/savecontactpreferencejob.cpp:70
+#: contactpreference/savecontactpreferencejob.cpp:71
 #, fuzzy, kde-format
 #| msgid "Name Selection"
 msgctxt "@title:window"
 msgid "Name Selection"
 msgstr "Názov výberu"
 
-#: contactpreference/savecontactpreferencejob.cpp:71
+#: contactpreference/savecontactpreferencejob.cpp:72
 #, kde-format
 msgid "Which name shall the contact '%1' have in your address book?"
 msgstr "Ktoré meno má mať kontakt '%1' vo vašom adresári?"
 
-#: contactpreference/savecontactpreferencejob.cpp:83
+#: contactpreference/savecontactpreferencejob.cpp:84
 #, kde-format
 msgid "Select the address book folder to store the new contact in:"
 msgstr "Vybrať priečinok adresára pre uloženie nového kontaktu:"
 
-#: followupreminder/followupremindercreatejob.cpp:76
+#: followupreminder/followupremindercreatejob.cpp:78
 #, kde-format
 msgid "Wait answer from \"%1\" send to \"%2\""
 msgstr "Čakať odpoveď \"%1\" poslanú \"%2\""
 
-#: followupreminder/followupremindercreatejob.cpp:99
+#: followupreminder/followupremindercreatejob.cpp:101
 #, kde-format
 msgid ""
 "Failed to store a new reminder: an error occurred while trying to create a "
 "new to-do in your calendar: %1"
 msgstr ""
 
-#: followupreminder/followupremindercreatejob.cpp:131
+#: followupreminder/followupremindercreatejob.cpp:133
 #, fuzzy, kde-format
 #| msgid "Failed to save the message: %1"
 msgid "Failed to store a new reminder: %1"
@@ -1232,17 +1232,17 @@ msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "Neplatný priečinok"
 
-#: helper/messagefactoryng.cpp:406 helper/messagefactoryng.cpp:729
+#: helper/messagefactoryng.cpp:407 helper/messagefactoryng.cpp:730
 #, kde-format
 msgid "forwarded message"
 msgstr "správa poslaná ďalej"
 
-#: helper/messagefactoryng.cpp:574
+#: helper/messagefactoryng.cpp:575
 #, kde-format
 msgid "Receipt: "
 msgstr "Potvrdenie: "
 
-#: helper/messagefactoryng.cpp:701
+#: helper/messagefactoryng.cpp:702
 #, kde-format
 msgid ""
 "\n"
@@ -1256,25 +1256,25 @@ msgstr ""
 "\n"
 "\n"
 
-#: imagescaling/imagescalingselectformat.cpp:25
+#: imagescaling/imagescalingselectformat.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Image Format"
 msgstr "Vybrať formát obrázku"
 
-#: imagescaling/imagescalingselectformat.cpp:88
+#: imagescaling/imagescalingselectformat.cpp:89
 #, fuzzy, kde-format
 #| msgid "Select Format..."
 msgctxt "@action:button"
 msgid "Select Format..."
 msgstr "Vybrať formát..."
 
-#: imagescaling/imagescalingwidget.cpp:107
+#: imagescaling/imagescalingwidget.cpp:109
 #, kde-format
 msgid "<a href=\"whatsthis\">How does this work?</a>"
 msgstr "<a href=\"whatsthis\">Ako toto funguje?</a>"
 
-#: imagescaling/imagescalingwidget.cpp:117
+#: imagescaling/imagescalingwidget.cpp:119
 #, kde-format
 msgid ""
 "<qt><p>Here you can define image filename. You can use:</p><ul><li>%t set "
@@ -1286,17 +1286,17 @@ msgstr ""
 "pôvodný názov súboru</li><li>%e koncovka</li><li>%x nová koncovka</li></ul></"
 "qt>"
 
-#: imagescaling/imagescalingwidget.cpp:187
+#: imagescaling/imagescalingwidget.cpp:189
 #, kde-format
 msgid "Custom"
 msgstr "Vlastné"
 
-#: imagescaling/imagescalingwidget.cpp:315
+#: imagescaling/imagescalingwidget.cpp:317
 #, kde-format
 msgid "Please verify minimum and maximum values."
 msgstr "Prosím skontrolujte minimálnu a maximálnu hodnotu."
 
-#: imagescaling/imagescalingwidget.cpp:315
+#: imagescaling/imagescalingwidget.cpp:317
 #, fuzzy, kde-format
 #| msgid "Error in minimum Maximum value"
 msgctxt "@title:window"
@@ -1552,17 +1552,17 @@ msgstr ""
 msgid "Exporting key..."
 msgstr "Exportujem kľúč..."
 
-#: job/attachmentvcardfromaddressbookjob.cpp:75
+#: job/attachmentvcardfromaddressbookjob.cpp:77
 #, kde-format
 msgid "Unknown Contact Type"
 msgstr "Neznámy typ kontaktu"
 
-#: job/attachmentvcardfromaddressbookjob.cpp:86
+#: job/attachmentvcardfromaddressbookjob.cpp:88
 #, kde-format
 msgid "Invalid Contact"
 msgstr "Neplatný kontakt"
 
-#: job/attachmentvcardfromaddressbookjob.cpp:102
+#: job/attachmentvcardfromaddressbookjob.cpp:104
 #, kde-format
 msgid "Impossible to generate vCard."
 msgstr "Nie je možné vygenerovať vCard."
@@ -1600,7 +1600,7 @@ msgstr ""
 msgid "Could not get text codec for charset \"%1\"."
 msgstr "Nemožno získať textový kodek pre znakovú sadu \"%1\"."
 
-#: job/singlepartjob.cpp:65
+#: job/singlepartjob.cpp:66
 #, kde-format
 msgid "%1 Content-Transfer-Encoding cannot correctly encode this message."
 msgstr "%1 kódovanie prevodu obsahu nemôže správne kódovať túto správu."
@@ -1812,37 +1812,37 @@ msgstr[0] "Orezanie zoznamu príjemcov na %2 z %1 položky."
 msgstr[1] "Orezanie zoznamu príjemcov na %2 z %1 položiek."
 msgstr[2] "Orezanie zoznamu príjemcov na %2 z %1 položiek."
 
-#: recipient/recipientseditorsidewidget.cpp:28
+#: recipient/recipientseditorsidewidget.cpp:29
 #, kde-format
 msgctxt "@action:button"
 msgid "Save List..."
 msgstr "Uložiť zoznam..."
 
-#: recipient/recipientseditorsidewidget.cpp:29
+#: recipient/recipientseditorsidewidget.cpp:30
 #, kde-format
 msgctxt "@action:button Open recipient selection dialog."
 msgid "Se&lect..."
 msgstr "Vybrať..."
 
-#: recipient/recipientseditorsidewidget.cpp:46
+#: recipient/recipientseditorsidewidget.cpp:47
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Save recipients as distribution list"
 msgstr "Uložiť príjemcov ako distribučný zoznam"
 
-#: recipient/recipientseditorsidewidget.cpp:50
+#: recipient/recipientseditorsidewidget.cpp:51
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select recipients from address book"
 msgstr "Vybrať príjemcov z adresára"
 
-#: recipient/recipientseditorsidewidget.cpp:77
+#: recipient/recipientseditorsidewidget.cpp:78
 #, kde-format
 msgctxt "@info:status No recipients selected"
 msgid "No recipients"
 msgstr "Žiadny príjemca"
 
-#: recipient/recipientseditorsidewidget.cpp:79
+#: recipient/recipientseditorsidewidget.cpp:80
 #, kde-format
 msgctxt "@info:status Number of recipients selected"
 msgid "1 recipient"
@@ -1851,64 +1851,64 @@ msgstr[0] "1 príjemca"
 msgstr[1] "%1 príjemcovia"
 msgstr[2] "%1 príjemcov"
 
-#: recipient/recipientseditorsidewidget.cpp:129
+#: recipient/recipientseditorsidewidget.cpp:130
 #, kde-format
 msgctxt "@info:tooltip %1 list of emails"
 msgid "To:%1"
 msgstr "Komu:%1"
 
-#: recipient/recipientseditorsidewidget.cpp:131
+#: recipient/recipientseditorsidewidget.cpp:132
 #, kde-format
 msgctxt "@info:tooltip %1 list of emails"
 msgid "CC:%1"
 msgstr "Kópia:%1"
 
-#: recipient/recipientseditorsidewidget.cpp:134
+#: recipient/recipientseditorsidewidget.cpp:135
 #, kde-format
 msgctxt "@info:tooltip %1 list of emails"
 msgid "BCC:%1"
 msgstr "Skrytá kópia:%1"
 
-#: recipient/recipientseditorsidewidget.cpp:137
+#: recipient/recipientseditorsidewidget.cpp:138
 #, kde-format
 msgctxt "@info:tooltip %1 list of emails"
 msgid "Reply-To:%1"
 msgstr "Odpovedať:%1"
 
-#: recipient/recipientspicker.cpp:49
+#: recipient/recipientspicker.cpp:51
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Recipient"
 msgstr "Vybrať príjemcu"
 
-#: recipient/recipientspicker.cpp:61
+#: recipient/recipientspicker.cpp:63
 #, fuzzy, kde-format
 #| msgid "Search &Directory Service"
 msgctxt "@action:button"
 msgid "Search &Directory Service"
 msgstr "Hladať a&dresárovú službu"
 
-#: recipient/recipientspicker.cpp:80
+#: recipient/recipientspicker.cpp:82
 #, kde-format
 msgid "Add as &Reply-To"
 msgstr "Pridať ako a odpoveď"
 
-#: recipient/recipientspicker.cpp:81
+#: recipient/recipientspicker.cpp:83
 #, kde-format
 msgid "Add as &To"
 msgstr "Pridať ako &Pre"
 
-#: recipient/recipientspicker.cpp:82
+#: recipient/recipientspicker.cpp:84
 #, kde-format
 msgid "Add as CC"
 msgstr "Pridať ako Kópia"
 
-#: recipient/recipientspicker.cpp:83
+#: recipient/recipientspicker.cpp:85
 #, kde-format
 msgid "Add as &BCC"
 msgstr "Pridať ako &Skrytá kópia"
 
-#: recipient/recipientspicker.cpp:106
+#: recipient/recipientspicker.cpp:108
 #, kde-format
 msgid "%1 selected email"
 msgid_plural "%1 selected emails"
@@ -1916,7 +1916,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: recipient/recipientspicker.cpp:173
+#: recipient/recipientspicker.cpp:175
 #, fuzzy, kde-format
 #| msgid ""
 #| "You selected 1 recipient. The maximum supported number of recipients is "
@@ -1941,66 +1941,66 @@ msgstr[2] ""
 "Vybrali ste %1 príjemcov. Maximálny podporovaný počet príjemcov je %2. "
 "Prosím, prispôsobiť výber."
 
-#: recipient/recipientspicker.cpp:190
+#: recipient/recipientspicker.cpp:192
 #, kde-format
 msgid "You can not add more recipients."
 msgstr "Nemôžete pridať viac príjemcov."
 
-#: sendlater/sendlatercreatejob.cpp:33
+#: sendlater/sendlatercreatejob.cpp:35
 #, fuzzy, kde-format
 #| msgid "Failed to save the message: %1"
 msgid "Failed to schedule message for sending later: %1"
 msgstr "Zlyhalo uloženie správy: %1"
 
-#: sendlater/sendlaterdialog.cpp:28
+#: sendlater/sendlaterdialog.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Later"
 msgstr "Odoslať neskôr"
 
-#: sendlater/sendlaterdialog.cpp:48
+#: sendlater/sendlaterdialog.cpp:50
 #, kde-format
 msgid "Send Later"
 msgstr "Odoslať neskôr"
 
-#: sendlater/sendlaterdialog.cpp:49
+#: sendlater/sendlaterdialog.cpp:51
 #, fuzzy, kde-format
 #| msgid "Delay"
 msgctxt "@option:check"
 msgid "Delay"
 msgstr "Oneskorenie"
 
-#: sendlater/sendlaterdialog.cpp:65
+#: sendlater/sendlaterdialog.cpp:67
 #, kde-format
 msgid "Days"
 msgstr "Dni"
 
-#: sendlater/sendlaterdialog.cpp:65
+#: sendlater/sendlaterdialog.cpp:67
 #, kde-format
 msgid "Weeks"
 msgstr "Týždne"
 
-#: sendlater/sendlaterdialog.cpp:65
+#: sendlater/sendlaterdialog.cpp:67
 #, kde-format
 msgid "Months"
 msgstr "Mesiace"
 
-#: sendlater/sendlaterdialog.cpp:65
+#: sendlater/sendlaterdialog.cpp:67
 #, kde-format
 msgid "Years"
 msgstr "Roky"
 
-#: sendlater/sendlaterjob.cpp:32
+#: sendlater/sendlaterjob.cpp:34
 #, kde-format
 msgid "The Send Later agent is not running."
 msgstr ""
 
-#: sendlater/sendlaterremovejob.cpp:27
+#: sendlater/sendlaterremovejob.cpp:29
 #, kde-format
 msgid "Failed to removed message from send later schedule: %1"
 msgstr ""
 
-#: sendlater/sendlatertimedatewidget.cpp:35
+#: sendlater/sendlatertimedatewidget.cpp:36
 #, fuzzy, kde-format
 #| msgid "The selected date must be greater than the current date."
 msgid "You cannot select a date prior to the current date."
@@ -2418,7 +2418,7 @@ msgstr "Rôzne"
 msgid "Subject"
 msgstr "Predmet"
 
-#: utils/util.cpp:235
+#: utils/util.cpp:236
 #, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
@@ -2426,7 +2426,7 @@ msgctxt ""
 msgid "attachment,attached"
 msgstr "príloha, pripojená"
 
-#: utils/util.cpp:269
+#: utils/util.cpp:270
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
@@ -2435,21 +2435,21 @@ msgstr ""
 "Spracovanie pošty nie je nastavené, takže e-maily nemôžu byť zaslané. Chcete "
 "vytvoriť spracovač pošty?"
 
-#: utils/util.cpp:270
+#: utils/util.cpp:271
 #, fuzzy, kde-format
 #| msgid "No mail dispatcher."
 msgctxt "@title:window"
 msgid "No mail dispatcher."
 msgstr "Žiadny spracovač pošty."
 
-#: utils/util.cpp:272
+#: utils/util.cpp:273
 #, fuzzy, kde-format
 #| msgid "No mail dispatcher."
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "Žiadny spracovač pošty."
 
-#: utils/util.cpp:287
+#: utils/util.cpp:288
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
@@ -2458,14 +2458,14 @@ msgstr ""
 "Spracovanie pošty je v režime offline, takže e-maily nemôžu byť zaslané. "
 "Chcete, aby bolo v režme online?"
 
-#: utils/util.cpp:288
+#: utils/util.cpp:289
 #, fuzzy, kde-format
 #| msgid "Mail dispatcher offline."
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "Spracovanie pošty v režime offline."
 
-#: utils/util.cpp:289
+#: utils/util.cpp:290
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"

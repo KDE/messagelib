@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecore\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-14 00:40+0000\n"
+"POT-Creation-Date: 2025-06-25 00:43+0000\n"
 "PO-Revision-Date: 2017-09-28 18:00+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -40,7 +40,7 @@ msgstr "Не могу да покренем компресију прилога.
 msgid "Could not compress the attachment."
 msgstr "Не могу да компресујем прилог."
 
-#: attachment/attachmentfromfolderjob.cpp:51
+#: attachment/attachmentfromfolderjob.cpp:52
 #, kde-format
 msgid "Could not create compressed file."
 msgstr "Не могу да направим компресовани фајл."
@@ -63,30 +63,30 @@ msgstr "Не могу да додам ‘%1’ у архиву."
 msgid "Could not open %1 for reading."
 msgstr "Не могу да отворим ‘%1’ за читање."
 
-#: attachment/attachmentfromurljob.cpp:68
+#: attachment/attachmentfromurljob.cpp:69
 #, kde-format
 msgctxt "a file called 'unknown.ext'"
 msgid "unknown%1"
 msgstr "непознат%1"
 
-#: attachment/attachmentfromurljob.cpp:70
+#: attachment/attachmentfromurljob.cpp:71
 #, kde-format
 msgctxt "a file called 'unknown'"
 msgid "unknown"
 msgstr "непознат"
 
-#: attachment/attachmentfromurljob.cpp:102
+#: attachment/attachmentfromurljob.cpp:103
 #, kde-format
 msgid "\"%1\" not found. Please specify the full path."
 msgstr "Није нађен „%1“. Наведите пуну путању."
 
-#: attachment/attachmentfromurljob.cpp:111
+#: attachment/attachmentfromurljob.cpp:112
 #, kde-format
 msgid "You may not attach files bigger than %1. Share it with storage service."
 msgstr ""
 "Не можете приложити фајлове веће од %1. Поделите их преко складишног сервиса."
 
-#: attachment/attachmentpropertiesdialog.cpp:134
+#: attachment/attachmentpropertiesdialog.cpp:133
 #, kde-format
 msgid ""
 "<p>The <em>MIME type</em> of the file:</p><p>Normally, you do not need to "
@@ -98,7 +98,7 @@ msgstr ""
 "пошто се врста фајла аутоматски проверава. Међутим, понекад %1 не може да "
 "одреди врсту како ваља. Овде то можете поправити.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:142
+#: attachment/attachmentpropertiesdialog.cpp:141
 #, kde-format
 msgid ""
 "<p>The estimated size of the attachment:</p><p>Note that, in an email "
@@ -109,7 +109,7 @@ msgstr ""
 "бинарни фајл са кодирањем база64 заузети до трећину више од стварне величине "
 "фајла.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:147
+#: attachment/attachmentpropertiesdialog.cpp:146
 #, kde-format
 msgid ""
 "<p>The file name of the part:</p><p>Although this defaults to the name of "
@@ -121,7 +121,7 @@ msgstr ""
 "фајла, оно не назначава име фајла који се прилаже. Боље речено, оно предлаже "
 "име фајла примаочевом поштанском агенту када уписује део на диск.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:154
+#: attachment/attachmentpropertiesdialog.cpp:153
 #, kde-format
 msgid ""
 "<p>A description of the part:</p><p>This is just an informational "
@@ -133,7 +133,7 @@ msgstr ""
 "тема за целу поруку. Већина поштанских агената ће приказати ову информацију "
 "у својим прегледима порука, одмах поред иконице прилога.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:161
+#: attachment/attachmentpropertiesdialog.cpp:160
 #, kde-format
 msgid ""
 "<p>The transport encoding of this part:</p><p>Normally, you do not need to "
@@ -151,7 +151,7 @@ msgstr ""
 "тада ће избор „навод-читког“ уместо „базе64“ смањити крајњу величину и до "
 "25%.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:172
+#: attachment/attachmentpropertiesdialog.cpp:171
 #, kde-format
 msgid ""
 "<p>Check this option if you want to suggest to the recipient the automatic "
@@ -166,7 +166,7 @@ msgstr ""
 "Disposition</tt> на <tt>inline</tt> уместо на подразумевано <tt>attachment</"
 "tt>.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:180
+#: attachment/attachmentpropertiesdialog.cpp:179
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be signed.</p><p>The "
@@ -177,7 +177,7 @@ msgstr ""
 "p><p>Потпис ће бити начињен кључем који је придружен тренутно одабраном "
 "идентитету.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:186
+#: attachment/attachmentpropertiesdialog.cpp:185
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be encrypted.</"
@@ -186,8 +186,8 @@ msgstr ""
 "<p>Укључите ову опцију ако желите да овај део поруке буде шифрован.</"
 "p><p>Део ће бити шифрован за примаоце ове поруке.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:307
-#: attachment/attachmentpropertiesdialog.cpp:322
+#: attachment/attachmentpropertiesdialog.cpp:305
+#: attachment/attachmentpropertiesdialog.cpp:320
 #, fuzzy, kde-format
 #| msgid "Attachment Properties"
 msgctxt "@title:window"
@@ -314,7 +314,7 @@ msgstr ""
 "Највећа величина у битовима коју прилози е‑поште смеју да имају (-1 за "
 "неограничено)"
 
-#: utils/dateformatter.cpp:163
+#: utils/dateformatter.cpp:164
 #, fuzzy, kde-format
 #| msgctxt "a file called 'unknown'"
 #| msgid "unknown"
@@ -322,23 +322,23 @@ msgctxt "invalid time specified"
 msgid "unknown"
 msgstr "непознат"
 
-#: utils/dateformatter.cpp:175
+#: utils/dateformatter.cpp:176
 #, kde-format
 msgid "Today %1"
 msgstr ""
 
-#: utils/dateformatter.cpp:178
+#: utils/dateformatter.cpp:179
 #, kde-format
 msgid "Yesterday %1"
 msgstr ""
 
-#: utils/dateformatter.cpp:183
+#: utils/dateformatter.cpp:184
 #, kde-format
 msgctxt "1. weekday, 2. time"
 msgid "%1 %2"
 msgstr ""
 
-#: utils/stringutil.cpp:415
+#: utils/stringutil.cpp:414
 #, kde-format
 msgctxt "signal that this email is defined in my identity"
 msgid "Me"

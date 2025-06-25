@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-18 00:43+0000\n"
+"POT-Creation-Date: 2025-06-25 00:43+0000\n"
 "PO-Revision-Date: 2024-09-19 17:23+0300\n"
 "Last-Translator: Antonis Geralis <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -242,7 +242,7 @@ msgid "Selector"
 msgstr "Επιλογή φακέλου"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:85
-#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: dkim-verify/dkimmanageruleswidget.cpp:75
 #, kde-format
 msgid "SDID"
 msgstr ""
@@ -259,13 +259,13 @@ msgstr "Εισαγωγή εντολής"
 msgid "Last Used"
 msgstr "Τελευταία εβδομάδα"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:71
+#: dkim-verify/dkimmanagerkeytreeview.cpp:73
 #, fuzzy, kde-format
 #| msgid "&Copy To"
 msgid "Copy Key"
 msgstr "&Αντιγραφή σε"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:78
+#: dkim-verify/dkimmanagerkeytreeview.cpp:79
 #, fuzzy, kde-format
 #| msgid "Remove"
 msgid "Remove Key"
@@ -273,7 +273,7 @@ msgid_plural "Remove Keys"
 msgstr[0] "Αφαίρεση"
 msgstr[1] "Αφαίρεση"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:83
+#: dkim-verify/dkimmanagerkeytreeview.cpp:81
 #, fuzzy, kde-format
 #| msgid "Do you want to delete list \"%1\"?"
 msgid "Do you want to delete this key?"
@@ -281,7 +281,7 @@ msgid_plural "Do you want to delete these keys?"
 msgstr[0] "Επιθυμείτε τη διαγραφή της λίστας «%1»;"
 msgstr[1] "Επιθυμείτε τη διαγραφή της λίστας «%1»;"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:84
+#: dkim-verify/dkimmanagerkeytreeview.cpp:82
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Delete"
@@ -290,20 +290,20 @@ msgid_plural "Delete Keys"
 msgstr[0] "Διαγραφή"
 msgstr[1] "Διαγραφή"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:94
-#: dkim-verify/dkimmanageruleswidget.cpp:223
+#: dkim-verify/dkimmanagerkeytreeview.cpp:92
+#: dkim-verify/dkimmanageruleswidget.cpp:225
 #, fuzzy, kde-format
 #| msgid "Delete"
 msgid "Delete All"
 msgstr "Διαγραφή"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:96
+#: dkim-verify/dkimmanagerkeytreeview.cpp:94
 #, fuzzy, kde-format
 #| msgid "Do you want to delete list \"%1\"?"
 msgid "Do you want to delete all keys?"
 msgstr "Επιθυμείτε τη διαγραφή της λίστας «%1»;"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:97
+#: dkim-verify/dkimmanagerkeytreeview.cpp:95
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Delete"
@@ -389,84 +389,84 @@ msgstr "Εισαγωγή φίλτρων..."
 msgid "No rules imported."
 msgstr "Δε βρέθηκε υπογραφή"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:73
-#: remote-content/remotecontentconfigurewidget.cpp:52
+#: dkim-verify/dkimmanageruleswidget.cpp:75
+#: remote-content/remotecontentconfigurewidget.cpp:54
 #, kde-format
 msgid "Domain"
 msgstr ""
 
-#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: dkim-verify/dkimmanageruleswidget.cpp:75
 #, kde-format
 msgid "Active"
 msgstr ""
 
-#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: dkim-verify/dkimmanageruleswidget.cpp:75
 #, kde-format
 msgid "List-ID"
 msgstr ""
 
-#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: dkim-verify/dkimmanageruleswidget.cpp:75
 #, kde-format
 msgid "From"
 msgstr "Από"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: dkim-verify/dkimmanageruleswidget.cpp:75
 #, fuzzy, kde-format
 #| msgid "Folder type:"
 msgid "Rule type"
 msgstr "Τύπος φακέλου:"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: dkim-verify/dkimmanageruleswidget.cpp:75
 #, kde-format
 msgid "Priority"
 msgstr ""
 
-#: dkim-verify/dkimmanageruleswidget.cpp:196
-#: remote-content/remotecontentconfigurewidget.cpp:80
+#: dkim-verify/dkimmanageruleswidget.cpp:198
+#: remote-content/remotecontentconfigurewidget.cpp:82
 #, kde-format
 msgid "Add..."
 msgstr "Προσθήκη..."
 
-#: dkim-verify/dkimmanageruleswidget.cpp:201
-#: remote-content/remotecontentconfigurewidget.cpp:83
+#: dkim-verify/dkimmanageruleswidget.cpp:203
+#: remote-content/remotecontentconfigurewidget.cpp:85
 #, kde-format
 msgid "Modify..."
 msgstr "Τροποποίηση..."
 
-#: dkim-verify/dkimmanageruleswidget.cpp:205
+#: dkim-verify/dkimmanageruleswidget.cpp:207
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
 msgid "Duplicate Rule"
 msgstr "Κανόνες φίλτρου"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:209
-#: remote-content/remotecontentconfigurewidget.cpp:87
+#: dkim-verify/dkimmanageruleswidget.cpp:211
+#: remote-content/remotecontentconfigurewidget.cpp:89
 #, fuzzy, kde-format
 #| msgid "Remove"
 msgid "Remove Rule"
 msgstr "Αφαίρεση"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:211
+#: dkim-verify/dkimmanageruleswidget.cpp:213
 #, fuzzy, kde-format
 #| msgid "Do you want to delete list \"%1\"?"
 msgid "Do you want to delete this rule?"
 msgstr "Επιθυμείτε τη διαγραφή της λίστας «%1»;"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:212
-#: remote-content/remotecontentconfigurewidget.cpp:90
+#: dkim-verify/dkimmanageruleswidget.cpp:214
+#: remote-content/remotecontentconfigurewidget.cpp:92
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
 msgctxt "@title:window"
 msgid "Delete Rule"
 msgstr "Κανόνες φίλτρου"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:225
+#: dkim-verify/dkimmanageruleswidget.cpp:227
 #, fuzzy, kde-format
 #| msgid "Do you want to delete list \"%1\"?"
 msgid "Do you want to delete all the rules?"
 msgstr "Επιθυμείτε τη διαγραφή της λίστας «%1»;"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:226
+#: dkim-verify/dkimmanageruleswidget.cpp:228
 #, fuzzy, kde-format
 #| msgid "Filter Rules"
 msgctxt "@title:window"
@@ -486,46 +486,46 @@ msgctxt "@title:window"
 msgid "Modify Rule"
 msgstr "Τροποποίηση λογαριασμού"
 
-#: dkim-verify/dkimrulewidget.cpp:18
+#: dkim-verify/dkimrulewidget.cpp:20
 #, fuzzy, kde-format
 #| msgid "Enable"
 msgctxt "@option:check"
 msgid "Enabled"
 msgstr "Ενεργοποίηση"
 
-#: dkim-verify/dkimrulewidget.cpp:36
+#: dkim-verify/dkimrulewidget.cpp:38
 #, fuzzy, kde-format
 #| msgid "Defaul&t domain:"
 msgid "Domain:"
 msgstr "&Προκαθορισμένος τομέας:"
 
-#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:182
+#: dkim-verify/dkimrulewidget.cpp:43 header/grantleeheaderformatter.cpp:184
 #, kde-format
 msgid "List-Id:"
 msgstr ""
 
-#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:271
+#: dkim-verify/dkimrulewidget.cpp:47 header/grantleeheaderformatter.cpp:273
 #, kde-format
 msgid "From:"
 msgstr "Από:"
 
-#: dkim-verify/dkimrulewidget.cpp:46
+#: dkim-verify/dkimrulewidget.cpp:48
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Use '*' to specify all emails from domain"
 msgstr ""
 
-#: dkim-verify/dkimrulewidget.cpp:51
+#: dkim-verify/dkimrulewidget.cpp:53
 #, kde-format
 msgid "SDID:"
 msgstr ""
 
-#: dkim-verify/dkimrulewidget.cpp:54
+#: dkim-verify/dkimrulewidget.cpp:56
 #, kde-format
 msgid "Rule:"
 msgstr ""
 
-#: dkim-verify/dkimrulewidget.cpp:60
+#: dkim-verify/dkimrulewidget.cpp:62
 #, kde-format
 msgid "Priority:"
 msgstr ""
@@ -551,291 +551,291 @@ msgstr ""
 msgid "Rules..."
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:94
+#: dkim-verify/dkimwidgetinfo.cpp:96
 #, kde-format
 msgid "Unknown"
 msgstr "Άγνωστο"
 
-#: dkim-verify/dkimwidgetinfo.cpp:100
+#: dkim-verify/dkimwidgetinfo.cpp:102
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "DKIM: valid (signed by %1)"
 msgstr "Το μήνυμα είναι υπογεγραμμένο από %1."
 
-#: dkim-verify/dkimwidgetinfo.cpp:107
+#: dkim-verify/dkimwidgetinfo.cpp:109
 #, kde-format
 msgid "DKIM: invalid"
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:110
+#: dkim-verify/dkimwidgetinfo.cpp:112
 #, fuzzy, kde-format
 #| msgid "Send Unsigned?"
 msgid "DKIM: Not signed"
 msgstr "Αποστολή χωρίς υπογραφή;"
 
-#: dkim-verify/dkimwidgetinfo.cpp:115
+#: dkim-verify/dkimwidgetinfo.cpp:117
 #, kde-format
 msgid "DKIM: Should Be Signed by %1"
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:131
+#: dkim-verify/dkimwidgetinfo.cpp:133
 #, kde-format
 msgid "Body Hash was corrupted."
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:134
+#: dkim-verify/dkimwidgetinfo.cpp:136
 #, kde-format
 msgid "The domain doesn't exist."
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:137
+#: dkim-verify/dkimwidgetinfo.cpp:139
 #, kde-format
 msgid "Missing header From."
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:140
+#: dkim-verify/dkimwidgetinfo.cpp:142
 #, fuzzy, kde-format
 #| msgid "Good signature."
 msgid "Missing signature."
 msgstr "Καλή υπογραφή."
 
-#: dkim-verify/dkimwidgetinfo.cpp:143
+#: dkim-verify/dkimwidgetinfo.cpp:145
 #, fuzzy, kde-format
 #| msgid "Invalid signature."
 msgid "Invalid query method."
 msgstr "Μη έγκυρη υπογραφή."
 
-#: dkim-verify/dkimwidgetinfo.cpp:146
+#: dkim-verify/dkimwidgetinfo.cpp:148
 #, kde-format
 msgid "Invalid header canonicalization."
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:149
+#: dkim-verify/dkimwidgetinfo.cpp:151
 #, kde-format
 msgid "Invalid body canonicalization."
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:152
+#: dkim-verify/dkimwidgetinfo.cpp:154
 #, kde-format
 msgid "Unknown Body Hash Algorithm."
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:155
+#: dkim-verify/dkimwidgetinfo.cpp:157
 #, fuzzy, kde-format
 #| msgid "Signature is valid."
 msgid "Signature algorithm is invalid."
 msgstr "Η υπογραφή είναι έγκυρη."
 
-#: dkim-verify/dkimwidgetinfo.cpp:158
+#: dkim-verify/dkimwidgetinfo.cpp:160
 #, fuzzy, kde-format
 #| msgid "One key has been revoked."
 msgid "The public key was revoked."
 msgstr "Ένα κλειδί έχει ανακληθεί."
 
-#: dkim-verify/dkimwidgetinfo.cpp:161
+#: dkim-verify/dkimwidgetinfo.cpp:163
 #, fuzzy, kde-format
 #| msgid "Signature is valid."
 msgid "Signature is too large."
 msgstr "Η υπογραφή είναι έγκυρη."
 
-#: dkim-verify/dkimwidgetinfo.cpp:164
+#: dkim-verify/dkimwidgetinfo.cpp:166
 #, fuzzy, kde-format
 #| msgid "This charset is not supported."
 msgid "Hash Algorithm is unsupported."
 msgstr "Αυτό το σύνολο χαρακτήρων δεν υποστηρίζεται."
 
-#: dkim-verify/dkimwidgetinfo.cpp:167
+#: dkim-verify/dkimwidgetinfo.cpp:169
 #, kde-format
 msgid "Public key is too small."
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:170
+#: dkim-verify/dkimwidgetinfo.cpp:172
 #, fuzzy, kde-format
 #| msgid "No public key to verify the signature"
 msgid "Impossible to verify signature."
 msgstr "Δεν υπάρχει δημόσιο κλειδί για επαλήθευση της υπογραφής"
 
-#: dkim-verify/dkimwidgetinfo.cpp:173
+#: dkim-verify/dkimwidgetinfo.cpp:175
 #, kde-format
 msgid "AUID must be in the same domain as SDID (s-flag set in key record)."
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:176
+#: dkim-verify/dkimwidgetinfo.cpp:178
 #, kde-format
 msgid "The signing domain is only testing DKIM."
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:179
+#: dkim-verify/dkimwidgetinfo.cpp:181
 #, fuzzy, kde-format
 #| msgid "No public key to verify the signature"
 msgid "Impossible to download key."
 msgstr "Δεν υπάρχει δημόσιο κλειδί για επαλήθευση της υπογραφής"
 
-#: dkim-verify/dkimwidgetinfo.cpp:182 dkim-verify/dkimwidgetinfo.cpp:206
+#: dkim-verify/dkimwidgetinfo.cpp:184 dkim-verify/dkimwidgetinfo.cpp:208
 #, fuzzy, kde-format
 #| msgid "This charset is not supported."
 msgid "Hash Algorithm unsafe (sha1)"
 msgstr "Αυτό το σύνολο χαρακτήρων δεν υποστηρίζεται."
 
-#: dkim-verify/dkimwidgetinfo.cpp:185
+#: dkim-verify/dkimwidgetinfo.cpp:187
 #, kde-format
 msgid "AUID is not in a subdomain of SDID"
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:188
+#: dkim-verify/dkimwidgetinfo.cpp:190
 #, kde-format
 msgid "Problem during converting public key"
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:197
+#: dkim-verify/dkimwidgetinfo.cpp:199
 #, fuzzy, kde-format
 #| msgid "The signature has expired."
 msgid "Signature expired"
 msgstr "Η υπογραφή έχει λήξει."
 
-#: dkim-verify/dkimwidgetinfo.cpp:200
+#: dkim-verify/dkimwidgetinfo.cpp:202
 #, kde-format
 msgid "Signature created in the future"
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:203
+#: dkim-verify/dkimwidgetinfo.cpp:205
 #, fuzzy, kde-format
 #| msgid "Signature is valid."
 msgid "Signature too small"
 msgstr "Η υπογραφή είναι έγκυρη."
 
-#: dkim-verify/dkimwidgetinfo.cpp:209
+#: dkim-verify/dkimwidgetinfo.cpp:211
 #, fuzzy, kde-format
 #| msgid "Signature is valid."
 msgid "Public Key too small"
 msgstr "Η υπογραφή είναι έγκυρη."
 
-#: dkim-verify/dkimwidgetinfo.cpp:231 dkim-verify/dkimwidgetinfo.cpp:278
+#: dkim-verify/dkimwidgetinfo.cpp:233 dkim-verify/dkimwidgetinfo.cpp:280
 #, kde-format
 msgctxt "method name: info about it from parsing"
 msgid "%1: %2"
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:255
+#: dkim-verify/dkimwidgetinfo.cpp:257
 #, fuzzy, kde-format
 #| msgctxt "Permissions"
 #| msgid "None"
 msgid "%1: None"
 msgstr "Καμία"
 
-#: dkim-verify/dkimwidgetinfo.cpp:270
+#: dkim-verify/dkimwidgetinfo.cpp:272
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "%1: Valid (Signed by %2)"
 msgstr "Το μήνυμα είναι υπογεγραμμένο από %1."
 
-#: dkim-verify/dkimwidgetinfo.cpp:291
+#: dkim-verify/dkimwidgetinfo.cpp:293
 #, fuzzy, kde-format
 #| msgid "%1: "
 msgid "%1: Valid"
 msgstr "%1: "
 
-#: dkim-verify/dkimwidgetinfo.cpp:305
+#: dkim-verify/dkimwidgetinfo.cpp:307
 #, fuzzy, kde-format
 #| msgid "Do &Not Sign"
 msgid "Not Signed"
 msgstr "Να μη&ν υπογραφεί"
 
-#: header/grantleeheaderformatter.cpp:203
+#: header/grantleeheaderformatter.cpp:205
 #, kde-format
 msgid "Subject:"
 msgstr "Θέμα:"
 
-#: header/grantleeheaderformatter.cpp:223
+#: header/grantleeheaderformatter.cpp:225
 #, kde-format
 msgid "Date:"
 msgstr "Ημερομηνία:"
 
-#: header/grantleeheaderformatter.cpp:239
+#: header/grantleeheaderformatter.cpp:241
 #, fuzzy, kde-format
 #| msgid "Message Id"
 msgid "Message-Id:"
 msgstr "ID μηνύματος"
 
-#: header/grantleeheaderformatter.cpp:263
+#: header/grantleeheaderformatter.cpp:265
 #, kde-format
 msgid "To:"
 msgstr "Προς:"
 
-#: header/grantleeheaderformatter.cpp:265
+#: header/grantleeheaderformatter.cpp:267
 #, kde-format
 msgid "Reply To:"
 msgstr "Απάντηση σε:"
 
-#: header/grantleeheaderformatter.cpp:267
+#: header/grantleeheaderformatter.cpp:269
 #, kde-format
 msgid "CC:"
 msgstr "Κοινοποίηση:"
 
-#: header/grantleeheaderformatter.cpp:269
+#: header/grantleeheaderformatter.cpp:271
 #, kde-format
 msgid "BCC:"
 msgstr "Κρυφή κοινοποίηση:"
 
-#: header/grantleeheaderformatter.cpp:273
+#: header/grantleeheaderformatter.cpp:275
 #, kde-format
 msgid "Sender:"
 msgstr "Αποστολέας:"
 
-#: header/grantleeheaderformatter.cpp:275
+#: header/grantleeheaderformatter.cpp:277
 #, kde-format
 msgid "resent from:"
 msgstr "επαναποστολή από:"
 
-#: header/grantleeheaderformatter.cpp:277
+#: header/grantleeheaderformatter.cpp:279
 #, fuzzy, kde-format
 #| msgid "resent from"
 msgid "resent to:"
 msgstr "επαναποστολή από"
 
-#: header/grantleeheaderformatter.cpp:358
+#: header/grantleeheaderformatter.cpp:360
 #, kde-format
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "Το θέμα Grantlee «%1» δεν είναι έγκυρο."
 
-#: header/grantleeheaderformatter.cpp:448 header/headerstyle_util.cpp:80
-#: header/headerstyle_util.cpp:85 header/headerstyle_util.cpp:96
+#: header/grantleeheaderformatter.cpp:450 header/headerstyle_util.cpp:82
+#: header/headerstyle_util.cpp:87 header/headerstyle_util.cpp:98
 #, kde-format
 msgid "No Subject"
 msgstr "Κανένα θέμα"
 
-#: header/grantleeheaderformatter.cpp:453
+#: header/grantleeheaderformatter.cpp:455
 #, kde-format
 msgid "Spam Status:"
 msgstr "Κατάσταση ανεπιθύμητης αλληλογραφίας:"
 
-#: header/grantleeheaderformatter.cpp:465
+#: header/grantleeheaderformatter.cpp:467
 #, kde-format
 msgid "Printing mode"
 msgstr "Λειτουργία εκτύπωσης"
 
-#: header/grantleeheaderformatter.cpp:507
+#: header/grantleeheaderformatter.cpp:509
 #, kde-format
 msgid "[vcard]"
 msgstr "[vcard]"
 
-#: header/grantleeheaderformatter.cpp:514
+#: header/grantleeheaderformatter.cpp:516
 #, kde-format
 msgid "Attachments:"
 msgstr "Συνημμένα:"
 
-#: header/grantleeheaderformatter.cpp:540
+#: header/grantleeheaderformatter.cpp:542
 #, kde-format
 msgid "Security:"
 msgstr "Ασφάλεια:"
 
-#: header/headerstyle_util.cpp:55
+#: header/headerstyle_util.cpp:57
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "Άγνωστο"
 
-#: header/headerstyle_util.cpp:145
+#: header/headerstyle_util.cpp:146
 #, kde-format
 msgid ""
 "%1% probability of being spam with confidence %3%.\n"
@@ -850,7 +850,7 @@ msgstr ""
 "Πιθανότητα=%2\n"
 "Βαθμός εμπιστοσύνης=%4"
 
-#: header/headerstyle_util.cpp:154
+#: header/headerstyle_util.cpp:155
 #, kde-format
 msgid ""
 "%1% probability of being spam.\n"
@@ -863,40 +863,40 @@ msgstr ""
 "Πλήρης αναφορά:\n"
 "Πιθανότητα=%2"
 
-#: header/headerstyle_util.cpp:163
+#: header/headerstyle_util.cpp:164
 #, kde-format
 msgid "No Spam agent"
 msgstr "Χωρίς πρόγραμμα-πελάτη διαχωρισμού ανεπιθύμητης αλληλογραφίας"
 
-#: header/headerstyle_util.cpp:166
+#: header/headerstyle_util.cpp:167
 #, kde-format
 msgid "Spam filter score not a number"
 msgstr ""
 "Η βαθμολογία του φίλτρου ανεπιθύμητης αλληλογραφίας δεν είναι έγκυρος αριθμός"
 
-#: header/headerstyle_util.cpp:169
+#: header/headerstyle_util.cpp:170
 #, kde-format
 msgid "Threshold not a valid number"
 msgstr "Η τιμή του κατωφλίου δεν είναι έγκυρος αριθμός"
 
-#: header/headerstyle_util.cpp:172
+#: header/headerstyle_util.cpp:173
 #, kde-format
 msgid "Spam filter score could not be extracted from header"
 msgstr ""
 "Η βαθμολογία του φίλτρου ανεπιθύμητης αλληλογραφίας δεν αποσπάσθηκε από την "
 "επικεφαλίδα"
 
-#: header/headerstyle_util.cpp:175
+#: header/headerstyle_util.cpp:176
 #, kde-format
 msgid "Threshold could not be extracted from header"
 msgstr "Ο αριθμός κατωφλίου δεν αποσπάσθηκε από την επικεφαλίδα"
 
-#: header/headerstyle_util.cpp:178
+#: header/headerstyle_util.cpp:179
 #, kde-format
 msgid "Error evaluating spam score"
 msgstr "Σφάλμα κατά τον υπολογισμό βαθμολογίας της ανεπιθύμητης αλληλογραφίας"
 
-#: header/headerstyle_util.cpp:183
+#: header/headerstyle_util.cpp:184
 #, kde-format
 msgid ""
 "%1.\n"
@@ -909,49 +909,49 @@ msgstr ""
 "Πλήρης αναφορά:\n"
 "%2"
 
-#: header/headerstylemenumanager.cpp:105
+#: header/headerstylemenumanager.cpp:107
 #, kde-format
 msgctxt "View->"
 msgid "&Headers"
 msgstr "Κεφα&λίδες"
 
-#: header/headerstylemenumanager.cpp:109
+#: header/headerstylemenumanager.cpp:111
 #, kde-format
 msgid "Choose display style of message headers"
 msgstr "Επιλογή στυλ εμφάνισης κεφαλίδων μηνυμάτων"
 
-#: header/plainheaderstyle.cpp:102
+#: header/plainheaderstyle.cpp:104
 #, kde-format
 msgid "Date: "
 msgstr "Ημερομηνία: "
 
-#: header/plainheaderstyle.cpp:106
+#: header/plainheaderstyle.cpp:108
 #, kde-format
 msgid "From: "
 msgstr "Από: "
 
-#: header/plainheaderstyle.cpp:108
+#: header/plainheaderstyle.cpp:110
 #, kde-format
 msgid "[vCard]"
 msgstr "[vCard]"
 
-#: header/plainheaderstyle.cpp:120
+#: header/plainheaderstyle.cpp:121
 #, kde-format
 msgctxt "To-field of the mailheader."
 msgid "To: "
 msgstr "Προς: "
 
-#: header/plainheaderstyle.cpp:127
+#: header/plainheaderstyle.cpp:128
 #, kde-format
 msgid "CC: "
 msgstr "Κοινοποίηση: "
 
-#: header/plainheaderstyle.cpp:134
+#: header/plainheaderstyle.cpp:135
 #, kde-format
 msgid "BCC: "
 msgstr "Κρυφή κοινοποίηση: "
 
-#: header/plainheaderstyle.cpp:139
+#: header/plainheaderstyle.cpp:140
 #, kde-format
 msgid "Reply to: "
 msgstr "Απάντηση σε: "
@@ -975,94 +975,94 @@ msgctxt "@action"
 msgid "Send Deny"
 msgstr "Αποστολή τώρα"
 
-#: messagepartthemes/default/defaultrenderer.cpp:69
+#: messagepartthemes/default/defaultrenderer.cpp:70
 #, kde-format
 msgid "Error: Signature not verified"
 msgstr "Σφάλμα: Η υπογραφή δεν επαληθεύτηκε"
 
-#: messagepartthemes/default/defaultrenderer.cpp:73
+#: messagepartthemes/default/defaultrenderer.cpp:74
 #, kde-format
 msgid "Good signature"
 msgstr "Καλή υπογραφή"
 
-#: messagepartthemes/default/defaultrenderer.cpp:77
+#: messagepartthemes/default/defaultrenderer.cpp:78
 #, fuzzy, kde-format
 #| msgid "Good signature"
 msgid "Bad signature"
 msgstr "Καλή υπογραφή"
 
-#: messagepartthemes/default/defaultrenderer.cpp:81
+#: messagepartthemes/default/defaultrenderer.cpp:82
 #, kde-format
 msgid "No public key to verify the signature"
 msgstr "Δεν υπάρχει δημόσιο κλειδί για επαλήθευση της υπογραφής"
 
-#: messagepartthemes/default/defaultrenderer.cpp:85
+#: messagepartthemes/default/defaultrenderer.cpp:86
 #, kde-format
 msgid "No signature found"
 msgstr "Δε βρέθηκε υπογραφή"
 
-#: messagepartthemes/default/defaultrenderer.cpp:89
+#: messagepartthemes/default/defaultrenderer.cpp:90
 #, kde-format
 msgid "Error verifying the signature"
 msgstr "Σφάλμα επαλήθευσης της υπογραφής"
 
-#: messagepartthemes/default/defaultrenderer.cpp:93
+#: messagepartthemes/default/defaultrenderer.cpp:94
 #, kde-format
 msgid "Different results for signatures"
 msgstr "Διαφορετικά αποτελέσματα για τις υπογραφές"
 
-#: messagepartthemes/default/defaultrenderer.cpp:113
+#: messagepartthemes/default/defaultrenderer.cpp:114
 #, kde-format
 msgid "No status information available."
 msgstr "Δεν υπάρχουν πληροφορίες κατάστασης."
 
-#: messagepartthemes/default/defaultrenderer.cpp:120
-#: messagepartthemes/default/defaultrenderer.cpp:205
+#: messagepartthemes/default/defaultrenderer.cpp:121
+#: messagepartthemes/default/defaultrenderer.cpp:206
 #, kde-format
 msgid "Good signature."
 msgstr "Καλή υπογραφή."
 
-#: messagepartthemes/default/defaultrenderer.cpp:141
+#: messagepartthemes/default/defaultrenderer.cpp:142
 #, kde-format
 msgid "One key has expired."
 msgstr "Ένα κλειδί έχει λήξει."
 
-#: messagepartthemes/default/defaultrenderer.cpp:145
+#: messagepartthemes/default/defaultrenderer.cpp:146
 #, kde-format
 msgid "The signature has expired."
 msgstr "Η υπογραφή έχει λήξει."
 
-#: messagepartthemes/default/defaultrenderer.cpp:150
+#: messagepartthemes/default/defaultrenderer.cpp:151
 #, kde-format
 msgid "Unable to verify: key missing."
 msgstr "Επαλήθευση αδύνατη: απουσία κλειδιού."
 
-#: messagepartthemes/default/defaultrenderer.cpp:157
+#: messagepartthemes/default/defaultrenderer.cpp:158
 #, kde-format
 msgid "CRL not available."
 msgstr "CRL μη διαθέσιμο."
 
-#: messagepartthemes/default/defaultrenderer.cpp:161
+#: messagepartthemes/default/defaultrenderer.cpp:162
 #, kde-format
 msgid "Available CRL is too old."
 msgstr "Το διαθέσιμο CRL είναι πολύ παλιό."
 
-#: messagepartthemes/default/defaultrenderer.cpp:165
+#: messagepartthemes/default/defaultrenderer.cpp:166
 #, kde-format
 msgid "A policy was not met."
 msgstr "Μια πολιτική δεν ικανοποιήθηκε."
 
-#: messagepartthemes/default/defaultrenderer.cpp:169
+#: messagepartthemes/default/defaultrenderer.cpp:170
 #, kde-format
 msgid "A system error occurred."
 msgstr "Προέκυψε σφάλμα συστήματος."
 
-#: messagepartthemes/default/defaultrenderer.cpp:180
+#: messagepartthemes/default/defaultrenderer.cpp:181
 #, kde-format
 msgid "One key has been revoked."
 msgstr "Ένα κλειδί έχει ανακληθεί."
 
-#: messagepartthemes/default/defaultrenderer.cpp:207
+#: messagepartthemes/default/defaultrenderer.cpp:208
 #, fuzzy, kde-format
 #| msgid "Good signature."
 msgid "Bad signature."
@@ -1075,60 +1075,60 @@ msgctxt "@title:window"
 msgid "Configure Remote Content"
 msgstr "Περιεχόμενα προτύπου"
 
-#: remote-content/remotecontentconfigurewidget.cpp:52
+#: remote-content/remotecontentconfigurewidget.cpp:54
 #, kde-format
 msgid "Status"
 msgstr "Κατάσταση"
 
-#: remote-content/remotecontentconfigurewidget.cpp:89
+#: remote-content/remotecontentconfigurewidget.cpp:91
 #, fuzzy, kde-format
 #| msgid "Do you want to delete list \"%1\"?"
 msgid "Do you want to delete this rule '%1'?"
 msgstr "Επιθυμείτε τη διαγραφή της λίστας «%1»;"
 
-#: remote-content/remotecontentconfigurewidget.cpp:107
+#: remote-content/remotecontentconfigurewidget.cpp:109
 #, fuzzy, kde-format
 #| msgid "Template content"
 msgctxt "@title:window"
 msgid "Edit Remote Content"
 msgstr "Περιεχόμενα προτύπου"
 
-#: remote-content/remotecontentconfigurewidget.cpp:123
+#: remote-content/remotecontentconfigurewidget.cpp:125
 #, fuzzy, kde-format
 #| msgid "Template content"
 msgctxt "@title:window"
 msgid "Add Remote Content"
 msgstr "Περιεχόμενα προτύπου"
 
-#: remote-content/remotecontentconfigurewidget.cpp:132
+#: remote-content/remotecontentconfigurewidget.cpp:134
 #, kde-format
 msgid "An entry already defines this url. Please modify it."
 msgstr ""
 
-#: remote-content/remotecontentconfigurewidget.cpp:132
+#: remote-content/remotecontentconfigurewidget.cpp:134
 #, fuzzy, kde-format
 #| msgid "Add new tag"
 msgctxt "@title:window"
 msgid "Add new Url"
 msgstr "Προσθήκη νέας ετικέτας"
 
-#: remote-content/remotecontentmenu.cpp:17
+#: remote-content/remotecontentmenu.cpp:19
 #, kde-format
 msgid "Configure"
 msgstr "Ρύθμιση"
 
-#: remote-content/remotecontentmenu.cpp:19
+#: remote-content/remotecontentmenu.cpp:21
 #, fuzzy, kde-format
 #| msgid "Template content"
 msgid "Remote Content"
 msgstr "Περιεχόμενα προτύπου"
 
-#: remote-content/remotecontentmenu.cpp:50
+#: remote-content/remotecontentmenu.cpp:52
 #, kde-format
 msgid "Authorize %1"
 msgstr ""
 
-#: remote-content/remotecontentmenu.cpp:58
+#: remote-content/remotecontentmenu.cpp:60
 #, kde-format
 msgid "Authorize all Urls"
 msgstr ""
@@ -1151,45 +1151,45 @@ msgctxt "@label:textbox"
 msgid "Domain:"
 msgstr "&Προκαθορισμένος τομέας:"
 
-#: scamdetection/scamdetectiondetailsdialog.cpp:40
+#: scamdetection/scamdetectiondetailsdialog.cpp:42
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"
 msgstr "Λεπτομέρειες"
 
-#: scamdetection/scamdetectionwarningwidget.cpp:34
+#: scamdetection/scamdetectionwarningwidget.cpp:36
 #, kde-format
 msgid "This message may be a scam. <a href=\"scamdetails\">(Details...)</a>"
 msgstr ""
 "Αυτό το μήνυμα μπορεί να προσβλέπει να σας εξαπατήσει. <a href=\"scamdetails"
 "\">(Λεπτομέρειες...)</a>"
 
-#: scamdetection/scamdetectionwarningwidget.cpp:39
+#: scamdetection/scamdetectionwarningwidget.cpp:41
 #, kde-format
 msgctxt "@action"
 msgid "Move to Trash"
 msgstr "Μετακίνηση στα απορρίμματα"
 
-#: scamdetection/scamdetectionwarningwidget.cpp:44
+#: scamdetection/scamdetectionwarningwidget.cpp:46
 #, kde-format
 msgctxt "@action"
 msgid "I confirm it's not a scam"
 msgstr "Δεν είναι εξαπάτηση"
 
-#: scamdetection/scamdetectionwarningwidget.cpp:48
+#: scamdetection/scamdetectionwarningwidget.cpp:50
 #, kde-format
 msgctxt "@action"
 msgid "Add email to whitelist"
 msgstr "Προσθήκη διεύθυνσης στη λευκή λίστα"
 
-#: scamdetection/scamdetectionwarningwidget.cpp:52
+#: scamdetection/scamdetectionwarningwidget.cpp:54
 #, kde-format
 msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "Απενεργοποίηση εντοπισμού εξαπάτησης"
 
-#: scamdetection/scamdetectionwebengine.cpp:115
-#: scamdetection/scamdetectionwebengine.cpp:214
+#: scamdetection/scamdetectionwebengine.cpp:117
+#: scamdetection/scamdetectionwebengine.cpp:215
 #, kde-format
 msgid ""
 "This email contains a link which reads as '%1' in the text, but actually "
@@ -1200,7 +1200,7 @@ msgstr ""
 "στην πραγματικότητα υποδεικνύει στο «%2». Αυτό συμβαίνει συχνά σε μηνύματα "
 "εξαπάτησης με σκοπό την παραπλάνηση του παραλήπτη "
 
-#: scamdetection/scamdetectionwebengine.cpp:128
+#: scamdetection/scamdetectionwebengine.cpp:130
 #, kde-format
 msgid ""
 "This email contains a link which points to a numerical IP address (%1) "
@@ -1211,7 +1211,7 @@ msgstr ""
 "διεύθυνση IP (%1) αντί μιας τυπικής διεύθυνσης ιστοσελίδας ως κείμενο. Αυτό "
 "συμβαίνει συχνά σε μηνύματα εξαπάτησης."
 
-#: scamdetection/scamdetectionwebengine.cpp:135
+#: scamdetection/scamdetectionwebengine.cpp:137
 #, kde-format
 msgid ""
 "This email contains a link which points to a hexadecimal IP address (%1) "
@@ -1222,12 +1222,12 @@ msgstr ""
 "διεύθυνση IP (%1) αντί μιας τυπικής διεύθυνσης ιστοσελίδας κειμένου. Αυτό "
 "συμβαίνει συχνά σε μηνύματα εξαπάτησης."
 
-#: scamdetection/scamdetectionwebengine.cpp:141
+#: scamdetection/scamdetectionwebengine.cpp:143
 #, kde-format
 msgid "This email contains a link (%1) which has a redirection"
 msgstr "Αυτό το μήνυμα περιέχει ένα δεσμό (%1) ο οποίος έχει μια ανακατεύθυνση"
 
-#: scamdetection/scamdetectionwebengine.cpp:148
+#: scamdetection/scamdetectionwebengine.cpp:149
 #, kde-format
 msgid ""
 "This email contains a link (%1) which contains multiple http://. This is "
@@ -1236,36 +1236,36 @@ msgstr ""
 "Αυτό το μήνυμα περιέχει ένα δεσμό (%1) ο οποίος περιέχει πολλαπλά http://. "
 "Αυτό συμβαίνει συχνά σε μηνύματα εξαπάτησης."
 
-#: scamdetection/scamdetectionwebengine.cpp:159
+#: scamdetection/scamdetectionwebengine.cpp:160
 #, kde-format
 msgid "This email contains a shorturl (%1). It can redirect to another server."
 msgstr ""
 "Αυτό το μήνυμα περιέχει μια συντόμευση (%1). Μπορεί να ανακατευθύνει σε "
 "άλλον εξυπηρετητή."
 
-#: scamdetection/scamdetectionwebengine.cpp:233
+#: scamdetection/scamdetectionwebengine.cpp:234
 #, kde-format
 msgid "Message contains form element. This is often the case in scam emails."
 msgstr ""
 "Το μήνυμα περιέχει αντικείμενο φόρμας. Αυτό συμβαίνει συχνά σε μηνύματα "
 "εξαπάτησης."
 
-#: scamdetection/scamdetectionwebengine.cpp:237
+#: scamdetection/scamdetectionwebengine.cpp:238
 #, kde-format
 msgid "Details:"
 msgstr "Λεπτομέρειες:"
 
-#: scamdetection/scamexpandurljob.cpp:47
+#: scamdetection/scamexpandurljob.cpp:49
 #, kde-format
 msgid "No network connection detected, we cannot expand url."
 msgstr "Δεν ανιχνεύθηκε δικτυακή σύνδεση, αδύνατη η ανάπτυξη του url."
 
-#: scamdetection/scamexpandurljob.cpp:77 scamdetection/scamexpandurljob.cpp:83
+#: scamdetection/scamexpandurljob.cpp:79 scamdetection/scamexpandurljob.cpp:85
 #, kde-format
 msgid "Impossible to expand '%1'."
 msgstr ""
 
-#: scamdetection/scamexpandurljob.cpp:81
+#: scamdetection/scamexpandurljob.cpp:83
 #, kde-format
 msgid "Short url '%1' redirects to '%2'."
 msgstr "Το σύντομο url «%1» ανακατευθύνει στο «%2»."
@@ -1577,7 +1577,7 @@ msgstr ""
 "της απάντησης."
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
-#: settings/messageviewer.kcfg.in:228 viewer/viewer_p.cpp:1559
+#: settings/messageviewer.kcfg.in:228 viewer/viewer_p.cpp:1558
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "Χρήση γραμματοσειράς &σταθερού πλάτους"
@@ -1940,22 +1940,22 @@ msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
 msgstr "%1"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:59
+#: viewer/mimeparttree/mimetreemodel.cpp:61
 #, kde-format
 msgid "body part"
 msgstr "τμήμα σώματος"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:262
+#: viewer/mimeparttree/mimetreemodel.cpp:264
 #, kde-format
 msgid "Description"
 msgstr "Περιγραφή"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:264
+#: viewer/mimeparttree/mimetreemodel.cpp:266
 #, kde-format
 msgid "Type"
 msgstr "Τύπος"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:266
+#: viewer/mimeparttree/mimetreemodel.cpp:268
 #, kde-format
 msgid "Size"
 msgstr "Μέγεθος"
@@ -1973,127 +1973,127 @@ msgctxt "@title:window"
 msgid "Print Document"
 msgstr "Τεκμηρίωση"
 
-#: viewer/urlhandlermanager.cpp:407
+#: viewer/urlhandlermanager.cpp:409
 #, kde-format
 msgid "Turn on HTML rendering for this message."
 msgstr "Ενεργοποίηση αποτύπωσης HTML για αυτό το μήνυμα."
 
-#: viewer/urlhandlermanager.cpp:409 viewer/viewer_p.cpp:1628
+#: viewer/urlhandlermanager.cpp:411 viewer/viewer_p.cpp:1627
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "Φόρτωση εξωτερικών αναφορών από το διαδίκτυο για αυτό το μήνυμα."
 
-#: viewer/urlhandlermanager.cpp:411
+#: viewer/urlhandlermanager.cpp:413
 #, kde-format
 msgid "Work online."
 msgstr "Εργασία με σύνδεση."
 
-#: viewer/urlhandlermanager.cpp:413
+#: viewer/urlhandlermanager.cpp:415
 #, kde-format
 msgid "Make account online."
 msgstr "να γίνει ο λογαριασμός σε σύνδεση."
 
-#: viewer/urlhandlermanager.cpp:415
+#: viewer/urlhandlermanager.cpp:417
 #, kde-format
 msgid "Decrypt message."
 msgstr "Αποκρυπτογράφηση μηνύματος."
 
-#: viewer/urlhandlermanager.cpp:417
+#: viewer/urlhandlermanager.cpp:419
 #, kde-format
 msgid "Show signature details."
 msgstr "Εμφάνιση λεπτομερειών υπογραφής."
 
-#: viewer/urlhandlermanager.cpp:419
+#: viewer/urlhandlermanager.cpp:421
 #, kde-format
 msgid "Hide signature details."
 msgstr "Απόκρυψη λεπτομερειών υπογραφής."
 
-#: viewer/urlhandlermanager.cpp:421
+#: viewer/urlhandlermanager.cpp:423
 #, fuzzy, kde-format
 #| msgid "Show signature details."
 msgid "Show encryption details."
 msgstr "Εμφάνιση λεπτομερειών υπογραφής."
 
-#: viewer/urlhandlermanager.cpp:423
+#: viewer/urlhandlermanager.cpp:425
 #, fuzzy, kde-format
 #| msgid "Hide signature details."
 msgid "Hide encryption details."
 msgstr "Απόκρυψη λεπτομερειών υπογραφής."
 
-#: viewer/urlhandlermanager.cpp:428
+#: viewer/urlhandlermanager.cpp:430
 #, fuzzy, kde-format
 #| msgid "Documentation"
 msgid "Open Documentation"
 msgstr "Τεκμηρίωση"
 
-#: viewer/urlhandlermanager.cpp:462
+#: viewer/urlhandlermanager.cpp:464
 #, kde-format
 msgid "Expand all quoted text."
 msgstr "Ανάπτυξη όλου του κειμένου σε παράθεση."
 
-#: viewer/urlhandlermanager.cpp:464
+#: viewer/urlhandlermanager.cpp:466
 #, kde-format
 msgid "Collapse quoted text."
 msgstr "Σύμπτυξη κειμένου σε παράθεση."
 
-#: viewer/urlhandlermanager.cpp:491
+#: viewer/urlhandlermanager.cpp:492
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""
 "Αδύνατη η εκκίνηση του διαχειριστή πιστοποιητικών. Παρακαλώ ελέγξτε την "
 "εγκατάστασή σας."
 
-#: viewer/urlhandlermanager.cpp:493
+#: viewer/urlhandlermanager.cpp:494
 #, kde-format
 msgid "KMail Error"
 msgstr "Σφάλμα του KMail"
 
-#: viewer/urlhandlermanager.cpp:510
+#: viewer/urlhandlermanager.cpp:511
 #, kde-format
 msgid "Show certificate 0x%1"
 msgstr "Εμφάνιση πιστοποιητικού 0x%1"
 
-#: viewer/urlhandlermanager.cpp:569
+#: viewer/urlhandlermanager.cpp:570
 #, kde-format
 msgid "&Open in Address Book"
 msgstr "Άνοιγμα στο βιβλίο &διευθύνσεων"
 
-#: viewer/urlhandlermanager.cpp:571
+#: viewer/urlhandlermanager.cpp:572
 #, kde-format
 msgid "&Copy Email Address"
 msgstr "&Αντιγραφή της διεύθυνσης ηλ. αλληλογραφίας"
 
-#: viewer/urlhandlermanager.cpp:584 viewer/viewer_p.cpp:2720
+#: viewer/urlhandlermanager.cpp:585 viewer/viewer_p.cpp:2718
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Η διεύθυνση αντιγράφτηκε στο πρόχειρο."
 
-#: viewer/urlhandlermanager.cpp:595
+#: viewer/urlhandlermanager.cpp:596
 #, kde-format
 msgid "Lookup the contact in KAddressbook"
 msgstr "Αναζήτηση της επαφής στο KAddressbook"
 
-#: viewer/urlhandlermanager.cpp:771
+#: viewer/urlhandlermanager.cpp:772
 #, kde-format
 msgid "Attachment: %1"
 msgstr "Συνημμένο: %1"
 
-#: viewer/urlhandlermanager.cpp:774
+#: viewer/urlhandlermanager.cpp:775
 #, kde-format
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "Ενθυλακωμένο μήνυμα (Θέμα: %1)"
 
-#: viewer/urlhandlermanager.cpp:776
+#: viewer/urlhandlermanager.cpp:777
 #, kde-format
 msgid "Encapsulated Message"
 msgstr "Ενθυλακωμένο μήνυμα"
 
-#: viewer/urlhandlermanager.cpp:779
+#: viewer/urlhandlermanager.cpp:780
 #, kde-format
 msgid "Unnamed attachment"
 msgstr "Συνημμένο χωρίς όνομα"
 
-#: viewer/urlhandlermanager.cpp:814
+#: viewer/urlhandlermanager.cpp:815
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr "Εμφάνιση καταγραφής επαλήθευσης GnuPG για τη λειτουργία αυτή"
@@ -2120,7 +2120,7 @@ msgstr "Εκτέλεση"
 msgid "Loading message..."
 msgstr "Φόρτωση μηνυμάτων..."
 
-#: viewer/viewer_p.cpp:345
+#: viewer/viewer_p.cpp:346
 #, kde-format
 msgid ""
 "Deleting an attachment might invalidate any digital signature on this "
@@ -2129,13 +2129,13 @@ msgstr ""
 "Η διαγραφή ενός συνημμένου μπορεί να ακυρώσει κάποια ψηφιακή υπογραφή σε "
 "αυτό το μήνυμα."
 
-#: viewer/viewer_p.cpp:346 viewer/viewer_p.cpp:381
+#: viewer/viewer_p.cpp:347 viewer/viewer_p.cpp:382
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "Αφαίρεση συνημμένου"
 
-#: viewer/viewer_p.cpp:380
+#: viewer/viewer_p.cpp:381
 #, kde-format
 msgid ""
 "Deleting an attachment from an encrypted or old-style mailman message is not "
@@ -2144,67 +2144,67 @@ msgstr ""
 "Η διαγραφή ενός συνημμένου από ένα κρυπτογραφημένο ή παλαιού στυλ μηνύματος "
 "mailman δεν υποστηρίζεται."
 
-#: viewer/viewer_p.cpp:429
+#: viewer/viewer_p.cpp:430
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
 msgstr "Άνοιγμα &με"
 
-#: viewer/viewer_p.cpp:447
+#: viewer/viewer_p.cpp:448
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
 msgstr "Ά&λλο..."
 
-#: viewer/viewer_p.cpp:449 viewer/viewer_p.cpp:462
+#: viewer/viewer_p.cpp:450 viewer/viewer_p.cpp:463
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "Ά&νοιγμα με..."
 
-#: viewer/viewer_p.cpp:526 viewer/viewer_p.cpp:1738
+#: viewer/viewer_p.cpp:527 viewer/viewer_p.cpp:1737
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Άνοιγμα"
 
-#: viewer/viewer_p.cpp:540 viewer/viewer_p.cpp:1745
+#: viewer/viewer_p.cpp:541 viewer/viewer_p.cpp:1744
 #, kde-format
 msgctxt "to view something"
 msgid "View"
 msgstr "Προβολή"
 
-#: viewer/viewer_p.cpp:548
+#: viewer/viewer_p.cpp:549
 #, kde-format
 msgid "Scroll To"
 msgstr "Κύλιση στο"
 
-#: viewer/viewer_p.cpp:553
+#: viewer/viewer_p.cpp:554
 #, kde-format
 msgid "Save As..."
 msgstr "Αποθήκευση ως..."
 
-#: viewer/viewer_p.cpp:559 viewer/viewer_p.cpp:1755
+#: viewer/viewer_p.cpp:560 viewer/viewer_p.cpp:1754
 #, kde-format
 msgid "Copy"
 msgstr "Αντιγραφή"
 
-#: viewer/viewer_p.cpp:570 viewer/viewer_p.cpp:1760
+#: viewer/viewer_p.cpp:571 viewer/viewer_p.cpp:1758
 #, kde-format
 msgid "Delete Attachment"
 msgstr "Αφαίρεση συνημμένου"
 
-#: viewer/viewer_p.cpp:581
+#: viewer/viewer_p.cpp:582
 #, kde-format
 msgid "Reply To Author"
 msgstr "Απάντηση στο συγγραφέα"
 
-#: viewer/viewer_p.cpp:589
+#: viewer/viewer_p.cpp:590
 #, kde-format
 msgid "Reply To All"
 msgstr "Απάντηση σε όλους"
 
-#: viewer/viewer_p.cpp:595 viewer/viewer_p.cpp:1765
+#: viewer/viewer_p.cpp:596 viewer/viewer_p.cpp:1763
 #, kde-format
 msgid "Properties"
 msgstr "Ιδιότητες"
@@ -2214,285 +2214,285 @@ msgstr "Ιδιότητες"
 msgid "KMail"
 msgstr "KMail"
 
-#: viewer/viewer_p.cpp:733
+#: viewer/viewer_p.cpp:732
 #, fuzzy, kde-format
 #| msgid "The KDE email client."
 msgid "The KDE Mail Client"
 msgstr "Ο πελάτης αλληλογραφίας του KDE"
 
-#: viewer/viewer_p.cpp:1279
+#: viewer/viewer_p.cpp:1278
 #, kde-format
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "Προβολή συνημμένου: %1"
 
-#: viewer/viewer_p.cpp:1481
+#: viewer/viewer_p.cpp:1480
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "Συνημμέν&α"
 
-#: viewer/viewer_p.cpp:1483
+#: viewer/viewer_p.cpp:1482
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "Επιλογή στυλ εμφάνισης συνημμένων"
 
-#: viewer/viewer_p.cpp:1486
+#: viewer/viewer_p.cpp:1485
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "Σ&αν εικονίδια"
 
-#: viewer/viewer_p.cpp:1489
+#: viewer/viewer_p.cpp:1488
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr ""
 "Εμφάνιση όλων των συνημμένων σαν εικονίδια. Κάντε κλικ για να τα δείτε."
 
-#: viewer/viewer_p.cpp:1493
+#: viewer/viewer_p.cpp:1492
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "Έ&ξυπνα"
 
-#: viewer/viewer_p.cpp:1496
+#: viewer/viewer_p.cpp:1495
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "Εμφάνιση συνημμένων όπως προτείνεται από τον αποστολέα."
 
-#: viewer/viewer_p.cpp:1500
+#: viewer/viewer_p.cpp:1499
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "&Εμβόλιμα"
 
-#: viewer/viewer_p.cpp:1503
+#: viewer/viewer_p.cpp:1502
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "Εμφάνιση όλων των συνημμένων εμβόλιμα (αν αυτό είναι δυνατό)"
 
-#: viewer/viewer_p.cpp:1507
+#: viewer/viewer_p.cpp:1506
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "Απόκρυ&ψη"
 
-#: viewer/viewer_p.cpp:1510
+#: viewer/viewer_p.cpp:1509
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "Να μην εμφανίζονται τα συνημμένα στον προβολέα μηνυμάτων"
 
-#: viewer/viewer_p.cpp:1514
+#: viewer/viewer_p.cpp:1513
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr "Στην επικεφαλίδα μόνο"
 
-#: viewer/viewer_p.cpp:1517
+#: viewer/viewer_p.cpp:1516
 #, kde-format
 msgid "Show Attachments only in the header of the mail"
 msgstr "Εμφάνιση των συνημμένων μόνο στην επικεφαλίδα της αλληλογραφίας"
 
-#: viewer/viewer_p.cpp:1522
+#: viewer/viewer_p.cpp:1521
 #, kde-format
 msgid "&Set Encoding"
 msgstr "Ορισμός κ&ωδικοποίησης"
 
-#: viewer/viewer_p.cpp:1527 widgets/configurewidget.cpp:43
-#: widgets/configurewidget.cpp:77
+#: viewer/viewer_p.cpp:1526 widgets/configurewidget.cpp:45
+#: widgets/configurewidget.cpp:79
 #, kde-format
 msgid "Auto"
 msgstr "Αυτόματα"
 
-#: viewer/viewer_p.cpp:1537
+#: viewer/viewer_p.cpp:1536
 #, fuzzy, kde-format
 #| msgid "&Copy To"
 msgid "Copy Text"
 msgstr "&Αντιγραφή σε"
 
-#: viewer/viewer_p.cpp:1543
+#: viewer/viewer_p.cpp:1542
 #, kde-format
 msgctxt "@action"
 msgid "Select All Text"
 msgstr "Επιλογή όλου του κειμένου"
 
-#: viewer/viewer_p.cpp:1549 viewer/viewer_p.cpp:2074
+#: viewer/viewer_p.cpp:1548 viewer/viewer_p.cpp:2072
 #, kde-format
 msgid "Copy Link Address"
 msgstr "Αντιγραφή διεύθυνσης δεσμού"
 
-#: viewer/viewer_p.cpp:1554
+#: viewer/viewer_p.cpp:1553
 #, kde-format
 msgid "Open URL"
 msgstr "'Άνοιγμα URL"
 
-#: viewer/viewer_p.cpp:1565
+#: viewer/viewer_p.cpp:1564
 #, kde-format
 msgid "Show Message Structure"
 msgstr "Εμφάνιση δομής μηνύματος"
 
-#: viewer/viewer_p.cpp:1570
+#: viewer/viewer_p.cpp:1569
 #, kde-format
 msgctxt "@action"
 msgid "&View Source"
 msgstr "Προ&βολή πηγαίου κώδικα"
 
-#: viewer/viewer_p.cpp:1575
+#: viewer/viewer_p.cpp:1574
 #, kde-format
 msgid "&Save Message..."
 msgstr "Αποθήκευ&ση μηνύματος..."
 
-#: viewer/viewer_p.cpp:1581
+#: viewer/viewer_p.cpp:1580
 #, kde-format
 msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "Αποθήκευ&ση της μορφής εμφάνισης"
 
-#: viewer/viewer_p.cpp:1585
+#: viewer/viewer_p.cpp:1584
 #, kde-format
 msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "Επαναφο&ρά της μορφής εμφάνισης"
 
-#: viewer/viewer_p.cpp:1592
+#: viewer/viewer_p.cpp:1591
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "Κύλιση μηνύματος πάνω"
 
-#: viewer/viewer_p.cpp:1597
+#: viewer/viewer_p.cpp:1596
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "Κύλιση μηνύματος κάτω"
 
-#: viewer/viewer_p.cpp:1602
+#: viewer/viewer_p.cpp:1601
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "Κύλιση μηνύματος πάνω (επιπλέον)"
 
-#: viewer/viewer_p.cpp:1607
+#: viewer/viewer_p.cpp:1606
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "Κύλιση μηνύματος κάτω (επιπλέον)"
 
-#: viewer/viewer_p.cpp:1617
+#: viewer/viewer_p.cpp:1616
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr "Εναλλαγή λειτουργίας εμφάνισης HTML"
 
-#: viewer/viewer_p.cpp:1621
+#: viewer/viewer_p.cpp:1620
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr "Εναλλαγή της λειτουργίας εμφάνισης μεταξύ HTML και απλού κειμένου"
 
-#: viewer/viewer_p.cpp:1624
+#: viewer/viewer_p.cpp:1623
 #, kde-format
 msgctxt "@action"
 msgid "Load external references"
 msgstr "Φόρτωση εξωτερικών αναφορών"
 
-#: viewer/viewer_p.cpp:1630
+#: viewer/viewer_p.cpp:1629
 #, kde-format
 msgctxt "@action"
 msgid "Speak Text"
 msgstr "Εκφώνηση κειμένου"
 
-#: viewer/viewer_p.cpp:1636
+#: viewer/viewer_p.cpp:1635
 #, fuzzy, kde-format
 #| msgid "Speak Text"
 msgctxt "@action"
 msgid "Share Text..."
 msgstr "Εκφώνηση κειμένου"
 
-#: viewer/viewer_p.cpp:1654
+#: viewer/viewer_p.cpp:1653
 #, kde-format
 msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "Αντιγραφή τοποθεσίας εικόνας"
 
-#: viewer/viewer_p.cpp:1660
+#: viewer/viewer_p.cpp:1659
 #, kde-format
 msgid "&Find in Message..."
 msgstr "Αναζήτηση στο &μήνυμα..."
 
-#: viewer/viewer_p.cpp:1669
+#: viewer/viewer_p.cpp:1668
 #, kde-format
 msgid "Disable Emoticon"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1735
+#: viewer/viewer_p.cpp:1734
 #, kde-format
 msgid "Save &As..."
 msgstr "Αποθήκευση &ως..."
 
-#: viewer/viewer_p.cpp:1743
+#: viewer/viewer_p.cpp:1742
 #, kde-format
 msgid "Open With..."
 msgstr "Άνοιγμα με..."
 
-#: viewer/viewer_p.cpp:1750
+#: viewer/viewer_p.cpp:1749
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "Αποθήκευση όλων των συνημμένων..."
 
-#: viewer/viewer_p.cpp:1994
+#: viewer/viewer_p.cpp:1992
 #, kde-format
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
+#: viewer/viewer_p.cpp:1992 viewer/viewer_p.cpp:1995
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1997
+#: viewer/viewer_p.cpp:1995
 #, fuzzy, kde-format
 #| msgid "Grantlee theme \"%1\" is not valid."
 msgid "The URL %1 is not valid."
 msgstr "Το θέμα Grantlee «%1» δεν είναι έγκυρο."
 
-#: viewer/viewer_p.cpp:2017
+#: viewer/viewer_p.cpp:2015
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2018
+#: viewer/viewer_p.cpp:2016
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2072
+#: viewer/viewer_p.cpp:2070
 #, kde-format
 msgid "Copy Email Address"
 msgstr "Αντιγραφή διεύθυνσης Email"
 
-#: viewer/viewer_p.cpp:2155
+#: viewer/viewer_p.cpp:2153
 #, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Μήνυμα ως απλό κείμενο"
 
-#: viewer/viewer_p.cpp:2726
+#: viewer/viewer_p.cpp:2724
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "Το URL αντιγράφτηκε στο πρόχειρο."
 
-#: viewer/viewer_p.cpp:2888
+#: viewer/viewer_p.cpp:2886
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "Η φόρτωση του μηνύματος απέτυχε: %1"
 
-#: viewer/viewer_p.cpp:2893
+#: viewer/viewer_p.cpp:2891
 #, kde-format
 msgid "Message not found."
 msgstr "Το μήνυμα δεν βρέθηκε."
 
-#: widgets/attachmentdialog.cpp:27
+#: widgets/attachmentdialog.cpp:28
 #, fuzzy, kde-kuit-format
 #| msgid ""
 #| "Open attachment '%1'?\n"
@@ -2506,23 +2506,23 @@ msgstr ""
 "Σημειώστε ότι το άνοιγμα ενός συνημμένου μπορεί να θέση σε κίνδυνο την "
 "ασφάλεια του συστήματός σας."
 
-#: widgets/attachmentdialog.cpp:32
+#: widgets/attachmentdialog.cpp:33
 #, kde-format
 msgctxt "@title:window"
 msgid "Open Attachment?"
 msgstr "Άνοιγμα του συνημμένου;"
 
-#: widgets/attachmentdialog.cpp:39
+#: widgets/attachmentdialog.cpp:40
 #, kde-format
 msgid "&Open With '%1'"
 msgstr "Ά&νοιγμα με «%1»"
 
-#: widgets/attachmentdialog.cpp:46
+#: widgets/attachmentdialog.cpp:47
 #, kde-format
 msgid "Open &With..."
 msgstr "Άνοι&γμα με..."
 
-#: widgets/attachmentdialog.cpp:68
+#: widgets/attachmentdialog.cpp:69
 #, kde-format
 msgid "Do not ask again"
 msgstr "Να μην ξαναγίνει η ερώτηση"
@@ -2578,7 +2578,7 @@ msgstr ""
 msgid "Click to toggle between HTML, plain text and calendar."
 msgstr "Κάντε κλικ για εναλλαγή μεταξύ HTML και απλού κειμένου."
 
-#: widgets/invitationsettings.cpp:70
+#: widgets/invitationsettings.cpp:72
 #, kde-format
 msgid ""
 "<qt>Invitations are normally sent as attachments to a mail. This switch "
@@ -2599,31 +2599,31 @@ msgstr ""
 "μήνυμα θα φαίνεται πολύ περίεργο.<br />Οι χρήστες προγραμμάτων αλληλογραφίας "
 "που αντιλαμβάνονται τις προσκλήσεις όμως, θα τις βλέπουν κανονικά.</qt>"
 
-#: widgets/mailsourceviewtextbrowserwidget.cpp:133
+#: widgets/mailsourceviewtextbrowserwidget.cpp:134
 #, kde-format
 msgid "Speak Text"
 msgstr "Εκφώνηση κειμένου"
 
-#: widgets/mailsourcewebengineviewer.cpp:53
+#: widgets/mailsourcewebengineviewer.cpp:54
 #, kde-format
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
 msgstr "Ακατέργαστη πηγή"
 
-#: widgets/mailsourcewebengineviewer.cpp:54
+#: widgets/mailsourcewebengineviewer.cpp:55
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr ""
 "Ακατέργαστο, χωρίς τροποποίηση μήνυμα αφού αποθηκεύεται στο σύστημα αρχείων "
 "ή στον εξυπηρετητή"
 
-#: widgets/mailsourcewebengineviewer.cpp:57
+#: widgets/mailsourcewebengineviewer.cpp:58
 #, kde-format
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
 msgstr "Πηγή HTML"
 
-#: widgets/mailsourcewebengineviewer.cpp:58
+#: widgets/mailsourcewebengineviewer.cpp:59
 #, kde-format
 msgid "HTML code for displaying the message to the user"
 msgstr "Εμφάνιση του μηνύματος στον χρήστη σε HTML κώδικα"
@@ -2661,13 +2661,13 @@ msgstr ""
 msgid "KMail was unable to open the attachment."
 msgstr "Αδυναμία επεξεργασίας συνημμένου"
 
-#: widgets/shownextmessagewidget.cpp:15
+#: widgets/shownextmessagewidget.cpp:17
 #, kde-format
 msgctxt "@action:button"
 msgid "Next Message"
 msgstr "Επόμενο μήνυμα"
 
-#: widgets/shownextmessagewidget.cpp:16
+#: widgets/shownextmessagewidget.cpp:18
 #, fuzzy, kde-format
 #| msgid "Previous Unread &Message"
 msgctxt "@action:button"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-14 00:40+0000\n"
+"POT-Creation-Date: 2025-06-25 00:43+0000\n"
 "PO-Revision-Date: 2024-08-04 09:12+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -40,7 +40,7 @@ msgstr "Ezin izan du eranskin konprimatzea hasi."
 msgid "Could not compress the attachment."
 msgstr "Ezin izan du eranskina konprimatu."
 
-#: attachment/attachmentfromfolderjob.cpp:51
+#: attachment/attachmentfromfolderjob.cpp:52
 #, kde-format
 msgid "Could not create compressed file."
 msgstr "Ezin izan du konprimatutako fitxategia sortu."
@@ -65,31 +65,31 @@ msgstr "Ezin izan du %1 artxibora gehitu"
 msgid "Could not open %1 for reading."
 msgstr "Ezin izan du %1 irakurtzeko ireki."
 
-#: attachment/attachmentfromurljob.cpp:68
+#: attachment/attachmentfromurljob.cpp:69
 #, kde-format
 msgctxt "a file called 'unknown.ext'"
 msgid "unknown%1"
 msgstr "ezezaguna%1"
 
-#: attachment/attachmentfromurljob.cpp:70
+#: attachment/attachmentfromurljob.cpp:71
 #, kde-format
 msgctxt "a file called 'unknown'"
 msgid "unknown"
 msgstr "ezezaguna"
 
-#: attachment/attachmentfromurljob.cpp:102
+#: attachment/attachmentfromurljob.cpp:103
 #, kde-format
 msgid "\"%1\" not found. Please specify the full path."
 msgstr "\"%1\" ez da aurkitu. Mesedez, zehaztu bide-izen osoa."
 
-#: attachment/attachmentfromurljob.cpp:111
+#: attachment/attachmentfromurljob.cpp:112
 #, kde-format
 msgid "You may not attach files bigger than %1. Share it with storage service."
 msgstr ""
 "Ezin dituzu erantsi %1 baino handiagoak diren fitxategiak. Partekatu ezazu "
 "biltegiratze zerbitzuarekin."
 
-#: attachment/attachmentpropertiesdialog.cpp:134
+#: attachment/attachmentpropertiesdialog.cpp:133
 #, kde-format
 msgid ""
 "<p>The <em>MIME type</em> of the file:</p><p>Normally, you do not need to "
@@ -102,7 +102,7 @@ msgstr ""
 "baina batzuetan, baliteke %1(e)k mota behar bezala ez antzematea -- hori "
 "hemen konpon dezakezu.</p> "
 
-#: attachment/attachmentpropertiesdialog.cpp:142
+#: attachment/attachmentpropertiesdialog.cpp:141
 #, kde-format
 msgid ""
 "<p>The estimated size of the attachment:</p><p>Note that, in an email "
@@ -113,7 +113,7 @@ msgstr ""
 "«base64»rekin kodetutako fitxategi bitar batek fitxategiaren benetako "
 "neurriaren lau heren arte hartuko dituela.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:147
+#: attachment/attachmentpropertiesdialog.cpp:146
 #, kde-format
 msgid ""
 "<p>The file name of the part:</p><p>Although this defaults to the name of "
@@ -126,7 +126,7 @@ msgstr ""
 "aitzitik, hartzailearen posta agenteak atala diskoan gordetzean erabiltzeko "
 "fitxategi-izen bat proposatzen du.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:154
+#: attachment/attachmentpropertiesdialog.cpp:153
 #, kde-format
 msgid ""
 "<p>A description of the part:</p><p>This is just an informational "
@@ -139,7 +139,7 @@ msgstr ""
 "informazio hori, eranskinaren ikonoarekin batera, mezu aurreikuspegietan "
 "erakutsiko dute.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:161
+#: attachment/attachmentpropertiesdialog.cpp:160
 #, kde-format
 msgid ""
 "<p>The transport encoding of this part:</p><p>Normally, you do not need to "
@@ -158,7 +158,7 @@ msgstr ""
 "lehenetsiaren ordez \"quoted-printable\" aukeratzeak sortutako mezuan "
 "neurriaren % 25 arte aurreztea suposa dezake..</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:172
+#: attachment/attachmentpropertiesdialog.cpp:171
 #, kde-format
 msgid ""
 "<p>Check this option if you want to suggest to the recipient the automatic "
@@ -172,7 +172,7 @@ msgstr ""
 "iradokitzeko;</p><p>Teknikoki, atal honen <em>Edukiaren-antolaketa</em> "
 "goiburu eremua \"attachment\" ordez \"inline\" ezarrita egiten da hori.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:180
+#: attachment/attachmentpropertiesdialog.cpp:179
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be signed.</p><p>The "
@@ -182,7 +182,7 @@ msgstr ""
 "<p>Markatu aukera hori mezuaren atal hori sinatzea nahi baduzu.</p><p>Unean "
 "hautatuta duzun nortasunarekin elkartu zenuen gakoarekin sinatuko da.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:186
+#: attachment/attachmentpropertiesdialog.cpp:185
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be encrypted.</"
@@ -191,8 +191,8 @@ msgstr ""
 "<p>Markatu aukera hori mezuaren atal hori zifratzea nahi baduzu.</p><p>Atal "
 "hori, mezu honetako hartzaileentzako zifratu egingo da.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:307
-#: attachment/attachmentpropertiesdialog.cpp:322
+#: attachment/attachmentpropertiesdialog.cpp:305
+#: attachment/attachmentpropertiesdialog.cpp:320
 #, kde-format
 msgctxt "@title:window"
 msgid "Attachment Properties"
@@ -317,29 +317,29 @@ msgid ""
 msgstr ""
 "E-posta eranskinek izan dezaketen neurri maximoa bitetan (-1 mugagaberako)"
 
-#: utils/dateformatter.cpp:163
+#: utils/dateformatter.cpp:164
 #, kde-format
 msgctxt "invalid time specified"
 msgid "unknown"
 msgstr "ezezaguna"
 
-#: utils/dateformatter.cpp:175
+#: utils/dateformatter.cpp:176
 #, kde-format
 msgid "Today %1"
 msgstr "Gaur %1"
 
-#: utils/dateformatter.cpp:178
+#: utils/dateformatter.cpp:179
 #, kde-format
 msgid "Yesterday %1"
 msgstr "Atzo %1"
 
-#: utils/dateformatter.cpp:183
+#: utils/dateformatter.cpp:184
 #, kde-format
 msgctxt "1. weekday, 2. time"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: utils/stringutil.cpp:415
+#: utils/stringutil.cpp:414
 #, kde-format
 msgctxt "signal that this email is defined in my identity"
 msgid "Me"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-14 00:40+0000\n"
+"POT-Creation-Date: 2025-06-25 00:43+0000\n"
 "PO-Revision-Date: 2024-08-02 07:49+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -38,7 +38,7 @@ msgstr "לא ניתן להפעיל דחיסת קבצים מצורפים."
 msgid "Could not compress the attachment."
 msgstr "לא ניתן לדחוס את הקובץ המצורף."
 
-#: attachment/attachmentfromfolderjob.cpp:51
+#: attachment/attachmentfromfolderjob.cpp:52
 #, kde-format
 msgid "Could not create compressed file."
 msgstr "לא ניתן ליצור קובץ דחוס."
@@ -61,29 +61,29 @@ msgstr "לא ניתן להוסיף את %1 לארכיון"
 msgid "Could not open %1 for reading."
 msgstr "לא ניתן לפתוח את %1 לקריאה."
 
-#: attachment/attachmentfromurljob.cpp:68
+#: attachment/attachmentfromurljob.cpp:69
 #, kde-format
 msgctxt "a file called 'unknown.ext'"
 msgid "unknown%1"
 msgstr "לא_ידוע%1"
 
-#: attachment/attachmentfromurljob.cpp:70
+#: attachment/attachmentfromurljob.cpp:71
 #, kde-format
 msgctxt "a file called 'unknown'"
 msgid "unknown"
 msgstr "לא_ידוע"
 
-#: attachment/attachmentfromurljob.cpp:102
+#: attachment/attachmentfromurljob.cpp:103
 #, kde-format
 msgid "\"%1\" not found. Please specify the full path."
 msgstr "„%1” לא נמצא. נא לציין את הנתיב המלא."
 
-#: attachment/attachmentfromurljob.cpp:111
+#: attachment/attachmentfromurljob.cpp:112
 #, kde-format
 msgid "You may not attach files bigger than %1. Share it with storage service."
 msgstr "אסור לצרף קבצים גדולים מ־%1. יש לשתף אותם דרך שירותי אחסון."
 
-#: attachment/attachmentpropertiesdialog.cpp:134
+#: attachment/attachmentpropertiesdialog.cpp:133
 #, kde-format
 msgid ""
 "<p>The <em>MIME type</em> of the file:</p><p>Normally, you do not need to "
@@ -95,7 +95,7 @@ msgstr ""
 "הזאת, כיוון שסוג הקובץ נבדק אוטומטית; אבל, לפעמים, הזיהוי של %1 לא נכון -- "
 "כאן אפשר לתקן את זה.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:142
+#: attachment/attachmentpropertiesdialog.cpp:141
 #, kde-format
 msgid ""
 "<p>The estimated size of the attachment:</p><p>Note that, in an email "
@@ -105,7 +105,7 @@ msgstr ""
 "<p>גודל הצרופה המשוערך:</p><p>כדאי לשים לב שבכל הודעת דוא״ל, קובץ בינרי "
 "בקידוד base64 יתפוס שלושה רבעים מגודל הקובץ בפועל.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:147
+#: attachment/attachmentpropertiesdialog.cpp:146
 #, kde-format
 msgid ""
 "<p>The file name of the part:</p><p>Although this defaults to the name of "
@@ -117,7 +117,7 @@ msgstr ""
 "היא לא מציינת את הקובץ לצירוף; במקום, היא היא מציעה שם קובץ לשימוש על ידי "
 "סוכן הדוא״ל של הנמעןבעת שמירת החלק לכונן.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:154
+#: attachment/attachmentpropertiesdialog.cpp:153
 #, kde-format
 msgid ""
 "<p>A description of the part:</p><p>This is just an informational "
@@ -129,7 +129,7 @@ msgstr ""
 "להודעה עצמה, רוב סוכני הדוא״ל יציגו את הפרטים האלה בתצוגות המקדימות של "
 "ההודעות שלהן לצד סמל הקובץ המצורף.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:161
+#: attachment/attachmentpropertiesdialog.cpp:160
 #, kde-format
 msgid ""
 "<p>The transport encoding of this part:</p><p>Normally, you do not need to "
@@ -147,7 +147,7 @@ msgstr ""
 "printable” (ציטטות להדפסה) על פני ברירת המחדל „base64” (בסיס 64) יחסוך עד "
 "25% בגודל ההודעה שתתקבל.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:172
+#: attachment/attachmentpropertiesdialog.cpp:171
 #, kde-format
 msgid ""
 "<p>Check this option if you want to suggest to the recipient the automatic "
@@ -161,7 +161,7 @@ msgstr ""
 "p><p>טכנית, זה מטופל על ידי הגדרת שדה הכותרת <em>Content-Disposition</em> של "
 "החלק הזה ל־„inline” (פנימי) במקום ברירת המחדל „attachment” (צרופה).</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:180
+#: attachment/attachmentpropertiesdialog.cpp:179
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be signed.</p><p>The "
@@ -171,7 +171,7 @@ msgstr ""
 "<p>יש לסמן את האפשרות הזאת כדי שהחלק הזה בהודעה ייחתם.</p><p>החתימה החתימה "
 "תתבצע באמצעות המפתח ששייכת לזהות הנבחרת הנוכחית.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:186
+#: attachment/attachmentpropertiesdialog.cpp:185
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be encrypted.</"
@@ -180,8 +180,8 @@ msgstr ""
 "<p>יש לסמן את האפשרות הזאת כדי שהחלק הזה בהודעה יוצפן.</p><p>החלק יוצפן "
 "לנמעני ההודעה.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:307
-#: attachment/attachmentpropertiesdialog.cpp:322
+#: attachment/attachmentpropertiesdialog.cpp:305
+#: attachment/attachmentpropertiesdialog.cpp:320
 #, kde-format
 msgctxt "@title:window"
 msgid "Attachment Properties"
@@ -305,29 +305,29 @@ msgid ""
 "no limit)"
 msgstr "הגודל המרבי המותר בסיביות לקבצים מצורפים להודעה (‎-1 לביטול ההגבלה)"
 
-#: utils/dateformatter.cpp:163
+#: utils/dateformatter.cpp:164
 #, kde-format
 msgctxt "invalid time specified"
 msgid "unknown"
 msgstr "לא_ידוע"
 
-#: utils/dateformatter.cpp:175
+#: utils/dateformatter.cpp:176
 #, kde-format
 msgid "Today %1"
 msgstr "היום ב־%1"
 
-#: utils/dateformatter.cpp:178
+#: utils/dateformatter.cpp:179
 #, kde-format
 msgid "Yesterday %1"
 msgstr "אתמול ב־%1"
 
-#: utils/dateformatter.cpp:183
+#: utils/dateformatter.cpp:184
 #, kde-format
 msgctxt "1. weekday, 2. time"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: utils/stringutil.cpp:415
+#: utils/stringutil.cpp:414
 #, kde-format
 msgctxt "signal that this email is defined in my identity"
 msgid "Me"

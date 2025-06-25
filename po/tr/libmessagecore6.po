@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-14 00:40+0000\n"
+"POT-Creation-Date: 2025-06-25 00:43+0000\n"
 "PO-Revision-Date: 2024-08-02 14:04+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -46,7 +46,7 @@ msgstr "Ek sıkıştırma süreci başlatılamadı."
 msgid "Could not compress the attachment."
 msgstr "Ek sıkıştırılamadı."
 
-#: attachment/attachmentfromfolderjob.cpp:51
+#: attachment/attachmentfromfolderjob.cpp:52
 #, kde-format
 msgid "Could not create compressed file."
 msgstr "Sıkıştırılmış dosya oluşturulamadı."
@@ -69,30 +69,30 @@ msgstr "%1 arşive eklenemedi"
 msgid "Could not open %1 for reading."
 msgstr "%1 dosyası okumak için açılamadı."
 
-#: attachment/attachmentfromurljob.cpp:68
+#: attachment/attachmentfromurljob.cpp:69
 #, kde-format
 msgctxt "a file called 'unknown.ext'"
 msgid "unknown%1"
 msgstr "bilinmeyen%1"
 
-#: attachment/attachmentfromurljob.cpp:70
+#: attachment/attachmentfromurljob.cpp:71
 #, kde-format
 msgctxt "a file called 'unknown'"
 msgid "unknown"
 msgstr "bilinmeyen"
 
-#: attachment/attachmentfromurljob.cpp:102
+#: attachment/attachmentfromurljob.cpp:103
 #, kde-format
 msgid "\"%1\" not found. Please specify the full path."
 msgstr "“%1” bulunamadı. Lütfen tam yolu belirtin."
 
-#: attachment/attachmentfromurljob.cpp:111
+#: attachment/attachmentfromurljob.cpp:112
 #, kde-format
 msgid "You may not attach files bigger than %1. Share it with storage service."
 msgstr ""
 "%1 boyutundan büyük dosyalar iliştiremezsiniz. Depolama hizmeti ile paylaşın."
 
-#: attachment/attachmentpropertiesdialog.cpp:134
+#: attachment/attachmentpropertiesdialog.cpp:133
 #, kde-format
 msgid ""
 "<p>The <em>MIME type</em> of the file:</p><p>Normally, you do not need to "
@@ -105,7 +105,7 @@ msgstr ""
 "uygulaması dosya türünü kendiliğinden bulamayabilir — böyle durumlarda dosya "
 "türünü buradan ayarlayabilirsiniz.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:142
+#: attachment/attachmentpropertiesdialog.cpp:141
 #, kde-format
 msgid ""
 "<p>The estimated size of the attachment:</p><p>Note that, in an email "
@@ -115,7 +115,7 @@ msgstr ""
 "<p>Ekin tahmini büyüklüğü:</p><p>E-posta iletisinde base64 ile kodlanmış bir "
 "ikili dosya, gerçek boyutunun dört bölü üçü kadar yer kaplar.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:147
+#: attachment/attachmentpropertiesdialog.cpp:146
 #, kde-format
 msgid ""
 "<p>The file name of the part:</p><p>Although this defaults to the name of "
@@ -128,7 +128,7 @@ msgstr ""
 "kaydedilmesi sırasında alıcının posta programı tarafından kullanılacak bir "
 "dosya adı önerir.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:154
+#: attachment/attachmentpropertiesdialog.cpp:153
 #, kde-format
 msgid ""
 "<p>A description of the part:</p><p>This is just an informational "
@@ -140,7 +140,7 @@ msgstr ""
 "tıpkı Konu kısmının bütün iletiyi ilgilendirmesi gibidir; pek çok posta "
 "programı, bu bilgiyi ek simgesinin yanında, ileti önizlemesinde gösterir.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:161
+#: attachment/attachmentpropertiesdialog.cpp:160
 #, kde-format
 msgid ""
 "<p>The transport encoding of this part:</p><p>Normally, you do not need to "
@@ -159,7 +159,7 @@ msgstr ""
 "printable” seçeneğinin seçilmesi, elde edilen ileti boyutunda %​25’e kadar "
 "tasarruf sağlayacaktır.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:172
+#: attachment/attachmentpropertiesdialog.cpp:171
 #, kde-format
 msgid ""
 "<p>Check this option if you want to suggest to the recipient the automatic "
@@ -174,7 +174,7 @@ msgstr ""
 "üstbilgi alanının öntanımlı “attachment” yerine “inline” olarak "
 "ayarlanmasıyla gerçekleştirilir. </p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:180
+#: attachment/attachmentpropertiesdialog.cpp:179
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be signed.</p><p>The "
@@ -185,7 +185,7 @@ msgstr ""
 "etkinleştirin;</p><p>şu anda seçili kimlik ile ilişkilendirilen anahtar ile "
 "imzalama işlemi yapılacak.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:186
+#: attachment/attachmentpropertiesdialog.cpp:185
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be encrypted.</"
@@ -195,8 +195,8 @@ msgstr ""
 "etkinleştirin;</p><p>bu iletinin alıcıları için bu parça şifrelenmiş "
 "olacaktır</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:307
-#: attachment/attachmentpropertiesdialog.cpp:322
+#: attachment/attachmentpropertiesdialog.cpp:305
+#: attachment/attachmentpropertiesdialog.cpp:320
 #, kde-format
 msgctxt "@title:window"
 msgid "Attachment Properties"
@@ -322,29 +322,29 @@ msgid ""
 msgstr ""
 "E-posta eklerinin alabileceği bit türünden en büyük boyut (sınırsız için —1)"
 
-#: utils/dateformatter.cpp:163
+#: utils/dateformatter.cpp:164
 #, kde-format
 msgctxt "invalid time specified"
 msgid "unknown"
 msgstr "bilinmiyor"
 
-#: utils/dateformatter.cpp:175
+#: utils/dateformatter.cpp:176
 #, kde-format
 msgid "Today %1"
 msgstr "Bugün %1"
 
-#: utils/dateformatter.cpp:178
+#: utils/dateformatter.cpp:179
 #, kde-format
 msgid "Yesterday %1"
 msgstr "Dün %1"
 
-#: utils/dateformatter.cpp:183
+#: utils/dateformatter.cpp:184
 #, kde-format
 msgctxt "1. weekday, 2. time"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: utils/stringutil.cpp:415
+#: utils/stringutil.cpp:414
 #, kde-format
 msgctxt "signal that this email is defined in my identity"
 msgid "Me"

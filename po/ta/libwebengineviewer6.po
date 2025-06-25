@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"POT-Creation-Date: 2025-06-25 00:43+0000\n"
 "PO-Revision-Date: 2024-10-20 16:16+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -23,81 +23,81 @@ msgctxt "@title:window"
 msgid "Developer Tool"
 msgstr "நிரலாளர்களுக்கான கருவிநிரல்"
 
-#: findbar/findbarbase.cpp:39
+#: findbar/findbarbase.cpp:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "மூடு"
 
-#: findbar/findbarbase.cpp:42
+#: findbar/findbarbase.cpp:44
 #, kde-format
 msgid "Close"
 msgstr "மூடு"
 
-#: findbar/findbarbase.cpp:48
+#: findbar/findbarbase.cpp:50
 #, kde-format
 msgctxt "Find text"
 msgid "F&ind:"
 msgstr "&தேடு:"
 
-#: findbar/findbarbase.cpp:53
+#: findbar/findbarbase.cpp:55
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "கண்டுபிடிக்க வேண்டிய சொற்றொடர்"
 
-#: findbar/findbarbase.cpp:58
+#: findbar/findbarbase.cpp:60
 #, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
 msgstr "அடுத்தது"
 
-#: findbar/findbarbase.cpp:59
+#: findbar/findbarbase.cpp:61
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "அடுத்தப் பொருத்தத்துக்குத் தாவும்"
 
-#: findbar/findbarbase.cpp:64
+#: findbar/findbarbase.cpp:66
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
 msgstr "முந்தையது"
 
-#: findbar/findbarbase.cpp:65
+#: findbar/findbarbase.cpp:67
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "முந்தைய பொருத்தத்துக்கு தாவும்"
 
-#: findbar/findbarbase.cpp:71
+#: findbar/findbarbase.cpp:73
 #, kde-format
 msgid "Options"
 msgstr "விருப்பங்கள்"
 
-#: findbar/findbarbase.cpp:72
+#: findbar/findbarbase.cpp:74
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "தேடல் நடத்தையை மாற்ற விடும்"
 
-#: findbar/findbarbase.cpp:74
+#: findbar/findbarbase.cpp:76
 #, kde-format
 msgid "Case sensitive"
 msgstr "எழுத்து வகையை (பெரிது/சிறிது) பொருட்படுத்து"
 
-#: findbar/findbarbase.cpp:91
+#: findbar/findbarbase.cpp:93
 #, kde-format
 msgid "Phrase not found"
 msgstr "சொற்றொடர் கண்டுபிடிக்கப்படவில்லை"
 
-#: webenginepage.cpp:152
+#: webenginepage.cpp:154
 #, kde-format
 msgctxt "@title:window"
 msgid "Save HTML Page"
 msgstr "HTML பக்கத்தை சேமிப்பது"
 
-#: widgets/submittedformwidgets/submittedformwarningwidget.cpp:22
+#: widgets/submittedformwidgets/submittedformwarningwidget.cpp:23
 #, kde-format
 msgid "Submit form is not allowed in mailer. Please open url in a browser."
 msgstr ""
@@ -129,7 +129,7 @@ msgid_plural "%1 trackers from the company %2 (%3)"
 msgstr[0] "%2 (%3) நிறுவனத்திலிருந்து 1 தடங்காட்டி"
 msgstr[1] "%2 (%3) நிறுவனத்திலிருந்து %1 தடங்காட்டிகள்"
 
-#: widgets/zoomactionmenu.cpp:127
+#: widgets/zoomactionmenu.cpp:129
 #, kde-format
 msgid "Zoom"
 msgstr "உருப்பெருக்கம்"

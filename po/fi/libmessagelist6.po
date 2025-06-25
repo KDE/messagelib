@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-24 00:43+0000\n"
+"POT-Creation-Date: 2025-06-25 00:43+0000\n"
 "PO-Revision-Date: 2025-01-12 16:57+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -45,17 +45,17 @@ msgstr "(Säikeiden aloittajien) täsmällisen päivämäärän mukaan"
 msgid "By Smart Date Ranges (of Thread Leaders)"
 msgstr "Älykkäästi (säikeiden aloittajien) päivämäärävälien mukaan"
 
-#: core/aggregation.cpp:180 core/sortorder.cpp:70
+#: core/aggregation.cpp:180 core/sortorder.cpp:71
 #, kde-format
 msgid "By Smart Sender/Receiver"
 msgstr "Älykkäästi lähettäjittäin/vastaanottajittain"
 
-#: core/aggregation.cpp:181 core/sortorder.cpp:68
+#: core/aggregation.cpp:181 core/sortorder.cpp:69
 #, kde-format
 msgid "By Sender"
 msgstr "Lähettäjittäin"
 
-#: core/aggregation.cpp:182 core/sortorder.cpp:69
+#: core/aggregation.cpp:182 core/sortorder.cpp:70
 #, kde-format
 msgid "By Receiver"
 msgstr "Vastaanottajittain"
@@ -141,96 +141,96 @@ msgstr "Suosi nopeutta"
 msgid "Batch Job (No Interactivity)"
 msgstr "Eräajo (ei vuorovaikutteisuutta)"
 
-#: core/item.cpp:251 core/messageitem.cpp:489
+#: core/item.cpp:253 core/messageitem.cpp:491
 #, kde-format
 msgctxt "Status of an item"
 msgid "Read"
 msgstr "Luettu"
 
-#: core/item.cpp:253 core/messageitem.cpp:489
+#: core/item.cpp:255 core/messageitem.cpp:491
 #, kde-format
 msgctxt "Status of an item"
 msgid "Unread"
 msgstr "Lukematta"
 
-#: core/item.cpp:257
+#: core/item.cpp:259
 #, kde-format
 msgctxt "Status of an item"
 msgid "Has Attachment"
 msgstr "Sisältää liitteen"
 
-#: core/item.cpp:261
+#: core/item.cpp:263
 #, kde-format
 msgctxt "Status of an item"
 msgid "Action Item"
 msgstr "Tehtävä"
 
-#: core/item.cpp:265 core/messageitem.cpp:487
+#: core/item.cpp:267 core/messageitem.cpp:489
 #, kde-format
 msgctxt "Status of an item"
 msgid "Replied"
 msgstr "Vastattu"
 
-#: core/item.cpp:269
+#: core/item.cpp:271
 #, kde-format
 msgctxt "Status of an item"
 msgid "Forwarded"
 msgstr "Välitetty"
 
-#: core/item.cpp:273
+#: core/item.cpp:275
 #, kde-format
 msgctxt "Status of an item"
 msgid "Sent"
 msgstr "Lähetetty"
 
-#: core/item.cpp:277
+#: core/item.cpp:279
 #, kde-format
 msgctxt "Status of an item"
 msgid "Important"
 msgstr "Tärkeä"
 
-#: core/item.cpp:281
+#: core/item.cpp:283
 #, kde-format
 msgctxt "Status of an item"
 msgid "Spam"
 msgstr "Roskaposti"
 
-#: core/item.cpp:285
+#: core/item.cpp:287
 #, kde-format
 msgctxt "Status of an item"
 msgid "Ham"
 msgstr "Ei roskaposti"
 
-#: core/item.cpp:289
+#: core/item.cpp:291
 #, kde-format
 msgctxt "Status of an item"
 msgid "Watched"
 msgstr "Seurattu"
 
-#: core/item.cpp:293
+#: core/item.cpp:295
 #, kde-format
 msgctxt "Status of an item"
 msgid "Ignored"
 msgstr "Ohitettu"
 
-#: core/item.cpp:296
+#: core/item.cpp:298
 #, kde-format
 msgctxt "Status of an item"
 msgid "Queued"
 msgstr "Jonossa"
 
-#: core/manager.cpp:33 core/model.cpp:334
+#: core/manager.cpp:34 core/model.cpp:336
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "Tuntematon"
 
-#: core/manager.cpp:202
+#: core/manager.cpp:203
 #, kde-format
 msgid "Current Activity, Threaded"
 msgstr "Ajankohtainen toiminta, säikeistetty"
 
-#: core/manager.cpp:203
+#: core/manager.cpp:204
 #, kde-format
 msgid ""
 "This view uses smart date range groups. Messages are threaded. So for "
@@ -241,12 +241,12 @@ msgstr ""
 "joten esim. otsakkeen ”Tänään” alta löydät tänään saapuneet viestit sekä "
 "kaikki tänään aktivoituneet säikeet."
 
-#: core/manager.cpp:215
+#: core/manager.cpp:216
 #, kde-format
 msgid "Current Activity, Flat"
 msgstr "Ajankohtainen toiminta, säikeistämätön"
 
-#: core/manager.cpp:216
+#: core/manager.cpp:217
 #, kde-format
 msgid ""
 "This view uses smart date range groups. Messages are not threaded. So for "
@@ -256,12 +256,12 @@ msgstr ""
 "joten esim. otsikon ”Tänään” alta löydät yksinkertaisesti tänään saapuneet "
 "viestit."
 
-#: core/manager.cpp:227
+#: core/manager.cpp:228
 #, kde-format
 msgid "Activity by Date, Threaded"
 msgstr "Toiminta päiväyksittäin, säikeistetty"
 
-#: core/manager.cpp:228
+#: core/manager.cpp:229
 #, kde-format
 msgid ""
 "This view uses day-by-day groups. Messages are threaded. So for example, in "
@@ -272,12 +272,12 @@ msgstr ""
 "otsikon ”Tänään” alta löydät tänään saapuneet viestit sekä kaikki tänään "
 "aktivoituneet säikeet."
 
-#: core/manager.cpp:240
+#: core/manager.cpp:241
 #, kde-format
 msgid "Activity by Date, Flat"
 msgstr "Toiminta päiväyksittäin, säikeistämätön"
 
-#: core/manager.cpp:241
+#: core/manager.cpp:242
 #, kde-format
 msgid ""
 "This view uses day-by-day groups. Messages are not threaded. So for example, "
@@ -286,12 +286,12 @@ msgstr ""
 "Tämä näkymä käyttää päiväysryhmittelyä. Viestejä ei säikeistetä, joten esim. "
 "otsikon ”Tänään” alta löydät yksinkertaisesti tänään saapuneet viestit."
 
-#: core/manager.cpp:252
+#: core/manager.cpp:253
 #, kde-format
 msgid "Standard Mailing List"
 msgstr "Yksinkertainen viestiluettelo"
 
-#: core/manager.cpp:253
+#: core/manager.cpp:254
 #, kde-format
 msgid ""
 "This is a plain and old mailing list view: no groups and heavy threading."
@@ -299,12 +299,12 @@ msgstr ""
 "Tämä on yksinkertainen, vanha postituslistanäkymä: ei ryhmiä ja kova "
 "säikeistys."
 
-#: core/manager.cpp:262
+#: core/manager.cpp:263
 #, kde-format
 msgid "Flat Date View"
 msgstr "Säikeistämätön päivänäkymä"
 
-#: core/manager.cpp:263
+#: core/manager.cpp:264
 #, kde-format
 msgid ""
 "This is a plain and old list of messages sorted by date: no groups and no "
@@ -313,12 +313,12 @@ msgstr ""
 "Tämä on yksinkertainen, vanhanaikainen päiväyksen mukaan lajiteltu "
 "viestiluettelo: ei ryhmiä eikä säikeitä."
 
-#: core/manager.cpp:274
+#: core/manager.cpp:275
 #, kde-format
 msgid "Senders/Receivers, Flat"
 msgstr "Lähettäjät/Vastaanottajat, lattea"
 
-#: core/manager.cpp:275
+#: core/manager.cpp:276
 #, kde-format
 msgid ""
 "This view groups the messages by senders or receivers (depending on the "
@@ -327,12 +327,12 @@ msgstr ""
 "Tämä näkymä kokoaa viestit lähettäjittäin tai vastaanottajittain (kansiosta "
 "riippuen). Viestejä ei säikeistetä."
 
-#: core/manager.cpp:286
+#: core/manager.cpp:287
 #, kde-format
 msgid "Thread Starters"
 msgstr "Säikeen käynnistäjät"
 
-#: core/manager.cpp:287
+#: core/manager.cpp:288
 #, kde-format
 msgid ""
 "This view groups the messages in threads and then groups the threads by the "
@@ -341,80 +341,80 @@ msgstr ""
 "Tämä näkymä kokoaa viestit ensin säikeiksi, sitten ryhmittelee säikeet ne "
 "aloittaneen käyttäjän mukaan."
 
-#: core/manager.cpp:564
+#: core/manager.cpp:565
 #, kde-format
 msgctxt "Default theme name"
 msgid "Classic"
 msgstr "Perinteinen"
 
-#: core/manager.cpp:564
+#: core/manager.cpp:565
 #, kde-format
 msgid "A simple, backward compatible, single row theme"
 msgstr "Yksinkertainen, taaksepäin yhteensopiva yksirivinen teema"
 
-#: core/manager.cpp:568
+#: core/manager.cpp:569
 #, kde-format
 msgctxt "@title:column Subject of messages"
 msgid "Subject"
 msgstr "Aihe"
 
-#: core/manager.cpp:601 core/theme.cpp:112
+#: core/manager.cpp:602 core/theme.cpp:113
 #, kde-format
 msgid "Sender/Receiver"
 msgstr "Lähettäjä/Vastaanottaja"
 
-#: core/manager.cpp:608
+#: core/manager.cpp:609
 #, kde-format
 msgctxt "Sender of a message"
 msgid "Sender"
 msgstr "Lähettäjä"
 
-#: core/manager.cpp:610
+#: core/manager.cpp:611
 #, kde-format
 msgctxt "Receiver of a message"
 msgid "Receiver"
 msgstr "Vastaanottaja"
 
-#: core/manager.cpp:616
+#: core/manager.cpp:617
 #, kde-format
 msgctxt "Date of a message"
 msgid "Date"
 msgstr "Päiväys"
 
-#: core/manager.cpp:618
+#: core/manager.cpp:619
 #, kde-format
 msgid "Most Recent Date"
 msgstr "Viimeisin päiväys"
 
-#: core/manager.cpp:624
+#: core/manager.cpp:625
 #, kde-format
 msgctxt "Size of a message"
 msgid "Size"
 msgstr "Koko"
 
-#: core/manager.cpp:626
+#: core/manager.cpp:627
 #, kde-format
 msgctxt "Attachment indication"
 msgid "Attachment"
 msgstr "Liite"
 
-#: core/manager.cpp:632
+#: core/manager.cpp:633
 #, kde-format
 msgid "Read/Unread"
 msgstr "Luettu/Lukematta"
 
-#: core/manager.cpp:637
+#: core/manager.cpp:638
 #, kde-format
 msgid "Replied"
 msgstr "Vastattu"
 
-#: core/manager.cpp:639
+#: core/manager.cpp:640
 #, kde-format
 msgctxt "Message importance indication"
 msgid "Important"
 msgstr "Tärkeä"
 
-#: core/manager.cpp:645
+#: core/manager.cpp:646
 #, kde-format
 msgid "Action Item"
 msgstr "Tehtävä"
@@ -424,137 +424,137 @@ msgstr "Tehtävä"
 msgid "Spam/Ham"
 msgstr "Roskaposti/Ei roskaposti"
 
-#: core/manager.cpp:657
+#: core/manager.cpp:653
 #, kde-format
 msgid "Watched/Ignored"
 msgstr "Seuratut/Ohitetut"
 
-#: core/manager.cpp:663
+#: core/manager.cpp:658
 #, kde-format
 msgid "Encryption"
 msgstr "Salaus"
 
-#: core/manager.cpp:669
+#: core/manager.cpp:659
 #, kde-format
 msgid "Signature"
 msgstr "Allekirjoitus"
 
-#: core/manager.cpp:674
+#: core/manager.cpp:660
 #, kde-format
 msgid "Tag List"
 msgstr "Tunnisteluettelo"
 
-#: core/manager.cpp:682
+#: core/manager.cpp:668
 #, kde-format
 msgid "Smart"
 msgstr "Älykäs"
 
-#: core/manager.cpp:682
+#: core/manager.cpp:668
 #, kde-format
 msgid "A smart multiline and multi item theme"
 msgstr "Älykäs monirivinen, monitietueinen teema"
 
-#: core/manager.cpp:686
+#: core/manager.cpp:672
 #, kde-format
 msgid "Message"
 msgstr "Viesti"
 
-#: core/manager.cpp:767
+#: core/manager.cpp:753
 #, kde-format
 msgid "Smart with Clickable Status"
 msgstr "Älykäs napsautettavalla tilalla"
 
-#: core/manager.cpp:768
+#: core/manager.cpp:754
 #, kde-format
 msgid "A smart multiline and multi item theme with a clickable status column"
 msgstr ""
 "Älykäs monirivinen, monitietueinen teema, jossa napsautettava tilasarake"
 
-#: core/manager.cpp:772 core/view.cpp:2262 core/view.cpp:2266
+#: core/manager.cpp:758 core/view.cpp:2262 core/view.cpp:2266
 #, kde-format
 msgid "Status"
 msgstr "Tila"
 
-#: core/model.cpp:332
+#: core/model.cpp:334
 #, kde-format
 msgid "Today"
 msgstr "Tänään"
 
-#: core/model.cpp:333
+#: core/model.cpp:335
 #, kde-format
 msgid "Yesterday"
 msgstr "Eilen"
 
-#: core/model.cpp:335
+#: core/model.cpp:337
 #, kde-format
 msgid "Last Week"
 msgstr "Viime viikolla"
 
-#: core/model.cpp:336
+#: core/model.cpp:338
 #, kde-format
 msgid "Two Weeks Ago"
 msgstr "Kaksi viikkoa sitten"
 
-#: core/model.cpp:337
+#: core/model.cpp:339
 #, kde-format
 msgid "Three Weeks Ago"
 msgstr "Kolme viikkoa sitten"
 
-#: core/model.cpp:338
+#: core/model.cpp:340
 #, kde-format
 msgid "Four Weeks Ago"
 msgstr "Neljä viikkoa sitten"
 
-#: core/model.cpp:339
+#: core/model.cpp:341
 #, kde-format
 msgid "Five Weeks Ago"
 msgstr "Viisi viikkoa sitten"
 
-#: core/model.cpp:552 utils/themeeditor.cpp:187
+#: core/model.cpp:554 utils/themeeditor.cpp:189
 #, kde-format
 msgid "Receiver"
 msgstr "Vastaanottaja"
 
-#: core/model.cpp:554 utils/themeeditor.cpp:186
+#: core/model.cpp:556 utils/themeeditor.cpp:188
 #, kde-format
 msgid "Sender"
 msgstr "Lähettäjä"
 
-#: core/model.cpp:1375
+#: core/model.cpp:1377
 #, kde-format
 msgctxt "Message Aggregation Group Header: Month name and Year number"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: core/model.cpp:3795
+#: core/model.cpp:3797
 #, kde-format
 msgid "Processed 1 Message of %2"
 msgid_plural "Processed %1 Messages of %2"
 msgstr[0] "Käsitelty 1/%2 viesti"
 msgstr[1] "Käsitelty %1/%2 viestiä"
 
-#: core/model.cpp:3801 core/model.cpp:3807
+#: core/model.cpp:3803 core/model.cpp:3809
 #, kde-format
 msgid "Threaded 1 Message of %2"
 msgid_plural "Threaded %1 Messages of %2"
 msgstr[0] "Säikeistetty 1 viesti %2:sta"
 msgstr[1] "Säikeistetty %1 viestiä %2:sta"
 
-#: core/model.cpp:3813
+#: core/model.cpp:3815
 #, kde-format
 msgid "Grouped 1 Thread of %2"
 msgid_plural "Grouped %1 Threads of %2"
 msgstr[0] "Ryhmitelty 1 säie %2:sta"
 msgstr[1] "Ryhmitelty %1 säiettä %2:sta"
 
-#: core/model.cpp:3819
+#: core/model.cpp:3821
 #, kde-format
 msgid "Updated 1 Group of %2"
 msgid_plural "Updated %1 Groups of %2"
 msgstr[0] "Päivitetty 1 ryhmä %2:sta"
 msgstr[1] "Päivitetty %1 ryhmää %2:sta"
 
-#: core/model.cpp:3911
+#: core/model.cpp:3913
 #, kde-format
 msgctxt "@info:status Finished view fill"
 msgid "Ready"
@@ -576,293 +576,293 @@ msgstr ""
 "Näytä työkaluvihjeet hiiren ollessa viestiluettelon yllä valitsemalla tämä "
 "asetus."
 
-#: core/sortorder.cpp:63 core/sortorder.cpp:107
+#: core/sortorder.cpp:64 core/sortorder.cpp:108
 #, kde-format
 msgid "None (Storage Order)"
 msgstr "Ei mitenkään (varastointijärjestys)"
 
-#: core/sortorder.cpp:64
+#: core/sortorder.cpp:65
 #, kde-format
 msgid "By Date/Time"
 msgstr "Päiväyksen mukaan"
 
-#: core/sortorder.cpp:66
+#: core/sortorder.cpp:67
 #, kde-format
 msgid "By Date/Time of Most Recent in Subtree"
 msgstr "Alipuun viimeisimmän päiväyksen mukaan"
 
-#: core/sortorder.cpp:71
+#: core/sortorder.cpp:72
 #, kde-format
 msgid "By Subject"
 msgstr "Aiheittain"
 
-#: core/sortorder.cpp:72
+#: core/sortorder.cpp:73
 #, kde-format
 msgid "By Size"
 msgstr "Koon mukaan"
 
-#: core/sortorder.cpp:73
+#: core/sortorder.cpp:74
 #, kde-format
 msgid "By Action Item Status"
 msgstr "Toiminnan tilan mukaan"
 
-#: core/sortorder.cpp:74
+#: core/sortorder.cpp:75
 #, kde-format
 msgid "By Unread Status"
 msgstr "Lukematta-tilan mukaan"
 
-#: core/sortorder.cpp:75
+#: core/sortorder.cpp:76
 #, kde-format
 msgid "By Important Status"
 msgstr "Tärkeysasteen mukaan"
 
-#: core/sortorder.cpp:76
+#: core/sortorder.cpp:77
 #, kde-format
 msgid "By Attachment Status"
 msgstr "Liitteen tilan mukaan"
 
-#: core/sortorder.cpp:88 core/sortorder.cpp:130
+#: core/sortorder.cpp:89 core/sortorder.cpp:131
 #, kde-format
 msgid "Least Recent on Top"
 msgstr "Vanhin ylinnä"
 
-#: core/sortorder.cpp:89 core/sortorder.cpp:131
+#: core/sortorder.cpp:90 core/sortorder.cpp:132
 #, kde-format
 msgid "Most Recent on Top"
 msgstr "Uusin ylinnä"
 
-#: core/sortorder.cpp:93
+#: core/sortorder.cpp:94
 #, kde-format
 msgctxt "Sort order for messages"
 msgid "Ascending"
 msgstr "Nouseva"
 
-#: core/sortorder.cpp:94
+#: core/sortorder.cpp:95
 #, kde-format
 msgctxt "Sort order for messages"
 msgid "Descending"
 msgstr "Laskeva"
 
-#: core/sortorder.cpp:105
+#: core/sortorder.cpp:106
 #, kde-format
 msgid "by Date/Time"
 msgstr "Päiväyksen mukaan"
 
-#: core/sortorder.cpp:108
+#: core/sortorder.cpp:109
 #, kde-format
 msgid "by Date/Time of Most Recent Message in Group"
 msgstr "Ryhmän viimeisimmän viestin päiväyksen mukaan"
 
-#: core/sortorder.cpp:112
+#: core/sortorder.cpp:113
 #, kde-format
 msgid "by Sender/Receiver"
 msgstr "Lähettäjittäin/Vastaanottajittain"
 
-#: core/sortorder.cpp:114
+#: core/sortorder.cpp:115
 #, kde-format
 msgid "by Sender"
 msgstr "Lähettäjittäin"
 
-#: core/sortorder.cpp:116
+#: core/sortorder.cpp:117
 #, kde-format
 msgid "by Receiver"
 msgstr "Vastaanottajittain"
 
-#: core/sortorder.cpp:134
+#: core/sortorder.cpp:135
 #, kde-format
 msgctxt "Sort order for mail groups"
 msgid "Ascending"
 msgstr "Nouseva"
 
-#: core/sortorder.cpp:135
+#: core/sortorder.cpp:136
 #, kde-format
 msgctxt "Sort order for mail groups"
 msgid "Descending"
 msgstr "Laskeva"
 
-#: core/theme.cpp:106
+#: core/theme.cpp:107
 #, kde-format
 msgctxt "Description of Type Subject"
 msgid "Subject"
 msgstr "Aihe"
 
-#: core/theme.cpp:109
+#: core/theme.cpp:110
 #, kde-format
 msgctxt "Description of Type Date"
 msgid "Date"
 msgstr "Päiväys"
 
-#: core/theme.cpp:115
+#: core/theme.cpp:116
 #, kde-format
 msgctxt "Description of Type Sender"
 msgid "Sender"
 msgstr "Lähettäjä"
 
-#: core/theme.cpp:118
+#: core/theme.cpp:119
 #, kde-format
 msgctxt "Description of Type Receiver"
 msgid "Receiver"
 msgstr "Vastaanottaja"
 
-#: core/theme.cpp:121
+#: core/theme.cpp:122
 #, kde-format
 msgctxt "Description of Type Size"
 msgid "Size"
 msgstr "Koko"
 
-#: core/theme.cpp:124
+#: core/theme.cpp:125
 #, kde-format
 msgid "Unread/Read Icon"
 msgstr "Lukematta/Luettu-kuvake"
 
-#: core/theme.cpp:127
+#: core/theme.cpp:128
 #, kde-format
 msgid "Attachment Icon"
 msgstr "Liitteen kuvake"
 
-#: core/theme.cpp:130
+#: core/theme.cpp:131
 #, kde-format
 msgid "Replied/Forwarded Icon"
 msgstr "Vastattu/Välitetty-kuvake"
 
-#: core/theme.cpp:133
+#: core/theme.cpp:134
 #, kde-format
 msgid "Combined New/Unread/Read/Replied/Forwarded Icon"
 msgstr "Yhdistetty Uusi/Lukematta/Luettu/Vastattu/Välitetty-kuvake"
 
-#: core/theme.cpp:136
+#: core/theme.cpp:137
 #, kde-format
 msgid "Action Item Icon"
 msgstr "Tehtävän kuvake"
 
-#: core/theme.cpp:139
+#: core/theme.cpp:140
 #, kde-format
 msgid "Important Icon"
 msgstr "Tärkeä-kuvake"
 
-#: core/theme.cpp:142
+#: core/theme.cpp:143
 #, kde-format
 msgid "Group Header Label"
 msgstr "Ryhmäotsakkeen nimiö"
 
-#: core/theme.cpp:145
+#: core/theme.cpp:146
 #, kde-format
 msgid "Spam/Ham Icon"
 msgstr "Roskaposti/Ei roskaposti -kuvake"
 
-#: core/theme.cpp:148
+#: core/theme.cpp:149
 #, kde-format
 msgid "Watched/Ignored Icon"
 msgstr "Seurattu/Ohitettu-kuvake"
 
-#: core/theme.cpp:151
+#: core/theme.cpp:152
 #, kde-format
 msgid "Group Header Expand/Collapse Icon"
 msgstr "Ryhmäotsakkeen Laajenna/Supista-kuvake"
 
-#: core/theme.cpp:154
+#: core/theme.cpp:155
 #, kde-format
 msgid "Encryption State Icon"
 msgstr "Salauksen tilan kuvake"
 
-#: core/theme.cpp:157
+#: core/theme.cpp:158
 #, kde-format
 msgid "Signature State Icon"
 msgstr "Allekirjoituksen tilan kuvake"
 
-#: core/theme.cpp:160
+#: core/theme.cpp:161
 #, kde-format
 msgid "Vertical Separation Line"
 msgstr "Pystyerotinviiva"
 
-#: core/theme.cpp:163
+#: core/theme.cpp:164
 #, kde-format
 msgid "Horizontal Spacer"
 msgstr "Vaakavälike"
 
-#: core/theme.cpp:166
+#: core/theme.cpp:167
 #, kde-format
 msgid "Max Date"
 msgstr "Enimm.pvm"
 
-#: core/theme.cpp:169
+#: core/theme.cpp:170
 #, kde-format
 msgid "Message Tags"
 msgstr "Viestien luokittelu"
 
-#: core/theme.cpp:172
+#: core/theme.cpp:173
 #, kde-format
 msgid "Invitation Icon"
 msgstr "Kutsun kuvake"
 
-#: core/theme.cpp:174
+#: core/theme.cpp:175
 #, kde-format
 msgctxt "Description of Type Folder"
 msgid "Folder"
 msgstr "Kansio"
 
-#: core/theme.cpp:176
+#: core/theme.cpp:177
 #, kde-format
 msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "Tuntematon"
 
-#: core/theme.cpp:835
+#: core/theme.cpp:836
 #, kde-format
 msgid "Unread"
 msgstr "Lukematta"
 
-#: core/theme.cpp:1029
+#: core/theme.cpp:1030
 #, kde-format
 msgid "Never Show"
 msgstr "Älä koskaan näytä"
 
-#: core/theme.cpp:1029
+#: core/theme.cpp:1030
 #, kde-format
 msgid "Always Show"
 msgstr "Näytä aina"
 
-#: core/theme.cpp:1034
+#: core/theme.cpp:1035
 #, kde-format
 msgid "Plain Rectangles"
 msgstr "Yksinkertaiset nelikulmiot"
 
-#: core/theme.cpp:1035
+#: core/theme.cpp:1036
 #, kde-format
 msgid "Plain Joined Rectangle"
 msgstr "Yksinkertaiset yhdistetyt nelikulmiot"
 
-#: core/theme.cpp:1036
+#: core/theme.cpp:1037
 #, kde-format
 msgid "Rounded Rectangles"
 msgstr "Pyöristetyt nelikulmiot"
 
-#: core/theme.cpp:1037
+#: core/theme.cpp:1038
 #, kde-format
 msgid "Rounded Joined Rectangle"
 msgstr "Pyöristetyt yhdistetyt nelikulmiot"
 
-#: core/theme.cpp:1038
+#: core/theme.cpp:1039
 #, kde-format
 msgid "Gradient Rectangles"
 msgstr "Liukuvärjätyt nelikulmiot"
 
-#: core/theme.cpp:1039
+#: core/theme.cpp:1040
 #, kde-format
 msgid "Gradient Joined Rectangle"
 msgstr "Liukuvärjätyt yhdistetyt nelikulmiot"
 
-#: core/theme.cpp:1040
+#: core/theme.cpp:1041
 #, kde-format
 msgid "Styled Rectangles"
 msgstr "Tyylitellyt nelikulmiot"
 
-#: core/theme.cpp:1041
+#: core/theme.cpp:1042
 #, kde-format
 msgid "Styled Joined Rectangles"
 msgstr "Tyylitellyt yhdistetyt nelikulmiot"
 
-#: core/view.cpp:686 core/widgets/configurefilterswidget.cpp:152
+#: core/view.cpp:686 core/widgets/configurefilterswidget.cpp:154
 #, kde-format
 msgid "No result found"
 msgstr "Tuloksia ei löytynyt"
@@ -883,7 +883,7 @@ msgid "Display Tooltips"
 msgstr "Näytä työkaluvihjeet"
 
 #: core/view.cpp:2243 core/view.cpp:2247
-#: core/widgets/searchmessagebybuttons.cpp:73
+#: core/widgets/searchmessagebybuttons.cpp:75
 #, kde-format
 msgid "From"
 msgstr "Lähettäjä"
@@ -904,7 +904,7 @@ msgstr "Päivä"
 msgid "Size"
 msgstr "Koko"
 
-#: core/view.cpp:2264 core/view.cpp:2268 utils/themeeditor.cpp:189
+#: core/view.cpp:2264 core/view.cpp:2268 utils/themeeditor.cpp:191
 #, kde-format
 msgid "Folder"
 msgstr "Kansio"
@@ -1056,18 +1056,18 @@ msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "Luo suodatin"
 
-#: core/widgetbase.cpp:423 messagelistutil.cpp:114
+#: core/widgetbase.cpp:423 messagelistutil.cpp:115
 #, kde-format
 msgid "Theme"
 msgstr "Aika"
 
 #: core/widgetbase.cpp:444 core/widgetbase.cpp:534
-#: core/widgets/configurefilterswidget.cpp:75
+#: core/widgets/configurefilterswidget.cpp:77
 #, kde-format
 msgid "Configure..."
 msgstr "Asetukset…"
 
-#: core/widgetbase.cpp:513 messagelistutil.cpp:109
+#: core/widgetbase.cpp:513 messagelistutil.cpp:110
 #, kde-format
 msgid "Aggregation"
 msgstr "Koonta"
@@ -1103,17 +1103,17 @@ msgctxt "@title:window"
 msgid "Configure Filter"
 msgstr "Suodattimen asetukset"
 
-#: core/widgets/configurefilterswidget.cpp:79
+#: core/widgets/configurefilterswidget.cpp:81
 #, kde-format
 msgid "Remove"
 msgstr "Poista"
 
-#: core/widgets/configurefilterswidget.cpp:82
+#: core/widgets/configurefilterswidget.cpp:84
 #, kde-format
 msgid "Do you want to delete this filter?"
 msgstr "Haluatko poistaa tämän suodattimen?"
 
-#: core/widgets/configurefilterswidget.cpp:83
+#: core/widgets/configurefilterswidget.cpp:85
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Filter"
@@ -1131,13 +1131,13 @@ msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "Nimi:"
 
-#: core/widgets/filtersavedmenu.cpp:16
+#: core/widgets/filtersavedmenu.cpp:18
 #, kde-format
 msgctxt "@action"
 msgid "Save Filter..."
 msgstr "Tallenna suodatin…"
 
-#: core/widgets/filtersavedmenu.cpp:17
+#: core/widgets/filtersavedmenu.cpp:19
 #, kde-format
 msgctxt "@action"
 msgid "Configure..."
@@ -1160,7 +1160,7 @@ msgctxt "@action"
 msgid "Do not show again"
 msgstr "Älä näytä enää"
 
-#: core/widgets/searchcollectionindexingwarning.cpp:37
+#: core/widgets/searchcollectionindexingwarning.cpp:39
 #, kde-format
 msgid ""
 "Some of the search folders in this query are still being indexed or are "
@@ -1309,193 +1309,193 @@ msgstr "Viesti sisältää toiminnon"
 msgid "AND"
 msgstr "JA"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:47
+#: core/widgets/searchlinecommandbuttonswidget.cpp:49
 #, kde-format
 msgctxt "@action:button"
 msgid "Subject"
 msgstr "Aihe"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:48
+#: core/widgets/searchlinecommandbuttonswidget.cpp:50
 #, kde-format
 msgctxt "@action:button"
 msgid "Body"
 msgstr "Runko"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:49
+#: core/widgets/searchlinecommandbuttonswidget.cpp:51
 #, kde-format
 msgctxt "@action:button"
 msgid "From"
 msgstr "Lähettäjä"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:50
+#: core/widgets/searchlinecommandbuttonswidget.cpp:52
 #, kde-format
 msgctxt "@action:button"
 msgid "To"
 msgstr "Vastaanottaja"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:51
+#: core/widgets/searchlinecommandbuttonswidget.cpp:53
 #, kde-format
 msgctxt "@action:button"
 msgid "Cc"
 msgstr "Kopio"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:52
+#: core/widgets/searchlinecommandbuttonswidget.cpp:54
 #, kde-format
 msgctxt "@action:button"
 msgid "Bcc"
 msgstr "Piilokopio"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:53
+#: core/widgets/searchlinecommandbuttonswidget.cpp:55
 #, kde-format
 msgctxt "@action:button"
 msgid "Has Attachment"
 msgstr "Sisältää liitteen"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:54
+#: core/widgets/searchlinecommandbuttonswidget.cpp:56
 #, kde-format
 msgctxt "@action:button"
 msgid "Has Invitation"
 msgstr "Sisältää kutsun"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:55
+#: core/widgets/searchlinecommandbuttonswidget.cpp:57
 #, kde-format
 msgctxt "@action:button"
 msgid "Read"
 msgstr "Luettu"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:56
+#: core/widgets/searchlinecommandbuttonswidget.cpp:58
 #, kde-format
 msgctxt "@action:button"
 msgid "Unread"
 msgstr "Lukematta"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:57
+#: core/widgets/searchlinecommandbuttonswidget.cpp:59
 #, kde-format
 msgctxt "@action:button"
 msgid "Important"
 msgstr "Tärkeä"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:58
+#: core/widgets/searchlinecommandbuttonswidget.cpp:60
 #, kde-format
 msgctxt "@action:button"
 msgid "Ignored"
 msgstr "Sivuutettu"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:59
+#: core/widgets/searchlinecommandbuttonswidget.cpp:61
 #, kde-format
 msgctxt "@action:button"
 msgid "Ham"
 msgstr "Ei roskapostia"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:60
+#: core/widgets/searchlinecommandbuttonswidget.cpp:62
 #, kde-format
 msgctxt "@action:button"
 msgid "Spam"
 msgstr "Roskapostia"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:61
+#: core/widgets/searchlinecommandbuttonswidget.cpp:63
 #, kde-format
 msgctxt "@action:button"
 msgid "Watched"
 msgstr "Seurattu"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:62
+#: core/widgets/searchlinecommandbuttonswidget.cpp:64
 #, kde-format
 msgctxt "@action:button"
 msgid "Replied"
 msgstr "Vastattu"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:63
+#: core/widgets/searchlinecommandbuttonswidget.cpp:65
 #, kde-format
 msgctxt "@action:button"
 msgid "Forwarded"
 msgstr "Edennetty"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:64
+#: core/widgets/searchlinecommandbuttonswidget.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Encrypted"
 msgstr "Salattu"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:65
+#: core/widgets/searchlinecommandbuttonswidget.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Queued"
 msgstr "Jonossa"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:66
+#: core/widgets/searchlinecommandbuttonswidget.cpp:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Sent"
 msgstr "Lähetetty"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:67
+#: core/widgets/searchlinecommandbuttonswidget.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "Deleted"
 msgstr "Poistettu"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:68
+#: core/widgets/searchlinecommandbuttonswidget.cpp:70
 #, kde-format
 msgctxt "@action:button"
 msgid "Action"
 msgstr "Toiminto"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:69
+#: core/widgets/searchlinecommandbuttonswidget.cpp:71
 #, kde-format
 msgctxt "@action:button"
 msgid "Category"
 msgstr "Luokka"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:71
+#: core/widgets/searchlinecommandbuttonswidget.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Smaller"
 msgstr "Pienempi"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:72
+#: core/widgets/searchlinecommandbuttonswidget.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Larger"
 msgstr "Suurempi"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:73
+#: core/widgets/searchlinecommandbuttonswidget.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Size"
 msgstr "Koko"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:74
+#: core/widgets/searchlinecommandbuttonswidget.cpp:76
 #, kde-format
 msgctxt "@action:button"
 msgid "Older"
 msgstr "Vanhempi"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:75
+#: core/widgets/searchlinecommandbuttonswidget.cpp:77
 #, kde-format
 msgctxt "@action:button"
 msgid "Newer"
 msgstr "Uudempi"
 
-#: core/widgets/searchlinestatus.cpp:80
+#: core/widgets/searchlinestatus.cpp:81
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Prevent the quick search field from being cleared when changing folders"
 msgstr "Estä pikahakukentän tyhjentyminen siirryttäessä kansiosta toiseen"
 
-#: core/widgets/searchlinestatus.cpp:83
+#: core/widgets/searchlinestatus.cpp:84
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear the quick search field when changing folders"
 msgstr "Tyhjennä pikahakukenttä siirryttäessä kansiosta toiseen"
 
-#: core/widgets/searchlinestatus.cpp:102
+#: core/widgets/searchlinestatus.cpp:103
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
 msgstr "Tällä painikkeella voi näyttää tai piilottaa komentorivihakusovelman."
 
-#: core/widgets/searchlinestatus.cpp:106
+#: core/widgets/searchlinestatus.cpp:107
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1505,244 +1505,244 @@ msgstr ""
 "Valitse tämä, jos haluat lukita pikahakusi siirtyessäsi kansiosta toiseen "
 "tai tarkentaessasi hakua viestin tilan mukaan."
 
-#: core/widgets/searchlinestatus.cpp:114
+#: core/widgets/searchlinestatus.cpp:115
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "Tallennettu suodatin"
 
-#: core/widgets/searchlinestatus.cpp:192
+#: core/widgets/searchlinestatus.cpp:193
 #, kde-format
 msgid "Clear History"
 msgstr "Tyhjennä historia"
 
-#: core/widgets/searchmessagebybuttons.cpp:34
+#: core/widgets/searchmessagebybuttons.cpp:36
 #, kde-format
 msgctxt "@action"
 msgid "Full Message"
 msgstr "Koko viesti"
 
-#: core/widgets/searchmessagebybuttons.cpp:36
+#: core/widgets/searchmessagebybuttons.cpp:38
 #, kde-format
 msgctxt "@action"
 msgid "Body"
 msgstr "Runko"
 
-#: core/widgets/searchmessagebybuttons.cpp:37
+#: core/widgets/searchmessagebybuttons.cpp:39
 #, kde-format
 msgctxt "@action"
 msgid "Subject"
 msgstr "Aihe"
 
-#: core/widgets/searchmessagebybuttons.cpp:39
+#: core/widgets/searchmessagebybuttons.cpp:41
 #, kde-format
 msgctxt "@action"
 msgid "BCC"
 msgstr "Piilokopio"
 
-#: core/widgets/searchmessagebybuttons.cpp:40
+#: core/widgets/searchmessagebybuttons.cpp:42
 #, kde-format
 msgctxt "@action"
 msgid "CC"
 msgstr "Kopio"
 
-#: core/widgets/searchmessagebybuttons.cpp:71
+#: core/widgets/searchmessagebybuttons.cpp:73
 #, kde-format
 msgid "To"
 msgstr "Vastaanottaja"
 
-#: core/widgets/searchstatusbuttons.cpp:35
+#: core/widgets/searchstatusbuttons.cpp:37
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Unread"
 msgstr "Lukematta"
 
-#: core/widgets/searchstatusbuttons.cpp:39
+#: core/widgets/searchstatusbuttons.cpp:41
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Replied"
 msgstr "Vastattu"
 
-#: core/widgets/searchstatusbuttons.cpp:43
+#: core/widgets/searchstatusbuttons.cpp:45
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Forwarded"
 msgstr "Välitetty"
 
-#: core/widgets/searchstatusbuttons.cpp:47
+#: core/widgets/searchstatusbuttons.cpp:49
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Important"
 msgstr "Tärkeä"
 
-#: core/widgets/searchstatusbuttons.cpp:51
+#: core/widgets/searchstatusbuttons.cpp:53
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Action Item"
 msgstr "Tehtävä"
 
-#: core/widgets/searchstatusbuttons.cpp:55
+#: core/widgets/searchstatusbuttons.cpp:57
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Watched"
 msgstr "Seurattu"
 
-#: core/widgets/searchstatusbuttons.cpp:59
+#: core/widgets/searchstatusbuttons.cpp:61
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Ignored"
 msgstr "Ohitettu"
 
-#: core/widgets/searchstatusbuttons.cpp:63
+#: core/widgets/searchstatusbuttons.cpp:65
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Has Attachment"
 msgstr "Sisältää liitteen"
 
-#: core/widgets/searchstatusbuttons.cpp:67
+#: core/widgets/searchstatusbuttons.cpp:69
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Has Invitation"
 msgstr "Sisältää kutsun"
 
-#: core/widgets/searchstatusbuttons.cpp:71
+#: core/widgets/searchstatusbuttons.cpp:73
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Spam"
 msgstr "Roskaposti"
 
-#: core/widgets/searchstatusbuttons.cpp:75
+#: core/widgets/searchstatusbuttons.cpp:77
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Ham"
 msgstr "Ei-roskaposti"
 
-#: core/widgets/tablockedwarning.cpp:17
+#: core/widgets/tablockedwarning.cpp:19
 #, kde-format
 msgid "Current Tab is locked."
 msgstr "Nykyinen välilehti on lukittu."
 
-#: core/widgets/tablockedwarning.cpp:17
+#: core/widgets/tablockedwarning.cpp:19
 #, kde-format
 msgid "(Unlock it)"
 msgstr "(Poista lukitus)"
 
-#: messagelistutil.cpp:104
+#: messagelistutil.cpp:105
 #, kde-format
 msgid "Sorting"
 msgstr "Lajittelu"
 
-#: pane.cpp:124
+#: pane.cpp:125
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open a new tab"
 msgstr "Avaa uusi välilehti"
 
-#: pane.cpp:126
+#: pane.cpp:127
 #, kde-format
 msgid "New tab"
 msgstr "Uusi välilehti"
 
-#: pane.cpp:136
+#: pane.cpp:137
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close the current tab"
 msgstr "Sulje nykyinen välilehti"
 
-#: pane.cpp:138
+#: pane.cpp:139
 #, kde-format
 msgid "Close tab"
 msgstr "Sulje välilehti"
 
-#: pane.cpp:180
+#: pane.cpp:181
 #, kde-format
 msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr "Aktivoi välilehti %1"
 
-#: pane.cpp:200
+#: pane.cpp:201
 #, kde-format
 msgid "Show Quick Search Bar"
 msgstr "Näytä pikahakukenttä"
 
-#: pane.cpp:221
+#: pane.cpp:222
 #, kde-format
 msgid "Message List"
 msgstr "Viestiluettelo"
 
-#: pane.cpp:227
+#: pane.cpp:228
 #, kde-format
 msgctxt "@action"
 msgid "Create New Tab"
 msgstr "Luo uusi välilehti"
 
-#: pane.cpp:258
+#: pane.cpp:259
 #, kde-format
 msgctxt "@action"
 msgid "Activate Next Tab"
 msgstr "Aktivoi seuraava välilehti"
 
-#: pane.cpp:268
+#: pane.cpp:269
 #, kde-format
 msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr "Aktivoi edellinen välilehti"
 
-#: pane.cpp:280
+#: pane.cpp:281
 #, kde-format
 msgctxt "@action"
 msgid "Move Tab Left"
 msgstr "Siirrä välilehteä vasemmalle"
 
-#: pane.cpp:288
+#: pane.cpp:289
 #, kde-format
 msgctxt "@action"
 msgid "Move Tab Right"
 msgstr "Siirrä välilehteä oikealle"
 
-#: pane.cpp:298
+#: pane.cpp:299
 #, kde-format
 msgctxt "@action"
 msgid "Close Tab"
 msgstr "Sulje välilehti"
 
-#: pane.cpp:520 pane.cpp:812
+#: pane.cpp:521 pane.cpp:813
 #, kde-format
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
 msgstr "Tyhjä"
 
-#: pane.cpp:708
+#: pane.cpp:709
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "Sulje välilehti"
 
-#: pane.cpp:712
+#: pane.cpp:713
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "S&ulje kaikki muut säikeet"
 
-#: pane.cpp:717
+#: pane.cpp:718
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unlock Tab"
 msgstr "Lukitse haku"
 
-#: pane.cpp:717
+#: pane.cpp:718
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Lock Tab"
 msgstr "Lukitse välilehti"
 
-#: storagemodel.cpp:219
+#: storagemodel.cpp:220
 #, kde-format
 msgctxt "displayed as subject when the subject of a mail is empty"
 msgid "No Subject"
 msgstr "Ei aihetta"
 
-#: storagemodel.cpp:220
+#: storagemodel.cpp:221
 #, kde-format
 msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
@@ -1801,144 +1801,144 @@ msgctxt "@label:textbox"
 msgid "Fill view strategy:"
 msgstr "Näkymän täytön tapa:"
 
-#: utils/configureaggregationsdialog.cpp:100
+#: utils/configureaggregationsdialog.cpp:102
 #, kde-format
 msgctxt "@title:window"
 msgid "Customize Message Aggregation Modes"
 msgstr "Mukauta viestin koontatiloja"
 
-#: utils/configureaggregationsdialog.cpp:121
+#: utils/configureaggregationsdialog.cpp:123
 #, kde-format
 msgctxt "@action:button"
 msgid "New Aggregation"
 msgstr "Uusi koonta"
 
-#: utils/configureaggregationsdialog.cpp:129
+#: utils/configureaggregationsdialog.cpp:131
 #, kde-format
 msgctxt "@action:button"
 msgid "Clone Aggregation"
 msgstr "Monista koonta"
 
-#: utils/configureaggregationsdialog.cpp:142
+#: utils/configureaggregationsdialog.cpp:144
 #, kde-format
 msgctxt "@action:button"
 msgid "Export Aggregation..."
 msgstr "Vie koonta…"
 
-#: utils/configureaggregationsdialog.cpp:149
+#: utils/configureaggregationsdialog.cpp:151
 #, kde-format
 msgctxt "@action:button"
 msgid "Import Aggregation..."
 msgstr "Tuo koonta…"
 
-#: utils/configureaggregationsdialog.cpp:160
+#: utils/configureaggregationsdialog.cpp:162
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete Aggregation"
 msgstr "Poista koonta"
 
-#: utils/configureaggregationsdialog.cpp:343
+#: utils/configureaggregationsdialog.cpp:345
 #, kde-format
 msgid "Unnamed Aggregation"
 msgstr "Nimetön koonta"
 
-#: utils/configureaggregationsdialog.cpp:360
+#: utils/configureaggregationsdialog.cpp:362
 #, kde-format
 msgid "New Aggregation"
 msgstr "Uusi koonta"
 
-#: utils/configureaggregationsdialog.cpp:413
+#: utils/configureaggregationsdialog.cpp:415
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Aggregation"
 msgstr "Tuo koonta"
 
-#: utils/configureaggregationsdialog.cpp:446
+#: utils/configureaggregationsdialog.cpp:448
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Aggregation"
 msgstr "Vie koonta"
 
-#: utils/configureaggregationsdialog.cpp:446
-#: utils/configurethemesdialog.cpp:470
+#: utils/configureaggregationsdialog.cpp:448
+#: utils/configurethemesdialog.cpp:472
 #, kde-format
 msgid "All Files (*)"
 msgstr "Kaikki tiedostot (*)"
 
-#: utils/configurethemesdialog.cpp:96
+#: utils/configurethemesdialog.cpp:98
 #, kde-format
 msgctxt "@title:window"
 msgid "Customize Themes"
 msgstr "Mukauta teemoja"
 
-#: utils/configurethemesdialog.cpp:117
+#: utils/configurethemesdialog.cpp:119
 #, kde-format
 msgctxt "@action:button"
 msgid "New Theme"
 msgstr "Uusi teema"
 
-#: utils/configurethemesdialog.cpp:125
+#: utils/configurethemesdialog.cpp:127
 #, kde-format
 msgctxt "@action:button"
 msgid "Clone Theme"
 msgstr "Monista teema"
 
-#: utils/configurethemesdialog.cpp:138
+#: utils/configurethemesdialog.cpp:140
 #, kde-format
 msgctxt "@action:button"
 msgid "Export Theme..."
 msgstr "Vie teema…"
 
-#: utils/configurethemesdialog.cpp:145
+#: utils/configurethemesdialog.cpp:147
 #, kde-format
 msgctxt "@action:button"
 msgid "Import Theme..."
 msgstr "Tuo teema…"
 
-#: utils/configurethemesdialog.cpp:156
+#: utils/configurethemesdialog.cpp:158
 #, kde-format
 msgctxt "@action:button"
 msgid "Delete Theme"
 msgstr "Poista teema"
 
-#: utils/configurethemesdialog.cpp:335
+#: utils/configurethemesdialog.cpp:337
 #, kde-format
 msgid "Unnamed Theme"
 msgstr "Nimetön teema"
 
-#: utils/configurethemesdialog.cpp:353
+#: utils/configurethemesdialog.cpp:355
 #, kde-format
 msgid "New Theme"
 msgstr "Uusi teema"
 
-#: utils/configurethemesdialog.cpp:355 utils/themeeditor.cpp:1217
+#: utils/configurethemesdialog.cpp:357 utils/themeeditor.cpp:1219
 #, kde-format
 msgid "New Column"
 msgstr "Uusi sarake"
 
-#: utils/configurethemesdialog.cpp:408
+#: utils/configurethemesdialog.cpp:410
 #, kde-format
 msgid "Do you want to delete selected themes?"
 msgstr "Haluatko poistaa valitut teemat?"
 
-#: utils/configurethemesdialog.cpp:408
+#: utils/configurethemesdialog.cpp:410
 #, kde-format
 msgid "Do you want to delete \"%1\"?"
 msgstr "Haluatko poistaa teeman ”%1”?"
 
-#: utils/configurethemesdialog.cpp:410
+#: utils/configurethemesdialog.cpp:412
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Theme"
 msgstr "Poista teema"
 
-#: utils/configurethemesdialog.cpp:436
+#: utils/configurethemesdialog.cpp:438
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Theme"
 msgstr "Tuo teema"
 
-#: utils/configurethemesdialog.cpp:470
+#: utils/configurethemesdialog.cpp:472
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Theme"
@@ -1962,50 +1962,50 @@ msgctxt "@label:textbox Description of the option"
 msgid "Description:"
 msgstr "Kuvaus:"
 
-#: utils/themeeditor.cpp:70
+#: utils/themeeditor.cpp:72
 #, kde-format
 msgctxt "@label:textbox Property name"
 msgid "Name:"
 msgstr "Nimi:"
 
-#: utils/themeeditor.cpp:74
+#: utils/themeeditor.cpp:76
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The label that will be displayed in the column header."
 msgstr "Sarakeotsakkeessa näytettävä nimiö."
 
-#: utils/themeeditor.cpp:77
+#: utils/themeeditor.cpp:79
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Header click sorts messages:"
 msgstr "Ylätunnisteen napsautus lajittelee viestit:"
 
-#: utils/themeeditor.cpp:81
+#: utils/themeeditor.cpp:83
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The sorting order that clicking on this column header will switch to."
 msgstr "Lajittelujärjestys, johon tämän sarakeotsakkeen napsautus vaihtaa."
 
-#: utils/themeeditor.cpp:84
+#: utils/themeeditor.cpp:86
 #, kde-format
 msgctxt "@option:check"
 msgid "Visible by default"
 msgstr "Oletuksena näkyvissä"
 
-#: utils/themeeditor.cpp:85
+#: utils/themeeditor.cpp:87
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Check this if this column should be visible when the theme is selected."
 msgstr ""
 "Valitse tämä, jos sarakkeen tulisi teeman tultua valituksi olla näkyvissä."
 
-#: utils/themeeditor.cpp:88
+#: utils/themeeditor.cpp:90
 #, kde-format
 msgctxt "@option:check"
 msgid "Contains \"Sender or Receiver\" field"
 msgstr "Sisältää ”Lähettäjä tai vastaanottaja” -kentän"
 
-#: utils/themeeditor.cpp:90
+#: utils/themeeditor.cpp:92
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -2015,17 +2015,17 @@ msgstr ""
 "Valitse tämä, jos sarakenimiö pitäisi päivittää sen mukaan, onko kansiossa "
 "saapuvaa vai lähtevää postia."
 
-#: utils/themeeditor.cpp:110
+#: utils/themeeditor.cpp:112
 #, kde-format
 msgid "Unnamed Column"
 msgstr "Nimetön sarake"
 
-#: utils/themeeditor.cpp:175
+#: utils/themeeditor.cpp:177
 #, kde-format
 msgid "Message Group"
 msgstr "Viestiryhmä"
 
-#: utils/themeeditor.cpp:179 utils/themeeditor.cpp:188
+#: utils/themeeditor.cpp:181 utils/themeeditor.cpp:190
 #, kde-format
 msgid ""
 "Very long subject very long subject very long subject very long subject very "
@@ -2034,68 +2034,68 @@ msgstr ""
 "Hyvin pitkä aihe hyvin pitkä aihe hyvin pitkä aihe hyvin pitkä aihe hyvin "
 "hyvin pitkä aihe pitkä aihe"
 
-#: utils/themeeditor.cpp:194
+#: utils/themeeditor.cpp:196
 #, kde-format
 msgid "Sample Tag 1"
 msgstr "Esimerkkitunniste 1"
 
-#: utils/themeeditor.cpp:195
+#: utils/themeeditor.cpp:197
 #, kde-format
 msgid "Sample Tag 2"
 msgstr "Esimerkkitunniste 2"
 
-#: utils/themeeditor.cpp:196
+#: utils/themeeditor.cpp:198
 #, kde-format
 msgid "Sample Tag 3"
 msgstr "Esimerkkitunniste 3"
 
-#: utils/themeeditor.cpp:411
+#: utils/themeeditor.cpp:413
 #, kde-format
 msgctxt "Indicates whether or not a header label is visible"
 msgid "Visible"
 msgstr "Näkyvissä"
 
-#: utils/themeeditor.cpp:851
+#: utils/themeeditor.cpp:853
 #, kde-format
 msgctxt "@action:inmenu soften the text color"
 msgid "Soften"
 msgstr "Pehmennä"
 
-#: utils/themeeditor.cpp:858
+#: utils/themeeditor.cpp:860
 #, kde-format
 msgctxt "@action:inmenu Font setting"
 msgid "Bold"
 msgstr "Lihavoitu"
 
-#: utils/themeeditor.cpp:862
+#: utils/themeeditor.cpp:864
 #, kde-format
 msgctxt "@action:inmenu Font setting"
 msgid "Italic"
 msgstr "Kursivoitu"
 
-#: utils/themeeditor.cpp:869
+#: utils/themeeditor.cpp:871
 #, kde-format
 msgid "Font"
 msgstr "Fontti"
 
-#: utils/themeeditor.cpp:877
+#: utils/themeeditor.cpp:879
 #, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Default"
 msgstr "Oletus"
 
-#: utils/themeeditor.cpp:882
+#: utils/themeeditor.cpp:884
 #, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Custom..."
 msgstr "Mukautettu…"
 
-#: utils/themeeditor.cpp:890
+#: utils/themeeditor.cpp:892
 #, kde-format
 msgid "Foreground Color"
 msgstr "Edustaväri"
 
-#: utils/themeeditor.cpp:899
+#: utils/themeeditor.cpp:901
 #, kde-format
 msgctxt ""
 "Hide a mark if the mail does not have the attribute, e.g. Important mark on "
@@ -2103,7 +2103,7 @@ msgctxt ""
 msgid "Hide"
 msgstr "Piilota"
 
-#: utils/themeeditor.cpp:906
+#: utils/themeeditor.cpp:908
 #, kde-format
 msgctxt ""
 "Keep a empty space in the list if the mail does not have the attribute, e.g. "
@@ -2111,7 +2111,7 @@ msgctxt ""
 msgid "Keep Empty Space"
 msgstr "Säilytä tyhjä tila"
 
-#: utils/themeeditor.cpp:913
+#: utils/themeeditor.cpp:915
 #, kde-format
 msgctxt ""
 "Show the icon softened in the list if the mail does not have the attribute, "
@@ -2119,90 +2119,90 @@ msgctxt ""
 msgid "Keep Softened Icon"
 msgstr "Säilytä pehmennetty kuvake"
 
-#: utils/themeeditor.cpp:921
+#: utils/themeeditor.cpp:923
 #, kde-format
 msgid "When Disabled"
 msgstr "Kun ei käytössä"
 
-#: utils/themeeditor.cpp:927
+#: utils/themeeditor.cpp:929
 #, kde-format
 msgid "Group Header"
 msgstr "Ryhmän otsake"
 
-#: utils/themeeditor.cpp:934
+#: utils/themeeditor.cpp:936
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "None"
 msgstr "Ei mitään"
 
-#: utils/themeeditor.cpp:939
+#: utils/themeeditor.cpp:941
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Automatic"
 msgstr "Automaattinen"
 
-#: utils/themeeditor.cpp:944
+#: utils/themeeditor.cpp:946
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Custom..."
 msgstr "Mukautettu…"
 
-#: utils/themeeditor.cpp:952
+#: utils/themeeditor.cpp:954
 #, kde-format
 msgid "Background Color"
 msgstr "Taustaväri"
 
-#: utils/themeeditor.cpp:972
+#: utils/themeeditor.cpp:974
 #, kde-format
 msgid "Background Style"
 msgstr "Taustan tyyli"
 
-#: utils/themeeditor.cpp:1158
+#: utils/themeeditor.cpp:1160
 #, kde-format
 msgid "Column Properties..."
 msgstr "Sarakkeen ominaisuudet…"
 
-#: utils/themeeditor.cpp:1161
+#: utils/themeeditor.cpp:1163
 #, kde-format
 msgid "Add Column..."
 msgstr "Lisää sarake…"
 
-#: utils/themeeditor.cpp:1164
+#: utils/themeeditor.cpp:1166
 #, kde-format
 msgid "Delete Column"
 msgstr "Poista sarake"
 
-#: utils/themeeditor.cpp:1170
+#: utils/themeeditor.cpp:1172
 #, kde-format
 msgid "Move Column to Left"
 msgstr "Siirrä saraketta vasemmalle"
 
-#: utils/themeeditor.cpp:1174
+#: utils/themeeditor.cpp:1176
 #, kde-format
 msgid "Move Column to Right"
 msgstr "Siirrä saraketta oikealle"
 
-#: utils/themeeditor.cpp:1223
+#: utils/themeeditor.cpp:1225
 #, kde-format
 msgid "Add New Column"
 msgstr "Lisää uusi sarake"
 
-#: utils/themeeditor.cpp:1247
+#: utils/themeeditor.cpp:1249
 #, kde-format
 msgid "Column Properties"
 msgstr "Sarakkeen ominaisuudet"
 
-#: utils/themeeditor.cpp:1289
+#: utils/themeeditor.cpp:1291
 #, kde-format
 msgid "Appearance"
 msgstr "Ulkoasu"
 
-#: utils/themeeditor.cpp:1293
+#: utils/themeeditor.cpp:1295
 #, kde-format
 msgid "Content Items"
 msgstr "Sisältökohdat"
 
-#: utils/themeeditor.cpp:1420
+#: utils/themeeditor.cpp:1422
 #, kde-format
 msgid ""
 "Right click on the header to add or modify columns. Drag the content items "
@@ -2214,25 +2214,25 @@ msgstr ""
 "sarakkeisiin. Lisävalintoja saa napsauttamalla tietueita näkymässä hiiren "
 "oikealla painikkeella."
 
-#: utils/themeeditor.cpp:1430
+#: utils/themeeditor.cpp:1432
 #, kde-format
 msgctxt "@title:tab Advanced theme settings"
 msgid "Advanced"
 msgstr "&Lisäasetukset"
 
-#: utils/themeeditor.cpp:1434
+#: utils/themeeditor.cpp:1436
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Header:"
 msgstr "Otsake:"
 
-#: utils/themeeditor.cpp:1440
+#: utils/themeeditor.cpp:1442
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "Kuvakekoko:"
 
-#: utils/themeeditor.cpp:1446
+#: utils/themeeditor.cpp:1448
 #, kde-format
 msgctxt "suffix in a spinbox"
 msgid "%v pixel"
@@ -2246,47 +2246,47 @@ msgctxt "Item in list of Akonadi tags, to show all e-mails"
 msgid "All"
 msgstr "Kaikki"
 
-#: widget.cpp:325
+#: widget.cpp:324
 #, kde-format
 msgid "Collapse Group"
 msgstr "Supista ryhmä"
 
-#: widget.cpp:328
+#: widget.cpp:327
 #, kde-format
 msgid "Expand Group"
 msgstr "Laajenna ryhmä"
 
-#: widget.cpp:334
+#: widget.cpp:333
 #, kde-format
 msgid "Expand All Groups"
 msgstr "Laajenna kaikki ryhmät"
 
-#: widget.cpp:337
+#: widget.cpp:336
 #, kde-format
 msgid "Collapse All Groups"
 msgstr "Supista kaikki ryhmät"
 
-#: widget.cpp:341
+#: widget.cpp:340
 #, kde-format
 msgid "Expand All Threads"
 msgstr "Laajenna kaikki ryhmät"
 
-#: widget.cpp:343
+#: widget.cpp:342
 #, kde-format
 msgid "Collapse All Threads"
 msgstr "Supista kaikki ryhmät"
 
-#: widget.cpp:403
+#: widget.cpp:401
 #, kde-format
 msgid "&Move Here"
 msgstr "&Siirrä tähän"
 
-#: widget.cpp:404
+#: widget.cpp:402
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Kopioi tähän"
 
-#: widget.cpp:406
+#: widget.cpp:404
 #, kde-format
 msgid "C&ancel"
 msgstr "&Peru"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-14 00:40+0000\n"
+"POT-Creation-Date: 2025-06-25 00:43+0000\n"
 "PO-Revision-Date: 2024-12-24 20:39+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -39,7 +39,7 @@ msgstr "आसक्तिसंपीडनं आरभ्यतुं न श
 msgid "Could not compress the attachment."
 msgstr "आसक्तिं संपीडयितुं न शक्तवान्।"
 
-#: attachment/attachmentfromfolderjob.cpp:51
+#: attachment/attachmentfromfolderjob.cpp:52
 #, kde-format
 msgid "Could not create compressed file."
 msgstr "संपीडितसञ्चिकां निर्मातुं न शक्तवान् ।"
@@ -62,30 +62,30 @@ msgstr "संग्रहे %1 योजयितुं न शक्तम्
 msgid "Could not open %1 for reading."
 msgstr "पठनार्थं %1 उद्घाटयितुं न शक्तम् ।"
 
-#: attachment/attachmentfromurljob.cpp:68
+#: attachment/attachmentfromurljob.cpp:69
 #, kde-format
 msgctxt "a file called 'unknown.ext'"
 msgid "unknown%1"
 msgstr "अज्ञात%1"
 
-#: attachment/attachmentfromurljob.cpp:70
+#: attachment/attachmentfromurljob.cpp:71
 #, kde-format
 msgctxt "a file called 'unknown'"
 msgid "unknown"
 msgstr "अज्ञात"
 
-#: attachment/attachmentfromurljob.cpp:102
+#: attachment/attachmentfromurljob.cpp:103
 #, kde-format
 msgid "\"%1\" not found. Please specify the full path."
 msgstr "\"%1\" न लब्धम् । कृपया पूर्णमार्गं निर्दिशन्तु।"
 
-#: attachment/attachmentfromurljob.cpp:111
+#: attachment/attachmentfromurljob.cpp:112
 #, kde-format
 msgid "You may not attach files bigger than %1. Share it with storage service."
 msgstr ""
 "%1 इत्यस्मात् बृहत्तराणि सञ्चिकाः न संलग्नं कर्तुं शक्नुवन्ति । भण्डारणसेवाया सह साझां कुर्वन्तु।"
 
-#: attachment/attachmentpropertiesdialog.cpp:134
+#: attachment/attachmentpropertiesdialog.cpp:133
 #, kde-format
 msgid ""
 "<p>The <em>MIME type</em> of the file:</p><p>Normally, you do not need to "
@@ -97,7 +97,7 @@ msgstr ""
 "आवश्यकता नास्ति, यतः सञ्चिकायाः प्रकारः स्वयमेव परीक्षितः भवति; परन्तु, कदाचित्, %1 "
 "प्रकारं सम्यक् न ज्ञातुं शक्नोति -- अत्र भवान् तत् समाधातुं शक्नोति ।</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:142
+#: attachment/attachmentpropertiesdialog.cpp:141
 #, kde-format
 msgid ""
 "<p>The estimated size of the attachment:</p><p>Note that, in an email "
@@ -107,7 +107,7 @@ msgstr ""
 "<p>आसक्तस्य अनुमानितः आकारः : १.</p><p> ध्यानं कुर्वन्तु यत्, ईमेलसन्देशे, base64 इत्यनेन सह "
 "एन्कोड् कृता द्विचक्रिका सञ्चिका सञ्चिकायाः वास्तविकस्य आकारस्य चतुर्थांशं गृह्णीयात् ।</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:147
+#: attachment/attachmentpropertiesdialog.cpp:146
 #, kde-format
 msgid ""
 "<p>The file name of the part:</p><p>Although this defaults to the name of "
@@ -119,7 +119,7 @@ msgstr ""
 "भवति तथापि संलग्नसञ्चिकां न निर्दिशति; अपितु, भागं डिस्क-मध्ये रक्षन्ते सति प्राप्तकस्य मेल-"
 "एजेण्ट्-द्वारा उपयोक्तुं सञ्चिकानाम सूचयति ।</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:154
+#: attachment/attachmentpropertiesdialog.cpp:153
 #, kde-format
 msgid ""
 "<p>A description of the part:</p><p>This is just an informational "
@@ -131,7 +131,7 @@ msgstr ""
 "कृते भवति; अधिकांशः मेल एजेण्ट् एतां सूचनां संलग्नकस्य चिह्नस्य पार्श्वे स्वसन्देशपूर्वावलोकनेषु "
 "दर्शयिष्यति ।</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:161
+#: attachment/attachmentpropertiesdialog.cpp:160
 #, kde-format
 msgid ""
 "<p>The transport encoding of this part:</p><p>Normally, you do not need to "
@@ -149,7 +149,7 @@ msgstr ""
 "पूर्वनिर्धारितस्य &quot;base64&quot; इत्यस्य अपेक्षया &quot;quoted-printable&quot; "
 "इति चयनं करिष्यति परिणामी सन्देश आकारे २५% पर्यन्तं रक्षन्तु ।</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:172
+#: attachment/attachmentpropertiesdialog.cpp:171
 #, kde-format
 msgid ""
 "<p>Check this option if you want to suggest to the recipient the automatic "
@@ -163,7 +163,7 @@ msgstr ""
 "एतत् अस्य भागस्य <em>Content-Disposition</em> शीर्षकक्षेत्रं पूर्वनिर्धारित &quot;"
 "संलग्नकस्य&quot; स्थाने &quot;inline&quot; इति सेट् कृत्वा क्रियते ।</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:180
+#: attachment/attachmentpropertiesdialog.cpp:179
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be signed.</p><p>The "
@@ -173,7 +173,7 @@ msgstr ""
 "<p>यदि भवान् इच्छति यत् एषः सन्देशभागः हस्ताक्षरितः भवेत् तर्हि एतत् विकल्पं चिनोतु ।</"
 "p><p> हस्ताक्षरं तया कीलेन सह क्रियते यत् भवता वर्तमानचयनितपरिचयेन सह सम्बद्धम् ।</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:186
+#: attachment/attachmentpropertiesdialog.cpp:185
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be encrypted.</"
@@ -182,8 +182,8 @@ msgstr ""
 "<p>यदि भवान् इच्छति यत् एषः सन्देशभागः गुप्तीकरणं भवतु तर्हि एतत् विकल्पं पश्यन्तु ।</p><p> "
 "अस्य सन्देशस्य ग्राहकानाम् कृते भागः एन्क्रिप्टेड् भविष्यति ।</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:307
-#: attachment/attachmentpropertiesdialog.cpp:322
+#: attachment/attachmentpropertiesdialog.cpp:305
+#: attachment/attachmentpropertiesdialog.cpp:320
 #, kde-format
 msgctxt "@title:window"
 msgid "Attachment Properties"
@@ -307,29 +307,29 @@ msgid ""
 "no limit)"
 msgstr "ईमेल-संलग्नकानाम् अनुमतं यत् बिट्-मध्ये अधिकतमं आकारं (-1 सीमां विना) ।"
 
-#: utils/dateformatter.cpp:163
+#: utils/dateformatter.cpp:164
 #, kde-format
 msgctxt "invalid time specified"
 msgid "unknown"
 msgstr "अज्ञात"
 
-#: utils/dateformatter.cpp:175
+#: utils/dateformatter.cpp:176
 #, kde-format
 msgid "Today %1"
 msgstr "अद्य %1"
 
-#: utils/dateformatter.cpp:178
+#: utils/dateformatter.cpp:179
 #, kde-format
 msgid "Yesterday %1"
 msgstr "कालः %1"
 
-#: utils/dateformatter.cpp:183
+#: utils/dateformatter.cpp:184
 #, kde-format
 msgctxt "1. weekday, 2. time"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: utils/stringutil.cpp:415
+#: utils/stringutil.cpp:414
 #, kde-format
 msgctxt "signal that this email is defined in my identity"
 msgid "Me"

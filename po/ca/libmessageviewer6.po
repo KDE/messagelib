@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-18 00:43+0000\n"
+"POT-Creation-Date: 2025-06-25 00:43+0000\n"
 "PO-Revision-Date: 2025-05-18 09:11+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -226,7 +226,7 @@ msgid "Selector"
 msgstr "Selector"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:85
-#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: dkim-verify/dkimmanageruleswidget.cpp:75
 #, kde-format
 msgid "SDID"
 msgstr "SDID"
@@ -241,44 +241,44 @@ msgstr "Inserida"
 msgid "Last Used"
 msgstr "Usada per darrera vegada"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:71
+#: dkim-verify/dkimmanagerkeytreeview.cpp:73
 #, kde-format
 msgid "Copy Key"
 msgstr "Copia la clau"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:78
+#: dkim-verify/dkimmanagerkeytreeview.cpp:79
 #, kde-format
 msgid "Remove Key"
 msgid_plural "Remove Keys"
 msgstr[0] "Elimina la clau"
 msgstr[1] "Elimina les claus"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:83
+#: dkim-verify/dkimmanagerkeytreeview.cpp:81
 #, kde-format
 msgid "Do you want to delete this key?"
 msgid_plural "Do you want to delete these keys?"
 msgstr[0] "Voleu suprimir aquesta clau?"
 msgstr[1] "Voleu suprimir aquestes claus?"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:84
+#: dkim-verify/dkimmanagerkeytreeview.cpp:82
 #, kde-format
 msgid "Delete Key"
 msgid_plural "Delete Keys"
 msgstr[0] "Suprimeix la clau"
 msgstr[1] "Suprimeix les claus"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:94
-#: dkim-verify/dkimmanageruleswidget.cpp:223
+#: dkim-verify/dkimmanagerkeytreeview.cpp:92
+#: dkim-verify/dkimmanageruleswidget.cpp:225
 #, kde-format
 msgid "Delete All"
 msgstr "Suprimeix-ho tot"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:96
+#: dkim-verify/dkimmanagerkeytreeview.cpp:94
 #, kde-format
 msgid "Do you want to delete all keys?"
 msgstr "Voleu suprimir totes les claus?"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:97
+#: dkim-verify/dkimmanagerkeytreeview.cpp:95
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Keys"
@@ -353,78 +353,78 @@ msgstr "Importa regles"
 msgid "No rules imported."
 msgstr "No s'ha importat cap regla."
 
-#: dkim-verify/dkimmanageruleswidget.cpp:73
-#: remote-content/remotecontentconfigurewidget.cpp:52
+#: dkim-verify/dkimmanageruleswidget.cpp:75
+#: remote-content/remotecontentconfigurewidget.cpp:54
 #, kde-format
 msgid "Domain"
 msgstr "Domini"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: dkim-verify/dkimmanageruleswidget.cpp:75
 #, kde-format
 msgid "Active"
 msgstr "Activa"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: dkim-verify/dkimmanageruleswidget.cpp:75
 #, kde-format
 msgid "List-ID"
 msgstr "ID de la llista"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: dkim-verify/dkimmanageruleswidget.cpp:75
 #, kde-format
 msgid "From"
 msgstr "De"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: dkim-verify/dkimmanageruleswidget.cpp:75
 #, kde-format
 msgid "Rule type"
 msgstr "Tipus de regla"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: dkim-verify/dkimmanageruleswidget.cpp:75
 #, kde-format
 msgid "Priority"
 msgstr "Prioritat"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:196
-#: remote-content/remotecontentconfigurewidget.cpp:80
+#: dkim-verify/dkimmanageruleswidget.cpp:198
+#: remote-content/remotecontentconfigurewidget.cpp:82
 #, kde-format
 msgid "Add..."
 msgstr "Afegeix..."
 
-#: dkim-verify/dkimmanageruleswidget.cpp:201
-#: remote-content/remotecontentconfigurewidget.cpp:83
+#: dkim-verify/dkimmanageruleswidget.cpp:203
+#: remote-content/remotecontentconfigurewidget.cpp:85
 #, kde-format
 msgid "Modify..."
 msgstr "Modifica..."
 
-#: dkim-verify/dkimmanageruleswidget.cpp:205
+#: dkim-verify/dkimmanageruleswidget.cpp:207
 #, kde-format
 msgid "Duplicate Rule"
 msgstr "Duplica la regla"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:209
-#: remote-content/remotecontentconfigurewidget.cpp:87
+#: dkim-verify/dkimmanageruleswidget.cpp:211
+#: remote-content/remotecontentconfigurewidget.cpp:89
 #, kde-format
 msgid "Remove Rule"
 msgstr "Elimina la regla"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:211
+#: dkim-verify/dkimmanageruleswidget.cpp:213
 #, kde-format
 msgid "Do you want to delete this rule?"
 msgstr "Voleu suprimir aquesta regla?"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:212
-#: remote-content/remotecontentconfigurewidget.cpp:90
+#: dkim-verify/dkimmanageruleswidget.cpp:214
+#: remote-content/remotecontentconfigurewidget.cpp:92
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Rule"
 msgstr "Supressió de regla"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:225
+#: dkim-verify/dkimmanageruleswidget.cpp:227
 #, kde-format
 msgid "Do you want to delete all the rules?"
 msgstr "Voleu suprimir totes les regles?"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:226
+#: dkim-verify/dkimmanageruleswidget.cpp:228
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Rules"
@@ -442,44 +442,44 @@ msgctxt "@title:window"
 msgid "Modify Rule"
 msgstr "Modificació de la regla"
 
-#: dkim-verify/dkimrulewidget.cpp:18
+#: dkim-verify/dkimrulewidget.cpp:20
 #, kde-format
 msgctxt "@option:check"
 msgid "Enabled"
 msgstr "Activada"
 
-#: dkim-verify/dkimrulewidget.cpp:36
+#: dkim-verify/dkimrulewidget.cpp:38
 #, kde-format
 msgid "Domain:"
 msgstr "Domini:"
 
-#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:182
+#: dkim-verify/dkimrulewidget.cpp:43 header/grantleeheaderformatter.cpp:184
 #, kde-format
 msgid "List-Id:"
 msgstr "ID de la llista:"
 
-#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:271
+#: dkim-verify/dkimrulewidget.cpp:47 header/grantleeheaderformatter.cpp:273
 #, kde-format
 msgid "From:"
 msgstr "De:"
 
-#: dkim-verify/dkimrulewidget.cpp:46
+#: dkim-verify/dkimrulewidget.cpp:48
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Use '*' to specify all emails from domain"
 msgstr "Usa «*» per a especificar tot el correu electrònic del domini"
 
-#: dkim-verify/dkimrulewidget.cpp:51
+#: dkim-verify/dkimrulewidget.cpp:53
 #, kde-format
 msgid "SDID:"
 msgstr "SDID:"
 
-#: dkim-verify/dkimrulewidget.cpp:54
+#: dkim-verify/dkimrulewidget.cpp:56
 #, kde-format
 msgid "Rule:"
 msgstr "Regla:"
 
-#: dkim-verify/dkimrulewidget.cpp:60
+#: dkim-verify/dkimrulewidget.cpp:62
 #, kde-format
 msgid "Priority:"
 msgstr "Prioritat:"
@@ -504,272 +504,272 @@ msgstr "Actualitza la clau DKIM"
 msgid "Rules..."
 msgstr "Regles..."
 
-#: dkim-verify/dkimwidgetinfo.cpp:94
+#: dkim-verify/dkimwidgetinfo.cpp:96
 #, kde-format
 msgid "Unknown"
 msgstr "Desconeguda"
 
-#: dkim-verify/dkimwidgetinfo.cpp:100
+#: dkim-verify/dkimwidgetinfo.cpp:102
 #, kde-format
 msgid "DKIM: valid (signed by %1)"
 msgstr "DKIM: vàlida (signada per %1)"
 
-#: dkim-verify/dkimwidgetinfo.cpp:107
+#: dkim-verify/dkimwidgetinfo.cpp:109
 #, kde-format
 msgid "DKIM: invalid"
 msgstr "DKIM: no vàlida"
 
-#: dkim-verify/dkimwidgetinfo.cpp:110
+#: dkim-verify/dkimwidgetinfo.cpp:112
 #, kde-format
 msgid "DKIM: Not signed"
 msgstr "DKIM: no està signada"
 
-#: dkim-verify/dkimwidgetinfo.cpp:115
+#: dkim-verify/dkimwidgetinfo.cpp:117
 #, kde-format
 msgid "DKIM: Should Be Signed by %1"
 msgstr "DKIM: hauria d'estar signada per %1"
 
-#: dkim-verify/dkimwidgetinfo.cpp:131
+#: dkim-verify/dkimwidgetinfo.cpp:133
 #, kde-format
 msgid "Body Hash was corrupted."
 msgstr "El resum del cos s'ha corromput."
 
-#: dkim-verify/dkimwidgetinfo.cpp:134
+#: dkim-verify/dkimwidgetinfo.cpp:136
 #, kde-format
 msgid "The domain doesn't exist."
 msgstr "El domini no existeix."
 
-#: dkim-verify/dkimwidgetinfo.cpp:137
+#: dkim-verify/dkimwidgetinfo.cpp:139
 #, kde-format
 msgid "Missing header From."
 msgstr "Manca la capçalera Des de."
 
-#: dkim-verify/dkimwidgetinfo.cpp:140
+#: dkim-verify/dkimwidgetinfo.cpp:142
 #, kde-format
 msgid "Missing signature."
 msgstr "Manca la signatura."
 
-#: dkim-verify/dkimwidgetinfo.cpp:143
+#: dkim-verify/dkimwidgetinfo.cpp:145
 #, kde-format
 msgid "Invalid query method."
 msgstr "Mètode no vàlid de consulta."
 
-#: dkim-verify/dkimwidgetinfo.cpp:146
+#: dkim-verify/dkimwidgetinfo.cpp:148
 #, kde-format
 msgid "Invalid header canonicalization."
 msgstr "Canonització no vàlida de capçalera."
 
-#: dkim-verify/dkimwidgetinfo.cpp:149
+#: dkim-verify/dkimwidgetinfo.cpp:151
 #, kde-format
 msgid "Invalid body canonicalization."
 msgstr "Canonització no vàlida del cos."
 
-#: dkim-verify/dkimwidgetinfo.cpp:152
+#: dkim-verify/dkimwidgetinfo.cpp:154
 #, kde-format
 msgid "Unknown Body Hash Algorithm."
 msgstr "Algorisme de resum de cos desconegut."
 
-#: dkim-verify/dkimwidgetinfo.cpp:155
+#: dkim-verify/dkimwidgetinfo.cpp:157
 #, kde-format
 msgid "Signature algorithm is invalid."
 msgstr "L'algorisme de signatura no és vàlid."
 
-#: dkim-verify/dkimwidgetinfo.cpp:158
+#: dkim-verify/dkimwidgetinfo.cpp:160
 #, kde-format
 msgid "The public key was revoked."
 msgstr "S'ha revocat la clau pública."
 
-#: dkim-verify/dkimwidgetinfo.cpp:161
+#: dkim-verify/dkimwidgetinfo.cpp:163
 #, kde-format
 msgid "Signature is too large."
 msgstr "La signatura és massa gran."
 
-#: dkim-verify/dkimwidgetinfo.cpp:164
+#: dkim-verify/dkimwidgetinfo.cpp:166
 #, kde-format
 msgid "Hash Algorithm is unsupported."
 msgstr "L'algorisme de resum no està implementat."
 
-#: dkim-verify/dkimwidgetinfo.cpp:167
+#: dkim-verify/dkimwidgetinfo.cpp:169
 #, kde-format
 msgid "Public key is too small."
 msgstr "La clau pública és massa petita."
 
-#: dkim-verify/dkimwidgetinfo.cpp:170
+#: dkim-verify/dkimwidgetinfo.cpp:172
 #, kde-format
 msgid "Impossible to verify signature."
 msgstr "És impossible verificar la signatura."
 
-#: dkim-verify/dkimwidgetinfo.cpp:173
+#: dkim-verify/dkimwidgetinfo.cpp:175
 #, kde-format
 msgid "AUID must be in the same domain as SDID (s-flag set in key record)."
 msgstr ""
 "L'AUID cal que estigui en el mateix domini que l'SDID (indicador «s» definit "
 "al registre clau)."
 
-#: dkim-verify/dkimwidgetinfo.cpp:176
+#: dkim-verify/dkimwidgetinfo.cpp:178
 #, kde-format
 msgid "The signing domain is only testing DKIM."
 msgstr "El domini de signatura només està provant el DKIM."
 
-#: dkim-verify/dkimwidgetinfo.cpp:179
+#: dkim-verify/dkimwidgetinfo.cpp:181
 #, kde-format
 msgid "Impossible to download key."
 msgstr "És impossible baixar la clau."
 
-#: dkim-verify/dkimwidgetinfo.cpp:182 dkim-verify/dkimwidgetinfo.cpp:206
+#: dkim-verify/dkimwidgetinfo.cpp:184 dkim-verify/dkimwidgetinfo.cpp:208
 #, kde-format
 msgid "Hash Algorithm unsafe (sha1)"
 msgstr "Algorisme insegur de resum (SHA1)"
 
-#: dkim-verify/dkimwidgetinfo.cpp:185
+#: dkim-verify/dkimwidgetinfo.cpp:187
 #, kde-format
 msgid "AUID is not in a subdomain of SDID"
 msgstr "L'AUID no es troba en un subdomini del SDID"
 
-#: dkim-verify/dkimwidgetinfo.cpp:188
+#: dkim-verify/dkimwidgetinfo.cpp:190
 #, kde-format
 msgid "Problem during converting public key"
 msgstr "Problema durant la conversió de la clau pública"
 
-#: dkim-verify/dkimwidgetinfo.cpp:197
+#: dkim-verify/dkimwidgetinfo.cpp:199
 #, kde-format
 msgid "Signature expired"
 msgstr "Signatura vençuda"
 
-#: dkim-verify/dkimwidgetinfo.cpp:200
+#: dkim-verify/dkimwidgetinfo.cpp:202
 #, kde-format
 msgid "Signature created in the future"
 msgstr "La signatura s'ha creat en el futur"
 
-#: dkim-verify/dkimwidgetinfo.cpp:203
+#: dkim-verify/dkimwidgetinfo.cpp:205
 #, kde-format
 msgid "Signature too small"
 msgstr "La signatura és massa curta"
 
-#: dkim-verify/dkimwidgetinfo.cpp:209
+#: dkim-verify/dkimwidgetinfo.cpp:211
 #, kde-format
 msgid "Public Key too small"
 msgstr "La clau pública és massa petita"
 
-#: dkim-verify/dkimwidgetinfo.cpp:231 dkim-verify/dkimwidgetinfo.cpp:278
+#: dkim-verify/dkimwidgetinfo.cpp:233 dkim-verify/dkimwidgetinfo.cpp:280
 #, kde-format
 msgctxt "method name: info about it from parsing"
 msgid "%1: %2"
 msgstr "%1: %2"
 
-#: dkim-verify/dkimwidgetinfo.cpp:255
+#: dkim-verify/dkimwidgetinfo.cpp:257
 #, kde-format
 msgid "%1: None"
 msgstr "%1: Sense"
 
-#: dkim-verify/dkimwidgetinfo.cpp:270
+#: dkim-verify/dkimwidgetinfo.cpp:272
 #, kde-format
 msgid "%1: Valid (Signed by %2)"
 msgstr "%1: vàlida (signada per %2)"
 
-#: dkim-verify/dkimwidgetinfo.cpp:291
+#: dkim-verify/dkimwidgetinfo.cpp:293
 #, kde-format
 msgid "%1: Valid"
 msgstr "%1: Vàlida"
 
-#: dkim-verify/dkimwidgetinfo.cpp:305
+#: dkim-verify/dkimwidgetinfo.cpp:307
 #, kde-format
 msgid "Not Signed"
 msgstr "No està signada"
 
-#: header/grantleeheaderformatter.cpp:203
+#: header/grantleeheaderformatter.cpp:205
 #, kde-format
 msgid "Subject:"
 msgstr "Assumpte:"
 
-#: header/grantleeheaderformatter.cpp:223
+#: header/grantleeheaderformatter.cpp:225
 #, kde-format
 msgid "Date:"
 msgstr "Data:"
 
-#: header/grantleeheaderformatter.cpp:239
+#: header/grantleeheaderformatter.cpp:241
 #, kde-format
 msgid "Message-Id:"
 msgstr "ID del missatge:"
 
-#: header/grantleeheaderformatter.cpp:263
+#: header/grantleeheaderformatter.cpp:265
 #, kde-format
 msgid "To:"
 msgstr "A:"
 
-#: header/grantleeheaderformatter.cpp:265
+#: header/grantleeheaderformatter.cpp:267
 #, kde-format
 msgid "Reply To:"
 msgstr "Respon a:"
 
-#: header/grantleeheaderformatter.cpp:267
+#: header/grantleeheaderformatter.cpp:269
 #, kde-format
 msgid "CC:"
 msgstr "CC:"
 
-#: header/grantleeheaderformatter.cpp:269
+#: header/grantleeheaderformatter.cpp:271
 #, kde-format
 msgid "BCC:"
 msgstr "BCC:"
 
-#: header/grantleeheaderformatter.cpp:273
+#: header/grantleeheaderformatter.cpp:275
 #, kde-format
 msgid "Sender:"
 msgstr "Remitent:"
 
-#: header/grantleeheaderformatter.cpp:275
+#: header/grantleeheaderformatter.cpp:277
 #, kde-format
 msgid "resent from:"
 msgstr "reenviat des de:"
 
-#: header/grantleeheaderformatter.cpp:277
+#: header/grantleeheaderformatter.cpp:279
 #, kde-format
 msgid "resent to:"
 msgstr "reenviat a:"
 
-#: header/grantleeheaderformatter.cpp:358
+#: header/grantleeheaderformatter.cpp:360
 #, kde-format
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "El tema Grantlee «%1» no és vàlid."
 
-#: header/grantleeheaderformatter.cpp:448 header/headerstyle_util.cpp:80
-#: header/headerstyle_util.cpp:85 header/headerstyle_util.cpp:96
+#: header/grantleeheaderformatter.cpp:450 header/headerstyle_util.cpp:82
+#: header/headerstyle_util.cpp:87 header/headerstyle_util.cpp:98
 #, kde-format
 msgid "No Subject"
 msgstr "Sense assumpte"
 
-#: header/grantleeheaderformatter.cpp:453
+#: header/grantleeheaderformatter.cpp:455
 #, kde-format
 msgid "Spam Status:"
 msgstr "Estat de correu brossa:"
 
-#: header/grantleeheaderformatter.cpp:465
+#: header/grantleeheaderformatter.cpp:467
 #, kde-format
 msgid "Printing mode"
 msgstr "Mode d'impressió"
 
-#: header/grantleeheaderformatter.cpp:507
+#: header/grantleeheaderformatter.cpp:509
 #, kde-format
 msgid "[vcard]"
 msgstr "[vcard]"
 
-#: header/grantleeheaderformatter.cpp:514
+#: header/grantleeheaderformatter.cpp:516
 #, kde-format
 msgid "Attachments:"
 msgstr "Adjunts:"
 
-#: header/grantleeheaderformatter.cpp:540
+#: header/grantleeheaderformatter.cpp:542
 #, kde-format
 msgid "Security:"
 msgstr "Seguretat:"
 
-#: header/headerstyle_util.cpp:55
+#: header/headerstyle_util.cpp:57
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "Desconeguda"
 
-#: header/headerstyle_util.cpp:145
+#: header/headerstyle_util.cpp:146
 #, kde-format
 msgid ""
 "%1% probability of being spam with confidence %3%.\n"
@@ -784,7 +784,7 @@ msgstr ""
 "Probabilitat=%2\n"
 "Confiança=%4"
 
-#: header/headerstyle_util.cpp:154
+#: header/headerstyle_util.cpp:155
 #, kde-format
 msgid ""
 "%1% probability of being spam.\n"
@@ -797,39 +797,39 @@ msgstr ""
 "Informe complet:\n"
 "Probabilitat=%2"
 
-#: header/headerstyle_util.cpp:163
+#: header/headerstyle_util.cpp:164
 #, kde-format
 msgid "No Spam agent"
 msgstr "Cap agent de correu brossa"
 
-#: header/headerstyle_util.cpp:166
+#: header/headerstyle_util.cpp:167
 #, kde-format
 msgid "Spam filter score not a number"
 msgstr "El filtre de correu brossa no ha puntuat amb un número"
 
-#: header/headerstyle_util.cpp:169
+#: header/headerstyle_util.cpp:170
 #, kde-format
 msgid "Threshold not a valid number"
 msgstr "El llindar no és un número vàlid"
 
-#: header/headerstyle_util.cpp:172
+#: header/headerstyle_util.cpp:173
 #, kde-format
 msgid "Spam filter score could not be extracted from header"
 msgstr ""
 "La puntuació del filtre de correu brossa no s'ha pogut extreure de la "
 "capçalera"
 
-#: header/headerstyle_util.cpp:175
+#: header/headerstyle_util.cpp:176
 #, kde-format
 msgid "Threshold could not be extracted from header"
 msgstr "El llindar no s'ha pogut extreure de la capçalera"
 
-#: header/headerstyle_util.cpp:178
+#: header/headerstyle_util.cpp:179
 #, kde-format
 msgid "Error evaluating spam score"
 msgstr "Error en avaluar la puntuació de correu brossa"
 
-#: header/headerstyle_util.cpp:183
+#: header/headerstyle_util.cpp:184
 #, kde-format
 msgid ""
 "%1.\n"
@@ -842,49 +842,49 @@ msgstr ""
 "Informe complet:\n"
 "%2"
 
-#: header/headerstylemenumanager.cpp:105
+#: header/headerstylemenumanager.cpp:107
 #, kde-format
 msgctxt "View->"
 msgid "&Headers"
 msgstr "Cap&çaleres"
 
-#: header/headerstylemenumanager.cpp:109
+#: header/headerstylemenumanager.cpp:111
 #, kde-format
 msgid "Choose display style of message headers"
 msgstr "Escolliu amb quin estil es mostraran les capçaleres"
 
-#: header/plainheaderstyle.cpp:102
+#: header/plainheaderstyle.cpp:104
 #, kde-format
 msgid "Date: "
 msgstr "Data: "
 
-#: header/plainheaderstyle.cpp:106
+#: header/plainheaderstyle.cpp:108
 #, kde-format
 msgid "From: "
 msgstr "De: "
 
-#: header/plainheaderstyle.cpp:108
+#: header/plainheaderstyle.cpp:110
 #, kde-format
 msgid "[vCard]"
 msgstr "[vCard]"
 
-#: header/plainheaderstyle.cpp:120
+#: header/plainheaderstyle.cpp:121
 #, kde-format
 msgctxt "To-field of the mailheader."
 msgid "To: "
 msgstr "A: "
 
-#: header/plainheaderstyle.cpp:127
+#: header/plainheaderstyle.cpp:128
 #, kde-format
 msgid "CC: "
 msgstr "CC: "
 
-#: header/plainheaderstyle.cpp:134
+#: header/plainheaderstyle.cpp:135
 #, kde-format
 msgid "BCC: "
 msgstr "BCC: "
 
-#: header/plainheaderstyle.cpp:139
+#: header/plainheaderstyle.cpp:140
 #, kde-format
 msgid "Reply to: "
 msgstr "Respon a: "
@@ -907,93 +907,93 @@ msgctxt "@action"
 msgid "Send Deny"
 msgstr "Envia la denegació"
 
-#: messagepartthemes/default/defaultrenderer.cpp:69
+#: messagepartthemes/default/defaultrenderer.cpp:70
 #, kde-format
 msgid "Error: Signature not verified"
 msgstr "Error: Signatura no verificada"
 
-#: messagepartthemes/default/defaultrenderer.cpp:73
+#: messagepartthemes/default/defaultrenderer.cpp:74
 #, kde-format
 msgid "Good signature"
 msgstr "Signatura correcta"
 
-#: messagepartthemes/default/defaultrenderer.cpp:77
+#: messagepartthemes/default/defaultrenderer.cpp:78
 #, kde-format
 msgid "Bad signature"
 msgstr "Signatura dolenta"
 
-#: messagepartthemes/default/defaultrenderer.cpp:81
+#: messagepartthemes/default/defaultrenderer.cpp:82
 #, kde-format
 msgid "No public key to verify the signature"
 msgstr "No hi ha clau pública per a verificar la signatura"
 
-#: messagepartthemes/default/defaultrenderer.cpp:85
+#: messagepartthemes/default/defaultrenderer.cpp:86
 #, kde-format
 msgid "No signature found"
 msgstr "No s'ha trobat cap signatura"
 
-#: messagepartthemes/default/defaultrenderer.cpp:89
+#: messagepartthemes/default/defaultrenderer.cpp:90
 #, kde-format
 msgid "Error verifying the signature"
 msgstr "S'ha produït un error en verificar la signatura"
 
-#: messagepartthemes/default/defaultrenderer.cpp:93
+#: messagepartthemes/default/defaultrenderer.cpp:94
 #, kde-format
 msgid "Different results for signatures"
 msgstr "Diferents resultats a les signatures"
 
-#: messagepartthemes/default/defaultrenderer.cpp:113
+#: messagepartthemes/default/defaultrenderer.cpp:114
 #, kde-format
 msgid "No status information available."
 msgstr "No hi ha disponible informació sobre l'estat."
 
-#: messagepartthemes/default/defaultrenderer.cpp:120
-#: messagepartthemes/default/defaultrenderer.cpp:205
+#: messagepartthemes/default/defaultrenderer.cpp:121
+#: messagepartthemes/default/defaultrenderer.cpp:206
 #, kde-format
 msgid "Good signature."
 msgstr "Signatura correcta."
 
-#: messagepartthemes/default/defaultrenderer.cpp:141
+#: messagepartthemes/default/defaultrenderer.cpp:142
 #, kde-format
 msgid "One key has expired."
 msgstr "Una clau ha caducat."
 
-#: messagepartthemes/default/defaultrenderer.cpp:145
+#: messagepartthemes/default/defaultrenderer.cpp:146
 #, kde-format
 msgid "The signature has expired."
 msgstr "La signatura ha caducat."
 
-#: messagepartthemes/default/defaultrenderer.cpp:150
+#: messagepartthemes/default/defaultrenderer.cpp:151
 #, kde-format
 msgid "Unable to verify: key missing."
 msgstr "No s'ha pogut verificar: falta la clau."
 
-#: messagepartthemes/default/defaultrenderer.cpp:157
+#: messagepartthemes/default/defaultrenderer.cpp:158
 #, kde-format
 msgid "CRL not available."
 msgstr "No hi ha disponible una CRL."
 
-#: messagepartthemes/default/defaultrenderer.cpp:161
+#: messagepartthemes/default/defaultrenderer.cpp:162
 #, kde-format
 msgid "Available CRL is too old."
 msgstr "La CRL disponible és massa antiga."
 
-#: messagepartthemes/default/defaultrenderer.cpp:165
+#: messagepartthemes/default/defaultrenderer.cpp:166
 #, kde-format
 msgid "A policy was not met."
 msgstr "No s'ha trobat cap política."
 
-#: messagepartthemes/default/defaultrenderer.cpp:169
+#: messagepartthemes/default/defaultrenderer.cpp:170
 #, kde-format
 msgid "A system error occurred."
 msgstr "S'ha produït un error del sistema."
 
-#: messagepartthemes/default/defaultrenderer.cpp:180
+#: messagepartthemes/default/defaultrenderer.cpp:181
 #, kde-format
 msgid "One key has been revoked."
 msgstr "S'ha revocat una clau."
 
-#: messagepartthemes/default/defaultrenderer.cpp:207
+#: messagepartthemes/default/defaultrenderer.cpp:208
 #, kde-format
 msgid "Bad signature."
 msgstr "Signatura dolenta."
@@ -1004,55 +1004,55 @@ msgctxt "@title:window"
 msgid "Configure Remote Content"
 msgstr "Configuració de contingut remot"
 
-#: remote-content/remotecontentconfigurewidget.cpp:52
+#: remote-content/remotecontentconfigurewidget.cpp:54
 #, kde-format
 msgid "Status"
 msgstr "Estat"
 
-#: remote-content/remotecontentconfigurewidget.cpp:89
+#: remote-content/remotecontentconfigurewidget.cpp:91
 #, kde-format
 msgid "Do you want to delete this rule '%1'?"
 msgstr "Voleu suprimir aquesta regla «%1»?"
 
-#: remote-content/remotecontentconfigurewidget.cpp:107
+#: remote-content/remotecontentconfigurewidget.cpp:109
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Remote Content"
 msgstr "Edició de contingut remot"
 
-#: remote-content/remotecontentconfigurewidget.cpp:123
+#: remote-content/remotecontentconfigurewidget.cpp:125
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Remote Content"
 msgstr "Afegeix contingut remot"
 
-#: remote-content/remotecontentconfigurewidget.cpp:132
+#: remote-content/remotecontentconfigurewidget.cpp:134
 #, kde-format
 msgid "An entry already defines this url. Please modify it."
 msgstr "Ja existeix una entrada que defineix aquest URL. Modifiqueu-la."
 
-#: remote-content/remotecontentconfigurewidget.cpp:132
+#: remote-content/remotecontentconfigurewidget.cpp:134
 #, kde-format
 msgctxt "@title:window"
 msgid "Add new Url"
 msgstr "Afegeix un URL nou"
 
-#: remote-content/remotecontentmenu.cpp:17
+#: remote-content/remotecontentmenu.cpp:19
 #, kde-format
 msgid "Configure"
 msgstr "Configura"
 
-#: remote-content/remotecontentmenu.cpp:19
+#: remote-content/remotecontentmenu.cpp:21
 #, kde-format
 msgid "Remote Content"
 msgstr "Contingut remot"
 
-#: remote-content/remotecontentmenu.cpp:50
+#: remote-content/remotecontentmenu.cpp:52
 #, kde-format
 msgid "Authorize %1"
 msgstr "Autoritza %1"
 
-#: remote-content/remotecontentmenu.cpp:58
+#: remote-content/remotecontentmenu.cpp:60
 #, kde-format
 msgid "Authorize all Urls"
 msgstr "Autoritza tots els URL"
@@ -1073,45 +1073,45 @@ msgctxt "@label:textbox"
 msgid "Domain:"
 msgstr "Domini:"
 
-#: scamdetection/scamdetectiondetailsdialog.cpp:40
+#: scamdetection/scamdetectiondetailsdialog.cpp:42
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"
 msgstr "Detalls"
 
-#: scamdetection/scamdetectionwarningwidget.cpp:34
+#: scamdetection/scamdetectionwarningwidget.cpp:36
 #, kde-format
 msgid "This message may be a scam. <a href=\"scamdetails\">(Details...)</a>"
 msgstr ""
 "Aquest missatge podria ser fraudulent. <a href=\"scamdetails\">(Detalls...)</"
 "a>"
 
-#: scamdetection/scamdetectionwarningwidget.cpp:39
+#: scamdetection/scamdetectionwarningwidget.cpp:41
 #, kde-format
 msgctxt "@action"
 msgid "Move to Trash"
 msgstr "Mou a la paperera"
 
-#: scamdetection/scamdetectionwarningwidget.cpp:44
+#: scamdetection/scamdetectionwarningwidget.cpp:46
 #, kde-format
 msgctxt "@action"
 msgid "I confirm it's not a scam"
 msgstr "Confirmo que no és fraudulent"
 
-#: scamdetection/scamdetectionwarningwidget.cpp:48
+#: scamdetection/scamdetectionwarningwidget.cpp:50
 #, kde-format
 msgctxt "@action"
 msgid "Add email to whitelist"
 msgstr "Afegeix el correu a la llista blanca"
 
-#: scamdetection/scamdetectionwarningwidget.cpp:52
+#: scamdetection/scamdetectionwarningwidget.cpp:54
 #, kde-format
 msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "Desactiva la detecció de frau per a tots els missatges"
 
-#: scamdetection/scamdetectionwebengine.cpp:115
-#: scamdetection/scamdetectionwebengine.cpp:214
+#: scamdetection/scamdetectionwebengine.cpp:117
+#: scamdetection/scamdetectionwebengine.cpp:215
 #, kde-format
 msgid ""
 "This email contains a link which reads as '%1' in the text, but actually "
@@ -1122,7 +1122,7 @@ msgstr ""
 "realitat apunta a «%2». Sovint es tracta de correus electrònics fraudulents "
 "per a enganyar al destinatari"
 
-#: scamdetection/scamdetectionwebengine.cpp:128
+#: scamdetection/scamdetectionwebengine.cpp:130
 #, kde-format
 msgid ""
 "This email contains a link which points to a numerical IP address (%1) "
@@ -1133,7 +1133,7 @@ msgstr ""
 "(%1) en lloc d'una adreça d'Internet textual típica. Sovint es tracta de "
 "correus electrònics fraudulents."
 
-#: scamdetection/scamdetectionwebengine.cpp:135
+#: scamdetection/scamdetectionwebengine.cpp:137
 #, kde-format
 msgid ""
 "This email contains a link which points to a hexadecimal IP address (%1) "
@@ -1144,12 +1144,12 @@ msgstr ""
 "hexadecimal (%1) en lloc d'una adreça d'Internet textual típica. Sovint es "
 "tracta de correus electrònics fraudulents."
 
-#: scamdetection/scamdetectionwebengine.cpp:141
+#: scamdetection/scamdetectionwebengine.cpp:143
 #, kde-format
 msgid "This email contains a link (%1) which has a redirection"
 msgstr "Aquest correu electrònic conté un enllaç (%1) que és una redirecció"
 
-#: scamdetection/scamdetectionwebengine.cpp:148
+#: scamdetection/scamdetectionwebengine.cpp:149
 #, kde-format
 msgid ""
 "This email contains a link (%1) which contains multiple http://. This is "
@@ -1158,36 +1158,36 @@ msgstr ""
 "Aquest correu electrònic conté un enllaç (%1), el qual apunta a múltiples "
 "adreces http://. Sovint es tracta de correus electrònics fraudulents."
 
-#: scamdetection/scamdetectionwebengine.cpp:159
+#: scamdetection/scamdetectionwebengine.cpp:160
 #, kde-format
 msgid "This email contains a shorturl (%1). It can redirect to another server."
 msgstr ""
 "Aquest correu electrònic conté un URL curt (%1). Es pot redirigir a un altre "
 "servidor."
 
-#: scamdetection/scamdetectionwebengine.cpp:233
+#: scamdetection/scamdetectionwebengine.cpp:234
 #, kde-format
 msgid "Message contains form element. This is often the case in scam emails."
 msgstr ""
 "El missatge conté un element de formulari. Sovint es tracta de correus "
 "electrònics fraudulents."
 
-#: scamdetection/scamdetectionwebengine.cpp:237
+#: scamdetection/scamdetectionwebengine.cpp:238
 #, kde-format
 msgid "Details:"
 msgstr "Detalls:"
 
-#: scamdetection/scamexpandurljob.cpp:47
+#: scamdetection/scamexpandurljob.cpp:49
 #, kde-format
 msgid "No network connection detected, we cannot expand url."
 msgstr "No s'ha detectat cap connexió de xarxa, no s'ha pogut expandir l'URL."
 
-#: scamdetection/scamexpandurljob.cpp:77 scamdetection/scamexpandurljob.cpp:83
+#: scamdetection/scamexpandurljob.cpp:79 scamdetection/scamexpandurljob.cpp:85
 #, kde-format
 msgid "Impossible to expand '%1'."
 msgstr "És impossible ampliar «%1»."
 
-#: scamdetection/scamexpandurljob.cpp:81
+#: scamdetection/scamexpandurljob.cpp:83
 #, kde-format
 msgid "Short url '%1' redirects to '%2'."
 msgstr "L'URL curt «%1» redirigeix a «%2»."
@@ -1494,7 +1494,7 @@ msgstr ""
 "correctament."
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
-#: settings/messageviewer.kcfg.in:228 viewer/viewer_p.cpp:1559
+#: settings/messageviewer.kcfg.in:228 viewer/viewer_p.cpp:1558
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "Usa una lletra d'amplada fi&xa"
@@ -1847,22 +1847,22 @@ msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
 msgstr "%1"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:59
+#: viewer/mimeparttree/mimetreemodel.cpp:61
 #, kde-format
 msgid "body part"
 msgstr "part del cos"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:262
+#: viewer/mimeparttree/mimetreemodel.cpp:264
 #, kde-format
 msgid "Description"
 msgstr "Descripció"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:264
+#: viewer/mimeparttree/mimetreemodel.cpp:266
 #, kde-format
 msgid "Type"
 msgstr "Tipus"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:266
+#: viewer/mimeparttree/mimetreemodel.cpp:268
 #, kde-format
 msgid "Size"
 msgstr "Mida"
@@ -1878,124 +1878,124 @@ msgctxt "@title:window"
 msgid "Print Document"
 msgstr "Impressió del document"
 
-#: viewer/urlhandlermanager.cpp:407
+#: viewer/urlhandlermanager.cpp:409
 #, kde-format
 msgid "Turn on HTML rendering for this message."
 msgstr "Activa la representació HTML per a aquest missatge."
 
-#: viewer/urlhandlermanager.cpp:409 viewer/viewer_p.cpp:1628
+#: viewer/urlhandlermanager.cpp:411 viewer/viewer_p.cpp:1627
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "Carrega les referències externes d'Internet per a aquest missatge."
 
-#: viewer/urlhandlermanager.cpp:411
+#: viewer/urlhandlermanager.cpp:413
 #, kde-format
 msgid "Work online."
 msgstr "Treballa en línia."
 
-#: viewer/urlhandlermanager.cpp:413
+#: viewer/urlhandlermanager.cpp:415
 #, kde-format
 msgid "Make account online."
 msgstr "Fa que el compte estigui en línia."
 
-#: viewer/urlhandlermanager.cpp:415
+#: viewer/urlhandlermanager.cpp:417
 #, kde-format
 msgid "Decrypt message."
 msgstr "Desencripta el missatge."
 
-#: viewer/urlhandlermanager.cpp:417
+#: viewer/urlhandlermanager.cpp:419
 #, kde-format
 msgid "Show signature details."
 msgstr "Mostra els detalls de la signatura."
 
-#: viewer/urlhandlermanager.cpp:419
+#: viewer/urlhandlermanager.cpp:421
 #, kde-format
 msgid "Hide signature details."
 msgstr "Oculta els detalls de la signatura."
 
-#: viewer/urlhandlermanager.cpp:421
+#: viewer/urlhandlermanager.cpp:423
 #, kde-format
 msgid "Show encryption details."
 msgstr "Mostra els detalls de l'encriptatge."
 
-#: viewer/urlhandlermanager.cpp:423
+#: viewer/urlhandlermanager.cpp:425
 #, kde-format
 msgid "Hide encryption details."
 msgstr "Oculta els detalls de l'encriptatge."
 
-#: viewer/urlhandlermanager.cpp:428
+#: viewer/urlhandlermanager.cpp:430
 #, kde-format
 msgid "Open Documentation"
 msgstr "Obre una documentació"
 
-#: viewer/urlhandlermanager.cpp:462
+#: viewer/urlhandlermanager.cpp:464
 #, kde-format
 msgid "Expand all quoted text."
 msgstr "Desplega tot el text citat."
 
-#: viewer/urlhandlermanager.cpp:464
+#: viewer/urlhandlermanager.cpp:466
 #, kde-format
 msgid "Collapse quoted text."
 msgstr "Plega el text citat."
 
-#: viewer/urlhandlermanager.cpp:491
+#: viewer/urlhandlermanager.cpp:492
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""
 "No s'ha pogut iniciar el gestor de certificats. Comproveu aquesta "
 "instal·lació."
 
-#: viewer/urlhandlermanager.cpp:493
+#: viewer/urlhandlermanager.cpp:494
 #, kde-format
 msgid "KMail Error"
 msgstr "S'ha produït un error al KMail"
 
-#: viewer/urlhandlermanager.cpp:510
+#: viewer/urlhandlermanager.cpp:511
 #, kde-format
 msgid "Show certificate 0x%1"
 msgstr "Mostra el certificat 0x%1"
 
-#: viewer/urlhandlermanager.cpp:569
+#: viewer/urlhandlermanager.cpp:570
 #, kde-format
 msgid "&Open in Address Book"
 msgstr "&Obre a la llibreta d'adreces"
 
-#: viewer/urlhandlermanager.cpp:571
+#: viewer/urlhandlermanager.cpp:572
 #, kde-format
 msgid "&Copy Email Address"
 msgstr "&Copia l'adreça de correu"
 
-#: viewer/urlhandlermanager.cpp:584 viewer/viewer_p.cpp:2720
+#: viewer/urlhandlermanager.cpp:585 viewer/viewer_p.cpp:2718
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Adreça copiada al porta-retalls."
 
-#: viewer/urlhandlermanager.cpp:595
+#: viewer/urlhandlermanager.cpp:596
 #, kde-format
 msgid "Lookup the contact in KAddressbook"
 msgstr "Cerca el contacte en el KAddressbook"
 
-#: viewer/urlhandlermanager.cpp:771
+#: viewer/urlhandlermanager.cpp:772
 #, kde-format
 msgid "Attachment: %1"
 msgstr "Adjunt: %1"
 
-#: viewer/urlhandlermanager.cpp:774
+#: viewer/urlhandlermanager.cpp:775
 #, kde-format
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "Missatge encapsulat (assumpte: %1)"
 
-#: viewer/urlhandlermanager.cpp:776
+#: viewer/urlhandlermanager.cpp:777
 #, kde-format
 msgid "Encapsulated Message"
 msgstr "Missatge encapsulat"
 
-#: viewer/urlhandlermanager.cpp:779
+#: viewer/urlhandlermanager.cpp:780
 #, kde-format
 msgid "Unnamed attachment"
 msgstr "Adjunt sense nom"
 
-#: viewer/urlhandlermanager.cpp:814
+#: viewer/urlhandlermanager.cpp:815
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr "Mostra el registre d'auditoria del GnuPG per a aquesta operació"
@@ -2022,7 +2022,7 @@ msgstr "Executa"
 msgid "Loading message..."
 msgstr "S'està carregant el missatge..."
 
-#: viewer/viewer_p.cpp:345
+#: viewer/viewer_p.cpp:346
 #, kde-format
 msgid ""
 "Deleting an attachment might invalidate any digital signature on this "
@@ -2031,13 +2031,13 @@ msgstr ""
 "La supressió d'un adjunt pot invalidar qualsevol signatura digital d'aquest "
 "missatge."
 
-#: viewer/viewer_p.cpp:346 viewer/viewer_p.cpp:381
+#: viewer/viewer_p.cpp:347 viewer/viewer_p.cpp:382
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "Supressió d'adjunt"
 
-#: viewer/viewer_p.cpp:380
+#: viewer/viewer_p.cpp:381
 #, kde-format
 msgid ""
 "Deleting an attachment from an encrypted or old-style mailman message is not "
@@ -2046,67 +2046,67 @@ msgstr ""
 "No està permès suprimir un adjunt d'un missatge encriptat o de l'antic estil "
 "del mailman."
 
-#: viewer/viewer_p.cpp:429
+#: viewer/viewer_p.cpp:430
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
 msgstr "&Obre amb"
 
-#: viewer/viewer_p.cpp:447
+#: viewer/viewer_p.cpp:448
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
 msgstr "&Altres..."
 
-#: viewer/viewer_p.cpp:449 viewer/viewer_p.cpp:462
+#: viewer/viewer_p.cpp:450 viewer/viewer_p.cpp:463
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "&Obre amb..."
 
-#: viewer/viewer_p.cpp:526 viewer/viewer_p.cpp:1738
+#: viewer/viewer_p.cpp:527 viewer/viewer_p.cpp:1737
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Obre"
 
-#: viewer/viewer_p.cpp:540 viewer/viewer_p.cpp:1745
+#: viewer/viewer_p.cpp:541 viewer/viewer_p.cpp:1744
 #, kde-format
 msgctxt "to view something"
 msgid "View"
 msgstr "Visualitza"
 
-#: viewer/viewer_p.cpp:548
+#: viewer/viewer_p.cpp:549
 #, kde-format
 msgid "Scroll To"
 msgstr "Desplaça a"
 
-#: viewer/viewer_p.cpp:553
+#: viewer/viewer_p.cpp:554
 #, kde-format
 msgid "Save As..."
 msgstr "Desa com a..."
 
-#: viewer/viewer_p.cpp:559 viewer/viewer_p.cpp:1755
+#: viewer/viewer_p.cpp:560 viewer/viewer_p.cpp:1754
 #, kde-format
 msgid "Copy"
 msgstr "Copia"
 
-#: viewer/viewer_p.cpp:570 viewer/viewer_p.cpp:1760
+#: viewer/viewer_p.cpp:571 viewer/viewer_p.cpp:1758
 #, kde-format
 msgid "Delete Attachment"
 msgstr "Suprimeix l'adjunt"
 
-#: viewer/viewer_p.cpp:581
+#: viewer/viewer_p.cpp:582
 #, kde-format
 msgid "Reply To Author"
 msgstr "Respon a l'autor"
 
-#: viewer/viewer_p.cpp:589
+#: viewer/viewer_p.cpp:590
 #, kde-format
 msgid "Reply To All"
 msgstr "Respon a tots"
 
-#: viewer/viewer_p.cpp:595 viewer/viewer_p.cpp:1765
+#: viewer/viewer_p.cpp:596 viewer/viewer_p.cpp:1763
 #, kde-format
 msgid "Properties"
 msgstr "Propietats"
@@ -2116,280 +2116,280 @@ msgstr "Propietats"
 msgid "KMail"
 msgstr "KMail"
 
-#: viewer/viewer_p.cpp:733
+#: viewer/viewer_p.cpp:732
 #, kde-format
 msgid "The KDE Mail Client"
 msgstr "El client de correu del KDE"
 
-#: viewer/viewer_p.cpp:1279
+#: viewer/viewer_p.cpp:1278
 #, kde-format
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "Visualització de l'adjunt: %1"
 
-#: viewer/viewer_p.cpp:1481
+#: viewer/viewer_p.cpp:1480
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "&Adjunts"
 
-#: viewer/viewer_p.cpp:1483
+#: viewer/viewer_p.cpp:1482
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "Escolliu l'estil de visualització dels adjunts"
 
-#: viewer/viewer_p.cpp:1486
+#: viewer/viewer_p.cpp:1485
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "Com a i&cones"
 
-#: viewer/viewer_p.cpp:1489
+#: viewer/viewer_p.cpp:1488
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr "Mostra tots els adjunts com a icones. Feu clic per a veure'ls."
 
-#: viewer/viewer_p.cpp:1493
+#: viewer/viewer_p.cpp:1492
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "&Intel·ligents"
 
-#: viewer/viewer_p.cpp:1496
+#: viewer/viewer_p.cpp:1495
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "Mostra els adjunts tal com suggereix el remitent."
 
-#: viewer/viewer_p.cpp:1500
+#: viewer/viewer_p.cpp:1499
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "&Inclosos"
 
-#: viewer/viewer_p.cpp:1503
+#: viewer/viewer_p.cpp:1502
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "Mostra tots els adjunts inclosos (si fos possible)"
 
-#: viewer/viewer_p.cpp:1507
+#: viewer/viewer_p.cpp:1506
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "&Oculta"
 
-#: viewer/viewer_p.cpp:1510
+#: viewer/viewer_p.cpp:1509
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "No mostris els adjunts en el visualitzador de missatges"
 
-#: viewer/viewer_p.cpp:1514
+#: viewer/viewer_p.cpp:1513
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr "Només en la capçalera"
 
-#: viewer/viewer_p.cpp:1517
+#: viewer/viewer_p.cpp:1516
 #, kde-format
 msgid "Show Attachments only in the header of the mail"
 msgstr "Mostra els adjunts només en la capçalera del correu"
 
-#: viewer/viewer_p.cpp:1522
+#: viewer/viewer_p.cpp:1521
 #, kde-format
 msgid "&Set Encoding"
 msgstr "Estableix la co&dificació"
 
-#: viewer/viewer_p.cpp:1527 widgets/configurewidget.cpp:43
-#: widgets/configurewidget.cpp:77
+#: viewer/viewer_p.cpp:1526 widgets/configurewidget.cpp:45
+#: widgets/configurewidget.cpp:79
 #, kde-format
 msgid "Auto"
 msgstr "Automàtic"
 
-#: viewer/viewer_p.cpp:1537
+#: viewer/viewer_p.cpp:1536
 #, kde-format
 msgid "Copy Text"
 msgstr "Copia el text"
 
-#: viewer/viewer_p.cpp:1543
+#: viewer/viewer_p.cpp:1542
 #, kde-format
 msgctxt "@action"
 msgid "Select All Text"
 msgstr "Selecciona tot el text"
 
-#: viewer/viewer_p.cpp:1549 viewer/viewer_p.cpp:2074
+#: viewer/viewer_p.cpp:1548 viewer/viewer_p.cpp:2072
 #, kde-format
 msgid "Copy Link Address"
 msgstr "Copia l'adreça de l'enllaç"
 
-#: viewer/viewer_p.cpp:1554
+#: viewer/viewer_p.cpp:1553
 #, kde-format
 msgid "Open URL"
 msgstr "Obre l'URL"
 
-#: viewer/viewer_p.cpp:1565
+#: viewer/viewer_p.cpp:1564
 #, kde-format
 msgid "Show Message Structure"
 msgstr "Mostra l'estructura del missatge"
 
-#: viewer/viewer_p.cpp:1570
+#: viewer/viewer_p.cpp:1569
 #, kde-format
 msgctxt "@action"
 msgid "&View Source"
 msgstr "&Mostra el codi font"
 
-#: viewer/viewer_p.cpp:1575
+#: viewer/viewer_p.cpp:1574
 #, kde-format
 msgid "&Save Message..."
 msgstr "De&sa el missatge..."
 
-#: viewer/viewer_p.cpp:1581
+#: viewer/viewer_p.cpp:1580
 #, kde-format
 msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "De&sa el format de visualització"
 
-#: viewer/viewer_p.cpp:1585
+#: viewer/viewer_p.cpp:1584
 #, kde-format
 msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "&Reinicia el format de visualització"
 
-#: viewer/viewer_p.cpp:1592
+#: viewer/viewer_p.cpp:1591
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "Desplaça el missatge cap amunt"
 
-#: viewer/viewer_p.cpp:1597
+#: viewer/viewer_p.cpp:1596
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "Desplaça el missatge cap avall"
 
-#: viewer/viewer_p.cpp:1602
+#: viewer/viewer_p.cpp:1601
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "Desplaça el missatge cap amunt (més)"
 
-#: viewer/viewer_p.cpp:1607
+#: viewer/viewer_p.cpp:1606
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "Desplaça el missatge cap avall (més)"
 
-#: viewer/viewer_p.cpp:1617
+#: viewer/viewer_p.cpp:1616
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr "Commuta el mode de visualització HTML"
 
-#: viewer/viewer_p.cpp:1621
+#: viewer/viewer_p.cpp:1620
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr "Commuta el mode de visualització entre HTML i text net"
 
-#: viewer/viewer_p.cpp:1624
+#: viewer/viewer_p.cpp:1623
 #, kde-format
 msgctxt "@action"
 msgid "Load external references"
 msgstr "Carrega les referències externes"
 
-#: viewer/viewer_p.cpp:1630
+#: viewer/viewer_p.cpp:1629
 #, kde-format
 msgctxt "@action"
 msgid "Speak Text"
 msgstr "Pronuncia el text"
 
-#: viewer/viewer_p.cpp:1636
+#: viewer/viewer_p.cpp:1635
 #, kde-format
 msgctxt "@action"
 msgid "Share Text..."
 msgstr "Comparteix el text..."
 
-#: viewer/viewer_p.cpp:1654
+#: viewer/viewer_p.cpp:1653
 #, kde-format
 msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "Copia la ubicació de la imatge"
 
-#: viewer/viewer_p.cpp:1660
+#: viewer/viewer_p.cpp:1659
 #, kde-format
 msgid "&Find in Message..."
 msgstr "&Cerca al missatge..."
 
-#: viewer/viewer_p.cpp:1669
+#: viewer/viewer_p.cpp:1668
 #, kde-format
 msgid "Disable Emoticon"
 msgstr "Desactiva les emoticones"
 
-#: viewer/viewer_p.cpp:1735
+#: viewer/viewer_p.cpp:1734
 #, kde-format
 msgid "Save &As..."
 msgstr "&Desa com a..."
 
-#: viewer/viewer_p.cpp:1743
+#: viewer/viewer_p.cpp:1742
 #, kde-format
 msgid "Open With..."
 msgstr "Obre amb..."
 
-#: viewer/viewer_p.cpp:1750
+#: viewer/viewer_p.cpp:1749
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "Desa tots els adjunts..."
 
-#: viewer/viewer_p.cpp:1994
+#: viewer/viewer_p.cpp:1992
 #, kde-format
 msgid "The network is broken."
 msgstr "La xarxa no funciona."
 
-#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
+#: viewer/viewer_p.cpp:1992 viewer/viewer_p.cpp:1995
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "Comprovació d'URL de pesca"
 
-#: viewer/viewer_p.cpp:1997
+#: viewer/viewer_p.cpp:1995
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "L'URL %1 no és vàlid."
 
-#: viewer/viewer_p.cpp:2017
+#: viewer/viewer_p.cpp:2015
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr "Aquest lloc web és maliciós. Voleu continuar mostrant-lo?"
 
-#: viewer/viewer_p.cpp:2018
+#: viewer/viewer_p.cpp:2016
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr "Programari maliciós"
 
-#: viewer/viewer_p.cpp:2072
+#: viewer/viewer_p.cpp:2070
 #, kde-format
 msgid "Copy Email Address"
 msgstr "Copia l'adreça de correu"
 
-#: viewer/viewer_p.cpp:2155
+#: viewer/viewer_p.cpp:2153
 #, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Missatge com a text net"
 
-#: viewer/viewer_p.cpp:2726
+#: viewer/viewer_p.cpp:2724
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL copiat al porta-retalls."
 
-#: viewer/viewer_p.cpp:2888
+#: viewer/viewer_p.cpp:2886
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "Ha fallat en carregar el missatge: %1."
 
-#: viewer/viewer_p.cpp:2893
+#: viewer/viewer_p.cpp:2891
 #, kde-format
 msgid "Message not found."
 msgstr "No s'ha trobat el missatge."
 
-#: widgets/attachmentdialog.cpp:27
+#: widgets/attachmentdialog.cpp:28
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2399,23 +2399,23 @@ msgstr ""
 "Obro l'adjunt <filename>%1</filename>?<nl/>Cal tenir present que obrir un "
 "adjunt pot comprometre la seguretat del sistema."
 
-#: widgets/attachmentdialog.cpp:32
+#: widgets/attachmentdialog.cpp:33
 #, kde-format
 msgctxt "@title:window"
 msgid "Open Attachment?"
 msgstr "Obro l'adjunt?"
 
-#: widgets/attachmentdialog.cpp:39
+#: widgets/attachmentdialog.cpp:40
 #, kde-format
 msgid "&Open With '%1'"
 msgstr "&Obre amb «%1»"
 
-#: widgets/attachmentdialog.cpp:46
+#: widgets/attachmentdialog.cpp:47
 #, kde-format
 msgid "Open &With..."
 msgstr "Obre &amb..."
 
-#: widgets/attachmentdialog.cpp:68
+#: widgets/attachmentdialog.cpp:69
 #, kde-format
 msgid "Do not ask again"
 msgstr "No ho tornis a preguntar"
@@ -2467,7 +2467,7 @@ msgstr ""
 msgid "Click to toggle between HTML, plain text and calendar."
 msgstr "Feu clic per a commutar entre HTML, text net i calendari."
 
-#: widgets/invitationsettings.cpp:70
+#: widgets/invitationsettings.cpp:72
 #, kde-format
 msgid ""
 "<qt>Invitations are normally sent as attachments to a mail. This switch "
@@ -2488,31 +2488,31 @@ msgstr ""
 "invitacions.<br />La gent que té programes de correu que entenen les "
 "invitacions encara podran treballar d'aquesta forma.</qt>"
 
-#: widgets/mailsourceviewtextbrowserwidget.cpp:133
+#: widgets/mailsourceviewtextbrowserwidget.cpp:134
 #, kde-format
 msgid "Speak Text"
 msgstr "Pronuncia el text"
 
-#: widgets/mailsourcewebengineviewer.cpp:53
+#: widgets/mailsourcewebengineviewer.cpp:54
 #, kde-format
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
 msgstr "Codi en cru"
 
-#: widgets/mailsourcewebengineviewer.cpp:54
+#: widgets/mailsourcewebengineviewer.cpp:55
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr ""
 "En cru, correu sense modificar tal com s'ha emmagatzemat al sistema de "
 "fitxers o al servidor"
 
-#: widgets/mailsourcewebengineviewer.cpp:57
+#: widgets/mailsourcewebengineviewer.cpp:58
 #, kde-format
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
 msgstr "Codi HTML"
 
-#: widgets/mailsourcewebengineviewer.cpp:58
+#: widgets/mailsourcewebengineviewer.cpp:59
 #, kde-format
 msgid "HTML code for displaying the message to the user"
 msgstr "Codi HTML per a mostrar el missatge a l'usuari"
@@ -2548,13 +2548,13 @@ msgstr "Obre la carpeta a on s'ha desat el fitxer PDF"
 msgid "KMail was unable to open the attachment."
 msgstr "El KMail no ha pogut obrir l'adjunt."
 
-#: widgets/shownextmessagewidget.cpp:15
+#: widgets/shownextmessagewidget.cpp:17
 #, kde-format
 msgctxt "@action:button"
 msgid "Next Message"
 msgstr "Missatge següent"
 
-#: widgets/shownextmessagewidget.cpp:16
+#: widgets/shownextmessagewidget.cpp:18
 #, kde-format
 msgctxt "@action:button"
 msgid "Previous Message"

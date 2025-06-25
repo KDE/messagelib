@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-01 00:41+0000\n"
+"POT-Creation-Date: 2025-06-25 00:43+0000\n"
 "PO-Revision-Date: 2025-01-07 18:27+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -25,81 +25,81 @@ msgctxt "@title:window"
 msgid "Developer Tool"
 msgstr "أدوات المطور"
 
-#: findbar/findbarbase.cpp:39
+#: findbar/findbarbase.cpp:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "أغلق"
 
-#: findbar/findbarbase.cpp:42
+#: findbar/findbarbase.cpp:44
 #, kde-format
 msgid "Close"
 msgstr "أغلق"
 
-#: findbar/findbarbase.cpp:48
+#: findbar/findbarbase.cpp:50
 #, kde-format
 msgctxt "Find text"
 msgid "F&ind:"
 msgstr "ابح&ث عن:"
 
-#: findbar/findbarbase.cpp:53
+#: findbar/findbarbase.cpp:55
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "النّصّ للبحث عنه"
 
-#: findbar/findbarbase.cpp:58
+#: findbar/findbarbase.cpp:60
 #, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
 msgstr "التّالية"
 
-#: findbar/findbarbase.cpp:59
+#: findbar/findbarbase.cpp:61
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "انتقل إلى المطابقة التّالية"
 
-#: findbar/findbarbase.cpp:64
+#: findbar/findbarbase.cpp:66
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
 msgstr "السّابقة"
 
-#: findbar/findbarbase.cpp:65
+#: findbar/findbarbase.cpp:67
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "انتقل إلى المطابقة السّابقة"
 
-#: findbar/findbarbase.cpp:71
+#: findbar/findbarbase.cpp:73
 #, kde-format
 msgid "Options"
 msgstr "خيارات"
 
-#: findbar/findbarbase.cpp:72
+#: findbar/findbarbase.cpp:74
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "عدل سلوك البحث"
 
-#: findbar/findbarbase.cpp:74
+#: findbar/findbarbase.cpp:76
 #, kde-format
 msgid "Case sensitive"
 msgstr "حسّاس للحالة"
 
-#: findbar/findbarbase.cpp:91
+#: findbar/findbarbase.cpp:93
 #, kde-format
 msgid "Phrase not found"
 msgstr "لم توجد العبارة"
 
-#: webenginepage.cpp:152
+#: webenginepage.cpp:154
 #, kde-format
 msgctxt "@title:window"
 msgid "Save HTML Page"
 msgstr "احفظ صفحة HTML"
 
-#: widgets/submittedformwidgets/submittedformwarningwidget.cpp:22
+#: widgets/submittedformwidgets/submittedformwarningwidget.cpp:23
 #, kde-format
 msgid "Submit form is not allowed in mailer. Please open url in a browser."
 msgstr "لا يُسمح بإرسال النموذج في البريد الإلكتروني. يُرجى فتح الرابط في متصفح."
@@ -135,7 +135,7 @@ msgstr[3] "%1 متتبعات من الشركة %2 (%3)"
 msgstr[4] "%1 متتبعًا من الشركة %2 (%3)"
 msgstr[5] "%1 متتبع من الشركة %2 (%3)"
 
-#: widgets/zoomactionmenu.cpp:127
+#: widgets/zoomactionmenu.cpp:129
 #, kde-format
 msgid "Zoom"
 msgstr "التّكبير"

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-24 00:43+0000\n"
+"POT-Creation-Date: 2025-06-25 00:43+0000\n"
 "PO-Revision-Date: 2012-01-28 16:30-0800\n"
 "Last-Translator: Fumiaki Okushi <okushi@kde.gr.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -41,17 +41,17 @@ msgstr "スレッドの代表の日付で"
 msgid "By Smart Date Ranges (of Thread Leaders)"
 msgstr "スレッドの代表の日付範囲で"
 
-#: core/aggregation.cpp:180 core/sortorder.cpp:70
+#: core/aggregation.cpp:180 core/sortorder.cpp:71
 #, kde-format
 msgid "By Smart Sender/Receiver"
 msgstr "送信者/受信者で (フォルダのタイプを考慮)"
 
-#: core/aggregation.cpp:181 core/sortorder.cpp:68
+#: core/aggregation.cpp:181 core/sortorder.cpp:69
 #, kde-format
 msgid "By Sender"
 msgstr "送信者で"
 
-#: core/aggregation.cpp:182 core/sortorder.cpp:69
+#: core/aggregation.cpp:182 core/sortorder.cpp:70
 #, kde-format
 msgid "By Receiver"
 msgstr "受信者で"
@@ -137,96 +137,96 @@ msgstr "スピードを重視"
 msgid "Batch Job (No Interactivity)"
 msgstr "一括処理 (双方向性なし)"
 
-#: core/item.cpp:251 core/messageitem.cpp:489
+#: core/item.cpp:253 core/messageitem.cpp:491
 #, kde-format
 msgctxt "Status of an item"
 msgid "Read"
 msgstr "既読"
 
-#: core/item.cpp:253 core/messageitem.cpp:489
+#: core/item.cpp:255 core/messageitem.cpp:491
 #, kde-format
 msgctxt "Status of an item"
 msgid "Unread"
 msgstr "未読"
 
-#: core/item.cpp:257
+#: core/item.cpp:259
 #, kde-format
 msgctxt "Status of an item"
 msgid "Has Attachment"
 msgstr "添付ファイルあり"
 
-#: core/item.cpp:261
+#: core/item.cpp:263
 #, kde-format
 msgctxt "Status of an item"
 msgid "Action Item"
 msgstr "要アクション"
 
-#: core/item.cpp:265 core/messageitem.cpp:487
+#: core/item.cpp:267 core/messageitem.cpp:489
 #, kde-format
 msgctxt "Status of an item"
 msgid "Replied"
 msgstr "返信済み"
 
-#: core/item.cpp:269
+#: core/item.cpp:271
 #, kde-format
 msgctxt "Status of an item"
 msgid "Forwarded"
 msgstr "転送済み"
 
-#: core/item.cpp:273
+#: core/item.cpp:275
 #, kde-format
 msgctxt "Status of an item"
 msgid "Sent"
 msgstr "送信済み"
 
-#: core/item.cpp:277
+#: core/item.cpp:279
 #, kde-format
 msgctxt "Status of an item"
 msgid "Important"
 msgstr "重要"
 
-#: core/item.cpp:281
+#: core/item.cpp:283
 #, kde-format
 msgctxt "Status of an item"
 msgid "Spam"
 msgstr "スパム"
 
-#: core/item.cpp:285
+#: core/item.cpp:287
 #, kde-format
 msgctxt "Status of an item"
 msgid "Ham"
 msgstr "非スパム"
 
-#: core/item.cpp:289
+#: core/item.cpp:291
 #, kde-format
 msgctxt "Status of an item"
 msgid "Watched"
 msgstr "監視"
 
-#: core/item.cpp:293
+#: core/item.cpp:295
 #, kde-format
 msgctxt "Status of an item"
 msgid "Ignored"
 msgstr "無視"
 
-#: core/item.cpp:296
+#: core/item.cpp:298
 #, kde-format
 msgctxt "Status of an item"
 msgid "Queued"
 msgstr ""
 
-#: core/manager.cpp:33 core/model.cpp:334
+#: core/manager.cpp:34 core/model.cpp:336
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "不明"
 
-#: core/manager.cpp:202
+#: core/manager.cpp:203
 #, kde-format
 msgid "Current Activity, Threaded"
 msgstr "現在のアクティビティ、スレッド表示"
 
-#: core/manager.cpp:203
+#: core/manager.cpp:204
 #, kde-format
 msgid ""
 "This view uses smart date range groups. Messages are threaded. So for "
@@ -237,12 +237,12 @@ msgstr ""
 "がって、例えばグループ「今日」には、今日届いたすべてのメッセージと今日動きの"
 "あったすべてのスレッドが表示されます。"
 
-#: core/manager.cpp:215
+#: core/manager.cpp:216
 #, kde-format
 msgid "Current Activity, Flat"
 msgstr "現在のアクティビティ、フラット表示"
 
-#: core/manager.cpp:216
+#: core/manager.cpp:217
 #, kde-format
 msgid ""
 "This view uses smart date range groups. Messages are not threaded. So for "
@@ -252,12 +252,12 @@ msgstr ""
 "ん。したがって、例えばグループ「今日」には、単純に今日届いたメッセージだけが"
 "表示されます。"
 
-#: core/manager.cpp:227
+#: core/manager.cpp:228
 #, kde-format
 msgid "Activity by Date, Threaded"
 msgstr "日付によるアクティビティ、スレッド表示"
 
-#: core/manager.cpp:228
+#: core/manager.cpp:229
 #, kde-format
 msgid ""
 "This view uses day-by-day groups. Messages are threaded. So for example, in "
@@ -268,12 +268,12 @@ msgstr ""
 "グループ「今日」には、今日届いたすべてのメッセージと今日動きのあったすべての"
 "スレッドが表示されます。"
 
-#: core/manager.cpp:240
+#: core/manager.cpp:241
 #, kde-format
 msgid "Activity by Date, Flat"
 msgstr "日付によるアクティビティ、フラット表示"
 
-#: core/manager.cpp:241
+#: core/manager.cpp:242
 #, kde-format
 msgid ""
 "This view uses day-by-day groups. Messages are not threaded. So for example, "
@@ -282,12 +282,12 @@ msgstr ""
 "日付ごとにグループを作成します。メッセージはスレッド化しません。したがって、"
 "例えばグループ「今日」には、単純に今日届いたメッセージだけが表示されます。"
 
-#: core/manager.cpp:252
+#: core/manager.cpp:253
 #, kde-format
 msgid "Standard Mailing List"
 msgstr "標準的なメーリングリスト"
 
-#: core/manager.cpp:253
+#: core/manager.cpp:254
 #, kde-format
 msgid ""
 "This is a plain and old mailing list view: no groups and heavy threading."
@@ -295,12 +295,12 @@ msgstr ""
 "従来の単純なメーリングリストの一覧です。メッセージは激しくスレッド化されます"
 "が、グループ化はされません。"
 
-#: core/manager.cpp:262
+#: core/manager.cpp:263
 #, kde-format
 msgid "Flat Date View"
 msgstr "日付順のフラット表示"
 
-#: core/manager.cpp:263
+#: core/manager.cpp:264
 #, kde-format
 msgid ""
 "This is a plain and old list of messages sorted by date: no groups and no "
@@ -309,12 +309,12 @@ msgstr ""
 "メッセージを単純に日付のみでソートする古いタイプの一覧です。メッセージはス"
 "レッド化もグループ化もされません。"
 
-#: core/manager.cpp:274
+#: core/manager.cpp:275
 #, kde-format
 msgid "Senders/Receivers, Flat"
 msgstr "送信者/受信者、フラット表示"
 
-#: core/manager.cpp:275
+#: core/manager.cpp:276
 #, kde-format
 msgid ""
 "This view groups the messages by senders or receivers (depending on the "
@@ -323,12 +323,12 @@ msgstr ""
 "フォルダのタイプに応じて送信者または受信者でメッセージをグループ化します。"
 "メッセージはスレッド化しません。"
 
-#: core/manager.cpp:286
+#: core/manager.cpp:287
 #, kde-format
 msgid "Thread Starters"
 msgstr "スレッドの開始者"
 
-#: core/manager.cpp:287
+#: core/manager.cpp:288
 #, kde-format
 msgid ""
 "This view groups the messages in threads and then groups the threads by the "
@@ -337,59 +337,59 @@ msgstr ""
 "メッセージをスレッド化し、スレッドを開始したユーザでスレッドをグループ化しま"
 "す。"
 
-#: core/manager.cpp:564
+#: core/manager.cpp:565
 #, kde-format
 msgctxt "Default theme name"
 msgid "Classic"
 msgstr "クラシック"
 
-#: core/manager.cpp:564
+#: core/manager.cpp:565
 #, kde-format
 msgid "A simple, backward compatible, single row theme"
 msgstr ""
 "後方互換性のあるシンプルなテーマ。1 件のメッセージを 1 行に表示します。"
 
-#: core/manager.cpp:568
+#: core/manager.cpp:569
 #, kde-format
 msgctxt "@title:column Subject of messages"
 msgid "Subject"
 msgstr "件名"
 
-#: core/manager.cpp:601 core/theme.cpp:112
+#: core/manager.cpp:602 core/theme.cpp:113
 #, kde-format
 msgid "Sender/Receiver"
 msgstr "送信者/受信者"
 
-#: core/manager.cpp:608
+#: core/manager.cpp:609
 #, kde-format
 msgctxt "Sender of a message"
 msgid "Sender"
 msgstr "送信者"
 
-#: core/manager.cpp:610
+#: core/manager.cpp:611
 #, kde-format
 msgctxt "Receiver of a message"
 msgid "Receiver"
 msgstr "受信者"
 
-#: core/manager.cpp:616
+#: core/manager.cpp:617
 #, kde-format
 msgctxt "Date of a message"
 msgid "Date"
 msgstr "日付"
 
-#: core/manager.cpp:618
+#: core/manager.cpp:619
 #, kde-format
 msgid "Most Recent Date"
 msgstr "最も新しい日付"
 
-#: core/manager.cpp:624
+#: core/manager.cpp:625
 #, kde-format
 msgctxt "Size of a message"
 msgid "Size"
 msgstr "サイズ"
 
-#: core/manager.cpp:626
+#: core/manager.cpp:627
 #, fuzzy, kde-format
 #| msgctxt "Attachement indication"
 #| msgid "Attachment"
@@ -397,23 +397,23 @@ msgctxt "Attachment indication"
 msgid "Attachment"
 msgstr "添付ファイル"
 
-#: core/manager.cpp:632
+#: core/manager.cpp:633
 #, kde-format
 msgid "Read/Unread"
 msgstr "既読/未読"
 
-#: core/manager.cpp:637
+#: core/manager.cpp:638
 #, kde-format
 msgid "Replied"
 msgstr "返信済み"
 
-#: core/manager.cpp:639
+#: core/manager.cpp:640
 #, kde-format
 msgctxt "Message importance indication"
 msgid "Important"
 msgstr "重要"
 
-#: core/manager.cpp:645
+#: core/manager.cpp:646
 #, kde-format
 msgid "Action Item"
 msgstr "要アクション"
@@ -423,49 +423,49 @@ msgstr "要アクション"
 msgid "Spam/Ham"
 msgstr "スパム/非スパム"
 
-#: core/manager.cpp:657
+#: core/manager.cpp:653
 #, kde-format
 msgid "Watched/Ignored"
 msgstr "監視/無視"
 
-#: core/manager.cpp:663
+#: core/manager.cpp:658
 #, kde-format
 msgid "Encryption"
 msgstr "暗号化"
 
-#: core/manager.cpp:669
+#: core/manager.cpp:659
 #, kde-format
 msgid "Signature"
 msgstr "署名"
 
-#: core/manager.cpp:674
+#: core/manager.cpp:660
 #, kde-format
 msgid "Tag List"
 msgstr "タグリスト"
 
-#: core/manager.cpp:682
+#: core/manager.cpp:668
 #, kde-format
 msgid "Smart"
 msgstr ""
 
-#: core/manager.cpp:682
+#: core/manager.cpp:668
 #, fuzzy, kde-format
 #| msgid "A fancy multiline and multi item theme"
 msgid "A smart multiline and multi item theme"
 msgstr "1 件のメッセージを複数行に表示します。"
 
-#: core/manager.cpp:686
+#: core/manager.cpp:672
 #, kde-format
 msgid "Message"
 msgstr "メッセージ"
 
-#: core/manager.cpp:767
+#: core/manager.cpp:753
 #, fuzzy, kde-format
 #| msgid "Fancy with Clickable Status"
 msgid "Smart with Clickable Status"
 msgstr "ファンシー (クリック可能な状態アイコン)"
 
-#: core/manager.cpp:768
+#: core/manager.cpp:754
 #, fuzzy, kde-format
 #| msgid ""
 #| "A fancy multiline and multi item theme with a clickable status column"
@@ -474,87 +474,87 @@ msgstr ""
 "1 件のメッセージを複数行に表示します。状態アイコンをクリックすることでメッ"
 "セージの状態を変更することができます。"
 
-#: core/manager.cpp:772 core/view.cpp:2262 core/view.cpp:2266
+#: core/manager.cpp:758 core/view.cpp:2262 core/view.cpp:2266
 #, kde-format
 msgid "Status"
 msgstr "状態"
 
-#: core/model.cpp:332
+#: core/model.cpp:334
 #, kde-format
 msgid "Today"
 msgstr "今日"
 
-#: core/model.cpp:333
+#: core/model.cpp:335
 #, kde-format
 msgid "Yesterday"
 msgstr "昨日"
 
-#: core/model.cpp:335
+#: core/model.cpp:337
 #, kde-format
 msgid "Last Week"
 msgstr "先週"
 
-#: core/model.cpp:336
+#: core/model.cpp:338
 #, kde-format
 msgid "Two Weeks Ago"
 msgstr "2 週間前"
 
-#: core/model.cpp:337
+#: core/model.cpp:339
 #, kde-format
 msgid "Three Weeks Ago"
 msgstr "3 週間前"
 
-#: core/model.cpp:338
+#: core/model.cpp:340
 #, kde-format
 msgid "Four Weeks Ago"
 msgstr "4 週間前"
 
-#: core/model.cpp:339
+#: core/model.cpp:341
 #, kde-format
 msgid "Five Weeks Ago"
 msgstr "5 週間前"
 
-#: core/model.cpp:552 utils/themeeditor.cpp:187
+#: core/model.cpp:554 utils/themeeditor.cpp:189
 #, kde-format
 msgid "Receiver"
 msgstr "受信者"
 
-#: core/model.cpp:554 utils/themeeditor.cpp:186
+#: core/model.cpp:556 utils/themeeditor.cpp:188
 #, kde-format
 msgid "Sender"
 msgstr "送信者"
 
-#: core/model.cpp:1375
+#: core/model.cpp:1377
 #, kde-format
 msgctxt "Message Aggregation Group Header: Month name and Year number"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: core/model.cpp:3795
+#: core/model.cpp:3797
 #, kde-format
 msgid "Processed 1 Message of %2"
 msgid_plural "Processed %1 Messages of %2"
 msgstr[0] "%1 / %2 件のメッセージを処理しました"
 
-#: core/model.cpp:3801 core/model.cpp:3807
+#: core/model.cpp:3803 core/model.cpp:3809
 #, kde-format
 msgid "Threaded 1 Message of %2"
 msgid_plural "Threaded %1 Messages of %2"
 msgstr[0] "%1 / %2 件のメッセージをスレッド化しました"
 
-#: core/model.cpp:3813
+#: core/model.cpp:3815
 #, kde-format
 msgid "Grouped 1 Thread of %2"
 msgid_plural "Grouped %1 Threads of %2"
 msgstr[0] "%1 / %2 個のスレッドをグループ化しました"
 
-#: core/model.cpp:3819
+#: core/model.cpp:3821
 #, kde-format
 msgid "Updated 1 Group of %2"
 msgid_plural "Updated %1 Groups of %2"
 msgstr[0] "%1 / %2 個のグループを更新しました"
 
-#: core/model.cpp:3911
+#: core/model.cpp:3913
 #, kde-format
 msgctxt "@info:status Finished view fill"
 msgid "Ready"
@@ -576,295 +576,295 @@ msgstr ""
 "メッセージ一覧のアイテムの上にマウスを移動したときにツールチップを表示しま"
 "す。"
 
-#: core/sortorder.cpp:63 core/sortorder.cpp:107
+#: core/sortorder.cpp:64 core/sortorder.cpp:108
 #, kde-format
 msgid "None (Storage Order)"
 msgstr "なし (保存された順)"
 
-#: core/sortorder.cpp:64
+#: core/sortorder.cpp:65
 #, kde-format
 msgid "By Date/Time"
 msgstr "日時で"
 
-#: core/sortorder.cpp:66
+#: core/sortorder.cpp:67
 #, kde-format
 msgid "By Date/Time of Most Recent in Subtree"
 msgstr "サブツリーの最新メッセージの日時で"
 
-#: core/sortorder.cpp:71
+#: core/sortorder.cpp:72
 #, kde-format
 msgid "By Subject"
 msgstr "件名で"
 
-#: core/sortorder.cpp:72
+#: core/sortorder.cpp:73
 #, kde-format
 msgid "By Size"
 msgstr "サイズで"
 
-#: core/sortorder.cpp:73
+#: core/sortorder.cpp:74
 #, kde-format
 msgid "By Action Item Status"
 msgstr "要アクションの状態で"
 
-#: core/sortorder.cpp:74
+#: core/sortorder.cpp:75
 #, kde-format
 msgid "By Unread Status"
-msgstr "未読の状態で"
-
-#: core/sortorder.cpp:75
-#, fuzzy, kde-format
-#| msgid "By Unread Status"
-msgid "By Important Status"
 msgstr "未読の状態で"
 
 #: core/sortorder.cpp:76
 #, fuzzy, kde-format
 #| msgid "By Unread Status"
+msgid "By Important Status"
+msgstr "未読の状態で"
+
+#: core/sortorder.cpp:77
+#, fuzzy, kde-format
+#| msgid "By Unread Status"
 msgid "By Attachment Status"
 msgstr "未読の状態で"
 
-#: core/sortorder.cpp:88 core/sortorder.cpp:130
+#: core/sortorder.cpp:89 core/sortorder.cpp:131
 #, kde-format
 msgid "Least Recent on Top"
 msgstr "古いメッセージを上に"
 
-#: core/sortorder.cpp:89 core/sortorder.cpp:131
+#: core/sortorder.cpp:90 core/sortorder.cpp:132
 #, kde-format
 msgid "Most Recent on Top"
 msgstr "新しいメッセージを上に"
 
-#: core/sortorder.cpp:93
+#: core/sortorder.cpp:94
 #, kde-format
 msgctxt "Sort order for messages"
 msgid "Ascending"
 msgstr "昇順"
 
-#: core/sortorder.cpp:94
+#: core/sortorder.cpp:95
 #, kde-format
 msgctxt "Sort order for messages"
 msgid "Descending"
 msgstr "降順"
 
-#: core/sortorder.cpp:105
+#: core/sortorder.cpp:106
 #, kde-format
 msgid "by Date/Time"
 msgstr "日時で"
 
-#: core/sortorder.cpp:108
+#: core/sortorder.cpp:109
 #, kde-format
 msgid "by Date/Time of Most Recent Message in Group"
 msgstr "グループの最新メッセージの日時で"
 
-#: core/sortorder.cpp:112
+#: core/sortorder.cpp:113
 #, kde-format
 msgid "by Sender/Receiver"
 msgstr "送信者/受信者で"
 
-#: core/sortorder.cpp:114
+#: core/sortorder.cpp:115
 #, kde-format
 msgid "by Sender"
 msgstr "送信者で"
 
-#: core/sortorder.cpp:116
+#: core/sortorder.cpp:117
 #, kde-format
 msgid "by Receiver"
 msgstr "受信者で"
 
-#: core/sortorder.cpp:134
+#: core/sortorder.cpp:135
 #, kde-format
 msgctxt "Sort order for mail groups"
 msgid "Ascending"
 msgstr "昇順"
 
-#: core/sortorder.cpp:135
+#: core/sortorder.cpp:136
 #, kde-format
 msgctxt "Sort order for mail groups"
 msgid "Descending"
 msgstr "降順"
 
-#: core/theme.cpp:106
+#: core/theme.cpp:107
 #, kde-format
 msgctxt "Description of Type Subject"
 msgid "Subject"
 msgstr "件名"
 
-#: core/theme.cpp:109
+#: core/theme.cpp:110
 #, kde-format
 msgctxt "Description of Type Date"
 msgid "Date"
 msgstr "日付"
 
-#: core/theme.cpp:115
+#: core/theme.cpp:116
 #, kde-format
 msgctxt "Description of Type Sender"
 msgid "Sender"
 msgstr "送信者"
 
-#: core/theme.cpp:118
+#: core/theme.cpp:119
 #, kde-format
 msgctxt "Description of Type Receiver"
 msgid "Receiver"
 msgstr "受信者"
 
-#: core/theme.cpp:121
+#: core/theme.cpp:122
 #, kde-format
 msgctxt "Description of Type Size"
 msgid "Size"
 msgstr "サイズ"
 
-#: core/theme.cpp:124
+#: core/theme.cpp:125
 #, kde-format
 msgid "Unread/Read Icon"
 msgstr "未読/既読のアイコン"
 
-#: core/theme.cpp:127
+#: core/theme.cpp:128
 #, kde-format
 msgid "Attachment Icon"
 msgstr "添付ファイルのアイコン"
 
-#: core/theme.cpp:130
+#: core/theme.cpp:131
 #, kde-format
 msgid "Replied/Forwarded Icon"
 msgstr "返信済み/転送済みのアイコン"
 
-#: core/theme.cpp:133
+#: core/theme.cpp:134
 #, kde-format
 msgid "Combined New/Unread/Read/Replied/Forwarded Icon"
 msgstr "新着/未読/既読/返信済み/転送済みの複合アイコン"
 
-#: core/theme.cpp:136
+#: core/theme.cpp:137
 #, kde-format
 msgid "Action Item Icon"
 msgstr "要アクションのアイコン"
 
-#: core/theme.cpp:139
+#: core/theme.cpp:140
 #, kde-format
 msgid "Important Icon"
 msgstr "重要マークのアイコン"
 
-#: core/theme.cpp:142
+#: core/theme.cpp:143
 #, kde-format
 msgid "Group Header Label"
 msgstr "グループヘッダのラベル"
 
-#: core/theme.cpp:145
+#: core/theme.cpp:146
 #, kde-format
 msgid "Spam/Ham Icon"
 msgstr "スパム/非スパムのアイコン"
 
-#: core/theme.cpp:148
+#: core/theme.cpp:149
 #, kde-format
 msgid "Watched/Ignored Icon"
 msgstr "監視/無視のアイコン"
 
-#: core/theme.cpp:151
+#: core/theme.cpp:152
 #, kde-format
 msgid "Group Header Expand/Collapse Icon"
 msgstr "グループを展開/たたむアイコン"
 
-#: core/theme.cpp:154
+#: core/theme.cpp:155
 #, kde-format
 msgid "Encryption State Icon"
 msgstr "暗号化の状態アイコン"
 
-#: core/theme.cpp:157
+#: core/theme.cpp:158
 #, kde-format
 msgid "Signature State Icon"
 msgstr "署名の状態アイコン"
 
-#: core/theme.cpp:160
+#: core/theme.cpp:161
 #, kde-format
 msgid "Vertical Separation Line"
 msgstr "縦方向のスペース行"
 
-#: core/theme.cpp:163
+#: core/theme.cpp:164
 #, kde-format
 msgid "Horizontal Spacer"
 msgstr "横方向のスペース"
 
-#: core/theme.cpp:166
+#: core/theme.cpp:167
 #, kde-format
 msgid "Max Date"
 msgstr "最も新しい日付"
 
-#: core/theme.cpp:169
+#: core/theme.cpp:170
 #, kde-format
 msgid "Message Tags"
 msgstr "メッセージタグ"
 
-#: core/theme.cpp:172
+#: core/theme.cpp:173
 #, kde-format
 msgid "Invitation Icon"
 msgstr "招待アイコン"
 
-#: core/theme.cpp:174
+#: core/theme.cpp:175
 #, kde-format
 msgctxt "Description of Type Folder"
 msgid "Folder"
 msgstr ""
 
-#: core/theme.cpp:176
+#: core/theme.cpp:177
 #, kde-format
 msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "不明"
 
-#: core/theme.cpp:835
+#: core/theme.cpp:836
 #, kde-format
 msgid "Unread"
 msgstr "未読"
 
-#: core/theme.cpp:1029
+#: core/theme.cpp:1030
 #, kde-format
 msgid "Never Show"
 msgstr "表示しない"
 
-#: core/theme.cpp:1029
+#: core/theme.cpp:1030
 #, kde-format
 msgid "Always Show"
 msgstr "常に表示"
 
-#: core/theme.cpp:1034
+#: core/theme.cpp:1035
 #, kde-format
 msgid "Plain Rectangles"
 msgstr "普通の長方形"
 
-#: core/theme.cpp:1035
+#: core/theme.cpp:1036
 #, kde-format
 msgid "Plain Joined Rectangle"
 msgstr "普通の長方形 (境目なし)"
 
-#: core/theme.cpp:1036
+#: core/theme.cpp:1037
 #, kde-format
 msgid "Rounded Rectangles"
 msgstr "角丸の長方形"
 
-#: core/theme.cpp:1037
+#: core/theme.cpp:1038
 #, kde-format
 msgid "Rounded Joined Rectangle"
 msgstr "角丸の長方形 (境目なし)"
 
-#: core/theme.cpp:1038
+#: core/theme.cpp:1039
 #, kde-format
 msgid "Gradient Rectangles"
 msgstr "濃淡のある長方形"
 
-#: core/theme.cpp:1039
+#: core/theme.cpp:1040
 #, kde-format
 msgid "Gradient Joined Rectangle"
 msgstr "濃淡のある長方形 (境目なし)"
 
-#: core/theme.cpp:1040
+#: core/theme.cpp:1041
 #, kde-format
 msgid "Styled Rectangles"
 msgstr "スタイルを適用した長方形"
 
-#: core/theme.cpp:1041
+#: core/theme.cpp:1042
 #, kde-format
 msgid "Styled Joined Rectangles"
 msgstr "スタイルを適用した長方形 (境目なし)"
 
-#: core/view.cpp:686 core/widgets/configurefilterswidget.cpp:152
+#: core/view.cpp:686 core/widgets/configurefilterswidget.cpp:154
 #, kde-format
 msgid "No result found"
 msgstr ""
@@ -885,7 +885,7 @@ msgid "Display Tooltips"
 msgstr "ツールチップの表示"
 
 #: core/view.cpp:2243 core/view.cpp:2247
-#: core/widgets/searchmessagebybuttons.cpp:73
+#: core/widgets/searchmessagebybuttons.cpp:75
 #, kde-format
 msgid "From"
 msgstr "差出人"
@@ -908,7 +908,7 @@ msgstr "日付"
 msgid "Size"
 msgstr "サイズ"
 
-#: core/view.cpp:2264 core/view.cpp:2268 utils/themeeditor.cpp:189
+#: core/view.cpp:2264 core/view.cpp:2268 utils/themeeditor.cpp:191
 #, kde-format
 msgid "Folder"
 msgstr ""
@@ -1057,18 +1057,18 @@ msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "設定..."
 
-#: core/widgetbase.cpp:423 messagelistutil.cpp:114
+#: core/widgetbase.cpp:423 messagelistutil.cpp:115
 #, kde-format
 msgid "Theme"
 msgstr "テーマ"
 
 #: core/widgetbase.cpp:444 core/widgetbase.cpp:534
-#: core/widgets/configurefilterswidget.cpp:75
+#: core/widgets/configurefilterswidget.cpp:77
 #, kde-format
 msgid "Configure..."
 msgstr "設定..."
 
-#: core/widgetbase.cpp:513 messagelistutil.cpp:109
+#: core/widgetbase.cpp:513 messagelistutil.cpp:110
 #, kde-format
 msgid "Aggregation"
 msgstr "集約方法"
@@ -1105,17 +1105,17 @@ msgctxt "@title:window"
 msgid "Configure Filter"
 msgstr "設定..."
 
-#: core/widgets/configurefilterswidget.cpp:79
+#: core/widgets/configurefilterswidget.cpp:81
 #, kde-format
 msgid "Remove"
 msgstr ""
 
-#: core/widgets/configurefilterswidget.cpp:82
+#: core/widgets/configurefilterswidget.cpp:84
 #, kde-format
 msgid "Do you want to delete this filter?"
 msgstr ""
 
-#: core/widgets/configurefilterswidget.cpp:83
+#: core/widgets/configurefilterswidget.cpp:85
 #, fuzzy, kde-format
 #| msgid "Configure..."
 msgctxt "@title:window"
@@ -1136,14 +1136,14 @@ msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "名前:"
 
-#: core/widgets/filtersavedmenu.cpp:16
+#: core/widgets/filtersavedmenu.cpp:18
 #, fuzzy, kde-format
 #| msgid "Configure..."
 msgctxt "@action"
 msgid "Save Filter..."
 msgstr "設定..."
 
-#: core/widgets/filtersavedmenu.cpp:17
+#: core/widgets/filtersavedmenu.cpp:19
 #, fuzzy, kde-format
 #| msgid "Configure..."
 msgctxt "@action"
@@ -1167,7 +1167,7 @@ msgctxt "@action"
 msgid "Do not show again"
 msgstr ""
 
-#: core/widgets/searchcollectionindexingwarning.cpp:37
+#: core/widgets/searchcollectionindexingwarning.cpp:39
 #, kde-format
 msgid ""
 "Some of the search folders in this query are still being indexed or are "
@@ -1341,7 +1341,7 @@ msgstr "招待状あり"
 msgid "AND"
 msgstr ""
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:47
+#: core/widgets/searchlinecommandbuttonswidget.cpp:49
 #, fuzzy, kde-format
 #| msgctxt "@title:column Subject of messages"
 #| msgid "Subject"
@@ -1349,20 +1349,20 @@ msgctxt "@action:button"
 msgid "Subject"
 msgstr "件名"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:48
+#: core/widgets/searchlinecommandbuttonswidget.cpp:50
 #, kde-format
 msgctxt "@action:button"
 msgid "Body"
 msgstr ""
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:49
+#: core/widgets/searchlinecommandbuttonswidget.cpp:51
 #, fuzzy, kde-format
 #| msgid "From"
 msgctxt "@action:button"
 msgid "From"
 msgstr "差出人"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:50
+#: core/widgets/searchlinecommandbuttonswidget.cpp:52
 #, fuzzy, kde-format
 #| msgctxt "Receiver of the emial"
 #| msgid "To"
@@ -1370,19 +1370,19 @@ msgctxt "@action:button"
 msgid "To"
 msgstr "宛先"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:51
+#: core/widgets/searchlinecommandbuttonswidget.cpp:53
 #, kde-format
 msgctxt "@action:button"
 msgid "Cc"
 msgstr ""
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:52
+#: core/widgets/searchlinecommandbuttonswidget.cpp:54
 #, kde-format
 msgctxt "@action:button"
 msgid "Bcc"
 msgstr ""
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:53
+#: core/widgets/searchlinecommandbuttonswidget.cpp:55
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Has Attachment"
@@ -1390,7 +1390,7 @@ msgctxt "@action:button"
 msgid "Has Attachment"
 msgstr "添付ファイルあり"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:54
+#: core/widgets/searchlinecommandbuttonswidget.cpp:56
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu Status of a message"
 #| msgid "Has Invitation"
@@ -1398,7 +1398,7 @@ msgctxt "@action:button"
 msgid "Has Invitation"
 msgstr "招待状あり"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:55
+#: core/widgets/searchlinecommandbuttonswidget.cpp:57
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Read"
@@ -1406,14 +1406,14 @@ msgctxt "@action:button"
 msgid "Read"
 msgstr "既読"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:56
+#: core/widgets/searchlinecommandbuttonswidget.cpp:58
 #, fuzzy, kde-format
 #| msgid "Unread"
 msgctxt "@action:button"
 msgid "Unread"
 msgstr "未読"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:57
+#: core/widgets/searchlinecommandbuttonswidget.cpp:59
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Important"
@@ -1421,7 +1421,7 @@ msgctxt "@action:button"
 msgid "Important"
 msgstr "重要"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:58
+#: core/widgets/searchlinecommandbuttonswidget.cpp:60
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Ignored"
@@ -1429,7 +1429,7 @@ msgctxt "@action:button"
 msgid "Ignored"
 msgstr "無視"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:59
+#: core/widgets/searchlinecommandbuttonswidget.cpp:61
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Ham"
@@ -1437,7 +1437,7 @@ msgctxt "@action:button"
 msgid "Ham"
 msgstr "非スパム"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:60
+#: core/widgets/searchlinecommandbuttonswidget.cpp:62
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Spam"
@@ -1445,7 +1445,7 @@ msgctxt "@action:button"
 msgid "Spam"
 msgstr "スパム"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:61
+#: core/widgets/searchlinecommandbuttonswidget.cpp:63
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Watched"
@@ -1453,14 +1453,14 @@ msgctxt "@action:button"
 msgid "Watched"
 msgstr "監視"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:62
+#: core/widgets/searchlinecommandbuttonswidget.cpp:64
 #, fuzzy, kde-format
 #| msgid "Replied"
 msgctxt "@action:button"
 msgid "Replied"
 msgstr "返信済み"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:63
+#: core/widgets/searchlinecommandbuttonswidget.cpp:65
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Forwarded"
@@ -1468,20 +1468,20 @@ msgctxt "@action:button"
 msgid "Forwarded"
 msgstr "転送済み"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:64
+#: core/widgets/searchlinecommandbuttonswidget.cpp:66
 #, fuzzy, kde-format
 #| msgid "Encryption"
 msgctxt "@action:button"
 msgid "Encrypted"
 msgstr "暗号化"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:65
+#: core/widgets/searchlinecommandbuttonswidget.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Queued"
 msgstr ""
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:66
+#: core/widgets/searchlinecommandbuttonswidget.cpp:68
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Sent"
@@ -1489,76 +1489,76 @@ msgctxt "@action:button"
 msgid "Sent"
 msgstr "送信済み"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:67
+#: core/widgets/searchlinecommandbuttonswidget.cpp:69
 #, fuzzy, kde-format
 #| msgid "Delete Theme"
 msgctxt "@action:button"
 msgid "Deleted"
 msgstr "テーマを削除"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:68
+#: core/widgets/searchlinecommandbuttonswidget.cpp:70
 #, fuzzy, kde-format
 #| msgid "Action Item"
 msgctxt "@action:button"
 msgid "Action"
 msgstr "要アクション"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:69
+#: core/widgets/searchlinecommandbuttonswidget.cpp:71
 #, kde-format
 msgctxt "@action:button"
 msgid "Category"
 msgstr ""
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:71
+#: core/widgets/searchlinecommandbuttonswidget.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Smaller"
 msgstr ""
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:72
+#: core/widgets/searchlinecommandbuttonswidget.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Larger"
 msgstr ""
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:73
+#: core/widgets/searchlinecommandbuttonswidget.cpp:75
 #, fuzzy, kde-format
 #| msgid "Size"
 msgctxt "@action:button"
 msgid "Size"
 msgstr "サイズ"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:74
+#: core/widgets/searchlinecommandbuttonswidget.cpp:76
 #, kde-format
 msgctxt "@action:button"
 msgid "Older"
 msgstr ""
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:75
+#: core/widgets/searchlinecommandbuttonswidget.cpp:77
 #, kde-format
 msgctxt "@action:button"
 msgid "Newer"
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:80
+#: core/widgets/searchlinestatus.cpp:81
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Prevent the quick search field from being cleared when changing folders"
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:83
+#: core/widgets/searchlinestatus.cpp:84
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear the quick search field when changing folders"
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:102
+#: core/widgets/searchlinestatus.cpp:103
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:106
+#: core/widgets/searchlinestatus.cpp:107
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1566,32 +1566,32 @@ msgid ""
 "to other folders or when narrowing the search by message status."
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:114
+#: core/widgets/searchlinestatus.cpp:115
 #, fuzzy, kde-format
 #| msgid "Configure..."
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "設定..."
 
-#: core/widgets/searchlinestatus.cpp:192
+#: core/widgets/searchlinestatus.cpp:193
 #, kde-format
 msgid "Clear History"
 msgstr ""
 
-#: core/widgets/searchmessagebybuttons.cpp:34
+#: core/widgets/searchmessagebybuttons.cpp:36
 #, fuzzy, kde-format
 #| msgid "Message"
 msgctxt "@action"
 msgid "Full Message"
 msgstr "メッセージ"
 
-#: core/widgets/searchmessagebybuttons.cpp:36
+#: core/widgets/searchmessagebybuttons.cpp:38
 #, kde-format
 msgctxt "@action"
 msgid "Body"
 msgstr ""
 
-#: core/widgets/searchmessagebybuttons.cpp:37
+#: core/widgets/searchmessagebybuttons.cpp:39
 #, fuzzy, kde-format
 #| msgctxt "@title:column Subject of messages"
 #| msgid "Subject"
@@ -1599,181 +1599,181 @@ msgctxt "@action"
 msgid "Subject"
 msgstr "件名"
 
-#: core/widgets/searchmessagebybuttons.cpp:39
+#: core/widgets/searchmessagebybuttons.cpp:41
 #, kde-format
 msgctxt "@action"
 msgid "BCC"
 msgstr ""
 
-#: core/widgets/searchmessagebybuttons.cpp:40
+#: core/widgets/searchmessagebybuttons.cpp:42
 #, kde-format
 msgctxt "@action"
 msgid "CC"
 msgstr ""
 
-#: core/widgets/searchmessagebybuttons.cpp:71
+#: core/widgets/searchmessagebybuttons.cpp:73
 #, fuzzy, kde-format
 #| msgctxt "Receiver of the emial"
 #| msgid "To"
 msgid "To"
 msgstr "宛先"
 
-#: core/widgets/searchstatusbuttons.cpp:35
+#: core/widgets/searchstatusbuttons.cpp:37
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Unread"
 msgstr "未読"
 
-#: core/widgets/searchstatusbuttons.cpp:39
+#: core/widgets/searchstatusbuttons.cpp:41
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Replied"
 msgstr "返信済み"
 
-#: core/widgets/searchstatusbuttons.cpp:43
+#: core/widgets/searchstatusbuttons.cpp:45
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Forwarded"
 msgstr "転送済み"
 
-#: core/widgets/searchstatusbuttons.cpp:47
+#: core/widgets/searchstatusbuttons.cpp:49
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Important"
 msgstr "重要"
 
-#: core/widgets/searchstatusbuttons.cpp:51
+#: core/widgets/searchstatusbuttons.cpp:53
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Action Item"
 msgstr "要アクション"
 
-#: core/widgets/searchstatusbuttons.cpp:55
+#: core/widgets/searchstatusbuttons.cpp:57
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Watched"
 msgstr "監視"
 
-#: core/widgets/searchstatusbuttons.cpp:59
+#: core/widgets/searchstatusbuttons.cpp:61
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Ignored"
 msgstr "無視"
 
-#: core/widgets/searchstatusbuttons.cpp:63
+#: core/widgets/searchstatusbuttons.cpp:65
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Has Attachment"
 msgstr "添付ファイルあり"
 
-#: core/widgets/searchstatusbuttons.cpp:67
+#: core/widgets/searchstatusbuttons.cpp:69
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Has Invitation"
 msgstr "招待状あり"
 
-#: core/widgets/searchstatusbuttons.cpp:71
+#: core/widgets/searchstatusbuttons.cpp:73
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Spam"
 msgstr "スパム"
 
-#: core/widgets/searchstatusbuttons.cpp:75
+#: core/widgets/searchstatusbuttons.cpp:77
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Ham"
 msgstr "非スパム"
 
-#: core/widgets/tablockedwarning.cpp:17
+#: core/widgets/tablockedwarning.cpp:19
 #, kde-format
 msgid "Current Tab is locked."
 msgstr ""
 
-#: core/widgets/tablockedwarning.cpp:17
+#: core/widgets/tablockedwarning.cpp:19
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Close Tab"
 msgid "(Unlock it)"
 msgstr "タブを閉じる"
 
-#: messagelistutil.cpp:104
+#: messagelistutil.cpp:105
 #, kde-format
 msgid "Sorting"
 msgstr "ソート"
 
-#: pane.cpp:124
+#: pane.cpp:125
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open a new tab"
 msgstr "新しいタブを開きます"
 
-#: pane.cpp:126
+#: pane.cpp:127
 #, kde-format
 msgid "New tab"
 msgstr "新しいタブ"
 
-#: pane.cpp:136
+#: pane.cpp:137
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close the current tab"
 msgstr "現在のタブを閉じます"
 
-#: pane.cpp:138
+#: pane.cpp:139
 #, kde-format
 msgid "Close tab"
 msgstr "タブを閉じる"
 
-#: pane.cpp:180
+#: pane.cpp:181
 #, kde-format
 msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr ""
 
-#: pane.cpp:200
+#: pane.cpp:201
 #, kde-format
 msgid "Show Quick Search Bar"
 msgstr ""
 
-#: pane.cpp:221
+#: pane.cpp:222
 #, kde-format
 msgid "Message List"
 msgstr "メッセージリスト"
 
-#: pane.cpp:227
+#: pane.cpp:228
 #, fuzzy, kde-format
 #| msgid "Create new tab"
 msgctxt "@action"
 msgid "Create New Tab"
 msgstr "新しいタブを作成"
 
-#: pane.cpp:258
+#: pane.cpp:259
 #, fuzzy, kde-format
 #| msgid "Create new tab"
 msgctxt "@action"
 msgid "Activate Next Tab"
 msgstr "新しいタブを作成"
 
-#: pane.cpp:268
+#: pane.cpp:269
 #, kde-format
 msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr ""
 
-#: pane.cpp:280
+#: pane.cpp:281
 #, fuzzy, kde-format
 #| msgid "Move Tab Left"
 msgctxt "@action"
 msgid "Move Tab Left"
 msgstr "タブを左へ移動"
 
-#: pane.cpp:288
+#: pane.cpp:289
 #, fuzzy, kde-format
 #| msgid "Move Tab Right"
 msgctxt "@action"
 msgid "Move Tab Right"
 msgstr "タブを右へ移動"
 
-#: pane.cpp:298
+#: pane.cpp:299
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Close Tab"
@@ -1781,25 +1781,25 @@ msgctxt "@action"
 msgid "Close Tab"
 msgstr "タブを閉じる"
 
-#: pane.cpp:520 pane.cpp:812
+#: pane.cpp:521 pane.cpp:813
 #, kde-format
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
 msgstr "空"
 
-#: pane.cpp:708
+#: pane.cpp:709
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "タブを閉じる"
 
-#: pane.cpp:712
+#: pane.cpp:713
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "他のすべてのタブを閉じる"
 
-#: pane.cpp:717
+#: pane.cpp:718
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Close Tab"
@@ -1807,19 +1807,19 @@ msgctxt "@action:inmenu"
 msgid "Unlock Tab"
 msgstr "タブを閉じる"
 
-#: pane.cpp:717
+#: pane.cpp:718
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Lock Tab"
 msgstr ""
 
-#: storagemodel.cpp:219
+#: storagemodel.cpp:220
 #, kde-format
 msgctxt "displayed as subject when the subject of a mail is empty"
 msgid "No Subject"
 msgstr "件名なし"
 
-#: storagemodel.cpp:220
+#: storagemodel.cpp:221
 #, kde-format
 msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
@@ -1885,160 +1885,160 @@ msgctxt "@label:textbox"
 msgid "Fill view strategy:"
 msgstr "ビューを満たす方法:"
 
-#: utils/configureaggregationsdialog.cpp:100
+#: utils/configureaggregationsdialog.cpp:102
 #, fuzzy, kde-format
 #| msgid "Customize Message Aggregation Modes"
 msgctxt "@title:window"
 msgid "Customize Message Aggregation Modes"
 msgstr "メッセージの集約方法をカスタマイズ"
 
-#: utils/configureaggregationsdialog.cpp:121
+#: utils/configureaggregationsdialog.cpp:123
 #, fuzzy, kde-format
 #| msgid "New Aggregation"
 msgctxt "@action:button"
 msgid "New Aggregation"
 msgstr "新しい集約方法"
 
-#: utils/configureaggregationsdialog.cpp:129
+#: utils/configureaggregationsdialog.cpp:131
 #, fuzzy, kde-format
 #| msgid "Clone Aggregation"
 msgctxt "@action:button"
 msgid "Clone Aggregation"
 msgstr "集約方法を複製"
 
-#: utils/configureaggregationsdialog.cpp:142
+#: utils/configureaggregationsdialog.cpp:144
 #, fuzzy, kde-format
 #| msgid "Aggregation"
 msgctxt "@action:button"
 msgid "Export Aggregation..."
 msgstr "集約方法"
 
-#: utils/configureaggregationsdialog.cpp:149
+#: utils/configureaggregationsdialog.cpp:151
 #, fuzzy, kde-format
 #| msgid "Aggregation"
 msgctxt "@action:button"
 msgid "Import Aggregation..."
 msgstr "集約方法"
 
-#: utils/configureaggregationsdialog.cpp:160
+#: utils/configureaggregationsdialog.cpp:162
 #, fuzzy, kde-format
 #| msgid "Delete Aggregation"
 msgctxt "@action:button"
 msgid "Delete Aggregation"
 msgstr "集約方法を削除"
 
-#: utils/configureaggregationsdialog.cpp:343
+#: utils/configureaggregationsdialog.cpp:345
 #, kde-format
 msgid "Unnamed Aggregation"
 msgstr "名前のない集約方法"
 
-#: utils/configureaggregationsdialog.cpp:360
+#: utils/configureaggregationsdialog.cpp:362
 #, kde-format
 msgid "New Aggregation"
 msgstr "新しい集約方法"
 
-#: utils/configureaggregationsdialog.cpp:413
+#: utils/configureaggregationsdialog.cpp:415
 #, fuzzy, kde-format
 #| msgid "Aggregation"
 msgctxt "@title:window"
 msgid "Import Aggregation"
 msgstr "集約方法"
 
-#: utils/configureaggregationsdialog.cpp:446
+#: utils/configureaggregationsdialog.cpp:448
 #, fuzzy, kde-format
 #| msgid "Aggregation"
 msgctxt "@title:window"
 msgid "Export Aggregation"
 msgstr "集約方法"
 
-#: utils/configureaggregationsdialog.cpp:446
-#: utils/configurethemesdialog.cpp:470
+#: utils/configureaggregationsdialog.cpp:448
+#: utils/configurethemesdialog.cpp:472
 #, kde-format
 msgid "All Files (*)"
 msgstr ""
 
-#: utils/configurethemesdialog.cpp:96
+#: utils/configurethemesdialog.cpp:98
 #, fuzzy, kde-format
 #| msgid "Customize Themes"
 msgctxt "@title:window"
 msgid "Customize Themes"
 msgstr "テーマをカスタマイズ"
 
-#: utils/configurethemesdialog.cpp:117
+#: utils/configurethemesdialog.cpp:119
 #, fuzzy, kde-format
 #| msgid "New Theme"
 msgctxt "@action:button"
 msgid "New Theme"
 msgstr "新しいテーマ"
 
-#: utils/configurethemesdialog.cpp:125
+#: utils/configurethemesdialog.cpp:127
 #, fuzzy, kde-format
 #| msgid "Clone Theme"
 msgctxt "@action:button"
 msgid "Clone Theme"
 msgstr "テーマを複製"
 
-#: utils/configurethemesdialog.cpp:138
+#: utils/configurethemesdialog.cpp:140
 #, fuzzy, kde-format
 #| msgid "Clone Theme"
 msgctxt "@action:button"
 msgid "Export Theme..."
 msgstr "テーマを複製"
 
-#: utils/configurethemesdialog.cpp:145
+#: utils/configurethemesdialog.cpp:147
 #, fuzzy, kde-format
 #| msgid "Clone Theme"
 msgctxt "@action:button"
 msgid "Import Theme..."
 msgstr "テーマを複製"
 
-#: utils/configurethemesdialog.cpp:156
+#: utils/configurethemesdialog.cpp:158
 #, fuzzy, kde-format
 #| msgid "Delete Theme"
 msgctxt "@action:button"
 msgid "Delete Theme"
 msgstr "テーマを削除"
 
-#: utils/configurethemesdialog.cpp:335
+#: utils/configurethemesdialog.cpp:337
 #, kde-format
 msgid "Unnamed Theme"
 msgstr "名前のないテーマ"
 
-#: utils/configurethemesdialog.cpp:353
+#: utils/configurethemesdialog.cpp:355
 #, kde-format
 msgid "New Theme"
 msgstr "新しいテーマ"
 
-#: utils/configurethemesdialog.cpp:355 utils/themeeditor.cpp:1217
+#: utils/configurethemesdialog.cpp:357 utils/themeeditor.cpp:1219
 #, kde-format
 msgid "New Column"
 msgstr "新しいカラム"
 
-#: utils/configurethemesdialog.cpp:408
+#: utils/configurethemesdialog.cpp:410
 #, kde-format
 msgid "Do you want to delete selected themes?"
 msgstr ""
 
-#: utils/configurethemesdialog.cpp:408
+#: utils/configurethemesdialog.cpp:410
 #, kde-format
 msgid "Do you want to delete \"%1\"?"
 msgstr ""
 
-#: utils/configurethemesdialog.cpp:410
+#: utils/configurethemesdialog.cpp:412
 #, fuzzy, kde-format
 #| msgid "Delete Theme"
 msgctxt "@title:window"
 msgid "Delete Theme"
 msgstr "テーマを削除"
 
-#: utils/configurethemesdialog.cpp:436
+#: utils/configurethemesdialog.cpp:438
 #, fuzzy, kde-format
 #| msgid "Clone Theme"
 msgctxt "@title:window"
 msgid "Import Theme"
 msgstr "テーマを複製"
 
-#: utils/configurethemesdialog.cpp:470
+#: utils/configurethemesdialog.cpp:472
 #, fuzzy, kde-format
 #| msgid "Clone Theme"
 msgctxt "@title:window"
@@ -2063,27 +2063,27 @@ msgctxt "@label:textbox Description of the option"
 msgid "Description:"
 msgstr "説明:"
 
-#: utils/themeeditor.cpp:70
+#: utils/themeeditor.cpp:72
 #, kde-format
 msgctxt "@label:textbox Property name"
 msgid "Name:"
 msgstr "名前:"
 
-#: utils/themeeditor.cpp:74
+#: utils/themeeditor.cpp:76
 #, fuzzy, kde-format
 #| msgid "The label that will be displayed in the column header."
 msgctxt "@info:tooltip"
 msgid "The label that will be displayed in the column header."
 msgstr "カラムのヘッダに表示するラベル"
 
-#: utils/themeeditor.cpp:77
+#: utils/themeeditor.cpp:79
 #, fuzzy, kde-format
 #| msgid "Header click sorts messages:"
 msgctxt "@label:textbox"
 msgid "Header click sorts messages:"
 msgstr "ヘッダのクリックによるメッセージのソート基準:"
 
-#: utils/themeeditor.cpp:81
+#: utils/themeeditor.cpp:83
 #, fuzzy, kde-format
 #| msgid ""
 #| "The sorting order that clicking on this column header will switch to."
@@ -2091,14 +2091,14 @@ msgctxt "@info:tooltip"
 msgid "The sorting order that clicking on this column header will switch to."
 msgstr "このカラムのヘッダをクリックしたときに適用するソート基準"
 
-#: utils/themeeditor.cpp:84
+#: utils/themeeditor.cpp:86
 #, fuzzy, kde-format
 #| msgid "Visible by default"
 msgctxt "@option:check"
 msgid "Visible by default"
 msgstr "デフォルトで表示する"
 
-#: utils/themeeditor.cpp:85
+#: utils/themeeditor.cpp:87
 #, fuzzy, kde-format
 #| msgid ""
 #| "Check this if this column should be visible when the theme is selected."
@@ -2106,14 +2106,14 @@ msgctxt "@info:tooltip"
 msgid "Check this if this column should be visible when the theme is selected."
 msgstr "テーマを選択したときにこのカラムを表示する場合、これをチェックします。"
 
-#: utils/themeeditor.cpp:88
+#: utils/themeeditor.cpp:90
 #, fuzzy, kde-format
 #| msgid "Contains \"Sender or Receiver\" field"
 msgctxt "@option:check"
 msgid "Contains \"Sender or Receiver\" field"
 msgstr "送信/受信フィールドを含む"
 
-#: utils/themeeditor.cpp:90
+#: utils/themeeditor.cpp:92
 #, fuzzy, kde-format
 #| msgid ""
 #| "Check this if this column label should be updated depending on the folder "
@@ -2126,17 +2126,17 @@ msgstr ""
 "フォルダが受信フォルダであるか送信フォルダであるかによってカラムのラベルを変"
 "える必要がある場合、このオプションをチェックします。"
 
-#: utils/themeeditor.cpp:110
+#: utils/themeeditor.cpp:112
 #, kde-format
 msgid "Unnamed Column"
 msgstr "名前のないカラム"
 
-#: utils/themeeditor.cpp:175
+#: utils/themeeditor.cpp:177
 #, kde-format
 msgid "Message Group"
 msgstr "メッセージグループ"
 
-#: utils/themeeditor.cpp:179 utils/themeeditor.cpp:188
+#: utils/themeeditor.cpp:181 utils/themeeditor.cpp:190
 #, kde-format
 msgid ""
 "Very long subject very long subject very long subject very long subject very "
@@ -2144,68 +2144,68 @@ msgid ""
 msgstr ""
 "非常に長い件名 非常に長い件名 非常に長い件名 非常に長い件名 非常に長い件名 "
 
-#: utils/themeeditor.cpp:194
+#: utils/themeeditor.cpp:196
 #, kde-format
 msgid "Sample Tag 1"
 msgstr "サンプルタグ 1"
 
-#: utils/themeeditor.cpp:195
+#: utils/themeeditor.cpp:197
 #, kde-format
 msgid "Sample Tag 2"
 msgstr "サンプルタグ 2"
 
-#: utils/themeeditor.cpp:196
+#: utils/themeeditor.cpp:198
 #, kde-format
 msgid "Sample Tag 3"
 msgstr "サンプルタグ 3"
 
-#: utils/themeeditor.cpp:411
+#: utils/themeeditor.cpp:413
 #, kde-format
 msgctxt "Indicates whether or not a header label is visible"
 msgid "Visible"
 msgstr "表示"
 
-#: utils/themeeditor.cpp:851
+#: utils/themeeditor.cpp:853
 #, kde-format
 msgctxt "@action:inmenu soften the text color"
 msgid "Soften"
 msgstr "色を薄く"
 
-#: utils/themeeditor.cpp:858
+#: utils/themeeditor.cpp:860
 #, kde-format
 msgctxt "@action:inmenu Font setting"
 msgid "Bold"
 msgstr ""
 
-#: utils/themeeditor.cpp:862
+#: utils/themeeditor.cpp:864
 #, kde-format
 msgctxt "@action:inmenu Font setting"
 msgid "Italic"
 msgstr ""
 
-#: utils/themeeditor.cpp:869
+#: utils/themeeditor.cpp:871
 #, kde-format
 msgid "Font"
 msgstr "フォント"
 
-#: utils/themeeditor.cpp:877
+#: utils/themeeditor.cpp:879
 #, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Default"
 msgstr "標準"
 
-#: utils/themeeditor.cpp:882
+#: utils/themeeditor.cpp:884
 #, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Custom..."
 msgstr "カスタム..."
 
-#: utils/themeeditor.cpp:890
+#: utils/themeeditor.cpp:892
 #, kde-format
 msgid "Foreground Color"
 msgstr "テキスト色"
 
-#: utils/themeeditor.cpp:899
+#: utils/themeeditor.cpp:901
 #, kde-format
 msgctxt ""
 "Hide a mark if the mail does not have the attribute, e.g. Important mark on "
@@ -2213,7 +2213,7 @@ msgctxt ""
 msgid "Hide"
 msgstr "隠す"
 
-#: utils/themeeditor.cpp:906
+#: utils/themeeditor.cpp:908
 #, kde-format
 msgctxt ""
 "Keep a empty space in the list if the mail does not have the attribute, e.g. "
@@ -2221,7 +2221,7 @@ msgctxt ""
 msgid "Keep Empty Space"
 msgstr "空のスペースを残す"
 
-#: utils/themeeditor.cpp:913
+#: utils/themeeditor.cpp:915
 #, kde-format
 msgctxt ""
 "Show the icon softened in the list if the mail does not have the attribute, "
@@ -2229,93 +2229,93 @@ msgctxt ""
 msgid "Keep Softened Icon"
 msgstr "薄色のアイコンを表示"
 
-#: utils/themeeditor.cpp:921
+#: utils/themeeditor.cpp:923
 #, kde-format
 msgid "When Disabled"
 msgstr "無効時"
 
-#: utils/themeeditor.cpp:927
+#: utils/themeeditor.cpp:929
 #, kde-format
 msgid "Group Header"
 msgstr "グループヘッダ"
 
-#: utils/themeeditor.cpp:934
+#: utils/themeeditor.cpp:936
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "None"
 msgstr "なし"
 
-#: utils/themeeditor.cpp:939
+#: utils/themeeditor.cpp:941
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Automatic"
 msgstr "自動"
 
-#: utils/themeeditor.cpp:944
+#: utils/themeeditor.cpp:946
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Custom..."
 msgstr "カスタム..."
 
-#: utils/themeeditor.cpp:952
+#: utils/themeeditor.cpp:954
 #, kde-format
 msgid "Background Color"
 msgstr "背景色"
 
-#: utils/themeeditor.cpp:972
+#: utils/themeeditor.cpp:974
 #, kde-format
 msgid "Background Style"
 msgstr "背景のスタイル"
 
-#: utils/themeeditor.cpp:1158
+#: utils/themeeditor.cpp:1160
 #, fuzzy, kde-format
 #| msgid "Column Properties"
 msgid "Column Properties..."
 msgstr "カラムのプロパティ"
 
-#: utils/themeeditor.cpp:1161
+#: utils/themeeditor.cpp:1163
 #, kde-format
 msgid "Add Column..."
 msgstr "カラムを追加..."
 
-#: utils/themeeditor.cpp:1164
+#: utils/themeeditor.cpp:1166
 #, kde-format
 msgid "Delete Column"
 msgstr "カラムを削除"
 
-#: utils/themeeditor.cpp:1170
+#: utils/themeeditor.cpp:1172
 #, fuzzy, kde-format
 #| msgid "Move Tab Left"
 msgid "Move Column to Left"
 msgstr "タブを左へ移動"
 
-#: utils/themeeditor.cpp:1174
+#: utils/themeeditor.cpp:1176
 #, fuzzy, kde-format
 #| msgid "Move Tab Right"
 msgid "Move Column to Right"
 msgstr "タブを右へ移動"
 
-#: utils/themeeditor.cpp:1223
+#: utils/themeeditor.cpp:1225
 #, kde-format
 msgid "Add New Column"
 msgstr "新しいカラムを追加"
 
-#: utils/themeeditor.cpp:1247
+#: utils/themeeditor.cpp:1249
 #, kde-format
 msgid "Column Properties"
 msgstr "カラムのプロパティ"
 
-#: utils/themeeditor.cpp:1289
+#: utils/themeeditor.cpp:1291
 #, kde-format
 msgid "Appearance"
 msgstr "外観"
 
-#: utils/themeeditor.cpp:1293
+#: utils/themeeditor.cpp:1295
 #, kde-format
 msgid "Content Items"
 msgstr "テーマの要素"
 
-#: utils/themeeditor.cpp:1420
+#: utils/themeeditor.cpp:1422
 #, kde-format
 msgid ""
 "Right click on the header to add or modify columns. Drag the content items "
@@ -2326,27 +2326,27 @@ msgstr ""
 "身のテーマを作成する場合は、カラムに要素をドラッグ＆ドロップして追加します。"
 "ビューの中の要素を右クリックすると、設定可能なオプションが表示されます。</p>"
 
-#: utils/themeeditor.cpp:1430
+#: utils/themeeditor.cpp:1432
 #, kde-format
 msgctxt "@title:tab Advanced theme settings"
 msgid "Advanced"
 msgstr "詳細"
 
-#: utils/themeeditor.cpp:1434
+#: utils/themeeditor.cpp:1436
 #, fuzzy, kde-format
 #| msgid "Header:"
 msgctxt "@label:textbox"
 msgid "Header:"
 msgstr "ヘッダ:"
 
-#: utils/themeeditor.cpp:1440
+#: utils/themeeditor.cpp:1442
 #, fuzzy, kde-format
 #| msgid "Icon size:"
 msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "アイコンサイズ:"
 
-#: utils/themeeditor.cpp:1446
+#: utils/themeeditor.cpp:1448
 #, fuzzy, kde-format
 #| msgctxt "suffix in a spinbox"
 #| msgid " pixel"
@@ -2362,49 +2362,49 @@ msgctxt "Item in list of Akonadi tags, to show all e-mails"
 msgid "All"
 msgstr ""
 
-#: widget.cpp:325
+#: widget.cpp:324
 #, kde-format
 msgid "Collapse Group"
 msgstr "グループをたたむ"
 
-#: widget.cpp:328
+#: widget.cpp:327
 #, kde-format
 msgid "Expand Group"
 msgstr "グループを展開"
 
-#: widget.cpp:334
+#: widget.cpp:333
 #, kde-format
 msgid "Expand All Groups"
 msgstr "すべてのグループを展開"
 
-#: widget.cpp:337
+#: widget.cpp:336
 #, kde-format
 msgid "Collapse All Groups"
 msgstr "すべてのグループをたたむ"
 
-#: widget.cpp:341
+#: widget.cpp:340
 #, fuzzy, kde-format
 #| msgid "Expand All Groups"
 msgid "Expand All Threads"
 msgstr "すべてのグループを展開"
 
-#: widget.cpp:343
+#: widget.cpp:342
 #, fuzzy, kde-format
 #| msgid "Collapse All Groups"
 msgid "Collapse All Threads"
 msgstr "すべてのグループをたたむ"
 
-#: widget.cpp:403
+#: widget.cpp:401
 #, kde-format
 msgid "&Move Here"
 msgstr "ここに移動(&M)"
 
-#: widget.cpp:404
+#: widget.cpp:402
 #, kde-format
 msgid "&Copy Here"
 msgstr "ここにコピー(&C)"
 
-#: widget.cpp:406
+#: widget.cpp:404
 #, kde-format
 msgid "C&ancel"
 msgstr "キャンセル(&A)"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-18 00:43+0000\n"
+"POT-Creation-Date: 2025-06-25 00:43+0000\n"
 "PO-Revision-Date: 2012-01-28 16:35-0800\n"
 "Last-Translator: Fumiaki Okushi <okushi@kde.gr.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -238,7 +238,7 @@ msgid "Selector"
 msgstr ""
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:85
-#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: dkim-verify/dkimmanageruleswidget.cpp:75
 #, kde-format
 msgid "SDID"
 msgstr ""
@@ -253,26 +253,26 @@ msgstr ""
 msgid "Last Used"
 msgstr ""
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:71
+#: dkim-verify/dkimmanagerkeytreeview.cpp:73
 #, fuzzy, kde-format
 #| msgid "Copy"
 msgid "Copy Key"
 msgstr "コピー"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:78
+#: dkim-verify/dkimmanagerkeytreeview.cpp:79
 #, kde-format
 msgid "Remove Key"
 msgid_plural "Remove Keys"
 msgstr[0] ""
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:83
+#: dkim-verify/dkimmanagerkeytreeview.cpp:81
 #, kde-format
 msgid "Do you want to delete this key?"
 msgid_plural "Do you want to delete these keys?"
 msgstr[0] ""
 
 # ACCELERATOR added by translator
-#: dkim-verify/dkimmanagerkeytreeview.cpp:84
+#: dkim-verify/dkimmanagerkeytreeview.cpp:82
 #, fuzzy, kde-format
 #| msgid "Select All Text"
 msgid "Delete Key"
@@ -280,20 +280,20 @@ msgid_plural "Delete Keys"
 msgstr[0] "すべてのテキストを選択(&S)"
 
 # ACCELERATOR added by translator
-#: dkim-verify/dkimmanagerkeytreeview.cpp:94
-#: dkim-verify/dkimmanageruleswidget.cpp:223
+#: dkim-verify/dkimmanagerkeytreeview.cpp:92
+#: dkim-verify/dkimmanageruleswidget.cpp:225
 #, fuzzy, kde-format
 #| msgid "Select All Text"
 msgid "Delete All"
 msgstr "すべてのテキストを選択(&S)"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:96
+#: dkim-verify/dkimmanagerkeytreeview.cpp:94
 #, kde-format
 msgid "Do you want to delete all keys?"
 msgstr ""
 
 # ACCELERATOR added by translator
-#: dkim-verify/dkimmanagerkeytreeview.cpp:97
+#: dkim-verify/dkimmanagerkeytreeview.cpp:95
 #, fuzzy, kde-format
 #| msgid "Select All Text"
 msgctxt "@title:window"
@@ -375,86 +375,86 @@ msgstr "インポート(&I)"
 msgid "No rules imported."
 msgstr "署名が見つかりません"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:73
-#: remote-content/remotecontentconfigurewidget.cpp:52
+#: dkim-verify/dkimmanageruleswidget.cpp:75
+#: remote-content/remotecontentconfigurewidget.cpp:54
 #, kde-format
 msgid "Domain"
 msgstr ""
 
-#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: dkim-verify/dkimmanageruleswidget.cpp:75
 #, kde-format
 msgid "Active"
 msgstr ""
 
-#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: dkim-verify/dkimmanageruleswidget.cpp:75
 #, kde-format
 msgid "List-ID"
 msgstr ""
 
-#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: dkim-verify/dkimmanageruleswidget.cpp:75
 #, fuzzy, kde-format
 #| msgid "From: "
 msgid "From"
 msgstr "差出人: "
 
-#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: dkim-verify/dkimmanageruleswidget.cpp:75
 #, kde-format
 msgid "Rule type"
 msgstr ""
 
-#: dkim-verify/dkimmanageruleswidget.cpp:73
+#: dkim-verify/dkimmanageruleswidget.cpp:75
 #, kde-format
 msgid "Priority"
 msgstr ""
 
-#: dkim-verify/dkimmanageruleswidget.cpp:196
-#: remote-content/remotecontentconfigurewidget.cpp:80
+#: dkim-verify/dkimmanageruleswidget.cpp:198
+#: remote-content/remotecontentconfigurewidget.cpp:82
 #, kde-format
 msgid "Add..."
 msgstr ""
 
-#: dkim-verify/dkimmanageruleswidget.cpp:201
-#: remote-content/remotecontentconfigurewidget.cpp:83
+#: dkim-verify/dkimmanageruleswidget.cpp:203
+#: remote-content/remotecontentconfigurewidget.cpp:85
 #, kde-format
 msgid "Modify..."
 msgstr ""
 
 # ACCELERATOR added by translator
-#: dkim-verify/dkimmanageruleswidget.cpp:205
+#: dkim-verify/dkimmanageruleswidget.cpp:207
 #, fuzzy, kde-format
 #| msgid "Select All Text"
 msgid "Duplicate Rule"
 msgstr "すべてのテキストを選択(&S)"
 
 # ACCELERATOR added by translator
-#: dkim-verify/dkimmanageruleswidget.cpp:209
-#: remote-content/remotecontentconfigurewidget.cpp:87
+#: dkim-verify/dkimmanageruleswidget.cpp:211
+#: remote-content/remotecontentconfigurewidget.cpp:89
 #, fuzzy, kde-format
 #| msgid "Select All Text"
 msgid "Remove Rule"
 msgstr "すべてのテキストを選択(&S)"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:211
+#: dkim-verify/dkimmanageruleswidget.cpp:213
 #, kde-format
 msgid "Do you want to delete this rule?"
 msgstr ""
 
 # ACCELERATOR added by translator
-#: dkim-verify/dkimmanageruleswidget.cpp:212
-#: remote-content/remotecontentconfigurewidget.cpp:90
+#: dkim-verify/dkimmanageruleswidget.cpp:214
+#: remote-content/remotecontentconfigurewidget.cpp:92
 #, fuzzy, kde-format
 #| msgid "Select All Text"
 msgctxt "@title:window"
 msgid "Delete Rule"
 msgstr "すべてのテキストを選択(&S)"
 
-#: dkim-verify/dkimmanageruleswidget.cpp:225
+#: dkim-verify/dkimmanageruleswidget.cpp:227
 #, kde-format
 msgid "Do you want to delete all the rules?"
 msgstr ""
 
 # ACCELERATOR added by translator
-#: dkim-verify/dkimmanageruleswidget.cpp:226
+#: dkim-verify/dkimmanageruleswidget.cpp:228
 #, fuzzy, kde-format
 #| msgid "Select All Text"
 msgctxt "@title:window"
@@ -473,45 +473,45 @@ msgctxt "@title:window"
 msgid "Modify Rule"
 msgstr ""
 
-#: dkim-verify/dkimrulewidget.cpp:18
+#: dkim-verify/dkimrulewidget.cpp:20
 #, kde-format
 msgctxt "@option:check"
 msgid "Enabled"
 msgstr ""
 
-#: dkim-verify/dkimrulewidget.cpp:36
+#: dkim-verify/dkimrulewidget.cpp:38
 #, kde-format
 msgid "Domain:"
 msgstr ""
 
-#: dkim-verify/dkimrulewidget.cpp:41 header/grantleeheaderformatter.cpp:182
+#: dkim-verify/dkimrulewidget.cpp:43 header/grantleeheaderformatter.cpp:184
 #, kde-format
 msgid "List-Id:"
 msgstr ""
 
-#: dkim-verify/dkimrulewidget.cpp:45 header/grantleeheaderformatter.cpp:271
+#: dkim-verify/dkimrulewidget.cpp:47 header/grantleeheaderformatter.cpp:273
 #, fuzzy, kde-format
 #| msgid "From: "
 msgid "From:"
 msgstr "差出人: "
 
-#: dkim-verify/dkimrulewidget.cpp:46
+#: dkim-verify/dkimrulewidget.cpp:48
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Use '*' to specify all emails from domain"
 msgstr ""
 
-#: dkim-verify/dkimrulewidget.cpp:51
+#: dkim-verify/dkimrulewidget.cpp:53
 #, kde-format
 msgid "SDID:"
 msgstr ""
 
-#: dkim-verify/dkimrulewidget.cpp:54
+#: dkim-verify/dkimrulewidget.cpp:56
 #, kde-format
 msgid "Rule:"
 msgstr ""
 
-#: dkim-verify/dkimrulewidget.cpp:60
+#: dkim-verify/dkimrulewidget.cpp:62
 #, kde-format
 msgid "Priority:"
 msgstr ""
@@ -537,295 +537,295 @@ msgstr ""
 msgid "Rules..."
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:94
+#: dkim-verify/dkimwidgetinfo.cpp:96
 #, fuzzy, kde-format
 #| msgctxt "Unknown date"
 #| msgid "Unknown"
 msgid "Unknown"
 msgstr "不明"
 
-#: dkim-verify/dkimwidgetinfo.cpp:100
+#: dkim-verify/dkimwidgetinfo.cpp:102
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "DKIM: valid (signed by %1)"
 msgstr "メッセージは %1 によって署名されています。"
 
-#: dkim-verify/dkimwidgetinfo.cpp:107
+#: dkim-verify/dkimwidgetinfo.cpp:109
 #, kde-format
 msgid "DKIM: invalid"
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:110
+#: dkim-verify/dkimwidgetinfo.cpp:112
 #, kde-format
 msgid "DKIM: Not signed"
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:115
+#: dkim-verify/dkimwidgetinfo.cpp:117
 #, kde-format
 msgid "DKIM: Should Be Signed by %1"
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:131
+#: dkim-verify/dkimwidgetinfo.cpp:133
 #, kde-format
 msgid "Body Hash was corrupted."
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:134
+#: dkim-verify/dkimwidgetinfo.cpp:136
 #, kde-format
 msgid "The domain doesn't exist."
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:137
+#: dkim-verify/dkimwidgetinfo.cpp:139
 #, kde-format
 msgid "Missing header From."
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:140
+#: dkim-verify/dkimwidgetinfo.cpp:142
 #, fuzzy, kde-format
 #| msgid "Good signature."
 msgid "Missing signature."
 msgstr "有効な署名です。"
 
-#: dkim-verify/dkimwidgetinfo.cpp:143
+#: dkim-verify/dkimwidgetinfo.cpp:145
 #, fuzzy, kde-format
 #| msgid "Invalid signature."
 msgid "Invalid query method."
 msgstr "無効な署名です。"
 
-#: dkim-verify/dkimwidgetinfo.cpp:146
+#: dkim-verify/dkimwidgetinfo.cpp:148
 #, kde-format
 msgid "Invalid header canonicalization."
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:149
+#: dkim-verify/dkimwidgetinfo.cpp:151
 #, kde-format
 msgid "Invalid body canonicalization."
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:152
+#: dkim-verify/dkimwidgetinfo.cpp:154
 #, kde-format
 msgid "Unknown Body Hash Algorithm."
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:155
+#: dkim-verify/dkimwidgetinfo.cpp:157
 #, fuzzy, kde-format
 #| msgid "Signature is valid."
 msgid "Signature algorithm is invalid."
 msgstr "署名は有効です。"
 
-#: dkim-verify/dkimwidgetinfo.cpp:158
+#: dkim-verify/dkimwidgetinfo.cpp:160
 #, fuzzy, kde-format
 #| msgid "One key has been revoked."
 msgid "The public key was revoked."
 msgstr "一つの鍵が破棄されています。"
 
-#: dkim-verify/dkimwidgetinfo.cpp:161
+#: dkim-verify/dkimwidgetinfo.cpp:163
 #, fuzzy, kde-format
 #| msgid "Signature is valid."
 msgid "Signature is too large."
 msgstr "署名は有効です。"
 
-#: dkim-verify/dkimwidgetinfo.cpp:164
+#: dkim-verify/dkimwidgetinfo.cpp:166
 #, kde-format
 msgid "Hash Algorithm is unsupported."
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:167
+#: dkim-verify/dkimwidgetinfo.cpp:169
 #, kde-format
 msgid "Public key is too small."
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:170
+#: dkim-verify/dkimwidgetinfo.cpp:172
 #, fuzzy, kde-format
 #| msgid "No public key to verify the signature"
 msgid "Impossible to verify signature."
 msgstr "この署名を検証するための公開鍵がありません"
 
-#: dkim-verify/dkimwidgetinfo.cpp:173
+#: dkim-verify/dkimwidgetinfo.cpp:175
 #, kde-format
 msgid "AUID must be in the same domain as SDID (s-flag set in key record)."
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:176
+#: dkim-verify/dkimwidgetinfo.cpp:178
 #, kde-format
 msgid "The signing domain is only testing DKIM."
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:179
+#: dkim-verify/dkimwidgetinfo.cpp:181
 #, fuzzy, kde-format
 #| msgid "No public key to verify the signature"
 msgid "Impossible to download key."
 msgstr "この署名を検証するための公開鍵がありません"
 
-#: dkim-verify/dkimwidgetinfo.cpp:182 dkim-verify/dkimwidgetinfo.cpp:206
+#: dkim-verify/dkimwidgetinfo.cpp:184 dkim-verify/dkimwidgetinfo.cpp:208
 #, kde-format
 msgid "Hash Algorithm unsafe (sha1)"
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:185
+#: dkim-verify/dkimwidgetinfo.cpp:187
 #, kde-format
 msgid "AUID is not in a subdomain of SDID"
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:188
+#: dkim-verify/dkimwidgetinfo.cpp:190
 #, kde-format
 msgid "Problem during converting public key"
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:197
+#: dkim-verify/dkimwidgetinfo.cpp:199
 #, fuzzy, kde-format
 #| msgid "The signature has expired."
 msgid "Signature expired"
 msgstr "署名は失効しています。"
 
-#: dkim-verify/dkimwidgetinfo.cpp:200
+#: dkim-verify/dkimwidgetinfo.cpp:202
 #, kde-format
 msgid "Signature created in the future"
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:203
+#: dkim-verify/dkimwidgetinfo.cpp:205
 #, fuzzy, kde-format
 #| msgid "Signature is valid."
 msgid "Signature too small"
 msgstr "署名は有効です。"
 
-#: dkim-verify/dkimwidgetinfo.cpp:209
+#: dkim-verify/dkimwidgetinfo.cpp:211
 #, fuzzy, kde-format
 #| msgid "Signature is valid."
 msgid "Public Key too small"
 msgstr "署名は有効です。"
 
-#: dkim-verify/dkimwidgetinfo.cpp:231 dkim-verify/dkimwidgetinfo.cpp:278
+#: dkim-verify/dkimwidgetinfo.cpp:233 dkim-verify/dkimwidgetinfo.cpp:280
 #, kde-format
 msgctxt "method name: info about it from parsing"
 msgid "%1: %2"
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:255
+#: dkim-verify/dkimwidgetinfo.cpp:257
 #, kde-format
 msgid "%1: None"
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:270
+#: dkim-verify/dkimwidgetinfo.cpp:272
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "%1: Valid (Signed by %2)"
 msgstr "メッセージは %1 によって署名されています。"
 
-#: dkim-verify/dkimwidgetinfo.cpp:291
+#: dkim-verify/dkimwidgetinfo.cpp:293
 #, kde-format
 msgid "%1: Valid"
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:305
+#: dkim-verify/dkimwidgetinfo.cpp:307
 #, kde-format
 msgid "Not Signed"
 msgstr ""
 
-#: header/grantleeheaderformatter.cpp:203
+#: header/grantleeheaderformatter.cpp:205
 #, fuzzy, kde-format
 #| msgid "No Subject"
 msgid "Subject:"
 msgstr "件名なし"
 
-#: header/grantleeheaderformatter.cpp:223
+#: header/grantleeheaderformatter.cpp:225
 #, fuzzy, kde-format
 #| msgid "Date: "
 msgid "Date:"
 msgstr "日付: "
 
-#: header/grantleeheaderformatter.cpp:239
+#: header/grantleeheaderformatter.cpp:241
 #, fuzzy, kde-format
 #| msgid "&Save message"
 msgid "Message-Id:"
 msgstr "メッセージを保存(&S)"
 
-#: header/grantleeheaderformatter.cpp:263
+#: header/grantleeheaderformatter.cpp:265
 #, fuzzy, kde-format
 #| msgid "To: "
 msgid "To:"
 msgstr "宛先: "
 
-#: header/grantleeheaderformatter.cpp:265
+#: header/grantleeheaderformatter.cpp:267
 #, fuzzy, kde-format
 #| msgid "Reply to: "
 msgid "Reply To:"
 msgstr "返信先: "
 
-#: header/grantleeheaderformatter.cpp:267
+#: header/grantleeheaderformatter.cpp:269
 #, fuzzy, kde-format
 #| msgid "CC: "
 msgid "CC:"
 msgstr "CC: "
 
-#: header/grantleeheaderformatter.cpp:269
+#: header/grantleeheaderformatter.cpp:271
 #, fuzzy, kde-format
 #| msgid "BCC: "
 msgid "BCC:"
 msgstr "BCC: "
 
-#: header/grantleeheaderformatter.cpp:273
+#: header/grantleeheaderformatter.cpp:275
 #, fuzzy, kde-format
 #| msgid "sender: "
 msgid "Sender:"
 msgstr "送信者: "
 
-#: header/grantleeheaderformatter.cpp:275
+#: header/grantleeheaderformatter.cpp:277
 #, fuzzy, kde-format
 #| msgid "(resent from %1)"
 msgid "resent from:"
 msgstr "(%1 から再送)"
 
-#: header/grantleeheaderformatter.cpp:277
+#: header/grantleeheaderformatter.cpp:279
 #, fuzzy, kde-format
 #| msgid "(resent from %1)"
 msgid "resent to:"
 msgstr "(%1 から再送)"
 
-#: header/grantleeheaderformatter.cpp:358
+#: header/grantleeheaderformatter.cpp:360
 #, kde-format
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr ""
 
-#: header/grantleeheaderformatter.cpp:448 header/headerstyle_util.cpp:80
-#: header/headerstyle_util.cpp:85 header/headerstyle_util.cpp:96
+#: header/grantleeheaderformatter.cpp:450 header/headerstyle_util.cpp:82
+#: header/headerstyle_util.cpp:87 header/headerstyle_util.cpp:98
 #, kde-format
 msgid "No Subject"
 msgstr "件名なし"
 
-#: header/grantleeheaderformatter.cpp:453
+#: header/grantleeheaderformatter.cpp:455
 #, kde-format
 msgid "Spam Status:"
 msgstr "スパムの状態:"
 
-#: header/grantleeheaderformatter.cpp:465
+#: header/grantleeheaderformatter.cpp:467
 #, kde-format
 msgid "Printing mode"
 msgstr ""
 
-#: header/grantleeheaderformatter.cpp:507
+#: header/grantleeheaderformatter.cpp:509
 #, fuzzy, kde-format
 #| msgid "[vCard]"
 msgid "[vcard]"
 msgstr "[vCard]"
 
-#: header/grantleeheaderformatter.cpp:514
+#: header/grantleeheaderformatter.cpp:516
 #, kde-format
 msgid "Attachments:"
 msgstr "添付ファイル:"
 
-#: header/grantleeheaderformatter.cpp:540
+#: header/grantleeheaderformatter.cpp:542
 #, kde-format
 msgid "Security:"
 msgstr ""
 
-#: header/headerstyle_util.cpp:55
+#: header/headerstyle_util.cpp:57
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "不明"
 
-#: header/headerstyle_util.cpp:145
+#: header/headerstyle_util.cpp:146
 #, kde-format
 msgid ""
 "%1% probability of being spam with confidence %3%.\n"
@@ -840,7 +840,7 @@ msgstr ""
 "可能性=%2\n"
 "確かさ=%4"
 
-#: header/headerstyle_util.cpp:154
+#: header/headerstyle_util.cpp:155
 #, kde-format
 msgid ""
 "%1% probability of being spam.\n"
@@ -853,38 +853,38 @@ msgstr ""
 "詳細レポート:\n"
 "可能性=%2"
 
-#: header/headerstyle_util.cpp:163
+#: header/headerstyle_util.cpp:164
 #, kde-format
 msgid "No Spam agent"
 msgstr ""
 
-#: header/headerstyle_util.cpp:166
+#: header/headerstyle_util.cpp:167
 #, kde-format
 msgid "Spam filter score not a number"
 msgstr ""
 
-#: header/headerstyle_util.cpp:169
+#: header/headerstyle_util.cpp:170
 #, kde-format
 msgid "Threshold not a valid number"
 msgstr ""
 
-#: header/headerstyle_util.cpp:172
+#: header/headerstyle_util.cpp:173
 #, kde-format
 msgid "Spam filter score could not be extracted from header"
 msgstr ""
 
-#: header/headerstyle_util.cpp:175
+#: header/headerstyle_util.cpp:176
 #, kde-format
 msgid "Threshold could not be extracted from header"
 msgstr ""
 
-#: header/headerstyle_util.cpp:178
+#: header/headerstyle_util.cpp:179
 #, fuzzy, kde-format
 #| msgid "End of signed message"
 msgid "Error evaluating spam score"
 msgstr "署名付きメッセージの末尾"
 
-#: header/headerstyle_util.cpp:183
+#: header/headerstyle_util.cpp:184
 #, kde-format
 msgid ""
 "%1.\n"
@@ -897,49 +897,49 @@ msgstr ""
 "詳細レポート:\n"
 "%2"
 
-#: header/headerstylemenumanager.cpp:105
+#: header/headerstylemenumanager.cpp:107
 #, kde-format
 msgctxt "View->"
 msgid "&Headers"
 msgstr "ヘッダ(&H)"
 
-#: header/headerstylemenumanager.cpp:109
+#: header/headerstylemenumanager.cpp:111
 #, kde-format
 msgid "Choose display style of message headers"
 msgstr "メッセージヘッダの表示スタイルを選択"
 
-#: header/plainheaderstyle.cpp:102
+#: header/plainheaderstyle.cpp:104
 #, kde-format
 msgid "Date: "
 msgstr "日付: "
 
-#: header/plainheaderstyle.cpp:106
+#: header/plainheaderstyle.cpp:108
 #, kde-format
 msgid "From: "
 msgstr "差出人: "
 
-#: header/plainheaderstyle.cpp:108
+#: header/plainheaderstyle.cpp:110
 #, kde-format
 msgid "[vCard]"
 msgstr "[vCard]"
 
-#: header/plainheaderstyle.cpp:120
+#: header/plainheaderstyle.cpp:121
 #, kde-format
 msgctxt "To-field of the mailheader."
 msgid "To: "
 msgstr "宛先: "
 
-#: header/plainheaderstyle.cpp:127
+#: header/plainheaderstyle.cpp:128
 #, kde-format
 msgid "CC: "
 msgstr "CC: "
 
-#: header/plainheaderstyle.cpp:134
+#: header/plainheaderstyle.cpp:135
 #, kde-format
 msgid "BCC: "
 msgstr "BCC: "
 
-#: header/plainheaderstyle.cpp:139
+#: header/plainheaderstyle.cpp:140
 #, kde-format
 msgid "Reply to: "
 msgstr "返信先: "
@@ -964,94 +964,94 @@ msgctxt "@action"
 msgid "Send Deny"
 msgstr "送信者: "
 
-#: messagepartthemes/default/defaultrenderer.cpp:69
+#: messagepartthemes/default/defaultrenderer.cpp:70
 #, kde-format
 msgid "Error: Signature not verified"
 msgstr "エラー: 署名は検証されていません"
 
-#: messagepartthemes/default/defaultrenderer.cpp:73
+#: messagepartthemes/default/defaultrenderer.cpp:74
 #, kde-format
 msgid "Good signature"
 msgstr "有効な署名"
 
-#: messagepartthemes/default/defaultrenderer.cpp:77
+#: messagepartthemes/default/defaultrenderer.cpp:78
 #, fuzzy, kde-format
 #| msgid "Good signature"
 msgid "Bad signature"
 msgstr "有効な署名"
 
-#: messagepartthemes/default/defaultrenderer.cpp:81
+#: messagepartthemes/default/defaultrenderer.cpp:82
 #, kde-format
 msgid "No public key to verify the signature"
 msgstr "この署名を検証するための公開鍵がありません"
 
-#: messagepartthemes/default/defaultrenderer.cpp:85
+#: messagepartthemes/default/defaultrenderer.cpp:86
 #, kde-format
 msgid "No signature found"
 msgstr "署名が見つかりません"
 
-#: messagepartthemes/default/defaultrenderer.cpp:89
+#: messagepartthemes/default/defaultrenderer.cpp:90
 #, kde-format
 msgid "Error verifying the signature"
 msgstr "署名の検証でエラー"
 
-#: messagepartthemes/default/defaultrenderer.cpp:93
+#: messagepartthemes/default/defaultrenderer.cpp:94
 #, kde-format
 msgid "Different results for signatures"
 msgstr "署名によって異なる検証結果"
 
-#: messagepartthemes/default/defaultrenderer.cpp:113
+#: messagepartthemes/default/defaultrenderer.cpp:114
 #, kde-format
 msgid "No status information available."
 msgstr "利用可能な状態情報がありません。"
 
-#: messagepartthemes/default/defaultrenderer.cpp:120
-#: messagepartthemes/default/defaultrenderer.cpp:205
+#: messagepartthemes/default/defaultrenderer.cpp:121
+#: messagepartthemes/default/defaultrenderer.cpp:206
 #, kde-format
 msgid "Good signature."
 msgstr "有効な署名です。"
 
-#: messagepartthemes/default/defaultrenderer.cpp:141
+#: messagepartthemes/default/defaultrenderer.cpp:142
 #, kde-format
 msgid "One key has expired."
 msgstr "一つの鍵が失効しています。"
 
-#: messagepartthemes/default/defaultrenderer.cpp:145
+#: messagepartthemes/default/defaultrenderer.cpp:146
 #, kde-format
 msgid "The signature has expired."
 msgstr "署名は失効しています。"
 
-#: messagepartthemes/default/defaultrenderer.cpp:150
+#: messagepartthemes/default/defaultrenderer.cpp:151
 #, kde-format
 msgid "Unable to verify: key missing."
 msgstr "検証できません: 鍵がありません。"
 
-#: messagepartthemes/default/defaultrenderer.cpp:157
+#: messagepartthemes/default/defaultrenderer.cpp:158
 #, kde-format
 msgid "CRL not available."
 msgstr "利用可能な CRL がありません。"
 
-#: messagepartthemes/default/defaultrenderer.cpp:161
+#: messagepartthemes/default/defaultrenderer.cpp:162
 #, kde-format
 msgid "Available CRL is too old."
 msgstr "利用可能な CRL は古すぎます。"
 
-#: messagepartthemes/default/defaultrenderer.cpp:165
+#: messagepartthemes/default/defaultrenderer.cpp:166
 #, kde-format
 msgid "A policy was not met."
 msgstr "ポリシーに合致しません。"
 
-#: messagepartthemes/default/defaultrenderer.cpp:169
+#: messagepartthemes/default/defaultrenderer.cpp:170
 #, kde-format
 msgid "A system error occurred."
 msgstr "システムエラーが発生しました。"
 
-#: messagepartthemes/default/defaultrenderer.cpp:180
+#: messagepartthemes/default/defaultrenderer.cpp:181
 #, kde-format
 msgid "One key has been revoked."
 msgstr "一つの鍵が破棄されています。"
 
-#: messagepartthemes/default/defaultrenderer.cpp:207
+#: messagepartthemes/default/defaultrenderer.cpp:208
 #, fuzzy, kde-format
 #| msgid "Good signature."
 msgid "Bad signature."
@@ -1063,56 +1063,56 @@ msgctxt "@title:window"
 msgid "Configure Remote Content"
 msgstr ""
 
-#: remote-content/remotecontentconfigurewidget.cpp:52
+#: remote-content/remotecontentconfigurewidget.cpp:54
 #, fuzzy, kde-format
 #| msgid "Status: "
 msgid "Status"
 msgstr "状態: "
 
-#: remote-content/remotecontentconfigurewidget.cpp:89
+#: remote-content/remotecontentconfigurewidget.cpp:91
 #, kde-format
 msgid "Do you want to delete this rule '%1'?"
 msgstr ""
 
-#: remote-content/remotecontentconfigurewidget.cpp:107
+#: remote-content/remotecontentconfigurewidget.cpp:109
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Remote Content"
 msgstr ""
 
-#: remote-content/remotecontentconfigurewidget.cpp:123
+#: remote-content/remotecontentconfigurewidget.cpp:125
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Remote Content"
 msgstr ""
 
-#: remote-content/remotecontentconfigurewidget.cpp:132
+#: remote-content/remotecontentconfigurewidget.cpp:134
 #, kde-format
 msgid "An entry already defines this url. Please modify it."
 msgstr ""
 
-#: remote-content/remotecontentconfigurewidget.cpp:132
+#: remote-content/remotecontentconfigurewidget.cpp:134
 #, kde-format
 msgctxt "@title:window"
 msgid "Add new Url"
 msgstr ""
 
-#: remote-content/remotecontentmenu.cpp:17
+#: remote-content/remotecontentmenu.cpp:19
 #, kde-format
 msgid "Configure"
 msgstr ""
 
-#: remote-content/remotecontentmenu.cpp:19
+#: remote-content/remotecontentmenu.cpp:21
 #, kde-format
 msgid "Remote Content"
 msgstr ""
 
-#: remote-content/remotecontentmenu.cpp:50
+#: remote-content/remotecontentmenu.cpp:52
 #, kde-format
 msgid "Authorize %1"
 msgstr ""
 
-#: remote-content/remotecontentmenu.cpp:58
+#: remote-content/remotecontentmenu.cpp:60
 #, kde-format
 msgid "Authorize all Urls"
 msgstr ""
@@ -1133,44 +1133,44 @@ msgctxt "@label:textbox"
 msgid "Domain:"
 msgstr ""
 
-#: scamdetection/scamdetectiondetailsdialog.cpp:40
+#: scamdetection/scamdetectiondetailsdialog.cpp:42
 #, fuzzy, kde-format
 #| msgid "Show Details"
 msgctxt "@title:window"
 msgid "Details"
 msgstr "詳細を表示"
 
-#: scamdetection/scamdetectionwarningwidget.cpp:34
+#: scamdetection/scamdetectionwarningwidget.cpp:36
 #, kde-format
 msgid "This message may be a scam. <a href=\"scamdetails\">(Details...)</a>"
 msgstr ""
 
-#: scamdetection/scamdetectionwarningwidget.cpp:39
+#: scamdetection/scamdetectionwarningwidget.cpp:41
 #, kde-format
 msgctxt "@action"
 msgid "Move to Trash"
 msgstr ""
 
-#: scamdetection/scamdetectionwarningwidget.cpp:44
+#: scamdetection/scamdetectionwarningwidget.cpp:46
 #, kde-format
 msgctxt "@action"
 msgid "I confirm it's not a scam"
 msgstr ""
 
-#: scamdetection/scamdetectionwarningwidget.cpp:48
+#: scamdetection/scamdetectionwarningwidget.cpp:50
 #, kde-format
 msgctxt "@action"
 msgid "Add email to whitelist"
 msgstr ""
 
-#: scamdetection/scamdetectionwarningwidget.cpp:52
+#: scamdetection/scamdetectionwarningwidget.cpp:54
 #, kde-format
 msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:115
-#: scamdetection/scamdetectionwebengine.cpp:214
+#: scamdetection/scamdetectionwebengine.cpp:117
+#: scamdetection/scamdetectionwebengine.cpp:215
 #, kde-format
 msgid ""
 "This email contains a link which reads as '%1' in the text, but actually "
@@ -1178,7 +1178,7 @@ msgid ""
 "recipient"
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:128
+#: scamdetection/scamdetectionwebengine.cpp:130
 #, kde-format
 msgid ""
 "This email contains a link which points to a numerical IP address (%1) "
@@ -1186,7 +1186,7 @@ msgid ""
 "emails."
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:135
+#: scamdetection/scamdetectionwebengine.cpp:137
 #, kde-format
 msgid ""
 "This email contains a link which points to a hexadecimal IP address (%1) "
@@ -1194,45 +1194,45 @@ msgid ""
 "emails."
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:141
+#: scamdetection/scamdetectionwebengine.cpp:143
 #, kde-format
 msgid "This email contains a link (%1) which has a redirection"
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:148
+#: scamdetection/scamdetectionwebengine.cpp:149
 #, kde-format
 msgid ""
 "This email contains a link (%1) which contains multiple http://. This is "
 "often the case in scam emails."
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:159
+#: scamdetection/scamdetectionwebengine.cpp:160
 #, kde-format
 msgid "This email contains a shorturl (%1). It can redirect to another server."
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:233
+#: scamdetection/scamdetectionwebengine.cpp:234
 #, kde-format
 msgid "Message contains form element. This is often the case in scam emails."
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:237
+#: scamdetection/scamdetectionwebengine.cpp:238
 #, fuzzy, kde-format
 #| msgid "Show Details"
 msgid "Details:"
 msgstr "詳細を表示"
 
-#: scamdetection/scamexpandurljob.cpp:47
+#: scamdetection/scamexpandurljob.cpp:49
 #, kde-format
 msgid "No network connection detected, we cannot expand url."
 msgstr ""
 
-#: scamdetection/scamexpandurljob.cpp:77 scamdetection/scamexpandurljob.cpp:83
+#: scamdetection/scamexpandurljob.cpp:79 scamdetection/scamexpandurljob.cpp:85
 #, kde-format
 msgid "Impossible to expand '%1'."
 msgstr ""
 
-#: scamdetection/scamexpandurljob.cpp:81
+#: scamdetection/scamexpandurljob.cpp:83
 #, kde-format
 msgid "Short url '%1' redirects to '%2'."
 msgstr ""
@@ -1511,7 +1511,7 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
-#: settings/messageviewer.kcfg.in:228 viewer/viewer_p.cpp:1559
+#: settings/messageviewer.kcfg.in:228 viewer/viewer_p.cpp:1558
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "固定幅フォントを使う(&X)"
@@ -1870,22 +1870,22 @@ msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
 msgstr ""
 
-#: viewer/mimeparttree/mimetreemodel.cpp:59
+#: viewer/mimeparttree/mimetreemodel.cpp:61
 #, kde-format
 msgid "body part"
 msgstr "メッセージ本体"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:262
+#: viewer/mimeparttree/mimetreemodel.cpp:264
 #, kde-format
 msgid "Description"
 msgstr "説明"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:264
+#: viewer/mimeparttree/mimetreemodel.cpp:266
 #, kde-format
 msgid "Type"
 msgstr "タイプ"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:266
+#: viewer/mimeparttree/mimetreemodel.cpp:268
 #, kde-format
 msgid "Size"
 msgstr "サイズ"
@@ -1901,129 +1901,129 @@ msgctxt "@title:window"
 msgid "Print Document"
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:407
+#: viewer/urlhandlermanager.cpp:409
 #, kde-format
 msgid "Turn on HTML rendering for this message."
 msgstr "このメッセージについて HTML レンダリングを有効にします。"
 
-#: viewer/urlhandlermanager.cpp:409 viewer/viewer_p.cpp:1628
+#: viewer/urlhandlermanager.cpp:411 viewer/viewer_p.cpp:1627
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "このメッセージについて外部参照をインターネットからロードします。"
 
-#: viewer/urlhandlermanager.cpp:411
+#: viewer/urlhandlermanager.cpp:413
 #, kde-format
 msgid "Work online."
 msgstr "オンラインで作業します。"
 
-#: viewer/urlhandlermanager.cpp:413
+#: viewer/urlhandlermanager.cpp:415
 #, kde-format
 msgid "Make account online."
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:415
+#: viewer/urlhandlermanager.cpp:417
 #, kde-format
 msgid "Decrypt message."
 msgstr "メッセージを復号します。"
 
-#: viewer/urlhandlermanager.cpp:417
+#: viewer/urlhandlermanager.cpp:419
 #, kde-format
 msgid "Show signature details."
 msgstr "署名の詳細を表示します。"
 
-#: viewer/urlhandlermanager.cpp:419
+#: viewer/urlhandlermanager.cpp:421
 #, kde-format
 msgid "Hide signature details."
 msgstr "署名の詳細を隠します。"
 
-#: viewer/urlhandlermanager.cpp:421
+#: viewer/urlhandlermanager.cpp:423
 #, fuzzy, kde-format
 #| msgid "Show signature details."
 msgid "Show encryption details."
 msgstr "署名の詳細を表示します。"
 
-#: viewer/urlhandlermanager.cpp:423
+#: viewer/urlhandlermanager.cpp:425
 #, fuzzy, kde-format
 #| msgid "Hide signature details."
 msgid "Hide encryption details."
 msgstr "署名の詳細を隠します。"
 
-#: viewer/urlhandlermanager.cpp:428
+#: viewer/urlhandlermanager.cpp:430
 #, kde-format
 msgid "Open Documentation"
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:462
+#: viewer/urlhandlermanager.cpp:464
 #, kde-format
 msgid "Expand all quoted text."
 msgstr "すべての引用テキストを展開します。"
 
-#: viewer/urlhandlermanager.cpp:464
+#: viewer/urlhandlermanager.cpp:466
 #, kde-format
 msgid "Collapse quoted text."
 msgstr "引用テキストをたたみます。"
 
-#: viewer/urlhandlermanager.cpp:491
+#: viewer/urlhandlermanager.cpp:492
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""
 "証明書マネージャを起動できませんでした。正しくインストールされているか確認し"
 "てください。"
 
-#: viewer/urlhandlermanager.cpp:493
+#: viewer/urlhandlermanager.cpp:494
 #, kde-format
 msgid "KMail Error"
 msgstr "KMail エラー"
 
-#: viewer/urlhandlermanager.cpp:510
+#: viewer/urlhandlermanager.cpp:511
 #, kde-format
 msgid "Show certificate 0x%1"
 msgstr "証明書 0x%1 を表示"
 
-#: viewer/urlhandlermanager.cpp:569
+#: viewer/urlhandlermanager.cpp:570
 #, kde-format
 msgid "&Open in Address Book"
 msgstr "アドレス帳で開く(&O)"
 
-#: viewer/urlhandlermanager.cpp:571
+#: viewer/urlhandlermanager.cpp:572
 #, kde-format
 msgid "&Copy Email Address"
 msgstr "メールアドレスをコピー(&C)"
 
-#: viewer/urlhandlermanager.cpp:584 viewer/viewer_p.cpp:2720
+#: viewer/urlhandlermanager.cpp:585 viewer/viewer_p.cpp:2718
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "アドレスをクリップボードにコピーしました。"
 
-#: viewer/urlhandlermanager.cpp:595
+#: viewer/urlhandlermanager.cpp:596
 #, fuzzy, kde-format
 #| msgid "&Open in Address Book"
 msgid "Lookup the contact in KAddressbook"
 msgstr "アドレス帳で開く(&O)"
 
-#: viewer/urlhandlermanager.cpp:771
+#: viewer/urlhandlermanager.cpp:772
 #, kde-format
 msgid "Attachment: %1"
 msgstr "添付ファイル: %1"
 
-#: viewer/urlhandlermanager.cpp:774
+#: viewer/urlhandlermanager.cpp:775
 #, fuzzy, kde-format
 #| msgid "Encapsulated message"
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "封入されたメッセージ"
 
-#: viewer/urlhandlermanager.cpp:776
+#: viewer/urlhandlermanager.cpp:777
 #, fuzzy, kde-format
 #| msgid "Encapsulated message"
 msgid "Encapsulated Message"
 msgstr "封入されたメッセージ"
 
-#: viewer/urlhandlermanager.cpp:779
+#: viewer/urlhandlermanager.cpp:780
 #, kde-format
 msgid "Unnamed attachment"
 msgstr "名なしの添付ファイル"
 
-#: viewer/urlhandlermanager.cpp:814
+#: viewer/urlhandlermanager.cpp:815
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr "この操作の GnuPG 監査ログを表示"
@@ -2051,7 +2051,7 @@ msgstr ""
 msgid "Loading message..."
 msgstr "署名付きメッセージの末尾"
 
-#: viewer/viewer_p.cpp:345
+#: viewer/viewer_p.cpp:346
 #, kde-format
 msgid ""
 "Deleting an attachment might invalidate any digital signature on this "
@@ -2060,85 +2060,85 @@ msgstr ""
 "添付ファイルを削除すると、このメッセージの電子署名が無効になる可能性がありま"
 "す。"
 
-#: viewer/viewer_p.cpp:346 viewer/viewer_p.cpp:381
+#: viewer/viewer_p.cpp:347 viewer/viewer_p.cpp:382
 #, fuzzy, kde-format
 #| msgid "Delete Attachment"
 msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "添付ファイルを削除"
 
-#: viewer/viewer_p.cpp:380
+#: viewer/viewer_p.cpp:381
 #, kde-format
 msgid ""
 "Deleting an attachment from an encrypted or old-style mailman message is not "
 "supported."
 msgstr ""
 
-#: viewer/viewer_p.cpp:429
+#: viewer/viewer_p.cpp:430
 #, fuzzy, kde-format
 #| msgid "&Open With..."
 msgctxt "@title:menu"
 msgid "&Open With"
 msgstr "アプリケーションで開く(&O)..."
 
-#: viewer/viewer_p.cpp:447
+#: viewer/viewer_p.cpp:448
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
 msgstr ""
 
-#: viewer/viewer_p.cpp:449 viewer/viewer_p.cpp:462
+#: viewer/viewer_p.cpp:450 viewer/viewer_p.cpp:463
 #, fuzzy, kde-format
 #| msgid "&Open With..."
 msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "アプリケーションで開く(&O)..."
 
-#: viewer/viewer_p.cpp:526 viewer/viewer_p.cpp:1738
+#: viewer/viewer_p.cpp:527 viewer/viewer_p.cpp:1737
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "開く"
 
-#: viewer/viewer_p.cpp:540 viewer/viewer_p.cpp:1745
+#: viewer/viewer_p.cpp:541 viewer/viewer_p.cpp:1744
 #, kde-format
 msgctxt "to view something"
 msgid "View"
 msgstr "表示"
 
-#: viewer/viewer_p.cpp:548
+#: viewer/viewer_p.cpp:549
 #, kde-format
 msgid "Scroll To"
 msgstr ""
 
-#: viewer/viewer_p.cpp:553
+#: viewer/viewer_p.cpp:554
 #, kde-format
 msgid "Save As..."
 msgstr "名前を付けて保存..."
 
-#: viewer/viewer_p.cpp:559 viewer/viewer_p.cpp:1755
+#: viewer/viewer_p.cpp:560 viewer/viewer_p.cpp:1754
 #, kde-format
 msgid "Copy"
 msgstr "コピー"
 
-#: viewer/viewer_p.cpp:570 viewer/viewer_p.cpp:1760
+#: viewer/viewer_p.cpp:571 viewer/viewer_p.cpp:1758
 #, kde-format
 msgid "Delete Attachment"
 msgstr "添付ファイルを削除"
 
-#: viewer/viewer_p.cpp:581
+#: viewer/viewer_p.cpp:582
 #, fuzzy, kde-format
 #| msgid "Reply to: "
 msgid "Reply To Author"
 msgstr "返信先: "
 
-#: viewer/viewer_p.cpp:589
+#: viewer/viewer_p.cpp:590
 #, fuzzy, kde-format
 #| msgid "Reply to: "
 msgid "Reply To All"
 msgstr "返信先: "
 
-#: viewer/viewer_p.cpp:595 viewer/viewer_p.cpp:1765
+#: viewer/viewer_p.cpp:596 viewer/viewer_p.cpp:1763
 #, kde-format
 msgid "Properties"
 msgstr "プロパティ"
@@ -2149,82 +2149,82 @@ msgstr "プロパティ"
 msgid "KMail"
 msgstr "KMail エラー"
 
-#: viewer/viewer_p.cpp:733
+#: viewer/viewer_p.cpp:732
 #, kde-format
 msgid "The KDE Mail Client"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1279
+#: viewer/viewer_p.cpp:1278
 #, fuzzy, kde-format
 #| msgid "View Attachment: %1"
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "添付ファイルを表示: %1"
 
-#: viewer/viewer_p.cpp:1481
+#: viewer/viewer_p.cpp:1480
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "添付ファイル(&A)"
 
-#: viewer/viewer_p.cpp:1483
+#: viewer/viewer_p.cpp:1482
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "添付ファイルの表示スタイルを選択"
 
-#: viewer/viewer_p.cpp:1486
+#: viewer/viewer_p.cpp:1485
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "アイコン(&A)"
 
-#: viewer/viewer_p.cpp:1489
+#: viewer/viewer_p.cpp:1488
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr ""
 "すべての添付ファイルをアイコンで表示します。参照するにはそれらをクリックしま"
 "す。"
 
-#: viewer/viewer_p.cpp:1493
+#: viewer/viewer_p.cpp:1492
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "スマート(&S)"
 
-#: viewer/viewer_p.cpp:1496
+#: viewer/viewer_p.cpp:1495
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "添付ファイルを送信者が指示した方法で表示します。"
 
-#: viewer/viewer_p.cpp:1500
+#: viewer/viewer_p.cpp:1499
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "インライン(&I)"
 
-#: viewer/viewer_p.cpp:1503
+#: viewer/viewer_p.cpp:1502
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "可能であれば、すべての添付ファイルをインライン表示します。"
 
-#: viewer/viewer_p.cpp:1507
+#: viewer/viewer_p.cpp:1506
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "隠す(&H)"
 
-#: viewer/viewer_p.cpp:1510
+#: viewer/viewer_p.cpp:1509
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "メッセージビューアに添付ファイルを表示しません。"
 
-#: viewer/viewer_p.cpp:1514
+#: viewer/viewer_p.cpp:1513
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1517
+#: viewer/viewer_p.cpp:1516
 #, fuzzy, kde-format
 #| msgid "Show all attachments as icons. Click to see them."
 msgid "Show Attachments only in the header of the mail"
@@ -2233,215 +2233,215 @@ msgstr ""
 "す。"
 
 # ACCELERATOR changed by translator
-#: viewer/viewer_p.cpp:1522
+#: viewer/viewer_p.cpp:1521
 #, kde-format
 msgid "&Set Encoding"
 msgstr "エンコーディング(&N)"
 
-#: viewer/viewer_p.cpp:1527 widgets/configurewidget.cpp:43
-#: widgets/configurewidget.cpp:77
+#: viewer/viewer_p.cpp:1526 widgets/configurewidget.cpp:45
+#: widgets/configurewidget.cpp:79
 #, kde-format
 msgid "Auto"
 msgstr "自動"
 
-#: viewer/viewer_p.cpp:1537
+#: viewer/viewer_p.cpp:1536
 #, fuzzy, kde-format
 #| msgid "Copy"
 msgid "Copy Text"
 msgstr "コピー"
 
 # ACCELERATOR added by translator
-#: viewer/viewer_p.cpp:1543
+#: viewer/viewer_p.cpp:1542
 #, fuzzy, kde-format
 #| msgid "Select All Text"
 msgctxt "@action"
 msgid "Select All Text"
 msgstr "すべてのテキストを選択(&S)"
 
-#: viewer/viewer_p.cpp:1549 viewer/viewer_p.cpp:2074
+#: viewer/viewer_p.cpp:1548 viewer/viewer_p.cpp:2072
 #, kde-format
 msgid "Copy Link Address"
 msgstr "リンクアドレスをコピー"
 
-#: viewer/viewer_p.cpp:1554
+#: viewer/viewer_p.cpp:1553
 #, kde-format
 msgid "Open URL"
 msgstr "URL を開く"
 
-#: viewer/viewer_p.cpp:1565
+#: viewer/viewer_p.cpp:1564
 #, kde-format
 msgid "Show Message Structure"
 msgstr "メッセージ構造を表示"
 
-#: viewer/viewer_p.cpp:1570
+#: viewer/viewer_p.cpp:1569
 #, fuzzy, kde-format
 #| msgid "&View Source"
 msgctxt "@action"
 msgid "&View Source"
 msgstr "ソースを表示(&V)"
 
-#: viewer/viewer_p.cpp:1575
+#: viewer/viewer_p.cpp:1574
 #, fuzzy, kde-format
 #| msgid "&Save message"
 msgid "&Save Message..."
 msgstr "メッセージを保存(&S)"
 
-#: viewer/viewer_p.cpp:1581
+#: viewer/viewer_p.cpp:1580
 #, kde-format
 msgctxt "@action"
 msgid "&Save Display Format"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1585
+#: viewer/viewer_p.cpp:1584
 #, kde-format
 msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1592
+#: viewer/viewer_p.cpp:1591
 #, fuzzy, kde-format
 #| msgid "Scroll Message Up"
 msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "メッセージを 1 行上へスクロール"
 
-#: viewer/viewer_p.cpp:1597
+#: viewer/viewer_p.cpp:1596
 #, fuzzy, kde-format
 #| msgid "Scroll Message Down"
 msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "メッセージを 1 行下へスクロール"
 
-#: viewer/viewer_p.cpp:1602
+#: viewer/viewer_p.cpp:1601
 #, fuzzy, kde-format
 #| msgid "Scroll Message Up (More)"
 msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "メッセージを 1 画面上へスクロール"
 
-#: viewer/viewer_p.cpp:1607
+#: viewer/viewer_p.cpp:1606
 #, fuzzy, kde-format
 #| msgid "Scroll Message Down (More)"
 msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "メッセージを 1 画面下へスクロール"
 
-#: viewer/viewer_p.cpp:1617
+#: viewer/viewer_p.cpp:1616
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr "HTML 表示とプレーンテキスト表示を切り替え"
 
-#: viewer/viewer_p.cpp:1621
+#: viewer/viewer_p.cpp:1620
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr "HTML 表示とプレーンテキスト表示を切り替えます"
 
-#: viewer/viewer_p.cpp:1624
+#: viewer/viewer_p.cpp:1623
 #, kde-format
 msgctxt "@action"
 msgid "Load external references"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1630
+#: viewer/viewer_p.cpp:1629
 #, fuzzy, kde-format
 #| msgid "Copy"
 msgctxt "@action"
 msgid "Speak Text"
 msgstr "コピー"
 
-#: viewer/viewer_p.cpp:1636
+#: viewer/viewer_p.cpp:1635
 #, kde-format
 msgctxt "@action"
 msgid "Share Text..."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1654
+#: viewer/viewer_p.cpp:1653
 #, kde-format
 msgctxt "@action"
 msgid "Copy Image Location"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1660
+#: viewer/viewer_p.cpp:1659
 #, fuzzy, kde-format
 #| msgid "End of signed message"
 msgid "&Find in Message..."
 msgstr "署名付きメッセージの末尾"
 
-#: viewer/viewer_p.cpp:1669
+#: viewer/viewer_p.cpp:1668
 #, kde-format
 msgid "Disable Emoticon"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1735
+#: viewer/viewer_p.cpp:1734
 #, kde-format
 msgid "Save &As..."
 msgstr "名前を付けて保存(&A)..."
 
-#: viewer/viewer_p.cpp:1743
+#: viewer/viewer_p.cpp:1742
 #, kde-format
 msgid "Open With..."
 msgstr "アプリケーションで開く..."
 
-#: viewer/viewer_p.cpp:1750
+#: viewer/viewer_p.cpp:1749
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "すべての添付ファイルを保存..."
 
-#: viewer/viewer_p.cpp:1994
+#: viewer/viewer_p.cpp:1992
 #, kde-format
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1994 viewer/viewer_p.cpp:1997
+#: viewer/viewer_p.cpp:1992 viewer/viewer_p.cpp:1995
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1997
+#: viewer/viewer_p.cpp:1995
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr ""
 
-#: viewer/viewer_p.cpp:2017
+#: viewer/viewer_p.cpp:2015
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2018
+#: viewer/viewer_p.cpp:2016
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2072
+#: viewer/viewer_p.cpp:2070
 #, kde-format
 msgid "Copy Email Address"
 msgstr "メールアドレスをコピー"
 
-#: viewer/viewer_p.cpp:2155
+#: viewer/viewer_p.cpp:2153
 #, fuzzy, kde-format
 #| msgid "Message as Plain Text"
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "メッセージをプレーンテキストとして"
 
-#: viewer/viewer_p.cpp:2726
+#: viewer/viewer_p.cpp:2724
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL をクリップボードにコピーしました。"
 
-#: viewer/viewer_p.cpp:2888
+#: viewer/viewer_p.cpp:2886
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "メッセージの読み込みに失敗しました: %1"
 
-#: viewer/viewer_p.cpp:2893
+#: viewer/viewer_p.cpp:2891
 #, kde-format
 msgid "Message not found."
 msgstr ""
 
-#: widgets/attachmentdialog.cpp:27
+#: widgets/attachmentdialog.cpp:28
 #, fuzzy, kde-kuit-format
 #| msgid ""
 #| "Open attachment '%1'?\n"
@@ -2454,26 +2454,26 @@ msgstr ""
 "添付ファイル ‘%1’ を開きますか？\n"
 "添付ファイルを開くと、システムのセキュリティを脅かす可能性があります。"
 
-#: widgets/attachmentdialog.cpp:32
+#: widgets/attachmentdialog.cpp:33
 #, fuzzy, kde-format
 #| msgid "Open Attachment?"
 msgctxt "@title:window"
 msgid "Open Attachment?"
 msgstr "添付ファイルを開きますか？"
 
-#: widgets/attachmentdialog.cpp:39
+#: widgets/attachmentdialog.cpp:40
 #, fuzzy, kde-format
 #| msgid "&Open with '%1'"
 msgid "&Open With '%1'"
 msgstr "%1 で開く(&O)"
 
-#: widgets/attachmentdialog.cpp:46
+#: widgets/attachmentdialog.cpp:47
 #, fuzzy, kde-format
 #| msgid "Open With..."
 msgid "Open &With..."
 msgstr "アプリケーションで開く..."
 
-#: widgets/attachmentdialog.cpp:68
+#: widgets/attachmentdialog.cpp:69
 #, kde-format
 msgid "Do not ask again"
 msgstr "次回から確認しない"
@@ -2533,7 +2533,7 @@ msgstr ""
 msgid "Click to toggle between HTML, plain text and calendar."
 msgstr "クリックして HTML 表示とプレーンテキスト表示を切り替えます。"
 
-#: widgets/invitationsettings.cpp:70
+#: widgets/invitationsettings.cpp:72
 #, kde-format
 msgid ""
 "<qt>Invitations are normally sent as attachments to a mail. This switch "
@@ -2546,29 +2546,29 @@ msgid ""
 "be able to work with this.</qt>"
 msgstr ""
 
-#: widgets/mailsourceviewtextbrowserwidget.cpp:133
+#: widgets/mailsourceviewtextbrowserwidget.cpp:134
 #, kde-format
 msgid "Speak Text"
 msgstr ""
 
-#: widgets/mailsourcewebengineviewer.cpp:53
+#: widgets/mailsourcewebengineviewer.cpp:54
 #, kde-format
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
 msgstr "Raw ソース"
 
-#: widgets/mailsourcewebengineviewer.cpp:54
+#: widgets/mailsourcewebengineviewer.cpp:55
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr ""
 
-#: widgets/mailsourcewebengineviewer.cpp:57
+#: widgets/mailsourcewebengineviewer.cpp:58
 #, kde-format
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
 msgstr " HTML ソース"
 
-#: widgets/mailsourcewebengineviewer.cpp:58
+#: widgets/mailsourcewebengineviewer.cpp:59
 #, kde-format
 msgid "HTML code for displaying the message to the user"
 msgstr ""
@@ -2605,14 +2605,14 @@ msgstr ""
 msgid "KMail was unable to open the attachment."
 msgstr "添付ファイルを編集できません"
 
-#: widgets/shownextmessagewidget.cpp:15
+#: widgets/shownextmessagewidget.cpp:17
 #, fuzzy, kde-format
 #| msgid "&Save message"
 msgctxt "@action:button"
 msgid "Next Message"
 msgstr "メッセージを保存(&S)"
 
-#: widgets/shownextmessagewidget.cpp:16
+#: widgets/shownextmessagewidget.cpp:18
 #, fuzzy, kde-format
 #| msgid "&Previous Card"
 msgctxt "@action:button"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-14 00:40+0000\n"
+"POT-Creation-Date: 2025-06-25 00:43+0000\n"
 "PO-Revision-Date: 2013-07-10 03:20+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -37,7 +37,7 @@ msgstr "Тіркемені сығуды бастай алмады."
 msgid "Could not compress the attachment."
 msgstr "Тіркемесі сығылмады."
 
-#: attachment/attachmentfromfolderjob.cpp:51
+#: attachment/attachmentfromfolderjob.cpp:52
 #, kde-format
 msgid "Could not create compressed file."
 msgstr "Сығылған файл құрылмады."
@@ -61,30 +61,30 @@ msgstr "%1 архивке қосылмады"
 msgid "Could not open %1 for reading."
 msgstr "%1 оқу үшін ашылмады."
 
-#: attachment/attachmentfromurljob.cpp:68
+#: attachment/attachmentfromurljob.cpp:69
 #, kde-format
 msgctxt "a file called 'unknown.ext'"
 msgid "unknown%1"
 msgstr "беймәлім%1"
 
-#: attachment/attachmentfromurljob.cpp:70
+#: attachment/attachmentfromurljob.cpp:71
 #, kde-format
 msgctxt "a file called 'unknown'"
 msgid "unknown"
 msgstr "беймәлім"
 
-#: attachment/attachmentfromurljob.cpp:102
+#: attachment/attachmentfromurljob.cpp:103
 #, kde-format
 msgid "\"%1\" not found. Please specify the full path."
 msgstr "\"%1\" табылмады. Толық жолымен келтіріңіз."
 
-#: attachment/attachmentfromurljob.cpp:111
+#: attachment/attachmentfromurljob.cpp:112
 #, fuzzy, kde-format
 #| msgid "You may not attach files bigger than %1."
 msgid "You may not attach files bigger than %1. Share it with storage service."
 msgstr "Тіркеме файл өлшемінің шегі %1."
 
-#: attachment/attachmentpropertiesdialog.cpp:134
+#: attachment/attachmentpropertiesdialog.cpp:133
 #, kde-format
 msgid ""
 "<p>The <em>MIME type</em> of the file:</p><p>Normally, you do not need to "
@@ -96,7 +96,7 @@ msgstr ""
 "автоматты түрде анықалады;  бірақ кейбірде, %1 қателеседі -- сонда оны "
 "осымен түзеуге болады.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:142
+#: attachment/attachmentpropertiesdialog.cpp:141
 #, kde-format
 msgid ""
 "<p>The estimated size of the attachment:</p><p>Note that, in an email "
@@ -106,7 +106,7 @@ msgstr ""
 "<p>Тіркеменің шамалап бағалаған өлшемі:</p><p>Назараударыңыз, эл.поштадағы "
 "base64-кодталған бинарлы файлдың өлшемі үштен бірге ұлғаяды.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:147
+#: attachment/attachmentpropertiesdialog.cpp:146
 #, kde-format
 msgid ""
 "<p>The file name of the part:</p><p>Although this defaults to the name of "
@@ -118,7 +118,7 @@ msgstr ""
 "атау міндетті емес, қабылдаушыға осындағы атау тіркеме файлды сақтауға "
 "ұсынылады.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:154
+#: attachment/attachmentpropertiesdialog.cpp:153
 #, kde-format
 msgid ""
 "<p>A description of the part:</p><p>This is just an informational "
@@ -130,7 +130,7 @@ msgstr ""
 "тіркеменің сипаттама ақпараты. Пошта агент бағдарламаларының көбі тіременің "
 "бегісінін қасында осы мәліметті көрсетеді.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:161
+#: attachment/attachmentpropertiesdialog.cpp:160
 #, kde-format
 msgid ""
 "<p>The transport encoding of this part:</p><p>Normally, you do not need to "
@@ -147,7 +147,7 @@ msgstr ""
 "болмайды, тек таза мәтін -- бұндайда, \"quoted-printable\" дегенді "
 "қолданған, әдетті \"base64\" дегенмен салыстырғанда, 25%-ға ұтымды.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:172
+#: attachment/attachmentpropertiesdialog.cpp:171
 #, kde-format
 msgid ""
 "<p>Check this option if you want to suggest to the recipient the automatic "
@@ -162,7 +162,7 @@ msgstr ""
 "Disposition</em> өрісін әдетті \"attachment\" дегеннен \"inline\" дегнге "
 "ауыстырып іске асырылады.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:180
+#: attachment/attachmentpropertiesdialog.cpp:179
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be signed.</p><p>The "
@@ -172,7 +172,7 @@ msgstr ""
 "<p>Хаттың бұл бөлігін қолтаңбалауын қаласаңыз - осы белгісін қойыңыз.</p> "
 "<p>Қолданыстағы іс-әлпетіне тиісті кілтті пайдаланып қолтаңбаланады</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:186
+#: attachment/attachmentpropertiesdialog.cpp:185
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be encrypted.</"
@@ -181,8 +181,8 @@ msgstr ""
 "<p>Хаттың бұл бөлігін шифрлауын қаласаңыз - осы белгісін қойыңыз.</p> "
 "<p>Бөлігі қабылдаушылар үшін шифрланады</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:307
-#: attachment/attachmentpropertiesdialog.cpp:322
+#: attachment/attachmentpropertiesdialog.cpp:305
+#: attachment/attachmentpropertiesdialog.cpp:320
 #, fuzzy, kde-format
 #| msgid "Attachment Properties"
 msgctxt "@title:window"
@@ -307,7 +307,7 @@ msgid ""
 "no limit)"
 msgstr ""
 
-#: utils/dateformatter.cpp:163
+#: utils/dateformatter.cpp:164
 #, fuzzy, kde-format
 #| msgctxt "a file called 'unknown'"
 #| msgid "unknown"
@@ -315,23 +315,23 @@ msgctxt "invalid time specified"
 msgid "unknown"
 msgstr "беймәлім"
 
-#: utils/dateformatter.cpp:175
+#: utils/dateformatter.cpp:176
 #, kde-format
 msgid "Today %1"
 msgstr ""
 
-#: utils/dateformatter.cpp:178
+#: utils/dateformatter.cpp:179
 #, kde-format
 msgid "Yesterday %1"
 msgstr ""
 
-#: utils/dateformatter.cpp:183
+#: utils/dateformatter.cpp:184
 #, kde-format
 msgctxt "1. weekday, 2. time"
 msgid "%1 %2"
 msgstr ""
 
-#: utils/stringutil.cpp:415
+#: utils/stringutil.cpp:414
 #, kde-format
 msgctxt "signal that this email is defined in my identity"
 msgid "Me"

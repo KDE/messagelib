@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecore\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-14 00:40+0000\n"
+"POT-Creation-Date: 2025-06-25 00:43+0000\n"
 "PO-Revision-Date: 2024-10-17 12:49+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -39,7 +39,7 @@ msgstr "Liitteen pakkausta ei voitu käynnistää."
 msgid "Could not compress the attachment."
 msgstr "Liitettä ei voi pakata."
 
-#: attachment/attachmentfromfolderjob.cpp:51
+#: attachment/attachmentfromfolderjob.cpp:52
 #, kde-format
 msgid "Could not create compressed file."
 msgstr "Pakattua tiedostoa ei voitu luoda."
@@ -62,29 +62,29 @@ msgstr "Tiedostoa %1 ei voitu lisätään arkistoon"
 msgid "Could not open %1 for reading."
 msgstr "Tiedostoa %1 ei voitu lukea."
 
-#: attachment/attachmentfromurljob.cpp:68
+#: attachment/attachmentfromurljob.cpp:69
 #, kde-format
 msgctxt "a file called 'unknown.ext'"
 msgid "unknown%1"
 msgstr "tuntematon%1"
 
-#: attachment/attachmentfromurljob.cpp:70
+#: attachment/attachmentfromurljob.cpp:71
 #, kde-format
 msgctxt "a file called 'unknown'"
 msgid "unknown"
 msgstr "tuntematon"
 
-#: attachment/attachmentfromurljob.cpp:102
+#: attachment/attachmentfromurljob.cpp:103
 #, kde-format
 msgid "\"%1\" not found. Please specify the full path."
 msgstr "Kohdetta ”%1” ei löytynyt. Määritä koko sijaintipolku."
 
-#: attachment/attachmentfromurljob.cpp:111
+#: attachment/attachmentfromurljob.cpp:112
 #, kde-format
 msgid "You may not attach files bigger than %1. Share it with storage service."
 msgstr "Et saa liittää yli %1 tiedostoja. Jaa tiedosto tallennuspalvelulla."
 
-#: attachment/attachmentpropertiesdialog.cpp:134
+#: attachment/attachmentpropertiesdialog.cpp:133
 #, kde-format
 msgid ""
 "<p>The <em>MIME type</em> of the file:</p><p>Normally, you do not need to "
@@ -96,7 +96,7 @@ msgstr ""
 "muuttaa, koska tiedoston tyyppi tarkistetaan automaattisesti. Joskus "
 "kuitenkin %1 ei tunnista tyyppiä oikein, ja tässä voit vaikuttaa siihen.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:142
+#: attachment/attachmentpropertiesdialog.cpp:141
 #, kde-format
 msgid ""
 "<p>The estimated size of the attachment:</p><p>Note that, in an email "
@@ -107,7 +107,7 @@ msgstr ""
 "koodattu binaariviesti vie neljä kolmannesta tiedoston todellisesta koosta.</"
 "p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:147
+#: attachment/attachmentpropertiesdialog.cpp:146
 #, kde-format
 msgid ""
 "<p>The file name of the part:</p><p>Although this defaults to the name of "
@@ -119,7 +119,7 @@ msgstr ""
 "ei määritä liitettävää tiedostoa, pikemminkin se osoittaa, mitä nimeä "
 "vastaanottajan postiagentin tulisi käyttää tallentaessaan osaa levylle.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:154
+#: attachment/attachmentpropertiesdialog.cpp:153
 #, kde-format
 msgid ""
 "<p>A description of the part:</p><p>This is just an informational "
@@ -131,7 +131,7 @@ msgstr ""
 "kuvaa koko viestin sisältöä. Useimmat sähköpostiagentit näyttävät tämän "
 "tiedon viestin esikatselussa liitteen kuvakkeen ohessa.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:161
+#: attachment/attachmentpropertiesdialog.cpp:160
 #, kde-format
 msgid ""
 "<p>The transport encoding of this part:</p><p>Normally, you do not need to "
@@ -148,7 +148,7 @@ msgstr ""
 "PostScript-tiedostossa ei ole binaaridataa, quoted-printablen käyttäminen "
 "oletuksen (base64) sijaan tuottaa jopa 25 % pienemmän tiedoston.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:172
+#: attachment/attachmentpropertiesdialog.cpp:171
 #, kde-format
 msgid ""
 "<p>Check this option if you want to suggest to the recipient the automatic "
@@ -162,7 +162,7 @@ msgstr ""
 "välitetään asettamalla osan <em>Content-Disposition</em>-otsakekentän "
 "arvoksi ”inline” oletuksena olevan ”attachment” sijaan.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:180
+#: attachment/attachmentpropertiesdialog.cpp:179
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be signed.</p><p>The "
@@ -173,7 +173,7 @@ msgstr ""
 "allekirjoitetaan valittuna olevaan henkilöyteen liittyvällä salausavaimella."
 "</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:186
+#: attachment/attachmentpropertiesdialog.cpp:185
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be encrypted.</"
@@ -182,8 +182,8 @@ msgstr ""
 "<p>Valitse tämä, jos haluat salata tämän viestin osan.</p><p>Viesti "
 "salastaan viestin vastaanottajien salausavaimilla.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:307
-#: attachment/attachmentpropertiesdialog.cpp:322
+#: attachment/attachmentpropertiesdialog.cpp:305
+#: attachment/attachmentpropertiesdialog.cpp:320
 #, kde-format
 msgctxt "@title:window"
 msgid "Attachment Properties"
@@ -309,29 +309,29 @@ msgstr ""
 "Sähköpostiliitteiden suurin sallittu koko bitteinä (-1 tarkoittaa ei "
 "rajoitusta)"
 
-#: utils/dateformatter.cpp:163
+#: utils/dateformatter.cpp:164
 #, kde-format
 msgctxt "invalid time specified"
 msgid "unknown"
 msgstr "tuntematon"
 
-#: utils/dateformatter.cpp:175
+#: utils/dateformatter.cpp:176
 #, kde-format
 msgid "Today %1"
 msgstr "Tänään %1"
 
-#: utils/dateformatter.cpp:178
+#: utils/dateformatter.cpp:179
 #, kde-format
 msgid "Yesterday %1"
 msgstr "Eilen %1"
 
-#: utils/dateformatter.cpp:183
+#: utils/dateformatter.cpp:184
 #, kde-format
 msgctxt "1. weekday, 2. time"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: utils/stringutil.cpp:415
+#: utils/stringutil.cpp:414
 #, kde-format
 msgctxt "signal that this email is defined in my identity"
 msgid "Me"
