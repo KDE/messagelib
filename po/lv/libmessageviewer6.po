@@ -12,14 +12,14 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-25 00:43+0000\n"
-"PO-Revision-Date: 2025-01-27 17:31+0200\n"
+"PO-Revision-Date: 2025-06-21 13:08+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.12.1\n"
+"X-Generator: Lokalize 25.04.2\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
 
@@ -1753,10 +1753,9 @@ msgid "message"
 msgstr "vēstule"
 
 #: utils/messageviewerutil.cpp:472
-#, fuzzy, kde-format
-#| msgid "email messages (*.mbox);;all files (*)"
+#, kde-format
 msgid "Mailbox file (*.mbox);;All Files (*)"
-msgstr "e-pasta vēstule  (*.mbox);;visas datnes (*)"
+msgstr "„Mailbox“ datne (*.mbox);;Visas datnes (*)"
 
 #: utils/messageviewerutil.cpp:483
 #, kde-format
