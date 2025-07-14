@@ -2071,7 +2071,7 @@ msgstr "შრიფტი"
 #, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Default"
-msgstr "ნაგულისხმები"
+msgstr "ნაგულისხმევი"
 
 #: utils/themeeditor.cpp:884
 #, kde-format
