@@ -8,7 +8,7 @@ macro(add_composerng_autocorrect_unittest _source)
         TEST_NAME ${_name}
         NAME_PREFIX "messagecomposer-composerng-"
         LINK_LIBRARIES Qt::Test KPim6::MessageComposer KF6::XmlGui
-    )
+)
 endmacro()
 
 add_composerng_autocorrect_unittest(richtextcomposerngtest.cpp)

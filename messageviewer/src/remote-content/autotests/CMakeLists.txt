@@ -6,7 +6,7 @@ macro(add_messageviewer_remote_contents_unittest _source)
         TEST_NAME ${_name}
         NAME_PREFIX "messageviewer-"
         LINK_LIBRARIES KPim6::MessageViewer KPim6::WebEngineViewer KPim6::Libkleo QGpgmeQt6 Qt::Test KF6::ItemViews
-    )
+)
 endmacro()
 
 add_messageviewer_remote_contents_unittest(remotecontentinfotest.cpp)

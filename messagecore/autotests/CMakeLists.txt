@@ -2,9 +2,7 @@
 # SPDX-FileCopyrightText: none
 add_subdirectory(gnupg_home)
 
-add_definitions(
-    -DMAIL_DATA_DIR="${CMAKE_SOURCE_DIR}/mimetreeparser/autotests/data"
-)
+add_definitions(-DMAIL_DATA_DIR="${CMAKE_SOURCE_DIR}/mimetreeparser/autotests/data")
 add_definitions(-DDATA_DIR="${CMAKE_SOURCE_DIR}/messagecore/autotests/data")
 
 # Convenience macro to add unit tests.
@@ -15,18 +13,9 @@ macro(add_messagecore_test _source)
     add_executable(${_name} ${_test} ${_name}.h)
     add_test(NAME ${_name} COMMAND ${_name})
     ecm_mark_as_test(${_name})
-    target_link_libraries(
-        ${_name}
-        Qt::Test
-        KPim6::Libkleo
-        KPim6::MessageCore
-        Qt::Widgets
-        KF6::Archive
-        KF6::Completion
-        KF6::ConfigCore
-        KF6::CoreAddons
-    )
+    target_link_libraries(${_name} Qt::Test KPim6::Libkleo KPim6::MessageCore Qt::Widgets KF6::Archive KF6::Completion KF6::ConfigCore KF6::CoreAddons)
 endmacro()
+
 
 include(${CMAKE_SOURCE_DIR}/cmake/modules/kdepim_add_gpg_crypto_test.cmake)
 
@@ -45,7 +34,7 @@ macro(add_messagecore_cryptotest _source)
         KPim6::MimeTreeParser
         Qt::Test
         Qt::Widgets
-    )
+)
     add_gpg_crypto_test(${_name} messagecore-${_name})
 endmacro()
 

@@ -6,11 +6,7 @@ set(CMAKE_CXX_STANDARD 20)
 
 project(Messagelib VERSION ${PIM_VERSION})
 
-option(
-    KDEPIM_ENTERPRISE_BUILD
-    "Enable features specific to the enterprise branch, which are normally disabled. Also, it disables many components not needed for Kontact such as the Kolab client."
-    FALSE
-)
+option(KDEPIM_ENTERPRISE_BUILD "Enable features specific to the enterprise branch, which are normally disabled. Also, it disables many components not needed for Kontact such as the Kolab client." FALSE)
 
 set(KF_MIN_VERSION "6.15.0")
 set(QT_REQUIRED_VERSION "6.8.0")
@@ -50,22 +46,21 @@ include(ECMGenerateHeaders)
 
 include(KDEGitCommitHooks)
 include(KDEClangFormat)
-file(
-    GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES
-    messagecomposer/*.cpp
-    messagecomposer/*.h
-    messagecore/*.cpp
-    messagecore/*.h
-    messagelist/*.cpp
-    messagelist/*.h
-    messageviewer/*.cpp
-    messageviewer/*.h
-    mimetreeparser/*.cpp
-    mimetreeparser/*.h
-    templateparser/*.cpp
-    templateparser/*.h
-    webengineviewer/*.cpp
-    webengineviewer/*.h
+file(GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES
+messagecomposer/*.cpp
+messagecomposer/*.h
+messagecore/*.cpp
+messagecore/*.h
+messagelist/*.cpp
+messagelist/*.h
+messageviewer/*.cpp
+messageviewer/*.h
+mimetreeparser/*.cpp
+mimetreeparser/*.h
+templateparser/*.cpp
+templateparser/*.h
+webengineviewer/*.cpp
+webengineviewer/*.h
 )
 kde_clang_format(${ALL_CLANG_FORMAT_SOURCE_FILES})
 
@@ -76,45 +71,32 @@ include(ECMAddTests)
 include(ECMAddQch)
 
 include(ECMCheckOutboundLicense)
-file(
-    GLOB_RECURSE ALL_SOURCE_FILES
-    messagecomposer/*.cpp
-    messagecomposer/*.h
-    messagecore/*.cpp
-    messagecore/*.h
-    messagelist/*.cpp
-    messagelist/*.h
-    messageviewer/*.cpp
-    messageviewer/*.h
-    mimetreeparser/*.cpp
-    mimetreeparser/*.h
-    templateparser/*.cpp
-    templateparser/*.h
-    webengineviewer/*.cpp
-    webengineviewer/*.h
+file(GLOB_RECURSE ALL_SOURCE_FILES
+messagecomposer/*.cpp
+messagecomposer/*.h
+messagecore/*.cpp
+messagecore/*.h
+messagelist/*.cpp
+messagelist/*.h
+messageviewer/*.cpp
+messageviewer/*.h
+mimetreeparser/*.cpp
+mimetreeparser/*.h
+templateparser/*.cpp
+templateparser/*.h
+webengineviewer/*.cpp
+webengineviewer/*.h
 )
 ecm_check_outbound_license(LICENSES GPL-2.0-only  FILES ${ALL_SOURCE_FILES})
 
+
 set(KTEXTADDONS_MIN_VERSION "1.6.0")
 
-option(
-    BUILD_QCH
-    "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)"
-    OFF
-)
-add_feature_info(
-    QCH
-    ${BUILD_QCH}
-    "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)"
-)
+option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
+add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)")
 
 find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Gui Test)
-find_package(
-    Qt6
-    ${QT_REQUIRED_VERSION}
-    CONFIG
-    REQUIRED Widgets Network PrintSupport WebEngineWidgets
-)
+find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets Network PrintSupport WebEngineWidgets)
 
 find_package(KF6CoreAddons ${KF_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6Codecs ${KF_MIN_VERSION} CONFIG REQUIRED)
@@ -145,20 +127,10 @@ find_package(KF6CalendarCore ${KF_MIN_VERSION} CONFIG REQUIRED)
 
 find_package(KPim6Akonadi ${AKONADI_VERSION} CONFIG REQUIRED)
 find_package(KPim6AkonadiMime ${AKONADIMIME_LIB_VERSION} CONFIG REQUIRED)
-find_package(
-    KPim6AkonadiContactWidgets
-    ${AKONADICONTACT_LIB_VERSION}
-    CONFIG
-    REQUIRED
-)
+find_package(KPim6AkonadiContactWidgets ${AKONADICONTACT_LIB_VERSION} CONFIG REQUIRED)
 find_package(KPim6GrantleeTheme ${GRANTLEETHEME_LIB_VERSION} CONFIG REQUIRED)
 find_package(KPim6Gravatar ${GRAVATAR_LIB_VERSION} CONFIG REQUIRED)
-find_package(
-    KPim6IdentityManagementWidgets
-    ${IDENTITYMANAGEMENT_LIB_VERSION}
-    CONFIG
-    REQUIRED
-)
+find_package(KPim6IdentityManagementWidgets ${IDENTITYMANAGEMENT_LIB_VERSION} CONFIG REQUIRED)
 find_package(KPim6Libkleo ${LIBKLEO_LIB_VERSION} CONFIG REQUIRED)
 find_package(KPim6MailTransport ${KMAILTRANSPORT_LIB_VERSION} CONFIG REQUIRED)
 find_package(KPim6Mbox ${KMBOX_LIB_VERSION} CONFIG REQUIRED)
@@ -172,50 +144,22 @@ if(TARGET KF6::TextEditTextToSpeech)
     add_definitions(-DHAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT)
 endif()
 
-find_package(
-    KF6TextAutoCorrectionWidgets
-    ${KTEXTADDONS_MIN_VERSION}
-    CONFIG
-    REQUIRED
-)
+find_package(KF6TextAutoCorrectionWidgets ${KTEXTADDONS_MIN_VERSION} CONFIG REQUIRED)
 
 find_package(KF6TextUtils ${KTEXTADDONS_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6TextCustomEditor ${KTEXTADDONS_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6TextAddonsWidgets ${KTEXTADDONS_MIN_VERSION} CONFIG REQUIRED)
 
-option(
-    FORCE_DISABLE_AKONADI_SEARCH
-    "Disable features and API that require akonadi-search, e.g. because xapian isn't available"
-    OFF
-)
+option(FORCE_DISABLE_AKONADI_SEARCH "Disable features and API that require akonadi-search, e.g. because xapian isn't available" OFF)
 if(UNIX)
     if(NOT FORCE_DISABLE_AKONADI_SEARCH)
-        find_package(
-            KPim6AkonadiSearch
-            ${AKONADI_SEARCH_VERSION}
-            CONFIG
-            REQUIRED
-        )
-        set_package_properties(
-            KPim6AkonadiSearch
-            PROPERTIES
-                DESCRIPTION "The Akonadi Search libraries"
-                URL "https://invent.kde.org/pim/akonadi-search"
-                TYPE REQUIRED
-                PURPOSE "Provides search capabilities in KMail and Akonadi"
-        )
+        find_package(KPim6AkonadiSearch ${AKONADI_SEARCH_VERSION} CONFIG REQUIRED)
+        set_package_properties(KPim6AkonadiSearch PROPERTIES DESCRIPTION "The Akonadi Search libraries" URL "https://invent.kde.org/pim/akonadi-search" TYPE REQUIRED PURPOSE "Provides search capabilities in KMail and Akonadi")
     endif()
 else()
     if(NOT FORCE_DISABLE_AKONADI_SEARCH)
         find_package(KPim6AkonadiSearch ${AKONADI_SEARCH_VERSION} CONFIG)
-        set_package_properties(
-            KPim6AkonadiSearch
-            PROPERTIES
-                DESCRIPTION "The Akonadi Search libraries"
-                URL "https://invent.kde.org/pim/akonadi-search"
-                TYPE OPTIONAL
-                PURPOSE "Provides search capabilities in KMail and Akonadi"
-        )
+        set_package_properties(KPim6AkonadiSearch PROPERTIES DESCRIPTION "The Akonadi Search libraries" URL "https://invent.kde.org/pim/akonadi-search" TYPE OPTIONAL PURPOSE "Provides search capabilities in KMail and Akonadi")
     endif()
 endif()
 
@@ -231,11 +175,7 @@ if(BUILD_TESTING)
     add_definitions(-DBUILD_TESTING)
 endif()
 
-option(
-    USE_UNITY_CMAKE_SUPPORT
-    "Use UNITY cmake support (speedup compile time)"
-    OFF
-)
+option(USE_UNITY_CMAKE_SUPPORT "Use UNITY cmake support (speedup compile time)" OFF)
 
 set(COMPILE_WITH_UNITY_CMAKE_SUPPORT OFF)
 if(USE_UNITY_CMAKE_SUPPORT)
@@ -243,7 +183,10 @@ if(USE_UNITY_CMAKE_SUPPORT)
     add_definitions(-DCOMPILE_WITH_UNITY_CMAKE_SUPPORT)
 endif()
 
-include_directories(${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR})
+include_directories(
+    ${CMAKE_CURRENT_BINARY_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}
+)
 
 add_subdirectory(mimetreeparser)
 add_subdirectory(messageviewer)

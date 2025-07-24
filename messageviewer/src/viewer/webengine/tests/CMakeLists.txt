@@ -9,31 +9,20 @@ set(scrolladdattachment_test_SRCS
 
 add_executable(scrolladdattachmenttest ${scrolladdattachment_test_SRCS})
 
-target_link_libraries(
-    scrolladdattachmenttest
-    Qt::Widgets
-    KPim6::WebEngineViewer
-    Qt::WebEngineWidgets
-    KF6::XmlGui
-    KF6::IconThemes
-    KPim6::MessageViewer
+target_link_libraries(scrolladdattachmenttest
+    Qt::Widgets KPim6::WebEngineViewer  Qt::WebEngineWidgets KF6::XmlGui KF6::IconThemes KPim6::MessageViewer
 )
 
 ####
-set(testmailwebengine_test_SRCS testmailwebengine.cpp testmailwebengine.h)
+set(testmailwebengine_test_SRCS
+    testmailwebengine.cpp
+    testmailwebengine.h
+)
 
 add_executable(testmailwebengine ${testmailwebengine_test_SRCS})
 
-target_link_libraries(
-    testmailwebengine
-    Qt::Widgets
-    KPim6::WebEngineViewer
-    Qt::WebEngineWidgets
-    KF6::XmlGui
-    KF6::IconThemes
-    KPim6::MessageViewer
-    Qt::PrintSupport
-    KF6::I18n
+target_link_libraries(testmailwebengine
+    Qt::Widgets KPim6::WebEngineViewer  Qt::WebEngineWidgets KF6::XmlGui KF6::IconThemes KPim6::MessageViewer Qt::PrintSupport KF6::I18n
 )
 
 #####
@@ -53,19 +42,10 @@ set(testmailwebengineselection_test_SRCS
     testmailwebengineselection.h
 )
 
-add_executable(
-    testmailwebengineselection
-    ${testmailwebengineselection_test_SRCS}
-)
+add_executable(testmailwebengineselection ${testmailwebengineselection_test_SRCS})
 
-target_link_libraries(
-    testmailwebengineselection
-    Qt::Widgets
-    KPim6::WebEngineViewer
-    Qt::WebEngineWidgets
-    KF6::XmlGui
-    KF6::IconThemes
-    KPim6::MessageViewer
+target_link_libraries(testmailwebengineselection
+    Qt::Widgets KPim6::WebEngineViewer  Qt::WebEngineWidgets KF6::XmlGui KF6::IconThemes KPim6::MessageViewer
 )
 ######
 
@@ -75,14 +55,8 @@ set(testmaildndattachment_test_SRCS
 )
 add_executable(testmaildndattachment ${testmaildndattachment_test_SRCS})
 
-target_link_libraries(
-    testmaildndattachment
-    Qt::Widgets
-    KPim6::WebEngineViewer
-    Qt::WebEngineWidgets
-    KF6::XmlGui
-    KF6::IconThemes
-    KPim6::MessageViewer
+target_link_libraries(testmaildndattachment
+    Qt::Widgets KPim6::WebEngineViewer  Qt::WebEngineWidgets KF6::XmlGui KF6::IconThemes KPim6::MessageViewer
 )
 
 #####
@@ -93,12 +67,6 @@ set(testmailmboxwebengine_test_SRCS
 )
 add_executable(testmailmboxwebengine ${testmailmboxwebengine_test_SRCS})
 
-target_link_libraries(
-    testmailmboxwebengine
-    Qt::Widgets
-    KPim6::WebEngineViewer
-    Qt::WebEngineWidgets
-    KF6::XmlGui
-    KF6::IconThemes
-    KPim6::MessageViewer
+target_link_libraries(testmailmboxwebengine
+    Qt::Widgets KPim6::WebEngineViewer  Qt::WebEngineWidgets KF6::XmlGui KF6::IconThemes KPim6::MessageViewer
 )

@@ -6,7 +6,7 @@ macro(add_messageviewer_widget_unittest _source)
         TEST_NAME ${_name}
         NAME_PREFIX "messageviewer-"
         LINK_LIBRARIES KPim6::MessageViewer KPim6::WebEngineViewer KPim6::Libkleo Qt::Test
-    )
+)
 endmacro()
 
 add_messageviewer_widget_unittest(shownextmessagewidgettest.cpp)
