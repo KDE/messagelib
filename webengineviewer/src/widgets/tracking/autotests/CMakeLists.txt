@@ -6,7 +6,7 @@ macro(add_webengine_widget_unittest _source)
         TEST_NAME ${_name}
         NAME_PREFIX "webengineviewer-"
         LINK_LIBRARIES KPim6::WebEngineViewer Qt::Test
-)
+    )
 endmacro()
 
 add_webengine_widget_unittest(trackingwarningwidgettest.cpp)

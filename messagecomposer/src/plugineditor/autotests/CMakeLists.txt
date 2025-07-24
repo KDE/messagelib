@@ -6,8 +6,7 @@ macro(add_plugineditor_unittest _source)
         TEST_NAME ${_name}
         NAME_PREFIX "messagecomposer-plugineditor-"
         LINK_LIBRARIES Qt::Test KPim6::MessageComposer KF6::XmlGui
-)
+    )
 endmacro()
 
 add_plugineditor_unittest(plugineditortest.cpp)
-

@@ -7,7 +7,7 @@ macro(add_composerng_autocorrect_unittest _source)
         TEST_NAME ${_name}
         NAME_PREFIX "messagecomposer-contactpreference-"
         LINK_LIBRARIES Qt::Test KPim6::MessageComposer
-)
+    )
 endmacro()
 
 add_composerng_autocorrect_unittest(contactpreferencetest.cpp)

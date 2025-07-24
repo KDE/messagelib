@@ -6,7 +6,7 @@ macro(add_composer_snippet_unittest _source)
         TEST_NAME ${_name}
         NAME_PREFIX "messagecomposer-snippet-"
         LINK_LIBRARIES Qt::Test KPim6::MessageComposer KF6::Completion
-)
+    )
 endmacro()
 
 add_composer_snippet_unittest(convertvariablesjobtest.cpp)

@@ -6,8 +6,7 @@ macro(add_composer_unittest _source)
         TEST_NAME ${_name}
         NAME_PREFIX "messagecomposer-composer-"
         LINK_LIBRARIES Qt::Test KPim6::MessageComposer
-)
+    )
 endmacro()
 
 add_composer_unittest(composerattachmentinterfacetest.cpp)
-

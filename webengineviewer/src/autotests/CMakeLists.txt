@@ -10,7 +10,6 @@ ecm_add_test(webhittestresulttest.cpp webhittestresulttest.h
     LINK_LIBRARIES Qt::Test KPim6::WebEngineViewer
 )
 
-
 ecm_add_test(zoomactionmenutest.cpp zoomactionmenutest.h
     TEST_NAME zoomactionmenutest
     NAME_PREFIX "webengineviewer-"

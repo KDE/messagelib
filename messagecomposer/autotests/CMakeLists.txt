@@ -1,9 +1,13 @@
 # SPDX-License-Identifier: CC0-1.0
 # SPDX-FileCopyrightText: none
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR})
-add_definitions(-DMESSAGECORE_DATA_DIR="${CMAKE_SOURCE_DIR}/messagecore/autotests/data")
+add_definitions(
+    -DMESSAGECORE_DATA_DIR="${CMAKE_SOURCE_DIR}/messagecore/autotests/data"
+)
 add_definitions(-DMAIL_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data")
-add_definitions(-DGNUPGHOME="${CMAKE_BINARY_DIR}/messagecore/autotests/gnupg_home")
+add_definitions(
+    -DGNUPGHOME="${CMAKE_BINARY_DIR}/messagecore/autotests/gnupg_home"
+)
 
 include(${CMAKE_SOURCE_DIR}/cmake/modules/kdepim_add_gpg_crypto_test.cmake)
 
@@ -31,13 +35,13 @@ macro(add_messagecomposer_test _source)
             KPim6::Libkdepim
             KF6::IconThemes
             KF6::Completion
-)
+    )
 endmacro()
 
 macro(add_messagecomposer_cryptotest _source)
     set(_test cryptofunctions.cpp setupenv.cpp ${_source})
     get_filename_component(_name ${_source} NAME_WE)
-    add_executable(${_name} ${_test}  ${_name}.h)
+    add_executable(${_name} ${_test} ${_name}.h)
     target_link_libraries(
         ${_name}
         KF6::I18n
@@ -53,15 +57,15 @@ macro(add_messagecomposer_cryptotest _source)
         KF6::Completion
         KPim6::MailTransport
         KF6::Contacts
-	KPim6::MimeTreeParser
-	KF6::Service
-)
+        KPim6::MimeTreeParser
+        KF6::Service
+    )
     add_gpg_crypto_test(${_name} messagecomposer-${_name})
-    set_tests_properties(messagecomposer-${_name} PROPERTIES
-        ENVIRONMENT "LC_ALL=en_US.UTF-8"
-)
+    set_tests_properties(
+        messagecomposer-${_name}
+        PROPERTIES ENVIRONMENT "LC_ALL=en_US.UTF-8"
+    )
 endmacro()
-
 
 # Utility stuff.
 add_messagecomposer_test( draftstatustest.cpp)

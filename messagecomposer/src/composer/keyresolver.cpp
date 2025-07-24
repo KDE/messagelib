@@ -392,10 +392,10 @@ public:
     {                                                                                                                                                          \
         return m##x;                                                                                                                                           \
     }
-    make_int_accessor(UnknownSigningPreference) make_int_accessor(NeverSign) make_int_accessor(AlwaysSign) make_int_accessor(AlwaysSignIfPossible)
-        make_int_accessor(AlwaysAskForSigning) make_int_accessor(AskSigningWheneverPossible) make_int_accessor(Total)
+make_int_accessor(UnknownSigningPreference) make_int_accessor(NeverSign) make_int_accessor(AlwaysSign) make_int_accessor(AlwaysSignIfPossible)
+    make_int_accessor(AlwaysAskForSigning) make_int_accessor(AskSigningWheneverPossible) make_int_accessor(Total)
 #undef make_int_accessor
-            private : unsigned int mTotal = 0;
+        private : unsigned int mTotal = 0;
     unsigned int mUnknownSigningPreference = 0;
     unsigned int mNeverSign = 0;
     unsigned int mAlwaysSign = 0;
@@ -446,10 +446,10 @@ public:
     {                                                                                                                                                          \
         return m##x;                                                                                                                                           \
     }
-    make_int_accessor(NoKey) make_int_accessor(NeverEncrypt) make_int_accessor(UnknownPreference) make_int_accessor(AlwaysEncrypt)
-        make_int_accessor(AlwaysEncryptIfPossible) make_int_accessor(AlwaysAskForEncryption) make_int_accessor(AskWheneverPossible) make_int_accessor(Total)
+make_int_accessor(NoKey) make_int_accessor(NeverEncrypt) make_int_accessor(UnknownPreference) make_int_accessor(AlwaysEncrypt)
+    make_int_accessor(AlwaysEncryptIfPossible) make_int_accessor(AlwaysAskForEncryption) make_int_accessor(AskWheneverPossible) make_int_accessor(Total)
 #undef make_int_accessor
-            private : EncryptionPreference mDefaultPreference;
+        private : EncryptionPreference mDefaultPreference;
     unsigned int mTotal = 0;
     unsigned int mNoKey = 0;
     unsigned int mNeverEncrypt = 0;

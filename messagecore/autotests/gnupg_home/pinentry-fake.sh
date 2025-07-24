@@ -1,8 +1,7 @@
 #!/bin/sh
 
 echo "OK Your orders please"
-while :
-do
+while :; do
 	read cmd
 	echo "OK"
 	[ "$cmd" = "BYE" ] && break

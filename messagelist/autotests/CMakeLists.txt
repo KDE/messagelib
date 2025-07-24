@@ -7,7 +7,7 @@ macro(messagelist_unittest _source)
         TEST_NAME ${_name}
         NAME_PREFIX "messagelist-"
         LINK_LIBRARIES Qt::Test KPim6::MessageCore KPim6::MessageList KPim6::PimCommonAkonadi
-)
+    )
 endmacro()
 
 messagelist_unittest(itemsizetest.cpp)

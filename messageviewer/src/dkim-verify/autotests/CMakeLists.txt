@@ -8,7 +8,7 @@ macro(add_messageviewer_dkim_verify_unittest _source)
         TEST_NAME ${_name}
         NAME_PREFIX "messageviewer-dkim-"
         LINK_LIBRARIES KPim6::MessageViewer KPim6::WebEngineViewer KPim6::Libkleo QGpgmeQt6 Qt::Test KF6::ItemViews OpenSSL::SSL
-)
+    )
 endmacro()
 
 add_messageviewer_dkim_verify_unittest(dkiminfotest.cpp)
@@ -44,4 +44,3 @@ add_messageviewer_dkim_verify_unittest(dkimmanageruleswidgettest.cpp)
 add_messageviewer_dkim_verify_unittest(dkimruledialogtest.cpp)
 add_messageviewer_dkim_verify_unittest(dkimrulewidgettest.cpp)
 add_messageviewer_dkim_verify_unittest(dkimmanagerkeytreeviewtest.cpp)
-
