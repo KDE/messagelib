@@ -77,10 +77,12 @@ void DKIMUtilTest::shouldConvertAuthenticationMethodEnumToString()
     QCOMPARE(MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Dkimatps),
              u"dkim-atps"_s);
     QCOMPARE(MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Auth), u"auth"_s);
+    QCOMPARE(MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Arc), u"arc"_s);
 }
 
 void DKIMUtilTest::shouldConvertAuthenticationMethodToString()
 {
+    QCOMPARE(MessageViewer::DKIMUtil::convertAuthenticationMethodStringToEnum(u"arc"_s), MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Arc);
     QCOMPARE(MessageViewer::DKIMUtil::convertAuthenticationMethodStringToEnum(u"dkim"_s), MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Dkim);
     QCOMPARE(MessageViewer::DKIMUtil::convertAuthenticationMethodStringToEnum(u"spf"_s), MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Spf);
     QCOMPARE(MessageViewer::DKIMUtil::convertAuthenticationMethodStringToEnum(u"dmarc"_s), MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Dmarc);

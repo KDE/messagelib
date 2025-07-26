@@ -184,6 +184,9 @@ QString MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(Message
     case MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::XTls:
         methodStr = u"x-tls"_s;
         break;
+    case MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Arc:
+        methodStr = u"arc"_s;
+        break;
     }
     return methodStr;
 }
@@ -200,6 +203,8 @@ MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod MessageViewer::DKIMUt
         return MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Dkimatps;
     } else if (str == QLatin1StringView("auth")) {
         return MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Auth;
+    } else if (str == QLatin1StringView("arc")) {
+        return MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Arc;
     } else if (str == QLatin1StringView("x-tls")) {
         return MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::XTls;
     } else {

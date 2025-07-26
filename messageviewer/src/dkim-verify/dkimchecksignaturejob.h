@@ -75,6 +75,7 @@ public:
         Dkimatps = 4,
         Auth = 5,
         XTls = 6,
+        Arc = 7,
     };
     Q_ENUM(AuthenticationMethod)
 

@@ -224,6 +224,7 @@ void DKIMWidgetInfo::updateToolTip()
                     break;
                 }
                 case DKIMCheckSignatureJob::AuthenticationMethod::Spf:
+                case DKIMCheckSignatureJob::AuthenticationMethod::Arc:
                 case DKIMCheckSignatureJob::AuthenticationMethod::XTls:
                 case DKIMCheckSignatureJob::AuthenticationMethod::Dkim:
                 case DKIMCheckSignatureJob::AuthenticationMethod::Dmarc:
@@ -253,6 +254,7 @@ void DKIMWidgetInfo::updateToolTip()
                 case DKIMCheckSignatureJob::AuthenticationMethod::Dkim:
                 case DKIMCheckSignatureJob::AuthenticationMethod::Dmarc:
                 case DKIMCheckSignatureJob::AuthenticationMethod::Auth:
+                case DKIMCheckSignatureJob::AuthenticationMethod::Arc:
                 case DKIMCheckSignatureJob::AuthenticationMethod::Dkimatps: {
                     const QString str = i18n("%1: None", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method));
                     if (!tooltipList.contains(str)) {
@@ -288,6 +290,7 @@ void DKIMWidgetInfo::updateToolTip()
                 }
                 case DKIMCheckSignatureJob::AuthenticationMethod::Auth:
                 case DKIMCheckSignatureJob::AuthenticationMethod::XTls:
+                case DKIMCheckSignatureJob::AuthenticationMethod::Arc:
                 case DKIMCheckSignatureJob::AuthenticationMethod::Dkimatps:
                 case DKIMCheckSignatureJob::AuthenticationMethod::Dmarc: {
                     const QString str = i18n("%1: Valid", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method));
