@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim/kmail.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-25 00:43+0000\n"
+"POT-Creation-Date: 2025-07-27 00:43+0000\n"
 "PO-Revision-Date: 2004-12-03 14:52-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -737,31 +737,31 @@ msgstr "Síniú bailí."
 msgid "Public Key too small"
 msgstr "Síniú bailí."
 
-#: dkim-verify/dkimwidgetinfo.cpp:233 dkim-verify/dkimwidgetinfo.cpp:280
+#: dkim-verify/dkimwidgetinfo.cpp:234 dkim-verify/dkimwidgetinfo.cpp:282
 #, kde-format
 msgctxt "method name: info about it from parsing"
 msgid "%1: %2"
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:257
+#: dkim-verify/dkimwidgetinfo.cpp:259
 #, fuzzy, kde-format
 #| msgctxt "Permissions"
 #| msgid "None"
 msgid "%1: None"
 msgstr "Gan Chead"
 
-#: dkim-verify/dkimwidgetinfo.cpp:272
+#: dkim-verify/dkimwidgetinfo.cpp:274
 #, fuzzy, kde-format
 #| msgid "Message was signed with key %1."
 msgid "%1: Valid (Signed by %2)"
 msgstr "Bhí an teachtaireacht sínithe le heochair %1."
 
-#: dkim-verify/dkimwidgetinfo.cpp:293
+#: dkim-verify/dkimwidgetinfo.cpp:296
 #, kde-format
 msgid "%1: Valid"
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:307
+#: dkim-verify/dkimwidgetinfo.cpp:310
 #, fuzzy, kde-format
 #| msgid "Do &Not Sign"
 msgid "Not Signed"

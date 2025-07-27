@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-25 00:43+0000\n"
+"POT-Creation-Date: 2025-07-27 00:43+0000\n"
 "PO-Revision-Date: 2021-01-14 15:48+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -668,28 +668,28 @@ msgstr "Podpis príliš malý"
 msgid "Public Key too small"
 msgstr "Verejný kľúč je príliš malý"
 
-#: dkim-verify/dkimwidgetinfo.cpp:233 dkim-verify/dkimwidgetinfo.cpp:280
+#: dkim-verify/dkimwidgetinfo.cpp:234 dkim-verify/dkimwidgetinfo.cpp:282
 #, kde-format
 msgctxt "method name: info about it from parsing"
 msgid "%1: %2"
 msgstr "%1: %2"
 
-#: dkim-verify/dkimwidgetinfo.cpp:257
+#: dkim-verify/dkimwidgetinfo.cpp:259
 #, kde-format
 msgid "%1: None"
 msgstr "%1: Žiadny"
 
-#: dkim-verify/dkimwidgetinfo.cpp:272
+#: dkim-verify/dkimwidgetinfo.cpp:274
 #, kde-format
 msgid "%1: Valid (Signed by %2)"
 msgstr "%1: Platný (Podpísaný %2)"
 
-#: dkim-verify/dkimwidgetinfo.cpp:293
+#: dkim-verify/dkimwidgetinfo.cpp:296
 #, kde-format
 msgid "%1: Valid"
 msgstr "%1: Platný"
 
-#: dkim-verify/dkimwidgetinfo.cpp:307
+#: dkim-verify/dkimwidgetinfo.cpp:310
 #, kde-format
 msgid "Not Signed"
 msgstr "Nepodpísaný"

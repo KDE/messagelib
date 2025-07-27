@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-25 00:43+0000\n"
+"POT-Creation-Date: 2025-07-27 00:43+0000\n"
 "PO-Revision-Date: 2021-08-13 01:49+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -692,31 +692,31 @@ msgstr "हस्ताक्षर फ़ाइल वैध नहीं ह�
 msgid "Public Key too small"
 msgstr "हस्ताक्षर फ़ाइल वैध नहीं है"
 
-#: dkim-verify/dkimwidgetinfo.cpp:233 dkim-verify/dkimwidgetinfo.cpp:280
+#: dkim-verify/dkimwidgetinfo.cpp:234 dkim-verify/dkimwidgetinfo.cpp:282
 #, kde-format
 msgctxt "method name: info about it from parsing"
 msgid "%1: %2"
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:257
+#: dkim-verify/dkimwidgetinfo.cpp:259
 #, fuzzy, kde-format
 #| msgctxt "Permissions"
 #| msgid "None"
 msgid "%1: None"
 msgstr "कुछ नहीं"
 
-#: dkim-verify/dkimwidgetinfo.cpp:272
+#: dkim-verify/dkimwidgetinfo.cpp:274
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "%1: Valid (Signed by %2)"
 msgstr "संदेश %1 के द्वारा हस्ताक्षरित है."
 
-#: dkim-verify/dkimwidgetinfo.cpp:293
+#: dkim-verify/dkimwidgetinfo.cpp:296
 #, kde-format
 msgid "%1: Valid"
 msgstr ""
 
-#: dkim-verify/dkimwidgetinfo.cpp:307
+#: dkim-verify/dkimwidgetinfo.cpp:310
 #, fuzzy, kde-format
 #| msgid "Do &Not Sign"
 msgid "Not Signed"

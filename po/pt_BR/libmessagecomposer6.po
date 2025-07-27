@@ -5,20 +5,21 @@
 # André Marcelo Alvarenga <alvarenga@kde.org>, 2010, 2011, 2012, 2013, 2014, 2015, 2018, 2019, 2020.
 # Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2010, 2012, 2015, 2019, 2020, 2021, 2022, 2023.
 # Aracele Torres <araceletorres@gmail.com>, 2010.
+# SPDX-FileCopyrightText: 2025 Marcus Gama <marcus.gama@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-25 00:43+0000\n"
-"PO-Revision-Date: 2023-11-14 13:53-0300\n"
-"Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
+"PO-Revision-Date: 2025-07-26 13:38-0300\n"
+"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #: attachment/attachmentcontrollerbase.cpp:167
 #, kde-format
@@ -40,8 +41,7 @@ msgid "Keep"
 msgstr "Manter"
 
 #: attachment/attachmentcontrollerbase.cpp:182
-#, fuzzy, kde-format
-#| msgid "Compress"
+#, kde-format
 msgctxt "@action:button"
 msgid "Compress"
 msgstr "Compactar"
@@ -54,8 +54,7 @@ msgid "Failed to attach file"
 msgstr "Falha ao anexar o arquivo"
 
 #: attachment/attachmentcontrollerbase.cpp:274
-#, fuzzy, kde-format
-#| msgid "Failed to reload attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to reload attachment"
 msgstr "Não foi possível recarregar o anexo"
@@ -80,39 +79,34 @@ msgid "&Open With..."
 msgstr "&Abrir com..."
 
 #: attachment/attachmentcontrollerbase.cpp:377
-#, fuzzy, kde-format
-#| msgid "Failed to attach public key"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach public key"
 msgstr "Falha ao anexar a chave pública"
 
 #: attachment/attachmentcontrollerbase.cpp:391
-#, fuzzy, kde-format
-#| msgid "Failed to attach vCard"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach vCard"
 msgstr "Falha ao anexar o vCard"
 
 #: attachment/attachmentcontrollerbase.cpp:404
-#, fuzzy, kde-format
-#| msgid "Failed to attach text from clipboard"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach text from clipboard"
 msgstr "Falha ao anexar o texto da área de transferência"
 
 #: attachment/attachmentcontrollerbase.cpp:452
-#, fuzzy, kde-format
-#| msgid "Attach &Public Key..."
+#, kde-format
 msgctxt "@action"
 msgid "Attach &Public Key..."
 msgstr "Anexar chave &pública..."
 
 #: attachment/attachmentcontrollerbase.cpp:455
-#, fuzzy, kde-format
-#| msgid "Attach &My Public Key"
+#, kde-format
 msgctxt "@action"
 msgid "Attach &My Public Key"
-msgstr "Anexar minha chave &pública"
+msgstr "Anexar &minha chave pública"
 
 #: attachment/attachmentcontrollerbase.cpp:458
 #: attachment/attachmentcontrollerbase.cpp:463
@@ -138,8 +132,7 @@ msgid "&Attach Directory..."
 msgstr "&Anexar pasta..."
 
 #: attachment/attachmentcontrollerbase.cpp:472
-#, fuzzy, kde-format
-#| msgid "Attach Own vCard"
+#, kde-format
 msgctxt "@action"
 msgid "Attach Own vCard"
 msgstr "Anexar o próprio vCard"
@@ -194,8 +187,7 @@ msgid "Edit"
 msgstr "Editar"
 
 #: attachment/attachmentcontrollerbase.cpp:518
-#, fuzzy, kde-format
-#| msgid "Edit With..."
+#, kde-format
 msgctxt "@action"
 msgid "Edit With..."
 msgstr "Editar com..."
@@ -211,22 +203,19 @@ msgid "Save As..."
 msgstr "Salvar como..."
 
 #: attachment/attachmentcontrollerbase.cpp:532
-#, fuzzy, kde-format
-#| msgid "Attachment Pr&operties..."
+#, kde-format
 msgctxt "@action"
 msgid "Attachment Pr&operties..."
 msgstr "Pr&opriedades do anexo..."
 
 #: attachment/attachmentcontrollerbase.cpp:533
-#, fuzzy, kde-format
-#| msgid "Properties"
+#, kde-format
 msgctxt "@action"
 msgid "Properties"
 msgstr "Propriedades"
 
 #: attachment/attachmentcontrollerbase.cpp:541
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action"
 msgid "Select All"
 msgstr "Selecionar tudo"
@@ -251,8 +240,7 @@ msgid "Unable to open attachment"
 msgstr "Não foi possível abrir o anexo"
 
 #: attachment/attachmentcontrollerbase.cpp:714
-#, fuzzy, kde-format
-#| msgid "KMail was unable to open the attachment."
+#, kde-format
 msgid "KMail was unable to open the attachment"
 msgstr "O KMail não consegue abrir o anexo."
 
@@ -268,8 +256,7 @@ msgid "unnamed"
 msgstr "sem nome"
 
 #: attachment/attachmentcontrollerbase.cpp:799
-#, fuzzy, kde-format
-#| msgid "Save Attachment As"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Attachment As"
 msgstr "Salvar anexo como"
@@ -290,8 +277,7 @@ msgid "Save to File"
 msgstr "Salvar para arquivo"
 
 #: attachment/attachmentcontrollerbase.cpp:824
-#, fuzzy, kde-format
-#| msgid "&Replace"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Replace"
 msgstr "Substitui&r"
@@ -485,29 +471,25 @@ msgid "Do Not Resize"
 msgstr "Não redimensionar"
 
 #: composer/composerviewbase.cpp:721
-#, fuzzy, kde-format
-#| msgid "OpenPGP Key Expired"
+#, kde-format
 msgctxt "@title:window"
 msgid "OpenPGP Key Expired"
 msgstr "A chave OpenPGP expirou"
 
 #: composer/composerviewbase.cpp:721
-#, fuzzy, kde-format
-#| msgid "S/MIME Certificate Expired"
+#, kde-format
 msgctxt "@title:window"
 msgid "S/MIME Certificate Expired"
 msgstr "O certificado S/MIME expirou"
 
 #: composer/composerviewbase.cpp:723
-#, fuzzy, kde-format
-#| msgid "OpenPGP Key Expires Soon"
+#, kde-format
 msgctxt "@title:window"
 msgid "OpenPGP Key Expires Soon"
 msgstr "A chave OpenPGP perderá a validade em breve"
 
 #: composer/composerviewbase.cpp:724
-#, fuzzy, kde-format
-#| msgid "S/MIME Certificate Expires Soon"
+#, kde-format
 msgctxt "@title:window"
 msgid "S/MIME Certificate Expires Soon"
 msgstr "O certificado S/MIME perderá a validade em breve"
@@ -603,15 +585,13 @@ msgid "File Attachment Reminder"
 msgstr "Lembrete de anexação de arquivo"
 
 #: composer/composerviewbase.cpp:1900
-#, fuzzy, kde-format
-#| msgid "&Attach File..."
+#, kde-format
 msgctxt "@action:button"
 msgid "&Attach File..."
 msgstr "&Anexar arquivo..."
 
 #: composer/composerviewbase.cpp:1901
-#, fuzzy, kde-format
-#| msgid "&Send as Is"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Send as Is"
 msgstr "Enviar como e&stá"
@@ -640,8 +620,7 @@ msgid "&Sign"
 msgstr "A&ssinar"
 
 #: composer/composerviewbase.cpp:1961 composer/composerviewbase.cpp:1989
-#, fuzzy, kde-format
-#| msgid "Do &Not Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Sign"
 msgstr "&Não assinar"
@@ -671,8 +650,7 @@ msgid "Send Unsigned?"
 msgstr "Enviar sem assinatura?"
 
 #: composer/composerviewbase.cpp:2015
-#, fuzzy, kde-format
-#| msgid "Send &Unsigned"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &Unsigned"
 msgstr "E&nviar sem assinatura"
@@ -717,8 +695,7 @@ msgid "Unsigned-Message Warning"
 msgstr "Aviso de mensagem não assinada"
 
 #: composer/composerviewbase.cpp:2042
-#, fuzzy, kde-format
-#| msgid "Send &As Is"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &As Is"
 msgstr "Envi&ar como está"
@@ -780,15 +757,13 @@ msgstr ""
 
 #: composer/composerviewbase.cpp:2129 composer/keyresolver.cpp:1319
 #: composer/keyresolver.cpp:1360
-#, fuzzy, kde-format
-#| msgid "&Encrypt"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Encrypt"
 msgstr "&Criptografar"
 
 #: composer/composerviewbase.cpp:2130
-#, fuzzy, kde-format
-#| msgid "Do &Not Encrypt"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Encrypt"
 msgstr "&Não criptografar"
@@ -811,8 +786,7 @@ msgid "Send Unencrypted?"
 msgstr "Enviar sem criptografia?"
 
 #: composer/composerviewbase.cpp:2157 composer/keyresolver.cpp:1345
-#, fuzzy, kde-format
-#| msgid "Send &Unencrypted"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &Unencrypted"
 msgstr "&Enviar sem criptografia"
@@ -1003,8 +977,7 @@ msgstr ""
 "válidos para esta identidade."
 
 #: composer/keyresolver.cpp:1069
-#, fuzzy, kde-format
-#| msgid "Do Not OpenPGP-Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not OpenPGP-Sign"
 msgstr "Não assinar com o OpenPGP"
@@ -1024,8 +997,7 @@ msgstr ""
 "válidos para esta identidade."
 
 #: composer/keyresolver.cpp:1087
-#, fuzzy, kde-format
-#| msgid "Do Not S/MIME-Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not S/MIME-Sign"
 msgstr "Não assinar com S/MIME"
@@ -1154,8 +1126,7 @@ msgstr ""
 "destinatário."
 
 #: contactpreference/savecontactpreferencejob.cpp:71
-#, fuzzy, kde-format
-#| msgid "Name Selection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Name Selection"
 msgstr "Seleção de nome"
@@ -1259,11 +1230,10 @@ msgid "Select Image Format"
 msgstr "Selecionar o formato da imagem"
 
 #: imagescaling/imagescalingselectformat.cpp:89
-#, fuzzy, kde-format
-#| msgid "Select Format..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Select Format..."
-msgstr "Selecionar o formato..."
+msgstr "Selecionar formato..."
 
 #: imagescaling/imagescalingwidget.cpp:109
 #, kde-format
@@ -1512,8 +1482,7 @@ msgid "No text found in Clipboard"
 msgstr "Nenhum texto encontrado na área de transferência"
 
 #: job/attachmentclipboardjob.cpp:46
-#, fuzzy, kde-format
-#| msgid "Define Attachment Name"
+#, kde-format
 msgctxt "@title:window"
 msgid "Define Attachment Name"
 msgstr "Definir o nome do anexo"
@@ -1714,8 +1683,7 @@ msgid "&Name:"
 msgstr "&Nome:"
 
 #: recipient/distributionlistdialog.cpp:125
-#, fuzzy, kde-format
-#| msgid "Name of Distribution List"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Name of Distribution List"
 msgstr "Nome da lista de distribuição"
@@ -1818,8 +1786,7 @@ msgid "Select type of recipient"
 msgstr "Selecionar o tipo de destinatário"
 
 #: recipient/recipientline.cpp:72
-#, fuzzy, kde-format
-#| msgid "Set the list of email addresses to receive this message"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Set the list of email addresses to receive this message"
 msgstr "Define a lista de endereços de e-mail a receber esta mensagem"
@@ -1901,8 +1868,7 @@ msgid "Select Recipient"
 msgstr "Selecionar destinatário"
 
 #: recipient/recipientspicker.cpp:63
-#, fuzzy, kde-format
-#| msgid "Search &Directory Service"
+#, kde-format
 msgctxt "@action:button"
 msgid "Search &Directory Service"
 msgstr "Serviço de &diretório de pesquisa"
@@ -1974,8 +1940,7 @@ msgid "Send Later"
 msgstr "Enviar mais tarde"
 
 #: sendlater/sendlaterdialog.cpp:51
-#, fuzzy, kde-format
-#| msgid "Delay"
+#, kde-format
 msgctxt "@option:check"
 msgid "Delay"
 msgstr "Atraso"
@@ -2332,10 +2297,9 @@ msgid "Long Date (%1)"
 msgstr "Data longa (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:113
-#, fuzzy, kde-format
-#| msgid "Long Date (%1)"
+#, kde-format
 msgid "Custom Date (%1)"
-msgstr "Data longa (%1)"
+msgstr "Data personalizada (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:116
 #, kde-format
@@ -2368,10 +2332,9 @@ msgid "Month Number (%1)"
 msgstr "Número do mês (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:139
-#, fuzzy, kde-format
-#| msgid "Week Number (%1)"
+#, kde-format
 msgid "Day Number (%1)"
-msgstr "Número da semana (%1)"
+msgstr "Número do dia (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:142
 #, kde-format

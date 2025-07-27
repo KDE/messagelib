@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-25 00:43+0000\n"
+"POT-Creation-Date: 2025-07-27 00:43+0000\n"
 "PO-Revision-Date: 2025-05-31 11:42+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -648,28 +648,28 @@ msgstr "Signaturen för liten"
 msgid "Public Key too small"
 msgstr "Öppen nyckel för liten"
 
-#: dkim-verify/dkimwidgetinfo.cpp:233 dkim-verify/dkimwidgetinfo.cpp:280
+#: dkim-verify/dkimwidgetinfo.cpp:234 dkim-verify/dkimwidgetinfo.cpp:282
 #, kde-format
 msgctxt "method name: info about it from parsing"
 msgid "%1: %2"
 msgstr "%1: %2"
 
-#: dkim-verify/dkimwidgetinfo.cpp:257
+#: dkim-verify/dkimwidgetinfo.cpp:259
 #, kde-format
 msgid "%1: None"
 msgstr "%1: Ingen"
 
-#: dkim-verify/dkimwidgetinfo.cpp:272
+#: dkim-verify/dkimwidgetinfo.cpp:274
 #, kde-format
 msgid "%1: Valid (Signed by %2)"
 msgstr "%1: giltigt (signerat av %2)"
 
-#: dkim-verify/dkimwidgetinfo.cpp:293
+#: dkim-verify/dkimwidgetinfo.cpp:296
 #, kde-format
 msgid "%1: Valid"
 msgstr "%1: giltig"
 
-#: dkim-verify/dkimwidgetinfo.cpp:307
+#: dkim-verify/dkimwidgetinfo.cpp:310
 #, kde-format
 msgid "Not Signed"
 msgstr "Inte signerat"
