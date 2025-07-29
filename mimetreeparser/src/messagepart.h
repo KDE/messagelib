@@ -441,8 +441,6 @@ private:
      */
     [[nodiscard]] MIMETREEPARSER_NO_EXPORT bool okVerify(const QByteArray &data, const QByteArray &signature, KMime::Content *textNode);
 
-    MIMETREEPARSER_NO_EXPORT void sigStatusToMetaData();
-
     MIMETREEPARSER_NO_EXPORT void setVerificationResult(const CompositeMemento *m, KMime::Content *textNode);
 
 protected:
