@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the messagelib package.
 #
-# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
+# SPDX-FileCopyrightText: 2024, 2025 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-25 00:43+0000\n"
-"PO-Revision-Date: 2024-05-17 12:53+0300\n"
+"PO-Revision-Date: 2025-08-02 21:44+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #: customtemplates.cpp:74 customtemplates.cpp:125
 #, kde-format
@@ -544,7 +544,7 @@ msgid ""
 "<p>Templates specified here are folder-specific. They override both global "
 "templates and per-identity templates.</p>"
 msgstr ""
-"<p>התבניות שמצוינות כאן הן נקודתיות לתיקייה. הן דורסות גם את התבניות הכלליות "
+"<p>התבניות שמצוינות כאן הן נקודתיות לתיקייה. הן דורסות גם את התבניות המקיפות "
 "וגם את אלו שמשויכות לזהויות.</p>"
 
 #: templatesconfiguration.cpp:65
@@ -554,7 +554,7 @@ msgid ""
 "templates, but can be overridden by per-folder templates if they are "
 "specified.</p>"
 msgstr ""
-"<p>התבניות שמצוינות כאן הן נקודתיות לזהות. הן דורסות את התבניות הכלליות,אך "
+"<p>התבניות שמצוינות כאן הן נקודתיות לזהות. הן דורסות את התבניות המקיפות, אך "
 "ניתן לדרוס אותן עם תבניות לפי תיקייה אם צוינו כאלו.</p>"
 
 #: templatesconfiguration.cpp:70
@@ -563,7 +563,7 @@ msgid ""
 "<p>These are global (default) templates. They can be overridden by per-"
 "identity templates or per-folder templates if they are specified.</p>"
 msgstr ""
-"<p>אלו תבניות כלליות (ברירת מחדל). אפשר לדרוס אותן עםתבניות נקודתיות לזהות "
+"<p>אלו תבניות מקיפות (ברירת מחדל). אפשר לדרוס אותן עם תבניות נקודתיות לזהות "
 "או תבניות נקודתיות לתיקייה אם צוינו כאלה.</p>"
 
 #: templatesconfiguration.cpp:102
