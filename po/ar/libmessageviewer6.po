@@ -1382,7 +1382,7 @@ msgstr "قائمة بالبريد في القائمة البيضاء للرّس�
 #: settings/messageviewer.kcfg.in:151
 #, kde-format
 msgid "Scan emails for tracking URLs"
-msgstr "امسح رسائل البريد الإلكتروني لتتبع عناوين المواقع"
+msgstr "امحُ رسائل البريد الإلكتروني لتتبع عناوين المواقع"
 
 #. i18n: ectx: label, entry (notSendWhenEncrypted), group (MDN)
 #: settings/messageviewer.kcfg.in:157

@@ -471,7 +471,7 @@ msgstr "لا عملية"
 
 #: templatescommandmenu.cpp:156
 msgid "Clear Generated Message"
-msgstr "امسح الرسالة المولّدة"
+msgstr "امحُ الرسالة المولّدة"
 
 #: templatescommandmenu.cpp:157
 msgid "Cursor position"
