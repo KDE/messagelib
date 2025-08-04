@@ -1506,7 +1506,7 @@ msgstr "منع مسح حقل البحث السريع عند تغيير المج�
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear the quick search field when changing folders"
-msgstr "امسح حقل البحث السريع عند تغيير المجلدات"
+msgstr "امحُ حقل البحث السريع عند تغيير المجلدات"
 
 #: core/widgets/searchlinestatus.cpp:103
 #, kde-format
@@ -1533,7 +1533,7 @@ msgstr "مرشح محفوظ"
 #: core/widgets/searchlinestatus.cpp:193
 #, kde-format
 msgid "Clear History"
-msgstr "امسح التّأريخ"
+msgstr "امحُ التّأريخ"
 
 #: core/widgets/searchmessagebybuttons.cpp:36
 #, kde-format
