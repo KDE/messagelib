@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-27 00:43+0000\n"
-"PO-Revision-Date: 2025-05-18 21:08+0400\n"
+"PO-Revision-Date: 2025-08-03 22:52+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -1273,7 +1273,7 @@ msgid ""
 "Enable this option to show different levels of quoted text. Disable to hide "
 "the levels of quoted text."
 msgstr ""
-"فعّل هذا الخيار لعرض المستويات المختلفة للنّصوص المقتبسة. عطّله لإخفاء مستويات "
+"مكّن هذا الخيار لعرض المستويات المختلفة للنّصوص المقتبسة. عطّله لإخفاء مستويات "
 "النّصوص المقتبسة."
 
 #. i18n: ectx: label, entry (CollapseQuoteLevelSpin), group (Reader)
@@ -1292,7 +1292,7 @@ msgstr "أنقِص حجم خطّ النّصّ المقتبس"
 #: settings/messageviewer.kcfg.in:84
 #, kde-format
 msgid "Enable this option to show quoted text with a smaller font."
-msgstr "فعّل هذا الخيار لعرض النّصّ المقتبس بخطّ أصغر."
+msgstr "مكّن هذا الخيار لعرض النّصّ المقتبس بخطّ أصغر."
 
 #. i18n: ectx: label, entry (AlwaysDecrypt), group (Reader)
 #: settings/messageviewer.kcfg.in:88
@@ -1624,7 +1624,7 @@ msgstr "&تجاوز ترميز المحارف:"
 #: ui/settings.ui:79
 #, kde-format
 msgid "Enable access key"
-msgstr "فعّل مفتاح النّفاذ"
+msgstr "مكّن مفتاح النّفاذ"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_ShrinkQuotes)
 #: ui/settings.ui:86

@@ -453,13 +453,13 @@ msgstr "أتريد تغيير حجم الصّور؟"
 #, kde-format
 msgctxt "@title:window"
 msgid "Auto Resize Images"
-msgstr "غيّر حجم الصّور آليًّا"
+msgstr "غيّر حجم الصّور آليًّّا"
 
 #: composer/composerviewbase.cpp:518
 #, kde-format
 msgctxt "@action:button"
 msgid "Auto Resize"
-msgstr "تحجيم آلي"
+msgstr "تحجيم آليّ"
 
 #: composer/composerviewbase.cpp:519
 #, kde-format
@@ -1241,7 +1241,7 @@ msgstr "خطأ في الحد الأدنى للقيمة القصوى"
 #: imagescaling/ui/imagescalingwidget.ui:17
 #, kde-format
 msgid "Automatically resize images"
-msgstr "تغيير حجم الصور تلقائيا"
+msgstr "تغيير حجم الصور آليّا"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
 #: imagescaling/ui/imagescalingwidget.ui:28
@@ -1975,7 +1975,7 @@ msgstr "اقتبس النّصّ المحدّد فقط عند الرّدّ"
 #: settings/messagecomposer.kcfg.in:23
 #, kde-format
 msgid "A&utomatically insert signature"
-msgstr "أ&درج التوقيع تلقائيًا"
+msgstr "أ&درج التوقيع آليًّا"
 
 #. i18n: ectx: label, entry (PrependSignature), group (Composer)
 #: settings/messagecomposer.kcfg.in:27
@@ -1993,7 +1993,7 @@ msgstr "أدرج فاصلًا قبل التوقيع"
 #: settings/messagecomposer.kcfg.in:36
 #, kde-format
 msgid "Use addresses indexed from emails for autocompletion"
-msgstr "استخدم العناوين المُفهرسة من رسائل البريد الإلكتروني للإكمال التلقائي"
+msgstr "استخدم العناوين المُفهرسة من رسائل البريد الإلكتروني للإكمال الآليّ"
 
 #. i18n: ectx: whatsthis, entry (ShowBalooSearchInComposer), group (Composer)
 #: settings/messagecomposer.kcfg.in:37
@@ -2003,7 +2003,7 @@ msgid ""
 "appear in the autocompletion list in the composer's address fields."
 msgstr ""
 "عطّل هذا الخيار إذا كنت تريد فقط ظهور جهات الاتصال من دفاتر عناوينك في قائمة "
-"الإكمال التلقائي في حقول عنوان المؤلف."
+"الإكمال الآليّ في حقول عنوان المؤلف."
 
 #. i18n: ectx: label, entry (AllowSemicolonAsAddressSeparator), group (Composer)
 #: settings/messagecomposer.kcfg.in:43
@@ -2017,7 +2017,7 @@ msgstr "السماح باستخدام علامة الفاصلة المنقوطة
 #: settings/messagecomposer.kcfg.in:46
 #, kde-format
 msgid "Use recent addresses for autocompletion"
-msgstr "استخدم العناوين الأخيرة للإكمال التلقائي"
+msgstr "استخدم العناوين الأخيرة للإكمال الآليّ"
 
 #. i18n: ectx: whatsthis, entry (ShowRecentAddressesInComposer), group (Composer)
 #: settings/messagecomposer.kcfg.in:47
@@ -2027,7 +2027,7 @@ msgid ""
 "the autocompletion list in the composer's address fields."
 msgstr ""
 "عطّل هذا الخيار إذا كنت لا تريد ظهور العناوين المستخدمة مؤخرًا في قائمة "
-"الإكمال التلقائي في حقول عناوين المؤلف."
+"الإكمال الآليّ في حقول عناوين المؤلف."
 
 #. i18n: ectx: label, entry (MaximumRecipients), group (Composer)
 #: settings/messagecomposer.kcfg.in:52
