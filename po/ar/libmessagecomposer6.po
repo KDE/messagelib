@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-25 00:43+0000\n"
-"PO-Revision-Date: 2025-08-03 12:31+0400\n"
+"PO-Revision-Date: 2025-08-05 20:47+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -570,7 +570,7 @@ msgid ""
 "have not attached anything.\n"
 "Do you want to attach a file to your message?"
 msgstr ""
-"يبدو أنّ الرّسالة التي أنشاتها تشير إلى ملفّ مرفق ولكنّك لم تُرفق شيئًا بعد.\n"
+"يبدو أنّ الرّسالة التي أنشأتها تشير إلى ملفّ مرفق ولكنّك لم تُرفق شيئًا بعد.\n"
 "أتريد إرفاق ملفّ إلى رسالتك؟"
 
 #: composer/composerviewbase.cpp:1899
@@ -1407,7 +1407,7 @@ msgstr "تغيير حجم اسم الملف"
 #: imagescaling/ui/imagescalingwidget.ui:371
 #, kde-format
 msgid "Rename resized images with following pattern:"
-msgstr "أعد تسمية الصور التي تم تغيير حجمها بالنمط التالي:"
+msgstr "أعد تسمية الصور المُغير حجمها بالنمط التالي:"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_4)
 #: imagescaling/ui/imagescalingwidget.ui:389
@@ -1537,7 +1537,7 @@ msgstr "لا يمكن لترميز نقل المحتوى %1 ترميز هذه ا
 #, kde-format
 msgctxt "@title:window"
 msgid "Message Disposition Notification Request"
-msgstr "طلب إعلام بالتخلص من الرسالة"
+msgstr "طلب إشعار بالتخلص من الرسالة"
 
 #: mdn/mdnadvicedialog.cpp:30
 #, kde-format
@@ -1561,7 +1561,7 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"denied\" "
 "or normal response."
 msgstr ""
-"تحتوي هذه الرسالة على طلب لإرجاع إعلام حول استقبالك للرسالة.\n"
+"تحتوي هذه الرسالة على طلب لإرجاع إشعار حول استقبالك للرسالة.\n"
 " يمكنك إما تجاهل الطلب أو السماح لبرنامج البريد بإرسال استجابة \"مرفوضة\" أو "
 "عادية."
 
@@ -1574,8 +1574,8 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"failed\" "
 "response."
 msgstr ""
-"تحتوي هذه الرسالة على طلب لإرسال إعلام حول استقبالك للرسالة.\n"
-" تحتوي على تعليمات معالجة وُضع علامة \"مطلوبة\" عليها، ولكن برنامج البريد غير "
+"تحتوي هذه الرسالة على طلب لإرسال إشعار حول استقبالك للرسالة.\n"
+" تحتوي على تعليمات معالجة وُضع شعار \"مطلوبة\" عليها، ولكن برنامج البريد غير "
 "معروف لها.\n"
 " يمكنك إما تجاهل الطلب أو السماح لبرنامج البريد بإرسال استجابة \"فاشلة\"."
 
@@ -1587,8 +1587,8 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"denied\" "
 "or normal response."
 msgstr ""
-"تحتوي هذه الرسالة على طلب لإرسال إعلام حول استقبالك للرسالة،\n"
-" لكن مطلوب إرسال الإعلام إلى أكثر من عنوان.\n"
+"تحتوي هذه الرسالة على طلب لإرسال إشعار حول استقبالك للرسالة،\n"
+" لكن مطلوب إرسال الإشعار إلى أكثر من عنوان.\n"
 "يمكنك إما تجاهل الطلب أو السماح لبرنامج البريد بإرسال \"رفض\"."
 
 #: mdn/mdnadvicehelper.cpp:49
@@ -1599,7 +1599,7 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"denied\" "
 "or normal response."
 msgstr ""
-"تحتوي هذه الرسالة على طلب لإرسال إعلام حول استقبالك للرسالة،\n"
+"تحتوي هذه الرسالة على طلب لإرسال إشعار حول استقبالك للرسالة،\n"
 " ولكن لا يوجد مسار إرجاع محدد.\n"
 "يمكنك إما تجاهل الطلب أو السماح لبرنامج البريد بإرسال استجابة \"مرفوضة\" أو "
 "عادية."
@@ -1613,8 +1613,8 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"denied\" "
 "or normal response."
 msgstr ""
-"تحتوي هذه الرسالة على طلب لإرسال إعلام حول استقبالك للرسالة،\n"
-"لكن عنوان مسار الإرجاع يختلف عن العنوان الذي تم طلب إرسال الإعلام إليه.\n"
+"تحتوي هذه الرسالة على طلب لإرسال إشعار حول استقبالك للرسالة،\n"
+"لكن عنوان مسار الإرجاع يختلف عن العنوان المطلوب إرسال الإشعار إليه.\n"
 "بإمكانك إما تجاهل الطلب أو السماح لبرنامج البريد بإرسال استجابة \"مرفوضة\" "
 "أو عادية."
 
@@ -2011,7 +2011,7 @@ msgstr ""
 msgid ""
 "Allow the semicolon character (';') to be used as separator in the message "
 "composer"
-msgstr "السماح باستخدام علامة الفاصلة المنقوطة (';') كفاصل في مؤلف الرسالة"
+msgstr "اسمح باستخدام محرف الفاصلة المنقوطة (';') كفاصل في مؤلف الرسالة"
 
 #. i18n: ectx: label, entry (ShowRecentAddressesInComposer), group (Composer)
 #: settings/messagecomposer.kcfg.in:46
