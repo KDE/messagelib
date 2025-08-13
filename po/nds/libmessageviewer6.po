@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-27 00:43+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2014-08-15 15:48+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -977,99 +977,6 @@ msgstr "Loosstüern"
 msgctxt "@action"
 msgid "Send Deny"
 msgstr "Liekers loosstüern"
-
-#: messagepartthemes/default/defaultrenderer.cpp:70
-#, kde-format
-msgid "Error: Signature not verified"
-msgstr "Fehler: Ünnerschrift nich pröövt"
-
-#: messagepartthemes/default/defaultrenderer.cpp:74
-#, kde-format
-msgid "Good signature"
-msgstr "Goot Ünnerschrift"
-
-#: messagepartthemes/default/defaultrenderer.cpp:78
-#, fuzzy, kde-format
-#| msgid "Good signature"
-msgid "Bad signature"
-msgstr "Goot Ünnerschrift"
-
-#: messagepartthemes/default/defaultrenderer.cpp:82
-#, kde-format
-msgid "No public key to verify the signature"
-msgstr "Keen apen Slötel för't Pröven vun de Ünnerschrift verföögbor"
-
-#: messagepartthemes/default/defaultrenderer.cpp:86
-#, kde-format
-msgid "No signature found"
-msgstr "Keen Ünnerschrift funnen"
-
-#: messagepartthemes/default/defaultrenderer.cpp:90
-#, kde-format
-msgid "Error verifying the signature"
-msgstr "Fehler bi't Pröven vun de Ünnerschrift"
-
-#: messagepartthemes/default/defaultrenderer.cpp:94
-#, kde-format
-msgid "Different results for signatures"
-msgstr "Verscheden Resultaten för Ünnerschriften"
-
-#: messagepartthemes/default/defaultrenderer.cpp:114
-#, kde-format
-msgid "No status information available."
-msgstr "Keen Statusinformatschonen verföögbor."
-
-#: messagepartthemes/default/defaultrenderer.cpp:121
-#: messagepartthemes/default/defaultrenderer.cpp:206
-#, kde-format
-msgid "Good signature."
-msgstr "Ünnerschrift gellt."
-
-#: messagepartthemes/default/defaultrenderer.cpp:142
-#, kde-format
-msgid "One key has expired."
-msgstr "Een Slötel is aflopen."
-
-#: messagepartthemes/default/defaultrenderer.cpp:146
-#, kde-format
-msgid "The signature has expired."
-msgstr "De Ünnerschrift is aflopen."
-
-#: messagepartthemes/default/defaultrenderer.cpp:151
-#, kde-format
-msgid "Unable to verify: key missing."
-msgstr "Prööv nich mööglich: Slötel fehlt."
-
-#: messagepartthemes/default/defaultrenderer.cpp:158
-#, kde-format
-msgid "CRL not available."
-msgstr "ZTL nich verföögbor"
-
-#: messagepartthemes/default/defaultrenderer.cpp:162
-#, kde-format
-msgid "Available CRL is too old."
-msgstr "Verföögbor ZTL is to oolt."
-
-#: messagepartthemes/default/defaultrenderer.cpp:166
-#, kde-format
-msgid "A policy was not met."
-msgstr "En Regel wöör braken."
-
-#: messagepartthemes/default/defaultrenderer.cpp:170
-#, kde-format
-msgid "A system error occurred."
-msgstr "Dat geev en Systeemfehler."
-
-#: messagepartthemes/default/defaultrenderer.cpp:181
-#, kde-format
-msgid "One key has been revoked."
-msgstr "Een Slötel wöör torüchropen."
-
-#: messagepartthemes/default/defaultrenderer.cpp:208
-#, fuzzy, kde-format
-#| msgid "Good signature."
-msgid "Bad signature."
-msgstr "Ünnerschrift gellt."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, fuzzy, kde-format
@@ -2693,6 +2600,64 @@ msgstr "&Nakamen Naricht"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Ve&rleden nich leest Naricht"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "Fehler: Ünnerschrift nich pröövt"
+
+#~ msgid "Good signature"
+#~ msgstr "Goot Ünnerschrift"
+
+#, fuzzy
+#~| msgid "Good signature"
+#~ msgid "Bad signature"
+#~ msgstr "Goot Ünnerschrift"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "Keen apen Slötel för't Pröven vun de Ünnerschrift verföögbor"
+
+#~ msgid "No signature found"
+#~ msgstr "Keen Ünnerschrift funnen"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "Fehler bi't Pröven vun de Ünnerschrift"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "Verscheden Resultaten för Ünnerschriften"
+
+#~ msgid "No status information available."
+#~ msgstr "Keen Statusinformatschonen verföögbor."
+
+#~ msgid "Good signature."
+#~ msgstr "Ünnerschrift gellt."
+
+#~ msgid "One key has expired."
+#~ msgstr "Een Slötel is aflopen."
+
+#~ msgid "The signature has expired."
+#~ msgstr "De Ünnerschrift is aflopen."
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "Prööv nich mööglich: Slötel fehlt."
+
+#~ msgid "CRL not available."
+#~ msgstr "ZTL nich verföögbor"
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "Verföögbor ZTL is to oolt."
+
+#~ msgid "A policy was not met."
+#~ msgstr "En Regel wöör braken."
+
+#~ msgid "A system error occurred."
+#~ msgstr "Dat geev en Systeemfehler."
+
+#~ msgid "One key has been revoked."
+#~ msgstr "Een Slötel wöör torüchropen."
+
+#, fuzzy
+#~| msgid "Good signature."
+#~ msgid "Bad signature."
+#~ msgstr "Ünnerschrift gellt."
 
 #~ msgid "Not enough information to check signature. %1"
 #~ msgstr "Nich noog Informatschonen för't Pröven vun de Ünnerschrift. %1"

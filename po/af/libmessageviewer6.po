@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail 3_3_branch\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-27 00:43+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2004-11-10 16:33+0200\n"
 "Last-Translator: Frikkie Thirion <frix@expertron.co.za>\n"
 "Language-Team: AFRIKAANS <AF@lia.org.za>\n"
@@ -927,102 +927,6 @@ msgstr "Stuurder"
 msgctxt "@action"
 msgid "Send Deny"
 msgstr "Stuur Nou"
-
-#: messagepartthemes/default/defaultrenderer.cpp:70
-#, kde-format
-msgid "Error: Signature not verified"
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:74
-#, fuzzy, kde-format
-msgid "Good signature"
-msgstr "Heg Handtekening Aan"
-
-#: messagepartthemes/default/defaultrenderer.cpp:78
-#, fuzzy, kde-format
-msgid "Bad signature"
-msgstr "Heg Handtekening Aan"
-
-#: messagepartthemes/default/defaultrenderer.cpp:82
-#, fuzzy, kde-format
-msgid "No public key to verify the signature"
-msgstr "Verwyder lêer aanhangsel"
-
-#: messagepartthemes/default/defaultrenderer.cpp:86
-#, fuzzy, kde-format
-#| msgctxt "EMAIL OF TRANSLATORS"
-#| msgid "Your emails"
-msgid "No signature found"
-msgstr "frix@expertron.co.za"
-
-#: messagepartthemes/default/defaultrenderer.cpp:90
-#, fuzzy, kde-format
-msgid "Error verifying the signature"
-msgstr "Verwyder lêer aanhangsel"
-
-#: messagepartthemes/default/defaultrenderer.cpp:94
-#, kde-format
-msgid "Different results for signatures"
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:114
-#, fuzzy, kde-format
-#| msgid "Subscription"
-msgid "No status information available."
-msgstr "Intekenings"
-
-#: messagepartthemes/default/defaultrenderer.cpp:121
-#: messagepartthemes/default/defaultrenderer.cpp:206
-#, fuzzy, kde-format
-#| msgid "Append S&ignature"
-msgid "Good signature."
-msgstr "Heg Handtekening Aan"
-
-#: messagepartthemes/default/defaultrenderer.cpp:142
-#, fuzzy, kde-format
-msgid "One key has expired."
-msgstr "Heg Handtekening Aan"
-
-#: messagepartthemes/default/defaultrenderer.cpp:146
-#, fuzzy, kde-format
-msgid "The signature has expired."
-msgstr "Heg Handtekening Aan"
-
-#: messagepartthemes/default/defaultrenderer.cpp:151
-#, kde-format
-msgid "Unable to verify: key missing."
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:158
-#, kde-format
-msgid "CRL not available."
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:162
-#, kde-format
-msgid "Available CRL is too old."
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:166
-#, kde-format
-msgid "A policy was not met."
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:170
-#, kde-format
-msgid "A system error occurred."
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:181
-#, kde-format
-msgid "One key has been revoked."
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:208
-#, fuzzy, kde-format
-#| msgid "Append S&ignature"
-msgid "Bad signature."
-msgstr "Heg Handtekening Aan"
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, fuzzy, kde-format
@@ -2561,6 +2465,51 @@ msgstr "Nuwe boodskap"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Vorige ongeleesde boodskap"
+
+#, fuzzy
+#~ msgid "Good signature"
+#~ msgstr "Heg Handtekening Aan"
+
+#, fuzzy
+#~ msgid "Bad signature"
+#~ msgstr "Heg Handtekening Aan"
+
+#, fuzzy
+#~ msgid "No public key to verify the signature"
+#~ msgstr "Verwyder lêer aanhangsel"
+
+#, fuzzy
+#~| msgctxt "EMAIL OF TRANSLATORS"
+#~| msgid "Your emails"
+#~ msgid "No signature found"
+#~ msgstr "frix@expertron.co.za"
+
+#, fuzzy
+#~ msgid "Error verifying the signature"
+#~ msgstr "Verwyder lêer aanhangsel"
+
+#, fuzzy
+#~| msgid "Subscription"
+#~ msgid "No status information available."
+#~ msgstr "Intekenings"
+
+#, fuzzy
+#~| msgid "Append S&ignature"
+#~ msgid "Good signature."
+#~ msgstr "Heg Handtekening Aan"
+
+#, fuzzy
+#~ msgid "One key has expired."
+#~ msgstr "Heg Handtekening Aan"
+
+#, fuzzy
+#~ msgid "The signature has expired."
+#~ msgstr "Heg Handtekening Aan"
+
+#, fuzzy
+#~| msgid "Append S&ignature"
+#~ msgid "Bad signature."
+#~ msgstr "Heg Handtekening Aan"
 
 #, fuzzy
 #~ msgid "Message was signed by %1."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-27 00:43+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2013-11-06 03:17+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -966,99 +966,6 @@ msgstr "&Жіберу"
 msgctxt "@action"
 msgid "Send Deny"
 msgstr "Қазір жіберу"
-
-#: messagepartthemes/default/defaultrenderer.cpp:70
-#, kde-format
-msgid "Error: Signature not verified"
-msgstr "Қате: Қолтаңбасы тексерілмеді"
-
-#: messagepartthemes/default/defaultrenderer.cpp:74
-#, kde-format
-msgid "Good signature"
-msgstr "Дұрыс қолтаңба"
-
-#: messagepartthemes/default/defaultrenderer.cpp:78
-#, fuzzy, kde-format
-#| msgid "Good signature"
-msgid "Bad signature"
-msgstr "Дұрыс қолтаңба"
-
-#: messagepartthemes/default/defaultrenderer.cpp:82
-#, kde-format
-msgid "No public key to verify the signature"
-msgstr "Қолтаңбаны тексеретін ашық кілті жоқ"
-
-#: messagepartthemes/default/defaultrenderer.cpp:86
-#, kde-format
-msgid "No signature found"
-msgstr "Қолтаңба табылмады"
-
-#: messagepartthemes/default/defaultrenderer.cpp:90
-#, kde-format
-msgid "Error verifying the signature"
-msgstr "Қолтаңбаны тексеру қатесі"
-
-#: messagepartthemes/default/defaultrenderer.cpp:94
-#, kde-format
-msgid "Different results for signatures"
-msgstr "Қолтаңбаның әртүрлі нәтижелері"
-
-#: messagepartthemes/default/defaultrenderer.cpp:114
-#, kde-format
-msgid "No status information available."
-msgstr "Күй-жай мәліметі қол жеткізбейді."
-
-#: messagepartthemes/default/defaultrenderer.cpp:121
-#: messagepartthemes/default/defaultrenderer.cpp:206
-#, kde-format
-msgid "Good signature."
-msgstr "Қолтаңба дұрыс."
-
-#: messagepartthemes/default/defaultrenderer.cpp:142
-#, kde-format
-msgid "One key has expired."
-msgstr "Бір кілттің мерзімі өтіп кеткен."
-
-#: messagepartthemes/default/defaultrenderer.cpp:146
-#, kde-format
-msgid "The signature has expired."
-msgstr "Қолтаңбаның мерзімі өтіп кеткен."
-
-#: messagepartthemes/default/defaultrenderer.cpp:151
-#, kde-format
-msgid "Unable to verify: key missing."
-msgstr "Тексеру мүмкін емес: кілті жоқ."
-
-#: messagepartthemes/default/defaultrenderer.cpp:158
-#, kde-format
-msgid "CRL not available."
-msgstr "CRL қол жеткізбейді."
-
-#: messagepartthemes/default/defaultrenderer.cpp:162
-#, kde-format
-msgid "Available CRL is too old."
-msgstr "Бар CRL тым ескі."
-
-#: messagepartthemes/default/defaultrenderer.cpp:166
-#, kde-format
-msgid "A policy was not met."
-msgstr "Ережесі сәйкес келмейді."
-
-#: messagepartthemes/default/defaultrenderer.cpp:170
-#, kde-format
-msgid "A system error occurred."
-msgstr "Жүйелік қате пайда болды."
-
-#: messagepartthemes/default/defaultrenderer.cpp:181
-#, kde-format
-msgid "One key has been revoked."
-msgstr "Кілттердің біреуі қайтарылып алынған."
-
-#: messagepartthemes/default/defaultrenderer.cpp:208
-#, fuzzy, kde-format
-#| msgid "Good signature."
-msgid "Bad signature."
-msgstr "Қолтаңба дұрыс."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, fuzzy, kde-format
@@ -2653,6 +2560,64 @@ msgstr "&Келесі хат"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Алдыңғы оқылмаған &хат"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "Қате: Қолтаңбасы тексерілмеді"
+
+#~ msgid "Good signature"
+#~ msgstr "Дұрыс қолтаңба"
+
+#, fuzzy
+#~| msgid "Good signature"
+#~ msgid "Bad signature"
+#~ msgstr "Дұрыс қолтаңба"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "Қолтаңбаны тексеретін ашық кілті жоқ"
+
+#~ msgid "No signature found"
+#~ msgstr "Қолтаңба табылмады"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "Қолтаңбаны тексеру қатесі"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "Қолтаңбаның әртүрлі нәтижелері"
+
+#~ msgid "No status information available."
+#~ msgstr "Күй-жай мәліметі қол жеткізбейді."
+
+#~ msgid "Good signature."
+#~ msgstr "Қолтаңба дұрыс."
+
+#~ msgid "One key has expired."
+#~ msgstr "Бір кілттің мерзімі өтіп кеткен."
+
+#~ msgid "The signature has expired."
+#~ msgstr "Қолтаңбаның мерзімі өтіп кеткен."
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "Тексеру мүмкін емес: кілті жоқ."
+
+#~ msgid "CRL not available."
+#~ msgstr "CRL қол жеткізбейді."
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "Бар CRL тым ескі."
+
+#~ msgid "A policy was not met."
+#~ msgstr "Ережесі сәйкес келмейді."
+
+#~ msgid "A system error occurred."
+#~ msgstr "Жүйелік қате пайда болды."
+
+#~ msgid "One key has been revoked."
+#~ msgstr "Кілттердің біреуі қайтарылып алынған."
+
+#, fuzzy
+#~| msgid "Good signature."
+#~ msgid "Bad signature."
+#~ msgstr "Қолтаңба дұрыс."
 
 #~ msgid "Not enough information to check signature. %1"
 #~ msgstr "Қолтаңбаны тексеру үшін мәлімет жеткіліксіз. %1"

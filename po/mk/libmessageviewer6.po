@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-27 00:43+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2007-02-28 14:08+0100\n"
 "Last-Translator: Bozidar Proevski <bobibobi@freemail.com.mk>\n"
 "Language-Team: Macedonian <mkde-l10n@lists.sourceforge.net>\n"
@@ -994,100 +994,6 @@ msgstr "Испраќач"
 msgctxt "@action"
 msgid "Send Deny"
 msgstr "Испрати сега"
-
-#: messagepartthemes/default/defaultrenderer.cpp:70
-#, kde-format
-msgid "Error: Signature not verified"
-msgstr "Грешка: потписот не е верификуван"
-
-#: messagepartthemes/default/defaultrenderer.cpp:74
-#, kde-format
-msgid "Good signature"
-msgstr "Добар потпис"
-
-#: messagepartthemes/default/defaultrenderer.cpp:78
-#, fuzzy, kde-format
-#| msgid "Good signature"
-msgid "Bad signature"
-msgstr "Добар потпис"
-
-#: messagepartthemes/default/defaultrenderer.cpp:82
-#, kde-format
-msgid "No public key to verify the signature"
-msgstr "Нема јавен клуч за да се верификува потписот"
-
-#: messagepartthemes/default/defaultrenderer.cpp:86
-#, kde-format
-msgid "No signature found"
-msgstr "Не е пронајден потпис"
-
-#: messagepartthemes/default/defaultrenderer.cpp:90
-#, kde-format
-msgid "Error verifying the signature"
-msgstr "Грешка при верификацијата на потписот"
-
-#: messagepartthemes/default/defaultrenderer.cpp:94
-#, kde-format
-msgid "Different results for signatures"
-msgstr "Различни резултати за потписите"
-
-#: messagepartthemes/default/defaultrenderer.cpp:114
-#, kde-format
-msgid "No status information available."
-msgstr "Нема достапна информација за статус."
-
-#: messagepartthemes/default/defaultrenderer.cpp:121
-#: messagepartthemes/default/defaultrenderer.cpp:206
-#, kde-format
-msgid "Good signature."
-msgstr "Добар потпис."
-
-#: messagepartthemes/default/defaultrenderer.cpp:142
-#, kde-format
-msgid "One key has expired."
-msgstr "Еден клуч е истечен."
-
-#: messagepartthemes/default/defaultrenderer.cpp:146
-#, kde-format
-msgid "The signature has expired."
-msgstr "Потписот е истечен."
-
-#: messagepartthemes/default/defaultrenderer.cpp:151
-#, kde-format
-msgid "Unable to verify: key missing."
-msgstr "Не можам да верификувам: недостасува клуч."
-
-#: messagepartthemes/default/defaultrenderer.cpp:158
-#, fuzzy, kde-format
-#| msgid "Not available."
-msgid "CRL not available."
-msgstr "Не е достапно."
-
-#: messagepartthemes/default/defaultrenderer.cpp:162
-#, kde-format
-msgid "Available CRL is too old."
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:166
-#, kde-format
-msgid "A policy was not met."
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:170
-#, kde-format
-msgid "A system error occurred."
-msgstr "Се случи системска грешка."
-
-#: messagepartthemes/default/defaultrenderer.cpp:181
-#, kde-format
-msgid "One key has been revoked."
-msgstr "Еден клуч беше отповикан."
-
-#: messagepartthemes/default/defaultrenderer.cpp:208
-#, fuzzy, kde-format
-#| msgid "Good signature."
-msgid "Bad signature."
-msgstr "Добар потпис."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, fuzzy, kde-format
@@ -2688,6 +2594,60 @@ msgstr "&Следна порака"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Претходна неп&рочитана порака"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "Грешка: потписот не е верификуван"
+
+#~ msgid "Good signature"
+#~ msgstr "Добар потпис"
+
+#, fuzzy
+#~| msgid "Good signature"
+#~ msgid "Bad signature"
+#~ msgstr "Добар потпис"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "Нема јавен клуч за да се верификува потписот"
+
+#~ msgid "No signature found"
+#~ msgstr "Не е пронајден потпис"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "Грешка при верификацијата на потписот"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "Различни резултати за потписите"
+
+#~ msgid "No status information available."
+#~ msgstr "Нема достапна информација за статус."
+
+#~ msgid "Good signature."
+#~ msgstr "Добар потпис."
+
+#~ msgid "One key has expired."
+#~ msgstr "Еден клуч е истечен."
+
+#~ msgid "The signature has expired."
+#~ msgstr "Потписот е истечен."
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "Не можам да верификувам: недостасува клуч."
+
+#, fuzzy
+#~| msgid "Not available."
+#~ msgid "CRL not available."
+#~ msgstr "Не е достапно."
+
+#~ msgid "A system error occurred."
+#~ msgstr "Се случи системска грешка."
+
+#~ msgid "One key has been revoked."
+#~ msgstr "Еден клуч беше отповикан."
+
+#, fuzzy
+#~| msgid "Good signature."
+#~ msgid "Bad signature."
+#~ msgstr "Добар потпис."
 
 #~ msgid "Not enough information to check signature. %1"
 #~ msgstr "Нема доволно информација за да се провери потписот. %1"

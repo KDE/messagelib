@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-27 00:43+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2007-04-27 11:01+0100\n"
 "Last-Translator: Berend Ytsma <berendy@gmail.com>\n"
 "Language-Team: Frysk <kde-i18n-fry@kde.org>\n"
@@ -1034,99 +1034,6 @@ msgstr "Fer&stjoere"
 msgctxt "@action"
 msgid "Send Deny"
 msgstr "No ferstjoere"
-
-#: messagepartthemes/default/defaultrenderer.cpp:70
-#, kde-format
-msgid "Error: Signature not verified"
-msgstr "Flater: hântekening net ferifearre"
-
-#: messagepartthemes/default/defaultrenderer.cpp:74
-#, kde-format
-msgid "Good signature"
-msgstr "Juste hântekening"
-
-#: messagepartthemes/default/defaultrenderer.cpp:78
-#, fuzzy, kde-format
-#| msgid "Good signature"
-msgid "Bad signature"
-msgstr "Juste hântekening"
-
-#: messagepartthemes/default/defaultrenderer.cpp:82
-#, kde-format
-msgid "No public key to verify the signature"
-msgstr "Gjin publike kaai om de ûndertekening te kontrolearjen"
-
-#: messagepartthemes/default/defaultrenderer.cpp:86
-#, kde-format
-msgid "No signature found"
-msgstr "Gjin hântekening fûn."
-
-#: messagepartthemes/default/defaultrenderer.cpp:90
-#, kde-format
-msgid "Error verifying the signature"
-msgstr "De hantekening is net bekend."
-
-#: messagepartthemes/default/defaultrenderer.cpp:94
-#, kde-format
-msgid "Different results for signatures"
-msgstr "Oare resultaten foar hântekenings"
-
-#: messagepartthemes/default/defaultrenderer.cpp:114
-#, kde-format
-msgid "No status information available."
-msgstr "Gjin tastânynformaasje beskikber."
-
-#: messagepartthemes/default/defaultrenderer.cpp:121
-#: messagepartthemes/default/defaultrenderer.cpp:206
-#, kde-format
-msgid "Good signature."
-msgstr "Juste hântekening."
-
-#: messagepartthemes/default/defaultrenderer.cpp:142
-#, kde-format
-msgid "One key has expired."
-msgstr "It kaai is ferrûn."
-
-#: messagepartthemes/default/defaultrenderer.cpp:146
-#, kde-format
-msgid "The signature has expired."
-msgstr "De hântekening is ferrûn."
-
-#: messagepartthemes/default/defaultrenderer.cpp:151
-#, kde-format
-msgid "Unable to verify: key missing."
-msgstr "Ferifikaasje koe net útfierd wurde: kaai ûntbrekt."
-
-#: messagepartthemes/default/defaultrenderer.cpp:158
-#, kde-format
-msgid "CRL not available."
-msgstr "CRL net  beskikber."
-
-#: messagepartthemes/default/defaultrenderer.cpp:162
-#, kde-format
-msgid "Available CRL is too old."
-msgstr "Beskibere CRL-list is te âld."
-
-#: messagepartthemes/default/defaultrenderer.cpp:166
-#, kde-format
-msgid "A policy was not met."
-msgstr "Der waard net oan in belied foldien."
-
-#: messagepartthemes/default/defaultrenderer.cpp:170
-#, kde-format
-msgid "A system error occurred."
-msgstr "Der barde in systeemflater."
-
-#: messagepartthemes/default/defaultrenderer.cpp:181
-#, kde-format
-msgid "One key has been revoked."
-msgstr "Ien kaai is ynlútsen."
-
-#: messagepartthemes/default/defaultrenderer.cpp:208
-#, fuzzy, kde-format
-#| msgid "Good signature."
-msgid "Bad signature."
-msgstr "Juste hântekening."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, fuzzy, kde-format
@@ -2787,6 +2694,64 @@ msgstr "Berjoc&ht ferder"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Foarige net-lê&zen berjocht"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "Flater: hântekening net ferifearre"
+
+#~ msgid "Good signature"
+#~ msgstr "Juste hântekening"
+
+#, fuzzy
+#~| msgid "Good signature"
+#~ msgid "Bad signature"
+#~ msgstr "Juste hântekening"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "Gjin publike kaai om de ûndertekening te kontrolearjen"
+
+#~ msgid "No signature found"
+#~ msgstr "Gjin hântekening fûn."
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "De hantekening is net bekend."
+
+#~ msgid "Different results for signatures"
+#~ msgstr "Oare resultaten foar hântekenings"
+
+#~ msgid "No status information available."
+#~ msgstr "Gjin tastânynformaasje beskikber."
+
+#~ msgid "Good signature."
+#~ msgstr "Juste hântekening."
+
+#~ msgid "One key has expired."
+#~ msgstr "It kaai is ferrûn."
+
+#~ msgid "The signature has expired."
+#~ msgstr "De hântekening is ferrûn."
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "Ferifikaasje koe net útfierd wurde: kaai ûntbrekt."
+
+#~ msgid "CRL not available."
+#~ msgstr "CRL net  beskikber."
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "Beskibere CRL-list is te âld."
+
+#~ msgid "A policy was not met."
+#~ msgstr "Der waard net oan in belied foldien."
+
+#~ msgid "A system error occurred."
+#~ msgstr "Der barde in systeemflater."
+
+#~ msgid "One key has been revoked."
+#~ msgstr "Ien kaai is ynlútsen."
+
+#, fuzzy
+#~| msgid "Good signature."
+#~ msgid "Bad signature."
+#~ msgstr "Juste hântekening."
 
 #~ msgid "Not enough information to check signature. %1"
 #~ msgstr "Net genôch ynformaasje om de hântekening te kontrolearjen. %1"

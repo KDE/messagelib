@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-27 00:43+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2008-01-31 22:13+0200\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -1030,97 +1030,6 @@ msgstr "Даслаць"
 msgctxt "@action"
 msgid "Send Deny"
 msgstr "Даслаць зараз"
-
-#: messagepartthemes/default/defaultrenderer.cpp:70
-#, fuzzy, kde-format
-msgid "Error: Signature not verified"
-msgstr "Памылка: не атрымоўваецца праверыць подпіс."
-
-#: messagepartthemes/default/defaultrenderer.cpp:74
-#, fuzzy, kde-format
-msgid "Good signature"
-msgstr "Дакладны подпіс"
-
-#: messagepartthemes/default/defaultrenderer.cpp:78
-#, fuzzy, kde-format
-msgid "Bad signature"
-msgstr "Дакладны подпіс"
-
-#: messagepartthemes/default/defaultrenderer.cpp:82
-#, fuzzy, kde-format
-msgid "No public key to verify the signature"
-msgstr "Адсутнічае адчынены ключ для праверкі подпісу."
-
-#: messagepartthemes/default/defaultrenderer.cpp:86
-#, kde-format
-msgid "No signature found"
-msgstr "Подпіс не знойдзены"
-
-#: messagepartthemes/default/defaultrenderer.cpp:90
-#, kde-format
-msgid "Error verifying the signature"
-msgstr "Немагчыма праверыць подпіс"
-
-#: messagepartthemes/default/defaultrenderer.cpp:94
-#, fuzzy, kde-format
-msgid "Different results for signatures"
-msgstr "Розныя вынікі для подпісаў"
-
-#: messagepartthemes/default/defaultrenderer.cpp:114
-#, fuzzy, kde-format
-msgid "No status information available."
-msgstr "Адсутнічае інфармацыя стану."
-
-#: messagepartthemes/default/defaultrenderer.cpp:121
-#: messagepartthemes/default/defaultrenderer.cpp:206
-#, fuzzy, kde-format
-msgid "Good signature."
-msgstr "Дакладны подпіс."
-
-#: messagepartthemes/default/defaultrenderer.cpp:142
-#, fuzzy, kde-format
-msgid "One key has expired."
-msgstr "Адзін ключ пратэрмінаваны."
-
-#: messagepartthemes/default/defaultrenderer.cpp:146
-#, fuzzy, kde-format
-msgid "The signature has expired."
-msgstr "Подпіс пратэрмінаваная."
-
-#: messagepartthemes/default/defaultrenderer.cpp:151
-#, fuzzy, kde-format
-msgid "Unable to verify: key missing."
-msgstr "Памылка пры праверцы: адсутнічае ключ."
-
-#: messagepartthemes/default/defaultrenderer.cpp:158
-#, fuzzy, kde-format
-msgid "CRL not available."
-msgstr "CRL недаступны."
-
-#: messagepartthemes/default/defaultrenderer.cpp:162
-#, fuzzy, kde-format
-msgid "Available CRL is too old."
-msgstr "Наяўны CRL састарэлы."
-
-#: messagepartthemes/default/defaultrenderer.cpp:166
-#, fuzzy, kde-format
-msgid "A policy was not met."
-msgstr "Правіла не падыходзіць."
-
-#: messagepartthemes/default/defaultrenderer.cpp:170
-#, fuzzy, kde-format
-msgid "A system error occurred."
-msgstr "Адбылася сістэмная памылка."
-
-#: messagepartthemes/default/defaultrenderer.cpp:181
-#, fuzzy, kde-format
-msgid "One key has been revoked."
-msgstr "Адзін з ключоў быў адкліканы."
-
-#: messagepartthemes/default/defaultrenderer.cpp:208
-#, fuzzy, kde-format
-msgid "Bad signature."
-msgstr "Дакладны подпіс."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, fuzzy, kde-format
@@ -2728,6 +2637,76 @@ msgstr "&Наступнага паведамлення"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Папярэдняга непрачытанага &паведамлення"
+
+#, fuzzy
+#~ msgid "Error: Signature not verified"
+#~ msgstr "Памылка: не атрымоўваецца праверыць подпіс."
+
+#, fuzzy
+#~ msgid "Good signature"
+#~ msgstr "Дакладны подпіс"
+
+#, fuzzy
+#~ msgid "Bad signature"
+#~ msgstr "Дакладны подпіс"
+
+#, fuzzy
+#~ msgid "No public key to verify the signature"
+#~ msgstr "Адсутнічае адчынены ключ для праверкі подпісу."
+
+#~ msgid "No signature found"
+#~ msgstr "Подпіс не знойдзены"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "Немагчыма праверыць подпіс"
+
+#, fuzzy
+#~ msgid "Different results for signatures"
+#~ msgstr "Розныя вынікі для подпісаў"
+
+#, fuzzy
+#~ msgid "No status information available."
+#~ msgstr "Адсутнічае інфармацыя стану."
+
+#, fuzzy
+#~ msgid "Good signature."
+#~ msgstr "Дакладны подпіс."
+
+#, fuzzy
+#~ msgid "One key has expired."
+#~ msgstr "Адзін ключ пратэрмінаваны."
+
+#, fuzzy
+#~ msgid "The signature has expired."
+#~ msgstr "Подпіс пратэрмінаваная."
+
+#, fuzzy
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "Памылка пры праверцы: адсутнічае ключ."
+
+#, fuzzy
+#~ msgid "CRL not available."
+#~ msgstr "CRL недаступны."
+
+#, fuzzy
+#~ msgid "Available CRL is too old."
+#~ msgstr "Наяўны CRL састарэлы."
+
+#, fuzzy
+#~ msgid "A policy was not met."
+#~ msgstr "Правіла не падыходзіць."
+
+#, fuzzy
+#~ msgid "A system error occurred."
+#~ msgstr "Адбылася сістэмная памылка."
+
+#, fuzzy
+#~ msgid "One key has been revoked."
+#~ msgstr "Адзін з ключоў быў адкліканы."
+
+#, fuzzy
+#~ msgid "Bad signature."
+#~ msgstr "Дакладны подпіс."
 
 #, fuzzy
 #~ msgid "Not enough information to check signature. %1"

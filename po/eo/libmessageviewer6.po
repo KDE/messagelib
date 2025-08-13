@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-27 00:43+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2024-08-02 22:29+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -902,97 +902,6 @@ msgstr "Sendi"
 msgctxt "@action"
 msgid "Send Deny"
 msgstr "Sendi Neon"
-
-#: messagepartthemes/default/defaultrenderer.cpp:70
-#, kde-format
-msgid "Error: Signature not verified"
-msgstr "Eraro: subskribo ne konfirmata"
-
-#: messagepartthemes/default/defaultrenderer.cpp:74
-#, kde-format
-msgid "Good signature"
-msgstr "Korekta subskribo"
-
-#: messagepartthemes/default/defaultrenderer.cpp:78
-#, kde-format
-msgid "Bad signature"
-msgstr "Malbona subskribo"
-
-#: messagepartthemes/default/defaultrenderer.cpp:82
-#, kde-format
-msgid "No public key to verify the signature"
-msgstr "Neniu publikŝlosilo por konfirmi la subskribon"
-
-#: messagepartthemes/default/defaultrenderer.cpp:86
-#, kde-format
-msgid "No signature found"
-msgstr "Subskribo ne trovita."
-
-#: messagepartthemes/default/defaultrenderer.cpp:90
-#, kde-format
-msgid "Error verifying the signature"
-msgstr "Eraro dum konfirmo de subskribo"
-
-#: messagepartthemes/default/defaultrenderer.cpp:94
-#, kde-format
-msgid "Different results for signatures"
-msgstr "Diversaj rezultoj por subskriboj"
-
-#: messagepartthemes/default/defaultrenderer.cpp:114
-#, kde-format
-msgid "No status information available."
-msgstr "Neniu stato haviĝebla"
-
-#: messagepartthemes/default/defaultrenderer.cpp:121
-#: messagepartthemes/default/defaultrenderer.cpp:206
-#, kde-format
-msgid "Good signature."
-msgstr "Korekta subskribo."
-
-#: messagepartthemes/default/defaultrenderer.cpp:142
-#, kde-format
-msgid "One key has expired."
-msgstr "Ŝlosilo malvalidiĝis."
-
-#: messagepartthemes/default/defaultrenderer.cpp:146
-#, kde-format
-msgid "The signature has expired."
-msgstr "La subskribo malvalidiĝis."
-
-#: messagepartthemes/default/defaultrenderer.cpp:151
-#, kde-format
-msgid "Unable to verify: key missing."
-msgstr "Ne eblas konfirmi: Ŝlosilo mankas."
-
-#: messagepartthemes/default/defaultrenderer.cpp:158
-#, kde-format
-msgid "CRL not available."
-msgstr "ANVLo ne uzebla."
-
-#: messagepartthemes/default/defaultrenderer.cpp:162
-#, kde-format
-msgid "Available CRL is too old."
-msgstr "Uzebla ANVLo estas tro malnova."
-
-#: messagepartthemes/default/defaultrenderer.cpp:166
-#, kde-format
-msgid "A policy was not met."
-msgstr "Ĝi ne akordas kun iu direktivo."
-
-#: messagepartthemes/default/defaultrenderer.cpp:170
-#, kde-format
-msgid "A system error occurred."
-msgstr "Sistemeraro okazis."
-
-#: messagepartthemes/default/defaultrenderer.cpp:181
-#, kde-format
-msgid "One key has been revoked."
-msgstr "Ŝlosilo estas reprenita."
-
-#: messagepartthemes/default/defaultrenderer.cpp:208
-#, kde-format
-msgid "Bad signature."
-msgstr "Malbona subskribo."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, kde-format
@@ -2536,6 +2445,60 @@ msgstr "Sekva Mesaĝo"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Antaŭa Mesaĝo"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "Eraro: subskribo ne konfirmata"
+
+#~ msgid "Good signature"
+#~ msgstr "Korekta subskribo"
+
+#~ msgid "Bad signature"
+#~ msgstr "Malbona subskribo"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "Neniu publikŝlosilo por konfirmi la subskribon"
+
+#~ msgid "No signature found"
+#~ msgstr "Subskribo ne trovita."
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "Eraro dum konfirmo de subskribo"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "Diversaj rezultoj por subskriboj"
+
+#~ msgid "No status information available."
+#~ msgstr "Neniu stato haviĝebla"
+
+#~ msgid "Good signature."
+#~ msgstr "Korekta subskribo."
+
+#~ msgid "One key has expired."
+#~ msgstr "Ŝlosilo malvalidiĝis."
+
+#~ msgid "The signature has expired."
+#~ msgstr "La subskribo malvalidiĝis."
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "Ne eblas konfirmi: Ŝlosilo mankas."
+
+#~ msgid "CRL not available."
+#~ msgstr "ANVLo ne uzebla."
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "Uzebla ANVLo estas tro malnova."
+
+#~ msgid "A policy was not met."
+#~ msgstr "Ĝi ne akordas kun iu direktivo."
+
+#~ msgid "A system error occurred."
+#~ msgstr "Sistemeraro okazis."
+
+#~ msgid "One key has been revoked."
+#~ msgstr "Ŝlosilo estas reprenita."
+
+#~ msgid "Bad signature."
+#~ msgstr "Malbona subskribo."
 
 #~ msgid "Not enough information to check signature. %1"
 #~ msgstr "La informoj ne sufiĉas por kontroli la subskribon. %1"

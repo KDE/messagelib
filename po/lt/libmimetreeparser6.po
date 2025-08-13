@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-03 00:39+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2024-02-02 23:56+0200\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
@@ -28,7 +28,7 @@ msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "Nepavadintas"
 
-#: src/messagepart.cpp:706 src/messagepart.cpp:751 src/messagepart.cpp:994
+#: src/messagepart.cpp:706 src/messagepart.cpp:751 src/messagepart.cpp:989
 #, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr "Neteisingas šifravimo įskiepis."

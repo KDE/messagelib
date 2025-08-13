@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-27 00:43+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2024-12-20 22:01+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -894,97 +894,6 @@ msgstr "प्रेषयतु"
 msgctxt "@action"
 msgid "Send Deny"
 msgstr "अस्वीकारं प्रेषयतु"
-
-#: messagepartthemes/default/defaultrenderer.cpp:70
-#, kde-format
-msgid "Error: Signature not verified"
-msgstr "त्रुटिः : हस्ताक्षरं सत्यापितं न"
-
-#: messagepartthemes/default/defaultrenderer.cpp:74
-#, kde-format
-msgid "Good signature"
-msgstr "उत्तमहस्ताक्षरम्"
-
-#: messagepartthemes/default/defaultrenderer.cpp:78
-#, kde-format
-msgid "Bad signature"
-msgstr "दुष्टहस्ताक्षरम्"
-
-#: messagepartthemes/default/defaultrenderer.cpp:82
-#, kde-format
-msgid "No public key to verify the signature"
-msgstr "हस्ताक्षरस्य सत्यापनार्थं सार्वजनिककुञ्जी नास्ति"
-
-#: messagepartthemes/default/defaultrenderer.cpp:86
-#, kde-format
-msgid "No signature found"
-msgstr "हस्ताक्षरं न लब्धम्"
-
-#: messagepartthemes/default/defaultrenderer.cpp:90
-#, kde-format
-msgid "Error verifying the signature"
-msgstr "हस्ताक्षरस्य सत्यापने त्रुटिः"
-
-#: messagepartthemes/default/defaultrenderer.cpp:94
-#, kde-format
-msgid "Different results for signatures"
-msgstr "हस्ताक्षराणां कृते भिन्नाः परिणामाः"
-
-#: messagepartthemes/default/defaultrenderer.cpp:114
-#, kde-format
-msgid "No status information available."
-msgstr "स्थितिसूचना उपलब्धा नास्ति।"
-
-#: messagepartthemes/default/defaultrenderer.cpp:121
-#: messagepartthemes/default/defaultrenderer.cpp:206
-#, kde-format
-msgid "Good signature."
-msgstr "उत्तमहस्ताक्षरम्।"
-
-#: messagepartthemes/default/defaultrenderer.cpp:142
-#, kde-format
-msgid "One key has expired."
-msgstr "एकं कीलं समाप्तम् अस्ति।"
-
-#: messagepartthemes/default/defaultrenderer.cpp:146
-#, kde-format
-msgid "The signature has expired."
-msgstr "हस्ताक्षरस्य अवधिः समाप्तः अस्ति।"
-
-#: messagepartthemes/default/defaultrenderer.cpp:151
-#, kde-format
-msgid "Unable to verify: key missing."
-msgstr "सत्यापितुं असमर्थः: कुञ्जी अनुपलब्धा।"
-
-#: messagepartthemes/default/defaultrenderer.cpp:158
-#, kde-format
-msgid "CRL not available."
-msgstr "CRL उपलब्धं नास्ति।"
-
-#: messagepartthemes/default/defaultrenderer.cpp:162
-#, kde-format
-msgid "Available CRL is too old."
-msgstr "उपलब्धः CRL अतीव पुरातनः अस्ति ।"
-
-#: messagepartthemes/default/defaultrenderer.cpp:166
-#, kde-format
-msgid "A policy was not met."
-msgstr "नीतिः न पूरिता ।"
-
-#: messagepartthemes/default/defaultrenderer.cpp:170
-#, kde-format
-msgid "A system error occurred."
-msgstr "प्रणालीदोषः अभवत् ।"
-
-#: messagepartthemes/default/defaultrenderer.cpp:181
-#, kde-format
-msgid "One key has been revoked."
-msgstr "एकं कुञ्जी निरस्तं कृतम् अस्ति।"
-
-#: messagepartthemes/default/defaultrenderer.cpp:208
-#, kde-format
-msgid "Bad signature."
-msgstr "दुष्टहस्ताक्षरम्।"
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, kde-format
@@ -2496,3 +2405,57 @@ msgstr "अग्रिमः सन्देशः"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "पूर्वसन्देशः"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "त्रुटिः : हस्ताक्षरं सत्यापितं न"
+
+#~ msgid "Good signature"
+#~ msgstr "उत्तमहस्ताक्षरम्"
+
+#~ msgid "Bad signature"
+#~ msgstr "दुष्टहस्ताक्षरम्"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "हस्ताक्षरस्य सत्यापनार्थं सार्वजनिककुञ्जी नास्ति"
+
+#~ msgid "No signature found"
+#~ msgstr "हस्ताक्षरं न लब्धम्"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "हस्ताक्षरस्य सत्यापने त्रुटिः"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "हस्ताक्षराणां कृते भिन्नाः परिणामाः"
+
+#~ msgid "No status information available."
+#~ msgstr "स्थितिसूचना उपलब्धा नास्ति।"
+
+#~ msgid "Good signature."
+#~ msgstr "उत्तमहस्ताक्षरम्।"
+
+#~ msgid "One key has expired."
+#~ msgstr "एकं कीलं समाप्तम् अस्ति।"
+
+#~ msgid "The signature has expired."
+#~ msgstr "हस्ताक्षरस्य अवधिः समाप्तः अस्ति।"
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "सत्यापितुं असमर्थः: कुञ्जी अनुपलब्धा।"
+
+#~ msgid "CRL not available."
+#~ msgstr "CRL उपलब्धं नास्ति।"
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "उपलब्धः CRL अतीव पुरातनः अस्ति ।"
+
+#~ msgid "A policy was not met."
+#~ msgstr "नीतिः न पूरिता ।"
+
+#~ msgid "A system error occurred."
+#~ msgstr "प्रणालीदोषः अभवत् ।"
+
+#~ msgid "One key has been revoked."
+#~ msgstr "एकं कुञ्जी निरस्तं कृतम् अस्ति।"
+
+#~ msgid "Bad signature."
+#~ msgstr "दुष्टहस्ताक्षरम्।"

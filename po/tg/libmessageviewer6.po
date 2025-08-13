@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-27 00:43+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2019-09-29 12:28+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -981,99 +981,6 @@ msgstr "&Фиристодан"
 msgctxt "@action"
 msgid "Send Deny"
 msgstr "Фавран фиристодан"
-
-#: messagepartthemes/default/defaultrenderer.cpp:70
-#, kde-format
-msgid "Error: Signature not verified"
-msgstr "Хато: қодир ба озмоиши имзо нестам"
-
-#: messagepartthemes/default/defaultrenderer.cpp:74
-#, kde-format
-msgid "Good signature"
-msgstr "Имзои дуруст"
-
-#: messagepartthemes/default/defaultrenderer.cpp:78
-#, fuzzy, kde-format
-#| msgid "Good signature"
-msgid "Bad signature"
-msgstr "Имзои дуруст"
-
-#: messagepartthemes/default/defaultrenderer.cpp:82
-#, kde-format
-msgid "No public key to verify the signature"
-msgstr "Калиди кушод барои озмоиши имзо мавҷуд нест"
-
-#: messagepartthemes/default/defaultrenderer.cpp:86
-#, kde-format
-msgid "No signature found"
-msgstr "Имзо ёфт нашуд"
-
-#: messagepartthemes/default/defaultrenderer.cpp:90
-#, kde-format
-msgid "Error verifying the signature"
-msgstr "Хатогӣ ҳангоми озмоиши имзо"
-
-#: messagepartthemes/default/defaultrenderer.cpp:94
-#, kde-format
-msgid "Different results for signatures"
-msgstr "Натиҷаҳои гуногун барои имзо"
-
-#: messagepartthemes/default/defaultrenderer.cpp:114
-#, kde-format
-msgid "No status information available."
-msgstr "Иттилооти вазъият мавҷуд нест."
-
-#: messagepartthemes/default/defaultrenderer.cpp:121
-#: messagepartthemes/default/defaultrenderer.cpp:206
-#, kde-format
-msgid "Good signature."
-msgstr "Имзои дуруст."
-
-#: messagepartthemes/default/defaultrenderer.cpp:142
-#, kde-format
-msgid "One key has expired."
-msgstr "Як калид таъхир карда шудааст."
-
-#: messagepartthemes/default/defaultrenderer.cpp:146
-#, kde-format
-msgid "The signature has expired."
-msgstr "Имзо таъхир карда шудааст."
-
-#: messagepartthemes/default/defaultrenderer.cpp:151
-#, kde-format
-msgid "Unable to verify: key missing."
-msgstr "Хатогӣ ҳангоми озмоиш: калид мавҷуд нест."
-
-#: messagepartthemes/default/defaultrenderer.cpp:158
-#, kde-format
-msgid "CRL not available."
-msgstr "CRL дастрас нест."
-
-#: messagepartthemes/default/defaultrenderer.cpp:162
-#, kde-format
-msgid "Available CRL is too old."
-msgstr "CRL-и мавҷудӣ кӯҳна шуд."
-
-#: messagepartthemes/default/defaultrenderer.cpp:166
-#, kde-format
-msgid "A policy was not met."
-msgstr "Дастур мутобиқ нест."
-
-#: messagepartthemes/default/defaultrenderer.cpp:170
-#, kde-format
-msgid "A system error occurred."
-msgstr "Хатои низомӣ рӯй дод."
-
-#: messagepartthemes/default/defaultrenderer.cpp:181
-#, kde-format
-msgid "One key has been revoked."
-msgstr "Якеи аз калидҳо бекор карда шуд."
-
-#: messagepartthemes/default/defaultrenderer.cpp:208
-#, fuzzy, kde-format
-#| msgid "Good signature."
-msgid "Bad signature."
-msgstr "Имзои дуруст."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, fuzzy, kde-format
@@ -2693,6 +2600,64 @@ msgstr "Иттилооти &навбатӣ"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "&Хонданашудаи қаблӣ"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "Хато: қодир ба озмоиши имзо нестам"
+
+#~ msgid "Good signature"
+#~ msgstr "Имзои дуруст"
+
+#, fuzzy
+#~| msgid "Good signature"
+#~ msgid "Bad signature"
+#~ msgstr "Имзои дуруст"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "Калиди кушод барои озмоиши имзо мавҷуд нест"
+
+#~ msgid "No signature found"
+#~ msgstr "Имзо ёфт нашуд"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "Хатогӣ ҳангоми озмоиши имзо"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "Натиҷаҳои гуногун барои имзо"
+
+#~ msgid "No status information available."
+#~ msgstr "Иттилооти вазъият мавҷуд нест."
+
+#~ msgid "Good signature."
+#~ msgstr "Имзои дуруст."
+
+#~ msgid "One key has expired."
+#~ msgstr "Як калид таъхир карда шудааст."
+
+#~ msgid "The signature has expired."
+#~ msgstr "Имзо таъхир карда шудааст."
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "Хатогӣ ҳангоми озмоиш: калид мавҷуд нест."
+
+#~ msgid "CRL not available."
+#~ msgstr "CRL дастрас нест."
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "CRL-и мавҷудӣ кӯҳна шуд."
+
+#~ msgid "A policy was not met."
+#~ msgstr "Дастур мутобиқ нест."
+
+#~ msgid "A system error occurred."
+#~ msgstr "Хатои низомӣ рӯй дод."
+
+#~ msgid "One key has been revoked."
+#~ msgstr "Якеи аз калидҳо бекор карда шуд."
+
+#, fuzzy
+#~| msgid "Good signature."
+#~ msgid "Bad signature."
+#~ msgstr "Имзои дуруст."
 
 #~ msgid "Not enough information to check signature. %1"
 #~ msgstr "Иттилоот барои озмоиши имзо нокифоя аст. %1"

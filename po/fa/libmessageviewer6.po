@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-27 00:43+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2007-09-03 14:00+0330\n"
 "Last-Translator: Nazanin Kazemi <kazemi@itland.ir>\n"
 "Language-Team: Persian <kde-i18n-fa@kde.org>\n"
@@ -1013,99 +1013,6 @@ msgstr "ارسال"
 msgctxt "@action"
 msgid "Send Deny"
 msgstr "هم اکنون ارسال شود"
-
-#: messagepartthemes/default/defaultrenderer.cpp:70
-#, kde-format
-msgid "Error: Signature not verified"
-msgstr "خطا: امضا وارسی نشد"
-
-#: messagepartthemes/default/defaultrenderer.cpp:74
-#, kde-format
-msgid "Good signature"
-msgstr "امضای خوب"
-
-#: messagepartthemes/default/defaultrenderer.cpp:78
-#, fuzzy, kde-format
-#| msgid "Good signature"
-msgid "Bad signature"
-msgstr "امضای خوب"
-
-#: messagepartthemes/default/defaultrenderer.cpp:82
-#, kde-format
-msgid "No public key to verify the signature"
-msgstr "برای وارسی امضا، کلید عمومی وجود ندارد"
-
-#: messagepartthemes/default/defaultrenderer.cpp:86
-#, kde-format
-msgid "No signature found"
-msgstr "امضایی یافت نشد"
-
-#: messagepartthemes/default/defaultrenderer.cpp:90
-#, kde-format
-msgid "Error verifying the signature"
-msgstr "خطای وارسی امضا"
-
-#: messagepartthemes/default/defaultrenderer.cpp:94
-#, kde-format
-msgid "Different results for signatures"
-msgstr "نتایج متفاوت برای امضاها"
-
-#: messagepartthemes/default/defaultrenderer.cpp:114
-#, kde-format
-msgid "No status information available."
-msgstr "اطلاعات وضعیتی وجود ندارد."
-
-#: messagepartthemes/default/defaultrenderer.cpp:121
-#: messagepartthemes/default/defaultrenderer.cpp:206
-#, kde-format
-msgid "Good signature."
-msgstr "امضای خوب."
-
-#: messagepartthemes/default/defaultrenderer.cpp:142
-#, kde-format
-msgid "One key has expired."
-msgstr "یک کلید انقضا یافت."
-
-#: messagepartthemes/default/defaultrenderer.cpp:146
-#, kde-format
-msgid "The signature has expired."
-msgstr "امضا انقضا یافت."
-
-#: messagepartthemes/default/defaultrenderer.cpp:151
-#, kde-format
-msgid "Unable to verify: key missing."
-msgstr "قادر به وارسی نیست: فاقد کلید."
-
-#: messagepartthemes/default/defaultrenderer.cpp:158
-#, kde-format
-msgid "CRL not available."
-msgstr "CRL وجود ندارد."
-
-#: messagepartthemes/default/defaultrenderer.cpp:162
-#, kde-format
-msgid "Available CRL is too old."
-msgstr "CRL موجود، بسیار قدیمی است."
-
-#: messagepartthemes/default/defaultrenderer.cpp:166
-#, kde-format
-msgid "A policy was not met."
-msgstr "سیاستی دیده نشد."
-
-#: messagepartthemes/default/defaultrenderer.cpp:170
-#, kde-format
-msgid "A system error occurred."
-msgstr "یک خطای سیستمی رخ داد."
-
-#: messagepartthemes/default/defaultrenderer.cpp:181
-#, kde-format
-msgid "One key has been revoked."
-msgstr "یک کلید فسخ شده است."
-
-#: messagepartthemes/default/defaultrenderer.cpp:208
-#, fuzzy, kde-format
-#| msgid "Good signature."
-msgid "Bad signature."
-msgstr "امضای خوب."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, fuzzy, kde-format
@@ -2727,6 +2634,64 @@ msgstr "پیام &بعدی‌"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "&پیام خوانده‌نشده قبلی‌"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "خطا: امضا وارسی نشد"
+
+#~ msgid "Good signature"
+#~ msgstr "امضای خوب"
+
+#, fuzzy
+#~| msgid "Good signature"
+#~ msgid "Bad signature"
+#~ msgstr "امضای خوب"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "برای وارسی امضا، کلید عمومی وجود ندارد"
+
+#~ msgid "No signature found"
+#~ msgstr "امضایی یافت نشد"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "خطای وارسی امضا"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "نتایج متفاوت برای امضاها"
+
+#~ msgid "No status information available."
+#~ msgstr "اطلاعات وضعیتی وجود ندارد."
+
+#~ msgid "Good signature."
+#~ msgstr "امضای خوب."
+
+#~ msgid "One key has expired."
+#~ msgstr "یک کلید انقضا یافت."
+
+#~ msgid "The signature has expired."
+#~ msgstr "امضا انقضا یافت."
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "قادر به وارسی نیست: فاقد کلید."
+
+#~ msgid "CRL not available."
+#~ msgstr "CRL وجود ندارد."
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "CRL موجود، بسیار قدیمی است."
+
+#~ msgid "A policy was not met."
+#~ msgstr "سیاستی دیده نشد."
+
+#~ msgid "A system error occurred."
+#~ msgstr "یک خطای سیستمی رخ داد."
+
+#~ msgid "One key has been revoked."
+#~ msgstr "یک کلید فسخ شده است."
+
+#, fuzzy
+#~| msgid "Good signature."
+#~ msgid "Bad signature."
+#~ msgstr "امضای خوب."
 
 #~ msgid "Not enough information to check signature. %1"
 #~ msgstr "اطلاعات ناکافی برای بررسی امضا. %1"

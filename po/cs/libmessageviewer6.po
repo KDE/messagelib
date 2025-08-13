@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-27 00:43+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2024-08-14 11:15+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -900,97 +900,6 @@ msgstr "Odeslat"
 msgctxt "@action"
 msgid "Send Deny"
 msgstr "Odeslat zamítnutí"
-
-#: messagepartthemes/default/defaultrenderer.cpp:70
-#, kde-format
-msgid "Error: Signature not verified"
-msgstr "Chyba: Podpis neověřen"
-
-#: messagepartthemes/default/defaultrenderer.cpp:74
-#, kde-format
-msgid "Good signature"
-msgstr "Správný podpis"
-
-#: messagepartthemes/default/defaultrenderer.cpp:78
-#, kde-format
-msgid "Bad signature"
-msgstr "Chybný podpis"
-
-#: messagepartthemes/default/defaultrenderer.cpp:82
-#, kde-format
-msgid "No public key to verify the signature"
-msgstr "Není k dispozici veřejný klíč k ověření podpisu"
-
-#: messagepartthemes/default/defaultrenderer.cpp:86
-#, kde-format
-msgid "No signature found"
-msgstr "Nebyl nalezen podpis"
-
-#: messagepartthemes/default/defaultrenderer.cpp:90
-#, kde-format
-msgid "Error verifying the signature"
-msgstr "Chyba při ověřování podpisu"
-
-#: messagepartthemes/default/defaultrenderer.cpp:94
-#, kde-format
-msgid "Different results for signatures"
-msgstr "Rozdílné výsledky pro podpisy"
-
-#: messagepartthemes/default/defaultrenderer.cpp:114
-#, kde-format
-msgid "No status information available."
-msgstr "Není k dispozici informace o stavu."
-
-#: messagepartthemes/default/defaultrenderer.cpp:121
-#: messagepartthemes/default/defaultrenderer.cpp:206
-#, kde-format
-msgid "Good signature."
-msgstr "Správný podpis."
-
-#: messagepartthemes/default/defaultrenderer.cpp:142
-#, kde-format
-msgid "One key has expired."
-msgstr "Jeden klíč vypršel."
-
-#: messagepartthemes/default/defaultrenderer.cpp:146
-#, kde-format
-msgid "The signature has expired."
-msgstr "Podpis vypršel."
-
-#: messagepartthemes/default/defaultrenderer.cpp:151
-#, kde-format
-msgid "Unable to verify: key missing."
-msgstr "Nelze ověřit: chybí klíč."
-
-#: messagepartthemes/default/defaultrenderer.cpp:158
-#, kde-format
-msgid "CRL not available."
-msgstr "Není k dispozici CRL."
-
-#: messagepartthemes/default/defaultrenderer.cpp:162
-#, kde-format
-msgid "Available CRL is too old."
-msgstr "Dostupné CRL je příliš staré."
-
-#: messagepartthemes/default/defaultrenderer.cpp:166
-#, kde-format
-msgid "A policy was not met."
-msgstr "Zásada nebyla dodržena."
-
-#: messagepartthemes/default/defaultrenderer.cpp:170
-#, kde-format
-msgid "A system error occurred."
-msgstr "Vyskytla se systémová chyba."
-
-#: messagepartthemes/default/defaultrenderer.cpp:181
-#, kde-format
-msgid "One key has been revoked."
-msgstr "Jeden klíč byl zrušen."
-
-#: messagepartthemes/default/defaultrenderer.cpp:208
-#, kde-format
-msgid "Bad signature."
-msgstr "Chybný podpis."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, kde-format
@@ -2512,3 +2421,57 @@ msgstr "Následující zpráva"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Předchozí zpráva"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "Chyba: Podpis neověřen"
+
+#~ msgid "Good signature"
+#~ msgstr "Správný podpis"
+
+#~ msgid "Bad signature"
+#~ msgstr "Chybný podpis"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "Není k dispozici veřejný klíč k ověření podpisu"
+
+#~ msgid "No signature found"
+#~ msgstr "Nebyl nalezen podpis"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "Chyba při ověřování podpisu"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "Rozdílné výsledky pro podpisy"
+
+#~ msgid "No status information available."
+#~ msgstr "Není k dispozici informace o stavu."
+
+#~ msgid "Good signature."
+#~ msgstr "Správný podpis."
+
+#~ msgid "One key has expired."
+#~ msgstr "Jeden klíč vypršel."
+
+#~ msgid "The signature has expired."
+#~ msgstr "Podpis vypršel."
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "Nelze ověřit: chybí klíč."
+
+#~ msgid "CRL not available."
+#~ msgstr "Není k dispozici CRL."
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "Dostupné CRL je příliš staré."
+
+#~ msgid "A policy was not met."
+#~ msgstr "Zásada nebyla dodržena."
+
+#~ msgid "A system error occurred."
+#~ msgstr "Vyskytla se systémová chyba."
+
+#~ msgid "One key has been revoked."
+#~ msgstr "Jeden klíč byl zrušen."
+
+#~ msgid "Bad signature."
+#~ msgstr "Chybný podpis."

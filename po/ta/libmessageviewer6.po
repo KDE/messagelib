@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-27 00:43+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2025-05-18 19:02+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -912,97 +912,6 @@ msgstr "அனுப்பு"
 msgctxt "@action"
 msgid "Send Deny"
 msgstr "மறுத்த‍தாக பதிலளி"
-
-#: messagepartthemes/default/defaultrenderer.cpp:70
-#, kde-format
-msgid "Error: Signature not verified"
-msgstr "சிக்கல்: கையொப்பம் சரிபார்க்கப்படவில்லை"
-
-#: messagepartthemes/default/defaultrenderer.cpp:74
-#, kde-format
-msgid "Good signature"
-msgstr "செல்லுபடியாகும் கையொப்பம்"
-
-#: messagepartthemes/default/defaultrenderer.cpp:78
-#, kde-format
-msgid "Bad signature"
-msgstr "செல்லுபடியாகாத கையொப்பம்"
-
-#: messagepartthemes/default/defaultrenderer.cpp:82
-#, kde-format
-msgid "No public key to verify the signature"
-msgstr "கையொப்பத்தை சரிபார்க்க எந்த பொது சாவியும் இல்லை"
-
-#: messagepartthemes/default/defaultrenderer.cpp:86
-#, kde-format
-msgid "No signature found"
-msgstr "கையொப்பம் கண்டுபிடிக்கப்படவில்லை"
-
-#: messagepartthemes/default/defaultrenderer.cpp:90
-#, kde-format
-msgid "Error verifying the signature"
-msgstr "கையொப்பத்தை சரிபார்ப்பதில் சிக்கல்"
-
-#: messagepartthemes/default/defaultrenderer.cpp:94
-#, fuzzy, kde-format
-msgid "Different results for signatures"
-msgstr "கையொப்பத்திற்கு வெவ்வேறு விளைவுகள்"
-
-#: messagepartthemes/default/defaultrenderer.cpp:114
-#, kde-format
-msgid "No status information available."
-msgstr "நிலை குறித்த தகவல் இல்லை."
-
-#: messagepartthemes/default/defaultrenderer.cpp:121
-#: messagepartthemes/default/defaultrenderer.cpp:206
-#, kde-format
-msgid "Good signature."
-msgstr "செல்லுபடியாகும் கையொப்பம்."
-
-#: messagepartthemes/default/defaultrenderer.cpp:142
-#, kde-format
-msgid "One key has expired."
-msgstr "ஒரு சாவி காலாவதியாகியுள்ளது."
-
-#: messagepartthemes/default/defaultrenderer.cpp:146
-#, kde-format
-msgid "The signature has expired."
-msgstr "கையொப்பம் காலாவதியாகிவிட்டது."
-
-#: messagepartthemes/default/defaultrenderer.cpp:151
-#, kde-format
-msgid "Unable to verify: key missing."
-msgstr "சரிபார்க்க முடியவில்லை: சாவியைக் காணவில்லை."
-
-#: messagepartthemes/default/defaultrenderer.cpp:158
-#, kde-format
-msgid "CRL not available."
-msgstr "CRL இல்லை."
-
-#: messagepartthemes/default/defaultrenderer.cpp:162
-#, kde-format
-msgid "Available CRL is too old."
-msgstr "இருக்கும் CRL மிக பழையது."
-
-#: messagepartthemes/default/defaultrenderer.cpp:166
-#, kde-format
-msgid "A policy was not met."
-msgstr "ஒரு கொள்கை நிறைவேற்றப்படவில்லை."
-
-#: messagepartthemes/default/defaultrenderer.cpp:170
-#, kde-format
-msgid "A system error occurred."
-msgstr "கணினி சிக்கல் நேர்ந்தது."
-
-#: messagepartthemes/default/defaultrenderer.cpp:181
-#, kde-format
-msgid "One key has been revoked."
-msgstr "ஒரு விசை திரும்பப்பெறப்பட்டுள்ளது"
-
-#: messagepartthemes/default/defaultrenderer.cpp:208
-#, kde-format
-msgid "Bad signature."
-msgstr "செல்லுபடியாகாத கையொப்பம்."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, kde-format
@@ -2524,6 +2433,61 @@ msgstr "அடுத்த அஞ்சல்"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "முந்தைய அஞ்சல்"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "சிக்கல்: கையொப்பம் சரிபார்க்கப்படவில்லை"
+
+#~ msgid "Good signature"
+#~ msgstr "செல்லுபடியாகும் கையொப்பம்"
+
+#~ msgid "Bad signature"
+#~ msgstr "செல்லுபடியாகாத கையொப்பம்"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "கையொப்பத்தை சரிபார்க்க எந்த பொது சாவியும் இல்லை"
+
+#~ msgid "No signature found"
+#~ msgstr "கையொப்பம் கண்டுபிடிக்கப்படவில்லை"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "கையொப்பத்தை சரிபார்ப்பதில் சிக்கல்"
+
+#, fuzzy
+#~ msgid "Different results for signatures"
+#~ msgstr "கையொப்பத்திற்கு வெவ்வேறு விளைவுகள்"
+
+#~ msgid "No status information available."
+#~ msgstr "நிலை குறித்த தகவல் இல்லை."
+
+#~ msgid "Good signature."
+#~ msgstr "செல்லுபடியாகும் கையொப்பம்."
+
+#~ msgid "One key has expired."
+#~ msgstr "ஒரு சாவி காலாவதியாகியுள்ளது."
+
+#~ msgid "The signature has expired."
+#~ msgstr "கையொப்பம் காலாவதியாகிவிட்டது."
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "சரிபார்க்க முடியவில்லை: சாவியைக் காணவில்லை."
+
+#~ msgid "CRL not available."
+#~ msgstr "CRL இல்லை."
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "இருக்கும் CRL மிக பழையது."
+
+#~ msgid "A policy was not met."
+#~ msgstr "ஒரு கொள்கை நிறைவேற்றப்படவில்லை."
+
+#~ msgid "A system error occurred."
+#~ msgstr "கணினி சிக்கல் நேர்ந்தது."
+
+#~ msgid "One key has been revoked."
+#~ msgstr "ஒரு விசை திரும்பப்பெறப்பட்டுள்ளது"
+
+#~ msgid "Bad signature."
+#~ msgstr "செல்லுபடியாகாத கையொப்பம்."
 
 #~ msgid "Not enough information to check signature. %1"
 #~ msgstr "கையொப்பத்தை சரிபார்க்க போதுமான விவரங்கள் இல்லை. %1"

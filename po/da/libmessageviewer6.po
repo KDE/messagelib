@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-27 00:43+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2020-07-31 19:58+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -924,97 +924,6 @@ msgstr "Send"
 msgctxt "@action"
 msgid "Send Deny"
 msgstr "Send nu"
-
-#: messagepartthemes/default/defaultrenderer.cpp:70
-#, kde-format
-msgid "Error: Signature not verified"
-msgstr "Fejl: Signatur ikke verificeret"
-
-#: messagepartthemes/default/defaultrenderer.cpp:74
-#, kde-format
-msgid "Good signature"
-msgstr "God signatur"
-
-#: messagepartthemes/default/defaultrenderer.cpp:78
-#, kde-format
-msgid "Bad signature"
-msgstr "Dårlig signatur"
-
-#: messagepartthemes/default/defaultrenderer.cpp:82
-#, kde-format
-msgid "No public key to verify the signature"
-msgstr "Ingen offentlig nøgle til at verificere signaturen"
-
-#: messagepartthemes/default/defaultrenderer.cpp:86
-#, kde-format
-msgid "No signature found"
-msgstr "Ingen signatur fundet"
-
-#: messagepartthemes/default/defaultrenderer.cpp:90
-#, kde-format
-msgid "Error verifying the signature"
-msgstr "Fejl ved verifikation af signaturen"
-
-#: messagepartthemes/default/defaultrenderer.cpp:94
-#, kde-format
-msgid "Different results for signatures"
-msgstr "Forskellige resultater for signaturer"
-
-#: messagepartthemes/default/defaultrenderer.cpp:114
-#, kde-format
-msgid "No status information available."
-msgstr "Ingen statusinformation tilgængelig."
-
-#: messagepartthemes/default/defaultrenderer.cpp:121
-#: messagepartthemes/default/defaultrenderer.cpp:206
-#, kde-format
-msgid "Good signature."
-msgstr "God signatur."
-
-#: messagepartthemes/default/defaultrenderer.cpp:142
-#, kde-format
-msgid "One key has expired."
-msgstr "Én nøgle er udløbet."
-
-#: messagepartthemes/default/defaultrenderer.cpp:146
-#, kde-format
-msgid "The signature has expired."
-msgstr "Signaturen er udløbet."
-
-#: messagepartthemes/default/defaultrenderer.cpp:151
-#, kde-format
-msgid "Unable to verify: key missing."
-msgstr "Kan ikke verificere: nøgle mangler."
-
-#: messagepartthemes/default/defaultrenderer.cpp:158
-#, kde-format
-msgid "CRL not available."
-msgstr "CRL ikke tilgængelig"
-
-#: messagepartthemes/default/defaultrenderer.cpp:162
-#, kde-format
-msgid "Available CRL is too old."
-msgstr "Tilgængelig CRL er for gammel."
-
-#: messagepartthemes/default/defaultrenderer.cpp:166
-#, kde-format
-msgid "A policy was not met."
-msgstr "En politik blev ikke mødt."
-
-#: messagepartthemes/default/defaultrenderer.cpp:170
-#, kde-format
-msgid "A system error occurred."
-msgstr "Der opstod en systemfejl."
-
-#: messagepartthemes/default/defaultrenderer.cpp:181
-#, kde-format
-msgid "One key has been revoked."
-msgstr "Én nøgle er blevet inddraget."
-
-#: messagepartthemes/default/defaultrenderer.cpp:208
-#, kde-format
-msgid "Bad signature."
-msgstr "Dårlig signatur."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, fuzzy, kde-format
@@ -2604,6 +2513,60 @@ msgstr "Næste brev"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Forrige brev"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "Fejl: Signatur ikke verificeret"
+
+#~ msgid "Good signature"
+#~ msgstr "God signatur"
+
+#~ msgid "Bad signature"
+#~ msgstr "Dårlig signatur"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "Ingen offentlig nøgle til at verificere signaturen"
+
+#~ msgid "No signature found"
+#~ msgstr "Ingen signatur fundet"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "Fejl ved verifikation af signaturen"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "Forskellige resultater for signaturer"
+
+#~ msgid "No status information available."
+#~ msgstr "Ingen statusinformation tilgængelig."
+
+#~ msgid "Good signature."
+#~ msgstr "God signatur."
+
+#~ msgid "One key has expired."
+#~ msgstr "Én nøgle er udløbet."
+
+#~ msgid "The signature has expired."
+#~ msgstr "Signaturen er udløbet."
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "Kan ikke verificere: nøgle mangler."
+
+#~ msgid "CRL not available."
+#~ msgstr "CRL ikke tilgængelig"
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "Tilgængelig CRL er for gammel."
+
+#~ msgid "A policy was not met."
+#~ msgstr "En politik blev ikke mødt."
+
+#~ msgid "A system error occurred."
+#~ msgstr "Der opstod en systemfejl."
+
+#~ msgid "One key has been revoked."
+#~ msgstr "Én nøgle er blevet inddraget."
+
+#~ msgid "Bad signature."
+#~ msgstr "Dårlig signatur."
 
 #~ msgid "Not enough information to check signature. %1"
 #~ msgstr "Ikke nok information til at tjekke signaturen. %1"

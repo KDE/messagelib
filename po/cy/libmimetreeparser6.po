@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-03 00:39+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2004-02-25 13:47+0000\n"
 "Last-Translator: KD at KGyfieithu <kyfieithu@dotmon.com>\n"
 "Language-Team: Cymraeg <cy@li.org>\n"
@@ -28,7 +28,7 @@ msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "Heb ei enwi"
 
-#: src/messagepart.cpp:706 src/messagepart.cpp:751 src/messagepart.cpp:994
+#: src/messagepart.cpp:706 src/messagepart.cpp:751 src/messagepart.cpp:989
 #, fuzzy, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr "Rhaglennig Celu Anghywir!"

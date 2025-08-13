@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-27 00:43+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2012-12-31 11:12+0700\n"
 "Last-Translator: sutha <sutha@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros>\n"
@@ -959,99 +959,6 @@ msgstr "អ្នកផ្ញើ ៖ "
 msgctxt "@action"
 msgid "Send Deny"
 msgstr "អ្នកផ្ញើ ៖ "
-
-#: messagepartthemes/default/defaultrenderer.cpp:70
-#, kde-format
-msgid "Error: Signature not verified"
-msgstr "មាន​កំហុស ៖ មិនបាន​បញ្ជាក់​ហត្ថលេខាឡើយ"
-
-#: messagepartthemes/default/defaultrenderer.cpp:74
-#, kde-format
-msgid "Good signature"
-msgstr "ហត្ថលេខា​ដែល​ល្អ"
-
-#: messagepartthemes/default/defaultrenderer.cpp:78
-#, fuzzy, kde-format
-#| msgid "Good signature"
-msgid "Bad signature"
-msgstr "ហត្ថលេខា​ដែល​ល្អ"
-
-#: messagepartthemes/default/defaultrenderer.cpp:82
-#, kde-format
-msgid "No public key to verify the signature"
-msgstr "គ្មាន​សាធារណៈ​ដែល​ត្រូវ​ផ្ទៀងផ្ទាត់​ហត្ថលេខាឡើយ"
-
-#: messagepartthemes/default/defaultrenderer.cpp:86
-#, kde-format
-msgid "No signature found"
-msgstr "គ្មាន​ហត្ថលេខា​ដែល​រកឃើញ​ឡើយ"
-
-#: messagepartthemes/default/defaultrenderer.cpp:90
-#, kde-format
-msgid "Error verifying the signature"
-msgstr "មាន​កំហុស​នៅខណៈ​ពេល​ដែល​កំពុង​ផ្ទៀងផ្ទាត់​ហត្ថលេខា"
-
-#: messagepartthemes/default/defaultrenderer.cpp:94
-#, kde-format
-msgid "Different results for signatures"
-msgstr "លទ្ធផល​ផ្សេងគ្នា​ សម្រាប់​ហត្ថលេខា"
-
-#: messagepartthemes/default/defaultrenderer.cpp:114
-#, kde-format
-msgid "No status information available."
-msgstr "មិនមាន​ព័ត៌មាន​ស្ថានភាពឡើយ ។"
-
-#: messagepartthemes/default/defaultrenderer.cpp:121
-#: messagepartthemes/default/defaultrenderer.cpp:206
-#, kde-format
-msgid "Good signature."
-msgstr "ហត្ថលេខា​ល្អ ។"
-
-#: messagepartthemes/default/defaultrenderer.cpp:142
-#, kde-format
-msgid "One key has expired."
-msgstr "សោ​មួយ​បាន​ផុតកំណត់​ហើយ ។"
-
-#: messagepartthemes/default/defaultrenderer.cpp:146
-#, kde-format
-msgid "The signature has expired."
-msgstr "ហត្ថលេខា​បាន​ផុត​កំណត់​ហើយ ។"
-
-#: messagepartthemes/default/defaultrenderer.cpp:151
-#, kde-format
-msgid "Unable to verify: key missing."
-msgstr "មិនអាចផ្ទៀងផ្ទាត់បាន ៖ បាត់បង់សោ ។"
-
-#: messagepartthemes/default/defaultrenderer.cpp:158
-#, kde-format
-msgid "CRL not available."
-msgstr "មិនមាន CRL ។"
-
-#: messagepartthemes/default/defaultrenderer.cpp:162
-#, kde-format
-msgid "Available CRL is too old."
-msgstr "CRL ដែល​មាន​ គឺ​ចាស់​ពេក ។"
-
-#: messagepartthemes/default/defaultrenderer.cpp:166
-#, kde-format
-msgid "A policy was not met."
-msgstr "មិបានជួប​គោលការណ៍ឡើយ ។"
-
-#: messagepartthemes/default/defaultrenderer.cpp:170
-#, kde-format
-msgid "A system error occurred."
-msgstr "កំហុស​ប្រព័ន្ធ​បាន​កើត​មានឡើយ ។"
-
-#: messagepartthemes/default/defaultrenderer.cpp:181
-#, kde-format
-msgid "One key has been revoked."
-msgstr "សោ​មួយ​ត្រូវបាន​ដកហូតវិញ ។"
-
-#: messagepartthemes/default/defaultrenderer.cpp:208
-#, fuzzy, kde-format
-#| msgid "Good signature."
-msgid "Bad signature."
-msgstr "ហត្ថលេខា​ល្អ ។"
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, fuzzy, kde-format
@@ -2615,6 +2522,64 @@ msgstr "រក្សា​ទុក​សារ​"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "ឌិគ្រីប​សារ"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "មាន​កំហុស ៖ មិនបាន​បញ្ជាក់​ហត្ថលេខាឡើយ"
+
+#~ msgid "Good signature"
+#~ msgstr "ហត្ថលេខា​ដែល​ល្អ"
+
+#, fuzzy
+#~| msgid "Good signature"
+#~ msgid "Bad signature"
+#~ msgstr "ហត្ថលេខា​ដែល​ល្អ"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "គ្មាន​សាធារណៈ​ដែល​ត្រូវ​ផ្ទៀងផ្ទាត់​ហត្ថលេខាឡើយ"
+
+#~ msgid "No signature found"
+#~ msgstr "គ្មាន​ហត្ថលេខា​ដែល​រកឃើញ​ឡើយ"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "មាន​កំហុស​នៅខណៈ​ពេល​ដែល​កំពុង​ផ្ទៀងផ្ទាត់​ហត្ថលេខា"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "លទ្ធផល​ផ្សេងគ្នា​ សម្រាប់​ហត្ថលេខា"
+
+#~ msgid "No status information available."
+#~ msgstr "មិនមាន​ព័ត៌មាន​ស្ថានភាពឡើយ ។"
+
+#~ msgid "Good signature."
+#~ msgstr "ហត្ថលេខា​ល្អ ។"
+
+#~ msgid "One key has expired."
+#~ msgstr "សោ​មួយ​បាន​ផុតកំណត់​ហើយ ។"
+
+#~ msgid "The signature has expired."
+#~ msgstr "ហត្ថលេខា​បាន​ផុត​កំណត់​ហើយ ។"
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "មិនអាចផ្ទៀងផ្ទាត់បាន ៖ បាត់បង់សោ ។"
+
+#~ msgid "CRL not available."
+#~ msgstr "មិនមាន CRL ។"
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "CRL ដែល​មាន​ គឺ​ចាស់​ពេក ។"
+
+#~ msgid "A policy was not met."
+#~ msgstr "មិបានជួប​គោលការណ៍ឡើយ ។"
+
+#~ msgid "A system error occurred."
+#~ msgstr "កំហុស​ប្រព័ន្ធ​បាន​កើត​មានឡើយ ។"
+
+#~ msgid "One key has been revoked."
+#~ msgstr "សោ​មួយ​ត្រូវបាន​ដកហូតវិញ ។"
+
+#, fuzzy
+#~| msgid "Good signature."
+#~ msgid "Bad signature."
+#~ msgstr "ហត្ថលេខា​ល្អ ។"
 
 #~ msgid "Not enough information to check signature. %1"
 #~ msgstr "គ្មាន​ព័ត៌មាន​គ្រប់គ្រាន់​ដើម្បី​ពិនិត្យ​ហត្ថលេខាទេ ។ %1"

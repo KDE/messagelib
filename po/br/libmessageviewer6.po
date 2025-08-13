@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail-1.1\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-27 00:43+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2005-01-23 05:51+0100\n"
 "Last-Translator: Jañ-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
@@ -969,101 +969,6 @@ msgstr "Kas"
 msgctxt "@action"
 msgid "Send Deny"
 msgstr "Kas bremañ"
-
-#: messagepartthemes/default/defaultrenderer.cpp:70
-#, fuzzy, kde-format
-msgid "Error: Signature not verified"
-msgstr "Dibab restr ar sinadur"
-
-#: messagepartthemes/default/defaultrenderer.cpp:74
-#, kde-format
-msgid "Good signature"
-msgstr "Sinadur mat"
-
-#: messagepartthemes/default/defaultrenderer.cpp:78
-#, fuzzy, kde-format
-#| msgid "Good signature"
-msgid "Bad signature"
-msgstr "Sinadur mat"
-
-#: messagepartthemes/default/defaultrenderer.cpp:82
-#, fuzzy, kde-format
-#| msgid "Error verifying the signature"
-msgid "No public key to verify the signature"
-msgstr "Fazi en ur gwiriekaat ar sinadur"
-
-#: messagepartthemes/default/defaultrenderer.cpp:86
-#, kde-format
-msgid "No signature found"
-msgstr "N'eo ket bet kavet ur sinadur"
-
-#: messagepartthemes/default/defaultrenderer.cpp:90
-#, kde-format
-msgid "Error verifying the signature"
-msgstr "Fazi en ur gwiriekaat ar sinadur"
-
-#: messagepartthemes/default/defaultrenderer.cpp:94
-#, kde-format
-msgid "Different results for signatures"
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:114
-#, fuzzy, kde-format
-msgid "No status information available."
-msgstr "N'eus postel nevez ebet"
-
-#: messagepartthemes/default/defaultrenderer.cpp:121
-#: messagepartthemes/default/defaultrenderer.cpp:206
-#, kde-format
-msgid "Good signature."
-msgstr "Sinadur mat ."
-
-#: messagepartthemes/default/defaultrenderer.cpp:142
-#, kde-format
-msgid "One key has expired."
-msgstr "Kabac'het eo an alc'hwez."
-
-#: messagepartthemes/default/defaultrenderer.cpp:146
-#, kde-format
-msgid "The signature has expired."
-msgstr "Kabac'het eo ar sinadur."
-
-#: messagepartthemes/default/defaultrenderer.cpp:151
-#, kde-format
-msgid "Unable to verify: key missing."
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:158
-#, kde-format
-msgid "CRL not available."
-msgstr "N'eo ket da gaout CRL."
-
-#: messagepartthemes/default/defaultrenderer.cpp:162
-#, kde-format
-msgid "Available CRL is too old."
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:166
-#, kde-format
-msgid "A policy was not met."
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:170
-#, kde-format
-msgid "A system error occurred."
-msgstr "Degouezhet ez eus ur fazi reizhiad."
-
-#: messagepartthemes/default/defaultrenderer.cpp:181
-#, fuzzy, kde-format
-#| msgid "One key has expired."
-msgid "One key has been revoked."
-msgstr "Kabac'het eo an alc'hwez."
-
-#: messagepartthemes/default/defaultrenderer.cpp:208
-#, fuzzy, kde-format
-#| msgid "Good signature."
-msgid "Bad signature."
-msgstr "Sinadur mat ."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, fuzzy, kde-format
@@ -2632,6 +2537,58 @@ msgstr "Kemennad a &heul"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "&Kemennad anlennet diaraok"
+
+#, fuzzy
+#~ msgid "Error: Signature not verified"
+#~ msgstr "Dibab restr ar sinadur"
+
+#~ msgid "Good signature"
+#~ msgstr "Sinadur mat"
+
+#, fuzzy
+#~| msgid "Good signature"
+#~ msgid "Bad signature"
+#~ msgstr "Sinadur mat"
+
+#, fuzzy
+#~| msgid "Error verifying the signature"
+#~ msgid "No public key to verify the signature"
+#~ msgstr "Fazi en ur gwiriekaat ar sinadur"
+
+#~ msgid "No signature found"
+#~ msgstr "N'eo ket bet kavet ur sinadur"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "Fazi en ur gwiriekaat ar sinadur"
+
+#, fuzzy
+#~ msgid "No status information available."
+#~ msgstr "N'eus postel nevez ebet"
+
+#~ msgid "Good signature."
+#~ msgstr "Sinadur mat ."
+
+#~ msgid "One key has expired."
+#~ msgstr "Kabac'het eo an alc'hwez."
+
+#~ msgid "The signature has expired."
+#~ msgstr "Kabac'het eo ar sinadur."
+
+#~ msgid "CRL not available."
+#~ msgstr "N'eo ket da gaout CRL."
+
+#~ msgid "A system error occurred."
+#~ msgstr "Degouezhet ez eus ur fazi reizhiad."
+
+#, fuzzy
+#~| msgid "One key has expired."
+#~ msgid "One key has been revoked."
+#~ msgstr "Kabac'het eo an alc'hwez."
+
+#, fuzzy
+#~| msgid "Good signature."
+#~ msgid "Bad signature."
+#~ msgstr "Sinadur mat ."
 
 #~ msgid "Message was signed by %1."
 #~ msgstr "Sinet eo bet ar c'hemennad gant %1."

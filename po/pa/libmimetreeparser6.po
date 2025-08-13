@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-03 00:39+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2009-01-18 17:38+0530\n"
 "Last-Translator: Amanpreet Singh Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjab-l10n@list.sf.net>\n"
@@ -28,7 +28,7 @@ msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "ਬਿਨ-ਨਾਂ"
 
-#: src/messagepart.cpp:706 src/messagepart.cpp:751 src/messagepart.cpp:994
+#: src/messagepart.cpp:706 src/messagepart.cpp:751 src/messagepart.cpp:989
 #, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr "ਗਲਤ ਕਰਿਪ-ਟੂ ਪਲੱਗਇਨ ਹੈ।"

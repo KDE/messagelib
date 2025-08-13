@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-27 00:43+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2012-01-28 16:35-0800\n"
 "Last-Translator: Fumiaki Okushi <okushi@kde.gr.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -963,99 +963,6 @@ msgstr "送信者: "
 msgctxt "@action"
 msgid "Send Deny"
 msgstr "送信者: "
-
-#: messagepartthemes/default/defaultrenderer.cpp:70
-#, kde-format
-msgid "Error: Signature not verified"
-msgstr "エラー: 署名は検証されていません"
-
-#: messagepartthemes/default/defaultrenderer.cpp:74
-#, kde-format
-msgid "Good signature"
-msgstr "有効な署名"
-
-#: messagepartthemes/default/defaultrenderer.cpp:78
-#, fuzzy, kde-format
-#| msgid "Good signature"
-msgid "Bad signature"
-msgstr "有効な署名"
-
-#: messagepartthemes/default/defaultrenderer.cpp:82
-#, kde-format
-msgid "No public key to verify the signature"
-msgstr "この署名を検証するための公開鍵がありません"
-
-#: messagepartthemes/default/defaultrenderer.cpp:86
-#, kde-format
-msgid "No signature found"
-msgstr "署名が見つかりません"
-
-#: messagepartthemes/default/defaultrenderer.cpp:90
-#, kde-format
-msgid "Error verifying the signature"
-msgstr "署名の検証でエラー"
-
-#: messagepartthemes/default/defaultrenderer.cpp:94
-#, kde-format
-msgid "Different results for signatures"
-msgstr "署名によって異なる検証結果"
-
-#: messagepartthemes/default/defaultrenderer.cpp:114
-#, kde-format
-msgid "No status information available."
-msgstr "利用可能な状態情報がありません。"
-
-#: messagepartthemes/default/defaultrenderer.cpp:121
-#: messagepartthemes/default/defaultrenderer.cpp:206
-#, kde-format
-msgid "Good signature."
-msgstr "有効な署名です。"
-
-#: messagepartthemes/default/defaultrenderer.cpp:142
-#, kde-format
-msgid "One key has expired."
-msgstr "一つの鍵が失効しています。"
-
-#: messagepartthemes/default/defaultrenderer.cpp:146
-#, kde-format
-msgid "The signature has expired."
-msgstr "署名は失効しています。"
-
-#: messagepartthemes/default/defaultrenderer.cpp:151
-#, kde-format
-msgid "Unable to verify: key missing."
-msgstr "検証できません: 鍵がありません。"
-
-#: messagepartthemes/default/defaultrenderer.cpp:158
-#, kde-format
-msgid "CRL not available."
-msgstr "利用可能な CRL がありません。"
-
-#: messagepartthemes/default/defaultrenderer.cpp:162
-#, kde-format
-msgid "Available CRL is too old."
-msgstr "利用可能な CRL は古すぎます。"
-
-#: messagepartthemes/default/defaultrenderer.cpp:166
-#, kde-format
-msgid "A policy was not met."
-msgstr "ポリシーに合致しません。"
-
-#: messagepartthemes/default/defaultrenderer.cpp:170
-#, kde-format
-msgid "A system error occurred."
-msgstr "システムエラーが発生しました。"
-
-#: messagepartthemes/default/defaultrenderer.cpp:181
-#, kde-format
-msgid "One key has been revoked."
-msgstr "一つの鍵が破棄されています。"
-
-#: messagepartthemes/default/defaultrenderer.cpp:208
-#, fuzzy, kde-format
-#| msgid "Good signature."
-msgid "Bad signature."
-msgstr "有効な署名です。"
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, kde-format
@@ -2618,6 +2525,64 @@ msgstr "メッセージを保存(&S)"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "前のカード(&P)"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "エラー: 署名は検証されていません"
+
+#~ msgid "Good signature"
+#~ msgstr "有効な署名"
+
+#, fuzzy
+#~| msgid "Good signature"
+#~ msgid "Bad signature"
+#~ msgstr "有効な署名"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "この署名を検証するための公開鍵がありません"
+
+#~ msgid "No signature found"
+#~ msgstr "署名が見つかりません"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "署名の検証でエラー"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "署名によって異なる検証結果"
+
+#~ msgid "No status information available."
+#~ msgstr "利用可能な状態情報がありません。"
+
+#~ msgid "Good signature."
+#~ msgstr "有効な署名です。"
+
+#~ msgid "One key has expired."
+#~ msgstr "一つの鍵が失効しています。"
+
+#~ msgid "The signature has expired."
+#~ msgstr "署名は失効しています。"
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "検証できません: 鍵がありません。"
+
+#~ msgid "CRL not available."
+#~ msgstr "利用可能な CRL がありません。"
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "利用可能な CRL は古すぎます。"
+
+#~ msgid "A policy was not met."
+#~ msgstr "ポリシーに合致しません。"
+
+#~ msgid "A system error occurred."
+#~ msgstr "システムエラーが発生しました。"
+
+#~ msgid "One key has been revoked."
+#~ msgstr "一つの鍵が破棄されています。"
+
+#, fuzzy
+#~| msgid "Good signature."
+#~ msgid "Bad signature."
+#~ msgstr "有効な署名です。"
 
 #~ msgid "Not enough information to check signature. %1"
 #~ msgstr "署名をチェックするために十分な情報がありません。%1"

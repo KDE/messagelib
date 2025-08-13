@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-27 00:43+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2025-07-26 13:40-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -908,97 +908,6 @@ msgstr "Enviar"
 msgctxt "@action"
 msgid "Send Deny"
 msgstr "Enviar recusado"
-
-#: messagepartthemes/default/defaultrenderer.cpp:70
-#, kde-format
-msgid "Error: Signature not verified"
-msgstr "Erro: A assinatura não foi verificada"
-
-#: messagepartthemes/default/defaultrenderer.cpp:74
-#, kde-format
-msgid "Good signature"
-msgstr "Assinatura válida"
-
-#: messagepartthemes/default/defaultrenderer.cpp:78
-#, kde-format
-msgid "Bad signature"
-msgstr "Assinatura inválida"
-
-#: messagepartthemes/default/defaultrenderer.cpp:82
-#, kde-format
-msgid "No public key to verify the signature"
-msgstr "Sem chave pública para verificar a assinatura"
-
-#: messagepartthemes/default/defaultrenderer.cpp:86
-#, kde-format
-msgid "No signature found"
-msgstr "Nenhuma assinatura encontrada"
-
-#: messagepartthemes/default/defaultrenderer.cpp:90
-#, kde-format
-msgid "Error verifying the signature"
-msgstr "Erro ao verificar a assinatura"
-
-#: messagepartthemes/default/defaultrenderer.cpp:94
-#, kde-format
-msgid "Different results for signatures"
-msgstr "Resultados diferentes para as assinaturas"
-
-#: messagepartthemes/default/defaultrenderer.cpp:114
-#, kde-format
-msgid "No status information available."
-msgstr "Sem informações de status disponíveis."
-
-#: messagepartthemes/default/defaultrenderer.cpp:121
-#: messagepartthemes/default/defaultrenderer.cpp:206
-#, kde-format
-msgid "Good signature."
-msgstr "Assinatura válida."
-
-#: messagepartthemes/default/defaultrenderer.cpp:142
-#, kde-format
-msgid "One key has expired."
-msgstr "Uma chave expirou."
-
-#: messagepartthemes/default/defaultrenderer.cpp:146
-#, kde-format
-msgid "The signature has expired."
-msgstr "A assinatura expirou."
-
-#: messagepartthemes/default/defaultrenderer.cpp:151
-#, kde-format
-msgid "Unable to verify: key missing."
-msgstr "Impossível verificar: faltando uma chave."
-
-#: messagepartthemes/default/defaultrenderer.cpp:158
-#, kde-format
-msgid "CRL not available."
-msgstr "CRL não disponível."
-
-#: messagepartthemes/default/defaultrenderer.cpp:162
-#, kde-format
-msgid "Available CRL is too old."
-msgstr "A CRL disponível é muito antiga."
-
-#: messagepartthemes/default/defaultrenderer.cpp:166
-#, kde-format
-msgid "A policy was not met."
-msgstr "Não foi encontrada uma política."
-
-#: messagepartthemes/default/defaultrenderer.cpp:170
-#, kde-format
-msgid "A system error occurred."
-msgstr "Ocorreu um erro de sistema."
-
-#: messagepartthemes/default/defaultrenderer.cpp:181
-#, kde-format
-msgid "One key has been revoked."
-msgstr "Uma chave foi revogada."
-
-#: messagepartthemes/default/defaultrenderer.cpp:208
-#, kde-format
-msgid "Bad signature."
-msgstr "Assinatura inválida."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, kde-format
@@ -2549,6 +2458,60 @@ msgstr "Próxima mensagem"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Mensagem anterior"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "Erro: A assinatura não foi verificada"
+
+#~ msgid "Good signature"
+#~ msgstr "Assinatura válida"
+
+#~ msgid "Bad signature"
+#~ msgstr "Assinatura inválida"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "Sem chave pública para verificar a assinatura"
+
+#~ msgid "No signature found"
+#~ msgstr "Nenhuma assinatura encontrada"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "Erro ao verificar a assinatura"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "Resultados diferentes para as assinaturas"
+
+#~ msgid "No status information available."
+#~ msgstr "Sem informações de status disponíveis."
+
+#~ msgid "Good signature."
+#~ msgstr "Assinatura válida."
+
+#~ msgid "One key has expired."
+#~ msgstr "Uma chave expirou."
+
+#~ msgid "The signature has expired."
+#~ msgstr "A assinatura expirou."
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "Impossível verificar: faltando uma chave."
+
+#~ msgid "CRL not available."
+#~ msgstr "CRL não disponível."
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "A CRL disponível é muito antiga."
+
+#~ msgid "A policy was not met."
+#~ msgstr "Não foi encontrada uma política."
+
+#~ msgid "A system error occurred."
+#~ msgstr "Ocorreu um erro de sistema."
+
+#~ msgid "One key has been revoked."
+#~ msgstr "Uma chave foi revogada."
+
+#~ msgid "Bad signature."
+#~ msgstr "Assinatura inválida."
 
 #~ msgid "Not enough information to check signature. %1"
 #~ msgstr "Não há informações suficientes para verificar a assinatura. %1"

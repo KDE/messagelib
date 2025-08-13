@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-27 00:43+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2011-08-15 08:58+0200\n"
 "Last-Translator: Jean Cayron <jean.cayron@base.be>\n"
 "Language-Team: Walloon <linux-wa@walon.org>\n"
@@ -989,102 +989,6 @@ msgstr "Evoyî"
 msgctxt "@action"
 msgid "Send Deny"
 msgstr "Evoyî sol côp"
-
-#: messagepartthemes/default/defaultrenderer.cpp:70
-#, kde-format
-msgid "Error: Signature not verified"
-msgstr "Aroke: Sinateure nén verifieye"
-
-#: messagepartthemes/default/defaultrenderer.cpp:74
-#, kde-format
-msgid "Good signature"
-msgstr "Boune sinateure"
-
-#: messagepartthemes/default/defaultrenderer.cpp:78
-#, fuzzy, kde-format
-#| msgid "Good signature"
-msgid "Bad signature"
-msgstr "Boune sinateure"
-
-#: messagepartthemes/default/defaultrenderer.cpp:82
-#, kde-format
-msgid "No public key to verify the signature"
-msgstr "Pont d' clé publike po verifyî l' sinateure"
-
-#: messagepartthemes/default/defaultrenderer.cpp:86
-#, kde-format
-msgid "No signature found"
-msgstr "Nole sinateure di trovêye"
-
-#: messagepartthemes/default/defaultrenderer.cpp:90
-#, kde-format
-msgid "Error verifying the signature"
-msgstr "Åk n' a nén stî tot verifiant l' sinateure"
-
-#: messagepartthemes/default/defaultrenderer.cpp:94
-#, kde-format
-msgid "Different results for signatures"
-msgstr "Diferin rzultat po les sinateures"
-
-#: messagepartthemes/default/defaultrenderer.cpp:114
-#, fuzzy, kde-format
-msgid "No status information available."
-msgstr "Åk n' a nén stî come dj' eberwetéve li ridant"
-
-#: messagepartthemes/default/defaultrenderer.cpp:121
-#: messagepartthemes/default/defaultrenderer.cpp:206
-#, kde-format
-msgid "Good signature."
-msgstr "Boune sinateure."
-
-#: messagepartthemes/default/defaultrenderer.cpp:142
-#, fuzzy, kde-format
-#| msgid "OpenPGP Key Expires Soon"
-msgid "One key has expired."
-msgstr "Li clé OpenPGP espire bén rade"
-
-#: messagepartthemes/default/defaultrenderer.cpp:146
-#, fuzzy, kde-format
-#| msgid "Warning: The signature is bad."
-msgid "The signature has expired."
-msgstr "Asteme: Li sinateure est mwaijhe."
-
-#: messagepartthemes/default/defaultrenderer.cpp:151
-#, kde-format
-msgid "Unable to verify: key missing."
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:158
-#, fuzzy, kde-format
-msgid "CRL not available."
-msgstr "I gn a pupont d' lingaedjes"
-
-#: messagepartthemes/default/defaultrenderer.cpp:162
-#, kde-format
-msgid "Available CRL is too old."
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:166
-#, kde-format
-msgid "A policy was not met."
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:170
-#, kde-format
-msgid "A system error occurred."
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:181
-#, fuzzy, kde-format
-#| msgid "OpenPGP Key Expires Soon"
-msgid "One key has been revoked."
-msgstr "Li clé OpenPGP espire bén rade"
-
-#: messagepartthemes/default/defaultrenderer.cpp:208
-#, fuzzy, kde-format
-#| msgid "Good signature."
-msgid "Bad signature."
-msgstr "Boune sinateure."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, fuzzy, kde-format
@@ -2687,6 +2591,60 @@ msgstr "Messaedje &shuvant"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "&Messaedje di dvant nén léjhou"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "Aroke: Sinateure nén verifieye"
+
+#~ msgid "Good signature"
+#~ msgstr "Boune sinateure"
+
+#, fuzzy
+#~| msgid "Good signature"
+#~ msgid "Bad signature"
+#~ msgstr "Boune sinateure"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "Pont d' clé publike po verifyî l' sinateure"
+
+#~ msgid "No signature found"
+#~ msgstr "Nole sinateure di trovêye"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "Åk n' a nén stî tot verifiant l' sinateure"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "Diferin rzultat po les sinateures"
+
+#, fuzzy
+#~ msgid "No status information available."
+#~ msgstr "Åk n' a nén stî come dj' eberwetéve li ridant"
+
+#~ msgid "Good signature."
+#~ msgstr "Boune sinateure."
+
+#, fuzzy
+#~| msgid "OpenPGP Key Expires Soon"
+#~ msgid "One key has expired."
+#~ msgstr "Li clé OpenPGP espire bén rade"
+
+#, fuzzy
+#~| msgid "Warning: The signature is bad."
+#~ msgid "The signature has expired."
+#~ msgstr "Asteme: Li sinateure est mwaijhe."
+
+#, fuzzy
+#~ msgid "CRL not available."
+#~ msgstr "I gn a pupont d' lingaedjes"
+
+#, fuzzy
+#~| msgid "OpenPGP Key Expires Soon"
+#~ msgid "One key has been revoked."
+#~ msgstr "Li clé OpenPGP espire bén rade"
+
+#, fuzzy
+#~| msgid "Good signature."
+#~ msgid "Bad signature."
+#~ msgstr "Boune sinateure."
 
 #~ msgid "Message was signed by %1."
 #~ msgstr "Li messaedje a stî siné di %1."

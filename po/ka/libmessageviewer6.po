@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-27 00:43+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2025-05-18 03:34+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -898,97 +898,6 @@ msgstr "გაგზავნა"
 msgctxt "@action"
 msgid "Send Deny"
 msgstr "უარყოფის გაგზავნა"
-
-#: messagepartthemes/default/defaultrenderer.cpp:70
-#, kde-format
-msgid "Error: Signature not verified"
-msgstr "შეცდომა: ხელმოწერა შემოწმებული არაა"
-
-#: messagepartthemes/default/defaultrenderer.cpp:74
-#, kde-format
-msgid "Good signature"
-msgstr "კარგი ხელმოწერა"
-
-#: messagepartthemes/default/defaultrenderer.cpp:78
-#, kde-format
-msgid "Bad signature"
-msgstr "არასწორი ხელმოწერა"
-
-#: messagepartthemes/default/defaultrenderer.cpp:82
-#, kde-format
-msgid "No public key to verify the signature"
-msgstr "ხელმოწერის შესამოწმებლად საჯარო გასაღები არ გაქვთ"
-
-#: messagepartthemes/default/defaultrenderer.cpp:86
-#, kde-format
-msgid "No signature found"
-msgstr "ხელმოწერა ვერ ვიპოვე"
-
-#: messagepartthemes/default/defaultrenderer.cpp:90
-#, kde-format
-msgid "Error verifying the signature"
-msgstr "შეცდომა ხელმოწერის გადამოწმებისას"
-
-#: messagepartthemes/default/defaultrenderer.cpp:94
-#, kde-format
-msgid "Different results for signatures"
-msgstr "სხვადასხვა შედეგები ხელმოწერებისთვის"
-
-#: messagepartthemes/default/defaultrenderer.cpp:114
-#, kde-format
-msgid "No status information available."
-msgstr "სტატუსის ინფორმაცია ხელმისაწვდომი არაა."
-
-#: messagepartthemes/default/defaultrenderer.cpp:121
-#: messagepartthemes/default/defaultrenderer.cpp:206
-#, kde-format
-msgid "Good signature."
-msgstr "კარგი ხელმოწერა."
-
-#: messagepartthemes/default/defaultrenderer.cpp:142
-#, kde-format
-msgid "One key has expired."
-msgstr "ერთი გასაღების ვადა ამოწურულია."
-
-#: messagepartthemes/default/defaultrenderer.cpp:146
-#, kde-format
-msgid "The signature has expired."
-msgstr "ხელმოწერის ვადა ამოწურულია."
-
-#: messagepartthemes/default/defaultrenderer.cpp:151
-#, kde-format
-msgid "Unable to verify: key missing."
-msgstr "გადამოწმების შეცდომა: გასაღები აკლია."
-
-#: messagepartthemes/default/defaultrenderer.cpp:158
-#, kde-format
-msgid "CRL not available."
-msgstr "CRL მიუწვდომელია."
-
-#: messagepartthemes/default/defaultrenderer.cpp:162
-#, kde-format
-msgid "Available CRL is too old."
-msgstr "ხელმისაწვდომი CRL ძალიან ძველია."
-
-#: messagepartthemes/default/defaultrenderer.cpp:166
-#, kde-format
-msgid "A policy was not met."
-msgstr "წესები დაცული არაა."
-
-#: messagepartthemes/default/defaultrenderer.cpp:170
-#, kde-format
-msgid "A system error occurred."
-msgstr "დაშვებულის სიტემური შეცდომა."
-
-#: messagepartthemes/default/defaultrenderer.cpp:181
-#, kde-format
-msgid "One key has been revoked."
-msgstr "ერთი გასაღები გაუქმებულია."
-
-#: messagepartthemes/default/defaultrenderer.cpp:208
-#, kde-format
-msgid "Bad signature."
-msgstr "არასწორი ხელმოწერა."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, kde-format
@@ -2531,6 +2440,60 @@ msgstr "შემდეგი შეტყობინება"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "წინა შეტყობინება"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "შეცდომა: ხელმოწერა შემოწმებული არაა"
+
+#~ msgid "Good signature"
+#~ msgstr "კარგი ხელმოწერა"
+
+#~ msgid "Bad signature"
+#~ msgstr "არასწორი ხელმოწერა"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "ხელმოწერის შესამოწმებლად საჯარო გასაღები არ გაქვთ"
+
+#~ msgid "No signature found"
+#~ msgstr "ხელმოწერა ვერ ვიპოვე"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "შეცდომა ხელმოწერის გადამოწმებისას"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "სხვადასხვა შედეგები ხელმოწერებისთვის"
+
+#~ msgid "No status information available."
+#~ msgstr "სტატუსის ინფორმაცია ხელმისაწვდომი არაა."
+
+#~ msgid "Good signature."
+#~ msgstr "კარგი ხელმოწერა."
+
+#~ msgid "One key has expired."
+#~ msgstr "ერთი გასაღების ვადა ამოწურულია."
+
+#~ msgid "The signature has expired."
+#~ msgstr "ხელმოწერის ვადა ამოწურულია."
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "გადამოწმების შეცდომა: გასაღები აკლია."
+
+#~ msgid "CRL not available."
+#~ msgstr "CRL მიუწვდომელია."
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "ხელმისაწვდომი CRL ძალიან ძველია."
+
+#~ msgid "A policy was not met."
+#~ msgstr "წესები დაცული არაა."
+
+#~ msgid "A system error occurred."
+#~ msgstr "დაშვებულის სიტემური შეცდომა."
+
+#~ msgid "One key has been revoked."
+#~ msgstr "ერთი გასაღები გაუქმებულია."
+
+#~ msgid "Bad signature."
+#~ msgstr "არასწორი ხელმოწერა."
 
 #~ msgid "Not enough information to check signature. %1"
 #~ msgstr "არასაკმარისი ინფორმაცია ხელმოწერის შესამოწმებლად: %1"

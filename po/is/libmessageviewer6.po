@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-27 00:43+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2009-06-13 16:16+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: icelandic <kde-isl@molar.is>\n"
@@ -999,99 +999,6 @@ msgstr "&Senda"
 msgctxt "@action"
 msgid "Send Deny"
 msgstr "Senda núna"
-
-#: messagepartthemes/default/defaultrenderer.cpp:70
-#, kde-format
-msgid "Error: Signature not verified"
-msgstr "Villa: Undirritun ekki staðfest"
-
-#: messagepartthemes/default/defaultrenderer.cpp:74
-#, kde-format
-msgid "Good signature"
-msgstr "Gild undirritun"
-
-#: messagepartthemes/default/defaultrenderer.cpp:78
-#, fuzzy, kde-format
-#| msgid "Good signature"
-msgid "Bad signature"
-msgstr "Gild undirritun"
-
-#: messagepartthemes/default/defaultrenderer.cpp:82
-#, kde-format
-msgid "No public key to verify the signature"
-msgstr "Enginn dreifilykill til að staðfesta undiritun"
-
-#: messagepartthemes/default/defaultrenderer.cpp:86
-#, kde-format
-msgid "No signature found"
-msgstr "Enginn undirritun fannst"
-
-#: messagepartthemes/default/defaultrenderer.cpp:90
-#, kde-format
-msgid "Error verifying the signature"
-msgstr "Villa við staðfestingu undirritunar"
-
-#: messagepartthemes/default/defaultrenderer.cpp:94
-#, kde-format
-msgid "Different results for signatures"
-msgstr "Mismunandi niðurstöður fyrir undirritanir"
-
-#: messagepartthemes/default/defaultrenderer.cpp:114
-#, kde-format
-msgid "No status information available."
-msgstr "Engar upplýsingar fáanlegar."
-
-#: messagepartthemes/default/defaultrenderer.cpp:121
-#: messagepartthemes/default/defaultrenderer.cpp:206
-#, kde-format
-msgid "Good signature."
-msgstr "Gild undirritun."
-
-#: messagepartthemes/default/defaultrenderer.cpp:142
-#, kde-format
-msgid "One key has expired."
-msgstr "Einn lykill er útrunninn."
-
-#: messagepartthemes/default/defaultrenderer.cpp:146
-#, kde-format
-msgid "The signature has expired."
-msgstr "Undirritunin er útrunnin."
-
-#: messagepartthemes/default/defaultrenderer.cpp:151
-#, kde-format
-msgid "Unable to verify: key missing."
-msgstr "Ekki hægt að sannreyna: lykil vantar."
-
-#: messagepartthemes/default/defaultrenderer.cpp:158
-#, kde-format
-msgid "CRL not available."
-msgstr "CRL ekki tiltækt."
-
-#: messagepartthemes/default/defaultrenderer.cpp:162
-#, kde-format
-msgid "Available CRL is too old."
-msgstr "Tiltækt CRLL er of gamalt."
-
-#: messagepartthemes/default/defaultrenderer.cpp:166
-#, kde-format
-msgid "A policy was not met."
-msgstr "Stefna var ekki uppfyllt."
-
-#: messagepartthemes/default/defaultrenderer.cpp:170
-#, kde-format
-msgid "A system error occurred."
-msgstr "Upp kom kerfisvilla."
-
-#: messagepartthemes/default/defaultrenderer.cpp:181
-#, kde-format
-msgid "One key has been revoked."
-msgstr "Einn lykill hefur verið settur ógildur."
-
-#: messagepartthemes/default/defaultrenderer.cpp:208
-#, fuzzy, kde-format
-#| msgid "Good signature."
-msgid "Bad signature."
-msgstr "Gild undirritun."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, fuzzy, kde-format
@@ -2722,6 +2629,64 @@ msgstr "&Næsta bréf"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Fy&rra ólesið bréf"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "Villa: Undirritun ekki staðfest"
+
+#~ msgid "Good signature"
+#~ msgstr "Gild undirritun"
+
+#, fuzzy
+#~| msgid "Good signature"
+#~ msgid "Bad signature"
+#~ msgstr "Gild undirritun"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "Enginn dreifilykill til að staðfesta undiritun"
+
+#~ msgid "No signature found"
+#~ msgstr "Enginn undirritun fannst"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "Villa við staðfestingu undirritunar"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "Mismunandi niðurstöður fyrir undirritanir"
+
+#~ msgid "No status information available."
+#~ msgstr "Engar upplýsingar fáanlegar."
+
+#~ msgid "Good signature."
+#~ msgstr "Gild undirritun."
+
+#~ msgid "One key has expired."
+#~ msgstr "Einn lykill er útrunninn."
+
+#~ msgid "The signature has expired."
+#~ msgstr "Undirritunin er útrunnin."
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "Ekki hægt að sannreyna: lykil vantar."
+
+#~ msgid "CRL not available."
+#~ msgstr "CRL ekki tiltækt."
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "Tiltækt CRLL er of gamalt."
+
+#~ msgid "A policy was not met."
+#~ msgstr "Stefna var ekki uppfyllt."
+
+#~ msgid "A system error occurred."
+#~ msgstr "Upp kom kerfisvilla."
+
+#~ msgid "One key has been revoked."
+#~ msgstr "Einn lykill hefur verið settur ógildur."
+
+#, fuzzy
+#~| msgid "Good signature."
+#~ msgid "Bad signature."
+#~ msgstr "Gild undirritun."
 
 #~ msgid "Not enough information to check signature. %1"
 #~ msgstr "Ekki nægar upplýsingar til að sannreyna undirritun. %1"

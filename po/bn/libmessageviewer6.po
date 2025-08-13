@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-27 00:43+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2006-02-06 01:01-0600\n"
 "Last-Translator: Deepayan Sarkar <deepayan@bengalinux.org>\n"
 "Language-Team: Bengali <kde-translation@bengalinux.org>\n"
@@ -977,104 +977,6 @@ msgstr "প্রের&ণ"
 msgctxt "@action"
 msgid "Send Deny"
 msgstr "এখন পাঠাও"
-
-#: messagepartthemes/default/defaultrenderer.cpp:70
-#, kde-format
-msgid "Error: Signature not verified"
-msgstr "সমস্যা: স্বাক্ষর যাচাই করা হয়নি"
-
-#: messagepartthemes/default/defaultrenderer.cpp:74
-#, kde-format
-msgid "Good signature"
-msgstr "ত্রুটিমুক্ত স্বাক্ষর"
-
-#: messagepartthemes/default/defaultrenderer.cpp:78
-#, fuzzy, kde-format
-#| msgid "Good signature"
-msgid "Bad signature"
-msgstr "ত্রুটিমুক্ত স্বাক্ষর"
-
-#: messagepartthemes/default/defaultrenderer.cpp:82
-#, fuzzy, kde-format
-#| msgid "Error verifying the signature"
-msgid "No public key to verify the signature"
-msgstr "স্বাক্ষর যাচাই করাকালীন সমস্যা"
-
-#: messagepartthemes/default/defaultrenderer.cpp:86
-#, kde-format
-msgid "No signature found"
-msgstr "কোন স্বাক্ষর পাওয়া যায়নি"
-
-#: messagepartthemes/default/defaultrenderer.cpp:90
-#, kde-format
-msgid "Error verifying the signature"
-msgstr "স্বাক্ষর যাচাই করাকালীন সমস্যা"
-
-#: messagepartthemes/default/defaultrenderer.cpp:94
-#, kde-format
-msgid "Different results for signatures"
-msgstr "স্বাক্ষরের জন্য আলাদা ফলাফল"
-
-#: messagepartthemes/default/defaultrenderer.cpp:114
-#, kde-format
-msgid "No status information available."
-msgstr "কোন স্ট্যাটাস তথ্য পাওয়া যাচ্ছে না।"
-
-#: messagepartthemes/default/defaultrenderer.cpp:121
-#: messagepartthemes/default/defaultrenderer.cpp:206
-#, kde-format
-msgid "Good signature."
-msgstr "ত্রুটিমুক্ত স্বাক্ষর।"
-
-#: messagepartthemes/default/defaultrenderer.cpp:142
-#, fuzzy, kde-format
-#| msgid "OpenPGP key 0x%1"
-msgid "One key has expired."
-msgstr "ওপেন-পি.জি.পি. কী (key) 0x%1"
-
-#: messagepartthemes/default/defaultrenderer.cpp:146
-#, fuzzy, kde-format
-#| msgid "Warning: The signature is bad."
-msgid "The signature has expired."
-msgstr "সাবধান: স্বাক্ষর ত্রুটিপূর্ণ।"
-
-#: messagepartthemes/default/defaultrenderer.cpp:151
-#, kde-format
-msgid "Unable to verify: key missing."
-msgstr "যাচাই করতে অক্ষম: কী (Key) পাওয়া যায়নি।"
-
-#: messagepartthemes/default/defaultrenderer.cpp:158
-#, fuzzy, kde-format
-#| msgid "Not available"
-msgid "CRL not available."
-msgstr "পাওয়া যাচ্ছে না"
-
-#: messagepartthemes/default/defaultrenderer.cpp:162
-#, kde-format
-msgid "Available CRL is too old."
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:166
-#, kde-format
-msgid "A policy was not met."
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:170
-#, kde-format
-msgid "A system error occurred."
-msgstr "একটি সিস্টেম সমস্যা ঘটেছে।"
-
-#: messagepartthemes/default/defaultrenderer.cpp:181
-#, fuzzy, kde-format
-#| msgid "OpenPGP key 0x%1"
-msgid "One key has been revoked."
-msgstr "ওপেন-পি.জি.পি. কী (key) 0x%1"
-
-#: messagepartthemes/default/defaultrenderer.cpp:208
-#, fuzzy, kde-format
-#| msgid "Good signature."
-msgid "Bad signature."
-msgstr "ত্রুটিমুক্ত স্বাক্ষর।"
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, fuzzy, kde-format
@@ -2648,6 +2550,68 @@ msgstr "পরবর্তী বার্তা (&ন)"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "পূর্ববর্তী &অপঠিত বার্তা"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "সমস্যা: স্বাক্ষর যাচাই করা হয়নি"
+
+#~ msgid "Good signature"
+#~ msgstr "ত্রুটিমুক্ত স্বাক্ষর"
+
+#, fuzzy
+#~| msgid "Good signature"
+#~ msgid "Bad signature"
+#~ msgstr "ত্রুটিমুক্ত স্বাক্ষর"
+
+#, fuzzy
+#~| msgid "Error verifying the signature"
+#~ msgid "No public key to verify the signature"
+#~ msgstr "স্বাক্ষর যাচাই করাকালীন সমস্যা"
+
+#~ msgid "No signature found"
+#~ msgstr "কোন স্বাক্ষর পাওয়া যায়নি"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "স্বাক্ষর যাচাই করাকালীন সমস্যা"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "স্বাক্ষরের জন্য আলাদা ফলাফল"
+
+#~ msgid "No status information available."
+#~ msgstr "কোন স্ট্যাটাস তথ্য পাওয়া যাচ্ছে না।"
+
+#~ msgid "Good signature."
+#~ msgstr "ত্রুটিমুক্ত স্বাক্ষর।"
+
+#, fuzzy
+#~| msgid "OpenPGP key 0x%1"
+#~ msgid "One key has expired."
+#~ msgstr "ওপেন-পি.জি.পি. কী (key) 0x%1"
+
+#, fuzzy
+#~| msgid "Warning: The signature is bad."
+#~ msgid "The signature has expired."
+#~ msgstr "সাবধান: স্বাক্ষর ত্রুটিপূর্ণ।"
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "যাচাই করতে অক্ষম: কী (Key) পাওয়া যায়নি।"
+
+#, fuzzy
+#~| msgid "Not available"
+#~ msgid "CRL not available."
+#~ msgstr "পাওয়া যাচ্ছে না"
+
+#~ msgid "A system error occurred."
+#~ msgstr "একটি সিস্টেম সমস্যা ঘটেছে।"
+
+#, fuzzy
+#~| msgid "OpenPGP key 0x%1"
+#~ msgid "One key has been revoked."
+#~ msgstr "ওপেন-পি.জি.পি. কী (key) 0x%1"
+
+#, fuzzy
+#~| msgid "Good signature."
+#~ msgid "Bad signature."
+#~ msgstr "ত্রুটিমুক্ত স্বাক্ষর।"
 
 #~ msgid "Not enough information to check signature. %1"
 #~ msgstr "স্বাক্ষর %1 যাচাই করার জন্য যথেষ্ট তথ্য নেই।"

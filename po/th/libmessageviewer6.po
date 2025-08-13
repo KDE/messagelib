@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-27 00:43+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2025-03-03 20:07+0700\n"
 "Last-Translator: Pongsakorn S. <kde@xerusion.me>\n"
 "Language-Team: Thai\n"
@@ -969,99 +969,6 @@ msgstr "ส่ง"
 msgctxt "@action"
 msgid "Send Deny"
 msgstr "ส่งทันที"
-
-#: messagepartthemes/default/defaultrenderer.cpp:70
-#, kde-format
-msgid "Error: Signature not verified"
-msgstr "ผิดพลาด: ไม่สามารถตรวจสอบลายเซ็นได้"
-
-#: messagepartthemes/default/defaultrenderer.cpp:74
-#, kde-format
-msgid "Good signature"
-msgstr "ลายเซ็นใช้ได้"
-
-#: messagepartthemes/default/defaultrenderer.cpp:78
-#, fuzzy, kde-format
-#| msgid "Good signature"
-msgid "Bad signature"
-msgstr "ลายเซ็นใช้ได้"
-
-#: messagepartthemes/default/defaultrenderer.cpp:82
-#, kde-format
-msgid "No public key to verify the signature"
-msgstr "ไม่มีกุญแจสาธารณะสำหรับตรวจสอบลายเซ็น"
-
-#: messagepartthemes/default/defaultrenderer.cpp:86
-#, kde-format
-msgid "No signature found"
-msgstr "ไม่พบลายเซ็น"
-
-#: messagepartthemes/default/defaultrenderer.cpp:90
-#, kde-format
-msgid "Error verifying the signature"
-msgstr "เกิดข้อผิดพลาดระหว่างตรวจลายเซ็น"
-
-#: messagepartthemes/default/defaultrenderer.cpp:94
-#, kde-format
-msgid "Different results for signatures"
-msgstr "ได้ผลลัพธ์ที่แตกต่างกันสำหรับลายเซ็น"
-
-#: messagepartthemes/default/defaultrenderer.cpp:114
-#, kde-format
-msgid "No status information available."
-msgstr "ไม่มีข้อมูลสถานะ"
-
-#: messagepartthemes/default/defaultrenderer.cpp:121
-#: messagepartthemes/default/defaultrenderer.cpp:206
-#, kde-format
-msgid "Good signature."
-msgstr "ลายเซ็นใช้ได้"
-
-#: messagepartthemes/default/defaultrenderer.cpp:142
-#, kde-format
-msgid "One key has expired."
-msgstr "มีกุญแจหมดอายุหนึ่งตัว"
-
-#: messagepartthemes/default/defaultrenderer.cpp:146
-#, kde-format
-msgid "The signature has expired."
-msgstr "ลายเซ็นหมดอายุ"
-
-#: messagepartthemes/default/defaultrenderer.cpp:151
-#, kde-format
-msgid "Unable to verify: key missing."
-msgstr "ไม่สามารถตรวจสอบได้: ไม่พบกุญแจ"
-
-#: messagepartthemes/default/defaultrenderer.cpp:158
-#, kde-format
-msgid "CRL not available."
-msgstr "ไม่มี CRL"
-
-#: messagepartthemes/default/defaultrenderer.cpp:162
-#, kde-format
-msgid "Available CRL is too old."
-msgstr "CRL ที่มีอยู่เก่าเกินไป"
-
-#: messagepartthemes/default/defaultrenderer.cpp:166
-#, kde-format
-msgid "A policy was not met."
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:170
-#, kde-format
-msgid "A system error occurred."
-msgstr "เกิดข้อผิดพลาดของระบบ"
-
-#: messagepartthemes/default/defaultrenderer.cpp:181
-#, kde-format
-msgid "One key has been revoked."
-msgstr "มีกุญแจบางตัวถูกยกเลิก"
-
-#: messagepartthemes/default/defaultrenderer.cpp:208
-#, fuzzy, kde-format
-#| msgid "Good signature."
-msgid "Bad signature."
-msgstr "ลายเซ็นใช้ได้"
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, fuzzy, kde-format
@@ -2659,6 +2566,61 @@ msgstr "ฉบับถัดไป"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "ฉบับที่ยังไม่ได้อ่านก่อนหน้านี้"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "ผิดพลาด: ไม่สามารถตรวจสอบลายเซ็นได้"
+
+#~ msgid "Good signature"
+#~ msgstr "ลายเซ็นใช้ได้"
+
+#, fuzzy
+#~| msgid "Good signature"
+#~ msgid "Bad signature"
+#~ msgstr "ลายเซ็นใช้ได้"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "ไม่มีกุญแจสาธารณะสำหรับตรวจสอบลายเซ็น"
+
+#~ msgid "No signature found"
+#~ msgstr "ไม่พบลายเซ็น"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "เกิดข้อผิดพลาดระหว่างตรวจลายเซ็น"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "ได้ผลลัพธ์ที่แตกต่างกันสำหรับลายเซ็น"
+
+#~ msgid "No status information available."
+#~ msgstr "ไม่มีข้อมูลสถานะ"
+
+#~ msgid "Good signature."
+#~ msgstr "ลายเซ็นใช้ได้"
+
+#~ msgid "One key has expired."
+#~ msgstr "มีกุญแจหมดอายุหนึ่งตัว"
+
+#~ msgid "The signature has expired."
+#~ msgstr "ลายเซ็นหมดอายุ"
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "ไม่สามารถตรวจสอบได้: ไม่พบกุญแจ"
+
+#~ msgid "CRL not available."
+#~ msgstr "ไม่มี CRL"
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "CRL ที่มีอยู่เก่าเกินไป"
+
+#~ msgid "A system error occurred."
+#~ msgstr "เกิดข้อผิดพลาดของระบบ"
+
+#~ msgid "One key has been revoked."
+#~ msgstr "มีกุญแจบางตัวถูกยกเลิก"
+
+#, fuzzy
+#~| msgid "Good signature."
+#~ msgid "Bad signature."
+#~ msgstr "ลายเซ็นใช้ได้"
 
 #~ msgid "Not enough information to check signature. %1"
 #~ msgstr "ข้อมูลสำหรับตรวจสอบลายเซ็นมีไม่เพียงพอ %1"

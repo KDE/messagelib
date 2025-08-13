@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-27 00:43+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2013-05-12 14:26+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -887,97 +887,6 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Send Deny"
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:70
-#, kde-format
-msgid "Error: Signature not verified"
-msgstr "Feil: Signaturen er ikkje stadfesta"
-
-#: messagepartthemes/default/defaultrenderer.cpp:74
-#, kde-format
-msgid "Good signature"
-msgstr "Gyldig signatur"
-
-#: messagepartthemes/default/defaultrenderer.cpp:78
-#, kde-format
-msgid "Bad signature"
-msgstr "Ugyldig signatur"
-
-#: messagepartthemes/default/defaultrenderer.cpp:82
-#, kde-format
-msgid "No public key to verify the signature"
-msgstr "Ingen offentlegnøkkel kan stadfesta signaturen"
-
-#: messagepartthemes/default/defaultrenderer.cpp:86
-#, kde-format
-msgid "No signature found"
-msgstr "Fann ikkje nokon signatur"
-
-#: messagepartthemes/default/defaultrenderer.cpp:90
-#, kde-format
-msgid "Error verifying the signature"
-msgstr "Feil ved stadfesting av signatur"
-
-#: messagepartthemes/default/defaultrenderer.cpp:94
-#, kde-format
-msgid "Different results for signatures"
-msgstr "Ulike resultat for signaturar"
-
-#: messagepartthemes/default/defaultrenderer.cpp:114
-#, kde-format
-msgid "No status information available."
-msgstr "Ingen statusinformasjon tilgjengeleg."
-
-#: messagepartthemes/default/defaultrenderer.cpp:121
-#: messagepartthemes/default/defaultrenderer.cpp:206
-#, kde-format
-msgid "Good signature."
-msgstr "Gyldig signatur."
-
-#: messagepartthemes/default/defaultrenderer.cpp:142
-#, kde-format
-msgid "One key has expired."
-msgstr "Éin nøkkel er forelda."
-
-#: messagepartthemes/default/defaultrenderer.cpp:146
-#, kde-format
-msgid "The signature has expired."
-msgstr "Signaturen er forelda."
-
-#: messagepartthemes/default/defaultrenderer.cpp:151
-#, kde-format
-msgid "Unable to verify: key missing."
-msgstr "Klarte ikkje stadfesta: Manglar nøkkel."
-
-#: messagepartthemes/default/defaultrenderer.cpp:158
-#, kde-format
-msgid "CRL not available."
-msgstr "CRL ikkje tilgjengeleg."
-
-#: messagepartthemes/default/defaultrenderer.cpp:162
-#, kde-format
-msgid "Available CRL is too old."
-msgstr "Tilgjengeleg CRL er for gammal."
-
-#: messagepartthemes/default/defaultrenderer.cpp:166
-#, kde-format
-msgid "A policy was not met."
-msgstr "Praksisen vart ikkje følgd."
-
-#: messagepartthemes/default/defaultrenderer.cpp:170
-#, kde-format
-msgid "A system error occurred."
-msgstr "Det oppstod ein systemfeil."
-
-#: messagepartthemes/default/defaultrenderer.cpp:181
-#, kde-format
-msgid "One key has been revoked."
-msgstr "Éin nøkkel er kalla tilbake."
-
-#: messagepartthemes/default/defaultrenderer.cpp:208
-#, kde-format
-msgid "Bad signature."
 msgstr ""
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
@@ -2448,3 +2357,54 @@ msgstr "Dekrypter melding"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Rull oppover i melding"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "Feil: Signaturen er ikkje stadfesta"
+
+#~ msgid "Good signature"
+#~ msgstr "Gyldig signatur"
+
+#~ msgid "Bad signature"
+#~ msgstr "Ugyldig signatur"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "Ingen offentlegnøkkel kan stadfesta signaturen"
+
+#~ msgid "No signature found"
+#~ msgstr "Fann ikkje nokon signatur"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "Feil ved stadfesting av signatur"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "Ulike resultat for signaturar"
+
+#~ msgid "No status information available."
+#~ msgstr "Ingen statusinformasjon tilgjengeleg."
+
+#~ msgid "Good signature."
+#~ msgstr "Gyldig signatur."
+
+#~ msgid "One key has expired."
+#~ msgstr "Éin nøkkel er forelda."
+
+#~ msgid "The signature has expired."
+#~ msgstr "Signaturen er forelda."
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "Klarte ikkje stadfesta: Manglar nøkkel."
+
+#~ msgid "CRL not available."
+#~ msgstr "CRL ikkje tilgjengeleg."
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "Tilgjengeleg CRL er for gammal."
+
+#~ msgid "A policy was not met."
+#~ msgstr "Praksisen vart ikkje følgd."
+
+#~ msgid "A system error occurred."
+#~ msgstr "Det oppstod ein systemfeil."
+
+#~ msgid "One key has been revoked."
+#~ msgstr "Éin nøkkel er kalla tilbake."

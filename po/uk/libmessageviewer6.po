@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-27 00:43+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2025-05-19 09:05+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -914,97 +914,6 @@ msgstr "Надіслати"
 msgctxt "@action"
 msgid "Send Deny"
 msgstr "Надіслати відмову"
-
-#: messagepartthemes/default/defaultrenderer.cpp:70
-#, kde-format
-msgid "Error: Signature not verified"
-msgstr "Помилка: підпис не перевірено"
-
-#: messagepartthemes/default/defaultrenderer.cpp:74
-#, kde-format
-msgid "Good signature"
-msgstr "Придатний підпис"
-
-#: messagepartthemes/default/defaultrenderer.cpp:78
-#, kde-format
-msgid "Bad signature"
-msgstr "Непридатний підпис"
-
-#: messagepartthemes/default/defaultrenderer.cpp:82
-#, kde-format
-msgid "No public key to verify the signature"
-msgstr "Немає відкритого ключа, щоб перевірити підпис"
-
-#: messagepartthemes/default/defaultrenderer.cpp:86
-#, kde-format
-msgid "No signature found"
-msgstr "Підпис не знайдено"
-
-#: messagepartthemes/default/defaultrenderer.cpp:90
-#, kde-format
-msgid "Error verifying the signature"
-msgstr "Помилка при перевірці підпису"
-
-#: messagepartthemes/default/defaultrenderer.cpp:94
-#, kde-format
-msgid "Different results for signatures"
-msgstr "Різні результати для підписів"
-
-#: messagepartthemes/default/defaultrenderer.cpp:114
-#, kde-format
-msgid "No status information available."
-msgstr "Інформація щодо стану відсутня."
-
-#: messagepartthemes/default/defaultrenderer.cpp:121
-#: messagepartthemes/default/defaultrenderer.cpp:206
-#, kde-format
-msgid "Good signature."
-msgstr "Придатний підпис"
-
-#: messagepartthemes/default/defaultrenderer.cpp:142
-#, kde-format
-msgid "One key has expired."
-msgstr "Один ключ застарів."
-
-#: messagepartthemes/default/defaultrenderer.cpp:146
-#, kde-format
-msgid "The signature has expired."
-msgstr "Підпис застарів."
-
-#: messagepartthemes/default/defaultrenderer.cpp:151
-#, kde-format
-msgid "Unable to verify: key missing."
-msgstr "Не вдається перевірити: ключ відсутній."
-
-#: messagepartthemes/default/defaultrenderer.cpp:158
-#, kde-format
-msgid "CRL not available."
-msgstr "САС не доступні."
-
-#: messagepartthemes/default/defaultrenderer.cpp:162
-#, kde-format
-msgid "Available CRL is too old."
-msgstr "Поточний CRL є застарілим."
-
-#: messagepartthemes/default/defaultrenderer.cpp:166
-#, kde-format
-msgid "A policy was not met."
-msgstr "Умова не була задоволена."
-
-#: messagepartthemes/default/defaultrenderer.cpp:170
-#, kde-format
-msgid "A system error occurred."
-msgstr "Виникла системна помилка."
-
-#: messagepartthemes/default/defaultrenderer.cpp:181
-#, kde-format
-msgid "One key has been revoked."
-msgstr "Один ключ було анульовано."
-
-#: messagepartthemes/default/defaultrenderer.cpp:208
-#, kde-format
-msgid "Bad signature."
-msgstr "Непридатний підпис."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, kde-format
@@ -2566,6 +2475,60 @@ msgstr "Наступне повідомлення"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Попереднє повідомлення"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "Помилка: підпис не перевірено"
+
+#~ msgid "Good signature"
+#~ msgstr "Придатний підпис"
+
+#~ msgid "Bad signature"
+#~ msgstr "Непридатний підпис"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "Немає відкритого ключа, щоб перевірити підпис"
+
+#~ msgid "No signature found"
+#~ msgstr "Підпис не знайдено"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "Помилка при перевірці підпису"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "Різні результати для підписів"
+
+#~ msgid "No status information available."
+#~ msgstr "Інформація щодо стану відсутня."
+
+#~ msgid "Good signature."
+#~ msgstr "Придатний підпис"
+
+#~ msgid "One key has expired."
+#~ msgstr "Один ключ застарів."
+
+#~ msgid "The signature has expired."
+#~ msgstr "Підпис застарів."
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "Не вдається перевірити: ключ відсутній."
+
+#~ msgid "CRL not available."
+#~ msgstr "САС не доступні."
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "Поточний CRL є застарілим."
+
+#~ msgid "A policy was not met."
+#~ msgstr "Умова не була задоволена."
+
+#~ msgid "A system error occurred."
+#~ msgstr "Виникла системна помилка."
+
+#~ msgid "One key has been revoked."
+#~ msgstr "Один ключ було анульовано."
+
+#~ msgid "Bad signature."
+#~ msgstr "Непридатний підпис."
 
 #~ msgid "Not enough information to check signature. %1"
 #~ msgstr "Недостатньо інформації для перевірки підпису. %1"

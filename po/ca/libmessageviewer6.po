@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-27 00:43+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2025-05-18 09:11+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -906,97 +906,6 @@ msgstr "Envia"
 msgctxt "@action"
 msgid "Send Deny"
 msgstr "Envia la denegació"
-
-#: messagepartthemes/default/defaultrenderer.cpp:70
-#, kde-format
-msgid "Error: Signature not verified"
-msgstr "Error: Signatura no verificada"
-
-#: messagepartthemes/default/defaultrenderer.cpp:74
-#, kde-format
-msgid "Good signature"
-msgstr "Signatura correcta"
-
-#: messagepartthemes/default/defaultrenderer.cpp:78
-#, kde-format
-msgid "Bad signature"
-msgstr "Signatura dolenta"
-
-#: messagepartthemes/default/defaultrenderer.cpp:82
-#, kde-format
-msgid "No public key to verify the signature"
-msgstr "No hi ha clau pública per a verificar la signatura"
-
-#: messagepartthemes/default/defaultrenderer.cpp:86
-#, kde-format
-msgid "No signature found"
-msgstr "No s'ha trobat cap signatura"
-
-#: messagepartthemes/default/defaultrenderer.cpp:90
-#, kde-format
-msgid "Error verifying the signature"
-msgstr "S'ha produït un error en verificar la signatura"
-
-#: messagepartthemes/default/defaultrenderer.cpp:94
-#, kde-format
-msgid "Different results for signatures"
-msgstr "Diferents resultats a les signatures"
-
-#: messagepartthemes/default/defaultrenderer.cpp:114
-#, kde-format
-msgid "No status information available."
-msgstr "No hi ha disponible informació sobre l'estat."
-
-#: messagepartthemes/default/defaultrenderer.cpp:121
-#: messagepartthemes/default/defaultrenderer.cpp:206
-#, kde-format
-msgid "Good signature."
-msgstr "Signatura correcta."
-
-#: messagepartthemes/default/defaultrenderer.cpp:142
-#, kde-format
-msgid "One key has expired."
-msgstr "Una clau ha caducat."
-
-#: messagepartthemes/default/defaultrenderer.cpp:146
-#, kde-format
-msgid "The signature has expired."
-msgstr "La signatura ha caducat."
-
-#: messagepartthemes/default/defaultrenderer.cpp:151
-#, kde-format
-msgid "Unable to verify: key missing."
-msgstr "No s'ha pogut verificar: falta la clau."
-
-#: messagepartthemes/default/defaultrenderer.cpp:158
-#, kde-format
-msgid "CRL not available."
-msgstr "No hi ha disponible una CRL."
-
-#: messagepartthemes/default/defaultrenderer.cpp:162
-#, kde-format
-msgid "Available CRL is too old."
-msgstr "La CRL disponible és massa antiga."
-
-#: messagepartthemes/default/defaultrenderer.cpp:166
-#, kde-format
-msgid "A policy was not met."
-msgstr "No s'ha trobat cap política."
-
-#: messagepartthemes/default/defaultrenderer.cpp:170
-#, kde-format
-msgid "A system error occurred."
-msgstr "S'ha produït un error del sistema."
-
-#: messagepartthemes/default/defaultrenderer.cpp:181
-#, kde-format
-msgid "One key has been revoked."
-msgstr "S'ha revocat una clau."
-
-#: messagepartthemes/default/defaultrenderer.cpp:208
-#, kde-format
-msgid "Bad signature."
-msgstr "Signatura dolenta."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, kde-format
@@ -2559,3 +2468,57 @@ msgstr "Missatge següent"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Missatge anterior"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "Error: Signatura no verificada"
+
+#~ msgid "Good signature"
+#~ msgstr "Signatura correcta"
+
+#~ msgid "Bad signature"
+#~ msgstr "Signatura dolenta"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "No hi ha clau pública per a verificar la signatura"
+
+#~ msgid "No signature found"
+#~ msgstr "No s'ha trobat cap signatura"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "S'ha produït un error en verificar la signatura"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "Diferents resultats a les signatures"
+
+#~ msgid "No status information available."
+#~ msgstr "No hi ha disponible informació sobre l'estat."
+
+#~ msgid "Good signature."
+#~ msgstr "Signatura correcta."
+
+#~ msgid "One key has expired."
+#~ msgstr "Una clau ha caducat."
+
+#~ msgid "The signature has expired."
+#~ msgstr "La signatura ha caducat."
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "No s'ha pogut verificar: falta la clau."
+
+#~ msgid "CRL not available."
+#~ msgstr "No hi ha disponible una CRL."
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "La CRL disponible és massa antiga."
+
+#~ msgid "A policy was not met."
+#~ msgstr "No s'ha trobat cap política."
+
+#~ msgid "A system error occurred."
+#~ msgstr "S'ha produït un error del sistema."
+
+#~ msgid "One key has been revoked."
+#~ msgstr "S'ha revocat una clau."
+
+#~ msgid "Bad signature."
+#~ msgstr "Signatura dolenta."

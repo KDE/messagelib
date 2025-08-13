@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-27 00:43+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2013-09-08 07:05+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -920,107 +920,6 @@ msgstr "قاش"
 msgctxt "@action"
 msgid "Send Deny"
 msgstr "قاش"
-
-#: messagepartthemes/default/defaultrenderer.cpp:70
-#, kde-format
-msgid "Error: Signature not verified"
-msgstr "خاتالىق: ئىمزا دەلىللەنمىگەن"
-
-#: messagepartthemes/default/defaultrenderer.cpp:74
-#, fuzzy, kde-format
-#| msgid "Good signature"
-msgid "Good signature"
-msgstr "ياخشى ئىمزا"
-
-#: messagepartthemes/default/defaultrenderer.cpp:78
-#, fuzzy, kde-format
-#| msgid "Good signature"
-msgid "Bad signature"
-msgstr "ياخشى ئىمزا"
-
-#: messagepartthemes/default/defaultrenderer.cpp:82
-#, fuzzy, kde-format
-#| msgid "Error saving attachment"
-msgid "No public key to verify the signature"
-msgstr "قوشۇلمىنى ساقلاشتا خاتالىق كۆرۈلدى"
-
-#: messagepartthemes/default/defaultrenderer.cpp:86
-#, fuzzy, kde-format
-#| msgid "Good signature"
-msgid "No signature found"
-msgstr "ياخشى ئىمزا"
-
-#: messagepartthemes/default/defaultrenderer.cpp:90
-#, fuzzy, kde-format
-#| msgid "Error saving attachment"
-msgid "Error verifying the signature"
-msgstr "قوشۇلمىنى ساقلاشتا خاتالىق كۆرۈلدى"
-
-#: messagepartthemes/default/defaultrenderer.cpp:94
-#, kde-format
-msgid "Different results for signatures"
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:114
-#, fuzzy, kde-format
-#| msgid "No description available"
-msgid "No status information available."
-msgstr "چۈشەندۈرۈشى يوق"
-
-#: messagepartthemes/default/defaultrenderer.cpp:121
-#: messagepartthemes/default/defaultrenderer.cpp:206
-#, fuzzy, kde-format
-#| msgid "Good signature"
-msgid "Good signature."
-msgstr "ياخشى ئىمزا"
-
-#: messagepartthemes/default/defaultrenderer.cpp:142
-#, fuzzy, kde-format
-#| msgid "Warning: The signature is bad."
-msgid "One key has expired."
-msgstr "ئاگاھلاندۇرۇش: بولمىغۇر ئىمزا."
-
-#: messagepartthemes/default/defaultrenderer.cpp:146
-#, fuzzy, kde-format
-#| msgid "Warning: The signature is bad."
-msgid "The signature has expired."
-msgstr "ئاگاھلاندۇرۇش: بولمىغۇر ئىمزا."
-
-#: messagepartthemes/default/defaultrenderer.cpp:151
-#, kde-format
-msgid "Unable to verify: key missing."
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:158
-#, kde-format
-msgid "CRL not available."
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:162
-#, kde-format
-msgid "Available CRL is too old."
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:166
-#, kde-format
-msgid "A policy was not met."
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:170
-#, kde-format
-msgid "A system error occurred."
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:181
-#, kde-format
-msgid "One key has been revoked."
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:208
-#, fuzzy, kde-format
-#| msgid "Good signature"
-msgid "Bad signature."
-msgstr "ياخشى ئىمزا"
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, kde-format
@@ -2551,6 +2450,59 @@ msgstr "ئۇچۇر ساقلا"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "ئۇچۇر ساقلا"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "خاتالىق: ئىمزا دەلىللەنمىگەن"
+
+#, fuzzy
+#~| msgid "Good signature"
+#~ msgid "Good signature"
+#~ msgstr "ياخشى ئىمزا"
+
+#, fuzzy
+#~| msgid "Good signature"
+#~ msgid "Bad signature"
+#~ msgstr "ياخشى ئىمزا"
+
+#, fuzzy
+#~| msgid "Error saving attachment"
+#~ msgid "No public key to verify the signature"
+#~ msgstr "قوشۇلمىنى ساقلاشتا خاتالىق كۆرۈلدى"
+
+#, fuzzy
+#~| msgid "Good signature"
+#~ msgid "No signature found"
+#~ msgstr "ياخشى ئىمزا"
+
+#, fuzzy
+#~| msgid "Error saving attachment"
+#~ msgid "Error verifying the signature"
+#~ msgstr "قوشۇلمىنى ساقلاشتا خاتالىق كۆرۈلدى"
+
+#, fuzzy
+#~| msgid "No description available"
+#~ msgid "No status information available."
+#~ msgstr "چۈشەندۈرۈشى يوق"
+
+#, fuzzy
+#~| msgid "Good signature"
+#~ msgid "Good signature."
+#~ msgstr "ياخشى ئىمزا"
+
+#, fuzzy
+#~| msgid "Warning: The signature is bad."
+#~ msgid "One key has expired."
+#~ msgstr "ئاگاھلاندۇرۇش: بولمىغۇر ئىمزا."
+
+#, fuzzy
+#~| msgid "Warning: The signature is bad."
+#~ msgid "The signature has expired."
+#~ msgstr "ئاگاھلاندۇرۇش: بولمىغۇر ئىمزا."
+
+#, fuzzy
+#~| msgid "Good signature"
+#~ msgid "Bad signature."
+#~ msgstr "ياخشى ئىمزا"
 
 #, fuzzy
 #~| msgid "Message was signed by %1."

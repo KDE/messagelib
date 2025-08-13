@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-27 00:43+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2011-10-30 01:38+0200\n"
 "Last-Translator: Børre Gaup <boerre@skolelinux.no>\n"
 "Language-Team: Northern Sami <l10n-no@lister.huftis.org>\n"
@@ -873,97 +873,6 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Send Deny"
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:70
-#, kde-format
-msgid "Error: Signature not verified"
-msgstr "Meattáhus: Vuolláičála ii leat nannejuvvon"
-
-#: messagepartthemes/default/defaultrenderer.cpp:74
-#, kde-format
-msgid "Good signature"
-msgstr "Dohkálaš vuolláičála"
-
-#: messagepartthemes/default/defaultrenderer.cpp:78
-#, kde-format
-msgid "Bad signature"
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:82
-#, kde-format
-msgid "No public key to verify the signature"
-msgstr "Ii leat almmolaš čoavdda mii nanne vuolláičállaga"
-
-#: messagepartthemes/default/defaultrenderer.cpp:86
-#, kde-format
-msgid "No signature found"
-msgstr "Ii gávdnan vuolláičála"
-
-#: messagepartthemes/default/defaultrenderer.cpp:90
-#, kde-format
-msgid "Error verifying the signature"
-msgstr "Filtii nannedettiin vuolláičállaga"
-
-#: messagepartthemes/default/defaultrenderer.cpp:94
-#, kde-format
-msgid "Different results for signatures"
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:114
-#, kde-format
-msgid "No status information available."
-msgstr "Stáhtusdieđut eai leat olámuttus."
-
-#: messagepartthemes/default/defaultrenderer.cpp:121
-#: messagepartthemes/default/defaultrenderer.cpp:206
-#, kde-format
-msgid "Good signature."
-msgstr "Dohkálaš vuolláičála."
-
-#: messagepartthemes/default/defaultrenderer.cpp:142
-#, kde-format
-msgid "One key has expired."
-msgstr "Okta čoavdda lea boarásmuvvan."
-
-#: messagepartthemes/default/defaultrenderer.cpp:146
-#, kde-format
-msgid "The signature has expired."
-msgstr "Vuolláičála lea boarásmuvvan."
-
-#: messagepartthemes/default/defaultrenderer.cpp:151
-#, kde-format
-msgid "Unable to verify: key missing."
-msgstr "Ii sáhttán nannet: Čoavdda váilu"
-
-#: messagepartthemes/default/defaultrenderer.cpp:158
-#, kde-format
-msgid "CRL not available."
-msgstr "CRL ii leat olámuttus."
-
-#: messagepartthemes/default/defaultrenderer.cpp:162
-#, kde-format
-msgid "Available CRL is too old."
-msgstr "Olamuttus CRL lea menddo boaris."
-
-#: messagepartthemes/default/defaultrenderer.cpp:166
-#, kde-format
-msgid "A policy was not met."
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:170
-#, kde-format
-msgid "A system error occurred."
-msgstr "Vuogádatmeattáhus dáhpáhuvai."
-
-#: messagepartthemes/default/defaultrenderer.cpp:181
-#, kde-format
-msgid "One key has been revoked."
-msgstr "Okta čoavdda lea ruovttoluotta gessojuvvon."
-
-#: messagepartthemes/default/defaultrenderer.cpp:208
-#, kde-format
-msgid "Bad signature."
 msgstr ""
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
@@ -2430,3 +2339,45 @@ msgstr ""
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr ""
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "Meattáhus: Vuolláičála ii leat nannejuvvon"
+
+#~ msgid "Good signature"
+#~ msgstr "Dohkálaš vuolláičála"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "Ii leat almmolaš čoavdda mii nanne vuolláičállaga"
+
+#~ msgid "No signature found"
+#~ msgstr "Ii gávdnan vuolláičála"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "Filtii nannedettiin vuolláičállaga"
+
+#~ msgid "No status information available."
+#~ msgstr "Stáhtusdieđut eai leat olámuttus."
+
+#~ msgid "Good signature."
+#~ msgstr "Dohkálaš vuolláičála."
+
+#~ msgid "One key has expired."
+#~ msgstr "Okta čoavdda lea boarásmuvvan."
+
+#~ msgid "The signature has expired."
+#~ msgstr "Vuolláičála lea boarásmuvvan."
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "Ii sáhttán nannet: Čoavdda váilu"
+
+#~ msgid "CRL not available."
+#~ msgstr "CRL ii leat olámuttus."
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "Olamuttus CRL lea menddo boaris."
+
+#~ msgid "A system error occurred."
+#~ msgstr "Vuogádatmeattáhus dáhpáhuvai."
+
+#~ msgid "One key has been revoked."
+#~ msgstr "Okta čoavdda lea ruovttoluotta gessojuvvon."

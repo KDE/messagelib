@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-27 00:43+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2025-05-18 11:38+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -900,97 +900,6 @@ msgstr "Изпращане"
 msgctxt "@action"
 msgid "Send Deny"
 msgstr "Изпращане на отказ"
-
-#: messagepartthemes/default/defaultrenderer.cpp:70
-#, kde-format
-msgid "Error: Signature not verified"
-msgstr "Грешка: Подписът не е проверен"
-
-#: messagepartthemes/default/defaultrenderer.cpp:74
-#, kde-format
-msgid "Good signature"
-msgstr "Добър подпис"
-
-#: messagepartthemes/default/defaultrenderer.cpp:78
-#, kde-format
-msgid "Bad signature"
-msgstr "Лош подпис"
-
-#: messagepartthemes/default/defaultrenderer.cpp:82
-#, kde-format
-msgid "No public key to verify the signature"
-msgstr "Няма публичен ключ за проверка на подписа"
-
-#: messagepartthemes/default/defaultrenderer.cpp:86
-#, kde-format
-msgid "No signature found"
-msgstr "Не е открит електронен подпис"
-
-#: messagepartthemes/default/defaultrenderer.cpp:90
-#, kde-format
-msgid "Error verifying the signature"
-msgstr "Грешка при проверка на подписа"
-
-#: messagepartthemes/default/defaultrenderer.cpp:94
-#, kde-format
-msgid "Different results for signatures"
-msgstr "Различни резултати за електронните подписи"
-
-#: messagepartthemes/default/defaultrenderer.cpp:114
-#, kde-format
-msgid "No status information available."
-msgstr "Няма налична информация за статус."
-
-#: messagepartthemes/default/defaultrenderer.cpp:121
-#: messagepartthemes/default/defaultrenderer.cpp:206
-#, kde-format
-msgid "Good signature."
-msgstr "Добър подпис."
-
-#: messagepartthemes/default/defaultrenderer.cpp:142
-#, kde-format
-msgid "One key has expired."
-msgstr "Един ключ е изтекъл."
-
-#: messagepartthemes/default/defaultrenderer.cpp:146
-#, kde-format
-msgid "The signature has expired."
-msgstr "Подписът е изтекъл."
-
-#: messagepartthemes/default/defaultrenderer.cpp:151
-#, kde-format
-msgid "Unable to verify: key missing."
-msgstr "Грешка при проверка: липсва ключ."
-
-#: messagepartthemes/default/defaultrenderer.cpp:158
-#, kde-format
-msgid "CRL not available."
-msgstr "Не е наличен CRL."
-
-#: messagepartthemes/default/defaultrenderer.cpp:162
-#, kde-format
-msgid "Available CRL is too old."
-msgstr "Наличният CRL е твърде стар."
-
-#: messagepartthemes/default/defaultrenderer.cpp:166
-#, kde-format
-msgid "A policy was not met."
-msgstr "Не е открита отговаряща политика."
-
-#: messagepartthemes/default/defaultrenderer.cpp:170
-#, kde-format
-msgid "A system error occurred."
-msgstr "Системна грешка."
-
-#: messagepartthemes/default/defaultrenderer.cpp:181
-#, kde-format
-msgid "One key has been revoked."
-msgstr "Един ключ е бил анулиран."
-
-#: messagepartthemes/default/defaultrenderer.cpp:208
-#, kde-format
-msgid "Bad signature."
-msgstr "Лош подпис."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, kde-format
@@ -2545,3 +2454,57 @@ msgstr "Следващо съобщение"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Предишно съобщение"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "Грешка: Подписът не е проверен"
+
+#~ msgid "Good signature"
+#~ msgstr "Добър подпис"
+
+#~ msgid "Bad signature"
+#~ msgstr "Лош подпис"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "Няма публичен ключ за проверка на подписа"
+
+#~ msgid "No signature found"
+#~ msgstr "Не е открит електронен подпис"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "Грешка при проверка на подписа"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "Различни резултати за електронните подписи"
+
+#~ msgid "No status information available."
+#~ msgstr "Няма налична информация за статус."
+
+#~ msgid "Good signature."
+#~ msgstr "Добър подпис."
+
+#~ msgid "One key has expired."
+#~ msgstr "Един ключ е изтекъл."
+
+#~ msgid "The signature has expired."
+#~ msgstr "Подписът е изтекъл."
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "Грешка при проверка: липсва ключ."
+
+#~ msgid "CRL not available."
+#~ msgstr "Не е наличен CRL."
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "Наличният CRL е твърде стар."
+
+#~ msgid "A policy was not met."
+#~ msgstr "Не е открита отговаряща политика."
+
+#~ msgid "A system error occurred."
+#~ msgstr "Системна грешка."
+
+#~ msgid "One key has been revoked."
+#~ msgstr "Един ключ е бил анулиран."
+
+#~ msgid "Bad signature."
+#~ msgstr "Лош подпис."

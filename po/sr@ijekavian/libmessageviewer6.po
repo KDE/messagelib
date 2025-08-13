@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-27 00:43+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2017-12-24 21:47+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -944,97 +944,6 @@ msgstr "Пошиљалац: "
 msgctxt "@action"
 msgid "Send Deny"
 msgstr "Пошиљалац: "
-
-#: messagepartthemes/default/defaultrenderer.cpp:70
-#, kde-format
-msgid "Error: Signature not verified"
-msgstr "Грешка: потпис није оверен"
-
-#: messagepartthemes/default/defaultrenderer.cpp:74
-#, kde-format
-msgid "Good signature"
-msgstr "Добар потпис"
-
-#: messagepartthemes/default/defaultrenderer.cpp:78
-#, kde-format
-msgid "Bad signature"
-msgstr "Лош потпис"
-
-#: messagepartthemes/default/defaultrenderer.cpp:82
-#, kde-format
-msgid "No public key to verify the signature"
-msgstr "Нема јавног кључа за оверу потписа"
-
-#: messagepartthemes/default/defaultrenderer.cpp:86
-#, kde-format
-msgid "No signature found"
-msgstr "Потпис није пронађен"
-
-#: messagepartthemes/default/defaultrenderer.cpp:90
-#, kde-format
-msgid "Error verifying the signature"
-msgstr "Грешка при овери потписа"
-
-#: messagepartthemes/default/defaultrenderer.cpp:94
-#, kde-format
-msgid "Different results for signatures"
-msgstr "Различити резултати за потписе"
-
-#: messagepartthemes/default/defaultrenderer.cpp:114
-#, kde-format
-msgid "No status information available."
-msgstr "Нема доступних информација о стању."
-
-#: messagepartthemes/default/defaultrenderer.cpp:121
-#: messagepartthemes/default/defaultrenderer.cpp:206
-#, kde-format
-msgid "Good signature."
-msgstr "Добар потпис."
-
-#: messagepartthemes/default/defaultrenderer.cpp:142
-#, kde-format
-msgid "One key has expired."
-msgstr "Један кључ је истекао."
-
-#: messagepartthemes/default/defaultrenderer.cpp:146
-#, kde-format
-msgid "The signature has expired."
-msgstr "Потпис је истекао."
-
-#: messagepartthemes/default/defaultrenderer.cpp:151
-#, kde-format
-msgid "Unable to verify: key missing."
-msgstr "Не могу да оверим: недостаје кључ."
-
-#: messagepartthemes/default/defaultrenderer.cpp:158
-#, kde-format
-msgid "CRL not available."
-msgstr "ЦРЛ није доступан."
-
-#: messagepartthemes/default/defaultrenderer.cpp:162
-#, kde-format
-msgid "Available CRL is too old."
-msgstr "Доступни ЦРЛ је престар."
-
-#: messagepartthemes/default/defaultrenderer.cpp:166
-#, kde-format
-msgid "A policy was not met."
-msgstr "Смерница није задовољена."
-
-#: messagepartthemes/default/defaultrenderer.cpp:170
-#, kde-format
-msgid "A system error occurred."
-msgstr "Системска грешка."
-
-#: messagepartthemes/default/defaultrenderer.cpp:181
-#, kde-format
-msgid "One key has been revoked."
-msgstr "Један кључ је опозван."
-
-#: messagepartthemes/default/defaultrenderer.cpp:208
-#, kde-format
-msgid "Bad signature."
-msgstr "Лош потпис."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, kde-format
@@ -2647,6 +2556,60 @@ msgstr "&Сачувај поруке"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "&Претходна картица"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "Грешка: потпис није оверен"
+
+#~ msgid "Good signature"
+#~ msgstr "Добар потпис"
+
+#~ msgid "Bad signature"
+#~ msgstr "Лош потпис"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "Нема јавног кључа за оверу потписа"
+
+#~ msgid "No signature found"
+#~ msgstr "Потпис није пронађен"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "Грешка при овери потписа"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "Различити резултати за потписе"
+
+#~ msgid "No status information available."
+#~ msgstr "Нема доступних информација о стању."
+
+#~ msgid "Good signature."
+#~ msgstr "Добар потпис."
+
+#~ msgid "One key has expired."
+#~ msgstr "Један кључ је истекао."
+
+#~ msgid "The signature has expired."
+#~ msgstr "Потпис је истекао."
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "Не могу да оверим: недостаје кључ."
+
+#~ msgid "CRL not available."
+#~ msgstr "ЦРЛ није доступан."
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "Доступни ЦРЛ је престар."
+
+#~ msgid "A policy was not met."
+#~ msgstr "Смерница није задовољена."
+
+#~ msgid "A system error occurred."
+#~ msgstr "Системска грешка."
+
+#~ msgid "One key has been revoked."
+#~ msgstr "Један кључ је опозван."
+
+#~ msgid "Bad signature."
+#~ msgstr "Лош потпис."
 
 #~ msgid "Not enough information to check signature. %1"
 #~ msgstr "Нема довољно података за проверу потписа. %1"

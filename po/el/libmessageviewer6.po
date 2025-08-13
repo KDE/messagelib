@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-27 00:43+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2024-09-19 17:23+0300\n"
 "Last-Translator: Antonis Geralis <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -974,99 +974,6 @@ msgstr "Αποστολή"
 msgctxt "@action"
 msgid "Send Deny"
 msgstr "Αποστολή τώρα"
-
-#: messagepartthemes/default/defaultrenderer.cpp:70
-#, kde-format
-msgid "Error: Signature not verified"
-msgstr "Σφάλμα: Η υπογραφή δεν επαληθεύτηκε"
-
-#: messagepartthemes/default/defaultrenderer.cpp:74
-#, kde-format
-msgid "Good signature"
-msgstr "Καλή υπογραφή"
-
-#: messagepartthemes/default/defaultrenderer.cpp:78
-#, fuzzy, kde-format
-#| msgid "Good signature"
-msgid "Bad signature"
-msgstr "Καλή υπογραφή"
-
-#: messagepartthemes/default/defaultrenderer.cpp:82
-#, kde-format
-msgid "No public key to verify the signature"
-msgstr "Δεν υπάρχει δημόσιο κλειδί για επαλήθευση της υπογραφής"
-
-#: messagepartthemes/default/defaultrenderer.cpp:86
-#, kde-format
-msgid "No signature found"
-msgstr "Δε βρέθηκε υπογραφή"
-
-#: messagepartthemes/default/defaultrenderer.cpp:90
-#, kde-format
-msgid "Error verifying the signature"
-msgstr "Σφάλμα επαλήθευσης της υπογραφής"
-
-#: messagepartthemes/default/defaultrenderer.cpp:94
-#, kde-format
-msgid "Different results for signatures"
-msgstr "Διαφορετικά αποτελέσματα για τις υπογραφές"
-
-#: messagepartthemes/default/defaultrenderer.cpp:114
-#, kde-format
-msgid "No status information available."
-msgstr "Δεν υπάρχουν πληροφορίες κατάστασης."
-
-#: messagepartthemes/default/defaultrenderer.cpp:121
-#: messagepartthemes/default/defaultrenderer.cpp:206
-#, kde-format
-msgid "Good signature."
-msgstr "Καλή υπογραφή."
-
-#: messagepartthemes/default/defaultrenderer.cpp:142
-#, kde-format
-msgid "One key has expired."
-msgstr "Ένα κλειδί έχει λήξει."
-
-#: messagepartthemes/default/defaultrenderer.cpp:146
-#, kde-format
-msgid "The signature has expired."
-msgstr "Η υπογραφή έχει λήξει."
-
-#: messagepartthemes/default/defaultrenderer.cpp:151
-#, kde-format
-msgid "Unable to verify: key missing."
-msgstr "Επαλήθευση αδύνατη: απουσία κλειδιού."
-
-#: messagepartthemes/default/defaultrenderer.cpp:158
-#, kde-format
-msgid "CRL not available."
-msgstr "CRL μη διαθέσιμο."
-
-#: messagepartthemes/default/defaultrenderer.cpp:162
-#, kde-format
-msgid "Available CRL is too old."
-msgstr "Το διαθέσιμο CRL είναι πολύ παλιό."
-
-#: messagepartthemes/default/defaultrenderer.cpp:166
-#, kde-format
-msgid "A policy was not met."
-msgstr "Μια πολιτική δεν ικανοποιήθηκε."
-
-#: messagepartthemes/default/defaultrenderer.cpp:170
-#, kde-format
-msgid "A system error occurred."
-msgstr "Προέκυψε σφάλμα συστήματος."
-
-#: messagepartthemes/default/defaultrenderer.cpp:181
-#, kde-format
-msgid "One key has been revoked."
-msgstr "Ένα κλειδί έχει ανακληθεί."
-
-#: messagepartthemes/default/defaultrenderer.cpp:208
-#, fuzzy, kde-format
-#| msgid "Good signature."
-msgid "Bad signature."
-msgstr "Καλή υπογραφή."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, fuzzy, kde-format
@@ -2673,6 +2580,64 @@ msgstr "Επόμενο μήνυμα"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Προηγούμενο μη αναγνωσμένο &μήνυμα"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "Σφάλμα: Η υπογραφή δεν επαληθεύτηκε"
+
+#~ msgid "Good signature"
+#~ msgstr "Καλή υπογραφή"
+
+#, fuzzy
+#~| msgid "Good signature"
+#~ msgid "Bad signature"
+#~ msgstr "Καλή υπογραφή"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "Δεν υπάρχει δημόσιο κλειδί για επαλήθευση της υπογραφής"
+
+#~ msgid "No signature found"
+#~ msgstr "Δε βρέθηκε υπογραφή"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "Σφάλμα επαλήθευσης της υπογραφής"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "Διαφορετικά αποτελέσματα για τις υπογραφές"
+
+#~ msgid "No status information available."
+#~ msgstr "Δεν υπάρχουν πληροφορίες κατάστασης."
+
+#~ msgid "Good signature."
+#~ msgstr "Καλή υπογραφή."
+
+#~ msgid "One key has expired."
+#~ msgstr "Ένα κλειδί έχει λήξει."
+
+#~ msgid "The signature has expired."
+#~ msgstr "Η υπογραφή έχει λήξει."
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "Επαλήθευση αδύνατη: απουσία κλειδιού."
+
+#~ msgid "CRL not available."
+#~ msgstr "CRL μη διαθέσιμο."
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "Το διαθέσιμο CRL είναι πολύ παλιό."
+
+#~ msgid "A policy was not met."
+#~ msgstr "Μια πολιτική δεν ικανοποιήθηκε."
+
+#~ msgid "A system error occurred."
+#~ msgstr "Προέκυψε σφάλμα συστήματος."
+
+#~ msgid "One key has been revoked."
+#~ msgstr "Ένα κλειδί έχει ανακληθεί."
+
+#, fuzzy
+#~| msgid "Good signature."
+#~ msgid "Bad signature."
+#~ msgstr "Καλή υπογραφή."
 
 #~ msgid "Not enough information to check signature. %1"
 #~ msgstr "Λείπουν πληροφορίες για τον έλεγχο της υπογραφής: %1"

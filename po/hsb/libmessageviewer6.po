@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-27 00:43+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2021-11-05 12:48+0100\n"
 "Last-Translator: Eduard Werner/Edward Wornar <edi.werner@gmx.de>\n"
 "Language-Team: <hsb@li.org>\n"
@@ -932,97 +932,6 @@ msgstr "Pó&sćel"
 msgctxt "@action"
 msgid "Send Deny"
 msgstr "Hnydom pósłać"
-
-#: messagepartthemes/default/defaultrenderer.cpp:70
-#, kde-format
-msgid "Error: Signature not verified"
-msgstr "Zmylk: njewerifikowana signatura"
-
-#: messagepartthemes/default/defaultrenderer.cpp:74
-#, kde-format
-msgid "Good signature"
-msgstr "Dobre podpismo"
-
-#: messagepartthemes/default/defaultrenderer.cpp:78
-#, kde-format
-msgid "Bad signature"
-msgstr "Podpismo njeje w porjadku"
-
-#: messagepartthemes/default/defaultrenderer.cpp:82
-#, kde-format
-msgid "No public key to verify the signature"
-msgstr "Žadyn zjawny kluč za přepruwowanje podpisma"
-
-#: messagepartthemes/default/defaultrenderer.cpp:86
-#, kde-format
-msgid "No signature found"
-msgstr "Žane podpismo"
-
-#: messagepartthemes/default/defaultrenderer.cpp:90
-#, kde-format
-msgid "Error verifying the signature"
-msgstr "Zmylk při přepruwowanju podpisma"
-
-#: messagepartthemes/default/defaultrenderer.cpp:94
-#, kde-format
-msgid "Different results for signatures"
-msgstr "Wotchilne wuslědki za podpisma"
-
-#: messagepartthemes/default/defaultrenderer.cpp:114
-#, kde-format
-msgid "No status information available."
-msgstr "Žana informacija wo stawje."
-
-#: messagepartthemes/default/defaultrenderer.cpp:121
-#: messagepartthemes/default/defaultrenderer.cpp:206
-#, kde-format
-msgid "Good signature."
-msgstr "Dobre podpismo."
-
-#: messagepartthemes/default/defaultrenderer.cpp:142
-#, kde-format
-msgid "One key has expired."
-msgstr "Jedyn kluč je zestarjeny."
-
-#: messagepartthemes/default/defaultrenderer.cpp:146
-#, kde-format
-msgid "The signature has expired."
-msgstr "Podpismo hižo njepłaći."
-
-#: messagepartthemes/default/defaultrenderer.cpp:151
-#, kde-format
-msgid "Unable to verify: key missing."
-msgstr "Njemóžu přepruwować: kluč faluje."
-
-#: messagepartthemes/default/defaultrenderer.cpp:158
-#, kde-format
-msgid "CRL not available."
-msgstr "CRL nimam."
-
-#: messagepartthemes/default/defaultrenderer.cpp:162
-#, kde-format
-msgid "Available CRL is too old."
-msgstr "CRL je zestarjena."
-
-#: messagepartthemes/default/defaultrenderer.cpp:166
-#, kde-format
-msgid "A policy was not met."
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:170
-#, kde-format
-msgid "A system error occurred."
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:181
-#, kde-format
-msgid "One key has been revoked."
-msgstr "Jedyn kluč je zběhnjeny."
-
-#: messagepartthemes/default/defaultrenderer.cpp:208
-#, kde-format
-msgid "Bad signature."
-msgstr "Podpismo njeje w porjadku."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, fuzzy, kde-format
@@ -2547,6 +2456,54 @@ msgstr "Přichodna powěsć"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Předchadna powěsć"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "Zmylk: njewerifikowana signatura"
+
+#~ msgid "Good signature"
+#~ msgstr "Dobre podpismo"
+
+#~ msgid "Bad signature"
+#~ msgstr "Podpismo njeje w porjadku"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "Žadyn zjawny kluč za přepruwowanje podpisma"
+
+#~ msgid "No signature found"
+#~ msgstr "Žane podpismo"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "Zmylk při přepruwowanju podpisma"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "Wotchilne wuslědki za podpisma"
+
+#~ msgid "No status information available."
+#~ msgstr "Žana informacija wo stawje."
+
+#~ msgid "Good signature."
+#~ msgstr "Dobre podpismo."
+
+#~ msgid "One key has expired."
+#~ msgstr "Jedyn kluč je zestarjeny."
+
+#~ msgid "The signature has expired."
+#~ msgstr "Podpismo hižo njepłaći."
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "Njemóžu přepruwować: kluč faluje."
+
+#~ msgid "CRL not available."
+#~ msgstr "CRL nimam."
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "CRL je zestarjena."
+
+#~ msgid "One key has been revoked."
+#~ msgstr "Jedyn kluč je zběhnjeny."
+
+#~ msgid "Bad signature."
+#~ msgstr "Podpismo njeje w porjadku."
 
 #~ msgid "Not enough information to check signature. %1"
 #~ msgstr "Njedosahaca informacija za přepruwowanje podpisma. %1"

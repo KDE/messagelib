@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-27 00:43+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2010-09-24 16:29+0530\n"
 "Last-Translator: Rajesh Ranjan <rajesh672@gmail.com>\n"
 "Language-Team: Maithili <bhashaghar@googlegroups.com>\n"
@@ -913,104 +913,6 @@ msgstr ""
 msgctxt "@action"
 msgid "Send Deny"
 msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:70
-#, kde-format
-msgid "Error: Signature not verified"
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:74
-#, kde-format
-msgid "Good signature"
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:78
-#, fuzzy, kde-format
-#| msgid "Show Details"
-msgid "Bad signature"
-msgstr "विवरण देखाबू"
-
-#: messagepartthemes/default/defaultrenderer.cpp:82
-#, kde-format
-msgid "No public key to verify the signature"
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:86
-#, fuzzy, kde-format
-#| msgid "Show Details"
-msgid "No signature found"
-msgstr "विवरण देखाबू"
-
-#: messagepartthemes/default/defaultrenderer.cpp:90
-#, fuzzy, kde-format
-#| msgid "Save Attachment"
-msgid "Error verifying the signature"
-msgstr "संलग्नक सहेजू"
-
-#: messagepartthemes/default/defaultrenderer.cpp:94
-#, kde-format
-msgid "Different results for signatures"
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:114
-#, fuzzy, kde-format
-#| msgid "No description available"
-msgid "No status information available."
-msgstr "केओ विवरण उपलब्ध नहि"
-
-#: messagepartthemes/default/defaultrenderer.cpp:121
-#: messagepartthemes/default/defaultrenderer.cpp:206
-#, fuzzy, kde-format
-#| msgid "Show Details"
-msgid "Good signature."
-msgstr "विवरण देखाबू"
-
-#: messagepartthemes/default/defaultrenderer.cpp:142
-#, kde-format
-msgid "One key has expired."
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:146
-#, fuzzy, kde-format
-#| msgid "Hide Details"
-msgid "The signature has expired."
-msgstr "विवरणसभ नुकाबू"
-
-#: messagepartthemes/default/defaultrenderer.cpp:151
-#, kde-format
-msgid "Unable to verify: key missing."
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:158
-#, kde-format
-msgid "CRL not available."
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:162
-#, kde-format
-msgid "Available CRL is too old."
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:166
-#, kde-format
-msgid "A policy was not met."
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:170
-#, kde-format
-msgid "A system error occurred."
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:181
-#, kde-format
-msgid "One key has been revoked."
-msgstr ""
-
-#: messagepartthemes/default/defaultrenderer.cpp:208
-#, fuzzy, kde-format
-#| msgid "Show Details"
-msgid "Bad signature."
-msgstr "विवरण देखाबू"
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, kde-format
@@ -2531,6 +2433,41 @@ msgstr "एहन सहेजू..."
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "पछिला"
+
+#, fuzzy
+#~| msgid "Show Details"
+#~ msgid "Bad signature"
+#~ msgstr "विवरण देखाबू"
+
+#, fuzzy
+#~| msgid "Show Details"
+#~ msgid "No signature found"
+#~ msgstr "विवरण देखाबू"
+
+#, fuzzy
+#~| msgid "Save Attachment"
+#~ msgid "Error verifying the signature"
+#~ msgstr "संलग्नक सहेजू"
+
+#, fuzzy
+#~| msgid "No description available"
+#~ msgid "No status information available."
+#~ msgstr "केओ विवरण उपलब्ध नहि"
+
+#, fuzzy
+#~| msgid "Show Details"
+#~ msgid "Good signature."
+#~ msgstr "विवरण देखाबू"
+
+#, fuzzy
+#~| msgid "Hide Details"
+#~ msgid "The signature has expired."
+#~ msgstr "विवरणसभ नुकाबू"
+
+#, fuzzy
+#~| msgid "Show Details"
+#~ msgid "Bad signature."
+#~ msgstr "विवरण देखाबू"
 
 #, fuzzy
 #~| msgid "Hide Details"

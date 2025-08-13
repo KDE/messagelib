@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-27 00:43+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2002-11-04 10:19SAST\n"
 "Last-Translator: Lwandle Mgidlana <lwandle@translate.org.za>\n"
 "Language-Team: Xhosa <xhosa@translate.org.za>\n"
@@ -965,99 +965,6 @@ msgstr "&Thumela"
 msgctxt "@action"
 msgid "Send Deny"
 msgstr "Thumela Ngoku"
-
-#: messagepartthemes/default/defaultrenderer.cpp:70
-#, kde-format
-msgid "Error: Signature not verified"
-msgstr "Imposiso: Utyikityo alu qinisekiswanga"
-
-#: messagepartthemes/default/defaultrenderer.cpp:74
-#, kde-format
-msgid "Good signature"
-msgstr "Utyikityo olu lungileyo"
-
-#: messagepartthemes/default/defaultrenderer.cpp:78
-#, fuzzy, kde-format
-#| msgid "Good signature"
-msgid "Bad signature"
-msgstr "Utyikityo olu lungileyo"
-
-#: messagepartthemes/default/defaultrenderer.cpp:82
-#, kde-format
-msgid "No public key to verify the signature"
-msgstr "Akukho sitshixo sikawonke-wonke soku qinisekisa utyikityo"
-
-#: messagepartthemes/default/defaultrenderer.cpp:86
-#, kde-format
-msgid "No signature found"
-msgstr "Akukho tyikityo olufumanekileyo"
-
-#: messagepartthemes/default/defaultrenderer.cpp:90
-#, kde-format
-msgid "Error verifying the signature"
-msgstr "Imposiso kuqinisekiso lotyikityo"
-
-#: messagepartthemes/default/defaultrenderer.cpp:94
-#, kde-format
-msgid "Different results for signatures"
-msgstr "Iziphumo ezahlukileyo zozityikityo"
-
-#: messagepartthemes/default/defaultrenderer.cpp:114
-#, kde-format
-msgid "No status information available."
-msgstr "Akukho simo senkcukacha esikhoyo."
-
-#: messagepartthemes/default/defaultrenderer.cpp:121
-#: messagepartthemes/default/defaultrenderer.cpp:206
-#, kde-format
-msgid "Good signature."
-msgstr "Utyikityo olu lungileyo."
-
-#: messagepartthemes/default/defaultrenderer.cpp:142
-#, kde-format
-msgid "One key has expired."
-msgstr "Isitshixo esinye siphelelwe lixesha."
-
-#: messagepartthemes/default/defaultrenderer.cpp:146
-#, kde-format
-msgid "The signature has expired."
-msgstr "Utyikityo luphelelwe lixesha."
-
-#: messagepartthemes/default/defaultrenderer.cpp:151
-#, kde-format
-msgid "Unable to verify: key missing."
-msgstr "Ayikwazi ukuqinisekisa: isitshixo esilahlekile."
-
-#: messagepartthemes/default/defaultrenderer.cpp:158
-#, kde-format
-msgid "CRL not available."
-msgstr "CRL ayikho."
-
-#: messagepartthemes/default/defaultrenderer.cpp:162
-#, kde-format
-msgid "Available CRL is too old."
-msgstr "CRL efumanekayo indala kakhulu."
-
-#: messagepartthemes/default/defaultrenderer.cpp:166
-#, kde-format
-msgid "A policy was not met."
-msgstr "Inqkubo zange kuditywane nayo."
-
-#: messagepartthemes/default/defaultrenderer.cpp:170
-#, kde-format
-msgid "A system error occurred."
-msgstr "Kwenzeke imposiso yomatshini."
-
-#: messagepartthemes/default/defaultrenderer.cpp:181
-#, kde-format
-msgid "One key has been revoked."
-msgstr "Isitshixo esinye sibuyiselwe umva."
-
-#: messagepartthemes/default/defaultrenderer.cpp:208
-#, fuzzy, kde-format
-#| msgid "Good signature."
-msgid "Bad signature."
-msgstr "Utyikityo olu lungileyo."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, fuzzy, kde-format
@@ -2585,6 +2492,64 @@ msgstr "&Umyalezo Olandelayo"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Umyalezo &Ongafundwanga Odlulileyo"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "Imposiso: Utyikityo alu qinisekiswanga"
+
+#~ msgid "Good signature"
+#~ msgstr "Utyikityo olu lungileyo"
+
+#, fuzzy
+#~| msgid "Good signature"
+#~ msgid "Bad signature"
+#~ msgstr "Utyikityo olu lungileyo"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "Akukho sitshixo sikawonke-wonke soku qinisekisa utyikityo"
+
+#~ msgid "No signature found"
+#~ msgstr "Akukho tyikityo olufumanekileyo"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "Imposiso kuqinisekiso lotyikityo"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "Iziphumo ezahlukileyo zozityikityo"
+
+#~ msgid "No status information available."
+#~ msgstr "Akukho simo senkcukacha esikhoyo."
+
+#~ msgid "Good signature."
+#~ msgstr "Utyikityo olu lungileyo."
+
+#~ msgid "One key has expired."
+#~ msgstr "Isitshixo esinye siphelelwe lixesha."
+
+#~ msgid "The signature has expired."
+#~ msgstr "Utyikityo luphelelwe lixesha."
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "Ayikwazi ukuqinisekisa: isitshixo esilahlekile."
+
+#~ msgid "CRL not available."
+#~ msgstr "CRL ayikho."
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "CRL efumanekayo indala kakhulu."
+
+#~ msgid "A policy was not met."
+#~ msgstr "Inqkubo zange kuditywane nayo."
+
+#~ msgid "A system error occurred."
+#~ msgstr "Kwenzeke imposiso yomatshini."
+
+#~ msgid "One key has been revoked."
+#~ msgstr "Isitshixo esinye sibuyiselwe umva."
+
+#, fuzzy
+#~| msgid "Good signature."
+#~ msgid "Bad signature."
+#~ msgstr "Utyikityo olu lungileyo."
 
 #~ msgid "Not enough information to check signature. %1"
 #~ msgstr "Akukho nkcukacha ezaneleyo ukujonga utyikityo. %1"

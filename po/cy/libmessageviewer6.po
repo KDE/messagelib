@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-27 00:43+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2004-02-25 13:47+0000\n"
 "Last-Translator: KD at KGyfieithu <kyfieithu@dotmon.com>\n"
 "Language-Team: Cymraeg <cy@li.org>\n"
@@ -986,99 +986,6 @@ msgstr "An&fon"
 msgctxt "@action"
 msgid "Send Deny"
 msgstr "Anfon Rwan "
-
-#: messagepartthemes/default/defaultrenderer.cpp:70
-#, kde-format
-msgid "Error: Signature not verified"
-msgstr "Gwall: Ni wiriwyd y llofnod"
-
-#: messagepartthemes/default/defaultrenderer.cpp:74
-#, kde-format
-msgid "Good signature"
-msgstr "Llofnod dilys"
-
-#: messagepartthemes/default/defaultrenderer.cpp:78
-#, fuzzy, kde-format
-#| msgid "Good signature"
-msgid "Bad signature"
-msgstr "Llofnod dilys"
-
-#: messagepartthemes/default/defaultrenderer.cpp:82
-#, kde-format
-msgid "No public key to verify the signature"
-msgstr "Dim allwedd gyhoeddus i wirio'r llofnod"
-
-#: messagepartthemes/default/defaultrenderer.cpp:86
-#, kde-format
-msgid "No signature found"
-msgstr "Ni chanfuwyd llofnod"
-
-#: messagepartthemes/default/defaultrenderer.cpp:90
-#, kde-format
-msgid "Error verifying the signature"
-msgstr "Gwall wrth wirio'r llofnod"
-
-#: messagepartthemes/default/defaultrenderer.cpp:94
-#, kde-format
-msgid "Different results for signatures"
-msgstr "Canlyniadau gwahanol ar gyfer y llofnodion"
-
-#: messagepartthemes/default/defaultrenderer.cpp:114
-#, kde-format
-msgid "No status information available."
-msgstr "Dim data cyflwr ar gael."
-
-#: messagepartthemes/default/defaultrenderer.cpp:121
-#: messagepartthemes/default/defaultrenderer.cpp:206
-#, kde-format
-msgid "Good signature."
-msgstr "Llofnod dilys."
-
-#: messagepartthemes/default/defaultrenderer.cpp:142
-#, kde-format
-msgid "One key has expired."
-msgstr "Mae un allwedd wedi darfod."
-
-#: messagepartthemes/default/defaultrenderer.cpp:146
-#, kde-format
-msgid "The signature has expired."
-msgstr "Mae'r llofnod wedi darfod."
-
-#: messagepartthemes/default/defaultrenderer.cpp:151
-#, kde-format
-msgid "Unable to verify: key missing."
-msgstr "Methu gwirio: allwedd ar goll."
-
-#: messagepartthemes/default/defaultrenderer.cpp:158
-#, kde-format
-msgid "CRL not available."
-msgstr "CRL dim ar gael."
-
-#: messagepartthemes/default/defaultrenderer.cpp:162
-#, kde-format
-msgid "Available CRL is too old."
-msgstr "Mae'r CRL sydd ar gael yn rhy hen."
-
-#: messagepartthemes/default/defaultrenderer.cpp:166
-#, kde-format
-msgid "A policy was not met."
-msgstr "Ni fodlonwyd polisi."
-
-#: messagepartthemes/default/defaultrenderer.cpp:170
-#, kde-format
-msgid "A system error occurred."
-msgstr "Digwyddodd gwall cysawd."
-
-#: messagepartthemes/default/defaultrenderer.cpp:181
-#, kde-format
-msgid "One key has been revoked."
-msgstr "Mae un allwedd wedi'i dirymu."
-
-#: messagepartthemes/default/defaultrenderer.cpp:208
-#, fuzzy, kde-format
-#| msgid "Good signature."
-msgid "Bad signature."
-msgstr "Llofnod dilys."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, fuzzy, kde-format
@@ -2635,6 +2542,64 @@ msgstr "&Neges Nesaf"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Neges Bl&aenorol Heb ei Darllen"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "Gwall: Ni wiriwyd y llofnod"
+
+#~ msgid "Good signature"
+#~ msgstr "Llofnod dilys"
+
+#, fuzzy
+#~| msgid "Good signature"
+#~ msgid "Bad signature"
+#~ msgstr "Llofnod dilys"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "Dim allwedd gyhoeddus i wirio'r llofnod"
+
+#~ msgid "No signature found"
+#~ msgstr "Ni chanfuwyd llofnod"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "Gwall wrth wirio'r llofnod"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "Canlyniadau gwahanol ar gyfer y llofnodion"
+
+#~ msgid "No status information available."
+#~ msgstr "Dim data cyflwr ar gael."
+
+#~ msgid "Good signature."
+#~ msgstr "Llofnod dilys."
+
+#~ msgid "One key has expired."
+#~ msgstr "Mae un allwedd wedi darfod."
+
+#~ msgid "The signature has expired."
+#~ msgstr "Mae'r llofnod wedi darfod."
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "Methu gwirio: allwedd ar goll."
+
+#~ msgid "CRL not available."
+#~ msgstr "CRL dim ar gael."
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "Mae'r CRL sydd ar gael yn rhy hen."
+
+#~ msgid "A policy was not met."
+#~ msgstr "Ni fodlonwyd polisi."
+
+#~ msgid "A system error occurred."
+#~ msgstr "Digwyddodd gwall cysawd."
+
+#~ msgid "One key has been revoked."
+#~ msgstr "Mae un allwedd wedi'i dirymu."
+
+#, fuzzy
+#~| msgid "Good signature."
+#~ msgid "Bad signature."
+#~ msgstr "Llofnod dilys."
 
 #~ msgid "Not enough information to check signature. %1"
 #~ msgstr "Dim digon o wybodaeth i wirio'r llofnod. %1"

@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-27 00:43+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2025-05-18 17:03+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -920,97 +920,6 @@ msgstr "שליחה"
 msgctxt "@action"
 msgid "Send Deny"
 msgstr "שליחת סירוב"
-
-#: messagepartthemes/default/defaultrenderer.cpp:70
-#, kde-format
-msgid "Error: Signature not verified"
-msgstr "שגיאה: החתימה לא וודאה"
-
-#: messagepartthemes/default/defaultrenderer.cpp:74
-#, kde-format
-msgid "Good signature"
-msgstr "חתימה תקינה"
-
-#: messagepartthemes/default/defaultrenderer.cpp:78
-#, kde-format
-msgid "Bad signature"
-msgstr "חתימה שגויה"
-
-#: messagepartthemes/default/defaultrenderer.cpp:82
-#, kde-format
-msgid "No public key to verify the signature"
-msgstr "אין מפתח ציבורי לווידוא החתימה"
-
-#: messagepartthemes/default/defaultrenderer.cpp:86
-#, kde-format
-msgid "No signature found"
-msgstr "לא נמצאה חתימה"
-
-#: messagepartthemes/default/defaultrenderer.cpp:90
-#, kde-format
-msgid "Error verifying the signature"
-msgstr "שגיאה בווידוא החתימה"
-
-#: messagepartthemes/default/defaultrenderer.cpp:94
-#, kde-format
-msgid "Different results for signatures"
-msgstr "תוצאות שונות לחתימות"
-
-#: messagepartthemes/default/defaultrenderer.cpp:114
-#, kde-format
-msgid "No status information available."
-msgstr "אין מידע זמין לגבי מצב."
-
-#: messagepartthemes/default/defaultrenderer.cpp:121
-#: messagepartthemes/default/defaultrenderer.cpp:206
-#, kde-format
-msgid "Good signature."
-msgstr "חתימה תקינה."
-
-#: messagepartthemes/default/defaultrenderer.cpp:142
-#, kde-format
-msgid "One key has expired."
-msgstr "פג תוקף של מפתח אחד."
-
-#: messagepartthemes/default/defaultrenderer.cpp:146
-#, kde-format
-msgid "The signature has expired."
-msgstr "פג תוקף החתימה."
-
-#: messagepartthemes/default/defaultrenderer.cpp:151
-#, kde-format
-msgid "Unable to verify: key missing."
-msgstr "אין אפשרות לוודא: מפתח חסר."
-
-#: messagepartthemes/default/defaultrenderer.cpp:158
-#, kde-format
-msgid "CRL not available."
-msgstr "רשימת ביטול התעודות אינה זמינה."
-
-#: messagepartthemes/default/defaultrenderer.cpp:162
-#, kde-format
-msgid "Available CRL is too old."
-msgstr "רשימת ביטול האישורים הזמינה ישנה מדי."
-
-#: messagepartthemes/default/defaultrenderer.cpp:166
-#, kde-format
-msgid "A policy was not met."
-msgstr "מדיניות מסויימת לא נענתה."
-
-#: messagepartthemes/default/defaultrenderer.cpp:170
-#, kde-format
-msgid "A system error occurred."
-msgstr "אירעה שגיאת מערכת."
-
-#: messagepartthemes/default/defaultrenderer.cpp:181
-#, kde-format
-msgid "One key has been revoked."
-msgstr "תוקף מפתח אחד בוטל."
-
-#: messagepartthemes/default/defaultrenderer.cpp:208
-#, kde-format
-msgid "Bad signature."
-msgstr "חתימה שגויה."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, kde-format
@@ -2525,6 +2434,60 @@ msgstr "ההודעה הבאה"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "ההודעה הקודמת"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "שגיאה: החתימה לא וודאה"
+
+#~ msgid "Good signature"
+#~ msgstr "חתימה תקינה"
+
+#~ msgid "Bad signature"
+#~ msgstr "חתימה שגויה"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "אין מפתח ציבורי לווידוא החתימה"
+
+#~ msgid "No signature found"
+#~ msgstr "לא נמצאה חתימה"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "שגיאה בווידוא החתימה"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "תוצאות שונות לחתימות"
+
+#~ msgid "No status information available."
+#~ msgstr "אין מידע זמין לגבי מצב."
+
+#~ msgid "Good signature."
+#~ msgstr "חתימה תקינה."
+
+#~ msgid "One key has expired."
+#~ msgstr "פג תוקף של מפתח אחד."
+
+#~ msgid "The signature has expired."
+#~ msgstr "פג תוקף החתימה."
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "אין אפשרות לוודא: מפתח חסר."
+
+#~ msgid "CRL not available."
+#~ msgstr "רשימת ביטול התעודות אינה זמינה."
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "רשימת ביטול האישורים הזמינה ישנה מדי."
+
+#~ msgid "A policy was not met."
+#~ msgstr "מדיניות מסויימת לא נענתה."
+
+#~ msgid "A system error occurred."
+#~ msgstr "אירעה שגיאת מערכת."
+
+#~ msgid "One key has been revoked."
+#~ msgstr "תוקף מפתח אחד בוטל."
+
+#~ msgid "Bad signature."
+#~ msgstr "חתימה שגויה."
 
 #~ msgid "Not enough information to check signature. %1"
 #~ msgstr "אין מספיק מידע כדי לבדוק את החתימה. %1"

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-27 00:43+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2025-08-05 17:38+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -924,97 +924,6 @@ msgstr "أرسل"
 msgctxt "@action"
 msgid "Send Deny"
 msgstr "أرسل رفض"
-
-#: messagepartthemes/default/defaultrenderer.cpp:70
-#, kde-format
-msgid "Error: Signature not verified"
-msgstr "خطأ: لم يُتحقّق من التّوقيع"
-
-#: messagepartthemes/default/defaultrenderer.cpp:74
-#, kde-format
-msgid "Good signature"
-msgstr "التوقيع جيّد"
-
-#: messagepartthemes/default/defaultrenderer.cpp:78
-#, kde-format
-msgid "Bad signature"
-msgstr "التوقيع سيّئ"
-
-#: messagepartthemes/default/defaultrenderer.cpp:82
-#, kde-format
-msgid "No public key to verify the signature"
-msgstr "لا مفتاح علنيّ للتّحقّق من التّوقيع"
-
-#: messagepartthemes/default/defaultrenderer.cpp:86
-#, kde-format
-msgid "No signature found"
-msgstr "لم يُعثر على أيّ توقيع"
-
-#: messagepartthemes/default/defaultrenderer.cpp:90
-#, kde-format
-msgid "Error verifying the signature"
-msgstr "خطأ أثناء التّحقّق من التّوقيع"
-
-#: messagepartthemes/default/defaultrenderer.cpp:94
-#, kde-format
-msgid "Different results for signatures"
-msgstr "اختلفت نتائج التّواقيع"
-
-#: messagepartthemes/default/defaultrenderer.cpp:114
-#, kde-format
-msgid "No status information available."
-msgstr "لا معلومات متوفّرة عن الحالة."
-
-#: messagepartthemes/default/defaultrenderer.cpp:121
-#: messagepartthemes/default/defaultrenderer.cpp:206
-#, kde-format
-msgid "Good signature."
-msgstr "التّوقيع جيّد."
-
-#: messagepartthemes/default/defaultrenderer.cpp:142
-#, kde-format
-msgid "One key has expired."
-msgstr "انقضى مفتاح واحد."
-
-#: messagepartthemes/default/defaultrenderer.cpp:146
-#, kde-format
-msgid "The signature has expired."
-msgstr "انقضى التّوقيع."
-
-#: messagepartthemes/default/defaultrenderer.cpp:151
-#, kde-format
-msgid "Unable to verify: key missing."
-msgstr "تعذّر التّحقّق: المفتاح ناقص."
-
-#: messagepartthemes/default/defaultrenderer.cpp:158
-#, kde-format
-msgid "CRL not available."
-msgstr "‏CRL غير متوفّر."
-
-#: messagepartthemes/default/defaultrenderer.cpp:162
-#, kde-format
-msgid "Available CRL is too old."
-msgstr "‏CRL المتوفّر قديم جدًّا."
-
-#: messagepartthemes/default/defaultrenderer.cpp:166
-#, kde-format
-msgid "A policy was not met."
-msgstr "لم تطبّق إحدى السّياسات."
-
-#: messagepartthemes/default/defaultrenderer.cpp:170
-#, kde-format
-msgid "A system error occurred."
-msgstr "حدث خطأ في النّظام."
-
-#: messagepartthemes/default/defaultrenderer.cpp:181
-#, kde-format
-msgid "One key has been revoked."
-msgstr "فُسخ مفتاح واحد."
-
-#: messagepartthemes/default/defaultrenderer.cpp:208
-#, kde-format
-msgid "Bad signature."
-msgstr "التوقيع سيّئ."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, kde-format
@@ -2540,6 +2449,60 @@ msgstr "الرّسالة التّالية"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "الرّسالة السّابقة"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "خطأ: لم يُتحقّق من التّوقيع"
+
+#~ msgid "Good signature"
+#~ msgstr "التوقيع جيّد"
+
+#~ msgid "Bad signature"
+#~ msgstr "التوقيع سيّئ"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "لا مفتاح علنيّ للتّحقّق من التّوقيع"
+
+#~ msgid "No signature found"
+#~ msgstr "لم يُعثر على أيّ توقيع"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "خطأ أثناء التّحقّق من التّوقيع"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "اختلفت نتائج التّواقيع"
+
+#~ msgid "No status information available."
+#~ msgstr "لا معلومات متوفّرة عن الحالة."
+
+#~ msgid "Good signature."
+#~ msgstr "التّوقيع جيّد."
+
+#~ msgid "One key has expired."
+#~ msgstr "انقضى مفتاح واحد."
+
+#~ msgid "The signature has expired."
+#~ msgstr "انقضى التّوقيع."
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "تعذّر التّحقّق: المفتاح ناقص."
+
+#~ msgid "CRL not available."
+#~ msgstr "‏CRL غير متوفّر."
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "‏CRL المتوفّر قديم جدًّا."
+
+#~ msgid "A policy was not met."
+#~ msgstr "لم تطبّق إحدى السّياسات."
+
+#~ msgid "A system error occurred."
+#~ msgstr "حدث خطأ في النّظام."
+
+#~ msgid "One key has been revoked."
+#~ msgstr "فُسخ مفتاح واحد."
+
+#~ msgid "Bad signature."
+#~ msgstr "التوقيع سيّئ."
 
 #~ msgid "Not enough information to check signature. %1"
 #~ msgstr "لا معلومات كافية لفحص التّوقيع. %1"

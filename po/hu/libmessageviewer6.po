@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-27 00:43+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2025-07-08 22:12+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -896,97 +896,6 @@ msgstr "Küldés"
 msgctxt "@action"
 msgid "Send Deny"
 msgstr "Elutasítás küldése"
-
-#: messagepartthemes/default/defaultrenderer.cpp:70
-#, kde-format
-msgid "Error: Signature not verified"
-msgstr "Hiba: az aláírás hitelessége nincs ellenőrizve"
-
-#: messagepartthemes/default/defaultrenderer.cpp:74
-#, kde-format
-msgid "Good signature"
-msgstr "Az aláírás hiteles"
-
-#: messagepartthemes/default/defaultrenderer.cpp:78
-#, kde-format
-msgid "Bad signature"
-msgstr "Hibás aláírás"
-
-#: messagepartthemes/default/defaultrenderer.cpp:82
-#, kde-format
-msgid "No public key to verify the signature"
-msgstr "Nincs publikus kulcs az aláírás ellenőrzéséhez"
-
-#: messagepartthemes/default/defaultrenderer.cpp:86
-#, kde-format
-msgid "No signature found"
-msgstr "Nem található aláírás"
-
-#: messagepartthemes/default/defaultrenderer.cpp:90
-#, kde-format
-msgid "Error verifying the signature"
-msgstr "Az elektronikus aláírás ellenőrzése nem sikerült"
-
-#: messagepartthemes/default/defaultrenderer.cpp:94
-#, kde-format
-msgid "Different results for signatures"
-msgstr "Az aláírások ellenőrzési eredményei"
-
-#: messagepartthemes/default/defaultrenderer.cpp:114
-#, kde-format
-msgid "No status information available."
-msgstr "Nem áll rendelkezésre állapotinformáció."
-
-#: messagepartthemes/default/defaultrenderer.cpp:121
-#: messagepartthemes/default/defaultrenderer.cpp:206
-#, kde-format
-msgid "Good signature."
-msgstr "Az aláírás hiteles."
-
-#: messagepartthemes/default/defaultrenderer.cpp:142
-#, kde-format
-msgid "One key has expired."
-msgstr "Az egyik kulcs lejárt."
-
-#: messagepartthemes/default/defaultrenderer.cpp:146
-#, kde-format
-msgid "The signature has expired."
-msgstr "Az elektronikus aláírás lejárt."
-
-#: messagepartthemes/default/defaultrenderer.cpp:151
-#, kde-format
-msgid "Unable to verify: key missing."
-msgstr "Nem sikerült az ellenőrzés: a kulcs hiányzik."
-
-#: messagepartthemes/default/defaultrenderer.cpp:158
-#, kde-format
-msgid "CRL not available."
-msgstr "CRL nem áll rendelkezésre."
-
-#: messagepartthemes/default/defaultrenderer.cpp:162
-#, kde-format
-msgid "Available CRL is too old."
-msgstr "A rendelkezésre álló CRL túl régi."
-
-#: messagepartthemes/default/defaultrenderer.cpp:166
-#, kde-format
-msgid "A policy was not met."
-msgstr "A házirend egyik előírása nem teljesült."
-
-#: messagepartthemes/default/defaultrenderer.cpp:170
-#, kde-format
-msgid "A system error occurred."
-msgstr "Rendszerhiba történt."
-
-#: messagepartthemes/default/defaultrenderer.cpp:181
-#, kde-format
-msgid "One key has been revoked."
-msgstr "Az egyik kulcsot visszavonták."
-
-#: messagepartthemes/default/defaultrenderer.cpp:208
-#, kde-format
-msgid "Bad signature."
-msgstr "Hibás aláírás."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, kde-format
@@ -2536,6 +2445,60 @@ msgstr "Következő üzenet"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Előző üzenet"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "Hiba: az aláírás hitelessége nincs ellenőrizve"
+
+#~ msgid "Good signature"
+#~ msgstr "Az aláírás hiteles"
+
+#~ msgid "Bad signature"
+#~ msgstr "Hibás aláírás"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "Nincs publikus kulcs az aláírás ellenőrzéséhez"
+
+#~ msgid "No signature found"
+#~ msgstr "Nem található aláírás"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "Az elektronikus aláírás ellenőrzése nem sikerült"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "Az aláírások ellenőrzési eredményei"
+
+#~ msgid "No status information available."
+#~ msgstr "Nem áll rendelkezésre állapotinformáció."
+
+#~ msgid "Good signature."
+#~ msgstr "Az aláírás hiteles."
+
+#~ msgid "One key has expired."
+#~ msgstr "Az egyik kulcs lejárt."
+
+#~ msgid "The signature has expired."
+#~ msgstr "Az elektronikus aláírás lejárt."
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "Nem sikerült az ellenőrzés: a kulcs hiányzik."
+
+#~ msgid "CRL not available."
+#~ msgstr "CRL nem áll rendelkezésre."
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "A rendelkezésre álló CRL túl régi."
+
+#~ msgid "A policy was not met."
+#~ msgstr "A házirend egyik előírása nem teljesült."
+
+#~ msgid "A system error occurred."
+#~ msgstr "Rendszerhiba történt."
+
+#~ msgid "One key has been revoked."
+#~ msgstr "Az egyik kulcsot visszavonták."
+
+#~ msgid "Bad signature."
+#~ msgstr "Hibás aláírás."
 
 #~ msgid "Not enough information to check signature. %1"
 #~ msgstr "Nincs elég információ az elektronikus aláírás ellenőrzéséhez. %1"

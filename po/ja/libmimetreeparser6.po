@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-03 00:39+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2012-01-28 16:35-0800\n"
 "Last-Translator: Fumiaki Okushi <okushi@kde.gr.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -28,7 +28,7 @@ msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr ""
 
-#: src/messagepart.cpp:706 src/messagepart.cpp:751 src/messagepart.cpp:994
+#: src/messagepart.cpp:706 src/messagepart.cpp:751 src/messagepart.cpp:989
 #, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr "暗号化プラグインが不正です。"

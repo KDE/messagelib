@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mimos\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-27 00:43+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2005-11-23 18:09+0800\n"
 "Last-Translator: MIMOS <opensource@mimos.my>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -984,99 +984,6 @@ msgstr "&Hantar"
 msgctxt "@action"
 msgid "Send Deny"
 msgstr "Hantar sekarang"
-
-#: messagepartthemes/default/defaultrenderer.cpp:70
-#, kde-format
-msgid "Error: Signature not verified"
-msgstr "Ralat: Tanda tangan tidak disahkan"
-
-#: messagepartthemes/default/defaultrenderer.cpp:74
-#, kde-format
-msgid "Good signature"
-msgstr "Tandatangan elok"
-
-#: messagepartthemes/default/defaultrenderer.cpp:78
-#, fuzzy, kde-format
-#| msgid "Good signature"
-msgid "Bad signature"
-msgstr "Tandatangan elok"
-
-#: messagepartthemes/default/defaultrenderer.cpp:82
-#, kde-format
-msgid "No public key to verify the signature"
-msgstr "Tiada kekunci umum untuk mengesahkan tanda tangan"
-
-#: messagepartthemes/default/defaultrenderer.cpp:86
-#, kde-format
-msgid "No signature found"
-msgstr "Tanda tangan tidak ditemui"
-
-#: messagepartthemes/default/defaultrenderer.cpp:90
-#, kde-format
-msgid "Error verifying the signature"
-msgstr "Ralat semasa mengesahkan tanda tangan"
-
-#: messagepartthemes/default/defaultrenderer.cpp:94
-#, kde-format
-msgid "Different results for signatures"
-msgstr "Tanda tangan menghasilkan keputusan berbeza"
-
-#: messagepartthemes/default/defaultrenderer.cpp:114
-#, kde-format
-msgid "No status information available."
-msgstr "Tiada maklumat status boleh didapatkan."
-
-#: messagepartthemes/default/defaultrenderer.cpp:121
-#: messagepartthemes/default/defaultrenderer.cpp:206
-#, kde-format
-msgid "Good signature."
-msgstr "Tandatangan elok."
-
-#: messagepartthemes/default/defaultrenderer.cpp:142
-#, kde-format
-msgid "One key has expired."
-msgstr "Satu kekunci telah luput."
-
-#: messagepartthemes/default/defaultrenderer.cpp:146
-#, kde-format
-msgid "The signature has expired."
-msgstr "Tanda tangan luput."
-
-#: messagepartthemes/default/defaultrenderer.cpp:151
-#, kde-format
-msgid "Unable to verify: key missing."
-msgstr "Tidak dapat membuat pengesahan: kekunci hilang."
-
-#: messagepartthemes/default/defaultrenderer.cpp:158
-#, kde-format
-msgid "CRL not available."
-msgstr "SPS tidak boleh didapatkan."
-
-#: messagepartthemes/default/defaultrenderer.cpp:162
-#, kde-format
-msgid "Available CRL is too old."
-msgstr "SPS yang ada terlalu lama."
-
-#: messagepartthemes/default/defaultrenderer.cpp:166
-#, kde-format
-msgid "A policy was not met."
-msgstr "Tidak menepati dasar."
-
-#: messagepartthemes/default/defaultrenderer.cpp:170
-#, kde-format
-msgid "A system error occurred."
-msgstr "Berlaku ralat sistem."
-
-#: messagepartthemes/default/defaultrenderer.cpp:181
-#, kde-format
-msgid "One key has been revoked."
-msgstr "Satu kekunci telah dibatalkan."
-
-#: messagepartthemes/default/defaultrenderer.cpp:208
-#, fuzzy, kde-format
-#| msgid "Good signature."
-msgid "Bad signature."
-msgstr "Tandatangan elok."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, fuzzy, kde-format
@@ -2706,6 +2613,64 @@ msgstr "Mesej &Seterusnya"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "&Mesej belum baca sebelumnya"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "Ralat: Tanda tangan tidak disahkan"
+
+#~ msgid "Good signature"
+#~ msgstr "Tandatangan elok"
+
+#, fuzzy
+#~| msgid "Good signature"
+#~ msgid "Bad signature"
+#~ msgstr "Tandatangan elok"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "Tiada kekunci umum untuk mengesahkan tanda tangan"
+
+#~ msgid "No signature found"
+#~ msgstr "Tanda tangan tidak ditemui"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "Ralat semasa mengesahkan tanda tangan"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "Tanda tangan menghasilkan keputusan berbeza"
+
+#~ msgid "No status information available."
+#~ msgstr "Tiada maklumat status boleh didapatkan."
+
+#~ msgid "Good signature."
+#~ msgstr "Tandatangan elok."
+
+#~ msgid "One key has expired."
+#~ msgstr "Satu kekunci telah luput."
+
+#~ msgid "The signature has expired."
+#~ msgstr "Tanda tangan luput."
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "Tidak dapat membuat pengesahan: kekunci hilang."
+
+#~ msgid "CRL not available."
+#~ msgstr "SPS tidak boleh didapatkan."
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "SPS yang ada terlalu lama."
+
+#~ msgid "A policy was not met."
+#~ msgstr "Tidak menepati dasar."
+
+#~ msgid "A system error occurred."
+#~ msgstr "Berlaku ralat sistem."
+
+#~ msgid "One key has been revoked."
+#~ msgstr "Satu kekunci telah dibatalkan."
+
+#, fuzzy
+#~| msgid "Good signature."
+#~ msgid "Bad signature."
+#~ msgstr "Tandatangan elok."
 
 #~ msgid "Not enough information to check signature. %1"
 #~ msgstr "Tidak cukup maklumat untuk menyemak tanda tangan. %1"

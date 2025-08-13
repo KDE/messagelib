@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-27 00:43+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2025-05-18 17:01+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -912,97 +912,6 @@ msgstr "Verzenden"
 msgctxt "@action"
 msgid "Send Deny"
 msgstr "Afwijzing verzenden"
-
-#: messagepartthemes/default/defaultrenderer.cpp:70
-#, kde-format
-msgid "Error: Signature not verified"
-msgstr "Fout: ondertekening is niet geverifieerd"
-
-#: messagepartthemes/default/defaultrenderer.cpp:74
-#, kde-format
-msgid "Good signature"
-msgstr "Correcte ondertekening"
-
-#: messagepartthemes/default/defaultrenderer.cpp:78
-#, kde-format
-msgid "Bad signature"
-msgstr "Foute ondertekening"
-
-#: messagepartthemes/default/defaultrenderer.cpp:82
-#, kde-format
-msgid "No public key to verify the signature"
-msgstr "Geen publieke sleutel om de ondertekening te verifiëren"
-
-#: messagepartthemes/default/defaultrenderer.cpp:86
-#, kde-format
-msgid "No signature found"
-msgstr "Geen ondertekening gevonden"
-
-#: messagepartthemes/default/defaultrenderer.cpp:90
-#, kde-format
-msgid "Error verifying the signature"
-msgstr "Fout bij het verifiëren van de ondertekening"
-
-#: messagepartthemes/default/defaultrenderer.cpp:94
-#, kde-format
-msgid "Different results for signatures"
-msgstr "Verschillende resultaten voor ondertekeningen"
-
-#: messagepartthemes/default/defaultrenderer.cpp:114
-#, kde-format
-msgid "No status information available."
-msgstr "Geen statusinformatie beschikbaar."
-
-#: messagepartthemes/default/defaultrenderer.cpp:121
-#: messagepartthemes/default/defaultrenderer.cpp:206
-#, kde-format
-msgid "Good signature."
-msgstr "Correcte ondertekening."
-
-#: messagepartthemes/default/defaultrenderer.cpp:142
-#, kde-format
-msgid "One key has expired."
-msgstr "Eén sleutel is verlopen."
-
-#: messagepartthemes/default/defaultrenderer.cpp:146
-#, kde-format
-msgid "The signature has expired."
-msgstr "De ondertekening is verlopen."
-
-#: messagepartthemes/default/defaultrenderer.cpp:151
-#, kde-format
-msgid "Unable to verify: key missing."
-msgstr "Verificatie onmogelijk: sleutel ontbreekt."
-
-#: messagepartthemes/default/defaultrenderer.cpp:158
-#, kde-format
-msgid "CRL not available."
-msgstr "CRL (lijst ingetrokken certificaten) niet beschikbaar."
-
-#: messagepartthemes/default/defaultrenderer.cpp:162
-#, kde-format
-msgid "Available CRL is too old."
-msgstr "Beschikbare CRL (lijst ingetrokken certificaten) is te oud."
-
-#: messagepartthemes/default/defaultrenderer.cpp:166
-#, kde-format
-msgid "A policy was not met."
-msgstr "Niet voldaan aan alle regels."
-
-#: messagepartthemes/default/defaultrenderer.cpp:170
-#, kde-format
-msgid "A system error occurred."
-msgstr "Er deed zich een systeemfout voor."
-
-#: messagepartthemes/default/defaultrenderer.cpp:181
-#, kde-format
-msgid "One key has been revoked."
-msgstr "Eén sleutel is ingetrokken."
-
-#: messagepartthemes/default/defaultrenderer.cpp:208
-#, kde-format
-msgid "Bad signature."
-msgstr "Foute ondertekening."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, kde-format
@@ -2565,6 +2474,60 @@ msgstr "Volgende bericht"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Vorige bericht"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "Fout: ondertekening is niet geverifieerd"
+
+#~ msgid "Good signature"
+#~ msgstr "Correcte ondertekening"
+
+#~ msgid "Bad signature"
+#~ msgstr "Foute ondertekening"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "Geen publieke sleutel om de ondertekening te verifiëren"
+
+#~ msgid "No signature found"
+#~ msgstr "Geen ondertekening gevonden"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "Fout bij het verifiëren van de ondertekening"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "Verschillende resultaten voor ondertekeningen"
+
+#~ msgid "No status information available."
+#~ msgstr "Geen statusinformatie beschikbaar."
+
+#~ msgid "Good signature."
+#~ msgstr "Correcte ondertekening."
+
+#~ msgid "One key has expired."
+#~ msgstr "Eén sleutel is verlopen."
+
+#~ msgid "The signature has expired."
+#~ msgstr "De ondertekening is verlopen."
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "Verificatie onmogelijk: sleutel ontbreekt."
+
+#~ msgid "CRL not available."
+#~ msgstr "CRL (lijst ingetrokken certificaten) niet beschikbaar."
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "Beschikbare CRL (lijst ingetrokken certificaten) is te oud."
+
+#~ msgid "A policy was not met."
+#~ msgstr "Niet voldaan aan alle regels."
+
+#~ msgid "A system error occurred."
+#~ msgstr "Er deed zich een systeemfout voor."
+
+#~ msgid "One key has been revoked."
+#~ msgstr "Eén sleutel is ingetrokken."
+
+#~ msgid "Bad signature."
+#~ msgstr "Foute ondertekening."
 
 #~ msgid "Not enough information to check signature. %1"
 #~ msgstr "Onvoldoende informatie om de handtekening te controleren. %1"

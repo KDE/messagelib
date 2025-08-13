@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-27 00:43+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2025-05-18 13:10+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -907,97 +907,6 @@ msgstr "Gönder"
 msgctxt "@action"
 msgid "Send Deny"
 msgstr "Reddedildi Gönder"
-
-#: messagepartthemes/default/defaultrenderer.cpp:70
-#, kde-format
-msgid "Error: Signature not verified"
-msgstr "Hata: İmza doğrulanamadı"
-
-#: messagepartthemes/default/defaultrenderer.cpp:74
-#, kde-format
-msgid "Good signature"
-msgstr "Geçerli imza"
-
-#: messagepartthemes/default/defaultrenderer.cpp:78
-#, kde-format
-msgid "Bad signature"
-msgstr "Bozuk imza"
-
-#: messagepartthemes/default/defaultrenderer.cpp:82
-#, kde-format
-msgid "No public key to verify the signature"
-msgstr "İmzayı doğrulayacak genel anahtar yok"
-
-#: messagepartthemes/default/defaultrenderer.cpp:86
-#, kde-format
-msgid "No signature found"
-msgstr "İmza bulunamadı"
-
-#: messagepartthemes/default/defaultrenderer.cpp:90
-#, kde-format
-msgid "Error verifying the signature"
-msgstr "İmzayı doğrulamada hata"
-
-#: messagepartthemes/default/defaultrenderer.cpp:94
-#, kde-format
-msgid "Different results for signatures"
-msgstr "İmzalama için farklı sonuçlar"
-
-#: messagepartthemes/default/defaultrenderer.cpp:114
-#, kde-format
-msgid "No status information available."
-msgstr "Üzgünüm, durum bilgisi yok."
-
-#: messagepartthemes/default/defaultrenderer.cpp:121
-#: messagepartthemes/default/defaultrenderer.cpp:206
-#, kde-format
-msgid "Good signature."
-msgstr "Geçerli imza."
-
-#: messagepartthemes/default/defaultrenderer.cpp:142
-#, kde-format
-msgid "One key has expired."
-msgstr "Bir anahtarın kullanım süresi dolmuş."
-
-#: messagepartthemes/default/defaultrenderer.cpp:146
-#, kde-format
-msgid "The signature has expired."
-msgstr "İmzanın zamanı doldu."
-
-#: messagepartthemes/default/defaultrenderer.cpp:151
-#, kde-format
-msgid "Unable to verify: key missing."
-msgstr "Doğrulanamıyor: Anahtar kayıp."
-
-#: messagepartthemes/default/defaultrenderer.cpp:158
-#, kde-format
-msgid "CRL not available."
-msgstr "CRL hazır değil."
-
-#: messagepartthemes/default/defaultrenderer.cpp:162
-#, kde-format
-msgid "Available CRL is too old."
-msgstr "Kullanılabilir CRL’ler pek eski."
-
-#: messagepartthemes/default/defaultrenderer.cpp:166
-#, kde-format
-msgid "A policy was not met."
-msgstr "İzinler uygun değil."
-
-#: messagepartthemes/default/defaultrenderer.cpp:170
-#, kde-format
-msgid "A system error occurred."
-msgstr "Bir sistem hatası meydana geldi."
-
-#: messagepartthemes/default/defaultrenderer.cpp:181
-#, kde-format
-msgid "One key has been revoked."
-msgstr "Bir anahtar yürürlükten kaldırıldı."
-
-#: messagepartthemes/default/defaultrenderer.cpp:208
-#, kde-format
-msgid "Bad signature."
-msgstr "Bozuk imza."
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
 #, kde-format
@@ -2538,6 +2447,60 @@ msgstr "Sonraki İleti"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Önceki İleti"
+
+#~ msgid "Error: Signature not verified"
+#~ msgstr "Hata: İmza doğrulanamadı"
+
+#~ msgid "Good signature"
+#~ msgstr "Geçerli imza"
+
+#~ msgid "Bad signature"
+#~ msgstr "Bozuk imza"
+
+#~ msgid "No public key to verify the signature"
+#~ msgstr "İmzayı doğrulayacak genel anahtar yok"
+
+#~ msgid "No signature found"
+#~ msgstr "İmza bulunamadı"
+
+#~ msgid "Error verifying the signature"
+#~ msgstr "İmzayı doğrulamada hata"
+
+#~ msgid "Different results for signatures"
+#~ msgstr "İmzalama için farklı sonuçlar"
+
+#~ msgid "No status information available."
+#~ msgstr "Üzgünüm, durum bilgisi yok."
+
+#~ msgid "Good signature."
+#~ msgstr "Geçerli imza."
+
+#~ msgid "One key has expired."
+#~ msgstr "Bir anahtarın kullanım süresi dolmuş."
+
+#~ msgid "The signature has expired."
+#~ msgstr "İmzanın zamanı doldu."
+
+#~ msgid "Unable to verify: key missing."
+#~ msgstr "Doğrulanamıyor: Anahtar kayıp."
+
+#~ msgid "CRL not available."
+#~ msgstr "CRL hazır değil."
+
+#~ msgid "Available CRL is too old."
+#~ msgstr "Kullanılabilir CRL’ler pek eski."
+
+#~ msgid "A policy was not met."
+#~ msgstr "İzinler uygun değil."
+
+#~ msgid "A system error occurred."
+#~ msgstr "Bir sistem hatası meydana geldi."
+
+#~ msgid "One key has been revoked."
+#~ msgstr "Bir anahtar yürürlükten kaldırıldı."
+
+#~ msgid "Bad signature."
+#~ msgstr "Bozuk imza."
 
 #~ msgid "Not enough information to check signature. %1"
 #~ msgstr "İmzalamayı denetlemek için yeterli bilgi yok. %1"

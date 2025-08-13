@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-03 00:39+0000\n"
+"POT-Creation-Date: 2025-08-13 00:44+0000\n"
 "PO-Revision-Date: 2014-09-13 18:21+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -25,7 +25,7 @@ msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "Uten navn"
 
-#: src/messagepart.cpp:706 src/messagepart.cpp:751 src/messagepart.cpp:994
+#: src/messagepart.cpp:706 src/messagepart.cpp:751 src/messagepart.cpp:989
 #, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr "Feil programtillegg for kryptering."
