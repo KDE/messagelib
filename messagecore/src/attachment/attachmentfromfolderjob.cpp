@@ -22,7 +22,7 @@ using namespace MessageCore;
 class AttachmentFromFolderJob::AttachmentLoadJobPrivate
 {
 public:
-    AttachmentLoadJobPrivate(AttachmentFromFolderJob *qq);
+    explicit AttachmentLoadJobPrivate(AttachmentFromFolderJob *qq);
 
     void compressFolder();
     void addEntity(const QFileInfoList &f, const QString &path);

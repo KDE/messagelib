@@ -25,7 +25,7 @@ using namespace MessageComposer;
 class MessageComposer::MainTextJobPrivate : public ContentJobBasePrivate
 {
 public:
-    MainTextJobPrivate(MainTextJob *qq)
+    explicit MainTextJobPrivate(MainTextJob *qq)
         : ContentJobBasePrivate(qq)
     {
     }

@@ -131,12 +131,11 @@ void RichTextComposerNgPrivate::fixHtmlFontSize(QString &cleanHtml) const
     QRegularExpressionMatch rmatch;
     int offset = 0;
     while (cleanHtml.indexOf(styleRegex, offset, &rmatch) != -1) {
-        QString replacement;
         bool ok = false;
         const double ptValue = rmatch.captured(1).toDouble(&ok);
         if (ok) {
             const double emValue = ptValue / 12;
-            replacement = QString::number(emValue, 'g', 2);
+            const QString replacement = QString::number(emValue, 'g', 2);
             const int capLen = rmatch.capturedLength(1);
             cleanHtml.replace(rmatch.capturedStart(1), capLen + 2 /* QLatin1StringView("pt").size() */, replacement + QLatin1StringView("em"));
             // advance the offset to just after the last replace

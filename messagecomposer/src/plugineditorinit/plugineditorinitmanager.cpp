@@ -39,7 +39,7 @@ QString pluginEditorInitVersion()
 class MessageComposer::PluginEditorInitManagerPrivate
 {
 public:
-    PluginEditorInitManagerPrivate(PluginEditorInitManager *qq)
+    explicit PluginEditorInitManagerPrivate(PluginEditorInitManager *qq)
         : q(qq)
     {
         initializePlugins();

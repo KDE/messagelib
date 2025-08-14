@@ -143,9 +143,9 @@ void RecipientsEditorSideWidget::updateTotalToolTip()
 
 void RecipientsEditorSideWidget::pickRecipient()
 {
-    MessageComposer::RecipientsPicker *p = picker();
     Recipient::Ptr rec = mEditor->activeRecipient();
     if (rec) {
+        MessageComposer::RecipientsPicker *p = picker();
         p->setDefaultType(rec->type());
         p->setRecipients(mEditor->recipients());
         mPickerPositioner->reposition();

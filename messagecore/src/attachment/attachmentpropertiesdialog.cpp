@@ -33,7 +33,7 @@ using namespace Qt::Literals::StringLiterals;
 class Q_DECL_HIDDEN MessageCore::AttachmentPropertiesDialog::AttachmentPropertiesDialogPrivate
 {
 public:
-    AttachmentPropertiesDialogPrivate(AttachmentPropertiesDialog *qq)
+    explicit AttachmentPropertiesDialogPrivate(AttachmentPropertiesDialog *qq)
         : q(qq)
     {
     }

@@ -16,7 +16,7 @@ using namespace MessageComposer;
 class MessageComposer::TransparentJobPrivate : public MessageComposer::ContentJobBasePrivate
 {
 public:
-    TransparentJobPrivate(TransparentJob *qq)
+    explicit TransparentJobPrivate(TransparentJob *qq)
         : ContentJobBasePrivate(qq)
     {
     }

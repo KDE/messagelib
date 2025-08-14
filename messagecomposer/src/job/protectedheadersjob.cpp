@@ -18,7 +18,7 @@ using namespace MessageComposer;
 class MessageComposer::ProtectedHeadersJobPrivate : public ContentJobBasePrivate
 {
 public:
-    ProtectedHeadersJobPrivate(ProtectedHeadersJob *qq)
+    explicit ProtectedHeadersJobPrivate(ProtectedHeadersJob *qq)
         : ContentJobBasePrivate(qq)
     {
     }

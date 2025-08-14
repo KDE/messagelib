@@ -26,7 +26,7 @@ using namespace MessageComposer;
 class MessageComposer::SkeletonMessageJobPrivate : public JobBasePrivate
 {
 public:
-    SkeletonMessageJobPrivate(SkeletonMessageJob *qq)
+    explicit SkeletonMessageJobPrivate(SkeletonMessageJob *qq)
         : JobBasePrivate(qq)
     {
     }

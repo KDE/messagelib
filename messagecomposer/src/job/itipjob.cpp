@@ -22,7 +22,7 @@ using namespace MessageComposer;
 class MessageComposer::ItipJobPrivate : public ContentJobBasePrivate
 {
 public:
-    ItipJobPrivate(ItipJob *qq)
+    explicit ItipJobPrivate(ItipJob *qq)
         : ContentJobBasePrivate(qq)
     {
     }

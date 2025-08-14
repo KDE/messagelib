@@ -31,7 +31,7 @@ using namespace MessageComposer;
 class MessageComposer::SignJobPrivate : public ContentJobBasePrivate
 {
 public:
-    SignJobPrivate(SignJob *qq)
+    explicit SignJobPrivate(SignJob *qq)
         : ContentJobBasePrivate(qq)
     {
     }
@@ -189,8 +189,6 @@ void SignJob::process()
     Q_ASSERT(proto);
 
     qCDebug(MESSAGECOMPOSER_LOG) << "creating signJob from:" << proto->name() << proto->displayName();
-    // for now just do the main recipients
-    QByteArray signature;
 
     d->content->assemble();
 

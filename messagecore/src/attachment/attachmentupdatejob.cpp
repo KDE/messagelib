@@ -16,7 +16,7 @@ using namespace MessageCore;
 class Q_DECL_HIDDEN MessageCore::AttachmentUpdateJob::AttachmentUpdateJobPrivate
 {
 public:
-    AttachmentUpdateJobPrivate(AttachmentUpdateJob *qq);
+    explicit AttachmentUpdateJobPrivate(AttachmentUpdateJob *qq);
 
     void doStart(); // slot
     void loadJobResult(KJob *);

@@ -21,7 +21,7 @@ using namespace MessageCore;
 class MessageComposer::AttachmentJobPrivate : public ContentJobBasePrivate
 {
 public:
-    AttachmentJobPrivate(AttachmentJob *qq)
+    explicit AttachmentJobPrivate(AttachmentJob *qq)
         : ContentJobBasePrivate(qq)
     {
     }

@@ -63,7 +63,7 @@ public:
         return mAddressee;
     }
 
-    [[nodiscard]] QString email() const
+    [[nodiscard]] const QString &email() const
     {
         return mEmail;
     }

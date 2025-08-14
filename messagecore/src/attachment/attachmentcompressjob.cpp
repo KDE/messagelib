@@ -22,7 +22,7 @@ static const mode_t archivePerms = S_IFREG | 0644;
 class MessageCore::AttachmentCompressJob::AttachmentCompressJobPrivate
 {
 public:
-    AttachmentCompressJobPrivate(AttachmentCompressJob *qq);
+    explicit AttachmentCompressJobPrivate(AttachmentCompressJob *qq);
 
     void doStart(); // slot
 

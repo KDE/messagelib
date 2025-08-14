@@ -30,7 +30,7 @@ using namespace MessageComposer;
 class MessageComposer::SignEncryptJobPrivate : public ContentJobBasePrivate
 {
 public:
-    SignEncryptJobPrivate(SignEncryptJob *qq)
+    explicit SignEncryptJobPrivate(SignEncryptJob *qq)
         : ContentJobBasePrivate(qq)
     {
     }
@@ -217,7 +217,6 @@ void SignEncryptJob::process()
 
     qCDebug(MESSAGECOMPOSER_LOG) << "creating signencrypt from:" << proto->name() << proto->displayName();
 
-    QByteArray encBody;
     d->content->assemble();
 
     // replace simple LFs by CRLFs for all MIME supporting CryptPlugs

@@ -24,14 +24,13 @@ using MessageCore::AttachmentPart;
 class MessageComposer::AttachmentFromPublicKeyJob::AttachmentFromPublicKeyJobPrivate
 {
 public:
-    AttachmentFromPublicKeyJobPrivate(AttachmentFromPublicKeyJob *qq);
+    explicit AttachmentFromPublicKeyJobPrivate(AttachmentFromPublicKeyJob *qq);
 
     void exportResult(const GpgME::Error &error, const QByteArray &keyData); // slot
     void emitGpgError(const GpgME::Error &error);
 
     AttachmentFromPublicKeyJob *const q;
     QString fingerprint;
-    QByteArray data;
 };
 
 AttachmentFromPublicKeyJob::AttachmentFromPublicKeyJobPrivate::AttachmentFromPublicKeyJobPrivate(AttachmentFromPublicKeyJob *qq)

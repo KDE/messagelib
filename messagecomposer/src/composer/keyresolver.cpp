@@ -351,7 +351,7 @@ static std::vector<GpgME::Key> trustedOrConfirmed(const std::vector<GpgME::Key> 
 namespace
 {
 struct IsNotForFormat : public std::function<bool(GpgME::Key)> {
-    IsNotForFormat(Kleo::CryptoMessageFormat f)
+    explicit IsNotForFormat(Kleo::CryptoMessageFormat f)
         : format(f)
     {
     }

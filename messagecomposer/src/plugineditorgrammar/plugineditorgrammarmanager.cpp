@@ -40,7 +40,7 @@ QString pluginEditorGrammarVersion()
 class MessageComposer::PluginEditorGrammarManagerPrivate
 {
 public:
-    PluginEditorGrammarManagerPrivate(PluginEditorGrammarManager *qq)
+    explicit PluginEditorGrammarManagerPrivate(PluginEditorGrammarManager *qq)
         : q(qq)
     {
         initializePlugins();

@@ -17,7 +17,7 @@ using namespace Qt::Literals::StringLiterals;
 class RichTextComposerSignatures::RichTextComposerSignaturesPrivate
 {
 public:
-    RichTextComposerSignaturesPrivate(RichTextComposerNg *composer)
+    explicit RichTextComposerSignaturesPrivate(RichTextComposerNg *composer)
         : richTextComposer(composer)
     {
     }

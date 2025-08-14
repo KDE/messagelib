@@ -28,7 +28,7 @@ using namespace MessageComposer;
 class MessageComposer::EncryptJobPrivate : public ContentJobBasePrivate
 {
 public:
-    EncryptJobPrivate(EncryptJob *qq)
+    explicit EncryptJobPrivate(EncryptJob *qq)
         : ContentJobBasePrivate(qq)
     {
     }

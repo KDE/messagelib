@@ -30,7 +30,7 @@ using namespace MessageComposer;
 class MessageComposer::AutocryptHeadersJobPrivate : public ContentJobBasePrivate
 {
 public:
-    AutocryptHeadersJobPrivate(AutocryptHeadersJob *qq)
+    explicit AutocryptHeadersJobPrivate(AutocryptHeadersJob *qq)
         : ContentJobBasePrivate(qq)
     {
     }

@@ -21,7 +21,7 @@ using namespace MessageComposer;
 class MessageComposer::SinglepartJobPrivate : public ContentJobBasePrivate
 {
 public:
-    SinglepartJobPrivate(SinglepartJob *qq)
+    explicit SinglepartJobPrivate(SinglepartJob *qq)
         : ContentJobBasePrivate(qq)
     {
     }

@@ -16,7 +16,7 @@ using namespace MessageComposer;
 class MessageComposer::MultipartJobPrivate : public ContentJobBasePrivate
 {
 public:
-    MultipartJobPrivate(MultipartJob *qq)
+    explicit MultipartJobPrivate(MultipartJob *qq)
         : ContentJobBasePrivate(qq)
     {
     }
