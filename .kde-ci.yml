@@ -33,4 +33,5 @@ Dependencies:
 Options:
  json-validate-ignore: ['webengineviewer/src/checkphishingurl/autotests/data/empty2.json']
  require-passing-tests-on: ['Linux']
+ per-test-timeout: 300
  use-ccache: True
