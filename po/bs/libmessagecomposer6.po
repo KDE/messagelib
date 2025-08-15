@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-13 00:44+0000\n"
+"POT-Creation-Date: 2025-08-15 00:47+0000\n"
 "PO-Revision-Date: 2014-01-31 19:04+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: bs <bs@kde.org>\n"
@@ -1545,12 +1545,12 @@ msgstr "Podsjetnik za prilog"
 msgid "Clipboard Text"
 msgstr ""
 
-#: job/attachmentfrompublickeyjob.cpp:51
+#: job/attachmentfrompublickeyjob.cpp:50
 #, kde-format
 msgid "OpenPGP key 0x%1"
 msgstr "OpenPGP ključ 0x%1"
 
-#: job/attachmentfrompublickeyjob.cpp:64 job/autocryptheadersjob.cpp:90
+#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:90
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1559,7 +1559,7 @@ msgstr ""
 "<p>Greška se desila pri pokušaju izvoza ključa iz pozadine:</p><p><b>%1</b></"
 "p>"
 
-#: job/attachmentfrompublickeyjob.cpp:108
+#: job/attachmentfrompublickeyjob.cpp:107
 #, kde-format
 msgid "Exporting key..."
 msgstr "Izvozim ključ..."

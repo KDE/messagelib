@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-13 00:44+0000\n"
+"POT-Creation-Date: 2025-08-15 00:47+0000\n"
 "PO-Revision-Date: 2023-05-15 10:33+0100\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <kde-i18n-pt@kde.org>\n"
@@ -1579,12 +1579,12 @@ msgstr "Nome do Anexo:"
 msgid "Clipboard Text"
 msgstr "Texto da Área de Transferência"
 
-#: job/attachmentfrompublickeyjob.cpp:51
+#: job/attachmentfrompublickeyjob.cpp:50
 #, kde-format
 msgid "OpenPGP key 0x%1"
 msgstr "Chave de OpenPGP 0x%1"
 
-#: job/attachmentfrompublickeyjob.cpp:64 job/autocryptheadersjob.cpp:90
+#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:90
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1593,7 +1593,7 @@ msgstr ""
 "<p>Ocorreu um erro ao tentar exportar a chave da infra-estrutura:</p><p><b>"
 "%1</b></p>"
 
-#: job/attachmentfrompublickeyjob.cpp:108
+#: job/attachmentfrompublickeyjob.cpp:107
 #, kde-format
 msgid "Exporting key..."
 msgstr "A exportar a chave..."

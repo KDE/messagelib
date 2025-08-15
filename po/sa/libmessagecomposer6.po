@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-13 00:44+0000\n"
+"POT-Creation-Date: 2025-08-15 00:47+0000\n"
 "PO-Revision-Date: 2024-12-20 21:53+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -1472,19 +1472,19 @@ msgstr "आसक्तिनाम :"
 msgid "Clipboard Text"
 msgstr "क्लिपबोर्ड पाठ"
 
-#: job/attachmentfrompublickeyjob.cpp:51
+#: job/attachmentfrompublickeyjob.cpp:50
 #, kde-format
 msgid "OpenPGP key 0x%1"
 msgstr "OpenPGP कुञ्जी 0x%1"
 
-#: job/attachmentfrompublickeyjob.cpp:64 job/autocryptheadersjob.cpp:90
+#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:90
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
 "p><p><b>%1</b></p>"
 msgstr "<p>पृष्ठभागात् कीलं निर्यातयितुं प्रयतमाने त्रुटिः अभवत्:</p><p> <b>%1</b></p>"
 
-#: job/attachmentfrompublickeyjob.cpp:108
+#: job/attachmentfrompublickeyjob.cpp:107
 #, kde-format
 msgid "Exporting key..."
 msgstr "कुञ्जी निर्यातयति..."

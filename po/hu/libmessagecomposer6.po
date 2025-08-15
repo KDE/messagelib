@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-13 00:44+0000\n"
+"POT-Creation-Date: 2025-08-15 00:47+0000\n"
 "PO-Revision-Date: 2024-11-16 20:25+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -1488,12 +1488,12 @@ msgstr "Melléklet neve:"
 msgid "Clipboard Text"
 msgstr "Vágólapszöveg"
 
-#: job/attachmentfrompublickeyjob.cpp:51
+#: job/attachmentfrompublickeyjob.cpp:50
 #, kde-format
 msgid "OpenPGP key 0x%1"
 msgstr "OpenPGP kulcs - 0x%1"
 
-#: job/attachmentfrompublickeyjob.cpp:64 job/autocryptheadersjob.cpp:90
+#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:90
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1502,7 +1502,7 @@ msgstr ""
 "<p>Hiba történt a kulcsnak a modulból történő exportálásakor:</p><p><b>%1</"
 "b></p>"
 
-#: job/attachmentfrompublickeyjob.cpp:108
+#: job/attachmentfrompublickeyjob.cpp:107
 #, kde-format
 msgid "Exporting key..."
 msgstr "Kulcs exportálása…"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-13 00:44+0000\n"
+"POT-Creation-Date: 2025-08-15 00:47+0000\n"
 "PO-Revision-Date: 2021-11-06 15:11+0100\n"
 "Last-Translator: Edward Wornar <edi.werner@gmx.de>\n"
 "Language-Team: Upper Sorbian <kde-i18n-doc@kde.org>\n"
@@ -1434,19 +1434,19 @@ msgstr ""
 msgid "Clipboard Text"
 msgstr ""
 
-#: job/attachmentfrompublickeyjob.cpp:51
+#: job/attachmentfrompublickeyjob.cpp:50
 #, kde-format
 msgid "OpenPGP key 0x%1"
 msgstr ""
 
-#: job/attachmentfrompublickeyjob.cpp:64 job/autocryptheadersjob.cpp:90
+#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:90
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
 "p><p><b>%1</b></p>"
 msgstr ""
 
-#: job/attachmentfrompublickeyjob.cpp:108
+#: job/attachmentfrompublickeyjob.cpp:107
 #, kde-format
 msgid "Exporting key..."
 msgstr ""
