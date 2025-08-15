@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-25 00:43+0000\n"
-"PO-Revision-Date: 2025-08-03 23:21+0400\n"
+"PO-Revision-Date: 2025-08-14 08:55+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -313,8 +313,8 @@ msgid ""
 "This view groups the messages by senders or receivers (depending on the "
 "folder type). Messages are not threaded."
 msgstr ""
-"يقوم هذا العرض بتجميع الرسائل حسب المرسلين أو المستقبلين (حسب نوع المجلد). "
-"الرسائل ليست مترابطة."
+"يجمع هذا العرض الرسائل حسب المرسلين أو المستقبلين (حسب نوع المجلد). الرسائل "
+"ليست مترابطة."
 
 #: core/manager.cpp:287
 #, kde-format
@@ -327,8 +327,7 @@ msgid ""
 "This view groups the messages in threads and then groups the threads by the "
 "starting user."
 msgstr ""
-"هذا العرض يقوم بتجميع الرسائل في المواضيع ثم يقوم بتجميع المواضيع بواسطة "
-"المستخدم البادئ."
+"يجمع هذا العرض الرسائل في المواضيع ثم يجمع المواضيع بواسطة المستخدم البادئ."
 
 #: core/manager.cpp:565
 #, kde-format

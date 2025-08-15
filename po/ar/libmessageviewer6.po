@@ -1047,7 +1047,7 @@ msgstr "أضف محتوى بعيد"
 #: remote-content/remotecontentconfigurewidget.cpp:134
 #, kde-format
 msgid "An entry already defines this url. Please modify it."
-msgstr "هناك إدخال يحدد بالفعل عنوان URL هذا. يرجى تعديله."
+msgstr "هناك إدخال يحدد فعلًا عنوان URL هذا. يرجى تعديله."
 
 #: remote-content/remotecontentconfigurewidget.cpp:134
 #, kde-format

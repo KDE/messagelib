@@ -1681,7 +1681,7 @@ msgid ""
 "<para>Distribution list with the given name <resource>%1</resource> already "
 "exists. Please select a different name.</para>"
 msgstr ""
-"<para>قائمة التوزيع بالاسم المحدد <resource>%1</resource> موجودة بالفعل. "
+"<para>قائمة التوزيع بالاسم المحدد <resource>%1</resource> موجودة فعلًا. "
 "الرجاء اختيار اسم مختلف.</para>"
 
 #: recipient/distributionlistdialog.cpp:285
