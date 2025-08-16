@@ -572,7 +572,7 @@ bool ContactUidURLHandler::handleContextMenuRequest(const QUrl &url, const QPoin
     QAction *copy = menu.addAction(QIcon::fromTheme(u"edit-copy"_s), i18n("&Copy Email Address"));
 #endif
 
-    QAction *a = menu.exec(p);
+    const QAction *a = menu.exec(p);
     if (a == open) {
         runKAddressBook(url);
 #ifndef QT_NO_CLIPBOARD

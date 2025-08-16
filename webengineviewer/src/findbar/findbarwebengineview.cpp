@@ -13,7 +13,7 @@ using namespace WebEngineViewer;
 class WebEngineViewer::FindBarWebEngineViewPrivate
 {
 public:
-    FindBarWebEngineViewPrivate(QWebEngineView *view)
+    explicit FindBarWebEngineViewPrivate(QWebEngineView *view)
         : mView(view)
     {
     }

@@ -22,7 +22,7 @@ Q_GLOBAL_STATIC(BackOffModeManager, s_backOffModeManager)
 class WebEngineViewer::BackOffModeManagerPrivate
 {
 public:
-    BackOffModeManagerPrivate(BackOffModeManager *qq)
+    explicit BackOffModeManagerPrivate(BackOffModeManager *qq)
         : q(qq)
         , mTimer(new QTimer(q))
     {

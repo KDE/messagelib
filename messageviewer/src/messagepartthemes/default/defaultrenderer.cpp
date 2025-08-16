@@ -257,11 +257,10 @@ void DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp, Html
     block.setProperty("compliance", metaData.compliance);
     block.setProperty("isSMIME", isSMIME);
 
-    QString startKeyHREF;
     {
         QString keyWithWithoutURL;
         if (cryptoProto) {
-            startKeyHREF = u"<a href=\"key:#%1\">"_s.arg(QString::fromLatin1(metaData.keyId));
+            const QString startKeyHREF = u"<a href=\"key:#%1\">"_s.arg(QString::fromLatin1(metaData.keyId));
 
             keyWithWithoutURL = u"%1%2</a>"_s.arg(startKeyHREF, QString::fromLatin1(QByteArray(QByteArrayLiteral("0x") + metaData.keyId)));
         } else {

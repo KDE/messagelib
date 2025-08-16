@@ -84,9 +84,7 @@ bool DKIMInfo::parseDKIM(const QString &header)
     } else {
         const QStringList lst = mAgentOrUserIdentifier.split(u'@');
         if (lst.count() == 2) {
-            if (mAgentOrUserIdentifier.isEmpty()) {
-                mAgentOrUserIdentifier = u'@' + mDomain;
-            }
+            mAgentOrUserIdentifier = u'@' + mDomain;
             mIDomain = lst.at(1);
         }
     }

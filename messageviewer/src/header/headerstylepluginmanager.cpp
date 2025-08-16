@@ -31,7 +31,7 @@ public:
 class MessageViewer::HeaderStylePluginManagerPrivate
 {
 public:
-    HeaderStylePluginManagerPrivate(HeaderStylePluginManager *qq)
+    explicit HeaderStylePluginManagerPrivate(HeaderStylePluginManager *qq)
         : q(qq)
     {
     }

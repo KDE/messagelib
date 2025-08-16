@@ -73,11 +73,10 @@ QString TemplateParser::Util::getFirstNameFromEmail(const QString &str)
         // we have a display name, look for a comma
         int nameLength = name.length();
         int sep_pos = -1;
-        int i;
         if ((sep_pos = name.indexOf(u',')) < 0) {
             // no comma, start at the beginning of the string and return the first sequence
             // of non-whitespace characters
-            for (i = 0; i < nameLength; i++) {
+            for (int i = 0; i < nameLength; i++) {
                 const QChar c = name.at(i);
                 if (!c.isSpace()) {
                     res.append(c);
@@ -119,11 +118,10 @@ QString TemplateParser::Util::getLastNameFromEmail(const QString &str)
         // we have a display name, look for a comma
         int nameLength = name.length();
         int sep_pos = -1;
-        int i;
         if ((sep_pos = name.indexOf(u',')) < 0) {
             // no comma, start at the end of the string and return the last sequence
             // of non-whitespace characters
-            for (i = nameLength - 1; i >= 0; i--) {
+            for (int i = nameLength - 1; i >= 0; i--) {
                 const QChar c = name.at(i);
                 if (!c.isSpace()) {
                     res.prepend(c);

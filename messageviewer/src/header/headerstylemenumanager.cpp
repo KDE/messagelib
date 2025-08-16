@@ -25,7 +25,7 @@ using namespace MessageViewer;
 class MessageViewer::HeaderStyleMenuManagerPrivate
 {
 public:
-    HeaderStyleMenuManagerPrivate(HeaderStyleMenuManager *qq)
+    explicit HeaderStyleMenuManagerPrivate(HeaderStyleMenuManager *qq)
         : q(qq)
     {
     }
