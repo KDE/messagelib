@@ -16,7 +16,7 @@ macro(add_messageviewer_crypto_unittest _source)
         KF6::IconThemes
         KPim6::Mime
         KPim6::GrantleeTheme
-)
+    )
     add_gpg_crypto_test(${_name} messageviewer-messageparttheme-${_name})
     set_tests_properties(messageviewer-messageparttheme-${_name} PROPERTIES
         ENVIRONMENT "LC_ALL=en_US.UTF-8"
@@ -24,7 +24,11 @@ macro(add_messageviewer_crypto_unittest _source)
 endmacro()
 
 add_messageviewer_crypto_unittest(objecttreeparsertest.cpp)
-add_messageviewer_crypto_unittest(rendertest.cpp)
+add_messageviewer_crypto_unittest(rendertest-headeronly.cpp)
+add_messageviewer_crypto_unittest(rendertest-hidden.cpp)
+add_messageviewer_crypto_unittest(rendertest-iconic.cpp)
+add_messageviewer_crypto_unittest(rendertest-inlined.cpp)
+add_messageviewer_crypto_unittest(rendertest-smart.cpp)
 add_messageviewer_crypto_unittest(unencryptedmessagetest.cpp)
 
 ecm_add_test(quotehtmltest.cpp setupenv.cpp ../plugins/quotehtml.cpp
