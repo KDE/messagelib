@@ -17,26 +17,8 @@ public:
     static void initMain();
 
 private Q_SLOTS:
-    void testRenderSmart_data();
-    void testRenderSmart();
-
-    void testRenderSmartAsync_data();
-    void testRenderSmartAsync();
-
-    void testRenderSmartDetails_data();
-    void testRenderSmartDetails();
-
-    void testRenderInlined_data();
-    void testRenderInlined();
-
     void testRenderIconic_data();
     void testRenderIconic();
-
-    void testRenderHidden_data();
-    void testRenderHidden();
-
-    void testRenderHeaderOnly_data();
-    void testRenderHeaderOnly();
 
 private:
     void testRender();
