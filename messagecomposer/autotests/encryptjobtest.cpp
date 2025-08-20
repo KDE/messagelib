@@ -38,7 +38,6 @@ using namespace Qt::Literals::StringLiterals;
 #include <cstdlib>
 
 #include <QTest>
-#include <gpgme++/decryptionresult.h>
 
 QTEST_MAIN(EncryptJobTest)
 
