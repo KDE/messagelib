@@ -40,7 +40,6 @@ PGPBlockType Block::determineType() const
 
 QList<Block> MimeTreeParser::prepareMessageForDecryption(const QByteArray &msg)
 {
-    PGPBlockType pgpBlock = NoPgpBlock;
     QList<Block> blocks;
     int start = -1; // start of the current PGP block
     int lastEnd = -1; // end of the last PGP block
@@ -67,6 +66,7 @@ QList<Block> MimeTreeParser::prepareMessageForDecryption(const QByteArray &msg)
         int nextEnd;
         int nextStart;
 
+        PGPBlockType pgpBlock;
         // is the PGP block a clearsigned block?
         if (!strncmp(msg.constData() + start + 15, "SIGNED", 6)) {
             pgpBlock = ClearsignedBlock;

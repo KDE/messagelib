@@ -329,7 +329,6 @@ MailingList MailingList::detect(const KMime::Message::Ptr &message)
 
 QString MailingList::name(const KMime::Message::Ptr &message, QByteArray &headerName, QString &headerValue)
 {
-    QString mailingList;
     headerName = QByteArray();
     headerValue.clear();
 
@@ -338,7 +337,7 @@ QString MailingList::name(const KMime::Message::Ptr &message, QByteArray &header
     }
 
     for (const MagicDetectorFunc &detector : magic_detectors) {
-        mailingList = detector(message, headerName, headerValue);
+        const QString mailingList = detector(message, headerName, headerValue);
         if (!mailingList.isNull()) {
             return mailingList;
         }

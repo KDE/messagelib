@@ -31,7 +31,7 @@ using namespace WebEngineViewer;
 class WebEngineViewer::WebHitTestResultPrivate
 {
 public:
-    WebHitTestResultPrivate(const QPoint &pos = QPoint(), const QUrl &url = QUrl(), const QVariant &result = QVariant())
+    explicit WebHitTestResultPrivate(const QPoint &pos = QPoint(), const QUrl &url = QUrl(), const QVariant &result = QVariant())
         : mPos(pos)
         , mPageUrl(url)
     {
