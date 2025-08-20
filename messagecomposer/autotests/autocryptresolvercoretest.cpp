@@ -17,9 +17,16 @@ using namespace Qt::Literals::StringLiterals;
 #include <QStandardPaths>
 #include <QTest>
 
+#include <gpgme.h>
+
 QTEST_MAIN(AutocryptKeyResolverCoreTest)
 
 using namespace MessageComposer;
+
+void AutocryptKeyResolverCoreTest::initMain()
+{
+    gpgme_check_version(nullptr);
+}
 
 void AutocryptKeyResolverCoreTest::initTestCase()
 {

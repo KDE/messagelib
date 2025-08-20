@@ -27,6 +27,8 @@ using namespace Qt::Literals::StringLiterals;
 #include <gpgme++/keylistresult.h>
 #include <gpgme++/verificationresult.h>
 
+#include <gpgme.h>
+
 #include <cstdlib>
 
 #include <QTest>
@@ -34,6 +36,11 @@ using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(AutocryptHeadersJobTest)
 
 using namespace MessageComposer;
+
+void AutocryptHeadersJobTest::initMain()
+{
+    gpgme_check_version(nullptr);
+}
 
 void AutocryptHeadersJobTest::initTestCase()
 {

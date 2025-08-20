@@ -26,9 +26,16 @@ using namespace Qt::Literals::StringLiterals;
 #include "setupenv.h"
 #include <MimeTreeParser/NodeHelper>
 
+#include <gpgme.h>
+
 QTEST_MAIN(SignAndEncryptTest)
 
 using namespace MessageComposer;
+
+void SignAndEncryptTest::initMain()
+{
+    gpgme_check_version(nullptr);
+}
 
 void SignAndEncryptTest::initTestCase()
 {

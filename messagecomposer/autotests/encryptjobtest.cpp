@@ -33,6 +33,8 @@ using namespace Qt::Literals::StringLiterals;
 #include <gpgme++/decryptionresult.h>
 #include <gpgme++/verificationresult.h>
 
+#include <gpgme.h>
+
 #include <cstdlib>
 
 #include <QTest>
@@ -41,6 +43,11 @@ using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(EncryptJobTest)
 
 using namespace MessageComposer;
+
+void EncryptJobTest::initMain()
+{
+    gpgme_check_version(nullptr);
+}
 
 void EncryptJobTest::initTestCase()
 {

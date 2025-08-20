@@ -29,6 +29,8 @@ using namespace Qt::Literals::StringLiterals;
 #include <gpgme++/decryptionresult.h>
 #include <gpgme++/verificationresult.h>
 
+#include <gpgme.h>
+
 #include <sstream>
 
 #include "setupenv.h"
@@ -36,6 +38,11 @@ using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(SignEncryptTest)
 
 using namespace MessageComposer;
+
+void SignEncryptTest::initMain()
+{
+    gpgme_check_version(nullptr);
+}
 
 void SignEncryptTest::initTestCase()
 {

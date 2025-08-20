@@ -36,6 +36,8 @@
 #include <gpgme++/key.h>
 #include <gpgme++/keylistresult.h>
 
+#include <gpgme.h>
+
 #include <QDebug>
 #include <QTest>
 
@@ -46,6 +48,11 @@ using namespace MessageCore;
 Q_DECLARE_METATYPE(MessageCore::AttachmentPart)
 
 QTEST_MAIN(CryptoComposerTest)
+
+void CryptoComposerTest::initMain()
+{
+    gpgme_check_version(nullptr);
+}
 
 void CryptoComposerTest::initTestCase()
 {

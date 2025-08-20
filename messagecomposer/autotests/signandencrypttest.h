@@ -13,6 +13,9 @@ class SignAndEncryptTest : public QObject
 {
     Q_OBJECT
 
+public:
+    static void initMain();
+
 public Q_SLOTS:
     void initTestCase();
 

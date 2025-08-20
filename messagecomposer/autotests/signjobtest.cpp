@@ -22,11 +22,18 @@ using namespace Qt::Literals::StringLiterals;
 
 #include "setupenv.h"
 
+#include <gpgme.h>
+
 #include <cstdlib>
 
 QTEST_MAIN(SignJobTest)
 
 using namespace MessageComposer;
+
+void SignJobTest::initMain()
+{
+    gpgme_check_version(nullptr);
+}
 
 void SignJobTest::initTestCase()
 {

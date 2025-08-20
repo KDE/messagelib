@@ -18,10 +18,17 @@ using namespace Qt::Literals::StringLiterals;
 #include <QStandardPaths>
 #include <QTest>
 
+#include <gpgme.h>
+
 QTEST_MAIN(KeyResolverTest)
 
 using namespace MessageComposer;
 using namespace Kleo;
+
+void KeyResolverTest::initMain()
+{
+    gpgme_check_version(nullptr);
+}
 
 void KeyResolverTest::initTestCase()
 {
