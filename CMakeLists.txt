@@ -3,6 +3,7 @@
 cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
 set(PIM_VERSION "6.5.40")
 set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_SCAN_FOR_MODULES OFF)
 
 project(Messagelib VERSION ${PIM_VERSION})
 
