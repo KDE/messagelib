@@ -18,7 +18,6 @@ using namespace Qt::Literals::StringLiterals;
 #include <KMime/Message>
 
 #include <QDir>
-#include <QProcess>
 #include <QTest>
 
 using namespace MessageViewer;

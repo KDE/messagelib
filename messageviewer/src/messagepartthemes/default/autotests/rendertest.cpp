@@ -4,6 +4,7 @@
 
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
+#include <QProcess>
 
 static QString renderTreeHelper(const MimeTreeParser::MessagePart::Ptr &messagePart, QString indent)
 {
