@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-13 00:44+0000\n"
-"PO-Revision-Date: 2025-08-05 17:38+0400\n"
+"PO-Revision-Date: 2025-08-20 21:33+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -1084,7 +1084,7 @@ msgstr ""
 #, kde-format
 msgid "This email contains a shorturl (%1). It can redirect to another server."
 msgstr ""
-"يحتوي هذا البريد مسارًا قصيرًا (%1). يمكن أن يُعيد المسار توجيهك إلى خادوم آخر."
+"يحتوي هذا البريد مسارًا قصيرًا (%1). يمكن أن يُعيد المسار توجيهك إلى خادم آخر."
 
 #: scamdetection/scamdetectionwebengine.cpp:234
 #, kde-format
@@ -1352,8 +1352,8 @@ msgid ""
 "Turn this option on to send groupware invitations in a way that Microsoft "
 "Exchange understands."
 msgstr ""
-"يواجه «مايكروسوفت آوتلوك» عند استخدامه مع خادوم «مايكروسوفت إكسچينج» مشكلة "
-"في فهم البُرد التّعاونيّة المطبِّقة للمعايير. فعّل هذا الخيار لإرسال الدّعوات "
+"يواجه «مايكروسوفت آوتلوك» عند استخدامه مع خادم «مايكروسوفت إكسچينج» مشكلة في "
+"فهم البُرد التّعاونيّة المطبِّقة للمعايير. فعّل هذا الخيار لإرسال الدّعوات "
 "التّعاونيّة بطريقة يفهمها «مايكروسوفت إكسچينج»."
 
 #. i18n: ectx: label, entry (AutomaticSending), group (Invitations)
@@ -1462,7 +1462,7 @@ msgid ""
 "Turn this option on to send groupware invitations in a way that Microsoft "
 "Exchange understands."
 msgstr ""
-"يواجه «مايكروسوفت آوتلوك» عند استخدامه مع خادوم «مايكروسوفت إكسچينج»\n"
+"يواجه «مايكروسوفت آوتلوك» عند استخدامه مع خادم «مايكروسوفت إكسچينج»\n"
 "مشكلة في فهم البُرد التّعاونيّة المطبِّقة للمعايير.\n"
 "فعّل هذا الخيار لإرسال الدّعوات التّعاونيّة بطريقة يفهمها «مايكروسوفت إكسچينج»."
 
@@ -1515,7 +1515,7 @@ msgstr "اطبع لون الخلفيّة والصّور"
 #: ui/printingsettings.ui:38
 #, kde-format
 msgid "Always show encryption/signature details"
-msgstr "أظهر تفاصيل التشفير/التوقيع دائمًا"
+msgstr "أظهر تفاصيل التعمية/التوقيع دائمًا"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, Settings)
 #: ui/settings.ui:19
@@ -2390,7 +2390,7 @@ msgstr "المصدر الخامّ"
 #: widgets/mailsourcewebengineviewer.cpp:55
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
-msgstr "خامّ، البريد دون تعديل كما هو مخزّن في نظام الملفّات أو في الخادوم"
+msgstr "خامّ، البريد دون تعديل كما هو مخزّن في نظام الملفّات أو في الخادم"
 
 #: widgets/mailsourcewebengineviewer.cpp:58
 #, kde-format
