@@ -256,8 +256,6 @@ void ObjectTreeParserTest::testOpenPGPEncryptedNotDecrypted()
 
 void ObjectTreeParserTest::testOpenPGPEncryptedOverrideEncoding()
 {
-    QSKIP("FIXME: Failing for too long");
-
     KMime::Message::Ptr originalMessage = readAndParseMail(u"openpgp-encrypted-attachment-iso-8859-15-encoded.mbox"_s);
 
     NodeHelper nodeHelper;
@@ -358,10 +356,6 @@ void ObjectTreeParserTest::testRenderedTree_data()
 void ObjectTreeParserTest::testRenderedTree()
 {
     QFETCH(QString, mailFileName);
-
-    if (mailFileName == u"openpgp-encrypted-no-text-attachment.mbox"_s) {
-        QSKIP("FIXME: Failing for too long");
-    }
 
     KMime::Message::Ptr originalMessage = readAndParseMail(mailFileName);
     NodeHelper nodeHelper;
