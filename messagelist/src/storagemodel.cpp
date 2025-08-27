@@ -235,7 +235,7 @@ bool MessageList::StorageModel::initializeMessageItem(MessageList::Core::Message
     if (auto subjectMail = mail->subject(false)) {
         subject = subjectMail->asUnicodeString();
         if (subject.isEmpty()) {
-            subject = QLatin1Char('(') + noSubject + u')';
+            subject = u'(' + noSubject + u')';
         }
     }
 

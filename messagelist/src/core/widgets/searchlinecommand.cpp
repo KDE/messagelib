@@ -215,7 +215,7 @@ QString SearchLineCommand::generateCommadLineStr() const
     QString result;
     for (const auto &info : mSearchLineInfo) {
         if (!result.isEmpty()) {
-            result += QLatin1Char(' ') + i18n("AND") + u' ';
+            result += u' ' + i18n("AND") + u' ';
         }
         const QString translatedType = convertSearchLinetypeToTranslatedString(info.type);
         if (!translatedType.isEmpty()) {

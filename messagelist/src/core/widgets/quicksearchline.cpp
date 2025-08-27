@@ -93,7 +93,7 @@ QuickSearchLine::~QuickSearchLine() = default;
 void QuickSearchLine::slotSearchEditTextEdited(const QString &text)
 {
     int minimumStringLength = 3;
-    if (text.startsWith(QLatin1Char('"')) && text.endsWith(u'"')) {
+    if (text.startsWith(u'"') && text.endsWith(u'"')) {
         minimumStringLength = 5;
     }
     if (!text.trimmed().isEmpty()) {

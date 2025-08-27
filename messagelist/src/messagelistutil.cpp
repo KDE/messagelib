@@ -147,7 +147,7 @@ QString MessageList::Util::contentSummary(const Akonadi::Item &item)
     QString ret;
     for (const QString &line : lines) {
         const QString lineTrimmed = line.trimmed();
-        const bool isQuoted = lineTrimmed.startsWith(QLatin1Char('>')) || lineTrimmed.startsWith(u'|');
+        const bool isQuoted = lineTrimmed.startsWith(u'>') || lineTrimmed.startsWith(u'|');
         if (!isQuoted && !lineTrimmed.isEmpty()) {
             ret += line + u'\n';
             numLines++;
