@@ -33,17 +33,19 @@ private Q_SLOTS:
         auto dt = QDateTime::currentDateTime();
         const auto today = dt.date();
         dt.setTime(QTime(12, 34, 56));
-        QCOMPARE(f.dateString(dt), u"Today 12:34 PM"_s);
+        // depending on the platform ICU/CLDR version we get different Unicode
+        // whitespaces before the AM/PM mark, simplified() ignores those
+        QCOMPARE(f.dateString(dt).simplified(), u"Today 12:34 PM"_s);
 
         dt.setDate(dt.date().addDays(-1));
-        QCOMPARE(f.dateString(dt), u"Yesterday 12:34 PM"_s);
+        QCOMPARE(f.dateString(dt).simplified(), u"Yesterday 12:34 PM"_s);
 
         dt.setDate(dt.date().addDays(-1));
         QVERIFY(f.dateString(dt).startsWith(QLocale::c().toString(dt, QLatin1StringView("dddd"))));
 
-        QCOMPARE(f.dateString(QDateTime(today, QTime(0, 0))), u"Today 12:00 AM"_s);
-        QCOMPARE(f.dateString(QDateTime(today, QTime(23, 59, 59))), u"Today 11:59 PM"_s);
-        QCOMPARE(f.dateString(QDateTime(today, QTime(23, 59, 59, 999))), u"Today 11:59 PM"_s);
+        QCOMPARE(f.dateString(QDateTime(today, QTime(0, 0))).simplified(), u"Today 12:00 AM"_s);
+        QCOMPARE(f.dateString(QDateTime(today, QTime(23, 59, 59))).simplified(), u"Today 11:59 PM"_s);
+        QCOMPARE(f.dateString(QDateTime(today, QTime(23, 59, 59, 999))).simplified(), u"Today 11:59 PM"_s);
     }
 
     void testLocalizedFormat()
