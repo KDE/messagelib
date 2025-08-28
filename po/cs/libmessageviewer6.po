@@ -1646,10 +1646,9 @@ msgid "message"
 msgstr "zpráva"
 
 #: utils/messageviewerutil.cpp:472
-#, fuzzy, kde-format
-#| msgid "email messages (*.mbox);;all files (*)"
+#, kde-format
 msgid "Mailbox file (*.mbox);;All Files (*)"
-msgstr "zprávy pošty (*.mbox);;všechny soubory (*)"
+msgstr ""
 
 #: utils/messageviewerutil.cpp:483
 #, kde-format
@@ -2421,57 +2420,3 @@ msgstr "Následující zpráva"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Předchozí zpráva"
-
-#~ msgid "Error: Signature not verified"
-#~ msgstr "Chyba: Podpis neověřen"
-
-#~ msgid "Good signature"
-#~ msgstr "Správný podpis"
-
-#~ msgid "Bad signature"
-#~ msgstr "Chybný podpis"
-
-#~ msgid "No public key to verify the signature"
-#~ msgstr "Není k dispozici veřejný klíč k ověření podpisu"
-
-#~ msgid "No signature found"
-#~ msgstr "Nebyl nalezen podpis"
-
-#~ msgid "Error verifying the signature"
-#~ msgstr "Chyba při ověřování podpisu"
-
-#~ msgid "Different results for signatures"
-#~ msgstr "Rozdílné výsledky pro podpisy"
-
-#~ msgid "No status information available."
-#~ msgstr "Není k dispozici informace o stavu."
-
-#~ msgid "Good signature."
-#~ msgstr "Správný podpis."
-
-#~ msgid "One key has expired."
-#~ msgstr "Jeden klíč vypršel."
-
-#~ msgid "The signature has expired."
-#~ msgstr "Podpis vypršel."
-
-#~ msgid "Unable to verify: key missing."
-#~ msgstr "Nelze ověřit: chybí klíč."
-
-#~ msgid "CRL not available."
-#~ msgstr "Není k dispozici CRL."
-
-#~ msgid "Available CRL is too old."
-#~ msgstr "Dostupné CRL je příliš staré."
-
-#~ msgid "A policy was not met."
-#~ msgstr "Zásada nebyla dodržena."
-
-#~ msgid "A system error occurred."
-#~ msgstr "Vyskytla se systémová chyba."
-
-#~ msgid "One key has been revoked."
-#~ msgstr "Jeden klíč byl zrušen."
-
-#~ msgid "Bad signature."
-#~ msgstr "Chybný podpis."
