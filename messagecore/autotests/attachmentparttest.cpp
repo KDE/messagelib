@@ -33,7 +33,7 @@ void AttachmentPartTest::testApi()
     QVariant variant = QVariant::fromValue(part);
     QVERIFY(variant.isValid());
     QVERIFY(variant.canConvert<AttachmentPart::Ptr>());
-    QVERIFY(variant.value<AttachmentPart::Ptr>() == part);
+    QCOMPARE(variant.value<AttachmentPart::Ptr>(), part);
 }
 
 void AttachmentPartTest::shouldHaveDefaultValue()

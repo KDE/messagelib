@@ -41,7 +41,7 @@ void ScamAttributeTest::shouldDeserializeValue()
     const QByteArray ba = attr.serialized();
     MessageViewer::ScamAttribute result;
     result.deserialize(ba);
-    QVERIFY(result == attr);
+    QCOMPARE(result, attr);
 }
 
 void ScamAttributeTest::shouldCloneAttribute()

@@ -33,8 +33,8 @@ void MailingListTest::shouldHaveDefaultValue()
     QVERIFY(ml.ownerUrls().isEmpty());
     QVERIFY(ml.archivedAtUrls().isEmpty());
     QVERIFY(ml.id().isEmpty());
-    QVERIFY(ml.features() == MessageCore::MailingList::None);
-    QVERIFY(ml.handler() == MessageCore::MailingList::KMail);
+    QCOMPARE(ml.features(), MessageCore::MailingList::None);
+    QCOMPARE(ml.handler(), MessageCore::MailingList::KMail);
 }
 
 void MailingListTest::shouldRestoreFromSettings()

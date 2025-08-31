@@ -56,7 +56,7 @@ void DKIMResultAttributeTest::shouldDeserializeValue()
     const QByteArray ba = attr.serialized();
     MessageViewer::DKIMResultAttribute result;
     result.deserialize(ba);
-    QVERIFY(result == attr);
+    QCOMPARE(result, attr);
 }
 
 #include "moc_dkimresultattributetest.cpp"

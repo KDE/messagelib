@@ -54,7 +54,7 @@ void MessageDisplayFormatAttributeTest::shouldDeserializeValue()
     const QByteArray ba = attr.serialized();
     MessageViewer::MessageDisplayFormatAttribute result;
     result.deserialize(ba);
-    QVERIFY(attr == result);
+    QCOMPARE(attr, result);
 }
 
 void MessageDisplayFormatAttributeTest::shouldCloneAttribute()
@@ -64,7 +64,7 @@ void MessageDisplayFormatAttributeTest::shouldCloneAttribute()
     attr.setMessageFormat(format);
     attr.setRemoteContent(true);
     MessageViewer::MessageDisplayFormatAttribute *result = attr.clone();
-    QVERIFY(attr == *result);
+    QCOMPARE(attr, *result);
     delete result;
 }
 

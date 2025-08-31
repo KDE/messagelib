@@ -50,7 +50,7 @@ void AutocryptKeyResolverCoreTest::init()
 void AutocryptKeyResolverCoreTest::cleanup()
 {
     autocryptDir.removeRecursively();
-    QVERIFY(mKeyCache.use_count() == 1);
+    QCOMPARE(mKeyCache.use_count(), 1);
     mKeyCache.reset();
 }
 

@@ -46,7 +46,7 @@ void AttachmentFromMimeContentJobTest::testAttachment()
     // qCDebug(MESSAGECORE_LOG) << "Decoded content:" << content->decodedContent();
 
     auto job = new AttachmentFromMimeContentJob(content, this);
-    QVERIFY(job->uiDelegate() == nullptr); // No GUI thankyouverymuch.
+    QCOMPARE(job->uiDelegate(), nullptr); // No GUI thankyouverymuch.
     VERIFYEXEC(job);
     delete content;
     content = nullptr;
@@ -59,7 +59,7 @@ void AttachmentFromMimeContentJobTest::testAttachment()
     QCOMPARE(part->description(), description);
     // QCOMPARE( part->charset(), charset ); // TODO will probably need charsets in AttachmentPart :(
     QCOMPARE(part->fileName(), fileName);
-    QVERIFY(part->encoding() == encoding);
+    QCOMPARE(part->encoding(), encoding);
     QVERIFY(part->isInline());
     QCOMPARE(part->data(), data);
 }
