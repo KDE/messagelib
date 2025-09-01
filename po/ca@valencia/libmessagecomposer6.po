@@ -323,7 +323,7 @@ msgstr "Adjunta una clau pública OpenPGP"
 #: attachment/attachmentcontrollerbase.cpp:986
 #, kde-format
 msgid "Select the public key which should be attached."
-msgstr "Seleccioneu la clau pública que s'hauria d'adjuntar."
+msgstr "Trieu la clau pública que s'hauria d'adjuntar."
 
 #: attachment/attachmentmodel.cpp:122
 #, kde-format
@@ -1077,7 +1077,7 @@ msgstr ""
 #: composer/keyresolver.cpp:1433
 #, kde-format
 msgid "Encryption Key Selection"
-msgstr "Seleccioneu la clau d'encriptació"
+msgstr "Trieu la clau d'encriptació"
 
 #: composer/keyresolver.cpp:1477
 #, kde-format
@@ -1107,9 +1107,9 @@ msgid ""
 "certificates.</qt>"
 msgstr ""
 "<qt>No s'ha trobat cap certificat d'encriptació vàlid i de confiança per a "
-"«%1».<br/> <br/>Seleccioneu els certificats que s'haurien d'utilitzar per a "
-"este destinatari. Si no hi ha cap certificat adequat en la llista, també "
-"podreu buscar certificats externs clicant damunt del botó: busca certificats "
+"«%1».<br/> <br/>Trieu els certificats que s'haurien d'utilitzar per a este "
+"destinatari. Si no hi ha cap certificat adequat en la llista, també podreu "
+"buscar certificats externs clicant damunt del botó: busca certificats "
 "externs.</qt>"
 
 #: composer/keyresolver.cpp:1559
@@ -1130,7 +1130,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Name Selection"
-msgstr "Seleccioneu el nom"
+msgstr "Trieu el nom"
 
 #: contactpreference/savecontactpreferencejob.cpp:72
 #, kde-format
@@ -1141,8 +1141,7 @@ msgstr "Quin nom tindrà el contacte «%1» en la llibreta d'adreces?"
 #, kde-format
 msgid "Select the address book folder to store the new contact in:"
 msgstr ""
-"Seleccioneu la carpeta de la llibreta d'adreces on es guardarà el contacte "
-"nou:"
+"Trieu la carpeta de la llibreta d'adreces on es guardarà el contacte nou:"
 
 #: followupreminder/followupremindercreatejob.cpp:78
 #, kde-format
@@ -1167,7 +1166,7 @@ msgstr "No s'ha pogut emmagatzemar un recordatori nou: %1"
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Date"
-msgstr "Seleccioneu la data"
+msgstr "Trieu la data"
 
 #: followupreminder/followupreminderselectdatedialog.cpp:63
 #, kde-format
@@ -1230,13 +1229,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Image Format"
-msgstr "Seleccioneu el format de la imatge"
+msgstr "Trieu el format de la imatge"
 
 #: imagescaling/imagescalingselectformat.cpp:89
 #, kde-format
 msgctxt "@action:button"
 msgid "Select Format..."
-msgstr "Selecciona el format…"
+msgstr "Tria el format…"
 
 #: imagescaling/imagescalingwidget.cpp:109
 #, kde-format
@@ -1740,14 +1739,14 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Address Book"
-msgstr "Seleccioneu la llibreta d'adreces"
+msgstr "Trieu la llibreta d'adreces"
 
 #: recipient/distributionlistdialog.cpp:286
 #, kde-format
 msgid "Select the address book folder to store the contact group in:"
 msgstr ""
-"Seleccioneu la carpeta de la llibreta d'adreces on es guardarà el nou grup "
-"de contactes:"
+"Trieu la carpeta de la llibreta d'adreces on es guardarà el nou grup de "
+"contactes:"
 
 #: recipient/distributionlistdialog.cpp:322
 #, kde-format
@@ -1788,7 +1787,7 @@ msgstr "<placeholder>Tipus de destinatari no definit</placeholder>"
 #, kde-format
 msgctxt "@label:listbox"
 msgid "Select type of recipient"
-msgstr "Seleccioneu el tipus de destinatari"
+msgstr "Trieu el tipus de destinatari"
 
 #: recipient/recipientline.cpp:72
 #, kde-format
@@ -1826,7 +1825,7 @@ msgstr "Guarda els destinataris com una llista de distribució"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select recipients from address book"
-msgstr "Seleccioneu els destinataris des de la llibreta d'adreces"
+msgstr "Trieu els destinataris des de la llibreta d'adreces"
 
 #: recipient/recipientseditorsidewidget.cpp:78
 #, kde-format
@@ -1870,7 +1869,7 @@ msgstr "Respondre a:%1"
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Recipient"
-msgstr "Seleccioneu el destinatari"
+msgstr "Trieu el destinatari"
 
 #: recipient/recipientspicker.cpp:63
 #, kde-format

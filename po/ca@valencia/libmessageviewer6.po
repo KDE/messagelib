@@ -2210,7 +2210,7 @@ msgstr "Copia el text"
 #, kde-format
 msgctxt "@action"
 msgid "Select All Text"
-msgstr "Selecciona tot el text"
+msgstr "Tria tot el text"
 
 #: viewer/viewer_p.cpp:1548 viewer/viewer_p.cpp:2072
 #, kde-format

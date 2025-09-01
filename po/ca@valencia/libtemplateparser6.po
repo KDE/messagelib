@@ -632,7 +632,7 @@ msgstr "&Inserix una ordre"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select a command to insert into the template"
-msgstr "Seleccioneu una ordre que s'ha d'inserir en la plantilla"
+msgstr "Trieu una ordre que s'ha d'inserir dins de la plantilla"
 
 #: templatesinsertcommandpushbutton.cpp:30
 #, kde-format
