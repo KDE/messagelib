@@ -62,7 +62,8 @@ void WebEnginePartHtmlWriter::end()
     }
     if (data().size() > 2000000) {
         // qDebug() << " load big message ";
-        mTempFile = new QTemporaryFile(QDir::tempPath() + QLatin1StringView("/messageviewer_XXXXXX") + QLatin1StringView(".html"));
+        QDir().mkdir(QDir::tempPath() + u"/kmail"_s);
+        mTempFile = new QTemporaryFile(QDir::tempPath() + QLatin1StringView("/kmail/messageviewer_XXXXXX") + QLatin1StringView(".html"));
         mTempFile->open();
         mTempFile->write(data());
         // Bug 387061
