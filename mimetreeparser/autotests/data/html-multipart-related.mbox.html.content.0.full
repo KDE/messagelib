@@ -8,6 +8,6 @@
         <p> some random text :) <img src="cid:uniqueid"/> </p>
       </div>
     </div>
-    <!-- embedPart(contentID=uniqueid, url=file:///tmp/messageviewer.index.2/image.png) -->
+    <!-- embedPart(contentID=uniqueid, url=file:///tmp/kmail/messageviewer.index.2/image.png) -->
   </body>
 </html>
