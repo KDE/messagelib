@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim/kmail.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-13 00:44+0000\n"
+"POT-Creation-Date: 2025-09-03 00:44+0000\n"
 "PO-Revision-Date: 2004-12-03 14:52-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -1461,7 +1461,7 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
-#: settings/messageviewer.kcfg.in:228 viewer/viewer_p.cpp:1558
+#: settings/messageviewer.kcfg.in:228 viewer/viewer_p.cpp:1559
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "Ú&sáid Cló Aonleithid"
@@ -1858,7 +1858,7 @@ msgstr "Doiciméadú"
 msgid "Turn on HTML rendering for this message."
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:411 viewer/viewer_p.cpp:1627
+#: viewer/urlhandlermanager.cpp:411 viewer/viewer_p.cpp:1628
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr ""
@@ -1942,7 +1942,7 @@ msgstr "&Oscail sa Leabhar Seoltaí"
 msgid "&Copy Email Address"
 msgstr "&Cóipeáil an Seoladh Ríomhphoist"
 
-#: viewer/urlhandlermanager.cpp:585 viewer/viewer_p.cpp:2718
+#: viewer/urlhandlermanager.cpp:585 viewer/viewer_p.cpp:2719
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Cóipeáladh an seoladh go dtí an ghearrthaisce."
@@ -2042,13 +2042,13 @@ msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "&Oscail Le..."
 
-#: viewer/viewer_p.cpp:527 viewer/viewer_p.cpp:1737
+#: viewer/viewer_p.cpp:527 viewer/viewer_p.cpp:1738
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Oscail"
 
-#: viewer/viewer_p.cpp:541 viewer/viewer_p.cpp:1744
+#: viewer/viewer_p.cpp:541 viewer/viewer_p.cpp:1745
 #, kde-format
 msgctxt "to view something"
 msgid "View"
@@ -2064,12 +2064,12 @@ msgstr ""
 msgid "Save As..."
 msgstr "Sábháil Mar..."
 
-#: viewer/viewer_p.cpp:560 viewer/viewer_p.cpp:1754
+#: viewer/viewer_p.cpp:560 viewer/viewer_p.cpp:1755
 #, kde-format
 msgid "Copy"
 msgstr "Cóipeáil"
 
-#: viewer/viewer_p.cpp:571 viewer/viewer_p.cpp:1758
+#: viewer/viewer_p.cpp:571 viewer/viewer_p.cpp:1759
 #, kde-format
 msgid "Delete Attachment"
 msgstr "Scrios an tIatán"
@@ -2086,306 +2086,306 @@ msgstr "Cuir i bhfeidhm &ar gach rud"
 msgid "Reply To All"
 msgstr "Cuir i bhfeidhm &ar gach rud"
 
-#: viewer/viewer_p.cpp:596 viewer/viewer_p.cpp:1763
+#: viewer/viewer_p.cpp:596 viewer/viewer_p.cpp:1764
 #, kde-format
 msgid "Properties"
 msgstr "Airíonna"
 
-#: viewer/viewer_p.cpp:732
+#: viewer/viewer_p.cpp:733
 #, kde-format
 msgid "KMail"
 msgstr "KMail"
 
-#: viewer/viewer_p.cpp:732
+#: viewer/viewer_p.cpp:733
 #, fuzzy, kde-format
 #| msgid "The KDE email client."
 msgid "The KDE Mail Client"
 msgstr "Cliant ríomhphoist KDE."
 
-#: viewer/viewer_p.cpp:1278
+#: viewer/viewer_p.cpp:1279
 #, fuzzy, kde-format
 #| msgid "View Attachment: %1"
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "Amharc ar Iatán: %1"
 
-#: viewer/viewer_p.cpp:1480
+#: viewer/viewer_p.cpp:1481
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "I&atáin"
 
-#: viewer/viewer_p.cpp:1482
+#: viewer/viewer_p.cpp:1483
 #, fuzzy, kde-format
 #| msgid "has no attachment"
 msgid "Choose display style of attachments"
 msgstr "nach bhfuil iatán aige"
 
-#: viewer/viewer_p.cpp:1485
+#: viewer/viewer_p.cpp:1486
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "M&ar Dheilbhíní"
 
-#: viewer/viewer_p.cpp:1488
+#: viewer/viewer_p.cpp:1489
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr "Taispeáin gach iatán mar dheilbhín. Cliceáil chun é a fheiceáil."
 
-#: viewer/viewer_p.cpp:1492
+#: viewer/viewer_p.cpp:1493
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "&Cliste"
 
-#: viewer/viewer_p.cpp:1495
+#: viewer/viewer_p.cpp:1496
 #, fuzzy, kde-format
 #| msgid "Show attachment list."
 msgid "Show attachments as suggested by sender."
 msgstr "Taispeáin liosta na n-iatán."
 
-#: viewer/viewer_p.cpp:1499
+#: viewer/viewer_p.cpp:1500
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "&Inlíne"
 
-#: viewer/viewer_p.cpp:1502
+#: viewer/viewer_p.cpp:1503
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "Taispeáin iatáin inlíne (más féidir)"
 
-#: viewer/viewer_p.cpp:1506
+#: viewer/viewer_p.cpp:1507
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "Folaig&h"
 
-#: viewer/viewer_p.cpp:1509
+#: viewer/viewer_p.cpp:1510
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "Ná taispeáin iatáin in amharcán na dteachtaireachtaí"
 
-#: viewer/viewer_p.cpp:1513
+#: viewer/viewer_p.cpp:1514
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr "Sa Cheanntásc Amháin"
 
-#: viewer/viewer_p.cpp:1516
+#: viewer/viewer_p.cpp:1517
 #, kde-format
 msgid "Show Attachments only in the header of the mail"
 msgstr "Taispeáin iatáin i gceanntásc na teachtaireachta amháin"
 
-#: viewer/viewer_p.cpp:1521
+#: viewer/viewer_p.cpp:1522
 #, kde-format
 msgid "&Set Encoding"
 msgstr "&Socraigh Ionchódú"
 
-#: viewer/viewer_p.cpp:1526 widgets/configurewidget.cpp:45
+#: viewer/viewer_p.cpp:1527 widgets/configurewidget.cpp:45
 #: widgets/configurewidget.cpp:79
 #, kde-format
 msgid "Auto"
 msgstr "Uathoibríoch"
 
-#: viewer/viewer_p.cpp:1536
+#: viewer/viewer_p.cpp:1537
 #, fuzzy, kde-format
 #| msgid "&Copy To"
 msgid "Copy Text"
 msgstr "&Cóipeáil Go"
 
-#: viewer/viewer_p.cpp:1542
+#: viewer/viewer_p.cpp:1543
 #, fuzzy, kde-format
 #| msgid "Select All Text"
 msgctxt "@action"
 msgid "Select All Text"
 msgstr "Roghnaigh Téacs Uile"
 
-#: viewer/viewer_p.cpp:1548 viewer/viewer_p.cpp:2072
+#: viewer/viewer_p.cpp:1549 viewer/viewer_p.cpp:2073
 #, kde-format
 msgid "Copy Link Address"
 msgstr "Cóipeáil Seoladh an Naisc"
 
-#: viewer/viewer_p.cpp:1553
+#: viewer/viewer_p.cpp:1554
 #, kde-format
 msgid "Open URL"
 msgstr "Oscail URL"
 
-#: viewer/viewer_p.cpp:1564
+#: viewer/viewer_p.cpp:1565
 #, kde-format
 msgid "Show Message Structure"
 msgstr "Taispeáin Struchtúr na Teachtaireachta"
 
-#: viewer/viewer_p.cpp:1569
+#: viewer/viewer_p.cpp:1570
 #, fuzzy, kde-format
 #| msgid "&View Source"
 msgctxt "@action"
 msgid "&View Source"
 msgstr "&Féach Foinse"
 
-#: viewer/viewer_p.cpp:1574
+#: viewer/viewer_p.cpp:1575
 #, fuzzy, kde-format
 #| msgid "&Save message..."
 msgid "&Save Message..."
 msgstr "&Sábháil teachtaireacht..."
 
-#: viewer/viewer_p.cpp:1580
+#: viewer/viewer_p.cpp:1581
 #, fuzzy, kde-format
 #| msgid "&Save as Draft"
 msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "&Sábháil mar Dhréacht"
 
-#: viewer/viewer_p.cpp:1584
+#: viewer/viewer_p.cpp:1585
 #, fuzzy, kde-format
 #| msgid "&Save as Draft"
 msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "&Sábháil mar Dhréacht"
 
-#: viewer/viewer_p.cpp:1591
+#: viewer/viewer_p.cpp:1592
 #, fuzzy, kde-format
 #| msgid "Scroll Message Up"
 msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "Scrollaigh an Teachtaireacht Suas"
 
-#: viewer/viewer_p.cpp:1596
+#: viewer/viewer_p.cpp:1597
 #, fuzzy, kde-format
 #| msgid "Scroll Message Down"
 msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "Scrollaigh an Teachtaireacht Síos"
 
-#: viewer/viewer_p.cpp:1601
+#: viewer/viewer_p.cpp:1602
 #, fuzzy, kde-format
 #| msgid "Scroll Message Up"
 msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "Scrollaigh an Teachtaireacht Suas"
 
-#: viewer/viewer_p.cpp:1606
+#: viewer/viewer_p.cpp:1607
 #, fuzzy, kde-format
 #| msgid "Scroll Message Down"
 msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "Scrollaigh an Teachtaireacht Síos"
 
-#: viewer/viewer_p.cpp:1616
+#: viewer/viewer_p.cpp:1617
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1620
+#: viewer/viewer_p.cpp:1621
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1623
+#: viewer/viewer_p.cpp:1624
 #, kde-format
 msgctxt "@action"
 msgid "Load external references"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1629
+#: viewer/viewer_p.cpp:1630
 #, fuzzy, kde-format
 #| msgid "Speak Text"
 msgctxt "@action"
 msgid "Speak Text"
 msgstr "Léigh an Téacs"
 
-#: viewer/viewer_p.cpp:1635
+#: viewer/viewer_p.cpp:1636
 #, fuzzy, kde-format
 #| msgid "Speak Text"
 msgctxt "@action"
 msgid "Share Text..."
 msgstr "Léigh an Téacs"
 
-#: viewer/viewer_p.cpp:1653
+#: viewer/viewer_p.cpp:1654
 #, fuzzy, kde-format
 #| msgid "Copy Image Location"
 msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "Cóipeáil Suíomh na hÍomhá"
 
-#: viewer/viewer_p.cpp:1659
+#: viewer/viewer_p.cpp:1660
 #, kde-format
 msgid "&Find in Message..."
 msgstr "&Aimsigh i dTeachtaireacht..."
 
-#: viewer/viewer_p.cpp:1668
+#: viewer/viewer_p.cpp:1669
 #, kde-format
 msgid "Disable Emoticon"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1734
+#: viewer/viewer_p.cpp:1735
 #, kde-format
 msgid "Save &As..."
 msgstr "Sábháil M&ar..."
 
-#: viewer/viewer_p.cpp:1742
+#: viewer/viewer_p.cpp:1743
 #, kde-format
 msgid "Open With..."
 msgstr "Oscail Le..."
 
-#: viewer/viewer_p.cpp:1749
+#: viewer/viewer_p.cpp:1750
 #, fuzzy, kde-format
 #| msgid "Save Attachments..."
 msgid "Save All Attachments..."
 msgstr "Sábháil Iatáin..."
 
-#: viewer/viewer_p.cpp:1992
+#: viewer/viewer_p.cpp:1993
 #, kde-format
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1992 viewer/viewer_p.cpp:1995
+#: viewer/viewer_p.cpp:1993 viewer/viewer_p.cpp:1996
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1995
+#: viewer/viewer_p.cpp:1996
 #, fuzzy, kde-format
 #| msgid "The signature file is not valid"
 msgid "The URL %1 is not valid."
 msgstr "Is neamhbhailí é an comhad sínithe"
 
-#: viewer/viewer_p.cpp:2015
+#: viewer/viewer_p.cpp:2016
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2016
+#: viewer/viewer_p.cpp:2017
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2070
+#: viewer/viewer_p.cpp:2071
 #, kde-format
 msgid "Copy Email Address"
 msgstr "Cóipeáil an Seoladh Ríomhphoist"
 
-#: viewer/viewer_p.cpp:2153
+#: viewer/viewer_p.cpp:2154
 #, fuzzy, kde-format
 #| msgid "Message as Plain Text"
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Teachtaireacht mar Ghnáth-théacs"
 
-#: viewer/viewer_p.cpp:2724
+#: viewer/viewer_p.cpp:2725
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "Cóipeáladh an URL go dtí an ghearrthaisce."
 
-#: viewer/viewer_p.cpp:2886
+#: viewer/viewer_p.cpp:2887
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message loading failed: %1."
 msgstr "Bhí an teachtaireacht sínithe ag %1."
 
-#: viewer/viewer_p.cpp:2891
+#: viewer/viewer_p.cpp:2892
 #, kde-format
 msgid "Message not found."
 msgstr "Teachtaireacht gan aimsiú."

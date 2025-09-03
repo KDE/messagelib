@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-13 00:44+0000\n"
+"POT-Creation-Date: 2025-09-03 00:44+0000\n"
 "PO-Revision-Date: 2014-08-15 15:48+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -1473,7 +1473,7 @@ msgstr ""
 "Affalltünn verschaven."
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
-#: settings/messageviewer.kcfg.in:228 viewer/viewer_p.cpp:1558
+#: settings/messageviewer.kcfg.in:228 viewer/viewer_p.cpp:1559
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "&Fastbreed Schriftoort bruken"
@@ -1883,7 +1883,7 @@ msgstr "Dokmentatschoon"
 msgid "Turn on HTML rendering for this message."
 msgstr "HTML-Dorstellen för disse Naricht anmaken"
 
-#: viewer/urlhandlermanager.cpp:411 viewer/viewer_p.cpp:1627
+#: viewer/urlhandlermanager.cpp:411 viewer/viewer_p.cpp:1628
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "För disse Naricht extern Dateien ut dat Nett daallaaden."
@@ -1967,7 +1967,7 @@ msgstr "In Adressbook &opmaken"
 msgid "&Copy Email Address"
 msgstr "Nettpostadress &koperen"
 
-#: viewer/urlhandlermanager.cpp:585 viewer/viewer_p.cpp:2718
+#: viewer/urlhandlermanager.cpp:585 viewer/viewer_p.cpp:2719
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Adress na Twischenaflaag kopeert."
@@ -2068,13 +2068,13 @@ msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "&Opmaken mit..."
 
-#: viewer/viewer_p.cpp:527 viewer/viewer_p.cpp:1737
+#: viewer/viewer_p.cpp:527 viewer/viewer_p.cpp:1738
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Opmaken"
 
-#: viewer/viewer_p.cpp:541 viewer/viewer_p.cpp:1744
+#: viewer/viewer_p.cpp:541 viewer/viewer_p.cpp:1745
 #, kde-format
 msgctxt "to view something"
 msgid "View"
@@ -2090,12 +2090,12 @@ msgstr "Rullen"
 msgid "Save As..."
 msgstr "Sekern as..."
 
-#: viewer/viewer_p.cpp:560 viewer/viewer_p.cpp:1754
+#: viewer/viewer_p.cpp:560 viewer/viewer_p.cpp:1755
 #, kde-format
 msgid "Copy"
 msgstr "Koperen"
 
-#: viewer/viewer_p.cpp:571 viewer/viewer_p.cpp:1758
+#: viewer/viewer_p.cpp:571 viewer/viewer_p.cpp:1759
 #, kde-format
 msgid "Delete Attachment"
 msgstr "Bilaag wegdoon"
@@ -2113,304 +2113,304 @@ msgstr "Den S&chriever antern..."
 msgid "Reply To All"
 msgstr "Na all antern"
 
-#: viewer/viewer_p.cpp:596 viewer/viewer_p.cpp:1763
+#: viewer/viewer_p.cpp:596 viewer/viewer_p.cpp:1764
 #, kde-format
 msgid "Properties"
 msgstr "Egenschappen"
 
-#: viewer/viewer_p.cpp:732
+#: viewer/viewer_p.cpp:733
 #, kde-format
 msgid "KMail"
 msgstr "KMail"
 
-#: viewer/viewer_p.cpp:732
+#: viewer/viewer_p.cpp:733
 #, fuzzy, kde-format
 #| msgid "The KDE email client."
 msgid "The KDE Mail Client"
 msgstr "Dat KDE-Nettpostprogramm"
 
-#: viewer/viewer_p.cpp:1278
+#: viewer/viewer_p.cpp:1279
 #, fuzzy, kde-format
 #| msgid "View Attachment: %1"
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "Bilaag ankieken: %1"
 
-#: viewer/viewer_p.cpp:1480
+#: viewer/viewer_p.cpp:1481
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "&Bilagen"
 
-#: viewer/viewer_p.cpp:1482
+#: viewer/viewer_p.cpp:1483
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "Den Stil för de Bilagen utsöken"
 
-#: viewer/viewer_p.cpp:1485
+#: viewer/viewer_p.cpp:1486
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "As &Lüttbiller"
 
-#: viewer/viewer_p.cpp:1488
+#: viewer/viewer_p.cpp:1489
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr ""
 "All Bilagen as Lüttbiller wiesen. Klick dorop, wenn Du een ankieken wullt."
 
-#: viewer/viewer_p.cpp:1492
+#: viewer/viewer_p.cpp:1493
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "&Plietsch"
 
-#: viewer/viewer_p.cpp:1495
+#: viewer/viewer_p.cpp:1496
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "Bilagen so wiesen, as de Senner dat vörslaan hett"
 
-#: viewer/viewer_p.cpp:1499
+#: viewer/viewer_p.cpp:1500
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "&Inbett"
 
-#: viewer/viewer_p.cpp:1502
+#: viewer/viewer_p.cpp:1503
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "All Bilagen inbett wiesen (wenn dat geiht)"
 
-#: viewer/viewer_p.cpp:1506
+#: viewer/viewer_p.cpp:1507
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "&Versteken"
 
-#: viewer/viewer_p.cpp:1509
+#: viewer/viewer_p.cpp:1510
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "Keen Bilagen binnen den Narichtenkieker wiesen"
 
-#: viewer/viewer_p.cpp:1513
+#: viewer/viewer_p.cpp:1514
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr "Bloots binnen Koppreeg"
 
-#: viewer/viewer_p.cpp:1516
+#: viewer/viewer_p.cpp:1517
 #, kde-format
 msgid "Show Attachments only in the header of the mail"
 msgstr "Bilagen bloots binnen Nettbreefkopp wiesen"
 
-#: viewer/viewer_p.cpp:1521
+#: viewer/viewer_p.cpp:1522
 #, kde-format
 msgid "&Set Encoding"
 msgstr "&Koderen fastleggen"
 
-#: viewer/viewer_p.cpp:1526 widgets/configurewidget.cpp:45
+#: viewer/viewer_p.cpp:1527 widgets/configurewidget.cpp:45
 #: widgets/configurewidget.cpp:79
 #, kde-format
 msgid "Auto"
 msgstr "Automaatsch"
 
-#: viewer/viewer_p.cpp:1536
+#: viewer/viewer_p.cpp:1537
 #, fuzzy, kde-format
 #| msgid "&Copy To"
 msgid "Copy Text"
 msgstr "&Koperen na"
 
-#: viewer/viewer_p.cpp:1542
+#: viewer/viewer_p.cpp:1543
 #, fuzzy, kde-format
 #| msgid "Select All Text"
 msgctxt "@action"
 msgid "Select All Text"
 msgstr "Heel Text utsöken"
 
-#: viewer/viewer_p.cpp:1548 viewer/viewer_p.cpp:2072
+#: viewer/viewer_p.cpp:1549 viewer/viewer_p.cpp:2073
 #, kde-format
 msgid "Copy Link Address"
 msgstr "Linkadress koperen"
 
-#: viewer/viewer_p.cpp:1553
+#: viewer/viewer_p.cpp:1554
 #, kde-format
 msgid "Open URL"
 msgstr "URL opmaken"
 
-#: viewer/viewer_p.cpp:1564
+#: viewer/viewer_p.cpp:1565
 #, kde-format
 msgid "Show Message Structure"
 msgstr "Narichten-Struktuur wiesen"
 
-#: viewer/viewer_p.cpp:1569
+#: viewer/viewer_p.cpp:1570
 #, fuzzy, kde-format
 #| msgid "&View Source"
 msgctxt "@action"
 msgid "&View Source"
 msgstr "&Born ankieken"
 
-#: viewer/viewer_p.cpp:1574
+#: viewer/viewer_p.cpp:1575
 #, fuzzy, kde-format
 #| msgid "&Save message..."
 msgid "&Save Message..."
 msgstr "Naricht &sekern..."
 
-#: viewer/viewer_p.cpp:1580
+#: viewer/viewer_p.cpp:1581
 #, fuzzy, kde-format
 #| msgid "&Save Display Format"
 msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "Wiesformaat &sekern"
 
-#: viewer/viewer_p.cpp:1584
+#: viewer/viewer_p.cpp:1585
 #, fuzzy, kde-format
 #| msgid "&Reset Display Format"
 msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "Wiesformaat &torüchsetten"
 
-#: viewer/viewer_p.cpp:1591
+#: viewer/viewer_p.cpp:1592
 #, fuzzy, kde-format
 #| msgid "Scroll Message Up"
 msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "Naricht na baven rullen"
 
-#: viewer/viewer_p.cpp:1596
+#: viewer/viewer_p.cpp:1597
 #, fuzzy, kde-format
 #| msgid "Scroll Message Down"
 msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "Naricht na nerrn rullen"
 
-#: viewer/viewer_p.cpp:1601
+#: viewer/viewer_p.cpp:1602
 #, fuzzy, kde-format
 #| msgid "Scroll Message Up (More)"
 msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "Naricht na baven rullen (wieder)"
 
-#: viewer/viewer_p.cpp:1606
+#: viewer/viewer_p.cpp:1607
 #, fuzzy, kde-format
 #| msgid "Scroll Message Down (More)"
 msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "Naricht na nerrn rullen (wieder)"
 
-#: viewer/viewer_p.cpp:1616
+#: viewer/viewer_p.cpp:1617
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr "HTML-Ansicht an/ut"
 
-#: viewer/viewer_p.cpp:1620
+#: viewer/viewer_p.cpp:1621
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr "HTML- un Text-Ansicht wesseln"
 
-#: viewer/viewer_p.cpp:1623
+#: viewer/viewer_p.cpp:1624
 #, fuzzy, kde-format
 #| msgid "Load external references"
 msgctxt "@action"
 msgid "Load external references"
 msgstr "Extern Dateien laden"
 
-#: viewer/viewer_p.cpp:1629
+#: viewer/viewer_p.cpp:1630
 #, fuzzy, kde-format
 #| msgid "Speak Text"
 msgctxt "@action"
 msgid "Speak Text"
 msgstr "Text vörlesen"
 
-#: viewer/viewer_p.cpp:1635
+#: viewer/viewer_p.cpp:1636
 #, fuzzy, kde-format
 #| msgid "Speak Text"
 msgctxt "@action"
 msgid "Share Text..."
 msgstr "Text vörlesen"
 
-#: viewer/viewer_p.cpp:1653
+#: viewer/viewer_p.cpp:1654
 #, fuzzy, kde-format
 #| msgid "Copy Image Location"
 msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "Bildadress koperen"
 
-#: viewer/viewer_p.cpp:1659
+#: viewer/viewer_p.cpp:1660
 #, kde-format
 msgid "&Find in Message..."
 msgstr "Binnen Naricht &söken..."
 
-#: viewer/viewer_p.cpp:1668
+#: viewer/viewer_p.cpp:1669
 #, kde-format
 msgid "Disable Emoticon"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1734
+#: viewer/viewer_p.cpp:1735
 #, kde-format
 msgid "Save &As..."
 msgstr "Sekern &as..."
 
-#: viewer/viewer_p.cpp:1742
+#: viewer/viewer_p.cpp:1743
 #, kde-format
 msgid "Open With..."
 msgstr "Opmaken mit..."
 
-#: viewer/viewer_p.cpp:1749
+#: viewer/viewer_p.cpp:1750
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "All Bilagen sekern..."
 
-#: viewer/viewer_p.cpp:1992
+#: viewer/viewer_p.cpp:1993
 #, kde-format
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1992 viewer/viewer_p.cpp:1995
+#: viewer/viewer_p.cpp:1993 viewer/viewer_p.cpp:1996
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1995
+#: viewer/viewer_p.cpp:1996
 #, fuzzy, kde-format
 #| msgid "Grantlee theme \"%1\" is not valid."
 msgid "The URL %1 is not valid."
 msgstr "Grantlee-Muster \"%1\" gellt nich."
 
-#: viewer/viewer_p.cpp:2015
+#: viewer/viewer_p.cpp:2016
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2016
+#: viewer/viewer_p.cpp:2017
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2070
+#: viewer/viewer_p.cpp:2071
 #, kde-format
 msgid "Copy Email Address"
 msgstr "Nettpostadress koperen"
 
-#: viewer/viewer_p.cpp:2153
+#: viewer/viewer_p.cpp:2154
 #, fuzzy, kde-format
 #| msgid "Message as Plain Text"
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Naricht as Eenfachtext"
 
-#: viewer/viewer_p.cpp:2724
+#: viewer/viewer_p.cpp:2725
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL na Twischenaflaag kopeert."
 
-#: viewer/viewer_p.cpp:2886
+#: viewer/viewer_p.cpp:2887
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "Naricht lett sik nich laden: %1."
 
-#: viewer/viewer_p.cpp:2891
+#: viewer/viewer_p.cpp:2892
 #, kde-format
 msgid "Message not found."
 msgstr "Naricht lett sik nich finnen."
