@@ -6,6 +6,11 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
   <kcfgfile name="mailcomposerrc" />
   <group name="Composer">
 
+    <entry name="ActivateQuickTextFormat" type="Bool">
+      <label>Show Quick Text Format Bar</label>
+      <default>false</default>
+    </entry>
+
     <entry name="CustomMsgIDSuffix" type="String" key="myMessageIdSuffix">
       <default></default>
     </entry>

@@ -3,8 +3,8 @@
 
    SPDX-License-Identifier: GPL-2.0-or-later
 */
-
 #include "richtextcomposerng.h"
+#include "config-messagecomposer.h"
 #include "richtextcomposersignatures.h"
 #include "settings/messagecomposersettings.h"
 #include <KPIMTextEdit/MarkupDirector>
@@ -20,7 +20,9 @@
 #include <KMessageBox>
 
 #include <QRegularExpression>
-
+#if HAVE_TEXTADDONSWIDGET_RICHTEXTQUICKTEXTFORMAT
+#include <TextAddonsWidgets/RichTextQuickTextFormat>
+#endif
 using namespace MessageComposer;
 using namespace Qt::Literals::StringLiterals;
 
@@ -38,12 +40,57 @@ public:
     TextAutoCorrectionCore::AutoCorrection *autoCorrection = nullptr;
     RichTextComposerNg *const richtextComposer;
     MessageComposer::RichTextComposerSignatures *const richTextComposerSignatures;
+#if HAVE_TEXTADDONSWIDGET_RICHTEXTQUICKTEXTFORMAT
+    TextAddonsWidgets::RichTextQuickTextFormat *richTextQuickTextFormat = nullptr;
+#endif
 };
 
 RichTextComposerNg::RichTextComposerNg(QWidget *parent)
     : KPIMTextEdit::RichTextComposer(parent)
     , d(new MessageComposer::RichTextComposerNgPrivate(this))
 {
+#if HAVE_TEXTADDONSWIDGET_RICHTEXTQUICKTEXTFORMAT
+    auto quicktextformatmessage = new TextAddonsWidgets::RichTextQuickTextFormat(this, this);
+    TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatTypes formatTypes = TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::Unknown;
+    formatTypes |= TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::Bold;
+    formatTypes |= TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::Italic;
+    formatTypes |= TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::StrikeThrough;
+    formatTypes |= TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::InsertLink;
+    formatTypes |= TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::UnderLine;
+    quicktextformatmessage->setFormatTypes(formatTypes);
+    connect(quicktextformatmessage,
+            &TextAddonsWidgets::RichTextQuickTextFormat::quickTextFormatRequested,
+            this,
+            [this](TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType type) {
+                switch (type) {
+                case TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::UnderLine: {
+                    // No supported here
+                    break;
+                }
+                case TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::Bold: {
+                    // slotSetAsBold();
+                    break;
+                }
+                case TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::Italic: {
+                    // slotSetAsItalic();
+                    break;
+                }
+                case TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::StrikeThrough: {
+                    // slotSetAsStrikeOut();
+                    break;
+                }
+                case TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::InsertLink:
+                    // slotInsertMarkdownUrl();
+                    break;
+                case TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::CodeBlock:
+                case TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::BlockQuote:
+                case TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::Unknown:
+                    break;
+                }
+            });
+    quicktextformatmessage->setEnabled(MessageComposer::MessageComposerSettings::activateQuickTextFormat());
+
+#endif
 }
 
 RichTextComposerNg::~RichTextComposerNg() = default;

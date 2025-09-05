@@ -314,6 +314,13 @@ target_link_libraries(KPim6MessageComposer
     KF6::Codecs
     ${Inotify_LIBRARIES}
 )
+if (HAVE_TEXTADDONSWIDGET_RICHTEXTQUICKTEXTFORMAT)
+    target_link_libraries(KPim6MessageComposer
+        PRIVATE
+        KF6::TextAddonsWidgets
+    )
+endif ()
+
 if(TARGET KF6::TextAutoCorrectionWidgets)
     target_link_libraries(KPim6MessageComposer
         PUBLIC
