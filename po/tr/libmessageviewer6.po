@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-03 00:44+0000\n"
-"PO-Revision-Date: 2025-05-18 13:10+0300\n"
+"PO-Revision-Date: 2025-09-04 15:07+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.04.1\n"
+"X-Generator: Lokalize 25.08.0\n"
 "X-POOTLE-MTIME: 1413111326.000000\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
@@ -1138,7 +1138,7 @@ msgstr "İleti yazdırılırken her zaman şifreleme/imza ayrıntılarını gös
 #: settings/messageviewer.kcfg.in:34
 #, kde-format
 msgid "When we render html do not use font size inferior to minimum size."
-msgstr "HTML sunarken, asgari boyuttan küçük yazıtipi boyutu kullanma."
+msgstr "HTML sunarken, en küçük boyuttan küçük yazıtipi puntosu kullanma"
 
 #. i18n: ectx: label, entry (BodyFont), group (Fonts)
 #: settings/messageviewer.kcfg.in:38
@@ -1191,15 +1191,15 @@ msgstr "Otomatik genişletme düzeyi:"
 #: settings/messageviewer.kcfg.in:83
 #, kde-format
 msgid "Reduce font size for quoted text"
-msgstr "Alıntılanan metnin yazıtipini küçült"
+msgstr "Alıntılanan metnin yazıtipi puntosunu azalt"
 
 #. i18n: ectx: whatsthis, entry (ShrinkQuotes), group (Reader)
 #: settings/messageviewer.kcfg.in:84
 #, kde-format
 msgid "Enable this option to show quoted text with a smaller font."
 msgstr ""
-"Alıntılanan metni daha küçük yazıtipi ile göstermek için bu seçeneği "
-"işaretleyin."
+"Alıntılanan metni daha küçük bir yazıtipi ile göstermek için bu seçeneği "
+"etkinleştirin."
 
 #. i18n: ectx: label, entry (AlwaysDecrypt), group (Reader)
 #: settings/messageviewer.kcfg.in:88
@@ -1543,7 +1543,7 @@ msgstr "Erişim düğmesini etkinleştir"
 #: ui/settings.ui:86
 #, kde-format
 msgid "Reduce font size for &quoted text"
-msgstr "&Alıntılanan metnin yazıtipini küçült"
+msgstr "&Alıntılanan metnin yazıtipi puntosunu azalt"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_ShowExpandQuotesMark)
 #: ui/settings.ui:93
@@ -1555,13 +1555,13 @@ msgstr "&Aktarılan metni genişlet/daralt işaretlerini göster"
 #: ui/settings.ui:121
 #, kde-format
 msgid "Automatic collapse &level:"
-msgstr "Otomatik genişletme &düzeyi:"
+msgstr "Kendiliğinden genişletme &düzeyi:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: ui/settings.ui:190
 #, kde-format
 msgid "&Minimum font size:"
-msgstr "&En küçük yazıtipi boyutu:"
+msgstr "&En küçük yazıtipi puntosu:"
 
 #: utils/messageviewerutil.cpp:123
 #, kde-format
