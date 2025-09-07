@@ -170,7 +170,7 @@ msgid ""
 msgstr ""
 "<p>Marqueu esta opció si voleu suggerir al destinatari que veja "
 "automàticament (dins del missatge) d'esta part en comptes de la vista "
-"predeterminada en la icona.</p><p>Tècnicament açò es fa posant la capçalera "
+"d'icones predeterminada.</p><p>Tècnicament açò es fa posant la capçalera "
 "<em>Content-Disposition</em> d'esta part com a «inline» (inclosa) en comptes "
 "del valor predeterminat que és «attachment» (adjunta).</p>"
 

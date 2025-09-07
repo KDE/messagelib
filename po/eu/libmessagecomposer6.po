@@ -1,16 +1,16 @@
 # Translation for libmessagecomposer.po to Euskara/Basque (eu).
-# Copyright (C) 2021-2024 This file is copyright:
+# Copyright (C) 2021-2025 This file is copyright:
 # This file is distributed under the same license as the messagelib package.
-# SPDX-FileCopyrightText: 2023, 2024 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2023, 2024, 2025 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
 #
 # Translators:
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2021, 2023, 2024.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2021, 2023, 2024, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-06 00:43+0000\n"
-"PO-Revision-Date: 2024-08-16 09:38+0200\n"
+"PO-Revision-Date: 2025-09-06 06:52+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 25.08.0\n"
 
 #: attachment/attachmentcontrollerbase.cpp:167
 #, kde-format
@@ -1978,7 +1978,7 @@ msgstr "Errepikatu hainbestero:"
 #: settings/messagecomposer.kcfg.in:10
 #, kde-format
 msgid "Show Quick Text Format Bar"
-msgstr ""
+msgstr "Erakutsi Testu-formaturako barra azkarra"
 
 #. i18n: ectx: label, entry (QuoteSelectionOnly), group (Composer)
 #: settings/messagecomposer.kcfg.in:23

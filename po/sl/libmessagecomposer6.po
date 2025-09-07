@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-06 00:43+0000\n"
-"PO-Revision-Date: 2024-08-16 06:23+0200\n"
+"PO-Revision-Date: 2025-09-06 07:14+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.7\n"
 
 #: attachment/attachmentcontrollerbase.cpp:167
 #, kde-format
@@ -1999,7 +1999,7 @@ msgstr "Ponavljaj vsak:"
 #: settings/messagecomposer.kcfg.in:10
 #, kde-format
 msgid "Show Quick Text Format Bar"
-msgstr ""
+msgstr "Pokaži oblikovno vrstico hitrega besedila"
 
 #. i18n: ectx: label, entry (QuoteSelectionOnly), group (Composer)
 #: settings/messagecomposer.kcfg.in:23

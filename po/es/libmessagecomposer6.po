@@ -1,24 +1,22 @@
-# translation of libmessagecomposer.po to Spanish
-# Copyright (C) YEAR This_file_is_part_of_KDE
-# This file is distributed under the same license as the PACKAGE package.
+# Spanish translations for libmessagecomposer6.po package.
+# Copyright (C) 2010-2025 This file is copyright:
+# This file is distributed under the same license as the messagelib package.
 #
-# Javier Vinal <kde-l10n-es@kde.org >, 2010.
-# Javier Viñal <fjvinal@gmail.com>, 2010, 2013.
-# Javier Vinal <fjvinal@gmail.com>, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018.
-# SPDX-FileCopyrightText: 2019, 2020, 2021, 2022, 2023, 2024 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018 Javier Viñal <fjvinal@gmail.com>
+# SPDX-FileCopyrightText: 2019, 2020, 2021, 2022, 2023, 2024, 2025 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
-"Project-Id-Version: libmessagecomposer\n"
+"Project-Id-Version: libmessagecomposer6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-06 00:43+0000\n"
-"PO-Revision-Date: 2024-08-16 12:08+0200\n"
+"PO-Revision-Date: 2025-09-06 12:14+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 25.08.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: attachment/attachmentcontrollerbase.cpp:167
@@ -70,14 +68,14 @@ msgstr "&Abrir con"
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
-msgstr "&Otro..."
+msgstr "&Otro…"
 
 #: attachment/attachmentcontrollerbase.cpp:343
 #: attachment/attachmentcontrollerbase.cpp:351
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
-msgstr "&Abrir con..."
+msgstr "&Abrir con…"
 
 #: attachment/attachmentcontrollerbase.cpp:377
 #, kde-format
@@ -101,7 +99,7 @@ msgstr "No se ha podido adjuntar el texto del portapapeles"
 #, kde-format
 msgctxt "@action"
 msgid "Attach &Public Key..."
-msgstr "Adjuntar clave &pública..."
+msgstr "Adjuntar clave &pública…"
 
 #: attachment/attachmentcontrollerbase.cpp:455
 #, kde-format
@@ -120,17 +118,17 @@ msgstr "Adjuntar"
 #: attachment/attachmentcontrollerbase.cpp:462
 #, kde-format
 msgid "&Attach File..."
-msgstr "&Adjuntar archivo..."
+msgstr "&Adjuntar archivo…"
 
 #: attachment/attachmentcontrollerbase.cpp:464
 #, kde-format
 msgid "Add Attachment..."
-msgstr "Añadir adjunto..."
+msgstr "Añadir adjunto…"
 
 #: attachment/attachmentcontrollerbase.cpp:468
 #, kde-format
 msgid "&Attach Directory..."
-msgstr "&Adjuntar directorio..."
+msgstr "&Adjuntar directorio…"
 
 #: attachment/attachmentcontrollerbase.cpp:472
 #, kde-format
@@ -146,12 +144,12 @@ msgstr "vCard propia"
 #: attachment/attachmentcontrollerbase.cpp:477
 #, kde-format
 msgid "&Attach vCards..."
-msgstr "&Adjuntar las vCards..."
+msgstr "&Adjuntar las vCards…"
 
 #: attachment/attachmentcontrollerbase.cpp:481
 #, kde-format
 msgid "&Attach Text From Clipboard..."
-msgstr "&Adjuntar el texto del portapapeles..."
+msgstr "&Adjuntar el texto del portapapeles…"
 
 #: attachment/attachmentcontrollerbase.cpp:482
 #, kde-format
@@ -190,23 +188,23 @@ msgstr "Editar"
 #, kde-format
 msgctxt "@action"
 msgid "Edit With..."
-msgstr "Editar con..."
+msgstr "Editar con…"
 
 #: attachment/attachmentcontrollerbase.cpp:523
 #, kde-format
 msgid "&Save Attachment As..."
-msgstr "&Guardar adjunto como..."
+msgstr "&Guardar adjunto como…"
 
 #: attachment/attachmentcontrollerbase.cpp:524
 #, kde-format
 msgid "Save As..."
-msgstr "Guardar como..."
+msgstr "Guardar como…"
 
 #: attachment/attachmentcontrollerbase.cpp:532
 #, kde-format
 msgctxt "@action"
 msgid "Attachment Pr&operties..."
-msgstr "Pr&opiedades del adjunto..."
+msgstr "Pr&opiedades del adjunto…"
 
 #: attachment/attachmentcontrollerbase.cpp:533
 #, kde-format
@@ -587,7 +585,7 @@ msgstr "Recordatorio de archivo adjunto"
 #, kde-format
 msgctxt "@action:button"
 msgid "&Attach File..."
-msgstr "&Adjuntar archivo..."
+msgstr "&Adjuntar archivo…"
 
 #: composer/composerviewbase.cpp:1906
 #, kde-format
@@ -1232,7 +1230,7 @@ msgstr "Seleccionar formato de imagen"
 #, kde-format
 msgctxt "@action:button"
 msgid "Select Format..."
-msgstr "Seleccionar formato..."
+msgstr "Seleccionar formato…"
 
 #: imagescaling/imagescalingwidget.cpp:109
 #, kde-format
@@ -1520,7 +1518,7 @@ msgstr ""
 #: job/attachmentfrompublickeyjob.cpp:107
 #, kde-format
 msgid "Exporting key..."
-msgstr "Exportando la clave..."
+msgstr "Exportando la clave…"
 
 #: job/attachmentvcardfromaddressbookjob.cpp:77
 #, kde-format
@@ -1812,13 +1810,13 @@ msgstr[1] "Truncando la lista de destinatarios a %2 de %1 entradas."
 #, kde-format
 msgctxt "@action:button"
 msgid "Save List..."
-msgstr "Guardar lista..."
+msgstr "Guardar lista…"
 
 #: recipient/recipientseditorsidewidget.cpp:30
 #, kde-format
 msgctxt "@action:button Open recipient selection dialog."
 msgid "Se&lect..."
-msgstr "Se&leccionar..."
+msgstr "Se&leccionar…"
 
 #: recipient/recipientseditorsidewidget.cpp:47
 #, kde-format
@@ -2007,7 +2005,7 @@ msgstr "Repetir cada:"
 #: settings/messagecomposer.kcfg.in:10
 #, kde-format
 msgid "Show Quick Text Format Bar"
-msgstr ""
+msgstr "Mostrar la barra de formato de texto rápido"
 
 #. i18n: ectx: label, entry (QuoteSelectionOnly), group (Composer)
 #: settings/messagecomposer.kcfg.in:23
@@ -2455,437 +2453,3 @@ msgstr "Distribuidor de correo desconectado"
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr "Poner en línea"
-
-#~ msgid "Failed to attach file"
-#~ msgstr "No se ha podido adjuntar el archivo"
-
-#~ msgid ""
-#~ "No charsets were available for encoding. Please check your configuration "
-#~ "and make sure it contains at least one charset for sending."
-#~ msgstr ""
-#~ "No dispone de ningún juego de caracteres para la codificación. Compruebe "
-#~ "su configuración y asegúrese de que contiene al menos un juego de "
-#~ "caracteres para enviar."
-
-#~ msgid ""
-#~ "Encoding the message with %1 will lose some characters.\n"
-#~ "Do you want to continue?"
-#~ msgstr ""
-#~ "Si codifica el mensaje con %1 perderá algunos caracteres.\n"
-#~ "¿Quiere continuar?"
-
-#~ msgctxt "@title:window"
-#~ msgid "Some Characters Will Be Lost"
-#~ msgstr "Se perderán algunos caracteres"
-
-#~ msgctxt "@action:button"
-#~ msgid "Lose Characters"
-#~ msgstr "Perder caracteres"
-
-#~ msgctxt "@action:button"
-#~ msgid "Change Encoding"
-#~ msgstr "Cambiar la codificación"
-
-#~ msgid "User decided to change the encoding."
-#~ msgstr "El usuario ha decidido cambiar la codificación."
-
-#~ msgid "The selected encoding (%1) cannot fully encode the message."
-#~ msgstr ""
-#~ "La codificación seleccionada (%1) no puede codificar completamente el "
-#~ "mensaje."
-
-#~ msgid "Keep original charset when replying or forwarding if possible"
-#~ msgstr ""
-#~ "Mantener el juego de caracteres original al responder o reenviar, si es "
-#~ "posible"
-
-#~ msgid "Outlook-compatible attachment naming"
-#~ msgstr "Nombre de adjuntos compatible con Outlook"
-
-#~ msgid ""
-#~ "Turn this option on to make Outlook &#8482; understand attachment names "
-#~ "containing non-English characters"
-#~ msgstr ""
-#~ "Active esta opción para hacer que Outlook &#8482;entienda los nombres de "
-#~ "adjuntos que contengan caracteres no ingleses"
-
-#~ msgid ""
-#~ "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-#~ "p><p>expired less than a day ago.</p>"
-#~ msgid_plural ""
-#~ "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-#~ "p><p>expired %1 days ago.</p>"
-#~ msgstr[0] ""
-#~ "<p>Su clave de firmado OpenPGP</p><p align=center><b>%2</b> (id de clave "
-#~ "0x%3)</p><p>caducó hace menos de un día.</p>"
-#~ msgstr[1] ""
-#~ "<p>Su clave de firmado OpenPGP</p><p align=center><b>%2</b> (id de clave "
-#~ "0x%3)</p><p>caducó hace %1 días.</p>"
-
-#~ msgid ""
-#~ "<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-#~ "p><p>expired less than a day ago.</p>"
-#~ msgid_plural ""
-#~ "<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-#~ "p><p>expired %1 days ago.</p>"
-#~ msgstr[0] ""
-#~ "<p>Su clave de cifrado OpenPGP</p><p align=center><b>%2</b> (id de clave "
-#~ "0x%3)</p><p>caducó hace menos de un día.</p>"
-#~ msgstr[1] ""
-#~ "<p>Su clave de cifrado OpenPGP</p><p align=center><b>%2</b> (id de clave "
-#~ "0x%3)</p><p>caducó hace %1 días.</p>"
-
-#~ msgid ""
-#~ "<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-#~ "p><p>expired less than a day ago.</p>"
-#~ msgid_plural ""
-#~ "<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-#~ "p><p>expired %1 days ago.</p>"
-#~ msgstr[0] ""
-#~ "<p>La clave OpenPGP</p><p align=center><b>%2</b> (id de clave 0x%3)</"
-#~ "p><p>caducó hace menos de un día.</p>"
-#~ msgstr[1] ""
-#~ "<p>La clave OpenPGP</p><p align=center><b>%2</b> (id de clave 0x%3)</"
-#~ "p><p>caducó hace %1 días.</p>"
-
-#~ msgid ""
-#~ "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-#~ "p><p>expires in less than a day.</p>"
-#~ msgid_plural ""
-#~ "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-#~ "p><p>expires in less than %1 days.</p>"
-#~ msgstr[0] ""
-#~ "<p>Su clave de firmado OpenPGP</p><p align=center><b>%2</b> (id de clave "
-#~ "0x%3)</p><p>caduca en menos de un día.</p>"
-#~ msgstr[1] ""
-#~ "<p>Su clave de firmado OpenPGP</p><p align=center><b>%2</b> (id de clave "
-#~ "0x%3)</p><p>caduca en menos de %1 días.</p>"
-
-#~ msgid ""
-#~ "<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-#~ "p><p>expires in less than a day.</p>"
-#~ msgid_plural ""
-#~ "<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-#~ "p><p>expires in less than %1 days.</p>"
-#~ msgstr[0] ""
-#~ "<p>Su clave de cifrado OpenPGP</p><p align=center><b>%2</b> (id de clave "
-#~ "0x%3)</p><p>caduca en menos de un día.</p>"
-#~ msgstr[1] ""
-#~ "<p>Su clave de cifrado OpenPGP</p><p align=center><b>%2</b> (id de clave "
-#~ "0x%3)</p><p>caduca en menos de %1 días.</p>"
-
-#~ msgid ""
-#~ "<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-#~ "p><p>expires in less than a day.</p>"
-#~ msgid_plural ""
-#~ "<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-#~ "p><p>expires in less than %1 days.</p>"
-#~ msgstr[0] ""
-#~ "<p>La clave OpenPGP</p><p align=center><b>%2</b> (id de clave 0x%3)</"
-#~ "p><p>caduca en menos de un día.</p>"
-#~ msgstr[1] ""
-#~ "<p>La clave OpenPGP</p><p align=center><b>%2</b> (id de clave 0x%3)</"
-#~ "p><p>caduca en menos de %1 días.</p>"
-
-#~ msgid ""
-#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
-#~ "MIME signing certificate</p><p align=center><b>%2</b> (serial number %3)</"
-#~ "p><p>expired less than a day ago.</p>"
-#~ msgid_plural ""
-#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
-#~ "MIME signing certificate</p><p align=center><b>%2</b> (serial number %3)</"
-#~ "p><p>expired %1 days ago.</p>"
-#~ msgstr[0] ""
-#~ "<p>El certificado raíz</p><p align=center><b>%4</b></p><p>de su "
-#~ "certificado de firma S/MIME</p><p align=center><b>%2</b> (número de serie "
-#~ "%3)</p><p>caducó hace menos de un día.</p>"
-#~ msgstr[1] ""
-#~ "<p>El certificado raíz</p><p align=center><b>%4</b></p><p>de su "
-#~ "certificado de firma S/MIME</p><p align=center><b>%2</b> (número de serie "
-#~ "%3)</p><p>caducó hace %1 días.</p>"
-
-#~ msgid ""
-#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
-#~ "MIME encryption certificate</p><p align=center><b>%2</b> (serial number "
-#~ "%3)</p><p>expired less than a day ago.</p>"
-#~ msgid_plural ""
-#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
-#~ "MIME encryption certificate</p><p align=center><b>%2</b> (serial number "
-#~ "%3)</p><p>expired %1 days ago.</p>"
-#~ msgstr[0] ""
-#~ "<p>El certificado raíz</p><p align=center><b>%4</b></p><p>de su "
-#~ "certificado de cifrado S/MIME</p><p align=center><b>%2</b> (número de "
-#~ "serie %3)</p><p>caducó hace menos de un día.</p>"
-#~ msgstr[1] ""
-#~ "<p>El certificado raíz</p><p align=center><b>%4</b></p><p>de su "
-#~ "certificado de cifrado S/MIME</p><p align=center><b>%2</b> (número de "
-#~ "serie %3)</p><p>caducó hace %1 días.</p"
-
-#~ msgid ""
-#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
-#~ "certificate</p><p align=center><b>%2</b> (serial number %3)</p><p>expired "
-#~ "less than a day ago.</p>"
-#~ msgid_plural ""
-#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
-#~ "certificate</p><p align=center><b>%2</b> (serial number %3)</p><p>expired "
-#~ "%1 days ago.</p>"
-#~ msgstr[0] ""
-#~ "<p>El certificado raíz</p><p align=center><b>%4</b></p><p>del certificado "
-#~ "S/MIME</p><p align=center><b>%2</b> (número de serie %3)</p><p>caducó "
-#~ "hace menos de un día.</p>"
-#~ msgstr[1] ""
-#~ "<p>El certificado raíz</p><p align=center><b>%4</b></p><p>del certificado "
-#~ "S/MIME</p><p align=center><b>%2</b> (número de serie %3)</p><p>caducó "
-#~ "hace %1 días.</p>"
-
-#~ msgid ""
-#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-#~ "your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
-#~ "number %3)</p><p>expired less than a day ago.</p>"
-#~ msgid_plural ""
-#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-#~ "your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
-#~ "number %3)</p><p>expired %1 days ago.</p>"
-#~ msgstr[0] ""
-#~ "<p>El certificado de la CA intermedia</p><p align=center><b>%4</b></"
-#~ "p><p>para su certificado de firma S/MIME</p><p align=center><b>%2</b> "
-#~ "(número de serie %3)</p><p>caducó hace menos de un día.</p>"
-#~ msgstr[1] ""
-#~ "<p>El certificado de la CA intermedia</p><p align=center><b>%4</b></"
-#~ "p><p>para su certificado de firma S/MIME</p><p align=center><b>%2</b> "
-#~ "(número de serie %3)</p><p>caducó hace %1 días.</p>"
-
-#~ msgid ""
-#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-#~ "your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
-#~ "number %3)</p><p>expired less than a day ago.</p>"
-#~ msgid_plural ""
-#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-#~ "your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
-#~ "number %3)</p><p>expired %1 days ago.</p>"
-#~ msgstr[0] ""
-#~ "<p>El certificado CA intermedio</p><p align=center><b>%4</b></p><p>de su "
-#~ "certificado de cifrado S/MIME</p><p align=center><b>%2</b> (número de "
-#~ "serie %3)</p><p>caducó hace menos de un día.</p>"
-#~ msgstr[1] ""
-#~ "<p>El certificado CA intermedio</p><p align=center><b>%4</b></p><p>de su "
-#~ "certificado de cifrado S/MIME</p><p align=center><b>%2</b> (número de "
-#~ "serie %3)</p><p>caducó hace %1 días.</p>"
-
-#~ msgid ""
-#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-#~ "S/MIME certificate</p><p align=center><b>%2</b> (serial number %3)</"
-#~ "p><p>expired less than a day ago.</p>"
-#~ msgid_plural ""
-#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-#~ "S/MIME certificate</p><p align=center><b>%2</b> (serial number %3)</"
-#~ "p><p>expired %1 days ago.</p>"
-#~ msgstr[0] ""
-#~ "<p>El certificado CA intermedio</p><p align=center><b>%4</b></p><p>de su "
-#~ "certificado S/MIME</p><p align=center><b>%2</b> (número de serie %3)</"
-#~ "p><p>caducó hace menos de un día.</p>"
-#~ msgstr[1] ""
-#~ "<p>El certificado CA intermedio</p><p align=center><b>%4</b></p><p>de su "
-#~ "certificado S/MIME</p><p align=center><b>%2</b> (número de serie %3)</"
-#~ "p><p>caducó hace %1 días.</p>"
-
-#~ msgid ""
-#~ "<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
-#~ "number %3)</p><p>expired less than a day ago.</p>"
-#~ msgid_plural ""
-#~ "<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
-#~ "number %3)</p><p>expired %1 days ago.</p>"
-#~ msgstr[0] ""
-#~ "<p>Su certificado de firma S/MIME</p><p align=center><b>%2</b> (número de "
-#~ "serie %3)</p><p>caducó hace menos de un día.</p>"
-#~ msgstr[1] ""
-#~ "<p>Su certificado de firma S/MIME</p><p align=center><b>%2</b> (número de "
-#~ "serie %3)</p><p>caducó hace %1 días.</p>"
-
-#~ msgid ""
-#~ "<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> "
-#~ "(serial number %3)</p><p>expired less than a day ago.</p>"
-#~ msgid_plural ""
-#~ "<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> "
-#~ "(serial number %3)</p><p>expired %1 days ago.</p>"
-#~ msgstr[0] ""
-#~ "<p>Su certificado de cifrado S/MIME</p><p align=center><b>%2</b> (número "
-#~ "de serie %3)</p><p>caducó hace menos de un día.</p>"
-#~ msgstr[1] ""
-#~ "<p>Su certificado de cifrado S/MIME</p><p align=center><b>%2</b> (número "
-#~ "de serie %3)</p><p>caducó hace %1 días.</p>"
-
-#~ msgid ""
-#~ "<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
-#~ "%3)</p><p>expired less than a day ago.</p>"
-#~ msgid_plural ""
-#~ "<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
-#~ "%3)</p><p>expired %1 days ago.</p>"
-#~ msgstr[0] ""
-#~ "<p>El certificado S/MIME para</p><p align=center><b>%2</b> (número de "
-#~ "serie %3)</p><p>caducó hace menos de un día.</p>"
-#~ msgstr[1] ""
-#~ "<p>El certificado S/MIME para</p><p align=center><b>%2</b> (número de "
-#~ "serie %3)</p><p>caducó hace %1 días.</p>"
-
-#~ msgid ""
-#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
-#~ "MIME signing certificate</p><p align=center><b>%2</b> (serial number %3);"
-#~ "</p><p>expires in less than a day.</p>"
-#~ msgid_plural ""
-#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
-#~ "MIME signing certificate</p><p align=center><b>%2</b> (serial number %3);"
-#~ "</p><p>expires in less than %1 days.</p>"
-#~ msgstr[0] ""
-#~ "<p>El certificado raíz</p><p align=center><b>%4</b></p><p>de su "
-#~ "certificado de firma S/MIME</p><p align=center><b>%2</b> (número de serie "
-#~ "%3)</p><p>caduca en menos de un día.</p>"
-#~ msgstr[1] ""
-#~ "<p>El certificado raíz</p><p align=center><b>%4</b></p><p>de su "
-#~ "certificado de firma S/MIME</p><p align=center><b>%2</b> (número de serie "
-#~ "%3)</p><p>caduca en menos de %1 días.</p>"
-
-#~ msgid ""
-#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
-#~ "MIME encryption certificate</p><p align=center><b>%2</b> (serial number "
-#~ "%3);</p><p>expires in less than a day.</p>"
-#~ msgid_plural ""
-#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
-#~ "MIME encryption certificate</p><p align=center><b>%2</b> (serial number "
-#~ "%3);</p><p>expires in less than %1 days.</p>"
-#~ msgstr[0] ""
-#~ "<p>El certificado raíz</p><p align=center><b>%4</b></p><p>de su "
-#~ "certificado de cifrado S/MIME</p><p align=center><b>%2</b> (número de "
-#~ "serie %3)</p><p>caduca en menos de un día.</p>"
-#~ msgstr[1] ""
-#~ "<p>El certificado raíz</p><p align=center><b>%4</b></p><p>de su "
-#~ "certificado de cifrado S/MIME</p><p align=center><b>%2</b> (número de "
-#~ "serie %3)</p><p>caduca en menos de %1 días.</p>"
-
-#~ msgid ""
-#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
-#~ "certificate</p><p align=center><b>%2</b> (serial number %3);</"
-#~ "p><p>expires in less than a day.</p>"
-#~ msgid_plural ""
-#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
-#~ "certificate</p><p align=center><b>%2</b> (serial number %3);</"
-#~ "p><p>expires in less than %1 days.</p>"
-#~ msgstr[0] ""
-#~ "<p>El certificado raíz</p><p align=center><b>%4</b></p><p>del certificado "
-#~ "S/MIME</p><p align=center><b>%2</b> (número de serie %3)</p><p>caduca en "
-#~ "menos de un día.</p>"
-#~ msgstr[1] ""
-#~ "<p>El certificado raíz</p><p align=center><b>%4</b></p><p>del certificado "
-#~ "S/MIME</p><p align=center><b>%2</b> (número de serie %3)</p><p>caduca en "
-#~ "menos de %1 días.</p>"
-
-#~ msgid ""
-#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-#~ "your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
-#~ "number %3);</p><p>expires in less than a day.</p>"
-#~ msgid_plural ""
-#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-#~ "your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
-#~ "number %3);</p><p>expires in less than %1 days.</p>"
-#~ msgstr[0] ""
-#~ "<p>El certificado de la CA intermedia</p><p align=center><b>%4</b></"
-#~ "p><p>para su certificado de firma S/MIME</p><p align=center><b>%2</b> "
-#~ "(número de serie %3)</p><p>caduca en menos de un día.</p>"
-#~ msgstr[1] ""
-#~ "<p>El certificado de la CA intermedia</p><p align=center><b>%4</b></"
-#~ "p><p>para su certificado de firma S/MIME</p><p align=center><b>%2</b> "
-#~ "(número de serie %3)</p><p>caduca en menos de %1 días.</p>"
-
-#~ msgid ""
-#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-#~ "your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
-#~ "number %3);</p><p>expires in less than a day.</p>"
-#~ msgid_plural ""
-#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-#~ "your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
-#~ "number %3);</p><p>expires in less than %1 days.</p>"
-#~ msgstr[0] ""
-#~ "<p>El certificado CA intermedio</p><p align=center><b>%4</b></p><p>de su "
-#~ "certificado de cifrado S/MIME</p><p align=center><b>%2</b> (número de "
-#~ "serie %3)</p><p>caduca en menos de un día.</p>"
-#~ msgstr[1] ""
-#~ "<p>El certificado CA intermedio</p><p align=center><b>%4</b></p><p>de su "
-#~ "certificado de cifrado S/MIME</p><p align=center><b>%2</b> (número de "
-#~ "serie %3)</p><p>caduca en menos de %1 días.</p>"
-
-#~ msgid ""
-#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-#~ "S/MIME certificate</p><p align=center><b>%2</b> (serial number %3);</"
-#~ "p><p>expires in less than a day.</p>"
-#~ msgid_plural ""
-#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-#~ "S/MIME certificate</p><p align=center><b>%2</b> (serial number %3);</"
-#~ "p><p>expires in less than %1 days.</p>"
-#~ msgstr[0] ""
-#~ "<p>El certificado CA intermedio</p><p align=center><b>%4</b></p><p>de su "
-#~ "certificado S/MIME</p><p align=center><b>%2</b> (número de serie %3)</"
-#~ "p><p>caduca en menos de un día.</p>"
-#~ msgstr[1] ""
-#~ "<p>El certificado CA intermedio</p><p align=center><b>%4</b></p><p>de su "
-#~ "certificado S/MIME</p><p align=center><b>%2</b> (número de serie %3)</"
-#~ "p><p>caduca en menos de %1 días.</p>"
-
-#~ msgid ""
-#~ "<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
-#~ "number %3);</p><p>expires in less than a day.</p>"
-#~ msgid_plural ""
-#~ "<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
-#~ "number %3);</p><p>expires in less than %1 days.</p>"
-#~ msgstr[0] ""
-#~ "<p>Su certificado de firma S/MIME</p><p align=center><b>%2</b> (número de "
-#~ "serie %3)</p><p>caduca en menos de un día.</p>"
-#~ msgstr[1] ""
-#~ "<p>Su certificado de firma S/MIME</p><p align=center><b>%2</b> (número de "
-#~ "serie %3)</p><p>caduca en menos de %1 días.</p>"
-
-#~ msgid ""
-#~ "<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> "
-#~ "(serial number %3);</p><p>expires in less than a day.</p>"
-#~ msgid_plural ""
-#~ "<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> "
-#~ "(serial number %3);</p><p>expires in less than %1 days.</p>"
-#~ msgstr[0] ""
-#~ "<p>Su certificado de cifrado S/MIME</p><p align=center><b>%2</b> (número "
-#~ "de serie %3)</p><p>caduca en menos de un día.</p>"
-#~ msgstr[1] ""
-#~ "<p>Su certificado de cifrado S/MIME</p><p align=center><b>%2</b> (número "
-#~ "de serie %3)</p><p>caduca en menos de %1 días.</p>"
-
-#~ msgid ""
-#~ "<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
-#~ "%3);</p><p>expires in less than a day.</p>"
-#~ msgid_plural ""
-#~ "<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
-#~ "%3);</p><p>expires in less than %1 days.</p>"
-#~ msgstr[0] ""
-#~ "<p>El certificado S/MIME para</p><p align=center><b>%2</b> (número de "
-#~ "serie %3)</p><p>caduca en menos de un día.</p>"
-#~ msgstr[1] ""
-#~ "<p>El certificado S/MIME para</p><p align=center><b>%2</b> (número de "
-#~ "serie %3)</p><p>caduca en menos de %1 días.</p>"
-
-#~ msgid ""
-#~ "The minimum number of days that the signature certificate should be valid "
-#~ "before issuing a warning"
-#~ msgstr ""
-#~ "El mínimo número de días durante los que la firma del certificado debería "
-#~ "ser válida antes de enviar un aviso"
-
-#~ msgid ""
-#~ "The minimum number of days that the CA certificate should be valid before "
-#~ "issuing a warning"
-#~ msgstr ""
-#~ "El mínimo número de días durante los que el certificado de la autoridad "
-#~ "certificadora debería ser válido antes de enviar un aviso"
-
-#~ msgid ""
-#~ "When encrypting emails, always also encrypt to the certificate of my own "
-#~ "identity"
-#~ msgstr ""
-#~ "Cuando se cifren correos, siempre cifrar también el certificado de mi "
-#~ "propia identidad"
