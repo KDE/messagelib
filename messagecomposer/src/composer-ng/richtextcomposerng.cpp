@@ -97,22 +97,43 @@ RichTextComposerNg::~RichTextComposerNg() = default;
 
 void RichTextComposerNg::applyUnderlineFormat()
 {
-    // TODO
+    if (textMode() == KPIMTextEdit::RichTextComposer::Plain) {
+        insertFormat(u'~');
+    }
 }
 
 void RichTextComposerNg::applyBoldFormat()
 {
-    // TODO
+    if (textMode() == KPIMTextEdit::RichTextComposer::Plain) {
+        insertFormat(u'*');
+    }
 }
 
 void RichTextComposerNg::applyItalicFormat()
 {
-    // TODO
+    if (textMode() == KPIMTextEdit::RichTextComposer::Plain) {
+        insertFormat(u'/');
+    }
 }
 
 void RichTextComposerNg::applyStrikeOutFormat()
 {
-    // TODO
+    if (textMode() == KPIMTextEdit::RichTextComposer::Plain) {
+        insertFormat(u'_');
+    }
+}
+
+void RichTextComposerNg::insertFormat(QChar formatChar)
+{
+    QTextCursor cursor = textCursor();
+    if (cursor.hasSelection()) {
+        const QString newText = formatChar + cursor.selectedText() + formatChar;
+        cursor.insertText(newText);
+    } else {
+        cursor.insertText(QString(formatChar) + QString(formatChar));
+    }
+    cursor.setPosition(cursor.position());
+    setTextCursor(cursor);
 }
 
 MessageComposer::RichTextComposerSignatures *RichTextComposerNg::composerSignature() const

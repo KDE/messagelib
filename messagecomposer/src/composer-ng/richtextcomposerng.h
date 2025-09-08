@@ -60,5 +60,6 @@ private:
     MESSAGECOMPOSER_NO_EXPORT void applyBoldFormat();
     MESSAGECOMPOSER_NO_EXPORT void applyItalicFormat();
     MESSAGECOMPOSER_NO_EXPORT void applyStrikeOutFormat();
+    MESSAGECOMPOSER_NO_EXPORT void insertFormat(QChar formatChar);
 };
 }
