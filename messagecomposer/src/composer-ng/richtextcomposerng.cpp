@@ -64,19 +64,19 @@ RichTextComposerNg::RichTextComposerNg(QWidget *parent)
             [this](TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType type) {
                 switch (type) {
                 case TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::UnderLine: {
-                    // No supported here
+                    applyUnderlineFormat();
                     break;
                 }
                 case TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::Bold: {
-                    // slotSetAsBold();
+                    applyBoldFormat();
                     break;
                 }
                 case TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::Italic: {
-                    // slotSetAsItalic();
+                    applyItalicFormat();
                     break;
                 }
                 case TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::StrikeThrough: {
-                    // slotSetAsStrikeOut();
+                    applyStrikeOutFormat();
                     break;
                 }
                 case TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::InsertLink:
@@ -94,6 +94,26 @@ RichTextComposerNg::RichTextComposerNg(QWidget *parent)
 }
 
 RichTextComposerNg::~RichTextComposerNg() = default;
+
+void RichTextComposerNg::applyUnderlineFormat()
+{
+    // TODO
+}
+
+void RichTextComposerNg::applyBoldFormat()
+{
+    // TODO
+}
+
+void RichTextComposerNg::applyItalicFormat()
+{
+    // TODO
+}
+
+void RichTextComposerNg::applyStrikeOutFormat()
+{
+    // TODO
+}
 
 MessageComposer::RichTextComposerSignatures *RichTextComposerNg::composerSignature() const
 {
