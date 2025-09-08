@@ -5,7 +5,6 @@
 #pragma once
 
 #include "messagecore_export.h"
-#include <KMime/HeaderParsing>
 #include <KMime/Message>
 
 #include <QList>
