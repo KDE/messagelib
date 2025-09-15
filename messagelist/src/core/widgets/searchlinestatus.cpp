@@ -100,6 +100,7 @@ bool SearchLineStatus::locked() const
 void SearchLineStatus::initializeActions()
 {
     mSearchCommandAction = addAction(QIcon::fromTheme(u"settings-configure"_s), QLineEdit::TrailingPosition);
+    mSearchCommandAction->setToolTip(i18nc("@info:tooltip", "Show or Hide search command line"));
     mSearchCommandAction->setWhatsThis(i18nc("@info:whatsthis", "Toggle this button if you want show or hide search command line widget."));
     connect(mSearchCommandAction, &QAction::triggered, this, &SearchLineStatus::searchCommandActionRequested);
     mLockAction = addAction(QIcon::fromTheme(u"object-locked"_s), QLineEdit::TrailingPosition);
