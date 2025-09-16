@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-25 00:43+0000\n"
+"POT-Creation-Date: 2025-09-16 00:43+0000\n"
 "PO-Revision-Date: 2025-01-08 15:33+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -1483,13 +1483,19 @@ msgstr "Netta le campo de cerca rapide quando on cambia dossieres"
 
 #: core/widgets/searchlinestatus.cpp:103
 #, kde-format
+msgctxt "@info:tooltip"
+msgid "Show or Hide search command line"
+msgstr ""
+
+#: core/widgets/searchlinestatus.cpp:104
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
 msgstr ""
 "Pulsa iste button si tu vole monstrar o celar widget de commando de linea de "
 "cerca."
 
-#: core/widgets/searchlinestatus.cpp:107
+#: core/widgets/searchlinestatus.cpp:108
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1499,13 +1505,13 @@ msgstr ""
 "Pressa iste button si tu vole mentener un cerca rapide blocate quando on "
 "move a altere dossieres o quando on restringe le cerca per stato de messages."
 
-#: core/widgets/searchlinestatus.cpp:115
+#: core/widgets/searchlinestatus.cpp:116
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "Filtro salveguardate"
 
-#: core/widgets/searchlinestatus.cpp:193
+#: core/widgets/searchlinestatus.cpp:194
 #, kde-format
 msgid "Clear History"
 msgstr "Netta chronologia"

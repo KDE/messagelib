@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-25 00:43+0000\n"
+"POT-Creation-Date: 2025-09-16 00:43+0000\n"
 "PO-Revision-Date: 2025-01-27 17:02+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -1488,6 +1488,13 @@ msgid "Clear the quick search field when changing folders"
 msgstr "Notīrīt ātrās meklēšanas lauku, mainot mapes"
 
 #: core/widgets/searchlinestatus.cpp:103
+#, fuzzy, kde-format
+#| msgid "Show folder quick search line edit"
+msgctxt "@info:tooltip"
+msgid "Show or Hide search command line"
+msgstr "Rādīt mapju ātrās meklēšanas joslu"
+
+#: core/widgets/searchlinestatus.cpp:104
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
@@ -1495,7 +1502,7 @@ msgstr ""
 "Pārslēdziet šo pogu, ja vēlaties parādīt vai paslēpt meklēšanas komandrindas "
 "logdaļu."
 
-#: core/widgets/searchlinestatus.cpp:107
+#: core/widgets/searchlinestatus.cpp:108
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1505,13 +1512,13 @@ msgstr ""
 "Ieslēdzot šo pogu, ja vēlaties, lai ātrās meklēšanas lauciņš nemainītos, kad "
 "pārvietojaties starp mapēm vai ierobežojat meklēšanu pēc vēstules statusa."
 
-#: core/widgets/searchlinestatus.cpp:115
+#: core/widgets/searchlinestatus.cpp:116
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "Saglabāt filtru"
 
-#: core/widgets/searchlinestatus.cpp:193
+#: core/widgets/searchlinestatus.cpp:194
 #, kde-format
 msgid "Clear History"
 msgstr "Notīrīt vēsturi"
@@ -10460,9 +10467,6 @@ msgstr "&Atcelt"
 #~ msgstr ""
 #~ "Šo var izmantot, lai ierobežotu maksimālo vienlaicīgo savienojumu sakaitu "
 #~ "ar vienu datoru, pārbaudot pastu. Noklusētais skaits ir neierobežots (0)."
-
-#~ msgid "Show folder quick search line edit"
-#~ msgstr "Rādīt mapju ātrās meklēšanas joslu"
 
 #~ msgid "Hide local inbox if unused"
 #~ msgstr "Slēpt lokālo ienākošo vēstuļu mapi, ja to nelieto"

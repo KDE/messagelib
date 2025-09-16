@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-25 00:43+0000\n"
+"POT-Creation-Date: 2025-09-16 00:43+0000\n"
 "PO-Revision-Date: 2013-10-16 04:42+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -1548,12 +1548,19 @@ msgid "Clear the quick search field when changing folders"
 msgstr "Қапшықты ауыстырғанда жедел іздеу өрісін тазалау"
 
 #: core/widgets/searchlinestatus.cpp:103
+#, fuzzy, kde-format
+#| msgid "Show quick search line edit"
+msgctxt "@info:tooltip"
+msgid "Show or Hide search command line"
+msgstr "Жедел іздеу өрісі көрсетілсін"
+
+#: core/widgets/searchlinestatus.cpp:104
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:107
+#: core/widgets/searchlinestatus.cpp:108
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1563,14 +1570,14 @@ msgstr ""
 "Бұл батырманы шұғыл іздеуді басқа қапшықтарды қарап не іздеу шартын "
 "тарылытқанда сақтап қалу үшін басыңыз."
 
-#: core/widgets/searchlinestatus.cpp:115
+#: core/widgets/searchlinestatus.cpp:116
 #, fuzzy, kde-format
 #| msgid "Save List..."
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "Тізімді сақтау..."
 
-#: core/widgets/searchlinestatus.cpp:193
+#: core/widgets/searchlinestatus.cpp:194
 #, fuzzy, kde-format
 #| msgid "&Create Filter"
 msgid "Clear History"
@@ -10722,11 +10729,6 @@ msgstr "Қ&айту"
 #~ msgstr ""
 #~ "Жаңа поштаны тексергенде хостпен қосылылымдарды шектеу саны. Әдетте "
 #~ "қосылым саны шектелмейді (0)."
-
-#, fuzzy
-#~| msgid "Show quick search line edit"
-#~ msgid "Show folder quick search line edit"
-#~ msgstr "Жедел іздеу өрісі көрсетілсін"
 
 #~ msgid "Keep original charset when replying or forwarding if possible"
 #~ msgstr ""

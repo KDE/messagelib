@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-25 00:43+0000\n"
+"POT-Creation-Date: 2025-09-16 00:43+0000\n"
 "PO-Revision-Date: 2007-09-10 16:41+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -1679,12 +1679,19 @@ msgid "Clear the quick search field when changing folders"
 msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:103
+#, fuzzy, kde-format
+#| msgid "Show quick search line edit"
+msgctxt "@info:tooltip"
+msgid "Show or Hide search command line"
+msgstr "छिटो खोजी लाइन सम्पादन देखाउनुहोस्"
+
+#: core/widgets/searchlinestatus.cpp:104
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:107
+#: core/widgets/searchlinestatus.cpp:108
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1692,14 +1699,14 @@ msgid ""
 "to other folders or when narrowing the search by message status."
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:115
+#: core/widgets/searchlinestatus.cpp:116
 #, fuzzy, kde-format
 #| msgid "Save List..."
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "सूची बचत गर्नुहोस्..."
 
-#: core/widgets/searchlinestatus.cpp:193
+#: core/widgets/searchlinestatus.cpp:194
 #, fuzzy, kde-format
 #| msgid "&Create Filter"
 msgid "Clear History"
@@ -11080,11 +11087,6 @@ msgstr "रद्द गर्नुहोस्"
 #~ msgstr ""
 #~ "यो नयाँ मेल जाँच गर्ने बेलामा प्रत्येक होस्टका जडानका सङ्ख्या निषेध गर्न प्रयोग गर्न "
 #~ "सकिनेछ । पूर्वनिर्धारित रूपमा जडानका सङ्ख्या असिमित छ (०) ।"
-
-#, fuzzy
-#~| msgid "Show quick search line edit"
-#~ msgid "Show folder quick search line edit"
-#~ msgstr "छिटो खोजी लाइन सम्पादन देखाउनुहोस्"
 
 #~ msgid "Keep original charset when replying or forwarding if possible"
 #~ msgstr "सम्भव भएमा जवाफ दिदा वा पठाउदा मौलिक चारसेट राख्नुहोस्"

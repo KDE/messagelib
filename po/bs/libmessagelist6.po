@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-25 00:43+0000\n"
+"POT-Creation-Date: 2025-09-16 00:43+0000\n"
 "PO-Revision-Date: 2014-02-08 00:09+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -1558,11 +1558,17 @@ msgstr "Obriši polje za brzu pretragu pri promjeni fascikli"
 
 #: core/widgets/searchlinestatus.cpp:103
 #, kde-format
+msgctxt "@info:tooltip"
+msgid "Show or Hide search command line"
+msgstr ""
+
+#: core/widgets/searchlinestatus.cpp:104
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:107
+#: core/widgets/searchlinestatus.cpp:108
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1572,14 +1578,14 @@ msgstr ""
 "Preklopite ovo dugme ako želite zadržati brzu pretragu zaključanom pri "
 "kretanju u druge fascikle ili pri sužavanju pretrage statusom poruka"
 
-#: core/widgets/searchlinestatus.cpp:115
+#: core/widgets/searchlinestatus.cpp:116
 #, fuzzy, kde-format
 #| msgid "Configure..."
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "Podesi..."
 
-#: core/widgets/searchlinestatus.cpp:193
+#: core/widgets/searchlinestatus.cpp:194
 #, kde-format
 msgid "Clear History"
 msgstr ""

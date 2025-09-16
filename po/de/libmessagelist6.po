@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-25 00:43+0000\n"
+"POT-Creation-Date: 2025-09-16 00:43+0000\n"
 "PO-Revision-Date: 2025-01-08 15:43+0100\n"
 "Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -1495,12 +1495,19 @@ msgid "Clear the quick search field when changing folders"
 msgstr "Löscht das Suchfeld beim Wechseln in andere Ordner"
 
 #: core/widgets/searchlinestatus.cpp:103
+#, fuzzy, kde-format
+#| msgid "Show folder quick search line edit"
+msgctxt "@info:tooltip"
+msgid "Show or Hide search command line"
+msgstr "Ordner-Schnellsuche anzeigen"
+
+#: core/widgets/searchlinestatus.cpp:104
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
 msgstr "Ist diese Einstellung aktiviert, wird die Suchleiste angezeigt."
 
-#: core/widgets/searchlinestatus.cpp:107
+#: core/widgets/searchlinestatus.cpp:108
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1511,13 +1518,13 @@ msgstr ""
 "wenn Sie in einen anderen Ordner wechseln oder die Suche durch den "
 "Nachrichtenstatus einschränken möchten."
 
-#: core/widgets/searchlinestatus.cpp:115
+#: core/widgets/searchlinestatus.cpp:116
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "Gespeicherter Filter"
 
-#: core/widgets/searchlinestatus.cpp:193
+#: core/widgets/searchlinestatus.cpp:194
 #, kde-format
 msgid "Clear History"
 msgstr "Verlauf leeren"
@@ -10496,9 +10503,6 @@ msgstr "&Abbrechen"
 #~ "Hiermit kann die maximale Anzahl von Verbindungen pro Rechner beim Abruf "
 #~ "neuer Nachrichten begrenzt werden. Standardmäßig ist die Anzahl der "
 #~ "Verbindungen unbegrenzt (0)."
-
-#~ msgid "Show folder quick search line edit"
-#~ msgstr "Ordner-Schnellsuche anzeigen"
 
 #~ msgid "Hide local inbox if unused"
 #~ msgstr "Posteingang ausblenden, falls unbenutzt"

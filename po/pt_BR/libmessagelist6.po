@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-25 00:43+0000\n"
+"POT-Creation-Date: 2025-09-16 00:43+0000\n"
 "PO-Revision-Date: 2025-07-26 14:07-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -1491,13 +1491,19 @@ msgstr "Limpar o campo de pesquisa rápida ao mudar de pasta"
 
 #: core/widgets/searchlinestatus.cpp:103
 #, kde-format
+msgctxt "@info:tooltip"
+msgid "Show or Hide search command line"
+msgstr ""
+
+#: core/widgets/searchlinestatus.cpp:104
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
 msgstr ""
 "Alterne este botão se deseja exibir ou ocultar o elemento de pesquisa de "
 "linha de comando."
 
-#: core/widgets/searchlinestatus.cpp:107
+#: core/widgets/searchlinestatus.cpp:108
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1508,13 +1514,13 @@ msgstr ""
 "bloqueada ao mover para outras pastas ou quando deseja refinar a pesquisa "
 "pelo status da mensagem."
 
-#: core/widgets/searchlinestatus.cpp:115
+#: core/widgets/searchlinestatus.cpp:116
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "Filtro salvo"
 
-#: core/widgets/searchlinestatus.cpp:193
+#: core/widgets/searchlinestatus.cpp:194
 #, kde-format
 msgid "Clear History"
 msgstr "Limpar histórico"

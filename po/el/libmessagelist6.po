@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-25 00:43+0000\n"
+"POT-Creation-Date: 2025-09-16 00:43+0000\n"
 "PO-Revision-Date: 2024-09-19 17:23+0300\n"
 "Last-Translator: Antonis Geralis <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -1542,12 +1542,19 @@ msgid "Clear the quick search field when changing folders"
 msgstr "Καθαρίζει το πεδίο γρήγορης αναζήτησης όταν γίνεται αλλαγή φακέλων"
 
 #: core/widgets/searchlinestatus.cpp:103
+#, fuzzy, kde-format
+#| msgid "Show folder quick search line edit"
+msgctxt "@info:tooltip"
+msgid "Show or Hide search command line"
+msgstr "Εμφάνιση γραμμής γρήγορης αναζήτησης"
+
+#: core/widgets/searchlinestatus.cpp:104
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:107
+#: core/widgets/searchlinestatus.cpp:108
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1558,13 +1565,13 @@ msgstr ""
 "κλειδωμένη κατά την μετάβαση σε άλλους φακέλους ή κατά την αναζήτηση με βάση "
 "την κατάσταση του μηνύματος."
 
-#: core/widgets/searchlinestatus.cpp:115
+#: core/widgets/searchlinestatus.cpp:116
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "Αποθηκευμένο φίλτρο"
 
-#: core/widgets/searchlinestatus.cpp:193
+#: core/widgets/searchlinestatus.cpp:194
 #, kde-format
 msgid "Clear History"
 msgstr "Καθαρισμός ιστορικού"
@@ -10517,9 +10524,6 @@ msgstr "&Ακύρωση"
 #~ "Αυτό μπορεί να χρησιμοποιηθεί για να περιορίσει τον αριθμό των συνδέσεων "
 #~ "ανά υπολογιστή κατά τον έλεγχο για νέα αλληλογραφία. Ο προκαθορισμένος "
 #~ "αριθμός συνδέσεων είναι απεριόριστος (0)."
-
-#~ msgid "Show folder quick search line edit"
-#~ msgstr "Εμφάνιση γραμμής γρήγορης αναζήτησης"
 
 #~ msgid "Hide local inbox if unused"
 #~ msgstr "Απόκρυψη τοπικών εισερχομένων αν δεν χρησιμοποιούνται"

@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-25 00:43+0000\n"
+"POT-Creation-Date: 2025-09-16 00:43+0000\n"
 "PO-Revision-Date: 2025-07-13 15:30+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -1490,6 +1490,13 @@ msgid "Clear the quick search field when changing folders"
 msgstr "Hustu bilaketa bizkorreko eremua karpetaz aldatzean"
 
 #: core/widgets/searchlinestatus.cpp:103
+#, fuzzy, kde-format
+#| msgid "Show quick search line edit"
+msgctxt "@info:tooltip"
+msgid "Show or Hide search command line"
+msgstr "Erakutsi bilaketa bizkorraren edizio lerroa"
+
+#: core/widgets/searchlinestatus.cpp:104
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
@@ -1497,7 +1504,7 @@ msgstr ""
 "Txandakatu botoi hau bilaketa komando-lerro trepeta erakutsi edo ezkutatu "
 "nahi baduzu."
 
-#: core/widgets/searchlinestatus.cpp:107
+#: core/widgets/searchlinestatus.cpp:108
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1508,13 +1515,13 @@ msgstr ""
 "egoeraren arabera murriztean, zure bilaketa bizkorra giltzatuta eduki nahi "
 "baduzu."
 
-#: core/widgets/searchlinestatus.cpp:115
+#: core/widgets/searchlinestatus.cpp:116
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "Gordetako iragazkia"
 
-#: core/widgets/searchlinestatus.cpp:193
+#: core/widgets/searchlinestatus.cpp:194
 #, kde-format
 msgid "Clear History"
 msgstr "Garbitu historia"
@@ -10560,11 +10567,6 @@ msgstr "&Utzi"
 #~ msgstr ""
 #~ "Ostalariko konexio-kopurua mugatzeko erabili daiteke posta egiaztatzean. "
 #~ "Lehenespenez konexio-kopurua mugagabea da (0)."
-
-#, fuzzy
-#~| msgid "Show quick search line edit"
-#~ msgid "Show folder quick search line edit"
-#~ msgstr "Erakutsi bilaketa bizkorraren edizio lerroa"
 
 #~ msgid "Keep original charset when replying or forwarding if possible"
 #~ msgstr ""

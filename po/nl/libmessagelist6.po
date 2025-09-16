@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-25 00:43+0000\n"
+"POT-Creation-Date: 2025-09-16 00:43+0000\n"
 "PO-Revision-Date: 2025-01-07 11:10+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -1500,6 +1500,13 @@ msgid "Clear the quick search field when changing folders"
 msgstr "Wis het snelzoekveld bij wijziging van mappen"
 
 #: core/widgets/searchlinestatus.cpp:103
+#, fuzzy, kde-format
+#| msgid "Show folder quick search line edit"
+msgctxt "@info:tooltip"
+msgid "Show or Hide search command line"
+msgstr "Snelzoeken voor mappen tonen"
+
+#: core/widgets/searchlinestatus.cpp:104
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
@@ -1507,7 +1514,7 @@ msgstr ""
 "Schakel deze knop om als u widget opdrachtregel voor zoeken wilt tonen of "
 "verbergen."
 
-#: core/widgets/searchlinestatus.cpp:107
+#: core/widgets/searchlinestatus.cpp:108
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1518,13 +1525,13 @@ msgstr ""
 "bij het verplaatsen naar andere mappen of wanneer het vernauwd wordt door de "
 "status van de berichten."
 
-#: core/widgets/searchlinestatus.cpp:115
+#: core/widgets/searchlinestatus.cpp:116
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "Opgeslagen filter"
 
-#: core/widgets/searchlinestatus.cpp:193
+#: core/widgets/searchlinestatus.cpp:194
 #, kde-format
 msgid "Clear History"
 msgstr "Geschiedenis wissen"
@@ -10468,9 +10475,6 @@ msgstr "&Annuleren"
 #~ "Dit kan worden gebruikt om het aantal verbindingen per host te beperken "
 #~ "bij het controleren op nieuwe berichten. Standaard is het aantal "
 #~ "verbindingen onbeperkt (0)."
-
-#~ msgid "Show folder quick search line edit"
-#~ msgstr "Snelzoeken voor mappen tonen"
 
 #~ msgid "Hide local inbox if unused"
 #~ msgstr "Lokaal postvak-in verbergen indien ongebruikt"

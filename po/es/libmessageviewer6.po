@@ -781,7 +781,7 @@ msgid ""
 "Probability=%2\n"
 "Confidence=%4"
 msgstr ""
-"%1% de probabilidades de ser correo basura, con una confianza del %3%.\n"
+"%1 % de probabilidades de ser correo basura, con una confianza del %3%.\n"
 "\n"
 "Informe completo:\n"
 "Probabilidad=%2\n"
@@ -795,7 +795,7 @@ msgid ""
 "Full report:\n"
 "Probability=%2"
 msgstr ""
-"%1% de probabilidades de ser correo basura.\n"
+"%1 % de probabilidades de ser correo basura.\n"
 "\n"
 "Informe completo:\n"
 "Probabilidad=%2"
@@ -2467,57 +2467,3 @@ msgstr "Mensaje siguiente"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Mensaje anterior"
-
-#~ msgid "Error: Signature not verified"
-#~ msgstr "Error: firma no verificada"
-
-#~ msgid "Good signature"
-#~ msgstr "Firma válida"
-
-#~ msgid "Bad signature"
-#~ msgstr "Firma incorrecta"
-
-#~ msgid "No public key to verify the signature"
-#~ msgstr "No hay clave pública para verificar la firma"
-
-#~ msgid "No signature found"
-#~ msgstr "No se ha encontrado ninguna firma"
-
-#~ msgid "Error verifying the signature"
-#~ msgstr "Error al verificar la firma"
-
-#~ msgid "Different results for signatures"
-#~ msgstr "Resultados diferentes para las firmas"
-
-#~ msgid "No status information available."
-#~ msgstr "No hay información de estado disponible."
-
-#~ msgid "Good signature."
-#~ msgstr "Firma válida."
-
-#~ msgid "One key has expired."
-#~ msgstr "Una clave ha caducado."
-
-#~ msgid "The signature has expired."
-#~ msgstr "La firma ha caducado."
-
-#~ msgid "Unable to verify: key missing."
-#~ msgstr "No se pudo verificar: falta la clave."
-
-#~ msgid "CRL not available."
-#~ msgstr "No hay CRL disponible."
-
-#~ msgid "Available CRL is too old."
-#~ msgstr "La CRL disponible es demasiado vieja."
-
-#~ msgid "A policy was not met."
-#~ msgstr "No se ha cumplido una política."
-
-#~ msgid "A system error occurred."
-#~ msgstr "Ha ocurrido un error del sistema."
-
-#~ msgid "One key has been revoked."
-#~ msgstr "Se ha revocado una clave."
-
-#~ msgid "Bad signature."
-#~ msgstr "Firma incorrecta."

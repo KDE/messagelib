@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-25 00:43+0000\n"
+"POT-Creation-Date: 2025-09-16 00:43+0000\n"
 "PO-Revision-Date: 2025-01-26 17:43+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -1481,12 +1481,19 @@ msgid "Clear the quick search field when changing folders"
 msgstr "வேறு அடைவுக்கு மாறும்போது, விரைதேடல் பட்டையைக் காலியாக்கு"
 
 #: core/widgets/searchlinestatus.cpp:103
+#, fuzzy, kde-format
+#| msgid "Show quick search line edit"
+msgctxt "@info:tooltip"
+msgid "Show or Hide search command line"
+msgstr "வேக தேடல் வரி திருத்தியை காட்டு"
+
+#: core/widgets/searchlinestatus.cpp:104
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:107
+#: core/widgets/searchlinestatus.cpp:108
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1494,13 +1501,13 @@ msgid ""
 "to other folders or when narrowing the search by message status."
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:115
+#: core/widgets/searchlinestatus.cpp:116
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "சேமிக்கப்பட்டுள்ள வடிகட்டி"
 
-#: core/widgets/searchlinestatus.cpp:193
+#: core/widgets/searchlinestatus.cpp:194
 #, kde-format
 msgid "Clear History"
 msgstr "வரலாற்றை காலியாக்கு"
@@ -9557,11 +9564,6 @@ msgstr "நிறுத்தப்பட்டது"
 #~ msgstr ""
 #~ "இந்த மதிப்பு கேமெயில் துவக்கத்தில் வெளியிடுவதா \"\n"
 #~ "          \"என்பதை முடிவெடுக்கப் பயன்படுகிறது."
-
-#, fuzzy
-#~| msgid "Show quick search line edit"
-#~ msgid "Show folder quick search line edit"
-#~ msgstr "வேக தேடல் வரி திருத்தியை காட்டு"
 
 #~ msgid "Keep original charset when replying or forwarding if possible"
 #~ msgstr ""

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-25 00:43+0000\n"
+"POT-Creation-Date: 2025-09-16 00:43+0000\n"
 "PO-Revision-Date: 2025-02-01 12:47+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -1490,6 +1490,13 @@ msgid "Clear the quick search field when changing folders"
 msgstr "Czyść pole szybkiego wyszukiwania przy zmianie katalogów"
 
 #: core/widgets/searchlinestatus.cpp:103
+#, fuzzy, kde-format
+#| msgid "Show folder quick search line edit"
+msgctxt "@info:tooltip"
+msgid "Show or Hide search command line"
+msgstr "Pokaż pole szybkiego wyszukiwania"
+
+#: core/widgets/searchlinestatus.cpp:104
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
@@ -1497,7 +1504,7 @@ msgstr ""
 "Przestaw ten przycisk, jeśli chcesz pokazać lub ukryć wyszukiwanie w wierszu "
 "poleceń."
 
-#: core/widgets/searchlinestatus.cpp:107
+#: core/widgets/searchlinestatus.cpp:108
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1508,13 +1515,13 @@ msgstr ""
 "przechodzeniu do innych katalogów w celu zacieśnienia znajdywania przez stan "
 "wiadomości."
 
-#: core/widgets/searchlinestatus.cpp:115
+#: core/widgets/searchlinestatus.cpp:116
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "Zapisano filtr"
 
-#: core/widgets/searchlinestatus.cpp:193
+#: core/widgets/searchlinestatus.cpp:194
 #, kde-format
 msgid "Clear History"
 msgstr "Wyczyść historię"
@@ -10662,9 +10669,6 @@ msgstr "&Anuluj"
 #~ msgstr ""
 #~ "Tu można ograniczyć liczbę połączeń z danym serwerem przy sprawdzaniu "
 #~ "nowej poczty. Domyślnie liczba połączeń jest nieograniczona (0)."
-
-#~ msgid "Show folder quick search line edit"
-#~ msgstr "Pokaż pole szybkiego wyszukiwania"
 
 #~ msgid "Hide local inbox if unused"
 #~ msgstr "Ukryj nieużywaną skrzynkę lokalną"

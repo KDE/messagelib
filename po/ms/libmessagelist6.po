@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mimos\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-25 00:43+0000\n"
+"POT-Creation-Date: 2025-09-16 00:43+0000\n"
 "PO-Revision-Date: 2005-11-23 18:09+0800\n"
 "Last-Translator: MIMOS <opensource@mimos.my>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -1667,12 +1667,19 @@ msgid "Clear the quick search field when changing folders"
 msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:103
+#, fuzzy, kde-format
+#| msgid "Show quick search line edit"
+msgctxt "@info:tooltip"
+msgid "Show or Hide search command line"
+msgstr "Paparkan edit garisan carian cepat"
+
+#: core/widgets/searchlinestatus.cpp:104
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:107
+#: core/widgets/searchlinestatus.cpp:108
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1680,14 +1687,14 @@ msgid ""
 "to other folders or when narrowing the search by message status."
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:115
+#: core/widgets/searchlinestatus.cpp:116
 #, fuzzy, kde-format
 #| msgid "Save List..."
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "Simpan senarai..."
 
-#: core/widgets/searchlinestatus.cpp:193
+#: core/widgets/searchlinestatus.cpp:194
 #, fuzzy, kde-format
 #| msgid "&Create Filter"
 msgid "Clear History"
@@ -10547,11 +10554,6 @@ msgstr "B&atalkan"
 #~ "Ini boleh digunakan untuk mengehadkan bilangan sambungan per hos semasa "
 #~ "menyemak mel baru. Dalam keadaan piawai, bilangan sambungan adalah tidak "
 #~ "terhad (0)."
-
-#, fuzzy
-#~| msgid "Show quick search line edit"
-#~ msgid "Show folder quick search line edit"
-#~ msgstr "Paparkan edit garisan carian cepat"
 
 #~ msgid "Keep original charset when replying or forwarding if possible"
 #~ msgstr ""

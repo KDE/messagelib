@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-25 00:43+0000\n"
+"POT-Creation-Date: 2025-09-16 00:43+0000\n"
 "PO-Revision-Date: 2006-12-17 13:32+0000\n"
 "Last-Translator: Mashrab Kuvatov <kmashrab@uni-bremen.de>\n"
 "Language-Team: Uzbek <floss-uz-l10n@googlegroups.com>\n"
@@ -1625,12 +1625,19 @@ msgid "Clear the quick search field when changing folders"
 msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:103
+#, fuzzy, kde-format
+#| msgid "Show Quick Search"
+msgctxt "@info:tooltip"
+msgid "Show or Hide search command line"
+msgstr "Қидириш панелини кўрсатиш"
+
+#: core/widgets/searchlinestatus.cpp:104
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:107
+#: core/widgets/searchlinestatus.cpp:108
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1638,14 +1645,14 @@ msgid ""
 "to other folders or when narrowing the search by message status."
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:115
+#: core/widgets/searchlinestatus.cpp:116
 #, fuzzy, kde-format
 #| msgid "Save List..."
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "Рўйхатни сақлаш"
 
-#: core/widgets/searchlinestatus.cpp:193
+#: core/widgets/searchlinestatus.cpp:194
 #, fuzzy, kde-format
 #| msgid "&Create Filter"
 msgid "Clear History"
@@ -6492,11 +6499,6 @@ msgstr "&Бекор қилиш"
 
 #~ msgid "Specify e&ditor:"
 #~ msgstr "Таҳрирчини &кўрсатиш:"
-
-#, fuzzy
-#~| msgid "Show Quick Search"
-#~ msgid "Show folder quick search line edit"
-#~ msgstr "Қидириш панелини кўрсатиш"
 
 #, fuzzy
 #~| msgid "&Automatically sign messages"

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail 3_3_branch\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-25 00:43+0000\n"
+"POT-Creation-Date: 2025-09-16 00:43+0000\n"
 "PO-Revision-Date: 2004-11-10 16:33+0200\n"
 "Last-Translator: Frikkie Thirion <frix@expertron.co.za>\n"
 "Language-Team: AFRIKAANS <AF@lia.org.za>\n"
@@ -1561,12 +1561,19 @@ msgid "Clear the quick search field when changing folders"
 msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:103
+#, fuzzy, kde-format
+#| msgid "Show Quick Search"
+msgctxt "@info:tooltip"
+msgid "Show or Hide search command line"
+msgstr "Vertoon Vinnige Soek"
+
+#: core/widgets/searchlinestatus.cpp:104
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:107
+#: core/widgets/searchlinestatus.cpp:108
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1574,13 +1581,13 @@ msgid ""
 "to other folders or when narrowing the search by message status."
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:115
+#: core/widgets/searchlinestatus.cpp:116
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "Skep Filter"
 
-#: core/widgets/searchlinestatus.cpp:193
+#: core/widgets/searchlinestatus.cpp:194
 #, fuzzy, kde-format
 #| msgid "&Create Filter"
 msgid "Clear History"
@@ -4898,11 +4905,6 @@ msgstr "Kaneleer"
 #~| msgid "New Mail Notification"
 #~ msgid "Verbose new mail notification"
 #~ msgstr "Nuwe pos inkennisstelling"
-
-#, fuzzy
-#~| msgid "Show Quick Search"
-#~ msgid "Show folder quick search line edit"
-#~ msgstr "Vertoon Vinnige Soek"
 
 #, fuzzy
 #~ msgid "A&utomatically insert signature"

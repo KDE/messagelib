@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-25 00:43+0000\n"
+"POT-Creation-Date: 2025-09-16 00:43+0000\n"
 "PO-Revision-Date: 2025-04-21 22:18+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -1479,6 +1479,13 @@ msgid "Clear the quick search field when changing folders"
 msgstr "A gyors keresés mező törlése mappaváltáskor"
 
 #: core/widgets/searchlinestatus.cpp:103
+#, fuzzy, kde-format
+#| msgid "Show folder quick search line edit"
+msgctxt "@info:tooltip"
+msgid "Show or Hide search command line"
+msgstr "Gyorskereső mező megjelenítése"
+
+#: core/widgets/searchlinestatus.cpp:104
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
@@ -1486,7 +1493,7 @@ msgstr ""
 "Váltsa át ezt a gombot, ha szeretné megjeleníteni vagy elrejteni a kereső "
 "parancssor elemet."
 
-#: core/widgets/searchlinestatus.cpp:107
+#: core/widgets/searchlinestatus.cpp:108
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1496,13 +1503,13 @@ msgstr ""
 "Váltsa át ezt a gombot, ha zárolva szeretné tartani a gyors keresést, amikor "
 "másik mappába lép vagy szűkíti az üzenetállapot szerinti keresést."
 
-#: core/widgets/searchlinestatus.cpp:115
+#: core/widgets/searchlinestatus.cpp:116
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "Mentett szűrő"
 
-#: core/widgets/searchlinestatus.cpp:193
+#: core/widgets/searchlinestatus.cpp:194
 #, kde-format
 msgid "Clear History"
 msgstr "Előzmények törlése"
@@ -10648,9 +10655,6 @@ msgstr "&Mégsem"
 #~ "Itt lehet korlátozni a kapcsolatok számát gépenként, új üzenetek "
 #~ "ellenőrzése esetén. Alapértelmezés szerint a kapcsolatok száma nincs "
 #~ "korlátozva (0)."
-
-#~ msgid "Show folder quick search line edit"
-#~ msgstr "Gyorskereső mező megjelenítése"
 
 #~ msgid "Hide local inbox if unused"
 #~ msgstr "A helyi postafiók elrejtése, ha nem használt"

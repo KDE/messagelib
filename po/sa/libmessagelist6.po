@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-25 00:43+0000\n"
+"POT-Creation-Date: 2025-09-16 00:43+0000\n"
 "PO-Revision-Date: 2024-12-29 22:52+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -1476,13 +1476,19 @@ msgstr "पुटं परिवर्तयन्ते सति द्रु
 
 #: core/widgets/searchlinestatus.cpp:103
 #, kde-format
+msgctxt "@info:tooltip"
+msgid "Show or Hide search command line"
+msgstr ""
+
+#: core/widgets/searchlinestatus.cpp:104
+#, kde-format
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
 msgstr ""
 "यदि भवान् अन्वेषण आदेशपङ्क्तिविजेट् दर्शयितुम् अथवा गोपयितुम् इच्छति तर्हि एतत् बटन् टॉग्ल् "
 "कुर्वन्तु ।"
 
-#: core/widgets/searchlinestatus.cpp:107
+#: core/widgets/searchlinestatus.cpp:108
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1492,13 +1498,13 @@ msgstr ""
 "यदि भवान् अन्यपुटेषु गच्छन् अथवा सन्देशस्थित्या अन्वेषणं संकुचितं कुर्वन् स्वस्य द्रुतसन्धानं ताडितुम् "
 "इच्छति तर्हि एतत् बटनं टॉग्ल् कुर्वन्तु ।"
 
-#: core/widgets/searchlinestatus.cpp:115
+#: core/widgets/searchlinestatus.cpp:116
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "रक्षितम् फ़िल्टर"
 
-#: core/widgets/searchlinestatus.cpp:193
+#: core/widgets/searchlinestatus.cpp:194
 #, kde-format
 msgid "Clear History"
 msgstr "इतिहासं स्पष्टं कुरुत"
