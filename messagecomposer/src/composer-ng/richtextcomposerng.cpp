@@ -80,7 +80,7 @@ RichTextComposerNg::RichTextComposerNg(QWidget *parent)
                     break;
                 }
                 case TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::InsertLink:
-                    // slotInsertMarkdownUrl();
+                    applyInsertLink();
                     break;
                 case TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::CodeBlock:
                 case TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::BlockQuote:
@@ -111,6 +111,11 @@ void RichTextComposerNg::mergeFormatOnWordOrSelection(const QTextCharFormat &for
     cursor.mergeCharFormat(format);
     mergeCurrentCharFormat(format);
     cursor.endEditBlock();
+}
+
+void RichTextComposerNg::applyInsertLink()
+{
+    // TODO
 }
 
 void RichTextComposerNg::applyUnderlineFormat()

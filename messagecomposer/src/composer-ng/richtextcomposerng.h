@@ -61,6 +61,7 @@ private:
     MESSAGECOMPOSER_NO_EXPORT void applyItalicFormat();
     MESSAGECOMPOSER_NO_EXPORT void applyStrikeOutFormat();
     MESSAGECOMPOSER_NO_EXPORT void insertFormat(QChar formatChar);
+    MESSAGECOMPOSER_NO_EXPORT void applyInsertLink();
     MESSAGECOMPOSER_NO_EXPORT void mergeFormatOnWordOrSelection(const QTextCharFormat &format);
 };
 }
