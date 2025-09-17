@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-16 00:43+0000\n"
-"PO-Revision-Date: 2025-07-26 14:07-0300\n"
+"PO-Revision-Date: 2025-09-16 09:27-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.04.3\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #: core/aggregation.cpp:177
 #, kde-format
@@ -1493,7 +1493,7 @@ msgstr "Limpar o campo de pesquisa rápida ao mudar de pasta"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show or Hide search command line"
-msgstr ""
+msgstr "Mostrar ou ocultar a linha de comando de pesquisa"
 
 #: core/widgets/searchlinestatus.cpp:104
 #, kde-format

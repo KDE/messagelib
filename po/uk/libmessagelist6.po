@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-16 00:43+0000\n"
-"PO-Revision-Date: 2025-01-07 23:03+0200\n"
+"PO-Revision-Date: 2025-09-16 10:30+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -1509,7 +1509,7 @@ msgstr "Спорожнювати поле пришвидшення пошуку 
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show or Hide search command line"
-msgstr ""
+msgstr "Показати або приховати рядок пошуку команди"
 
 #: core/widgets/searchlinestatus.cpp:104
 #, kde-format
