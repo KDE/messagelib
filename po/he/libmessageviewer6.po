@@ -20,14 +20,14 @@ msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-25 00:43+0000\n"
-"PO-Revision-Date: 2025-05-18 17:03+0300\n"
+"PO-Revision-Date: 2025-09-17 14:44+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.04.1\n"
+"X-Generator: Lokalize 25.08.0\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
 
@@ -2346,7 +2346,7 @@ msgstr "הודעה כטקסט פשוט"
 #: viewer/viewer_p.cpp:2724
 #, kde-format
 msgid "URL copied to clipboard."
-msgstr "הכתובת הועתקה ללוח העריכה."
+msgstr "הכתובת הועתקה ללוח הגזירים."
 
 #: viewer/viewer_p.cpp:2886
 #, kde-format
