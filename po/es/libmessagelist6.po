@@ -1,15 +1,15 @@
-# Translation of libmessagelist to Spanish
-# Copyright (C) YEAR This_file_is_part_of_KDE
+# Spanish translations for libmessagelist6.po package.
+# Copyright (C) 2009-2025 This file is copyright:
 # This file is distributed under the same license as the messagelib package.
 #
 # SPDX-FileCopyrightText: 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019 Javier Viñal <fjvinal@gmail.com>
 # SPDX-FileCopyrightText: 2019, 2020, 2021, 2023, 2024, 2025 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
-"Project-Id-Version: libmessagelist\n"
+"Project-Id-Version: libmessagelist6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-16 00:43+0000\n"
-"PO-Revision-Date: 2025-01-07 19:50+0100\n"
+"PO-Revision-Date: 2025-09-16 14:43+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.12.0\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #: core/aggregation.cpp:177
 #, kde-format
@@ -1061,7 +1061,7 @@ msgstr "Tema"
 #: core/widgets/configurefilterswidget.cpp:77
 #, kde-format
 msgid "Configure..."
-msgstr "Configurar..."
+msgstr "Configurar…"
 
 #: core/widgetbase.cpp:513 messagelistutil.cpp:110
 #, kde-format
@@ -1131,13 +1131,13 @@ msgstr "Nombre:"
 #, kde-format
 msgctxt "@action"
 msgid "Save Filter..."
-msgstr "Guardar filtro..."
+msgstr "Guardar filtro…"
 
 #: core/widgets/filtersavedmenu.cpp:19
 #, kde-format
 msgctxt "@action"
 msgid "Configure..."
-msgstr "Configurar..."
+msgstr "Configurar…"
 
 #: core/widgets/quicksearchline.cpp:58
 #, kde-format
@@ -1490,7 +1490,7 @@ msgstr "Despejar el campo de búsqueda rápida cuando se cambie de carpetas"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show or Hide search command line"
-msgstr ""
+msgstr "Mostrar u ocultar la línea de órdenes de búsqueda"
 
 #: core/widgets/searchlinestatus.cpp:104
 #, kde-format
@@ -1758,7 +1758,7 @@ msgstr "Desconocida"
 #, kde-format
 msgctxt "@action:button"
 msgid "Configure..."
-msgstr "Configurar..."
+msgstr "Configurar…"
 
 #: utils/aggregationeditor.cpp:31
 #, kde-format
@@ -1829,13 +1829,13 @@ msgstr "Clonar agregación"
 #, kde-format
 msgctxt "@action:button"
 msgid "Export Aggregation..."
-msgstr "Exportar agregación..."
+msgstr "Exportar agregación…"
 
 #: utils/configureaggregationsdialog.cpp:151
 #, kde-format
 msgctxt "@action:button"
 msgid "Import Aggregation..."
-msgstr "Importar agregación..."
+msgstr "Importar agregación…"
 
 #: utils/configureaggregationsdialog.cpp:162
 #, kde-format
@@ -1893,13 +1893,13 @@ msgstr "Clonar tema"
 #, kde-format
 msgctxt "@action:button"
 msgid "Export Theme..."
-msgstr "Exportar tema..."
+msgstr "Exportar tema…"
 
 #: utils/configurethemesdialog.cpp:147
 #, kde-format
 msgctxt "@action:button"
 msgid "Import Theme..."
-msgstr "Importar tema..."
+msgstr "Importar tema…"
 
 #: utils/configurethemesdialog.cpp:158
 #, kde-format
@@ -2095,7 +2095,7 @@ msgstr "Predeterminado"
 #, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Custom..."
-msgstr "Personalizado..."
+msgstr "Personalizado…"
 
 #: utils/themeeditor.cpp:892
 #, kde-format
@@ -2152,7 +2152,7 @@ msgstr "Automático"
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Custom..."
-msgstr "Personalizado..."
+msgstr "Personalizado…"
 
 #: utils/themeeditor.cpp:954
 #, kde-format
@@ -2167,12 +2167,12 @@ msgstr "Estilo de fondo"
 #: utils/themeeditor.cpp:1160
 #, kde-format
 msgid "Column Properties..."
-msgstr "Propiedades de la columna..."
+msgstr "Propiedades de la columna…"
 
 #: utils/themeeditor.cpp:1163
 #, kde-format
 msgid "Add Column..."
-msgstr "Añadir columna..."
+msgstr "Añadir columna…"
 
 #: utils/themeeditor.cpp:1166
 #, kde-format
@@ -2297,29 +2297,3 @@ msgstr "&Copiar aquí"
 #, kde-format
 msgid "C&ancel"
 msgstr "C&ancelar"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Filter Mails by Status"
-#~ msgstr "Filtrar correos por estado"
-
-#~ msgctxt "@action:button"
-#~ msgid "Clear Filter"
-#~ msgstr "Limpiar filtro"
-
-#~ msgid "Note Icon"
-#~ msgstr "Icono de nota"
-
-#~ msgid "Note"
-#~ msgstr "Nota"
-
-#~ msgid "Rename..."
-#~ msgstr "Cambiar nombre..."
-
-#~ msgid "Rename Filter"
-#~ msgstr "Cambiar nombre del filtro"
-
-#~ msgid "name"
-#~ msgstr "nombre"
-
-#~ msgid "Filter Name"
-#~ msgstr "Nombre del filtro"
