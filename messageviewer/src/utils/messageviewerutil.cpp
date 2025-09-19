@@ -598,7 +598,8 @@ bool Util::deleteAttachment(KMime::Content *node)
     bodyMessage += ("\nname=\"") + name.toUtf8() + "\"";
     bodyMessage += ("\nfilename=\"") + filename.toUtf8() + "\"";
     deletePart->setBody(bodyMessage);
-    parentNode->replaceContent(node, deletePart);
+    delete parentNode->takeContent(node);
+    parentNode->appendContent(deletePart);
 
     parentNode->assemble();
 
