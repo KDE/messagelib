@@ -1,7 +1,7 @@
 # Translation for libmessagelist.po to Euskara/Basque (eu).
 # Copyright (C) 2003-2025 This file is Copyright:
 # This file is distributed under the same license as the messagelib package.
-# SPDX-FileCopyrightText: 2023, 2024, 2025 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2023, 2024, 2025 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
 #
 # Tranlators:
 # Marcos  <marcos@euskalgnu.org>, 2003, 2004, 2005.
