@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-03 00:44+0000\n"
+"POT-Creation-Date: 2025-09-21 00:43+0000\n"
 "PO-Revision-Date: 2002-11-04 10:19SAST\n"
 "Last-Translator: Lwandle Mgidlana <lwandle@translate.org.za>\n"
 "Language-Team: Xhosa <xhosa@translate.org.za>\n"
@@ -1744,12 +1744,12 @@ msgid ""
 "the attachment were:"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:623
+#: utils/messageviewerutil.cpp:624
 #, fuzzy, kde-format
 msgid "Open &with %1"
 msgstr "Vula nge..."
 
-#: utils/messageviewerutil.cpp:625
+#: utils/messageviewerutil.cpp:626
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"

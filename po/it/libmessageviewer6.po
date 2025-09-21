@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-03 00:44+0000\n"
+"POT-Creation-Date: 2025-09-21 00:43+0000\n"
 "PO-Revision-Date: 2025-05-19 15:04+0200\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -1740,12 +1740,12 @@ msgstr ""
 "Hai eliminato un allegato da questo messaggio. Le intestazioni MIME "
 "originali per l'allegato erano:"
 
-#: utils/messageviewerutil.cpp:623
+#: utils/messageviewerutil.cpp:624
 #, kde-format
 msgid "Open &with %1"
 msgstr "Apri &con %1"
 
-#: utils/messageviewerutil.cpp:625
+#: utils/messageviewerutil.cpp:626
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"

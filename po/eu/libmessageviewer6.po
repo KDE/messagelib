@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-03 00:44+0000\n"
+"POT-Creation-Date: 2025-09-21 00:43+0000\n"
 "PO-Revision-Date: 2025-08-10 22:22+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -1725,12 +1725,12 @@ msgstr ""
 "Mezu honetako eranskin bat ezabatu duzu. Eranskinaren jatorrizko MIME "
 "goiburuak ziren:"
 
-#: utils/messageviewerutil.cpp:623
+#: utils/messageviewerutil.cpp:624
 #, kde-format
 msgid "Open &with %1"
 msgstr "Ireki \"%1\"(r)e&kin"
 
-#: utils/messageviewerutil.cpp:625
+#: utils/messageviewerutil.cpp:626
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-03 00:44+0000\n"
+"POT-Creation-Date: 2025-09-21 00:43+0000\n"
 "PO-Revision-Date: 2014-09-13 18:21+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -1695,12 +1695,12 @@ msgid ""
 "the attachment were:"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:623
+#: utils/messageviewerutil.cpp:624
 #, kde-format
 msgid "Open &with %1"
 msgstr "Åpne &med %1"
 
-#: utils/messageviewerutil.cpp:625
+#: utils/messageviewerutil.cpp:626
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"

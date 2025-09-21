@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-03 00:44+0000\n"
+"POT-Creation-Date: 2025-09-21 00:43+0000\n"
 "PO-Revision-Date: 2024-08-02 22:29+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -1725,12 +1725,12 @@ msgstr ""
 "Vi forigis aldonaĵon el ĉi tiu mesaĝo. La originaj MIME-kapoj por la "
 "aldonaĵo estis:"
 
-#: utils/messageviewerutil.cpp:623
+#: utils/messageviewerutil.cpp:624
 #, kde-format
 msgid "Open &with %1"
 msgstr "Malfermi &kun %1"
 
-#: utils/messageviewerutil.cpp:625
+#: utils/messageviewerutil.cpp:626
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"

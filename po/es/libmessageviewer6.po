@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-03 00:44+0000\n"
-"PO-Revision-Date: 2025-05-18 12:28+0100\n"
+"POT-Creation-Date: 2025-09-21 00:43+0000\n"
+"PO-Revision-Date: 2025-09-20 17:05+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "First-Translator: Jaime Robles <jaime@kde.org>\n"
-"X-Generator: Lokalize 25.04.1\n"
+"X-Generator: Lokalize 25.08.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
@@ -781,7 +781,7 @@ msgid ""
 "Probability=%2\n"
 "Confidence=%4"
 msgstr ""
-"%1 % de probabilidades de ser correo basura, con una confianza del %3%.\n"
+"%1 % de probabilidades de ser correo basura, con una confianza del %3 %.\n"
 "\n"
 "Informe completo:\n"
 "Probabilidad=%2\n"
@@ -1744,12 +1744,12 @@ msgstr ""
 "Ha borrado un adjunto de este mensaje. Las cabeceras MIME originales del "
 "adjunto eran:"
 
-#: utils/messageviewerutil.cpp:623
+#: utils/messageviewerutil.cpp:624
 #, kde-format
 msgid "Open &with %1"
 msgstr "Abrir c&on %1"
 
-#: utils/messageviewerutil.cpp:625
+#: utils/messageviewerutil.cpp:626
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
