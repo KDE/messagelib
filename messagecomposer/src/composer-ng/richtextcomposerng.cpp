@@ -95,27 +95,13 @@ RichTextComposerNg::RichTextComposerNg(QWidget *parent)
 
 RichTextComposerNg::~RichTextComposerNg() = default;
 
-void RichTextComposerNg::mergeFormatOnWordOrSelection(const QTextCharFormat &format)
-{
-    QTextCursor cursor = textCursor();
-    QTextCursor wordStart(cursor);
-    QTextCursor wordEnd(cursor);
-
-    wordStart.movePosition(QTextCursor::StartOfWord);
-    wordEnd.movePosition(QTextCursor::EndOfWord);
-
-    cursor.beginEditBlock();
-    if (!cursor.hasSelection() && cursor.position() != wordStart.position() && cursor.position() != wordEnd.position()) {
-        cursor.select(QTextCursor::WordUnderCursor);
-    }
-    cursor.mergeCharFormat(format);
-    mergeCurrentCharFormat(format);
-    cursor.endEditBlock();
-}
-
 void RichTextComposerNg::applyInsertLink()
 {
-    // TODO
+    if (textMode() == KPIMTextEdit::RichTextComposer::Plain) {
+        // TODO
+    } else {
+        composerControler()->manageLink();
+    }
 }
 
 void RichTextComposerNg::applyUnderlineFormat()
@@ -123,9 +109,7 @@ void RichTextComposerNg::applyUnderlineFormat()
     if (textMode() == KPIMTextEdit::RichTextComposer::Plain) {
         insertFormat(u'~');
     } else {
-        QTextCharFormat fmt;
-        fmt.setFontUnderline(true);
-        mergeFormatOnWordOrSelection(fmt);
+        composerControler()->setTextUnderline(true);
     }
 }
 
@@ -134,9 +118,7 @@ void RichTextComposerNg::applyBoldFormat()
     if (textMode() == KPIMTextEdit::RichTextComposer::Plain) {
         insertFormat(u'*');
     } else {
-        QTextCharFormat fmt;
-        fmt.setFontWeight(QFont::Bold);
-        mergeFormatOnWordOrSelection(fmt);
+        composerControler()->setTextBold(true);
     }
 }
 
@@ -145,9 +127,7 @@ void RichTextComposerNg::applyItalicFormat()
     if (textMode() == KPIMTextEdit::RichTextComposer::Plain) {
         insertFormat(u'/');
     } else {
-        QTextCharFormat fmt;
-        fmt.setFontItalic(true);
-        mergeFormatOnWordOrSelection(fmt);
+        composerControler()->setTextItalic(true);
     }
 }
 
@@ -156,9 +136,7 @@ void RichTextComposerNg::applyStrikeOutFormat()
     if (textMode() == KPIMTextEdit::RichTextComposer::Plain) {
         insertFormat(u'_');
     } else {
-        QTextCharFormat fmt;
-        fmt.setFontStrikeOut(true);
-        mergeFormatOnWordOrSelection(fmt);
+        composerControler()->setTextStrikeOut(true);
     }
 }
 
