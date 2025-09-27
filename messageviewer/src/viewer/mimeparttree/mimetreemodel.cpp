@@ -42,17 +42,17 @@ public:
         tempDirs.clear();
     }
 
-    QString descriptionForContent(KMime::Content *content)
+    QString descriptionForContent(const KMime::Content *content)
     {
-        auto const message = dynamic_cast<KMime::Message *>(content);
-        if (message && message->subject(false)) {
-            return message->subject(false)->asUnicodeString();
+        auto const message = dynamic_cast<const KMime::Message *>(content);
+        if (message && message->subject()) {
+            return message->subject()->asUnicodeString();
         }
         const QString name = MimeTreeParser::NodeHelper::fileName(content);
         if (!name.isEmpty()) {
             return name;
         }
-        if (auto ct = content->contentDescription(false)) {
+        if (auto ct = content->contentDescription()) {
             const QString desc = ct->asUnicodeString();
             if (!desc.isEmpty()) {
                 return desc;
@@ -61,17 +61,17 @@ public:
         return i18n("body part");
     }
 
-    QString mimeTypeForContent(KMime::Content *content)
+    QString mimeTypeForContent(const KMime::Content *content)
     {
-        if (auto ct = content->contentType(false)) {
+        if (auto ct = content->contentType()) {
             return QString::fromLatin1(ct->mimeType());
         }
         return {};
     }
 
-    QString typeForContent(KMime::Content *content)
+    QString typeForContent(const KMime::Content *content)
     {
-        if (auto ct = content->contentType(false)) {
+        if (auto ct = content->contentType()) {
             const QString contentMimeType = QString::fromLatin1(ct->mimeType());
             const auto mimeType = m_mimeDb.mimeTypeForName(contentMimeType);
             if (!mimeType.isValid()) {
@@ -83,7 +83,7 @@ public:
         }
     }
 
-    QString sizeOfContent(KMime::Content *content)
+    QString sizeOfContent(const KMime::Content *content)
     {
         if (content->body().isEmpty()) {
             return {};
@@ -91,9 +91,9 @@ public:
         return KIO::convertSize(content->body().size());
     }
 
-    QIcon iconForContent(KMime::Content *content)
+    QIcon iconForContent(const KMime::Content *content)
     {
-        if (auto ct = content->contentType(false)) {
+        if (auto ct = content->contentType()) {
             auto iconName = MimeTreeParser::Util::iconNameForMimetype(QLatin1StringView(ct->mimeType()));
 
             auto mimeType = m_mimeDb.mimeTypeForName(QString::fromLatin1(ct->mimeType()));
@@ -117,7 +117,7 @@ public:
     }
 
     QList<QTemporaryDir *> tempDirs;
-    KMime::Content *root = nullptr;
+    const KMime::Content *root = nullptr;
     QMimeDatabase m_mimeDb;
 };
 
@@ -129,7 +129,7 @@ MimeTreeModel::MimeTreeModel(QObject *parent)
 
 MimeTreeModel::~MimeTreeModel() = default;
 
-void MimeTreeModel::setRoot(KMime::Content *root)
+void MimeTreeModel::setRoot(const KMime::Content *root)
 {
     if (d->root != root) {
         beginResetModel();
@@ -139,7 +139,7 @@ void MimeTreeModel::setRoot(KMime::Content *root)
     }
 }
 
-KMime::Content *MimeTreeModel::root()
+const KMime::Content *MimeTreeModel::root()
 {
     return d->root;
 }
@@ -153,11 +153,11 @@ QModelIndex MimeTreeModel::index(int row, int column, const QModelIndex &parent)
         return createIndex(row, column, d->root);
     }
 
-    auto parentContent = static_cast<KMime::Content *>(parent.internalPointer());
-    if (!parentContent || parentContent->contents().count() <= row || row < 0) {
+    auto parentContent = static_cast<const KMime::Content *>(parent.internalPointer());
+    if (!parentContent || row < 0 || parentContent->contents().size() <= (std::size_t)row) {
         return {};
     }
-    KMime::Content *content = parentContent->contents().at(row);
+    const KMime::Content *content = parentContent->contents()[row];
     return createIndex(row, column, content);
 }
 
@@ -166,7 +166,7 @@ QModelIndex MimeTreeModel::parent(const QModelIndex &index) const
     if (!index.isValid()) {
         return {};
     }
-    auto currentContent = static_cast<KMime::Content *>(index.internalPointer());
+    auto currentContent = static_cast<const KMime::Content *>(index.internalPointer());
     if (!currentContent) {
         return {};
     }
@@ -176,7 +176,7 @@ QModelIndex MimeTreeModel::parent(const QModelIndex &index) const
         return {};
     }
     currentIndex.up();
-    KMime::Content *parentContent = d->root->content(currentIndex);
+    const KMime::Content *parentContent = d->root->content(currentIndex);
     int row = 0;
     if (currentIndex.isValid()) {
         row = currentIndex.up() - 1; // 1 based -> 0 based
@@ -193,9 +193,9 @@ int MimeTreeModel::rowCount(const QModelIndex &parent) const
     if (!parent.isValid()) {
         return 1;
     }
-    auto parentContent = static_cast<KMime::Content *>(parent.internalPointer());
+    auto parentContent = static_cast<const KMime::Content *>(parent.internalPointer());
     if (parentContent) {
-        return parentContent->contents().count();
+        return parentContent->contents().size();
     }
     return 0;
 }
@@ -208,7 +208,7 @@ int MimeTreeModel::columnCount(const QModelIndex &parent) const
 
 QVariant MimeTreeModel::data(const QModelIndex &index, int role) const
 {
-    auto content = static_cast<KMime::Content *>(index.internalPointer());
+    auto content = static_cast<const KMime::Content *>(index.internalPointer());
     if (!content) {
         return {};
     }
@@ -240,14 +240,14 @@ QVariant MimeTreeModel::data(const QModelIndex &index, int role) const
         return d->mimeTypeForContent(content);
     }
     if (role == MainBodyPartRole) {
-        auto topLevelMsg = dynamic_cast<KMime::Message *>(d->root);
+        auto topLevelMsg = dynamic_cast<const KMime::Message *>(d->root);
         if (!topLevelMsg) {
             return false;
         }
         return topLevelMsg->mainBodyPart() == content;
     }
     if (role == AlternativeBodyPartRole) {
-        auto topLevelMsg = dynamic_cast<KMime::Message *>(d->root);
+        auto topLevelMsg = dynamic_cast<const KMime::Message *>(d->root);
         if (!topLevelMsg) {
             return false;
         }
@@ -279,11 +279,11 @@ QMimeData *MimeTreeModel::mimeData(const QModelIndexList &indexes) const
         if (index.column() != 0) {
             continue;
         }
-        auto content = static_cast<KMime::Content *>(index.internalPointer());
+        auto content = static_cast<const KMime::Content *>(index.internalPointer());
         if (!content) {
             continue;
         }
-        const QByteArray data = content->decodedContent();
+        const QByteArray data = content->decodedBody();
         if (data.isEmpty()) {
             continue;
         }

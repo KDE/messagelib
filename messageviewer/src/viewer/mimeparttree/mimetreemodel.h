@@ -34,9 +34,9 @@ public:
     explicit MimeTreeModel(QObject *parent = nullptr);
     ~MimeTreeModel() override;
 
-    void setRoot(KMime::Content *root);
+    void setRoot(const KMime::Content *root);
 
-    KMime::Content *root();
+    const KMime::Content *root();
 
     [[nodiscard]] QModelIndex index(int row, int column, const QModelIndex &parent = QModelIndex()) const override;
     [[nodiscard]] QModelIndex parent(const QModelIndex &index) const override;

@@ -196,7 +196,7 @@ QString NodeHelper::writeFileToTempFile(KMime::Content *node, const QString &fil
     return fname;
 }
 
-QString NodeHelper::writeNodeToTempFile(KMime::Content *node)
+QString NodeHelper::writeNodeToTempFile(const KMime::Content *node)
 {
     // If the message part is already written to a file, no point in doing it again.
     // This function is called twice actually, once from the rendering of the attachment
@@ -224,7 +224,7 @@ QString NodeHelper::writeNodeToTempFile(KMime::Content *node)
 
     qCDebug(MIMETREEPARSER_LOG) << "Create temp file: " << fname;
     QByteArray data = node->decodedBody();
-    if (node->contentType()->isText() && !data.isEmpty()) {
+    if (node->contentType() && node->contentType()->isText() && !data.isEmpty()) {
         // convert CRLF to LF before writing text attachments to disk
         data = KMime::CRLFtoLF(data);
     }

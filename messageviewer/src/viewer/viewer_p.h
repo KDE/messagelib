@@ -228,7 +228,7 @@ public:
     */
     [[nodiscard]] bool deleteAttachment(KMime::Content *node, bool showWarning = true);
 
-    void attachmentProperties(KMime::Content *node);
+    void attachmentProperties(const KMime::Content *node);
     void attachmentCopy(const KMime::Content::List &contents);
 
     void scrollToAnchor(const QString &anchor);
@@ -244,7 +244,7 @@ public:
 
     [[nodiscard]] KService::Ptr getServiceOffer(KMime::Content *content);
     [[nodiscard]] KMime::Content::List selectedContents() const;
-    void attachmentOpenWith(KMime::Content *node, const KService::Ptr &offer = KService::Ptr());
+    void attachmentOpenWith(const KMime::Content *node, const KService::Ptr &offer = KService::Ptr());
     void attachmentOpen(KMime::Content *node);
 
     /** Return the HtmlWriter connected to the MailWebView we use */
@@ -282,7 +282,7 @@ public:
 
     /** Creates a nice mail header depending on the current selected
     header style. */
-    [[nodiscard]] QString writeMessageHeader(KMime::Message *aMsg, KMime::Content *vCardNode, bool topLevel);
+    [[nodiscard]] QString writeMessageHeader(KMime::Message *aMsg, const KMime::Content *vCardNode, bool topLevel);
 
     void saveMainFrameScreenshotInFile(const QString &filename);
 
@@ -356,7 +356,7 @@ public:
     void createWidgets();
     void createActions();
 
-    void showContextMenu(KMime::Content *content, const QPoint &point);
+    void showContextMenu(const KMime::Content *content, const QPoint &point);
 
     KToggleAction *actionForAttachmentStrategy(const AttachmentStrategy *);
     /** Read override codec from configuration */
