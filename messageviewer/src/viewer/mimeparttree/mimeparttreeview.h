@@ -22,7 +22,7 @@ public:
     MessageViewer::MimeTreeModel *mimePartModel() const;
 
     void clearModel();
-    void setRoot(KMime::Content *root);
+    void setRoot(const KMime::Content *root);
 
     [[nodiscard]] KMime::Content::List selectedContents() const;
 

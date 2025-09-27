@@ -169,7 +169,7 @@ bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, Q
         currentFolder = dirUrl;
     } else {
         // only one item, get the desired filename
-        KMime::Content *content = contents.first();
+        const KMime::Content *content = contents.first();
         QString fileName = MimeTreeParser::NodeHelper::fileName(content);
         fileName = MessageCore::StringUtil::cleanFileName(fileName);
         if (fileName.isEmpty()) {
@@ -195,7 +195,7 @@ bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, Q
     bool globalResult = true;
     int unnamedAtmCount = 0;
     PimCommon::RenameFileDialog::RenameFileDialogResult result = PimCommon::RenameFileDialog::RENAMEFILE_IGNORE;
-    for (KMime::Content *content : std::as_const(contents)) {
+    for (const KMime::Content *content : std::as_const(contents)) {
         QUrl curUrl;
         if (!dirUrl.isEmpty()) {
             curUrl = dirUrl;
@@ -284,7 +284,7 @@ bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, Q
     return globalResult;
 }
 
-bool Util::saveContent(QWidget *parent, KMime::Content *content, const QUrl &url)
+bool Util::saveContent(QWidget *parent, const KMime::Content *content, const QUrl &url)
 {
     // FIXME: This is all horribly broken. First of all, creating a NodeHelper and then immediately
     //        reading out the encryption/signature state will not work at all.

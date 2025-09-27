@@ -633,7 +633,7 @@ KMime::Content::List ViewerPrivate::selectedContents() const
     return mMimePartTree->selectedContents();
 }
 
-void ViewerPrivate::attachmentOpenWith(KMime::Content *node, const KService::Ptr &offer)
+void ViewerPrivate::attachmentOpenWith(const KMime::Content *node, const KService::Ptr &offer)
 {
     QString name = mNodeHelper->writeNodeToTempFile(node);
 
@@ -870,7 +870,7 @@ void ViewerPrivate::parseContent(KMime::Content *content)
     showHideMimeTree();
 }
 
-QString ViewerPrivate::writeMessageHeader(KMime::Message *aMsg, KMime::Content *vCardNode, bool topLevel)
+QString ViewerPrivate::writeMessageHeader(KMime::Message *aMsg, const KMime::Content *vCardNode, bool topLevel)
 {
     if (!headerStylePlugin()) {
         qCCritical(MESSAGEVIEWER_LOG) << "trying to writeMessageHeader() without a header style set!";
@@ -1714,18 +1714,17 @@ void ViewerPrivate::slotShowDevelopmentTools()
     mDeveloperToolDialog->activateWindow();
 }
 
-void ViewerPrivate::showContextMenu(KMime::Content *content, const QPoint &pos)
+void ViewerPrivate::showContextMenu(const KMime::Content *content, const QPoint &pos)
 {
     if (!content) {
         return;
     }
 
-    if (auto ct = content->contentType(false)) {
-        if (ct->mimeType() == "text/x-moz-deleted") {
-            return;
-        }
+    const auto ct = content->contentType();
+    if (ct && ct->mimeType() == "text/x-moz-deleted") {
+        return;
     }
-    const bool isAttachment = !content->contentType()->isMultipart();
+    const bool isAttachment = ct && !ct->isMultipart();
     const bool isExtraContent = !mMessage->content(content->index());
     const auto hasAttachments = KMime::hasAttachment(mMessage.data());
 
@@ -1738,7 +1737,7 @@ void ViewerPrivate::showContextMenu(KMime::Content *content, const QPoint &pos)
             popup.addAction(QIcon::fromTheme(u"document-open"_s), i18nc("to open", "Open"), this, &ViewerPrivate::slotAttachmentOpen);
 
             if (selectedContents().count() == 1) {
-                createOpenWithMenu(&popup, QLatin1StringView(content->contentType()->mimeType()), false);
+                createOpenWithMenu(&popup, ct ? QLatin1StringView(ct->mimeType()) : QString(), false);
             } else {
                 popup.addAction(i18n("Open With..."), this, &ViewerPrivate::slotAttachmentOpenWith);
             }
@@ -2520,7 +2519,7 @@ void ViewerPrivate::slotAttachmentProperties()
     }
 }
 
-void ViewerPrivate::attachmentProperties(KMime::Content *content)
+void ViewerPrivate::attachmentProperties(const KMime::Content *content)
 {
     auto dialog = new MessageCore::AttachmentPropertiesDialog(content, mMainWindow);
     dialog->setAttribute(Qt::WA_DeleteOnClose);

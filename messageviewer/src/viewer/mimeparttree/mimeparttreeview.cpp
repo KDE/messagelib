@@ -64,7 +64,7 @@ void MimePartTreeView::clearModel()
     mMimePartModel->setRoot(nullptr);
 }
 
-void MimePartTreeView::setRoot(KMime::Content *root)
+void MimePartTreeView::setRoot(const KMime::Content *root)
 {
     delete mMimePartModel->root();
     mMimePartModel->setRoot(root);
