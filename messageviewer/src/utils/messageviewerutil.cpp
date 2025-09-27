@@ -368,7 +368,7 @@ bool Util::saveContent(QWidget *parent, KMime::Content *content, const QUrl &url
         data = KMime::CRLFtoLF(cstr);
     }
 #else
-    const QByteArray data = content->decodedContent();
+    const QByteArray data = content->decodedBody();
     qCWarning(MESSAGEVIEWER_LOG) << "Port the encryption/signature handling when saving a KMime::Content.";
 #endif
     QDataStream ds;

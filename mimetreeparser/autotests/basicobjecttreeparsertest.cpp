@@ -130,14 +130,14 @@ void ObjectTreeParserTest::testForwardedOpenPGPSignedEncrypted()
     QCOMPARE(unencryptedMessage->contentType()->mimeType().data(), "multipart/mixed");
     QCOMPARE(unencryptedMessage->contents().size(), 2);
     QCOMPARE(unencryptedMessage->contents().first()->contentType()->mimeType().data(), "text/plain");
-    QCOMPARE(unencryptedMessage->contents().first()->decodedContent().data(), "bla bla bla");
+    QCOMPARE(unencryptedMessage->contents().first()->decodedBody().data(), "bla bla bla");
     QCOMPARE(unencryptedMessage->contents().at(1)->contentType()->mimeType().data(), "message/rfc822");
     KMime::Message::Ptr encapsulated = unencryptedMessage->contents().at(1)->bodyAsMessage();
     QCOMPARE(encapsulated->contentType()->mimeType().data(), "multipart/signed");
     QCOMPARE(encapsulated->contents().size(), 2);
     QCOMPARE(encapsulated->contents().first()->contentType()->mimeType().data(), "text/plain");
     QCOMPARE(encapsulated->contents().at(1)->contentType()->mimeType().data(), "application/pgp-signature");
-    QCOMPARE(encapsulated->contents().first()->decodedContent().data(), "encrypted message text");
+    QCOMPARE(encapsulated->contents().first()->decodedBody().data(), "encrypted message text");
 
     // TODO: Check that the signature is valid
 }
@@ -163,7 +163,7 @@ void ObjectTreeParserTest::testSMIMESignedEncrypted()
     QCOMPARE(unencryptedMessage->contents().size(), 2);
     QCOMPARE(unencryptedMessage->contents().first()->contentType()->mimeType().data(), "text/plain");
     QCOMPARE(unencryptedMessage->contents().at(1)->contentType()->mimeType().data(), "application/pkcs7-signature");
-    QCOMPARE(unencryptedMessage->contents().first()->decodedContent().data(), "encrypted message text");
+    QCOMPARE(unencryptedMessage->contents().first()->decodedBody().data(), "encrypted message text");
 
     // TODO: Check that the signature is valid
 }
@@ -189,7 +189,7 @@ void ObjectTreeParserTest::testOpenPGPSignedEncrypted()
     QCOMPARE(unencryptedMessage->contents().size(), 2);
     QCOMPARE(unencryptedMessage->contents().first()->contentType()->mimeType().data(), "text/plain");
     QCOMPARE(unencryptedMessage->contents().at(1)->contentType()->mimeType().data(), "application/pgp-signature");
-    QCOMPARE(unencryptedMessage->contents().first()->decodedContent().data(), "encrypted message text");
+    QCOMPARE(unencryptedMessage->contents().first()->decodedBody().data(), "encrypted message text");
 
     // TODO: Check that the signature is valid
 }
@@ -213,7 +213,7 @@ void ObjectTreeParserTest::testOpenPGPEncryptedAndSigned()
     KMime::Message::Ptr unencryptedMessage = nodeHelper.unencryptedMessage(originalMessage);
     QCOMPARE(unencryptedMessage->contentType()->mimeType().data(), "text/plain");
     QCOMPARE(unencryptedMessage->contents().size(), 0);
-    QCOMPARE(unencryptedMessage->decodedContent().data(), "encrypted message text");
+    QCOMPARE(unencryptedMessage->decodedBody().data(), "encrypted message text");
 
     // TODO: Check that the signature is valid
 }
@@ -234,7 +234,7 @@ void ObjectTreeParserTest::testOpenPGPEncrypted()
     // Now, test that the unencrypted message is generated correctly
     KMime::Message::Ptr unencryptedMessage = nodeHelper.unencryptedMessage(originalMessage);
     QCOMPARE(unencryptedMessage->contentType()->mimeType().data(), "text/plain");
-    QCOMPARE(unencryptedMessage->decodedContent().data(), "encrypted message text");
+    QCOMPARE(unencryptedMessage->decodedBody().data(), "encrypted message text");
     QCOMPARE(unencryptedMessage->contents().size(), 0);
 }
 

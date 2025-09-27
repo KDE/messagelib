@@ -46,7 +46,7 @@ void AttachmentFromMimeContentJob::doStart()
 
     AttachmentPart::Ptr part = AttachmentPart::Ptr(new AttachmentPart);
     auto content = const_cast<Content *>(d->mMimeContent);
-    part->setData(content->decodedContent());
+    part->setData(content->decodedBody());
 
     // Get the details from the MIME headers.
     if (auto ct = content->contentType(false)) {

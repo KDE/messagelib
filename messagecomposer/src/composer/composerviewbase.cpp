@@ -1530,7 +1530,7 @@ void ComposerViewBase::addAttachmentPart(KMime::Content *partToAttach)
         // which already has the proper headers
         part->setData(partToAttach->encodedContent());
     } else {
-        part->setData(partToAttach->decodedContent());
+        part->setData(partToAttach->decodedBody());
     }
     part->setMimeType(partToAttach->contentType(false)->mimeType());
     if (auto cd = partToAttach->contentDescription(false)) {
@@ -1859,7 +1859,7 @@ void ComposerViewBase::collectImages(KMime::Content *root)
                 if (node->contentType()->isImage()) {
                     qCDebug(MESSAGECOMPOSER_LOG) << "found image in multipart/related : " << node->contentType()->name();
                     QImage img;
-                    img.loadFromData(node->decodedContent());
+                    img.loadFromData(node->decodedBody());
                     m_editor->composerControler()->composerImages()->loadImage(
                         img,
                         QString::fromLatin1(QByteArray(QByteArrayLiteral("cid:") + node->contentID()->identifier())),

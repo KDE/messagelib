@@ -328,7 +328,7 @@ void TextMessagePart::parseContent()
     const QString &fromAddress = mOtp->nodeHelper()->fromAsString(content());
     mSignatureState = KMMsgNotSigned;
     mEncryptionState = KMMsgNotEncrypted;
-    const auto blocks = prepareMessageForDecryption(content()->decodedContent());
+    const auto blocks = prepareMessageForDecryption(content()->decodedBody());
 
     const auto cryptProto = QGpgME::openpgp();
 
@@ -475,7 +475,7 @@ HtmlMessagePart::HtmlMessagePart(ObjectTreeParser *otp, KMime::Content *node, In
     }
     setContent(node);
 
-    const QByteArray partBody(node->decodedContent());
+    const QByteArray partBody(node->decodedBody());
     mBodyHTML = QStringDecoder(mOtp->codecNameFor(node).constData()).decode(partBody);
     mCharset = NodeHelper::charset(node);
 }
@@ -669,7 +669,7 @@ CertMessagePart::CertMessagePart(ObjectTreeParser *otp, KMime::Content *node, co
         return;
     }
 
-    const QByteArray certData = node->decodedContent();
+    const QByteArray certData = node->decodedBody();
 
     QGpgME::ImportJob *import = mCryptoProto->importJob();
     QGpgMEJobExecutor executor;
@@ -1085,7 +1085,7 @@ bool EncryptedMessagePart::okDecryptMIME(KMime::Content &data)
         if (!job) {
             cannotDecrypt = true;
         } else {
-            const QByteArray ciphertext = data.decodedContent();
+            const QByteArray ciphertext = data.decodedBody();
             auto newM = new CompositeMemento();
             newM->addMemento(new KeyCacheMemento(Kleo::KeyCache::mutableInstance(), toGpgMeProtocol(mCryptoProto)));
             newM->addMemento(new DecryptVerifyBodyPartMemento(job, ciphertext));

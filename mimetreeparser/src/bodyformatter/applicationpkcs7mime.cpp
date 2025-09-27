@@ -126,7 +126,7 @@ MessagePart::Ptr ApplicationPkcs7MimeBodyPartFormatter::process(Interface::BodyP
         }
 
         QStringDecoder aCodec(part.objectTreeParser()->codecNameFor(signTestNode).constData());
-        const QByteArray signaturetext = signTestNode->decodedContent();
+        const QByteArray signaturetext = signTestNode->decodedBody();
         auto _mp = SignedMessagePart::Ptr(
             new SignedMessagePart(part.objectTreeParser(), aCodec.decode(signaturetext), smimeCrypto, part.nodeHelper()->fromAsString(node), signTestNode));
         mp = _mp;

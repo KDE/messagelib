@@ -33,8 +33,8 @@ MessagePart::Ptr ApplicationPGPEncryptedBodyPartFormatter::process(Interface::Bo
 {
     KMime::Content *node(part.content());
 
-    if (node->decodedContent().trimmed() != "Version: 1") {
-        qCWarning(MIMETREEPARSER_LOG) << "Unknown PGP Version String:" << node->decodedContent().trimmed();
+    if (node->decodedBody().trimmed() != "Version: 1") {
+        qCWarning(MIMETREEPARSER_LOG) << "Unknown PGP Version String:" << node->decodedBody().trimmed();
     }
 
     if (!part.content()->parent()) {

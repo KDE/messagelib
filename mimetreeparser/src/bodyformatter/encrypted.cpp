@@ -36,7 +36,7 @@ MessagePart::Ptr EncryptedBodyPartFormatter::process(Interface::BodyPart &part) 
         return {};
     }
 
-    const QByteArray content(node->decodedContent());
+    const QByteArray content(node->decodedBody());
     if (content.isEmpty()) {
         return nullptr;
     }
@@ -91,7 +91,7 @@ MessagePart::Ptr EncryptedBodyPartFormatter::process(Interface::BodyPart &part) 
             codecName = part.source()->overrideCodecName();
         }
 
-        mp->startDecryption(node->decodedContent(), codecName);
+        mp->startDecryption(node->decodedBody(), codecName);
         qCDebug(MIMETREEPARSER_LOG) << "decrypted, signed?:" << messagePart->isSigned;
 
         if (!messagePart->inProgress) {

@@ -824,7 +824,7 @@ void ViewerPrivate::parseContent(KMime::Content *content)
     if (vCardContent) {
         // ### FIXME: We should only do this if the vCard belongs to the sender,
         // ### i.e. if the sender's email address is contained in the vCard.
-        const QByteArray vCard = vCardContent->decodedContent();
+        const QByteArray vCard = vCardContent->decodedBody();
         KContacts::VCardConverter t;
         if (!t.parseVCards(vCard).isEmpty()) {
             hasVCard = true;
