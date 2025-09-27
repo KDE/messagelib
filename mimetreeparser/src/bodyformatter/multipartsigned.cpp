@@ -75,7 +75,7 @@ MessagePart::Ptr MultiPartSignedBodyPartFormatter::process(Interface::BodyPart &
     SignedMessagePart::Ptr mp(
         new SignedMessagePart(part.objectTreeParser(), aCodec.decode(cleartext), protocol, part.nodeHelper()->fromAsString(node), signedData));
 
-    mp->startVerificationDetached(cleartext, signedData, signature->decodedContent());
+    mp->startVerificationDetached(cleartext, signedData, signature->decodedBody());
     part.nodeHelper()->registerOverrideHeader(node, mp);
     return mp;
 }

@@ -237,7 +237,7 @@ void ComposerViewBaseTest::testGenerateCryptoMessagesAutocrypt()
         QCOMPARE(nh->signatureState(msg.data()), MimeTreeParser::KMMsgNotSigned);
     }
 
-    QCOMPARE(QString::fromUtf8(content->decodedContent()), data);
+    QCOMPARE(QString::fromUtf8(content->decodedBody()), data);
 }
 
 void ComposerViewBaseTest::testGenerateCryptoMessagesAutocryptSMime()
@@ -278,7 +278,7 @@ void ComposerViewBaseTest::testGenerateCryptoMessagesAutocryptSMime()
     auto msg = composerJob->resultMessages().first();
     msg->assemble();
 
-    QCOMPARE(QString::fromUtf8(msg->decodedContent()), data);
+    QCOMPARE(QString::fromUtf8(msg->decodedBody()), data);
     QCOMPARE(msg->hasHeader("Autocrypt"), false);
 }
 
@@ -347,7 +347,7 @@ void ComposerViewBaseTest::testAutocryptKey()
     QCOMPARE(extra.size(), 1);
     content = extra.first();
 
-    QCOMPARE(QString::fromUtf8(content->decodedContent()), data);
+    QCOMPARE(QString::fromUtf8(content->decodedBody()), data);
 }
 
 #include "moc_composerviewbasetest.cpp"

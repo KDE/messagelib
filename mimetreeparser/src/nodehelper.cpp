@@ -223,7 +223,7 @@ QString NodeHelper::writeNodeToTempFile(KMime::Content *node)
     fname += u'/' + fileName;
 
     qCDebug(MIMETREEPARSER_LOG) << "Create temp file: " << fname;
-    QByteArray data = node->decodedContent();
+    QByteArray data = node->decodedBody();
     if (node->contentType()->isText() && !data.isEmpty()) {
         // convert CRLF to LF before writing text attachments to disk
         data = KMime::CRLFtoLF(data);
@@ -459,7 +459,7 @@ KMMsgSignatureState NodeHelper::overallSignatureState(KMime::Content *node) cons
 
 void NodeHelper::magicSetType(KMime::Content *node, bool aAutoDecode)
 {
-    const QByteArray body = aAutoDecode ? node->decodedContent() : node->body();
+    const QByteArray body = aAutoDecode ? node->decodedBody() : node->body();
     QMimeDatabase db;
     const QMimeType mime = db.mimeTypeForData(body);
 
