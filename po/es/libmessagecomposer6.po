@@ -9,14 +9,14 @@ msgstr ""
 "Project-Id-Version: libmessagecomposer6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-06 00:43+0000\n"
-"PO-Revision-Date: 2025-09-06 12:14+0100\n"
+"PO-Revision-Date: 2025-09-29 19:35+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.08.0\n"
+"X-Generator: Lokalize 25.08.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: attachment/attachmentcontrollerbase.cpp:167
@@ -1554,15 +1554,15 @@ msgstr "No se han encontrado datos de claves para los destinatarios."
 #, kde-format
 msgid "Asked to use word wrapping, but not given wrapped plain text."
 msgstr ""
-"Se le ha pedido que usara ajuste de líneas, pero no se le ha proporcionado "
+"Se le ha pedido que usara ajuste de línea, pero no se le ha proporcionado "
 "texto sin formato ajustado."
 
 #: job/maintextjob.cpp:65
 #, kde-format
 msgid "Asked not to use word wrapping, but not given clean plain text."
 msgstr ""
-"Se le ha pedido que no usara ajuste de líneas, pero no se le ha "
-"proporcionado texto sin formato limpio."
+"Se le ha pedido que no usara ajuste de línea, pero no se le ha proporcionado "
+"texto sin formato limpio."
 
 #: job/maintextjob.cpp:92
 #, kde-format
