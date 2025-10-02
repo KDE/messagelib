@@ -16,7 +16,7 @@ using namespace MessageList::Utils;
 class MessageList::Utils::AggregationConfigButtonPrivate
 {
 public:
-    AggregationConfigButtonPrivate(AggregationConfigButton *owner)
+    explicit AggregationConfigButtonPrivate(AggregationConfigButton *owner)
         : q(owner)
     {
     }

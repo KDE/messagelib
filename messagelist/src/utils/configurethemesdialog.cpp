@@ -66,7 +66,7 @@ private:
 class ThemeListWidget : public QListWidget
 {
 public:
-    ThemeListWidget(QWidget *parent)
+    explicit ThemeListWidget(QWidget *parent)
         : QListWidget(parent)
     {
     }

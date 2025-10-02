@@ -70,7 +70,7 @@ public:
 class AggregationListWidget : public QListWidget
 {
 public:
-    AggregationListWidget(QWidget *parent)
+    explicit AggregationListWidget(QWidget *parent)
         : QListWidget(parent)
     {
     }

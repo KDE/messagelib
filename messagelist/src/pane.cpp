@@ -40,7 +40,7 @@ namespace MessageList
 class Pane::PanePrivate
 {
 public:
-    PanePrivate(Pane *owner)
+    explicit PanePrivate(Pane *owner)
         : q(owner)
     {
     }

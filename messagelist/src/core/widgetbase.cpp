@@ -56,7 +56,7 @@ using namespace MessageList::Core;
 class Widget::WidgetPrivate
 {
 public:
-    WidgetPrivate(Widget *owner)
+    explicit WidgetPrivate(Widget *owner)
         : q(owner)
     {
     }

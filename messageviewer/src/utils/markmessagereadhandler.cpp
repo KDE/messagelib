@@ -21,7 +21,7 @@ Q_GLOBAL_STATIC(Akonadi::Item::List, sListItem)
 class MarkMessageReadHandler::MarkMessageReadHandlerPrivate
 {
 public:
-    MarkMessageReadHandlerPrivate(MarkMessageReadHandler *qq)
+    explicit MarkMessageReadHandlerPrivate(MarkMessageReadHandler *qq)
         : q(qq)
     {
     }

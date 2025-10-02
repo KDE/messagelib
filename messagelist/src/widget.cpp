@@ -47,7 +47,7 @@ namespace MessageList
 class MessageList::Widget::WidgetPrivate
 {
 public:
-    WidgetPrivate(Widget *owner)
+    explicit WidgetPrivate(Widget *owner)
         : q(owner)
     {
     }
