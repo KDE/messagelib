@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-16 00:43+0000\n"
+"POT-Creation-Date: 2025-10-03 00:45+0000\n"
 "PO-Revision-Date: 2024-08-20 08:41+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -441,7 +441,7 @@ msgstr "Inteligentní s klikacím stavem"
 msgid "A smart multiline and multi item theme with a clickable status column"
 msgstr ""
 
-#: core/manager.cpp:758 core/view.cpp:2262 core/view.cpp:2266
+#: core/manager.cpp:758 core/view.cpp:2260 core/view.cpp:2264
 #, kde-format
 msgid "Status"
 msgstr "Stav"
@@ -855,39 +855,39 @@ msgstr "Zobrazit výchozí sloupce"
 msgid "Display Tooltips"
 msgstr "Zobrazit nástrojové tipy"
 
-#: core/view.cpp:2243 core/view.cpp:2247
+#: core/view.cpp:2241 core/view.cpp:2245
 #: core/widgets/searchmessagebybuttons.cpp:75
 #, kde-format
 msgid "From"
 msgstr "Od"
 
-#: core/view.cpp:2244 core/view.cpp:2248
+#: core/view.cpp:2242 core/view.cpp:2246
 #, kde-format
 msgctxt "Receiver of the email"
 msgid "To"
 msgstr "Komu"
 
-#: core/view.cpp:2245 core/view.cpp:2249
+#: core/view.cpp:2243 core/view.cpp:2247
 #, kde-format
 msgid "Date"
 msgstr "Datum"
 
-#: core/view.cpp:2263 core/view.cpp:2267
+#: core/view.cpp:2261 core/view.cpp:2265
 #, kde-format
 msgid "Size"
 msgstr "Velikost"
 
-#: core/view.cpp:2264 core/view.cpp:2268 utils/themeeditor.cpp:191
+#: core/view.cpp:2262 core/view.cpp:2266 utils/themeeditor.cpp:191
 #, kde-format
 msgid "Folder"
 msgstr "Složka"
 
-#: core/view.cpp:2274 core/view.cpp:2276
+#: core/view.cpp:2272 core/view.cpp:2274
 #, kde-format
 msgid "Preview"
 msgstr "Náhled"
 
-#: core/view.cpp:2293
+#: core/view.cpp:2291
 #, kde-format
 msgid "<b>%1</b> reply"
 msgid_plural "<b>%1</b> replies"
@@ -895,7 +895,7 @@ msgstr[0] "<b>%1</b> odpověď"
 msgstr[1] "<b>%1</b> odpovědi"
 msgstr[2] "<b>%1</b> odpovědí"
 
-#: core/view.cpp:2296
+#: core/view.cpp:2294
 #, kde-format
 msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
@@ -903,110 +903,110 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: core/view.cpp:2333
+#: core/view.cpp:2331
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Threads started on 2008-12-21'"
 msgid "Threads started on %1"
 msgstr "Vlákna zahájená v %1"
 
-#: core/view.cpp:2335
+#: core/view.cpp:2333
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Threads started Yesterday'"
 msgid "Threads started %1"
 msgstr "Vlákna zahájená %1"
 
-#: core/view.cpp:2339
+#: core/view.cpp:2337
 #, kde-format
 msgid "Threads with messages dated %1"
 msgstr "Vlákna se zprávami datovanými %1"
 
-#: core/view.cpp:2349
+#: core/view.cpp:2347
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'"
 msgid "Messages sent on %1"
 msgstr "Zprávy odeslané v %1"
 
-#: core/view.cpp:2352
+#: core/view.cpp:2350
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Messages received on 2008-12-21'"
 msgid "Messages received on %1"
 msgstr "Zprávy obdržené v %1"
 
-#: core/view.cpp:2356
+#: core/view.cpp:2354
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent Yesterday'"
 msgid "Messages sent %1"
 msgstr "Zprávy odeslané %1"
 
-#: core/view.cpp:2358
+#: core/view.cpp:2356
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages received Yesterday'"
 msgid "Messages received %1"
 msgstr "Zprávy obdržené v: %1"
 
-#: core/view.cpp:2367
+#: core/view.cpp:2365
 #, kde-format
 msgid "Threads started within %1"
 msgstr "Vlákna zahájena během %1"
 
-#: core/view.cpp:2370
+#: core/view.cpp:2368
 #, kde-format
 msgid "Threads containing messages with dates within %1"
 msgstr "Vlákna obsahující zprávy v rozmezí: %1"
 
-#: core/view.cpp:2378
+#: core/view.cpp:2376
 #, kde-format
 msgid "Messages sent within %1"
 msgstr "Zprávy odeslané během %1"
 
-#: core/view.cpp:2380
+#: core/view.cpp:2378
 #, kde-format
 msgid "Messages received within %1"
 msgstr "Zprávy obdržené během %1"
 
-#: core/view.cpp:2389
+#: core/view.cpp:2387
 #, kde-format
 msgid "Threads started by %1"
 msgstr "Vlákna zahájená osobou %1"
 
-#: core/view.cpp:2392
+#: core/view.cpp:2390
 #, kde-format
 msgid "Threads with most recent message by %1"
 msgstr "Vlákna s nejnovější zprávou od %1"
 
-#: core/view.cpp:2401 core/view.cpp:2425
+#: core/view.cpp:2399 core/view.cpp:2423
 #, kde-format
 msgid "Messages sent to %1"
 msgstr "Zprávy odeslané na %1"
 
-#: core/view.cpp:2403
+#: core/view.cpp:2401
 #, kde-format
 msgid "Messages sent by %1"
 msgstr "Zprávy odeslané z %1"
 
-#: core/view.cpp:2406
+#: core/view.cpp:2404
 #, kde-format
 msgid "Messages received from %1"
 msgstr "Zprávy obdržené od %1"
 
-#: core/view.cpp:2414
+#: core/view.cpp:2412
 #, kde-format
 msgid "Threads directed to %1"
 msgstr "Vlákna směřovaná k %1"
 
-#: core/view.cpp:2417
+#: core/view.cpp:2415
 #, kde-format
 msgid "Threads with most recent message directed to %1"
 msgstr "Vlákna s nejnovější zprávou směřovanou k %1"
 
-#: core/view.cpp:2427
+#: core/view.cpp:2425
 #, kde-format
 msgid "Messages received by %1"
 msgstr "Zprávy obdržené od %1"
 
-#: core/view.cpp:2453
+#: core/view.cpp:2451
 #, kde-format
 msgid "<b>%1</b> thread"
 msgid_plural "<b>%1</b> threads"
@@ -1014,7 +1014,7 @@ msgstr[0] "<b>%1</b> vlákno"
 msgstr[1] "<b>%1</b> vlákna"
 msgstr[2] "<b>%1</b> vláken"
 
-#: core/view.cpp:2458
+#: core/view.cpp:2456
 #, kde-format
 msgid "<b>%1</b> message (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"

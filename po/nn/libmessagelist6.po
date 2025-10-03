@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-16 00:43+0000\n"
+"POT-Creation-Date: 2025-10-03 00:45+0000\n"
 "PO-Revision-Date: 2021-02-28 20:11+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -463,7 +463,7 @@ msgstr ""
 msgid "A smart multiline and multi item theme with a clickable status column"
 msgstr ""
 
-#: core/manager.cpp:758 core/view.cpp:2262 core/view.cpp:2266
+#: core/manager.cpp:758 core/view.cpp:2260 core/view.cpp:2264
 #, kde-format
 msgid "Status"
 msgstr "Status"
@@ -875,163 +875,163 @@ msgstr "Vis standardkolonnar"
 msgid "Display Tooltips"
 msgstr "Vis hjelpebobler"
 
-#: core/view.cpp:2243 core/view.cpp:2247
+#: core/view.cpp:2241 core/view.cpp:2245
 #: core/widgets/searchmessagebybuttons.cpp:75
 #, kde-format
 msgid "From"
 msgstr "Frå"
 
-#: core/view.cpp:2244 core/view.cpp:2248
+#: core/view.cpp:2242 core/view.cpp:2246
 #, kde-format
 msgctxt "Receiver of the email"
 msgid "To"
 msgstr ""
 
-#: core/view.cpp:2245 core/view.cpp:2249
+#: core/view.cpp:2243 core/view.cpp:2247
 #, kde-format
 msgid "Date"
 msgstr "Dato"
 
-#: core/view.cpp:2263 core/view.cpp:2267
+#: core/view.cpp:2261 core/view.cpp:2265
 #, kde-format
 msgid "Size"
 msgstr "Storleik"
 
-#: core/view.cpp:2264 core/view.cpp:2268 utils/themeeditor.cpp:191
+#: core/view.cpp:2262 core/view.cpp:2266 utils/themeeditor.cpp:191
 #, kde-format
 msgid "Folder"
 msgstr ""
 
-#: core/view.cpp:2274 core/view.cpp:2276
+#: core/view.cpp:2272 core/view.cpp:2274
 #, kde-format
 msgid "Preview"
 msgstr "Førehandsvising"
 
-#: core/view.cpp:2293
+#: core/view.cpp:2291
 #, kde-format
 msgid "<b>%1</b> reply"
 msgid_plural "<b>%1</b> replies"
 msgstr[0] "<b>%1</b> svar"
 msgstr[1] "<b>%1</b> svar"
 
-#: core/view.cpp:2296
+#: core/view.cpp:2294
 #, kde-format
 msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/view.cpp:2333
+#: core/view.cpp:2331
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Threads started on 2008-12-21'"
 msgid "Threads started on %1"
 msgstr "Trådar som vart starta %1"
 
-#: core/view.cpp:2335
+#: core/view.cpp:2333
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Threads started Yesterday'"
 msgid "Threads started %1"
 msgstr "Trådar som vart starta %1"
 
-#: core/view.cpp:2339
+#: core/view.cpp:2337
 #, kde-format
 msgid "Threads with messages dated %1"
 msgstr "Trådar med meldingar frå %1"
 
-#: core/view.cpp:2349
+#: core/view.cpp:2347
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'"
 msgid "Messages sent on %1"
 msgstr "Meldingar sende %1"
 
-#: core/view.cpp:2352
+#: core/view.cpp:2350
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Messages received on 2008-12-21'"
 msgid "Messages received on %1"
 msgstr "Meldingar mottekne %1"
 
-#: core/view.cpp:2356
+#: core/view.cpp:2354
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent Yesterday'"
 msgid "Messages sent %1"
 msgstr "Meldingar sende %1"
 
-#: core/view.cpp:2358
+#: core/view.cpp:2356
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages received Yesterday'"
 msgid "Messages received %1"
 msgstr "Meldingar mottekne %1"
 
-#: core/view.cpp:2367
+#: core/view.cpp:2365
 #, kde-format
 msgid "Threads started within %1"
 msgstr "Trådar som vart starta %1"
 
-#: core/view.cpp:2370
+#: core/view.cpp:2368
 #, kde-format
 msgid "Threads containing messages with dates within %1"
 msgstr "Trådar som inneheld datoar før %1"
 
-#: core/view.cpp:2378
+#: core/view.cpp:2376
 #, kde-format
 msgid "Messages sent within %1"
 msgstr "Meldingar som vart sende før %1"
 
-#: core/view.cpp:2380
+#: core/view.cpp:2378
 #, kde-format
 msgid "Messages received within %1"
 msgstr "Meldingar mottekne før %1"
 
-#: core/view.cpp:2389
+#: core/view.cpp:2387
 #, kde-format
 msgid "Threads started by %1"
 msgstr "Trådar som vart starta av %1"
 
-#: core/view.cpp:2392
+#: core/view.cpp:2390
 #, kde-format
 msgid "Threads with most recent message by %1"
 msgstr "Trådar med siste melding av %1"
 
-#: core/view.cpp:2401 core/view.cpp:2425
+#: core/view.cpp:2399 core/view.cpp:2423
 #, kde-format
 msgid "Messages sent to %1"
 msgstr "Meldingar sende til %1"
 
-#: core/view.cpp:2403
+#: core/view.cpp:2401
 #, kde-format
 msgid "Messages sent by %1"
 msgstr "Meldingar sende av %1."
 
-#: core/view.cpp:2406
+#: core/view.cpp:2404
 #, kde-format
 msgid "Messages received from %1"
 msgstr "Meldingar mottekne frå %1"
 
-#: core/view.cpp:2414
+#: core/view.cpp:2412
 #, kde-format
 msgid "Threads directed to %1"
 msgstr "Trådar dirigerte til %1"
 
-#: core/view.cpp:2417
+#: core/view.cpp:2415
 #, kde-format
 msgid "Threads with most recent message directed to %1"
 msgstr "Trådar med nyaste melding dirigert til %1"
 
-#: core/view.cpp:2427
+#: core/view.cpp:2425
 #, kde-format
 msgid "Messages received by %1"
 msgstr "Meldingar mottekne av %1"
 
-#: core/view.cpp:2453
+#: core/view.cpp:2451
 #, kde-format
 msgid "<b>%1</b> thread"
 msgid_plural "<b>%1</b> threads"
 msgstr[0] "<b>%1</b> tråd"
 msgstr[1] "<b>%1</b> trådar"
 
-#: core/view.cpp:2458
+#: core/view.cpp:2456
 #, kde-format
 msgid "<b>%1</b> message (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"

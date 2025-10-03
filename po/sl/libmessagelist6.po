@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-16 00:43+0000\n"
+"POT-Creation-Date: 2025-10-03 00:45+0000\n"
 "PO-Revision-Date: 2025-09-16 07:13+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -466,7 +466,7 @@ msgstr ""
 "Pametna tema z več vrsticami, več predmeti in s stolpcem s stanji, ki jih je "
 "mogoče klikati"
 
-#: core/manager.cpp:758 core/view.cpp:2262 core/view.cpp:2266
+#: core/manager.cpp:758 core/view.cpp:2260 core/view.cpp:2264
 #, kde-format
 msgid "Status"
 msgstr "Stanje"
@@ -886,39 +886,39 @@ msgstr "Pokaži privzete stolpce"
 msgid "Display Tooltips"
 msgstr "Prikaži orodne namige"
 
-#: core/view.cpp:2243 core/view.cpp:2247
+#: core/view.cpp:2241 core/view.cpp:2245
 #: core/widgets/searchmessagebybuttons.cpp:75
 #, kde-format
 msgid "From"
 msgstr "Od"
 
-#: core/view.cpp:2244 core/view.cpp:2248
+#: core/view.cpp:2242 core/view.cpp:2246
 #, kde-format
 msgctxt "Receiver of the email"
 msgid "To"
 msgstr "Za"
 
-#: core/view.cpp:2245 core/view.cpp:2249
+#: core/view.cpp:2243 core/view.cpp:2247
 #, kde-format
 msgid "Date"
 msgstr "Datum"
 
-#: core/view.cpp:2263 core/view.cpp:2267
+#: core/view.cpp:2261 core/view.cpp:2265
 #, kde-format
 msgid "Size"
 msgstr "Velikost"
 
-#: core/view.cpp:2264 core/view.cpp:2268 utils/themeeditor.cpp:191
+#: core/view.cpp:2262 core/view.cpp:2266 utils/themeeditor.cpp:191
 #, kde-format
 msgid "Folder"
 msgstr "Mapa"
 
-#: core/view.cpp:2274 core/view.cpp:2276
+#: core/view.cpp:2272 core/view.cpp:2274
 #, kde-format
 msgid "Preview"
 msgstr "Predogled"
 
-#: core/view.cpp:2293
+#: core/view.cpp:2291
 #, kde-format
 msgid "<b>%1</b> reply"
 msgid_plural "<b>%1</b> replies"
@@ -927,7 +927,7 @@ msgstr[1] "<b>%1</b> odgovor"
 msgstr[2] "<b>%1</b> odgovora"
 msgstr[3] "<b>%1</b> odgovori"
 
-#: core/view.cpp:2296
+#: core/view.cpp:2294
 #, kde-format
 msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
@@ -936,110 +936,110 @@ msgstr[1] "<b>%1</b> sporočilo v poddrevesu (<b>%2</b> neprebranih)"
 msgstr[2] "<b>%1</b> sporočili v poddrevesu (<b>%2</b> neprebranih)"
 msgstr[3] "<b>%1</b> sporočila v poddrevesu (<b>%2</b> neprebranih)"
 
-#: core/view.cpp:2333
+#: core/view.cpp:2331
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Threads started on 2008-12-21'"
 msgid "Threads started on %1"
 msgstr "Niti začete dne %1"
 
-#: core/view.cpp:2335
+#: core/view.cpp:2333
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Threads started Yesterday'"
 msgid "Threads started %1"
 msgstr "Niti začete %1"
 
-#: core/view.cpp:2339
+#: core/view.cpp:2337
 #, kde-format
 msgid "Threads with messages dated %1"
 msgstr "Niti s sporočili z dne %1"
 
-#: core/view.cpp:2349
+#: core/view.cpp:2347
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'"
 msgid "Messages sent on %1"
 msgstr "Sporočila poslana dne %1"
 
-#: core/view.cpp:2352
+#: core/view.cpp:2350
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Messages received on 2008-12-21'"
 msgid "Messages received on %1"
 msgstr "Sporočila prejeta dne %1"
 
-#: core/view.cpp:2356
+#: core/view.cpp:2354
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent Yesterday'"
 msgid "Messages sent %1"
 msgstr "Sporočila poslana %1"
 
-#: core/view.cpp:2358
+#: core/view.cpp:2356
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages received Yesterday'"
 msgid "Messages received %1"
 msgstr "Sporočila prejeta %1"
 
-#: core/view.cpp:2367
+#: core/view.cpp:2365
 #, kde-format
 msgid "Threads started within %1"
 msgstr "Niti ustvarjene znotraj %1"
 
-#: core/view.cpp:2370
+#: core/view.cpp:2368
 #, kde-format
 msgid "Threads containing messages with dates within %1"
 msgstr "Niti s sporočili z datumi znotraj %1"
 
-#: core/view.cpp:2378
+#: core/view.cpp:2376
 #, kde-format
 msgid "Messages sent within %1"
 msgstr "Sporočila poslana znotraj %1"
 
-#: core/view.cpp:2380
+#: core/view.cpp:2378
 #, kde-format
 msgid "Messages received within %1"
 msgstr "Sporočila prejeta znotraj %1"
 
-#: core/view.cpp:2389
+#: core/view.cpp:2387
 #, kde-format
 msgid "Threads started by %1"
 msgstr "Niti, ki jih je začel %1"
 
-#: core/view.cpp:2392
+#: core/view.cpp:2390
 #, kde-format
 msgid "Threads with most recent message by %1"
 msgstr "Niti z najnovejšim sporočilom, ki ga je poslal %1"
 
-#: core/view.cpp:2401 core/view.cpp:2425
+#: core/view.cpp:2399 core/view.cpp:2423
 #, kde-format
 msgid "Messages sent to %1"
 msgstr "Sporočila, ki jih je prejel %1"
 
-#: core/view.cpp:2403
+#: core/view.cpp:2401
 #, kde-format
 msgid "Messages sent by %1"
 msgstr "Sporočila, ki jih je poslal %1"
 
-#: core/view.cpp:2406
+#: core/view.cpp:2404
 #, kde-format
 msgid "Messages received from %1"
 msgstr "Sporočila, ki jih je poslal %1"
 
-#: core/view.cpp:2414
+#: core/view.cpp:2412
 #, kde-format
 msgid "Threads directed to %1"
 msgstr "Niti naslovljene na %1"
 
-#: core/view.cpp:2417
+#: core/view.cpp:2415
 #, kde-format
 msgid "Threads with most recent message directed to %1"
 msgstr "Niti z najnovejšim sporočilom naslovljenim na %1"
 
-#: core/view.cpp:2427
+#: core/view.cpp:2425
 #, kde-format
 msgid "Messages received by %1"
 msgstr "Sporočila, ki jih je prejel %1"
 
-#: core/view.cpp:2453
+#: core/view.cpp:2451
 #, kde-format
 msgid "<b>%1</b> thread"
 msgid_plural "<b>%1</b> threads"
@@ -1048,7 +1048,7 @@ msgstr[1] "<b>%1</b> nit"
 msgstr[2] "<b>%1</b> niti"
 msgstr[3] "<b>%1</b> niti"
 
-#: core/view.cpp:2458
+#: core/view.cpp:2456
 #, kde-format
 msgid "<b>%1</b> message (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
