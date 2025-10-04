@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-21 00:43+0000\n"
+"POT-Creation-Date: 2025-10-04 00:44+0000\n"
 "PO-Revision-Date: 2020-05-13 12:55+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -1887,7 +1887,7 @@ msgstr "&Ava aadressiraamatus"
 msgid "&Copy Email Address"
 msgstr "&Kopeeri e-posti aadress"
 
-#: viewer/urlhandlermanager.cpp:585 viewer/viewer_p.cpp:2719
+#: viewer/urlhandlermanager.cpp:585 viewer/viewer_p.cpp:2718
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Aadress kopeeritud lõikepuhvrisse."
@@ -1986,13 +1986,13 @@ msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "&Ava rakendusega..."
 
-#: viewer/viewer_p.cpp:527 viewer/viewer_p.cpp:1738
+#: viewer/viewer_p.cpp:527 viewer/viewer_p.cpp:1737
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Ava"
 
-#: viewer/viewer_p.cpp:541 viewer/viewer_p.cpp:1745
+#: viewer/viewer_p.cpp:541 viewer/viewer_p.cpp:1744
 #, kde-format
 msgctxt "to view something"
 msgid "View"
@@ -2008,12 +2008,12 @@ msgstr "Keri"
 msgid "Save As..."
 msgstr "Salvesta kui..."
 
-#: viewer/viewer_p.cpp:560 viewer/viewer_p.cpp:1755
+#: viewer/viewer_p.cpp:560 viewer/viewer_p.cpp:1754
 #, kde-format
 msgid "Copy"
 msgstr "Kopeeri"
 
-#: viewer/viewer_p.cpp:571 viewer/viewer_p.cpp:1759
+#: viewer/viewer_p.cpp:571 viewer/viewer_p.cpp:1758
 #, kde-format
 msgid "Delete Attachment"
 msgstr "Kustuta kaasatud fail"
@@ -2028,7 +2028,7 @@ msgstr "Vasta autorile..."
 msgid "Reply To All"
 msgstr "Vasta kõigile"
 
-#: viewer/viewer_p.cpp:596 viewer/viewer_p.cpp:1764
+#: viewer/viewer_p.cpp:596 viewer/viewer_p.cpp:1763
 #, kde-format
 msgid "Properties"
 msgstr "Omadused"
@@ -2138,7 +2138,7 @@ msgctxt "@action"
 msgid "Select All Text"
 msgstr "Vali kogu tekst"
 
-#: viewer/viewer_p.cpp:1549 viewer/viewer_p.cpp:2073
+#: viewer/viewer_p.cpp:1549 viewer/viewer_p.cpp:2072
 #, kde-format
 msgid "Copy Link Address"
 msgstr "Kopeeri viida aadress"
@@ -2256,72 +2256,72 @@ msgstr "&Otsi kirjast..."
 msgid "Disable Emoticon"
 msgstr "Keela emotikonid"
 
-#: viewer/viewer_p.cpp:1735
+#: viewer/viewer_p.cpp:1734
 #, kde-format
 msgid "Save &As..."
 msgstr "&Salvesta kui..."
 
-#: viewer/viewer_p.cpp:1743
+#: viewer/viewer_p.cpp:1742
 #, kde-format
 msgid "Open With..."
 msgstr "Ava rakendusega..."
 
-#: viewer/viewer_p.cpp:1750
+#: viewer/viewer_p.cpp:1749
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "Sal&vesta kõik kaasatud failid..."
 
-#: viewer/viewer_p.cpp:1993
+#: viewer/viewer_p.cpp:1992
 #, kde-format
 msgid "The network is broken."
 msgstr "Võrk on katki."
 
-#: viewer/viewer_p.cpp:1993 viewer/viewer_p.cpp:1996
+#: viewer/viewer_p.cpp:1992 viewer/viewer_p.cpp:1995
 #, fuzzy, kde-format
 #| msgid "Check Phishing URL"
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "Õngitsemise URL-i kontroll"
 
-#: viewer/viewer_p.cpp:1996
+#: viewer/viewer_p.cpp:1995
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "URL \"%1\" ei ole kehtiv."
 
-#: viewer/viewer_p.cpp:2016
+#: viewer/viewer_p.cpp:2015
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr "See veebilehekülg sisaldab kahjurvara, kas tõesti seda näidata?"
 
-#: viewer/viewer_p.cpp:2017
+#: viewer/viewer_p.cpp:2016
 #, fuzzy, kde-format
 #| msgid "Malware"
 msgctxt "@title:window"
 msgid "Malware"
 msgstr "Kahjurvara"
 
-#: viewer/viewer_p.cpp:2071
+#: viewer/viewer_p.cpp:2070
 #, kde-format
 msgid "Copy Email Address"
 msgstr "Kopeeri e-posti aadress"
 
-#: viewer/viewer_p.cpp:2154
+#: viewer/viewer_p.cpp:2153
 #, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Kiri tavalise tekstina"
 
-#: viewer/viewer_p.cpp:2725
+#: viewer/viewer_p.cpp:2724
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL kopeeritud lõikepuhvrisse."
 
-#: viewer/viewer_p.cpp:2887
+#: viewer/viewer_p.cpp:2886
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "Kirja laadimine nurjus: %1."
 
-#: viewer/viewer_p.cpp:2892
+#: viewer/viewer_p.cpp:2891
 #, kde-format
 msgid "Message not found."
 msgstr "Kirja ei leitud."

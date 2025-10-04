@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-21 00:43+0000\n"
+"POT-Creation-Date: 2025-10-04 00:44+0000\n"
 "PO-Revision-Date: 2024-08-14 11:15+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -1831,7 +1831,7 @@ msgstr "&Otevřít v knize adres"
 msgid "&Copy Email Address"
 msgstr "&Kopírovat e-mailovou adresu"
 
-#: viewer/urlhandlermanager.cpp:585 viewer/viewer_p.cpp:2719
+#: viewer/urlhandlermanager.cpp:585 viewer/viewer_p.cpp:2718
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Adresa zkopírována do schránky."
@@ -1927,13 +1927,13 @@ msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "&Otevřít pomocí..."
 
-#: viewer/viewer_p.cpp:527 viewer/viewer_p.cpp:1738
+#: viewer/viewer_p.cpp:527 viewer/viewer_p.cpp:1737
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Otevřít"
 
-#: viewer/viewer_p.cpp:541 viewer/viewer_p.cpp:1745
+#: viewer/viewer_p.cpp:541 viewer/viewer_p.cpp:1744
 #, kde-format
 msgctxt "to view something"
 msgid "View"
@@ -1949,12 +1949,12 @@ msgstr "Rolovat na"
 msgid "Save As..."
 msgstr "Uložit jako..."
 
-#: viewer/viewer_p.cpp:560 viewer/viewer_p.cpp:1755
+#: viewer/viewer_p.cpp:560 viewer/viewer_p.cpp:1754
 #, kde-format
 msgid "Copy"
 msgstr "Kopírovat"
 
-#: viewer/viewer_p.cpp:571 viewer/viewer_p.cpp:1759
+#: viewer/viewer_p.cpp:571 viewer/viewer_p.cpp:1758
 #, kde-format
 msgid "Delete Attachment"
 msgstr "Smazat přílohu"
@@ -1969,7 +1969,7 @@ msgstr "Odpovědět autorovi"
 msgid "Reply To All"
 msgstr "Odpověď všem"
 
-#: viewer/viewer_p.cpp:596 viewer/viewer_p.cpp:1764
+#: viewer/viewer_p.cpp:596 viewer/viewer_p.cpp:1763
 #, kde-format
 msgid "Properties"
 msgstr "Vlastnosti"
@@ -2078,7 +2078,7 @@ msgctxt "@action"
 msgid "Select All Text"
 msgstr "Vybrat všechen text"
 
-#: viewer/viewer_p.cpp:1549 viewer/viewer_p.cpp:2073
+#: viewer/viewer_p.cpp:1549 viewer/viewer_p.cpp:2072
 #, kde-format
 msgid "Copy Link Address"
 msgstr "Kopírovat adresu adresu"
@@ -2184,70 +2184,70 @@ msgstr "Nají&t ve zprávě..."
 msgid "Disable Emoticon"
 msgstr "Zakázat emotikon"
 
-#: viewer/viewer_p.cpp:1735
+#: viewer/viewer_p.cpp:1734
 #, kde-format
 msgid "Save &As..."
 msgstr "Uložit j&ako..."
 
-#: viewer/viewer_p.cpp:1743
+#: viewer/viewer_p.cpp:1742
 #, kde-format
 msgid "Open With..."
 msgstr "Otevřít pomocí..."
 
-#: viewer/viewer_p.cpp:1750
+#: viewer/viewer_p.cpp:1749
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "Uložit všechny přílohy..."
 
-#: viewer/viewer_p.cpp:1993
+#: viewer/viewer_p.cpp:1992
 #, kde-format
 msgid "The network is broken."
 msgstr "Síť je přerušena."
 
-#: viewer/viewer_p.cpp:1993 viewer/viewer_p.cpp:1996
+#: viewer/viewer_p.cpp:1992 viewer/viewer_p.cpp:1995
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "Zkontrolovat URL Phishing "
 
-#: viewer/viewer_p.cpp:1996
+#: viewer/viewer_p.cpp:1995
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "URL %1 je neplatné."
 
-#: viewer/viewer_p.cpp:2016
+#: viewer/viewer_p.cpp:2015
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr "Tato webová stránka je malware, chcete pokračovat s jejím zobrazením?"
 
-#: viewer/viewer_p.cpp:2017
+#: viewer/viewer_p.cpp:2016
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr "Malware"
 
-#: viewer/viewer_p.cpp:2071
+#: viewer/viewer_p.cpp:2070
 #, kde-format
 msgid "Copy Email Address"
 msgstr "Zkopírovat e-mailovou adresu"
 
-#: viewer/viewer_p.cpp:2154
+#: viewer/viewer_p.cpp:2153
 #, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Zpráva ve formátu čistého textu"
 
-#: viewer/viewer_p.cpp:2725
+#: viewer/viewer_p.cpp:2724
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL zkopírováno do schránky."
 
-#: viewer/viewer_p.cpp:2887
+#: viewer/viewer_p.cpp:2886
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "Načtení zprávy selhalo: %1."
 
-#: viewer/viewer_p.cpp:2892
+#: viewer/viewer_p.cpp:2891
 #, kde-format
 msgid "Message not found."
 msgstr "Zpráva nenalezena."

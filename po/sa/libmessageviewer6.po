@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-21 00:43+0000\n"
+"POT-Creation-Date: 2025-10-04 00:44+0000\n"
 "PO-Revision-Date: 2024-12-20 22:01+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -1819,7 +1819,7 @@ msgstr "&पतेःपुस्तके उद्घाटयन्तु"
 msgid "&Copy Email Address"
 msgstr "&ईमेल पता प्रतिलिपि कुर्वन्तु"
 
-#: viewer/urlhandlermanager.cpp:585 viewer/viewer_p.cpp:2719
+#: viewer/urlhandlermanager.cpp:585 viewer/viewer_p.cpp:2718
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "पता क्लिप्बोर्ड् प्रति प्रतिलिखितम्।"
@@ -1914,13 +1914,13 @@ msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "&Open With..."
 
-#: viewer/viewer_p.cpp:527 viewer/viewer_p.cpp:1738
+#: viewer/viewer_p.cpp:527 viewer/viewer_p.cpp:1737
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "उद्घाटित"
 
-#: viewer/viewer_p.cpp:541 viewer/viewer_p.cpp:1745
+#: viewer/viewer_p.cpp:541 viewer/viewer_p.cpp:1744
 #, kde-format
 msgctxt "to view something"
 msgid "View"
@@ -1936,12 +1936,12 @@ msgstr "Scroll To इति"
 msgid "Save As..."
 msgstr "Save As..."
 
-#: viewer/viewer_p.cpp:560 viewer/viewer_p.cpp:1755
+#: viewer/viewer_p.cpp:560 viewer/viewer_p.cpp:1754
 #, kde-format
 msgid "Copy"
 msgstr "प्रतिलिपि"
 
-#: viewer/viewer_p.cpp:571 viewer/viewer_p.cpp:1759
+#: viewer/viewer_p.cpp:571 viewer/viewer_p.cpp:1758
 #, kde-format
 msgid "Delete Attachment"
 msgstr "संलग्नकं विलोपयतु"
@@ -1956,7 +1956,7 @@ msgstr "Reply To लेखकम्"
 msgid "Reply To All"
 msgstr "Reply To All"
 
-#: viewer/viewer_p.cpp:596 viewer/viewer_p.cpp:1764
+#: viewer/viewer_p.cpp:596 viewer/viewer_p.cpp:1763
 #, kde-format
 msgid "Properties"
 msgstr "गुणाः"
@@ -2065,7 +2065,7 @@ msgctxt "@action"
 msgid "Select All Text"
 msgstr "All Text इति चिनोतु"
 
-#: viewer/viewer_p.cpp:1549 viewer/viewer_p.cpp:2073
+#: viewer/viewer_p.cpp:1549 viewer/viewer_p.cpp:2072
 #, kde-format
 msgid "Copy Link Address"
 msgstr "लिङ्क पता प्रतिलिपि कुर्वन्तु"
@@ -2171,70 +2171,70 @@ msgstr "&सन्देशे अन्वेष्टुम्..."
 msgid "Disable Emoticon"
 msgstr "इमोटिकॉन् अक्षम करें"
 
-#: viewer/viewer_p.cpp:1735
+#: viewer/viewer_p.cpp:1734
 #, kde-format
 msgid "Save &As..."
 msgstr "Save &As..."
 
-#: viewer/viewer_p.cpp:1743
+#: viewer/viewer_p.cpp:1742
 #, kde-format
 msgid "Open With..."
 msgstr "Open With..."
 
-#: viewer/viewer_p.cpp:1750
+#: viewer/viewer_p.cpp:1749
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "सर्वाणि संलग्नकानि रक्षन्तु..."
 
-#: viewer/viewer_p.cpp:1993
+#: viewer/viewer_p.cpp:1992
 #, kde-format
 msgid "The network is broken."
 msgstr "जालं भग्नम् अस्ति।"
 
-#: viewer/viewer_p.cpp:1993 viewer/viewer_p.cpp:1996
+#: viewer/viewer_p.cpp:1992 viewer/viewer_p.cpp:1995
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "फिशिंग् URL पश्यन्तु"
 
-#: viewer/viewer_p.cpp:1996
+#: viewer/viewer_p.cpp:1995
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "URL %1 वैधः नास्ति ।"
 
-#: viewer/viewer_p.cpp:2016
+#: viewer/viewer_p.cpp:2015
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr "इदं जालस्थलं दुर्गन्धयुक्तं भवति, किं भवन्तः एतत् निरन्तरं दर्शयितुम् इच्छन्ति?"
 
-#: viewer/viewer_p.cpp:2017
+#: viewer/viewer_p.cpp:2016
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr "मालवेयर"
 
-#: viewer/viewer_p.cpp:2071
+#: viewer/viewer_p.cpp:2070
 #, kde-format
 msgid "Copy Email Address"
 msgstr "ईमेल पता प्रतिलिपि कुर्वन्तु"
 
-#: viewer/viewer_p.cpp:2154
+#: viewer/viewer_p.cpp:2153
 #, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "सादा पाठरूपेण सन्देशः"
 
-#: viewer/viewer_p.cpp:2725
+#: viewer/viewer_p.cpp:2724
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL प्रतिलिपितः क्लिप्बोर्ड् मध्ये।"
 
-#: viewer/viewer_p.cpp:2887
+#: viewer/viewer_p.cpp:2886
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "सन्देशस्य लोडिंग् विफलम्: %1."
 
-#: viewer/viewer_p.cpp:2892
+#: viewer/viewer_p.cpp:2891
 #, kde-format
 msgid "Message not found."
 msgstr "सन्देशः न लब्धः।"
