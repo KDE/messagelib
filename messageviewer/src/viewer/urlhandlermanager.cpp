@@ -684,11 +684,11 @@ bool AttachmentURLHandler::willHandleDrag(const QUrl &url, ViewerPrivate *window
 bool AttachmentURLHandler::handleDrag(const QUrl &url, ViewerPrivate *window) const
 {
 #ifndef QT_NO_DRAGANDDROP
-    KMime::Content *node = nodeForUrl(url, window);
+    const KMime::Content *node = nodeForUrl(url, window);
     if (!node) {
         return false;
     }
-    if (node->contentType()->mimeType() == "text/x-moz-deleted") {
+    if (const auto ct = node->contentType(); ct && ct->mimeType() == "text/x-moz-deleted") {
         return false;
     }
     QString fileName;
@@ -720,8 +720,8 @@ bool AttachmentURLHandler::handleDrag(const QUrl &url, ViewerPrivate *window) co
         tUrl = QUrl::fromLocalFile(fileName);
     } else {
         if (node->header<KMime::Headers::Subject>()) {
-            if (!node->contents().isEmpty()) {
-                node = node->contents().constLast();
+            if (!node->contents().empty()) {
+                node = node->contents().back();
                 fileName = window->nodeHelper()->writeNodeToTempFile(node);
                 tUrl = QUrl::fromLocalFile(fileName);
             }
@@ -763,14 +763,14 @@ bool AttachmentURLHandler::handleContextMenuRequest(const QUrl &url, const QPoin
 
 QString AttachmentURLHandler::statusBarMessage(const QUrl &url, ViewerPrivate *w) const
 {
-    KMime::Content *node = nodeForUrl(url, w);
+    const KMime::Content *node = nodeForUrl(url, w);
     if (!node) {
         return {};
     }
     const QString name = MimeTreeParser::NodeHelper::fileName(node);
     if (!name.isEmpty()) {
         return i18n("Attachment: %1", name);
-    } else if (dynamic_cast<KMime::Message *>(node)) {
+    } else if (dynamic_cast<const KMime::Message *>(node)) {
         if (node->header<KMime::Headers::Subject>()) {
             return i18n("Encapsulated Message (Subject: %1)", node->header<KMime::Headers::Subject>()->asUnicodeString());
         } else {

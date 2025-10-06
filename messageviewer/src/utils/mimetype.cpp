@@ -19,12 +19,12 @@ QString MessageViewer::Util::iconPathForMimetype(const QString &mimeType, int ic
     return IconNameCache::instance()->iconPath(MimeTreeParser::Util::iconNameForMimetype(mimeType, fallbackFileName1, fallbackFileName2), iconSize);
 }
 
-QString MessageViewer::Util::iconPathForContent(KMime::Content *node, int size)
+QString MessageViewer::Util::iconPathForContent(const KMime::Content *node, int size)
 {
     return IconNameCache::instance()->iconPath(MimeTreeParser::Util::iconNameForContent(node), size);
 }
 
-MessageViewer::Util::AttachmentDisplayInfo MessageViewer::Util::attachmentDisplayInfo(KMime::Content *node)
+MessageViewer::Util::AttachmentDisplayInfo MessageViewer::Util::attachmentDisplayInfo(const KMime::Content *node)
 {
     AttachmentDisplayInfo info;
     info.icon = iconPathForContent(node, KIconLoader::Small);

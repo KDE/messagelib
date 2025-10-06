@@ -18,26 +18,28 @@ using namespace Qt::Literals::StringLiterals;
 using namespace MimeTreeParser;
 using namespace MimeTreeParser::Util;
 
-bool MimeTreeParser::Util::isTypeBlacklisted(KMime::Content *node)
+bool MimeTreeParser::Util::isTypeBlacklisted(const KMime::Content *node)
 {
-    const auto contentType = node->contentType(); // Create
-    const QByteArray mediaTypeLower = contentType->mediaType().toLower();
+    const auto contentType = node->contentType();
+    const QByteArray mediaTypeLower = contentType ? contentType->mediaType().toLower() : QByteArray();
     bool typeBlacklisted = mediaTypeLower == QByteArrayLiteral("multipart");
     if (!typeBlacklisted) {
         typeBlacklisted = KMime::isCryptoPart(node);
     }
     typeBlacklisted = typeBlacklisted || node == node->topLevel();
-    const bool firstTextChildOfEncapsulatedMsg = mediaTypeLower == "text" && contentType->subType().toLower() == "plain" && node->parent()
-        && node->parent()->contentType()->mediaType().toLower() == "message";
+    const bool firstTextChildOfEncapsulatedMsg = mediaTypeLower == "text" && contentType && contentType->subType().toLower() == "plain" && node->parent()
+        && node->parent()->contentType() && node->parent()->contentType()->mediaType().toLower() == "message";
     return typeBlacklisted || firstTextChildOfEncapsulatedMsg;
 }
 
-QString MimeTreeParser::Util::labelForContent(KMime::Content *node)
+QString MimeTreeParser::Util::labelForContent(const KMime::Content *node)
 {
-    const QString name = node->contentType()->name();
+    const auto ct = node->contentType();
+    const QString name = ct ? ct->name() : QString();
     QString label = name.isEmpty() ? NodeHelper::fileName(node) : name;
     if (label.isEmpty()) {
-        label = node->contentDescription()->asUnicodeString();
+        const auto cd = node->contentDescription();
+        label = cd ? cd->asUnicodeString() : QString();
     }
     return label;
 }
@@ -117,23 +119,24 @@ QString MimeTreeParser::Util::iconNameForMimetype(const QString &mimeType, const
     return fileName;
 }
 
-QString MimeTreeParser::Util::iconNameForContent(KMime::Content *node)
+QString MimeTreeParser::Util::iconNameForContent(const KMime::Content *node)
 {
     if (!node) {
         return {};
     }
 
-    auto ct = node->contentType(); // Create
-    QByteArray mimeType = ct->mimeType();
+    const auto ct = node->contentType();
+    QByteArray mimeType = ct ? ct->mimeType() : QByteArray();
+    const auto cd = node->contentDisposition();
     if (mimeType.isNull() || mimeType == "application/octet-stream") {
-        const QString fileName = node->contentDisposition()->filename();
+        const QString fileName = cd ? cd->filename() : QString();
         if (!fileName.isEmpty()) {
             const QString mime = MimeTreeParser::Util::mimetype(fileName).name();
             mimeType = mime.toLatin1();
         }
     }
     mimeType = mimeType.toLower();
-    return MimeTreeParser::Util::iconNameForMimetype(QLatin1StringView(mimeType), node->contentDisposition()->filename(), ct->name());
+    return MimeTreeParser::Util::iconNameForMimetype(QLatin1StringView(mimeType), cd ? cd->filename() : QString(), ct ? ct->name() : QString());
 }
 
 QString MimeTreeParser::Util::htmlModeToString(HtmlMode mode)

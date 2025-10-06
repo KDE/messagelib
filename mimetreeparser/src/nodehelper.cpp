@@ -173,7 +173,7 @@ void NodeHelper::setPartMetaData(KMime::Content *node, const PartMetaData &metaD
     mPartMetaDatas.insert(node, metaData);
 }
 
-QString NodeHelper::writeFileToTempFile(KMime::Content *node, const QString &filename)
+QString NodeHelper::writeFileToTempFile(const KMime::Content *node, const QString &filename)
 {
     QString fname = createTempDir(persistentIndex(node));
     if (fname.isEmpty()) {
@@ -224,7 +224,7 @@ QString NodeHelper::writeNodeToTempFile(const KMime::Content *node)
 
     qCDebug(MIMETREEPARSER_LOG) << "Create temp file: " << fname;
     QByteArray data = node->decodedBody();
-    if (node->contentType() && node->contentType()->isText() && !data.isEmpty()) {
+    if (const auto ct = node->contentType(); ct && ct->isText() && !data.isEmpty()) {
         // convert CRLF to LF before writing text attachments to disk
         data = KMime::CRLFtoLF(data);
     }
@@ -550,7 +550,7 @@ QDateTime NodeHelper::dateHeader(KMime::Content *message) const
     return {};
 }
 
-void NodeHelper::setOverrideCodec(KMime::Content *node, const QByteArray &codec)
+void NodeHelper::setOverrideCodec(const KMime::Content *node, const QByteArray &codec)
 {
     if (!node) {
         return;
@@ -559,7 +559,7 @@ void NodeHelper::setOverrideCodec(KMime::Content *node, const QByteArray &codec)
     mOverrideCodecs[node] = codec;
 }
 
-QByteArray NodeHelper::codecName(KMime::Content *node) const
+QByteArray NodeHelper::codecName(const KMime::Content *node) const
 {
     if (!node || !node->contentType()) {
         return "utf-8";
@@ -629,13 +629,13 @@ void NodeHelper::setBodyPartMemento(KMime::Content *node, const QByteArray &whic
     }
 }
 
-bool NodeHelper::isNodeDisplayedEmbedded(KMime::Content *node) const
+bool NodeHelper::isNodeDisplayedEmbedded(const KMime::Content *node) const
 {
     qCDebug(MIMETREEPARSER_LOG) << "IS NODE: " << mDisplayEmbeddedNodes.contains(node);
     return mDisplayEmbeddedNodes.contains(node);
 }
 
-void NodeHelper::setNodeDisplayedEmbedded(KMime::Content *node, bool displayedEmbedded)
+void NodeHelper::setNodeDisplayedEmbedded(const KMime::Content *node, bool displayedEmbedded)
 {
     qCDebug(MIMETREEPARSER_LOG) << "SET NODE: " << node << displayedEmbedded;
     if (displayedEmbedded) {
@@ -645,12 +645,12 @@ void NodeHelper::setNodeDisplayedEmbedded(KMime::Content *node, bool displayedEm
     }
 }
 
-bool NodeHelper::isNodeDisplayedHidden(KMime::Content *node) const
+bool NodeHelper::isNodeDisplayedHidden(const KMime::Content *node) const
 {
     return mDisplayHiddenNodes.contains(node);
 }
 
-void NodeHelper::setNodeDisplayedHidden(KMime::Content *node, bool displayedHidden)
+void NodeHelper::setNodeDisplayedHidden(const KMime::Content *node, bool displayedHidden)
 {
     if (displayedHidden) {
         mDisplayHiddenNodes.insert(node);

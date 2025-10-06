@@ -2844,7 +2844,7 @@ bool ViewerPrivate::showEncryptionDetails() const
     return count;
 }
 
-void ViewerPrivate::scrollToAttachment(KMime::Content *node)
+void ViewerPrivate::scrollToAttachment(const KMime::Content *node)
 {
     const QString indexStr = node->index().toString();
     // The anchors for this are created in ObjectTreeParser::parseObjectTree()

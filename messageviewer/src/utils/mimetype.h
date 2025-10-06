@@ -46,7 +46,7 @@ namespace Util
                                                                const QString &fallbackFileName1 = QString(),
                                                                const QString &fallbackFileName2 = QString());
 
-[[nodiscard]] QString MESSAGEVIEWER_EXPORT iconPathForContent(KMime::Content *node, int iconSize);
+[[nodiscard]] QString MESSAGEVIEWER_EXPORT iconPathForContent(const KMime::Content *node, int iconSize);
 
 struct AttachmentDisplayInfo {
     QString label;
@@ -54,6 +54,6 @@ struct AttachmentDisplayInfo {
     bool displayInHeader = false;
 };
 
-[[nodiscard]] AttachmentDisplayInfo attachmentDisplayInfo(KMime::Content *node);
+[[nodiscard]] AttachmentDisplayInfo attachmentDisplayInfo(const KMime::Content *node);
 }
 }

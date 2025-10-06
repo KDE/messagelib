@@ -94,10 +94,10 @@ public:
     [[nodiscard]] KMime::Message *messageWithExtraContent(KMime::Content *topLevelNode);
 
     /** Get a codec suitable for this message part */
-    [[nodiscard]] QByteArray codecName(KMime::Content *node) const;
+    [[nodiscard]] QByteArray codecName(const KMime::Content *node) const;
 
     /** Set the charset the user selected for the message to display */
-    void setOverrideCodec(KMime::Content *node, const QByteArray &codec);
+    void setOverrideCodec(const KMime::Content *node, const QByteArray &codec);
 
     Interface::BodyPartMemento *bodyPartMemento(KMime::Content *node, const QByteArray &which) const;
 
@@ -105,12 +105,12 @@ public:
 
     // A flag to remember if the node was embedded. This is useful for attachment nodes, the reader
     // needs to know if they were displayed inline or not.
-    [[nodiscard]] bool isNodeDisplayedEmbedded(KMime::Content *node) const;
-    void setNodeDisplayedEmbedded(KMime::Content *node, bool displayedEmbedded);
+    [[nodiscard]] bool isNodeDisplayedEmbedded(const KMime::Content *node) const;
+    void setNodeDisplayedEmbedded(const KMime::Content *node, bool displayedEmbedded);
 
     // Same as above, but this time determines if the node was hidden or not
-    [[nodiscard]] bool isNodeDisplayedHidden(KMime::Content *node) const;
-    void setNodeDisplayedHidden(KMime::Content *node, bool displayedHidden);
+    [[nodiscard]] bool isNodeDisplayedHidden(const KMime::Content *node) const;
+    void setNodeDisplayedHidden(const KMime::Content *node, bool displayedHidden);
 
     /**
      * Writes the given message part to a temporary file and returns the
@@ -118,7 +118,7 @@ public:
      */
     QString writeNodeToTempFile(const KMime::Content *node);
 
-    [[nodiscard]] QString writeFileToTempFile(KMime::Content *node, const QString &filename);
+    [[nodiscard]] QString writeFileToTempFile(const KMime::Content *node, const QString &filename);
 
     /**
      * Returns the temporary file path and name where this node was saved, or an empty url
@@ -245,9 +245,9 @@ private:
     QList<KMime::Content *> mNodesUnderProcess;
     QMap<const KMime::Content *, KMMsgEncryptionState> mEncryptionState;
     QMap<const KMime::Content *, KMMsgSignatureState> mSignatureState;
-    QSet<KMime::Content *> mDisplayEmbeddedNodes;
-    QSet<KMime::Content *> mDisplayHiddenNodes;
-    QMap<KMime::Content *, QByteArray> mOverrideCodecs;
+    QSet<const KMime::Content *> mDisplayEmbeddedNodes;
+    QSet<const KMime::Content *> mDisplayHiddenNodes;
+    QMap<const KMime::Content *, QByteArray> mOverrideCodecs;
     QMap<QString, QMap<QByteArray, Interface::BodyPartMemento *>> mBodyPartMementoMap;
     QMap<KMime::Content *, PartMetaData> mPartMetaDatas;
     QMap<KMime::Message::Content *, QList<KMime::Content *>> mExtraContents;

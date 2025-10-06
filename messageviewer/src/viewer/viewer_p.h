@@ -416,7 +416,7 @@ public:
 
     [[nodiscard]] bool showEncryptionDetails() const;
 
-    void scrollToAttachment(KMime::Content *node);
+    void scrollToAttachment(const KMime::Content *node);
     void setUseFixedFont(bool useFixedFont);
 
     void attachmentView(KMime::Content *atmNode);

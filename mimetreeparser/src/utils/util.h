@@ -39,9 +39,9 @@ enum HtmlMode {
 
 [[nodiscard]] MIMETREEPARSER_EXPORT QString htmlModeToString(Util::HtmlMode mode);
 
-[[nodiscard]] MIMETREEPARSER_EXPORT bool isTypeBlacklisted(KMime::Content *node);
+[[nodiscard]] MIMETREEPARSER_EXPORT bool isTypeBlacklisted(const KMime::Content *node);
 
-[[nodiscard]] MIMETREEPARSER_EXPORT QString labelForContent(KMime::Content *node);
+[[nodiscard]] MIMETREEPARSER_EXPORT QString labelForContent(const KMime::Content *node);
 
 [[nodiscard]] MIMETREEPARSER_EXPORT QMimeType mimetype(const QString &name);
 
@@ -49,6 +49,6 @@ enum HtmlMode {
                                                                 const QString &fallbackFileName1 = QString(),
                                                                 const QString &fallbackFileName2 = QString());
 
-[[nodiscard]] MIMETREEPARSER_EXPORT QString iconNameForContent(KMime::Content *node);
+[[nodiscard]] MIMETREEPARSER_EXPORT QString iconNameForContent(const KMime::Content *node);
 }
 }
