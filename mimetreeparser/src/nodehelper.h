@@ -46,9 +46,9 @@ public:
 
     ~NodeHelper() override;
 
-    void setNodeProcessed(KMime::Content *node, bool recurse);
-    void setNodeUnprocessed(KMime::Content *node, bool recurse);
-    [[nodiscard]] bool nodeProcessed(KMime::Content *node) const;
+    void setNodeProcessed(const KMime::Content *node, bool recurse);
+    void setNodeUnprocessed(const KMime::Content *node, bool recurse);
+    [[nodiscard]] bool nodeProcessed(const KMime::Content *node) const;
     void clear();
     void forceCleanTempFiles();
 
@@ -61,8 +61,8 @@ public:
     [[nodiscard]] KMMsgSignatureState overallSignatureState(KMime::Content *node) const;
     [[nodiscard]] KMMsgEncryptionState overallEncryptionState(KMime::Content *node) const;
 
-    void setPartMetaData(KMime::Content *node, const PartMetaData &metaData);
-    [[nodiscard]] PartMetaData partMetaData(KMime::Content *node);
+    void setPartMetaData(const KMime::Content *node, const PartMetaData &metaData);
+    [[nodiscard]] PartMetaData partMetaData(const KMime::Content *node);
 
     /**
      *  Set the 'Content-Type' by mime-magic from the contents of the body.
@@ -86,7 +86,7 @@ public:
     void cleanExtraContent(KMime::Content *topLevelNode);
 
     /** Get the extra nodes attached to the @param topLevelNode and all sub-nodes of @param topLevelNode */
-    [[nodiscard]] QList<KMime::Content *> extraContents(KMime::Content *topLevelNode) const;
+    [[nodiscard]] QList<KMime::Content *> extraContents(const KMime::Content *topLevelNode) const;
 
     /** Return a modified message (node tree) starting from @param topLevelNode that has the original nodes and the extra nodes.
         The caller has the responsibility to delete the new message.
@@ -154,7 +154,7 @@ public:
     /**
      * @return true if this node is a child or an encapsulated message
      */
-    [[nodiscard]] static bool isInEncapsulatedMessage(KMime::Content *node);
+    [[nodiscard]] static bool isInEncapsulatedMessage(const KMime::Content *node);
 
     /**
      * Returns the charset for the given node. If no charset is specified
@@ -189,7 +189,7 @@ public:
      */
     [[nodiscard]] static QStringList supportedEncodings(); // TODO(Andras) move to a utility class?
 
-    [[nodiscard]] QString fromAsString(KMime::Content *node) const;
+    [[nodiscard]] QString fromAsString(const KMime::Content *node) const;
 
     [[nodiscard]] KMime::Content *decryptedNodeForContent(KMime::Content *content) const;
 
@@ -241,16 +241,16 @@ private:
     KMime::Content *contentFromIndex(KMime::Content *node, const QString &persistentIndex) const;
 
 private:
-    QList<KMime::Content *> mProcessedNodes;
-    QList<KMime::Content *> mNodesUnderProcess;
+    QList<const KMime::Content *> mProcessedNodes;
+    QList<const KMime::Content *> mNodesUnderProcess;
     QMap<const KMime::Content *, KMMsgEncryptionState> mEncryptionState;
     QMap<const KMime::Content *, KMMsgSignatureState> mSignatureState;
     QSet<const KMime::Content *> mDisplayEmbeddedNodes;
     QSet<const KMime::Content *> mDisplayHiddenNodes;
     QMap<const KMime::Content *, QByteArray> mOverrideCodecs;
     QMap<QString, QMap<QByteArray, Interface::BodyPartMemento *>> mBodyPartMementoMap;
-    QMap<KMime::Content *, PartMetaData> mPartMetaDatas;
-    QMap<KMime::Message::Content *, QList<KMime::Content *>> mExtraContents;
+    QMap<const KMime::Content *, PartMetaData> mPartMetaDatas;
+    QMap<const KMime::Message::Content *, QList<KMime::Content *>> mExtraContents;
     QPointer<AttachmentTemporaryFilesDirs> mAttachmentFilesDir;
     QMap<const KMime::Content *, QList<MessagePartPtr>> mHeaderOverwrite;
     QList<QPointer<AttachmentTemporaryFilesDirs>> mListAttachmentTemporaryDirs;

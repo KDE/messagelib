@@ -52,7 +52,7 @@ NodeHelper::~NodeHelper()
     clear();
 }
 
-void NodeHelper::setNodeProcessed(KMime::Content *node, bool recurse)
+void NodeHelper::setNodeProcessed(const KMime::Content *node, bool recurse)
 {
     if (!node) {
         return;
@@ -62,13 +62,13 @@ void NodeHelper::setNodeProcessed(KMime::Content *node, bool recurse)
     //<< " decodedContent" << node->decodedContent();
     if (recurse) {
         const auto contents = node->contents();
-        for (KMime::Content *c : contents) {
+        for (const KMime::Content *c : contents) {
             setNodeProcessed(c, true);
         }
     }
 }
 
-void NodeHelper::setNodeUnprocessed(KMime::Content *node, bool recurse)
+void NodeHelper::setNodeUnprocessed(const KMime::Content *node, bool recurse)
 {
     if (!node) {
         return;
@@ -76,8 +76,7 @@ void NodeHelper::setNodeUnprocessed(KMime::Content *node, bool recurse)
     mProcessedNodes.removeAll(node);
 
     // avoid double addition of extra nodes, eg. encrypted attachments
-    const QMap<KMime::Content *, QList<KMime::Content *>>::iterator it = mExtraContents.find(node);
-    if (it != mExtraContents.end()) {
+    if (const auto it = mExtraContents.find(node); it != mExtraContents.end()) {
         const auto contents = it.value();
         for (KMime::Content *c : contents) {
             KMime::Content *p = c->parent();
@@ -93,13 +92,13 @@ void NodeHelper::setNodeUnprocessed(KMime::Content *node, bool recurse)
     qCDebug(MIMETREEPARSER_LOG) << "Node UNprocessed: " << node;
     if (recurse) {
         const auto contents = node->contents();
-        for (KMime::Content *c : contents) {
+        for (const KMime::Content *c : contents) {
             setNodeUnprocessed(c, true);
         }
     }
 }
 
-bool NodeHelper::nodeProcessed(KMime::Content *node) const
+bool NodeHelper::nodeProcessed(const KMime::Content *node) const
 {
     if (!node) {
         return true;
@@ -125,9 +124,9 @@ void NodeHelper::clear()
     mOverrideCodecs.clear();
     std::for_each(mBodyPartMementoMap.begin(), mBodyPartMementoMap.end(), &clearBodyPartMemento);
     mBodyPartMementoMap.clear();
-    QMap<KMime::Content *, QList<KMime::Content *>>::ConstIterator end(mExtraContents.constEnd());
+    QMap<const KMime::Content *, QList<KMime::Content *>>::ConstIterator end(mExtraContents.constEnd());
 
-    for (QMap<KMime::Content *, QList<KMime::Content *>>::ConstIterator it = mExtraContents.constBegin(); it != end; ++it) {
+    for (auto it = mExtraContents.constBegin(); it != end; ++it) {
         const auto contents = it.value();
         for (KMime::Content *c : contents) {
             KMime::Content *p = c->parent();
@@ -163,12 +162,12 @@ KMMsgSignatureState NodeHelper::signatureState(const KMime::Content *node) const
     return mSignatureState.value(node, KMMsgNotSigned);
 }
 
-PartMetaData NodeHelper::partMetaData(KMime::Content *node)
+PartMetaData NodeHelper::partMetaData(const KMime::Content *node)
 {
     return mPartMetaDatas.value(node, PartMetaData());
 }
 
-void NodeHelper::setPartMetaData(KMime::Content *node, const PartMetaData &metaData)
+void NodeHelper::setPartMetaData(const KMime::Content *node, const PartMetaData &metaData)
 {
     mPartMetaDatas.insert(node, metaData);
 }
@@ -313,7 +312,7 @@ void NodeHelper::addTempFile(const QString &file)
     mAttachmentFilesDir->addTempFile(file);
 }
 
-bool NodeHelper::isInEncapsulatedMessage(KMime::Content *node)
+bool NodeHelper::isInEncapsulatedMessage(const KMime::Content *node)
 {
     const KMime::Content *const topLevel = node->topLevel();
     const KMime::Content *cur = node;
@@ -673,7 +672,7 @@ QString NodeHelper::persistentIndex(const KMime::Content *node) const
 
     QString indexStr = node->index().toString();
     if (indexStr.isEmpty()) {
-        QMapIterator<KMime::Message::Content *, QList<KMime::Content *>> it(mExtraContents);
+        QMapIterator<const KMime::Message::Content *, QList<KMime::Content *>> it(mExtraContents);
         while (it.hasNext()) {
             it.next();
             const auto &extraNodes = it.value();
@@ -691,7 +690,7 @@ QString NodeHelper::persistentIndex(const KMime::Content *node) const
     } else {
         const KMime::Content *const topLevel = node->topLevel();
         // if the node is an extra node, prepend the index of the extra node to the url
-        QMapIterator<KMime::Message::Content *, QList<KMime::Content *>> it(mExtraContents);
+        QMapIterator<const KMime::Message::Content *, QList<KMime::Content *>> it(mExtraContents);
         while (it.hasNext()) {
             it.next();
             const QList<KMime::Content *> &extraNodes = extraContents(it.key());
@@ -819,10 +818,11 @@ QStringList NodeHelper::supportedEncodings()
     return encodings;
 }
 
-QString NodeHelper::fromAsString(KMime::Content *node) const
+QString NodeHelper::fromAsString(const KMime::Content *node) const
 {
-    if (auto topLevel = dynamic_cast<KMime::Message *>(node->topLevel())) {
-        return topLevel->from()->asUnicodeString();
+    if (auto topLevel = dynamic_cast<const KMime::Message *>(node->topLevel())) {
+        const auto f = topLevel->from();
+        return f ? topLevel->from()->asUnicodeString() : QString();
     } else {
         auto realNode = std::find_if(mExtraContents.cbegin(), mExtraContents.cend(), [node](const QList<KMime::Content *> &nodes) {
             return nodes.contains(node);
@@ -847,7 +847,7 @@ void NodeHelper::cleanExtraContent(KMime::Content *topLevelNode)
     mExtraContents[topLevelNode].clear();
 }
 
-QList<KMime::Content *> NodeHelper::extraContents(KMime::Content *topLevelnode) const
+QList<KMime::Content *> NodeHelper::extraContents(const KMime::Content *topLevelnode) const
 {
     return mExtraContents.value(topLevelnode);
 }
