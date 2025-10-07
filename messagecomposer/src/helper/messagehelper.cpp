@@ -127,7 +127,7 @@ void applyIdentity(const KMime::Message::Ptr &message, const KIdentityManagement
     }
 }
 
-KMime::Types::AddrSpecList extractAddrSpecs(const KMime::Message::Ptr &msg, const QByteArray &header)
+KMime::Types::AddrSpecList extractAddrSpecs(const QSharedPointer<const KMime::Message> &msg, const QByteArray &header)
 {
     KMime::Types::AddrSpecList result;
     if (auto hrd = msg->headerByType(header.constData())) {

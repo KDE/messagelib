@@ -71,8 +71,8 @@ void SinglepartJobTest::testContentID()
     result->assemble();
     qDebug() << result->encodedContent();
     QCOMPARE(result->body(), data);
-    QVERIFY(result->header<Headers::ContentID>());
-    QCOMPARE(result->header<Headers::ContentID>()->identifier(), id);
+    QVERIFY(result->contentID(false));
+    QCOMPARE(result->contentID(false)->identifier(), id);
     delete cjob;
 }
 

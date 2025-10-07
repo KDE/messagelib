@@ -272,21 +272,21 @@ void MainTextJobTest::testHtmlWithImages()
         }
         // First image/png
         {
-            Content *image = result->contents().at(1);
-            QVERIFY(image->contentType(false));
+            const Content *image = result->contents().at(1);
+            QVERIFY(image->contentType());
             QCOMPARE(image->contentType()->mimeType(), QByteArray("image/png"));
             QCOMPARE(image->contentType()->name(), name1);
-            const Headers::ContentID *cid = image->header<Headers::ContentID>();
+            const Headers::ContentID *cid = image->contentID();
             QVERIFY(cid);
             QCOMPARE(cid->identifier(), cid1.toLatin1());
         }
         // Second image/png
         {
-            Content *image = result->contents().at(2);
-            QVERIFY(image->contentType(false));
+            const Content *image = result->contents().at(2);
+            QVERIFY(image->contentType());
             QCOMPARE(image->contentType()->mimeType(), QByteArray("image/png"));
             QCOMPARE(image->contentType()->name(), name2);
-            const Headers::ContentID *cid = image->header<Headers::ContentID>();
+            const Headers::ContentID *cid = image->contentID();
             QVERIFY(cid);
             QCOMPARE(cid->identifier(), cid2.toLatin1());
         }

@@ -46,7 +46,7 @@ void initFromMessage(const KMime::Message::Ptr &msg,
                      uint id,
                      bool idHeaders = true);
 
-MESSAGECOMPOSER_EXPORT KMime::Types::AddrSpecList extractAddrSpecs(const KMime::Message::Ptr &msg, const QByteArray &header);
+MESSAGECOMPOSER_EXPORT KMime::Types::AddrSpecList extractAddrSpecs(const QSharedPointer<const KMime::Message> &msg, const QByteArray &header);
 
 /** Set fields that are either automatically set (Message-id)
     or that do not change from one message to another (MIME-Version).
