@@ -89,7 +89,6 @@ RichTextComposerNg::RichTextComposerNg(QWidget *parent)
                 }
             });
     quicktextformatmessage->setEnabled(MessageComposer::MessageComposerSettings::activateQuickTextFormat());
-
 #endif
 }
 
