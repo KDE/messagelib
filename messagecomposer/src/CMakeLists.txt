@@ -313,6 +313,7 @@ target_link_libraries(KPim6MessageComposer
     KF6::GuiAddons
     KF6::Codecs
     ${Inotify_LIBRARIES}
+    KF6::TextAutoCorrectionWidgets
 )
 if (HAVE_TEXTADDONSWIDGET_RICHTEXTQUICKTEXTFORMAT)
     target_link_libraries(KPim6MessageComposer
@@ -320,18 +321,6 @@ if (HAVE_TEXTADDONSWIDGET_RICHTEXTQUICKTEXTFORMAT)
         KF6::TextAddonsWidgets
     )
 endif ()
-
-if(TARGET KF6::TextAutoCorrectionWidgets)
-    target_link_libraries(KPim6MessageComposer
-        PUBLIC
-        KF6::TextAutoCorrectionWidgets
-)
-else()
-    target_link_libraries(KPim6MessageComposer
-        PUBLIC
-        KF6::TextAutoCorrection
-)
-endif()
 
 target_include_directories(KPim6MessageComposer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageComposer/>")
 
