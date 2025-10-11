@@ -1,10 +1,10 @@
 # SPDX-FileCopyrightText: 2024 Johannes Obermayr <johannesobermayr@gmx.de>
-# Frederik Schwarzer <schwarzer@kde.org>, 2009, 2010, 2011, 2016, 2023.
-# Thomas Reitelbach <tr@erdfunkstelle.de>, 2009.
-# Torbjörn Klatt <torbjoern@torbjoern-klatt.de>, 2011.
-# Burkhard Lück <lueck@hube-lueck.de>, 2011, 2013, 2014, 2015, 2018, 2020.
-# Torbjörn Klatt <opensource@torbjoern-klatt.de>, 2011.
-# Jürgen Jäckle <divmails1@gmx.net>, 2021.
+# SPDX-FileCopyrightText: 2009, 2010, 2011, 2016, 2023 Frederik Schwarzer <schwarzer@kde.org>
+# SPDX-FileCopyrightText: 2009 Thomas Reitelbach <tr@erdfunkstelle.de>
+# SPDX-FileCopyrightText: 2011 Torbjörn Klatt <torbjoern@torbjoern-klatt.de>
+# SPDX-FileCopyrightText: 2011, 2013, 2014, 2015, 2018, 2020 Burkhard Lück <lueck@hube-lueck.de>
+# SPDX-FileCopyrightText: 2011 Torbjörn Klatt <opensource@torbjoern-klatt.de>
+# SPDX-FileCopyrightText: 2021 Jürgen Jäckle <divmails1@gmx.net>
 # Intevation GmbH, 2010.
 msgid ""
 msgstr ""
