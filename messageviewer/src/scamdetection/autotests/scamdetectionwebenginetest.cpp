@@ -146,6 +146,8 @@ void ScamDetectionWebEngineTest::scamtest_data()
                                << false;
 
     QTest::newRow("BUG-494603") << QStringLiteral(R"(<a href="https://www.kde.org?rid">https://www.kk.org</a>)") << true;
+
+    QTest::newRow("BUG-510551") << QStringLiteral(R"(<a href="https://example.org/A" title="https://example.org/A">https://example.org/A</a>)") << false;
 }
 
 void ScamDetectionWebEngineTest::scamtest()
@@ -159,6 +161,7 @@ void ScamDetectionWebEngineTest::scamtest()
     QVERIFY(scamDetectionSpy.wait());
     QCOMPARE(scamDetectionSpy.count(), 1);
     const bool scamResult = scamDetectionSpy.at(0).at(0).toBool();
+    QEXPECT_FAIL("BUG-510551", "BUG-510551 return true need to fix it", Continue);
     QCOMPARE(scamResult, result);
 }
 
