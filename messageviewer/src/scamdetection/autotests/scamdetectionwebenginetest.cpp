@@ -161,7 +161,6 @@ void ScamDetectionWebEngineTest::scamtest()
     QVERIFY(scamDetectionSpy.wait());
     QCOMPARE(scamDetectionSpy.count(), 1);
     const bool scamResult = scamDetectionSpy.at(0).at(0).toBool();
-    QEXPECT_FAIL("BUG-510551", "BUG-510551 return true need to fix it", Continue);
     QCOMPARE(scamResult, result);
 }
 

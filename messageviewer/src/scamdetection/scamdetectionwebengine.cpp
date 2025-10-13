@@ -105,7 +105,8 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
                         foundScam = true;
                     }
                 } else {
-                    if (href != title) {
+                    // qDebug() << " href "<< href << " title " << title;
+                    if (href.toLower() != title.toLower()) {
                         // http://www.kde.org == http://www.kde.org/
                         if (href != (title + u'/')) {
                             foundScam = true;
