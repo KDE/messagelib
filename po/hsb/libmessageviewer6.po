@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-25 00:43+0000\n"
+"POT-Creation-Date: 2025-10-14 02:37+0000\n"
 "PO-Revision-Date: 2021-11-05 12:48+0100\n"
 "Last-Translator: Eduard Werner/Edward Wornar <edi.werner@gmx.de>\n"
 "Language-Team: <hsb@li.org>\n"
@@ -1139,8 +1139,8 @@ msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "Powěsće zničić"
 
-#: scamdetection/scamdetectionwebengine.cpp:117
-#: scamdetection/scamdetectionwebengine.cpp:215
+#: scamdetection/scamdetectionwebengine.cpp:118
+#: scamdetection/scamdetectionwebengine.cpp:216
 #, kde-format
 msgid ""
 "This email contains a link which reads as '%1' in the text, but actually "
@@ -1148,7 +1148,7 @@ msgid ""
 "recipient"
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:130
+#: scamdetection/scamdetectionwebengine.cpp:131
 #, kde-format
 msgid ""
 "This email contains a link which points to a numerical IP address (%1) "
@@ -1156,7 +1156,7 @@ msgid ""
 "emails."
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:137
+#: scamdetection/scamdetectionwebengine.cpp:138
 #, kde-format
 msgid ""
 "This email contains a link which points to a hexadecimal IP address (%1) "
@@ -1164,29 +1164,29 @@ msgid ""
 "emails."
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:143
+#: scamdetection/scamdetectionwebengine.cpp:144
 #, kde-format
 msgid "This email contains a link (%1) which has a redirection"
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:149
+#: scamdetection/scamdetectionwebengine.cpp:150
 #, kde-format
 msgid ""
 "This email contains a link (%1) which contains multiple http://. This is "
 "often the case in scam emails."
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:160
+#: scamdetection/scamdetectionwebengine.cpp:161
 #, kde-format
 msgid "This email contains a shorturl (%1). It can redirect to another server."
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:234
+#: scamdetection/scamdetectionwebengine.cpp:235
 #, kde-format
 msgid "Message contains form element. This is often the case in scam emails."
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:238
+#: scamdetection/scamdetectionwebengine.cpp:239
 #, kde-format
 msgid "Details:"
 msgstr "Nadrobnosće:"

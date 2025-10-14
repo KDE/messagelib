@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-25 00:43+0000\n"
+"POT-Creation-Date: 2025-10-14 02:37+0000\n"
 "PO-Revision-Date: 2025-05-18 19:02+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -1115,8 +1115,8 @@ msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "மோசடிகளை கண்டறியும் கூறை அனைத்து அஞ்சல்களுக்கும் முடக்கு"
 
-#: scamdetection/scamdetectionwebengine.cpp:117
-#: scamdetection/scamdetectionwebengine.cpp:215
+#: scamdetection/scamdetectionwebengine.cpp:118
+#: scamdetection/scamdetectionwebengine.cpp:216
 #, kde-format
 msgid ""
 "This email contains a link which reads as '%1' in the text, but actually "
@@ -1126,7 +1126,7 @@ msgstr ""
 "இந்த அஞ்சலில் '%1' என்ற உரையை கொண்ட இணைப்பு, உண்மையில் '%2' என்பதை சுட்டுகிறது. இது, "
 "படிப்பவர்களை ஏமாற்றும் ஓர் முயற்சியாக இருக்கலாம்"
 
-#: scamdetection/scamdetectionwebengine.cpp:130
+#: scamdetection/scamdetectionwebengine.cpp:131
 #, kde-format
 msgid ""
 "This email contains a link which points to a numerical IP address (%1) "
@@ -1136,7 +1136,7 @@ msgstr ""
 "இந்த அஞ்சலில், சாதாரண இணையதள முகவரிக்கு பதிலாக, எண்ணுரு IP முகவரியை (%1-ஐ) சுட்டும் "
 "ஓர் இணைப்புள்ளது. பெரும்பாலும், மோசடி அஞ்சல்களிலேயே இவ்வாறு இருக்கும்."
 
-#: scamdetection/scamdetectionwebengine.cpp:137
+#: scamdetection/scamdetectionwebengine.cpp:138
 #, kde-format
 msgid ""
 "This email contains a link which points to a hexadecimal IP address (%1) "
@@ -1146,12 +1146,12 @@ msgstr ""
 "இந்த அஞ்சலில், சாதாரண இணையதள முகவரிக்கு பதிலாக, பதினறும எண்ணுரு IP முகவரியை (%1-"
 "ஐ) சுட்டும் ஓர் இணைப்புள்ளது. பெரும்பாலும், மோசடி அஞ்சல்களிலேயே இவ்வாறு இருக்கும்."
 
-#: scamdetection/scamdetectionwebengine.cpp:143
+#: scamdetection/scamdetectionwebengine.cpp:144
 #, kde-format
 msgid "This email contains a link (%1) which has a redirection"
 msgstr "இந்த அஞ்சலில் ஓர் இணைப்பு (%1) வழிமாற்றத்தை கொண்டுள்ளது"
 
-#: scamdetection/scamdetectionwebengine.cpp:149
+#: scamdetection/scamdetectionwebengine.cpp:150
 #, kde-format
 msgid ""
 "This email contains a link (%1) which contains multiple http://. This is "
@@ -1160,19 +1160,19 @@ msgstr ""
 "இந்த அஞ்சலில் ஓர் இணைப்பு (%1) http:// என்ற சரத்தை பலமுறை கொண்டுள்ளது. பெரும்பாலும், "
 "மோசடி அஞ்சல்களிலேயே இவ்வாறு இருக்கும்."
 
-#: scamdetection/scamdetectionwebengine.cpp:160
+#: scamdetection/scamdetectionwebengine.cpp:161
 #, kde-format
 msgid "This email contains a shorturl (%1). It can redirect to another server."
 msgstr ""
 "இந்த அஞ்சல் ஓர் சுருக்கப்பட்ட முகவரியை கொண்டுள்ளது (%1). அது வேறு சேவையகத்திற்கு "
 "வழிமாற்றலாம்."
 
-#: scamdetection/scamdetectionwebengine.cpp:234
+#: scamdetection/scamdetectionwebengine.cpp:235
 #, kde-format
 msgid "Message contains form element. This is often the case in scam emails."
 msgstr "அஞ்சலில் ஓர் படிவம் உள்ளது. பெரும்பாலும், மோசடி அஞ்சல்களிலேயே இவ்வாறு இருக்கும்."
 
-#: scamdetection/scamdetectionwebengine.cpp:238
+#: scamdetection/scamdetectionwebengine.cpp:239
 #, kde-format
 msgid "Details:"
 msgstr "விவரங்கள்:"

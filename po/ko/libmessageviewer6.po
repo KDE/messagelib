@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-25 00:43+0000\n"
+"POT-Creation-Date: 2025-10-14 02:37+0000\n"
 "PO-Revision-Date: 2025-06-11 00:22+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1089,8 +1089,8 @@ msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "모든 메시지의 사기 감지 끄기"
 
-#: scamdetection/scamdetectionwebengine.cpp:117
-#: scamdetection/scamdetectionwebengine.cpp:215
+#: scamdetection/scamdetectionwebengine.cpp:118
+#: scamdetection/scamdetectionwebengine.cpp:216
 #, kde-format
 msgid ""
 "This email contains a link which reads as '%1' in the text, but actually "
@@ -1101,7 +1101,7 @@ msgstr ""
 "'%2'(으)로 가는 링크가 있습니다. 이는 사기 메일에서 자주 사용하는 수법으로 수"
 "신자를 혼동시킵니다"
 
-#: scamdetection/scamdetectionwebengine.cpp:130
+#: scamdetection/scamdetectionwebengine.cpp:131
 #, kde-format
 msgid ""
 "This email contains a link which points to a numerical IP address (%1) "
@@ -1112,7 +1112,7 @@ msgstr ""
 "로 구성된 IP 주소(%1)로 가는 링크가 있습니다. 이는 사기 메일에서 자주 사용하"
 "는 수법입니다."
 
-#: scamdetection/scamdetectionwebengine.cpp:137
+#: scamdetection/scamdetectionwebengine.cpp:138
 #, kde-format
 msgid ""
 "This email contains a link which points to a hexadecimal IP address (%1) "
@@ -1123,12 +1123,12 @@ msgstr ""
 "수로 구성된 IP 주소(%1)로 가는 링크가 있습니다. 이는 사기 메일에서 자주 사용"
 "하는 수법입니다."
 
-#: scamdetection/scamdetectionwebengine.cpp:143
+#: scamdetection/scamdetectionwebengine.cpp:144
 #, kde-format
 msgid "This email contains a link (%1) which has a redirection"
 msgstr "이 메일 메시지에 넘겨주기 링크(%1)가 들어 있음"
 
-#: scamdetection/scamdetectionwebengine.cpp:149
+#: scamdetection/scamdetectionwebengine.cpp:150
 #, kde-format
 msgid ""
 "This email contains a link (%1) which contains multiple http://. This is "
@@ -1137,19 +1137,19 @@ msgstr ""
 "이 메일 메시지에는 http://가 여러 번 들어간 링크(%1)가 들어 있습니다. 이는 사"
 "기 메일에서 자주 사용하는 수법입니다."
 
-#: scamdetection/scamdetectionwebengine.cpp:160
+#: scamdetection/scamdetectionwebengine.cpp:161
 #, kde-format
 msgid "This email contains a shorturl (%1). It can redirect to another server."
 msgstr ""
 "이 메일 메시지에는 단축 URL(%1)이 들어 있습니다. 다른 서버로 넘겨질 수 있습니"
 "다."
 
-#: scamdetection/scamdetectionwebengine.cpp:234
+#: scamdetection/scamdetectionwebengine.cpp:235
 #, kde-format
 msgid "Message contains form element. This is often the case in scam emails."
 msgstr "메시지에 폼이 들어 있습니다. 사기 메일에서 자주 사용하는 수법입니다."
 
-#: scamdetection/scamdetectionwebengine.cpp:238
+#: scamdetection/scamdetectionwebengine.cpp:239
 #, kde-format
 msgid "Details:"
 msgstr "자세한 정보:"

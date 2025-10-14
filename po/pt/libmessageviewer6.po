@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-25 00:43+0000\n"
+"POT-Creation-Date: 2025-10-14 02:37+0000\n"
 "PO-Revision-Date: 2023-03-08 09:12+0000\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <kde-i18n-pt@kde.org>\n"
@@ -1159,8 +1159,8 @@ msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "Desactivar a detecção de farsas para todas as mensagens"
 
-#: scamdetection/scamdetectionwebengine.cpp:117
-#: scamdetection/scamdetectionwebengine.cpp:215
+#: scamdetection/scamdetectionwebengine.cpp:118
+#: scamdetection/scamdetectionwebengine.cpp:216
 #, kde-format
 msgid ""
 "This email contains a link which reads as '%1' in the text, but actually "
@@ -1171,7 +1171,7 @@ msgstr ""
 "facto aponta para '%2'. Este é normalmente o caso nas mensagens de burlas "
 "que enganam o destinatário"
 
-#: scamdetection/scamdetectionwebengine.cpp:130
+#: scamdetection/scamdetectionwebengine.cpp:131
 #, kde-format
 msgid ""
 "This email contains a link which points to a numerical IP address (%1) "
@@ -1182,7 +1182,7 @@ msgstr ""
 "de um endereço em texto típico de uma página Web. Este é normalmente o caso "
 "nas mensagens de burlas."
 
-#: scamdetection/scamdetectionwebengine.cpp:137
+#: scamdetection/scamdetectionwebengine.cpp:138
 #, kde-format
 msgid ""
 "This email contains a link which points to a hexadecimal IP address (%1) "
@@ -1193,13 +1193,13 @@ msgstr ""
 "em vez de um endereço em texto típico de uma página Web. Este é normalmente "
 "o caso nas mensagens de burlas."
 
-#: scamdetection/scamdetectionwebengine.cpp:143
+#: scamdetection/scamdetectionwebengine.cpp:144
 #, kde-format
 msgid "This email contains a link (%1) which has a redirection"
 msgstr ""
 "Esta mensagem contém um endereço (%1) que tem um reencaminhamento para outro."
 
-#: scamdetection/scamdetectionwebengine.cpp:149
+#: scamdetection/scamdetectionwebengine.cpp:150
 #, kde-format
 msgid ""
 "This email contains a link (%1) which contains multiple http://. This is "
@@ -1208,20 +1208,20 @@ msgstr ""
 "Esta mensagem contém um endereço (%1) que contém vários 'http://'. Este é "
 "normalmente o caso nas mensagens de burlas."
 
-#: scamdetection/scamdetectionwebengine.cpp:160
+#: scamdetection/scamdetectionwebengine.cpp:161
 #, kde-format
 msgid "This email contains a shorturl (%1). It can redirect to another server."
 msgstr ""
 "Esta mensagem contém um endereço (%1) que tem um reencaminhamento para outro."
 
-#: scamdetection/scamdetectionwebengine.cpp:234
+#: scamdetection/scamdetectionwebengine.cpp:235
 #, kde-format
 msgid "Message contains form element. This is often the case in scam emails."
 msgstr ""
 "A mensagem contém um elemento de formulário. Este é normalmente o caso nas "
 "mensagens de burlas."
 
-#: scamdetection/scamdetectionwebengine.cpp:238
+#: scamdetection/scamdetectionwebengine.cpp:239
 #, kde-format
 msgid "Details:"
 msgstr "Detalhes:"
