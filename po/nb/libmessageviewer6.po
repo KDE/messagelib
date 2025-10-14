@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-04 00:44+0000\n"
+"POT-Creation-Date: 2025-10-14 00:43+0000\n"
 "PO-Revision-Date: 2014-09-13 18:21+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -996,8 +996,8 @@ msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "Slå av svindelsøk for alle meldinger"
 
-#: scamdetection/scamdetectionwebengine.cpp:117
-#: scamdetection/scamdetectionwebengine.cpp:215
+#: scamdetection/scamdetectionwebengine.cpp:118
+#: scamdetection/scamdetectionwebengine.cpp:216
 #, kde-format
 msgid ""
 "This email contains a link which reads as '%1' in the text, but actually "
@@ -1008,7 +1008,7 @@ msgstr ""
 "virkeligheten peker til «%2». Dette er ofte slik i svindelpost for å villede "
 "mottakeren."
 
-#: scamdetection/scamdetectionwebengine.cpp:130
+#: scamdetection/scamdetectionwebengine.cpp:131
 #, kde-format
 msgid ""
 "This email contains a link which points to a numerical IP address (%1) "
@@ -1019,7 +1019,7 @@ msgstr ""
 "i stedet for en typisk nettside-adresse som tekst. Dette er ofte slik i "
 "svindelpost."
 
-#: scamdetection/scamdetectionwebengine.cpp:137
+#: scamdetection/scamdetectionwebengine.cpp:138
 #, kde-format
 msgid ""
 "This email contains a link which points to a hexadecimal IP address (%1) "
@@ -1030,12 +1030,12 @@ msgstr ""
 "(%1) i stedet for en typisk nettside-adresse som tekst. Dette er ofte slik i "
 "svindelpost."
 
-#: scamdetection/scamdetectionwebengine.cpp:143
+#: scamdetection/scamdetectionwebengine.cpp:144
 #, kde-format
 msgid "This email contains a link (%1) which has a redirection"
 msgstr "Denne meldinga inneholder en lenke (%1) som har en omdirigering"
 
-#: scamdetection/scamdetectionwebengine.cpp:149
+#: scamdetection/scamdetectionwebengine.cpp:150
 #, kde-format
 msgid ""
 "This email contains a link (%1) which contains multiple http://. This is "
@@ -1044,19 +1044,19 @@ msgstr ""
 "Denne meldinga inneholder en lenke (%1) som inneholder flere http://-"
 "strenger. Dette er ofte slik i svindelpost."
 
-#: scamdetection/scamdetectionwebengine.cpp:160
+#: scamdetection/scamdetectionwebengine.cpp:161
 #, kde-format
 msgid "This email contains a shorturl (%1). It can redirect to another server."
 msgstr ""
 "Denne meldinga inneholder en kort url (%1). Denne kan omdirigere til en "
 "annen tjener."
 
-#: scamdetection/scamdetectionwebengine.cpp:234
+#: scamdetection/scamdetectionwebengine.cpp:235
 #, kde-format
 msgid "Message contains form element. This is often the case in scam emails."
 msgstr "Meldinga inneholder et form-element. Det er ofte slik i svindelpost."
 
-#: scamdetection/scamdetectionwebengine.cpp:238
+#: scamdetection/scamdetectionwebengine.cpp:239
 #, kde-format
 msgid "Details:"
 msgstr "Detaljer:"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-04 00:44+0000\n"
+"POT-Creation-Date: 2025-10-14 00:43+0000\n"
 "PO-Revision-Date: 2024-12-20 22:01+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -1005,8 +1005,8 @@ msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "सर्वेषां सन्देशानां कृते घोटालेन अन्वेषणं निष्क्रियं कुर्वन्तु"
 
-#: scamdetection/scamdetectionwebengine.cpp:117
-#: scamdetection/scamdetectionwebengine.cpp:215
+#: scamdetection/scamdetectionwebengine.cpp:118
+#: scamdetection/scamdetectionwebengine.cpp:216
 #, kde-format
 msgid ""
 "This email contains a link which reads as '%1' in the text, but actually "
@@ -1016,7 +1016,7 @@ msgstr ""
 "अस्मिन् ईमेल-पत्रे एकं लिङ्क् अस्ति यत् पाठे '%1' इति पठति, परन्तु वस्तुतः '%2' इति सूचयति । "
 "प्रायः एतत् भवति घोटाला-ईमेल-पत्रेषु प्राप्तकर्तां भ्रमितुं"
 
-#: scamdetection/scamdetectionwebengine.cpp:130
+#: scamdetection/scamdetectionwebengine.cpp:131
 #, kde-format
 msgid ""
 "This email contains a link which points to a numerical IP address (%1) "
@@ -1026,7 +1026,7 @@ msgstr ""
 "अस्मिन् ईमेल-पत्रे एकः लिङ्क् अस्ति यः विशिष्टस्य पाठ्य-जालस्थल-सङ्केतस्य स्थाने संख्यात्मकं IP-"
 "सङ्केतं (%1) सूचयति । प्रायः घोटाल-ईमेल-पत्रेषु एतत् भवति ।"
 
-#: scamdetection/scamdetectionwebengine.cpp:137
+#: scamdetection/scamdetectionwebengine.cpp:138
 #, kde-format
 msgid ""
 "This email contains a link which points to a hexadecimal IP address (%1) "
@@ -1036,12 +1036,12 @@ msgstr ""
 "अस्मिन् ईमेल-पत्रे एकः लिङ्कः अस्ति यः विशिष्टस्य पाठ्य-जालस्थल-सङ्केतस्य स्थाने षट्-दशमलव-IP-"
 "सङ्केतं (%1) सूचयति । प्रायः घोटाल-ईमेल-पत्रेषु एतत् भवति ।"
 
-#: scamdetection/scamdetectionwebengine.cpp:143
+#: scamdetection/scamdetectionwebengine.cpp:144
 #, kde-format
 msgid "This email contains a link (%1) which has a redirection"
 msgstr "अस्मिन् ईमेल-पत्रे एकः लिङ्क् (%1) अस्ति यस्य पुनर्निर्देशनं भवति"
 
-#: scamdetection/scamdetectionwebengine.cpp:149
+#: scamdetection/scamdetectionwebengine.cpp:150
 #, kde-format
 msgid ""
 "This email contains a link (%1) which contains multiple http://. This is "
@@ -1050,17 +1050,17 @@ msgstr ""
 "अस्मिन् ईमेल-पत्रे एकं लिङ्क् (%1) अस्ति यस्मिन् बहुविधं http:// अस्ति । प्रायः घोटाल-ईमेल-"
 "पत्रेषु एतत् भवति ।"
 
-#: scamdetection/scamdetectionwebengine.cpp:160
+#: scamdetection/scamdetectionwebengine.cpp:161
 #, kde-format
 msgid "This email contains a shorturl (%1). It can redirect to another server."
 msgstr "अस्मिन् ईमेलपत्रे एकः लघुः (%1) अस्ति । अन्यस्मिन् सर्वरे पुनः निर्देशयितुं शक्नोति ।"
 
-#: scamdetection/scamdetectionwebengine.cpp:234
+#: scamdetection/scamdetectionwebengine.cpp:235
 #, kde-format
 msgid "Message contains form element. This is often the case in scam emails."
 msgstr "सन्देशे रूपतत्त्वं भवति । प्रायः घोटाल-ईमेल-पत्रेषु एतत् भवति ।"
 
-#: scamdetection/scamdetectionwebengine.cpp:238
+#: scamdetection/scamdetectionwebengine.cpp:239
 #, kde-format
 msgid "Details:"
 msgstr "वर्णन:"

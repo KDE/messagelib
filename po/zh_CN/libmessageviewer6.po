@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-04 00:44+0000\n"
+"POT-Creation-Date: 2025-10-14 00:43+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -992,8 +992,8 @@ msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:117
-#: scamdetection/scamdetectionwebengine.cpp:215
+#: scamdetection/scamdetectionwebengine.cpp:118
+#: scamdetection/scamdetectionwebengine.cpp:216
 #, kde-format
 msgid ""
 "This email contains a link which reads as '%1' in the text, but actually "
@@ -1002,7 +1002,7 @@ msgid ""
 msgstr ""
 "此信件包含了文本显示为“%1”但是指向“%2”的链接。这常见于欺诈信件以误导收件人。"
 
-#: scamdetection/scamdetectionwebengine.cpp:130
+#: scamdetection/scamdetectionwebengine.cpp:131
 #, kde-format
 msgid ""
 "This email contains a link which points to a numerical IP address (%1) "
@@ -1012,7 +1012,7 @@ msgstr ""
 "此信件包含了指向数字 IP 地址 (%1) 而不是常见的文本网站地址的链接。这常见于欺"
 "诈信件。"
 
-#: scamdetection/scamdetectionwebengine.cpp:137
+#: scamdetection/scamdetectionwebengine.cpp:138
 #, kde-format
 msgid ""
 "This email contains a link which points to a hexadecimal IP address (%1) "
@@ -1022,29 +1022,29 @@ msgstr ""
 "此信件包含了指向十六进制 IP 地址 (%1) 而不是常见的文本网站地址的链接。这常见"
 "于欺诈信件。"
 
-#: scamdetection/scamdetectionwebengine.cpp:143
+#: scamdetection/scamdetectionwebengine.cpp:144
 #, kde-format
 msgid "This email contains a link (%1) which has a redirection"
 msgstr "此信件包含了有重定向的链接 (%1)"
 
-#: scamdetection/scamdetectionwebengine.cpp:149
+#: scamdetection/scamdetectionwebengine.cpp:150
 #, kde-format
 msgid ""
 "This email contains a link (%1) which contains multiple http://. This is "
 "often the case in scam emails."
 msgstr "此信件包含了包含多个 http:// 的链接 (%1)。这常见于欺诈信件。"
 
-#: scamdetection/scamdetectionwebengine.cpp:160
+#: scamdetection/scamdetectionwebengine.cpp:161
 #, kde-format
 msgid "This email contains a shorturl (%1). It can redirect to another server."
 msgstr "此信件包含短链接 (%1)。它重定向到其他服务器。"
 
-#: scamdetection/scamdetectionwebengine.cpp:234
+#: scamdetection/scamdetectionwebengine.cpp:235
 #, kde-format
 msgid "Message contains form element. This is often the case in scam emails."
 msgstr "信件包含表单元素。这常见于欺诈信件。"
 
-#: scamdetection/scamdetectionwebengine.cpp:238
+#: scamdetection/scamdetectionwebengine.cpp:239
 #, kde-format
 msgid "Details:"
 msgstr "细节："

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-04 00:44+0000\n"
+"POT-Creation-Date: 2025-10-14 00:43+0000\n"
 "PO-Revision-Date: 2013-11-06 03:17+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -1087,8 +1087,8 @@ msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "Бүкіл хабарламалар алаяқтыққа тексерілмесін"
 
-#: scamdetection/scamdetectionwebengine.cpp:117
-#: scamdetection/scamdetectionwebengine.cpp:215
+#: scamdetection/scamdetectionwebengine.cpp:118
+#: scamdetection/scamdetectionwebengine.cpp:216
 #, kde-format
 msgid ""
 "This email contains a link which reads as '%1' in the text, but actually "
@@ -1098,7 +1098,7 @@ msgstr ""
 "Бұл хатта мәтіні '%1' деп оқылатын, бірақ шынында '%2' дегенге бағыттайтын "
 "сілтемесі бар. Бұл көбінде алаяқтар алдауға қолданатын тәсіл."
 
-#: scamdetection/scamdetectionwebengine.cpp:130
+#: scamdetection/scamdetectionwebengine.cpp:131
 #, kde-format
 msgid ""
 "This email contains a link which points to a numerical IP address (%1) "
@@ -1108,7 +1108,7 @@ msgstr ""
 "Бұл хатта кәдімгі мәтінді веб-сайт атауы орында IP-адресі (%1) келтірілген "
 "сілтемесі бар. Бұл көбінде алаяқтар алдауға қолданатын тәсіл."
 
-#: scamdetection/scamdetectionwebengine.cpp:137
+#: scamdetection/scamdetectionwebengine.cpp:138
 #, kde-format
 msgid ""
 "This email contains a link which points to a hexadecimal IP address (%1) "
@@ -1119,12 +1119,12 @@ msgstr ""
 "(%1) келтірілген сілтемесі бар. Бұл көбінде алаяқтар алдауға қолданатын "
 "тәсіл."
 
-#: scamdetection/scamdetectionwebengine.cpp:143
+#: scamdetection/scamdetectionwebengine.cpp:144
 #, kde-format
 msgid "This email contains a link (%1) which has a redirection"
 msgstr "Бұл хатта қайта бағыттайтын (%1) сілтеме бар"
 
-#: scamdetection/scamdetectionwebengine.cpp:149
+#: scamdetection/scamdetectionwebengine.cpp:150
 #, kde-format
 msgid ""
 "This email contains a link (%1) which contains multiple http://. This is "
@@ -1133,19 +1133,19 @@ msgstr ""
 "Бұл хатта бірнеше http:// дегені бар сілтеме (%1) келтірілген. Бұл көбінде "
 "алаяқтар алдауға қолданатын тәсіл."
 
-#: scamdetection/scamdetectionwebengine.cpp:160
+#: scamdetection/scamdetectionwebengine.cpp:161
 #, kde-format
 msgid "This email contains a shorturl (%1). It can redirect to another server."
 msgstr "Бұл хатта қысқа URL бар (%1). Ол басқа серверге бағытап кетуі мүмкін."
 
-#: scamdetection/scamdetectionwebengine.cpp:234
+#: scamdetection/scamdetectionwebengine.cpp:235
 #, kde-format
 msgid "Message contains form element. This is often the case in scam emails."
 msgstr ""
 "Хабарламада пішін элементі бар. Бұл көбінде алаяқтар алдауға қолданатын "
 "тәсіл."
 
-#: scamdetection/scamdetectionwebengine.cpp:238
+#: scamdetection/scamdetectionwebengine.cpp:239
 #, kde-format
 msgid "Details:"
 msgstr "Егжей-тегжейі:"
