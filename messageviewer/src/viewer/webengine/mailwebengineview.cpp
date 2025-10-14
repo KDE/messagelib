@@ -21,6 +21,7 @@
 #include <QWebEngineProfile>
 #include <WebEngineViewer/WebHitTest>
 
+#include <QElapsedTimer>
 #include <QPainter>
 #include <QWebEngineUrlScheme>
 
@@ -60,6 +61,8 @@ public:
     MessageViewer::ViewerPrivate *mViewer = nullptr;
     WebEngineViewer::BlockTrackingUrlInterceptor *mBlockMailTrackingUrl = nullptr;
     bool mCanStartDrag = false;
+    bool mStartedDrag = false;
+    QElapsedTimer *mStartDragTimer = nullptr;
 };
 
 MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
@@ -184,6 +187,14 @@ void MailWebEngineView::forwardMousePressEvent(QMouseEvent *event)
         if (event->button() == Qt::LeftButton) {
             d->mCanStartDrag = URLHandlerManager::instance()->willHandleDrag(d->mHoveredUrl, d->mViewer);
             d->mLastClickPosition = event->pos();
+
+            d->mStartedDrag = false;
+            if (d->mCanStartDrag) {
+                if (d->mStartDragTimer == nullptr)
+                    d->mStartDragTimer = new QElapsedTimer;
+                d->mStartDragTimer->start();
+                event->accept();
+            }
         }
     }
 }
@@ -195,6 +206,10 @@ void MailWebEngineView::forwardMouseMoveEvent(QMouseEvent *event)
         if (d->mCanStartDrag && (event->buttons() & Qt::LeftButton)) {
             if ((d->mLastClickPosition - event->pos()).manhattanLength() > QApplication::startDragDistance()) {
                 if (URLHandlerManager::instance()->handleDrag(d->mHoveredUrl, d->mViewer)) {
+                    if (d->mCanStartDrag && d->mStartDragTimer != nullptr) {
+                        if (d->mStartDragTimer->elapsed() > QApplication::startDragTime())
+                            d->mStartedDrag = true;
+                    }
                     // If the URL handler manager started a drag, don't handle this in the future
                     d->mCanStartDrag = false;
                 }
@@ -207,6 +222,10 @@ void MailWebEngineView::forwardMouseMoveEvent(QMouseEvent *event)
 void MailWebEngineView::forwardMouseReleaseEvent(QMouseEvent *event)
 {
     Q_UNUSED(event)
+
+    if (!d->mStartedDrag && d->mHoveredUrl.isValid())
+        d->mPageEngine->urlClicked(d->mHoveredUrl);
+    d->mStartedDrag = false;
     d->mCanStartDrag = false;
 }
 
