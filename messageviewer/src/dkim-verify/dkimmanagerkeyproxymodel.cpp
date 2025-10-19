@@ -51,7 +51,14 @@ QString DKIMManagerKeyProxyModel::filterText() const
 void DKIMManagerKeyProxyModel::setFilterText(const QString &newFilterText)
 {
     if (mFilterText != newFilterText) {
+#if QT_VERSION >= QT_VERSION_CHECK(6, 10, 0)
+        beginFilterChange();
+#endif
         mFilterText = newFilterText;
+#if QT_VERSION >= QT_VERSION_CHECK(6, 10, 0)
+        endFilterChange(QSortFilterProxyModel::Direction::Rows);
+#else
         invalidateFilter();
+#endif
     }
 }
