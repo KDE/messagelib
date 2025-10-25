@@ -1,20 +1,20 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the messagelib package.
 #
-# SPDX-FileCopyrightText: 2022, 2023, 2024 Mincho Kondarev <mkondarev@yahoo.de>
+# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025 Mincho Kondarev <mkondarev@yahoo.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-25 00:43+0000\n"
-"PO-Revision-Date: 2024-11-09 20:04+0100\n"
+"PO-Revision-Date: 2025-10-24 22:07+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Lokalize 25.07.70\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: customtemplates.cpp:74 customtemplates.cpp:125
@@ -610,9 +610,9 @@ msgid ""
 "(a)Reply using plain text for quotes to be strictly in plain text\n"
 "(b)Reply using HTML text for quotes being in HTML format if present"
 msgstr ""
-"Използването на \" Отговор с обикновен текст \"и \" Отговор с HTML текст "
-"\"по двойки не е правилно. Използвайте само една от гореспоменатите команди "
-"с \" Отговор като цитирано съобщение \"според вашите нужди \n"
+"Използването на  „Отговор с обикновен текст \"и  „Отговор с HTML текст \"по "
+"двойки не е правилно. Използвайте само една от гореспоменатите команди с  "
+"„Отговор като цитирано съобщение \"според вашите нужди \n"
 "(а) Отговор с обикновен текст, за да кавичките бъдат строго в обикновен "
 "текст \n"
 "(б) Отговор с използване на HTML текст за цитати в HTML формат, ако има "
@@ -879,7 +879,7 @@ msgid ""
 "\" link on this dialog."
 msgstr ""
 "В тази област създавате шаблона за ново писмо. За повече информация как да "
-"създадете шаблона, натиснете връзката \" Как работи това? \" в този диалогов "
+"създадете шаблона, натиснете връзката  „Как работи това?  „в този диалогов "
 "прозорец."
 
 #. i18n: ectx: attribute (label), widget (QWidget, page_reply)
@@ -906,7 +906,7 @@ msgid ""
 "\" link on this dialog."
 msgstr ""
 "В тази област създавате шаблона за отговори на съобщения. За повече "
-"информация как да създадете шаблона, натиснете връзката \" Как работи това? "
+"информация как да създадете шаблона, натиснете връзката  „Как работи това? "
 "\" в този диалогов прозорец."
 
 #. i18n: ectx: attribute (label), widget (QWidget, page_reply_all)
@@ -935,7 +935,7 @@ msgid ""
 msgstr ""
 "В тази област създавате шаблона за отговор към всички или отговор на "
 "пощенски списък на. За повече информация как да създадете шаблона, натиснете "
-"връзката \" Как работи това? \" в този диалогов прозорец."
+"връзката „Как работи това?“ в този диалогов прозорец."
 
 #. i18n: ectx: attribute (label), widget (QWidget, page_forward)
 #: ui/templatesconfiguration_base.ui:222
