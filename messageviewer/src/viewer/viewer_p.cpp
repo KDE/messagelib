@@ -192,10 +192,10 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow, KActionCollec
     }
     mMessageViewerRenderer = new MessageViewerRenderer;
 
-    mRemoteContentMenu = new MessageViewer::RemoteContentMenu(mMainWindow);
+    mRemoteContentMenu = new MessageViewer::RemoteContentMenu(aParent);
     connect(mRemoteContentMenu, &MessageViewer::RemoteContentMenu::updateEmail, this, &ViewerPrivate::updateReaderWin);
 
-    mDkimWidgetInfo = new MessageViewer::DKIMWidgetInfo(mMainWindow);
+    mDkimWidgetInfo = new MessageViewer::DKIMWidgetInfo(aParent);
     if (_k_attributeInitialized.testAndSetAcquire(0, 1)) {
         Akonadi::AttributeFactory::registerAttribute<MessageViewer::MessageDisplayFormatAttribute>();
         Akonadi::AttributeFactory::registerAttribute<MessageViewer::ScamAttribute>();
