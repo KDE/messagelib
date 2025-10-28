@@ -28,11 +28,21 @@ public:
      * Will also set the Akonadi::MDNStateAttribute on the given item
      * to what the user has selected.
      */
-    [[nodiscard]] QPair<bool, KMime::MDN::SendingMode> checkAndSetMDNInfo(const Akonadi::Item &item, KMime::MDN::DispositionType d, bool forceSend = false);
+    struct MDNSendingModeInfo {
+        KMime::MDN::SendingMode mode = KMime::MDN::SentAutomatically;
+        bool doSend = false;
+    };
+
+    struct MDNMessateInfo {
+        QString message;
+        bool canDeny = false;
+    };
+
+    [[nodiscard]] MDNSendingModeInfo checkAndSetMDNInfo(const Akonadi::Item &item, KMime::MDN::DispositionType d, bool forceSend = false);
 
     [[nodiscard]] static Akonadi::MDNStateAttribute::MDNSentState dispositionToSentState(KMime::MDN::DispositionType d);
 
-    [[nodiscard]] QPair<QString, bool> mdnMessageText(const char *what);
+    [[nodiscard]] MDNMessateInfo mdnMessageText(const char *what);
 
 private:
     MESSAGECOMPOSER_NO_EXPORT explicit MDNAdviceHelper(QObject *parent = nullptr)

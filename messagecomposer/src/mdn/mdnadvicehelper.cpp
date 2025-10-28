@@ -85,7 +85,7 @@ MDNAdviceHelper *MDNAdviceHelper::instance()
     return s_instance;
 }
 
-QPair<bool, KMime::MDN::SendingMode> MDNAdviceHelper::checkAndSetMDNInfo(const Akonadi::Item &item, KMime::MDN::DispositionType d, bool forceSend)
+MDNAdviceHelper::MDNSendingModeInfo MDNAdviceHelper::checkAndSetMDNInfo(const Akonadi::Item &item, KMime::MDN::DispositionType d, bool forceSend)
 {
     KMime::Message::Ptr msg = MessageComposer::Util::message(item);
 
@@ -97,7 +97,11 @@ QPair<bool, KMime::MDN::SendingMode> MDNAdviceHelper::checkAndSetMDNInfo(const A
     if (item.hasAttribute<Akonadi::MDNStateAttribute>()
         && item.attribute<Akonadi::MDNStateAttribute>()->mdnState() != Akonadi::MDNStateAttribute::MDNStateUnknown) {
         // if already dealt with, don't do it again.
-        return QPair<bool, KMime::MDN::SendingMode>(false, KMime::MDN::SentAutomatically);
+        const MDNAdviceHelper::MDNSendingModeInfo info{
+            .mode = KMime::MDN::SentAutomatically,
+            .doSend = false,
+        };
+        return info;
     }
     auto mdnStateAttr = new Akonadi::MDNStateAttribute(Akonadi::MDNStateAttribute::MDNStateUnknown);
 
@@ -169,7 +173,11 @@ QPair<bool, KMime::MDN::SendingMode> MDNAdviceHelper::checkAndSetMDNInfo(const A
     auto modify = new Akonadi::ItemModifyJob(i);
     modify->setIgnorePayload(true);
     modify->disableRevisionCheck();
-    return QPair<bool, KMime::MDN::SendingMode>(doSend, s);
+    const MDNAdviceHelper::MDNSendingModeInfo info{
+        .mode = s,
+        .doSend = doSend,
+    };
+    return info;
 }
 
 Akonadi::MDNStateAttribute::MDNSentState MDNAdviceHelper::dispositionToSentState(KMime::MDN::DispositionType d)
@@ -192,11 +200,11 @@ Akonadi::MDNStateAttribute::MDNSentState MDNAdviceHelper::dispositionToSentState
     }
 }
 
-QPair<QString, bool> MDNAdviceHelper::mdnMessageText(const char *what)
+MDNAdviceHelper::MDNMessateInfo MDNAdviceHelper::mdnMessageText(const char *what)
 {
     for (int i = 0; i < numMdnMessageBoxes; ++i) {
         if (!qstrcmp(what, mdnMessageBoxes[i].dontAskAgainID)) {
-            return {mdnMessageBoxes[i].text.toString(), mdnMessageBoxes[i].canDeny};
+            return {.message = mdnMessageBoxes[i].text.toString(), .canDeny = mdnMessageBoxes[i].canDeny};
         }
     }
     return {};
@@ -204,13 +212,13 @@ QPair<QString, bool> MDNAdviceHelper::mdnMessageText(const char *what)
 
 int MDNAdviceHelper::requestAdviceOnMDN(const char *what)
 {
-    const QPair<QString, bool> mdnInfo = mdnMessageText(what);
-    if (mdnInfo.first.isEmpty()) {
+    const MDNAdviceHelper::MDNMessateInfo mdnInfo = mdnMessageText(what);
+    if (mdnInfo.message.isEmpty()) {
         qCWarning(MESSAGECOMPOSER_LOG) << "didn't find data for message box \"" << what << "\"";
         return MessageComposer::MDNIgnore;
     } else {
         KCursorSaver saver(Qt::ArrowCursor);
-        const MessageComposer::MDNAdvice answer = questionIgnoreSend(mdnInfo.first, mdnInfo.second);
+        const MessageComposer::MDNAdvice answer = questionIgnoreSend(mdnInfo.message, mdnInfo.canDeny);
         switch (answer) {
         case MessageComposer::MDNSend:
             return 3;

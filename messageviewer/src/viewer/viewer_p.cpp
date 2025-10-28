@@ -2367,14 +2367,14 @@ void ViewerPrivate::mdnWarningAnimatedHide()
     mMdnWarning->animatedHide();
 }
 
-void ViewerPrivate::showMdnInformations(const QPair<QString, bool> &mdnInfo)
+void ViewerPrivate::showMdnInformations(const QString &message, bool canDeny)
 {
     if (!mMdnWarning) {
         createMdnWarningWidget();
     }
-    if (!mdnInfo.first.isEmpty()) {
-        mMdnWarning->setCanDeny(mdnInfo.second);
-        mMdnWarning->setInformation(mdnInfo.first);
+    if (!message.isEmpty()) {
+        mMdnWarning->setCanDeny(canDeny);
+        mMdnWarning->setInformation(message);
     } else {
         mMdnWarning->animatedHide();
     }

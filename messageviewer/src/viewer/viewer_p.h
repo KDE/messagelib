@@ -452,7 +452,7 @@ public:
     void setFolderIdentity(uint folderIdentity);
 
     [[nodiscard]] RemoteContentMenu *remoteContentMenu() const;
-    void showMdnInformations(const QPair<QString, bool> &mdnInfo);
+    void showMdnInformations(const QString &message, bool canDeny);
     void mdnWarningAnimatedHide();
 
 private Q_SLOTS:

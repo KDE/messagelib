@@ -26,7 +26,7 @@ bool MDNWarningWidgetJob::canStart() const
 
 bool MDNWarningWidgetJob::start()
 {
-    QPair<QString, bool> mdnInfo;
+    MDNAdviceHelper::MDNMessateInfo mdnInfo;
     KMime::MDN::SendingMode s = KMime::MDN::SentAutomatically; // set to manual if asked user
     bool result = false;
     if (canStart()) {

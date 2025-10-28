@@ -355,7 +355,7 @@ public:
 
     void setIdentityManager(KIdentityManagementCore::IdentityManager *ident);
     void setFolderIdentity(uint folderIdentity);
-    void showMdnInformations(const QPair<QString, bool> &mdnInfo);
+    void showMdnInformations(const QString &message, bool canDeny);
     void mdnWarningAnimatedHide();
 Q_SIGNALS:
     void moveMessageToTrash();

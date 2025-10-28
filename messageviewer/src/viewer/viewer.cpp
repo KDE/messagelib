@@ -679,10 +679,10 @@ RemoteContentMenu *Viewer::remoteContentMenu() const
     return d->remoteContentMenu();
 }
 
-void Viewer::showMdnInformations(const QPair<QString, bool> &mdnInfo)
+void Viewer::showMdnInformations(const QString &message, bool canDeny)
 {
     Q_D(Viewer);
-    d->showMdnInformations(mdnInfo);
+    d->showMdnInformations(message, canDeny);
 }
 
 void Viewer::mdnWarningAnimatedHide()
