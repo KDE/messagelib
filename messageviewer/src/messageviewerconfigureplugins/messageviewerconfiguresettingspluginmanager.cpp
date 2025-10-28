@@ -78,7 +78,7 @@ void MessageViewerConfigureSettingsPluginManagerPrivate::initializePluginList()
 
     QListIterator<KPluginMetaData> i(plugins);
     i.toBack();
-    const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
+    // const PimCommon::PluginUtil::PluginsStateList pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
     QList<int> listOrder;
     while (i.hasPrevious()) {
         ConfigureSettingsPluginInfo info;

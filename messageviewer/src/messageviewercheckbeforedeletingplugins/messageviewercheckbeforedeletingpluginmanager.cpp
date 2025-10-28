@@ -78,7 +78,7 @@ void MessageViewerCheckBeforeDeletingPluginManagerPrivate::initializePluginList(
     const QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(u"pim6/messageviewer/checkbeforedeleting"_s);
     QListIterator<KPluginMetaData> i(plugins);
     i.toBack();
-    const QPair<QStringList, QStringList> pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
+    const PimCommon::PluginUtil::PluginsStateList pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
     QList<int> listOrder;
     while (i.hasPrevious()) {
         CheckBeforeDeletingPluginInfo info;
@@ -88,8 +88,10 @@ void MessageViewerCheckBeforeDeletingPluginManagerPrivate::initializePluginList(
         // 1) get plugin data => name/description etc.
         info.pluginData = PimCommon::PluginUtil::createPluginMetaData(data);
         // 2) look at if plugin is activated
-        const bool isPluginActivated =
-            PimCommon::PluginUtil::isPluginActivated(pair.first, pair.second, info.pluginData.mEnableByDefault, info.pluginData.mIdentifier);
+        const bool isPluginActivated = PimCommon::PluginUtil::isPluginActivated(pair.enabledPluginList,
+                                                                                pair.disabledPluginList,
+                                                                                info.pluginData.mEnableByDefault,
+                                                                                info.pluginData.mIdentifier);
         info.isEnabled = isPluginActivated;
         info.data = data;
 
