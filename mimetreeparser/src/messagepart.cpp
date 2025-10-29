@@ -584,10 +584,8 @@ AlternativeMessagePart::AlternativeMessagePart(ObjectTreeParser *otp, KMime::Con
         return;
     }
 
-    QMapIterator<Util::HtmlMode, KMime::Content *> i(mChildNodes);
-    while (i.hasNext()) {
-        i.next();
-        mChildParts[i.key()] = MimeMessagePart::Ptr(new MimeMessagePart(mOtp, i.value(), true));
+    for (const auto &[key, value] : mChildNodes.asKeyValueRange()) {
+        mChildParts[key] = MimeMessagePart::Ptr(new MimeMessagePart(mOtp, value, true));
     }
 }
 

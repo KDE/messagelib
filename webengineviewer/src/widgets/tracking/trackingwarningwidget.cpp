@@ -39,11 +39,9 @@ QString TrackingWarningWidget::generateDetails() const
 {
     QString details = QLatin1StringView("<b>") + i18n("Details:") + QLatin1StringView("</b><ul>");
 
-    QMapIterator<QString, blackListFound> i(mBackLists);
-    while (i.hasNext()) {
-        i.next();
-        details += QLatin1StringView("<li>")
-            + i18np("1 tracker from the company %2 (%3)", "%1 trackers from the company %2 (%3)", i.value().number, i.key(), i.value().url);
+    for (const auto &[key, value] : mBackLists.asKeyValueRange()) {
+        details +=
+            QLatin1StringView("<li>") + i18np("1 tracker from the company %2 (%3)", "%1 trackers from the company %2 (%3)", value.number, key, value.url);
     }
     details += QLatin1StringView("</ul>");
     return details;

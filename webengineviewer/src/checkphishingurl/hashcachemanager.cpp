@@ -69,17 +69,15 @@ void HashCacheManagerPrivate::save()
     QList<QByteArray> lstOk;
     QList<double> lstOkDuration;
 
-    QMapIterator<QByteArray, HashCacheInfo> i(mHashList);
-    while (i.hasNext()) {
-        i.next();
-        switch (i.value().status) {
+    for (const auto &[key, value] : mHashList.asKeyValueRange()) {
+        switch (value.status) {
         case HashCacheManager::UrlOk:
-            lstOk << i.key();
-            lstOkDuration << i.value().verifyCacheAfterThisTime;
+            lstOk << key;
+            lstOkDuration << value.verifyCacheAfterThisTime;
             break;
         case HashCacheManager::MalWare:
-            lstMalware << i.key();
-            lstMalwareDuration << i.value().verifyCacheAfterThisTime;
+            lstMalware << key;
+            lstMalwareDuration << value.verifyCacheAfterThisTime;
             break;
         case HashCacheManager::Unknown:
             break;
