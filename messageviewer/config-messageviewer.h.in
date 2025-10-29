@@ -1,0 +1,8 @@
+/*
+  SPDX-FileCopyrightText: 2025 Laurent Montel <montel@kde.org>
+
+  SPDX-License-Identifier: GPL-2.0-or-later
+*/
+
+#cmakedefine01 HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#cmakedefine01 HAVE_TEXTTOSPEECH_ENQQUEUE_SUPPORT

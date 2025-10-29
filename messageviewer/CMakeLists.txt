@@ -6,6 +6,7 @@
 
 include_directories(${Messagelib_BINARY_DIR})
 
+configure_file(config-messageviewer.h.in ${CMAKE_CURRENT_BINARY_DIR}/src/config-messageviewer.h)
 add_subdirectory(src)
 if(BUILD_TESTING)
     add_subdirectory(autotests)

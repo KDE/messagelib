@@ -15,7 +15,7 @@ using namespace Qt::Literals::StringLiterals;
 #include "messageviewer/messageviewerutil.h"
 #include "messageviewer_debug.h"
 #include <TextAddonsWidgets/SlideContainer>
-#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 #include <TextEditTextToSpeech/TextToSpeechContainerWidget>
 #endif
 #include <PimCommon/PimUtil>
@@ -41,12 +41,12 @@ using namespace MessageViewer;
 MailSourceViewTextBrowserWidget::MailSourceViewTextBrowserWidget(const QString &syntax, QWidget *parent)
     : QWidget(parent)
     , mSliderContainer(new TextAddonsWidgets::SlideContainer(this))
-#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     , mTextToSpeechContainerWidget(new TextEditTextToSpeech::TextToSpeechContainerWidget(this))
 #endif
 {
     auto lay = new QVBoxLayout(this);
-#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     lay->setContentsMargins({});
     lay->setSpacing(0);
     mTextToSpeechContainerWidget->setObjectName(QLatin1StringView("texttospeech"));
@@ -111,7 +111,7 @@ MessageViewer::MailSourceViewTextBrowser *MailSourceViewTextBrowserWidget::textB
 {
     return mTextBrowser;
 }
-#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 MailSourceViewTextBrowser::MailSourceViewTextBrowser(TextEditTextToSpeech::TextToSpeechContainerWidget *TextToSpeechContainerWidget, QWidget *parent)
     : QPlainTextEdit(parent)
     , mTextToSpeechContainerWidget(TextToSpeechContainerWidget)
@@ -129,7 +129,7 @@ void MailSourceViewTextBrowser::contextMenuEvent(QContextMenuEvent *event)
     if (popup) {
         popup->addSeparator();
         popup->addAction(KStandardActions::find(this, &MailSourceViewTextBrowser::findText, this));
-#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
         popup->addSeparator();
         popup->addAction(QIcon::fromTheme(u"preferences-desktop-text-to-speech"_s), i18n("Speak Text"), this, &MailSourceViewTextBrowser::slotSpeakText);
 #endif
@@ -154,8 +154,12 @@ void MailSourceViewTextBrowser::slotSpeakText()
     } else {
         text = toPlainText();
     }
-#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_TEXTTOSPEECH_ENQQUEUE_SUPPORT
+    mTextToSpeechContainerWidget->enqueue(text);
+#else
     mTextToSpeechContainerWidget->say(text);
+#endif
 #endif
 }
 

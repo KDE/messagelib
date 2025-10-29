@@ -8,7 +8,7 @@
  *  SPDX-License-Identifier: GPL-2.0-or-later
  */
 #pragma once
-
+#include "config-messageviewer.h"
 #include <KSyntaxHighlighting/Repository>
 #include <QPlainTextEdit>
 #include <QSyntaxHighlighter>
@@ -17,7 +17,7 @@ namespace TextAddonsWidgets
 class SlideContainer;
 }
 
-#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 namespace TextEditTextToSpeech
 {
 class TextToSpeechContainerWidget;
@@ -55,7 +55,7 @@ private:
     MailSourceViewTextBrowser *mTextBrowser = nullptr;
     FindBarSourceView *mFindBar = nullptr;
     TextAddonsWidgets::SlideContainer *const mSliderContainer;
-#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     TextEditTextToSpeech::TextToSpeechContainerWidget *const mTextToSpeechContainerWidget;
 #endif
 };
@@ -64,7 +64,7 @@ class MailSourceViewTextBrowser : public QPlainTextEdit
 {
     Q_OBJECT
 public:
-#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     explicit MailSourceViewTextBrowser(TextEditTextToSpeech::TextToSpeechContainerWidget *TextToSpeechContainerWidget, QWidget *parent = nullptr);
 #endif
     explicit MailSourceViewTextBrowser(QWidget *parent);
@@ -77,7 +77,7 @@ Q_SIGNALS:
 private:
     void slotSpeakText();
     void slotSaveAs();
-#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     TextEditTextToSpeech::TextToSpeechContainerWidget *mTextToSpeechContainerWidget = nullptr;
 #endif
 };

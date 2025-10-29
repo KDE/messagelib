@@ -7,7 +7,7 @@
 */
 
 #pragma once
-
+#include "config-messageviewer.h"
 #include "csshelper.h"
 #include "messageviewer/viewerplugininterface.h"
 #include "messageviewer_private_export.h"
@@ -60,7 +60,7 @@ namespace TextAddonsWidgets
 {
 class SlideContainer;
 }
-#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 namespace TextEditTextToSpeech
 {
 class TextToSpeechContainerWidget;
@@ -714,7 +714,7 @@ public:
     MessageViewer::OpenSavedFileFolderWidget *mOpenSavedFileFolderWidget = nullptr;
     WebEngineViewer::SubmittedFormWarningWidget *mSubmittedFormWarning = nullptr;
     WebEngineViewer::TrackingWarningWidget *mMailTrackingWarning = nullptr;
-#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     TextEditTextToSpeech::TextToSpeechContainerWidget *mTextToSpeechContainerWidget = nullptr;
 #endif
     Viewer::DisplayFormatMessage mDisplayFormatMessageOverwrite;

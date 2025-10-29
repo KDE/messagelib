@@ -129,7 +129,7 @@
 
 #include <PimCommon/PurposeMenuMessageWidget>
 
-#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 #include <TextEditTextToSpeech/TextToSpeechContainerWidget>
 #endif
 #include "header/headerstyleplugin.h"
@@ -1389,7 +1389,7 @@ void ViewerPrivate::createWidgets()
     mColorBar->setObjectName(QLatin1StringView("mColorBar"));
     mColorBar->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Ignored);
 
-#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     mTextToSpeechContainerWidget = new TextEditTextToSpeech::TextToSpeechContainerWidget(mReaderBox);
     mTextToSpeechContainerWidget->setObjectName(QLatin1StringView("TextToSpeechContainerWidget"));
     mReaderBoxVBoxLayout->addWidget(mTextToSpeechContainerWidget);
@@ -1626,7 +1626,7 @@ void ViewerPrivate::createActions()
     ac->setDefaultShortcut(loadExternalReferenceAction, QKeySequence(Qt::SHIFT | Qt::CTRL | Qt::Key_R));
     connect(loadExternalReferenceAction, &QAction::triggered, this, &ViewerPrivate::slotLoadExternalReference);
     MessageViewer::Util::addHelpTextAction(loadExternalReferenceAction, i18n("Load external references from the Internet for this message."));
-#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
     mSpeakTextAction = new QAction(i18nc("@action", "Speak Text"), this);
     mSpeakTextAction->setIcon(QIcon::fromTheme(u"preferences-desktop-text-to-speech"_s));
     ac->addAction(u"speak_text"_s, mSpeakTextAction);
@@ -2667,8 +2667,12 @@ void ViewerPrivate::slotSpeakText()
 {
     const QString text = mViewer->selectedText();
     if (!text.isEmpty()) {
-#ifdef HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
+#if HAVE_TEXTTOSPEECH_ENQQUEUE_SUPPORT
+        mTextToSpeechContainerWidget->enqueue(text);
+#else
         mTextToSpeechContainerWidget->say(text);
+#endif
 #endif
     }
 }
