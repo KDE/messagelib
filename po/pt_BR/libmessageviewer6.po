@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-14 00:43+0000\n"
+"POT-Creation-Date: 2025-10-30 00:43+0000\n"
 "PO-Revision-Date: 2025-07-26 13:40-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -1864,7 +1864,7 @@ msgstr "Abrir no livr&o de endereços"
 msgid "&Copy Email Address"
 msgstr "&Copiar endereço de e-mail"
 
-#: viewer/urlhandlermanager.cpp:585 viewer/viewer_p.cpp:2718
+#: viewer/urlhandlermanager.cpp:585 viewer/viewer_p.cpp:2722
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Endereço copiado para a área de transferência."
@@ -2274,17 +2274,17 @@ msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Mensagem como texto sem formatação"
 
-#: viewer/viewer_p.cpp:2724
+#: viewer/viewer_p.cpp:2728
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL copiada para a área de transferência."
 
-#: viewer/viewer_p.cpp:2886
+#: viewer/viewer_p.cpp:2890
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "Falha ao carregar a mensagem: %1."
 
-#: viewer/viewer_p.cpp:2891
+#: viewer/viewer_p.cpp:2895
 #, kde-format
 msgid "Message not found."
 msgstr "Mensagem não encontrada."

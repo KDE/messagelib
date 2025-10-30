@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-13 00:44+0000\n"
+"POT-Creation-Date: 2025-10-30 00:43+0000\n"
 "PO-Revision-Date: 2011-06-22 22:30+0200\n"
 "Last-Translator: Marko Dimjašević <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -29,28 +29,28 @@ msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "Neimenovano"
 
-#: src/messagepart.cpp:706 src/messagepart.cpp:751 src/messagepart.cpp:989
+#: src/messagepart.cpp:704 src/messagepart.cpp:749 src/messagepart.cpp:987
 #, fuzzy, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr "Neispravni umetak za kriptiranje."
 
-#: src/messagepart.cpp:817 src/messagepart.cpp:1208
+#: src/messagepart.cpp:815 src/messagepart.cpp:1206
 #, fuzzy, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Nije pronađen odgovarajući umetak za kriptiranje."
 
-#: src/messagepart.cpp:819
+#: src/messagepart.cpp:817
 #, fuzzy, kde-format
 msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
 msgid "No %1 plug-in was found."
 msgstr "Nijedan %1 umetak nije pronađen."
 
-#: src/messagepart.cpp:822
+#: src/messagepart.cpp:820
 #, fuzzy, kde-format
 msgid "Crypto plug-in \"%1\" cannot verify signatures."
 msgstr "Umetak za kriptiranje „%1“ ne može dekriptirati podatke."
 
-#: src/messagepart.cpp:825
+#: src/messagepart.cpp:823
 #, fuzzy, kde-format
 #| msgid "The validity of the signature cannot be verified."
 msgid ""
@@ -58,17 +58,17 @@ msgid ""
 "<br />Reason: %1"
 msgstr "Nije moguće provjeriti valjanost potpisa."
 
-#: src/messagepart.cpp:1210
+#: src/messagepart.cpp:1208
 #, fuzzy, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "Umetak za kriptiranje „%1“ ne može dekriptirati podatke."
 
-#: src/messagepart.cpp:1212
+#: src/messagepart.cpp:1210
 #, fuzzy, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Umetak za kriptiranje „%1“ ne može dekriptirati podatke."
 
-#: src/messagepart.cpp:1213
+#: src/messagepart.cpp:1211
 #, fuzzy, kde-format
 msgid "Error: %1"
 msgstr "Greška: %1"

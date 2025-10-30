@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-13 00:44+0000\n"
+"POT-Creation-Date: 2025-10-30 00:43+0000\n"
 "PO-Revision-Date: 2013-05-12 14:26+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -29,28 +29,28 @@ msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "Namnlaus"
 
-#: src/messagepart.cpp:706 src/messagepart.cpp:751 src/messagepart.cpp:989
+#: src/messagepart.cpp:704 src/messagepart.cpp:749 src/messagepart.cpp:987
 #, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr "Feil programtillegg for kryptering"
 
-#: src/messagepart.cpp:817 src/messagepart.cpp:1208
+#: src/messagepart.cpp:815 src/messagepart.cpp:1206
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Fann ingen passande programtillegg for kryptering."
 
-#: src/messagepart.cpp:819
+#: src/messagepart.cpp:817
 #, kde-format
 msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
 msgid "No %1 plug-in was found."
 msgstr "Fann ingen %1-programtillegg."
 
-#: src/messagepart.cpp:822
+#: src/messagepart.cpp:820
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot verify signatures."
 msgstr "Programtillegget for kryptering «%1» kan ikkje stadfesta signaturar."
 
-#: src/messagepart.cpp:825
+#: src/messagepart.cpp:823
 #, kde-format
 msgid ""
 "The message is signed, but the validity of the signature cannot be verified."
@@ -59,17 +59,17 @@ msgstr ""
 "Meldinga er signert, men det går ikkje å stadfesta om signaturen er gyldig."
 "<br />Grunnen er: %1"
 
-#: src/messagepart.cpp:1210
+#: src/messagepart.cpp:1208
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "Programtillegget for kryptering «%1» kan ikkje dekryptera meldingar."
 
-#: src/messagepart.cpp:1212
+#: src/messagepart.cpp:1210
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Programtillegget for kryptering «%1» klarte ikkje dekryptera dataa."
 
-#: src/messagepart.cpp:1213
+#: src/messagepart.cpp:1211
 #, kde-format
 msgid "Error: %1"
 msgstr "Feil: %1"

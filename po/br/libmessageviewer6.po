@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail-1.1\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-14 00:43+0000\n"
+"POT-Creation-Date: 2025-10-30 00:43+0000\n"
 "PO-Revision-Date: 2005-01-23 05:51+0100\n"
 "Last-Translator: Jañ-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
@@ -1907,7 +1907,7 @@ msgstr "Digeriñ er c'harned chomlec'hioù"
 msgid "&Copy Email Address"
 msgstr "Chomlec'h postel"
 
-#: viewer/urlhandlermanager.cpp:585 viewer/viewer_p.cpp:2718
+#: viewer/urlhandlermanager.cpp:585 viewer/viewer_p.cpp:2722
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Chomlec'h eilet er golver."
@@ -2342,18 +2342,18 @@ msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Kemennad plaen"
 
-#: viewer/viewer_p.cpp:2724
+#: viewer/viewer_p.cpp:2728
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL eilet er golver."
 
-#: viewer/viewer_p.cpp:2886
+#: viewer/viewer_p.cpp:2890
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message loading failed: %1."
 msgstr "Sinet eo bet ar c'hemennad gant %1."
 
-#: viewer/viewer_p.cpp:2891
+#: viewer/viewer_p.cpp:2895
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message not found."

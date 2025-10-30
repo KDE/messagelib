@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-14 00:43+0000\n"
+"POT-Creation-Date: 2025-10-30 00:43+0000\n"
 "PO-Revision-Date: 2025-08-20 21:33+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -1852,7 +1852,7 @@ msgstr "ا&فتح في دفتر العناوين"
 msgid "&Copy Email Address"
 msgstr "ا&نسخ عنوان البريد"
 
-#: viewer/urlhandlermanager.cpp:585 viewer/viewer_p.cpp:2718
+#: viewer/urlhandlermanager.cpp:585 viewer/viewer_p.cpp:2722
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "نُسخ العنوان إلى الحافظة."
@@ -2261,17 +2261,17 @@ msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "الرّسالة كنصّ صِرف"
 
-#: viewer/viewer_p.cpp:2724
+#: viewer/viewer_p.cpp:2728
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "نُسخ المسار إلى الحافظة."
 
-#: viewer/viewer_p.cpp:2886
+#: viewer/viewer_p.cpp:2890
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "فشل تحميل الرّسالة: %1."
 
-#: viewer/viewer_p.cpp:2891
+#: viewer/viewer_p.cpp:2895
 #, kde-format
 msgid "Message not found."
 msgstr "لم يُعثر على الرّسالة."

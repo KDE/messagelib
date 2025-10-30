@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail 3_3_branch\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-14 00:43+0000\n"
+"POT-Creation-Date: 2025-10-30 00:43+0000\n"
 "PO-Revision-Date: 2004-11-10 16:33+0200\n"
 "Last-Translator: Frikkie Thirion <frix@expertron.co.za>\n"
 "Language-Team: AFRIKAANS <AF@lia.org.za>\n"
@@ -1849,7 +1849,7 @@ msgstr "Adresboek"
 msgid "&Copy Email Address"
 msgstr "E-pos adres:"
 
-#: viewer/urlhandlermanager.cpp:585 viewer/viewer_p.cpp:2718
+#: viewer/urlhandlermanager.cpp:585 viewer/viewer_p.cpp:2722
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr ""
@@ -2274,17 +2274,17 @@ msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Boodskap"
 
-#: viewer/viewer_p.cpp:2724
+#: viewer/viewer_p.cpp:2728
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr ""
 
-#: viewer/viewer_p.cpp:2886
+#: viewer/viewer_p.cpp:2890
 #, fuzzy, kde-format
 msgid "Message loading failed: %1."
 msgstr "Boodskap"
 
-#: viewer/viewer_p.cpp:2891
+#: viewer/viewer_p.cpp:2895
 #, fuzzy, kde-format
 msgid "Message not found."
 msgstr "Boodskap"

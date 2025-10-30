@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libwebengineviewer6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-25 00:43+0000\n"
+"POT-Creation-Date: 2025-10-30 00:43+0000\n"
 "PO-Revision-Date: 2024-11-11 18:20+0100\n"
 "Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -125,7 +125,7 @@ msgstr ""
 msgid "Details:"
 msgstr "Details:"
 
-#: widgets/tracking/trackingwarningwidget.cpp:46
+#: widgets/tracking/trackingwarningwidget.cpp:44
 #, kde-format
 msgid "1 tracker from the company %2 (%3)"
 msgid_plural "%1 trackers from the company %2 (%3)"
