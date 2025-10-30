@@ -182,6 +182,7 @@ find_package(OpenSSL ${OPENSSL_VERSION} REQUIRED)
 ecm_set_disabled_deprecation_versions(QT 6.10.0 KF 6.19.0)
 add_definitions(-DQT_NO_CONTEXTLESS_CONNECT)
 if(BUILD_TESTING)
+    set(ECM_TEST_NAME_PREFIX_STRATEGY "PATH")
     add_definitions(-DBUILD_TESTING)
 endif()
 

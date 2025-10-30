@@ -1,5 +1,8 @@
 # SPDX-License-Identifier: CC0-1.0
 # SPDX-FileCopyrightText: none
+
+set(ECM_TEST_NAME_PREFIX "mimetreeparser-")
+
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR})
 add_definitions(-DMAIL_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data")
 
@@ -10,7 +13,6 @@ macro(add_mimetreeparser_unittest _source)
     get_filename_component(_name ${_source} NAME_WE)
     ecm_add_test(${_source} util.cpp setupenv.cpp
         TEST_NAME ${_name}
-        NAME_PREFIX "mimetreeparser-"
         LINK_LIBRARIES KPim6::MimeTreeParser Qt::Test KPim6::Mime Gpgmepp
 )
 endmacro()
@@ -19,7 +21,6 @@ macro(add_mimetreeparser_class_unittest _source _additionalSource)
     get_filename_component(_name ${_source} NAME_WE)
     ecm_add_test(${_source} ${_additionalSource}
         TEST_NAME ${_name}
-        NAME_PREFIX "mimetreeparser-"
         LINK_LIBRARIES KPim6::MimeTreeParser Qt::Test KPim6::Mime Gpgmepp
 )
 endmacro()
