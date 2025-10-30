@@ -2668,7 +2668,7 @@ void ViewerPrivate::slotSpeakText()
     const QString text = mViewer->selectedText();
     if (!text.isEmpty()) {
 #if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
-#if HAVE_TEXTTOSPEECH_ENQQUEUE_SUPPORT
+#if HAVE_TEXTTOSPEECH_ENQUEUE_SUPPORT
         mTextToSpeechContainerWidget->enqueue(text);
 #else
         mTextToSpeechContainerWidget->say(text);
