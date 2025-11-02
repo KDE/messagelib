@@ -672,14 +672,12 @@ QString NodeHelper::persistentIndex(const KMime::Content *node) const
 
     QString indexStr = node->index().toString();
     if (indexStr.isEmpty()) {
-        QMapIterator<const KMime::Message::Content *, QList<KMime::Content *>> it(mExtraContents);
-        while (it.hasNext()) {
-            it.next();
-            const auto &extraNodes = it.value();
+        for (const auto &[key, value] : mExtraContents.asKeyValueRange()) {
+            const auto &extraNodes = value;
             for (int i = 0; i < extraNodes.size(); ++i) {
                 if (extraNodes[i] == node) {
                     indexStr = u"e%1"_s.arg(i);
-                    const QString parentIndex = persistentIndex(it.key());
+                    const QString parentIndex = persistentIndex(key);
                     if (!parentIndex.isEmpty()) {
                         indexStr = u"%1:%2"_s.arg(parentIndex, indexStr);
                     }
@@ -690,15 +688,13 @@ QString NodeHelper::persistentIndex(const KMime::Content *node) const
     } else {
         const KMime::Content *const topLevel = node->topLevel();
         // if the node is an extra node, prepend the index of the extra node to the url
-        QMapIterator<const KMime::Message::Content *, QList<KMime::Content *>> it(mExtraContents);
-        while (it.hasNext()) {
-            it.next();
-            const QList<KMime::Content *> &extraNodes = extraContents(it.key());
+        for (const auto &[key, value] : mExtraContents.asKeyValueRange()) {
+            const QList<KMime::Content *> &extraNodes = extraContents(key);
             for (int i = 0; i < extraNodes.size(); ++i) {
                 KMime::Content *const extraNode = extraNodes[i];
                 if (topLevel == extraNode) {
                     indexStr.prepend(u"e%1:"_s.arg(i));
-                    const QString parentIndex = persistentIndex(it.key());
+                    const QString parentIndex = persistentIndex(key);
                     if (!parentIndex.isEmpty()) {
                         indexStr = u"%1:%2"_s.arg(parentIndex, indexStr);
                     }
