@@ -70,7 +70,7 @@ msgstr ""
 "<qt><p>Vous pouvez ajouter, modifier et effacer ici des modèles de message "
 "personnalisé à utiliser lorsque vous composez des messages de réponses ou à "
 "faire suivre. Créez le modèle personnalisé en saisissant son nom dans la "
-"boîte de saisie puis en pressant le bouton « + ». Vous pouvez également "
+"boite de saisie puis en pressant le bouton « + ». Vous pouvez également "
 "associer un raccourci clavier au modèle pour une utilisation plus rapide.</"
 "p><p>Les modèles de message prennent en charge la substitution de commandes "
 "simplement en les saisissant ou en les sélectionnant depuis le menu "
@@ -896,7 +896,7 @@ msgid ""
 msgstr ""
 "Dans cette zone, vous pouvez créer le modèle pour les nouveaux messages. "
 "Pour plus d'informations sur la création de modèles, cliquez sur le lien "
-"« Comment cela fonctionne ? » dans cette boîte de dialogue."
+"« Comment cela fonctionne ? » dans cette boite de dialogue."
 
 #. i18n: ectx: attribute (label), widget (QWidget, page_reply)
 #: ui/templatesconfiguration_base.ui:108
@@ -923,7 +923,7 @@ msgid ""
 msgstr ""
 "Dans cette zone, vous pouvez créer le modèle pour les réponses aux messages. "
 "Pour plus d'informations sur la création de modèles, cliquez sur le lien "
-"« Comment cela fonctionne ? » dans cette boîte de dialogue."
+"« Comment cela fonctionne ? » dans cette boite de dialogue."
 
 #. i18n: ectx: attribute (label), widget (QWidget, page_reply_all)
 #: ui/templatesconfiguration_base.ui:165
@@ -953,7 +953,7 @@ msgstr ""
 "Dans cette zone, vous pouvez créer le modèle pour les réponses à tous les "
 "destinataires ou aux listes de diffusion. Pour plus d'informations sur la "
 "création de modèles, cliquez sur le lien « Comment cela fonctionne ? » dans "
-"cette boîte de dialogue."
+"cette boite de dialogue."
 
 #. i18n: ectx: attribute (label), widget (QWidget, page_forward)
 #: ui/templatesconfiguration_base.ui:222
@@ -980,7 +980,7 @@ msgid ""
 msgstr ""
 "Dans cette zone, vous pouvez créer le modèle pour les messages à faire "
 "suivre. Pour plus d'informations sur la création de modèles, cliquez sur le "
-"lien « Comment cela fonctionne ? » dans cette boîte de dialogue."
+"lien « Comment cela fonctionne ? » dans cette boite de dialogue."
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #: ui/templatesconfiguration_base.ui:303
