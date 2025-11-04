@@ -96,7 +96,7 @@ void AttachmentVcardFromAddressBookJob::slotExpandGroupResult(KJob *job)
 
     const QString attachmentName = expandJob->property("groupName").toString();
     KContacts::VCardConverter converter;
-    const QByteArray groupData = converter.exportVCards(expandJob->contacts(), KContacts::VCardConverter::v3_0);
+    const QByteArray groupData = converter.exportVCards(expandJob->contacts(), KContacts::VCardConverter::v4_0);
     if (!groupData.isEmpty()) {
         addAttachment(groupData, attachmentName);
     } else {
