@@ -198,6 +198,6 @@ QList<WebEngineViewer::Addition> LocalDataBaseFile::extractAllInfo() const
 
 bool LocalDataBaseFile::fileExists() const
 {
-    QFileInfo fileInfo(d->mFile);
+    const QFileInfo fileInfo(d->mFile);
     return fileInfo.exists();
 }
