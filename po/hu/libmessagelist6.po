@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-03 00:45+0000\n"
-"PO-Revision-Date: 2025-04-21 22:18+0200\n"
+"PO-Revision-Date: 2025-11-08 22:30+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.04.0\n"
+"X-Generator: Lokalize 25.08.2\n"
 
 #: core/aggregation.cpp:177
 #, kde-format
@@ -1479,11 +1479,10 @@ msgid "Clear the quick search field when changing folders"
 msgstr "A gyors keresés mező törlése mappaváltáskor"
 
 #: core/widgets/searchlinestatus.cpp:103
-#, fuzzy, kde-format
-#| msgid "Show folder quick search line edit"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Show or Hide search command line"
-msgstr "Gyorskereső mező megjelenítése"
+msgstr "A keresési parancssor megjelenítése vagy elrejtése"
 
 #: core/widgets/searchlinestatus.cpp:104
 #, kde-format
