@@ -11,7 +11,7 @@ macro(add_messagecore_test _source)
     set(_test ${_source})
     get_filename_component(_name ${_source} NAME_WE)
     add_executable(${_name} ${_test} ${_name}.h)
-    add_test(NAME ${_name} COMMAND ${_name})
+    add_test(NAME messagecore-${_name} COMMAND ${_name})
     ecm_mark_as_test(${_name})
     target_link_libraries(${_name} Qt::Test KPim6::Libkleo KPim6::MessageCore Qt::Widgets KF6::Archive KF6::Completion KF6::ConfigCore KF6::CoreAddons)
 endmacro()
@@ -49,7 +49,7 @@ add_messagecore_test( attachmentupdatejobtest.cpp)
 # Other tests
 add_messagecore_test( stringutiltest.cpp)
 add_messagecore_test( mailinglisttest.cpp)
-ecm_add_test(dateformattertest.cpp LINK_LIBRARIES Qt::Test KPim6::MessageCore)
+ecm_add_test(dateformattertest.cpp NAME_PREFIX "messagecore-" LINK_LIBRARIES Qt::Test KPim6::MessageCore)
 
 # Autocrypt tests
 add_messagecore_cryptotest( autocryptrecipienttest.cpp)
