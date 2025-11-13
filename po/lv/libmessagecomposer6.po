@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-06 00:43+0000\n"
-"PO-Revision-Date: 2025-01-27 17:18+0200\n"
+"PO-Revision-Date: 2025-11-11 18:54+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 24.12.1\n"
+"X-Generator: Lokalize 25.08.2\n"
 
 #: attachment/attachmentcontrollerbase.cpp:167
 #, kde-format
@@ -1974,7 +1974,7 @@ msgstr "Atkārtot katru:"
 #: settings/messagecomposer.kcfg.in:10
 #, kde-format
 msgid "Show Quick Text Format Bar"
-msgstr ""
+msgstr "Rādīt teksta ātrās formatēšanas joslu"
 
 #. i18n: ectx: label, entry (QuoteSelectionOnly), group (Composer)
 #: settings/messagecomposer.kcfg.in:23
