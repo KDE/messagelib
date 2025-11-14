@@ -7,8 +7,8 @@
 #pragma once
 
 #include "messageviewer_export.h"
-#include <PimCommon/PluginUtil>
 #include <QObject>
+#include <TextAddonsWidgets/PluginUtil>
 namespace MessageViewer
 {
 class MessageViewerCheckBeforeDeletingPlugin;
@@ -26,7 +26,7 @@ public:
 
     [[nodiscard]] QList<MessageViewer::MessageViewerCheckBeforeDeletingPlugin *> pluginsList() const;
 
-    [[nodiscard]] QList<PimCommon::PluginUtilData> pluginsDataList() const;
+    [[nodiscard]] QList<TextAddonsWidgets::PluginUtilData> pluginsDataList() const;
     [[nodiscard]] QString configPrefixSettingKey() const;
     [[nodiscard]] QString configGroupName() const;
     [[nodiscard]] MessageViewerCheckBeforeDeletingPlugin *pluginFromIdentifier(const QString &id);

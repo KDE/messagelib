@@ -7,8 +7,8 @@
 #pragma once
 
 #include "messagecomposer_export.h"
-#include <PimCommon/PluginUtil>
 #include <QObject>
+#include <TextAddonsWidgets/PluginUtil>
 namespace MessageComposer
 {
 class PluginEditorManagerPrivate;
@@ -27,7 +27,7 @@ public:
 
     [[nodiscard]] QList<PluginEditor *> pluginsList() const;
 
-    [[nodiscard]] QList<PimCommon::PluginUtilData> pluginsDataList() const;
+    [[nodiscard]] QList<TextAddonsWidgets::PluginUtilData> pluginsDataList() const;
 
     [[nodiscard]] QString configGroupName() const;
     [[nodiscard]] QString configPrefixSettingKey() const;

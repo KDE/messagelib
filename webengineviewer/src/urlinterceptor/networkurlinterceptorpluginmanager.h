@@ -7,9 +7,9 @@
 #pragma once
 
 #include "webengineviewer_export.h"
-#include <PimCommon/PluginUtil>
 #include <QList>
 #include <QObject>
+#include <TextAddonsWidgets/PluginUtil>
 namespace WebEngineViewer
 {
 class NetworkUrlInterceptorPluginManagerPrivate;
@@ -29,7 +29,7 @@ public:
     [[nodiscard]] QList<WebEngineViewer::NetworkPluginUrlInterceptor *> pluginsList() const;
     [[nodiscard]] QString configGroupName() const;
     [[nodiscard]] QString configPrefixSettingKey() const;
-    [[nodiscard]] QList<PimCommon::PluginUtilData> pluginsDataList() const;
+    [[nodiscard]] QList<TextAddonsWidgets::PluginUtilData> pluginsDataList() const;
     [[nodiscard]] WebEngineViewer::NetworkPluginUrlInterceptor *pluginFromIdentifier(const QString &id);
 
 private:

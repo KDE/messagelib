@@ -7,8 +7,8 @@
 #pragma once
 
 #include "messageviewer_export.h"
-#include <PimCommon/PluginUtil>
 #include <QObject>
+#include <TextAddonsWidgets/PluginUtil>
 namespace MessageViewer
 {
 class HeaderStylePlugin;
@@ -28,7 +28,7 @@ public:
     [[nodiscard]] QList<MessageViewer::HeaderStylePlugin *> pluginsList() const;
     [[nodiscard]] QStringList pluginListName() const;
 
-    [[nodiscard]] QList<PimCommon::PluginUtilData> pluginsDataList() const;
+    [[nodiscard]] QList<TextAddonsWidgets::PluginUtilData> pluginsDataList() const;
     [[nodiscard]] QString configPrefixSettingKey() const;
     [[nodiscard]] QString configGroupName() const;
     [[nodiscard]] MessageViewer::HeaderStylePlugin *pluginFromIdentifier(const QString &id);

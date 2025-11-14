@@ -11,6 +11,7 @@ using namespace Qt::Literals::StringLiterals;
 #include "messageviewer_debug.h"
 #include <KPluginFactory>
 #include <KPluginMetaData>
+#include <PimCommon/PluginUtil>
 #include <QFileInfo>
 
 using namespace MessageViewer;
@@ -20,7 +21,7 @@ class HeaderStylePluginInfo
 public:
     HeaderStylePluginInfo() = default;
 
-    PimCommon::PluginUtilData pluginData;
+    TextAddonsWidgets::PluginUtilData pluginData;
     QString metaDataFileNameBaseName;
     QString metaDataFileName;
     KPluginMetaData data;
@@ -37,7 +38,7 @@ public:
     }
 
     [[nodiscard]] QList<MessageViewer::HeaderStylePlugin *> pluginsList() const;
-    [[nodiscard]] QList<PimCommon::PluginUtilData> pluginDataList() const;
+    [[nodiscard]] QList<TextAddonsWidgets::PluginUtilData> pluginDataList() const;
     void initializePluginList();
     void loadPlugin(HeaderStylePluginInfo *item);
     [[nodiscard]] QString configGroupName() const;
@@ -45,7 +46,7 @@ public:
     MessageViewer::HeaderStylePlugin *pluginFromIdentifier(const QString &id);
 
 private:
-    QList<PimCommon::PluginUtilData> mPluginDataList;
+    QList<TextAddonsWidgets::PluginUtilData> mPluginDataList;
     QList<HeaderStylePluginInfo> mPluginList;
     HeaderStylePluginManager *const q;
 };
@@ -58,7 +59,7 @@ QString pluginVersion()
 }
 }
 
-QList<PimCommon::PluginUtilData> HeaderStylePluginManagerPrivate::pluginDataList() const
+QList<TextAddonsWidgets::PluginUtilData> HeaderStylePluginManagerPrivate::pluginDataList() const
 {
     return mPluginDataList;
 }
@@ -79,7 +80,7 @@ void HeaderStylePluginManagerPrivate::initializePluginList()
 
     QListIterator<KPluginMetaData> i(plugins);
     i.toBack();
-    const PimCommon::PluginUtil::PluginsStateList pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
+    const TextAddonsWidgets::PluginUtil::PluginsStateList pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
     QList<int> listOrder;
     while (i.hasPrevious()) {
         HeaderStylePluginInfo info;
@@ -87,12 +88,12 @@ void HeaderStylePluginManagerPrivate::initializePluginList()
         const KPluginMetaData data = i.previous();
 
         // 1) get plugin data => name/description etc.
-        info.pluginData = PimCommon::PluginUtil::createPluginMetaData(data);
+        info.pluginData = TextAddonsWidgets::PluginUtil::createPluginMetaData(data);
         // 2) look at if plugin is activated
-        const bool isPluginActivated = PimCommon::PluginUtil::isPluginActivated(pair.enabledPluginList,
-                                                                                pair.disabledPluginList,
-                                                                                info.pluginData.mEnableByDefault,
-                                                                                info.pluginData.mIdentifier);
+        const bool isPluginActivated = TextAddonsWidgets::PluginUtil::isPluginActivated(pair.enabledPluginList,
+                                                                                        pair.disabledPluginList,
+                                                                                        info.pluginData.mEnableByDefault,
+                                                                                        info.pluginData.mIdentifier);
         info.isEnabled = isPluginActivated;
         info.metaDataFileNameBaseName = QFileInfo(data.fileName()).baseName();
         info.metaDataFileName = data.fileName();
@@ -199,7 +200,7 @@ QString HeaderStylePluginManager::configPrefixSettingKey() const
     return d->configPrefixSettingKey();
 }
 
-QList<PimCommon::PluginUtilData> HeaderStylePluginManager::pluginsDataList() const
+QList<TextAddonsWidgets::PluginUtilData> HeaderStylePluginManager::pluginsDataList() const
 {
     return d->pluginDataList();
 }

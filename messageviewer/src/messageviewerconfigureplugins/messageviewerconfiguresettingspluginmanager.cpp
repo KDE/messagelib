@@ -21,7 +21,7 @@ public:
     ConfigureSettingsPluginInfo() = default;
 
     KPluginMetaData data;
-    PimCommon::PluginUtilData pluginData;
+    TextAddonsWidgets::PluginUtilData pluginData;
     QString metaDataFileNameBaseName;
     QString metaDataFileName;
     MessageViewer::MessageViewerConfigureSettingsPlugin *plugin = nullptr;
@@ -36,7 +36,7 @@ public:
     }
 
     [[nodiscard]] QList<MessageViewer::MessageViewerConfigureSettingsPlugin *> pluginsList() const;
-    [[nodiscard]] QList<PimCommon::PluginUtilData> pluginDataList() const;
+    [[nodiscard]] QList<TextAddonsWidgets::PluginUtilData> pluginDataList() const;
     void initializePluginList();
     void loadPlugin(ConfigureSettingsPluginInfo *item);
     [[nodiscard]] QString configGroupName() const;
@@ -44,7 +44,7 @@ public:
     MessageViewerConfigureSettingsPlugin *pluginFromIdentifier(const QString &id);
 
 private:
-    QList<PimCommon::PluginUtilData> mPluginDataList;
+    QList<TextAddonsWidgets::PluginUtilData> mPluginDataList;
     QList<ConfigureSettingsPluginInfo> mPluginList;
     MessageViewerConfigureSettingsPluginManager *const q;
 };
@@ -57,7 +57,7 @@ QString configurePluginVersion()
 }
 }
 
-QList<PimCommon::PluginUtilData> MessageViewerConfigureSettingsPluginManagerPrivate::pluginDataList() const
+QList<TextAddonsWidgets::PluginUtilData> MessageViewerConfigureSettingsPluginManagerPrivate::pluginDataList() const
 {
     return mPluginDataList;
 }
@@ -78,7 +78,7 @@ void MessageViewerConfigureSettingsPluginManagerPrivate::initializePluginList()
 
     QListIterator<KPluginMetaData> i(plugins);
     i.toBack();
-    // const PimCommon::PluginUtil::PluginsStateList pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
+    // const TextAddonsWidgets::PluginUtil::PluginsStateList pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
     QList<int> listOrder;
     while (i.hasPrevious()) {
         ConfigureSettingsPluginInfo info;
@@ -86,7 +86,7 @@ void MessageViewerConfigureSettingsPluginManagerPrivate::initializePluginList()
         const KPluginMetaData data = i.previous();
 
         // 1) get plugin data => name/description etc.
-        info.pluginData = PimCommon::PluginUtil::createPluginMetaData(data);
+        info.pluginData = TextAddonsWidgets::PluginUtil::createPluginMetaData(data);
         // 2) look at if plugin is activated
         info.metaDataFileNameBaseName = QFileInfo(data.fileName()).baseName();
         info.metaDataFileName = data.fileName();
@@ -184,7 +184,7 @@ QString MessageViewerConfigureSettingsPluginManager::configPrefixSettingKey() co
     return d->configPrefixSettingKey();
 }
 
-QList<PimCommon::PluginUtilData> MessageViewerConfigureSettingsPluginManager::pluginsDataList() const
+QList<TextAddonsWidgets::PluginUtilData> MessageViewerConfigureSettingsPluginManager::pluginsDataList() const
 {
     return d->pluginDataList();
 }

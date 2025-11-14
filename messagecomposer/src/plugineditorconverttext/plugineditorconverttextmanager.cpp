@@ -11,6 +11,7 @@ using namespace Qt::Literals::StringLiterals;
 #include "plugineditorconverttext.h"
 #include <KPluginFactory>
 #include <KPluginMetaData>
+#include <PimCommon/PluginUtil>
 #include <QFileInfo>
 
 using namespace MessageComposer;
@@ -20,7 +21,7 @@ class PluginEditorConvertTextInfo
 public:
     PluginEditorConvertTextInfo() = default;
 
-    PimCommon::PluginUtilData pluginData;
+    TextAddonsWidgets::PluginUtilData pluginData;
     QString metaDataFileNameBaseName;
     QString metaDataFileName;
     KPluginMetaData data;
@@ -51,11 +52,11 @@ public:
     QList<PluginEditorConvertTextInfo> mPluginList;
     [[nodiscard]] QString configPrefixSettingKey() const;
     [[nodiscard]] QString configGroupName() const;
-    [[nodiscard]] QList<PimCommon::PluginUtilData> pluginsDataList() const;
+    [[nodiscard]] QList<TextAddonsWidgets::PluginUtilData> pluginsDataList() const;
     PluginEditorConvertText *pluginFromIdentifier(const QString &id);
 
 private:
-    QList<PimCommon::PluginUtilData> mPluginDataList;
+    QList<TextAddonsWidgets::PluginUtilData> mPluginDataList;
     PluginEditorConvertTextManager *const q;
 };
 
@@ -69,7 +70,7 @@ QString PluginEditorConvertTextManagerPrivate::configPrefixSettingKey() const
     return u"PluginEditorConvertText"_s;
 }
 
-QList<PimCommon::PluginUtilData> PluginEditorConvertTextManagerPrivate::pluginsDataList() const
+QList<TextAddonsWidgets::PluginUtilData> PluginEditorConvertTextManagerPrivate::pluginsDataList() const
 {
     return mPluginDataList;
 }
@@ -78,7 +79,7 @@ void PluginEditorConvertTextManagerPrivate::initializePlugins()
 {
     const QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(u"pim6/kmail/plugineditorconverttext"_s);
 
-    const PimCommon::PluginUtil::PluginsStateList pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
+    const TextAddonsWidgets::PluginUtil::PluginsStateList pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
 
     QListIterator<KPluginMetaData> i(plugins);
     i.toBack();
@@ -87,12 +88,12 @@ void PluginEditorConvertTextManagerPrivate::initializePlugins()
         const KPluginMetaData data = i.previous();
 
         // 1) get plugin data => name/description etc.
-        info.pluginData = PimCommon::PluginUtil::createPluginMetaData(data);
+        info.pluginData = TextAddonsWidgets::PluginUtil::createPluginMetaData(data);
         // 2) look at if plugin is activated
-        const bool isPluginActivated = PimCommon::PluginUtil::isPluginActivated(pair.enabledPluginList,
-                                                                                pair.disabledPluginList,
-                                                                                info.pluginData.mEnableByDefault,
-                                                                                info.pluginData.mIdentifier);
+        const bool isPluginActivated = TextAddonsWidgets::PluginUtil::isPluginActivated(pair.enabledPluginList,
+                                                                                        pair.disabledPluginList,
+                                                                                        info.pluginData.mEnableByDefault,
+                                                                                        info.pluginData.mIdentifier);
         info.isEnabled = isPluginActivated;
         info.metaDataFileNameBaseName = QFileInfo(data.fileName()).baseName();
         info.metaDataFileName = data.fileName();
@@ -172,7 +173,7 @@ QString PluginEditorConvertTextManager::configPrefixSettingKey() const
     return d->configPrefixSettingKey();
 }
 
-QList<PimCommon::PluginUtilData> PluginEditorConvertTextManager::pluginsDataList() const
+QList<TextAddonsWidgets::PluginUtilData> PluginEditorConvertTextManager::pluginsDataList() const
 {
     return d->pluginsDataList();
 }

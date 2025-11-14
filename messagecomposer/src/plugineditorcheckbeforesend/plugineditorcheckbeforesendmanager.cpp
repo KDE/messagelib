@@ -11,6 +11,7 @@ using namespace Qt::Literals::StringLiterals;
 #include "plugineditorcheckbeforesend.h"
 #include <KPluginFactory>
 #include <KPluginMetaData>
+#include <PimCommon/PluginUtil>
 #include <QFileInfo>
 
 using namespace MessageComposer;
@@ -21,7 +22,7 @@ public:
     PluginEditorCheckBeforeSendInfo() = default;
 
     KPluginMetaData data;
-    PimCommon::PluginUtilData pluginData;
+    TextAddonsWidgets::PluginUtilData pluginData;
     QString metaDataFileNameBaseName;
     QString metaDataFileName;
     PluginEditorCheckBeforeSend *plugin = nullptr;
@@ -51,11 +52,11 @@ public:
     QList<PluginEditorCheckBeforeSendInfo> mPluginList;
     [[nodiscard]] QString configPrefixSettingKey() const;
     [[nodiscard]] QString configGroupName() const;
-    [[nodiscard]] QList<PimCommon::PluginUtilData> pluginsDataList() const;
+    [[nodiscard]] QList<TextAddonsWidgets::PluginUtilData> pluginsDataList() const;
     PluginEditorCheckBeforeSend *pluginFromIdentifier(const QString &id);
 
 private:
-    QList<PimCommon::PluginUtilData> mPluginDataList;
+    QList<TextAddonsWidgets::PluginUtilData> mPluginDataList;
     PluginEditorCheckBeforeSendManager *const q;
 };
 
@@ -69,7 +70,7 @@ QString PluginEditorCheckBeforeSendManagerPrivate::configPrefixSettingKey() cons
     return u"PluginCheckBefore"_s;
 }
 
-QList<PimCommon::PluginUtilData> PluginEditorCheckBeforeSendManagerPrivate::pluginsDataList() const
+QList<TextAddonsWidgets::PluginUtilData> PluginEditorCheckBeforeSendManagerPrivate::pluginsDataList() const
 {
     return mPluginDataList;
 }
@@ -78,7 +79,7 @@ void PluginEditorCheckBeforeSendManagerPrivate::initializePlugins()
 {
     const QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(u"pim6/kmail/plugincheckbeforesend"_s);
 
-    const PimCommon::PluginUtil::PluginsStateList pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
+    const TextAddonsWidgets::PluginUtil::PluginsStateList pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
 
     QListIterator<KPluginMetaData> i(plugins);
     i.toBack();
@@ -87,12 +88,12 @@ void PluginEditorCheckBeforeSendManagerPrivate::initializePlugins()
         const KPluginMetaData data = i.previous();
 
         // 1) get plugin data => name/description etc.
-        info.pluginData = PimCommon::PluginUtil::createPluginMetaData(data);
+        info.pluginData = TextAddonsWidgets::PluginUtil::createPluginMetaData(data);
         // 2) look at if plugin is activated
-        const bool isPluginActivated = PimCommon::PluginUtil::isPluginActivated(pair.enabledPluginList,
-                                                                                pair.disabledPluginList,
-                                                                                info.pluginData.mEnableByDefault,
-                                                                                info.pluginData.mIdentifier);
+        const bool isPluginActivated = TextAddonsWidgets::PluginUtil::isPluginActivated(pair.enabledPluginList,
+                                                                                        pair.disabledPluginList,
+                                                                                        info.pluginData.mEnableByDefault,
+                                                                                        info.pluginData.mIdentifier);
         info.isEnabled = isPluginActivated;
         info.metaDataFileNameBaseName = QFileInfo(data.fileName()).baseName();
         info.metaDataFileName = data.fileName();
@@ -172,7 +173,7 @@ QString PluginEditorCheckBeforeSendManager::configPrefixSettingKey() const
     return d->configPrefixSettingKey();
 }
 
-QList<PimCommon::PluginUtilData> PluginEditorCheckBeforeSendManager::pluginsDataList() const
+QList<TextAddonsWidgets::PluginUtilData> PluginEditorCheckBeforeSendManager::pluginsDataList() const
 {
     return d->pluginsDataList();
 }

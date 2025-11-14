@@ -11,6 +11,7 @@ using namespace Qt::Literals::StringLiterals;
 #include "plugineditor.h"
 #include <KPluginFactory>
 #include <KPluginMetaData>
+#include <PimCommon/PluginUtil>
 #include <QFileInfo>
 using namespace MessageComposer;
 
@@ -20,7 +21,7 @@ public:
     PluginEditorInfo() = default;
 
     KPluginMetaData data;
-    PimCommon::PluginUtilData pluginData;
+    TextAddonsWidgets::PluginUtilData pluginData;
     QString metaDataFileNameBaseName;
     QString metaDataFileName;
     PluginEditor *plugin = nullptr;
@@ -47,7 +48,7 @@ public:
 
     void loadPlugin(PluginEditorInfo *item);
     [[nodiscard]] QList<PluginEditor *> pluginsList() const;
-    [[nodiscard]] QList<PimCommon::PluginUtilData> pluginDataList() const;
+    [[nodiscard]] QList<TextAddonsWidgets::PluginUtilData> pluginDataList() const;
     void initializePlugins();
 
     [[nodiscard]] QString configGroupName() const;
@@ -56,7 +57,7 @@ public:
 
 private:
     QList<PluginEditorInfo> mPluginList;
-    QList<PimCommon::PluginUtilData> mPluginDataList;
+    QList<TextAddonsWidgets::PluginUtilData> mPluginDataList;
     PluginEditorManager *const q;
 };
 
@@ -64,7 +65,7 @@ void PluginEditorManagerPrivate::initializePlugins()
 {
     const QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(u"pim6/kmail/plugineditor"_s);
 
-    const PimCommon::PluginUtil::PluginsStateList pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
+    const TextAddonsWidgets::PluginUtil::PluginsStateList pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
 
     QListIterator<KPluginMetaData> i(plugins);
     i.toBack();
@@ -73,12 +74,12 @@ void PluginEditorManagerPrivate::initializePlugins()
         const KPluginMetaData data = i.previous();
 
         // 1) get plugin data => name/description etc.
-        info.pluginData = PimCommon::PluginUtil::createPluginMetaData(data);
+        info.pluginData = TextAddonsWidgets::PluginUtil::createPluginMetaData(data);
         // 2) look at if plugin is activated
-        const bool isPluginActivated = PimCommon::PluginUtil::isPluginActivated(pair.enabledPluginList,
-                                                                                pair.disabledPluginList,
-                                                                                info.pluginData.mEnableByDefault,
-                                                                                info.pluginData.mIdentifier);
+        const bool isPluginActivated = TextAddonsWidgets::PluginUtil::isPluginActivated(pair.enabledPluginList,
+                                                                                        pair.disabledPluginList,
+                                                                                        info.pluginData.mEnableByDefault,
+                                                                                        info.pluginData.mIdentifier);
         info.isEnabled = isPluginActivated;
         info.metaDataFileNameBaseName = QFileInfo(data.fileName()).baseName();
         info.metaDataFileName = data.fileName();
@@ -125,7 +126,7 @@ QList<PluginEditor *> PluginEditorManagerPrivate::pluginsList() const
     return lst;
 }
 
-QList<PimCommon::PluginUtilData> PluginEditorManagerPrivate::pluginDataList() const
+QList<TextAddonsWidgets::PluginUtilData> PluginEditorManagerPrivate::pluginDataList() const
 {
     return mPluginDataList;
 }
@@ -170,7 +171,7 @@ QList<PluginEditor *> PluginEditorManager::pluginsList() const
     return d->pluginsList();
 }
 
-QList<PimCommon::PluginUtilData> PluginEditorManager::pluginsDataList() const
+QList<TextAddonsWidgets::PluginUtilData> PluginEditorManager::pluginsDataList() const
 {
     return d->pluginDataList();
 }

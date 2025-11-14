@@ -11,6 +11,7 @@ using namespace Qt::Literals::StringLiterals;
 #include "messageviewercheckbeforedeletingplugin.h"
 #include <KPluginFactory>
 #include <KPluginMetaData>
+#include <PimCommon/PluginUtil>
 #include <QFileInfo>
 
 using namespace MessageViewer;
@@ -21,7 +22,7 @@ public:
     CheckBeforeDeletingPluginInfo() = default;
 
     KPluginMetaData data;
-    PimCommon::PluginUtilData pluginData;
+    TextAddonsWidgets::PluginUtilData pluginData;
     QString metaDataFileNameBaseName;
     QString metaDataFileName;
     bool isEnabled = true;
@@ -37,7 +38,7 @@ public:
     }
 
     [[nodiscard]] QList<MessageViewer::MessageViewerCheckBeforeDeletingPlugin *> pluginsList() const;
-    [[nodiscard]] QList<PimCommon::PluginUtilData> pluginDataList() const;
+    [[nodiscard]] QList<TextAddonsWidgets::PluginUtilData> pluginDataList() const;
     void initializePluginList();
     void loadPlugin(CheckBeforeDeletingPluginInfo *item);
     [[nodiscard]] QString configGroupName() const;
@@ -45,7 +46,7 @@ public:
     [[nodiscard]] MessageViewerCheckBeforeDeletingPlugin *pluginFromIdentifier(const QString &id);
 
 private:
-    QList<PimCommon::PluginUtilData> mPluginDataList;
+    QList<TextAddonsWidgets::PluginUtilData> mPluginDataList;
     QList<CheckBeforeDeletingPluginInfo> mPluginList;
     MessageViewerCheckBeforeDeletingPluginManager *const q;
 };
@@ -58,7 +59,7 @@ QString pluginVersion()
 }
 }
 
-QList<PimCommon::PluginUtilData> MessageViewerCheckBeforeDeletingPluginManagerPrivate::pluginDataList() const
+QList<TextAddonsWidgets::PluginUtilData> MessageViewerCheckBeforeDeletingPluginManagerPrivate::pluginDataList() const
 {
     return mPluginDataList;
 }
@@ -78,7 +79,7 @@ void MessageViewerCheckBeforeDeletingPluginManagerPrivate::initializePluginList(
     const QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(u"pim6/messageviewer/checkbeforedeleting"_s);
     QListIterator<KPluginMetaData> i(plugins);
     i.toBack();
-    const PimCommon::PluginUtil::PluginsStateList pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
+    const TextAddonsWidgets::PluginUtil::PluginsStateList pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
     QList<int> listOrder;
     while (i.hasPrevious()) {
         CheckBeforeDeletingPluginInfo info;
@@ -86,12 +87,12 @@ void MessageViewerCheckBeforeDeletingPluginManagerPrivate::initializePluginList(
         const KPluginMetaData data = i.previous();
 
         // 1) get plugin data => name/description etc.
-        info.pluginData = PimCommon::PluginUtil::createPluginMetaData(data);
+        info.pluginData = TextAddonsWidgets::PluginUtil::createPluginMetaData(data);
         // 2) look at if plugin is activated
-        const bool isPluginActivated = PimCommon::PluginUtil::isPluginActivated(pair.enabledPluginList,
-                                                                                pair.disabledPluginList,
-                                                                                info.pluginData.mEnableByDefault,
-                                                                                info.pluginData.mIdentifier);
+        const bool isPluginActivated = TextAddonsWidgets::PluginUtil::isPluginActivated(pair.enabledPluginList,
+                                                                                        pair.disabledPluginList,
+                                                                                        info.pluginData.mEnableByDefault,
+                                                                                        info.pluginData.mIdentifier);
         info.isEnabled = isPluginActivated;
         info.data = data;
 
@@ -191,7 +192,7 @@ QString MessageViewerCheckBeforeDeletingPluginManager::configPrefixSettingKey() 
     return d->configPrefixSettingKey();
 }
 
-QList<PimCommon::PluginUtilData> MessageViewerCheckBeforeDeletingPluginManager::pluginsDataList() const
+QList<TextAddonsWidgets::PluginUtilData> MessageViewerCheckBeforeDeletingPluginManager::pluginsDataList() const
 {
     return d->pluginDataList();
 }

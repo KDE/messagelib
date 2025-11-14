@@ -26,7 +26,7 @@ set(KMIME_LIB_VERSION "6.6.40")
 set(KPIMTEXTEDIT_LIB_VERSION "6.6.40")
 set(LIBKDEPIM_LIB_VERSION "6.6.40")
 set(LIBKLEO_LIB_VERSION "6.6.40")
-set(PIMCOMMON_LIB_VERSION "6.5.41")
+set(PIMCOMMON_LIB_VERSION "6.6.41")
 set(GPGME_REQUIRED_VERSION "1.23.2")
 set(AKONADI_SEARCH_VERSION "6.6.40")
 
@@ -91,7 +91,7 @@ webengineviewer/*.h
 ecm_check_outbound_license(LICENSES GPL-2.0-only  FILES ${ALL_SOURCE_FILES})
 
 
-set(KTEXTADDONS_MIN_VERSION "1.8.44")
+set(KTEXTADDONS_MIN_VERSION "1.8.64")
 
 option(BUILD_QCH "Build API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)" OFF)
 add_feature_info(QCH ${BUILD_QCH} "API documentation in QCH format (for e.g. Qt Assistant, Qt Creator & KDevelop)")

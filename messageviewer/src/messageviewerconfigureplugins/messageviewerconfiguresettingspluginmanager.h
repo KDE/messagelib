@@ -7,8 +7,8 @@
 #pragma once
 
 #include "messageviewer_export.h"
-#include <PimCommon/PluginUtil>
 #include <QObject>
+#include <TextAddonsWidgets/PluginUtil>
 namespace MessageViewer
 {
 class MessageViewerConfigureSettingsPlugin;
@@ -27,7 +27,7 @@ public:
 
     [[nodiscard]] QList<MessageViewer::MessageViewerConfigureSettingsPlugin *> pluginsList() const;
 
-    [[nodiscard]] QList<PimCommon::PluginUtilData> pluginsDataList() const;
+    [[nodiscard]] QList<TextAddonsWidgets::PluginUtilData> pluginsDataList() const;
     [[nodiscard]] QString configPrefixSettingKey() const;
     [[nodiscard]] QString configGroupName() const;
     [[nodiscard]] MessageViewerConfigureSettingsPlugin *pluginFromIdentifier(const QString &id);

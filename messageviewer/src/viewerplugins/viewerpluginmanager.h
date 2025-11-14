@@ -7,8 +7,8 @@
 #pragma once
 
 #include "messageviewer_export.h"
-#include <PimCommon/PluginUtil>
 #include <QObject>
+#include <TextAddonsWidgets/PluginUtil>
 namespace MessageViewer
 {
 class ViewerPluginManagerPrivate;
@@ -26,7 +26,7 @@ public:
     static ViewerPluginManager *self();
 
     [[nodiscard]] QList<MessageViewer::ViewerPlugin *> pluginsList() const;
-    [[nodiscard]] QList<PimCommon::PluginUtilData> pluginsDataList() const;
+    [[nodiscard]] QList<TextAddonsWidgets::PluginUtilData> pluginsDataList() const;
 
     [[nodiscard]] bool initializePluginList();
 

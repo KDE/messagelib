@@ -7,8 +7,8 @@
 #pragma once
 
 #include "messagecomposer_export.h"
-#include <PimCommon/PluginUtil>
 #include <QObject>
+#include <TextAddonsWidgets/PluginUtil>
 #include <memory>
 namespace PimCommon
 {
@@ -33,7 +33,7 @@ public:
 
     [[nodiscard]] QString configGroupName() const;
     [[nodiscard]] QString configPrefixSettingKey() const;
-    [[nodiscard]] QList<PimCommon::PluginUtilData> pluginsDataList() const;
+    [[nodiscard]] QList<TextAddonsWidgets::PluginUtilData> pluginsDataList() const;
     [[nodiscard]] PimCommon::CustomToolsPlugin *pluginFromIdentifier(const QString &id);
 
 private:

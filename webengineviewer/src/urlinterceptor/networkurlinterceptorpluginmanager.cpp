@@ -9,9 +9,9 @@ using namespace Qt::Literals::StringLiterals;
 
 #include "networkpluginurlinterceptor.h"
 #include "webengineviewer_debug.h"
-
 #include <KPluginFactory>
 #include <KPluginMetaData>
+#include <PimCommon/PluginUtil>
 #include <QFileInfo>
 #include <QVariant>
 
@@ -25,7 +25,7 @@ public:
     KPluginMetaData data;
     QString metaDataFileNameBaseName;
     QString metaDataFileName;
-    PimCommon::PluginUtilData pluginData;
+    TextAddonsWidgets::PluginUtilData pluginData;
     WebEngineViewer::NetworkPluginUrlInterceptor *plugin = nullptr;
     bool isEnabled = false;
 };
@@ -52,12 +52,12 @@ public:
     [[nodiscard]] QList<WebEngineViewer::NetworkPluginUrlInterceptor *> pluginsList() const;
     [[nodiscard]] QString configGroupName() const;
     [[nodiscard]] QString configPrefixSettingKey() const;
-    [[nodiscard]] QList<PimCommon::PluginUtilData> pluginDataList() const;
+    [[nodiscard]] QList<TextAddonsWidgets::PluginUtilData> pluginDataList() const;
     [[nodiscard]] NetworkPluginUrlInterceptor *pluginFromIdentifier(const QString &id);
 
 private:
     QList<MailNetworkUrlInterceptorPluginInfo> mPluginList;
-    QList<PimCommon::PluginUtilData> mPluginDataList;
+    QList<TextAddonsWidgets::PluginUtilData> mPluginDataList;
     NetworkUrlInterceptorPluginManager *const q;
 };
 
@@ -71,7 +71,7 @@ QString NetworkUrlInterceptorPluginManagerPrivate::configPrefixSettingKey() cons
     return u"PluginsNetworkUrlInterceptor"_s;
 }
 
-QList<PimCommon::PluginUtilData> NetworkUrlInterceptorPluginManagerPrivate::pluginDataList() const
+QList<TextAddonsWidgets::PluginUtilData> NetworkUrlInterceptorPluginManagerPrivate::pluginDataList() const
 {
     return mPluginDataList;
 }
@@ -82,7 +82,7 @@ void NetworkUrlInterceptorPluginManagerPrivate::initializePluginList()
 
     QListIterator<KPluginMetaData> i(plugins);
     i.toBack();
-    const PimCommon::PluginUtil::PluginsStateList pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
+    const TextAddonsWidgets::PluginUtil::PluginsStateList pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
 
     while (i.hasPrevious()) {
         MailNetworkUrlInterceptorPluginInfo info;
@@ -90,12 +90,12 @@ void NetworkUrlInterceptorPluginManagerPrivate::initializePluginList()
         const KPluginMetaData data = i.previous();
 
         // 1) get plugin data => name/description etc.
-        info.pluginData = PimCommon::PluginUtil::createPluginMetaData(data);
+        info.pluginData = TextAddonsWidgets::PluginUtil::createPluginMetaData(data);
         // 2) look at if plugin is activated
-        const bool isPluginActivated = PimCommon::PluginUtil::isPluginActivated(pair.enabledPluginList,
-                                                                                pair.disabledPluginList,
-                                                                                info.pluginData.mEnableByDefault,
-                                                                                info.pluginData.mIdentifier);
+        const bool isPluginActivated = TextAddonsWidgets::PluginUtil::isPluginActivated(pair.enabledPluginList,
+                                                                                        pair.disabledPluginList,
+                                                                                        info.pluginData.mEnableByDefault,
+                                                                                        info.pluginData.mIdentifier);
         info.isEnabled = isPluginActivated;
         info.metaDataFileNameBaseName = QFileInfo(data.fileName()).baseName();
         info.metaDataFileName = data.fileName();
@@ -178,7 +178,7 @@ QString NetworkUrlInterceptorPluginManager::configPrefixSettingKey() const
     return d->configPrefixSettingKey();
 }
 
-QList<PimCommon::PluginUtilData> NetworkUrlInterceptorPluginManager::pluginsDataList() const
+QList<TextAddonsWidgets::PluginUtilData> NetworkUrlInterceptorPluginManager::pluginsDataList() const
 {
     return d->pluginDataList();
 }

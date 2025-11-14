@@ -13,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <KPluginFactory>
 #include <KPluginMetaData>
 #include <KSharedConfig>
+#include <PimCommon/PluginUtil>
 #include <QFileInfo>
 
 using namespace MessageViewer;
@@ -25,7 +26,7 @@ public:
     KPluginMetaData data;
     QString metaDataFileNameBaseName;
     QString metaDataFileName;
-    PimCommon::PluginUtilData pluginData;
+    TextAddonsWidgets::PluginUtilData pluginData;
     MessageViewer::ViewerPlugin *plugin = nullptr;
     bool isEnabled = false;
 };
@@ -41,7 +42,7 @@ public:
     bool initializePluginList();
     void loadPlugin(ViewerPluginInfo *item);
     [[nodiscard]] QList<MessageViewer::ViewerPlugin *> pluginsList() const;
-    [[nodiscard]] QList<PimCommon::PluginUtilData> pluginDataList() const;
+    [[nodiscard]] QList<TextAddonsWidgets::PluginUtilData> pluginDataList() const;
 
     QString pluginDirectory;
     QString pluginName;
@@ -52,7 +53,7 @@ public:
 
 private:
     QList<ViewerPluginInfo> mPluginList;
-    QList<PimCommon::PluginUtilData> mPluginDataList;
+    QList<TextAddonsWidgets::PluginUtilData> mPluginDataList;
     ViewerPluginManager *const q;
 };
 
@@ -88,7 +89,7 @@ bool ViewerPluginManagerPrivate::initializePluginList()
     // We need common plugin to avoid to duplicate code between akregator/kmail
     plugins += KPluginMetaData::findPlugins(u"pim6/messageviewer/viewercommonplugin"_s);
 
-    const PimCommon::PluginUtil::PluginsStateList pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
+    const TextAddonsWidgets::PluginUtil::PluginsStateList pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
     QListIterator<KPluginMetaData> i(plugins);
     i.toBack();
     while (i.hasPrevious()) {
@@ -97,12 +98,12 @@ bool ViewerPluginManagerPrivate::initializePluginList()
         const KPluginMetaData data = i.previous();
 
         // 1) get plugin data => name/description etc.
-        info.pluginData = PimCommon::PluginUtil::createPluginMetaData(data);
+        info.pluginData = TextAddonsWidgets::PluginUtil::createPluginMetaData(data);
         // 2) look at if plugin is activated
-        const bool isPluginActivated = PimCommon::PluginUtil::isPluginActivated(pair.enabledPluginList,
-                                                                                pair.disabledPluginList,
-                                                                                info.pluginData.mEnableByDefault,
-                                                                                info.pluginData.mIdentifier);
+        const bool isPluginActivated = TextAddonsWidgets::PluginUtil::isPluginActivated(pair.enabledPluginList,
+                                                                                        pair.disabledPluginList,
+                                                                                        info.pluginData.mEnableByDefault,
+                                                                                        info.pluginData.mIdentifier);
         info.isEnabled = isPluginActivated;
         info.metaDataFileNameBaseName = QFileInfo(data.fileName()).baseName();
         info.metaDataFileName = data.fileName();
@@ -144,7 +145,7 @@ QList<ViewerPlugin *> ViewerPluginManagerPrivate::pluginsList() const
     return lst;
 }
 
-QList<PimCommon::PluginUtilData> ViewerPluginManagerPrivate::pluginDataList() const
+QList<TextAddonsWidgets::PluginUtilData> ViewerPluginManagerPrivate::pluginDataList() const
 {
     return mPluginDataList;
 }
@@ -194,7 +195,7 @@ QString ViewerPluginManager::pluginDirectory() const
     return d->pluginDirectory;
 }
 
-QList<PimCommon::PluginUtilData> ViewerPluginManager::pluginsDataList() const
+QList<TextAddonsWidgets::PluginUtilData> ViewerPluginManager::pluginsDataList() const
 {
     return d->pluginDataList();
 }

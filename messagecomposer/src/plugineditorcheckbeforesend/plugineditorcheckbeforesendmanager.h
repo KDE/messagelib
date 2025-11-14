@@ -7,8 +7,8 @@
 #pragma once
 
 #include "messagecomposer_export.h"
-#include <PimCommon/PluginUtil>
 #include <QObject>
+#include <TextAddonsWidgets/PluginUtil>
 namespace MessageComposer
 {
 class PluginEditorCheckBeforeSendManagerPrivate;
@@ -29,7 +29,7 @@ public:
 
     [[nodiscard]] QString configGroupName() const;
     [[nodiscard]] QString configPrefixSettingKey() const;
-    [[nodiscard]] QList<PimCommon::PluginUtilData> pluginsDataList() const;
+    [[nodiscard]] QList<TextAddonsWidgets::PluginUtilData> pluginsDataList() const;
     [[nodiscard]] PluginEditorCheckBeforeSend *pluginFromIdentifier(const QString &id);
 
 private:
