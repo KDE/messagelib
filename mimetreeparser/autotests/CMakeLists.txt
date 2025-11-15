@@ -10,7 +10,6 @@ macro(add_mimetreeparser_unittest _source)
     get_filename_component(_name ${_source} NAME_WE)
     ecm_add_test(${_source} util.cpp setupenv.cpp
         TEST_NAME ${_name}
-        NAME_PREFIX "mimetreeparser-"
         LINK_LIBRARIES KPim6::MimeTreeParser Qt::Test KPim6::Mime Gpgmepp
 )
 endmacro()
@@ -19,7 +18,6 @@ macro(add_mimetreeparser_class_unittest _source _additionalSource)
     get_filename_component(_name ${_source} NAME_WE)
     ecm_add_test(${_source} ${_additionalSource}
         TEST_NAME ${_name}
-        NAME_PREFIX "mimetreeparser-"
         LINK_LIBRARIES KPim6::MimeTreeParser Qt::Test KPim6::Mime Gpgmepp
 )
 endmacro()

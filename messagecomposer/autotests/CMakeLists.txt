@@ -14,7 +14,6 @@ macro(add_messagecomposer_test _source)
     get_filename_component(_name ${_source} NAME_WE)
     ecm_add_test(${ARGV}
         TEST_NAME ${_name}
-        NAME_PREFIX "messagecomposer-"
         LINK_LIBRARIES
             KF6::I18n
             KPim6::MailTransport
@@ -109,7 +108,6 @@ set(AKONADI_RUN_POSTGRES_ISOLATED_TESTS FALSE)
 set(AKONADI_RUN_MYSQL_ISOLATED_TESTS FALSE)
 
 ecm_add_test(followupreminderselectdatedialogtest.cpp
-    NAME_PREFIX "messagecomposer-"
     LINK_LIBRARIES
         KPim6::AkonadiCore
         KPim6::AkonadiWidgets
@@ -119,7 +117,6 @@ ecm_add_test(followupreminderselectdatedialogtest.cpp
 )
 
 ecm_add_test(attachmentvcardfromaddressbookjobtest.cpp
-    NAME_PREFIX "messagecomposer-"
     LINK_LIBRARIES
         KF6::Contacts
         KPim6::MessageComposer
