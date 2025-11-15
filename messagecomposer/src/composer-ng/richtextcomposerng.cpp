@@ -20,9 +20,7 @@
 #include <KMessageBox>
 
 #include <QRegularExpression>
-#if HAVE_TEXTADDONSWIDGET_RICHTEXTQUICKTEXTFORMAT
 #include <TextAddonsWidgets/RichTextQuickTextFormat>
-#endif
 using namespace MessageComposer;
 using namespace Qt::Literals::StringLiterals;
 
@@ -40,16 +38,13 @@ public:
     TextAutoCorrectionCore::AutoCorrection *autoCorrection = nullptr;
     RichTextComposerNg *const richtextComposer;
     MessageComposer::RichTextComposerSignatures *const richTextComposerSignatures;
-#if HAVE_TEXTADDONSWIDGET_RICHTEXTQUICKTEXTFORMAT
     TextAddonsWidgets::RichTextQuickTextFormat *richTextQuickTextFormat = nullptr;
-#endif
 };
 
 RichTextComposerNg::RichTextComposerNg(QWidget *parent)
     : KPIMTextEdit::RichTextComposer(parent)
     , d(new MessageComposer::RichTextComposerNgPrivate(this))
 {
-#if HAVE_TEXTADDONSWIDGET_RICHTEXTQUICKTEXTFORMAT
     auto quicktextformatmessage = new TextAddonsWidgets::RichTextQuickTextFormat(this, this);
     TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatTypes formatTypes = TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::Unknown;
     formatTypes |= TextAddonsWidgets::RichTextQuickTextFormat::QuickTextFormatType::Bold;
@@ -89,7 +84,6 @@ RichTextComposerNg::RichTextComposerNg(QWidget *parent)
                 }
             });
     quicktextformatmessage->setEnabled(MessageComposer::MessageComposerSettings::activateQuickTextFormat());
-#endif
 }
 
 RichTextComposerNg::~RichTextComposerNg() = default;

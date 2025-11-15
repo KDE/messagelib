@@ -314,13 +314,8 @@ target_link_libraries(KPim6MessageComposer
     KF6::Codecs
     ${Inotify_LIBRARIES}
     KF6::TextAutoCorrectionWidgets
+    KF6::TextAddonsWidgets
 )
-if (HAVE_TEXTADDONSWIDGET_RICHTEXTQUICKTEXTFORMAT)
-    target_link_libraries(KPim6MessageComposer
-        PRIVATE
-        KF6::TextAddonsWidgets
-    )
-endif ()
 
 target_include_directories(KPim6MessageComposer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageComposer/>")
 
