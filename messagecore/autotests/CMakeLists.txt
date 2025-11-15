@@ -49,7 +49,7 @@ add_messagecore_test( attachmentupdatejobtest.cpp)
 # Other tests
 add_messagecore_test( stringutiltest.cpp)
 add_messagecore_test( mailinglisttest.cpp)
-ecm_add_test(dateformattertest.cpp NAME_PREFIX "messagecore-" LINK_LIBRARIES Qt::Test KPim6::MessageCore)
+ecm_add_test(dateformattertest.cpp LINK_LIBRARIES Qt::Test KPim6::MessageCore)
 
 # Autocrypt tests
 add_messagecore_cryptotest( autocryptrecipienttest.cpp)
