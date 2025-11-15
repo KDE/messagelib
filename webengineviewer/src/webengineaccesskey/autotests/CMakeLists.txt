@@ -2,7 +2,6 @@
 # SPDX-FileCopyrightText: none
 ecm_add_test(webengineaccesskeyanchortest.cpp webengineaccesskeyanchortest.h ../webengineaccesskeyanchor.cpp ../webengineaccesskeyutils.cpp
     TEST_NAME webengineaccesskeyanchortest
-    NAME_PREFIX "webengineviewer-webengineaccesskey-"
     LINK_LIBRARIES Qt::Test KPim6::WebEngineViewer
 )
 # needed for the CI to run webengine-related tests
@@ -11,7 +10,6 @@ set_tests_properties(webengineviewer-webengineaccesskey-webengineaccesskeyanchor
 
 ecm_add_test(webengineaccesskeyanchorfromhtmltest.cpp webengineaccesskeyanchorfromhtmltest.h ../webengineaccesskeyanchor.cpp ../webengineaccesskeyutils.cpp
     TEST_NAME webengineaccesskeyanchorfromhtmltest
-    NAME_PREFIX "webengineviewer-webengineaccesskey-"
     LINK_LIBRARIES Qt::Test KPim6::WebEngineViewer  Qt::WebEngineWidgets
 )
 # needed for the CI to run webengine-related tests

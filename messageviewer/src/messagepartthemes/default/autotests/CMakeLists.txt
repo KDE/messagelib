@@ -33,18 +33,15 @@ add_messageviewer_crypto_unittest(unencryptedmessagetest.cpp)
 
 ecm_add_test(quotehtmltest.cpp setupenv.cpp ../plugins/quotehtml.cpp
     TEST_NAME quotehtmltest
-    NAME_PREFIX "messageviewer-messagepartthemes-"
     LINK_LIBRARIES Qt::Test KPim6::MessageViewer KF6::IconThemes KPim6::Mime
 )
 
 ecm_add_test(showonlymimeparttest.cpp setupenv.cpp util.cpp testcsshelper.cpp
     TEST_NAME showonlymimeparttest
-    NAME_PREFIX "messageviewer-messagepartthemes-"
     LINK_LIBRARIES Qt::Test KPim6::MessageViewer KF6::IconThemes KPim6::Mime KPim6::GrantleeTheme
 )
 
 ecm_add_test(converthtmltoplaintexttest.cpp ../converthtmltoplaintext.cpp
     TEST_NAME converthtmltoplaintexttest
-    NAME_PREFIX "messageviewer-messagepartthemes-"
     LINK_LIBRARIES Qt::Test KPim6::PimTextEdit Qt::Gui
 )

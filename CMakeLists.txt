@@ -32,10 +32,17 @@ set(MIMETREEPARSER_LIB_VERSION "6.6.40")
 
 set(OPENSSL_VERSION "3.0.0")
 
-set(ECM_VERSION ${KF_MIN_VERSION})
+set(ECM_MIN_VERSION ${KF_MIN_VERSION})
 
-find_package(ECM ${ECM_VERSION} CONFIG REQUIRED)
+find_package(ECM ${ECM_MIN_VERSION} CONFIG REQUIRED)
 set(CMAKE_MODULE_PATH ${Messagelib_SOURCE_DIR}/cmake/modules ${ECM_MODULE_PATH})
+
+# setup use of ECMAddTest copy with newer features
+if(ECM_VERSION VERSION_LESS 6.22)
+    list(PREPEND CMAKE_MODULE_PATH "${Messagelib_SOURCE_DIR}/cmake/ecmcopy")
+elseif(ECM_MIN_VERSION VERSION_GREATER_EQUAL 6.22)
+    message(WARNING "Remove copy of ECMAddTest, min. required ECM now provides it.")
+endif()
 
 include(KDEInstallDirs)
 include(KDECMakeSettings)
@@ -177,6 +184,7 @@ endif()
 ecm_set_disabled_deprecation_versions(QT 6.10.0 KF 6.21.0 KMIME 6.7.0)
 add_definitions(-DQT_NO_CONTEXTLESS_CONNECT)
 if(BUILD_TESTING)
+    set(ECM_TEST_NAME_PREFIX_STRATEGY "PATH")
     add_definitions(-DBUILD_TESTING)
 endif()
 
