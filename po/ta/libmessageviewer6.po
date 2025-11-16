@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-30 00:43+0000\n"
+"POT-Creation-Date: 2025-11-16 00:43+0000\n"
 "PO-Revision-Date: 2025-05-18 19:02+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -1851,7 +1851,7 @@ msgstr "&முகவரிப்புத்தகத்தில் திற"
 msgid "&Copy Email Address"
 msgstr "மின்னஞ்சல் முகவரியை &நகலெடு"
 
-#: viewer/urlhandlermanager.cpp:585 viewer/viewer_p.cpp:2722
+#: viewer/urlhandlermanager.cpp:585 viewer/viewer_p.cpp:2718
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "பிடிப்புபலகைக்கு முகவரி நகலெடுக்கப்பட்டுள்ளது."
@@ -2260,17 +2260,17 @@ msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "அஞ்சல், சாதாரண உரையாக"
 
-#: viewer/viewer_p.cpp:2728
+#: viewer/viewer_p.cpp:2724
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "பிடிப்புப்பலகைக்கு முகவரி நகலெடுக்கப்பட்டது"
 
-#: viewer/viewer_p.cpp:2890
+#: viewer/viewer_p.cpp:2886
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "அஞ்சலை ஏற்றுவது தோல்வியடைந்தது: %1."
 
-#: viewer/viewer_p.cpp:2895
+#: viewer/viewer_p.cpp:2891
 #, kde-format
 msgid "Message not found."
 msgstr "அஞ்சல் கண்டுபிடிக்கப்படவில்லை."

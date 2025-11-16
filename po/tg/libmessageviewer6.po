@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-30 00:43+0000\n"
+"POT-Creation-Date: 2025-11-16 00:43+0000\n"
 "PO-Revision-Date: 2019-09-29 12:28+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -1945,7 +1945,7 @@ msgstr "Дар китоби адресӣ боз кардан"
 msgid "&Copy Email Address"
 msgstr "Адреси e-mail"
 
-#: viewer/urlhandlermanager.cpp:585 viewer/viewer_p.cpp:2722
+#: viewer/urlhandlermanager.cpp:585 viewer/viewer_p.cpp:2718
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Адрес дар буфери тағйирот копӣ карда шудааст."
@@ -2385,18 +2385,18 @@ msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Иттилоот ба намуди матни оддӣ"
 
-#: viewer/viewer_p.cpp:2728
+#: viewer/viewer_p.cpp:2724
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL дар буфери тағйирот копӣ карда шудааст."
 
-#: viewer/viewer_p.cpp:2890
+#: viewer/viewer_p.cpp:2886
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message loading failed: %1."
 msgstr "Иттилоот бо %1 имзо шудааст."
 
-#: viewer/viewer_p.cpp:2895
+#: viewer/viewer_p.cpp:2891
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message not found."

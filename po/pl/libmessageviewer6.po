@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-30 00:43+0000\n"
+"POT-Creation-Date: 2025-11-16 00:43+0000\n"
 "PO-Revision-Date: 2025-11-08 09:39+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
@@ -1856,7 +1856,7 @@ msgstr "&Otwórz w książce adresowej"
 msgid "&Copy Email Address"
 msgstr "S&kopiuj adres e-mail"
 
-#: viewer/urlhandlermanager.cpp:585 viewer/viewer_p.cpp:2722
+#: viewer/urlhandlermanager.cpp:585 viewer/viewer_p.cpp:2718
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Adres skopiowano do schowka."
@@ -2267,17 +2267,17 @@ msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Wiadomość jako zwykły tekst"
 
-#: viewer/viewer_p.cpp:2728
+#: viewer/viewer_p.cpp:2724
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "Adres URL skopiowano do schowka."
 
-#: viewer/viewer_p.cpp:2890
+#: viewer/viewer_p.cpp:2886
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "Nieudane wczytywanie wiadomości: %1."
 
-#: viewer/viewer_p.cpp:2895
+#: viewer/viewer_p.cpp:2891
 #, kde-format
 msgid "Message not found."
 msgstr "Nie znaleziono wiadomości."

@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-30 00:43+0000\n"
+"POT-Creation-Date: 2025-11-16 00:43+0000\n"
 "PO-Revision-Date: 2025-05-19 10:18+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -1860,7 +1860,7 @@ msgstr "&Abrir na axenda de enderezos"
 msgid "&Copy Email Address"
 msgstr "&Copiar o enderezo de correo"
 
-#: viewer/urlhandlermanager.cpp:585 viewer/viewer_p.cpp:2722
+#: viewer/urlhandlermanager.cpp:585 viewer/viewer_p.cpp:2718
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Copiouse o enderezo no portapapeis."
@@ -2267,17 +2267,17 @@ msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Mensaxe como texto simple"
 
-#: viewer/viewer_p.cpp:2728
+#: viewer/viewer_p.cpp:2724
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL copiado no portapapeis."
 
-#: viewer/viewer_p.cpp:2890
+#: viewer/viewer_p.cpp:2886
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "Fallou o cargado da mensaxe: %1."
 
-#: viewer/viewer_p.cpp:2895
+#: viewer/viewer_p.cpp:2891
 #, kde-format
 msgid "Message not found."
 msgstr "Non se atopou a mensaxe."

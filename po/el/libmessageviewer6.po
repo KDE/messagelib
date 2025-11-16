@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-30 00:43+0000\n"
+"POT-Creation-Date: 2025-11-16 00:43+0000\n"
 "PO-Revision-Date: 2024-09-19 17:23+0300\n"
 "Last-Translator: Antonis Geralis <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -1970,7 +1970,7 @@ msgstr "Άνοιγμα στο βιβλίο &διευθύνσεων"
 msgid "&Copy Email Address"
 msgstr "&Αντιγραφή της διεύθυνσης ηλ. αλληλογραφίας"
 
-#: viewer/urlhandlermanager.cpp:585 viewer/viewer_p.cpp:2722
+#: viewer/urlhandlermanager.cpp:585 viewer/viewer_p.cpp:2718
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Η διεύθυνση αντιγράφτηκε στο πρόχειρο."
@@ -2384,17 +2384,17 @@ msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Μήνυμα ως απλό κείμενο"
 
-#: viewer/viewer_p.cpp:2728
+#: viewer/viewer_p.cpp:2724
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "Το URL αντιγράφτηκε στο πρόχειρο."
 
-#: viewer/viewer_p.cpp:2890
+#: viewer/viewer_p.cpp:2886
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "Η φόρτωση του μηνύματος απέτυχε: %1"
 
-#: viewer/viewer_p.cpp:2895
+#: viewer/viewer_p.cpp:2891
 #, kde-format
 msgid "Message not found."
 msgstr "Το μήνυμα δεν βρέθηκε."

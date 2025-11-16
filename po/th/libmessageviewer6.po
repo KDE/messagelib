@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-30 00:43+0000\n"
+"POT-Creation-Date: 2025-11-16 00:43+0000\n"
 "PO-Revision-Date: 2025-03-03 20:07+0700\n"
 "Last-Translator: Pongsakorn S. <kde@xerusion.me>\n"
 "Language-Team: Thai\n"
@@ -1926,7 +1926,7 @@ msgstr "เปิดในสมุดที่อยู่"
 msgid "&Copy Email Address"
 msgstr "ที่อยู่อีเมล"
 
-#: viewer/urlhandlermanager.cpp:585 viewer/viewer_p.cpp:2722
+#: viewer/urlhandlermanager.cpp:585 viewer/viewer_p.cpp:2718
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "คัดลอกที่อยู่ไปยังคลิปบอร์ดแล้ว"
@@ -2366,18 +2366,18 @@ msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "จดหมายเป็นข้อความธรรมดา"
 
-#: viewer/viewer_p.cpp:2728
+#: viewer/viewer_p.cpp:2724
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "คัดลอก URL ไปยังคลิปบอร์ดแล้ว"
 
-#: viewer/viewer_p.cpp:2890
+#: viewer/viewer_p.cpp:2886
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message loading failed: %1."
 msgstr "จดหมายถูกเซ็นกำกับโดย %1"
 
-#: viewer/viewer_p.cpp:2895
+#: viewer/viewer_p.cpp:2891
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message not found."
