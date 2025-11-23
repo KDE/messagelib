@@ -41,7 +41,6 @@ Q_SIGNALS:
     void debugJson(const QByteArray &ba);
 
 private:
-    WEBENGINEVIEWER_NO_EXPORT void slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error);
     WEBENGINEVIEWER_NO_EXPORT void slotError(QNetworkReply::NetworkError error);
     WEBENGINEVIEWER_NO_EXPORT void slotCheckUrlFinished(QNetworkReply *reply);
 
