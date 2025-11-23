@@ -63,7 +63,6 @@ Q_SIGNALS:
 
 private:
     WEBENGINEVIEWER_NO_EXPORT void slotDownloadDataBaseFinished(QNetworkReply *reply);
-    WEBENGINEVIEWER_NO_EXPORT void slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error);
     WEBENGINEVIEWER_NO_EXPORT void slotError(QNetworkReply::NetworkError error);
 
     std::unique_ptr<CreatePhishingUrlDataBaseJobPrivate> const d;

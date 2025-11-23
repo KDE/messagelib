@@ -39,16 +39,9 @@ SearchFullHashJob::SearchFullHashJob(QObject *parent)
     d->mNetworkAccessManager->enableStrictTransportSecurityStore(true);
 
     connect(d->mNetworkAccessManager, &QNetworkAccessManager::finished, this, &SearchFullHashJob::slotCheckUrlFinished);
-    connect(d->mNetworkAccessManager, &QNetworkAccessManager::sslErrors, this, &SearchFullHashJob::slotSslErrors);
 }
 
 SearchFullHashJob::~SearchFullHashJob() = default;
-
-void SearchFullHashJob::slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error)
-{
-    qCDebug(WEBENGINEVIEWER_LOG) << " void SearchFullHashJob::slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error)" << error.count();
-    reply->ignoreSslErrors(error);
-}
 
 void SearchFullHashJob::parse(const QByteArray &replyStr)
 {

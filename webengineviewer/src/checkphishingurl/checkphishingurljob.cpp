@@ -37,16 +37,9 @@ CheckPhishingUrlJob::CheckPhishingUrlJob(QObject *parent)
     d->mNetworkAccessManager->enableStrictTransportSecurityStore(true);
 
     connect(d->mNetworkAccessManager, &QNetworkAccessManager::finished, this, &CheckPhishingUrlJob::slotCheckUrlFinished);
-    connect(d->mNetworkAccessManager, &QNetworkAccessManager::sslErrors, this, &CheckPhishingUrlJob::slotSslErrors);
 }
 
 CheckPhishingUrlJob::~CheckPhishingUrlJob() = default;
-
-void CheckPhishingUrlJob::slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error)
-{
-    qCDebug(WEBENGINEVIEWER_LOG) << " void CheckPhishingUrlJob::slotSslErrors(QNetworkReply *reply, const QList<QSslError> &error)" << error.count();
-    reply->ignoreSslErrors(error);
-}
 
 void CheckPhishingUrlJob::parse(const QByteArray &replyStr)
 {
