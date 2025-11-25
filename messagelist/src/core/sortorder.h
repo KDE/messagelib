@@ -22,10 +22,6 @@ namespace Core
 class SortOrder
 {
     Q_GADGET
-    Q_ENUMS(GroupSorting)
-    Q_ENUMS(SortDirection)
-    Q_ENUMS(MessageSorting)
-
 public:
     /**
      * How to sort the groups
@@ -41,6 +37,7 @@ public:
         SortGroupsByReceiver ///< Sort groups by receiver (makes sense only with GroupByReceiver)
         // Never add enum entries in the middle: always add them at the end (numeric values are stored in configuration)
     };
+    Q_ENUM(GroupSorting)
 
     /**
      * The "generic" sort direction: used for groups and for messages
@@ -51,6 +48,7 @@ public:
         Ascending,
         Descending,
     };
+    Q_ENUM(SortDirection)
 
     /**
      * The available message sorting options.
@@ -72,6 +70,7 @@ public:
         SortMessagesByAttachmentStatus, /// Sort the messages By "Attachment" flags of status
         // Warning: Never add enum entries in the middle: always add them at the end (numeric values are stored in configuration)
     };
+    Q_ENUM(MessageSorting)
 
     SortOrder();
 

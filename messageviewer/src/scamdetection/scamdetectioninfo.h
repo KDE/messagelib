@@ -15,6 +15,7 @@ namespace MessageViewer
  */
 class MESSAGEVIEWER_EXPORT ScamDetectionInfo
 {
+    Q_GADGET
 public:
     enum ScamDetectionField : uint8_t {
         None = 0,
@@ -22,8 +23,8 @@ public:
         RedirectUrl = 2,
         HasIp = 4,
     };
-    Q_ENUMS(ScamDetectionField)
     Q_DECLARE_FLAGS(ScamDetectionFields, ScamDetectionField)
+    Q_ENUM(ScamDetectionField)
 
     ScamDetectionInfo();
     ~ScamDetectionInfo();
