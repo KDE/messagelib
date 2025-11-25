@@ -5,7 +5,6 @@
 */
 
 #include "scamdetectionwebenginetest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../scamdetectionwebengine.h"
 #include <QHBoxLayout>
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTest>
 #include <QWebEngineView>
 
+using namespace Qt::Literals::StringLiterals;
 TestWebEngineScamDetection::TestWebEngineScamDetection(QWidget *parent)
     : QWidget(parent)
     , mEngineView(new QWebEngineView(this))
@@ -148,6 +148,10 @@ void ScamDetectionWebEngineTest::scamtest_data()
     QTest::newRow("BUG-494603") << QStringLiteral(R"(<a href="https://www.kde.org?rid">https://www.kk.org</a>)") << true;
 
     QTest::newRow("BUG-510551") << QStringLiteral(R"(<a href="https://example.org/A" title="https://example.org/A">https://example.org/A</a>)") << false;
+
+#if 0
+    QTest::newRow("https://www.kde.fr/?eu_business_user=true") << QStringLiteral(R"(<a href="https://www.kde.fr/?eu_business_user=true">https://www.kde.fr/</a>)") << false;
+#endif
 }
 
 void ScamDetectionWebEngineTest::scamtest()
