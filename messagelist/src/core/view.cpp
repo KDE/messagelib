@@ -2271,7 +2271,7 @@ bool View::event(QEvent *e)
             if (textIsLeftToRight) {
                 tip += htmlCodeForStandardRow.arg(i18n("Preview"), content.replace(u'\n', u"<br>"_s));
             } else {
-                tip += htmlCodeForStandardRow.arg(content.replace(u'\n', u"<br>"_s)).arg(i18n("Preview"));
+                tip += htmlCodeForStandardRow.arg(content.replace(u'\n', u"<br>"_s), i18n("Preview"));
             }
         }
 

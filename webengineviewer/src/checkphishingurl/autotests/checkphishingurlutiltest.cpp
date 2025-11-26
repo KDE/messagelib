@@ -38,7 +38,7 @@ void CheckPhishingUrlUtilTest::shouldCacheIsStillValid_data()
 {
     QTest::addColumn<double>("second");
     QTest::addColumn<bool>("valid");
-    uint currentTime = QDateTime::currentDateTimeUtc().toSecsSinceEpoch();
+    uint currentTime = QDateTime::currentSecsSinceEpoch();
     QTest::newRow("valid") << (currentTime + 2000.) << true;
     QTest::newRow("invalid") << (currentTime - 2000.) << false;
 }

@@ -84,7 +84,7 @@ void BackOffModeManagerPrivate::load()
     isInOffMode = grp.readEntry("Enabled", false);
     if (isInOffMode) {
         const qint64 delay = grp.readEntry("Delay", 0);
-        const qint64 now = QDateTime::currentDateTimeUtc().toSecsSinceEpoch();
+        const qint64 now = QDateTime::currentSecsSinceEpoch();
         if (delay > now) {
             const qint64 diff = (delay - now);
             updateTimer(diff);

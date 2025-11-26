@@ -115,11 +115,11 @@ public:
     void setType(MenuTypes type);
 
 Q_SIGNALS:
-    void insertCommand(TemplatesCommandMenu::Command cmd);
+    void insertCommand(TemplateParser::TemplatesCommandMenu::Command cmd);
     void insertCommand(const QString &cmd, int adjustCursor = 0);
 
 public Q_SLOTS:
-    void slotInsertCommand(TemplatesCommandMenu::Command cmd);
+    void slotInsertCommand(TemplateParser::TemplatesCommandMenu::Command cmd);
 
 protected:
     KActionMenu *mMenu = nullptr;

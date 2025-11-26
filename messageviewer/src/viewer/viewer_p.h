@@ -591,7 +591,7 @@ Q_SIGNALS:
     void itemRemoved();
     void makeResourceOnline(MessageViewer::Viewer::ResourceOnlineMode mode);
 
-    void changeDisplayMail(Viewer::DisplayFormatMessage, bool);
+    void changeDisplayMail(MessageViewer::Viewer::DisplayFormatMessage, bool);
     void moveMessageToTrash();
     void pageIsScrolledToBottom(bool);
     void printingFinished();

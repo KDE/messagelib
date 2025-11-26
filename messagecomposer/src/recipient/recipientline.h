@@ -101,8 +101,8 @@ public:
     [[nodiscard]] QString rawData() const;
 
 Q_SIGNALS:
-    void typeModified(RecipientLineNG *);
-    void addRecipient(RecipientLineNG *, const QString &);
+    void typeModified(MessageComposer::RecipientLineNG *);
+    void addRecipient(MessageComposer::RecipientLineNG *, const QString &);
     void countChanged();
     void iconClicked();
     void activeChanged();

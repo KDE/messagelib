@@ -32,7 +32,7 @@ public:
     [[nodiscard]] bool canStart() const;
 
 Q_SIGNALS:
-    void showMdnInfo(const MDNAdviceHelper::MDNMessateInfo &mdnInfo, KMime::MDN::SendingMode s);
+    void showMdnInfo(const MessageComposer::MDNAdviceHelper::MDNMessateInfo &mdnInfo, KMime::MDN::SendingMode s);
 
 private:
     Akonadi::Item mItem;

@@ -64,7 +64,7 @@ public:
             if (!QFileInfo::exists(databaseFullPath())) {
                 downloadDataBase(QString());
             } else {
-                const uint now = QDateTime::currentDateTimeUtc().toSecsSinceEpoch();
+                const uint now = QDateTime::currentSecsSinceEpoch();
                 // qDebug() << " now "<< now << " d->mSecondToStartRefreshing "<<d->mSecondToStartRefreshing << " now > d->mSecondToStartRefreshing" << (now >
                 // d->mSecondToStartRefreshing);
                 if ((mSecondToStartRefreshing != 0) && (mSecondToStartRefreshing > now)) {

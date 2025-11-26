@@ -424,7 +424,7 @@ public Q_SLOTS:
     void slotZoomIn();
     void slotZoomOut();
     void slotZoomReset();
-    void slotChangeDisplayMail(Viewer::DisplayFormatMessage, bool);
+    void slotChangeDisplayMail(MessageViewer::Viewer::DisplayFormatMessage, bool);
 
 protected:
     /** Some necessary event handling. */

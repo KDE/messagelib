@@ -843,7 +843,7 @@ KMime::Message::Ptr MessageFactoryTest::createPlainTestMessage()
     composerJob->globalPart()->setMDNRequested(true);
     composerJob->exec();
 
-    KMime::Message::Ptr message = KMime::Message::Ptr(composerJob->resultMessages().first());
+    KMime::Message::Ptr message = KMime::Message::Ptr(composerJob->resultMessages().constFirst());
     delete composerJob;
 
     return message;
