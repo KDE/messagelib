@@ -200,12 +200,13 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
                                             const QString hrefUrlWithoutQuery =
                                                 normalizedHrefUrl.toDisplayString(QUrl::RemoveQuery | QUrl::StripTrailingSlash | QUrl::NormalizePathSegments);
                                             // qDebug() << "displayUrlWithoutQuery "  << displayUrlWithoutQuery << " hrefUrlWithoutQuery " <<
-                                            // hrefUrlWithoutQuery << " text " << text;
-                                            // qDebug() << " qurlqueryequal " << qurlqueryequal << " hrefUrlWithoutQuery " << hrefUrlWithoutQuery;
+                                            //  hrefUrlWithoutQuery << " text " << text;
+                                            //  qDebug() << " qurlqueryequal " << qurlqueryequal << " hrefUrlWithoutQuery " << hrefUrlWithoutQuery;
 
                                             if (qurlqueryequal && (displayUrlWithoutQuery + u'/' != hrefUrlWithoutQuery)) {
                                                 foundScam = true;
-                                            } else if ((displayUrlWithoutQuery + u'/' != hrefUrlWithoutQuery)) {
+                                            } else if ((displayUrlWithoutQuery != hrefUrlWithoutQuery)
+                                                       && (displayUrlWithoutQuery + u'/' != hrefUrlWithoutQuery)) {
                                                 // qDebug() << " displayUrlWithoutQuery********** "<< displayUrlWithoutQuery << " hrefUrlWithoutQuery***" <<
                                                 // hrefUrlWithoutQuery;
                                                 foundScam = true;
