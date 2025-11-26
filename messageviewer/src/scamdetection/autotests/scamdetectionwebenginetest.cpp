@@ -149,9 +149,8 @@ void ScamDetectionWebEngineTest::scamtest_data()
 
     QTest::newRow("BUG-510551") << QStringLiteral(R"(<a href="https://example.org/A" title="https://example.org/A">https://example.org/A</a>)") << false;
 
-#if 0
-    QTest::newRow("https://www.kde.fr/?eu_business_user=true") << QStringLiteral(R"(<a href="https://www.kde.fr/?eu_business_user=true">https://www.kde.fr/</a>)") << false;
-#endif
+    QTest::newRow("https://www.kde.fr/?eu_business_user=true")
+        << QStringLiteral(R"(<a href="https://www.kde.fr/?eu_business_user=true">https://www.kde.fr/</a>)") << false;
 }
 
 void ScamDetectionWebEngineTest::scamtest()
