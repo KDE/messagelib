@@ -33,8 +33,8 @@ public:
         NeedUrl = 8,
         All = 16
     };
-    Q_FLAGS(SpecificFeatureTypes)
     Q_DECLARE_FLAGS(SpecificFeatureTypes, SpecificFeatureType)
+    Q_FLAG(SpecificFeatureTypes)
 
     virtual void execute();
 
