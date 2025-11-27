@@ -63,7 +63,7 @@ void ConvertSnippetVariablesJob::setComposerViewInterface(MessageComposer::Compo
     mComposerViewInterface = composerViewInterface;
 }
 
-QString ConvertSnippetVariablesJob::convertVariables(const QString &cmd, int &i, QChar c)
+QString ConvertSnippetVariablesJob::convertVariables(const QString &cmd, qsizetype &i, QChar c)
 {
     QString result;
     if (cmd.startsWith(QLatin1StringView("LASTYEAR"))) {
@@ -120,8 +120,8 @@ QString ConvertSnippetVariablesJob::convertVariables(const QString &cmd, int &i,
 QString ConvertSnippetVariablesJob::convertVariables(MessageComposer::ComposerViewInterface *composerView, const QString &text)
 {
     QString result;
-    const int tmpl_len = text.length();
-    for (int i = 0; i < tmpl_len; ++i) {
+    const qsizetype tmpl_len = text.length();
+    for (qsizetype i = 0; i < tmpl_len; ++i) {
         const QChar c = text[i];
         if (c == u'%') {
             const QString cmd = text.mid(i + 1);
