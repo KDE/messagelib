@@ -35,10 +35,10 @@ Q_SIGNALS:
     void textConverted(const QString &str);
 
 private:
-    [[nodiscard]] static QString convertVariables(const QString &cmd, qsizetype &i, QChar c);
-    [[nodiscard]] static QString getFirstNameFromEmail(const QString &address);
-    [[nodiscard]] static QString getLastNameFromEmail(const QString &address);
-    [[nodiscard]] static QString getNameFromEmail(const QString &address);
+    [[nodiscard]] MESSAGECOMPOSER_NO_EXPORT static QString convertVariables(const QString &cmd, qsizetype &i, QChar c);
+    [[nodiscard]] MESSAGECOMPOSER_NO_EXPORT static QString getFirstNameFromEmail(const QString &address);
+    [[nodiscard]] MESSAGECOMPOSER_NO_EXPORT static QString getLastNameFromEmail(const QString &address);
+    [[nodiscard]] MESSAGECOMPOSER_NO_EXPORT static QString getNameFromEmail(const QString &address);
     QString mText;
     MessageComposer::ComposerViewInterface *mComposerViewInterface = nullptr;
 };
