@@ -245,13 +245,13 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
 {
     d->mExtractHtmlInfoResult = result;
     const QString tmpl = d->mExtractHtmlInfoResult.mTemplate;
-    const int tmpl_len = tmpl.length();
+    const qsizetype tmpl_len = tmpl.length();
     QString plainBody;
     QString htmlBody;
 
     bool dnl = false;
     auto definedLocale = QLocale();
-    for (int i = 0; i < tmpl_len; ++i) {
+    for (qsizetype i = 0; i < tmpl_len; ++i) {
         QChar c = tmpl[i];
         // qCDebug(TEMPLATEPARSER_LOG) << "Next char: " << c;
         if (c == u'%') {
