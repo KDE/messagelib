@@ -274,9 +274,9 @@ HeaderStyleUtil::xfaceSettings HeaderStyleUtil::xface(const MessageViewer::Heade
 
             // clang-format off
             QObject::connect(photoMemento,
-                             SIGNAL(changeDisplayMail(Viewer::DisplayFormatMessage,bool)),
+                             SIGNAL(changeDisplayMail(MessageViewer::Viewer::DisplayFormatMessage,bool)),
                              style->sourceObject(),
-                             SIGNAL(changeDisplayMail(Viewer::DisplayFormatMessage,bool)));
+                             SIGNAL(changeDisplayMail(MessageViewer::Viewer::DisplayFormatMessage,bool)));
             // clang-format on
         }
 

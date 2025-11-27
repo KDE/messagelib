@@ -46,7 +46,7 @@ public:
 Q_SIGNALS:
     // TODO: Factor our update and detach into base class
     void update(MimeTreeParser::UpdateMode);
-    void changeDisplayMail(Viewer::DisplayFormatMessage displayAsHtml, bool remoteContent);
+    void changeDisplayMail(MessageViewer::Viewer::DisplayFormatMessage displayAsHtml, bool remoteContent);
 
 private:
     void slotGravatarResolvUrlFinished(Gravatar::GravatarResolvUrlJob *);

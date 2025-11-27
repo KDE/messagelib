@@ -114,7 +114,7 @@ bool ContactDisplayMessageMemento::finished() const
 void ContactDisplayMessageMemento::detach()
 {
     disconnect(this, SIGNAL(update(MimeTreeParser::UpdateMode)), nullptr, nullptr);
-    disconnect(this, SIGNAL(changeDisplayMail(Viewer::DisplayFormatMessage, bool)), nullptr, nullptr);
+    disconnect(this, SIGNAL(changeDisplayMail(MessageViewer::Viewer::DisplayFormatMessage, bool)), nullptr, nullptr);
 }
 
 bool ContactDisplayMessageMemento::searchPhoto(const KContacts::AddresseeList &list)
