@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 14:41+0000\n"
+"POT-Creation-Date: 2025-11-27 02:37+0000\n"
 "PO-Revision-Date: 2025-05-18 08:02+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -1030,7 +1030,7 @@ msgid "Disable scam detection for all messages"
 msgstr "Onemogoči zaznavanje prevar za vsa sporočila"
 
 #: scamdetection/scamdetectionwebengine.cpp:118
-#: scamdetection/scamdetectionwebengine.cpp:216
+#: scamdetection/scamdetectionwebengine.cpp:217
 #, kde-format
 msgid ""
 "This email contains a link which reads as '%1' in the text, but actually "
@@ -1083,12 +1083,12 @@ msgstr ""
 "To sporočilo vsebuje kratek naslov URL (%1). Ta morda preusmerja na drug "
 "strežnik."
 
-#: scamdetection/scamdetectionwebengine.cpp:235
+#: scamdetection/scamdetectionwebengine.cpp:236
 #, kde-format
 msgid "Message contains form element. This is often the case in scam emails."
 msgstr "Sporočilo vsebuje obrazec. To je pogosto v sporočilih s prevarami."
 
-#: scamdetection/scamdetectionwebengine.cpp:239
+#: scamdetection/scamdetectionwebengine.cpp:240
 #, kde-format
 msgid "Details:"
 msgstr "Podrobnosti:"

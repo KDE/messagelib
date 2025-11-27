@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 14:41+0000\n"
+"POT-Creation-Date: 2025-11-27 02:37+0000\n"
 "PO-Revision-Date: 2025-05-22 18:11+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -1033,7 +1033,7 @@ msgid "Disable scam detection for all messages"
 msgstr "Отключить обнаружение вредоносных писем"
 
 #: scamdetection/scamdetectionwebengine.cpp:118
-#: scamdetection/scamdetectionwebengine.cpp:216
+#: scamdetection/scamdetectionwebengine.cpp:217
 #, kde-format
 msgid ""
 "This email contains a link which reads as '%1' in the text, but actually "
@@ -1085,13 +1085,13 @@ msgstr ""
 "Письмо содержит короткую ссылку (%1). Она может перенаправлять на другой "
 "сайт."
 
-#: scamdetection/scamdetectionwebengine.cpp:235
+#: scamdetection/scamdetectionwebengine.cpp:236
 #, kde-format
 msgid "Message contains form element. This is often the case in scam emails."
 msgstr ""
 "Письмо содержит в себе форму. Это часто встречается во вредных письмах."
 
-#: scamdetection/scamdetectionwebengine.cpp:239
+#: scamdetection/scamdetectionwebengine.cpp:240
 #, kde-format
 msgid "Details:"
 msgstr "Подробности:"

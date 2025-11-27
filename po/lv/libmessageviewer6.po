@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 14:41+0000\n"
+"POT-Creation-Date: 2025-11-27 02:37+0000\n"
 "PO-Revision-Date: 2025-06-21 13:08+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -1021,7 +1021,7 @@ msgid "Disable scam detection for all messages"
 msgstr "Izslēgt krāpniecisku vēstuļu pārbaudi visām vēstulēm"
 
 #: scamdetection/scamdetectionwebengine.cpp:118
-#: scamdetection/scamdetectionwebengine.cpp:216
+#: scamdetection/scamdetectionwebengine.cpp:217
 #, kde-format
 msgid ""
 "This email contains a link which reads as '%1' in the text, but actually "
@@ -1074,12 +1074,12 @@ msgid "This email contains a shorturl (%1). It can redirect to another server."
 msgstr ""
 "Šī vēstule satur saiti (%1). Tā var apmeklētāju pāradresēt uz citu serveri."
 
-#: scamdetection/scamdetectionwebengine.cpp:235
+#: scamdetection/scamdetectionwebengine.cpp:236
 #, kde-format
 msgid "Message contains form element. This is often the case in scam emails."
 msgstr "Vēstule satur formas elementu. Tā bieži notiek krāpnieciskos e-pastos."
 
-#: scamdetection/scamdetectionwebengine.cpp:239
+#: scamdetection/scamdetectionwebengine.cpp:240
 #, kde-format
 msgid "Details:"
 msgstr "Informācija:"

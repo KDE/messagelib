@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 14:41+0000\n"
+"POT-Creation-Date: 2025-11-27 02:37+0000\n"
 "PO-Revision-Date: 2025-05-31 11:42+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -1015,7 +1015,7 @@ msgid "Disable scam detection for all messages"
 msgstr "Inaktivera detektering av bedrägerier för alla brev"
 
 #: scamdetection/scamdetectionwebengine.cpp:118
-#: scamdetection/scamdetectionwebengine.cpp:216
+#: scamdetection/scamdetectionwebengine.cpp:217
 #, kde-format
 msgid ""
 "This email contains a link which reads as '%1' in the text, but actually "
@@ -1068,12 +1068,12 @@ msgid "This email contains a shorturl (%1). It can redirect to another server."
 msgstr ""
 "Brevet innehåller en kortlänk (%1). Den kan dirigera om till en annan server."
 
-#: scamdetection/scamdetectionwebengine.cpp:235
+#: scamdetection/scamdetectionwebengine.cpp:236
 #, kde-format
 msgid "Message contains form element. This is often the case in scam emails."
 msgstr "Brevet innehåller formulärelement. Det är ofta fallet i bedrägeribrev."
 
-#: scamdetection/scamdetectionwebengine.cpp:239
+#: scamdetection/scamdetectionwebengine.cpp:240
 #, kde-format
 msgid "Details:"
 msgstr "Detaljinformation:"

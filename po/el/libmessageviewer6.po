@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 14:41+0000\n"
+"POT-Creation-Date: 2025-11-27 02:37+0000\n"
 "PO-Revision-Date: 2024-09-19 17:23+0300\n"
 "Last-Translator: Antonis Geralis <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -1096,7 +1096,7 @@ msgid "Disable scam detection for all messages"
 msgstr "Απενεργοποίηση εντοπισμού εξαπάτησης"
 
 #: scamdetection/scamdetectionwebengine.cpp:118
-#: scamdetection/scamdetectionwebengine.cpp:216
+#: scamdetection/scamdetectionwebengine.cpp:217
 #, kde-format
 msgid ""
 "This email contains a link which reads as '%1' in the text, but actually "
@@ -1150,14 +1150,14 @@ msgstr ""
 "Αυτό το μήνυμα περιέχει μια συντόμευση (%1). Μπορεί να ανακατευθύνει σε "
 "άλλον εξυπηρετητή."
 
-#: scamdetection/scamdetectionwebengine.cpp:235
+#: scamdetection/scamdetectionwebengine.cpp:236
 #, kde-format
 msgid "Message contains form element. This is often the case in scam emails."
 msgstr ""
 "Το μήνυμα περιέχει αντικείμενο φόρμας. Αυτό συμβαίνει συχνά σε μηνύματα "
 "εξαπάτησης."
 
-#: scamdetection/scamdetectionwebengine.cpp:239
+#: scamdetection/scamdetectionwebengine.cpp:240
 #, kde-format
 msgid "Details:"
 msgstr "Λεπτομέρειες:"
