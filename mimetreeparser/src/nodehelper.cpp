@@ -84,7 +84,6 @@ void NodeHelper::setNodeUnprocessed(const KMime::Content *node, bool recurse)
                 p->takeContent(c);
             }
         }
-        qDeleteAll(it.value());
         qCDebug(MIMETREEPARSER_LOG) << "mExtraContents deleted for" << it.key();
         mExtraContents.erase(it);
     }
@@ -134,7 +133,6 @@ void NodeHelper::clear()
                 p->takeContent(c);
             }
         }
-        qDeleteAll(it.value());
         qCDebug(MIMETREEPARSER_LOG) << "mExtraContents deleted for" << it.key();
     }
     mExtraContents.clear();
@@ -885,7 +883,7 @@ void NodeHelper::cleanFromExtraNodes(KMime::Content *node)
         const auto children = node->contents();
         for (KMime::Content *c : children) {
             if (c->encodedContent() == s) {
-                node->takeContent(c);
+                node->takeContent(c).release();
             }
         }
     }

@@ -1084,8 +1084,7 @@ void TemplateParserJob::addProcessedBodyToMessage(const QString &plainBody, cons
     // is either only the new text or the new text with some attachments.
     const auto parts = d->mMsg->contents();
     for (KMime::Content *content : parts) {
-        auto c = d->mMsg->takeContent(content);
-        delete c;
+        d->mMsg->takeContent(content);
     }
 
     // Set To and CC from the template
