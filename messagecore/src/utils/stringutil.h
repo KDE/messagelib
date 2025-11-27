@@ -15,7 +15,7 @@ namespace KMime
 {
 namespace Types
 {
-struct Address;
+class Address;
 using AddressList = QList<Address>;
 class Mailbox;
 }
