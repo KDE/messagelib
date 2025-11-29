@@ -54,3 +54,5 @@ bool ScamDetectionInfo::operator==(const ScamDetectionInfo &other) const
 {
     return domainOrEmail() == other.domainOrEmail() && enabled() == other.enabled() && scamChecks() == other.scamChecks();
 }
+
+#include "moc_scamdetectioninfo.cpp"
