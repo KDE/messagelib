@@ -2297,17 +2297,3 @@ msgstr "Co&pia aquí"
 #, kde-format
 msgid "C&ancel"
 msgstr "C&ancel·la"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "Filter Mails by Status"
-#~ msgstr "Filtra el correu per l'estat"
-
-#~ msgctxt "@action:button"
-#~ msgid "Clear Filter"
-#~ msgstr "Neteja el filtre"
-
-#~ msgid "Note Icon"
-#~ msgstr "Icona de la nota"
-
-#~ msgid "Note"
-#~ msgstr "Nota"
