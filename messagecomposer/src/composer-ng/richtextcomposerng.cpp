@@ -5,6 +5,7 @@
 */
 #include "richtextcomposerng.h"
 #include "config-messagecomposer.h"
+#include "messagecomposer_debug.h"
 #include "richtextcomposersignatures.h"
 #include "settings/messagecomposersettings.h"
 #include <KPIMTextEdit/MarkupDirector>
@@ -91,6 +92,7 @@ RichTextComposerNg::~RichTextComposerNg() = default;
 void RichTextComposerNg::applyInsertLink()
 {
     if (textMode() == KPIMTextEdit::RichTextComposer::Plain) {
+        qCWarning(MESSAGECOMPOSER_LOG) << "KPIMTextEdit::RichTextComposer::Plain + plaintext not implemented yet";
         // TODO
     } else {
         composerControler()->manageLink();
