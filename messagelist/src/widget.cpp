@@ -300,7 +300,7 @@ void MessageList::Widget::viewMessageStatusChangeRequest(MessageList::Core::Mess
         return;
     }
 
-    int row = msg->currentModelIndexRow();
+    const int row = msg->currentModelIndexRow();
     Q_ASSERT(row >= 0);
 
     Akonadi::Item item = d->itemForRow(row);
