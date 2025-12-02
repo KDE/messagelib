@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:53+0000\n"
-"PO-Revision-Date: 2025-09-16 10:52+0200\n"
+"PO-Revision-Date: 2025-12-01 12:10+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -1929,7 +1929,7 @@ msgstr "Voleu suprimir els temes seleccionats?"
 #: utils/configurethemesdialog.cpp:410
 #, kde-format
 msgid "Do you want to delete \"%1\"?"
-msgstr "Voleu suprimir la llista «%1»?"
+msgstr "Voleu suprimir «%1»?"
 
 #: utils/configurethemesdialog.cpp:412
 #, kde-format
