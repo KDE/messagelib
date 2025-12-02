@@ -154,7 +154,7 @@ public:
     [[nodiscard]] KIdentityManagementWidgets::IdentityCombo *identityCombo();
 
     void setIdentityManager(KIdentityManagementCore::IdentityManager *identMan);
-    [[nodiscard]] KIdentityManagementCore::IdentityManager *identityManager();
+    [[nodiscard]] KIdentityManagementCore::IdentityManager *identityManager() const;
 
     void setEditor(MessageComposer::RichTextComposerNg *editor);
     [[nodiscard]] MessageComposer::RichTextComposerNg *editor() const;

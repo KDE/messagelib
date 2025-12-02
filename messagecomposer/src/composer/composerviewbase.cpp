@@ -1767,7 +1767,7 @@ void ComposerViewBase::setIdentityManager(KIdentityManagementCore::IdentityManag
     m_identMan = identMan;
 }
 
-KIdentityManagementCore::IdentityManager *ComposerViewBase::identityManager()
+KIdentityManagementCore::IdentityManager *ComposerViewBase::identityManager() const
 {
     return m_identMan;
 }
