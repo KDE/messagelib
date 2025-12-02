@@ -483,8 +483,8 @@ qint64 SearchLineCommand::SearchLineInfo::convertArgumentAsSize() const
 
 QDebug operator<<(QDebug d, const MessageList::Core::SearchLineCommand::SearchLineInfo &info)
 {
-    d << " type " << info.type;
-    d << " argument " << info.argument;
+    d.space() << "type:" << info.type;
+    d.space() << "argument:" << info.argument;
     return d;
 }
 
@@ -492,6 +492,12 @@ QString SearchLineCommand::generateCommandText(SearchLineCommand::SearchLineType
 {
     bool needSpace = SearchLineCommand::mustBeUnique(type);
     return SearchLineCommand::searchLineTypeToString(type) + (needSpace ? u" "_s : QStringLiteral(":"));
+}
+
+QDebug operator<<(QDebug d, const MessageList::Core::SearchLineCommand &command)
+{
+    d.space() << "command" << command.searchLineInfo();
+    return d;
 }
 
 #include "moc_searchlinecommand.cpp"

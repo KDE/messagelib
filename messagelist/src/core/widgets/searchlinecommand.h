@@ -95,3 +95,4 @@ private:
 }
 Q_DECLARE_TYPEINFO(MessageList::Core::SearchLineCommand::SearchLineInfo, Q_RELOCATABLE_TYPE);
 MESSAGELIST_EXPORT QDebug operator<<(QDebug debug, const MessageList::Core::SearchLineCommand::SearchLineInfo &info);
+MESSAGELIST_EXPORT QDebug operator<<(QDebug debug, const MessageList::Core::SearchLineCommand &command);
