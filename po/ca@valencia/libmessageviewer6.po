@@ -827,7 +827,7 @@ msgstr "El llindar no s'ha pogut extraure de la capçalera"
 #: header/headerstyle_util.cpp:179
 #, kde-format
 msgid "Error evaluating spam score"
-msgstr "S'ha produït un error en avaluar la puntuació de correu brossa"
+msgstr "S'ha produït un error mentre s'avaluava la puntuació de correu brossa"
 
 #: header/headerstyle_util.cpp:184
 #, kde-format
@@ -1356,10 +1356,10 @@ msgid ""
 "Exchange understands."
 msgstr ""
 "Microsoft Outlook, quan s'utilitza en combinació d'un servidor Microsoft "
-"Exchange, té un problema en interpretar els correus electrònics de treball "
-"en grup que complixen els estàndards. Marqueu esta opció per a enviar les "
-"invitacions de treball en grup de manera que Microsoft Exchange les "
-"comprenga."
+"Exchange, té un problema mentre s'interpretaven els correus electrònics de "
+"treball en grup que complixen els estàndards. Marqueu esta opció per a "
+"enviar les invitacions de treball en grup de manera que Microsoft Exchange "
+"les comprenga."
 
 #. i18n: ectx: label, entry (AutomaticSending), group (Invitations)
 #: settings/messageviewer.kcfg.in:197
@@ -1476,8 +1476,8 @@ msgid ""
 msgstr ""
 "Microsoft Outlook, quan s'utilitza en combinació d'un servidor Microsoft "
 "Exchange,\n"
-"té un problema en interpretar els correus electrònics de treball en grup que "
-"complixen els estàndards.\n"
+"té un problema mentre s'interpretaven els correus electrònics de treball en "
+"grup que complixen els estàndards.\n"
 "Marqueu esta opció per a enviar les invitacions de treball en grup de manera "
 "que Microsoft Exchange les comprenga."
 
@@ -1666,12 +1666,12 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving attachment"
-msgstr "S'ha produït un error en guardar l'adjunt"
+msgstr "S'ha produït un error mentre es guardava l'adjunt"
 
 #: utils/messageviewerutil.cpp:404 utils/messageviewerutil.cpp:422
 #, kde-format
 msgid "Error saving attachment"
-msgstr "S'ha produït un error en guardar l'adjunt"
+msgstr "S'ha produït un error mentre es guardava l'adjunt"
 
 #: utils/messageviewerutil.cpp:435
 #, kde-format
@@ -1705,7 +1705,7 @@ msgstr "El fitxer %1 no s'ha pogut carregar."
 #, kde-format
 msgctxt "@title:window"
 msgid "Error loading message"
-msgstr "S'ha produït un error en carregar el missatge"
+msgstr "S'ha produït un error mentre es carregava el missatge"
 
 #: utils/messageviewerutil.cpp:510
 #, kde-format
@@ -1716,7 +1716,7 @@ msgstr "No s'ha pogut crear el fitxer %1."
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
-msgstr "S'ha produït un error en guardar el missatge"
+msgstr "S'ha produït un error mentre es guardava el missatge"
 
 #: utils/messageviewerutil.cpp:521
 #, kde-format
@@ -1726,7 +1726,7 @@ msgstr "No s'ha pogut guardar el missatge."
 #: utils/messageviewerutil.cpp:521
 #, kde-format
 msgid "Error saving message"
-msgstr "S'ha produït un error en guardar el missatge"
+msgstr "S'ha produït un error mentre es guardava el missatge"
 
 #: utils/messageviewerutil.cpp:585
 #, kde-format
@@ -2288,7 +2288,7 @@ msgstr "URL copiat a dins del porta-retalls."
 #: viewer/viewer_p.cpp:2890
 #, kde-format
 msgid "Message loading failed: %1."
-msgstr "No s'ha pogut carregar el missatge: %1."
+msgstr "Ha fallat mentre es carregava el missatge: %1."
 
 #: viewer/viewer_p.cpp:2895
 #, kde-format
