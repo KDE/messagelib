@@ -207,6 +207,9 @@ void QuickSearchLine::changeQuicksearchVisibility(bool show)
     mSearchEdit->setVisible(show);
     mTagFilterCombo->setVisible(show && mTagFilterCombo->count());
     mSearchStatusButtons->setVisible(show);
+    if (!show) {
+        mSearchLineCommandWidget->setVisible(show);
+    }
 }
 
 void QuickSearchLine::addCompletionItem(const QString &str)
