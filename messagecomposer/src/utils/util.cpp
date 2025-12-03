@@ -349,13 +349,13 @@ void MessageComposer::Util::addLinkInformation(const KMime::Message::Ptr &msg, A
         type += QLatin1StringView("forward");
     }
 
-    auto header = new KMime::Headers::Generic("X-KMail-Link-Message");
+    auto header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-Link-Message"));
     header->fromUnicodeString(message);
-    msg->setHeader(header);
+    msg->setHeader(std::move(header));
 
-    header = new KMime::Headers::Generic("X-KMail-Link-Type");
+    header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-Link-Type"));
     header->fromUnicodeString(type);
-    msg->setHeader(header);
+    msg->setHeader(std::move(header));
 }
 
 bool MessageComposer::Util::getLinkInformation(const KMime::Message::Ptr &msg, QList<Akonadi::Item::Id> &id, QList<Akonadi::MessageStatus> &status)
@@ -465,8 +465,8 @@ QStringList MessageComposer::Util::cleanUpEmailListAndEncoding(const QStringList
 void MessageComposer::Util::addCustomHeaders(const KMime::Message::Ptr &message, const QMap<QByteArray, QString> &custom)
 {
     for (const auto &[key, value] : custom.asKeyValueRange()) {
-        auto header = new KMime::Headers::Generic(key.constData());
+        auto header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic(key.constData()));
         header->fromUnicodeString(value);
-        message->setHeader(header);
+        message->setHeader(std::move(header));
     }
 }

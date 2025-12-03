@@ -50,16 +50,16 @@ void SkeletonMessageJobPrivate::doStart()
 
     // From:
     {
-        auto from = new KMime::Headers::From;
+        auto from = std::unique_ptr<KMime::Headers::From>(new KMime::Headers::From);
         KMime::Types::Mailbox address;
         address.fromUnicodeString(KEmailAddress::normalizeAddressesAndEncodeIdn(infoPart->from()));
         from->fromUnicodeString(QString::fromLatin1(address.as7BitString("utf-8")));
-        message->setHeader(from);
+        message->setHeader(std::move(from));
     }
 
     // To:
     {
-        auto to = new KMime::Headers::To;
+        auto to = std::unique_ptr<KMime::Headers::To>(new KMime::Headers::To);
         QByteArray sTo;
         const QStringList lstTo = infoPart->to();
         for (const QString &a : lstTo) {
@@ -71,12 +71,12 @@ void SkeletonMessageJobPrivate::doStart()
             sTo.append(address.as7BitString("utf-8"));
         }
         to->fromUnicodeString(QString::fromLatin1(sTo));
-        message->setHeader(to);
+        message->setHeader(std::move(to));
     }
 
     // Reply To:
     if (!infoPart->replyTo().isEmpty()) {
-        auto replyTo = new KMime::Headers::ReplyTo;
+        auto replyTo = std::unique_ptr<KMime::Headers::ReplyTo>(new KMime::Headers::ReplyTo);
         const QStringList lstReplyTo = infoPart->replyTo();
         QByteArray sReplyTo;
         for (const QString &a : lstReplyTo) {
@@ -88,12 +88,12 @@ void SkeletonMessageJobPrivate::doStart()
             sReplyTo.append(address.as7BitString("utf-8"));
         }
         replyTo->fromUnicodeString(QString::fromLatin1(sReplyTo));
-        message->setHeader(replyTo);
+        message->setHeader(std::move(replyTo));
     }
 
     // Cc:
     {
-        auto cc = new KMime::Headers::Cc;
+        auto cc = std::unique_ptr<KMime::Headers::Cc>(new KMime::Headers::Cc);
         QByteArray sCc;
         const QStringList lstCc = infoPart->cc();
         for (const QString &a : lstCc) {
@@ -105,12 +105,12 @@ void SkeletonMessageJobPrivate::doStart()
             sCc.append(address.as7BitString("utf-8"));
         }
         cc->fromUnicodeString(QString::fromLatin1(sCc));
-        message->setHeader(cc);
+        message->setHeader(std::move(cc));
     }
 
     // Bcc:
     {
-        auto bcc = new KMime::Headers::Bcc;
+        auto bcc = std::unique_ptr<KMime::Headers::Bcc>(new KMime::Headers::Bcc);
         QByteArray sBcc;
         const QStringList lstBcc = infoPart->bcc();
         for (const QString &a : lstBcc) {
@@ -122,41 +122,41 @@ void SkeletonMessageJobPrivate::doStart()
             sBcc.append(address.as7BitString("utf-8"));
         }
         bcc->fromUnicodeString(QString::fromLatin1(sBcc));
-        message->setHeader(bcc);
+        message->setHeader(std::move(bcc));
     }
 
     // Subject:
     {
-        auto subject = new KMime::Headers::Subject;
+        auto subject = std::unique_ptr<KMime::Headers::Subject>(new KMime::Headers::Subject);
         subject->fromUnicodeString(infoPart->subject());
         // TODO should we be more specific about the charset?
-        message->setHeader(subject);
+        message->setHeader(std::move(subject));
     }
 
     // Date:
     {
-        auto date = new KMime::Headers::Date;
+        auto date = std::unique_ptr<KMime::Headers::Date>(new KMime::Headers::Date);
         date->setDateTime(QDateTime::currentDateTime());
-        message->setHeader(date);
+        message->setHeader(std::move(date));
     }
 
     // Fcc:
     if (!infoPart->fcc().isEmpty()) {
-        auto header = new KMime::Headers::Generic("X-KMail-Fcc");
+        auto header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-Fcc"));
         header->fromUnicodeString(infoPart->fcc());
-        message->setHeader(header);
+        message->setHeader(std::move(header));
     }
 
     // Transport:
     if (infoPart->transportId() > -1) {
-        auto header = new KMime::Headers::Generic("X-KMail-Transport");
+        auto header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-Transport"));
         header->fromUnicodeString(QString::number(infoPart->transportId()));
-        message->setHeader(header);
+        message->setHeader(std::move(header));
     }
 
     // Message-ID
     {
-        auto messageId = new KMime::Headers::MessageID();
+        auto messageId = std::unique_ptr<KMime::Headers::MessageID>(new KMime::Headers::MessageID());
         QByteArray fqdn;
         if (MessageComposer::MessageComposerSettings::self()->useCustomMessageIdSuffix()) {
             fqdn = QUrl::toAce(MessageComposer::MessageComposerSettings::self()->customMsgIDSuffix());
@@ -169,7 +169,7 @@ void SkeletonMessageJobPrivate::doStart()
             fqdn = "local.domain";
         }
         messageId->generate(fqdn);
-        message->setHeader(messageId);
+        message->setHeader(std::move(messageId));
     }
     // Extras
 
@@ -189,9 +189,9 @@ void SkeletonMessageJobPrivate::doStart()
         if (globalPart->requestDeleveryConfirmation()) {
             // TODO fix me multi address
             const QString addr = infoPart->replyTo().isEmpty() ? infoPart->from() : infoPart->replyTo().at(0);
-            auto requestDeleveryConfirmation = new KMime::Headers::Generic("Return-Receipt-To");
+            auto requestDeleveryConfirmation = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("Return-Receipt-To"));
             requestDeleveryConfirmation->fromUnicodeString(addr);
-            message->setHeader(requestDeleveryConfirmation);
+            message->setHeader(std::move(requestDeleveryConfirmation));
         }
     }
 
@@ -200,34 +200,34 @@ void SkeletonMessageJobPrivate::doStart()
         if (globalPart->MDNRequested()) {
             // TODO fix me multi address
             const QString addr = infoPart->replyTo().isEmpty() ? infoPart->from() : infoPart->replyTo().at(0);
-            auto mdn = new KMime::Headers::Generic("Disposition-Notification-To");
+            auto mdn = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("Disposition-Notification-To"));
             mdn->fromUnicodeString(addr);
-            message->setHeader(mdn);
+            message->setHeader(std::move(mdn));
         }
     }
 
     // Urgent header
     if (infoPart->urgent()) {
-        auto urg1 = new KMime::Headers::Generic("X-PRIORITY");
+        auto urg1 = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-PRIORITY"));
         urg1->fromUnicodeString(u"2 (High)"_s);
-        auto urg2 = new KMime::Headers::Generic("Priority");
+        auto urg2 = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("Priority"));
         urg2->fromUnicodeString(u"urgent"_s);
-        message->setHeader(urg1);
-        message->setHeader(urg2);
+        message->setHeader(std::move(urg1));
+        message->setHeader(std::move(urg2));
     }
 
     // In-Reply-To
     if (!infoPart->inReplyTo().isEmpty()) {
-        auto header = new KMime::Headers::InReplyTo;
+        auto header = std::unique_ptr<KMime::Headers::InReplyTo>(new KMime::Headers::InReplyTo);
         header->fromUnicodeString(infoPart->inReplyTo());
-        message->setHeader(header);
+        message->setHeader(std::move(header));
     }
 
     // References
     if (!infoPart->references().isEmpty()) {
-        auto header = new KMime::Headers::References;
+        auto header = std::unique_ptr<KMime::Headers::References>(new KMime::Headers::References);
         header->fromUnicodeString(infoPart->references());
-        message->setHeader(header);
+        message->setHeader(std::move(header));
     }
 
     q->emitResult(); // Success.
