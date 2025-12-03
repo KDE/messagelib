@@ -25,9 +25,9 @@ DraftEncryptionState::DraftEncryptionState(const KMime::Message::Ptr &msg)
 
 void DraftEncryptionState::setState(bool encrypt)
 {
-    auto hdr = new KMime::Headers::Generic("X-KMail-EncryptActionEnabled");
+    auto hdr = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-EncryptActionEnabled"));
     hdr->fromUnicodeString(encrypt ? u"true"_s : QStringLiteral("false"));
-    mMsg->setHeader(hdr);
+    mMsg->setHeader(std::move(hdr));
 }
 
 void DraftEncryptionState::removeState()
@@ -57,9 +57,9 @@ DraftSignatureState::DraftSignatureState(const KMime::Message::Ptr &msg)
 
 void DraftSignatureState::setState(bool sign)
 {
-    auto hdr = new KMime::Headers::Generic("X-KMail-SignatureActionEnabled");
+    auto hdr = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-SignatureActionEnabled"));
     hdr->fromUnicodeString(sign ? u"true"_s : QStringLiteral("false"));
-    mMsg->setHeader(hdr);
+    mMsg->setHeader(std::move(hdr));
 }
 
 void DraftSignatureState::removeState()
@@ -89,9 +89,9 @@ DraftCryptoMessageFormatState::DraftCryptoMessageFormatState(const KMime::Messag
 
 void DraftCryptoMessageFormatState::setState(Kleo::CryptoMessageFormat cryptoMessageFormat)
 {
-    auto hdr = new KMime::Headers::Generic("X-KMail-CryptoMessageFormat");
+    auto hdr = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-CryptoMessageFormat"));
     hdr->fromUnicodeString(QString::number(cryptoMessageFormat));
-    mMsg->setHeader(hdr);
+    mMsg->setHeader(std::move(hdr));
 }
 
 void DraftCryptoMessageFormatState::removeState()

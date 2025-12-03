@@ -313,17 +313,17 @@ void MessageFactoryNG::createForwardAsync()
 
         // TODO: Andras: somebody should check if this is correct. :)
         // empty text part
-        auto msgPart = new KMime::Content;
+        auto msgPart = std::unique_ptr<KMime::Content>(new KMime::Content);
         msgPart->contentType()->setMimeType("text/plain");
-        msg->appendContent(msgPart);
+        msg->appendContent(std::move(msgPart));
 
         // the old contents of the mail
-        auto secondPart = new KMime::Content;
+        auto secondPart = std::unique_ptr<KMime::Content>(new KMime::Content);
         secondPart->contentType()->setMimeType(mOrigMsg->contentType()->mimeType());
         secondPart->setBody(mOrigMsg->body());
         // use the headers of the original mail
         secondPart->setHead(mOrigMsg->head());
-        msg->appendContent(secondPart);
+        msg->appendContent(std::move(secondPart));
         msg->assemble();
     }
     // Normal message (multipart or text/plain|html)

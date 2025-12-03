@@ -39,16 +39,16 @@ void initFromMessage(const KMime::Message::Ptr &msg,
     if (idHeaders) {
         MessageHelper::initHeader(msg, identMan, id);
     } else {
-        auto header = new KMime::Headers::Generic("X-KMail-Identity");
+        auto header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-Identity"));
         header->fromUnicodeString(QString::number(id));
-        msg->setHeader(header);
+        msg->setHeader(std::move(header));
     }
 
     if (auto hdr = origMsg->headerByType("X-KMail-Transport")) {
         const QString transport = hdr->asUnicodeString();
-        auto header = new KMime::Headers::Generic("X-KMail-Transport");
+        auto header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-Transport"));
         header->fromUnicodeString(transport);
-        msg->setHeader(header);
+        msg->setHeader(std::move(header));
     }
 }
 
@@ -89,39 +89,39 @@ void applyIdentity(const KMime::Message::Ptr &message, const KIdentityManagement
     if (ident.organization().isEmpty()) {
         message->removeHeader<KMime::Headers::Organization>();
     } else {
-        auto const organization = new KMime::Headers::Organization;
+        auto organization = std::unique_ptr<KMime::Headers::Organization>(new KMime::Headers::Organization);
         organization->fromUnicodeString(ident.organization());
-        message->setHeader(organization);
+        message->setHeader(std::move(organization));
     }
 
     if (ident.isDefault()) {
         message->removeHeader("X-KMail-Identity");
     } else {
-        auto header = new KMime::Headers::Generic("X-KMail-Identity");
+        auto header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-Identity"));
         header->fromUnicodeString(QString::number(ident.uoid()));
-        message->setHeader(header);
+        message->setHeader(std::move(header));
     }
 
     if (ident.transport().isEmpty()) {
         message->removeHeader("X-KMail-Transport");
     } else {
-        auto header = new KMime::Headers::Generic("X-KMail-Transport");
+        auto header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-Transport"));
         header->fromUnicodeString(ident.transport());
-        message->setHeader(header);
+        message->setHeader(std::move(header));
     }
 
     if (ident.fcc().isEmpty()) {
         message->removeHeader("X-KMail-Fcc");
     } else {
-        auto header = new KMime::Headers::Generic("X-KMail-Fcc");
+        auto header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-Fcc"));
         header->fromUnicodeString(ident.fcc());
-        message->setHeader(header);
+        message->setHeader(std::move(header));
     }
 
     if (ident.disabledFcc()) {
-        auto header = new KMime::Headers::Generic("X-KMail-FccDisabled");
+        auto header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-FccDisabled"));
         header->fromUnicodeString(u"true"_s);
-        message->setHeader(header);
+        message->setHeader(std::move(header));
     } else {
         message->removeHeader("X-KMail-FccDisabled");
     }
