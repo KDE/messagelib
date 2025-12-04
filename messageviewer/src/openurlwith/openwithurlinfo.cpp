@@ -5,6 +5,7 @@
 */
 
 #include "openwithurlinfo.h"
+#include <QDebug>
 
 using namespace MessageViewer;
 OpenWithUrlInfo::OpenWithUrlInfo() = default;

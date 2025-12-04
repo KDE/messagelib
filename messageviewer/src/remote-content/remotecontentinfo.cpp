@@ -5,6 +5,7 @@
 */
 
 #include "remotecontentinfo.h"
+#include <QDebug>
 using namespace MessageViewer;
 RemoteContentInfo::RemoteContentInfo() = default;
 

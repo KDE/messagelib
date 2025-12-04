@@ -6,7 +6,7 @@
 
 #pragma once
 #include "messagelist_export.h"
-#include <QDebug>
+class QDebug;
 #include <QMap>
 #include <QObject>
 #include <QStringList>

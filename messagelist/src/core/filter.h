@@ -8,7 +8,7 @@
 
 #pragma once
 
-#include <QDebug>
+class QDebug;
 #include <QObject>
 #include <QSet>
 #include <QString>

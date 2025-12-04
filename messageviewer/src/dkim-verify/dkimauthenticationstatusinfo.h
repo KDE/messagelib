@@ -7,8 +7,10 @@
 #pragma once
 
 #include "messageviewer_private_export.h"
-#include <QDebug>
+#include <QList>
+#include <QMetaType>
 #include <QString>
+class QDebug;
 namespace MessageViewer
 {
 class MESSAGEVIEWER_TESTS_EXPORT DKIMAuthenticationStatusInfo

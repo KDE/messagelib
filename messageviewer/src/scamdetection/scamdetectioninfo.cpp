@@ -6,6 +6,7 @@
 */
 
 #include "scamdetectioninfo.h"
+#include <QDebug>
 using namespace MessageViewer;
 ScamDetectionInfo::ScamDetectionInfo() = default;
 

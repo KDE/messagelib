@@ -5,6 +5,7 @@
 */
 
 #include "dkimrule.h"
+#include <QDebug>
 
 using namespace MessageViewer;
 DKIMRule::DKIMRule() = default;

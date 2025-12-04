@@ -8,7 +8,7 @@
 
 #include "messagecomposer_export.h"
 #include <PimCommon/CustomToolsViewInterface>
-#include <QDebug>
+class QDebug;
 
 namespace KPIMTextEdit
 {

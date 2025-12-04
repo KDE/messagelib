@@ -5,6 +5,7 @@
 */
 
 #include "dmarcinfo.h"
+#include <QDebug>
 using namespace Qt::Literals::StringLiterals;
 
 #include "messageviewer_dkimcheckerdebug.h"
