@@ -280,9 +280,9 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 const int len = parseQuotes(u"DICTIONARYLANGUAGE="_s, cmd, q);
                 i += len;
                 if (!q.isEmpty()) {
-                    auto header = new KMime::Headers::Generic("X-KMail-Dictionary");
+                    auto header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-Dictionary"));
                     header->fromUnicodeString(q);
-                    d->mMsg->setHeader(header);
+                    d->mMsg->setHeader(std::move(header));
                 }
             } else if (cmd.startsWith(QLatin1StringView("INSERT=")) || cmd.startsWith(QLatin1StringView("PUT="))) {
                 QString q;
@@ -441,9 +441,9 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 const QString htmlStr = pipe(pipe_cmd, htmlBody);
                 htmlBody = htmlStr;
 
-                auto header = new KMime::Headers::Generic("X-KMail-CursorPos");
+                auto header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-CursorPos"));
                 header->fromUnicodeString(QString::number(0));
-                d->mMsg->setHeader(header);
+                d->mMsg->setHeader(std::move(header));
             } else if (cmd.startsWith(QLatin1StringView("TEXT"))) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: TEXT";
                 i += strlen("TEXT");
@@ -955,9 +955,9 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 i += strlen("CLEAR");
                 plainBody.clear();
                 htmlBody.clear();
-                auto header = new KMime::Headers::Generic("X-KMail-CursorPos");
+                auto header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-CursorPos"));
                 header->fromUnicodeString(QString::number(0));
-                d->mMsg->setHeader(header);
+                d->mMsg->setHeader(std::move(header));
             } else if (cmd.startsWith(QLatin1StringView("DEBUGOFF"))) {
                 // turn off debug
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: DEBUGOFF";
@@ -973,7 +973,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: CURSOR";
                 int oldI = i;
                 i += strlen("CURSOR");
-                auto header = new KMime::Headers::Generic("X-KMail-CursorPos");
+                auto header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-CursorPos"));
                 header->fromUnicodeString(QString::number(plainBody.length()));
                 /* if template is:
                  *  FOOBAR
@@ -984,7 +984,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 if (oldI > 0 && tmpl[oldI - 1] == u'\n' && i == tmpl_len - 1) {
                     plainBody.append(u'\n');
                 }
-                d->mMsg->setHeader(header);
+                d->mMsg->setHeader(std::move(header));
                 d->mForceCursorPosition = true;
                 // FIXME HTML part for header remaining
             } else if (cmd.startsWith(QLatin1StringView("SIGNATURE"))) {
@@ -1189,12 +1189,12 @@ KMime::Content *TemplateParserJob::createMultipartAlternativeContent(const QStri
     KMime::Content *textPart = createPlainPartContent(plainBody);
     multipartAlternative->appendContent(textPart);
 
-    auto htmlPart = new KMime::Content(d->mMsg.data());
+    auto htmlPart = std::unique_ptr<KMime::Content>(new KMime::Content(d->mMsg.data()));
     htmlPart->contentType(true)->setMimeType("text/html");
     htmlPart->contentType(false)->setCharset(QByteArrayLiteral("UTF-8")); // Already created
     htmlPart->contentTransferEncoding()->setEncoding(KMime::Headers::CE8Bit);
     htmlPart->fromUnicodeString(htmlBody);
-    multipartAlternative->appendContent(htmlPart);
+    multipartAlternative->appendContent(std::move(htmlPart));
 
     return multipartAlternative;
 }

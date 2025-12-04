@@ -357,12 +357,12 @@ void ComposerJobPrivate::contentJobFinished(KJob *job)
         headers->setHeader(skeletonMessage->date());
         headers->setHeader(skeletonMessage->messageID());
 
-        auto realTo = new KMime::Headers::Generic("X-KMail-EncBccRecipients");
+        auto realTo = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-EncBccRecipients"));
         realTo->fromUnicodeString(eJob->recipients().join(u'%'));
 
         qCDebug(MESSAGECOMPOSER_LOG) << "got one of multiple messages sending to:" << realTo->asUnicodeString();
         qCDebug(MESSAGECOMPOSER_LOG) << "sending to recipients:" << recipients;
-        headers->setHeader(realTo);
+        headers->setHeader(std::move(realTo));
         headers->assemble();
     } else { // just use the saved headers from before
         if (!encData.isEmpty()) {

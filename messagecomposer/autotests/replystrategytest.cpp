@@ -317,18 +317,18 @@ void ReplyStrategyTest::testReply()
 
     auto original{basicMessage(oFrom, oTo)};
     if (!oCc.isEmpty()) {
-        auto cc{new KMime::Headers::Cc};
+        auto cc{std::unique_ptr<KMime::Headers::Cc>(new KMime::Headers::Cc)};
         for (const auto &a : oCc) {
             cc->addAddress(a.toLatin1());
         }
-        original->setHeader(cc);
+        original->setHeader(std::move(cc));
     }
     if (!oRT.isEmpty()) {
-        auto replyTo{new KMime::Headers::ReplyTo};
+        auto replyTo{std::unique_ptr<KMime::Headers::ReplyTo>(new KMime::Headers::ReplyTo)};
         for (const auto &a : oRT) {
             replyTo->addAddress(a.toLatin1());
         }
-        original->setHeader(replyTo);
+        original->setHeader(std::move(replyTo));
     }
     if (!oMFT.isEmpty()) {
         auto mailFollowupTo = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("Mail-Followup-To"));
