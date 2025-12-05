@@ -112,6 +112,17 @@ target_link_libraries(KPim6MessageCore
 )
 target_link_libraries(KPim6MessageCore PRIVATE QGpgmeQt6)
 
+# precompiled headers support
+if(ENABLE_PCH)
+    target_precompile_headers(
+        KPim6MessageCore
+        PRIVATE
+            <QObject>
+            <QDebug>
+            <QString>
+    )
+endif()
+
 target_include_directories(KPim6MessageCore INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageCore/>")
 
 set_target_properties(KPim6MessageCore PROPERTIES
