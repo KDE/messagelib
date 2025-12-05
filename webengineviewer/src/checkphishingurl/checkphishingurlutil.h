@@ -7,7 +7,7 @@
 #pragma once
 
 #include "webengineviewer_export.h"
-#include <QObject>
+#include <QMetaType>
 #include <QString>
 namespace WebEngineViewer
 {
