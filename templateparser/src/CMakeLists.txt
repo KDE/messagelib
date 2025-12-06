@@ -11,7 +11,18 @@ add_definitions(-DTRANSLATION_DOMAIN=\"libtemplateparser6\")
 add_library(KPim6TemplateParser)
 add_library(KPim6::TemplateParser ALIAS KPim6TemplateParser)
 
-
+# precompiled headers support
+if(ENABLE_PCH)
+    target_precompile_headers(
+        KPim6TemplateParser
+        PRIVATE
+            <QObject>
+            <QDebug>
+            <QString>
+            <QStringList>
+            <QByteArray>
+    )
+endif()
 target_sources(KPim6TemplateParser PRIVATE
     templateparserjob.cpp
     defaulttemplates.cpp

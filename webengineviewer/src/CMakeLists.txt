@@ -12,6 +12,18 @@ include_directories(${CMAKE_BINARY_DIR}/webengineviewer/src ${CMAKE_BINARY_DIR}/
 add_library(KPim6WebEngineViewer)
 add_library(KPim6::WebEngineViewer ALIAS KPim6WebEngineViewer)
 
+# precompiled headers support
+if(ENABLE_PCH)
+    target_precompile_headers(
+        KPim6WebEngineViewer
+        PRIVATE
+            <QObject>
+            <QDebug>
+            <QString>
+            <QStringList>
+            <QByteArray>
+    )
+endif()
 
 if(BUILD_TESTING)
     add_subdirectory(tests)

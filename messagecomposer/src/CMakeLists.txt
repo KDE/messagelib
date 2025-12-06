@@ -259,6 +259,19 @@ ecm_qt_declare_logging_category(KPim6MessageComposer HEADER messagecomposer_debu
     EXPORT MESSAGELIB
 )
 
+# precompiled headers support
+if(ENABLE_PCH)
+    target_precompile_headers(
+        KPim6MessageComposer
+        PRIVATE
+            <QObject>
+            <QDebug>
+            <QString>
+            <QStringList>
+            <QJsonObject>
+            <QByteArray>
+    )
+endif()
 
 if(KDEPIM_ENTERPRISE_BUILD)
     set(WARN_TOOMANY_RECIPIENTS_DEFAULT true)

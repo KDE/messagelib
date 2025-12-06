@@ -33,6 +33,19 @@ include_directories(${GPGME_INCLUDES})
 add_library(KPim6MessageViewer)
 add_library(KPim6::MessageViewer ALIAS KPim6MessageViewer)
 
+# precompiled headers support
+if(ENABLE_PCH)
+    target_precompile_headers(
+        KPim6MessageViewer
+        PRIVATE
+            <QObject>
+            <QDebug>
+            <QString>
+            <QStringList>
+            <QRegularExpression>
+            <QByteArray>
+    )
+endif()
 
 if(BUILD_TESTING)
     add_subdirectory(header/autotests)

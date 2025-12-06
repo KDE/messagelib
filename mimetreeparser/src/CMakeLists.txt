@@ -14,6 +14,20 @@ include_directories(${GPGME_INCLUDES})
 add_library(KPim6MimeTreeParser)
 add_library(KPim6::MimeTreeParser ALIAS KPim6MimeTreeParser)
 
+# precompiled headers support
+if(ENABLE_PCH)
+    target_precompile_headers(
+        KPim6MimeTreeParser
+        PRIVATE
+            <QObject>
+            <QDebug>
+            <QString>
+            <QStringList>
+            <QList>
+            <QByteArray>
+    )
+endif()
+
 target_sources(KPim6MimeTreeParser PRIVATE
     bodyformatter/applicationpgpencrypted.cpp
     bodyformatter/applicationpkcs7mime.cpp
