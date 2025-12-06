@@ -452,10 +452,9 @@ void Filter::setSearchString(const SearchLineCommand &command)
             break;
         }
         case SearchLineCommand::IsUnRead: {
-            // TODO verify
-            Akonadi::MessageStatus status;
-            status.setRead(false);
-            lstStatus.append(status);
+            // Unread is the absence of Read status, which the filter is not able to match. The special
+            // Unread status works around that.
+            lstStatus.append(Akonadi::MessageStatus::statusUnread());
             break;
         }
         case SearchLineCommand::IsIgnored: {
