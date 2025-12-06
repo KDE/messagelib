@@ -463,7 +463,7 @@ bool ModelPrivate::applyFilterToSubtree(Item *item, const QModelIndex &parentInd
     }
 
     if (item->type() == Item::Message) {
-        if (mFilter->match((MessageItem *)item)) {
+        if (mFilter->match(static_cast<MessageItem *>(item))) {
             mView->setRowHidden(thisIndex.row(), parentIndex, false);
             return true;
         }
@@ -4444,9 +4444,9 @@ void ModelPrivate::slotStorageModelDataChanged(const QModelIndex &fromIndex, con
     if (indexesThatNeedUpdate) {
         // Try to attach to an existing update job, if any.
         // To enforce consistency we can attach only if the Update job
-        // is the last one in the list (might be eventually *also* the first,
-        // and even being already processed but we must make sure that there
-        // aren't jobs _after_ it).
+        // is the last one in the list (might *also* be the first,
+        // and even already being processed but we must make sure that there
+        // aren't any jobs _after_ it).
         if (jobCount > 0) {
             ViewItemJob *job = mViewItemJobs.at(jobCount - 1);
             if (job->currentPass() == ViewItemJob::Pass1Update) {

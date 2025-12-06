@@ -375,9 +375,11 @@ void Filter::setSearchString(const SearchLineCommand &command)
     if (command.isEmpty()) {
         return;
     }
-    const QList<SearchLineCommand::SearchLineInfo> infos = command.searchLineInfo();
+
     QList<Akonadi::MessageStatus> lstStatus;
     Akonadi::Search::PIM::EmailQuery query;
+
+    const QList<SearchLineCommand::SearchLineInfo> infos = command.searchLineInfo();
     for (const auto &info : infos) {
         switch (info.type) {
         case SearchLineCommand::Literal: {
