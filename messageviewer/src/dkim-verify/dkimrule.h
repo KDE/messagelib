@@ -6,7 +6,8 @@
 
 #pragma once
 #include "messageviewer_export.h"
-#include <QObject>
+#include <QMetaType>
+#include <QStringList>
 class QDebug;
 
 namespace MessageViewer

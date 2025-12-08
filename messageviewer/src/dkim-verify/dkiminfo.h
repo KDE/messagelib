@@ -7,7 +7,7 @@
 #pragma once
 
 #include "messageviewer_export.h"
-#include <QObject>
+#include <QMetaType>
 #include <QString>
 #include <QStringList>
 namespace MessageViewer

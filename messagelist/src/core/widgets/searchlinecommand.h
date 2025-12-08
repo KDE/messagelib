@@ -6,10 +6,10 @@
 
 #pragma once
 #include "messagelist_export.h"
-class QDebug;
 #include <QMap>
-#include <QObject>
+#include <QMetaType>
 #include <QStringList>
+class QDebug;
 namespace MessageList
 {
 namespace Core
