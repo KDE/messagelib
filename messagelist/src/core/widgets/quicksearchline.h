@@ -65,12 +65,11 @@ Q_SIGNALS:
 
 protected:
     bool eventFilter(QObject *object, QEvent *e) override;
-private Q_SLOTS:
+
+private:
     MESSAGELIST_NO_EXPORT void slotSearchEditTextEdited(const QString &text);
     MESSAGELIST_NO_EXPORT void slotClearButtonClicked();
     MESSAGELIST_NO_EXPORT void slotFilterActionChanged(const QList<Akonadi::MessageStatus> &lst);
-
-private:
     SearchLineStatus *const mSearchEdit;
     SearchStatusButtons *const mSearchStatusButtons;
     SearchMessageByButtons *const mSearchMessageByButtons;

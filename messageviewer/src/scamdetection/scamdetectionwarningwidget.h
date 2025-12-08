@@ -23,7 +23,6 @@ public:
 
     void setUseInTestApps(bool b);
 
-public Q_SLOTS:
     void slotShowWarning();
 
 Q_SIGNALS:
