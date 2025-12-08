@@ -40,7 +40,7 @@ public:
     void readStorageModelConfig(const Akonadi::Collection &col, bool &isPrivateSetting);
     void readStorageModelConfig(const QString &id, bool &isPrivateSetting);
 
-public Q_SLOTS:
+public:
     void selectDefault();
     void slotLoadAggregations();
 

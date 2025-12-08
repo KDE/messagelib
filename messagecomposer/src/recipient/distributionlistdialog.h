@@ -24,8 +24,6 @@ public:
     explicit DistributionListDialog(QWidget *parent);
     ~DistributionListDialog() override;
     void setRecipients(const Recipient::List &);
-
-public Q_SLOTS:
     void slotUser1();
     void slotTitleChanged(const QString &);
 

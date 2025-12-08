@@ -28,7 +28,6 @@ public:
 
     void scanPage(QWebEnginePage *page);
 
-public Q_SLOTS:
     void showDetails();
 
 Q_SIGNALS:

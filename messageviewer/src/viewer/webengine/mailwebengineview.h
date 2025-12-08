@@ -61,7 +61,7 @@ public:
 
     static void initializeCustomScheme();
 
-public Q_SLOTS:
+public:
     void slotZoomChanged(qreal zoom);
     void slotShowDetails();
 

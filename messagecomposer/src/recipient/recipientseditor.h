@@ -76,18 +76,18 @@ public:
      */
     void setRecentAddressConfig(KConfig *config);
 
-public Q_SLOTS:
+public:
     void selectRecipients();
     void saveDistributionList();
 
 protected Q_SLOTS:
     friend class RecipientLineFactory;
 
-    void slotPickedRecipient(const Recipient &, bool &tooManyAddress);
+    void slotPickedRecipient(const MessageComposer::Recipient &, bool &tooManyAddress);
     void slotLineAdded(KPIM::MultiplyingLine *);
     void slotLineDeleted(int pos);
     void slotCalculateTotal();
-    void addRecipient(RecipientLineNG *, const QString &);
+    void addRecipient(MessageComposer::RecipientLineNG *, const QString &);
 
 protected:
     bool eventFilter(QObject *object, QEvent *event) override;

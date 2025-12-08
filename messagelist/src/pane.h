@@ -374,16 +374,15 @@ public:
     [[nodiscard]] Akonadi::Collection currentFolder() const;
 
     [[nodiscard]] QList<MessageList::Core::SearchLineCommand::SearchLineInfo> searchLineCommands() const;
+    /**
+     * Add a new tab to the Pane and select it.
+     */
+    QItemSelectionModel *createNewTab();
 public Q_SLOTS:
     /**
      * Selects all the items in the current folder.
      */
     void selectAll();
-
-    /**
-     * Add a new tab to the Pane and select it.
-     */
-    QItemSelectionModel *createNewTab();
 
     void sortOrderMenuAboutToShow();
 

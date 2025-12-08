@@ -41,7 +41,7 @@ public:
 Q_SIGNALS:
     void zoomChanged(qreal value);
 
-public Q_SLOTS:
+public:
     void slotZoomIn();
     void slotZoomOut();
     void slotZoomReset();

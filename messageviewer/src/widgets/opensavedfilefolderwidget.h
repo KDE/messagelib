@@ -25,7 +25,7 @@ public:
 
     void setUrls(const QList<QUrl> &urls, MessageViewer::OpenSavedFileFolderWidget::FileType fileType);
 
-public Q_SLOTS:
+public:
     void slotShowWarning();
     void slotHideWarning();
 
