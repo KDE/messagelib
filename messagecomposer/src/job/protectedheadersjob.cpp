@@ -136,10 +136,10 @@ void ProtectedHeadersJob::process()
         }
         auto copyHeader = KMime::Headers::createHeader(headerType);
         if (!copyHeader) {
-            copyHeader = new KMime::Headers::Generic(headerType.constData(), headerType.size());
+            copyHeader = std::make_unique<KMime::Headers::Generic>(headerType.constData(), headerType.size());
         }
-        copyHeader->from7BitString(header->as7BitString(false));
-        d->content->appendHeader(copyHeader);
+        copyHeader->from7BitString(header->as7BitString());
+        d->content->appendHeader(std::move(copyHeader));
     }
 
     if (d->obvoscate && subject) {
