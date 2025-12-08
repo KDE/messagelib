@@ -26,7 +26,7 @@ Q_SIGNALS:
     void accessKeySearchFinished(const QList<WebEngineViewer::WebEngineAccessKeyAnchor> &var);
 
 private:
-    QWebEngineView *mEngineView = nullptr;
+    QWebEngineView *const mEngineView;
 };
 
 class WebEngineAccessKeyAnchorFromHtmlTest : public QObject
