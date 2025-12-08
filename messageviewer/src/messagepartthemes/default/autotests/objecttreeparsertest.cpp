@@ -27,7 +27,7 @@ void ObjectTreeParserTester::test_HTMLOnlyText()
 {
     KMime::Message::Ptr msg = Test::readAndParseMail(u"htmlonly.mbox"_s);
 
-    QCOMPARE(msg->subject()->as7BitString(false).constData(), "HTML test");
+    QCOMPARE(msg->subject()->as7BitString(), "HTML test");
     QCOMPARE(msg->contents().size(), 0);
 
     BufferedHtmlWriter testWriter;
@@ -53,7 +53,7 @@ void ObjectTreeParserTester::test_HTMLExternal()
 {
     KMime::Message::Ptr msg = Test::readAndParseMail(u"htmlonlyexternal.mbox"_s);
 
-    QCOMPARE(msg->subject()->as7BitString(false).constData(), "HTML test");
+    QCOMPARE(msg->subject()->as7BitString(), "HTML test");
     QCOMPARE(msg->contents().size(), 0);
 
     {

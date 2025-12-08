@@ -75,9 +75,9 @@ KMime::Content *MessageComposer::Util::composeHeadersAndBody(KMime::Content *ori
             // Build the encapsulated MIME parts.
             // Build a MIME part holding the code information
             // taking the body contents returned in ciphertext.
-            auto code = new KMime::Content;
-            setNestedContentType(code, format, sign);
-            setNestedContentDisposition(code, format, sign);
+            auto code = std::make_unique<KMime::Content>();
+            setNestedContentType(code.get(), format, sign);
+            setNestedContentDisposition(code.get(), format, sign);
 
             if (sign) { // sign PGPMime, sign SMIME
                 if (format & Kleo::AnySMIME) { // sign SMIME
@@ -85,24 +85,24 @@ KMime::Content *MessageComposer::Util::composeHeadersAndBody(KMime::Content *ori
                     ct->setEncoding(KMime::Headers::CEbase64);
                     code->setBody(encodedBody);
                 } else { // sign PGPMmime
-                    setBodyAndCTE(encodedBody, orig->contentType(), code);
+                    setBodyAndCTE(encodedBody, orig->contentType(), code.get());
                 }
                 result->appendContent(orig);
-                result->appendContent(code);
+                result->appendContent(std::move(code));
             } else { // enc PGPMime
-                setBodyAndCTE(encodedBody, orig->contentType(), code);
+                setBodyAndCTE(encodedBody, orig->contentType(), code.get());
 
                 // Build a MIME part holding the version information
                 // taking the body contents returned in
                 // structuring.data.bodyTextVersion.
-                auto vers = new KMime::Content;
+                auto vers = std::make_unique<KMime::Content>();
                 vers->contentType()->setMimeType("application/pgp-encrypted");
                 vers->contentDisposition()->setDisposition(KMime::Headers::CDattachment);
                 vers->contentTransferEncoding()->setEncoding(KMime::Headers::CE7Bit);
                 vers->setBody("Version: 1");
 
-                result->appendContent(vers);
-                result->appendContent(code);
+                result->appendContent(std::move(vers));
+                result->appendContent(std::move(code));
             }
         } else { // enc SMIME, sign/enc SMIMEOpaque
             result->contentTransferEncoding()->setEncoding(KMime::Headers::CEbase64);

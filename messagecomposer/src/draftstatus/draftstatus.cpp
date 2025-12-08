@@ -39,7 +39,7 @@ bool DraftEncryptionState::encryptionState() const
 {
     if (isDefined()) {
         auto hdr = mMsg->headerByType("X-KMail-EncryptActionEnabled");
-        return hdr->as7BitString(false).contains("true");
+        return hdr->as7BitString().contains("true");
     }
 
     return false;
@@ -71,7 +71,7 @@ bool DraftSignatureState::signState() const
 {
     if (isDefined()) {
         auto hdr = mMsg->headerByType("X-KMail-SignatureActionEnabled");
-        return hdr->as7BitString(false).contains("true");
+        return hdr->as7BitString().contains("true");
     }
 
     return false;

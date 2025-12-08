@@ -382,7 +382,7 @@ void ObjectTreeParserTest::testParsePlainMessage()
     msg->setContent(content);
     msg->parse();
 
-    QCOMPARE(msg->subject()->as7BitString(false).constData(), "Plain Message Test");
+    QCOMPARE(msg->subject()->as7BitString(), "Plain Message Test");
     QCOMPARE(msg->contents().size(), 0);
 
     // Parse the message
@@ -416,7 +416,7 @@ void ObjectTreeParserTest::testParsePlainMessage()
 void ObjectTreeParserTest::testParseEncapsulatedMessage()
 {
     KMime::Message::Ptr msg = readAndParseMail(u"encapsulated-with-attachment.mbox"_s);
-    QCOMPARE(msg->subject()->as7BitString(false).constData(), "Fwd: Test with attachment");
+    QCOMPARE(msg->subject()->as7BitString(), "Fwd: Test with attachment");
     QCOMPARE(msg->contents().size(), 2);
 
     // Parse the message
@@ -449,7 +449,7 @@ void ObjectTreeParserTest::testParseEncapsulatedMessage()
 void ObjectTreeParserTest::testMissingContentTypeHeader()
 {
     KMime::Message::Ptr msg = readAndParseMail(u"no-content-type.mbox"_s);
-    QCOMPARE(msg->subject()->as7BitString(false).constData(), "Simple Mail Without Content-Type Header");
+    QCOMPARE(msg->subject()->as7BitString(), "Simple Mail Without Content-Type Header");
     QCOMPARE(msg->contents().size(), 0);
 
     NodeHelper nodeHelper;
@@ -465,7 +465,7 @@ void ObjectTreeParserTest::testInlinePGPDecryption()
 {
     KMime::Message::Ptr msg = readAndParseMail(u"inlinepgpencrypted.mbox"_s);
 
-    QCOMPARE(msg->subject()->as7BitString(false).constData(), "inlinepgpencrypted");
+    QCOMPARE(msg->subject()->as7BitString(), "inlinepgpencrypted");
     QCOMPARE(msg->contents().size(), 0);
 
     NodeHelper nodeHelper;
@@ -488,7 +488,7 @@ void ObjectTreeParserTest::testInlinePGPSigned()
 {
     KMime::Message::Ptr msg = readAndParseMail(u"openpgp-inline-signed.mbox"_s);
 
-    QCOMPARE(msg->subject()->as7BitString(false).constData(), "test");
+    QCOMPARE(msg->subject()->as7BitString(), "test");
     QCOMPARE(msg->contents().size(), 0);
 
     NodeHelper nodeHelper;
@@ -506,7 +506,7 @@ void ObjectTreeParserTest::testHTML()
 {
     KMime::Message::Ptr msg = readAndParseMail(u"html.mbox"_s);
 
-    QCOMPARE(msg->subject()->as7BitString(false).constData(), "HTML test");
+    QCOMPARE(msg->subject()->as7BitString(), "HTML test");
     QCOMPARE(msg->contents().size(), 2);
 
     SimpleObjectTreeSource testSource;
@@ -514,7 +514,7 @@ void ObjectTreeParserTest::testHTML()
 
     otp.parseObjectTree(msg.data());
 
-    QCOMPARE(otp.plainTextContent().toLatin1().data(), "Some HTML text");
+    QCOMPARE(otp.plainTextContent().toLatin1(), "Some HTML text");
     QVERIFY(otp.htmlContent().contains(QLatin1StringView("Some <span style=\" font-weight:600;\">HTML</span> text")));
 }
 
@@ -522,7 +522,7 @@ void ObjectTreeParserTest::testHTMLasText()
 {
     KMime::Message::Ptr msg = readAndParseMail(u"html.mbox"_s);
 
-    QCOMPARE(msg->subject()->as7BitString(false).constData(), "HTML test");
+    QCOMPARE(msg->subject()->as7BitString(), "HTML test");
     QCOMPARE(msg->contents().size(), 2);
 
     SimpleObjectTreeSource testSource;
@@ -531,15 +531,15 @@ void ObjectTreeParserTest::testHTMLasText()
     testSource.setPreferredMode(MimeTreeParser::Util::MultipartPlain);
     otp.parseObjectTree(msg.data());
 
-    QCOMPARE(otp.htmlContent().toLatin1().constData(), "");
-    QCOMPARE(otp.plainTextContent().toLatin1().constData(), "Some HTML text");
+    QCOMPARE(otp.htmlContent().toLatin1(), "");
+    QCOMPARE(otp.plainTextContent().toLatin1(), "Some HTML text");
 }
 
 void ObjectTreeParserTest::testHTMLOnly()
 {
     KMime::Message::Ptr msg = readAndParseMail(u"htmlonly.mbox"_s);
 
-    QCOMPARE(msg->subject()->as7BitString(false).constData(), "HTML test");
+    QCOMPARE(msg->subject()->as7BitString(), "HTML test");
     QCOMPARE(msg->contents().size(), 0);
 
     SimpleObjectTreeSource testSource;

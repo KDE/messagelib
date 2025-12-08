@@ -35,14 +35,7 @@ public:
     {
     }
 
-    ~AutocryptHeadersJobPrivate() override
-    {
-        // clean up in case of cancelled job
-        for (const auto &[key, header] : gossipHeaders) {
-            delete header;
-        }
-        gossipHeaders.clear();
-    }
+    ~AutocryptHeadersJobPrivate() override = default;
 
     void emitGpgError(const GpgME::Error &error);
     void emitNotFoundError(const QByteArray &addr, const QByteArray &fingerprint);
@@ -52,7 +45,7 @@ public:
     KMime::Content *content = nullptr;
     KMime::Message *skeletonMessage = nullptr;
     // used to ensure consistent order based on key order, not random one by async subjobs delivering
-    std::map<QByteArray, KMime::Headers::Generic *> gossipHeaders;
+    std::map<QByteArray, std::unique_ptr<KMime::Headers::Generic>> gossipHeaders;
 
     bool preferEncrypted = false;
     int subJobs = 0;
@@ -72,8 +65,8 @@ void AutocryptHeadersJobPrivate::finishOnLastSubJob()
         return;
     }
 
-    for (const auto &[key, header] : gossipHeaders) {
-        content->appendHeader(header);
+    for (auto &[key, header] : gossipHeaders) {
+        content->appendHeader(std::move(header));
     }
     gossipHeaders.clear();
     resultContent = content;
@@ -221,10 +214,10 @@ void AutocryptHeadersJob::process()
                 return;
             }
 
-            auto autocrypt = new KMime::Headers::Generic("Autocrypt");
-            d->fillHeaderData(autocrypt, d->skeletonMessage->from()->addresses()[0], d->preferEncrypted, keydata);
+            auto autocrypt = std::make_unique<KMime::Headers::Generic>("Autocrypt");
+            d->fillHeaderData(autocrypt.get(), d->skeletonMessage->from()->addresses()[0], d->preferEncrypted, keydata);
 
-            d->skeletonMessage->setHeader(autocrypt);
+            d->skeletonMessage->setHeader(std::move(autocrypt));
             d->skeletonMessage->assemble();
 
             d->finishOnLastSubJob();
@@ -262,10 +255,10 @@ void AutocryptHeadersJob::process()
                 return;
             }
 
-            auto header = new KMime::Headers::Generic("Autocrypt-Gossip");
-            d->fillHeaderData(header, key.userID(0).email(), false, keydata);
+            auto header = std::make_unique<KMime::Headers::Generic>("Autocrypt-Gossip");
+            d->fillHeaderData(header.get(), key.userID(0).email(), false, keydata);
 
-            d->gossipHeaders.insert({QByteArray(key.primaryFingerprint()), header});
+            d->gossipHeaders.insert({QByteArray(key.primaryFingerprint()), std::move(header)});
 
             d->finishOnLastSubJob();
         });

@@ -521,7 +521,7 @@ QSharedPointer<KMime::Headers::Generics::AddressList> NodeHelper::mailHeaderAsAd
         return nullptr;
     }
     QSharedPointer<KMime::Headers::Generics::AddressList> addressList(new KMime::Headers::Generics::AddressList());
-    addressList->from7BitString(hrd->as7BitString(false));
+    addressList->from7BitString(hrd->as7BitString());
     return addressList;
 }
 
@@ -974,22 +974,22 @@ bool NodeHelper::unencryptedMessage_helper(KMime::Content *node, QByteArray &res
             headers.setHead(curNode->head());
             headers.parse();
             if (auto ct = decryptedNode->contentType(false)) {
-                headers.contentType()->from7BitString(ct->as7BitString(false));
+                headers.contentType()->from7BitString(ct->as7BitString());
             } else {
                 headers.removeHeader<KMime::Headers::ContentType>();
             }
             if (auto ct = decryptedNode->contentTransferEncoding(false)) {
-                headers.contentTransferEncoding()->from7BitString(ct->as7BitString(false));
+                headers.contentTransferEncoding()->from7BitString(ct->as7BitString());
             } else {
                 headers.removeHeader<KMime::Headers::ContentTransferEncoding>();
             }
             if (auto cd = decryptedNode->contentDisposition(false)) {
-                headers.contentDisposition()->from7BitString(cd->as7BitString(false));
+                headers.contentDisposition()->from7BitString(cd->as7BitString());
             } else {
                 headers.removeHeader<KMime::Headers::ContentDisposition>();
             }
             if (auto cd = decryptedNode->contentDescription(false)) {
-                headers.contentDescription()->from7BitString(cd->as7BitString(false));
+                headers.contentDescription()->from7BitString(cd->as7BitString());
             } else {
                 headers.removeHeader<KMime::Headers::ContentDescription>();
             }

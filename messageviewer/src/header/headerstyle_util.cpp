@@ -218,7 +218,7 @@ QString HeaderStyleUtil::dateShortStr(const QDateTime &dateTime)
 static QSharedPointer<KMime::Headers::Generics::MailboxList> mailboxesFromHeader(const KMime::Headers::Base *hrd)
 {
     QSharedPointer<KMime::Headers::Generics::MailboxList> mailboxList(new KMime::Headers::Generics::MailboxList());
-    const QByteArray &data = hrd->as7BitString(false);
+    const QByteArray &data = hrd->as7BitString();
     mailboxList->from7BitString(data);
     return mailboxList;
 }
@@ -267,7 +267,7 @@ HeaderStyleUtil::xfaceSettings HeaderStyleUtil::xface(const MessageViewer::Heade
         ContactDisplayMessageMemento *photoMemento =
             dynamic_cast<ContactDisplayMessageMemento *>(style->nodeHelper()->bodyPartMemento(message, "contactphoto"));
         if (!photoMemento) {
-            const QString email = QString::fromLatin1(KEmailAddress::firstEmailAddress(message->from()->as7BitString(false)));
+            const QString email = QString::fromLatin1(KEmailAddress::firstEmailAddress(message->from()->as7BitString()));
             photoMemento = new ContactDisplayMessageMemento(email);
             style->nodeHelper()->setBodyPartMemento(message, "contactphoto", photoMemento);
             QObject::connect(photoMemento, SIGNAL(update(MimeTreeParser::UpdateMode)), style->sourceObject(), SLOT(update(MimeTreeParser::UpdateMode)));

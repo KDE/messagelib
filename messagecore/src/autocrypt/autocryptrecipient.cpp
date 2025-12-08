@@ -131,7 +131,7 @@ void AutocryptRecipient::updateFromMessage(const HeaderMixupNodeHelper &mixup, c
     } else {
         d->count_no_ach += 1;
         if (mixup.hasMailHeader("User-Agent")) {
-            d->bad_user_agent = mixup.mailHeaderAsBase("User-Agent")->as7BitString(false);
+            d->bad_user_agent = mixup.mailHeaderAsBase("User-Agent")->as7BitString();
         }
     }
 }

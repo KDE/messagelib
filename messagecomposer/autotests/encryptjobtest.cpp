@@ -224,7 +224,7 @@ void EncryptJobTest::testProtectedHeaders()
     VERIFYEXEC(eJob);
 
     if (protectedHeadersObvoscate) {
-        QCOMPARE(skeletonMessage.subject()->as7BitString(false), "...");
+        QCOMPARE(skeletonMessage.subject()->as7BitString(), "...");
     } else {
         QCOMPARE(skeletonMessage.subject()->asUnicodeString(), subject);
     }

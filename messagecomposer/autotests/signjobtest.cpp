@@ -160,16 +160,16 @@ void SignJobTest::testMixedContent()
     auto content = new KMime::Content;
     content->contentType()->setMimeType(QByteArrayLiteral("multipart/mixed"));
     content->contentType()->setBoundary(KMime::multiPartBoundary());
-    auto subcontent = new KMime::Content;
+    auto subcontent = std::make_unique<KMime::Content>();
     subcontent->contentType()->setMimeType(QByteArrayLiteral("text/plain"));
     subcontent->setBody(data.toUtf8());
-    auto attachment = new KMime::Content;
+    auto attachment = std::make_unique<KMime::Content>();
     attachment->contentType()->setMimeType(QByteArrayLiteral("text/plain"));
     const QByteArray attachmentData("an attachment");
     attachment->setBody(attachmentData);
 
-    content->appendContent(subcontent);
-    content->appendContent(attachment);
+    content->appendContent(std::move(subcontent));
+    content->appendContent(std::move(attachment));
     content->assemble();
 
     sJob->setContent(content);
@@ -322,7 +322,7 @@ void SignJobTest::testProtectedHeadersSkipLong()
     content->setBody(data);
 
     KMime::Message skeletonMessage;
-    auto face = new KMime::Headers::Generic("Face");
+    auto face = std::make_unique<KMime::Headers::Generic>("Face");
     face->from7BitString(
         "iVBORw0KGgoAAAANSUhEUgAAADAAAAAwBAMAAAClLOS0AAAAElBMVEX9/ftIS5IsNImXjKgc\n"
         " I3Dh29sdnA7JAAAB60lEQVR4nI2US5ajMAxFXeF4HtlhXlZ7AdCCBWCcORTx/rfSkgyEyqg14uii\n"
@@ -339,7 +339,7 @@ void SignJobTest::testProtectedHeadersSkipLong()
     skeletonMessage.to(true)->from7BitString("to@test.de, to2@test.de");
     skeletonMessage.cc(true)->from7BitString("cc@test.de, cc2@test.de");
     skeletonMessage.bcc(true)->from7BitString("bcc@test.de, bcc2@test.de");
-    skeletonMessage.appendHeader(face);
+    skeletonMessage.appendHeader(std::move(face));
     skeletonMessage.subject(true)->fromUnicodeString(subject);
 
     sJob->setContent(content);

@@ -82,7 +82,7 @@ MessageFactoryNG::~MessageFactoryNG() = default;
 static KMime::Types::Mailbox::List authorMailboxes(const KMime::Message::Ptr &msg, const KMime::Types::Mailbox::List &mailingLists)
 {
     if (auto mrt = msg->headerByType("Mail-Reply-To")) {
-        return KMime::Types::Mailbox::listFrom7BitString(mrt->as7BitString(false));
+        return KMime::Types::Mailbox::listFrom7BitString(mrt->as7BitString());
     }
     if (auto rt = msg->replyTo(false)) {
         // Did a mailing list munge Reply-To?
@@ -147,7 +147,7 @@ void MessageFactoryNG::createReplyAsync()
     switch (mReplyStrategy) {
     case MessageComposer::ReplySmart: {
         if (auto hdr = mOrigMsg->headerByType("Mail-Followup-To")) {
-            toList << KMime::Types::Mailbox::listFrom7BitString(hdr->as7BitString(false));
+            toList << KMime::Types::Mailbox::listFrom7BitString(hdr->as7BitString());
         } else if (!mMailingListAddresses.isEmpty()) {
             if (replyToList.isEmpty()) {
                 toList = (KMime::Types::Mailbox::List() << mMailingListAddresses.at(0));
@@ -186,7 +186,7 @@ void MessageFactoryNG::createReplyAsync()
     case MessageComposer::ReplyList: {
         if (auto hdr = mOrigMsg->headerByType("Mail-Followup-To")) {
             KMime::Types::Mailbox mailbox;
-            mailbox.from7BitString(hdr->as7BitString(false));
+            mailbox.from7BitString(hdr->as7BitString());
             toList << mailbox;
         } else if (!mMailingListAddresses.isEmpty()) {
             toList << mMailingListAddresses[0];
@@ -203,7 +203,7 @@ void MessageFactoryNG::createReplyAsync()
     }
     case MessageComposer::ReplyAll:
         if (auto hdr = mOrigMsg->headerByType("Mail-Followup-To")) {
-            toList = KMime::Types::Mailbox::listFrom7BitString(hdr->as7BitString(false));
+            toList = KMime::Types::Mailbox::listFrom7BitString(hdr->as7BitString());
         } else {
             auto ccList = stripMyAddressesFromAddressList(mOrigMsg->cc()->mailboxes(), mIdentityManager);
 
@@ -266,7 +266,7 @@ void MessageFactoryNG::createReplyAsync()
         msg->references()->fromUnicodeString(QString::fromLocal8Bit(refStr));
     }
     // In-Reply-To = original msg-id
-    msg->inReplyTo()->from7BitString(mOrigMsg->messageID()->as7BitString(false));
+    msg->inReplyTo()->from7BitString(mOrigMsg->messageID()->as7BitString());
 
     msg->subject()->fromUnicodeString(MessageCore::StringUtil::replySubject(mOrigMsg.data()));
 
@@ -314,12 +314,12 @@ void MessageFactoryNG::createForwardAsync()
 
         // TODO: Andras: somebody should check if this is correct. :)
         // empty text part
-        auto msgPart = std::unique_ptr<KMime::Content>(new KMime::Content);
+        auto msgPart = std::make_unique<KMime::Content>();
         msgPart->contentType()->setMimeType("text/plain");
         msg->appendContent(std::move(msgPart));
 
         // the old contents of the mail
-        auto secondPart = std::unique_ptr<KMime::Content>(new KMime::Content);
+        auto secondPart = std::make_unique<KMime::Content>();
         secondPart->contentType()->setMimeType(mOrigMsg->contentType()->mimeType());
         secondPart->setBody(mOrigMsg->body());
         // use the headers of the original mail
@@ -627,62 +627,61 @@ KMime::Message::Ptr MessageFactoryNG::createMDN(KMime::MDN::ActionMode a,
     const QString description = replaceHeadersInString(mOrigMsg, KMime::MDN::descriptionFor(d, m));
 
     // text/plain part:
-    auto firstMsgPart = new KMime::Content(mOrigMsg.data());
+    auto firstMsgPart = std::make_unique<KMime::Content>(mOrigMsg.data());
     auto firstMsgPartContentType = firstMsgPart->contentType(); // create it
     firstMsgPartContentType->setMimeType("text/plain");
     firstMsgPartContentType->setCharset("utf-8");
     firstMsgPart->contentTransferEncoding(true)->setEncoding(KMime::Headers::CE7Bit);
     firstMsgPart->setBody(description.toUtf8());
-    receipt->appendContent(firstMsgPart);
+    receipt->appendContent(std::move(firstMsgPart));
 
     // message/disposition-notification part:
-    auto secondMsgPart = new KMime::Content(mOrigMsg.data());
+    auto secondMsgPart = std::make_unique<KMime::Content>(mOrigMsg.data());
     secondMsgPart->contentType()->setMimeType("message/disposition-notification");
 
     secondMsgPart->contentTransferEncoding()->setEncoding(KMime::Headers::CE7Bit);
     QByteArray originalRecipient = "";
     if (auto hrd = mOrigMsg->headerByType("Original-Recipient")) {
-        originalRecipient = hrd->as7BitString(false);
+        originalRecipient = hrd->as7BitString();
     }
     secondMsgPart->setBody(KMime::MDN::dispositionNotificationBodyContent(finalRecipient,
                                                                           originalRecipient,
-                                                                          mOrigMsg->messageID()->as7BitString(false), /* Message-ID */
+                                                                          mOrigMsg->messageID()->as7BitString(), /* Message-ID */
                                                                           d,
                                                                           a,
                                                                           s,
                                                                           m,
                                                                           special));
-    receipt->appendContent(secondMsgPart);
+    receipt->appendContent(std::move(secondMsgPart));
 
     if ((mdnQuoteOriginal < 0) || (mdnQuoteOriginal > 2)) {
         mdnQuoteOriginal = 0;
     }
     /* 0=> Nothing, 1=>Full Message, 2=>HeadersOnly*/
 
-    auto thirdMsgPart = new KMime::Content(mOrigMsg.data());
+    auto thirdMsgPart = std::make_unique<KMime::Content>(mOrigMsg.data());
     switch (mdnQuoteOriginal) {
     case 1:
         thirdMsgPart->contentType()->setMimeType("message/rfc822");
         thirdMsgPart->setBody(MessageCore::StringUtil::asSendableString(mOrigMsg));
-        receipt->appendContent(thirdMsgPart);
+        receipt->appendContent(std::move(thirdMsgPart));
         break;
     case 2:
         thirdMsgPart->contentType()->setMimeType("text/rfc822-headers");
         thirdMsgPart->setBody(MessageCore::StringUtil::headerAsSendableString(mOrigMsg));
-        receipt->appendContent(thirdMsgPart);
+        receipt->appendContent(std::move(thirdMsgPart));
         break;
     case 0:
     default:
-        delete thirdMsgPart;
         break;
     }
 
     receipt->to()->fromUnicodeString(receiptTo);
     // Laurent: We don't translate subject ?
     receipt->subject()->from7BitString("Message Disposition Notification");
-    auto header = new KMime::Headers::InReplyTo;
+    auto header = std::make_unique<KMime::Headers::InReplyTo>();
     header->fromUnicodeString(mOrigMsg->messageID()->asUnicodeString());
-    receipt->setHeader(header);
+    receipt->setHeader(std::move(header));
 
     receipt->references()->from7BitString(getRefStr(mOrigMsg));
 
@@ -722,7 +721,7 @@ QPair<KMime::Message::Ptr, KMime::Content *> MessageFactoryNG::createForwardDige
         MessageCore::StringUtil::removePrivateHeaderFields(fMsg);
         fMsg->removeHeader<KMime::Headers::Bcc>();
         fMsg->assemble();
-        auto part = new KMime::Content(digest);
+        auto part = std::make_unique<KMime::Content>(digest);
 
         part->contentType()->setMimeType("message/rfc822");
         part->contentType(false)->setCharset(fMsg->contentType()->charset());
@@ -732,7 +731,7 @@ QPair<KMime::Message::Ptr, KMime::Content *> MessageFactoryNG::createForwardDige
         part->fromUnicodeString(QString::fromLatin1(fMsg->encodedContent()));
         part->assemble();
         MessageComposer::Util::addLinkInformation(msg, item.id(), Akonadi::MessageStatus::statusForwarded());
-        digest->appendContent(part);
+        digest->appendContent(std::move(part));
     }
     digest->assemble();
 
@@ -935,11 +934,11 @@ QByteArray MessageFactoryNG::getRefStr(const KMime::Message::Ptr &msg)
     int j;
 
     if (auto hdr = msg->references(false)) {
-        refStr = hdr->as7BitString(false).trimmed();
+        refStr = hdr->as7BitString().trimmed();
     }
 
     if (refStr.isEmpty()) {
-        return msg->messageID()->as7BitString(false);
+        return msg->messageID()->as7BitString();
     }
 
     i = refStr.indexOf('<');
@@ -957,7 +956,7 @@ QByteArray MessageFactoryNG::getRefStr(const KMime::Message::Ptr &msg)
         retRefStr += lastRef + ' ';
     }
 
-    retRefStr += msg->messageID()->as7BitString(false);
+    retRefStr += msg->messageID()->as7BitString();
     return retRefStr;
 }
 
