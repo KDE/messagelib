@@ -54,7 +54,7 @@ QHash<QByteArray, QByteArray> MessageCore::paramsFromAutocryptHeader(const KMime
 {
     QHash<QByteArray, QByteArray> params;
 
-    const auto &parts = header->as7BitString(false).split(';');
+    const auto &parts = header->as7BitString().split(';');
     for (const auto &part : parts) {
         const auto &i = part.split('=');
         params[i[0].trimmed()] = i[1].trimmed();
@@ -68,7 +68,7 @@ void MessageCore::processAutocryptfromMail(const HeaderMixupNodeHelper &mixup)
 
     QByteArray messageid = "<NO Message-ID header>";
     if (mixup.mailHeaderAsBase("Message-ID")) {
-        messageid = mixup.mailHeaderAsBase("Message-ID")->as7BitString(false);
+        messageid = mixup.mailHeaderAsBase("Message-ID")->as7BitString();
     }
 
     const auto fromAddr = mixup.mailHeaderAsAddressList("from");

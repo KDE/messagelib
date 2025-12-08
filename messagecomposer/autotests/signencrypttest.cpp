@@ -237,7 +237,7 @@ void SignEncryptTest::testProtectedHeaders()
     VERIFYEXEC(seJob);
 
     if (protectedHeadersObvoscate) {
-        QCOMPARE(skeletonMessage.subject()->as7BitString(false), "...");
+        QCOMPARE(skeletonMessage.subject()->as7BitString(), "...");
     } else {
         QCOMPARE(skeletonMessage.subject()->asUnicodeString(), subject);
     }

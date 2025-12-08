@@ -2991,7 +2991,7 @@ void ViewerPrivate::slotMessageMayBeAScam()
         }
         if (mMessageItem.hasPayload<KMime::Message::Ptr>()) {
             auto message = mMessageItem.payload<KMime::Message::Ptr>();
-            const QString email = QLatin1StringView(KEmailAddress::firstEmailAddress(message->from()->as7BitString(false)));
+            const QString email = QLatin1StringView(KEmailAddress::firstEmailAddress(message->from()->as7BitString()));
             const QStringList lst = MessageViewer::MessageViewerSettings::self()->scamDetectionWhiteList();
             if (lst.contains(email)) {
                 return;
@@ -3033,7 +3033,7 @@ void ViewerPrivate::slotAddToWhiteList()
     if (mMessageItem.isValid()) {
         if (mMessageItem.hasPayload<KMime::Message::Ptr>()) {
             auto message = mMessageItem.payload<KMime::Message::Ptr>();
-            const QString email = QLatin1StringView(KEmailAddress::firstEmailAddress(message->from()->as7BitString(false)));
+            const QString email = QLatin1StringView(KEmailAddress::firstEmailAddress(message->from()->as7BitString()));
             QStringList lst = MessageViewer::MessageViewerSettings::self()->scamDetectionWhiteList();
             if (lst.contains(email)) {
                 return;

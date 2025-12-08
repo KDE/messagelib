@@ -583,7 +583,7 @@ bool Util::deleteAttachment(KMime::Content *node)
 
     // text/plain part:
     const auto newName = i18nc("Argument is the original name of the deleted attachment", "Deleted: %1", name);
-    auto deletePart = new KMime::Content(parentNode);
+    auto deletePart = std::make_unique<KMime::Content>(parentNode);
     auto deleteCt = deletePart->contentType(true);
     deleteCt->setMimeType("text/x-moz-deleted");
     deleteCt->setName(newName);
@@ -599,7 +599,7 @@ bool Util::deleteAttachment(KMime::Content *node)
     bodyMessage += ("\nfilename=\"") + filename.toUtf8() + "\"";
     deletePart->setBody(bodyMessage);
     parentNode->takeContent(node);
-    parentNode->appendContent(deletePart);
+    parentNode->appendContent(std::move(deletePart));
 
     parentNode->assemble();
 

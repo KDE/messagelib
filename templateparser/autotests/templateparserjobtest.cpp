@@ -59,7 +59,7 @@ void TemplateParserJobTest::test_convertedHtml()
     KMime::Message::Ptr origMsg(new KMime::Message);
     origMsg->setContent(mailData);
     origMsg->parse();
-    QCOMPARE(origMsg->subject()->as7BitString(false).constData(), "Plain Message Test");
+    QCOMPARE(origMsg->subject()->as7BitString(), "Plain Message Test");
     QCOMPARE(origMsg->contents().size(), 0);
 
     // load expected result

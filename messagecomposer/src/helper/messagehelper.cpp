@@ -133,7 +133,7 @@ KMime::Types::AddrSpecList extractAddrSpecs(const QSharedPointer<const KMime::Me
     if (auto hrd = msg->headerByType(header.constData())) {
         // Don't use "asUnicodeString().toUtf8()" it removes \" from \"foo, bla\" <foo@kde.org> => send failed
         // Bug 439218
-        KMime::Types::AddressList al = MessageCore::StringUtil::splitAddressField(hrd->as7BitString(false));
+        KMime::Types::AddressList al = MessageCore::StringUtil::splitAddressField(hrd->as7BitString());
         KMime::Types::AddressList::const_iterator alend(al.constEnd());
         for (KMime::Types::AddressList::const_iterator ait = al.constBegin(); ait != alend; ++ait) {
             KMime::Types::MailboxList::const_iterator mitEnd((*ait).mailboxList.constEnd());
