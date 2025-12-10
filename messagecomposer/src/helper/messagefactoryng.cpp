@@ -507,7 +507,7 @@ MessageFactoryNG::createRedirect(const QString &toStr, const QString &ccStr, con
     if (msg->to(false)) {
         auto headerT = std::unique_ptr<KMime::Headers::To>(new KMime::Headers::To);
         headerT->fromUnicodeString(mOrigMsg->to()->asUnicodeString());
-        msg->setHeader(std::move(header));
+        msg->setHeader(std::move(headerT));
     }
 
     header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("Resent-To"));
