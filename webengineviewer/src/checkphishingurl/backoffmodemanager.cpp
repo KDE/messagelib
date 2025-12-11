@@ -80,7 +80,7 @@ void BackOffModeManagerPrivate::updateTimer(int seconds)
 void BackOffModeManagerPrivate::load()
 {
     KConfig phishingurlKConfig(WebEngineViewer::CheckPhishingUrlUtil::configFileName());
-    KConfigGroup grp = phishingurlKConfig.group(u"BackOffMode"_s);
+    const KConfigGroup grp = phishingurlKConfig.group(u"BackOffMode"_s);
     isInOffMode = grp.readEntry("Enabled", false);
     if (isInOffMode) {
         const qint64 delay = grp.readEntry("Delay", 0);

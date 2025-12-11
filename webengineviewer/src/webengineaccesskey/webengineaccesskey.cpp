@@ -128,7 +128,7 @@ bool WebEngineAccessKeyPrivate::checkForAccessKey(QKeyEvent *event)
     if (text.isEmpty()) {
         return false;
     }
-    QChar key = text.at(0).toUpper();
+    const QChar key = text.at(0).toUpper();
     bool handled = false;
     if (mAccessKeyNodes.contains(key)) {
         WebEngineViewer::WebEngineAccessKeyAnchor element = mAccessKeyNodes.value(key);

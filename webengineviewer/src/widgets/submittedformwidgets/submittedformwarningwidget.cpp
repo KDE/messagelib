@@ -6,11 +6,11 @@
 */
 
 #include "submittedformwarningwidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KLocalizedString>
 
 using namespace WebEngineViewer;
+using namespace Qt::Literals::StringLiterals;
 
 SubmittedFormWarningWidget::SubmittedFormWarningWidget(QWidget *parent)
     : KMessageWidget(parent)
