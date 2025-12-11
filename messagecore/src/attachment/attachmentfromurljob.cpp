@@ -7,7 +7,6 @@
 */
 
 #include "attachmentfromurljob.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "messagecore_debug.h"
 #include <KIO/TransferJob>
@@ -18,6 +17,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QUrlQuery>
 
 using namespace MessageCore;
+using namespace Qt::Literals::StringLiterals;
 
 class MessageCore::AttachmentFromUrlJob::AttachmentLoadJobPrivate
 {
@@ -63,7 +63,7 @@ void AttachmentFromUrlJob::AttachmentLoadJobPrivate::transferJobResult(KJob *job
     QString fileName = q->url().fileName();
     fileName.replace(u'\n', u'_');
     if (fileName.isEmpty()) {
-        QMimeDatabase db;
+        const QMimeDatabase db;
         const auto mimeType = db.mimeTypeForName(mimeTypeName);
         if (mimeType.isValid()) {
             fileName = i18nc("a file called 'unknown.ext'", "unknown%1", mimeType.preferredSuffix());

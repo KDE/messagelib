@@ -111,9 +111,10 @@ void MessageFactoryNG::slotCreateReplyDone(const KMime::Message::Ptr &msg, bool 
     }
     msg->assemble();
 
-    MessageReply reply;
-    reply.msg = msg;
-    reply.replyAll = replyAll;
+    const MessageReply reply{
+        .msg = msg,
+        .replyAll = replyAll,
+    };
     Q_EMIT createReplyDone(reply);
 }
 

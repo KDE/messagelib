@@ -54,7 +54,7 @@ void AttachmentCompressJob::AttachmentCompressJobPrivate::doStart()
 
     // Compress.
     zip.setCompression(KZip::DeflateCompression);
-    QDateTime zipTime = QDateTime::currentDateTime();
+    const QDateTime zipTime = QDateTime::currentDateTime();
     if (!zip.writeFile(mOriginalPart->name(), decoded, archivePerms, QString(/*user*/), QString(/*group*/), zipTime, zipTime, zipTime)) {
         q->setError(KJob::UserDefinedError);
         q->setErrorText(i18n("Could not compress the attachment."));

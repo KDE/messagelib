@@ -5,7 +5,6 @@
 */
 
 #include "attachmentfromfolderjob.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "messagecore_debug.h"
 #include <KLocalizedString>
@@ -17,6 +16,7 @@ using namespace Qt::Literals::StringLiterals;
 
 static const mode_t archivePermsAttachment = S_IFREG | 0644;
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageCore;
 
 class AttachmentFromFolderJob::AttachmentLoadJobPrivate

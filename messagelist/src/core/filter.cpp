@@ -160,33 +160,37 @@ QList<SearchLineCommand::SearchLineInfo> Filter::searchLineCommands() const
     const QString text = mSearchString;
     QList<SearchLineCommand::SearchLineInfo> infos;
     if (mOptions & SearchMessageByButtons::SearchAgainstBody) {
-        SearchLineCommand::SearchLineInfo i;
-        i.type = SearchLineCommand::SearchLineType::Body;
-        i.argument = mSearchString;
+        const SearchLineCommand::SearchLineInfo i{
+            .type = SearchLineCommand::SearchLineType::Body,
+            .argument = mSearchString,
+        };
         if (i.isValid()) {
             infos.append(std::move(i));
         }
     }
     if (mOptions & SearchMessageByButtons::SearchAgainstSubject) {
-        SearchLineCommand::SearchLineInfo i;
-        i.type = SearchLineCommand::SearchLineType::Subject;
-        i.argument = mSearchString;
+        const SearchLineCommand::SearchLineInfo i{
+            .type = SearchLineCommand::SearchLineType::Subject,
+            .argument = mSearchString,
+        };
         if (i.isValid()) {
             infos.append(std::move(i));
         }
     }
     if (mOptions & SearchMessageByButtons::SearchAgainstBcc) {
-        SearchLineCommand::SearchLineInfo i;
-        i.type = SearchLineCommand::SearchLineType::Bcc;
-        i.argument = mSearchString;
+        const SearchLineCommand::SearchLineInfo i{
+            .type = SearchLineCommand::SearchLineType::Bcc,
+            .argument = mSearchString,
+        };
         if (i.isValid()) {
             infos.append(std::move(i));
         }
     }
     if (mOptions & SearchMessageByButtons::SearchAgainstCc) {
-        SearchLineCommand::SearchLineInfo i;
-        i.type = SearchLineCommand::SearchLineType::Cc;
-        i.argument = mSearchString;
+        const SearchLineCommand::SearchLineInfo i{
+            .type = SearchLineCommand::SearchLineType::Cc,
+            .argument = mSearchString,
+        };
         if (i.isValid()) {
             infos.append(std::move(i));
         }
