@@ -36,10 +36,10 @@ void WebEngineExportPdfPageJob::start()
     if (dialog->exec() == QDialog::Accepted) {
         if (dialog->printer()->outputFormat() == QPrinter::PdfFormat) {
             mWebEngineView->page()->printToPdf(dialog->printer()->outputFileName(), dialog->printer()->pageLayout());
-            delete dialog;
-            delete printer;
         }
     }
+    delete dialog;
+    delete printer;
 }
 
 void WebEngineExportPdfPageJob::slotExportPdfFinished(const QString &filePath, bool success)
