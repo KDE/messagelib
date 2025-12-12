@@ -170,7 +170,9 @@ void ComposerJobPrivate::composeStep2()
                     mainJob = multipartJob;
                 }
 
-                QObject::connect(mainJob, SIGNAL(finished(KJob *)), q, SLOT(contentJobFinished(KJob *)));
+                QObject::connect(mainJob, &KJob::finished, q, [this](KJob *job) {
+                    contentJobFinished(job);
+                });
                 q->addSubjob(mainJob);
             }
         } else {
@@ -191,7 +193,9 @@ void ComposerJobPrivate::composeStep2()
                 }
                 mainJob = multipartJob;
             }
-            QObject::connect(mainJob, SIGNAL(finished(KJob *)), q, SLOT(contentJobFinished(KJob *)));
+            QObject::connect(mainJob, &KJob::finished, q, [this](KJob *job) {
+                contentJobFinished(job);
+            });
             q->addSubjob(mainJob);
         }
 
@@ -259,12 +263,16 @@ void ComposerJobPrivate::composeStep2()
                 // When doing Encrypt and Sign move headers only in the signed part
                 eJob->setProtectedHeaders(false);
             }
-            QObject::connect(job, SIGNAL(finished(KJob *)), q, SLOT(contentJobFinished(KJob *)));
+            QObject::connect(job, &KJob::finished, q, [this](KJob *job) {
+                contentJobFinished(job);
+            });
             q->addSubjob(job);
             mainJob = job; // start only last EncryptJob
         }
     } else {
-        QObject::connect(mainJob, SIGNAL(finished(KJob *)), q, SLOT(contentJobFinished(KJob *)));
+        QObject::connect(mainJob, &KJob::finished, q, [this](KJob *job) {
+            contentJobFinished(job);
+        });
         q->addSubjob(mainJob);
     }
 
@@ -445,7 +453,9 @@ void ComposerJobPrivate::composeWithLateAttachments(KMime::Message *headers,
         }
     }
 
-    QObject::connect(multiJob, SIGNAL(finished(KJob *)), q, SLOT(attachmentsFinished(KJob *)));
+    QObject::connect(multiJob, &KJob::finished, q, [this](KJob *job) {
+        attachmentsFinished(job);
+    });
 
     q->addSubjob(multiJob);
     multiJob->start();
