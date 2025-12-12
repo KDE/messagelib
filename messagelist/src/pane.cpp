@@ -48,7 +48,7 @@ public:
     void setCurrentFolder(const QModelIndex &etmIndex);
     void onNewTabClicked();
     void onCloseTabClicked();
-    void activateTab();
+    void activateTab(int i);
     void closeTab(QWidget *);
     void onCurrentTabChanged();
     void onTabContextMenuRequest(const QPoint &pos);
@@ -188,8 +188,8 @@ void Pane::PanePrivate::addActivateTabAction(int i)
     auto action = new QAction(i18nc("@action", "Activate Tab %1", i), q);
     mXmlGuiClient->actionCollection()->addAction(actionname, action);
     mXmlGuiClient->actionCollection()->setDefaultShortcut(action, QKeySequence(u"Alt+%1"_s.arg(i)));
-    connect(action, &QAction::triggered, q, [this]() {
-        activateTab();
+    connect(action, &QAction::triggered, q, [this, i]() {
+        activateTab(i);
     });
 }
 
@@ -550,9 +550,9 @@ void Pane::PanePrivate::setCurrentFolder(const QModelIndex &etmIndex)
     mPreferEmptyTab = false;
 }
 
-void Pane::PanePrivate::activateTab()
+void Pane::PanePrivate::activateTab(int index)
 {
-    q->tabBar()->setCurrentIndex(QStringView(q->sender()->objectName()).right(2).toInt() - 1);
+    q->tabBar()->setCurrentIndex(index - 1);
 }
 
 void Pane::PanePrivate::moveTabRight()
