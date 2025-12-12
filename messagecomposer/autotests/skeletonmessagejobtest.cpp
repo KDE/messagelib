@@ -196,6 +196,7 @@ void SkeletonMessageJobTest::testMessageID()
 {
     ComposerJob composerJob;
     InfoPart *infoPart = composerJob.infoPart();
+    infoPart->setFrom(u"test@example.org"_s);
     GlobalPart *globalPart = composerJob.globalPart();
     Q_ASSERT(infoPart);
 

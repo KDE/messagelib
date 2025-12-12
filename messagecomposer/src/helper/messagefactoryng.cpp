@@ -489,12 +489,12 @@ MessageFactoryNG::createRedirect(const QString &toStr, const QString &ccStr, con
     // date, from to and id will be set anyway
 
     // prepend Resent-*: headers (c.f. RFC2822 3.6.6)
-    QString msgIdSuffix;
-    if (MessageComposer::MessageComposerSettings::useCustomMessageIdSuffix()) {
-        msgIdSuffix = MessageComposer::MessageComposerSettings::customMsgIDSuffix();
+    auto header = std::make_unique<KMime::Headers::Generic>("Resent-Message-ID");
+    {
+        auto messageId = std::make_unique<KMime::Headers::MessageID>();
+        messageId->generate(msg->sender()->mailbox().addrSpec().domain.toUtf8());
+        header->fromUnicodeString(messageId->asUnicodeString());
     }
-    auto header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("Resent-Message-ID"));
-    header->fromUnicodeString(MessageCore::StringUtil::generateMessageId(msg->sender()->asUnicodeString(), msgIdSuffix));
     msg->setHeader(std::move(header));
 
     header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("Resent-Date"));

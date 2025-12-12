@@ -48,12 +48,13 @@ void SkeletonMessageJobPrivate::doStart()
     Q_ASSERT(message == nullptr);
     message = new KMime::Message;
 
+    KMime::Types::Mailbox fromAddress;
+    fromAddress.fromUnicodeString(KEmailAddress::normalizeAddressesAndEncodeIdn(infoPart->from()));
+
     // From:
     {
         auto from = std::unique_ptr<KMime::Headers::From>(new KMime::Headers::From);
-        KMime::Types::Mailbox address;
-        address.fromUnicodeString(KEmailAddress::normalizeAddressesAndEncodeIdn(infoPart->from()));
-        from->fromUnicodeString(QString::fromLatin1(address.as7BitString("utf-8")));
+        from->fromUnicodeString(QString::fromLatin1(fromAddress.as7BitString("utf-8")));
         message->setHeader(std::move(from));
     }
 
@@ -156,19 +157,9 @@ void SkeletonMessageJobPrivate::doStart()
 
     // Message-ID
     {
+        const auto fromParts = infoPart->from();
         auto messageId = std::unique_ptr<KMime::Headers::MessageID>(new KMime::Headers::MessageID());
-        QByteArray fqdn;
-        if (MessageComposer::MessageComposerSettings::self()->useCustomMessageIdSuffix()) {
-            fqdn = QUrl::toAce(MessageComposer::MessageComposerSettings::self()->customMsgIDSuffix());
-        }
-        if (fqdn.isEmpty()) {
-            fqdn = QUrl::toAce(QHostInfo::localHostName());
-        }
-        if (fqdn.isEmpty()) {
-            qCWarning(MESSAGECOMPOSER_LOG) << "Unable to generate a Message-ID, falling back to 'localhost.localdomain'.";
-            fqdn = "local.domain";
-        }
-        messageId->generate(fqdn);
+        messageId->generate(fromAddress.addrSpec().domain.toUtf8());
         message->setHeader(std::move(messageId));
     }
     // Extras

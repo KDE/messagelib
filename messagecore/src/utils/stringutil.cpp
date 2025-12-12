@@ -293,23 +293,6 @@ AddressList splitAddressField(const QByteArray &text)
     return result;
 }
 
-QString generateMessageId(const QString &address, const QString &suffix)
-{
-    const QDateTime dateTime = QDateTime::currentDateTime();
-
-    QString msgIdStr = u'<' + dateTime.toString(u"yyyyMMddhhmm.sszzz"_s);
-
-    if (!suffix.isEmpty()) {
-        msgIdStr += u'@' + suffix;
-    } else {
-        msgIdStr += u'.' + KEmailAddress::toIdn(address);
-    }
-
-    msgIdStr += u'>';
-
-    return msgIdStr;
-}
-
 QString quoteHtmlChars(const QString &str, bool removeLineBreaks)
 {
     QString result;

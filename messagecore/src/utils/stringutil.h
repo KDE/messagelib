@@ -54,13 +54,6 @@ namespace StringUtil
 [[nodiscard]] MESSAGECORE_EXPORT KMime::Types::AddressList splitAddressField(const QByteArray &text);
 
 /**
- * Generates the Message-Id. It uses either the Message-Id @p suffix
- * defined by the user or the given email address as suffix. The @p address
- * must be given as addr-spec as defined in RFC 2822.
- */
-[[nodiscard]] MESSAGECORE_EXPORT QString generateMessageId(const QString &address, const QString &suffix);
-
-/**
  * Quotes the following characters which have a special meaning in HTML:
  * '<'  '>'  '&'  '"'. Additionally '\\n' is converted to "<br />" if
  * @p removeLineBreaks is false. If @p removeLineBreaks is true, then
