@@ -81,9 +81,10 @@ void AliasesExpandJob::slotDistributionListExpansionDone(KJob *job)
     const DistributionListExpandJob *expandJob = qobject_cast<DistributionListExpandJob *>(job);
     const QString recipient = expandJob->property("recipient").toString();
 
-    DistributionListExpansionResult result;
-    result.addresses = expandJob->addresses();
-    result.isEmpty = expandJob->isEmpty();
+    const DistributionListExpansionResult result{
+        .addresses = expandJob->addresses(),
+        .isEmpty = expandJob->isEmpty(),
+    };
 
     mDistListExpansionResults.insert(recipient, result);
 

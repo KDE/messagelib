@@ -104,7 +104,7 @@ QList<QPair<int, int>> RichTextComposerSignatures::RichTextComposerSignaturesPri
 {
     QList<QPair<int, int>> signaturePositions;
     if (!sig.rawText().isEmpty()) {
-        QString sigText = sig.toPlainText();
+        const QString sigText = sig.toPlainText();
 
         int currentSearchPosition = 0;
         for (;;) {
