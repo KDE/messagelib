@@ -519,24 +519,19 @@ void Pane::PanePrivate::setCurrentFolder(const QModelIndex &etmIndex)
     QString label;
     QIcon icon;
     QString toolTip;
-    for (const QModelIndex &index : s->selectedRows()) {
-        label += index.data(Qt::DisplayRole).toString() + QLatin1StringView(", ");
-    }
-    label.chop(2);
-
-    if (label.isEmpty()) {
+    if (s->selectedRows().isEmpty()) {
         label = i18nc("@title:tab Empty messagelist", "Empty");
         icon = QIcon();
     } else if (s->selectedRows().size() == 1) {
-        icon = s->selectedRows().first().data(Qt::DecorationRole).value<QIcon>();
-        QModelIndex idx = s->selectedRows().first().parent();
+        const QModelIndex firstModelIndex = s->selectedRows().first();
+        label = firstModelIndex.data(Qt::DisplayRole).toString();
         toolTip = label;
+        icon = firstModelIndex.data(Qt::DecorationRole).value<QIcon>();
+        QModelIndex idx = firstModelIndex.parent();
         while (idx != QModelIndex()) {
             toolTip = idx.data().toString() + u'/' + toolTip;
             idx = idx.parent();
         }
-    } else {
-        icon = QIcon::fromTheme(u"folder"_s);
     }
 
     const int index = q->indexOf(w);
