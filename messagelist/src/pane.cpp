@@ -836,7 +836,7 @@ QItemSelectionModel *Pane::createNewTab()
 
     connect(w, &Core::Widget::forceLostFocus, this, &Pane::forceLostFocus);
     connect(w, &Core::Widget::unlockTabRequested, this, [this, w]() {
-        for (int i = 0; i < count(); ++i) {
+        for (int i = 0, total = count(); i < total; ++i) {
             if (w == qobject_cast<Widget *>(widget(i))) {
                 setTabIcon(i, QIcon::fromTheme(u"unlock"_s));
             }
