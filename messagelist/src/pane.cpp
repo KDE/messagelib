@@ -537,6 +537,7 @@ void Pane::PanePrivate::setCurrentFolder(const QModelIndex &etmIndex)
     const int index = q->indexOf(w);
     q->setTabText(index, label);
     q->setTabIcon(index, icon);
+    w->setDefaultCollectionIcon(icon);
     q->setTabToolTip(index, toolTip);
     if (mPreferEmptyTab) {
         mSelectionModel->select(mapSelectionFromSource(s->selection()), QItemSelectionModel::ClearAndSelect);
@@ -751,7 +752,7 @@ void Pane::PanePrivate::onTabContextMenuRequest(const QPoint &pos)
         auto tab = qobject_cast<Widget *>(q->widget(indexBar));
         const bool isLocked = !tab->isLocked();
         tab->setLockTab(isLocked);
-        q->setTabIcon(indexBar, isLocked ? QIcon::fromTheme(u"lock"_s) : QIcon::fromTheme(QStringLiteral("unlock")));
+        q->setTabIcon(indexBar, isLocked ? QIcon::fromTheme(u"lock"_s) : tab->defaultCollectionIcon());
         q->tabBar()->tabButton(indexBar, QTabBar::RightSide)->setEnabled(!isLocked);
         if (q->tabBar()->currentIndex() == indexBar) {
             mCloseTabButton->setEnabled(!isLocked);
@@ -803,7 +804,11 @@ void Pane::updateTabIconText(const Akonadi::Collection &collection, const QStrin
         if (w && (w->currentCollection() == collection)) {
             const int index = indexOf(w);
             setTabText(index, label);
-            setTabIcon(index, icon);
+            // We don't want to change icon if it's locked
+            if (!w->isLocked()) {
+                setTabIcon(index, icon);
+            }
+            w->setDefaultCollectionIcon(icon);
         }
     }
 }
@@ -841,7 +846,7 @@ QItemSelectionModel *Pane::createNewTab()
     connect(w, &Core::Widget::unlockTabRequested, this, [this, w]() {
         for (int i = 0; i < count(); ++i) {
             if (w == qobject_cast<Widget *>(widget(i))) {
-                setTabIcon(i, QIcon::fromTheme(u"unlock"_s));
+                setTabIcon(i, w->defaultCollectionIcon());
             }
         }
     });

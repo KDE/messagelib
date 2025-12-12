@@ -313,6 +313,10 @@ public:
 
     [[nodiscard]] QList<MessageList::Core::SearchLineCommand::SearchLineInfo> searchLineCommands() const;
 
+    [[nodiscard]] QIcon defaultCollectionIcon() const;
+
+    void setDefaultCollectionIcon(const QIcon &icon);
+
 protected:
     /**
      * Reimplemented from MessageList::Core::Widget
