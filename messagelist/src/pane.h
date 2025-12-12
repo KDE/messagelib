@@ -77,7 +77,7 @@ public:
      * Returns the current message for the list as KMime::Message::Ptr.
      * May return 0 if there is no current message or no current folder.
      */
-    KMime::Message::Ptr currentMessage() const;
+    [[nodiscard]] KMime::Message::Ptr currentMessage() const;
 
     /**
      * Returns the currently selected KMime::Message::Ptr (bound to current StorageModel).
@@ -325,7 +325,7 @@ public:
     /**
      * Returns the QItemSelectionModel for the currently displayed tab.
      */
-    QItemSelectionModel *currentItemSelectionModel();
+    [[nodiscard]] QItemSelectionModel *currentItemSelectionModel();
 
     /**
      * Sets the current folder to be displayed by this Pane.
@@ -363,13 +363,13 @@ public:
 
     void updateTagComboBox();
 
-    bool searchEditHasFocus() const;
+    [[nodiscard]] bool searchEditHasFocus() const;
 
     void setQuickSearchClickMessage(const QString &msg);
 
     void populateStatusFilterCombo();
 
-    Core::SearchMessageByButtons::SearchOptions currentOptions() const;
+    [[nodiscard]] Core::SearchMessageByButtons::SearchOptions currentOptions() const;
 
     [[nodiscard]] Akonadi::Collection currentFolder() const;
 
@@ -377,7 +377,7 @@ public:
     /**
      * Add a new tab to the Pane and select it.
      */
-    QItemSelectionModel *createNewTab();
+    [[nodiscard]] QItemSelectionModel *createNewTab();
 public Q_SLOTS:
     /**
      * Selects all the items in the current folder.

@@ -43,7 +43,7 @@ public:
      * Returns the unique id of the last selected message for this StorageModel.
      * Returns 0 if this value isn't stored in the configuration.
      */
-    unsigned long preSelectedMessage() const;
+    [[nodiscard]] unsigned long preSelectedMessage() const;
 
     /**
      * Stores in the unique id of the last selected message for the specified StorageModel.

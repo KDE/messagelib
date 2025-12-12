@@ -34,9 +34,9 @@ public:
     const MessageItem::Tag *findTagInternal(const QString &szTagId) const;
 
     /// Returns the list of tags. This is calculated on demand and cached in mTagList
-    QList<MessageItem::Tag *> getTagList() const;
+    [[nodiscard]] QList<MessageItem::Tag *> getTagList() const;
 
-    bool tagListInitialized() const;
+    [[nodiscard]] bool tagListInitialized() const;
 
     /// Returns the tag with the highest priority, or 0 if there are no tags
     const MessageItem::Tag *bestTag() const;

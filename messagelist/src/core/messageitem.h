@@ -150,12 +150,12 @@ public:
 
     [[nodiscard]] unsigned long uniqueId() const;
 
-    Akonadi::Item akonadiItem() const;
+    [[nodiscard]] Akonadi::Item akonadiItem() const;
     void setAkonadiItem(const Akonadi::Item &item);
 
-    MessageItem *topmostMessage();
+    [[nodiscard]] MessageItem *topmostMessage();
 
-    QString accessibleText(const MessageList::Core::Theme *theme, int columnIndex);
+    [[nodiscard]] QString accessibleText(const MessageList::Core::Theme *theme, int columnIndex);
 
     /**
      * Appends the whole subtree originating at this item
@@ -183,7 +183,7 @@ protected:
 private:
     MESSAGELIST_NO_EXPORT const QFont &font() const;
 
-    MESSAGELIST_NO_EXPORT QString accessibleTextForField(Theme::ContentItem::Type field);
+    MESSAGELIST_NO_EXPORT [[nodiscard]] QString accessibleTextForField(Theme::ContentItem::Type field);
 
     Q_DECLARE_PRIVATE(MessageItem)
 };
@@ -198,7 +198,7 @@ public:
     ~FakeItem() override;
 
     /// Reimplemented to return the fake tag list
-    QList<Tag *> tagList() const override;
+    [[nodiscard]] QList<Tag *> tagList() const override;
 
     /// Sets a list of fake tags for this item
     void setFakeTags(const QList<Tag *> &tagList);

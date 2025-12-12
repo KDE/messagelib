@@ -62,7 +62,7 @@ public:
     [[nodiscard]] QModelIndex parent(const QModelIndex &index) const override;
     [[nodiscard]] int rowCount(const QModelIndex &parent = QModelIndex()) const override;
 
-    QMimeData *mimeData(const QList<MessageList::Core::MessageItem *> &) const override;
+    [[nodiscard]] QMimeData *mimeData(const QList<MessageList::Core::MessageItem *> &) const override;
     using MessageList::Core::StorageModel::mimeData;
 
     [[nodiscard]] Akonadi::Item itemForRow(int row) const;
