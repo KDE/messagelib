@@ -183,7 +183,7 @@ protected:
 private:
     MESSAGELIST_NO_EXPORT const QFont &font() const;
 
-    MESSAGELIST_NO_EXPORT [[nodiscard]] QString accessibleTextForField(Theme::ContentItem::Type field);
+    [[nodiscard]] MESSAGELIST_NO_EXPORT QString accessibleTextForField(Theme::ContentItem::Type field);
 
     Q_DECLARE_PRIVATE(MessageItem)
 };
