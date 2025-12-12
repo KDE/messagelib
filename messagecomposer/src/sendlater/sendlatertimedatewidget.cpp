@@ -25,7 +25,8 @@ SendLaterTimeDateWidget::SendLaterTimeDateWidget(QWidget *parent)
     lay->setContentsMargins({});
 
     QDateTime t = QDateTime::currentDateTime();
-    t = t.addSecs(60 * 60);
+    constexpr int minutes = 60 * 60;
+    t = t.addSecs(minutes);
     connect(mTimeComboBox, &KTimeComboBox::timeChanged, this, &SendLaterTimeDateWidget::slotDateTimeChanged);
     mTimeComboBox->setObjectName(QLatin1StringView("time_sendlater"));
 

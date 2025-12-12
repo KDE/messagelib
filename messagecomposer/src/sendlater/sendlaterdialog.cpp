@@ -60,7 +60,8 @@ SendLaterDialog::SendLaterDialog(SendLaterInfo *info, QWidget *parent)
     lay->addWidget(sendLaterWidget);
 
     QDateTime t = QDateTime::currentDateTime();
-    t = t.addSecs(60 * 60);
+    constexpr int min = 60 * 60;
+    t = t.addSecs(min);
 
     mSendLaterWidget->mDateTime->setDateTime(t);
     connect(mSendLaterWidget->mRecurrence, &QCheckBox::clicked, this, &SendLaterDialog::slotRecurrenceClicked);

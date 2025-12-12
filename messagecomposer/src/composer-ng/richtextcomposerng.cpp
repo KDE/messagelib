@@ -93,7 +93,7 @@ void RichTextComposerNg::applyInsertLink()
 {
     if (textMode() == KPIMTextEdit::RichTextComposer::Plain) {
         qCWarning(MESSAGECOMPOSER_LOG) << "KPIMTextEdit::RichTextComposer::Plain + plaintext not implemented yet";
-        // TODO
+        // TODO disable it
     } else {
         composerControler()->manageLink();
     }
