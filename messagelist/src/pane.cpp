@@ -6,6 +6,8 @@
 
 #include "pane.h"
 
+#include "messagelist_pane_debug.h"
+
 #include <KActionCollection>
 #include <KActionMenu>
 #include <KLocalizedString>
@@ -807,6 +809,7 @@ void Pane::updateTabIconText(const Akonadi::Collection &collection, const QStrin
 
 void Pane::createNewTab()
 {
+    qCDebug(MESSAGELIST_PANE_LOG) << "Create new Tab";
     auto w = new Widget(this);
     w->setXmlGuiClient(d->mXmlGuiClient);
 
@@ -845,6 +848,7 @@ void Pane::createNewTab()
 
     d->updateTabControls();
     setCurrentWidget(w);
+    qCDebug(MESSAGELIST_PANE_LOG) << "END Create new Tab";
 }
 
 QItemSelection Pane::PanePrivate::mapSelectionFromSource(const QItemSelection &selection) const

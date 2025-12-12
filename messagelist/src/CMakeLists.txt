@@ -148,6 +148,11 @@ ecm_qt_declare_logging_category(KPim6MessageList HEADER messagelist_debug.h IDEN
     EXPORT MESSAGELIB
 )
 
+ecm_qt_declare_logging_category(KPim6MessageList HEADER messagelist_pane_debug.h IDENTIFIER MESSAGELIST_PANE_LOG CATEGORY_NAME org.kde.pim.messagelist_pane
+    DESCRIPTION "messagelib (messagelist pane)"
+    EXPORT MESSAGELIB
+)
+
 kconfig_add_kcfg_files(KPim6MessageList
     core/messagelistsettings.kcfgc
 )
