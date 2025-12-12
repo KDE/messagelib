@@ -13,15 +13,9 @@
 #include <KMessageWidget>
 class KJob;
 
-namespace Akonadi
-{
-namespace Search
-{
-namespace PIM
+namespace Akonadi::Search::PIM
 {
 class IndexedItems;
-}
-}
 }
 namespace Akonadi
 {

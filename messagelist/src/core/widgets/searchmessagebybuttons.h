@@ -11,9 +11,7 @@
 class QHBoxLayout;
 class QButtonGroup;
 class QToolButton;
-namespace MessageList
-{
-namespace Core
+namespace MessageList::Core
 {
 class MESSAGELIST_EXPORT SearchMessageByButtons : public QWidget
 {
@@ -53,5 +51,4 @@ private:
     QToolButton *mSearchAgainstFromOrToButton = nullptr;
     bool mContainsOutboundMessages = false;
 };
-}
 }

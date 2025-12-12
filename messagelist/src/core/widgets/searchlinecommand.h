@@ -10,9 +10,7 @@
 #include <QMetaType>
 #include <QStringList>
 class QDebug;
-namespace MessageList
-{
-namespace Core
+namespace MessageList::Core
 {
 class MESSAGELIST_EXPORT SearchLineCommand
 {
@@ -91,7 +89,6 @@ private:
     static QMap<QString, SearchLineCommand::SearchLineType> mKeyList;
     QList<SearchLineInfo> mSearchLineInfo;
 };
-}
 }
 Q_DECLARE_TYPEINFO(MessageList::Core::SearchLineCommand::SearchLineInfo, Q_RELOCATABLE_TYPE);
 MESSAGELIST_EXPORT QDebug operator<<(QDebug debug, const MessageList::Core::SearchLineCommand::SearchLineInfo &info);

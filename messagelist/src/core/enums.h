@@ -8,9 +8,7 @@
 
 #pragma once
 
-namespace MessageList
-{
-namespace Core
+namespace MessageList::Core
 {
 /**
  * Pre-selection is the action of automatically selecting a message just after the folder
@@ -49,5 +47,4 @@ enum ExistingSelectionBehaviour {
     ExpandExistingSelection, //< Preserve the existing selection (grow only)
     GrowOrShrinkExistingSelection //< Grow or shrink the existing selection depending on what item is actually being selected
 };
-}
 }

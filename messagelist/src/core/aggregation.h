@@ -16,9 +16,7 @@ class QDataStream;
 
 #include "core/optionset.h"
 
-namespace MessageList
-{
-namespace Core
+namespace MessageList::Core
 {
 /**
  * A set of aggregation options that can be applied to the MessageList::Model in a single shot.
@@ -288,5 +286,4 @@ public:
      */
     bool load(QDataStream &stream) override;
 };
-} // namespace Core
-} // namespace MessageList
+} // namespace MessageList::Core

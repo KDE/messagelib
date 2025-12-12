@@ -7,9 +7,7 @@
 #include "messagelist_private_export.h"
 #include <QLayout>
 #include <QList>
-namespace MessageList
-{
-namespace Core
+namespace MessageList::Core
 {
 class MESSAGELIST_TESTS_EXPORT SearchLineCommandFlowLayout : public QLayout
 {
@@ -48,5 +46,4 @@ private:
     int mHorizontalSpacing = -1;
     int mVerticalSpacing = -1;
 };
-}
 }

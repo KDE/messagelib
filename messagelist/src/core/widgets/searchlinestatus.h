@@ -13,9 +13,7 @@
 #include <QLineEdit>
 class QStringListModel;
 class QAction;
-namespace MessageList
-{
-namespace Core
+namespace MessageList::Core
 {
 class FilterSavedMenu;
 class Filter;
@@ -69,5 +67,4 @@ private:
     QStringList mCommandLineListCompletion;
     QString mColorName;
 };
-}
 }

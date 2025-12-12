@@ -10,9 +10,7 @@
 #include <QWidget>
 class QButtonGroup;
 class QHBoxLayout;
-namespace MessageList
-{
-namespace Core
+namespace MessageList::Core
 {
 class MESSAGELIST_TESTS_EXPORT SearchStatusButtons : public QWidget
 {
@@ -33,5 +31,4 @@ private:
     QButtonGroup *const mButtonGroup;
     QHBoxLayout *const mMainLayout;
 };
-}
 }

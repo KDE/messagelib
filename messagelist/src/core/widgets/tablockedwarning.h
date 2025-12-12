@@ -9,9 +9,7 @@
 #include "messagelist_private_export.h"
 #include <KMessageWidget>
 
-namespace MessageList
-{
-namespace Core
+namespace MessageList::Core
 {
 class MESSAGELIST_TESTS_EXPORT TabLockedWarning : public KMessageWidget
 {
@@ -25,5 +23,4 @@ Q_SIGNALS:
 private:
     MESSAGELIST_NO_EXPORT void slotLinkActivated(const QString &contents);
 };
-}
 }

@@ -10,9 +10,7 @@
 #include <QFrame>
 #include <QHash>
 class QPushButton;
-namespace MessageList
-{
-namespace Core
+namespace MessageList::Core
 {
 class MESSAGELIST_TESTS_EXPORT SearchLineCommandButtonsWidget : public QFrame
 {
@@ -32,5 +30,4 @@ private:
     MESSAGELIST_NO_EXPORT QList<ButtonInfo> fillCommandLineText() const;
     [[nodiscard]] MESSAGELIST_NO_EXPORT QPushButton *createPushButton(const QString &i18nStr, const QString &commandStr);
 };
-}
 }
