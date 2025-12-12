@@ -165,9 +165,6 @@ Pane::Pane(bool restoreSession, QAbstractItemModel *model, QItemSelectionModel *
     connect(MessageListSettings::self(), &MessageListSettings::configChanged, this, [this]() {
         d->updateTabControls();
     });
-
-    // connect(this, &QTabWidget::tabBarDoubleClicked, this, &Pane::createNewTab);
-
     tabBar()->installEventFilter(this);
 }
 
