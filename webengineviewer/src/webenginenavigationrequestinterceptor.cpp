@@ -9,7 +9,7 @@
 using namespace WebEngineViewer;
 
 WebEngineNavigationRequestInterceptor::WebEngineNavigationRequestInterceptor(QWebEnginePage *page)
-    : QWebEnginePage(page)
+    : QWebEnginePage(page->profile(), page)
     , mTargetPage(page)
 {
 }
