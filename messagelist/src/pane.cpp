@@ -1192,7 +1192,7 @@ void Pane::readConfig(bool restoreSession)
 
 void Pane::restoreHeaderSettings(int index, bool restoreSession)
 {
-    KConfigGroup grp(MessageList::MessageListSettings::self()->config(), u"MessageListTab%1"_s.arg(index));
+    const KConfigGroup grp(MessageList::MessageListSettings::self()->config(), u"MessageListTab%1"_s.arg(index));
     if (grp.exists()) {
         auto w = qobject_cast<Widget *>(widget(index));
         if (w) {
