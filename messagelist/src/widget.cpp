@@ -89,7 +89,7 @@ bool MessageList::Widget::canAcceptDrag(const QDropEvent *e)
         return false;
     }
 
-    Collection::List collections = static_cast<const MessageList::StorageModel *>(storageModel())->displayedCollections();
+    const Collection::List collections = static_cast<const MessageList::StorageModel *>(storageModel())->displayedCollections();
     if (collections.size() != 1) {
         return false; // no folder here or too many (in case we can't decide where the drop will end)
     }
