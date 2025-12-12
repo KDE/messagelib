@@ -768,7 +768,6 @@ Akonadi::Collection Pane::currentFolder() const
 
 void Pane::setCurrentFolder(const Akonadi::Collection &collection,
                             const QModelIndex &etmIndex,
-                            bool,
                             Core::PreSelectionMode preSelectionMode,
                             const QString &overrideLabel)
 {

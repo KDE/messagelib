@@ -336,10 +336,6 @@ public:
      *
      * @param etmIndex the index for the collection in the EntityTreeModel (source model)
      *
-     * If preferEmptyTab is set to false then the (new) folder is loaded
-     * in the current tab. If preferEmptyTab is set to true then the (new) folder is
-     * loaded in the first empty tab (or a new one if there are no empty ones).
-     *
      * Pre-selection is the action of automatically selecting a message just after the folder
      * has finished loading. See Model::setStorageModel() for more information.
      *
@@ -349,7 +345,6 @@ public:
      */
     void setCurrentFolder(const Akonadi::Collection &fld,
                           const QModelIndex &etmIndex,
-                          bool preferEmptyTab = false,
                           MessageList::Core::PreSelectionMode preSelectionMode = MessageList::Core::PreSelectLastSelected,
                           const QString &overrideLabel = QString());
 
