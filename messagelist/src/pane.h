@@ -377,7 +377,7 @@ public:
     /**
      * Add a new tab to the Pane and select it.
      */
-    [[nodiscard]] QItemSelectionModel *createNewTab();
+    void createNewTab();
 public Q_SLOTS:
     /**
      * Selects all the items in the current folder.

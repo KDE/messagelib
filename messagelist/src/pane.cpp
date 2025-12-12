@@ -805,7 +805,7 @@ void Pane::updateTabIconText(const Akonadi::Collection &collection, const QStrin
     }
 }
 
-QItemSelectionModel *Pane::createNewTab()
+void Pane::createNewTab()
 {
     auto w = new Widget(this);
     w->setXmlGuiClient(d->mXmlGuiClient);
@@ -845,7 +845,6 @@ QItemSelectionModel *Pane::createNewTab()
 
     d->updateTabControls();
     setCurrentWidget(w);
-    return s;
 }
 
 QItemSelection Pane::PanePrivate::mapSelectionFromSource(const QItemSelection &selection) const
