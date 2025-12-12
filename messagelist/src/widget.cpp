@@ -61,6 +61,7 @@ public:
     int mLastSelectedMessage = -1;
     KXMLGUIClient *mXmlGuiClient = nullptr;
     QModelIndex mGroupHeaderItemIndex;
+    QIcon mDefaultCollectionIcon;
 };
 } // namespace MessageList
 
@@ -77,6 +78,16 @@ MessageList::Widget::Widget(QWidget *parent)
 }
 
 MessageList::Widget::~Widget() = default;
+
+QIcon MessageList::Widget::defaultCollectionIcon() const
+{
+    return d->mDefaultCollectionIcon;
+}
+
+void MessageList::Widget::setDefaultCollectionIcon(const QIcon &icon)
+{
+    d->mDefaultCollectionIcon = icon;
+}
 
 void MessageList::Widget::setXmlGuiClient(KXMLGUIClient *xmlGuiClient)
 {
