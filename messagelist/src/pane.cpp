@@ -714,7 +714,7 @@ void Pane::PanePrivate::onTabContextMenuRequest(const QPoint &pos)
     menu.addSeparator();
 
     QAction *lockTabAction = menu.addAction(w->isLocked() ? i18nc("@action:inmenu", "Unlock Tab") : i18nc("@action:inmenu", "Lock Tab"));
-    lockTabAction->setIcon(w->isLocked() ? QIcon::fromTheme(u"lock"_s) : QIcon::fromTheme(QStringLiteral("unlock")));
+    lockTabAction->setIcon(w->isLocked() ? QIcon::fromTheme(u"unlock"_s) : QIcon::fromTheme(QStringLiteral("lock")));
 
     QAction *action = menu.exec(q->mapToGlobal(pos));
 
