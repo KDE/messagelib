@@ -491,6 +491,7 @@ void Pane::setQuickSearchClickMessage(const QString &msg)
 
 void Pane::PanePrivate::setCurrentFolder(const QModelIndex &etmIndex)
 {
+    qCDebug(MESSAGELIST_PANE_LOG) << "setCurrentFolder";
     if (mPreferEmptyTab) {
         q->createNewTab();
     }
