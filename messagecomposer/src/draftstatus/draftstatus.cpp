@@ -5,11 +5,11 @@
 */
 
 #include "draftstatus.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <MessageCore/AutocryptUtils>
 
 using namespace MessageComposer;
+using namespace Qt::Literals::StringLiterals;
 
 void MessageComposer::removeDraftCryptoHeaders(const KMime::Message::Ptr &msg)
 {

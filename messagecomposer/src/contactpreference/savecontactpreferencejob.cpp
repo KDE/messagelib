@@ -5,7 +5,6 @@
 */
 
 #include "savecontactpreferencejob.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KJob>
 #include <KLocalizedString>
@@ -21,6 +20,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QPointer>
 
 using namespace MessageComposer;
+using namespace Qt::Literals::StringLiterals;
 
 class MessageComposer::SaveContactPreferenceJobPrivate
 {
