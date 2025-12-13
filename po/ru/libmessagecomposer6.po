@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-12 00:44+0000\n"
+"POT-Creation-Date: 2025-12-13 00:45+0000\n"
 "PO-Revision-Date: 2024-12-03 15:41+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -1942,22 +1942,22 @@ msgctxt "@option:check"
 msgid "Delay"
 msgstr "Задержка"
 
-#: sendlater/sendlaterdialog.cpp:67
+#: sendlater/sendlaterdialog.cpp:68
 #, kde-format
 msgid "Days"
 msgstr "дней"
 
-#: sendlater/sendlaterdialog.cpp:67
+#: sendlater/sendlaterdialog.cpp:68
 #, kde-format
 msgid "Weeks"
 msgstr "недель"
 
-#: sendlater/sendlaterdialog.cpp:67
+#: sendlater/sendlaterdialog.cpp:68
 #, kde-format
 msgid "Months"
 msgstr "месяцев"
 
-#: sendlater/sendlaterdialog.cpp:67
+#: sendlater/sendlaterdialog.cpp:68
 #, kde-format
 msgid "Years"
 msgstr "лет"
@@ -1972,7 +1972,7 @@ msgstr "Агент отложенной отправки не запущен."
 msgid "Failed to removed message from send later schedule: %1"
 msgstr "Не удалось отменить отложенную отправку письма: %1"
 
-#: sendlater/sendlatertimedatewidget.cpp:36
+#: sendlater/sendlatertimedatewidget.cpp:37
 #, kde-format
 msgid "You cannot select a date prior to the current date."
 msgstr "Невозможно выбрать дату в прошлом."

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-12 00:44+0000\n"
+"POT-Creation-Date: 2025-12-13 00:45+0000\n"
 "PO-Revision-Date: 2014-09-18 22:36+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -1985,22 +1985,22 @@ msgctxt "@option:check"
 msgid "Delay"
 msgstr ""
 
-#: sendlater/sendlaterdialog.cpp:67
+#: sendlater/sendlaterdialog.cpp:68
 #, kde-format
 msgid "Days"
 msgstr ""
 
-#: sendlater/sendlaterdialog.cpp:67
+#: sendlater/sendlaterdialog.cpp:68
 #, kde-format
 msgid "Weeks"
 msgstr ""
 
-#: sendlater/sendlaterdialog.cpp:67
+#: sendlater/sendlaterdialog.cpp:68
 #, kde-format
 msgid "Months"
 msgstr ""
 
-#: sendlater/sendlaterdialog.cpp:67
+#: sendlater/sendlaterdialog.cpp:68
 #, kde-format
 msgid "Years"
 msgstr ""
@@ -2015,7 +2015,7 @@ msgstr ""
 msgid "Failed to removed message from send later schedule: %1"
 msgstr ""
 
-#: sendlater/sendlatertimedatewidget.cpp:36
+#: sendlater/sendlatertimedatewidget.cpp:37
 #, kde-format
 msgid "You cannot select a date prior to the current date."
 msgstr ""

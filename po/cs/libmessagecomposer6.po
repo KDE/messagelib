@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-12 00:44+0000\n"
+"POT-Creation-Date: 2025-12-13 00:45+0000\n"
 "PO-Revision-Date: 2024-08-16 14:41+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -1889,22 +1889,22 @@ msgctxt "@option:check"
 msgid "Delay"
 msgstr "Prodleva"
 
-#: sendlater/sendlaterdialog.cpp:67
+#: sendlater/sendlaterdialog.cpp:68
 #, kde-format
 msgid "Days"
 msgstr "Dnů"
 
-#: sendlater/sendlaterdialog.cpp:67
+#: sendlater/sendlaterdialog.cpp:68
 #, kde-format
 msgid "Weeks"
 msgstr "Týdnů"
 
-#: sendlater/sendlaterdialog.cpp:67
+#: sendlater/sendlaterdialog.cpp:68
 #, kde-format
 msgid "Months"
 msgstr "Měsíce"
 
-#: sendlater/sendlaterdialog.cpp:67
+#: sendlater/sendlaterdialog.cpp:68
 #, kde-format
 msgid "Years"
 msgstr "Roky"
@@ -1919,7 +1919,7 @@ msgstr "Služba Poslat později neběží."
 msgid "Failed to removed message from send later schedule: %1"
 msgstr "Selhalo odebrání zprávy z plánu pro pozdější odeslání: %1"
 
-#: sendlater/sendlatertimedatewidget.cpp:36
+#: sendlater/sendlatertimedatewidget.cpp:37
 #, kde-format
 msgid "You cannot select a date prior to the current date."
 msgstr "Nelze uložit datum před současným datem."

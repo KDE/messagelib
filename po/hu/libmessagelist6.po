@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2025-12-13 00:45+0000\n"
 "PO-Revision-Date: 2025-11-08 22:30+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -1629,105 +1629,105 @@ msgstr "(Feloldás)"
 msgid "Sorting"
 msgstr "Rendezés"
 
-#: pane.cpp:125
+#: pane.cpp:127
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open a new tab"
 msgstr "Új lap"
 
-#: pane.cpp:127
+#: pane.cpp:129
 #, kde-format
 msgid "New tab"
 msgstr "Új lap"
 
-#: pane.cpp:137
+#: pane.cpp:139
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close the current tab"
 msgstr "Az aktuális lap bezárása"
 
-#: pane.cpp:139
+#: pane.cpp:141
 #, kde-format
 msgid "Close tab"
 msgstr "Lap bezárása"
 
-#: pane.cpp:181
+#: pane.cpp:180
 #, kde-format
 msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr "Váltás a(z) %1. lapra"
 
-#: pane.cpp:201
+#: pane.cpp:200
 #, kde-format
 msgid "Show Quick Search Bar"
 msgstr "Gyorskereső sáv megjelenítése"
 
-#: pane.cpp:222
+#: pane.cpp:221
 #, kde-format
 msgid "Message List"
 msgstr "Üzenetlista"
 
-#: pane.cpp:228
+#: pane.cpp:227
 #, kde-format
 msgctxt "@action"
 msgid "Create New Tab"
 msgstr "Új lap létrehozása"
 
-#: pane.cpp:259
+#: pane.cpp:258
 #, kde-format
 msgctxt "@action"
 msgid "Activate Next Tab"
 msgstr "Váltás a következő lapra"
 
-#: pane.cpp:269
+#: pane.cpp:268
 #, kde-format
 msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr "Váltás az előző lapra"
 
-#: pane.cpp:281
+#: pane.cpp:280
 #, kde-format
 msgctxt "@action"
 msgid "Move Tab Left"
 msgstr "Lap mozgatása balra"
 
-#: pane.cpp:289
+#: pane.cpp:288
 #, kde-format
 msgctxt "@action"
 msgid "Move Tab Right"
 msgstr "Lap mozgatása jobbra"
 
-#: pane.cpp:299
+#: pane.cpp:298
 #, kde-format
 msgctxt "@action"
 msgid "Close Tab"
 msgstr "Lap bezárása"
 
-#: pane.cpp:521 pane.cpp:813
+#: pane.cpp:516 pane.cpp:813
 #, kde-format
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
 msgstr "Üres"
 
-#: pane.cpp:709
+#: pane.cpp:705
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "A lap bezárása"
 
-#: pane.cpp:713
+#: pane.cpp:709
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "A többi lap bezárása"
 
-#: pane.cpp:718
+#: pane.cpp:714
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unlock Tab"
 msgstr "Lap feloldása"
 
-#: pane.cpp:718
+#: pane.cpp:714
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Lock Tab"
@@ -2239,53 +2239,53 @@ msgid_plural "%v pixels"
 msgstr[0] "%v képpont"
 msgstr[1] "%v képpont"
 
-#: widget.cpp:203
+#: widget.cpp:214
 #, kde-format
 msgctxt "Item in list of Akonadi tags, to show all e-mails"
 msgid "All"
 msgstr "Mind"
 
-#: widget.cpp:324
+#: widget.cpp:335
 #, kde-format
 msgid "Collapse Group"
 msgstr "Csoport összecsukása"
 
-#: widget.cpp:327
+#: widget.cpp:338
 #, kde-format
 msgid "Expand Group"
 msgstr "Csoport kibontása"
 
-#: widget.cpp:333
+#: widget.cpp:344
 #, kde-format
 msgid "Expand All Groups"
 msgstr "Az összes csoport kibontása"
 
-#: widget.cpp:336
+#: widget.cpp:347
 #, kde-format
 msgid "Collapse All Groups"
 msgstr "Az összes csoport összecsukása"
 
-#: widget.cpp:340
+#: widget.cpp:351
 #, kde-format
 msgid "Expand All Threads"
 msgstr "Összes szál kibontása"
 
-#: widget.cpp:342
+#: widget.cpp:353
 #, kde-format
 msgid "Collapse All Threads"
 msgstr "Összes szál összecsukása"
 
-#: widget.cpp:401
+#: widget.cpp:412
 #, kde-format
 msgid "&Move Here"
 msgstr "Át&helyezés ide"
 
-#: widget.cpp:402
+#: widget.cpp:413
 #, kde-format
 msgid "&Copy Here"
 msgstr "Más&olás ide"
 
-#: widget.cpp:404
+#: widget.cpp:415
 #, kde-format
 msgid "C&ancel"
 msgstr "&Mégsem"

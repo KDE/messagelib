@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2025-12-13 00:45+0000\n"
 "PO-Revision-Date: 2020-07-31 18:55+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -1729,106 +1729,106 @@ msgstr "Lås søgning"
 msgid "Sorting"
 msgstr "Sortering"
 
-#: pane.cpp:125
+#: pane.cpp:127
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open a new tab"
 msgstr "Åbn et nyt faneblad"
 
-#: pane.cpp:127
+#: pane.cpp:129
 #, kde-format
 msgid "New tab"
 msgstr "Nyt faneblad"
 
-#: pane.cpp:137
+#: pane.cpp:139
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close the current tab"
 msgstr "Luk nuværende faneblad"
 
-#: pane.cpp:139
+#: pane.cpp:141
 #, kde-format
 msgid "Close tab"
 msgstr "Luk faneblad"
 
-#: pane.cpp:181
+#: pane.cpp:180
 #, fuzzy, kde-format
 #| msgid "Activate Tab %1"
 msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr "Aktivér faneblad %1"
 
-#: pane.cpp:201
+#: pane.cpp:200
 #, kde-format
 msgid "Show Quick Search Bar"
 msgstr "Vis bjælke til hurtigsøgning"
 
-#: pane.cpp:222
+#: pane.cpp:221
 #, kde-format
 msgid "Message List"
 msgstr "Brevoversigt"
 
-#: pane.cpp:228
+#: pane.cpp:227
 #, fuzzy, kde-format
 #| msgid "Create New Tab"
 msgctxt "@action"
 msgid "Create New Tab"
 msgstr "Opret nyt faneblad"
 
-#: pane.cpp:259
+#: pane.cpp:258
 #, fuzzy, kde-format
 #| msgid "Activate Next Tab"
 msgctxt "@action"
 msgid "Activate Next Tab"
 msgstr "Aktivér næste faneblad"
 
-#: pane.cpp:269
+#: pane.cpp:268
 #, fuzzy, kde-format
 #| msgid "Activate Previous Tab"
 msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr "Aktivér forrige faneblad"
 
-#: pane.cpp:281
+#: pane.cpp:280
 #, fuzzy, kde-format
 #| msgid "Move Tab Left"
 msgctxt "@action"
 msgid "Move Tab Left"
 msgstr "Flyt faneblad til venstre"
 
-#: pane.cpp:289
+#: pane.cpp:288
 #, fuzzy, kde-format
 #| msgid "Move Tab Right"
 msgctxt "@action"
 msgid "Move Tab Right"
 msgstr "Flyt faneblad til højre"
 
-#: pane.cpp:299
+#: pane.cpp:298
 #, fuzzy, kde-format
 #| msgid "Close Tab"
 msgctxt "@action"
 msgid "Close Tab"
 msgstr "Luk faneblad"
 
-#: pane.cpp:521 pane.cpp:813
+#: pane.cpp:516 pane.cpp:813
 #, kde-format
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
 msgstr "Tom"
 
-#: pane.cpp:709
+#: pane.cpp:705
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "Luk faneblad"
 
-#: pane.cpp:713
+#: pane.cpp:709
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "Luk alle andre faneblade"
 
-#: pane.cpp:718
+#: pane.cpp:714
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Lock search"
@@ -1836,7 +1836,7 @@ msgctxt "@action:inmenu"
 msgid "Unlock Tab"
 msgstr "Lås søgning"
 
-#: pane.cpp:718
+#: pane.cpp:714
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Lock search"
@@ -2384,57 +2384,57 @@ msgid_plural "%v pixels"
 msgstr[0] " pixel"
 msgstr[1] " pixels"
 
-#: widget.cpp:203
+#: widget.cpp:214
 #, kde-format
 msgctxt "Item in list of Akonadi tags, to show all e-mails"
 msgid "All"
 msgstr "Alle"
 
-#: widget.cpp:324
+#: widget.cpp:335
 #, kde-format
 msgid "Collapse Group"
 msgstr "Fold gruppe sammen"
 
-#: widget.cpp:327
+#: widget.cpp:338
 #, kde-format
 msgid "Expand Group"
 msgstr "Fold gruppe ud"
 
-#: widget.cpp:333
+#: widget.cpp:344
 #, kde-format
 msgid "Expand All Groups"
 msgstr "Fold alle grupper ud"
 
-#: widget.cpp:336
+#: widget.cpp:347
 #, kde-format
 msgid "Collapse All Groups"
 msgstr "Fold alle grupper sammen"
 
-#: widget.cpp:340
+#: widget.cpp:351
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "Ex&pand All Threads"
 msgid "Expand All Threads"
 msgstr "Eks&pandér alle tråde"
 
-#: widget.cpp:342
+#: widget.cpp:353
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "C&ollapse All Threads"
 msgid "Collapse All Threads"
 msgstr "K&ollaps alle tråde"
 
-#: widget.cpp:401
+#: widget.cpp:412
 #, kde-format
 msgid "&Move Here"
 msgstr "&Flyt hertil"
 
-#: widget.cpp:402
+#: widget.cpp:413
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Kopiér hertil"
 
-#: widget.cpp:404
+#: widget.cpp:415
 #, kde-format
 msgid "C&ancel"
 msgstr "&Annullér"

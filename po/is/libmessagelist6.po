@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2025-12-13 00:45+0000\n"
 "PO-Revision-Date: 2009-06-13 16:16+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: icelandic <kde-isl@molar.is>\n"
@@ -1853,97 +1853,97 @@ msgstr "Síðasta leit"
 msgid "Sorting"
 msgstr "&Engin"
 
-#: pane.cpp:125
+#: pane.cpp:127
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Open a new tab"
 msgstr "Opna nýjan flipa"
 
-#: pane.cpp:127
+#: pane.cpp:129
 #, fuzzy, kde-format
 #| msgid "New Value"
 msgid "New tab"
 msgstr "Nýtt gildi"
 
-#: pane.cpp:137
+#: pane.cpp:139
 #, fuzzy, kde-format
 #| msgid "Collapse the current thread"
 msgctxt "@info:tooltip"
 msgid "Close the current tab"
 msgstr "Fella saman valinn þráð"
 
-#: pane.cpp:139
+#: pane.cpp:141
 #, fuzzy, kde-format
 msgid "Close tab"
 msgstr "Loka flipa"
 
-#: pane.cpp:181
+#: pane.cpp:180
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr "Virkja næsta flipa"
 
-#: pane.cpp:201
+#: pane.cpp:200
 #, fuzzy, kde-format
 #| msgid "Show Quick Search"
 msgid "Show Quick Search Bar"
 msgstr "Sýna flýtileit"
 
-#: pane.cpp:222
+#: pane.cpp:221
 #, kde-format
 msgid "Message List"
 msgstr "Bréfalisti"
 
-#: pane.cpp:228
+#: pane.cpp:227
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Create New Tab"
 msgstr "Opna nýjan flipa"
 
-#: pane.cpp:259
+#: pane.cpp:258
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Activate Next Tab"
 msgstr "Virkja næsta flipa"
 
-#: pane.cpp:269
+#: pane.cpp:268
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr "Virkja fyrri flipa"
 
-#: pane.cpp:281
+#: pane.cpp:280
 #, kde-format
 msgctxt "@action"
 msgid "Move Tab Left"
 msgstr ""
 
-#: pane.cpp:289
+#: pane.cpp:288
 #, kde-format
 msgctxt "@action"
 msgid "Move Tab Right"
 msgstr ""
 
-#: pane.cpp:299
+#: pane.cpp:298
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Close Tab"
 msgstr "Loka flipa"
 
-#: pane.cpp:521 pane.cpp:813
+#: pane.cpp:516 pane.cpp:813
 #, fuzzy, kde-format
 #| msgid "Empty"
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
 msgstr "Tómt"
 
-#: pane.cpp:709
+#: pane.cpp:705
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "Loka flipa"
 
-#: pane.cpp:713
+#: pane.cpp:709
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "C&ollapse All Threads"
@@ -1951,14 +1951,14 @@ msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "&Fella saman alla þræði"
 
-#: pane.cpp:718
+#: pane.cpp:714
 #, fuzzy, kde-format
 #| msgid "Last Search"
 msgctxt "@action:inmenu"
 msgid "Unlock Tab"
 msgstr "Síðasta leit"
 
-#: pane.cpp:718
+#: pane.cpp:714
 #, fuzzy, kde-format
 #| msgid "Last Search"
 msgctxt "@action:inmenu"
@@ -2515,7 +2515,7 @@ msgid_plural "%v pixels"
 msgstr[0] "Dílar"
 msgstr[1] "Dílar"
 
-#: widget.cpp:203
+#: widget.cpp:214
 #, fuzzy, kde-format
 #| msgctxt "Permissions"
 #| msgid "All"
@@ -2523,59 +2523,59 @@ msgctxt "Item in list of Akonadi tags, to show all e-mails"
 msgid "All"
 msgstr "Allar"
 
-#: widget.cpp:324
+#: widget.cpp:335
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "C&ollapse All Threads"
 msgid "Collapse Group"
 msgstr "&Fella saman alla þræði"
 
-#: widget.cpp:327
+#: widget.cpp:338
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "Ex&pand All Threads"
 msgid "Expand Group"
 msgstr "Opna &alla þræði"
 
-#: widget.cpp:333
+#: widget.cpp:344
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "Ex&pand All Threads"
 msgid "Expand All Groups"
 msgstr "Opna &alla þræði"
 
-#: widget.cpp:336
+#: widget.cpp:347
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "C&ollapse All Threads"
 msgid "Collapse All Groups"
 msgstr "&Fella saman alla þræði"
 
-#: widget.cpp:340
+#: widget.cpp:351
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "Ex&pand All Threads"
 msgid "Expand All Threads"
 msgstr "Opna &alla þræði"
 
-#: widget.cpp:342
+#: widget.cpp:353
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "C&ollapse All Threads"
 msgid "Collapse All Threads"
 msgstr "&Fella saman alla þræði"
 
-#: widget.cpp:401
+#: widget.cpp:412
 #, kde-format
 msgid "&Move Here"
 msgstr "&Færa hingað"
 
-#: widget.cpp:402
+#: widget.cpp:413
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Afrita hingað"
 
-#: widget.cpp:404
+#: widget.cpp:415
 #, kde-format
 msgid "C&ancel"
 msgstr "&Hætta við"

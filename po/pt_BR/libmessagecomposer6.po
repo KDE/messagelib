@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-12 00:44+0000\n"
+"POT-Creation-Date: 2025-12-13 00:45+0000\n"
 "PO-Revision-Date: 2025-09-06 10:27-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -1945,22 +1945,22 @@ msgctxt "@option:check"
 msgid "Delay"
 msgstr "Atraso"
 
-#: sendlater/sendlaterdialog.cpp:67
+#: sendlater/sendlaterdialog.cpp:68
 #, kde-format
 msgid "Days"
 msgstr "Dias"
 
-#: sendlater/sendlaterdialog.cpp:67
+#: sendlater/sendlaterdialog.cpp:68
 #, kde-format
 msgid "Weeks"
 msgstr "Semanas"
 
-#: sendlater/sendlaterdialog.cpp:67
+#: sendlater/sendlaterdialog.cpp:68
 #, kde-format
 msgid "Months"
 msgstr "Meses"
 
-#: sendlater/sendlaterdialog.cpp:67
+#: sendlater/sendlaterdialog.cpp:68
 #, kde-format
 msgid "Years"
 msgstr "Anos"
@@ -1975,7 +1975,7 @@ msgstr "O agente de enviar mais tarde não está em execução."
 msgid "Failed to removed message from send later schedule: %1"
 msgstr "Falha ao remover a mensagem do agendamento de enviar mais tarde: %1"
 
-#: sendlater/sendlatertimedatewidget.cpp:36
+#: sendlater/sendlatertimedatewidget.cpp:37
 #, kde-format
 msgid "You cannot select a date prior to the current date."
 msgstr "Você não pode selecionar uma data anterior à atual."

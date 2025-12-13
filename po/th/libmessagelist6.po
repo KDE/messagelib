@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2025-12-13 00:45+0000\n"
 "PO-Revision-Date: 2025-03-03 20:07+0700\n"
 "Last-Translator: Pongsakorn S. <kde@xerusion.me>\n"
 "Language-Team: Thai\n"
@@ -1731,49 +1731,49 @@ msgstr "ค้นหาล่าสุด"
 msgid "Sorting"
 msgstr "การเรียงลำดับ"
 
-#: pane.cpp:125
+#: pane.cpp:127
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open a new tab"
 msgstr "เปิดแท็บใหม่"
 
-#: pane.cpp:127
+#: pane.cpp:129
 #, fuzzy, kde-format
 #| msgid "New Value"
 msgid "New tab"
 msgstr "ค่าใหม่"
 
-#: pane.cpp:137
+#: pane.cpp:139
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close the current tab"
 msgstr "ปิดแท็บปัจจุบัน"
 
-#: pane.cpp:139
+#: pane.cpp:141
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Close Tab"
 msgid "Close tab"
 msgstr "ปิดแท็บ"
 
-#: pane.cpp:181
+#: pane.cpp:180
 #, kde-format
 msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr ""
 
-#: pane.cpp:201
+#: pane.cpp:200
 #, fuzzy, kde-format
 #| msgid "Show Quick Search"
 msgid "Show Quick Search Bar"
 msgstr "แสดงแถบค้นหาด่วน"
 
-#: pane.cpp:222
+#: pane.cpp:221
 #, kde-format
 msgid "Message List"
 msgstr "รายการจดหมาย"
 
-#: pane.cpp:228
+#: pane.cpp:227
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Open a new tab"
@@ -1781,7 +1781,7 @@ msgctxt "@action"
 msgid "Create New Tab"
 msgstr "เปิดแท็บใหม่"
 
-#: pane.cpp:259
+#: pane.cpp:258
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip"
 #| msgid "Open a new tab"
@@ -1789,25 +1789,25 @@ msgctxt "@action"
 msgid "Activate Next Tab"
 msgstr "เปิดแท็บใหม่"
 
-#: pane.cpp:269
+#: pane.cpp:268
 #, kde-format
 msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr ""
 
-#: pane.cpp:281
+#: pane.cpp:280
 #, kde-format
 msgctxt "@action"
 msgid "Move Tab Left"
 msgstr ""
 
-#: pane.cpp:289
+#: pane.cpp:288
 #, kde-format
 msgctxt "@action"
 msgid "Move Tab Right"
 msgstr ""
 
-#: pane.cpp:299
+#: pane.cpp:298
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Close Tab"
@@ -1815,32 +1815,32 @@ msgctxt "@action"
 msgid "Close Tab"
 msgstr "ปิดแท็บ"
 
-#: pane.cpp:521 pane.cpp:813
+#: pane.cpp:516 pane.cpp:813
 #, kde-format
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
 msgstr "ว่าง"
 
-#: pane.cpp:709
+#: pane.cpp:705
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "ปิดแท็บ"
 
-#: pane.cpp:713
+#: pane.cpp:709
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "ปิดแท็บอื่น ๆ ทั้งหมด"
 
-#: pane.cpp:718
+#: pane.cpp:714
 #, fuzzy, kde-format
 #| msgid "Last Search"
 msgctxt "@action:inmenu"
 msgid "Unlock Tab"
 msgstr "ค้นหาล่าสุด"
 
-#: pane.cpp:718
+#: pane.cpp:714
 #, fuzzy, kde-format
 #| msgid "Last Search"
 msgctxt "@action:inmenu"
@@ -2392,7 +2392,7 @@ msgid "%v pixel"
 msgid_plural "%v pixels"
 msgstr[0] " พิกเซล"
 
-#: widget.cpp:203
+#: widget.cpp:214
 #, fuzzy, kde-format
 #| msgctxt "Permissions"
 #| msgid "All"
@@ -2400,53 +2400,53 @@ msgctxt "Item in list of Akonadi tags, to show all e-mails"
 msgid "All"
 msgstr "ทั้งหมด"
 
-#: widget.cpp:324
+#: widget.cpp:335
 #, fuzzy, kde-format
 #| msgid "Collapse All Groups"
 msgid "Collapse Group"
 msgstr "ย่อเก็บกลุ่มทั้งหมด"
 
-#: widget.cpp:327
+#: widget.cpp:338
 #, fuzzy, kde-format
 #| msgid "Expand All Groups"
 msgid "Expand Group"
 msgstr "ขยายกลุ่มทั้งหมด"
 
-#: widget.cpp:333
+#: widget.cpp:344
 #, kde-format
 msgid "Expand All Groups"
 msgstr "ขยายกลุ่มทั้งหมด"
 
-#: widget.cpp:336
+#: widget.cpp:347
 #, kde-format
 msgid "Collapse All Groups"
 msgstr "ย่อเก็บกลุ่มทั้งหมด"
 
-#: widget.cpp:340
+#: widget.cpp:351
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "Ex&pand All Threads"
 msgid "Expand All Threads"
 msgstr "ขยายเธรดทั้งหมด"
 
-#: widget.cpp:342
+#: widget.cpp:353
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "C&ollapse All Threads"
 msgid "Collapse All Threads"
 msgstr "ย่อเก็บเธรดทั้งหมด"
 
-#: widget.cpp:401
+#: widget.cpp:412
 #, kde-format
 msgid "&Move Here"
 msgstr "ย้าย&มาไว้ที่นี่"
 
-#: widget.cpp:402
+#: widget.cpp:413
 #, kde-format
 msgid "&Copy Here"
 msgstr "&คัดลอกไว้ที่นี่"
 
-#: widget.cpp:404
+#: widget.cpp:415
 #, kde-format
 msgid "C&ancel"
 msgstr "&ยกเลิก"

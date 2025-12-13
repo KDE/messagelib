@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2025-12-13 00:45+0000\n"
 "PO-Revision-Date: 2025-01-11 22:49+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -1636,105 +1636,105 @@ msgstr "(Malŝlosi ĝin)"
 msgid "Sorting"
 msgstr "Ordigo"
 
-#: pane.cpp:125
+#: pane.cpp:127
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open a new tab"
 msgstr "Malfermi novan langeton"
 
-#: pane.cpp:127
+#: pane.cpp:129
 #, kde-format
 msgid "New tab"
 msgstr "Nova langeto"
 
-#: pane.cpp:137
+#: pane.cpp:139
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close the current tab"
 msgstr "Fermi la nunan langeton"
 
-#: pane.cpp:139
+#: pane.cpp:141
 #, kde-format
 msgid "Close tab"
 msgstr "Fermi langeton"
 
-#: pane.cpp:181
+#: pane.cpp:180
 #, kde-format
 msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr "Aktivigi la langeton %1"
 
-#: pane.cpp:201
+#: pane.cpp:200
 #, kde-format
 msgid "Show Quick Search Bar"
 msgstr "Montri Rapidserĉan breton"
 
-#: pane.cpp:222
+#: pane.cpp:221
 #, kde-format
 msgid "Message List"
 msgstr "Mesaĝolisto"
 
-#: pane.cpp:228
+#: pane.cpp:227
 #, kde-format
 msgctxt "@action"
 msgid "Create New Tab"
 msgstr "Krei novan langeton"
 
-#: pane.cpp:259
+#: pane.cpp:258
 #, kde-format
 msgctxt "@action"
 msgid "Activate Next Tab"
 msgstr "Aktivigi Sekvan Langeton"
 
-#: pane.cpp:269
+#: pane.cpp:268
 #, kde-format
 msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr "Aktivigi Antaŭan Langeton"
 
-#: pane.cpp:281
+#: pane.cpp:280
 #, kde-format
 msgctxt "@action"
 msgid "Move Tab Left"
 msgstr "Movi Tab Maldekstren"
 
-#: pane.cpp:289
+#: pane.cpp:288
 #, kde-format
 msgctxt "@action"
 msgid "Move Tab Right"
 msgstr "Movi Tab Dekstren"
 
-#: pane.cpp:299
+#: pane.cpp:298
 #, kde-format
 msgctxt "@action"
 msgid "Close Tab"
 msgstr "Fermi la langeton"
 
-#: pane.cpp:521 pane.cpp:813
+#: pane.cpp:516 pane.cpp:813
 #, kde-format
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
 msgstr "Malplena"
 
-#: pane.cpp:709
+#: pane.cpp:705
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "Fermi la langeton"
 
-#: pane.cpp:713
+#: pane.cpp:709
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "Fermi ĉiujn aliajn langetojn"
 
-#: pane.cpp:718
+#: pane.cpp:714
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unlock Tab"
 msgstr "Malŝlosi Langeton"
 
-#: pane.cpp:718
+#: pane.cpp:714
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Lock Tab"
@@ -2243,53 +2243,53 @@ msgid_plural "%v pixels"
 msgstr[0] "%v rastrumero"
 msgstr[1] "%v rastrumeroj"
 
-#: widget.cpp:203
+#: widget.cpp:214
 #, kde-format
 msgctxt "Item in list of Akonadi tags, to show all e-mails"
 msgid "All"
 msgstr "Ĉiuj"
 
-#: widget.cpp:324
+#: widget.cpp:335
 #, kde-format
 msgid "Collapse Group"
 msgstr "Kolapsi Grupon"
 
-#: widget.cpp:327
+#: widget.cpp:338
 #, kde-format
 msgid "Expand Group"
 msgstr "Vastigi Grupon"
 
-#: widget.cpp:333
+#: widget.cpp:344
 #, kde-format
 msgid "Expand All Groups"
 msgstr "Vastigi Ĉiujn Grupojn"
 
-#: widget.cpp:336
+#: widget.cpp:347
 #, kde-format
 msgid "Collapse All Groups"
 msgstr "Kolapsi Ĉiujn Grupojn"
 
-#: widget.cpp:340
+#: widget.cpp:351
 #, kde-format
 msgid "Expand All Threads"
 msgstr "Vastigi Ĉiujn Fadenojn"
 
-#: widget.cpp:342
+#: widget.cpp:353
 #, kde-format
 msgid "Collapse All Threads"
 msgstr "Kolapsi Ĉiujn Fadenojn"
 
-#: widget.cpp:401
+#: widget.cpp:412
 #, kde-format
 msgid "&Move Here"
 msgstr "&Movi ĉi tien"
 
-#: widget.cpp:402
+#: widget.cpp:413
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Kopii ĉi tien"
 
-#: widget.cpp:404
+#: widget.cpp:415
 #, kde-format
 msgid "C&ancel"
 msgstr "Re&zigni"

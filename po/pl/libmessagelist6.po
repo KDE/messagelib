@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2025-12-13 00:45+0000\n"
 "PO-Revision-Date: 2025-11-08 09:38+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
@@ -1642,105 +1642,105 @@ msgstr "(Odblokuj ją)"
 msgid "Sorting"
 msgstr "Szereguj wg"
 
-#: pane.cpp:125
+#: pane.cpp:127
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Open a new tab"
 msgstr "Otwórz nową kartę"
 
-#: pane.cpp:127
+#: pane.cpp:129
 #, kde-format
 msgid "New tab"
 msgstr "Nowa karta"
 
-#: pane.cpp:137
+#: pane.cpp:139
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close the current tab"
 msgstr "Zamknij bieżącą kartę"
 
-#: pane.cpp:139
+#: pane.cpp:141
 #, kde-format
 msgid "Close tab"
 msgstr "Zamknij kartę"
 
-#: pane.cpp:181
+#: pane.cpp:180
 #, kde-format
 msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr "Uaktywnij kartę %1"
 
-#: pane.cpp:201
+#: pane.cpp:200
 #, kde-format
 msgid "Show Quick Search Bar"
 msgstr "Pokaż pasek szybkiego znajdywania"
 
-#: pane.cpp:222
+#: pane.cpp:221
 #, kde-format
 msgid "Message List"
 msgstr "Spis wiadomości"
 
-#: pane.cpp:228
+#: pane.cpp:227
 #, kde-format
 msgctxt "@action"
 msgid "Create New Tab"
 msgstr "Utwórz nową kartę"
 
-#: pane.cpp:259
+#: pane.cpp:258
 #, kde-format
 msgctxt "@action"
 msgid "Activate Next Tab"
 msgstr "Uaktywnij następną kartę"
 
-#: pane.cpp:269
+#: pane.cpp:268
 #, kde-format
 msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr "Uaktywnij poprzednią kartę"
 
-#: pane.cpp:281
+#: pane.cpp:280
 #, kde-format
 msgctxt "@action"
 msgid "Move Tab Left"
 msgstr "Przesuń kartę w lewo"
 
-#: pane.cpp:289
+#: pane.cpp:288
 #, kde-format
 msgctxt "@action"
 msgid "Move Tab Right"
 msgstr "Przesuń kartę w prawo"
 
-#: pane.cpp:299
+#: pane.cpp:298
 #, kde-format
 msgctxt "@action"
 msgid "Close Tab"
 msgstr "Zamknij kartę"
 
-#: pane.cpp:521 pane.cpp:813
+#: pane.cpp:516 pane.cpp:813
 #, kde-format
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
 msgstr "Pusta"
 
-#: pane.cpp:709
+#: pane.cpp:705
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "Zamknij kartę"
 
-#: pane.cpp:713
+#: pane.cpp:709
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "Zamknij pozostałe karty"
 
-#: pane.cpp:718
+#: pane.cpp:714
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unlock Tab"
 msgstr "Odblokuj kartę"
 
-#: pane.cpp:718
+#: pane.cpp:714
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Lock Tab"
@@ -2250,53 +2250,53 @@ msgstr[0] "%v piksel"
 msgstr[1] "%v piksele"
 msgstr[2] "%v pikseli"
 
-#: widget.cpp:203
+#: widget.cpp:214
 #, kde-format
 msgctxt "Item in list of Akonadi tags, to show all e-mails"
 msgid "All"
 msgstr "Wszystkie"
 
-#: widget.cpp:324
+#: widget.cpp:335
 #, kde-format
 msgid "Collapse Group"
 msgstr "Zwiń grupę"
 
-#: widget.cpp:327
+#: widget.cpp:338
 #, kde-format
 msgid "Expand Group"
 msgstr "Rozwiń grupę"
 
-#: widget.cpp:333
+#: widget.cpp:344
 #, kde-format
 msgid "Expand All Groups"
 msgstr "Rozwiń wszystkie grupy"
 
-#: widget.cpp:336
+#: widget.cpp:347
 #, kde-format
 msgid "Collapse All Groups"
 msgstr "Zwiń wszystkie grupy"
 
-#: widget.cpp:340
+#: widget.cpp:351
 #, kde-format
 msgid "Expand All Threads"
 msgstr "Rozwiń wszystkie wątki"
 
-#: widget.cpp:342
+#: widget.cpp:353
 #, kde-format
 msgid "Collapse All Threads"
 msgstr "Zwiń wszystkie wątki"
 
-#: widget.cpp:401
+#: widget.cpp:412
 #, kde-format
 msgid "&Move Here"
 msgstr "&Przenieś tutaj"
 
-#: widget.cpp:402
+#: widget.cpp:413
 #, kde-format
 msgid "&Copy Here"
 msgstr "S&kopiuj tutaj"
 
-#: widget.cpp:404
+#: widget.cpp:415
 #, kde-format
 msgid "C&ancel"
 msgstr "&Anuluj"
