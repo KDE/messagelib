@@ -171,6 +171,16 @@ protected:
     virtual void viewSelectionChanged();
 
     /**
+     * This is called by View when message expands.
+     */
+    virtual void viewMessageExpanded(MessageItem *msg);
+
+    /**
+     * This is called by View when message collapses.
+     */
+    virtual void viewMessageCollapsed(MessageItem *msg);
+
+    /**
      * This is called by View when a message is right clicked.
      */
     virtual void viewMessageListContextPopupRequest(const QList<MessageItem *> &selectedItems, const QPoint &globalPos);

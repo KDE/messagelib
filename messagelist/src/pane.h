@@ -409,6 +409,16 @@ Q_SIGNALS:
     void selectionChanged();
 
     /**
+     * Emitted when message is expanded.
+     */
+    void messageExpanded(const Akonadi::Item &item);
+
+    /**
+     * Emitted when message is collapsed.
+     */
+    void messageCollapsed(const Akonadi::Item &item);
+
+    /**
      * Emitted when a message wants its status to be changed
      */
     void messageStatusChangeRequest(const Akonadi::Item &item, const Akonadi::MessageStatus &set, const Akonadi::MessageStatus &clear);

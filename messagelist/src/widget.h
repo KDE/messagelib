@@ -336,6 +336,16 @@ protected:
     /**
      * Reimplemented from MessageList::Core::Widget
      */
+    void viewMessageExpanded(Core::MessageItem *msg) override;
+
+    /**
+     * Reimplemented from MessageList::Core::Widget
+     */
+    void viewMessageCollapsed(Core::MessageItem *msg) override;
+
+    /**
+     * Reimplemented from MessageList::Core::Widget
+     */
     void viewMessageListContextPopupRequest(const QList<Core::MessageItem *> &selectedItems, const QPoint &globalPos) override;
 
     /**
@@ -395,6 +405,16 @@ Q_SIGNALS:
      * Emitted when the selection in the view changes.
      */
     void selectionChanged();
+
+    /**
+     * Emitted when message is expanded.
+     */
+    void messageExpanded(const Akonadi::Item &item);
+
+    /**
+     * Emitted when message is collapsed.
+     */
+    void messageCollapsed(const Akonadi::Item &item);
 
     /**
      * Emitted when a message wants its status to be changed

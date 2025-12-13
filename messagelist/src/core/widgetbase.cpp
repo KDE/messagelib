@@ -1083,6 +1083,14 @@ void Widget::viewSelectionChanged()
 {
 }
 
+void Widget::viewMessageExpanded(MessageItem *)
+{
+}
+
+void Widget::viewMessageCollapsed(MessageItem *)
+{
+}
+
 void Widget::viewMessageListContextPopupRequest(const QList<MessageItem *> &, const QPoint &)
 {
 }

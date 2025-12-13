@@ -843,6 +843,8 @@ void Pane::createNewTab()
     connect(w, &Widget::messageSelected, this, &Pane::messageSelected);
     connect(w, &Widget::messageActivated, this, &Pane::messageActivated);
     connect(w, &Widget::selectionChanged, this, &Pane::selectionChanged);
+    connect(w, &Widget::messageExpanded, this, &Pane::messageExpanded);
+    connect(w, &Widget::messageCollapsed, this, &Pane::messageCollapsed);
     connect(w, &Widget::messageStatusChangeRequest, this, &Pane::messageStatusChangeRequest);
 
     connect(w, &Core::Widget::statusMessage, this, &Pane::statusMessage);

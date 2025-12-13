@@ -286,6 +286,22 @@ void MessageList::Widget::viewSelectionChanged()
     }
 }
 
+void MessageList::Widget::viewMessageExpanded(Core::MessageItem *msg)
+{
+    if (msg && msg->isValid()) {
+        const int row = msg->currentModelIndexRow();
+        Q_EMIT messageExpanded(d->itemForRow(row));
+    }
+}
+
+void MessageList::Widget::viewMessageCollapsed(Core::MessageItem *msg)
+{
+    if (msg && msg->isValid()) {
+        const int row = msg->currentModelIndexRow();
+        Q_EMIT messageCollapsed(d->itemForRow(row));
+    }
+}
+
 void MessageList::Widget::viewMessageListContextPopupRequest(const QList<MessageList::Core::MessageItem *> &selectedItems, const QPoint &globalPos)
 {
     Q_UNUSED(selectedItems)

@@ -133,9 +133,21 @@ View::View(Widget *pParent)
 
     connect(selectionModel(), &QItemSelectionModel::selectionChanged, this, &View::slotSelectionChanged, Qt::UniqueConnection);
 
-    // as in KDE3, when a root-item of a message thread is expanded, expand all children
     connect(this, &View::expanded, this, [this](const QModelIndex &index) {
+        // as in KDE3, when a root-item of a message thread is expanded, expand all children
         d->expandFullThread(index);
+
+        Item *it = static_cast<Item *>(index.internalPointer());
+        if (it && (it->type() == Item::Message)) {
+            d->mWidget->viewMessageExpanded(static_cast<MessageItem *>(it));
+        }
+    });
+
+    connect(this, &View::collapsed, this, [this](const QModelIndex &index) {
+        Item *it = static_cast<Item *>(index.internalPointer());
+        if (it && (it->type() == Item::Message)) {
+            d->mWidget->viewMessageCollapsed(static_cast<MessageItem *>(it));
+        }
     });
 }
 
