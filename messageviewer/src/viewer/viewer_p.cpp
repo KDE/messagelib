@@ -315,7 +315,7 @@ void ViewerPrivate::openAttachment(KMime::Content *node, const QUrl &url)
     if (!mimetype.isValid() || mimetype.name() == QLatin1StringView("application/octet-stream")) {
         mimetype = MimeTreeParser::Util::mimetype(url.isLocalFile() ? url.toLocalFile() : url.fileName());
     }
-    KService::Ptr offer = KApplicationTrader::preferredService(mimetype.name());
+    const KService::Ptr offer = KApplicationTrader::preferredService(mimetype.name());
 
     const QString filenameText = MimeTreeParser::NodeHelper::fileName(node);
 
@@ -531,8 +531,8 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
     });
     createOpenWithMenu(&menu, contentTypeStr, true);
 
-    QMimeDatabase mimeDb;
-    auto mimetype = mimeDb.mimeTypeForName(contentTypeStr);
+    const QMimeDatabase mimeDb;
+    const auto mimetype = mimeDb.mimeTypeForName(contentTypeStr);
     if (mimetype.isValid()) {
         const QStringList parentMimeType = mimetype.parentMimeTypes();
         if ((contentTypeStr == QLatin1StringView("text/plain")) || (contentTypeStr == QLatin1StringView("image/png"))
@@ -613,7 +613,7 @@ KService::Ptr ViewerPrivate::getServiceOffer(KMime::Content *content)
 
     // determine the MIME type of the attachment
     // prefer the value of the Content-Type header
-    QMimeDatabase mimeDb;
+    const QMimeDatabase mimeDb;
     auto mimetype = mimeDb.mimeTypeForName(contentTypeStr);
 
     if (mimetype.isValid() && mimetype.inherits(KContacts::Addressee::mimeType())) {
@@ -1806,7 +1806,7 @@ void ViewerPrivate::readGlobalOverrideCodec()
 QByteArray ViewerPrivate::overrideCodecName() const
 {
     if (!mOverrideEncoding.isEmpty() && mOverrideEncoding != QLatin1StringView("Auto")) { // Auto
-        QStringDecoder codec(mOverrideEncoding.toUtf8().constData());
+        const QStringDecoder codec(mOverrideEncoding.toUtf8().constData());
         if (!codec.isValid()) {
             return "UTF-8";
         }
