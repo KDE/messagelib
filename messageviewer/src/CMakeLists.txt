@@ -380,7 +380,10 @@ ecm_qt_declare_logging_category(KPim6MessageViewer HEADER messageviewer_dkimchec
     DESCRIPTION "messagelib (messageviewer dkim support)"
     EXPORT MESSAGELIB
 )
-
+ecm_qt_declare_logging_category(KPim6MessageViewer HEADER messageviewer_viewer_format_debug.h IDENTIFIER MESSAGEVIEWER_VIEWER_FORMAT_LOG CATEGORY_NAME org.kde.pim.messageviewer_viewer_format
+    DESCRIPTION "messagelib (messageviewer viewer format)"
+    EXPORT MESSAGELIB
+)
 
 kconfig_add_kcfg_files(KPim6MessageViewer
     settings/globalsettings_messageviewer.kcfgc

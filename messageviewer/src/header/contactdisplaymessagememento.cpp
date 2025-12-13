@@ -5,6 +5,7 @@
  */
 
 #include "contactdisplaymessagememento.h"
+#include "messageviewer_viewer_format_debug.h"
 using namespace Qt::Literals::StringLiterals;
 
 #include "messageviewer_debug.h"
@@ -143,6 +144,7 @@ QPixmap ContactDisplayMessageMemento::gravatarPixmap() const
 
 void ContactDisplayMessageMemento::processAddress(const KContacts::Addressee &addressee)
 {
+    qCDebug(MESSAGEVIEWER_VIEWER_FORMAT_LOG) << "addressee: " << addressee.emails();
     Viewer::DisplayFormatMessage forceDisplayTo = Viewer::UseGlobalSetting;
     bool mailAllowToRemoteContent = false;
     const QStringList customs = addressee.customs();
@@ -161,6 +163,8 @@ void ContactDisplayMessageMemento::processAddress(const KContacts::Addressee &ad
             mailAllowToRemoteContent = (value == QLatin1StringView("TRUE"));
         }
     }
+    qCDebug(MESSAGEVIEWER_VIEWER_FORMAT_LOG) << "forceDisplayTo: " << forceDisplayTo << " mailAllowToRemoteContent " << mailAllowToRemoteContent;
+
     Q_EMIT changeDisplayMail(forceDisplayTo, mailAllowToRemoteContent);
 }
 
