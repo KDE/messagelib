@@ -213,7 +213,7 @@ void Pane::setXmlGuiClient(KXMLGUIClient *xmlGuiClient)
         d->changeQuicksearchVisibility(state);
     });
 
-    for (int i = 0; i < count(); ++i) {
+    for (int i = 0, total = count(); i < total; ++i) {
         auto w = qobject_cast<Widget *>(widget(i));
         if (w) {
             w->setXmlGuiClient(d->mXmlGuiClient);

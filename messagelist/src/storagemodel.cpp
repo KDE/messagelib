@@ -172,7 +172,7 @@ bool MessageList::StorageModel::containsOutboundMessages() const
     const QModelIndexList indexes = d->mSelectionModel->selectedRows();
 
     for (const QModelIndex &index : indexes) {
-        auto c = index.data(EntityTreeModel::CollectionRole).value<Collection>();
+        const auto c = index.data(EntityTreeModel::CollectionRole).value<Collection>();
         if (c.isValid()) {
             return isOutBoundFolder(c);
         }
@@ -188,7 +188,7 @@ int MessageList::StorageModel::initialUnreadRowCountGuess() const
     int unreadCount = 0;
 
     for (const QModelIndex &index : indexes) {
-        auto c = index.data(EntityTreeModel::CollectionRole).value<Collection>();
+        const auto c = index.data(EntityTreeModel::CollectionRole).value<Collection>();
         if (c.isValid()) {
             unreadCount += c.statistics().unreadCount();
         }
@@ -410,7 +410,7 @@ QMimeData *MessageList::StorageModel::mimeData(const QList<MessageList::Core::Me
     QList<QUrl> urls;
     urls.reserve(items.count());
     for (MessageList::Core::MessageItem *mi : items) {
-        Akonadi::Item item = itemForRow(mi->currentModelIndexRow());
+        const Akonadi::Item item = itemForRow(mi->currentModelIndexRow());
         urls << item.url(Akonadi::Item::UrlWithMimeType);
     }
 

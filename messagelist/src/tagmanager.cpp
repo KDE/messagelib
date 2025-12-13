@@ -5,7 +5,6 @@
 */
 
 #include "tagmanager.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "messagelist_debug.h"
 #include <Akonadi/Monitor>
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <Akonadi/TagFetchJob>
 #include <Akonadi/TagFetchScope>
 using namespace MessageList::Core;
+using namespace Qt::Literals::StringLiterals;
 TagManager::TagManager(QObject *parent)
     : QObject{parent}
     , mMonitor(new Akonadi::Monitor(this))
