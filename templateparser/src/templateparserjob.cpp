@@ -1099,23 +1099,21 @@ void TemplateParserJob::addProcessedBodyToMessage(const QString &plainBody, cons
     d->mMsg->removeHeader<KMime::Headers::ContentType>(); // to get rid of old boundary
 
     // const QByteArray boundary = KMime::multiPartBoundary();
-    KMime::Content *const mainTextPart = htmlBody.isEmpty() ? createPlainPartContent(plainBody) : createMultipartAlternativeContent(plainBody, htmlBody);
-    mainTextPart->assemble();
+    auto mainPart = htmlBody.isEmpty() ? createPlainPartContent(plainBody) : createMultipartAlternativeContent(plainBody, htmlBody);
+    mainPart->assemble();
 
-    KMime::Content *textPart = mainTextPart;
     if (!ic.images().empty()) {
-        textPart = createMultipartRelated(ic, mainTextPart);
-        textPart->assemble();
+        mainPart = createMultipartRelated(ic, std::move(mainPart));
+        mainPart->assemble();
     }
 
     // If we have some attachments, create a multipart/mixed mail and
     // add the normal body as well as the attachments
-    KMime::Content *mainPart = textPart;
     if (d->mMode == Forward) {
         auto attachments = d->mOrigMsg->attachments();
         attachments += d->mOtp->nodeHelper()->attachmentsOfExtraContents();
         if (!attachments.isEmpty()) {
-            mainPart = createMultipartMixed(attachments, textPart);
+            mainPart = createMultipartMixed(attachments, std::move(mainPart));
             mainPart->assemble();
         }
     }
@@ -1127,15 +1125,16 @@ void TemplateParserJob::addProcessedBodyToMessage(const QString &plainBody, cons
     d->mMsg->parse();
 }
 
-KMime::Content *TemplateParserJob::createMultipartMixed(const QList<KMime::Content *> &attachments, KMime::Content *textPart) const
+std::unique_ptr<KMime::Content> TemplateParserJob::createMultipartMixed(const QList<KMime::Content *> &attachments,
+                                                                        std::unique_ptr<KMime::Content> &&textPart) const
 {
-    auto mixedPart = new KMime::Content(d->mMsg.data());
+    auto mixedPart = std::make_unique<KMime::Content>(d->mMsg.data());
     const QByteArray boundary = KMime::multiPartBoundary();
     auto contentType = mixedPart->contentType();
     contentType->setMimeType("multipart/mixed");
     contentType->setBoundary(boundary);
     mixedPart->contentTransferEncoding()->setEncoding(KMime::Headers::CE7Bit);
-    mixedPart->appendContent(textPart);
+    mixedPart->appendContent(std::move(textPart));
 
     int attachmentNumber = 1;
     for (KMime::Content *attachment : attachments) {
@@ -1152,15 +1151,16 @@ KMime::Content *TemplateParserJob::createMultipartMixed(const QList<KMime::Conte
     return mixedPart;
 }
 
-KMime::Content *TemplateParserJob::createMultipartRelated(const MessageCore::ImageCollector &ic, KMime::Content *mainTextPart) const
+std::unique_ptr<KMime::Content> TemplateParserJob::createMultipartRelated(const MessageCore::ImageCollector &ic,
+                                                                          std::unique_ptr<KMime::Content> &&mainTextPart) const
 {
-    auto relatedPart = new KMime::Content(d->mMsg.data());
+    auto relatedPart = std::make_unique<KMime::Content>(d->mMsg.data());
     const QByteArray boundary = KMime::multiPartBoundary();
     auto contentType = relatedPart->contentType();
     contentType->setMimeType("multipart/related");
     contentType->setBoundary(boundary);
     relatedPart->contentTransferEncoding()->setEncoding(KMime::Headers::CE7Bit);
-    relatedPart->appendContent(mainTextPart);
+    relatedPart->appendContent(std::move(mainTextPart));
     for (KMime::Content *image : ic.images()) {
         qCWarning(TEMPLATEPARSER_LOG) << "Adding" << image->contentID() << "as an embedded image";
         relatedPart->appendContent(image);
@@ -1168,9 +1168,9 @@ KMime::Content *TemplateParserJob::createMultipartRelated(const MessageCore::Ima
     return relatedPart;
 }
 
-KMime::Content *TemplateParserJob::createPlainPartContent(const QString &plainBody) const
+std::unique_ptr<KMime::Content> TemplateParserJob::createPlainPartContent(const QString &plainBody) const
 {
-    auto textPart = new KMime::Content(d->mMsg.data());
+    auto textPart = std::make_unique<KMime::Content>(d->mMsg.data());
     auto ct = textPart->contentType(true);
     ct->setMimeType("text/plain");
     ct->setCharset(QByteArrayLiteral("UTF-8"));
@@ -1179,15 +1179,14 @@ KMime::Content *TemplateParserJob::createPlainPartContent(const QString &plainBo
     return textPart;
 }
 
-KMime::Content *TemplateParserJob::createMultipartAlternativeContent(const QString &plainBody, const QString &htmlBody) const
+std::unique_ptr<KMime::Content> TemplateParserJob::createMultipartAlternativeContent(const QString &plainBody, const QString &htmlBody) const
 {
-    auto multipartAlternative = new KMime::Content(d->mMsg.data());
+    auto multipartAlternative = std::make_unique<KMime::Content>(d->mMsg.data());
     multipartAlternative->contentType()->setMimeType("multipart/alternative");
     const QByteArray boundary = KMime::multiPartBoundary();
     multipartAlternative->contentType(false)->setBoundary(boundary); // Already created
 
-    KMime::Content *textPart = createPlainPartContent(plainBody);
-    multipartAlternative->appendContent(textPart);
+    multipartAlternative->appendContent(createPlainPartContent(plainBody));
 
     auto htmlPart = std::unique_ptr<KMime::Content>(new KMime::Content(d->mMsg.data()));
     htmlPart->contentType(true)->setMimeType("text/html");

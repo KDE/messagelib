@@ -301,14 +301,14 @@ private:
      * 2) TemplateParser::createMultipartAlternativeContent() which adds this content
      *    to create the multipart/alternative message.
      */
-    KMime::Content *createPlainPartContent(const QString &plainBody) const;
+    std::unique_ptr<KMime::Content> createPlainPartContent(const QString &plainBody) const;
 
     /**
      * Returns KMime content of the multipart/alternative part of the message
      * after setting the mime type, charset and CTE of its respective text/plain
      * part and text/html part.
      */
-    KMime::Content *createMultipartAlternativeContent(const QString &plainBody, const QString &htmlBody) const;
+    std::unique_ptr<KMime::Content> createMultipartAlternativeContent(const QString &plainBody, const QString &htmlBody) const;
 
     /**
      * Returns a multipart/mixed KMime::Content that has textPart and all
@@ -317,7 +317,7 @@ private:
      * @param textPart a KMime::Content that is to be added as a child.
      * @since 4.8
      */
-    KMime::Content *createMultipartMixed(const QList<KMime::Content *> &attachments, KMime::Content *textPart) const;
+    std::unique_ptr<KMime::Content> createMultipartMixed(const QList<KMime::Content *> &attachments, std::unique_ptr<KMime::Content> &&textPart) const;
 
     /**
      * Returnsa multipart/related KMime::Content that has mainTextPart and all
@@ -327,7 +327,7 @@ private:
      * @param mainTextPart a KMime::Content that is to be added as a child.
      * @since 4.8
      */
-    KMime::Content *createMultipartRelated(const MessageCore::ImageCollector &ic, KMime::Content *mainTextPart) const;
+    std::unique_ptr<KMime::Content> createMultipartRelated(const MessageCore::ImageCollector &ic, std::unique_ptr<KMime::Content> &&mainTextPart) const;
 
     /**
      * Checks if the signature is HTML or not.
