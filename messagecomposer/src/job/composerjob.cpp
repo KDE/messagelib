@@ -56,7 +56,7 @@ public:
                                     const AttachmentPart::List &parts,
                                     const std::vector<GpgME::Key> &keys,
                                     const QStringList &recipients);
-    void attachmentsFinished(KJob *job); // slot
+    void attachmentsFinished(KJob *job, KMime::Content *headers);
 
     void composeFinalStep(KMime::Content *headers, KMime::Content *content);
 
@@ -406,7 +406,6 @@ void ComposerJobPrivate::composeWithLateAttachments(KMime::Message *headers,
     auto tJob = new MessageComposer::TransparentJob(q);
     tJob->setContent(content);
     multiJob->appendSubjob(tJob);
-    multiJob->setExtraContent(headers);
 
     qCDebug(MESSAGECOMPOSER_LOG) << "attachment encr key size:" << keys.size() << " recipients: " << recipients;
 
@@ -453,15 +452,15 @@ void ComposerJobPrivate::composeWithLateAttachments(KMime::Message *headers,
         }
     }
 
-    QObject::connect(multiJob, &KJob::finished, q, [this](KJob *job) {
-        attachmentsFinished(job);
+    QObject::connect(multiJob, &KJob::finished, q, [this, headers](KJob *job) {
+        attachmentsFinished(job, headers);
     });
 
     q->addSubjob(multiJob);
     multiJob->start();
 }
 
-void ComposerJobPrivate::attachmentsFinished(KJob *job)
+void ComposerJobPrivate::attachmentsFinished(KJob *job, KMime::Content *headers)
 {
     if (job->error()) {
         return; // KCompositeJob takes care of the error.
@@ -472,7 +471,6 @@ void ComposerJobPrivate::attachmentsFinished(KJob *job)
     auto contentJob = static_cast<ContentJobBase *>(job);
 
     KMime::Content *content = contentJob->content();
-    KMime::Content *headers = contentJob->extraContent();
 
     composeFinalStep(headers, content);
 }
