@@ -1373,7 +1373,7 @@ void ComposerViewBase::writeAutoSaveToDisk(const KMime::Message::Ptr &message)
         // No error occurred, the next error should be shown again
         m_autoSaveErrorShown = false;
     }
-    file.commit();
+
     message->clear();
 }
 
