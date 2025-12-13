@@ -15,6 +15,7 @@
 #include "viewer.h"
 #include "csshelper.h"
 #include "dkim-verify/dkimwidgetinfo.h"
+#include "messageviewer_viewer_format_debug.h"
 #include "viewer/mimeparttree/mimeparttreeview.h"
 #include "viewer/mimeparttree/mimetreemodel.h"
 #include "viewer/webengine/mailwebengineview.h"
@@ -618,7 +619,10 @@ QAction *Viewer::shareTextAction() const
 
 void Viewer::slotChangeDisplayMail(Viewer::DisplayFormatMessage mode, bool loadExternal)
 {
+    qCDebug(MESSAGEVIEWER_VIEWER_FORMAT_LOG) << "DisplayFormatMessage: " << mode << " loadExternal " << loadExternal;
+
     if ((htmlLoadExtOverride() != loadExternal) || (displayFormatMessageOverwrite() != mode)) {
+        qCDebug(MESSAGEVIEWER_VIEWER_FORMAT_LOG) << "We will change format";
         setHtmlLoadExtOverride(loadExternal);
         setDisplayFormatMessageOverwrite(mode);
         update(MimeTreeParser::Force);
