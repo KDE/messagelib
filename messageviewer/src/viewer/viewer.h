@@ -126,6 +126,7 @@ public:
         Unknown = 3,
         ICal = 4,
     };
+    Q_ENUM(DisplayFormatMessage)
 
     enum AttachmentAction {
         Open = 1,
@@ -139,11 +140,13 @@ public:
         ReplyMessageToAuthor,
         ReplyMessageToAll,
     };
+    Q_ENUM(AttachmentAction)
 
     enum ResourceOnlineMode {
         AllResources = 0,
         SelectedResource = 1,
     };
+    Q_ENUM(ResourceOnlineMode)
 
     /**
      * Set the message that shall be shown.
