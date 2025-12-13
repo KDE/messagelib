@@ -72,8 +72,6 @@ MessageList::Widget::Widget(QWidget *parent)
     : Core::Widget(parent)
     , d(new WidgetPrivate(this))
 {
-    // Init it.
-    (void)Core::TagManager::self();
     connect(Core::TagManager::self(), &Core::TagManager::tagsFetched, this, &MessageList::Widget::slotTagsFetched);
 }
 
