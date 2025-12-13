@@ -790,7 +790,7 @@ void Pane::setCurrentFolder(const Akonadi::Collection &collection,
 
 void Pane::updateTabIconText(const Akonadi::Collection &collection, const QString &label, const QIcon &icon)
 {
-    for (int i = 0; i < count(); ++i) {
+    for (int i = 0, total = count(); i < total; ++i) {
         auto w = qobject_cast<Widget *>(widget(i));
         if (w && (w->currentCollection() == collection)) {
             const int index = indexOf(w);
@@ -1124,7 +1124,7 @@ void Pane::setPreferEmptyTab(bool emptyTab)
 
 void Pane::saveCurrentSelection()
 {
-    for (int i = 0; i < count(); ++i) {
+    for (int i = 0, total = count(); i < total; ++i) {
         auto w = qobject_cast<Widget *>(widget(i));
         if (w) {
             w->saveCurrentSelection();
@@ -1134,7 +1134,7 @@ void Pane::saveCurrentSelection()
 
 void Pane::updateTagComboBox()
 {
-    for (int i = 0; i < count(); ++i) {
+    for (int i = 0, total = count(); i < total; ++i) {
         auto w = qobject_cast<Widget *>(widget(i));
         if (w) {
             w->populateStatusFilterCombo();
@@ -1156,7 +1156,7 @@ void Pane::writeConfig(bool restoreSession)
         conf.writeEntry(u"currentIndex"_s, currentIndex());
 
         int elementTab = 0;
-        for (int i = 0; i < count(); ++i) {
+        for (int i = 0, total = count(); i < total; ++i) {
             auto w = qobject_cast<Widget *>(widget(i));
             if (w && w->currentCollection().isValid()) {
                 KConfigGroup grp(MessageList::MessageListSettings::self()->config(), u"MessageListTab%1"_s.arg(elementTab));
@@ -1252,7 +1252,7 @@ void Pane::themeMenuAboutToShow()
 
 void Pane::populateStatusFilterCombo()
 {
-    for (int i = 0; i < count(); ++i) {
+    for (int i = 0, total = count(); i < total; ++i) {
         auto w = qobject_cast<Widget *>(widget(i));
         if (w) {
             w->populateStatusFilterCombo();
