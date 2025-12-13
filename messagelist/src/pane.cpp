@@ -154,7 +154,14 @@ Pane::Pane(bool restoreSession, QAbstractItemModel *model, QItemSelectionModel *
     setMovable(true);
 
     connect(this, &Pane::currentChanged, this, [this]() {
-        d->onCurrentTabChanged();
+        // calling onCurrentTabChanged will emit q->currentTabChanged();
+        // In kmail we will try to get new currentCollection but
+        // it's not defined yet as we create a new tab
+        // => we can't see new message...
+        // call this method when we created new tab
+        if (!d->mPreferEmptyTab) {
+            d->onCurrentTabChanged();
+        }
     });
 
     setContextMenuPolicy(Qt::CustomContextMenu);
@@ -537,6 +544,7 @@ void Pane::PanePrivate::setCurrentFolder(const QModelIndex &etmIndex)
     q->setTabToolTip(index, toolTip);
     if (mPreferEmptyTab) {
         mSelectionModel->select(mapSelectionFromSource(s->selection()), QItemSelectionModel::ClearAndSelect);
+        onCurrentTabChanged();
     }
     mPreferEmptyTab = false;
 }
