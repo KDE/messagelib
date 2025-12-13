@@ -19,6 +19,7 @@ ContactDisplayMessageMemento::ContactDisplayMessageMemento(const QString &emailA
     : QObject(nullptr)
     , mEmailAddress(emailAddress)
 {
+    qCDebug(MESSAGEVIEWER_VIEWER_FORMAT_LOG) << "ContactDisplayMessageMemento::ContactDisplayMessageMemento: " << this;
     if (!emailAddress.isEmpty()) {
         mSearchJob = new Akonadi::ContactSearchJob();
         mSearchJob->setQuery(Akonadi::ContactSearchJob::Email, emailAddress.toLower(), Akonadi::ContactSearchJob::ExactMatch);
@@ -30,6 +31,8 @@ ContactDisplayMessageMemento::ContactDisplayMessageMemento(const QString &emailA
 
 ContactDisplayMessageMemento::~ContactDisplayMessageMemento()
 {
+    qCDebug(MESSAGEVIEWER_VIEWER_FORMAT_LOG) << "ContactDisplayMessageMemento::~ContactDisplayMessageMemento: " << this;
+
     if (mSearchJob) {
         disconnect(mSearchJob.data(), &Akonadi::ContactSearchJob::result, this, &ContactDisplayMessageMemento::slotSearchJobFinished);
         mSearchJob->kill();
