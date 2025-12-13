@@ -136,9 +136,8 @@ KMime::Types::AddrSpecList extractAddrSpecs(const QSharedPointer<const KMime::Me
         KMime::Types::AddressList al = MessageCore::StringUtil::splitAddressField(hrd->as7BitString(false));
         KMime::Types::AddressList::const_iterator alend(al.constEnd());
         for (KMime::Types::AddressList::const_iterator ait = al.constBegin(); ait != alend; ++ait) {
-            KMime::Types::MailboxList::const_iterator mitEnd((*ait).mailboxList.constEnd());
-            for (KMime::Types::MailboxList::const_iterator mit = (*ait).mailboxList.constBegin(); mit != mitEnd; ++mit) {
-                result.push_back((*mit).addrSpec());
+            for (const KMime::Types::Mailbox &mailbox : (*ait).mailboxList) {
+                result.push_back(mailbox.addrSpec());
             }
         }
     }
