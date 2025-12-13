@@ -6,15 +6,14 @@
 
 #include "contactdisplaymessagememento.h"
 #include "messageviewer_viewer_format_debug.h"
-using namespace Qt::Literals::StringLiterals;
 
-#include "messageviewer_debug.h"
 #include <Akonadi/ContactSearchJob>
 #include <Gravatar/GravatarResolvUrlJob>
 #include <KIO/TransferJob>
 #include <gravatar/gravatarsettings.h>
 
 using namespace MessageViewer;
+using namespace Qt::Literals::StringLiterals;
 
 ContactDisplayMessageMemento::ContactDisplayMessageMemento(const QString &emailAddress)
     : QObject(nullptr)
@@ -42,7 +41,7 @@ void ContactDisplayMessageMemento::slotSearchJobFinished(KJob *job)
     mFinished = true;
     auto searchJob = static_cast<Akonadi::ContactSearchJob *>(job);
     if (searchJob->error()) {
-        qCWarning(MESSAGEVIEWER_LOG) << "Unable to fetch contact:" << searchJob->errorText();
+        qCWarning(MESSAGEVIEWER_VIEWER_FORMAT_LOG) << "Unable to fetch contact:" << searchJob->errorText();
         Q_EMIT update(MimeTreeParser::Delayed);
         return;
     }
@@ -50,7 +49,7 @@ void ContactDisplayMessageMemento::slotSearchJobFinished(KJob *job)
     const int contactSize(searchJob->contacts().size());
     if (contactSize >= 1) {
         if (contactSize > 1) {
-            qCWarning(MESSAGEVIEWER_LOG) << " more than 1 contact was found we return first contact";
+            qCWarning(MESSAGEVIEWER_VIEWER_FORMAT_LOG) << " more than 1 contact was found we return first contact";
         }
 
         const KContacts::Addressee addressee = searchJob->contacts().at(0);
