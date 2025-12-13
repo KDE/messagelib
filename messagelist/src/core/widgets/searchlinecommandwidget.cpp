@@ -4,12 +4,12 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "searchlinecommandwidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "searchlinecommandbuttonswidget.h"
 #include <QLabel>
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageList::Core;
 SearchLineCommandWidget::SearchLineCommandWidget(QWidget *parent)
     : QWidget{parent}

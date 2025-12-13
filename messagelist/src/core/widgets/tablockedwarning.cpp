@@ -6,10 +6,10 @@
 */
 
 #include "tablockedwarning.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KLocalizedString>
 using namespace MessageList::Core;
+using namespace Qt::Literals::StringLiterals;
 TabLockedWarning::TabLockedWarning(QWidget *parent)
     : KMessageWidget(parent)
 {

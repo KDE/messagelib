@@ -5,7 +5,6 @@
 */
 
 #include "searchlinecommandbuttonswidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "searchlinecommand.h"
 #include "searchlinecommandflowlayout.h"
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QEvent>
 #include <QPushButton>
 #include <QVBoxLayout>
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageList::Core;
 SearchLineCommandButtonsWidget::SearchLineCommandButtonsWidget(QWidget *parent)
     : QFrame{parent}

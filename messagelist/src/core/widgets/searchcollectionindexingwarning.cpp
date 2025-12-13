@@ -6,7 +6,6 @@
  */
 
 #include "searchcollectionindexingwarning.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "messagelist_debug.h"
 
@@ -27,6 +26,7 @@ using namespace Qt::Literals::StringLiterals;
 
 using namespace MessageList::Core;
 
+using namespace Qt::Literals::StringLiterals;
 SearchCollectionIndexingWarning::SearchCollectionIndexingWarning(QWidget *parent)
     : KMessageWidget(parent)
 #if !FORCE_DISABLE_AKONADI_SEARCH

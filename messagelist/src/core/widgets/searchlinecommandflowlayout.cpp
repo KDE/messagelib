@@ -5,10 +5,10 @@
 */
 
 #include "searchlinecommandflowlayout.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QStyle>
 #include <QWidget>
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageList::Core;
 static int smartSpacing(QObject *parent, QStyle::PixelMetric pm)
 {

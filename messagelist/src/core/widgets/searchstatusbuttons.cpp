@@ -5,13 +5,13 @@
 */
 
 #include "searchstatusbuttons.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "messagelist_debug.h"
 #include <KLocalizedString>
 #include <QButtonGroup>
 #include <QHBoxLayout>
 #include <QToolButton>
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageList::Core;
 SearchStatusButtons::SearchStatusButtons(QWidget *parent)
     : QWidget{parent}

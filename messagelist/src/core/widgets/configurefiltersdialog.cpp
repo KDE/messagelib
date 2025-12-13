@@ -41,7 +41,7 @@ ConfigureFiltersDialog::~ConfigureFiltersDialog()
 
 void ConfigureFiltersDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myConfigureFiltersDialogConfigGroupName));
+    const KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myConfigureFiltersDialogConfigGroupName));
     const QSize size = group.readEntry("Size", QSize(600, 400));
     if (size.isValid()) {
         resize(size);

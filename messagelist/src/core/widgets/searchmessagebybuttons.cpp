@@ -5,7 +5,6 @@
 */
 
 #include "searchmessagebybuttons.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KLocalizedString>
 #include <QButtonGroup>
@@ -14,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QToolButton>
 
 using namespace MessageList::Core;
+using namespace Qt::Literals::StringLiterals;
 SearchMessageByButtons::SearchMessageByButtons(QWidget *parent)
     : QWidget{parent}
     , mMainLayout(new QHBoxLayout(this))
