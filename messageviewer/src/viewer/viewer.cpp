@@ -75,7 +75,7 @@ void Viewer::initialize()
 {
     connect(d_ptr, &ViewerPrivate::displayPopupMenu, this, &Viewer::displayPopupMenu);
     connect(d_ptr, &ViewerPrivate::popupMenu, this, &Viewer::popupMenu);
-    connect(d_ptr, SIGNAL(urlClicked(Akonadi::Item, QUrl)), SIGNAL(urlClicked(Akonadi::Item, QUrl)));
+    connect(d_ptr, SIGNAL(urlClicked(Akonadi::Item, QUrl)), this, SIGNAL(urlClicked(Akonadi::Item, QUrl)));
     connect(d_ptr, &ViewerPrivate::requestConfigSync, this, &Viewer::requestConfigSync);
     connect(d_ptr, &ViewerPrivate::makeResourceOnline, this, &Viewer::makeResourceOnline);
     connect(d_ptr, &ViewerPrivate::showReader, this, &Viewer::showReader);
