@@ -491,13 +491,16 @@ void Pane::setQuickSearchClickMessage(const QString &msg)
 
 void Pane::PanePrivate::setCurrentFolder(const QModelIndex &etmIndex)
 {
-    qCDebug(MESSAGELIST_PANE_LOG) << "setCurrentFolder";
+    qCDebug(MESSAGELIST_PANE_LOG) << "setCurrentFolder : before current Widget:" << q->currentWidget();
     if (mPreferEmptyTab) {
         q->createNewTab();
     }
+    qCDebug(MESSAGELIST_PANE_LOG) << "setCurrentFolder : AFTER current Widget:" << q->currentWidget();
 
     auto w = static_cast<Widget *>(q->currentWidget());
     QItemSelectionModel *s = mWidgetSelectionHash[w];
+
+    qCDebug(MESSAGELIST_PANE_LOG) << "setCurrent Folder item selection model " << s;
 
     w->saveCurrentSelection();
 
@@ -825,6 +828,8 @@ void Pane::createNewTab()
     MessageList::StorageModel *m = createStorageModel(d->mModel, s, w);
     w->setStorageModel(m);
 
+    qCDebug(MESSAGELIST_PANE_LOG) << "WIDGET " << w;
+    qCDebug(MESSAGELIST_PANE_LOG) << "item selection model " << s << " model " << m;
     d->mWidgetSelectionHash[w] = s;
 
     connect(w, &Widget::messageSelected, this, &Pane::messageSelected);
