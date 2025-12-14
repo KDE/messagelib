@@ -27,7 +27,8 @@ using namespace Qt::Literals::StringLiterals;
 #include <Akonadi/OpenEmailAddressJob>
 #include <MessageCore/StringUtil>
 #include <PimCommon/BroadcastStatus>
-#include <PimCommon/PimUtil>
+
+#include <TextAddonsWidgets/ExecutableUtils>
 
 #include <Akonadi/ContactSearchJob>
 
@@ -484,7 +485,7 @@ bool SMimeURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
     QStringList lst;
     lst << u"--parent-windowid"_s << QString::number(static_cast<qlonglong>(w->viewer()->mainWindow()->winId())) << u"--query"_s << keyId;
 
-    const QString exec = PimCommon::Util::findExecutable(u"kleopatra"_s);
+    const QString exec = TextAddonsWidgets::ExecutableUtils::findExecutable(u"kleopatra"_s);
 
     if (exec.isEmpty()) {
         qCWarning(MESSAGEVIEWER_LOG) << "Could not find kleopatra executable in PATH";
