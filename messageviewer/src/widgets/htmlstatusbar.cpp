@@ -127,9 +127,9 @@ QString HtmlStatusBar::message() const
     switch (mode()) {
     case MimeTreeParser::Util::Html: // bold: "HTML Message"
     case MimeTreeParser::Util::MultipartHtml:
-        return i18nc("@label", "HTML Message");
+        return i18nc("@label", "Show Plain Message");
     case MimeTreeParser::Util::Normal: // normal: "No HTML Message"
-        return i18nc("@label", "No HTML Message");
+        return i18nc("@label", "Show HTML Message");
     case MimeTreeParser::Util::MultipartPlain: // normal: "Plain Message"
         return i18nc("@label", "Plain Message");
     case MimeTreeParser::Util::MultipartIcal: // normal: "Calendar Message"
@@ -146,7 +146,7 @@ QString HtmlStatusBar::toolTip() const
     case MimeTreeParser::Util::MultipartHtml:
     case MimeTreeParser::Util::MultipartPlain:
     case MimeTreeParser::Util::MultipartIcal:
-        return i18n("Click to toggle between HTML, plain text and calendar.")
+        return i18n("Click to toggle between HTML, plain text, and calendar.")
             + i18nc("@info:tooltip", "Warning: HTML email content can hide or modify this email headers.");
     default:
     case MimeTreeParser::Util::Normal:
