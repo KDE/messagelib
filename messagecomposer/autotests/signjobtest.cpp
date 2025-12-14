@@ -50,10 +50,10 @@ void SignJobTest::testContentDirect()
     QVERIFY(sJob);
 
     const QByteArray data(QString::fromLocal8Bit("one flew over the cuckoo's nest").toUtf8());
-    auto content = new KMime::Content;
+    auto content = std::make_unique<KMime::Content>();
     content->setBody(data);
 
-    sJob->setContent(content);
+    sJob->setContent(content.release());
     sJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
     sJob->setSigningKeys(keys);
 
@@ -65,11 +65,11 @@ void SignJobTest::testContentChained()
     const std::vector<GpgME::Key> &keys = Test::getKeys();
 
     const QByteArray data(QString::fromLocal8Bit("one flew over the cuckoo's nest").toUtf8());
-    auto content = new KMime::Content;
+    auto content = std::make_unique<KMime::Content>();
     content->setBody(data);
 
     auto tJob = new TransparentJob;
-    tJob->setContent(content);
+    tJob->setContent(content.release());
 
     ComposerJob composerJob;
     auto sJob = new SignJob(&composerJob);
@@ -92,16 +92,16 @@ void SignJobTest::testHeaders()
     QVERIFY(sJob);
 
     const QByteArray data(QString::fromLocal8Bit("one flew over the cuckoo's nest").toUtf8());
-    auto content = new KMime::Content;
+    auto content = std::make_unique<KMime::Content>();
     content->setBody(data);
 
-    sJob->setContent(content);
+    sJob->setContent(content.release());
     sJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
     sJob->setSigningKeys(keys);
 
     VERIFYEXEC(sJob);
 
-    KMime::Content *result = sJob->content();
+    auto result = std::unique_ptr<KMime::Content>(sJob->content());
     result->assemble();
 
     QVERIFY(result->contentType(KMime::CreatePolicy::DontCreate));
@@ -110,8 +110,6 @@ void SignJobTest::testHeaders()
     QVERIFY(result->contentType()->parameter("micalg").startsWith(QLatin1StringView("pgp-sha"))); // sha1 or sha256, depending on GnuPG version
     QCOMPARE(result->contentType()->parameter("protocol"), QString::fromLocal8Bit("application/pgp-signature"));
     QCOMPARE(result->contentTransferEncoding()->encoding(), KMime::Headers::CE7Bit);
-
-    delete result;
 }
 
 void SignJobTest::testRecommentationRFC3156()
@@ -126,24 +124,23 @@ void SignJobTest::testRecommentationRFC3156()
 
     QVERIFY(sJob);
 
-    auto content = new KMime::Content;
+    auto content = std::make_unique<KMime::Content>();
     content->setBody(data.toUtf8());
 
-    sJob->setContent(content);
+    sJob->setContent(content.release());
     sJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
     sJob->setSigningKeys(keys);
 
     VERIFYEXEC(sJob);
 
-    KMime::Content *result = sJob->content();
+    auto result = std::unique_ptr<KMime::Content>(sJob->content());
     result->assemble();
 
     QVERIFY(!result->contents().isEmpty());
     const QByteArray body = result->contents().at(0)->body();
     QCOMPARE(QString::fromUtf8(body), u"=3D2D Magic foo\n=46rom test\n\n=2D- quaak\nOhno"_s);
 
-    ComposerTestUtil::verify(true, false, result, data.toUtf8(), Kleo::OpenPGPMIMEFormat, cte);
-    delete result;
+    ComposerTestUtil::verify(true, false, result.get(), data.toUtf8(), Kleo::OpenPGPMIMEFormat, cte);
 }
 
 void SignJobTest::testMixedContent()
@@ -157,7 +154,7 @@ void SignJobTest::testMixedContent()
 
     QVERIFY(sJob);
 
-    auto content = new KMime::Content;
+    auto content = std::make_unique<KMime::Content>();
     content->contentType()->setMimeType(QByteArrayLiteral("multipart/mixed"));
     content->contentType()->setBoundary(KMime::multiPartBoundary());
     auto subcontent = std::make_unique<KMime::Content>();
@@ -172,13 +169,13 @@ void SignJobTest::testMixedContent()
     content->appendContent(std::move(attachment));
     content->assemble();
 
-    sJob->setContent(content);
+    sJob->setContent(content.release());
     sJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
     sJob->setSigningKeys(keys);
 
     VERIFYEXEC(sJob);
 
-    KMime::Content *result = sJob->content();
+    auto result = std::unique_ptr<KMime::Content>(sJob->content());
     result->assemble();
 
     QCOMPARE(result->contents().count(), 2);
@@ -189,24 +186,21 @@ void SignJobTest::testMixedContent()
     QCOMPARE(firstChild->contents()[0]->body(), data.toUtf8());
     QCOMPARE(firstChild->contents()[1]->body(), attachmentData);
 
-    ComposerTestUtil::verify(true, false, result, data.toUtf8(), Kleo::OpenPGPMIMEFormat, KMime::Headers::CE7Bit);
-    delete result;
+    ComposerTestUtil::verify(true, false, result.get(), data.toUtf8(), Kleo::OpenPGPMIMEFormat, KMime::Headers::CE7Bit);
 }
 
 void SignJobTest::checkSignJob(SignJob *sJob)
 {
     VERIFYEXEC(sJob);
 
-    KMime::Content *result = sJob->content();
+    auto result = std::unique_ptr<KMime::Content>(sJob->content());
     Q_ASSERT(result);
     result->assemble();
 
-    ComposerTestUtil::verifySignature(result,
+    ComposerTestUtil::verifySignature(result.get(),
                                       QString::fromLocal8Bit("one flew over the cuckoo's nest").toUtf8(),
                                       Kleo::OpenPGPMIMEFormat,
                                       KMime::Headers::CE7Bit);
-
-    delete result;
 }
 
 void SignJobTest::testProtectedHeaders_data()
@@ -233,7 +227,7 @@ void SignJobTest::testProtectedHeaders()
     const QByteArray data(QString::fromLocal8Bit("one flew over the cuckoo's nest").toUtf8());
     const QString subject(u"asdfghjklö"_s);
 
-    auto content = new KMime::Content;
+    auto content = std::make_unique<KMime::Content>();
     content->contentType(KMime::CreatePolicy::Create)->setMimeType("text/plain");
     content->setBody(data);
 
@@ -244,7 +238,7 @@ void SignJobTest::testProtectedHeaders()
     skeletonMessage.bcc(KMime::CreatePolicy::Create)->from7BitString("bcc@test.de, bcc2@test.de");
     skeletonMessage.subject(KMime::CreatePolicy::Create)->fromUnicodeString(subject);
 
-    sJob->setContent(content);
+    sJob->setContent(content.release());
     sJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
     sJob->setSigningKeys(keys);
     sJob->setSkeletonMessage(&skeletonMessage);
@@ -273,7 +267,7 @@ void SignJobTest::testProtectedHeadersOverwrite()
     const QByteArray data(QString::fromLocal8Bit("one flew over the cuckoo's nest").toUtf8());
     const QString subject(u"asdfghjklö"_s);
 
-    auto content = new KMime::Content;
+    auto content = std::make_unique<KMime::Content>();
     content->contentType(KMime::CreatePolicy::Create)->setMimeType("text/plain");
     content->setBody(data);
 
@@ -284,7 +278,7 @@ void SignJobTest::testProtectedHeadersOverwrite()
     skeletonMessage.bcc(KMime::CreatePolicy::Create)->from7BitString("bcc@test.de, bcc2@test.de");
     skeletonMessage.subject(KMime::CreatePolicy::Create)->fromUnicodeString(subject);
 
-    sJob->setContent(content);
+    sJob->setContent(content.release());
     sJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
     sJob->setSigningKeys(keys);
     sJob->setSkeletonMessage(&skeletonMessage);
@@ -317,7 +311,7 @@ void SignJobTest::testProtectedHeadersSkipLong()
     const QByteArray data(QString::fromLocal8Bit("one flew over the cuckoo's nest").toUtf8());
     const QString subject(u"asdfghjklö"_s);
 
-    auto content = new KMime::Content;
+    auto content = std::make_unique<KMime::Content>();
     content->contentType(KMime::CreatePolicy::Create)->setMimeType("text/plain");
     content->setBody(data);
 
@@ -342,7 +336,7 @@ void SignJobTest::testProtectedHeadersSkipLong()
     skeletonMessage.appendHeader(std::move(face));
     skeletonMessage.subject(KMime::CreatePolicy::Create)->fromUnicodeString(subject);
 
-    sJob->setContent(content);
+    sJob->setContent(content.release());
     sJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
     sJob->setSigningKeys(keys);
     sJob->setSkeletonMessage(&skeletonMessage);

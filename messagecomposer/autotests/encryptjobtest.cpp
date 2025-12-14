@@ -117,12 +117,12 @@ void EncryptJobTest::testContentSubjobChained()
     const QByteArray data(u"one flew over the cuckoo's nest"_s.toUtf8());
     KMime::Message skeletonMessage;
 
-    auto content = new KMime::Content;
+    auto content = std::make_unique<KMime::Content>();
     content->contentType(KMime::CreatePolicy::Create)->setMimeType("text/plain");
     content->setBody(data);
 
     auto tJob = new TransparentJob;
-    tJob->setContent(content);
+    tJob->setContent(content.get());
 
     const QStringList recipients = {u"test@kolab.org"_s};
 
@@ -147,12 +147,12 @@ void EncryptJobTest::testHeaders()
     QVERIFY(eJob);
 
     const QByteArray data(u"one flew over the cuckoo's nest"_s.toUtf8());
-    auto content = new KMime::Content;
+    auto content = std::make_unique<KMime::Content>();
     content->setBody(data);
 
     const QStringList recipients = {u"test@kolab.org"_s};
 
-    eJob->setContent(content);
+    eJob->setContent(content.get());
     eJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
     eJob->setRecipients(recipients);
     eJob->setEncryptionKeys(keys);
@@ -161,7 +161,7 @@ void EncryptJobTest::testHeaders()
 
     QByteArray mimeType("multipart/encrypted");
 
-    KMime::Content *result = eJob->content();
+    auto result = std::unique_ptr<KMime::Content>(eJob->content());
     result->assemble();
 
     QVERIFY(result->contentType(KMime::CreatePolicy::DontCreate));
@@ -169,8 +169,6 @@ void EncryptJobTest::testHeaders()
     QCOMPARE(result->contentType(KMime::CreatePolicy::DontCreate)->charset(), "UTF-8");
     QCOMPARE(result->contentType(KMime::CreatePolicy::DontCreate)->parameter("protocol"), u"application/pgp-encrypted"_s);
     QCOMPARE(result->contentTransferEncoding()->encoding(), KMime::Headers::CE7Bit);
-
-    delete result;
 }
 
 void EncryptJobTest::testProtectedHeaders_data()
@@ -200,7 +198,7 @@ void EncryptJobTest::testProtectedHeaders()
     const QByteArray data(u"one flew over the cuckoo's nest"_s.toUtf8());
     const QString subject(u"asdfghjklö"_s);
 
-    auto content = new KMime::Content;
+    auto content = std::make_unique<KMime::Content>();
     content->contentType(KMime::CreatePolicy::Create)->setMimeType("text/plain");
     content->setBody(data);
 
@@ -213,7 +211,7 @@ void EncryptJobTest::testProtectedHeaders()
 
     const QStringList recipients = {u"test@kolab.org"_s};
 
-    eJob->setContent(content);
+    eJob->setContent(content.get());
     eJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
     eJob->setRecipients(recipients);
     eJob->setEncryptionKeys(keys);
@@ -229,10 +227,10 @@ void EncryptJobTest::testProtectedHeaders()
         QCOMPARE(skeletonMessage.subject()->asUnicodeString(), subject);
     }
 
-    KMime::Content *result = eJob->content();
+    auto result = std::unique_ptr<KMime::Content>(eJob->content());
     result->assemble();
 
-    KMime::Content *encPart = Util::findTypeInMessage(result, "application", "octet-stream");
+    KMime::Content *encPart = Util::findTypeInMessage(result.get(), "application", "octet-stream");
     KMime::Content tempNode;
     {
         QByteArray plainText;
@@ -247,8 +245,6 @@ void EncryptJobTest::testProtectedHeaders()
         tempNode.assemble();
     }
 
-    delete result;
-
     Test::compareFile(&tempNode, QStringLiteral(MAIL_DATA_DIR "/") + referenceFile);
 }
 
@@ -256,8 +252,8 @@ void EncryptJobTest::testSetGnupgHome()
 {
     ComposerJob composerJob;
 
-    KMime::Content content;
-    content.setBody("one flew over the cuckoo's nest");
+    auto content = std::make_unique<KMime::Content>();
+    content->setBody("one flew over the cuckoo's nest");
 
     const std::vector<GpgME::Key> &keys = Test::getKeys();
 
@@ -265,10 +261,13 @@ void EncryptJobTest::testSetGnupgHome()
 
     QTemporaryDir dir;
     {
+        auto content = std::make_unique<KMime::Content>();
+        content->setBody("one flew over the cuckoo's nest");
+
         auto eJob = new EncryptJob(&composerJob);
         QVERIFY(eJob);
 
-        eJob->setContent(&content);
+        eJob->setContent(content.get());
         eJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
         eJob->setRecipients(recipients);
         eJob->setEncryptionKeys(keys);
@@ -282,7 +281,7 @@ void EncryptJobTest::testSetGnupgHome()
     auto eJob = new EncryptJob(&composerJob);
     QVERIFY(eJob);
 
-    eJob->setContent(&content);
+    eJob->setContent(content.get());
     eJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
     eJob->setRecipients(recipients);
     eJob->setEncryptionKeys(keys);
@@ -294,13 +293,11 @@ void EncryptJobTest::checkEncryption(EncryptJob *eJob)
 {
     VERIFYEXEC(eJob);
 
-    KMime::Content *result = eJob->content();
+    auto result = std::unique_ptr<KMime::Content>(eJob->content());
     Q_ASSERT(result);
     result->assemble();
 
-    ComposerTestUtil::verifyEncryption(result, u"one flew over the cuckoo's nest"_s.toUtf8(), Kleo::OpenPGPMIMEFormat);
-
-    delete result;
+    ComposerTestUtil::verifyEncryption(result.get(), u"one flew over the cuckoo's nest"_s.toUtf8(), Kleo::OpenPGPMIMEFormat);
 }
 
 #include "moc_encryptjobtest.cpp"

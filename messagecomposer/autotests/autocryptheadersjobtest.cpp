@@ -58,11 +58,11 @@ void AutocryptHeadersJobTest::testAutocryptHeader()
     skeletonMessage.date(KMime::CreatePolicy::Create)->from7BitString("Tue, 22 Jan 2019 12:56:25 +0100");
     skeletonMessage.messageID(KMime::CreatePolicy::Create)->from7BitString("<abe640bb-018d-4f9d-b4d8-1636d6164e22@autocrypt.example>");
 
-    KMime::Content content;
-    content.contentType(KMime::CreatePolicy::Create)->from7BitString("text/plain");
-    content.setBody("This is an example e-mail with Autocrypt header and Ed25519+Cv25519 key (key\nfingerprint: ) as defined in Level 1 revision 1.1.\n");
-    content.assemble();
-    const auto encodedContent = content.encodedContent();
+    auto content = std::make_unique<KMime::Content>();
+    content->contentType(KMime::CreatePolicy::Create)->from7BitString("text/plain");
+    content->setBody("This is an example e-mail with Autocrypt header and Ed25519+Cv25519 key (key\nfingerprint: ) as defined in Level 1 revision 1.1.\n");
+    content->assemble();
+    const auto encodedContent = content->encodedContent();
 
     auto job = QGpgME::openpgp()->keyListJob(false);
     std::vector<GpgME::Key> ownKeys;
@@ -73,7 +73,7 @@ void AutocryptHeadersJobTest::testAutocryptHeader()
     QVERIFY(aJob);
 
     auto tJob = new TransparentJob;
-    tJob->setContent(&content);
+    tJob->setContent(content.get());
 
     aJob->setSkeletonMessage(&skeletonMessage);
     aJob->setSenderKey(ownKeys[0]);
@@ -104,11 +104,11 @@ void AutocryptHeadersJobTest::testContentChained()
     skeletonMessage.date(KMime::CreatePolicy::Create)->from7BitString("Tue, 22 Jan 2019 12:56:25 +0100");
     skeletonMessage.messageID(KMime::CreatePolicy::Create)->from7BitString("<abe640bb-018d-4f9d-b4d8-1636d6164e22@autocrypt.example>");
 
-    KMime::Content content;
-    content.contentType(KMime::CreatePolicy::Create)->from7BitString("text/plain");
-    content.setBody("This is an example e-mail with Autocrypt header and Ed25519+Cv25519 key (key\nfingerprint: ) as defined in Level 1 revision 1.1.\n");
-    content.assemble();
-    const auto encodedContent = content.encodedContent();
+    auto content = std::make_unique<KMime::Content>();
+    content->contentType(KMime::CreatePolicy::Create)->from7BitString("text/plain");
+    content->setBody("This is an example e-mail with Autocrypt header and Ed25519+Cv25519 key (key\nfingerprint: ) as defined in Level 1 revision 1.1.\n");
+    content->assemble();
+    const auto encodedContent = content->encodedContent();
 
     auto job = QGpgME::openpgp()->keyListJob(false);
     std::vector<GpgME::Key> ownKeys;
@@ -118,7 +118,7 @@ void AutocryptHeadersJobTest::testContentChained()
     QVERIFY(aJob);
 
     auto tJob = new TransparentJob;
-    tJob->setContent(&content);
+    tJob->setContent(content.get());
 
     aJob->setSkeletonMessage(&skeletonMessage);
     aJob->setSenderKey(ownKeys[0]);
@@ -145,15 +145,15 @@ void AutocryptHeadersJobTest::testAutocryptGossipHeader()
     KMime::Message skeletonMessage;
     skeletonMessage.from(KMime::CreatePolicy::Create)->from7BitString("Alice <alice@autocrypt.example>");
 
-    KMime::Content content;
-    content.setBody(
+    auto content = std::make_unique<KMime::Content>();
+    content->setBody(
         "Hi Bob and Carol,\n"
         "\n"
         "I wanted to introduce the two of you to each other.\n"
         "\n"
         "I hope you are both doing well!  You can now both \"reply all\" here,\n"
         "and the thread will remain encrypted.\n");
-    content.contentType(KMime::CreatePolicy::Create)->from7BitString("text/plain");
+    content->contentType(KMime::CreatePolicy::Create)->from7BitString("text/plain");
 
     auto job = QGpgME::openpgp()->keyListJob(false);
     std::vector<GpgME::Key> ownKeys;
@@ -166,7 +166,7 @@ void AutocryptHeadersJobTest::testAutocryptGossipHeader()
     QVERIFY(aJob);
 
     auto tJob = new TransparentJob;
-    tJob->setContent(&content);
+    tJob->setContent(content.get());
 
     aJob->setSkeletonMessage(&skeletonMessage);
     aJob->setSenderKey(ownKeys[0]);
@@ -187,15 +187,15 @@ void AutocryptHeadersJobTest::testSetGnupgHome()
     KMime::Message skeletonMessage;
     skeletonMessage.from(KMime::CreatePolicy::Create)->from7BitString("Alice <alice@autocrypt.example>");
 
-    KMime::Content content;
-    content.setBody(
+    auto content = std::make_unique<KMime::Content>();
+    content->setBody(
         "Hi Bob and Carol,\n"
         "\n"
         "I wanted to introduce the two of you to each other.\n"
         "\n"
         "I hope you are both doing well!  You can now both \"reply all\" here,\n"
         "and the thread will remain encrypted.\n");
-    content.contentType(KMime::CreatePolicy::Create)->from7BitString("text/plain");
+    content->contentType(KMime::CreatePolicy::Create)->from7BitString("text/plain");
 
     auto exportJob = QGpgME::openpgp()->keyListJob(false);
     std::vector<GpgME::Key> ownKeys;
@@ -205,21 +205,21 @@ void AutocryptHeadersJobTest::testSetGnupgHome()
 
     QTemporaryDir dir;
     { // test with an empty gnupg Home
-        KMime::Content content;
-        content.setBody(
+        auto content = std::make_unique<KMime::Content>();
+        content->setBody(
             "Hi Bob and Carol,\n"
             "\n"
             "I wanted to introduce the two of you to each other.\n"
             "\n"
             "I hope you are both doing well!  You can now both \"reply all\" here,\n"
             "and the thread will remain encrypted.\n");
-        content.contentType(KMime::CreatePolicy::Create)->from7BitString("text/plain");
+        content->contentType(KMime::CreatePolicy::Create)->from7BitString("text/plain");
 
         auto aJob = new AutocryptHeadersJob(&composerJob);
         QVERIFY(aJob);
 
         auto tJob = new TransparentJob;
-        tJob->setContent(&content);
+        tJob->setContent(content.get());
 
         aJob->setSkeletonMessage(&skeletonMessage);
         aJob->setSenderKey(ownKeys[0]);
@@ -239,7 +239,7 @@ void AutocryptHeadersJobTest::testSetGnupgHome()
     QVERIFY(aJob);
 
     auto tJob = new TransparentJob;
-    tJob->setContent(&content);
+    tJob->setContent(content.get());
 
     aJob->setSkeletonMessage(&skeletonMessage);
     aJob->setSenderKey(ownKeys[0]);
@@ -261,15 +261,15 @@ void AutocryptHeadersJobTest::testStripSenderKey()
     KMime::Message skeletonMessage;
     skeletonMessage.from(KMime::CreatePolicy::Create)->from7BitString("Alice <alice@autocrypt.example>");
 
-    KMime::Content content;
-    content.setBody(
+    auto content = std::make_unique<KMime::Content>();
+    content->setBody(
         "Hi Bob and Carol,\n"
         "\n"
         "I wanted to introduce the two of you to each other.\n"
         "\n"
         "I hope you are both doing well!  You can now both \"reply all\" here,\n"
         "and the thread will remain encrypted.\n");
-    content.contentType(KMime::CreatePolicy::Create)->from7BitString("text/plain");
+    content->contentType(KMime::CreatePolicy::Create)->from7BitString("text/plain");
 
     auto job = QGpgME::openpgp()->keyListJob(false);
     std::vector<GpgME::Key> ownKeys;
@@ -283,7 +283,7 @@ void AutocryptHeadersJobTest::testStripSenderKey()
     QVERIFY(aJob);
 
     auto tJob = new TransparentJob;
-    tJob->setContent(&content);
+    tJob->setContent(content.get());
 
     aJob->setSkeletonMessage(&skeletonMessage);
     aJob->setSenderKey(ownKeys[0]);

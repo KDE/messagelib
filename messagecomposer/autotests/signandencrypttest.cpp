@@ -74,13 +74,11 @@ void SignAndEncryptTest::testContent()
 
     VERIFYEXEC(eJob);
 
-    KMime::Content *result = eJob->content();
+    auto result = std::unique_ptr<KMime::Content>(eJob->content());
     QVERIFY(result);
     result->assemble();
 
-    ComposerTestUtil::verifySignatureAndEncryption(result, u"one flew over the cuckoo's nest"_s.toUtf8(), Kleo::OpenPGPMIMEFormat);
-
-    delete result;
+    ComposerTestUtil::verifySignatureAndEncryption(result.get(), u"one flew over the cuckoo's nest"_s.toUtf8(), Kleo::OpenPGPMIMEFormat);
 }
 
 void SignAndEncryptTest::testHeaders()
@@ -95,12 +93,12 @@ void SignAndEncryptTest::testHeaders()
     QVERIFY(eJob);
 
     const QByteArray data(u"one flew over the cuckoo's nest"_s.toUtf8());
-    auto content = new KMime::Content;
+    auto content = std::make_unique<KMime::Content>();
     content->setBody(data);
 
     const QStringList recipients = {u"test@kolab.org"_s};
 
-    sJob->setContent(content);
+    sJob->setContent(content.get());
     sJob->setSigningKeys(keys);
     sJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
 
@@ -112,7 +110,7 @@ void SignAndEncryptTest::testHeaders()
 
     VERIFYEXEC(eJob);
 
-    KMime::Content *result = eJob->content();
+    auto result = std::unique_ptr<KMime::Content>(eJob->content());
     QVERIFY(result);
     result->assemble();
 
@@ -121,8 +119,6 @@ void SignAndEncryptTest::testHeaders()
     QCOMPARE(result->contentType()->charset(), "UTF-8");
     QCOMPARE(result->contentType()->parameter("protocol"), u"application/pgp-encrypted"_s);
     QCOMPARE(result->contentTransferEncoding()->encoding(), KMime::Headers::CE7Bit);
-
-    delete result;
 }
 
 #include "moc_signandencrypttest.cpp"

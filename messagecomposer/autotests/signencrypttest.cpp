@@ -96,13 +96,11 @@ void SignEncryptTest::testContent()
     }
 
     VERIFYEXEC(seJob);
-    KMime::Content *result = seJob->content();
+    auto result = std::unique_ptr<KMime::Content>(seJob->content());
     QVERIFY(result);
     result->assemble();
 
-    ComposerTestUtil::verifySignatureAndEncryption(result, data.toUtf8(), (Kleo::CryptoMessageFormat)cryptoMessageFormat, false, true);
-
-    delete result;
+    ComposerTestUtil::verifySignatureAndEncryption(result.get(), data.toUtf8(), (Kleo::CryptoMessageFormat)cryptoMessageFormat, false, true);
 }
 
 void SignEncryptTest::testContentSubjobChained()
@@ -112,12 +110,12 @@ void SignEncryptTest::testContentSubjobChained()
     const QByteArray data(QString::fromLocal8Bit("one flew over the cuckoo's nest").toUtf8());
     KMime::Message skeletonMessage;
 
-    auto content = new KMime::Content;
+    auto content = std::make_unique<KMime::Content>();
     content->contentType(KMime::CreatePolicy::Create)->setMimeType("text/plain");
     content->setBody(data);
 
     auto tJob = new TransparentJob;
-    tJob->setContent(content);
+    tJob->setContent(content.get());
 
     const QStringList recipients = {QString::fromLocal8Bit("test@kolab.org")};
 
@@ -132,13 +130,11 @@ void SignEncryptTest::testContentSubjobChained()
     QVERIFY(seJob->appendSubjob(tJob));
 
     VERIFYEXEC(seJob);
-    KMime::Content *result = seJob->content();
+    auto result = std::unique_ptr<KMime::Content>(seJob->content());
     QVERIFY(result);
     result->assemble();
 
-    ComposerTestUtil::verifySignatureAndEncryption(result, data, Kleo::OpenPGPMIMEFormat, false, true);
-
-    delete result;
+    ComposerTestUtil::verifySignatureAndEncryption(result.get(), data, Kleo::OpenPGPMIMEFormat, false, true);
 }
 
 void SignEncryptTest::testHeaders()
@@ -151,12 +147,12 @@ void SignEncryptTest::testHeaders()
     QVERIFY(seJob);
 
     const QByteArray data(QString::fromLocal8Bit("one flew over the cuckoo's nest").toUtf8());
-    auto content = new KMime::Content;
+    auto content = std::make_unique<KMime::Content>();
     content->setBody(data);
 
     const QStringList recipients = {QString::fromLocal8Bit("test@kolab.org")};
 
-    seJob->setContent(content);
+    seJob->setContent(content.get());
     seJob->setSigningKeys(keys);
     seJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
     seJob->setRecipients(recipients);
@@ -164,7 +160,7 @@ void SignEncryptTest::testHeaders()
 
     VERIFYEXEC(seJob);
 
-    KMime::Content *result = seJob->content();
+    auto result = std::unique_ptr<KMime::Content>(seJob->content());
     QVERIFY(result);
     result->assemble();
 
@@ -182,8 +178,6 @@ void SignEncryptTest::testHeaders()
     QCOMPARE(result->contentType()->charset(), "UTF-8");
     QCOMPARE(result->contentType()->parameter("protocol"), QString::fromLocal8Bit("application/pgp-encrypted"));
     QCOMPARE(result->contentTransferEncoding()->encoding(), KMime::Headers::CE7Bit);
-
-    delete result;
 }
 
 void SignEncryptTest::testProtectedHeaders_data()
@@ -213,7 +207,7 @@ void SignEncryptTest::testProtectedHeaders()
     const QByteArray data(u"one flew over the cuckoo's nest"_s.toUtf8());
     const QString subject(u"asdfghjklö"_s);
 
-    auto content = new KMime::Content;
+    auto content = std::make_unique<KMime::Content>();
     content->contentType(KMime::CreatePolicy::Create)->setMimeType("text/plain");
     content->setBody(data);
 
@@ -226,7 +220,7 @@ void SignEncryptTest::testProtectedHeaders()
 
     const QStringList recipients = {u"test@kolab.org"_s};
 
-    seJob->setContent(content);
+    seJob->setContent(content.get());
     seJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
     seJob->setRecipients(recipients);
     seJob->setEncryptionKeys(keys);
@@ -242,10 +236,10 @@ void SignEncryptTest::testProtectedHeaders()
         QCOMPARE(skeletonMessage.subject()->asUnicodeString(), subject);
     }
 
-    KMime::Content *result = seJob->content();
+    auto result = std::unique_ptr<KMime::Content>(seJob->content());
     result->assemble();
 
-    KMime::Content *encPart = Util::findTypeInMessage(result, "application", "octet-stream");
+    KMime::Content *encPart = Util::findTypeInMessage(result.get(), "application", "octet-stream");
     KMime::Content tempNode;
     {
         QByteArray plainText;
@@ -264,8 +258,6 @@ void SignEncryptTest::testProtectedHeaders()
         tempNode.contentType(KMime::CreatePolicy::DontCreate)->setBoundary("123456789");
         tempNode.assemble();
     }
-
-    delete result;
 
     Test::compareFile(&tempNode, QStringLiteral(MAIL_DATA_DIR "/") + referenceFile);
 }

@@ -45,7 +45,7 @@ void MultipartJobTest::testMultipartMixed()
     }
 
     QVERIFY(mjob->exec());
-    Content *result = mjob->content();
+    const auto result = std::unique_ptr<KMime::Content>(mjob->content());
     result->assemble();
     qDebug() << result->encodedContent();
 
@@ -66,7 +66,6 @@ void MultipartJobTest::testMultipartMixed()
         QVERIFY(c->contentType(KMime::CreatePolicy::DontCreate));
         QCOMPARE(c->contentType(KMime::CreatePolicy::DontCreate)->mimeType(), type2);
     }
-    delete result;
 }
 
 #include "moc_multipartjobtest.cpp"
