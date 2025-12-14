@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim/kmail.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 14:41+0000\n"
+"POT-Creation-Date: 2025-12-14 02:32+0000\n"
 "PO-Revision-Date: 2004-12-03 14:52-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -1750,59 +1750,59 @@ msgstr "Dún an cluaisín reatha"
 msgid "Close tab"
 msgstr "Dún cluaisín"
 
-#: pane.cpp:181
+#: pane.cpp:188
 #, fuzzy, kde-format
 #| msgid "Activate Tab %1"
 msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr "Gníomhachtaigh Cluaisín %1"
 
-#: pane.cpp:201
+#: pane.cpp:208
 #, kde-format
 msgid "Show Quick Search Bar"
 msgstr "Taispeáin Barra Mearchuardaigh"
 
-#: pane.cpp:222
+#: pane.cpp:229
 #, kde-format
 msgid "Message List"
 msgstr "Liosta Teachtaireachtaí"
 
-#: pane.cpp:228
+#: pane.cpp:235
 #, fuzzy, kde-format
 #| msgid "Create new tab"
 msgctxt "@action"
 msgid "Create New Tab"
 msgstr "Cruthaigh cluaisín nua"
 
-#: pane.cpp:259
+#: pane.cpp:266
 #, fuzzy, kde-format
 #| msgid "Activate Next Tab"
 msgctxt "@action"
 msgid "Activate Next Tab"
 msgstr "Gníomhachtaigh an Chéad Chluaisín Eile"
 
-#: pane.cpp:269
+#: pane.cpp:276
 #, fuzzy, kde-format
 #| msgid "Activate Previous Tab"
 msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr "Gníomhachtaigh an Cluaisín Roimhe Seo"
 
-#: pane.cpp:281
+#: pane.cpp:288
 #, fuzzy, kde-format
 #| msgid "Move Tab Left"
 msgctxt "@action"
 msgid "Move Tab Left"
 msgstr "Bog Cluaisín Faoi Chlé"
 
-#: pane.cpp:289
+#: pane.cpp:296
 #, fuzzy, kde-format
 #| msgid "Move Tab Right"
 msgctxt "@action"
 msgid "Move Tab Right"
 msgstr "Bog Cluaisín Faoi Dheis"
 
-#: pane.cpp:299
+#: pane.cpp:306
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Close Tab"
@@ -1810,25 +1810,25 @@ msgctxt "@action"
 msgid "Close Tab"
 msgstr "Dún Cluaisín"
 
-#: pane.cpp:521 pane.cpp:813
+#: pane.cpp:523 pane.cpp:821
 #, kde-format
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
 msgstr "Folamh"
 
-#: pane.cpp:709
+#: pane.cpp:713
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "Dún Cluaisín"
 
-#: pane.cpp:713
+#: pane.cpp:717
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "Dún Gach Cluaisín Eile"
 
-#: pane.cpp:718
+#: pane.cpp:722
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Close Tab"
@@ -1836,7 +1836,7 @@ msgctxt "@action:inmenu"
 msgid "Unlock Tab"
 msgstr "Dún Cluaisín"
 
-#: pane.cpp:718
+#: pane.cpp:722
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Lock Tab"
@@ -2371,7 +2371,7 @@ msgstr[2] " phicteilín"
 msgstr[3] " bpicteilín"
 msgstr[4] " picteilín"
 
-#: widget.cpp:203
+#: widget.cpp:214
 #, fuzzy, kde-format
 #| msgctxt "Permissions"
 #| msgid "All"
@@ -2379,49 +2379,49 @@ msgctxt "Item in list of Akonadi tags, to show all e-mails"
 msgid "All"
 msgstr "Uile"
 
-#: widget.cpp:324
+#: widget.cpp:335
 #, kde-format
 msgid "Collapse Group"
 msgstr "Laghdaigh Grúpa"
 
-#: widget.cpp:327
+#: widget.cpp:338
 #, kde-format
 msgid "Expand Group"
 msgstr "Leathnaigh Grúpa"
 
-#: widget.cpp:333
+#: widget.cpp:344
 #, kde-format
 msgid "Expand All Groups"
 msgstr "Leathnaigh Gach Grúpa"
 
-#: widget.cpp:336
+#: widget.cpp:347
 #, kde-format
 msgid "Collapse All Groups"
 msgstr "Laghdaigh Gach Grúpa"
 
-#: widget.cpp:340
+#: widget.cpp:351
 #, fuzzy, kde-format
 #| msgid "Expand All Groups"
 msgid "Expand All Threads"
 msgstr "Leathnaigh Gach Grúpa"
 
-#: widget.cpp:342
+#: widget.cpp:353
 #, fuzzy, kde-format
 #| msgid "Collapse All Groups"
 msgid "Collapse All Threads"
 msgstr "Laghdaigh Gach Grúpa"
 
-#: widget.cpp:401
+#: widget.cpp:412
 #, kde-format
 msgid "&Move Here"
 msgstr "&Bog Anseo"
 
-#: widget.cpp:402
+#: widget.cpp:413
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Cóipeáil Anseo"
 
-#: widget.cpp:404
+#: widget.cpp:415
 #, kde-format
 msgid "C&ancel"
 msgstr "C&ealaigh"

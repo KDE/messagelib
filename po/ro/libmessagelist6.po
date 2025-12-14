@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 14:41+0000\n"
+"POT-Creation-Date: 2025-12-14 02:32+0000\n"
 "PO-Revision-Date: 2022-02-17 14:12+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian\n"
@@ -1746,84 +1746,84 @@ msgstr "Închide fila curentă"
 msgid "Close tab"
 msgstr "Închide fila"
 
-#: pane.cpp:181
+#: pane.cpp:188
 #, fuzzy, kde-format
 #| msgid "Activate Tab %1"
 msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr "Activează fila %1"
 
-#: pane.cpp:201
+#: pane.cpp:208
 #, kde-format
 msgid "Show Quick Search Bar"
 msgstr "Arată bara de căutare rapidă"
 
-#: pane.cpp:222
+#: pane.cpp:229
 #, kde-format
 msgid "Message List"
 msgstr "Lista de mesaje"
 
-#: pane.cpp:228
+#: pane.cpp:235
 #, fuzzy, kde-format
 #| msgid "Create New Tab"
 msgctxt "@action"
 msgid "Create New Tab"
 msgstr "Creează o filă nouă"
 
-#: pane.cpp:259
+#: pane.cpp:266
 #, fuzzy, kde-format
 #| msgid "Activate Next Tab"
 msgctxt "@action"
 msgid "Activate Next Tab"
 msgstr "Activează fila următoare"
 
-#: pane.cpp:269
+#: pane.cpp:276
 #, fuzzy, kde-format
 #| msgid "Activate Previous Tab"
 msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr "Activează fila precedentă"
 
-#: pane.cpp:281
+#: pane.cpp:288
 #, fuzzy, kde-format
 #| msgid "Move Tab Left"
 msgctxt "@action"
 msgid "Move Tab Left"
 msgstr "Mută fila la stânga"
 
-#: pane.cpp:289
+#: pane.cpp:296
 #, fuzzy, kde-format
 #| msgid "Move Tab Right"
 msgctxt "@action"
 msgid "Move Tab Right"
 msgstr "Mută fila la dreapta"
 
-#: pane.cpp:299
+#: pane.cpp:306
 #, fuzzy, kde-format
 #| msgid "Close Tab"
 msgctxt "@action"
 msgid "Close Tab"
 msgstr "Închide fila"
 
-#: pane.cpp:521 pane.cpp:813
+#: pane.cpp:523 pane.cpp:821
 #, kde-format
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
 msgstr "Gol"
 
-#: pane.cpp:709
+#: pane.cpp:713
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "Închide fila"
 
-#: pane.cpp:713
+#: pane.cpp:717
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "Închide toate celelalte file"
 
-#: pane.cpp:718
+#: pane.cpp:722
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Lock search"
@@ -1831,7 +1831,7 @@ msgctxt "@action:inmenu"
 msgid "Unlock Tab"
 msgstr "Blochează căutarea"
 
-#: pane.cpp:718
+#: pane.cpp:722
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Lock search"
@@ -2381,7 +2381,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: widget.cpp:203
+#: widget.cpp:214
 #, fuzzy, kde-format
 #| msgctxt "Permissions"
 #| msgid "All"
@@ -2389,53 +2389,53 @@ msgctxt "Item in list of Akonadi tags, to show all e-mails"
 msgid "All"
 msgstr "Tot"
 
-#: widget.cpp:324
+#: widget.cpp:335
 #, fuzzy, kde-format
 #| msgid "Collapse All Groups"
 msgid "Collapse Group"
 msgstr "Restrânge toate grupurile"
 
-#: widget.cpp:327
+#: widget.cpp:338
 #, fuzzy, kde-format
 #| msgid "Expand All Groups"
 msgid "Expand Group"
 msgstr "Desfășoară toate grupurile"
 
-#: widget.cpp:333
+#: widget.cpp:344
 #, kde-format
 msgid "Expand All Groups"
 msgstr "Desfășoară toate grupurile"
 
-#: widget.cpp:336
+#: widget.cpp:347
 #, kde-format
 msgid "Collapse All Groups"
 msgstr "Restrânge toate grupurile"
 
-#: widget.cpp:340
+#: widget.cpp:351
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "Ex&pand All Threads"
 msgid "Expand All Threads"
 msgstr "Des&fășoară toate firele"
 
-#: widget.cpp:342
+#: widget.cpp:353
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "C&ollapse All Threads"
 msgid "Collapse All Threads"
 msgstr "Res&trânge toate firele"
 
-#: widget.cpp:401
+#: widget.cpp:412
 #, kde-format
 msgid "&Move Here"
 msgstr "&Mută aici"
 
-#: widget.cpp:402
+#: widget.cpp:413
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Copiază aici"
 
-#: widget.cpp:404
+#: widget.cpp:415
 #, kde-format
 msgid "C&ancel"
 msgstr "R&enunță"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 14:41+0000\n"
+"POT-Creation-Date: 2025-12-14 02:32+0000\n"
 "PO-Revision-Date: 2024-11-01 13:56+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -1666,83 +1666,83 @@ msgstr "Close the current tab"
 msgid "Close tab"
 msgstr "Close tab"
 
-#: pane.cpp:181
+#: pane.cpp:188
 #, kde-format
 msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr "Activate Tab %1"
 
-#: pane.cpp:201
+#: pane.cpp:208
 #, kde-format
 msgid "Show Quick Search Bar"
 msgstr "Show Quick Search Bar"
 
-#: pane.cpp:222
+#: pane.cpp:229
 #, kde-format
 msgid "Message List"
 msgstr "Message List"
 
-#: pane.cpp:228
+#: pane.cpp:235
 #, kde-format
 msgctxt "@action"
 msgid "Create New Tab"
 msgstr "Create New Tab"
 
-#: pane.cpp:259
+#: pane.cpp:266
 #, kde-format
 msgctxt "@action"
 msgid "Activate Next Tab"
 msgstr "Activate Next Tab"
 
-#: pane.cpp:269
+#: pane.cpp:276
 #, kde-format
 msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr "Activate Previous Tab"
 
-#: pane.cpp:281
+#: pane.cpp:288
 #, kde-format
 msgctxt "@action"
 msgid "Move Tab Left"
 msgstr "Move Tab Left"
 
-#: pane.cpp:289
+#: pane.cpp:296
 #, kde-format
 msgctxt "@action"
 msgid "Move Tab Right"
 msgstr "Move Tab Right"
 
-#: pane.cpp:299
+#: pane.cpp:306
 #, kde-format
 msgctxt "@action"
 msgid "Close Tab"
 msgstr "Close Tab"
 
-#: pane.cpp:521 pane.cpp:813
+#: pane.cpp:523 pane.cpp:821
 #, kde-format
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
 msgstr "Empty"
 
-#: pane.cpp:709
+#: pane.cpp:713
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "Close Tab"
 
-#: pane.cpp:713
+#: pane.cpp:717
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "Close All Other Tabs"
 
-#: pane.cpp:718
+#: pane.cpp:722
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unlock Tab"
 msgstr "Unlock Tab"
 
-#: pane.cpp:718
+#: pane.cpp:722
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Lock Tab"
@@ -2250,53 +2250,53 @@ msgid_plural "%v pixels"
 msgstr[0] "%v pixel"
 msgstr[1] "%v pixels"
 
-#: widget.cpp:203
+#: widget.cpp:214
 #, kde-format
 msgctxt "Item in list of Akonadi tags, to show all e-mails"
 msgid "All"
 msgstr "All"
 
-#: widget.cpp:324
+#: widget.cpp:335
 #, kde-format
 msgid "Collapse Group"
 msgstr "Collapse Group"
 
-#: widget.cpp:327
+#: widget.cpp:338
 #, kde-format
 msgid "Expand Group"
 msgstr "Expand Group"
 
-#: widget.cpp:333
+#: widget.cpp:344
 #, kde-format
 msgid "Expand All Groups"
 msgstr "Expand All Groups"
 
-#: widget.cpp:336
+#: widget.cpp:347
 #, kde-format
 msgid "Collapse All Groups"
 msgstr "Collapse All Groups"
 
-#: widget.cpp:340
+#: widget.cpp:351
 #, kde-format
 msgid "Expand All Threads"
 msgstr "Expand All Threads"
 
-#: widget.cpp:342
+#: widget.cpp:353
 #, kde-format
 msgid "Collapse All Threads"
 msgstr "Collapse All Threads"
 
-#: widget.cpp:401
+#: widget.cpp:412
 #, kde-format
 msgid "&Move Here"
 msgstr "&Move Here"
 
-#: widget.cpp:402
+#: widget.cpp:413
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Copy Here"
 
-#: widget.cpp:404
+#: widget.cpp:415
 #, kde-format
 msgid "C&ancel"
 msgstr "C&ancel"

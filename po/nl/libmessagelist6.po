@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 14:41+0000\n"
+"POT-Creation-Date: 2025-12-14 02:32+0000\n"
 "PO-Revision-Date: 2025-09-16 15:36+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -1673,83 +1673,83 @@ msgstr "Het huidige tabblad sluiten"
 msgid "Close tab"
 msgstr "Tabblad sluiten"
 
-#: pane.cpp:181
+#: pane.cpp:188
 #, kde-format
 msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr "Tabblad %1 activeren"
 
-#: pane.cpp:201
+#: pane.cpp:208
 #, kde-format
 msgid "Show Quick Search Bar"
 msgstr "Snelzoekbalk tonen"
 
-#: pane.cpp:222
+#: pane.cpp:229
 #, kde-format
 msgid "Message List"
 msgstr "Berichtenlijst"
 
-#: pane.cpp:228
+#: pane.cpp:235
 #, kde-format
 msgctxt "@action"
 msgid "Create New Tab"
 msgstr "Nieuw tabblad maken"
 
-#: pane.cpp:259
+#: pane.cpp:266
 #, kde-format
 msgctxt "@action"
 msgid "Activate Next Tab"
 msgstr "Volgend tabblad activeren"
 
-#: pane.cpp:269
+#: pane.cpp:276
 #, kde-format
 msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr "Vorig tabblad activeren"
 
-#: pane.cpp:281
+#: pane.cpp:288
 #, kde-format
 msgctxt "@action"
 msgid "Move Tab Left"
 msgstr "Tabblad naar links verplaatsen"
 
-#: pane.cpp:289
+#: pane.cpp:296
 #, kde-format
 msgctxt "@action"
 msgid "Move Tab Right"
 msgstr "Tabblad naar rechts verplaatsen"
 
-#: pane.cpp:299
+#: pane.cpp:306
 #, kde-format
 msgctxt "@action"
 msgid "Close Tab"
 msgstr "Tabblad sluiten"
 
-#: pane.cpp:521 pane.cpp:813
+#: pane.cpp:523 pane.cpp:821
 #, kde-format
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
 msgstr "Leeg"
 
-#: pane.cpp:709
+#: pane.cpp:713
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "Tabblad sluiten"
 
-#: pane.cpp:713
+#: pane.cpp:717
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "Alle andere tabbladen sluiten"
 
-#: pane.cpp:718
+#: pane.cpp:722
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unlock Tab"
 msgstr "Tab ontgrendelen"
 
-#: pane.cpp:718
+#: pane.cpp:722
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Lock Tab"
@@ -2259,53 +2259,53 @@ msgid_plural "%v pixels"
 msgstr[0] "%v pixel"
 msgstr[1] "%v pixels"
 
-#: widget.cpp:203
+#: widget.cpp:214
 #, kde-format
 msgctxt "Item in list of Akonadi tags, to show all e-mails"
 msgid "All"
 msgstr "Alles"
 
-#: widget.cpp:324
+#: widget.cpp:335
 #, kde-format
 msgid "Collapse Group"
 msgstr "Groep invouwen"
 
-#: widget.cpp:327
+#: widget.cpp:338
 #, kde-format
 msgid "Expand Group"
 msgstr "Groep uitvouwen"
 
-#: widget.cpp:333
+#: widget.cpp:344
 #, kde-format
 msgid "Expand All Groups"
 msgstr "Alle groepen uitvouwen"
 
-#: widget.cpp:336
+#: widget.cpp:347
 #, kde-format
 msgid "Collapse All Groups"
 msgstr "Alle groepen invouwen"
 
-#: widget.cpp:340
+#: widget.cpp:351
 #, kde-format
 msgid "Expand All Threads"
 msgstr "Alle discussies uitvouwen"
 
-#: widget.cpp:342
+#: widget.cpp:353
 #, kde-format
 msgid "Collapse All Threads"
 msgstr "Alle discussies invouwen"
 
-#: widget.cpp:401
+#: widget.cpp:412
 #, kde-format
 msgid "&Move Here"
 msgstr "Hierheen &verplaatsen"
 
-#: widget.cpp:402
+#: widget.cpp:413
 #, kde-format
 msgid "&Copy Here"
 msgstr "Hierheen &kopiëren"
 
-#: widget.cpp:404
+#: widget.cpp:415
 #, kde-format
 msgid "C&ancel"
 msgstr "&Annuleren"

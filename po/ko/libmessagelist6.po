@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 14:41+0000\n"
+"POT-Creation-Date: 2025-12-14 02:32+0000\n"
 "PO-Revision-Date: 2025-10-09 01:07+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1638,83 +1638,83 @@ msgstr "현재 탭 닫기"
 msgid "Close tab"
 msgstr "탭 닫기"
 
-#: pane.cpp:181
+#: pane.cpp:188
 #, kde-format
 msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr "탭 %1 활성화"
 
-#: pane.cpp:201
+#: pane.cpp:208
 #, kde-format
 msgid "Show Quick Search Bar"
 msgstr "빠른 검색 표시줄 보기"
 
-#: pane.cpp:222
+#: pane.cpp:229
 #, kde-format
 msgid "Message List"
 msgstr "메시지 목록"
 
-#: pane.cpp:228
+#: pane.cpp:235
 #, kde-format
 msgctxt "@action"
 msgid "Create New Tab"
 msgstr "새 탭 만들기"
 
-#: pane.cpp:259
+#: pane.cpp:266
 #, kde-format
 msgctxt "@action"
 msgid "Activate Next Tab"
 msgstr "다음 탭 활성화"
 
-#: pane.cpp:269
+#: pane.cpp:276
 #, kde-format
 msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr "이전 탭 활성화"
 
-#: pane.cpp:281
+#: pane.cpp:288
 #, kde-format
 msgctxt "@action"
 msgid "Move Tab Left"
 msgstr "탭 왼쪽으로 이동"
 
-#: pane.cpp:289
+#: pane.cpp:296
 #, kde-format
 msgctxt "@action"
 msgid "Move Tab Right"
 msgstr "탭 오른쪽으로 이동"
 
-#: pane.cpp:299
+#: pane.cpp:306
 #, kde-format
 msgctxt "@action"
 msgid "Close Tab"
 msgstr "탭 닫기"
 
-#: pane.cpp:521 pane.cpp:813
+#: pane.cpp:523 pane.cpp:821
 #, kde-format
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
 msgstr "비어 있음"
 
-#: pane.cpp:709
+#: pane.cpp:713
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "탭 닫기"
 
-#: pane.cpp:713
+#: pane.cpp:717
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "모든 다른 탭 닫기"
 
-#: pane.cpp:718
+#: pane.cpp:722
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unlock Tab"
 msgstr "탭 잠금 해제"
 
-#: pane.cpp:718
+#: pane.cpp:722
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Lock Tab"
@@ -2220,53 +2220,53 @@ msgid "%v pixel"
 msgid_plural "%v pixels"
 msgstr[0] "%v픽셀"
 
-#: widget.cpp:203
+#: widget.cpp:214
 #, kde-format
 msgctxt "Item in list of Akonadi tags, to show all e-mails"
 msgid "All"
 msgstr "모두"
 
-#: widget.cpp:324
+#: widget.cpp:335
 #, kde-format
 msgid "Collapse Group"
 msgstr "그룹 접기"
 
-#: widget.cpp:327
+#: widget.cpp:338
 #, kde-format
 msgid "Expand Group"
 msgstr "그룹 펴기"
 
-#: widget.cpp:333
+#: widget.cpp:344
 #, kde-format
 msgid "Expand All Groups"
 msgstr "모든 그룹 펴기"
 
-#: widget.cpp:336
+#: widget.cpp:347
 #, kde-format
 msgid "Collapse All Groups"
 msgstr "모든 그룹 접기"
 
-#: widget.cpp:340
+#: widget.cpp:351
 #, kde-format
 msgid "Expand All Threads"
 msgstr "모든 스레드 펴기"
 
-#: widget.cpp:342
+#: widget.cpp:353
 #, kde-format
 msgid "Collapse All Threads"
 msgstr "모든 스레드 접기"
 
-#: widget.cpp:401
+#: widget.cpp:412
 #, kde-format
 msgid "&Move Here"
 msgstr "여기로 이동(&M)"
 
-#: widget.cpp:402
+#: widget.cpp:413
 #, kde-format
 msgid "&Copy Here"
 msgstr "여기에 복사(&C)"
 
-#: widget.cpp:404
+#: widget.cpp:415
 #, kde-format
 msgid "C&ancel"
 msgstr "취소(&A)"

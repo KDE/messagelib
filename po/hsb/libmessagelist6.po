@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 14:41+0000\n"
+"POT-Creation-Date: 2025-12-14 02:32+0000\n"
 "PO-Revision-Date: 2007-05-06 20:54+0200\n"
 "Last-Translator: Eduard Werner/Edward Wornar <edi.werner@gmx.de>\n"
 "Language-Team:  <hsb@li.org>\n"
@@ -1729,90 +1729,90 @@ msgstr "Aktiwny jězdnik začinić"
 msgid "Close tab"
 msgstr "Jězdnik začinić"
 
-#: pane.cpp:181
+#: pane.cpp:188
 #, fuzzy, kde-format
 #| msgid "Activate Tab %1"
 msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr "Jězdnik %1 aktiwizować"
 
-#: pane.cpp:201
+#: pane.cpp:208
 #, kde-format
 msgid "Show Quick Search Bar"
 msgstr "Pask za spěšne pytanje pokazać"
 
-#: pane.cpp:222
+#: pane.cpp:229
 #, kde-format
 msgid "Message List"
 msgstr "Lisćina powěsćow"
 
-#: pane.cpp:228
+#: pane.cpp:235
 #, fuzzy, kde-format
 #| msgid "Create New Tab"
 msgctxt "@action"
 msgid "Create New Tab"
 msgstr "Nowy jězdnik stworić"
 
-#: pane.cpp:259
+#: pane.cpp:266
 #, fuzzy, kde-format
 #| msgid "Activate Next Tab"
 msgctxt "@action"
 msgid "Activate Next Tab"
 msgstr "Přichodny jězdnik aktiwizować"
 
-#: pane.cpp:269
+#: pane.cpp:276
 #, fuzzy, kde-format
 #| msgid "Activate Previous Tab"
 msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr "Předchadny jězdnik aktiwizować"
 
-#: pane.cpp:281
+#: pane.cpp:288
 #, fuzzy, kde-format
 #| msgid "Move Tab Left"
 msgctxt "@action"
 msgid "Move Tab Left"
 msgstr "Jězdnik nalěwo přesunyć"
 
-#: pane.cpp:289
+#: pane.cpp:296
 #, fuzzy, kde-format
 #| msgid "Move Tab Right"
 msgctxt "@action"
 msgid "Move Tab Right"
 msgstr "Jězdnik naprawo přesunyć"
 
-#: pane.cpp:299
+#: pane.cpp:306
 #, fuzzy, kde-format
 #| msgid "Close Tab"
 msgctxt "@action"
 msgid "Close Tab"
 msgstr "Jězdnik začinić"
 
-#: pane.cpp:521 pane.cpp:813
+#: pane.cpp:523 pane.cpp:821
 #, kde-format
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
 msgstr "Prózdne"
 
-#: pane.cpp:709
+#: pane.cpp:713
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "Jězdnik začinić"
 
-#: pane.cpp:713
+#: pane.cpp:717
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "Wšě druhe jězdniki zezačinjeć"
 
-#: pane.cpp:718
+#: pane.cpp:722
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unlock Tab"
 msgstr "Jězdnik wotamknyć"
 
-#: pane.cpp:718
+#: pane.cpp:722
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Lock Tab"
@@ -2343,57 +2343,57 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: widget.cpp:203
+#: widget.cpp:214
 #, kde-format
 msgctxt "Item in list of Akonadi tags, to show all e-mails"
 msgid "All"
 msgstr ""
 
-#: widget.cpp:324
+#: widget.cpp:335
 #, kde-format
 msgid "Collapse Group"
 msgstr "Skupinu sćahać"
 
-#: widget.cpp:327
+#: widget.cpp:338
 #, kde-format
 msgid "Expand Group"
 msgstr "Skupinu rozćahać"
 
-#: widget.cpp:333
+#: widget.cpp:344
 #, kde-format
 msgid "Expand All Groups"
 msgstr "Wšitke skupiny zrozćahać"
 
-#: widget.cpp:336
+#: widget.cpp:347
 #, kde-format
 msgid "Collapse All Groups"
 msgstr "Wšitke skupiny zesćahać"
 
-#: widget.cpp:340
+#: widget.cpp:351
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "Ex&pand All Threads"
 msgid "Expand All Threads"
 msgstr "Wšitke skupiny z&rozćahać"
 
-#: widget.cpp:342
+#: widget.cpp:353
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "C&ollapse All Threads"
 msgid "Collapse All Threads"
 msgstr "Wšitke skupiny ze&sćahać"
 
-#: widget.cpp:401
+#: widget.cpp:412
 #, kde-format
 msgid "&Move Here"
 msgstr "Pře&suń sem"
 
-#: widget.cpp:402
+#: widget.cpp:413
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Kopěruj sem"
 
-#: widget.cpp:404
+#: widget.cpp:415
 #, kde-format
 msgid "C&ancel"
 msgstr "Přeto&rhnyć"
