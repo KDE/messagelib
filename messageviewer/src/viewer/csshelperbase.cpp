@@ -744,11 +744,12 @@ QString CSSHelperBase::commonCssDefinitions() const
                "%1"
 
                "%2 {\n"
-               "  margin: 0px 5% 10px 5% ! important;\n"
+               "  margin: 0 ! important;\n"
                "  padding: 10px ! important;\n"
                "  text-align: left ! important;\n"
                "  line-height: normal;\n"
                "  min-height: %6px;\n"
+               "  max-width: var(--html-max-width, 1600px);\n"
                "}\n\n"
 
                "hr {\n"

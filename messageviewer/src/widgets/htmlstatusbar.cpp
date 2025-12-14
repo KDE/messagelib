@@ -23,7 +23,12 @@
 
 #include "viewer/webengine/mailwebengineview.h"
 
+static constexpr int scrollBarWidth = 20;
+static constexpr int maxWidthHtml = 1600;
+
 using namespace MessageViewer;
+using namespace Qt::StringLiterals;
+
 namespace
 {
 static const char myHtmlStatusBarConfigGroupName[] = "Reader";
@@ -64,8 +69,13 @@ void HtmlStatusBar::update()
     setText(message());
     setToolTip(toolTip());
     constexpr int extraWidth = 10;
-    constexpr int overlap = 4;
-    setGeometry(parentWidget()->width() - sizeHint().width() + overlap - extraWidth, -overlap, sizeHint().width() + extraWidth, sizeHint().height());
+    constexpr int overlap = -4;
+    constexpr int htmlPadding = 40;
+
+    setGeometry(std::min(maxWidthHtml + htmlPadding, parentWidget()->width()) - sizeHint().width() + overlap - extraWidth - scrollBarWidth,
+                -overlap,
+                sizeHint().width() + extraWidth,
+                sizeHint().height());
 }
 
 void HtmlStatusBar::setNormalMode()
@@ -107,8 +117,8 @@ void HtmlStatusBar::mousePressEvent(QMouseEvent *event)
 
 void HtmlStatusBar::resizeEvent(QResizeEvent *event)
 {
-    const QString code = QStringLiteral("const root = document.querySelector(':root'); root.style.setProperty('--html-indicator-width', '")
-        + QString::number(width()) + QStringLiteral("px');");
+    const QString code = u"const root = document.querySelector(':root'); root.style.setProperty('--html-max-width', '"_s + QString::number(maxWidthHtml)
+        + u"px'); root.style.setProperty('--html-indicator-width', '"_s + QString::number(width() + scrollBarWidth) + u"px');"_s;
     mViewer->page()->runJavaScript(code, WebEngineViewer::WebEngineManageScript::scriptWordId());
 }
 
