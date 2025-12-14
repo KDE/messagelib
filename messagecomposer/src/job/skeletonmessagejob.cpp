@@ -35,7 +35,7 @@ public:
 
     InfoPart *infoPart = nullptr;
     GlobalPart *globalPart = nullptr;
-    KMime::Message *message = nullptr;
+    std::unique_ptr<KMime::Message> message;
 
     Q_DECLARE_PUBLIC(SkeletonMessageJob)
 };
@@ -45,8 +45,8 @@ void SkeletonMessageJobPrivate::doStart()
     Q_Q(SkeletonMessageJob);
 
     Q_ASSERT(infoPart);
-    Q_ASSERT(message == nullptr);
-    message = new KMime::Message;
+    Q_ASSERT(!message);
+    message = std::make_unique<KMime::Message>();
 
     KMime::Types::Mailbox fromAddress;
     fromAddress.fromUnicodeString(KEmailAddress::normalizeAddressesAndEncodeIdn(infoPart->from()));
@@ -258,10 +258,10 @@ void SkeletonMessageJob::setGlobalPart(GlobalPart *part)
     d->globalPart = part;
 }
 
-KMime::Message *SkeletonMessageJob::message() const
+std::unique_ptr<KMime::Message> &&SkeletonMessageJob::takeMessage()
 {
-    Q_D(const SkeletonMessageJob);
-    return d->message;
+    Q_D(SkeletonMessageJob);
+    return std::move(d->message);
 }
 
 void SkeletonMessageJob::start()

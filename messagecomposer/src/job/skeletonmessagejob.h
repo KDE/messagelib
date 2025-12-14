@@ -37,7 +37,7 @@ public:
     [[nodiscard]] GlobalPart *globalPart() const;
     void setGlobalPart(GlobalPart *part);
 
-    [[nodiscard]] KMime::Message *message() const;
+    [[nodiscard]] std::unique_ptr<KMime::Message> &&takeMessage();
 
     void start() override;
 

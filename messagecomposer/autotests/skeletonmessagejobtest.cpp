@@ -43,11 +43,10 @@ void SkeletonMessageJobTest::testSubject()
     infoPart->setSubject(subject);
     auto sjob = new SkeletonMessageJob(infoPart, globalPart, &composerJob);
     QVERIFY(sjob->exec());
-    KMime::Message *message = sjob->message();
+    const auto message = sjob->takeMessage();
     QVERIFY(message->subject(false));
     qDebug() << message->subject(false)->asUnicodeString();
     QCOMPARE(subject, message->subject(false)->asUnicodeString());
-    delete message;
 }
 
 void SkeletonMessageJobTest::testAddresses_data()
@@ -140,7 +139,7 @@ void SkeletonMessageJobTest::testAddresses()
     infoPart->setBcc(bcc);
     auto sjob = new SkeletonMessageJob(infoPart, globalPart, &composerJob);
     QVERIFY(sjob->exec());
-    KMime::Message *message = sjob->message();
+    const auto message = sjob->takeMessage();
 
     {
         QVERIFY(message->from(false));
@@ -189,7 +188,6 @@ void SkeletonMessageJobTest::testAddresses()
         }
         QVERIFY(bcc.isEmpty());
     }
-    delete message;
 }
 
 void SkeletonMessageJobTest::testMessageID()
@@ -202,10 +200,9 @@ void SkeletonMessageJobTest::testMessageID()
 
     auto sjob = new SkeletonMessageJob(infoPart, globalPart, &composerJob);
     QVERIFY(sjob->exec());
-    KMime::Message *message = sjob->message();
+    const auto message = sjob->takeMessage();
     QVERIFY(message->messageID(false));
     QVERIFY(!message->messageID(false)->isEmpty());
-    delete message;
     delete sjob;
 }
 

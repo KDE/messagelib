@@ -40,25 +40,17 @@ public:
     {
     }
 
-    ~ComposerJobPrivate() override
-    {
-        delete skeletonMessage;
-    }
-
     void init();
     void doStart(); // slot
     void composeStep1();
     void composeStep2();
     [[nodiscard]] QList<ContentJobBase *> createEncryptJobs(ContentJobBase *contentJob, bool sign);
     void contentJobFinished(KJob *job); // slot
-    void composeWithLateAttachments(KMime::Message *headers,
-                                    KMime::Content *content,
-                                    const AttachmentPart::List &parts,
-                                    const std::vector<GpgME::Key> &keys,
-                                    const QStringList &recipients);
-    void attachmentsFinished(KJob *job, KMime::Content *headers);
+    void
+    composeWithLateAttachments(KMime::Content *content, const AttachmentPart::List &parts, const std::vector<GpgME::Key> &keys, const QStringList &recipients);
+    void attachmentsFinished(KJob *job);
 
-    void composeFinalStep(KMime::Content *headers, KMime::Content *content);
+    void composeFinalStep(KMime::Content *content);
 
     QString gnupgHome;
     QList<QPair<QStringList, std::vector<GpgME::Key>>> encData;
@@ -79,7 +71,7 @@ public:
     ItipPart *itipPart = nullptr;
 
     // Stuff that we play with.
-    KMime::Message *skeletonMessage = nullptr;
+    std::unique_ptr<KMime::Message> skeletonMessage;
 
     bool started = false;
     bool finished = false;
@@ -123,7 +115,7 @@ void ComposerJobPrivate::composeStep1()
 
         // SkeletonMessageJob is a special job creating a Message instead of a Content.
         Q_ASSERT(skeletonMessage == nullptr);
-        skeletonMessage = skeletonJob->message();
+        skeletonMessage = std::move(skeletonJob->takeMessage());
         Q_ASSERT(skeletonMessage);
         skeletonMessage->assemble();
 
@@ -233,7 +225,7 @@ void ComposerJobPrivate::composeStep2()
 
     if (autocryptEnabled) {
         auto autocryptJob = new AutocryptHeadersJob();
-        autocryptJob->setSkeletonMessage(skeletonMessage);
+        autocryptJob->setSkeletonMessage(skeletonMessage.get());
         autocryptJob->setGnupgHome(gnupgHome);
         autocryptJob->appendSubjob(mainJob);
         autocryptJob->setSenderKey(senderEncryptionKey);
@@ -251,7 +243,7 @@ void ComposerJobPrivate::composeStep2()
         sJob->setCryptoMessageFormat(format);
         sJob->setSigningKeys(signers);
         sJob->appendSubjob(mainJob);
-        sJob->setSkeletonMessage(skeletonMessage);
+        sJob->setSkeletonMessage(skeletonMessage.get());
         mainJob = sJob;
     }
 
@@ -312,7 +304,7 @@ QList<ContentJobBase *> ComposerJobPrivate::createEncryptJobs(ContentJobBase *co
             seJob->setSigningKeys(signers);
             seJob->setEncryptionKeys(recipients.second);
             seJob->setRecipients(recipients.first);
-            seJob->setSkeletonMessage(skeletonMessage);
+            seJob->setSkeletonMessage(skeletonMessage.get());
 
             subJob = seJob;
         } else {
@@ -320,7 +312,7 @@ QList<ContentJobBase *> ComposerJobPrivate::createEncryptJobs(ContentJobBase *co
             eJob->setCryptoMessageFormat(format);
             eJob->setEncryptionKeys(recipients.second);
             eJob->setRecipients(recipients.first);
-            eJob->setSkeletonMessage(skeletonMessage);
+            eJob->setSkeletonMessage(skeletonMessage.get());
             eJob->setGnupgHome(gnupgHome);
             subJob = eJob;
         }
@@ -339,7 +331,6 @@ void ComposerJobPrivate::contentJobFinished(KJob *job)
     }
     qCDebug(MESSAGECOMPOSER_LOG) << "composing final message";
 
-    KMime::Message *headers = nullptr;
     KMime::Content *resultContent = nullptr;
     std::vector<GpgME::Key> keys;
     QStringList recipients;
@@ -357,7 +348,7 @@ void ComposerJobPrivate::contentJobFinished(KJob *job)
         recipients = eJob->recipients();
 
         resultContent = contentJob->content(); // content() comes from superclass
-        headers = new KMime::Message;
+        auto headers = std::make_unique<KMime::Message>();
         headers->from(true)->from7BitString(skeletonMessage->from()->as7BitString());
         headers->to(true)->from7BitString(skeletonMessage->to()->as7BitString());
         headers->cc(true)->from7BitString(skeletonMessage->cc()->as7BitString());
@@ -372,6 +363,7 @@ void ComposerJobPrivate::contentJobFinished(KJob *job)
         qCDebug(MESSAGECOMPOSER_LOG) << "sending to recipients:" << recipients;
         headers->setHeader(std::move(realTo));
         headers->assemble();
+        skeletonMessage = std::move(headers);
     } else { // just use the saved headers from before
         if (!encData.isEmpty()) {
             const auto firstElement = encData.at(0);
@@ -380,19 +372,17 @@ void ComposerJobPrivate::contentJobFinished(KJob *job)
             recipients = firstElement.first;
         }
 
-        headers = skeletonMessage;
         resultContent = contentJob->content();
     }
 
     if (lateAttachmentParts.isEmpty()) {
-        composeFinalStep(headers, resultContent);
+        composeFinalStep(resultContent);
     } else {
-        composeWithLateAttachments(headers, resultContent, lateAttachmentParts, keys, recipients);
+        composeWithLateAttachments(resultContent, lateAttachmentParts, keys, recipients);
     }
 }
 
-void ComposerJobPrivate::composeWithLateAttachments(KMime::Message *headers,
-                                                    KMime::Content *content,
+void ComposerJobPrivate::composeWithLateAttachments(KMime::Content *content,
                                                     const AttachmentPart::List &parts,
                                                     const std::vector<GpgME::Key> &keys,
                                                     const QStringList &recipients)
@@ -452,15 +442,15 @@ void ComposerJobPrivate::composeWithLateAttachments(KMime::Message *headers,
         }
     }
 
-    QObject::connect(multiJob, &KJob::finished, q, [this, headers](KJob *job) {
-        attachmentsFinished(job, headers);
+    QObject::connect(multiJob, &KJob::finished, q, [this](KJob *job) {
+        attachmentsFinished(job);
     });
 
     q->addSubjob(multiJob);
     multiJob->start();
 }
 
-void ComposerJobPrivate::attachmentsFinished(KJob *job, KMime::Content *headers)
+void ComposerJobPrivate::attachmentsFinished(KJob *job)
 {
     if (job->error()) {
         return; // KCompositeJob takes care of the error.
@@ -472,14 +462,14 @@ void ComposerJobPrivate::attachmentsFinished(KJob *job, KMime::Content *headers)
 
     KMime::Content *content = contentJob->content();
 
-    composeFinalStep(headers, content);
+    composeFinalStep(content);
 }
 
-void ComposerJobPrivate::composeFinalStep(KMime::Content *headers, KMime::Content *content)
+void ComposerJobPrivate::composeFinalStep(KMime::Content *content)
 {
     content->assemble();
 
-    const QByteArray allData = headers->head() + content->encodedContent();
+    const QByteArray allData = skeletonMessage->head() + content->encodedContent();
 
     delete content;
 
