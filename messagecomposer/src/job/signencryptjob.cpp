@@ -95,13 +95,6 @@ void SignEncryptJob::setSigningKeys(const std::vector<GpgME::Key> &signers)
     d->signers = signers;
 }
 
-KMime::Content *SignEncryptJob::origContent()
-{
-    Q_D(SignEncryptJob);
-
-    return d->content;
-}
-
 void SignEncryptJob::setEncryptionKeys(const std::vector<GpgME::Key> &keys)
 {
     Q_D(SignEncryptJob);

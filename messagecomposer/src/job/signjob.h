@@ -43,8 +43,6 @@ public:
     void setSkeletonMessage(KMime::Message *skeletonMessage);
     void setProtectedHeaders(bool protectedHeaders);
 
-    [[nodiscard]] KMime::Content *origContent();
-
 protected Q_SLOTS:
     void doStart() override;
     void slotResult(KJob *job) override;

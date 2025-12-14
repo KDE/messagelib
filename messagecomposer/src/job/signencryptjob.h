@@ -53,8 +53,6 @@ public:
     [[nodiscard]] std::vector<GpgME::Key> encryptionKeys() const override;
     [[nodiscard]] QStringList recipients() const override;
 
-    [[nodiscard]] KMime::Content *origContent();
-
 protected Q_SLOTS:
     void doStart() override;
     void slotResult(KJob *job) override;

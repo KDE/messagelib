@@ -118,13 +118,6 @@ void SignJob::setProtectedHeaders(bool protectedHeaders)
     d->protectedHeaders = protectedHeaders;
 }
 
-KMime::Content *SignJob::origContent()
-{
-    Q_D(SignJob);
-
-    return d->content;
-}
-
 void SignJob::doStart()
 {
     Q_D(SignJob);
