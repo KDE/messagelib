@@ -7,7 +7,6 @@
  *******************************************************************************/
 
 #include "core/item.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "core/item_p.h"
 #include "core/manager.h"
@@ -17,6 +16,7 @@ using namespace Qt::Literals::StringLiterals;
 
 #include <KLocalizedString>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageList::Core;
 
 Item::Item(Type type)

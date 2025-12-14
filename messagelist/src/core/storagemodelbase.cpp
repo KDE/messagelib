@@ -7,11 +7,11 @@
  *******************************************************************************/
 
 #include "core/storagemodelbase.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "messagelistsettings.h"
 #include "messagelistutil_p.h"
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageList::Core;
 
 StorageModel::StorageModel(QObject *parent)

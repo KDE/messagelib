@@ -26,7 +26,6 @@
 //   Copyright: (c) 2004 Till Adam < adam at kde dot org >
 //
 #include "core/model.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "core/filter.h"
 #include "core/groupheaderitem.h"
@@ -60,6 +59,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <algorithm>
 #include <chrono>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace std::chrono_literals;
 
 namespace MessageList

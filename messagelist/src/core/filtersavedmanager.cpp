@@ -5,13 +5,13 @@
 */
 
 #include "filtersavedmanager.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "filter.h"
 #include <KConfigGroup>
 #include <KSharedConfig>
 #include <QMenu>
 #include <QRegularExpression>
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageList::Core;
 FilterSavedManager::FilterSavedManager(QObject *parent)
     : QObject(parent)

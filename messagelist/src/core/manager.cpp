@@ -7,7 +7,6 @@
  *******************************************************************************/
 
 #include "core/manager.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "core/aggregation.h"
 #include "core/storagemodelbase.h"
@@ -26,6 +25,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <KLocalizedString>
 
 using namespace MessageList::Core;
+using namespace Qt::Literals::StringLiterals;
 
 Manager *Manager::mInstance = nullptr;
 

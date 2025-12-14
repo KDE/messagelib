@@ -6,7 +6,6 @@
  *
  *******************************************************************************/
 #include "core/sortorder.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "messagelistutil_p.h"
 
@@ -14,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 
 #include <QMetaEnum>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageList::Core;
 
 SortOrder::SortOrder() = default;

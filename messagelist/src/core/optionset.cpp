@@ -7,7 +7,6 @@
  *******************************************************************************/
 
 #include "core/optionset.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <ctime> // for ::time( time_t * )
 
@@ -20,6 +19,7 @@ static const int gOptionSetFinalMarker = 0xbabe; // don't change
 static const int gOptionSetWithReadOnLyModeVersion = 0x1002;
 
 using namespace MessageList::Core;
+using namespace Qt::Literals::StringLiterals;
 
 OptionSet::OptionSet()
 {

@@ -5,7 +5,6 @@
 */
 
 #include "configurefilterswidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "core/filtersavedmanager.h"
 #include "filternamedialog.h"
@@ -15,6 +14,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QPainter>
 #include <QPointer>
 #include <QVBoxLayout>
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageList::Core;
 ConfigureFiltersWidget::ConfigureFiltersWidget(QWidget *parent)
     : QWidget(parent)

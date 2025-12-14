@@ -7,7 +7,6 @@
  *******************************************************************************/
 
 #include "core/theme.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QApplication>
 #include <QDataStream>
@@ -18,6 +17,7 @@ using namespace Qt::Literals::StringLiterals;
 #include "messagelist_debug.h"
 #include <KLocalizedString>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageList::Core;
 
 //

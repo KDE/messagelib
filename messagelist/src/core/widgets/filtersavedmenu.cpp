@@ -5,13 +5,13 @@
 */
 
 #include "filtersavedmenu.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "core/filtersavedmanager.h"
 #include <KLocalizedString>
 #include <QAction>
 #include <QIcon>
 using namespace MessageList::Core;
+using namespace Qt::Literals::StringLiterals;
 
 FilterSavedMenu::FilterSavedMenu(QWidget *parent)
     : QMenu(parent)
