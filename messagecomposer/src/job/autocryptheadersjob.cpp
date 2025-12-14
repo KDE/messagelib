@@ -135,16 +135,6 @@ AutocryptHeadersJob::AutocryptHeadersJob(QObject *parent)
 
 AutocryptHeadersJob::~AutocryptHeadersJob() = default;
 
-void AutocryptHeadersJob::setContent(KMime::Content *content)
-{
-    Q_D(AutocryptHeadersJob);
-
-    d->content = content;
-    if (content) {
-        d->content->assemble();
-    }
-}
-
 void AutocryptHeadersJob::setSkeletonMessage(KMime::Message *skeletonMessage)
 {
     Q_D(AutocryptHeadersJob);
@@ -187,10 +177,9 @@ void AutocryptHeadersJob::process()
 
     // if setContent hasn't been called, we assume that a subjob was added
     // and we want to use that
-    if (!d->content) {
-        Q_ASSERT(d->subjobContents.size() == 1);
-        d->content = d->subjobContents.constFirst();
-    }
+    Q_ASSERT(!d->content);
+    Q_ASSERT(d->subjobContents.size() == 1);
+    d->content = d->subjobContents.constFirst();
 
     auto job = QGpgME::openpgp()->publicKeyExportJob(false);
     Q_ASSERT(job);

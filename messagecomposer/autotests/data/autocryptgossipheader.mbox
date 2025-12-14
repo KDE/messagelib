@@ -1,3 +1,4 @@
+Content-Type: text/plain
 Autocrypt-Gossip: addr=carol@autocrypt.example; keydata=
  mDMEXEcE6RYJKwYBBAHaRw8BAQdAKiHXLyIgys0xGLa+vS+BLtUDydKd3A1E9DpSozOBdfa0F2N
  hcm9sQGF1dG9jcnlwdC5leGFtcGxliJYEExYIAD4WIQSt8CGd+u2e0+MFQA8EcmYYsmQnEgUCXE
@@ -16,7 +17,6 @@ Autocrypt-Gossip: addr=bob@autocrypt.example; keydata=
  jAwEIB4h4BBgWCAAgFiEE8FQeqC0xAKoa3zse4w5v3UWQH4IFAlxHBOkCGwwACgkQ4w5v3UWQH4
  LlHQEAlwUBfUU8ORC0RAS/dzlZSEm7+ImY12Wv8QGUCx5zPbUA/3YH84ZOAQDbmV/C+R//0WVNb
  Gfav9X5KYmiratYR7oL
-Content-Type: text/plain
 
 Hi Bob and Carol,
 

@@ -32,7 +32,6 @@ public:
     explicit AutocryptHeadersJob(QObject *parent = nullptr);
     ~AutocryptHeadersJob() override;
 
-    void setContent(KMime::Content *content);
     void setSkeletonMessage(KMime::Message *skeletonMessage);
 
     void setGnupgHome(const QString &path);

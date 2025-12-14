@@ -61,6 +61,8 @@ void AutocryptHeadersJobTest::testAutocryptHeader()
     KMime::Content content;
     content.contentType(true)->from7BitString("text/plain");
     content.setBody("This is an example e-mail with Autocrypt header and Ed25519+Cv25519 key (key\nfingerprint: ) as defined in Level 1 revision 1.1.\n");
+    content.assemble();
+    const auto encodedContent = content.encodedContent();
 
     auto job = QGpgME::openpgp()->keyListJob(false);
     std::vector<GpgME::Key> ownKeys;
@@ -70,20 +72,22 @@ void AutocryptHeadersJobTest::testAutocryptHeader()
 
     QVERIFY(aJob);
 
-    aJob->setContent(&content);
+    auto tJob = new TransparentJob;
+    tJob->setContent(&content);
+
     aJob->setSkeletonMessage(&skeletonMessage);
     aJob->setSenderKey(ownKeys[0]);
     aJob->setPreferEncrypted(true);
+    QVERIFY(aJob->appendSubjob(tJob));
     VERIFYEXEC(aJob);
 
     skeletonMessage.assemble();
-    content.assemble();
 
     auto referenceFile = u"autcryptheader.mbox"_s;
     QFile f(referenceFile);
     QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
     f.write(skeletonMessage.head());
-    f.write(content.encodedContent());
+    f.write(encodedContent);
     f.close();
 
     Test::compareFile(referenceFile, QStringLiteral(MAIL_DATA_DIR "/") + referenceFile);
@@ -103,6 +107,8 @@ void AutocryptHeadersJobTest::testContentChained()
     KMime::Content content;
     content.contentType(true)->from7BitString("text/plain");
     content.setBody("This is an example e-mail with Autocrypt header and Ed25519+Cv25519 key (key\nfingerprint: ) as defined in Level 1 revision 1.1.\n");
+    content.assemble();
+    const auto encodedContent = content.encodedContent();
 
     auto job = QGpgME::openpgp()->keyListJob(false);
     std::vector<GpgME::Key> ownKeys;
@@ -121,13 +127,12 @@ void AutocryptHeadersJobTest::testContentChained()
     VERIFYEXEC(aJob);
 
     skeletonMessage.assemble();
-    content.assemble();
 
     auto referenceFile = u"autcryptheader.mbox"_s;
     QFile f(referenceFile);
     QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
     f.write(skeletonMessage.head());
-    f.write(content.encodedContent());
+    f.write(encodedContent);
     f.close();
 
     Test::compareFile(referenceFile, QStringLiteral(MAIL_DATA_DIR "/") + referenceFile);
@@ -148,6 +153,7 @@ void AutocryptHeadersJobTest::testAutocryptGossipHeader()
         "\n"
         "I hope you are both doing well!  You can now both \"reply all\" here,\n"
         "and the thread will remain encrypted.\n");
+    content.contentType(true)->from7BitString("text/plain");
 
     auto job = QGpgME::openpgp()->keyListJob(false);
     std::vector<GpgME::Key> ownKeys;
@@ -159,18 +165,19 @@ void AutocryptHeadersJobTest::testAutocryptGossipHeader()
 
     QVERIFY(aJob);
 
-    aJob->setContent(&content);
+    auto tJob = new TransparentJob;
+    tJob->setContent(&content);
+
     aJob->setSkeletonMessage(&skeletonMessage);
     aJob->setSenderKey(ownKeys[0]);
     aJob->setPreferEncrypted(true);
     aJob->setGossipKeys(keys);
+    QVERIFY(aJob->appendSubjob(tJob));
     VERIFYEXEC(aJob);
 
-    content.contentType(true)->from7BitString("text/plain");
-    content.assemble();
-
     auto referenceFile = u"autocryptgossipheader.mbox"_s;
-    Test::compareFile(&content, QStringLiteral(MAIL_DATA_DIR "/") + referenceFile);
+    aJob->content()->assemble();
+    Test::compareFile(aJob->content(), QStringLiteral(MAIL_DATA_DIR "/") + referenceFile);
 }
 
 void AutocryptHeadersJobTest::testSetGnupgHome()
@@ -188,6 +195,7 @@ void AutocryptHeadersJobTest::testSetGnupgHome()
         "\n"
         "I hope you are both doing well!  You can now both \"reply all\" here,\n"
         "and the thread will remain encrypted.\n");
+    content.contentType(true)->from7BitString("text/plain");
 
     auto exportJob = QGpgME::openpgp()->keyListJob(false);
     std::vector<GpgME::Key> ownKeys;
@@ -197,15 +205,28 @@ void AutocryptHeadersJobTest::testSetGnupgHome()
 
     QTemporaryDir dir;
     { // test with an empty gnupg Home
+        KMime::Content content;
+        content.setBody(
+            "Hi Bob and Carol,\n"
+            "\n"
+            "I wanted to introduce the two of you to each other.\n"
+            "\n"
+            "I hope you are both doing well!  You can now both \"reply all\" here,\n"
+            "and the thread will remain encrypted.\n");
+        content.contentType(true)->from7BitString("text/plain");
+
         auto aJob = new AutocryptHeadersJob(&composerJob);
         QVERIFY(aJob);
 
-        aJob->setContent(&content);
+        auto tJob = new TransparentJob;
+        tJob->setContent(&content);
+
         aJob->setSkeletonMessage(&skeletonMessage);
         aJob->setSenderKey(ownKeys[0]);
         aJob->setPreferEncrypted(true);
         aJob->setGossipKeys(keys);
         aJob->setGnupgHome(dir.path());
+        QVERIFY(aJob->appendSubjob(tJob));
         QCOMPARE(aJob->exec(), false);
     }
 
@@ -217,20 +238,20 @@ void AutocryptHeadersJobTest::testSetGnupgHome()
     auto aJob = new AutocryptHeadersJob(&composerJob);
     QVERIFY(aJob);
 
-    aJob->setContent(&content);
+    auto tJob = new TransparentJob;
+    tJob->setContent(&content);
+
     aJob->setSkeletonMessage(&skeletonMessage);
     aJob->setSenderKey(ownKeys[0]);
     aJob->setPreferEncrypted(true);
     aJob->setGossipKeys(keys);
     aJob->setGnupgHome(dir.path());
-
+    QVERIFY(aJob->appendSubjob(tJob));
     VERIFYEXEC(aJob);
 
-    content.contentType(true)->from7BitString("text/plain");
-    content.assemble();
-
     auto referenceFile = u"autocryptgossipheader.mbox"_s;
-    Test::compareFile(&content, QStringLiteral(MAIL_DATA_DIR "/") + referenceFile);
+    aJob->content()->assemble();
+    Test::compareFile(aJob->content(), QStringLiteral(MAIL_DATA_DIR "/") + referenceFile);
 }
 
 void AutocryptHeadersJobTest::testStripSenderKey()
@@ -248,6 +269,7 @@ void AutocryptHeadersJobTest::testStripSenderKey()
         "\n"
         "I hope you are both doing well!  You can now both \"reply all\" here,\n"
         "and the thread will remain encrypted.\n");
+    content.contentType(true)->from7BitString("text/plain");
 
     auto job = QGpgME::openpgp()->keyListJob(false);
     std::vector<GpgME::Key> ownKeys;
@@ -260,18 +282,19 @@ void AutocryptHeadersJobTest::testStripSenderKey()
 
     QVERIFY(aJob);
 
-    aJob->setContent(&content);
+    auto tJob = new TransparentJob;
+    tJob->setContent(&content);
+
     aJob->setSkeletonMessage(&skeletonMessage);
     aJob->setSenderKey(ownKeys[0]);
     aJob->setPreferEncrypted(true);
     aJob->setGossipKeys(keys);
+    QVERIFY(aJob->appendSubjob(tJob));
     VERIFYEXEC(aJob);
 
-    content.contentType(true)->from7BitString("text/plain");
-    content.assemble();
-
     auto referenceFile = u"autocryptgossipheader.mbox"_s;
-    Test::compareFile(&content, QStringLiteral(MAIL_DATA_DIR "/") + referenceFile);
+    aJob->content()->assemble();
+    Test::compareFile(aJob->content(), QStringLiteral(MAIL_DATA_DIR "/") + referenceFile);
 }
 
 #include "moc_autocryptheadersjobtest.cpp"
