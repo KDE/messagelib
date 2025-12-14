@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-13 00:45+0000\n"
+"POT-Creation-Date: 2025-12-14 00:43+0000\n"
 "PO-Revision-Date: 2025-10-09 01:07+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -457,7 +457,7 @@ msgstr "클릭할 수 있는 상태가 있는 보기 좋은 스타일"
 msgid "A smart multiline and multi item theme with a clickable status column"
 msgstr "클릭할 수 있는 상태 열이 있는 보기 좋은 여러 줄 여러 항목 테마"
 
-#: core/manager.cpp:758 core/view.cpp:2260 core/view.cpp:2264
+#: core/manager.cpp:758 core/view.cpp:2272 core/view.cpp:2276
 #, kde-format
 msgid "Status"
 msgstr "상태"
@@ -844,180 +844,180 @@ msgstr "스타일된 사각형"
 msgid "Styled Joined Rectangles"
 msgstr "스타일된 연결된 사각형"
 
-#: core/view.cpp:686 core/widgets/configurefilterswidget.cpp:154
+#: core/view.cpp:698 core/widgets/configurefilterswidget.cpp:154
 #, kde-format
 msgid "No result found"
 msgstr "결과 없음"
 
-#: core/view.cpp:765
+#: core/view.cpp:777
 #, kde-format
 msgid "Adjust Column Sizes"
 msgstr "열 크기 조절"
 
-#: core/view.cpp:769
+#: core/view.cpp:781
 #, kde-format
 msgid "Show Default Columns"
 msgstr "기본 열 보기"
 
-#: core/view.cpp:774
+#: core/view.cpp:786
 #, kde-format
 msgid "Display Tooltips"
 msgstr "표시 풍선 도움말"
 
-#: core/view.cpp:2241 core/view.cpp:2245
+#: core/view.cpp:2253 core/view.cpp:2257
 #: core/widgets/searchmessagebybuttons.cpp:75
 #, kde-format
 msgid "From"
 msgstr "보낸 사람"
 
-#: core/view.cpp:2242 core/view.cpp:2246
+#: core/view.cpp:2254 core/view.cpp:2258
 #, kde-format
 msgctxt "Receiver of the email"
 msgid "To"
 msgstr "받는 사람"
 
-#: core/view.cpp:2243 core/view.cpp:2247
+#: core/view.cpp:2255 core/view.cpp:2259
 #, kde-format
 msgid "Date"
 msgstr "날짜"
 
-#: core/view.cpp:2261 core/view.cpp:2265
+#: core/view.cpp:2273 core/view.cpp:2277
 #, kde-format
 msgid "Size"
 msgstr "크기"
 
-#: core/view.cpp:2262 core/view.cpp:2266 utils/themeeditor.cpp:191
+#: core/view.cpp:2274 core/view.cpp:2278 utils/themeeditor.cpp:191
 #, kde-format
 msgid "Folder"
 msgstr "폴더"
 
-#: core/view.cpp:2272 core/view.cpp:2274
+#: core/view.cpp:2284 core/view.cpp:2286
 #, kde-format
 msgid "Preview"
 msgstr "미리 보기"
 
-#: core/view.cpp:2291
+#: core/view.cpp:2303
 #, kde-format
 msgid "<b>%1</b> reply"
 msgid_plural "<b>%1</b> replies"
 msgstr[0] "답장 <b>%1개</b>"
 
-#: core/view.cpp:2294
+#: core/view.cpp:2306
 #, kde-format
 msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
 msgstr[0] "하위 트리의 메시지 <b>%1개</b> (<b>%2개</b> 읽지 않음)"
 
-#: core/view.cpp:2331
+#: core/view.cpp:2343
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Threads started on 2008-12-21'"
 msgid "Threads started on %1"
 msgstr "스레드가 %1에 시작됨"
 
-#: core/view.cpp:2333
+#: core/view.cpp:2345
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Threads started Yesterday'"
 msgid "Threads started %1"
 msgstr "스레드가 %1 시작됨"
 
-#: core/view.cpp:2337
+#: core/view.cpp:2349
 #, kde-format
 msgid "Threads with messages dated %1"
 msgstr "%1에 받은 메시지가 있는 스레드"
 
-#: core/view.cpp:2347
+#: core/view.cpp:2359
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'"
 msgid "Messages sent on %1"
 msgstr "%1에 보낸 메시지"
 
-#: core/view.cpp:2350
+#: core/view.cpp:2362
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Messages received on 2008-12-21'"
 msgid "Messages received on %1"
 msgstr "%1에 받은 메시지"
 
-#: core/view.cpp:2354
+#: core/view.cpp:2366
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent Yesterday'"
 msgid "Messages sent %1"
 msgstr "%1 보낸 메시지"
 
-#: core/view.cpp:2356
+#: core/view.cpp:2368
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages received Yesterday'"
 msgid "Messages received %1"
 msgstr "%1 받은 메시지"
 
-#: core/view.cpp:2365
+#: core/view.cpp:2377
 #, kde-format
 msgid "Threads started within %1"
 msgstr "%1 안에 시작된 스레드"
 
-#: core/view.cpp:2368
+#: core/view.cpp:2380
 #, kde-format
 msgid "Threads containing messages with dates within %1"
 msgstr "%1 안에 받은 메시지가 들어 있는 스레드"
 
-#: core/view.cpp:2376
+#: core/view.cpp:2388
 #, kde-format
 msgid "Messages sent within %1"
 msgstr "%1 안에 보낸 메시지"
 
-#: core/view.cpp:2378
+#: core/view.cpp:2390
 #, kde-format
 msgid "Messages received within %1"
 msgstr "%1 안에 받은 메시지"
 
-#: core/view.cpp:2387
+#: core/view.cpp:2399
 #, kde-format
 msgid "Threads started by %1"
 msgstr "%1 님이 시작한 스레드"
 
-#: core/view.cpp:2390
+#: core/view.cpp:2402
 #, kde-format
 msgid "Threads with most recent message by %1"
 msgstr "%1이(가) 마지막으로 보낸 메시지가 있는 스레드"
 
-#: core/view.cpp:2399 core/view.cpp:2423
+#: core/view.cpp:2411 core/view.cpp:2435
 #, kde-format
 msgid "Messages sent to %1"
 msgstr "%1에게 보낸 메시지"
 
-#: core/view.cpp:2401
+#: core/view.cpp:2413
 #, kde-format
 msgid "Messages sent by %1"
 msgstr "%1 님이 보낸 메시지"
 
-#: core/view.cpp:2404
+#: core/view.cpp:2416
 #, kde-format
 msgid "Messages received from %1"
 msgstr "%1에게 받은 메시지"
 
-#: core/view.cpp:2412
+#: core/view.cpp:2424
 #, kde-format
 msgid "Threads directed to %1"
 msgstr "%1에게 보낸 스레드"
 
-#: core/view.cpp:2415
+#: core/view.cpp:2427
 #, kde-format
 msgid "Threads with most recent message directed to %1"
 msgstr "%1에게 마지막으로 보낸 메시지가 있는 스레드"
 
-#: core/view.cpp:2425
+#: core/view.cpp:2437
 #, kde-format
 msgid "Messages received by %1"
 msgstr "%1이(가) 받은 메시지"
 
-#: core/view.cpp:2451
+#: core/view.cpp:2463
 #, kde-format
 msgid "<b>%1</b> thread"
 msgid_plural "<b>%1</b> threads"
 msgstr[0] "스레드 <b>%1개</b>"
 
-#: core/view.cpp:2456
+#: core/view.cpp:2468
 #, kde-format
 msgid "<b>%1</b> message (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
@@ -1638,83 +1638,83 @@ msgstr "현재 탭 닫기"
 msgid "Close tab"
 msgstr "탭 닫기"
 
-#: pane.cpp:180
+#: pane.cpp:187
 #, kde-format
 msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr "탭 %1 활성화"
 
-#: pane.cpp:200
+#: pane.cpp:207
 #, kde-format
 msgid "Show Quick Search Bar"
 msgstr "빠른 검색 표시줄 보기"
 
-#: pane.cpp:221
+#: pane.cpp:228
 #, kde-format
 msgid "Message List"
 msgstr "메시지 목록"
 
-#: pane.cpp:227
+#: pane.cpp:234
 #, kde-format
 msgctxt "@action"
 msgid "Create New Tab"
 msgstr "새 탭 만들기"
 
-#: pane.cpp:258
+#: pane.cpp:265
 #, kde-format
 msgctxt "@action"
 msgid "Activate Next Tab"
 msgstr "다음 탭 활성화"
 
-#: pane.cpp:268
+#: pane.cpp:275
 #, kde-format
 msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr "이전 탭 활성화"
 
-#: pane.cpp:280
+#: pane.cpp:287
 #, kde-format
 msgctxt "@action"
 msgid "Move Tab Left"
 msgstr "탭 왼쪽으로 이동"
 
-#: pane.cpp:288
+#: pane.cpp:295
 #, kde-format
 msgctxt "@action"
 msgid "Move Tab Right"
 msgstr "탭 오른쪽으로 이동"
 
-#: pane.cpp:298
+#: pane.cpp:305
 #, kde-format
 msgctxt "@action"
 msgid "Close Tab"
 msgstr "탭 닫기"
 
-#: pane.cpp:516 pane.cpp:813
+#: pane.cpp:526 pane.cpp:824
 #, kde-format
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
 msgstr "비어 있음"
 
-#: pane.cpp:705
+#: pane.cpp:716
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "탭 닫기"
 
-#: pane.cpp:709
+#: pane.cpp:720
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "모든 다른 탭 닫기"
 
-#: pane.cpp:714
+#: pane.cpp:725
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unlock Tab"
 msgstr "탭 잠금 해제"
 
-#: pane.cpp:714
+#: pane.cpp:725
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Lock Tab"
@@ -2220,53 +2220,53 @@ msgid "%v pixel"
 msgid_plural "%v pixels"
 msgstr[0] "%v픽셀"
 
-#: widget.cpp:214
+#: widget.cpp:212
 #, kde-format
 msgctxt "Item in list of Akonadi tags, to show all e-mails"
 msgid "All"
 msgstr "모두"
 
-#: widget.cpp:335
+#: widget.cpp:349
 #, kde-format
 msgid "Collapse Group"
 msgstr "그룹 접기"
 
-#: widget.cpp:338
+#: widget.cpp:352
 #, kde-format
 msgid "Expand Group"
 msgstr "그룹 펴기"
 
-#: widget.cpp:344
+#: widget.cpp:358
 #, kde-format
 msgid "Expand All Groups"
 msgstr "모든 그룹 펴기"
 
-#: widget.cpp:347
+#: widget.cpp:361
 #, kde-format
 msgid "Collapse All Groups"
 msgstr "모든 그룹 접기"
 
-#: widget.cpp:351
+#: widget.cpp:365
 #, kde-format
 msgid "Expand All Threads"
 msgstr "모든 스레드 펴기"
 
-#: widget.cpp:353
+#: widget.cpp:367
 #, kde-format
 msgid "Collapse All Threads"
 msgstr "모든 스레드 접기"
 
-#: widget.cpp:412
+#: widget.cpp:426
 #, kde-format
 msgid "&Move Here"
 msgstr "여기로 이동(&M)"
 
-#: widget.cpp:413
+#: widget.cpp:427
 #, kde-format
 msgid "&Copy Here"
 msgstr "여기에 복사(&C)"
 
-#: widget.cpp:415
+#: widget.cpp:429
 #, kde-format
 msgid "C&ancel"
 msgstr "취소(&A)"

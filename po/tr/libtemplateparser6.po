@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-01 00:44+0000\n"
+"POT-Creation-Date: 2025-12-14 00:43+0000\n"
 "PO-Revision-Date: 2025-01-19 13:54+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -289,13 +289,13 @@ msgctxt "@item:intext email CC"
 msgid "CC:"
 msgstr "Kopya:"
 
-#: templateparserjob.cpp:1147
+#: templateparserjob.cpp:1146
 #, kde-format
 msgctxt "@item:intext"
 msgid "Attachment %1"
 msgstr "Ek %1"
 
-#: templateparserjob.cpp:1354
+#: templateparserjob.cpp:1353
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Pipe command <command>%1</command> failed."

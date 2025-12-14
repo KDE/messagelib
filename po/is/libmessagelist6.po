@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-13 00:45+0000\n"
+"POT-Creation-Date: 2025-12-14 00:43+0000\n"
 "PO-Revision-Date: 2009-06-13 16:16+0000\n"
 "Last-Translator: Sveinn í Felli <sveinki@nett.is>\n"
 "Language-Team: icelandic <kde-isl@molar.is>\n"
@@ -509,7 +509,7 @@ msgstr ""
 msgid "A smart multiline and multi item theme with a clickable status column"
 msgstr ""
 
-#: core/manager.cpp:758 core/view.cpp:2260 core/view.cpp:2264
+#: core/manager.cpp:758 core/view.cpp:2272 core/view.cpp:2276
 #, kde-format
 msgid "Status"
 msgstr "Staða"
@@ -960,64 +960,64 @@ msgstr ""
 msgid "Styled Joined Rectangles"
 msgstr ""
 
-#: core/view.cpp:686 core/widgets/configurefilterswidget.cpp:154
+#: core/view.cpp:698 core/widgets/configurefilterswidget.cpp:154
 #, fuzzy, kde-format
 #| msgid "No signature found"
 msgid "No result found"
 msgstr "Enginn undirritun fannst"
 
-#: core/view.cpp:765
+#: core/view.cpp:777
 #, kde-format
 msgid "Adjust Column Sizes"
 msgstr ""
 
-#: core/view.cpp:769
+#: core/view.cpp:781
 #, fuzzy, kde-format
 #| msgid "Show alway&s"
 msgid "Show Default Columns"
 msgstr "Sýna allta&f"
 
-#: core/view.cpp:774
+#: core/view.cpp:786
 #, fuzzy, kde-format
 msgid "Display Tooltips"
 msgstr "&Til"
 
-#: core/view.cpp:2241 core/view.cpp:2245
+#: core/view.cpp:2253 core/view.cpp:2257
 #: core/widgets/searchmessagebybuttons.cpp:75
 #, fuzzy, kde-format
 #| msgid "&From"
 msgid "From"
 msgstr "&Frá"
 
-#: core/view.cpp:2242 core/view.cpp:2246
+#: core/view.cpp:2254 core/view.cpp:2258
 #, fuzzy, kde-format
 #| msgid "To"
 msgctxt "Receiver of the email"
 msgid "To"
 msgstr "Til"
 
-#: core/view.cpp:2243 core/view.cpp:2247
+#: core/view.cpp:2255 core/view.cpp:2259
 #, kde-format
 msgid "Date"
 msgstr "Dagsetning"
 
-#: core/view.cpp:2261 core/view.cpp:2265
+#: core/view.cpp:2273 core/view.cpp:2277
 #, kde-format
 msgid "Size"
 msgstr "Stærð"
 
-#: core/view.cpp:2262 core/view.cpp:2266 utils/themeeditor.cpp:191
+#: core/view.cpp:2274 core/view.cpp:2278 utils/themeeditor.cpp:191
 #, kde-format
 msgid "Folder"
 msgstr "Mappa"
 
-#: core/view.cpp:2272 core/view.cpp:2274
+#: core/view.cpp:2284 core/view.cpp:2286
 #, fuzzy, kde-format
 #| msgid "&Previous Card"
 msgid "Preview"
 msgstr "&Fyrra kort"
 
-#: core/view.cpp:2291
+#: core/view.cpp:2303
 #, fuzzy, kde-format
 #| msgid "<b>Bad</b> signature"
 msgid "<b>%1</b> reply"
@@ -1025,14 +1025,14 @@ msgid_plural "<b>%1</b> replies"
 msgstr[0] "<b>Ógild</b> undirritun"
 msgstr[1] "<b>Ógild</b> undirritun"
 
-#: core/view.cpp:2294
+#: core/view.cpp:2306
 #, kde-format
 msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/view.cpp:2331
+#: core/view.cpp:2343
 #, fuzzy, kde-format
 #| msgid "Threads default to o&pen"
 msgctxt ""
@@ -1040,27 +1040,27 @@ msgctxt ""
 msgid "Threads started on %1"
 msgstr "Þræðir sjálfgefið o&pnir"
 
-#: core/view.cpp:2333
+#: core/view.cpp:2345
 #, fuzzy, kde-format
 #| msgid "Threads default to o&pen"
 msgctxt "@info:tooltip Formats to something like 'Threads started Yesterday'"
 msgid "Threads started %1"
 msgstr "Þræðir sjálfgefið o&pnir"
 
-#: core/view.cpp:2337
+#: core/view.cpp:2349
 #, fuzzy, kde-format
 #| msgid "&Threaded message list"
 msgid "Threads with messages dated %1"
 msgstr "Þræddur bréfalis&ti"
 
-#: core/view.cpp:2347
+#: core/view.cpp:2359
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgctxt "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'"
 msgid "Messages sent on %1"
 msgstr "Bréf var undirritað af %1."
 
-#: core/view.cpp:2350
+#: core/view.cpp:2362
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgctxt ""
@@ -1068,92 +1068,92 @@ msgctxt ""
 msgid "Messages received on %1"
 msgstr "Bréf var undirritað af %1."
 
-#: core/view.cpp:2354
+#: core/view.cpp:2366
 #, fuzzy, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent Yesterday'"
 msgid "Messages sent %1"
 msgstr "Bréfalisti"
 
-#: core/view.cpp:2356
+#: core/view.cpp:2368
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgctxt "@info:tooltip Formats to something like 'Messages received Yesterday'"
 msgid "Messages received %1"
 msgstr "Bréf var undirritað af %1."
 
-#: core/view.cpp:2365
+#: core/view.cpp:2377
 #, fuzzy, kde-format
 #| msgid "Threads default to o&pen"
 msgid "Threads started within %1"
 msgstr "Þræðir sjálfgefið o&pnir"
 
-#: core/view.cpp:2368
+#: core/view.cpp:2380
 #, fuzzy, kde-format
 #| msgid "&Threaded message list"
 msgid "Threads containing messages with dates within %1"
 msgstr "Þræddur bréfalis&ti"
 
-#: core/view.cpp:2376
+#: core/view.cpp:2388
 #, fuzzy, kde-format
 #| msgid "Message was signed with key %1."
 msgid "Messages sent within %1"
 msgstr "Bréf var undirritað með lykli %1."
 
-#: core/view.cpp:2378
+#: core/view.cpp:2390
 #, fuzzy, kde-format
 #| msgid "Message was signed with key %1."
 msgid "Messages received within %1"
 msgstr "Bréf var undirritað með lykli %1."
 
-#: core/view.cpp:2387
+#: core/view.cpp:2399
 #, fuzzy, kde-format
 #| msgid "Threads default to o&pen"
 msgid "Threads started by %1"
 msgstr "Þræðir sjálfgefið o&pnir"
 
-#: core/view.cpp:2390
+#: core/view.cpp:2402
 #, fuzzy, kde-format
 #| msgid "&Threaded message list"
 msgid "Threads with most recent message by %1"
 msgstr "Þræddur bréfalis&ti"
 
-#: core/view.cpp:2399 core/view.cpp:2423
+#: core/view.cpp:2411 core/view.cpp:2435
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Messages sent to %1"
 msgstr "Bréf var undirritað af %1."
 
-#: core/view.cpp:2401
+#: core/view.cpp:2413
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Messages sent by %1"
 msgstr "Bréf var undirritað af %1."
 
-#: core/view.cpp:2404
+#: core/view.cpp:2416
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Messages received from %1"
 msgstr "Bréf var undirritað af %1."
 
-#: core/view.cpp:2412
+#: core/view.cpp:2424
 #, fuzzy, kde-format
 #| msgid "Threads default to o&pen"
 msgid "Threads directed to %1"
 msgstr "Þræðir sjálfgefið o&pnir"
 
-#: core/view.cpp:2415
+#: core/view.cpp:2427
 #, fuzzy, kde-format
 #| msgid "&Threaded message list"
 msgid "Threads with most recent message directed to %1"
 msgstr "Þræddur bréfalis&ti"
 
-#: core/view.cpp:2425
+#: core/view.cpp:2437
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Messages received by %1"
 msgstr "Bréf var undirritað af %1."
 
-#: core/view.cpp:2451
+#: core/view.cpp:2463
 #, fuzzy, kde-format
 #| msgid "<b>Bad</b> signature"
 msgid "<b>%1</b> thread"
@@ -1161,7 +1161,7 @@ msgid_plural "<b>%1</b> threads"
 msgstr[0] "<b>Ógild</b> undirritun"
 msgstr[1] "<b>Ógild</b> undirritun"
 
-#: core/view.cpp:2456
+#: core/view.cpp:2468
 #, kde-format
 msgid "<b>%1</b> message (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
@@ -1877,73 +1877,73 @@ msgstr "Fella saman valinn þráð"
 msgid "Close tab"
 msgstr "Loka flipa"
 
-#: pane.cpp:180
+#: pane.cpp:187
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr "Virkja næsta flipa"
 
-#: pane.cpp:200
+#: pane.cpp:207
 #, fuzzy, kde-format
 #| msgid "Show Quick Search"
 msgid "Show Quick Search Bar"
 msgstr "Sýna flýtileit"
 
-#: pane.cpp:221
+#: pane.cpp:228
 #, kde-format
 msgid "Message List"
 msgstr "Bréfalisti"
 
-#: pane.cpp:227
+#: pane.cpp:234
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Create New Tab"
 msgstr "Opna nýjan flipa"
 
-#: pane.cpp:258
+#: pane.cpp:265
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Activate Next Tab"
 msgstr "Virkja næsta flipa"
 
-#: pane.cpp:268
+#: pane.cpp:275
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr "Virkja fyrri flipa"
 
-#: pane.cpp:280
+#: pane.cpp:287
 #, kde-format
 msgctxt "@action"
 msgid "Move Tab Left"
 msgstr ""
 
-#: pane.cpp:288
+#: pane.cpp:295
 #, kde-format
 msgctxt "@action"
 msgid "Move Tab Right"
 msgstr ""
 
-#: pane.cpp:298
+#: pane.cpp:305
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Close Tab"
 msgstr "Loka flipa"
 
-#: pane.cpp:516 pane.cpp:813
+#: pane.cpp:526 pane.cpp:824
 #, fuzzy, kde-format
 #| msgid "Empty"
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
 msgstr "Tómt"
 
-#: pane.cpp:705
+#: pane.cpp:716
 #, fuzzy, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "Loka flipa"
 
-#: pane.cpp:709
+#: pane.cpp:720
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "C&ollapse All Threads"
@@ -1951,14 +1951,14 @@ msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "&Fella saman alla þræði"
 
-#: pane.cpp:714
+#: pane.cpp:725
 #, fuzzy, kde-format
 #| msgid "Last Search"
 msgctxt "@action:inmenu"
 msgid "Unlock Tab"
 msgstr "Síðasta leit"
 
-#: pane.cpp:714
+#: pane.cpp:725
 #, fuzzy, kde-format
 #| msgid "Last Search"
 msgctxt "@action:inmenu"
@@ -2515,7 +2515,7 @@ msgid_plural "%v pixels"
 msgstr[0] "Dílar"
 msgstr[1] "Dílar"
 
-#: widget.cpp:214
+#: widget.cpp:212
 #, fuzzy, kde-format
 #| msgctxt "Permissions"
 #| msgid "All"
@@ -2523,59 +2523,59 @@ msgctxt "Item in list of Akonadi tags, to show all e-mails"
 msgid "All"
 msgstr "Allar"
 
-#: widget.cpp:335
+#: widget.cpp:349
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "C&ollapse All Threads"
 msgid "Collapse Group"
 msgstr "&Fella saman alla þræði"
 
-#: widget.cpp:338
+#: widget.cpp:352
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "Ex&pand All Threads"
 msgid "Expand Group"
 msgstr "Opna &alla þræði"
 
-#: widget.cpp:344
+#: widget.cpp:358
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "Ex&pand All Threads"
 msgid "Expand All Groups"
 msgstr "Opna &alla þræði"
 
-#: widget.cpp:347
+#: widget.cpp:361
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "C&ollapse All Threads"
 msgid "Collapse All Groups"
 msgstr "&Fella saman alla þræði"
 
-#: widget.cpp:351
+#: widget.cpp:365
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "Ex&pand All Threads"
 msgid "Expand All Threads"
 msgstr "Opna &alla þræði"
 
-#: widget.cpp:353
+#: widget.cpp:367
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "C&ollapse All Threads"
 msgid "Collapse All Threads"
 msgstr "&Fella saman alla þræði"
 
-#: widget.cpp:412
+#: widget.cpp:426
 #, kde-format
 msgid "&Move Here"
 msgstr "&Færa hingað"
 
-#: widget.cpp:413
+#: widget.cpp:427
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Afrita hingað"
 
-#: widget.cpp:415
+#: widget.cpp:429
 #, kde-format
 msgid "C&ancel"
 msgstr "&Hætta við"

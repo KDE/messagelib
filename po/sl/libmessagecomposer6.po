@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-13 00:45+0000\n"
+"POT-Creation-Date: 2025-12-14 00:43+0000\n"
 "PO-Revision-Date: 2025-09-06 07:14+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -1533,7 +1533,7 @@ msgstr ""
 "<p>Prišlo je do napake ob poskusu izvažanja ključa iz zaledja:</p><p><b>Ni "
 "mogoče najti veljavnega ključa za uporabnika %1 (%2)</b></p>"
 
-#: job/composerjob.cpp:288
+#: job/composerjob.cpp:296
 #, kde-format
 msgid "No key data for recipients found."
 msgstr "Najden ni bil noben podatek ključa za prejemnike."
@@ -2002,37 +2002,37 @@ msgid "Show Quick Text Format Bar"
 msgstr "Pokaži oblikovno vrstico hitrega besedila"
 
 #. i18n: ectx: label, entry (QuoteSelectionOnly), group (Composer)
-#: settings/messagecomposer.kcfg.in:23
+#: settings/messagecomposer.kcfg.in:15
 #, kde-format
 msgid "Only quote selected text when replying"
 msgstr "Pri odgovarjanju navajaj samo izbrano besedilo"
 
 #. i18n: ectx: label, entry (AutoTextSignature), group (Composer)
-#: settings/messagecomposer.kcfg.in:28
+#: settings/messagecomposer.kcfg.in:20
 #, kde-format
 msgid "A&utomatically insert signature"
 msgstr "Samodejno vstavi podpis"
 
 #. i18n: ectx: label, entry (PrependSignature), group (Composer)
-#: settings/messagecomposer.kcfg.in:32
+#: settings/messagecomposer.kcfg.in:24
 #, kde-format
 msgid "Insert signature above quoted text"
 msgstr "Podpis vstavi nad navedeno besedilo"
 
 #. i18n: ectx: label, entry (DashDashSignature), group (Composer)
-#: settings/messagecomposer.kcfg.in:36
+#: settings/messagecomposer.kcfg.in:28
 #, kde-format
 msgid "Prepend separator to signature"
 msgstr "Pred podpis dodaj ločilnik"
 
 #. i18n: ectx: label, entry (ShowBalooSearchInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.in:41
+#: settings/messagecomposer.kcfg.in:33
 #, kde-format
 msgid "Use addresses indexed from emails for autocompletion"
 msgstr "Za samodejno dopolnjevanje uporabi naslove najdene v e-sporočilih"
 
 #. i18n: ectx: whatsthis, entry (ShowBalooSearchInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.in:42
+#: settings/messagecomposer.kcfg.in:34
 #, kde-format
 msgid ""
 "Disable this option if you only want contacts from your addressbooks to "
@@ -2042,7 +2042,7 @@ msgstr ""
 "naslovnih poljih sestavljalnika videti le naslove iz imenikov."
 
 #. i18n: ectx: label, entry (AllowSemicolonAsAddressSeparator), group (Composer)
-#: settings/messagecomposer.kcfg.in:48
+#: settings/messagecomposer.kcfg.in:40
 #, kde-format
 msgid ""
 "Allow the semicolon character (';') to be used as separator in the message "
@@ -2050,13 +2050,13 @@ msgid ""
 msgstr "V sestavljalniku sporočila za ločilnik dovoli uporabo podpičja (';')"
 
 #. i18n: ectx: label, entry (ShowRecentAddressesInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.in:51
+#: settings/messagecomposer.kcfg.in:43
 #, kde-format
 msgid "Use recent addresses for autocompletion"
 msgstr "Za samodejno dopolnjevanje uporabi nedavne naslove"
 
 #. i18n: ectx: whatsthis, entry (ShowRecentAddressesInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.in:52
+#: settings/messagecomposer.kcfg.in:44
 #, kde-format
 msgid ""
 "Disable this option if you do not want recently used addresses to appear in "
@@ -2066,49 +2066,49 @@ msgstr ""
 "poljih sestavljalnika ne želite videti nedavno uporabljenih naslovov."
 
 #. i18n: ectx: label, entry (MaximumRecipients), group (Composer)
-#: settings/messagecomposer.kcfg.in:57
+#: settings/messagecomposer.kcfg.in:49
 #, kde-format
 msgid "Maximum number of recipient entries:"
 msgstr "Največje število vnosov prejemnikov:"
 
 #. i18n: ectx: label, entry (WordWrap), group (Composer)
-#: settings/messagecomposer.kcfg.in:62
+#: settings/messagecomposer.kcfg.in:54
 #, kde-format
 msgid "Word &wrap at column:"
 msgstr "Besedno previj vrstico pri stolpcu:"
 
 #. i18n: ectx: label, entry (ImprovePlainTextOfHtmlMessage), group (Composer)
-#: settings/messagecomposer.kcfg.in:72
+#: settings/messagecomposer.kcfg.in:64
 #, kde-format
 msgid "Improve plain text version of HTML message"
 msgstr "Izboljšaj navadno besedilo sporočila HTML"
 
 #. i18n: ectx: label, entry (CryptoAutoSign), group (Composer)
-#: settings/messagecomposer.kcfg.in:76
+#: settings/messagecomposer.kcfg.in:68
 #, kde-format
 msgid "Sign all messages, if possible"
 msgstr "Podpiši vsa sporočila, če je mogoče"
 
 #. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
-#: settings/messagecomposer.kcfg.in:80
+#: settings/messagecomposer.kcfg.in:72
 #, kde-format
 msgid "Enable encryption, if we found keys for all recipients"
 msgstr "Omogoči šifriranje, če smo našli ključe za vse prejemnike"
 
 #. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
-#: settings/messagecomposer.kcfg.in:84
+#: settings/messagecomposer.kcfg.in:76
 #, kde-format
 msgid "Warn before sending unencrypted messages"
 msgstr "Opozori pred pošiljanjem nešifriranih sporočil"
 
 #. i18n: ectx: label, entry (CryptoWarningUnsigned), group (Composer)
-#: settings/messagecomposer.kcfg.in:88
+#: settings/messagecomposer.kcfg.in:80
 #, kde-format
 msgid "Warn before sending unsigned messages"
 msgstr "Opozori pred pošiljanjem nepodpisanih sporočil"
 
 #. i18n: ectx: label, entry (CryptoWarnWhenNearExpire), group (Composer)
-#: settings/messagecomposer.kcfg.in:92
+#: settings/messagecomposer.kcfg.in:84
 #, kde-format
 msgid "Warn if certificates/keys expire soon (configure thresholds below)"
 msgstr ""
@@ -2116,7 +2116,7 @@ msgstr ""
 
 #. i18n: ectx: label, entry (CryptoWarnOwnEncrKeyNearExpiryThresholdDays), group (Composer)
 #. i18n: ectx: label, entry (CryptoWarnEncrKeyNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.in:96 settings/messagecomposer.kcfg.in:100
+#: settings/messagecomposer.kcfg.in:88 settings/messagecomposer.kcfg.in:92
 #, kde-format
 msgid ""
 "The minimum number of days that the encryption certificate should be valid "
@@ -2126,7 +2126,7 @@ msgstr ""
 "opozorilo"
 
 #. i18n: ectx: label, entry (CryptoWarnEncrChaincertNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.in:104
+#: settings/messagecomposer.kcfg.in:96
 #, kde-format
 msgid ""
 "The minimum number of days that all certificates in the chain should be "
@@ -2136,7 +2136,7 @@ msgstr ""
 "opozorilo"
 
 #. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.in:108
+#: settings/messagecomposer.kcfg.in:100
 #, kde-format
 msgid ""
 "The minimum number of days that the root certificate should be valid before "
@@ -2146,7 +2146,7 @@ msgstr ""
 "opozorilo"
 
 #. i18n: ectx: label, entry (CryptoShowKeysForApproval), group (Composer)
-#: settings/messagecomposer.kcfg.in:112
+#: settings/messagecomposer.kcfg.in:104
 #, kde-format
 msgid ""
 "Always show the list of encryption keys to select the one which will be used"

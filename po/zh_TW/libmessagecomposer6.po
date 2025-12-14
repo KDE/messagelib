@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-13 00:45+0000\n"
+"POT-Creation-Date: 2025-12-14 00:43+0000\n"
 "PO-Revision-Date: 2025-09-22 03:39+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -1479,7 +1479,7 @@ msgstr ""
 "<p>從後端匯出金鑰時發生錯誤：</p><p><b>沒有找到使用者 %1 的有效金鑰 (%2)</"
 "b></p>"
 
-#: job/composerjob.cpp:288
+#: job/composerjob.cpp:296
 #, kde-format
 msgid "No key data for recipients found."
 msgstr "找不到收件者的金鑰資料。"
@@ -1909,37 +1909,37 @@ msgid "Show Quick Text Format Bar"
 msgstr "顯示快速文字格式變更列"
 
 #. i18n: ectx: label, entry (QuoteSelectionOnly), group (Composer)
-#: settings/messagecomposer.kcfg.in:23
+#: settings/messagecomposer.kcfg.in:15
 #, kde-format
 msgid "Only quote selected text when replying"
 msgstr "回覆時只引入選取的文字"
 
 #. i18n: ectx: label, entry (AutoTextSignature), group (Composer)
-#: settings/messagecomposer.kcfg.in:28
+#: settings/messagecomposer.kcfg.in:20
 #, kde-format
 msgid "A&utomatically insert signature"
 msgstr "自動插入簽名(&U)"
 
 #. i18n: ectx: label, entry (PrependSignature), group (Composer)
-#: settings/messagecomposer.kcfg.in:32
+#: settings/messagecomposer.kcfg.in:24
 #, kde-format
 msgid "Insert signature above quoted text"
 msgstr "將簽名插在引言文字前"
 
 #. i18n: ectx: label, entry (DashDashSignature), group (Composer)
-#: settings/messagecomposer.kcfg.in:36
+#: settings/messagecomposer.kcfg.in:28
 #, kde-format
 msgid "Prepend separator to signature"
 msgstr "在簽名前加上分隔符"
 
 #. i18n: ectx: label, entry (ShowBalooSearchInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.in:41
+#: settings/messagecomposer.kcfg.in:33
 #, kde-format
 msgid "Use addresses indexed from emails for autocompletion"
 msgstr "自動補完時使用從郵件索引而來的地址"
 
 #. i18n: ectx: whatsthis, entry (ShowBalooSearchInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.in:42
+#: settings/messagecomposer.kcfg.in:34
 #, kde-format
 msgid ""
 "Disable this option if you only want contacts from your addressbooks to "
@@ -1948,7 +1948,7 @@ msgstr ""
 "若您希望信件編輯器中的地址欄位在自動補完時只顯示您的聯絡人，請停用此選項。"
 
 #. i18n: ectx: label, entry (AllowSemicolonAsAddressSeparator), group (Composer)
-#: settings/messagecomposer.kcfg.in:48
+#: settings/messagecomposer.kcfg.in:40
 #, kde-format
 msgid ""
 "Allow the semicolon character (';') to be used as separator in the message "
@@ -1956,13 +1956,13 @@ msgid ""
 msgstr "允許分號 (;) 在信件編輯器中做為分隔符"
 
 #. i18n: ectx: label, entry (ShowRecentAddressesInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.in:51
+#: settings/messagecomposer.kcfg.in:43
 #, kde-format
 msgid "Use recent addresses for autocompletion"
 msgstr "自動補完時使用最近使用的地址"
 
 #. i18n: ectx: whatsthis, entry (ShowRecentAddressesInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.in:52
+#: settings/messagecomposer.kcfg.in:44
 #, kde-format
 msgid ""
 "Disable this option if you do not want recently used addresses to appear in "
@@ -1972,56 +1972,56 @@ msgstr ""
 "閉此選項。"
 
 #. i18n: ectx: label, entry (MaximumRecipients), group (Composer)
-#: settings/messagecomposer.kcfg.in:57
+#: settings/messagecomposer.kcfg.in:49
 #, kde-format
 msgid "Maximum number of recipient entries:"
 msgstr "最大收件者項目："
 
 #. i18n: ectx: label, entry (WordWrap), group (Composer)
-#: settings/messagecomposer.kcfg.in:62
+#: settings/messagecomposer.kcfg.in:54
 #, kde-format
 msgid "Word &wrap at column:"
 msgstr "自動換行在欄位(&W)："
 
 #. i18n: ectx: label, entry (ImprovePlainTextOfHtmlMessage), group (Composer)
-#: settings/messagecomposer.kcfg.in:72
+#: settings/messagecomposer.kcfg.in:64
 #, kde-format
 msgid "Improve plain text version of HTML message"
 msgstr "改進 HTML 信件的純文字版本的顯示"
 
 #. i18n: ectx: label, entry (CryptoAutoSign), group (Composer)
-#: settings/messagecomposer.kcfg.in:76
+#: settings/messagecomposer.kcfg.in:68
 #, kde-format
 msgid "Sign all messages, if possible"
 msgstr "可以的話簽署所有信件"
 
 #. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
-#: settings/messagecomposer.kcfg.in:80
+#: settings/messagecomposer.kcfg.in:72
 #, kde-format
 msgid "Enable encryption, if we found keys for all recipients"
 msgstr "找到所有收件者的金鑰時就啟用加密"
 
 #. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
-#: settings/messagecomposer.kcfg.in:84
+#: settings/messagecomposer.kcfg.in:76
 #, kde-format
 msgid "Warn before sending unencrypted messages"
 msgstr "送出未加密信件時提出警告"
 
 #. i18n: ectx: label, entry (CryptoWarningUnsigned), group (Composer)
-#: settings/messagecomposer.kcfg.in:88
+#: settings/messagecomposer.kcfg.in:80
 #, kde-format
 msgid "Warn before sending unsigned messages"
 msgstr "送出未簽署信件時提出警告。"
 
 #. i18n: ectx: label, entry (CryptoWarnWhenNearExpire), group (Composer)
-#: settings/messagecomposer.kcfg.in:92
+#: settings/messagecomposer.kcfg.in:84
 #, kde-format
 msgid "Warn if certificates/keys expire soon (configure thresholds below)"
 msgstr "憑證或金鑰即將到期時提出警告（於下方設定）"
 
 #. i18n: ectx: label, entry (CryptoWarnOwnEncrKeyNearExpiryThresholdDays), group (Composer)
 #. i18n: ectx: label, entry (CryptoWarnEncrKeyNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.in:96 settings/messagecomposer.kcfg.in:100
+#: settings/messagecomposer.kcfg.in:88 settings/messagecomposer.kcfg.in:92
 #, kde-format
 msgid ""
 "The minimum number of days that the encryption certificate should be valid "
@@ -2029,7 +2029,7 @@ msgid ""
 msgstr "加密憑證到期前幾天提出警告"
 
 #. i18n: ectx: label, entry (CryptoWarnEncrChaincertNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.in:104
+#: settings/messagecomposer.kcfg.in:96
 #, kde-format
 msgid ""
 "The minimum number of days that all certificates in the chain should be "
@@ -2037,7 +2037,7 @@ msgid ""
 msgstr "憑證鍊內的所有憑證到期前幾天提出警告"
 
 #. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.in:108
+#: settings/messagecomposer.kcfg.in:100
 #, kde-format
 msgid ""
 "The minimum number of days that the root certificate should be valid before "
@@ -2045,7 +2045,7 @@ msgid ""
 msgstr "根憑證到期前幾天提出警告"
 
 #. i18n: ectx: label, entry (CryptoShowKeysForApproval), group (Composer)
-#: settings/messagecomposer.kcfg.in:112
+#: settings/messagecomposer.kcfg.in:104
 #, kde-format
 msgid ""
 "Always show the list of encryption keys to select the one which will be used"

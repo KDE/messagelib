@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-13 00:45+0000\n"
+"POT-Creation-Date: 2025-12-14 00:43+0000\n"
 "PO-Revision-Date: 2024-03-27 23:34+0100\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: Asturian <alministradores@softastur.org>\n"
@@ -1399,7 +1399,7 @@ msgid ""
 "p><p><b>No valid key found for user %1 (%2)</b></p>"
 msgstr ""
 
-#: job/composerjob.cpp:288
+#: job/composerjob.cpp:296
 #, kde-format
 msgid "No key data for recipients found."
 msgstr ""
@@ -1815,37 +1815,37 @@ msgid "Show Quick Text Format Bar"
 msgstr ""
 
 #. i18n: ectx: label, entry (QuoteSelectionOnly), group (Composer)
-#: settings/messagecomposer.kcfg.in:23
+#: settings/messagecomposer.kcfg.in:15
 #, kde-format
 msgid "Only quote selected text when replying"
 msgstr ""
 
 #. i18n: ectx: label, entry (AutoTextSignature), group (Composer)
-#: settings/messagecomposer.kcfg.in:28
+#: settings/messagecomposer.kcfg.in:20
 #, kde-format
 msgid "A&utomatically insert signature"
 msgstr ""
 
 #. i18n: ectx: label, entry (PrependSignature), group (Composer)
-#: settings/messagecomposer.kcfg.in:32
+#: settings/messagecomposer.kcfg.in:24
 #, kde-format
 msgid "Insert signature above quoted text"
 msgstr ""
 
 #. i18n: ectx: label, entry (DashDashSignature), group (Composer)
-#: settings/messagecomposer.kcfg.in:36
+#: settings/messagecomposer.kcfg.in:28
 #, kde-format
 msgid "Prepend separator to signature"
 msgstr ""
 
 #. i18n: ectx: label, entry (ShowBalooSearchInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.in:41
+#: settings/messagecomposer.kcfg.in:33
 #, kde-format
 msgid "Use addresses indexed from emails for autocompletion"
 msgstr ""
 
 #. i18n: ectx: whatsthis, entry (ShowBalooSearchInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.in:42
+#: settings/messagecomposer.kcfg.in:34
 #, kde-format
 msgid ""
 "Disable this option if you only want contacts from your addressbooks to "
@@ -1853,7 +1853,7 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: label, entry (AllowSemicolonAsAddressSeparator), group (Composer)
-#: settings/messagecomposer.kcfg.in:48
+#: settings/messagecomposer.kcfg.in:40
 #, kde-format
 msgid ""
 "Allow the semicolon character (';') to be used as separator in the message "
@@ -1861,13 +1861,13 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: label, entry (ShowRecentAddressesInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.in:51
+#: settings/messagecomposer.kcfg.in:43
 #, kde-format
 msgid "Use recent addresses for autocompletion"
 msgstr ""
 
 #. i18n: ectx: whatsthis, entry (ShowRecentAddressesInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.in:52
+#: settings/messagecomposer.kcfg.in:44
 #, kde-format
 msgid ""
 "Disable this option if you do not want recently used addresses to appear in "
@@ -1875,56 +1875,56 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: label, entry (MaximumRecipients), group (Composer)
-#: settings/messagecomposer.kcfg.in:57
+#: settings/messagecomposer.kcfg.in:49
 #, kde-format
 msgid "Maximum number of recipient entries:"
 msgstr ""
 
 #. i18n: ectx: label, entry (WordWrap), group (Composer)
-#: settings/messagecomposer.kcfg.in:62
+#: settings/messagecomposer.kcfg.in:54
 #, kde-format
 msgid "Word &wrap at column:"
 msgstr ""
 
 #. i18n: ectx: label, entry (ImprovePlainTextOfHtmlMessage), group (Composer)
-#: settings/messagecomposer.kcfg.in:72
+#: settings/messagecomposer.kcfg.in:64
 #, kde-format
 msgid "Improve plain text version of HTML message"
 msgstr ""
 
 #. i18n: ectx: label, entry (CryptoAutoSign), group (Composer)
-#: settings/messagecomposer.kcfg.in:76
+#: settings/messagecomposer.kcfg.in:68
 #, kde-format
 msgid "Sign all messages, if possible"
 msgstr ""
 
 #. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
-#: settings/messagecomposer.kcfg.in:80
+#: settings/messagecomposer.kcfg.in:72
 #, kde-format
 msgid "Enable encryption, if we found keys for all recipients"
 msgstr ""
 
 #. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
-#: settings/messagecomposer.kcfg.in:84
+#: settings/messagecomposer.kcfg.in:76
 #, kde-format
 msgid "Warn before sending unencrypted messages"
 msgstr ""
 
 #. i18n: ectx: label, entry (CryptoWarningUnsigned), group (Composer)
-#: settings/messagecomposer.kcfg.in:88
+#: settings/messagecomposer.kcfg.in:80
 #, kde-format
 msgid "Warn before sending unsigned messages"
 msgstr ""
 
 #. i18n: ectx: label, entry (CryptoWarnWhenNearExpire), group (Composer)
-#: settings/messagecomposer.kcfg.in:92
+#: settings/messagecomposer.kcfg.in:84
 #, kde-format
 msgid "Warn if certificates/keys expire soon (configure thresholds below)"
 msgstr ""
 
 #. i18n: ectx: label, entry (CryptoWarnOwnEncrKeyNearExpiryThresholdDays), group (Composer)
 #. i18n: ectx: label, entry (CryptoWarnEncrKeyNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.in:96 settings/messagecomposer.kcfg.in:100
+#: settings/messagecomposer.kcfg.in:88 settings/messagecomposer.kcfg.in:92
 #, kde-format
 msgid ""
 "The minimum number of days that the encryption certificate should be valid "
@@ -1932,7 +1932,7 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: label, entry (CryptoWarnEncrChaincertNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.in:104
+#: settings/messagecomposer.kcfg.in:96
 #, kde-format
 msgid ""
 "The minimum number of days that all certificates in the chain should be "
@@ -1940,7 +1940,7 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.in:108
+#: settings/messagecomposer.kcfg.in:100
 #, kde-format
 msgid ""
 "The minimum number of days that the root certificate should be valid before "
@@ -1948,7 +1948,7 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: label, entry (CryptoShowKeysForApproval), group (Composer)
-#: settings/messagecomposer.kcfg.in:112
+#: settings/messagecomposer.kcfg.in:104
 #, kde-format
 msgid ""
 "Always show the list of encryption keys to select the one which will be used"
