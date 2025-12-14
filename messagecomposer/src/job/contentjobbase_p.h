@@ -26,7 +26,6 @@ public:
 
     KMime::Content::List subjobContents;
     KMime::Content *resultContent = nullptr;
-    KMime::Content *extraContent = nullptr;
 
     Q_DECLARE_PUBLIC(ContentJobBase)
 };
