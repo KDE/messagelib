@@ -44,7 +44,6 @@ public:
      */
     void setDataIsEncoded(bool encoded);
 
-    /// created on first call. delete them if you don't use the content
     [[nodiscard]] KMime::Headers::ContentDescription *contentDescription();
     [[nodiscard]] KMime::Headers::ContentDisposition *contentDisposition();
     [[nodiscard]] KMime::Headers::ContentID *contentID();

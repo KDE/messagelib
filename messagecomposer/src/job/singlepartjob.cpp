@@ -30,11 +30,11 @@ public:
 
     QByteArray data;
     bool dataEncoded = false;
-    KMime::Headers::ContentDescription *contentDescription = nullptr;
-    KMime::Headers::ContentDisposition *contentDisposition = nullptr;
-    KMime::Headers::ContentID *contentID = nullptr;
-    KMime::Headers::ContentTransferEncoding *contentTransferEncoding = nullptr;
-    KMime::Headers::ContentType *contentType = nullptr;
+    std::unique_ptr<KMime::Headers::ContentDescription> contentDescription;
+    std::unique_ptr<KMime::Headers::ContentDisposition> contentDisposition;
+    std::unique_ptr<KMime::Headers::ContentID> contentID;
+    std::unique_ptr<KMime::Headers::ContentTransferEncoding> contentTransferEncoding;
+    std::unique_ptr<KMime::Headers::ContentType> contentType;
 
     Q_DECLARE_PUBLIC(SinglepartJob)
 };
@@ -70,7 +70,7 @@ bool SinglepartJobPrivate::chooseCTE()
     } else {
         // No specific CTE set.  Choose the best one.
         Q_ASSERT(!allowed.isEmpty());
-        contentTransferEncoding = new KMime::Headers::ContentTransferEncoding;
+        contentTransferEncoding = std::make_unique<KMime::Headers::ContentTransferEncoding>();
         contentTransferEncoding->setEncoding(allowed.first());
     }
     qCDebug(MESSAGECOMPOSER_LOG) << "Settled on encoding" << KMime::nameForEncoding(contentTransferEncoding->encoding());
@@ -105,46 +105,61 @@ void SinglepartJob::setDataIsEncoded(bool encoded)
 KMime::Headers::ContentDescription *SinglepartJob::contentDescription()
 {
     Q_D(SinglepartJob);
-    if (!d->contentDescription) {
-        d->contentDescription = new KMime::Headers::ContentDescription;
+    if (d->resultContent) {
+        return d->resultContent->contentDescription();
     }
-    return d->contentDescription;
+    if (!d->contentDescription) {
+        d->contentDescription = std::make_unique<KMime::Headers::ContentDescription>();
+    }
+    return d->contentDescription.get();
 }
 
 KMime::Headers::ContentDisposition *SinglepartJob::contentDisposition()
 {
     Q_D(SinglepartJob);
-    if (!d->contentDisposition) {
-        d->contentDisposition = new KMime::Headers::ContentDisposition;
+    if (d->resultContent) {
+        d->resultContent->contentDisposition();
     }
-    return d->contentDisposition;
+    if (!d->contentDisposition) {
+        d->contentDisposition = std::make_unique<KMime::Headers::ContentDisposition>();
+    }
+    return d->contentDisposition.get();
 }
 
 KMime::Headers::ContentID *SinglepartJob::contentID()
 {
     Q_D(SinglepartJob);
-    if (!d->contentID) {
-        d->contentID = new KMime::Headers::ContentID;
+    if (d->resultContent) {
+        return d->resultContent->contentID();
     }
-    return d->contentID;
+    if (!d->contentID) {
+        d->contentID = std::make_unique<KMime::Headers::ContentID>();
+    }
+    return d->contentID.get();
 }
 
 KMime::Headers::ContentTransferEncoding *SinglepartJob::contentTransferEncoding()
 {
     Q_D(SinglepartJob);
-    if (!d->contentTransferEncoding) {
-        d->contentTransferEncoding = new KMime::Headers::ContentTransferEncoding;
+    if (d->resultContent) {
+        return d->resultContent->contentTransferEncoding();
     }
-    return d->contentTransferEncoding;
+    if (!d->contentTransferEncoding) {
+        d->contentTransferEncoding = std::make_unique<KMime::Headers::ContentTransferEncoding>();
+    }
+    return d->contentTransferEncoding.get();
 }
 
 KMime::Headers::ContentType *SinglepartJob::contentType()
 {
     Q_D(SinglepartJob);
-    if (!d->contentType) {
-        d->contentType = new KMime::Headers::ContentType;
+    if (d->resultContent) {
+        return d->resultContent->contentType();
     }
-    return d->contentType;
+    if (!d->contentType) {
+        d->contentType = std::make_unique<KMime::Headers::ContentType>();
+    }
+    return d->contentType.get();
 }
 
 void SinglepartJob::process()
@@ -161,20 +176,20 @@ void SinglepartJob::process()
 
     // Set headers.
     if (d->contentDescription) {
-        d->resultContent->setHeader(d->contentDescription);
+        d->resultContent->setHeader(std::move(d->contentDescription));
     }
     if (d->contentDisposition) {
-        d->resultContent->setHeader(d->contentDisposition);
+        d->resultContent->setHeader(std::move(d->contentDisposition));
     }
     if (d->contentID) {
-        d->resultContent->setHeader(d->contentID);
+        d->resultContent->setHeader(std::move(d->contentID));
     }
     Q_ASSERT(d->contentTransferEncoding); // chooseCTE() created it if it didn't exist.
     {
-        d->resultContent->setHeader(d->contentTransferEncoding);
+        d->resultContent->setHeader(std::move(d->contentTransferEncoding));
     }
     if (d->contentType) {
-        d->resultContent->setHeader(d->contentType);
+        d->resultContent->setHeader(std::move(d->contentType));
     }
 
     // Set data.
