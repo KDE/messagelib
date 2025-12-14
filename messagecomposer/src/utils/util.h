@@ -42,7 +42,7 @@ namespace Util
  * @param id The item id of the original message.
  * @param status The status (replied or forwarded) that links the message to the original message.
  */
-MESSAGECOMPOSER_EXPORT void addLinkInformation(const KMime::Message::Ptr &message, Akonadi::Item::Id item, Akonadi::MessageStatus status);
+MESSAGECOMPOSER_EXPORT void addLinkInformation(const std::shared_ptr<KMime::Message> &message, Akonadi::Item::Id item, Akonadi::MessageStatus status);
 
 /**
  * Reads the private headers of the given @p message to extract link information to its original message.
@@ -53,7 +53,7 @@ MESSAGECOMPOSER_EXPORT void addLinkInformation(const KMime::Message::Ptr &messag
  * @returns Whether the mail contains valid link information or not.
  */
 [[nodiscard]] MESSAGECOMPOSER_EXPORT bool
-getLinkInformation(const KMime::Message::Ptr &msg, QList<Akonadi::Item::Id> &id, QList<Akonadi::MessageStatus> &status);
+getLinkInformation(const std::shared_ptr<KMime::Message> &msg, QList<Akonadi::Item::Id> &id, QList<Akonadi::MessageStatus> &status);
 
 /**
  * Returns whether the item represents a valid KMime::Message that is not
@@ -69,12 +69,12 @@ getLinkInformation(const KMime::Message::Ptr &msg, QList<Akonadi::Item::Id> &id,
  * @returns A valid message pointer, or 0, is the item does not contain
  * a valid message.
  */
-[[nodiscard]] MESSAGECOMPOSER_EXPORT KMime::Message::Ptr message(const Akonadi::Item &item);
+[[nodiscard]] MESSAGECOMPOSER_EXPORT std::shared_ptr<KMime::Message> message(const Akonadi::Item &item);
 
 [[nodiscard]] MESSAGECOMPOSER_EXPORT bool hasMissingAttachments(const QStringList &attachmentKeywords, QTextDocument *doc, const QString &subj);
 
 [[nodiscard]] MESSAGECOMPOSER_EXPORT QStringList cleanEmailList(const QStringList &emails);
 [[nodiscard]] MESSAGECOMPOSER_EXPORT QStringList cleanUpEmailListAndEncoding(const QStringList &emails);
-MESSAGECOMPOSER_EXPORT void addCustomHeaders(const KMime::Message::Ptr &message, const QMap<QByteArray, QString> &customHeader);
+MESSAGECOMPOSER_EXPORT void addCustomHeaders(const std::shared_ptr<KMime::Message> &message, const QMap<QByteArray, QString> &customHeader);
 }
 }

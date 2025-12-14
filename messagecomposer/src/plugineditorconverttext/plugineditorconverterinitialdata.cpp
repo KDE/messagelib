@@ -20,12 +20,12 @@ void PluginEditorConverterInitialData::setNewMessage(bool newMessage)
     mNewMessage = newMessage;
 }
 
-KMime::Message::Ptr PluginEditorConverterInitialData::mewMsg() const
+std::shared_ptr<KMime::Message> PluginEditorConverterInitialData::mewMsg() const
 {
     return mMewMsg;
 }
 
-void PluginEditorConverterInitialData::setMewMsg(const KMime::Message::Ptr &mewMsg)
+void PluginEditorConverterInitialData::setMewMsg(const std::shared_ptr<KMime::Message> &mewMsg)
 {
     mMewMsg = mewMsg;
 }

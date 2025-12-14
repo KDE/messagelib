@@ -41,7 +41,7 @@ protected:
 
     TODO cberzan: update docu...
     */
-    [[nodiscard]] bool doSend(const KMime::Message::Ptr &msg, short sendNow) override;
+    [[nodiscard]] bool doSend(const std::shared_ptr<KMime::Message> &msg, short sendNow) override;
 
     /**
     Send queued messages, using the specified transport or the
@@ -53,7 +53,7 @@ private:
     /**
     Queue or send immediately one message using MailTransport::MessageQueueJob.
     */
-    MESSAGECOMPOSER_NO_EXPORT void sendOrQueueMessage(const KMime::Message::Ptr &msg,
+    MESSAGECOMPOSER_NO_EXPORT void sendOrQueueMessage(const std::shared_ptr<KMime::Message> &msg,
                                                       MessageComposer::MessageSender::SendMethod method = MessageComposer::MessageSender::SendDefault);
 
     MESSAGECOMPOSER_NO_EXPORT void queueJobResult(KJob *job);

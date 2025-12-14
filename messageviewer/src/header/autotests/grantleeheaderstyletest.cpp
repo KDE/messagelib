@@ -68,14 +68,14 @@ static void testHeaderFile(const HeaderStyle &style, KMime::Message *msg, const 
     }
 }
 
-static KMime::Message::Ptr readAndParseMail(const QString &mailFile)
+static std::shared_ptr<KMime::Message> readAndParseMail(const QString &mailFile)
 {
     QFile file(QStringLiteral(HEADER_DATA_DIR) + u'/' + mailFile);
     bool openFile = file.open(QIODevice::ReadOnly);
     Q_ASSERT(openFile);
     const QByteArray data = KMime::CRLFtoLF(file.readAll());
     Q_ASSERT(!data.isEmpty());
-    KMime::Message::Ptr msg(new KMime::Message);
+    std::shared_ptr<KMime::Message> msg(new KMime::Message);
     msg->setContent(data);
     msg->parse();
     return msg;
@@ -199,8 +199,8 @@ void GrantleeHeaderStyleTest::testRenderHeader()
     auto aMsg = readAndParseMail(mailFileName);
     style.setTheme(defaultTheme());
 
-    testHeaderFile(style, aMsg.data(), mailFileName);
-    aMsg.clear();
+    testHeaderFile(style, aMsg.get(), mailFileName);
+    aMsg.reset();
 }
 
 #include "moc_grantleeheaderstyletest.cpp"

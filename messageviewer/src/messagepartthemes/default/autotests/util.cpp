@@ -12,14 +12,14 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTest>
 
 using namespace MessageViewer;
-KMime::Message::Ptr Test::readAndParseMail(const QString &mailFile)
+std::shared_ptr<KMime::Message> Test::readAndParseMail(const QString &mailFile)
 {
     QFile file(QStringLiteral(MAIL_DATA_DIR) + u'/' + mailFile);
     const bool openFile = file.open(QIODevice::ReadOnly);
     Q_ASSERT(openFile);
     const QByteArray data = KMime::CRLFtoLF(file.readAll());
     Q_ASSERT(!data.isEmpty());
-    KMime::Message::Ptr msg(new KMime::Message);
+    std::shared_ptr<KMime::Message> msg(new KMime::Message);
     msg->setContent(data);
     msg->parse();
     return msg;

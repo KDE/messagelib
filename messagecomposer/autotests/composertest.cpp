@@ -37,7 +37,7 @@ void ComposerTest::testAttachments()
 
     QVERIFY(composerJob.exec());
     QCOMPARE(composerJob.resultMessages().size(), 1);
-    KMime::Message::Ptr message = composerJob.resultMessages().constFirst();
+    std::shared_ptr<KMime::Message> message = composerJob.resultMessages().constFirst();
 
     // multipart/mixed
     {
@@ -101,7 +101,7 @@ void ComposerTest::testNonAsciiHeaders()
 
     QVERIFY(composerJob.exec());
     QCOMPARE(composerJob.resultMessages().size(), 1);
-    const KMime::Message::Ptr message = composerJob.resultMessages().constFirst();
+    const std::shared_ptr<KMime::Message> message = composerJob.resultMessages().constFirst();
     message->assemble();
     message->parse();
     QCOMPARE(message->bcc(KMime::CreatePolicy::DontCreate)->displayNames().size(), 1);
@@ -126,7 +126,7 @@ void ComposerTest::testBug271192()
     composerJob.infoPart()->setTo(QStringList() << (displayName + QLatin1StringView(" <") + mailbox + QLatin1StringView(">")));
     QVERIFY(composerJob.exec());
     QCOMPARE(composerJob.resultMessages().size(), 1);
-    const KMime::Message::Ptr message = composerJob.resultMessages().constFirst();
+    const std::shared_ptr<KMime::Message> message = composerJob.resultMessages().constFirst();
     QCOMPARE(message->to()->displayNames().size(), 1);
     QCOMPARE(message->to()->displayNames().first().toUtf8(), displayName.toUtf8());
 }

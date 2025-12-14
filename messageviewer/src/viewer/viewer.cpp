@@ -96,7 +96,7 @@ void Viewer::initialize()
     connect(d_ptr, &ViewerPrivate::showPreviousMessage, this, &Viewer::showPreviousMessage);
     connect(d_ptr, &ViewerPrivate::sendResponse, this, &Viewer::sendResponse);
 
-    setMessage(KMime::Message::Ptr(), MimeTreeParser::Delayed);
+    setMessage(std::shared_ptr<KMime::Message>(), MimeTreeParser::Delayed);
     qGuiApp->installEventFilter(this);
     slotGeneralPaletteChanged();
 }
@@ -125,7 +125,7 @@ void Viewer::changeEvent(QEvent *event)
     QWidget::changeEvent(event);
 }
 
-void Viewer::setMessage(const KMime::Message::Ptr &message, MimeTreeParser::UpdateMode updateMode)
+void Viewer::setMessage(const std::shared_ptr<KMime::Message> &message, MimeTreeParser::UpdateMode updateMode)
 {
     Q_D(Viewer);
     if (message == d->message()) {
@@ -344,7 +344,7 @@ void Viewer::setDecryptMessageOverwrite(bool overwrite)
     d->setDecryptMessageOverwrite(overwrite);
 }
 
-KMime::Message::Ptr Viewer::message() const
+std::shared_ptr<KMime::Message> Viewer::message() const
 {
     Q_D(const Viewer);
     return d->mMessage;
@@ -515,7 +515,7 @@ void Viewer::setMessagePart(KMime::Content *aMsgPart)
 
 void Viewer::clear(MimeTreeParser::UpdateMode updateMode)
 {
-    setMessage(KMime::Message::Ptr(), updateMode);
+    setMessage(std::shared_ptr<KMime::Message>(), updateMode);
 }
 
 void Viewer::slotShowMessageSource()

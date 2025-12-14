@@ -47,7 +47,7 @@ Q_DECL_CONSTEXPR inline int pipeTimeout()
 
 using namespace TemplateParser;
 
-TemplateParserJobPrivate::TemplateParserJobPrivate(const KMime::Message::Ptr &amsg, const TemplateParserJob::Mode amode)
+TemplateParserJobPrivate::TemplateParserJobPrivate(const std::shared_ptr<KMime::Message> &amsg, const TemplateParserJob::Mode amode)
     : mMsg(amsg)
     , mMode(amode)
 {
@@ -70,7 +70,7 @@ void TemplateParserJobPrivate::setAllowDecryption(const bool allowDecryption)
     mEmptySource->setDecryptMessage(mAllowDecryption);
 }
 
-TemplateParserJob::TemplateParserJob(const KMime::Message::Ptr &amsg, const Mode amode, QObject *parent)
+TemplateParserJob::TemplateParserJob(const std::shared_ptr<KMime::Message> &amsg, const Mode amode, QObject *parent)
     : QObject(parent)
     , d(new TemplateParserJobPrivate(amsg, amode))
 {
@@ -137,7 +137,7 @@ int TemplateParserJob::parseQuotes(const QString &prefix, const QString &str, QS
     return len;
 }
 
-void TemplateParserJob::process(const KMime::Message::Ptr &aorig_msg, qint64 afolder)
+void TemplateParserJob::process(const std::shared_ptr<KMime::Message> &aorig_msg, qint64 afolder)
 {
     if (aorig_msg == nullptr) {
         qCDebug(TEMPLATEPARSER_LOG) << "aorig_msg == 0!";
@@ -157,7 +157,7 @@ void TemplateParserJob::process(const KMime::Message::Ptr &aorig_msg, qint64 afo
     processWithTemplate(tmpl);
 }
 
-void TemplateParserJob::process(const QString &tmplName, const KMime::Message::Ptr &aorig_msg, qint64 afolder)
+void TemplateParserJob::process(const QString &tmplName, const std::shared_ptr<KMime::Message> &aorig_msg, qint64 afolder)
 {
     d->mForceCursorPosition = false;
     d->mOrigMsg = aorig_msg;
@@ -166,7 +166,7 @@ void TemplateParserJob::process(const QString &tmplName, const KMime::Message::P
     processWithTemplate(tmpl);
 }
 
-void TemplateParserJob::processWithIdentity(uint uoid, const KMime::Message::Ptr &aorig_msg, qint64 afolder)
+void TemplateParserJob::processWithIdentity(uint uoid, const std::shared_ptr<KMime::Message> &aorig_msg, qint64 afolder)
 {
     d->mIdentity = uoid;
     process(aorig_msg, afolder);
@@ -203,7 +203,7 @@ static MimeTreeParser::MessagePart::Ptr toplevelTextNode(MimeTreeParser::Message
 
 void TemplateParserJob::processWithTemplate(const QString &tmpl)
 {
-    d->mOtp->parseObjectTree(d->mOrigMsg.data());
+    d->mOtp->parseObjectTree(d->mOrigMsg.get());
 
     const auto mp = toplevelTextNode(d->mOtp->parsedPart());
     if (!mp) {
@@ -1078,7 +1078,7 @@ QString TemplateParserJob::getHtmlSignature() const
 void TemplateParserJob::addProcessedBodyToMessage(const QString &plainBody, const QString &htmlBody) const
 {
     MessageCore::ImageCollector ic;
-    ic.collectImagesFrom(d->mOrigMsg.data());
+    ic.collectImagesFrom(d->mOrigMsg.get());
 
     // Now, delete the old content and set the new content, which
     // is either only the new text or the new text with some attachments.
@@ -1128,7 +1128,7 @@ void TemplateParserJob::addProcessedBodyToMessage(const QString &plainBody, cons
 std::unique_ptr<KMime::Content> TemplateParserJob::createMultipartMixed(const QList<KMime::Content *> &attachments,
                                                                         std::unique_ptr<KMime::Content> &&textPart) const
 {
-    auto mixedPart = std::make_unique<KMime::Content>(d->mMsg.data());
+    auto mixedPart = std::make_unique<KMime::Content>(d->mMsg.get());
     const QByteArray boundary = KMime::multiPartBoundary();
     auto contentType = mixedPart->contentType();
     contentType->setMimeType("multipart/mixed");
@@ -1154,7 +1154,7 @@ std::unique_ptr<KMime::Content> TemplateParserJob::createMultipartMixed(const QL
 std::unique_ptr<KMime::Content> TemplateParserJob::createMultipartRelated(const MessageCore::ImageCollector &ic,
                                                                           std::unique_ptr<KMime::Content> &&mainTextPart) const
 {
-    auto relatedPart = std::make_unique<KMime::Content>(d->mMsg.data());
+    auto relatedPart = std::make_unique<KMime::Content>(d->mMsg.get());
     const QByteArray boundary = KMime::multiPartBoundary();
     auto contentType = relatedPart->contentType();
     contentType->setMimeType("multipart/related");
@@ -1170,7 +1170,7 @@ std::unique_ptr<KMime::Content> TemplateParserJob::createMultipartRelated(const 
 
 std::unique_ptr<KMime::Content> TemplateParserJob::createPlainPartContent(const QString &plainBody) const
 {
-    auto textPart = std::make_unique<KMime::Content>(d->mMsg.data());
+    auto textPart = std::make_unique<KMime::Content>(d->mMsg.get());
     auto ct = textPart->contentType(KMime::CreatePolicy::Create);
     ct->setMimeType("text/plain");
     ct->setCharset(QByteArrayLiteral("UTF-8"));
@@ -1181,14 +1181,14 @@ std::unique_ptr<KMime::Content> TemplateParserJob::createPlainPartContent(const 
 
 std::unique_ptr<KMime::Content> TemplateParserJob::createMultipartAlternativeContent(const QString &plainBody, const QString &htmlBody) const
 {
-    auto multipartAlternative = std::make_unique<KMime::Content>(d->mMsg.data());
+    auto multipartAlternative = std::make_unique<KMime::Content>(d->mMsg.get());
     multipartAlternative->contentType()->setMimeType("multipart/alternative");
     const QByteArray boundary = KMime::multiPartBoundary();
     multipartAlternative->contentType(KMime::CreatePolicy::DontCreate)->setBoundary(boundary); // Already created
 
     multipartAlternative->appendContent(createPlainPartContent(plainBody));
 
-    auto htmlPart = std::unique_ptr<KMime::Content>(new KMime::Content(d->mMsg.data()));
+    auto htmlPart = std::make_unique<KMime::Content>(d->mMsg.get());
     htmlPart->contentType(KMime::CreatePolicy::Create)->setMimeType("text/html");
     htmlPart->contentType(KMime::CreatePolicy::DontCreate)->setCharset(QByteArrayLiteral("UTF-8")); // Already created
     htmlPart->contentTransferEncoding()->setEncoding(KMime::Headers::CE8Bit);
@@ -1440,7 +1440,7 @@ QString TemplateParserJob::quotedHtmlText(const QString &selection) const
     return content;
 }
 
-uint TemplateParserJob::identityUoid(const KMime::Message::Ptr &msg) const
+uint TemplateParserJob::identityUoid(const std::shared_ptr<KMime::Message> &msg) const
 {
     QString idString;
     if (auto hrd = msg->headerByType("X-KMail-Identity")) {

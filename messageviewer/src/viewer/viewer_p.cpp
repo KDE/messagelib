@@ -258,7 +258,7 @@ ViewerPrivate::~ViewerPrivate()
     mViewer = nullptr;
     mNodeHelper->forceCleanTempFiles();
     qDeleteAll(mListMailSourceViewer);
-    mMessage.clear();
+    mMessage.reset();
     delete mNodeHelper;
 }
 
@@ -292,7 +292,7 @@ void ViewerPrivate::openAttachment(KMime::Content *node, const QUrl &url)
     if (isEncapsulatedMessage) {
         // the viewer/urlhandlermanager expects that the message (mMessage) it is passed is the root when doing index calculation
         // in urls. Simply passing the result of bodyAsMessage() does not cut it as the resulting pointer is a child in its tree.
-        KMime::Message::Ptr m(new KMime::Message);
+        std::shared_ptr<KMime::Message> m(new KMime::Message);
         m->setContent(node->parent()->bodyAsMessage()->encodedContent());
         m->parse();
         attachmentViewMessage(m);
@@ -351,9 +351,9 @@ static bool confirmAttachmentDeletion(QWidget *parent)
         == KMessageBox::Continue;
 }
 
-void ViewerPrivate::updateMessageAfterDeletingAttachments(KMime::Message::Ptr &message)
+void ViewerPrivate::updateMessageAfterDeletingAttachments(std::shared_ptr<KMime::Message> &message)
 {
-    KMime::Message *modifiedMessage = mNodeHelper->messageWithExtraContent(message.data());
+    KMime::Message *modifiedMessage = mNodeHelper->messageWithExtraContent(message.get());
     mMimePartTree->mimePartModel()->setRoot(modifiedMessage);
     mMessageItem.setPayloadFromData(message->encodedContent());
     // Modifying the payload might change the remote id (e.g. for IMAP) of the item, so don't try to force on it
@@ -375,7 +375,7 @@ bool ViewerPrivate::deleteAttachment(KMime::Content *node, bool showWarning)
         return true;
     }
 
-    const QList<KMime::Content *> extraNodes = mNodeHelper->extraContents(mMessage.data());
+    const QList<KMime::Content *> extraNodes = mNodeHelper->extraContents(mMessage.get());
     if (extraNodes.contains(node->topLevel())) {
         KMessageBox::error(mMainWindow,
                            i18n("Deleting an attachment from an encrypted or old-style mailman message is not supported."),
@@ -713,7 +713,7 @@ Akonadi::Item ViewerPrivate::messageItem() const
     return mMessageItem;
 }
 
-KMime::Message::Ptr ViewerPrivate::message() const
+std::shared_ptr<KMime::Message> ViewerPrivate::message() const
 {
     return mMessage;
 }
@@ -763,7 +763,7 @@ void ViewerPrivate::displayMessage()
 {
     showHideMimeTree();
 
-    mNodeHelper->setOverrideCodec(mMessage.data(), overrideCodecName());
+    mNodeHelper->setOverrideCodec(mMessage.get(), overrideCodecName());
 
     if (mMessageItem.hasAttribute<MessageViewer::MessageDisplayFormatAttribute>()) {
         const MessageViewer::MessageDisplayFormatAttribute *const attr = mMessageItem.attribute<MessageViewer::MessageDisplayFormatAttribute>();
@@ -797,8 +797,8 @@ void ViewerPrivate::displayMessage()
         htmlWriter()->write(u"<p></p>"_s);
     }
 
-    parseContent(mMessage.data());
-    mMimePartTree->setRoot(mNodeHelper->messageWithExtraContent(mMessage.data()));
+    parseContent(mMessage.get());
+    mMimePartTree->setRoot(mNodeHelper->messageWithExtraContent(mMessage.get()));
     mColorBar->update();
 
     htmlWriter()->write(cssHelper()->endBodyHtml());
@@ -833,10 +833,10 @@ void ViewerPrivate::parseContent(KMime::Content *content)
     }
 
     auto message = dynamic_cast<KMime::Message *>(content);
-    bool onlySingleNode = mMessage.data() != content;
+    bool onlySingleNode = mMessage.get() != content;
 
     // Pass control to the OTP now, which does the real work
-    mNodeHelper->setNodeUnprocessed(mMessage.data(), true);
+    mNodeHelper->setNodeUnprocessed(mMessage.get(), true);
     MailViewerSource otpSource(this);
     MimeTreeParser::ObjectTreeParser otp(&otpSource, mNodeHelper);
 
@@ -1177,15 +1177,15 @@ void ViewerPrivate::resetStateForNewMessage()
     }
 }
 
-void ViewerPrivate::setMessageInternal(const KMime::Message::Ptr &message, MimeTreeParser::UpdateMode updateMode)
+void ViewerPrivate::setMessageInternal(const std::shared_ptr<KMime::Message> &message, MimeTreeParser::UpdateMode updateMode)
 {
     mViewerPluginToolManager->updateActions(mMessageItem);
     mMessage = message;
     if (message) {
-        mNodeHelper->setOverrideCodec(mMessage.data(), overrideCodecName());
+        mNodeHelper->setOverrideCodec(mMessage.get(), overrideCodecName());
     }
 
-    mMimePartTree->setRoot(mNodeHelper->messageWithExtraContent(message.data()));
+    mMimePartTree->setRoot(mNodeHelper->messageWithExtraContent(message.get()));
     update(updateMode);
 }
 
@@ -1213,7 +1213,7 @@ void ViewerPrivate::setMessageItem(const Akonadi::Item &item, MimeTreeParser::Up
         mMonitor.setItemMonitored(mMessageItem, true);
     }
 
-    if (!mMessageItem.hasPayload<KMime::Message::Ptr>()) {
+    if (!mMessageItem.hasPayload<std::shared_ptr<KMime::Message>>()) {
         if (mMessageItem.isValid()) {
             qCWarning(MESSAGEVIEWER_LOG) << "Payload is not a MessagePtr!";
         }
@@ -1230,7 +1230,7 @@ void ViewerPrivate::setMessageItem(const Akonadi::Item &item, MimeTreeParser::Up
         }
     }
 
-    setMessageInternal(mMessageItem.payload<KMime::Message::Ptr>(), updateMode);
+    setMessageInternal(mMessageItem.payload<std::shared_ptr<KMime::Message>>(), updateMode);
 }
 
 bool ViewerPrivate::messageIsInSpecialFolder() const
@@ -1246,7 +1246,7 @@ bool ViewerPrivate::messageIsInSpecialFolder() const
     }
 }
 
-void ViewerPrivate::setMessage(const KMime::Message::Ptr &aMsg, MimeTreeParser::UpdateMode updateMode)
+void ViewerPrivate::setMessage(const std::shared_ptr<KMime::Message> &aMsg, MimeTreeParser::UpdateMode updateMode)
 {
     resetStateForNewMessage();
 
@@ -1317,7 +1317,7 @@ void ViewerPrivate::showHideMimeTree()
     }
 }
 
-void ViewerPrivate::attachmentViewMessage(const KMime::Message::Ptr &message)
+void ViewerPrivate::attachmentViewMessage(const std::shared_ptr<KMime::Message> &message)
 {
     Q_ASSERT(message);
     Q_EMIT showMessage(message, overrideEncoding());
@@ -1726,7 +1726,7 @@ void ViewerPrivate::showContextMenu(const KMime::Content *content, const QPoint 
     }
     const bool isAttachment = ct && !ct->isMultipart();
     const bool isExtraContent = !mMessage->content(content->index());
-    const auto hasAttachments = KMime::hasAttachment(mMessage.data());
+    const auto hasAttachments = KMime::hasAttachment(mMessage.get());
 
     QMenu popup;
 
@@ -1849,12 +1849,12 @@ QString ViewerPrivate::renderAttachments(KMime::Content *node, const QColor &bgC
         const QString subHtml = renderAttachments(child, nextColor(bgColor));
         if (!subHtml.isEmpty()) {
             QString margin;
-            if (node != mMessage.data() || headerStylePlugin()->hasMargin()) {
+            if (node != mMessage.get() || headerStylePlugin()->hasMargin()) {
                 margin = u"padding:2px; margin:2px; "_s;
             }
             const QString align = headerStylePlugin()->alignment();
             const QByteArray mediaTypeLower = node->contentType()->mediaType().toLower();
-            const bool result = (mediaTypeLower == "message" || mediaTypeLower == "multipart" || node == mMessage.data());
+            const bool result = (mediaTypeLower == "message" || mediaTypeLower == "multipart" || node == mMessage.get());
             if (result) {
                 html += QStringLiteral(
                             "<div style=\"background:%1; %2"
@@ -2390,7 +2390,7 @@ void ViewerPrivate::initializeColorFromScheme()
 QString ViewerPrivate::attachmentHtml()
 {
     initializeColorFromScheme();
-    QString html = renderAttachments(mMessage.data(), mBackgroundAttachment);
+    QString html = renderAttachments(mMessage.get(), mBackgroundAttachment);
     if (!html.isEmpty()) {
         html.prepend(headerStylePlugin()->attachmentHtml());
     }
@@ -2600,11 +2600,11 @@ void ViewerPrivate::slotHandleAttachment(int choice)
     case Viewer::Save: {
         const bool isEncapsulatedMessage = mCurrentContent->parent() && mCurrentContent->parent()->bodyIsMessage();
         if (isEncapsulatedMessage) {
-            KMime::Message::Ptr message(new KMime::Message);
+            std::shared_ptr<KMime::Message> message(new KMime::Message);
             message->setContent(mCurrentContent->parent()->bodyAsMessage()->encodedContent());
             message->parse();
             Akonadi::Item item;
-            item.setPayload<KMime::Message::Ptr>(message);
+            item.setPayload<std::shared_ptr<KMime::Message>>(message);
             Akonadi::MessageFlags::copyMessageFlags(*message, item);
             item.setMimeType(KMime::Message::mimeType());
             QUrl url;
@@ -2728,7 +2728,7 @@ void ViewerPrivate::slotUrlCopy()
 
 void ViewerPrivate::slotSaveMessage()
 {
-    if (!mMessageItem.hasPayload<KMime::Message::Ptr>()) {
+    if (!mMessageItem.hasPayload<std::shared_ptr<KMime::Message>>()) {
         if (mMessageItem.isValid()) {
             qCWarning(MESSAGEVIEWER_LOG) << "Payload is not a MessagePtr!";
         }
@@ -2763,7 +2763,7 @@ bool ViewerPrivate::htmlLoadExternal() const
     }
 
     // when displaying an encrypted message, only load external resources on explicit request
-    if (mNodeHelper->overallEncryptionState(mMessage.data()) != MimeTreeParser::KMMsgNotEncrypted) {
+    if (mNodeHelper->overallEncryptionState(mMessage.get()) != MimeTreeParser::KMMsgNotEncrypted) {
         return mHtmlLoadExtOverride;
     }
 
@@ -2989,8 +2989,8 @@ void ViewerPrivate::slotMessageMayBeAScam()
                 return;
             }
         }
-        if (mMessageItem.hasPayload<KMime::Message::Ptr>()) {
-            auto message = mMessageItem.payload<KMime::Message::Ptr>();
+        if (mMessageItem.hasPayload<std::shared_ptr<KMime::Message>>()) {
+            auto message = mMessageItem.payload<std::shared_ptr<KMime::Message>>();
             const QString email = QLatin1StringView(KEmailAddress::firstEmailAddress(message->from()->as7BitString()));
             const QStringList lst = MessageViewer::MessageViewerSettings::self()->scamDetectionWhiteList();
             if (lst.contains(email)) {
@@ -3031,8 +3031,8 @@ void ViewerPrivate::saveMainFrameScreenshotInFile(const QString &filename)
 void ViewerPrivate::slotAddToWhiteList()
 {
     if (mMessageItem.isValid()) {
-        if (mMessageItem.hasPayload<KMime::Message::Ptr>()) {
-            auto message = mMessageItem.payload<KMime::Message::Ptr>();
+        if (mMessageItem.hasPayload<std::shared_ptr<KMime::Message>>()) {
+            auto message = mMessageItem.payload<std::shared_ptr<KMime::Message>>();
             const QString email = QLatin1StringView(KEmailAddress::firstEmailAddress(message->from()->as7BitString()));
             QStringList lst = MessageViewer::MessageViewerSettings::self()->scamDetectionWhiteList();
             if (lst.contains(email)) {

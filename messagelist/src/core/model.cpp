@@ -3053,7 +3053,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1
     }
 
     while (curIndex <= endIndex) {
-        // Get the underlying storage message data...
+        // Get the underlying storage message.get...
         auto dyingMessage = dynamic_cast<MessageItem *>(invalidatedMessages->at(curIndex));
         // This MUST NOT be null (otherwise we have a bug somewhere in this file).
         Q_ASSERT(dyingMessage);
@@ -3283,7 +3283,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1
     int endIndex = job->endIndex();
 
     while (curIndex <= endIndex) {
-        // Get the underlying storage message data...
+        // Get the underlying storage message.get...
         auto message = dynamic_cast<MessageItem *>(messagesThatNeedUpdate->at(curIndex));
         // This MUST NOT be null (otherwise we have a bug somewhere in this file).
         Q_ASSERT(message);
@@ -3345,7 +3345,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1
         }
 
         if (propertyChangeMask) {
-            // Some message data has changed
+            // Some message.get has changed
             // now we need to handle the changes that might cause re-grouping/re-sorting
             // and propagate them to the parents.
 
@@ -3364,7 +3364,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1
                     propagateItemPropertiesToParent(message);
                 }
             } // else there is no parent so the item isn't attached to the view: re-grouping/re-sorting not needed.
-        } // else message data didn't change an there is nothing interesting to do
+        } // else message.get didn't change an there is nothing interesting to do
 
         // (re-)apply the filter, if needed
         if (mFilter && message->isViewable()) {

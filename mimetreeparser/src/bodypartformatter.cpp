@@ -118,7 +118,7 @@ const MimeTreeParser::Interface::BodyPartFormatter *MessageRfc822BodyPartFormatt
 
 MessagePart::Ptr MessageRfc822BodyPartFormatter::process(Interface::BodyPart &part) const
 {
-    const KMime::Message::Ptr message = part.content()->bodyAsMessage();
+    const std::shared_ptr<KMime::Message> message = part.content()->bodyAsMessage();
     return MessagePart::Ptr(new EncapsulatedRfc822MessagePart(part.objectTreeParser(), part.content(), message));
 }
 } // anon namespace

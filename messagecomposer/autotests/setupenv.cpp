@@ -74,20 +74,20 @@ std::vector<GpgME::Key, std::allocator<GpgME::Key>> Test::getKeys(bool smime)
     return keys;
 }
 
-KMime::Message::Ptr Test::loadMessage(const QString &filename)
+std::shared_ptr<KMime::Message> Test::loadMessage(const QString &filename)
 {
     QFile mailFile(filename);
     Q_ASSERT(mailFile.open(QIODevice::ReadOnly));
     const QByteArray mailData = KMime::CRLFtoLF(mailFile.readAll());
     Q_ASSERT(!mailData.isEmpty());
 
-    KMime::Message::Ptr origMsg(new KMime::Message);
+    std::shared_ptr<KMime::Message> origMsg(new KMime::Message);
     origMsg->setContent(mailData);
     origMsg->parse();
     return origMsg;
 }
 
-KMime::Message::Ptr Test::loadMessageFromDataDir(const QString &filename)
+std::shared_ptr<KMime::Message> Test::loadMessageFromDataDir(const QString &filename)
 {
     return loadMessage(QLatin1StringView(QByteArray(MAIL_DATA_DIR "/" + filename.toLatin1())));
 }

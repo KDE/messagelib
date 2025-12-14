@@ -98,9 +98,9 @@ public:
      * Set the message to be opened in the composer window, and set the internal data structures to
      *  keep track of it.
      */
-    void setMessage(const KMime::Message::Ptr &newMsg, bool allowDecryption);
+    void setMessage(const std::shared_ptr<KMime::Message> &newMsg, bool allowDecryption);
 
-    void updateTemplate(const KMime::Message::Ptr &msg);
+    void updateTemplate(const std::shared_ptr<KMime::Message> &msg);
 
     /**
      * Send the message with the specified method, saving it in the specified folder.
@@ -232,7 +232,7 @@ public:
     [[nodiscard]] Akonadi::Collection followUpCollection() const;
     void setFollowUpCollection(const Akonadi::Collection &followUpCollection);
 
-    [[nodiscard]] KMime::Message::Ptr msg() const;
+    [[nodiscard]] std::shared_ptr<KMime::Message> msg() const;
 
     [[nodiscard]] bool requestDeleveryConfirmation() const;
     void setRequestDeleveryConfirmation(bool requestDeleveryConfirmation);
@@ -303,9 +303,9 @@ private:
     [[nodiscard]] QList<MessageComposer::ComposerJob *> generateCryptoMessages(bool &wasCanceled);
     void fillGlobalPart(MessageComposer::GlobalPart *globalPart);
     void fillInfoPart(MessageComposer::InfoPart *part, RecipientExpansion expansion);
-    void queueMessage(const KMime::Message::Ptr &message, MessageComposer::ComposerJob *composer);
-    void saveMessage(const KMime::Message::Ptr &message, MessageComposer::MessageSender::SaveIn saveIn);
-    void saveRecentAddresses(const KMime::Message::Ptr &ptr);
+    void queueMessage(const std::shared_ptr<KMime::Message> &message, MessageComposer::ComposerJob *composer);
+    void saveMessage(const std::shared_ptr<KMime::Message> &message, MessageComposer::MessageSender::SaveIn saveIn);
+    void saveRecentAddresses(const std::shared_ptr<KMime::Message> &ptr);
     void
     updateRecipients(const KIdentityManagementCore::Identity &ident, const KIdentityManagementCore::Identity &oldIdent, MessageComposer::Recipient::Type type);
 
@@ -319,7 +319,7 @@ private:
      * Also appends the msgNum to the filename as a message can have a number of
      * KMime::Messages
      */
-    void writeAutoSaveToDisk(const KMime::Message::Ptr &message);
+    void writeAutoSaveToDisk(const std::shared_ptr<KMime::Message> &message);
 
     /**
      * Returns the autosave interval in milliseconds (as needed for QTimer).
@@ -339,7 +339,7 @@ private:
 
     void setAkonadiLookupEnabled(bool akonadiLookupEnabled);
 
-    KMime::Message::Ptr m_msg;
+    std::shared_ptr<KMime::Message> m_msg;
     MessageComposer::AttachmentControllerBase *m_attachmentController = nullptr;
     MessageComposer::AttachmentModel *m_attachmentModel = nullptr;
     MessageComposer::SignatureController *m_signatureController = nullptr;

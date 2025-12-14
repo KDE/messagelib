@@ -30,7 +30,7 @@ bool MDNWarningWidgetJob::start()
     KMime::MDN::SendingMode s = KMime::MDN::SentAutomatically; // set to manual if asked user
     bool result = false;
     if (canStart()) {
-        KMime::Message::Ptr msg = MessageComposer::Util::message(mItem);
+        std::shared_ptr<KMime::Message> msg = MessageComposer::Util::message(mItem);
         int mode = MessageViewer::MessageViewerSettings::self()->defaultPolicy();
         if (!mode || (mode < 0) || (mode > 3)) {
             // Nothing

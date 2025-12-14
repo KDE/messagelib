@@ -19,7 +19,7 @@ using namespace MessageCore;
 
 namespace MessageHelper
 {
-void initHeader(const KMime::Message::Ptr &message, const KIdentityManagementCore::IdentityManager *identMan, uint id)
+void initHeader(const std::shared_ptr<KMime::Message> &message, const KIdentityManagementCore::IdentityManager *identMan, uint id)
 {
     applyIdentity(message, identMan, id);
     message->removeHeader<KMime::Headers::To>();
@@ -30,8 +30,8 @@ void initHeader(const KMime::Message::Ptr &message, const KIdentityManagementCor
     message->contentType()->setMimeType("text/plain");
 }
 
-void initFromMessage(const KMime::Message::Ptr &msg,
-                     const KMime::Message::Ptr &origMsg,
+void initFromMessage(const std::shared_ptr<KMime::Message> &msg,
+                     const std::shared_ptr<KMime::Message> &origMsg,
                      KIdentityManagementCore::IdentityManager *identMan,
                      uint id,
                      bool idHeaders)
@@ -52,7 +52,7 @@ void initFromMessage(const KMime::Message::Ptr &msg,
     }
 }
 
-void applyIdentity(const KMime::Message::Ptr &message, const KIdentityManagementCore::IdentityManager *identMan, uint id)
+void applyIdentity(const std::shared_ptr<KMime::Message> &message, const KIdentityManagementCore::IdentityManager *identMan, uint id)
 {
     const KIdentityManagementCore::Identity &ident = identMan->identityForUoidOrDefault(id);
 
@@ -127,7 +127,7 @@ void applyIdentity(const KMime::Message::Ptr &message, const KIdentityManagement
     }
 }
 
-KMime::Types::AddrSpecList extractAddrSpecs(const QSharedPointer<const KMime::Message> &msg, const QByteArray &header)
+KMime::Types::AddrSpecList extractAddrSpecs(const std::shared_ptr<const KMime::Message> &msg, const QByteArray &header)
 {
     KMime::Types::AddrSpecList result;
     if (auto hrd = msg->headerByType(header.constData())) {
@@ -145,7 +145,7 @@ KMime::Types::AddrSpecList extractAddrSpecs(const QSharedPointer<const KMime::Me
     return result;
 }
 
-void setAutomaticFields(const KMime::Message::Ptr &msg, bool aIsMulti)
+void setAutomaticFields(const std::shared_ptr<KMime::Message> &msg, bool aIsMulti)
 {
     auto header = msg->header<KMime::Headers::MIMEVersion>(true);
     header->from7BitString("1.0");

@@ -83,9 +83,9 @@ static const char s_mail2[] =
     "This is the second message.\n"
     "\n";
 
-static KMime::Message::Ptr createMsg(const char *data)
+static std::shared_ptr<KMime::Message> createMsg(const char *data)
 {
-    KMime::Message::Ptr msgPtr(new KMime::Message());
+    std::shared_ptr<KMime::Message> msgPtr(new KMime::Message());
     msgPtr->setContent(QByteArray(data));
     msgPtr->parse();
     return msgPtr;

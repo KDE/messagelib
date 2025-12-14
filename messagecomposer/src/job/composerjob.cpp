@@ -60,7 +60,7 @@ public:
     // attachments with different sign/encrypt settings from
     // main message body. added at the end of the process
     AttachmentPart::List lateAttachmentParts;
-    QList<KMime::Message::Ptr> resultMessages;
+    QList<std::shared_ptr<KMime::Message>> resultMessages;
 
     Kleo::CryptoMessageFormat format;
 
@@ -473,7 +473,7 @@ void ComposerJobPrivate::composeFinalStep(KMime::Content *content)
 
     delete content;
 
-    KMime::Message::Ptr resultMessage(new KMime::Message);
+    std::shared_ptr<KMime::Message> resultMessage(new KMime::Message);
     resultMessage->setContent(allData);
     resultMessage->parse(); // Not strictly necessary.
     resultMessages.append(resultMessage);
@@ -488,7 +488,7 @@ ComposerJob::ComposerJob(QObject *parent)
 
 ComposerJob::~ComposerJob() = default;
 
-QList<KMime::Message::Ptr> ComposerJob::resultMessages() const
+QList<std::shared_ptr<KMime::Message>> ComposerJob::resultMessages() const
 {
     Q_D(const ComposerJob);
     Q_ASSERT(d->finished);

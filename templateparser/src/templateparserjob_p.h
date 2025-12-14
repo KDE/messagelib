@@ -29,12 +29,12 @@ namespace TemplateParser
 class TemplateParserJobPrivate
 {
 public:
-    TemplateParserJobPrivate(const KMime::Message::Ptr &amsg, const TemplateParserJob::Mode amode);
+    TemplateParserJobPrivate(const std::shared_ptr<KMime::Message> &amsg, const TemplateParserJob::Mode amode);
     ~TemplateParserJobPrivate();
     void setAllowDecryption(const bool allowDecryption);
 
-    KMime::Message::Ptr mMsg; // Msg to write to
-    KMime::Message::Ptr mOrigMsg; // Msg to read from
+    std::shared_ptr<KMime::Message> mMsg; // Msg to write to
+    std::shared_ptr<KMime::Message> mOrigMsg; // Msg to read from
     KIdentityManagementCore::IdentityManager *m_identityManager = nullptr;
     MimeTreeParser::ObjectTreeParser *mOtp = nullptr;
     MimeTreeParser::SimpleObjectTreeSource *mEmptySource = nullptr;

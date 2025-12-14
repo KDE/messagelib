@@ -46,7 +46,7 @@ void ViewerPluginInterface::setUrl(const QUrl &url)
     // Reimplement in subclass
 }
 
-void ViewerPluginInterface::setMessage(const KMime::Message::Ptr &value)
+void ViewerPluginInterface::setMessage(const std::shared_ptr<KMime::Message> &value)
 {
     Q_UNUSED(value)
     // Reimplement in subclass

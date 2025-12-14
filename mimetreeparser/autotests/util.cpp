@@ -8,14 +8,14 @@ using namespace Qt::Literals::StringLiterals;
 
 #include <QFile>
 
-KMime::Message::Ptr readAndParseMail(const QString &mailFile)
+std::shared_ptr<KMime::Message> readAndParseMail(const QString &mailFile)
 {
     QFile file(QLatin1StringView(MAIL_DATA_DIR) + u'/' + mailFile);
     file.open(QIODevice::ReadOnly);
     Q_ASSERT(file.isOpen());
     const QByteArray data = KMime::CRLFtoLF(file.readAll());
     Q_ASSERT(!data.isEmpty());
-    KMime::Message::Ptr msg(new KMime::Message);
+    std::shared_ptr<KMime::Message> msg(new KMime::Message);
     msg->setContent(data);
     msg->parse();
     return msg;

@@ -23,13 +23,13 @@ TestMailDndAttachment::TestMailDndAttachment(QWidget *parent)
     auto vbox = new QVBoxLayout(this);
     auto viewer = new MessageViewer::Viewer(nullptr, nullptr, new KActionCollection(this));
     vbox->addWidget(viewer);
-    viewer->setMessage(readAndParseMail(u"encapsulated-with-attachment.mbox"_s) /*KMime::Message::Ptr(msg)*/);
+    viewer->setMessage(readAndParseMail(u"encapsulated-with-attachment.mbox"_s) /*std::shared_ptr<KMime::Message>(msg)*/);
     viewer->setPluginName(u"longheaderstyleplugin"_s);
 }
 
 TestMailDndAttachment::~TestMailDndAttachment() = default;
 
-KMime::Message::Ptr TestMailDndAttachment::readAndParseMail(const QString &mailFile)
+std::shared_ptr<KMime::Message> TestMailDndAttachment::readAndParseMail(const QString &mailFile)
 {
     QFile file(QLatin1StringView(MAIL_DATA_DIR) + u'/' + mailFile);
     file.open(QIODevice::ReadOnly);
@@ -37,7 +37,7 @@ KMime::Message::Ptr TestMailDndAttachment::readAndParseMail(const QString &mailF
     qDebug() << ba;
     const QByteArray data = ba;
     Q_ASSERT(!data.isEmpty());
-    KMime::Message::Ptr msg(new KMime::Message);
+    std::shared_ptr<KMime::Message> msg(new KMime::Message);
     msg->setContent(data);
     msg->parse();
     return msg;

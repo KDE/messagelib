@@ -27,11 +27,11 @@ public:
     [[nodiscard]] QString currentText() const;
     void setCurrentText(const QString &currentText);
 
-    [[nodiscard]] KMime::Message::Ptr originalMessage() const;
-    void setOriginalMessage(const KMime::Message::Ptr &originalMessage);
+    [[nodiscard]] std::shared_ptr<KMime::Message> originalMessage() const;
+    void setOriginalMessage(const std::shared_ptr<KMime::Message> &originalMessage);
 
 private:
     QString mCurrentText;
-    KMime::Message::Ptr mOriginalMessage;
+    std::shared_ptr<KMime::Message> mOriginalMessage;
 };
 }

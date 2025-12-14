@@ -62,7 +62,7 @@ void RenderTest::testRender()
     const bool bAsync = !asyncFileName.isEmpty();
 
     // load input mail
-    KMime::Message::Ptr msg(Test::readAndParseMail(mailFileName));
+    std::shared_ptr<KMime::Message> msg(Test::readAndParseMail(mailFileName));
 
     // render the mail
     FileHtmlWriter fileWriter(outFileName);
@@ -79,7 +79,7 @@ void RenderTest::testRender()
     connect(&nodeHelper, &MimeTreeParser::NodeHelper::update, &loop, &QEventLoop::quit);
     otp.setAllowAsync(bAsync);
 
-    otp.parseObjectTree(msg.data());
+    otp.parseObjectTree(msg.get());
 
     fileWriter.begin();
     CSSHelperBase::HtmlHeadSettings htmlHeadSettings;
@@ -97,7 +97,7 @@ void RenderTest::testRender()
         MimeTreeParser::ObjectTreeParser otp(&testSource, &nodeHelper);
         otp.setAllowAsync(bAsync);
 
-        otp.parseObjectTree(msg.data());
+        otp.parseObjectTree(msg.get());
 
         fileWriter.begin();
         CSSHelperBase::HtmlHeadSettings htmlHeadSettings;
@@ -109,5 +109,5 @@ void RenderTest::testRender()
         testRenderTree(otp.parsedPart());
     }
     Test::compareFile(outFileName, referenceFileName);
-    msg.clear();
+    msg.reset();
 }

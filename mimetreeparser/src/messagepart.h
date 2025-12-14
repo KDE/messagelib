@@ -317,17 +317,17 @@ class MIMETREEPARSER_EXPORT EncapsulatedRfc822MessagePart : public MessagePart
     Q_OBJECT
 public:
     using Ptr = QSharedPointer<EncapsulatedRfc822MessagePart>;
-    EncapsulatedRfc822MessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, const KMime::Message::Ptr &message);
+    EncapsulatedRfc822MessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, const std::shared_ptr<KMime::Message> &message);
     ~EncapsulatedRfc822MessagePart() override;
 
     [[nodiscard]] QString text() const override;
 
     void fix() const override;
 
-    const KMime::Message::Ptr message() const;
+    const std::shared_ptr<KMime::Message> message() const;
 
 private:
-    const KMime::Message::Ptr mMessage;
+    const std::shared_ptr<KMime::Message> mMessage;
 };
 /**
  * @brief The EncryptedMessagePart class

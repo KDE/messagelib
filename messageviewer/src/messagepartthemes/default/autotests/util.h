@@ -42,7 +42,7 @@ public:
     }
 };
 
-KMime::Message::Ptr readAndParseMail(const QString &mailFile);
+std::shared_ptr<KMime::Message> readAndParseMail(const QString &mailFile);
 void compareFile(const QString &outFile, const QString &referenceFile);
 }
 }

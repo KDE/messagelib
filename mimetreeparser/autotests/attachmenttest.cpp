@@ -46,12 +46,12 @@ void AttachmentTest::testEncryptedAttachment()
     SimpleObjectTreeSource testSource;
     testSource.setDecryptMessage(true);
     ObjectTreeParser otp(&testSource, &nodeHelper);
-    otp.parseObjectTree(msg.data());
+    otp.parseObjectTree(msg.get());
 
     auto attachments = msg->attachments();
     auto encAtts = nodeHelper.attachmentsOfExtraContents();
     QCOMPARE(attachments.size() + encAtts.size(), 2);
-    msg.clear();
+    msg.reset();
 }
 
 #include "attachmenttest.moc"

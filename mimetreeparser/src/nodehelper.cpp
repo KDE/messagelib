@@ -741,21 +741,21 @@ QString NodeHelper::asHREF(const KMime::Content *node) const
     return u"attachment:%1"_s.arg(persistentIndex(node));
 }
 
-KMime::Content *NodeHelper::fromHREF(const KMime::Message::Ptr &mMessage, const QUrl &url) const
+KMime::Content *NodeHelper::fromHREF(const std::shared_ptr<KMime::Message> &mMessage, const QUrl &url) const
 {
     if (url.isEmpty()) {
-        return mMessage.data();
+        return mMessage.get();
     }
 
     if (!url.isLocalFile()) {
-        return contentFromIndex(mMessage.data(), url.adjusted(QUrl::StripTrailingSlash).path());
+        return contentFromIndex(mMessage.get(), url.adjusted(QUrl::StripTrailingSlash).path());
     } else {
         const QString path = url.toLocalFile();
         const QString extractedPath = extractAttachmentIndex(path);
         if (!extractedPath.isEmpty()) {
-            return contentFromIndex(mMessage.data(), extractedPath);
+            return contentFromIndex(mMessage.get(), extractedPath);
         }
-        return mMessage.data();
+        return mMessage.get();
     }
 }
 
@@ -1034,7 +1034,7 @@ bool NodeHelper::unencryptedMessage_helper(KMime::Content *node, QByteArray &res
                 resultingData += curNode->head() + '\n';
             }
 
-            returnValue = unencryptedMessage_helper(curNode->bodyAsMessage().data(), resultingData, true, recursionLevel + 1);
+            returnValue = unencryptedMessage_helper(curNode->bodyAsMessage().get(), resultingData, true, recursionLevel + 1);
         } else {
             qCDebug(MIMETREEPARSER_LOG) << "Current node is an ordinary leaf node, adding it as-is.";
             if (addHeaders) {
@@ -1049,10 +1049,10 @@ bool NodeHelper::unencryptedMessage_helper(KMime::Content *node, QByteArray &res
     return returnValue;
 }
 
-KMime::Message::Ptr NodeHelper::unencryptedMessage(const KMime::Message::Ptr &originalMessage)
+std::shared_ptr<KMime::Message> NodeHelper::unencryptedMessage(const std::shared_ptr<KMime::Message> &originalMessage)
 {
     QByteArray resultingData;
-    const bool messageChanged = unencryptedMessage_helper(originalMessage.data(), resultingData, true);
+    const bool messageChanged = unencryptedMessage_helper(originalMessage.get(), resultingData, true);
     if (messageChanged) {
 #if 0
         qCDebug(MIMETREEPARSER_LOG) << "Resulting data is:" << resultingData;
@@ -1061,7 +1061,7 @@ KMime::Message::Ptr NodeHelper::unencryptedMessage(const KMime::Message::Ptr &or
         bla.write(resultingData);
         bla.close();
 #endif
-        KMime::Message::Ptr newMessage(new KMime::Message);
+        std::shared_ptr<KMime::Message> newMessage(new KMime::Message);
         newMessage->setContent(resultingData);
         newMessage->parse();
         return newMessage;

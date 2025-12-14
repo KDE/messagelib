@@ -1333,7 +1333,7 @@ QList<KMime::Headers::Base *> EncryptedMessagePart::headers(const char *headerTy
     return {};
 }
 
-EncapsulatedRfc822MessagePart::EncapsulatedRfc822MessagePart(ObjectTreeParser *otp, KMime::Content *node, const KMime::Message::Ptr &message)
+EncapsulatedRfc822MessagePart::EncapsulatedRfc822MessagePart(ObjectTreeParser *otp, KMime::Content *node, const std::shared_ptr<KMime::Message> &message)
     : MessagePart(otp, QString())
     , mMessage(message)
 {
@@ -1352,9 +1352,9 @@ EncapsulatedRfc822MessagePart::EncapsulatedRfc822MessagePart(ObjectTreeParser *o
 
     // The link to "Encapsulated message" is clickable, therefore the temp file needs to exists,
     // since the user can click the link and expect to have normal attachment operations there.
-    mOtp->nodeHelper()->writeNodeToTempFile(message.data());
+    mOtp->nodeHelper()->writeNodeToTempFile(message.get());
 
-    parseInternal(message.data(), false);
+    parseInternal(message.get(), false);
 }
 
 EncapsulatedRfc822MessagePart::~EncapsulatedRfc822MessagePart() = default;
@@ -1368,7 +1368,7 @@ void EncapsulatedRfc822MessagePart::fix() const
 {
 }
 
-const KMime::Message::Ptr EncapsulatedRfc822MessagePart::message() const
+const std::shared_ptr<KMime::Message> EncapsulatedRfc822MessagePart::message() const
 {
     return mMessage;
 }

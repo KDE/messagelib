@@ -44,7 +44,7 @@ void UnencryptedMessageTest::testNotDecrypted()
 {
     QFETCH(QString, mailFileName);
     QFETCH(bool, decryptMessage);
-    KMime::Message::Ptr originalMessage = Test::readAndParseMail(mailFileName);
+    std::shared_ptr<KMime::Message> originalMessage = Test::readAndParseMail(mailFileName);
 
     MimeTreeParser::NodeHelper nodeHelper;
     BufferedHtmlWriter testWriter;
@@ -52,7 +52,7 @@ void UnencryptedMessageTest::testNotDecrypted()
     Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
     emptySource.setAllowDecryption(false);
     MimeTreeParser::ObjectTreeParser otp(&emptySource, &nodeHelper);
-    otp.parseObjectTree(originalMessage.data());
+    otp.parseObjectTree(originalMessage.get());
 
     testWriter.begin();
     emptySource.render(otp.parsedPart(), false);
@@ -65,22 +65,22 @@ void UnencryptedMessageTest::testNotDecrypted()
     }
     QCOMPARE(testWriter.data().contains("<a href=\"kmail:decryptMessage\""), decryptMessage);
 
-    KMime::Message::Ptr unencryptedMessage = nodeHelper.unencryptedMessage(originalMessage);
+    std::shared_ptr<KMime::Message> unencryptedMessage = nodeHelper.unencryptedMessage(originalMessage);
     QCOMPARE((bool)unencryptedMessage, false);
-    originalMessage.clear();
-    unencryptedMessage.clear();
+    originalMessage.reset();
+    unencryptedMessage.reset();
 }
 
 void UnencryptedMessageTest::testSMimeAutoCertImport()
 {
-    KMime::Message::Ptr originalMessage = Test::readAndParseMail(u"smime-cert.mbox"_s);
+    std::shared_ptr<KMime::Message> originalMessage = Test::readAndParseMail(u"smime-cert.mbox"_s);
 
     MimeTreeParser::NodeHelper nodeHelper;
     BufferedHtmlWriter testWriter;
     Test::CSSHelper testCSSHelper;
     Test::ObjectTreeSource emptySource(&testWriter, &testCSSHelper);
     MimeTreeParser::ObjectTreeParser otp(&emptySource, &nodeHelper);
-    otp.parseObjectTree(originalMessage.data());
+    otp.parseObjectTree(originalMessage.get());
 
     testWriter.begin();
     emptySource.render(otp.parsedPart(), false);
@@ -88,7 +88,7 @@ void UnencryptedMessageTest::testSMimeAutoCertImport()
 
     QCOMPARE(otp.plainTextContent().toLatin1().data(), "");
     QVERIFY(testWriter.data().contains("Sorry, certificate could not be imported."));
-    originalMessage.clear();
+    originalMessage.reset();
 }
 
 #include "moc_unencryptedmessagetest.cpp"

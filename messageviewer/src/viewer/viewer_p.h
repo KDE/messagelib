@@ -260,7 +260,7 @@ public:
 
     [[nodiscard]] Akonadi::Item messageItem() const;
 
-    [[nodiscard]] KMime::Message::Ptr message() const;
+    [[nodiscard]] std::shared_ptr<KMime::Message> message() const;
 
     /** Returns whether the message should be decrypted. */
     [[nodiscard]] bool decryptMessage() const;
@@ -326,10 +326,10 @@ public:
 
     void resetStateForNewMessage();
 
-    void setMessageInternal(const KMime::Message::Ptr &message, MimeTreeParser::UpdateMode updateMode);
+    void setMessageInternal(const std::shared_ptr<KMime::Message> &message, MimeTreeParser::UpdateMode updateMode);
 
     /** Set the Akonadi item that will be displayed.
-     *  @param item - the Akonadi item to be displayed. If it doesn't hold a mail (KMime::Message::Ptr as payload data),
+     *  @param item - the Akonadi item to be displayed. If it doesn't hold a mail (std::shared_ptr<KMime::Message> as payload data),
      *                an empty page is shown.
      *  @param updateMode - update the display immediately or not. See MailViewer::UpdateMode.
      */
@@ -339,7 +339,7 @@ public:
      * @param msg - the message to be shown. If 0, an empty page is displayed.
      * @param updateMode - update the display immediately or not. See MailViewer::UpdateMode.
      */
-    void setMessage(const KMime::Message::Ptr &msg, MimeTreeParser::UpdateMode updateMode = MimeTreeParser::Delayed);
+    void setMessage(const std::shared_ptr<KMime::Message> &msg, MimeTreeParser::UpdateMode updateMode = MimeTreeParser::Delayed);
 
     /** Instead of settings a message to be shown sets a message part
       to be shown */
@@ -350,7 +350,7 @@ public:
     void showHideMimeTree();
 
     /** View message part of type message/RFC822 in extra viewer window. */
-    void attachmentViewMessage(const KMime::Message::Ptr &message);
+    void attachmentViewMessage(const std::shared_ptr<KMime::Message> &message);
 
     void adjustLayout();
     void createWidgets();
@@ -586,8 +586,8 @@ Q_SIGNALS:
     void urlClicked(const Akonadi::Item &msg, const QUrl &url);
     void requestConfigSync();
     void showReader(KMime::Content *aMsgPart, bool aHTML, const QString &encoding);
-    void showMessage(const KMime::Message::Ptr &message, const QString &encoding);
-    void replyMessageTo(const KMime::Message::Ptr &message, bool replyToAll);
+    void showMessage(const std::shared_ptr<KMime::Message> &message, const QString &encoding);
+    void replyMessageTo(const std::shared_ptr<KMime::Message> &message, bool replyToAll);
     void itemRemoved();
     void makeResourceOnline(MessageViewer::Viewer::ResourceOnlineMode mode);
 
@@ -619,7 +619,7 @@ private:
     void assignMessageItem(const Akonadi::Item &item);
     void slotUrlBlocked(const QUrl &url);
     void updateColorFromScheme();
-    void updateMessageAfterDeletingAttachments(KMime::Message::Ptr &message);
+    void updateMessageAfterDeletingAttachments(std::shared_ptr<KMime::Message> &message);
     void createSubmittedFormWarning();
     void createPurposeMenuMessageWidget();
     void createOpenSavedFileFolderWidget();
@@ -634,7 +634,7 @@ private:
     bool mHtmlLoadExtOverride = false;
 
 public:
-    KMime::Message::Ptr mMessage; // the current message, if it was set manually
+    std::shared_ptr<KMime::Message> mMessage; // the current message, if it was set manually
     Akonadi::Item mMessageItem; // the message item from Akonadi
     // widgets:
     QSplitter *mSplitter = nullptr;

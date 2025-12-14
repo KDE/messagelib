@@ -41,7 +41,7 @@ public:
     virtual void setText(const QString &text);
     virtual QList<QAction *> actions() const;
     virtual void setUrl(const QUrl &url);
-    virtual void setMessage(const KMime::Message::Ptr &value);
+    virtual void setMessage(const std::shared_ptr<KMime::Message> &value);
     virtual void setMessageItem(const Akonadi::Item &item);
     virtual void setCurrentCollection(const Akonadi::Collection &col);
     virtual void closePlugin();

@@ -443,8 +443,9 @@ QString Util::generateFileNameForExtension(const Akonadi::Item &msgBase, const Q
 {
     QString fileName;
 
-    if (msgBase.hasPayload<KMime::Message::Ptr>()) {
-        fileName = MessageCore::StringUtil::cleanFileName(MessageCore::StringUtil::cleanSubject(msgBase.payload<KMime::Message::Ptr>().data()).trimmed());
+    if (msgBase.hasPayload<std::shared_ptr<KMime::Message>>()) {
+        fileName =
+            MessageCore::StringUtil::cleanFileName(MessageCore::StringUtil::cleanSubject(msgBase.payload<std::shared_ptr<KMime::Message>>().get()).trimmed());
         fileName.remove(u'\"');
     } else {
         fileName = i18n("message");
@@ -512,8 +513,8 @@ bool Util::saveMessageInMboxAndGetUrl(QUrl &url, const Akonadi::Item::List &retr
             return false;
         }
         for (const Akonadi::Item &item : std::as_const(retrievedMsgs)) {
-            if (item.hasPayload<KMime::Message::Ptr>()) {
-                mbox.appendMessage(item.payload<KMime::Message::Ptr>());
+            if (item.hasPayload<std::shared_ptr<KMime::Message>>()) {
+                mbox.appendMessage(item.payload<std::shared_ptr<KMime::Message>>());
             }
         }
 

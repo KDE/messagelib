@@ -107,7 +107,7 @@ void BodyPartUrlHandlerManagerTest::testHandleClick()
     manager.registerHandler(&handler, QLatin1StringView(""));
     Viewer v(nullptr);
     ViewerPrivate vp(&v, nullptr, nullptr);
-    const KMime::Message::Ptr msg(Test::readAndParseMail(u"encapsulated-with-attachment.mbox"_s));
+    const std::shared_ptr<KMime::Message> msg(Test::readAndParseMail(u"encapsulated-with-attachment.mbox"_s));
     vp.setMessage(msg, MimeTreeParser::Delayed);
 
     handler.mViewerInstance = &v;

@@ -42,7 +42,7 @@ static inline const QStringList both(const QString &address1, const QString &add
 
 using namespace MessageComposer;
 
-static KMime::Message::Ptr basicMessage(const QString &fromAddress, const QStringList &toAddresses)
+static std::shared_ptr<KMime::Message> basicMessage(const QString &fromAddress, const QStringList &toAddresses)
 {
     ComposerJob composerJob;
     composerJob.infoPart()->setFrom(fromAddress);
@@ -110,14 +110,14 @@ void ReplyStrategyTest::cleanupTestCase()
     delete mIdentityManager;
 }
 
-KMime::Message::Ptr ReplyStrategyTest::makeReply(const KMime::Message::Ptr &original, const ReplyStrategy strategy)
+std::shared_ptr<KMime::Message> ReplyStrategyTest::makeReply(const std::shared_ptr<KMime::Message> &original, const ReplyStrategy strategy)
 {
     MessageFactoryNG factory{original, 0};
     factory.setReplyStrategy(strategy);
     factory.setIdentityManager(mIdentityManager);
     QSignalSpy spy{&factory, &MessageFactoryNG::createReplyDone};
     factory.createReplyAsync();
-    KMime::Message::Ptr result{nullptr};
+    std::shared_ptr<KMime::Message> result{nullptr};
     [&] {
         QVERIFY(spy.wait());
         QCOMPARE(spy.count(), 1);
@@ -351,7 +351,7 @@ void ReplyStrategyTest::testReply()
         COMPARE_ADDRESSES(reply->to(), rTo);
         COMPARE_ADDRESSES(reply->cc(), rCc);
     }
-    original.clear();
+    original.reset();
 }
 
 QTEST_MAIN(ReplyStrategyTest)

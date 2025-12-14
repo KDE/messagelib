@@ -40,7 +40,7 @@ static QStringList addrSpecListToStringList(const AddrSpecList &l, bool allowEmp
     return result;
 }
 
-static void extractSenderToCCAndBcc(const KMime::Message::Ptr &aMsg, QString &sender, QStringList &to, QStringList &cc, QStringList &bcc)
+static void extractSenderToCCAndBcc(const std::shared_ptr<KMime::Message> &aMsg, QString &sender, QStringList &to, QStringList &cc, QStringList &bcc)
 {
     sender = aMsg->sender()->asUnicodeString();
     if (aMsg->headerByType("X-KMail-Recipients")) {
@@ -76,7 +76,7 @@ AkonadiSender::AkonadiSender(QObject *parent)
 
 AkonadiSender::~AkonadiSender() = default;
 
-bool AkonadiSender::doSend(const KMime::Message::Ptr &aMsg, short sendNow)
+bool AkonadiSender::doSend(const std::shared_ptr<KMime::Message> &aMsg, short sendNow)
 {
     if (sendNow == -1) {
         sendNow = MessageComposer::MessageComposerSettings::self()->sendImmediate(); // -1 == use default setting
@@ -108,7 +108,7 @@ bool AkonadiSender::doSendQueued(int customTransportId)
     return true;
 }
 
-void AkonadiSender::sendOrQueueMessage(const KMime::Message::Ptr &message, MessageComposer::MessageSender::SendMethod method)
+void AkonadiSender::sendOrQueueMessage(const std::shared_ptr<KMime::Message> &message, MessageComposer::MessageSender::SendMethod method)
 {
     Q_ASSERT(message);
     qCDebug(MESSAGECOMPOSER_LOG) << "KMime::Message: \n[\n" << message->encodedContent().left(1000) << "\n]\n";

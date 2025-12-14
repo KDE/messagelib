@@ -67,7 +67,7 @@ public:
 
     [[nodiscard]] Akonadi::Item itemForRow(int row) const;
     [[nodiscard]] Akonadi::Collection parentCollectionForRow(int row) const;
-    [[nodiscard]] KMime::Message::Ptr messageForRow(int row) const;
+    [[nodiscard]] std::shared_ptr<KMime::Message> messageForRow(int row) const;
 
     [[nodiscard]] Akonadi::Collection collectionForId(Akonadi::Collection::Id colId) const;
 

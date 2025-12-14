@@ -104,7 +104,7 @@ void DKIMCheckSignatureJobTest::shouldTestMail()
     msg->setContent(file.readAll());
     msg->parse();
     auto job = new MessageViewer::DKIMCheckSignatureJob();
-    job->setMessage(KMime::Message::Ptr(msg));
+    job->setMessage(std::shared_ptr<KMime::Message>(msg));
     MessageViewer::DKIMCheckPolicy pol;
     pol.setSaveKey(false);
     job->setPolicy(pol);

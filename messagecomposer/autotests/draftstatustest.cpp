@@ -17,7 +17,7 @@ class DraftStatusTest : public QObject
 private Q_SLOTS:
     void noState()
     {
-        KMime::Message::Ptr msg(new KMime::Message);
+        std::shared_ptr<KMime::Message> msg(new KMime::Message);
         {
             DraftEncryptionState encryptState(msg);
             QCOMPARE(encryptState.isDefined(), false);
@@ -37,7 +37,7 @@ private Q_SLOTS:
 
     void setRemoveState()
     {
-        KMime::Message::Ptr msg(new KMime::Message);
+        std::shared_ptr<KMime::Message> msg(new KMime::Message);
         {
             DraftEncryptionState encryptState(msg);
             encryptState.setState(true);
@@ -69,7 +69,7 @@ private Q_SLOTS:
 
     void testRemoveDraftCryptoHeaders()
     {
-        KMime::Message::Ptr msg(new KMime::Message);
+        std::shared_ptr<KMime::Message> msg(new KMime::Message);
         DraftEncryptionState encryptState(msg);
         DraftSignatureState signState(msg);
         DraftCryptoMessageFormatState formatState(msg);

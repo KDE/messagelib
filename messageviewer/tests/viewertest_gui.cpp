@@ -83,7 +83,7 @@ int main(int argc, char **argv)
     if (parser.isSet(headerStylePluginOption)) {
         viewer->setPluginName(parser.value(headerStylePluginOption));
     }
-    viewer->setMessage(KMime::Message::Ptr(msg));
+    viewer->setMessage(std::shared_ptr<KMime::Message>(msg));
 
     if (parser.isSet(developerToolsOption)) {
         viewer->showDevelopmentTools();

@@ -120,8 +120,8 @@ public:
 
     [[nodiscard]] DKIMCheckSignatureJob::DKIMError error() const;
 
-    [[nodiscard]] KMime::Message::Ptr message() const;
-    void setMessage(const KMime::Message::Ptr &message);
+    [[nodiscard]] std::shared_ptr<KMime::Message> message() const;
+    void setMessage(const std::shared_ptr<KMime::Message> &message);
 
     [[nodiscard]] DKIMCheckSignatureJob::DKIMWarning warning() const;
     void setWarning(MessageViewer::DKIMCheckSignatureJob::DKIMWarning warning);
@@ -159,7 +159,7 @@ private:
     QList<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> mCheckSignatureAuthenticationResult;
     DKIMCheckPolicy mPolicy;
     DKIMHeaderParser mHeaderParser;
-    KMime::Message::Ptr mMessage;
+    std::shared_ptr<KMime::Message> mMessage;
     QString mFromEmail;
     DKIMInfo mDkimInfo;
     DKIMKeyRecord mDkimKeyRecord;

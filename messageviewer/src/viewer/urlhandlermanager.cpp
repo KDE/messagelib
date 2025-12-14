@@ -163,7 +163,7 @@ bool BodyPartURLHandlerManager::handleClick(const QUrl &url, ViewerPrivate *w) c
         return false;
     }
 
-    MimeTreeParser::PartNodeBodyPart part(nullptr, nullptr, w->message().data(), node, w->nodeHelper());
+    MimeTreeParser::PartNodeBodyPart part(nullptr, nullptr, w->message().get(), node, w->nodeHelper());
 
     for (const auto &handlers : {handlersForPart(node), mHandlers.value({})}) {
         for (auto it = handlers.cbegin(), end = handlers.cend(); it != end; ++it) {
@@ -184,7 +184,7 @@ bool BodyPartURLHandlerManager::handleContextMenuRequest(const QUrl &url, const 
         return false;
     }
 
-    MimeTreeParser::PartNodeBodyPart part(nullptr, nullptr, w->message().data(), node, w->nodeHelper());
+    MimeTreeParser::PartNodeBodyPart part(nullptr, nullptr, w->message().get(), node, w->nodeHelper());
 
     for (const auto &handlers : {handlersForPart(node), mHandlers.value({})}) {
         for (auto it = handlers.cbegin(), end = handlers.cend(); it != end; ++it) {
@@ -204,7 +204,7 @@ QString BodyPartURLHandlerManager::statusBarMessage(const QUrl &url, ViewerPriva
         return {};
     }
 
-    MimeTreeParser::PartNodeBodyPart part(nullptr, nullptr, w->message().data(), node, w->nodeHelper());
+    MimeTreeParser::PartNodeBodyPart part(nullptr, nullptr, w->message().get(), node, w->nodeHelper());
 
     for (const auto &handlers : {handlersForPart(node), mHandlers.value({})}) {
         for (auto it = handlers.cbegin(), end = handlers.cend(); it != end; ++it) {
@@ -656,11 +656,11 @@ bool AttachmentURLHandler::handleShiftClick(const QUrl &url, ViewerPrivate *wind
 
     const bool isEncapsulatedMessage = node->parent() && node->parent()->bodyIsMessage();
     if (isEncapsulatedMessage) {
-        KMime::Message::Ptr message(new KMime::Message);
+        std::shared_ptr<KMime::Message> message(new KMime::Message);
         message->setContent(node->parent()->bodyAsMessage()->encodedContent());
         message->parse();
         Akonadi::Item item;
-        item.setPayload<KMime::Message::Ptr>(message);
+        item.setPayload<std::shared_ptr<KMime::Message>>(message);
         Akonadi::MessageFlags::copyMessageFlags(*message, item);
         item.setMimeType(KMime::Message::mimeType());
         QUrl newUrl;
@@ -696,11 +696,11 @@ bool AttachmentURLHandler::handleDrag(const QUrl &url, ViewerPrivate *window) co
     QUrl tUrl;
     const bool isEncapsulatedMessage = node->parent() && node->parent()->bodyIsMessage();
     if (isEncapsulatedMessage) {
-        KMime::Message::Ptr message(new KMime::Message);
+        std::shared_ptr<KMime::Message> message(new KMime::Message);
         message->setContent(node->parent()->bodyAsMessage()->encodedContent());
         message->parse();
         Akonadi::Item item;
-        item.setPayload<KMime::Message::Ptr>(message);
+        item.setPayload<std::shared_ptr<KMime::Message>>(message);
         Akonadi::MessageFlags::copyMessageFlags(*message, item);
         item.setMimeType(KMime::Message::mimeType());
         fileName = window->nodeHelper()->writeFileToTempFile(node, Util::generateMboxFileName(item));
@@ -712,7 +712,7 @@ bool AttachmentURLHandler::handleDrag(const QUrl &url, ViewerPrivate *window) co
             qCWarning(MESSAGEVIEWER_LOG) << "MBOX: Impossible to open file";
             return false;
         }
-        mbox.appendMessage(item.payload<KMime::Message::Ptr>());
+        mbox.appendMessage(item.payload<std::shared_ptr<KMime::Message>>());
 
         if (!mbox.save()) {
             qCWarning(MESSAGEVIEWER_LOG) << "MBOX: Impossible to save file";

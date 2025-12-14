@@ -52,6 +52,6 @@ void setNestedContentDisposition(KMime::Content *content, Kleo::CryptoMessageFor
  * resulting message will be a mime message or not.
  */
 [[nodiscard]] bool makeMultiMime(Kleo::CryptoMessageFormat f, bool sign);
-void addSendReplyForwardAction(const KMime::Message::Ptr &message, Akonadi::MessageQueueJob *qjob);
+void addSendReplyForwardAction(const std::shared_ptr<KMime::Message> &message, Akonadi::MessageQueueJob *qjob);
 }
 }

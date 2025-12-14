@@ -16,10 +16,10 @@ using namespace Qt::Literals::StringLiterals;
 
 using namespace MessageCore;
 
-using MagicDetectorFunc = QString (*)(const KMime::Message::Ptr &, QByteArray &, QString &);
+using MagicDetectorFunc = QString (*)(const std::shared_ptr<KMime::Message> &, QByteArray &, QString &);
 
 /* Sender: (owner-([^@]+)|([^@+]-owner)@ */
-static QString check_sender(const KMime::Message::Ptr &message, QByteArray &headerName, QString &headerValue)
+static QString check_sender(const std::shared_ptr<KMime::Message> &message, QByteArray &headerName, QString &headerValue)
 {
     QString header = message->sender()->asUnicodeString();
 
@@ -46,7 +46,7 @@ static QString check_sender(const KMime::Message::Ptr &message, QByteArray &head
 }
 
 /* X-BeenThere: ([^@]+) */
-static QString check_x_beenthere(const KMime::Message::Ptr &message, QByteArray &headerName, QString &headerValue)
+static QString check_x_beenthere(const std::shared_ptr<KMime::Message> &message, QByteArray &headerName, QString &headerValue)
 {
     QString header;
     if (auto hrd = message->headerByType("X-BeenThere")) {
@@ -64,7 +64,7 @@ static QString check_x_beenthere(const KMime::Message::Ptr &message, QByteArray 
 }
 
 /* Delivered-To:: <([^@]+) */
-static QString check_delivered_to(const KMime::Message::Ptr &message, QByteArray &headerName, QString &headerValue)
+static QString check_delivered_to(const std::shared_ptr<KMime::Message> &message, QByteArray &headerName, QString &headerValue)
 {
     QString header;
     if (auto hrd = message->headerByType("Delivered-To")) {
@@ -81,7 +81,7 @@ static QString check_delivered_to(const KMime::Message::Ptr &message, QByteArray
 }
 
 /* X-Mailing-List: <?([^@]+) */
-static QString check_x_mailing_list(const KMime::Message::Ptr &message, QByteArray &headerName, QString &headerValue)
+static QString check_x_mailing_list(const std::shared_ptr<KMime::Message> &message, QByteArray &headerName, QString &headerValue)
 {
     QString header;
     if (auto hrd = message->headerByType("X-Mailing-List")) {
@@ -107,7 +107,7 @@ static QString check_x_mailing_list(const KMime::Message::Ptr &message, QByteArr
 }
 
 /* List-Id: [^<]* <([^.]+) */
-static QString check_list_id(const KMime::Message::Ptr &message, QByteArray &headerName, QString &headerValue)
+static QString check_list_id(const std::shared_ptr<KMime::Message> &message, QByteArray &headerName, QString &headerValue)
 {
     QString header;
     if (auto hrd = message->headerByType("List-Id")) {
@@ -135,7 +135,7 @@ static QString check_list_id(const KMime::Message::Ptr &message, QByteArray &hea
 }
 
 /* List-Post: <mailto:[^< ]*>) */
-static QString check_list_post(const KMime::Message::Ptr &message, QByteArray &headerName, QString &headerValue)
+static QString check_list_post(const std::shared_ptr<KMime::Message> &message, QByteArray &headerName, QString &headerValue)
 {
     QString header;
     if (auto hrd = message->headerByType("List-Post")) {
@@ -159,7 +159,7 @@ static QString check_list_post(const KMime::Message::Ptr &message, QByteArray &h
 }
 
 /* Mailing-List: list ([^@]+) */
-static QString check_mailing_list(const KMime::Message::Ptr &message, QByteArray &headerName, QString &headerValue)
+static QString check_mailing_list(const std::shared_ptr<KMime::Message> &message, QByteArray &headerName, QString &headerValue)
 {
     QString header;
     if (auto hrd = message->headerByType("Mailing-List")) {
@@ -181,7 +181,7 @@ static QString check_mailing_list(const KMime::Message::Ptr &message, QByteArray
 }
 
 /* X-Loop: ([^@]+) */
-static QString check_x_loop(const KMime::Message::Ptr &message, QByteArray &headerName, QString &headerValue)
+static QString check_x_loop(const std::shared_ptr<KMime::Message> &message, QByteArray &headerName, QString &headerValue)
 {
     QString header;
     if (auto hrd = message->headerByType("X-Loop")) {
@@ -204,7 +204,7 @@ static QString check_x_loop(const KMime::Message::Ptr &message, QByteArray &head
 }
 
 /* X-ML-Name: (.+) */
-static QString check_x_ml_name(const KMime::Message::Ptr &message, QByteArray &headerName, QString &headerValue)
+static QString check_x_ml_name(const std::shared_ptr<KMime::Message> &message, QByteArray &headerName, QString &headerValue)
 {
     QString header;
     if (auto hrd = message->headerByType("X-ML-Name")) {
@@ -288,7 +288,7 @@ public:
     QString mId;
 };
 
-MailingList MailingList::detect(const KMime::Message::Ptr &message)
+MailingList MailingList::detect(const std::shared_ptr<KMime::Message> &message)
 {
     MailingList mailingList;
 
@@ -327,7 +327,7 @@ MailingList MailingList::detect(const KMime::Message::Ptr &message)
     return mailingList;
 }
 
-QString MailingList::name(const KMime::Message::Ptr &message, QByteArray &headerName, QString &headerValue)
+QString MailingList::name(const std::shared_ptr<KMime::Message> &message, QByteArray &headerName, QString &headerValue)
 {
     headerName = QByteArray();
     headerValue.clear();

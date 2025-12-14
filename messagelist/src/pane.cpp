@@ -930,7 +930,7 @@ Akonadi::Item Pane::currentItem() const
     return w->currentItem();
 }
 
-KMime::Message::Ptr Pane::currentMessage() const
+std::shared_ptr<KMime::Message> Pane::currentMessage() const
 {
     auto w = static_cast<Widget *>(currentWidget());
 
@@ -941,7 +941,7 @@ KMime::Message::Ptr Pane::currentMessage() const
     return w->currentMessage();
 }
 
-QList<KMime::Message::Ptr> Pane::selectionAsMessageList(bool includeCollapsedChildren) const
+QList<std::shared_ptr<KMime::Message>> Pane::selectionAsMessageList(bool includeCollapsedChildren) const
 {
     auto w = static_cast<Widget *>(currentWidget());
     if (!w) {

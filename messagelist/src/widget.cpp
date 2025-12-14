@@ -54,7 +54,7 @@ public:
 
     [[nodiscard]] Akonadi::Item::List selectionAsItems() const;
     [[nodiscard]] Akonadi::Item itemForRow(int row) const;
-    [[nodiscard]] KMime::Message::Ptr messageForRow(int row) const;
+    [[nodiscard]] std::shared_ptr<KMime::Message> messageForRow(int row) const;
 
     Widget *const q;
 
@@ -539,7 +539,7 @@ Akonadi::Item MessageList::Widget::WidgetPrivate::itemForRow(int row) const
     return static_cast<const MessageList::StorageModel *>(q->storageModel())->itemForRow(row);
 }
 
-KMime::Message::Ptr MessageList::Widget::WidgetPrivate::messageForRow(int row) const
+std::shared_ptr<KMime::Message> MessageList::Widget::WidgetPrivate::messageForRow(int row) const
 {
     return static_cast<const MessageList::StorageModel *>(q->storageModel())->messageForRow(row);
 }
@@ -555,7 +555,7 @@ Akonadi::Item MessageList::Widget::currentItem() const
     return d->itemForRow(mi->currentModelIndexRow());
 }
 
-KMime::Message::Ptr MessageList::Widget::currentMessage() const
+std::shared_ptr<KMime::Message> MessageList::Widget::currentMessage() const
 {
     Core::MessageItem *mi = view()->currentMessageItem();
 
@@ -566,9 +566,9 @@ KMime::Message::Ptr MessageList::Widget::currentMessage() const
     return d->messageForRow(mi->currentModelIndexRow());
 }
 
-QList<KMime::Message::Ptr> MessageList::Widget::selectionAsMessageList(bool includeCollapsedChildren) const
+QList<std::shared_ptr<KMime::Message>> MessageList::Widget::selectionAsMessageList(bool includeCollapsedChildren) const
 {
-    QList<KMime::Message::Ptr> lstMiPtr;
+    QList<std::shared_ptr<KMime::Message>> lstMiPtr;
     const QList<Core::MessageItem *> lstMi = view()->selectionAsMessageItemList(includeCollapsedChildren);
     if (lstMi.isEmpty()) {
         return lstMiPtr;

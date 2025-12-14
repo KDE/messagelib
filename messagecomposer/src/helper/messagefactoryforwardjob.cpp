@@ -42,7 +42,7 @@ void MessageFactoryForwardJob::setCollection(const Akonadi::Collection &collecti
     mCollection = collection;
 }
 
-void MessageFactoryForwardJob::setMsg(const KMime::Message::Ptr &msg)
+void MessageFactoryForwardJob::setMsg(const std::shared_ptr<KMime::Message> &msg)
 {
     mMsg = msg;
 }
@@ -57,7 +57,7 @@ void MessageFactoryForwardJob::setSelection(const QString &selection)
     mSelection = selection;
 }
 
-void MessageFactoryForwardJob::setOrigMsg(const KMime::Message::Ptr &origMsg)
+void MessageFactoryForwardJob::setOrigMsg(const std::shared_ptr<KMime::Message> &origMsg)
 {
     mOrigMsg = origMsg;
 }

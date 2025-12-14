@@ -115,9 +115,9 @@ void DefaultRendererPrivate::render(const EncapsulatedRfc822MessagePart::Ptr &mp
     QObject block;
 
     c.insert(u"block"_s, &block);
-    block.setProperty("link", mp->nodeHelper()->asHREF(mp->message().data(), u"body"_s));
+    block.setProperty("link", mp->nodeHelper()->asHREF(mp->message().get(), u"body"_s));
 
-    c.insert(u"msgHeader"_s, mCreateMessageHeader(mp->message().data()));
+    c.insert(u"msgHeader"_s, mCreateMessageHeader(mp->message().get()));
     c.insert(u"content"_s, QVariant::fromValue<KTextTemplateCallback>([this, mp, htmlWriter](KTextTemplate::OutputStream *) {
                  renderSubParts(mp, htmlWriter);
              }));

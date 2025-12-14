@@ -18,12 +18,12 @@ void PluginEditorConverterBeforeConvertingData::setNewMessage(bool newMessage)
     mNewMessage = newMessage;
 }
 
-KMime::Message::Ptr PluginEditorConverterBeforeConvertingData::message() const
+std::shared_ptr<KMime::Message> PluginEditorConverterBeforeConvertingData::message() const
 {
     return mMessage;
 }
 
-void PluginEditorConverterBeforeConvertingData::setMessage(const KMime::Message::Ptr &message)
+void PluginEditorConverterBeforeConvertingData::setMessage(const std::shared_ptr<KMime::Message> &message)
 {
     mMessage = message;
 }

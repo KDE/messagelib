@@ -64,7 +64,7 @@ static KMime::Types::Mailbox::List stripMyAddressesFromAddressList(const KMime::
     return addresses;
 }
 
-MessageFactoryNG::MessageFactoryNG(const KMime::Message::Ptr &origMsg, Akonadi::Item::Id id, const Akonadi::Collection &col, QObject *parent)
+MessageFactoryNG::MessageFactoryNG(const std::shared_ptr<KMime::Message> &origMsg, Akonadi::Item::Id id, const Akonadi::Collection &col, QObject *parent)
     : QObject(parent)
     , mOrigMsg(origMsg)
     , mFolderId(0)
@@ -79,7 +79,7 @@ MessageFactoryNG::~MessageFactoryNG() = default;
 
 // Return the addresses to use when replying to the author of msg.
 // See <https://cr.yp.to/proto/replyto.html>.
-static KMime::Types::Mailbox::List authorMailboxes(const KMime::Message::Ptr &msg, const KMime::Types::Mailbox::List &mailingLists)
+static KMime::Types::Mailbox::List authorMailboxes(const std::shared_ptr<KMime::Message> &msg, const KMime::Types::Mailbox::List &mailingLists)
 {
     if (auto mrt = msg->headerByType("Mail-Reply-To")) {
         return KMime::Types::Mailbox::listFrom7BitString(mrt->as7BitString());
@@ -97,7 +97,7 @@ static KMime::Types::Mailbox::List authorMailboxes(const KMime::Message::Ptr &ms
     return msg->from(KMime::CreatePolicy::Create)->mailboxes();
 }
 
-void MessageFactoryNG::slotCreateReplyDone(const KMime::Message::Ptr &msg, bool replyAll)
+void MessageFactoryNG::slotCreateReplyDone(const std::shared_ptr<KMime::Message> &msg, bool replyAll)
 {
     MessageComposer::Util::addLinkInformation(msg, mId, Akonadi::MessageStatus::statusReplied());
     if (mParentFolderId > 0) {
@@ -120,7 +120,7 @@ void MessageFactoryNG::slotCreateReplyDone(const KMime::Message::Ptr &msg, bool 
 
 void MessageFactoryNG::createReplyAsync()
 {
-    KMime::Message::Ptr msg(new KMime::Message);
+    std::shared_ptr<KMime::Message> msg(new KMime::Message);
     QByteArray refStr;
     bool replyAll = true;
     KMime::Types::Mailbox::List toList;
@@ -268,7 +268,7 @@ void MessageFactoryNG::createReplyAsync()
     // In-Reply-To = original msg-id
     msg->inReplyTo()->from7BitString(mOrigMsg->messageID()->as7BitString());
 
-    msg->subject()->fromUnicodeString(MessageCore::StringUtil::replySubject(mOrigMsg.data()));
+    msg->subject()->fromUnicodeString(MessageCore::StringUtil::replySubject(mOrigMsg.get()));
 
     // If the reply shouldn't be blank, apply the template to the message
     if (mQuote) {
@@ -288,7 +288,7 @@ void MessageFactoryNG::createReplyAsync()
     }
 }
 
-void MessageFactoryNG::slotCreateForwardDone(const KMime::Message::Ptr &msg)
+void MessageFactoryNG::slotCreateForwardDone(const std::shared_ptr<KMime::Message> &msg)
 {
     MessageComposer::Util::addLinkInformation(msg, mId, Akonadi::MessageStatus::statusForwarded());
     msg->assemble();
@@ -297,7 +297,7 @@ void MessageFactoryNG::slotCreateForwardDone(const KMime::Message::Ptr &msg)
 
 void MessageFactoryNG::createForwardAsync()
 {
-    KMime::Message::Ptr msg(new KMime::Message);
+    std::shared_ptr<KMime::Message> msg(new KMime::Message);
 
     // This is a non-multipart, non-text mail (e.g. text/calendar). Construct
     // a multipart/mixed mail and add the original body as an attachment.
@@ -344,7 +344,7 @@ void MessageFactoryNG::createForwardAsync()
         msg->assemble();
     }
 
-    msg->subject()->fromUnicodeString(MessageCore::StringUtil::forwardSubject(mOrigMsg.data()));
+    msg->subject()->fromUnicodeString(MessageCore::StringUtil::forwardSubject(mOrigMsg.get()));
     auto job = new MessageFactoryForwardJob;
     connect(job, &MessageFactoryForwardJob::forwardDone, this, &MessageFactoryNG::slotCreateForwardDone);
     job->setIdentityManager(mIdentityManager);
@@ -356,11 +356,11 @@ void MessageFactoryNG::createForwardAsync()
     job->start();
 }
 
-QPair<KMime::Message::Ptr, QList<KMime::Content *>> MessageFactoryNG::createAttachedForward(const Akonadi::Item::List &items)
+QPair<std::shared_ptr<KMime::Message>, QList<KMime::Content *>> MessageFactoryNG::createAttachedForward(const Akonadi::Item::List &items)
 {
     // create forwarded message with original message as attachment
     // remove headers that shouldn't be forwarded
-    KMime::Message::Ptr msg(new KMime::Message);
+    std::shared_ptr<KMime::Message> msg(new KMime::Message);
     QList<KMime::Content *> attachments;
 
     const int numberOfItems(items.count());
@@ -369,10 +369,10 @@ QPair<KMime::Message::Ptr, QList<KMime::Content *>> MessageFactoryNG::createAtta
         // the selected mails
         MessageHelper::initHeader(msg, mIdentityManager, 0);
     } else if (numberOfItems == 1) {
-        KMime::Message::Ptr firstMsg = MessageComposer::Util::message(items.first());
+        std::shared_ptr<KMime::Message> firstMsg = MessageComposer::Util::message(items.first());
         const uint originalIdentity = identityUoid(firstMsg);
         MessageHelper::initFromMessage(msg, firstMsg, mIdentityManager, originalIdentity);
-        msg->subject()->fromUnicodeString(MessageCore::StringUtil::forwardSubject(firstMsg.data()));
+        msg->subject()->fromUnicodeString(MessageCore::StringUtil::forwardSubject(firstMsg.get()));
     }
 
     MessageHelper::setAutomaticFields(msg, true);
@@ -390,17 +390,17 @@ QPair<KMime::Message::Ptr, QList<KMime::Content *>> MessageFactoryNG::createAtta
     }
 
     // msg->assemble();
-    return QPair<KMime::Message::Ptr, QList<KMime::Content *>>(msg, QList<KMime::Content *>() << attachments);
+    return QPair<std::shared_ptr<KMime::Message>, QList<KMime::Content *>>(msg, QList<KMime::Content *>() << attachments);
 }
 
-KMime::Content *MessageFactoryNG::createForwardAttachmentMessage(const KMime::Message::Ptr &fwdMsg)
+KMime::Content *MessageFactoryNG::createForwardAttachmentMessage(const std::shared_ptr<KMime::Message> &fwdMsg)
 {
     // remove headers that shouldn't be forwarded
     MessageCore::StringUtil::removePrivateHeaderFields(fwdMsg);
     fwdMsg->removeHeader<KMime::Headers::Bcc>();
     fwdMsg->assemble();
     // set the part
-    auto msgPart = new KMime::Content(fwdMsg.data());
+    auto msgPart = new KMime::Content(fwdMsg.get());
     auto ct = msgPart->contentType();
     ct->setMimeType("message/rfc822");
 
@@ -427,9 +427,9 @@ void MessageFactoryNG::setReplyAsHtml(bool replyAsHtml)
     mReplyAsHtml = replyAsHtml;
 }
 
-KMime::Message::Ptr MessageFactoryNG::createResend()
+std::shared_ptr<KMime::Message> MessageFactoryNG::createResend()
 {
-    KMime::Message::Ptr msg(new KMime::Message);
+    std::shared_ptr<KMime::Message> msg(new KMime::Message);
     msg->setContent(mOrigMsg->encodedContent());
     msg->parse();
     msg->removeHeader<KMime::Headers::MessageID>();
@@ -445,7 +445,7 @@ KMime::Message::Ptr MessageFactoryNG::createResend()
     return msg;
 }
 
-KMime::Message::Ptr
+std::shared_ptr<KMime::Message>
 MessageFactoryNG::createRedirect(const QString &toStr, const QString &ccStr, const QString &bccStr, int transportId, const QString &fcc, int identity)
 {
     if (!mOrigMsg) {
@@ -453,7 +453,7 @@ MessageFactoryNG::createRedirect(const QString &toStr, const QString &ccStr, con
     }
 
     // copy the message 1:1
-    KMime::Message::Ptr msg(new KMime::Message);
+    std::shared_ptr<KMime::Message> msg(new KMime::Message);
     msg->setContent(mOrigMsg->encodedContent());
     msg->parse();
 
@@ -558,7 +558,7 @@ MessageFactoryNG::createRedirect(const QString &toStr, const QString &ccStr, con
     return msg;
 }
 
-KMime::Message::Ptr MessageFactoryNG::createDeliveryReceipt()
+std::shared_ptr<KMime::Message> MessageFactoryNG::createDeliveryReceipt()
 {
     QString receiptTo;
     if (auto hrd = mOrigMsg->headerByType("Disposition-Notification-To")) {
@@ -569,7 +569,7 @@ KMime::Message::Ptr MessageFactoryNG::createDeliveryReceipt()
     }
     receiptTo.remove(u'\n');
 
-    KMime::Message::Ptr receipt(new KMime::Message);
+    std::shared_ptr<KMime::Message> receipt(new KMime::Message);
     const uint originalIdentity = identityUoid(mOrigMsg);
     MessageHelper::initFromMessage(receipt, mOrigMsg, mIdentityManager, originalIdentity);
     receipt->to()->fromUnicodeString(receiptTo);
@@ -588,11 +588,11 @@ KMime::Message::Ptr MessageFactoryNG::createDeliveryReceipt()
     return receipt;
 }
 
-KMime::Message::Ptr MessageFactoryNG::createMDN(KMime::MDN::ActionMode a,
-                                                KMime::MDN::DispositionType d,
-                                                KMime::MDN::SendingMode s,
-                                                int mdnQuoteOriginal,
-                                                const QList<KMime::MDN::DispositionModifier> &m)
+std::shared_ptr<KMime::Message> MessageFactoryNG::createMDN(KMime::MDN::ActionMode a,
+                                                            KMime::MDN::DispositionType d,
+                                                            KMime::MDN::SendingMode s,
+                                                            int mdnQuoteOriginal,
+                                                            const QList<KMime::MDN::DispositionModifier> &m)
 {
     // extract where to send to:
     QString receiptTo;
@@ -600,7 +600,7 @@ KMime::Message::Ptr MessageFactoryNG::createMDN(KMime::MDN::ActionMode a,
         receiptTo = hrd->asUnicodeString();
     }
     if (receiptTo.trimmed().isEmpty()) {
-        return KMime::Message::Ptr(new KMime::Message);
+        return std::shared_ptr<KMime::Message>(new KMime::Message);
     }
     receiptTo.remove(u'\n');
 
@@ -613,7 +613,7 @@ KMime::Message::Ptr MessageFactoryNG::createMDN(KMime::MDN::ActionMode a,
     // Generate message:
     //
 
-    KMime::Message::Ptr receipt(new KMime::Message());
+    std::shared_ptr<KMime::Message> receipt(new KMime::Message());
     const uint originalIdentity = identityUoid(mOrigMsg);
     MessageHelper::initFromMessage(receipt, mOrigMsg, mIdentityManager, originalIdentity);
     auto contentType = receipt->contentType(KMime::CreatePolicy::Create); // create it
@@ -627,7 +627,7 @@ KMime::Message::Ptr MessageFactoryNG::createMDN(KMime::MDN::ActionMode a,
     const QString description = replaceHeadersInString(mOrigMsg, KMime::MDN::descriptionFor(d, m));
 
     // text/plain part:
-    auto firstMsgPart = std::make_unique<KMime::Content>(mOrigMsg.data());
+    auto firstMsgPart = std::make_unique<KMime::Content>(mOrigMsg.get());
     auto firstMsgPartContentType = firstMsgPart->contentType(); // create it
     firstMsgPartContentType->setMimeType("text/plain");
     firstMsgPartContentType->setCharset("utf-8");
@@ -636,7 +636,7 @@ KMime::Message::Ptr MessageFactoryNG::createMDN(KMime::MDN::ActionMode a,
     receipt->appendContent(std::move(firstMsgPart));
 
     // message/disposition-notification part:
-    auto secondMsgPart = std::make_unique<KMime::Content>(mOrigMsg.data());
+    auto secondMsgPart = std::make_unique<KMime::Content>(mOrigMsg.get());
     secondMsgPart->contentType()->setMimeType("message/disposition-notification");
 
     secondMsgPart->contentTransferEncoding()->setEncoding(KMime::Headers::CE7Bit);
@@ -659,7 +659,7 @@ KMime::Message::Ptr MessageFactoryNG::createMDN(KMime::MDN::ActionMode a,
     }
     /* 0=> Nothing, 1=>Full Message, 2=>HeadersOnly*/
 
-    auto thirdMsgPart = std::make_unique<KMime::Content>(mOrigMsg.data());
+    auto thirdMsgPart = std::make_unique<KMime::Content>(mOrigMsg.get());
     switch (mdnQuoteOriginal) {
     case 1:
         thirdMsgPart->contentType()->setMimeType("message/rfc822");
@@ -693,10 +693,10 @@ KMime::Message::Ptr MessageFactoryNG::createMDN(KMime::MDN::ActionMode a,
     return receipt;
 }
 
-QPair<KMime::Message::Ptr, KMime::Content *> MessageFactoryNG::createForwardDigestMIME(const Akonadi::Item::List &items)
+QPair<std::shared_ptr<KMime::Message>, KMime::Content *> MessageFactoryNG::createForwardDigestMIME(const Akonadi::Item::List &items)
 {
-    KMime::Message::Ptr msg(new KMime::Message);
-    auto digest = new KMime::Content(msg.data());
+    std::shared_ptr<KMime::Message> msg(new KMime::Message);
+    auto digest = new KMime::Content(msg.get());
 
     const QString mainPartText = i18n(
         "\nThis is a MIME digest forward. The content of the"
@@ -711,7 +711,7 @@ QPair<KMime::Message::Ptr, KMime::Content *> MessageFactoryNG::createForwardDige
 
     int id = 0;
     for (const Akonadi::Item &item : std::as_const(items)) {
-        KMime::Message::Ptr fMsg = MessageComposer::Util::message(item);
+        std::shared_ptr<KMime::Message> fMsg = MessageComposer::Util::message(item);
         if (id == 0) {
             if (auto hrd = fMsg->headerByType("X-KMail-Identity")) {
                 id = hrd->asUnicodeString().toInt();
@@ -740,7 +740,7 @@ QPair<KMime::Message::Ptr, KMime::Content *> MessageFactoryNG::createForwardDige
 
     //   qCDebug(MESSAGECOMPOSER_LOG) << "digest:" << digest->contents().size() << digest->encodedContent();
 
-    return QPair<KMime::Message::Ptr, KMime::Content *>(msg, digest);
+    return QPair<std::shared_ptr<KMime::Message>, KMime::Content *>(msg, digest);
 }
 
 void MessageFactoryNG::setIdentityManager(KIdentityManagementCore::IdentityManager *ident)
@@ -783,7 +783,7 @@ void MessageFactoryNG::putRepliesInSameFolder(Akonadi::Collection::Id parentColI
     mParentFolderId = parentColId;
 }
 
-bool MessageFactoryNG::MDNRequested(const KMime::Message::Ptr &msg)
+bool MessageFactoryNG::MDNRequested(const std::shared_ptr<KMime::Message> &msg)
 {
     // extract where to send to:
     QString receiptTo;
@@ -797,7 +797,7 @@ bool MessageFactoryNG::MDNRequested(const KMime::Message::Ptr &msg)
     return !receiptTo.isEmpty();
 }
 
-bool MessageFactoryNG::MDNConfirmMultipleRecipients(const KMime::Message::Ptr &msg)
+bool MessageFactoryNG::MDNConfirmMultipleRecipients(const std::shared_ptr<KMime::Message> &msg)
 {
     // extract where to send to:
     QString receiptTo;
@@ -817,7 +817,7 @@ bool MessageFactoryNG::MDNConfirmMultipleRecipients(const KMime::Message::Ptr &m
     return KEmailAddress::splitAddressList(receiptTo).count() > 1;
 }
 
-bool MessageFactoryNG::MDNReturnPathEmpty(const KMime::Message::Ptr &msg)
+bool MessageFactoryNG::MDNReturnPathEmpty(const std::shared_ptr<KMime::Message> &msg)
 {
     // extract where to send to:
     QString receiptTo;
@@ -840,7 +840,7 @@ bool MessageFactoryNG::MDNReturnPathEmpty(const KMime::Message::Ptr &msg)
     return returnPath.isEmpty();
 }
 
-bool MessageFactoryNG::MDNReturnPathNotInRecieptTo(const KMime::Message::Ptr &msg)
+bool MessageFactoryNG::MDNReturnPathNotInRecieptTo(const std::shared_ptr<KMime::Message> &msg)
 {
     // extract where to send to:
     QString receiptTo;
@@ -863,7 +863,7 @@ bool MessageFactoryNG::MDNReturnPathNotInRecieptTo(const KMime::Message::Ptr &ms
     return !receiptTo.contains(returnPath, Qt::CaseSensitive);
 }
 
-bool MessageFactoryNG::MDNMDNUnknownOption(const KMime::Message::Ptr &msg)
+bool MessageFactoryNG::MDNMDNUnknownOption(const std::shared_ptr<KMime::Message> &msg)
 {
     // RFC 2298: An importance of "required" indicates that
     // interpretation of the parameter is necessary for proper
@@ -884,7 +884,7 @@ bool MessageFactoryNG::MDNMDNUnknownOption(const KMime::Message::Ptr &msg)
     return false;
 }
 
-uint MessageFactoryNG::identityUoid(const KMime::Message::Ptr &msg)
+uint MessageFactoryNG::identityUoid(const std::shared_ptr<KMime::Message> &msg)
 {
     QString idString;
     if (auto hdr = msg->headerByType("X-KMail-Identity")) {
@@ -894,12 +894,12 @@ uint MessageFactoryNG::identityUoid(const KMime::Message::Ptr &msg)
     uint id = idString.toUInt(&ok);
 
     if (!ok || id == 0) {
-        id = MessageCore::Util::identityForMessage(msg.data(), mIdentityManager, mFolderId).uoid();
+        id = MessageCore::Util::identityForMessage(msg.get(), mIdentityManager, mFolderId).uoid();
     }
     return id;
 }
 
-QString MessageFactoryNG::replaceHeadersInString(const KMime::Message::Ptr &msg, const QString &s)
+QString MessageFactoryNG::replaceHeadersInString(const std::shared_ptr<KMime::Message> &msg, const QString &s)
 {
     QString result = s;
     static QRegularExpression rx{u"\\$\\{([a-z0-9-]+)\\}"_s, QRegularExpression::CaseInsensitiveOption};
@@ -924,7 +924,7 @@ QString MessageFactoryNG::replaceHeadersInString(const KMime::Message::Ptr &msg,
     return result;
 }
 
-QByteArray MessageFactoryNG::getRefStr(const KMime::Message::Ptr &msg)
+QByteArray MessageFactoryNG::getRefStr(const std::shared_ptr<KMime::Message> &msg)
 {
     QByteArray firstRef;
     QByteArray lastRef;

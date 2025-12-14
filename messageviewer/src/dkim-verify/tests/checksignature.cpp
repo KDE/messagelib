@@ -27,7 +27,7 @@ CheckSignature::CheckSignature(const QString &fileName, QObject *parent)
         qWarning() << "Couldn't read" << fileName;
     }
     msg->parse();
-    job->setMessage(KMime::Message::Ptr(msg));
+    job->setMessage(std::shared_ptr<KMime::Message>(msg));
     job->start();
 }
 

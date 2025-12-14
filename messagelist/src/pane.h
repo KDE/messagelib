@@ -74,13 +74,13 @@ public:
     [[nodiscard]] Akonadi::Item currentItem() const;
 
     /**
-     * Returns the current message for the list as KMime::Message::Ptr.
+     * Returns the current message for the list as std::shared_ptr<KMime::Message>.
      * May return 0 if there is no current message or no current folder.
      */
-    [[nodiscard]] KMime::Message::Ptr currentMessage() const;
+    [[nodiscard]] std::shared_ptr<KMime::Message> currentMessage() const;
 
     /**
-     * Returns the currently selected KMime::Message::Ptr (bound to current StorageModel).
+     * Returns the currently selected std::shared_ptr<KMime::Message> (bound to current StorageModel).
      * The list may be empty if there are no selected messages or no StorageModel.
      *
      * If includeCollapsedChildren is true then the children of the selected but
@@ -90,7 +90,7 @@ public:
      * to the main even loop. Don't store it for any longer. If you need to reference
      * this set of messages at a later stage then take a look at createPersistentSet().
      */
-    [[nodiscard]] QList<KMime::Message::Ptr> selectionAsMessageList(bool includeCollapsedChildren = true) const;
+    [[nodiscard]] QList<std::shared_ptr<KMime::Message>> selectionAsMessageList(bool includeCollapsedChildren = true) const;
 
     /**
      * Returns the currently selected Items (bound to current StorageModel).

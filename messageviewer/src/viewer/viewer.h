@@ -112,7 +112,7 @@ public:
     /**
      * Returns the current message displayed in the viewer.
      */
-    [[nodiscard]] KMime::Message::Ptr message() const;
+    [[nodiscard]] std::shared_ptr<KMime::Message> message() const;
 
     /**
      * Returns the current message item displayed in the viewer.
@@ -153,11 +153,11 @@ public:
      * @param message - the message to be shown. If 0, an empty page is displayed.
      * @param updateMode - update the display immediately or not. See UpdateMode.
      */
-    void setMessage(const KMime::Message::Ptr &message, MimeTreeParser::UpdateMode updateMode = MimeTreeParser::Delayed);
+    void setMessage(const std::shared_ptr<KMime::Message> &message, MimeTreeParser::UpdateMode updateMode = MimeTreeParser::Delayed);
 
     /**
      * Set the Akonadi item that will be displayed.
-     * @param item - the Akonadi item to be displayed. If it doesn't hold a mail (KMime::Message::Ptr as payload data),
+     * @param item - the Akonadi item to be displayed. If it doesn't hold a mail (std::shared_ptr<KMime::Message> as payload data),
      *               an empty page is shown.
      * @param updateMode - update the display immediately or not. See UpdateMode.
      */
@@ -385,9 +385,9 @@ Q_SIGNALS:
     void showReader(KMime::Content *aMsgPart, bool aHTML, const QString &encoding);
 
     /// Emitted when the message should be shown in a separate window
-    void showMessage(const KMime::Message::Ptr &message, const QString &encoding);
+    void showMessage(const std::shared_ptr<KMime::Message> &message, const QString &encoding);
 
-    void replyMessageTo(const KMime::Message::Ptr &message, bool replyToAll);
+    void replyMessageTo(const std::shared_ptr<KMime::Message> &message, bool replyToAll);
 
     void deleteMessage(const Akonadi::Item &);
 

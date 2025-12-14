@@ -140,7 +140,7 @@ void NodeHelperTest::testPersistentIndex()
 void NodeHelperTest::testHREF()
 {
     NodeHelper helper;
-    KMime::Message::Ptr msg(new KMime::Message);
+    std::shared_ptr<KMime::Message> msg(new KMime::Message);
     QUrl url;
 
     KMime::Content *node = msg->topLevel();
@@ -193,7 +193,7 @@ void NodeHelperTest::testHREF()
 void NodeHelperTest::testLocalFiles()
 {
     NodeHelper helper;
-    KMime::Message::Ptr msg(new KMime::Message);
+    std::shared_ptr<KMime::Message> msg(new KMime::Message);
 
     KMime::Content *node = msg->topLevel();
     auto subNode = std::make_unique<KMime::Content>();

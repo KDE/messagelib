@@ -93,12 +93,12 @@ void CryptoComposerTest::testOpenPGPMime()
     VERIFYEXEC(composerJob);
     QCOMPARE(composerJob->resultMessages().size(), 1);
 
-    KMime::Message::Ptr message = composerJob->resultMessages().first();
+    std::shared_ptr<KMime::Message> message = composerJob->resultMessages().first();
     delete composerJob;
     composerJob = nullptr;
 
-    // qDebug()<< "message:" << message.data()->encodedContent();
-    ComposerTestUtil::verify(sign, encrypt, message.data(), data.toUtf8(), Kleo::OpenPGPMIMEFormat, cte);
+    // qDebug()<< "message:" << message.get()->encodedContent();
+    ComposerTestUtil::verify(sign, encrypt, message.get(), data.toUtf8(), Kleo::OpenPGPMIMEFormat, cte);
 
     QCOMPARE(message->from()->asUnicodeString(), QString::fromLocal8Bit("me@me.me"));
     QCOMPARE(message->to()->asUnicodeString(), QString::fromLocal8Bit("you@you.you"));
@@ -136,12 +136,12 @@ void CryptoComposerTest::testEncryptSameAttachments()
     VERIFYEXEC(composerJob);
     QCOMPARE(composerJob->resultMessages().size(), 1);
 
-    KMime::Message::Ptr message = composerJob->resultMessages().constFirst();
+    std::shared_ptr<KMime::Message> message = composerJob->resultMessages().constFirst();
     delete composerJob;
     composerJob = nullptr;
 
-    // qDebug()<< "message:" << message.data()->encodedContent();
-    ComposerTestUtil::verifyEncryption(message.data(), data.toUtf8(), (Kleo::CryptoMessageFormat)format, true);
+    // qDebug()<< "message:" << message.get()->encodedContent();
+    ComposerTestUtil::verifyEncryption(message.get(), data.toUtf8(), (Kleo::CryptoMessageFormat)format, true);
 
     QCOMPARE(message->from()->asUnicodeString(), QString::fromLocal8Bit("me@me.me"));
     QCOMPARE(message->to()->asUnicodeString(), QString::fromLocal8Bit("you@you.you"));
@@ -151,10 +151,10 @@ void CryptoComposerTest::testEncryptSameAttachments()
     auto nh = new MimeTreeParser::NodeHelper;
     MimeTreeParser::ObjectTreeParser otp(&testSource, nh);
 
-    otp.parseObjectTree(message.data());
-    KMime::Message::Ptr unencrypted = nh->unencryptedMessage(message);
+    otp.parseObjectTree(message.get());
+    std::shared_ptr<KMime::Message> unencrypted = nh->unencryptedMessage(message);
 
-    KMime::Content *testAttachment = Util::findTypeInMessage(unencrypted.data(), "x-some", "x-type");
+    KMime::Content *testAttachment = Util::findTypeInMessage(unencrypted.get(), "x-some", "x-type");
 
     QCOMPARE(testAttachment->body(), QString::fromLatin1("abc").toUtf8());
     QCOMPARE(testAttachment->contentDisposition()->filename(), QString::fromLatin1("anattachment.txt"));
@@ -191,7 +191,7 @@ void CryptoComposerTest::testEditEncryptAttachments()
     VERIFYEXEC(composerJob);
     QCOMPARE(composerJob->resultMessages().size(), 1);
 
-    KMime::Message::Ptr message = composerJob->resultMessages().first();
+    std::shared_ptr<KMime::Message> message = composerJob->resultMessages().first();
     delete composerJob;
     composerJob = nullptr;
 
@@ -257,7 +257,7 @@ void CryptoComposerTest::testEditEncryptAndLateAttachments()
     VERIFYEXEC(composerJob);
     QCOMPARE(composerJob->resultMessages().size(), 1);
 
-    KMime::Message::Ptr message = composerJob->resultMessages().constFirst();
+    std::shared_ptr<KMime::Message> message = composerJob->resultMessages().constFirst();
     delete composerJob;
     composerJob = nullptr;
 
@@ -314,7 +314,7 @@ void CryptoComposerTest::testSignEncryptLateAttachments()
     VERIFYEXEC(composerJob);
     QCOMPARE(composerJob->resultMessages().size(), 1);
 
-    KMime::Message::Ptr message = composerJob->resultMessages().constFirst();
+    std::shared_ptr<KMime::Message> message = composerJob->resultMessages().constFirst();
     delete composerJob;
     composerJob = nullptr;
 
@@ -362,7 +362,7 @@ void CryptoComposerTest::testProtectedHeaders()
     VERIFYEXEC(composerJob);
     QCOMPARE(composerJob->resultMessages().size(), 1);
 
-    KMime::Message::Ptr message = composerJob->resultMessages().first();
+    std::shared_ptr<KMime::Message> message = composerJob->resultMessages().first();
 
     // parse the result and make sure it is valid in various ways
     MimeTreeParser::SimpleObjectTreeSource testSource;
@@ -370,22 +370,22 @@ void CryptoComposerTest::testProtectedHeaders()
     MimeTreeParser::ObjectTreeParser otp(&testSource, &nh);
 
     testSource.setDecryptMessage(true);
-    otp.parseObjectTree(message.data());
+    otp.parseObjectTree(message.get());
 
     if (encrypt) {
-        QCOMPARE(nh.encryptionState(message.data()), MimeTreeParser::KMMsgFullyEncrypted);
+        QCOMPARE(nh.encryptionState(message.get()), MimeTreeParser::KMMsgFullyEncrypted);
     }
 
     if (sign && !encrypt) {
-        QCOMPARE(nh.signatureState(message.data()), MimeTreeParser::KMMsgFullySigned);
+        QCOMPARE(nh.signatureState(message.get()), MimeTreeParser::KMMsgFullySigned);
     }
 
     KMime::Content *part = nullptr;
 
     if (sign && !encrypt) {
-        part = Util::findTypeInMessage(message.data(), "text", "plain");
+        part = Util::findTypeInMessage(message.get(), "text", "plain");
     } else if (encrypt) {
-        auto extraContents = nh.extraContents(message.data());
+        auto extraContents = nh.extraContents(message.get());
         QCOMPARE(extraContents.size(), 1);
         part = extraContents.first();
         if (sign) {
@@ -444,17 +444,17 @@ void CryptoComposerTest::testBCCEncrypt()
     VERIFYEXEC(composerJob);
     QCOMPARE(composerJob->resultMessages().size(), 2);
 
-    KMime::Message::Ptr primMessage = composerJob->resultMessages().constFirst();
-    KMime::Message::Ptr secMessage = composerJob->resultMessages()[1];
+    std::shared_ptr<KMime::Message> primMessage = composerJob->resultMessages().constFirst();
+    std::shared_ptr<KMime::Message> secMessage = composerJob->resultMessages()[1];
     delete composerJob;
     composerJob = nullptr;
 
-    ComposerTestUtil::verifySignatureAndEncryption(primMessage.data(), data.toUtf8(), (Kleo::CryptoMessageFormat)format);
+    ComposerTestUtil::verifySignatureAndEncryption(primMessage.get(), data.toUtf8(), (Kleo::CryptoMessageFormat)format);
 
     QCOMPARE(primMessage->from()->asUnicodeString(), QString::fromLocal8Bit("me@me.me"));
     QCOMPARE(primMessage->to()->asUnicodeString(), QString::fromLocal8Bit("you@you.you"));
 
-    ComposerTestUtil::verifySignatureAndEncryption(secMessage.data(), data.toUtf8(), (Kleo::CryptoMessageFormat)format);
+    ComposerTestUtil::verifySignatureAndEncryption(secMessage.get(), data.toUtf8(), (Kleo::CryptoMessageFormat)format);
 
     QCOMPARE(secMessage->from()->asUnicodeString(), QString::fromLocal8Bit("me@me.me"));
     QCOMPARE(secMessage->to()->asUnicodeString(), QString::fromLocal8Bit("you@you.you"));
@@ -492,7 +492,7 @@ void CryptoComposerTest::testOpenPGPInline()
     VERIFYEXEC(composerJob);
     QCOMPARE(composerJob->resultMessages().size(), 1);
 
-    KMime::Message::Ptr message = composerJob->resultMessages().constFirst();
+    std::shared_ptr<KMime::Message> message = composerJob->resultMessages().constFirst();
     delete composerJob;
     composerJob = nullptr;
 
@@ -500,7 +500,7 @@ void CryptoComposerTest::testOpenPGPInline()
         data += u'\n';
     }
     // qDebug() << "message:" << message->encodedContent();
-    ComposerTestUtil::verify(sign, encrypt, message.data(), data.toUtf8(), Kleo::InlineOpenPGPFormat, cte);
+    ComposerTestUtil::verify(sign, encrypt, message.get(), data.toUtf8(), Kleo::InlineOpenPGPFormat, cte);
 
     QCOMPARE(message->from()->asUnicodeString(), QString::fromLocal8Bit("me@me.me"));
     QCOMPARE(message->to()->asUnicodeString(), QString::fromLocal8Bit("you@you.you"));
@@ -622,7 +622,7 @@ void CryptoComposerTest::testSetGnupgHome()
 
     bool encrypt(true);
 
-    KMime::Message::Ptr message;
+    std::shared_ptr<KMime::Message> message;
     QTemporaryDir dir;
     {
         auto composerJob = new ComposerJob;
@@ -658,7 +658,7 @@ void CryptoComposerTest::testSetGnupgHome()
         message = composerJob->resultMessages().first();
     }
 
-    ComposerTestUtil::verify(sign, encrypt, message.data(), data.toUtf8(), Kleo::OpenPGPMIMEFormat, Headers::CE7Bit);
+    ComposerTestUtil::verify(sign, encrypt, message.get(), data.toUtf8(), Kleo::OpenPGPMIMEFormat, Headers::CE7Bit);
 
     QCOMPARE(message->from()->asUnicodeString(), QString::fromLocal8Bit("me@me.me"));
     QCOMPARE(message->to()->asUnicodeString(), QString::fromLocal8Bit("you@you.you"));
@@ -686,7 +686,7 @@ void CryptoComposerTest::testAutocryptHeaders()
 
     std::vector<GpgME::Key> keys = Test::getKeys();
 
-    KMime::Message::Ptr message;
+    std::shared_ptr<KMime::Message> message;
     QTemporaryDir dir;
     {
         auto composerJob = new ComposerJob;
@@ -726,7 +726,7 @@ void CryptoComposerTest::testAutocryptHeaders()
     }
 
     if (sign || encrypt) {
-        ComposerTestUtil::verify(sign, encrypt, message.data(), data.toUtf8(), Kleo::OpenPGPMIMEFormat, Headers::CE7Bit);
+        ComposerTestUtil::verify(sign, encrypt, message.get(), data.toUtf8(), Kleo::OpenPGPMIMEFormat, Headers::CE7Bit);
     }
 
     QVERIFY(message->headerByType("autocrypt"));
@@ -768,7 +768,7 @@ void CryptoComposerTest::testAutocryptGossip()
 
     std::vector<GpgME::Key> keys = Test::getKeys();
 
-    KMime::Message::Ptr message;
+    std::shared_ptr<KMime::Message> message;
 
     {
         auto composerJob = new ComposerJob;
@@ -805,21 +805,21 @@ void CryptoComposerTest::testAutocryptGossip()
     }
 
     if (sign || encrypt) {
-        ComposerTestUtil::verify(sign, encrypt, message.data(), data.toUtf8(), Kleo::OpenPGPMIMEFormat, Headers::CE7Bit);
+        ComposerTestUtil::verify(sign, encrypt, message.get(), data.toUtf8(), Kleo::OpenPGPMIMEFormat, Headers::CE7Bit);
     }
 
     MimeTreeParser::SimpleObjectTreeSource testSource;
     MimeTreeParser::NodeHelper nh;
     MimeTreeParser::ObjectTreeParser otp(&testSource, &nh);
     testSource.setDecryptMessage(true);
-    otp.parseObjectTree(message.data());
+    otp.parseObjectTree(message.get());
 
     QVERIFY(!message->headerByType("autocrypt-gossip"));
     if (encrypt && recipients.size() > 1) {
-        QCOMPARE(nh.headers("autocrypt-gossip", message.data()).size(), 2);
+        QCOMPARE(nh.headers("autocrypt-gossip", message.get()).size(), 2);
 
         auto headers = QStringList();
-        for (const auto header : nh.headers("autocrypt-gossip", message.data())) {
+        for (const auto header : nh.headers("autocrypt-gossip", message.get())) {
             headers.append(header->asUnicodeString());
         }
 
@@ -828,7 +828,7 @@ void CryptoComposerTest::testAutocryptGossip()
         QVERIFY(headers[0].startsWith(u"addr=leo@kdab.com; keydata= mQINBEr4pSwBEADG/B1VaoxT7mnQfwekkY+f8wkqFVLvTwN0W59Ze/pxmuRf/iS0tZjsEiPK0za"_s));
         QVERIFY(headers[1].startsWith(u"addr=you@you.com; keydata= mI0ESw2YuAEEALakcld4goNkwIL5gMETM3R+zI+AoJcuQWUpvS7AqwyR9/UAkVd3D+r32CgWhFi"_s));
     } else {
-        QCOMPARE(nh.headers("autocrypt-gossip", message.data()).size(), 0);
+        QCOMPARE(nh.headers("autocrypt-gossip", message.get()).size(), 0);
     }
     QCOMPARE(message->from()->asUnicodeString(), QString::fromLocal8Bit("me@me.me"));
     QCOMPARE(message->to()->asUnicodeString(), recipients.join(u", "_s));
@@ -889,13 +889,13 @@ void CryptoComposerTest::runSMIMETest(bool sign, bool enc, bool opaque)
     QVERIFY(result);
     if (result) {
         QCOMPARE(composerJob->resultMessages().size(), 1);
-        KMime::Message::Ptr message = composerJob->resultMessages().constFirst();
+        std::shared_ptr<KMime::Message> message = composerJob->resultMessages().constFirst();
         delete composerJob;
         composerJob = nullptr;
 
         // qDebug() << "message:" << message->encodedContent();
 
-        ComposerTestUtil::verify(sign, enc, message.data(), data.toUtf8(), f, cte);
+        ComposerTestUtil::verify(sign, enc, message.get(), data.toUtf8(), f, cte);
 
         QCOMPARE(message->from()->asUnicodeString(), QString::fromLocal8Bit("test@example.com"));
         QCOMPARE(message->to()->asUnicodeString(), QString::fromLocal8Bit("you@you.you"));

@@ -59,9 +59,9 @@ public:
     /**
      * Extracts the information about a mailing list from the given @p message.
      */
-    static MailingList detect(const KMime::Message::Ptr &message);
+    static MailingList detect(const std::shared_ptr<KMime::Message> &message);
 
-    static QString name(const KMime::Message::Ptr &message, QByteArray &headerName, QString &headerValue);
+    static QString name(const std::shared_ptr<KMime::Message> &message, QByteArray &headerName, QString &headerValue);
 
 public:
     /**

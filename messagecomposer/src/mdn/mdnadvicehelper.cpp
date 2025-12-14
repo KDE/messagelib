@@ -87,7 +87,7 @@ MDNAdviceHelper *MDNAdviceHelper::instance()
 
 MDNAdviceHelper::MDNSendingModeInfo MDNAdviceHelper::checkAndSetMDNInfo(const Akonadi::Item &item, KMime::MDN::DispositionType d, bool forceSend)
 {
-    KMime::Message::Ptr msg = MessageComposer::Util::message(item);
+    std::shared_ptr<KMime::Message> msg = MessageComposer::Util::message(item);
 
     // RFC 2298: At most one MDN may be issued on behalf of each
     // particular recipient by their user agent.  That is, once an MDN
@@ -152,7 +152,7 @@ MDNAdviceHelper::MDNSendingModeInfo MDNAdviceHelper::checkAndSetMDNInfo(const Ak
     }
 
     // RFC 2298: An MDN MUST NOT be generated in response to an MDN.
-    if (MessageComposer::Util::findTypeInMessage(msg.data(), "message", "disposition-notification")) {
+    if (MessageComposer::Util::findTypeInMessage(msg.get(), "message", "disposition-notification")) {
         mdnStateAttr->setMDNState(Akonadi::MDNStateAttribute::MDNIgnore);
     } else if (mode == 0) { // ignore
         doSend = false;

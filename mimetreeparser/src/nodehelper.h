@@ -146,7 +146,7 @@ public:
     // Get a href in the form attachment:<nodeId>?place=<place>, used by ObjectTreeParser and
     // UrlHandlerManager.
     [[nodiscard]] QString asHREF(const KMime::Content *node, const QString &place) const;
-    [[nodiscard]] KMime::Content *fromHREF(const KMime::Message::Ptr &mMessage, const QUrl &href) const;
+    [[nodiscard]] KMime::Content *fromHREF(const std::shared_ptr<KMime::Message> &mMessage, const QUrl &href) const;
 
     // Overload which creates a URL without the query part. Used by MessagePart::makeLink.
     [[nodiscard]] QString asHREF(const KMime::Content *node) const;
@@ -206,7 +206,7 @@ public:
      * @return the unencrypted message or an invalid pointer if the original message didn't contain
      *         a part that needed to be modified.
      */
-    [[nodiscard]] KMime::Message::Ptr unencryptedMessage(const KMime::Message::Ptr &originalMessage);
+    [[nodiscard]] std::shared_ptr<KMime::Message> unencryptedMessage(const std::shared_ptr<KMime::Message> &originalMessage);
 
     /**
      * Returns a list of attachments of attached extra content nodes.

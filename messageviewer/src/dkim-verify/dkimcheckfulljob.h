@@ -21,7 +21,7 @@ public:
     explicit DKIMCheckFullJob(QObject *parent = nullptr);
     ~DKIMCheckFullJob() override;
 
-    void startCheckFullInfo(const KMime::Message::Ptr &message);
+    void startCheckFullInfo(const std::shared_ptr<KMime::Message> &message);
     void startCheckFullInfo(const Akonadi::Item &item);
 
     [[nodiscard]] DKIMCheckPolicy policy() const;
@@ -40,7 +40,7 @@ private:
     void generateRule(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
     void checkAuthenticationResults();
     DKIMCheckPolicy mCheckPolicy;
-    KMime::Message::Ptr mMessage;
+    std::shared_ptr<KMime::Message> mMessage;
     Akonadi::Item mAkonadiItem;
     DKIMHeaderParser mHeaderParser;
 };

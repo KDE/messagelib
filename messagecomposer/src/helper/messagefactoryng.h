@@ -50,12 +50,12 @@ public:
     /// Small helper structure which encapsulates the KMime::Message created when creating a reply, and
     /// the reply mode
     struct MessageReply {
-        KMime::Message::Ptr msg = nullptr; ///< The actual reply message
+        std::shared_ptr<KMime::Message> msg = nullptr; ///< The actual reply message
         bool replyAll = false; ///< If true, the "reply all" template was used, otherwise the normal reply
         ///  template
     };
 
-    explicit MessageFactoryNG(const KMime::Message::Ptr &origMsg,
+    explicit MessageFactoryNG(const std::shared_ptr<KMime::Message> &origMsg,
                               Akonadi::Item::Id id,
                               const Akonadi::Collection &col = Akonadi::Collection(),
                               QObject *parent = nullptr);
@@ -81,7 +81,8 @@ public:
      * If no list is passed, use the original message passed in the MessageFactoryNG
      *  constructor.
      */
-    [[nodiscard]] QPair<KMime::Message::Ptr, QList<KMime::Content *>> createAttachedForward(const Akonadi::Item::List &items = Akonadi::Item::List());
+    [[nodiscard]] QPair<std::shared_ptr<KMime::Message>, QList<KMime::Content *>>
+    createAttachedForward(const Akonadi::Item::List &items = Akonadi::Item::List());
 
     /** Create a new message that is a redirect to this message, filling all
     required header fields with the proper values. The returned message
@@ -90,19 +91,19 @@ public:
     user, mail is not changed and the reply-to field is set to
     the email address of the original sender.
     */
-    [[nodiscard]] KMime::Message::Ptr createRedirect(const QString &toStr,
-                                                     const QString &ccStr = QString(),
-                                                     const QString &bccStr = QString(),
-                                                     int transportId = -1,
-                                                     const QString &fcc = QString(),
-                                                     int identity = -1);
+    [[nodiscard]] std::shared_ptr<KMime::Message> createRedirect(const QString &toStr,
+                                                                 const QString &ccStr = QString(),
+                                                                 const QString &bccStr = QString(),
+                                                                 int transportId = -1,
+                                                                 const QString &fcc = QString(),
+                                                                 int identity = -1);
 
-    [[nodiscard]] KMime::Message::Ptr createResend();
+    [[nodiscard]] std::shared_ptr<KMime::Message> createResend();
 
     /** Create a new message that is a delivery receipt of this message,
       filling required header fields with the proper values. The
       returned message is not stored in any folder. */
-    [[nodiscard]] KMime::Message::Ptr createDeliveryReceipt();
+    [[nodiscard]] std::shared_ptr<KMime::Message> createDeliveryReceipt();
 
     /** Create a new message that is a MDN for this message, filling all
       required fields with proper values. The returned message is not
@@ -116,11 +117,11 @@ public:
 
       @return The notification message or 0, if none should be sent, as well as the state of the MDN operation.
     **/
-    [[nodiscard]] KMime::Message::Ptr createMDN(KMime::MDN::ActionMode a,
-                                                KMime::MDN::DispositionType d,
-                                                KMime::MDN::SendingMode s,
-                                                int mdnQuoteOriginal = 0,
-                                                const QList<KMime::MDN::DispositionModifier> &m = QList<KMime::MDN::DispositionModifier>());
+    [[nodiscard]] std::shared_ptr<KMime::Message> createMDN(KMime::MDN::ActionMode a,
+                                                            KMime::MDN::DispositionType d,
+                                                            KMime::MDN::SendingMode s,
+                                                            int mdnQuoteOriginal = 0,
+                                                            const QList<KMime::MDN::DispositionModifier> &m = QList<KMime::MDN::DispositionModifier>());
 
     /**
      * Create a new forwarded MIME digest. If the user is trying to forward multiple messages
@@ -132,7 +133,7 @@ public:
      *
      * @param msgs List of messages to be composed into a digest
      */
-    [[nodiscard]] QPair<KMime::Message::Ptr, KMime::Content *> createForwardDigestMIME(const Akonadi::Item::List &items);
+    [[nodiscard]] QPair<std::shared_ptr<KMime::Message>, KMime::Content *> createForwardDigestMIME(const Akonadi::Item::List &items);
 
     /**
      * Set the identity manager to be used when creating messages.
@@ -189,7 +190,7 @@ public:
      * When creating MDNs, the user needs to be asked for confirmation in specific
      *  cases according to RFC 2298.
      */
-    [[nodiscard]] static bool MDNRequested(const KMime::Message::Ptr &msg);
+    [[nodiscard]] static bool MDNRequested(const std::shared_ptr<KMime::Message> &msg);
 
     /**
      * If sending an MDN requires confirmation due to multiple addresses.
@@ -198,7 +199,7 @@ public:
      * MDN sent) ] if there is more than one distinct address in the
      * Disposition-Notification-To header.
      */
-    [[nodiscard]] static bool MDNConfirmMultipleRecipients(const KMime::Message::Ptr &msg);
+    [[nodiscard]] static bool MDNConfirmMultipleRecipients(const std::shared_ptr<KMime::Message> &msg);
 
     /**
      *
@@ -211,38 +212,38 @@ public:
      * SHOULD be obtained (or no MDN sent) if there is no Return-Path
      * header in the message [...]
      */
-    [[nodiscard]] static bool MDNReturnPathEmpty(const KMime::Message::Ptr &msg);
-    [[nodiscard]] static bool MDNReturnPathNotInRecieptTo(const KMime::Message::Ptr &msg);
+    [[nodiscard]] static bool MDNReturnPathEmpty(const std::shared_ptr<KMime::Message> &msg);
+    [[nodiscard]] static bool MDNReturnPathNotInRecieptTo(const std::shared_ptr<KMime::Message> &msg);
 
     /**
      * If the MDN headers contain options that KMail can't parse
      */
-    [[nodiscard]] static bool MDNMDNUnknownOption(const KMime::Message::Ptr &msg);
+    [[nodiscard]] static bool MDNMDNUnknownOption(const std::shared_ptr<KMime::Message> &msg);
 
     [[nodiscard]] bool replyAsHtml() const;
     void setReplyAsHtml(bool replyAsHtml);
 
 Q_SIGNALS:
     void createReplyDone(const MessageComposer::MessageFactoryNG::MessageReply &reply);
-    void createForwardDone(const KMime::Message::Ptr &msg);
+    void createForwardDone(const std::shared_ptr<KMime::Message> &msg);
 
 private:
-    MESSAGECOMPOSER_NO_EXPORT void slotCreateReplyDone(const KMime::Message::Ptr &msg, bool replyAll);
-    MESSAGECOMPOSER_NO_EXPORT void slotCreateForwardDone(const KMime::Message::Ptr &msg);
+    MESSAGECOMPOSER_NO_EXPORT void slotCreateReplyDone(const std::shared_ptr<KMime::Message> &msg, bool replyAll);
+    MESSAGECOMPOSER_NO_EXPORT void slotCreateForwardDone(const std::shared_ptr<KMime::Message> &msg);
     /** @return the UOID of the identity for this message.
       Searches the "x-kmail-identity" header and if that fails,
       searches with KIdentityManagementCore::IdentityManager::identityForAddress()
     **/
-    [[nodiscard]] MESSAGECOMPOSER_NO_EXPORT uint identityUoid(const KMime::Message::Ptr &msg);
+    [[nodiscard]] MESSAGECOMPOSER_NO_EXPORT uint identityUoid(const std::shared_ptr<KMime::Message> &msg);
 
-    [[nodiscard]] MESSAGECOMPOSER_NO_EXPORT QString replaceHeadersInString(const KMime::Message::Ptr &msg, const QString &s);
+    [[nodiscard]] MESSAGECOMPOSER_NO_EXPORT QString replaceHeadersInString(const std::shared_ptr<KMime::Message> &msg, const QString &s);
 
-    [[nodiscard]] MESSAGECOMPOSER_NO_EXPORT QByteArray getRefStr(const KMime::Message::Ptr &msg);
-    MESSAGECOMPOSER_NO_EXPORT KMime::Content *createForwardAttachmentMessage(const KMime::Message::Ptr &fwdMsg);
+    [[nodiscard]] MESSAGECOMPOSER_NO_EXPORT QByteArray getRefStr(const std::shared_ptr<KMime::Message> &msg);
+    MESSAGECOMPOSER_NO_EXPORT KMime::Content *createForwardAttachmentMessage(const std::shared_ptr<KMime::Message> &fwdMsg);
 
     KIdentityManagementCore::IdentityManager *mIdentityManager = nullptr;
     // Required parts to create messages
-    KMime::Message::Ptr mOrigMsg;
+    std::shared_ptr<KMime::Message> mOrigMsg;
     uint mFolderId;
     Akonadi::Item::Id mParentFolderId;
 

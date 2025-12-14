@@ -48,7 +48,7 @@ public:
 
        @return true on success.
     */
-    [[nodiscard]] bool send(const KMime::Message::Ptr &msg, SendMethod method = SendDefault)
+    [[nodiscard]] bool send(const std::shared_ptr<KMime::Message> &msg, SendMethod method = SendDefault)
     {
         return doSend(msg, method);
     }
@@ -69,7 +69,7 @@ public:
     }
 
 protected:
-    [[nodiscard]] virtual bool doSend(const KMime::Message::Ptr &msg, short sendNow) = 0;
+    [[nodiscard]] virtual bool doSend(const std::shared_ptr<KMime::Message> &msg, short sendNow) = 0;
     [[nodiscard]] virtual bool doSendQueued(int transportId) = 0;
 };
 

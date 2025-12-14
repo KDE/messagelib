@@ -11,14 +11,14 @@
 using namespace MessageComposer;
 using namespace Qt::Literals::StringLiterals;
 
-void MessageComposer::removeDraftCryptoHeaders(const KMime::Message::Ptr &msg)
+void MessageComposer::removeDraftCryptoHeaders(const std::shared_ptr<KMime::Message> &msg)
 {
     DraftEncryptionState(msg).removeState();
     DraftSignatureState(msg).removeState();
     DraftCryptoMessageFormatState(msg).removeState();
 }
 
-DraftEncryptionState::DraftEncryptionState(const KMime::Message::Ptr &msg)
+DraftEncryptionState::DraftEncryptionState(const std::shared_ptr<KMime::Message> &msg)
     : mMsg(msg)
 {
 }
@@ -50,7 +50,7 @@ bool DraftEncryptionState::isDefined() const
     return mMsg->hasHeader("X-KMail-EncryptActionEnabled");
 }
 
-DraftSignatureState::DraftSignatureState(const KMime::Message::Ptr &msg)
+DraftSignatureState::DraftSignatureState(const std::shared_ptr<KMime::Message> &msg)
     : mMsg(msg)
 {
 }
@@ -82,7 +82,7 @@ bool DraftSignatureState::isDefined() const
     return mMsg->hasHeader("X-KMail-SignatureActionEnabled");
 }
 
-DraftCryptoMessageFormatState::DraftCryptoMessageFormatState(const KMime::Message::Ptr &msg)
+DraftCryptoMessageFormatState::DraftCryptoMessageFormatState(const std::shared_ptr<KMime::Message> &msg)
     : mMsg(msg)
 {
 }

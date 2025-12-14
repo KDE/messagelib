@@ -83,7 +83,7 @@ using namespace MessageComposer;
 
 ComposerViewBase::ComposerViewBase(QObject *parent, QWidget *parentGui)
     : QObject(parent)
-    , m_msg(KMime::Message::Ptr(new KMime::Message))
+    , m_msg(std::shared_ptr<KMime::Message>(new KMime::Message))
     , m_parentWidget(parentGui)
     , m_cryptoMessageFormat(Kleo::AutoFormat)
     , m_autoSaveInterval(60000) // default of 1 min
@@ -98,7 +98,7 @@ bool ComposerViewBase::isComposing() const
     return !m_composerJobs.isEmpty();
 }
 
-void ComposerViewBase::setMessage(const KMime::Message::Ptr &msg, bool allowDecryption)
+void ComposerViewBase::setMessage(const std::shared_ptr<KMime::Message> &msg, bool allowDecryption)
 {
     if (m_attachmentModel) {
         const auto attachments{m_attachmentModel->attachments()};
@@ -218,7 +218,7 @@ void ComposerViewBase::setMessage(const KMime::Message::Ptr &msg, bool allowDecr
         htmlContent.replace(QRegularExpression(u"<div\\s*id=\".*\">"_s), QStringLiteral("<div>"));
         m_editor->setHtml(htmlContent);
         Q_EMIT enableHtml();
-        collectImages(m_msg.data());
+        collectImages(m_msg.get());
     }
 
     if (auto hdr = m_msg->headerByType("X-KMail-CursorPos")) {
@@ -226,7 +226,7 @@ void ComposerViewBase::setMessage(const KMime::Message::Ptr &msg, bool allowDecr
     }
 }
 
-void ComposerViewBase::updateTemplate(const KMime::Message::Ptr &msg)
+void ComposerViewBase::updateTemplate(const std::shared_ptr<KMime::Message> &msg)
 {
     // First, we copy the message and then parse it to the object tree parser.
     // The otp gets the message text out of it, in textualContent(), and also decrypts
@@ -241,7 +241,7 @@ void ComposerViewBase::updateTemplate(const KMime::Message::Ptr &msg)
     if (!otp.htmlContent().isEmpty()) {
         m_editor->setHtml(otp.htmlContent());
         Q_EMIT enableHtml();
-        collectImages(msg.data());
+        collectImages(msg.get());
     } else {
         m_editor->setPlainText(otp.plainTextContent());
     }
@@ -1071,7 +1071,7 @@ void ComposerViewBase::slotSendComposeResult(KJob *job)
     m_composerJobs.removeAll(composerJob);
 }
 
-void ComposerViewBase::saveRecentAddresses(const KMime::Message::Ptr &msg)
+void ComposerViewBase::saveRecentAddresses(const std::shared_ptr<KMime::Message> &msg)
 {
     KConfig *config = MessageComposer::MessageComposerSettings::self()->config();
     if (auto to = msg->to(KMime::CreatePolicy::DontCreate)) {
@@ -1094,7 +1094,7 @@ void ComposerViewBase::saveRecentAddresses(const KMime::Message::Ptr &msg)
     }
 }
 
-void ComposerViewBase::queueMessage(const KMime::Message::Ptr &message, MessageComposer::ComposerJob *composerJob)
+void ComposerViewBase::queueMessage(const std::shared_ptr<KMime::Message> &message, MessageComposer::ComposerJob *composerJob)
 {
     const MessageComposer::InfoPart *infoPart = composerJob->infoPart();
     auto qjob = new Akonadi::MessageQueueJob(this);
@@ -1331,7 +1331,7 @@ void ComposerViewBase::slotAutoSaveComposeResult(KJob *job)
     m_composerJobs.removeAll(composerJob);
 }
 
-void ComposerViewBase::writeAutoSaveToDisk(const KMime::Message::Ptr &message)
+void ComposerViewBase::writeAutoSaveToDisk(const std::shared_ptr<KMime::Message> &message)
 {
     const QString autosavePath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1StringView("/kmail2/autosave/");
     QDir().mkpath(autosavePath);
@@ -1377,7 +1377,7 @@ void ComposerViewBase::writeAutoSaveToDisk(const KMime::Message::Ptr &message)
     message->clear();
 }
 
-void ComposerViewBase::saveMessage(const KMime::Message::Ptr &message, MessageComposer::MessageSender::SaveIn saveIn)
+void ComposerViewBase::saveMessage(const std::shared_ptr<KMime::Message> &message, MessageComposer::MessageSender::SaveIn saveIn)
 {
     Akonadi::Collection target;
     const auto identity = currentIdentity();
@@ -2252,7 +2252,7 @@ void ComposerViewBase::setRequestDeleveryConfirmation(bool requestDeleveryConfir
     m_requestDeleveryConfirmation = requestDeleveryConfirmation;
 }
 
-KMime::Message::Ptr ComposerViewBase::msg() const
+std::shared_ptr<KMime::Message> ComposerViewBase::msg() const
 {
     return m_msg;
 }

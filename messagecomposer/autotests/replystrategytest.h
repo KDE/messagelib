@@ -33,7 +33,7 @@ private Q_SLOTS:
     void testReply();
 
 private:
-    KMime::Message::Ptr makeReply(const KMime::Message::Ptr &original, const MessageComposer::ReplyStrategy strategy);
+    std::shared_ptr<KMime::Message> makeReply(const std::shared_ptr<KMime::Message> &original, const MessageComposer::ReplyStrategy strategy);
 
     KIdentityManagementCore::IdentityManager *mIdentityManager = nullptr;
 };

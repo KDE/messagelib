@@ -26,7 +26,7 @@ public:
     ~DKIMManager() override;
     static DKIMManager *self();
 
-    void checkDKim(const KMime::Message::Ptr &message);
+    void checkDKim(const std::shared_ptr<KMime::Message> &message);
     void checkDKim(const Akonadi::Item &item);
 
     void clearInfoWidget();

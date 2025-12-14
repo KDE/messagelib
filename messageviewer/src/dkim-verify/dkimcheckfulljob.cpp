@@ -41,8 +41,8 @@ void DKIMCheckFullJob::startCheckFullInfo(const Akonadi::Item &item)
         return;
     }
     mAkonadiItem = item;
-    if (mAkonadiItem.hasPayload<KMime::Message::Ptr>()) {
-        mMessage = mAkonadiItem.payload<KMime::Message::Ptr>();
+    if (mAkonadiItem.hasPayload<std::shared_ptr<KMime::Message>>()) {
+        mMessage = mAkonadiItem.payload<std::shared_ptr<KMime::Message>>();
     }
     if (!mMessage) {
         deleteLater();
@@ -79,7 +79,7 @@ void DKIMCheckFullJob::checkSignature(const QList<DKIMCheckSignatureJob::DKIMChe
     job->start();
 }
 
-void DKIMCheckFullJob::startCheckFullInfo(const KMime::Message::Ptr &message)
+void DKIMCheckFullJob::startCheckFullInfo(const std::shared_ptr<KMime::Message> &message)
 {
     mMessage = message;
     if (!mMessage) {

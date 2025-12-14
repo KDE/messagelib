@@ -74,14 +74,14 @@ static void testHeaderFile(const QString &data, const QString &absolutePath, con
     }
 }
 
-static KMime::Message::Ptr readAndParseMail(const QString &mailFile)
+static std::shared_ptr<KMime::Message> readAndParseMail(const QString &mailFile)
 {
     QFile file(QStringLiteral(HEADER_DATA_DIR) + u'/' + mailFile);
     bool openFile = file.open(QIODevice::ReadOnly);
     Q_ASSERT(openFile);
     const QByteArray data = KMime::CRLFtoLF(file.readAll());
     Q_ASSERT(!data.isEmpty());
-    KMime::Message::Ptr msg(new KMime::Message);
+    std::shared_ptr<KMime::Message> msg(new KMime::Message);
     msg->setContent(data);
     msg->parse();
     return msg;
@@ -97,7 +97,7 @@ void GrantleeHeaderFormatterTest::testInvalid()
 
     QString filename = u"invalid"_s;
     QString absolutePath = QStringLiteral(HEADER_DATA_DIR) + u'/' + filename;
-    QString data = formatter.toHtml(QStringList(), absolutePath, filename, &style, aMsg.data(), false);
+    QString data = formatter.toHtml(QStringList(), absolutePath, filename, &style, aMsg.get(), false);
 
     QCOMPARE(data, u"Template not found, invalid"_s);
 }
@@ -110,17 +110,17 @@ void GrantleeHeaderFormatterTest::testPrint()
     auto formatter = GrantleeHeaderFormatter();
     MimeTreeParser::NodeHelper nodeHelper;
     style.setNodeHelper(&nodeHelper);
-    KMime::Message::Ptr aMsg(new KMime::Message);
+    std::shared_ptr<KMime::Message> aMsg(new KMime::Message);
 
     const QString &absolutePath = QStringLiteral(HEADER_DATA_DIR) + u'/' + tmplName;
 
     {
-        const QString &data = formatter.toHtml(QStringList(), QStringLiteral(HEADER_DATA_DIR), tmplName, &style, aMsg.data(), false);
+        const QString &data = formatter.toHtml(QStringList(), QStringLiteral(HEADER_DATA_DIR), tmplName, &style, aMsg.get(), false);
         testHeaderFile(u"<div><div>"_s + data, absolutePath, u"printtest.off"_s);
     }
 
     {
-        const QString &data = formatter.toHtml(QStringList(), QStringLiteral(HEADER_DATA_DIR), tmplName, &style, aMsg.data(), true);
+        const QString &data = formatter.toHtml(QStringList(), QStringLiteral(HEADER_DATA_DIR), tmplName, &style, aMsg.get(), true);
         testHeaderFile(u"<div><div>"_s + data, absolutePath, u"printtest.on"_s);
     }
 }
@@ -133,7 +133,7 @@ void GrantleeHeaderFormatterTest::testFancyDate()
     auto formatter = GrantleeHeaderFormatter();
     MimeTreeParser::NodeHelper nodeHelper;
     style.setNodeHelper(&nodeHelper);
-    KMime::Message::Ptr msg(new KMime::Message);
+    std::shared_ptr<KMime::Message> msg(new KMime::Message);
 
     {
         auto datetime(QDateTime::currentDateTime());
@@ -147,7 +147,7 @@ void GrantleeHeaderFormatterTest::testFancyDate()
 
     const QString &absolutePath = QStringLiteral(HEADER_DATA_DIR) + u'/' + tmplName;
 
-    const QString &data = formatter.toHtml(QStringList(), QStringLiteral(HEADER_DATA_DIR), tmplName, &style, msg.data(), false);
+    const QString &data = formatter.toHtml(QStringList(), QStringLiteral(HEADER_DATA_DIR), tmplName, &style, msg.get(), false);
     testHeaderFile(u"<div><div>"_s + data, absolutePath, u"fancydate"_s);
 }
 
@@ -176,7 +176,7 @@ void GrantleeHeaderFormatterTest::testBlock()
     auto aMsg = readAndParseMail(u"headertest.mbox"_s);
 
     QString absolutePath = QStringLiteral(HEADER_DATA_DIR) + u'/' + tmplName;
-    QString data = formatter.toHtml(QStringList(), QStringLiteral(HEADER_DATA_DIR), tmplName, &style, aMsg.data(), false);
+    QString data = formatter.toHtml(QStringList(), QStringLiteral(HEADER_DATA_DIR), tmplName, &style, aMsg.get(), false);
 
     testHeaderFile(u"<div><div>"_s + data, absolutePath, tmplName);
 }

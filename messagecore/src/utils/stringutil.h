@@ -65,17 +65,17 @@ namespace StringUtil
  * Removes all private header fields (e.g. *Status: and X-KMail-*) from the given @p message.
  * if cleanUpHeader is false don't remove X-KMail-Identity and X-KMail-Dictionary which is useful when we want restore mail.
  */
-MESSAGECORE_EXPORT void removePrivateHeaderFields(const KMime::Message::Ptr &message, bool cleanUpHeader = true);
+MESSAGECORE_EXPORT void removePrivateHeaderFields(const std::shared_ptr<KMime::Message> &message, bool cleanUpHeader = true);
 
 /**
  * Returns the @p message contents with the headers that should not be sent stripped off.
  */
-[[nodiscard]] MESSAGECORE_EXPORT QByteArray asSendableString(const KMime::Message::Ptr &message);
+[[nodiscard]] MESSAGECORE_EXPORT QByteArray asSendableString(const std::shared_ptr<KMime::Message> &message);
 
 /**
  * Return the message header with the headers that should not be sent stripped off.
  */
-[[nodiscard]] MESSAGECORE_EXPORT QByteArray headerAsSendableString(const KMime::Message::Ptr &message);
+[[nodiscard]] MESSAGECORE_EXPORT QByteArray headerAsSendableString(const std::shared_ptr<KMime::Message> &message);
 
 /**
  * Used to determine if the visible part of the anchor contains

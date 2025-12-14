@@ -58,8 +58,8 @@ private Q_SLOTS:
     void cleanupTestCase();
 
 private:
-    [[nodiscard]] KMime::Message::Ptr createPlainTestMessage();
-    [[nodiscard]] KMime::Message::Ptr createPlainTestMessageWithMultiEmails();
-    [[nodiscard]] KMime::Message::Ptr createReplyAllForMessage(KMime::Message::Ptr origMsg);
+    [[nodiscard]] std::shared_ptr<KMime::Message> createPlainTestMessage();
+    [[nodiscard]] std::shared_ptr<KMime::Message> createPlainTestMessageWithMultiEmails();
+    [[nodiscard]] std::shared_ptr<KMime::Message> createReplyAllForMessage(std::shared_ptr<KMime::Message> origMsg);
     KIdentityManagementCore::IdentityManager *mIdentMan = nullptr;
 };

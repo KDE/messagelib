@@ -78,7 +78,7 @@ void DKIMManager::checkFullInfo(const Akonadi::Item &item)
     job->startCheckFullInfo(item);
 }
 
-void DKIMManager::checkDKim(const KMime::Message::Ptr &message)
+void DKIMManager::checkDKim(const std::shared_ptr<KMime::Message> &message)
 {
     auto job = new DKIMCheckFullJob(this);
     job->setPolicy(mCheckPolicy);

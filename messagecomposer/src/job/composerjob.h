@@ -39,7 +39,7 @@ public:
     explicit ComposerJob(QObject *parent = nullptr);
     ~ComposerJob() override;
 
-    [[nodiscard]] QList<KMime::Message::Ptr> resultMessages() const;
+    [[nodiscard]] QList<std::shared_ptr<KMime::Message>> resultMessages() const;
 
     [[nodiscard]] GlobalPart *globalPart() const;
     [[nodiscard]] InfoPart *infoPart() const;

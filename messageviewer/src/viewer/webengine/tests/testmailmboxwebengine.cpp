@@ -29,7 +29,7 @@ TestMailMBoxWebEngine::TestMailMBoxWebEngine(QWidget *parent)
 
 TestMailMBoxWebEngine::~TestMailMBoxWebEngine() = default;
 
-KMime::Message::Ptr TestMailMBoxWebEngine::readAndParseMail(const QString &mailFile)
+std::shared_ptr<KMime::Message> TestMailMBoxWebEngine::readAndParseMail(const QString &mailFile)
 {
     QFile file(QLatin1StringView(MAIL_DATA_DIR) + u'/' + mailFile);
     file.open(QIODevice::ReadOnly);
@@ -37,7 +37,7 @@ KMime::Message::Ptr TestMailMBoxWebEngine::readAndParseMail(const QString &mailF
     qDebug() << ba;
     const QByteArray data = ba;
     Q_ASSERT(!data.isEmpty());
-    KMime::Message::Ptr msg(new KMime::Message);
+    std::shared_ptr<KMime::Message> msg(new KMime::Message);
     msg->setContent(data);
     msg->parse();
     return msg;

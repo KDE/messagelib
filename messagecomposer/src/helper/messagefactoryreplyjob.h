@@ -22,13 +22,13 @@ public:
 
     void start();
 
-    void setMsg(const KMime::Message::Ptr &msg);
+    void setMsg(const std::shared_ptr<KMime::Message> &msg);
 
     void setTemplate(const QString &tmpl);
 
     void setSelection(const QString &selection);
 
-    void setOrigMsg(const KMime::Message::Ptr &origMsg);
+    void setOrigMsg(const std::shared_ptr<KMime::Message> &origMsg);
 
     void setIdentityManager(KIdentityManagementCore::IdentityManager *identityManager);
 
@@ -39,14 +39,14 @@ public:
     void setReplyAsHtml(bool replyAsHtml);
 
 Q_SIGNALS:
-    void replyDone(const KMime::Message::Ptr &msg, bool replyAll);
+    void replyDone(const std::shared_ptr<KMime::Message> &msg, bool replyAll);
 
 private:
     void slotReplyDone();
     QString mSelection;
     QString mTemplate;
-    KMime::Message::Ptr mMsg = nullptr;
-    KMime::Message::Ptr mOrigMsg = nullptr;
+    std::shared_ptr<KMime::Message> mMsg = nullptr;
+    std::shared_ptr<KMime::Message> mOrigMsg = nullptr;
     Akonadi::Collection mCollection;
     bool mReplyAll = false;
     bool mReplyAsHtml = false;

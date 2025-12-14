@@ -667,12 +667,12 @@ void DKIMCheckSignatureJob::setWarning(DKIMCheckSignatureJob::DKIMWarning warnin
     mWarning = warning;
 }
 
-KMime::Message::Ptr DKIMCheckSignatureJob::message() const
+std::shared_ptr<KMime::Message> DKIMCheckSignatureJob::message() const
 {
     return mMessage;
 }
 
-void DKIMCheckSignatureJob::setMessage(const KMime::Message::Ptr &message)
+void DKIMCheckSignatureJob::setMessage(const std::shared_ptr<KMime::Message> &message)
 {
     mMessage = message;
 }

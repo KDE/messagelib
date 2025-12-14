@@ -13,7 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <KSharedConfig>
 #include <QTest>
 
-// TODO add test for static MailingList detect(  const KMime::Message::Ptr &message ); and static QString name( ... );
+// TODO add test for static MailingList detect(  const std::shared_ptr<KMime::Message> &message ); and static QString name( ... );
 
 MailingListTest::MailingListTest(QObject *parent)
     : QObject(parent)

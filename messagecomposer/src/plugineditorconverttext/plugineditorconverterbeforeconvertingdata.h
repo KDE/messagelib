@@ -22,11 +22,11 @@ public:
     [[nodiscard]] bool newMessage() const;
     void setNewMessage(bool newMessage);
 
-    [[nodiscard]] KMime::Message::Ptr message() const;
-    void setMessage(const KMime::Message::Ptr &message);
+    [[nodiscard]] std::shared_ptr<KMime::Message> message() const;
+    void setMessage(const std::shared_ptr<KMime::Message> &message);
 
 private:
-    KMime::Message::Ptr mMessage;
+    std::shared_ptr<KMime::Message> mMessage;
     bool mNewMessage = true;
 };
 }

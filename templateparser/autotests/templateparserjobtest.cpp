@@ -55,8 +55,8 @@ void TemplateParserJobTest::test_convertedHtml()
     QVERIFY(mailFile.open(QIODevice::ReadOnly));
     const QByteArray mailData = KMime::CRLFtoLF(mailFile.readAll());
     QVERIFY(!mailData.isEmpty());
-    KMime::Message::Ptr msg(new KMime::Message);
-    KMime::Message::Ptr origMsg(new KMime::Message);
+    std::shared_ptr<KMime::Message> msg(new KMime::Message);
+    std::shared_ptr<KMime::Message> origMsg(new KMime::Message);
     origMsg->setContent(mailData);
     origMsg->parse();
     QCOMPARE(origMsg->subject()->as7BitString(), "Plain Message Test");
@@ -85,8 +85,8 @@ void TemplateParserJobTest::test_convertedHtml()
     QVERIFY(!convertedHtmlContent.isEmpty());
 
     QCOMPARE(convertedHtmlContent, referenceData);
-    msg.clear();
-    origMsg.clear();
+    msg.reset();
+    origMsg.reset();
     delete parser;
 }
 
@@ -116,8 +116,8 @@ void TemplateParserJobTest::test_replyHtml()
     QVERIFY(mailFile.open(QIODevice::ReadOnly));
     const QByteArray mailData = KMime::CRLFtoLF(mailFile.readAll());
     QVERIFY(!mailData.isEmpty());
-    KMime::Message::Ptr msg(new KMime::Message);
-    KMime::Message::Ptr origMsg(new KMime::Message);
+    std::shared_ptr<KMime::Message> msg(new KMime::Message);
+    std::shared_ptr<KMime::Message> origMsg(new KMime::Message);
     origMsg->setContent(mailData);
     origMsg->parse();
 
@@ -147,8 +147,8 @@ void TemplateParserJobTest::test_replyHtml()
     }
 
     QCOMPARE(convertedHtmlContent, referenceData);
-    msg.clear();
-    origMsg.clear();
+    msg.reset();
+    origMsg.reset();
     delete parser;
 }
 
@@ -178,8 +178,8 @@ void TemplateParserJobTest::test_replyPlain()
     QVERIFY(mailFile.open(QIODevice::ReadOnly));
     const QByteArray mailData = KMime::CRLFtoLF(mailFile.readAll());
     QVERIFY(!mailData.isEmpty());
-    KMime::Message::Ptr msg(new KMime::Message);
-    KMime::Message::Ptr origMsg(new KMime::Message);
+    std::shared_ptr<KMime::Message> msg(new KMime::Message);
+    std::shared_ptr<KMime::Message> origMsg(new KMime::Message);
     origMsg->setContent(mailData);
     origMsg->parse();
 
@@ -200,8 +200,8 @@ void TemplateParserJobTest::test_replyPlain()
     const QString convertedPlainTextContent = parser->plainMessageText(false, TemplateParser::TemplateParserJob::NoSelectionAllowed);
 
     QCOMPARE(convertedPlainTextContent, referenceData);
-    msg.clear();
-    origMsg.clear();
+    msg.reset();
+    origMsg.reset();
     delete parser;
 }
 
@@ -231,8 +231,8 @@ void TemplateParserJobTest::test_forwardPlain()
     QVERIFY(mailFile.open(QIODevice::ReadOnly));
     const QByteArray mailData = KMime::CRLFtoLF(mailFile.readAll());
     QVERIFY(!mailData.isEmpty());
-    KMime::Message::Ptr msg(new KMime::Message);
-    KMime::Message::Ptr origMsg(new KMime::Message);
+    std::shared_ptr<KMime::Message> msg(new KMime::Message);
+    std::shared_ptr<KMime::Message> origMsg(new KMime::Message);
     origMsg->setContent(mailData);
     origMsg->parse();
 
@@ -253,8 +253,8 @@ void TemplateParserJobTest::test_forwardPlain()
     const QString convertedPlainTextContent = parser->plainMessageText(false, TemplateParser::TemplateParserJob::NoSelectionAllowed);
 
     QCOMPARE(convertedPlainTextContent, referenceData);
-    msg.clear();
-    origMsg.clear();
+    msg.reset();
+    origMsg.reset();
     delete parser;
 }
 
@@ -284,8 +284,8 @@ void TemplateParserJobTest::test_forwardHtml()
     QVERIFY(mailFile.open(QIODevice::ReadOnly));
     const QByteArray mailData = KMime::CRLFtoLF(mailFile.readAll());
     QVERIFY(!mailData.isEmpty());
-    KMime::Message::Ptr msg(new KMime::Message);
-    KMime::Message::Ptr origMsg(new KMime::Message);
+    std::shared_ptr<KMime::Message> msg(new KMime::Message);
+    std::shared_ptr<KMime::Message> origMsg(new KMime::Message);
     origMsg->setContent(mailData);
     origMsg->parse();
 
@@ -310,8 +310,8 @@ void TemplateParserJobTest::test_forwardHtml()
     }
 
     QCOMPARE(convertedHtmlContent, referenceData);
-    msg.clear();
-    origMsg.clear();
+    msg.reset();
+    origMsg.reset();
     delete parser;
 }
 
@@ -341,8 +341,8 @@ void TemplateParserJobTest::test_forwardedAttachments()
     QVERIFY(mailFile.open(QIODevice::ReadOnly));
     const QByteArray mailData = KMime::CRLFtoLF(mailFile.readAll());
     QVERIFY(!mailData.isEmpty());
-    KMime::Message::Ptr msg(new KMime::Message);
-    KMime::Message::Ptr origMsg(new KMime::Message);
+    std::shared_ptr<KMime::Message> msg(new KMime::Message);
+    std::shared_ptr<KMime::Message> origMsg(new KMime::Message);
     origMsg->setContent(mailData);
     origMsg->parse();
 
@@ -359,7 +359,7 @@ void TemplateParserJobTest::test_forwardedAttachments()
         QFile referenceFile(referenceFileName);
         QVERIFY(referenceFile.open(QIODevice::ReadOnly));
         const QByteArray referenceRawData = KMime::CRLFtoLF(referenceFile.readAll());
-        KMime::Message::Ptr referenceMsg(new KMime::Message);
+        std::shared_ptr<KMime::Message> referenceMsg(new KMime::Message);
         referenceMsg->setContent(referenceRawData);
         referenceMsg->parse();
 
@@ -367,12 +367,12 @@ void TemplateParserJobTest::test_forwardedAttachments()
         for (int i = 1; i < msg->contents().size(); i++) {
             QCOMPARE(msg->contents()[i]->encodedContent(), referenceMsg->contents()[i]->encodedContent());
         }
-        referenceMsg.clear();
+        referenceMsg.reset();
     } else {
         QCOMPARE(msg->contents().size(), 0);
     }
-    msg.clear();
-    origMsg.clear();
+    msg.reset();
+    origMsg.reset();
     delete parser;
 }
 
@@ -415,8 +415,8 @@ void TemplateParserJobTest::test_processWithTemplatesForBody()
     QFETCH(QString, expected);
     QFETCH(QString, selection);
 
-    KMime::Message::Ptr msg(new KMime::Message());
-    KMime::Message::Ptr origMsg(new KMime::Message());
+    std::shared_ptr<KMime::Message> msg(new KMime::Message());
+    std::shared_ptr<KMime::Message> origMsg(new KMime::Message());
     origMsg->setBody(text.toLocal8Bit());
     origMsg->parse();
     auto parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::Reply);
@@ -510,8 +510,8 @@ void TemplateParserJobTest::test_processWithTemplatesForContent()
     QVERIFY(mailFile.open(QIODevice::ReadOnly));
     const QByteArray mailData = KMime::CRLFtoLF(mailFile.readAll());
     QVERIFY(!mailData.isEmpty());
-    KMime::Message::Ptr msg(new KMime::Message);
-    KMime::Message::Ptr origMsg(new KMime::Message);
+    std::shared_ptr<KMime::Message> msg(new KMime::Message);
+    std::shared_ptr<KMime::Message> origMsg(new KMime::Message);
     origMsg->setContent(mailData);
     origMsg->parse();
 
@@ -555,8 +555,8 @@ void TemplateParserJobTest::test_processWithTemplatesForContentOtherTimeZone()
     QVERIFY(mailFile.open(QIODevice::ReadOnly));
     const QByteArray mailData = KMime::CRLFtoLF(mailFile.readAll());
     QVERIFY(!mailData.isEmpty());
-    KMime::Message::Ptr msg(new KMime::Message);
-    KMime::Message::Ptr origMsg(new KMime::Message);
+    std::shared_ptr<KMime::Message> msg(new KMime::Message);
+    std::shared_ptr<KMime::Message> origMsg(new KMime::Message);
     origMsg->setContent(mailData);
     origMsg->parse();
 
@@ -601,7 +601,7 @@ void TemplateParserJobTest::test_makeValidHtml()
     QFETCH(QString, templatestr);
     QFETCH(QString, expected);
 
-    KMime::Message::Ptr msg(new KMime::Message);
+    std::shared_ptr<KMime::Message> msg(new KMime::Message);
 
     auto parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::Reply);
     QString result = message;

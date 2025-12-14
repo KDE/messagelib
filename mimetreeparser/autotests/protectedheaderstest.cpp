@@ -44,25 +44,25 @@ void ProtectedHeadersTest::testMailHeaderAsBase()
     SimpleObjectTreeSource testSource;
     ObjectTreeParser otp(&testSource, &nodeHelper);
     testSource.setDecryptMessage(true);
-    otp.parseObjectTree(originalMessage.data());
+    otp.parseObjectTree(originalMessage.get());
 
     // test overwrite
-    QCOMPARE(nodeHelper.mailHeaderAsBase("from", originalMessage.data())->asUnicodeString(), u"you@example.com"_s);
-    QCOMPARE(nodeHelper.mailHeaderAsBase("to", originalMessage.data())->asUnicodeString(), u"me@example.com"_s);
-    QCOMPARE(nodeHelper.mailHeaderAsBase("subject", originalMessage.data())->asUnicodeString(), u"hidden subject"_s);
-    QCOMPARE(nodeHelper.mailHeaderAsBase("cc", originalMessage.data())->asUnicodeString(), u"cc@example.com"_s);
-    QCOMPARE(nodeHelper.dateHeader(originalMessage.data()), QDateTime(QDate(2018, 1, 2), QTime(3, 4, 5)));
+    QCOMPARE(nodeHelper.mailHeaderAsBase("from", originalMessage.get())->asUnicodeString(), u"you@example.com"_s);
+    QCOMPARE(nodeHelper.mailHeaderAsBase("to", originalMessage.get())->asUnicodeString(), u"me@example.com"_s);
+    QCOMPARE(nodeHelper.mailHeaderAsBase("subject", originalMessage.get())->asUnicodeString(), u"hidden subject"_s);
+    QCOMPARE(nodeHelper.mailHeaderAsBase("cc", originalMessage.get())->asUnicodeString(), u"cc@example.com"_s);
+    QCOMPARE(nodeHelper.dateHeader(originalMessage.get()), QDateTime(QDate(2018, 1, 2), QTime(3, 4, 5)));
 
     // test protected only headers
-    QCOMPARE(nodeHelper.mailHeaderAsBase("message-id", originalMessage.data())->asUnicodeString(), u"<myhiddenreference@me>"_s);
-    QCOMPARE(nodeHelper.mailHeaderAsBase("references", originalMessage.data())->asUnicodeString(), u"<hiddenreference@hidden>"_s);
-    QCOMPARE(nodeHelper.mailHeaderAsBase("in-reply-to", originalMessage.data())->asUnicodeString(), u"<hiddenreference@hidden>"_s);
+    QCOMPARE(nodeHelper.mailHeaderAsBase("message-id", originalMessage.get())->asUnicodeString(), u"<myhiddenreference@me>"_s);
+    QCOMPARE(nodeHelper.mailHeaderAsBase("references", originalMessage.get())->asUnicodeString(), u"<hiddenreference@hidden>"_s);
+    QCOMPARE(nodeHelper.mailHeaderAsBase("in-reply-to", originalMessage.get())->asUnicodeString(), u"<hiddenreference@hidden>"_s);
 
     // test non-existing headers
-    QCOMPARE(nodeHelper.mailHeaderAsBase("invalid", originalMessage.data()), nullptr);
+    QCOMPARE(nodeHelper.mailHeaderAsBase("invalid", originalMessage.get()), nullptr);
 
     // test envelope headers
-    QCOMPARE(nodeHelper.mailHeaderAsBase("user-agent", originalMessage.data())->asUnicodeString(),
+    QCOMPARE(nodeHelper.mailHeaderAsBase("user-agent", originalMessage.get())->asUnicodeString(),
              u"KMail/4.6 pre (Linux/2.6.34-rc2-2-default; KDE/4.5.60; x86_64; ; )"_s);
 }
 
@@ -83,34 +83,34 @@ void ProtectedHeadersTest::testHeaders()
     SimpleObjectTreeSource testSource;
     ObjectTreeParser otp(&testSource, &nodeHelper);
     testSource.setDecryptMessage(true);
-    otp.parseObjectTree(originalMessage.data());
+    otp.parseObjectTree(originalMessage.get());
 
     // test overwrite
-    QCOMPARE(nodeHelper.headers("from", originalMessage.data()).size(), 1);
-    QCOMPARE(nodeHelper.headers("from", originalMessage.data())[0]->asUnicodeString(), u"you@example.com"_s);
-    QCOMPARE(nodeHelper.headers("to", originalMessage.data()).size(), 1);
-    QCOMPARE(nodeHelper.headers("to", originalMessage.data())[0]->asUnicodeString(), u"me@example.com"_s);
-    QCOMPARE(nodeHelper.headers("subject", originalMessage.data()).size(), 1);
-    QCOMPARE(nodeHelper.headers("subject", originalMessage.data())[0]->asUnicodeString(), u"hidden subject"_s);
-    QCOMPARE(nodeHelper.headers("cc", originalMessage.data()).size(), 1);
-    QCOMPARE(nodeHelper.headers("cc", originalMessage.data())[0]->asUnicodeString(), u"cc@example.com"_s);
-    QCOMPARE(nodeHelper.headers("date", originalMessage.data()).size(), 1);
-    QCOMPARE(nodeHelper.dateHeader(originalMessage.data()), QDateTime(QDate(2018, 1, 2), QTime(3, 4, 5)));
+    QCOMPARE(nodeHelper.headers("from", originalMessage.get()).size(), 1);
+    QCOMPARE(nodeHelper.headers("from", originalMessage.get())[0]->asUnicodeString(), u"you@example.com"_s);
+    QCOMPARE(nodeHelper.headers("to", originalMessage.get()).size(), 1);
+    QCOMPARE(nodeHelper.headers("to", originalMessage.get())[0]->asUnicodeString(), u"me@example.com"_s);
+    QCOMPARE(nodeHelper.headers("subject", originalMessage.get()).size(), 1);
+    QCOMPARE(nodeHelper.headers("subject", originalMessage.get())[0]->asUnicodeString(), u"hidden subject"_s);
+    QCOMPARE(nodeHelper.headers("cc", originalMessage.get()).size(), 1);
+    QCOMPARE(nodeHelper.headers("cc", originalMessage.get())[0]->asUnicodeString(), u"cc@example.com"_s);
+    QCOMPARE(nodeHelper.headers("date", originalMessage.get()).size(), 1);
+    QCOMPARE(nodeHelper.dateHeader(originalMessage.get()), QDateTime(QDate(2018, 1, 2), QTime(3, 4, 5)));
 
     // test protected only headers
-    QCOMPARE(nodeHelper.headers("message-id", originalMessage.data()).size(), 1);
-    QCOMPARE(nodeHelper.headers("message-id", originalMessage.data())[0]->asUnicodeString(), u"<myhiddenreference@me>"_s);
-    QCOMPARE(nodeHelper.headers("references", originalMessage.data()).size(), 1);
-    QCOMPARE(nodeHelper.headers("references", originalMessage.data())[0]->asUnicodeString(), u"<hiddenreference@hidden>"_s);
-    QCOMPARE(nodeHelper.headers("in-reply-to", originalMessage.data()).size(), 1);
-    QCOMPARE(nodeHelper.headers("in-reply-to", originalMessage.data())[0]->asUnicodeString(), u"<hiddenreference@hidden>"_s);
+    QCOMPARE(nodeHelper.headers("message-id", originalMessage.get()).size(), 1);
+    QCOMPARE(nodeHelper.headers("message-id", originalMessage.get())[0]->asUnicodeString(), u"<myhiddenreference@me>"_s);
+    QCOMPARE(nodeHelper.headers("references", originalMessage.get()).size(), 1);
+    QCOMPARE(nodeHelper.headers("references", originalMessage.get())[0]->asUnicodeString(), u"<hiddenreference@hidden>"_s);
+    QCOMPARE(nodeHelper.headers("in-reply-to", originalMessage.get()).size(), 1);
+    QCOMPARE(nodeHelper.headers("in-reply-to", originalMessage.get())[0]->asUnicodeString(), u"<hiddenreference@hidden>"_s);
 
     // test non-existing headers
-    QCOMPARE(nodeHelper.headers("invalid", originalMessage.data()).isEmpty(), true);
+    QCOMPARE(nodeHelper.headers("invalid", originalMessage.get()).isEmpty(), true);
 
     // test envelope headers
-    QCOMPARE(nodeHelper.headers("user-agent", originalMessage.data()).size(), 1);
-    QCOMPARE(nodeHelper.headers("user-agent", originalMessage.data())[0]->asUnicodeString(),
+    QCOMPARE(nodeHelper.headers("user-agent", originalMessage.get()).size(), 1);
+    QCOMPARE(nodeHelper.headers("user-agent", originalMessage.get())[0]->asUnicodeString(),
              u"KMail/4.6 pre (Linux/2.6.34-rc2-2-default; KDE/4.5.60; x86_64; ; )"_s);
 }
 
@@ -131,20 +131,20 @@ void ProtectedHeadersTest::testMailHeaderAsAddresslist()
     SimpleObjectTreeSource testSource;
     ObjectTreeParser otp(&testSource, &nodeHelper);
     testSource.setDecryptMessage(true);
-    otp.parseObjectTree(originalMessage.data());
+    otp.parseObjectTree(originalMessage.get());
 
     // test overwrite
-    QCOMPARE(nodeHelper.mailHeaderAsAddressList("from", originalMessage.data())->displayNames(), QStringList() << u"you@example.com"_s);
-    QVERIFY(nodeHelper.mailHeaderAsAddressList("subject", originalMessage.data()));
+    QCOMPARE(nodeHelper.mailHeaderAsAddressList("from", originalMessage.get())->displayNames(), QStringList() << u"you@example.com"_s);
+    QVERIFY(nodeHelper.mailHeaderAsAddressList("subject", originalMessage.get()));
 
     // test protected only headers
-    QCOMPARE(nodeHelper.mailHeaderAsAddressList("message-id", originalMessage.data())->displayNames(), QStringList() << u"myhiddenreference@me"_s);
+    QCOMPARE(nodeHelper.mailHeaderAsAddressList("message-id", originalMessage.get())->displayNames(), QStringList() << u"myhiddenreference@me"_s);
 
     // test non-existing headers
-    QCOMPARE(nodeHelper.mailHeaderAsAddressList("invalid", originalMessage.data()), nullptr);
+    QCOMPARE(nodeHelper.mailHeaderAsAddressList("invalid", originalMessage.get()), nullptr);
 
     // test envelope headers
-    QVERIFY(nodeHelper.mailHeaderAsAddressList("user-agent", originalMessage.data()));
+    QVERIFY(nodeHelper.mailHeaderAsAddressList("user-agent", originalMessage.get()));
 }
 
 void ProtectedHeadersTest::testhasMailHeader_data()
@@ -164,19 +164,19 @@ void ProtectedHeadersTest::testhasMailHeader()
     SimpleObjectTreeSource testSource;
     ObjectTreeParser otp(&testSource, &nodeHelper);
     testSource.setDecryptMessage(true);
-    otp.parseObjectTree(originalMessage.data());
+    otp.parseObjectTree(originalMessage.get());
 
     // test overwrite
-    QCOMPARE(nodeHelper.hasMailHeader("from", originalMessage.data()), true);
+    QCOMPARE(nodeHelper.hasMailHeader("from", originalMessage.get()), true);
 
     // test protected only headers
-    QCOMPARE(nodeHelper.hasMailHeader("message-id", originalMessage.data()), true);
+    QCOMPARE(nodeHelper.hasMailHeader("message-id", originalMessage.get()), true);
 
     // test non-existing headers
-    QCOMPARE(nodeHelper.hasMailHeader("invalid", originalMessage.data()), false);
+    QCOMPARE(nodeHelper.hasMailHeader("invalid", originalMessage.get()), false);
 
     // test envelope headers
-    QCOMPARE(nodeHelper.hasMailHeader("user-agent", originalMessage.data()), true);
+    QCOMPARE(nodeHelper.hasMailHeader("user-agent", originalMessage.get()), true);
 }
 
 void ProtectedHeadersTest::testMessagePartsOfMailHeader_data()
@@ -204,12 +204,12 @@ void ProtectedHeadersTest::testMessagePartsOfMailHeader()
     SimpleObjectTreeSource testSource;
     ObjectTreeParser otp(&testSource, &nodeHelper);
     testSource.setDecryptMessage(true);
-    otp.parseObjectTree(originalMessage.data());
+    otp.parseObjectTree(originalMessage.get());
 
     // test overwrite
     {
         QStringList actual;
-        for (const auto &mp : nodeHelper.messagePartsOfMailHeader("from", originalMessage.data())) {
+        for (const auto &mp : nodeHelper.messagePartsOfMailHeader("from", originalMessage.get())) {
             actual << QString::fromLatin1(mp->metaObject()->className());
         }
         QCOMPARE(actual, messagePartVector);
@@ -218,7 +218,7 @@ void ProtectedHeadersTest::testMessagePartsOfMailHeader()
     // test protected only headers
     {
         QStringList actual;
-        for (const auto &mp : nodeHelper.messagePartsOfMailHeader("message-id", originalMessage.data())) {
+        for (const auto &mp : nodeHelper.messagePartsOfMailHeader("message-id", originalMessage.get())) {
             actual << QString::fromLatin1(mp->metaObject()->className());
         }
         QCOMPARE(actual, messagePartVector);
@@ -227,7 +227,7 @@ void ProtectedHeadersTest::testMessagePartsOfMailHeader()
     // test non-existing headers
     {
         QStringList actual;
-        for (const auto &mp : nodeHelper.messagePartsOfMailHeader("invalid", originalMessage.data())) {
+        for (const auto &mp : nodeHelper.messagePartsOfMailHeader("invalid", originalMessage.get())) {
             actual << QString::fromLatin1(mp->metaObject()->className());
         }
         QCOMPARE(actual, QStringList());
@@ -236,7 +236,7 @@ void ProtectedHeadersTest::testMessagePartsOfMailHeader()
     // test envelope headers
     {
         QStringList actual;
-        for (const auto &mp : nodeHelper.messagePartsOfMailHeader("user-agent", originalMessage.data())) {
+        for (const auto &mp : nodeHelper.messagePartsOfMailHeader("user-agent", originalMessage.get())) {
             actual << QString::fromLatin1(mp->metaObject()->className());
         }
         QCOMPARE(actual, QStringList());

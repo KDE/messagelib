@@ -58,7 +58,7 @@ void MessageFactoryReplyJob::setReplyAll(bool replyAll)
     mReplyAll = replyAll;
 }
 
-void MessageFactoryReplyJob::setMsg(const KMime::Message::Ptr &msg)
+void MessageFactoryReplyJob::setMsg(const std::shared_ptr<KMime::Message> &msg)
 {
     mMsg = msg;
 }
@@ -73,7 +73,7 @@ void MessageFactoryReplyJob::setSelection(const QString &selection)
     mSelection = selection;
 }
 
-void MessageFactoryReplyJob::setOrigMsg(const KMime::Message::Ptr &origMsg)
+void MessageFactoryReplyJob::setOrigMsg(const std::shared_ptr<KMime::Message> &origMsg)
 {
     mOrigMsg = origMsg;
 }

@@ -12,6 +12,6 @@ namespace MessageViewer
 {
 namespace Test
 {
-KMime::Message::Ptr readAndParseMail(const QString &mailFile);
+std::shared_ptr<KMime::Message> readAndParseMail(const QString &mailFile);
 }
 }

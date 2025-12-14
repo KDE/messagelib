@@ -159,7 +159,7 @@ void MessageFactoryTest::testCreateReplyToAllWithUseSenderAndIdentityInCCAsync()
     TemplateParser::TemplateParserSettings::self()->setTemplateReplyAll(u"%QUOTE"_s);
 
     const QString filename(QStringLiteral(MAIL_DATA_DIR) + u"/replyall_with_identity_message_and_identity_in_cc.mbox"_s);
-    KMime::Message::Ptr msg = Test::loadMessage(filename);
+    std::shared_ptr<KMime::Message> msg = Test::loadMessage(filename);
     KIdentityManagementCore::Identity &i1 = mIdentMan->modifyIdentityForName(u"test1"_s);
     i1.setFullName(u"foo1"_s);
     i1.setPrimaryEmailAddress(u"identity1@bla.com"_s);
@@ -210,7 +210,7 @@ void MessageFactoryTest::testCreateReplyToAllWithUseSenderAsync()
     TemplateParser::TemplateParserSettings::self()->setTemplateReplyAll(u"%QUOTE"_s);
 
     const QString filename(QStringLiteral(MAIL_DATA_DIR) + u"/replyall_with_identity_message.mbox"_s);
-    KMime::Message::Ptr msg = Test::loadMessage(filename);
+    std::shared_ptr<KMime::Message> msg = Test::loadMessage(filename);
     KIdentityManagementCore::Identity &i1 = mIdentMan->modifyIdentityForName(u"test1"_s);
     i1.setFullName(u"foo1"_s);
     i1.setPrimaryEmailAddress(u"identity1@bla.com"_s);
@@ -258,7 +258,7 @@ void MessageFactoryTest::testCreateReplyToAllWithUseSenderByNoSameIdentitiesAsyn
     TemplateParser::TemplateParserSettings::self()->setTemplateReplyAll(u"%QUOTE"_s);
 
     const QString filename(QStringLiteral(MAIL_DATA_DIR) + u"/replyall_without_identity_message.mbox"_s);
-    KMime::Message::Ptr msg = Test::loadMessage(filename);
+    std::shared_ptr<KMime::Message> msg = Test::loadMessage(filename);
     KIdentityManagementCore::Identity &i1 = mIdentMan->modifyIdentityForName(u"test1"_s);
     i1.setFullName(u"foo1"_s);
     i1.setPrimaryEmailAddress(u"identity1@bla.com"_s);
@@ -306,7 +306,7 @@ void MessageFactoryTest::testCreateReplyToListAsync()
     TemplateParser::TemplateParserSettings::self()->setTemplateReplyAll(u"%QUOTE"_s);
 
     const QString filename(QStringLiteral(MAIL_DATA_DIR) + u"/list_message.mbox"_s);
-    KMime::Message::Ptr msg = Test::loadMessage(filename);
+    std::shared_ptr<KMime::Message> msg = Test::loadMessage(filename);
 
     MessageFactoryNG factory(msg, 0);
     factory.setIdentityManager(mIdentMan);
@@ -345,7 +345,7 @@ void MessageFactoryTest::testCreateReplyToListAsync()
 
 void MessageFactoryTest::testCreateReplyToAuthorAsync()
 {
-    KMime::Message::Ptr msg = createPlainTestMessage();
+    std::shared_ptr<KMime::Message> msg = createPlainTestMessage();
 
     MessageFactoryNG factory(msg, 0);
     factory.setIdentityManager(mIdentMan);
@@ -390,12 +390,12 @@ void MessageFactoryTest::testCreateReplyToAuthorAsync()
                      .arg(replyStr)
                      .arg(replyStr.length() - 1);
     QCOMPARE_OR_DIFF(reply.msg->encodedContent(), ba.toUtf8());
-    msg.clear();
+    msg.reset();
 }
 
 void MessageFactoryTest::testCreateReplyAllWithMultiEmailsAsync()
 {
-    KMime::Message::Ptr msg = createPlainTestMessageWithMultiEmails();
+    std::shared_ptr<KMime::Message> msg = createPlainTestMessageWithMultiEmails();
 
     TemplateParser::TemplateParserSettings::self()->setTemplateReplyAll(u"%QUOTE"_s);
 
@@ -431,12 +431,12 @@ void MessageFactoryTest::testCreateReplyAllWithMultiEmailsAsync()
                      "X-KMail-Link-Type: reply\n\n> All happy families are alike; each unhappy family is unhappy in its own way.")
                      .arg(dateStr, replyTo, reference);
     QCOMPARE_OR_DIFF(reply.msg->encodedContent(), ba.toUtf8());
-    msg.clear();
+    msg.reset();
 }
 
 void MessageFactoryTest::testCreateReplyAllAsync()
 {
-    KMime::Message::Ptr msg = createPlainTestMessage();
+    std::shared_ptr<KMime::Message> msg = createPlainTestMessage();
     MessageFactoryNG factory(msg, 0);
     QSignalSpy spy(&factory, &MessageFactoryNG::createReplyDone);
     factory.setIdentityManager(mIdentMan);
@@ -454,12 +454,12 @@ void MessageFactoryTest::testCreateReplyAllAsync()
         QByteArray("On ") + datetime.toUtf8() + QByteArray(" you wrote:\n> All happy families are alike; each unhappy family is unhappy in its own way.\n\n")));
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1StringView("Re: Test Email Subject"));
     QCOMPARE_OR_DIFF(reply.msg->body(), replyStr.toUtf8());
-    msg.clear();
+    msg.reset();
 }
 
 void MessageFactoryTest::testCreateReplyHtmlAsync()
 {
-    KMime::Message::Ptr msg = Test::loadMessageFromDataDir(u"html_utf8_encoded.mbox"_s);
+    std::shared_ptr<KMime::Message> msg = Test::loadMessageFromDataDir(u"html_utf8_encoded.mbox"_s);
 
     // qDebug() << "html message:" << msg->encodedContent();
 
@@ -500,12 +500,12 @@ void MessageFactoryTest::testCreateReplyHtmlAsync()
     QCOMPARE(reply.msg->contentType()->mimeType(), QByteArrayLiteral("text/plain"));
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1StringView("Re: reply to please"));
     QCOMPARE(reply.msg->contents().count(), 0);
-    msg.clear();
+    msg.reset();
 }
 
 void MessageFactoryTest::testCreateReplyUTF16Base64Async()
 {
-    KMime::Message::Ptr msg = Test::loadMessageFromDataDir(u"plain_utf16.mbox"_s);
+    std::shared_ptr<KMime::Message> msg = Test::loadMessageFromDataDir(u"plain_utf16.mbox"_s);
     MessageFactoryNG factory(msg, 0);
     factory.setIdentityManager(mIdentMan);
 
@@ -528,12 +528,12 @@ void MessageFactoryTest::testCreateReplyUTF16Base64Async()
     QCOMPARE(reply.msg->contentType()->mimeType(), QByteArrayLiteral("multipart/alternative"));
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1StringView("Re: asking for reply"));
     QCOMPARE_OR_DIFF(reply.msg->contents().at(0)->body(), replyStr.toUtf8());
-    msg.clear();
+    msg.reset();
 }
 
 void MessageFactoryTest::testCreateForwardMultiEmailsAsync()
 {
-    KMime::Message::Ptr msg = createPlainTestMessageWithMultiEmails();
+    std::shared_ptr<KMime::Message> msg = createPlainTestMessageWithMultiEmails();
 
     MessageFactoryNG factory(msg, 0);
     factory.setIdentityManager(mIdentMan);
@@ -542,7 +542,7 @@ void MessageFactoryTest::testCreateForwardMultiEmailsAsync()
     QVERIFY(spy.wait());
     QCOMPARE(spy.count(), 1);
 
-    auto fw = spy.at(0).at(0).value<KMime::Message::Ptr>();
+    auto fw = spy.at(0).at(0).value<std::shared_ptr<KMime::Message>>();
     QDateTime date = msg->date()->dateTime();
     QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
     datetime += QLatin1StringView(", ") + QLocale::system().toString(date.time(), QLocale::LongFormat);
@@ -572,12 +572,12 @@ void MessageFactoryTest::testCreateForwardMultiEmailsAsync()
 
     QCOMPARE(fw->subject()->asUnicodeString(), u"Fwd: Test Email Subject"_s);
     QCOMPARE_OR_DIFF(fw->encodedContent(), fwdMsg.toUtf8());
-    msg.clear();
+    msg.reset();
 }
 
 void MessageFactoryTest::testCreateForwardAsync()
 {
-    KMime::Message::Ptr msg = createPlainTestMessage();
+    std::shared_ptr<KMime::Message> msg = createPlainTestMessage();
 
     MessageFactoryNG factory(msg, 0);
     factory.setIdentityManager(mIdentMan);
@@ -586,7 +586,7 @@ void MessageFactoryTest::testCreateForwardAsync()
     QVERIFY(spy.wait());
     QCOMPARE(spy.count(), 1);
 
-    auto fw = spy.at(0).at(0).value<KMime::Message::Ptr>();
+    auto fw = spy.at(0).at(0).value<std::shared_ptr<KMime::Message>>();
 
     QDateTime date = msg->date()->dateTime();
     QString datetime = QLocale::system().toString(date.date(), QLocale::LongFormat);
@@ -617,12 +617,12 @@ void MessageFactoryTest::testCreateForwardAsync()
 
     QCOMPARE(fw->subject()->asUnicodeString(), u"Fwd: Test Email Subject"_s);
     QCOMPARE_OR_DIFF(fw->encodedContent(), fwdMsg.toUtf8());
-    msg.clear();
+    msg.reset();
 }
 
 void MessageFactoryTest::testCreateRedirectToAndCCAndBCC()
 {
-    KMime::Message::Ptr msg = createPlainTestMessage();
+    std::shared_ptr<KMime::Message> msg = createPlainTestMessage();
 
     MessageFactoryNG factory(msg, 0);
     factory.setIdentityManager(mIdentMan);
@@ -630,7 +630,7 @@ void MessageFactoryTest::testCreateRedirectToAndCCAndBCC()
     QString redirectTo = u"redir@redir.com"_s;
     QString redirectCc = u"redircc@redircc.com, redircc2@redircc.com"_s;
     QString redirectBcc = u"redirbcc@redirbcc.com, redirbcc2@redirbcc.com"_s;
-    KMime::Message::Ptr rdir = factory.createRedirect(redirectTo, redirectCc, redirectBcc);
+    std::shared_ptr<KMime::Message> rdir = factory.createRedirect(redirectTo, redirectCc, redirectBcc);
 
     QString datetime = rdir->date()->asUnicodeString();
 
@@ -668,19 +668,19 @@ void MessageFactoryTest::testCreateRedirectToAndCCAndBCC()
 
     QCOMPARE(rdir->subject()->asUnicodeString(), u"Test Email Subject"_s);
     QCOMPARE_OR_DIFF(rdir->encodedContent(), baseline.toUtf8());
-    msg.clear();
+    msg.reset();
 }
 
 void MessageFactoryTest::testCreateRedirectToAndCC()
 {
-    KMime::Message::Ptr msg = createPlainTestMessage();
+    std::shared_ptr<KMime::Message> msg = createPlainTestMessage();
 
     MessageFactoryNG factory(msg, 0);
     factory.setIdentityManager(mIdentMan);
 
     QString redirectTo = u"redir@redir.com"_s;
     QString redirectCc = u"redircc@redircc.com, redircc2@redircc.com"_s;
-    KMime::Message::Ptr rdir = factory.createRedirect(redirectTo, redirectCc);
+    std::shared_ptr<KMime::Message> rdir = factory.createRedirect(redirectTo, redirectCc);
 
     QString datetime = rdir->date()->asUnicodeString();
 
@@ -718,18 +718,18 @@ void MessageFactoryTest::testCreateRedirectToAndCC()
 
     QCOMPARE(rdir->subject()->asUnicodeString(), u"Test Email Subject"_s);
     QCOMPARE_OR_DIFF(rdir->encodedContent(), baseline.toUtf8());
-    msg.clear();
+    msg.reset();
 }
 
 void MessageFactoryTest::testCreateRedirect()
 {
-    KMime::Message::Ptr msg = createPlainTestMessage();
+    std::shared_ptr<KMime::Message> msg = createPlainTestMessage();
 
     MessageFactoryNG factory(msg, 0);
     factory.setIdentityManager(mIdentMan);
 
     QString redirectTo = u"redir@redir.com"_s;
-    KMime::Message::Ptr rdir = factory.createRedirect(redirectTo);
+    std::shared_ptr<KMime::Message> rdir = factory.createRedirect(redirectTo);
 
     QString datetime = rdir->date()->asUnicodeString();
 
@@ -765,17 +765,17 @@ void MessageFactoryTest::testCreateRedirect()
 
     QCOMPARE(rdir->subject()->asUnicodeString(), u"Test Email Subject"_s);
     QCOMPARE_OR_DIFF(rdir->encodedContent(), baseline.toUtf8());
-    msg.clear();
+    msg.reset();
 }
 
 void MessageFactoryTest::testCreateResend()
 {
-    KMime::Message::Ptr msg = createPlainTestMessage();
+    std::shared_ptr<KMime::Message> msg = createPlainTestMessage();
 
     MessageFactoryNG factory(msg, 0);
     factory.setIdentityManager(mIdentMan);
 
-    KMime::Message::Ptr rdir = factory.createResend();
+    std::shared_ptr<KMime::Message> rdir = factory.createResend();
 
     QString datetime = rdir->date()->asUnicodeString();
 
@@ -806,20 +806,20 @@ void MessageFactoryTest::testCreateResend()
 
     QCOMPARE(rdir->subject()->asUnicodeString(), u"Test Email Subject"_s);
     QCOMPARE_OR_DIFF(rdir->encodedContent(), baseline.toUtf8());
-    msg.clear();
+    msg.reset();
 }
 
 void MessageFactoryTest::testCreateMDN()
 {
-    KMime::Message::Ptr msg = createPlainTestMessage();
+    std::shared_ptr<KMime::Message> msg = createPlainTestMessage();
 
     MessageFactoryNG factory(msg, 0);
 
     factory.setIdentityManager(mIdentMan);
 
-    KMime::Message::Ptr mdn = factory.createMDN(KMime::MDN::AutomaticAction, KMime::MDN::Displayed, KMime::MDN::SentAutomatically);
+    std::shared_ptr<KMime::Message> mdn = factory.createMDN(KMime::MDN::AutomaticAction, KMime::MDN::Displayed, KMime::MDN::SentAutomatically);
 
-    QVERIFY(mdn.data());
+    QVERIFY(mdn.get());
 
     QString mdnContent = QString::fromLatin1(
         "The message sent on %1 to %2 with subject \"%3\" has been displayed. "
@@ -827,11 +827,11 @@ void MessageFactoryTest::testCreateMDN()
     mdnContent = mdnContent.arg(MessageCore::DateFormatter::formatDate(MessageCore::DateFormatter::Localized, msg->date()->dateTime()))
                      .arg(msg->to()->asUnicodeString(), msg->subject()->asUnicodeString());
 
-    QCOMPARE_OR_DIFF(Util::findTypeInMessage(mdn.data(), "multipart", "report")->contents().at(0)->body(), mdnContent.toUtf8());
-    msg.clear();
+    QCOMPARE_OR_DIFF(Util::findTypeInMessage(mdn.get(), "multipart", "report")->contents().at(0)->body(), mdnContent.toUtf8());
+    msg.reset();
 }
 
-KMime::Message::Ptr MessageFactoryTest::createPlainTestMessage()
+std::shared_ptr<KMime::Message> MessageFactoryTest::createPlainTestMessage()
 {
     auto composerJob = new ComposerJob;
     composerJob->infoPart()->setFrom(u"me@me.me"_s);
@@ -843,13 +843,13 @@ KMime::Message::Ptr MessageFactoryTest::createPlainTestMessage()
     composerJob->globalPart()->setMDNRequested(true);
     composerJob->exec();
 
-    KMime::Message::Ptr message = KMime::Message::Ptr(composerJob->resultMessages().constFirst());
+    std::shared_ptr<KMime::Message> message = std::shared_ptr<KMime::Message>(composerJob->resultMessages().constFirst());
     delete composerJob;
 
     return message;
 }
 
-KMime::Message::Ptr MessageFactoryTest::createPlainTestMessageWithMultiEmails()
+std::shared_ptr<KMime::Message> MessageFactoryTest::createPlainTestMessageWithMultiEmails()
 {
     auto composerJob = new ComposerJob;
     composerJob->infoPart()->setFrom(u"me@me.me"_s);
@@ -861,7 +861,7 @@ KMime::Message::Ptr MessageFactoryTest::createPlainTestMessageWithMultiEmails()
     composerJob->globalPart()->setMDNRequested(true);
     composerJob->exec();
 
-    const KMime::Message::Ptr message = KMime::Message::Ptr(composerJob->resultMessages().constFirst());
+    const std::shared_ptr<KMime::Message> message = std::shared_ptr<KMime::Message>(composerJob->resultMessages().constFirst());
     delete composerJob;
 
     return message;
@@ -905,7 +905,7 @@ void MessageFactoryTest::test_multipartAlternative()
     QFETCH(QString, selection);
     QFETCH(QString, expected);
 
-    KMime::Message::Ptr origMsg = Test::loadMessage(mailFileName);
+    std::shared_ptr<KMime::Message> origMsg = Test::loadMessage(mailFileName);
 
     MessageFactoryNG factory(origMsg, 0);
     factory.setIdentityManager(mIdentMan);
@@ -930,10 +930,10 @@ void MessageFactoryTest::test_multipartAlternative()
     QCOMPARE(reply.msg->contentType()->mimeType(), QByteArrayLiteral("multipart/alternative"));
     QCOMPARE(reply.msg->subject()->asUnicodeString(), QLatin1StringView("Re: Plain Message Test"));
     QCOMPARE(reply.msg->contents().at(contentAt)->encodedBody().data(), expected.toUtf8().data());
-    origMsg.clear();
+    origMsg.reset();
 }
 
-KMime::Message::Ptr MessageFactoryTest::createReplyAllForMessage(KMime::Message::Ptr origMsg)
+std::shared_ptr<KMime::Message> MessageFactoryTest::createReplyAllForMessage(std::shared_ptr<KMime::Message> origMsg)
 {
     MessageFactoryNG factory(origMsg, 0);
     factory.setIdentityManager(mIdentMan);
@@ -948,7 +948,7 @@ KMime::Message::Ptr MessageFactoryTest::createReplyAllForMessage(KMime::Message:
 
 void MessageFactoryTest::testCreateReplyWithForcedCharset()
 {
-    KMime::Message::Ptr origMsg(new KMime::Message);
+    std::shared_ptr<KMime::Message> origMsg(new KMime::Message);
     QByteArray origMail =
         "From: from@example.com\n"
         "To: to@example.com\n"

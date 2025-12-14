@@ -120,11 +120,11 @@ void MessageList::Util::fillViewMenu(QMenu *menu, QObject *receiver)
 
 QString MessageList::Util::contentSummary(const Akonadi::Item &item)
 {
-    if (!item.hasPayload<KMime::Message::Ptr>()) {
+    if (!item.hasPayload<std::shared_ptr<KMime::Message>>()) {
         return {};
     }
 
-    auto message = item.payload<KMime::Message::Ptr>();
+    auto message = item.payload<std::shared_ptr<KMime::Message>>();
     KMime::Content *textContent = message->textContent();
     if (!textContent) {
         return {};

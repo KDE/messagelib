@@ -16,7 +16,7 @@ namespace MessageComposer
 class MESSAGECOMPOSER_EXPORT DraftEncryptionState
 {
 public:
-    explicit DraftEncryptionState(const KMime::Message::Ptr &msg);
+    explicit DraftEncryptionState(const std::shared_ptr<KMime::Message> &msg);
 
     void setState(bool encrypt);
     void removeState();
@@ -25,13 +25,13 @@ public:
     [[nodiscard]] bool isDefined() const;
 
 private:
-    const KMime::Message::Ptr mMsg;
+    const std::shared_ptr<KMime::Message> mMsg;
 };
 
 class MESSAGECOMPOSER_EXPORT DraftSignatureState
 {
 public:
-    explicit DraftSignatureState(const KMime::Message::Ptr &msg);
+    explicit DraftSignatureState(const std::shared_ptr<KMime::Message> &msg);
 
     void setState(bool sign);
     void removeState();
@@ -40,13 +40,13 @@ public:
     [[nodiscard]] bool isDefined() const;
 
 private:
-    const KMime::Message::Ptr mMsg;
+    const std::shared_ptr<KMime::Message> mMsg;
 };
 
 class MESSAGECOMPOSER_EXPORT DraftCryptoMessageFormatState
 {
 public:
-    explicit DraftCryptoMessageFormatState(const KMime::Message::Ptr &msg);
+    explicit DraftCryptoMessageFormatState(const std::shared_ptr<KMime::Message> &msg);
 
     void setState(Kleo::CryptoMessageFormat cryptoMessageFormat);
     void removeState();
@@ -55,9 +55,8 @@ public:
     [[nodiscard]] bool isDefined() const;
 
 private:
-    const KMime::Message::Ptr mMsg;
+    const std::shared_ptr<KMime::Message> mMsg;
 };
 
-void MESSAGECOMPOSER_EXPORT removeDraftCryptoHeaders(const KMime::Message::Ptr &msg);
-
+void MESSAGECOMPOSER_EXPORT removeDraftCryptoHeaders(const std::shared_ptr<KMime::Message> &msg);
 }

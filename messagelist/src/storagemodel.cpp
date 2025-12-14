@@ -63,13 +63,13 @@ using namespace MessageList;
 
 namespace
 {
-KMime::Message::Ptr messageForItem(const Akonadi::Item &item)
+std::shared_ptr<KMime::Message> messageForItem(const Akonadi::Item &item)
 {
-    if (!item.hasPayload<KMime::Message::Ptr>()) {
+    if (!item.hasPayload<std::shared_ptr<KMime::Message>>()) {
         qCWarning(MESSAGELIST_LOG) << "Not a message" << item.id() << item.remoteId() << item.mimeType();
         return {};
     }
-    return item.payload<KMime::Message::Ptr>();
+    return item.payload<std::shared_ptr<KMime::Message>>();
 }
 }
 
@@ -200,7 +200,7 @@ int MessageList::StorageModel::initialUnreadRowCountGuess() const
 bool MessageList::StorageModel::initializeMessageItem(MessageList::Core::MessageItem *mi, int row, bool bUseReceiver) const
 {
     const Akonadi::Item item = itemForRow(row);
-    const KMime::Message::Ptr mail = messageForItem(item);
+    const std::shared_ptr<KMime::Message> mail = messageForItem(item);
     if (!mail) {
         return false;
     }
@@ -287,7 +287,7 @@ static Core::MD5Hash md5Encode(QStringView str)
 
 void MessageList::StorageModel::fillMessageItemThreadingData(MessageList::Core::MessageItem *mi, int row, ThreadingDataSubset subset) const
 {
-    const KMime::Message::Ptr mail = messageForRow(row);
+    const std::shared_ptr<KMime::Message> mail = messageForRow(row);
     Q_ASSERT(mail); // We ASSUME that initializeMessageItem has been called successfully...
 
     switch (subset) {
@@ -463,7 +463,7 @@ Akonadi::Item MessageList::StorageModel::itemForRow(int row) const
     return d->mModel->data(d->mModel->index(row, 0), EntityTreeModel::ItemRole).value<Akonadi::Item>();
 }
 
-KMime::Message::Ptr MessageList::StorageModel::messageForRow(int row) const
+std::shared_ptr<KMime::Message> MessageList::StorageModel::messageForRow(int row) const
 {
     return messageForItem(itemForRow(row));
 }

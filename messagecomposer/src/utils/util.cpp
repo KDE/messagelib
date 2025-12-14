@@ -246,7 +246,7 @@ QString MessageComposer::Util::cleanedUpHeaderString(const QString &s)
     return res.trimmed();
 }
 
-void MessageComposer::Util::addSendReplyForwardAction(const KMime::Message::Ptr &message, Akonadi::MessageQueueJob *qjob)
+void MessageComposer::Util::addSendReplyForwardAction(const std::shared_ptr<KMime::Message> &message, Akonadi::MessageQueueJob *qjob)
 {
     QList<Akonadi::Item::Id> originalMessageId;
     QList<Akonadi::MessageStatus> linkStatus;
@@ -322,7 +322,7 @@ KMime::Content *MessageComposer::Util::findTypeInMessage(KMime::Content *data, c
     return nullptr;
 }
 
-void MessageComposer::Util::addLinkInformation(const KMime::Message::Ptr &msg, Akonadi::Item::Id id, Akonadi::MessageStatus status)
+void MessageComposer::Util::addLinkInformation(const std::shared_ptr<KMime::Message> &msg, Akonadi::Item::Id id, Akonadi::MessageStatus status)
 {
     Q_ASSERT(status.isReplied() || status.isForwarded() || status.isDeleted());
 
@@ -358,7 +358,7 @@ void MessageComposer::Util::addLinkInformation(const KMime::Message::Ptr &msg, A
     msg->setHeader(std::move(header));
 }
 
-bool MessageComposer::Util::getLinkInformation(const KMime::Message::Ptr &msg, QList<Akonadi::Item::Id> &id, QList<Akonadi::MessageStatus> &status)
+bool MessageComposer::Util::getLinkInformation(const std::shared_ptr<KMime::Message> &msg, QList<Akonadi::Item::Id> &id, QList<Akonadi::MessageStatus> &status)
 {
     auto hrdLinkMsg = msg->headerByType("X-KMail-Link-Message");
     auto hrdLinkType = msg->headerByType("X-KMail-Link-Type");
@@ -390,17 +390,17 @@ bool MessageComposer::Util::getLinkInformation(const KMime::Message::Ptr &msg, Q
 bool MessageComposer::Util::isStandaloneMessage(const Akonadi::Item &item)
 {
     // standalone message have a valid payload, but are not, themselves valid items
-    return item.hasPayload<KMime::Message::Ptr>() && !item.isValid();
+    return item.hasPayload<std::shared_ptr<KMime::Message>>() && !item.isValid();
 }
 
-KMime::Message::Ptr MessageComposer::Util::message(const Akonadi::Item &item)
+std::shared_ptr<KMime::Message> MessageComposer::Util::message(const Akonadi::Item &item)
 {
-    if (!item.hasPayload<KMime::Message::Ptr>()) {
+    if (!item.hasPayload<std::shared_ptr<KMime::Message>>()) {
         qCWarning(MESSAGECOMPOSER_LOG) << "Payload is not a MessagePtr!";
         return {};
     }
 
-    return item.payload<KMime::Message::Ptr>();
+    return item.payload<std::shared_ptr<KMime::Message>>();
 }
 
 bool MessageComposer::Util::hasMissingAttachments(const QStringList &attachmentKeywords, QTextDocument *doc, const QString &subj)
@@ -462,7 +462,7 @@ QStringList MessageComposer::Util::cleanUpEmailListAndEncoding(const QStringList
     return cleanEmailList(encodeIdn(emails));
 }
 
-void MessageComposer::Util::addCustomHeaders(const KMime::Message::Ptr &message, const QMap<QByteArray, QString> &custom)
+void MessageComposer::Util::addCustomHeaders(const std::shared_ptr<KMime::Message> &message, const QMap<QByteArray, QString> &custom)
 {
     for (const auto &[key, value] : custom.asKeyValueRange()) {
         auto header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic(key.constData()));

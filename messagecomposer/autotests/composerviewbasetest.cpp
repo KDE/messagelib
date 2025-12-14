@@ -148,7 +148,7 @@ void ComposerViewBaseTest::testAutoSaveMessage()
     msg->messageID()->from7BitString("<test@autotest.example>");
     msg->date()->from7BitString("Tue, 22 Jan 2019 12:56:25 +0100");
     msg->assemble();
-    Test::compareFile(msg.data(), QStringLiteral(MAIL_DATA_DIR "/autosave.mbox"));
+    Test::compareFile(msg.get(), QStringLiteral(MAIL_DATA_DIR "/autosave.mbox"));
 }
 
 void ComposerViewBaseTest::testGenerateCryptoMessagesAutocrypt_data()
@@ -216,17 +216,17 @@ void ComposerViewBaseTest::testGenerateCryptoMessagesAutocrypt()
     auto nh = new MimeTreeParser::NodeHelper;
     MimeTreeParser::ObjectTreeParser otp(&testSource, nh);
 
-    otp.parseObjectTree(msg.data());
+    otp.parseObjectTree(msg.get());
 
-    KMime::Content *content = msg.data();
+    KMime::Content *content = msg.get();
 
     if (encrypt) {
-        QCOMPARE(nh->encryptionState(msg.data()), MimeTreeParser::KMMsgFullyEncrypted);
-        const auto extra = nh->extraContents(msg.data());
+        QCOMPARE(nh->encryptionState(msg.get()), MimeTreeParser::KMMsgFullyEncrypted);
+        const auto extra = nh->extraContents(msg.get());
         QCOMPARE(extra.size(), 1);
         content = extra.first();
     } else {
-        QCOMPARE(nh->encryptionState(msg.data()), MimeTreeParser::KMMsgNotEncrypted);
+        QCOMPARE(nh->encryptionState(msg.get()), MimeTreeParser::KMMsgNotEncrypted);
     }
 
     if (sign) {
@@ -234,7 +234,7 @@ void ComposerViewBaseTest::testGenerateCryptoMessagesAutocrypt()
         content = content->contents().at(0);
         QCOMPARE(nh->signatureState(content), MimeTreeParser::KMMsgFullySigned);
     } else {
-        QCOMPARE(nh->signatureState(msg.data()), MimeTreeParser::KMMsgNotSigned);
+        QCOMPARE(nh->signatureState(msg.get()), MimeTreeParser::KMMsgNotSigned);
     }
 
     QCOMPARE(QString::fromUtf8(content->decodedBody()), data);
@@ -338,12 +338,12 @@ void ComposerViewBaseTest::testAutocryptKey()
     auto nh = new MimeTreeParser::NodeHelper;
     MimeTreeParser::ObjectTreeParser otp(&testSource, nh);
 
-    otp.parseObjectTree(msg.data());
+    otp.parseObjectTree(msg.get());
 
-    KMime::Content *content = msg.data();
+    KMime::Content *content = msg.get();
 
-    QCOMPARE(nh->encryptionState(msg.data()), MimeTreeParser::KMMsgFullyEncrypted);
-    const auto extra = nh->extraContents(msg.data());
+    QCOMPARE(nh->encryptionState(msg.get()), MimeTreeParser::KMMsgFullyEncrypted);
+    const auto extra = nh->extraContents(msg.get());
     QCOMPARE(extra.size(), 1);
     content = extra.first();
 

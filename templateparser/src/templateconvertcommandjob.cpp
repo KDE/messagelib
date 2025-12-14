@@ -30,12 +30,12 @@ void TemplateConvertCommandJob::setCurrentText(const QString &currentText)
     mCurrentText = currentText;
 }
 
-KMime::Message::Ptr TemplateConvertCommandJob::originalMessage() const
+std::shared_ptr<KMime::Message> TemplateConvertCommandJob::originalMessage() const
 {
     return mOriginalMessage;
 }
 
-void TemplateConvertCommandJob::setOriginalMessage(const KMime::Message::Ptr &originalMessage)
+void TemplateConvertCommandJob::setOriginalMessage(const std::shared_ptr<KMime::Message> &originalMessage)
 {
     mOriginalMessage = originalMessage;
 }

@@ -150,7 +150,7 @@ public:
     };
 
 public:
-    explicit TemplateParserJob(const KMime::Message::Ptr &amsg, const Mode amode, QObject *parent = nullptr);
+    explicit TemplateParserJob(const std::shared_ptr<KMime::Message> &amsg, const Mode amode, QObject *parent = nullptr);
     ~TemplateParserJob() override;
 
     /**
@@ -184,9 +184,9 @@ public:
      */
     void setIdentityManager(KIdentityManagementCore::IdentityManager *ident);
 
-    void process(const KMime::Message::Ptr &aorig_msg, qint64 afolder = -1);
-    void process(const QString &tmplName, const KMime::Message::Ptr &aorig_msg, qint64 afolder = -1);
-    void processWithIdentity(uint uoid, const KMime::Message::Ptr &aorig_msg, qint64 afolder = -1);
+    void process(const std::shared_ptr<KMime::Message> &aorig_msg, qint64 afolder = -1);
+    void process(const QString &tmplName, const std::shared_ptr<KMime::Message> &aorig_msg, qint64 afolder = -1);
+    void processWithIdentity(uint uoid, const std::shared_ptr<KMime::Message> &aorig_msg, qint64 afolder = -1);
 
     void processWithTemplate(const QString &tmpl);
 
@@ -289,7 +289,7 @@ private:
      * Searches the "x-kmail-identity" header and if that fails,
      * searches with KIdentityManagementCore::IdentityManager::identityForAddress()
      */
-    [[nodiscard]] uint identityUoid(const KMime::Message::Ptr &msg) const;
+    [[nodiscard]] uint identityUoid(const std::shared_ptr<KMime::Message> &msg) const;
 
     /**
      * Returns KMime content of the plain text part of the message after setting

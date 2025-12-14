@@ -23,28 +23,28 @@ public:
     explicit MessageFactoryForwardJob(QObject *parent = nullptr);
     ~MessageFactoryForwardJob() override;
     void start();
-    void setMsg(const KMime::Message::Ptr &msg);
+    void setMsg(const std::shared_ptr<KMime::Message> &msg);
 
     void setTemplate(const QString &tmpl);
 
     void setSelection(const QString &selection);
 
-    void setOrigMsg(const KMime::Message::Ptr &origMsg);
+    void setOrigMsg(const std::shared_ptr<KMime::Message> &origMsg);
 
     void setIdentityManager(KIdentityManagementCore::IdentityManager *identityManager);
 
     void setCollection(const Akonadi::Collection &collection);
 
 Q_SIGNALS:
-    void forwardDone(const KMime::Message::Ptr &msg);
+    void forwardDone(const std::shared_ptr<KMime::Message> &msg);
 
 private:
     void slotParsingDone();
 
     QString mSelection;
     QString mTemplate;
-    KMime::Message::Ptr mMsg = nullptr;
-    KMime::Message::Ptr mOrigMsg = nullptr;
+    std::shared_ptr<KMime::Message> mMsg = nullptr;
+    std::shared_ptr<KMime::Message> mOrigMsg = nullptr;
     Akonadi::Collection mCollection;
     KIdentityManagementCore::IdentityManager *mIdentityManager = nullptr;
 };

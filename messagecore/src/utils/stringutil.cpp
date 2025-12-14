@@ -330,7 +330,7 @@ QString quoteHtmlChars(const QString &str, bool removeLineBreaks)
     return result;
 }
 
-void removePrivateHeaderFields(const KMime::Message::Ptr &message, bool cleanUpHeader)
+void removePrivateHeaderFields(const std::shared_ptr<KMime::Message> &message, bool cleanUpHeader)
 {
     message->removeHeader("Status");
     message->removeHeader("X-Status");
@@ -359,9 +359,9 @@ void removePrivateHeaderFields(const KMime::Message::Ptr &message, bool cleanUpH
     }
 }
 
-QByteArray asSendableString(const KMime::Message::Ptr &originalMessage)
+QByteArray asSendableString(const std::shared_ptr<KMime::Message> &originalMessage)
 {
-    KMime::Message::Ptr message(new KMime::Message);
+    std::shared_ptr<KMime::Message> message(new KMime::Message);
     message->setContent(originalMessage->encodedContent());
 
     removePrivateHeaderFields(message);
@@ -370,9 +370,9 @@ QByteArray asSendableString(const KMime::Message::Ptr &originalMessage)
     return message->encodedContent();
 }
 
-QByteArray headerAsSendableString(const KMime::Message::Ptr &originalMessage)
+QByteArray headerAsSendableString(const std::shared_ptr<KMime::Message> &originalMessage)
 {
-    KMime::Message::Ptr message(new KMime::Message);
+    std::shared_ptr<KMime::Message> message(new KMime::Message);
     message->setContent(originalMessage->encodedContent());
 
     removePrivateHeaderFields(message);
