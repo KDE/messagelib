@@ -18,7 +18,6 @@ using namespace MessageViewer;
 #include <KSyntaxHighlighting/Theme>
 
 #include <KLocalizedString>
-#include <PimCommon/PimUtil>
 #include <QTabWidget>
 
 #include <KConfigGroup>
