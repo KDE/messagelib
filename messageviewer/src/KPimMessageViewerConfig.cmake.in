@@ -2,7 +2,7 @@
 include(CMakeFindDependencyMacro)
 find_dependency(KPim6PimCommon "@PIMCOMMON_LIB_VERSION@")
 find_dependency(KPim6MessageCore "@MESSAGELIB_LIB_VERSION@")
-find_dependency(KPim6MimeTreeParser "@MESSAGELIB_LIB_VERSION@")
+find_dependency(KPim6MimeTreeParser "@MIMETREEPARSER_LIB_VERSION@")
 find_dependency(KPim6WebEngineViewer "@MESSAGELIB_LIB_VERSION@")
 find_dependency(KPim6Akonadi "@AKONADI_VERSION@")
 find_dependency(KPim6Mime "@KMIME_LIB_VERSION@")
