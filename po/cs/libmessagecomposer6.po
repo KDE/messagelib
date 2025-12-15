@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-14 00:43+0000\n"
+"POT-Creation-Date: 2025-12-15 00:43+0000\n"
 "PO-Revision-Date: 2024-08-16 14:41+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -1152,7 +1152,7 @@ msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "Neplatná složka"
 
-#: helper/messagefactoryng.cpp:408 helper/messagefactoryng.cpp:731
+#: helper/messagefactoryng.cpp:408 helper/messagefactoryng.cpp:730
 #, kde-format
 msgid "forwarded message"
 msgstr "Zpráva předaná dál"
@@ -1162,7 +1162,7 @@ msgstr "Zpráva předaná dál"
 msgid "Receipt: "
 msgstr "Příjem: "
 
-#: helper/messagefactoryng.cpp:703
+#: helper/messagefactoryng.cpp:702
 #, kde-format
 msgid ""
 "\n"
@@ -1455,7 +1455,7 @@ msgstr "Text ve schránce"
 msgid "OpenPGP key 0x%1"
 msgstr "Klíč OpenPGP 0x%1"
 
-#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:90
+#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:83
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1484,7 +1484,7 @@ msgstr "Neplatný kontakt"
 msgid "Impossible to generate vCard."
 msgstr ""
 
-#: job/autocryptheadersjob.cpp:103
+#: job/autocryptheadersjob.cpp:96
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1493,7 +1493,7 @@ msgstr ""
 "<p>Během pokusu o export klíče z podpůrné vrstvy došlo k chybě:</p><p><b>Pro "
 "uživatele %1 (%2) nebyl nalezen žádný platný klíč</b></p>"
 
-#: job/composerjob.cpp:296
+#: job/composerjob.cpp:288
 #, kde-format
 msgid "No key data for recipients found."
 msgstr ""

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-14 00:43+0000\n"
+"POT-Creation-Date: 2025-12-15 00:43+0000\n"
 "PO-Revision-Date: 2025-05-18 08:02+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -1777,138 +1777,138 @@ msgctxt "@title:window"
 msgid "Print Document"
 msgstr "Natisni dokument"
 
-#: viewer/urlhandlermanager.cpp:409
+#: viewer/urlhandlermanager.cpp:410
 #, kde-format
 msgid "Turn on HTML rendering for this message."
 msgstr "Vklopi izrisovanje HTML za to sporočilo."
 
-#: viewer/urlhandlermanager.cpp:411 viewer/viewer_p.cpp:1628
+#: viewer/urlhandlermanager.cpp:412 viewer/viewer_p.cpp:1628
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "Naloži zunanje sklice z interneta za to sporočilo."
 
-#: viewer/urlhandlermanager.cpp:413
+#: viewer/urlhandlermanager.cpp:414
 #, kde-format
 msgid "Work online."
 msgstr "Delaj povezano."
 
-#: viewer/urlhandlermanager.cpp:415
+#: viewer/urlhandlermanager.cpp:416
 #, kde-format
 msgid "Make account online."
 msgstr "Vzpostavi povezavo za račun."
 
-#: viewer/urlhandlermanager.cpp:417
+#: viewer/urlhandlermanager.cpp:418
 #, kde-format
 msgid "Decrypt message."
 msgstr "Dešifriraj sporočilo."
 
-#: viewer/urlhandlermanager.cpp:419
+#: viewer/urlhandlermanager.cpp:420
 #, kde-format
 msgid "Show signature details."
 msgstr "Pokaži podrobnosti o podpisu."
 
-#: viewer/urlhandlermanager.cpp:421
+#: viewer/urlhandlermanager.cpp:422
 #, kde-format
 msgid "Hide signature details."
 msgstr "Skrij podrobnosti o podpisu."
 
-#: viewer/urlhandlermanager.cpp:423
+#: viewer/urlhandlermanager.cpp:424
 #, kde-format
 msgid "Show encryption details."
 msgstr "Pokaži podrobnosti o šifriranju."
 
-#: viewer/urlhandlermanager.cpp:425
+#: viewer/urlhandlermanager.cpp:426
 #, kde-format
 msgid "Hide encryption details."
 msgstr "Skrij podrobnosti o šifriranju."
 
-#: viewer/urlhandlermanager.cpp:430
+#: viewer/urlhandlermanager.cpp:431
 #, kde-format
 msgid "Open Documentation"
 msgstr "Odpri dokumentacijo"
 
-#: viewer/urlhandlermanager.cpp:464
+#: viewer/urlhandlermanager.cpp:465
 #, kde-format
 msgid "Expand all quoted text."
 msgstr "Razširi vso navedeno besedilo."
 
-#: viewer/urlhandlermanager.cpp:466
+#: viewer/urlhandlermanager.cpp:467
 #, kde-format
 msgid "Collapse quoted text."
 msgstr "Zloži navedeno besedilo."
 
-#: viewer/urlhandlermanager.cpp:492
+#: viewer/urlhandlermanager.cpp:493
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr "Ni bilo mogoče zagnati upravljalnika potrdil. Preverite namestitev."
 
-#: viewer/urlhandlermanager.cpp:494
+#: viewer/urlhandlermanager.cpp:495
 #, kde-format
 msgid "KMail Error"
 msgstr "Napaka KMaila"
 
-#: viewer/urlhandlermanager.cpp:511
+#: viewer/urlhandlermanager.cpp:512
 #, kde-format
 msgid "Show certificate 0x%1"
 msgstr "Pokaži potrdilo 0x%1"
 
-#: viewer/urlhandlermanager.cpp:570
+#: viewer/urlhandlermanager.cpp:571
 #, kde-format
 msgid "&Open in Address Book"
 msgstr "&Odpri v imeniku"
 
-#: viewer/urlhandlermanager.cpp:572
+#: viewer/urlhandlermanager.cpp:573
 #, kde-format
 msgid "&Copy Email Address"
 msgstr "Kopiraj e-poštni naslov"
 
-#: viewer/urlhandlermanager.cpp:585 viewer/viewer_p.cpp:2718
+#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2718
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Naslov kopiran na odložišče."
 
-#: viewer/urlhandlermanager.cpp:596
+#: viewer/urlhandlermanager.cpp:597
 #, kde-format
 msgid "Lookup the contact in KAddressbook"
 msgstr "Poišči stik v KAddressbooku"
 
-#: viewer/urlhandlermanager.cpp:772
+#: viewer/urlhandlermanager.cpp:773
 #, kde-format
 msgid "Attachment: %1"
 msgstr "Priloga: %1"
 
-#: viewer/urlhandlermanager.cpp:775
+#: viewer/urlhandlermanager.cpp:776
 #, kde-format
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "Vloženo sporočilo (zadeva: %1)"
 
-#: viewer/urlhandlermanager.cpp:777
+#: viewer/urlhandlermanager.cpp:778
 #, kde-format
 msgid "Encapsulated Message"
 msgstr "Vloženo sporočilo"
 
-#: viewer/urlhandlermanager.cpp:780
+#: viewer/urlhandlermanager.cpp:781
 #, kde-format
 msgid "Unnamed attachment"
 msgstr "Neimenovana priloga"
 
-#: viewer/urlhandlermanager.cpp:815
+#: viewer/urlhandlermanager.cpp:816
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr "Pokaži GnuPG-jev dnevnik presoje varnosti za to opravilo"
 
-#: viewer/urlhandlermanager.cpp:855
+#: viewer/urlhandlermanager.cpp:856
 #, kde-format
 msgid "Opening URL..."
 msgstr "Odpiranje naslova URL …"
 
-#: viewer/urlhandlermanager.cpp:864
+#: viewer/urlhandlermanager.cpp:865
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "Ali res želite izvesti <filename>%1</filename>?"
 
-#: viewer/urlhandlermanager.cpp:866
+#: viewer/urlhandlermanager.cpp:867
 #, kde-format
 msgctxt "@action:button"
 msgid "Execute"
@@ -2391,26 +2391,26 @@ msgstr ""
 msgid "Speak Text"
 msgstr "Izgovori besedilo"
 
-#: widgets/mailsourcewebengineviewer.cpp:54
+#: widgets/mailsourcewebengineviewer.cpp:53
 #, kde-format
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
 msgstr "Surov vir"
 
-#: widgets/mailsourcewebengineviewer.cpp:55
+#: widgets/mailsourcewebengineviewer.cpp:54
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr ""
 "Surovo, nespremenjeno sporočilo kot je shranjeno na datotečnem sistemu ali "
 "strežniku"
 
-#: widgets/mailsourcewebengineviewer.cpp:58
+#: widgets/mailsourcewebengineviewer.cpp:57
 #, kde-format
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
 msgstr "Izvorna koda HTML"
 
-#: widgets/mailsourcewebengineviewer.cpp:59
+#: widgets/mailsourcewebengineviewer.cpp:58
 #, kde-format
 msgid "HTML code for displaying the message to the user"
 msgstr "Koda HTML za prikaz sporočila uporabniku"

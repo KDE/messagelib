@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-14 00:43+0000\n"
+"POT-Creation-Date: 2025-12-15 00:43+0000\n"
 "PO-Revision-Date: 2025-09-06 21:12+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -1186,7 +1186,7 @@ msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "Geçersiz Klasör"
 
-#: helper/messagefactoryng.cpp:408 helper/messagefactoryng.cpp:731
+#: helper/messagefactoryng.cpp:408 helper/messagefactoryng.cpp:730
 #, kde-format
 msgid "forwarded message"
 msgstr "iletilmiş ileti"
@@ -1196,7 +1196,7 @@ msgstr "iletilmiş ileti"
 msgid "Receipt: "
 msgstr "Alındı: "
 
-#: helper/messagefactoryng.cpp:703
+#: helper/messagefactoryng.cpp:702
 #, kde-format
 msgid ""
 "\n"
@@ -1489,7 +1489,7 @@ msgstr "Pano Metni"
 msgid "OpenPGP key 0x%1"
 msgstr "OpenPGP anahtarı 0x%1"
 
-#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:90
+#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:83
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1518,7 +1518,7 @@ msgstr "Geçersiz Bağlantı"
 msgid "Impossible to generate vCard."
 msgstr "vCard oluşturmak imkansız."
 
-#: job/autocryptheadersjob.cpp:103
+#: job/autocryptheadersjob.cpp:96
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1527,7 +1527,7 @@ msgstr ""
 "<p>Arka uçtan anahtar dışa aktarılmaya çalışılırken bir hata oluştu:</"
 "p><p><b>%1 kullanıcısı için geçerli bir anahtar bulunamadı (%2)</b></p>"
 
-#: job/composerjob.cpp:296
+#: job/composerjob.cpp:288
 #, kde-format
 msgid "No key data for recipients found."
 msgstr "Alıcıların anahtar verileri bulunamadı."

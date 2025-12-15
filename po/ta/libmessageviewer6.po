@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-14 00:43+0000\n"
+"POT-Creation-Date: 2025-12-15 00:43+0000\n"
 "PO-Revision-Date: 2025-05-18 19:02+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -1765,139 +1765,139 @@ msgctxt "@title:window"
 msgid "Print Document"
 msgstr "அஞ்சலை அச்சிடுவது"
 
-#: viewer/urlhandlermanager.cpp:409
+#: viewer/urlhandlermanager.cpp:410
 #, kde-format
 msgid "Turn on HTML rendering for this message."
 msgstr "HTML rendering க்கான தகவலை இயக்கு."
 
-#: viewer/urlhandlermanager.cpp:411 viewer/viewer_p.cpp:1628
+#: viewer/urlhandlermanager.cpp:412 viewer/viewer_p.cpp:1628
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "இணையத்திலிருந்து வெளி இணைப்புகளை ஏற்ற விடவும்"
 
-#: viewer/urlhandlermanager.cpp:413
+#: viewer/urlhandlermanager.cpp:414
 #, kde-format
 msgid "Work online."
 msgstr "தொடர்புள்ள நிலையில் இயங்கு."
 
-#: viewer/urlhandlermanager.cpp:415
+#: viewer/urlhandlermanager.cpp:416
 #, kde-format
 msgid "Make account online."
 msgstr "கணக்கை தொடர்புள்ள நிலைக்கு மாற்று."
 
-#: viewer/urlhandlermanager.cpp:417
+#: viewer/urlhandlermanager.cpp:418
 #, kde-format
 msgid "Decrypt message."
 msgstr "அஞ்சலை மறைநீக்கு."
 
-#: viewer/urlhandlermanager.cpp:419
+#: viewer/urlhandlermanager.cpp:420
 #, kde-format
 msgid "Show signature details."
 msgstr "கையொப்ப விவரங்களைக் காட்டு."
 
-#: viewer/urlhandlermanager.cpp:421
+#: viewer/urlhandlermanager.cpp:422
 #, kde-format
 msgid "Hide signature details."
 msgstr "கையொப்ப விவரங்களை மறை."
 
-#: viewer/urlhandlermanager.cpp:423
+#: viewer/urlhandlermanager.cpp:424
 #, kde-format
 msgid "Show encryption details."
 msgstr "மறையாக்க விவரங்களைக் காட்டு."
 
-#: viewer/urlhandlermanager.cpp:425
+#: viewer/urlhandlermanager.cpp:426
 #, kde-format
 msgid "Hide encryption details."
 msgstr "மறையாக்க விவரங்களை மறை"
 
-#: viewer/urlhandlermanager.cpp:430
+#: viewer/urlhandlermanager.cpp:431
 #, kde-format
 msgid "Open Documentation"
 msgstr "கையேட்டைத் திற"
 
-#: viewer/urlhandlermanager.cpp:464
+#: viewer/urlhandlermanager.cpp:465
 #, kde-format
 msgid "Expand all quoted text."
 msgstr "மேற்கோளிடப்பட்டுள்ள அனைத்து உரையையும் விரி"
 
-#: viewer/urlhandlermanager.cpp:466
+#: viewer/urlhandlermanager.cpp:467
 #, kde-format
 msgid "Collapse quoted text."
 msgstr "மேற்கோளிடப்பட்டுள்ள அனைத்து உரையையும் சுருக்கு"
 
-#: viewer/urlhandlermanager.cpp:492
+#: viewer/urlhandlermanager.cpp:493
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""
 "சான்றிதழ் மேலாளியைத் திறக்க முடியவில்லை. அது சரியாக நிறுவப்பட்டுள்ளதா என பாருங்கள்."
 
-#: viewer/urlhandlermanager.cpp:494
+#: viewer/urlhandlermanager.cpp:495
 #, kde-format
 msgid "KMail Error"
 msgstr "கேமெயில் சிக்கல்"
 
-#: viewer/urlhandlermanager.cpp:511
+#: viewer/urlhandlermanager.cpp:512
 #, kde-format
 msgid "Show certificate 0x%1"
 msgstr "0x%1 சான்றிதழைக் காட்டு"
 
-#: viewer/urlhandlermanager.cpp:570
+#: viewer/urlhandlermanager.cpp:571
 #, kde-format
 msgid "&Open in Address Book"
 msgstr "&முகவரிப்புத்தகத்தில் திற"
 
-#: viewer/urlhandlermanager.cpp:572
+#: viewer/urlhandlermanager.cpp:573
 #, kde-format
 msgid "&Copy Email Address"
 msgstr "மின்னஞ்சல் முகவரியை &நகலெடு"
 
-#: viewer/urlhandlermanager.cpp:585 viewer/viewer_p.cpp:2718
+#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2718
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "பிடிப்புபலகைக்கு முகவரி நகலெடுக்கப்பட்டுள்ளது."
 
-#: viewer/urlhandlermanager.cpp:596
+#: viewer/urlhandlermanager.cpp:597
 #, kde-format
 msgid "Lookup the contact in KAddressbook"
 msgstr "தொடர்பை KAddressbook-இல் காட்டு"
 
-#: viewer/urlhandlermanager.cpp:772
+#: viewer/urlhandlermanager.cpp:773
 #, kde-format
 msgid "Attachment: %1"
 msgstr "உடனிணைப்பு: %1"
 
-#: viewer/urlhandlermanager.cpp:775
+#: viewer/urlhandlermanager.cpp:776
 #, kde-format
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "உட்பொதிந்த அஞ்சல்: (தலைப்பு: %1)"
 
-#: viewer/urlhandlermanager.cpp:777
+#: viewer/urlhandlermanager.cpp:778
 #, kde-format
 msgid "Encapsulated Message"
 msgstr "உட்பொதிந்த அஞ்சல்"
 
-#: viewer/urlhandlermanager.cpp:780
+#: viewer/urlhandlermanager.cpp:781
 #, kde-format
 msgid "Unnamed attachment"
 msgstr "பெயரிடப்படாத உடனிணைப்பு"
 
-#: viewer/urlhandlermanager.cpp:815
+#: viewer/urlhandlermanager.cpp:816
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:855
+#: viewer/urlhandlermanager.cpp:856
 #, kde-format
 msgid "Opening URL..."
 msgstr "முகவரி திறக்கப்படுகிறது..."
 
-#: viewer/urlhandlermanager.cpp:864
+#: viewer/urlhandlermanager.cpp:865
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "<filename>%1</filename> தனை உறுதியாக இயக்க வேண்டுமா?"
 
-#: viewer/urlhandlermanager.cpp:866
+#: viewer/urlhandlermanager.cpp:867
 #, kde-format
 msgctxt "@action:button"
 msgid "Execute"
@@ -2369,24 +2369,24 @@ msgstr ""
 msgid "Speak Text"
 msgstr "உரையைப் பேச்சாக்கு"
 
-#: widgets/mailsourcewebengineviewer.cpp:54
+#: widgets/mailsourcewebengineviewer.cpp:53
 #, kde-format
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
 msgstr "வடிவமைக்கப்படா மூலம்"
 
-#: widgets/mailsourcewebengineviewer.cpp:55
+#: widgets/mailsourcewebengineviewer.cpp:54
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr "கோப்பகத்திலோ சேவையகத்திலோ சேமிக்கப்பட்டுள்ளவாறே அஞ்சலை காட்டும்"
 
-#: widgets/mailsourcewebengineviewer.cpp:58
+#: widgets/mailsourcewebengineviewer.cpp:57
 #, kde-format
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
 msgstr "HTML மூலம்"
 
-#: widgets/mailsourcewebengineviewer.cpp:59
+#: widgets/mailsourcewebengineviewer.cpp:58
 #, kde-format
 msgid "HTML code for displaying the message to the user"
 msgstr "பயனருக்கு அஞ்சலை காட்ட பயன்படுத்தப்படும் HTML நிரல்தொடர்"

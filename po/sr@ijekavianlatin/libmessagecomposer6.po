@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-14 00:43+0000\n"
+"POT-Creation-Date: 2025-12-15 00:43+0000\n"
 "PO-Revision-Date: 2017-12-15 12:38+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -1263,7 +1263,7 @@ msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "Loša fascikla"
 
-#: helper/messagefactoryng.cpp:408 helper/messagefactoryng.cpp:731
+#: helper/messagefactoryng.cpp:408 helper/messagefactoryng.cpp:730
 #, kde-format
 msgid "forwarded message"
 msgstr "prosleđena poruka"
@@ -1273,7 +1273,7 @@ msgstr "prosleđena poruka"
 msgid "Receipt: "
 msgstr "Potvrda: "
 
-#: helper/messagefactoryng.cpp:703
+#: helper/messagefactoryng.cpp:702
 #, kde-format
 msgid ""
 "\n"
@@ -1574,7 +1574,7 @@ msgstr ""
 msgid "OpenPGP key 0x%1"
 msgstr "OpenPGP ključ 0x%1"
 
-#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:90
+#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:83
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1601,7 +1601,7 @@ msgstr "Loš kontakt"
 msgid "Impossible to generate vCard."
 msgstr "Nije moguće generisati vCard"
 
-#: job/autocryptheadersjob.cpp:103
+#: job/autocryptheadersjob.cpp:96
 #, fuzzy, kde-format
 #| msgid ""
 #| "<p>An error occurred while trying to export the key from the backend:</"
@@ -1611,7 +1611,7 @@ msgid ""
 "p><p><b>No valid key found for user %1 (%2)</b></p>"
 msgstr "<p>Greška u pokušaju izvoženja ključa iz pozadine:</p><p><b>%1</b></p>"
 
-#: job/composerjob.cpp:296
+#: job/composerjob.cpp:288
 #, kde-format
 msgid "No key data for recipients found."
 msgstr "Nema podataka o ključu primaoca."

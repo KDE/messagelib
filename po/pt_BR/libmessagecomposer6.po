@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-14 00:43+0000\n"
+"POT-Creation-Date: 2025-12-15 00:43+0000\n"
 "PO-Revision-Date: 2025-09-06 10:27-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -1198,7 +1198,7 @@ msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "Pasta inválida"
 
-#: helper/messagefactoryng.cpp:408 helper/messagefactoryng.cpp:731
+#: helper/messagefactoryng.cpp:408 helper/messagefactoryng.cpp:730
 #, kde-format
 msgid "forwarded message"
 msgstr "mensagem encaminhada"
@@ -1208,7 +1208,7 @@ msgstr "mensagem encaminhada"
 msgid "Receipt: "
 msgstr "Recebido: "
 
-#: helper/messagefactoryng.cpp:703
+#: helper/messagefactoryng.cpp:702
 #, kde-format
 msgid ""
 "\n"
@@ -1502,7 +1502,7 @@ msgstr "Texto da área de transferência"
 msgid "OpenPGP key 0x%1"
 msgstr "Chave OpenPGP 0x%1"
 
-#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:90
+#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:83
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1531,7 +1531,7 @@ msgstr "Contato inválido"
 msgid "Impossible to generate vCard."
 msgstr "Não é possível gerar o vCard."
 
-#: job/autocryptheadersjob.cpp:103
+#: job/autocryptheadersjob.cpp:96
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1540,7 +1540,7 @@ msgstr ""
 "<p>Ocorreu um erro ao tentar exportar a chave a partir da infraestrutura:</"
 "p><p><b>Nenhuma chave válida encontrada para o usuário %1 (%2)</b></p>"
 
-#: job/composerjob.cpp:296
+#: job/composerjob.cpp:288
 #, kde-format
 msgid "No key data for recipients found."
 msgstr "Nenhum dados chave para os destinatários foram encontrados."

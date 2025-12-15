@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-14 00:43+0000\n"
+"POT-Creation-Date: 2025-12-15 00:43+0000\n"
 "PO-Revision-Date: 2025-05-18 11:38+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -1771,140 +1771,140 @@ msgctxt "@title:window"
 msgid "Print Document"
 msgstr "Отпечатване на документ"
 
-#: viewer/urlhandlermanager.cpp:409
+#: viewer/urlhandlermanager.cpp:410
 #, kde-format
 msgid "Turn on HTML rendering for this message."
 msgstr "Включване на HTML рендиране за това съобщение."
 
-#: viewer/urlhandlermanager.cpp:411 viewer/viewer_p.cpp:1628
+#: viewer/urlhandlermanager.cpp:412 viewer/viewer_p.cpp:1628
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "Зареждане на външни препратки от Интернет за това съобщение."
 
-#: viewer/urlhandlermanager.cpp:413
+#: viewer/urlhandlermanager.cpp:414
 #, kde-format
 msgid "Work online."
 msgstr "Работа в мрежата."
 
-#: viewer/urlhandlermanager.cpp:415
+#: viewer/urlhandlermanager.cpp:416
 #, kde-format
 msgid "Make account online."
 msgstr "Създаване на  профил онлайн."
 
-#: viewer/urlhandlermanager.cpp:417
+#: viewer/urlhandlermanager.cpp:418
 #, kde-format
 msgid "Decrypt message."
 msgstr "Разшифроване на съобщението."
 
-#: viewer/urlhandlermanager.cpp:419
+#: viewer/urlhandlermanager.cpp:420
 #, kde-format
 msgid "Show signature details."
 msgstr "Показване на подробности за електронния подпис."
 
-#: viewer/urlhandlermanager.cpp:421
+#: viewer/urlhandlermanager.cpp:422
 #, kde-format
 msgid "Hide signature details."
 msgstr "Скриване на подробностите за подписа."
 
-#: viewer/urlhandlermanager.cpp:423
+#: viewer/urlhandlermanager.cpp:424
 #, kde-format
 msgid "Show encryption details."
 msgstr "Показване на подробности на криптирането."
 
-#: viewer/urlhandlermanager.cpp:425
+#: viewer/urlhandlermanager.cpp:426
 #, kde-format
 msgid "Hide encryption details."
 msgstr "Скриване на подробностите за криптиране."
 
-#: viewer/urlhandlermanager.cpp:430
+#: viewer/urlhandlermanager.cpp:431
 #, kde-format
 msgid "Open Documentation"
 msgstr "Отваряне на документация"
 
-#: viewer/urlhandlermanager.cpp:464
+#: viewer/urlhandlermanager.cpp:465
 #, kde-format
 msgid "Expand all quoted text."
 msgstr "Разгъване на цитирания текст."
 
-#: viewer/urlhandlermanager.cpp:466
+#: viewer/urlhandlermanager.cpp:467
 #, kde-format
 msgid "Collapse quoted text."
 msgstr "Сгъване на цитирания текст."
 
-#: viewer/urlhandlermanager.cpp:492
+#: viewer/urlhandlermanager.cpp:493
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""
 "Грешка при стартиране управлението на удостоверенията. Моля, проверете "
 "инсталацията си."
 
-#: viewer/urlhandlermanager.cpp:494
+#: viewer/urlhandlermanager.cpp:495
 #, kde-format
 msgid "KMail Error"
 msgstr "Грешка в Kmail"
 
-#: viewer/urlhandlermanager.cpp:511
+#: viewer/urlhandlermanager.cpp:512
 #, kde-format
 msgid "Show certificate 0x%1"
 msgstr "Показване на удостоверение 0x%1"
 
-#: viewer/urlhandlermanager.cpp:570
+#: viewer/urlhandlermanager.cpp:571
 #, kde-format
 msgid "&Open in Address Book"
 msgstr "&Отваряне в адресника"
 
-#: viewer/urlhandlermanager.cpp:572
+#: viewer/urlhandlermanager.cpp:573
 #, kde-format
 msgid "&Copy Email Address"
 msgstr "&Копиране на имейл адрес"
 
-#: viewer/urlhandlermanager.cpp:585 viewer/viewer_p.cpp:2718
+#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2718
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Адресът е копиран в буфера."
 
-#: viewer/urlhandlermanager.cpp:596
+#: viewer/urlhandlermanager.cpp:597
 #, kde-format
 msgid "Lookup the contact in KAddressbook"
 msgstr "Търсене на контакта в KAddressbook"
 
-#: viewer/urlhandlermanager.cpp:772
+#: viewer/urlhandlermanager.cpp:773
 #, kde-format
 msgid "Attachment: %1"
 msgstr "Прикрепен файл: %1"
 
-#: viewer/urlhandlermanager.cpp:775
+#: viewer/urlhandlermanager.cpp:776
 #, kde-format
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "Инкапсулирано съобщение (Тема:%1)"
 
-#: viewer/urlhandlermanager.cpp:777
+#: viewer/urlhandlermanager.cpp:778
 #, kde-format
 msgid "Encapsulated Message"
 msgstr "Инкапсулирано съобщение"
 
-#: viewer/urlhandlermanager.cpp:780
+#: viewer/urlhandlermanager.cpp:781
 #, kde-format
 msgid "Unnamed attachment"
 msgstr "Неозаглавен прикрепен файл"
 
-#: viewer/urlhandlermanager.cpp:815
+#: viewer/urlhandlermanager.cpp:816
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr "Показване на журналния GnuPG файл за тази операция"
 
-#: viewer/urlhandlermanager.cpp:855
+#: viewer/urlhandlermanager.cpp:856
 #, kde-format
 msgid "Opening URL..."
 msgstr "Отваряне на адрес (URL)..."
 
-#: viewer/urlhandlermanager.cpp:864
+#: viewer/urlhandlermanager.cpp:865
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "Наистина ли искате да изпълните <filename>%1</filename>?"
 
-#: viewer/urlhandlermanager.cpp:866
+#: viewer/urlhandlermanager.cpp:867
 #, kde-format
 msgctxt "@action:button"
 msgid "Execute"
@@ -2388,26 +2388,26 @@ msgstr ""
 msgid "Speak Text"
 msgstr "Изговаряне на текст"
 
-#: widgets/mailsourcewebengineviewer.cpp:54
+#: widgets/mailsourcewebengineviewer.cpp:53
 #, kde-format
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
 msgstr "Първичен източник"
 
-#: widgets/mailsourcewebengineviewer.cpp:55
+#: widgets/mailsourcewebengineviewer.cpp:54
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr ""
 "Сурова, немодифицирана поща, докато се съхранява във файловата система или "
 "на сървъра"
 
-#: widgets/mailsourcewebengineviewer.cpp:58
+#: widgets/mailsourcewebengineviewer.cpp:57
 #, kde-format
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
 msgstr "HTML източник"
 
-#: widgets/mailsourcewebengineviewer.cpp:59
+#: widgets/mailsourcewebengineviewer.cpp:58
 #, kde-format
 msgid "HTML code for displaying the message to the user"
 msgstr "HTML код за показване на съобщението на потребителя"

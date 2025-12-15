@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-14 00:43+0000\n"
+"POT-Creation-Date: 2025-12-15 00:43+0000\n"
 "PO-Revision-Date: 2025-09-15 12:21+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -1169,7 +1169,7 @@ msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "مجلد غير صالح"
 
-#: helper/messagefactoryng.cpp:408 helper/messagefactoryng.cpp:731
+#: helper/messagefactoryng.cpp:408 helper/messagefactoryng.cpp:730
 #, kde-format
 msgid "forwarded message"
 msgstr "رسالة موجهة"
@@ -1179,7 +1179,7 @@ msgstr "رسالة موجهة"
 msgid "Receipt: "
 msgstr "المستلم: "
 
-#: helper/messagefactoryng.cpp:703
+#: helper/messagefactoryng.cpp:702
 #, kde-format
 msgid ""
 "\n"
@@ -1472,7 +1472,7 @@ msgstr "نص الحافظة"
 msgid "OpenPGP key 0x%1"
 msgstr "مفتاح OpenPGP 0x%1"
 
-#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:90
+#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:83
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1499,7 +1499,7 @@ msgstr "جهة اتصال غير صالحة"
 msgid "Impossible to generate vCard."
 msgstr "من المستحيل إنشاء vCard."
 
-#: job/autocryptheadersjob.cpp:103
+#: job/autocryptheadersjob.cpp:96
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1508,7 +1508,7 @@ msgstr ""
 "<p>حدث خطأ أثناء محاولة تصدير المفتاح من الواجهة الخلفية:</p><p><b>لم يعثر "
 "على مفتاح صالح للمستخدم %1 (%2)</b></p>"
 
-#: job/composerjob.cpp:296
+#: job/composerjob.cpp:288
 #, kde-format
 msgid "No key data for recipients found."
 msgstr "لم يُعثر على بيانات المفاتيح للمستلمين."

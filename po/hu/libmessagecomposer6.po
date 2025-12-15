@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-14 00:43+0000\n"
+"POT-Creation-Date: 2025-12-15 00:43+0000\n"
 "PO-Revision-Date: 2025-11-08 22:31+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -1187,7 +1187,7 @@ msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "Érvénytelen mappa"
 
-#: helper/messagefactoryng.cpp:408 helper/messagefactoryng.cpp:731
+#: helper/messagefactoryng.cpp:408 helper/messagefactoryng.cpp:730
 #, kde-format
 msgid "forwarded message"
 msgstr "továbbított üzenet"
@@ -1197,7 +1197,7 @@ msgstr "továbbított üzenet"
 msgid "Receipt: "
 msgstr "Címzett: "
 
-#: helper/messagefactoryng.cpp:703
+#: helper/messagefactoryng.cpp:702
 #, kde-format
 msgid ""
 "\n"
@@ -1493,7 +1493,7 @@ msgstr "Vágólapszöveg"
 msgid "OpenPGP key 0x%1"
 msgstr "OpenPGP kulcs - 0x%1"
 
-#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:90
+#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:83
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1522,7 +1522,7 @@ msgstr "Érvénytelen névjegy"
 msgid "Impossible to generate vCard."
 msgstr "Lehetetlen létrehozni vCardot."
 
-#: job/autocryptheadersjob.cpp:103
+#: job/autocryptheadersjob.cpp:96
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1531,7 +1531,7 @@ msgstr ""
 "<p>Hiba történt a kulcsnak a modulból történő exportálásakor:</p><p><b>Nem "
 "található érvényes kulcs a(z) %1 felhasználóhoz (%2)</b></p>"
 
-#: job/composerjob.cpp:296
+#: job/composerjob.cpp:288
 #, kde-format
 msgid "No key data for recipients found."
 msgstr "Nem találhatók kulcsadatok a címzettekhez."

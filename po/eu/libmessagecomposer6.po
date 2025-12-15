@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-14 00:43+0000\n"
+"POT-Creation-Date: 2025-12-15 00:43+0000\n"
 "PO-Revision-Date: 2025-09-06 06:52+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -1189,7 +1189,7 @@ msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "Karpeta baliogabea"
 
-#: helper/messagefactoryng.cpp:408 helper/messagefactoryng.cpp:731
+#: helper/messagefactoryng.cpp:408 helper/messagefactoryng.cpp:730
 #, kde-format
 msgid "forwarded message"
 msgstr "birbidalitako mezua"
@@ -1199,7 +1199,7 @@ msgstr "birbidalitako mezua"
 msgid "Receipt: "
 msgstr "Hartzailea:"
 
-#: helper/messagefactoryng.cpp:703
+#: helper/messagefactoryng.cpp:702
 #, kde-format
 msgid ""
 "\n"
@@ -1495,7 +1495,7 @@ msgstr "Arbeleko testua"
 msgid "OpenPGP key 0x%1"
 msgstr "OpenPGP gakoa 0x%1"
 
-#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:90
+#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:83
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1524,7 +1524,7 @@ msgstr "Kontaktu baliogabea"
 msgid "Impossible to generate vCard."
 msgstr "Ezinezkoa da «vCard» sortzea."
 
-#: job/autocryptheadersjob.cpp:103
+#: job/autocryptheadersjob.cpp:96
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1533,7 +1533,7 @@ msgstr ""
 "<p>Errore bat gertatu da bizkarraldekotik gakoa esportatzen saiatzean:</"
 "p><p><b>Ez da aurkitu %1 (%2) erabiltzailearentzako gako baliodunik</b></p>"
 
-#: job/composerjob.cpp:296
+#: job/composerjob.cpp:288
 #, kde-format
 msgid "No key data for recipients found."
 msgstr "Ez da hartzaileentzako gako-daturik aurkitu."

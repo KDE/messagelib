@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-14 00:43+0000\n"
+"POT-Creation-Date: 2025-12-15 00:43+0000\n"
 "PO-Revision-Date: 2012-12-31 11:12+0700\n"
 "Last-Translator: sutha <sutha@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros>\n"
@@ -1816,140 +1816,140 @@ msgctxt "@title:window"
 msgid "Print Document"
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:409
+#: viewer/urlhandlermanager.cpp:410
 #, kde-format
 msgid "Turn on HTML rendering for this message."
 msgstr "បើក​ការបង្ហាញ HTML សម្រាប់​សារ​នេះ ។"
 
-#: viewer/urlhandlermanager.cpp:411 viewer/viewer_p.cpp:1628
+#: viewer/urlhandlermanager.cpp:412 viewer/viewer_p.cpp:1628
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "ផ្ទុក​សេចក្ដី​យោង​ខាងក្រៅ​ពី អ៊ីនធឺណិត​សម្រាប់សារនេះ ។"
 
-#: viewer/urlhandlermanager.cpp:413
+#: viewer/urlhandlermanager.cpp:414
 #, kde-format
 msgid "Work online."
 msgstr "ធ្វើការ​​លើ​បណ្ដាញ"
 
-#: viewer/urlhandlermanager.cpp:415
+#: viewer/urlhandlermanager.cpp:416
 #, kde-format
 msgid "Make account online."
 msgstr "បង្កើត​គណនី​លើ​បណ្ដាញ ។"
 
-#: viewer/urlhandlermanager.cpp:417
+#: viewer/urlhandlermanager.cpp:418
 #, kde-format
 msgid "Decrypt message."
 msgstr "ឌិគ្រីប​សារ"
 
-#: viewer/urlhandlermanager.cpp:419
+#: viewer/urlhandlermanager.cpp:420
 #, kde-format
 msgid "Show signature details."
 msgstr "បង្ហាញ​សេចក្ដី​លម្អិត​ហត្ថលេខា ។"
 
-#: viewer/urlhandlermanager.cpp:421
+#: viewer/urlhandlermanager.cpp:422
 #, kde-format
 msgid "Hide signature details."
 msgstr "លាក់​សេចក្ដី​លម្អិត​ហត្ថលេខា"
 
-#: viewer/urlhandlermanager.cpp:423
+#: viewer/urlhandlermanager.cpp:424
 #, fuzzy, kde-format
 #| msgid "Show signature details."
 msgid "Show encryption details."
 msgstr "បង្ហាញ​សេចក្ដី​លម្អិត​ហត្ថលេខា ។"
 
-#: viewer/urlhandlermanager.cpp:425
+#: viewer/urlhandlermanager.cpp:426
 #, fuzzy, kde-format
 #| msgid "Hide signature details."
 msgid "Hide encryption details."
 msgstr "លាក់​សេចក្ដី​លម្អិត​ហត្ថលេខា"
 
-#: viewer/urlhandlermanager.cpp:430
+#: viewer/urlhandlermanager.cpp:431
 #, kde-format
 msgid "Open Documentation"
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:464
+#: viewer/urlhandlermanager.cpp:465
 #, kde-format
 msgid "Expand all quoted text."
 msgstr "ពង្រីកអត្ថបទ​ដកស្រង់ទាំងអស់ ។"
 
-#: viewer/urlhandlermanager.cpp:466
+#: viewer/urlhandlermanager.cpp:467
 #, kde-format
 msgid "Collapse quoted text."
 msgstr "វេញ​អត្ថបទ​ដកស្រង់ ។"
 
-#: viewer/urlhandlermanager.cpp:492
+#: viewer/urlhandlermanager.cpp:493
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr "មិនអាច​ចាប់ផ្ដើម​កម្មវិធី​គ្រប់គ្រង​វិញ្ញាបនបត្រ​បានឡើយ ។ សូម​ពិនិត្យ្រ​មើល​កដំឡើង​របស់អ្នក ។n."
 
-#: viewer/urlhandlermanager.cpp:494
+#: viewer/urlhandlermanager.cpp:495
 #, kde-format
 msgid "KMail Error"
 msgstr "កំហុស KMail"
 
-#: viewer/urlhandlermanager.cpp:511
+#: viewer/urlhandlermanager.cpp:512
 #, kde-format
 msgid "Show certificate 0x%1"
 msgstr "បង្ហាញ​វិញ្ញាបនបត្រ 0x%1"
 
-#: viewer/urlhandlermanager.cpp:570
+#: viewer/urlhandlermanager.cpp:571
 #, kde-format
 msgid "&Open in Address Book"
 msgstr "បើក​នៅ​ក្នុង​សៀវភៅ​អាសយដ្ឋាន"
 
-#: viewer/urlhandlermanager.cpp:572
+#: viewer/urlhandlermanager.cpp:573
 #, kde-format
 msgid "&Copy Email Address"
 msgstr "ចម្លង​អាសយដ្ឋាន​អ៊ីមែល​"
 
-#: viewer/urlhandlermanager.cpp:585 viewer/viewer_p.cpp:2718
+#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2718
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "បាន​ចម្លង​អាសយដ្ឋាន​ទៅ​ក្ដារតម្បៀតខ្ទាស់ ។"
 
-#: viewer/urlhandlermanager.cpp:596
+#: viewer/urlhandlermanager.cpp:597
 #, kde-format
 msgid "Lookup the contact in KAddressbook"
 msgstr "ស្វែងរក​ទាក់ទង​ក្នុង​​ KAddressbook"
 
-#: viewer/urlhandlermanager.cpp:772
+#: viewer/urlhandlermanager.cpp:773
 #, kde-format
 msgid "Attachment: %1"
 msgstr "ឯកសារភ្ជាប់ ៖ %1"
 
-#: viewer/urlhandlermanager.cpp:775
+#: viewer/urlhandlermanager.cpp:776
 #, kde-format
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "សារ​ដែល​បាន​ស្រោប​​ (​ប្រធាន​បទ​ ៖​​ %1)"
 
-#: viewer/urlhandlermanager.cpp:777
+#: viewer/urlhandlermanager.cpp:778
 #, kde-format
 msgid "Encapsulated Message"
 msgstr "សារ​ដែល​បាន​ស្រោប​"
 
-#: viewer/urlhandlermanager.cpp:780
+#: viewer/urlhandlermanager.cpp:781
 #, kde-format
 msgid "Unnamed attachment"
 msgstr "ឯកសារ​ភ្ជាប់​ដែល​គ្មានឈ្មោះ​"
 
-#: viewer/urlhandlermanager.cpp:815
+#: viewer/urlhandlermanager.cpp:816
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr "បង្ហាញ​កំណត់ហេតុ​ត្រួតពិនិត្យ​ GnuPG សម្រាប់ប្រតិបត្តិការ​នេះ"
 
-#: viewer/urlhandlermanager.cpp:855
+#: viewer/urlhandlermanager.cpp:856
 #, kde-format
 msgid "Opening URL..."
 msgstr "កំពុង​បើក URL..."
 
-#: viewer/urlhandlermanager.cpp:864
+#: viewer/urlhandlermanager.cpp:865
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "តើ​អ្នក​​ពិត​ជា​ចង់​ប្រតិបត្តិ <filename>%1</filename>?"
 
-#: viewer/urlhandlermanager.cpp:866
+#: viewer/urlhandlermanager.cpp:867
 #, fuzzy, kde-format
 #| msgid "Execute"
 msgctxt "@action:button"
@@ -2453,24 +2453,24 @@ msgstr ""
 msgid "Speak Text"
 msgstr "អត្ថបទ​សំឡេង"
 
-#: widgets/mailsourcewebengineviewer.cpp:54
+#: widgets/mailsourcewebengineviewer.cpp:53
 #, kde-format
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
 msgstr "ប្រភព​មិន​ទាន់​ច្នៃ​"
 
-#: widgets/mailsourcewebengineviewer.cpp:55
+#: widgets/mailsourcewebengineviewer.cpp:54
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr "ដើម ​សំបុត្រ​ដែល​មិន​បាន​កែប្រែ​ វា​ត្រូវ​បាន​​ទុក​លើ​​ប្រព័ន្ធ​ឯកសារ​ ឬ​លើ​ម៉ាស៊ីន​បម្រើ​​"
 
-#: widgets/mailsourcewebengineviewer.cpp:58
+#: widgets/mailsourcewebengineviewer.cpp:57
 #, kde-format
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
 msgstr "ប្រភព​របស់​ HTML"
 
-#: widgets/mailsourcewebengineviewer.cpp:59
+#: widgets/mailsourcewebengineviewer.cpp:58
 #, kde-format
 msgid "HTML code for displaying the message to the user"
 msgstr "កូដ HTML សម្រាប់​បង្ហាញ​សារ​ទៅកាន់​អ្នក​ប្រើ​"

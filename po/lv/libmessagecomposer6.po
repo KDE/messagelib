@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-14 00:43+0000\n"
+"POT-Creation-Date: 2025-12-15 00:43+0000\n"
 "PO-Revision-Date: 2025-11-11 18:54+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -1185,7 +1185,7 @@ msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "Nederīga mape"
 
-#: helper/messagefactoryng.cpp:408 helper/messagefactoryng.cpp:731
+#: helper/messagefactoryng.cpp:408 helper/messagefactoryng.cpp:730
 #, kde-format
 msgid "forwarded message"
 msgstr "pārsūtīta vēstule"
@@ -1195,7 +1195,7 @@ msgstr "pārsūtīta vēstule"
 msgid "Receipt: "
 msgstr "Kvīts: "
 
-#: helper/messagefactoryng.cpp:703
+#: helper/messagefactoryng.cpp:702
 #, kde-format
 msgid ""
 "\n"
@@ -1489,7 +1489,7 @@ msgstr "Starpliktuves teksts"
 msgid "OpenPGP key 0x%1"
 msgstr "„OpenPGP“ atslēga 0×%1"
 
-#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:90
+#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:83
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1518,7 +1518,7 @@ msgstr "Nederīgs kontakts"
 msgid "Impossible to generate vCard."
 msgstr "Neizdodas ģenerēt „vCard“."
 
-#: job/autocryptheadersjob.cpp:103
+#: job/autocryptheadersjob.cpp:96
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1527,7 +1527,7 @@ msgstr ""
 "<p>Notika kļūda, mēģinot eksportēt atslēgu no aizmugursistēmas:</p><p><b> %1 "
 "lietotājam nav atrasta derīga atslēga (%2)</b></p>"
 
-#: job/composerjob.cpp:296
+#: job/composerjob.cpp:288
 #, kde-format
 msgid "No key data for recipients found."
 msgstr "Nav atrasti saņēmēju atslēgas dati."

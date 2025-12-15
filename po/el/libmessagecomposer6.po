@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-14 00:43+0000\n"
+"POT-Creation-Date: 2025-12-15 00:43+0000\n"
 "PO-Revision-Date: 2024-09-19 17:22+0300\n"
 "Last-Translator: Antonis Geralis <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -1205,7 +1205,7 @@ msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "Μη έγκυρος φάκελος"
 
-#: helper/messagefactoryng.cpp:408 helper/messagefactoryng.cpp:731
+#: helper/messagefactoryng.cpp:408 helper/messagefactoryng.cpp:730
 #, kde-format
 msgid "forwarded message"
 msgstr "προωθημένο μήνυμα"
@@ -1215,7 +1215,7 @@ msgstr "προωθημένο μήνυμα"
 msgid "Receipt: "
 msgstr "Απόδειξη:"
 
-#: helper/messagefactoryng.cpp:703
+#: helper/messagefactoryng.cpp:702
 #, kde-format
 msgid ""
 "\n"
@@ -1522,7 +1522,7 @@ msgstr "Κείμενο στο πρόχειρο"
 msgid "OpenPGP key 0x%1"
 msgstr "OpenPGP κλειδί 0x%1"
 
-#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:90
+#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:83
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1551,7 +1551,7 @@ msgstr "Μη έγκυρη επαφή"
 msgid "Impossible to generate vCard."
 msgstr "Αδυναμία παραγωγής VCard."
 
-#: job/autocryptheadersjob.cpp:103
+#: job/autocryptheadersjob.cpp:96
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1560,7 +1560,7 @@ msgstr ""
 "<p>Παρουσιάστηκε ένα σφάλμα κατά την προσπάθεια εξαγωγής του κλειδιού από το "
 "σύστημα:</p><p><b>Δεν βρέθηκε έγκυρο κλειδί για τον χρήστη %1 (%2)</b></p>"
 
-#: job/composerjob.cpp:296
+#: job/composerjob.cpp:288
 #, kde-format
 msgid "No key data for recipients found."
 msgstr "Δεν βρέθηκαν δεδομένα κλειδιού για τον παραλήπτη."

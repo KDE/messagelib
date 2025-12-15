@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-14 00:43+0000\n"
+"POT-Creation-Date: 2025-12-15 00:43+0000\n"
 "PO-Revision-Date: 2025-09-06 07:14+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -1188,7 +1188,7 @@ msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "Neveljavna mapa"
 
-#: helper/messagefactoryng.cpp:408 helper/messagefactoryng.cpp:731
+#: helper/messagefactoryng.cpp:408 helper/messagefactoryng.cpp:730
 #, kde-format
 msgid "forwarded message"
 msgstr "posredovano sporočilo"
@@ -1198,7 +1198,7 @@ msgstr "posredovano sporočilo"
 msgid "Receipt: "
 msgstr "Potrdilo: "
 
-#: helper/messagefactoryng.cpp:703
+#: helper/messagefactoryng.cpp:702
 #, kde-format
 msgid ""
 "\n"
@@ -1496,7 +1496,7 @@ msgstr "Besedilo z odložišče"
 msgid "OpenPGP key 0x%1"
 msgstr "Ključ OpenPGP 0x%1"
 
-#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:90
+#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:83
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1524,7 +1524,7 @@ msgstr "Neveljaven stik"
 msgid "Impossible to generate vCard."
 msgstr "vCarda ni mogoče ustvariti."
 
-#: job/autocryptheadersjob.cpp:103
+#: job/autocryptheadersjob.cpp:96
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1533,7 +1533,7 @@ msgstr ""
 "<p>Prišlo je do napake ob poskusu izvažanja ključa iz zaledja:</p><p><b>Ni "
 "mogoče najti veljavnega ključa za uporabnika %1 (%2)</b></p>"
 
-#: job/composerjob.cpp:296
+#: job/composerjob.cpp:288
 #, kde-format
 msgid "No key data for recipients found."
 msgstr "Najden ni bil noben podatek ključa za prejemnike."

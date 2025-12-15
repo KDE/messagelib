@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-14 00:43+0000\n"
+"POT-Creation-Date: 2025-12-15 00:43+0000\n"
 "PO-Revision-Date: 2025-10-09 01:07+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1168,7 +1168,7 @@ msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "잘못된 폴더"
 
-#: helper/messagefactoryng.cpp:408 helper/messagefactoryng.cpp:731
+#: helper/messagefactoryng.cpp:408 helper/messagefactoryng.cpp:730
 #, kde-format
 msgid "forwarded message"
 msgstr "전달된 메시지"
@@ -1178,7 +1178,7 @@ msgstr "전달된 메시지"
 msgid "Receipt: "
 msgstr "영수증: "
 
-#: helper/messagefactoryng.cpp:703
+#: helper/messagefactoryng.cpp:702
 #, kde-format
 msgid ""
 "\n"
@@ -1470,7 +1470,7 @@ msgstr "클립보드 텍스트"
 msgid "OpenPGP key 0x%1"
 msgstr "OpenPGP 키 0x%1"
 
-#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:90
+#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:83
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1498,7 +1498,7 @@ msgstr "잘못된 연락처"
 msgid "Impossible to generate vCard."
 msgstr "vCard를 생성할 수 없습니다."
 
-#: job/autocryptheadersjob.cpp:103
+#: job/autocryptheadersjob.cpp:96
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1507,7 +1507,7 @@ msgstr ""
 "<p>백엔드에서 키를 내보내는 중 오류가 발생했습니다:</p><p><b>사용자 %1(%2)의 "
 "유효한 키 없음</b></p>"
 
-#: job/composerjob.cpp:296
+#: job/composerjob.cpp:288
 #, kde-format
 msgid "No key data for recipients found."
 msgstr "받는 사람의 키를 찾을 수 없습니다."

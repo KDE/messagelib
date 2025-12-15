@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-14 00:43+0000\n"
+"POT-Creation-Date: 2025-12-15 00:43+0000\n"
 "PO-Revision-Date: 2024-12-20 21:53+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -1175,7 +1175,7 @@ msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "अमान्यपुटम्"
 
-#: helper/messagefactoryng.cpp:408 helper/messagefactoryng.cpp:731
+#: helper/messagefactoryng.cpp:408 helper/messagefactoryng.cpp:730
 #, kde-format
 msgid "forwarded message"
 msgstr "अग्रे प्रेषितः सन्देशः"
@@ -1185,7 +1185,7 @@ msgstr "अग्रे प्रेषितः सन्देशः"
 msgid "Receipt: "
 msgstr "प्राप्त: "
 
-#: helper/messagefactoryng.cpp:703
+#: helper/messagefactoryng.cpp:702
 #, kde-format
 msgid ""
 "\n"
@@ -1477,7 +1477,7 @@ msgstr "क्लिपबोर्ड पाठ"
 msgid "OpenPGP key 0x%1"
 msgstr "OpenPGP कुञ्जी 0x%1"
 
-#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:90
+#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:83
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1504,7 +1504,7 @@ msgstr "अमान्य सम्पर्क"
 msgid "Impossible to generate vCard."
 msgstr "vCard उत्पन्नं कर्तुं असम्भवम्।"
 
-#: job/autocryptheadersjob.cpp:103
+#: job/autocryptheadersjob.cpp:96
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1513,7 +1513,7 @@ msgstr ""
 "<p>पृष्ठभागात् कीलं निर्यातयितुं प्रयतमाने त्रुटिः अभवत्:</p><p> <b>उपयोक्तुः %1 (%2) कृते "
 "वैधः कुञ्जी न प्राप्ता ।</b></p>"
 
-#: job/composerjob.cpp:296
+#: job/composerjob.cpp:288
 #, kde-format
 msgid "No key data for recipients found."
 msgstr "प्राप्तकर्तानां कृते कोऽपि प्रमुखदत्तांशः न प्राप्तः ।"

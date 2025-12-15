@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-14 00:43+0000\n"
+"POT-Creation-Date: 2025-12-15 00:43+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -1147,7 +1147,7 @@ msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "无效的文件夹"
 
-#: helper/messagefactoryng.cpp:408 helper/messagefactoryng.cpp:731
+#: helper/messagefactoryng.cpp:408 helper/messagefactoryng.cpp:730
 #, kde-format
 msgid "forwarded message"
 msgstr "转发的信件"
@@ -1157,7 +1157,7 @@ msgstr "转发的信件"
 msgid "Receipt: "
 msgstr "收件人："
 
-#: helper/messagefactoryng.cpp:703
+#: helper/messagefactoryng.cpp:702
 #, kde-format
 msgid ""
 "\n"
@@ -1449,7 +1449,7 @@ msgstr "剪贴板文本"
 msgid "OpenPGP key 0x%1"
 msgstr "OpenPGP 密钥 0x%1"
 
-#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:90
+#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:83
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1476,7 +1476,7 @@ msgstr "无效的联系人"
 msgid "Impossible to generate vCard."
 msgstr "无法生成 vCard。"
 
-#: job/autocryptheadersjob.cpp:103
+#: job/autocryptheadersjob.cpp:96
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1484,7 +1484,7 @@ msgid ""
 msgstr ""
 "<p>试图从后端导出密钥时发生错误：</p><p><b>用户%1 (%2)无可用密钥</b></p>"
 
-#: job/composerjob.cpp:296
+#: job/composerjob.cpp:288
 #, kde-format
 msgid "No key data for recipients found."
 msgstr "没有找到收件人的密钥数据。"

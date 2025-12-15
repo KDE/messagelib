@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-14 00:43+0000\n"
+"POT-Creation-Date: 2025-12-15 00:43+0000\n"
 "PO-Revision-Date: 2025-09-08 18:31+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -1184,7 +1184,7 @@ msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "Ogiltig korg"
 
-#: helper/messagefactoryng.cpp:408 helper/messagefactoryng.cpp:731
+#: helper/messagefactoryng.cpp:408 helper/messagefactoryng.cpp:730
 #, kde-format
 msgid "forwarded message"
 msgstr "vidarebefordrat brev"
@@ -1194,7 +1194,7 @@ msgstr "vidarebefordrat brev"
 msgid "Receipt: "
 msgstr "Kvitto: "
 
-#: helper/messagefactoryng.cpp:703
+#: helper/messagefactoryng.cpp:702
 #, kde-format
 msgid ""
 "\n"
@@ -1490,7 +1490,7 @@ msgstr "Klippbordstext"
 msgid "OpenPGP key 0x%1"
 msgstr "OpenPGP-nyckel 0x%1"
 
-#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:90
+#: job/attachmentfrompublickeyjob.cpp:63 job/autocryptheadersjob.cpp:83
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1519,7 +1519,7 @@ msgstr "Ogiltig kontakt"
 msgid "Impossible to generate vCard."
 msgstr "Omöjligt skapa visitkort."
 
-#: job/autocryptheadersjob.cpp:103
+#: job/autocryptheadersjob.cpp:96
 #, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
@@ -1528,7 +1528,7 @@ msgstr ""
 "<p>Ett fel uppstod vid försök att exportera nyckeln från bakgrundsprogrammet:"
 "</p><p><b>Ingen giltig nyckel hittades för användare %1 (%2)</b></p>"
 
-#: job/composerjob.cpp:296
+#: job/composerjob.cpp:288
 #, kde-format
 msgid "No key data for recipients found."
 msgstr "Ingen nyckeldata för mottagare hittades."
