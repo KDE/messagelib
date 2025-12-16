@@ -116,7 +116,7 @@ void SignAndEncryptTest::testHeaders()
     QVERIFY(result);
     result->assemble();
 
-    QVERIFY(result->contentType(false));
+    QVERIFY(result->contentType(KMime::CreatePolicy::DontCreate));
     QCOMPARE(result->contentType()->mimeType(), "multipart/encrypted");
     QCOMPARE(result->contentType()->charset(), "UTF-8");
     QCOMPARE(result->contentType()->parameter("protocol"), u"application/pgp-encrypted"_s);

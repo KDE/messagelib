@@ -198,7 +198,7 @@ void SignJob::process()
         //   be applied.
         const auto cte = d->content->contentTransferEncoding(false);
         const auto encoding = cte ? cte->encoding() : KMime::Headers::CE7Bit;
-        if ((encoding == KMime::Headers::CEquPr || encoding == KMime::Headers::CE7Bit) && !d->content->contentType(false)) {
+        if ((encoding == KMime::Headers::CEquPr || encoding == KMime::Headers::CE7Bit) && !d->content->contentType(KMime::CreatePolicy::DontCreate)) {
             QByteArray body = d->content->encodedBody();
             bool changed = false;
             constexpr auto search = std::to_array<QByteArrayView>({"From ", "from ", "-"});

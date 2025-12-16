@@ -49,7 +49,7 @@ void MultipartJob::process()
     Q_ASSERT(d->resultContent == nullptr); // Not processed before.
     Q_ASSERT(!d->subtype.isEmpty());
     d->resultContent = new KMime::Content;
-    auto contentType = d->resultContent->contentType(true);
+    auto contentType = d->resultContent->contentType(KMime::CreatePolicy::Create);
     contentType->setMimeType("multipart/" + d->subtype);
     contentType->setBoundary(KMime::multiPartBoundary());
     d->resultContent->contentTransferEncoding()->setEncoding(KMime::Headers::CE7Bit);

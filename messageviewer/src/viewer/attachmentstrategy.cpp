@@ -24,7 +24,7 @@ using namespace MessageViewer;
 
 static AttachmentStrategy::Display smartDisplay(KMime::Content *node)
 {
-    const auto cd = node->contentDisposition(false);
+    const auto cd = node->contentDisposition(KMime::CreatePolicy::DontCreate);
     if (cd) {
         if (cd->disposition() == KMime::Headers::CDinline) {
             // explicit "inline" disposition:
@@ -36,7 +36,7 @@ static AttachmentStrategy::Display smartDisplay(KMime::Content *node)
         }
     }
 
-    const auto ct = node->contentType(false);
+    const auto ct = node->contentType(KMime::CreatePolicy::DontCreate);
     if (ct && ct->isText() && ct->name().trimmed().isEmpty() && (!cd || cd->filename().trimmed().isEmpty())) {
         // text/* w/o filename parameter:
         return AttachmentStrategy::Inline;
@@ -75,7 +75,9 @@ public:
     Display defaultDisplay(KMime::Content *node) const override
     {
         if (node->contentType()->isText()
-            && (!node->parent() || (node->contentDisposition()->filename().trimmed().isEmpty() && node->contentType(false)->name().trimmed().isEmpty()))) {
+            && (!node->parent()
+                || (node->contentDisposition()->filename().trimmed().isEmpty()
+                    && node->contentType(KMime::CreatePolicy::DontCreate)->name().trimmed().isEmpty()))) {
             // text/* w/o filename parameter:
             return Inline;
         }
@@ -184,7 +186,7 @@ public:
     Display defaultDisplay(KMime::Content *node) const override
     {
         if (node->contentType()->isText() && node->contentDisposition()->filename().trimmed().isEmpty()
-            && node->contentType(false)->name().trimmed().isEmpty()) {
+            && node->contentType(KMime::CreatePolicy::DontCreate)->name().trimmed().isEmpty()) {
             // text/* w/o filename parameter:
             return Inline;
         }
@@ -192,7 +194,8 @@ public:
             return Inline;
         }
 
-        if (node->parent() && node->parent()->contentType()->isMultipart() && node->parent()->contentType(false)->subType() == "related") {
+        if (node->parent() && node->parent()->contentType()->isMultipart()
+            && node->parent()->contentType(KMime::CreatePolicy::DontCreate)->subType() == "related") {
             return Inline;
         }
 

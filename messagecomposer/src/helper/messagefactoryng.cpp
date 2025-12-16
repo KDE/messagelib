@@ -302,15 +302,15 @@ void MessageFactoryNG::createForwardAsync()
     // This is a non-multipart, non-text mail (e.g. text/calendar). Construct
     // a multipart/mixed mail and add the original body as an attachment.
     if (!mOrigMsg->contentType()->isMultipart()
-        && (!mOrigMsg->contentType(false)->isText()
-            || (mOrigMsg->contentType(false)->isText() && mOrigMsg->contentType(false)->subType() != "html"
-                && mOrigMsg->contentType(false)->subType() != "plain"))) {
+        && (!mOrigMsg->contentType(KMime::CreatePolicy::DontCreate)->isText()
+            || (mOrigMsg->contentType(KMime::CreatePolicy::DontCreate)->isText() && mOrigMsg->contentType(KMime::CreatePolicy::DontCreate)->subType() != "html"
+                && mOrigMsg->contentType(KMime::CreatePolicy::DontCreate)->subType() != "plain"))) {
         const uint originalIdentity = identityUoid(mOrigMsg);
         MessageHelper::initFromMessage(msg, mOrigMsg, mIdentityManager, originalIdentity);
         msg->removeHeader<KMime::Headers::ContentType>();
         msg->removeHeader<KMime::Headers::ContentTransferEncoding>();
 
-        msg->contentType(true)->setMimeType("multipart/mixed");
+        msg->contentType(KMime::CreatePolicy::Create)->setMimeType("multipart/mixed");
 
         // TODO: Andras: somebody should check if this is correct. :)
         // empty text part
@@ -334,7 +334,7 @@ void MessageFactoryNG::createForwardAsync()
         // TODO Check if this is ok
         msg->setHead(mOrigMsg->head());
         msg->setBody(mOrigMsg->body());
-        const QString oldContentType = msg->contentType(true)->asUnicodeString();
+        const QString oldContentType = msg->contentType(KMime::CreatePolicy::Create)->asUnicodeString();
         const uint originalIdentity = identityUoid(mOrigMsg);
         MessageHelper::initFromMessage(msg, mOrigMsg, mIdentityManager, originalIdentity);
 
@@ -616,7 +616,7 @@ KMime::Message::Ptr MessageFactoryNG::createMDN(KMime::MDN::ActionMode a,
     KMime::Message::Ptr receipt(new KMime::Message());
     const uint originalIdentity = identityUoid(mOrigMsg);
     MessageHelper::initFromMessage(receipt, mOrigMsg, mIdentityManager, originalIdentity);
-    auto contentType = receipt->contentType(true); // create it
+    auto contentType = receipt->contentType(KMime::CreatePolicy::Create); // create it
     contentType->from7BitString("multipart/report");
     contentType->setBoundary(KMime::multiPartBoundary());
     contentType->setCharset("us-ascii");
@@ -724,7 +724,7 @@ QPair<KMime::Message::Ptr, KMime::Content *> MessageFactoryNG::createForwardDige
         auto part = std::make_unique<KMime::Content>(digest);
 
         part->contentType()->setMimeType("message/rfc822");
-        part->contentType(false)->setCharset(fMsg->contentType()->charset());
+        part->contentType(KMime::CreatePolicy::DontCreate)->setCharset(fMsg->contentType()->charset());
         part->contentID()->setIdentifier(fMsg->contentID()->identifier());
         part->contentDescription()->fromUnicodeString(fMsg->contentDescription()->asUnicodeString());
         part->contentDisposition()->setParameter(QByteArrayLiteral("name"), i18n("forwarded message"));

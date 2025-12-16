@@ -1525,23 +1525,24 @@ void ComposerViewBase::addAttachment(const QString &name, const QString &filenam
 void ComposerViewBase::addAttachmentPart(KMime::Content *partToAttach)
 {
     MessageCore::AttachmentPart::Ptr part(new MessageCore::AttachmentPart);
-    if (partToAttach->contentType()->mimeType() == "multipart/digest" || partToAttach->contentType(false)->mimeType() == "message/rfc822") {
+    if (partToAttach->contentType()->mimeType() == "multipart/digest"
+        || partToAttach->contentType(KMime::CreatePolicy::DontCreate)->mimeType() == "message/rfc822") {
         // if it is a digest or a full message, use the encodedContent() of the attachment,
         // which already has the proper headers
         part->setData(partToAttach->encodedContent());
     } else {
         part->setData(partToAttach->decodedBody());
     }
-    part->setMimeType(partToAttach->contentType(false)->mimeType());
-    if (auto cd = partToAttach->contentDescription(false)) {
+    part->setMimeType(partToAttach->contentType(KMime::CreatePolicy::DontCreate)->mimeType());
+    if (auto cd = partToAttach->contentDescription(KMime::CreatePolicy::DontCreate)) {
         part->setDescription(cd->asUnicodeString());
     }
-    if (auto ct = partToAttach->contentType(false)) {
+    if (auto ct = partToAttach->contentType(KMime::CreatePolicy::DontCreate)) {
         if (ct->hasParameter("name")) {
             part->setName(ct->parameter("name"));
         }
     }
-    if (auto cd = partToAttach->contentDisposition(false)) {
+    if (auto cd = partToAttach->contentDisposition(KMime::CreatePolicy::DontCreate)) {
         part->setFileName(cd->filename());
         part->setInline(cd->disposition() == KMime::Headers::CDinline);
     }

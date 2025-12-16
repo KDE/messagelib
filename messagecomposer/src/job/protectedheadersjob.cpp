@@ -83,7 +83,7 @@ void ProtectedHeadersJob::doStart()
             auto mixedPart = new KMime::Content();
             const QByteArray boundary = KMime::multiPartBoundary();
             mixedPart->contentType()->setMimeType("multipart/mixed");
-            mixedPart->contentType(false)->setBoundary(boundary);
+            mixedPart->contentType(KMime::CreatePolicy::DontCreate)->setBoundary(boundary);
             mixedPart->appendContent(cjob->content());
 
             // if setContent hasn't been called, we assume that a subjob was added
@@ -145,7 +145,7 @@ void ProtectedHeadersJob::process()
     if (d->obvoscate && subject) {
         subject->from7BitString("...");
     }
-    auto contentType = d->content->contentType(true);
+    auto contentType = d->content->contentType(KMime::CreatePolicy::Create);
     contentType->setParameter(QByteArrayLiteral("protected-headers"), u"v1"_s);
 
     d->resultContent = d->content;

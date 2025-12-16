@@ -571,7 +571,7 @@ bool Util::deleteAttachment(KMime::Content *node)
         filename = cd->filename();
     }
 
-    if (auto ct = node->contentType(false)) {
+    if (auto ct = node->contentType(KMime::CreatePolicy::DontCreate)) {
         name = ct->name();
         mimetype = ct->mimeType();
     }
@@ -584,7 +584,7 @@ bool Util::deleteAttachment(KMime::Content *node)
     // text/plain part:
     const auto newName = i18nc("Argument is the original name of the deleted attachment", "Deleted: %1", name);
     auto deletePart = std::make_unique<KMime::Content>(parentNode);
-    auto deleteCt = deletePart->contentType(true);
+    auto deleteCt = deletePart->contentType(KMime::CreatePolicy::Create);
     deleteCt->setMimeType("text/x-moz-deleted");
     deleteCt->setName(newName);
     deletePart->contentDisposition(true)->setDisposition(KMime::Headers::CDattachment);

@@ -141,7 +141,7 @@ static KMime::Content *partNodeFromXKMailUrl(const QUrl &url, ViewerPrivate *w, 
 
 QList<const Interface::BodyPartURLHandler *> BodyPartURLHandlerManager::handlersForPart(KMime::Content *node) const
 {
-    if (auto ct = node->contentType(false)) {
+    if (auto ct = node->contentType(KMime::CreatePolicy::DontCreate)) {
         auto mimeType = ct->mimeType();
         if (!mimeType.isEmpty()) {
             // Bug 390900

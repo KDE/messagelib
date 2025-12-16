@@ -41,20 +41,20 @@ void ComposerTest::testAttachments()
 
     // multipart/mixed
     {
-        QVERIFY(message->contentType(false));
-        QCOMPARE(message->contentType(false)->mimeType(), QByteArray("multipart/mixed"));
+        QVERIFY(message->contentType(KMime::CreatePolicy::DontCreate));
+        QCOMPARE(message->contentType(KMime::CreatePolicy::DontCreate)->mimeType(), QByteArray("multipart/mixed"));
         QCOMPARE(message->contents().count(), 2);
         // text/plain
         {
             Content *plain = message->contents().at(0);
-            QVERIFY(plain->contentType(false));
-            QCOMPARE(plain->contentType(false)->mimeType(), QByteArray("text/plain"));
+            QVERIFY(plain->contentType(KMime::CreatePolicy::DontCreate));
+            QCOMPARE(plain->contentType(KMime::CreatePolicy::DontCreate)->mimeType(), QByteArray("text/plain"));
         }
         // x-some/x-type (attachment)
         {
             Content *plain = message->contents().at(1);
-            QVERIFY(plain->contentType(false));
-            QCOMPARE(plain->contentType(false)->mimeType(), QByteArray("x-some/x-type"));
+            QVERIFY(plain->contentType(KMime::CreatePolicy::DontCreate));
+            QCOMPARE(plain->contentType(KMime::CreatePolicy::DontCreate)->mimeType(), QByteArray("x-some/x-type"));
         }
     }
 }
@@ -104,16 +104,16 @@ void ComposerTest::testNonAsciiHeaders()
     const KMime::Message::Ptr message = composerJob.resultMessages().constFirst();
     message->assemble();
     message->parse();
-    QCOMPARE(message->bcc(false)->displayNames().size(), 1);
-    QCOMPARE(message->to(false)->displayNames().size(), 1);
-    QCOMPARE(message->cc(false)->displayNames().size(), 1);
-    QCOMPARE(message->from(false)->displayNames().size(), 1);
-    QCOMPARE(message->replyTo(false)->displayNames().size(), 1);
-    QCOMPARE(message->from(false)->displayNames().constFirst(), fromDisplayName);
-    QCOMPARE(message->to(false)->displayNames().constFirst(), toDisplayName);
-    QCOMPARE(message->cc(false)->displayNames().constFirst(), ccDisplayName);
-    QCOMPARE(message->bcc(false)->displayNames().constFirst(), bccDisplayName);
-    QCOMPARE(message->replyTo(false)->displayNames().constFirst(), replyToDisplayName);
+    QCOMPARE(message->bcc(KMime::CreatePolicy::DontCreate)->displayNames().size(), 1);
+    QCOMPARE(message->to(KMime::CreatePolicy::DontCreate)->displayNames().size(), 1);
+    QCOMPARE(message->cc(KMime::CreatePolicy::DontCreate)->displayNames().size(), 1);
+    QCOMPARE(message->from(KMime::CreatePolicy::DontCreate)->displayNames().size(), 1);
+    QCOMPARE(message->replyTo(KMime::CreatePolicy::DontCreate)->displayNames().size(), 1);
+    QCOMPARE(message->from(KMime::CreatePolicy::DontCreate)->displayNames().constFirst(), fromDisplayName);
+    QCOMPARE(message->to(KMime::CreatePolicy::DontCreate)->displayNames().constFirst(), toDisplayName);
+    QCOMPARE(message->cc(KMime::CreatePolicy::DontCreate)->displayNames().constFirst(), ccDisplayName);
+    QCOMPARE(message->bcc(KMime::CreatePolicy::DontCreate)->displayNames().constFirst(), bccDisplayName);
+    QCOMPARE(message->replyTo(KMime::CreatePolicy::DontCreate)->displayNames().constFirst(), replyToDisplayName);
     message->clear();
 }
 

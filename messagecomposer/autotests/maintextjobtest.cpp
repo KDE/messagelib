@@ -46,7 +46,7 @@ void MainTextJobTest::testPlainText()
     Content *result = mjob->content();
     result->assemble();
     qDebug() << result->encodedContent();
-    QVERIFY(result->contentType(false));
+    QVERIFY(result->contentType(KMime::CreatePolicy::DontCreate));
     QCOMPARE(result->contentType()->mimeType(), QByteArray("text/plain"));
     QCOMPARE(result->contentType()->charset(), QByteArray("utf-8"));
     QCOMPARE(QString::fromLatin1(result->body()), data);
@@ -93,7 +93,7 @@ void MainTextJobTest::testCustomCharset()
     Content *result = mjob->content();
     result->assemble();
     qDebug() << result->encodedContent();
-    QVERIFY(result->contentType(false));
+    QVERIFY(result->contentType(KMime::CreatePolicy::DontCreate));
     QCOMPARE(result->contentType()->mimeType(), QByteArray("text/plain"));
     QCOMPARE(result->contentType()->charset(), "utf-8");
     QByteArray outData = result->body();
@@ -146,7 +146,7 @@ void MainTextJobTest::testFallbackCharset()
     Content *result = mjob->content();
     result->assemble();
     qDebug() << result->encodedContent();
-    QVERIFY(result->contentType(false));
+    QVERIFY(result->contentType(KMime::CreatePolicy::DontCreate));
     QCOMPARE(result->contentType()->mimeType(), QByteArray("text/plain"));
     QCOMPARE(result->contentType()->charset(), QByteArray("utf-8"));
     QCOMPARE(QString::fromLatin1(result->body()), data);
@@ -175,20 +175,20 @@ void MainTextJobTest::testHtml()
 
     // multipart/alternative
     {
-        QVERIFY(result->contentType(false));
+        QVERIFY(result->contentType(KMime::CreatePolicy::DontCreate));
         QCOMPARE(result->contentType()->mimeType(), QByteArray("multipart/alternative"));
         QCOMPARE(result->contents().count(), 2);
         // text/plain
         {
             Content *plain = result->contents().at(0);
-            QVERIFY(plain->contentType(false));
+            QVERIFY(plain->contentType(KMime::CreatePolicy::DontCreate));
             QCOMPARE(plain->contentType()->mimeType(), QByteArray("text/plain"));
             QCOMPARE(QString::fromLatin1(plain->body()), editor.composerControler()->toCleanPlainText());
         }
         // text/html
         {
             Content *html = result->contents().at(1);
-            QVERIFY(html->contentType(false));
+            QVERIFY(html->contentType(KMime::CreatePolicy::DontCreate));
             QCOMPARE(html->contentType()->mimeType(), QByteArray("text/html"));
             // The editor adds extra Html stuff, so we can't compare to originalHtml.
             QCOMPARE(QLatin1StringView(html->body()), editor.toCleanHtml());
@@ -242,13 +242,13 @@ void MainTextJobTest::testHtmlWithImages()
 
     // multipart/related
     {
-        QVERIFY(result->contentType(false));
+        QVERIFY(result->contentType(KMime::CreatePolicy::DontCreate));
         QCOMPARE(result->contentType()->mimeType(), QByteArray("multipart/related"));
         QCOMPARE(result->contents().count(), 3);
         // multipart/alternative
         {
             Content *alternative = result->contents().at(0);
-            QVERIFY(alternative->contentType(false));
+            QVERIFY(alternative->contentType(KMime::CreatePolicy::DontCreate));
             QCOMPARE(alternative->contentType()->mimeType(), QByteArray("multipart/alternative"));
             QCOMPARE(alternative->contents().count(), 2);
             // text/plain

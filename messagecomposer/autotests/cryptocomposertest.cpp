@@ -389,14 +389,14 @@ void CryptoComposerTest::testProtectedHeaders()
         QCOMPARE(extraContents.size(), 1);
         part = extraContents.first();
         if (sign) {
-            QVERIFY(!part->contentType(false)->hasParameter("protected-headers"));
+            QVERIFY(!part->contentType(KMime::CreatePolicy::DontCreate)->hasParameter("protected-headers"));
             QVERIFY(!part->headerByType("to"));
             QVERIFY(!part->headerByType("from:"));
             part = Util::findTypeInMessage(part, "text", "plain");
         }
     }
     QVERIFY(part);
-    QCOMPARE(part->contentType(false)->parameter("protected-headers"), u"v1"_s);
+    QCOMPARE(part->contentType(KMime::CreatePolicy::DontCreate)->parameter("protected-headers"), u"v1"_s);
     QCOMPARE(part->headerByType("to")->asUnicodeString(), u"you@you.you"_s);
     QCOMPARE(part->headerByType("from")->asUnicodeString(), u"me@me.me"_s);
 }

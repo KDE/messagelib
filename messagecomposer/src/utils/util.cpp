@@ -304,7 +304,7 @@ KMime::Content *MessageComposer::Util::findTypeInMessage(KMime::Content *data, c
         if (mimeType.isEmpty() || subType.isEmpty()) {
             return data;
         }
-        if ((mimeType == data->contentType()->mediaType()) && (subType == data->contentType(false)->subType())) {
+        if ((mimeType == data->contentType()->mediaType()) && (subType == data->contentType(KMime::CreatePolicy::DontCreate)->subType())) {
             return data;
         }
     }

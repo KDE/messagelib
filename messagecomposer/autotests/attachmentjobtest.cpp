@@ -51,12 +51,12 @@ void AttachmentJobTest::testAttachment()
     result->assemble();
     qDebug() << result->encodedContent();
 
-    QCOMPARE(result->contentType(false)->name(), name);
-    QCOMPARE(result->contentDisposition(false)->filename(), fileName);
-    QCOMPARE(result->contentDescription(false)->asUnicodeString(), description);
-    QCOMPARE(result->contentType(false)->mimeType(), mimeType);
+    QCOMPARE(result->contentType(DontCreate)->name(), name);
+    QCOMPARE(result->contentDisposition(DontCreate)->filename(), fileName);
+    QCOMPARE(result->contentDescription(DontCreate)->asUnicodeString(), description);
+    QCOMPARE(result->contentType(DontCreate)->mimeType(), mimeType);
     QCOMPARE(result->body(), data);
-    QCOMPARE(result->contentDisposition(false)->disposition(), Headers::CDattachment);
+    QCOMPARE(result->contentDisposition(DontCreate)->disposition(), Headers::CDattachment);
     delete ajob;
     ajob = nullptr;
     // delete result;
@@ -99,7 +99,7 @@ void AttachmentJobTest::testTextCharsetAutodetect()
     result->assemble();
     qDebug() << result->encodedContent();
 
-    QCOMPARE(result->contentType(false)->charset(), charset);
+    QCOMPARE(result->contentType(KMime::CreatePolicy::DontCreate)->charset(), charset);
 }
 
 #endif

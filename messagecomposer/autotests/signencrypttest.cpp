@@ -113,7 +113,7 @@ void SignEncryptTest::testContentSubjobChained()
     KMime::Message skeletonMessage;
 
     auto content = new KMime::Content;
-    content->contentType(true)->setMimeType("text/plain");
+    content->contentType(KMime::CreatePolicy::Create)->setMimeType("text/plain");
     content->setBody(data);
 
     auto tJob = new TransparentJob;
@@ -177,7 +177,7 @@ void SignEncryptTest::testHeaders()
     }
     f.close();
 
-    QVERIFY(result->contentType(false));
+    QVERIFY(result->contentType(KMime::CreatePolicy::DontCreate));
     QCOMPARE(result->contentType()->mimeType(), "multipart/encrypted");
     QCOMPARE(result->contentType()->charset(), "UTF-8");
     QCOMPARE(result->contentType()->parameter("protocol"), QString::fromLocal8Bit("application/pgp-encrypted"));
@@ -214,11 +214,11 @@ void SignEncryptTest::testProtectedHeaders()
     const QString subject(u"asdfghjklö"_s);
 
     auto content = new KMime::Content;
-    content->contentType(true)->setMimeType("text/plain");
+    content->contentType(KMime::CreatePolicy::Create)->setMimeType("text/plain");
     content->setBody(data);
 
     KMime::Message skeletonMessage;
-    skeletonMessage.contentType(true)->setMimeType("foo/bla");
+    skeletonMessage.contentType(KMime::CreatePolicy::Create)->setMimeType("foo/bla");
     skeletonMessage.to(true)->from7BitString("to@test.de, to2@test.de");
     skeletonMessage.cc(true)->from7BitString("cc@test.de, cc2@test.de");
     skeletonMessage.bcc(true)->from7BitString("bcc@test.de, bcc2@test.de");
@@ -261,7 +261,7 @@ void SignEncryptTest::testProtectedHeaders()
         tempNode.parse();
     }
     if (protectedHeadersObvoscate) {
-        tempNode.contentType(false)->setBoundary("123456789");
+        tempNode.contentType(KMime::CreatePolicy::DontCreate)->setBoundary("123456789");
         tempNode.assemble();
     }
 

@@ -274,7 +274,7 @@ void ViewerPrivate::openAttachment(KMime::Content *node, const QUrl &url)
         return;
     }
 
-    if (auto ct = node->contentType(false)) {
+    if (auto ct = node->contentType(KMime::CreatePolicy::DontCreate)) {
         if (ct->mimeType() == "text/x-moz-deleted") {
             return;
         }
@@ -510,7 +510,7 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
     prepareHandleAttachment(node);
     bool deletedAttachment = false;
     QString contentTypeStr;
-    if (auto contentType = node->contentType(false)) {
+    if (auto contentType = node->contentType(KMime::CreatePolicy::DontCreate)) {
         contentTypeStr = QLatin1StringView(contentType->mimeType());
     }
     if (contentTypeStr == QLatin1StringView("message/global")) { // Not registered in mimetype => it's a message/rfc822

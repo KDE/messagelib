@@ -106,11 +106,12 @@ MessagePart::Ptr EncryptedBodyPartFormatter::process(Interface::BodyPart &part) 
             tempNode->contentType()->setCharset("utf-8");
 
             NodeHelper::magicSetType(tempNode);
-            if (node->topLevel()->textContent() != node && node->contentDisposition(false) && !tempNode->contentDisposition(false)) {
+            if (node->topLevel()->textContent() != node && node->contentDisposition(KMime::CreatePolicy::DontCreate)
+                && !tempNode->contentDisposition(KMime::CreatePolicy::DontCreate)) {
                 tempNode->contentDisposition()->setDisposition(node->contentDisposition()->disposition());
-                const auto fname = node->contentDisposition(false)->filename();
+                const auto fname = node->contentDisposition(KMime::CreatePolicy::DontCreate)->filename();
                 if (!fname.isEmpty()) {
-                    tempNode->contentDisposition(false)->setFilename(fname);
+                    tempNode->contentDisposition(KMime::CreatePolicy::DontCreate)->setFilename(fname);
                 }
             }
 

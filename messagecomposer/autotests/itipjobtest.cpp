@@ -60,19 +60,19 @@ void ItipJobTest::testInvitationWithAttachment()
     content->assemble();
     QVERIFY(content);
 
-    QCOMPARE(content->contentType(false)->mimeType(), "multipart/mixed");
+    QCOMPARE(content->contentType(KMime::CreatePolicy::DontCreate)->mimeType(), "multipart/mixed");
     const auto subparts = content->contents();
     QCOMPARE(subparts.size(), 2);
     const auto msgPart = subparts[0];
-    QCOMPARE(msgPart->contentType(false)->mimeType(), "text/plain");
+    QCOMPARE(msgPart->contentType(KMime::CreatePolicy::DontCreate)->mimeType(), "text/plain");
     QCOMPARE(msgPart->contentDisposition(false)->disposition(), KMime::Headers::CDinline);
     QCOMPARE(msgPart->decodedText(), testItipMessage);
 
     const auto itipPart = subparts[1];
-    QCOMPARE(itipPart->contentType(false)->mimeType(), "text/calendar");
-    QCOMPARE(itipPart->contentType(false)->name(), u"cal.ics"_s);
-    QCOMPARE(itipPart->contentType(false)->parameter("method"), u"request"_s);
-    QCOMPARE(itipPart->contentType(false)->charset(), "utf-8");
+    QCOMPARE(itipPart->contentType(KMime::CreatePolicy::DontCreate)->mimeType(), "text/calendar");
+    QCOMPARE(itipPart->contentType(KMime::CreatePolicy::DontCreate)->name(), u"cal.ics"_s);
+    QCOMPARE(itipPart->contentType(KMime::CreatePolicy::DontCreate)->parameter("method"), u"request"_s);
+    QCOMPARE(itipPart->contentType(KMime::CreatePolicy::DontCreate)->charset(), "utf-8");
     QCOMPARE(itipPart->contentDisposition(false)->disposition(), KMime::Headers::CDattachment);
     QCOMPARE(itipPart->decodedText(), testItip);
 }
@@ -92,7 +92,7 @@ void ItipJobTest::testInvitationWithoutAttachment()
     content->assemble();
     QVERIFY(content);
 
-    QCOMPARE(content->contentType(false)->mimeType(), "text/plain");
+    QCOMPARE(content->contentType(KMime::CreatePolicy::DontCreate)->mimeType(), "text/plain");
     QCOMPARE(content->contentDisposition(false)->disposition(), KMime::Headers::CDinline);
     QCOMPARE(content->decodedText(), testItipMessage);
 }
@@ -113,10 +113,10 @@ void ItipJobTest::testOutlookInvitationWithAttachment()
     content->assemble();
     QVERIFY(content);
 
-    QCOMPARE(content->contentType(false)->mimeType(), "text/calendar");
-    QCOMPARE(content->contentType(false)->name(), u"cal.ics"_s);
-    QCOMPARE(content->contentType(false)->parameter("method"), u"request"_s);
-    QCOMPARE(content->contentType(false)->charset(), "utf-8");
+    QCOMPARE(content->contentType(KMime::CreatePolicy::DontCreate)->mimeType(), "text/calendar");
+    QCOMPARE(content->contentType(KMime::CreatePolicy::DontCreate)->name(), u"cal.ics"_s);
+    QCOMPARE(content->contentType(KMime::CreatePolicy::DontCreate)->parameter("method"), u"request"_s);
+    QCOMPARE(content->contentType(KMime::CreatePolicy::DontCreate)->charset(), "utf-8");
     QCOMPARE(content->contentDisposition(false)->disposition(), KMime::Headers::CDinline);
     QCOMPARE(content->decodedText(), testItip);
 }
@@ -136,10 +136,10 @@ void ItipJobTest::testOutlookInvitationWithoutAttachment()
     content->assemble();
     QVERIFY(content);
 
-    QCOMPARE(content->contentType(false)->mimeType(), "text/calendar");
-    QCOMPARE(content->contentType(false)->name(), u"cal.ics"_s);
-    QCOMPARE(content->contentType(false)->parameter("method"), u"request"_s);
-    QCOMPARE(content->contentType(false)->charset(), "utf-8");
+    QCOMPARE(content->contentType(KMime::CreatePolicy::DontCreate)->mimeType(), "text/calendar");
+    QCOMPARE(content->contentType(KMime::CreatePolicy::DontCreate)->name(), u"cal.ics"_s);
+    QCOMPARE(content->contentType(KMime::CreatePolicy::DontCreate)->parameter("method"), u"request"_s);
+    QCOMPARE(content->contentType(KMime::CreatePolicy::DontCreate)->charset(), "utf-8");
     QVERIFY(content->decodedText().isEmpty());
 }
 

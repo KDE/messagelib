@@ -504,8 +504,9 @@ bool DefaultRendererPrivate::isHiddenHint(const MimeTreeParser::MessagePart::Ptr
     bool isHtmlPreferred = (preferredMode == MimeTreeParser::Util::Html) || (preferredMode == MimeTreeParser::Util::MultipartHtml);
 
     QByteArray mediaType("text");
-    if (content->contentType(false) && !content->contentType(false)->mediaType().isEmpty() && !content->contentType(false)->subType().isEmpty()) {
-        mediaType = content->contentType(false)->mediaType();
+    if (content->contentType(KMime::CreatePolicy::DontCreate) && !content->contentType(KMime::CreatePolicy::DontCreate)->mediaType().isEmpty()
+        && !content->contentType(KMime::CreatePolicy::DontCreate)->subType().isEmpty()) {
+        mediaType = content->contentType(KMime::CreatePolicy::DontCreate)->mediaType();
     }
     const bool isTextPart = (mediaType == QByteArrayLiteral("text"));
 
@@ -525,7 +526,7 @@ bool DefaultRendererPrivate::isHiddenHint(const MimeTreeParser::MessagePart::Ptr
     if (isTextPart) {
         hidden = defaultHidden;
     } else {
-        if (mp->isImage() && isHtmlPreferred && content->parent() && content->parent()->contentType(false)->subType() == "related") {
+        if (mp->isImage() && isHtmlPreferred && content->parent() && content->parent()->contentType(KMime::CreatePolicy::DontCreate)->subType() == "related") {
             hidden = true;
         } else {
             hidden = defaultHidden && content->parent();
@@ -554,8 +555,9 @@ MimeTreeParser::IconType DefaultRendererPrivate::displayHint(const MimeTreeParse
     bool isHtmlPreferred = (preferredMode == MimeTreeParser::Util::Html) || (preferredMode == MimeTreeParser::Util::MultipartHtml);
 
     QByteArray mediaType("text");
-    if (content->contentType(false) && !content->contentType(false)->mediaType().isEmpty() && !content->contentType(false)->subType().isEmpty()) {
-        mediaType = content->contentType(false)->mediaType();
+    if (content->contentType(KMime::CreatePolicy::DontCreate) && !content->contentType(KMime::CreatePolicy::DontCreate)->mediaType().isEmpty()
+        && !content->contentType(KMime::CreatePolicy::DontCreate)->subType().isEmpty()) {
+        mediaType = content->contentType(KMime::CreatePolicy::DontCreate)->mediaType();
     }
     const bool isTextPart = (mediaType == QByteArrayLiteral("text"));
 
@@ -580,7 +582,7 @@ MimeTreeParser::IconType DefaultRendererPrivate::displayHint(const MimeTreeParse
         }
         return MimeTreeParser::NoIcon;
     } else {
-        if (mp->isImage() && isHtmlPreferred && content->parent() && content->parent()->contentType(false)->subType() == "related") {
+        if (mp->isImage() && isHtmlPreferred && content->parent() && content->parent()->contentType(KMime::CreatePolicy::DontCreate)->subType() == "related") {
             return MimeTreeParser::IconInline;
         }
 

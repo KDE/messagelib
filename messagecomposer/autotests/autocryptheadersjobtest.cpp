@@ -59,7 +59,7 @@ void AutocryptHeadersJobTest::testAutocryptHeader()
     skeletonMessage.messageID(true)->from7BitString("<abe640bb-018d-4f9d-b4d8-1636d6164e22@autocrypt.example>");
 
     KMime::Content content;
-    content.contentType(true)->from7BitString("text/plain");
+    content.contentType(KMime::CreatePolicy::Create)->from7BitString("text/plain");
     content.setBody("This is an example e-mail with Autocrypt header and Ed25519+Cv25519 key (key\nfingerprint: ) as defined in Level 1 revision 1.1.\n");
     content.assemble();
     const auto encodedContent = content.encodedContent();
@@ -105,7 +105,7 @@ void AutocryptHeadersJobTest::testContentChained()
     skeletonMessage.messageID(true)->from7BitString("<abe640bb-018d-4f9d-b4d8-1636d6164e22@autocrypt.example>");
 
     KMime::Content content;
-    content.contentType(true)->from7BitString("text/plain");
+    content.contentType(KMime::CreatePolicy::Create)->from7BitString("text/plain");
     content.setBody("This is an example e-mail with Autocrypt header and Ed25519+Cv25519 key (key\nfingerprint: ) as defined in Level 1 revision 1.1.\n");
     content.assemble();
     const auto encodedContent = content.encodedContent();
@@ -153,7 +153,7 @@ void AutocryptHeadersJobTest::testAutocryptGossipHeader()
         "\n"
         "I hope you are both doing well!  You can now both \"reply all\" here,\n"
         "and the thread will remain encrypted.\n");
-    content.contentType(true)->from7BitString("text/plain");
+    content.contentType(KMime::CreatePolicy::Create)->from7BitString("text/plain");
 
     auto job = QGpgME::openpgp()->keyListJob(false);
     std::vector<GpgME::Key> ownKeys;
@@ -195,7 +195,7 @@ void AutocryptHeadersJobTest::testSetGnupgHome()
         "\n"
         "I hope you are both doing well!  You can now both \"reply all\" here,\n"
         "and the thread will remain encrypted.\n");
-    content.contentType(true)->from7BitString("text/plain");
+    content.contentType(KMime::CreatePolicy::Create)->from7BitString("text/plain");
 
     auto exportJob = QGpgME::openpgp()->keyListJob(false);
     std::vector<GpgME::Key> ownKeys;
@@ -213,7 +213,7 @@ void AutocryptHeadersJobTest::testSetGnupgHome()
             "\n"
             "I hope you are both doing well!  You can now both \"reply all\" here,\n"
             "and the thread will remain encrypted.\n");
-        content.contentType(true)->from7BitString("text/plain");
+        content.contentType(KMime::CreatePolicy::Create)->from7BitString("text/plain");
 
         auto aJob = new AutocryptHeadersJob(&composerJob);
         QVERIFY(aJob);
@@ -269,7 +269,7 @@ void AutocryptHeadersJobTest::testStripSenderKey()
         "\n"
         "I hope you are both doing well!  You can now both \"reply all\" here,\n"
         "and the thread will remain encrypted.\n");
-    content.contentType(true)->from7BitString("text/plain");
+    content.contentType(KMime::CreatePolicy::Create)->from7BitString("text/plain");
 
     auto job = QGpgME::openpgp()->keyListJob(false);
     std::vector<GpgME::Key> ownKeys;

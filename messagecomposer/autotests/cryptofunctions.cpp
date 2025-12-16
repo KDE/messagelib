@@ -81,7 +81,7 @@ void ComposerTestUtil::verifySignature(KMime::Content *content,
             Q_ASSERT(signedPart);
             QCOMPARE(signedPart->contentTransferEncoding()->encoding(), KMime::Headers::CEbase64);
             QCOMPARE(signedPart->contentType()->mimeType(), QByteArray("application/pkcs7-signature"));
-            QCOMPARE(signedPart->contentType(false)->name(), u"smime.p7s"_s);
+            QCOMPARE(signedPart->contentType(KMime::CreatePolicy::DontCreate)->name(), u"smime.p7s"_s);
             QCOMPARE(signedPart->contentDisposition()->disposition(), KMime::Headers::CDattachment);
             QCOMPARE(signedPart->contentDisposition()->filename(), u"smime.p7s"_s);
             Q_UNUSED(signedPart)
@@ -90,17 +90,17 @@ void ComposerTestUtil::verifySignature(KMime::Content *content,
             QCOMPARE(resultMessage->contents().at(0)->contentTransferEncoding()->encoding(), encoding);
 
             QCOMPARE(resultMessage->contentType()->mimeType(), QByteArray("multipart/signed"));
-            QCOMPARE(resultMessage->contentType(false)->parameter("protocol"), u"application/pkcs7-signature"_s);
-            QCOMPARE(resultMessage->contentType(false)->parameter("micalg"), u"sha1"_s);
+            QCOMPARE(resultMessage->contentType(KMime::CreatePolicy::DontCreate)->parameter("protocol"), u"application/pkcs7-signature"_s);
+            QCOMPARE(resultMessage->contentType(KMime::CreatePolicy::DontCreate)->parameter("micalg"), u"sha1"_s);
         } else if (f & Kleo::SMIMEOpaqueFormat) {
             KMime::Content *signedPart = Util::findTypeInMessage(resultMessage, "application", "pkcs7-mime");
             Q_ASSERT(signedPart);
             QCOMPARE(signedPart->contentTransferEncoding()->encoding(), KMime::Headers::CEbase64);
             QCOMPARE(signedPart->contentType()->mimeType(), QByteArray("application/pkcs7-mime"));
-            QCOMPARE(signedPart->contentType(false)->name(), u"smime.p7m"_s);
-            QCOMPARE(signedPart->contentType(false)->parameter("smime-type"), u"signed-data"_s);
+            QCOMPARE(signedPart->contentType(KMime::CreatePolicy::DontCreate)->name(), u"smime.p7m"_s);
+            QCOMPARE(signedPart->contentType(KMime::CreatePolicy::DontCreate)->parameter("smime-type"), u"signed-data"_s);
             QCOMPARE(signedPart->contentDisposition()->disposition(), KMime::Headers::CDattachment);
-            QCOMPARE(signedPart->contentDisposition(false)->filename(), u"smime.p7m"_s);
+            QCOMPARE(signedPart->contentDisposition(KMime::CreatePolicy::DontCreate)->filename(), u"smime.p7m"_s);
             Q_UNUSED(signedPart)
         }
         // process the result..
@@ -153,10 +153,10 @@ void ComposerTestUtil::verifyEncryption(KMime::Content *content, const QByteArra
         Q_ASSERT(encPart);
 
         QCOMPARE(encPart->contentType()->mimeType(), QByteArray("application/pkcs7-mime"));
-        QCOMPARE(encPart->contentType(false)->name(), u"smime.p7m"_s);
-        QCOMPARE(encPart->contentType(false)->parameter("smime-type"), u"enveloped-data"_s);
+        QCOMPARE(encPart->contentType(KMime::CreatePolicy::DontCreate)->name(), u"smime.p7m"_s);
+        QCOMPARE(encPart->contentType(KMime::CreatePolicy::DontCreate)->parameter("smime-type"), u"enveloped-data"_s);
         QCOMPARE(encPart->contentDisposition()->disposition(), KMime::Headers::CDattachment);
-        QCOMPARE(encPart->contentDisposition(false)->filename(), u"smime.p7m"_s);
+        QCOMPARE(encPart->contentDisposition(KMime::CreatePolicy::DontCreate)->filename(), u"smime.p7m"_s);
         Q_UNUSED(encPart)
 
         otp.parseObjectTree(resultMessage.data());
@@ -209,10 +209,10 @@ void ComposerTestUtil::verifySignatureAndEncryption(KMime::Content *content,
         KMime::Content *encPart = Util::findTypeInMessage(resultMessage.data(), "application", "pkcs7-mime");
         Q_ASSERT(encPart);
         QCOMPARE(encPart->contentType()->mimeType(), QByteArray("application/pkcs7-mime"));
-        QCOMPARE(encPart->contentType(false)->name(), u"smime.p7m"_s);
-        QCOMPARE(encPart->contentType(false)->parameter("smime-type"), u"enveloped-data"_s);
+        QCOMPARE(encPart->contentType(KMime::CreatePolicy::DontCreate)->name(), u"smime.p7m"_s);
+        QCOMPARE(encPart->contentType(KMime::CreatePolicy::DontCreate)->parameter("smime-type"), u"enveloped-data"_s);
         QCOMPARE(encPart->contentDisposition()->disposition(), KMime::Headers::CDattachment);
-        QCOMPARE(encPart->contentDisposition(false)->filename(), u"smime.p7m"_s);
+        QCOMPARE(encPart->contentDisposition(KMime::CreatePolicy::DontCreate)->filename(), u"smime.p7m"_s);
         Q_UNUSED(encPart)
 
         otp.parseObjectTree(resultMessage.data());

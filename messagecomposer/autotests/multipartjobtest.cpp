@@ -49,22 +49,22 @@ void MultipartJobTest::testMultipartMixed()
     result->assemble();
     qDebug() << result->encodedContent();
 
-    QVERIFY(result->contentType(false));
-    QCOMPARE(result->contentType(false)->mimeType(), QByteArray("multipart/mixed"));
+    QVERIFY(result->contentType(KMime::CreatePolicy::DontCreate));
+    QCOMPARE(result->contentType(KMime::CreatePolicy::DontCreate)->mimeType(), QByteArray("multipart/mixed"));
     QCOMPARE(result->contents().count(), 2);
 
     {
         Content *c = result->contents().at(0);
         QCOMPARE(c->body(), data1);
-        QVERIFY(c->contentType(false));
-        QCOMPARE(c->contentType(false)->mimeType(), type1);
+        QVERIFY(c->contentType(KMime::CreatePolicy::DontCreate));
+        QCOMPARE(c->contentType(KMime::CreatePolicy::DontCreate)->mimeType(), type1);
     }
 
     {
         Content *c = result->contents().at(1);
         QCOMPARE(c->body(), data2);
-        QVERIFY(c->contentType(false));
-        QCOMPARE(c->contentType(false)->mimeType(), type2);
+        QVERIFY(c->contentType(KMime::CreatePolicy::DontCreate));
+        QCOMPARE(c->contentType(KMime::CreatePolicy::DontCreate)->mimeType(), type2);
     }
     delete result;
 }

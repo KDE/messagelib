@@ -33,7 +33,7 @@ void SinglepartJobTest::testContent()
     qDebug() << result->encodedContent();
     QCOMPARE(result->body(), data);
     QCOMPARE(result->contentDisposition(false), nullptr); // Not created unless demanded.
-    QCOMPARE(result->contentType(false), nullptr); // Not created unless demanded.
+    QCOMPARE(result->contentType(KMime::CreatePolicy::DontCreate), nullptr); // Not created unless demanded.
     QVERIFY(result->contentTransferEncoding(false)); // KMime gives it a default one (7bit).
     delete cjob;
 }
@@ -91,7 +91,7 @@ void SinglepartJobTest::testContentType()
     result->assemble();
     qDebug() << result->encodedContent();
     QCOMPARE(result->body(), data);
-    QVERIFY(result->contentType(false));
+    QVERIFY(result->contentType(KMime::CreatePolicy::DontCreate));
     QCOMPARE(result->contentType()->mimeType(), mimeType);
     QCOMPARE(result->contentType()->charset(), charset);
     delete cjob;

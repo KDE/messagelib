@@ -104,7 +104,7 @@ void SignJobTest::testHeaders()
     KMime::Content *result = sJob->content();
     result->assemble();
 
-    QVERIFY(result->contentType(false));
+    QVERIFY(result->contentType(KMime::CreatePolicy::DontCreate));
     QCOMPARE(result->contentType()->mimeType(), "multipart/signed");
     QCOMPARE(result->contentType()->charset(), "UTF-8");
     QVERIFY(result->contentType()->parameter("micalg").startsWith(QLatin1StringView("pgp-sha"))); // sha1 or sha256, depending on GnuPG version
@@ -234,11 +234,11 @@ void SignJobTest::testProtectedHeaders()
     const QString subject(u"asdfghjklö"_s);
 
     auto content = new KMime::Content;
-    content->contentType(true)->setMimeType("text/plain");
+    content->contentType(KMime::CreatePolicy::Create)->setMimeType("text/plain");
     content->setBody(data);
 
     KMime::Message skeletonMessage;
-    skeletonMessage.contentType(true)->setMimeType("foo/bla");
+    skeletonMessage.contentType(KMime::CreatePolicy::Create)->setMimeType("foo/bla");
     skeletonMessage.to(true)->from7BitString("to@test.de, to2@test.de");
     skeletonMessage.cc(true)->from7BitString("cc@test.de, cc2@test.de");
     skeletonMessage.bcc(true)->from7BitString("bcc@test.de, bcc2@test.de");
@@ -274,11 +274,11 @@ void SignJobTest::testProtectedHeadersOverwrite()
     const QString subject(u"asdfghjklö"_s);
 
     auto content = new KMime::Content;
-    content->contentType(true)->setMimeType("text/plain");
+    content->contentType(KMime::CreatePolicy::Create)->setMimeType("text/plain");
     content->setBody(data);
 
     KMime::Message skeletonMessage;
-    skeletonMessage.contentType(true)->setMimeType("foo/bla");
+    skeletonMessage.contentType(KMime::CreatePolicy::Create)->setMimeType("foo/bla");
     skeletonMessage.to(true)->from7BitString("to@test.de, to2@test.de");
     skeletonMessage.cc(true)->from7BitString("cc@test.de, cc2@test.de");
     skeletonMessage.bcc(true)->from7BitString("bcc@test.de, bcc2@test.de");
@@ -318,7 +318,7 @@ void SignJobTest::testProtectedHeadersSkipLong()
     const QString subject(u"asdfghjklö"_s);
 
     auto content = new KMime::Content;
-    content->contentType(true)->setMimeType("text/plain");
+    content->contentType(KMime::CreatePolicy::Create)->setMimeType("text/plain");
     content->setBody(data);
 
     KMime::Message skeletonMessage;
@@ -335,7 +335,7 @@ void SignJobTest::testProtectedHeadersSkipLong()
         " BV822d6UTiAjiQnGVfyyIZfpYmZg+gpiTvHsg4EzHOIVsMC9lsvP0He2B+qHmHOO6fsAAehpqSc+\n"
         " yBNIF1wUgOXzCJDVBIB0Icfd2vKAN2jAubRfOvt3INsO+3XvdgGBgAH/OepfoIJ/RyuNKjhmbCAA\n"
         " AAAASUVORK5CYII=");
-    skeletonMessage.contentType(true)->setMimeType("foo/bla");
+    skeletonMessage.contentType(KMime::CreatePolicy::Create)->setMimeType("foo/bla");
     skeletonMessage.to(true)->from7BitString("to@test.de, to2@test.de");
     skeletonMessage.cc(true)->from7BitString("cc@test.de, cc2@test.de");
     skeletonMessage.bcc(true)->from7BitString("bcc@test.de, bcc2@test.de");

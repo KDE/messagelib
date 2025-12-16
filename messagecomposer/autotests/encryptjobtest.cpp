@@ -118,7 +118,7 @@ void EncryptJobTest::testContentSubjobChained()
     KMime::Message skeletonMessage;
 
     auto content = new KMime::Content;
-    content->contentType(true)->setMimeType("text/plain");
+    content->contentType(KMime::CreatePolicy::Create)->setMimeType("text/plain");
     content->setBody(data);
 
     auto tJob = new TransparentJob;
@@ -164,10 +164,10 @@ void EncryptJobTest::testHeaders()
     KMime::Content *result = eJob->content();
     result->assemble();
 
-    QVERIFY(result->contentType(false));
-    QCOMPARE(result->contentType(false)->mimeType(), mimeType);
-    QCOMPARE(result->contentType(false)->charset(), "UTF-8");
-    QCOMPARE(result->contentType(false)->parameter("protocol"), u"application/pgp-encrypted"_s);
+    QVERIFY(result->contentType(KMime::CreatePolicy::DontCreate));
+    QCOMPARE(result->contentType(KMime::CreatePolicy::DontCreate)->mimeType(), mimeType);
+    QCOMPARE(result->contentType(KMime::CreatePolicy::DontCreate)->charset(), "UTF-8");
+    QCOMPARE(result->contentType(KMime::CreatePolicy::DontCreate)->parameter("protocol"), u"application/pgp-encrypted"_s);
     QCOMPARE(result->contentTransferEncoding()->encoding(), KMime::Headers::CE7Bit);
 
     delete result;
@@ -201,11 +201,11 @@ void EncryptJobTest::testProtectedHeaders()
     const QString subject(u"asdfghjklö"_s);
 
     auto content = new KMime::Content;
-    content->contentType(true)->setMimeType("text/plain");
+    content->contentType(KMime::CreatePolicy::Create)->setMimeType("text/plain");
     content->setBody(data);
 
     KMime::Message skeletonMessage;
-    skeletonMessage.contentType(true)->setMimeType("foo/bla");
+    skeletonMessage.contentType(KMime::CreatePolicy::Create)->setMimeType("foo/bla");
     skeletonMessage.to(true)->from7BitString("to@test.de, to2@test.de");
     skeletonMessage.cc(true)->from7BitString("cc@test.de, cc2@test.de");
     skeletonMessage.bcc(true)->from7BitString("bcc@test.de, bcc2@test.de");
@@ -243,7 +243,7 @@ void EncryptJobTest::testProtectedHeaders()
         tempNode.parse();
     }
     if (protectedHeadersObvoscate) {
-        tempNode.contentType(false)->setBoundary("123456789");
+        tempNode.contentType(KMime::CreatePolicy::DontCreate)->setBoundary("123456789");
         tempNode.assemble();
     }
 
