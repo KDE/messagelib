@@ -26,7 +26,6 @@ using namespace Qt::Literals::StringLiterals;
 #include <MimeTreeParser/MessagePart>
 #include <MimeTreeParser/ObjectTreeParser>
 
-#include <Libkleo/Formatting>
 #include <QGpgME/Protocol>
 
 #include <Libkleo/Formatting>

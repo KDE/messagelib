@@ -11,8 +11,6 @@
 
 #include <Akonadi/ServerManager>
 
-#include <Akonadi/ServerManager>
-
 using namespace Qt::Literals::StringLiterals;
 using namespace MessageComposer;
 

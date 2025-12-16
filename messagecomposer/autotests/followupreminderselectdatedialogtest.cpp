@@ -10,7 +10,6 @@ using namespace Qt::Literals::StringLiterals;
 #include <Akonadi/CollectionComboBox>
 #include <KDateComboBox>
 #include <MessageComposer/FollowUpReminderSelectDateDialog>
-#include <QLineEdit>
 #include <QTest>
 
 #include <Akonadi/EntityTreeModel>
