@@ -52,6 +52,7 @@ QuickSearchLine::QuickSearchLine(QWidget *parent)
         MessageList::Core::SearchLineCommand c;
         c.parseSearchLineCommand(str);
         mSearchLineCommandWidget->setLabel(c.generateCommadLineStr());
+        slotSearchEditTextEdited(str);
     });
 
     connect(mSearchEdit, &SearchLineStatus::forceLostFocus, this, &QuickSearchLine::forceLostFocus);
@@ -63,7 +64,6 @@ QuickSearchLine::QuickSearchLine(QWidget *parent)
         Q_EMIT searchOptionChanged();
     });
 
-    connect(mSearchEdit, &QLineEdit::textChanged, this, &QuickSearchLine::slotSearchEditTextEdited);
     connect(mSearchEdit, &SearchLineStatus::clearButtonClicked, this, &QuickSearchLine::slotClearButtonClicked);
     connect(mSearchEdit, &SearchLineStatus::saveFilter, this, &QuickSearchLine::saveFilter);
     connect(mSearchEdit, &SearchLineStatus::activateFilter, this, &QuickSearchLine::activateFilter);
