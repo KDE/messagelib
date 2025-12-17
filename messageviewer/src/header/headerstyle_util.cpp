@@ -75,7 +75,7 @@ QString HeaderStyleUtil::dateString(const QDateTime &dateTime, HeaderStyleUtilDa
 QString HeaderStyleUtil::subjectString(KMime::Message *message, KTextToHTML::Options flags) const
 {
     QString subjectStr;
-    const KMime::Headers::Subject *const subject = message->subject(false);
+    const KMime::Headers::Subject *const subject = message->subject(KMime::CreatePolicy::DontCreate);
     if (subject) {
         subjectStr = subject->asUnicodeString();
         if (subjectStr.isEmpty()) {
@@ -92,7 +92,7 @@ QString HeaderStyleUtil::subjectString(KMime::Message *message, KTextToHTML::Opt
 QString HeaderStyleUtil::subjectDirectionString(KMime::Message *message) const
 {
     QString subjectDir;
-    if (message->subject(false)) {
+    if (message->subject(KMime::CreatePolicy::DontCreate)) {
         subjectDir = directionOf(MessageCore::StringUtil::cleanSubject(message));
     } else {
         subjectDir = directionOf(i18n("No Subject"));

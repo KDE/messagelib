@@ -84,7 +84,7 @@ static KMime::Types::Mailbox::List authorMailboxes(const KMime::Message::Ptr &ms
     if (auto mrt = msg->headerByType("Mail-Reply-To")) {
         return KMime::Types::Mailbox::listFrom7BitString(mrt->as7BitString());
     }
-    if (auto rt = msg->replyTo(false)) {
+    if (auto rt = msg->replyTo(KMime::CreatePolicy::DontCreate)) {
         // Did a mailing list munge Reply-To?
         auto mboxes = rt->mailboxes();
         for (const auto &list : mailingLists) {
@@ -94,7 +94,7 @@ static KMime::Types::Mailbox::List authorMailboxes(const KMime::Message::Ptr &ms
             return mboxes;
         }
     }
-    return msg->from(true)->mailboxes();
+    return msg->from(KMime::CreatePolicy::Create)->mailboxes();
 }
 
 void MessageFactoryNG::slotCreateReplyDone(const KMime::Message::Ptr &msg, bool replyAll)
@@ -128,7 +128,7 @@ void MessageFactoryNG::createReplyAsync()
 
     const uint originalIdentity = identityUoid(mOrigMsg);
     MessageHelper::initFromMessage(msg, mOrigMsg, mIdentityManager, originalIdentity);
-    if (auto replyTo = mOrigMsg->replyTo(false)) {
+    if (auto replyTo = mOrigMsg->replyTo(KMime::CreatePolicy::DontCreate)) {
         replyToList = replyTo->mailboxes();
     }
 
@@ -505,7 +505,7 @@ MessageFactoryNG::createRedirect(const QString &toStr, const QString &ccStr, con
     header->fromUnicodeString(strFrom);
     msg->setHeader(std::move(header));
 
-    if (msg->to(false)) {
+    if (msg->to(KMime::CreatePolicy::DontCreate)) {
         auto headerT = std::unique_ptr<KMime::Headers::To>(new KMime::Headers::To);
         headerT->fromUnicodeString(mOrigMsg->to()->asUnicodeString());
         msg->setHeader(std::move(headerT));
@@ -631,7 +631,7 @@ KMime::Message::Ptr MessageFactoryNG::createMDN(KMime::MDN::ActionMode a,
     auto firstMsgPartContentType = firstMsgPart->contentType(); // create it
     firstMsgPartContentType->setMimeType("text/plain");
     firstMsgPartContentType->setCharset("utf-8");
-    firstMsgPart->contentTransferEncoding(true)->setEncoding(KMime::Headers::CE7Bit);
+    firstMsgPart->contentTransferEncoding(KMime::CreatePolicy::Create)->setEncoding(KMime::Headers::CE7Bit);
     firstMsgPart->setBody(description.toUtf8());
     receipt->appendContent(std::move(firstMsgPart));
 
@@ -933,7 +933,7 @@ QByteArray MessageFactoryNG::getRefStr(const KMime::Message::Ptr &msg)
     int i;
     int j;
 
-    if (auto hdr = msg->references(false)) {
+    if (auto hdr = msg->references(KMime::CreatePolicy::DontCreate)) {
         refStr = hdr->as7BitString().trimmed();
     }
 

@@ -52,11 +52,11 @@ void AutocryptHeadersJobTest::testAutocryptHeader()
     ComposerJob composerJob;
 
     KMime::Message skeletonMessage;
-    skeletonMessage.from(true)->from7BitString("Alice <alice@autocrypt.example>");
-    skeletonMessage.to(true)->from7BitString("Bob <bob@autocrypt.example>");
-    skeletonMessage.subject(true)->from7BitString("an Autocrypt header example using Ed25519+Cv25519 key");
-    skeletonMessage.date(true)->from7BitString("Tue, 22 Jan 2019 12:56:25 +0100");
-    skeletonMessage.messageID(true)->from7BitString("<abe640bb-018d-4f9d-b4d8-1636d6164e22@autocrypt.example>");
+    skeletonMessage.from(KMime::CreatePolicy::Create)->from7BitString("Alice <alice@autocrypt.example>");
+    skeletonMessage.to(KMime::CreatePolicy::Create)->from7BitString("Bob <bob@autocrypt.example>");
+    skeletonMessage.subject(KMime::CreatePolicy::Create)->from7BitString("an Autocrypt header example using Ed25519+Cv25519 key");
+    skeletonMessage.date(KMime::CreatePolicy::Create)->from7BitString("Tue, 22 Jan 2019 12:56:25 +0100");
+    skeletonMessage.messageID(KMime::CreatePolicy::Create)->from7BitString("<abe640bb-018d-4f9d-b4d8-1636d6164e22@autocrypt.example>");
 
     KMime::Content content;
     content.contentType(KMime::CreatePolicy::Create)->from7BitString("text/plain");
@@ -98,11 +98,11 @@ void AutocryptHeadersJobTest::testContentChained()
     ComposerJob composerJob;
 
     KMime::Message skeletonMessage;
-    skeletonMessage.from(true)->from7BitString("Alice <alice@autocrypt.example>");
-    skeletonMessage.to(true)->from7BitString("Bob <bob@autocrypt.example>");
-    skeletonMessage.subject(true)->from7BitString("an Autocrypt header example using Ed25519+Cv25519 key");
-    skeletonMessage.date(true)->from7BitString("Tue, 22 Jan 2019 12:56:25 +0100");
-    skeletonMessage.messageID(true)->from7BitString("<abe640bb-018d-4f9d-b4d8-1636d6164e22@autocrypt.example>");
+    skeletonMessage.from(KMime::CreatePolicy::Create)->from7BitString("Alice <alice@autocrypt.example>");
+    skeletonMessage.to(KMime::CreatePolicy::Create)->from7BitString("Bob <bob@autocrypt.example>");
+    skeletonMessage.subject(KMime::CreatePolicy::Create)->from7BitString("an Autocrypt header example using Ed25519+Cv25519 key");
+    skeletonMessage.date(KMime::CreatePolicy::Create)->from7BitString("Tue, 22 Jan 2019 12:56:25 +0100");
+    skeletonMessage.messageID(KMime::CreatePolicy::Create)->from7BitString("<abe640bb-018d-4f9d-b4d8-1636d6164e22@autocrypt.example>");
 
     KMime::Content content;
     content.contentType(KMime::CreatePolicy::Create)->from7BitString("text/plain");
@@ -143,7 +143,7 @@ void AutocryptHeadersJobTest::testAutocryptGossipHeader()
     ComposerJob composerJob;
 
     KMime::Message skeletonMessage;
-    skeletonMessage.from(true)->from7BitString("Alice <alice@autocrypt.example>");
+    skeletonMessage.from(KMime::CreatePolicy::Create)->from7BitString("Alice <alice@autocrypt.example>");
 
     KMime::Content content;
     content.setBody(
@@ -185,7 +185,7 @@ void AutocryptHeadersJobTest::testSetGnupgHome()
     ComposerJob composerJob;
 
     KMime::Message skeletonMessage;
-    skeletonMessage.from(true)->from7BitString("Alice <alice@autocrypt.example>");
+    skeletonMessage.from(KMime::CreatePolicy::Create)->from7BitString("Alice <alice@autocrypt.example>");
 
     KMime::Content content;
     content.setBody(
@@ -259,7 +259,7 @@ void AutocryptHeadersJobTest::testStripSenderKey()
     ComposerJob composerJob;
 
     KMime::Message skeletonMessage;
-    skeletonMessage.from(true)->from7BitString("Alice <alice@autocrypt.example>");
+    skeletonMessage.from(KMime::CreatePolicy::Create)->from7BitString("Alice <alice@autocrypt.example>");
 
     KMime::Content content;
     content.setBody(

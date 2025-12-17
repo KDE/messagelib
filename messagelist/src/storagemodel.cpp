@@ -208,11 +208,11 @@ bool MessageList::StorageModel::initializeMessageItem(MessageList::Core::Message
     const Collection parentCol = parentCollectionForRow(row);
 
     QString sender;
-    if (auto from = mail->from(false)) {
+    if (auto from = mail->from(KMime::CreatePolicy::DontCreate)) {
         sender = from->asUnicodeString();
     }
     QString receiver;
-    if (auto to = mail->to(false)) {
+    if (auto to = mail->to(KMime::CreatePolicy::DontCreate)) {
         receiver = to->asUnicodeString();
     }
 
@@ -232,7 +232,7 @@ bool MessageList::StorageModel::initializeMessageItem(MessageList::Core::Message
     mi->setParentCollectionId(parentCol.id());
 
     QString subject;
-    if (auto subjectMail = mail->subject(false)) {
+    if (auto subjectMail = mail->subject(KMime::CreatePolicy::DontCreate)) {
         subject = subjectMail->asUnicodeString();
         if (subject.isEmpty()) {
             subject = u'(' + noSubject + u')';

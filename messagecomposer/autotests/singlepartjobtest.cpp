@@ -71,8 +71,8 @@ void SinglepartJobTest::testContentID()
     result->assemble();
     qDebug() << result->encodedContent();
     QCOMPARE(result->body(), data);
-    QVERIFY(result->contentID(false));
-    QCOMPARE(result->contentID(false)->identifier(), id);
+    QVERIFY(result->contentID(KMime::CreatePolicy::DontCreate));
+    QCOMPARE(result->contentID(KMime::CreatePolicy::DontCreate)->identifier(), id);
     delete cjob;
 }
 

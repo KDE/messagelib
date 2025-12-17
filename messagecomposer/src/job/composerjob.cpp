@@ -349,12 +349,12 @@ void ComposerJobPrivate::contentJobFinished(KJob *job)
 
         resultContent = contentJob->content(); // content() comes from superclass
         auto headers = std::make_unique<KMime::Message>();
-        headers->from(true)->from7BitString(skeletonMessage->from()->as7BitString());
-        headers->to(true)->from7BitString(skeletonMessage->to()->as7BitString());
-        headers->cc(true)->from7BitString(skeletonMessage->cc()->as7BitString());
-        headers->subject(true)->from7BitString(skeletonMessage->subject()->as7BitString());
-        headers->date(true)->from7BitString(skeletonMessage->date()->as7BitString());
-        headers->messageID(true)->from7BitString(skeletonMessage->messageID()->as7BitString());
+        headers->from(KMime::CreatePolicy::Create)->from7BitString(skeletonMessage->from()->as7BitString());
+        headers->to(KMime::CreatePolicy::Create)->from7BitString(skeletonMessage->to()->as7BitString());
+        headers->cc(KMime::CreatePolicy::Create)->from7BitString(skeletonMessage->cc()->as7BitString());
+        headers->subject(KMime::CreatePolicy::Create)->from7BitString(skeletonMessage->subject()->as7BitString());
+        headers->date(KMime::CreatePolicy::Create)->from7BitString(skeletonMessage->date()->as7BitString());
+        headers->messageID(KMime::CreatePolicy::Create)->from7BitString(skeletonMessage->messageID()->as7BitString());
 
         auto realTo = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-EncBccRecipients"));
         realTo->fromUnicodeString(eJob->recipients().join(u'%'));

@@ -73,7 +73,7 @@ void DKIMCheckSignatureJob::start()
         mDkimValue = hrd->asUnicodeString();
     }
     // Store mFromEmail before looking at mDkimValue value. Otherwise we can return a from empty
-    if (auto hrd = mMessage->from(false)) {
+    if (auto hrd = mMessage->from(KMime::CreatePolicy::DontCreate)) {
         mFromEmail = KEmailAddress::extractEmailAddress(hrd->asUnicodeString());
     }
     if (mDkimValue.isEmpty()) {

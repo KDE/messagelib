@@ -1120,7 +1120,7 @@ void TemplateParserJob::addProcessedBodyToMessage(const QString &plainBody, cons
 
     d->mMsg->setBody(mainPart->encodedBody());
     d->mMsg->contentType(KMime::CreatePolicy::Create)->from7BitString(mainPart->contentType()->as7BitString());
-    d->mMsg->contentTransferEncoding(true)->from7BitString(mainPart->contentTransferEncoding()->as7BitString());
+    d->mMsg->contentTransferEncoding(KMime::CreatePolicy::Create)->from7BitString(mainPart->contentTransferEncoding()->as7BitString());
     d->mMsg->assemble();
     d->mMsg->parse();
 }

@@ -68,7 +68,7 @@ void ProtectedHeadersJob::doStart()
     Q_ASSERT(d->resultContent == nullptr); // Not processed before.
     Q_ASSERT(d->skeletonMessage); // We need a skeletonMessage to proceed
 
-    const auto subject = d->skeletonMessage->subject(false);
+    const auto subject = d->skeletonMessage->subject(KMime::CreatePolicy::DontCreate);
     if (d->obvoscate && subject) {
         // Create protected header lagacy mimepart with replaced headers
         auto cjob = new SinglepartJob;
@@ -113,7 +113,7 @@ void ProtectedHeadersJob::process()
         d->content = d->subjobContents.constFirst();
     }
 
-    auto subject = d->skeletonMessage->subject(false);
+    auto subject = d->skeletonMessage->subject(KMime::CreatePolicy::DontCreate);
     const auto headers = d->skeletonMessage->headers();
     for (const auto &header : headers) {
         const QByteArray headerType(header->type());

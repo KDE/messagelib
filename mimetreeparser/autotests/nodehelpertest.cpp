@@ -277,7 +277,7 @@ void NodeHelperTest::testFromAsString()
     //  |- encSubExtra
 
     KMime::Message msg;
-    msg.from(true)->fromUnicodeString(tlSender);
+    msg.from(KMime::CreatePolicy::Create)->fromUnicodeString(tlSender);
     auto node = msg.topLevel();
     auto subNode = std::make_unique<KMime::Content>();
     const auto subNodePtr = subNode.get();
@@ -285,7 +285,7 @@ void NodeHelperTest::testFromAsString()
 
     // Encapsulated message
     auto encMsg = std::make_unique<KMime::Message>();
-    encMsg->from(true)->fromUnicodeString(encSender);
+    encMsg->from(KMime::CreatePolicy::Create)->fromUnicodeString(encSender);
     auto encNode = encMsg->topLevel();
     auto encSubNode = std::make_unique<KMime::Content>();
     const auto encSubNodePtr = encSubNode.get();

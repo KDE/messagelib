@@ -239,10 +239,10 @@ void SignJobTest::testProtectedHeaders()
 
     KMime::Message skeletonMessage;
     skeletonMessage.contentType(KMime::CreatePolicy::Create)->setMimeType("foo/bla");
-    skeletonMessage.to(true)->from7BitString("to@test.de, to2@test.de");
-    skeletonMessage.cc(true)->from7BitString("cc@test.de, cc2@test.de");
-    skeletonMessage.bcc(true)->from7BitString("bcc@test.de, bcc2@test.de");
-    skeletonMessage.subject(true)->fromUnicodeString(subject);
+    skeletonMessage.to(KMime::CreatePolicy::Create)->from7BitString("to@test.de, to2@test.de");
+    skeletonMessage.cc(KMime::CreatePolicy::Create)->from7BitString("cc@test.de, cc2@test.de");
+    skeletonMessage.bcc(KMime::CreatePolicy::Create)->from7BitString("bcc@test.de, bcc2@test.de");
+    skeletonMessage.subject(KMime::CreatePolicy::Create)->fromUnicodeString(subject);
 
     sJob->setContent(content);
     sJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
@@ -279,10 +279,10 @@ void SignJobTest::testProtectedHeadersOverwrite()
 
     KMime::Message skeletonMessage;
     skeletonMessage.contentType(KMime::CreatePolicy::Create)->setMimeType("foo/bla");
-    skeletonMessage.to(true)->from7BitString("to@test.de, to2@test.de");
-    skeletonMessage.cc(true)->from7BitString("cc@test.de, cc2@test.de");
-    skeletonMessage.bcc(true)->from7BitString("bcc@test.de, bcc2@test.de");
-    skeletonMessage.subject(true)->fromUnicodeString(subject);
+    skeletonMessage.to(KMime::CreatePolicy::Create)->from7BitString("to@test.de, to2@test.de");
+    skeletonMessage.cc(KMime::CreatePolicy::Create)->from7BitString("cc@test.de, cc2@test.de");
+    skeletonMessage.bcc(KMime::CreatePolicy::Create)->from7BitString("bcc@test.de, bcc2@test.de");
+    skeletonMessage.subject(KMime::CreatePolicy::Create)->fromUnicodeString(subject);
 
     sJob->setContent(content);
     sJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
@@ -336,11 +336,11 @@ void SignJobTest::testProtectedHeadersSkipLong()
         " yBNIF1wUgOXzCJDVBIB0Icfd2vKAN2jAubRfOvt3INsO+3XvdgGBgAH/OepfoIJ/RyuNKjhmbCAA\n"
         " AAAASUVORK5CYII=");
     skeletonMessage.contentType(KMime::CreatePolicy::Create)->setMimeType("foo/bla");
-    skeletonMessage.to(true)->from7BitString("to@test.de, to2@test.de");
-    skeletonMessage.cc(true)->from7BitString("cc@test.de, cc2@test.de");
-    skeletonMessage.bcc(true)->from7BitString("bcc@test.de, bcc2@test.de");
+    skeletonMessage.to(KMime::CreatePolicy::Create)->from7BitString("to@test.de, to2@test.de");
+    skeletonMessage.cc(KMime::CreatePolicy::Create)->from7BitString("cc@test.de, cc2@test.de");
+    skeletonMessage.bcc(KMime::CreatePolicy::Create)->from7BitString("bcc@test.de, bcc2@test.de");
     skeletonMessage.appendHeader(std::move(face));
-    skeletonMessage.subject(true)->fromUnicodeString(subject);
+    skeletonMessage.subject(KMime::CreatePolicy::Create)->fromUnicodeString(subject);
 
     sJob->setContent(content);
     sJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);

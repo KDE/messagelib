@@ -206,10 +206,10 @@ void EncryptJobTest::testProtectedHeaders()
 
     KMime::Message skeletonMessage;
     skeletonMessage.contentType(KMime::CreatePolicy::Create)->setMimeType("foo/bla");
-    skeletonMessage.to(true)->from7BitString("to@test.de, to2@test.de");
-    skeletonMessage.cc(true)->from7BitString("cc@test.de, cc2@test.de");
-    skeletonMessage.bcc(true)->from7BitString("bcc@test.de, bcc2@test.de");
-    skeletonMessage.subject(true)->fromUnicodeString(subject);
+    skeletonMessage.to(KMime::CreatePolicy::Create)->from7BitString("to@test.de, to2@test.de");
+    skeletonMessage.cc(KMime::CreatePolicy::Create)->from7BitString("cc@test.de, cc2@test.de");
+    skeletonMessage.bcc(KMime::CreatePolicy::Create)->from7BitString("bcc@test.de, bcc2@test.de");
+    skeletonMessage.subject(KMime::CreatePolicy::Create)->fromUnicodeString(subject);
 
     const QStringList recipients = {u"test@kolab.org"_s};
 

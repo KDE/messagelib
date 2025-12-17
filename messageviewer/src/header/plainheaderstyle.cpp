@@ -111,8 +111,9 @@ QString PlainHeaderStyle::format(KMime::Message *message) const
                              + QLatin1StringView("</a>"));
         }
 
-        if (strategy->showHeader(u"organization"_s) && message->organization(false)) {
-            headerStr.append(QLatin1StringView("&nbsp;&nbsp;(") + d->mHeaderStyleUtil.strToHtml(message->organization(false)->asUnicodeString()) + u')');
+        if (strategy->showHeader(u"organization"_s) && message->organization(KMime::CreatePolicy::DontCreate)) {
+            headerStr.append(QLatin1StringView("&nbsp;&nbsp;(")
+                             + d->mHeaderStyleUtil.strToHtml(message->organization(KMime::CreatePolicy::DontCreate)->asUnicodeString()) + u')');
         }
         headerStr.append(QLatin1StringView("<br/>\n"));
     }
@@ -122,22 +123,22 @@ QString PlainHeaderStyle::format(KMime::Message *message) const
                          + QLatin1StringView("<br/>\n"));
     }
 
-    if (strategy->showHeader(u"cc"_s) && message->cc(false)) {
-        const QString str = StringUtil::emailAddrAsAnchor(message->cc(false), StringUtil::DisplayFullAddress);
+    if (strategy->showHeader(u"cc"_s) && message->cc(KMime::CreatePolicy::DontCreate)) {
+        const QString str = StringUtil::emailAddrAsAnchor(message->cc(KMime::CreatePolicy::DontCreate), StringUtil::DisplayFullAddress);
         if (!str.isEmpty()) {
             headerStr.append(i18n("CC: ") + str + QLatin1StringView("<br/>\n"));
         }
     }
 
-    if (strategy->showHeader(u"bcc"_s) && message->bcc(false)) {
-        const QString str = StringUtil::emailAddrAsAnchor(message->bcc(false), StringUtil::DisplayFullAddress);
+    if (strategy->showHeader(u"bcc"_s) && message->bcc(KMime::CreatePolicy::DontCreate)) {
+        const QString str = StringUtil::emailAddrAsAnchor(message->bcc(KMime::CreatePolicy::DontCreate), StringUtil::DisplayFullAddress);
         if (!str.isEmpty()) {
             headerStr.append(i18n("BCC: ") + str + QLatin1StringView("<br/>\n"));
         }
     }
 
-    if (strategy->showHeader(u"reply-to"_s) && message->replyTo(false)) {
-        headerStr.append(i18n("Reply to: ") + StringUtil::emailAddrAsAnchor(message->replyTo(false), StringUtil::DisplayFullAddress)
+    if (strategy->showHeader(u"reply-to"_s) && message->replyTo(KMime::CreatePolicy::DontCreate)) {
+        headerStr.append(i18n("Reply to: ") + StringUtil::emailAddrAsAnchor(message->replyTo(KMime::CreatePolicy::DontCreate), StringUtil::DisplayFullAddress)
                          + QLatin1StringView("<br/>\n"));
     }
 

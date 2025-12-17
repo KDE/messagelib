@@ -710,7 +710,7 @@ QString cleanSubject(KMime::Message *msg)
 
 QString cleanSubject(KMime::Message *msg, const QStringList &prefixRegExps, bool replace, const QString &newPrefix)
 {
-    if (auto subject = msg->subject(false)) {
+    if (auto subject = msg->subject(KMime::CreatePolicy::DontCreate)) {
         return replacePrefixes(subject->asUnicodeString(), prefixRegExps, replace, newPrefix);
     } else {
         return {};

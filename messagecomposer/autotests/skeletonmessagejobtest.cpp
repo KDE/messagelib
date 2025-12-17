@@ -44,9 +44,9 @@ void SkeletonMessageJobTest::testSubject()
     auto sjob = new SkeletonMessageJob(infoPart, globalPart, &composerJob);
     QVERIFY(sjob->exec());
     const auto message = sjob->takeMessage();
-    QVERIFY(message->subject(false));
-    qDebug() << message->subject(false)->asUnicodeString();
-    QCOMPARE(subject, message->subject(false)->asUnicodeString());
+    QVERIFY(message->subject(KMime::CreatePolicy::DontCreate));
+    qDebug() << message->subject(KMime::CreatePolicy::DontCreate)->asUnicodeString();
+    QCOMPARE(subject, message->subject(KMime::CreatePolicy::DontCreate)->asUnicodeString());
 }
 
 void SkeletonMessageJobTest::testAddresses_data()
@@ -142,21 +142,21 @@ void SkeletonMessageJobTest::testAddresses()
     const auto message = sjob->takeMessage();
 
     {
-        QVERIFY(message->from(false));
+        QVERIFY(message->from(KMime::CreatePolicy::DontCreate));
         // qDebug() << "From:" << message->from()->asUnicodeString();
         QCOMPARE(from, message->from()->asUnicodeString());
     }
 
     {
-        QVERIFY(message->replyTo(false));
+        QVERIFY(message->replyTo(KMime::CreatePolicy::DontCreate));
         // qDebug() << "Reply-To:" << message->replyTo()->asUnicodeString();
         QCOMPARE(replyto.join(u','), message->replyTo()->asUnicodeString());
     }
 
     {
-        QVERIFY(message->to(false));
+        QVERIFY(message->to(KMime::CreatePolicy::DontCreate));
         // qDebug() << "To:" << message->to()->asUnicodeString();
-        const auto mailboxes{message->to(false)->mailboxes()};
+        const auto mailboxes{message->to(KMime::CreatePolicy::DontCreate)->mailboxes()};
         for (const auto &addr : mailboxes) {
             // qDebug() << addr.prettyAddress();
             QVERIFY(to.contains(addr.prettyAddress()));
@@ -166,9 +166,9 @@ void SkeletonMessageJobTest::testAddresses()
     }
 
     {
-        QVERIFY(message->cc(false));
+        QVERIFY(message->cc(KMime::CreatePolicy::DontCreate));
         // qDebug() << "Cc:" << message->cc()->asUnicodeString();
-        const auto mailboxes{message->cc(false)->mailboxes()};
+        const auto mailboxes{message->cc(KMime::CreatePolicy::DontCreate)->mailboxes()};
         for (const auto &addr : mailboxes) {
             // qDebug() << addr.prettyAddress();
             QVERIFY(cc.contains(addr.prettyAddress()));
@@ -178,9 +178,9 @@ void SkeletonMessageJobTest::testAddresses()
     }
 
     {
-        QVERIFY(message->bcc(false));
+        QVERIFY(message->bcc(KMime::CreatePolicy::DontCreate));
         // qDebug() << "Bcc:" << message->bcc()->asUnicodeString();
-        const auto mailboxes{message->bcc(false)->mailboxes()};
+        const auto mailboxes{message->bcc(KMime::CreatePolicy::DontCreate)->mailboxes()};
         for (const auto &addr : mailboxes) {
             // qDebug() << addr.prettyAddress();
             QVERIFY(bcc.contains(addr.prettyAddress()));

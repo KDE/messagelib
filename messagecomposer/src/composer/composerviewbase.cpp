@@ -493,7 +493,7 @@ void ComposerViewBase::slotEmailAddressResolved(KJob *job)
     // if we aren't signing or encrypting, this just returns a single empty message
     if (m_neverEncrypt && mSaveIn != MessageComposer::MessageSender::SaveInNone && !mSendLaterInfo) {
         auto composerJob = new MessageComposer::ComposerJob;
-        composerJob->setNoCrypto(true);
+        composerJob->setNoCrypto(KMime::CreatePolicy::Create);
         m_composerJobs.append(composerJob);
     } else {
         bool wasCanceled = false;
@@ -953,11 +953,11 @@ void ComposerViewBase::fillInfoPart(MessageComposer::InfoPart *infoPart, Compose
     infoPart->setUserAgent(u"KMail"_s);
     infoPart->setUrgent(m_urgent);
 
-    if (auto inReplyTo = m_msg->inReplyTo(false)) {
+    if (auto inReplyTo = m_msg->inReplyTo(KMime::CreatePolicy::DontCreate)) {
         infoPart->setInReplyTo(inReplyTo->asUnicodeString());
     }
 
-    if (auto references = m_msg->references(false)) {
+    if (auto references = m_msg->references(KMime::CreatePolicy::DontCreate)) {
         infoPart->setReferences(references->asUnicodeString());
     }
 
@@ -983,7 +983,7 @@ void ComposerViewBase::fillInfoPart(MessageComposer::InfoPart *infoPart, Compose
     if (auto hdr = m_msg->headerByType("X-KMail-UnExpanded-Reply-To")) {
         extras << hdr;
     }
-    if (auto hdr = m_msg->organization(false)) {
+    if (auto hdr = m_msg->organization(KMime::CreatePolicy::DontCreate)) {
         extras << hdr;
     }
     if (auto hdr = m_msg->headerByType("X-KMail-Identity")) {
@@ -1074,19 +1074,19 @@ void ComposerViewBase::slotSendComposeResult(KJob *job)
 void ComposerViewBase::saveRecentAddresses(const KMime::Message::Ptr &msg)
 {
     KConfig *config = MessageComposer::MessageComposerSettings::self()->config();
-    if (auto to = msg->to(false)) {
+    if (auto to = msg->to(KMime::CreatePolicy::DontCreate)) {
         const auto toAddresses = to->mailboxes();
         for (const auto &address : toAddresses) {
             PimCommon::RecentAddresses::self(config)->add(address.prettyAddress());
         }
     }
-    if (auto cc = msg->cc(false)) {
+    if (auto cc = msg->cc(KMime::CreatePolicy::DontCreate)) {
         const auto ccAddresses = cc->mailboxes();
         for (const auto &address : ccAddresses) {
             PimCommon::RecentAddresses::self(config)->add(address.prettyAddress());
         }
     }
-    if (auto bcc = msg->bcc(false)) {
+    if (auto bcc = msg->bcc(KMime::CreatePolicy::DontCreate)) {
         const auto bccAddresses = bcc->mailboxes();
         for (const auto &address : bccAddresses) {
             PimCommon::RecentAddresses::self(config)->add(address.prettyAddress());

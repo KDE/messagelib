@@ -776,7 +776,7 @@ void ViewerPrivate::displayMessage()
     htmlWriter()->write(cssHelper()->htmlHead(mHtmlHeadSettings));
 
     if (!mMainWindow) {
-        if (auto subject = mMessage->subject(false)) {
+        if (auto subject = mMessage->subject(KMime::CreatePolicy::DontCreate)) {
             q->setWindowTitle(subject->asUnicodeString());
         }
     }
