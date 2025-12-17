@@ -738,7 +738,8 @@ void AttachmentControllerBase::AttachmentControllerBasePrivate::slotAttachmentCo
         const MessageComposer::AttachmentJob *const attachmentJob = qobject_cast<MessageComposer::AttachmentJob *>(job);
         Q_ASSERT(attachmentJob);
         if (attachmentJob) {
-            Q_EMIT q->showAttachment(attachmentJob->content(), QByteArray());
+            const auto content = std::shared_ptr<KMime::Content>(attachmentJob->content());
+            Q_EMIT q->showAttachment(content, QByteArray());
         }
     } else {
         // TODO: show warning to the user

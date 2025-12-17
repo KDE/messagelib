@@ -76,7 +76,7 @@ public Q_SLOTS:
 Q_SIGNALS:
     void actionsCreated();
     void refreshSelection();
-    void showAttachment(KMime::Content *content, const QByteArray &charset);
+    void showAttachment(const std::shared_ptr<KMime::Content> &content, const QByteArray &charset);
     void selectedAllAttachment();
     void addOwnVcard(bool);
     void fileAttached();
