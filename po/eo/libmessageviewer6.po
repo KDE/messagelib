@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-15 00:43+0000\n"
+"POT-Creation-Date: 2025-12-18 00:44+0000\n"
 "PO-Revision-Date: 2024-08-02 22:29+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -864,23 +864,23 @@ msgstr "De: "
 msgid "[vCard]"
 msgstr "[vizikarto]"
 
-#: header/plainheaderstyle.cpp:121
+#: header/plainheaderstyle.cpp:122
 #, kde-format
 msgctxt "To-field of the mailheader."
 msgid "To: "
 msgstr "Al: "
 
-#: header/plainheaderstyle.cpp:128
+#: header/plainheaderstyle.cpp:129
 #, kde-format
 msgid "CC: "
 msgstr "Kopio: "
 
-#: header/plainheaderstyle.cpp:135
+#: header/plainheaderstyle.cpp:136
 #, kde-format
 msgid "BCC: "
 msgstr "Nevidebla kopio: "
 
-#: header/plainheaderstyle.cpp:140
+#: header/plainheaderstyle.cpp:141
 #, kde-format
 msgid "Reply to: "
 msgstr "Respondo al:"
@@ -1634,7 +1634,7 @@ msgid "Keep Signature"
 msgstr "Konservi subskribon"
 
 #: utils/messageviewerutil.cpp:383 utils/messageviewerutil.cpp:401
-#: utils/messageviewerutil.cpp:419 utils/messageviewerutil.cpp:538
+#: utils/messageviewerutil.cpp:419 utils/messageviewerutil.cpp:539
 #, kde-kuit-format
 msgctxt "1 = file name, 2 = error string"
 msgid ""
@@ -1660,63 +1660,63 @@ msgstr "Eraro dum konservado de aldonaĵo"
 msgid "Found no attachments to save."
 msgstr "Neniuj kunsendaĵoj trovitaj por konservi."
 
-#: utils/messageviewerutil.cpp:450
+#: utils/messageviewerutil.cpp:451
 #, kde-format
 msgid "message"
 msgstr "mesaĝo"
 
-#: utils/messageviewerutil.cpp:472
+#: utils/messageviewerutil.cpp:473
 #, fuzzy, kde-format
 #| msgid "email messages (*.mbox);;all files (*)"
 msgid "Mailbox file (*.mbox);;All Files (*)"
 msgstr "retpoŝtaj mesaĝoj (*.mbox);;ĉiuj dosieroj (*)"
 
-#: utils/messageviewerutil.cpp:483
+#: utils/messageviewerutil.cpp:484
 #, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
 msgstr[0] "Konservi mesaĝon"
 msgstr[1] "Konservi mesaĝojn"
 
-#: utils/messageviewerutil.cpp:508
+#: utils/messageviewerutil.cpp:509
 #, kde-format
 msgid "File %1 could not be loaded."
 msgstr "Dosiero %1 ne povis esti ŝargita."
 
-#: utils/messageviewerutil.cpp:508
+#: utils/messageviewerutil.cpp:509
 #, kde-format
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Eraro dum ŝargo de mesaĝo"
 
-#: utils/messageviewerutil.cpp:510
+#: utils/messageviewerutil.cpp:511
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "Dosiero %1 ne povis esti kreita."
 
-#: utils/messageviewerutil.cpp:510 utils/messageviewerutil.cpp:541
+#: utils/messageviewerutil.cpp:511 utils/messageviewerutil.cpp:542
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Eraro dum konservado de mesaĝo"
 
-#: utils/messageviewerutil.cpp:521
+#: utils/messageviewerutil.cpp:522
 #, kde-format
 msgid "We cannot save message."
 msgstr "Ni ne povas konservi mesaĝon."
 
-#: utils/messageviewerutil.cpp:521
+#: utils/messageviewerutil.cpp:522
 #, kde-format
 msgid "Error saving message"
 msgstr "Eraro dum konservado de mesaĝo"
 
-#: utils/messageviewerutil.cpp:585
+#: utils/messageviewerutil.cpp:586
 #, kde-format
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "Forigis: %1"
 
-#: utils/messageviewerutil.cpp:596
+#: utils/messageviewerutil.cpp:597
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
@@ -1725,12 +1725,12 @@ msgstr ""
 "Vi forigis aldonaĵon el ĉi tiu mesaĝo. La originaj MIME-kapoj por la "
 "aldonaĵo estis:"
 
-#: utils/messageviewerutil.cpp:624
+#: utils/messageviewerutil.cpp:625
 #, kde-format
 msgid "Open &with %1"
 msgstr "Malfermi &kun %1"
 
-#: utils/messageviewerutil.cpp:626
+#: utils/messageviewerutil.cpp:627
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"

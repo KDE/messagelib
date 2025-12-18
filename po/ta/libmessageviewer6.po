@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-15 00:43+0000\n"
+"POT-Creation-Date: 2025-12-18 00:44+0000\n"
 "PO-Revision-Date: 2025-05-18 19:02+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -874,23 +874,23 @@ msgstr "அனுப்புநர்: "
 msgid "[vCard]"
 msgstr "[vஅட்டை]"
 
-#: header/plainheaderstyle.cpp:121
+#: header/plainheaderstyle.cpp:122
 #, kde-format
 msgctxt "To-field of the mailheader."
 msgid "To: "
 msgstr "பெறுநர்: "
 
-#: header/plainheaderstyle.cpp:128
+#: header/plainheaderstyle.cpp:129
 #, kde-format
 msgid "CC: "
 msgstr "நகல்: "
 
-#: header/plainheaderstyle.cpp:135
+#: header/plainheaderstyle.cpp:136
 #, kde-format
 msgid "BCC: "
 msgstr "கமுக்க நகல்: "
 
-#: header/plainheaderstyle.cpp:140
+#: header/plainheaderstyle.cpp:141
 #, kde-format
 msgid "Reply to: "
 msgstr "பதில் பெறுபவர்: "
@@ -1632,7 +1632,7 @@ msgid "Keep Signature"
 msgstr "கையொப்பதை வைத்திரு"
 
 #: utils/messageviewerutil.cpp:383 utils/messageviewerutil.cpp:401
-#: utils/messageviewerutil.cpp:419 utils/messageviewerutil.cpp:538
+#: utils/messageviewerutil.cpp:419 utils/messageviewerutil.cpp:539
 #, kde-kuit-format
 msgctxt "1 = file name, 2 = error string"
 msgid ""
@@ -1658,63 +1658,63 @@ msgstr "உடனிணைப்பை சேமிப்பதில் சி�
 msgid "Found no attachments to save."
 msgstr "சேமிப்பதற்கு உடனிணைப்புகளேதும் கண்டுப்பிடிக்கப்படவில்லை"
 
-#: utils/messageviewerutil.cpp:450
+#: utils/messageviewerutil.cpp:451
 #, kde-format
 msgid "message"
 msgstr "அஞ்சல்"
 
-#: utils/messageviewerutil.cpp:472
+#: utils/messageviewerutil.cpp:473
 #, fuzzy, kde-format
 #| msgid "email messages (*.mbox);;all files (*)"
 msgid "Mailbox file (*.mbox);;All Files (*)"
 msgstr "மின்னஞ்சல்கள் (*.mbox);;அனைத்து கோப்புகள் (*)"
 
-#: utils/messageviewerutil.cpp:483
+#: utils/messageviewerutil.cpp:484
 #, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
 msgstr[0] "அஞ்சலை சேமி"
 msgstr[1] "அஞ்சல்களை சேமி"
 
-#: utils/messageviewerutil.cpp:508
+#: utils/messageviewerutil.cpp:509
 #, kde-format
 msgid "File %1 could not be loaded."
 msgstr "%1 எனும் கோப்பை ஏற்ற முடியவில்லை."
 
-#: utils/messageviewerutil.cpp:508
+#: utils/messageviewerutil.cpp:509
 #, kde-format
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "அஞ்சலை ஏற்றுவதில் சிக்கல்"
 
-#: utils/messageviewerutil.cpp:510
+#: utils/messageviewerutil.cpp:511
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "%1 எனும் கோப்பை உருவாக்க முடியவில்லை."
 
-#: utils/messageviewerutil.cpp:510 utils/messageviewerutil.cpp:541
+#: utils/messageviewerutil.cpp:511 utils/messageviewerutil.cpp:542
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "அஞ்சலை சேமிப்பதில் சிக்கல்"
 
-#: utils/messageviewerutil.cpp:521
+#: utils/messageviewerutil.cpp:522
 #, kde-format
 msgid "We cannot save message."
 msgstr "அஞ்சலை சேமிக்க முடியாது."
 
-#: utils/messageviewerutil.cpp:521
+#: utils/messageviewerutil.cpp:522
 #, kde-format
 msgid "Error saving message"
 msgstr "அஞ்சலை சேமிப்பதில் சிக்கல்"
 
-#: utils/messageviewerutil.cpp:585
+#: utils/messageviewerutil.cpp:586
 #, kde-format
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "நீக்கப்பட்டது: %1"
 
-#: utils/messageviewerutil.cpp:596
+#: utils/messageviewerutil.cpp:597
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
@@ -1723,12 +1723,12 @@ msgstr ""
 "இந்த அஞ்சலிலிருந்த ஓர் உடனிணைப்பை நீக்கியுள்ளீர். உடனிணைப்புக்கு இருந்த MIME "
 "தலைப்புப்புலங்கள்:"
 
-#: utils/messageviewerutil.cpp:624
+#: utils/messageviewerutil.cpp:625
 #, kde-format
 msgid "Open &with %1"
 msgstr "%1 &என்பதால திற"
 
-#: utils/messageviewerutil.cpp:626
+#: utils/messageviewerutil.cpp:627
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"

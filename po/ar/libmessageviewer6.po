@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-15 00:43+0000\n"
+"POT-Creation-Date: 2025-12-18 00:44+0000\n"
 "PO-Revision-Date: 2025-08-20 21:33+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -886,23 +886,23 @@ msgstr "من: "
 msgid "[vCard]"
 msgstr "[vCard]"
 
-#: header/plainheaderstyle.cpp:121
+#: header/plainheaderstyle.cpp:122
 #, kde-format
 msgctxt "To-field of the mailheader."
 msgid "To: "
 msgstr "إلى: "
 
-#: header/plainheaderstyle.cpp:128
+#: header/plainheaderstyle.cpp:129
 #, kde-format
 msgid "CC: "
 msgstr "ن‌ك: "
 
-#: header/plainheaderstyle.cpp:135
+#: header/plainheaderstyle.cpp:136
 #, kde-format
 msgid "BCC: "
 msgstr "ن‌ك‌ع: "
 
-#: header/plainheaderstyle.cpp:140
+#: header/plainheaderstyle.cpp:141
 #, kde-format
 msgid "Reply to: "
 msgstr "ردّ على: "
@@ -1632,7 +1632,7 @@ msgid "Keep Signature"
 msgstr "أبقِ التّوقيع"
 
 #: utils/messageviewerutil.cpp:383 utils/messageviewerutil.cpp:401
-#: utils/messageviewerutil.cpp:419 utils/messageviewerutil.cpp:538
+#: utils/messageviewerutil.cpp:419 utils/messageviewerutil.cpp:539
 #, kde-kuit-format
 msgctxt "1 = file name, 2 = error string"
 msgid ""
@@ -1659,17 +1659,17 @@ msgid "Found no attachments to save."
 msgstr "لم يُعثر على مستندات لحفظها."
 
 # اسم ملف
-#: utils/messageviewerutil.cpp:450
+#: utils/messageviewerutil.cpp:451
 #, kde-format
 msgid "message"
 msgstr "رسالة"
 
-#: utils/messageviewerutil.cpp:472
+#: utils/messageviewerutil.cpp:473
 #, kde-format
 msgid "Mailbox file (*.mbox);;All Files (*)"
 msgstr "رسائل البريد (*.mbox);;كلّ الرّسائل (*)"
 
-#: utils/messageviewerutil.cpp:483
+#: utils/messageviewerutil.cpp:484
 #, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
@@ -1680,57 +1680,57 @@ msgstr[3] "احفظ الرّسائل"
 msgstr[4] "احفظ الرّسائل"
 msgstr[5] "احفظ الرّسائل"
 
-#: utils/messageviewerutil.cpp:508
+#: utils/messageviewerutil.cpp:509
 #, kde-format
 msgid "File %1 could not be loaded."
 msgstr "تعذّر تحميل الملفّ %1."
 
-#: utils/messageviewerutil.cpp:508
+#: utils/messageviewerutil.cpp:509
 #, kde-format
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "خطأ في تحميل الرّسالة"
 
-#: utils/messageviewerutil.cpp:510
+#: utils/messageviewerutil.cpp:511
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "تعذّر إنشاء الملفّ %1."
 
-#: utils/messageviewerutil.cpp:510 utils/messageviewerutil.cpp:541
+#: utils/messageviewerutil.cpp:511 utils/messageviewerutil.cpp:542
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "خطأ في حفظ الرّسالة"
 
-#: utils/messageviewerutil.cpp:521
+#: utils/messageviewerutil.cpp:522
 #, kde-format
 msgid "We cannot save message."
 msgstr "تعذّر حفظ الرّسالة."
 
-#: utils/messageviewerutil.cpp:521
+#: utils/messageviewerutil.cpp:522
 #, kde-format
 msgid "Error saving message"
 msgstr "خطأ في حفظ الرّسالة"
 
-#: utils/messageviewerutil.cpp:585
+#: utils/messageviewerutil.cpp:586
 #, kde-format
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "حُذف: %1"
 
-#: utils/messageviewerutil.cpp:596
+#: utils/messageviewerutil.cpp:597
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
 msgstr "حذفت مرفقًا من هذه الرسالة. كانت عناوين MIME الأصلية للمرفق هي:"
 
-#: utils/messageviewerutil.cpp:624
+#: utils/messageviewerutil.cpp:625
 #, kde-format
 msgid "Open &with %1"
 msgstr "اف&تح في %1"
 
-#: utils/messageviewerutil.cpp:626
+#: utils/messageviewerutil.cpp:627
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"

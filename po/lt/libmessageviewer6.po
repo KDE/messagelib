@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-15 00:43+0000\n"
+"POT-Creation-Date: 2025-12-18 00:44+0000\n"
 "PO-Revision-Date: 2020-02-06 14:01+0200\n"
 "Last-Translator: tomas.straupis <tomasstraupis@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -893,23 +893,23 @@ msgstr "Nuo: "
 msgid "[vCard]"
 msgstr "[vCard]"
 
-#: header/plainheaderstyle.cpp:121
+#: header/plainheaderstyle.cpp:122
 #, kde-format
 msgctxt "To-field of the mailheader."
 msgid "To: "
 msgstr "Kam: "
 
-#: header/plainheaderstyle.cpp:128
+#: header/plainheaderstyle.cpp:129
 #, kde-format
 msgid "CC: "
 msgstr "Kopija: "
 
-#: header/plainheaderstyle.cpp:135
+#: header/plainheaderstyle.cpp:136
 #, kde-format
 msgid "BCC: "
 msgstr "Slapta kopija: "
 
-#: header/plainheaderstyle.cpp:140
+#: header/plainheaderstyle.cpp:141
 #, kde-format
 msgid "Reply to: "
 msgstr "Kam atsakyti: "
@@ -1682,7 +1682,7 @@ msgid "Keep Signature"
 msgstr "Išlaikyti parašą"
 
 #: utils/messageviewerutil.cpp:383 utils/messageviewerutil.cpp:401
-#: utils/messageviewerutil.cpp:419 utils/messageviewerutil.cpp:538
+#: utils/messageviewerutil.cpp:419 utils/messageviewerutil.cpp:539
 #, kde-kuit-format
 msgctxt "1 = file name, 2 = error string"
 msgid ""
@@ -1708,18 +1708,18 @@ msgstr "Klaida išsaugant priedą"
 msgid "Found no attachments to save."
 msgstr "Neradau priedų išsaugojimui."
 
-#: utils/messageviewerutil.cpp:450
+#: utils/messageviewerutil.cpp:451
 #, kde-format
 msgid "message"
 msgstr "laiškas"
 
-#: utils/messageviewerutil.cpp:472
+#: utils/messageviewerutil.cpp:473
 #, fuzzy, kde-format
 #| msgid "email messages (*.mbox);;all files (*)"
 msgid "Mailbox file (*.mbox);;All Files (*)"
 msgstr "el. laiškai (*.mbox);;visi failai (*)"
 
-#: utils/messageviewerutil.cpp:483
+#: utils/messageviewerutil.cpp:484
 #, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
@@ -1728,60 +1728,60 @@ msgstr[1] "&Išsaugoti laišką"
 msgstr[2] "&Išsaugoti laišką"
 msgstr[3] "&Išsaugoti laišką"
 
-#: utils/messageviewerutil.cpp:508
+#: utils/messageviewerutil.cpp:509
 #, kde-format
 msgid "File %1 could not be loaded."
 msgstr "Nepavyko įkelti %1 failo."
 
-#: utils/messageviewerutil.cpp:508
+#: utils/messageviewerutil.cpp:509
 #, fuzzy, kde-format
 #| msgid "Error loading message"
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Klaida įkeliant laišką"
 
-#: utils/messageviewerutil.cpp:510
+#: utils/messageviewerutil.cpp:511
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "Nepavyko sukurti %1 failo."
 
-#: utils/messageviewerutil.cpp:510 utils/messageviewerutil.cpp:541
+#: utils/messageviewerutil.cpp:511 utils/messageviewerutil.cpp:542
 #, fuzzy, kde-format
 #| msgid "Error saving message"
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Klaida įrašant laišką"
 
-#: utils/messageviewerutil.cpp:521
+#: utils/messageviewerutil.cpp:522
 #, kde-format
 msgid "We cannot save message."
 msgstr "Nepavyksta įrašyti laiško."
 
-#: utils/messageviewerutil.cpp:521
+#: utils/messageviewerutil.cpp:522
 #, kde-format
 msgid "Error saving message"
 msgstr "Klaida įrašant laišką"
 
-#: utils/messageviewerutil.cpp:585
+#: utils/messageviewerutil.cpp:586
 #, fuzzy, kde-format
 #| msgid "Delete Key"
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "Trinti raktą"
 
-#: utils/messageviewerutil.cpp:596
+#: utils/messageviewerutil.cpp:597
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:624
+#: utils/messageviewerutil.cpp:625
 #, kde-format
 msgid "Open &with %1"
 msgstr "Atverti &su %1"
 
-#: utils/messageviewerutil.cpp:626
+#: utils/messageviewerutil.cpp:627
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"

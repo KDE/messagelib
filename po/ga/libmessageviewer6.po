@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim/kmail.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-15 00:43+0000\n"
+"POT-Creation-Date: 2025-12-18 00:44+0000\n"
 "PO-Revision-Date: 2004-12-03 14:52-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -961,23 +961,23 @@ msgstr "Ó: "
 msgid "[vCard]"
 msgstr "[v-Chárta]"
 
-#: header/plainheaderstyle.cpp:121
+#: header/plainheaderstyle.cpp:122
 #, kde-format
 msgctxt "To-field of the mailheader."
 msgid "To: "
 msgstr "Chuig: "
 
-#: header/plainheaderstyle.cpp:128
+#: header/plainheaderstyle.cpp:129
 #, kde-format
 msgid "CC: "
 msgstr "CC: "
 
-#: header/plainheaderstyle.cpp:135
+#: header/plainheaderstyle.cpp:136
 #, kde-format
 msgid "BCC: "
 msgstr "BCC: "
 
-#: header/plainheaderstyle.cpp:140
+#: header/plainheaderstyle.cpp:141
 #, fuzzy, kde-format
 #| msgid "Reply"
 msgid "Reply to: "
@@ -1705,7 +1705,7 @@ msgid "Keep Signature"
 msgstr "Síniú"
 
 #: utils/messageviewerutil.cpp:383 utils/messageviewerutil.cpp:401
-#: utils/messageviewerutil.cpp:419 utils/messageviewerutil.cpp:538
+#: utils/messageviewerutil.cpp:419 utils/messageviewerutil.cpp:539
 #, fuzzy, kde-kuit-format
 #| msgctxt "1 = file name, 2 = error string"
 #| msgid "<qt>Could not write to the file<br><filename>%1</filename><br><br>%2"
@@ -1734,12 +1734,12 @@ msgstr "a bhfuil iatán aige"
 msgid "Found no attachments to save."
 msgstr "Níor aimsíodh aon iatáin le sábháil."
 
-#: utils/messageviewerutil.cpp:450
+#: utils/messageviewerutil.cpp:451
 #, kde-format
 msgid "message"
 msgstr "teachtaireacht"
 
-#: utils/messageviewerutil.cpp:472
+#: utils/messageviewerutil.cpp:473
 #, fuzzy, kde-format
 #| msgid ""
 #| "*.mbox|email messages (*.mbox)\n"
@@ -1749,7 +1749,7 @@ msgstr ""
 "*.mbox|teachtaireachtaí ríomhphoist (*.mbox)\n"
 "*|gach comhad (*)"
 
-#: utils/messageviewerutil.cpp:483
+#: utils/messageviewerutil.cpp:484
 #, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
@@ -1759,43 +1759,43 @@ msgstr[2] "Sábháil Teachtaireachtaí"
 msgstr[3] "Sábháil Teachtaireachtaí"
 msgstr[4] "Sábháil Teachtaireachtaí"
 
-#: utils/messageviewerutil.cpp:508
+#: utils/messageviewerutil.cpp:509
 #, kde-format
 msgid "File %1 could not be loaded."
 msgstr "Níorbh fhéidir comhad %1 a luchtú."
 
-#: utils/messageviewerutil.cpp:508
+#: utils/messageviewerutil.cpp:509
 #, fuzzy, kde-format
 #| msgid "Error loading message"
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Earráid agus teachtaireacht á luchtú"
 
-#: utils/messageviewerutil.cpp:510
+#: utils/messageviewerutil.cpp:511
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "Níorbh fhéidir comhad %1 a chruthú."
 
-#: utils/messageviewerutil.cpp:510 utils/messageviewerutil.cpp:541
+#: utils/messageviewerutil.cpp:511 utils/messageviewerutil.cpp:542
 #, fuzzy, kde-format
 #| msgid "Error loading message"
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Earráid agus teachtaireacht á luchtú"
 
-#: utils/messageviewerutil.cpp:521
+#: utils/messageviewerutil.cpp:522
 #, fuzzy, kde-format
 #| msgid "We can not save message."
 msgid "We cannot save message."
 msgstr "Ní féidir an teachtaireacht a shábháil."
 
-#: utils/messageviewerutil.cpp:521
+#: utils/messageviewerutil.cpp:522
 #, fuzzy, kde-format
 #| msgid "Error loading message"
 msgid "Error saving message"
 msgstr "Earráid agus teachtaireacht á luchtú"
 
-#: utils/messageviewerutil.cpp:585
+#: utils/messageviewerutil.cpp:586
 #, fuzzy, kde-format
 #| msgctxt "MDN type"
 #| msgid "Deleted"
@@ -1803,19 +1803,19 @@ msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "Scriosta"
 
-#: utils/messageviewerutil.cpp:596
+#: utils/messageviewerutil.cpp:597
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:624
+#: utils/messageviewerutil.cpp:625
 #, kde-format
 msgid "Open &with %1"
 msgstr "&Oscail le %1"
 
-#: utils/messageviewerutil.cpp:626
+#: utils/messageviewerutil.cpp:627
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"

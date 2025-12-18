@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-15 00:43+0000\n"
+"POT-Creation-Date: 2025-12-18 00:44+0000\n"
 "PO-Revision-Date: 2025-10-20 10:44+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -959,23 +959,23 @@ msgstr "De la: "
 msgid "[vCard]"
 msgstr "[vCard]"
 
-#: header/plainheaderstyle.cpp:121
+#: header/plainheaderstyle.cpp:122
 #, kde-format
 msgctxt "To-field of the mailheader."
 msgid "To: "
 msgstr "Către: "
 
-#: header/plainheaderstyle.cpp:128
+#: header/plainheaderstyle.cpp:129
 #, kde-format
 msgid "CC: "
 msgstr "CC: "
 
-#: header/plainheaderstyle.cpp:135
+#: header/plainheaderstyle.cpp:136
 #, kde-format
 msgid "BCC: "
 msgstr "BCC: "
 
-#: header/plainheaderstyle.cpp:140
+#: header/plainheaderstyle.cpp:141
 #, kde-format
 msgid "Reply to: "
 msgstr "Răspuns către: "
@@ -1728,7 +1728,7 @@ msgid "Keep Signature"
 msgstr "Păstrează semnătura"
 
 #: utils/messageviewerutil.cpp:383 utils/messageviewerutil.cpp:401
-#: utils/messageviewerutil.cpp:419 utils/messageviewerutil.cpp:538
+#: utils/messageviewerutil.cpp:419 utils/messageviewerutil.cpp:539
 #, fuzzy, kde-kuit-format
 #| msgctxt "%2 is detailed error description"
 #| msgid ""
@@ -1760,18 +1760,18 @@ msgstr "are un atașament"
 msgid "Found no attachments to save."
 msgstr "Nu a fost găsit niciun atașament de salvat."
 
-#: utils/messageviewerutil.cpp:450
+#: utils/messageviewerutil.cpp:451
 #, fuzzy, kde-format
 #| msgid " messages"
 msgid "message"
 msgstr " mesaje"
 
-#: utils/messageviewerutil.cpp:472
+#: utils/messageviewerutil.cpp:473
 #, kde-format
 msgid "Mailbox file (*.mbox);;All Files (*)"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:483
+#: utils/messageviewerutil.cpp:484
 #, fuzzy, kde-format
 #| msgid " message"
 #| msgid_plural " messages"
@@ -1781,45 +1781,45 @@ msgstr[0] " mesaj"
 msgstr[1] " mesaj"
 msgstr[2] " mesaj"
 
-#: utils/messageviewerutil.cpp:508
+#: utils/messageviewerutil.cpp:509
 #, fuzzy, kde-format
 #| msgid "The message could not be decrypted."
 msgid "File %1 could not be loaded."
 msgstr "Mesajul nu a putut fi decriptat."
 
-#: utils/messageviewerutil.cpp:508
+#: utils/messageviewerutil.cpp:509
 #, fuzzy, kde-format
 #| msgid "Error while uploading message"
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Eroare la încărcarea mesajului"
 
-#: utils/messageviewerutil.cpp:510
+#: utils/messageviewerutil.cpp:511
 #, fuzzy, kde-format
 #| msgid "The message could not be decrypted."
 msgid "File %1 could not be created."
 msgstr "Mesajul nu a putut fi decriptat."
 
-#: utils/messageviewerutil.cpp:510 utils/messageviewerutil.cpp:541
+#: utils/messageviewerutil.cpp:511 utils/messageviewerutil.cpp:542
 #, fuzzy, kde-format
 #| msgid "Moving messages"
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Mutare mesaje"
 
-#: utils/messageviewerutil.cpp:521
+#: utils/messageviewerutil.cpp:522
 #, fuzzy, kde-format
 #| msgid "End of signed message"
 msgid "We cannot save message."
 msgstr "Sfârșitul mesajului semnat"
 
-#: utils/messageviewerutil.cpp:521
+#: utils/messageviewerutil.cpp:522
 #, fuzzy, kde-format
 #| msgid "Moving messages"
 msgid "Error saving message"
 msgstr "Mutare mesaje"
 
-#: utils/messageviewerutil.cpp:585
+#: utils/messageviewerutil.cpp:586
 #, fuzzy, kde-format
 #| msgctxt "Not able to attend."
 #| msgid "Declined: %1"
@@ -1827,20 +1827,20 @@ msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "Refuzat: %1"
 
-#: utils/messageviewerutil.cpp:596
+#: utils/messageviewerutil.cpp:597
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:624
+#: utils/messageviewerutil.cpp:625
 #, fuzzy, kde-format
 #| msgid "&Open with '%1'"
 msgid "Open &with %1"
 msgstr "&Deschide cu „%1”"
 
-#: utils/messageviewerutil.cpp:626
+#: utils/messageviewerutil.cpp:627
 #, fuzzy, kde-format
 #| msgid "%"
 msgctxt "@item:inmenu Open With, %1 is application name"

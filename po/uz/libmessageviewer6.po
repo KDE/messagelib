@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-15 00:43+0000\n"
+"POT-Creation-Date: 2025-12-18 00:44+0000\n"
 "PO-Revision-Date: 2006-12-17 13:32+0000\n"
 "Last-Translator: Mashrab Kuvatov <kmashrab@uni-bremen.de>\n"
 "Language-Team: Uzbek <floss-uz-l10n@googlegroups.com>\n"
@@ -916,25 +916,25 @@ msgstr "Kimdan:"
 msgid "[vCard]"
 msgstr "[vCard]"
 
-#: header/plainheaderstyle.cpp:121
+#: header/plainheaderstyle.cpp:122
 #, fuzzy, kde-format
 #| msgid "To: "
 msgctxt "To-field of the mailheader."
 msgid "To: "
 msgstr "Kimga: "
 
-#: header/plainheaderstyle.cpp:128
+#: header/plainheaderstyle.cpp:129
 #, kde-format
 msgid "CC: "
 msgstr "Nusxa: "
 
-#: header/plainheaderstyle.cpp:135
+#: header/plainheaderstyle.cpp:136
 #, fuzzy, kde-format
 #| msgid "CC: "
 msgid "BCC: "
 msgstr "Nusxa: "
 
-#: header/plainheaderstyle.cpp:140
+#: header/plainheaderstyle.cpp:141
 #, fuzzy, kde-format
 #| msgid "Repl&y to all:"
 msgid "Reply to: "
@@ -1654,7 +1654,7 @@ msgid "Keep Signature"
 msgstr "Imzoni qoldirish"
 
 #: utils/messageviewerutil.cpp:383 utils/messageviewerutil.cpp:401
-#: utils/messageviewerutil.cpp:419 utils/messageviewerutil.cpp:538
+#: utils/messageviewerutil.cpp:419 utils/messageviewerutil.cpp:539
 #, fuzzy, kde-kuit-format
 #| msgid "Could not write the file %1."
 msgctxt "1 = file name, 2 = error string"
@@ -1681,80 +1681,80 @@ msgstr "ilovali"
 msgid "Found no attachments to save."
 msgstr "Saqlash uchun ilova topilmadi."
 
-#: utils/messageviewerutil.cpp:450
+#: utils/messageviewerutil.cpp:451
 #, fuzzy, kde-format
 #| msgid "0 messages"
 msgid "message"
 msgstr "0 xat"
 
-#: utils/messageviewerutil.cpp:472
+#: utils/messageviewerutil.cpp:473
 #, kde-format
 msgid "Mailbox file (*.mbox);;All Files (*)"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:483
+#: utils/messageviewerutil.cpp:484
 #, fuzzy, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
 msgstr[0] "1 xat, %2."
 
-#: utils/messageviewerutil.cpp:508
+#: utils/messageviewerutil.cpp:509
 #, fuzzy, kde-format
 msgid "File %1 could not be loaded."
 msgstr "Tanlangan xabarlarni oʻqilmagan deb belgilash"
 
-#: utils/messageviewerutil.cpp:508
+#: utils/messageviewerutil.cpp:509
 #, fuzzy, kde-format
 #| msgid "Error while uploading message"
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Xabarni yozib qoʻyishda xato roʻy berdi"
 
-#: utils/messageviewerutil.cpp:510
+#: utils/messageviewerutil.cpp:511
 #, fuzzy, kde-format
 msgid "File %1 could not be created."
 msgstr "Tanlangan xabarlarni oʻqilmagan deb belgilash"
 
-#: utils/messageviewerutil.cpp:510 utils/messageviewerutil.cpp:541
+#: utils/messageviewerutil.cpp:511 utils/messageviewerutil.cpp:542
 #, fuzzy, kde-format
 #| msgid "Moving messages"
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Xabarlarni koʻchirish"
 
-#: utils/messageviewerutil.cpp:521
+#: utils/messageviewerutil.cpp:522
 #, fuzzy, kde-format
 #| msgid "End of signed message"
 msgid "We cannot save message."
 msgstr "Imzolangan xabarning oxiri"
 
-#: utils/messageviewerutil.cpp:521
+#: utils/messageviewerutil.cpp:522
 #, fuzzy, kde-format
 #| msgid "Moving messages"
 msgid "Error saving message"
 msgstr "Xabarlarni koʻchirish"
 
-#: utils/messageviewerutil.cpp:585
+#: utils/messageviewerutil.cpp:586
 #, fuzzy, kde-format
 #| msgid " Line: %1 "
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr " Satr: %1 "
 
-#: utils/messageviewerutil.cpp:596
+#: utils/messageviewerutil.cpp:597
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:624
+#: utils/messageviewerutil.cpp:625
 #, fuzzy, kde-format
 #| msgid "&Open with '%1'"
 msgid "Open &with %1"
 msgstr "'%1' bilan &ochish"
 
-#: utils/messageviewerutil.cpp:626
+#: utils/messageviewerutil.cpp:627
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"

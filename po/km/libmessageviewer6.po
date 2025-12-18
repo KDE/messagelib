@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-15 00:43+0000\n"
+"POT-Creation-Date: 2025-12-18 00:44+0000\n"
 "PO-Revision-Date: 2012-12-31 11:12+0700\n"
 "Last-Translator: sutha <sutha@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros>\n"
@@ -918,23 +918,23 @@ msgstr "ពី ៖ "
 msgid "[vCard]"
 msgstr "[vCard]"
 
-#: header/plainheaderstyle.cpp:121
+#: header/plainheaderstyle.cpp:122
 #, kde-format
 msgctxt "To-field of the mailheader."
 msgid "To: "
 msgstr "ជូនចំពោះ ៖"
 
-#: header/plainheaderstyle.cpp:128
+#: header/plainheaderstyle.cpp:129
 #, kde-format
 msgid "CC: "
 msgstr "ចម្លងជូន ៖ "
 
-#: header/plainheaderstyle.cpp:135
+#: header/plainheaderstyle.cpp:136
 #, kde-format
 msgid "BCC: "
 msgstr "ចម្លងជាសម្ងាត់ជូន ៖ "
 
-#: header/plainheaderstyle.cpp:140
+#: header/plainheaderstyle.cpp:141
 #, kde-format
 msgid "Reply to: "
 msgstr "ឆ្លើយតប​ទៅ ៖ "
@@ -1677,7 +1677,7 @@ msgid "Keep Signature"
 msgstr "ទុក​ហត្ថលេខា"
 
 #: utils/messageviewerutil.cpp:383 utils/messageviewerutil.cpp:401
-#: utils/messageviewerutil.cpp:419 utils/messageviewerutil.cpp:538
+#: utils/messageviewerutil.cpp:419 utils/messageviewerutil.cpp:539
 #, fuzzy, kde-kuit-format
 #| msgctxt "1 = file name, 2 = error string"
 #| msgid "<qt>Could not write to the file<br><filename>%1</filename><br><br>%2"
@@ -1704,12 +1704,12 @@ msgstr "មាន​កំហុស​ក្នុង​ការ​រក្ស
 msgid "Found no attachments to save."
 msgstr "រក​មិន​ឃើញ​ឯកសារភ្ជាប់ ដើម្បី​រក្សាទុក ។"
 
-#: utils/messageviewerutil.cpp:450
+#: utils/messageviewerutil.cpp:451
 #, kde-format
 msgid "message"
 msgstr "សារ​"
 
-#: utils/messageviewerutil.cpp:472
+#: utils/messageviewerutil.cpp:473
 #, fuzzy, kde-format
 #| msgid ""
 #| "*.mbox|email messages (*.mbox)\n"
@@ -1719,67 +1719,67 @@ msgstr ""
 "*.mbox|email messages (*.mbox)\n"
 "*|all files (*)"
 
-#: utils/messageviewerutil.cpp:483
+#: utils/messageviewerutil.cpp:484
 #, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
 msgstr[0] "រក្សា​ទុក​សារ​"
 
-#: utils/messageviewerutil.cpp:508
+#: utils/messageviewerutil.cpp:509
 #, kde-format
 msgid "File %1 could not be loaded."
 msgstr "មិន​អាច​ផ្ទុក​ឯកសារ %1 បាន​ទេ ។"
 
-#: utils/messageviewerutil.cpp:508
+#: utils/messageviewerutil.cpp:509
 #, fuzzy, kde-format
 #| msgid "Error loading message"
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "កំហុស​ក្នុង​ការ​ផ្ទុក​សារ​​..."
 
-#: utils/messageviewerutil.cpp:510
+#: utils/messageviewerutil.cpp:511
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "ឯកសារ %1 មិន​អាច​ត្រូវ​បាន​បង្កើត​ទេ ។"
 
-#: utils/messageviewerutil.cpp:510 utils/messageviewerutil.cpp:541
+#: utils/messageviewerutil.cpp:511 utils/messageviewerutil.cpp:542
 #, fuzzy, kde-format
 #| msgid "Error saving message"
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "កំហុស​ក្នុង​ការ​រក្សាទុក​ឯកសារ"
 
-#: utils/messageviewerutil.cpp:521
+#: utils/messageviewerutil.cpp:522
 #, fuzzy, kde-format
 #| msgid "We can not save message."
 msgid "We cannot save message."
 msgstr "មិន​អាច​រក្សាទុក​សារ​បាន​ទេ ។"
 
-#: utils/messageviewerutil.cpp:521
+#: utils/messageviewerutil.cpp:522
 #, kde-format
 msgid "Error saving message"
 msgstr "កំហុស​ក្នុង​ការ​រក្សាទុក​ឯកសារ"
 
-#: utils/messageviewerutil.cpp:585
+#: utils/messageviewerutil.cpp:586
 #, fuzzy, kde-format
 #| msgid "Delete Attachment"
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "លុប​ឯកសារ​ភ្ជាប់"
 
-#: utils/messageviewerutil.cpp:596
+#: utils/messageviewerutil.cpp:597
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:624
+#: utils/messageviewerutil.cpp:625
 #, kde-format
 msgid "Open &with %1"
 msgstr "បើក​ជាមួយ %1"
 
-#: utils/messageviewerutil.cpp:626
+#: utils/messageviewerutil.cpp:627
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"

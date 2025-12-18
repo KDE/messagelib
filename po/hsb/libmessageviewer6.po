@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-15 00:43+0000\n"
+"POT-Creation-Date: 2025-12-18 00:44+0000\n"
 "PO-Revision-Date: 2021-11-05 12:48+0100\n"
 "Last-Translator: Eduard Werner/Edward Wornar <edi.werner@gmx.de>\n"
 "Language-Team: <hsb@li.org>\n"
@@ -892,23 +892,23 @@ msgstr "Wot: "
 msgid "[vCard]"
 msgstr "[wizitka]"
 
-#: header/plainheaderstyle.cpp:121
+#: header/plainheaderstyle.cpp:122
 #, kde-format
 msgctxt "To-field of the mailheader."
 msgid "To: "
 msgstr "Na: "
 
-#: header/plainheaderstyle.cpp:128
+#: header/plainheaderstyle.cpp:129
 #, kde-format
 msgid "CC: "
 msgstr "Kopija na "
 
-#: header/plainheaderstyle.cpp:135
+#: header/plainheaderstyle.cpp:136
 #, kde-format
 msgid "BCC: "
 msgstr "Slepa kopija na: "
 
-#: header/plainheaderstyle.cpp:140
+#: header/plainheaderstyle.cpp:141
 #, kde-format
 msgid "Reply to: "
 msgstr "Wotmołwu na: "
@@ -1626,7 +1626,7 @@ msgid "Keep Signature"
 msgstr "Podpismo wobchować"
 
 #: utils/messageviewerutil.cpp:383 utils/messageviewerutil.cpp:401
-#: utils/messageviewerutil.cpp:419 utils/messageviewerutil.cpp:538
+#: utils/messageviewerutil.cpp:419 utils/messageviewerutil.cpp:539
 #, fuzzy, kde-kuit-format
 msgctxt "1 = file name, 2 = error string"
 msgid ""
@@ -1652,18 +1652,18 @@ msgstr "Přiwěšk: "
 msgid "Found no attachments to save."
 msgstr "Njepokazuje přiwěški w powěsći samej"
 
-#: utils/messageviewerutil.cpp:450
+#: utils/messageviewerutil.cpp:451
 #, fuzzy, kde-format
 #| msgid "0 messages"
 msgid "message"
 msgstr "žane powěsće"
 
-#: utils/messageviewerutil.cpp:472
+#: utils/messageviewerutil.cpp:473
 #, kde-format
 msgid "Mailbox file (*.mbox);;All Files (*)"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:483
+#: utils/messageviewerutil.cpp:484
 #, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
@@ -1672,60 +1672,60 @@ msgstr[1] "Powěsći zawěsćić"
 msgstr[2] "Powěsće zawěsćić"
 msgstr[3] "Powěsće zawěsćić"
 
-#: utils/messageviewerutil.cpp:508
+#: utils/messageviewerutil.cpp:509
 #, fuzzy, kde-format
 msgid "File %1 could not be loaded."
 msgstr "PGP-ŝifrowana powěsć"
 
-#: utils/messageviewerutil.cpp:508
+#: utils/messageviewerutil.cpp:509
 #, fuzzy, kde-format
 #| msgid "Error while uploading message"
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Zmylk při pósłanju powěsće na server"
 
-#: utils/messageviewerutil.cpp:510
+#: utils/messageviewerutil.cpp:511
 #, fuzzy, kde-format
 msgid "File %1 could not be created."
 msgstr "PGP-ŝifrowana powěsć"
 
-#: utils/messageviewerutil.cpp:510 utils/messageviewerutil.cpp:541
+#: utils/messageviewerutil.cpp:511 utils/messageviewerutil.cpp:542
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Přesuwam powěsć %3 z %2 wot %1."
 
-#: utils/messageviewerutil.cpp:521
+#: utils/messageviewerutil.cpp:522
 #, fuzzy, kde-format
 #| msgid "End of signed message"
 msgid "We cannot save message."
 msgstr "Kónc podpisaneje powěsće"
 
-#: utils/messageviewerutil.cpp:521
+#: utils/messageviewerutil.cpp:522
 #, fuzzy, kde-format
 msgid "Error saving message"
 msgstr "Přesuwam powěsć %3 z %2 wot %1."
 
-#: utils/messageviewerutil.cpp:585
+#: utils/messageviewerutil.cpp:586
 #, fuzzy, kde-format
 #| msgid " Line: %1 "
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr " Linka: %1"
 
-#: utils/messageviewerutil.cpp:596
+#: utils/messageviewerutil.cpp:597
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:624
+#: utils/messageviewerutil.cpp:625
 #, fuzzy, kde-format
 msgid "Open &with %1"
 msgstr "Přiwěšk %1 wočinić?"
 
-#: utils/messageviewerutil.cpp:626
+#: utils/messageviewerutil.cpp:627
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"

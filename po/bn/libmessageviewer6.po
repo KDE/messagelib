@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-15 00:43+0000\n"
+"POT-Creation-Date: 2025-12-18 00:44+0000\n"
 "PO-Revision-Date: 2006-02-06 01:01-0600\n"
 "Last-Translator: Deepayan Sarkar <deepayan@bengalinux.org>\n"
 "Language-Team: Bengali <kde-translation@bengalinux.org>\n"
@@ -936,24 +936,24 @@ msgstr "প্রেরক: "
 msgid "[vCard]"
 msgstr "[ভি-কার্ড]"
 
-#: header/plainheaderstyle.cpp:121
+#: header/plainheaderstyle.cpp:122
 #, fuzzy, kde-format
 #| msgid "To: "
 msgctxt "To-field of the mailheader."
 msgid "To: "
 msgstr "গ্রাহক: "
 
-#: header/plainheaderstyle.cpp:128
+#: header/plainheaderstyle.cpp:129
 #, kde-format
 msgid "CC: "
 msgstr "CC: "
 
-#: header/plainheaderstyle.cpp:135
+#: header/plainheaderstyle.cpp:136
 #, kde-format
 msgid "BCC: "
 msgstr "BCC: "
 
-#: header/plainheaderstyle.cpp:140
+#: header/plainheaderstyle.cpp:141
 #, kde-format
 msgid "Reply to: "
 msgstr "উত্তর প্রাপক: "
@@ -1675,7 +1675,7 @@ msgid "Keep Signature"
 msgstr "স্বাক্ষর রাখো"
 
 #: utils/messageviewerutil.cpp:383 utils/messageviewerutil.cpp:401
-#: utils/messageviewerutil.cpp:419 utils/messageviewerutil.cpp:538
+#: utils/messageviewerutil.cpp:419 utils/messageviewerutil.cpp:539
 #, fuzzy, kde-kuit-format
 #| msgctxt "%2 is detailed error description"
 #| msgid ""
@@ -1707,83 +1707,83 @@ msgstr "একটি অ্যাটাচমেন্ট আছে"
 msgid "Found no attachments to save."
 msgstr "সংরক্ষণ করার মত কোন অ্যাটাচমেন্ট পাওয়া যায়নি।"
 
-#: utils/messageviewerutil.cpp:450
+#: utils/messageviewerutil.cpp:451
 #, fuzzy, kde-format
 #| msgid "0 messages"
 msgid "message"
 msgstr "0 বার্তা"
 
-#: utils/messageviewerutil.cpp:472
+#: utils/messageviewerutil.cpp:473
 #, kde-format
 msgid "Mailbox file (*.mbox);;All Files (*)"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:483
+#: utils/messageviewerutil.cpp:484
 #, fuzzy, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
 msgstr[0] "একটি বার্তা, %2."
 msgstr[1] "একটি বার্তা, %2."
 
-#: utils/messageviewerutil.cpp:508
+#: utils/messageviewerutil.cpp:509
 #, fuzzy, kde-format
 #| msgid "Store sent messages &encrypted"
 msgid "File %1 could not be loaded."
 msgstr "প্রেরিত বার্তা এ&নক্রিপ্ট করা অবস্থায় সংরক্ষণ করো"
 
-#: utils/messageviewerutil.cpp:508
+#: utils/messageviewerutil.cpp:509
 #, fuzzy, kde-format
 #| msgid "Error while uploading message"
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "বার্তা আপলোড করাকালীন সমস্যা"
 
-#: utils/messageviewerutil.cpp:510
+#: utils/messageviewerutil.cpp:511
 #, fuzzy, kde-format
 #| msgid "Store sent messages &encrypted"
 msgid "File %1 could not be created."
 msgstr "প্রেরিত বার্তা এ&নক্রিপ্ট করা অবস্থায় সংরক্ষণ করো"
 
-#: utils/messageviewerutil.cpp:510 utils/messageviewerutil.cpp:541
+#: utils/messageviewerutil.cpp:511 utils/messageviewerutil.cpp:542
 #, fuzzy, kde-format
 #| msgid "Moving messages"
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "বার্তা সরানো হচ্ছে"
 
-#: utils/messageviewerutil.cpp:521
+#: utils/messageviewerutil.cpp:522
 #, fuzzy, kde-format
 #| msgid "End of signed message"
 msgid "We cannot save message."
 msgstr "স্বাক্ষর করা বার্তার শেষ"
 
-#: utils/messageviewerutil.cpp:521
+#: utils/messageviewerutil.cpp:522
 #, fuzzy, kde-format
 #| msgid "Moving messages"
 msgid "Error saving message"
 msgstr "বার্তা সরানো হচ্ছে"
 
-#: utils/messageviewerutil.cpp:585
+#: utils/messageviewerutil.cpp:586
 #, fuzzy, kde-format
 #| msgid " Line: %1 "
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr " লাইন: %1"
 
-#: utils/messageviewerutil.cpp:596
+#: utils/messageviewerutil.cpp:597
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:624
+#: utils/messageviewerutil.cpp:625
 #, fuzzy, kde-format
 #| msgid "&Open with '%1'"
 msgid "Open &with %1"
 msgstr "'%1' দিয়ে খোলো (&খ)"
 
-#: utils/messageviewerutil.cpp:626
+#: utils/messageviewerutil.cpp:627
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"

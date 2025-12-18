@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-14 00:43+0000\n"
+"POT-Creation-Date: 2025-12-18 00:44+0000\n"
 "PO-Revision-Date: 2024-12-29 22:52+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -1126,7 +1126,7 @@ msgctxt "@action"
 msgid "Configure..."
 msgstr "विन्यस्तं कुर्वन्तु..."
 
-#: core/widgets/quicksearchline.cpp:58
+#: core/widgets/quicksearchline.cpp:59
 #, kde-format
 msgctxt "Search for messages."
 msgid "Search"

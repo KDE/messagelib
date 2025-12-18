@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-15 00:43+0000\n"
+"POT-Creation-Date: 2025-12-18 00:44+0000\n"
 "PO-Revision-Date: 2021-08-13 01:49+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -935,24 +935,24 @@ msgstr "द्वारा:"
 msgid "[vCard]"
 msgstr "[वी-कार्ड]"
 
-#: header/plainheaderstyle.cpp:121
+#: header/plainheaderstyle.cpp:122
 #, fuzzy, kde-format
 #| msgid "To: "
 msgctxt "To-field of the mailheader."
 msgid "To: "
 msgstr "मिलेः"
 
-#: header/plainheaderstyle.cpp:128
+#: header/plainheaderstyle.cpp:129
 #, kde-format
 msgid "CC: "
 msgstr "नक़ल: "
 
-#: header/plainheaderstyle.cpp:135
+#: header/plainheaderstyle.cpp:136
 #, kde-format
 msgid "BCC: "
 msgstr "गुमनाम पता.: "
 
-#: header/plainheaderstyle.cpp:140
+#: header/plainheaderstyle.cpp:141
 #, kde-format
 msgid "Reply to: "
 msgstr "को जवाब भेजें:"
@@ -1692,7 +1692,7 @@ msgid "Keep Signature"
 msgstr "हस्ताक्षर रखे रहें"
 
 #: utils/messageviewerutil.cpp:383 utils/messageviewerutil.cpp:401
-#: utils/messageviewerutil.cpp:419 utils/messageviewerutil.cpp:538
+#: utils/messageviewerutil.cpp:419 utils/messageviewerutil.cpp:539
 #, fuzzy, kde-kuit-format
 #| msgctxt "%2 is detailed error description"
 #| msgid ""
@@ -1724,18 +1724,18 @@ msgstr "के साथ संलग्नक है"
 msgid "Found no attachments to save."
 msgstr "सहेजने के लिए कोई संलग्नक नहीं मिला."
 
-#: utils/messageviewerutil.cpp:450
+#: utils/messageviewerutil.cpp:451
 #, fuzzy, kde-format
 #| msgid "0 messages"
 msgid "message"
 msgstr "0 संदेश"
 
-#: utils/messageviewerutil.cpp:472
+#: utils/messageviewerutil.cpp:473
 #, kde-format
 msgid "Mailbox file (*.mbox);;All Files (*)"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:483
+#: utils/messageviewerutil.cpp:484
 #, fuzzy, kde-format
 #| msgid " message"
 #| msgid_plural " messages"
@@ -1744,63 +1744,63 @@ msgid_plural "Save Messages"
 msgstr[0] "संदेश"
 msgstr[1] "संदेश"
 
-#: utils/messageviewerutil.cpp:508
+#: utils/messageviewerutil.cpp:509
 #, fuzzy, kde-format
 msgid "File %1 could not be loaded."
 msgstr "भेजे गए संदेशों को एनक्रिप्टेड भंडारित करें (&p)"
 
-#: utils/messageviewerutil.cpp:508
+#: utils/messageviewerutil.cpp:509
 #, fuzzy, kde-format
 #| msgid "Error while uploading message"
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "संदेश अपलोड करते समय त्रुटि हुई"
 
-#: utils/messageviewerutil.cpp:510
+#: utils/messageviewerutil.cpp:511
 #, fuzzy, kde-format
 msgid "File %1 could not be created."
 msgstr "भेजे गए संदेशों को एनक्रिप्टेड भंडारित करें (&p)"
 
-#: utils/messageviewerutil.cpp:510 utils/messageviewerutil.cpp:541
+#: utils/messageviewerutil.cpp:511 utils/messageviewerutil.cpp:542
 #, fuzzy, kde-format
 #| msgid "Moving messages"
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "संदेश खिसकाया जा रहा है"
 
-#: utils/messageviewerutil.cpp:521
+#: utils/messageviewerutil.cpp:522
 #, fuzzy, kde-format
 #| msgid "End of signed message"
 msgid "We cannot save message."
 msgstr "हस्ताक्षरित संदेश का अंत"
 
-#: utils/messageviewerutil.cpp:521
+#: utils/messageviewerutil.cpp:522
 #, fuzzy, kde-format
 #| msgid "Moving messages"
 msgid "Error saving message"
 msgstr "संदेश खिसकाया जा रहा है"
 
-#: utils/messageviewerutil.cpp:585
+#: utils/messageviewerutil.cpp:586
 #, fuzzy, kde-format
 #| msgid "Declined: %1"
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "अस्वीकृत: %1"
 
-#: utils/messageviewerutil.cpp:596
+#: utils/messageviewerutil.cpp:597
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:624
+#: utils/messageviewerutil.cpp:625
 #, fuzzy, kde-format
 #| msgid "&Open with '%1'"
 msgid "Open &with %1"
 msgstr " '%1' के साथ खोलें (&O)"
 
-#: utils/messageviewerutil.cpp:626
+#: utils/messageviewerutil.cpp:627
 #, fuzzy, kde-format
 #| msgid "%"
 msgctxt "@item:inmenu Open With, %1 is application name"
