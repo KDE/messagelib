@@ -32,9 +32,9 @@ void SinglepartJobTest::testContent()
     result->assemble();
     qDebug() << result->encodedContent();
     QCOMPARE(result->body(), data);
-    QCOMPARE(result->contentDisposition(false), nullptr); // Not created unless demanded.
+    QCOMPARE(result->contentDisposition(KMime::CreatePolicy::DontCreate), nullptr); // Not created unless demanded.
     QCOMPARE(result->contentType(KMime::CreatePolicy::DontCreate), nullptr); // Not created unless demanded.
-    QVERIFY(result->contentTransferEncoding(false)); // KMime gives it a default one (7bit).
+    QVERIFY(result->contentTransferEncoding(KMime::CreatePolicy::DontCreate)); // KMime gives it a default one (7bit).
     delete cjob;
 }
 
@@ -52,7 +52,7 @@ void SinglepartJobTest::testContentDisposition()
     result->assemble();
     qDebug() << result->encodedContent();
     QCOMPARE(result->body(), data);
-    QVERIFY(result->contentDisposition(false));
+    QVERIFY(result->contentDisposition(KMime::CreatePolicy::DontCreate));
     QCOMPARE(result->contentDisposition()->disposition(), Headers::CDattachment);
     QCOMPARE(result->contentDisposition()->filename(), filename);
     delete cjob;
@@ -110,7 +110,7 @@ void SinglepartJobTest::testContentTransferEncoding()
         Content *result = cjob->content();
         result->assemble();
         qDebug() << result->encodedContent();
-        QVERIFY(result->contentTransferEncoding(false));
+        QVERIFY(result->contentTransferEncoding(KMime::CreatePolicy::DontCreate));
         QCOMPARE(result->contentTransferEncoding()->encoding(), Headers::CE7Bit);
         QCOMPARE(result->body(), data);
         delete cjob;
@@ -125,7 +125,7 @@ void SinglepartJobTest::testContentTransferEncoding()
         Content *result = cjob->content();
         result->assemble();
         qDebug() << result->encodedContent();
-        QVERIFY(result->contentTransferEncoding(false));
+        QVERIFY(result->contentTransferEncoding(KMime::CreatePolicy::DontCreate));
         QCOMPARE(result->contentTransferEncoding()->encoding(), Headers::CEquPr);
         QCOMPARE(result->body(), data);
         delete cjob;
@@ -140,7 +140,7 @@ void SinglepartJobTest::testContentTransferEncoding()
         Content *result = cjob->content();
         result->assemble();
         qDebug() << result->encodedContent();
-        QVERIFY(result->contentTransferEncoding(false));
+        QVERIFY(result->contentTransferEncoding(KMime::CreatePolicy::DontCreate));
         QCOMPARE(result->contentTransferEncoding()->encoding(), Headers::CEbase64);
         QCOMPARE(result->body(), data);
         delete cjob;

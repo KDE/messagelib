@@ -179,7 +179,7 @@ void SkeletonMessageJobTest::testAddresses()
 
     {
         QVERIFY(message->bcc(KMime::CreatePolicy::DontCreate));
-        // qDebug() << "Bcc:" << message->bcc()->asUnicodeString();
+        // qDebug() << "Bcc:" << message->bcc(KMime::CreatePolicy::Create)->asUnicodeString();
         const auto mailboxes{message->bcc(KMime::CreatePolicy::DontCreate)->mailboxes()};
         for (const auto &addr : mailboxes) {
             // qDebug() << addr.prettyAddress();
@@ -201,8 +201,8 @@ void SkeletonMessageJobTest::testMessageID()
     auto sjob = new SkeletonMessageJob(infoPart, globalPart, &composerJob);
     QVERIFY(sjob->exec());
     const auto message = sjob->takeMessage();
-    QVERIFY(message->messageID(false));
-    QVERIFY(!message->messageID(false)->isEmpty());
+    QVERIFY(message->messageID(KMime::CreatePolicy::DontCreate));
+    QVERIFY(!message->messageID(KMime::CreatePolicy::DontCreate)->isEmpty());
     delete sjob;
 }
 

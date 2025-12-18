@@ -73,7 +73,7 @@ void applyIdentity(const std::shared_ptr<KMime::Message> &message, const KIdenti
     } else {
         const auto mailboxes = KMime::Types::Mailbox::listFromUnicodeString(ident.bcc());
         for (const KMime::Types::Mailbox &mailbox : mailboxes) {
-            message->bcc()->addAddress(mailbox);
+            message->bcc(KMime::CreatePolicy::Create)->addAddress(mailbox);
         }
     }
 
@@ -147,7 +147,7 @@ KMime::Types::AddrSpecList extractAddrSpecs(const std::shared_ptr<const KMime::M
 
 void setAutomaticFields(const std::shared_ptr<KMime::Message> &msg, bool aIsMulti)
 {
-    auto header = msg->header<KMime::Headers::MIMEVersion>(true);
+    auto header = msg->header<KMime::Headers::MIMEVersion>(KMime::CreatePolicy::Create);
     header->from7BitString("1.0");
 
     if (aIsMulti || msg->contents().size() > 1) {

@@ -196,7 +196,7 @@ void SignJob::process()
         // Note: If any line begins with the string "From ", it is strongly
         //   suggested that either the Quoted-Printable or Base64 MIME encoding
         //   be applied.
-        const auto cte = d->content->contentTransferEncoding(false);
+        const auto cte = d->content->contentTransferEncoding(KMime::CreatePolicy::DontCreate);
         const auto encoding = cte ? cte->encoding() : KMime::Headers::CE7Bit;
         if ((encoding == KMime::Headers::CEquPr || encoding == KMime::Headers::CE7Bit) && !d->content->contentType(KMime::CreatePolicy::DontCreate)) {
             QByteArray body = d->content->encodedBody();

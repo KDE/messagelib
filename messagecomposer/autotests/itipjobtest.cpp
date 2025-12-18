@@ -65,7 +65,7 @@ void ItipJobTest::testInvitationWithAttachment()
     QCOMPARE(subparts.size(), 2);
     const auto msgPart = subparts[0];
     QCOMPARE(msgPart->contentType(KMime::CreatePolicy::DontCreate)->mimeType(), "text/plain");
-    QCOMPARE(msgPart->contentDisposition(false)->disposition(), KMime::Headers::CDinline);
+    QCOMPARE(msgPart->contentDisposition(KMime::CreatePolicy::DontCreate)->disposition(), KMime::Headers::CDinline);
     QCOMPARE(msgPart->decodedText(), testItipMessage);
 
     const auto itipPart = subparts[1];
@@ -73,7 +73,7 @@ void ItipJobTest::testInvitationWithAttachment()
     QCOMPARE(itipPart->contentType(KMime::CreatePolicy::DontCreate)->name(), u"cal.ics"_s);
     QCOMPARE(itipPart->contentType(KMime::CreatePolicy::DontCreate)->parameter("method"), u"request"_s);
     QCOMPARE(itipPart->contentType(KMime::CreatePolicy::DontCreate)->charset(), "utf-8");
-    QCOMPARE(itipPart->contentDisposition(false)->disposition(), KMime::Headers::CDattachment);
+    QCOMPARE(itipPart->contentDisposition(KMime::CreatePolicy::DontCreate)->disposition(), KMime::Headers::CDattachment);
     QCOMPARE(itipPart->decodedText(), testItip);
 }
 
@@ -93,7 +93,7 @@ void ItipJobTest::testInvitationWithoutAttachment()
     QVERIFY(content);
 
     QCOMPARE(content->contentType(KMime::CreatePolicy::DontCreate)->mimeType(), "text/plain");
-    QCOMPARE(content->contentDisposition(false)->disposition(), KMime::Headers::CDinline);
+    QCOMPARE(content->contentDisposition(KMime::CreatePolicy::DontCreate)->disposition(), KMime::Headers::CDinline);
     QCOMPARE(content->decodedText(), testItipMessage);
 }
 
@@ -117,7 +117,7 @@ void ItipJobTest::testOutlookInvitationWithAttachment()
     QCOMPARE(content->contentType(KMime::CreatePolicy::DontCreate)->name(), u"cal.ics"_s);
     QCOMPARE(content->contentType(KMime::CreatePolicy::DontCreate)->parameter("method"), u"request"_s);
     QCOMPARE(content->contentType(KMime::CreatePolicy::DontCreate)->charset(), "utf-8");
-    QCOMPARE(content->contentDisposition(false)->disposition(), KMime::Headers::CDinline);
+    QCOMPARE(content->contentDisposition(KMime::CreatePolicy::DontCreate)->disposition(), KMime::Headers::CDinline);
     QCOMPARE(content->decodedText(), testItip);
 }
 

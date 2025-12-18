@@ -568,7 +568,7 @@ bool Util::deleteAttachment(KMime::Content *node)
     QString filename;
     QString name;
     QByteArray mimetype;
-    if (auto cd = node->contentDisposition(false)) {
+    if (auto cd = node->contentDisposition(KMime::CreatePolicy::DontCreate)) {
         filename = cd->filename();
     }
 
@@ -588,8 +588,8 @@ bool Util::deleteAttachment(KMime::Content *node)
     auto deleteCt = deletePart->contentType(KMime::CreatePolicy::Create);
     deleteCt->setMimeType("text/x-moz-deleted");
     deleteCt->setName(newName);
-    deletePart->contentDisposition(true)->setDisposition(KMime::Headers::CDattachment);
-    deletePart->contentDisposition(false)->setFilename(newName);
+    deletePart->contentDisposition(KMime::CreatePolicy::Create)->setDisposition(KMime::Headers::CDattachment);
+    deletePart->contentDisposition(KMime::CreatePolicy::DontCreate)->setFilename(newName);
 
     deleteCt->setCharset("utf-8");
     deletePart->contentTransferEncoding()->setEncoding(KMime::Headers::CEquPr);

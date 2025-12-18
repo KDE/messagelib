@@ -441,7 +441,7 @@ std::shared_ptr<KMime::Message> MessageFactoryNG::createResend()
     msg->setHeader(std::move(header));
 
     // Restore the original bcc field as this is overwritten in applyIdentity
-    msg->bcc(mOrigMsg->bcc());
+    msg->bcc(mOrigMsg->bcc(KMime::CreatePolicy::Create));
     return msg;
 }
 

@@ -116,7 +116,8 @@ void ComposerViewBase::setMessage(const std::shared_ptr<KMime::Message> &msg, bo
             resultTooManyRecipients = m_recipientsEditor->setRecipientString(m_msg->cc()->mailboxes(), MessageComposer::Recipient::Cc);
         }
         if (!resultTooManyRecipients) {
-            resultTooManyRecipients = m_recipientsEditor->setRecipientString(m_msg->bcc()->mailboxes(), MessageComposer::Recipient::Bcc);
+            resultTooManyRecipients =
+                m_recipientsEditor->setRecipientString(m_msg->bcc(KMime::CreatePolicy::Create)->mailboxes(), MessageComposer::Recipient::Bcc);
         }
         if (!resultTooManyRecipients) {
             resultTooManyRecipients = m_recipientsEditor->setRecipientString(m_msg->replyTo()->mailboxes(), MessageComposer::Recipient::ReplyTo);
@@ -1170,7 +1171,7 @@ void ComposerViewBase::slotQueueResult(KJob *job)
     }
 
     if (m_pendingQueueJobs == 0) {
-        addFollowupReminder(qjob->message()->messageID(false)->asUnicodeString());
+        addFollowupReminder(qjob->message()->messageID(KMime::CreatePolicy::DontCreate)->asUnicodeString());
         Q_EMIT sentSuccessfully(-1);
     }
 }
