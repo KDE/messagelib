@@ -179,7 +179,7 @@ MessagePart::Ptr ObjectTreeParser::parseObjectTreeInternal(KMime::Content *node,
     auto parsedPart = MessagePart::Ptr(new MessagePartList(this));
     parsedPart->setIsRoot(isRoot);
     KMime::Content *parent = node->parent();
-    auto contents = parent ? parent->contents() : KMime::Content::List();
+    auto contents = parent ? parent->contents() : QList<KMime::Content *>();
     if (contents.isEmpty()) {
         contents.append(node);
     }

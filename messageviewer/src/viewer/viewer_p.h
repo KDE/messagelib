@@ -229,7 +229,7 @@ public:
     [[nodiscard]] bool deleteAttachment(KMime::Content *node, bool showWarning = true);
 
     void attachmentProperties(const KMime::Content *node);
-    void attachmentCopy(const KMime::Content::List &contents);
+    void attachmentCopy(const QList<KMime::Content *> &contents);
 
     void scrollToAnchor(const QString &anchor);
 
@@ -243,7 +243,7 @@ public:
     void prepareHandleAttachment(KMime::Content *node);
 
     [[nodiscard]] KService::Ptr getServiceOffer(KMime::Content *content);
-    [[nodiscard]] KMime::Content::List selectedContents() const;
+    [[nodiscard]] QList<KMime::Content *> selectedContents() const;
     void attachmentOpenWith(const KMime::Content *node, const KService::Ptr &offer = KService::Ptr());
     void attachmentOpen(KMime::Content *node);
 

@@ -962,7 +962,7 @@ void ComposerViewBase::fillInfoPart(MessageComposer::InfoPart *infoPart, Compose
         infoPart->setReferences(references->asUnicodeString());
     }
 
-    KMime::Headers::Base::List extras;
+    QList<KMime::Headers::Base *> extras;
     if (auto hdr = m_msg->headerByType("X-KMail-SignatureActionEnabled")) {
         extras << hdr;
     }

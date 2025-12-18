@@ -87,8 +87,8 @@ public:
     [[nodiscard]] QString references() const;
     void setReferences(const QString &references);
 
-    void setExtraHeaders(const KMime::Headers::Base::List &headers);
-    [[nodiscard]] KMime::Headers::Base::List extraHeaders() const;
+    void setExtraHeaders(const QList<KMime::Headers::Base *> &headers);
+    [[nodiscard]] QList<KMime::Headers::Base *> extraHeaders() const;
 
     [[nodiscard]] int transportId() const;
     void setTransportId(int tid);

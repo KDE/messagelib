@@ -13,7 +13,7 @@ class InfoPart::InfoPartPrivate
 public:
     InfoPartPrivate() = default;
 
-    KMime::Headers::Base::List extraHeaders;
+    QList<KMime::Headers::Base *> extraHeaders;
     QStringList to;
     QStringList cc;
     QStringList bcc;
@@ -182,12 +182,12 @@ void InfoPart::setReferences(const QString &references)
     d->references = references;
 }
 
-void InfoPart::setExtraHeaders(const KMime::Headers::Base::List &headers)
+void InfoPart::setExtraHeaders(const QList<KMime::Headers::Base *> &headers)
 {
     d->extraHeaders = headers;
 }
 
-KMime::Headers::Base::List InfoPart::extraHeaders() const
+QList<KMime::Headers::Base *> InfoPart::extraHeaders() const
 {
     return d->extraHeaders;
 }

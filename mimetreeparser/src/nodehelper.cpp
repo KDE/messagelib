@@ -340,7 +340,7 @@ KMMsgEncryptionState NodeHelper::overallEncryptionState(KMime::Content *node) co
     }
 
     KMime::Content *parent = node->parent();
-    auto contents = parent ? parent->contents() : KMime::Content::List();
+    auto contents = parent ? parent->contents() : QList<KMime::Content *>();
     if (contents.isEmpty()) {
         contents.append(node);
     }
@@ -401,7 +401,7 @@ KMMsgSignatureState NodeHelper::overallSignatureState(KMime::Content *node) cons
     }
 
     KMime::Content *parent = node->parent();
-    auto contents = parent ? parent->contents() : KMime::Content::List();
+    auto contents = parent ? parent->contents() : QList<KMime::Content *>();
     if (contents.isEmpty()) {
         contents.append(node);
     }

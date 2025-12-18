@@ -164,7 +164,7 @@ void SkeletonMessageJobPrivate::doStart()
     }
     // Extras
 
-    const KMime::Headers::Base::List extraHeaders = infoPart->extraHeaders();
+    const QList<KMime::Headers::Base *> extraHeaders = infoPart->extraHeaders();
     for (KMime::Headers::Base *extra : extraHeaders) {
         const QByteArray headerType(extra->type());
         auto copyHeader = KMime::Headers::createHeader(headerType);

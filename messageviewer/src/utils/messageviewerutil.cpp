@@ -146,7 +146,7 @@ bool Util::handleUrlWithQDesktopServices(const QUrl &url)
 #endif
 }
 
-bool Util::saveContents(QWidget *parent, const KMime::Content::List &contents, QList<QUrl> &urlList)
+bool Util::saveContents(QWidget *parent, const QList<KMime::Content *> &contents, QList<QUrl> &urlList)
 {
     QUrl url;
     QUrl dirUrl;
@@ -429,7 +429,7 @@ bool Util::saveContent(QWidget *parent, const KMime::Content *content, const QUr
     return true;
 }
 
-bool Util::saveAttachments(const KMime::Content::List &contents, QWidget *parent, QList<QUrl> &urlList)
+bool Util::saveAttachments(const QList<KMime::Content *> &contents, QWidget *parent, QList<QUrl> &urlList)
 {
     if (contents.isEmpty()) {
         KMessageBox::information(parent, i18n("Found no attachments to save."));
@@ -607,7 +607,7 @@ bool Util::deleteAttachment(KMime::Content *node)
     return true;
 }
 
-int Util::deleteAttachments(const KMime::Content::List &nodes)
+int Util::deleteAttachments(const QList<KMime::Content *> &nodes)
 {
     int updatedCount = 0;
     for (const auto node : nodes) {

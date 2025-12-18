@@ -49,11 +49,11 @@ static bool operator==(const KMime::Types::Mailbox &left, const KMime::Types::Ma
  * Strips all the user's addresses from an address list. This is used
  * when replying.
  */
-static KMime::Types::Mailbox::List stripMyAddressesFromAddressList(const KMime::Types::Mailbox::List &list,
-                                                                   const KIdentityManagementCore::IdentityManager *manager)
+static QList<KMime::Types::Mailbox> stripMyAddressesFromAddressList(const QList<KMime::Types::Mailbox> &list,
+                                                                    const KIdentityManagementCore::IdentityManager *manager)
 {
-    KMime::Types::Mailbox::List addresses(list);
-    for (KMime::Types::Mailbox::List::Iterator it = addresses.begin(); it != addresses.end();) {
+    QList<KMime::Types::Mailbox> addresses(list);
+    for (QList<KMime::Types::Mailbox>::Iterator it = addresses.begin(); it != addresses.end();) {
         if (manager->thatIsMe(it->prettyAddress())) {
             it = addresses.erase(it);
         } else {
@@ -79,7 +79,7 @@ MessageFactoryNG::~MessageFactoryNG() = default;
 
 // Return the addresses to use when replying to the author of msg.
 // See <https://cr.yp.to/proto/replyto.html>.
-static KMime::Types::Mailbox::List authorMailboxes(const std::shared_ptr<KMime::Message> &msg, const KMime::Types::Mailbox::List &mailingLists)
+static QList<KMime::Types::Mailbox> authorMailboxes(const std::shared_ptr<KMime::Message> &msg, const QList<KMime::Types::Mailbox> &mailingLists)
 {
     if (auto mrt = msg->headerByType("Mail-Reply-To")) {
         return KMime::Types::Mailbox::listFrom7BitString(mrt->as7BitString());
@@ -123,8 +123,8 @@ void MessageFactoryNG::createReplyAsync()
     std::shared_ptr<KMime::Message> msg(new KMime::Message);
     QByteArray refStr;
     bool replyAll = true;
-    KMime::Types::Mailbox::List toList;
-    KMime::Types::Mailbox::List replyToList;
+    QList<KMime::Types::Mailbox> toList;
+    QList<KMime::Types::Mailbox> replyToList;
 
     const uint originalIdentity = identityUoid(mOrigMsg);
     MessageHelper::initFromMessage(msg, mOrigMsg, mIdentityManager, originalIdentity);
@@ -173,7 +173,7 @@ void MessageFactoryNG::createReplyAsync()
             replyAll = false;
         }
         // strip all my addresses from the list of recipients
-        const KMime::Types::Mailbox::List recipients = toList;
+        const QList<KMime::Types::Mailbox> recipients = toList;
 
         toList = stripMyAddressesFromAddressList(recipients, mIdentityManager);
 
@@ -196,7 +196,7 @@ void MessageFactoryNG::createReplyAsync()
         }
 
         // strip all my addresses from the list of recipients
-        const KMime::Types::Mailbox::List recipients = toList;
+        const QList<KMime::Types::Mailbox> recipients = toList;
 
         toList = stripMyAddressesFromAddressList(recipients, mIdentityManager);
         break;
@@ -768,7 +768,7 @@ void MessageFactoryNG::setTemplate(const QString &templ)
     mTemplate = templ;
 }
 
-void MessageFactoryNG::setMailingListAddresses(const KMime::Types::Mailbox::List &listAddresses)
+void MessageFactoryNG::setMailingListAddresses(const QList<KMime::Types::Mailbox> &listAddresses)
 {
     mMailingListAddresses << listAddresses;
 }

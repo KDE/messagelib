@@ -24,7 +24,7 @@ public:
     void init(QObject *parent);
     void doNextSubjob();
 
-    KMime::Content::List subjobContents;
+    QList<KMime::Content *> subjobContents;
     KMime::Content *resultContent = nullptr;
 
     Q_DECLARE_PUBLIC(ContentJobBase)

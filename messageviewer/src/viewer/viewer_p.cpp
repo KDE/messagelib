@@ -324,7 +324,7 @@ void ViewerPrivate::openAttachment(KMime::Content *node, const QUrl &url)
     delete dialog;
     if (choice == AttachmentDialog::Save) {
         QList<QUrl> urlList;
-        if (Util::saveContents(mMainWindow, KMime::Content::List() << node, urlList)) {
+        if (Util::saveContents(mMainWindow, QList<KMime::Content *>() << node, urlList)) {
             showSavedFileFolderWidget(urlList, MessageViewer::OpenSavedFileFolderWidget::FileType::Attachment);
         }
     } else if (choice == AttachmentDialog::Open) { // Open
@@ -628,7 +628,7 @@ KService::Ptr ViewerPrivate::getServiceOffer(KMime::Content *content)
     return KApplicationTrader::preferredService(mimetype.name());
 }
 
-KMime::Content::List ViewerPrivate::selectedContents() const
+QList<KMime::Content *> ViewerPrivate::selectedContents() const
 {
     return mMimePartTree->selectedContents();
 }
@@ -2533,7 +2533,7 @@ void ViewerPrivate::slotAttachmentCopy()
 #endif
 }
 
-void ViewerPrivate::attachmentCopy(const KMime::Content::List &contents)
+void ViewerPrivate::attachmentCopy(const QList<KMime::Content *> &contents)
 {
 #ifndef QT_NO_CLIPBOARD
     if (contents.isEmpty()) {
@@ -2613,7 +2613,7 @@ void ViewerPrivate::slotHandleAttachment(int choice)
             }
         } else {
             QList<QUrl> urlList;
-            if (Util::saveContents(mMainWindow, KMime::Content::List() << mCurrentContent, urlList)) {
+            if (Util::saveContents(mMainWindow, QList<KMime::Content *>() << mCurrentContent, urlList)) {
                 showSavedFileFolderWidget(urlList, MessageViewer::OpenSavedFileFolderWidget::FileType::Attachment);
             }
         }
@@ -2629,7 +2629,7 @@ void ViewerPrivate::slotHandleAttachment(int choice)
         attachmentView(mCurrentContent);
         break;
     case Viewer::Copy:
-        attachmentCopy(KMime::Content::List() << mCurrentContent);
+        attachmentCopy(QList<KMime::Content *>() << mCurrentContent);
         break;
     case Viewer::ScrollTo:
         scrollToAttachment(mCurrentContent);

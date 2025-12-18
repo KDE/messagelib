@@ -36,7 +36,7 @@ saveMessageInMboxAndGetUrl(QUrl &url, const Akonadi::Item::List &retrievedMsgs, 
 [[nodiscard]] MESSAGEVIEWER_EXPORT bool saveMessageInMbox(const Akonadi::Item::List &retrievedMsgs, QWidget *parent, bool appendMessages = false);
 [[nodiscard]] MESSAGEVIEWER_EXPORT bool excludeExtraHeader(const QString &s);
 [[nodiscard]] MESSAGEVIEWER_EXPORT QString generateMboxFileName(const Akonadi::Item &msgBase);
-[[nodiscard]] MESSAGEVIEWER_EXPORT bool saveAttachments(const KMime::Content::List &contents, QWidget *parent, QList<QUrl> &saveUrl);
+[[nodiscard]] MESSAGEVIEWER_EXPORT bool saveAttachments(const QList<KMime::Content *> &contents, QWidget *parent, QList<QUrl> &saveUrl);
 /**
  * @brief Replaces the @c node message part by an empty attachment with information about deleted attachment.
  *
@@ -52,7 +52,7 @@ saveMessageInMboxAndGetUrl(QUrl &url, const Akonadi::Item::List &retrievedMsgs, 
  * @return Returns number of attachments that have actually been replaced.
  * @see deleteAttachment()
  */
-[[nodiscard]] MESSAGEVIEWER_EXPORT int deleteAttachments(const KMime::Content::List &contents);
+[[nodiscard]] MESSAGEVIEWER_EXPORT int deleteAttachments(const QList<KMime::Content *> &contents);
 
 [[nodiscard]] MESSAGEVIEWER_EXPORT QAction *createAppAction(const KService::Ptr &service, bool singleOffer, QActionGroup *actionGroup, QObject *parent);
 struct HtmlMessageInfo {
