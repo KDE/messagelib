@@ -381,7 +381,7 @@ QByteArray headerAsSendableString(const std::shared_ptr<KMime::Message> &origina
     return message->head();
 }
 
-QString emailAddrAsAnchor(const KMime::Types::Mailbox::List &mailboxList,
+QString emailAddrAsAnchor(const QList<KMime::Types::Mailbox> &mailboxList,
                           Display display,
                           const QString &cssStyle,
                           Link link,
