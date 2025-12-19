@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-17 00:44+0000\n"
+"POT-Creation-Date: 2025-12-19 00:44+0000\n"
 "PO-Revision-Date: 2025-09-06 05:41+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -45,7 +45,7 @@ msgid "Compress"
 msgstr "შეკუმშვა"
 
 #: attachment/attachmentcontrollerbase.cpp:201
-#: attachment/attachmentcontrollerbase.cpp:961
+#: attachment/attachmentcontrollerbase.cpp:962
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach file"
@@ -224,7 +224,7 @@ msgstr "თავიდან ჩატვირთვა"
 
 #: attachment/attachmentcontrollerbase.cpp:678
 #: attachment/attachmentcontrollerbase.cpp:704
-#: attachment/attachmentcontrollerbase.cpp:754
+#: attachment/attachmentcontrollerbase.cpp:755
 #, kde-format
 msgid "KMail was unable to write the attachment to a temporary file."
 msgstr "KMail-ის შეცდომა მიმაგრებული ფაილის დროებითში ჩაწერისას."
@@ -241,24 +241,24 @@ msgstr "მიმაგრებული ფაილის გახსნა 
 msgid "KMail was unable to open the attachment"
 msgstr "KMail-ის შეცდომა მიმაგრებული ფაილის გახსნისას"
 
-#: attachment/attachmentcontrollerbase.cpp:755 attachment/editorwatcher.cpp:202
+#: attachment/attachmentcontrollerbase.cpp:756 attachment/editorwatcher.cpp:202
 #, kde-format
 msgctxt "@title:window"
 msgid "Unable to edit attachment"
 msgstr "მიმაგრებული ფაილის ჩასწორების შეცდომა"
 
-#: attachment/attachmentcontrollerbase.cpp:796
+#: attachment/attachmentcontrollerbase.cpp:797
 #, kde-format
 msgid "unnamed"
 msgstr "უსახელო"
 
-#: attachment/attachmentcontrollerbase.cpp:799
+#: attachment/attachmentcontrollerbase.cpp:800
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Attachment As"
 msgstr "მიმაგრებული ფაილის შენახვა, როგორც"
 
-#: attachment/attachmentcontrollerbase.cpp:822
+#: attachment/attachmentcontrollerbase.cpp:823
 #, kde-format
 msgid ""
 "File %1 exists.\n"
@@ -267,56 +267,56 @@ msgstr ""
 "ფაილი %1 არსებობს.\n"
 "გნებავთ, ჩაანაცვლოთ?"
 
-#: attachment/attachmentcontrollerbase.cpp:823
+#: attachment/attachmentcontrollerbase.cpp:824
 #, kde-format
 msgctxt "@title:window"
 msgid "Save to File"
 msgstr "ფაილში შენახვა"
 
-#: attachment/attachmentcontrollerbase.cpp:824
+#: attachment/attachmentcontrollerbase.cpp:825
 #, kde-format
 msgctxt "@action:button"
 msgid "&Replace"
 msgstr "&ჩანაცვლება"
 
-#: attachment/attachmentcontrollerbase.cpp:851
-#: attachment/attachmentcontrollerbase.cpp:930
+#: attachment/attachmentcontrollerbase.cpp:852
+#: attachment/attachmentcontrollerbase.cpp:931
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
 msgstr "მართლა გნებავთ საქაღალდის \"%1\" მიმაგრება?"
 
-#: attachment/attachmentcontrollerbase.cpp:852
-#: attachment/attachmentcontrollerbase.cpp:931
+#: attachment/attachmentcontrollerbase.cpp:853
+#: attachment/attachmentcontrollerbase.cpp:932
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach directory"
 msgstr "საქაღალდის მიმაგრება"
 
-#: attachment/attachmentcontrollerbase.cpp:853
-#: attachment/attachmentcontrollerbase.cpp:932
+#: attachment/attachmentcontrollerbase.cpp:854
+#: attachment/attachmentcontrollerbase.cpp:933
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach"
 msgstr "მიმაგრება"
 
-#: attachment/attachmentcontrollerbase.cpp:888
+#: attachment/attachmentcontrollerbase.cpp:889
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach Directory"
 msgstr "საქაღალდის მიმაგრება"
 
-#: attachment/attachmentcontrollerbase.cpp:896
+#: attachment/attachmentcontrollerbase.cpp:897
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach File"
 msgstr "ფაილის მიმაგრება"
 
-#: attachment/attachmentcontrollerbase.cpp:985
+#: attachment/attachmentcontrollerbase.cpp:986
 #, kde-format
 msgid "Attach Public OpenPGP Key"
 msgstr "საჯარო OpenPGP გასაღების მიმაგრება"
 
-#: attachment/attachmentcontrollerbase.cpp:986
+#: attachment/attachmentcontrollerbase.cpp:987
 #, kde-format
 msgid "Select the public key which should be attached."
 msgstr "აირჩიეთ საჯარო გასაღები, რომლის მიმაგრებაც გნებავთ."
@@ -394,37 +394,37 @@ msgstr ""
 "KMail-მა ვერ აღმოაჩინა, როდის დაიხურება არჩეული რედაქტორი. მონაცემების "
 "კარგვის თავიდან ასაცილებლად მიმაგრებული ფაილის ჩასწორება გაუქმდება."
 
-#: composer/composerviewbase.cpp:326
+#: composer/composerviewbase.cpp:327
 #, kde-format
 msgid "&Keep markup, do not sign/encrypt"
 msgstr "&მარკირების შენარჩუნება. ხელმოწერა/დაშიფვრა არ მოხდება"
 
-#: composer/composerviewbase.cpp:326
+#: composer/composerviewbase.cpp:327
 #, kde-format
 msgid "&Keep markup, do not encrypt"
 msgstr "&მარკირების შენარჩუნება. დაშიფვრა არ მოხდება"
 
-#: composer/composerviewbase.cpp:326
+#: composer/composerviewbase.cpp:327
 #, kde-format
 msgid "&Keep markup, do not sign"
 msgstr "&მარკირების შენარჩუნება. ხელმოწერა არ მოხდება"
 
-#: composer/composerviewbase.cpp:327
+#: composer/composerviewbase.cpp:328
 #, kde-format
 msgid "Sign/Encrypt (delete markup)"
 msgstr "ხელმოწერა/დაშიფვრა (მარკირების წაშლა)"
 
-#: composer/composerviewbase.cpp:327
+#: composer/composerviewbase.cpp:328
 #, kde-format
 msgid "Encrypt (delete markup)"
 msgstr "დაშიფვრა (მარქაფის წაშლა)"
 
-#: composer/composerviewbase.cpp:327
+#: composer/composerviewbase.cpp:328
 #, kde-format
 msgid "Sign (delete markup)"
 msgstr "ხელმოწერა (მარქაფის წაშლა)"
 
-#: composer/composerviewbase.cpp:329
+#: composer/composerviewbase.cpp:330
 #, kde-format
 msgid ""
 "<qt><p>Inline signing/encrypting of HTML messages is not possible;</p><p>do "
@@ -433,76 +433,76 @@ msgstr ""
 "<qt><p>HTML შეტყობინებების ხაზშივე ხელმოწერა/დაშიფვრა შეუძლებელია;</"
 "p><p>გნებავთ, წაშალოთ თქვენი მარკირება?</p></qt>"
 
-#: composer/composerviewbase.cpp:331
+#: composer/composerviewbase.cpp:332
 #, kde-format
 msgctxt "@title:window"
 msgid "Sign/Encrypt Message?"
 msgstr "დავშიფრო/ხელი მოვაწერო შეტყობინებას?"
 
-#: composer/composerviewbase.cpp:507
+#: composer/composerviewbase.cpp:508
 #, kde-format
 msgid "It was not possible to create a message composer."
 msgstr "შეტყობინების კომპოზიტორის შექმნა შეუძლებელია."
 
-#: composer/composerviewbase.cpp:517
+#: composer/composerviewbase.cpp:518
 #, kde-format
 msgid "Do you want to resize images?"
 msgstr "გნებავთ გამოსახულებების ზომა შევცვალო?"
 
-#: composer/composerviewbase.cpp:518
+#: composer/composerviewbase.cpp:519
 #, kde-format
 msgctxt "@title:window"
 msgid "Auto Resize Images"
 msgstr "სურათების ზომის ავტომატური შეცვლა"
 
-#: composer/composerviewbase.cpp:519
+#: composer/composerviewbase.cpp:520
 #, kde-format
 msgctxt "@action:button"
 msgid "Auto Resize"
 msgstr "ზომის ავტომატური შეცვლა"
 
-#: composer/composerviewbase.cpp:520
+#: composer/composerviewbase.cpp:521
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Resize"
 msgstr "ზომები არ შეიცვლება"
 
-#: composer/composerviewbase.cpp:726
+#: composer/composerviewbase.cpp:727
 #, kde-format
 msgctxt "@title:window"
 msgid "OpenPGP Key Expired"
 msgstr "OpenPGP გასაღები ვადაგასულია"
 
-#: composer/composerviewbase.cpp:726
+#: composer/composerviewbase.cpp:727
 #, kde-format
 msgctxt "@title:window"
 msgid "S/MIME Certificate Expired"
 msgstr "S/MIME სერტიფიკატი ვადაგასულია"
 
-#: composer/composerviewbase.cpp:728
+#: composer/composerviewbase.cpp:729
 #, kde-format
 msgctxt "@title:window"
 msgid "OpenPGP Key Expires Soon"
 msgstr "OpenPGP გასაღებს ვადა მალე გასდის"
 
-#: composer/composerviewbase.cpp:729
+#: composer/composerviewbase.cpp:730
 #, kde-format
 msgctxt "@title:window"
 msgid "S/MIME Certificate Expires Soon"
 msgstr "S/MIME სერტიფიკატს ვადა მალე გასდის"
 
-#: composer/composerviewbase.cpp:803 composer/composerviewbase.cpp:817
-#: composer/composerviewbase.cpp:849
+#: composer/composerviewbase.cpp:804 composer/composerviewbase.cpp:818
+#: composer/composerviewbase.cpp:850
 #, kde-format
 msgid "Failed to resolve keys. Please report a bug."
 msgstr "გასაღებების ამოხსნის შეცდომა. გთხოვთ, მოგვწეროთ ამის შესახებ."
 
-#: composer/composerviewbase.cpp:1054 composer/composerviewbase.cpp:1325
+#: composer/composerviewbase.cpp:1055 composer/composerviewbase.cpp:1326
 #, kde-format
 msgid "Job cancelled by the user"
 msgstr "დავალება შეწყვეტილია მომხმარებლის მიერ"
 
-#: composer/composerviewbase.cpp:1059
+#: composer/composerviewbase.cpp:1060
 #, kde-format
 msgid ""
 "Could not compose message: %1 \n"
@@ -511,37 +511,37 @@ msgstr ""
 "შეტყობინების შექმნის შეცდომა: %1\n"
 "  შეგვატყობინეთ ამის შესახებ."
 
-#: composer/composerviewbase.cpp:1061
+#: composer/composerviewbase.cpp:1062
 #, kde-format
 msgid "Could not compose message: %1"
 msgstr "შეტყობინების შედგენის შეცდომა: %1"
 
-#: composer/composerviewbase.cpp:1164
+#: composer/composerviewbase.cpp:1165
 #, kde-format
 msgid "There were problems trying to queue the message for sending: %1"
 msgstr "პრობლემა შეტყობინების გასაგზავნ რიგში ჩამატებისას: %1"
 
-#: composer/composerviewbase.cpp:1328
+#: composer/composerviewbase.cpp:1329
 #, kde-format
 msgid "Could not autosave message: %1"
 msgstr "შეტყობინების ავტომატური შენახვის შეცდომა: %1"
 
-#: composer/composerviewbase.cpp:1347
+#: composer/composerviewbase.cpp:1348
 #, kde-format
 msgid "Could not write all data to file."
 msgstr "მონაცემების ფაილში სრულად ჩაწერის შეცდომა."
 
-#: composer/composerviewbase.cpp:1350
+#: composer/composerviewbase.cpp:1351
 #, kde-format
 msgid "Could not finalize the file."
 msgstr "ფაილის დასრულების შეცდომა."
 
-#: composer/composerviewbase.cpp:1354
+#: composer/composerviewbase.cpp:1355
 #, kde-format
 msgid "Could not open file."
 msgstr "ფაილის გახსნის შეცდომა."
 
-#: composer/composerviewbase.cpp:1361
+#: composer/composerviewbase.cpp:1362
 #, kde-format
 msgid ""
 "Autosaving the message as %1 failed.\n"
@@ -552,18 +552,18 @@ msgstr ""
 "%2\n"
 "მიზეზი: %3"
 
-#: composer/composerviewbase.cpp:1367
+#: composer/composerviewbase.cpp:1368
 #, kde-format
 msgctxt "@title:window"
 msgid "Autosaving Message Failed"
 msgstr "შეტყობინების ავტომატური შენახვის შეცდომა"
 
-#: composer/composerviewbase.cpp:1480
+#: composer/composerviewbase.cpp:1481
 #, kde-format
 msgid "Failed to save the message: %1"
 msgstr "შეტყობინების შენახვის შეცდომა: %1"
 
-#: composer/composerviewbase.cpp:1902
+#: composer/composerviewbase.cpp:1903
 #, kde-format
 msgid ""
 "The message you have composed seems to refer to an attached file but you "
@@ -574,25 +574,25 @@ msgstr ""
 "მაგრამ არაფერი მიგიმაგრებიათ.\n"
 "გნებავთ, მიამაგროთ ფაილი თქვენს შეტყობინებას?"
 
-#: composer/composerviewbase.cpp:1905
+#: composer/composerviewbase.cpp:1906
 #, kde-format
 msgctxt "@title:window"
 msgid "File Attachment Reminder"
 msgstr "ფაილის მიმაგრების შეხსენება"
 
-#: composer/composerviewbase.cpp:1906
+#: composer/composerviewbase.cpp:1907
 #, kde-format
 msgctxt "@action:button"
 msgid "&Attach File..."
 msgstr "&ფაილის მიმაგრება..."
 
-#: composer/composerviewbase.cpp:1907
+#: composer/composerviewbase.cpp:1908
 #, kde-format
 msgctxt "@action:button"
 msgid "&Send as Is"
 msgstr "&გაგზავნა, როგორც არის"
 
-#: composer/composerviewbase.cpp:1959
+#: composer/composerviewbase.cpp:1960
 #, kde-format
 msgid ""
 "Examination of the recipient's signing preferences yielded that you be asked "
@@ -603,25 +603,25 @@ msgstr ""
 "შეტყობინების ხელმოწერა, თუ არა.\n"
 "მოვაწერო ხელი ამ შეტყობინებაზე?"
 
-#: composer/composerviewbase.cpp:1965 composer/composerviewbase.cpp:1993
+#: composer/composerviewbase.cpp:1966 composer/composerviewbase.cpp:1994
 #, kde-format
 msgctxt "@title:window"
 msgid "Sign Message?"
 msgstr "მოვაწერო ხელი შეტყობინებას?"
 
-#: composer/composerviewbase.cpp:1966 composer/composerviewbase.cpp:1994
+#: composer/composerviewbase.cpp:1967 composer/composerviewbase.cpp:1995
 #, kde-format
 msgctxt "to sign"
 msgid "&Sign"
 msgstr "&ხელმოწერა"
 
-#: composer/composerviewbase.cpp:1967 composer/composerviewbase.cpp:1995
+#: composer/composerviewbase.cpp:1968 composer/composerviewbase.cpp:1996
 #, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Sign"
 msgstr "&ხელმოწერის გარეშე"
 
-#: composer/composerviewbase.cpp:1988
+#: composer/composerviewbase.cpp:1989
 #, kde-format
 msgid ""
 "There are conflicting signing preferences for these recipients.\n"
@@ -630,7 +630,7 @@ msgstr ""
 "ამ მიმღებებისთვის ურთიერთგამომრიცხავი ხელმოწერის პარამეტრებია არჩეული.\n"
 "მოვაწერო ხელი ამ შეტყობინებას?"
 
-#: composer/composerviewbase.cpp:2015
+#: composer/composerviewbase.cpp:2016
 #, kde-format
 msgid ""
 "You have requested to sign this message, but no valid signing keys have been "
@@ -639,19 +639,19 @@ msgstr ""
 "მოითხოვეთ ამ შეტყობინების ხელმოწერა, მაგრამ ამ ანგარიშისთვის სწორი "
 "ხელმოწერის გასაღებები მითითებული არაა."
 
-#: composer/composerviewbase.cpp:2020
+#: composer/composerviewbase.cpp:2021
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Unsigned?"
 msgstr "გავაგზავნო ხელმოწერის გარეშე?"
 
-#: composer/composerviewbase.cpp:2021
+#: composer/composerviewbase.cpp:2022
 #, kde-format
 msgctxt "@action:button"
 msgid "Send &Unsigned"
 msgstr "&ხელმოწერის გარეშე გაგზავნა"
 
-#: composer/composerviewbase.cpp:2036
+#: composer/composerviewbase.cpp:2037
 #, kde-format
 msgid ""
 "Some parts of this message will not be signed.\n"
@@ -662,7 +662,7 @@ msgstr ""
 "ნაწილობრივ ხელმოწერილი შეტყობინების გაზავნა კი შეიძლება აკრძალული იყოს.\n"
 "მოხდეს ყველა ნაწილის ხელმოწერა?"
 
-#: composer/composerviewbase.cpp:2040
+#: composer/composerviewbase.cpp:2041
 #, kde-format
 msgid ""
 "This message will not be signed.\n"
@@ -673,29 +673,29 @@ msgstr ""
 "ხელმოუწერელი შეტყობინების გაგზავნით შეიძლება წესები დაარღვიოთ.\n"
 "მოვაწერო ხელი შეტყობინებას?"
 
-#: composer/composerviewbase.cpp:2043
+#: composer/composerviewbase.cpp:2044
 #, kde-format
 msgid "&Sign All Parts"
 msgstr "&ყველა ნაწილის ხელმოწერა"
 
-#: composer/composerviewbase.cpp:2043
+#: composer/composerviewbase.cpp:2044
 #, kde-format
 msgid "&Sign"
 msgstr "&ხელმოწერა"
 
-#: composer/composerviewbase.cpp:2046
+#: composer/composerviewbase.cpp:2047
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsigned-Message Warning"
 msgstr "გაფრთხილება ხელმოუწერელი შეტყობინების შესახებ"
 
-#: composer/composerviewbase.cpp:2048
+#: composer/composerviewbase.cpp:2049
 #, kde-format
 msgctxt "@action:button"
 msgid "Send &As Is"
 msgstr "&გაგზავნა, როგორც არის"
 
-#: composer/composerviewbase.cpp:2095
+#: composer/composerviewbase.cpp:2096
 #, kde-format
 msgid ""
 "Valid trusted encryption keys were found for all recipients.\n"
@@ -704,7 +704,7 @@ msgstr ""
 "ყველა მიმღებისთვის აღმოჩენილია სწორი დაშიფვრის გასაღებები.\n"
 "დავშიფრო შეტყობინება?"
 
-#: composer/composerviewbase.cpp:2098
+#: composer/composerviewbase.cpp:2099
 #, kde-format
 msgid ""
 "Examination of the recipient's encryption preferences yielded that you be "
@@ -715,32 +715,32 @@ msgstr ""
 "ეს შეტყობინება, თუ არა.\n"
 "დავშიფრო შეტყობინება?"
 
-#: composer/composerviewbase.cpp:2104 composer/composerviewbase.cpp:2134
+#: composer/composerviewbase.cpp:2105 composer/composerviewbase.cpp:2135
 #, kde-format
 msgid "Encrypt Message?"
 msgstr "დავშიფრო შეტყობინება?"
 
-#: composer/composerviewbase.cpp:2105
+#: composer/composerviewbase.cpp:2106
 #, kde-format
 msgid "Sign && &Encrypt"
 msgstr "დაშიფვრა და ხელმოწერა"
 
-#: composer/composerviewbase.cpp:2105 composer/composerviewbase.cpp:2187
+#: composer/composerviewbase.cpp:2106 composer/composerviewbase.cpp:2188
 #, kde-format
 msgid "&Encrypt"
 msgstr "&დაშიფვრა"
 
-#: composer/composerviewbase.cpp:2106 composer/composerviewbase.cpp:2192
+#: composer/composerviewbase.cpp:2107 composer/composerviewbase.cpp:2193
 #, kde-format
 msgid "&Sign Only"
 msgstr "&მხოლოდ ხელმოწერა"
 
-#: composer/composerviewbase.cpp:2106 composer/composerviewbase.cpp:2192
+#: composer/composerviewbase.cpp:2107 composer/composerviewbase.cpp:2193
 #, kde-format
 msgid "&Send As-Is"
 msgstr "&გაგზავნა, როგორც არის"
 
-#: composer/composerviewbase.cpp:2127
+#: composer/composerviewbase.cpp:2128
 #, kde-format
 msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
@@ -749,20 +749,20 @@ msgstr ""
 "ამ მიმღებებისთვის ურთიერთგამომრიცხავი დაშიფვრის პარამეტრებია არჩეული.\n"
 "მოვაწერო ხელი ამ შეტყობინებას?"
 
-#: composer/composerviewbase.cpp:2135 composer/keyresolver.cpp:1319
+#: composer/composerviewbase.cpp:2136 composer/keyresolver.cpp:1319
 #: composer/keyresolver.cpp:1360
 #, kde-format
 msgctxt "@action:button"
 msgid "&Encrypt"
 msgstr "&დაშიფვრა"
 
-#: composer/composerviewbase.cpp:2136
+#: composer/composerviewbase.cpp:2137
 #, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Encrypt"
 msgstr "&არ დაშიფრო"
 
-#: composer/composerviewbase.cpp:2156
+#: composer/composerviewbase.cpp:2157
 #, kde-format
 msgid ""
 "You have requested to encrypt this message, and to encrypt a copy to "
@@ -772,19 +772,19 @@ msgstr ""
 "მოითხოვეთ ამ შეტყობინების დაშიფვრა და რომ თქვენი ასლიც დაიშიფროს, მაგრამ ამ "
 "ანგარიშისთვის სწორი დაშიფვრის გასაღებები მითითებული არაა."
 
-#: composer/composerviewbase.cpp:2162
+#: composer/composerviewbase.cpp:2163
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Unencrypted?"
 msgstr "გავაგზავნო დაუშიფრავად?"
 
-#: composer/composerviewbase.cpp:2163 composer/keyresolver.cpp:1345
+#: composer/composerviewbase.cpp:2164 composer/keyresolver.cpp:1345
 #, kde-format
 msgctxt "@action:button"
 msgid "Send &Unencrypted"
 msgstr "&დაუშიფრავად გაგზავნა"
 
-#: composer/composerviewbase.cpp:2178
+#: composer/composerviewbase.cpp:2179
 #, kde-format
 msgid ""
 "Some parts of this message will not be encrypted.\n"
@@ -797,7 +797,7 @@ msgstr ""
 "მოხდეს ინფორმაციის გაჟონვა.\n"
 "დავშიფრო მთლიანად?"
 
-#: composer/composerviewbase.cpp:2183
+#: composer/composerviewbase.cpp:2184
 #, kde-format
 msgid ""
 "This message will not be encrypted.\n"
@@ -810,12 +810,12 @@ msgstr ""
 "კონფიდენციალური ინფორმაცია.\n"
 "დავშიფრო შეტყობინება?"
 
-#: composer/composerviewbase.cpp:2187
+#: composer/composerviewbase.cpp:2188
 #, kde-format
 msgid "&Encrypt All Parts"
 msgstr "&ყველა ნაწილის დაშიფვრა"
 
-#: composer/composerviewbase.cpp:2190
+#: composer/composerviewbase.cpp:2191
 #, kde-format
 msgctxt "@title:window"
 msgid "Unencrypted Message Warning"

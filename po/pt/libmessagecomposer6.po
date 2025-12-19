@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-17 00:44+0000\n"
+"POT-Creation-Date: 2025-12-19 00:44+0000\n"
 "PO-Revision-Date: 2023-05-15 10:33+0100\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <kde-i18n-pt@kde.org>\n"
@@ -82,7 +82,7 @@ msgid "Compress"
 msgstr "Comprimir"
 
 #: attachment/attachmentcontrollerbase.cpp:201
-#: attachment/attachmentcontrollerbase.cpp:961
+#: attachment/attachmentcontrollerbase.cpp:962
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach file"
@@ -272,7 +272,7 @@ msgstr "Recarregar"
 
 #: attachment/attachmentcontrollerbase.cpp:678
 #: attachment/attachmentcontrollerbase.cpp:704
-#: attachment/attachmentcontrollerbase.cpp:754
+#: attachment/attachmentcontrollerbase.cpp:755
 #, kde-format
 msgid "KMail was unable to write the attachment to a temporary file."
 msgstr "O KMail não conseguiu gravar o anexo num ficheiro temporário."
@@ -291,26 +291,26 @@ msgstr "Não é possível abrir o anexo"
 msgid "KMail was unable to open the attachment"
 msgstr "O KMail não conseguiu abrir o anexo."
 
-#: attachment/attachmentcontrollerbase.cpp:755 attachment/editorwatcher.cpp:202
+#: attachment/attachmentcontrollerbase.cpp:756 attachment/editorwatcher.cpp:202
 #, fuzzy, kde-format
 #| msgid "Unable to edit attachment"
 msgctxt "@title:window"
 msgid "Unable to edit attachment"
 msgstr "Não é possível editar o anexo"
 
-#: attachment/attachmentcontrollerbase.cpp:796
+#: attachment/attachmentcontrollerbase.cpp:797
 #, kde-format
 msgid "unnamed"
 msgstr "sem nome"
 
-#: attachment/attachmentcontrollerbase.cpp:799
+#: attachment/attachmentcontrollerbase.cpp:800
 #, fuzzy, kde-format
 #| msgid "Save Attachment As"
 msgctxt "@title:window"
 msgid "Save Attachment As"
 msgstr "Gravar o Anexo Como"
 
-#: attachment/attachmentcontrollerbase.cpp:822
+#: attachment/attachmentcontrollerbase.cpp:823
 #, kde-format
 msgid ""
 "File %1 exists.\n"
@@ -319,58 +319,58 @@ msgstr ""
 "O ficheiro %1 já existe.\n"
 "Deseja substituí-lo?"
 
-#: attachment/attachmentcontrollerbase.cpp:823
+#: attachment/attachmentcontrollerbase.cpp:824
 #, fuzzy, kde-format
 #| msgid "Save to File"
 msgctxt "@title:window"
 msgid "Save to File"
 msgstr "Gravar para um Ficheiro"
 
-#: attachment/attachmentcontrollerbase.cpp:824
+#: attachment/attachmentcontrollerbase.cpp:825
 #, fuzzy, kde-format
 #| msgid "&Replace"
 msgctxt "@action:button"
 msgid "&Replace"
 msgstr "Substitui&r"
 
-#: attachment/attachmentcontrollerbase.cpp:851
-#: attachment/attachmentcontrollerbase.cpp:930
+#: attachment/attachmentcontrollerbase.cpp:852
+#: attachment/attachmentcontrollerbase.cpp:931
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
 msgstr "Deseja mesmo anexar esta pasta \"%1\"?"
 
-#: attachment/attachmentcontrollerbase.cpp:852
-#: attachment/attachmentcontrollerbase.cpp:931
+#: attachment/attachmentcontrollerbase.cpp:853
+#: attachment/attachmentcontrollerbase.cpp:932
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach directory"
 msgstr "Anexar a pasta"
 
-#: attachment/attachmentcontrollerbase.cpp:853
-#: attachment/attachmentcontrollerbase.cpp:932
+#: attachment/attachmentcontrollerbase.cpp:854
+#: attachment/attachmentcontrollerbase.cpp:933
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach"
 msgstr "Anexar"
 
-#: attachment/attachmentcontrollerbase.cpp:888
+#: attachment/attachmentcontrollerbase.cpp:889
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach Directory"
 msgstr "Anexar a Pasta"
 
-#: attachment/attachmentcontrollerbase.cpp:896
+#: attachment/attachmentcontrollerbase.cpp:897
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach File"
 msgstr "Anexar um Ficheiro"
 
-#: attachment/attachmentcontrollerbase.cpp:985
+#: attachment/attachmentcontrollerbase.cpp:986
 #, kde-format
 msgid "Attach Public OpenPGP Key"
 msgstr "Anexar Uma Chave Pública de OpenPGP"
 
-#: attachment/attachmentcontrollerbase.cpp:986
+#: attachment/attachmentcontrollerbase.cpp:987
 #, kde-format
 msgid "Select the public key which should be attached."
 msgstr "Seleccione a chave pública que deve ser anexada."
@@ -448,37 +448,37 @@ msgstr ""
 "O KMail não consegue detectar quando o editor escolhido é fechado. Para "
 "evitar a perda de dados, a edição do anexo será interrompida."
 
-#: composer/composerviewbase.cpp:326
+#: composer/composerviewbase.cpp:327
 #, kde-format
 msgid "&Keep markup, do not sign/encrypt"
 msgstr "Manter a &formatação, não assinar/encriptar"
 
-#: composer/composerviewbase.cpp:326
+#: composer/composerviewbase.cpp:327
 #, kde-format
 msgid "&Keep markup, do not encrypt"
 msgstr "Manter a &formatação, não encriptar"
 
-#: composer/composerviewbase.cpp:326
+#: composer/composerviewbase.cpp:327
 #, kde-format
 msgid "&Keep markup, do not sign"
 msgstr "Manter a &formatação, não assinar"
 
-#: composer/composerviewbase.cpp:327
+#: composer/composerviewbase.cpp:328
 #, kde-format
 msgid "Sign/Encrypt (delete markup)"
 msgstr "Assinar/Encriptar (apagar a formatação)"
 
-#: composer/composerviewbase.cpp:327
+#: composer/composerviewbase.cpp:328
 #, kde-format
 msgid "Encrypt (delete markup)"
 msgstr "Encriptar (apagar a formatação)"
 
-#: composer/composerviewbase.cpp:327
+#: composer/composerviewbase.cpp:328
 #, kde-format
 msgid "Sign (delete markup)"
 msgstr "Assinar (apagar a formatação)"
 
-#: composer/composerviewbase.cpp:329
+#: composer/composerviewbase.cpp:330
 #, kde-format
 msgid ""
 "<qt><p>Inline signing/encrypting of HTML messages is not possible;</p><p>do "
@@ -487,82 +487,82 @@ msgstr ""
 "<qt><p>A assinatura/encriptação das mensagens em HTML não é possível;</"
 "p><p>deseja retirar a sua formatação?</p></qt>"
 
-#: composer/composerviewbase.cpp:331
+#: composer/composerviewbase.cpp:332
 #, fuzzy, kde-format
 #| msgid "Sign/Encrypt Message?"
 msgctxt "@title:window"
 msgid "Sign/Encrypt Message?"
 msgstr "Assinar/Encriptar a Mensagem?"
 
-#: composer/composerviewbase.cpp:507
+#: composer/composerviewbase.cpp:508
 #, kde-format
 msgid "It was not possible to create a message composer."
 msgstr "Não foi possível criar um compositor de mensagens."
 
-#: composer/composerviewbase.cpp:517
+#: composer/composerviewbase.cpp:518
 #, kde-format
 msgid "Do you want to resize images?"
 msgstr "Deseja dimensionar as imagens?"
 
-#: composer/composerviewbase.cpp:518
+#: composer/composerviewbase.cpp:519
 #, fuzzy, kde-format
 #| msgid "Auto Resize Images"
 msgctxt "@title:window"
 msgid "Auto Resize Images"
 msgstr "Auto-Dimensionar as Imagens"
 
-#: composer/composerviewbase.cpp:519
+#: composer/composerviewbase.cpp:520
 #, kde-format
 msgctxt "@action:button"
 msgid "Auto Resize"
 msgstr "Auto-Dimensionar"
 
-#: composer/composerviewbase.cpp:520
+#: composer/composerviewbase.cpp:521
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Resize"
 msgstr "Não Dimensionar"
 
-#: composer/composerviewbase.cpp:726
+#: composer/composerviewbase.cpp:727
 #, fuzzy, kde-format
 #| msgid "OpenPGP Key Expired"
 msgctxt "@title:window"
 msgid "OpenPGP Key Expired"
 msgstr "A Chave OpenPGP Expirou"
 
-#: composer/composerviewbase.cpp:726
+#: composer/composerviewbase.cpp:727
 #, fuzzy, kde-format
 #| msgid "S/MIME Certificate Expired"
 msgctxt "@title:window"
 msgid "S/MIME Certificate Expired"
 msgstr "O Certificado S/MIME Expirou"
 
-#: composer/composerviewbase.cpp:728
+#: composer/composerviewbase.cpp:729
 #, fuzzy, kde-format
 #| msgid "OpenPGP Key Expires Soon"
 msgctxt "@title:window"
 msgid "OpenPGP Key Expires Soon"
 msgstr "Chave OpenPGP Expira Brevemente"
 
-#: composer/composerviewbase.cpp:729
+#: composer/composerviewbase.cpp:730
 #, fuzzy, kde-format
 #| msgid "S/MIME Certificate Expires Soon"
 msgctxt "@title:window"
 msgid "S/MIME Certificate Expires Soon"
 msgstr "Certificado S/MIME Expira Brevemente"
 
-#: composer/composerviewbase.cpp:803 composer/composerviewbase.cpp:817
-#: composer/composerviewbase.cpp:849
+#: composer/composerviewbase.cpp:804 composer/composerviewbase.cpp:818
+#: composer/composerviewbase.cpp:850
 #, kde-format
 msgid "Failed to resolve keys. Please report a bug."
 msgstr "Não foi possível resolver as chaves. Comunique um erro, por favor."
 
-#: composer/composerviewbase.cpp:1054 composer/composerviewbase.cpp:1325
+#: composer/composerviewbase.cpp:1055 composer/composerviewbase.cpp:1326
 #, kde-format
 msgid "Job cancelled by the user"
 msgstr "A tarefa foi cancelada pelo utilizador"
 
-#: composer/composerviewbase.cpp:1059
+#: composer/composerviewbase.cpp:1060
 #, kde-format
 msgid ""
 "Could not compose message: %1 \n"
@@ -571,38 +571,38 @@ msgstr ""
 "Não foi possível compor a mensagem: %1 \n"
 "Comunique por favor este erro."
 
-#: composer/composerviewbase.cpp:1061
+#: composer/composerviewbase.cpp:1062
 #, kde-format
 msgid "Could not compose message: %1"
 msgstr "Não foi possível compor a mensagem: %1"
 
-#: composer/composerviewbase.cpp:1164
+#: composer/composerviewbase.cpp:1165
 #, kde-format
 msgid "There were problems trying to queue the message for sending: %1"
 msgstr ""
 "Ocorreram problemas ao tentar colocar a mensagem em espera. O erro foi: %1"
 
-#: composer/composerviewbase.cpp:1328
+#: composer/composerviewbase.cpp:1329
 #, kde-format
 msgid "Could not autosave message: %1"
 msgstr "Não foi possível gravar automaticamente a mensagem: %1"
 
-#: composer/composerviewbase.cpp:1347
+#: composer/composerviewbase.cpp:1348
 #, kde-format
 msgid "Could not write all data to file."
 msgstr "Não foi possível escrever todos os dados no disco."
 
-#: composer/composerviewbase.cpp:1350
+#: composer/composerviewbase.cpp:1351
 #, kde-format
 msgid "Could not finalize the file."
 msgstr "Não foi possível finalizar o ficheiro."
 
-#: composer/composerviewbase.cpp:1354
+#: composer/composerviewbase.cpp:1355
 #, kde-format
 msgid "Could not open file."
 msgstr "Não foi possível aceder ao ficheiro."
 
-#: composer/composerviewbase.cpp:1361
+#: composer/composerviewbase.cpp:1362
 #, kde-format
 msgid ""
 "Autosaving the message as %1 failed.\n"
@@ -613,19 +613,19 @@ msgstr ""
 "%2\n"
 "Razão: %3"
 
-#: composer/composerviewbase.cpp:1367
+#: composer/composerviewbase.cpp:1368
 #, fuzzy, kde-format
 #| msgid "Autosaving Message Failed"
 msgctxt "@title:window"
 msgid "Autosaving Message Failed"
 msgstr "A Gravação Automática da Mensagem Falhou"
 
-#: composer/composerviewbase.cpp:1480
+#: composer/composerviewbase.cpp:1481
 #, kde-format
 msgid "Failed to save the message: %1"
 msgstr "Não foi possível gravar a mensagem: %1"
 
-#: composer/composerviewbase.cpp:1902
+#: composer/composerviewbase.cpp:1903
 #, kde-format
 msgid ""
 "The message you have composed seems to refer to an attached file but you "
@@ -636,28 +636,28 @@ msgstr ""
 "anexou nada de facto.\n"
 "Deseja anexar um ficheiro à sua mensagem?"
 
-#: composer/composerviewbase.cpp:1905
+#: composer/composerviewbase.cpp:1906
 #, fuzzy, kde-format
 #| msgid "File Attachment Reminder"
 msgctxt "@title:window"
 msgid "File Attachment Reminder"
 msgstr "Lembrança de Anexos de Ficheiros"
 
-#: composer/composerviewbase.cpp:1906
+#: composer/composerviewbase.cpp:1907
 #, fuzzy, kde-format
 #| msgid "&Attach File..."
 msgctxt "@action:button"
 msgid "&Attach File..."
 msgstr "&Anexar um Ficheiro..."
 
-#: composer/composerviewbase.cpp:1907
+#: composer/composerviewbase.cpp:1908
 #, fuzzy, kde-format
 #| msgid "&Send as Is"
 msgctxt "@action:button"
 msgid "&Send as Is"
 msgstr "Enviar como E&stá"
 
-#: composer/composerviewbase.cpp:1959
+#: composer/composerviewbase.cpp:1960
 #, kde-format
 msgid ""
 "Examination of the recipient's signing preferences yielded that you be asked "
@@ -668,27 +668,27 @@ msgstr ""
 "você deseja confirmar sempre se deseja ou não assinar esta mensagem.\n"
 "Deseja então assinar esta mensagem?"
 
-#: composer/composerviewbase.cpp:1965 composer/composerviewbase.cpp:1993
+#: composer/composerviewbase.cpp:1966 composer/composerviewbase.cpp:1994
 #, fuzzy, kde-format
 #| msgid "Sign Message?"
 msgctxt "@title:window"
 msgid "Sign Message?"
 msgstr "Assinar a Mensagem?"
 
-#: composer/composerviewbase.cpp:1966 composer/composerviewbase.cpp:1994
+#: composer/composerviewbase.cpp:1967 composer/composerviewbase.cpp:1995
 #, kde-format
 msgctxt "to sign"
 msgid "&Sign"
 msgstr "A&ssinar"
 
-#: composer/composerviewbase.cpp:1967 composer/composerviewbase.cpp:1995
+#: composer/composerviewbase.cpp:1968 composer/composerviewbase.cpp:1996
 #, fuzzy, kde-format
 #| msgid "Do &Not Sign"
 msgctxt "@action:button"
 msgid "Do &Not Sign"
 msgstr "&Não Assinar"
 
-#: composer/composerviewbase.cpp:1988
+#: composer/composerviewbase.cpp:1989
 #, kde-format
 msgid ""
 "There are conflicting signing preferences for these recipients.\n"
@@ -697,7 +697,7 @@ msgstr ""
 "Existem definições de assinatura em conflito para estes destinatários.\n"
 "Deseja assinar esta mensagem?"
 
-#: composer/composerviewbase.cpp:2015
+#: composer/composerviewbase.cpp:2016
 #, kde-format
 msgid ""
 "You have requested to sign this message, but no valid signing keys have been "
@@ -706,21 +706,21 @@ msgstr ""
 "Pediu para assinar esta mensagem, mas não configurou nenhumas chaves de "
 "assinatura para esta identidade."
 
-#: composer/composerviewbase.cpp:2020
+#: composer/composerviewbase.cpp:2021
 #, fuzzy, kde-format
 #| msgid "Send Unsigned?"
 msgctxt "@title:window"
 msgid "Send Unsigned?"
 msgstr "Enviar Sem Assinar?"
 
-#: composer/composerviewbase.cpp:2021
+#: composer/composerviewbase.cpp:2022
 #, fuzzy, kde-format
 #| msgid "Send &Unsigned"
 msgctxt "@action:button"
 msgid "Send &Unsigned"
 msgstr "Enviar &Sem Assinar"
 
-#: composer/composerviewbase.cpp:2036
+#: composer/composerviewbase.cpp:2037
 #, kde-format
 msgid ""
 "Some parts of this message will not be signed.\n"
@@ -732,7 +732,7 @@ msgstr ""
 "do servidor.\n"
 "Deseja assinar todas as partes em alternativa?"
 
-#: composer/composerviewbase.cpp:2040
+#: composer/composerviewbase.cpp:2041
 #, kde-format
 msgid ""
 "This message will not be signed.\n"
@@ -743,31 +743,31 @@ msgstr ""
 "O envio de mensagens não assinadas poderá violar a política do servidor.\n"
 "Deseja assinar todas as partes em alternativa?"
 
-#: composer/composerviewbase.cpp:2043
+#: composer/composerviewbase.cpp:2044
 #, kde-format
 msgid "&Sign All Parts"
 msgstr "A&ssinar Todas as Partes"
 
-#: composer/composerviewbase.cpp:2043
+#: composer/composerviewbase.cpp:2044
 #, kde-format
 msgid "&Sign"
 msgstr "A&ssinar"
 
-#: composer/composerviewbase.cpp:2046
+#: composer/composerviewbase.cpp:2047
 #, fuzzy, kde-format
 #| msgid "Unsigned-Message Warning"
 msgctxt "@title:window"
 msgid "Unsigned-Message Warning"
 msgstr "Aviso de Mensagem Não Assinada"
 
-#: composer/composerviewbase.cpp:2048
+#: composer/composerviewbase.cpp:2049
 #, fuzzy, kde-format
 #| msgid "Send &As Is"
 msgctxt "@action:button"
 msgid "Send &As Is"
 msgstr "Envi&ar como Está"
 
-#: composer/composerviewbase.cpp:2095
+#: composer/composerviewbase.cpp:2096
 #, kde-format
 msgid ""
 "Valid trusted encryption keys were found for all recipients.\n"
@@ -777,7 +777,7 @@ msgstr ""
 "destinatários.\n"
 "Deseja encriptar esta mensagem?"
 
-#: composer/composerviewbase.cpp:2098
+#: composer/composerviewbase.cpp:2099
 #, kde-format
 msgid ""
 "Examination of the recipient's encryption preferences yielded that you be "
@@ -788,32 +788,32 @@ msgstr ""
 "destinatário, se deseja ou não encriptar esta mensagem.\n"
 "Deseja então encriptar esta mensagem?"
 
-#: composer/composerviewbase.cpp:2104 composer/composerviewbase.cpp:2134
+#: composer/composerviewbase.cpp:2105 composer/composerviewbase.cpp:2135
 #, kde-format
 msgid "Encrypt Message?"
 msgstr "Encriptar a Mensagem?"
 
-#: composer/composerviewbase.cpp:2105
+#: composer/composerviewbase.cpp:2106
 #, kde-format
 msgid "Sign && &Encrypt"
 msgstr "Assinar && &Encriptar"
 
-#: composer/composerviewbase.cpp:2105 composer/composerviewbase.cpp:2187
+#: composer/composerviewbase.cpp:2106 composer/composerviewbase.cpp:2188
 #, kde-format
 msgid "&Encrypt"
 msgstr "&Encriptar"
 
-#: composer/composerviewbase.cpp:2106 composer/composerviewbase.cpp:2192
+#: composer/composerviewbase.cpp:2107 composer/composerviewbase.cpp:2193
 #, kde-format
 msgid "&Sign Only"
 msgstr "A&ssinar Apenas"
 
-#: composer/composerviewbase.cpp:2106 composer/composerviewbase.cpp:2192
+#: composer/composerviewbase.cpp:2107 composer/composerviewbase.cpp:2193
 #, kde-format
 msgid "&Send As-Is"
 msgstr "Enviar como E&stá"
 
-#: composer/composerviewbase.cpp:2127
+#: composer/composerviewbase.cpp:2128
 #, kde-format
 msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
@@ -822,7 +822,7 @@ msgstr ""
 "Existem definições de encriptação em conflito para estes destinatários.\n"
 "Deseja encriptar esta mensagem?"
 
-#: composer/composerviewbase.cpp:2135 composer/keyresolver.cpp:1319
+#: composer/composerviewbase.cpp:2136 composer/keyresolver.cpp:1319
 #: composer/keyresolver.cpp:1360
 #, fuzzy, kde-format
 #| msgid "&Encrypt"
@@ -830,14 +830,14 @@ msgctxt "@action:button"
 msgid "&Encrypt"
 msgstr "&Encriptar"
 
-#: composer/composerviewbase.cpp:2136
+#: composer/composerviewbase.cpp:2137
 #, fuzzy, kde-format
 #| msgid "Do &Not Encrypt"
 msgctxt "@action:button"
 msgid "Do &Not Encrypt"
 msgstr "&Não Encriptar"
 
-#: composer/composerviewbase.cpp:2156
+#: composer/composerviewbase.cpp:2157
 #, kde-format
 msgid ""
 "You have requested to encrypt this message, and to encrypt a copy to "
@@ -848,21 +848,21 @@ msgstr ""
 "para si próprio, mas não estão configuradas nenhumas chaves de encriptação "
 "fidedignas para esta identidade."
 
-#: composer/composerviewbase.cpp:2162
+#: composer/composerviewbase.cpp:2163
 #, fuzzy, kde-format
 #| msgid "Send Unencrypted?"
 msgctxt "@title:window"
 msgid "Send Unencrypted?"
 msgstr "Enviar Sem Encriptar?"
 
-#: composer/composerviewbase.cpp:2163 composer/keyresolver.cpp:1345
+#: composer/composerviewbase.cpp:2164 composer/keyresolver.cpp:1345
 #, fuzzy, kde-format
 #| msgid "Send &Unencrypted"
 msgctxt "@action:button"
 msgid "Send &Unencrypted"
 msgstr "Enviar &Sem Encriptar"
 
-#: composer/composerviewbase.cpp:2178
+#: composer/composerviewbase.cpp:2179
 #, kde-format
 msgid ""
 "Some parts of this message will not be encrypted.\n"
@@ -875,7 +875,7 @@ msgstr ""
 "política do servidor e/ou libertar informação importante.\n"
 "Deseja encriptar todas as partes em alternativa?"
 
-#: composer/composerviewbase.cpp:2183
+#: composer/composerviewbase.cpp:2184
 #, kde-format
 msgid ""
 "This message will not be encrypted.\n"
@@ -888,12 +888,12 @@ msgstr ""
 "ou libertar informação importante.\n"
 "Deseja encriptar as mensagens em alternativa?"
 
-#: composer/composerviewbase.cpp:2187
+#: composer/composerviewbase.cpp:2188
 #, kde-format
 msgid "&Encrypt All Parts"
 msgstr "&Encriptar Todas as Partes"
 
-#: composer/composerviewbase.cpp:2190
+#: composer/composerviewbase.cpp:2191
 #, fuzzy, kde-format
 #| msgid "Unencrypted Message Warning"
 msgctxt "@title:window"
