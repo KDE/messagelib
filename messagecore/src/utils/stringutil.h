@@ -51,7 +51,7 @@ namespace StringUtil
 /**
  * Splits the given address list @p text into separate addresses.
  */
-[[nodiscard]] MESSAGECORE_EXPORT KMime::Types::AddressList splitAddressField(const QByteArray &text);
+[[nodiscard]] MESSAGECORE_EXPORT QList<KMime::Types::Address> splitAddressField(const QByteArray &text);
 
 /**
  * Quotes the following characters which have a special meaning in HTML:

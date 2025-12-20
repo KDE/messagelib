@@ -150,7 +150,7 @@ void MessageFactoryNG::createReplyAsync()
             toList << KMime::Types::Mailbox::listFrom7BitString(hdr->as7BitString());
         } else if (!mMailingListAddresses.isEmpty()) {
             if (replyToList.isEmpty()) {
-                toList = (KMime::Types::Mailbox::List() << mMailingListAddresses.at(0));
+                toList = (QList<KMime::Types::Mailbox>() << mMailingListAddresses.at(0));
             } else {
                 toList = replyToList;
             }
@@ -834,7 +834,7 @@ bool MessageFactoryNG::MDNReturnPathEmpty(const std::shared_ptr<KMime::Message> 
     // in the Return-Path header. [...] Confirmation from the user
     // SHOULD be obtained (or no MDN sent) if there is no Return-Path
     // header in the message [...]
-    KMime::Types::AddrSpecList returnPathList = MessageHelper::extractAddrSpecs(msg, "Return-Path");
+    const auto returnPathList = MessageHelper::extractAddrSpecs(msg, "Return-Path");
     const QString returnPath = returnPathList.isEmpty() ? QString() : returnPathList.front().localPart + u'@' + returnPathList.front().domain;
     qCDebug(MESSAGECOMPOSER_LOG) << "clean return path:" << returnPath;
     return returnPath.isEmpty();
@@ -857,7 +857,7 @@ bool MessageFactoryNG::MDNReturnPathNotInRecieptTo(const std::shared_ptr<KMime::
     // in the Return-Path header. [...] Confirmation from the user
     // SHOULD be obtained (or no MDN sent) if there is no Return-Path
     // header in the message [...]
-    KMime::Types::AddrSpecList returnPathList = MessageHelper::extractAddrSpecs(msg, u"Return-Path"_s.toLatin1());
+    const auto returnPathList = MessageHelper::extractAddrSpecs(msg, u"Return-Path"_s.toLatin1());
     const QString returnPath = returnPathList.isEmpty() ? QString() : returnPathList.front().localPart + u'@' + returnPathList.front().domain;
     qCDebug(MESSAGECOMPOSER_LOG) << "clean return path:" << returnPath;
     return !receiptTo.contains(returnPath, Qt::CaseSensitive);

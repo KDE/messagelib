@@ -276,9 +276,9 @@ QString stripSignature(const QString &msg)
     return res;
 }
 
-AddressList splitAddressField(const QByteArray &text)
+QList<KMime::Types::Address> splitAddressField(const QByteArray &text)
 {
-    AddressList result;
+    QList<KMime::Types::Address> result;
     const char *begin = text.begin();
     if (!begin) {
         return result;

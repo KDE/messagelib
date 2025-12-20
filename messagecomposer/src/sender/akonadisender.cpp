@@ -28,11 +28,11 @@ using namespace KMime::Types;
 using namespace KPIM;
 using namespace MessageComposer;
 
-static QStringList addrSpecListToStringList(const AddrSpecList &l, bool allowEmpty = false)
+static QStringList addrSpecListToStringList(const QList<KMime::Types::AddrSpec> &l, bool allowEmpty = false)
 {
     QStringList result;
-    for (AddrSpecList::const_iterator it = l.constBegin(), end = l.constEnd(); it != end; ++it) {
-        const QString s = (*it).asString();
+    for (const auto &a : l) {
+        const QString s = a.asString();
         if (allowEmpty || !s.isEmpty()) {
             result.push_back(s);
         }
