@@ -63,19 +63,15 @@ void EncryptJobTest::testContentDirect()
 
     auto mainTextJob = new MainTextJob(&part, &composerJob);
 
-    QVERIFY(mainTextJob);
-
-    VERIFYEXEC(mainTextJob);
-
     const std::vector<GpgME::Key> &keys = Test::getKeys();
 
     auto eJob = new EncryptJob(&composerJob);
+    eJob->appendSubjob(mainTextJob);
 
     QVERIFY(eJob);
 
     const QStringList recipients = {u"test@kolab.org"_s};
 
-    eJob->setContent(mainTextJob->content());
     eJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
     eJob->setRecipients(recipients);
     eJob->setEncryptionKeys(keys);
@@ -95,17 +91,15 @@ void EncryptJobTest::testContentChained()
 
     QVERIFY(mainTextJob);
 
-    VERIFYEXEC(mainTextJob);
-
     const std::vector<GpgME::Key> &keys = Test::getKeys();
     auto eJob = new EncryptJob(&composerJob);
+    eJob->appendSubjob(mainTextJob);
 
     const QStringList recipients = {u"test@kolab.org"_s};
 
     eJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
     eJob->setRecipients(recipients);
     eJob->setEncryptionKeys(keys);
-    eJob->setContent(mainTextJob->content());
 
     checkEncryption(eJob);
 }
@@ -152,7 +146,10 @@ void EncryptJobTest::testHeaders()
 
     const QStringList recipients = {u"test@kolab.org"_s};
 
-    eJob->setContent(content);
+    auto tJob = new TransparentJob();
+    tJob->setContent(content);
+    eJob->appendSubjob(tJob);
+
     eJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
     eJob->setRecipients(recipients);
     eJob->setEncryptionKeys(keys);
@@ -213,7 +210,10 @@ void EncryptJobTest::testProtectedHeaders()
 
     const QStringList recipients = {u"test@kolab.org"_s};
 
-    eJob->setContent(content);
+    auto tJob = new TransparentJob();
+    tJob->setContent(content);
+    eJob->appendSubjob(tJob);
+
     eJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
     eJob->setRecipients(recipients);
     eJob->setEncryptionKeys(keys);
@@ -267,8 +267,10 @@ void EncryptJobTest::testSetGnupgHome()
     {
         auto eJob = new EncryptJob(&composerJob);
         QVERIFY(eJob);
+        auto tJob = new TransparentJob();
+        tJob->setContent(&content);
+        eJob->appendSubjob(tJob);
 
-        eJob->setContent(&content);
         eJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
         eJob->setRecipients(recipients);
         eJob->setEncryptionKeys(keys);
@@ -281,8 +283,10 @@ void EncryptJobTest::testSetGnupgHome()
     }
     auto eJob = new EncryptJob(&composerJob);
     QVERIFY(eJob);
+    auto tJob = new TransparentJob();
+    tJob->setContent(&content);
+    eJob->appendSubjob(tJob);
 
-    eJob->setContent(&content);
     eJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
     eJob->setRecipients(recipients);
     eJob->setEncryptionKeys(keys);

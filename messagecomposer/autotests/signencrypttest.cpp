@@ -76,14 +76,10 @@ void SignEncryptTest::testContent()
 
     auto mainTextJob = new MainTextJob(&part, &composerJob);
     auto seJob = new SignEncryptJob(&composerJob);
-
-    QVERIFY(mainTextJob);
-
-    VERIFYEXEC(mainTextJob);
+    seJob->appendSubjob(mainTextJob);
 
     const QStringList recipients = {QString::fromLocal8Bit("test@kolab.org")};
 
-    seJob->setContent(mainTextJob->content());
     seJob->setSigningKeys(keys);
     seJob->setCryptoMessageFormat((Kleo::CryptoMessageFormat)cryptoMessageFormat);
     seJob->setRecipients(recipients);
@@ -156,7 +152,10 @@ void SignEncryptTest::testHeaders()
 
     const QStringList recipients = {QString::fromLocal8Bit("test@kolab.org")};
 
-    seJob->setContent(content);
+    auto tJob = new TransparentJob();
+    tJob->setContent(content);
+    seJob->appendSubjob(tJob);
+
     seJob->setSigningKeys(keys);
     seJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
     seJob->setRecipients(recipients);
@@ -226,7 +225,10 @@ void SignEncryptTest::testProtectedHeaders()
 
     const QStringList recipients = {u"test@kolab.org"_s};
 
-    seJob->setContent(content);
+    auto tJob = new TransparentJob();
+    tJob->setContent(content);
+    seJob->appendSubjob(tJob);
+
     seJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
     seJob->setRecipients(recipients);
     seJob->setEncryptionKeys(keys);

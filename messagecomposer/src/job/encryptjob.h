@@ -38,7 +38,6 @@ public:
     explicit EncryptJob(QObject *parent = nullptr);
     ~EncryptJob() override;
 
-    void setContent(KMime::Content *content);
     void setCryptoMessageFormat(Kleo::CryptoMessageFormat format);
     void setEncryptionKeys(const std::vector<GpgME::Key> &keys) override;
     void setRecipients(const QStringList &rec) override;

@@ -70,15 +70,6 @@ SignEncryptJob::SignEncryptJob(QObject *parent)
 
 SignEncryptJob::~SignEncryptJob() = default;
 
-void SignEncryptJob::setContent(KMime::Content *content)
-{
-    Q_D(SignEncryptJob);
-
-    Q_ASSERT(content);
-
-    d->content = content;
-}
-
 void SignEncryptJob::setCryptoMessageFormat(Kleo::CryptoMessageFormat format)
 {
     Q_D(SignEncryptJob);

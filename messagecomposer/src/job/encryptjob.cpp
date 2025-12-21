@@ -81,14 +81,6 @@ EncryptJob::EncryptJob(QObject *parent)
 
 EncryptJob::~EncryptJob() = default;
 
-void EncryptJob::setContent(KMime::Content *content)
-{
-    Q_D(EncryptJob);
-
-    d->content = content;
-    d->content->assemble();
-}
-
 void EncryptJob::setCryptoMessageFormat(Kleo::CryptoMessageFormat format)
 {
     Q_D(EncryptJob);
