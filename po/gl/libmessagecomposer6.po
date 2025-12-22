@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-19 00:44+0000\n"
+"POT-Creation-Date: 2025-12-22 00:43+0000\n"
 "PO-Revision-Date: 2025-01-19 12:47+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -1193,17 +1193,17 @@ msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "Cartafol incorrecto"
 
-#: helper/messagefactoryng.cpp:408 helper/messagefactoryng.cpp:730
+#: helper/messagefactoryng.cpp:408 helper/messagefactoryng.cpp:732
 #, kde-format
 msgid "forwarded message"
 msgstr "mensaxe reenviada"
 
-#: helper/messagefactoryng.cpp:576
+#: helper/messagefactoryng.cpp:578
 #, kde-format
 msgid "Receipt: "
 msgstr "Xustificante de recepción: "
 
-#: helper/messagefactoryng.cpp:702
+#: helper/messagefactoryng.cpp:704
 #, kde-format
 msgid ""
 "\n"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-19 00:44+0000\n"
+"POT-Creation-Date: 2025-12-22 00:43+0000\n"
 "PO-Revision-Date: 2025-11-11 18:54+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -1185,17 +1185,17 @@ msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "Nederīga mape"
 
-#: helper/messagefactoryng.cpp:408 helper/messagefactoryng.cpp:730
+#: helper/messagefactoryng.cpp:408 helper/messagefactoryng.cpp:732
 #, kde-format
 msgid "forwarded message"
 msgstr "pārsūtīta vēstule"
 
-#: helper/messagefactoryng.cpp:576
+#: helper/messagefactoryng.cpp:578
 #, kde-format
 msgid "Receipt: "
 msgstr "Kvīts: "
 
-#: helper/messagefactoryng.cpp:702
+#: helper/messagefactoryng.cpp:704
 #, kde-format
 msgid ""
 "\n"
