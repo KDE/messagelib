@@ -1137,15 +1137,16 @@ std::unique_ptr<KMime::Content> TemplateParserJob::createMultipartMixed(const QL
     mixedPart->appendContent(std::move(textPart));
 
     int attachmentNumber = 1;
-    for (KMime::Content *attachment : attachments) {
-        mixedPart->appendContent(attachment);
+    for (const KMime::Content *attachment : attachments) {
+        auto newAtt = attachment->clone();
         // If the content type has no name or filename parameter, add one, since otherwise the name
         // would be empty in the attachment view of the composer, which looks confusing
-        if (auto ct = attachment->contentType(KMime::CreatePolicy::DontCreate)) {
+        if (auto ct = newAtt->contentType(KMime::CreatePolicy::DontCreate)) {
             if (!ct->hasParameter("name") && !ct->hasParameter("filename")) {
                 ct->setParameter(QByteArrayLiteral("name"), i18nc("@item:intext", "Attachment %1", attachmentNumber));
             }
         }
+        mixedPart->appendContent(std::move(newAtt));
         ++attachmentNumber;
     }
     return mixedPart;
@@ -1161,9 +1162,9 @@ std::unique_ptr<KMime::Content> TemplateParserJob::createMultipartRelated(const 
     contentType->setBoundary(boundary);
     relatedPart->contentTransferEncoding()->setEncoding(KMime::Headers::CE7Bit);
     relatedPart->appendContent(std::move(mainTextPart));
-    for (KMime::Content *image : ic.images()) {
+    for (const KMime::Content *image : ic.images()) {
         qCWarning(TEMPLATEPARSER_LOG) << "Adding" << image->contentID() << "as an embedded image";
-        relatedPart->appendContent(image);
+        relatedPart->appendContent(image->clone());
     }
     return relatedPart;
 }

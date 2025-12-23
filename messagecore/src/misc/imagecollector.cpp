@@ -16,7 +16,7 @@
 class MessageCore::ImageCollector::ImageCollectorPrivate
 {
 public:
-    std::vector<KMime::Content *> mImages;
+    std::vector<const KMime::Content *> mImages;
 };
 
 MessageCore::ImageCollector::ImageCollector()
@@ -46,7 +46,7 @@ void MessageCore::ImageCollector::collectImagesFrom(KMime::Content *node)
     }
 }
 
-const std::vector<KMime::Content *> &MessageCore::ImageCollector::images() const
+const std::vector<const KMime::Content *> &MessageCore::ImageCollector::images() const
 {
     return d->mImages;
 }
