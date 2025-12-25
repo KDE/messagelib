@@ -344,7 +344,7 @@ KMMsgEncryptionState NodeHelper::overallEncryptionState(KMime::Content *node) co
     if (contents.isEmpty()) {
         contents.append(node);
     }
-    int i = contents.indexOf(const_cast<KMime::Content *>(node));
+    int i = contents.indexOf(node);
     if (i < 0) {
         return myState;
     }
@@ -405,7 +405,7 @@ KMMsgSignatureState NodeHelper::overallSignatureState(KMime::Content *node) cons
     if (contents.isEmpty()) {
         contents.append(node);
     }
-    int i = contents.indexOf(const_cast<KMime::Content *>(node));
+    int i = contents.indexOf(node);
     if (i < 0) { // Be safe
         return myState;
     }
@@ -586,9 +586,12 @@ QByteArray NodeHelper::codecName(const KMime::Content *node) const
 
 QString NodeHelper::fileName(const KMime::Content *node)
 {
-    QString name = const_cast<KMime::Content *>(node)->contentDisposition()->filename();
-    if (name.isEmpty()) {
-        name = const_cast<KMime::Content *>(node)->contentType()->name();
+    QString name;
+    if (auto cd = node->contentDisposition(); cd) {
+        name = cd->filename();
+    }
+    if (auto ct = node->contentType(); name.isEmpty() && ct) {
+        name = ct->name();
     }
 
     name = name.trimmed();
