@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-14 00:43+0000\n"
+"POT-Creation-Date: 2025-12-26 00:44+0000\n"
 "PO-Revision-Date: 2010-12-26 08:57+0530\n"
 "Last-Translator: A S Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
@@ -277,7 +277,7 @@ msgctxt "@item:intext"
 msgid "Attachment %1"
 msgstr ""
 
-#: templateparserjob.cpp:1353
+#: templateparserjob.cpp:1354
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Pipe command <command>%1</command> failed."

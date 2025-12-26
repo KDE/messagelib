@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtemplateparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-14 00:43+0000\n"
+"POT-Creation-Date: 2025-12-26 00:44+0000\n"
 "PO-Revision-Date: 2013-04-12 08:33+0300\n"
 "Last-Translator: Liudas Ališauskas <liudas.alisauskas@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -288,7 +288,7 @@ msgctxt "@item:intext"
 msgid "Attachment %1"
 msgstr "Priedas %1"
 
-#: templateparserjob.cpp:1353
+#: templateparserjob.cpp:1354
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Pipe command <command>%1</command> failed."
