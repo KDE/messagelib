@@ -172,15 +172,10 @@ void EncryptJob::doStart()
 
     if (d->protectedHeaders && d->skeletonMessage && d->format & Kleo::OpenPGPMIMEFormat) {
         auto pJob = new ProtectedHeadersJob;
-        pJob->setContent(d->content);
+        pJob->setContent(std::move(d->content));
+        d->content = nullptr; // temporary, until d->content is a std::unique_ptr
         pJob->setSkeletonMessage(d->skeletonMessage);
         pJob->setObvoscate(d->protectedHeadersObvoscate);
-        QObject::connect(pJob, &ProtectedHeadersJob::finished, this, [d, pJob](KJob *job) {
-            if (job->error()) {
-                return;
-            }
-            d->content = pJob->content();
-        });
         appendSubjob(pJob);
     }
 
@@ -189,18 +184,29 @@ void EncryptJob::doStart()
 
 void EncryptJob::slotResult(KJob *job)
 {
-    // Q_D(EncryptJob);
+    Q_D(EncryptJob);
     if (error() || job->error()) {
         ContentJobBase::slotResult(job);
         return;
     }
-    if (subjobs().size() == 2) {
-        auto pjob = static_cast<ProtectedHeadersJob *>(subjobs().last());
-        if (pjob) {
-            auto cjob = qobject_cast<ContentJobBase *>(job);
-            Q_ASSERT(cjob);
-            pjob->setContent(cjob->content());
+
+    if (auto cjob = qobject_cast<ContentJobBase *>(job); cjob && !qobject_cast<ProtectedHeadersJob *>(job)) {
+        // clone input content as ComposerJob uses the same job providing that
+        // for potntially multiple encryption jobs (which end up modifying this)
+        d->content = cjob->content()->clone().release();
+
+        // forward input to the ProtectedHeadersJob if there's one, bypassing ContentJobBase's result propagation
+        if (subjobs().size() == 2) {
+            if (auto pjob = static_cast<ProtectedHeadersJob *>(subjobs().last()); pjob) {
+                pjob->setContent(std::move(d->content));
+                d->content = nullptr; // temporary, until d->content is a std::unique_ptr
+            }
         }
+
+        // skip ContentJobBase as we passed on the subjob result here and don't want to consume it ourselves'
+        KCompositeJob::slotResult(job);
+        d->doNextSubjob();
+        return;
     }
 
     ContentJobBase::slotResult(job);

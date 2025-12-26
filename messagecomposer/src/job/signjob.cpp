@@ -125,15 +125,10 @@ void SignJob::doStart()
 
     if (d->protectedHeaders && d->skeletonMessage && d->format & Kleo::OpenPGPMIMEFormat) {
         auto pJob = new ProtectedHeadersJob;
-        pJob->setContent(d->content);
+        pJob->setContent(std::move(d->content));
+        d->content = nullptr; // temporary, until d->content is a std::unique_ptr
         pJob->setSkeletonMessage(d->skeletonMessage);
         pJob->setObvoscate(false);
-        QObject::connect(pJob, &ProtectedHeadersJob::finished, this, [d, pJob](KJob *job) {
-            if (job->error()) {
-                return;
-            }
-            d->content = pJob->content();
-        });
         appendSubjob(pJob);
     }
 
@@ -142,6 +137,7 @@ void SignJob::doStart()
 
 void SignJob::slotResult(KJob *job)
 {
+    Q_D(SignJob);
     if (error() || job->error()) {
         ContentJobBase::slotResult(job);
         return;
@@ -152,6 +148,11 @@ void SignJob::slotResult(KJob *job)
             auto cjob = qobject_cast<ContentJobBase *>(job);
             Q_ASSERT(cjob);
             pjob->setContent(cjob->content());
+
+            // skip ContentJobBase as we passed on the subjob result here and don't want to consume it ourselves'
+            KCompositeJob::slotResult(job);
+            d->doNextSubjob();
+            return;
         }
     }
 
