@@ -62,7 +62,7 @@ void SignAndEncryptTest::testContent()
 
     const QStringList recipients = {u"test@kolab.org"_s};
 
-    sJob->setContent(mainTextJob->content());
+    sJob->setContent(mainTextJob->takeContent());
     sJob->setSigningKeys(keys);
     sJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
 
@@ -74,7 +74,7 @@ void SignAndEncryptTest::testContent()
 
     VERIFYEXEC(eJob);
 
-    auto result = std::unique_ptr<KMime::Content>(eJob->content());
+    auto result = eJob->takeContent();
     QVERIFY(result);
     result->assemble();
 
@@ -98,7 +98,7 @@ void SignAndEncryptTest::testHeaders()
 
     const QStringList recipients = {u"test@kolab.org"_s};
 
-    sJob->setContent(content.get());
+    sJob->setContent(std::move(content));
     sJob->setSigningKeys(keys);
     sJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
 
@@ -110,7 +110,7 @@ void SignAndEncryptTest::testHeaders()
 
     VERIFYEXEC(eJob);
 
-    auto result = std::unique_ptr<KMime::Content>(eJob->content());
+    auto result = eJob->takeContent();
     QVERIFY(result);
     result->assemble();
 

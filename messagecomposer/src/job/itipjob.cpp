@@ -132,8 +132,8 @@ void ItipJob::process()
 {
     Q_D(ItipJob);
     // The content has been created by our subjob.
-    Q_ASSERT(d->subjobContents.count() == 1);
-    d->resultContent = d->subjobContents.constFirst();
+    Q_ASSERT(d->subjobContents.size() == 1);
+    d->resultContent = std::move(d->subjobContents.front());
     emitResult();
 }
 

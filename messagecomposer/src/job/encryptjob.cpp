@@ -37,7 +37,7 @@ public:
     QStringList recipients;
     std::vector<GpgME::Key> keys;
     Kleo::CryptoMessageFormat format;
-    KMime::Content *content = nullptr;
+    std::unique_ptr<KMime::Content> content;
     KMime::Message *skeletonMessage = nullptr;
 
     bool protectedHeaders = true;
@@ -81,11 +81,11 @@ EncryptJob::EncryptJob(QObject *parent)
 
 EncryptJob::~EncryptJob() = default;
 
-void EncryptJob::setContent(KMime::Content *content)
+void EncryptJob::setContent(std::unique_ptr<KMime::Content> &&content)
 {
     Q_D(EncryptJob);
 
-    d->content = content;
+    d->content = std::move(content);
     d->content->assemble();
 }
 
@@ -166,14 +166,13 @@ void EncryptJob::doStart()
     // and we want to use that
     if (!d->content || !d->content->hasContent()) {
         if (d->subjobContents.size() == 1) {
-            d->content = d->subjobContents.constFirst();
+            d->content = std::move(d->subjobContents.front());
         }
     }
 
     if (d->protectedHeaders && d->skeletonMessage && d->format & Kleo::OpenPGPMIMEFormat) {
         auto pJob = new ProtectedHeadersJob;
         pJob->setContent(std::move(d->content));
-        d->content = nullptr; // temporary, until d->content is a std::unique_ptr
         pJob->setSkeletonMessage(d->skeletonMessage);
         pJob->setObvoscate(d->protectedHeadersObvoscate);
         appendSubjob(pJob);
@@ -193,13 +192,12 @@ void EncryptJob::slotResult(KJob *job)
     if (auto cjob = qobject_cast<ContentJobBase *>(job); cjob && !qobject_cast<ProtectedHeadersJob *>(job)) {
         // clone input content as ComposerJob uses the same job providing that
         // for potntially multiple encryption jobs (which end up modifying this)
-        d->content = cjob->content()->clone().release();
+        d->content = cjob->content()->clone();
 
         // forward input to the ProtectedHeadersJob if there's one, bypassing ContentJobBase's result propagation
         if (subjobs().size() == 2) {
             if (auto pjob = static_cast<ProtectedHeadersJob *>(subjobs().last()); pjob) {
                 pjob->setContent(std::move(d->content));
-                d->content = nullptr; // temporary, until d->content is a std::unique_ptr
             }
         }
 
@@ -220,7 +218,7 @@ void EncryptJob::process()
     // and we want to use that
     if (!d->content || !d->content->hasContent()) {
         Q_ASSERT(d->subjobContents.size() == 1);
-        d->content = d->subjobContents.constFirst();
+        d->content = std::move(d->subjobContents.front());
     }
 
     const QGpgME::Protocol *proto = nullptr;
@@ -264,7 +262,7 @@ void EncryptJob::process()
                 emitResult();
                 return;
             }
-            d->resultContent = MessageComposer::Util::composeHeadersAndBody(d->content, cipherText, d->format, false);
+            d->resultContent = MessageComposer::Util::composeHeadersAndBody(std::move(d->content), cipherText, d->format, false);
 
             emitResult();
         });

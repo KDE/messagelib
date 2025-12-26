@@ -53,7 +53,7 @@ void SignJobTest::testContentDirect()
     auto content = std::make_unique<KMime::Content>();
     content->setBody(data);
 
-    sJob->setContent(content.release());
+    sJob->setContent(std::move(content));
     sJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
     sJob->setSigningKeys(keys);
 
@@ -69,7 +69,7 @@ void SignJobTest::testContentChained()
     content->setBody(data);
 
     auto tJob = new TransparentJob;
-    tJob->setContent(content.release());
+    tJob->setContent(std::move(content));
 
     ComposerJob composerJob;
     auto sJob = new SignJob(&composerJob);
@@ -95,13 +95,13 @@ void SignJobTest::testHeaders()
     auto content = std::make_unique<KMime::Content>();
     content->setBody(data);
 
-    sJob->setContent(content.release());
+    sJob->setContent(std::move(content));
     sJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
     sJob->setSigningKeys(keys);
 
     VERIFYEXEC(sJob);
 
-    auto result = std::unique_ptr<KMime::Content>(sJob->content());
+    auto result = sJob->takeContent();
     result->assemble();
 
     QVERIFY(result->contentType(KMime::CreatePolicy::DontCreate));
@@ -127,13 +127,13 @@ void SignJobTest::testRecommentationRFC3156()
     auto content = std::make_unique<KMime::Content>();
     content->setBody(data.toUtf8());
 
-    sJob->setContent(content.release());
+    sJob->setContent(std::move(content));
     sJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
     sJob->setSigningKeys(keys);
 
     VERIFYEXEC(sJob);
 
-    auto result = std::unique_ptr<KMime::Content>(sJob->content());
+    auto result = sJob->takeContent();
     result->assemble();
 
     QVERIFY(!result->contents().isEmpty());
@@ -169,13 +169,13 @@ void SignJobTest::testMixedContent()
     content->appendContent(std::move(attachment));
     content->assemble();
 
-    sJob->setContent(content.release());
+    sJob->setContent(std::move(content));
     sJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
     sJob->setSigningKeys(keys);
 
     VERIFYEXEC(sJob);
 
-    auto result = std::unique_ptr<KMime::Content>(sJob->content());
+    auto result = sJob->takeContent();
     result->assemble();
 
     QCOMPARE(result->contents().count(), 2);
@@ -193,7 +193,7 @@ void SignJobTest::checkSignJob(SignJob *sJob)
 {
     VERIFYEXEC(sJob);
 
-    auto result = std::unique_ptr<KMime::Content>(sJob->content());
+    auto result = sJob->takeContent();
     Q_ASSERT(result);
     result->assemble();
 
@@ -238,7 +238,7 @@ void SignJobTest::testProtectedHeaders()
     skeletonMessage.bcc(KMime::CreatePolicy::Create)->from7BitString("bcc@test.de, bcc2@test.de");
     skeletonMessage.subject(KMime::CreatePolicy::Create)->fromUnicodeString(subject);
 
-    sJob->setContent(content.release());
+    sJob->setContent(std::move(content));
     sJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
     sJob->setSigningKeys(keys);
     sJob->setSkeletonMessage(&skeletonMessage);
@@ -248,7 +248,7 @@ void SignJobTest::testProtectedHeaders()
 
     QCOMPARE(skeletonMessage.subject()->asUnicodeString(), subject);
 
-    KMime::Content *result = sJob->content();
+    auto result = sJob->takeContent();
     result->assemble();
 
     Test::compareFile(result->contents().at(0), QStringLiteral(MAIL_DATA_DIR "/") + referenceFile);
@@ -278,7 +278,7 @@ void SignJobTest::testProtectedHeadersOverwrite()
     skeletonMessage.bcc(KMime::CreatePolicy::Create)->from7BitString("bcc@test.de, bcc2@test.de");
     skeletonMessage.subject(KMime::CreatePolicy::Create)->fromUnicodeString(subject);
 
-    sJob->setContent(content.release());
+    sJob->setContent(std::move(content));
     sJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
     sJob->setSigningKeys(keys);
     sJob->setSkeletonMessage(&skeletonMessage);
@@ -292,7 +292,7 @@ void SignJobTest::testProtectedHeadersOverwrite()
     skeletonMessage.bcc()->from7BitString("bcc_overwrite@example.org");
     skeletonMessage.subject()->fromUnicodeString(subject + u"_owerwrite"_s);
 
-    KMime::Content *result = sJob->content();
+    auto result = sJob->takeContent();
     result->assemble();
 
     Test::compareFile(result->contents().at(0), QStringLiteral(MAIL_DATA_DIR "/") + referenceFile);
@@ -336,7 +336,7 @@ void SignJobTest::testProtectedHeadersSkipLong()
     skeletonMessage.appendHeader(std::move(face));
     skeletonMessage.subject(KMime::CreatePolicy::Create)->fromUnicodeString(subject);
 
-    sJob->setContent(content.release());
+    sJob->setContent(std::move(content));
     sJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
     sJob->setSigningKeys(keys);
     sJob->setSkeletonMessage(&skeletonMessage);
@@ -344,7 +344,7 @@ void SignJobTest::testProtectedHeadersSkipLong()
 
     VERIFYEXEC(sJob);
 
-    KMime::Content *result = sJob->content();
+    auto result = sJob->takeContent();
     result->assemble();
 
     Test::compareFile(result->contents().at(0), QStringLiteral(MAIL_DATA_DIR "/") + referenceFile);

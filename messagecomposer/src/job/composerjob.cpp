@@ -46,11 +46,13 @@ public:
     void composeStep2();
     [[nodiscard]] QList<ContentJobBase *> createEncryptJobs(ContentJobBase *contentJob, bool sign);
     void contentJobFinished(KJob *job); // slot
-    void
-    composeWithLateAttachments(KMime::Content *content, const AttachmentPart::List &parts, const std::vector<GpgME::Key> &keys, const QStringList &recipients);
+    void composeWithLateAttachments(std::unique_ptr<KMime::Content> &&content,
+                                    const AttachmentPart::List &parts,
+                                    const std::vector<GpgME::Key> &keys,
+                                    const QStringList &recipients);
     void attachmentsFinished(KJob *job);
 
-    void composeFinalStep(KMime::Content *content);
+    void composeFinalStep(std::unique_ptr<KMime::Content> &&content);
 
     QString gnupgHome;
     QList<QPair<QStringList, std::vector<GpgME::Key>>> encData;
@@ -331,7 +333,7 @@ void ComposerJobPrivate::contentJobFinished(KJob *job)
     }
     qCDebug(MESSAGECOMPOSER_LOG) << "composing final message";
 
-    KMime::Content *resultContent = nullptr;
+    std::unique_ptr<KMime::Content> resultContent;
     std::vector<GpgME::Key> keys;
     QStringList recipients;
 
@@ -347,7 +349,7 @@ void ComposerJobPrivate::contentJobFinished(KJob *job)
         keys = eJob->encryptionKeys();
         recipients = eJob->recipients();
 
-        resultContent = contentJob->content(); // content() comes from superclass
+        resultContent = std::move(contentJob->takeContent()); // content() comes from superclass
         auto headers = std::make_unique<KMime::Message>();
         headers->from(KMime::CreatePolicy::Create)->from7BitString(skeletonMessage->from()->as7BitString());
         headers->to(KMime::CreatePolicy::Create)->from7BitString(skeletonMessage->to()->as7BitString());
@@ -372,17 +374,17 @@ void ComposerJobPrivate::contentJobFinished(KJob *job)
             recipients = firstElement.first;
         }
 
-        resultContent = contentJob->content();
+        resultContent = std::move(contentJob->takeContent());
     }
 
     if (lateAttachmentParts.isEmpty()) {
-        composeFinalStep(resultContent);
+        composeFinalStep(std::move(resultContent));
     } else {
-        composeWithLateAttachments(resultContent, lateAttachmentParts, keys, recipients);
+        composeWithLateAttachments(std::move(resultContent), lateAttachmentParts, keys, recipients);
     }
 }
 
-void ComposerJobPrivate::composeWithLateAttachments(KMime::Content *content,
+void ComposerJobPrivate::composeWithLateAttachments(std::unique_ptr<KMime::Content> &&content,
                                                     const AttachmentPart::List &parts,
                                                     const std::vector<GpgME::Key> &keys,
                                                     const QStringList &recipients)
@@ -394,7 +396,7 @@ void ComposerJobPrivate::composeWithLateAttachments(KMime::Content *content,
 
     // wrap the content into a job for the multijob to handle it
     auto tJob = new MessageComposer::TransparentJob(q);
-    tJob->setContent(content);
+    tJob->setContent(std::move(content));
     multiJob->appendSubjob(tJob);
 
     qCDebug(MESSAGECOMPOSER_LOG) << "attachment encr key size:" << keys.size() << " recipients: " << recipients;
@@ -460,18 +462,14 @@ void ComposerJobPrivate::attachmentsFinished(KJob *job)
     Q_ASSERT(dynamic_cast<ContentJobBase *>(job));
     auto contentJob = static_cast<ContentJobBase *>(job);
 
-    KMime::Content *content = contentJob->content();
-
-    composeFinalStep(content);
+    composeFinalStep(contentJob->takeContent());
 }
 
-void ComposerJobPrivate::composeFinalStep(KMime::Content *content)
+void ComposerJobPrivate::composeFinalStep(std::unique_ptr<KMime::Content> &&content)
 {
     content->assemble();
 
     const QByteArray allData = skeletonMessage->head() + content->encodedContent();
-
-    delete content;
 
     std::shared_ptr<KMime::Message> resultMessage(new KMime::Message);
     resultMessage->setContent(allData);

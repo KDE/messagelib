@@ -33,7 +33,7 @@
 #include <MessageCore/StringUtil>
 using namespace Qt::Literals::StringLiterals;
 
-static KMime::Content *setBodyAndCTE(QByteArray &encodedBody, KMime::Headers::ContentType *contentType, KMime::Content *ret)
+static void setBodyAndCTE(QByteArray &encodedBody, KMime::Headers::ContentType *contentType, KMime::Content *ret)
 {
     MessageComposer::ComposerJob composerJob;
     MessageComposer::SinglepartJob cteJob(&composerJob);
@@ -42,28 +42,27 @@ static KMime::Content *setBodyAndCTE(QByteArray &encodedBody, KMime::Headers::Co
     cteJob.contentType()->setCharset(contentType->charset());
     cteJob.setData(encodedBody);
     cteJob.exec();
-    cteJob.content()->assemble();
 
     ret->contentTransferEncoding()->setEncoding(cteJob.contentTransferEncoding()->encoding());
-    ret->setEncodedBody(cteJob.content()->encodedBody());
-
-    return ret;
+    auto content = cteJob.takeContent();
+    content->assemble();
+    ret->setEncodedBody(content->encodedBody());
 }
 
-KMime::Content *MessageComposer::Util::composeHeadersAndBody(KMime::Content *orig,
-                                                             QByteArray encodedBody,
-                                                             Kleo::CryptoMessageFormat format,
-                                                             bool sign,
-                                                             const QByteArray &hashAlgo)
+std::unique_ptr<KMime::Content> MessageComposer::Util::composeHeadersAndBody(std::unique_ptr<KMime::Content> &&orig,
+                                                                             QByteArray encodedBody,
+                                                                             Kleo::CryptoMessageFormat format,
+                                                                             bool sign,
+                                                                             const QByteArray &hashAlgo)
 {
-    auto result = new KMime::Content;
+    auto result = std::make_unique<KMime::Content>();
 
     // called should have tested that the signing/encryption failed
     Q_ASSERT(!encodedBody.isEmpty());
 
     if (!(format & Kleo::InlineOpenPGPFormat)) { // make a MIME message
         qCDebug(MESSAGECOMPOSER_LOG) << "making MIME message, format:" << format;
-        makeToplevelContentType(result, format, sign, hashAlgo);
+        makeToplevelContentType(result.get(), format, sign, hashAlgo);
 
         if (makeMultiMime(format, sign)) { // sign/enc PGPMime, sign SMIME
             const QByteArray boundary = KMime::multiPartBoundary();
@@ -87,7 +86,7 @@ KMime::Content *MessageComposer::Util::composeHeadersAndBody(KMime::Content *ori
                 } else { // sign PGPMmime
                     setBodyAndCTE(encodedBody, orig->contentType(), code.get());
                 }
-                result->appendContent(orig);
+                result->appendContent(std::move(orig));
                 result->appendContent(std::move(code));
             } else { // enc PGPMime
                 setBodyAndCTE(encodedBody, orig->contentType(), code.get());
@@ -120,7 +119,7 @@ KMime::Content *MessageComposer::Util::composeHeadersAndBody(KMime::Content *ori
         result->parse();
 
         // fixing ContentTransferEncoding
-        setBodyAndCTE(encodedBody, orig->contentType(), result);
+        setBodyAndCTE(encodedBody, orig->contentType(), result.get());
     }
     return result;
 }

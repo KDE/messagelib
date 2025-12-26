@@ -21,7 +21,7 @@ public:
     {
     }
 
-    KMime::Content *content = nullptr;
+    std::unique_ptr<KMime::Content> content;
 
     Q_DECLARE_PUBLIC(TransparentJob)
 };
@@ -33,17 +33,17 @@ TransparentJob::TransparentJob(QObject *parent)
 
 TransparentJob::~TransparentJob() = default;
 
-void TransparentJob::setContent(KMime::Content *content)
+void TransparentJob::setContent(std::unique_ptr<KMime::Content> &&content)
 {
     Q_D(TransparentJob);
 
-    d->content = content;
+    d->content = std::move(content);
 }
 
 void TransparentJob::process()
 {
     Q_D(TransparentJob);
-    d->resultContent = d->content;
+    d->resultContent = std::move(d->content);
     emitResult();
 }
 

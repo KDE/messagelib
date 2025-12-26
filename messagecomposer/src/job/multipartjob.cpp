@@ -48,15 +48,16 @@ void MultipartJob::process()
     Q_D(MultipartJob);
     Q_ASSERT(d->resultContent == nullptr); // Not processed before.
     Q_ASSERT(!d->subtype.isEmpty());
-    d->resultContent = new KMime::Content;
+    d->resultContent = std::make_unique<KMime::Content>();
     auto contentType = d->resultContent->contentType(KMime::CreatePolicy::Create);
     contentType->setMimeType("multipart/" + d->subtype);
     contentType->setBoundary(KMime::multiPartBoundary());
     d->resultContent->contentTransferEncoding()->setEncoding(KMime::Headers::CE7Bit);
     d->resultContent->setPreamble("This is a multi-part message in MIME format.\n");
-    for (KMime::Content *c : std::as_const(d->subjobContents)) {
-        d->resultContent->appendContent(c);
-        if (c->contentTransferEncoding()->encoding() == KMime::Headers::CE8Bit) {
+    for (auto &c : d->subjobContents) {
+        const auto cte = c->contentTransferEncoding();
+        d->resultContent->appendContent(std::move(c));
+        if (cte->encoding() == KMime::Headers::CE8Bit) {
             d->resultContent->contentTransferEncoding()->setEncoding(KMime::Headers::CE8Bit);
             break;
         }

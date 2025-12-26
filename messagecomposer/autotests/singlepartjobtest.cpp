@@ -28,7 +28,7 @@ void SinglepartJobTest::testContent()
     QByteArray data("birds came flying from the underground");
     cjob->setData(data);
     QVERIFY(cjob->exec());
-    Content *result = cjob->content();
+    const auto result = cjob->takeContent();
     result->assemble();
     qDebug() << result->encodedContent();
     QCOMPARE(result->body(), data);
@@ -48,7 +48,7 @@ void SinglepartJobTest::testContentDisposition()
     cjob->contentDisposition()->setDisposition(Headers::CDattachment);
     cjob->contentDisposition()->setFilename(filename);
     QVERIFY(cjob->exec());
-    Content *result = cjob->content();
+    const auto result = cjob->takeContent();
     result->assemble();
     qDebug() << result->encodedContent();
     QCOMPARE(result->body(), data);
@@ -67,7 +67,7 @@ void SinglepartJobTest::testContentID()
     cjob->setData(data);
     cjob->contentID()->setIdentifier(id);
     QVERIFY(cjob->exec());
-    Content *result = cjob->content();
+    const auto result = cjob->takeContent();
     result->assemble();
     qDebug() << result->encodedContent();
     QCOMPARE(result->body(), data);
@@ -87,7 +87,7 @@ void SinglepartJobTest::testContentType()
     cjob->contentType()->setMimeType(mimeType);
     cjob->contentType()->setCharset(charset);
     QVERIFY(cjob->exec());
-    Content *result = cjob->content();
+    const auto result = cjob->takeContent();
     result->assemble();
     qDebug() << result->encodedContent();
     QCOMPARE(result->body(), data);
@@ -107,7 +107,7 @@ void SinglepartJobTest::testContentTransferEncoding()
         QByteArray data("and the sun will set for you...");
         cjob->setData(data);
         QVERIFY(cjob->exec());
-        Content *result = cjob->content();
+        const auto result = cjob->takeContent();
         result->assemble();
         qDebug() << result->encodedContent();
         QVERIFY(result->contentTransferEncoding(KMime::CreatePolicy::DontCreate));
@@ -122,7 +122,7 @@ void SinglepartJobTest::testContentTransferEncoding()
         QByteArray data("some long text to make qupr more compact than base64 [ăîşţâ]"); // utf-8
         cjob->setData(data);
         QVERIFY(cjob->exec());
-        Content *result = cjob->content();
+        const auto result = cjob->takeContent();
         result->assemble();
         qDebug() << result->encodedContent();
         QVERIFY(result->contentTransferEncoding(KMime::CreatePolicy::DontCreate));
@@ -137,7 +137,7 @@ void SinglepartJobTest::testContentTransferEncoding()
         QByteArray data("[ăîşţâ]"); // utf-8
         cjob->setData(data);
         QVERIFY(cjob->exec());
-        Content *result = cjob->content();
+        const auto result = cjob->takeContent();
         result->assemble();
         qDebug() << result->encodedContent();
         QVERIFY(result->contentTransferEncoding(KMime::CreatePolicy::DontCreate));

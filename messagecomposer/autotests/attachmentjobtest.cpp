@@ -47,7 +47,7 @@ void AttachmentJobTest::testAttachment()
     ComposerJob composerJob;
     auto ajob = new AttachmentJob(part, &composerJob);
     QVERIFY(ajob->exec());
-    Content *result = ajob->content();
+    const auto result = ajob->takeContent();
     result->assemble();
     qDebug() << result->encodedContent();
 

@@ -735,10 +735,10 @@ void AttachmentControllerBase::viewAttachment(const AttachmentPart::Ptr &part)
 void AttachmentControllerBase::AttachmentControllerBasePrivate::slotAttachmentContentCreated(KJob *job)
 {
     if (!job->error()) {
-        const MessageComposer::AttachmentJob *const attachmentJob = qobject_cast<MessageComposer::AttachmentJob *>(job);
+        MessageComposer::AttachmentJob *attachmentJob = qobject_cast<MessageComposer::AttachmentJob *>(job);
         Q_ASSERT(attachmentJob);
         if (attachmentJob) {
-            const auto content = std::shared_ptr<KMime::Content>(attachmentJob->content());
+            const auto content = std::shared_ptr<KMime::Content>(attachmentJob->takeContent());
             Q_EMIT q->showAttachment(content, QByteArray());
         }
     } else {
