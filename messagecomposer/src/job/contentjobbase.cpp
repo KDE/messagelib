@@ -56,12 +56,18 @@ void ContentJobBase::start()
     doStart();
 }
 
-KMime::Content *ContentJobBase::content() const
+const std::unique_ptr<KMime::Content> &ContentJobBase::content() const
 {
     Q_D(const ContentJobBase);
     // Q_ASSERT( !hasSubjobs() ); // Finished. // JobBase::hasSubjobs is not const :-/ TODO const_cast??
     Q_ASSERT(d->resultContent); // process() should do something.
     return d->resultContent;
+}
+
+std::unique_ptr<KMime::Content> &&ContentJobBase::takeContent()
+{
+    Q_D(ContentJobBase);
+    return std::move(d->resultContent);
 }
 
 bool ContentJobBase::appendSubjob(ContentJobBase *job)
@@ -81,7 +87,7 @@ bool ContentJobBase::addSubjob(KJob *job)
 void ContentJobBase::doStart()
 {
     Q_D(ContentJobBase);
-    Q_ASSERT(d->resultContent == nullptr && d->subjobContents.isEmpty()); // Not started.
+    Q_ASSERT(!d->resultContent && d->subjobContents.empty()); // Not started.
     Q_ASSERT(!error()); // Jobs emitting an error in doStart should not call ContentJobBase::doStart().
     d->doNextSubjob();
 }
@@ -97,7 +103,7 @@ void ContentJobBase::slotResult(KJob *job)
 
     Q_ASSERT(dynamic_cast<ContentJobBase *>(job));
     auto cjob = static_cast<ContentJobBase *>(job);
-    d->subjobContents.append(cjob->content());
+    d->subjobContents.push_back(cjob->takeContent());
     d->doNextSubjob();
 }
 

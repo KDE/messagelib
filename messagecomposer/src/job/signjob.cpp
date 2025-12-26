@@ -36,7 +36,7 @@ public:
     {
     }
 
-    KMime::Content *content = nullptr;
+    std::unique_ptr<KMime::Content> content;
     KMime::Message *skeletonMessage = nullptr;
     std::vector<GpgME::Key> signers;
     Kleo::CryptoMessageFormat format;
@@ -81,11 +81,11 @@ SignJob::SignJob(QObject *parent)
 
 SignJob::~SignJob() = default;
 
-void SignJob::setContent(KMime::Content *content)
+void SignJob::setContent(std::unique_ptr<KMime::Content> &&content)
 {
     Q_D(SignJob);
 
-    d->content = content;
+    d->content = std::move(content);
 }
 
 void SignJob::setCryptoMessageFormat(Kleo::CryptoMessageFormat format)
@@ -126,7 +126,6 @@ void SignJob::doStart()
     if (d->protectedHeaders && d->skeletonMessage && d->format & Kleo::OpenPGPMIMEFormat) {
         auto pJob = new ProtectedHeadersJob;
         pJob->setContent(std::move(d->content));
-        d->content = nullptr; // temporary, until d->content is a std::unique_ptr
         pJob->setSkeletonMessage(d->skeletonMessage);
         pJob->setObvoscate(false);
         appendSubjob(pJob);
@@ -147,7 +146,7 @@ void SignJob::slotResult(KJob *job)
         if (pjob) {
             auto cjob = qobject_cast<ContentJobBase *>(job);
             Q_ASSERT(cjob);
-            pjob->setContent(cjob->content());
+            pjob->setContent(cjob->takeContent());
 
             // skip ContentJobBase as we passed on the subjob result here and don't want to consume it ourselves'
             KCompositeJob::slotResult(job);
@@ -168,7 +167,7 @@ void SignJob::process()
     // and we want to use that
     if (!d->content) {
         Q_ASSERT(d->subjobContents.size() == 1);
-        d->content = d->subjobContents.constFirst();
+        d->content = std::move(d->subjobContents.front());
     }
 
     // d->resultContent = new KMime::Content;
@@ -257,7 +256,7 @@ void SignJob::process()
             }
 
             QByteArray signatureHashAlgo = result.createdSignature(0).hashAlgorithmAsString();
-            d->resultContent = MessageComposer::Util::composeHeadersAndBody(d->content, signature, d->format, true, signatureHashAlgo);
+            d->resultContent = MessageComposer::Util::composeHeadersAndBody(std::move(d->content), signature, d->format, true, signatureHashAlgo);
 
             emitResult();
         });

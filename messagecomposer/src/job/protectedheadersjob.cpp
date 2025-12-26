@@ -23,7 +23,7 @@ public:
     {
     }
 
-    KMime::Content *content = nullptr;
+    std::unique_ptr<KMime::Content> content;
     KMime::Message *skeletonMessage = nullptr;
 
     bool obvoscate = false;
@@ -38,11 +38,11 @@ ProtectedHeadersJob::ProtectedHeadersJob(QObject *parent)
 
 ProtectedHeadersJob::~ProtectedHeadersJob() = default;
 
-void ProtectedHeadersJob::setContent(KMime::Content *content)
+void ProtectedHeadersJob::setContent(std::unique_ptr<KMime::Content> &&content)
 {
     Q_D(ProtectedHeadersJob);
 
-    d->content = content;
+    d->content = std::move(content);
     if (content) {
         d->content->assemble();
     }
@@ -80,21 +80,21 @@ void ProtectedHeadersJob::doStart()
         cjob->setData(subject->type() + QByteArray(": ") + subject->asUnicodeString().toUtf8());
 
         QObject::connect(cjob, &SinglepartJob::finished, this, [d, cjob]() {
-            auto mixedPart = new KMime::Content();
+            auto mixedPart = std::make_unique<KMime::Content>();
             const QByteArray boundary = KMime::multiPartBoundary();
             mixedPart->contentType()->setMimeType("multipart/mixed");
             mixedPart->contentType(KMime::CreatePolicy::DontCreate)->setBoundary(boundary);
-            mixedPart->appendContent(cjob->content());
+            mixedPart->appendContent(cjob->takeContent());
 
             // if setContent hasn't been called, we assume that a subjob was added
             // and we want to use that
             if (!d->content || !d->content->hasContent()) {
                 Q_ASSERT(d->subjobContents.size() == 1);
-                d->content = d->subjobContents.constFirst();
+                d->content = std::move(d->subjobContents.front());
             }
 
-            mixedPart->appendContent(d->content);
-            d->content = mixedPart;
+            mixedPart->appendContent(std::move(d->content));
+            d->content = std::move(mixedPart);
         });
         appendSubjob(cjob);
     }
@@ -110,7 +110,7 @@ void ProtectedHeadersJob::process()
     // and we want to use that
     if (!d->content || !d->content->hasContent()) {
         Q_ASSERT(d->subjobContents.size() == 1);
-        d->content = d->subjobContents.constFirst();
+        d->content = std::move(d->subjobContents.front());
     }
 
     auto subject = d->skeletonMessage->subject(KMime::CreatePolicy::DontCreate);
@@ -148,7 +148,7 @@ void ProtectedHeadersJob::process()
     auto contentType = d->content->contentType(KMime::CreatePolicy::Create);
     contentType->setParameter(QByteArrayLiteral("protected-headers"), u"v1"_s);
 
-    d->resultContent = d->content;
+    d->resultContent = std::move(d->content);
 
     emitResult();
 }

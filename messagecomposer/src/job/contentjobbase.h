@@ -40,9 +40,12 @@ public:
 
     /**
       Get the resulting KMime::Content that the ContentJobBase has generated.
-      Jobs never delete their content.
     */
-    [[nodiscard]] KMime::Content *content() const;
+    [[nodiscard]] const std::unique_ptr<KMime::Content> &content() const;
+    /**
+      Move the generated KMime::Content object out of the job.
+    */
+    [[nodiscard]] std::unique_ptr<KMime::Content> &&takeContent();
 
     /**
       This is meant to be used instead of KCompositeJob::addSubjob(), making

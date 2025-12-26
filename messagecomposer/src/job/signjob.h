@@ -36,7 +36,7 @@ public:
     explicit SignJob(QObject *parent = nullptr);
     ~SignJob() override;
 
-    void setContent(KMime::Content *content);
+    void setContent(std::unique_ptr<KMime::Content> &&content);
     void setCryptoMessageFormat(Kleo::CryptoMessageFormat format);
     void setSigningKeys(const std::vector<GpgME::Key> &signers);
 

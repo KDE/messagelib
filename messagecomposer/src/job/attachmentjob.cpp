@@ -62,10 +62,10 @@ void AttachmentJob::doStart()
         // the attachment is really a complete multipart/digest subtype
         // and us adding our own headers would break it. so copy over the content
         // and leave it alone
-        auto part = new KMime::Content;
+        auto part = std::make_unique<KMime::Content>();
         part->setContent(d->part->data());
         part->parse();
-        d->subjobContents << part;
+        d->subjobContents.push_back(std::move(part));
         process();
         return;
     }
@@ -119,8 +119,8 @@ void AttachmentJob::process()
 {
     Q_D(AttachmentJob);
     // The content has been created by our subjob.
-    Q_ASSERT(d->subjobContents.count() == 1);
-    d->resultContent = d->subjobContents.constFirst();
+    Q_ASSERT(d->subjobContents.size() == 1);
+    d->resultContent = std::move(d->subjobContents.front());
     emitResult();
 }
 

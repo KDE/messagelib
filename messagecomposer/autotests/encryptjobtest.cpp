@@ -75,7 +75,7 @@ void EncryptJobTest::testContentDirect()
 
     const QStringList recipients = {u"test@kolab.org"_s};
 
-    eJob->setContent(mainTextJob->content());
+    eJob->setContent(mainTextJob->takeContent());
     eJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
     eJob->setRecipients(recipients);
     eJob->setEncryptionKeys(keys);
@@ -105,7 +105,7 @@ void EncryptJobTest::testContentChained()
     eJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
     eJob->setRecipients(recipients);
     eJob->setEncryptionKeys(keys);
-    eJob->setContent(mainTextJob->content());
+    eJob->setContent(mainTextJob->takeContent());
 
     checkEncryption(eJob);
 }
@@ -122,7 +122,7 @@ void EncryptJobTest::testContentSubjobChained()
     content->setBody(data);
 
     auto tJob = new TransparentJob;
-    tJob->setContent(content.get());
+    tJob->setContent(std::move(content));
 
     const QStringList recipients = {u"test@kolab.org"_s};
 
@@ -152,7 +152,7 @@ void EncryptJobTest::testHeaders()
 
     const QStringList recipients = {u"test@kolab.org"_s};
 
-    eJob->setContent(content.get());
+    eJob->setContent(std::move(content));
     eJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
     eJob->setRecipients(recipients);
     eJob->setEncryptionKeys(keys);
@@ -161,7 +161,7 @@ void EncryptJobTest::testHeaders()
 
     QByteArray mimeType("multipart/encrypted");
 
-    auto result = std::unique_ptr<KMime::Content>(eJob->content());
+    auto result = eJob->takeContent();
     result->assemble();
 
     QVERIFY(result->contentType(KMime::CreatePolicy::DontCreate));
@@ -211,7 +211,7 @@ void EncryptJobTest::testProtectedHeaders()
 
     const QStringList recipients = {u"test@kolab.org"_s};
 
-    eJob->setContent(content.get());
+    eJob->setContent(std::move(content));
     eJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
     eJob->setRecipients(recipients);
     eJob->setEncryptionKeys(keys);
@@ -227,7 +227,7 @@ void EncryptJobTest::testProtectedHeaders()
         QCOMPARE(skeletonMessage.subject()->asUnicodeString(), subject);
     }
 
-    auto result = std::unique_ptr<KMime::Content>(eJob->content());
+    auto result = eJob->takeContent();
     result->assemble();
 
     KMime::Content *encPart = Util::findTypeInMessage(result.get(), "application", "octet-stream");
@@ -267,7 +267,7 @@ void EncryptJobTest::testSetGnupgHome()
         auto eJob = new EncryptJob(&composerJob);
         QVERIFY(eJob);
 
-        eJob->setContent(content.get());
+        eJob->setContent(std::move(content));
         eJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
         eJob->setRecipients(recipients);
         eJob->setEncryptionKeys(keys);
@@ -281,7 +281,7 @@ void EncryptJobTest::testSetGnupgHome()
     auto eJob = new EncryptJob(&composerJob);
     QVERIFY(eJob);
 
-    eJob->setContent(content.get());
+    eJob->setContent(std::move(content));
     eJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
     eJob->setRecipients(recipients);
     eJob->setEncryptionKeys(keys);
@@ -293,7 +293,7 @@ void EncryptJobTest::checkEncryption(EncryptJob *eJob)
 {
     VERIFYEXEC(eJob);
 
-    auto result = std::unique_ptr<KMime::Content>(eJob->content());
+    auto result = eJob->takeContent();
     Q_ASSERT(result);
     result->assemble();
 

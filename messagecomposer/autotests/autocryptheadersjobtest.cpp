@@ -73,7 +73,7 @@ void AutocryptHeadersJobTest::testAutocryptHeader()
     QVERIFY(aJob);
 
     auto tJob = new TransparentJob;
-    tJob->setContent(content.get());
+    tJob->setContent(std::move(content));
 
     aJob->setSkeletonMessage(&skeletonMessage);
     aJob->setSenderKey(ownKeys[0]);
@@ -118,7 +118,7 @@ void AutocryptHeadersJobTest::testContentChained()
     QVERIFY(aJob);
 
     auto tJob = new TransparentJob;
-    tJob->setContent(content.get());
+    tJob->setContent(std::move(content));
 
     aJob->setSkeletonMessage(&skeletonMessage);
     aJob->setSenderKey(ownKeys[0]);
@@ -166,7 +166,7 @@ void AutocryptHeadersJobTest::testAutocryptGossipHeader()
     QVERIFY(aJob);
 
     auto tJob = new TransparentJob;
-    tJob->setContent(content.get());
+    tJob->setContent(std::move(content));
 
     aJob->setSkeletonMessage(&skeletonMessage);
     aJob->setSenderKey(ownKeys[0]);
@@ -176,8 +176,9 @@ void AutocryptHeadersJobTest::testAutocryptGossipHeader()
     VERIFYEXEC(aJob);
 
     auto referenceFile = u"autocryptgossipheader.mbox"_s;
-    aJob->content()->assemble();
-    Test::compareFile(aJob->content(), QStringLiteral(MAIL_DATA_DIR "/") + referenceFile);
+    auto result = aJob->takeContent();
+    result->assemble();
+    Test::compareFile(result.get(), QStringLiteral(MAIL_DATA_DIR "/") + referenceFile);
 }
 
 void AutocryptHeadersJobTest::testSetGnupgHome()
@@ -219,7 +220,7 @@ void AutocryptHeadersJobTest::testSetGnupgHome()
         QVERIFY(aJob);
 
         auto tJob = new TransparentJob;
-        tJob->setContent(content.get());
+        tJob->setContent(std::move(content));
 
         aJob->setSkeletonMessage(&skeletonMessage);
         aJob->setSenderKey(ownKeys[0]);
@@ -239,7 +240,7 @@ void AutocryptHeadersJobTest::testSetGnupgHome()
     QVERIFY(aJob);
 
     auto tJob = new TransparentJob;
-    tJob->setContent(content.get());
+    tJob->setContent(std::move(content));
 
     aJob->setSkeletonMessage(&skeletonMessage);
     aJob->setSenderKey(ownKeys[0]);
@@ -250,8 +251,9 @@ void AutocryptHeadersJobTest::testSetGnupgHome()
     VERIFYEXEC(aJob);
 
     auto referenceFile = u"autocryptgossipheader.mbox"_s;
-    aJob->content()->assemble();
-    Test::compareFile(aJob->content(), QStringLiteral(MAIL_DATA_DIR "/") + referenceFile);
+    auto result = aJob->takeContent();
+    result->assemble();
+    Test::compareFile(result.get(), QStringLiteral(MAIL_DATA_DIR "/") + referenceFile);
 }
 
 void AutocryptHeadersJobTest::testStripSenderKey()
@@ -283,7 +285,7 @@ void AutocryptHeadersJobTest::testStripSenderKey()
     QVERIFY(aJob);
 
     auto tJob = new TransparentJob;
-    tJob->setContent(content.get());
+    tJob->setContent(std::move(content));
 
     aJob->setSkeletonMessage(&skeletonMessage);
     aJob->setSenderKey(ownKeys[0]);
@@ -293,8 +295,9 @@ void AutocryptHeadersJobTest::testStripSenderKey()
     VERIFYEXEC(aJob);
 
     auto referenceFile = u"autocryptgossipheader.mbox"_s;
-    aJob->content()->assemble();
-    Test::compareFile(aJob->content(), QStringLiteral(MAIL_DATA_DIR "/") + referenceFile);
+    auto result = aJob->takeContent();
+    result->assemble();
+    Test::compareFile(result.get(), QStringLiteral(MAIL_DATA_DIR "/") + referenceFile);
 }
 
 #include "moc_autocryptheadersjobtest.cpp"

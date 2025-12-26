@@ -34,7 +34,7 @@ public:
     explicit ProtectedHeadersJob(QObject *parent = nullptr);
     ~ProtectedHeadersJob() override;
 
-    void setContent(KMime::Content *content);
+    void setContent(std::unique_ptr<KMime::Content> &&content);
     void setSkeletonMessage(KMime::Message *skeletonMessage);
 
     void setObvoscate(bool obvoscate);

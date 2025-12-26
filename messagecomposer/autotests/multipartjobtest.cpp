@@ -45,7 +45,7 @@ void MultipartJobTest::testMultipartMixed()
     }
 
     QVERIFY(mjob->exec());
-    const auto result = std::unique_ptr<KMime::Content>(mjob->content());
+    const auto result = mjob->takeContent();
     result->assemble();
     qDebug() << result->encodedContent();
 

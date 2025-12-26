@@ -40,7 +40,7 @@ public:
     std::vector<GpgME::Key> encKeys;
     QStringList recipients;
     Kleo::CryptoMessageFormat format;
-    KMime::Content *content = nullptr;
+    std::unique_ptr<KMime::Content> content;
     KMime::Message *skeletonMessage = nullptr;
 
     bool protectedHeaders = true;
@@ -70,13 +70,13 @@ SignEncryptJob::SignEncryptJob(QObject *parent)
 
 SignEncryptJob::~SignEncryptJob() = default;
 
-void SignEncryptJob::setContent(KMime::Content *content)
+void SignEncryptJob::setContent(std::unique_ptr<KMime::Content> &&content)
 {
     Q_D(SignEncryptJob);
 
     Q_ASSERT(content);
 
-    d->content = content;
+    d->content = std::move(content);
 }
 
 void SignEncryptJob::setCryptoMessageFormat(Kleo::CryptoMessageFormat format)
@@ -152,7 +152,6 @@ void SignEncryptJob::doStart()
     if (d->protectedHeaders && d->skeletonMessage && d->format & Kleo::OpenPGPMIMEFormat) {
         auto pJob = new ProtectedHeadersJob;
         pJob->setContent(std::move(d->content));
-        d->content = nullptr; // temporary, until d->content is a std::unique_ptr
         pJob->setSkeletonMessage(d->skeletonMessage);
         pJob->setObvoscate(d->protectedHeadersObvoscate);
         appendSubjob(pJob);
@@ -172,13 +171,12 @@ void SignEncryptJob::slotResult(KJob *job)
     if (auto cjob = qobject_cast<ContentJobBase *>(job); cjob && !qobject_cast<ProtectedHeadersJob *>(job)) {
         // clone input content as ComposerJob uses the same job providing that
         // for potntially multiple encryption jobs (which end up modifying this)
-        d->content = cjob->content()->clone().release();
+        d->content = cjob->content()->clone();
 
         // forward input to the ProtectedHeadersJob if there's one, bypassing ContentJobBase's result propagation
         if (subjobs().size() == 2) {
             if (auto pjob = static_cast<ProtectedHeadersJob *>(subjobs().last()); pjob) {
                 pjob->setContent(std::move(d->content));
-                d->content = nullptr; // temporary, until d->content is a std::unique_ptr
             }
         }
 
@@ -200,7 +198,7 @@ void SignEncryptJob::process()
     // and we want to use that
     if (!d->content || !d->content->hasContent()) {
         Q_ASSERT(d->subjobContents.size() == 1);
-        d->content = d->subjobContents.constFirst();
+        d->content = std::move(d->subjobContents.front());
     }
 
     const QGpgME::Protocol *proto = nullptr;
@@ -212,7 +210,6 @@ void SignEncryptJob::process()
         return;
     }
     Q_ASSERT(proto);
-    // d->resultContent = new KMime::Content;
 
     qCDebug(MESSAGECOMPOSER_LOG) << "creating signencrypt from:" << proto->name() << proto->displayName();
 
@@ -256,7 +253,8 @@ void SignEncryptJob::process()
                          }
 
                          QByteArray signatureHashAlgo = signingResult.createdSignature(0).hashAlgorithmAsString();
-                         d->resultContent = MessageComposer::Util::composeHeadersAndBody(d->content, cipherText, d->format, false, signatureHashAlgo);
+                         d->resultContent =
+                             MessageComposer::Util::composeHeadersAndBody(std::move(d->content), cipherText, d->format, false, signatureHashAlgo);
 
                          emitResult();
                      });

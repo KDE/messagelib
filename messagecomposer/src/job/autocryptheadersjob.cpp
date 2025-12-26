@@ -42,7 +42,7 @@ public:
     void fillHeaderData(KMime::Headers::Generic *header, const QByteArray &addr, bool preferEncrypted, const QByteArray &keydata);
     void finishOnLastSubJob();
 
-    KMime::Content *content = nullptr;
+    std::unique_ptr<KMime::Content> content;
     KMime::Message *skeletonMessage = nullptr;
     // used to ensure consistent order based on key order, not random one by async subjobs delivering
     std::map<QByteArray, std::unique_ptr<KMime::Headers::Generic>> gossipHeaders;
@@ -69,7 +69,7 @@ void AutocryptHeadersJobPrivate::finishOnLastSubJob()
         content->appendHeader(std::move(header));
     }
     gossipHeaders.clear();
-    resultContent = content;
+    resultContent = std::move(content);
 
     q->emitResult();
 }
@@ -179,7 +179,7 @@ void AutocryptHeadersJob::process()
     // and we want to use that
     Q_ASSERT(!d->content);
     Q_ASSERT(d->subjobContents.size() == 1);
-    d->content = d->subjobContents.constFirst();
+    d->content = std::move(d->subjobContents.front());
 
     auto job = QGpgME::openpgp()->publicKeyExportJob(false);
     Q_ASSERT(job);
@@ -257,7 +257,7 @@ void AutocryptHeadersJob::process()
         gossipJob->setExportFlags(GpgME::Context::ExportMinimal);
     }
     if (d->subJobs == 0) {
-        d->resultContent = d->content;
+        d->resultContent = std::move(d->content);
         emitResult();
     }
 }

@@ -43,7 +43,7 @@ void MainTextJobTest::testPlainText()
     textPart->setWrappedPlainText(data);
     auto mjob = new MainTextJob(textPart, &composerJob);
     QVERIFY(mjob->exec());
-    Content *result = mjob->content();
+    const auto result = mjob->takeContent();
     result->assemble();
     qDebug() << result->encodedContent();
     QVERIFY(result->contentType(KMime::CreatePolicy::DontCreate));
@@ -90,7 +90,7 @@ void MainTextJobTest::testCustomCharset()
     textPart->setWrappedPlainText(data);
     auto mjob = new MainTextJob(textPart, &composerJob);
     QVERIFY(mjob->exec());
-    Content *result = mjob->content();
+    const auto result = mjob->takeContent();
     result->assemble();
     qDebug() << result->encodedContent();
     QVERIFY(result->contentType(KMime::CreatePolicy::DontCreate));
@@ -143,7 +143,7 @@ void MainTextJobTest::testFallbackCharset()
     textPart->setWrappedPlainText(data);
     auto mjob = new MainTextJob(textPart, &composerJob);
     QVERIFY(mjob->exec());
-    Content *result = mjob->content();
+    const auto result = mjob->takeContent();
     result->assemble();
     qDebug() << result->encodedContent();
     QVERIFY(result->contentType(KMime::CreatePolicy::DontCreate));
@@ -169,7 +169,7 @@ void MainTextJobTest::testHtml()
     textPart->setCleanHtml(editor.toCleanHtml());
     auto mjob = new MainTextJob(textPart, composerJob);
     QVERIFY(mjob->exec());
-    Content *result = mjob->content();
+    const auto result = mjob->takeContent();
     result->assemble();
     qDebug() << result->encodedContent();
 
@@ -236,7 +236,7 @@ void MainTextJobTest::testHtmlWithImages()
     textPart->setEmbeddedImages(images);
     auto mjob = new MainTextJob(textPart, composerJob);
     QVERIFY(mjob->exec());
-    Content *result = mjob->content();
+    const auto result = mjob->takeContent();
     result->assemble();
     qDebug() << result->encodedContent();
 

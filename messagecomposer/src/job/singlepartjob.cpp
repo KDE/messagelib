@@ -166,7 +166,7 @@ void SinglepartJob::process()
 {
     Q_D(SinglepartJob);
     Q_ASSERT(d->resultContent == nullptr); // Not processed before.
-    d->resultContent = new KMime::Content;
+    d->resultContent = std::make_unique<KMime::Content>();
 
     if (!d->chooseCTE()) {
         Q_ASSERT(error());

@@ -83,7 +83,7 @@ void SignEncryptTest::testContent()
 
     const QStringList recipients = {QString::fromLocal8Bit("test@kolab.org")};
 
-    seJob->setContent(mainTextJob->content());
+    seJob->setContent(mainTextJob->takeContent());
     seJob->setSigningKeys(keys);
     seJob->setCryptoMessageFormat((Kleo::CryptoMessageFormat)cryptoMessageFormat);
     seJob->setRecipients(recipients);
@@ -96,7 +96,7 @@ void SignEncryptTest::testContent()
     }
 
     VERIFYEXEC(seJob);
-    auto result = std::unique_ptr<KMime::Content>(seJob->content());
+    auto result = seJob->takeContent();
     QVERIFY(result);
     result->assemble();
 
@@ -115,7 +115,7 @@ void SignEncryptTest::testContentSubjobChained()
     content->setBody(data);
 
     auto tJob = new TransparentJob;
-    tJob->setContent(content.get());
+    tJob->setContent(std::move(content));
 
     const QStringList recipients = {QString::fromLocal8Bit("test@kolab.org")};
 
@@ -130,7 +130,7 @@ void SignEncryptTest::testContentSubjobChained()
     QVERIFY(seJob->appendSubjob(tJob));
 
     VERIFYEXEC(seJob);
-    auto result = std::unique_ptr<KMime::Content>(seJob->content());
+    auto result = seJob->takeContent();
     QVERIFY(result);
     result->assemble();
 
@@ -152,7 +152,7 @@ void SignEncryptTest::testHeaders()
 
     const QStringList recipients = {QString::fromLocal8Bit("test@kolab.org")};
 
-    seJob->setContent(content.get());
+    seJob->setContent(std::move(content));
     seJob->setSigningKeys(keys);
     seJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
     seJob->setRecipients(recipients);
@@ -160,7 +160,7 @@ void SignEncryptTest::testHeaders()
 
     VERIFYEXEC(seJob);
 
-    auto result = std::unique_ptr<KMime::Content>(seJob->content());
+    auto result = seJob->takeContent();
     QVERIFY(result);
     result->assemble();
 
@@ -220,7 +220,7 @@ void SignEncryptTest::testProtectedHeaders()
 
     const QStringList recipients = {u"test@kolab.org"_s};
 
-    seJob->setContent(content.get());
+    seJob->setContent(std::move(content));
     seJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
     seJob->setRecipients(recipients);
     seJob->setEncryptionKeys(keys);
@@ -236,7 +236,7 @@ void SignEncryptTest::testProtectedHeaders()
         QCOMPARE(skeletonMessage.subject()->asUnicodeString(), subject);
     }
 
-    auto result = std::unique_ptr<KMime::Content>(seJob->content());
+    auto result = seJob->takeContent();
     result->assemble();
 
     KMime::Content *encPart = Util::findTypeInMessage(result.get(), "application", "octet-stream");

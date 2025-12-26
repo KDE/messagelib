@@ -56,7 +56,7 @@ void ItipJobTest::testInvitationWithAttachment()
     job.setAutoDelete(false);
     QVERIFY(job.exec());
 
-    auto *content = job.content();
+    const auto content = job.takeContent();
     content->assemble();
     QVERIFY(content);
 
@@ -88,7 +88,7 @@ void ItipJobTest::testInvitationWithoutAttachment()
     job.setAutoDelete(false);
     QVERIFY(job.exec());
 
-    auto *content = job.content();
+    const auto content = job.takeContent();
     content->assemble();
     QVERIFY(content);
 
@@ -109,7 +109,7 @@ void ItipJobTest::testOutlookInvitationWithAttachment()
     job.setAutoDelete(false);
     QVERIFY(job.exec());
 
-    auto *content = job.content();
+    const auto content = job.takeContent();
     content->assemble();
     QVERIFY(content);
 
@@ -132,7 +132,7 @@ void ItipJobTest::testOutlookInvitationWithoutAttachment()
     job.setAutoDelete(false);
     QVERIFY(job.exec());
 
-    auto *content = job.content();
+    const auto content = job.takeContent();
     content->assemble();
     QVERIFY(content);
 

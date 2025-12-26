@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: CC0-1.0
 # SPDX-FileCopyrightText: none
 cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
-set(PIM_VERSION "6.6.43")
+set(PIM_VERSION "6.6.44")
 set(CMAKE_CXX_SCAN_FOR_MODULES OFF)
 
 project(Messagelib VERSION ${PIM_VERSION})
@@ -177,9 +177,7 @@ if(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
     # see e.g. https://gcc.gnu.org/bugzilla/show_bug.cgi?id=56556 or https://gcc.gnu.org/bugzilla/show_bug.cgi?id=79328
     string(APPEND CMAKE_CXX_FLAGS " -Wshadow")
 endif()
-ecm_set_disabled_deprecation_versions(QT 6.11.0 KF 6.21.0
-	#KMIME 6.7.0 Activate when we will port all code
-)
+ecm_set_disabled_deprecation_versions(QT 6.10.0 KF 6.21.0 KMIME 6.7.0)
 add_definitions(-DQT_NO_CONTEXTLESS_CONNECT)
 if(BUILD_TESTING)
     add_definitions(-DBUILD_TESTING)
