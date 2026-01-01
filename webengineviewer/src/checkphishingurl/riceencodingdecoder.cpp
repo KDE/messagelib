@@ -1,5 +1,5 @@
 /*
-   SPDX-FileCopyrightText: 2016-2025 Laurent Montel <montel@kde.org>
+   SPDX-FileCopyrightText: 2016-2026 Laurent Montel <montel@kde.org>
 
    Code based in v4_rice.cc
 

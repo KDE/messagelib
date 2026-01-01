@@ -1,5 +1,5 @@
 /*
-   SPDX-FileCopyrightText: 2016-2025 Laurent Montel <montel@kde.org>
+   SPDX-FileCopyrightText: 2016-2026 Laurent Montel <montel@kde.org>
    SPDX-FileCopyrightText: 2009 Thomas McGuire <mcguire@kde.org>
 
    SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
