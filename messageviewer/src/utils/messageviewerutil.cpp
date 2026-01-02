@@ -1,6 +1,6 @@
 /*
  * SPDX-FileCopyrightText: 2005 Till Adam <adam@kde.org>
- * SPDX-License-Identifier: GPL-2.0-or-later WITH Qt-Commercial-exception-1.0
+ * SPDX-License-Identifier: GPL-2.0-or-later WITH LicenseRef-Qt-Commercial-exception-1.0
  */
 
 #include "messageviewer/messageviewerutil.h"
