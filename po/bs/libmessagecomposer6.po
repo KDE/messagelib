@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-22 00:43+0000\n"
+"POT-Creation-Date: 2026-01-05 00:44+0000\n"
 "PO-Revision-Date: 2014-01-31 19:04+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: bs <bs@kde.org>\n"
@@ -1591,7 +1591,7 @@ msgstr ""
 "<p>Greška se desila pri pokušaju izvoza ključa iz pozadine:</p><p><b>%1</b></"
 "p>"
 
-#: job/composerjob.cpp:288
+#: job/composerjob.cpp:290
 #, kde-format
 msgid "No key data for recipients found."
 msgstr "Nema ključnih podataka za primaoce"
@@ -2449,7 +2449,7 @@ msgstr ""
 msgid "Subject"
 msgstr ""
 
-#: utils/util.cpp:236
+#: utils/util.cpp:235
 #, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
@@ -2457,7 +2457,7 @@ msgctxt ""
 msgid "attachment,attached"
 msgstr "dodatak,dodato,prilog,attachment,attached"
 
-#: utils/util.cpp:270
+#: utils/util.cpp:269
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
@@ -2466,21 +2466,21 @@ msgstr ""
 "Dispečer maila nije podešen pa mailovi ne mogu biti poslani. Da li želite "
 "kreirati dispečera?"
 
-#: utils/util.cpp:271
+#: utils/util.cpp:270
 #, fuzzy, kde-format
 #| msgid "No mail dispatcher."
 msgctxt "@title:window"
 msgid "No mail dispatcher."
 msgstr "Dispečer mailova ne postoji"
 
-#: utils/util.cpp:273
+#: utils/util.cpp:272
 #, fuzzy, kde-format
 #| msgid "No mail dispatcher."
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "Dispečer mailova ne postoji"
 
-#: utils/util.cpp:288
+#: utils/util.cpp:287
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
@@ -2489,14 +2489,14 @@ msgstr ""
 "Prosljeđivač pošte nije na mreži, pa se pošta ne može poslati. Želite li ga "
 "napraviti aktivnim?"
 
-#: utils/util.cpp:289
+#: utils/util.cpp:288
 #, fuzzy, kde-format
 #| msgid "Mail dispatcher offline."
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "Prosljeđivač pošte nije na mreži."
 
-#: utils/util.cpp:290
+#: utils/util.cpp:289
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"

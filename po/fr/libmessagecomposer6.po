@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-22 00:43+0000\n"
+"POT-Creation-Date: 2026-01-05 00:44+0000\n"
 "PO-Revision-Date: 2025-09-07 06:31+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -1557,7 +1557,7 @@ msgstr ""
 "partir du moteur : </p><p><b>Aucune clé valable n'a été trouvée pour "
 "l'utilisateur %1 (%2)</b></p>"
 
-#: job/composerjob.cpp:288
+#: job/composerjob.cpp:290
 #, kde-format
 msgid "No key data for recipients found."
 msgstr "Aucune donnée de clé pour le destinataire n'a été trouvé."
@@ -2414,7 +2414,7 @@ msgstr "Divers"
 msgid "Subject"
 msgstr "Objet"
 
-#: utils/util.cpp:236
+#: utils/util.cpp:235
 #, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
@@ -2422,7 +2422,7 @@ msgctxt ""
 msgid "attachment,attached"
 msgstr "pièce jointe,pièces jointes,joint"
 
-#: utils/util.cpp:270
+#: utils/util.cpp:269
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
@@ -2431,19 +2431,19 @@ msgstr ""
 "Le répartiteur de messagerie n'est pas configuré, aucun courriel ne peut "
 "être envoyé. Voulez-vous en créer un nouveau ?"
 
-#: utils/util.cpp:271
+#: utils/util.cpp:270
 #, kde-format
 msgctxt "@title:window"
 msgid "No mail dispatcher."
 msgstr "Aucun répartiteur de messagerie."
 
-#: utils/util.cpp:273
+#: utils/util.cpp:272
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "Créer un répartiteur de messagerie"
 
-#: utils/util.cpp:288
+#: utils/util.cpp:287
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
@@ -2452,13 +2452,13 @@ msgstr ""
 "Le répartiteur de messagerie est hors-ligne, aucun courriel ne peut être "
 "envoyé. Voulez-vous le faire passer en ligne ?"
 
-#: utils/util.cpp:289
+#: utils/util.cpp:288
 #, kde-format
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "Répartiteur de messagerie hors-ligne."
 
-#: utils/util.cpp:290
+#: utils/util.cpp:289
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"

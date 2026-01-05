@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-22 00:43+0000\n"
+"POT-Creation-Date: 2026-01-05 00:44+0000\n"
 "PO-Revision-Date: 2025-09-06 17:56+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -1541,7 +1541,7 @@ msgstr ""
 "сталася помилка:</p><p><b>Не знайдено чинного ключа для користувача %1 (%2)</"
 "b></p>"
 
-#: job/composerjob.cpp:288
+#: job/composerjob.cpp:290
 #, kde-format
 msgid "No key data for recipients found."
 msgstr "Не знайдено ключових даних щодо отримувачів."
@@ -2398,7 +2398,7 @@ msgstr "Інше"
 msgid "Subject"
 msgstr "Тема"
 
-#: utils/util.cpp:236
+#: utils/util.cpp:235
 #, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
@@ -2406,7 +2406,7 @@ msgctxt ""
 msgid "attachment,attached"
 msgstr "attachment,attached,долучено,долученні,додається,додано,приєднано"
 
-#: utils/util.cpp:270
+#: utils/util.cpp:269
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
@@ -2415,19 +2415,19 @@ msgstr ""
 "Агент розподілу пошти працює не налаштовано, надсилання пошти неможливе. "
 "Бажаєте створити запис агента розподілу пошти?"
 
-#: utils/util.cpp:271
+#: utils/util.cpp:270
 #, kde-format
 msgctxt "@title:window"
 msgid "No mail dispatcher."
 msgstr "Немає агента розподілу пошти."
 
-#: utils/util.cpp:273
+#: utils/util.cpp:272
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "Створити агент розподілу пошти"
 
-#: utils/util.cpp:288
+#: utils/util.cpp:287
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
@@ -2436,13 +2436,13 @@ msgstr ""
 "Агент розподілу пошти працює у автономному режимі, надсилання пошти "
 "неможливе. Бажаєте встановити з’єднання для надсилання пошти?"
 
-#: utils/util.cpp:289
+#: utils/util.cpp:288
 #, kde-format
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "Агент розподілу пошти працює автономно."
 
-#: utils/util.cpp:290
+#: utils/util.cpp:289
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"

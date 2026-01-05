@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-22 00:43+0000\n"
+"POT-Creation-Date: 2026-01-05 00:44+0000\n"
 "PO-Revision-Date: 2025-04-16 11:56+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -1537,7 +1537,7 @@ msgstr ""
 "retro-administration:</p><p><b>Nulle clave valide trovate per usator %1 "
 "(%2)</b></p>"
 
-#: job/composerjob.cpp:288
+#: job/composerjob.cpp:290
 #, kde-format
 msgid "No key data for recipients found."
 msgstr "Nulle datos de clave trovate per destinatarios."
@@ -2384,7 +2384,7 @@ msgstr "Misc"
 msgid "Subject"
 msgstr "Subjecto"
 
-#: utils/util.cpp:236
+#: utils/util.cpp:235
 #, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
@@ -2392,7 +2392,7 @@ msgctxt ""
 msgid "attachment,attached"
 msgstr "attachamento,attachate"
 
-#: utils/util.cpp:270
+#: utils/util.cpp:269
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
@@ -2401,19 +2401,19 @@ msgstr ""
 "Le distributor de posta non es configurate, assi messages de e-posta non "
 "pote esser inviate, Tu vole crear un distributor de e-posta?"
 
-#: utils/util.cpp:271
+#: utils/util.cpp:270
 #, kde-format
 msgctxt "@title:window"
 msgid "No mail dispatcher."
 msgstr "Necun distributor de posta."
 
-#: utils/util.cpp:273
+#: utils/util.cpp:272
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "Crea distributor de posta."
 
-#: utils/util.cpp:288
+#: utils/util.cpp:287
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
@@ -2422,13 +2422,13 @@ msgstr ""
 "Le distributor de posta es foras de linea, messages de e-posta non pote "
 "esser inviate, Tu vole poner lo in linea?"
 
-#: utils/util.cpp:289
+#: utils/util.cpp:288
 #, kde-format
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "Distributor de posta foras de linea."
 
-#: utils/util.cpp:290
+#: utils/util.cpp:289
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"

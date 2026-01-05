@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-22 00:43+0000\n"
+"POT-Creation-Date: 2026-01-05 00:44+0000\n"
 "PO-Revision-Date: 2024-12-20 21:53+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -1513,7 +1513,7 @@ msgstr ""
 "<p>पृष्ठभागात् कीलं निर्यातयितुं प्रयतमाने त्रुटिः अभवत्:</p><p> <b>उपयोक्तुः %1 (%2) कृते "
 "वैधः कुञ्जी न प्राप्ता ।</b></p>"
 
-#: job/composerjob.cpp:288
+#: job/composerjob.cpp:290
 #, kde-format
 msgid "No key data for recipients found."
 msgstr "प्राप्तकर्तानां कृते कोऽपि प्रमुखदत्तांशः न प्राप्तः ।"
@@ -2337,7 +2337,7 @@ msgstr "विविधाः"
 msgid "Subject"
 msgstr "विषयः"
 
-#: utils/util.cpp:236
+#: utils/util.cpp:235
 #, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
@@ -2345,7 +2345,7 @@ msgctxt ""
 msgid "attachment,attached"
 msgstr "आसक्तिः,सक्तः"
 
-#: utils/util.cpp:270
+#: utils/util.cpp:269
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
@@ -2353,19 +2353,19 @@ msgid ""
 msgstr ""
 "मेल प्रेषकः न स्थापितः अतः मेल प्रेषयितुं न शक्यते । किं भवान् मेल प्रेषकं निर्मातुम् इच्छति ?"
 
-#: utils/util.cpp:271
+#: utils/util.cpp:270
 #, kde-format
 msgctxt "@title:window"
 msgid "No mail dispatcher."
 msgstr "मेल प्रेषकः नास्ति।"
 
-#: utils/util.cpp:273
+#: utils/util.cpp:272
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "मेल डिस्पैचर रचयन्तु"
 
-#: utils/util.cpp:288
+#: utils/util.cpp:287
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
@@ -2374,13 +2374,13 @@ msgstr ""
 "मेल प्रेषकः अफलाइनः अस्ति, अतः मेल प्रेषयितुं न शक्यते । किं भवन्तः तत् ऑनलाइन कर्तुम् "
 "इच्छन्ति ?"
 
-#: utils/util.cpp:289
+#: utils/util.cpp:288
 #, kde-format
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "मेल प्रेषकः अफलाइन।"
 
-#: utils/util.cpp:290
+#: utils/util.cpp:289
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"

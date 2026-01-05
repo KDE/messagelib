@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-22 00:43+0000\n"
+"POT-Creation-Date: 2026-01-05 00:44+0000\n"
 "PO-Revision-Date: 2013-10-10 05:09+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -1577,7 +1577,7 @@ msgstr ""
 "<p>Орындаушы бағдарламадан кілтті экспорттау кезде бір қате орын алды:</p> "
 "<p><b>%1</b></p>"
 
-#: job/composerjob.cpp:288
+#: job/composerjob.cpp:290
 #, kde-format
 msgid "No key data for recipients found."
 msgstr "Алушыларға арналған кілт дерегі жоқ."
@@ -2419,7 +2419,7 @@ msgstr ""
 msgid "Subject"
 msgstr ""
 
-#: utils/util.cpp:236
+#: utils/util.cpp:235
 #, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
@@ -2427,7 +2427,7 @@ msgctxt ""
 msgid "attachment,attached"
 msgstr "attachment,attached,тіркеме,тіркемесі,тіркемеленген "
 
-#: utils/util.cpp:270
+#: utils/util.cpp:269
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
@@ -2435,35 +2435,35 @@ msgid ""
 msgstr ""
 "Пошта реттеуші орнатылмаған, пошта жіберлілмейді. Пошта реттеуші құрылсын ба?"
 
-#: utils/util.cpp:271
+#: utils/util.cpp:270
 #, fuzzy, kde-format
 #| msgid "No mail dispatcher."
 msgctxt "@title:window"
 msgid "No mail dispatcher."
 msgstr "Пошта реттеуші жоқ."
 
-#: utils/util.cpp:273
+#: utils/util.cpp:272
 #, fuzzy, kde-format
 #| msgid "No mail dispatcher."
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "Пошта реттеуші жоқ."
 
-#: utils/util.cpp:288
+#: utils/util.cpp:287
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
 "it online?"
 msgstr "Пошта реттеуш желіден тыс, пошта жіберлілмейді. Желіге қосылсын ба?"
 
-#: utils/util.cpp:289
+#: utils/util.cpp:288
 #, fuzzy, kde-format
 #| msgid "Mail dispatcher offline."
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "Пошта реттеуш желіден тыс."
 
-#: utils/util.cpp:290
+#: utils/util.cpp:289
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-22 00:43+0000\n"
+"POT-Creation-Date: 2026-01-05 00:44+0000\n"
 "PO-Revision-Date: 2014-09-18 22:36+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -1596,7 +1596,7 @@ msgstr ""
 "<p>Dat geev en Fehler bi't Exporteren vun den Slötel ut dat Hülpprogramm:</"
 "p><p><b>%1</b></p>"
 
-#: job/composerjob.cpp:288
+#: job/composerjob.cpp:290
 #, kde-format
 msgid "No key data for recipients found."
 msgstr "Keen Slöteldaten för Adressaten funnen."
@@ -2451,7 +2451,7 @@ msgstr ""
 msgid "Subject"
 msgstr ""
 
-#: utils/util.cpp:236
+#: utils/util.cpp:235
 #, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
@@ -2459,7 +2459,7 @@ msgctxt ""
 msgid "attachment,attached"
 msgstr "Bilaag,Bilagen,bileggt,anföögt"
 
-#: utils/util.cpp:270
+#: utils/util.cpp:269
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
@@ -2468,21 +2468,21 @@ msgstr ""
 "Keen Nettpostverdeeldeenst is inricht, Nettbreven laat sik nich loosstüern. "
 "Wullt Du een inrichten?"
 
-#: utils/util.cpp:271
+#: utils/util.cpp:270
 #, fuzzy, kde-format
 #| msgid "No mail dispatcher."
 msgctxt "@title:window"
 msgid "No mail dispatcher."
 msgstr "Keen Nettpostverdeeldeenst"
 
-#: utils/util.cpp:273
+#: utils/util.cpp:272
 #, fuzzy, kde-format
 #| msgid "No mail dispatcher."
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "Keen Nettpostverdeeldeenst"
 
-#: utils/util.cpp:288
+#: utils/util.cpp:287
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
@@ -2491,14 +2491,14 @@ msgstr ""
 "De Nettpostverdeeldeenst is afkoppelt, Nettbreven laat sik nich loosstüern. "
 "Wullt Du em tokoppeln?"
 
-#: utils/util.cpp:289
+#: utils/util.cpp:288
 #, fuzzy, kde-format
 #| msgid "Mail dispatcher offline."
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "Nettpostverdeeldeenst afkoppelt"
 
-#: utils/util.cpp:290
+#: utils/util.cpp:289
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"

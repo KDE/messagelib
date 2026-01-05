@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-22 00:43+0000\n"
+"POT-Creation-Date: 2026-01-05 00:44+0000\n"
 "PO-Revision-Date: 2025-09-15 12:21+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -1508,7 +1508,7 @@ msgstr ""
 "<p>حدث خطأ أثناء محاولة تصدير المفتاح من الواجهة الخلفية:</p><p><b>لم يعثر "
 "على مفتاح صالح للمستخدم %1 (%2)</b></p>"
 
-#: job/composerjob.cpp:288
+#: job/composerjob.cpp:290
 #, kde-format
 msgid "No key data for recipients found."
 msgstr "لم يُعثر على بيانات المفاتيح للمستلمين."
@@ -2359,7 +2359,7 @@ msgstr "متنوّع"
 msgid "Subject"
 msgstr "الموضوع"
 
-#: utils/util.cpp:236
+#: utils/util.cpp:235
 #, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
@@ -2367,26 +2367,26 @@ msgctxt ""
 msgid "attachment,attached"
 msgstr "مرفق,المرفق"
 
-#: utils/util.cpp:270
+#: utils/util.cpp:269
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
 "create a mail dispatcher?"
 msgstr "لم يعد مرسل بريد، لذا لا يمكن إرسال البريد. هل تريد إنشاء مرسل بريد؟"
 
-#: utils/util.cpp:271
+#: utils/util.cpp:270
 #, kde-format
 msgctxt "@title:window"
 msgid "No mail dispatcher."
 msgstr "لا يوجد مرسل بريد."
 
-#: utils/util.cpp:273
+#: utils/util.cpp:272
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "أنشئ مرسل بريد"
 
-#: utils/util.cpp:288
+#: utils/util.cpp:287
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
@@ -2395,13 +2395,13 @@ msgstr ""
 "إن مرسل البريد غير متصل بالإنترنت، لذا لا يمكن إرسال البريد. هل تريد إرساله "
 "عبر الإنترنت؟"
 
-#: utils/util.cpp:289
+#: utils/util.cpp:288
 #, kde-format
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "مرسل البريد غير متصل."
 
-#: utils/util.cpp:290
+#: utils/util.cpp:289
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"

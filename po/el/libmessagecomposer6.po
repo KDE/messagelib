@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-22 00:43+0000\n"
+"POT-Creation-Date: 2026-01-05 00:44+0000\n"
 "PO-Revision-Date: 2024-09-19 17:22+0300\n"
 "Last-Translator: Antonis Geralis <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -1560,7 +1560,7 @@ msgstr ""
 "<p>Παρουσιάστηκε ένα σφάλμα κατά την προσπάθεια εξαγωγής του κλειδιού από το "
 "σύστημα:</p><p><b>Δεν βρέθηκε έγκυρο κλειδί για τον χρήστη %1 (%2)</b></p>"
 
-#: job/composerjob.cpp:288
+#: job/composerjob.cpp:290
 #, kde-format
 msgid "No key data for recipients found."
 msgstr "Δεν βρέθηκαν δεδομένα κλειδιού για τον παραλήπτη."
@@ -2401,7 +2401,7 @@ msgstr "Διάφορα"
 msgid "Subject"
 msgstr "Θέμα"
 
-#: utils/util.cpp:236
+#: utils/util.cpp:235
 #, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
@@ -2409,7 +2409,7 @@ msgctxt ""
 msgid "attachment,attached"
 msgstr "επισύναψη,επισυνάπτω,συνημμένο,συνημμένα,στέλνω"
 
-#: utils/util.cpp:270
+#: utils/util.cpp:269
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
@@ -2419,20 +2419,20 @@ msgstr ""
 "αποστολή της αλληλογραφίας. Θέλετε να δημιουργήσετε έναν ανταποκριτή "
 "αλληλογραφίας;"
 
-#: utils/util.cpp:271
+#: utils/util.cpp:270
 #, kde-format
 msgctxt "@title:window"
 msgid "No mail dispatcher."
 msgstr "Κανείς ανταποκριτής αλληλογραφίας."
 
-#: utils/util.cpp:273
+#: utils/util.cpp:272
 #, fuzzy, kde-format
 #| msgid "No mail dispatcher."
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "Κανείς ανταποκριτής αλληλογραφίας."
 
-#: utils/util.cpp:288
+#: utils/util.cpp:287
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
@@ -2441,13 +2441,13 @@ msgstr ""
 "Ο ανταποκριτής αλληλογραφίας είναι εκτός σύνδεσης, και δεν είναι δυνατή η "
 "αποστολή της αλληλογραφίας. Θέλετε να τον θέσετε σε σύνδεση;"
 
-#: utils/util.cpp:289
+#: utils/util.cpp:288
 #, kde-format
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "Ανταποκριτής αλληλογραφίας εκτός σύνδεσης."
 
-#: utils/util.cpp:290
+#: utils/util.cpp:289
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"

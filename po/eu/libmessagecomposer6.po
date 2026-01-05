@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-22 00:43+0000\n"
+"POT-Creation-Date: 2026-01-05 00:44+0000\n"
 "PO-Revision-Date: 2025-09-06 06:52+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -1533,7 +1533,7 @@ msgstr ""
 "<p>Errore bat gertatu da bizkarraldekotik gakoa esportatzen saiatzean:</"
 "p><p><b>Ez da aurkitu %1 (%2) erabiltzailearentzako gako baliodunik</b></p>"
 
-#: job/composerjob.cpp:288
+#: job/composerjob.cpp:290
 #, kde-format
 msgid "No key data for recipients found."
 msgstr "Ez da hartzaileentzako gako-daturik aurkitu."
@@ -2371,7 +2371,7 @@ msgstr "Hainbat"
 msgid "Subject"
 msgstr "Gaia"
 
-#: utils/util.cpp:236
+#: utils/util.cpp:235
 #, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
@@ -2379,7 +2379,7 @@ msgctxt ""
 msgid "attachment,attached"
 msgstr "eranskina,erantsita"
 
-#: utils/util.cpp:270
+#: utils/util.cpp:269
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
@@ -2388,19 +2388,19 @@ msgstr ""
 "Posta bidaltzailea ezarri gabe dago, beraz, ezin da postarik bidali. Posta "
 "bidaltzaile bat sortu nahi duzu?"
 
-#: utils/util.cpp:271
+#: utils/util.cpp:270
 #, kde-format
 msgctxt "@title:window"
 msgid "No mail dispatcher."
 msgstr "Ez dago posta bidaltzailerik."
 
-#: utils/util.cpp:273
+#: utils/util.cpp:272
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "Sortu posta bidaltzailea"
 
-#: utils/util.cpp:288
+#: utils/util.cpp:287
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
@@ -2409,13 +2409,13 @@ msgstr ""
 "Posta bidaltzailea lerroz kanpo dago, beraz, postak ezin dira bidali. "
 "Lerroan ipini nahi duzu?"
 
-#: utils/util.cpp:289
+#: utils/util.cpp:288
 #, kde-format
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "Posta igorlea lerroz kanpo."
 
-#: utils/util.cpp:290
+#: utils/util.cpp:289
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"

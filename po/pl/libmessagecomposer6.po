@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-22 00:43+0000\n"
+"POT-Creation-Date: 2026-01-05 00:44+0000\n"
 "PO-Revision-Date: 2025-11-08 09:38+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
@@ -1540,7 +1540,7 @@ msgstr ""
 "<p>Wystąpił błąd podczas próby eksportu klucza z silnika:</p><p><b>Nie "
 "znaleziono prawidłowego klucza dla użytkownika %1 (%2)</b></p>"
 
-#: job/composerjob.cpp:288
+#: job/composerjob.cpp:290
 #, kde-format
 msgid "No key data for recipients found."
 msgstr "Nie odnaleziono danych klucza dla adresatów."
@@ -2389,7 +2389,7 @@ msgstr "Różne"
 msgid "Subject"
 msgstr "Temat"
 
-#: utils/util.cpp:236
+#: utils/util.cpp:235
 #, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
@@ -2397,7 +2397,7 @@ msgctxt ""
 msgid "attachment,attached"
 msgstr "załącznik,załączony,załączam"
 
-#: utils/util.cpp:270
+#: utils/util.cpp:269
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
@@ -2406,19 +2406,19 @@ msgstr ""
 "Program wysyłający pocztę nie jest ustawiony, nie można wysyłać poczty. Czy "
 "chcesz utworzyć program wysyłający pocztę?"
 
-#: utils/util.cpp:271
+#: utils/util.cpp:270
 #, kde-format
 msgctxt "@title:window"
 msgid "No mail dispatcher."
 msgstr "Brak programu wysyłającego pocztę."
 
-#: utils/util.cpp:273
+#: utils/util.cpp:272
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "Stwórz program wysyłający pocztę"
 
-#: utils/util.cpp:288
+#: utils/util.cpp:287
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
@@ -2427,13 +2427,13 @@ msgstr ""
 "Program wysyłający pocztę został odłączony od sieci i nie może wysyłać "
 "poczty. Czy chcesz podłączyć go do sieci?"
 
-#: utils/util.cpp:289
+#: utils/util.cpp:288
 #, kde-format
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "Program wysyłający odłączony od sieci."
 
-#: utils/util.cpp:290
+#: utils/util.cpp:289
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"

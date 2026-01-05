@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-22 00:43+0000\n"
+"POT-Creation-Date: 2026-01-05 00:44+0000\n"
 "PO-Revision-Date: 2025-10-05 11:56+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -1503,7 +1503,7 @@ msgstr ""
 "<p>אירעה שגיאה בניסיון לייצא את המפתח מהמנגנון:</p><p><b>לא נמצא מפתח תקף "
 "למשתמש %1 (%2)</b></p>"
 
-#: job/composerjob.cpp:288
+#: job/composerjob.cpp:290
 #, kde-format
 msgid "No key data for recipients found."
 msgstr "לא נמצאו נתוני מפתחות לנמענים."
@@ -2332,7 +2332,7 @@ msgstr "שונות"
 msgid "Subject"
 msgstr "נושא"
 
-#: utils/util.cpp:236
+#: utils/util.cpp:235
 #, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
@@ -2340,39 +2340,39 @@ msgctxt ""
 msgid "attachment,attached"
 msgstr "צירפתי,מצרף,מצרפת,מצורף,הוספתי,קובץ,צרפתי,מצ״ב,מצ\"ב,הקובץ,מצורף"
 
-#: utils/util.cpp:270
+#: utils/util.cpp:269
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
 "create a mail dispatcher?"
 msgstr "משלח הדוא״ל לא הוגדר, לכן לא ניתן לשלוח הודעות. ליצור משלח דוא״ל?"
 
-#: utils/util.cpp:271
+#: utils/util.cpp:270
 #, kde-format
 msgctxt "@title:window"
 msgid "No mail dispatcher."
 msgstr "אין משלח דוא״ל"
 
-#: utils/util.cpp:273
+#: utils/util.cpp:272
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "יצירת משלח דוא״ל"
 
-#: utils/util.cpp:288
+#: utils/util.cpp:287
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
 "it online?"
 msgstr "משלח הדוא״ל מנותק, לכן לא ניתן לשלוח הודעות. להפעיל אותו?"
 
-#: utils/util.cpp:289
+#: utils/util.cpp:288
 #, kde-format
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "משלח הדוא״ל מנותק."
 
-#: utils/util.cpp:290
+#: utils/util.cpp:289
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"

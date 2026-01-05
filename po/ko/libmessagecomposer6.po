@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-22 00:43+0000\n"
+"POT-Creation-Date: 2026-01-05 00:44+0000\n"
 "PO-Revision-Date: 2025-10-09 01:07+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1507,7 +1507,7 @@ msgstr ""
 "<p>백엔드에서 키를 내보내는 중 오류가 발생했습니다:</p><p><b>사용자 %1(%2)의 "
 "유효한 키 없음</b></p>"
 
-#: job/composerjob.cpp:288
+#: job/composerjob.cpp:290
 #, kde-format
 msgid "No key data for recipients found."
 msgstr "받는 사람의 키를 찾을 수 없습니다."
@@ -2323,7 +2323,7 @@ msgstr "기타"
 msgid "Subject"
 msgstr "제목"
 
-#: utils/util.cpp:236
+#: utils/util.cpp:235
 #, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
@@ -2331,7 +2331,7 @@ msgctxt ""
 msgid "attachment,attached"
 msgstr "attachment,attached,첨부"
 
-#: utils/util.cpp:270
+#: utils/util.cpp:269
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
@@ -2340,19 +2340,19 @@ msgstr ""
 "메일 전송기가 설정되지 않아서 메시지를 보낼 수 없습니다. 메일 전송기를 설정하"
 "시겠습니까?"
 
-#: utils/util.cpp:271
+#: utils/util.cpp:270
 #, kde-format
 msgctxt "@title:window"
 msgid "No mail dispatcher."
 msgstr "메일 전송기 없음."
 
-#: utils/util.cpp:273
+#: utils/util.cpp:272
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "메일 전송기 만들기"
 
-#: utils/util.cpp:288
+#: utils/util.cpp:287
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
@@ -2361,13 +2361,13 @@ msgstr ""
 "메일 전송기가 오프라인이어서 메시지를 보낼 수 없습니다. 온라인으로 전환하시겠"
 "습니까?"
 
-#: utils/util.cpp:289
+#: utils/util.cpp:288
 #, kde-format
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "메일 전송기 오프라인."
 
-#: utils/util.cpp:290
+#: utils/util.cpp:289
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"

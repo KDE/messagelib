@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-22 00:43+0000\n"
+"POT-Creation-Date: 2026-01-05 00:44+0000\n"
 "PO-Revision-Date: 2024-11-10 11:07+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -1531,7 +1531,7 @@ msgstr ""
 "<p>Sattui virhe yritettäessä viedä avainta taustaosasta:</p><p><b>Ei "
 "kelvollista avainta käyttäjälle %1 (%2)</b></p>"
 
-#: job/composerjob.cpp:288
+#: job/composerjob.cpp:290
 #, kde-format
 msgid "No key data for recipients found."
 msgstr "Vastaanottajille ei löytynyt avaimia."
@@ -2366,7 +2366,7 @@ msgstr "Sekalaista"
 msgid "Subject"
 msgstr "Aihe"
 
-#: utils/util.cpp:236
+#: utils/util.cpp:235
 #, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
@@ -2374,7 +2374,7 @@ msgctxt ""
 msgid "attachment,attached"
 msgstr "liite,liitetty"
 
-#: utils/util.cpp:270
+#: utils/util.cpp:269
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
@@ -2383,19 +2383,19 @@ msgstr ""
 "Viestinvälitystä ei ole asetettu, joten postia ei voi lähettää. Haluatko "
 "määrittää viestinvälityksen?"
 
-#: utils/util.cpp:271
+#: utils/util.cpp:270
 #, kde-format
 msgctxt "@title:window"
 msgid "No mail dispatcher."
 msgstr "Ei viestinvälitystä."
 
-#: utils/util.cpp:273
+#: utils/util.cpp:272
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "Luo viestinvälitys"
 
-#: utils/util.cpp:288
+#: utils/util.cpp:287
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
@@ -2404,13 +2404,13 @@ msgstr ""
 "Viestinvälitys ei ole verkossa, joten postia ei voi lähettää. Haluatko "
 "yhdistää viestinvälityksen verkkoon?"
 
-#: utils/util.cpp:289
+#: utils/util.cpp:288
 #, kde-format
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "Viestinvälitys ei toiminnassa."
 
-#: utils/util.cpp:290
+#: utils/util.cpp:289
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"

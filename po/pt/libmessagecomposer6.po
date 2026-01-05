@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-22 00:43+0000\n"
+"POT-Creation-Date: 2026-01-05 00:44+0000\n"
 "PO-Revision-Date: 2023-05-15 10:33+0100\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <kde-i18n-pt@kde.org>\n"
@@ -1623,7 +1623,7 @@ msgstr ""
 "p><p><b>Não foi encontrada nenhuma chave válida para o utilizador %1 (%2)</"
 "b></p>"
 
-#: job/composerjob.cpp:288
+#: job/composerjob.cpp:290
 #, kde-format
 msgid "No key data for recipients found."
 msgstr "Não foram encontrados nenhuns dados-chave para os destinatários."
@@ -2480,7 +2480,7 @@ msgstr "Diversos"
 msgid "Subject"
 msgstr "Assunto"
 
-#: utils/util.cpp:236
+#: utils/util.cpp:235
 #, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
@@ -2488,7 +2488,7 @@ msgctxt ""
 msgid "attachment,attached"
 msgstr "anexo,anexado"
 
-#: utils/util.cpp:270
+#: utils/util.cpp:269
 #, kde-format
 msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
@@ -2497,20 +2497,20 @@ msgstr ""
 "O agente de encaminhamento do correio não está configurado; como tal, não é "
 "possível enviar os e-mails. Deseja criar um agente?"
 
-#: utils/util.cpp:271
+#: utils/util.cpp:270
 #, fuzzy, kde-format
 #| msgid "No mail dispatcher."
 msgctxt "@title:window"
 msgid "No mail dispatcher."
 msgstr "Não existe nenhum agente de encaminhamento de correio."
 
-#: utils/util.cpp:273
+#: utils/util.cpp:272
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "Criar um Agente de Encaminhamento de Correio"
 
-#: utils/util.cpp:288
+#: utils/util.cpp:287
 #, kde-format
 msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
@@ -2519,14 +2519,14 @@ msgstr ""
 "O agente de encaminhamento do correio está desligado; como tal, não é "
 "possível enviar os e-mails. Deseja ligá-lo?"
 
-#: utils/util.cpp:289
+#: utils/util.cpp:288
 #, fuzzy, kde-format
 #| msgid "Mail dispatcher offline."
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "O agente de encaminhamento de correio está desligado."
 
-#: utils/util.cpp:290
+#: utils/util.cpp:289
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"
