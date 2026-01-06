@@ -21,13 +21,23 @@ class MESSAGECOMPOSER_EXPORT AttachmentFromPublicKeyJob : public MessageCore::At
     Q_OBJECT
 
 public:
+    /*!
+     */
     explicit AttachmentFromPublicKeyJob(const QString &fingerprint, QObject *parent = nullptr);
+    /*!
+     */
     ~AttachmentFromPublicKeyJob() override;
 
+    /*!
+     */
     [[nodiscard]] QString fingerprint() const;
     void setFingerprint(const QString &fingerprint);
+    /*!
+     */
 
 protected Q_SLOTS:
+    /*!
+     */
     void doStart() override;
 
 private:

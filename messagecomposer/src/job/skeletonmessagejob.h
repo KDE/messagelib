@@ -28,17 +28,33 @@ class MESSAGECOMPOSER_EXPORT SkeletonMessageJob : public JobBase
     Q_OBJECT
 
 public:
+    /*!
+     */
     explicit SkeletonMessageJob(InfoPart *infoPart = nullptr, GlobalPart *globalPart = nullptr, QObject *parent = nullptr);
+    /*!
+     */
     ~SkeletonMessageJob() override;
 
+    /*!
+     */
     [[nodiscard]] InfoPart *infoPart() const;
+    /*!
+     */
     void setInfoPart(InfoPart *part);
 
+    /*!
+     */
     [[nodiscard]] GlobalPart *globalPart() const;
+    /*!
+     */
     void setGlobalPart(GlobalPart *part);
 
+    /*!
+     */
     [[nodiscard]] std::unique_ptr<KMime::Message> &&takeMessage();
 
+    /*!
+     */
     void start() override;
 
 private:

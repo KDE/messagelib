@@ -20,9 +20,15 @@ class MESSAGECOMPOSER_EXPORT MDNAdviceDialog : public QDialog
     Q_OBJECT
 
 public:
+    /*!
+     */
     explicit MDNAdviceDialog(const QString &text, bool canDeny, QWidget *parent = nullptr);
+    /*!
+     */
     ~MDNAdviceDialog() override;
 
+    /*!
+     */
     [[nodiscard]] MessageComposer::MDNAdvice result() const;
 
 private:

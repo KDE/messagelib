@@ -23,14 +23,26 @@ class MESSAGECOMPOSER_EXPORT AttachmentJob : public ContentJobBase
     Q_OBJECT
 
 public:
+    /*!
+     */
     explicit AttachmentJob(MessageCore::AttachmentPart::Ptr part, QObject *parent = nullptr);
+    /*!
+     */
     ~AttachmentJob() override;
 
+    /*!
+     */
     [[nodiscard]] MessageCore::AttachmentPart::Ptr attachmentPart() const;
+    /*!
+     */
     void setAttachmentPart(const MessageCore::AttachmentPart::Ptr &part);
 
 protected Q_SLOTS:
+    /*!
+     */
     void doStart() override;
+    /*!
+     */
     void process() override;
 
 private:

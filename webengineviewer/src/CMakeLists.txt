@@ -361,50 +361,6 @@ install(FILES
 
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6WebEngineViewer")
 
-if(BUILD_QCH)
-    ecm_add_qch(
-        KPim6WebEngineViewer_QCH
-        NAME KPim6WebEngineViewer
-        BASE_NAME KPim6WebEngineViewer
-        VERSION ${PIM_VERSION}
-        ORG_DOMAIN org.kde
-        SOURCES # using only public headers, to cover only public API
-        ${WebEngineViewer_submittedformwidget_HEADERS}
-        ${WebEngineViewer_developertool_HEADERS}
-        ${WebEngineViewer_tracking_HEADERS}
-        ${WebEngineViewer_blockexternalresourcesurlinterceptor_HEADERS}
-        ${WebEngineViewer_loadexternalreferencesurlinterceptor_HEADERS}
-        ${WebEngineViewer_blocktrackingurlinterceptor_HEADERS}
-        ${WebEngineViewer_webengine_checkurl_HEADERS}
-        ${WebEngineViewer_webengine_accesskey_HEADERS}
-        ${WebEngineViewer_findbar_HEADERS}
-        ${WebEngineViewer_webengine_urlinterceptor_HEADERS}
-        ${WebEngineViewer_webengine_manager_HEADERS}
-        ${WebEngineViewer_webengine_misc_HEADERS}
-        ${WebEngineViewer_widgets_HEADERS}
-        ${WebEngineViewer_print_HEADERS}
-        LINK_QCHS
-        Qt6Core_QCH
-        Qt6Gui_QCH
-        Qt6Widgets_QCH
-        INCLUDE_DIRS
-        ${CMAKE_CURRENT_BINARY_DIR}
-        BLANK_MACROS
-        WEBENGINEVIEWER_EXPORT
-        TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        COMPONENT Devel
-)
-
-ecm_install_qch_export(
-    TARGETS KPim6WebEngineViewer_QCH
-    FILE KPim6WebEngineViewerQchTargets.cmake
-    DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-    COMPONENT Devel
-)
-set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6WebEngineViewerQchTargets.cmake\")")
-endif()
-
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KPimWebEngineViewerConfig.cmake.in"
     "${CMAKE_CURRENT_BINARY_DIR}/KPim6WebEngineViewerConfig.cmake"

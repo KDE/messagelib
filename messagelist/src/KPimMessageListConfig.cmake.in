@@ -6,4 +6,3 @@ find_dependency(KPim6AkonadiMime "@AKONADIMIME_LIB_VERSION@")
 
 
 include("${CMAKE_CURRENT_LIST_DIR}/KPim6MessageListTargets.cmake")
-@PACKAGE_INCLUDE_QCHTARGETS@

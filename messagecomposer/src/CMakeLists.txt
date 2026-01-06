@@ -667,61 +667,6 @@ install(FILES
 )
 
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6MessageComposer")
-
-if(BUILD_QCH)
-    ecm_add_qch(
-        KPim6MessageComposer_QCH
-        NAME KPim6MessageComposer
-        BASE_NAME KPim6MessageComposer
-        VERSION ${PIM_VERSION}
-        ORG_DOMAIN org.kde
-        SOURCES # using only public headers, to cover only public API
-        ${MessageComposer_HEADERS}
-        ${MessageComposer_PluginEditorBase_HEADERS}
-        ${MessageComposer_snippet_HEADERS}
-        ${MessageComposer_plugineditorconverttext_HEADERS}
-        ${MessageComposer_plugineditorinit_HEADERS}
-        ${MessageComposer_statusbarwidget_HEADERS}
-        ${MessageComposer_composer_HEADERS}
-        ${MessageComposer_composerng_HEADERS}
-        ${MessageComposer_sender_HEADERS}
-        ${MessageComposer_utils_HEADERS}
-        ${MessageComposer_helper_HEADERS}
-        ${MessageComposer_settings_HEADERS}
-        ${MessageComposer_part_HEADERS}
-        ${MessageComposer_followupreminder_HEADERS}
-        ${MessageComposer_recipient_HEADERS}
-        ${MessageComposer_imagescaling_HEADERS}
-        ${MessageComposer_sendlater_HEADERS}
-        ${MessageComposer_attachement_HEADERS}
-        ${MessageComposer_job_HEADERS}
-        ${MessageComposer_plugineditor_HEADERS}
-        ${MessageComposer_plugineditorcheckbeforesend_HEADERS}
-        ${MessageComposer_plugineditorgrammar_HEADERS}
-        ${MessageComposer_draftstatus_HEADERS}
-        LINK_QCHS
-        Qt6Core_QCH
-        Qt6Gui_QCH
-        Qt6Widgets_QCH
-        INCLUDE_DIRS
-        ${CMAKE_CURRENT_BINARY_DIR}
-        BLANK_MACROS
-        MESSAGECOMPOSER_EXPORT
-        TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        COMPONENT Devel
-)
-
-ecm_install_qch_export(
-    TARGETS KPim6MessageComposer_QCH
-    FILE KPim6MessageComposerQchTargets.cmake
-    DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-    COMPONENT Devel
-)
-set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6MessageComposerQchTargets.cmake\")")
-
-endif()
-
 ########### CMake Config Files ###########
 
 configure_package_config_file(

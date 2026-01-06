@@ -18,19 +18,39 @@ namespace MessageComposer
 class MESSAGECOMPOSER_EXPORT ComposerAttachmentInterface
 {
 public:
+    /*!
+     */
     ComposerAttachmentInterface();
+    /*!
+     */
     ~ComposerAttachmentInterface();
 
+    /*!
+     */
     [[nodiscard]] QStringList fileNames() const;
+    /*!
+     */
     void setFileNames(const QStringList &fileName);
 
+    /*!
+     */
     [[nodiscard]] int count() const;
+    /*!
+     */
     void setCount(int count);
 
+    /*!
+     */
     [[nodiscard]] QStringList namesAndSize() const;
+    /*!
+     */
     void setNamesAndSize(const QStringList &nameAndSize);
 
+    /*!
+     */
     [[nodiscard]] QStringList names() const;
+    /*!
+     */
     void setNames(const QStringList &name);
 
 private:

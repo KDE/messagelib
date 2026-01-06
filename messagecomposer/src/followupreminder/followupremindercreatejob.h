@@ -27,21 +27,39 @@ class MESSAGECOMPOSER_EXPORT FollowupReminderCreateJob : public KJob
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit FollowupReminderCreateJob(QObject *parent = nullptr);
+    /*!
+     */
     ~FollowupReminderCreateJob() override;
 
+    /*!
+     */
     void setFollowUpReminderDate(const QDate &date);
 
+    /*!
+     */
     void setOriginalMessageItemId(Akonadi::Item::Id value);
 
+    /*!
+     */
     void setMessageId(const QString &messageId);
 
+    /*!
+     */
     void setTo(const QString &to);
 
+    /*!
+     */
     void setSubject(const QString &subject);
 
+    /*!
+     */
     void setCollectionToDo(const Akonadi::Collection &collection);
 
+    /*!
+     */
     void start() override;
 
 private:

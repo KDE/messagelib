@@ -21,14 +21,26 @@ class MESSAGECOMPOSER_EXPORT ItipJob : public ContentJobBase
     Q_OBJECT
 
 public:
+    /*!
+     */
     explicit ItipJob(ItipPart *itipPart = nullptr, QObject *parent = nullptr);
+    /*!
+     */
     ~ItipJob() override;
 
+    /*!
+     */
     [[nodiscard]] ItipPart *itipPart() const;
+    /*!
+     */
     void setItipPart(ItipPart *part);
 
 protected Q_SLOTS:
+    /*!
+     */
     void doStart() override;
+    /*!
+     */
     void process() override;
 
 private:

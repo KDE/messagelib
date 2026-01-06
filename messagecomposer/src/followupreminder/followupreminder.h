@@ -12,6 +12,8 @@ namespace MessageComposer
 {
 namespace FollowUpReminder
 {
+/*!
+ */
 [[nodiscard]] MESSAGECOMPOSER_EXPORT bool isAvailableAndEnabled();
 }
 }

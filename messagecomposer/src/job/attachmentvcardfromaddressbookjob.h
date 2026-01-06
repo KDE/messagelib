@@ -20,10 +20,16 @@ class MESSAGECOMPOSER_EXPORT AttachmentVcardFromAddressBookJob : public MessageC
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit AttachmentVcardFromAddressBookJob(const Akonadi::Item &item, QObject *parent = nullptr);
+    /*!
+     */
     ~AttachmentVcardFromAddressBookJob() override;
 
 protected Q_SLOTS:
+    /*!
+     */
     void doStart() override;
 
 private:

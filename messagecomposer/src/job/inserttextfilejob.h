@@ -29,15 +29,23 @@ class MESSAGECOMPOSER_EXPORT InsertTextFileJob : public KJob
     Q_OBJECT
 
 public:
+    /*!
+     */
     explicit InsertTextFileJob(QTextEdit *editor, const QUrl &url);
+    /*!
+     */
     ~InsertTextFileJob() override;
 
+    /*!
+     */
     void setEncoding(const QString &encoding);
+    /*!
+     */
     void start() override;
 
 private:
-    void slotGetJobFinished(KJob *job);
-    void slotFileData(KIO::Job *job, const QByteArray &data);
+    MESSAGECOMPOSER_NO_EXPORT void slotGetJobFinished(KJob *job);
+    MESSAGECOMPOSER_NO_EXPORT void slotFileData(KIO::Job *job, const QByteArray &data);
     std::unique_ptr<InsertTextFileJobPrivate> const d;
 };
 }

@@ -176,39 +176,6 @@ install(FILES syntax/kmail-template.xml DESTINATION ${KDE_INSTALL_DATADIR}/org.k
 
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6TemplateParser")
 
-
-if(BUILD_QCH)
-    ecm_add_qch(
-        KPim6TemplateParser_QCH
-        NAME KPim6TemplateParser
-        BASE_NAME KPim6TemplateParser
-        VERSION ${PIM_VERSION}
-        ORG_DOMAIN org.kde
-        SOURCES # using only public headers, to cover only public API
-        ${TemplateParser_HEADERS}
-        LINK_QCHS
-        Qt6Core_QCH
-        Qt6Gui_QCH
-        Qt6Widgets_QCH
-        INCLUDE_DIRS
-        ${CMAKE_CURRENT_BINARY_DIR}
-        BLANK_MACROS
-        TEMPLATEPARSER_EXPORT
-        TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        COMPONENT Devel
-)
-
-ecm_install_qch_export(
-    TARGETS KPim6TemplateParser_QCH
-    FILE KPim6TemplateParserQchTargets.cmake
-    DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-    COMPONENT Devel
-)
-set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6TemplateParserQchTargets.cmake\")")
-endif()
-
-
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KPimTemplateParserConfig.cmake.in"
     "${CMAKE_CURRENT_BINARY_DIR}/KPim6TemplateParserConfig.cmake"

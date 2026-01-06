@@ -35,10 +35,16 @@ public:
         UserError = UserDefinedError + 42,
     };
 
+    /*!
+     */
     explicit JobBase(QObject *parent = nullptr);
+    /*!
+     */
     ~JobBase() override;
 
     // asserts if no Composer parent
+    /*!
+     */
     GlobalPart *globalPart();
 
 protected:

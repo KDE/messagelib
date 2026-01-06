@@ -2,4 +2,3 @@
 include(CMakeFindDependencyMacro)
 find_dependency(Qt6WebEngineWidgets "@QT_REQUIRED_VERSION@")
 include("${CMAKE_CURRENT_LIST_DIR}/KPim6WebEngineViewerTargets.cmake")
-@PACKAGE_INCLUDE_QCHTARGETS@

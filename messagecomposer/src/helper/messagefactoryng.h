@@ -55,10 +55,14 @@ public:
         ///  template
     };
 
+    /*!
+     */
     explicit MessageFactoryNG(const std::shared_ptr<KMime::Message> &origMsg,
                               Akonadi::Item::Id id,
                               const Akonadi::Collection &col = Akonadi::Collection(),
                               QObject *parent = nullptr);
+    /*!
+     */
     ~MessageFactoryNG() override;
 
     /**
@@ -224,7 +228,11 @@ public:
     void setReplyAsHtml(bool replyAsHtml);
 
 Q_SIGNALS:
+    /*!
+     */
     void createReplyDone(const MessageComposer::MessageFactoryNG::MessageReply &reply);
+    /*!
+     */
     void createForwardDone(const std::shared_ptr<KMime::Message> &msg);
 
 private:

@@ -28,13 +28,23 @@ class MESSAGECOMPOSER_EXPORT FollowUpReminderSelectDateDialog : public QDialog
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit FollowUpReminderSelectDateDialog(QWidget *parent = nullptr, QAbstractItemModel *model = nullptr);
+    /*!
+     */
     ~FollowUpReminderSelectDateDialog() override;
 
+    /*!
+     */
     [[nodiscard]] QDate selectedDate() const;
 
+    /*!
+     */
     void accept() override;
 
+    /*!
+     */
     [[nodiscard]] Akonadi::Collection collection() const;
 
 private:

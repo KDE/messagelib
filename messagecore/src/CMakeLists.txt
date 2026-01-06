@@ -215,40 +215,6 @@ install(FILES
 
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6MessageCore")
 
-
-if(BUILD_QCH)
-    ecm_add_qch(
-        KPim6MessageCore_QCH
-        NAME KPim6MessageCore
-        BASE_NAME KPim6MessageCore
-        VERSION ${PIM_VERSION}
-        ORG_DOMAIN org.kde
-        SOURCES # using only public headers, to cover only public API
-        ${MessageCore_autocrypt_HEADERS}
-        ${MessageCore_settings_HEADERS}
-        ${MessageCore_utils_HEADERS}
-        LINK_QCHS
-        Qt6Core_QCH
-        Qt6Gui_QCH
-        Qt6Widgets_QCH
-        INCLUDE_DIRS
-        ${CMAKE_CURRENT_BINARY_DIR}
-        BLANK_MACROS
-        MESSAGECORE_EXPORT
-        TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        COMPONENT Devel
-)
-
-ecm_install_qch_export(
-    TARGETS KPim6MessageCore_QCH
-    FILE KPim6MessageCoreQchTargets.cmake
-    DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-    COMPONENT Devel
-)
-set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6MessageCoreQchTargets.cmake\")")
-endif()
-
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KPimMessageCoreConfig.cmake.in"
     "${CMAKE_CURRENT_BINARY_DIR}/KPim6MessageCoreConfig.cmake"

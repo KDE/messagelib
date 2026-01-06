@@ -33,10 +33,18 @@ class MESSAGECOMPOSER_EXPORT SinglepartJob : public ContentJobBase
     Q_OBJECT
 
 public:
+    /*!
+     */
     explicit SinglepartJob(QObject *parent = nullptr);
+    /*!
+     */
     ~SinglepartJob() override;
 
+    /*!
+     */
     [[nodiscard]] QByteArray data() const;
+    /*!
+     */
     void setData(const QByteArray &data);
     /** Indicated the data set with setData() is already encoded with the selected
      *  content transfer encoding.
@@ -44,13 +52,25 @@ public:
      */
     void setDataIsEncoded(bool encoded);
 
+    /*!
+     */
     [[nodiscard]] KMime::Headers::ContentDescription *contentDescription();
+    /*!
+     */
     [[nodiscard]] KMime::Headers::ContentDisposition *contentDisposition();
+    /*!
+     */
     [[nodiscard]] KMime::Headers::ContentID *contentID();
+    /*!
+     */
     [[nodiscard]] KMime::Headers::ContentTransferEncoding *contentTransferEncoding();
+    /*!
+     */
     [[nodiscard]] KMime::Headers::ContentType *contentType();
 
 protected Q_SLOTS:
+    /*!
+     */
     void process() override;
 
 private:

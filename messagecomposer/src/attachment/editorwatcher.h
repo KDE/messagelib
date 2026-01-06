@@ -50,10 +50,18 @@ public:
     explicit EditorWatcher(const QUrl &url, const QString &mimeType, OpenWithOption option, QObject *parent, QWidget *parentWidget);
 
     ~EditorWatcher() override;
+    /*!
+     */
     [[nodiscard]] ErrorEditorWatcher start();
+    /*!
+     */
     [[nodiscard]] bool fileChanged() const;
+    /*!
+     */
     [[nodiscard]] QUrl url() const;
 Q_SIGNALS:
+    /*!
+     */
     void editDone(MessageComposer::EditorWatcher *watcher);
 
 private:

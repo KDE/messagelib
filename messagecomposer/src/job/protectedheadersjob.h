@@ -31,16 +31,30 @@ class MESSAGECOMPOSER_EXPORT ProtectedHeadersJob : public ContentJobBase
     Q_OBJECT
 
 public:
+    /*!
+     */
     explicit ProtectedHeadersJob(QObject *parent = nullptr);
+    /*!
+     */
     ~ProtectedHeadersJob() override;
 
+    /*!
+     */
     void setContent(std::unique_ptr<KMime::Content> &&content);
+    /*!
+     */
     void setSkeletonMessage(KMime::Message *skeletonMessage);
 
+    /*!
+     */
     void setObvoscate(bool obvoscate);
 
 protected Q_SLOTS:
+    /*!
+     */
     void doStart() override;
+    /*!
+     */
     void process() override;
 
 private:

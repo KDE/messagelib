@@ -17,12 +17,22 @@ class AutocryptKeyResolverCorePrivate;
 class MESSAGECOMPOSER_EXPORT AutocryptKeyResolverCore : public Kleo::KeyResolverCore
 {
 public:
+    /*!
+     */
     explicit AutocryptKeyResolverCore(bool encrypt, bool sign, GpgME::Protocol format = GpgME::UnknownProtocol);
+    /*!
+     */
     ~AutocryptKeyResolverCore();
 
+    /*!
+     */
     [[nodiscard]] Kleo::KeyResolverCore::Result resolve();
 
+    /*!
+     */
     [[nodiscard]] bool isAutocryptKey(const QString &recipient) const;
+    /*!
+     */
     [[nodiscard]] bool isGossipKey(const QString &recipient) const;
 
 private:

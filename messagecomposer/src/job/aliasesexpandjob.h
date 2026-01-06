@@ -58,6 +58,8 @@ public:
      */
     [[nodiscard]] QStringList emptyDistributionLists() const;
 
+    /*!
+     */
     [[nodiscard]] QStringList emailAddressOnly() const;
 
 private:

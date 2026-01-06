@@ -21,10 +21,18 @@ class MESSAGECOMPOSER_EXPORT MultipartJob : public ContentJobBase
     Q_OBJECT
 
 public:
+    /*!
+     */
     explicit MultipartJob(QObject *parent = nullptr);
+    /*!
+     */
     ~MultipartJob() override;
 
+    /*!
+     */
     [[nodiscard]] QByteArray multipartSubtype() const;
+    /*!
+     */
     void setMultipartSubtype(const QByteArray &subtype);
 
 protected Q_SLOTS:

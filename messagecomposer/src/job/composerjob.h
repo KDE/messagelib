@@ -36,46 +36,98 @@ class MESSAGECOMPOSER_EXPORT ComposerJob : public JobBase
     Q_OBJECT
 
 public:
+    /*!
+     */
     explicit ComposerJob(QObject *parent = nullptr);
+    /*!
+     */
     ~ComposerJob() override;
 
+    /*!
+     */
     [[nodiscard]] QList<std::shared_ptr<KMime::Message>> resultMessages() const;
 
+    /*!
+     */
     [[nodiscard]] GlobalPart *globalPart() const;
+    /*!
+     */
     [[nodiscard]] InfoPart *infoPart() const;
+    /*!
+     */
     [[nodiscard]] TextPart *textPart() const;
+    /*!
+     */
     [[nodiscard]] ItipPart *itipPart() const;
+    /*!
+     */
     void clearTextPart();
+    /*!
+     */
     void clearItipPart();
+    /*!
+     */
     [[nodiscard]] MessageCore::AttachmentPart::List attachmentParts() const;
+    /*!
+     */
     void addAttachmentPart(MessageCore::AttachmentPart::Ptr part, bool autoresizeImage = false);
+    /*!
+     */
     void addAttachmentParts(const MessageCore::AttachmentPart::List &parts, bool autoresizeImage = false);
+    /*!
+     */
     void removeAttachmentPart(MessageCore::AttachmentPart::Ptr part);
 
     // if the message and attachments should not be encrypted regardless of settings
+    /*!
+     */
     void setNoCrypto(bool noCrypto);
+    /*!
+     */
     void setSignAndEncrypt(const bool doSign, const bool doEncrypt);
+    /*!
+     */
     void setCryptoMessageFormat(Kleo::CryptoMessageFormat format);
+    /*!
+     */
     void setSigningKeys(const std::vector<GpgME::Key> &signers);
+    /*!
+     */
     void setEncryptionKeys(const QList<QPair<QStringList, std::vector<GpgME::Key>>> &data);
 
+    /*!
+     */
     void setAutocryptEnabled(bool autocryptEnabled);
+    /*!
+     */
     void setSenderEncryptionKey(const GpgME::Key &senderKey);
 
+    /*!
+     */
     void setGnupgHome(const QString &path);
+    /*!
+     */
     [[nodiscard]] QString gnupgHome() const;
 
     /// Sets if this message being composed is an auto-saved message
     ///  if so, might need different handling, such as no crypto attachments.
     void setAutoSave(bool isAutoSave);
+    /*!
+     */
     [[nodiscard]] bool autoSave() const;
 
+    /*!
+     */
     [[nodiscard]] bool finished() const;
 
 public Q_SLOTS:
+    /*!
+     */
     void start() override;
 
 protected Q_SLOTS:
+    /*!
+     */
     void slotResult(KJob *job) override;
 
 private:

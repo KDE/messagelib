@@ -23,10 +23,18 @@ class MESSAGECOMPOSER_EXPORT TransparentJob : public MessageComposer::ContentJob
     Q_OBJECT
 
 public:
+    /*!
+     */
     explicit TransparentJob(QObject *parent = nullptr);
+    /*!
+     */
     ~TransparentJob() override;
 
+    /*!
+     */
     void setContent(std::unique_ptr<KMime::Content> &&content);
+    /*!
+     */
     void process() override;
 
 private:

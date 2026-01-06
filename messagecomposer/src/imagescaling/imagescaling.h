@@ -20,7 +20,11 @@ class ImageScalingPrivate;
 class MESSAGECOMPOSER_EXPORT ImageScaling
 {
 public:
+    /*!
+     */
     ImageScaling();
+    /*!
+     */
     ~ImageScaling();
 
     /**
@@ -47,10 +51,16 @@ public:
      * @return new image mimetype after saving.
      */
     [[nodiscard]] QByteArray mimetype() const;
+    /*!
+     */
     void setMimetype(const QByteArray &mimetype);
 
+    /*!
+     */
     void setName(const QString &name);
 
+    /*!
+     */
     [[nodiscard]] QString generateNewName();
 
 private:

@@ -26,14 +26,26 @@ class MESSAGECOMPOSER_EXPORT ImageScalingWidget : public QWidget
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit ImageScalingWidget(QWidget *parent = nullptr);
+    /*!
+     */
     ~ImageScalingWidget() override;
 
+    /*!
+     */
     void loadConfig();
+    /*!
+     */
     void writeConfig();
+    /*!
+     */
     void resetToDefault();
 
 Q_SIGNALS:
+    /*!
+     */
     void changed();
 
 private Q_SLOTS:

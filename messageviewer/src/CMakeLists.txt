@@ -741,53 +741,6 @@ install(FILES scamdetection/data/longurlServices.json DESTINATION ${KDE_INSTALL_
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6MessageViewer")
 
 
-if(BUILD_QCH)
-    ecm_add_qch(
-        KPim6MessageViewer_QCH
-        NAME KPim6MessageViewer
-        BASE_NAME KPim6MessageViewer
-        VERSION ${PIM_VERSION}
-        ORG_DOMAIN org.kde
-        SOURCES # using only public headers, to cover only public API
-        ${MessageViewer_CheckBeforeDeletingPlugin_HEADERS}
-        ${MessageViewer_ConfigurePlugins_HEADERS}
-        ${MessageViewer_webengine_HEADERS}
-        ${MessageViewer_scam_HEADERS}
-        ${MessageViewer_viewerplugin_HEADERS}
-        ${MessageViewer_settings_HEADERS}
-        ${MessageViewer_header_HEADERS}
-        ${MessageViewer_utils_HEADERS}
-        ${MessageViewer_interfaces_HEADERS}
-        ${MessageViewer_htmlwriter_HEADERS}
-        ${MessageViewer_HEADERS}
-        ${MessageViewer_viewer_HEADERS}
-        ${MessageViewer_widgets_HEADERS}
-        ${MessageViewer_antispam_HEADERS}
-        ${MessageViewer_findbar_HEADERS}
-        ${MessageViewer_renderer_HEADERS}
-        ${MessageViewer_remotecontent_HEADERS}
-        LINK_QCHS
-        Qt6Core_QCH
-        Qt6Gui_QCH
-        Qt6Widgets_QCH
-        INCLUDE_DIRS
-        ${CMAKE_CURRENT_BINARY_DIR}
-        BLANK_MACROS
-        MESSAGEVIEWER_EXPORT
-        TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        COMPONENT Devel
-)
-
-ecm_install_qch_export(
-    TARGETS KPim6MessageViewer_QCH
-    FILE KPim6MessageViewerQchTargets.cmake
-    DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-    COMPONENT Devel
-)
-set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6MessageViewerQchTargets.cmake\")")
-endif()
-
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KPimMessageViewerConfig.cmake.in"
     "${CMAKE_CURRENT_BINARY_DIR}/KPim6MessageViewerConfig.cmake"

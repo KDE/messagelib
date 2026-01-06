@@ -33,19 +33,39 @@ class MESSAGECOMPOSER_EXPORT SignJob : public ContentJobBase
     Q_OBJECT
 
 public:
+    /*!
+     */
     explicit SignJob(QObject *parent = nullptr);
+    /*!
+     */
     ~SignJob() override;
 
+    /*!
+     */
     void setContent(std::unique_ptr<KMime::Content> &&content);
+    /*!
+     */
     void setCryptoMessageFormat(Kleo::CryptoMessageFormat format);
+    /*!
+     */
     void setSigningKeys(const std::vector<GpgME::Key> &signers);
 
+    /*!
+     */
     void setSkeletonMessage(KMime::Message *skeletonMessage);
+    /*!
+     */
     void setProtectedHeaders(bool protectedHeaders);
 
 protected Q_SLOTS:
+    /*!
+     */
     void doStart() override;
+    /*!
+     */
     void slotResult(KJob *job) override;
+    /*!
+     */
     void process() override;
 
 private:

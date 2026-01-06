@@ -277,41 +277,6 @@ install(FILES
 set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6MessageList")
 
 
-if(BUILD_QCH)
-    ecm_add_qch(
-        KPim6MessageList_QCH
-        NAME KPim6MessageList
-        BASE_NAME KPim6MessageList
-        VERSION ${PIM_VERSION}
-        ORG_DOMAIN org.kde
-        SOURCES # using only public headers, to cover only public API
-        ${MessageList_HEADERS}
-        ${MessageList_widgets_HEADERS}
-        ${MessageList_core_HEADERS}
-        ${MessageList_util_HEADERS}
-        LINK_QCHS
-        Qt6Core_QCH
-        Qt6Gui_QCH
-        Qt6Widgets_QCH
-        INCLUDE_DIRS
-        ${CMAKE_CURRENT_BINARY_DIR}
-        BLANK_MACROS
-        MESSAGELIST_EXPORT
-        TAGFILE_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        QCH_INSTALL_DESTINATION ${KDE_INSTALL_QTQCHDIR}
-        COMPONENT Devel
-)
-
-ecm_install_qch_export(
-    TARGETS KPim6MessageList_QCH
-    FILE KPim6MessageListQchTargets.cmake
-    DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
-    COMPONENT Devel
-)
-set(PACKAGE_INCLUDE_QCHTARGETS "include(\"\${CMAKE_CURRENT_LIST_DIR}/KPim6MessageListQchTargets.cmake\")")
-endif()
-
-
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KPimMessageListConfig.cmake.in"
     "${CMAKE_CURRENT_BINARY_DIR}/KPim6MessageListConfig.cmake"

@@ -21,14 +21,24 @@ class MESSAGECOMPOSER_EXPORT ComposerLineEdit : public PimCommon::AddresseeLineE
     Q_OBJECT
 
 public:
+    /*!
+     */
     explicit ComposerLineEdit(bool useCompletion, QWidget *parent = nullptr);
+    /*!
+     */
     ~ComposerLineEdit() override;
 
 Q_SIGNALS:
+    /*!
+     */
     void focusUp();
+    /*!
+     */
     void focusDown();
 
 protected:
+    /*!
+     */
     void keyPressEvent(QKeyEvent *) override;
 };
 }

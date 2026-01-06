@@ -29,18 +29,34 @@ class MESSAGECOMPOSER_EXPORT AutocryptHeadersJob : public ContentJobBase
     Q_OBJECT
 
 public:
+    /*!
+     */
     explicit AutocryptHeadersJob(QObject *parent = nullptr);
+    /*!
+     */
     ~AutocryptHeadersJob() override;
 
+    /*!
+     */
     void setSkeletonMessage(KMime::Message *skeletonMessage);
+    /*!
+     */
 
     void setGnupgHome(const QString &path);
 
+    /*!
+     */
     void setSenderKey(const GpgME::Key &key);
+    /*!
+     */
     void setPreferEncrypted(bool preferEncrypted);
+    /*!
+     */
     void setGossipKeys(const std::vector<GpgME::Key> &gossipKeys);
 
 protected Q_SLOTS:
+    /*!
+     */
     void process() override;
 
 private:

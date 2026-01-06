@@ -19,22 +19,50 @@ class ComposerViewBase;
 class MESSAGECOMPOSER_EXPORT ComposerViewInterface
 {
 public:
+    /*!
+     */
     explicit ComposerViewInterface(ComposerViewBase *composerView);
+    /*!
+     */
     ~ComposerViewInterface();
 
+    /*!
+     */
     [[nodiscard]] QString subject() const;
+    /*!
+     */
     [[nodiscard]] QString to() const;
+    /*!
+     */
     [[nodiscard]] QString cc() const;
+    /*!
+     */
     [[nodiscard]] QString bcc() const;
+    /*!
+     */
     [[nodiscard]] QString from() const;
+    /*!
+     */
     [[nodiscard]] QString replyTo() const;
 
+    /*!
+     */
     [[nodiscard]] MessageComposer::ComposerAttachmentInterface attachments() const;
 
+    /*!
+     */
     [[nodiscard]] QString shortDate() const;
+    /*!
+     */
     [[nodiscard]] QString longDate() const;
+    /*!
+     */
     [[nodiscard]] QString shortTime() const;
+    /*!
+     */
     [[nodiscard]] QString longTime() const;
+    /*!
+     */
     [[nodiscard]] QString insertDayOfWeek() const;
 
 private:
