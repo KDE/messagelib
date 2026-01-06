@@ -76,4 +76,6 @@ private:
 }
 Q_DECLARE_METATYPE(MessageViewer::DKIMAuthenticationStatusInfo)
 Q_DECLARE_TYPEINFO(MessageViewer::DKIMAuthenticationStatusInfo::AuthStatusInfo, Q_RELOCATABLE_TYPE);
+/*!
+ */
 MESSAGEVIEWER_EXPORT QDebug operator<<(QDebug d, const MessageViewer::DKIMAuthenticationStatusInfo &t);

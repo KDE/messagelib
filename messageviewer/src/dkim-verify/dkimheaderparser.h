@@ -35,18 +35,38 @@ private:
     };
 
 public:
+    /*!
+     */
     DKIMHeaderParser();
+    /*!
+     */
     ~DKIMHeaderParser();
+    /*!
+     */
     void parse();
+    /*!
+     */
     void setHead(const QByteArray &head);
 
+    /*!
+     */
     [[nodiscard]] QByteArray head() const;
 
+    /*!
+     */
     [[nodiscard]] QString headerType(const QString &str);
+    /*!
+     */
     [[nodiscard]] bool wasAlreadyParsed() const;
+    /*!
+     */
     void setWasAlreadyParsed(bool wasAlreadyParsed);
 
+    /*!
+     */
     [[nodiscard]] bool operator==(const DKIMHeaderParser &other) const;
+    /*!
+     */
     [[nodiscard]] QList<DKIMHeaderParser::Header> listHeaders() const;
 
 private:

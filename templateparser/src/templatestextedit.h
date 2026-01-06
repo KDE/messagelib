@@ -19,7 +19,11 @@ class TEMPLATEPARSER_EXPORT TemplatesTextEdit : public TextCustomEditor::PlainTe
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TemplatesTextEdit(QWidget *parent = nullptr);
+    /*!
+     */
     ~TemplatesTextEdit() override;
 };
 }

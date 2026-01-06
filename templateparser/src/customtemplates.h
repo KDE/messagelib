@@ -35,14 +35,26 @@ public:
     };
 
 public:
+    /*!
+     */
     explicit CustomTemplates(const QList<KActionCollection *> &actionCollection, QWidget *parent = nullptr);
+    /*!
+     */
     ~CustomTemplates() override;
 
+    /*!
+     */
     void load();
+    /*!
+     */
     void save();
 
 Q_SIGNALS:
+    /*!
+     */
     void changed();
+    /*!
+     */
     void templatesUpdated();
 
 private Q_SLOTS:

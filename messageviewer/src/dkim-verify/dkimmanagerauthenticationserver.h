@@ -18,11 +18,21 @@ class MESSAGEVIEWER_EXPORT DKIMManagerAuthenticationServer : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit DKIMManagerAuthenticationServer(QObject *parent = nullptr);
+    /*!
+     */
     ~DKIMManagerAuthenticationServer() override;
+    /*!
+     */
     static DKIMManagerAuthenticationServer *self();
 
+    /*!
+     */
     [[nodiscard]] QStringList serverList() const;
+    /*!
+     */
     void setServerList(const QStringList &serverList);
 
 private:

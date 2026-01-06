@@ -21,12 +21,22 @@ class MESSAGEVIEWER_EXPORT ScamExpandUrlJob : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit ScamExpandUrlJob(QObject *parent = nullptr);
+    /*!
+     */
     ~ScamExpandUrlJob() override;
 
+    /*!
+     */
     void expandedUrl(const QUrl &url);
 Q_SIGNALS:
+    /*!
+     */
     void urlExpanded(const QString &shortUrl, const QString &expandedUrl);
+    /*!
+     */
     void expandUrlError(QNetworkReply::NetworkError error);
 
 private:

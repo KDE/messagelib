@@ -20,13 +20,23 @@ class TEMPLATEPARSER_EXPORT TemplatesInsertCommandAction : public QWidgetAction
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TemplatesInsertCommandAction(QObject *parent = nullptr);
+    /*!
+     */
     ~TemplatesInsertCommandAction() override;
 
+    /*!
+     */
     [[nodiscard]] TemplatesCommandMenu::MenuTypes type() const;
+    /*!
+     */
     void setType(TemplatesCommandMenu::MenuTypes type);
 
 Q_SIGNALS:
+    /*!
+     */
     void insertCommand(const QString &cmd, int adjustCursor);
 
 private:

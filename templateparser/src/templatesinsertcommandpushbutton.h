@@ -21,13 +21,23 @@ class TEMPLATEPARSER_EXPORT TemplatesInsertCommandPushButton : public QPushButto
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TemplatesInsertCommandPushButton(QWidget *parent, const QString &name = QString());
+    /*!
+     */
     ~TemplatesInsertCommandPushButton() override;
 
+    /*!
+     */
     [[nodiscard]] TemplatesCommandMenu::MenuTypes type() const;
+    /*!
+     */
     void setType(TemplatesCommandMenu::MenuTypes type);
 
 Q_SIGNALS:
+    /*!
+     */
     void insertCommand(const QString &cmd, int adjustCursor = 0);
 
 private:

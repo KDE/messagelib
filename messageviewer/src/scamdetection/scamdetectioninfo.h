@@ -27,19 +27,37 @@ public:
     Q_DECLARE_FLAGS(ScamDetectionFields, ScamDetectionField)
     Q_ENUM(ScamDetectionField)
 
+    /*!
+     */
     ScamDetectionInfo();
+    /*!
+     */
     ~ScamDetectionInfo();
 
+    /*!
+     */
     [[nodiscard]] const QString &domainOrEmail() const;
+    /*!
+     */
     void setDomainOrEmail(const QString &newDomainOrEmail);
 
+    /*!
+     */
     [[nodiscard]] bool enabled() const;
+    /*!
+     */
     void setEnabled(bool newEnabled);
 
+    /*!
+     */
     [[nodiscard]] bool isValid() const;
 
+    /*!
+     */
     [[nodiscard]] ScamDetectionInfo::ScamDetectionFields scamChecks() const;
 
+    /*!
+     */
     [[nodiscard]] bool operator==(const ScamDetectionInfo &other) const;
 
 private:

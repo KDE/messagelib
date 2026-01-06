@@ -28,31 +28,67 @@ public:
     };
     Q_ENUM(RuleType)
 
+    /*!
+     */
     DKIMRule();
+    /*!
+     */
     [[nodiscard]] QString domain() const;
+    /*!
+     */
     void setDomain(const QString &domain);
 
+    /*!
+     */
     [[nodiscard]] QStringList signedDomainIdentifier() const;
+    /*!
+     */
     void setSignedDomainIdentifier(const QStringList &signedDomainIdentifier);
 
+    /*!
+     */
     [[nodiscard]] QString from() const;
+    /*!
+     */
     void setFrom(const QString &from);
 
+    /*!
+     */
     [[nodiscard]] bool enabled() const;
+    /*!
+     */
     void setEnabled(bool enabled);
 
+    /*!
+     */
     [[nodiscard]] bool isValid() const;
 
+    /*!
+     */
     [[nodiscard]] RuleType ruleType() const;
+    /*!
+     */
     void setRuleType(MessageViewer::DKIMRule::RuleType ruleType);
 
+    /*!
+     */
     [[nodiscard]] QString listId() const;
+    /*!
+     */
     void setListId(const QString &listId);
 
+    /*!
+     */
     [[nodiscard]] bool operator==(const DKIMRule &other) const;
+    /*!
+     */
     [[nodiscard]] bool operator!=(const DKIMRule &other) const;
 
+    /*!
+     */
     [[nodiscard]] int priority() const;
+    /*!
+     */
     void setPriority(int priority);
 
 private:

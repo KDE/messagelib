@@ -20,7 +20,11 @@ class MESSAGEVIEWER_EXPORT DKIMManagerKeyDialog : public QDialog
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit DKIMManagerKeyDialog(QWidget *parent = nullptr);
+    /*!
+     */
     ~DKIMManagerKeyDialog() override;
 
 private:

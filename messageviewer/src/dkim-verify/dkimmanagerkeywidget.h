@@ -18,13 +18,27 @@ class MESSAGEVIEWER_EXPORT DKIMManagerKeyWidget : public QWidget
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit DKIMManagerKeyWidget(QWidget *parent = nullptr);
+    /*!
+     */
     ~DKIMManagerKeyWidget() override;
 
+    /*!
+     */
     void loadKeys();
+    /*!
+     */
     void saveKeys();
+    /*!
+     */
     void resetKeys();
+    /*!
+     */
     [[nodiscard]] QByteArray saveHeaders() const;
+    /*!
+     */
     void restoreHeaders(const QByteArray &header);
 
 private:

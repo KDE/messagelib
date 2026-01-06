@@ -22,8 +22,14 @@ class MESSAGEVIEWER_EXPORT ScamCheckShortUrlManager : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     ~ScamCheckShortUrlManager() override;
+    /*!
+     */
     static ScamCheckShortUrlManager *self();
+    /*!
+     */
     [[nodiscard]] ScamCheckShortUrl *scamCheckShortUrl() const;
 
 private:

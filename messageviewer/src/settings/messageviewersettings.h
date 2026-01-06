@@ -21,6 +21,8 @@ class MESSAGEVIEWER_EXPORT MessageViewerSettings : public MessageViewer::Message
 {
     Q_OBJECT
 public:
+    /*!
+     */
     static MessageViewerSettings *self();
 
     /** Call this slot instead of directly KConfig::sync() to

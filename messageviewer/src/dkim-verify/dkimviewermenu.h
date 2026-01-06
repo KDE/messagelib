@@ -20,14 +20,28 @@ class MESSAGEVIEWER_EXPORT DKIMViewerMenu : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit DKIMViewerMenu(QObject *parent = nullptr);
+    /*!
+     */
     ~DKIMViewerMenu() override;
+    /*!
+     */
     [[nodiscard]] QMenu *menu() const;
 
+    /*!
+     */
     void setEnableUpdateDkimKeyMenu(bool enabled);
 Q_SIGNALS:
+    /*!
+     */
     void recheckSignature();
+    /*!
+     */
     void updateDkimKey();
+    /*!
+     */
     void showDkimRules();
 
 private:

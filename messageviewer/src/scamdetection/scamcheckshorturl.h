@@ -23,13 +23,23 @@ class MESSAGEVIEWER_EXPORT ScamCheckShortUrl : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit ScamCheckShortUrl(QObject *parent = nullptr);
+    /*!
+     */
     ~ScamCheckShortUrl() override;
 
+    /*!
+     */
     [[nodiscard]] static bool isShortUrl(const QUrl &url);
 
+    /*!
+     */
     void expandedUrl(const QUrl &url);
 
+    /*!
+     */
     static void loadLongUrlServices();
 
 private:

@@ -107,38 +107,78 @@ public:
         QList<DKIMCheckSignatureAuthenticationResult> listSignatureAuthenticationResult;
     };
 
+    /*!
+     */
     explicit DKIMCheckSignatureJob(QObject *parent = nullptr);
+    /*!
+     */
     ~DKIMCheckSignatureJob() override;
+    /*!
+     */
     void start();
 
+    /*!
+     */
     [[nodiscard]] QString dkimValue() const;
 
+    /*!
+     */
     [[nodiscard]] DKIMCheckSignatureJob::DKIMStatus status() const;
+    /*!
+     */
     void setStatus(MessageViewer::DKIMCheckSignatureJob::DKIMStatus status);
 
+    /*!
+     */
     [[nodiscard]] MessageViewer::DKIMCheckSignatureJob::DKIMStatus checkSignature(const MessageViewer::DKIMInfo &info);
 
+    /*!
+     */
     [[nodiscard]] DKIMCheckSignatureJob::DKIMError error() const;
 
+    /*!
+     */
     [[nodiscard]] std::shared_ptr<KMime::Message> message() const;
+    /*!
+     */
     void setMessage(const std::shared_ptr<KMime::Message> &message);
 
+    /*!
+     */
     [[nodiscard]] DKIMCheckSignatureJob::DKIMWarning warning() const;
+    /*!
+     */
     void setWarning(MessageViewer::DKIMCheckSignatureJob::DKIMWarning warning);
 
+    /*!
+     */
     [[nodiscard]] QString headerCanonizationResult() const;
 
+    /*!
+     */
     [[nodiscard]] QString bodyCanonizationResult() const;
 
+    /*!
+     */
     [[nodiscard]] DKIMCheckPolicy policy() const;
+    /*!
+     */
     void setPolicy(const DKIMCheckPolicy &policy);
 
+    /*!
+     */
     void setHeaderParser(const DKIMHeaderParser &headerParser);
 
+    /*!
+     */
     void setCheckSignatureAuthenticationResult(const QList<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> &lst);
 
 Q_SIGNALS:
+    /*!
+     */
     void result(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
+    /*!
+     */
     void storeKey(const QString &key, const QString &domain, const QString &selector);
 
 private:

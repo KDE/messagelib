@@ -25,19 +25,37 @@ class TEMPLATEPARSER_EXPORT CustomTemplatesMenu : public QObject
     Q_OBJECT
 
 public:
+    /*!
+     */
     explicit CustomTemplatesMenu(QWidget *parent, KActionCollection *ac);
+    /*!
+     */
     ~CustomTemplatesMenu() override;
 
+    /*!
+     */
     [[nodiscard]] KActionMenu *replyActionMenu() const;
+    /*!
+     */
     [[nodiscard]] KActionMenu *replyAllActionMenu() const;
+    /*!
+     */
     [[nodiscard]] KActionMenu *forwardActionMenu() const;
 
 public Q_SLOTS:
+    /*!
+     */
     void update();
 
 Q_SIGNALS:
+    /*!
+     */
     void replyTemplateSelected(const QString &tmpl);
+    /*!
+     */
     void replyAllTemplateSelected(const QString &tmpl);
+    /*!
+     */
     void forwardTemplateSelected(const QString &tmpl);
 
 private:

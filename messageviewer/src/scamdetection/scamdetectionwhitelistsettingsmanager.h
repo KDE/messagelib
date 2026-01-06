@@ -18,10 +18,18 @@ class MESSAGEVIEWER_EXPORT ScamDetectionWhiteListSettingsManager : public QObjec
 {
     Q_OBJECT
 public:
+    /*!
+     */
     ~ScamDetectionWhiteListSettingsManager() override;
+    /*!
+     */
     static ScamDetectionWhiteListSettingsManager *self();
 
+    /*!
+     */
     [[nodiscard]] QList<ScamDetectionInfo> scamDetectionInfoList() const;
+    /*!
+     */
     void setScamDetectionInfoList(const QList<ScamDetectionInfo> &newScamDetectionInfoList);
 
 private:

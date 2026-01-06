@@ -72,5 +72,7 @@ struct HtmlMessageInfo {
 }
 Q_DECLARE_TYPEINFO(MessageViewer::Util::HtmlMessageInfo, Q_RELOCATABLE_TYPE);
 Q_DECLARE_METATYPE(MessageViewer::Util::HtmlMessageInfo)
+/*!
+ */
 MESSAGEVIEWER_EXPORT QDebug operator<<(QDebug d, const MessageViewer::Util::HtmlMessageInfo &t);
 Q_DECLARE_METATYPE(KService::Ptr)

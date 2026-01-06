@@ -19,25 +19,49 @@ class MESSAGEVIEWER_EXPORT DKIMDownloadKeyJob : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit DKIMDownloadKeyJob(QObject *parent = nullptr);
+    /*!
+     */
     ~DKIMDownloadKeyJob() override;
 
+    /*!
+     */
     [[nodiscard]] bool start();
 
+    /*!
+     */
     [[nodiscard]] bool canStart() const;
 
+    /*!
+     */
     [[nodiscard]] QString domainName() const;
+    /*!
+     */
     void setDomainName(const QString &domainName);
 
+    /*!
+     */
     [[nodiscard]] QString selectorName() const;
+    /*!
+     */
     void setSelectorName(const QString &selectorName);
 
+    /*!
+     */
     [[nodiscard]] QString resolvDnsValue() const;
 
+    /*!
+     */
     [[nodiscard]] QDnsLookup *dnsLookup() const;
 
 Q_SIGNALS:
+    /*!
+     */
     void error(const QString &error);
+    /*!
+     */
     void success(const QList<QByteArray> &, const QString &domain, const QString &selector);
 
 private:

@@ -21,21 +21,41 @@ class MESSAGEVIEWER_EXPORT DKIMManagerRules : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit DKIMManagerRules(QObject *parent = nullptr);
+    /*!
+     */
     ~DKIMManagerRules() override;
+    /*!
+     */
     static DKIMManagerRules *self();
 
+    /*!
+     */
     void addRule(const DKIMRule &rule);
 
+    /*!
+     */
     [[nodiscard]] QList<DKIMRule> rules() const;
 
+    /*!
+     */
     void saveRules(const QList<DKIMRule> &lst);
 
+    /*!
+     */
     void clear();
 
+    /*!
+     */
     [[nodiscard]] int importRules(const QString &fileName);
+    /*!
+     */
     void exportRules(const QString &fileName, const QList<DKIMRule> &lst = {});
 
+    /*!
+     */
     [[nodiscard]] bool isEmpty() const;
 
 private:

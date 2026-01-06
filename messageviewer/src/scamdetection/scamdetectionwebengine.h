@@ -23,15 +23,27 @@ class MESSAGEVIEWER_EXPORT ScamDetectionWebEngine : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit ScamDetectionWebEngine(QObject *parent = nullptr);
+    /*!
+     */
     ~ScamDetectionWebEngine() override;
 
+    /*!
+     */
     void scanPage(QWebEnginePage *page);
 
+    /*!
+     */
     void showDetails();
 
 Q_SIGNALS:
+    /*!
+     */
     void messageMayBeAScam();
+    /*!
+     */
     void resultScanDetection(bool foundScam);
 
 private:

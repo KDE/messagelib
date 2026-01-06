@@ -19,14 +19,24 @@ class TEMPLATEPARSER_EXPORT TemplateExtractTextFromMail : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TemplateExtractTextFromMail(QObject *parent = nullptr);
+    /*!
+     */
     ~TemplateExtractTextFromMail() override;
 
+    /*!
+     */
     void setHtmlContent(const QString &html);
 
+    /*!
+     */
     [[nodiscard]] QString plainText() const;
 
 Q_SIGNALS:
+    /*!
+     */
     void loadContentDone(bool success);
 
 private:

@@ -25,20 +25,44 @@ public:
         LastColumn = LastUsedDateTimeRole,
     };
 
+    /*!
+     */
     explicit DKIMManagerKeyModel(QObject *parent = nullptr);
+    /*!
+     */
     ~DKIMManagerKeyModel() override;
 
+    /*!
+     */
     [[nodiscard]] QList<MessageViewer::KeyInfo> keyInfos() const;
+    /*!
+     */
     void setKeyInfos(const QList<MessageViewer::KeyInfo> &newKeyInfos);
 
+    /*!
+     */
     [[nodiscard]] int rowCount(const QModelIndex &parent = QModelIndex()) const override;
+    /*!
+     */
     [[nodiscard]] int columnCount(const QModelIndex &parent = QModelIndex()) const override;
+    /*!
+     */
     [[nodiscard]] QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
+    /*!
+     */
     [[nodiscard]] QVariant headerData(int section, Qt::Orientation orientation, int role = Qt::DisplayRole) const override;
+    /*!
+     */
     [[nodiscard]] bool insertKeyInfo(const MessageViewer::KeyInfo &keyInfo);
+    /*!
+     */
     void removeKeyInfo(const QString &keyValue);
+    /*!
+     */
     void removeKeyInfos(const QStringList &keyInfos);
 
+    /*!
+     */
     void clear();
 
 private:

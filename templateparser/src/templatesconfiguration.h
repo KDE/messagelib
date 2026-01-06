@@ -20,17 +20,37 @@ class TEMPLATEPARSER_EXPORT TemplatesConfiguration : public QWidget, Ui::Templat
     Q_OBJECT
 
 public:
+    /*!
+     */
     explicit TemplatesConfiguration(QWidget *parent = nullptr, const QString &name = QString());
+    /*!
+     */
     ~TemplatesConfiguration() override;
 
+    /*!
+     */
     void loadFromGlobal();
+    /*!
+     */
     void saveToGlobal();
+    /*!
+     */
     void loadFromIdentity(uint id);
+    /*!
+     */
     void saveToIdentity(uint id);
+    /*!
+     */
     void loadFromFolder(const QString &id, uint identity = 0);
+    /*!
+     */
     void saveToFolder(const QString &id);
+    /*!
+     */
     void resetToDefault();
 
+    /*!
+     */
     QLabel *helpLabel() const;
 
     /**
@@ -39,10 +59,16 @@ public:
     [[nodiscard]] static QString configIdString(uint id);
 
 public Q_SLOTS:
+    /*!
+     */
     void slotInsertCommand(const QString &cmd, int adjustCursor = 0);
+    /*!
+     */
     void slotTextChanged();
 
 Q_SIGNALS:
+    /*!
+     */
     void changed();
 
 private:

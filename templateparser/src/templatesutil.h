@@ -13,8 +13,14 @@ namespace TemplateParser
 {
 namespace Util
 {
+/*!
+ */
 TEMPLATEPARSER_EXPORT void deleteTemplate(const QString &id);
+/*!
+ */
 [[nodiscard]] TEMPLATEPARSER_EXPORT QString getLastNameFromEmail(const QString &str);
+/*!
+ */
 [[nodiscard]] TEMPLATEPARSER_EXPORT QString getFirstNameFromEmail(const QString &str);
 }
 }

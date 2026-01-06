@@ -47,21 +47,41 @@ class MESSAGEVIEWER_EXPORT DKIMManagerKey : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     ~DKIMManagerKey() override;
 
+    /*!
+     */
     static DKIMManagerKey *self();
 
+    /*!
+     */
     void loadKeys();
+    /*!
+     */
     void saveKeys(const QList<KeyInfo> &lst);
 
+    /*!
+     */
     void addKey(const KeyInfo &key);
+    /*!
+     */
     void removeKey(const QString &key);
 
+    /*!
+     */
     [[nodiscard]] QList<KeyInfo> keys() const;
 
+    /*!
+     */
     void saveKeys();
+    /*!
+     */
     [[nodiscard]] QString keyValue(const QString &selector, const QString &domain);
 
+    /*!
+     */
     void updateLastUsed(const QString &selector, const QString &domain);
 
 private:

@@ -20,21 +20,43 @@ class MESSAGEVIEWER_EXPORT DKIMCheckPolicyJob : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit DKIMCheckPolicyJob(QObject *parent = nullptr);
+    /*!
+     */
     ~DKIMCheckPolicyJob() override;
+    /*!
+     */
     [[nodiscard]] bool canStart() const;
+    /*!
+     */
     [[nodiscard]] bool start();
 
+    /*!
+     */
     [[nodiscard]] MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult checkResult() const;
+    /*!
+     */
     void setCheckResult(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
 
+    /*!
+     */
     [[nodiscard]] QString emailAddress() const;
+    /*!
+     */
     void setEmailAddress(const QString &emailAddress);
 
+    /*!
+     */
     [[nodiscard]] DKIMCheckPolicy policy() const;
+    /*!
+     */
     void setPolicy(const DKIMCheckPolicy &policy);
 
 Q_SIGNALS:
+    /*!
+     */
     void result(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
 
 private:

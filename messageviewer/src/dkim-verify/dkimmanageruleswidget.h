@@ -30,10 +30,18 @@ public:
         Priority = 6,
     };
 
+    /*!
+     */
     explicit DKIMManageRulesWidgetItem(QTreeWidget *parent = nullptr);
+    /*!
+     */
     ~DKIMManageRulesWidgetItem() override;
 
+    /*!
+     */
     [[nodiscard]] MessageViewer::DKIMRule rule() const;
+    /*!
+     */
     void setRule(const MessageViewer::DKIMRule &rule);
 
 private:
@@ -50,18 +58,38 @@ class MESSAGEVIEWER_EXPORT DKIMManageRulesWidget : public QWidget
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit DKIMManageRulesWidget(QWidget *parent = nullptr);
+    /*!
+     */
     ~DKIMManageRulesWidget() override;
+    /*!
+     */
     void loadSettings();
+    /*!
+     */
     void saveSettings();
+    /*!
+     */
     [[nodiscard]] QByteArray saveHeaders() const;
+    /*!
+     */
     void restoreHeaders(const QByteArray &header);
 
+    /*!
+     */
     void addRule();
+    /*!
+     */
     [[nodiscard]] QList<MessageViewer::DKIMRule> rules() const;
 
+    /*!
+     */
     void updateRules();
 Q_SIGNALS:
+    /*!
+     */
     void updateExportButton(bool enabled);
 
 private:

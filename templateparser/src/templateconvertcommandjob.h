@@ -20,14 +20,28 @@ class TEMPLATEPARSER_EXPORT TemplateConvertCommandJob : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TemplateConvertCommandJob(QObject *parent = nullptr);
+    /*!
+     */
     ~TemplateConvertCommandJob() override;
+    /*!
+     */
     [[nodiscard]] QString convertText();
 
+    /*!
+     */
     [[nodiscard]] QString currentText() const;
+    /*!
+     */
     void setCurrentText(const QString &currentText);
 
+    /*!
+     */
     [[nodiscard]] std::shared_ptr<KMime::Message> originalMessage() const;
+    /*!
+     */
     void setOriginalMessage(const std::shared_ptr<KMime::Message> &originalMessage);
 
 private:

@@ -35,61 +35,135 @@ public:
     };
     Q_ENUM(HashingAlgorithmType)
 
+    /*!
+     */
     [[nodiscard]] bool parseDKIM(const QString &header);
 
+    /*!
+     */
     [[nodiscard]] int version() const;
+    /*!
+     */
     void setVersion(int version);
 
+    /*!
+     */
     [[nodiscard]] HashingAlgorithmType hashingAlgorithm() const;
+    /*!
+     */
     void setHashingAlgorithm(DKIMInfo::HashingAlgorithmType type);
 
+    /*!
+     */
     [[nodiscard]] QString domain() const;
+    /*!
+     */
     void setDomain(const QString &domain);
 
+    /*!
+     */
     [[nodiscard]] QString selector() const;
+    /*!
+     */
     void setSelector(const QString &selector);
 
+    /*!
+     */
     [[nodiscard]] QString bodyHash() const;
+    /*!
+     */
     void setBodyHash(const QString &bodyHash);
 
+    /*!
+     */
     [[nodiscard]] bool isValid() const;
 
+    /*!
+     */
     [[nodiscard]] QStringList listSignedHeader() const;
+    /*!
+     */
     void setListSignedHeader(const QStringList &listSignedHeader);
 
+    /*!
+     */
     [[nodiscard]] QString signingAlgorithm() const;
+    /*!
+     */
     void setSigningAlgorithm(const QString &signingAlgorithm);
 
+    /*!
+     */
     [[nodiscard]] qint64 signatureTimeStamp() const;
+    /*!
+     */
     void setSignatureTimeStamp(qint64 signatureTimeStamp);
 
+    /*!
+     */
     [[nodiscard]] QString query() const;
+    /*!
+     */
     void setQuery(const QString &query);
 
+    /*!
+     */
     [[nodiscard]] qint64 expireTime() const;
+    /*!
+     */
     void setExpireTime(qint64 expireTime);
 
+    /*!
+     */
     [[nodiscard]] QString signature() const;
+    /*!
+     */
     void setSignature(const QString &signature);
 
+    /*!
+     */
     [[nodiscard]] QString agentOrUserIdentifier() const;
+    /*!
+     */
     void setAgentOrUserIdentifier(const QString &agentOrUserIdentifier);
 
+    /*!
+     */
     [[nodiscard]] int bodyLengthCount() const;
+    /*!
+     */
     void setBodyLengthCount(int bodyLengthCount);
 
+    /*!
+     */
     [[nodiscard]] CanonicalizationType headerCanonization() const;
+    /*!
+     */
     void setHeaderCanonization(CanonicalizationType headerCanonization);
 
+    /*!
+     */
     [[nodiscard]] CanonicalizationType bodyCanonization() const;
+    /*!
+     */
     void setBodyCanonization(CanonicalizationType bodyCanonization);
 
+    /*!
+     */
     [[nodiscard]] bool operator==(const DKIMInfo &other) const;
 
+    /*!
+     */
     [[nodiscard]] QStringList copiedHeaderField() const;
+    /*!
+     */
     void setCopiedHeaderField(const QStringList &copiedHeaderField);
 
+    /*!
+     */
     [[nodiscard]] QString iDomain() const;
+    /*!
+     */
     void setIDomain(const QString &iDomain);
 
 private:
