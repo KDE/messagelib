@@ -255,27 +255,27 @@ void ComposerViewBase::updateTemplate(const std::shared_ptr<KMime::Message> &msg
 void ComposerViewBase::saveMailSettings()
 {
     const auto identity = currentIdentity();
-    auto header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-Transport"));
+    auto header = std::make_unique<KMime::Headers::Generic>("X-KMail-Transport");
     header->fromUnicodeString(QString::number(m_transport->currentTransportId()));
     m_msg->setHeader(std::move(header));
 
-    header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-Transport-Name"));
+    header = std::make_unique<KMime::Headers::Generic>("X-KMail-Transport-Name");
     header->fromUnicodeString(m_transport->currentText());
     m_msg->setHeader(std::move(header));
 
-    header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-Fcc"));
+    header = std::make_unique<KMime::Headers::Generic>("X-KMail-Fcc");
     header->fromUnicodeString(QString::number(m_fccCollection.id()));
     m_msg->setHeader(std::move(header));
 
-    header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-Identity"));
+    header = std::make_unique<KMime::Headers::Generic>("X-KMail-Identity");
     header->fromUnicodeString(QString::number(identity.uoid()));
     m_msg->setHeader(std::move(header));
 
-    header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-Identity-Name"));
+    header = std::make_unique<KMime::Headers::Generic>("X-KMail-Identity-Name");
     header->fromUnicodeString(identity.identityName());
     m_msg->setHeader(std::move(header));
 
-    header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-Dictionary"));
+    header = std::make_unique<KMime::Headers::Generic>("X-KMail-Dictionary");
     header->fromUnicodeString(m_dictionary->currentDictionary());
     m_msg->setHeader(std::move(header));
 
@@ -284,14 +284,14 @@ void ComposerViewBase::saveMailSettings()
     if (m_editor->quotePrefixName().isEmpty()) {
         m_msg->removeHeader("X-KMail-QuotePrefix");
     } else {
-        header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-QuotePrefix"));
+        header = std::make_unique<KMime::Headers::Generic>("X-KMail-QuotePrefix");
         header->fromUnicodeString(m_editor->quotePrefixName());
         m_msg->setHeader(std::move(header));
     }
 
     if (m_editor->composerControler()->isFormattingUsed()) {
         qCDebug(MESSAGECOMPOSER_LOG) << "HTML mode";
-        header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-Markup"));
+        header = std::make_unique<KMime::Headers::Generic>("X-KMail-Markup");
         header->fromUnicodeString(u"true"_s);
         m_msg->setHeader(std::move(header));
     } else {
@@ -470,16 +470,16 @@ void ComposerViewBase::slotEmailAddressResolved(KJob *job)
                 unExpandedReplyTo << exp;
             }
         }
-        auto header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-UnExpanded-To"));
+        auto header = std::make_unique<KMime::Headers::Generic>("X-KMail-UnExpanded-To");
         header->from7BitString(unExpandedTo.join(QLatin1StringView(", ")).toLatin1());
         m_msg->setHeader(std::move(header));
-        header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-UnExpanded-CC"));
+        header = std::make_unique<KMime::Headers::Generic>("X-KMail-UnExpanded-CC");
         header->from7BitString(unExpandedCc.join(QLatin1StringView(", ")).toLatin1());
         m_msg->setHeader(std::move(header));
-        header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-UnExpanded-BCC"));
+        header = std::make_unique<KMime::Headers::Generic>("X-KMail-UnExpanded-BCC");
         header->from7BitString(unExpandedBcc.join(QLatin1StringView(", ")).toLatin1());
         m_msg->setHeader(std::move(header));
-        header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-UnExpanded-Reply-To"));
+        header = std::make_unique<KMime::Headers::Generic>("X-KMail-UnExpanded-Reply-To");
         header->from7BitString(unExpandedReplyTo.join(QLatin1StringView(", ")).toLatin1());
         m_msg->setHeader(std::move(header));
         autoresizeImage = false;

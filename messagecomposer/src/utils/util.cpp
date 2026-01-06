@@ -348,11 +348,11 @@ void MessageComposer::Util::addLinkInformation(const std::shared_ptr<KMime::Mess
         type += QLatin1StringView("forward");
     }
 
-    auto header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-Link-Message"));
+    auto header = std::make_unique<KMime::Headers::Generic>("X-KMail-Link-Message");
     header->fromUnicodeString(message);
     msg->setHeader(std::move(header));
 
-    header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-Link-Type"));
+    header = std::make_unique<KMime::Headers::Generic>("X-KMail-Link-Type");
     header->fromUnicodeString(type);
     msg->setHeader(std::move(header));
 }
@@ -464,7 +464,7 @@ QStringList MessageComposer::Util::cleanUpEmailListAndEncoding(const QStringList
 void MessageComposer::Util::addCustomHeaders(const std::shared_ptr<KMime::Message> &message, const QMap<QByteArray, QString> &custom)
 {
     for (const auto &[key, value] : custom.asKeyValueRange()) {
-        auto header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic(key.constData()));
+        auto header = std::make_unique<KMime::Headers::Generic>(key.constData());
         header->fromUnicodeString(value);
         message->setHeader(std::move(header));
     }

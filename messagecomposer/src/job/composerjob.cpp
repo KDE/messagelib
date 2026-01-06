@@ -358,7 +358,7 @@ void ComposerJobPrivate::contentJobFinished(KJob *job)
         headers->date(KMime::CreatePolicy::Create)->from7BitString(skeletonMessage->date()->as7BitString());
         headers->messageID(KMime::CreatePolicy::Create)->from7BitString(skeletonMessage->messageID()->as7BitString());
 
-        auto realTo = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-EncBccRecipients"));
+        auto realTo = std::make_unique<KMime::Headers::Generic>("X-KMail-EncBccRecipients");
         realTo->fromUnicodeString(eJob->recipients().join(u'%'));
 
         qCDebug(MESSAGECOMPOSER_LOG) << "got one of multiple messages sending to:" << realTo->asUnicodeString();

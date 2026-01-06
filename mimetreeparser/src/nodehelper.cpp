@@ -863,7 +863,7 @@ void NodeHelper::mergeExtraNodes(KMime::Content *node)
                                           << extra << extra->encodedContent();
             continue;
         }
-        auto c = std::unique_ptr<KMime::Content>(new KMime::Content(node));
+        auto c = std::make_unique<KMime::Content>(node);
         c->setContent(extra->encodedContent());
         c->parse();
         node->appendContent(std::move(c));

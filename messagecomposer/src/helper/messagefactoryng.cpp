@@ -101,7 +101,7 @@ void MessageFactoryNG::slotCreateReplyDone(const std::shared_ptr<KMime::Message>
 {
     MessageComposer::Util::addLinkInformation(msg, mId, Akonadi::MessageStatus::statusReplied());
     if (mParentFolderId > 0) {
-        auto header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-Fcc"));
+        auto header = std::make_unique<KMime::Headers::Generic>("X-KMail-Fcc");
         header->fromUnicodeString(QString::number(mParentFolderId));
         msg->setHeader(std::move(header));
     }
@@ -436,7 +436,7 @@ std::shared_ptr<KMime::Message> MessageFactoryNG::createResend()
     uint originalIdentity = identityUoid(mOrigMsg);
 
     // Set the identity from above
-    auto header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-Identity"));
+    auto header = std::make_unique<KMime::Headers::Generic>("X-KMail-Identity");
     header->fromUnicodeString(QString::number(originalIdentity));
     msg->setHeader(std::move(header));
 
@@ -499,55 +499,55 @@ MessageFactoryNG::createRedirect(const QString &toStr, const QString &ccStr, con
     }
     msg->setHeader(std::move(header));
 
-    header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("Resent-Date"));
+    header = std::make_unique<KMime::Headers::Generic>("Resent-Date");
     header->fromUnicodeString(newDate);
     msg->setHeader(std::move(header));
 
-    header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("Resent-From"));
+    header = std::make_unique<KMime::Headers::Generic>("Resent-From");
     header->fromUnicodeString(strFrom);
     msg->setHeader(std::move(header));
 
     if (msg->to(KMime::CreatePolicy::DontCreate)) {
-        auto headerT = std::unique_ptr<KMime::Headers::To>(new KMime::Headers::To);
+        auto headerT = std::make_unique<KMime::Headers::To>();
         headerT->fromUnicodeString(mOrigMsg->to()->asUnicodeString());
         msg->setHeader(std::move(headerT));
     }
 
-    header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("Resent-To"));
+    header = std::make_unique<KMime::Headers::Generic>("Resent-To");
     header->fromUnicodeString(toStr);
     msg->setHeader(std::move(std::move(header)));
 
     if (!ccStr.isEmpty()) {
-        header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("Resent-Cc"));
+        header = std::make_unique<KMime::Headers::Generic>("Resent-Cc");
         header->fromUnicodeString(ccStr);
         msg->setHeader(std::move(header));
     }
 
     if (!bccStr.isEmpty()) {
-        header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("Resent-Bcc"));
+        header = std::make_unique<KMime::Headers::Generic>("Resent-Bcc");
         header->fromUnicodeString(bccStr);
         msg->setHeader(std::move(header));
     }
 
-    header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-Redirect-From"));
+    header = std::make_unique<KMime::Headers::Generic>("X-KMail-Redirect-From");
     header->fromUnicodeString(strByWayOf);
     msg->setHeader(std::move(header));
 
     if (transportId != -1) {
-        header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-Transport"));
+        header = std::make_unique<KMime::Headers::Generic>("X-KMail-Transport");
         header->fromUnicodeString(QString::number(transportId));
         msg->setHeader(std::move(header));
     }
 
     if (!fcc.isEmpty()) {
-        header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-Fcc"));
+        header = std::make_unique<KMime::Headers::Generic>("X-KMail-Fcc");
         header->fromUnicodeString(fcc);
         msg->setHeader(std::move(header));
     }
 
     const bool fccIsDisabled = ident.disabledFcc();
     if (fccIsDisabled) {
-        header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-FccDisabled"));
+        header = std::make_unique<KMime::Headers::Generic>("X-KMail-FccDisabled");
         header->fromUnicodeString(u"true"_s);
         msg->setHeader(std::move(header));
     } else {

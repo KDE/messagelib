@@ -53,14 +53,14 @@ void SkeletonMessageJobPrivate::doStart()
 
     // From:
     {
-        auto from = std::unique_ptr<KMime::Headers::From>(new KMime::Headers::From);
+        auto from = std::make_unique<KMime::Headers::From>();
         from->fromUnicodeString(QString::fromLatin1(fromAddress.as7BitString("utf-8")));
         message->setHeader(std::move(from));
     }
 
     // To:
     {
-        auto to = std::unique_ptr<KMime::Headers::To>(new KMime::Headers::To);
+        auto to = std::make_unique<KMime::Headers::To>();
         QByteArray sTo;
         const QStringList lstTo = infoPart->to();
         for (const QString &a : lstTo) {
@@ -77,7 +77,7 @@ void SkeletonMessageJobPrivate::doStart()
 
     // Reply To:
     if (!infoPart->replyTo().isEmpty()) {
-        auto replyTo = std::unique_ptr<KMime::Headers::ReplyTo>(new KMime::Headers::ReplyTo);
+        auto replyTo = std::make_unique<KMime::Headers::ReplyTo>();
         const QStringList lstReplyTo = infoPart->replyTo();
         QByteArray sReplyTo;
         for (const QString &a : lstReplyTo) {
@@ -94,7 +94,7 @@ void SkeletonMessageJobPrivate::doStart()
 
     // Cc:
     {
-        auto cc = std::unique_ptr<KMime::Headers::Cc>(new KMime::Headers::Cc);
+        auto cc = std::make_unique<KMime::Headers::Cc>();
         QByteArray sCc;
         const QStringList lstCc = infoPart->cc();
         for (const QString &a : lstCc) {
@@ -111,7 +111,7 @@ void SkeletonMessageJobPrivate::doStart()
 
     // Bcc:
     {
-        auto bcc = std::unique_ptr<KMime::Headers::Bcc>(new KMime::Headers::Bcc);
+        auto bcc = std::make_unique<KMime::Headers::Bcc>();
         QByteArray sBcc;
         const QStringList lstBcc = infoPart->bcc();
         for (const QString &a : lstBcc) {
@@ -128,7 +128,7 @@ void SkeletonMessageJobPrivate::doStart()
 
     // Subject:
     {
-        auto subject = std::unique_ptr<KMime::Headers::Subject>(new KMime::Headers::Subject);
+        auto subject = std::make_unique<KMime::Headers::Subject>();
         subject->fromUnicodeString(infoPart->subject());
         // TODO should we be more specific about the charset?
         message->setHeader(std::move(subject));
@@ -136,21 +136,21 @@ void SkeletonMessageJobPrivate::doStart()
 
     // Date:
     {
-        auto date = std::unique_ptr<KMime::Headers::Date>(new KMime::Headers::Date);
+        auto date = std::make_unique<KMime::Headers::Date>();
         date->setDateTime(QDateTime::currentDateTime());
         message->setHeader(std::move(date));
     }
 
     // Fcc:
     if (!infoPart->fcc().isEmpty()) {
-        auto header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-Fcc"));
+        auto header = std::make_unique<KMime::Headers::Generic>("X-KMail-Fcc");
         header->fromUnicodeString(infoPart->fcc());
         message->setHeader(std::move(header));
     }
 
     // Transport:
     if (infoPart->transportId() > -1) {
-        auto header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-Transport"));
+        auto header = std::make_unique<KMime::Headers::Generic>("X-KMail-Transport");
         header->fromUnicodeString(QString::number(infoPart->transportId()));
         message->setHeader(std::move(header));
     }
@@ -158,7 +158,7 @@ void SkeletonMessageJobPrivate::doStart()
     // Message-ID
     {
         const auto fromParts = infoPart->from();
-        auto messageId = std::unique_ptr<KMime::Headers::MessageID>(new KMime::Headers::MessageID());
+        auto messageId = std::make_unique<KMime::Headers::MessageID>();
         messageId->generate(fromAddress.addrSpec().domain.toUtf8());
         message->setHeader(std::move(messageId));
     }
@@ -180,7 +180,7 @@ void SkeletonMessageJobPrivate::doStart()
         if (globalPart->requestDeleveryConfirmation()) {
             // TODO fix me multi address
             const QString addr = infoPart->replyTo().isEmpty() ? infoPart->from() : infoPart->replyTo().at(0);
-            auto requestDeleveryConfirmation = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("Return-Receipt-To"));
+            auto requestDeleveryConfirmation = std::make_unique<KMime::Headers::Generic>("Return-Receipt-To");
             requestDeleveryConfirmation->fromUnicodeString(addr);
             message->setHeader(std::move(requestDeleveryConfirmation));
         }
@@ -191,7 +191,7 @@ void SkeletonMessageJobPrivate::doStart()
         if (globalPart->MDNRequested()) {
             // TODO fix me multi address
             const QString addr = infoPart->replyTo().isEmpty() ? infoPart->from() : infoPart->replyTo().at(0);
-            auto mdn = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("Disposition-Notification-To"));
+            auto mdn = std::make_unique<KMime::Headers::Generic>("Disposition-Notification-To");
             mdn->fromUnicodeString(addr);
             message->setHeader(std::move(mdn));
         }
@@ -199,9 +199,9 @@ void SkeletonMessageJobPrivate::doStart()
 
     // Urgent header
     if (infoPart->urgent()) {
-        auto urg1 = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-PRIORITY"));
+        auto urg1 = std::make_unique<KMime::Headers::Generic>("X-PRIORITY");
         urg1->fromUnicodeString(u"2 (High)"_s);
-        auto urg2 = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("Priority"));
+        auto urg2 = std::make_unique<KMime::Headers::Generic>("Priority");
         urg2->fromUnicodeString(u"urgent"_s);
         message->setHeader(std::move(urg1));
         message->setHeader(std::move(urg2));
@@ -209,14 +209,14 @@ void SkeletonMessageJobPrivate::doStart()
 
     // In-Reply-To
     if (!infoPart->inReplyTo().isEmpty()) {
-        auto header = std::unique_ptr<KMime::Headers::InReplyTo>(new KMime::Headers::InReplyTo);
+        auto header = std::make_unique<KMime::Headers::InReplyTo>();
         header->fromUnicodeString(infoPart->inReplyTo());
         message->setHeader(std::move(header));
     }
 
     // References
     if (!infoPart->references().isEmpty()) {
-        auto header = std::unique_ptr<KMime::Headers::References>(new KMime::Headers::References);
+        auto header = std::make_unique<KMime::Headers::References>();
         header->fromUnicodeString(infoPart->references());
         message->setHeader(std::move(header));
     }

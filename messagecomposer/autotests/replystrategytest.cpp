@@ -317,31 +317,31 @@ void ReplyStrategyTest::testReply()
 
     auto original{basicMessage(oFrom, oTo)};
     if (!oCc.isEmpty()) {
-        auto cc{std::unique_ptr<KMime::Headers::Cc>(new KMime::Headers::Cc)};
+        auto cc = std::make_unique<KMime::Headers::Cc>();
         for (const auto &a : oCc) {
             cc->addAddress(a.toLatin1());
         }
         original->setHeader(std::move(cc));
     }
     if (!oRT.isEmpty()) {
-        auto replyTo{std::unique_ptr<KMime::Headers::ReplyTo>(new KMime::Headers::ReplyTo)};
+        auto replyTo = std::make_unique<KMime::Headers::ReplyTo>();
         for (const auto &a : oRT) {
             replyTo->addAddress(a.toLatin1());
         }
         original->setHeader(std::move(replyTo));
     }
     if (!oMFT.isEmpty()) {
-        auto mailFollowupTo = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("Mail-Followup-To"));
+        auto mailFollowupTo = std::make_unique<KMime::Headers::Generic>("Mail-Followup-To");
         mailFollowupTo->from7BitString(oMFT.join(u',').toLatin1());
         original->setHeader(std::move(mailFollowupTo));
     }
     if (!oLP.isEmpty()) {
-        auto listPost = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("List-Post"));
+        auto listPost = std::make_unique<KMime::Headers::Generic>("List-Post");
         listPost->from7BitString(QByteArray("<mailto:" + oLP.toLatin1() + ">"));
         original->setHeader(std::move(listPost));
     }
     if (!oMRT.isEmpty()) {
-        auto mailReplyTo = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("Mail-Reply-To"));
+        auto mailReplyTo = std::make_unique<KMime::Headers::Generic>("Mail-Reply-To");
         mailReplyTo->from7BitString(oMRT.join(u',').toLatin1());
         original->setHeader(std::move(mailReplyTo));
     }

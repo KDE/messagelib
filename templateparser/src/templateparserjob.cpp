@@ -280,7 +280,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 const int len = parseQuotes(u"DICTIONARYLANGUAGE="_s, cmd, q);
                 i += len;
                 if (!q.isEmpty()) {
-                    auto header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-Dictionary"));
+                    auto header = std::make_unique<KMime::Headers::Generic>("X-KMail-Dictionary");
                     header->fromUnicodeString(q);
                     d->mMsg->setHeader(std::move(header));
                 }
@@ -441,7 +441,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 const QString htmlStr = pipe(pipe_cmd, htmlBody);
                 htmlBody = htmlStr;
 
-                auto header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-CursorPos"));
+                auto header = std::make_unique<KMime::Headers::Generic>("X-KMail-CursorPos");
                 header->fromUnicodeString(QString::number(0));
                 d->mMsg->setHeader(std::move(header));
             } else if (cmd.startsWith(QLatin1StringView("TEXT"))) {
@@ -955,7 +955,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 i += strlen("CLEAR");
                 plainBody.clear();
                 htmlBody.clear();
-                auto header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-CursorPos"));
+                auto header = std::make_unique<KMime::Headers::Generic>("X-KMail-CursorPos");
                 header->fromUnicodeString(QString::number(0));
                 d->mMsg->setHeader(std::move(header));
             } else if (cmd.startsWith(QLatin1StringView("DEBUGOFF"))) {
@@ -973,7 +973,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: CURSOR";
                 int oldI = i;
                 i += strlen("CURSOR");
-                auto header = std::unique_ptr<KMime::Headers::Generic>(new KMime::Headers::Generic("X-KMail-CursorPos"));
+                auto header = std::make_unique<KMime::Headers::Generic>("X-KMail-CursorPos");
                 header->fromUnicodeString(QString::number(plainBody.length()));
                 /* if template is:
                  *  FOOBAR
