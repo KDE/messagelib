@@ -20,11 +20,21 @@ class MESSAGECOMPOSER_EXPORT PluginEditor : public PimCommon::AbstractGenericPlu
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit PluginEditor(QObject *parent = nullptr);
+    /*!
+     */
     ~PluginEditor() override;
+    /*!
+     */
     void setOrder(int order);
+    /*!
+     */
     [[nodiscard]] int order() const;
 
+    /*!
+     */
     [[nodiscard]] virtual bool canProcessKeyEvent() const;
 
 private:

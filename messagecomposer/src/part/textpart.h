@@ -35,35 +35,79 @@ class MESSAGECOMPOSER_EXPORT TextPart : public MessagePart
     Q_PROPERTY(KPIMTextEdit::ImageList embeddedImages READ embeddedImages WRITE setEmbeddedImages NOTIFY embeddedImagesChanged)
 
 public:
+    /*!
+     */
     explicit TextPart(QObject *parent = nullptr);
+    /*!
+     */
     ~TextPart() override;
 
     // default true
+    /*!
+     */
     [[nodiscard]] bool isWordWrappingEnabled() const;
+    /*!
+     */
     void setWordWrappingEnabled(bool enabled);
     // default true
+    /*!
+     */
     [[nodiscard]] bool warnBadCharset() const;
+    /*!
+     */
     void setWarnBadCharset(bool warn);
 
+    /*!
+     */
     [[nodiscard]] QString cleanPlainText() const;
+    /*!
+     */
     void setCleanPlainText(const QString &text);
+    /*!
+     */
     [[nodiscard]] QString wrappedPlainText() const;
+    /*!
+     */
     void setWrappedPlainText(const QString &text);
 
+    /*!
+     */
     [[nodiscard]] bool isHtmlUsed() const;
+    /*!
+     */
     [[nodiscard]] QString cleanHtml() const;
+    /*!
+     */
     void setCleanHtml(const QString &text);
 
+    /*!
+     */
     [[nodiscard]] bool hasEmbeddedImages() const;
+    /*!
+     */
     [[nodiscard]] KPIMTextEdit::ImageList embeddedImages() const;
+    /*!
+     */
     void setEmbeddedImages(const KPIMTextEdit::ImageList &images);
 
 Q_SIGNALS:
+    /*!
+     */
     void wordWrappingChanged();
+    /*!
+     */
     void warnBadCharsetChanged();
+    /*!
+     */
     void cleanPlainTextChanged();
+    /*!
+     */
     void wrappedPlainTextChanged();
+    /*!
+     */
     void cleanHtmlChanged();
+    /*!
+     */
     void embeddedImagesChanged();
 
 private:

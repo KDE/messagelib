@@ -22,7 +22,11 @@ class MESSAGECOMPOSER_EXPORT MessagePart : public QObject
     Q_OBJECT
 
 public:
+    /*!
+     */
     explicit MessagePart(QObject *parent = nullptr);
+    /*!
+     */
     ~MessagePart() override;
 };
 }

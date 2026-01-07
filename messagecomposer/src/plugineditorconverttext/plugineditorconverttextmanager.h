@@ -21,15 +21,29 @@ class MESSAGECOMPOSER_EXPORT PluginEditorConvertTextManager : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     ~PluginEditorConvertTextManager() override;
 
+    /*!
+     */
     static PluginEditorConvertTextManager *self();
 
+    /*!
+     */
     [[nodiscard]] QList<PluginEditorConvertText *> pluginsList() const;
 
+    /*!
+     */
     [[nodiscard]] QString configGroupName() const;
+    /*!
+     */
     [[nodiscard]] QString configPrefixSettingKey() const;
+    /*!
+     */
     [[nodiscard]] QList<TextAddonsWidgets::PluginUtilData> pluginsDataList() const;
+    /*!
+     */
     [[nodiscard]] PluginEditorConvertText *pluginFromIdentifier(const QString &id);
 
 private:

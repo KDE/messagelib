@@ -24,24 +24,50 @@ class PluginEditorGrammarCustomToolsViewInterfacePrivate;
 class MESSAGECOMPOSER_EXPORT PluginGrammarAction
 {
 public:
+    /*!
+     */
     PluginGrammarAction();
 
+    /*!
+     */
     [[nodiscard]] QString replacement() const;
+    /*!
+     */
     void setReplacement(const QString &replacement);
 
+    /*!
+     */
     [[nodiscard]] int start() const;
+    /*!
+     */
     void setStart(int start);
 
+    /*!
+     */
     [[nodiscard]] int length() const;
+    /*!
+     */
     void setLength(int length);
 
+    /*!
+     */
     [[nodiscard]] QStringList suggestions() const;
+    /*!
+     */
     void setSuggestions(const QStringList &suggestions);
 
+    /*!
+     */
     [[nodiscard]] int blockId() const;
+    /*!
+     */
     void setBlockId(int blockId);
 
+    /*!
+     */
     [[nodiscard]] QStringList infoUrls() const;
+    /*!
+     */
     void setInfoUrls(const QStringList &urls);
 
 private:

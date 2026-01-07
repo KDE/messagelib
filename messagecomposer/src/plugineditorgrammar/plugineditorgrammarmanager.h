@@ -25,15 +25,29 @@ class MESSAGECOMPOSER_EXPORT PluginEditorGrammarManager : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     ~PluginEditorGrammarManager() override;
 
+    /*!
+     */
     static PluginEditorGrammarManager *self();
 
+    /*!
+     */
     [[nodiscard]] QList<PimCommon::CustomToolsPlugin *> pluginsList() const;
 
+    /*!
+     */
     [[nodiscard]] QString configGroupName() const;
+    /*!
+     */
     [[nodiscard]] QString configPrefixSettingKey() const;
+    /*!
+     */
     [[nodiscard]] QList<TextAddonsWidgets::PluginUtilData> pluginsDataList() const;
+    /*!
+     */
     [[nodiscard]] PimCommon::CustomToolsPlugin *pluginFromIdentifier(const QString &id);
 
 private:

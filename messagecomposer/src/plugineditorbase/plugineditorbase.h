@@ -20,21 +20,39 @@ class MESSAGECOMPOSER_EXPORT PluginEditorBase : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit PluginEditorBase(QObject *parent = nullptr);
+    /*!
+     */
     ~PluginEditorBase() override;
 
+    /*!
+     */
     [[nodiscard]] virtual bool hasConfigureDialog() const;
 
+    /*!
+     */
     virtual void showConfigureDialog(QWidget *parent = nullptr);
 
+    /*!
+     */
     void emitConfigChanged();
 
+    /*!
+     */
     [[nodiscard]] virtual QString description() const;
 
+    /*!
+     */
     void setIsEnabled(bool enabled);
+    /*!
+     */
     [[nodiscard]] bool isEnabled() const;
 
 Q_SIGNALS:
+    /*!
+     */
     void configChanged();
 
 private:

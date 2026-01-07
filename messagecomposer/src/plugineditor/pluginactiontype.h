@@ -31,12 +31,22 @@ public:
         Insert = 8,
         View = 9,
     };
+    /*!
+     */
     PluginActionType();
 
+    /*!
+     */
     explicit PluginActionType(QAction *action, Type type);
+    /*!
+     */
     [[nodiscard]] QAction *action() const;
+    /*!
+     */
     [[nodiscard]] Type type() const;
 
+    /*!
+     */
     static QString actionXmlExtension(PluginActionType::Type type);
 
 private:

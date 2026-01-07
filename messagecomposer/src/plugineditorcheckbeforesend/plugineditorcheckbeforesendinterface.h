@@ -22,18 +22,34 @@ class MESSAGECOMPOSER_EXPORT PluginEditorCheckBeforeSendInterface : public QObje
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit PluginEditorCheckBeforeSendInterface(QObject *parent = nullptr);
+    /*!
+     */
     ~PluginEditorCheckBeforeSendInterface() override;
 
+    /*!
+     */
     [[nodiscard]] virtual bool exec(const MessageComposer::PluginEditorCheckBeforeSendParams &params) = 0;
 
+    /*!
+     */
     void setParentWidget(QWidget *parent);
+    /*!
+     */
     [[nodiscard]] QWidget *parentWidget() const;
 
+    /*!
+     */
     void setParameters(const MessageComposer::PluginEditorCheckBeforeSendParams &params);
+    /*!
+     */
     [[nodiscard]] MessageComposer::PluginEditorCheckBeforeSendParams parameters() const;
 
 public Q_SLOTS:
+    /*!
+     */
     virtual void reloadConfig();
 
 private:

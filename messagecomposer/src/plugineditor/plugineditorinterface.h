@@ -39,34 +39,72 @@ public:
     Q_FLAG(ApplyOnFieldType)
     Q_DECLARE_FLAGS(ApplyOnFieldTypes, ApplyOnFieldType)
 
+    /*!
+     */
     explicit PluginEditorInterface(QObject *parent = nullptr);
+    /*!
+     */
     ~PluginEditorInterface() override;
 
+    /*!
+     */
     void setActionType(PluginActionType type);
+    /*!
+     */
     [[nodiscard]] PluginActionType actionType() const;
 
+    /*!
+     */
     [[nodiscard]] TextCustomEditor::RichTextEditor *richTextEditor() const;
+    /*!
+     */
     void setRichTextEditor(TextCustomEditor::RichTextEditor *richTextEditor);
 
+    /*!
+     */
     void setNeedSelectedText(bool b);
+    /*!
+     */
     [[nodiscard]] bool needSelectedText() const;
 
+    /*!
+     */
     void setStatusBarWidget(QWidget *w);
+    /*!
+     */
     [[nodiscard]] QWidget *statusBarWidget() const;
 
+    /*!
+     */
     [[nodiscard]] MessageComposer::PluginComposerInterface *composerInterface() const;
+    /*!
+     */
     void setComposerInterface(MessageComposer::PluginComposerInterface *w);
 
+    /*!
+     */
     virtual bool processProcessKeyEvent(QKeyEvent *event);
 
+    /*!
+     */
     [[nodiscard]] PluginEditorInterface::ApplyOnFieldTypes applyOnFieldTypes() const;
 
+    /*!
+     */
     void setApplyOnFieldTypes(PluginEditorInterface::ApplyOnFieldTypes types);
 Q_SIGNALS:
+    /*!
+     */
     void emitPluginActivated(MessageComposer::PluginEditorInterface *interface);
+    /*!
+     */
     void insertText(const QString &str);
 
+    /*!
+     */
     void errorMessage(const QString &message);
+    /*!
+     */
     void successMessage(const QString &message);
 
 private:

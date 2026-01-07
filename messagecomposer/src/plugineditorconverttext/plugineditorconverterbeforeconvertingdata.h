@@ -17,12 +17,22 @@ namespace MessageComposer
 class MESSAGECOMPOSER_EXPORT PluginEditorConverterBeforeConvertingData
 {
 public:
+    /*!
+     */
     PluginEditorConverterBeforeConvertingData();
 
+    /*!
+     */
     [[nodiscard]] bool newMessage() const;
+    /*!
+     */
     void setNewMessage(bool newMessage);
 
+    /*!
+     */
     [[nodiscard]] std::shared_ptr<KMime::Message> message() const;
+    /*!
+     */
     void setMessage(const std::shared_ptr<KMime::Message> &message);
 
 private:

@@ -21,20 +21,40 @@ class MESSAGECOMPOSER_EXPORT GlobalPart : public MessageComposer::MessagePart
     Q_OBJECT
 
 public:
+    /*!
+     */
     explicit GlobalPart(QObject *parent = nullptr);
+    /*!
+     */
     ~GlobalPart() override;
 
     // default true
+    /*!
+     */
     [[nodiscard]] bool isGuiEnabled() const;
+    /*!
+     */
     void setGuiEnabled(bool enabled);
+    /*!
+     */
     [[nodiscard]] QWidget *parentWidgetForGui() const;
+    /*!
+     */
     void setParentWidgetForGui(QWidget *widget);
 
     // default is false
+    /*!
+     */
     [[nodiscard]] bool MDNRequested() const;
+    /*!
+     */
     void setMDNRequested(bool requestMDN);
 
+    /*!
+     */
     [[nodiscard]] bool requestDeleveryConfirmation() const;
+    /*!
+     */
     void setRequestDeleveryConfirmation(bool value);
 
 private:

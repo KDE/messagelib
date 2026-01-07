@@ -22,15 +22,31 @@ class MESSAGECOMPOSER_EXPORT PluginEditorInitManager : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     ~PluginEditorInitManager() override;
 
+    /*!
+     */
     static PluginEditorInitManager *self();
 
+    /*!
+     */
     [[nodiscard]] QList<PluginEditorInit *> pluginsList() const;
 
+    /*!
+     */
     [[nodiscard]] QString configGroupName() const;
+    /*!
+     */
+    /*!
+     */
     [[nodiscard]] QString configPrefixSettingKey() const;
+    /*!
+     */
     [[nodiscard]] QList<TextAddonsWidgets::PluginUtilData> pluginsDataList() const;
+    /*!
+     */
     [[nodiscard]] PluginEditorInit *pluginFromIdentifier(const QString &id);
 
 private:

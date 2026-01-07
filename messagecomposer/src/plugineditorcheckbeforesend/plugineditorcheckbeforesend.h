@@ -20,9 +20,15 @@ class MESSAGECOMPOSER_EXPORT PluginEditorCheckBeforeSend : public PluginEditorBa
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit PluginEditorCheckBeforeSend(QObject *parent = nullptr);
+    /*!
+     */
     ~PluginEditorCheckBeforeSend() override;
 
+    /*!
+     */
     virtual PluginEditorCheckBeforeSendInterface *createInterface(QObject *parent) = 0;
 };
 }

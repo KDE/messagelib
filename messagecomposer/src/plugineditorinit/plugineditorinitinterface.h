@@ -25,18 +25,34 @@ class MESSAGECOMPOSER_EXPORT PluginEditorInitInterface : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit PluginEditorInitInterface(QObject *parent = nullptr);
+    /*!
+     */
     ~PluginEditorInitInterface() override;
 
+    /*!
+     */
     [[nodiscard]] virtual bool exec() = 0;
 
+    /*!
+     */
     void setParentWidget(QWidget *parent);
+    /*!
+     */
     [[nodiscard]] QWidget *parentWidget() const;
 
+    /*!
+     */
     [[nodiscard]] KPIMTextEdit::RichTextComposer *richTextEditor() const;
+    /*!
+     */
     void setRichTextEditor(KPIMTextEdit::RichTextComposer *richTextEditor);
 
 public Q_SLOTS:
+    /*!
+     */
     virtual void reloadConfig();
 
 private:

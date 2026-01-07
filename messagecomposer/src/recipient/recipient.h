@@ -38,31 +38,69 @@ public:
         Undefined,
     };
 
+    /*!
+     */
     Recipient(const QString &email = QString(), Type type = To); // krazy:exclude=explicit
+    /*!
+     */
     ~Recipient() override;
+    /*!
+     */
     void setType(Type type);
+    /*!
+     */
     [[nodiscard]] Type type() const;
 
+    /*!
+     */
     void setEmail(const QString &email);
+    /*!
+     */
     [[nodiscard]] QString email() const;
 
+    /*!
+     */
     void setName(const QString &name);
+    /*!
+     */
     [[nodiscard]] QString name() const;
 
+    /*!
+     */
     [[nodiscard]] bool isEmpty() const override;
+    /*!
+     */
     void clear() override;
 
+    /*!
+     */
     [[nodiscard]] static int typeToId(Type type);
+    /*!
+     */
     [[nodiscard]] static Type idToType(int id);
 
+    /*!
+     */
     [[nodiscard]] QString typeLabel() const;
+    /*!
+     */
     [[nodiscard]] static QString typeLabel(Type type);
+    /*!
+     */
     [[nodiscard]] static QStringList allTypeLabels();
 
+    /*!
+     */
     void setEncryptionAction(const Kleo::Action action);
+    /*!
+     */
     [[nodiscard]] Kleo::Action encryptionAction() const;
 
+    /*!
+     */
     void setKey(const GpgME::Key &key);
+    /*!
+     */
     [[nodiscard]] GpgME::Key key() const;
 
 private:

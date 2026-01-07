@@ -37,14 +37,24 @@ class MESSAGECOMPOSER_EXPORT RecipientLineEdit : public MessageComposer::Compose
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit RecipientLineEdit(QWidget *parent);
 
 Q_SIGNALS:
+    /*!
+     */
     void deleteMe();
+    /*!
+     */
     void leftPressed();
+    /*!
+     */
     void rightPressed();
 
 protected:
+    /*!
+     */
     void keyPressEvent(QKeyEvent *ev) override;
 };
 
@@ -55,36 +65,76 @@ class MESSAGECOMPOSER_EXPORT RecipientLineNG : public KPIM::MultiplyingLine
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit RecipientLineNG(QWidget *parent);
+    /*!
+     */
     ~RecipientLineNG() override = default;
 
+    /*!
+     */
     void activate() override;
+    /*!
+     */
     [[nodiscard]] bool isActive() const override;
 
+    /*!
+     */
     [[nodiscard]] bool isEmpty() const override;
+    /*!
+     */
     void clear() override;
+    /*!
+     */
     [[nodiscard]] bool canDeleteLineEdit() const override;
 
+    /*!
+     */
     [[nodiscard]] bool isModified() const override;
+    /*!
+     */
     void clearModified() override;
 
+    /*!
+     */
     [[nodiscard]] KPIM::MultiplyingLineData::Ptr data() const override;
+    /*!
+     */
     void setData(const KPIM::MultiplyingLineData::Ptr &data) override;
 
+    /*!
+     */
     void fixTabOrder(QWidget *previous) override;
+    /*!
+     */
     [[nodiscard]] QWidget *tabOut() const override;
 
+    /*!
+     */
     void setCompletionMode(KCompletion::CompletionMode mode) override;
 
+    /*!
+     */
     [[nodiscard]] int setColumnWidth(int w) override;
 
     // recipient specific methods
+    /*!
+     */
     [[nodiscard]] int recipientsCount() const;
 
+    /*!
+     */
     void setRecipientType(Recipient::Type);
+    /*!
+     */
     [[nodiscard]] Recipient::Type recipientType() const;
+    /*!
+     */
     [[nodiscard]] QSharedPointer<Recipient> recipient() const;
 
+    /*!
+     */
     void setIcon(const QIcon &icon, const QString &tooltip = QString());
 
     /**
@@ -92,27 +142,55 @@ public:
      */
     void setRecentAddressConfig(KConfig *config);
 
+    /*!
+     */
     void setEnableIndexSearch(bool enableIndexSearch);
+    /*!
+     */
     [[nodiscard]] bool enableIndexSearch() const;
 
+    /*!
+     */
     void setEnableAkonadiSearch(bool enableAkonadiSearch);
+    /*!
+     */
     [[nodiscard]] bool enableAkonadiSearch() const;
 
+    /*!
+     */
     [[nodiscard]] QString rawData() const;
 
 Q_SIGNALS:
+    /*!
+     */
     void typeModified(MessageComposer::RecipientLineNG *);
+    /*!
+     */
     void addRecipient(MessageComposer::RecipientLineNG *, const QString &);
+    /*!
+     */
     void countChanged();
+    /*!
+     */
     void iconClicked();
+    /*!
+     */
     void activeChanged();
 
 protected Q_SLOTS:
+    /*!
+     */
     void slotEditingFinished();
+    /*!
+     */
     void slotTypeModified();
+    /*!
+     */
     void analyzeLine(const QString &);
 
 protected:
+    /*!
+     */
     bool eventFilter(QObject *watched, QEvent *event) override;
 
 private:

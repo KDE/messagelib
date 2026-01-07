@@ -54,55 +54,130 @@ class MESSAGECOMPOSER_EXPORT InfoPart : public MessageComposer::MessagePart
     Q_PROPERTY(QString inReplyTo READ inReplyTo WRITE setInReplyTo NOTIFY inReplyToChanged)
 
 public:
+    /*!
+     */
     explicit InfoPart(QObject *parent = nullptr);
+    /*!
+     */
     ~InfoPart() override;
 
+    /*!
+     */
     [[nodiscard]] QString from() const;
+    /*!
+     */
     void setFrom(const QString &from);
+    /*!
+     */
     [[nodiscard]] QStringList to() const;
+    /*!
+     */
     void setTo(const QStringList &to);
+    /*!
+     */
     [[nodiscard]] QStringList cc() const;
+    /*!
+     */
     void setCc(const QStringList &cc);
+    /*!
+     */
     [[nodiscard]] QStringList bcc() const;
+    /*!
+     */
     void setBcc(const QStringList &bcc);
 
+    /*!
+     */
     [[nodiscard]] QStringList replyTo() const;
+    /*!
+     */
     void setReplyTo(const QStringList &replyTo);
 
+    /*!
+     */
     [[nodiscard]] QString subject() const;
+    /*!
+     */
     void setSubject(const QString &subject);
 
+    /*!
+     */
     [[nodiscard]] QString fcc() const;
+    /*!
+     */
     void setFcc(const QString &fcc);
 
+    /*!
+     */
     [[nodiscard]] QString userAgent() const;
+    /*!
+     */
     void setUserAgent(const QString &userAgent);
 
+    /*!
+     */
     [[nodiscard]] bool urgent() const;
+    /*!
+     */
     void setUrgent(bool);
 
+    /*!
+     */
     [[nodiscard]] QString inReplyTo() const;
+    /*!
+     */
     void setInReplyTo(const QString &inReplyTo);
-
+    /*!
+     */
     [[nodiscard]] QString references() const;
+    /*!
+     */
     void setReferences(const QString &references);
 
+    /*!
+     */
     void setExtraHeaders(const QList<KMime::Headers::Base *> &headers);
+    /*!
+     */
     [[nodiscard]] QList<KMime::Headers::Base *> extraHeaders() const;
 
+    /*!
+     */
     [[nodiscard]] int transportId() const;
+    /*!
+     */
     void setTransportId(int tid);
 
 Q_SIGNALS:
+    /*!
+     */
     void toChanged();
+    /*!
+     */
     void fromChanged();
+    /*!
+     */
     void ccChanged();
+    /*!
+     */
     void bccChanged();
+    /*!
+     */
     void replyToChanged();
+    /*!
+     */
     void subjectChanged();
+    /*!
+     */
     void urgentChanged();
+    /*!
+     */
     void userAgentChanged();
+    /*!
+     */
     void inReplyToChanged();
+    /*!
+     */
     void fccChanged();
 
 private:

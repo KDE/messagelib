@@ -21,15 +21,29 @@ class MESSAGECOMPOSER_EXPORT PluginEditorCheckBeforeSendManager : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     ~PluginEditorCheckBeforeSendManager() override;
 
+    /*!
+     */
     static PluginEditorCheckBeforeSendManager *self();
 
+    /*!
+     */
     [[nodiscard]] QList<PluginEditorCheckBeforeSend *> pluginsList() const;
 
+    /*!
+     */
     [[nodiscard]] QString configGroupName() const;
+    /*!
+     */
     [[nodiscard]] QString configPrefixSettingKey() const;
+    /*!
+     */
     [[nodiscard]] QList<TextAddonsWidgets::PluginUtilData> pluginsDataList() const;
+    /*!
+     */
     [[nodiscard]] PluginEditorCheckBeforeSend *pluginFromIdentifier(const QString &id);
 
 private:

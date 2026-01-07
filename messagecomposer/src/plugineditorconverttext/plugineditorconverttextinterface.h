@@ -31,7 +31,11 @@ class MESSAGECOMPOSER_EXPORT PluginEditorConvertTextInterface : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit PluginEditorConvertTextInterface(QObject *parent = nullptr);
+    /*!
+     */
     ~PluginEditorConvertTextInterface() override;
 
     enum class ConvertTextStatus : uint8_t {
@@ -40,41 +44,83 @@ public:
         Error,
     };
 
+    /*!
+     */
     virtual bool reformatText();
 
+    /*!
+     */
     [[nodiscard]] virtual PluginEditorConvertTextInterface::ConvertTextStatus convertTextToFormat(MessageComposer::TextPart *textPart) = 0;
 
+    /*!
+     */
     void setParentWidget(QWidget *parent);
+    /*!
+     */
     [[nodiscard]] QWidget *parentWidget() const;
 
+    /*!
+     */
     [[nodiscard]] KPIMTextEdit::RichTextComposer *richTextEditor() const;
+    /*!
+     */
     void setRichTextEditor(KPIMTextEdit::RichTextComposer *richTextEditor);
 
+    /*!
+     */
     void setActionType(const QList<PluginActionType> &type);
+    /*!
+     */
     void addActionType(PluginActionType type);
+    /*!
+     */
     [[nodiscard]] QList<PluginActionType> actionTypes() const;
 
+    /*!
+     */
     virtual void createAction(KActionCollection *ac);
 
+    /*!
+     */
     virtual void setInitialData(const PluginEditorConverterInitialData &data);
+    /*!
+     */
     [[nodiscard]] PluginEditorConverterInitialData initialData() const;
 
+    /*!
+     */
     virtual void setBeforeConvertingData(const PluginEditorConverterBeforeConvertingData &data);
+    /*!
+     */
     [[nodiscard]] PluginEditorConverterBeforeConvertingData beforeConvertingData() const;
 
+    /*!
+     */
     virtual void enableDisablePluginActions(bool richText);
 
+    /*!
+     */
     void setStatusBarWidget(QWidget *w);
 
+    /*!
+     */
     [[nodiscard]] QWidget *statusBarWidget() const;
 
+    /*!
+     */
     void setPlugin(PluginEditorConvertText *plugin);
+    /*!
+     */
     [[nodiscard]] PluginEditorConvertText *plugin() const;
 
 public Q_SLOTS:
+    /*!
+     */
     virtual void reloadConfig();
 
 Q_SIGNALS:
+    /*!
+     */
     void textReformated();
 
 private:
