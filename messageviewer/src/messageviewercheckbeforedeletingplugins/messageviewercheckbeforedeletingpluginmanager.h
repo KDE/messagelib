@@ -21,14 +21,28 @@ class MESSAGEVIEWER_EXPORT MessageViewerCheckBeforeDeletingPluginManager : publi
 {
     Q_OBJECT
 public:
+    /*!
+     */
     static MessageViewerCheckBeforeDeletingPluginManager *self();
+    /*!
+     */
     ~MessageViewerCheckBeforeDeletingPluginManager() override;
 
+    /*!
+     */
     [[nodiscard]] QList<MessageViewer::MessageViewerCheckBeforeDeletingPlugin *> pluginsList() const;
 
+    /*!
+     */
     [[nodiscard]] QList<TextAddonsWidgets::PluginUtilData> pluginsDataList() const;
+    /*!
+     */
     [[nodiscard]] QString configPrefixSettingKey() const;
+    /*!
+     */
     [[nodiscard]] QString configGroupName() const;
+    /*!
+     */
     [[nodiscard]] MessageViewerCheckBeforeDeletingPlugin *pluginFromIdentifier(const QString &id);
 
 private:

@@ -61,8 +61,14 @@ protected:
 class MESSAGEVIEWER_EXPORT MessagePartRendererBase
 {
 public:
+    /*!
+     */
     MessagePartRendererBase();
+    /*!
+     */
     virtual ~MessagePartRendererBase();
+    /*!
+     */
     [[nodiscard]] virtual bool render(const MimeTreeParser::MessagePart::Ptr &, HtmlWriter *htmlWriter, RenderContext *context) const = 0;
 };
 }

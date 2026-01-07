@@ -26,20 +26,30 @@ namespace MessageViewer
 class MESSAGEVIEWER_EXPORT RichHeaderStrategy : public HeaderStrategy
 {
 public:
+    /*!
+     */
     RichHeaderStrategy();
+    /*!
+     */
     ~RichHeaderStrategy() override;
 
 public:
+    /*!
+     */
     [[nodiscard]] const char *name() const override
     {
         return "rich";
     }
 
+    /*!
+     */
     [[nodiscard]] QStringList headersToDisplay() const override
     {
         return mHeadersToDisplay;
     }
 
+    /*!
+     */
     [[nodiscard]] DefaultPolicy defaultPolicy() const override
     {
         return Hide;

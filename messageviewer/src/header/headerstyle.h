@@ -60,7 +60,11 @@ public:
     //
     virtual QString format(KMime::Message *message) const = 0;
 
+    /*!
+     */
     void setHeaderStrategy(const HeaderStrategy *strategy);
+    /*!
+     */
     [[nodiscard]] const HeaderStrategy *headerStrategy() const;
 
     void setVCardName(const QString &vCardName);

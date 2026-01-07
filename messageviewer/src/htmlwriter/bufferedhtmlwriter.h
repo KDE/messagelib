@@ -20,19 +20,41 @@ namespace MessageViewer
 class MESSAGEVIEWER_EXPORT BufferedHtmlWriter : public HtmlWriter
 {
 public:
+    /*!
+     */
     BufferedHtmlWriter();
+    /*!
+     */
     ~BufferedHtmlWriter() override;
 
+    /*!
+     */
     void begin() override;
+    /*!
+     */
     void end() override;
+    /*!
+     */
     void reset() override;
+    /*!
+     */
     [[nodiscard]] QIODevice *device() const override;
 
+    /*!
+     */
     [[nodiscard]] QByteArray data() const;
+    /*!
+     */
     void clear();
 
+    /*!
+     */
     void setExtraHead(const QString &str) override;
+    /*!
+     */
     void embedPart(const QByteArray &contentId, const QString &url) override;
+    /*!
+     */
     void setStyleBody(const QString &styleBody) override;
 
 protected:

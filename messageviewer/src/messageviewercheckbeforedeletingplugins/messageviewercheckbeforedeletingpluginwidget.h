@@ -19,14 +19,28 @@ class MESSAGEVIEWER_EXPORT MessageViewerCheckBeforeDeletingPluginWidget : public
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit MessageViewerCheckBeforeDeletingPluginWidget(QWidget *parent = nullptr);
+    /*!
+     */
     ~MessageViewerCheckBeforeDeletingPluginWidget() override;
 
+    /*!
+     */
     virtual void loadSettings() = 0;
+    /*!
+     */
     virtual void saveSettings() = 0;
+    /*!
+     */
     virtual void resetSettings() = 0;
+    /*!
+     */
     [[nodiscard]] virtual QString helpAnchor() const;
 Q_SIGNALS:
+    /*!
+     */
     void configureChanged();
 };
 }

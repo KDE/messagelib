@@ -21,15 +21,29 @@ class MESSAGEVIEWER_EXPORT GrantleeHeaderTestStyle : public HeaderStyle
     friend class GrantleeHeaderStyle;
 
 public:
+    /*!
+     */
     GrantleeHeaderTestStyle();
+    /*!
+     */
     ~GrantleeHeaderTestStyle() override;
 
+    /*!
+     */
     const char *name() const override;
 
+    /*!
+     */
     [[nodiscard]] QString format(KMime::Message *message) const override;
 
+    /*!
+     */
     void setAbsolutePath(const QString &);
+    /*!
+     */
     void setMainFilename(const QString &);
+    /*!
+     */
     void setExtraDisplayHeaders(const QStringList &);
 
 private:

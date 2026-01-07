@@ -22,15 +22,33 @@ namespace MessageViewer
 class MESSAGEVIEWER_EXPORT FileHtmlWriter : public HtmlWriter
 {
 public:
+    /*!
+     */
     explicit FileHtmlWriter(const QString &filename);
+    /*!
+     */
     ~FileHtmlWriter() override;
 
+    /*!
+     */
     void begin() override;
+    /*!
+     */
     void end() override;
+    /*!
+     */
     void reset() override;
+    /*!
+     */
     [[nodiscard]] QIODevice *device() const override;
+    /*!
+     */
     void embedPart(const QByteArray &contentId, const QString &url) override;
+    /*!
+     */
     void setExtraHead(const QString &str) override;
+    /*!
+     */
     void setStyleBody(const QString &styleBody) override;
 
 private:

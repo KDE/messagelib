@@ -35,11 +35,19 @@ public:
         bool showEmoticons = true;
     };
 
+    /*!
+     */
     explicit GrantleeHeaderFormatter();
+    /*!
+     */
     ~GrantleeHeaderFormatter();
 
+    /*!
+     */
     [[nodiscard]] QString toHtml(const GrantleeHeaderFormatterSettings &settings) const;
 
+    /*!
+     */
     [[nodiscard]] QString toHtml(const QStringList &displayExtraHeaders,
                                  const QString &absolutPath,
                                  const QString &filename,

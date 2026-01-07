@@ -18,12 +18,20 @@ class GrantleeHeaderStylePrivate;
 class MESSAGEVIEWER_EXPORT GrantleeHeaderStyle : public HeaderStyle
 {
 public:
+    /*!
+     */
     GrantleeHeaderStyle();
+    /*!
+     */
     ~GrantleeHeaderStyle() override;
 
 public:
+    /*!
+     */
     const char *name() const override;
 
+    /*!
+     */
     [[nodiscard]] QString format(KMime::Message *message) const override;
 
 private:

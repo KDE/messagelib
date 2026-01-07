@@ -21,16 +21,32 @@ class MESSAGEVIEWER_EXPORT HeaderStylePluginManager : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     static HeaderStylePluginManager *self();
 
+    /*!
+     */
     ~HeaderStylePluginManager() override;
 
+    /*!
+     */
     [[nodiscard]] QList<MessageViewer::HeaderStylePlugin *> pluginsList() const;
+    /*!
+     */
     [[nodiscard]] QStringList pluginListName() const;
 
+    /*!
+     */
     [[nodiscard]] QList<TextAddonsWidgets::PluginUtilData> pluginsDataList() const;
+    /*!
+     */
     [[nodiscard]] QString configPrefixSettingKey() const;
+    /*!
+     */
     [[nodiscard]] QString configGroupName() const;
+    /*!
+     */
     [[nodiscard]] MessageViewer::HeaderStylePlugin *pluginFromIdentifier(const QString &id);
 
 private:

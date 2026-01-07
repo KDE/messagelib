@@ -24,8 +24,14 @@ class MessagePartRendererBase;
 class MESSAGEVIEWER_EXPORT MessagePartRenderPlugin
 {
 public:
+    /*!
+     */
     virtual ~MessagePartRenderPlugin();
+    /*!
+     */
     virtual MessagePartRendererBase *renderer(int index) = 0;
+    /*!
+     */
     virtual const Interface::BodyPartURLHandler *urlHandler(int idx) const;
 };
 }

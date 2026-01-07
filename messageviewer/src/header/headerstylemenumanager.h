@@ -23,18 +23,34 @@ class MESSAGEVIEWER_EXPORT HeaderStyleMenuManager : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit HeaderStyleMenuManager(KActionCollection *ac, QObject *parent = nullptr);
+    /*!
+     */
     ~HeaderStyleMenuManager() override;
 
+    /*!
+     */
     [[nodiscard]] KActionMenu *menu() const;
 
+    /*!
+     */
     void setPluginName(const QString &pluginName);
+    /*!
+     */
     void readConfig();
 
 public Q_SLOTS:
+    /*!
+     */
     void slotStyleChanged(MessageViewer::HeaderStylePlugin *plugin);
 Q_SIGNALS:
+    /*!
+     */
     void styleChanged(MessageViewer::HeaderStylePlugin *plugin);
+    /*!
+     */
     void styleUpdated();
 
 private:

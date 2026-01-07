@@ -24,17 +24,31 @@ public:
         Send = 1,
         SendDeny = 2,
     };
+    /*!
+     */
     explicit MDNWarningWidget(QWidget *parent = nullptr);
+    /*!
+     */
     ~MDNWarningWidget() override;
 
+    /*!
+     */
     void setCanDeny(bool deny);
 
+    /*!
+     */
     void setInformation(const QString &str);
 
+    /*!
+     */
     [[nodiscard]] KMime::MDN::SendingMode sendingMode() const;
+    /*!
+     */
     void setSendingMode(KMime::MDN::SendingMode newSendingMode);
 
 Q_SIGNALS:
+    /*!
+     */
     void sendResponse(MessageViewer::MDNWarningWidget::ResponseType type, KMime::MDN::SendingMode sendingMode);
 
 private:

@@ -25,7 +25,11 @@ class MessagePartRendererFactoryPrivate;
 class MESSAGEVIEWER_EXPORT MessagePartRendererFactory
 {
 public:
+    /*!
+     */
     MessagePartRendererFactory();
+    /*!
+     */
     ~MessagePartRendererFactory();
 
     /** Customize where to look for render plugins.
@@ -35,8 +39,12 @@ public:
      */
     void setPluginPath(const QString &subdir);
 
+    /*!
+     */
     static MessagePartRendererFactory *instance();
 
+    /*!
+     */
     [[nodiscard]] QList<MessagePartRendererBase *> renderersForPart(const QMetaObject *mo, const MimeTreeParser::MessagePart::Ptr &mp) const;
 
 private:

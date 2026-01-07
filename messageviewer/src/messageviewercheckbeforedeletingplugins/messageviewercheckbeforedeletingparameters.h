@@ -16,8 +16,14 @@ class MessageViewerCheckBeforeDeletingParametersPrivate;
 class MESSAGEVIEWER_EXPORT MessageViewerCheckBeforeDeletingParameters
 {
 public:
+    /*!
+     */
     MessageViewerCheckBeforeDeletingParameters();
+    /*!
+     */
     MessageViewerCheckBeforeDeletingParameters(const MessageViewerCheckBeforeDeletingParameters &other);
+    /*!
+     */
     ~MessageViewerCheckBeforeDeletingParameters();
 
     enum DeleteType : uint8_t {
@@ -26,15 +32,29 @@ public:
         Delete = 2,
     };
 
+    /*!
+     */
     [[nodiscard]] MessageViewerCheckBeforeDeletingParameters::DeleteType deleteType() const;
+    /*!
+     */
     void setDeleteType(MessageViewerCheckBeforeDeletingParameters::DeleteType type);
 
+    /*!
+     */
     MessageViewerCheckBeforeDeletingParameters &operator=(const MessageViewerCheckBeforeDeletingParameters &other);
+    /*!
+     */
     [[nodiscard]] bool operator==(const MessageViewerCheckBeforeDeletingParameters &other) const;
 
+    /*!
+     */
     [[nodiscard]] Akonadi::Item::List items() const;
+    /*!
+     */
     void setItems(const Akonadi::Item::List &items);
 
+    /*!
+     */
     [[nodiscard]] bool isValid() const;
 
 private:

@@ -30,8 +30,12 @@ class BodyPart;
 class MIMETREEPARSER_EXPORT BodyPartFormatter
 {
 public:
+    /*!
+     */
     virtual ~BodyPartFormatter();
 
+    /*!
+     */
     virtual MimeTreeParser::MessagePartPtr process(BodyPart &part) const = 0;
 };
 
@@ -51,8 +55,12 @@ public:
 class MIMETREEPARSER_EXPORT BodyPartFormatterPlugin
 {
 public:
+    /*!
+     */
     virtual ~BodyPartFormatterPlugin();
 
+    /*!
+     */
     virtual const BodyPartFormatter *bodyPartFormatter(int idx) const = 0;
 };
 } // namespace Interface

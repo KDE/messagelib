@@ -21,15 +21,29 @@ class MESSAGEVIEWER_EXPORT MessageViewerCheckBeforeDeletingPlugin : public QObje
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit MessageViewerCheckBeforeDeletingPlugin(QObject *parent = nullptr);
+    /*!
+     */
     ~MessageViewerCheckBeforeDeletingPlugin() override;
 
+    /*!
+     */
     [[nodiscard]] virtual MessageViewerCheckBeforeDeletingInterface *createInterface(QObject *parent) = 0;
+    /*!
+     */
     virtual void showConfigureDialog(QWidget *parent);
 
+    /*!
+     */
     void setIsEnabled(bool enabled);
+    /*!
+     */
     [[nodiscard]] bool isEnabled() const;
 Q_SIGNALS:
+    /*!
+     */
     void configChanged();
 
 private:

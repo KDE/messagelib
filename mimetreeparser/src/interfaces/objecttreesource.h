@@ -32,7 +32,11 @@ namespace Interface
 class MIMETREEPARSER_EXPORT ObjectTreeSource
 {
 public:
+    /*!
+     */
     ObjectTreeSource();
+    /*!
+     */
     virtual ~ObjectTreeSource();
 
     /**
@@ -54,6 +58,8 @@ public:
     /** should keys be imported automatically **/
     [[nodiscard]] virtual bool autoImportKeys() const = 0;
 
+    /*!
+     */
     virtual const BodyPartFormatterFactory *bodyPartFormatterFactory() = 0;
 
 private:

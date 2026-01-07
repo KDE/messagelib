@@ -34,17 +34,31 @@ class MESSAGECOMPOSER_EXPORT AttachmentControllerBase : public QObject
     Q_OBJECT
 
 public:
+    /*!
+     */
     AttachmentControllerBase(MessageComposer::AttachmentModel *model, QWidget *wParent, KActionCollection *actionCollection);
+    /*!
+     */
     ~AttachmentControllerBase() override;
 
+    /*!
+     */
     void createActions();
 
     // TODO dnd stuff...
 
+    /*!
+     */
     void setSelectedParts(const MessageCore::AttachmentPart::List &selectedParts);
 
+    /*!
+     */
     void setAttachOwnVcard(bool attachVcard);
+    /*!
+     */
     [[nodiscard]] bool attachOwnVcard() const;
+    /*!
+     */
     void setIdentityHasOwnVcard(bool state);
 
 public Q_SLOTS:
@@ -74,11 +88,23 @@ public Q_SLOTS:
     virtual void attachMyPublicKey();
 
 Q_SIGNALS:
+    /*!
+     */
     void actionsCreated();
+    /*!
+     */
     void refreshSelection();
+    /*!
+     */
     void showAttachment(const std::shared_ptr<KMime::Content> &content, const QByteArray &charset);
+    /*!
+     */
     void selectedAllAttachment();
+    /*!
+     */
     void addOwnVcard(bool);
+    /*!
+     */
     void fileAttached();
 
 protected:

@@ -27,16 +27,30 @@ class MESSAGEVIEWER_EXPORT HTMLBlock
 public:
     using Ptr = QSharedPointer<HTMLBlock>;
 
+    /*!
+     */
     HTMLBlock();
 
+    /*!
+     */
     virtual ~HTMLBlock();
 
+    /*!
+     */
     [[nodiscard]] QString enter();
+    /*!
+     */
     [[nodiscard]] QString exit();
 
 protected:
+    /*!
+     */
     [[nodiscard]] QString dir() const;
+    /*!
+     */
     virtual QString enterString() const = 0;
+    /*!
+     */
     virtual QString exitString() const = 0;
 
 private:
@@ -52,11 +66,19 @@ private:
 class MESSAGEVIEWER_EXPORT AttachmentMarkBlock : public HTMLBlock
 {
 public:
+    /*!
+     */
     AttachmentMarkBlock(HtmlWriter *writer, KMime::Content *node);
+    /*!
+     */
     ~AttachmentMarkBlock() override;
 
 protected:
+    /*!
+     */
     [[nodiscard]] QString enterString() const override;
+    /*!
+     */
     [[nodiscard]] QString exitString() const override;
 
 private:

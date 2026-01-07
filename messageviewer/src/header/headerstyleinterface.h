@@ -25,22 +25,44 @@ class MESSAGEVIEWER_EXPORT HeaderStyleInterface : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit HeaderStyleInterface(MessageViewer::HeaderStylePlugin *, QObject *parent = nullptr);
+    /*!
+     */
     ~HeaderStyleInterface() override;
+    /*!
+     */
     [[nodiscard]] QList<KToggleAction *> action() const;
+    /*!
+     */
     virtual void createAction(KActionMenu *menu, QActionGroup *actionGroup, KActionCollection *ac) = 0;
+    /*!
+     */
     virtual void activateAction() = 0;
+    /*!
+     */
     [[nodiscard]] HeaderStylePlugin *headerStylePlugin() const;
 
 Q_SIGNALS:
+    /*!
+     */
     void styleChanged(MessageViewer::HeaderStylePlugin *plugin);
+    /*!
+     */
     void styleUpdated();
 
 protected Q_SLOTS:
+    /*!
+     */
     void slotStyleChanged();
 
 protected:
+    /*!
+     */
     void addHelpTextAction(QAction *act, const QString &text);
+    /*!
+     */
     void addActionToMenu(KActionMenu *menu, QActionGroup *actionGroup);
     QList<KToggleAction *> mAction;
     HeaderStylePlugin *const mHeaderStylePlugin;

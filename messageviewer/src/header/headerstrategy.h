@@ -26,6 +26,8 @@ protected:
     HeaderStrategy();
 
 public:
+    /*!
+     */
     virtual ~HeaderStrategy();
     //
     // Methods for handling the strategies:
@@ -41,10 +43,20 @@ public:
         Hide,
     };
 
+    /*!
+     */
     [[nodiscard]] virtual QStringList headersToDisplay() const;
+    /*!
+     */
     [[nodiscard]] virtual QStringList headersToHide() const;
+    /*!
+     */
     [[nodiscard]] virtual DefaultPolicy defaultPolicy() const = 0;
+    /*!
+     */
     [[nodiscard]] virtual bool showHeader(const QString &header) const;
+    /*!
+     */
     [[nodiscard]] static QStringList stringList(const char *const headers[], int numHeaders);
 };
 }

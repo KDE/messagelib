@@ -31,9 +31,17 @@ class MESSAGEVIEWER_EXPORT MessagePartRendererManager : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     ~MessagePartRendererManager() override;
+    /*!
+     */
     static MessagePartRendererManager *self();
+    /*!
+     */
     [[nodiscard]] KTextTemplate::Template loadByName(const QString &name);
+    /*!
+     */
     [[nodiscard]] KTextTemplate::Context createContext();
 
 private:

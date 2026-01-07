@@ -21,17 +21,34 @@ class MIMETREEPARSER_EXPORT AttachmentTemporaryFilesDirs : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit AttachmentTemporaryFilesDirs(QObject *parent = nullptr);
+    /*!
+     */
     ~AttachmentTemporaryFilesDirs() override;
 
+    /*!
+     */
     void addTempFile(const QString &file);
+    /*!
+     */
     void addTempDir(const QString &dir);
+    /*!
+     */
     [[nodiscard]] QStringList temporaryFiles() const;
+    /*!
+     */
     void removeTempFiles();
+    /*!
+     */
     void forceCleanTempFiles();
 
+    /*!
+     */
     [[nodiscard]] QStringList temporaryDirs() const;
-
+    /*!
+     */
     void setDelayRemoveAllInMs(int ms);
 
 private:
