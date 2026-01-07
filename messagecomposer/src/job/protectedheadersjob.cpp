@@ -116,7 +116,7 @@ void ProtectedHeadersJob::process()
     auto subject = d->skeletonMessage->subject(KMime::CreatePolicy::DontCreate);
     const auto headers = d->skeletonMessage->headers();
     for (const auto &header : headers) {
-        const QByteArray headerType(header->type());
+        const QByteArrayView headerType(header->type());
         if (headerType.startsWith("X-KMail-")) {
             continue;
         }
@@ -135,9 +135,6 @@ void ProtectedHeadersJob::process()
             continue;
         }
         auto copyHeader = KMime::Headers::createHeader(headerType);
-        if (!copyHeader) {
-            copyHeader = std::make_unique<KMime::Headers::Generic>(headerType.constData(), headerType.size());
-        }
         copyHeader->from7BitString(header->as7BitString());
         d->content->appendHeader(std::move(copyHeader));
     }

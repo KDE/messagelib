@@ -166,11 +166,7 @@ void SkeletonMessageJobPrivate::doStart()
 
     const QList<KMime::Headers::Base *> extraHeaders = infoPart->extraHeaders();
     for (KMime::Headers::Base *extra : extraHeaders) {
-        const QByteArray headerType(extra->type());
-        auto copyHeader = KMime::Headers::createHeader(headerType);
-        if (!copyHeader) {
-            copyHeader = std::make_unique<KMime::Headers::Generic>(headerType.constData(), headerType.size());
-        }
+        auto copyHeader = KMime::Headers::createHeader(extra->type());
         copyHeader->from7BitString(extra->as7BitString());
         message->setHeader(std::move(copyHeader));
     }
