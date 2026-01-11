@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: CC0-1.0
 # SPDX-FileCopyrightText: none
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.27)
 set(PIM_VERSION "6.6.44")
 set(CMAKE_CXX_SCAN_FOR_MODULES OFF)
 
