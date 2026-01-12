@@ -53,7 +53,7 @@ msgstr "Comprimix"
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach file"
-msgstr "No s'ha pogut adjuntar el fitxer"
+msgstr "Ha fallat mentre s'adjuntava el fitxer"
 
 #: attachment/attachmentcontrollerbase.cpp:274
 #, kde-format
@@ -84,19 +84,19 @@ msgstr "O&bri amb…"
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach public key"
-msgstr "No s'ha pogut adjuntar la clau pública"
+msgstr "Ha fallat mentre s'adjuntava la clau pública"
 
 #: attachment/attachmentcontrollerbase.cpp:391
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach vCard"
-msgstr "No s'ha pogut adjuntar la vCard"
+msgstr "Ha fallat mentre s'adjuntava la vCard"
 
 #: attachment/attachmentcontrollerbase.cpp:404
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach text from clipboard"
-msgstr "No s'ha pogut adjuntar el text des del porta-retalls"
+msgstr "Ha fallat mentre s'adjuntava el text des del porta-retalls"
 
 #: attachment/attachmentcontrollerbase.cpp:452
 #, kde-format
@@ -524,8 +524,8 @@ msgstr "No s'ha pogut editar el missatge: %1"
 #, kde-format
 msgid "There were problems trying to queue the message for sending: %1"
 msgstr ""
-"S'han produït errors en intentar posar el missatge a la cua per al seu "
-"enviament: %1"
+"S'han produït errors mentre s'intentava posar el missatge a la cua per al "
+"seu enviament: %1"
 
 #: composer/composerviewbase.cpp:1329
 #, kde-format
@@ -567,7 +567,7 @@ msgstr "La guardada automàtica del missatge ha fallat"
 #: composer/composerviewbase.cpp:1481
 #, kde-format
 msgid "Failed to save the message: %1"
-msgstr "No s'ha pogut guardar el missatge: %1"
+msgstr "Ha fallat mentre es guardava el missatge: %1"
 
 #: composer/composerviewbase.cpp:1903
 #, kde-format
@@ -1154,8 +1154,8 @@ msgid ""
 "Failed to store a new reminder: an error occurred while trying to create a "
 "new to-do in your calendar: %1"
 msgstr ""
-"No s'ha pogut emmagatzemar un recordatori nou: hi ha hagut un error en "
-"intentar crear una tasca pendent nova al calendari: %1"
+"No s'ha pogut emmagatzemar un recordatori nou: hi ha hagut un error mentre "
+"s'intentava crear una tasca pendent nova al calendari: %1"
 
 #: followupreminder/followupremindercreatejob.cpp:133
 #, kde-format
@@ -1512,8 +1512,8 @@ msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
 "p><p><b>%1</b></p>"
 msgstr ""
-"<p>S'ha produït un error en provar d'exportar la clau des del dorsal:</"
-"p><p><b>%1</b></p>"
+"<p>S'ha produït un error mentre es provava d'exportar la clau des del dorsal:"
+"</p><p><b>%1</b></p>"
 
 #: job/attachmentfrompublickeyjob.cpp:107
 #, kde-format
@@ -1541,8 +1541,8 @@ msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
 "p><p><b>No valid key found for user %1 (%2)</b></p>"
 msgstr ""
-"<p>S'ha produït un error en intentar exportar la clau des del dorsal:</"
-"p><p><b>No s'ha trobat cap clau vàlida per a l'usuari %1 (%2)</b></p>"
+"<p>S'ha produït un error mentre s'intentava exportar la clau des del dorsal:"
+"</p><p><b>No s'ha trobat cap clau vàlida per a l'usuari %1 (%2)</b></p>"
 
 #: job/composerjob.cpp:290
 #, kde-format
@@ -1978,7 +1978,8 @@ msgstr "L'agent Envia més tard no s'està executant."
 #, kde-format
 msgid "Failed to removed message from send later schedule: %1"
 msgstr ""
-"No s'ha pogut eliminar el missatge de la planificació envia més tard: %1"
+"Ha fallat mentre s'eliminava el missatge de la planificació envia més tard: "
+"%1"
 
 #: sendlater/sendlatertimedatewidget.cpp:37
 #, kde-format
