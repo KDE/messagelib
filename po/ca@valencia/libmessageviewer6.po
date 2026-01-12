@@ -2230,7 +2230,7 @@ msgstr "Desactiva les emoticones"
 #: viewer/viewer_p.cpp:1734
 #, kde-format
 msgid "Save &As..."
-msgstr "Anomena i gu&arda…"
+msgstr "Anomena i guar&da…"
 
 #: viewer/viewer_p.cpp:1742
 #, kde-format
