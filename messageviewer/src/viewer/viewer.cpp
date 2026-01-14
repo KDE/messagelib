@@ -78,7 +78,6 @@ void Viewer::initialize()
     connect(d_ptr, &ViewerPrivate::urlClicked, this, [this](const Akonadi::Item &item, const QUrl &url) {
         Q_EMIT urlClicked(item, url);
     });
-    connect(d_ptr, SIGNAL(urlClicked(Akonadi::Item, QUrl)), this, SIGNAL(urlClicked(Akonadi::Item, QUrl)));
     connect(d_ptr, &ViewerPrivate::requestConfigSync, this, &Viewer::requestConfigSync);
     connect(d_ptr, &ViewerPrivate::makeResourceOnline, this, &Viewer::makeResourceOnline);
     connect(d_ptr, &ViewerPrivate::showReader, this, &Viewer::showReader);
