@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-18 00:44+0000\n"
+"POT-Creation-Date: 2026-01-15 00:44+0000\n"
 "PO-Revision-Date: 2025-05-31 11:42+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -1903,7 +1903,7 @@ msgctxt "@action:button"
 msgid "Execute"
 msgstr "Kör"
 
-#: viewer/viewer.cpp:150
+#: viewer/viewer.cpp:149
 #, kde-format
 msgid "Loading message..."
 msgstr "Läser in brev..."

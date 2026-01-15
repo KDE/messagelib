@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-18 00:44+0000\n"
+"POT-Creation-Date: 2026-01-15 00:44+0000\n"
 "PO-Revision-Date: 2025-07-26 13:40-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -1916,7 +1916,7 @@ msgctxt "@action:button"
 msgid "Execute"
 msgstr "Executar"
 
-#: viewer/viewer.cpp:150
+#: viewer/viewer.cpp:149
 #, kde-format
 msgid "Loading message..."
 msgstr "Carregando mensagem..."
