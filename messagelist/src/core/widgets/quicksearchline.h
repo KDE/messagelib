@@ -31,36 +31,82 @@ class MESSAGELIST_EXPORT QuickSearchLine : public QWidget
 {
     Q_OBJECT
 public:
+    /*!
+     * \brief QuickSearchLine
+     * \param parent
+     */
     explicit QuickSearchLine(QWidget *parent = nullptr);
+    /*!
+     */
     ~QuickSearchLine() override;
 
+    /*!
+     */
     [[nodiscard]] SearchMessageByButtons::SearchOptions searchOptions() const;
 
+    /*!
+     */
     void focusQuickSearch(const QString &selectedText);
 
+    /*!
+     */
     [[nodiscard]] QComboBox *tagFilterComboBox() const;
+    /*!
+     */
     [[nodiscard]] SearchLineStatus *searchEdit() const;
+    /*!
+     */
     void resetFilter();
+    /*!
+     */
     [[nodiscard]] QList<Akonadi::MessageStatus> status() const;
 
+    /*!
+     */
     void updateComboboxVisibility();
 
+    /*!
+     */
     [[nodiscard]] bool containsOutboundMessages() const;
+    /*!
+     */
     void setContainsOutboundMessages(bool containsOutboundMessages);
 
+    /*!
+     */
     void changeQuicksearchVisibility(bool show);
+    /*!
+     */
     void addCompletionItem(const QString &str);
 
+    /*!
+     */
     void setSearchOptions(SearchMessageByButtons::SearchOptions opts);
+    /*!
+     */
     void setFilterMessageStatus(const QList<Akonadi::MessageStatus> &newLstStatus);
 
 Q_SIGNALS:
+    /*!
+     */
     void clearButtonClicked();
+    /*!
+     */
     void searchEditTextEdited(const QString &);
+    /*!
+     */
     void searchOptionChanged();
+    /*!
+     */
     void statusButtonsClicked();
+    /*!
+     */
     void forceLostFocus();
+    /*!
+     */
     void saveFilter();
+    /*!
+     */
     void activateFilter(MessageList::Core::Filter *f);
 
 protected:

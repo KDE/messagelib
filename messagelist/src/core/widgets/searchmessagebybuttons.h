@@ -13,6 +13,9 @@ class QButtonGroup;
 class QToolButton;
 namespace MessageList::Core
 {
+/*!
+ * \brief The SearchMessageByButtons class
+ */
 class MESSAGELIST_EXPORT SearchMessageByButtons : public QWidget
 {
     Q_OBJECT
@@ -28,19 +31,37 @@ public:
     };
     Q_ENUM(SearchOption)
     Q_DECLARE_FLAGS(SearchOptions, SearchOption)
+    /*!
+     */
     explicit SearchMessageByButtons(QWidget *parent = nullptr);
+    /*!
+     */
     ~SearchMessageByButtons() override;
 
+    /*!
+     */
     void changeSearchAgainstFromOrToText();
 
+    /*!
+     */
     void setContainsOutboundMessages(bool containsOutboundMessages);
+    /*!
+     */
     [[nodiscard]] bool containsOutboundMessages() const;
 
+    /*!
+     */
     [[nodiscard]] SearchMessageByButtons::SearchOptions searchOptions() const;
+    /*!
+     */
     void setSearchOptions(SearchMessageByButtons::SearchOptions opts);
 
+    /*!
+     */
     void clearFilter();
 Q_SIGNALS:
+    /*!
+     */
     void searchOptionChanged();
 
 private:

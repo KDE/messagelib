@@ -38,6 +38,8 @@ public:
      * Create a new message list widget.
      */
     explicit Widget(QWidget *parent);
+    /*!
+     */
     ~Widget() override;
 
     /**
@@ -306,15 +308,27 @@ public:
      * Return a persistent set from current thread
      */
     [[nodiscard]] MessageList::Core::MessageItemSetReference currentThreadAsPersistentSet() const;
+    /*!
+     */
     [[nodiscard]] Akonadi::Collection currentCollection() const;
 
+    /*!
+     */
     void setQuickSearchClickMessage(const QString &msg);
+    /*!
+     */
     [[nodiscard]] MessageList::Core::SearchMessageByButtons::SearchOptions currentOptions() const;
 
+    /*!
+     */
     [[nodiscard]] QList<MessageList::Core::SearchLineCommand::SearchLineInfo> searchLineCommands() const;
 
+    /*!
+     */
     [[nodiscard]] QIcon defaultCollectionIcon() const;
 
+    /*!
+     */
     void setDefaultCollectionIcon(const QIcon &icon);
 
 protected:

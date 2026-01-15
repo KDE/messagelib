@@ -31,15 +31,31 @@ namespace MimeTreeParser
 class MIMETREEPARSER_EXPORT PartNodeBodyPart : public Interface::BodyPart
 {
 public:
+    /*!
+     */
     explicit PartNodeBodyPart(ObjectTreeParser *otp, ProcessResult *result, KMime::Content *topLevelContent, KMime::Content *content, NodeHelper *nodeHelper);
 
+    /*!
+     */
     Interface::BodyPartMemento *memento() const override;
+    /*!
+     */
     KMime::Content *content() const override;
+    /*!
+     */
     KMime::Content *topLevelContent() const override;
+    /*!
+     */
     ProcessResult *processResult() const override;
 
+    /*!
+     */
     NodeHelper *nodeHelper() const override;
+    /*!
+     */
     ObjectTreeParser *objectTreeParser() const override;
+    /*!
+     */
     Interface::ObjectTreeSource *source() const override;
 
 private:

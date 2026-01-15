@@ -19,22 +19,41 @@ namespace MessageList
 {
 namespace Core
 {
+/*!
+ * \brief The TagManager class
+ */
 class MESSAGELIST_EXPORT TagManager : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit TagManager(QObject *parent = nullptr);
+    /*!
+     */
     ~TagManager() override;
 
+    /*!
+     */
     static TagManager *self();
 
+    /*!
+     */
     [[nodiscard]] QMap<QString, QString> mapTag() const;
+    /*!
+     */
     void setMapTag(const QMap<QString, QString> &newMapTag);
 
+    /*!
+     */
     [[nodiscard]] QString tagFromName(const QString &name) const;
 
+    /*!
+     */
     void slotTagsChanged();
 Q_SIGNALS:
+    /*!
+     */
     void tagsFetched(const Akonadi::Tag::List &lst);
 
 private:

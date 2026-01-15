@@ -27,7 +27,11 @@ class BodyPartFormatterFactoryPrivate;
 class MIMETREEPARSER_EXPORT BodyPartFormatterFactory
 {
 public:
+    /*!
+     */
     BodyPartFormatterFactory();
+    /*!
+     */
     virtual ~BodyPartFormatterFactory();
 
     static BodyPartFormatterFactory *instance();
@@ -40,7 +44,11 @@ public:
     [[nodiscard]] QList<const Interface::BodyPartFormatter *> formattersForType(const QString &mimeType) const;
 
 protected:
+    /*!
+     */
     void insert(const QString &mimeType, const Interface::BodyPartFormatter *formatter, int priority);
+    /*!
+     */
     virtual void loadPlugins();
 
 private:

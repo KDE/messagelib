@@ -68,22 +68,40 @@ class MIMETREEPARSER_EXPORT MessagePart : public QObject
     Q_PROPERTY(QString link READ attachmentLink CONSTANT)
 public:
     using Ptr = QSharedPointer<MessagePart>;
+    /*!
+     */
     MessagePart(ObjectTreeParser *otp, const QString &text);
+    /*!
+     */
     ~MessagePart() override;
 
+    /*!
+     */
     void setParentPart(MessagePart *parentPart);
+    /*!
+     */
     [[nodiscard]] MessagePart *parentPart() const;
 
+    /*!
+     */
     [[nodiscard]] virtual QString text() const;
+    /*!
+     */
     void setText(const QString &text);
 
+    /*!
+     */
     [[nodiscard]] virtual QString plaintextContent() const;
+    /*!
+     */
     [[nodiscard]] virtual QString htmlContent() const;
 
     /** The KMime::Content* node that's represented by this part.
      *  Can be @c nullptr, e.g. for sub-parts of an inline signed body part.
      */
     [[nodiscard]] KMime::Content *content() const;
+    /*!
+     */
     void setContent(KMime::Content *node);
 
     /** The KMime::Content* node that's the source of this part.
@@ -91,7 +109,11 @@ public:
      *  broken-up multipart nodes.
      */
     [[nodiscard]] KMime::Content *attachmentContent() const;
+    /*!
+     */
     void setAttachmentContent(KMime::Content *node);
+    /*!
+     */
     [[nodiscard]] bool isAttachment() const;
     /** @see KMime::Content::index() */
     [[nodiscard]] QString attachmentIndex() const;
@@ -103,38 +125,82 @@ public:
      */
     [[nodiscard]] QString makeLink(const QString &path) const;
 
+    /*!
+     */
     void setIsRoot(bool root);
+    /*!
+     */
     [[nodiscard]] bool isRoot() const;
 
+    /*!
+     */
     virtual bool isHtml() const;
 
+    /*!
+     */
     [[nodiscard]] bool neverDisplayInline() const;
+    /*!
+     */
     void setNeverDisplayInline(bool displayInline);
+    /*!
+     */
     [[nodiscard]] bool isImage() const;
+    /*!
+     */
     void setIsImage(bool image);
 
+    /*!
+     */
     PartMetaData *partMetaData() const;
 
+    /*!
+     */
     Interface::BodyPartMemento *memento() const;
+    /*!
+     */
     void setMemento(Interface::BodyPartMemento *memento);
 
     /* only a function that should be removed if the refactoring is over */
+    /*!
+     */
     virtual void fix() const;
 
+    /*!
+     */
     void appendSubPart(const MessagePart::Ptr &messagePart);
+    /*!
+     */
     const QList<MessagePart::Ptr> &subParts() const;
+    /*!
+     */
     [[nodiscard]] bool hasSubParts() const;
+    /*!
+     */
     void clearSubParts();
 
+    /*!
+     */
     Interface::ObjectTreeSource *source() const;
+    /*!
+     */
     NodeHelper *nodeHelper() const;
 
+    /*!
+     */
     [[nodiscard]] virtual bool hasHeader(const char *headerType) const;
+    /*!
+     */
     virtual const KMime::Headers::Base *header(const char *headerType) const;
+    /*!
+     */
     virtual QList<KMime::Headers::Base *> headers(const char *headerType) const;
 
 protected:
+    /*!
+     */
     void parseInternal(KMime::Content *node, bool onlyOneMimePart);
+    /*!
+     */
     [[nodiscard]] QString renderInternalText() const;
 
     ObjectTreeParser *mOtp = nullptr;

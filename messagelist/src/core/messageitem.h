@@ -79,7 +79,11 @@ public:
         SignatureStateUnknown
     };
 
+    /*!
+     */
     explicit MessageItem();
+    /*!
+     */
     ~MessageItem() override;
 
 public:
@@ -98,63 +102,117 @@ public:
     /// fetched again
     void invalidateTagCache();
 
-    const QColor &textColor() const;
+    /*!
+     */
+    [[nodiscard]] const QColor &textColor() const;
 
-    const QColor &backgroundColor() const;
+    /*!
+     */
+    [[nodiscard]] const QColor &backgroundColor() const;
 
+    /*!
+     */
     [[nodiscard]] bool isBold() const
     {
         return font().bold();
     }
 
+    /*!
+     */
     [[nodiscard]] bool isItalic() const
     {
         return font().italic();
     }
 
+    /*!
+     */
     [[nodiscard]] SignatureState signatureState() const;
 
+    /*!
+     */
     void setSignatureState(SignatureState state);
 
+    /*!
+     */
     [[nodiscard]] EncryptionState encryptionState() const;
 
+    /*!
+     */
     void setEncryptionState(EncryptionState state);
 
+    /*!
+     */
     [[nodiscard]] MD5Hash messageIdMD5() const;
 
+    /*!
+     */
     void setMessageIdMD5(MD5Hash md5);
 
+    /*!
+     */
     [[nodiscard]] MD5Hash inReplyToIdMD5() const;
 
+    /*!
+     */
     void setInReplyToIdMD5(MD5Hash md5);
 
+    /*!
+     */
     [[nodiscard]] MD5Hash referencesIdMD5() const;
 
+    /*!
+     */
     void setReferencesIdMD5(MD5Hash md5);
 
+    /*!
+     */
     void setSubjectIsPrefixed(bool subjectIsPrefixed);
 
+    /*!
+     */
     [[nodiscard]] bool subjectIsPrefixed() const;
 
+    /*!
+     */
     [[nodiscard]] MD5Hash strippedSubjectMD5() const;
 
+    /*!
+     */
     void setStrippedSubjectMD5(MD5Hash md5);
 
+    /*!
+     */
     [[nodiscard]] bool aboutToBeRemoved() const;
 
+    /*!
+     */
     void setAboutToBeRemoved(bool aboutToBeRemoved);
 
+    /*!
+     */
     [[nodiscard]] ThreadingStatus threadingStatus() const;
 
+    /*!
+     */
     void setThreadingStatus(ThreadingStatus threadingStatus);
 
+    /*!
+     */
     [[nodiscard]] unsigned long uniqueId() const;
 
+    /*!
+     */
     [[nodiscard]] Akonadi::Item akonadiItem() const;
+    /*!
+     */
     void setAkonadiItem(const Akonadi::Item &item);
 
+    /*!
+     */
     [[nodiscard]] MessageItem *topmostMessage();
 
+    /*!
+     */
     [[nodiscard]] QString accessibleText(const MessageList::Core::Theme *theme, int columnIndex);
 
     /**
@@ -169,12 +227,26 @@ public:
     // one of these.
     // Call these setters only once when reading the colors from the config file.
     //
+    /*!
+     */
     static void setUnreadMessageColor(const QColor &color);
+    /*!
+     */
     static void setImportantMessageColor(const QColor &color);
+    /*!
+     */
     static void setToDoMessageColor(const QColor &color);
+    /*!
+     */
     static void setGeneralFont(const QFont &font);
+    /*!
+     */
     static void setUnreadMessageFont(const QFont &font);
+    /*!
+     */
     static void setImportantMessageFont(const QFont &font);
+    /*!
+     */
     static void setToDoMessageFont(const QFont &font);
 
 protected:

@@ -12,6 +12,9 @@
 class QDebug;
 namespace MessageList::Core
 {
+/*!
+ * \brief The SearchLineCommand class
+ */
 class MESSAGELIST_EXPORT SearchLineCommand
 {
     Q_GADGET
@@ -61,25 +64,51 @@ public:
         [[nodiscard]] bool mustBeUnique() const;
         [[nodiscard]] qint64 convertArgumentAsSize() const;
     };
+    /*!
+     */
     SearchLineCommand();
+    /*!
+     */
     ~SearchLineCommand();
 
+    /*!
+     */
     void parseSearchLineCommand(const QString &str);
 
+    /*!
+     */
     [[nodiscard]] QString generateCommadLineStr() const;
 
+    /*!
+     */
     [[nodiscard]] QList<SearchLineInfo> searchLineInfo() const;
+    /*!
+     */
     void setSearchLineInfo(const QList<SearchLineInfo> &newSearchLineInfo);
 
+    /*!
+     */
     [[nodiscard]] static bool hasSubType(const QString &v);
+    /*!
+     */
     [[nodiscard]] static bool hasSubType(SearchLineCommand::SearchLineType type);
+    /*!
+     */
     [[nodiscard]] static bool mustBeUnique(SearchLineCommand::SearchLineType type);
+    /*!
+     */
 
     [[nodiscard]] bool isEmpty() const;
 
+    /*!
+     */
     static QString searchLineTypeToString(SearchLineCommand::SearchLineType type);
 
+    /*!
+     */
     static QString generateCommandText(SearchLineCommand::SearchLineType type);
+    /*!
+     */
     [[nodiscard]] bool hasOnlyOneLiteralCommand() const;
 
 private:

@@ -53,8 +53,12 @@ public:
     explicit Pane(bool restoreSession, QAbstractItemModel *model, QItemSelectionModel *selectionModel, QWidget *parent = nullptr);
     ~Pane() override;
 
+    /*!
+     */
     virtual MessageList::StorageModel *createStorageModel(QAbstractItemModel *model, QItemSelectionModel *selectionModel, QObject *parent);
 
+    /*!
+     */
     virtual void writeConfig(bool restoreSession);
 
     /**
@@ -118,6 +122,8 @@ public:
      */
     [[nodiscard]] QList<qlonglong> selectionAsMessageItemListId(bool includeCollapsedChildren = true) const;
 
+    /*!
+     */
     [[nodiscard]] QList<Akonadi::Item::Id> selectionAsListMessageId(bool includeCollapsedChildren = true) const;
 
     /**
@@ -348,26 +354,48 @@ public:
                           MessageList::Core::PreSelectionMode preSelectionMode = MessageList::Core::PreSelectLastSelected,
                           const QString &overrideLabel = QString());
 
+    /*!
+     */
     void resetModelStorage();
 
+    /*!
+     */
     void setPreferEmptyTab(bool emptyTab);
 
+    /*!
+     */
     void updateTabIconText(const Akonadi::Collection &collection, const QString &label, const QIcon &icon);
 
+    /*!
+     */
     void saveCurrentSelection();
 
+    /*!
+     */
     void updateTagComboBox();
 
+    /*!
+     */
     [[nodiscard]] bool searchEditHasFocus() const;
 
+    /*!
+     */
     void setQuickSearchClickMessage(const QString &msg);
 
+    /*!
+     */
     void populateStatusFilterCombo();
 
+    /*!
+     */
     [[nodiscard]] Core::SearchMessageByButtons::SearchOptions currentOptions() const;
 
+    /*!
+     */
     [[nodiscard]] Akonadi::Collection currentFolder() const;
 
+    /*!
+     */
     [[nodiscard]] QList<MessageList::Core::SearchLineCommand::SearchLineInfo> searchLineCommands() const;
     /**
      * Add a new tab to the Pane and select it.
@@ -379,10 +407,16 @@ public Q_SLOTS:
      */
     void selectAll();
 
+    /*!
+     */
     void sortOrderMenuAboutToShow();
 
+    /*!
+     */
     void aggregationMenuAboutToShow();
 
+    /*!
+     */
     void themeMenuAboutToShow();
 
 Q_SIGNALS:
@@ -436,6 +470,8 @@ Q_SIGNALS:
      */
     void currentTabChanged();
 
+    /*!
+     */
     void forceLostFocus();
 
 private:

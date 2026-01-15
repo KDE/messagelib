@@ -42,26 +42,56 @@ class MIMETREEPARSER_EXPORT NodeHelper : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     NodeHelper();
 
+    /*!
+     */
     ~NodeHelper() override;
 
+    /*!
+     */
     void setNodeProcessed(const KMime::Content *node, bool recurse);
+    /*!
+     */
     void setNodeUnprocessed(const KMime::Content *node, bool recurse);
+    /*!
+     */
     [[nodiscard]] bool nodeProcessed(const KMime::Content *node) const;
+    /*!
+     */
     void clear();
+    /*!
+     */
     void forceCleanTempFiles();
 
+    /*!
+     */
     void setEncryptionState(const KMime::Content *node, const KMMsgEncryptionState state);
+    /*!
+     */
     [[nodiscard]] KMMsgEncryptionState encryptionState(const KMime::Content *node) const;
 
+    /*!
+     */
     void setSignatureState(const KMime::Content *node, const KMMsgSignatureState state);
+    /*!
+     */
     [[nodiscard]] KMMsgSignatureState signatureState(const KMime::Content *node) const;
 
+    /*!
+     */
     [[nodiscard]] KMMsgSignatureState overallSignatureState(KMime::Content *node) const;
+    /*!
+     */
     [[nodiscard]] KMMsgEncryptionState overallEncryptionState(KMime::Content *node) const;
 
+    /*!
+     */
     void setPartMetaData(const KMime::Content *node, const PartMetaData &metaData);
+    /*!
+     */
     [[nodiscard]] PartMetaData partMetaData(const KMime::Content *node);
 
     /**
@@ -71,18 +101,36 @@ public:
      */
     static void magicSetType(KMime::Content *node, bool autoDecode = true);
 
+    /*!
+     */
     void clearOverrideHeaders();
+    /*!
+     */
     void registerOverrideHeader(KMime::Content *message, MessagePartPtr);
+    /*!
+     */
     [[nodiscard]] bool hasMailHeader(const char *header, const KMime::Content *message) const;
+    /*!
+     */
     [[nodiscard]] QList<MessagePartPtr> messagePartsOfMailHeader(const char *header, const KMime::Content *message) const;
+    /*!
+     */
     KMime::Headers::Base const *mailHeaderAsBase(const char *header, const KMime::Content *message) const;
+    /*!
+     */
     [[nodiscard]] QSharedPointer<KMime::Headers::Generics::AddressList> mailHeaderAsAddressList(const char *header, const KMime::Content *message) const;
+    /*!
+     */
     [[nodiscard]] QList<KMime::Headers::Base *> headers(const char *header, const KMime::Content *message);
+    /*!
+     */
     [[nodiscard]] QDateTime dateHeader(KMime::Content *message) const;
 
     /** Attach an extra node to an existing node */
     void attachExtraContent(KMime::Content *topLevelNode, KMime::Content *content);
 
+    /*!
+     */
     void cleanExtraContent(KMime::Content *topLevelNode);
 
     /** Get the extra nodes attached to the @param topLevelNode and all sub-nodes of @param topLevelNode */
@@ -99,8 +147,12 @@ public:
     /** Set the charset the user selected for the message to display */
     void setOverrideCodec(const KMime::Content *node, const QByteArray &codec);
 
+    /*!
+     */
     Interface::BodyPartMemento *bodyPartMemento(KMime::Content *node, const QByteArray &which) const;
 
+    /*!
+     */
     void setBodyPartMemento(KMime::Content *node, const QByteArray &which, Interface::BodyPartMemento *memento);
 
     // A flag to remember if the node was embedded. This is useful for attachment nodes, the reader
@@ -145,10 +197,16 @@ public:
 
     // Get a href in the form attachment:<nodeId>?place=<place>, used by ObjectTreeParser and
     // UrlHandlerManager.
+    /*!
+     */
     [[nodiscard]] QString asHREF(const KMime::Content *node, const QString &place) const;
+    /*!
+     */
     [[nodiscard]] KMime::Content *fromHREF(const std::shared_ptr<KMime::Message> &mMessage, const QUrl &href) const;
 
     // Overload which creates a URL without the query part. Used by MessagePart::makeLink.
+    /*!
+     */
     [[nodiscard]] QString asHREF(const KMime::Content *node) const;
 
     /**
@@ -189,8 +247,12 @@ public:
      */
     [[nodiscard]] static QStringList supportedEncodings(); // TODO(Andras) move to a utility class?
 
+    /*!
+     */
     [[nodiscard]] QString fromAsString(const KMime::Content *node) const;
 
+    /*!
+     */
     [[nodiscard]] KMime::Content *decryptedNodeForContent(KMime::Content *content) const;
 
     /**
@@ -218,6 +280,8 @@ public:
 
     [[nodiscard]] QString extractAttachmentIndex(const QString &path) const;
 Q_SIGNALS:
+    /*!
+     */
     void update(MimeTreeParser::UpdateMode);
 
 private:

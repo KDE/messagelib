@@ -41,36 +41,80 @@ public:
      * Create a StorageModel wrapping the specified folder.
      */
     explicit StorageModel(QAbstractItemModel *model, QItemSelectionModel *selectionModel, QObject *parent = nullptr);
+    /*!
+     */
     ~StorageModel() override;
 
+    /*!
+     */
     [[nodiscard]] Akonadi::Collection::List displayedCollections() const;
 
+    /*!
+     */
     [[nodiscard]] QString id() const override;
+    /*!
+     */
     [[nodiscard]] bool containsOutboundMessages() const override;
 
+    /*!
+     */
     [[nodiscard]] virtual bool isOutBoundFolder(const Akonadi::Collection &c) const;
 
+    /*!
+     */
     [[nodiscard]] int initialUnreadRowCountGuess() const override;
+    /*!
+     */
     [[nodiscard]] bool initializeMessageItem(MessageList::Core::MessageItem *mi, int row, bool bUseReceiver) const override;
+    /*!
+     */
     void fillMessageItemThreadingData(MessageList::Core::MessageItem *mi, int row, ThreadingDataSubset subset) const override;
+    /*!
+     */
     void updateMessageItemData(MessageList::Core::MessageItem *mi, int row) const override;
+    /*!
+     */
     void setMessageItemStatus(MessageList::Core::MessageItem *mi, int row, Akonadi::MessageStatus status) override;
 
+    /*!
+     */
     [[nodiscard]] int columnCount(const QModelIndex &parent = QModelIndex()) const override;
+    /*!
+     */
     [[nodiscard]] QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
+    /*!
+     */
     [[nodiscard]] QModelIndex index(int row, int column, const QModelIndex &parent = QModelIndex()) const override;
+    /*!
+     */
     [[nodiscard]] QModelIndex parent(const QModelIndex &index) const override;
+    /*!
+     */
     [[nodiscard]] int rowCount(const QModelIndex &parent = QModelIndex()) const override;
 
+    /*!
+     */
     [[nodiscard]] QMimeData *mimeData(const QList<MessageList::Core::MessageItem *> &) const override;
+    /*!
+     */
     using MessageList::Core::StorageModel::mimeData;
 
+    /*!
+     */
     [[nodiscard]] Akonadi::Item itemForRow(int row) const;
+    /*!
+     */
     [[nodiscard]] Akonadi::Collection parentCollectionForRow(int row) const;
+    /*!
+     */
     [[nodiscard]] std::shared_ptr<KMime::Message> messageForRow(int row) const;
 
+    /*!
+     */
     [[nodiscard]] Akonadi::Collection collectionForId(Akonadi::Collection::Id colId) const;
 
+    /*!
+     */
     void resetModelStorage();
 
 private:

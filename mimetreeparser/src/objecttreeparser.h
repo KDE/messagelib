@@ -41,6 +41,8 @@ using MimeMessagePartPtr = QSharedPointer<MimeMessagePart>;
 class MIMETREEPARSER_EXPORT ProcessResult
 {
 public:
+    /*!
+     */
     explicit ProcessResult(NodeHelper *nodeHelper,
                            KMMsgSignatureState inlineSignatureState = KMMsgNotSigned,
                            KMMsgEncryptionState inlineEncryptionState = KMMsgNotEncrypted,
@@ -52,15 +54,29 @@ public:
     {
     }
 
+    /*!
+     */
     [[nodiscard]] KMMsgSignatureState inlineSignatureState() const;
+    /*!
+     */
     void setInlineSignatureState(KMMsgSignatureState state);
 
+    /*!
+     */
     [[nodiscard]] KMMsgEncryptionState inlineEncryptionState() const;
+    /*!
+     */
     void setInlineEncryptionState(KMMsgEncryptionState state);
 
+    /*!
+     */
     [[nodiscard]] bool neverDisplayInline() const;
+    /*!
+     */
     void setNeverDisplayInline(bool display);
 
+    /*!
+     */
     void adjustCryptoStatesOfNode(const KMime::Content *node) const;
 
 private:
