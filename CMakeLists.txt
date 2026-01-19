@@ -98,7 +98,7 @@ webengineviewer/*.h
 ecm_check_outbound_license(LICENSES GPL-2.0-only  FILES ${ALL_SOURCE_FILES})
 
 
-set(KTEXTADDONS_MIN_VERSION "1.9.0")
+set(KTEXTADDONS_MIN_VERSION "1.9.1")
 
 find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Gui Test)
 find_package(Qt6 ${QT_REQUIRED_VERSION} CONFIG REQUIRED Widgets Network PrintSupport WebEngineWidgets)
