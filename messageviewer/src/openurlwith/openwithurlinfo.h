@@ -10,9 +10,12 @@
 class QDebug;
 namespace MessageViewer
 {
-/**
- * @brief The OpenWithUrlInfo class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class MessageViewer::OpenWithUrlInfo
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/OpenWithUrlInfo
+ * \brief The OpenWithUrlInfo class
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT OpenWithUrlInfo
 {

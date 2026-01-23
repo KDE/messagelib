@@ -13,7 +13,10 @@
 namespace MessageViewer
 {
 /**
- * @brief The DKIMCheckPolicyJob class
+ * \class MessageViewer::DKIMCheckPolicyJob
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/DKIMCheckPolicyJob
+ * \brief The DKIMCheckPolicyJob class
  * @author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT DKIMCheckPolicyJob : public QObject

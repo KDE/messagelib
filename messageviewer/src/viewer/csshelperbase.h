@@ -20,8 +20,11 @@ class QPaintDevice;
 namespace MessageViewer
 {
 class HeaderStylePlugin;
-/**
- * @brief The CSSHelperBase class
+/*!
+ * \class MessageViewer::CSSHelperBase
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/CSSHelperBase
+ * \brief The CSSHelperBase class
  */
 class MESSAGEVIEWER_EXPORT CSSHelperBase
 {

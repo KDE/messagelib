@@ -13,7 +13,10 @@ class QDebug;
 namespace MessageViewer
 {
 /**
- * @brief The DKIMRule class
+ * \class MessageViewer::DKIMRule
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/DKIMRule
+ * \brief The DKIMRule class
  * @author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT DKIMRule

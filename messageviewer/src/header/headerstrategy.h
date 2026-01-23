@@ -18,7 +18,9 @@ namespace MessageViewer
 // Convenience function
 //
 /**
- * @brief The HeaderStrategy class
+ * \class MessageViewer::HeaderStrategy
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/HeaderStrategy
  */
 class MESSAGEVIEWER_EXPORT HeaderStrategy
 {

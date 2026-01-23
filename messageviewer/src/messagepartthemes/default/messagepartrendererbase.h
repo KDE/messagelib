@@ -20,7 +20,9 @@ namespace MessageViewer
 class CSSHelperBase;
 class HtmlWriter;
 /**
- * @brief The RenderContext class
+ * \class MessageViewer::RenderContext
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/RenderContext
  */
 class MESSAGEVIEWER_EXPORT RenderContext
 {
@@ -56,7 +58,9 @@ protected:
     [[nodiscard]] virtual bool renderWithFactory(const QMetaObject *mo, const MimeTreeParser::MessagePart::Ptr &msgPart, HtmlWriter *writer) = 0;
 };
 /**
- * @brief The MessagePartRendererBase class
+ * \class MessageViewer::MessagePartRendererBase
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/MessagePartRendererBase
  */
 class MESSAGEVIEWER_EXPORT MessagePartRendererBase
 {

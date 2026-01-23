@@ -20,7 +20,9 @@ namespace MessageViewer
 class MessagePartRendererBase;
 class MessagePartRendererFactoryPrivate;
 /**
- * @brief The MessagePartRendererFactory class
+ * \class MessageViewer::MessagePartRendererFactory
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/MessagePartRendererFactory
  */
 class MESSAGEVIEWER_EXPORT MessagePartRendererFactory
 {

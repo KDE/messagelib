@@ -18,9 +18,12 @@ namespace MessageViewer
 {
 class ViewerPrivate;
 class MailWebEngineViewPrivate;
-/**
- * @brief The MailWebEngineView class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class MessageViewer::MailWebEngineView
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/MailWebEngineView
+ * \brief The MailWebEngineView class
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT MailWebEngineView : public WebEngineViewer::WebEngineView
 {

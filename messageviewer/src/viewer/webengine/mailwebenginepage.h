@@ -10,9 +10,12 @@
 
 namespace MessageViewer
 {
-/**
- * @brief The MailWebEnginePage class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class MessageViewer::MailWebEnginePage
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/MailWebEnginePage
+ * \brief The MailWebEnginePage class
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT MailWebEnginePage : public WebEngineViewer::WebEnginePage
 {

@@ -15,9 +15,12 @@ class QWebEnginePage;
 namespace MessageViewer
 {
 class ScamDetectionWebEnginePrivate;
-/**
- * @brief The ScamDetectionWebEngine class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class MessageViewer::ScamDetectionWebEngine
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/ScamDetectionWebEngine
+ * \brief The ScamDetectionWebEngine class
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT ScamDetectionWebEngine : public QObject
 {

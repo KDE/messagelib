@@ -14,8 +14,11 @@ class QTimer;
 
 namespace MessageViewer
 {
-/**
- * @brief The MessageViewerSettings class
+/*!
+ * \class MessageViewer::MessageViewerSettings
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/MessageViewerSettings
+ * \brief The MessageViewerSettings class
  */
 class MESSAGEVIEWER_EXPORT MessageViewerSettings : public MessageViewer::MessageViewerSettingsBase
 {

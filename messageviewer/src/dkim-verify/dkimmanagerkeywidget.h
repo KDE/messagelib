@@ -11,7 +11,10 @@ namespace MessageViewer
 {
 class DKIMManagerKeyTreeView;
 /**
- * @brief The DKIMManagerKeyWidget class
+ * \class MessageViewer::DKIMManagerKeyWidget
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/DKIMManagerKeyWidget
+ * \brief The DKIMManagerKeyWidget class
  * @author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT DKIMManagerKeyWidget : public QWidget

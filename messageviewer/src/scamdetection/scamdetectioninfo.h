@@ -10,9 +10,12 @@
 class QDebug;
 namespace MessageViewer
 {
-/**
- * @brief The ScamDetectionInfo class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class MessageViewer::ScamDetectionInfo
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/ScamDetectionInfo
+ * \brief The ScamDetectionInfo class
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT ScamDetectionInfo
 {

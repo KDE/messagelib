@@ -17,7 +17,9 @@
 namespace MessageViewer
 {
 /**
- * @brief The FileHtmlWriter class
+ * \class MessageViewer::FileHtmlWriter
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/FileHtmlWriter
  */
 class MESSAGEVIEWER_EXPORT FileHtmlWriter : public HtmlWriter
 {

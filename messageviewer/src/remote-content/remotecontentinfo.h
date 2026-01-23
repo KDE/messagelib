@@ -12,7 +12,10 @@ class QDebug;
 namespace MessageViewer
 {
 /**
- * @brief The RemoteContentInfo class
+ * \class MessageViewer::RemoteContentInfo
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/RemoteContentInfo
+ * \brief The RemoteContentInfo class
  * @author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_TESTS_EXPORT RemoteContentInfo

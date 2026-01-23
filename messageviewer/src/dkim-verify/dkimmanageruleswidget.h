@@ -14,7 +14,10 @@ namespace MessageViewer
 {
 class DKIMManageRulesComboBox;
 /**
- * @brief The DKIMManageRulesWidgetItem class
+ * \class MessageViewer::DKIMManageRulesWidgetItem
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/DKIMManageRulesWidgetItem
+ * \brief The DKIMManageRulesWidgetItem class
  * @author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT DKIMManageRulesWidgetItem : public QTreeWidgetItem
@@ -51,7 +54,10 @@ private:
 };
 
 /**
- * @brief The DKIMManageRulesWidget class
+ * \class MessageViewer::DKIMManageRulesWidget
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/DKIMManageRulesWidget
+ * \brief The DKIMManageRulesWidget class
  * @author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT DKIMManageRulesWidget : public QWidget

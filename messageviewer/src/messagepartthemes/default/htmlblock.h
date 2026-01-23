@@ -20,7 +20,9 @@ namespace MessageViewer
 {
 class HtmlWriter;
 /**
- * @brief The HTMLBlock class
+ * \class MessageViewer::HTMLBlock
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/HTMLBlock
  */
 class MESSAGEVIEWER_EXPORT HTMLBlock
 {
@@ -61,7 +63,9 @@ private:
 // a yellow border around the attachment when scrolling to it. When scrolling to it, the border
 // color of the div is changed, see KMReaderWin::scrollToAttachment().
 /**
- * @brief The AttachmentMarkBlock class
+ * \class MessageViewer::AttachmentMarkBlock
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/AttachmentMarkBlock
  */
 class MESSAGEVIEWER_EXPORT AttachmentMarkBlock : public HTMLBlock
 {

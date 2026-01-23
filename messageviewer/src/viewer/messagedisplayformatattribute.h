@@ -13,9 +13,12 @@
 namespace MessageViewer
 {
 class MessageDisplayFormatAttributePrivate;
-/**
- * @brief The MessageDisplayFormatAttribute class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class MessageViewer::MessageDisplayFormatAttribute
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/MessageDisplayFormatAttribute
+ * \brief The MessageDisplayFormatAttribute class
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT MessageDisplayFormatAttribute : public Akonadi::Attribute
 {

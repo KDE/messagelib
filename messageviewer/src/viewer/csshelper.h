@@ -15,8 +15,11 @@
 
 namespace MessageViewer
 {
-/**
- * @brief The CSSHelper class
+/*!
+ * \class MessageViewer::CSSHelper
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/CSSHelper
+ * \brief The CSSHelper class
  */
 class MESSAGEVIEWER_EXPORT CSSHelper : public CSSHelperBase
 {

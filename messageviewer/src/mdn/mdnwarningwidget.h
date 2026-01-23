@@ -11,9 +11,12 @@
 
 namespace MessageViewer
 {
-/**
- * @brief The MDNWarningWidget class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class MessageViewer::MDNWarningWidget
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/MDNWarningWidget
+ * \brief The MDNWarningWidget class
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT MDNWarningWidget : public KMessageWidget
 {

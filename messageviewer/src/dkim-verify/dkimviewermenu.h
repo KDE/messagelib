@@ -13,7 +13,10 @@ class QAction;
 namespace MessageViewer
 {
 /**
- * @brief The DKIMViewerMenu class
+ * \class MessageViewer::DKIMViewerMenu
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/DKIMViewerMenu
+ * \brief The DKIMViewerMenu class
  * @author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT DKIMViewerMenu : public QObject

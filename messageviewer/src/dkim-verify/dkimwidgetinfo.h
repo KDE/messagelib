@@ -14,7 +14,10 @@ class QLabel;
 namespace MessageViewer
 {
 /**
- * @brief The DKIMWidgetInfo class
+ * \class MessageViewer::DKIMWidgetInfo
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/DKIMWidgetInfo
+ * \brief The DKIMWidgetInfo class
  * @author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT DKIMWidgetInfo : public QWidget

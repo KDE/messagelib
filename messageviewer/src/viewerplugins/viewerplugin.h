@@ -15,9 +15,12 @@ namespace MessageViewer
 {
 class ViewerPluginPrivate;
 class ViewerPluginInterface;
-/**
- * @brief The ViewerPlugin class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class MessageViewer::ViewerPlugin
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/ViewerPlugin
+ * \brief The ViewerPlugin class
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT ViewerPlugin : public QObject
 {

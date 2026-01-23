@@ -15,7 +15,10 @@
 namespace MessageViewer
 {
 /**
- * @brief The DKIMManager class
+ * \class MessageViewer::DKIMManager
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/DKIMManager
+ * \brief The DKIMManager class
  * @author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT DKIMManager : public QObject

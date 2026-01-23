@@ -14,7 +14,10 @@ namespace MessageViewer
 {
 class RemoteContentWidget;
 /**
- * @brief The RemoteContentDialog class
+ * \class MessageViewer::RemoteContentDialog
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/RemoteContentDialog
+ * \brief The RemoteContentDialog class
  * @author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_TESTS_EXPORT RemoteContentDialog : public QDialog

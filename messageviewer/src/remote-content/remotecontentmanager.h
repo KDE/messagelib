@@ -13,7 +13,10 @@ namespace MessageViewer
 {
 class RemoteContentInfo;
 /**
- * @brief The RemoteContentManager class
+ * \class MessageViewer::RemoteContentManager
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/RemoteContentManager
+ * \brief The RemoteContentManager class
  * @author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_TESTS_EXPORT RemoteContentManager : public QObject

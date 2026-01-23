@@ -20,7 +20,10 @@
 namespace MessageViewer
 {
 /**
- * @brief The HeaderStyleUtil class
+ * \class MessageViewer::HeaderStyleUtil
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/HeaderStyleUtil
+ * \brief The HeaderStyleUtil class
  * @author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT HeaderStyleUtil

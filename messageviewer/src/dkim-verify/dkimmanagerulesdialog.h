@@ -13,7 +13,10 @@ namespace MessageViewer
 {
 class DKIMManageRulesWidget;
 /**
- * @brief The DKIMManageRulesDialog class
+ * \class MessageViewer::DKIMManageRulesDialog
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/DKIMManageRulesDialog
+ * \brief The DKIMManageRulesDialog class
  * @author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT DKIMManageRulesDialog : public QDialog

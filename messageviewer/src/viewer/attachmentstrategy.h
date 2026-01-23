@@ -21,8 +21,11 @@ class Content;
 
 namespace MessageViewer
 {
-/**
- * @brief The AttachmentStrategy class
+/*!
+ * \class MessageViewer::AttachmentStrategy
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/AttachmentStrategy
+ * \brief The AttachmentStrategy class
  */
 class MESSAGEVIEWER_EXPORT AttachmentStrategy
 {

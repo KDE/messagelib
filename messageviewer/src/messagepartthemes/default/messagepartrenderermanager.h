@@ -25,7 +25,9 @@ class GlobalContext;
 
 using KTextTemplateCallback = std::function<void(KTextTemplate::OutputStream *)>;
 /**
- * @brief The MessagePartRendererManager class
+ * \class MessageViewer::MessagePartRendererManager
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/MessagePartRendererManager
  */
 class MESSAGEVIEWER_EXPORT MessagePartRendererManager : public QObject
 {

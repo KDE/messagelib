@@ -10,6 +10,11 @@
 #include <QList>
 namespace MessageViewer
 {
+/**
+ * \class MessageViewer::DKIMManagerKeyModel
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/DKIMManagerKeyModel
+ */
 class MESSAGEVIEWER_EXPORT DKIMManagerKeyModel : public QAbstractListModel
 {
     Q_OBJECT

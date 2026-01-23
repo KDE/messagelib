@@ -14,7 +14,10 @@ namespace MessageViewer
 class MessageViewerCheckBeforeDeletingPlugin;
 class MessageViewerCheckBeforeDeletingPluginManagerPrivate;
 /**
- * @brief The MessageViewerCheckBeforeDeletingPluginManager class
+ * \class MessageViewer::MessageViewerCheckBeforeDeletingPluginManager
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/MessageViewerCheckBeforeDeletingPluginManager
+ * \brief The MessageViewerCheckBeforeDeletingPluginManager class
  * @author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT MessageViewerCheckBeforeDeletingPluginManager : public QObject

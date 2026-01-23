@@ -13,9 +13,12 @@
 namespace MessageViewer
 {
 class ScamExpandUrlJobPrivate;
-/**
- * @brief The ScamExpandUrlJob class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class MessageViewer::ScamExpandUrlJob
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/ScamExpandUrlJob
+ * \brief The ScamExpandUrlJob class
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT ScamExpandUrlJob : public QObject
 {

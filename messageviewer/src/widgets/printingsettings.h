@@ -12,9 +12,12 @@
 namespace MessageViewer
 {
 class PrintingSettingsPrivate;
-/**
- * @brief The PrintingSettings class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class MessageViewer::PrintingSettings
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/PrintingSettings
+ * \brief The PrintingSettings class
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT PrintingSettings : public QWidget
 {

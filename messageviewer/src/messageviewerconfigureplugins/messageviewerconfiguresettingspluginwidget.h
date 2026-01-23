@@ -12,7 +12,10 @@
 namespace MessageViewer
 {
 /**
- * @brief The MessageViewerConfigureSettingsPluginWidget class
+ * \class MessageViewer::MessageViewerConfigureSettingsPluginWidget
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/MessageViewerConfigureSettingsPluginWidget
+ * \brief The MessageViewerConfigureSettingsPluginWidget class
  * @author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT MessageViewerConfigureSettingsPluginWidget : public QWidget

@@ -12,7 +12,10 @@ class QDebug;
 namespace MessageViewer
 {
 /**
- * @brief The DMARCInfo class
+ * \class MessageViewer::DMARCInfo
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/DMARCInfo
+ * \brief The DMARCInfo class
  * @author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT DMARCInfo

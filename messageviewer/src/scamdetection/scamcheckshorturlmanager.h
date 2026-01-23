@@ -14,9 +14,12 @@ namespace MessageViewer
 {
 class ScamCheckShortUrl;
 class ScamCheckShortUrlManagerPrivate;
-/**
- * @brief The ScamCheckShortUrlManager class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class MessageViewer::ScamCheckShortUrlManager
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/ScamCheckShortUrlManager
+ * \brief The ScamCheckShortUrlManager class
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT ScamCheckShortUrlManager : public QObject
 {

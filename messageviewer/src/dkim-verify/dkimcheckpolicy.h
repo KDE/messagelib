@@ -11,7 +11,10 @@
 namespace MessageViewer
 {
 /**
- * @brief The DKIMCheckPolicy class
+ * \class MessageViewer::DKIMCheckPolicy
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/DKIMCheckPolicy
+ * \brief The DKIMCheckPolicy class
  * @author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT DKIMCheckPolicy

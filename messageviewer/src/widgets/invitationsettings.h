@@ -11,8 +11,11 @@
 namespace MessageViewer
 {
 class InvitationSettingsPrivate;
-/**
- * @brief The InvitationSettings class
+/*!
+ * \class MessageViewer::InvitationSettings
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/InvitationSettings
+ * \brief The InvitationSettings class
  */
 class MESSAGEVIEWER_EXPORT InvitationSettings : public QWidget
 {

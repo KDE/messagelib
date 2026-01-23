@@ -19,8 +19,11 @@ class HtmlWriter;
 
 /** An ObjectTreeSource that does not work on anything */
 class EmptySourcePrivate;
-/**
- * @brief The EmptySource class
+/*!
+ * \class MessageViewer::EmptySource
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/EmptySource
+ * \brief The EmptySource class
  */
 class MESSAGEVIEWER_EXPORT EmptySource : public MimeTreeParser::Interface::ObjectTreeSource
 {

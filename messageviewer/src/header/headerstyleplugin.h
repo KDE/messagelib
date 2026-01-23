@@ -20,7 +20,10 @@ class HeaderStrategy;
 class HeaderStylePluginPrivate;
 class HeaderStyleInterface;
 /**
- * @brief The HeaderStylePlugin class
+ * \class MessageViewer::HeaderStylePlugin
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/HeaderStylePlugin
+ * \brief The HeaderStylePlugin class
  * @author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT HeaderStylePlugin : public QObject

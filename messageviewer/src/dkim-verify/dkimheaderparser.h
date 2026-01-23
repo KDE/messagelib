@@ -13,7 +13,10 @@
 namespace MessageViewer
 {
 /**
- * @brief The DKIMHeaderParser class
+ * \class MessageViewer::DKIMHeaderParser
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/DKIMHeaderParser
+ * \brief The DKIMHeaderParser class
  * @author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT DKIMHeaderParser

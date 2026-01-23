@@ -11,7 +11,10 @@
 namespace MessageViewer
 {
 /**
- * @brief The RemoteContentMenu class
+ * \class MessageViewer::RemoteContentMenu
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/RemoteContentMenu
+ * \brief The RemoteContentMenu class
  * @author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT RemoteContentMenu : public QMenu

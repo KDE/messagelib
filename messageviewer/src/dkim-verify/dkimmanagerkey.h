@@ -15,7 +15,10 @@
 namespace MessageViewer
 {
 /**
- * @brief The KeyInfo struct
+ * \struct MessageViewer::KeyInfo
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/KeyInfo
+ * \brief The KeyInfo struct
  * @author Laurent Montel <montel@kde.org>
  */
 struct MESSAGEVIEWER_EXPORT KeyInfo {
@@ -40,7 +43,10 @@ struct MESSAGEVIEWER_EXPORT KeyInfo {
 };
 
 /**
- * @brief The DKIMManagerKey class
+ * \class MessageViewer::DKIMManagerKey
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/DKIMManagerKey
+ * \brief The DKIMManagerKey class
  * @author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT DKIMManagerKey : public QObject

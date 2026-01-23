@@ -12,7 +12,10 @@ class QDnsLookup;
 namespace MessageViewer
 {
 /**
- * @brief The DKIMDownloadKeyJob class
+ * \class MessageViewer::DKIMDownloadKeyJob
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/DKIMDownloadKeyJob
+ * \brief The DKIMDownloadKeyJob class
  * @author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT DKIMDownloadKeyJob : public QObject

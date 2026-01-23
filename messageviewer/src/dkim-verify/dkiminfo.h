@@ -13,7 +13,10 @@
 namespace MessageViewer
 {
 /**
- * @brief The DKIMInfo class
+ * \class MessageViewer::DKIMInfo
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/DKIMInfo
+ * \brief The DKIMInfo class
  * @author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT DKIMInfo
