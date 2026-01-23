@@ -12,9 +12,13 @@
 namespace MessageComposer
 {
 class AttachmentVcardFromAddressBookJobPrivate;
-/**
- * @brief The AttachmentVcardFromAddressBookJob class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ \class MessageComposer::AttachmentVcardFromAddressBookJob
+ \inmodule MessageComposer
+ \inheaderfile MessageComposer/AttachmentVcardFromAddressBookJob
+ \author Laurent Montel <montel@kde.org>
+
+ The AttachmentVcardFromAddressBookJob class.
  */
 class MESSAGECOMPOSER_EXPORT AttachmentVcardFromAddressBookJob : public MessageCore::AttachmentLoadJob
 {

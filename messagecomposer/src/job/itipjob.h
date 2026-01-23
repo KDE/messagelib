@@ -13,8 +13,12 @@ namespace MessageComposer
 {
 class ItipJobPrivate;
 class ItipPart;
-/**
- * @brief The ItipJob class
+/*!
+ \class MessageComposer::ItipJob
+ \inmodule MessageComposer
+ \inheaderfile MessageComposer/ItipJob
+
+ The ItipJob class.
  */
 class MESSAGECOMPOSER_EXPORT ItipJob : public ContentJobBase
 {

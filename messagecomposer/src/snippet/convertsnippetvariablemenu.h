@@ -12,9 +12,12 @@
 class QMenu;
 namespace MessageComposer
 {
-/**
- * @brief The ConvertSnippetVariableMenu class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class MessageComposer::ConvertSnippetVariableMenu
+ * \inmodule MessageComposer
+ * \inheaderfile MessageComposer/ConvertSnippetVariableMenu
+ * \brief The ConvertSnippetVariableMenu class
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGECOMPOSER_EXPORT ConvertSnippetVariableMenu : public QObject
 {
@@ -22,6 +25,8 @@ class MESSAGECOMPOSER_EXPORT ConvertSnippetVariableMenu : public QObject
 public:
     explicit ConvertSnippetVariableMenu(bool onlyMenuForCustomizeAttachmentFileName, QWidget *parentWidget, QObject *parent = nullptr);
     ~ConvertSnippetVariableMenu() override;
+    /*!
+     */
     [[nodiscard]] QMenu *menu() const;
 
 Q_SIGNALS:

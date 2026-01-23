@@ -12,9 +12,13 @@ class QAction;
 
 namespace MessageComposer
 {
-/**
- * @brief The PluginActionType class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ \class MessageComposer::PluginActionType
+ \inmodule MessageComposer
+ \inheaderfile MessageComposer/PluginActionType
+ \author Laurent Montel <montel@kde.org>
+
+ The PluginActionType class.
  */
 class MESSAGECOMPOSER_EXPORT PluginActionType
 {

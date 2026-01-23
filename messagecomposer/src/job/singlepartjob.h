@@ -25,8 +25,12 @@ namespace MessageComposer
 {
 class SinglepartJobPrivate;
 
-/**
- * @brief The SinglepartJob class
+/*!
+ \class MessageComposer::SinglepartJob
+ \inmodule MessageComposer
+ \inheaderfile MessageComposer/SinglepartJob
+
+ The SinglepartJob class.
  */
 class MESSAGECOMPOSER_EXPORT SinglepartJob : public ContentJobBase
 {

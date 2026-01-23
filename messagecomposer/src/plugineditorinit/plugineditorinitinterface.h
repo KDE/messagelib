@@ -17,9 +17,13 @@ class RichTextComposer;
 namespace MessageComposer
 {
 class PluginEditorInitInterfacePrivate;
-/**
- * @brief The PluginEditorInitInterface class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ \class MessageComposer::PluginEditorInitInterface
+ \inmodule MessageComposer
+ \inheaderfile MessageComposer/PluginEditorInitInterface
+ \author Laurent Montel <montel@kde.org>
+
+ The PluginEditorInitInterface class.
  */
 class MESSAGECOMPOSER_EXPORT PluginEditorInitInterface : public QObject
 {

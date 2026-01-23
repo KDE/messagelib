@@ -13,8 +13,12 @@ namespace MessageComposer
 {
 class MultipartJobPrivate;
 
-/**
- * @brief The MultipartJob class
+/*!
+ \class MessageComposer::MultipartJob
+ \inmodule MessageComposer
+ \inheaderfile MessageComposer/MultipartJob
+
+ The MultipartJob class.
  */
 class MESSAGECOMPOSER_EXPORT MultipartJob : public ContentJobBase
 {

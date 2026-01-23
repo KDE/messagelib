@@ -26,8 +26,11 @@ class KJob;
 namespace MessageComposer
 {
 class AttachmentModel;
-/**
- * @brief The AttachmentControllerBase class
+/*!
+ * \class MessageComposer::AttachmentControllerBase
+ * \inmodule MessageComposer
+ * \inheaderfile MessageComposer/AttachmentControllerBase
+ * \brief The AttachmentControllerBase class
  */
 class MESSAGECOMPOSER_EXPORT AttachmentControllerBase : public QObject
 {

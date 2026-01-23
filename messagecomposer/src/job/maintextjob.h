@@ -13,8 +13,12 @@ namespace MessageComposer
 {
 class MainTextJobPrivate;
 class TextPart;
-/**
- * @brief The MainTextJob class
+/*!
+ \class MessageComposer::MainTextJob
+ \inmodule MessageComposer
+ \inheaderfile MessageComposer/MainTextJob
+
+ The MainTextJob class.
  */
 class MESSAGECOMPOSER_EXPORT MainTextJob : public ContentJobBase
 {

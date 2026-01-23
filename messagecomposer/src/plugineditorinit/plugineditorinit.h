@@ -13,9 +13,13 @@
 namespace MessageComposer
 {
 class PluginEditorInitInterface;
-/**
- * @brief The PluginEditorInit class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ \class MessageComposer::PluginEditorInit
+ \inmodule MessageComposer
+ \inheaderfile MessageComposer/PluginEditorInit
+ \author Laurent Montel <montel@kde.org>
+
+ The PluginEditorInit class.
  */
 class MESSAGECOMPOSER_EXPORT PluginEditorInit : public PluginEditorBase
 {

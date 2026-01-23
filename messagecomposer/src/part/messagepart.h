@@ -14,8 +14,12 @@
 
 namespace MessageComposer
 {
-/**
- * @brief The MessagePart class
+/*!
+ \class MessageComposer::MessagePart
+ \inmodule MessageComposer
+ \inheaderfile MessageComposer/MessagePart
+
+ The MessagePart class.
  */
 class MESSAGECOMPOSER_EXPORT MessagePart : public QObject
 {

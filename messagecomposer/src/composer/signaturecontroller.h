@@ -25,11 +25,15 @@ namespace MessageComposer
 {
 class RichTextComposerNg;
 class SignatureControllerPrivate;
-/**
- * @brief The SignatureController class
- * Controls signature (the footer thing, not the crypto thing) operations
- *  happening on a KMEditor triggered by identity selection or menu actions.
- *  @since 4.5
+/*!
+ * \class MessageComposer::SignatureController
+ * \inmodule MessageComposer
+ * \inheaderfile MessageComposer/SignatureController
+ * \brief Controls signature (the footer thing, not the crypto thing) operations
+ *
+ * Controls signature operations happening on a KMEditor triggered by identity
+ * selection or menu actions.
+ * \since 4.5
  */
 class MESSAGECOMPOSER_EXPORT SignatureController : public QObject
 {
@@ -38,7 +42,11 @@ public:
     explicit SignatureController(QObject *parent = nullptr);
     ~SignatureController() override;
 
+    /*!
+     */
     void setEditor(MessageComposer::RichTextComposerNg *editor);
+    /*!
+     */
     void setIdentityCombo(KIdentityManagementWidgets::IdentityCombo *combo);
 
     /** Temporarily disable identity tracking, useful for initial loading for example. */

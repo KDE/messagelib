@@ -18,8 +18,11 @@
 
 namespace MessageComposer
 {
-/**
- * @brief The AttachmentModel class
+/*!
+ * \class MessageComposer::AttachmentModel
+ * \inmodule MessageComposer
+ * \inheaderfile MessageComposer/AttachmentModel
+ * \brief The AttachmentModel class
  */
 class MESSAGECOMPOSER_EXPORT AttachmentModel : public QAbstractItemModel
 {

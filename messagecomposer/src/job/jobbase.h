@@ -17,10 +17,14 @@ namespace MessageComposer
 class GlobalPart;
 class JobBasePrivate;
 
-/**
-  A dummy abstract class defining some errors pertaining to the Composer.
-  It is meant to be subclassed.
-*/
+/*!
+ * \class MessageComposer::JobBase
+ * \inmodule MessageComposer
+ * \inheaderfile MessageComposer/JobBase
+ * \brief A dummy abstract class defining some errors pertaining to the Composer.
+ *
+ * It is meant to be subclassed.
+ */
 class MESSAGECOMPOSER_EXPORT JobBase : public KCompositeJob
 {
     Q_OBJECT

@@ -18,9 +18,12 @@ class ImageScalingWidget;
 namespace MessageComposer
 {
 class ImageScalingWidgetPrivate;
-/**
- * @brief The ImageScalingWidget class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class MessageComposer::ImageScalingWidget
+ * \inmodule MessageComposer
+ * \inheaderfile MessageComposer/ImageScalingWidget
+ * \brief The ImageScalingWidget class
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGECOMPOSER_EXPORT ImageScalingWidget : public QWidget
 {

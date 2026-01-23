@@ -19,13 +19,18 @@ namespace MessageComposer
 {
 class ProtectedHeadersJobPrivate;
 
-/**
-  Copies headers from skeleton message to content.
-  It is used for Protected Headers for Cryptographic E-mail
-  currently a draft for RFC:
-  https://datatracker.ietf.org/doc/draft-autocrypt-lamps-protected-headers/
-  Used as a subjob of EncryptJob/SignJob/SignEncryptJob
-*/
+/*!
+ \class MessageComposer::ProtectedHeadersJob
+ \inmodule MessageComposer
+ \inheaderfile MessageComposer/ProtectedHeadersJob
+
+ Copies headers from skeleton message to content.
+
+ It is used for Protected Headers for Cryptographic E-mail
+ currently a draft for RFC:
+ https://datatracker.ietf.org/doc/draft-autocrypt-lamps-protected-headers/
+ Used as a subjob of EncryptJob/SignJob/SignEncryptJob
+ */
 class MESSAGECOMPOSER_EXPORT ProtectedHeadersJob : public ContentJobBase
 {
     Q_OBJECT

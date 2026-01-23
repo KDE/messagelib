@@ -20,9 +20,13 @@ class SkeletonMessageJobPrivate;
 class InfoPart;
 class GlobalPart;
 
-/**
-  A message containing only the headers...
-*/
+/*!
+ \class MessageComposer::SkeletonMessageJob
+ \inmodule MessageComposer
+ \inheaderfile MessageComposer/SkeletonMessageJob
+
+ A message containing only the headers.
+ */
 class MESSAGECOMPOSER_EXPORT SkeletonMessageJob : public JobBase
 {
     Q_OBJECT

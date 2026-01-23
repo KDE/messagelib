@@ -22,7 +22,12 @@ namespace MessageComposer
 {
 class AutocryptHeadersJobPrivate;
 
-/**
+/*!
+ \class MessageComposer::AutocryptHeadersJob
+ \inmodule MessageComposer
+ \inheaderfile MessageComposer/AutocryptHeadersJob
+
+ A job to add Autocrypt headers to a message.
  */
 class MESSAGECOMPOSER_EXPORT AutocryptHeadersJob : public ContentJobBase
 {

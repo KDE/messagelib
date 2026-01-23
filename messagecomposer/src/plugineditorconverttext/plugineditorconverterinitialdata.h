@@ -10,9 +10,12 @@
 #include <KMime/Message>
 namespace MessageComposer
 {
-/**
- * @brief The PluginEditorConverterInitialData class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class MessageComposer::PluginEditorConverterInitialData
+ * \inmodule MessageComposer
+ * \inheaderfile MessageComposer/PluginEditorConverterInitialData
+ * \brief The PluginEditorConverterInitialData class
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGECOMPOSER_EXPORT PluginEditorConverterInitialData
 {

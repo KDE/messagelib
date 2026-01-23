@@ -12,9 +12,13 @@
 namespace MessageComposer
 {
 class PluginEditorPrivate;
-/**
- * @brief The PluginEditor class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ \class MessageComposer::PluginEditor
+ \inmodule MessageComposer
+ \inheaderfile MessageComposer/PluginEditor
+ \author Laurent Montel <montel@kde.org>
+
+ The PluginEditor class.
  */
 class MESSAGECOMPOSER_EXPORT PluginEditor : public PimCommon::AbstractGenericPlugin
 {

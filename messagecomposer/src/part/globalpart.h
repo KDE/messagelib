@@ -13,8 +13,12 @@
 
 namespace MessageComposer
 {
-/**
- * @brief The GlobalPart class
+/*!
+ \class MessageComposer::GlobalPart
+ \inmodule MessageComposer
+ \inheaderfile MessageComposer/GlobalPart
+
+ The GlobalPart class.
  */
 class MESSAGECOMPOSER_EXPORT GlobalPart : public MessageComposer::MessagePart
 {

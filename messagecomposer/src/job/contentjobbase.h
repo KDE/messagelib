@@ -19,8 +19,11 @@ class Content;
 namespace MessageComposer
 {
 class ContentJobBasePrivate;
-/**
- * @brief The ContentJobBase class
+/*!
+ * \class MessageComposer::ContentJobBase
+ * \inmodule MessageComposer
+ * \inheaderfile MessageComposer/ContentJobBase
+ * \brief The ContentJobBase class
  */
 class MESSAGECOMPOSER_EXPORT ContentJobBase : public JobBase
 {

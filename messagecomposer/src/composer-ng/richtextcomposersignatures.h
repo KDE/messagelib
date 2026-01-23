@@ -17,9 +17,12 @@ class Signature;
 namespace MessageComposer
 {
 class RichTextComposerNg;
-/**
- * @brief The RichTextComposerSignatures class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class MessageComposer::RichTextComposerSignatures
+ * \inmodule MessageComposer
+ * \inheaderfile MessageComposer/RichTextComposerSignatures
+ * \brief The RichTextComposerSignatures class
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGECOMPOSER_EXPORT RichTextComposerSignatures : public QObject
 {
@@ -28,8 +31,12 @@ public:
     explicit RichTextComposerSignatures(MessageComposer::RichTextComposerNg *composer, QObject *parent = nullptr);
     ~RichTextComposerSignatures() override;
 
+    /*!
+     */
     void cleanWhitespace(const KIdentityManagementCore::Signature &sig);
 
+    /*!
+     */
     [[nodiscard]] bool replaceSignature(const KIdentityManagementCore::Signature &oldSig, const KIdentityManagementCore::Signature &newSig);
 
 private:

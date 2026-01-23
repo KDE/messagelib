@@ -15,8 +15,11 @@ class QTimer;
 
 namespace MessageComposer
 {
-/**
- * @brief The MessageComposerSettings class
+/*!
+ * \class MessageComposer::MessageComposerSettings
+ * \inmodule MessageComposer
+ * \inheaderfile MessageComposer/MessageComposerSettings
+ * \brief The MessageComposerSettings class
  */
 class MESSAGECOMPOSER_EXPORT MessageComposerSettings : public MessageComposer::MessageComposerSettingsBase
 {

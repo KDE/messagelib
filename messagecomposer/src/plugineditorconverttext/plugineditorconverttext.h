@@ -11,9 +11,13 @@
 namespace MessageComposer
 {
 class PluginEditorConvertTextInterface;
-/**
- * @brief The PluginEditorConvertText class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ \class MessageComposer::PluginEditorConvertText
+ \inmodule MessageComposer
+ \inheaderfile MessageComposer/PluginEditorConvertText
+ \author Laurent Montel <montel@kde.org>
+
+ The PluginEditorConvertText class.
  */
 class MESSAGECOMPOSER_EXPORT PluginEditorConvertText : public PluginEditorBase
 {

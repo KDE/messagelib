@@ -18,8 +18,11 @@ class KJob;
 namespace MessageComposer
 {
 class AkonadiSenderPrivate;
-/**
- * @brief The AkonadiSender class
+/*!
+ * \class MessageComposer::AkonadiSender
+ * \inmodule MessageComposer
+ * \inheaderfile MessageComposer/AkonadiSender
+ * \brief The AkonadiSender class
  */
 class MESSAGECOMPOSER_EXPORT AkonadiSender : public QObject, public MessageSender
 {

@@ -13,9 +13,13 @@ namespace MessageComposer
 {
 class ComposerViewBase;
 class ComposerViewInterface;
-/**
- * @brief The PluginComposerInterface class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ \class MessageComposer::PluginComposerInterface
+ \inmodule MessageComposer
+ \inheaderfile MessageComposer/PluginComposerInterface
+ \author Laurent Montel <montel@kde.org>
+
+ The PluginComposerInterface class.
  */
 class MESSAGECOMPOSER_EXPORT PluginComposerInterface
 {

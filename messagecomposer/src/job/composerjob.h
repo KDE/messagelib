@@ -28,8 +28,12 @@ class InfoPart;
 class TextPart;
 class ItipPart;
 
-/**
- * @brief The Composer class
+/*!
+ \class MessageComposer::ComposerJob
+ \inmodule MessageComposer
+ \inheaderfile MessageComposer/ComposerJob
+
+ The Composer job.
  */
 class MESSAGECOMPOSER_EXPORT ComposerJob : public JobBase
 {

@@ -18,11 +18,15 @@
 
 namespace MessageComposer
 {
-/**
- * @short A job to expand aliases to email addresses.
- *
- * Expands aliases (distribution lists and nick names) and appends a
- * domain part to all email addresses which are missing the domain part.
+/*!
+ \class MessageComposer::AliasesExpandJob
+ \inmodule MessageComposer
+ \inheaderfile MessageComposer/AliasesExpandJob
+
+ A job to expand aliases to email addresses.
+
+ Expands aliases (distribution lists and nick names) and appends a
+ domain part to all email addresses which are missing the domain part.
  */
 class MESSAGECOMPOSER_EXPORT AliasesExpandJob : public KJob
 {

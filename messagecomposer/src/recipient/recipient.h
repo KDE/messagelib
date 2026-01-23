@@ -21,8 +21,11 @@ namespace MessageComposer
 {
 /** Represents a mail recipient. */
 class RecipientPrivate;
-/**
- * @brief The Recipient class
+/*!
+ * \class MessageComposer::Recipient
+ * \inmodule MessageComposer
+ * \inheaderfile MessageComposer/Recipient
+ * \brief The Recipient class
  */
 class MESSAGECOMPOSER_EXPORT Recipient : public KPIM::MultiplyingLineData
 {

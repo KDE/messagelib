@@ -30,8 +30,11 @@ Q_SIGNALS:
 protected:
     void keyPressEvent(QKeyEvent *ev) override;
 };
-/**
- * @brief The RecipientLineEdit class
+/*!
+ * \class MessageComposer::RecipientLineEdit
+ * \inmodule MessageComposer
+ * \inheaderfile MessageComposer/RecipientLine
+ * \brief The RecipientLineEdit class
  */
 class MESSAGECOMPOSER_EXPORT RecipientLineEdit : public MessageComposer::ComposerLineEdit
 {
@@ -58,8 +61,11 @@ protected:
     void keyPressEvent(QKeyEvent *ev) override;
 };
 
-/**
- * @brief The RecipientLineNG class
+/*!
+ * \class MessageComposer::RecipientLineNG
+ * \inmodule MessageComposer
+ * \inheaderfile MessageComposer/RecipientLine
+ * \brief The RecipientLineNG class
  */
 class MESSAGECOMPOSER_EXPORT RecipientLineNG : public KPIM::MultiplyingLine
 {

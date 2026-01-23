@@ -11,9 +11,12 @@
 
 namespace MessageComposer
 {
-/**
- * @brief The ComposerAttachmentInterface class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class MessageComposer::ComposerAttachmentInterface
+ * \inmodule MessageComposer
+ * \inheaderfile MessageComposer/ComposerAttachmentInterface
+ * \brief The ComposerAttachmentInterface class
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGECOMPOSER_EXPORT ComposerAttachmentInterface
 {

@@ -25,8 +25,11 @@ class Mailbox;
 }
 namespace MessageComposer
 {
-/**
- * @brief The RecipientLineFactory class
+/*!
+ * \class MessageComposer::RecipientLineFactory
+ * \inmodule MessageComposer
+ * \inheaderfile MessageComposer/RecipientsEditor
+ * \brief The RecipientLineFactory class
  */
 class MESSAGECOMPOSER_EXPORT RecipientLineFactory : public KPIM::MultiplyingLineFactory
 {
@@ -39,8 +42,11 @@ public:
 
 class RecipientsPicker;
 class RecipientsEditorPrivate;
-/**
- * @brief The RecipientsEditor class
+/*!
+ * \class MessageComposer::RecipientsEditor
+ * \inmodule MessageComposer
+ * \inheaderfile MessageComposer/RecipientsEditor
+ * \brief The RecipientsEditor class
  */
 class MESSAGECOMPOSER_EXPORT RecipientsEditor : public KPIM::MultiplyingLineEditor
 {
@@ -50,13 +56,25 @@ public:
     explicit RecipientsEditor(RecipientLineFactory *lineFactory, QWidget *parent = nullptr);
     ~RecipientsEditor() override;
 
+    /*!
+     */
     [[nodiscard]] Recipient::List recipients() const;
+    /*!
+     */
     [[nodiscard]] QSharedPointer<Recipient> activeRecipient() const;
 
+    /*!
+     */
     [[nodiscard]] MessageComposer::RecipientsPicker *picker() const;
 
+    /*!
+     */
     bool setRecipientString(const QList<KMime::Types::Mailbox> &mailboxes, Recipient::Type);
+    /*!
+     */
     [[nodiscard]] QString recipientString(Recipient::Type) const;
+    /*!
+     */
     [[nodiscard]] QStringList recipientStringList(Recipient::Type) const;
 
     /** Adds a recipient (or multiple recipients) to one line of the editor.
@@ -77,7 +95,11 @@ public:
     void setRecentAddressConfig(KConfig *config);
 
 public:
+    /*!
+     */
     void selectRecipients();
+    /*!
+     */
     void saveDistributionList();
 
 protected Q_SLOTS:

@@ -15,8 +15,11 @@ namespace MessageComposer
 {
 class AttachmentJobPrivate;
 
-/**
- * @brief The AttachmentJob class
+/*!
+ * \class MessageComposer::AttachmentJob
+ * \inmodule MessageComposer
+ * \inheaderfile MessageComposer/AttachmentJob
+ * \brief The AttachmentJob class
  */
 class MESSAGECOMPOSER_EXPORT AttachmentJob : public ContentJobBase
 {

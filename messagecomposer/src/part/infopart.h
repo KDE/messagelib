@@ -15,8 +15,12 @@
 #include <memory>
 namespace MessageComposer
 {
-/**
- * @brief The InfoPart class contains the message header.
+/*!
+ \class MessageComposer::InfoPart
+ \inmodule MessageComposer
+ \inheaderfile MessageComposer/InfoPart
+
+ The InfoPart class contains the message header.
  */
 class MESSAGECOMPOSER_EXPORT InfoPart : public MessageComposer::MessagePart
 {

@@ -26,10 +26,15 @@ namespace MessageComposer
 {
 class SignEncryptJobPrivate;
 
-/**
-  Signs and encrypt the contents of a message.
-  Used when doing inline pgp sign+encrypt
-*/
+/*!
+ \class MessageComposer::SignEncryptJob
+ \inmodule MessageComposer
+ \inheaderfile MessageComposer/SignEncryptJob
+
+ Signs and encrypt the contents of a message.
+
+ Used when doing inline pgp sign+encrypt
+ */
 class MESSAGECOMPOSER_EXPORT SignEncryptJob : public ContentJobBase, public MessageComposer::AbstractEncryptJob
 {
     Q_OBJECT

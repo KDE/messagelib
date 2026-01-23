@@ -17,9 +17,13 @@ class RichTextComposer;
 namespace MessageComposer
 {
 class PluginEditorGrammarCustomToolsViewInterfacePrivate;
-/**
- * @brief The PluginGrammarAction class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ \class MessageComposer::PluginGrammarAction
+ \inmodule MessageComposer
+ \inheaderfile MessageComposer/PluginEditorGrammarCustomToolsViewInterface
+ \author Laurent Montel <montel@kde.org>
+
+ The PluginGrammarAction class.
  */
 class MESSAGECOMPOSER_EXPORT PluginGrammarAction
 {
@@ -79,9 +83,13 @@ private:
     int mBlockId = -1;
 };
 
-/**
- * @brief The PluginEditorGrammarCustomToolsViewInterface class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ \class MessageComposer::PluginEditorGrammarCustomToolsViewInterface
+ \inmodule MessageComposer
+ \inheaderfile MessageComposer/PluginEditorGrammarCustomToolsViewInterface
+ \author Laurent Montel <montel@kde.org>
+
+ The PluginEditorGrammarCustomToolsViewInterface class.
  */
 class MESSAGECOMPOSER_EXPORT PluginEditorGrammarCustomToolsViewInterface : public PimCommon::CustomToolsViewInterface
 {

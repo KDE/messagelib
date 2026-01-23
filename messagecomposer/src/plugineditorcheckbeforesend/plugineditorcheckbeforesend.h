@@ -12,9 +12,13 @@
 namespace MessageComposer
 {
 class PluginEditorCheckBeforeSendInterface;
-/**
- * @brief The PluginEditorCheckBeforeSend class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ \class MessageComposer::PluginEditorCheckBeforeSend
+ \inmodule MessageComposer
+ \inheaderfile MessageComposer/PluginEditorCheckBeforeSend
+ \author Laurent Montel <montel@kde.org>
+
+ The PluginEditorCheckBeforeSend class.
  */
 class MESSAGECOMPOSER_EXPORT PluginEditorCheckBeforeSend : public PluginEditorBase
 {

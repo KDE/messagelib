@@ -68,8 +68,11 @@ class AttachmentModel;
 class SignatureController;
 class SendLaterInfo;
 class KeyResolver;
-/**
- * @brief The ComposerViewBase class
+/*!
+ * \class MessageComposer::ComposerViewBase
+ * \inmodule MessageComposer
+ * \inheaderfile MessageComposer/ComposerViewBase
+ * \brief The ComposerViewBase class
  */
 class MESSAGECOMPOSER_EXPORT ComposerViewBase : public QObject
 {

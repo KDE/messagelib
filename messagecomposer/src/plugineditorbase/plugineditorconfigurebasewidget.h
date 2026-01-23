@@ -11,9 +11,13 @@
 
 namespace MessageComposer
 {
-/**
- * @brief The PluginEditorConfigureBaseWidget class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ \class MessageComposer::PluginEditorConfigureBaseWidget
+ \inmodule MessageComposer
+ \inheaderfile MessageComposer/PluginEditorConfigureBaseWidget
+ \author Laurent Montel <montel@kde.org>
+
+ The PluginEditorConfigureBaseWidget class.
  */
 class MESSAGECOMPOSER_EXPORT PluginEditorConfigureBaseWidget : public QWidget
 {

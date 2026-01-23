@@ -13,8 +13,12 @@
 namespace MessageComposer
 {
 // TODO I have no idea how to test this.  Have a fake keyring???
-/**
- * @brief The AttachmentFromPublicKeyJob class
+/*!
+ \class MessageComposer::AttachmentFromPublicKeyJob
+ \inmodule MessageComposer
+ \inheaderfile MessageComposer/AttachmentFromPublicKeyJob
+
+ The AttachmentFromPublicKeyJob class.
  */
 class MESSAGECOMPOSER_EXPORT AttachmentFromPublicKeyJob : public MessageCore::AttachmentLoadJob
 {

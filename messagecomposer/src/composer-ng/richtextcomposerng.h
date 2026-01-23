@@ -21,9 +21,12 @@ namespace MessageComposer
 class TextPart;
 class RichTextComposerSignatures;
 class RichTextComposerNgPrivate;
-/**
- * @brief The RichTextComposerNg class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class MessageComposer::RichTextComposerNg
+ * \inmodule MessageComposer
+ * \inheaderfile MessageComposer/RichTextComposerNg
+ * \brief The RichTextComposerNg class
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGECOMPOSER_EXPORT RichTextComposerNg : public KPIMTextEdit::RichTextComposer
 {
@@ -31,17 +34,31 @@ class MESSAGECOMPOSER_EXPORT RichTextComposerNg : public KPIMTextEdit::RichTextC
 public:
     explicit RichTextComposerNg(QWidget *parent = nullptr);
     ~RichTextComposerNg() override;
+    /*!
+     */
     [[nodiscard]] TextAutoCorrectionCore::AutoCorrection *autocorrection() const;
+    /*!
+     */
     void setAutocorrection(TextAutoCorrectionCore::AutoCorrection *autocorrect);
 
+    /*!
+     */
     void setAutocorrectionLanguage(const QString &lang);
 
+    /*!
+     */
     void fillComposerTextPart(MessageComposer::TextPart *textPart);
+    /*!
+     */
     [[nodiscard]] MessageComposer::RichTextComposerSignatures *composerSignature() const;
 
+    /*!
+     */
     void insertSignature(const KIdentityManagementCore::Signature &signature,
                          KIdentityManagementCore::Signature::Placement placement,
                          KIdentityManagementCore::Signature::AddedText addedText);
+    /*!
+     */
     [[nodiscard]] QString toCleanHtml() const;
 
     void forceAutoCorrection(bool selectedText = false) override;

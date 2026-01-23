@@ -14,9 +14,13 @@ namespace MessageComposer
 {
 class PluginEditorCheckBeforeSendInterfacePrivate;
 class PluginEditorCheckBeforeSendParams;
-/**
- * @brief The PluginEditorCheckBeforeSendInterface class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ \class MessageComposer::PluginEditorCheckBeforeSendInterface
+ \inmodule MessageComposer
+ \inheaderfile MessageComposer/PluginEditorCheckBeforeSendInterface
+ \author Laurent Montel <montel@kde.org>
+
+ The PluginEditorCheckBeforeSendInterface class.
  */
 class MESSAGECOMPOSER_EXPORT PluginEditorCheckBeforeSendInterface : public QObject
 {

@@ -13,8 +13,12 @@
 #include <QStringList>
 namespace MessageComposer
 {
-/**
- * @short A job to expand a distribution list to its member email addresses.
+/*!
+ \class MessageComposer::DistributionListExpandJob
+ \inmodule MessageComposer
+ \inheaderfile MessageComposer/DistributionListExpandJob
+
+ A job to expand a distribution list to its member email addresses.
  */
 class DistributionListExpandJob : public KJob
 {

@@ -12,9 +12,13 @@
 namespace MessageComposer
 {
 class PluginEditorBasePrivate;
-/**
- * @brief The PluginEditorBase class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ \class MessageComposer::PluginEditorBase
+ \inmodule MessageComposer
+ \inheaderfile MessageComposer/PluginEditorBase
+ \author Laurent Montel <montel@kde.org>
+
+ The PluginEditorBase class.
  */
 class MESSAGECOMPOSER_EXPORT PluginEditorBase : public QObject
 {

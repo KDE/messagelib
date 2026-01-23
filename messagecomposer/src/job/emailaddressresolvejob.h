@@ -20,8 +20,12 @@ namespace MessageComposer
 {
 
 class EmailAddressResolveJobPrivate;
-/**
- * @short A job to resolve nicknames, distribution lists and email addresses for queued emails.
+/*!
+ \class MessageComposer::EmailAddressResolveJob
+ \inmodule MessageComposer
+ \inheaderfile MessageComposer/EmailAddressResolveJob
+
+ A job to resolve nicknames, distribution lists and email addresses for queued emails.
  */
 class MESSAGECOMPOSER_EXPORT EmailAddressResolveJob : public KJob
 {

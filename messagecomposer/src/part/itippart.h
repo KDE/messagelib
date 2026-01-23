@@ -14,8 +14,11 @@
 
 namespace MessageComposer
 {
-/**
- * @brief The ItipPart class
+/*!
+ * \class MessageComposer::ItipPart
+ * \inmodule MessageComposer
+ * \inheaderfile MessageComposer/ItipPart
+ * \brief The ItipPart class
  */
 class MESSAGECOMPOSER_EXPORT ItipPart : public MessagePart
 {

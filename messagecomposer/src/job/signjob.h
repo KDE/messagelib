@@ -24,10 +24,15 @@ namespace MessageComposer
 {
 class SignJobPrivate;
 
-/**
-  Signs the contents of a message.
-  Used as a subjob of CryptoMessage
-*/
+/*!
+ \class MessageComposer::SignJob
+ \inmodule MessageComposer
+ \inheaderfile MessageComposer/SignJob
+
+ Signs the contents of a message.
+
+ Used as a subjob of CryptoMessage
+ */
 class MESSAGECOMPOSER_EXPORT SignJob : public ContentJobBase
 {
     Q_OBJECT

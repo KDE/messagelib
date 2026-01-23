@@ -13,7 +13,12 @@
 
 namespace MessageComposer
 {
-/** Send later information. */
+/*!
+ * \class MessageComposer::SendLaterInfo
+ * \inmodule MessageComposer
+ * \inheaderfile MessageComposer/SendLaterInfo
+ * \brief Send later information.
+ */
 class MESSAGECOMPOSER_EXPORT SendLaterInfo
 {
 public:
@@ -26,27 +31,57 @@ public:
         Years,
     };
 
+    /*!
+     */
     [[nodiscard]] bool isValid() const;
 
+    /*!
+     */
     void setItemId(Akonadi::Item::Id id);
+    /*!
+     */
     [[nodiscard]] Akonadi::Item::Id itemId() const;
 
+    /*!
+     */
     void setRecurrenceUnit(RecurrenceUnit unit);
+    /*!
+     */
     [[nodiscard]] RecurrenceUnit recurrenceUnit() const;
 
+    /*!
+     */
     void setRecurrenceEachValue(int value);
+    /*!
+     */
     [[nodiscard]] int recurrenceEachValue() const;
 
+    /*!
+     */
     [[nodiscard]] bool isRecurrence() const;
+    /*!
+     */
     void setRecurrence(bool b);
 
+    /*!
+     */
     void setDateTime(const QDateTime &time);
+    /*!
+     */
     [[nodiscard]] QDateTime dateTime() const;
 
+    /*!
+     */
     void setLastDateTimeSend(const QDateTime &date);
+    /*!
+     */
     [[nodiscard]] QDateTime lastDateTimeSend() const;
 
+    /*!
+     */
     void setSubject(const QString &subject);
+    /*!
+     */
     [[nodiscard]] QString subject() const;
 
     void setTo(const QString &to);

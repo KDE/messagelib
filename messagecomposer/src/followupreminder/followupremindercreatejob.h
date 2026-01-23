@@ -19,9 +19,12 @@
 namespace MessageComposer
 {
 class FollowupReminderCreateJobPrivate;
-/**
- * @brief The FollowupReminderCreateJob class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class MessageComposer::FollowupReminderCreateJob
+ * \inmodule MessageComposer
+ * \inheaderfile MessageComposer/FollowupReminderCreateJob
+ * \brief The FollowupReminderCreateJob class
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGECOMPOSER_EXPORT FollowupReminderCreateJob : public KJob
 {

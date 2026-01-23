@@ -13,9 +13,12 @@
 namespace MessageComposer
 {
 class ImageScalingPrivate;
-/**
- * @brief The ImageScaling class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class MessageComposer::ImageScaling
+ * \inmodule MessageComposer
+ * \inheaderfile MessageComposer/ImageScaling
+ * \brief The ImageScaling class
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGECOMPOSER_EXPORT ImageScaling
 {

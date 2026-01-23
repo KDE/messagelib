@@ -10,9 +10,12 @@
 #include <QLabel>
 namespace MessageComposer
 {
-/**
- * @brief The StatusBarLabelToggledState class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class MessageComposer::StatusBarLabelToggledState
+ * \inmodule MessageComposer
+ * \inheaderfile MessageComposer/StatusBarLabelToggledState
+ * \brief The StatusBarLabelToggledState class
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGECOMPOSER_EXPORT StatusBarLabelToggledState : public QLabel
 {
@@ -21,10 +24,16 @@ public:
     explicit StatusBarLabelToggledState(QWidget *parent = nullptr);
     ~StatusBarLabelToggledState() override;
 
+    /*!
+     */
     void setToggleMode(bool state);
 
+    /*!
+     */
     [[nodiscard]] bool toggleMode() const;
 
+    /*!
+     */
     void setStateString(const QString &toggled, const QString &untoggled);
 Q_SIGNALS:
     void toggleModeChanged(bool state);

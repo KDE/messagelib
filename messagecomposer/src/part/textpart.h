@@ -14,8 +14,12 @@
 
 namespace MessageComposer
 {
-/**
- * @brief The TextPart class
+/*!
+ \class MessageComposer::TextPart
+ \inmodule MessageComposer
+ \inheaderfile MessageComposer/TextPart
+
+ The TextPart class.
  */
 class MESSAGECOMPOSER_EXPORT TextPart : public MessagePart
 {

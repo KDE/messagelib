@@ -13,6 +13,12 @@
 
 namespace MessageComposer
 {
+/*!
+ * \class MessageComposer::SendLaterCreateJob
+ * \inmodule MessageComposer
+ * \inheaderfile MessageComposer/SendLaterCreateJob
+ * \brief Create a send later job
+ */
 class MESSAGECOMPOSER_EXPORT SendLaterCreateJob : public SendLaterJob
 {
     Q_OBJECT

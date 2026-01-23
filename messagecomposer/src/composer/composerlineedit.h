@@ -13,8 +13,11 @@
 #include <PimCommonAkonadi/AddresseeLineEdit>
 namespace MessageComposer
 {
-/**
- * @brief The ComposerLineEdit class
+/*!
+ * \class MessageComposer::ComposerLineEdit
+ * \inmodule MessageComposer
+ * \inheaderfile MessageComposer/ComposerLineEdit
+ * \brief The ComposerLineEdit class
  */
 class MESSAGECOMPOSER_EXPORT ComposerLineEdit : public PimCommon::AddresseeLineEdit
 {

@@ -13,6 +13,12 @@
 
 namespace MessageComposer
 {
+/*!
+ * \class MessageComposer::SendLaterRemoveJob
+ * \inmodule MessageComposer
+ * \inheaderfile MessageComposer/SendLaterRemoveJob
+ * \brief Remove a send later job
+ */
 class MESSAGECOMPOSER_EXPORT SendLaterRemoveJob : public SendLaterJob
 {
     Q_OBJECT

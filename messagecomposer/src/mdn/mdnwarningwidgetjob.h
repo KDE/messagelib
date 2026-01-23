@@ -13,9 +13,12 @@
 #include <QObject>
 namespace MessageComposer
 {
-/**
- * @brief The MDNWarningWidget class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class MessageComposer::MDNWarningWidgetJob
+ * \inmodule MessageComposer
+ * \inheaderfile MessageComposer/MDNWarningWidgetJob
+ * \brief The MDNWarningWidget class
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGECOMPOSER_EXPORT MDNWarningWidgetJob : public QObject
 {
@@ -24,11 +27,19 @@ public:
     explicit MDNWarningWidgetJob(QObject *parent = nullptr);
     ~MDNWarningWidgetJob() override;
 
+    /*!
+     */
     [[nodiscard]] bool start();
 
+    /*!
+     */
     [[nodiscard]] const Akonadi::Item &item() const;
+    /*!
+     */
     void setItem(const Akonadi::Item &newItem);
 
+    /*!
+     */
     [[nodiscard]] bool canStart() const;
 
 Q_SIGNALS:
