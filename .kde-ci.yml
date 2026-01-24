@@ -34,3 +34,4 @@ Options:
  json-validate-ignore: ['webengineviewer/src/checkphishingurl/autotests/data/empty2.json']
  require-passing-tests-on: ['Linux']
  use-ccache: True
+ enable-lsan: True
