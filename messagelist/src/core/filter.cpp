@@ -382,6 +382,7 @@ void Filter::setSearchString(const SearchLineCommand &command)
 
     QList<Akonadi::MessageStatus> lstStatus;
     Akonadi::Search::PIM::EmailQuery query;
+    mSearchList.clear();
 
     const QList<SearchLineCommand::SearchLineInfo> infos = command.searchLineInfo();
     for (const auto &info : infos) {
@@ -392,6 +393,7 @@ void Filter::setSearchString(const SearchLineCommand &command)
             bool needToSplitString = false;
             for (const QString &text : searchListTmp) {
                 if (text.size() >= 3) {
+                    mSearchList.push_back(text);
                     if (!newStr.isEmpty()) {
                         newStr += u' ';
                     }
@@ -407,6 +409,7 @@ void Filter::setSearchString(const SearchLineCommand &command)
         }
         case SearchLineCommand::Subject: {
             mSearchString = info.argument;
+            mSearchList = {info.argument};
             query.subjectMatches(mSearchString);
             break;
         }
@@ -529,21 +532,25 @@ void Filter::setSearchString(const SearchLineCommand &command)
         }
         case SearchLineCommand::To: {
             mSearchString = info.argument;
+            mSearchList = {info.argument};
             query.addTo(info.argument);
             break;
         }
         case SearchLineCommand::Bcc: {
             mSearchString = info.argument;
+            mSearchList = {info.argument};
             query.addBcc(info.argument);
             break;
         }
         case SearchLineCommand::From: {
             mSearchString = info.argument;
+            mSearchList = {info.argument};
             query.addFrom(info.argument);
             break;
         }
         case SearchLineCommand::Cc: {
             mSearchString = info.argument;
+            mSearchList = {info.argument};
             query.addCc(info.argument);
             break;
         }
