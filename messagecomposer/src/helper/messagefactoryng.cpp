@@ -629,7 +629,7 @@ std::shared_ptr<KMime::Message> MessageFactoryNG::createMDN(KMime::MDN::ActionMo
     const QString description = replaceHeadersInString(mOrigMsg, KMime::MDN::descriptionFor(d, m));
 
     // text/plain part:
-    auto firstMsgPart = std::make_unique<KMime::Content>(mOrigMsg.get());
+    auto firstMsgPart = std::make_unique<KMime::Content>();
     auto firstMsgPartContentType = firstMsgPart->contentType(); // create it
     firstMsgPartContentType->setMimeType("text/plain");
     firstMsgPartContentType->setCharset("utf-8");
@@ -638,7 +638,7 @@ std::shared_ptr<KMime::Message> MessageFactoryNG::createMDN(KMime::MDN::ActionMo
     receipt->appendContent(std::move(firstMsgPart));
 
     // message/disposition-notification part:
-    auto secondMsgPart = std::make_unique<KMime::Content>(mOrigMsg.get());
+    auto secondMsgPart = std::make_unique<KMime::Content>();
     secondMsgPart->contentType()->setMimeType("message/disposition-notification");
 
     secondMsgPart->contentTransferEncoding()->setEncoding(KMime::Headers::CE7Bit);
@@ -661,7 +661,7 @@ std::shared_ptr<KMime::Message> MessageFactoryNG::createMDN(KMime::MDN::ActionMo
     }
     /* 0=> Nothing, 1=>Full Message, 2=>HeadersOnly*/
 
-    auto thirdMsgPart = std::make_unique<KMime::Content>(mOrigMsg.get());
+    auto thirdMsgPart = std::make_unique<KMime::Content>();
     switch (mdnQuoteOriginal) {
     case 1:
         thirdMsgPart->contentType()->setMimeType("message/rfc822");

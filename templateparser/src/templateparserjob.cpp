@@ -1128,7 +1128,7 @@ void TemplateParserJob::addProcessedBodyToMessage(const QString &plainBody, cons
 std::unique_ptr<KMime::Content> TemplateParserJob::createMultipartMixed(const QList<KMime::Content *> &attachments,
                                                                         std::unique_ptr<KMime::Content> &&textPart) const
 {
-    auto mixedPart = std::make_unique<KMime::Content>(d->mMsg.get());
+    auto mixedPart = std::make_unique<KMime::Content>();
     const QByteArray boundary = KMime::multiPartBoundary();
     auto contentType = mixedPart->contentType();
     contentType->setMimeType("multipart/mixed");
@@ -1155,7 +1155,7 @@ std::unique_ptr<KMime::Content> TemplateParserJob::createMultipartMixed(const QL
 std::unique_ptr<KMime::Content> TemplateParserJob::createMultipartRelated(const MessageCore::ImageCollector &ic,
                                                                           std::unique_ptr<KMime::Content> &&mainTextPart) const
 {
-    auto relatedPart = std::make_unique<KMime::Content>(d->mMsg.get());
+    auto relatedPart = std::make_unique<KMime::Content>();
     const QByteArray boundary = KMime::multiPartBoundary();
     auto contentType = relatedPart->contentType();
     contentType->setMimeType("multipart/related");
@@ -1171,7 +1171,7 @@ std::unique_ptr<KMime::Content> TemplateParserJob::createMultipartRelated(const 
 
 std::unique_ptr<KMime::Content> TemplateParserJob::createPlainPartContent(const QString &plainBody) const
 {
-    auto textPart = std::make_unique<KMime::Content>(d->mMsg.get());
+    auto textPart = std::make_unique<KMime::Content>();
     auto ct = textPart->contentType(KMime::CreatePolicy::Create);
     ct->setMimeType("text/plain");
     ct->setCharset(QByteArrayLiteral("UTF-8"));
@@ -1182,14 +1182,14 @@ std::unique_ptr<KMime::Content> TemplateParserJob::createPlainPartContent(const 
 
 std::unique_ptr<KMime::Content> TemplateParserJob::createMultipartAlternativeContent(const QString &plainBody, const QString &htmlBody) const
 {
-    auto multipartAlternative = std::make_unique<KMime::Content>(d->mMsg.get());
+    auto multipartAlternative = std::make_unique<KMime::Content>();
     multipartAlternative->contentType()->setMimeType("multipart/alternative");
     const QByteArray boundary = KMime::multiPartBoundary();
     multipartAlternative->contentType(KMime::CreatePolicy::DontCreate)->setBoundary(boundary); // Already created
 
     multipartAlternative->appendContent(createPlainPartContent(plainBody));
 
-    auto htmlPart = std::make_unique<KMime::Content>(d->mMsg.get());
+    auto htmlPart = std::make_unique<KMime::Content>();
     htmlPart->contentType(KMime::CreatePolicy::Create)->setMimeType("text/html");
     htmlPart->contentType(KMime::CreatePolicy::DontCreate)->setCharset(QByteArrayLiteral("UTF-8")); // Already created
     htmlPart->contentTransferEncoding()->setEncoding(KMime::Headers::CE8Bit);
