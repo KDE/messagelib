@@ -382,6 +382,7 @@ void Filter::setSearchString(const SearchLineCommand &command)
 
     QList<Akonadi::MessageStatus> lstStatus;
     Akonadi::Search::PIM::EmailQuery query;
+    mSearchList.clear();
 
     const QList<SearchLineCommand::SearchLineInfo> infos = command.searchLineInfo();
     for (const auto &info : infos) {
@@ -392,6 +393,7 @@ void Filter::setSearchString(const SearchLineCommand &command)
             bool needToSplitString = false;
             for (const QString &text : searchListTmp) {
                 if (text.size() >= 3) {
+                    mSearchList.push_back(text);
                     if (!newStr.isEmpty()) {
                         newStr += u' ';
                     }
