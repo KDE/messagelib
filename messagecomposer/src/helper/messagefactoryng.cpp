@@ -356,12 +356,12 @@ void MessageFactoryNG::createForwardAsync()
     job->start();
 }
 
-QPair<std::shared_ptr<KMime::Message>, QList<KMime::Content *>> MessageFactoryNG::createAttachedForward(const Akonadi::Item::List &items)
+QPair<std::shared_ptr<KMime::Message>, std::vector<std::unique_ptr<KMime::Content>>> MessageFactoryNG::createAttachedForward(const Akonadi::Item::List &items)
 {
     // create forwarded message with original message as attachment
     // remove headers that shouldn't be forwarded
     std::shared_ptr<KMime::Message> msg(new KMime::Message);
-    QList<KMime::Content *> attachments;
+    std::vector<std::unique_ptr<KMime::Content>> attachments;
 
     const int numberOfItems(items.count());
     if (numberOfItems >= 2) {
@@ -378,29 +378,29 @@ QPair<std::shared_ptr<KMime::Message>, QList<KMime::Content *>> MessageFactoryNG
     MessageHelper::setAutomaticFields(msg, true);
     KCursorSaver saver(Qt::WaitCursor);
     if (numberOfItems == 0) {
-        attachments << createForwardAttachmentMessage(mOrigMsg);
+        attachments.push_back(createForwardAttachmentMessage(mOrigMsg));
         MessageComposer::Util::addLinkInformation(msg, mId, Akonadi::MessageStatus::statusForwarded());
     } else {
         // iterate through all the messages to be forwarded
         attachments.reserve(items.count());
         for (const Akonadi::Item &item : std::as_const(items)) {
-            attachments << createForwardAttachmentMessage(MessageComposer::Util::message(item));
+            attachments.push_back(createForwardAttachmentMessage(MessageComposer::Util::message(item)));
             MessageComposer::Util::addLinkInformation(msg, item.id(), Akonadi::MessageStatus::statusForwarded());
         }
     }
 
     // msg->assemble();
-    return QPair<std::shared_ptr<KMime::Message>, QList<KMime::Content *>>(msg, QList<KMime::Content *>() << attachments);
+    return std::make_pair(std::move(msg), std::move(attachments));
 }
 
-KMime::Content *MessageFactoryNG::createForwardAttachmentMessage(const std::shared_ptr<KMime::Message> &fwdMsg)
+std::unique_ptr<KMime::Content> MessageFactoryNG::createForwardAttachmentMessage(const std::shared_ptr<KMime::Message> &fwdMsg)
 {
     // remove headers that shouldn't be forwarded
     MessageCore::StringUtil::removePrivateHeaderFields(fwdMsg);
     fwdMsg->removeHeader<KMime::Headers::Bcc>();
     fwdMsg->assemble();
     // set the part
-    auto msgPart = new KMime::Content(fwdMsg.get());
+    auto msgPart = std::make_unique<KMime::Content>();
     auto ct = msgPart->contentType();
     ct->setMimeType("message/rfc822");
 
@@ -695,10 +695,10 @@ std::shared_ptr<KMime::Message> MessageFactoryNG::createMDN(KMime::MDN::ActionMo
     return receipt;
 }
 
-QPair<std::shared_ptr<KMime::Message>, KMime::Content *> MessageFactoryNG::createForwardDigestMIME(const Akonadi::Item::List &items)
+QPair<std::shared_ptr<KMime::Message>, std::unique_ptr<KMime::Content>> MessageFactoryNG::createForwardDigestMIME(const Akonadi::Item::List &items)
 {
     std::shared_ptr<KMime::Message> msg(new KMime::Message);
-    auto digest = new KMime::Content(msg.get());
+    auto digest = std::make_unique<KMime::Content>();
 
     const QString mainPartText = i18n(
         "\nThis is a MIME digest forward. The content of the"
@@ -723,7 +723,7 @@ QPair<std::shared_ptr<KMime::Message>, KMime::Content *> MessageFactoryNG::creat
         MessageCore::StringUtil::removePrivateHeaderFields(fMsg);
         fMsg->removeHeader<KMime::Headers::Bcc>();
         fMsg->assemble();
-        auto part = std::make_unique<KMime::Content>(digest);
+        auto part = std::make_unique<KMime::Content>();
 
         part->contentType()->setMimeType("message/rfc822");
         part->contentType(KMime::CreatePolicy::DontCreate)->setCharset(fMsg->contentType()->charset());
@@ -742,7 +742,7 @@ QPair<std::shared_ptr<KMime::Message>, KMime::Content *> MessageFactoryNG::creat
 
     //   qCDebug(MESSAGECOMPOSER_LOG) << "digest:" << digest->contents().size() << digest->encodedContent();
 
-    return QPair<std::shared_ptr<KMime::Message>, KMime::Content *>(msg, digest);
+    return std::make_pair(std::move(msg), std::move(digest));
 }
 
 void MessageFactoryNG::setIdentityManager(KIdentityManagementCore::IdentityManager *ident)
