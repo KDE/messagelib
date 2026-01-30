@@ -24,7 +24,7 @@
       <default>true</default>
     </entry>
     <entry name="UseRealHtmlMailColor" type="Bool" key="realHtmlMailColor">
-      <default>false</default>
+      <default>true</default>
     </entry>
 
     <entry name="OverrideCharacterEncoding" type="String" key="encoding">
