@@ -120,7 +120,10 @@ public:
      */
     void addAttachment(const QUrl &url, const QString &comment, bool sync);
     void addAttachment(const QString &name, const QString &filename, const QString &charset, const QByteArray &data, const QByteArray &mimeType);
-    void addAttachmentPart(KMime::Content *part);
+    /**
+     * @param part is only read from, ownership remains with the caller.
+     */
+    void addAttachmentPart(const KMime::Content *part);
 
     void fillComposer(MessageComposer::ComposerJob *composer);
 
