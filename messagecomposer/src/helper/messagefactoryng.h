@@ -85,7 +85,7 @@ public:
      * If no list is passed, use the original message passed in the MessageFactoryNG
      *  constructor.
      */
-    [[nodiscard]] QPair<std::shared_ptr<KMime::Message>, QList<KMime::Content *>>
+    [[nodiscard]] QPair<std::shared_ptr<KMime::Message>, std::vector<std::unique_ptr<KMime::Content>>>
     createAttachedForward(const Akonadi::Item::List &items = Akonadi::Item::List());
 
     /** Create a new message that is a redirect to this message, filling all
@@ -137,7 +137,7 @@ public:
      *
      * @param msgs List of messages to be composed into a digest
      */
-    [[nodiscard]] QPair<std::shared_ptr<KMime::Message>, KMime::Content *> createForwardDigestMIME(const Akonadi::Item::List &items);
+    [[nodiscard]] QPair<std::shared_ptr<KMime::Message>, std::unique_ptr<KMime::Content>> createForwardDigestMIME(const Akonadi::Item::List &items);
 
     /**
      * Set the identity manager to be used when creating messages.
@@ -247,7 +247,7 @@ private:
     [[nodiscard]] MESSAGECOMPOSER_NO_EXPORT QString replaceHeadersInString(const std::shared_ptr<KMime::Message> &msg, const QString &s);
 
     [[nodiscard]] MESSAGECOMPOSER_NO_EXPORT QByteArray getRefStr(const std::shared_ptr<KMime::Message> &msg);
-    MESSAGECOMPOSER_NO_EXPORT KMime::Content *createForwardAttachmentMessage(const std::shared_ptr<KMime::Message> &fwdMsg);
+    MESSAGECOMPOSER_NO_EXPORT std::unique_ptr<KMime::Content> createForwardAttachmentMessage(const std::shared_ptr<KMime::Message> &fwdMsg);
 
     KIdentityManagementCore::IdentityManager *mIdentityManager = nullptr;
     // Required parts to create messages
