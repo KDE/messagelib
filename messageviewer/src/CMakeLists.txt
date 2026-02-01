@@ -11,20 +11,6 @@ add_definitions(-DTRANSLATION_DOMAIN=\"libmessageviewer6\")
 
 add_subdirectory(messagepartthemes/grantlee)
 
-# KCFG files:
-# The main messageviewer.kcfg is configured by CMake and put in the build directory.
-
-if(KDEPIM_ENTERPRISE_BUILD)
-    set(LEGACY_MANGLE_FROM_TO_HEADERS true)
-    set(LEGACY_BODY_INVITES true)
-    set(EXCHANGE_COMPATIBLE_INVITATIONS true)
-else()
-    set(LEGACY_MANGLE_FROM_TO_HEADERS false)
-    set(LEGACY_BODY_INVITES false)
-    set(EXCHANGE_COMPATIBLE_INVITATIONS false)
-endif()
-
-configure_file(settings/messageviewer.kcfg.in ${CMAKE_CURRENT_BINARY_DIR}/messageviewer.kcfg)
 include(CheckIncludeFiles)
 
 # target_include_directories does not handle empty include paths

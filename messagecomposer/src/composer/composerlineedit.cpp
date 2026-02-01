@@ -18,7 +18,6 @@ using namespace MessageComposer;
 ComposerLineEdit::ComposerLineEdit(bool useCompletion, QWidget *parent)
     : PimCommon::AddresseeLineEdit(parent, useCompletion)
 {
-    allowSemicolonAsSeparator(MessageComposerSettings::allowSemicolonAsAddressSeparator());
     setShowRecentAddresses(MessageComposerSettings::self()->showRecentAddressesInComposer());
     setRecentAddressConfig(MessageComposerSettings::self()->config());
     loadContacts();

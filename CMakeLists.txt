@@ -6,8 +6,6 @@ set(CMAKE_CXX_SCAN_FOR_MODULES OFF)
 
 project(Messagelib VERSION ${PIM_VERSION})
 
-option(KDEPIM_ENTERPRISE_BUILD "Enable features specific to the enterprise branch, which are normally disabled. Also, it disables many components not needed for Kontact such as the Kolab client." FALSE)
-
 set(KF_MIN_VERSION "6.21.0")
 set(QT_REQUIRED_VERSION "6.9.0")
 
