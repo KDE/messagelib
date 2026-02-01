@@ -277,10 +277,10 @@ bool RecipientsEditor::eventFilter(QObject *object, QEvent *event)
 {
     if (event->type() == QEvent::KeyPress && qobject_cast<RecipientLineEdit *>(object)) {
         auto ke = static_cast<QKeyEvent *>(event);
-        // Treats comma or semicolon as email separator, will automatically move focus
+        // Treats comma as email separator, will automatically move focus
         // to a new line, basically preventing user from inputting more than one
         // email address per line, which breaks our opportunistic crypto in composer
-        if (ke->key() == Qt::Key_Comma || (ke->key() == Qt::Key_Semicolon && MessageComposerSettings::self()->allowSemicolonAsAddressSeparator())) {
+        if (ke->key() == Qt::Key_Comma) {
             auto line = qobject_cast<RecipientLineNG *>(object->parent());
             const auto split = KEmailAddress::splitAddressList(line->rawData() + QLatin1StringView(", "));
             if (split.size() > 1) {

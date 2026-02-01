@@ -74,8 +74,6 @@ void HeaderStyleMenuManagerPrivate::readSettings()
             headerStyleName = u"all-headers"_s;
         } else if ((headerStyle == QLatin1StringView("brief")) && (headerSetDisplayed == QLatin1StringView("brief"))) { // brief
             headerStyleName = u"brief"_s;
-        } else if ((headerStyle == QLatin1StringView("enterprise")) && (headerSetDisplayed == QLatin1StringView("rich"))) { // enterprise
-            headerStyleName = u"enterprise"_s;
         } else if ((headerStyle == QLatin1StringView("fancy")) && (headerSetDisplayed == QLatin1StringView("rich"))) { // fancy
             headerStyleName = u"fancy"_s;
         } else if ((headerStyle == QLatin1StringView("grantlee")) && (headerSetDisplayed == QLatin1StringView("grantlee"))) { // grantlee
