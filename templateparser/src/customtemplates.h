@@ -20,8 +20,11 @@ class Ui_CustomTemplatesBase;
 namespace TemplateParser
 {
 class CustomTemplateItem;
-/**
- * @brief The CustomTemplates class
+/*!
+ * \class TemplateParser::CustomTemplates
+ * \inmodule TemplateParser
+ * \inheaderfile TemplateParser/CustomTemplates
+ * \brief The CustomTemplates class
  */
 class TEMPLATEPARSER_EXPORT CustomTemplates : public QWidget
 {
@@ -36,24 +39,32 @@ public:
 
 public:
     /*!
+     * \brief Constructor
+     * \param actionCollection list of action collections
+     * \param parent parent widget
      */
     explicit CustomTemplates(const QList<KActionCollection *> &actionCollection, QWidget *parent = nullptr);
     /*!
+     * \brief Destructor
      */
     ~CustomTemplates() override;
 
     /*!
+     * \brief Loads the custom templates
      */
     void load();
     /*!
+     * \brief Saves the custom templates
      */
     void save();
 
 Q_SIGNALS:
     /*!
+     * \brief Emitted when templates are changed
      */
     void changed();
     /*!
+     * \brief Emitted when templates are updated
      */
     void templatesUpdated();
 

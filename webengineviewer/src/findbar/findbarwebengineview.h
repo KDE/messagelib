@@ -13,9 +13,13 @@ class QWebEngineView;
 namespace WebEngineViewer
 {
 class FindBarWebEngineViewPrivate;
-/**
- * @brief The FindBarWebEngineView class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class WebEngineViewer::FindBarWebEngineView
+ * \inmodule WebEngineViewer
+ * \inheaderfile WebEngineViewer/FindBarWebEngineView
+ *
+ * \brief The FindBarWebEngineView class
+ * \author Laurent Montel <montel@kde.org>
  */
 class WEBENGINEVIEWER_EXPORT FindBarWebEngineView : public FindBarBase
 {

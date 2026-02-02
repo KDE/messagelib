@@ -16,7 +16,7 @@
 
 namespace MessageViewer
 {
-/**
+/*!
  * \class MessageViewer::FileHtmlWriter
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/FileHtmlWriter

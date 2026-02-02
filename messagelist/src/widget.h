@@ -21,11 +21,15 @@ class QWidget;
 class KJob;
 namespace MessageList
 {
-/**
+/*!
+ * \class MessageList::Widget
+ * \inmodule MessageList
+ * \inheaderfile MessageList/Widget
+ *
  * The Akonadi specific implementation of the Core::Widget.
  *
  * When a KXmlGuiWindow is passed to setXmlGuiClient, the XMLGUI
- * defined context menu @c akonadi_messagelist_contextmenu is
+ * defined context menu \\ akonadi_messagelist_contextmenu is
  * used if available.
  *
  */
@@ -34,42 +38,44 @@ class MESSAGELIST_EXPORT Widget : public MessageList::Core::Widget
     Q_OBJECT
 
 public:
-    /**
-     * Create a new message list widget.
+    /*!
+     * \brief Create a new message list widget.
+     * \param parent The parent widget.
      */
     explicit Widget(QWidget *parent);
     /*!
+     * \brief Destructor.
      */
     ~Widget() override;
 
-    /**
-     * Sets the XML GUI client which the view is used in.
+    /*!
+     * \brief Sets the XML GUI client which the view is used in.
      *
      * This is needed if you want to use the built-in context menu.
      * Passing 0 is ok and will disable the builtin context menu.
      *
-     * @param xmlGuiClient The KXMLGUIClient the view is used in.
+     * \param xmlGuiClient The KXMLGUIClient the view is used in.
      */
     void setXmlGuiClient(KXMLGUIClient *xmlGuiClient);
 
-    /**
+    /*!
      * Returns the current message for the list as Akonadi::Item.
      * May return an invalid Item if there is no current message or no current folder.
      */
     [[nodiscard]] Akonadi::Item currentItem() const;
 
-    /**
+    /*!
      * Returns the current message for the list as std::shared_ptr<KMime::Message>.
      * May return 0 if there is no current message or no current folder.
      */
     [[nodiscard]] std::shared_ptr<KMime::Message> currentMessage() const;
 
-    /**
+    /*!
      * Returns true if this drag can be accepted by the underlying view
      */
     [[nodiscard]] bool canAcceptDrag(const QDropEvent *e);
 
-    /**
+    /*!
      * Selects the next message item in the view.
      *
      * messageTypeFilter can be used to restrict the selection to only certain message types.
@@ -87,7 +93,7 @@ public:
                                              bool centerItem,
                                              bool loop);
 
-    /**
+    /*!
      * Selects the previous message item in the view.
      * If centerItem is true then the specified item will be positioned
      * at the center of the view, if possible.
@@ -105,7 +111,7 @@ public:
                                                  bool centerItem,
                                                  bool loop);
 
-    /**
+    /*!
      * Focuses the next message item in the view without actually selecting it.
      *
      * messageTypeFilter can be used to restrict the selection to only certain message types.
@@ -117,7 +123,7 @@ public:
      */
     [[nodiscard]] bool focusNextMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter, bool centerItem, bool loop);
 
-    /**
+    /*!
      * Focuses the previous message item in the view without actually selecting it.
      *
      * messageTypeFilter can be used to restrict the selection to only certain message types.
@@ -129,7 +135,7 @@ public:
      */
     [[nodiscard]] bool focusPreviousMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter, bool centerItem, bool loop);
 
-    /**
+    /*!
      * Selects the currently focused message item. May do nothing if the
      * focused message item is already selected (which is very likely).
      * If centerItem is true then the specified item will be positioned
@@ -137,7 +143,7 @@ public:
      */
     void selectFocusedMessageItem(bool centerItem);
 
-    /**
+    /*!
      * Selects the first message item in the view that matches the specified Core::MessageTypeFilter.
      * If centerItem is true then the specified item will be positioned
      * at the center of the view, if possible.
@@ -154,7 +160,7 @@ public:
      */
     [[nodiscard]] bool selectFirstMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter, bool centerItem);
 
-    /**
+    /*!
      * Selects the last message item in the view that matches the specified Core::MessageTypeFilter.
      * If centerItem is true then the specified item will be positioned
      * at the center of the view, if possible.
@@ -163,23 +169,23 @@ public:
      */
     [[nodiscard]] bool selectLastMessageItem(MessageList::Core::MessageTypeFilter messageTypeFilter, bool centerItem);
 
-    /**
+    /*!
      * Selects all the items in the current folder.
      */
     void selectAll();
-    /**
+    /*!
      * If expand is true then it expands the current thread, otherwise
      * collapses it.
      */
     void setCurrentThreadExpanded(bool expand);
 
-    /**
+    /*!
      * If expand is true then it expands all the threads, otherwise
      * collapses them.
      */
     void setAllThreadsExpanded(bool expand);
 
-    /**
+    /*!
      * If expand is true then it expands all the groups (only the toplevel
      * group item: inner threads are NOT expanded). If expand is false
      * then it collapses all the groups. If no grouping is in effect
@@ -187,12 +193,12 @@ public:
      */
     void setAllGroupsExpanded(bool expand);
 
-    /**
+    /*!
      * Sets the focus on the quick search line of the currently active tab.
      */
     void focusQuickSearch(const QString &selectedText);
 
-    /**
+    /*!
      * Returns the currently selected std::shared_ptr<KMime::Message> (bound to current StorageModel).
      * The list may be empty if there are no selected messages or no StorageModel.
      *
@@ -205,7 +211,7 @@ public:
      */
     [[nodiscard]] QList<std::shared_ptr<KMime::Message>> selectionAsMessageList(bool includeCollapsedChildren = true) const;
 
-    /**
+    /*!
      * Returns the currently selected Items (bound to current StorageModel).
      * The list may be empty if there are no selected messages or no StorageModel.
      *
@@ -218,7 +224,7 @@ public:
      */
     [[nodiscard]] Akonadi::Item::List selectionAsMessageItemList(bool includeCollapsedChildren = true) const;
 
-    /**
+    /*!
      * Returns the currently selected Items id (bound to current StorageModel).
      * The list may be empty if there are no selected messages or no StorageModel.
      *
@@ -233,7 +239,7 @@ public:
     [[nodiscard]] QList<qlonglong> selectionAsMessageItemListId(bool includeCollapsedChildren) const;
     [[nodiscard]] QList<Akonadi::Item::Id> selectionAsListMessageId(bool includeCollapsedChildren) const;
 
-    /**
+    /*!
      * Returns the Akonadi::Item bound to the current StorageModel that
      * are part of the current thread. The current thread is the thread
      * that contains currentMessageItem().
@@ -245,28 +251,28 @@ public:
      */
     [[nodiscard]] Akonadi::Item::List currentThreadAsMessageList() const;
 
-    /**
+    /*!
      * Returns the Akonadi::MessageStatus in the current quicksearch field.
      */
     [[nodiscard]] QList<Akonadi::MessageStatus> currentFilterStatus() const;
 
-    /**
+    /*!
      * Returns the search term in the current quicksearch field.
      */
     [[nodiscard]] QString currentFilterSearchString() const;
 
-    /**
+    /*!
      * Returns true if the current Aggregation is threaded, false otherwise
      * (or if there is no current Aggregation).
      */
     [[nodiscard]] bool isThreaded() const;
 
-    /**
+    /*!
      * Fast function that determines if the selection is empty
      */
     [[nodiscard]] bool selectionEmpty() const;
 
-    /**
+    /*!
      * Fills the lists of the selected message serial numbers and of the selected+visible ones.
      * Returns true if the returned stats are valid (there is a current folder after all)
      * and false otherwise. This is called by KMMainWidget in a single place so we optimize by
@@ -280,13 +286,13 @@ public:
                                          Akonadi::Item::List &selectedVisibleSernums,
                                          bool *allSelectedBelongToSameThread,
                                          bool includeCollapsedChildren = true) const;
-    /**
+    /*!
      * Deletes the persistent set pointed by the specified reference.
      * If the set does not exist anymore, nothing happens.
      */
     void deletePersistentSet(MessageList::Core::MessageItemSetReference ref);
 
-    /**
+    /*!
      * If bMark is true this function marks the messages as "about to be removed"
      * so they appear dimmer and aren't selectable in the view.
      * If bMark is false then this function clears the "about to be removed" state
@@ -294,17 +300,17 @@ public:
      */
     void markMessageItemsAsAboutToBeRemoved(MessageList::Core::MessageItemSetReference ref, bool bMark);
 
-    /**
+    /*!
      * Return Akonadi::Item from messageItemReference
      */
     [[nodiscard]] Akonadi::Item::List itemListFromPersistentSet(MessageList::Core::MessageItemSetReference ref);
 
-    /**
+    /*!
      * Return a persistent set from current selection
      */
     [[nodiscard]] MessageList::Core::MessageItemSetReference selectionAsPersistentSet(bool includeCollapsedChildren = true) const;
 
-    /**
+    /*!
      * Return a persistent set from current thread
      */
     [[nodiscard]] MessageList::Core::MessageItemSetReference currentThreadAsPersistentSet() const;
@@ -332,62 +338,62 @@ public:
     void setDefaultCollectionIcon(const QIcon &icon);
 
 protected:
-    /**
+    /*!
      * Reimplemented from MessageList::Core::Widget
      */
     void viewMessageSelected(MessageList::Core::MessageItem *msg) override;
 
-    /**
+    /*!
      * Reimplemented from MessageList::Core::Widget
      */
     void viewMessageActivated(MessageList::Core::MessageItem *msg) override;
 
-    /**
+    /*!
      * Reimplemented from MessageList::Core::Widget
      */
     void viewSelectionChanged() override;
 
-    /**
+    /*!
      * Reimplemented from MessageList::Core::Widget
      */
     void viewMessageExpanded(Core::MessageItem *msg) override;
 
-    /**
+    /*!
      * Reimplemented from MessageList::Core::Widget
      */
     void viewMessageCollapsed(Core::MessageItem *msg) override;
 
-    /**
+    /*!
      * Reimplemented from MessageList::Core::Widget
      */
     void viewMessageListContextPopupRequest(const QList<Core::MessageItem *> &selectedItems, const QPoint &globalPos) override;
 
-    /**
+    /*!
      * Reimplemented from MessageList::Core::Widget
      */
     void viewGroupHeaderContextPopupRequest(MessageList::Core::GroupHeaderItem *group, const QPoint &globalPos) override;
 
-    /**
+    /*!
      * Reimplemented from MessageList::Core::Widget
      */
     void viewDragEnterEvent(QDragEnterEvent *e) override;
 
-    /**
+    /*!
      * Reimplemented from MessageList::Core::Widget
      */
     void viewDragMoveEvent(QDragMoveEvent *e) override;
 
-    /**
+    /*!
      * Reimplemented from MessageList::Core::Widget
      */
     void viewDropEvent(QDropEvent *e) override;
 
-    /**
+    /*!
      * Reimplemented from MessageList::Core::Widget
      */
     void viewStartDragRequest() override;
 
-    /**
+    /*!
      * Reimplemented from MessageList::Core::Widget
      */
     void viewMessageStatusChangeRequest(MessageList::Core::MessageItem *msg, Akonadi::MessageStatus set, Akonadi::MessageStatus clear) override;
@@ -398,7 +404,7 @@ private:
     MESSAGELIST_NO_EXPORT void slotTagsFetched(const Akonadi::Tag::List &tags);
 
 Q_SIGNALS:
-    /**
+    /*!
      * Emitted when a message is selected (that is, single clicked and thus made current in the view)
      * Note that this message CAN be 0 (when the current item is cleared, for example).
      *
@@ -410,27 +416,27 @@ Q_SIGNALS:
      */
     void messageSelected(const Akonadi::Item &item);
 
-    /**
+    /*!
      * Emitted when a message is doubleclicked or activated by other input means
      */
     void messageActivated(const Akonadi::Item &item);
 
-    /**
+    /*!
      * Emitted when the selection in the view changes.
      */
     void selectionChanged();
 
-    /**
+    /*!
      * Emitted when message is expanded.
      */
     void messageExpanded(const Akonadi::Item &item);
 
-    /**
+    /*!
      * Emitted when message is collapsed.
      */
     void messageCollapsed(const Akonadi::Item &item);
 
-    /**
+    /*!
      * Emitted when a message wants its status to be changed
      */
     void messageStatusChangeRequest(const Akonadi::Item &item, const Akonadi::MessageStatus &set, const Akonadi::MessageStatus &clear);

@@ -13,9 +13,13 @@ class QAction;
 namespace WebEngineViewer
 {
 class WebHitTestResult;
-/**
- * @brief The NetworkPluginUrlInterceptorInterface class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class WebEngineViewer::NetworkPluginUrlInterceptorInterface
+ * \inmodule WebEngineViewer
+ * \inheaderfile WebEngineViewer/NetworkPluginUrlInterceptorInterface
+ *
+ * \brief The NetworkPluginUrlInterceptorInterface class
+ * \author Laurent Montel <montel@kde.org>
  */
 class WEBENGINEVIEWER_EXPORT NetworkPluginUrlInterceptorInterface : public QObject
 {

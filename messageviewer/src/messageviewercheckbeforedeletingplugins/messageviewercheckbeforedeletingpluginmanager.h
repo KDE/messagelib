@@ -13,7 +13,7 @@ namespace MessageViewer
 {
 class MessageViewerCheckBeforeDeletingPlugin;
 class MessageViewerCheckBeforeDeletingPluginManagerPrivate;
-/**
+/*!
  * \class MessageViewer::MessageViewerCheckBeforeDeletingPluginManager
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/MessageViewerCheckBeforeDeletingPluginManager

@@ -30,7 +30,10 @@ class TemplateParserJobTest;
 namespace TemplateParser
 {
 class TemplateParserJobPrivate;
-/**
+/*!
+ * \class TemplateParser::TemplateParserJob
+ * \inmodule TemplateParser
+ * \inheaderfile TemplateParser/TemplateParserJob
  * \brief The TemplateParser transforms a message with a given template.
  *
  * \par Introduction
@@ -100,7 +103,7 @@ class TemplateParserJobPrivate;
  * Since htmlBody received by addProcessedBodyToMessage() is not empty, multipart/alternative
  * messages are assembled.
  *
- * @NOTE Resolving conflict between TemplateParserSettings "replyUsingHtml" and FORCEDXXXX command.
+ * \note Resolving conflict between TemplateParserSettings "replyUsingHtml" and FORCEDXXXX command.
  * The conflict is resolved by simply giving preference to the commands over TemplateParserSettings.
  *
  * \par Make plain part
@@ -122,7 +125,7 @@ class TemplateParserJobPrivate;
  * parent content (multipart/alternative) has two sub-content (text/plain and
  * text/html) to it, it is added to the reply message (mMsg).
  *
- * TODO: What is the usecase of the commands that work on the message to be transformed?
+ * \todo What is the usecase of the commands that work on the message to be transformed?
  *       In general you only use the commands that work on the original message...
  */
 class TEMPLATEPARSER_EXPORT TemplateParserJob : public QObject
@@ -150,7 +153,16 @@ public:
     };
 
 public:
+    /*!
+     * \brief Constructor
+     * \param amsg KMime message
+     * \param amode parsing mode
+     * \param parent parent object
+     */
     explicit TemplateParserJob(const std::shared_ptr<KMime::Message> &amsg, const Mode amode, QObject *parent = nullptr);
+    /*!
+     * \brief Destructor
+     */
     ~TemplateParserJob() override;
 
     /**
@@ -158,6 +170,10 @@ public:
      * commands such as %QUOTE. Otherwise, the whole message is quoted.
      * If this is not called at all, the whole message is quoted as well.
      * Call this before calling process().
+     */
+    /*!
+     * \brief Sets the selection for template processing
+     * \param selection selected text
      */
     void setSelection(const QString &selection);
 
@@ -169,6 +185,10 @@ public:
      *
      * The default is false.
      */
+    /*!
+     * \brief Sets whether decryption is allowed
+     * \param allowDecryption whether to allow decryption
+     */
     void setAllowDecryption(const bool allowDecryption);
 
     /**
@@ -177,23 +197,64 @@ public:
      *
      * Default is true, wrapping at 80chars.
      */
+    /*!
+     * \brief Sets word wrap settings
+     * \param wrap whether to wrap words
+     * \param wrapColWidth column width for wrapping
+     */
     void setWordWrap(bool wrap, int wrapColWidth = 80);
 
     /**
      * Set the identity manager to be used when creating the template.
      */
+    /*!
+     * \brief Sets the identity manager
+     * \param ident identity manager
+     */
     void setIdentityManager(KIdentityManagementCore::IdentityManager *ident);
 
+    /*!
+     * \brief Processes the template with the original message
+     * \param aorig_msg original KMime message
+     * \param afolder folder ID (optional)
+     */
     void process(const std::shared_ptr<KMime::Message> &aorig_msg, qint64 afolder = -1);
+    /*!
+     * \brief Processes the template by name
+     * \param tmplName template name
+     * \param aorig_msg original KMime message
+     * \param afolder folder ID (optional)
+     */
     void process(const QString &tmplName, const std::shared_ptr<KMime::Message> &aorig_msg, qint64 afolder = -1);
+    /*!
+     * \brief Processes with specific identity
+     * \param uoid unique identity object ID
+     * \param aorig_msg original KMime message
+     * \param afolder folder ID (optional)
+     */
     void processWithIdentity(uint uoid, const std::shared_ptr<KMime::Message> &aorig_msg, qint64 afolder = -1);
 
+    /*!
+     * \brief Processes with template text
+     * \param tmpl template text
+     */
     void processWithTemplate(const QString &tmpl);
 
+    /*!
+     * \brief Sets whether reply should be formatted as HTML
+     * \param replyAsHtml whether to use HTML format
+     */
     void setReplyAsHtml(bool replyAsHtml);
 
 Q_SIGNALS:
+    /*!
+     * \brief Emitted when parsing is done
+     * \param cursorPositionWasSet whether cursor position was set
+     */
     void parsingDone(bool cursorPositionWasSet);
+    /*!
+     * \brief Emitted when parsing fails
+     */
     void parsingFailed();
 
 private:

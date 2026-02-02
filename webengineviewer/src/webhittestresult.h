@@ -33,8 +33,12 @@
 namespace WebEngineViewer
 {
 class WebHitTestResultPrivate;
-/**
- * @brief The WebHitTestResult class
+/*!
+ * \class WebEngineViewer::WebHitTestResult
+ * \inmodule WebEngineViewer
+ * \inheaderfile WebEngineViewer/WebHitTestResult
+ *
+ * \brief The WebHitTestResult class
  */
 class WEBENGINEVIEWER_EXPORT WebHitTestResult
 {

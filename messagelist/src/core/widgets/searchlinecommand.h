@@ -13,6 +13,10 @@ class QDebug;
 namespace MessageList::Core
 {
 /*!
+ * \class MessageList::Core::SearchLineCommand
+ * \inmodule MessageList
+ * \inheaderfile MessageList/SearchLineCommand
+ *
  * \brief The SearchLineCommand class
  */
 class MESSAGELIST_EXPORT SearchLineCommand

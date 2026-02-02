@@ -11,7 +11,7 @@
 namespace MessageViewer
 {
 class PlainHeaderStylePrivate;
-/**
+/*!
  * \class MessageViewer::PlainHeaderStyle
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/PlainHeaderStyle

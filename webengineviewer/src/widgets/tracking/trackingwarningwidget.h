@@ -18,6 +18,14 @@
 namespace WebEngineViewer
 {
 class TrackingDetailsDialog;
+/*!
+ * \class WebEngineViewer::TrackingWarningWidget
+ * \inmodule WebEngineViewer
+ * \inheaderfile WebEngineViewer/TrackingWarningWidget
+ *
+ * \brief The TrackingWarningWidget class
+ * \author Laurent Montel <montel@kde.org>
+ */
 class WEBENGINEVIEWER_EXPORT TrackingWarningWidget : public KMessageWidget
 {
     Q_OBJECT

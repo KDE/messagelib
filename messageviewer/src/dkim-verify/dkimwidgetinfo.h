@@ -13,7 +13,7 @@
 class QLabel;
 namespace MessageViewer
 {
-/**
+/*!
  * \class MessageViewer::DKIMWidgetInfo
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/DKIMWidgetInfo

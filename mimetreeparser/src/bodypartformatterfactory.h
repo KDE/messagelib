@@ -23,28 +23,47 @@ class BodyPartFormatter;
 
 class BodyPartFormatterFactoryPrivate;
 
-/** The place to obtain BodyPartFormatter candidates for a given mime type. */
+/**
+ * \class MimeTreeParser::BodyPartFormatterFactory
+ * \inmodule MimeTreeParser
+ * \inheaderfile MimeTreeParser/BodyPartFormatterFactory
+ *
+ * The place to obtain BodyPartFormatter candidates for a given mime type.
+ */
 class MIMETREEPARSER_EXPORT BodyPartFormatterFactory
 {
 public:
     /*!
+     * \brief Constructor.
      */
     BodyPartFormatterFactory();
     /*!
+     * \brief Destructor.
      */
     virtual ~BodyPartFormatterFactory();
 
+    /*!
+     * \brief Get singleton instance.
+     * \return Pointer to the singleton instance.
+     */
     static BodyPartFormatterFactory *instance();
 
-    /**
-     *  Returns all suitable formatters for the given mimetype.
-     *  The candidates are ordered by priority, with the catch-call
-     *  formatter coming last.
+    /*!
+     * \brief Get formatters for MIME type.
+     * Returns all suitable formatters for the given mimetype.
+     * The candidates are ordered by priority, with the catch-call
+     * formatter coming last.
+     * \param mimeType The MIME type string.
+     * \return List of BodyPartFormatter pointers.
      */
     [[nodiscard]] QList<const Interface::BodyPartFormatter *> formattersForType(const QString &mimeType) const;
 
 protected:
     /*!
+     * \brief Insert formatter.
+     * \param mimeType The MIME type string.
+     * \param formatter The BodyPartFormatter to insert.
+     * \param priority The priority of the formatter.
      */
     void insert(const QString &mimeType, const Interface::BodyPartFormatter *formatter, int priority);
     /*!

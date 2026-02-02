@@ -28,7 +28,7 @@ public:
      */
     static MessageViewerSettings *self();
 
-    /** Call this slot instead of directly KConfig::sync() to
+    /*! Call this slot instead of directly KConfig::sync() to
         minimize the overall config writes. Calling this slot will
         schedule a sync of the application config file using a timer, so
         that many consecutive calls can be condensed into a single

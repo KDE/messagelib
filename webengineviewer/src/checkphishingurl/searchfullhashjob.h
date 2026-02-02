@@ -15,9 +15,13 @@ namespace WebEngineViewer
 {
 class SearchFullHashJobPrivate;
 /* https://developers.google.com/safe-browsing/v4/update-api */
-/**
- * @brief The SearchFullHashJob class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class WebEngineViewer::SearchFullHashJob
+ * \inmodule WebEngineViewer
+ * \inheaderfile WebEngineViewer/SearchFullHashJob
+ *
+ * \brief The SearchFullHashJob class
+ * \author Laurent Montel <montel@kde.org>
  */
 class WEBENGINEVIEWER_EXPORT SearchFullHashJob : public QObject
 {

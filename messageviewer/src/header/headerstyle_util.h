@@ -19,7 +19,7 @@
 
 namespace MessageViewer
 {
-/**
+/*!
  * \class MessageViewer::HeaderStyleUtil
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/HeaderStyleUtil
@@ -42,12 +42,12 @@ public:
         int photoHeight;
     };
     enum HeaderStyleUtilDateFormat : uint8_t {
-        ShortDate, /**< Locale Short date format, e.g. 08-04-2007 */
-        LongDate, /**< Locale Long date format, e.g. Sunday 08 April 2007 */
-        FancyShortDate, /**< Same as ShortDate for dates a week or more ago. For more
+        ShortDate, /*!< Locale Short date format, e.g. 08-04-2007 */
+        LongDate, /*!< Locale Long date format, e.g. Sunday 08 April 2007 */
+        FancyShortDate, /*!< Same as ShortDate for dates a week or more ago. For more
                              recent dates, it is represented as Today, Yesterday, or
                              the weekday name. */
-        FancyLongDate, /**< Same as LongDate for dates a week or more ago. For more
+        FancyLongDate, /*!< Same as LongDate for dates a week or more ago. For more
                             recent dates, it is represented as Today, Yesterday, or
                             the weekday name. */
         CustomDate

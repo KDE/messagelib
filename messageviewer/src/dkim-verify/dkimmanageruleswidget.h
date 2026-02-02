@@ -13,7 +13,7 @@ class QTreeWidget;
 namespace MessageViewer
 {
 class DKIMManageRulesComboBox;
-/**
+/*!
  * \class MessageViewer::DKIMManageRulesWidgetItem
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/DKIMManageRulesWidgetItem
@@ -53,7 +53,7 @@ private:
     DKIMManageRulesComboBox *const mRuleTypeCombobox;
 };
 
-/**
+/*!
  * \class MessageViewer::DKIMManageRulesWidget
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/DKIMManageRulesWidget

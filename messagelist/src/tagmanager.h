@@ -20,6 +20,10 @@ namespace MessageList
 namespace Core
 {
 /*!
+ * \class MessageList::Core::TagManager
+ * \inmodule MessageList
+ * \inheaderfile MessageList/TagManager
+ *
  * \brief The TagManager class
  */
 class MESSAGELIST_EXPORT TagManager : public QObject
@@ -27,20 +31,29 @@ class MESSAGELIST_EXPORT TagManager : public QObject
     Q_OBJECT
 public:
     /*!
+     * \brief Constructor.
+     * \param parent The parent object.
      */
     explicit TagManager(QObject *parent = nullptr);
     /*!
+     * \brief Destructor.
      */
     ~TagManager() override;
 
     /*!
+     * \brief Gets the singleton instance of TagManager.
+     * \return Pointer to the TagManager singleton.
      */
     static TagManager *self();
 
     /*!
+     * \brief Gets the tag map.
+     * \return Map of tag identifiers to tag names.
      */
     [[nodiscard]] QMap<QString, QString> mapTag() const;
     /*!
+     * \brief Sets the tag map.
+     * \param newMapTag The new tag map to set.
      */
     void setMapTag(const QMap<QString, QString> &newMapTag);
 

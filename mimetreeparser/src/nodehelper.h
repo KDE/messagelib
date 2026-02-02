@@ -36,13 +36,18 @@ class BodyPartMemento;
 namespace MimeTreeParser
 {
 /**
- * @author Andras Mantia <andras@kdab.net>
+ * \class MimeTreeParser::NodeHelper
+ * \inmodule MimeTreeParser
+ * \inheaderfile MimeTreeParser/NodeHelper
+ *
+ * \author Andras Mantia <andras@kdab.net>
  */
 class MIMETREEPARSER_EXPORT NodeHelper : public QObject
 {
     Q_OBJECT
 public:
     /*!
+     * \brief Constructor.
      */
     NodeHelper();
 

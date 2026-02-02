@@ -28,29 +28,43 @@ public:
         SendDeny = 2,
     };
     /*!
+     * \brief Constructor
+     * \param parent parent widget
      */
     explicit MDNWarningWidget(QWidget *parent = nullptr);
     /*!
+     * \brief Destructor
      */
     ~MDNWarningWidget() override;
 
     /*!
+     * \brief Sets whether the user can deny sending MDN
+     * \param deny whether denial is allowed
      */
     void setCanDeny(bool deny);
 
     /*!
+     * \brief Sets the information message
+     * \param str information text
      */
     void setInformation(const QString &str);
 
     /*!
+     * \brief Returns the sending mode
+     * \return KMime MDN sending mode
      */
     [[nodiscard]] KMime::MDN::SendingMode sendingMode() const;
     /*!
+     * \brief Sets the sending mode
+     * \param newSendingMode the KMime MDN sending mode
      */
     void setSendingMode(KMime::MDN::SendingMode newSendingMode);
 
 Q_SIGNALS:
     /*!
+     * \brief Emitted when user responds to the MDN request
+     * \param type response type
+     * \param sendingMode MDN sending mode
      */
     void sendResponse(MessageViewer::MDNWarningWidget::ResponseType type, KMime::MDN::SendingMode sendingMode);
 

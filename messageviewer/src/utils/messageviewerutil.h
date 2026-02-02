@@ -22,7 +22,7 @@ class Message;
 
 namespace MessageViewer
 {
-/**
+/*!
  * The Util namespace contains a collection of helper functions use in
  * various places.
  */
@@ -37,20 +37,20 @@ saveMessageInMboxAndGetUrl(QUrl &url, const Akonadi::Item::List &retrievedMsgs, 
 [[nodiscard]] MESSAGEVIEWER_EXPORT bool excludeExtraHeader(const QString &s);
 [[nodiscard]] MESSAGEVIEWER_EXPORT QString generateMboxFileName(const Akonadi::Item &msgBase);
 [[nodiscard]] MESSAGEVIEWER_EXPORT bool saveAttachments(const QList<KMime::Content *> &contents, QWidget *parent, QList<QUrl> &saveUrl);
-/**
- * @brief Replaces the @c node message part by an empty attachment with information about deleted attachment.
+/*!
+ * \brief Replaces the \\ node message part by an empty attachment with information about deleted attachment.
  *
- * @param node A message part representing an attachment. The part will be replaced by a new empty party with
- *             filename "Deleted: <original attachment name>". Must not be @p null.
- * @return Returns whether the message was actually modified.
+ * \a node A message part representing an attachment. The part will be replaced by a new empty party with
+ *             filename "Deleted: <original attachment name>". Must not be \a null.
+ * Returns Returns whether the message was actually modified.
  */
 [[nodiscard]] MESSAGEVIEWER_EXPORT bool deleteAttachment(KMime::Content *node);
-/**
- * @brief Calls deleteAttachment() for each node in the @p contents list.
+/*!
+ * \brief Calls deleteAttachment() for each node in the \a contents list.
  *
- * @param contents List of attachments to replace by an empty part (see deleteAttachment())
- * @return Returns number of attachments that have actually been replaced.
- * @see deleteAttachment()
+ * \a contents List of attachments to replace by an empty part (see deleteAttachment())
+ * Returns Returns number of attachments that have actually been replaced.
+ * \sa deleteAttachment()
  */
 [[nodiscard]] MESSAGEVIEWER_EXPORT int deleteAttachments(const QList<KMime::Content *> &contents);
 

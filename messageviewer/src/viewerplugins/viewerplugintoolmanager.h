@@ -42,8 +42,8 @@ public:
 
     void updateActions(const Akonadi::Item &messageItem);
 
-    /**
-     * @brief refreshActionList Refresh the list of action menu.
+    /*!
+     * \brief refreshActionList Refresh the list of action menu.
      */
     void refreshActionList();
 

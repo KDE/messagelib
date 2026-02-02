@@ -18,8 +18,13 @@ class LineEditWithCompleterNg;
 }
 namespace WebEngineViewer
 {
-/**
- * @brief The FindBarBase class
+/*!
+ * \class WebEngineViewer::FindBarBase
+ * \inmodule WebEngineViewer
+ * \inheaderfile WebEngineViewer/FindBarBase
+ *
+ * \brief The FindBarBase class
+ * \author Laurent Montel <montel@kde.org>
  */
 class WEBENGINEVIEWER_EXPORT FindBarBase : public QWidget
 {

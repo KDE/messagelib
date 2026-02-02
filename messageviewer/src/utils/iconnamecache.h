@@ -10,7 +10,12 @@
 
 namespace MessageViewer
 {
-/**
+/*!
+ * \class MessageViewer::IconNameCache
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/IconNameCache
+ * \brief This class is a replacement for KIconLoader::iconPath().
+ *
  * This class is a replacement for KIconLoader::iconPath(), because the iconPath()
  * function can be slow for non-existing icons or icons that fall back to a generic icon.
  * Reason is that KIconLoader does slow system calls for finding the icons.

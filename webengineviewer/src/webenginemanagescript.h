@@ -11,8 +11,8 @@
 
 namespace WebEngineViewer
 {
-/**
- * @brief The WebEngineManageScript class
+/*!
+ * \brief The WebEngineManageScript class
  * @author Laurent Montel <montel@kde.org>
  */
 struct WEBENGINEVIEWER_EXPORT WebEngineManageScript {

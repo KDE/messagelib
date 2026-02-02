@@ -24,7 +24,7 @@ namespace MessageViewer
 class GlobalContext;
 
 using KTextTemplateCallback = std::function<void(KTextTemplate::OutputStream *)>;
-/**
+/*!
  * \class MessageViewer::MessagePartRendererManager
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/MessagePartRendererManager

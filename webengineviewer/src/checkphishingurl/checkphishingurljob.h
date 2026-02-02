@@ -16,9 +16,13 @@ namespace WebEngineViewer
 class CheckPhishingUrlJobPrivate;
 /* https://developers.google.com/safe-browsing/v4/lookup-api */
 /* example http://malware.testing.google.test/testing/malware/ */
-/**
- * @brief The CheckPhishingUrlJob class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class WebEngineViewer::CheckPhishingUrlJob
+ * \inmodule WebEngineViewer
+ * \inheaderfile WebEngineViewer/CheckPhishingUrlJob
+ *
+ * \brief The CheckPhishingUrlJob class
+ * \author Laurent Montel <montel@kde.org>
  */
 class WEBENGINEVIEWER_EXPORT CheckPhishingUrlJob : public QObject
 {

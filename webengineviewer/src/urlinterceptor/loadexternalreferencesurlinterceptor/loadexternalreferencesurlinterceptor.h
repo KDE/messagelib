@@ -9,6 +9,13 @@
 #include <WebEngineViewer/NetworkPluginUrlInterceptorInterface>
 namespace WebEngineViewer
 {
+/*!
+ * \class WebEngineViewer::LoadExternalReferencesUrlInterceptor
+ * \inmodule WebEngineViewer
+ * \inheaderfile WebEngineViewer/LoadExternalReferencesUrlInterceptor
+ *
+ * \brief The LoadExternalReferencesUrlInterceptor class
+ */
 class WEBENGINEVIEWER_EXPORT LoadExternalReferencesUrlInterceptor : public WebEngineViewer::NetworkPluginUrlInterceptorInterface
 {
     Q_OBJECT

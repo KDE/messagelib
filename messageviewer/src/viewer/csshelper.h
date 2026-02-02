@@ -31,7 +31,7 @@ public:
      */
     ~CSSHelper() override;
 
-    /** @return HTML head including style sheet definitions and the
+    /*! Returns HTML head including style sheet definitions and the
     &gt;body&lt; tag */
     /*!
      */

@@ -1,4 +1,4 @@
-/******************************************************************************
+/*!****************************************************************************
  *
  *  SPDX-FileCopyrightText: 2008 Szymon Tomasz Stefanek <pragma@kvirc.net>
  *
@@ -26,7 +26,7 @@ namespace Core
 {
 class MessageItem;
 
-/**
+/*!
  * This class is responsible of matching messages that should be displayed
  * in the View. It's used mainly by Model and Widget.
  */
@@ -38,55 +38,55 @@ public:
     explicit Filter(QObject *parent = nullptr);
 
 public:
-    /**
+    /*!
      * Returns true if the specified parameters match this filter and false otherwise.
      * The msg pointer must not be null.
      */
     [[nodiscard]] bool match(const MessageItem *item) const;
 
-    /**
+    /*!
      * Returns the currently set status mask
      */
     [[nodiscard]] QList<Akonadi::MessageStatus> status() const;
 
-    /**
+    /*!
      * Sets the status mask for this filter.
      */
     void setStatus(const QList<Akonadi::MessageStatus> &lstStatus);
 
-    /**
+    /*!
      * Sets the current folder of this filter.
      */
     void setCurrentFolder(const Akonadi::Collection &collection);
 
-    /**
+    /*!
      * Returns the currently set search string.
      */
     [[nodiscard]] const QString &searchString() const;
 
-    /**
+    /*!
      * Sets the search string for this filter.
      */
     void setSearchString(const QString &search, SearchMessageByButtons::SearchOptions options);
 
-    /**
+    /*!
      * Returns the currently set MessageItem::Tag id
      */
     [[nodiscard]] const QStringList &tagId() const;
 
-    /**
+    /*!
      * Sets the id of a MessageItem::Tag that the matching messages must contain.
      */
     void setTagId(const QStringList &tagId);
 
     void addTagId(const QString &tagId);
 
-    /**
+    /*!
      * Clears this filter (sets status to 0, search string and tag id to empty strings)
      */
     void clear();
 
-    /**
+    /*!
      * Returns true if this filter is empty (0 status mask, empty search string and empty tag)
      * and it's useless to call match() that will always return true.
      */

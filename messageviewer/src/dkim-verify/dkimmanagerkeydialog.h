@@ -12,7 +12,7 @@
 namespace MessageViewer
 {
 class DKIMManagerKeyWidget;
-/**
+/*!
  * \class MessageViewer::DKIMManagerKeyDialog
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/DKIMManagerKeyDialog

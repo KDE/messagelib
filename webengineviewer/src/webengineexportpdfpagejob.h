@@ -11,9 +11,13 @@
 class QWebEngineView;
 namespace WebEngineViewer
 {
-/**
- * @brief The WebEngineExportHtmlPageJob class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class WebEngineViewer::WebEngineExportPdfPageJob
+ * \inmodule WebEngineViewer
+ * \inheaderfile WebEngineViewer/WebEngineExportPdfPageJob
+ *
+ * \brief The WebEngineExportHtmlPageJob class
+ * \author Laurent Montel <montel@kde.org>
  */
 class WEBENGINEVIEWER_EXPORT WebEngineExportPdfPageJob : public QObject
 {

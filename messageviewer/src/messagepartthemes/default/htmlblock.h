@@ -19,7 +19,7 @@ class Content;
 namespace MessageViewer
 {
 class HtmlWriter;
-/**
+/*!
  * \class MessageViewer::HTMLBlock
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/HTMLBlock
@@ -62,7 +62,7 @@ private:
 // The attachment mark is a div that is placed around the attachment. It is used for drawing
 // a yellow border around the attachment when scrolling to it. When scrolling to it, the border
 // color of the div is changed, see KMReaderWin::scrollToAttachment().
-/**
+/*!
  * \class MessageViewer::AttachmentMarkBlock
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/AttachmentMarkBlock

@@ -14,8 +14,8 @@
 namespace WebEngineViewer
 {
 class CheckPhishingUrlCachePrivate;
-/**
- * @brief The CheckPhishingUrlCache class
+/*!
+ * \brief The CheckPhishingUrlCache class
  * @author Laurent Montel <montel@kde.org>
  */
 class WEBENGINEVIEWER_EXPORT CheckPhishingUrlCache : public QObject
@@ -33,21 +33,21 @@ public:
 
     ~CheckPhishingUrlCache() override;
 
-    /**
-     * @brief addCheckingUrlResult cache url. If @p correctUrl is true we store as UrlOk otherwise MalWare
-     * @param url
-     * @param correctUrl
+    /*!
+     * \brief addCheckingUrlResult cache url. If \a correctUrl is true we store as UrlOk otherwise MalWare
+     * \a url
+     * \a correctUrl
      */
     void addCheckingUrlResult(const QUrl &url, bool correctUrl, uint cacheDuration = 0);
-    /**
-     * @brief urlStatus Return the status of cached Url. When we didn't stored it, it returns Unknown
-     * @param url
-     * @return the status of url
+    /*!
+     * \brief urlStatus Return the status of cached Url. When we didn't stored it, it returns Unknown
+     * \a url
+     * Returns the status of url
      */
     [[nodiscard]] CheckPhishingUrlCache::UrlStatus urlStatus(const QUrl &url);
 
-    /**
-     * @brief clearCache clear the cache and save result in config file.
+    /*!
+     * \brief clearCache clear the cache and save result in config file.
      */
     void clearCache();
 

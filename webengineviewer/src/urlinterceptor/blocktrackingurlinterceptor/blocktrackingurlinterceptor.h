@@ -12,9 +12,13 @@ class QDebug;
 #include <WebEngineViewer/NetworkPluginUrlInterceptorInterface>
 namespace WebEngineViewer
 {
-/**
- * @brief The BlockMailTrackingUrlInterceptor class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class WebEngineViewer::BlockTrackingUrlInterceptor
+ * \inmodule WebEngineViewer
+ * \inheaderfile WebEngineViewer/BlockTrackingUrlInterceptor
+ *
+ * \brief The BlockTrackingUrlInterceptor class
+ * \author Laurent Montel <montel@kde.org>
  */
 class WEBENGINEVIEWER_EXPORT BlockTrackingUrlInterceptor : public WebEngineViewer::NetworkPluginUrlInterceptorInterface
 {

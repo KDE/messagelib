@@ -20,10 +20,12 @@ class QTextStream;
 
 namespace MessageViewer
 {
-/**
- * @short An interface for HTML sinks.
- * @author Marc Mutz <mutz@kde.org>
- *
+/*!
+ * \class MessageViewer::HtmlWriter
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/HtmlWriter
+ * \brief An interface for HTML sinks.
+ * \author Marc Mutz <mutz@kde.org>
  */
 class MESSAGEVIEWER_EXPORT HtmlWriter
 {
@@ -31,42 +33,42 @@ public:
     HtmlWriter();
     virtual ~HtmlWriter();
 
-    /** Signal the begin of stuff to write.
+    /*! Signal the begin of stuff to write.
      *  Sub-classes should open device() in a writable mode here and then
      *  call the base class.
      */
     virtual void begin();
 
-    /** Write out a chunk of text. No HTML escaping is performed.
-     *  @deprecated use stream() instead
+    /*! Write out a chunk of text. No HTML escaping is performed.
+     *  \deprecated use stream() instead
      */
     void write(const QString &html);
 
-    /** Signal the end of stuff to write.
+    /*! Signal the end of stuff to write.
      *  Sub-classes should call the base class and then close device() here.
      */
     virtual void end();
 
-    /**
+    /*!
      * Stop all possibly pending processing in order to be able to
      * call #begin() again.
      * Sub-classes should call the base class and then reset device() here.
      */
     virtual void reset();
 
-    /** Returns the QIODevice backing this HtmlWriter instance.
+    /*! Returns the QIODevice backing this HtmlWriter instance.
      *  Before writing to this directly, make sure to flush stream().
      */
     virtual QIODevice *device() const = 0;
 
-    /** Returns a QTextStream on device().
+    /*! Returns a QTextStream on device().
      *  Use this for writing QString data, rather than local string
      *  concatenations.
      */
     QTextStream *stream() const;
 
-    /**
-     * Embed a part with Content-ID @p contentId, using url @p url.
+    /*!
+     * Embed a part with Content-ID \a contentId, using url \a url.
      */
     virtual void embedPart(const QByteArray &contentId, const QString &url) = 0;
 

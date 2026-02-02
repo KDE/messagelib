@@ -11,7 +11,7 @@
 
 namespace MessageViewer
 {
-/**
+/*!
  * \class MessageViewer::MessageViewerConfigureSettingsPluginWidget
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/MessageViewerConfigureSettingsPluginWidget

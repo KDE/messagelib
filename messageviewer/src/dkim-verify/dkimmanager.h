@@ -14,7 +14,7 @@
 
 namespace MessageViewer
 {
-/**
+/*!
  * \class MessageViewer::DKIMManager
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/DKIMManager

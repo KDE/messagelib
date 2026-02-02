@@ -18,7 +18,7 @@ class Message;
 namespace MessageViewer
 {
 class HeaderStyle;
-/**
+/*!
  * \class MessageViewer::GrantleeHeaderFormatter
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/GrantleeHeaderFormatter

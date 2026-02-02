@@ -16,7 +16,7 @@
 
 namespace MessageViewer
 {
-/**
+/*!
  * \class MessageViewer::DKIMCheckSignatureJob
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/DKIMCheckSignatureJob

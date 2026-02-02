@@ -24,8 +24,12 @@ using MessagePartPtr = QSharedPointer<MessagePart>;
 namespace Interface
 {
 class BodyPart;
-/**
- * @brief The BodyPartFormatter class
+/*!
+ * \class MimeTreeParser::Interface::BodyPartFormatter
+ * \inmodule MimeTreeParser
+ * \inheaderfile MimeTreeParser/Interface/BodyPartFormatter
+ *
+ * \brief The BodyPartFormatter class
  */
 class MIMETREEPARSER_EXPORT BodyPartFormatter
 {
@@ -39,19 +43,22 @@ public:
     virtual MimeTreeParser::MessagePartPtr process(BodyPart &part) const = 0;
 };
 
-/**
-    @short interface for BodyPartFormatter plugins
-
-    The interface is queried by for types, subtypes, and the
-    corresponding bodypart formatter, and the result inserted into
-    the bodypart formatter factory.
-
-    Subtype alone or both type and subtype may be "*", which is
-    taken as a wildcard, so that e.g. type=text subtype=* matches
-    any text subtype, but with lesser specificity than a concrete
-    mimetype such as text/plain. type=* is only allowed when
-    subtype=*, too.
-*/
+/*!
+ * \class MimeTreeParser::Interface::BodyPartFormatterPlugin
+ * \inmodule MimeTreeParser
+ * \inheaderfile MimeTreeParser/Interface/BodyPartFormatter
+ *
+ * \brief The BodyPartFormatterPlugin class
+ *
+ * The interface is queried by for types, subtypes, and the
+ * corresponding bodypart formatter, and the result inserted into
+ * the bodypart formatter factory.
+ * Subtype alone or both type and subtype may be "*", which is
+ * taken as a wildcard, so that e.g. type=text subtype=* matches
+ * any text subtype, but with lesser specificity than a concrete
+ * mimetype such as text/plain. type=* is only allowed when
+ * subtype=*, too.
+ */
 class MIMETREEPARSER_EXPORT BodyPartFormatterPlugin
 {
 public:

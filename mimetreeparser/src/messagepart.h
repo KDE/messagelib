@@ -52,7 +52,11 @@ namespace Interface
 class ObjectTreeSource;
 }
 /**
- * @brief The MessagePart class
+ * \class MimeTreeParser::MessagePart
+ * \inmodule MimeTreeParser
+ * \inheaderfile MimeTreeParser/MessagePart
+ *
+ * \brief The MessagePart class
  */
 class MIMETREEPARSER_EXPORT MessagePart : public QObject
 {
@@ -69,30 +73,46 @@ class MIMETREEPARSER_EXPORT MessagePart : public QObject
 public:
     using Ptr = QSharedPointer<MessagePart>;
     /*!
+     * \brief Constructor.
+     * \param otp The ObjectTreeParser.
+     * \param text The text content.
      */
     MessagePart(ObjectTreeParser *otp, const QString &text);
     /*!
+     * \brief Destructor.
      */
     ~MessagePart() override;
 
     /*!
+     * \brief Set parent part.
+     * \param parentPart The parent MessagePart.
      */
     void setParentPart(MessagePart *parentPart);
     /*!
+     * \brief Get parent part.
+     * \return The parent MessagePart.
      */
     [[nodiscard]] MessagePart *parentPart() const;
 
     /*!
+     * \brief Get text.
+     * \return The text content.
      */
     [[nodiscard]] virtual QString text() const;
     /*!
+     * \brief Set text.
+     * \param text The text content to set.
      */
     void setText(const QString &text);
 
     /*!
+     * \brief Get plaintext content.
+     * \return The plaintext content.
      */
     [[nodiscard]] virtual QString plaintextContent() const;
     /*!
+     * \brief Get HTML content.
+     * \return The HTML content.
      */
     [[nodiscard]] virtual QString htmlContent() const;
 
@@ -209,38 +229,86 @@ private:
     std::unique_ptr<MessagePartPrivate> d;
 };
 /**
- * @brief The MimeMessagePart class
+ * \class MimeTreeParser::MimeMessagePart
+ * \inmodule MimeTreeParser
+ * \inheaderfile MimeTreeParser/MessagePart
+ *
+ * \brief The MimeMessagePart class
  */
 class MIMETREEPARSER_EXPORT MimeMessagePart : public MessagePart
 {
     Q_OBJECT
 public:
     using Ptr = QSharedPointer<MimeMessagePart>;
+    /*!
+     * \brief Constructor.
+     * \param otp The ObjectTreeParser.
+     * \param node The KMime::Content node.
+     * \param onlyOneMimePart Whether to process only one MIME part.
+     */
     MimeMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, bool onlyOneMimePart);
+    /*!
+     * \brief Destructor.
+     */
     ~MimeMessagePart() override;
 
+    /*!
+     * \brief Get text.
+     * \return The text content.
+     */
     [[nodiscard]] QString text() const override;
 
+    /*!
+     * \brief Get plaintext content.
+     * \return The plaintext content.
+     */
     [[nodiscard]] QString plaintextContent() const override;
+    /*!
+     * \brief Get HTML content.
+     * \return The HTML content.
+     */
     [[nodiscard]] QString htmlContent() const override;
 
 private:
     const bool mOnlyOneMimePart;
 };
 /**
- * @brief The MessagePartList class
+ * \class MimeTreeParser::MessagePartList
+ * \inmodule MimeTreeParser
+ * \inheaderfile MimeTreeParser/MessagePart
+ *
+ * \brief The MessagePartList class
  */
 class MIMETREEPARSER_EXPORT MessagePartList : public MessagePart
 {
     Q_OBJECT
 public:
     using Ptr = QSharedPointer<MessagePartList>;
+    /*!
+     * \brief Constructor.
+     * \param otp The ObjectTreeParser.
+     */
     explicit MessagePartList(MimeTreeParser::ObjectTreeParser *otp);
+    /*!
+     * \brief Destructor.
+     */
     ~MessagePartList() override;
 
+    /*!
+     * \brief Get text.
+     * \return The text content.
+     */
     [[nodiscard]] QString text() const override;
 
+    /*!
+     * \brief Get plaintext content.
+     * \return The plaintext content.
+     */
     [[nodiscard]] QString plaintextContent() const override;
+    /*!
+     * \brief Get HTML content.
+     * \return The HTML content.
+     */
     [[nodiscard]] QString htmlContent() const override;
 };
 
@@ -250,7 +318,11 @@ enum IconType {
     IconInline
 };
 /**
- * @brief The TextMessagePart class
+ * \class MimeTreeParser::TextMessagePart
+ * \inmodule MimeTreeParser
+ * \inheaderfile MimeTreeParser/MessagePart
+ *
+ * \brief The TextMessagePart class
  */
 class MIMETREEPARSER_EXPORT TextMessagePart : public MessagePartList
 {
@@ -262,7 +334,16 @@ class MIMETREEPARSER_EXPORT TextMessagePart : public MessagePartList
     Q_PROPERTY(QString comment READ comment CONSTANT)
 public:
     using Ptr = QSharedPointer<TextMessagePart>;
+    /*!
+     * \brief Constructor.
+     * \param otp The ObjectTreeParser.
+     * \param node The KMime::Content node.
+     * \param decryptMessage Whether to decrypt the message.
+     */
     TextMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, bool decryptMessage);
+    /*!
+     * \brief Destructor.
+     */
     ~TextMessagePart() override;
 
     KMMsgSignatureState signatureState() const;
@@ -289,25 +370,51 @@ private:
     const bool mDecryptMessage;
 };
 /**
- * @brief The AttachmentMessagePart class
+ * \class MimeTreeParser::AttachmentMessagePart
+ * \inmodule MimeTreeParser
+ * \inheaderfile MimeTreeParser/MessagePart
+ *
+ * \brief The AttachmentMessagePart class
  */
 class MIMETREEPARSER_EXPORT AttachmentMessagePart : public TextMessagePart
 {
     Q_OBJECT
 public:
     using Ptr = QSharedPointer<AttachmentMessagePart>;
+    /*!
+     * \brief Constructor.
+     * \param otp The ObjectTreeParser.
+     * \param node The KMime::Content node.
+     * \param decryptMessage Whether to decrypt the message.
+     */
     AttachmentMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, bool decryptMessage);
+    /*!
+     * \brief Destructor.
+     */
     ~AttachmentMessagePart() override;
 };
 /**
- * @brief The HtmlMessagePart class
+ * \class MimeTreeParser::HtmlMessagePart
+ * \inmodule MimeTreeParser
+ * \inheaderfile MimeTreeParser/MessagePart
+ *
+ * \brief The HtmlMessagePart class
  */
 class MIMETREEPARSER_EXPORT HtmlMessagePart : public MessagePart
 {
     Q_OBJECT
 public:
     using Ptr = QSharedPointer<HtmlMessagePart>;
+    /*!
+     * \brief Constructor.
+     * \param otp The ObjectTreeParser.
+     * \param node The KMime::Content node.
+     * \param source The ObjectTreeSource.
+     */
     HtmlMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, MimeTreeParser::Interface::ObjectTreeSource *source);
+    /*!
+     * \brief Destructor.
+     */
     ~HtmlMessagePart() override;
 
     [[nodiscard]] QString text() const override;
@@ -323,14 +430,27 @@ private:
     QByteArray mCharset;
 };
 /**
- * @brief The AlternativeMessagePart class
+ * \class MimeTreeParser::AlternativeMessagePart
+ * \inmodule MimeTreeParser
+ * \inheaderfile MimeTreeParser/MessagePart
+ *
+ * \brief The AlternativeMessagePart class
  */
 class MIMETREEPARSER_EXPORT AlternativeMessagePart : public MessagePart
 {
     Q_OBJECT
 public:
     using Ptr = QSharedPointer<AlternativeMessagePart>;
+    /*!
+     * \brief Constructor.
+     * \param otp The ObjectTreeParser.
+     * \param node The KMime::Content node.
+     * \param preferredMode The preferred HTML mode.
+     */
     AlternativeMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, Util::HtmlMode preferredMode);
+    /*!
+     * \brief Destructor.
+     */
     ~AlternativeMessagePart() override;
 
     [[nodiscard]] QString text() const override;
@@ -356,14 +476,28 @@ private:
     QMap<Util::HtmlMode, MimeMessagePart::Ptr> mChildParts;
 };
 /**
- * @brief The CertMessagePart class
+ * \class MimeTreeParser::CertMessagePart
+ * \inmodule MimeTreeParser
+ * \inheaderfile MimeTreeParser/MessagePart
+ *
+ * \brief The CertMessagePart class
  */
 class MIMETREEPARSER_EXPORT CertMessagePart : public MessagePart
 {
     Q_OBJECT
 public:
     using Ptr = QSharedPointer<CertMessagePart>;
+    /*!
+     * \brief Constructor.
+     * \param otp The ObjectTreeParser.
+     * \param node The KMime::Content node.
+     * \param cryptoProto The QGpgME protocol.
+     * \param autoImport Whether to auto import.
+     */
     CertMessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, const QGpgME::Protocol *cryptoProto, bool autoImport);
+    /*!
+     * \brief Destructor.
+     */
     ~CertMessagePart() override;
 
     [[nodiscard]] QString text() const override;
@@ -376,14 +510,27 @@ private:
     const QGpgME::Protocol *mCryptoProto;
 };
 /**
- * @brief The EncapsulatedRfc822MessagePart class
+ * \class MimeTreeParser::EncapsulatedRfc822MessagePart
+ * \inmodule MimeTreeParser
+ * \inheaderfile MimeTreeParser/MessagePart
+ *
+ * \brief The EncapsulatedRfc822MessagePart class
  */
 class MIMETREEPARSER_EXPORT EncapsulatedRfc822MessagePart : public MessagePart
 {
     Q_OBJECT
 public:
     using Ptr = QSharedPointer<EncapsulatedRfc822MessagePart>;
+    /*!
+     * \brief Constructor.
+     * \param otp The ObjectTreeParser.
+     * \param node The KMime::Content node.
+     * \param message The KMime::Message.
+     */
     EncapsulatedRfc822MessagePart(MimeTreeParser::ObjectTreeParser *otp, KMime::Content *node, const std::shared_ptr<KMime::Message> &message);
+    /*!
+     * \brief Destructor.
+     */
     ~EncapsulatedRfc822MessagePart() override;
 
     [[nodiscard]] QString text() const override;
@@ -396,7 +543,11 @@ private:
     const std::shared_ptr<KMime::Message> mMessage;
 };
 /**
- * @brief The EncryptedMessagePart class
+ * \class MimeTreeParser::EncryptedMessagePart
+ * \inmodule MimeTreeParser
+ * \inheaderfile MimeTreeParser/MessagePart
+ *
+ * \brief The EncryptedMessagePart class
  */
 class MIMETREEPARSER_EXPORT EncryptedMessagePart : public MessagePart
 {
@@ -407,8 +558,19 @@ class MIMETREEPARSER_EXPORT EncryptedMessagePart : public MessagePart
     Q_PROPERTY(bool passphraseError READ passphraseError)
 public:
     using Ptr = QSharedPointer<EncryptedMessagePart>;
+    /*!
+     * \brief Constructor.
+     * \param otp The ObjectTreeParser.
+     * \param text The text content.
+     * \param cryptoProto The QGpgME protocol.
+     * \param fromAddress The sender's email address.
+     * \param node The KMime::Content node.
+     */
     EncryptedMessagePart(ObjectTreeParser *otp, const QString &text, const QGpgME::Protocol *cryptoProto, const QString &fromAddress, KMime::Content *node);
 
+    /*!
+     * \brief Destructor.
+     */
     ~EncryptedMessagePart() override;
 
     [[nodiscard]] QString text() const override;
@@ -465,7 +627,11 @@ protected:
     friend class EncryptedBodyPartFormatter;
 };
 /**
- * @brief The SignedMessagePart class
+ * \class MimeTreeParser::SignedMessagePart
+ * \inmodule MimeTreeParser
+ * \inheaderfile MimeTreeParser/MessagePart
+ *
+ * \brief The SignedMessagePart class
  */
 class MIMETREEPARSER_EXPORT SignedMessagePart : public MessagePart
 {
@@ -473,8 +639,19 @@ class MIMETREEPARSER_EXPORT SignedMessagePart : public MessagePart
     Q_PROPERTY(bool isSigned READ isSigned)
 public:
     using Ptr = QSharedPointer<SignedMessagePart>;
+    /*!
+     * \brief Constructor.
+     * \param otp The ObjectTreeParser.
+     * \param text The text content.
+     * \param cryptoProto The QGpgME protocol.
+     * \param fromAddress The sender's email address.
+     * \param node The KMime::Content node.
+     */
     SignedMessagePart(ObjectTreeParser *otp, const QString &text, const QGpgME::Protocol *cryptoProto, const QString &fromAddress, KMime::Content *node);
 
+    /*!
+     * \brief Destructor.
+     */
     ~SignedMessagePart() override;
 
     void setIsSigned(bool isSigned);

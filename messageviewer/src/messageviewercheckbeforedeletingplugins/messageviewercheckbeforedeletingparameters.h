@@ -10,7 +10,7 @@
 namespace MessageViewer
 {
 class MessageViewerCheckBeforeDeletingParametersPrivate;
-/**
+/*!
  * \class MessageViewer::MessageViewerCheckBeforeDeletingParameters
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/MessageViewerCheckBeforeDeletingParameters

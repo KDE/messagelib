@@ -10,7 +10,7 @@
 #include <QList>
 namespace MessageViewer
 {
-/**
+/*!
  * \class MessageViewer::DKIMManagerKeyModel
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/DKIMManagerKeyModel

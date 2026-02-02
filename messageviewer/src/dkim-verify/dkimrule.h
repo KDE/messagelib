@@ -12,7 +12,7 @@ class QDebug;
 
 namespace MessageViewer
 {
-/**
+/*!
  * \class MessageViewer::DKIMRule
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/DKIMRule

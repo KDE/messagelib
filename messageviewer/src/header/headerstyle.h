@@ -34,14 +34,14 @@ namespace MessageViewer
 class HeaderStrategy;
 class HeaderStylePrivate;
 
-/** This class encapsulates the visual appearance of message
+/*! This class encapsulates the visual appearance of message
     headers. Together with HeaderStrategy, which determines
     which of the headers present in the message be shown, it is
     responsible for the formatting of message headers.
 
-    @short Encapsulates visual appearance of message headers.
+    \brief Encapsulates visual appearance of message headers.
     @author Marc Mutz <mutz@kde.org>
-    @see HeaderStrategy
+    \sa HeaderStrategy
 **/
 class MESSAGEVIEWER_EXPORT HeaderStyle
 {

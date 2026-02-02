@@ -26,25 +26,43 @@ class NodeHelper;
 namespace MimeTreeParser
 {
 /**
-    @short an implementation of the BodyPart interface using KMime::Content's
-*/
+ * \class MimeTreeParser::PartNodeBodyPart
+ * \inmodule MimeTreeParser
+ * \inheaderfile MimeTreeParser/PartNodeBodyPart
+ *
+ * @short an implementation of the BodyPart interface using KMime::Content's
+ */
 class MIMETREEPARSER_EXPORT PartNodeBodyPart : public Interface::BodyPart
 {
 public:
     /*!
+     * \brief Constructor.
+     * \param otp The ObjectTreeParser.
+     * \param result The ProcessResult.
+     * \param topLevelContent The top-level KMime::Content.
+     * \param content The KMime::Content.
+     * \param nodeHelper The NodeHelper.
      */
     explicit PartNodeBodyPart(ObjectTreeParser *otp, ProcessResult *result, KMime::Content *topLevelContent, KMime::Content *content, NodeHelper *nodeHelper);
 
     /*!
+     * \brief Get memento.
+     * \return The BodyPartMemento.
      */
     Interface::BodyPartMemento *memento() const override;
     /*!
+     * \brief Get content.
+     * \return The KMime::Content.
      */
     KMime::Content *content() const override;
     /*!
+     * \brief Get top-level content.
+     * \return The top-level KMime::Content.
      */
     KMime::Content *topLevelContent() const override;
     /*!
+     * \brief Get process result.
+     * \return The ProcessResult.
      */
     ProcessResult *processResult() const override;
 

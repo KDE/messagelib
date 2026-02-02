@@ -5,7 +5,7 @@
   Copyright (c) James Ashton - Sydney University - June 1990. //krazy:exclude=copyright
 
   Additions for KDE:
-  SPDX-FileCopyrightText: 2004 Jakob Schröter <js@camaya.net>
+  SPDX-FileCopyrightText: 2004 Jakob Schröter <js\\amaya.net>
 
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
@@ -263,7 +263,7 @@ class QString;
 
 namespace MessageViewer
 {
-/**
+/*!
  * \class MessageViewer::KXFace
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/KXFace
@@ -276,13 +276,13 @@ public:
     KXFace();
     ~KXFace() override;
 
-    /**
-     * generates the xface string from @p image
+    /*!
+     * generates the xface string from \a image
      */
     QString fromImage(const QImage &image);
 
-    /**
-     * creates a pixmap from @p xface
+    /*!
+     * creates a pixmap from \a xface
      */
     QImage toImage(const QString &xface);
 

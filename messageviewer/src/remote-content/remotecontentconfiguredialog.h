@@ -11,7 +11,7 @@
 namespace MessageViewer
 {
 class RemoteContentConfigureWidget;
-/**
+/*!
  * \class MessageViewer::RemoteContentConfigureDialog
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/RemoteContentConfigureDialog

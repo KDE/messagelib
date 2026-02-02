@@ -10,7 +10,7 @@
 namespace MessageViewer
 {
 class DKIMManagerKeyTreeView;
-/**
+/*!
  * \class MessageViewer::DKIMManagerKeyWidget
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/DKIMManagerKeyWidget

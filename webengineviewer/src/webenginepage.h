@@ -13,27 +13,31 @@ class QWebEngineDownloadRequest;
 namespace WebEngineViewer
 {
 class WebHitTest;
-/**
- * @brief The WebEnginePage class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class WebEngineViewer::WebEnginePage
+ * \inmodule WebEngineViewer
+ * \inheaderfile WebEngineViewer/WebEnginePage
+ *
+ * \brief The WebEnginePage class
+ * \author Laurent Montel <montel@kde.org>
  */
 class WEBENGINEVIEWER_EXPORT WebEnginePage : public QWebEnginePage
 {
     Q_OBJECT
 public:
-    /**
+    /*!
      * Constructor.
      *
      * A private QWebEngineProfile, only applying to this QWebEnginePage,
      * will be created to implement browser settings.  It can be accessed via
-     * @c profile(), but it should not be shared or reused unless care is
+     * \\ profile(), but it should not be shared or reused unless care is
      * taken that the profile is not deleted until all of the QWebEnginePage's
      * belonging to it are deleted first.
      *
-     * @param parent The parent object
+     * \a parent The parent object
      **/
     explicit WebEnginePage(QObject *parent = nullptr);
-    /**
+    /*!
      * Destructor.  If there is a private QWebEngineProfile then it will also
      * be destroyed.
      **/

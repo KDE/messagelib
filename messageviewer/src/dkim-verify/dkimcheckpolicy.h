@@ -10,7 +10,7 @@
 #include "messageviewer_export.h"
 namespace MessageViewer
 {
-/**
+/*!
  * \class MessageViewer::DKIMCheckPolicy
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/DKIMCheckPolicy

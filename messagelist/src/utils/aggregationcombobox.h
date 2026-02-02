@@ -18,7 +18,11 @@ class StorageModel;
 namespace Utils
 {
 class AggregationComboBoxPrivate;
-/**
+/*!
+ * \class MessageList::Utils::AggregationComboBox
+ * \inmodule MessageList
+ * \inheaderfile MessageList/AggregationComboBox
+ *
  * A specialized QComboBox that lists all message list aggregations.
  */
 class MESSAGELIST_EXPORT AggregationComboBox : public QComboBox

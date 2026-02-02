@@ -13,9 +13,13 @@ namespace WebEngineViewer
 {
 class BackOffModeManagerPrivate;
 // https://developers.google.com/safe-browsing/v4/request-frequency
-/**
- * @brief The BackOffModeManager class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class WebEngineViewer::BackOffModeManager
+ * \inmodule WebEngineViewer
+ * \inheaderfile WebEngineViewer/BackOffModeManager
+ *
+ * \brief The BackOffModeManager class
+ * \author Laurent Montel <montel@kde.org>
  */
 class WEBENGINEVIEWER_EXPORT BackOffModeManager : public QObject
 {

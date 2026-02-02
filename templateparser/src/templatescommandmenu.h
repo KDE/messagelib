@@ -13,15 +13,25 @@ class KActionMenu;
 class QMenu;
 namespace TemplateParser
 {
-/**
- * @brief The TemplatesCommandMenu class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class TemplateParser::TemplatesCommandMenu
+ * \inmodule TemplateParser
+ * \inheaderfile TemplateParser/TemplatesCommandMenu
+ * \brief The TemplatesCommandMenu class
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEMPLATEPARSER_EXPORT TemplatesCommandMenu : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     * \brief Constructor
+     * \param parent parent object
+     */
     explicit TemplatesCommandMenu(QObject *parent = nullptr);
+    /*!
+     * \brief Destructor
+     */
     ~TemplatesCommandMenu() override;
 
     enum MenuType : uint8_t {
@@ -107,18 +117,49 @@ public:
         CLanguage,
     };
 
+    /*!
+     * \brief Returns the menu
+     * \return QMenu pointer
+     */
     [[nodiscard]] QMenu *menu() const;
+    /*!
+     * \brief Fills the menu with commands
+     */
     void fillMenu();
+    /*!
+     * \brief Fills the submenus
+     */
     void fillSubMenus();
 
+    /*!
+     * \brief Returns the menu types
+     * \return menu types flags
+     */
     [[nodiscard]] MenuTypes type() const;
+    /*!
+     * \brief Sets the menu types
+     * \param type menu types flags
+     */
     void setType(MenuTypes type);
 
 Q_SIGNALS:
+    /*!
+     * \brief Emitted when a command is inserted
+     * \param cmd command enumeration
+     */
     void insertCommand(TemplateParser::TemplatesCommandMenu::Command cmd);
+    /*!
+     * \brief Emitted when a command string is inserted
+     * \param cmd command string
+     * \param adjustCursor cursor adjustment value
+     */
     void insertCommand(const QString &cmd, int adjustCursor = 0);
 
 public Q_SLOTS:
+    /*!
+     * \brief Slot to insert a command
+     * \param cmd command enumeration
+     */
     void slotInsertCommand(TemplateParser::TemplatesCommandMenu::Command cmd);
 
 protected:

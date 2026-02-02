@@ -17,7 +17,7 @@ namespace MessageViewer
 {
 class HeaderStyle;
 class HeaderStylePlugin;
-/**
+/*!
  * \class MessageViewer::HeaderStyleInterface
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/HeaderStyleInterface

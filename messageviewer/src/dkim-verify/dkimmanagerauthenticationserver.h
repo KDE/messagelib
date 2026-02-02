@@ -10,7 +10,7 @@
 #include <QObject>
 namespace MessageViewer
 {
-/**
+/*!
  * \class MessageViewer::DKIMManagerAuthenticationServer
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/DKIMManagerAuthenticationServer

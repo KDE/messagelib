@@ -12,7 +12,7 @@
 namespace MessageViewer
 {
 class MessageViewerConfigureSettingsPluginPrivate;
-/**
+/*!
  * \class MessageViewer::MessageViewerConfigureSettingsPlugin
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/MessageViewerConfigureSettingsPlugin

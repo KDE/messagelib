@@ -16,6 +16,14 @@ class RichTextEditorWidget;
 
 namespace WebEngineViewer
 {
+/*!
+ * \class WebEngineViewer::TrackingDetailsDialog
+ * \inmodule WebEngineViewer
+ * \inheaderfile WebEngineViewer/TrackingDetailsDialog
+ *
+ * \brief The TrackingDetailsDialog class
+ * \author Laurent Montel <montel@kde.org>
+ */
 class WEBENGINEVIEWER_EXPORT TrackingDetailsDialog : public QDialog
 {
     Q_OBJECT

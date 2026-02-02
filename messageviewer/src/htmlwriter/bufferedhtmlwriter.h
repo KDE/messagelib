@@ -14,8 +14,11 @@
 
 namespace MessageViewer
 {
-/**
- * QBuffer-backed HtmlWriter
+/*!
+ * \class MessageViewer::BufferedHtmlWriter
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/BufferedHtmlWriter
+ * \brief QBuffer-backed HtmlWriter
  */
 class MESSAGEVIEWER_EXPORT BufferedHtmlWriter : public HtmlWriter
 {

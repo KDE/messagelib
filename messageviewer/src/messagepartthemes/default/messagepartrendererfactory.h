@@ -19,7 +19,7 @@ namespace MessageViewer
 {
 class MessagePartRendererBase;
 class MessagePartRendererFactoryPrivate;
-/**
+/*!
  * \class MessageViewer::MessagePartRendererFactory
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/MessagePartRendererFactory
@@ -34,7 +34,7 @@ public:
      */
     ~MessagePartRendererFactory();
 
-    /** Customize where to look for render plugins.
+    /*! Customize where to look for render plugins.
      *  This is the sub directory appended to the Qt plugin search paths.
      *  An empty string disables plugin loading.
      *  This only has any effect before the first call to renderersForPart().

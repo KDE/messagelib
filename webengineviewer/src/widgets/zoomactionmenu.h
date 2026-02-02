@@ -12,9 +12,13 @@ class KActionCollection;
 namespace WebEngineViewer
 {
 class ZoomActionMenuPrivate;
-/**
- * @brief The ZoomActionMenu class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class WebEngineViewer::ZoomActionMenu
+ * \inmodule WebEngineViewer
+ * \inheaderfile WebEngineViewer/ZoomActionMenu
+ *
+ * \brief The ZoomActionMenu class
+ * \author Laurent Montel <montel@kde.org>
  */
 class WEBENGINEVIEWER_EXPORT ZoomActionMenu : public KActionMenu
 {

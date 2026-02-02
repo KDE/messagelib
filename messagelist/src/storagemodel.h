@@ -29,7 +29,11 @@ namespace Core
 class MessageItem;
 }
 
-/**
+/*!
+ * \class MessageList::StorageModel
+ * \inmodule MessageList
+ * \inheaderfile MessageList/StorageModel
+ *
  * The Akonadi specific implementation of the Core::StorageModel.
  */
 class MESSAGELIST_EXPORT StorageModel : public MessageList::Core::StorageModel
@@ -37,30 +41,45 @@ class MESSAGELIST_EXPORT StorageModel : public MessageList::Core::StorageModel
     Q_OBJECT
 
 public:
-    /**
-     * Create a StorageModel wrapping the specified folder.
+    /*!
+     * \brief Create a StorageModel wrapping the specified folder.
+     * \param model The item model.
+     * \param selectionModel The selection model.
+     * \param parent The parent object.
      */
     explicit StorageModel(QAbstractItemModel *model, QItemSelectionModel *selectionModel, QObject *parent = nullptr);
     /*!
+     * \brief Destructor.
      */
     ~StorageModel() override;
 
     /*!
+     * \brief Get displayed collections.
+     * \return The list of displayed collections.
      */
     [[nodiscard]] Akonadi::Collection::List displayedCollections() const;
 
     /*!
+     * \brief Get ID.
+     * \return The ID string.
      */
     [[nodiscard]] QString id() const override;
     /*!
+     * \brief Check if contains outbound messages.
+     * \return True if contains outbound messages.
      */
     [[nodiscard]] bool containsOutboundMessages() const override;
 
     /*!
+     * \brief Check if is outbound folder.
+     * \param c The collection to check.
+     * \return True if is outbound folder.
      */
     [[nodiscard]] virtual bool isOutBoundFolder(const Akonadi::Collection &c) const;
 
     /*!
+     * \brief Get initial unread row count guess.
+     * \return The initial unread row count guess.
      */
     [[nodiscard]] int initialUnreadRowCountGuess() const override;
     /*!

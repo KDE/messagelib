@@ -23,24 +23,31 @@ class Filter;
 class SearchStatusButtons;
 class SearchMessageByButtons;
 class SearchLineCommandWidget;
-/**
- * @brief The QuickSearchLine class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class MessageList::Core::QuickSearchLine
+ * \inmodule MessageList
+ * \inheaderfile MessageList/QuickSearchLine
+ *
+ * \brief The QuickSearchLine class
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGELIST_EXPORT QuickSearchLine : public QWidget
 {
     Q_OBJECT
 public:
     /*!
-     * \brief QuickSearchLine
-     * \param parent
+     * \brief Constructor for QuickSearchLine.
+     * \param parent The parent widget.
      */
     explicit QuickSearchLine(QWidget *parent = nullptr);
     /*!
+     * \brief Destructor.
      */
     ~QuickSearchLine() override;
 
     /*!
+     * \brief Gets the search options.
+     * \return The current search options.
      */
     [[nodiscard]] SearchMessageByButtons::SearchOptions searchOptions() const;
 

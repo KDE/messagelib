@@ -15,7 +15,7 @@ namespace MessageViewer
 {
 class HeaderStylePlugin;
 class HeaderStyleMenuManagerPrivate;
-/**
+/*!
  * \class MessageViewer::HeaderStyleMenuManager
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/HeaderStyleMenuManager

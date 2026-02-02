@@ -14,6 +14,10 @@ class QToolButton;
 namespace MessageList::Core
 {
 /*!
+ * \class MessageList::Core::SearchMessageByButtons
+ * \inmodule MessageList
+ * \inheaderfile MessageList/SearchMessageByButtons
+ *
  * \brief The SearchMessageByButtons class
  */
 class MESSAGELIST_EXPORT SearchMessageByButtons : public QWidget
@@ -32,13 +36,17 @@ public:
     Q_ENUM(SearchOption)
     Q_DECLARE_FLAGS(SearchOptions, SearchOption)
     /*!
+     * \brief Constructor.
+     * \param parent The parent widget.
      */
     explicit SearchMessageByButtons(QWidget *parent = nullptr);
     /*!
+     * \brief Destructor.
      */
     ~SearchMessageByButtons() override;
 
     /*!
+     * \brief Change the search against From or To text.
      */
     void changeSearchAgainstFromOrToText();
 

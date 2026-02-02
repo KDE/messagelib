@@ -11,18 +11,24 @@
 
 namespace TemplateParser
 {
-/**
- * @brief The TemplatesTextEdit class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class TemplateParser::TemplatesTextEdit
+ * \inmodule TemplateParser
+ * \inheaderfile TemplateParser/TemplatesTextEdit
+ * \brief The TemplatesTextEdit class
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEMPLATEPARSER_EXPORT TemplatesTextEdit : public TextCustomEditor::PlainTextEditorWidget
 {
     Q_OBJECT
 public:
     /*!
+     * \brief Constructor
+     * \param parent parent widget
      */
     explicit TemplatesTextEdit(QWidget *parent = nullptr);
     /*!
+     * \brief Destructor
      */
     ~TemplatesTextEdit() override;
 };

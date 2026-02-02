@@ -11,7 +11,7 @@
 class QDebug;
 namespace MessageViewer
 {
-/**
+/*!
  * \class MessageViewer::DMARCInfo
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/DMARCInfo

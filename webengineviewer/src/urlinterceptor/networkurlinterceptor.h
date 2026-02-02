@@ -13,9 +13,13 @@ namespace WebEngineViewer
 {
 class NetworkUrlInterceptorPrivate;
 class NetworkPluginUrlInterceptorInterface;
-/**
- * @brief The NetworkUrlInterceptor class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class WebEngineViewer::NetworkUrlInterceptor
+ * \inmodule WebEngineViewer
+ * \inheaderfile WebEngineViewer/NetworkUrlInterceptor
+ *
+ * \brief The NetworkUrlInterceptor class
+ * \author Laurent Montel <montel@kde.org>
  */
 class WEBENGINEVIEWER_EXPORT NetworkUrlInterceptor : public QWebEngineUrlRequestInterceptor
 {

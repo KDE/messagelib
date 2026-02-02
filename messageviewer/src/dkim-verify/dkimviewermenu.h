@@ -12,7 +12,7 @@ class QMenu;
 class QAction;
 namespace MessageViewer
 {
-/**
+/*!
  * \class MessageViewer::DKIMViewerMenu
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/DKIMViewerMenu

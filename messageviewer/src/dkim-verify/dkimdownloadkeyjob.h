@@ -11,7 +11,7 @@
 class QDnsLookup;
 namespace MessageViewer
 {
-/**
+/*!
  * \class MessageViewer::DKIMDownloadKeyJob
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/DKIMDownloadKeyJob
@@ -23,47 +23,75 @@ class MESSAGEVIEWER_EXPORT DKIMDownloadKeyJob : public QObject
     Q_OBJECT
 public:
     /*!
+     * \brief Constructor
+     * \param parent parent object
      */
     explicit DKIMDownloadKeyJob(QObject *parent = nullptr);
     /*!
+     * \brief Destructor
      */
     ~DKIMDownloadKeyJob() override;
 
     /*!
+     * \brief Starts the DNS lookup
+     * \return true if lookup started successfully
      */
     [[nodiscard]] bool start();
 
     /*!
+     * \brief Checks if the job can be started
+     * \return true if job can start
      */
     [[nodiscard]] bool canStart() const;
 
     /*!
      */
+    /*!
+     * \brief Returns the domain name
+     * \return domain name string
+     */
     [[nodiscard]] QString domainName() const;
     /*!
+     * \brief Sets the domain name
+     * \param domainName domain name to set
      */
     void setDomainName(const QString &domainName);
 
     /*!
      */
+    /*!
+     * \brief Returns the selector name
+     * \return selector name string
+     */
     [[nodiscard]] QString selectorName() const;
     /*!
+     * \brief Sets the selector name
+     * \param selectorName selector name to set
      */
     void setSelectorName(const QString &selectorName);
 
     /*!
+     * \brief Returns the resolved DNS value
+     * \return DNS value string
      */
     [[nodiscard]] QString resolvDnsValue() const;
 
     /*!
+     * \brief Returns the DNS lookup object
+     * \return QDnsLookup pointer
      */
     [[nodiscard]] QDnsLookup *dnsLookup() const;
 
 Q_SIGNALS:
     /*!
+     * \brief Emitted when an error occurs
+     * \param error error message
      */
     void error(const QString &error);
     /*!
+     * \brief Emitted when DNS lookup succeeds
+     * \param domain domain name
+     * \param selector selector name
      */
     void success(const QList<QByteArray> &, const QString &domain, const QString &selector);
 

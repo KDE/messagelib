@@ -20,7 +20,11 @@ namespace Utils
 {
 class ThemeComboBoxPrivate;
 
-/**
+/*!
+ * \class MessageList::Utils::ThemeComboBox
+ * \inmodule MessageList
+ * \inheaderfile MessageList/ThemeComboBox
+ *
  * A specialized QComboBox that lists all message list themes.
  */
 class MESSAGELIST_EXPORT ThemeComboBox : public QComboBox

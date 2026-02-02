@@ -10,7 +10,7 @@
 #include <QMenu>
 namespace MessageViewer
 {
-/**
+/*!
  * \class MessageViewer::RemoteContentMenu
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/RemoteContentMenu

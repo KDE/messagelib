@@ -14,7 +14,7 @@
 
 namespace MessageViewer
 {
-/**
+/*!
  * \struct MessageViewer::KeyInfo
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/KeyInfo
@@ -42,7 +42,7 @@ struct MESSAGEVIEWER_EXPORT KeyInfo {
     [[nodiscard]] bool operator!=(const KeyInfo &) const;
 };
 
-/**
+/*!
  * \class MessageViewer::DKIMManagerKey
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/DKIMManagerKey

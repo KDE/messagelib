@@ -59,7 +59,7 @@ class Viewer;
 class RemoteContentMenu;
 class MDNWarningWidget;
 
-/**
+/*!
  * An interface to plug in a handler that is called when
  * an message item has been loaded into the view.
  */
@@ -69,11 +69,11 @@ public:
     AbstractMessageLoadedHandler();
     virtual ~AbstractMessageLoadedHandler();
 
-    /**
+    /*!
      * This method is called whenever a message item has been loaded
      * into the view.
      *
-     * @param item The message item that has been loaded.
+     * \a item The message item that has been loaded.
      */
     virtual void setItem(const Akonadi::Item &item) = 0;
 
@@ -88,7 +88,7 @@ private:
     std::unique_ptr<AbstractMessageLoadedHandlerPrivate> const d;
 };
 
-/**
+/*!
  * This is the main widget for the viewer.
  * See the documentation of ViewerPrivate for implementation details.
  * See Mainpage.dox for an overview of the classes in the messageviewer library.
@@ -100,21 +100,21 @@ class MESSAGEVIEWER_EXPORT Viewer : public QWidget
     Q_DECLARE_PRIVATE(Viewer)
 
 public:
-    /**
+    /*!
      * Create a mail viewer widget
-     * @param parent parent widget
-     * @param widget the application's main widget
-     * @param actionCollection the action collection where the widget's actions will belong to
+     * \a parent parent widget
+     * \a widget the application's main widget
+     * \a actionCollection the action collection where the widget's actions will belong to
      */
     explicit Viewer(QWidget *parent, QWidget *widget = nullptr, KActionCollection *actionCollection = nullptr);
     ~Viewer() override;
 
-    /**
+    /*!
      * Returns the current message displayed in the viewer.
      */
     [[nodiscard]] std::shared_ptr<KMime::Message> message() const;
 
-    /**
+    /*!
      * Returns the current message item displayed in the viewer.
      */
     [[nodiscard]] Akonadi::Item messageItem() const;
@@ -148,99 +148,99 @@ public:
     };
     Q_ENUM(ResourceOnlineMode)
 
-    /**
+    /*!
      * Set the message that shall be shown.
-     * @param message - the message to be shown. If 0, an empty page is displayed.
-     * @param updateMode - update the display immediately or not. See UpdateMode.
+     * \a message - the message to be shown. If 0, an empty page is displayed.
+     * \a updateMode - update the display immediately or not. See UpdateMode.
      */
     void setMessage(const std::shared_ptr<KMime::Message> &message, MimeTreeParser::UpdateMode updateMode = MimeTreeParser::Delayed);
 
-    /**
+    /*!
      * Set the Akonadi item that will be displayed.
-     * @param item - the Akonadi item to be displayed. If it doesn't hold a mail (std::shared_ptr<KMime::Message> as payload data),
+     * \a item - the Akonadi item to be displayed. If it doesn't hold a mail (std::shared_ptr<KMime::Message> as payload data),
      *               an empty page is shown.
-     * @param updateMode - update the display immediately or not. See UpdateMode.
+     * \a updateMode - update the display immediately or not. See UpdateMode.
      */
     void setMessageItem(const Akonadi::Item &item, MimeTreeParser::UpdateMode updateMode = MimeTreeParser::Delayed);
 
-    /**
+    /*!
      * The path to the message in terms of Akonadi collection hierarchy.
      */
     [[nodiscard]] QString messagePath() const;
 
-    /**
+    /*!
      * Set the path to the message in terms of Akonadi collection hierarchy.
      */
     void setMessagePath(const QString &path);
 
-    /**
+    /*!
      * Instead of settings a message to be shown sets a message part
      * to be shown
      */
     void setMessagePart(KMime::Content *aMsgPart);
 
-    /**
+    /*!
      * Convenience method to clear the reader and discard the current message. Sets the internal message pointer
      * returned by message() to 0.
-     * @param updateMode - update the display immediately or not. See UpdateMode.
+     * \a updateMode - update the display immediately or not. See UpdateMode.
      */
     void clear(MimeTreeParser::UpdateMode updateMode = MimeTreeParser::Delayed);
 
     void update(MimeTreeParser::UpdateMode updateMode = MimeTreeParser::Delayed);
 
-    /**
+    /*!
      * Sets a message as the current one and print it immediately.
-     * @param msg the message to display and print
+     * \a msg the message to display and print
      */
     void printMessage(const Akonadi::Item &msg);
 
     void printPreviewMessage(const Akonadi::Item &message);
 
-    /** Print the currently displayed message */
+    /*! Print the currently displayed message */
     void print();
     void printPreview();
 
-    /** Get the html override setting */
+    /*! Get the html override setting */
     [[nodiscard]] Viewer::DisplayFormatMessage displayFormatMessageOverwrite() const;
 
-    /** Override default html mail setting */
+    /*! Override default html mail setting */
     void setDisplayFormatMessageOverwrite(Viewer::DisplayFormatMessage format);
 
-    /** Get the load external references override setting */
+    /*! Get the load external references override setting */
     [[nodiscard]] bool htmlLoadExtOverride() const;
 
-    /** Default behavior for loading external references.
+    /*! Default behavior for loading external references.
      *  Use this for specifying the external reference loading behavior as
      *  specified in the user settings.
-     *  @see setHtmlLoadExtOverride
+     *  \sa setHtmlLoadExtOverride
      */
     void setHtmlLoadExtDefault(bool loadExtDefault);
 
-    /** Override default load external references setting
-     *  @warning This must only be called when the user has explicitly
+    /*! Override default load external references setting
+     *  \warning This must only be called when the user has explicitly
      *  been asked to retrieve external references!
-     *  @see setHtmlLoadExtDefault
+     *  \sa setHtmlLoadExtDefault
      */
     void setHtmlLoadExtOverride(bool loadExtOverride);
 
-    /** Is html mail to be supported? Takes into account override */
+    /*! Is html mail to be supported? Takes into account override */
     [[nodiscard]] bool htmlMail() const;
 
-    /** Is loading ext. references to be supported? Takes into account override */
+    /*! Is loading ext. references to be supported? Takes into account override */
     [[nodiscard]] bool htmlLoadExternal() const;
 
-    /**
+    /*!
      * Display a generic HTML splash page instead of a message.
-     * @param templateName - the template to be loaded
-     * @param data - data for the template
-     * @param domain the domain.
+     * \a templateName - the template to be loaded
+     * \a data - data for the template
+     * \a domain the domain.
      */
     void displaySplashPage(const QString &templateName, const QVariantHash &data, const QByteArray &domain = QByteArray());
 
-    /** Enable the displaying of messages again after an splash (or other) page was displayed */
+    /*! Enable the displaying of messages again after an splash (or other) page was displayed */
     void enableMessageDisplay();
 
-    /** Returns true if the message view is scrolled to the bottom. */
+    /*! Returns true if the message view is scrolled to the bottom. */
     void atBottom();
 
     [[nodiscard]] bool isFixedFont() const;
@@ -248,10 +248,10 @@ public:
 
     [[nodiscard]] QWidget *mainWindow();
 
-    /** Enforce message decryption. */
+    /*! Enforce message decryption. */
     void setDecryptMessageOverwrite(bool overwrite = true);
 
-    /**
+    /*!
      * Initiates a delete, by sending a signal to delete the message item */
     void deleteMessage();
 
@@ -302,10 +302,10 @@ public:
 
     void readConfig();
 
-    /** A QAIM tree model of the message structure. */
+    /*! A QAIM tree model of the message structure. */
     QAbstractItemModel *messageTreeModel() const;
 
-    /**
+    /*!
      * Create an item fetch job that is suitable for using to fetch the message item that will
      * be displayed on this viewer.
      * It will set the correct fetch scope.
@@ -313,14 +313,14 @@ public:
      */
     Akonadi::ItemFetchJob *createFetchJob(const Akonadi::Item &item);
 
-    /**
-     * Adds a @p handler for actions that will be executed when the message
+    /*!
+     * Adds a \a handler for actions that will be executed when the message
      * has been loaded into the view.
      */
     void addMessageLoadedHandler(AbstractMessageLoadedHandler *handler);
 
-    /**
-     * Removes the @p handler for actions that will be executed when the message
+    /*!
+     * Removes the \a handler for actions that will be executed when the message
      * has been loaded into the view.
      */
     void removeMessageLoadedHandler(AbstractMessageLoadedHandler *handler);
@@ -364,16 +364,16 @@ Q_SIGNALS:
     void moveMessageToTrash();
     void pageIsScrolledToBottom(bool);
 
-    /**
+    /*!
      * Emitted when a status bar message is shown. Note that the status bar message is also set to
      * KPIM::BroadcastStatus in addition.
      */
     void showStatusBarMessage(const QString &message);
 
-    /** The user presses the right mouse button. 'url' may be 0. */
+    /*! The user presses the right mouse button. 'url' may be 0. */
     void popupMenu(const Akonadi::Item &msg, const QUrl &url, const QUrl &imageUrl, const QPoint &mousePos);
     void displayPopupMenu(const Akonadi::Item &msg, const WebEngineViewer::WebHitTestResult &result, const QPoint &mousePos);
-    /**
+    /*!
      * The message viewer handles some types of urls itself, most notably http(s)
      * and ftp(s). When it can't handle the url it will Q_EMIT this signal.
      */
@@ -408,7 +408,7 @@ private:
 
 public Q_SLOTS:
 
-    /**
+    /*!
      * HTML Widget scrollbar and layout handling.
      *
      * Scrolling always happens in the direction of the slot that is called. I.e.
@@ -430,10 +430,10 @@ public Q_SLOTS:
     void slotChangeDisplayMail(MessageViewer::Viewer::DisplayFormatMessage, bool);
 
 protected:
-    /** Some necessary event handling. */
+    /*! Some necessary event handling. */
     void closeEvent(QCloseEvent *) override;
     void resizeEvent(QResizeEvent *) override;
-    /** Watch for palette changes */
+    /*! Watch for palette changes */
     [[nodiscard]] bool event(QEvent *e) override;
     [[nodiscard]] bool eventFilter(QObject *obj, QEvent *event) override;
     void changeEvent(QEvent *event) override;

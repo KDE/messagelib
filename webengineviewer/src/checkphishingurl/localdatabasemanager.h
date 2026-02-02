@@ -14,9 +14,13 @@ namespace WebEngineViewer
 {
 class WebEngineView;
 class LocalDataBaseManagerPrivate;
-/**
- * @brief The LocalDataBaseManager class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class WebEngineViewer::LocalDataBaseManager
+ * \inmodule WebEngineViewer
+ * \inheaderfile WebEngineViewer/LocalDataBaseManager
+ *
+ * \brief The LocalDataBaseManager class
+ * \author Laurent Montel <montel@kde.org>
  */
 class WEBENGINEVIEWER_EXPORT LocalDataBaseManager : public QObject
 {

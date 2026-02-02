@@ -13,7 +13,7 @@
 #include <QObject>
 namespace MessageViewer
 {
-/**
+/*!
  * \class MessageViewer::DKIMManagerRules
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/DKIMManagerRules

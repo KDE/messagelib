@@ -33,24 +33,24 @@ public:
         bool fixedFont = false;
         bool htmlFormat = true;
     };
-    /** Construct a CSSHelper object and set its font and color settings to
+    /*! Construct a CSSHelper object and set its font and color settings to
         default values.
         Sub-Classes should put their config loading here.
      */
     explicit CSSHelperBase(const QPaintDevice *pd);
     virtual ~CSSHelperBase();
 
-    /** @return HTML head including style sheet definitions and the
+    /*! Returns HTML head including style sheet definitions and the
         &gt;body&lt; tag */
     virtual QString htmlHead(const HtmlHeadSettings &) const;
 
-    /** @return The collected CSS definitions as a string */
+    /*! Returns The collected CSS definitions as a string */
     [[nodiscard]] QString cssDefinitions(const HtmlHeadSettings &) const;
 
-    /** @return a &lt;div&gt; start tag with embedded style
-        information suitable for quoted text with quote level @p level */
+    /*! Returns a &lt;div&gt; start tag with embedded style
+        information suitable for quoted text with quote level \a level */
     [[nodiscard]] QString quoteFontTag(int level) const;
-    /** @return a &lt;div&gt; start tag with embedded style
+    /*! Returns a &lt;div&gt; start tag with embedded style
         information suitable for non-quoted text */
     [[nodiscard]] QString nonQuotedFontTag() const;
 
@@ -59,7 +59,7 @@ public:
     void setBodyFont(const QFont &font);
     void setPrintFont(const QFont &font);
 
-    /** @return the quote color for the given level, where level ranges from 0 to 2 **/
+    /*! Returns the quote color for the given level, where level ranges from 0 to 2 **/
     [[nodiscard]] QColor quoteColor(int level) const;
     [[nodiscard]] QString quoteColorName(int level) const;
 
@@ -85,7 +85,7 @@ public:
     [[nodiscard]] const HeaderStylePlugin *headerPlugin() const;
 
 protected:
-    /** Recalculate PGP frame and body colors (should be called after changing
+    /*! Recalculate PGP frame and body colors (should be called after changing
         color settings) */
     void recalculatePGPColors();
 

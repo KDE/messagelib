@@ -1,4 +1,4 @@
-/******************************************************************************
+/*!****************************************************************************
  *
  *  SPDX-FileCopyrightText: 2008 Szymon Tomasz Stefanek <pragma@kvirc.net>
  *
@@ -29,28 +29,92 @@ namespace MessageList
 namespace Core
 {
 class MessageItemPrivate;
-/**
- * @brief The MessageItem class
+/*!
+ * \class MessageList::Core::MessageItem
+ * \inmodule MessageList
+ * \inheaderfile MessageList/MessageItem
+ *
+ * \brief The MessageItem class
  */
 class MESSAGELIST_EXPORT MessageItem : public Item, public ModelInvariantIndex
 {
 public:
+    /*!
+     * \class MessageList::Core::MessageItem::Tag
+     * \inmodule MessageList
+     * \inheaderfile MessageList/MessageItem
+     *
+     * \brief Represents a message tag.
+     */
     class MESSAGELIST_EXPORT Tag
     {
     public:
+        /*!
+         * \brief Constructs a tag.
+         * \param pix The icon pixmap for the tag.
+         * \param tagName The name of the tag.
+         * \param tagId The unique identifier of the tag.
+         */
         explicit Tag(const QPixmap &pix, const QString &tagName, const QString &tagId);
+        /*!
+         * \brief Destructor.
+         */
         ~Tag();
+        /*!
+         * \brief Returns the pixmap associated with this tag.
+         * \return The tag pixmap.
+         */
         const QPixmap &pixmap() const;
+        /*!
+         * \brief Returns the name of this tag.
+         * \return The tag name.
+         */
         const QString &name() const;
+        /*!
+         * \brief Returns the ID of this tag.
+         * \return The tag ID.
+         */
         const QString &id() const;
+        /*!
+         * \brief Returns the text color for this tag.
+         * \return The text color.
+         */
         const QColor &textColor() const;
+        /*!
+         * \brief Returns the background color for this tag.
+         * \return The background color.
+         */
         const QColor &backgroundColor() const;
+        /*!
+         * \brief Returns the font for this tag.
+         * \return The font.
+         */
         const QFont &font() const;
+        /*!
+         * \brief Returns the priority of this tag.
+         * \return The tag priority.
+         */
         int priority() const;
 
+        /*!
+         * \brief Sets the text color for this tag.
+         * \param textColor The text color to set.
+         */
         void setTextColor(const QColor &textColor);
+        /*!
+         * \brief Sets the background color for this tag.
+         * \param backgroundColor The background color to set.
+         */
         void setBackgroundColor(const QColor &backgroundColor);
+        /*!
+         * \brief Sets the font for this tag.
+         * \param font The font to set.
+         */
         void setFont(const QFont &font);
+        /*!
+         * \brief Sets the priority for this tag.
+         * \param priority The priority to set.
+         */
         void setPriority(int priority);
 
     private:
@@ -58,6 +122,10 @@ public:
         std::unique_ptr<TagPrivate> const d;
     };
 
+    /*!
+     * \enum ThreadingStatus
+     * \brief The threading status of the message.
+     */
     enum ThreadingStatus {
         PerfectParentFound, ///< this message found a perfect parent to attach to
         ImperfectParentFound, ///< this message found an imperfect parent to attach to (might be fixed later)
@@ -65,6 +133,10 @@ public:
         NonThreadable ///< this message does not look as being threadable
     };
 
+    /*!
+     * \enum EncryptionState
+     * \brief The encryption state of the message.
+     */
     enum EncryptionState {
         NotEncrypted,
         PartiallyEncrypted,
@@ -72,6 +144,10 @@ public:
         EncryptionStateUnknown
     };
 
+    /*!
+     * \enum SignatureState
+     * \brief The signature state of the message.
+     */
     enum SignatureState {
         NotSigned,
         PartiallySigned,
@@ -80,19 +156,26 @@ public:
     };
 
     /*!
+     * \brief Constructs a MessageItem.
      */
     explicit MessageItem();
     /*!
+     * \brief Destructor.
      */
     ~MessageItem() override;
 
 public:
-    /// Returns the list of tags for this item.
+    /*!
+     * \brief Returns the list of tags for this item.
+     * \return The list of tags.
+     */
     virtual QList<Tag *> tagList() const;
 
-    /**
-     * Returns Tag associated to this message that has the specified id or 0
+    /*!
+     * \brief Returns Tag associated to this message that has the specified id or 0
      * if no such tag exists. mTagList will be 0 in 99% of the cases.
+     * \param szTagId The tag ID to search for.
+     * \return The tag with the given ID or nullptr.
      */
     const Tag *findTag(const QString &szTagId) const;
 
@@ -215,7 +298,7 @@ public:
      */
     [[nodiscard]] QString accessibleText(const MessageList::Core::Theme *theme, int columnIndex);
 
-    /**
+    /*!
      * Appends the whole subtree originating at this item
      * to the specified list. This item is included!
      */

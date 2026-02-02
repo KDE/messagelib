@@ -12,7 +12,7 @@
 #include <QObject>
 namespace MessageViewer
 {
-/**
+/*!
  * \class MessageViewer::DKIMCheckPolicyJob
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/DKIMCheckPolicyJob

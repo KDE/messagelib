@@ -17,7 +17,7 @@ class AttachmentStrategy;
 class CSSHelperBase;
 class HtmlWriter;
 
-/** An ObjectTreeSource that does not work on anything */
+/*! An ObjectTreeSource that does not work on anything */
 class EmptySourcePrivate;
 /*!
  * \class MessageViewer::EmptySource
@@ -44,7 +44,7 @@ public:
     virtual const AttachmentStrategy *attachmentStrategy() const;
     virtual HtmlWriter *htmlWriter() const;
     virtual CSSHelperBase *cssHelper() const;
-    /** Return true if external sources should be loaded in a html mail */
+    /*! Return true if external sources should be loaded in a html mail */
     virtual bool htmlLoadExternal() const;
     virtual bool showSignatureDetails() const;
     virtual bool showEncryptionDetails() const;

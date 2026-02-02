@@ -20,7 +20,7 @@ namespace MessageViewer
 // RichHeaderStrategy:
 //   Date, Subject, From, To, CC, ### what exactly?
 //
-/**
+/*!
  * \class MessageViewer::RichHeaderStrategy
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/RichHeaderStrategy

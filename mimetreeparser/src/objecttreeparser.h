@@ -36,12 +36,21 @@ class MimeMessagePart;
 using MessagePartPtr = QSharedPointer<MessagePart>;
 using MimeMessagePartPtr = QSharedPointer<MimeMessagePart>;
 /**
- * @brief The ProcessResult class
+ * \class MimeTreeParser::ProcessResult
+ * \inmodule MimeTreeParser
+ * \inheaderfile MimeTreeParser/ProcessResult
+ *
+ * \brief The ProcessResult class
  */
 class MIMETREEPARSER_EXPORT ProcessResult
 {
 public:
     /*!
+     * \brief Constructor.
+     * \param nodeHelper Pointer to NodeHelper.
+     * \param inlineSignatureState The inline signature state.
+     * \param inlineEncryptionState The inline encryption state.
+     * \param neverDisplayInline Whether to never display inline.
      */
     explicit ProcessResult(NodeHelper *nodeHelper,
                            KMMsgSignatureState inlineSignatureState = KMMsgNotSigned,
@@ -55,27 +64,41 @@ public:
     }
 
     /*!
+     * \brief Get inline signature state.
+     * \return The inline signature state.
      */
     [[nodiscard]] KMMsgSignatureState inlineSignatureState() const;
     /*!
+     * \brief Set inline signature state.
+     * \param state The signature state to set.
      */
     void setInlineSignatureState(KMMsgSignatureState state);
 
     /*!
+     * \brief Get inline encryption state.
+     * \return The inline encryption state.
      */
     [[nodiscard]] KMMsgEncryptionState inlineEncryptionState() const;
     /*!
+     * \brief Set inline encryption state.
+     * \param state The encryption state to set.
      */
     void setInlineEncryptionState(KMMsgEncryptionState state);
 
     /*!
+     * \brief Check if never display inline.
+     * \return True if should never display inline.
      */
     [[nodiscard]] bool neverDisplayInline() const;
     /*!
+     * \brief Set whether to never display inline.
+     * \param display Whether to display inline.
      */
     void setNeverDisplayInline(bool display);
 
     /*!
+     * \brief Adjust crypto states of node.
+     * \param node The KMime::Content node.
      */
     void adjustCryptoStatesOfNode(const KMime::Content *node) const;
 
@@ -258,6 +281,15 @@ is used to mark an attachment in the body with a yellow border when the user cli
 in the header. Finally, parseObjectTree() creates an anchor with the id 'att%1', which is used in
 the Viewer to scroll to the attachment.
 */
+/**
+ * \class MimeTreeParser::ObjectTreeParser
+ * \inmodule MimeTreeParser
+ * \inheaderfile MimeTreeParser/ObjectTreeParser
+ *
+ * \brief Parses messages and generates HTML display code out of them
+ *
+ * See the documentation for details on how this class works.
+ */
 class MIMETREEPARSER_EXPORT ObjectTreeParser
 {
     /**
@@ -267,12 +299,32 @@ class MIMETREEPARSER_EXPORT ObjectTreeParser
     ObjectTreeParser(const ObjectTreeParser &other);
 
 public:
+    /*!
+     * \brief Constructor with source.
+     * \param source The ObjectTreeSource.
+     * \param nodeHelper The NodeHelper (optional).
+     */
     explicit ObjectTreeParser(Interface::ObjectTreeSource *source, NodeHelper *nodeHelper = nullptr);
 
+    /*!
+     * \brief Constructor from top-level parser.
+     * \param topLevelParser The top-level ObjectTreeParser.
+     */
     explicit ObjectTreeParser(const ObjectTreeParser *topLevelParser);
+    /*!
+     * \brief Destructor.
+     */
     virtual ~ObjectTreeParser();
 
+    /*!
+     * \brief Set whether async operations are allowed.
+     * \param allow Whether to allow async operations.
+     */
     void setAllowAsync(bool allow);
+    /*!
+     * \brief Check if async operations are allowed.
+     * \return True if async operations are allowed.
+     */
     [[nodiscard]] bool allowAsync() const;
 
     [[nodiscard]] bool hasPendingAsyncJobs() const;

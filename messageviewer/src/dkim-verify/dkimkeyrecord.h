@@ -12,7 +12,7 @@
 #include <QStringList>
 namespace MessageViewer
 {
-/**
+/*!
  * \class MessageViewer::DKIMKeyRecord
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/DKIMKeyRecord

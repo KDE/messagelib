@@ -12,7 +12,7 @@
 namespace MessageViewer
 {
 class GrantleeHeaderTestStylePrivate;
-/**
+/*!
  * \class MessageViewer::GrantleeHeaderTestStyle
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/GrantleeHeaderTestStyle

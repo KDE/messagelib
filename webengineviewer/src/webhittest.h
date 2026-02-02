@@ -15,9 +15,13 @@ namespace WebEngineViewer
 {
 class WebHitTestResult;
 class WebHitTestPrivate;
-/**
- * @brief The WebHitTest class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class WebEngineViewer::WebHitTest
+ * \inmodule WebEngineViewer
+ * \inheaderfile WebEngineViewer/WebHitTest
+ *
+ * \brief The WebHitTest class
+ * \author Laurent Montel <montel@kde.org>
  */
 class WEBENGINEVIEWER_EXPORT WebHitTest : public QObject
 {

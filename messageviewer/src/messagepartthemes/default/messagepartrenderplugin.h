@@ -18,8 +18,10 @@ class BodyPartURLHandler;
 }
 class MessagePartRendererBase;
 
-/**
- * Plugin interface for MessagePartRendererBase instances.
+/*!n * \class MessageViewer::MessagePartRenderPlugin
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/MessagePartRenderPlugin
+ * \brief Plugin interface for MessagePartRendererBase instances.
  */
 class MESSAGEVIEWER_EXPORT MessagePartRenderPlugin
 {

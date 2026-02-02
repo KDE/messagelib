@@ -16,7 +16,7 @@ namespace MessageViewer
 {
 class MessageViewerCheckBeforeDeletingParameters;
 class MessageViewerCheckBeforeDeletingInterfacePrivate;
-/**
+/*!
  * \class MessageViewer::MessageViewerCheckBeforeDeletingInterface
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/MessageViewerCheckBeforeDeletingInterface

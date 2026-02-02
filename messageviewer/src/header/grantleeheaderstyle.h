@@ -11,7 +11,7 @@
 namespace MessageViewer
 {
 class GrantleeHeaderStylePrivate;
-/**
+/*!
  * \class MessageViewer::GrantleeHeaderStyle
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/GrantleeHeaderStyle

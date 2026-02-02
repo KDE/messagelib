@@ -18,9 +18,13 @@ class QWebEngineView;
 namespace WebEngineViewer
 {
 class WebEngineAccessKeyPrivate;
-/**
- * @brief The WebEngineAccessKey class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class WebEngineViewer::WebEngineAccessKey
+ * \inmodule WebEngineViewer
+ * \inheaderfile WebEngineViewer/WebEngineAccessKey
+ *
+ * \brief The WebEngineAccessKey class
+ * \author Laurent Montel <montel@kde.org>
  */
 class WEBENGINEVIEWER_EXPORT WebEngineAccessKey : public QObject
 {

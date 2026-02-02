@@ -11,7 +11,7 @@
 class QDebug;
 namespace MessageViewer
 {
-/**
+/*!
  * \class MessageViewer::RemoteContentInfo
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/RemoteContentInfo

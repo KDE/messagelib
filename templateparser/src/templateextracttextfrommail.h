@@ -11,31 +11,45 @@
 namespace TemplateParser
 {
 class TemplateWebEnginePage;
-/**
- * @brief The TemplateExtractTextFromMail class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class TemplateParser::TemplateExtractTextFromMail
+ * \inmodule TemplateParser
+ * \inheaderfile TemplateParser/TemplateExtractTextFromMail
+ * \brief The TemplateExtractTextFromMail class
+ * \author Laurent Montel <montel@kde.org>
  */
 class TEMPLATEPARSER_EXPORT TemplateExtractTextFromMail : public QObject
 {
     Q_OBJECT
 public:
     /*!
+     * \brief Constructor
+     * \param parent parent object
      */
     explicit TemplateExtractTextFromMail(QObject *parent = nullptr);
     /*!
+     * \brief Destructor
      */
     ~TemplateExtractTextFromMail() override;
 
     /*!
+     * \brief Sets the HTML content to extract from
+     * \param html HTML content string
      */
     void setHtmlContent(const QString &html);
 
     /*!
      */
+    /*!
+     * \brief Returns the extracted plain text
+     * \return plain text string
+     */
     [[nodiscard]] QString plainText() const;
 
 Q_SIGNALS:
     /*!
+     * \brief Emitted when content loading is done
+     * \param success whether the operation was successful
      */
     void loadContentDone(bool success);
 

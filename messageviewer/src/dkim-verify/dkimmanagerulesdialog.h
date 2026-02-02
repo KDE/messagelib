@@ -12,7 +12,7 @@ class QPushButton;
 namespace MessageViewer
 {
 class DKIMManageRulesWidget;
-/**
+/*!
  * \class MessageViewer::DKIMManageRulesDialog
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/DKIMManageRulesDialog

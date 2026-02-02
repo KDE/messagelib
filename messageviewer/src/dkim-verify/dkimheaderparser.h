@@ -12,7 +12,7 @@
 #include <QList>
 namespace MessageViewer
 {
-/**
+/*!
  * \class MessageViewer::DKIMHeaderParser
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/DKIMHeaderParser
