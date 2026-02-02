@@ -1,0 +1,33 @@
+include($KDE_DOCS/global/qt-module-defaults.qdocconf)
+
+project = MessageComposer
+description = MessageComposer provides MessageComposer Library.
+
+
+documentationinheaders = true
+
+headerdirs += .
+sourcedirs += .
+
+outputformats = HTML
+
+depends += \
+    qtcore
+
+navigation.landingpage = "MessageComposer"
+
+qhp.projects            = messagecomposer
+
+qhp.messagecomposer.file                = messagecomposer.qhp
+qhp.messagecomposer.namespace           = org.kde.messagecomposer.$QT_VERSION_TAG
+qhp.messagecomposer.virtualFolder       = messagecomposer
+qhp.messagecomposer.indexTitle          = messagecomposer
+qhp.messagecomposer.indexRoot           =
+
+qhp.messagecomposer.subprojects         = classes
+qhp.messagecomposer.subprojects.classes.title = C++ Classes
+qhp.messagecomposer.subprojects.classes.indexTitle = MessageComposer C++ Classes
+qhp.messagecomposer.subprojects.classes.selectors = class fake:headerfile
+qhp.messagecomposer.subprojects.classes.sortPages = true
+
+tagfile = messagecomposer.tags
