@@ -1,0 +1,9 @@
+/*!
+    \module MessageList
+    \title MessageList C++ Classes
+    \ingroup modules
+    \cmakepackage KPim6
+    \cmakecomponent MessageList
+
+    \brief MessageList provides message list Library.
+*/

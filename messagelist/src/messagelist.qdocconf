@@ -1,0 +1,33 @@
+include($KDE_DOCS/global/qt-module-defaults.qdocconf)
+
+project = MessageList
+description = MessageList provides message list Library.
+
+
+documentationinheaders = true
+
+headerdirs += .
+sourcedirs += .
+
+outputformats = HTML
+
+depends += \
+    qtcore
+
+navigation.landingpage = "MessageList"
+
+qhp.projects            = messagelist
+
+qhp.messagelist.file                = messagelist.qhp
+qhp.messagelist.namespace           = org.kde.messagelist.$QT_VERSION_TAG
+qhp.messagelist.virtualFolder       = messagelist
+qhp.messagelist.indexTitle          = messagelist
+qhp.messagelist.indexRoot           =
+
+qhp.messagelist.subprojects         = classes
+qhp.messagelist.subprojects.classes.title = C++ Classes
+qhp.messagelist.subprojects.classes.indexTitle = MessageList C++ Classes
+qhp.messagelist.subprojects.classes.selectors = class fake:headerfile
+qhp.messagelist.subprojects.classes.sortPages = true
+
+tagfile = messagelist.tags
