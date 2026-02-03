@@ -16,7 +16,7 @@ class PlainHeaderStylePrivate;
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/PlainHeaderStyle
  * \brief The PlainHeaderStyle class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT PlainHeaderStyle : public HeaderStyle
 {

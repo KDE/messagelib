@@ -15,7 +15,7 @@ class MessageViewerCheckBeforeDeletingParametersPrivate;
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/MessageViewerCheckBeforeDeletingParameters
  * \brief The MessageViewerCheckBeforeDeletingParameters class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT MessageViewerCheckBeforeDeletingParameters
 {

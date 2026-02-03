@@ -31,53 +31,53 @@ class AddressList;
 
 namespace MessageCore
 {
-/**
+/*!
  * This namespace contain helper functions for string manipulation
  */
 namespace StringUtil
 {
-/**
+/*!
  * Parses a mailto: url and extracts the information in the QMap (field name as key).
  */
 [[nodiscard]] MESSAGECORE_EXPORT QList<QPair<QString, QString>> parseMailtoUrl(const QUrl &url);
 
-/**
+/*!
  * Strips the signature blocks from a message text. "-- " is considered as a signature block separator.
  *
- * @param message The message to remove the signature block from.
+ * \a message The message to remove the signature block from.
  */
 [[nodiscard]] MESSAGECORE_EXPORT QString stripSignature(const QString &message);
 
-/**
- * Splits the given address list @p text into separate addresses.
+/*!
+ * Splits the given address list \a text into separate addresses.
  */
 [[nodiscard]] MESSAGECORE_EXPORT QList<KMime::Types::Address> splitAddressField(const QByteArray &text);
 
-/**
+/*!
  * Quotes the following characters which have a special meaning in HTML:
  * '<'  '>'  '&'  '"'. Additionally '\\n' is converted to "<br />" if
- * @p removeLineBreaks is false. If @p removeLineBreaks is true, then
+ * \a removeLineBreaks is false. If \a removeLineBreaks is true, then
  * '\\n' is removed. Last but not least '\\r' is removed.
  */
 [[nodiscard]] MESSAGECORE_EXPORT QString quoteHtmlChars(const QString &text, bool removeLineBreaks = false);
 
-/**
- * Removes all private header fields (e.g. *Status: and X-KMail-*) from the given @p message.
+/*!
+ * Removes all private header fields (e.g. *Status: and X-KMail-*) from the given \a message.
  * if cleanUpHeader is false don't remove X-KMail-Identity and X-KMail-Dictionary which is useful when we want restore mail.
  */
 MESSAGECORE_EXPORT void removePrivateHeaderFields(const std::shared_ptr<KMime::Message> &message, bool cleanUpHeader = true);
 
-/**
- * Returns the @p message contents with the headers that should not be sent stripped off.
+/*!
+ * Returns the \a message contents with the headers that should not be sent stripped off.
  */
 [[nodiscard]] MESSAGECORE_EXPORT QByteArray asSendableString(const std::shared_ptr<KMime::Message> &message);
 
-/**
+/*!
  * Return the message header with the headers that should not be sent stripped off.
  */
 [[nodiscard]] MESSAGECORE_EXPORT QByteArray headerAsSendableString(const std::shared_ptr<KMime::Message> &message);
 
-/**
+/*!
  * Used to determine if the visible part of the anchor contains
  * only the name part and not the given emailAddr or the full address.
  */
@@ -86,7 +86,7 @@ enum Display : uint8_t {
     DisplayFullAddress,
 };
 
-/**
+/*!
  * Used to determine if the address should be a link or not.
  */
 enum Link : uint8_t {
@@ -94,7 +94,7 @@ enum Link : uint8_t {
     HideLink,
 };
 
-/**
+/*!
  * Used to determine if the address field should be expandable/collapsible.
  */
 enum AddressMode : uint8_t {
@@ -102,15 +102,15 @@ enum AddressMode : uint8_t {
     FullAddresses,
 };
 
-/**
+/*!
  * Converts the email address(es) to (a) nice HTML mailto: anchor(s).
- * @p display determines if only the name part or the entire address should be returned.
- * @p cssStyle a custom css template.
- * @p link determines if the result should be a html link or not.
- * @p expandable determines if a long list of addresses should be expandable or shown
+ * \a display determines if only the name part or the entire address should be returned.
+ * \a cssStyle a custom css template.
+ * \a link determines if the result should be a html link or not.
+ * \a expandable determines if a long list of addresses should be expandable or shown
  * in full.
- * @p fieldName the name that the divs should be based on if expandable is set to ExpanableAddesses.
- * @p The number of addresses to show before collapsing the rest, if expandable is set to
+ * \a fieldName the name that the divs should be based on if expandable is set to ExpanableAddesses.
+ * \a The number of addresses to show before collapsing the rest, if expandable is set to
  * ExpandableAddresses.
  */
 [[nodiscard]] MESSAGECORE_EXPORT QString emailAddrAsAnchor(const KMime::Headers::Generics::MailboxList *mailboxList,
@@ -121,7 +121,7 @@ enum AddressMode : uint8_t {
                                                            const QString &fieldName = QString(),
                                                            int collapseNumber = 4);
 
-/**
+/*!
  * Same as above method, only for AddressList headers.
  */
 [[nodiscard]] MESSAGECORE_EXPORT QString emailAddrAsAnchor(const KMime::Headers::Generics::AddressList *addressList,
@@ -132,7 +132,7 @@ enum AddressMode : uint8_t {
                                                            const QString &fieldName = QString(),
                                                            int collapseNumber = 4);
 
-/**
+/*!
  * Same as the above, only for Mailbox::List types.
  */
 [[nodiscard]] MESSAGECORE_EXPORT QString emailAddrAsAnchor(const QList<KMime::Types::Mailbox> &mailboxList,
@@ -143,18 +143,18 @@ enum AddressMode : uint8_t {
                                                            const QString &fieldName = QString(),
                                                            int collapseNumber = 4);
 
-/**
+/*!
  * Returns true if the given address is contained in the given address list.
  */
 [[nodiscard]] MESSAGECORE_EXPORT bool addressIsInAddressList(const QString &address, const QStringList &addresses);
 
-/**
+/*!
  * Uses the hostname as domain part and tries to determine the real name
  * from the entries in the password file.
  */
 [[nodiscard]] MESSAGECORE_EXPORT QString guessEmailAddressFromLoginName(const QString &userName);
 
-/**
+/*!
  *  Relayouts the given string so that the individual lines don't exceed the given
  *  maximal length.
  *
@@ -165,27 +165,27 @@ enum AddressMode : uint8_t {
  *  This does _not_ add new quote characters in front of every line, that is the responsibility
  *  of the caller.
  *
- *  @param message The string which it to be relayouted
- *  @param maxLineLength reformat text to be this amount of columns at maximum. Note that this
+ *  \a message The string which it to be relayouted
+ *  \a maxLineLength reformat text to be this amount of columns at maximum. Note that this
  *                       also includes the trailing \n!
  */
 [[nodiscard]] MESSAGECORE_EXPORT QString smartQuote(const QString &message, int maxLineLength);
 
-/**
+/*!
  * Convert quote wildcards into the final quote prefix.
- * @param wildString the string to be converted
- * @param fromDisplayString displayable string of the from email address
+ * \a wildString the string to be converted
+ * \a fromDisplayString displayable string of the from email address
  */
 [[nodiscard]] MESSAGECORE_EXPORT QString formatQuotePrefix(const QString &wildString, const QString &fromDisplayString);
 
-/**
+/*!
  * Cleans a filename by replacing characters not allowed or wanted on the filesystem
  *  e.g. ':', '/', '\' with '_'
  */
 [[nodiscard]] MESSAGECORE_EXPORT QString cleanFileName(const QString &fileName);
 
-/**
- * Removes the forward and reply marks (e.g. Re: or Fwd:) from a @p subject string.
+/*!
+ * Removes the forward and reply marks (e.g. Re: or Fwd:) from a \a subject string.
  * Additional markers to act on can be specified in the MessageCore::GlobalSettings
  * object.
  */
@@ -193,28 +193,28 @@ enum AddressMode : uint8_t {
 
 MESSAGECORE_EXPORT void setEncodingFile(QUrl &url, const QString &encoding);
 
-/** Check for prefixes @p prefixRegExps in #subject(). If none
-      is found, @p newPrefix + ' ' is prepended to the subject and the
-      resulting string is returned. If @p replace is true, any
+/*! Check for prefixes \a prefixRegExps in #subject(). If none
+      is found, \a newPrefix + ' ' is prepended to the subject and the
+      resulting string is returned. If \a replace is true, any
       sequence of whitespace-delimited prefixes at the beginning of
-      #subject() is replaced by @p newPrefix
+      #subject() is replaced by \a newPrefix
   **/
 [[nodiscard]] MESSAGECORE_EXPORT QString cleanSubject(KMime::Message *msg, const QStringList &prefixRegExps, bool replace, const QString &newPrefix);
 
-/** Return this mails subject, with all "forward" and "reply"
+/*! Return this mails subject, with all "forward" and "reply"
       prefixes removed */
 [[nodiscard]] MESSAGECORE_EXPORT QString cleanSubject(KMime::Message *msg);
 
-/** Return this mails subject, formatted for "forward" mails */
+/*! Return this mails subject, formatted for "forward" mails */
 [[nodiscard]] MESSAGECORE_EXPORT QString forwardSubject(KMime::Message *msg);
 
-/** Return this mails subject, formatted for "reply" mails */
+/*! Return this mails subject, formatted for "reply" mails */
 [[nodiscard]] MESSAGECORE_EXPORT QString replySubject(KMime::Message *msg);
-/** Check for prefixes @p prefixRegExps in @p str. If none
-      is found, @p newPrefix + ' ' is prepended to @p str and the
-      resulting string is returned. If @p replace is true, any
+/*! Check for prefixes \a prefixRegExps in \a str. If none
+      is found, \a newPrefix + ' ' is prepended to \a str and the
+      resulting string is returned. If \a replace is true, any
       sequence of whitespace-delimited prefixes at the beginning of
-      @p str is replaced by @p newPrefix.
+      \a str is replaced by \a newPrefix.
   **/
 [[nodiscard]] MESSAGECORE_EXPORT QString replacePrefixes(const QString &str, const QStringList &prefixRegExps, bool replace, const QString &newPrefix);
 }

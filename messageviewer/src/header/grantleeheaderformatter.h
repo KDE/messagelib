@@ -23,7 +23,7 @@ class HeaderStyle;
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/GrantleeHeaderFormatter
  * \brief The GrantleeHeaderFormatter class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT GrantleeHeaderFormatter
 {

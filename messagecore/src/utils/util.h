@@ -20,7 +20,7 @@ class Message;
 
 namespace MessageCore
 {
-/**
+/*!
  * This namespace contain helper functions
  */
 namespace Util

@@ -18,7 +18,7 @@ class DKIMManageRulesComboBox;
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/DKIMManageRulesWidgetItem
  * \brief The DKIMManageRulesWidgetItem class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT DKIMManageRulesWidgetItem : public QTreeWidgetItem
 {
@@ -58,7 +58,7 @@ private:
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/DKIMManageRulesWidget
  * \brief The DKIMManageRulesWidget class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT DKIMManageRulesWidget : public QWidget
 {

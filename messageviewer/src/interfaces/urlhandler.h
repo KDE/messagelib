@@ -23,7 +23,7 @@ namespace MimeTreeParser
 {
 /**
  * @short An interface to reader link handlers
- * @author Marc Mutz <mutz@kde.org>
+ * \author Marc Mutz <mutz@kde.org>
  *
  */
 class URLHandler

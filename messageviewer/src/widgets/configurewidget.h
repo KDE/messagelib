@@ -19,7 +19,7 @@ class ConfigureWidgetPrivate;
 /*!
  * Configure widget that can be used in a KConfigDialog.
  *
- * @author Andras Mantia <andras@kdab.net>
+ * \author Andras Mantia <andras@kdab.net>
  */
 class MESSAGEVIEWER_EXPORT ConfigureWidget : public QWidget
 {

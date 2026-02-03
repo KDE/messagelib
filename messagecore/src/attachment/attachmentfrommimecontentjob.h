@@ -20,7 +20,7 @@ namespace MessageCore
 /**
  * @short A job to load an attachment from a mime content.
  *
- * @author Constantin Berzan <exit3219@gmail.com>
+ * \author Constantin Berzan <exit3219@gmail.com>
  */
 class MESSAGECORE_TESTS_EXPORT AttachmentFromMimeContentJob : public AttachmentLoadJob
 {

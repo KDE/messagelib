@@ -200,7 +200,7 @@ ViewerPrivate holds the MimeTreeParser::NodeHelper, which is passed on to the Mi
 It also holds the HeaderStyle, HeaderStrategy, MimeTreeParser::AttachmentStrategy, CSSHelper, HtmlWriter and more,
 some of them again passed to the MimeTreeParser::ObjectTreeParser when it needs it.
 
-@author andras@kdab.net
+\author andras@kdab.net
  */
 class MESSAGEVIEWER_TESTS_EXPORT ViewerPrivate : public QObject
 {

@@ -105,7 +105,7 @@ using SpamScores = QList<SpamScore>;
 
 /**
     @short Flyweight for analysing spam headers.
-    @author Patrick Audley <paudley@blackcat.ca>
+    \author Patrick Audley <paudley@blackcat.ca>
   */
 class SpamHeaderAnalyzer
 {

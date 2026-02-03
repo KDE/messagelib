@@ -11,14 +11,20 @@
 
 namespace MessageCore
 {
-/**
- * @brief The MessageCoreSettings class
+/*!
+ * \class MessageCoreSettings
+ * \inmodule MessageCore
+ * \inheaderfile MessageCore/MessageCoreSettings
+ * \brief The MessageCoreSettings class
  */
 class MESSAGECORE_EXPORT MessageCoreSettings : public MessageCore::MessageCoreSettingsBase
 {
     Q_OBJECT
 
 public:
+    /*!
+     * Returns the singleton instance of MessageCoreSettings.
+     */
     static MessageCoreSettings *self();
 
 private:

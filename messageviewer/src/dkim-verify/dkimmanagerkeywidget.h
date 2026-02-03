@@ -15,7 +15,7 @@ class DKIMManagerKeyTreeView;
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/DKIMManagerKeyWidget
  * \brief The DKIMManagerKeyWidget class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT DKIMManagerKeyWidget : public QWidget
 {

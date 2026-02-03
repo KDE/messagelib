@@ -18,7 +18,7 @@ class MessageViewerConfigureSettingsPluginManagerPrivate;
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/MessageViewerConfigureSettingsPluginManager
  * \brief The MessageViewerConfigureSettingsPluginManager class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT MessageViewerConfigureSettingsPluginManager : public QObject
 {

@@ -1,0 +1,33 @@
+include($KDE_DOCS/global/qt-module-defaults.qdocconf)
+
+project = MessageCore
+description = MessageCore provides MessageCore Library.
+
+
+documentationinheaders = true
+
+headerdirs += .
+sourcedirs += .
+
+outputformats = HTML
+
+depends += \
+    qtcore
+
+navigation.landingpage = "MessageCore"
+
+qhp.projects            = messagecore
+
+qhp.messagecore.file                = messagecore.qhp
+qhp.messagecore.namespace           = org.kde.messagecore.$QT_VERSION_TAG
+qhp.messagecore.virtualFolder       = messagecore
+qhp.messagecore.indexTitle          = messagecore
+qhp.messagecore.indexRoot           =
+
+qhp.messagecore.subprojects         = classes
+qhp.messagecore.subprojects.classes.title = C++ Classes
+qhp.messagecore.subprojects.classes.indexTitle = MessageCore C++ Classes
+qhp.messagecore.subprojects.classes.selectors = class fake:headerfile
+qhp.messagecore.subprojects.classes.sortPages = true
+
+tagfile = messagecore.tags

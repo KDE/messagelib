@@ -16,7 +16,7 @@ namespace MessageViewer
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/RemoteContentInfo
  * \brief The RemoteContentInfo class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_TESTS_EXPORT RemoteContentInfo
 {

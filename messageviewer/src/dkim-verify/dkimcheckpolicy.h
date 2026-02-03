@@ -15,7 +15,7 @@ namespace MessageViewer
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/DKIMCheckPolicy
  * \brief The DKIMCheckPolicy class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT DKIMCheckPolicy
 {

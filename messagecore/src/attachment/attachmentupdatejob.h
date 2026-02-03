@@ -12,9 +12,12 @@
 
 namespace MessageCore
 {
-/**
- * @brief The AttachmentUpdateJob class
- * @author Laurent Montel <montel@kde.org>
+/*!
+ * \class AttachmentUpdateJob
+ * \inmodule MessageCore
+ * \inheaderfile MessageCore/AttachmentUpdateJob
+ * \brief The AttachmentUpdateJob class
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGECORE_EXPORT AttachmentUpdateJob : public KJob
 {
@@ -28,7 +31,6 @@ public:
     [[nodiscard]] AttachmentPart::Ptr updatedPart() const;
 
 private:
-    //@cond PRIVATE
     class AttachmentUpdateJobPrivate;
     std::unique_ptr<AttachmentUpdateJobPrivate> const d;
 };

@@ -35,7 +35,7 @@ namespace MessageViewer
  * <dd>Viewed as Html with plain text part also available.</dd>
  * </dl>
  *
- * @author Ingo Kloecker <kloecker@kde.org>, Marc Mutz <mutz@kde.org>
+ * \author Ingo Kloecker <kloecker@kde.org>, Marc Mutz <mutz@kde.org>
  **/
 class HtmlStatusBar : public QLabel
 {

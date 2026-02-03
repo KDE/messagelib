@@ -16,5 +16,6 @@
 
     \list
         \li \l{MessageComposer C++ Classes}
+        \li \l{MessageCore C++ Classes}
     \endlist
 */

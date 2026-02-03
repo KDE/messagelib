@@ -22,44 +22,45 @@ class Content;
 
 namespace MessageCore
 {
-/**
- * @short A helper class to collect the embedded images of a email.
+/*!
+ * \class ImageCollector
+ * \inmodule MessageCore
+ * \inheaderfile MessageCore/ImageCollector
+ * \brief A helper class to collect the embedded images of a email.
  *
- * @author Marc Mutz <mutz@kde.org>
- * @author Torgny Nyblom <nyblom@kde.org>
+ * \author Marc Mutz <mutz@kde.org>
+ * \author Torgny Nyblom <nyblom@kde.org>
  * @todo: Make it a simple static method?!?
  */
 class MESSAGECORE_EXPORT ImageCollector
 {
 public:
-    /**
+    /*!
      * Creates a new image collector.
      */
     ImageCollector();
 
-    /**
+    /*!
      * Destroys the image collector.
      */
     ~ImageCollector();
 
-    /**
+    /*!
      * Starts collecting the images.
      *
-     * @param content The email content that contains the images.
+     * \a content The email content that contains the images.
      */
     void collectImagesFrom(KMime::Content *content);
 
-    /**
+    /*!
      * Returns the collected images.
      */
     [[nodiscard]] const std::vector<const KMime::Content *> &images() const;
 
 private:
-    //@cond PRIVATE
     class ImageCollectorPrivate;
     std::unique_ptr<ImageCollectorPrivate> const d;
 
     Q_DISABLE_COPY(ImageCollector)
-    //@endcond
 };
 }

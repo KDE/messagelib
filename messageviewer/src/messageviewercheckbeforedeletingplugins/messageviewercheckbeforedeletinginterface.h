@@ -21,7 +21,7 @@ class MessageViewerCheckBeforeDeletingInterfacePrivate;
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/MessageViewerCheckBeforeDeletingInterface
  * \brief The MessageViewerCheckBeforeDeletingInterface class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT MessageViewerCheckBeforeDeletingInterface : public QObject
 {

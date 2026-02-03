@@ -34,7 +34,7 @@ class ViewerPrivate;
 class BodyPartURLHandlerManager;
 /**
  * @short Singleton to manage the list of URLHandlers
- * @author Marc Mutz <mutz@kde.org>
+ * \author Marc Mutz <mutz@kde.org>
  */
 class MESSAGEVIEWER_TESTS_EXPORT URLHandlerManager
 {

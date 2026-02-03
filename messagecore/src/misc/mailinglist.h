@@ -18,20 +18,23 @@ class KConfigGroup;
 
 namespace MessageCore
 {
-/**
- * @short A class to extract information about mailing lists from emails.
+/*!
+ * \class MailingList
+ * \inmodule MessageCore
+ * \inheaderfile MessageCore/MailingList
+ * \brief A class to extract information about mailing lists from emails.
  *
  * The mailing list header fields are defined as the following:
  *   - "List-*" in RFC2369
  *   - "List-ID" in RFC2919.
  *   - "Archive-At" in RFC5064
  *
- * @author Zack Rusin <zack@kde.org>
+ * \author Zack Rusin <zack@kde.org>
  */
 class MESSAGECORE_EXPORT MailingList
 {
 public:
-    /**
+    /*!
      * Defines what entity should manage the mailing list.
      */
     enum Handler : uint8_t {
@@ -39,7 +42,7 @@ public:
         Browser, ///< The list is handled by a browser.
     };
 
-    /**
+    /*!
      * Defines the features a mailinglist can support.
      */
     enum Feature {
@@ -56,137 +59,137 @@ public:
     Q_DECLARE_FLAGS(Features, Feature)
 
 public:
-    /**
-     * Extracts the information about a mailing list from the given @p message.
+    /*!
+     * Extracts the information about a mailing list from the given \a message.
      */
     static MailingList detect(const std::shared_ptr<KMime::Message> &message);
 
     static QString name(const std::shared_ptr<KMime::Message> &message, QByteArray &headerName, QString &headerValue);
 
 public:
-    /**
+    /*!
      * Creates an empty mailing list.
      */
     MailingList();
 
-    /**
-     * Creates a mailing list from an @p other mailing list.
+    /*!
+     * Creates a mailing list from an \a other mailing list.
      */
     MailingList(const MailingList &other);
 
-    /**
-     * Overwrites this mailing list with an @p other mailing list.
+    /*!
+     * Overwrites this mailing list with an \a other mailing list.
      */
     MailingList &operator=(const MailingList &other);
 
     [[nodiscard]] bool operator==(const MailingList &other) const;
-    /**
+    /*!
      * Destroys the mailing list.
      */
     ~MailingList();
 
-    /**
+    /*!
      * Returns the features the mailing list supports.
      */
     [[nodiscard]] Features features() const;
 
-    /**
-     * Sets the @p handler for the mailing list.
+    /*!
+     * Sets the \a handler for the mailing list.
      */
     void setHandler(Handler handler);
 
-    /**
+    /*!
      * Returns the handler for the mailing list.
      */
     [[nodiscard]] Handler handler() const;
 
-    /**
-     * Sets the list of List-Post @p urls.
+    /*!
+     * Sets the list of List-Post \a urls.
      */
     void setPostUrls(const QList<QUrl> &urls);
 
-    /**
+    /*!
      * Returns the list of List-Post urls.
      */
     [[nodiscard]] QList<QUrl> postUrls() const;
 
-    /**
-     * Sets the list of List-Subscribe @p urls.
+    /*!
+     * Sets the list of List-Subscribe \a urls.
      */
     void setSubscribeUrls(const QList<QUrl> &urls);
 
-    /**
+    /*!
      * Returns the list of List-Subscribe urls.
      */
     [[nodiscard]] QList<QUrl> subscribeUrls() const;
 
-    /**
-     * Sets the list of List-Unsubscribe @p urls.
+    /*!
+     * Sets the list of List-Unsubscribe \a urls.
      */
     void setUnsubscribeUrls(const QList<QUrl> &urls);
 
-    /**
+    /*!
      * Returns the list of List-Unsubscribe urls.
      */
     [[nodiscard]] QList<QUrl> unsubscribeUrls() const;
 
-    /**
-     * Sets the list of List-Help @p urls.
+    /*!
+     * Sets the list of List-Help \a urls.
      */
     void setHelpUrls(const QList<QUrl> &urls);
 
-    /**
+    /*!
      * Returns the list of List-Help urls.
      */
     [[nodiscard]] QList<QUrl> helpUrls() const;
 
-    /**
-     * Sets the list of List-Archive @p urls.
+    /*!
+     * Sets the list of List-Archive \a urls.
      */
     void setArchiveUrls(const QList<QUrl> &urls);
 
-    /**
+    /*!
      * Returns the list of List-Archive urls.
      */
     [[nodiscard]] QList<QUrl> archiveUrls() const;
 
-    /**
-     * Sets the list of List-Owner @p urls.
+    /*!
+     * Sets the list of List-Owner \a urls.
      */
     void setOwnerUrls(const QList<QUrl> &urls);
 
-    /**
+    /*!
      * Returns the list of List-Owner urls.
      */
     [[nodiscard]] QList<QUrl> ownerUrls() const;
 
-    /**
-     * Sets the Archived-At @p url.
+    /*!
+     * Sets the Archived-At \a url.
      */
     void setArchivedAtUrls(const QList<QUrl> &url);
 
-    /**
-     * Returns the Archived-At @p url.
+    /*!
+     * Returns the Archived-At \a url.
      */
     [[nodiscard]] QList<QUrl> archivedAtUrls() const;
 
-    /**
-     * Sets the @p id of the mailing list.
+    /*!
+     * Sets the \a id of the mailing list.
      */
     void setId(const QString &id);
 
-    /**
-     * Returns the @p id of the mailing list.
+    /*!
+     * Returns the \a id of the mailing list.
      */
     [[nodiscard]] QString id() const;
 
-    /**
-     * Saves the configuration for the mailing list to the config @p group.
+    /*!
+     * Saves the configuration for the mailing list to the config \a group.
      */
     void writeConfig(KConfigGroup &group) const;
 
-    /**
-     * Restores the configuration for the mailing list from the config @p group.
+    /*!
+     * Restores the configuration for the mailing list from the config \a group.
      */
     void readConfig(const KConfigGroup &group);
 

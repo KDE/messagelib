@@ -15,7 +15,7 @@ namespace MessageViewer
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/DKIMManagerAuthenticationServer
  * \brief The DKIMManagerAuthenticationServer class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT DKIMManagerAuthenticationServer : public QObject
 {

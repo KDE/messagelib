@@ -19,7 +19,7 @@ namespace MessageViewer
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/KeyInfo
  * \brief The KeyInfo struct
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 struct MESSAGEVIEWER_EXPORT KeyInfo {
     KeyInfo() = default;
@@ -47,7 +47,7 @@ struct MESSAGEVIEWER_EXPORT KeyInfo {
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/DKIMManagerKey
  * \brief The DKIMManagerKey class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT DKIMManagerKey : public QObject
 {

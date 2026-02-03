@@ -14,8 +14,11 @@
 #include <memory>
 namespace MessageCore
 {
-/**
- * @brief The AttachmentFromUrlBaseJob class
+/*!
+ * \class AttachmentFromUrlBaseJob
+ * \inmodule MessageCore
+ * \inheaderfile MessageCore/AttachmentFromUrlBaseJob
+ * \brief The AttachmentFromUrlBaseJob class
  */
 class MESSAGECORE_EXPORT AttachmentFromUrlBaseJob : public AttachmentLoadJob
 {
@@ -25,23 +28,23 @@ public:
     explicit AttachmentFromUrlBaseJob(const QUrl &url = QUrl(), QObject *parent = nullptr);
     ~AttachmentFromUrlBaseJob() override;
 
-    /**
+    /*!
      * Returns the url that will be loaded as attachment.
      */
     [[nodiscard]] QUrl url() const;
 
-    /**
+    /*!
      * Returns the maximum size the attachment is allowed to have.
      */
     [[nodiscard]] qint64 maximumAllowedSize() const;
 
-    /**
-     * Sets the @p url of the folder that will be loaded as attachment.
+    /*!
+     * Sets the \a url of the folder that will be loaded as attachment.
      */
     void setUrl(const QUrl &url);
 
-    /**
-     * Sets the maximum @p size the attachment is allowed to have.
+    /*!
+     * Sets the maximum \a size the attachment is allowed to have.
      */
     void setMaximumAllowedSize(qint64 size);
 
@@ -49,7 +52,6 @@ protected Q_SLOTS:
     void doStart() override = 0;
 
 private:
-    //@cond PRIVATE
     class AttachmentFromUrlBaseJobPrivate;
     std::unique_ptr<AttachmentFromUrlBaseJobPrivate> const d;
 };

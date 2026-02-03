@@ -1,0 +1,9 @@
+/*!
+    \module MessageCore
+    \title MessageCore C++ Classes
+    \ingroup modules
+    \cmakepackage KPim6
+    \cmakecomponent MessageCore
+
+    \brief MessageCore provides MessageCore Library.
+*/

@@ -1,12 +1,12 @@
 // SPDX-FileCopyrightText: 2001 the KMime authors.
 // SPDX-License-Identifier: LGPL-2.0-or-later
 
-/**
+/*!
   @file
-  This file is part of the API for handling @ref MIME data and
+  This file is part of the API for handling \ MIME data and
   defines the DateFormatter class.
 
-  @brief
+  \brief
   Defines the DateFormatter class.
 
   @glossary @anchor RFC2822 @anchor rfc2822 @b RFC @b 2822:
@@ -34,18 +34,21 @@ namespace MessageCore
 {
 class DateFormatterPrivate;
 
-/**
-  @brief
+/*!
+  \class DateFormatter
+  \inmodule MessageCore
+  \inheaderfile MessageCore/DateFormatter
+  \brief
   A class for abstracting date formatting.
 
   This class deals with different kinds of date display formats.
   The formats supported include:
   - @b fancy "Today 02:08:35"
-  - @b ctime as with the @ref ctime function, eg. "Sun Mar 31 02:08:35 2002"
+  - @b ctime as with the \ ctime function, eg. "Sun Mar 31 02:08:35 2002"
   - @b localized according to the control center setting, eg. "2002-03-31 02:08"
   - @b custom "whatever you like"
 
-  @note
+  \note
   If a long-lived instance of this class is kept, its owner is responsible for
   calling `invalidateReferenceDate()` on date changes.
   This ensures that the `Fancy` formatter has an up-to-date notion of "Today",
@@ -54,115 +57,113 @@ class DateFormatterPrivate;
 class MESSAGECORE_EXPORT DateFormatter
 {
 public:
-    /**
+    /*!
       The different types of date formats.
     */
     enum FormatType : uint8_t {
-        CTime, /**< ctime "Sun Mar 31 02:08:35 2002" */
-        Localized, /**< localized "2002-03-31 02:08" */
-        Fancy, /**< fancy "Today 02:08:35" */
-        Custom /**< custom "whatever you like" */
+        CTime, /*!< ctime "Sun Mar 31 02:08:35 2002" */
+        Localized, /*!< localized "2002-03-31 02:08" */
+        Fancy, /*!< fancy "Today 02:08:35" */
+        Custom /*!< custom "whatever you like" */
     };
 
-    /**
+    /*!
       Constructs a date formatter with a default #FormatType.
 
-      @param ftype is the default #FormatType to use.
+      \a ftype is the default #FormatType to use.
     */
     explicit DateFormatter(FormatType ftype = DateFormatter::Fancy);
 
-    /**
+    /*!
       Destroys the date formatter.
     */
     ~DateFormatter();
 
-    /**
+    /*!
       Returns the #FormatType currently set.
 
-      @see setFormat().
+      \sa setFormat().
     */
     [[nodiscard]] FormatType format() const;
 
-    /**
-      Sets the date format to @p ftype.
+    /*!
+      Sets the date format to \a ftype.
 
-      @param ftype is the #FormatType.
+      \a ftype is the #FormatType.
 
-      @see format().
+      \sa format().
     */
     void setFormat(FormatType ftype);
 
-    /**
-      Constructs a formatted date string from QDateTime @p dtime.
+    /*!
+      Constructs a formatted date string from QDateTime \a dtime.
 
-      @param dtime is the QDateTime to use for formatting.
-      @param lang is the language, only used if #FormatType is #Localized.
-      @param shortFormat if true, create the short version of the date string,
+      \a dtime is the QDateTime to use for formatting.
+      \a lang is the language, only used if #FormatType is #Localized.
+      \a shortFormat if true, create the short version of the date string,
       only used if #FormatType is #Localized.
 
-      @return a QString containing the formatted date.
+      Returns a QString containing the formatted date.
     */
     [[nodiscard]] QString dateString(const QDateTime &dtime, const QString &lang = QString(), bool shortFormat = true) const;
 
-    /**
-      Sets the custom format for date to string conversions to @p format.
+    /*!
+      Sets the custom format for date to string conversions to \a format.
       This method accepts the same arguments as QDateTime::toString(), but
       also supports the "Z" expression which is substituted with the
-      @ref RFC2822 (Section 3.3) style numeric timezone (-0500).
+      \ RFC2822 (Section 3.3) style numeric timezone (-0500).
 
-      @param format is a QString containing the custom format.
+      \a format is a QString containing the custom format.
 
-      @see QDateTime::toString(), customFormat().
+      \sa QDateTime::toString(), customFormat().
     */
     void setCustomFormat(const QString &format);
 
-    /**
+    /*!
       Returns the custom format string.
 
-      @see setCustomFormat().
+      \sa setCustomFormat().
     */
     [[nodiscard]] QString customFormat() const;
 
-    /**
+    /*!
       Invalidates the cached reference date used by the `Fancy` formatter to
       determine the meaning of "Today", "Yesterday" etc.
      */
     void invalidateReferenceDate() const;
 
     // static methods
-    /**
+    /*!
       Convenience function dateString
 
-      @param ftype is the #FormatType to use.
-      @param t is the time to use for formatting.
-      @param data is either the format when #FormatType is Custom,
+      \a ftype is the #FormatType to use.
+      \a t is the time to use for formatting.
+      \a data is either the format when #FormatType is Custom,
       or language when #FormatType is #Localized.
-      @param shortFormat if true, create the short version of the date string,
+      \a shortFormat if true, create the short version of the date string,
       only used if #FormatType is #Localized.
 
-      @return a QString containing the formatted date.
+      Returns a QString containing the formatted date.
     */
     [[nodiscard]] static QString formatDate(DateFormatter::FormatType ftype, const QDateTime &t, const QString &data = QString(), bool shortFormat = true);
 
-    /**
+    /*!
       Convenience function, same as formatDate() but returns the current time
       formatted.
 
-      @param ftype is the #FormatType to use.
-      @param data is either the format when #FormatType is Custom,
+      \a ftype is the #FormatType to use.
+      \a data is either the format when #FormatType is Custom,
       or language when #FormatType is #Localized.
-      @param shortFormat if true, create the short version of the date string,
+      \a shortFormat if true, create the short version of the date string,
       only used if #FormatType is #Localized.
 
-      @return a QString containing the formatted date.
+      Returns a QString containing the formatted date.
     */
     [[nodiscard]] static QString formatCurrentDate(DateFormatter::FormatType ftype, const QString &data = QString(), bool shortFormat = true);
 
 private:
-    //@cond PRIVATE
     Q_DISABLE_COPY(DateFormatter)
     std::unique_ptr<DateFormatterPrivate> const d;
-    //@endcond
 };
 
-} // namespace KMime
+} // namespace MessageCore

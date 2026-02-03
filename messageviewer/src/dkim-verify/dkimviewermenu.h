@@ -17,7 +17,7 @@ namespace MessageViewer
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/DKIMViewerMenu
  * \brief The DKIMViewerMenu class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT DKIMViewerMenu : public QObject
 {

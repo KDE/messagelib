@@ -21,7 +21,7 @@ class RemoteContentInfo;
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/RemoteContentWidgetItem
  * \brief The RemoteContentWidgetItem class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_TESTS_EXPORT RemoteContentWidgetItem : public QTreeWidgetItem
 {

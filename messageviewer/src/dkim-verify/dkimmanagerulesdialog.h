@@ -17,7 +17,7 @@ class DKIMManageRulesWidget;
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/DKIMManageRulesDialog
  * \brief The DKIMManageRulesDialog class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT DKIMManageRulesDialog : public QDialog
 {

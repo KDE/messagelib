@@ -9,7 +9,7 @@
   @brief
   Defines the DateFormatter class.
 
-  @authors the KMime authors (see AUTHORS file)
+  \authors the KMime authors (see AUTHORS file)
 */
 
 #include "dateformatter.h"

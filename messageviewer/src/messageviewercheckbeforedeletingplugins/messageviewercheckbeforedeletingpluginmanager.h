@@ -18,7 +18,7 @@ class MessageViewerCheckBeforeDeletingPluginManagerPrivate;
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/MessageViewerCheckBeforeDeletingPluginManager
  * \brief The MessageViewerCheckBeforeDeletingPluginManager class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT MessageViewerCheckBeforeDeletingPluginManager : public QObject
 {

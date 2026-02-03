@@ -17,7 +17,7 @@ class RemoteContentInfo;
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/RemoteContentManager
  * \brief The RemoteContentManager class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_TESTS_EXPORT RemoteContentManager : public QObject
 {

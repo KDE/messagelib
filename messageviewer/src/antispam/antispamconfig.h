@@ -101,7 +101,7 @@ class AntiSpamConfigSingletonProvider;
 
 /**
     @short Singleton to manage loading the kmail.antispamrc file.
-    @author Patrick Audley <paudley@blackcat.ca>
+    \author Patrick Audley <paudley@blackcat.ca>
 
     Use of this config-manager class is straight forward.  Since it
     is a singleton object, all you have to do is obtain an instance

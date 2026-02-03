@@ -21,7 +21,7 @@ namespace MessageViewer
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/DKIMCheckSignatureJob
  * \brief The DKIMCheckSignatureJob class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT DKIMCheckSignatureJob : public QObject
 {

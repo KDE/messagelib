@@ -34,7 +34,7 @@ class FindBarSourceView;
  *
  * Auto-deletes itself when closed.
  *
- * @author Carsten Pfeiffer <pfeiffer@kde.org>
+ * \author Carsten Pfeiffer <pfeiffer@kde.org>
  */
 class MailSourceViewTextBrowser;
 

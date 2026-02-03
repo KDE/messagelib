@@ -18,7 +18,7 @@ class HeaderStylePluginManagerPrivate;
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/HeaderStylePluginManager
  * \brief The HeaderStylePluginManager class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT HeaderStylePluginManager : public QObject
 {

@@ -18,7 +18,7 @@ namespace MessageViewer
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/DKIMWidgetInfo
  * \brief The DKIMWidgetInfo class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT DKIMWidgetInfo : public QWidget
 {

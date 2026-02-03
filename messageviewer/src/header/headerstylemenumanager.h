@@ -20,7 +20,7 @@ class HeaderStyleMenuManagerPrivate;
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/HeaderStyleMenuManager
  * \brief The HeaderStyleMenuManager class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT HeaderStyleMenuManager : public QObject
 {

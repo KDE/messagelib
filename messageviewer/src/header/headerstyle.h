@@ -40,7 +40,7 @@ class HeaderStylePrivate;
     responsible for the formatting of message headers.
 
     \brief Encapsulates visual appearance of message headers.
-    @author Marc Mutz <mutz@kde.org>
+    \author Marc Mutz <mutz@kde.org>
     \sa HeaderStrategy
 **/
 class MESSAGEVIEWER_EXPORT HeaderStyle

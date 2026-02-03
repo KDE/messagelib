@@ -17,7 +17,7 @@ class DKIMManagerKeyWidget;
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/DKIMManagerKeyDialog
  * \brief The DKIMManagerKeyDialog class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT DKIMManagerKeyDialog : public QDialog
 {

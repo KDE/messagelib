@@ -14,41 +14,44 @@
 
 namespace MessageCore
 {
-/**
- * @short A base class for jobs to load attachments from different sources.
+/*!
+ * \class AttachmentLoadJob
+ * \inmodule MessageCore
+ * \inheaderfile MessageCore/AttachmentLoadJob
+ * \brief A base class for jobs to load attachments from different sources.
  *
- * @author Constantin Berzan <exit3219@gmail.com>
+ * \author Constantin Berzan <exit3219@gmail.com>
  */
 class MESSAGECORE_EXPORT AttachmentLoadJob : public KJob
 {
     Q_OBJECT
 
 public:
-    /**
+    /*!
      * Creates a new attachment load job.
      *
-     * @param parent The parent object.
+     * \a parent The parent object.
      */
     explicit AttachmentLoadJob(QObject *parent = nullptr);
 
-    /**
+    /*!
      * Destroys the attachment load job.
      */
     ~AttachmentLoadJob() override;
 
-    /**
+    /*!
      * Starts the attachment load job.
      */
     void start() override;
 
-    /**
+    /*!
      * Returns the loaded attachment.
      */
     [[nodiscard]] AttachmentPart::Ptr attachmentPart() const;
 
 protected:
-    /**
-     * Subclasses use this method to set the loaded @p part.
+    /*!
+     * Subclasses use this method to set the loaded \a part.
      */
     void setAttachmentPart(const AttachmentPart::Ptr &part);
 
@@ -56,9 +59,7 @@ protected Q_SLOTS:
     virtual void doStart() = 0;
 
 private:
-    //@cond PRIVATE
     class AttachmentLoadJobPrivate;
     std::unique_ptr<AttachmentLoadJobPrivate> const d;
-    //@endcond
 };
 }

@@ -16,7 +16,7 @@ class GrantleeHeaderStylePrivate;
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/GrantleeHeaderStyle
  * \brief The GrantleeHeaderStyle class
- * @author Laurent Montel <montel@kde.org>
+ * \author Laurent Montel <montel@kde.org>
  */
 class MESSAGEVIEWER_EXPORT GrantleeHeaderStyle : public HeaderStyle
 {
