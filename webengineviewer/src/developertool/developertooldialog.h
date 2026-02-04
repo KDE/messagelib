@@ -16,8 +16,11 @@ class WEBENGINEVIEWER_EXPORT DeveloperToolDialog : public QDialog
 {
     Q_OBJECT
 public:
+    /*! Constructs a DeveloperToolDialog with the given parent. */
     explicit DeveloperToolDialog(QWidget *parent = nullptr);
+    /*! Destroys the DeveloperToolDialog. */
     ~DeveloperToolDialog() override;
+    /*! Returns the underlying QWebEnginePage. */
     [[nodiscard]] QWebEnginePage *enginePage() const;
 
 private:

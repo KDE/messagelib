@@ -28,19 +28,28 @@ class WEBENGINEVIEWER_EXPORT CheckPhishingUrlJob : public QObject
 {
     Q_OBJECT
 public:
+    /*! Constructs a CheckPhishingUrlJob object. */
     explicit CheckPhishingUrlJob(QObject *parent = nullptr);
+    /*! Destroys the CheckPhishingUrlJob object. */
     ~CheckPhishingUrlJob() override;
 
+    /*! Sets the URL to check. */
     void setUrl(const QUrl &url);
 
+    /*! Starts the URL check job. */
     void start();
+    /*! Returns whether the job can be started. */
     [[nodiscard]] bool canStart() const;
 
+    /*! Returns the JSON request payload. */
     [[nodiscard]] QByteArray jsonRequest() const;
+    /*! Parses the response from the server. */
     void parse(const QByteArray &replyStr);
 
 Q_SIGNALS:
+    /*! Emitted when the URL check result is available. */
     void result(WebEngineViewer::CheckPhishingUrlUtil::UrlStatus status, const QUrl &url, uint verifyCacheAfterThisTime = 0);
+    /*! Emitted for debugging JSON messages. */
     void debugJson(const QByteArray &ba);
 
 private:

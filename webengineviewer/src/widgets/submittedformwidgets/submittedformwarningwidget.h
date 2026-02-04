@@ -16,8 +16,11 @@ class WEBENGINEVIEWER_EXPORT SubmittedFormWarningWidget : public KMessageWidget
 {
     Q_OBJECT
 public:
+    /*! Constructs a SubmittedFormWarningWidget with the given parent. */
     explicit SubmittedFormWarningWidget(QWidget *parent = nullptr);
+    /*! Destroys the SubmittedFormWarningWidget. */
     ~SubmittedFormWarningWidget() override;
+    /*! Shows the warning. */
     void showWarning();
 };
 }

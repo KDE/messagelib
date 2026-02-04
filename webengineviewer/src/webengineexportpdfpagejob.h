@@ -36,7 +36,9 @@ public:
     [[nodiscard]] bool canStart() const;
 
 Q_SIGNALS:
+    /*! Emitted when the PDF export fails. */
     void exportPdfFailed();
+    /*! Emitted when the PDF export succeeds. */
     void exportToPdfSuccess();
 
 private:

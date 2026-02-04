@@ -27,10 +27,13 @@ class WEBENGINEVIEWER_EXPORT WebHitTest : public QObject
 {
     Q_OBJECT
 public:
+    /*! Constructs a WebHitTest object for the given page at the specified positions. */
     explicit WebHitTest(QWebEnginePage *page, const QPoint &zoomedPos, const QPoint &pos, QObject *parent = nullptr);
+    /*! Destroys the WebHitTest object. */
     ~WebHitTest() override;
 
 Q_SIGNALS:
+    /*! Emitted when the hit test finishes. */
     void finished(const WebEngineViewer::WebHitTestResult &result);
 
 private Q_SLOTS:

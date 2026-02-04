@@ -34,6 +34,7 @@ public:
     void initialize();
 
 Q_SIGNALS:
+    /*! Emitted when a URL check is finished. */
     void checkUrlFinished(const QUrl &url, WebEngineViewer::CheckPhishingUrlUtil::UrlStatus status);
 
 protected:

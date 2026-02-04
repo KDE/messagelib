@@ -25,12 +25,17 @@ class WEBENGINEVIEWER_EXPORT NetworkUrlInterceptor : public QWebEngineUrlRequest
 {
     Q_OBJECT
 public:
+    /*! Constructs a NetworkUrlInterceptor object. */
     explicit NetworkUrlInterceptor(QObject *parent = nullptr);
+    /*! Destroys the NetworkUrlInterceptor object. */
     ~NetworkUrlInterceptor() override;
 
+    /*! Intercepts URL requests. */
     void interceptRequest(QWebEngineUrlRequestInfo &info) override;
 
+    /*! Adds an interceptor. */
     void addInterceptor(NetworkPluginUrlInterceptorInterface *interceptor);
+    /*! Removes an interceptor. */
     void removeInterceptor(NetworkPluginUrlInterceptorInterface *interceptor);
 
 private:

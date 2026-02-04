@@ -32,14 +32,19 @@ public:
         Unknown = 2,
     };
     explicit HashCacheManager(QObject *parent = nullptr);
+    /*! Destroys the HashCacheManager object. */
     ~HashCacheManager() override;
 
+    /*! Returns the singleton instance. */
     static HashCacheManager *self();
 
+    /*! Clears the cache. */
     void clearCache();
 
+    /*! Adds a hash status to the cache. */
     void addHashStatus(const QByteArray &hash, HashCacheManager::UrlStatus status, uint cacheDuration);
 
+    /*! Returns the status of a hash. */
     [[nodiscard]] HashCacheManager::UrlStatus hashStatus(const QByteArray &hash);
 
 private:

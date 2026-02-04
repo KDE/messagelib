@@ -25,7 +25,9 @@ class WEBENGINEVIEWER_EXPORT FindBarWebEngineView : public FindBarBase
 {
     Q_OBJECT
 public:
+    /*! Constructs a FindBarWebEngineView for the given web engine view. */
     explicit FindBarWebEngineView(QWebEngineView *view, QWidget *parent = nullptr);
+    /*! Destroys the FindBarWebEngineView. */
     ~FindBarWebEngineView() override;
 
 private:

@@ -39,13 +39,18 @@ public:
     };
 
     explicit BlockTrackingUrlInterceptor(QObject *parent = nullptr);
+    /*! Destroys the BlockTrackingUrlInterceptor object. */
     ~BlockTrackingUrlInterceptor() override;
+    /*! Intercepts URL requests. */
     [[nodiscard]] bool interceptRequest(QWebEngineUrlRequestInfo &info) override;
 
+    /*! Returns whether mail tracking interception is enabled. */
     [[nodiscard]] bool enabledMailTrackingInterceptor() const;
+    /*! Sets whether to enable mail tracking interception. */
     void setEnabledMailTrackingInterceptor(bool enabledMailTrackingInterceptor);
 
 Q_SIGNALS:
+    /*! Emitted when tracking is detected. */
     void trackingFound(const WebEngineViewer::BlockTrackingUrlInterceptor::TrackerBlackList &);
 
 private:

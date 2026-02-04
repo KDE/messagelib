@@ -42,20 +42,28 @@ public:
      * be destroyed.
      **/
     ~WebEnginePage() override;
-
+    /*! Performs a hit test on the content at the specified position. */
     [[nodiscard]] WebEngineViewer::WebHitTest *hitTestContent(const QPoint &pos);
 
+    /*! Saves the HTML content to the specified download request. */
     void saveHtml(QWebEngineDownloadRequest *download);
 
+    /*! Maps the given point to the viewport. */
     [[nodiscard]] QPoint mapToViewport(const QPoint &pos) const;
 Q_SIGNALS:
+    /*! Emitted when a URL is clicked. */
     void urlClicked(const QUrl &url);
+    /*! Emitted when a console message should be displayed. */
     void showConsoleMessage(const QString &message);
 
 protected:
+    /*! Accepts or rejects a navigation request. */
     [[nodiscard]] bool acceptNavigationRequest(const QUrl &url, NavigationType type, bool isMainFrame) override;
+    /*! Handles JavaScript console messages. */
     void javaScriptConsoleMessage(JavaScriptConsoleMessageLevel level, const QString &message, int lineNumber, const QString &sourceID) override;
+    /*! Filters events for the object. */
     [[nodiscard]] bool eventFilter(QObject *obj, QEvent *event) override;
+    /*! Returns a script to refresh CSS variables. */
     [[nodiscard]] QString refreshCssVariablesScript();
 
 private:

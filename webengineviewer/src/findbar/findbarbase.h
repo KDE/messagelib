@@ -30,7 +30,9 @@ class WEBENGINEVIEWER_EXPORT FindBarBase : public QWidget
 {
     Q_OBJECT
 public:
+    /*! Constructs a FindBarBase widget with the given parent. */
     explicit FindBarBase(QWidget *parent = nullptr);
+    /*! Destroys the FindBarBase widget. */
     ~FindBarBase() override;
 
     [[nodiscard]] QString text() const;

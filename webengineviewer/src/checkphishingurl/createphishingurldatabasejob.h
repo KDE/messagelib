@@ -46,23 +46,33 @@ public:
     };
 
     explicit CreatePhishingUrlDataBaseJob(QObject *parent = nullptr);
+    /*! Destroys the CreatePhishingUrlDataBaseJob object. */
     ~CreatePhishingUrlDataBaseJob() override;
 
+    /*! Starts the database download job. */
     void start();
 
+    /*! Sets the current database state. */
     void setDataBaseState(const QString &value);
 
+    /*! Sets the type of database download needed. */
     void setDataBaseDownloadNeeded(WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadType type);
 
+    /*! Returns the JSON request payload. */
     [[nodiscard]] QByteArray jsonRequest() const;
 
+    /*! Parses the result from the server. */
     void parseResult(const QByteArray &value);
 
+    /*! Sets the compression type for constraints. */
     void setContraintsCompressionType(CreatePhishingUrlDataBaseJob::ContraintsCompressionType type);
 
 Q_SIGNALS:
+    /*! Emitted when the database creation is finished. */
     void finished(const WebEngineViewer::UpdateDataBaseInfo &infoDataBase, WebEngineViewer::CreatePhishingUrlDataBaseJob::DataBaseDownloadResult status);
+    /*! Emitted for debugging the JSON result. */
     void debugJsonResult(const QByteArray &ba);
+    /*! Emitted for debugging JSON messages. */
     void debugJson(const QByteArray &ba);
 
 private:

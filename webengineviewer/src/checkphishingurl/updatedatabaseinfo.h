@@ -14,7 +14,9 @@ namespace WebEngineViewer
 struct Addition;
 struct Removal;
 struct WEBENGINEVIEWER_EXPORT UpdateDataBaseInfo {
+    /*! Constructs an UpdateDataBaseInfo object. */
     UpdateDataBaseInfo();
+    /*! Returns whether this is a valid update info. */
     [[nodiscard]] bool isValid() const;
 
     enum ResponseType : uint8_t {
@@ -38,7 +40,9 @@ struct WEBENGINEVIEWER_EXPORT UpdateDataBaseInfo {
     QString platformType;
     QString newClientState;
     QByteArray sha256;
+    /*! Clears the data. */
     void clear();
+    /*! Compares this object with another. */
     [[nodiscard]] bool operator==(const UpdateDataBaseInfo &other) const;
 };
 

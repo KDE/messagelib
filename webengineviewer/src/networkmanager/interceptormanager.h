@@ -29,10 +29,15 @@ class WEBENGINEVIEWER_EXPORT InterceptorManager : public QObject
 {
     Q_OBJECT
 public:
+    /*! Constructs an InterceptorManager for the given web engine view. */
     explicit InterceptorManager(QWebEngineView *webEngine, KActionCollection *ac, QObject *parent = nullptr);
+    /*! Destroys the InterceptorManager object. */
     ~InterceptorManager() override;
+    /*! Adds an interceptor. */
     void addInterceptor(WebEngineViewer::NetworkPluginUrlInterceptorInterface *interceptor);
+    /*! Returns the list of URL interceptor actions for the given hit test result. */
     [[nodiscard]] QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
+    /*! Removes an interceptor. */
     void removeInterceptor(WebEngineViewer::NetworkPluginUrlInterceptorInterface *interceptor);
 
 private:

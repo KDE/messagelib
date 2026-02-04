@@ -15,10 +15,13 @@ class WebEngineNavigationRequestInterceptor : public QWebEnginePage
 {
     Q_OBJECT
 public:
+    /*! Constructs a WebEngineNavigationRequestInterceptor for the given page. */
     explicit WebEngineNavigationRequestInterceptor(QWebEnginePage *page);
+    /*! Destroys the WebEngineNavigationRequestInterceptor object. */
     ~WebEngineNavigationRequestInterceptor() override;
 
 protected:
+    /*! Handles navigation requests. */
     [[nodiscard]] bool acceptNavigationRequest(const QUrl &url, NavigationType type, bool isMainFrame) override;
 
 private:

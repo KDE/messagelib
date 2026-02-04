@@ -24,16 +24,23 @@ class BackOffModeManagerPrivate;
 class WEBENGINEVIEWER_EXPORT BackOffModeManager : public QObject
 {
 public:
+    /*! Constructs a BackOffModeManager object. */
     explicit BackOffModeManager(QObject *parent = nullptr);
+    /*! Destroys the BackOffModeManager object. */
     ~BackOffModeManager() override;
 
+    /*! Returns the singleton instance. */
     static BackOffModeManager *self();
+    /*! Returns whether the manager is in back-off mode. */
     [[nodiscard]] bool isInBackOffMode() const;
 
+    /*! Starts back-off mode. */
     void startOffMode();
 
+    /*! Returns the number of failed HTTP requests. */
     [[nodiscard]] int numberOfHttpFailed() const;
 
+    /*! Handles timer finished event. */
     void slotTimerFinished();
 
 private:

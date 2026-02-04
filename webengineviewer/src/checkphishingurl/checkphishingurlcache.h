@@ -22,7 +22,9 @@ class WEBENGINEVIEWER_EXPORT CheckPhishingUrlCache : public QObject
 {
     Q_OBJECT
 public:
+    /*! Constructs a CheckPhishingUrlCache object. */
     explicit CheckPhishingUrlCache(QObject *parent = nullptr);
+    /*! Returns the singleton instance. */
     static CheckPhishingUrlCache *self();
 
     enum class UrlStatus : uint8_t {

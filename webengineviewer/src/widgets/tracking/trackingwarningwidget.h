@@ -30,9 +30,13 @@ class WEBENGINEVIEWER_EXPORT TrackingWarningWidget : public KMessageWidget
 {
     Q_OBJECT
 public:
+    /*! Constructs a TrackingWarningWidget with the given parent. */
     explicit TrackingWarningWidget(QWidget *parent = nullptr);
+    /*! Destroys the TrackingWarningWidget. */
     ~TrackingWarningWidget() override;
+    /*! Adds a tracker to the list. */
     void addTracker(const WebEngineViewer::BlockTrackingUrlInterceptor::TrackerBlackList &);
+    /*! Hides the widget and clears the tracking data. */
     void hideAndClear();
 
 private:

@@ -24,7 +24,9 @@ class WEBENGINEVIEWER_EXPORT ZoomActionMenu : public KActionMenu
 {
     Q_OBJECT
 public:
+    /*! Constructs a ZoomActionMenu object. */
     explicit ZoomActionMenu(QObject *parent = nullptr);
+    /*! Destroys the ZoomActionMenu object. */
     ~ZoomActionMenu() override;
 
     void createZoomActions();
@@ -43,11 +45,15 @@ public:
     void setWebViewerZoomFactor(qreal zoomFactor);
 
 Q_SIGNALS:
+    /*! Emitted when the zoom factor changes. */
     void zoomChanged(qreal value);
 
 public:
+    /*! Zooms in. */
     void slotZoomIn();
+    /*! Zooms out. */
     void slotZoomOut();
+    /*! Resets the zoom. */
     void slotZoomReset();
 
 private:

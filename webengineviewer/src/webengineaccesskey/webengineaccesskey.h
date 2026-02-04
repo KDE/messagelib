@@ -44,6 +44,7 @@ public:
     void hideAccessKeys();
 
 Q_SIGNALS:
+    /*! Emitted when a URL should be opened. */
     void openUrl(const QUrl &url);
 
 private:
