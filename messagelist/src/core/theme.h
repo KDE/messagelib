@@ -212,7 +212,7 @@ public:
             SoftenByBlendingWhenDisabled = (1 << 1), ///< In disabled state the icon should be still shown, but made very soft by alpha blending
             UseCustomColor = (1 << 2), ///< For text and vertical line. If set then always use a custom color, otherwise use default text color
             IsBold = (1 << 3), ///< For text items. If set then always show as bold, otherwise use the default font weight
-            IsItalic = (1 << 4), ///< Fot text items. If set then always show as italic, otherwise use the default font style
+            IsItalic = (1 << 4), ///< For text items. If set then always show as italic, otherwise use the default font style
             SoftenByBlending = (1 << 5) ///< For text items: use 60% opacity.
         };
 

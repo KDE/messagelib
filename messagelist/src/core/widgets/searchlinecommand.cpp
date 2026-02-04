@@ -347,7 +347,7 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
                 tmp += ch;
             }
 #ifdef DEBUG_COMMAND_PARSER
-            qDebug() << " parenthese ( equal " << parentheses;
+            qDebug() << " parentheses ( equal " << parentheses;
 #endif
         } else if (ch == u')') {
             parentheses--;
@@ -355,7 +355,7 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
                 tmp += ch;
             }
 #ifdef DEBUG_COMMAND_PARSER
-            qDebug() << " parenthese ) equal " << parentheses;
+            qDebug() << " parentheses ) equal " << parentheses;
 #endif
             if (parentheses == 0) {
                 searchLineInfo.argument = tmp;

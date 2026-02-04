@@ -87,8 +87,8 @@ bool VerifyDetachedBodyPartMemento::canStartKeyListJob() const
     if (!m_keylistjob) {
         return false;
     }
-    const char *const fpr = m_vr.signature(0).fingerprint();
-    return fpr && *fpr;
+    const char *const fingerPrint = m_vr.signature(0).fingerprint();
+    return fingerPrint && *fingerPrint;
 }
 
 QStringList VerifyDetachedBodyPartMemento::keyListPattern() const

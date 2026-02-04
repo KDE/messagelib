@@ -82,7 +82,7 @@ void Test::compareFile(const QString &outFile, const QString &referenceFile)
 
     QCOMPARE(pStdOut.size(), 0);
 #else
-    // Uncommment to update test data
+    // Uncomment to update test data
     // proc.start(u"cp"_s, {htmlFile, referenceFile});
     // QVERIFY(proc.waitForFinished());
 

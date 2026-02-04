@@ -46,13 +46,13 @@ std::shared_ptr<KMime::Message> loadMessageFromDataDir(const QString &filename);
 
 /**
  * compares a KMime::Content against the referenceFile
- * If the files are not euqal print diff output.
+ * If the files are not equal print diff output.
  */
 void compareFile(KMime::Content *content, const QString &referenceFile);
 
 /**
  * compare two mails via files.
- * If the files are not euqal print diff output.
+ * If the files are not equal print diff output.
  */
 void compareFile(const QString &outFile, const QString &referenceFile);
 

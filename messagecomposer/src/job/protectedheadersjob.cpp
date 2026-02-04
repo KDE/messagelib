@@ -70,7 +70,7 @@ void ProtectedHeadersJob::doStart()
 
     const auto subject = d->skeletonMessage->subject(KMime::CreatePolicy::DontCreate);
     if (d->obvoscate && subject) {
-        // Create protected header lagacy mimepart with replaced headers
+        // Create protected header legacy mimepart with replaced headers
         auto cjob = new SinglepartJob;
         auto ct = cjob->contentType();
         ct->setMimeType("text/plain");

@@ -158,10 +158,10 @@ void ThemeContentItemSourceLabel::startDrag()
     // alpha.fill(0x0f0f0f0f);
     // pix.setAlphaChannel( alpha ); // <-- this crashes... no alpha for dragged pixmap :(
     auto data = new QMimeData();
-    QByteArray arry;
-    arry.resize(sizeof(Theme::ContentItem::Type));
-    *((Theme::ContentItem::Type *)arry.data()) = mType;
-    data->setData(QLatin1StringView(gThemeContentItemTypeDndMimeDataFormat), arry);
+    QByteArray content;
+    content.resize(sizeof(Theme::ContentItem::Type));
+    *((Theme::ContentItem::Type *)content.data()) = mType;
+    data->setData(QLatin1StringView(gThemeContentItemTypeDndMimeDataFormat), content);
     auto drag = new QDrag(this);
     drag->setMimeData(data);
     // drag->setPixmap( pix );
@@ -476,13 +476,13 @@ void ThemePreviewWidget::internalHandleDragMoveEvent(QDragMoveEvent *e)
         return;
     }
 
-    QByteArray arry = e->mimeData()->data(QLatin1StringView(gThemeContentItemTypeDndMimeDataFormat));
+    QByteArray content = e->mimeData()->data(QLatin1StringView(gThemeContentItemTypeDndMimeDataFormat));
 
-    if (arry.size() != sizeof(Theme::ContentItem::Type)) {
+    if (content.size() != sizeof(Theme::ContentItem::Type)) {
         return; // ugh
     }
 
-    Theme::ContentItem::Type type = *((Theme::ContentItem::Type *)arry.data());
+    Theme::ContentItem::Type type = *((Theme::ContentItem::Type *)content.data());
     if (!computeContentItemInsertPosition(e->position().toPoint(), type)) {
         return;
     }
@@ -521,13 +521,13 @@ void ThemePreviewWidget::dropEvent(QDropEvent *e)
         return;
     }
 
-    QByteArray arry = e->mimeData()->data(QLatin1StringView(gThemeContentItemTypeDndMimeDataFormat));
+    QByteArray content = e->mimeData()->data(QLatin1StringView(gThemeContentItemTypeDndMimeDataFormat));
 
-    if (arry.size() != sizeof(Theme::ContentItem::Type)) {
+    if (content.size() != sizeof(Theme::ContentItem::Type)) {
         return; // ugh
     }
 
-    Theme::ContentItem::Type type = *((Theme::ContentItem::Type *)arry.data());
+    Theme::ContentItem::Type type = *((Theme::ContentItem::Type *)content.data());
     if (!computeContentItemInsertPosition(e->position().toPoint(), type)) {
         viewport()->update();
         return;
@@ -783,10 +783,10 @@ void ThemePreviewWidget::mouseMoveEvent(QMouseEvent *e)
 
     // starting a drag
     auto data = new QMimeData();
-    QByteArray arry;
-    arry.resize(sizeof(Theme::ContentItem::Type));
-    *((Theme::ContentItem::Type *)arry.data()) = mSelectedThemeContentItem->type();
-    data->setData(QLatin1StringView(gThemeContentItemTypeDndMimeDataFormat), arry);
+    QByteArray content;
+    content.resize(sizeof(Theme::ContentItem::Type));
+    *((Theme::ContentItem::Type *)content.data()) = mSelectedThemeContentItem->type();
+    data->setData(QLatin1StringView(gThemeContentItemTypeDndMimeDataFormat), content);
     auto drag = new QDrag(this);
     drag->setMimeData(data);
 

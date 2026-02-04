@@ -799,7 +799,7 @@ QList<MessageComposer::ComposerJob *> ComposerViewBase::generateCryptoMessages(b
     signSomething = determineWhetherToSign(doSignCompletely, keyResolver.data(), signSomething, result, canceled);
     if (!result) {
         // TODO handle failure
-        qCDebug(MESSAGECOMPOSER_LOG) << "determineWhetherToSign: failed to resolve keys! oh noes";
+        qCDebug(MESSAGECOMPOSER_LOG) << "determineWhetherToSign: failed to resolve keys! oh no";
         if (!canceled) {
             Q_EMIT failed(i18n("Failed to resolve keys. Please report a bug."));
         } else {
@@ -813,7 +813,7 @@ QList<MessageComposer::ComposerJob *> ComposerViewBase::generateCryptoMessages(b
     encryptSomething = determineWhetherToEncrypt(doEncryptCompletely, keyResolver.data(), encryptSomething, signSomething, result, canceled);
     if (!result) {
         // TODO handle failure
-        qCDebug(MESSAGECOMPOSER_LOG) << "determineWhetherToEncrypt: failed to resolve keys! oh noes";
+        qCDebug(MESSAGECOMPOSER_LOG) << "determineWhetherToEncrypt: failed to resolve keys! oh no";
         if (!canceled) {
             Q_EMIT failed(i18n("Failed to resolve keys. Please report a bug."));
         } else {
@@ -846,7 +846,7 @@ QList<MessageComposer::ComposerJob *> ComposerViewBase::generateCryptoMessages(b
         return {};
     } else if (kpgpResult != ResolverResult::Ok) {
         // TODO handle failure
-        qCDebug(MESSAGECOMPOSER_LOG) << "resolveAllKeys: failed to resolve keys! oh noes";
+        qCDebug(MESSAGECOMPOSER_LOG) << "resolveAllKeys: failed to resolve keys! oh no";
         Q_EMIT failed(i18n("Failed to resolve keys. Please report a bug."));
         return {};
     }

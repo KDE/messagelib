@@ -1678,7 +1678,7 @@ void View::markMessageItemsAsAboutToBeRemoved(const QList<MessageItem *> &items,
     // What happens to the selection is generally an untrackable big mess.
     // Several components and entities are involved.
 
-    // Qutie tries to apply some kind of internal logic in order to keep
+    // Qt tries to apply some kind of internal logic in order to keep
     // "something" selected and "something" (else) to be current.
     // The results sometimes appear to depend on the current moon phase.
 
@@ -1698,7 +1698,7 @@ void View::markMessageItemsAsAboutToBeRemoved(const QList<MessageItem *> &items,
 
     // Add the fact that the operations are asynchronous: deletion will start
     // a job, do some event loop processing and then complete the work at a later time.
-    // The Qutie views also tend to accumulate the changes and perform them
+    // The Qt views also tend to accumulate the changes and perform them
     // all at once at the latest possible stage.
 
     // A radical approach is needed: we FIRST deal with the selection

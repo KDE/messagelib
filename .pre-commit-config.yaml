@@ -21,6 +21,10 @@ repos:
     - id: check-symlinks
     - id: destroyed-symlinks
     - id: check-executables-have-shebangs
+ - repo: https://github.com/codespell-project/codespell
+   rev: v2.4.1
+   hooks:
+    - id: codespell
  - repo: https://github.com/efrecon/pre-commit-hook-lxml
    rev: v0.1.4
    hooks:

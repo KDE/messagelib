@@ -745,21 +745,21 @@ std::vector<KeyResolver::Item> KeyResolver::getEncryptionItems(const QStringList
     return items;
 }
 
-static Kleo::Action action(bool doit, bool ask, bool donot, bool requested)
+static Kleo::Action action(bool doit, bool ask, bool doNot, bool requested)
 {
-    if (requested && !donot) {
+    if (requested && !doNot) {
         return Kleo::DoIt;
     }
-    if (doit && !ask && !donot) {
+    if (doit && !ask && !doNot) {
         return Kleo::DoIt;
     }
-    if (!doit && ask && !donot) {
+    if (!doit && ask && !doNot) {
         return Kleo::Ask;
     }
-    if (!doit && !ask && donot) {
+    if (!doit && !ask && doNot) {
         return requested ? Kleo::Conflict : Kleo::DontDoIt;
     }
-    if (!doit && !ask && !donot) {
+    if (!doit && !ask && !doNot) {
         return Kleo::DontDoIt;
     }
     return Kleo::Conflict;
@@ -1296,12 +1296,12 @@ ResolverResult KeyResolver::showKeyApprovalDialog(bool &finalySendUnencrypted)
             const std::vector<GpgME::Key> &keys = items[i].keys;
             for (auto it = keys.begin(), end = keys.end(); it != end; ++it) {
                 if (it->protocol() == GpgME::OpenPGP) {
-                    if (const char *fpr = it->primaryFingerprint()) {
-                        pref.pgpKeyFingerprints.push_back(QLatin1StringView(fpr));
+                    if (const char *fingerPrint = it->primaryFingerprint()) {
+                        pref.pgpKeyFingerprints.push_back(QLatin1StringView(fingerPrint));
                     }
                 } else if (it->protocol() == GpgME::CMS) {
-                    if (const char *fpr = it->primaryFingerprint()) {
-                        pref.smimeCertFingerprints.push_back(QLatin1StringView(fpr));
+                    if (const char *fingerPrint = it->primaryFingerprint()) {
+                        pref.smimeCertFingerprints.push_back(QLatin1StringView(fingerPrint));
                     }
                 }
             }
