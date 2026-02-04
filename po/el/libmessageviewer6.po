@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-15 00:44+0000\n"
+"POT-Creation-Date: 2026-02-04 00:45+0000\n"
 "PO-Revision-Date: 2024-09-19 17:23+0300\n"
 "Last-Translator: Antonis Geralis <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -909,13 +909,13 @@ msgstr ""
 "Πλήρης αναφορά:\n"
 "%2"
 
-#: header/headerstylemenumanager.cpp:107
+#: header/headerstylemenumanager.cpp:105
 #, kde-format
 msgctxt "View->"
 msgid "&Headers"
 msgstr "Κεφα&λίδες"
 
-#: header/headerstylemenumanager.cpp:111
+#: header/headerstylemenumanager.cpp:109
 #, kde-format
 msgid "Choose display style of message headers"
 msgstr "Επιλογή στυλ εμφάνισης κεφαλίδων μηνυμάτων"
@@ -1178,13 +1178,13 @@ msgid "Short url '%1' redirects to '%2'."
 msgstr "Το σύντομο url «%1» ανακατευθύνει στο «%2»."
 
 #. i18n: ectx: label, entry (PrintSelectedText), group (Print)
-#: settings/messageviewer.kcfg.in:11
+#: settings/messageviewer.kcfg:11
 #, kde-format
 msgid "Only print selected text in viewer"
 msgstr "Εκτύπωση μόνο του επιλεγμένου κειμένου στον προβολέα"
 
 #. i18n: ectx: label, entry (RespectExpandCollapseSettings), group (Print)
-#: settings/messageviewer.kcfg.in:15
+#: settings/messageviewer.kcfg:15
 #, fuzzy, kde-format
 #| msgid "Respect expand collapse quote mark defined settings when printing"
 msgid ""
@@ -1195,7 +1195,7 @@ msgstr ""
 "«Ανάπτυξη / Σύμπτυξη» κατά την εκτύπωση"
 
 #. i18n: ectx: label, entry (PrintBackgroundColorImages), group (Print)
-#: settings/messageviewer.kcfg.in:19
+#: settings/messageviewer.kcfg:19
 #, kde-format
 msgid ""
 "Specifies whether the background color and images are also drawn when the "
@@ -1205,14 +1205,14 @@ msgstr ""
 "εκτύπωση της σελίδας."
 
 #. i18n: ectx: label, entry (AlwaysShowEncryptionSignatureDetails), group (Print)
-#: settings/messageviewer.kcfg.in:23
+#: settings/messageviewer.kcfg:23
 #, fuzzy, kde-format
 #| msgid "Show signature details."
 msgid "Always show encryption/signature details when we print message"
 msgstr "Εμφάνιση λεπτομερειών υπογραφής."
 
 #. i18n: ectx: label, entry (MinimumFontSize), group (Fonts)
-#: settings/messageviewer.kcfg.in:34
+#: settings/messageviewer.kcfg:34
 #, kde-format
 msgid "When we render html do not use font size inferior to minimum size."
 msgstr ""
@@ -1220,37 +1220,37 @@ msgstr ""
 "κατώτερου του ελάχιστου μεγέθους."
 
 #. i18n: ectx: label, entry (BodyFont), group (Fonts)
-#: settings/messageviewer.kcfg.in:38
+#: settings/messageviewer.kcfg:38
 #, kde-format
 msgid "Specifies the font to use for the message body"
 msgstr ""
 
 #. i18n: ectx: label, entry (PrintFont), group (Fonts)
-#: settings/messageviewer.kcfg.in:42
+#: settings/messageviewer.kcfg:42
 #, kde-format
 msgid "Specifies the font to use for printing"
 msgstr ""
 
 #. i18n: ectx: label, entry (CheckPhishingUrl), group (Security)
-#: settings/messageviewer.kcfg.in:49
+#: settings/messageviewer.kcfg:49
 #, kde-format
 msgid "Check if url can be a phishing"
 msgstr ""
 
 #. i18n: ectx: label, entry (CloseAfterReplyOrForward), group (Reader)
-#: settings/messageviewer.kcfg.in:55
+#: settings/messageviewer.kcfg:55
 #, kde-format
 msgid "Close message window after replying or forwarding"
 msgstr ""
 
 #. i18n: ectx: label, entry (ShowExpandQuotesMark), group (Reader)
-#: settings/messageviewer.kcfg.in:72
+#: settings/messageviewer.kcfg:72
 #, kde-format
 msgid "Show expand/collapse quote marks"
 msgstr "Εμφάνιση σημείων ανάπτυξης/σύμπτυξης παράθεσης"
 
 #. i18n: ectx: whatsthis, entry (ShowExpandQuotesMark), group (Reader)
-#: settings/messageviewer.kcfg.in:73
+#: settings/messageviewer.kcfg:73
 #, kde-format
 msgid ""
 "Enable this option to show different levels of quoted text. Disable to hide "
@@ -1261,19 +1261,19 @@ msgstr ""
 "κειμένου σε παράθεση."
 
 #. i18n: ectx: label, entry (CollapseQuoteLevelSpin), group (Reader)
-#: settings/messageviewer.kcfg.in:76
+#: settings/messageviewer.kcfg:76
 #, kde-format
 msgid "Automatic collapse level:"
 msgstr "Επίπεδο αυτόματης σύμπτυξης:"
 
 #. i18n: ectx: label, entry (ShrinkQuotes), group (Reader)
-#: settings/messageviewer.kcfg.in:83
+#: settings/messageviewer.kcfg:83
 #, kde-format
 msgid "Reduce font size for quoted text"
 msgstr "Μείωση μεγέθους γραμματοσειράς για κείμενο σε παράθεση"
 
 #. i18n: ectx: whatsthis, entry (ShrinkQuotes), group (Reader)
-#: settings/messageviewer.kcfg.in:84
+#: settings/messageviewer.kcfg:84
 #, kde-format
 msgid "Enable this option to show quoted text with a smaller font."
 msgstr ""
@@ -1281,7 +1281,7 @@ msgstr ""
 "μικρότερη γραμματοσειρά."
 
 #. i18n: ectx: label, entry (AlwaysDecrypt), group (Reader)
-#: settings/messageviewer.kcfg.in:88
+#: settings/messageviewer.kcfg:88
 #, kde-format
 msgid "Always decrypt messages when viewing or ask before decrypting"
 msgstr ""
@@ -1289,57 +1289,57 @@ msgstr ""
 "αποκρυπτογράφηση"
 
 #. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
-#: settings/messageviewer.kcfg.in:91
+#: settings/messageviewer.kcfg:91
 #, kde-format
 msgid "Message Structure Viewer"
 msgstr "Εμφάνιση δομής μηνύματος"
 
 #. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
-#: settings/messageviewer.kcfg.in:94
+#: settings/messageviewer.kcfg:94
 #, kde-format
 msgid "Show never"
 msgstr "Πάντα απόκρυψη"
 
 #. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
-#: settings/messageviewer.kcfg.in:97
+#: settings/messageviewer.kcfg:97
 #, kde-format
 msgid "Show always"
 msgstr "Πάντα εμφάνιση"
 
 #. i18n: ectx: label, entry (headerPluginStyleName), group (Reader)
 #. i18n: ectx: label, entry (headerStyle), group (Reader)
-#: settings/messageviewer.kcfg.in:109 settings/messageviewer.kcfg.in:115
+#: settings/messageviewer.kcfg:109 settings/messageviewer.kcfg:115
 #, kde-format
 msgid "What style of headers should be displayed"
 msgstr "Ποιο στυλ επικεφαλίδας θα πρέπει να εμφανίζεται"
 
 #. i18n: ectx: label, entry (headerSetDisplayed), group (Reader)
-#: settings/messageviewer.kcfg.in:119
+#: settings/messageviewer.kcfg:119
 #, kde-format
 msgid "How much of headers should be displayed"
 msgstr "Πόσες επικεφαλίδες θα πρέπει να εμφανίζονται"
 
 #. i18n: ectx: label, entry (htmlMail), group (Reader)
-#: settings/messageviewer.kcfg.in:123
+#: settings/messageviewer.kcfg:123
 #, kde-format
 msgid "Prefer HTML to plain text"
 msgstr "Προτίμηση HTML αντί για απλό κείμενο"
 
 #. i18n: ectx: label, entry (htmlLoadExternal), group (Reader)
-#: settings/messageviewer.kcfg.in:127
+#: settings/messageviewer.kcfg:127
 #, kde-format
 msgid "Allow messages to load external references from the Internet"
 msgstr ""
 "Να επιτρέπεται στα μηνύματα η φόρτωση εξωτερικών αναφορών από το διαδίκτυο"
 
 #. i18n: ectx: label, entry (attachmentStrategy), group (Reader)
-#: settings/messageviewer.kcfg.in:131
+#: settings/messageviewer.kcfg:131
 #, kde-format
 msgid "How attachments are shown"
 msgstr "Ο τρόπος εμφάνισης των συνημμένων"
 
 #. i18n: ectx: label, entry (RecycleQuoteColors), group (Reader)
-#: settings/messageviewer.kcfg.in:135
+#: settings/messageviewer.kcfg:135
 #, kde-format
 msgid "Specifies whether to reuse the quote color, beyond the 3rd level"
 msgstr ""
@@ -1347,13 +1347,13 @@ msgstr ""
 "τρίτο επίπεδο"
 
 #. i18n: ectx: label, entry (AccessKeyEnabled), group (Reader)
-#: settings/messageviewer.kcfg.in:139
+#: settings/messageviewer.kcfg:139
 #, kde-format
 msgid "Activate Access Key"
 msgstr "Ενεργοποίηση κλειδιού πρόσβασης"
 
 #. i18n: ectx: label, entry (ScamDetectionEnabled), group (Reader)
-#: settings/messageviewer.kcfg.in:143
+#: settings/messageviewer.kcfg:143
 #, kde-format
 msgid ""
 "KMail can analyze messages for suspected email scams by looking for common "
@@ -1363,32 +1363,32 @@ msgstr ""
 "για συνήθεις τεχνικές εξαπάτησης που προσβλέπουν στην παραπλάνηση σας"
 
 #. i18n: ectx: label, entry (ScamDetectionWhiteList), group (Reader)
-#: settings/messageviewer.kcfg.in:147
+#: settings/messageviewer.kcfg:147
 #, kde-format
 msgid "List of emails in scam white list"
 msgstr "Λίστα διευθύνσεων εξαπάτησης στη λευκή λίστα"
 
 #. i18n: ectx: label, entry (MailTrackingUrlEnabled), group (Reader)
-#: settings/messageviewer.kcfg.in:151
+#: settings/messageviewer.kcfg:151
 #, kde-format
 msgid "Scan emails for tracking URLs"
 msgstr ""
 
 #. i18n: ectx: label, entry (notSendWhenEncrypted), group (MDN)
-#: settings/messageviewer.kcfg.in:157
+#: settings/messageviewer.kcfg:157
 #, kde-format
 msgid "Do not send MDNs in response to encrypted messages"
 msgstr ""
 "Μη αποστολή ειδοποιήσεων παράδοσης σε απάντηση κρυπτογραφημένων μηνυμάτων"
 
 #. i18n: ectx: label, entry (LegacyMangleFromToHeaders), group (Invitations)
-#: settings/messageviewer.kcfg.in:179
+#: settings/messageviewer.kcfg:179
 #, kde-format
 msgid "Mangle From:/To: headers in replies to replies"
 msgstr "Χωρισμός των κεφαλίδων Από:/Προς: στις απαντήσεις σε απαντήσεις"
 
 #. i18n: ectx: whatsthis, entry (LegacyMangleFromToHeaders), group (Invitations)
-#: settings/messageviewer.kcfg.in:180
+#: settings/messageviewer.kcfg:180
 #, kde-format
 msgid ""
 "Microsoft Outlook has a number of shortcomings in its implementation of the "
@@ -1402,13 +1402,13 @@ msgstr ""
 "απαντήσεις σας, ενεργοποιήστε αυτή την επιλογή."
 
 #. i18n: ectx: label, entry (LegacyBodyInvites), group (Invitations)
-#: settings/messageviewer.kcfg.in:185
+#: settings/messageviewer.kcfg:185
 #, kde-format
 msgid "Send groupware invitations in the mail body"
 msgstr "Αποστολή προσκλήσεων groupware στο κύριο σώμα"
 
 #. i18n: ectx: whatsthis, entry (LegacyBodyInvites), group (Invitations)
-#: settings/messageviewer.kcfg.in:186
+#: settings/messageviewer.kcfg:186
 #, kde-format
 msgid ""
 "Microsoft Outlook has a number of shortcomings in its implementation of the "
@@ -1422,13 +1422,13 @@ msgstr ""
 "προσκλήσεις σας, ενεργοποιήστε αυτή την επιλογή."
 
 #. i18n: ectx: label, entry (ExchangeCompatibleInvitations), group (Invitations)
-#: settings/messageviewer.kcfg.in:191
+#: settings/messageviewer.kcfg:191
 #, kde-format
 msgid "Exchange-compatible invitation naming"
 msgstr "Προσκλήσεις με ονοματοδοσία συμβατή με το Exchange"
 
 #. i18n: ectx: whatsthis, entry (ExchangeCompatibleInvitations), group (Invitations)
-#: settings/messageviewer.kcfg.in:192
+#: settings/messageviewer.kcfg:192
 #, kde-format
 msgid ""
 "Microsoft Outlook, when used in combination with a Microsoft Exchange "
@@ -1442,13 +1442,13 @@ msgstr ""
 "groupware να γίνεται σε συμβατή με το Microsoft Exchange μορφή."
 
 #. i18n: ectx: label, entry (AutomaticSending), group (Invitations)
-#: settings/messageviewer.kcfg.in:197
+#: settings/messageviewer.kcfg:197
 #, kde-format
 msgid "Automatic invitation sending"
 msgstr "Αυτόματη αποστολή προσκλήσεων"
 
 #. i18n: ectx: whatsthis, entry (AutomaticSending), group (Invitations)
-#: settings/messageviewer.kcfg.in:198
+#: settings/messageviewer.kcfg:198
 #, kde-format
 msgid ""
 "When this is checked, you will not see the mail composer window. Instead, "
@@ -1466,14 +1466,14 @@ msgstr ""
 
 #. i18n: ectx: label, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
 #. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
-#: settings/messageviewer.kcfg.in:203 ui/invitationsettings.ui:74
+#: settings/messageviewer.kcfg:203 ui/invitationsettings.ui:74
 #, kde-format
 msgid "Delete invitation emails after the reply to them has been sent"
 msgstr ""
 "Διαγραφή αλληλογραφίας προσκλήσεων μετά την αποστολή απάντησης σε αυτές"
 
 #. i18n: ectx: whatsthis, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
-#: settings/messageviewer.kcfg.in:204
+#: settings/messageviewer.kcfg:204
 #, kde-format
 msgid ""
 "When this is checked, received invitation emails that have been replied to "
@@ -1484,13 +1484,13 @@ msgstr ""
 "της απάντησης."
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
-#: settings/messageviewer.kcfg.in:228 viewer/viewer_p.cpp:1559
+#: settings/messageviewer.kcfg:228 viewer/viewer_p.cpp:1559
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "Χρήση γραμματοσειράς &σταθερού πλάτους"
 
 #. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
-#: settings/messageviewer.kcfg.in:235
+#: settings/messageviewer.kcfg:235
 #, fuzzy, kde-format
 #| msgid "The most recent selected folder using for Todo."
 msgid "The most recent selected folder used for Todo."
@@ -1498,7 +1498,7 @@ msgstr ""
 "Ο πιο πρόσφατα επιλεγμένος φάκελος χρησιμοποιημένο για τα Προς υλοποίηση."
 
 #. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
-#: settings/messageviewer.kcfg.in:241
+#: settings/messageviewer.kcfg:241
 #, fuzzy, kde-format
 #| msgid "The most recent selected folder using for Todo."
 msgid "The most recent selected folder used for Event."
@@ -1506,7 +1506,7 @@ msgstr ""
 "Ο πιο πρόσφατα επιλεγμένος φάκελος χρησιμοποιημένο για τα Προς υλοποίηση."
 
 #. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
-#: settings/messageviewer.kcfg.in:247
+#: settings/messageviewer.kcfg:247
 #, fuzzy, kde-format
 #| msgid "The most recent selected folder using for Todo."
 msgid "The most recent selected folder used for Notes."

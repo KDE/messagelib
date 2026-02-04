@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-05 00:44+0000\n"
+"POT-Creation-Date: 2026-02-04 00:45+0000\n"
 "PO-Revision-Date: 2020-05-15 08:18+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -2020,43 +2020,43 @@ msgid "Repeat every:"
 msgstr ""
 
 #. i18n: ectx: label, entry (ActivateQuickTextFormat), group (Composer)
-#: settings/messagecomposer.kcfg.in:10
+#: settings/messagecomposer.kcfg:10
 #, kde-format
 msgid "Show Quick Text Format Bar"
 msgstr ""
 
 #. i18n: ectx: label, entry (QuoteSelectionOnly), group (Composer)
-#: settings/messagecomposer.kcfg.in:15
+#: settings/messagecomposer.kcfg:15
 #, kde-format
 msgid "Only quote selected text when replying"
 msgstr "Vastamisel ainult valitud teksti tsiteerimine"
 
 #. i18n: ectx: label, entry (AutoTextSignature), group (Composer)
-#: settings/messagecomposer.kcfg.in:20
+#: settings/messagecomposer.kcfg:20
 #, kde-format
 msgid "A&utomatically insert signature"
 msgstr "Allkiri lisatakse a&utomaatselt"
 
 #. i18n: ectx: label, entry (PrependSignature), group (Composer)
-#: settings/messagecomposer.kcfg.in:24
+#: settings/messagecomposer.kcfg:24
 #, kde-format
 msgid "Insert signature above quoted text"
 msgstr "Allkiri lisatakse tsiteeritava teksti ette"
 
 #. i18n: ectx: label, entry (DashDashSignature), group (Composer)
-#: settings/messagecomposer.kcfg.in:28
+#: settings/messagecomposer.kcfg:28
 #, kde-format
 msgid "Prepend separator to signature"
 msgstr "Allkirja ette lisatakse eraldaja"
 
 #. i18n: ectx: label, entry (ShowBalooSearchInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.in:33
+#: settings/messagecomposer.kcfg:33
 #, kde-format
 msgid "Use addresses indexed from emails for autocompletion"
 msgstr "Kirjadest indekseeritud aadresside kasutamine automaatsel lõpetamisel"
 
 #. i18n: ectx: whatsthis, entry (ShowBalooSearchInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.in:34
+#: settings/messagecomposer.kcfg:34
 #, kde-format
 msgid ""
 "Disable this option if you only want contacts from your addressbooks to "
@@ -2066,22 +2066,14 @@ msgstr ""
 "näidataks automaatse lõpetamise nimekirjas ainult aadressiraamatust pärit "
 "kontakte."
 
-#. i18n: ectx: label, entry (AllowSemicolonAsAddressSeparator), group (Composer)
-#: settings/messagecomposer.kcfg.in:40
-#, kde-format
-msgid ""
-"Allow the semicolon character (';') to be used as separator in the message "
-"composer"
-msgstr "Semikooloni kasutamise lubamine eraldajana kirjakoostajas"
-
 #. i18n: ectx: label, entry (ShowRecentAddressesInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.in:43
+#: settings/messagecomposer.kcfg:39
 #, kde-format
 msgid "Use recent addresses for autocompletion"
 msgstr "Viimati kasutatud aadresside kasutamine automaatsel lõpetamisel"
 
 #. i18n: ectx: whatsthis, entry (ShowRecentAddressesInComposer), group (Composer)
-#: settings/messagecomposer.kcfg.in:44
+#: settings/messagecomposer.kcfg:40
 #, kde-format
 msgid ""
 "Disable this option if you do not want recently used addresses to appear in "
@@ -2091,31 +2083,31 @@ msgstr ""
 "näidataks automaatse lõpetamise nimekirjas viimati kasutatud aadresse."
 
 #. i18n: ectx: label, entry (MaximumRecipients), group (Composer)
-#: settings/messagecomposer.kcfg.in:49
+#: settings/messagecomposer.kcfg:45
 #, kde-format
 msgid "Maximum number of recipient entries:"
 msgstr "Saajate maksimaalne arv:"
 
 #. i18n: ectx: label, entry (WordWrap), group (Composer)
-#: settings/messagecomposer.kcfg.in:54
+#: settings/messagecomposer.kcfg:50
 #, kde-format
 msgid "Word &wrap at column:"
 msgstr "Reamurdmine &veerust:"
 
 #. i18n: ectx: label, entry (ImprovePlainTextOfHtmlMessage), group (Composer)
-#: settings/messagecomposer.kcfg.in:64
+#: settings/messagecomposer.kcfg:60
 #, kde-format
 msgid "Improve plain text version of HTML message"
 msgstr "HTML-kirja lihtteksti täiustamine"
 
 #. i18n: ectx: label, entry (CryptoAutoSign), group (Composer)
-#: settings/messagecomposer.kcfg.in:68
+#: settings/messagecomposer.kcfg:64
 #, kde-format
 msgid "Sign all messages, if possible"
 msgstr ""
 
 #. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
-#: settings/messagecomposer.kcfg.in:72
+#: settings/messagecomposer.kcfg:68
 #, fuzzy, kde-format
 #| msgid ""
 #| "Valid trusted encryption keys were found for all recipients.\n"
@@ -2126,26 +2118,26 @@ msgstr ""
 "Kas kiri krüptida?"
 
 #. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
-#: settings/messagecomposer.kcfg.in:76
+#: settings/messagecomposer.kcfg:72
 #, kde-format
 msgid "Warn before sending unencrypted messages"
 msgstr "Hoiatus enne krüptimata kirjade saatmist"
 
 #. i18n: ectx: label, entry (CryptoWarningUnsigned), group (Composer)
-#: settings/messagecomposer.kcfg.in:80
+#: settings/messagecomposer.kcfg:76
 #, kde-format
 msgid "Warn before sending unsigned messages"
 msgstr "Hoiatus enne allkirjastamata kirjade saatmist"
 
 #. i18n: ectx: label, entry (CryptoWarnWhenNearExpire), group (Composer)
-#: settings/messagecomposer.kcfg.in:84
+#: settings/messagecomposer.kcfg:80
 #, kde-format
 msgid "Warn if certificates/keys expire soon (configure thresholds below)"
 msgstr "Hoiatus, kui sertifikaat/võti peagi aegub (täpsusta lävi allpool)"
 
 #. i18n: ectx: label, entry (CryptoWarnOwnEncrKeyNearExpiryThresholdDays), group (Composer)
 #. i18n: ectx: label, entry (CryptoWarnEncrKeyNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.in:88 settings/messagecomposer.kcfg.in:92
+#: settings/messagecomposer.kcfg:84 settings/messagecomposer.kcfg:88
 #, kde-format
 msgid ""
 "The minimum number of days that the encryption certificate should be valid "
@@ -2155,7 +2147,7 @@ msgstr ""
 "enne kui näidatakse hoiatust"
 
 #. i18n: ectx: label, entry (CryptoWarnEncrChaincertNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.in:96
+#: settings/messagecomposer.kcfg:92
 #, kde-format
 msgid ""
 "The minimum number of days that all certificates in the chain should be "
@@ -2165,7 +2157,7 @@ msgstr ""
 "peavad veel kehtima enne hoiatuse näitamist"
 
 #. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg.in:100
+#: settings/messagecomposer.kcfg:96
 #, kde-format
 msgid ""
 "The minimum number of days that the root certificate should be valid before "
@@ -2175,7 +2167,7 @@ msgstr ""
 "kui näidatakse hoiatust"
 
 #. i18n: ectx: label, entry (CryptoShowKeysForApproval), group (Composer)
-#: settings/messagecomposer.kcfg.in:104
+#: settings/messagecomposer.kcfg:100
 #, kde-format
 msgid ""
 "Always show the list of encryption keys to select the one which will be used"
@@ -2492,6 +2484,11 @@ msgstr "Kirjade edastamise agent ei ole võrgus."
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr ""
+
+#~ msgid ""
+#~ "Allow the semicolon character (';') to be used as separator in the "
+#~ "message composer"
+#~ msgstr "Semikooloni kasutamise lubamine eraldajana kirjakoostajas"
 
 #~ msgid "Failed to attach file"
 #~ msgstr "Faili kaasamine nurjus"

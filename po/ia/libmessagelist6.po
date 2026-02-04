@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-18 00:44+0000\n"
-"PO-Revision-Date: 2026-01-23 16:20+0100\n"
+"PO-Revision-Date: 2026-02-03 15:59+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -2157,7 +2157,7 @@ msgstr "Color de Fundo"
 #: utils/themeeditor.cpp:974
 #, kde-format
 msgid "Background Style"
-msgstr "Style de fundo"
+msgstr "Stilo de fundo"
 
 #: utils/themeeditor.cpp:1160
 #, kde-format
