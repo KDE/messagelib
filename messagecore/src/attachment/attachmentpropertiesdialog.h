@@ -17,7 +17,7 @@
 namespace MessageCore
 {
 /*!
- * \class AttachmentPropertiesDialog
+ * \class MessageCore::AttachmentPropertiesDialog
  * \inmodule MessageCore
  * \inheaderfile MessageCore/AttachmentPropertiesDialog
  * \brief A dialog for editing attachment properties.

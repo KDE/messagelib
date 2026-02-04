@@ -35,7 +35,7 @@ namespace MessageCore
 class DateFormatterPrivate;
 
 /*!
-  \class DateFormatter
+  \class MessageCore::DateFormatter
   \inmodule MessageCore
   \inheaderfile MessageCore/DateFormatter
   \brief

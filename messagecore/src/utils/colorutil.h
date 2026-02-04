@@ -14,7 +14,7 @@
 namespace MessageCore
 {
 /*!
- * \class ColorUtil
+ * \class MessageCore::ColorUtil
  * \inmodule MessageCore
  * \inheaderfile MessageCore/ColorUtil
  * \brief The ColorUtil class

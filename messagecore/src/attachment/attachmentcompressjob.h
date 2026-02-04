@@ -16,7 +16,7 @@
 namespace MessageCore
 {
 /*!
- * \class AttachmentCompressJob
+ * \class MessageCore::AttachmentCompressJob
  * \inmodule MessageCore
  * \inheaderfile MessageCore/AttachmentCompressJob
  * \brief A job to compress the attachment of an email.

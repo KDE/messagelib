@@ -13,7 +13,7 @@
 namespace MessageCore
 {
 /*!
- * \class AttachmentUpdateJob
+ * \class MessageCore::AttachmentUpdateJob
  * \inmodule MessageCore
  * \inheaderfile MessageCore/AttachmentUpdateJob
  * \brief The AttachmentUpdateJob class

@@ -17,7 +17,7 @@
 namespace MessageCore
 {
 /*!
- * \class HeaderMixupNodeHelper
+ * \class MessageCore::HeaderMixupNodeHelper
  * \inmodule MessageCore
  * \inheaderfile MessageCore/HeaderMixupNodeHelper
  */

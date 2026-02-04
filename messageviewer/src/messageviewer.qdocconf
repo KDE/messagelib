@@ -1,0 +1,33 @@
+include($KDE_DOCS/global/qt-module-defaults.qdocconf)
+
+project = MessageViewer
+description = MessageViewer provides MessageViewer Library.
+
+
+documentationinheaders = true
+
+headerdirs += .
+sourcedirs += .
+
+outputformats = HTML
+
+depends += \
+    qtcore
+
+navigation.landingpage = "MessageViewer"
+
+qhp.projects            = messageviewer
+
+qhp.messageviewer.file                = messageviewer.qhp
+qhp.messageviewer.namespace           = org.kde.messageviewer.$QT_VERSION_TAG
+qhp.messageviewer.virtualFolder       = messageviewer
+qhp.messageviewer.indexTitle          = messageviewer
+qhp.messageviewer.indexRoot           =
+
+qhp.messageviewer.subprojects         = classes
+qhp.messageviewer.subprojects.classes.title = C++ Classes
+qhp.messageviewer.subprojects.classes.indexTitle = MessageViewer C++ Classes
+qhp.messageviewer.subprojects.classes.selectors = class fake:headerfile
+qhp.messageviewer.subprojects.classes.sortPages = true
+
+tagfile = messageviewer.tags

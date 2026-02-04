@@ -19,7 +19,7 @@ class KConfigGroup;
 namespace MessageCore
 {
 /*!
- * \class MailingList
+ * \class MessageCore::MailingList
  * \inmodule MessageCore
  * \inheaderfile MessageCore/MailingList
  * \brief A class to extract information about mailing lists from emails.

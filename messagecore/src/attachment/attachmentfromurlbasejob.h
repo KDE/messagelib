@@ -15,7 +15,7 @@
 namespace MessageCore
 {
 /*!
- * \class AttachmentFromUrlBaseJob
+ * \class MessageCore::AttachmentFromUrlBaseJob
  * \inmodule MessageCore
  * \inheaderfile MessageCore/AttachmentFromUrlBaseJob
  * \brief The AttachmentFromUrlBaseJob class

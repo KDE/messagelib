@@ -23,7 +23,7 @@ class Content;
 namespace MessageCore
 {
 /*!
- * \class ImageCollector
+ * \class MessageCore::ImageCollector
  * \inmodule MessageCore
  * \inheaderfile MessageCore/ImageCollector
  * \brief A helper class to collect the embedded images of a email.

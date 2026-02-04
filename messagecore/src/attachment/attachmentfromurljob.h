@@ -13,7 +13,7 @@
 namespace MessageCore
 {
 /*!
- * \class AttachmentFromUrlJob
+ * \class MessageCore::AttachmentFromUrlJob
  * \inmodule MessageCore
  * \inheaderfile MessageCore/AttachmentFromUrlJob
  * \brief A job to load an attachment from an url.

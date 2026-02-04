@@ -18,5 +18,6 @@
         \li \l{MessageComposer C++ Classes}
         \li \l{MessageCore C++ Classes}
         \li \l{MessageList C++ Classes}
+        \li \l{MessageViewer C++ Classes}
     \endlist
 */

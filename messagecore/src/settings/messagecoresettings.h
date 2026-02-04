@@ -12,7 +12,7 @@
 namespace MessageCore
 {
 /*!
- * \class MessageCoreSettings
+ * \class MessageCore::MessageCoreSettings
  * \inmodule MessageCore
  * \inheaderfile MessageCore/MessageCoreSettings
  * \brief The MessageCoreSettings class

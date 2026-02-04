@@ -15,7 +15,7 @@
 namespace MessageCore
 {
 /*!
- * \class AttachmentLoadJob
+ * \class MessageCore::AttachmentLoadJob
  * \inmodule MessageCore
  * \inheaderfile MessageCore/AttachmentLoadJob
  * \brief A base class for jobs to load attachments from different sources.

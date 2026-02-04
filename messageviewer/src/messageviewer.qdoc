@@ -1,0 +1,9 @@
+/*!
+    \module MessageViewer
+    \title MessageViewer C++ Classes
+    \ingroup modules
+    \cmakepackage KPim6
+    \cmakecomponent MessageViewer
+
+    \brief MessageViewer provides MessageViewer Library.
+*/

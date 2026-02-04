@@ -20,7 +20,7 @@ namespace MessageCore
 class AutocryptStoragePrivate;
 
 /*!
- * \class AutocryptStorage
+ * \class MessageCore::AutocryptStorage
  * \inmodule MessageCore
  * \inheaderfile MessageCore/AutocryptStorage
  */

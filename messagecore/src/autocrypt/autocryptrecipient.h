@@ -21,7 +21,7 @@ class AutocryptStorage;
 class HeaderMixupNodeHelper;
 
 /*!
- * \class AutocryptRecipient
+ * \class MessageCore::AutocryptRecipient
  * \inmodule MessageCore
  * \inheaderfile MessageCore/AutocryptRecipient
  */

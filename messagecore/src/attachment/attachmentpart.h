@@ -18,7 +18,7 @@ class QUrl;
 namespace MessageCore
 {
 /*!
- * \class AttachmentPart
+ * \class MessageCore::AttachmentPart
  * \inmodule MessageCore
  * \inheaderfile MessageCore/AttachmentPart
  * \brief A class that encapsulates an attachment.
