@@ -1,0 +1,33 @@
+include($KDE_DOCS/global/qt-module-defaults.qdocconf)
+
+project = TemplateParser
+description = TemplateParser provides TemplateParser Library.
+
+
+documentationinheaders = true
+
+headerdirs += .
+sourcedirs += .
+
+outputformats = HTML
+
+depends += \
+    qtcore
+
+navigation.landingpage = "TemplateParser"
+
+qhp.projects            = templateparser
+
+qhp.templateparser.file                = templateparser.qhp
+qhp.templateparser.namespace           = org.kde.templateparser.$QT_VERSION_TAG
+qhp.templateparser.virtualFolder       = templateparser
+qhp.templateparser.indexTitle          = templateparser
+qhp.templateparser.indexRoot           =
+
+qhp.templateparser.subprojects         = classes
+qhp.templateparser.subprojects.classes.title = C++ Classes
+qhp.templateparser.subprojects.classes.indexTitle = TemplateParser C++ Classes
+qhp.templateparser.subprojects.classes.selectors = class fake:headerfile
+qhp.templateparser.subprojects.classes.sortPages = true
+
+tagfile = templateparser.tags

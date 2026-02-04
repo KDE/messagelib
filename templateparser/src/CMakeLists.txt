@@ -195,3 +195,4 @@ install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/templateparser_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/TemplateParser COMPONENT Devel
 )
+ecm_generate_qdoc(KPim6TemplateParser templateparser.qdocconf)

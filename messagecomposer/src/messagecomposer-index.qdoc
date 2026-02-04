@@ -19,5 +19,6 @@
         \li \l{MessageCore C++ Classes}
         \li \l{MessageList C++ Classes}
         \li \l{MessageViewer C++ Classes}
+        \li \l{TemplateParser C++ Classes}
     \endlist
 */
