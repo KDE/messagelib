@@ -3,8 +3,24 @@
 # See https://pre-commit.com for more information
 # See https://pre-commit.com/hooks.html for more hooks
 
-exclude: (^po/|.desktop|Messages.sh)
+exclude: (^po/|^messagecomposer/autotests/data|^messagecomposer/autotests/unittestenv/|^messagecore/autotests/gnupg_home|^messageviewer/src/dkim-verify/autotests/data/|^messageviewer/autotests/unittestenv/|^messageviewer/src/header/autotests/data|^messageviewer/src/viewer/webengine/tests/data/|^mimetreeparser/autotests|^templateparser/autotests/data|.desktop|.svg|Messages.sh)
 repos:
+ - repo: https://github.com/pre-commit/pre-commit-hooks
+   rev: v6.0.0
+   hooks:
+    - id: trailing-whitespace
+    - id: end-of-file-fixer
+    - id: check-added-large-files
+    - id: check-case-conflict
+    - id: check-xml
+    - id: check-yaml
+      args: [--allow-multiple-documents]
+      exclude: ^(.clang-tidy)
+    - id: check-json
+      exclude: (^webengineviewer/src/checkphishingurl/autotests/data/empty2.json)
+    - id: check-symlinks
+    - id: destroyed-symlinks
+    - id: check-executables-have-shebangs
  - repo: https://github.com/efrecon/pre-commit-hook-lxml
    rev: v0.1.4
    hooks:
@@ -12,4 +28,3 @@ repos:
      args: [--declaration=double-quotes,--self-closing=nospace,--indent=2,--write]
      files: \.(xml|kcfg)$
      types: []
-     exclude: ^(messagecomposer/autotests/unittestenv/|messageviewer/autotests/unittestenv/|.svg$)

@@ -9,4 +9,3 @@ macro(add_plugineditor_unittest _source)
 endmacro()
 
 add_plugineditor_unittest(plugineditortest.cpp)
-

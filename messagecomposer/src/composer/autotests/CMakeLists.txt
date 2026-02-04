@@ -9,4 +9,3 @@ macro(add_composer_unittest _source)
 endmacro()
 
 add_composer_unittest(composerattachmentinterfacetest.cpp)
-

@@ -9,4 +9,3 @@ Stuff here needs to comply with at least these rules (additionally to all the ot
   - libmessagecomposer
 - used by at least one of the above listed libs
 - used by at least one other component (most commonly a second one of the above listed libs)
-

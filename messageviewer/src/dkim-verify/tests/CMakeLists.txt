@@ -40,4 +40,3 @@ target_link_libraries(dkimmanagerkeydialog_gui
         KPim6::MessageViewer
         OpenSSL::SSL
 )
-

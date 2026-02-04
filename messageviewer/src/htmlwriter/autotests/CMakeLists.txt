@@ -4,4 +4,3 @@ ecm_add_test(webengineembedparttest.cpp  ../webengineembedpart.cpp webengineembe
     TEST_NAME webengineembedparttest
     LINK_LIBRARIES Qt::Test Qt::Core
 )
-

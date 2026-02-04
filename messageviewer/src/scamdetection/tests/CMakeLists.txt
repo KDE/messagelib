@@ -14,4 +14,3 @@ target_link_libraries(scamdetectionwebengine_gui
     Qt::WebEngineWidgets
     KF6::I18n
 )
-

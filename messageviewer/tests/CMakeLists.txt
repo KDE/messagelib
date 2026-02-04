@@ -12,4 +12,3 @@ target_link_libraries(viewertest_gui
   KF6::XmlGui
   Qt::WebEngineWidgets
 )
-

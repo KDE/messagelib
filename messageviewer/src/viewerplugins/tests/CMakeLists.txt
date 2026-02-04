@@ -7,4 +7,3 @@ target_link_libraries(viewerplugin_gui
   KF6::XmlGui
   KF6::I18n
 )
-

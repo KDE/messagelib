@@ -43,4 +43,3 @@ add_messageviewer_dkim_verify_unittest(dkimmanageruleswidgettest.cpp)
 add_messageviewer_dkim_verify_unittest(dkimruledialogtest.cpp)
 add_messageviewer_dkim_verify_unittest(dkimrulewidgettest.cpp)
 add_messageviewer_dkim_verify_unittest(dkimmanagerkeytreeviewtest.cpp)
-

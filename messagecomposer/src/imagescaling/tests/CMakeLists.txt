@@ -6,5 +6,3 @@ target_link_libraries(imagescaling_gui
   KPim6::MessageComposer
   KF6::I18n
 )
-
-

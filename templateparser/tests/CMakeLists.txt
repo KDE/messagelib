@@ -30,4 +30,3 @@ target_link_libraries(templateparseremailrequester_gui
   KPim6::MessageViewer
   KPim6::PimTextEdit
 )
-

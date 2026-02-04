@@ -46,6 +46,5 @@ target_sources(testwebengineviewinterceptor PRIVATE
 )
 
 target_link_libraries(testwebengineviewinterceptor
-    Qt::Widgets Qt::WebEngineWidgets 
+    Qt::Widgets Qt::WebEngineWidgets
 )
-

@@ -13,5 +13,3 @@ add_executable(composerlineedittest)
 target_sources(composerlineedittest PRIVATE testcomposerlineedit.cpp)
 ecm_mark_as_test(composerlineedittest)
 target_link_libraries(composerlineedittest KPim6::MessageComposer  KPim6::PimCommonAkonadi KF6::Completion KF6::I18n)
-
-
