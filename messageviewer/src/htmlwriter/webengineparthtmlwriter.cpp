@@ -60,11 +60,13 @@ void WebEnginePartHtmlWriter::end()
         insertBodyStyle();
         mStyleBody.clear();
     }
-    if (data().size() > 2000000) {
+    if (data().size() > 1000000) {
         // qDebug() << " load big message ";
         QDir().mkdir(QDir::tempPath() + u"/kmail"_s);
         mTempFile = new QTemporaryFile(QDir::tempPath() + QLatin1StringView("/kmail/messageviewer_XXXXXX") + QLatin1StringView(".html"));
-        mTempFile->open();
+        if (!mTempFile->open()) {
+            qCWarning(MESSAGEVIEWER_LOG) << "Impossible to open temporary file";
+        }
         mTempFile->write(data());
         // Bug 387061
         mHtmlView->load(QUrl::fromLocalFile(mTempFile->fileName()));
