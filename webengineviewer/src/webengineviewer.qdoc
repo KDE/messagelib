@@ -1,0 +1,9 @@
+/*!
+    \module WebEngineViewer
+    \title WebEngineViewer C++ Classes
+    \ingroup modules
+    \cmakepackage KPim6
+    \cmakecomponent WebEngineViewer
+
+    \brief WebEngineViewer provides WebEngine viewer Library.
+*/

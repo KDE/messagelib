@@ -1,0 +1,33 @@
+include($KDE_DOCS/global/qt-module-defaults.qdocconf)
+
+project = MimeTreeParser
+description = MimeTreeParser provides MimeTreeParser Library.
+
+
+documentationinheaders = true
+
+headerdirs += .
+sourcedirs += .
+
+outputformats = HTML
+
+depends += \
+    qtcore
+
+navigation.landingpage = "MimeTreeParser"
+
+qhp.projects            = mimetreeparser
+
+qhp.mimetreeparser.file                = mimetreeparser.qhp
+qhp.mimetreeparser.namespace           = org.kde.mimetreeparser.$QT_VERSION_TAG
+qhp.mimetreeparser.virtualFolder       = mimetreeparser
+qhp.mimetreeparser.indexTitle          = mimetreeparser
+qhp.mimetreeparser.indexRoot           =
+
+qhp.mimetreeparser.subprojects         = classes
+qhp.mimetreeparser.subprojects.classes.title = C++ Classes
+qhp.mimetreeparser.subprojects.classes.indexTitle = MimeTreeParser C++ Classes
+qhp.mimetreeparser.subprojects.classes.selectors = class fake:headerfile
+qhp.mimetreeparser.subprojects.classes.sortPages = true
+
+tagfile = mimetreeparser.tags

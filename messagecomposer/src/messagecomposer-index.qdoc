@@ -20,5 +20,7 @@
         \li \l{MessageList C++ Classes}
         \li \l{MessageViewer C++ Classes}
         \li \l{TemplateParser C++ Classes}
+        \li \l{MimeTreeParser C++ Classes}
+        \li \l{WebEngineViewer C++ Classes}
     \endlist
 */

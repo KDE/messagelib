@@ -380,3 +380,4 @@ install(FILES
     ${CMAKE_CURRENT_BINARY_DIR}/webengineviewer_version.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/WebEngineViewer COMPONENT Devel
 )
+ecm_generate_qdoc(KPim6WebEngineViewer webengineviewer.qdocconf)

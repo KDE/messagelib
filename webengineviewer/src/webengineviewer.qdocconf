@@ -1,0 +1,33 @@
+include($KDE_DOCS/global/qt-module-defaults.qdocconf)
+
+project = WebEngineViewer
+description = WebEngineViewer provides WebEngineViewer Library.
+
+
+documentationinheaders = true
+
+headerdirs += .
+sourcedirs += .
+
+outputformats = HTML
+
+depends += \
+    qtcore
+
+navigation.landingpage = "WebEngineViewer"
+
+qhp.projects            = webengineviewer
+
+qhp.webengineviewer.file                = webengineviewer.qhp
+qhp.webengineviewer.namespace           = org.kde.webengineviewer.$QT_VERSION_TAG
+qhp.webengineviewer.virtualFolder       = webengineviewer
+qhp.webengineviewer.indexTitle          = webengineviewer
+qhp.webengineviewer.indexRoot           =
+
+qhp.webengineviewer.subprojects         = classes
+qhp.webengineviewer.subprojects.classes.title = C++ Classes
+qhp.webengineviewer.subprojects.classes.indexTitle = WebEngineViewer C++ Classes
+qhp.webengineviewer.subprojects.classes.selectors = class fake:headerfile
+qhp.webengineviewer.subprojects.classes.sortPages = true
+
+tagfile = webengineviewer.tags
