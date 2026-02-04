@@ -1,0 +1,15 @@
+# SPDX-FileCopyrightText: none
+# SPDX-License-Identifier: CC0-1.0
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+
+exclude: (^po/|.desktop|Messages.sh)
+repos:
+ - repo: https://github.com/efrecon/pre-commit-hook-lxml
+   rev: v0.1.4
+   hooks:
+   - id: format-xml
+     args: [--declaration=double-quotes,--self-closing=nospace,--indent=2,--write]
+     files: \.(xml|kcfg)$
+     types: []
+     exclude: ^(messagecomposer/autotests/unittestenv/|messageviewer/autotests/unittestenv/|.svg$)

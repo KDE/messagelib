@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
-      http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0       http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
   <include>QFontDatabase</include>
- 
   <group name="MessageListView">
     <entry name="MessageToolTipEnabled" type="Bool">
       <default>false</default>
@@ -18,10 +14,9 @@
   </group>
   <group name="QuickSearchWarning">
     <entry name="QuickSearchWarningDoNotShowAgain" type="Bool">
-     <default>false</default>
+      <default>false</default>
     </entry>
   </group>
-
   <group name="MessageListView::Colors">
     <entry name="UnreadMessageColor" type="Color">
       <default code="true">MessageList::Util::unreadDefaultMessageColor()</default>
@@ -33,7 +28,6 @@
       <default code="true">MessageList::Util::todoDefaultMessageColor()</default>
     </entry>
   </group>
-
   <group name="MessageListView::Fonts">
     <entry name="MessageListFont" type="Font">
       <default>QFontDatabase::systemFont(QFontDatabase::GeneralFont)</default>

@@ -1,27 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- krazy:excludeall=tipsandthis -->
-<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
-
-  <kcfgfile name="templateparserrc" />
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
+  <kcfgfile name="templateparserrc"/>
   <group name="TemplateParser">
-
-      <entry name="StripSignature" type="Bool">
-        <label>Remove the signature when replying</label>
-        <default>true</default>
-      </entry>
-       <entry name="SmartQuote" type="Bool" key="smart-quote">
-        <label>Use smart &amp;quoting</label>
-        <default>true</default>
-      </entry>
-      <entry name="ReplyUsingVisualFormat" type="Bool" key="replyUsingVisualFormat">
-        <label>Reply or forward using the same visual format as the original message (plain text or HTML)</label>
-        <default>false</default>
-      </entry>
-
-      <entry name="CustomTemplates" type="StringList" key="CustomTemplates" />
-
+    <entry name="StripSignature" type="Bool">
+      <label>Remove the signature when replying</label>
+      <default>true</default>
+    </entry>
+    <entry name="SmartQuote" type="Bool" key="smart-quote">
+      <label>Use smart &amp;quoting</label>
+      <default>true</default>
+    </entry>
+    <entry name="ReplyUsingVisualFormat" type="Bool" key="replyUsingVisualFormat">
+      <label>Reply or forward using the same visual format as the original message (plain text or HTML)</label>
+      <default>false</default>
+    </entry>
+    <entry name="CustomTemplates" type="StringList" key="CustomTemplates"/>
     <entry name="TemplateNewMessage" type="String" key="TemplateNewMessage">
       <label>Message template for new message</label>
       <default code="true">DefaultTemplates::defaultNewMessage()</default>
@@ -42,7 +36,5 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
       <label>Quote characters</label>
       <default code="true">DefaultTemplates::defaultQuoteString()</default>
     </entry>
-
-
-</group>
+  </group>
 </kcfg>

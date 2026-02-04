@@ -1,21 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
-
-  <kcfgfile name="mailcomposerrc" />
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
+  <kcfgfile name="mailcomposerrc"/>
   <group name="Composer">
-
     <entry name="ActivateQuickTextFormat" type="Bool">
       <label>Show Quick Text Format Bar</label>
       <default>false</default>
     </entry>
-
     <entry name="QuoteSelectionOnly" type="Bool">
       <label>Only quote selected text when replying</label>
       <default>true</default>
     </entry>
-
     <entry name="AutoTextSignature" type="String" key="signature">
       <label>A&amp;utomatically insert signature</label>
       <default>auto</default>
@@ -28,30 +22,26 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
       <label>Prepend separator to signature</label>
       <default>true</default>
     </entry>
-
     <entry name="ShowBalooSearchInComposer" type="Bool" key="showBalooSearchInComposer">
       <label>Use addresses indexed from emails for autocompletion</label>
       <whatsthis>Disable this option if you only want contacts from your addressbooks to appear in the autocompletion list in the composer's address fields.</whatsthis>
       <default>true</default>
     </entry>
-
     <entry name="ShowRecentAddressesInComposer" type="Bool" key="showRecentAddressesInComposer">
       <label>Use recent addresses for autocompletion</label>
       <whatsthis>Disable this option if you do not want recently used addresses to appear in the autocompletion list in the composer's address fields.</whatsthis>
       <default>true</default>
     </entry>
-
     <entry name="MaximumRecipients" type="Int">
       <label>Maximum number of recipient entries:</label>
       <default>200</default>
     </entry>
-    
     <entry name="WordWrap" type="Bool" key="word-wrap">
       <label>Word &amp;wrap at column:</label>
       <default>true</default>
     </entry>
     <entry name="LineWrapWidth" type="Int" key="break-at">
-      <label></label>
+      <label/>
       <default>78</default>
       <min>30</min>
       <max>998</max>
@@ -61,53 +51,51 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
       <default>true</default>
     </entry>
     <entry name="CryptoAutoSign" type="Bool" key="crypto-auto-sign">
-        <label>Sign all messages, if possible</label>
-        <default>true</default>
+      <label>Sign all messages, if possible</label>
+      <default>true</default>
     </entry>
     <entry name="CryptoAutoEncrypt" type="Bool" key="crypto-auto-encrypt">
-        <label>Enable encryption, if we found keys for all recipients</label>
-        <default>false</default>
+      <label>Enable encryption, if we found keys for all recipients</label>
+      <default>false</default>
     </entry>
     <entry name="CryptoWarningUnencrypted" type="Bool" key="crypto-warning-unencrypted">
-        <label>Warn before sending unencrypted messages</label>
-        <default>false</default>
+      <label>Warn before sending unencrypted messages</label>
+      <default>false</default>
     </entry>
     <entry name="CryptoWarningUnsigned" type="Bool" key="crypto-warning-unsigned">
-        <label>Warn before sending unsigned messages</label>
-        <default>false</default>
+      <label>Warn before sending unsigned messages</label>
+      <default>false</default>
     </entry>
     <entry name="CryptoWarnWhenNearExpire" type="Bool" key="crypto-warn-when-near-expire">
-        <label>Warn if certificates/keys expire soon (configure thresholds below)</label>
-        <default>true</default>
+      <label>Warn if certificates/keys expire soon (configure thresholds below)</label>
+      <default>true</default>
     </entry>
     <entry name="CryptoWarnOwnEncrKeyNearExpiryThresholdDays" type="Int" key="crypto-warn-own-encr-key-near-expire-int">
-        <label>The minimum number of days that the encryption certificate should be valid before issuing a warning</label>
-        <default>30</default>
+      <label>The minimum number of days that the encryption certificate should be valid before issuing a warning</label>
+      <default>30</default>
     </entry>
     <entry name="CryptoWarnEncrKeyNearExpiryThresholdDays" type="Int" key="crypto-warn-encr-key-near-expire-int">
-        <label>The minimum number of days that the encryption certificate should be valid before issuing a warning</label>
-        <default>14</default>
+      <label>The minimum number of days that the encryption certificate should be valid before issuing a warning</label>
+      <default>14</default>
     </entry>
     <entry name="CryptoWarnEncrChaincertNearExpiryThresholdDays" type="Int" key="crypto-warn-encr-chaincert-near-expire-int">
-        <label>The minimum number of days that all certificates in the chain should be valid before issuing a warning</label>
-        <default>14</default>
+      <label>The minimum number of days that all certificates in the chain should be valid before issuing a warning</label>
+      <default>14</default>
     </entry>
     <entry name="CryptoWarnEncrRootNearExpiryThresholdDays" type="Int" key="crypto-warn-encr-root-near-expire-int">
-        <label>The minimum number of days that the root certificate should be valid before issuing a warning</label>
-        <default>14</default>
+      <label>The minimum number of days that the root certificate should be valid before issuing a warning</label>
+      <default>14</default>
     </entry>
-      <entry name="CryptoShowKeysForApproval" type="Bool" key="crypto-show-keys-for-approval">
-        <label>Always show the list of encryption keys to select the one which will be used</label>
-        <default>true</default>
-      </entry>
+    <entry name="CryptoShowKeysForApproval" type="Bool" key="crypto-show-keys-for-approval">
+      <label>Always show the list of encryption keys to select the one which will be used</label>
+      <default>true</default>
+    </entry>
   </group>
-
   <group name="sending mail">
     <entry name="SendImmediate" type="Bool" key="Immediate">
       <default>true</default>
     </entry>
   </group>
-
   <group name="Autocorrect">
     <entry name="Enabled" type="Bool" key="enabled">
       <default>false</default>
@@ -149,7 +137,6 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
       <default>false</default>
     </entry>
   </group>
-
   <group name="AutoResizeImage">
     <entry name="AutoResizeImageEnabled" type="Bool" key="auto-resize-image-enabled">
       <default>false</default>
@@ -178,7 +165,6 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
     <entry name="CustomMaximumWidth" type="Int" key="custom-maximum-width">
       <default>520</default>
     </entry>
-
     <entry name="MaximumHeight" type="Int" key="maximum-height">
       <default>0</default>
     </entry>
@@ -192,7 +178,7 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
       <default>0</default>
     </entry>
     <entry name="WriteFormat" type="String" key="write-format">
-      <default></default>
+      <default/>
     </entry>
     <entry name="SkipImageLowerSizeEnabled" type="Bool" key="skip-image-lower-size-enabled">
       <default>false</default>
@@ -200,29 +186,26 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
     <entry name="SkipImageLowerSize" type="Int" key="skip-image-lower-size">
       <default>220</default>
     </entry>
-
     <entry name="FilterSourcePattern" type="String" key="filter-source-pattern">
-      <default></default>
+      <default/>
     </entry>
-
     <entry name="FilterSourceType" type="Enum">
-      <label></label>
+      <label/>
       <choices>
         <choice name="NoFilter"/>
         <choice name="IncludeFilesWithPattern"/>
         <choice name="ExcludeFilesWithPattern"/>
-      </choices> 
+      </choices>
       <default>NoFilter</default>
     </entry>
-
     <entry name="RenameResizedImages" type="Bool" key="rename-resized-images">
       <default>false</default>
     </entry>
     <entry name="RenameResizedImagesPattern" type="String" key="rename-resized-images-pattern">
-      <default></default>
-    </entry>  
+      <default/>
+    </entry>
     <entry name="FilterRecipientType" type="Enum">
-      <label></label>
+      <label/>
       <choices>
         <choice name="NoFilter"/>
         <choice name="ResizeEachEmailsContainsPattern"/>
@@ -233,18 +216,16 @@ xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/sta
       <default>NoFilter</default>
     </entry>
     <entry name="DoNotResizeEmailsPattern" type="String" key="do-not-resize-emails-pattern">
-      <default></default>
+      <default/>
     </entry>
     <entry name="ResizeEmailsPattern" type="String" key="resize-emails-pattern">
-      <default></default>
+      <default/>
     </entry>
     <entry name="ResizeImagesWithFormats" type="Bool" key="resize-image-with-formats">
       <default>false</default>
     </entry>
     <entry name="ResizeImagesWithFormatsType" type="String" key="resize-image-with-formats-type">
-      <default></default>
+      <default/>
     </entry>
-
   </group>
 </kcfg>
-

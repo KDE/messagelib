@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- krazy:excludeall=tipsandthis -->
-<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0
-      http://www.kde.org/standards/kcfg/1.0/kcfg.xsd" >
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0       http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
   <kcfgfile name="templatesconfigurationrc">
-	    <parameter name="folder" />
+    <parameter name="folder"/>
   </kcfgfile>
-
   <group name="Templates #$(folder)">
     <entry name="UseCustomTemplates" type="Bool" key="UseCustomTemplates">
       <default>false</default>
@@ -23,5 +19,4 @@
     <entry name="QuoteString" type="String" key="QuoteString">
     </entry>
   </group>
-
 </kcfg>
