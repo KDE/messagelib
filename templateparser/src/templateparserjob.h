@@ -165,7 +165,7 @@ public:
      */
     ~TemplateParserJob() override;
 
-    /**
+    /*!
      * Sets the selection. If this is set, only the selection will be added to
      * commands such as %QUOTE. Otherwise, the whole message is quoted.
      * If this is not called at all, the whole message is quoted as well.
@@ -177,7 +177,7 @@ public:
      */
     void setSelection(const QString &selection);
 
-    /**
+    /*!
      * Sets whether the template parser is allowed to decrypt the original
      * message when needing its message text, for example for the %QUOTE command.
      * If true, it will tell the ObjectTreeParser it uses internally to decrypt the
@@ -191,7 +191,7 @@ public:
      */
     void setAllowDecryption(const bool allowDecryption);
 
-    /**
+    /*!
      * Tell template parser whether or not to wrap words, and at what column
      * to wrap at.
      *
@@ -204,7 +204,7 @@ public:
      */
     void setWordWrap(bool wrap, int wrapColWidth = 80);
 
-    /**
+    /*!
      * Set the identity manager to be used when creating the template.
      */
     /*!
@@ -262,32 +262,32 @@ private:
     /// This finds the template to use. Either the one from the folder, identity or
     /// finally the global template.
     /// This also reads the To and CC address of the template
-    /// @return the contents of the template
+    /// Returns the contents of the template
     [[nodiscard]] QString findTemplate();
 
     /// Finds the template with the given name.
     /// This also reads the To and CC address of the template
-    /// @return the contents of the template
+    /// Returns the contents of the template
     [[nodiscard]] QString findCustomTemplate(const QString &tmpl);
 
     [[nodiscard]] QString pipe(const QString &cmd, const QString &buf);
 
-    /**
+    /*!
      * Called by processWithTemplate(). This adds the completely processed body to
      * the message.
      *
      * This function creates plain text message or multipart/alternative message,
-     * depending on whether the processed body has @p htmlBody or not.
+     * depending on whether the processed body has \a htmlBody or not.
      *
      * In append mode, this will simply append the text to the body.
      *
-     * Otherwise, the content of the old message is deleted and replaced with @p plainBody
-     * and @p htmlBody.
+     * Otherwise, the content of the old message is deleted and replaced with \a plainBody
+     * and \a htmlBody.
      * Attachments of the original message are also added back to the new message.
      */
     void addProcessedBodyToMessage(const QString &plainBody, const QString &htmlBody) const;
 
-    /**
+    /*!
      * Determines whether the signature should be stripped when getting the text
      * of the original message, e.g. for commands such as %QUOTE
      */
@@ -295,17 +295,17 @@ private:
 
     static int parseQuotes(const QString &prefix, const QString &str, QString &quote);
 
-    /**
+    /*!
      * Return the text signature used the by current identity.
      */
     [[nodiscard]] QString getPlainSignature() const;
 
-    /**
+    /*!
      * Return the HTML signature used the by current identity.
      */
     [[nodiscard]] QString getHtmlSignature() const;
 
-    /**
+    /*!
      * Returns message body indented by the
      * given indentation string. This is suitable for including the message
      * in another message of for replies, forwards.
@@ -317,7 +317,7 @@ private:
      */
     [[nodiscard]] QString quotedPlainText(const QString &selection = QString()) const;
 
-    /**
+    /*!
      * Returns HTML message body.
      * This is suitable for including the message
      * in another message of for replies, forwards.
@@ -329,30 +329,30 @@ private:
      */
     [[nodiscard]] QString quotedHtmlText(const QString &selection) const;
 
-    /**
+    /*!
      * This function return the plain text part from the OTP.
      * For HTML only mails. It returns the converted plain text
      * from the OTP.
-     * @param allowSelectionOnly takes care that if a reply/forward
+     * \a allowSelectionOnly takes care that if a reply/forward
      * is made to a selected part of message, then the selection is
      * returned as it is without going through th OTP
-     * @param aStripSignature strips the signature out of the message
+     * \a aStripSignature strips the signature out of the message
      *
      */
     [[nodiscard]] QString plainMessageText(bool aStripSignature, AllowSelection isSelectionAllowed) const;
 
-    /**
+    /*!
      * Returns the HTML content of the message as plain text
      */
     [[nodiscard]] QString htmlMessageText(bool aStripSignature, AllowSelection isSelectionAllowed);
 
-    /** @return the UOID of the identity for this message.
+    /*! Returns the UOID of the identity for this message.
      * Searches the "x-kmail-identity" header and if that fails,
      * searches with KIdentityManagementCore::IdentityManager::identityForAddress()
      */
     [[nodiscard]] uint identityUoid(const std::shared_ptr<KMime::Message> &msg) const;
 
-    /**
+    /*!
      * Returns KMime content of the plain text part of the message after setting
      * its mime type, charset and CTE.
      * This function is called by:-
@@ -364,44 +364,44 @@ private:
      */
     std::unique_ptr<KMime::Content> createPlainPartContent(const QString &plainBody) const;
 
-    /**
+    /*!
      * Returns KMime content of the multipart/alternative part of the message
      * after setting the mime type, charset and CTE of its respective text/plain
      * part and text/html part.
      */
     std::unique_ptr<KMime::Content> createMultipartAlternativeContent(const QString &plainBody, const QString &htmlBody) const;
 
-    /**
+    /*!
      * Returns a multipart/mixed KMime::Content that has textPart and all
      * attachments as children.
-     * @param attachments the list of attachments to add
-     * @param textPart a KMime::Content that is to be added as a child.
-     * @since 4.8
+     * \a attachments the list of attachments to add
+     * \a textPart a KMime::Content that is to be added as a child.
+     * \since 4.8
      */
     std::unique_ptr<KMime::Content> createMultipartMixed(const QList<KMime::Content *> &attachments, std::unique_ptr<KMime::Content> &&textPart) const;
 
-    /**
+    /*!
      * Returnsa multipart/related KMime::Content that has mainTextPart and all
      * embedded images as children.
-     * @param ac a reference to an MessageCore::ImageCollector that has
+     * \a ac a reference to an MessageCore::ImageCollector that has
      *           collected all attachments.
-     * @param mainTextPart a KMime::Content that is to be added as a child.
-     * @since 4.8
+     * \a mainTextPart a KMime::Content that is to be added as a child.
+     * \since 4.8
      */
     std::unique_ptr<KMime::Content> createMultipartRelated(const MessageCore::ImageCollector &ic, std::unique_ptr<KMime::Content> &&mainTextPart) const;
 
-    /**
+    /*!
      * Checks if the signature is HTML or not.
      */
     [[nodiscard]] bool isHtmlSignature() const;
 
-    /**
+    /*!
      * Does the necessary conversions like escaping characters, changing "\n" to
      * breakline tag before appending text to htmlBody.
      */
     [[nodiscard]] static QString plainTextToHtml(const QString &body);
 
-    /**
+    /*!
      * Make a HTML content valid by adding missing html/head/body tag.
      */
     void makeValidHtml(QString &body);

@@ -74,7 +74,7 @@ public:
      */
     QLabel *helpLabel() const;
 
-    /**
+    /*!
      * Returns the template configuration identifier string for a given identity.
      */
     [[nodiscard]] static QString configIdString(uint id);

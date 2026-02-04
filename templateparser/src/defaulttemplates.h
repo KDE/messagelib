@@ -12,7 +12,7 @@
 
 namespace TemplateParser
 {
-/** Default new/reply/forward templates. */
+/*! Default new/reply/forward templates. */
 namespace DefaultTemplates
 {
 /*!
