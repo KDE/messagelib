@@ -3,7 +3,7 @@
 # See https://pre-commit.com for more information
 # See https://pre-commit.com/hooks.html for more hooks
 
-exclude: (^po/|^messagecomposer/autotests/data|^messagecomposer/autotests/unittestenv/|^messagecore/autotests/gnupg_home|^messageviewer/src/dkim-verify/autotests/data/|^messageviewer/autotests/unittestenv/|^messageviewer/src/header/autotests/data|^messageviewer/src/viewer/webengine/tests/data/|^mimetreeparser/autotests|^templateparser/autotests/data|.desktop|.svg|Messages.sh)
+exclude: (^po/|^messagecomposer/autotests/data|^messagecomposer/autotests/unittestenv/|^messagecore/autotests/gnupg_home|^messageviewer/src/dkim-verify/autotests/data/|^messageviewer/autotests/unittestenv/|^messageviewer/src/header/autotests/data|^messageviewer/src/viewer/webengine/tests/data/|^mimetreeparser/autotests|^templateparser/autotests/data|.desktop|.notifyrc|.svg|Messages.sh)
 repos:
  - repo: https://github.com/pre-commit/pre-commit-hooks
    rev: v6.0.0
