@@ -23,59 +23,58 @@ if(ENABLE_PCH)
             <QByteArray>
     )
 endif()
-target_sources(KPim6TemplateParser PRIVATE
-    templateparserjob.cpp
-    defaulttemplates.cpp
-    templatesutil.cpp
-    customtemplates.cpp
-    customtemplatesmenu.cpp
-    templatesconfiguration.cpp
-    templatesinsertcommandpushbutton.cpp
-    templatescommandmenu.cpp
-    templatesinsertcommandaction.cpp
-    templatestextedit.cpp
-    templatestexteditor.cpp
-    templateextracttextfrommail.cpp
-    templatewebenginepage.cpp
-    templateextracthtmlelementfrommail.cpp
-    templateparserextracthtmlinfo.cpp
-    templateparserextracthtmlinforesult.cpp
-    templateparseremailaddressrequesterbase.cpp
-    templateparseremailaddressrequesterlineedit.cpp
-    templateparseremailaddressrequesterinterfacewidget.cpp
-    templateconvertcommandjob.cpp
-
-    templateextracttextfrommail.h
-    templateparserjob.h
-    templatestexteditor.h
-    templateparseremailaddressrequesterbase.h
-    templateparserextracthtmlinforesult.h
-    templatescommandmenu.h
-    templateparserjob_p.h
-    templatestextedit.h
-    templateparser_private_export.h
-    templatesutil_p.h
-    templatesconfiguration.h
-    customtemplates.h
-    templatewebenginepage.h
-    templatesutil.h
-    templateparseremailaddressrequesterinterfacewidget.h
-    templateparserextracthtmlinfo.h
-    defaulttemplates.h
-    templatesinsertcommandpushbutton.h
-    customtemplatesmenu.h
-    templateconvertcommandjob.h
-    templatesinsertcommandaction.h
-    templateextracthtmlelementfrommail.h
-    templateparseremailaddressrequesterlineedit.h
+target_sources(
+    KPim6TemplateParser
+    PRIVATE
+        templateparserjob.cpp
+        defaulttemplates.cpp
+        templatesutil.cpp
+        customtemplates.cpp
+        customtemplatesmenu.cpp
+        templatesconfiguration.cpp
+        templatesinsertcommandpushbutton.cpp
+        templatescommandmenu.cpp
+        templatesinsertcommandaction.cpp
+        templatestextedit.cpp
+        templatestexteditor.cpp
+        templateextracttextfrommail.cpp
+        templatewebenginepage.cpp
+        templateextracthtmlelementfrommail.cpp
+        templateparserextracthtmlinfo.cpp
+        templateparserextracthtmlinforesult.cpp
+        templateparseremailaddressrequesterbase.cpp
+        templateparseremailaddressrequesterlineedit.cpp
+        templateparseremailaddressrequesterinterfacewidget.cpp
+        templateconvertcommandjob.cpp
+        templateextracttextfrommail.h
+        templateparserjob.h
+        templatestexteditor.h
+        templateparseremailaddressrequesterbase.h
+        templateparserextracthtmlinforesult.h
+        templatescommandmenu.h
+        templateparserjob_p.h
+        templatestextedit.h
+        templateparser_private_export.h
+        templatesutil_p.h
+        templatesconfiguration.h
+        customtemplates.h
+        templatewebenginepage.h
+        templatesutil.h
+        templateparseremailaddressrequesterinterfacewidget.h
+        templateparserextracthtmlinfo.h
+        defaulttemplates.h
+        templatesinsertcommandpushbutton.h
+        customtemplatesmenu.h
+        templateconvertcommandjob.h
+        templatesinsertcommandaction.h
+        templateextracthtmlelementfrommail.h
+        templateparseremailaddressrequesterlineedit.h
 )
 ecm_qt_declare_logging_category(KPim6TemplateParser HEADER templateparser_debug.h IDENTIFIER TEMPLATEPARSER_LOG CATEGORY_NAME org.kde.pim.templateparser
     DESCRIPTION "messagelib (templateparser)"
     OLD_CATEGORY_NAMES log_templateparser
     EXPORT MESSAGELIB
 )
-
-
 
 kconfig_add_kcfg_files(KPim6TemplateParser settings/templatesconfiguration_kfg.kcfgc)
 
@@ -90,7 +89,12 @@ ki18n_wrap_ui(KPim6TemplateParser
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KPim6TemplateParser PROPERTIES UNITY_BUILD ON)
+    set_target_properties(
+        KPim6TemplateParser
+        PROPERTIES
+            UNITY_BUILD
+                ON
+    )
 endif()
 
 ecm_generate_export_header(KPim6TemplateParser
@@ -100,35 +104,46 @@ ecm_generate_export_header(KPim6TemplateParser
     USE_VERSION_HEADER
 )
 
-target_link_libraries(KPim6TemplateParser
+target_link_libraries(
+    KPim6TemplateParser
     PRIVATE
-    KPim6::Mime
-    KPim6::MimeTreeParser
-    KPim6::IdentityManagementCore
-    KPim6::MessageCore
-    KF6::XmlGui
-    KF6::Completion
-    KF6::CoreAddons
-    KF6::I18n
-    KF6::Codecs
-    KF6::SonnetUi
-    KF6::SyntaxHighlighting
-    Qt::WebEngineWidgets
-    KPim6::PimTextEdit
-    Gpgmepp
+        KPim6::Mime
+        KPim6::MimeTreeParser
+        KPim6::IdentityManagementCore
+        KPim6::MessageCore
+        KF6::XmlGui
+        KF6::Completion
+        KF6::CoreAddons
+        KF6::I18n
+        KF6::Codecs
+        KF6::SonnetUi
+        KF6::SyntaxHighlighting
+        Qt::WebEngineWidgets
+        KPim6::PimTextEdit
+        Gpgmepp
 )
 
-set_target_properties(KPim6TemplateParser PROPERTIES
-    VERSION ${TEMPLATEPARSER_VERSION}
-    SOVERSION ${TEMPLATEPARSER_SOVERSION}
-    EXPORT_NAME TemplateParser
+set_target_properties(
+    KPim6TemplateParser
+    PROPERTIES
+        VERSION
+            ${TEMPLATEPARSER_VERSION}
+        SOVERSION
+            ${TEMPLATEPARSER_SOVERSION}
+        EXPORT_NAME
+            TemplateParser
 )
 
-target_include_directories(KPim6TemplateParser INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim6/TemplateParser/>")
+target_include_directories(
+    KPim6TemplateParser
+    INTERFACE
+        "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim6/TemplateParser/>"
+)
 
-install(FILES
-    settings/customtemplates_kfg.kcfg
-    settings/templatesconfiguration_kfg.kcfg
+install(
+    FILES
+        settings/customtemplates_kfg.kcfg
+        settings/templatesconfiguration_kfg.kcfg
     DESTINATION ${KDE_INSTALL_KCFGDIR}
 )
 
@@ -153,21 +168,21 @@ ecm_generate_headers(TemplateParser_CamelCase_HEADERS
 
 install(TARGETS KPim6TemplateParser EXPORT KPim6TemplateParserTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
-
-
-install(FILES
-    ${TemplateParser_CamelCase_HEADERS}
+install(
+    FILES
+        ${TemplateParser_CamelCase_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/TemplateParser/TemplateParser
     COMPONENT Devel
 )
 
-install(FILES
-    ${TemplateParser_HEADERS}
-    ${CMAKE_CURRENT_BINARY_DIR}/templateparser_export.h
-    ${CMAKE_CURRENT_BINARY_DIR}/globalsettings_templateparser.h
-    ${CMAKE_CURRENT_BINARY_DIR}/customtemplates_kfg.h
-    ${CMAKE_CURRENT_BINARY_DIR}/ui_templatesconfiguration_base.h
-    ${CMAKE_CURRENT_BINARY_DIR}/templatesconfiguration_kfg.h
+install(
+    FILES
+        ${TemplateParser_HEADERS}
+        ${CMAKE_CURRENT_BINARY_DIR}/templateparser_export.h
+        ${CMAKE_CURRENT_BINARY_DIR}/globalsettings_templateparser.h
+        ${CMAKE_CURRENT_BINARY_DIR}/customtemplates_kfg.h
+        ${CMAKE_CURRENT_BINARY_DIR}/ui_templatesconfiguration_base.h
+        ${CMAKE_CURRENT_BINARY_DIR}/templatesconfiguration_kfg.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/TemplateParser/templateparser
     COMPONENT Devel
 )
@@ -179,20 +194,28 @@ set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6TemplateParser"
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KPimTemplateParserConfig.cmake.in"
     "${CMAKE_CURRENT_BINARY_DIR}/KPim6TemplateParserConfig.cmake"
-    INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
+    INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR}
 )
 
-install(FILES
-    "${CMAKE_CURRENT_BINARY_DIR}/KPim6TemplateParserConfig.cmake"
-    "${CMAKE_CURRENT_BINARY_DIR}/KPim6TemplateParserConfigVersion.cmake"
+install(
+    FILES
+        "${CMAKE_CURRENT_BINARY_DIR}/KPim6TemplateParserConfig.cmake"
+        "${CMAKE_CURRENT_BINARY_DIR}/KPim6TemplateParserConfigVersion.cmake"
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
     COMPONENT Devel
 )
 
-install(EXPORT KPim6TemplateParserTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KPim6TemplateParserTargets.cmake NAMESPACE KPim6::)
+install(
+    EXPORT KPim6TemplateParserTargets
+    DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+    FILE KPim6TemplateParserTargets.cmake
+    NAMESPACE KPim6::
+)
 
-install(FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/templateparser_version.h
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/TemplateParser COMPONENT Devel
+install(
+    FILES
+        ${CMAKE_CURRENT_BINARY_DIR}/templateparser_version.h
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/TemplateParser
+    COMPONENT Devel
 )
 ecm_generate_qdoc(KPim6TemplateParser templateparser.qdocconf)

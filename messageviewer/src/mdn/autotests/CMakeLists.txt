@@ -5,7 +5,7 @@ macro(add_messageviewer_mdn_unittest _source)
     ecm_add_test(${_source} ${_name}.h
         TEST_NAME ${_name}
         LINK_LIBRARIES KPim6::MessageViewer Qt::Test
-)
+    )
 endmacro()
 
 add_messageviewer_mdn_unittest(mdnwarningwidgettest.cpp)

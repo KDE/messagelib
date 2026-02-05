@@ -39,7 +39,6 @@ ecm_add_test(verifydatabaseupdatetest.cpp verifydatabaseupdatetest.h ${testweben
     LINK_LIBRARIES Qt::Test KPim6::WebEngineViewer
 )
 
-
 ecm_add_test(urlhashingtest.cpp urlhashingtest.h ${testwebengineviewer_webengine_common_SRCS}
     TEST_NAME urlhashingtest
     LINK_LIBRARIES Qt::Test KPim6::WebEngineViewer

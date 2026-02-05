@@ -13,54 +13,52 @@ add_library(KPim6MessageCore)
 add_library(KPim6::MessageCore ALIAS KPim6MessageCore)
 
 ########### next target ###############
-target_sources(KPim6MessageCore PRIVATE
-    autocrypt/autocryptutils.cpp
-    autocrypt/autocryptrecipient.cpp
-    autocrypt/autocryptstorage.cpp
-
-    attachment/attachmentcompressjob.cpp
-    attachment/attachmentfromfolderjob.cpp
-    attachment/attachmentfrommimecontentjob.cpp
-    attachment/attachmentfromurlbasejob.cpp
-    attachment/attachmentfromurljob.cpp
-    attachment/attachmentloadjob.cpp
-    attachment/attachmentpart.cpp
-    attachment/attachmentpropertiesdialog.cpp
-    attachment/attachmentupdatejob.cpp
-    attachment/attachmentfromurlutils.cpp
-
-    misc/imagecollector.cpp
-    misc/mailinglist.cpp
-
-    utils/stringutil.cpp
-    utils/util.cpp
-    utils/colorutil.cpp
-    utils/dateformatter.cpp
-
-    settings/messagecoresettings.cpp
-    misc/imagecollector.h
-    misc/mailinglist.h
-    utils/colorutil.h
-    utils/dateformatter.h
-    utils/stringutil.h
-    utils/util.h
-    attachment/attachmentloadjob.h
-    attachment/attachmentfrommimecontentjob.h
-    attachment/attachmentfromfolderjob.h
-    attachment/attachmentfromurlbasejob.h
-    attachment/attachmentcompressjob.h
-    attachment/attachmentpart.h
-    attachment/attachmentfromurljob.h
-    attachment/attachmentfromurlutils.h
-    attachment/attachmentpropertiesdialog.h
-    attachment/attachmentupdatejob.h
-    messagecore_private_export.h
-    autocrypt/autocryptutils.h
-    autocrypt/autocryptstorage.h
-    autocrypt/autocryptstorage_p.h
-    autocrypt/autocryptrecipient.h
-    autocrypt/autocryptrecipient_p.h
-    settings/messagecoresettings.h
+target_sources(
+    KPim6MessageCore
+    PRIVATE
+        autocrypt/autocryptutils.cpp
+        autocrypt/autocryptrecipient.cpp
+        autocrypt/autocryptstorage.cpp
+        attachment/attachmentcompressjob.cpp
+        attachment/attachmentfromfolderjob.cpp
+        attachment/attachmentfrommimecontentjob.cpp
+        attachment/attachmentfromurlbasejob.cpp
+        attachment/attachmentfromurljob.cpp
+        attachment/attachmentloadjob.cpp
+        attachment/attachmentpart.cpp
+        attachment/attachmentpropertiesdialog.cpp
+        attachment/attachmentupdatejob.cpp
+        attachment/attachmentfromurlutils.cpp
+        misc/imagecollector.cpp
+        misc/mailinglist.cpp
+        utils/stringutil.cpp
+        utils/util.cpp
+        utils/colorutil.cpp
+        utils/dateformatter.cpp
+        settings/messagecoresettings.cpp
+        misc/imagecollector.h
+        misc/mailinglist.h
+        utils/colorutil.h
+        utils/dateformatter.h
+        utils/stringutil.h
+        utils/util.h
+        attachment/attachmentloadjob.h
+        attachment/attachmentfrommimecontentjob.h
+        attachment/attachmentfromfolderjob.h
+        attachment/attachmentfromurlbasejob.h
+        attachment/attachmentcompressjob.h
+        attachment/attachmentpart.h
+        attachment/attachmentfromurljob.h
+        attachment/attachmentfromurlutils.h
+        attachment/attachmentpropertiesdialog.h
+        attachment/attachmentupdatejob.h
+        messagecore_private_export.h
+        autocrypt/autocryptutils.h
+        autocrypt/autocryptstorage.h
+        autocrypt/autocryptstorage_p.h
+        autocrypt/autocryptrecipient.h
+        autocrypt/autocryptrecipient_p.h
+        settings/messagecoresettings.h
 )
 
 kconfig_add_kcfg_files(KPim6MessageCore
@@ -84,7 +82,12 @@ ecm_qt_declare_logging_category(KPim6MessageCore HEADER autocrypt_debug.h IDENTI
 )
 
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KPim6MessageCore PROPERTIES UNITY_BUILD ON)
+    set_target_properties(
+        KPim6MessageCore
+        PROPERTIES
+            UNITY_BUILD
+                ON
+    )
 endif()
 
 ecm_generate_export_header(KPim6MessageCore
@@ -94,21 +97,22 @@ ecm_generate_export_header(KPim6MessageCore
     USE_VERSION_HEADER
 )
 
-target_link_libraries(KPim6MessageCore
+target_link_libraries(
+    KPim6MessageCore
     PUBLIC
-    KPim6::Mime
+        KPim6::Mime
     PRIVATE
-    KF6::KIOCore
-    KF6::Codecs
-    KF6::Archive
-    Qt::Network
-    KF6::I18n
-    KPim6::IdentityManagementCore
-    KPim6::MimeTreeParser
-    KF6::ColorScheme
-    KF6::ConfigGui
-    Qt::Widgets
-    KPim6::PimTextEdit
+        KF6::KIOCore
+        KF6::Codecs
+        KF6::Archive
+        Qt::Network
+        KF6::I18n
+        KPim6::IdentityManagementCore
+        KPim6::MimeTreeParser
+        KF6::ColorScheme
+        KF6::ConfigGui
+        Qt::Widgets
+        KPim6::PimTextEdit
 )
 target_link_libraries(KPim6MessageCore PRIVATE QGpgmeQt6)
 
@@ -123,18 +127,24 @@ if(ENABLE_PCH)
     )
 endif()
 
-target_include_directories(KPim6MessageCore INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageCore/>")
-
-set_target_properties(KPim6MessageCore PROPERTIES
-    VERSION ${MESSAGECORE_VERSION}
-    SOVERSION ${MESSAGECORE_SOVERSION}
-    EXPORT_NAME MessageCore
-)
-
-install(TARGETS
+target_include_directories(
     KPim6MessageCore
-    EXPORT KPim6MessageCoreTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
+    INTERFACE
+        "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageCore/>"
 )
+
+set_target_properties(
+    KPim6MessageCore
+    PROPERTIES
+        VERSION
+            ${MESSAGECORE_VERSION}
+        SOVERSION
+            ${MESSAGECORE_SOVERSION}
+        EXPORT_NAME
+            MessageCore
+)
+
+install(TARGETS KPim6MessageCore EXPORT KPim6MessageCoreTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 ecm_generate_headers(MessageCore_Camelcasemisc_HEADERS
     HEADER_NAMES
@@ -165,7 +175,6 @@ ecm_generate_headers(MessageCore_Camelcasesettings_HEADERS
     RELATIVE settings
 )
 
-
 ecm_generate_headers(MessageCore_Camelcaseattachment_HEADERS
     HEADER_NAMES
     AttachmentFromUrlBaseJob
@@ -191,24 +200,26 @@ ecm_generate_headers(MessageCore_Camelcaseautocrypt_HEADERS
     RELATIVE autocrypt
 )
 
-install(FILES
-    ${MessageCore_Camelcaseautocrypt_HEADERS}
-    ${MessageCore_Camelcasesettings_HEADERS}
-    ${MessageCore_Camelcaseutils_HEADERS}
-    ${MessageCore_Camelcaseattachment_HEADERS}
-    ${MessageCore_Camelcasemisc_HEADERS}
+install(
+    FILES
+        ${MessageCore_Camelcaseautocrypt_HEADERS}
+        ${MessageCore_Camelcasesettings_HEADERS}
+        ${MessageCore_Camelcaseutils_HEADERS}
+        ${MessageCore_Camelcaseattachment_HEADERS}
+        ${MessageCore_Camelcasemisc_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageCore/MessageCore
     COMPONENT Devel
 )
 
-install(FILES
-    ${MessageCore_autocrypt_HEADERS}
-    ${MessageCore_settings_HEADERS}
-    ${MessageCore_utils_HEADERS}
-    ${CMAKE_CURRENT_BINARY_DIR}/messagecore_export.h
-    ${CMAKE_CURRENT_BINARY_DIR}/globalsettings_messagecore.h
-    ${MessageCore_attachment_HEADERS}
-    ${MessageCore_misc_HEADERS}
+install(
+    FILES
+        ${MessageCore_autocrypt_HEADERS}
+        ${MessageCore_settings_HEADERS}
+        ${MessageCore_utils_HEADERS}
+        ${CMAKE_CURRENT_BINARY_DIR}/messagecore_export.h
+        ${CMAKE_CURRENT_BINARY_DIR}/globalsettings_messagecore.h
+        ${MessageCore_attachment_HEADERS}
+        ${MessageCore_misc_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageCore/messagecore
     COMPONENT Devel
 )
@@ -218,20 +229,28 @@ set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6MessageCore")
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KPimMessageCoreConfig.cmake.in"
     "${CMAKE_CURRENT_BINARY_DIR}/KPim6MessageCoreConfig.cmake"
-    INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
+    INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR}
 )
 
-install(FILES
-    "${CMAKE_CURRENT_BINARY_DIR}/KPim6MessageCoreConfig.cmake"
-    "${CMAKE_CURRENT_BINARY_DIR}/KPim6MessageCoreConfigVersion.cmake"
+install(
+    FILES
+        "${CMAKE_CURRENT_BINARY_DIR}/KPim6MessageCoreConfig.cmake"
+        "${CMAKE_CURRENT_BINARY_DIR}/KPim6MessageCoreConfigVersion.cmake"
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
     COMPONENT Devel
 )
 
-install(EXPORT KPim6MessageCoreTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KPim6MessageCoreTargets.cmake NAMESPACE KPim6::)
+install(
+    EXPORT KPim6MessageCoreTargets
+    DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+    FILE KPim6MessageCoreTargets.cmake
+    NAMESPACE KPim6::
+)
 
-install(FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/messagecore_version.h
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageCore COMPONENT Devel
+install(
+    FILES
+        ${CMAKE_CURRENT_BINARY_DIR}/messagecore_version.h
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageCore
+    COMPONENT Devel
 )
 ecm_generate_qdoc(KPim6MessageCore messagecore.qdocconf)

@@ -10,18 +10,35 @@ macro(add_messagecore_test _source)
     add_definitions(-DKDESRCDIR="${CMAKE_CURRENT_SOURCE_DIR}")
     set(_test ${_source})
     get_filename_component(_name ${_source} NAME_WE)
-    add_executable(${_name} ${_test} ${_name}.h)
+    add_executable(
+        ${_name}
+        ${_test}
+        ${_name}.h
+    )
     add_test(NAME messagecore-${_name} COMMAND ${_name})
     ecm_mark_as_test(${_name})
-    target_link_libraries(${_name} Qt::Test KPim6::Libkleo KPim6::MessageCore Qt::Widgets KF6::Archive KF6::Completion KF6::ConfigCore KF6::CoreAddons)
+    target_link_libraries(
+        ${_name}
+        Qt::Test
+        KPim6::Libkleo
+        KPim6::MessageCore
+        Qt::Widgets
+        KF6::Archive
+        KF6::Completion
+        KF6::ConfigCore
+        KF6::CoreAddons
+    )
 endmacro()
-
 
 include(${CMAKE_SOURCE_DIR}/cmake/modules/kdepim_add_gpg_crypto_test.cmake)
 
 macro(add_messagecore_cryptotest _source)
     get_filename_component(_name ${_source} NAME_WE)
-    add_executable(${_name} ${_source} ${_name}.h)
+    add_executable(
+        ${_name}
+        ${_source}
+        ${_name}.h
+    )
     target_link_libraries(
         ${_name}
         KF6::Archive
@@ -34,7 +51,7 @@ macro(add_messagecore_cryptotest _source)
         KPim6::MimeTreeParser
         Qt::Test
         Qt::Widgets
-)
+    )
     add_gpg_crypto_test(${_name} messagecore-${_name})
 endmacro()
 

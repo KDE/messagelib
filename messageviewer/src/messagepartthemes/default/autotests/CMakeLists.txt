@@ -6,11 +6,20 @@ add_definitions(-DMAIL_DATA_DIR="${CMAKE_SOURCE_DIR}/mimetreeparser/autotests/da
 include(${CMAKE_SOURCE_DIR}/cmake/modules/kdepim_add_gpg_crypto_test.cmake)
 
 macro(add_messageviewer_crypto_unittest _source)
-    set(_test ${_source} util.cpp)
+    set(_test
+        ${_source}
+        util.cpp
+    )
     get_filename_component(_name ${_source} NAME_WE)
-    add_executable(${_name} ${_test} setupenv.cpp  testcsshelper.cpp)
+    add_executable(
+        ${_name}
+        ${_test}
+        setupenv.cpp
+        testcsshelper.cpp
+    )
     ecm_mark_as_test(messageviewer-messagepartthemes-${_name})
-    target_link_libraries(${_name}
+    target_link_libraries(
+        ${_name}
         KPim6::MessageViewer
         Qt::Test
         KF6::IconThemes
@@ -18,9 +27,12 @@ macro(add_messageviewer_crypto_unittest _source)
         KPim6::GrantleeTheme
     )
     add_gpg_crypto_test(${_name} messageviewer-messagepartthemes-${_name})
-    set_tests_properties(messageviewer-messagepartthemes-${_name} PROPERTIES
-        ENVIRONMENT "LC_ALL=en_US.UTF-8"
-)
+    set_tests_properties(
+        messageviewer-messagepartthemes-${_name}
+        PROPERTIES
+            ENVIRONMENT
+                "LC_ALL=en_US.UTF-8"
+    )
 endmacro()
 
 add_messageviewer_crypto_unittest(objecttreeparsertest.cpp)

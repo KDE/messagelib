@@ -1,10 +1,13 @@
 # SPDX-License-Identifier: CC0-1.0
 # SPDX-FileCopyrightText: none
 
-
 find_package(Inotify)
-set_package_properties(Inotify PROPERTIES
-    PURPOSE "Filesystem alteration notifications using inotify")
+set_package_properties(
+    Inotify
+    PROPERTIES
+        PURPOSE
+            "Filesystem alteration notifications using inotify"
+)
 if(Inotify_FOUND)
     set(HAVE_SYS_INOTIFY_H 1)
 else()

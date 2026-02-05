@@ -7,7 +7,10 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX WEBENGINEVIEWER
 )
 
 add_definitions(-DTRANSLATION_DOMAIN=\"libwebengineviewer6\")
-include_directories(${CMAKE_BINARY_DIR}/webengineviewer/src ${CMAKE_BINARY_DIR}/webengineviewer)
+include_directories(
+    ${CMAKE_BINARY_DIR}/webengineviewer/src
+    ${CMAKE_BINARY_DIR}/webengineviewer
+)
 
 add_library(KPim6WebEngineViewer)
 add_library(KPim6::WebEngineViewer ALIAS KPim6WebEngineViewer)
@@ -37,105 +40,97 @@ if(BUILD_TESTING)
     add_subdirectory(developertool/autotests)
 endif()
 
-
-
-target_sources(KPim6WebEngineViewer PRIVATE
-    networkmanager/interceptormanager.cpp
-    webhittestresult.cpp
-    webhittest.cpp
-    webenginepage.cpp
-    webenginescript.cpp
-    webengineview.cpp
-    webenginemanagescript.cpp
-    webenginenavigationrequestinterceptor.cpp
-    webengineexportpdfpagejob.cpp
-
-    checkphishingurl/checkphishingurljob.cpp
-    checkphishingurl/checkphishingurlcache.cpp
-    checkphishingurl/createphishingurldatabasejob.cpp
-    checkphishingurl/localdatabasemanager.cpp
-    checkphishingurl/checkphishingurlutil.cpp
-    checkphishingurl/searchfullhashjob.cpp
-    checkphishingurl/localdatabasefile.cpp
-    checkphishingurl/createdatabasefilejob.cpp
-    checkphishingurl/updatedatabaseinfo.cpp
-    checkphishingurl/riceencodingdecoder.cpp
-    checkphishingurl/urlhashing.cpp
-    checkphishingurl/hashcachemanager.cpp
-    checkphishingurl/backoffmodemanager.cpp
-    checkphishingurl/downloadlocaldatabasethread.cpp
-
-    urlinterceptor/networkurlinterceptor.cpp
-    urlinterceptor/networkpluginurlinterceptorinterface.cpp
-    urlinterceptor/networkurlinterceptorpluginmanager.cpp
-    urlinterceptor/networkpluginurlinterceptor.cpp
-    urlinterceptor/networkurlinterceptormanager.cpp
-    urlinterceptor/networkpluginurlinterceptorconfigurewidget.cpp
-    urlinterceptor/blocktrackingurlinterceptor/blocktrackingurlinterceptor.cpp
-    urlinterceptor/loadexternalreferencesurlinterceptor/loadexternalreferencesurlinterceptor.cpp
-    urlinterceptor/blockexternalresourcesurlinterceptor/blockexternalresourcesurlinterceptor.cpp
-
-    webengineaccesskey/webengineaccesskey.cpp
-    webengineaccesskey/webengineaccesskeyanchor.cpp
-    webengineaccesskey/webengineaccesskeyutils.cpp
-
-    findbar/findbarbase.cpp
-    findbar/findbarwebengineview.cpp
-
-    widgets/zoomactionmenu.cpp
-
-    widgets/tracking/trackingdetailsdialog.cpp
-    widgets/tracking/trackingwarningwidget.cpp
-
-    developertool/developertoolwidget.cpp
-    developertool/developertooldialog.cpp
-    widgets/submittedformwidgets/submittedformwarningwidget.cpp
-
-    findbar/findbarwebengineview.h
-    findbar/findbarbase.h
-    webenginenavigationrequestinterceptor.h
-    webhittestresult.h
-    urlinterceptor/networkurlinterceptor.h
-    urlinterceptor/networkpluginurlinterceptorconfigurewidget.h
-    urlinterceptor/loadexternalreferencesurlinterceptor/loadexternalreferencesurlinterceptor.h
-    urlinterceptor/blockexternalresourcesurlinterceptor/blockexternalresourcesurlinterceptor.h
-    urlinterceptor/networkpluginurlinterceptor.h
-    urlinterceptor/blocktrackingurlinterceptor/blocktrackingurlinterceptor.h
-    urlinterceptor/networkurlinterceptorpluginmanager.h
-    urlinterceptor/networkpluginurlinterceptorinterface.h
-    urlinterceptor/networkurlinterceptormanager.h
-    webenginepage.h
-    webhittest.h
-    webenginescript.h
-    webengineviewer_private_export.h
-    webenginemanagescript.h
-    webengineexportpdfpagejob.h
-    webengineview.h
-    widgets/tracking/trackingdetailsdialog.h
-    widgets/tracking/trackingwarningwidget.h
-    widgets/zoomactionmenu.h
-    widgets/submittedformwidgets/submittedformwarningwidget.h
-    checkphishingurl/localdatabasemanager_p.h
-    checkphishingurl/localdatabasemanager.h
-    checkphishingurl/urlhashing.h
-    checkphishingurl/searchfullhashjob.h
-    checkphishingurl/createphishingurldatabasejob.h
-    checkphishingurl/updatedatabaseinfo.h
-    checkphishingurl/backoffmodemanager.h
-    checkphishingurl/localdatabasefile.h
-    checkphishingurl/riceencodingdecoder.h
-    checkphishingurl/hashcachemanager.h
-    checkphishingurl/downloadlocaldatabasethread.h
-    checkphishingurl/checkphishingurljob.h
-    checkphishingurl/checkphishingurlutil.h
-    checkphishingurl/createdatabasefilejob.h
-    checkphishingurl/checkphishingurlcache.h
-    developertool/developertooldialog.h
-    developertool/developertoolwidget.h
-    networkmanager/interceptormanager.h
-    webengineaccesskey/webengineaccesskeyutils.h
-    webengineaccesskey/webengineaccesskey.h
-    webengineaccesskey/webengineaccesskeyanchor.h
+target_sources(
+    KPim6WebEngineViewer
+    PRIVATE
+        networkmanager/interceptormanager.cpp
+        webhittestresult.cpp
+        webhittest.cpp
+        webenginepage.cpp
+        webenginescript.cpp
+        webengineview.cpp
+        webenginemanagescript.cpp
+        webenginenavigationrequestinterceptor.cpp
+        webengineexportpdfpagejob.cpp
+        checkphishingurl/checkphishingurljob.cpp
+        checkphishingurl/checkphishingurlcache.cpp
+        checkphishingurl/createphishingurldatabasejob.cpp
+        checkphishingurl/localdatabasemanager.cpp
+        checkphishingurl/checkphishingurlutil.cpp
+        checkphishingurl/searchfullhashjob.cpp
+        checkphishingurl/localdatabasefile.cpp
+        checkphishingurl/createdatabasefilejob.cpp
+        checkphishingurl/updatedatabaseinfo.cpp
+        checkphishingurl/riceencodingdecoder.cpp
+        checkphishingurl/urlhashing.cpp
+        checkphishingurl/hashcachemanager.cpp
+        checkphishingurl/backoffmodemanager.cpp
+        checkphishingurl/downloadlocaldatabasethread.cpp
+        urlinterceptor/networkurlinterceptor.cpp
+        urlinterceptor/networkpluginurlinterceptorinterface.cpp
+        urlinterceptor/networkurlinterceptorpluginmanager.cpp
+        urlinterceptor/networkpluginurlinterceptor.cpp
+        urlinterceptor/networkurlinterceptormanager.cpp
+        urlinterceptor/networkpluginurlinterceptorconfigurewidget.cpp
+        urlinterceptor/blocktrackingurlinterceptor/blocktrackingurlinterceptor.cpp
+        urlinterceptor/loadexternalreferencesurlinterceptor/loadexternalreferencesurlinterceptor.cpp
+        urlinterceptor/blockexternalresourcesurlinterceptor/blockexternalresourcesurlinterceptor.cpp
+        webengineaccesskey/webengineaccesskey.cpp
+        webengineaccesskey/webengineaccesskeyanchor.cpp
+        webengineaccesskey/webengineaccesskeyutils.cpp
+        findbar/findbarbase.cpp
+        findbar/findbarwebengineview.cpp
+        widgets/zoomactionmenu.cpp
+        widgets/tracking/trackingdetailsdialog.cpp
+        widgets/tracking/trackingwarningwidget.cpp
+        developertool/developertoolwidget.cpp
+        developertool/developertooldialog.cpp
+        widgets/submittedformwidgets/submittedformwarningwidget.cpp
+        findbar/findbarwebengineview.h
+        findbar/findbarbase.h
+        webenginenavigationrequestinterceptor.h
+        webhittestresult.h
+        urlinterceptor/networkurlinterceptor.h
+        urlinterceptor/networkpluginurlinterceptorconfigurewidget.h
+        urlinterceptor/loadexternalreferencesurlinterceptor/loadexternalreferencesurlinterceptor.h
+        urlinterceptor/blockexternalresourcesurlinterceptor/blockexternalresourcesurlinterceptor.h
+        urlinterceptor/networkpluginurlinterceptor.h
+        urlinterceptor/blocktrackingurlinterceptor/blocktrackingurlinterceptor.h
+        urlinterceptor/networkurlinterceptorpluginmanager.h
+        urlinterceptor/networkpluginurlinterceptorinterface.h
+        urlinterceptor/networkurlinterceptormanager.h
+        webenginepage.h
+        webhittest.h
+        webenginescript.h
+        webengineviewer_private_export.h
+        webenginemanagescript.h
+        webengineexportpdfpagejob.h
+        webengineview.h
+        widgets/tracking/trackingdetailsdialog.h
+        widgets/tracking/trackingwarningwidget.h
+        widgets/zoomactionmenu.h
+        widgets/submittedformwidgets/submittedformwarningwidget.h
+        checkphishingurl/localdatabasemanager_p.h
+        checkphishingurl/localdatabasemanager.h
+        checkphishingurl/urlhashing.h
+        checkphishingurl/searchfullhashjob.h
+        checkphishingurl/createphishingurldatabasejob.h
+        checkphishingurl/updatedatabaseinfo.h
+        checkphishingurl/backoffmodemanager.h
+        checkphishingurl/localdatabasefile.h
+        checkphishingurl/riceencodingdecoder.h
+        checkphishingurl/hashcachemanager.h
+        checkphishingurl/downloadlocaldatabasethread.h
+        checkphishingurl/checkphishingurljob.h
+        checkphishingurl/checkphishingurlutil.h
+        checkphishingurl/createdatabasefilejob.h
+        checkphishingurl/checkphishingurlcache.h
+        developertool/developertooldialog.h
+        developertool/developertoolwidget.h
+        networkmanager/interceptormanager.h
+        webengineaccesskey/webengineaccesskeyutils.h
+        webengineaccesskey/webengineaccesskey.h
+        webengineaccesskey/webengineaccesskeyanchor.h
 )
 
 ecm_qt_declare_logging_category(KPim6WebEngineViewer HEADER webengineviewer_debug.h IDENTIFIER WEBENGINEVIEWER_LOG CATEGORY_NAME org.kde.pim.webengineviewer
@@ -148,9 +143,13 @@ ecm_qt_declare_logging_category(KPim6WebEngineViewer HEADER webengineviewer_bloc
     EXPORT MESSAGELIB
 )
 
-
 if(COMPILE_WITH_UNITY_CMAKE_SUPPORT)
-    set_target_properties(KPim6WebEngineViewer PROPERTIES UNITY_BUILD ON)
+    set_target_properties(
+        KPim6WebEngineViewer
+        PROPERTIES
+            UNITY_BUILD
+                ON
+    )
 endif()
 
 ecm_generate_export_header(KPim6WebEngineViewer
@@ -160,36 +159,42 @@ ecm_generate_export_header(KPim6WebEngineViewer
     USE_VERSION_HEADER
 )
 
+target_include_directories(
+    KPim6WebEngineViewer
+    INTERFACE
+        "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim6/WebEngineViewer/>"
+)
 
-target_include_directories(KPim6WebEngineViewer INTERFACE "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim6/WebEngineViewer/>")
-
-target_link_libraries(KPim6WebEngineViewer
+target_link_libraries(
+    KPim6WebEngineViewer
     PUBLIC
-    Qt::WebEngineWidgets
-    KPim6::PimCommon
+        Qt::WebEngineWidgets
+        KPim6::PimCommon
     PRIVATE
-    KF6::CoreAddons
-    KF6::XmlGui
-    KF6::I18n
-    KF6::WidgetsAddons
-    KF6::ConfigCore
-    KF6::ColorScheme
+        KF6::CoreAddons
+        KF6::XmlGui
+        KF6::I18n
+        KF6::WidgetsAddons
+        KF6::ConfigCore
+        KF6::ColorScheme
 )
 
 if(WIN32)
     target_link_libraries(KPim6WebEngineViewer PRIVATE Ws2_32)
 endif()
 
-set_target_properties(KPim6WebEngineViewer PROPERTIES
-    VERSION ${WEBENGINEVIEWER_VERSION}
-    SOVERSION ${WEBENGINEVIEWER_SOVERSION}
-    EXPORT_NAME WebEngineViewer
+set_target_properties(
+    KPim6WebEngineViewer
+    PROPERTIES
+        VERSION
+            ${WEBENGINEVIEWER_VERSION}
+        SOVERSION
+            ${WEBENGINEVIEWER_SOVERSION}
+        EXPORT_NAME
+            WebEngineViewer
 )
 
-install(TARGETS
-    KPim6WebEngineViewer
-    EXPORT KPim6WebEngineViewerTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS}
-)
+install(TARGETS KPim6WebEngineViewer EXPORT KPim6WebEngineViewerTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 ecm_generate_headers(WebEngineViewer_Camelfindbar_HEADERS
     HEADER_NAMES
@@ -290,7 +295,6 @@ ecm_generate_headers(WebEngineViewer_Camelblockexternalresourcesurlinterceptor_H
     RELATIVE urlinterceptor/blockexternalresourcesurlinterceptor/
 )
 
-
 ecm_generate_headers(WebEngineViewer_Cameltracking_HEADERS
     HEADER_NAMES
     TrackingWarningWidget
@@ -318,43 +322,43 @@ ecm_generate_headers(WebEngineViewer_Camelsubmittedformwidget_HEADERS
     RELATIVE widgets/submittedformwidgets/
 )
 
-
-
-install(FILES
-    ${WebEngineViewer_Camelsubmittedformwidget_HEADERS}
-    ${WebEngineViewer_Cameldevelopertool_HEADERS}
-    ${WebEngineViewer_Cameltracking_HEADERS}
-    ${WebEngineViewer_Camelblockexternalresourcesurlinterceptor_HEADERS}
-    ${WebEngineViewer_Camelloadexternalreferencesurlinterceptor_HEADERS}
-    ${WebEngineViewer_Camelblocktrackingurlinterceptor_HEADERS}
-    ${WebEngineViewer_Camelcasewebengine_checkurl_HEADERS}
-    ${WebEngineViewer_Camelcasewebengine_accesskey_HEADERS}
-    ${WebEngineViewer_Camelcasewebengine_urlinterceptor_HEADERS}
-    ${WebEngineViewer_Camelcasewebengine_manager_HEADERS}
-    ${WebEngineViewer_Camelcasewebengine_misc_HEADERS}
-    ${WebEngineViewer_Camelfindbar_HEADERS}
-    ${WebEngineViewer_Camelcasewidgets_HEADERS}
-    ${WebEngineViewer_Camelprint_HEADERS}
+install(
+    FILES
+        ${WebEngineViewer_Camelsubmittedformwidget_HEADERS}
+        ${WebEngineViewer_Cameldevelopertool_HEADERS}
+        ${WebEngineViewer_Cameltracking_HEADERS}
+        ${WebEngineViewer_Camelblockexternalresourcesurlinterceptor_HEADERS}
+        ${WebEngineViewer_Camelloadexternalreferencesurlinterceptor_HEADERS}
+        ${WebEngineViewer_Camelblocktrackingurlinterceptor_HEADERS}
+        ${WebEngineViewer_Camelcasewebengine_checkurl_HEADERS}
+        ${WebEngineViewer_Camelcasewebengine_accesskey_HEADERS}
+        ${WebEngineViewer_Camelcasewebengine_urlinterceptor_HEADERS}
+        ${WebEngineViewer_Camelcasewebengine_manager_HEADERS}
+        ${WebEngineViewer_Camelcasewebengine_misc_HEADERS}
+        ${WebEngineViewer_Camelfindbar_HEADERS}
+        ${WebEngineViewer_Camelcasewidgets_HEADERS}
+        ${WebEngineViewer_Camelprint_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/WebEngineViewer/WebEngineViewer
     COMPONENT Devel
 )
 
-install(FILES
-    ${WebEngineViewer_submittedformwidget_HEADERS}
-    ${WebEngineViewer_developertool_HEADERS}
-    ${WebEngineViewer_tracking_HEADERS}
-    ${WebEngineViewer_blockexternalresourcesurlinterceptor_HEADERS}
-    ${WebEngineViewer_loadexternalreferencesurlinterceptor_HEADERS}
-    ${WebEngineViewer_blocktrackingurlinterceptor_HEADERS}
-    ${WebEngineViewer_webengine_checkurl_HEADERS}
-    ${WebEngineViewer_webengine_accesskey_HEADERS}
-    ${WebEngineViewer_findbar_HEADERS}
-    ${WebEngineViewer_webengine_urlinterceptor_HEADERS}
-    ${WebEngineViewer_webengine_manager_HEADERS}
-    ${WebEngineViewer_webengine_misc_HEADERS}
-    ${WebEngineViewer_widgets_HEADERS}
-    ${WebEngineViewer_print_HEADERS}
-    ${CMAKE_CURRENT_BINARY_DIR}/webengineviewer_export.h
+install(
+    FILES
+        ${WebEngineViewer_submittedformwidget_HEADERS}
+        ${WebEngineViewer_developertool_HEADERS}
+        ${WebEngineViewer_tracking_HEADERS}
+        ${WebEngineViewer_blockexternalresourcesurlinterceptor_HEADERS}
+        ${WebEngineViewer_loadexternalreferencesurlinterceptor_HEADERS}
+        ${WebEngineViewer_blocktrackingurlinterceptor_HEADERS}
+        ${WebEngineViewer_webengine_checkurl_HEADERS}
+        ${WebEngineViewer_webengine_accesskey_HEADERS}
+        ${WebEngineViewer_findbar_HEADERS}
+        ${WebEngineViewer_webengine_urlinterceptor_HEADERS}
+        ${WebEngineViewer_webengine_manager_HEADERS}
+        ${WebEngineViewer_webengine_misc_HEADERS}
+        ${WebEngineViewer_widgets_HEADERS}
+        ${WebEngineViewer_print_HEADERS}
+        ${CMAKE_CURRENT_BINARY_DIR}/webengineviewer_export.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/WebEngineViewer/webengineviewer
     COMPONENT Devel
 )
@@ -364,20 +368,28 @@ set(CMAKECONFIG_INSTALL_DIR "${KDE_INSTALL_CMAKEPACKAGEDIR}/KPim6WebEngineViewer
 configure_package_config_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/KPimWebEngineViewerConfig.cmake.in"
     "${CMAKE_CURRENT_BINARY_DIR}/KPim6WebEngineViewerConfig.cmake"
-    INSTALL_DESTINATION  ${CMAKECONFIG_INSTALL_DIR}
+    INSTALL_DESTINATION ${CMAKECONFIG_INSTALL_DIR}
 )
 
-install(FILES
-    "${CMAKE_CURRENT_BINARY_DIR}/KPim6WebEngineViewerConfig.cmake"
-    "${CMAKE_CURRENT_BINARY_DIR}/KPim6WebEngineViewerConfigVersion.cmake"
+install(
+    FILES
+        "${CMAKE_CURRENT_BINARY_DIR}/KPim6WebEngineViewerConfig.cmake"
+        "${CMAKE_CURRENT_BINARY_DIR}/KPim6WebEngineViewerConfigVersion.cmake"
     DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
     COMPONENT Devel
 )
 
-install(EXPORT KPim6WebEngineViewerTargets DESTINATION "${CMAKECONFIG_INSTALL_DIR}" FILE KPim6WebEngineViewerTargets.cmake NAMESPACE KPim6::)
+install(
+    EXPORT KPim6WebEngineViewerTargets
+    DESTINATION "${CMAKECONFIG_INSTALL_DIR}"
+    FILE KPim6WebEngineViewerTargets.cmake
+    NAMESPACE KPim6::
+)
 
-install(FILES
-    ${CMAKE_CURRENT_BINARY_DIR}/webengineviewer_version.h
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/WebEngineViewer COMPONENT Devel
+install(
+    FILES
+        ${CMAKE_CURRENT_BINARY_DIR}/webengineviewer_version.h
+    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/WebEngineViewer
+    COMPONENT Devel
 )
 ecm_generate_qdoc(KPim6WebEngineViewer webengineviewer.qdocconf)

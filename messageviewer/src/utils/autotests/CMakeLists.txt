@@ -6,8 +6,7 @@ macro(add_messageviewer_utils_unittest _source)
     ecm_add_test(${_source} ${_name}.h
         TEST_NAME ${_name}
         LINK_LIBRARIES KPim6::MessageViewer KPim6::WebEngineViewer KPim6::Libkleo QGpgmeQt6 Qt::Test
-)
+    )
 endmacro()
-
 
 add_messageviewer_utils_unittest(messageviewerutilstest.cpp)

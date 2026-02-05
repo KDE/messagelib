@@ -6,7 +6,12 @@ ecm_add_test(webengineaccesskeyanchortest.cpp webengineaccesskeyanchortest.h ../
 )
 # needed for the CI to run webengine-related tests
 # the CI runs as root, and webengine insists on disabling sandboxing in that case
-set_tests_properties(webengineviewer-webengineaccesskey-webengineaccesskeyanchortest PROPERTIES ENVIRONMENT "QTWEBENGINE_DISABLE_SANDBOX=1")
+set_tests_properties(
+    webengineviewer-webengineaccesskey-webengineaccesskeyanchortest
+    PROPERTIES
+        ENVIRONMENT
+            "QTWEBENGINE_DISABLE_SANDBOX=1"
+)
 
 ecm_add_test(webengineaccesskeyanchorfromhtmltest.cpp webengineaccesskeyanchorfromhtmltest.h ../webengineaccesskeyanchor.cpp ../webengineaccesskeyutils.cpp
     TEST_NAME webengineaccesskeyanchorfromhtmltest
@@ -14,4 +19,9 @@ ecm_add_test(webengineaccesskeyanchorfromhtmltest.cpp webengineaccesskeyanchorfr
 )
 # needed for the CI to run webengine-related tests
 # the CI runs as root, and webengine insists on disabling sandboxing in that case
-set_tests_properties(webengineviewer-webengineaccesskey-webengineaccesskeyanchorfromhtmltest PROPERTIES ENVIRONMENT "QTWEBENGINE_DISABLE_SANDBOX=1")
+set_tests_properties(
+    webengineviewer-webengineaccesskey-webengineaccesskeyanchorfromhtmltest
+    PROPERTIES
+        ENVIRONMENT
+            "QTWEBENGINE_DISABLE_SANDBOX=1"
+)

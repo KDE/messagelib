@@ -6,7 +6,7 @@ macro(messagelist_unittest _source)
     ecm_add_test(${_source}
         TEST_NAME ${_name}
         LINK_LIBRARIES Qt::Test KPim6::MessageCore KPim6::MessageList KPim6::PimCommonAkonadi
-)
+    )
 endmacro()
 
 messagelist_unittest(itemsizetest.cpp)

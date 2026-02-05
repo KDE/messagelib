@@ -25,6 +25,12 @@ repos:
    rev: v2.4.1
    hooks:
     - id: codespell
+ - repo: https://github.com/BlankSpruce/gersemi
+   rev: 0.25.4
+   hooks:
+    - id: gersemi
+      args: ["--no-warn-about-unknown-commands"]
+      exclude: (^cmake/ecmcopy)
  - repo: https://github.com/efrecon/pre-commit-hook-lxml
    rev: v0.1.4
    hooks:

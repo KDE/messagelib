@@ -5,7 +5,7 @@ macro(add_plugineditor_unittest _source)
     ecm_add_test(${_source} ${_name}.h
         TEST_NAME ${_name}
         LINK_LIBRARIES Qt::Test KPim6::MessageComposer KF6::XmlGui
-)
+    )
 endmacro()
 
 add_plugineditor_unittest(plugineditortest.cpp)

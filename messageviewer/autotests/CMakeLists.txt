@@ -13,7 +13,7 @@ macro(add_messageviewer_unittest _source)
     ecm_add_test(${_source} setupenv.cpp util.cpp ${_name}.h
         TEST_NAME ${_name}
         LINK_LIBRARIES KPim6::MessageViewer KPim6::Libkleo QGpgmeQt6 Qt::Test KF6::KIOCore KPim6::Mime KPim6::AkonadiCore KF6::CalendarCore KPim6::WebEngineViewer
-)
+    )
 endmacro()
 
 macro(add_messageviewer_class_unittest _source _additionalSource)
@@ -21,7 +21,7 @@ macro(add_messageviewer_class_unittest _source _additionalSource)
     ecm_add_test(${_source} ${_additionalSource} ${_name}.h
         TEST_NAME ${_name}
         LINK_LIBRARIES KPim6::MessageViewer Qt::Test KF6::IconThemes KF6::XmlGui KF6::I18n
-)
+    )
 endmacro()
 
 add_messageviewer_unittest( messagedisplayformatattributetest.cpp)
@@ -34,12 +34,11 @@ macro(add_messageviewer_mailsourceviewbrowserwidget_unittest _source)
         LINK_LIBRARIES Qt::Test Qt::Gui Qt::Widgets KF6::KIOCore KPim6::Mime KPim6::AkonadiCore KF6::CalendarCore KPim6::PimTextEdit
         KPim6::PimCommon KPim6::MessageViewer KPim6::WebEngineViewer KF6::SyntaxHighlighting KF6::TextAddonsWidgets
         KF6::I18n KF6::IconThemes
-)
+    )
     if(TARGET KF6::TextEditTextToSpeech)
         target_link_libraries(${_name} KF6::TextEditTextToSpeech)
     endif()
 endmacro()
-
 
 add_messageviewer_mailsourceviewbrowserwidget_unittest( mailsourceviewtextbrowserwidgettest.cpp)
 ########### viewertest_gui ###############

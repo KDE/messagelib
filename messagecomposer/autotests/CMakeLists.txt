@@ -30,13 +30,21 @@ macro(add_messagecomposer_test _source)
             KPim6::Libkdepim
             KF6::IconThemes
             KF6::Completion
-)
+    )
 endmacro()
 
 macro(add_messagecomposer_cryptotest _source)
-    set(_test cryptofunctions.cpp setupenv.cpp ${_source})
+    set(_test
+        cryptofunctions.cpp
+        setupenv.cpp
+        ${_source}
+    )
     get_filename_component(_name ${_source} NAME_WE)
-    add_executable(${_name} ${_test}  ${_name}.h)
+    add_executable(
+        ${_name}
+        ${_test}
+        ${_name}.h
+    )
     target_link_libraries(
         ${_name}
         KF6::I18n
@@ -52,15 +60,17 @@ macro(add_messagecomposer_cryptotest _source)
         KF6::Completion
         KPim6::MailTransport
         KF6::Contacts
-	KPim6::MimeTreeParser
-	KF6::Service
-)
+        KPim6::MimeTreeParser
+        KF6::Service
+    )
     add_gpg_crypto_test(${_name} messagecomposer-${_name})
-    set_tests_properties(messagecomposer-${_name} PROPERTIES
-        ENVIRONMENT "LC_ALL=en_US.UTF-8"
-)
+    set_tests_properties(
+        messagecomposer-${_name}
+        PROPERTIES
+            ENVIRONMENT
+                "LC_ALL=en_US.UTF-8"
+    )
 endmacro()
-
 
 # Utility stuff.
 add_messagecomposer_test( draftstatustest.cpp)
