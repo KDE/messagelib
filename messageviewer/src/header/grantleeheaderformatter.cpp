@@ -63,7 +63,6 @@ inline QVariant TypeAccessor<const KMime::Headers::Generics::AddressList *>::loo
 template<>
 inline QVariant TypeAccessor<QByteArray &>::lookUp(const QByteArray &object, [[maybe_unused]] const QString &property)
 {
-    Q_UNUSED(property);
     return object;
 }
 }
@@ -188,9 +187,8 @@ public:
         }
     }
 
-    QVariant format(KMime::Message *message, MimeTreeParser::NodeHelper *nodeHelper, bool showEmoticons) override
+    QVariant format(KMime::Message *message, MimeTreeParser::NodeHelper *nodeHelper) override
     {
-        Q_UNUSED(showEmoticons);
         return nodeHelper->mailHeaderAsBase(header.constData(), message)->asUnicodeString();
     }
 
@@ -226,9 +224,8 @@ public:
         return i18n("Date:");
     }
 
-    QVariant format(KMime::Message *message, MimeTreeParser::NodeHelper *nodeHelper, bool showEmoticons) override
+    QVariant format(KMime::Message *message, MimeTreeParser::NodeHelper *nodeHelper) override
     {
-        Q_UNUSED(showEmoticons);
         const auto value = nodeHelper->dateHeader(message);
         return value;
     }
@@ -242,9 +239,8 @@ public:
         return i18n("Message-Id:");
     }
 
-    QVariant format(KMime::Message *message, MimeTreeParser::NodeHelper *nodeHelper, bool showEmoticons) override
+    QVariant format(KMime::Message *message, MimeTreeParser::NodeHelper *nodeHelper) override
     {
-        Q_UNUSED(showEmoticons);
         const auto messageIdHeader = nodeHelper->mailHeaderAsBase("Message-Id", message);
         if (messageIdHeader != nullptr) {
             return static_cast<const KMime::Headers::MessageID *>(messageIdHeader)->identifier();

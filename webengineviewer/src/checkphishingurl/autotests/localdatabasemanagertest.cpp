@@ -22,7 +22,6 @@ protected:
     void downloadDataBase([[maybe_unused]] const QString &clientState) override
     {
         // don't actually download anything
-        Q_UNUSED(clientState);
     }
 };
 
