@@ -94,19 +94,19 @@ void RenderTest::testRender()
         Test::compareFile(outFileName, asyncFileName);
         loop.exec();
 
-        MimeTreeParser::ObjectTreeParser otp(&testSource, &nodeHelper);
-        otp.setAllowAsync(bAsync);
+        MimeTreeParser::ObjectTreeParser otp2(&testSource, &nodeHelper);
+        otp2.setAllowAsync(bAsync);
 
-        otp.parseObjectTree(msg.get());
+        otp2.parseObjectTree(msg.get());
 
         fileWriter.begin();
-        CSSHelperBase::HtmlHeadSettings htmlHeadSettings;
-        fileWriter.write(cssHelper.htmlHead(htmlHeadSettings));
-        testSource.render(otp.parsedPart(), false);
+        CSSHelperBase::HtmlHeadSettings htmlHeadSettings2;
+        fileWriter.write(cssHelper.htmlHead(htmlHeadSettings2));
+        testSource.render(otp2.parsedPart(), false);
         fileWriter.write(u"</body></html>"_s);
         fileWriter.end();
 
-        testRenderTree(otp.parsedPart());
+        testRenderTree(otp2.parsedPart());
     }
     Test::compareFile(outFileName, referenceFileName);
     msg.reset();

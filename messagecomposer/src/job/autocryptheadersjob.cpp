@@ -39,7 +39,7 @@ public:
 
     void emitGpgError(const GpgME::Error &error);
     void emitNotFoundError(const QByteArray &addr, const QByteArray &fingerprint);
-    void fillHeaderData(KMime::Headers::Generic *header, const QByteArray &addr, bool preferEncrypted, const QByteArray &keydata);
+    void fillHeaderData(KMime::Headers::Generic *header, const QByteArray &addr, bool doPreferEncrypted, const QByteArray &keydata);
     void finishOnLastSubJob();
 
     std::unique_ptr<KMime::Content> content;
@@ -103,10 +103,10 @@ void AutocryptHeadersJobPrivate::emitNotFoundError(const QByteArray &addr, const
     q->emitResult();
 }
 
-void AutocryptHeadersJobPrivate::fillHeaderData(KMime::Headers::Generic *header, const QByteArray &addr, bool preferEncrypted, const QByteArray &keydata)
+void AutocryptHeadersJobPrivate::fillHeaderData(KMime::Headers::Generic *header, const QByteArray &addr, bool doPreferEncrypted, const QByteArray &keydata)
 {
     QByteArray parameters = "addr=" + addr + "; ";
-    if (preferEncrypted) {
+    if (doPreferEncrypted) {
         parameters += "prefer-encrypt=mutual; ";
     }
     parameters += "keydata=\n ";

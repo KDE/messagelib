@@ -120,17 +120,17 @@ void AkonadiSender::sendOrQueueMessage(const std::shared_ptr<KMime::Message> &me
         qjob->sentBehaviourAttribute().setSentBehaviour(Akonadi::SentBehaviourAttribute::MoveToCollection);
         const int sentCollectionId = hrd->asUnicodeString().toInt();
         qjob->sentBehaviourAttribute().setMoveToCollection(Akonadi::Collection(sentCollectionId));
-    } else if (auto hrd = message->headerByType("X-KMail-Identity")) {
+    } else if (auto hrd2 = message->headerByType("X-KMail-Identity")) {
         KIdentityManagementCore::IdentityManager *im = KIdentityManagementCore::IdentityManager::self();
-        const QString identityStrId = hrd->asUnicodeString();
+        const QString identityStrId = hrd2->asUnicodeString();
         const KIdentityManagementCore::Identity id = im->modifyIdentityForUoid(identityStrId.toUInt());
         const QString fccId = id.fcc();
         qjob->sentBehaviourAttribute().setSentBehaviour(Akonadi::SentBehaviourAttribute::MoveToCollection);
         const int sentCollectionId = fccId.toInt();
         qjob->sentBehaviourAttribute().setMoveToCollection(Akonadi::Collection(sentCollectionId));
-    } else if (auto hrd = message->headerByType("X-KMail-Identity-Name")) {
+    } else if (auto hrd3 = message->headerByType("X-KMail-Identity-Name")) {
         KIdentityManagementCore::IdentityManager *im = KIdentityManagementCore::IdentityManager::self();
-        const QString identityStrName = hrd->asUnicodeString();
+        const QString identityStrName = hrd3->asUnicodeString();
         const KIdentityManagementCore::Identity id = im->modifyIdentityForName(identityStrName);
         const QString fccId = id.fcc();
         qjob->sentBehaviourAttribute().setSentBehaviour(Akonadi::SentBehaviourAttribute::MoveToCollection);

@@ -206,15 +206,15 @@ void AutocryptHeadersJobTest::testSetGnupgHome()
 
     QTemporaryDir dir;
     { // test with an empty gnupg Home
-        auto content = std::make_unique<KMime::Content>();
-        content->setBody(
+        auto tempContent = std::make_unique<KMime::Content>();
+        tempContent->setBody(
             "Hi Bob and Carol,\n"
             "\n"
             "I wanted to introduce the two of you to each other.\n"
             "\n"
             "I hope you are both doing well!  You can now both \"reply all\" here,\n"
             "and the thread will remain encrypted.\n");
-        content->contentType(KMime::CreatePolicy::Create)->from7BitString("text/plain");
+        tempContent->contentType(KMime::CreatePolicy::Create)->from7BitString("text/plain");
 
         auto aJob = new AutocryptHeadersJob(&composerJob);
         QVERIFY(aJob);

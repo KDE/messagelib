@@ -261,13 +261,13 @@ void EncryptJobTest::testSetGnupgHome()
 
     QTemporaryDir dir;
     {
-        auto content = std::make_unique<KMime::Content>();
-        content->setBody("one flew over the cuckoo's nest");
+        auto tempContent = std::make_unique<KMime::Content>();
+        tempContent->setBody("one flew over the cuckoo's nest");
 
         auto eJob = new EncryptJob(&composerJob);
         QVERIFY(eJob);
 
-        eJob->setContent(std::move(content));
+        eJob->setContent(std::move(tempContent));
         eJob->setCryptoMessageFormat(Kleo::OpenPGPMIMEFormat);
         eJob->setRecipients(recipients);
         eJob->setEncryptionKeys(keys);

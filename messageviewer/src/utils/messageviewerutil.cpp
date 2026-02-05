@@ -675,10 +675,10 @@ QString Util::parseBodyStyle(const QString &style)
             const QStringView styleStr = QStringView(style).mid(indexStyle + 7, indexEnd - (indexStyle + 7));
             const auto lstStyle = styleStr.split(u';', Qt::SkipEmptyParts);
             QStringList lst;
-            for (const auto &style : lstStyle) {
-                // qDebug() << " style : " << style;
-                if (!style.trimmed().contains(QLatin1StringView("white-space")) && !style.trimmed().contains(QLatin1StringView("text-align"))) {
-                    lst.append(style.toString().trimmed());
+            for (const auto &bodyStyle : lstStyle) {
+                // qDebug() << " bodyStyle : " << bodyStyle;
+                if (!bodyStyle.trimmed().contains(QLatin1StringView("white-space")) && !bodyStyle.trimmed().contains(QLatin1StringView("text-align"))) {
+                    lst.append(bodyStyle.toString().trimmed());
                 }
             }
             if (!lst.isEmpty()) {
@@ -735,9 +735,9 @@ Util::HtmlMessageInfo Util::processHtml(const QString &htmlSource)
         QRegularExpressionMatch matchBodyStyle;
         const int bodyStyleStartIndex = messageInfo.extraHead.indexOf(styleBodyRegularExpression, 0, &matchBodyStyle);
         if (bodyStyleStartIndex > 0) {
-            const auto endIndex = messageInfo.extraHead.indexOf(QLatin1StringView("</style>"), bodyStyleStartIndex, Qt::CaseInsensitive);
-            // qDebug() << " endIndex " << endIndex;
-            messageInfo.extraHead = messageInfo.extraHead.remove(bodyStyleStartIndex, endIndex - bodyStyleStartIndex + 8);
+            const auto endStyleIndex = messageInfo.extraHead.indexOf(QLatin1StringView("</style>"), bodyStyleStartIndex, Qt::CaseInsensitive);
+            // qDebug() << " endStyleIndex " << endStyleIndex;
+            messageInfo.extraHead = messageInfo.extraHead.remove(bodyStyleStartIndex, endStyleIndex - bodyStyleStartIndex + 8);
         }
         // qDebug() << "AFTER messageInfo.extraHead**********" << messageInfo.extraHead;
     }

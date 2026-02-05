@@ -625,10 +625,10 @@ void DKIMCheckSignatureJob::verifyRSASignature()
     } else if (!result.value()) {
         // Verification failed, retry with canonicalized headers without quotes
         computeHeaderCanonization(false);
-        if (const auto result = doVerifySignature(publicKey.get(), md, signature, mHeaderCanonizationResult.toLatin1()); !result.has_value()) {
+        if (const auto result2 = doVerifySignature(publicKey.get(), md, signature, mHeaderCanonizationResult.toLatin1()); !result2.has_value()) {
             // OpenSSL failure
             return verificationFailed(DKIMError::ImpossibleToVerifySignature);
-        } else if (!result.value()) {
+        } else if (!result2.value()) {
             qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Signature verification failed";
             return verificationFailed(DKIMError::ImpossibleToVerifySignature);
         }
