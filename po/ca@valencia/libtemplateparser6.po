@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-26 00:44+0000\n"
+"POT-Creation-Date: 2026-02-05 00:45+0000\n"
 "PO-Revision-Date: 2024-10-27 13:59+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -205,37 +205,37 @@ msgstr ""
 "-----------------------------------------"
 
 #. i18n: ectx: label, entry (Content), group (CTemplates #$(name))
-#: settings/customtemplates_kfg.kcfg:13
+#: settings/customtemplates_kfg.kcfg:9
 #, kde-format
 msgid "Template content"
 msgstr "Contingut de la plantilla"
 
 #. i18n: ectx: label, entry (Shortcut), group (CTemplates #$(name))
-#: settings/customtemplates_kfg.kcfg:17
+#: settings/customtemplates_kfg.kcfg:13
 #, kde-format
 msgid "Template shortcut"
 msgstr "Drecera de la plantilla"
 
 #. i18n: ectx: label, entry (Type), group (CTemplates #$(name))
-#: settings/customtemplates_kfg.kcfg:21
+#: settings/customtemplates_kfg.kcfg:17
 #, kde-format
 msgid "Template type"
 msgstr "Tipus de plantilla"
 
 #. i18n: ectx: label, entry (StripSignature), group (TemplateParser)
-#: settings/templateparser.kcfg:11
+#: settings/templateparser.kcfg:7
 #, kde-format
 msgid "Remove the signature when replying"
 msgstr "Elimina la signatura en respondre"
 
 #. i18n: ectx: label, entry (SmartQuote), group (TemplateParser)
-#: settings/templateparser.kcfg:15
+#: settings/templateparser.kcfg:11
 #, kde-format
 msgid "Use smart &quoting"
 msgstr "Utilitza el &citat intel·ligent"
 
 #. i18n: ectx: label, entry (ReplyUsingVisualFormat), group (TemplateParser)
-#: settings/templateparser.kcfg:19
+#: settings/templateparser.kcfg:15
 #, kde-format
 msgid ""
 "Reply or forward using the same visual format as the original message (plain "
@@ -245,31 +245,31 @@ msgstr ""
 "(text net o HTML)"
 
 #. i18n: ectx: label, entry (TemplateNewMessage), group (TemplateParser)
-#: settings/templateparser.kcfg:26
+#: settings/templateparser.kcfg:20
 #, kde-format
 msgid "Message template for new message"
 msgstr "Plantilla de missatges per als missatges nous"
 
 #. i18n: ectx: label, entry (TemplateReply), group (TemplateParser)
-#: settings/templateparser.kcfg:30
+#: settings/templateparser.kcfg:24
 #, kde-format
 msgid "Message template for reply"
 msgstr "Plantilla de missatges per a les respostes"
 
 #. i18n: ectx: label, entry (TemplateReplyAll), group (TemplateParser)
-#: settings/templateparser.kcfg:34
+#: settings/templateparser.kcfg:28
 #, kde-format
 msgid "Message template for reply to all"
 msgstr "Plantilla de missatges per a les respostes a tots"
 
 #. i18n: ectx: label, entry (TemplateForward), group (TemplateParser)
-#: settings/templateparser.kcfg:38
+#: settings/templateparser.kcfg:32
 #, kde-format
 msgid "Message template for forward"
 msgstr "Plantilla de missatges per als reenviaments"
 
 #. i18n: ectx: label, entry (QuoteString), group (TemplateParser)
-#: settings/templateparser.kcfg:42
+#: settings/templateparser.kcfg:36
 #, kde-format
 msgid "Quote characters"
 msgstr "Caràcters de citació"

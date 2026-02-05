@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-26 00:44+0000\n"
+"POT-Creation-Date: 2026-02-05 00:45+0000\n"
 "PO-Revision-Date: 2024-05-18 16:44+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -198,37 +198,37 @@ msgstr ""
 "-------------------------------------------------------"
 
 #. i18n: ectx: label, entry (Content), group (CTemplates #$(name))
-#: settings/customtemplates_kfg.kcfg:13
+#: settings/customtemplates_kfg.kcfg:9
 #, kde-format
 msgid "Template content"
 msgstr "樣本內容"
 
 #. i18n: ectx: label, entry (Shortcut), group (CTemplates #$(name))
-#: settings/customtemplates_kfg.kcfg:17
+#: settings/customtemplates_kfg.kcfg:13
 #, kde-format
 msgid "Template shortcut"
 msgstr "樣本快捷鍵"
 
 #. i18n: ectx: label, entry (Type), group (CTemplates #$(name))
-#: settings/customtemplates_kfg.kcfg:21
+#: settings/customtemplates_kfg.kcfg:17
 #, kde-format
 msgid "Template type"
 msgstr "樣本型態"
 
 #. i18n: ectx: label, entry (StripSignature), group (TemplateParser)
-#: settings/templateparser.kcfg:11
+#: settings/templateparser.kcfg:7
 #, kde-format
 msgid "Remove the signature when replying"
 msgstr "回覆時移除簽名"
 
 #. i18n: ectx: label, entry (SmartQuote), group (TemplateParser)
-#: settings/templateparser.kcfg:15
+#: settings/templateparser.kcfg:11
 #, kde-format
 msgid "Use smart &quoting"
 msgstr "使用智慧引言功能(&Q)"
 
 #. i18n: ectx: label, entry (ReplyUsingVisualFormat), group (TemplateParser)
-#: settings/templateparser.kcfg:19
+#: settings/templateparser.kcfg:15
 #, kde-format
 msgid ""
 "Reply or forward using the same visual format as the original message (plain "
@@ -236,31 +236,31 @@ msgid ""
 msgstr "用原信件的視覺格式（純文字還是 HTML）來回覆或轉寄"
 
 #. i18n: ectx: label, entry (TemplateNewMessage), group (TemplateParser)
-#: settings/templateparser.kcfg:26
+#: settings/templateparser.kcfg:20
 #, kde-format
 msgid "Message template for new message"
 msgstr "新信件的樣本"
 
 #. i18n: ectx: label, entry (TemplateReply), group (TemplateParser)
-#: settings/templateparser.kcfg:30
+#: settings/templateparser.kcfg:24
 #, kde-format
 msgid "Message template for reply"
 msgstr "回覆信件的樣本"
 
 #. i18n: ectx: label, entry (TemplateReplyAll), group (TemplateParser)
-#: settings/templateparser.kcfg:34
+#: settings/templateparser.kcfg:28
 #, kde-format
 msgid "Message template for reply to all"
 msgstr "全部回覆信件的樣本"
 
 #. i18n: ectx: label, entry (TemplateForward), group (TemplateParser)
-#: settings/templateparser.kcfg:38
+#: settings/templateparser.kcfg:32
 #, kde-format
 msgid "Message template for forward"
 msgstr "轉寄信件的樣本"
 
 #. i18n: ectx: label, entry (QuoteString), group (TemplateParser)
-#: settings/templateparser.kcfg:42
+#: settings/templateparser.kcfg:36
 #, kde-format
 msgid "Quote characters"
 msgstr "加入引言符號"

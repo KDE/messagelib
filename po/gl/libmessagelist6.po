@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-18 00:44+0000\n"
+"POT-Creation-Date: 2026-02-05 00:44+0000\n"
 "PO-Revision-Date: 2025-01-07 19:49+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -554,14 +554,14 @@ msgid "Ready"
 msgstr "Listo."
 
 #. i18n: ectx: label, entry (MessageToolTipEnabled), group (MessageListView)
-#: core/settings.kcfg:11
+#: core/settings.kcfg:7
 #, kde-format
 msgid "Display tooltips for messages and group headers"
 msgstr ""
 "Amosar indicacións emerxentes para as mensaxes e as cabeceiras de grupo"
 
 #. i18n: ectx: whatsthis, entry (MessageToolTipEnabled), group (MessageListView)
-#: core/settings.kcfg:12
+#: core/settings.kcfg:8
 #, kde-format
 msgid ""
 "Enable this option to display tooltips when hovering over an item in the "

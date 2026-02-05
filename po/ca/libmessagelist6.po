@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-18 00:44+0000\n"
+"POT-Creation-Date: 2026-02-05 00:44+0000\n"
 "PO-Revision-Date: 2025-12-01 12:10+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -557,13 +557,13 @@ msgid "Ready"
 msgstr "Fet"
 
 #. i18n: ectx: label, entry (MessageToolTipEnabled), group (MessageListView)
-#: core/settings.kcfg:11
+#: core/settings.kcfg:7
 #, kde-format
 msgid "Display tooltips for messages and group headers"
 msgstr "Mostra els consells per a les capçaleres dels missatges i dels grups"
 
 #. i18n: ectx: whatsthis, entry (MessageToolTipEnabled), group (MessageListView)
-#: core/settings.kcfg:12
+#: core/settings.kcfg:8
 #, kde-format
 msgid ""
 "Enable this option to display tooltips when hovering over an item in the "

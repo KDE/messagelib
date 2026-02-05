@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-18 00:44+0000\n"
+"POT-Creation-Date: 2026-02-05 00:44+0000\n"
 "PO-Revision-Date: 2009-01-18 17:38+0530\n"
 "Last-Translator: Amanpreet Singh Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjab-l10n@list.sf.net>\n"
@@ -556,13 +556,13 @@ msgid "Ready"
 msgstr "ਤਿਆਰ ਹੈ।"
 
 #. i18n: ectx: label, entry (MessageToolTipEnabled), group (MessageListView)
-#: core/settings.kcfg:11
+#: core/settings.kcfg:7
 #, kde-format
 msgid "Display tooltips for messages and group headers"
 msgstr "ਸੁਨੇਹਿਆਂ ਅਤੇ ਗਰੁੱਪ ਹੈੱਡਰ ਲਈ ਟੂਲ-ਟਿੱਪ ਵੇਖੋ"
 
 #. i18n: ectx: whatsthis, entry (MessageToolTipEnabled), group (MessageListView)
-#: core/settings.kcfg:12
+#: core/settings.kcfg:8
 #, kde-format
 msgid ""
 "Enable this option to display tooltips when hovering over an item in the "

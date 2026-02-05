@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-26 00:44+0000\n"
+"POT-Creation-Date: 2026-02-05 00:45+0000\n"
 "PO-Revision-Date: 2011-10-14 04:25+0300\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -190,37 +190,37 @@ msgstr ""
 "-----------------------------------------"
 
 #. i18n: ectx: label, entry (Content), group (CTemplates #$(name))
-#: settings/customtemplates_kfg.kcfg:13
+#: settings/customtemplates_kfg.kcfg:9
 #, kde-format
 msgid "Template content"
 msgstr "Conținutul șablonului"
 
 #. i18n: ectx: label, entry (Shortcut), group (CTemplates #$(name))
-#: settings/customtemplates_kfg.kcfg:17
+#: settings/customtemplates_kfg.kcfg:13
 #, kde-format
 msgid "Template shortcut"
 msgstr "Acceleratorul șablonului"
 
 #. i18n: ectx: label, entry (Type), group (CTemplates #$(name))
-#: settings/customtemplates_kfg.kcfg:21
+#: settings/customtemplates_kfg.kcfg:17
 #, kde-format
 msgid "Template type"
 msgstr "Tip șablon"
 
 #. i18n: ectx: label, entry (StripSignature), group (TemplateParser)
-#: settings/templateparser.kcfg:11
+#: settings/templateparser.kcfg:7
 #, kde-format
 msgid "Remove the signature when replying"
 msgstr "Elimină semnătura la răspuns"
 
 #. i18n: ectx: label, entry (SmartQuote), group (TemplateParser)
-#: settings/templateparser.kcfg:15
+#: settings/templateparser.kcfg:11
 #, kde-format
 msgid "Use smart &quoting"
 msgstr "Folosește &citare inteligentă"
 
 #. i18n: ectx: label, entry (ReplyUsingVisualFormat), group (TemplateParser)
-#: settings/templateparser.kcfg:19
+#: settings/templateparser.kcfg:15
 #, kde-format
 msgid ""
 "Reply or forward using the same visual format as the original message (plain "
@@ -228,31 +228,31 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: label, entry (TemplateNewMessage), group (TemplateParser)
-#: settings/templateparser.kcfg:26
+#: settings/templateparser.kcfg:20
 #, kde-format
 msgid "Message template for new message"
 msgstr "Șablon de mesaj pentru mesaj nou"
 
 #. i18n: ectx: label, entry (TemplateReply), group (TemplateParser)
-#: settings/templateparser.kcfg:30
+#: settings/templateparser.kcfg:24
 #, kde-format
 msgid "Message template for reply"
 msgstr "Șablon de mesaj pentru răspuns"
 
 #. i18n: ectx: label, entry (TemplateReplyAll), group (TemplateParser)
-#: settings/templateparser.kcfg:34
+#: settings/templateparser.kcfg:28
 #, kde-format
 msgid "Message template for reply to all"
 msgstr "Șablon de mesaj pentru răspuns tuturor"
 
 #. i18n: ectx: label, entry (TemplateForward), group (TemplateParser)
-#: settings/templateparser.kcfg:38
+#: settings/templateparser.kcfg:32
 #, kde-format
 msgid "Message template for forward"
 msgstr "Șablon de mesaj pentru înaintare"
 
 #. i18n: ectx: label, entry (QuoteString), group (TemplateParser)
-#: settings/templateparser.kcfg:42
+#: settings/templateparser.kcfg:36
 #, kde-format
 msgid "Quote characters"
 msgstr "Caractere de citare"

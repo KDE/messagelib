@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-18 00:44+0000\n"
+"POT-Creation-Date: 2026-02-05 00:44+0000\n"
 "PO-Revision-Date: 2014-08-14 15:43+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -555,13 +555,13 @@ msgid "Ready"
 msgstr "Afslaten"
 
 #. i18n: ectx: label, entry (MessageToolTipEnabled), group (MessageListView)
-#: core/settings.kcfg:11
+#: core/settings.kcfg:7
 #, kde-format
 msgid "Display tooltips for messages and group headers"
 msgstr "Kortinformatschonen för Narichten un Koppel-Koppdaten wiesen"
 
 #. i18n: ectx: whatsthis, entry (MessageToolTipEnabled), group (MessageListView)
-#: core/settings.kcfg:12
+#: core/settings.kcfg:8
 #, kde-format
 msgid ""
 "Enable this option to display tooltips when hovering over an item in the "

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-04 00:45+0000\n"
+"POT-Creation-Date: 2026-02-05 00:44+0000\n"
 "PO-Revision-Date: 2025-09-15 12:21+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -1966,43 +1966,43 @@ msgid "Repeat every:"
 msgstr "كرّر كل:"
 
 #. i18n: ectx: label, entry (ActivateQuickTextFormat), group (Composer)
-#: settings/messagecomposer.kcfg:10
+#: settings/messagecomposer.kcfg:6
 #, kde-format
 msgid "Show Quick Text Format Bar"
 msgstr "اعرض شريط التنسيق السريع للنص"
 
 #. i18n: ectx: label, entry (QuoteSelectionOnly), group (Composer)
-#: settings/messagecomposer.kcfg:15
+#: settings/messagecomposer.kcfg:10
 #, kde-format
 msgid "Only quote selected text when replying"
 msgstr "اقتبس النّصّ المحدّد فقط عند الرّدّ"
 
 #. i18n: ectx: label, entry (AutoTextSignature), group (Composer)
-#: settings/messagecomposer.kcfg:20
+#: settings/messagecomposer.kcfg:14
 #, kde-format
 msgid "A&utomatically insert signature"
 msgstr "أ&درج التوقيع آليًّا"
 
 #. i18n: ectx: label, entry (PrependSignature), group (Composer)
-#: settings/messagecomposer.kcfg:24
+#: settings/messagecomposer.kcfg:18
 #, kde-format
 msgid "Insert signature above quoted text"
 msgstr "أدخل التوقيع أعلى النص المقتبس"
 
 #. i18n: ectx: label, entry (DashDashSignature), group (Composer)
-#: settings/messagecomposer.kcfg:28
+#: settings/messagecomposer.kcfg:22
 #, kde-format
 msgid "Prepend separator to signature"
 msgstr "أدرج فاصلًا قبل التوقيع"
 
 #. i18n: ectx: label, entry (ShowBalooSearchInComposer), group (Composer)
-#: settings/messagecomposer.kcfg:33
+#: settings/messagecomposer.kcfg:26
 #, kde-format
 msgid "Use addresses indexed from emails for autocompletion"
 msgstr "استخدم العناوين المُفهرسة من رسائل البريد الإلكتروني للإكمال الآليّ"
 
 #. i18n: ectx: whatsthis, entry (ShowBalooSearchInComposer), group (Composer)
-#: settings/messagecomposer.kcfg:34
+#: settings/messagecomposer.kcfg:27
 #, kde-format
 msgid ""
 "Disable this option if you only want contacts from your addressbooks to "
@@ -2012,13 +2012,13 @@ msgstr ""
 "الإكمال الآليّ في حقول عنوان المؤلف."
 
 #. i18n: ectx: label, entry (ShowRecentAddressesInComposer), group (Composer)
-#: settings/messagecomposer.kcfg:39
+#: settings/messagecomposer.kcfg:31
 #, kde-format
 msgid "Use recent addresses for autocompletion"
 msgstr "استخدم العناوين الأخيرة للإكمال الآليّ"
 
 #. i18n: ectx: whatsthis, entry (ShowRecentAddressesInComposer), group (Composer)
-#: settings/messagecomposer.kcfg:40
+#: settings/messagecomposer.kcfg:32
 #, kde-format
 msgid ""
 "Disable this option if you do not want recently used addresses to appear in "
@@ -2028,49 +2028,49 @@ msgstr ""
 "الإكمال الآليّ في حقول عناوين المؤلف."
 
 #. i18n: ectx: label, entry (MaximumRecipients), group (Composer)
-#: settings/messagecomposer.kcfg:45
+#: settings/messagecomposer.kcfg:36
 #, kde-format
 msgid "Maximum number of recipient entries:"
 msgstr "الحد الأقصى لعدد إدخالات المستلمين:"
 
 #. i18n: ectx: label, entry (WordWrap), group (Composer)
-#: settings/messagecomposer.kcfg:50
+#: settings/messagecomposer.kcfg:40
 #, kde-format
 msgid "Word &wrap at column:"
 msgstr "الت&فاف الكلمات في العمود:"
 
 #. i18n: ectx: label, entry (ImprovePlainTextOfHtmlMessage), group (Composer)
-#: settings/messagecomposer.kcfg:60
+#: settings/messagecomposer.kcfg:50
 #, kde-format
 msgid "Improve plain text version of HTML message"
 msgstr "حسّن إصدار النص العادي لرسالة HTML"
 
 #. i18n: ectx: label, entry (CryptoAutoSign), group (Composer)
-#: settings/messagecomposer.kcfg:64
+#: settings/messagecomposer.kcfg:54
 #, kde-format
 msgid "Sign all messages, if possible"
 msgstr "وقّع جميع الرسائل، إذا كان ذلك ممكنا"
 
 #. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
-#: settings/messagecomposer.kcfg:68
+#: settings/messagecomposer.kcfg:58
 #, kde-format
 msgid "Enable encryption, if we found keys for all recipients"
 msgstr "مكّن التعمية إذا وجدنا مفاتيح لجميع المستلمين"
 
 #. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
-#: settings/messagecomposer.kcfg:72
+#: settings/messagecomposer.kcfg:62
 #, kde-format
 msgid "Warn before sending unencrypted messages"
 msgstr "حذّر قبل إرسال رسائل غير معماة"
 
 #. i18n: ectx: label, entry (CryptoWarningUnsigned), group (Composer)
-#: settings/messagecomposer.kcfg:76
+#: settings/messagecomposer.kcfg:66
 #, kde-format
 msgid "Warn before sending unsigned messages"
 msgstr "تحذير قبل إرسال رسائل غير موقعة"
 
 #. i18n: ectx: label, entry (CryptoWarnWhenNearExpire), group (Composer)
-#: settings/messagecomposer.kcfg:80
+#: settings/messagecomposer.kcfg:70
 #, kde-format
 msgid "Warn if certificates/keys expire soon (configure thresholds below)"
 msgstr ""
@@ -2078,7 +2078,7 @@ msgstr ""
 
 #. i18n: ectx: label, entry (CryptoWarnOwnEncrKeyNearExpiryThresholdDays), group (Composer)
 #. i18n: ectx: label, entry (CryptoWarnEncrKeyNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg:84 settings/messagecomposer.kcfg:88
+#: settings/messagecomposer.kcfg:74 settings/messagecomposer.kcfg:78
 #, kde-format
 msgid ""
 "The minimum number of days that the encryption certificate should be valid "
@@ -2088,7 +2088,7 @@ msgstr ""
 "التحذير"
 
 #. i18n: ectx: label, entry (CryptoWarnEncrChaincertNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg:92
+#: settings/messagecomposer.kcfg:82
 #, kde-format
 msgid ""
 "The minimum number of days that all certificates in the chain should be "
@@ -2098,7 +2098,7 @@ msgstr ""
 "قبل إصدار التحذير"
 
 #. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg:96
+#: settings/messagecomposer.kcfg:86
 #, kde-format
 msgid ""
 "The minimum number of days that the root certificate should be valid before "
@@ -2108,7 +2108,7 @@ msgstr ""
 "التحذير"
 
 #. i18n: ectx: label, entry (CryptoShowKeysForApproval), group (Composer)
-#: settings/messagecomposer.kcfg:100
+#: settings/messagecomposer.kcfg:90
 #, kde-format
 msgid ""
 "Always show the list of encryption keys to select the one which will be used"

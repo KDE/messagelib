@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-14 00:43+0000\n"
+"POT-Creation-Date: 2026-02-05 00:44+0000\n"
 "PO-Revision-Date: 2010-02-21 12:06+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -256,7 +256,7 @@ msgid "Sign this attachment"
 msgstr "Signer vedlegget"
 
 #. i18n: ectx: whatsthis, entry (OverrideCharacterEncoding), group (Reader)
-#: settings/messagecore.kcfg:32
+#: settings/messagecore.kcfg:25
 #, kde-format
 msgid ""
 "Changing this from its default 'Auto' will force the use of the specified "
@@ -264,43 +264,43 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: label, entry (QuotedText3), group (Reader)
-#: settings/messagecore.kcfg:35
+#: settings/messagecore.kcfg:28
 #, kde-format
 msgid "This is the color used in the 3rd level of quoted text"
 msgstr ""
 
 #. i18n: ectx: label, entry (QuotedText2), group (Reader)
-#: settings/messagecore.kcfg:39
+#: settings/messagecore.kcfg:32
 #, kde-format
 msgid "This is the color used in the 2nd level of quoted text"
 msgstr ""
 
 #. i18n: ectx: label, entry (QuotedText1), group (Reader)
-#: settings/messagecore.kcfg:43
+#: settings/messagecore.kcfg:36
 #, kde-format
 msgid "This is the color used in the 1st level of quoted text"
 msgstr ""
 
 #. i18n: ectx: label, entry (DisplayOwnIdentity), group (Reader)
-#: settings/messagecore.kcfg:48
+#: settings/messagecore.kcfg:41
 #, kde-format
 msgid "Display Own Identity"
 msgstr ""
 
 #. i18n: ectx: label, entry (ReplaceReplyPrefix), group (Composer)
-#: settings/messagecore.kcfg:58
+#: settings/messagecore.kcfg:49
 #, kde-format
 msgid "Replace recognized prefi&x with \"Re:\""
 msgstr ""
 
 #. i18n: ectx: label, entry (ReplaceForwardPrefix), group (Composer)
-#: settings/messagecore.kcfg:66
+#: settings/messagecore.kcfg:56
 #, kde-format
 msgid "Replace recognized prefix with \"&Fwd:\""
 msgstr ""
 
 #. i18n: ectx: label, entry (MaximumAttachmentSize), group (Composer)
-#: settings/messagecore.kcfg:71
+#: settings/messagecore.kcfg:60
 #, kde-format
 msgid ""
 "The maximum size in bits that email attachments are allowed to have (-1 for "

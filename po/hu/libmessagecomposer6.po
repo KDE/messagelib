@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-04 00:45+0000\n"
+"POT-Creation-Date: 2026-02-05 00:44+0000\n"
 "PO-Revision-Date: 2025-11-08 22:31+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -1978,43 +1978,43 @@ msgid "Repeat every:"
 msgstr "Ismétlődés:"
 
 #. i18n: ectx: label, entry (ActivateQuickTextFormat), group (Composer)
-#: settings/messagecomposer.kcfg:10
+#: settings/messagecomposer.kcfg:6
 #, kde-format
 msgid "Show Quick Text Format Bar"
 msgstr "Gyors szövegformázó sáv megjelenítése"
 
 #. i18n: ectx: label, entry (QuoteSelectionOnly), group (Composer)
-#: settings/messagecomposer.kcfg:15
+#: settings/messagecomposer.kcfg:10
 #, kde-format
 msgid "Only quote selected text when replying"
 msgstr "Válasz esetén csak a kijelölt szöveget idézze"
 
 #. i18n: ectx: label, entry (AutoTextSignature), group (Composer)
-#: settings/messagecomposer.kcfg:20
+#: settings/messagecomposer.kcfg:14
 #, kde-format
 msgid "A&utomatically insert signature"
 msgstr "A&utomatikus aláírásbeszúrás"
 
 #. i18n: ectx: label, entry (PrependSignature), group (Composer)
-#: settings/messagecomposer.kcfg:24
+#: settings/messagecomposer.kcfg:18
 #, kde-format
 msgid "Insert signature above quoted text"
 msgstr "Aláírás beszúrása az idézett szöveg fölé"
 
 #. i18n: ectx: label, entry (DashDashSignature), group (Composer)
-#: settings/messagecomposer.kcfg:28
+#: settings/messagecomposer.kcfg:22
 #, kde-format
 msgid "Prepend separator to signature"
 msgstr "Elválasztó az aláírás elé"
 
 #. i18n: ectx: label, entry (ShowBalooSearchInComposer), group (Composer)
-#: settings/messagecomposer.kcfg:33
+#: settings/messagecomposer.kcfg:26
 #, kde-format
 msgid "Use addresses indexed from emails for autocompletion"
 msgstr "E-mailekből indexelt címek használata automatikus kiegészítéshez"
 
 #. i18n: ectx: whatsthis, entry (ShowBalooSearchInComposer), group (Composer)
-#: settings/messagecomposer.kcfg:34
+#: settings/messagecomposer.kcfg:27
 #, kde-format
 msgid ""
 "Disable this option if you only want contacts from your addressbooks to "
@@ -2025,13 +2025,13 @@ msgstr ""
 "kiegészítési listában."
 
 #. i18n: ectx: label, entry (ShowRecentAddressesInComposer), group (Composer)
-#: settings/messagecomposer.kcfg:39
+#: settings/messagecomposer.kcfg:31
 #, kde-format
 msgid "Use recent addresses for autocompletion"
 msgstr "Nemrég használt címek használata automatikus kiegészítéshez"
 
 #. i18n: ectx: whatsthis, entry (ShowRecentAddressesInComposer), group (Composer)
-#: settings/messagecomposer.kcfg:40
+#: settings/messagecomposer.kcfg:32
 #, kde-format
 msgid ""
 "Disable this option if you do not want recently used addresses to appear in "
@@ -2041,49 +2041,49 @@ msgstr ""
 "megjelenjenek az üzenetszerkesztő címmezőinél a kiegészítési listában."
 
 #. i18n: ectx: label, entry (MaximumRecipients), group (Composer)
-#: settings/messagecomposer.kcfg:45
+#: settings/messagecomposer.kcfg:36
 #, kde-format
 msgid "Maximum number of recipient entries:"
 msgstr "A címzett bejegyzések maximális száma:"
 
 #. i18n: ectx: label, entry (WordWrap), group (Composer)
-#: settings/messagecomposer.kcfg:50
+#: settings/messagecomposer.kcfg:40
 #, kde-format
 msgid "Word &wrap at column:"
 msgstr "A szótör&delés oszlopa:"
 
 #. i18n: ectx: label, entry (ImprovePlainTextOfHtmlMessage), group (Composer)
-#: settings/messagecomposer.kcfg:60
+#: settings/messagecomposer.kcfg:50
 #, kde-format
 msgid "Improve plain text version of HTML message"
 msgstr "A HTML üzenet egyszerű szöveges verziójának feljavítása"
 
 #. i18n: ectx: label, entry (CryptoAutoSign), group (Composer)
-#: settings/messagecomposer.kcfg:64
+#: settings/messagecomposer.kcfg:54
 #, kde-format
 msgid "Sign all messages, if possible"
 msgstr "Minden üzenet aláírása, ha lehetséges"
 
 #. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
-#: settings/messagecomposer.kcfg:68
+#: settings/messagecomposer.kcfg:58
 #, kde-format
 msgid "Enable encryption, if we found keys for all recipients"
 msgstr "Titkosítás bekapcsolása, ha minden címzetthez található kulcs"
 
 #. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
-#: settings/messagecomposer.kcfg:72
+#: settings/messagecomposer.kcfg:62
 #, kde-format
 msgid "Warn before sending unencrypted messages"
 msgstr "Figyelmeztetés titkosítatlan üzenetek küldése előtt"
 
 #. i18n: ectx: label, entry (CryptoWarningUnsigned), group (Composer)
-#: settings/messagecomposer.kcfg:76
+#: settings/messagecomposer.kcfg:66
 #, kde-format
 msgid "Warn before sending unsigned messages"
 msgstr "Figyelmeztetés aláíratlan üzenetek küldése előtt"
 
 #. i18n: ectx: label, entry (CryptoWarnWhenNearExpire), group (Composer)
-#: settings/messagecomposer.kcfg:80
+#: settings/messagecomposer.kcfg:70
 #, kde-format
 msgid "Warn if certificates/keys expire soon (configure thresholds below)"
 msgstr ""
@@ -2092,7 +2092,7 @@ msgstr ""
 
 #. i18n: ectx: label, entry (CryptoWarnOwnEncrKeyNearExpiryThresholdDays), group (Composer)
 #. i18n: ectx: label, entry (CryptoWarnEncrKeyNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg:84 settings/messagecomposer.kcfg:88
+#: settings/messagecomposer.kcfg:74 settings/messagecomposer.kcfg:78
 #, kde-format
 msgid ""
 "The minimum number of days that the encryption certificate should be valid "
@@ -2102,7 +2102,7 @@ msgstr ""
 "figyelmeztet"
 
 #. i18n: ectx: label, entry (CryptoWarnEncrChaincertNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg:92
+#: settings/messagecomposer.kcfg:82
 #, kde-format
 msgid ""
 "The minimum number of days that all certificates in the chain should be "
@@ -2112,7 +2112,7 @@ msgstr ""
 "mielőtt figyelmeztet"
 
 #. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
-#: settings/messagecomposer.kcfg:96
+#: settings/messagecomposer.kcfg:86
 #, kde-format
 msgid ""
 "The minimum number of days that the root certificate should be valid before "
@@ -2122,7 +2122,7 @@ msgstr ""
 "figyelmeztet"
 
 #. i18n: ectx: label, entry (CryptoShowKeysForApproval), group (Composer)
-#: settings/messagecomposer.kcfg:100
+#: settings/messagecomposer.kcfg:90
 #, kde-format
 msgid ""
 "Always show the list of encryption keys to select the one which will be used"

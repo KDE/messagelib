@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-04 00:45+0000\n"
+"POT-Creation-Date: 2026-02-05 00:44+0000\n"
 "PO-Revision-Date: 2023-03-08 09:12+0000\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <kde-i18n-pt@kde.org>\n"
@@ -1152,13 +1152,13 @@ msgid "Short url '%1' redirects to '%2'."
 msgstr "O URL curto '%1' aponta para '%2'."
 
 #. i18n: ectx: label, entry (PrintSelectedText), group (Print)
-#: settings/messageviewer.kcfg:11
+#: settings/messageviewer.kcfg:7
 #, kde-format
 msgid "Only print selected text in viewer"
 msgstr "Imprimir apenas o texto seleccionado no visualizador"
 
 #. i18n: ectx: label, entry (RespectExpandCollapseSettings), group (Print)
-#: settings/messageviewer.kcfg:15
+#: settings/messageviewer.kcfg:11
 #, kde-format
 msgid ""
 "Respect expand/collapse quote mark which is defined in settings during "
@@ -1166,7 +1166,7 @@ msgid ""
 msgstr "Respeitar as definições de marcas de expansão/fecho ao imprimir."
 
 #. i18n: ectx: label, entry (PrintBackgroundColorImages), group (Print)
-#: settings/messageviewer.kcfg:19
+#: settings/messageviewer.kcfg:15
 #, kde-format
 msgid ""
 "Specifies whether the background color and images are also drawn when the "
@@ -1176,7 +1176,7 @@ msgstr ""
 "da página."
 
 #. i18n: ectx: label, entry (AlwaysShowEncryptionSignatureDetails), group (Print)
-#: settings/messageviewer.kcfg:23
+#: settings/messageviewer.kcfg:19
 #, kde-format
 msgid "Always show encryption/signature details when we print message"
 msgstr ""
@@ -1184,7 +1184,7 @@ msgstr ""
 "mensagem"
 
 #. i18n: ectx: label, entry (MinimumFontSize), group (Fonts)
-#: settings/messageviewer.kcfg:34
+#: settings/messageviewer.kcfg:28
 #, kde-format
 msgid "When we render html do not use font size inferior to minimum size."
 msgstr ""
@@ -1192,37 +1192,37 @@ msgstr ""
 "mínimo."
 
 #. i18n: ectx: label, entry (BodyFont), group (Fonts)
-#: settings/messageviewer.kcfg:38
+#: settings/messageviewer.kcfg:32
 #, kde-format
 msgid "Specifies the font to use for the message body"
 msgstr "Define o tipo de letra a usar no corpo da mensagem"
 
 #. i18n: ectx: label, entry (PrintFont), group (Fonts)
-#: settings/messageviewer.kcfg:42
+#: settings/messageviewer.kcfg:36
 #, kde-format
 msgid "Specifies the font to use for printing"
 msgstr "Define o tipo de letra a usar na impressão"
 
 #. i18n: ectx: label, entry (CheckPhishingUrl), group (Security)
-#: settings/messageviewer.kcfg:49
+#: settings/messageviewer.kcfg:42
 #, kde-format
 msgid "Check if url can be a phishing"
 msgstr "Verificar se o URL pode ser de burla"
 
 #. i18n: ectx: label, entry (CloseAfterReplyOrForward), group (Reader)
-#: settings/messageviewer.kcfg:55
+#: settings/messageviewer.kcfg:48
 #, kde-format
 msgid "Close message window after replying or forwarding"
 msgstr "Fechar a janela da mensagem depois de responder ou encaminhar"
 
 #. i18n: ectx: label, entry (ShowExpandQuotesMark), group (Reader)
-#: settings/messageviewer.kcfg:72
+#: settings/messageviewer.kcfg:62
 #, kde-format
 msgid "Show expand/collapse quote marks"
 msgstr "Mostrar marcas de citação para expandir/recolher"
 
 #. i18n: ectx: whatsthis, entry (ShowExpandQuotesMark), group (Reader)
-#: settings/messageviewer.kcfg:73
+#: settings/messageviewer.kcfg:63
 #, kde-format
 msgid ""
 "Enable this option to show different levels of quoted text. Disable to hide "
@@ -1232,94 +1232,94 @@ msgstr ""
 "Desactive para esconder os níveis do texto citado."
 
 #. i18n: ectx: label, entry (CollapseQuoteLevelSpin), group (Reader)
-#: settings/messageviewer.kcfg:76
+#: settings/messageviewer.kcfg:66
 #, kde-format
 msgid "Automatic collapse level:"
 msgstr "Nível de recolhimento automático:"
 
 #. i18n: ectx: label, entry (ShrinkQuotes), group (Reader)
-#: settings/messageviewer.kcfg:83
+#: settings/messageviewer.kcfg:73
 #, kde-format
 msgid "Reduce font size for quoted text"
 msgstr "Reduzir o tamanho do texto citado"
 
 #. i18n: ectx: whatsthis, entry (ShrinkQuotes), group (Reader)
-#: settings/messageviewer.kcfg:84
+#: settings/messageviewer.kcfg:74
 #, kde-format
 msgid "Enable this option to show quoted text with a smaller font."
 msgstr ""
 "Active esta opção para mostrar o texto citado com um tamanho mais pequeno."
 
 #. i18n: ectx: label, entry (AlwaysDecrypt), group (Reader)
-#: settings/messageviewer.kcfg:88
+#: settings/messageviewer.kcfg:78
 #, kde-format
 msgid "Always decrypt messages when viewing or ask before decrypting"
 msgstr ""
 "Descodificar sempre as mensagens ao vê-las ou perguntar antes de descodificar"
 
 #. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
-#: settings/messageviewer.kcfg:91
+#: settings/messageviewer.kcfg:81
 #, kde-format
 msgid "Message Structure Viewer"
 msgstr "Visualizador da Estrutura da Mensagem"
 
 #. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
-#: settings/messageviewer.kcfg:94
+#: settings/messageviewer.kcfg:84
 #, kde-format
 msgid "Show never"
 msgstr "Nunca mostrar"
 
 #. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
-#: settings/messageviewer.kcfg:97
+#: settings/messageviewer.kcfg:87
 #, kde-format
 msgid "Show always"
 msgstr "Mostrar sempre"
 
 #. i18n: ectx: label, entry (headerPluginStyleName), group (Reader)
 #. i18n: ectx: label, entry (headerStyle), group (Reader)
-#: settings/messageviewer.kcfg:109 settings/messageviewer.kcfg:115
+#: settings/messageviewer.kcfg:99 settings/messageviewer.kcfg:103
 #, kde-format
 msgid "What style of headers should be displayed"
 msgstr "Qual o estilo de cabeçalhos a apresentar"
 
 #. i18n: ectx: label, entry (headerSetDisplayed), group (Reader)
-#: settings/messageviewer.kcfg:119
+#: settings/messageviewer.kcfg:107
 #, kde-format
 msgid "How much of headers should be displayed"
 msgstr "Que parte dos cabeçalhos a mostrar"
 
 #. i18n: ectx: label, entry (htmlMail), group (Reader)
-#: settings/messageviewer.kcfg:123
+#: settings/messageviewer.kcfg:111
 #, kde-format
 msgid "Prefer HTML to plain text"
 msgstr "Preferir o HTML ao texto simples"
 
 #. i18n: ectx: label, entry (htmlLoadExternal), group (Reader)
-#: settings/messageviewer.kcfg:127
+#: settings/messageviewer.kcfg:115
 #, kde-format
 msgid "Allow messages to load external references from the Internet"
 msgstr "Permitir o carregamento das referências externas da Internet"
 
 #. i18n: ectx: label, entry (attachmentStrategy), group (Reader)
-#: settings/messageviewer.kcfg:131
+#: settings/messageviewer.kcfg:119
 #, kde-format
 msgid "How attachments are shown"
 msgstr "Como são apresentados os anexos"
 
 #. i18n: ectx: label, entry (RecycleQuoteColors), group (Reader)
-#: settings/messageviewer.kcfg:135
+#: settings/messageviewer.kcfg:123
 #, kde-format
 msgid "Specifies whether to reuse the quote color, beyond the 3rd level"
 msgstr "Indica se deve reutilizar a cor da citação para além do 3º nível"
 
 #. i18n: ectx: label, entry (AccessKeyEnabled), group (Reader)
-#: settings/messageviewer.kcfg:139
+#: settings/messageviewer.kcfg:127
 #, kde-format
 msgid "Activate Access Key"
 msgstr "Activar a Tecla de Acesso"
 
 #. i18n: ectx: label, entry (ScamDetectionEnabled), group (Reader)
-#: settings/messageviewer.kcfg:143
+#: settings/messageviewer.kcfg:131
 #, kde-format
 msgid ""
 "KMail can analyze messages for suspected email scams by looking for common "
@@ -1329,31 +1329,31 @@ msgstr ""
 "para enganar o utilizador"
 
 #. i18n: ectx: label, entry (ScamDetectionWhiteList), group (Reader)
-#: settings/messageviewer.kcfg:147
+#: settings/messageviewer.kcfg:135
 #, kde-format
 msgid "List of emails in scam white list"
 msgstr "Lista de e-mails nas permissões de burlas"
 
 #. i18n: ectx: label, entry (MailTrackingUrlEnabled), group (Reader)
-#: settings/messageviewer.kcfg:151
+#: settings/messageviewer.kcfg:139
 #, kde-format
 msgid "Scan emails for tracking URLs"
 msgstr "Sondar os e-mails à procura de URL's de seguimento"
 
 #. i18n: ectx: label, entry (notSendWhenEncrypted), group (MDN)
-#: settings/messageviewer.kcfg:157
+#: settings/messageviewer.kcfg:145
 #, kde-format
 msgid "Do not send MDNs in response to encrypted messages"
 msgstr "Não enviar MDNs em resposta a mensagens cifradas"
 
 #. i18n: ectx: label, entry (LegacyMangleFromToHeaders), group (Invitations)
-#: settings/messageviewer.kcfg:179
+#: settings/messageviewer.kcfg:165
 #, kde-format
 msgid "Mangle From:/To: headers in replies to replies"
 msgstr "Codificar os cabeçalhos De:/Para: nas respostas aos convites"
 
 #. i18n: ectx: whatsthis, entry (LegacyMangleFromToHeaders), group (Invitations)
-#: settings/messageviewer.kcfg:180
+#: settings/messageviewer.kcfg:166
 #, kde-format
 msgid ""
 "Microsoft Outlook has a number of shortcomings in its implementation of the "
@@ -1367,13 +1367,13 @@ msgstr ""
 "activar esta opção."
 
 #. i18n: ectx: label, entry (LegacyBodyInvites), group (Invitations)
-#: settings/messageviewer.kcfg:185
+#: settings/messageviewer.kcfg:170
 #, kde-format
 msgid "Send groupware invitations in the mail body"
 msgstr "Enviar os convites no conteúdo da mensagem"
 
 #. i18n: ectx: whatsthis, entry (LegacyBodyInvites), group (Invitations)
-#: settings/messageviewer.kcfg:186
+#: settings/messageviewer.kcfg:171
 #, kde-format
 msgid ""
 "Microsoft Outlook has a number of shortcomings in its implementation of the "
@@ -1387,13 +1387,13 @@ msgstr ""
 "activar esta opção."
 
 #. i18n: ectx: label, entry (ExchangeCompatibleInvitations), group (Invitations)
-#: settings/messageviewer.kcfg:191
+#: settings/messageviewer.kcfg:175
 #, kde-format
 msgid "Exchange-compatible invitation naming"
 msgstr "Nomenclatura de convites compatível com o Exchange"
 
 #. i18n: ectx: whatsthis, entry (ExchangeCompatibleInvitations), group (Invitations)
-#: settings/messageviewer.kcfg:192
+#: settings/messageviewer.kcfg:176
 #, kde-format
 msgid ""
 "Microsoft Outlook, when used in combination with a Microsoft Exchange "
@@ -1407,13 +1407,13 @@ msgstr ""
 "'groupware' num formato que o Microsoft Exchange compreenda."
 
 #. i18n: ectx: label, entry (AutomaticSending), group (Invitations)
-#: settings/messageviewer.kcfg:197
+#: settings/messageviewer.kcfg:180
 #, kde-format
 msgid "Automatic invitation sending"
 msgstr "Envio automático de convites"
 
 #. i18n: ectx: whatsthis, entry (AutomaticSending), group (Invitations)
-#: settings/messageviewer.kcfg:198
+#: settings/messageviewer.kcfg:181
 #, kde-format
 msgid ""
 "When this is checked, you will not see the mail composer window. Instead, "
@@ -1430,13 +1430,13 @@ msgstr ""
 
 #. i18n: ectx: label, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
 #. i18n: ectx: property (text), widget (QCheckBox, mDeleteInvitations)
-#: settings/messageviewer.kcfg:203 ui/invitationsettings.ui:74
+#: settings/messageviewer.kcfg:185 ui/invitationsettings.ui:74
 #, kde-format
 msgid "Delete invitation emails after the reply to them has been sent"
 msgstr "Apagar os e-mails de convite após ter enviado a resposta para eles"
 
 #. i18n: ectx: whatsthis, entry (DeleteInvitationEmailsAfterSendingReply), group (Invitations)
-#: settings/messageviewer.kcfg:204
+#: settings/messageviewer.kcfg:186
 #, kde-format
 msgid ""
 "When this is checked, received invitation emails that have been replied to "
@@ -1447,13 +1447,13 @@ msgstr ""
 "sido enviada a resposta com sucesso."
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
-#: settings/messageviewer.kcfg:228 viewer/viewer_p.cpp:1559
+#: settings/messageviewer.kcfg:206 viewer/viewer_p.cpp:1559
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "Usar um Tipo de &Letra Monoespaçado"
 
 #. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
-#: settings/messageviewer.kcfg:235
+#: settings/messageviewer.kcfg:212
 #, fuzzy, kde-format
 #| msgid "The most recent selected folder using for Todo."
 msgid "The most recent selected folder used for Todo."
@@ -1461,14 +1461,14 @@ msgstr ""
 "A pasta seleccionada mais recentemente para usar com os itens por-fazer."
 
 #. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
-#: settings/messageviewer.kcfg:241
+#: settings/messageviewer.kcfg:218
 #, fuzzy, kde-format
 #| msgid "The most recent selected folder using for Event."
 msgid "The most recent selected folder used for Event."
 msgstr "A pasta seleccionada mais recentemente para usar com os eventos."
 
 #. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
-#: settings/messageviewer.kcfg:247
+#: settings/messageviewer.kcfg:224
 #, fuzzy, kde-format
 #| msgid "The most recent selected folder using for Notes."
 msgid "The most recent selected folder used for Notes."
