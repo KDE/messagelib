@@ -61,7 +61,7 @@ inline QVariant TypeAccessor<const KMime::Headers::Generics::AddressList *>::loo
 }
 
 template<>
-inline QVariant TypeAccessor<QByteArray &>::lookUp(const QByteArray &object, const QString &property)
+inline QVariant TypeAccessor<QByteArray &>::lookUp(const QByteArray &object, [[maybe_unused]] const QString &property)
 {
     Q_UNUSED(property);
     return object;
