@@ -63,6 +63,7 @@ inline QVariant TypeAccessor<const KMime::Headers::Generics::AddressList *>::loo
 template<>
 inline QVariant TypeAccessor<QByteArray &>::lookUp(const QByteArray &object, const QString &property)
 {
+    Q_UNUSED(property);
     return object;
 }
 }
@@ -243,6 +244,7 @@ public:
 
     QVariant format(KMime::Message *message, MimeTreeParser::NodeHelper *nodeHelper, bool showEmoticons) override
     {
+        Q_UNUSED(showEmoticons);
         const auto messageIdHeader = nodeHelper->mailHeaderAsBase("Message-Id", message);
         if (messageIdHeader != nullptr) {
             return static_cast<const KMime::Headers::MessageID *>(messageIdHeader)->identifier();

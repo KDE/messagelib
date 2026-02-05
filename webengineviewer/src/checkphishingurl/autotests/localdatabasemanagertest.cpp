@@ -22,6 +22,7 @@ protected:
     void downloadDataBase(const QString &clientState) override
     {
         // don't actually download anything
+        Q_UNUSED(clientState);
     }
 };
 

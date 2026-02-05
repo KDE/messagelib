@@ -349,7 +349,6 @@ void CryptoComposerTest::testProtectedHeaders()
     QFETCH(QString, data);
     QFETCH(bool, sign);
     QFETCH(bool, encrypt);
-    QFETCH(Headers::contentEncoding, cte);
 
     auto composerJob = new ComposerJob;
 
@@ -466,7 +465,6 @@ void CryptoComposerTest::testOpenPGPInline_data()
     QTest::addColumn<QString>("data");
     QTest::addColumn<bool>("sign");
     QTest::addColumn<bool>("encrypt");
-    QTest::addColumn<Headers::contentEncoding>("cte");
 
     QString data(u"All happy families are alike; each unhappy family is unhappy in its own way."_s);
     QTest::newRow("SignOpenPGPInline") << data << true << false << Headers::CE7Bit;

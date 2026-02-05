@@ -71,8 +71,6 @@ bool MainTextJobPrivate::chooseSourcePlainText()
 
 bool MainTextJobPrivate::chooseCharsetAndEncode()
 {
-    Q_Q(MainTextJob);
-
     Q_ASSERT(textPart);
     QString toTry = sourcePlainText;
     if (textPart->isHtmlUsed()) {
@@ -123,8 +121,6 @@ SinglepartJob *MainTextJobPrivate::createHtmlJob()
 
 SinglepartJob *MainTextJobPrivate::createImageJob(const QSharedPointer<KPIMTextEdit::EmbeddedImage> &image)
 {
-    Q_Q(MainTextJob);
-
     // The image is a PNG encoded with base64.
     auto cjob = new SinglepartJob; // No parent.
     cjob->contentType()->setMimeType("image/png");
