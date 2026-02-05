@@ -1540,9 +1540,9 @@ void ComposerViewBase::addAttachmentPart(const KMime::Content *partToAttach)
     if (auto cd = partToAttach->contentDescription()) {
         part->setDescription(cd->asUnicodeString());
     }
-    if (auto ct = partToAttach->contentType()) {
-        if (ct->hasParameter("name")) {
-            part->setName(ct->parameter("name"));
+    if (auto pct = partToAttach->contentType()) {
+        if (pct->hasParameter("name")) {
+            part->setName(pct->parameter("name"));
         }
     }
     if (auto cd = partToAttach->contentDisposition()) {

@@ -1245,7 +1245,7 @@ void KeyResolver::dump() const
         unsigned int i = 0;
         for (auto sit = it->second.splitInfos.begin(), sitEnd = it->second.splitInfos.end(); sit != sitEnd; ++sit, ++i) {
             qCDebug(MESSAGECOMPOSER_LOG) << "  SplitInfo #" << i << " encryption keys: ";
-            for (auto kit = sit->keys.begin(), sitEnd = sit->keys.end(); kit != sitEnd; ++kit) {
+            for (auto kit = sit->keys.begin(), kitEnd = sit->keys.end(); kit != kitEnd; ++kit) {
                 qCDebug(MESSAGECOMPOSER_LOG) << "  " << kit->shortKeyID();
             }
             qCDebug(MESSAGECOMPOSER_LOG) << "  SplitInfo #" << i << " recipients: " << qPrintable(sit->recipients.join(QLatin1StringView(", ")));
@@ -1273,7 +1273,7 @@ ResolverResult KeyResolver::showKeyApprovalDialog(bool &finalySendUnencrypted)
     std::copy(d->mOpenPGPEncryptToSelfKeys.begin(), d->mOpenPGPEncryptToSelfKeys.end(), std::back_inserter(senderKeys));
     std::copy(d->mSMIMEEncryptToSelfKeys.begin(), d->mSMIMEEncryptToSelfKeys.end(), std::back_inserter(senderKeys));
 
-    KCursorSaver saver(Qt::WaitCursor);
+    KCursorSaver keyApprovalSaver(Qt::WaitCursor);
 
     QPointer<Kleo::KeyApprovalDialog> dlg = new Kleo::KeyApprovalDialog(items, senderKeys);
 
@@ -1356,7 +1356,7 @@ ResolverResult KeyResolver::showKeyApprovalDialog(bool &finalySendUnencrypted)
                                                         "You did not select encryption keys for some of "
                                                         "the recipients: these persons will not be able to "
                                                         "decrypt the message if you encrypt it.");
-        KCursorSaver saver(Qt::WaitCursor);
+        KCursorSaver missingKeySaver(Qt::WaitCursor);
         if (KMessageBox::warningContinueCancel(nullptr, msg, i18nc("@title:window", "Missing Key Warning"), KGuiItem(i18nc("@action:button", "&Encrypt")))
             == KMessageBox::Cancel) {
             return Canceled;

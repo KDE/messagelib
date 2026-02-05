@@ -468,12 +468,12 @@ void View::applyThemeColumns()
             // also give more space to the first ones and less space to the last ones
             qreal available = viewportWidth - totalVisibleWidth;
 
-            for (int idx = 0; idx < columns.count(); ++idx) {
-                Theme::Column *column = columns.at(idx);
-                if ((column->currentlyVisible() || (idx == 0)) && column->containsTextItems()) {
+            for (int colidx = 0; colidx < columns.count(); ++colidx) {
+                Theme::Column *column = columns.at(colidx);
+                if ((column->currentlyVisible() || (colidx == 0)) && column->containsTextItems()) {
                     // give more space to this column
                     available /= 2; // eat half of the available space
-                    lColumnWidths[idx] += available; // and give it to this column
+                    lColumnWidths[colidx] += available; // and give it to this column
                     if (available < 1) {
                         break; // no more space to give away
                     }
@@ -1081,11 +1081,11 @@ void View::setAllGroupsExpanded(bool expand)
     }
 
     scheduleDelayedItemsLayout();
-    for (const auto item : std::as_const(*childList)) {
-        Q_ASSERT(item->type() == Item::GroupHeader);
-        QModelIndex idx = d->mModel->index(item, 0);
+    for (const auto childitem : std::as_const(*childList)) {
+        Q_ASSERT(childitem->type() == Item::GroupHeader);
+        QModelIndex idx = d->mModel->index(childitem, 0);
         Q_ASSERT(idx.isValid());
-        Q_ASSERT(static_cast<Item *>(idx.internalPointer()) == item);
+        Q_ASSERT(static_cast<Item *>(idx.internalPointer()) == childitem);
         if (expand) {
             if (!isExpanded(idx)) {
                 setExpanded(idx, true);

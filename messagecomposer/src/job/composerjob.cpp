@@ -44,7 +44,7 @@ public:
     void doStart(); // slot
     void composeStep1();
     void composeStep2();
-    [[nodiscard]] QList<ContentJobBase *> createEncryptJobs(ContentJobBase *contentJob, bool sign);
+    [[nodiscard]] QList<ContentJobBase *> createEncryptJobs(ContentJobBase *contentJob, bool doSign);
     void contentJobFinished(KJob *job); // slot
     void composeWithLateAttachments(std::unique_ptr<KMime::Content> &&content,
                                     const AttachmentPart::List &parts,
@@ -273,7 +273,7 @@ void ComposerJobPrivate::composeStep2()
     mainJob->start();
 }
 
-QList<ContentJobBase *> ComposerJobPrivate::createEncryptJobs(ContentJobBase *contentJob, bool sign)
+QList<ContentJobBase *> ComposerJobPrivate::createEncryptJobs(ContentJobBase *contentJob, bool doSign)
 {
     Q_Q(ComposerJob);
 
@@ -299,7 +299,7 @@ QList<ContentJobBase *> ComposerJobPrivate::createEncryptJobs(ContentJobBase *co
         QPair<QStringList, std::vector<GpgME::Key>> recipients = encData[i];
         qCDebug(MESSAGECOMPOSER_LOG) << "got first list of recipients:" << recipients.first;
         ContentJobBase *subJob = nullptr;
-        if (sign) {
+        if (doSign) {
             auto seJob = new SignEncryptJob(q);
 
             seJob->setCryptoMessageFormat(format);
