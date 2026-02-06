@@ -3,7 +3,7 @@
 # See https://pre-commit.com for more information
 # See https://pre-commit.com/hooks.html for more hooks
 
-exclude: (^po/|^messagecomposer/autotests/data|^messagecomposer/autotests/unittestenv/|^messagecore/autotests/gnupg_home|^messageviewer/src/dkim-verify/autotests/data/|^messageviewer/autotests/unittestenv/|^messageviewer/src/header/autotests/data|^messageviewer/src/viewer/webengine/tests/data/|^mimetreeparser/autotests|^templateparser/autotests/data|.desktop|.notifyrc|.svg|Messages.sh)
+exclude: (^po/|^messagecomposer/autotests/data|^messagecomposer/autotests/unittestenv/|^messagecore/autotests/data/autocrypt/|^messagecore/autotests/gnupg_home|^messageviewer/src/dkim-verify/autotests/data/|^messageviewer/autotests/unittestenv/|^messageviewer/src/header/autotests/data|^messageviewer/src/scamdetection/data/|^messageviewer/src/viewer/webengine/tests/data/|^mimetreeparser/autotests|^templateparser/autotests/data|^webengineviewer/src/checkphishingurl/autotests/data/|.desktop|.notifyrc|.svg|Messages.sh)
 repos:
  - repo: https://github.com/pre-commit/pre-commit-hooks
    rev: v6.0.0
@@ -21,6 +21,13 @@ repos:
     - id: check-symlinks
     - id: destroyed-symlinks
     - id: check-executables-have-shebangs
+ - repo: https://github.com/pre-commit/mirrors-clang-format
+   rev: v21.1.8
+   hooks:
+    - id: clang-format
+    # force using this project's configuration rather
+    # than the one provided by CI
+      args: ["--style=file:.clang-format-pre-commit"]
  - repo: https://github.com/astral-sh/ruff-pre-commit
   # Ruff version.
    rev: v0.14.14
