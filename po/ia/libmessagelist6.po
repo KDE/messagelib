@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-05 00:44+0000\n"
-"PO-Revision-Date: 2026-02-03 15:59+0100\n"
+"PO-Revision-Date: 2026-02-05 18:33+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -1485,7 +1485,7 @@ msgstr "Netta le campo de cerca rapide quando on cambia dossieres"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show or Hide search command line"
-msgstr "Monstra o celalinea decommando de cerca"
+msgstr "Monstra o cela linea de commando de cerca"
 
 #: core/widgets/searchlinestatus.cpp:104
 #, kde-format

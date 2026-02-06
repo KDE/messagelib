@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-05 00:44+0000\n"
+"POT-Creation-Date: 2026-02-06 00:46+0000\n"
 "PO-Revision-Date: 2013-10-10 05:09+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -599,7 +599,7 @@ msgstr "Хатты автосақтау жаңылысы"
 msgid "Failed to save the message: %1"
 msgstr "Хатты сақтау жаңылысы: %1"
 
-#: composer/composerviewbase.cpp:1903
+#: composer/composerviewbase.cpp:1905
 #, kde-format
 msgid ""
 "The message you have composed seems to refer to an attached file but you "
@@ -609,28 +609,28 @@ msgstr ""
 "Жазылған хатқа тіркеме жалғану тиіс сияқты, бірақ ештеңе тіркеленген жоқ. "
 "Файлды тіркемелеуін қалайсыз ба?"
 
-#: composer/composerviewbase.cpp:1906
+#: composer/composerviewbase.cpp:1908
 #, fuzzy, kde-format
 #| msgid "File Attachment Reminder"
 msgctxt "@title:window"
 msgid "File Attachment Reminder"
 msgstr "Файлды тіркемелеуді еске салу"
 
-#: composer/composerviewbase.cpp:1907
+#: composer/composerviewbase.cpp:1909
 #, fuzzy, kde-format
 #| msgid "&Attach File..."
 msgctxt "@action:button"
 msgid "&Attach File..."
 msgstr "&Файлды тіркемелеу..."
 
-#: composer/composerviewbase.cpp:1908
+#: composer/composerviewbase.cpp:1910
 #, fuzzy, kde-format
 #| msgid "&Send as Is"
 msgctxt "@action:button"
 msgid "&Send as Is"
 msgstr "&Бар түрінде жіберу"
 
-#: composer/composerviewbase.cpp:1960
+#: composer/composerviewbase.cpp:1962
 #, kde-format
 msgid ""
 "Examination of the recipient's signing preferences yielded that you be asked "
@@ -641,27 +641,27 @@ msgstr ""
 "бәрібір, ол сұралады екенді көрсетеді.\n"
 "Қолтаңбалайсыз ба?"
 
-#: composer/composerviewbase.cpp:1966 composer/composerviewbase.cpp:1994
+#: composer/composerviewbase.cpp:1968 composer/composerviewbase.cpp:1996
 #, fuzzy, kde-format
 #| msgid "Sign Message?"
 msgctxt "@title:window"
 msgid "Sign Message?"
 msgstr "Қолтаңбалансын ба?"
 
-#: composer/composerviewbase.cpp:1967 composer/composerviewbase.cpp:1995
+#: composer/composerviewbase.cpp:1969 composer/composerviewbase.cpp:1997
 #, kde-format
 msgctxt "to sign"
 msgid "&Sign"
 msgstr "Қ&олтаңбалау"
 
-#: composer/composerviewbase.cpp:1968 composer/composerviewbase.cpp:1996
+#: composer/composerviewbase.cpp:1970 composer/composerviewbase.cpp:1998
 #, fuzzy, kde-format
 #| msgid "Do &Not Sign"
 msgctxt "@action:button"
 msgid "Do &Not Sign"
 msgstr "Қолтаңбала&мау"
 
-#: composer/composerviewbase.cpp:1989
+#: composer/composerviewbase.cpp:1991
 #, kde-format
 msgid ""
 "There are conflicting signing preferences for these recipients.\n"
@@ -670,7 +670,7 @@ msgstr ""
 "Бұл алушыларға қолтаңбалап жіберу параметрлері қайшылықты.\n"
 "Бұны қолтаңбалайсыз ба?"
 
-#: composer/composerviewbase.cpp:2016
+#: composer/composerviewbase.cpp:2018
 #, kde-format
 msgid ""
 "You have requested to sign this message, but no valid signing keys have been "
@@ -679,21 +679,21 @@ msgstr ""
 "Бұл хатты қолтаңбалауы сұралды, бірақ бұл іс-әлпеті үшін дұрыс қолтаңбалау "
 "кілтері бапталмаған."
 
-#: composer/composerviewbase.cpp:2021
+#: composer/composerviewbase.cpp:2023
 #, fuzzy, kde-format
 #| msgid "Send Unsigned?"
 msgctxt "@title:window"
 msgid "Send Unsigned?"
 msgstr "Қолтаңбасыз жіберу ме?"
 
-#: composer/composerviewbase.cpp:2022
+#: composer/composerviewbase.cpp:2024
 #, fuzzy, kde-format
 #| msgid "Send &Unsigned"
 msgctxt "@action:button"
 msgid "Send &Unsigned"
 msgstr "Қолтаңбасыз жіберу"
 
-#: composer/composerviewbase.cpp:2037
+#: composer/composerviewbase.cpp:2039
 #, kde-format
 msgid ""
 "Some parts of this message will not be signed.\n"
@@ -704,7 +704,7 @@ msgstr ""
 "Бұндайы сайттың саясатына қайшы болуы мүмкін.\n"
 "Барлық бөліктері қолтаңбалансын ба?"
 
-#: composer/composerviewbase.cpp:2041
+#: composer/composerviewbase.cpp:2043
 #, kde-format
 msgid ""
 "This message will not be signed.\n"
@@ -715,31 +715,31 @@ msgstr ""
 "Бұндайы сайттың саясатына қайшы болуы мүмкін.\n"
 "Қолтаңбалансын ба?"
 
-#: composer/composerviewbase.cpp:2044
+#: composer/composerviewbase.cpp:2046
 #, kde-format
 msgid "&Sign All Parts"
 msgstr "Бүкіл бөліктерін қ&олтаңбалау"
 
-#: composer/composerviewbase.cpp:2044
+#: composer/composerviewbase.cpp:2046
 #, kde-format
 msgid "&Sign"
 msgstr "Қ&олтаңбалау"
 
-#: composer/composerviewbase.cpp:2047
+#: composer/composerviewbase.cpp:2049
 #, fuzzy, kde-format
 #| msgid "Unsigned-Message Warning"
 msgctxt "@title:window"
 msgid "Unsigned-Message Warning"
 msgstr "Қолтаңбаламаған туралы ескерту"
 
-#: composer/composerviewbase.cpp:2049
+#: composer/composerviewbase.cpp:2051
 #, fuzzy, kde-format
 #| msgid "Send &As Is"
 msgctxt "@action:button"
 msgid "Send &As Is"
 msgstr "Бар түрінде жіберу"
 
-#: composer/composerviewbase.cpp:2096
+#: composer/composerviewbase.cpp:2098
 #, kde-format
 msgid ""
 "Valid trusted encryption keys were found for all recipients.\n"
@@ -748,7 +748,7 @@ msgstr ""
 "Барлық алушылар үшін дұрыс сенім артылған шифрлау кіттер бар.\n"
 "Шифрлансын ба?"
 
-#: composer/composerviewbase.cpp:2099
+#: composer/composerviewbase.cpp:2101
 #, kde-format
 msgid ""
 "Examination of the recipient's encryption preferences yielded that you be "
@@ -759,32 +759,32 @@ msgstr ""
 "сұралады екенді көрсетеді.\n"
 "Шифрлайсыз ба?"
 
-#: composer/composerviewbase.cpp:2105 composer/composerviewbase.cpp:2135
+#: composer/composerviewbase.cpp:2107 composer/composerviewbase.cpp:2137
 #, kde-format
 msgid "Encrypt Message?"
 msgstr "Хат шифрлансын ба?"
 
-#: composer/composerviewbase.cpp:2106
+#: composer/composerviewbase.cpp:2108
 #, kde-format
 msgid "Sign && &Encrypt"
 msgstr "Қолтаңбалау және шифрлау"
 
-#: composer/composerviewbase.cpp:2106 composer/composerviewbase.cpp:2188
+#: composer/composerviewbase.cpp:2108 composer/composerviewbase.cpp:2190
 #, kde-format
 msgid "&Encrypt"
 msgstr "&Шифрлау"
 
-#: composer/composerviewbase.cpp:2107 composer/composerviewbase.cpp:2193
+#: composer/composerviewbase.cpp:2109 composer/composerviewbase.cpp:2195
 #, kde-format
 msgid "&Sign Only"
 msgstr "Тек қ&олтаңбалау"
 
-#: composer/composerviewbase.cpp:2107 composer/composerviewbase.cpp:2193
+#: composer/composerviewbase.cpp:2109 composer/composerviewbase.cpp:2195
 #, kde-format
 msgid "&Send As-Is"
 msgstr "&Бар түрінде жіберу"
 
-#: composer/composerviewbase.cpp:2128
+#: composer/composerviewbase.cpp:2130
 #, kde-format
 msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
@@ -793,7 +793,7 @@ msgstr ""
 "Бұл алушыларға шифрлап жіберу параметрлері қайшылықты.\n"
 "Бұны шифрлайсыз ба?"
 
-#: composer/composerviewbase.cpp:2136 composer/keyresolver.cpp:1319
+#: composer/composerviewbase.cpp:2138 composer/keyresolver.cpp:1319
 #: composer/keyresolver.cpp:1360
 #, fuzzy, kde-format
 #| msgid "&Encrypt"
@@ -801,14 +801,14 @@ msgctxt "@action:button"
 msgid "&Encrypt"
 msgstr "&Шифрлау"
 
-#: composer/composerviewbase.cpp:2137
+#: composer/composerviewbase.cpp:2139
 #, fuzzy, kde-format
 #| msgid "Do &Not Encrypt"
 msgctxt "@action:button"
 msgid "Do &Not Encrypt"
 msgstr "Шифрламау"
 
-#: composer/composerviewbase.cpp:2157
+#: composer/composerviewbase.cpp:2159
 #, kde-format
 msgid ""
 "You have requested to encrypt this message, and to encrypt a copy to "
@@ -818,21 +818,21 @@ msgstr ""
 "Бұл хатты шифрлауы және көшірмесін өзіне шифрлауы сұралды, бірақ бұл іс-"
 "әлпеті үшін дұрыс сенім артылған шифрлау кілтері бапталмаған."
 
-#: composer/composerviewbase.cpp:2163
+#: composer/composerviewbase.cpp:2165
 #, fuzzy, kde-format
 #| msgid "Send Unencrypted?"
 msgctxt "@title:window"
 msgid "Send Unencrypted?"
 msgstr "Шифрламай жіберілсін бе?"
 
-#: composer/composerviewbase.cpp:2164 composer/keyresolver.cpp:1345
+#: composer/composerviewbase.cpp:2166 composer/keyresolver.cpp:1345
 #, fuzzy, kde-format
 #| msgid "Send &Unencrypted"
 msgctxt "@action:button"
 msgid "Send &Unencrypted"
 msgstr "Шифрла&май жіберу"
 
-#: composer/composerviewbase.cpp:2179
+#: composer/composerviewbase.cpp:2181
 #, kde-format
 msgid ""
 "Some parts of this message will not be encrypted.\n"
@@ -844,7 +844,7 @@ msgstr ""
 "Бұндайы сайттың саясатына қайшы болуы және сырларыңыз ашылып қалуы мүмкін.\n"
 "Барлық бөліктері шифрлансын ба?"
 
-#: composer/composerviewbase.cpp:2184
+#: composer/composerviewbase.cpp:2186
 #, kde-format
 msgid ""
 "This message will not be encrypted.\n"
@@ -856,12 +856,12 @@ msgstr ""
 "Бұндайы сайттың саясатына қайшы болуы және сырларыңыз ашылып қалуы мүмкін.\n"
 "Хат шифрлансын ба?"
 
-#: composer/composerviewbase.cpp:2188
+#: composer/composerviewbase.cpp:2190
 #, kde-format
 msgid "&Encrypt All Parts"
 msgstr "Бүкіл бөліктерін &шифрлау"
 
-#: composer/composerviewbase.cpp:2191
+#: composer/composerviewbase.cpp:2193
 #, fuzzy, kde-format
 #| msgid "Unencrypted Message Warning"
 msgctxt "@title:window"

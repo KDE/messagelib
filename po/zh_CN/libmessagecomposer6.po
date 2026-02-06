@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-05 00:44+0000\n"
+"POT-Creation-Date: 2026-02-06 00:46+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -560,7 +560,7 @@ msgstr "自动保存信件失败"
 msgid "Failed to save the message: %1"
 msgstr "保存信件失败：%1"
 
-#: composer/composerviewbase.cpp:1903
+#: composer/composerviewbase.cpp:1905
 #, kde-format
 msgid ""
 "The message you have composed seems to refer to an attached file but you "
@@ -570,25 +570,25 @@ msgstr ""
 "您撰写的邮件似乎提到了附件，但您尚未附加任何内容。\n"
 "您要将文件附加到邮件吗？"
 
-#: composer/composerviewbase.cpp:1906
+#: composer/composerviewbase.cpp:1908
 #, kde-format
 msgctxt "@title:window"
 msgid "File Attachment Reminder"
 msgstr "文件附件提醒"
 
-#: composer/composerviewbase.cpp:1907
+#: composer/composerviewbase.cpp:1909
 #, kde-format
 msgctxt "@action:button"
 msgid "&Attach File..."
 msgstr "添加文件(&A)..."
 
-#: composer/composerviewbase.cpp:1908
+#: composer/composerviewbase.cpp:1910
 #, kde-format
 msgctxt "@action:button"
 msgid "&Send as Is"
 msgstr "原样发送(&S)"
 
-#: composer/composerviewbase.cpp:1960
+#: composer/composerviewbase.cpp:1962
 #, kde-format
 msgid ""
 "Examination of the recipient's signing preferences yielded that you be asked "
@@ -598,25 +598,25 @@ msgstr ""
 "对收件人签名首选项的检查显示没有与您可用的签名密钥相匹配的公共类型。\n"
 "不签名而发送信件吗？"
 
-#: composer/composerviewbase.cpp:1966 composer/composerviewbase.cpp:1994
+#: composer/composerviewbase.cpp:1968 composer/composerviewbase.cpp:1996
 #, kde-format
 msgctxt "@title:window"
 msgid "Sign Message?"
 msgstr "签名信件吗？"
 
-#: composer/composerviewbase.cpp:1967 composer/composerviewbase.cpp:1995
+#: composer/composerviewbase.cpp:1969 composer/composerviewbase.cpp:1997
 #, kde-format
 msgctxt "to sign"
 msgid "&Sign"
 msgstr "签名(&S)"
 
-#: composer/composerviewbase.cpp:1968 composer/composerviewbase.cpp:1996
+#: composer/composerviewbase.cpp:1970 composer/composerviewbase.cpp:1998
 #, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Sign"
 msgstr "不签名(&N)"
 
-#: composer/composerviewbase.cpp:1989
+#: composer/composerviewbase.cpp:1991
 #, kde-format
 msgid ""
 "There are conflicting signing preferences for these recipients.\n"
@@ -625,26 +625,26 @@ msgstr ""
 "这些收件人的签名偏好设置有冲突。\n"
 "要签名此信件吗？"
 
-#: composer/composerviewbase.cpp:2016
+#: composer/composerviewbase.cpp:2018
 #, kde-format
 msgid ""
 "You have requested to sign this message, but no valid signing keys have been "
 "configured for this identity."
 msgstr "您请求签名此信件，但是没有为此身份设置有效的签名密钥。"
 
-#: composer/composerviewbase.cpp:2021
+#: composer/composerviewbase.cpp:2023
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Unsigned?"
 msgstr "不签名发送？"
 
-#: composer/composerviewbase.cpp:2022
+#: composer/composerviewbase.cpp:2024
 #, kde-format
 msgctxt "@action:button"
 msgid "Send &Unsigned"
 msgstr "不签名发送(&U)"
 
-#: composer/composerviewbase.cpp:2037
+#: composer/composerviewbase.cpp:2039
 #, kde-format
 msgid ""
 "Some parts of this message will not be signed.\n"
@@ -655,7 +655,7 @@ msgstr ""
 "发送部分签名的信件可能违反站点守则。\n"
 "要改为签名全部内容吗？"
 
-#: composer/composerviewbase.cpp:2041
+#: composer/composerviewbase.cpp:2043
 #, kde-format
 msgid ""
 "This message will not be signed.\n"
@@ -666,29 +666,29 @@ msgstr ""
 "发送未签名的信息可能违反站点守则。\n"
 "您要改为签名信件吗？"
 
-#: composer/composerviewbase.cpp:2044
+#: composer/composerviewbase.cpp:2046
 #, kde-format
 msgid "&Sign All Parts"
 msgstr "签名所有部分(&S)"
 
-#: composer/composerviewbase.cpp:2044
+#: composer/composerviewbase.cpp:2046
 #, kde-format
 msgid "&Sign"
 msgstr "签名(&S)"
 
-#: composer/composerviewbase.cpp:2047
+#: composer/composerviewbase.cpp:2049
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsigned-Message Warning"
 msgstr "未签名信件警告"
 
-#: composer/composerviewbase.cpp:2049
+#: composer/composerviewbase.cpp:2051
 #, kde-format
 msgctxt "@action:button"
 msgid "Send &As Is"
 msgstr "原样发送(&A)"
 
-#: composer/composerviewbase.cpp:2096
+#: composer/composerviewbase.cpp:2098
 #, kde-format
 msgid ""
 "Valid trusted encryption keys were found for all recipients.\n"
@@ -697,7 +697,7 @@ msgstr ""
 "找到了所有收件人的有效且信任的加密密钥。\n"
 "要加密此信件吗？"
 
-#: composer/composerviewbase.cpp:2099
+#: composer/composerviewbase.cpp:2101
 #, kde-format
 msgid ""
 "Examination of the recipient's encryption preferences yielded that you be "
@@ -707,32 +707,32 @@ msgstr ""
 "检查收件人的加密首选项将导致您被询问是否加密此邮件。\n"
 "要加密此信件吗？"
 
-#: composer/composerviewbase.cpp:2105 composer/composerviewbase.cpp:2135
+#: composer/composerviewbase.cpp:2107 composer/composerviewbase.cpp:2137
 #, kde-format
 msgid "Encrypt Message?"
 msgstr "加密信件吗？"
 
-#: composer/composerviewbase.cpp:2106
+#: composer/composerviewbase.cpp:2108
 #, kde-format
 msgid "Sign && &Encrypt"
 msgstr "签名 && 加密(&E)"
 
-#: composer/composerviewbase.cpp:2106 composer/composerviewbase.cpp:2188
+#: composer/composerviewbase.cpp:2108 composer/composerviewbase.cpp:2190
 #, kde-format
 msgid "&Encrypt"
 msgstr "加密(&E)"
 
-#: composer/composerviewbase.cpp:2107 composer/composerviewbase.cpp:2193
+#: composer/composerviewbase.cpp:2109 composer/composerviewbase.cpp:2195
 #, kde-format
 msgid "&Sign Only"
 msgstr "仅签名(&S)"
 
-#: composer/composerviewbase.cpp:2107 composer/composerviewbase.cpp:2193
+#: composer/composerviewbase.cpp:2109 composer/composerviewbase.cpp:2195
 #, kde-format
 msgid "&Send As-Is"
 msgstr "原样发送(&S)"
 
-#: composer/composerviewbase.cpp:2128
+#: composer/composerviewbase.cpp:2130
 #, kde-format
 msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
@@ -741,20 +741,20 @@ msgstr ""
 "这些收件人的加密偏好设置有冲突。\n"
 "要加密此信件吗？"
 
-#: composer/composerviewbase.cpp:2136 composer/keyresolver.cpp:1319
+#: composer/composerviewbase.cpp:2138 composer/keyresolver.cpp:1319
 #: composer/keyresolver.cpp:1360
 #, kde-format
 msgctxt "@action:button"
 msgid "&Encrypt"
 msgstr "加密(&E)"
 
-#: composer/composerviewbase.cpp:2137
+#: composer/composerviewbase.cpp:2139
 #, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Encrypt"
 msgstr "禁用加密(&N)"
 
-#: composer/composerviewbase.cpp:2157
+#: composer/composerviewbase.cpp:2159
 #, kde-format
 msgid ""
 "You have requested to encrypt this message, and to encrypt a copy to "
@@ -762,19 +762,19 @@ msgid ""
 "identity."
 msgstr "您请求加密此信件，但是没有为此身份设置有效且信任的加密密钥。"
 
-#: composer/composerviewbase.cpp:2163
+#: composer/composerviewbase.cpp:2165
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Unencrypted?"
 msgstr "不加密发送吗？"
 
-#: composer/composerviewbase.cpp:2164 composer/keyresolver.cpp:1345
+#: composer/composerviewbase.cpp:2166 composer/keyresolver.cpp:1345
 #, kde-format
 msgctxt "@action:button"
 msgid "Send &Unencrypted"
 msgstr "不加密发送(&U)"
 
-#: composer/composerviewbase.cpp:2179
+#: composer/composerviewbase.cpp:2181
 #, kde-format
 msgid ""
 "Some parts of this message will not be encrypted.\n"
@@ -786,7 +786,7 @@ msgstr ""
 "发送部分加密的信件可能违反站点守则或泄露敏感信息。\n"
 "要改为加密全部内容吗？"
 
-#: composer/composerviewbase.cpp:2184
+#: composer/composerviewbase.cpp:2186
 #, kde-format
 msgid ""
 "This message will not be encrypted.\n"
@@ -798,12 +798,12 @@ msgstr ""
 "发送不加密的信件可能违反站点守则或泄露敏感信息。\n"
 "要改为加密信件吗？"
 
-#: composer/composerviewbase.cpp:2188
+#: composer/composerviewbase.cpp:2190
 #, kde-format
 msgid "&Encrypt All Parts"
 msgstr "加密所有部分(&E)"
 
-#: composer/composerviewbase.cpp:2191
+#: composer/composerviewbase.cpp:2193
 #, kde-format
 msgctxt "@title:window"
 msgid "Unencrypted Message Warning"
