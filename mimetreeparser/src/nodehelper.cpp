@@ -530,7 +530,7 @@ void NodeHelper::clearOverrideHeaders()
     mHeaderOverwrite.clear();
 }
 
-void NodeHelper::registerOverrideHeader(KMime::Content *message, MessagePart::Ptr part)
+void NodeHelper::registerOverrideHeader(const KMime::Content *message, MessagePart::Ptr part)
 {
     if (!mHeaderOverwrite.contains(message)) {
         mHeaderOverwrite[message] = QList<MessagePart::Ptr>();
@@ -538,7 +538,7 @@ void NodeHelper::registerOverrideHeader(KMime::Content *message, MessagePart::Pt
     mHeaderOverwrite[message].append(part);
 }
 
-QDateTime NodeHelper::dateHeader(KMime::Content *message) const
+QDateTime NodeHelper::dateHeader(const KMime::Content *message) const
 {
     const auto dateHeader = mailHeaderAsBase("date", message);
     if (dateHeader != nullptr) {
@@ -599,7 +599,7 @@ QString NodeHelper::fileName(const KMime::Content *node)
 }
 
 // FIXME(Andras) review it (by Marc?) to see if I got it right. This is supposed to be the partNode::internalBodyPartMemento replacement
-Interface::BodyPartMemento *NodeHelper::bodyPartMemento(KMime::Content *node, const QByteArray &which) const
+Interface::BodyPartMemento *NodeHelper::bodyPartMemento(const KMime::Content *node, const QByteArray &which) const
 {
     const QMap<QString, QMap<QByteArray, Interface::BodyPartMemento *>>::const_iterator nit = mBodyPartMementoMap.find(persistentIndex(node));
     if (nit == mBodyPartMementoMap.end()) {
@@ -610,7 +610,7 @@ Interface::BodyPartMemento *NodeHelper::bodyPartMemento(KMime::Content *node, co
 }
 
 // FIXME(Andras) review it (by Marc?) to see if I got it right. This is supposed to be the partNode::internalSetBodyPartMemento replacement
-void NodeHelper::setBodyPartMemento(KMime::Content *node, const QByteArray &which, Interface::BodyPartMemento *memento)
+void NodeHelper::setBodyPartMemento(const KMime::Content *node, const QByteArray &which, Interface::BodyPartMemento *memento)
 {
     QMap<QByteArray, Interface::BodyPartMemento *> &mementos = mBodyPartMementoMap[persistentIndex(node)];
 
@@ -832,13 +832,14 @@ QString NodeHelper::fromAsString(const KMime::Content *node) const
     return {};
 }
 
-void NodeHelper::attachExtraContent(KMime::Content *topLevelNode, KMime::Content *content)
+void NodeHelper::attachExtraContent(const KMime::Content *topLevelNode, std::unique_ptr<KMime::Content> &&content)
 {
-    qCDebug(MIMETREEPARSER_LOG) << "mExtraContents added for" << topLevelNode << " extra content: " << content;
-    mExtraContents[topLevelNode].append(content);
+    qCDebug(MIMETREEPARSER_LOG) << "mExtraContents added for" << topLevelNode << " extra content: " << content.get();
+    Q_ASSERT(content);
+    mExtraContents[topLevelNode].append(content.release());
 }
 
-void NodeHelper::cleanExtraContent(KMime::Content *topLevelNode)
+void NodeHelper::cleanExtraContent(const KMime::Content *topLevelNode)
 {
     qCDebug(MIMETREEPARSER_LOG) << "remove all extraContents for" << topLevelNode;
     mExtraContents[topLevelNode].clear();
@@ -922,7 +923,7 @@ KMime::Message *NodeHelper::messageWithExtraContent(KMime::Content *topLevelNode
     return m;
 }
 
-KMime::Content *NodeHelper::decryptedNodeForContent(KMime::Content *content) const
+KMime::Content *NodeHelper::decryptedNodeForContent(const KMime::Content *content) const
 {
     const QList<KMime::Content *> xc = extraContents(content);
     if (!xc.empty()) {
@@ -935,17 +936,15 @@ KMime::Content *NodeHelper::decryptedNodeForContent(KMime::Content *content) con
     return nullptr;
 }
 
-bool NodeHelper::unencryptedMessage_helper(KMime::Content *node, QByteArray &resultingData, bool addHeaders, int recursionLevel)
+bool NodeHelper::unencryptedMessage_helper(const KMime::Content *node, QByteArray &resultingData, bool addHeaders, int recursionLevel)
 {
     bool returnValue = false;
     if (node) {
-        KMime::Content *curNode = node;
+        const KMime::Content *curNode = node;
         KMime::Content *decryptedNode = nullptr;
-        const QByteArray type =
-            node->contentType(KMime::CreatePolicy::DontCreate) ? QByteArray(node->contentType(KMime::CreatePolicy::DontCreate)->mediaType()).toLower() : "text";
-        const QByteArray subType =
-            node->contentType(KMime::CreatePolicy::DontCreate) ? node->contentType(KMime::CreatePolicy::DontCreate)->subType().toLower() : "plain";
-        const bool isMultipart = node->contentType(KMime::CreatePolicy::DontCreate) && node->contentType(KMime::CreatePolicy::DontCreate)->isMultipart();
+        const QByteArray type = node->contentType() ? node->contentType()->mediaType().toLower() : "text";
+        const QByteArray subType = node->contentType() ? node->contentType()->subType().toLower() : "plain";
+        const bool isMultipart = node->contentType() && node->contentType()->isMultipart();
         bool isSignature = false;
 
         qCDebug(MIMETREEPARSER_LOG) << "(" << recursionLevel << ") Looking at" << type << "/" << subType;
@@ -1022,7 +1021,7 @@ bool NodeHelper::unencryptedMessage_helper(KMime::Content *node, QByteArray &res
             }
             const QByteArray boundary = curNode->contentType()->boundary();
             const auto contents = curNode->contents();
-            for (KMime::Content *child : contents) {
+            for (const KMime::Content *child : contents) {
                 resultingData += "\n--" + boundary + '\n';
                 const bool changed = unencryptedMessage_helper(child, resultingData, true, recursionLevel + 1);
                 if (changed) {

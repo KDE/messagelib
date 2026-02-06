@@ -98,14 +98,14 @@ MessagePart::Ptr EncryptedBodyPartFormatter::process(Interface::BodyPart &part) 
             if (!messagePart->isEncrypted) {
                 return nullptr;
             }
-            auto tempNode = new KMime::Content();
+            auto tempNode = std::make_unique<KMime::Content>();
             tempNode->setBody(KMime::CRLFtoLF(mp->text().toUtf8()));
             tempNode->parse();
             // inside startDecryption we use toCodec and we
             // converted the decoded text to utf-8 already.
             tempNode->contentType()->setCharset("utf-8");
 
-            NodeHelper::magicSetType(tempNode);
+            NodeHelper::magicSetType(tempNode.get());
             if (node->topLevel()->textContent() != node && node->contentDisposition(KMime::CreatePolicy::DontCreate)
                 && !tempNode->contentDisposition(KMime::CreatePolicy::DontCreate)) {
                 tempNode->contentDisposition()->setDisposition(node->contentDisposition()->disposition());
@@ -123,9 +123,10 @@ MessagePart::Ptr EncryptedBodyPartFormatter::process(Interface::BodyPart &part) 
             nodeHelper->cleanExtraContent(node);
             mp->clearSubParts();
 
-            nodeHelper->attachExtraContent(node, tempNode);
+            auto tempNodePtr = tempNode.get();
+            nodeHelper->attachExtraContent(node, std::move(tempNode));
 
-            mp->parseInternal(tempNode, false);
+            mp->parseInternal(tempNodePtr, false);
 
             nodeHelper->setNodeProcessed(node, false); // Set the data node to done to prevent it from being processed
         }

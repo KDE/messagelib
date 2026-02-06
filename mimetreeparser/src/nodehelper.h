@@ -111,7 +111,7 @@ public:
     void clearOverrideHeaders();
     /*!
      */
-    void registerOverrideHeader(KMime::Content *message, MessagePartPtr);
+    void registerOverrideHeader(const KMime::Content *message, MessagePartPtr part);
     /*!
      */
     [[nodiscard]] bool hasMailHeader(const char *header, const KMime::Content *message) const;
@@ -129,14 +129,14 @@ public:
     [[nodiscard]] QList<KMime::Headers::Base *> headers(const char *header, const KMime::Content *message);
     /*!
      */
-    [[nodiscard]] QDateTime dateHeader(KMime::Content *message) const;
+    [[nodiscard]] QDateTime dateHeader(const KMime::Content *message) const;
 
     /** Attach an extra node to an existing node */
-    void attachExtraContent(KMime::Content *topLevelNode, KMime::Content *content);
+    void attachExtraContent(const KMime::Content *topLevelNode, std::unique_ptr<KMime::Content> &&content);
 
     /*!
      */
-    void cleanExtraContent(KMime::Content *topLevelNode);
+    void cleanExtraContent(const KMime::Content *topLevelNode);
 
     /** Get the extra nodes attached to the @param topLevelNode and all sub-nodes of @param topLevelNode */
     [[nodiscard]] QList<KMime::Content *> extraContents(const KMime::Content *topLevelNode) const;
@@ -154,11 +154,11 @@ public:
 
     /*!
      */
-    Interface::BodyPartMemento *bodyPartMemento(KMime::Content *node, const QByteArray &which) const;
+    Interface::BodyPartMemento *bodyPartMemento(const KMime::Content *node, const QByteArray &which) const;
 
     /*!
      */
-    void setBodyPartMemento(KMime::Content *node, const QByteArray &which, Interface::BodyPartMemento *memento);
+    void setBodyPartMemento(const KMime::Content *node, const QByteArray &which, Interface::BodyPartMemento *memento);
 
     // A flag to remember if the node was embedded. This is useful for attachment nodes, the reader
     // needs to know if they were displayed inline or not.
@@ -258,7 +258,7 @@ public:
 
     /*!
      */
-    [[nodiscard]] KMime::Content *decryptedNodeForContent(KMime::Content *content) const;
+    [[nodiscard]] KMime::Content *decryptedNodeForContent(const KMime::Content *content) const;
 
     /**
      * This function returns the unencrypted message that is based on @p originalMessage.
@@ -291,7 +291,7 @@ Q_SIGNALS:
 
 private:
     Q_DISABLE_COPY(NodeHelper)
-    bool unencryptedMessage_helper(KMime::Content *node, QByteArray &resultingData, bool addHeaders, int recursionLevel = 1);
+    bool unencryptedMessage_helper(const KMime::Content *node, QByteArray &resultingData, bool addHeaders, int recursionLevel = 1);
 
     MIMETREEPARSER_NO_EXPORT void mergeExtraNodes(KMime::Content *node);
     MIMETREEPARSER_NO_EXPORT void cleanFromExtraNodes(KMime::Content *node);
@@ -319,7 +319,7 @@ private:
     QMap<const KMime::Content *, QByteArray> mOverrideCodecs;
     QMap<QString, QMap<QByteArray, Interface::BodyPartMemento *>> mBodyPartMementoMap;
     QMap<const KMime::Content *, PartMetaData> mPartMetaDatas;
-    QMap<const KMime::Message::Content *, QList<KMime::Content *>> mExtraContents;
+    QMap<const KMime::Content *, QList<KMime::Content *>> mExtraContents;
     QPointer<AttachmentTemporaryFilesDirs> mAttachmentFilesDir;
     QMap<const KMime::Content *, QList<MessagePartPtr>> mHeaderOverwrite;
     QList<QPointer<AttachmentTemporaryFilesDirs>> mListAttachmentTemporaryDirs;

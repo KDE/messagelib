@@ -10,16 +10,17 @@ using namespace MimeTreeParser;
 
 MimeMessagePart::Ptr MimeTreeParser::createAndParseTempNode(Interface::BodyPart &part, KMime::Content *parentNode, const char *content, const char *cntDesc)
 {
-    auto newNode = new KMime::Content();
+    auto newNode = std::make_unique<KMime::Content>();
     newNode->setContent(KMime::CRLFtoLF(content));
     newNode->parse();
 
     if (!newNode->head().isEmpty()) {
         newNode->contentDescription()->from7BitString(cntDesc);
     }
-    part.nodeHelper()->attachExtraContent(parentNode, newNode);
+    auto newNodePtr = newNode.get();
+    part.nodeHelper()->attachExtraContent(parentNode, std::move(newNode));
 
-    return MimeMessagePart::Ptr(new MimeMessagePart(part.objectTreeParser(), newNode, false));
+    return MimeMessagePart::Ptr(new MimeMessagePart(part.objectTreeParser(), newNodePtr, false));
 }
 
 KMime::Content *MimeTreeParser::findTypeInDirectChilds(KMime::Content *content, const QByteArray &mimeType)

@@ -22,7 +22,7 @@ void NodeHelperTest::testPersistentIndex()
 
     auto node = new KMime::Content();
     auto node2 = new KMime::Content();
-    auto node2Extra = new KMime::Content();
+    auto node2Extra = std::make_unique<KMime::Content>();
     auto subNode1 = std::make_unique<KMime::Content>();
     auto subNode2 = std::make_unique<KMime::Content>();
     const auto subNode2Ptr = subNode2.get();
@@ -36,10 +36,14 @@ void NodeHelperTest::testPersistentIndex()
     auto node2ExtraSubsubNode = std::make_unique<KMime::Content>();
     auto node2ExtraSubsubNode2 = std::make_unique<KMime::Content>();
     const auto node2ExtraSubsubNode2Ptr = node2ExtraSubsubNode2.get();
-    auto extra = new KMime::Content();
-    auto extra2 = new KMime::Content();
-    auto subExtra = new KMime::Content();
-    auto subsubExtra = new KMime::Content();
+    auto extra = std::make_unique<KMime::Content>();
+    const auto extraPtr = extra.get();
+    auto extra2 = std::make_unique<KMime::Content>();
+    const auto extra2Ptr = extra2.get();
+    auto subExtra = std::make_unique<KMime::Content>();
+    const auto subExtraPtr = subExtra.get();
+    auto subsubExtra = std::make_unique<KMime::Content>();
+    const auto subsubExtraPtr = subsubExtra.get();
     auto subsubExtraNode1 = std::make_unique<KMime::Content>();
     auto subsubExtraNode2 = std::make_unique<KMime::Content>();
     const auto subsubExtraNode2Ptr = subsubExtraNode2.get();
@@ -54,10 +58,10 @@ void NodeHelperTest::testPersistentIndex()
     subsubExtra->contentType()->setMimeType("multipart/mixed");
     subsubExtra->appendContent(std::move(subsubExtraNode1));
     subsubExtra->appendContent(std::move(subsubExtraNode2));
-    helper.attachExtraContent(node, extra);
-    helper.attachExtraContent(node, extra2);
-    helper.attachExtraContent(subNode2Ptr, subExtra);
-    helper.attachExtraContent(subsubNode2Ptr, subsubExtra);
+    helper.attachExtraContent(node, std::move(extra));
+    helper.attachExtraContent(node, std::move(extra2));
+    helper.attachExtraContent(subNode2Ptr, std::move(subExtra));
+    helper.attachExtraContent(subsubNode2Ptr, std::move(subsubExtra));
 
     // This simulates Opaque S/MIME signed and encrypted message with attachment
     // (attachment is node2SubsubNode2)
@@ -68,7 +72,7 @@ void NodeHelperTest::testPersistentIndex()
     node2ExtraSubNode2->appendContent(std::move(node2ExtraSubsubNode));
     node2ExtraSubNode2->appendContent(std::move(node2ExtraSubsubNode2));
     node2Extra->appendContent(std::move(node2ExtraSubNode2));
-    helper.attachExtraContent(node2, node2Extra);
+    helper.attachExtraContent(node2, std::move(node2Extra));
 
     /*  all content has a internal first child, so indexes starts at 2
      * node                 ""
@@ -114,17 +118,17 @@ void NodeHelperTest::testPersistentIndex()
     QCOMPARE(helper.persistentIndex(subsubNode2Ptr), u"2.3"_s);
     QCOMPARE(helper.contentFromIndex(node, u"2.3"_s), subsubNode2Ptr);
 
-    QCOMPARE(helper.persistentIndex(extra), u"e0"_s);
-    QCOMPARE(helper.contentFromIndex(node, u"e0"_s), extra);
+    QCOMPARE(helper.persistentIndex(extraPtr), u"e0"_s);
+    QCOMPARE(helper.contentFromIndex(node, u"e0"_s), extraPtr);
 
-    QCOMPARE(helper.persistentIndex(extra2), u"e1"_s);
-    QCOMPARE(helper.contentFromIndex(node, u"e1"_s), extra2);
+    QCOMPARE(helper.persistentIndex(extra2Ptr), u"e1"_s);
+    QCOMPARE(helper.contentFromIndex(node, u"e1"_s), extra2Ptr);
 
-    QCOMPARE(helper.persistentIndex(subExtra), u"2:e0"_s);
-    QCOMPARE(helper.contentFromIndex(node, u"2:e0"_s), subExtra);
+    QCOMPARE(helper.persistentIndex(subExtraPtr), u"2:e0"_s);
+    QCOMPARE(helper.contentFromIndex(node, u"2:e0"_s), subExtraPtr);
 
-    QCOMPARE(helper.persistentIndex(subsubExtra), u"2.3:e0"_s);
-    QCOMPARE(helper.contentFromIndex(node, u"2.3:e0"_s), subsubExtra);
+    QCOMPARE(helper.persistentIndex(subsubExtraPtr), u"2.3:e0"_s);
+    QCOMPARE(helper.contentFromIndex(node, u"2.3:e0"_s), subsubExtraPtr);
 
     QCOMPARE(helper.persistentIndex(subsubExtraNode2Ptr), u"2.3:e0:2"_s);
     QCOMPARE(helper.contentFromIndex(node, u"2.3:e0:2"_s), subsubExtraNode2Ptr);
@@ -150,10 +154,11 @@ void NodeHelperTest::testHREF()
     const auto subsubNodePtr = subsubNode.get();
     auto subsubNode2 = std::make_unique<KMime::Content>();
     const auto subsubNode2Ptr = subsubNode2.get();
-    auto extra = new KMime::Content();
-    auto extra2 = new KMime::Content();
-    auto subExtra = new KMime::Content();
-    auto subsubExtra = new KMime::Content();
+    auto extra = std::make_unique<KMime::Content>();
+    const auto extraPtr = extra.get();
+    auto extra2 = std::make_unique<KMime::Content>();
+    auto subExtra = std::make_unique<KMime::Content>();
+    auto subsubExtra = std::make_unique<KMime::Content>();
     auto subsubExtraNode = std::make_unique<KMime::Content>();
     const auto subsubExtraNodePtr = subsubExtraNode.get();
 
@@ -167,16 +172,16 @@ void NodeHelperTest::testHREF()
     subsubExtra->contentType()->setMimeType("multipart/mixed");
     subsubExtra->appendContent(std::make_unique<KMime::Content>());
     subsubExtra->appendContent(std::move(subsubExtraNode));
-    helper.attachExtraContent(node, extra);
-    helper.attachExtraContent(node, extra2);
-    helper.attachExtraContent(subNodePtr, subExtra);
-    helper.attachExtraContent(subsubNode2Ptr, subsubExtra);
+    helper.attachExtraContent(node, std::move(extra));
+    helper.attachExtraContent(node, std::move(extra2));
+    helper.attachExtraContent(subNodePtr, std::move(subExtra));
+    helper.attachExtraContent(subsubNode2Ptr, std::move(subsubExtra));
 
     url = QUrl(QString());
     QCOMPARE(helper.fromHREF(msg, url), node);
 
     url = QUrl(u"attachment:e0?place=body"_s);
-    QCOMPARE(helper.fromHREF(msg, url), extra);
+    QCOMPARE(helper.fromHREF(msg, url), extraPtr);
 
     url = QUrl(u"attachment:2.2?place=body"_s);
     QCOMPARE(helper.fromHREF(msg, url), subsubNodePtr);
@@ -185,7 +190,7 @@ void NodeHelperTest::testHREF()
     QCOMPARE(helper.fromHREF(msg, url), subsubExtraNodePtr);
 
     QCOMPARE(helper.asHREF(node, u"body"_s), u"attachment:?place=body"_s);
-    QCOMPARE(helper.asHREF(extra, u"body"_s), u"attachment:e0?place=body"_s);
+    QCOMPARE(helper.asHREF(extraPtr, u"body"_s), u"attachment:e0?place=body"_s);
     QCOMPARE(helper.asHREF(subsubNodePtr, u"body"_s), u"attachment:2.2?place=body"_s);
     QCOMPARE(helper.asHREF(subsubExtraNodePtr, u"body"_s), u"attachment:2.3:e0:2?place=body"_s);
 }
@@ -202,10 +207,13 @@ void NodeHelperTest::testLocalFiles()
     const auto subsubNodePtr = subsubNode.get();
     auto subsubNode2 = std::make_unique<KMime::Content>();
     const auto subsubNode2Ptr = subsubNode2.get();
-    auto extra = new KMime::Content();
-    auto extra2 = new KMime::Content();
-    auto subExtra = new KMime::Content();
-    auto subsubExtra = new KMime::Content();
+    auto extra = std::make_unique<KMime::Content>();
+    const auto extraPtr = extra.get();
+    auto extra2 = std::make_unique<KMime::Content>();
+    auto subExtra = std::make_unique<KMime::Content>();
+    const auto subExtraPtr = subExtra.get();
+    auto subsubExtra = std::make_unique<KMime::Content>();
+    const auto subsubExtraPtr = subsubExtra.get();
     auto subsubExtraNode = std::make_unique<KMime::Content>();
     const auto subsubExtraNodePtr = subsubExtraNode.get();
 
@@ -219,10 +227,10 @@ void NodeHelperTest::testLocalFiles()
     subsubExtra->contentType()->setMimeType("multipart/mixed");
     subsubExtra->appendContent(std::make_unique<KMime::Content>());
     subsubExtra->appendContent(std::move(subsubExtraNode));
-    helper.attachExtraContent(node, extra);
-    helper.attachExtraContent(node, extra2);
-    helper.attachExtraContent(subNodePtr, subExtra);
-    helper.attachExtraContent(subsubNode2Ptr, subsubExtra);
+    helper.attachExtraContent(node, std::move(extra));
+    helper.attachExtraContent(node, std::move(extra2));
+    helper.attachExtraContent(subNodePtr, std::move(subExtra));
+    helper.attachExtraContent(subsubNode2Ptr, std::move(subsubExtra));
 
     helper.writeNodeToTempFile(node);
     QCOMPARE(helper.fromHREF(msg, helper.tempFileUrlFromNode(node)), node);
@@ -232,12 +240,12 @@ void NodeHelperTest::testLocalFiles()
     QCOMPARE(helper.fromHREF(msg, helper.tempFileUrlFromNode(subsubNodePtr)), subsubNodePtr);
     helper.writeNodeToTempFile(subsubNode2Ptr);
     QCOMPARE(helper.fromHREF(msg, helper.tempFileUrlFromNode(subsubNode2Ptr)), subsubNode2Ptr);
-    helper.writeNodeToTempFile(extra);
-    QCOMPARE(helper.fromHREF(msg, helper.tempFileUrlFromNode(extra)), extra);
-    helper.writeNodeToTempFile(subExtra);
-    QCOMPARE(helper.fromHREF(msg, helper.tempFileUrlFromNode(subExtra)), subExtra);
-    helper.writeNodeToTempFile(subsubExtra);
-    QCOMPARE(helper.fromHREF(msg, helper.tempFileUrlFromNode(subsubExtra)), subsubExtra);
+    helper.writeNodeToTempFile(extraPtr);
+    QCOMPARE(helper.fromHREF(msg, helper.tempFileUrlFromNode(extraPtr)), extraPtr);
+    helper.writeNodeToTempFile(subExtraPtr);
+    QCOMPARE(helper.fromHREF(msg, helper.tempFileUrlFromNode(subExtraPtr)), subExtraPtr);
+    helper.writeNodeToTempFile(subsubExtraPtr);
+    QCOMPARE(helper.fromHREF(msg, helper.tempFileUrlFromNode(subsubExtraPtr)), subsubExtraPtr);
     helper.writeNodeToTempFile(subsubExtraNodePtr);
     QCOMPARE(helper.fromHREF(msg, helper.tempFileUrlFromNode(subsubExtraNodePtr)), subsubExtraNodePtr);
 }
@@ -281,7 +289,8 @@ void NodeHelperTest::testFromAsString()
     auto node = msg.topLevel();
     auto subNode = std::make_unique<KMime::Content>();
     const auto subNodePtr = subNode.get();
-    auto subExtra = new KMime::Content();
+    auto subExtra = std::make_unique<KMime::Content>();
+    const auto subExtraPtr = subExtra.get();
 
     // Encapsulated message
     auto encMsg = std::make_unique<KMime::Message>();
@@ -289,7 +298,8 @@ void NodeHelperTest::testFromAsString()
     auto encNode = encMsg->topLevel();
     auto encSubNode = std::make_unique<KMime::Content>();
     const auto encSubNodePtr = encSubNode.get();
-    auto encSubExtra = new KMime::Content();
+    auto encSubExtra = std::make_unique<KMime::Content>();
+    const auto encSubExtraPtr = encSubExtra.get();
 
     node->contentType()->setMimeType("multipart/mixed");
     node->appendContent(std::make_unique<KMime::Content>());
@@ -297,18 +307,18 @@ void NodeHelperTest::testFromAsString()
     node->appendContent(std::move(encMsg));
     encNode->appendContent(std::move(encSubNode));
 
-    helper.attachExtraContent(subNodePtr, subExtra);
-    helper.attachExtraContent(encSubNodePtr, encSubExtra);
+    helper.attachExtraContent(subNodePtr, std::move(subExtra));
+    helper.attachExtraContent(encSubNodePtr, std::move(encSubExtra));
 
     QCOMPARE(helper.fromAsString(node), tlSender);
     QCOMPARE(helper.fromAsString(subNodePtr), tlSender);
-    QCOMPARE(helper.fromAsString(subExtra), tlSender);
+    QCOMPARE(helper.fromAsString(subExtraPtr), tlSender);
     QEXPECT_FAIL("", "Returning sender of encapsulated message is not yet implemented", Continue);
     QCOMPARE(helper.fromAsString(encNode), encSender);
     QEXPECT_FAIL("", "Returning sender of encapsulated message is not yet implemented", Continue);
     QCOMPARE(helper.fromAsString(encSubNodePtr), encSender);
     QEXPECT_FAIL("", "Returning sender of encapsulated message is not yet implemented", Continue);
-    QCOMPARE(helper.fromAsString(encSubExtra), encSender);
+    QCOMPARE(helper.fromAsString(encSubExtraPtr), encSender);
 }
 
 void NodeHelperTest::shouldTestExtractAttachmentIndex_data()

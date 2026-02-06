@@ -898,16 +898,17 @@ void SignedMessagePart::setVerificationResult(const CompositeMemento *m, KMime::
         mOtp->nodeHelper()->setPartMetaData(content(), *partMetaData());
 
         if (!mVerifiedText.isEmpty()) {
-            auto tempNode = new KMime::Content();
+            auto tempNode = std::make_unique<KMime::Content>();
             tempNode->setContent(KMime::CRLFtoLF(mVerifiedText.constData()));
             tempNode->parse();
 
             if (!tempNode->head().isEmpty()) {
                 tempNode->contentDescription()->from7BitString("signed data");
             }
-            mOtp->nodeHelper()->attachExtraContent(content(), tempNode);
+            auto tempNodePtr = tempNode.get();
+            mOtp->nodeHelper()->attachExtraContent(content(), std::move(tempNode));
 
-            parseInternal(tempNode, false);
+            parseInternal(tempNodePtr, false);
         }
     }
 }
@@ -1245,16 +1246,17 @@ void EncryptedMessagePart::startDecryption(KMime::Content *data)
         mOtp->nodeHelper()->setPartMetaData(content(), *partMetaData());
 
         if (decryptMessage()) {
-            auto tempNode = new KMime::Content();
+            auto tempNode = std::make_unique<KMime::Content>();
             tempNode->setContent(KMime::CRLFtoLF(mDecryptedData.constData()));
             tempNode->parse();
 
             if (!tempNode->head().isEmpty()) {
                 tempNode->contentDescription()->from7BitString("encrypted data");
             }
-            mOtp->nodeHelper()->attachExtraContent(content(), tempNode);
+            auto tempNodePtr = tempNode.get();
+            mOtp->nodeHelper()->attachExtraContent(content(), std::move(tempNode));
 
-            parseInternal(tempNode, false);
+            parseInternal(tempNodePtr, false);
         }
     }
 }
