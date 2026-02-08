@@ -44,7 +44,6 @@ repos:
    rev: 0.25.4
    hooks:
     - id: gersemi
-      args: ["--no-warn-about-unknown-commands"]
       exclude: (^cmake/ecmcopy)
  - repo: https://github.com/DavidAnson/markdownlint-cli2
    rev: v0.20.0
