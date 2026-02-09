@@ -123,17 +123,9 @@ void NodeHelper::clear()
     mOverrideCodecs.clear();
     std::for_each(mBodyPartMementoMap.begin(), mBodyPartMementoMap.end(), &clearBodyPartMemento);
     mBodyPartMementoMap.clear();
-    QMap<const KMime::Content *, QList<KMime::Content *>>::ConstIterator end(mExtraContents.constEnd());
 
-    for (auto it = mExtraContents.constBegin(); it != end; ++it) {
-        const auto contents = it.value();
-        for (KMime::Content *c : contents) {
-            KMime::Content *p = c->parent();
-            if (p) {
-                p->takeContent(c);
-            }
-        }
-        qCDebug(MIMETREEPARSER_LOG) << "mExtraContents deleted for" << it.key();
+    for (auto it = mExtraContents.constBegin(); it != mExtraContents.constEnd(); ++it) {
+        qDeleteAll(it.value());
     }
     mExtraContents.clear();
     mDisplayEmbeddedNodes.clear();
