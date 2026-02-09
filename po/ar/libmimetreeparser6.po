@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2026-02-09 00:44+0000\n"
 "PO-Revision-Date: 2018-01-31 19:48+0300\n"
 "Last-Translator: Safa Alfulaij <safa1996alfulaij@gmail.com>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -27,12 +27,12 @@ msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "غير مسمًّى"
 
-#: src/messagepart.cpp:704 src/messagepart.cpp:749 src/messagepart.cpp:987
+#: src/messagepart.cpp:704 src/messagepart.cpp:749 src/messagepart.cpp:988
 #, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr "ملحقة التّعمية خاطئة."
 
-#: src/messagepart.cpp:815 src/messagepart.cpp:1206
+#: src/messagepart.cpp:815 src/messagepart.cpp:1207
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "لم يُعثر على ملحقة تعمية مناسبة."
@@ -55,17 +55,17 @@ msgid ""
 "<br />Reason: %1"
 msgstr "الرّسالة موقّعة، ولكن تعّذر التّحقّق من صلاحيّة التّوقيع.<br />السّبب: %1"
 
-#: src/messagepart.cpp:1208
+#: src/messagepart.cpp:1209
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "لا تستطيع ملحقة التّعمية ”%1“ فكّ تعمية الرّسائل."
 
-#: src/messagepart.cpp:1210
+#: src/messagepart.cpp:1211
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "تعذّر على ملحقة التّعمية ”%1“ فكّ تعمية الرّسائل."
 
-#: src/messagepart.cpp:1211
+#: src/messagepart.cpp:1212
 #, kde-format
 msgid "Error: %1"
 msgstr "خطأ: %1"

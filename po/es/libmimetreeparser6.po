@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2026-02-09 00:44+0000\n"
 "PO-Revision-Date: 2023-09-20 01:11+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -36,12 +36,12 @@ msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "Sin nombre"
 
-#: src/messagepart.cpp:704 src/messagepart.cpp:749 src/messagepart.cpp:987
+#: src/messagepart.cpp:704 src/messagepart.cpp:749 src/messagepart.cpp:988
 #, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr "Complemento criptográfico incorrecto."
 
-#: src/messagepart.cpp:815 src/messagepart.cpp:1206
+#: src/messagepart.cpp:815 src/messagepart.cpp:1207
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "No se ha encontrado ningún complemento criptográfico adecuado."
@@ -66,17 +66,17 @@ msgstr ""
 "El mensaje está firmado, pero no se ha podido verificar la validez de la "
 "firma.<br />Motivo: %1"
 
-#: src/messagepart.cpp:1208
+#: src/messagepart.cpp:1209
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "El complemento criptográfico «%1» no puede descifrar mensajes."
 
-#: src/messagepart.cpp:1210
+#: src/messagepart.cpp:1211
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "El complemento criptográfico «%1» no ha podido descifrar los datos."
 
-#: src/messagepart.cpp:1211
+#: src/messagepart.cpp:1212
 #, kde-format
 msgid "Error: %1"
 msgstr "Error: %1"

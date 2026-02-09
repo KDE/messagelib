@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2026-02-09 00:44+0000\n"
 "PO-Revision-Date: 2013-05-12 14:26+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -29,12 +29,12 @@ msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "Namnlaus"
 
-#: src/messagepart.cpp:704 src/messagepart.cpp:749 src/messagepart.cpp:987
+#: src/messagepart.cpp:704 src/messagepart.cpp:749 src/messagepart.cpp:988
 #, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr "Feil programtillegg for kryptering"
 
-#: src/messagepart.cpp:815 src/messagepart.cpp:1206
+#: src/messagepart.cpp:815 src/messagepart.cpp:1207
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Fann ingen passande programtillegg for kryptering."
@@ -59,17 +59,17 @@ msgstr ""
 "Meldinga er signert, men det går ikkje å stadfesta om signaturen er gyldig."
 "<br />Grunnen er: %1"
 
-#: src/messagepart.cpp:1208
+#: src/messagepart.cpp:1209
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "Programtillegget for kryptering «%1» kan ikkje dekryptera meldingar."
 
-#: src/messagepart.cpp:1210
+#: src/messagepart.cpp:1211
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Programtillegget for kryptering «%1» klarte ikkje dekryptera dataa."
 
-#: src/messagepart.cpp:1211
+#: src/messagepart.cpp:1212
 #, kde-format
 msgid "Error: %1"
 msgstr "Feil: %1"

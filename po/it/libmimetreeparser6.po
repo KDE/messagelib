@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2026-02-09 00:44+0000\n"
 "PO-Revision-Date: 2016-05-29 16:17+0100\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -28,12 +28,12 @@ msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "Senza nome"
 
-#: src/messagepart.cpp:704 src/messagepart.cpp:749 src/messagepart.cpp:987
+#: src/messagepart.cpp:704 src/messagepart.cpp:749 src/messagepart.cpp:988
 #, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr "Estensione crittografica errata."
 
-#: src/messagepart.cpp:815 src/messagepart.cpp:1206
+#: src/messagepart.cpp:815 src/messagepart.cpp:1207
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Non è stata trovata nessuna estensione crittografica valida."
@@ -58,17 +58,17 @@ msgstr ""
 "Il messaggio è firmato ma la validità della firma non può essere verificata."
 "<br />Motivo: %1"
 
-#: src/messagepart.cpp:1208
+#: src/messagepart.cpp:1209
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "L'estensione crittografica «%1» non può decifrare i messaggi."
 
-#: src/messagepart.cpp:1210
+#: src/messagepart.cpp:1211
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "L'estensione crittografica «%1» non può decifrare i dati."
 
-#: src/messagepart.cpp:1211
+#: src/messagepart.cpp:1212
 #, kde-format
 msgid "Error: %1"
 msgstr "Errore: %1"

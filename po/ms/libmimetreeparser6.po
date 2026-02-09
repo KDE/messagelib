@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mimos\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2026-02-09 00:44+0000\n"
 "PO-Revision-Date: 2005-11-23 18:09+0800\n"
 "Last-Translator: MIMOS <opensource@mimos.my>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -22,12 +22,12 @@ msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "Tidak dinamakan"
 
-#: src/messagepart.cpp:704 src/messagepart.cpp:749 src/messagepart.cpp:987
+#: src/messagepart.cpp:704 src/messagepart.cpp:749 src/messagepart.cpp:988
 #, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr "Plugin Crypto salah."
 
-#: src/messagepart.cpp:815 src/messagepart.cpp:1206
+#: src/messagepart.cpp:815 src/messagepart.cpp:1207
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Plugin kripto sesuai tidak ditemui"
@@ -53,17 +53,17 @@ msgstr ""
 "Mesej telah ditandatangani, tetapi kesahihan tanda tangan tidak dapat "
 "disahkan.<br />Sebab: %1"
 
-#: src/messagepart.cpp:1208
+#: src/messagepart.cpp:1209
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "Plugin Kripto \"%1\" tidak dapat menyahsulit mesej."
 
-#: src/messagepart.cpp:1210
+#: src/messagepart.cpp:1211
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Plugin kripto \"%1\" tidak dapat menyahsulit data."
 
-#: src/messagepart.cpp:1211
+#: src/messagepart.cpp:1212
 #, kde-format
 msgid "Error: %1"
 msgstr "Ralat: %1"

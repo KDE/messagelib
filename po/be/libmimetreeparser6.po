@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2026-02-09 00:44+0000\n"
 "PO-Revision-Date: 2008-01-31 22:13+0200\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -36,12 +36,12 @@ msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "Безназоўны"
 
-#: src/messagepart.cpp:704 src/messagepart.cpp:749 src/messagepart.cpp:987
+#: src/messagepart.cpp:704 src/messagepart.cpp:749 src/messagepart.cpp:988
 #, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr "Некарэктнае дапаўненне крыптаграфіі."
 
-#: src/messagepart.cpp:815 src/messagepart.cpp:1206
+#: src/messagepart.cpp:815 src/messagepart.cpp:1207
 #, fuzzy, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Не знойдзена адпаведнага модуля крыптаграфіі."
@@ -65,17 +65,17 @@ msgid ""
 "<br />Reason: %1"
 msgstr "Не атрымоўваецца ўсталяваць сапраўднасць подпісу.<br />Чыннік: %1"
 
-#: src/messagepart.cpp:1208
+#: src/messagepart.cpp:1209
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "Дапаўненне крыптаграфіі \"%1\" ня можа расшыфраваць паведамленні."
 
-#: src/messagepart.cpp:1210
+#: src/messagepart.cpp:1211
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Дапаўненне крыптаграфіі \"%1\" ня можа расшыфраваць дадзеныя."
 
-#: src/messagepart.cpp:1211
+#: src/messagepart.cpp:1212
 #, kde-format
 msgid "Error: %1"
 msgstr "Памылка: %1"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2026-02-09 00:44+0000\n"
 "PO-Revision-Date: 2024-12-13 19:09+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -23,12 +23,12 @@ msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "अनामिका"
 
-#: src/messagepart.cpp:704 src/messagepart.cpp:749 src/messagepart.cpp:987
+#: src/messagepart.cpp:704 src/messagepart.cpp:749 src/messagepart.cpp:988
 #, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr "गलत क्रिप्टो प्लग-इन।"
 
-#: src/messagepart.cpp:815 src/messagepart.cpp:1206
+#: src/messagepart.cpp:815 src/messagepart.cpp:1207
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "कोऽपि समुचितः क्रिप्टो प्लग-इन् न प्राप्तः ।"
@@ -52,17 +52,17 @@ msgid ""
 msgstr ""
 "सन्देशः हस्ताक्षरितः अस्ति, परन्तु हस्ताक्षरस्य वैधता सत्यापितुं न शक्यते ।<br /> कारणम् : %1"
 
-#: src/messagepart.cpp:1208
+#: src/messagepart.cpp:1209
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "क्रिप्टो प्लग-इन् \"%1\" सन्देशान् विगुप्तीकरणं कर्तुं न शक्नोति ।"
 
-#: src/messagepart.cpp:1210
+#: src/messagepart.cpp:1211
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "क्रिप्टो प्लग-इन् \"%1\" दत्तांशं विगुप्तं कर्तुं न शक्तवान् ।"
 
-#: src/messagepart.cpp:1211
+#: src/messagepart.cpp:1212
 #, kde-format
 msgid "Error: %1"
 msgstr "त्रुटिः %1"
