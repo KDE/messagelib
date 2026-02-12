@@ -21,9 +21,19 @@ using namespace MimeTreeParser;
 
 const Interface::BodyPartFormatter *EncryptedBodyPartFormatter::create(EncryptedBodyPartFormatter::EncryptionFlags flags)
 {
-    auto self = new EncryptedBodyPartFormatter;
-    self->mFlags = flags;
-    return self;
+    switch (flags) {
+    case AutoPGP: {
+        static EncryptedBodyPartFormatter self;
+        self.mFlags = flags;
+        return &self;
+    }
+    case ForcePGP: {
+        static EncryptedBodyPartFormatter self;
+        self.mFlags = flags;
+        return &self;
+    }
+    }
+    Q_UNREACHABLE();
 }
 
 MessagePart::Ptr EncryptedBodyPartFormatter::process(Interface::BodyPart &part) const
