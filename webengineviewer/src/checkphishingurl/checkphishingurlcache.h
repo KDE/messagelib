@@ -35,22 +35,12 @@ public:
 
     ~CheckPhishingUrlCache() override;
 
-    /*!
-     * \brief addCheckingUrlResult cache url. If \a correctUrl is true we store as UrlOk otherwise MalWare
-     * \a url
-     * \a correctUrl
-     */
+    /*! Adds a URL checking result to the cache. If correctUrl is true it stores as UrlOk, otherwise MalWare. */
     void addCheckingUrlResult(const QUrl &url, bool correctUrl, uint cacheDuration = 0);
-    /*!
-     * \brief urlStatus Return the status of cached Url. When we didn't stored it, it returns Unknown
-     * \a url
-     * Returns the status of url
-     */
+    /*! Returns the status of the cached URL. When the URL is not stored, it returns Unknown. */
     [[nodiscard]] CheckPhishingUrlCache::UrlStatus urlStatus(const QUrl &url);
 
-    /*!
-     * \brief clearCache clear the cache and save result in config file.
-     */
+    /*! Clears the cache and saves result in the configuration file. */
     void clearCache();
 
 private:

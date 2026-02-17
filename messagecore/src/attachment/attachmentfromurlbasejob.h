@@ -25,7 +25,9 @@ class MESSAGECORE_EXPORT AttachmentFromUrlBaseJob : public AttachmentLoadJob
     Q_OBJECT
 
 public:
+    /*! Constructs an attachment from URL base job. */
     explicit AttachmentFromUrlBaseJob(const QUrl &url = QUrl(), QObject *parent = nullptr);
+    /*! Destroys the attachment from URL base job. */
     ~AttachmentFromUrlBaseJob() override;
 
     /*!

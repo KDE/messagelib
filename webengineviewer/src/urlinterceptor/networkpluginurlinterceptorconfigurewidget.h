@@ -23,16 +23,23 @@ class WEBENGINEVIEWER_EXPORT NetworkPluginUrlInterceptorConfigureWidget : public
 {
     Q_OBJECT
 public:
+    /*! Constructs a NetworkPluginUrlInterceptorConfigureWidget with the given parent. */
     explicit NetworkPluginUrlInterceptorConfigureWidget(QWidget *parent = nullptr);
+    /*! Destroys the NetworkPluginUrlInterceptorConfigureWidget. */
     ~NetworkPluginUrlInterceptorConfigureWidget() override;
 
+    /*! Loads the configuration settings. */
     virtual void loadSettings() = 0;
+    /*! Saves the configuration settings. */
     virtual void saveSettings() = 0;
+    /*! Resets the configuration settings to defaults. */
     virtual void resetSettings() = 0;
 
+    /*! Returns the help anchor for this configuration widget. */
     [[nodiscard]] virtual QString helpAnchor() const;
 
 Q_SIGNALS:
+    /*! Emitted when the configuration has changed. */
     void configureChanged();
 };
 }

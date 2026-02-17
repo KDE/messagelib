@@ -26,14 +26,22 @@ class WEBENGINEVIEWER_EXPORT NetworkUrlInterceptorPluginManager : public QObject
 {
     Q_OBJECT
 public:
+    /*! Returns the singleton instance. */
     static NetworkUrlInterceptorPluginManager *self();
+    /*! Constructs a NetworkUrlInterceptorPluginManager with the given parent. */
     explicit NetworkUrlInterceptorPluginManager(QObject *parent = nullptr);
+    /*! Destroys the NetworkUrlInterceptorPluginManager object. */
     ~NetworkUrlInterceptorPluginManager() override;
 
+    /*! Returns the list of plugins. */
     [[nodiscard]] QList<WebEngineViewer::NetworkPluginUrlInterceptor *> pluginsList() const;
+    /*! Returns the configuration group name. */
     [[nodiscard]] QString configGroupName() const;
+    /*! Returns the configuration prefix setting key. */
     [[nodiscard]] QString configPrefixSettingKey() const;
+    /*! Returns the list of plugin utility data. */
     [[nodiscard]] QList<TextAddonsWidgets::PluginUtilData> pluginsDataList() const;
+    /*! Returns the plugin with the specified identifier. */
     [[nodiscard]] WebEngineViewer::NetworkPluginUrlInterceptor *pluginFromIdentifier(const QString &id);
 
 private:

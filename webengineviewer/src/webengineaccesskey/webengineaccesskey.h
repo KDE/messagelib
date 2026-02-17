@@ -30,21 +30,50 @@ class WEBENGINEVIEWER_EXPORT WebEngineAccessKey : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     * Constructs a WebEngineAccessKey object for the given webEngine with the specified parent.
+     */
     explicit WebEngineAccessKey(QWebEngineView *webEngine, QObject *parent = nullptr);
+    /*!
+     * Destroys the WebEngineAccessKey object.
+     */
     ~WebEngineAccessKey() override;
 
+    /*!
+     * Sets the action collection for the access keys.
+     */
     void setActionCollection(KActionCollection *ac);
 
+    /*!
+     * Handles a wheel event.
+     */
     void wheelEvent(QWheelEvent *e);
+    /*!
+     * Handles a resize event.
+     */
     void resizeEvent(QResizeEvent *);
+    /*!
+     * Handles a key press event.
+     */
     void keyPressEvent(QKeyEvent *e);
+    /*!
+     * Handles a key release event.
+     */
     void keyReleaseEvent(QKeyEvent *e);
 
+    /*!
+     * Shows the access keys.
+     */
     void showAccessKeys();
+    /*!
+     * Hides the access keys.
+     */
     void hideAccessKeys();
 
 Q_SIGNALS:
-    /*! Emitted when a URL should be opened. */
+    /*!
+     * Emitted when a URL should be opened.
+     */
     void openUrl(const QUrl &url);
 
 private:

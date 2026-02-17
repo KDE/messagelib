@@ -25,12 +25,17 @@ class WEBENGINEVIEWER_EXPORT NetworkPluginUrlInterceptorInterface : public QObje
 {
     Q_OBJECT
 public:
+    /*! Constructs a NetworkPluginUrlInterceptorInterface with the given parent. */
     explicit NetworkPluginUrlInterceptorInterface(QObject *parent = nullptr);
+    /*! Destroys the NetworkPluginUrlInterceptorInterface object. */
     ~NetworkPluginUrlInterceptorInterface() override;
 
+    /*! Creates actions for the interceptor using the given action collection. */
     virtual void createActions(KActionCollection *ac);
+    /*! Returns the list of interceptor actions for the given hit test result. */
     [[nodiscard]] virtual QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
 
+    /*! Intercepts the URL request. */
     [[nodiscard]] virtual bool interceptRequest(QWebEngineUrlRequestInfo &info) = 0;
 };
 }

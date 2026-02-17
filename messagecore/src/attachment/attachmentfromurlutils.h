@@ -12,6 +12,7 @@ namespace MessageCore
 class AttachmentFromUrlBaseJob;
 namespace AttachmentFromUrlUtils
 {
+/*! Creates an attachment job for the given URL. */
 [[nodiscard]] MESSAGECORE_EXPORT MessageCore::AttachmentFromUrlBaseJob *createAttachmentJob(const QUrl &url, QObject *parent);
 }
 }

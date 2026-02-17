@@ -31,14 +31,23 @@ struct WEBENGINEVIEWER_EXPORT UpdateDataBaseInfo {
         RawCompression = 2,
     };
 
+    /*! List of additions to apply. */
     QList<Addition> additionList;
+    /*! List of removals to apply. */
     QList<Removal> removalList;
+    /*! Minimum wait duration before next update. */
     QString minimumWaitDuration;
+    /*! Type of threat. */
     QString threatType;
+    /*! Type of threat entry. */
     QString threatEntryType;
+    /*! Type of response. */
     ResponseType responseType = Unknown;
+    /*! Platform type. */
     QString platformType;
+    /*! New client state value. */
     QString newClientState;
+    /*! SHA256 hash. */
     QByteArray sha256;
     /*! Clears the data. */
     void clear();
@@ -47,33 +56,54 @@ struct WEBENGINEVIEWER_EXPORT UpdateDataBaseInfo {
 };
 
 struct WEBENGINEVIEWER_EXPORT RiceDeltaEncoding {
+    /*! Constructs a RiceDeltaEncoding object. */
     RiceDeltaEncoding();
+    /*! Compares this object with another. */
     [[nodiscard]] bool operator==(const RiceDeltaEncoding &other) const;
+    /*! Returns whether this is a valid encoding. */
     [[nodiscard]] bool isValid() const;
+    /*! First value in the encoding. */
     QByteArray firstValue;
+    /*! Encoded data. */
     QByteArray encodingData;
+    /*! Rice parameter for encoding. */
     int riceParameter;
+    /*! Number of entries in the encoding. */
     int numberEntries;
 };
 
 struct WEBENGINEVIEWER_EXPORT Addition {
+    /*! Constructs an Addition object. */
     Addition();
+    /*! Returns whether this is a valid addition. */
     [[nodiscard]] bool isValid() const;
+    /*! Compares this object with another. */
     [[nodiscard]] bool operator==(const Addition &other) const;
 
+    /*! Compares two Addition objects for sorting. */
     [[nodiscard]] static bool lessThan(const Addition &s1, const Addition &s2);
+    /*! Hash string for this addition. */
     QByteArray hashString;
+    /*! Rice delta encoding for this addition. */
     RiceDeltaEncoding riceDeltaEncoding;
+    /*! Compression type used. */
     UpdateDataBaseInfo::CompressionType compressionType;
+    /*! Prefix size for the hash. */
     int prefixSize;
 };
 
 struct WEBENGINEVIEWER_EXPORT Removal {
+    /*! Constructs a Removal object. */
     Removal();
+    /*! Compares this object with another. */
     [[nodiscard]] bool operator==(const Removal &other) const;
+    /*! Returns whether this is a valid removal. */
     [[nodiscard]] bool isValid() const;
+    /*! List of indexes to remove. */
     QList<quint32> indexes;
+    /*! Rice delta encoding for this removal. */
     RiceDeltaEncoding riceDeltaEncoding;
+    /*! Compression type used. */
     UpdateDataBaseInfo::CompressionType compressionType;
 };
 }

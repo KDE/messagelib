@@ -75,5 +75,6 @@ private:
 };
 
 [[nodiscard]] QHash<QByteArray, QByteArray> MESSAGECORE_EXPORT paramsFromAutocryptHeader(const KMime::Headers::Base *const header);
+/*! Processes autocrypt information from mail. */
 MESSAGECORE_EXPORT void processAutocryptfromMail(const HeaderMixupNodeHelper &mixup);
 }

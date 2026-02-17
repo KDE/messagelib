@@ -15,15 +15,20 @@ class WEBENGINEVIEWER_EXPORT BlockExternalResourcesUrlInterceptor : public WebEn
 {
     Q_OBJECT
 public:
+    /*! Constructs a BlockExternalResourcesUrlInterceptor with the given parent. */
     explicit BlockExternalResourcesUrlInterceptor(QObject *parent = nullptr);
+    /*! Destroys the BlockExternalResourcesUrlInterceptor object. */
     ~BlockExternalResourcesUrlInterceptor() override;
 
+    /*! Intercepts the URL request. */
     [[nodiscard]] bool interceptRequest(QWebEngineUrlRequestInfo &info) override;
-    // Used by autotest only
+    /*! Intercepts a request for the given URL, resource type, and navigation type. Used by autotest only. */
     [[nodiscard]] bool
     interceptRequest(const QUrl &url, QWebEngineUrlRequestInfo::ResourceType resourceType, QWebEngineUrlRequestInfo::NavigationType navigationType);
+    /*! Sets whether the interceptor is enabled. */
     void setEnabled(bool enabled);
 Q_SIGNALS:
+    /*! Emitted when a form submission is forbidden. */
     void formSubmittedForbidden();
 
 private:

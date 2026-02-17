@@ -23,11 +23,16 @@ class MESSAGECORE_EXPORT AttachmentUpdateJob : public KJob
 {
     Q_OBJECT
 public:
+    /*! Constructs an attachment update job. */
     explicit AttachmentUpdateJob(const AttachmentPart::Ptr &part, QObject *parent = nullptr);
+    /*! Destroys the attachment update job. */
     ~AttachmentUpdateJob() override;
 
+    /*! Starts the attachment update job. */
     void start() override;
+    /*! Returns the original attachment part. */
     [[nodiscard]] AttachmentPart::Ptr originalPart() const;
+    /*! Returns the updated attachment part. */
     [[nodiscard]] AttachmentPart::Ptr updatedPart() const;
 
 private:

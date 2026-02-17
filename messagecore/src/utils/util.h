@@ -25,6 +25,12 @@ namespace MessageCore
  */
 namespace Util
 {
+/*!
+ * Returns the identity for the given message.
+ * \a msg The KMime::Message to get the identity for.
+ * \a identMgr The identity manager to use.
+ * \a folderIdentityId The folder identity ID to use.
+ */
 [[nodiscard]] MESSAGECORE_EXPORT const KIdentityManagementCore::Identity &
 identityForMessage(KMime::Message *msg, const KIdentityManagementCore::IdentityManager *const identMgr, uint folderIdentityId);
 }

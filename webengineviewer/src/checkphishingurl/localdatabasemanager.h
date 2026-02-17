@@ -26,11 +26,15 @@ class WEBENGINEVIEWER_EXPORT LocalDataBaseManager : public QObject
 {
     Q_OBJECT
 public:
+    /*! Constructs a LocalDataBaseManager with the given parent. */
     explicit LocalDataBaseManager(QObject *parent = nullptr);
+    /*! Destroys the LocalDataBaseManager object. */
     ~LocalDataBaseManager() override;
 
+    /*! Checks the given URL. */
     void checkUrl(const QUrl &url);
 
+    /*! Initializes the database manager. */
     void initialize();
 
 Q_SIGNALS:
@@ -38,6 +42,7 @@ Q_SIGNALS:
     void checkUrlFinished(const QUrl &url, WebEngineViewer::CheckPhishingUrlUtil::UrlStatus status);
 
 protected:
+    /*! Constructs a LocalDataBaseManager with the given implementation. */
     explicit LocalDataBaseManager(LocalDataBaseManagerPrivate *impl, QObject *parent = nullptr);
 
     LocalDataBaseManagerPrivate *const d;

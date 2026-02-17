@@ -29,19 +29,27 @@ public:
     /*! Destroys the ZoomActionMenu object. */
     ~ZoomActionMenu() override;
 
+    /*! Creates zoom actions. */
     void createZoomActions();
 
+    /*! Returns the zoom in action. */
     [[nodiscard]] QAction *zoomInAction() const;
 
+    /*! Returns the zoom out action. */
     [[nodiscard]] QAction *zoomOutAction() const;
 
+    /*! Returns the zoom reset action. */
     [[nodiscard]] QAction *zoomResetAction() const;
 
+    /*! Sets the action collection. */
     void setActionCollection(KActionCollection *ac);
 
+    /*! Sets the zoom factor. */
     void setZoomFactor(qreal zoomFactor);
+    /*! Returns the current zoom factor. */
     [[nodiscard]] qreal zoomFactor() const;
 
+    /*! Sets the web viewer zoom factor. */
     void setWebViewerZoomFactor(qreal zoomFactor);
 
 Q_SIGNALS:

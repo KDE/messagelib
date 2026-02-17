@@ -28,9 +28,12 @@ class WEBENGINEVIEWER_EXPORT TrackingDetailsDialog : public QDialog
 {
     Q_OBJECT
 public:
+    /*! Constructs a TrackingDetailsDialog with the given parent. */
     explicit TrackingDetailsDialog(QWidget *parent = nullptr);
+    /*! Destroys the TrackingDetailsDialog. */
     ~TrackingDetailsDialog() override;
 
+    /*! Sets the details text to display. */
     void setDetails(const QString &details);
 
 private:
