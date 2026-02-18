@@ -29,16 +29,6 @@ struct CacheHeader {
     int cacheSize;
 };
 
-QDebug operator<<(QDebug d, const CacheHeader &t)
-{
-    d << " grouping " << t.grouping;
-    d << " threading " << t.threading;
-    d << " threadLeader " << t.threadLeader;
-    d << " grouping " << t.grouping;
-    d << " cacheSize " << t.cacheSize;
-    return d;
-}
-
 QDataStream &operator<<(QDataStream &stream, const CacheHeader &header)
 {
     return stream << header.version << (qint8)header.grouping << (qint8)header.threading << (qint8)header.threadLeader << header.cacheSize;

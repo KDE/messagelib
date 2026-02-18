@@ -374,7 +374,9 @@ Filter *Filter::loadFromConfigGroup(const KConfigGroup &newGroup)
 
 void Filter::setSearchString(const SearchLineCommand &command)
 {
-#if !FORCE_DISABLE_AKONADI_SEARCH
+#if FORCE_DISABLE_AKONADI_SEARCH
+    Q_UNUSED(command);
+#else
     mMatchingItemIds.clear();
     if (command.isEmpty()) {
         return;
@@ -573,7 +575,10 @@ void Filter::setSearchString(const SearchLineCommand &command)
 
 void Filter::setSearchString(const QString &search, SearchMessageByButtons::SearchOptions options)
 {
-#if !FORCE_DISABLE_AKONADI_SEARCH
+#if FORCE_DISABLE_AKONADI_SEARCH
+    Q_UNUSED(search);
+    Q_UNUSED(options);
+#else
     const QString trimStr = search.trimmed();
     if ((mSearchString == trimStr) && (mOptions == options)) {
         return;

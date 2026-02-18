@@ -19,7 +19,7 @@ public:
     }
 
 protected:
-    void downloadDataBase(const QString &clientState) override
+    void downloadDataBase([[maybe_unused]] const QString &clientState) override
     {
         // don't actually download anything
     }

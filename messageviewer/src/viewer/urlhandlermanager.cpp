@@ -630,7 +630,7 @@ bool AttachmentURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
         return false;
     }
     const bool inHeader = attachmentIsInHeader(url);
-    const bool shouldShowDialog = !w->nodeHelper()->isNodeDisplayedEmbedded(node) || !inHeader;
+    // const bool shouldShowDialog = !w->nodeHelper()->isNodeDisplayedEmbedded(node) || !inHeader;
     if (inHeader) {
         w->scrollToAttachment(node);
     }

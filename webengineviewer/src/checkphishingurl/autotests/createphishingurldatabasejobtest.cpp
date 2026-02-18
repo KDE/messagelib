@@ -25,12 +25,6 @@ static QByteArray readJsonFile(const QString &jsonFile)
     return data;
 }
 
-static QByteArray createHash(const QByteArray &ba)
-{
-    QByteArray b = QCryptographicHash::hash(ba, QCryptographicHash::Sha256);
-    return b.toBase64();
-}
-
 CreatePhishingUrlDataBaseJobTest::CreatePhishingUrlDataBaseJobTest(QObject *parent)
     : QObject(parent)
 {
