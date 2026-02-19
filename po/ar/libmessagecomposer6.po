@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-06 00:46+0000\n"
+"POT-Creation-Date: 2026-02-19 00:48+0000\n"
 "PO-Revision-Date: 2025-09-15 12:21+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -1523,7 +1523,7 @@ msgstr "طُلب استخدام التفاف الكلمات، ولكن لم يع
 msgid "Asked not to use word wrapping, but not given clean plain text."
 msgstr "طلب عدم استخدام التفاف الكلمات، ولكن لم يعطى نصًا عاديًا نظيفًا."
 
-#: job/maintextjob.cpp:92
+#: job/maintextjob.cpp:90
 #, kde-format
 msgid "Could not get text codec for charset \"%1\"."
 msgstr "تعذر الحصول على برنامج ترميز النص لمجموعة المحارف \"%1\"."

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-06 00:46+0000\n"
+"POT-Creation-Date: 2026-02-19 00:48+0000\n"
 "PO-Revision-Date: 2014-09-18 22:36+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -1613,7 +1613,7 @@ msgid "Asked not to use word wrapping, but not given clean plain text."
 msgstr ""
 "Du wullt keen Reegümbrook bruken, man hest keen schier Eenfachtext angeven."
 
-#: job/maintextjob.cpp:92
+#: job/maintextjob.cpp:90
 #, kde-format
 msgid "Could not get text codec for charset \"%1\"."
 msgstr "Textkodek för Tekensett \"%1\" lett sik nich halen."

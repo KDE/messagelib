@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-06 00:46+0000\n"
+"POT-Creation-Date: 2026-02-19 00:48+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -1499,7 +1499,7 @@ msgstr "请求使用自动换行，但没有给出自动换行的纯文本。"
 msgid "Asked not to use word wrapping, but not given clean plain text."
 msgstr "请求不使用自动换行，但没有给出干净的纯文本。"
 
-#: job/maintextjob.cpp:92
+#: job/maintextjob.cpp:90
 #, kde-format
 msgid "Could not get text codec for charset \"%1\"."
 msgstr "无法获取字符集“%1”的文本编解码器。"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-06 00:46+0000\n"
+"POT-Creation-Date: 2026-02-19 00:48+0000\n"
 "PO-Revision-Date: 2024-12-20 21:53+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -1528,7 +1528,7 @@ msgstr "शब्दवेष्टनस्य उपयोगं कर्त�
 msgid "Asked not to use word wrapping, but not given clean plain text."
 msgstr "शब्दवेष्टनस्य उपयोगं न कर्तुं पृष्टः, परन्तु स्वच्छः साधारणः पाठः न दत्तः।"
 
-#: job/maintextjob.cpp:92
+#: job/maintextjob.cpp:90
 #, kde-format
 msgid "Could not get text codec for charset \"%1\"."
 msgstr "\"%1\" इति charset कृते पाठकोडेक् प्राप्तुं न शक्तवान् ।"

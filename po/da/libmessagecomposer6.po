@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-06 00:46+0000\n"
+"POT-Creation-Date: 2026-02-19 00:48+0000\n"
 "PO-Revision-Date: 2020-11-17 19:45+0100\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -1605,7 +1605,7 @@ msgstr ""
 msgid "Asked not to use word wrapping, but not given clean plain text."
 msgstr "Bedt om ikke at bruge ordombrydning, men modtog ikke ren klartekst."
 
-#: job/maintextjob.cpp:92
+#: job/maintextjob.cpp:90
 #, kde-format
 msgid "Could not get text codec for charset \"%1\"."
 msgstr "Kunne ikke få tekst-codec for tegnsættet \"%1\"."

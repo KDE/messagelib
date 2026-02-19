@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-05 00:44+0000\n"
+"POT-Creation-Date: 2026-02-19 00:48+0000\n"
 "PO-Revision-Date: 2025-06-21 13:08+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -461,7 +461,7 @@ msgstr "Domēns:"
 msgid "List-Id:"
 msgstr "Parādīts ID:"
 
-#: dkim-verify/dkimrulewidget.cpp:47 header/grantleeheaderformatter.cpp:273
+#: dkim-verify/dkimrulewidget.cpp:47 header/grantleeheaderformatter.cpp:271
 #, kde-format
 msgid "From:"
 msgstr "No:"
@@ -680,88 +680,88 @@ msgstr "%1: derīgs"
 msgid "Not Signed"
 msgstr "Nav parakstīts"
 
-#: header/grantleeheaderformatter.cpp:205
+#: header/grantleeheaderformatter.cpp:204
 #, kde-format
 msgid "Subject:"
 msgstr "Temats:"
 
-#: header/grantleeheaderformatter.cpp:225
+#: header/grantleeheaderformatter.cpp:224
 #, kde-format
 msgid "Date:"
 msgstr "Datums:"
 
-#: header/grantleeheaderformatter.cpp:241
+#: header/grantleeheaderformatter.cpp:239
 #, kde-format
 msgid "Message-Id:"
 msgstr "Vēstules ID:"
 
-#: header/grantleeheaderformatter.cpp:265
+#: header/grantleeheaderformatter.cpp:263
 #, kde-format
 msgid "To:"
 msgstr "Kam:"
 
-#: header/grantleeheaderformatter.cpp:267
+#: header/grantleeheaderformatter.cpp:265
 #, kde-format
 msgid "Reply To:"
 msgstr "Atbildēt uz:"
 
-#: header/grantleeheaderformatter.cpp:269
+#: header/grantleeheaderformatter.cpp:267
 #, kde-format
 msgid "CC:"
 msgstr "CC:"
 
-#: header/grantleeheaderformatter.cpp:271
+#: header/grantleeheaderformatter.cpp:269
 #, kde-format
 msgid "BCC:"
 msgstr "BCC:"
 
-#: header/grantleeheaderformatter.cpp:275
+#: header/grantleeheaderformatter.cpp:273
 #, kde-format
 msgid "Sender:"
 msgstr "Sūtītājs:"
 
-#: header/grantleeheaderformatter.cpp:277
+#: header/grantleeheaderformatter.cpp:275
 #, kde-format
 msgid "resent from:"
 msgstr "atkārtoti sūtīt no:"
 
-#: header/grantleeheaderformatter.cpp:279
+#: header/grantleeheaderformatter.cpp:277
 #, kde-format
 msgid "resent to:"
 msgstr "atkārtoti sūtīt uz:"
 
-#: header/grantleeheaderformatter.cpp:360
+#: header/grantleeheaderformatter.cpp:358
 #, kde-format
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "„Grantlee“ motīvs „%1“ nav derīgs."
 
-#: header/grantleeheaderformatter.cpp:450 header/headerstyle_util.cpp:82
+#: header/grantleeheaderformatter.cpp:448 header/headerstyle_util.cpp:82
 #: header/headerstyle_util.cpp:87 header/headerstyle_util.cpp:98
 #, kde-format
 msgid "No Subject"
 msgstr "Nav temata"
 
-#: header/grantleeheaderformatter.cpp:455
+#: header/grantleeheaderformatter.cpp:453
 #, kde-format
 msgid "Spam Status:"
 msgstr "Mēstules statuss:"
 
-#: header/grantleeheaderformatter.cpp:467
+#: header/grantleeheaderformatter.cpp:465
 #, kde-format
 msgid "Printing mode"
 msgstr "Drukāšanas režīms"
 
-#: header/grantleeheaderformatter.cpp:509
+#: header/grantleeheaderformatter.cpp:507
 #, kde-format
 msgid "[vcard]"
 msgstr "[vcard]"
 
-#: header/grantleeheaderformatter.cpp:516
+#: header/grantleeheaderformatter.cpp:514
 #, kde-format
 msgid "Attachments:"
 msgstr "Piesaistnes:"
 
-#: header/grantleeheaderformatter.cpp:542
+#: header/grantleeheaderformatter.cpp:540
 #, kde-format
 msgid "Security:"
 msgstr "Drošība:"

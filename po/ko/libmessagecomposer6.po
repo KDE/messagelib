@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-06 00:46+0000\n"
+"POT-Creation-Date: 2026-02-19 00:48+0000\n"
 "PO-Revision-Date: 2025-10-09 01:07+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1523,7 +1523,7 @@ msgid "Asked not to use word wrapping, but not given clean plain text."
 msgstr ""
 "자동 줄 바꿈을 선택하지 않았지만 깨끗한 일반 텍스트가 주어지지 않았습니다."
 
-#: job/maintextjob.cpp:92
+#: job/maintextjob.cpp:90
 #, kde-format
 msgid "Could not get text codec for charset \"%1\"."
 msgstr "문자 집합 \"%1\"에 대한 텍스트 코덱을 가져올 수 없습니다."

@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-05 00:44+0000\n"
+"POT-Creation-Date: 2026-02-19 00:48+0000\n"
 "PO-Revision-Date: 2025-05-18 19:02+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -467,7 +467,7 @@ msgstr "ஆள்களம்:"
 msgid "List-Id:"
 msgstr "List-Id:"
 
-#: dkim-verify/dkimrulewidget.cpp:47 header/grantleeheaderformatter.cpp:273
+#: dkim-verify/dkimrulewidget.cpp:47 header/grantleeheaderformatter.cpp:271
 #, kde-format
 msgid "From:"
 msgstr "அனுப்புநர்:"
@@ -684,89 +684,89 @@ msgstr "%1: முறையானது"
 msgid "Not Signed"
 msgstr "கையொப்பமிடாதது"
 
-#: header/grantleeheaderformatter.cpp:205
+#: header/grantleeheaderformatter.cpp:204
 #, kde-format
 msgid "Subject:"
 msgstr "தலைப்பு:"
 
-#: header/grantleeheaderformatter.cpp:225
+#: header/grantleeheaderformatter.cpp:224
 #, kde-format
 msgid "Date:"
 msgstr "தேதி:"
 
-#: header/grantleeheaderformatter.cpp:241
+#: header/grantleeheaderformatter.cpp:239
 #, fuzzy, kde-format
 msgid "Message-Id:"
 msgstr "செய்தியின் கருத்து"
 
-#: header/grantleeheaderformatter.cpp:265
+#: header/grantleeheaderformatter.cpp:263
 #, kde-format
 msgid "To:"
 msgstr "பெறுநர்:"
 
-#: header/grantleeheaderformatter.cpp:267
+#: header/grantleeheaderformatter.cpp:265
 #, kde-format
 msgid "Reply To:"
 msgstr "பதில் பெறுபவர்:"
 
-#: header/grantleeheaderformatter.cpp:269
+#: header/grantleeheaderformatter.cpp:267
 #, kde-format
 msgid "CC:"
 msgstr "நகல்:"
 
-#: header/grantleeheaderformatter.cpp:271
+#: header/grantleeheaderformatter.cpp:269
 #, kde-format
 msgid "BCC:"
 msgstr "கமுக்க நகல்:"
 
-#: header/grantleeheaderformatter.cpp:275
+#: header/grantleeheaderformatter.cpp:273
 #, kde-format
 msgid "Sender:"
 msgstr "அனுப்புநர்:"
 
-#: header/grantleeheaderformatter.cpp:277
+#: header/grantleeheaderformatter.cpp:275
 #, kde-format
 msgid "resent from:"
 msgstr "மீளனுப்பியவர்:"
 
-#: header/grantleeheaderformatter.cpp:279
+#: header/grantleeheaderformatter.cpp:277
 #, kde-format
 msgid "resent to:"
 msgstr "மீளனுப்பிபோதான பெறுநர்:"
 
-#: header/grantleeheaderformatter.cpp:360
+#: header/grantleeheaderformatter.cpp:358
 #, kde-format
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "\"%1\" என்ற Grantlee திட்டம் செல்லுபடியாகாதது."
 
-#: header/grantleeheaderformatter.cpp:450 header/headerstyle_util.cpp:82
+#: header/grantleeheaderformatter.cpp:448 header/headerstyle_util.cpp:82
 #: header/headerstyle_util.cpp:87 header/headerstyle_util.cpp:98
 #, kde-format
 msgid "No Subject"
 msgstr "தலைப்பு இல்லை"
 
-#: header/grantleeheaderformatter.cpp:455
+#: header/grantleeheaderformatter.cpp:453
 #, kde-format
 msgid "Spam Status:"
 msgstr "ஸ்பேம் நிலை:"
 
-#: header/grantleeheaderformatter.cpp:467
+#: header/grantleeheaderformatter.cpp:465
 #, kde-format
 msgid "Printing mode"
 msgstr "அச்சிடும் பயன்முறை"
 
-#: header/grantleeheaderformatter.cpp:509
+#: header/grantleeheaderformatter.cpp:507
 #, fuzzy, kde-format
 #| msgid "[vCard]"
 msgid "[vcard]"
 msgstr "[vஅட்டை]"
 
-#: header/grantleeheaderformatter.cpp:516
+#: header/grantleeheaderformatter.cpp:514
 #, kde-format
 msgid "Attachments:"
 msgstr "உடனிணைப்புகள்:"
 
-#: header/grantleeheaderformatter.cpp:542
+#: header/grantleeheaderformatter.cpp:540
 #, kde-format
 msgid "Security:"
 msgstr "பாதுகாப்பு:"

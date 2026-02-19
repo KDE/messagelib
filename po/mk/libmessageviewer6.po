@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-05 00:44+0000\n"
+"POT-Creation-Date: 2026-02-19 00:48+0000\n"
 "PO-Revision-Date: 2007-02-28 14:08+0100\n"
 "Last-Translator: Bozidar Proevski <bobibobi@freemail.com.mk>\n"
 "Language-Team: Macedonian <mkde-l10n@lists.sourceforge.net>\n"
@@ -525,7 +525,7 @@ msgstr "Стандард&ен домен:"
 msgid "List-Id:"
 msgstr ""
 
-#: dkim-verify/dkimrulewidget.cpp:47 header/grantleeheaderformatter.cpp:273
+#: dkim-verify/dkimrulewidget.cpp:47 header/grantleeheaderformatter.cpp:271
 #, fuzzy, kde-format
 #| msgid "From: "
 msgid "From:"
@@ -760,103 +760,103 @@ msgstr ""
 msgid "Not Signed"
 msgstr ""
 
-#: header/grantleeheaderformatter.cpp:205
+#: header/grantleeheaderformatter.cpp:204
 #, fuzzy, kde-format
 #| msgid "S&ubject:"
 msgid "Subject:"
 msgstr "&Тема:"
 
-#: header/grantleeheaderformatter.cpp:225
+#: header/grantleeheaderformatter.cpp:224
 #, fuzzy, kde-format
 #| msgid "Date: "
 msgid "Date:"
 msgstr "Датум:"
 
-#: header/grantleeheaderformatter.cpp:241
+#: header/grantleeheaderformatter.cpp:239
 #, fuzzy, kde-format
 msgid "Message-Id:"
 msgstr "Тело на пораката"
 
-#: header/grantleeheaderformatter.cpp:265
+#: header/grantleeheaderformatter.cpp:263
 #, fuzzy, kde-format
 #| msgid "To: "
 msgid "To:"
 msgstr "До:"
 
-#: header/grantleeheaderformatter.cpp:267
+#: header/grantleeheaderformatter.cpp:265
 #, fuzzy, kde-format
 #| msgid "&Reply To"
 msgid "Reply To:"
 msgstr "Одгово&ри на"
 
-#: header/grantleeheaderformatter.cpp:269
+#: header/grantleeheaderformatter.cpp:267
 #, fuzzy, kde-format
 #| msgid "CC: "
 msgid "CC:"
 msgstr "CC: "
 
-#: header/grantleeheaderformatter.cpp:271
+#: header/grantleeheaderformatter.cpp:269
 #, fuzzy, kde-format
 #| msgid "BCC: "
 msgid "BCC:"
 msgstr "BCC: "
 
-#: header/grantleeheaderformatter.cpp:275
+#: header/grantleeheaderformatter.cpp:273
 #, fuzzy, kde-format
 #| msgid "Sender"
 msgid "Sender:"
 msgstr "Испраќач"
 
-#: header/grantleeheaderformatter.cpp:277
+#: header/grantleeheaderformatter.cpp:275
 #, fuzzy, kde-format
 #| msgid "(resent from %1)"
 msgid "resent from:"
 msgstr "(препратено од %1)"
 
-#: header/grantleeheaderformatter.cpp:279
+#: header/grantleeheaderformatter.cpp:277
 #, fuzzy, kde-format
 #| msgid "(resent from %1)"
 msgid "resent to:"
 msgstr "(препратено од %1)"
 
-#: header/grantleeheaderformatter.cpp:360
+#: header/grantleeheaderformatter.cpp:358
 #, fuzzy, kde-format
 #| msgid "The signature file is not valid"
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "Датотеката со потпис не е валидна"
 
-#: header/grantleeheaderformatter.cpp:450 header/headerstyle_util.cpp:82
+#: header/grantleeheaderformatter.cpp:448 header/headerstyle_util.cpp:82
 #: header/headerstyle_util.cpp:87 header/headerstyle_util.cpp:98
 #, kde-format
 msgid "No Subject"
 msgstr "(Без тема)"
 
-#: header/grantleeheaderformatter.cpp:455
+#: header/grantleeheaderformatter.cpp:453
 #, fuzzy, kde-format
 #| msgid "Status: "
 msgid "Spam Status:"
 msgstr "Статус: "
 
-#: header/grantleeheaderformatter.cpp:467
+#: header/grantleeheaderformatter.cpp:465
 #, fuzzy, kde-format
 #| msgid "Printing Output"
 msgid "Printing mode"
 msgstr "Излез за печатење"
 
-#: header/grantleeheaderformatter.cpp:509
+#: header/grantleeheaderformatter.cpp:507
 #, fuzzy, kde-format
 #| msgid "[vCard]"
 msgid "[vcard]"
 msgstr "[vCard]"
 
-#: header/grantleeheaderformatter.cpp:516
+#: header/grantleeheaderformatter.cpp:514
 #, fuzzy, kde-format
 #| msgctxt "Config->Composer->Attachments"
 #| msgid "A&ttachments"
 msgid "Attachments:"
 msgstr "П&рилози"
 
-#: header/grantleeheaderformatter.cpp:542
+#: header/grantleeheaderformatter.cpp:540
 #, fuzzy, kde-format
 #| msgid "S&ecurity"
 msgid "Security:"
