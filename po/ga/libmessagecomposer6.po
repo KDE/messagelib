@@ -18,11 +18,10 @@ msgstr ""
 "3 : 4\n"
 
 #: attachment/attachmentcontrollerbase.cpp:167
-#, fuzzy, kde-format
-#| msgid "Unable to edit attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to compress attachment"
-msgstr "Ní féidir an t-iatán a chur in eagar"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:178
 #, kde-format
@@ -38,26 +37,23 @@ msgid "Keep"
 msgstr "Coinnigh"
 
 #: attachment/attachmentcontrollerbase.cpp:182
-#, fuzzy, kde-format
-#| msgid "Compress"
+#, kde-format
 msgctxt "@action:button"
 msgid "Compress"
-msgstr "Comhbhrúigh"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:201
 #: attachment/attachmentcontrollerbase.cpp:962
-#, fuzzy, kde-format
-#| msgid "Unable to edit attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach file"
-msgstr "Ní féidir an t-iatán a chur in eagar"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:274
-#, fuzzy, kde-format
-#| msgid "Unable to edit attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to reload attachment"
-msgstr "Ní féidir an t-iatán a chur in eagar"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:321
 #, kde-format
@@ -79,39 +75,34 @@ msgid "&Open With..."
 msgstr "&Oscail Le..."
 
 #: attachment/attachmentcontrollerbase.cpp:377
-#, fuzzy, kde-format
-#| msgid "Unable to edit attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach public key"
-msgstr "Ní féidir an t-iatán a chur in eagar"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:391
-#, fuzzy, kde-format
-#| msgid "Unable to edit attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach vCard"
-msgstr "Ní féidir an t-iatán a chur in eagar"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:404
-#, fuzzy, kde-format
-#| msgid "Unable to edit attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach text from clipboard"
-msgstr "Ní féidir an t-iatán a chur in eagar"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:452
-#, fuzzy, kde-format
-#| msgid "Attach Public OpenPGP Key"
+#, kde-format
 msgctxt "@action"
 msgid "Attach &Public Key..."
-msgstr "Ceangail Eochair Phoiblí OpenPGP"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:455
-#, fuzzy, kde-format
-#| msgid "Attach Public OpenPGP Key"
+#, kde-format
 msgctxt "@action"
 msgid "Attach &My Public Key"
-msgstr "Ceangail Eochair Phoiblí OpenPGP"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:458
 #: attachment/attachmentcontrollerbase.cpp:463
@@ -132,17 +123,15 @@ msgid "Add Attachment..."
 msgstr "Cuir Iatán Leis..."
 
 #: attachment/attachmentcontrollerbase.cpp:468
-#, fuzzy, kde-format
-#| msgid "Attach directory"
+#, kde-format
 msgid "&Attach Directory..."
-msgstr "Ceangail comhadlann"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:472
-#, fuzzy, kde-format
-#| msgid "Attach directory"
+#, kde-format
 msgctxt "@action"
 msgid "Attach Own vCard"
-msgstr "Ceangail comhadlann"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:473
 #, kde-format
@@ -150,22 +139,19 @@ msgid "Own vCard"
 msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:477
-#, fuzzy, kde-format
-#| msgid "Attach directory"
+#, kde-format
 msgid "&Attach vCards..."
-msgstr "Ceangail comhadlann"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:481
-#, fuzzy, kde-format
-#| msgid "Attach directory"
+#, kde-format
 msgid "&Attach Text From Clipboard..."
-msgstr "Ceangail comhadlann"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:482
-#, fuzzy, kde-format
-#| msgid "Attach directory"
+#, kde-format
 msgid "Attach Text From Clipboard"
-msgstr "Ceangail comhadlann"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:494
 #, kde-format
@@ -196,11 +182,10 @@ msgid "Edit"
 msgstr "Eagar"
 
 #: attachment/attachmentcontrollerbase.cpp:518
-#, fuzzy, kde-format
-#| msgid "Edit With..."
+#, kde-format
 msgctxt "@action"
 msgid "Edit With..."
-msgstr "Cuir in Eagar le..."
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:523
 #, kde-format
@@ -213,25 +198,22 @@ msgid "Save As..."
 msgstr "Sábháil Mar..."
 
 #: attachment/attachmentcontrollerbase.cpp:532
-#, fuzzy, kde-format
-#| msgid "Attachment Pr&operties..."
+#, kde-format
 msgctxt "@action"
 msgid "Attachment Pr&operties..."
-msgstr "Airíonna an &Iatáin..."
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:533
-#, fuzzy, kde-format
-#| msgid "Properties"
+#, kde-format
 msgctxt "@action"
 msgid "Properties"
-msgstr "Airíonna"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:541
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action"
 msgid "Select All"
-msgstr "Roghnaigh Uile"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:544
 #, kde-format
@@ -247,24 +229,21 @@ msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:679
 #: attachment/attachmentcontrollerbase.cpp:705
-#, fuzzy, kde-format
-#| msgid "Unable to open attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unable to open attachment"
-msgstr "Ní féidir an t-iatán a oscailt"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:714
-#, fuzzy, kde-format
-#| msgid "KMail was unable to open the attachment."
+#, kde-format
 msgid "KMail was unable to open the attachment"
-msgstr "Níorbh fhéidir le KMail an t-iatán a oscailt."
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:756 attachment/editorwatcher.cpp:202
-#, fuzzy, kde-format
-#| msgid "Unable to edit attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unable to edit attachment"
-msgstr "Ní féidir an t-iatán a chur in eagar"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:797
 #, kde-format
@@ -272,11 +251,10 @@ msgid "unnamed"
 msgstr "gan ainm"
 
 #: attachment/attachmentcontrollerbase.cpp:800
-#, fuzzy, kde-format
-#| msgid "Save Attachment As"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Attachment As"
-msgstr "Sábháil an tIatán Mar"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:823
 #, kde-format
@@ -288,55 +266,48 @@ msgstr ""
 "An bhfuil fonn ort scríobh air?"
 
 #: attachment/attachmentcontrollerbase.cpp:824
-#, fuzzy, kde-format
-#| msgid "Save to File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save to File"
-msgstr "Sábháil go Comhad"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:825
-#, fuzzy, kde-format
-#| msgid "&Replace"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Replace"
-msgstr "&Ionadaigh"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:852
 #: attachment/attachmentcontrollerbase.cpp:931
-#, fuzzy, kde-format
-#| msgid "Do you really want to attach this directory \"%1\" ?"
+#, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
-msgstr "An bhfuil tú cinnte gur mhaith leat comhadlann \"%1\" a cheangal?"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:853
 #: attachment/attachmentcontrollerbase.cpp:932
-#, fuzzy, kde-format
-#| msgid "Attach directory"
+#, kde-format
 msgctxt "@title:window"
 msgid "Attach directory"
-msgstr "Ceangail comhadlann"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:854
 #: attachment/attachmentcontrollerbase.cpp:933
-#, fuzzy, kde-format
-#| msgid "Attach"
+#, kde-format
 msgctxt "@action:button"
 msgid "Attach"
-msgstr "Ceangail"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:889
-#, fuzzy, kde-format
-#| msgid "Attach directory"
+#, kde-format
 msgctxt "@title:window"
 msgid "Attach Directory"
-msgstr "Ceangail comhadlann"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:897
-#, fuzzy, kde-format
-#| msgid "Attach File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Attach File"
-msgstr "Cuir Comhad Leis"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:986
 #, kde-format
@@ -408,10 +379,9 @@ msgid "Suggest Automatic Display"
 msgstr ""
 
 #: attachment/editorwatcher.cpp:66
-#, fuzzy, kde-format
-#| msgid "Edit With..."
+#, kde-format
 msgid "Edit with:"
-msgstr "Cuir in Eagar le..."
+msgstr ""
 
 #: attachment/editorwatcher.cpp:200
 #, kde-format
@@ -458,11 +428,10 @@ msgid ""
 msgstr ""
 
 #: composer/composerviewbase.cpp:332
-#, fuzzy, kde-format
-#| msgid "Sign/Encrypt Message?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sign/Encrypt Message?"
-msgstr "Sínigh/Criptigh an Teachtaireacht?"
+msgstr ""
 
 #: composer/composerviewbase.cpp:508
 #, kde-format
@@ -475,11 +444,10 @@ msgid "Do you want to resize images?"
 msgstr ""
 
 #: composer/composerviewbase.cpp:519
-#, fuzzy, kde-format
-#| msgid "A&utomatically insert signature"
+#, kde-format
 msgctxt "@title:window"
 msgid "Auto Resize Images"
-msgstr "C&uir síniú isteach go huathoibríoch"
+msgstr ""
 
 #: composer/composerviewbase.cpp:520
 #, kde-format
@@ -488,39 +456,34 @@ msgid "Auto Resize"
 msgstr ""
 
 #: composer/composerviewbase.cpp:521
-#, fuzzy, kde-format
-#| msgid "Do &Not Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not Resize"
-msgstr "&Ná Sínigh"
+msgstr ""
 
 #: composer/composerviewbase.cpp:727
-#, fuzzy, kde-format
-#| msgid "OpenPGP Key Expired"
+#, kde-format
 msgctxt "@title:window"
 msgid "OpenPGP Key Expired"
-msgstr "Chuaigh an eochair OpenPGP as feidhm"
+msgstr ""
 
 #: composer/composerviewbase.cpp:727
-#, fuzzy, kde-format
-#| msgid "S/MIME Certificate Expired"
+#, kde-format
 msgctxt "@title:window"
 msgid "S/MIME Certificate Expired"
-msgstr "Chuaigh an teastas S/MIME as feidhm"
+msgstr ""
 
 #: composer/composerviewbase.cpp:729
-#, fuzzy, kde-format
-#| msgid "OpenPGP Key Expires Soon"
+#, kde-format
 msgctxt "@title:window"
 msgid "OpenPGP Key Expires Soon"
-msgstr "Rachaidh an eochair OpenPGP as feidhm go luath"
+msgstr ""
 
 #: composer/composerviewbase.cpp:730
-#, fuzzy, kde-format
-#| msgid "S/MIME Certificate Expires Soon"
+#, kde-format
 msgctxt "@title:window"
 msgid "S/MIME Certificate Expires Soon"
-msgstr "Rachaidh an teastas S/MIME as feidhm go luath"
+msgstr ""
 
 #: composer/composerviewbase.cpp:804 composer/composerviewbase.cpp:818
 #: composer/composerviewbase.cpp:850
@@ -598,25 +561,22 @@ msgid ""
 msgstr ""
 
 #: composer/composerviewbase.cpp:1908
-#, fuzzy, kde-format
-#| msgid "Save Attachment As"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Attachment Reminder"
-msgstr "Sábháil an tIatán Mar"
+msgstr ""
 
 #: composer/composerviewbase.cpp:1909
-#, fuzzy, kde-format
-#| msgid "&Attach File..."
+#, kde-format
 msgctxt "@action:button"
 msgid "&Attach File..."
-msgstr "Ce&angail Comhad..."
+msgstr ""
 
 #: composer/composerviewbase.cpp:1910
-#, fuzzy, kde-format
-#| msgid "&Send as Is"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Send as Is"
-msgstr "&Seol mar atá"
+msgstr ""
 
 #: composer/composerviewbase.cpp:1962
 #, kde-format
@@ -627,11 +587,10 @@ msgid ""
 msgstr ""
 
 #: composer/composerviewbase.cpp:1968 composer/composerviewbase.cpp:1996
-#, fuzzy, kde-format
-#| msgid "Sign Message?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sign Message?"
-msgstr "Sínigh an Teachtaireacht?"
+msgstr ""
 
 #: composer/composerviewbase.cpp:1969 composer/composerviewbase.cpp:1997
 #, kde-format
@@ -640,11 +599,10 @@ msgid "&Sign"
 msgstr "&Sínigh"
 
 #: composer/composerviewbase.cpp:1970 composer/composerviewbase.cpp:1998
-#, fuzzy, kde-format
-#| msgid "Do &Not Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Sign"
-msgstr "&Ná Sínigh"
+msgstr ""
 
 #: composer/composerviewbase.cpp:1991
 #, kde-format
@@ -661,18 +619,16 @@ msgid ""
 msgstr ""
 
 #: composer/composerviewbase.cpp:2023
-#, fuzzy, kde-format
-#| msgid "Send Unsigned?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Send Unsigned?"
-msgstr "Seol Gan Síniú?"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2024
-#, fuzzy, kde-format
-#| msgid "Send &Unsigned"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &Unsigned"
-msgstr "Seol &Gan Síniú"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2039
 #, kde-format
@@ -701,18 +657,16 @@ msgid "&Sign"
 msgstr "&Sínigh"
 
 #: composer/composerviewbase.cpp:2049
-#, fuzzy, kde-format
-#| msgid "Missing Key Warning"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unsigned-Message Warning"
-msgstr "Rabhadh: Eochair Ar Iarraidh"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2051
-#, fuzzy, kde-format
-#| msgid "Send &As Is"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &As Is"
-msgstr "&Seol Mar Atá"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2098
 #, kde-format
@@ -763,18 +717,16 @@ msgstr ""
 
 #: composer/composerviewbase.cpp:2138 composer/keyresolver.cpp:1319
 #: composer/keyresolver.cpp:1360
-#, fuzzy, kde-format
-#| msgid "&Encrypt"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Encrypt"
-msgstr "&Criptigh"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2139
-#, fuzzy, kde-format
-#| msgid "Do &Not Encrypt"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Encrypt"
-msgstr "&Ná Criptigh"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2159
 #, kde-format
@@ -785,18 +737,16 @@ msgid ""
 msgstr ""
 
 #: composer/composerviewbase.cpp:2165
-#, fuzzy, kde-format
-#| msgid "Send Unencrypted?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Send Unencrypted?"
-msgstr "Seol Gan Criptiú?"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2166 composer/keyresolver.cpp:1345
-#, fuzzy, kde-format
-#| msgid "Send &Unencrypted"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &Unencrypted"
-msgstr "Seol &Gan Criptiú"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2181
 #, kde-format
@@ -822,11 +772,10 @@ msgid "&Encrypt All Parts"
 msgstr "&Criptigh Gach Páirt"
 
 #: composer/composerviewbase.cpp:2193
-#, fuzzy, kde-format
-#| msgid "Encrypt Message?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unencrypted Message Warning"
-msgstr "Criptigh an Teachtaireacht?"
+msgstr ""
 
 #: composer/keyresolver.cpp:314
 #, kde-format
@@ -864,11 +813,10 @@ msgid ""
 msgstr ""
 
 #: composer/keyresolver.cpp:339
-#, fuzzy, kde-format
-#| msgid "Unusable Encryption Keys"
+#, kde-format
 msgctxt "@title:window"
 msgid "Not Fully Trusted Encryption Keys"
-msgstr "Eochracha Criptiúcháin Do-Úsáidte"
+msgstr ""
 
 #: composer/keyresolver.cpp:647
 #, kde-format
@@ -883,11 +831,10 @@ msgstr ""
 
 #: composer/keyresolver.cpp:657 composer/keyresolver.cpp:1010
 #: composer/keyresolver.cpp:1039
-#, fuzzy, kde-format
-#| msgid "Unusable Encryption Keys"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unusable Encryption Keys"
-msgstr "Eochracha Criptiúcháin Do-Úsáidte"
+msgstr ""
 
 #: composer/keyresolver.cpp:689
 #, kde-format
@@ -901,11 +848,10 @@ msgstr ""
 
 #: composer/keyresolver.cpp:699 composer/keyresolver.cpp:1068
 #: composer/keyresolver.cpp:1086
-#, fuzzy, kde-format
-#| msgid "Unusable Signing Keys"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unusable Signing Keys"
-msgstr "Eochracha Sínithe Do-Úsáidte"
+msgstr ""
 
 #: composer/keyresolver.cpp:1000
 #, kde-format
@@ -939,11 +885,10 @@ msgid ""
 msgstr ""
 
 #: composer/keyresolver.cpp:1069
-#, fuzzy, kde-format
-#| msgid "Do Not OpenPGP-Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not OpenPGP-Sign"
-msgstr "Ná Sínigh le hOpenPGP"
+msgstr ""
 
 #: composer/keyresolver.cpp:1079
 #, kde-format
@@ -955,11 +900,10 @@ msgid ""
 msgstr ""
 
 #: composer/keyresolver.cpp:1087
-#, fuzzy, kde-format
-#| msgid "Do Not S/MIME-Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not S/MIME-Sign"
-msgstr "Ná Sínigh le S/MIME"
+msgstr ""
 
 #: composer/keyresolver.cpp:1149
 #, kde-format
@@ -970,11 +914,10 @@ msgid ""
 msgstr ""
 
 #: composer/keyresolver.cpp:1153
-#, fuzzy, kde-format
-#| msgid "No signing possible"
+#, kde-format
 msgctxt "@title:window"
 msgid "No signing possible"
-msgstr "Ní féidir síniú"
+msgstr ""
 
 #: composer/keyresolver.cpp:1316
 #, kde-format
@@ -985,11 +928,10 @@ msgstr ""
 
 #: composer/keyresolver.cpp:1319 composer/keyresolver.cpp:1344
 #: composer/keyresolver.cpp:1360
-#, fuzzy, kde-format
-#| msgid "Missing Key Warning"
+#, kde-format
 msgctxt "@title:window"
 msgid "Missing Key Warning"
-msgstr "Rabhadh: Eochair Ar Iarraidh"
+msgstr ""
 
 #: composer/keyresolver.cpp:1335
 #, kde-format
@@ -1060,11 +1002,10 @@ msgid ""
 msgstr ""
 
 #: contactpreference/savecontactpreferencejob.cpp:71
-#, fuzzy, kde-format
-#| msgid "Name Selection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Name Selection"
-msgstr "Roghnú Ainm"
+msgstr ""
 
 #: contactpreference/savecontactpreferencejob.cpp:72
 #, kde-format
@@ -1094,11 +1035,10 @@ msgid "Failed to store a new reminder: %1"
 msgstr ""
 
 #: followupreminder/followupreminderselectdatedialog.cpp:35
-#, fuzzy, kde-format
-#| msgid "Select"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Date"
-msgstr "Roghnaigh"
+msgstr ""
 
 #: followupreminder/followupreminderselectdatedialog.cpp:63
 #, kde-format
@@ -1159,12 +1099,10 @@ msgid "Select Image Format"
 msgstr ""
 
 #: imagescaling/imagescalingselectformat.cpp:89
-#, fuzzy, kde-format
-#| msgctxt "@action:button Open recipient selection dialog."
-#| msgid "Se&lect..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Select Format..."
-msgstr "&Roghnaigh..."
+msgstr ""
 
 #: imagescaling/imagescalingwidget.cpp:109
 #, kde-format
@@ -1197,10 +1135,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, enabledAutoResize)
 #: imagescaling/ui/imagescalingwidget.ui:17
-#, fuzzy, kde-format
-#| msgid "A&utomatically insert signature"
+#, kde-format
 msgid "Automatically resize images"
-msgstr "C&uir síniú isteach go huathoibríoch"
+msgstr ""
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
 #: imagescaling/ui/imagescalingwidget.ui:28
@@ -1210,10 +1147,9 @@ msgstr "Ginearálta"
 
 #. i18n: ectx: property (text), widget (QCheckBox, KeepImageRatio)
 #: imagescaling/ui/imagescalingwidget.ui:34
-#, fuzzy, kde-format
-#| msgid "Keep Ratio"
+#, kde-format
 msgid "Keep ratio"
-msgstr "Caomhnaigh an Cóimheas"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, AskBeforeResizing)
 #: imagescaling/ui/imagescalingwidget.ui:41
@@ -1371,11 +1307,9 @@ msgstr ""
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_4)
 #: imagescaling/ui/imagescalingwidget.ui:389
-#, fuzzy, kde-format
-#| msgctxt "@info:status No recipients selected"
-#| msgid "No recipients"
+#, kde-format
 msgid "Recipients"
-msgstr "Gan faighteoirí"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QRadioButton, doNotFilterRecipients)
 #: imagescaling/ui/imagescalingwidget.ui:395
@@ -1413,17 +1347,15 @@ msgid "No text found in Clipboard"
 msgstr ""
 
 #: job/attachmentclipboardjob.cpp:46
-#, fuzzy, kde-format
-#| msgid "Save Attachment As"
+#, kde-format
 msgctxt "@title:window"
 msgid "Define Attachment Name"
-msgstr "Sábháil an tIatán Mar"
+msgstr ""
 
 #: job/attachmentclipboardjob.cpp:46
-#, fuzzy, kde-format
-#| msgid "Save Attachment As"
+#, kde-format
 msgid "Attachment Name:"
-msgstr "Sábháil an tIatán Mar"
+msgstr ""
 
 #: job/attachmentclipboardjob.cpp:49
 #, kde-format
@@ -1501,10 +1433,9 @@ msgid "Message Disposition Notification Request"
 msgstr ""
 
 #: mdn/mdnadvicedialog.cpp:30
-#, fuzzy, kde-format
-#| msgid "Send &Unsigned"
+#, kde-format
 msgid "Send \"&denied\""
-msgstr "Seol &Gan Síniú"
+msgstr ""
 
 #: mdn/mdnadvicedialog.cpp:32
 #, kde-format
@@ -1512,10 +1443,9 @@ msgid "&Ignore"
 msgstr ""
 
 #: mdn/mdnadvicedialog.cpp:34
-#, fuzzy, kde-format
-#| msgid "&Send as Is"
+#, kde-format
 msgid "&Send"
-msgstr "&Seol mar atá"
+msgstr ""
 
 #: mdn/mdnadvicehelper.cpp:27
 msgid ""
@@ -1582,12 +1512,10 @@ msgid "&Name:"
 msgstr "Ai&nm:"
 
 #: recipient/distributionlistdialog.cpp:125
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "New Distribution List"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Name of Distribution List"
-msgstr "Liosta Dáilte Nua"
+msgstr ""
 
 #: recipient/distributionlistdialog.cpp:132
 #, kde-format
@@ -1632,12 +1560,10 @@ msgstr ""
 "Roghnaigh ainm eile.</para>"
 
 #: recipient/distributionlistdialog.cpp:285
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Select recipients from address book"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Address Book"
-msgstr "Roghnaigh faighteoirí ón leabhar seoltaí"
+msgstr ""
 
 #: recipient/distributionlistdialog.cpp:286
 #, kde-format
@@ -1698,9 +1624,6 @@ msgid "Truncating recipients list to %2 of %1 entry."
 msgid_plural "Truncating recipients list to %2 of %1 entries."
 msgstr[0] ""
 msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
 
 #: recipient/recipientseditorsidewidget.cpp:29
 #, kde-format
@@ -1768,24 +1691,21 @@ msgid "Reply-To:%1"
 msgstr ""
 
 #: recipient/recipientspicker.cpp:51
-#, fuzzy, kde-format
-#| msgid "Select Recipient"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Recipient"
-msgstr "Roghnaigh Faighteoir"
+msgstr ""
 
 #: recipient/recipientspicker.cpp:63
-#, fuzzy, kde-format
-#| msgid "Search &Directory Service"
+#, kde-format
 msgctxt "@action:button"
 msgid "Search &Directory Service"
-msgstr "Cuardaigh Seirbhís &Eolaire"
+msgstr ""
 
 #: recipient/recipientspicker.cpp:82
-#, fuzzy, kde-format
-#| msgid "Add as &To"
+#, kde-format
 msgid "Add as &Reply-To"
-msgstr "Cuir Leis mar &Chuig"
+msgstr ""
 
 #: recipient/recipientspicker.cpp:83
 #, kde-format
@@ -1808,9 +1728,6 @@ msgid "%1 selected email"
 msgid_plural "%1 selected emails"
 msgstr[0] ""
 msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
 
 #: recipient/recipientspicker.cpp:175
 #, kde-format
@@ -1823,9 +1740,6 @@ msgid_plural ""
 "Please adapt the selection."
 msgstr[0] ""
 msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
 
 #: recipient/recipientspicker.cpp:192
 #, kde-format
@@ -1891,10 +1805,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, mLabel)
 #: sendlater/ui/sendlaterwidget.ui:29
-#, fuzzy, kde-format
-#| msgid "&Send as Is"
+#, kde-format
 msgid "Send at:"
-msgstr "&Seol mar atá"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, mRecurrence)
 #: sendlater/ui/sendlaterwidget.ui:39
@@ -2041,11 +1954,9 @@ msgid ""
 msgstr ""
 
 #: snippet/convertsnippetvariablemenu.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox Recipient of an email message."
-#| msgid "To"
+#, kde-format
 msgid "To"
-msgstr "Chuig"
+msgstr ""
 
 #: snippet/convertsnippetvariablemenu.cpp:28
 #, kde-format
@@ -2093,11 +2004,9 @@ msgid "From Field Name"
 msgstr ""
 
 #: snippet/convertsnippetvariablemenu.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox Carbon Copy recipient of an email message."
-#| msgid "CC"
+#, kde-format
 msgid "CC"
-msgstr "CC"
+msgstr ""
 
 #: snippet/convertsnippetvariablemenu.cpp:58
 #, kde-format
@@ -2145,23 +2054,19 @@ msgid "BCC Field Name"
 msgstr ""
 
 #: snippet/convertsnippetvariablemenu.cpp:89
-#, fuzzy, kde-format
-#| msgid "Save Attachment As"
+#, kde-format
 msgid "Attachment"
-msgstr "Sábháil an tIatán Mar"
+msgstr ""
 
 #: snippet/convertsnippetvariablemenu.cpp:90
-#, fuzzy, kde-format
-#| msgid "&Remove Attachment"
+#, kde-format
 msgid "Number Of Attachments"
-msgstr "&Bain an tIatán"
+msgstr ""
 
 #: snippet/convertsnippetvariablemenu.cpp:93
-#, fuzzy, kde-format
-#| msgctxt "@title column attachment name."
-#| msgid "Name"
+#, kde-format
 msgid "Names"
-msgstr "Ainm"
+msgstr ""
 
 #: snippet/convertsnippetvariablemenu.cpp:96
 #, kde-format
@@ -2330,638 +2235,3 @@ msgstr ""
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr ""
-
-#, fuzzy
-#~| msgid "Some Characters Will Be Lost"
-#~ msgctxt "@title:window"
-#~ msgid "Some Characters Will Be Lost"
-#~ msgstr "Beidh Roinnt Carachtar Caillte"
-
-#, fuzzy
-#~| msgid "Lose Characters"
-#~ msgctxt "@action:button"
-#~ msgid "Lose Characters"
-#~ msgstr "Caill Carachtair"
-
-#, fuzzy
-#~| msgid "Change Encoding"
-#~ msgctxt "@action:button"
-#~ msgid "Change Encoding"
-#~ msgstr "Athraigh an tIonchódú"
-
-#~ msgid ""
-#~ "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-#~ "p><p>expired less than a day ago.</p>"
-#~ msgid_plural ""
-#~ "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-#~ "p><p>expired %1 days ago.</p>"
-#~ msgstr[0] ""
-#~ "<p>Chuaigh d'eochair shínithe OpenPGP</p><p align=center><b>%2</b> "
-#~ "(Aitheantas 0x%3)</p><p>as feidhm níos lú ná lá amháin ó shin.</p>"
-#~ msgstr[1] ""
-#~ "<p>Chuaigh d'eochair shínithe OpenPGP</p><p align=center><b>%2</b> "
-#~ "(Aitheantas 0x%3)</p><p>as feidhm %1 lá ó shin.</p>"
-#~ msgstr[2] ""
-#~ "<p>Chuaigh d'eochair shínithe OpenPGP</p><p align=center><b>%2</b> "
-#~ "(Aitheantas 0x%3)</p><p>as feidhm %1 lá ó shin.</p>"
-#~ msgstr[3] ""
-#~ "<p>Chuaigh d'eochair shínithe OpenPGP</p><p align=center><b>%2</b> "
-#~ "(Aitheantas 0x%3)</p><p>as feidhm %1 lá ó shin.</p>"
-#~ msgstr[4] ""
-#~ "<p>Chuaigh d'eochair shínithe OpenPGP</p><p align=center><b>%2</b> "
-#~ "(Aitheantas 0x%3)</p><p>as feidhm %1 lá ó shin.</p>"
-
-#~ msgid ""
-#~ "<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-#~ "p><p>expired less than a day ago.</p>"
-#~ msgid_plural ""
-#~ "<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-#~ "p><p>expired %1 days ago.</p>"
-#~ msgstr[0] ""
-#~ "<p>Chuaigh d'eochair chriptiúcháin OpenPGP</p><p align=center><b>%2</b> "
-#~ "(Aitheantas 0x%3)</p><p>as feidhm níos lú ná lá amháin ó shin.</p>"
-#~ msgstr[1] ""
-#~ "<p>Chuaigh d'eochair chriptiúcháin OpenPGP</p><p align=center><b>%2</b> "
-#~ "(Aitheantas 0x%3)</p><p>as feidhm %1 lá ó shin.</p>"
-#~ msgstr[2] ""
-#~ "<p>Chuaigh d'eochair chriptiúcháin OpenPGP</p><p align=center><b>%2</b> "
-#~ "(Aitheantas 0x%3)</p><p>as feidhm %1 lá ó shin.</p>"
-#~ msgstr[3] ""
-#~ "<p>Chuaigh d'eochair chriptiúcháin OpenPGP</p><p align=center><b>%2</b> "
-#~ "(Aitheantas 0x%3)</p><p>as feidhm %1 lá ó shin.</p>"
-#~ msgstr[4] ""
-#~ "<p>Chuaigh d'eochair chriptiúcháin OpenPGP</p><p align=center><b>%2</b> "
-#~ "(Aitheantas 0x%3)</p><p>as feidhm %1 lá ó shin.</p>"
-
-#~ msgid ""
-#~ "<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-#~ "p><p>expired less than a day ago.</p>"
-#~ msgid_plural ""
-#~ "<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-#~ "p><p>expired %1 days ago.</p>"
-#~ msgstr[0] ""
-#~ "<p>Chuaigh an eochair OpenPGP le haghaidh</p><p align=center><b>%2</b> "
-#~ "(Aitheantas 0x%3)</p><p>as feidhm níos lú ná lá amháin ó shin.</p>"
-#~ msgstr[1] ""
-#~ "<p>Chuaigh an eochair OpenPGP le haghaidh</p><p align=center><b>%2</b> "
-#~ "(Aitheantas 0x%3)</p><p>as feidhm %1 lá ó shin.</p>"
-#~ msgstr[2] ""
-#~ "<p>Chuaigh an eochair OpenPGP le haghaidh</p><p align=center><b>%2</b> "
-#~ "(Aitheantas 0x%3)</p><p>as feidhm %1 lá ó shin.</p>"
-#~ msgstr[3] ""
-#~ "<p>Chuaigh an eochair OpenPGP le haghaidh</p><p align=center><b>%2</b> "
-#~ "(Aitheantas 0x%3)</p><p>as feidhm %1 lá ó shin.</p>"
-#~ msgstr[4] ""
-#~ "<p>Chuaigh an eochair OpenPGP le haghaidh</p><p align=center><b>%2</b> "
-#~ "(Aitheantas 0x%3)</p><p>as feidhm %1 lá ó shin.</p>"
-
-#, fuzzy
-#~| msgid ""
-#~| "<p>Your OpenPGP signing key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
-#~| "%3)</p><p>expires in less than a day.</p>"
-#~| msgid_plural ""
-#~| "<p>Your OpenPGP signing key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
-#~| "%3)</p><p>expires in less than %1 days.</p>"
-#~ msgid ""
-#~ "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-#~ "p><p>expires in less than a day.</p>"
-#~ msgid_plural ""
-#~ "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-#~ "p><p>expires in less than %1 days.</p>"
-#~ msgstr[0] ""
-#~ "<p>Rachaidh d'eochair shínithe OpenPGP</p><p align=\"center\"><b>%2</b> "
-#~ "(Aitheantas 0x%3)</p><p>as feidhm i gceann níos lú ná lá amháin.</p>"
-#~ msgstr[1] ""
-#~ "<p>Rachaidh d'eochair shínithe OpenPGP</p><p align=\"center\"><b>%2</b> "
-#~ "(Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-#~ msgstr[2] ""
-#~ "<p>Rachaidh d'eochair shínithe OpenPGP</p><p align=\"center\"><b>%2</b> "
-#~ "(Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-#~ msgstr[3] ""
-#~ "<p>Rachaidh d'eochair shínithe OpenPGP</p><p align=\"center\"><b>%2</b> "
-#~ "(Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-#~ msgstr[4] ""
-#~ "<p>Rachaidh d'eochair shínithe OpenPGP</p><p align=\"center\"><b>%2</b> "
-#~ "(Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-
-#, fuzzy
-#~| msgid ""
-#~| "<p>Your OpenPGP encryption key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
-#~| "%3)</p><p>expires in less than a day.</p>"
-#~| msgid_plural ""
-#~| "<p>Your OpenPGP encryption key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
-#~| "%3)</p><p>expires in less than %1 days.</p>"
-#~ msgid ""
-#~ "<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-#~ "p><p>expires in less than a day.</p>"
-#~ msgid_plural ""
-#~ "<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-#~ "p><p>expires in less than %1 days.</p>"
-#~ msgstr[0] ""
-#~ "<p>Rachaidh d'eochair chriptiúcháin OpenPGP</p><p align=\"center\"><b>%2</"
-#~ "b> (Aitheantas 0x%3)</p><p>as feidhm i gceann níos lú ná lá amháin.</p>"
-#~ msgstr[1] ""
-#~ "<p>Rachaidh d'eochair chriptiúcháin OpenPGP</p><p align=\"center\"><b>%2</"
-#~ "b> (Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-#~ msgstr[2] ""
-#~ "<p>Rachaidh d'eochair chriptiúcháin OpenPGP</p><p align=\"center\"><b>%2</"
-#~ "b> (Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-#~ msgstr[3] ""
-#~ "<p>Rachaidh d'eochair chriptiúcháin OpenPGP</p><p align=\"center\"><b>%2</"
-#~ "b> (Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-#~ msgstr[4] ""
-#~ "<p>Rachaidh d'eochair chriptiúcháin OpenPGP</p><p align=\"center\"><b>%2</"
-#~ "b> (Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-
-#, fuzzy
-#~| msgid ""
-#~| "<p>The OpenPGP key for</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</"
-#~| "p><p>expires in less than a day.</p>"
-#~| msgid_plural ""
-#~| "<p>The OpenPGP key for</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</"
-#~| "p><p>expires in less than %1 days.</p>"
-#~ msgid ""
-#~ "<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-#~ "p><p>expires in less than a day.</p>"
-#~ msgid_plural ""
-#~ "<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
-#~ "p><p>expires in less than %1 days.</p>"
-#~ msgstr[0] ""
-#~ "<p>Rachaidh an eochair OpenPGP le haghaidh</p><p align=\"center\"><b>%2</"
-#~ "b> (Aitheantas 0x%3)</p><p>as feidhm i gceann níos lú ná lá amháin.</p>"
-#~ msgstr[1] ""
-#~ "<p>Rachaidh an eochair OpenPGP le haghaidh</p><p align=\"center\"><b>%2</"
-#~ "b> (Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-#~ msgstr[2] ""
-#~ "<p>Rachaidh an eochair OpenPGP le haghaidh</p><p align=\"center\"><b>%2</"
-#~ "b> (Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-#~ msgstr[3] ""
-#~ "<p>Rachaidh an eochair OpenPGP le haghaidh</p><p align=\"center\"><b>%2</"
-#~ "b> (Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-#~ msgstr[4] ""
-#~ "<p>Rachaidh an eochair OpenPGP le haghaidh</p><p align=\"center\"><b>%2</"
-#~ "b> (Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-
-#, fuzzy
-#~| msgid ""
-#~| "<p>Your OpenPGP signing key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
-#~| "%3)</p><p>expires in less than a day.</p>"
-#~| msgid_plural ""
-#~| "<p>Your OpenPGP signing key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
-#~| "%3)</p><p>expires in less than %1 days.</p>"
-#~ msgid ""
-#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
-#~ "MIME signing certificate</p><p align=center><b>%2</b> (serial number %3);"
-#~ "</p><p>expires in less than a day.</p>"
-#~ msgid_plural ""
-#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
-#~ "MIME signing certificate</p><p align=center><b>%2</b> (serial number %3);"
-#~ "</p><p>expires in less than %1 days.</p>"
-#~ msgstr[0] ""
-#~ "<p>Rachaidh d'eochair shínithe OpenPGP</p><p align=\"center\"><b>%2</b> "
-#~ "(Aitheantas 0x%3)</p><p>as feidhm i gceann níos lú ná lá amháin.</p>"
-#~ msgstr[1] ""
-#~ "<p>Rachaidh d'eochair shínithe OpenPGP</p><p align=\"center\"><b>%2</b> "
-#~ "(Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-#~ msgstr[2] ""
-#~ "<p>Rachaidh d'eochair shínithe OpenPGP</p><p align=\"center\"><b>%2</b> "
-#~ "(Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-#~ msgstr[3] ""
-#~ "<p>Rachaidh d'eochair shínithe OpenPGP</p><p align=\"center\"><b>%2</b> "
-#~ "(Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-#~ msgstr[4] ""
-#~ "<p>Rachaidh d'eochair shínithe OpenPGP</p><p align=\"center\"><b>%2</b> "
-#~ "(Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-
-#, fuzzy
-#~| msgid ""
-#~| "<p>Your OpenPGP encryption key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
-#~| "%3)</p><p>expires in less than a day.</p>"
-#~| msgid_plural ""
-#~| "<p>Your OpenPGP encryption key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
-#~| "%3)</p><p>expires in less than %1 days.</p>"
-#~ msgid ""
-#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
-#~ "MIME encryption certificate</p><p align=center><b>%2</b> (serial number "
-#~ "%3);</p><p>expires in less than a day.</p>"
-#~ msgid_plural ""
-#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
-#~ "MIME encryption certificate</p><p align=center><b>%2</b> (serial number "
-#~ "%3);</p><p>expires in less than %1 days.</p>"
-#~ msgstr[0] ""
-#~ "<p>Rachaidh d'eochair chriptiúcháin OpenPGP</p><p align=\"center\"><b>%2</"
-#~ "b> (Aitheantas 0x%3)</p><p>as feidhm i gceann níos lú ná lá amháin.</p>"
-#~ msgstr[1] ""
-#~ "<p>Rachaidh d'eochair chriptiúcháin OpenPGP</p><p align=\"center\"><b>%2</"
-#~ "b> (Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-#~ msgstr[2] ""
-#~ "<p>Rachaidh d'eochair chriptiúcháin OpenPGP</p><p align=\"center\"><b>%2</"
-#~ "b> (Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-#~ msgstr[3] ""
-#~ "<p>Rachaidh d'eochair chriptiúcháin OpenPGP</p><p align=\"center\"><b>%2</"
-#~ "b> (Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-#~ msgstr[4] ""
-#~ "<p>Rachaidh d'eochair chriptiúcháin OpenPGP</p><p align=\"center\"><b>%2</"
-#~ "b> (Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-
-#, fuzzy
-#~| msgid ""
-#~| "<p>The OpenPGP key for</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</"
-#~| "p><p>expires in less than a day.</p>"
-#~| msgid_plural ""
-#~| "<p>The OpenPGP key for</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</"
-#~| "p><p>expires in less than %1 days.</p>"
-#~ msgid ""
-#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
-#~ "certificate</p><p align=center><b>%2</b> (serial number %3);</"
-#~ "p><p>expires in less than a day.</p>"
-#~ msgid_plural ""
-#~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
-#~ "certificate</p><p align=center><b>%2</b> (serial number %3);</"
-#~ "p><p>expires in less than %1 days.</p>"
-#~ msgstr[0] ""
-#~ "<p>Rachaidh an eochair OpenPGP le haghaidh</p><p align=\"center\"><b>%2</"
-#~ "b> (Aitheantas 0x%3)</p><p>as feidhm i gceann níos lú ná lá amháin.</p>"
-#~ msgstr[1] ""
-#~ "<p>Rachaidh an eochair OpenPGP le haghaidh</p><p align=\"center\"><b>%2</"
-#~ "b> (Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-#~ msgstr[2] ""
-#~ "<p>Rachaidh an eochair OpenPGP le haghaidh</p><p align=\"center\"><b>%2</"
-#~ "b> (Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-#~ msgstr[3] ""
-#~ "<p>Rachaidh an eochair OpenPGP le haghaidh</p><p align=\"center\"><b>%2</"
-#~ "b> (Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-#~ msgstr[4] ""
-#~ "<p>Rachaidh an eochair OpenPGP le haghaidh</p><p align=\"center\"><b>%2</"
-#~ "b> (Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-
-#, fuzzy
-#~| msgid ""
-#~| "<p>Your OpenPGP signing key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
-#~| "%3)</p><p>expires in less than a day.</p>"
-#~| msgid_plural ""
-#~| "<p>Your OpenPGP signing key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
-#~| "%3)</p><p>expires in less than %1 days.</p>"
-#~ msgid ""
-#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-#~ "your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
-#~ "number %3);</p><p>expires in less than a day.</p>"
-#~ msgid_plural ""
-#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-#~ "your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
-#~ "number %3);</p><p>expires in less than %1 days.</p>"
-#~ msgstr[0] ""
-#~ "<p>Rachaidh d'eochair shínithe OpenPGP</p><p align=\"center\"><b>%2</b> "
-#~ "(Aitheantas 0x%3)</p><p>as feidhm i gceann níos lú ná lá amháin.</p>"
-#~ msgstr[1] ""
-#~ "<p>Rachaidh d'eochair shínithe OpenPGP</p><p align=\"center\"><b>%2</b> "
-#~ "(Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-#~ msgstr[2] ""
-#~ "<p>Rachaidh d'eochair shínithe OpenPGP</p><p align=\"center\"><b>%2</b> "
-#~ "(Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-#~ msgstr[3] ""
-#~ "<p>Rachaidh d'eochair shínithe OpenPGP</p><p align=\"center\"><b>%2</b> "
-#~ "(Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-#~ msgstr[4] ""
-#~ "<p>Rachaidh d'eochair shínithe OpenPGP</p><p align=\"center\"><b>%2</b> "
-#~ "(Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-
-#, fuzzy
-#~| msgid ""
-#~| "<p>Your OpenPGP encryption key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
-#~| "%3)</p><p>expires in less than a day.</p>"
-#~| msgid_plural ""
-#~| "<p>Your OpenPGP encryption key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
-#~| "%3)</p><p>expires in less than %1 days.</p>"
-#~ msgid ""
-#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-#~ "your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
-#~ "number %3);</p><p>expires in less than a day.</p>"
-#~ msgid_plural ""
-#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-#~ "your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
-#~ "number %3);</p><p>expires in less than %1 days.</p>"
-#~ msgstr[0] ""
-#~ "<p>Rachaidh d'eochair chriptiúcháin OpenPGP</p><p align=\"center\"><b>%2</"
-#~ "b> (Aitheantas 0x%3)</p><p>as feidhm i gceann níos lú ná lá amháin.</p>"
-#~ msgstr[1] ""
-#~ "<p>Rachaidh d'eochair chriptiúcháin OpenPGP</p><p align=\"center\"><b>%2</"
-#~ "b> (Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-#~ msgstr[2] ""
-#~ "<p>Rachaidh d'eochair chriptiúcháin OpenPGP</p><p align=\"center\"><b>%2</"
-#~ "b> (Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-#~ msgstr[3] ""
-#~ "<p>Rachaidh d'eochair chriptiúcháin OpenPGP</p><p align=\"center\"><b>%2</"
-#~ "b> (Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-#~ msgstr[4] ""
-#~ "<p>Rachaidh d'eochair chriptiúcháin OpenPGP</p><p align=\"center\"><b>%2</"
-#~ "b> (Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-
-#, fuzzy
-#~| msgid ""
-#~| "<p>The OpenPGP key for</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</"
-#~| "p><p>expires in less than a day.</p>"
-#~| msgid_plural ""
-#~| "<p>The OpenPGP key for</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</"
-#~| "p><p>expires in less than %1 days.</p>"
-#~ msgid ""
-#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-#~ "S/MIME certificate</p><p align=center><b>%2</b> (serial number %3);</"
-#~ "p><p>expires in less than a day.</p>"
-#~ msgid_plural ""
-#~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
-#~ "S/MIME certificate</p><p align=center><b>%2</b> (serial number %3);</"
-#~ "p><p>expires in less than %1 days.</p>"
-#~ msgstr[0] ""
-#~ "<p>Rachaidh an eochair OpenPGP le haghaidh</p><p align=\"center\"><b>%2</"
-#~ "b> (Aitheantas 0x%3)</p><p>as feidhm i gceann níos lú ná lá amháin.</p>"
-#~ msgstr[1] ""
-#~ "<p>Rachaidh an eochair OpenPGP le haghaidh</p><p align=\"center\"><b>%2</"
-#~ "b> (Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-#~ msgstr[2] ""
-#~ "<p>Rachaidh an eochair OpenPGP le haghaidh</p><p align=\"center\"><b>%2</"
-#~ "b> (Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-#~ msgstr[3] ""
-#~ "<p>Rachaidh an eochair OpenPGP le haghaidh</p><p align=\"center\"><b>%2</"
-#~ "b> (Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-#~ msgstr[4] ""
-#~ "<p>Rachaidh an eochair OpenPGP le haghaidh</p><p align=\"center\"><b>%2</"
-#~ "b> (Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-
-#, fuzzy
-#~| msgid ""
-#~| "<p>Your OpenPGP signing key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
-#~| "%3)</p><p>expires in less than a day.</p>"
-#~| msgid_plural ""
-#~| "<p>Your OpenPGP signing key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
-#~| "%3)</p><p>expires in less than %1 days.</p>"
-#~ msgid ""
-#~ "<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
-#~ "number %3);</p><p>expires in less than a day.</p>"
-#~ msgid_plural ""
-#~ "<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
-#~ "number %3);</p><p>expires in less than %1 days.</p>"
-#~ msgstr[0] ""
-#~ "<p>Rachaidh d'eochair shínithe OpenPGP</p><p align=\"center\"><b>%2</b> "
-#~ "(Aitheantas 0x%3)</p><p>as feidhm i gceann níos lú ná lá amháin.</p>"
-#~ msgstr[1] ""
-#~ "<p>Rachaidh d'eochair shínithe OpenPGP</p><p align=\"center\"><b>%2</b> "
-#~ "(Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-#~ msgstr[2] ""
-#~ "<p>Rachaidh d'eochair shínithe OpenPGP</p><p align=\"center\"><b>%2</b> "
-#~ "(Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-#~ msgstr[3] ""
-#~ "<p>Rachaidh d'eochair shínithe OpenPGP</p><p align=\"center\"><b>%2</b> "
-#~ "(Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-#~ msgstr[4] ""
-#~ "<p>Rachaidh d'eochair shínithe OpenPGP</p><p align=\"center\"><b>%2</b> "
-#~ "(Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-
-#, fuzzy
-#~| msgid ""
-#~| "<p>Your OpenPGP encryption key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
-#~| "%3)</p><p>expires in less than a day.</p>"
-#~| msgid_plural ""
-#~| "<p>Your OpenPGP encryption key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
-#~| "%3)</p><p>expires in less than %1 days.</p>"
-#~ msgid ""
-#~ "<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> "
-#~ "(serial number %3);</p><p>expires in less than a day.</p>"
-#~ msgid_plural ""
-#~ "<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> "
-#~ "(serial number %3);</p><p>expires in less than %1 days.</p>"
-#~ msgstr[0] ""
-#~ "<p>Rachaidh d'eochair chriptiúcháin OpenPGP</p><p align=\"center\"><b>%2</"
-#~ "b> (Aitheantas 0x%3)</p><p>as feidhm i gceann níos lú ná lá amháin.</p>"
-#~ msgstr[1] ""
-#~ "<p>Rachaidh d'eochair chriptiúcháin OpenPGP</p><p align=\"center\"><b>%2</"
-#~ "b> (Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-#~ msgstr[2] ""
-#~ "<p>Rachaidh d'eochair chriptiúcháin OpenPGP</p><p align=\"center\"><b>%2</"
-#~ "b> (Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-#~ msgstr[3] ""
-#~ "<p>Rachaidh d'eochair chriptiúcháin OpenPGP</p><p align=\"center\"><b>%2</"
-#~ "b> (Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-#~ msgstr[4] ""
-#~ "<p>Rachaidh d'eochair chriptiúcháin OpenPGP</p><p align=\"center\"><b>%2</"
-#~ "b> (Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-
-#, fuzzy
-#~| msgid ""
-#~| "<p>The OpenPGP key for</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</"
-#~| "p><p>expires in less than a day.</p>"
-#~| msgid_plural ""
-#~| "<p>The OpenPGP key for</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</"
-#~| "p><p>expires in less than %1 days.</p>"
-#~ msgid ""
-#~ "<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
-#~ "%3);</p><p>expires in less than a day.</p>"
-#~ msgid_plural ""
-#~ "<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
-#~ "%3);</p><p>expires in less than %1 days.</p>"
-#~ msgstr[0] ""
-#~ "<p>Rachaidh an eochair OpenPGP le haghaidh</p><p align=\"center\"><b>%2</"
-#~ "b> (Aitheantas 0x%3)</p><p>as feidhm i gceann níos lú ná lá amháin.</p>"
-#~ msgstr[1] ""
-#~ "<p>Rachaidh an eochair OpenPGP le haghaidh</p><p align=\"center\"><b>%2</"
-#~ "b> (Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-#~ msgstr[2] ""
-#~ "<p>Rachaidh an eochair OpenPGP le haghaidh</p><p align=\"center\"><b>%2</"
-#~ "b> (Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-#~ msgstr[3] ""
-#~ "<p>Rachaidh an eochair OpenPGP le haghaidh</p><p align=\"center\"><b>%2</"
-#~ "b> (Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-#~ msgstr[4] ""
-#~ "<p>Rachaidh an eochair OpenPGP le haghaidh</p><p align=\"center\"><b>%2</"
-#~ "b> (Aitheantas 0x%3)</p><p>as feidhm i gceann %1 lá.</p>"
-
-#~ msgctxt "@info:tooltip %1 list of emails"
-#~ msgid "<interface>To:</interface><nl/>%1"
-#~ msgstr "<interface>Chuig:</interface><nl/>%1"
-
-#~ msgctxt "@info:tooltip %1 list of emails"
-#~ msgid "<interface>CC:</interface><nl/>%1"
-#~ msgstr "<interface>CC:</interface><nl/>%1"
-
-#~ msgctxt "@info:tooltip %1 list of emails"
-#~ msgid "<interface>BCC:</interface><nl/>%1"
-#~ msgstr "<interface>BCC:</interface><nl/>%1"
-
-#~ msgid "vCard Import Failed"
-#~ msgstr "Theip ar Iompórtáil v-Chárta"
-
-#~ msgid "<qt>Unable to access <b>%1</b>.</qt>"
-#~ msgstr "<qt>Ní féidir <b>%1</b> a rochtain.</qt>"
-
-#, fuzzy
-#~| msgid "A&utomatically insert signature"
-#~ msgid "Automatically expand groups"
-#~ msgstr "C&uir síniú isteach go huathoibríoch"
-
-#~ msgid "Recent Addresses"
-#~ msgstr "Seoltaí Is Déanaí"
-
-#, fuzzy
-#~| msgctxt "@action:button"
-#~| msgid "&Insert"
-#~ msgctxt "@title:window"
-#~ msgid "Insert HTML"
-#~ msgstr "&Ionsáigh"
-
-#, fuzzy
-#~| msgctxt "@action:button"
-#~| msgid "&Insert"
-#~ msgctxt "@action:button"
-#~ msgid "Insert"
-#~ msgstr "&Ionsáigh"
-
-#, fuzzy
-#~| msgid "Height:"
-#~ msgctxt "@label right justify"
-#~ msgid "Right"
-#~ msgstr "Airde:"
-
-#, fuzzy
-#~| msgctxt "@title:window"
-#~| msgid "Insert File"
-#~ msgctxt "@action"
-#~ msgid "Insert Rule Line"
-#~ msgstr "Ionsáigh Comhad"
-
-#, fuzzy
-#~| msgctxt "@label:listbox Blind carbon copy recipient of an email message."
-#~| msgid "BCC"
-#~ msgctxt "@item:inmenu uppercase abc lists"
-#~ msgid "ABC"
-#~ msgstr "BCC"
-
-#, fuzzy
-#~| msgid "Lose Characters"
-#~ msgid "Add &Quote Characters"
-#~ msgstr "Caill Carachtair"
-
-#, fuzzy
-#~| msgid "Lose Characters"
-#~ msgid "Re&move Quote Characters"
-#~ msgstr "Caill Carachtair"
-
-#, fuzzy
-#~| msgid "Image"
-#~ msgid "Add Image"
-#~ msgstr "Íomhá"
-
-#, fuzzy
-#~| msgctxt "@action:button"
-#~| msgid "&Insert"
-#~ msgid "Insert HTML"
-#~ msgstr "&Ionsáigh"
-
-#, fuzzy
-#~| msgid "Image"
-#~ msgctxt "Start of the filename for an image"
-#~ msgid "image"
-#~ msgstr "Íomhá"
-
-#, fuzzy
-#~| msgctxt "@title:window"
-#~| msgid "External Editor Running"
-#~ msgid "External Editor Closed"
-#~ msgstr "Eagarthóir Seachtrach ag Rith"
-
-#~ msgctxt "@title:window"
-#~ msgid "External Editor Running"
-#~ msgstr "Eagarthóir Seachtrach ag Rith"
-
-#~ msgctxt "@action:button"
-#~ msgid "Stop Editor"
-#~ msgstr "Stop an tEagarthóir"
-
-#~ msgctxt "@action:button"
-#~ msgid "Keep Editor Running"
-#~ msgstr "Coinnigh an tEagarthóir ar siúl"
-
-#, fuzzy
-#~| msgid "Add Autocorrection Entry"
-#~ msgid "Add New Autocorrect"
-#~ msgstr "Cuir Iontráil Uathcheartaithe Leis"
-
-#~ msgctxt "@title:window"
-#~ msgid "Insert File"
-#~ msgstr "Ionsáigh Comhad"
-
-#~ msgid "Edit Recent Addresses..."
-#~ msgstr "Cuir seoltaí is déanaí in eagar..."
-
-#~ msgid "&Attach"
-#~ msgstr "Ce&angail"
-
-#~ msgid "&Modify"
-#~ msgstr "&Athraigh"
-
-#~ msgid "Save config"
-#~ msgstr "Sábháil an chumraíocht"
-
-#, fuzzy
-#~| msgid "Si&mple Autocorrection"
-#~ msgid "Export Autocorrection File"
-#~ msgstr "Uathcheartú Si&mplí"
-
-#, fuzzy
-#~| msgid "Si&mple Autocorrection"
-#~ msgid "Enable autocorrection"
-#~ msgstr "Uathcheartú Si&mplí"
-
-#~ msgid "Si&mple Autocorrection"
-#~ msgstr "Uathcheartú Si&mplí"
-
-#~ msgid "Re&place 1/2... with ½..."
-#~ msgstr "Cui&r ½... in ionad 1/2..."
-
-#~ msgid "Default"
-#~ msgstr "Réamhshocrú"
-
-#~ msgid "Ad&vanced Autocorrection"
-#~ msgstr "Uathcheartú &Casta"
-
-#~ msgid "&Find"
-#~ msgstr "&Aimsigh"
-
-#~ msgid "Re&place"
-#~ msgstr "&Ionadaigh"
-
-#~ msgid "Find"
-#~ msgstr "Aimsigh"
-
-#~ msgid "Replace"
-#~ msgstr "Ionadaigh"
-
-#~ msgid "E&xceptions"
-#~ msgstr "E&isceachtaí"
-
-#~ msgid "R&emove"
-#~ msgstr "B&ain"
-
-#~ msgid "Accept two uppercase letters in:"
-#~ msgstr "Glac dhá litir chás uachtair i:"
-
-#, fuzzy
-#~| msgid "A&dd"
-#~ msgid "Add"
-#~ msgstr "C&uir Leis"
-
-#, fuzzy
-#~| msgid "Import..."
-#~ msgid "Export..."
-#~ msgstr "Iompórtáil..."
-
-#~ msgid "Import..."
-#~ msgstr "Iompórtáil..."
-
-#~ msgid " pt"
-#~ msgstr " pt"
-
-#~ msgid "Width:"
-#~ msgstr "Leithead:"
-
-#~ msgid "&Cancel"
-#~ msgstr "&Cealaigh"

@@ -157,11 +157,10 @@ msgstr ""
 
 #: attachment/attachmentpropertiesdialog.cpp:305
 #: attachment/attachmentpropertiesdialog.cpp:320
-#, fuzzy, kde-format
-#| msgid "Attachment Properties"
+#, kde-format
 msgctxt "@title:window"
 msgid "Attachment Properties"
-msgstr "Airíonna an Iatáin"
+msgstr ""
 
 #: attachment/attachmentupdatejob.cpp:40
 #, kde-format
@@ -306,24 +305,3 @@ msgstr "%1 %2"
 msgctxt "signal that this email is defined in my identity"
 msgid "Me"
 msgstr "Mé"
-
-#~ msgid "Could not read file %1."
-#~ msgstr "Níorbh fhéidir comhad %1 a léamh."
-
-#~ msgid "Edit Note"
-#~ msgstr "Cuir Nóta in Eagar"
-
-#~ msgid "Delete Note"
-#~ msgstr "Scrios Nóta"
-
-#~ msgid "Add Note"
-#~ msgstr "Cuir Nóta Leis"
-
-#~ msgid "Delete Note?"
-#~ msgstr "Scrios an Nóta?"
-
-#~ msgid "Delete"
-#~ msgstr "Scrios"
-
-#~ msgid "Open Address Book"
-#~ msgstr "Oscail Leabhar Seoltaí"
