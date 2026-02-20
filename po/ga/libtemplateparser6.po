@@ -765,12 +765,10 @@ msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, mType)
 #: ui/customtemplates_base.ui:298
-#, fuzzy, kde-format
-#| msgctxt "Message->"
-#| msgid "Forward"
+#, kde-format
 msgctxt "@item:inlistbox Custom template type for message forwards"
 msgid "Forward"
-msgstr "Cuir Ar Aghaidh"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1_2)
 #: ui/customtemplates_base.ui:306
@@ -918,11 +916,3 @@ msgid ""
 "             </ul></qt>\n"
 "           "
 msgstr ""
-
-#~ msgctxt "@item:inlistbox Custom template type for messsage forwards"
-#~ msgid "Forward"
-#~ msgstr "Cuir Ar Aghaidh"
-
-#~ msgctxt "Template type for forwarding messages."
-#~ msgid "Forward"
-#~ msgstr "Cuir Ar Aghaidh"
