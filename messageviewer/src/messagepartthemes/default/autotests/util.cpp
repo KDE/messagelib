@@ -61,7 +61,7 @@ void Test::compareFile(const QString &outFile, const QString &referenceFile)
         content.replace(QRegularExpression(u"\"file:[^\"]*[/(?:%2F)]([^\"/(?:%2F)]*)\""_s), u"\"file:\\1\""_s);
         content.replace(QRegularExpression(u"src=\"/[^\"]*/([^\"/(?:%2F)]*)\""_s), u"src=\"file:\\1\""_s);
         content.replace(QRegularExpression(u"\"qrc:[^\"]*[/(?:%2F)]([^\"/(?:%2F)]*)\""_s), u"\"file:\\1\""_s);
-        content.replace(QRegularExpression(u"(file:///tmp/kmail/messageviewer)(_[^\"]+)(\\.index\\.[^\"]*)"_s), u"\\1\\3"_s);
+        content.replace(QRegularExpression(u"(file:///tmp/kmail_messageviewer)(_[^\"]+)(\\.index\\.[^\"]*)"_s), u"\\1\\3"_s);
         content.replace(QLatin1StringView("NBSP_ENTITY_PLACEHOLDER"), QLatin1StringView("&nbsp;")); // undo above transformation for xmllint
         QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
         f.write(content.toUtf8());

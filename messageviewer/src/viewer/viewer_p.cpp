@@ -638,8 +638,7 @@ void ViewerPrivate::attachmentOpenWith(const KMime::Content *node, const KServic
     QString name = mNodeHelper->writeNodeToTempFile(node);
 
     // Make sure that it will not deleted when we switch from message.
-    QDir().mkdir(QDir::tempPath() + u"/kmail"_s);
-    auto tmpDir = new QTemporaryDir(QDir::tempPath() + QLatin1StringView("/kmail/messageviewer_attachment_XXXXXX"));
+    auto tmpDir = new QTemporaryDir(QDir::tempPath() + QLatin1StringView("/kmail_messageviewer_attachment_XXXXXX"));
     if (tmpDir->isValid()) {
         tmpDir->setAutoRemove(false);
         const QString path = tmpDir->path();
