@@ -23,6 +23,10 @@ class MESSAGECOMPOSER_EXPORT SendLaterRemoveJob : public SendLaterJob
 {
     Q_OBJECT
 public:
+    /*! \brief Constructs a SendLaterRemoveJob.
+        \param item The Akonadi item ID to remove from the send later queue.
+        \param parent The parent object.
+    */
     explicit SendLaterRemoveJob(Akonadi::Item::Id item, QObject *parent = nullptr);
 
 protected:

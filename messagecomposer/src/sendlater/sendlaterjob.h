@@ -35,11 +35,16 @@ public:
     void start() final;
 
 protected:
-    /*!
-     */
+    /*! \brief Performs the actual D-Bus call to the send later agent.
+        \param iface The D-Bus interface to the send later agent.
+        \return A pending reply from the D-Bus call.
+    */
     virtual QDBusPendingReply<> doCall(OrgFreedesktopAkonadiSendLaterAgentInterface *iface) = 0;
-    /*!
-     */
+    /*! \brief Returns a human-readable error message for the given error.
+        \param error The error code that occurred.
+        \param desc A description of the error.
+        \return The formatted error string.
+    */
     virtual QString getErrorString(Error error, const QString &desc) const = 0;
 };
 }

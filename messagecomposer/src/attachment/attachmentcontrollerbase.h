@@ -37,31 +37,34 @@ class MESSAGECOMPOSER_EXPORT AttachmentControllerBase : public QObject
     Q_OBJECT
 
 public:
-    /*!
-     */
+    /*! \brief Constructs an AttachmentControllerBase.
+        \param model The attachment model to use.
+        \param wParent The parent widget.
+        \param actionCollection The action collection for menu actions.
+    */
     AttachmentControllerBase(MessageComposer::AttachmentModel *model, QWidget *wParent, KActionCollection *actionCollection);
-    /*!
-     */
+    /*! \brief Destroys the AttachmentControllerBase. */
     ~AttachmentControllerBase() override;
 
-    /*!
-     */
+    /*! \brief Creates and initializes the attachment-related actions. */
     void createActions();
 
     // TODO dnd stuff...
 
-    /*!
-     */
+    /*! \brief Sets the list of currently selected attachment parts.
+        \param selectedParts The list of selected parts.
+    */
     void setSelectedParts(const MessageCore::AttachmentPart::List &selectedParts);
 
-    /*!
-     */
+    /*! \brief Enables or disables attaching the user's own vcard.
+        \param attachVcard True to attach the user's vcard.
+    */
     void setAttachOwnVcard(bool attachVcard);
-    /*!
-     */
+    /*! \brief Returns whether the user's own vcard is attached. */
     [[nodiscard]] bool attachOwnVcard() const;
-    /*!
-     */
+    /*! \brief Sets whether the current identity has its own vcard.
+        \param state True if the identity has a vcard.
+    */
     void setIdentityHasOwnVcard(bool state);
 
 public Q_SLOTS:
@@ -91,23 +94,22 @@ public Q_SLOTS:
     virtual void attachMyPublicKey();
 
 Q_SIGNALS:
-    /*!
-     */
+    /*! \brief Emitted when the attachment actions have been created. */
     void actionsCreated();
-    /*!
-     */
+    /*! \brief Emitted when the selection needs to be refreshed. */
     void refreshSelection();
-    /*!
-     */
+    /*! \brief Emitted when an attachment should be displayed.
+        \param content The MIME content to display.
+        \param charset The character set of the content.
+    */
     void showAttachment(const std::shared_ptr<KMime::Content> &content, const QByteArray &charset);
-    /*!
-     */
+    /*! \brief Emitted when all attachments are selected. */
     void selectedAllAttachment();
-    /*!
-     */
+    /*! \brief Emitted when the user's vcard should be added.
+        \param attach True if the vcard should be added.
+    */
     void addOwnVcard(bool);
-    /*!
-     */
+    /*! \brief Emitted when a file has been attached. */
     void fileAttached();
 
 protected:

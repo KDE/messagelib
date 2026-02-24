@@ -26,31 +26,25 @@ class MESSAGECOMPOSER_EXPORT PluginEditorInitManager : public QObject
 {
     Q_OBJECT
 public:
-    /*!
-     */
+    /*! \brief Destroys the PluginEditorInitManager. */
     ~PluginEditorInitManager() override;
 
-    /*!
-     */
+    /*! \brief Returns the singleton instance of the manager. */
     static PluginEditorInitManager *self();
 
-    /*!
-     */
+    /*! \brief Returns the list of all available editor initialization plugins. */
     [[nodiscard]] QList<PluginEditorInit *> pluginsList() const;
 
-    /*!
-     */
+    /*! \brief Returns the configuration group name for the editor init plugins. */
     [[nodiscard]] QString configGroupName() const;
-    /*!
-     */
-    /*!
-     */
+    /*! \brief Returns the configuration prefix setting key. */
     [[nodiscard]] QString configPrefixSettingKey() const;
-    /*!
-     */
+    /*! \brief Returns plugin configuration data for all plugins. */
     [[nodiscard]] QList<TextAddonsWidgets::PluginUtilData> pluginsDataList() const;
-    /*!
-     */
+    /*! \brief Returns a plugin by its identifier.
+        \param id The unique plugin identifier.
+        \return The plugin, or nullptr if not found.
+    */
     [[nodiscard]] PluginEditorInit *pluginFromIdentifier(const QString &id);
 
 private:

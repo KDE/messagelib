@@ -21,19 +21,25 @@ class MESSAGECOMPOSER_EXPORT StatusBarLabelToggledState : public QLabel
 {
     Q_OBJECT
 public:
+    /*! \brief Constructs a StatusBarLabelToggledState.
+        \param parent The parent widget.
+    */
     explicit StatusBarLabelToggledState(QWidget *parent = nullptr);
+    /*! \brief Destroys the StatusBarLabelToggledState. */
     ~StatusBarLabelToggledState() override;
 
-    /*!
-     */
+    /*! \brief Sets the toggle mode state.
+        \param state True to set toggle mode on.
+    */
     void setToggleMode(bool state);
 
-    /*!
-     */
+    /*! \brief Returns the current toggle mode state. */
     [[nodiscard]] bool toggleMode() const;
 
-    /*!
-     */
+    /*! \brief Sets the state strings for the label.
+        \param toggled The text to display when toggled on.
+        \param untoggled The text to display when toggled off.
+    */
     void setStateString(const QString &toggled, const QString &untoggled);
 Q_SIGNALS:
     void toggleModeChanged(bool state);

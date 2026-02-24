@@ -30,11 +30,11 @@ class MESSAGECOMPOSER_EXPORT ContentJobBase : public JobBase
     Q_OBJECT
 
 public:
-    /*!
-     */
+    /*! \brief Constructs a ContentJobBase.
+        \param parent The parent object.
+    */
     explicit ContentJobBase(QObject *parent = nullptr);
-    /*!
-     */
+    /*! \brief Destroys the ContentJobBase. */
     ~ContentJobBase() override;
 
     /**

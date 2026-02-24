@@ -39,16 +39,15 @@ public:
         UserError = UserDefinedError + 42,
     };
 
-    /*!
-     */
+    /*! \brief Constructs a JobBase.
+        \param parent The parent object.
+    */
     explicit JobBase(QObject *parent = nullptr);
-    /*!
-     */
+    /*! \brief Destroys the JobBase. */
     ~JobBase() override;
 
     // asserts if no Composer parent
-    /*!
-     */
+    /*! \brief Returns the global message settings part. */
     GlobalPart *globalPart();
 
 protected:

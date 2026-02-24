@@ -35,6 +35,9 @@ class MESSAGECOMPOSER_EXPORT RecipientLineFactory : public KPIM::MultiplyingLine
 {
     Q_OBJECT
 public:
+    /*! \brief Constructs a RecipientLineFactory.
+        \param parent The parent object.
+    */
     explicit RecipientLineFactory(QObject *parent);
     KPIM::MultiplyingLine *newLine(QWidget *parent) override;
     int maximumRecipients() override;
@@ -52,29 +55,41 @@ class MESSAGECOMPOSER_EXPORT RecipientsEditor : public KPIM::MultiplyingLineEdit
 {
     Q_OBJECT
 public:
+    /*! \brief Constructs a RecipientsEditor.
+        \param parent The parent widget.
+    */
     explicit RecipientsEditor(QWidget *parent = nullptr);
+    /*! \brief Constructs a RecipientsEditor with a custom line factory.
+        \param lineFactory The factory for creating recipient lines.
+        \param parent The parent widget.
+    */
     explicit RecipientsEditor(RecipientLineFactory *lineFactory, QWidget *parent = nullptr);
+    /*! \brief Destroys the RecipientsEditor. */
     ~RecipientsEditor() override;
 
-    /*!
-     */
+    /*! \brief Returns the list of all recipients in the editor. */
     [[nodiscard]] Recipient::List recipients() const;
-    /*!
-     */
+    /*! \brief Returns the currently active recipient line. */
     [[nodiscard]] QSharedPointer<Recipient> activeRecipient() const;
 
-    /*!
-     */
+    /*! \brief Returns the recipients picker dialog. */
     [[nodiscard]] MessageComposer::RecipientsPicker *picker() const;
 
-    /*!
-     */
+    /*! \brief Sets the recipients from a list of mailboxes.
+        \param mailboxes The list of mailboxes to add.
+        \param type The recipient type (To, Cc, Bcc).
+        \return True if successful.
+    */
     bool setRecipientString(const QList<KMime::Types::Mailbox> &mailboxes, Recipient::Type);
-    /*!
-     */
+    /*! \brief Returns the recipient string for the given type.
+        \param type The recipient type.
+        \return The recipients as a formatted string.
+    */
     [[nodiscard]] QString recipientString(Recipient::Type) const;
-    /*!
-     */
+    /*! \brief Returns the list of recipient strings for the given type.
+        \param type The recipient type.
+        \return The recipients as a string list.
+    */
     [[nodiscard]] QStringList recipientStringList(Recipient::Type) const;
 
     /** Adds a recipient (or multiple recipients) to one line of the editor.
@@ -95,11 +110,9 @@ public:
     void setRecentAddressConfig(KConfig *config);
 
 public:
-    /*!
-     */
+    /*! \brief Opens the recipient picker dialog. */
     void selectRecipients();
-    /*!
-     */
+    /*! \brief Saves the current recipients as a distribution list. */
     void saveDistributionList();
 
 protected Q_SLOTS:

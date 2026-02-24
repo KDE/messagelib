@@ -26,11 +26,11 @@ class MESSAGECOMPOSER_EXPORT MessagePart : public QObject
     Q_OBJECT
 
 public:
-    /*!
-     */
+    /*! \brief Constructs a MessagePart.
+        \param parent The parent object.
+    */
     explicit MessagePart(QObject *parent = nullptr);
-    /*!
-     */
+    /*! \brief Destroys the MessagePart. */
     ~MessagePart() override;
 };
 }

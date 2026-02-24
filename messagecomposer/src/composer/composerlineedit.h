@@ -24,24 +24,24 @@ class MESSAGECOMPOSER_EXPORT ComposerLineEdit : public PimCommon::AddresseeLineE
     Q_OBJECT
 
 public:
-    /*!
-     */
+    /*! \brief Constructs a ComposerLineEdit.
+        \param useCompletion Whether to enable address completion.
+        \param parent The parent widget.
+    */
     explicit ComposerLineEdit(bool useCompletion, QWidget *parent = nullptr);
-    /*!
-     */
+    /*! \brief Destroys the ComposerLineEdit. */
     ~ComposerLineEdit() override;
 
 Q_SIGNALS:
-    /*!
-     */
+    /*! \brief Emitted when the user presses up/previous to focus the previous input. */
     void focusUp();
-    /*!
-     */
+    /*! \brief Emitted when the user presses down/next to focus the next input. */
     void focusDown();
 
 protected:
-    /*!
-     */
+    /*! \brief Handles key press events for focus navigation.
+        \param event The key press event.
+    */
     void keyPressEvent(QKeyEvent *) override;
 };
 }

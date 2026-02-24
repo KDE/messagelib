@@ -23,6 +23,10 @@ class MESSAGECOMPOSER_EXPORT SendLaterCreateJob : public SendLaterJob
 {
     Q_OBJECT
 public:
+    /*! \brief Constructs a SendLaterCreateJob.
+        \param info The send later information containing scheduling details.
+        \param parent The parent object.
+    */
     explicit SendLaterCreateJob(const SendLaterInfo &info, QObject *parent = nullptr);
 
 protected:
