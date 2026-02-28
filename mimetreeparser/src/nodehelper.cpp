@@ -77,13 +77,7 @@ void NodeHelper::setNodeUnprocessed(const KMime::Content *node, bool recurse)
 
     // avoid double addition of extra nodes, eg. encrypted attachments
     if (const auto it = mExtraContents.find(node); it != mExtraContents.end()) {
-        const auto contents = it.value();
-        for (KMime::Content *c : contents) {
-            KMime::Content *p = c->parent();
-            if (p) {
-                p->takeContent(c);
-            }
-        }
+        qDeleteAll(it.value());
         qCDebug(MIMETREEPARSER_LOG) << "mExtraContents deleted for" << it.key();
         mExtraContents.erase(it);
     }
@@ -834,6 +828,7 @@ void NodeHelper::attachExtraContent(const KMime::Content *topLevelNode, std::uni
 void NodeHelper::cleanExtraContent(const KMime::Content *topLevelNode)
 {
     qCDebug(MIMETREEPARSER_LOG) << "remove all extraContents for" << topLevelNode;
+    qDeleteAll(mExtraContents[topLevelNode]);
     mExtraContents[topLevelNode].clear();
 }
 
