@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-19 00:48+0000\n"
+"POT-Creation-Date: 2026-03-03 00:48+0000\n"
 "PO-Revision-Date: 2006-02-06 01:01-0600\n"
 "Last-Translator: Deepayan Sarkar <deepayan@bengalinux.org>\n"
 "Language-Team: Bengali <kde-translation@bengalinux.org>\n"
@@ -1432,7 +1432,7 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
-#: settings/messageviewer.kcfg:206 viewer/viewer_p.cpp:1559
+#: settings/messageviewer.kcfg:206 viewer/viewer_p.cpp:1558
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "ফিক্সড &ফন্ট ব্যবহার করো"
@@ -1827,7 +1827,7 @@ msgstr "ডকুমেন্টেশন"
 msgid "Turn on HTML rendering for this message."
 msgstr "এই বার্তার জন্য এইচ-টি-এম-এল প্রদর্শন সক্রিয় করো।"
 
-#: viewer/urlhandlermanager.cpp:412 viewer/viewer_p.cpp:1628
+#: viewer/urlhandlermanager.cpp:412 viewer/viewer_p.cpp:1627
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr ""
@@ -1917,7 +1917,7 @@ msgstr "ঠিকানা তালিকায় খোলো"
 msgid "&Copy Email Address"
 msgstr "ই-মেইল ঠিকানা"
 
-#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2718
+#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2717
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "ঠিকানাটি ক্লীপবোর্ড-এ কপি করা হয়েছে।"
@@ -2023,13 +2023,13 @@ msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "...দিয়ে খোলো"
 
-#: viewer/viewer_p.cpp:527 viewer/viewer_p.cpp:1737
+#: viewer/viewer_p.cpp:527 viewer/viewer_p.cpp:1736
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "খোলো"
 
-#: viewer/viewer_p.cpp:541 viewer/viewer_p.cpp:1744
+#: viewer/viewer_p.cpp:541 viewer/viewer_p.cpp:1743
 #, fuzzy, kde-format
 #| msgctxt "to view"
 #| msgid "View"
@@ -2047,12 +2047,12 @@ msgstr ""
 msgid "Save As..."
 msgstr "&নতুন নামে সংরক্ষণ করো..."
 
-#: viewer/viewer_p.cpp:560 viewer/viewer_p.cpp:1754
+#: viewer/viewer_p.cpp:560 viewer/viewer_p.cpp:1753
 #, fuzzy, kde-format
 msgid "Copy"
 msgstr "কপি পাঠা&ও"
 
-#: viewer/viewer_p.cpp:571 viewer/viewer_p.cpp:1758
+#: viewer/viewer_p.cpp:571 viewer/viewer_p.cpp:1757
 #, fuzzy, kde-format
 #| msgid "&Remove Attachment"
 msgid "Delete Attachment"
@@ -2069,308 +2069,308 @@ msgstr "লে&খককে উত্তর পাঠাও..."
 msgid "Reply To All"
 msgstr "&উত্তর পাঠাও"
 
-#: viewer/viewer_p.cpp:596 viewer/viewer_p.cpp:1763
+#: viewer/viewer_p.cpp:596 viewer/viewer_p.cpp:1762
 #, fuzzy, kde-format
 msgid "Properties"
 msgstr "বৈশিষ্ট্যা&বলী"
 
-#: viewer/viewer_p.cpp:733
+#: viewer/viewer_p.cpp:732
 #, kde-format
 msgid "KMail"
 msgstr "কে-মেইল"
 
-#: viewer/viewer_p.cpp:733
+#: viewer/viewer_p.cpp:732
 #, fuzzy, kde-format
 #| msgid "KDE Email Client"
 msgid "The KDE Mail Client"
 msgstr "কে.ডি.ই. ই-মেইল ক্লায়েন্ট"
 
-#: viewer/viewer_p.cpp:1279
+#: viewer/viewer_p.cpp:1278
 #, fuzzy, kde-format
 #| msgid "View Attachment: %1"
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "অ্যাটাচমেন্ট দেখাও: %1"
 
-#: viewer/viewer_p.cpp:1481
+#: viewer/viewer_p.cpp:1480
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "অ্যাটা&চমেন্ট"
 
-#: viewer/viewer_p.cpp:1483
+#: viewer/viewer_p.cpp:1482
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "অ্যাটাচমেন্ট কি ভাবে দেখানো হবে বেছে নিন"
 
-#: viewer/viewer_p.cpp:1486
+#: viewer/viewer_p.cpp:1485
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "আ&ইকন হিসাবে"
 
-#: viewer/viewer_p.cpp:1489
+#: viewer/viewer_p.cpp:1488
 #, fuzzy, kde-format
 #| msgid "Show attachment icon"
 msgid "Show all attachments as icons. Click to see them."
 msgstr "অ্যাটাচমেন্ট আইকন দেখাও"
 
-#: viewer/viewer_p.cpp:1493
+#: viewer/viewer_p.cpp:1492
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "বুদ্ধি খাটিয়ে (&খ)"
 
-#: viewer/viewer_p.cpp:1496
+#: viewer/viewer_p.cpp:1495
 #, fuzzy, kde-format
 #| msgid "Show attachment icon"
 msgid "Show attachments as suggested by sender."
 msgstr "অ্যাটাচমেন্ট আইকন দেখাও"
 
-#: viewer/viewer_p.cpp:1500
+#: viewer/viewer_p.cpp:1499
 #, fuzzy, kde-format
 #| msgid "&Inline..."
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "বার্তার মূ&ল অংশে..."
 
-#: viewer/viewer_p.cpp:1503
+#: viewer/viewer_p.cpp:1502
 #, fuzzy, kde-format
 #| msgid "Show attachment icon"
 msgid "Show all attachments inline (if possible)"
 msgstr "অ্যাটাচমেন্ট আইকন দেখাও"
 
-#: viewer/viewer_p.cpp:1507
+#: viewer/viewer_p.cpp:1506
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "লুকো&ও"
 
-#: viewer/viewer_p.cpp:1510
+#: viewer/viewer_p.cpp:1509
 #, fuzzy, kde-format
 #| msgid "&Do not show a message preview pane"
 msgid "Do not show attachments in the message viewer"
 msgstr "বার্তা প্রাকদর্শ&ন ক্ষেত্র দেখিও না"
 
-#: viewer/viewer_p.cpp:1514
+#: viewer/viewer_p.cpp:1513
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1517
+#: viewer/viewer_p.cpp:1516
 #, kde-format
 msgid "Show Attachments only in the header of the mail"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1522
+#: viewer/viewer_p.cpp:1521
 #, kde-format
 msgid "&Set Encoding"
 msgstr "এনকোডিং নির্ধার&ণ করো"
 
-#: viewer/viewer_p.cpp:1527 widgets/configurewidget.cpp:45
+#: viewer/viewer_p.cpp:1526 widgets/configurewidget.cpp:45
 #: widgets/configurewidget.cpp:79
 #, kde-format
 msgid "Auto"
 msgstr "স্বয়ংক্রীয়"
 
-#: viewer/viewer_p.cpp:1537
+#: viewer/viewer_p.cpp:1536
 #, fuzzy, kde-format
 #| msgid "&Copy To"
 msgid "Copy Text"
 msgstr "কপি পাঠা&ও"
 
-#: viewer/viewer_p.cpp:1543
+#: viewer/viewer_p.cpp:1542
 #, fuzzy, kde-format
 #| msgid "Select All Text"
 msgctxt "@action"
 msgid "Select All Text"
 msgstr "সব লেখা নির্বাচন করো"
 
-#: viewer/viewer_p.cpp:1549 viewer/viewer_p.cpp:2072
+#: viewer/viewer_p.cpp:1548 viewer/viewer_p.cpp:2071
 #, kde-format
 msgid "Copy Link Address"
 msgstr "লিঙ্ক ঠিকানা কপি করো"
 
-#: viewer/viewer_p.cpp:1554
+#: viewer/viewer_p.cpp:1553
 #, kde-format
 msgid "Open URL"
 msgstr "ইউ-আর-এল খোলো"
 
-#: viewer/viewer_p.cpp:1565
+#: viewer/viewer_p.cpp:1564
 #, fuzzy, kde-format
 #| msgid "Message Structure Viewer"
 msgid "Show Message Structure"
 msgstr "বার্তা কাঠামো প্রদর্শক"
 
-#: viewer/viewer_p.cpp:1570
+#: viewer/viewer_p.cpp:1569
 #, fuzzy, kde-format
 #| msgid "&View Source"
 msgctxt "@action"
 msgid "&View Source"
 msgstr "&উত্‍স দেখাও"
 
-#: viewer/viewer_p.cpp:1575
+#: viewer/viewer_p.cpp:1574
 #, fuzzy, kde-format
 msgid "&Save Message..."
 msgstr "একটি বার্তা, %2."
 
-#: viewer/viewer_p.cpp:1581
+#: viewer/viewer_p.cpp:1580
 #, fuzzy, kde-format
 #| msgid "&Save as Draft"
 msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "&খসড়া হিসাবে সংরক্ষণ করো"
 
-#: viewer/viewer_p.cpp:1585
+#: viewer/viewer_p.cpp:1584
 #, fuzzy, kde-format
 #| msgid "&Save as Draft"
 msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "&খসড়া হিসাবে সংরক্ষণ করো"
 
-#: viewer/viewer_p.cpp:1592
+#: viewer/viewer_p.cpp:1591
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
 msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "&সব বার্তা নির্বাচন করো"
 
-#: viewer/viewer_p.cpp:1597
+#: viewer/viewer_p.cpp:1596
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
 msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "&সব বার্তা নির্বাচন করো"
 
-#: viewer/viewer_p.cpp:1602
+#: viewer/viewer_p.cpp:1601
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
 msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "&সব বার্তা নির্বাচন করো"
 
-#: viewer/viewer_p.cpp:1607
+#: viewer/viewer_p.cpp:1606
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
 msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "&সব বার্তা নির্বাচন করো"
 
-#: viewer/viewer_p.cpp:1617
+#: viewer/viewer_p.cpp:1616
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1621
+#: viewer/viewer_p.cpp:1620
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1624
+#: viewer/viewer_p.cpp:1623
 #, kde-format
 msgctxt "@action"
 msgid "Load external references"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1630
+#: viewer/viewer_p.cpp:1629
 #, fuzzy, kde-format
 #| msgid "&Copy To"
 msgctxt "@action"
 msgid "Speak Text"
 msgstr "কপি পাঠা&ও"
 
-#: viewer/viewer_p.cpp:1636
+#: viewer/viewer_p.cpp:1635
 #, fuzzy, kde-format
 #| msgid "Se&lect..."
 msgctxt "@action"
 msgid "Share Text..."
 msgstr "নির্বাচ&ন করো..."
 
-#: viewer/viewer_p.cpp:1654
+#: viewer/viewer_p.cpp:1653
 #, fuzzy, kde-format
 #| msgid "Choose Location"
 msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "অবস্থান বেছে নিন"
 
-#: viewer/viewer_p.cpp:1660
+#: viewer/viewer_p.cpp:1659
 #, kde-format
 msgid "&Find in Message..."
 msgstr "বার্তা&য় সন্ধান করো..."
 
-#: viewer/viewer_p.cpp:1669
+#: viewer/viewer_p.cpp:1668
 #, kde-format
 msgid "Disable Emoticon"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1734
+#: viewer/viewer_p.cpp:1733
 #, kde-format
 msgid "Save &As..."
 msgstr "&নতুন নামে সংরক্ষণ করো..."
 
-#: viewer/viewer_p.cpp:1742
+#: viewer/viewer_p.cpp:1741
 #, kde-format
 msgid "Open With..."
 msgstr "...দিয়ে খোলো"
 
-#: viewer/viewer_p.cpp:1749
+#: viewer/viewer_p.cpp:1748
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "সব অ্যাটাচমেন্ট সংরক্ষণ করো..."
 
-#: viewer/viewer_p.cpp:1992
+#: viewer/viewer_p.cpp:1991
 #, kde-format
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1992 viewer/viewer_p.cpp:1995
+#: viewer/viewer_p.cpp:1991 viewer/viewer_p.cpp:1994
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1995
+#: viewer/viewer_p.cpp:1994
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr ""
 
-#: viewer/viewer_p.cpp:2015
+#: viewer/viewer_p.cpp:2014
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2016
+#: viewer/viewer_p.cpp:2015
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2070
+#: viewer/viewer_p.cpp:2069
 #, fuzzy, kde-format
 #| msgid "Email Address"
 msgid "Copy Email Address"
 msgstr "ই-মেইল ঠিকানা"
 
-#: viewer/viewer_p.cpp:2153
+#: viewer/viewer_p.cpp:2152
 #, fuzzy, kde-format
 #| msgid "Message as Plain Text"
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "বার্তা প্লেইন টেক্সট হিসাবে"
 
-#: viewer/viewer_p.cpp:2724
+#: viewer/viewer_p.cpp:2723
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "ইউ-আর-এল-টি ক্লীপবোর্ড-এ কপি করা হয়েছে।"
 
-#: viewer/viewer_p.cpp:2886
+#: viewer/viewer_p.cpp:2885
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message loading failed: %1."
 msgstr "বার্তা স্বাক্ষর করেছেন %1।"
 
-#: viewer/viewer_p.cpp:2891
+#: viewer/viewer_p.cpp:2890
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message not found."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-19 00:48+0000\n"
+"POT-Creation-Date: 2026-03-03 00:48+0000\n"
 "PO-Revision-Date: 2025-05-18 03:34+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -1382,7 +1382,7 @@ msgstr ""
 "ნაგვის ყუთში აღმოჩნდება."
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
-#: settings/messageviewer.kcfg:206 viewer/viewer_p.cpp:1559
+#: settings/messageviewer.kcfg:206 viewer/viewer_p.cpp:1558
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "&ფიქსირებული ფონტის გამოყენება"
@@ -1765,7 +1765,7 @@ msgstr "დოკუმენტის დაბეჭდვა"
 msgid "Turn on HTML rendering for this message."
 msgstr "ამ შეტყობინებისთვის HTML რენდერის ჩართვა."
 
-#: viewer/urlhandlermanager.cpp:412 viewer/viewer_p.cpp:1628
+#: viewer/urlhandlermanager.cpp:412 viewer/viewer_p.cpp:1627
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "ამ შეტყობინებისთვის გარე მიმართვების ინტერნეტიდან ჩატვირთვა."
@@ -1845,7 +1845,7 @@ msgstr "&მისამართების წიგნში გახსნ
 msgid "&Copy Email Address"
 msgstr "ელფოსტის მისამართის &კოპირება"
 
-#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2718
+#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2717
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "მისამართი კოპირებულია ბუფერში."
@@ -1944,13 +1944,13 @@ msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "&გამხსნელი პროგრამა..."
 
-#: viewer/viewer_p.cpp:527 viewer/viewer_p.cpp:1737
+#: viewer/viewer_p.cpp:527 viewer/viewer_p.cpp:1736
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "გახსნა"
 
-#: viewer/viewer_p.cpp:541 viewer/viewer_p.cpp:1744
+#: viewer/viewer_p.cpp:541 viewer/viewer_p.cpp:1743
 #, kde-format
 msgctxt "to view something"
 msgid "View"
@@ -1966,12 +1966,12 @@ msgstr "გადახვევა"
 msgid "Save As..."
 msgstr "შენახვა, როგორც..."
 
-#: viewer/viewer_p.cpp:560 viewer/viewer_p.cpp:1754
+#: viewer/viewer_p.cpp:560 viewer/viewer_p.cpp:1753
 #, kde-format
 msgid "Copy"
 msgstr "კოპირება"
 
-#: viewer/viewer_p.cpp:571 viewer/viewer_p.cpp:1758
+#: viewer/viewer_p.cpp:571 viewer/viewer_p.cpp:1757
 #, kde-format
 msgid "Delete Attachment"
 msgstr "მიმაგრებული ფაილის წაშლა"
@@ -1986,287 +1986,287 @@ msgstr "ავტორისთვის პასუხი"
 msgid "Reply To All"
 msgstr "ყველასთვის პასუხი"
 
-#: viewer/viewer_p.cpp:596 viewer/viewer_p.cpp:1763
+#: viewer/viewer_p.cpp:596 viewer/viewer_p.cpp:1762
 #, kde-format
 msgid "Properties"
 msgstr "თვისებები"
 
-#: viewer/viewer_p.cpp:733
+#: viewer/viewer_p.cpp:732
 #, kde-format
 msgid "KMail"
 msgstr "KMail"
 
-#: viewer/viewer_p.cpp:733
+#: viewer/viewer_p.cpp:732
 #, kde-format
 msgid "The KDE Mail Client"
 msgstr "KDE-ის ელფოსტის კლიენტი"
 
-#: viewer/viewer_p.cpp:1279
+#: viewer/viewer_p.cpp:1278
 #, kde-format
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "მიმაგრებული ფაილის ნახვა: %1"
 
-#: viewer/viewer_p.cpp:1481
+#: viewer/viewer_p.cpp:1480
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "&მიმაგრებული ფაილები"
 
-#: viewer/viewer_p.cpp:1483
+#: viewer/viewer_p.cpp:1482
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "აირჩიეთ მიმაგრებული ფაილების ჩვენების სტილი"
 
-#: viewer/viewer_p.cpp:1486
+#: viewer/viewer_p.cpp:1485
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "&როგორც ხატულები"
 
-#: viewer/viewer_p.cpp:1489
+#: viewer/viewer_p.cpp:1488
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr "ყველა მიმაგრებული ფაილის ხატულის სახით ჩვენება. სანახავად დააწკაპუნეთ."
 
-#: viewer/viewer_p.cpp:1493
+#: viewer/viewer_p.cpp:1492
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "&ჭკვიანი"
 
-#: viewer/viewer_p.cpp:1496
+#: viewer/viewer_p.cpp:1495
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "მიმაგრებული ფაილების ჩვენება გამომგზავნის მიერ მითითებული ხერხით."
 
-#: viewer/viewer_p.cpp:1500
+#: viewer/viewer_p.cpp:1499
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "&ხაზშივე"
 
-#: viewer/viewer_p.cpp:1503
+#: viewer/viewer_p.cpp:1502
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "ყველა მიმაგრებული ფაილის ხაზშივე ჩვენება (თუ შესაძლებელია)"
 
-#: viewer/viewer_p.cpp:1507
+#: viewer/viewer_p.cpp:1506
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "&დამალვა"
 
-#: viewer/viewer_p.cpp:1510
+#: viewer/viewer_p.cpp:1509
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr ""
 "შეტყობინებების დამთვალიერებელში მიმაგრებული ფაილები ნაჩვენები არ იქნება"
 
-#: viewer/viewer_p.cpp:1514
+#: viewer/viewer_p.cpp:1513
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr "მხოლოდ თავსართში"
 
-#: viewer/viewer_p.cpp:1517
+#: viewer/viewer_p.cpp:1516
 #, kde-format
 msgid "Show Attachments only in the header of the mail"
 msgstr "მიმაგრებული ფაილების, მხოლოდ, ელფოსტის თავსართებში ჩვენება"
 
-#: viewer/viewer_p.cpp:1522
+#: viewer/viewer_p.cpp:1521
 #, kde-format
 msgid "&Set Encoding"
 msgstr "&კოდირების დაყენება"
 
-#: viewer/viewer_p.cpp:1527 widgets/configurewidget.cpp:45
+#: viewer/viewer_p.cpp:1526 widgets/configurewidget.cpp:45
 #: widgets/configurewidget.cpp:79
 #, kde-format
 msgid "Auto"
 msgstr "ავტომატური"
 
-#: viewer/viewer_p.cpp:1537
+#: viewer/viewer_p.cpp:1536
 #, kde-format
 msgid "Copy Text"
 msgstr "ტექსტის კოპირება"
 
-#: viewer/viewer_p.cpp:1543
+#: viewer/viewer_p.cpp:1542
 #, kde-format
 msgctxt "@action"
 msgid "Select All Text"
 msgstr "ტექსტის სრულად მონიშვნა"
 
-#: viewer/viewer_p.cpp:1549 viewer/viewer_p.cpp:2072
+#: viewer/viewer_p.cpp:1548 viewer/viewer_p.cpp:2071
 #, kde-format
 msgid "Copy Link Address"
 msgstr "ბმულის მისამართის კოპირება"
 
-#: viewer/viewer_p.cpp:1554
+#: viewer/viewer_p.cpp:1553
 #, kde-format
 msgid "Open URL"
 msgstr "URL-ის გახსნა"
 
-#: viewer/viewer_p.cpp:1565
+#: viewer/viewer_p.cpp:1564
 #, kde-format
 msgid "Show Message Structure"
 msgstr "შეტყობინების სტრუქტურის ჩვენება"
 
-#: viewer/viewer_p.cpp:1570
+#: viewer/viewer_p.cpp:1569
 #, kde-format
 msgctxt "@action"
 msgid "&View Source"
 msgstr "&წყაროს ნახვა"
 
-#: viewer/viewer_p.cpp:1575
+#: viewer/viewer_p.cpp:1574
 #, kde-format
 msgid "&Save Message..."
 msgstr "&შეტყობინების შენახვა..."
 
-#: viewer/viewer_p.cpp:1581
+#: viewer/viewer_p.cpp:1580
 #, kde-format
 msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "&ჩვენების ფორმატის შენახვა"
 
-#: viewer/viewer_p.cpp:1585
+#: viewer/viewer_p.cpp:1584
 #, kde-format
 msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "&ჩვენების ფორმატის დაბრუნება"
 
-#: viewer/viewer_p.cpp:1592
+#: viewer/viewer_p.cpp:1591
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "შეტყობინების ზემოთ ახვევა"
 
-#: viewer/viewer_p.cpp:1597
+#: viewer/viewer_p.cpp:1596
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "შეტყობინების ქვემოთ ჩამოხვევა"
 
-#: viewer/viewer_p.cpp:1602
+#: viewer/viewer_p.cpp:1601
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "შეტყობინების ზემოთ ახვევა (მეტი)"
 
-#: viewer/viewer_p.cpp:1607
+#: viewer/viewer_p.cpp:1606
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "შეტყობინების ქვემოთ ჩამოხვევა (მეტი)"
 
-#: viewer/viewer_p.cpp:1617
+#: viewer/viewer_p.cpp:1616
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr "HTML-ით ჩვენების რეჟიმის გადართვა"
 
-#: viewer/viewer_p.cpp:1621
+#: viewer/viewer_p.cpp:1620
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr "ჩვენების რეჟიმის ტექსტისა და HTML-ის შორის გადართვა"
 
-#: viewer/viewer_p.cpp:1624
+#: viewer/viewer_p.cpp:1623
 #, kde-format
 msgctxt "@action"
 msgid "Load external references"
 msgstr "გარე მიმართვების ჩატვირთვა"
 
-#: viewer/viewer_p.cpp:1630
+#: viewer/viewer_p.cpp:1629
 #, kde-format
 msgctxt "@action"
 msgid "Speak Text"
 msgstr "ტექსტის წაკითხვა"
 
-#: viewer/viewer_p.cpp:1636
+#: viewer/viewer_p.cpp:1635
 #, kde-format
 msgctxt "@action"
 msgid "Share Text..."
 msgstr "ტექსტის გაზიარება..."
 
-#: viewer/viewer_p.cpp:1654
+#: viewer/viewer_p.cpp:1653
 #, kde-format
 msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "გამოსახულების მდებარეობის კოპირება"
 
-#: viewer/viewer_p.cpp:1660
+#: viewer/viewer_p.cpp:1659
 #, kde-format
 msgid "&Find in Message..."
 msgstr "&შეტყობინებაში მოძებნა..."
 
-#: viewer/viewer_p.cpp:1669
+#: viewer/viewer_p.cpp:1668
 #, kde-format
 msgid "Disable Emoticon"
 msgstr "ემოციების გამორთვა"
 
-#: viewer/viewer_p.cpp:1734
+#: viewer/viewer_p.cpp:1733
 #, kde-format
 msgid "Save &As..."
 msgstr "შეინახვა &როგორც..."
 
-#: viewer/viewer_p.cpp:1742
+#: viewer/viewer_p.cpp:1741
 #, kde-format
 msgid "Open With..."
 msgstr "გამხსნელი პროგრამა..."
 
-#: viewer/viewer_p.cpp:1749
+#: viewer/viewer_p.cpp:1748
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "ყველა მიმაგრებული ფაილის შენახვა..."
 
-#: viewer/viewer_p.cpp:1992
+#: viewer/viewer_p.cpp:1991
 #, kde-format
 msgid "The network is broken."
 msgstr "ქსელთა მიერთება გათიშულია."
 
-#: viewer/viewer_p.cpp:1992 viewer/viewer_p.cpp:1995
+#: viewer/viewer_p.cpp:1991 viewer/viewer_p.cpp:1994
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "ფიშინგის ბმულის შემოწმება"
 
-#: viewer/viewer_p.cpp:1995
+#: viewer/viewer_p.cpp:1994
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "ბმული %1 არასწორია."
 
-#: viewer/viewer_p.cpp:2015
+#: viewer/viewer_p.cpp:2014
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 "ეს ვებგვერდი საზიანო პროგრამებს შეიცავს. გნებავთ გააგრძელოთ მისი ჩვენება?"
 
-#: viewer/viewer_p.cpp:2016
+#: viewer/viewer_p.cpp:2015
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr "მავნე პროგრამა"
 
-#: viewer/viewer_p.cpp:2070
+#: viewer/viewer_p.cpp:2069
 #, kde-format
 msgid "Copy Email Address"
 msgstr "ელფოსტის მისამართის კოპირება"
 
-#: viewer/viewer_p.cpp:2153
+#: viewer/viewer_p.cpp:2152
 #, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "შეტყობინება უბრალო ტექსტის სახით"
 
-#: viewer/viewer_p.cpp:2724
+#: viewer/viewer_p.cpp:2723
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL წარმატებით დაკოპირდა ბუფერში."
 
-#: viewer/viewer_p.cpp:2886
+#: viewer/viewer_p.cpp:2885
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "შეტყობინების ჩატვირთვის შეცდომა: %1."
 
-#: viewer/viewer_p.cpp:2891
+#: viewer/viewer_p.cpp:2890
 #, kde-format
 msgid "Message not found."
 msgstr "შეტყობინება ვერ ვიპოვე."

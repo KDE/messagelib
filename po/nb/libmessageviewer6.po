@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-19 00:48+0000\n"
+"POT-Creation-Date: 2026-03-03 00:48+0000\n"
 "PO-Revision-Date: 2014-09-13 18:21+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -1367,7 +1367,7 @@ msgstr ""
 "invitasjoner flyttet til papirkurven når svar er vellykket sendt."
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
-#: settings/messageviewer.kcfg:206 viewer/viewer_p.cpp:1559
+#: settings/messageviewer.kcfg:206 viewer/viewer_p.cpp:1558
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "&Bruk skrift med fast bredde"
@@ -1742,7 +1742,7 @@ msgstr ""
 msgid "Turn on HTML rendering for this message."
 msgstr "Slå på HTML-visning av denne meldinga."
 
-#: viewer/urlhandlermanager.cpp:412 viewer/viewer_p.cpp:1628
+#: viewer/urlhandlermanager.cpp:412 viewer/viewer_p.cpp:1627
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "Last eksterne referanser fra Internett for denne meldinga."
@@ -1822,7 +1822,7 @@ msgstr "Åpne i adresseb&ok"
 msgid "&Copy Email Address"
 msgstr "&Kopier e-postadresse"
 
-#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2718
+#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2717
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Adressen er kopiert til utklippstavla."
@@ -1920,13 +1920,13 @@ msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "&Åpne med …"
 
-#: viewer/viewer_p.cpp:527 viewer/viewer_p.cpp:1737
+#: viewer/viewer_p.cpp:527 viewer/viewer_p.cpp:1736
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Åpne"
 
-#: viewer/viewer_p.cpp:541 viewer/viewer_p.cpp:1744
+#: viewer/viewer_p.cpp:541 viewer/viewer_p.cpp:1743
 #, kde-format
 msgctxt "to view something"
 msgid "View"
@@ -1942,12 +1942,12 @@ msgstr "Rull til"
 msgid "Save As..."
 msgstr "Lagre som …"
 
-#: viewer/viewer_p.cpp:560 viewer/viewer_p.cpp:1754
+#: viewer/viewer_p.cpp:560 viewer/viewer_p.cpp:1753
 #, kde-format
 msgid "Copy"
 msgstr "Kopi"
 
-#: viewer/viewer_p.cpp:571 viewer/viewer_p.cpp:1758
+#: viewer/viewer_p.cpp:571 viewer/viewer_p.cpp:1757
 #, kde-format
 msgid "Delete Attachment"
 msgstr "Slett vedlegg"
@@ -1962,285 +1962,285 @@ msgstr ""
 msgid "Reply To All"
 msgstr ""
 
-#: viewer/viewer_p.cpp:596 viewer/viewer_p.cpp:1763
+#: viewer/viewer_p.cpp:596 viewer/viewer_p.cpp:1762
 #, kde-format
 msgid "Properties"
 msgstr "Egenskaper"
 
-#: viewer/viewer_p.cpp:733
+#: viewer/viewer_p.cpp:732
 #, kde-format
 msgid "KMail"
 msgstr "KMail"
 
-#: viewer/viewer_p.cpp:733
+#: viewer/viewer_p.cpp:732
 #, kde-format
 msgid "The KDE Mail Client"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1279
+#: viewer/viewer_p.cpp:1278
 #, kde-format
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1481
+#: viewer/viewer_p.cpp:1480
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "&Vedlegg"
 
-#: viewer/viewer_p.cpp:1483
+#: viewer/viewer_p.cpp:1482
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "Velg hvordan vedlegg skal vises"
 
-#: viewer/viewer_p.cpp:1486
+#: viewer/viewer_p.cpp:1485
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "Som &ikoner"
 
-#: viewer/viewer_p.cpp:1489
+#: viewer/viewer_p.cpp:1488
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr "Vis vedlegg som ikoner. Trykk på ikonet for å se vedlegget."
 
-#: viewer/viewer_p.cpp:1493
+#: viewer/viewer_p.cpp:1492
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "&Smart"
 
-#: viewer/viewer_p.cpp:1496
+#: viewer/viewer_p.cpp:1495
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "Vis vedlegget slik avsenderen foreslår."
 
-#: viewer/viewer_p.cpp:1500
+#: viewer/viewer_p.cpp:1499
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "Inni &meldinga"
 
-#: viewer/viewer_p.cpp:1503
+#: viewer/viewer_p.cpp:1502
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "Vis alle vedlegg inne i meldinga (hvis mulig)"
 
-#: viewer/viewer_p.cpp:1507
+#: viewer/viewer_p.cpp:1506
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "Skj&ul"
 
-#: viewer/viewer_p.cpp:1510
+#: viewer/viewer_p.cpp:1509
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "Ikke vis vedlegg sammen med meldinga"
 
-#: viewer/viewer_p.cpp:1514
+#: viewer/viewer_p.cpp:1513
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr "Bare i topptekst"
 
-#: viewer/viewer_p.cpp:1517
+#: viewer/viewer_p.cpp:1516
 #, kde-format
 msgid "Show Attachments only in the header of the mail"
 msgstr "Vis vedlegg bare i e-postens topptekst"
 
-#: viewer/viewer_p.cpp:1522
+#: viewer/viewer_p.cpp:1521
 #, kde-format
 msgid "&Set Encoding"
 msgstr "Velg &tegnkoding"
 
-#: viewer/viewer_p.cpp:1527 widgets/configurewidget.cpp:45
+#: viewer/viewer_p.cpp:1526 widgets/configurewidget.cpp:45
 #: widgets/configurewidget.cpp:79
 #, kde-format
 msgid "Auto"
 msgstr "Auto"
 
-#: viewer/viewer_p.cpp:1537
+#: viewer/viewer_p.cpp:1536
 #, kde-format
 msgid "Copy Text"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1543
+#: viewer/viewer_p.cpp:1542
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Select All Text"
 msgstr "Merk all tekst"
 
-#: viewer/viewer_p.cpp:1549 viewer/viewer_p.cpp:2072
+#: viewer/viewer_p.cpp:1548 viewer/viewer_p.cpp:2071
 #, kde-format
 msgid "Copy Link Address"
 msgstr "Kopier lenkeadresse"
 
-#: viewer/viewer_p.cpp:1554
+#: viewer/viewer_p.cpp:1553
 #, kde-format
 msgid "Open URL"
 msgstr "Åpne URL"
 
-#: viewer/viewer_p.cpp:1565
+#: viewer/viewer_p.cpp:1564
 #, kde-format
 msgid "Show Message Structure"
 msgstr "Vis meldingsstruktur"
 
-#: viewer/viewer_p.cpp:1570
+#: viewer/viewer_p.cpp:1569
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "&View Source"
 msgstr "&Vis kildekoden"
 
-#: viewer/viewer_p.cpp:1575
+#: viewer/viewer_p.cpp:1574
 #, kde-format
 msgid "&Save Message..."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1581
+#: viewer/viewer_p.cpp:1580
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "&Lagre visningsformat"
 
-#: viewer/viewer_p.cpp:1585
+#: viewer/viewer_p.cpp:1584
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "&Tilbakestill visningsformat"
 
-#: viewer/viewer_p.cpp:1592
+#: viewer/viewer_p.cpp:1591
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "Rull meldinga opp"
 
-#: viewer/viewer_p.cpp:1597
+#: viewer/viewer_p.cpp:1596
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "Rull meldinga ned"
 
-#: viewer/viewer_p.cpp:1602
+#: viewer/viewer_p.cpp:1601
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "Rull meldinga oppover (mer)"
 
-#: viewer/viewer_p.cpp:1607
+#: viewer/viewer_p.cpp:1606
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "Rull meldinga nedover (mer)"
 
-#: viewer/viewer_p.cpp:1617
+#: viewer/viewer_p.cpp:1616
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr "Slå HTML-visning av/på"
 
-#: viewer/viewer_p.cpp:1621
+#: viewer/viewer_p.cpp:1620
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr "Vend visning mellom HTML og ren tekst"
 
-#: viewer/viewer_p.cpp:1624
+#: viewer/viewer_p.cpp:1623
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Load external references"
 msgstr "Last eksterne referanser"
 
-#: viewer/viewer_p.cpp:1630
+#: viewer/viewer_p.cpp:1629
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Speak Text"
 msgstr "Uttal teksten"
 
-#: viewer/viewer_p.cpp:1636
+#: viewer/viewer_p.cpp:1635
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Share Text..."
 msgstr "Uttal teksten"
 
-#: viewer/viewer_p.cpp:1654
+#: viewer/viewer_p.cpp:1653
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "Kopier bildeadresse"
 
-#: viewer/viewer_p.cpp:1660
+#: viewer/viewer_p.cpp:1659
 #, kde-format
 msgid "&Find in Message..."
 msgstr "&Finn i melding …"
 
-#: viewer/viewer_p.cpp:1669
+#: viewer/viewer_p.cpp:1668
 #, kde-format
 msgid "Disable Emoticon"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1734
+#: viewer/viewer_p.cpp:1733
 #, kde-format
 msgid "Save &As..."
 msgstr "Lagre &som …"
 
-#: viewer/viewer_p.cpp:1742
+#: viewer/viewer_p.cpp:1741
 #, kde-format
 msgid "Open With..."
 msgstr "Åpne med …"
 
-#: viewer/viewer_p.cpp:1749
+#: viewer/viewer_p.cpp:1748
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "Lagre alle vedlegg …"
 
-#: viewer/viewer_p.cpp:1992
+#: viewer/viewer_p.cpp:1991
 #, kde-format
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1992 viewer/viewer_p.cpp:1995
+#: viewer/viewer_p.cpp:1991 viewer/viewer_p.cpp:1994
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1995
+#: viewer/viewer_p.cpp:1994
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr ""
 
-#: viewer/viewer_p.cpp:2015
+#: viewer/viewer_p.cpp:2014
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2016
+#: viewer/viewer_p.cpp:2015
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2070
+#: viewer/viewer_p.cpp:2069
 #, kde-format
 msgid "Copy Email Address"
 msgstr "Kopier e-postadresse"
 
-#: viewer/viewer_p.cpp:2153
+#: viewer/viewer_p.cpp:2152
 #, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2724
+#: viewer/viewer_p.cpp:2723
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "Nettadressen er kopiert til utklippstavla."
 
-#: viewer/viewer_p.cpp:2886
+#: viewer/viewer_p.cpp:2885
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "Meldingslasting mislyktes: %1."
 
-#: viewer/viewer_p.cpp:2891
+#: viewer/viewer_p.cpp:2890
 #, kde-format
 msgid "Message not found."
 msgstr "Fant ikke meldinga."
