@@ -259,19 +259,19 @@ msgstr ""
 #: settings/messagecore.kcfg:28
 #, kde-format
 msgid "This is the color used in the 3rd level of quoted text"
-msgstr "第 3 层引用文字的颜色"
+msgstr "第 3 层引用文本的颜色"
 
 #. i18n: ectx: label, entry (QuotedText2), group (Reader)
 #: settings/messagecore.kcfg:32
 #, kde-format
 msgid "This is the color used in the 2nd level of quoted text"
-msgstr "第 2 层引用文字的颜色"
+msgstr "第 2 层引用文本的颜色"
 
 #. i18n: ectx: label, entry (QuotedText1), group (Reader)
 #: settings/messagecore.kcfg:36
 #, kde-format
 msgid "This is the color used in the 1st level of quoted text"
-msgstr "第 1 层引用文字的颜色"
+msgstr "第 1 层引用文本的颜色"
 
 #. i18n: ectx: label, entry (DisplayOwnIdentity), group (Reader)
 #: settings/messagecore.kcfg:41
