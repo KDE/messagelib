@@ -35,7 +35,7 @@ public:
 
     std::shared_ptr<KMime::Message> mMsg; // Msg to write to
     std::shared_ptr<KMime::Message> mOrigMsg; // Msg to read from
-    KIdentityManagementCore::IdentityManager *m_identityManager = nullptr;
+    const KIdentityManagementCore::IdentityManager *m_identityManager = nullptr;
     MimeTreeParser::ObjectTreeParser *mOtp = nullptr;
     MimeTreeParser::SimpleObjectTreeSource *mEmptySource = nullptr;
     QString mSelection;

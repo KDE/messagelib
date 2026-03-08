@@ -27,17 +27,17 @@ class MESSAGECOMPOSER_EXPORT MainTextJob : public ContentJobBase
 public:
     /*!
      */
-    explicit MainTextJob(TextPart *textPart = nullptr, QObject *parent = nullptr);
+    explicit MainTextJob(const TextPart *textPart = nullptr, QObject *parent = nullptr);
     /*!
      */
     ~MainTextJob() override;
 
     /*!
      */
-    [[nodiscard]] TextPart *textPart() const;
+    [[nodiscard]] const TextPart *textPart() const;
     /*!
      */
-    void setTextPart(TextPart *part);
+    void setTextPart(const TextPart *part);
 
 protected Q_SLOTS:
     /*!

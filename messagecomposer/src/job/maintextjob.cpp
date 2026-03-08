@@ -38,7 +38,7 @@ public:
     [[nodiscard]] SinglepartJob *createHtmlJob();
     [[nodiscard]] SinglepartJob *createImageJob(const QSharedPointer<KPIMTextEdit::EmbeddedImage> &image);
 
-    TextPart *textPart = nullptr;
+    const TextPart *textPart = nullptr;
     QByteArray chosenCharset;
     QString sourcePlainText;
     QByteArray encodedPlainText;
@@ -133,7 +133,7 @@ SinglepartJob *MainTextJobPrivate::createImageJob(const QSharedPointer<KPIMTextE
     return cjob;
 }
 
-MainTextJob::MainTextJob(TextPart *textPart, QObject *parent)
+MainTextJob::MainTextJob(const TextPart *textPart, QObject *parent)
     : ContentJobBase(*new MainTextJobPrivate(this), parent)
 {
     Q_D(MainTextJob);
@@ -142,13 +142,13 @@ MainTextJob::MainTextJob(TextPart *textPart, QObject *parent)
 
 MainTextJob::~MainTextJob() = default;
 
-TextPart *MainTextJob::textPart() const
+const TextPart *MainTextJob::textPart() const
 {
     Q_D(const MainTextJob);
     return d->textPart;
 }
 
-void MainTextJob::setTextPart(TextPart *part)
+void MainTextJob::setTextPart(const TextPart *part)
 {
     Q_D(MainTextJob);
     d->textPart = part;

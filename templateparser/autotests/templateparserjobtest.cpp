@@ -70,8 +70,8 @@ void TemplateParserJobTest::test_convertedHtml()
     QVERIFY(!referenceData.isEmpty());
 
     auto parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::NewMessage);
-    auto identMan = new KIdentityManagementCore::IdentityManager;
-    parser->setIdentityManager(identMan);
+    auto identMan = std::unique_ptr<KIdentityManagementCore::IdentityManager>();
+    parser->setIdentityManager(identMan.get());
 
     parser->d->mOrigMsg = origMsg;
 
@@ -129,8 +129,8 @@ void TemplateParserJobTest::test_replyHtml()
     QVERIFY(!referenceData.isEmpty());
 
     auto parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::NewMessage);
-    auto identMan = new KIdentityManagementCore::IdentityManager;
-    parser->setIdentityManager(identMan);
+    auto identMan = std::make_unique<KIdentityManagementCore::IdentityManager>();
+    parser->setIdentityManager(identMan.get());
 
     parser->d->mOrigMsg = origMsg;
 
@@ -603,9 +603,9 @@ void TemplateParserJobTest::test_makeValidHtml()
 
     std::shared_ptr<KMime::Message> msg(new KMime::Message);
 
-    auto parser = new TemplateParser::TemplateParserJob(msg, TemplateParser::TemplateParserJob::Reply);
+    TemplateParser::TemplateParserJob parser(msg, TemplateParser::TemplateParserJob::Reply);
     QString result = message;
-    parser->makeValidHtml(result);
+    parser.makeValidHtml(result);
 
     QCOMPARE(result, expected);
 }

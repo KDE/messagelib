@@ -26,11 +26,11 @@ class TestFactory : public BodyPartFormatterFactory
 public:
     void loadPlugins() override
     {
-        textCalFormatter = new DummyFormatter;
-        insert(u"TEXT/CALENDAR"_s, textCalFormatter, 100);
+        textCalFormatter = std::make_unique<DummyFormatter>();
+        insert(u"TEXT/CALENDAR"_s, textCalFormatter.get(), 100);
     }
 
-    DummyFormatter *textCalFormatter = nullptr;
+    std::unique_ptr<DummyFormatter> textCalFormatter;
 };
 
 using namespace MimeTreeParser;
@@ -70,17 +70,17 @@ private Q_SLOTS:
         l = fac.formattersForType(u"text/calendar"_s);
         QCOMPARE(l.size(), 6);
         QVERIFY(fac.textCalFormatter);
-        QCOMPARE(l.at(0), fac.textCalFormatter);
+        QCOMPARE(l.at(0), fac.textCalFormatter.get());
         QCOMPARE(l.at(1), text_plain_f1);
         QCOMPARE(l.at(2), text_plain_f2);
         QCOMPARE(l.at(5), application_octet_stream_f);
 
         l = fac.formattersForType(u"text/x-vcalendar"_s);
         QCOMPARE(l.size(), 6);
-        QCOMPARE(l.at(0), fac.textCalFormatter);
+        QCOMPARE(l.at(0), fac.textCalFormatter.get());
         l = fac.formattersForType(u"TEXT/X-VCALENDAR"_s);
         QCOMPARE(l.size(), 6);
-        QCOMPARE(l.at(0), fac.textCalFormatter);
+        QCOMPARE(l.at(0), fac.textCalFormatter.get());
 
         l = fac.formattersForType(u"text/html"_s);
         QCOMPARE(l.size(), 6);

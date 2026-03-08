@@ -211,7 +211,7 @@ public:
      * \brief Sets the identity manager
      * \param ident identity manager
      */
-    void setIdentityManager(KIdentityManagementCore::IdentityManager *ident);
+    void setIdentityManager(const KIdentityManagementCore::IdentityManager *ident);
 
     /*!
      * \brief Processes the template with the original message

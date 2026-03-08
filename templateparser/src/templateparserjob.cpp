@@ -94,7 +94,7 @@ bool TemplateParserJob::shouldStripSignature() const
     return (d->mMode == Reply || d->mMode == ReplyAll) && TemplateParserSettings::self()->stripSignature();
 }
 
-void TemplateParserJob::setIdentityManager(KIdentityManagementCore::IdentityManager *ident)
+void TemplateParserJob::setIdentityManager(const KIdentityManagementCore::IdentityManager *ident)
 {
     d->m_identityManager = ident;
 }

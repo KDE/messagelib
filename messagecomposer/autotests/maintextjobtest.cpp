@@ -163,11 +163,11 @@ void MainTextJobTest::testHtml()
 
     auto composerJob = new ComposerJob;
     composerJob->globalPart()->setGuiEnabled(false);
-    auto textPart = new TextPart;
+    auto textPart = std::make_unique<TextPart>();
     textPart->setWordWrappingEnabled(false);
     textPart->setCleanPlainText(editor.composerControler()->toCleanPlainText());
     textPart->setCleanHtml(editor.toCleanHtml());
-    auto mjob = new MainTextJob(textPart, composerJob);
+    auto mjob = new MainTextJob(textPart.get(), composerJob);
     QVERIFY(mjob->exec());
     const auto result = mjob->takeContent();
     result->assemble();
