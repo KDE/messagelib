@@ -1471,7 +1471,7 @@ msgstr "启用访问键"
 #: ui/settings.ui:86
 #, kde-format
 msgid "Reduce font size for &quoted text"
-msgstr "引用的文字以较小字体显示(&Q)"
+msgstr "引用的文本以较小字体显示(&Q)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, kcfg_ShowExpandQuotesMark)
 #: ui/settings.ui:93
