@@ -203,7 +203,7 @@ msgstr "رجاءً انتظر بينما يُتحقّق من التّوقيع...
 
 #: messagepartthemes/default/templates/signedmessagepart.html:17
 msgid "End of signed message"
-msgstr "نهاية الرّسالة الموقّعة"
+msgstr "نهاية الرّسالة الموقعة"
 
 #: dkim-verify/dkimcheckfulljob.cpp:118
 #, kde-format
@@ -1623,7 +1623,7 @@ msgstr "لا تُبقها"
 msgid ""
 "The part %1 of the message is signed. Do you want to keep the signature when "
 "saving?"
-msgstr "الجزء %1 من الرّسالة موقّعة. أتريد إبقاء التّوقيع عند الحفظ؟"
+msgstr "الجزء %1 من الرّسالة موقعة. أتريد إبقاء التّوقيع عند الحفظ؟"
 
 #: utils/messageviewerutil.cpp:319
 #, kde-format

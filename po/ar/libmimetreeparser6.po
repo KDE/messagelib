@@ -53,7 +53,7 @@ msgstr "تعذّر على ملحقة التّعمية ”%1“ تأكيد الت
 msgid ""
 "The message is signed, but the validity of the signature cannot be verified."
 "<br />Reason: %1"
-msgstr "الرّسالة موقّعة، ولكن تعّذر التّحقّق من صلاحيّة التّوقيع.<br />السّبب: %1"
+msgstr "الرّسالة موقعة، ولكن تعّذر التّحقّق من صلاحيّة التّوقيع.<br />السّبب: %1"
 
 #: src/messagepart.cpp:1209
 #, kde-format
