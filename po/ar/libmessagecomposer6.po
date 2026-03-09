@@ -453,7 +453,7 @@ msgstr "أتريد تغيير حجم الصّور؟"
 #, kde-format
 msgctxt "@title:window"
 msgid "Auto Resize Images"
-msgstr "غيّر حجم الصّور آليًّّا"
+msgstr "غيّر حجم الصّور آليًّا"
 
 #: composer/composerviewbase.cpp:520
 #, kde-format
@@ -640,13 +640,13 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Unsigned?"
-msgstr "أأرسلها غير موقّعة؟"
+msgstr "أأرسلها غير موقعة؟"
 
 #: composer/composerviewbase.cpp:2024
 #, kde-format
 msgctxt "@action:button"
 msgid "Send &Unsigned"
-msgstr "أرسلها &غير موقّعة"
+msgstr "أرسلها &غير موقعة"
 
 #: composer/composerviewbase.cpp:2039
 #, kde-format
@@ -684,7 +684,7 @@ msgstr "و&قّع"
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsigned-Message Warning"
-msgstr "تحذير برسالة غير موقّعة"
+msgstr "تحذير برسالة غير موقعة"
 
 #: composer/composerviewbase.cpp:2051
 #, kde-format
