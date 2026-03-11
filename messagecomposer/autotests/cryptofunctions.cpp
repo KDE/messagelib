@@ -52,8 +52,8 @@ void ComposerTestUtil::verifySignature(KMime::Content *content,
 
     // parse the result and make sure it is valid in various ways
     MimeTreeParser::SimpleObjectTreeSource testSource;
-    auto nh = new MimeTreeParser::NodeHelper;
-    MimeTreeParser::ObjectTreeParser otp(&testSource, nh);
+    auto nh = std::make_unique<MimeTreeParser::NodeHelper>();
+    MimeTreeParser::ObjectTreeParser otp(&testSource, nh.get());
 
     // ensure the signed part exists and is parseable
     if (f & Kleo::OpenPGPMIMEFormat) {
@@ -117,15 +117,15 @@ void ComposerTestUtil::verifySignature(KMime::Content *content,
 void ComposerTestUtil::verifyEncryption(KMime::Content *content, const QByteArray &encrContent, Kleo::CryptoMessageFormat f, bool withAttachment)
 {
     // store it in a KMime::Message, that's what OTP needs
-    std::shared_ptr<KMime::Message> resultMessage(new KMime::Message);
+    auto resultMessage = std::make_unique<KMime::Message>();
     resultMessage->setContent(content->encodedContent());
     resultMessage->parse();
 
     // parse the result and make sure it is valid in various ways
     MimeTreeParser::SimpleObjectTreeSource testSource;
     testSource.setDecryptMessage(true);
-    auto nh = new MimeTreeParser::NodeHelper;
-    MimeTreeParser::ObjectTreeParser otp(&testSource, nh);
+    auto nh = std::make_unique<MimeTreeParser::NodeHelper>();
+    MimeTreeParser::ObjectTreeParser otp(&testSource, nh.get());
 
     if (f & Kleo::OpenPGPMIMEFormat) {
         // ensure the enc part exists and is parseable
@@ -174,15 +174,15 @@ void ComposerTestUtil::verifySignatureAndEncryption(KMime::Content *content,
 {
     Q_UNUSED(withAttachment)
     // store it in a KMime::Message, that's what OTP needs
-    std::shared_ptr<KMime::Message> resultMessage(new KMime::Message);
+    auto resultMessage = std::make_unique<KMime::Message>();
     resultMessage->setContent(content->encodedContent());
     resultMessage->parse();
 
     // parse the result and make sure it is valid in various ways
     MimeTreeParser::SimpleObjectTreeSource testSource;
     testSource.setDecryptMessage(true);
-    auto nh = new MimeTreeParser::NodeHelper;
-    MimeTreeParser::ObjectTreeParser otp(&testSource, nh);
+    auto nh = std::make_unique<MimeTreeParser::NodeHelper>();
+    MimeTreeParser::ObjectTreeParser otp(&testSource, nh.get());
 
     if (f & Kleo::OpenPGPMIMEFormat) {
         // ensure the enc part exists and is parseable
