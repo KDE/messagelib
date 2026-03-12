@@ -37,16 +37,16 @@ void Test::setupFullEnv()
 
 std::vector<GpgME::Key, std::allocator<GpgME::Key>> Test::getKeys(bool smime)
 {
-    QGpgME::KeyListJob *job = nullptr;
+    std::unique_ptr<QGpgME::KeyListJob> job;
 
     if (smime) {
         const QGpgME::Protocol *const backend = QGpgME::smime();
         Q_ASSERT(backend);
-        job = backend->keyListJob(false);
+        job.reset(backend->keyListJob(false));
     } else {
         const QGpgME::Protocol *const backend = QGpgME::openpgp();
         Q_ASSERT(backend);
-        job = backend->keyListJob(false);
+        job.reset(backend->keyListJob(false));
     }
     Q_ASSERT(job);
 
