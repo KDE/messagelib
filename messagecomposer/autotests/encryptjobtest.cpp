@@ -234,7 +234,7 @@ void EncryptJobTest::testProtectedHeaders()
     KMime::Content tempNode;
     {
         QByteArray plainText;
-        auto job = QGpgME::openpgp()->decryptVerifyJob();
+        std::unique_ptr<QGpgME::DecryptVerifyJob> job(QGpgME::openpgp()->decryptVerifyJob());
         job->exec(encPart->encodedBody(), plainText);
 
         tempNode.setContent(KMime::CRLFtoLF(plainText.constData()));

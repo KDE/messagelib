@@ -213,8 +213,8 @@ void ComposerViewBaseTest::testGenerateCryptoMessagesAutocrypt()
 
     MimeTreeParser::SimpleObjectTreeSource testSource;
     testSource.setDecryptMessage(true);
-    auto nh = new MimeTreeParser::NodeHelper;
-    MimeTreeParser::ObjectTreeParser otp(&testSource, nh);
+    auto nh = std::make_unique<MimeTreeParser::NodeHelper>();
+    MimeTreeParser::ObjectTreeParser otp(&testSource, nh.get());
 
     otp.parseObjectTree(msg.get());
 
@@ -335,8 +335,8 @@ void ComposerViewBaseTest::testAutocryptKey()
 
     MimeTreeParser::SimpleObjectTreeSource testSource;
     testSource.setDecryptMessage(true);
-    auto nh = new MimeTreeParser::NodeHelper;
-    MimeTreeParser::ObjectTreeParser otp(&testSource, nh);
+    auto nh = std::make_unique<MimeTreeParser::NodeHelper>();
+    MimeTreeParser::ObjectTreeParser otp(&testSource, nh.get());
 
     otp.parseObjectTree(msg.get());
 

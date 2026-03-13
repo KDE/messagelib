@@ -64,7 +64,7 @@ void AutocryptHeadersJobTest::testAutocryptHeader()
     content->assemble();
     const auto encodedContent = content->encodedContent();
 
-    auto job = QGpgME::openpgp()->keyListJob(false);
+    std::unique_ptr<QGpgME::KeyListJob> job(QGpgME::openpgp()->keyListJob(false));
     std::vector<GpgME::Key> ownKeys;
     auto res = job->exec(QStringList(QString::fromLatin1(skeletonMessage.from()[0].addresses()[0])), false, ownKeys);
 
@@ -110,7 +110,7 @@ void AutocryptHeadersJobTest::testContentChained()
     content->assemble();
     const auto encodedContent = content->encodedContent();
 
-    auto job = QGpgME::openpgp()->keyListJob(false);
+    std::unique_ptr<QGpgME::KeyListJob> job(QGpgME::openpgp()->keyListJob(false));
     std::vector<GpgME::Key> ownKeys;
     auto res = job->exec(QStringList(QString::fromLatin1(skeletonMessage.from()[0].addresses()[0])), false, ownKeys);
 
@@ -155,7 +155,7 @@ void AutocryptHeadersJobTest::testAutocryptGossipHeader()
         "and the thread will remain encrypted.\n");
     content->contentType(KMime::CreatePolicy::Create)->from7BitString("text/plain");
 
-    auto job = QGpgME::openpgp()->keyListJob(false);
+    std::unique_ptr<QGpgME::KeyListJob> job(QGpgME::openpgp()->keyListJob(false));
     std::vector<GpgME::Key> ownKeys;
     job->exec(QStringList(QString::fromLatin1(skeletonMessage.from()[0].addresses()[0])), false, ownKeys);
     std::vector<GpgME::Key> keys;
@@ -198,7 +198,7 @@ void AutocryptHeadersJobTest::testSetGnupgHome()
         "and the thread will remain encrypted.\n");
     content->contentType(KMime::CreatePolicy::Create)->from7BitString("text/plain");
 
-    auto exportJob = QGpgME::openpgp()->keyListJob(false);
+    std::unique_ptr<QGpgME::KeyListJob> exportJob(QGpgME::openpgp()->keyListJob(false));
     std::vector<GpgME::Key> ownKeys;
     exportJob->exec(QStringList(QString::fromLatin1(skeletonMessage.from()[0].addresses()[0])), false, ownKeys);
     std::vector<GpgME::Key> keys;
@@ -273,7 +273,7 @@ void AutocryptHeadersJobTest::testStripSenderKey()
         "and the thread will remain encrypted.\n");
     content->contentType(KMime::CreatePolicy::Create)->from7BitString("text/plain");
 
-    auto job = QGpgME::openpgp()->keyListJob(false);
+    std::unique_ptr<QGpgME::KeyListJob> job(QGpgME::openpgp()->keyListJob(false));
     std::vector<GpgME::Key> ownKeys;
     job->exec(QStringList(QString::fromLatin1(skeletonMessage.from()[0].addresses()[0])), false, ownKeys);
     std::vector<GpgME::Key> keys;

@@ -778,7 +778,7 @@ void CryptoComposerTest::testAutocryptGossip()
         fillComposerCryptoData(composerJob);
 
         if (recipients.size() > 1) {
-            auto job = QGpgME::openpgp()->keyListJob(false);
+            std::unique_ptr<QGpgME::KeyListJob> job(QGpgME::openpgp()->keyListJob(false));
             std::vector<GpgME::Key> eKeys;
             GpgME::KeyListResult res = job->exec(recipients, false, eKeys);
 

@@ -243,7 +243,7 @@ void SignEncryptTest::testProtectedHeaders()
     KMime::Content tempNode;
     {
         QByteArray plainText;
-        auto job = QGpgME::openpgp()->decryptVerifyJob();
+        std::unique_ptr<QGpgME::DecryptVerifyJob> job(QGpgME::openpgp()->decryptVerifyJob());
         auto jobResult = job->exec(encPart->encodedBody(), plainText);
 
         auto signature = jobResult.second.signatures()[0];

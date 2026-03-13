@@ -38,10 +38,10 @@ void MainTextJobTest::testPlainText()
 {
     ComposerJob composerJob;
     composerJob.globalPart()->setGuiEnabled(false);
-    auto textPart = new TextPart;
+    auto textPart = std::make_unique<TextPart>();
     QString data = u"they said their never they slept their dream"_s;
     textPart->setWrappedPlainText(data);
-    auto mjob = new MainTextJob(textPart, &composerJob);
+    auto mjob = new MainTextJob(textPart.get(), &composerJob);
     QVERIFY(mjob->exec());
     const auto result = mjob->takeContent();
     result->assemble();
@@ -50,7 +50,6 @@ void MainTextJobTest::testPlainText()
     QCOMPARE(result->contentType()->mimeType(), QByteArray("text/plain"));
     QCOMPARE(result->contentType()->charset(), QByteArray("utf-8"));
     QCOMPARE(QString::fromLatin1(result->body()), data);
-    delete textPart;
 }
 
 void MainTextJobTest::testWrappingErrors()
@@ -58,26 +57,24 @@ void MainTextJobTest::testWrappingErrors()
     {
         ComposerJob composerJob;
         composerJob.globalPart()->setGuiEnabled(false);
-        auto textPart = new TextPart;
+        auto textPart = std::make_unique<TextPart>();
         QString data = u"they said their never they slept their dream"_s;
         textPart->setWordWrappingEnabled(false);
         textPart->setWrappedPlainText(data);
-        auto mjob = new MainTextJob(textPart, &composerJob);
+        auto mjob = new MainTextJob(textPart.get(), &composerJob);
         QVERIFY(!mjob->exec()); // error: not UseWrapping but given only wrapped text
         QCOMPARE(mjob->error(), int(JobBase::BugError));
-        delete textPart;
     }
     {
         ComposerJob composerJob;
         composerJob.globalPart()->setGuiEnabled(false);
-        auto textPart = new TextPart;
+        auto textPart = std::make_unique<TextPart>();
         textPart->setWordWrappingEnabled(true);
         QString data = u"they said their never they slept their dream"_s;
         textPart->setCleanPlainText(data);
-        auto mjob = new MainTextJob(textPart, &composerJob);
+        auto mjob = new MainTextJob(textPart.get(), &composerJob);
         QVERIFY(!mjob->exec()); // error: UseWrapping but given only clean text
         QCOMPARE(mjob->error(), int(JobBase::BugError));
-        delete textPart;
     }
 }
 
@@ -85,10 +82,10 @@ void MainTextJobTest::testCustomCharset()
 {
     ComposerJob composerJob;
     composerJob.globalPart()->setGuiEnabled(false);
-    auto textPart = new TextPart;
+    auto textPart = std::make_unique<TextPart>();
     QString data = u"şi el o să se-nchidă cu o frunză de pelin"_s;
     textPart->setWrappedPlainText(data);
-    auto mjob = new MainTextJob(textPart, &composerJob);
+    auto mjob = new MainTextJob(textPart.get(), &composerJob);
     QVERIFY(mjob->exec());
     const auto result = mjob->takeContent();
     result->assemble();
@@ -100,48 +97,44 @@ void MainTextJobTest::testCustomCharset()
     QStringDecoder dec(QStringDecoder::Utf8);
     QVERIFY(dec.isValid());
     QCOMPARE(dec.decode(outData), data);
-
-    delete textPart;
 }
 
 void MainTextJobTest::testNoCharset()
 {
     ComposerJob composerJob;
     composerJob.globalPart()->setGuiEnabled(false);
-    auto textPart = new TextPart;
+    auto textPart = std::make_unique<TextPart>();
     QString data = u"do you still play the accordion?"_s;
     textPart->setWrappedPlainText(data);
-    auto mjob = new MainTextJob(textPart, &composerJob);
+    auto mjob = new MainTextJob(textPart.get(), &composerJob);
     QSKIP("This tests has been failing for a long time, please someone fix it", SkipSingle);
     QVERIFY(!mjob->exec()); // Error.
     QCOMPARE(mjob->error(), int(JobBase::BugError));
     qDebug() << mjob->errorString();
-    delete textPart;
 }
 
 void MainTextJobTest::testBadCharset()
 {
     ComposerJob composerJob;
     composerJob.globalPart()->setGuiEnabled(false);
-    auto textPart = new TextPart;
+    auto textPart = std::make_unique<TextPart>();
     QString data = u"el a plâns peste ţară cu lacrima limbii noastre"_s;
     textPart->setWrappedPlainText(data);
-    auto mjob = new MainTextJob(textPart, &composerJob);
+    auto mjob = new MainTextJob(textPart.get(), &composerJob);
     QSKIP("This tests has been failing for a long time, please someone fix it", SkipSingle);
     QVERIFY(!mjob->exec()); // Error.
     QCOMPARE(mjob->error(), int(JobBase::UserError));
     qDebug() << mjob->errorString();
-    delete textPart;
 }
 
 void MainTextJobTest::testFallbackCharset()
 {
     ComposerJob composerJob;
     composerJob.globalPart()->setGuiEnabled(false);
-    auto textPart = new TextPart;
+    auto textPart = std::make_unique<TextPart>();
     QString data = u"and when he falleth..."_s;
     textPart->setWrappedPlainText(data);
-    auto mjob = new MainTextJob(textPart, &composerJob);
+    auto mjob = new MainTextJob(textPart.get(), &composerJob);
     QVERIFY(mjob->exec());
     const auto result = mjob->takeContent();
     result->assemble();
@@ -150,7 +143,6 @@ void MainTextJobTest::testFallbackCharset()
     QCOMPARE(result->contentType()->mimeType(), QByteArray("text/plain"));
     QCOMPARE(result->contentType()->charset(), QByteArray("utf-8"));
     QCOMPARE(QString::fromLatin1(result->body()), data);
-    delete textPart;
 }
 
 void MainTextJobTest::testHtml()
