@@ -188,8 +188,9 @@ void AutocryptHeadersJob::process()
         QGpgME::Job::context(job)->setEngineHomeDirectory(d->gnupgHome.toUtf8().constData());
     }
     if (!d->recipientKey.isNull() && !d->recipientKey.isInvalid()) {
-        connect(job, &QGpgME::ExportJob::result, this, [this, d](const GpgME::Error &error, const QByteArray &keydata) {
+        connect(job, &QGpgME::ExportJob::result, this, [this, d, job](const GpgME::Error &error, const QByteArray &keydata) {
             d->subJobs--;
+            job->deleteLater();
             if (AutocryptHeadersJob::error()) {
                 // When the job already has failed do nothing.
                 return;
@@ -229,8 +230,9 @@ void AutocryptHeadersJob::process()
             QGpgME::Job::context(gossipJob)->setEngineHomeDirectory(d->gnupgHome.toUtf8().constData());
         }
 
-        connect(gossipJob, &QGpgME::ExportJob::result, this, [this, d, key](const GpgME::Error &error, const QByteArray &keydata) {
+        connect(gossipJob, &QGpgME::ExportJob::result, this, [this, d, key, gossipJob](const GpgME::Error &error, const QByteArray &keydata) {
             d->subJobs--;
+            gossipJob->deleteLater();
             if (AutocryptHeadersJob::error()) {
                 // When the job already has failed do nothing.
                 return;
