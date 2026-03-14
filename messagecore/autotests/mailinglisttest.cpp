@@ -102,6 +102,6 @@ void MailingListTest::shouldCopyReminderInfo()
     QCOMPARE(ml, restoreMl);
 }
 
-QTEST_APPLESS_MAIN(MailingListTest)
+QTEST_GUILESS_MAIN(MailingListTest) // needs an event loop for KConfig-internal cleanups
 
 #include "moc_mailinglisttest.cpp"
