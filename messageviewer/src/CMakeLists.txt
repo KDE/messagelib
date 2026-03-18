@@ -13,8 +13,10 @@ add_subdirectory(messagepartthemes/grantlee)
 
 include(CheckIncludeFiles)
 
-# target_include_directories does not handle empty include paths
-include_directories(${GPGME_INCLUDES})
+# If GPGME_INCLUDES is specified on the command-line then add to include path.
+if(GPGME_INCLUDES)
+    include_directories(${GPGME_INCLUDES})
+endif()
 
 add_library(KPim6MessageViewer)
 add_library(KPim6::MessageViewer ALIAS KPim6MessageViewer)
@@ -691,7 +693,6 @@ install(
         ${MessageViewer_Camelremotecontent_HEADERS}
         ${MessageViewer_Camelcasewidgets_HEADERS}
         ${MessageViewer_Camelcaseantispam_HEADERS}
-        ${MessageViewer_Camelfindbar_HEADERS}
         ${MessageViewer_Camelcasescam_HEADERS}
         ${MessageViewer_Camelcaserenderer_HEADERS}
         ${MessageViewer_Camelopenurlwith_HEADERS}
@@ -712,11 +713,9 @@ install(
         ${MessageViewer_utils_HEADERS}
         ${MessageViewer_interfaces_HEADERS}
         ${MessageViewer_htmlwriter_HEADERS}
-        ${MessageViewer_HEADERS}
         ${MessageViewer_viewer_HEADERS}
         ${MessageViewer_widgets_HEADERS}
         ${MessageViewer_antispam_HEADERS}
-        ${MessageViewer_findbar_HEADERS}
         ${MessageViewer_renderer_HEADERS}
         ${MessageViewer_remotecontent_HEADERS}
         ${MessageViewer_openurlwith_HEADERS}

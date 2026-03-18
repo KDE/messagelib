@@ -337,7 +337,6 @@ install(
         ${WebEngineViewer_Camelcasewebengine_misc_HEADERS}
         ${WebEngineViewer_Camelfindbar_HEADERS}
         ${WebEngineViewer_Camelcasewidgets_HEADERS}
-        ${WebEngineViewer_Camelprint_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/WebEngineViewer/WebEngineViewer
     COMPONENT Devel
 )
@@ -357,7 +356,6 @@ install(
         ${WebEngineViewer_webengine_manager_HEADERS}
         ${WebEngineViewer_webengine_misc_HEADERS}
         ${WebEngineViewer_widgets_HEADERS}
-        ${WebEngineViewer_print_HEADERS}
         ${CMAKE_CURRENT_BINARY_DIR}/webengineviewer_export.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/WebEngineViewer/webengineviewer
     COMPONENT Devel

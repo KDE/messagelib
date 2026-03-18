@@ -8,8 +8,9 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX MIMETREEPARSER
 
 add_definitions(-DTRANSLATION_DOMAIN=\"libmimetreeparser6\")
 
-# target_include_directories does not handle empty include paths
-include_directories(${GPGME_INCLUDES})
+if(GPGME_INCLUDES)
+    include_directories(${GPGME_INCLUDES})
+endif()
 
 add_library(KPim6MimeTreeParser)
 add_library(KPim6::MimeTreeParser ALIAS KPim6MimeTreeParser)

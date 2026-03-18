@@ -635,7 +635,6 @@ install(
 install(
     FILES
         ${MessageComposer_mdn_HEADERS}
-        ${MessageComposer_HEADERS}
         ${MessageComposer_PluginEditorBase_HEADERS}
         ${MessageComposer_snippet_HEADERS}
         ${MessageComposer_plugineditorconverttext_HEADERS}
