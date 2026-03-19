@@ -1429,16 +1429,12 @@ QString TemplateParserJob::quotedPlainText(const QString &selection) const
 
 QString TemplateParserJob::quotedHtmlText(const QString &selection) const
 {
-    QString content = selection;
     // TODO 1) look for all the variations of <br>  and remove the blank lines
     // 2) implement vertical bar for quoted HTML mail.
     // 3) After vertical bar is implemented, If a user wants to edit quoted message,
     // then the <blockquote> tags below should open and close as when required.
 
-    // Add blockquote tag, so that quoted message can be differentiated from normal message
-    // Bug 419978 remove \n by <br>
-    content = QLatin1StringView("<blockquote>") + content.replace(u"\n"_s, u"<br>"_s) + QLatin1StringView("</blockquote>");
-    return content;
+    return QLatin1StringView("<blockquote>") + selection + QLatin1StringView("</blockquote>");
 }
 
 uint TemplateParserJob::identityUoid(const std::shared_ptr<KMime::Message> &msg) const
