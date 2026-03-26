@@ -5,7 +5,9 @@ include(ECMAddTests)
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR})
 add_definitions(-DMAIL_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data")
 
-include(${CMAKE_SOURCE_DIR}/cmake/modules/kdepim_add_gpg_crypto_test.cmake)
+set(GNUPGHOME ${CMAKE_BINARY_DIR}/messagecore/autotests/gnupg_home)
+include(${LIBKLEO_TEST_MODULE_PATH}/KleoAddGpgCryptoTest.cmake)
+
 # convenience macro to add qtest unit tests
 macro(add_templateparser_unittest _source)
     set(_test ${_source})

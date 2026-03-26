@@ -30,7 +30,8 @@ macro(add_messagecore_test _source)
     )
 endmacro()
 
-include(${CMAKE_SOURCE_DIR}/cmake/modules/kdepim_add_gpg_crypto_test.cmake)
+set(GNUPGHOME ${CMAKE_BINARY_DIR}/messagecore/autotests/gnupg_home)
+include(${LIBKLEO_TEST_MODULE_PATH}/KleoAddGpgCryptoTest.cmake)
 
 macro(add_messagecore_cryptotest _source)
     get_filename_component(_name ${_source} NAME_WE)

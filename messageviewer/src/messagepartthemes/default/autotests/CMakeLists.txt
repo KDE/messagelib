@@ -3,7 +3,8 @@
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_BINARY_DIR})
 add_definitions(-DMAIL_DATA_DIR="${CMAKE_SOURCE_DIR}/mimetreeparser/autotests/data")
 
-include(${CMAKE_SOURCE_DIR}/cmake/modules/kdepim_add_gpg_crypto_test.cmake)
+set(GNUPGHOME ${CMAKE_BINARY_DIR}/messagecore/autotests/gnupg_home)
+include(${LIBKLEO_TEST_MODULE_PATH}/KleoAddGpgCryptoTest.cmake)
 
 macro(add_messageviewer_crypto_unittest _source)
     set(_test
