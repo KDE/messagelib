@@ -27,9 +27,19 @@ ecm_add_test(grantleeheaderformattertest.cpp grantleeheaderformattertest.h
         Qt::Test
 )
 
+ecm_add_test(eaitest.cpp eaitest.h
+    TEST_NAME eaitest
+    LINK_LIBRARIES
+        KPim6::MessageViewer
+        KPim6::Mime
+        KF6::Codecs
+        Qt::Test
+)
+
 set_tests_properties(
     messageviewer-header-grantleeheaderstyletest
     messageviewer-header-grantleeheaderformattertest
+    messageviewer-header-eaitest
     PROPERTIES
         ENVIRONMENT
             "LC_ALL=en_US.UTF-8;TZ=UTC"

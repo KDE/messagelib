@@ -2150,7 +2150,16 @@ void ViewerPrivate::slotShowMessageSource()
     QPointer<MailSourceWebEngineViewer> viewer = new MailSourceWebEngineViewer; // deletes itself upon close
     mListMailSourceViewer.append(viewer);
     viewer->setWindowTitle(i18nc("@title:window", "Message as Plain Text"));
-    const QString rawMessage = QString::fromLatin1(mMessage->encodedContent());
+    // encodedContent() can contain non-ASCII bytes despite the "7bit" naming
+    // elsewhere in KMime. Two kinds of non-ASCII end up here: both legacy pre-EAI
+    // messages that smuggled raw 8-bit bytes into headers without declaring a
+    // charset, and RFC 6532-conformant EAI messages with raw UTF-8 in addr-specs.
+    // fromUtf8 is the only reading consistent with the standards we now support;
+    // falling back to fromLatin1 on decode failure is tempting but unsafe —
+    // historically latin1 was nowhere near dominant (closer to 51% than 99%), so
+    // the fallback would mangle messages from other 8-bit locales as often as it
+    // would help.
+    const QString rawMessage = QString::fromUtf8(mMessage->encodedContent());
     viewer->setRawSource(rawMessage);
     viewer->setDisplayedSource(mViewer->page());
     if (mHtmlHeadSettings.fixedFont) {

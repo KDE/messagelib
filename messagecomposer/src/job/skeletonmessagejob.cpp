@@ -54,7 +54,7 @@ void SkeletonMessageJobPrivate::doStart()
     // From:
     {
         auto from = std::make_unique<KMime::Headers::From>();
-        from->fromUnicodeString(QString::fromLatin1(fromAddress.as7BitString("utf-8")));
+        from->fromUnicodeString(QString::fromUtf8(fromAddress.as7BitString("utf-8")));
         message->setHeader(std::move(from));
     }
 
@@ -71,7 +71,7 @@ void SkeletonMessageJobPrivate::doStart()
             }
             sTo.append(address.as7BitString("utf-8"));
         }
-        to->fromUnicodeString(QString::fromLatin1(sTo));
+        to->fromUnicodeString(QString::fromUtf8(sTo));
         message->setHeader(std::move(to));
     }
 
@@ -88,7 +88,7 @@ void SkeletonMessageJobPrivate::doStart()
             }
             sReplyTo.append(address.as7BitString("utf-8"));
         }
-        replyTo->fromUnicodeString(QString::fromLatin1(sReplyTo));
+        replyTo->fromUnicodeString(QString::fromUtf8(sReplyTo));
         message->setHeader(std::move(replyTo));
     }
 
@@ -105,7 +105,7 @@ void SkeletonMessageJobPrivate::doStart()
             }
             sCc.append(address.as7BitString("utf-8"));
         }
-        cc->fromUnicodeString(QString::fromLatin1(sCc));
+        cc->fromUnicodeString(QString::fromUtf8(sCc));
         message->setHeader(std::move(cc));
     }
 
@@ -122,7 +122,7 @@ void SkeletonMessageJobPrivate::doStart()
             }
             sBcc.append(address.as7BitString("utf-8"));
         }
-        bcc->fromUnicodeString(QString::fromLatin1(sBcc));
+        bcc->fromUnicodeString(QString::fromUtf8(sBcc));
         message->setHeader(std::move(bcc));
     }
 
