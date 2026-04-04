@@ -15,7 +15,7 @@
 
 #include <Akonadi/MessageStatus>
 #include <KMime/Message>
-#include <memory.h>
+#include <memory>
 
 class QString;
 
