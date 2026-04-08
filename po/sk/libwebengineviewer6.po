@@ -12,18 +12,17 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 2.0\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 2.0\n"
 
 #: developertool/developertooldialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Developer Tool"
-msgstr ""
+msgstr "Developer Tool"
 
 #: findbar/findbarbase.cpp:41
-#, fuzzy, kde-format
-#| msgid "Close"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Zavrieť"
@@ -40,8 +39,7 @@ msgid "F&ind:"
 msgstr "&Nájsť:"
 
 #: findbar/findbarbase.cpp:55
-#, fuzzy, kde-format
-#| msgid "Text to search for"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "Text na hľadanie"
@@ -53,8 +51,7 @@ msgid "Next"
 msgstr "Nasledujúci"
 
 #: findbar/findbarbase.cpp:61
-#, fuzzy, kde-format
-#| msgid "Jump to next match"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "Prejsť na ďaľšiu zhodu"
@@ -66,8 +63,7 @@ msgid "Previous"
 msgstr "Predchádzajúci"
 
 #: findbar/findbarbase.cpp:67
-#, fuzzy, kde-format
-#| msgid "Jump to previous match"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "Prejsť na predchádzajúcu zhodu"
@@ -78,8 +74,7 @@ msgid "Options"
 msgstr "Voľby"
 
 #: findbar/findbarbase.cpp:74
-#, fuzzy, kde-format
-#| msgid "Modify search behavior"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "Zmeniť chovanie vyhľadávania"
@@ -95,8 +90,7 @@ msgid "Phrase not found"
 msgstr "Fráza sa nenašla"
 
 #: webenginepage.cpp:154
-#, fuzzy, kde-format
-#| msgid "Save HTML Page"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save HTML Page"
 msgstr "Uložiť HTML stránku"
@@ -104,13 +98,13 @@ msgstr "Uložiť HTML stránku"
 #: widgets/submittedformwidgets/submittedformwarningwidget.cpp:23
 #, kde-format
 msgid "Submit form is not allowed in mailer. Please open url in a browser."
-msgstr ""
+msgstr "Submit form is not allowed in mailer. Please open url in a browser."
 
 #: widgets/tracking/trackingdetailsdialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"
-msgstr ""
+msgstr "Podrobnosti"
 
 #: widgets/tracking/trackingwarningwidget.cpp:21
 #, kde-format
@@ -118,19 +112,21 @@ msgid ""
 "Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
 "\">(Details...)"
 msgstr ""
+"Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
+"\">(Details...)"
 
 #: widgets/tracking/trackingwarningwidget.cpp:40
 #, kde-format
 msgid "Details:"
-msgstr ""
+msgstr "Podrobnosti:"
 
 #: widgets/tracking/trackingwarningwidget.cpp:44
 #, kde-format
 msgid "1 tracker from the company %2 (%3)"
 msgid_plural "%1 trackers from the company %2 (%3)"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "1 tracker from the company %2 (%3)"
+msgstr[1] "%1 trackers from the company %2 (%3)"
+msgstr[2] "%1 trackers from the company %2 (%3)"
 
 #: widgets/zoomactionmenu.cpp:129
 #, kde-format

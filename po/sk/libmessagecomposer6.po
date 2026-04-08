@@ -14,12 +14,11 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.0\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Poedit 3.0\n"
 
 #: attachment/attachmentcontrollerbase.cpp:167
-#, fuzzy, kde-format
-#| msgid "Failed to compress attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to compress attachment"
 msgstr "Zlyhalo komprimovanie prílohy"
@@ -38,8 +37,7 @@ msgid "Keep"
 msgstr "Ponechať"
 
 #: attachment/attachmentcontrollerbase.cpp:182
-#, fuzzy, kde-format
-#| msgid "Compress"
+#, kde-format
 msgctxt "@action:button"
 msgid "Compress"
 msgstr "Komprimovať"
@@ -52,8 +50,7 @@ msgid "Failed to attach file"
 msgstr "Zlyhalo pripojenie súboru"
 
 #: attachment/attachmentcontrollerbase.cpp:274
-#, fuzzy, kde-format
-#| msgid "Failed to reload attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to reload attachment"
 msgstr "Zlyhalo nové načítanie prílohy"
@@ -78,36 +75,31 @@ msgid "&Open With..."
 msgstr "&Otvoriť pomocou..."
 
 #: attachment/attachmentcontrollerbase.cpp:377
-#, fuzzy, kde-format
-#| msgid "Failed to attach public key"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach public key"
 msgstr "Zlyhalo pripojenie verejného kľúča"
 
 #: attachment/attachmentcontrollerbase.cpp:391
-#, fuzzy, kde-format
-#| msgid "Failed to attach vCard"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach vCard"
 msgstr "Nepodarilo sa pripojiť vCard"
 
 #: attachment/attachmentcontrollerbase.cpp:404
-#, fuzzy, kde-format
-#| msgid "Failed to attach text from clipboard"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach text from clipboard"
 msgstr "Nepodarilo sa pripojiť text zo schránky"
 
 #: attachment/attachmentcontrollerbase.cpp:452
-#, fuzzy, kde-format
-#| msgid "Attach &Public Key..."
+#, kde-format
 msgctxt "@action"
 msgid "Attach &Public Key..."
 msgstr "&Pripojiť verejný kľúč..."
 
 #: attachment/attachmentcontrollerbase.cpp:455
-#, fuzzy, kde-format
-#| msgid "Attach &My Public Key"
+#, kde-format
 msgctxt "@action"
 msgid "Attach &My Public Key"
 msgstr "Pripojiť &môj verejný kľúč"
@@ -136,8 +128,7 @@ msgid "&Attach Directory..."
 msgstr "Priložiť adresár..."
 
 #: attachment/attachmentcontrollerbase.cpp:472
-#, fuzzy, kde-format
-#| msgid "Attach Own vCard"
+#, kde-format
 msgctxt "@action"
 msgid "Attach Own vCard"
 msgstr "Pripojiť vlastnú vCard"
@@ -191,8 +182,7 @@ msgid "Edit"
 msgstr "Upraviť"
 
 #: attachment/attachmentcontrollerbase.cpp:518
-#, fuzzy, kde-format
-#| msgid "Edit With..."
+#, kde-format
 msgctxt "@action"
 msgid "Edit With..."
 msgstr "Upraviť pomocou..."
@@ -208,22 +198,19 @@ msgid "Save As..."
 msgstr "Uložiť ako..."
 
 #: attachment/attachmentcontrollerbase.cpp:532
-#, fuzzy, kde-format
-#| msgid "Attachment Pr&operties..."
+#, kde-format
 msgctxt "@action"
 msgid "Attachment Pr&operties..."
 msgstr "Vlastnosti prílohy..."
 
 #: attachment/attachmentcontrollerbase.cpp:533
-#, fuzzy, kde-format
-#| msgid "Properties"
+#, kde-format
 msgctxt "@action"
 msgid "Properties"
 msgstr "Vlastnosti"
 
 #: attachment/attachmentcontrollerbase.cpp:541
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action"
 msgid "Select All"
 msgstr "Vybrať všetko"
@@ -242,21 +229,18 @@ msgstr "KMail nebol schopný zapísať prílohu do dočasného súboru."
 
 #: attachment/attachmentcontrollerbase.cpp:679
 #: attachment/attachmentcontrollerbase.cpp:705
-#, fuzzy, kde-format
-#| msgid "Unable to open attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unable to open attachment"
 msgstr "Nepodarilo sa otvoriť prílohu"
 
 #: attachment/attachmentcontrollerbase.cpp:714
-#, fuzzy, kde-format
-#| msgid "KMail was unable to open the attachment."
+#, kde-format
 msgid "KMail was unable to open the attachment"
 msgstr "KMail nebol schopný otvoriť prílohu."
 
 #: attachment/attachmentcontrollerbase.cpp:756 attachment/editorwatcher.cpp:202
-#, fuzzy, kde-format
-#| msgid "Unable to edit attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unable to edit attachment"
 msgstr "Nepodarilo sa upraviť prílohu"
@@ -267,8 +251,7 @@ msgid "unnamed"
 msgstr "bez mena"
 
 #: attachment/attachmentcontrollerbase.cpp:800
-#, fuzzy, kde-format
-#| msgid "Save Attachment As"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Attachment As"
 msgstr "Uložiť prílohu ako"
@@ -283,15 +266,13 @@ msgstr ""
 "Chcete ho prepísať?"
 
 #: attachment/attachmentcontrollerbase.cpp:824
-#, fuzzy, kde-format
-#| msgid "Save to File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save to File"
 msgstr "Uložiť do súboru"
 
 #: attachment/attachmentcontrollerbase.cpp:825
-#, fuzzy, kde-format
-#| msgid "&Replace"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Replace"
 msgstr "&Nahradiť"
@@ -398,8 +379,7 @@ msgid "Suggest Automatic Display"
 msgstr "Naznačiť automatické zobrazenie"
 
 #: attachment/editorwatcher.cpp:66
-#, fuzzy, kde-format
-#| msgid "Edit With..."
+#, kde-format
 msgid "Edit with:"
 msgstr "Upraviť pomocou..."
 
@@ -409,6 +389,8 @@ msgid ""
 "KMail is unable to detect when the chosen editor is closed. To avoid data "
 "loss, editing the attachment will be aborted."
 msgstr ""
+"KMail nedokáže zistiť, kedy bol zvolený editor zatvorený. Aby sa predišlo "
+"strate údajov, úprava prílohy bude zrušená."
 
 #: composer/composerviewbase.cpp:327
 #, kde-format
@@ -450,8 +432,7 @@ msgstr ""
 "vymazať vašu značku?</p></qt>"
 
 #: composer/composerviewbase.cpp:332
-#, fuzzy, kde-format
-#| msgid "Sign/Encrypt Message?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sign/Encrypt Message?"
 msgstr "Podpísať/Šifrovať správu?"
@@ -467,8 +448,7 @@ msgid "Do you want to resize images?"
 msgstr "Chcete zmeniť veľkosť obrázkov?"
 
 #: composer/composerviewbase.cpp:519
-#, fuzzy, kde-format
-#| msgid "Auto Resize Images"
+#, kde-format
 msgctxt "@title:window"
 msgid "Auto Resize Images"
 msgstr "Automaticky zmeniť veľkosť obrázkov"
@@ -486,29 +466,25 @@ msgid "Do Not Resize"
 msgstr "Nemeniť veľkosť"
 
 #: composer/composerviewbase.cpp:727
-#, fuzzy, kde-format
-#| msgid "OpenPGP Key Expired"
+#, kde-format
 msgctxt "@title:window"
 msgid "OpenPGP Key Expired"
 msgstr "Platnosť OpenPGP kľúča vypršala"
 
 #: composer/composerviewbase.cpp:727
-#, fuzzy, kde-format
-#| msgid "S/MIME Certificate Expired"
+#, kde-format
 msgctxt "@title:window"
 msgid "S/MIME Certificate Expired"
 msgstr "Platnosť S/MIME certifikátu vypršala"
 
 #: composer/composerviewbase.cpp:729
-#, fuzzy, kde-format
-#| msgid "OpenPGP Key Expires Soon"
+#, kde-format
 msgctxt "@title:window"
 msgid "OpenPGP Key Expires Soon"
 msgstr "Platnosť OpenPGP kľúča vyprší čoskoro"
 
 #: composer/composerviewbase.cpp:730
-#, fuzzy, kde-format
-#| msgid "S/MIME Certificate Expires Soon"
+#, kde-format
 msgctxt "@title:window"
 msgid "S/MIME Certificate Expires Soon"
 msgstr "Platnosť S/MIME certifikátu vyprší čoskoro"
@@ -575,8 +551,7 @@ msgstr ""
 "Dôvod: %3"
 
 #: composer/composerviewbase.cpp:1368
-#, fuzzy, kde-format
-#| msgid "Autosaving Message Failed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Autosaving Message Failed"
 msgstr "Automatické uloženie správy zlyhalo"
@@ -598,22 +573,19 @@ msgstr ""
 "Chcete pripojiť súbor k vašej správe?"
 
 #: composer/composerviewbase.cpp:1908
-#, fuzzy, kde-format
-#| msgid "File Attachment Reminder"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Attachment Reminder"
 msgstr "Pripomenutie súboru prílohyu"
 
 #: composer/composerviewbase.cpp:1909
-#, fuzzy, kde-format
-#| msgid "&Attach File..."
+#, kde-format
 msgctxt "@action:button"
 msgid "&Attach File..."
 msgstr "Pripojiť &súbor..."
 
 #: composer/composerviewbase.cpp:1910
-#, fuzzy, kde-format
-#| msgid "&Send as Is"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Send as Is"
 msgstr "&Poslať ako je"
@@ -630,8 +602,7 @@ msgstr ""
 "Podpísať túto správu?"
 
 #: composer/composerviewbase.cpp:1968 composer/composerviewbase.cpp:1996
-#, fuzzy, kde-format
-#| msgid "Sign Message?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sign Message?"
 msgstr "Podpísať správu?"
@@ -643,8 +614,7 @@ msgid "&Sign"
 msgstr "Podpis"
 
 #: composer/composerviewbase.cpp:1970 composer/composerviewbase.cpp:1998
-#, fuzzy, kde-format
-#| msgid "Do &Not Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Sign"
 msgstr "Nepodpisovať"
@@ -668,15 +638,13 @@ msgstr ""
 "nastavené pre túto identitu."
 
 #: composer/composerviewbase.cpp:2023
-#, fuzzy, kde-format
-#| msgid "Send Unsigned?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Send Unsigned?"
 msgstr "Poslať &nepodpísané?"
 
 #: composer/composerviewbase.cpp:2024
-#, fuzzy, kde-format
-#| msgid "Send &Unsigned"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &Unsigned"
 msgstr "Poslať &nepodpísané"
@@ -714,15 +682,13 @@ msgid "&Sign"
 msgstr "Podpis"
 
 #: composer/composerviewbase.cpp:2049
-#, fuzzy, kde-format
-#| msgid "Unsigned-Message Warning"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unsigned-Message Warning"
 msgstr "Upozornenie nepodpísanej správy"
 
 #: composer/composerviewbase.cpp:2051
-#, fuzzy, kde-format
-#| msgid "Send &As Is"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &As Is"
 msgstr "&Poslať ako je"
@@ -784,15 +750,13 @@ msgstr ""
 
 #: composer/composerviewbase.cpp:2138 composer/keyresolver.cpp:1319
 #: composer/keyresolver.cpp:1360
-#, fuzzy, kde-format
-#| msgid "&Encrypt"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Encrypt"
 msgstr "Šifrovať"
 
 #: composer/composerviewbase.cpp:2139
-#, fuzzy, kde-format
-#| msgid "Do &Not Encrypt"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Encrypt"
 msgstr "Nešifrovať"
@@ -808,15 +772,13 @@ msgstr ""
 "platný dôveryhodný šifrovací kľúč nebol nastavený pre túto identitu."
 
 #: composer/composerviewbase.cpp:2165
-#, fuzzy, kde-format
-#| msgid "Send Unencrypted?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Send Unencrypted?"
 msgstr "Poslať nezašifrované?"
 
 #: composer/composerviewbase.cpp:2166 composer/keyresolver.cpp:1345
-#, fuzzy, kde-format
-#| msgid "Send &Unencrypted"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &Unencrypted"
 msgstr "Poslať &nezašifrované"
@@ -853,8 +815,7 @@ msgid "&Encrypt All Parts"
 msgstr "Šifrovať všetky časti"
 
 #: composer/composerviewbase.cpp:2193
-#, fuzzy, kde-format
-#| msgid "Unencrypted Message Warning"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unencrypted Message Warning"
 msgstr "Upozornenie nezašifrovanej správy"
@@ -905,8 +866,7 @@ msgstr ""
 "Nasledujúce kľúče alebo certifikáty sú <b>zrušené</b>: \n"
 
 #: composer/keyresolver.cpp:339
-#, fuzzy, kde-format
-#| msgid "Not Fully Trusted Encryption Keys"
+#, kde-format
 msgctxt "@title:window"
 msgid "Not Fully Trusted Encryption Keys"
 msgstr "Nie celkom dôveryhodný šifrovací kľúč"
@@ -930,8 +890,7 @@ msgstr ""
 
 #: composer/keyresolver.cpp:657 composer/keyresolver.cpp:1010
 #: composer/keyresolver.cpp:1039
-#, fuzzy, kde-format
-#| msgid "Unusable Encryption Keys"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unusable Encryption Keys"
 msgstr "Nepoužiteľné šifrovacie kľúče"
@@ -954,8 +913,7 @@ msgstr ""
 
 #: composer/keyresolver.cpp:699 composer/keyresolver.cpp:1068
 #: composer/keyresolver.cpp:1086
-#, fuzzy, kde-format
-#| msgid "Unusable Signing Keys"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unusable Signing Keys"
 msgstr "Nepoužiteľné podpisové kľúče"
@@ -1008,8 +966,7 @@ msgstr ""
 "identitu."
 
 #: composer/keyresolver.cpp:1069
-#, fuzzy, kde-format
-#| msgid "Do Not OpenPGP-Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not OpenPGP-Sign"
 msgstr "Nepoužiť OpenPGP podpis"
@@ -1028,8 +985,7 @@ msgstr ""
 "identitu."
 
 #: composer/keyresolver.cpp:1087
-#, fuzzy, kde-format
-#| msgid "Do Not S/MIME-Sign"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not S/MIME-Sign"
 msgstr "Nepoužiť S/MIME podpis"
@@ -1046,8 +1002,7 @@ msgstr ""
 "Poslať správu bez podpisu?"
 
 #: composer/keyresolver.cpp:1153
-#, fuzzy, kde-format
-#| msgid "No signing possible"
+#, kde-format
 msgctxt "@title:window"
 msgid "No signing possible"
 msgstr "Nie je možné podpisovanie"
@@ -1063,8 +1018,7 @@ msgstr ""
 
 #: composer/keyresolver.cpp:1319 composer/keyresolver.cpp:1344
 #: composer/keyresolver.cpp:1360
-#, fuzzy, kde-format
-#| msgid "Missing Key Warning"
+#, kde-format
 msgctxt "@title:window"
 msgid "Missing Key Warning"
 msgstr "Chýbajúci varovanie kľúča"
@@ -1157,8 +1111,7 @@ msgstr ""
 "Vybrať certifikát(y), ktoré by mal byť použité pre tohto príjemcu."
 
 #: contactpreference/savecontactpreferencejob.cpp:71
-#, fuzzy, kde-format
-#| msgid "Name Selection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Name Selection"
 msgstr "Názov výberu"
@@ -1184,10 +1137,11 @@ msgid ""
 "Failed to store a new reminder: an error occurred while trying to create a "
 "new to-do in your calendar: %1"
 msgstr ""
+"Nepodarilo sa uložiť novú pripomienku: pri pokuse o vytvorenie novej úlohy "
+"vo vašom kalendári sa vyskytla chyba: %1"
 
 #: followupreminder/followupremindercreatejob.cpp:133
-#, fuzzy, kde-format
-#| msgid "Failed to save the message: %1"
+#, kde-format
 msgid "Failed to store a new reminder: %1"
 msgstr "Zlyhalo uloženie správy: %1"
 
@@ -1203,8 +1157,7 @@ msgid "Date:"
 msgstr "Dátum:"
 
 #: followupreminder/followupreminderselectdatedialog.cpp:71
-#, fuzzy, kde-format
-#| msgid "Store ToDo in:"
+#, kde-format
 msgid "Store to-do in:"
 msgstr "Uložiť úlohu v:"
 
@@ -1214,8 +1167,7 @@ msgid "The selected date must be greater than the current date."
 msgstr "Vybraný dátum musí byť väčší ako aktuálny dátum."
 
 #: followupreminder/followupreminderselectdatedialog.cpp:105
-#, fuzzy, kde-format
-#| msgid "Invalid date"
+#, kde-format
 msgctxt "@title:window"
 msgid "Invalid date"
 msgstr "Neplatný dátum"
@@ -1226,8 +1178,7 @@ msgid "The selected folder is not valid."
 msgstr "Vybraný súbor nie je platný."
 
 #: followupreminder/followupreminderselectdatedialog.cpp:109
-#, fuzzy, kde-format
-#| msgid "Invalid folder"
+#, kde-format
 msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "Neplatný priečinok"
@@ -1263,8 +1214,7 @@ msgid "Select Image Format"
 msgstr "Vybrať formát obrázku"
 
 #: imagescaling/imagescalingselectformat.cpp:89
-#, fuzzy, kde-format
-#| msgid "Select Format..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Select Format..."
 msgstr "Vybrať formát..."
@@ -1297,8 +1247,7 @@ msgid "Please verify minimum and maximum values."
 msgstr "Prosím skontrolujte minimálnu a maximálnu hodnotu."
 
 #: imagescaling/imagescalingwidget.cpp:317
-#, fuzzy, kde-format
-#| msgid "Error in minimum Maximum value"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error in minimum Maximum value"
 msgstr "Chyba v minimálnej Maximálnej hodnote"
@@ -1518,8 +1467,7 @@ msgid "No text found in Clipboard"
 msgstr "V schránke sa nenašiel žiadny text"
 
 #: job/attachmentclipboardjob.cpp:46
-#, fuzzy, kde-format
-#| msgid "Define Attachment Name"
+#, kde-format
 msgctxt "@title:window"
 msgid "Define Attachment Name"
 msgstr "Definujte názov prílohy"
@@ -1568,15 +1516,13 @@ msgid "Impossible to generate vCard."
 msgstr "Nie je možné vygenerovať vCard."
 
 #: job/autocryptheadersjob.cpp:96
-#, fuzzy, kde-format
-#| msgid ""
-#| "<p>An error occurred while trying to export the key from the backend:</"
-#| "p><p><b>%1</b></p>"
+#, kde-format
 msgid ""
 "<p>An error occurred while trying to export the key from the backend:</"
 "p><p><b>No valid key found for user %1 (%2)</b></p>"
 msgstr ""
-"<p>Došlo k chybe pri pokuse o export kľúča z backendu:</p><p><b>%1</b></p>"
+"<p>An error occurred while trying to export the key from the backend:</"
+"p><p><b>No valid key found for user %1 (%2)</b></p>"
 
 #: job/composerjob.cpp:290
 #, kde-format
@@ -1609,22 +1555,20 @@ msgstr "%1 kódovanie prevodu obsahu nemôže správne kódovať túto správu."
 #, kde-format
 msgctxt "@title:window"
 msgid "Message Disposition Notification Request"
-msgstr ""
+msgstr "Žiadosť o potvrdenie o doručení správy"
 
 #: mdn/mdnadvicedialog.cpp:30
-#, fuzzy, kde-format
-#| msgid "Send &Unsigned"
+#, kde-format
 msgid "Send \"&denied\""
 msgstr "Poslať &nepodpísané"
 
 #: mdn/mdnadvicedialog.cpp:32
 #, kde-format
 msgid "&Ignore"
-msgstr ""
+msgstr "Ignorovať"
 
 #: mdn/mdnadvicedialog.cpp:34
-#, fuzzy, kde-format
-#| msgid "&Send as Is"
+#, kde-format
 msgid "&Send"
 msgstr "&Poslať ako je"
 
@@ -1635,6 +1579,9 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"denied\" "
 "or normal response."
 msgstr ""
+"Táto správa obsahuje žiadosť o zaslanie potvrdenia o prijatí správy.\n"
+"Môžete túto žiadosť ignorovať alebo nechať poštový program odoslať "
+"\"zamietnutú\" alebo normálnu odpoveď."
 
 #: mdn/mdnadvicehelper.cpp:33
 msgid ""
@@ -1645,6 +1592,11 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"failed\" "
 "response."
 msgstr ""
+"Táto správa obsahuje žiadosť o zaslanie potvrdenia o prijatí správy.\n"
+"Obsahuje inštrukciu na spracovanie, ktorá je označená ako \"povinná\", ale "
+"poštový program ju nepozná.\n"
+"Môžete túto žiadosť ignorovať alebo nechať poštový program odoslať odpoveď "
+"\"zlyhanie\"."
 
 #: mdn/mdnadvicehelper.cpp:41
 msgid ""
@@ -1654,6 +1606,10 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"denied\" "
 "or normal response."
 msgstr ""
+"Táto správa obsahuje žiadosť o zaslanie potvrdenia o prijatí správy,\n"
+"ale potvrdenie sa požaduje zaslať na viac ako jednu adresu.\n"
+"Môžete túto žiadosť ignorovať alebo nechať poštový program odoslať "
+"\"zamietnutú\" alebo normálnu odpoveď."
 
 #: mdn/mdnadvicehelper.cpp:49
 msgid ""
@@ -1663,6 +1619,10 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"denied\" "
 "or normal response."
 msgstr ""
+"Táto správa obsahuje žiadosť o zaslanie potvrdenia o prijatí správy,\n"
+"ale nie je nastavená spätná cesta (return-path).\n"
+"Môžete túto žiadosť ignorovať alebo nechať poštový program odoslať "
+"\"zamietnutú\" alebo normálnu odpoveď."
 
 #: mdn/mdnadvicehelper.cpp:56
 msgid ""
@@ -1673,6 +1633,11 @@ msgid ""
 "You can either ignore the request or let the mail program send a \"denied\" "
 "or normal response."
 msgstr ""
+"Táto správa obsahuje žiadosť o zaslanie potvrdenia o prijatí správy,\n"
+"ale adresa spätnej cesty (return-path) sa líši od adresy, na ktorú bolo "
+"požadované zaslať potvrdenie.\n"
+"Môžete túto žiadosť ignorovať alebo nechať poštový program odoslať "
+"\"zamietnutú\" alebo normálnu odpoveď."
 
 #: recipient/distributionlistdialog.cpp:96
 #, kde-format
@@ -1693,9 +1658,7 @@ msgid "&Name:"
 msgstr "&Názov:"
 
 #: recipient/distributionlistdialog.cpp:125
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "New Distribution List"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Name of Distribution List"
 msgstr "Nový distribučný zoznam"
@@ -1797,8 +1760,7 @@ msgid "Select type of recipient"
 msgstr "Výbrať typ príjemcu"
 
 #: recipient/recipientline.cpp:72
-#, fuzzy, kde-format
-#| msgid "Set the list of email addresses to receive this message"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Set the list of email addresses to receive this message"
 msgstr "Nastaviť zoznam e-mailových adries pre príjem tejto správu"
@@ -1882,8 +1844,7 @@ msgid "Select Recipient"
 msgstr "Vybrať príjemcu"
 
 #: recipient/recipientspicker.cpp:63
-#, fuzzy, kde-format
-#| msgid "Search &Directory Service"
+#, kde-format
 msgctxt "@action:button"
 msgid "Search &Directory Service"
 msgstr "Hladať a&dresárovú službu"
@@ -1912,18 +1873,12 @@ msgstr "Pridať ako &Skrytá kópia"
 #, kde-format
 msgid "%1 selected email"
 msgid_plural "%1 selected emails"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "%1 vybraný e-mail"
+msgstr[1] "%1 vybrané e-maily"
+msgstr[2] "%1 vybraných e-mailov"
 
 #: recipient/recipientspicker.cpp:175
-#, fuzzy, kde-format
-#| msgid ""
-#| "You selected 1 recipient. The maximum supported number of recipients is "
-#| "%2. Please adapt the selection."
-#| msgid_plural ""
-#| "You selected %1 recipients. The maximum supported number of recipients is "
-#| "%2. Please adapt the selection."
+#, kde-format
 msgid ""
 "You selected 1 recipient. The maximum supported number of recipients is %2.\n"
 "Please adapt the selection."
@@ -1947,8 +1902,7 @@ msgid "You can not add more recipients."
 msgstr "Nemôžete pridať viac príjemcov."
 
 #: sendlater/sendlatercreatejob.cpp:35
-#, fuzzy, kde-format
-#| msgid "Failed to save the message: %1"
+#, kde-format
 msgid "Failed to schedule message for sending later: %1"
 msgstr "Zlyhalo uloženie správy: %1"
 
@@ -1964,8 +1918,7 @@ msgid "Send Later"
 msgstr "Odoslať neskôr"
 
 #: sendlater/sendlaterdialog.cpp:51
-#, fuzzy, kde-format
-#| msgid "Delay"
+#, kde-format
 msgctxt "@option:check"
 msgid "Delay"
 msgstr "Oneskorenie"
@@ -1993,23 +1946,21 @@ msgstr "Roky"
 #: sendlater/sendlaterjob.cpp:34
 #, kde-format
 msgid "The Send Later agent is not running."
-msgstr ""
+msgstr "Agent na odoslanie neskôr nie je spustený."
 
 #: sendlater/sendlaterremovejob.cpp:29
 #, kde-format
 msgid "Failed to removed message from send later schedule: %1"
-msgstr ""
+msgstr "Nepodarilo sa odstrániť správu z plánu odoslania neskôr: %1"
 
 #: sendlater/sendlatertimedatewidget.cpp:37
-#, fuzzy, kde-format
-#| msgid "The selected date must be greater than the current date."
+#, kde-format
 msgid "You cannot select a date prior to the current date."
 msgstr "Vybraný dátum musí byť väčší ako aktuálny dátum."
 
 #. i18n: ectx: property (text), widget (QLabel, mLabel)
 #: sendlater/ui/sendlaterwidget.ui:29
-#, fuzzy, kde-format
-#| msgid "&Send as Is"
+#, kde-format
 msgid "Send at:"
 msgstr "&Poslať ako je"
 
@@ -2023,7 +1974,7 @@ msgstr "Opakovať každých:"
 #: settings/messagecomposer.kcfg:6
 #, kde-format
 msgid "Show Quick Text Format Bar"
-msgstr ""
+msgstr "Zobraziť panel rýchleho formátovania textu"
 
 #. i18n: ectx: label, entry (QuoteSelectionOnly), group (Composer)
 #: settings/messagecomposer.kcfg:10
@@ -2103,14 +2054,11 @@ msgstr "Zlepšiť čisto textovú verziu HTML správy"
 #: settings/messagecomposer.kcfg:54
 #, kde-format
 msgid "Sign all messages, if possible"
-msgstr ""
+msgstr "Podpísať všetky správy, ak je to možné"
 
 #. i18n: ectx: label, entry (CryptoAutoEncrypt), group (Composer)
 #: settings/messagecomposer.kcfg:58
-#, fuzzy, kde-format
-#| msgid ""
-#| "Valid trusted encryption keys were found for all recipients.\n"
-#| "Encrypt this message?"
+#, kde-format
 msgid "Enable encryption, if we found keys for all recipients"
 msgstr ""
 "Neboli nájdené platné dôveryhodné šifrovacie kľúče pre všetkých "
@@ -2184,22 +2132,22 @@ msgstr "Pre"
 #: snippet/convertsnippetvariablemenu.cpp:28
 #, kde-format
 msgid "To Field Address"
-msgstr ""
+msgstr "Adresa poľa Komu"
 
 #: snippet/convertsnippetvariablemenu.cpp:31
 #, kde-format
 msgid "To Field Last Name"
-msgstr ""
+msgstr "Priezvisko poľa Komu"
 
 #: snippet/convertsnippetvariablemenu.cpp:34
 #, kde-format
 msgid "To Field First Name"
-msgstr ""
+msgstr "Meno poľa Komu"
 
 #: snippet/convertsnippetvariablemenu.cpp:37
 #, kde-format
 msgid "To Field Name"
-msgstr ""
+msgstr "Meno poľa Komu"
 
 #: snippet/convertsnippetvariablemenu.cpp:42
 #, kde-format
@@ -2209,22 +2157,22 @@ msgstr "Od"
 #: snippet/convertsnippetvariablemenu.cpp:43
 #, kde-format
 msgid "From Field Address"
-msgstr ""
+msgstr "Adresa poľa Od"
 
 #: snippet/convertsnippetvariablemenu.cpp:46
 #, kde-format
 msgid "From Field Last Name"
-msgstr ""
+msgstr "Priezvisko poľa Od"
 
 #: snippet/convertsnippetvariablemenu.cpp:49
 #, kde-format
 msgid "From Field First Name"
-msgstr ""
+msgstr "Meno poľa Od"
 
 #: snippet/convertsnippetvariablemenu.cpp:52
 #, kde-format
 msgid "From Field Name"
-msgstr ""
+msgstr "Meno poľa Od"
 
 #: snippet/convertsnippetvariablemenu.cpp:57
 #, kde-format
@@ -2234,47 +2182,47 @@ msgstr "Kópia"
 #: snippet/convertsnippetvariablemenu.cpp:58
 #, kde-format
 msgid "CC Field Address"
-msgstr ""
+msgstr "Adresa poľa Kópia"
 
 #: snippet/convertsnippetvariablemenu.cpp:61
 #, kde-format
 msgid "CC Field Last Name"
-msgstr ""
+msgstr "Priezvisko poľa Kópia"
 
 #: snippet/convertsnippetvariablemenu.cpp:64
 #, kde-format
 msgid "CC Field First Name"
-msgstr ""
+msgstr "Krstné meno poľa Kópia"
 
 #: snippet/convertsnippetvariablemenu.cpp:67
 #, kde-format
 msgid "CC Field Name"
-msgstr ""
+msgstr "Meno poľa Kópia"
 
 #: snippet/convertsnippetvariablemenu.cpp:73
 #, kde-format
 msgid "Bcc"
-msgstr ""
+msgstr "Skrytá kópia"
 
 #: snippet/convertsnippetvariablemenu.cpp:74
 #, kde-format
 msgid "BCC Field Address"
-msgstr ""
+msgstr "Adresa poľa Skrytá kópia"
 
 #: snippet/convertsnippetvariablemenu.cpp:77
 #, kde-format
 msgid "BCC Field Last Name"
-msgstr ""
+msgstr "Priezvisko poľa Skrytá kópia"
 
 #: snippet/convertsnippetvariablemenu.cpp:80
 #, kde-format
 msgid "BCC Field First Name"
-msgstr ""
+msgstr "Krstné meno poľa Skrytá kópia"
 
 #: snippet/convertsnippetvariablemenu.cpp:83
 #, kde-format
 msgid "BCC Field Name"
-msgstr ""
+msgstr "Meno poľa Skrytá kópia"
 
 #: snippet/convertsnippetvariablemenu.cpp:89
 #, kde-format
@@ -2324,8 +2272,7 @@ msgid "Long Date (%1)"
 msgstr "Dlhý dátum (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:113
-#, fuzzy, kde-format
-#| msgid "Long Date (%1)"
+#, kde-format
 msgid "Custom Date (%1)"
 msgstr "Dlhý dátum (%1)"
 
@@ -2360,8 +2307,7 @@ msgid "Month Number (%1)"
 msgstr "Číslo mesiaca (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:139
-#, fuzzy, kde-format
-#| msgid "Week Number (%1)"
+#, kde-format
 msgid "Day Number (%1)"
 msgstr "Číslo týždňa (%1)"
 
@@ -2403,7 +2349,7 @@ msgstr "Deň v týždni dlhý názov (%1)"
 #: snippet/convertsnippetvariablemenu.cpp:166
 #, kde-format
 msgid "Year Last Month (%1)"
-msgstr ""
+msgstr "Rok posledného mesiaca (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:171
 #, kde-format
@@ -2433,15 +2379,13 @@ msgstr ""
 "vytvoriť spracovač pošty?"
 
 #: utils/util.cpp:270
-#, fuzzy, kde-format
-#| msgid "No mail dispatcher."
+#, kde-format
 msgctxt "@title:window"
 msgid "No mail dispatcher."
 msgstr "Žiadny spracovač pošty."
 
 #: utils/util.cpp:272
-#, fuzzy, kde-format
-#| msgid "No mail dispatcher."
+#, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
 msgstr "Žiadny spracovač pošty."
@@ -2456,8 +2400,7 @@ msgstr ""
 "Chcete, aby bolo v režme online?"
 
 #: utils/util.cpp:288
-#, fuzzy, kde-format
-#| msgid "Mail dispatcher offline."
+#, kde-format
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
 msgstr "Spracovanie pošty v režime offline."
@@ -2466,7 +2409,7 @@ msgstr "Spracovanie pošty v režime offline."
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"
-msgstr ""
+msgstr "Nastaviť online"
 
 #~ msgid ""
 #~ "Allow the semicolon character (';') to be used as separator in the "
@@ -2494,19 +2437,16 @@ msgstr ""
 #~ "Chcete pokračovať?"
 
 #, fuzzy
-#~| msgid "Some Characters Will Be Lost"
 #~ msgctxt "@title:window"
 #~ msgid "Some Characters Will Be Lost"
 #~ msgstr "Niektoré znaky sa stratia"
 
 #, fuzzy
-#~| msgid "Lose Characters"
 #~ msgctxt "@action:button"
 #~ msgid "Lose Characters"
 #~ msgstr "Stratiť znaky"
 
 #, fuzzy
-#~| msgid "Change Encoding"
 #~ msgctxt "@action:button"
 #~ msgid "Change Encoding"
 #~ msgstr "Zmeniť kódovanie"
@@ -2581,12 +2521,6 @@ msgstr ""
 #~ "%3)</p><p>vypršala pred %1 dňami.</p>"
 
 #, fuzzy
-#~| msgid ""
-#~| "<p>Your OpenPGP signing key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
-#~| "%3)</p><p>expires in less than a day.</p>"
-#~| msgid_plural ""
-#~| "<p>Your OpenPGP signing key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
-#~| "%3)</p><p>expires in less than %1 days.</p>"
 #~ msgid ""
 #~ "<p>Your OpenPGP signing key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
 #~ "p><p>expires in less than a day.</p>"
@@ -2604,12 +2538,6 @@ msgstr ""
 #~ "b> (ID kľúča 0x%3)</p><p>vyprší za menej ako %1 dní.</p>"
 
 #, fuzzy
-#~| msgid ""
-#~| "<p>Your OpenPGP encryption key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
-#~| "%3)</p><p>expires in less than a day.</p>"
-#~| msgid_plural ""
-#~| "<p>Your OpenPGP encryption key</p><p align=\"center\"><b>%2</b> (KeyID 0x"
-#~| "%3)</p><p>expires in less than %1 days.</p>"
 #~ msgid ""
 #~ "<p>Your OpenPGP encryption key</p><p align=center><b>%2</b> (KeyID 0x%3)</"
 #~ "p><p>expires in less than a day.</p>"
@@ -2627,12 +2555,6 @@ msgstr ""
 #~ "%2</b> (ID kľúča 0x%3)</p><p>vyprší za menej ako %1 dní.</p>"
 
 #, fuzzy
-#~| msgid ""
-#~| "<p>The OpenPGP key for</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</"
-#~| "p><p>expires in less than a day.</p>"
-#~| msgid_plural ""
-#~| "<p>The OpenPGP key for</p><p align=\"center\"><b>%2</b> (KeyID 0x%3)</"
-#~| "p><p>expires in less than %1 days.</p>"
 #~ msgid ""
 #~ "<p>The OpenPGP key for</p><p align=center><b>%2</b> (KeyID 0x%3)</"
 #~ "p><p>expires in less than a day.</p>"
@@ -2824,14 +2746,6 @@ msgstr ""
 #~ "číslo %3)</p><p>vypršala pred %1 dňami.</p>"
 
 #, fuzzy
-#~| msgid ""
-#~| "<p>The root certificate</p><p align=\"center\"><b>%4</b></p><p>for your "
-#~| "S/MIME signing certificate</p><p align=\"center\"><b>%2</b> (serial "
-#~| "number %3)</p><p>expires in less than a day.</p>"
-#~| msgid_plural ""
-#~| "<p>The root certificate</p><p align=\"center\"><b>%4</b></p><p>for your "
-#~| "S/MIME signing certificate</p><p align=\"center\"><b>%2</b> (serial "
-#~| "number %3)</p><p>expires in less than %1 days.</p>"
 #~ msgid ""
 #~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
 #~ "MIME signing certificate</p><p align=center><b>%2</b> (serial number %3);"
@@ -2854,14 +2768,6 @@ msgstr ""
 #~ "(sériové číslo %3)</p><p>vyprší za menej ako %1 dní.</p>"
 
 #, fuzzy
-#~| msgid ""
-#~| "<p>The root certificate</p><p align=\"center\"><b>%4</b></p><p>for your "
-#~| "S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> (serial "
-#~| "number %3)</p><p>expires in less than a day.</p>"
-#~| msgid_plural ""
-#~| "<p>The root certificate</p><p align=\"center\"><b>%4</b></p><p>for your "
-#~| "S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> (serial "
-#~| "number %3)</p><p>expires in less than %1 days.</p>"
 #~ msgid ""
 #~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for your S/"
 #~ "MIME encryption certificate</p><p align=center><b>%2</b> (serial number "
@@ -2884,14 +2790,6 @@ msgstr ""
 #~ "(sériové číslo %3)</p><p>vyprší za menej ako %1 dní.</p>"
 
 #, fuzzy
-#~| msgid ""
-#~| "<p>The root certificate</p><p align=\"center\"><b>%4</b></p><p>for S/"
-#~| "MIME certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</"
-#~| "p><p>expires in less than a day.</p>"
-#~| msgid_plural ""
-#~| "<p>The root certificate</p><p align=\"center\"><b>%4</b></p><p>for S/"
-#~| "MIME certificate</p><p align=\"center\"><b>%2</b> (serial number %3)</"
-#~| "p><p>expires in less than %1 days.</p>"
 #~ msgid ""
 #~ "<p>The root certificate</p><p align=center><b>%4</b></p><p>for S/MIME "
 #~ "certificate</p><p align=center><b>%2</b> (serial number %3);</"
@@ -2914,14 +2812,6 @@ msgstr ""
 #~ "číslo %3)</p><p>vyprší za menej ako %1 dní.</p>"
 
 #, fuzzy
-#~| msgid ""
-#~| "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></"
-#~| "p><p>for your S/MIME signing certificate</p><p align=\"center\"><b>%2</"
-#~| "b> (serial number %3)</p><p>expires in less than a day.</p>"
-#~| msgid_plural ""
-#~| "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></"
-#~| "p><p>for your S/MIME signing certificate</p><p align=\"center\"><b>%2</"
-#~| "b> (serial number %3)</p><p>expires in less than %1 days.</p>"
 #~ msgid ""
 #~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
 #~ "your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
@@ -2944,14 +2834,6 @@ msgstr ""
 #~ "\"><b>%2</b> (sériové číslo %3)</p><p>vyprší za menej ako %1 dní.</p>"
 
 #, fuzzy
-#~| msgid ""
-#~| "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></"
-#~| "p><p>for your S/MIME encryption certificate</p><p align=\"center\"><b>"
-#~| "%2</b> (serial number %3)</p><p>expires in less than a day.</p>"
-#~| msgid_plural ""
-#~| "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></"
-#~| "p><p>for your S/MIME encryption certificate</p><p align=\"center\"><b>"
-#~| "%2</b> (serial number %3)</p><p>expires in less than %1 days.</p>"
 #~ msgid ""
 #~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
 #~ "your S/MIME encryption certificate</p><p align=center><b>%2</b> (serial "
@@ -2974,14 +2856,6 @@ msgstr ""
 #~ "\"><b>%2</b> (sériové číslo %3)</p><p>vyprší za menej ako %1 dní.</p>"
 
 #, fuzzy
-#~| msgid ""
-#~| "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></"
-#~| "p><p>for S/MIME certificate</p><p align=\"center\"><b>%2</b> (serial "
-#~| "number %3)</p><p>expires in less than a day.</p>"
-#~| msgid_plural ""
-#~| "<p>The intermediate CA certificate</p><p align=\"center\"><b>%4</b></"
-#~| "p><p>for S/MIME certificate</p><p align=\"center\"><b>%2</b> (serial "
-#~| "number %3)</p><p>expires in less than %1 days.</p>"
 #~ msgid ""
 #~ "<p>The intermediate CA certificate</p><p align=center><b>%4</b></p><p>for "
 #~ "S/MIME certificate</p><p align=center><b>%2</b> (serial number %3);</"
@@ -3004,12 +2878,6 @@ msgstr ""
 #~ "(sériové číslo %3)</p><p>vyprší za menej ako %1 dní.</p>"
 
 #, fuzzy
-#~| msgid ""
-#~| "<p>Your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> "
-#~| "(serial number %3)</p><p>expires in less than a day.</p>"
-#~| msgid_plural ""
-#~| "<p>Your S/MIME signing certificate</p><p align=\"center\"><b>%2</b> "
-#~| "(serial number %3)</p><p>expires in less than %1 days.</p>"
 #~ msgid ""
 #~ "<p>Your S/MIME signing certificate</p><p align=center><b>%2</b> (serial "
 #~ "number %3);</p><p>expires in less than a day.</p>"
@@ -3027,12 +2895,6 @@ msgstr ""
 #~ "\"><b>%2</b> (sériové číslo %3)</p><p>vyprší za menej ako %1 dní.</p>"
 
 #, fuzzy
-#~| msgid ""
-#~| "<p>Your S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> "
-#~| "(serial number %3)</p><p>expires in less than a day.</p>"
-#~| msgid_plural ""
-#~| "<p>Your S/MIME encryption certificate</p><p align=\"center\"><b>%2</b> "
-#~| "(serial number %3)</p><p>expires in less than %1 days.</p>"
 #~ msgid ""
 #~ "<p>Your S/MIME encryption certificate</p><p align=center><b>%2</b> "
 #~ "(serial number %3);</p><p>expires in less than a day.</p>"
@@ -3050,12 +2912,6 @@ msgstr ""
 #~ "\"><b>%2</b> (sériové číslo %3)</p><p>vyprší za menej ako %1 dní.</p>"
 
 #, fuzzy
-#~| msgid ""
-#~| "<p>The S/MIME certificate for</p><p align=\"center\"><b>%2</b> (serial "
-#~| "number %3)</p><p>expires in less than a day.</p>"
-#~| msgid_plural ""
-#~| "<p>The S/MIME certificate for</p><p align=\"center\"><b>%2</b> (serial "
-#~| "number %3)</p><p>expires in less than %1 days.</p>"
 #~ msgid ""
 #~ "<p>The S/MIME certificate for</p><p align=center><b>%2</b> (serial number "
 #~ "%3);</p><p>expires in less than a day.</p>"
@@ -3094,9 +2950,6 @@ msgstr ""
 #~ "identity"
 
 #, fuzzy
-#~| msgctxt "@info:status"
-#~| msgid "Truncating recipients list to %2 of %1 entry."
-#~| msgid_plural "Truncating recipients list to %2 of %1 entries."
 #~ msgctxt "@info:status"
 #~ msgid "Truncating recipients list to %1."
 #~ msgstr "Orezanie zoznamu príjemcov na %2 z %1 položky."
