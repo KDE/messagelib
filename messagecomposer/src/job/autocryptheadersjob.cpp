@@ -181,13 +181,13 @@ void AutocryptHeadersJob::process()
     Q_ASSERT(d->subjobContents.size() == 1);
     d->content = std::move(d->subjobContents.front());
 
-    auto job = QGpgME::openpgp()->publicKeyExportJob(false);
-    Q_ASSERT(job);
-
-    if (!d->gnupgHome.isEmpty()) {
-        QGpgME::Job::context(job)->setEngineHomeDirectory(d->gnupgHome.toUtf8().constData());
-    }
     if (!d->recipientKey.isNull() && !d->recipientKey.isInvalid()) {
+        auto job = QGpgME::openpgp()->publicKeyExportJob(false);
+        Q_ASSERT(job);
+
+        if (!d->gnupgHome.isEmpty()) {
+            QGpgME::Job::context(job)->setEngineHomeDirectory(d->gnupgHome.toUtf8().constData());
+        }
         connect(job, &QGpgME::ExportJob::result, this, [this, d, job](const GpgME::Error &error, const QByteArray &keydata) {
             d->subJobs--;
             job->deleteLater();
