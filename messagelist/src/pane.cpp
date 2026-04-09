@@ -47,7 +47,7 @@ public:
     {
     }
 
-    void setCurrentFolder(const QModelIndex &etmIndex);
+    [[nodiscard]] bool setCurrentFolder(const QModelIndex &etmIndex);
     void onNewTabClicked();
     void onCloseTabClicked();
     void activateTab(int i);
@@ -496,11 +496,13 @@ void Pane::setQuickSearchClickMessage(const QString &msg)
     }
 }
 
-void Pane::PanePrivate::setCurrentFolder(const QModelIndex &etmIndex)
+bool Pane::PanePrivate::setCurrentFolder(const QModelIndex &etmIndex)
 {
+    bool needToRefreshCurrentWidget = false;
     qCDebug(MESSAGELIST_PANE_LOG) << "setCurrentFolder : before current Widget:" << q->currentWidget();
     if (mPreferEmptyTab) {
         q->createNewTab();
+        needToRefreshCurrentWidget = true;
     }
     qCDebug(MESSAGELIST_PANE_LOG) << "setCurrentFolder : AFTER current Widget:" << q->currentWidget();
 
@@ -547,6 +549,7 @@ void Pane::PanePrivate::setCurrentFolder(const QModelIndex &etmIndex)
         onCurrentTabChanged();
     }
     mPreferEmptyTab = false;
+    return needToRefreshCurrentWidget;
 }
 
 void Pane::PanePrivate::activateTab(int index)
@@ -784,7 +787,10 @@ void Pane::setCurrentFolder(const Akonadi::Collection &collection,
 {
     auto w = static_cast<Widget *>(currentWidget());
     if (!w->isLocked()) {
-        d->setCurrentFolder(etmIndex);
+        if (d->setCurrentFolder(etmIndex)) {
+            // When we create a new tab we need to refresh w
+            w = static_cast<Widget *>(currentWidget());
+        }
         d->mPreSelectionMode = preSelectionMode;
         if (w) {
             w->setCurrentFolder(collection);
