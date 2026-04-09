@@ -17,8 +17,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 20.12.1\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 20.12.1\n"
 
 #: core/aggregation.cpp:177
 #, kde-format
@@ -208,7 +208,7 @@ msgstr "Ignorované"
 #, kde-format
 msgctxt "Status of an item"
 msgid "Queued"
-msgstr ""
+msgstr "Queued"
 
 #: core/manager.cpp:34 core/model.cpp:336
 #, kde-format
@@ -1047,11 +1047,10 @@ msgstr[2] "%2 správy, %1 neprečítané"
 #: core/widgetbase.cpp:198
 #, kde-format
 msgid "No filter defined."
-msgstr ""
+msgstr "No filter defined."
 
 #: core/widgetbase.cpp:198
-#, fuzzy, kde-format
-#| msgid "Clear Filter"
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "Vyčistiť filter"
@@ -1098,8 +1097,7 @@ msgid "Folder Always Uses This Sort Order"
 msgstr "Priečinok používa vždy toto poradie triedenia"
 
 #: core/widgets/configurefiltersdialog.cpp:24
-#, fuzzy, kde-format
-#| msgid "Clear Filter"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Filter"
 msgstr "Vyčistiť filter"
@@ -1107,46 +1105,39 @@ msgstr "Vyčistiť filter"
 #: core/widgets/configurefilterswidget.cpp:81
 #, kde-format
 msgid "Remove"
-msgstr ""
+msgstr "Odstrániť"
 
 #: core/widgets/configurefilterswidget.cpp:84
-#, fuzzy, kde-format
-#| msgid "Do you want to delete \"%1\"?"
+#, kde-format
 msgid "Do you want to delete this filter?"
-msgstr "Chcete vymazať \"%1\"?"
+msgstr "Do chcete to delete this filter?"
 
 #: core/widgets/configurefilterswidget.cpp:85
-#, fuzzy, kde-format
-#| msgid "Clear Filter"
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Filter"
 msgstr "Vyčistiť filter"
 
 #: core/widgets/filternamedialog.cpp:19
-#, fuzzy, kde-format
-#| msgid "Clear Filter"
+#, kde-format
 msgctxt "@title:window"
 msgid "Edit Filter"
 msgstr "Vyčistiť filter"
 
 #: core/widgets/filternamewidget.cpp:32
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox Name of the option"
-#| msgid "Name:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "Názov:"
 
 #: core/widgets/filtersavedmenu.cpp:18
-#, fuzzy, kde-format
-#| msgid "Clear Filter"
+#, kde-format
 msgctxt "@action"
 msgid "Save Filter..."
 msgstr "Vyčistiť filter"
 
 #: core/widgets/filtersavedmenu.cpp:19
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgctxt "@action"
 msgid "Configure..."
 msgstr "Nastaviť..."
@@ -1163,8 +1154,7 @@ msgid "The words less than 3 letters are ignored."
 msgstr "Slová s menej ako 3 písmenami sú ignorované."
 
 #: core/widgets/quicksearchwarning.cpp:22
-#, fuzzy, kde-format
-#| msgid "Do not show again"
+#, kde-format
 msgctxt "@action"
 msgid "Do not show again"
 msgstr "Znovu nezobrazovať"
@@ -1181,195 +1171,163 @@ msgstr ""
 #: core/widgets/searchlinecommand.cpp:156
 #, kde-format
 msgid "Literal string"
-msgstr ""
+msgstr "Literal string"
 
 #: core/widgets/searchlinecommand.cpp:158
 #, kde-format
 msgid "Size is smaller than"
-msgstr ""
+msgstr "Size is smaller than"
 
 #: core/widgets/searchlinecommand.cpp:160
 #, kde-format
 msgid "Size is larger than"
-msgstr ""
+msgstr "Size is larger than"
 
 #: core/widgets/searchlinecommand.cpp:162
-#, fuzzy, kde-format
-#| msgid "Size"
+#, kde-format
 msgid "Size is"
 msgstr "Veľkosť"
 
 #: core/widgets/searchlinecommand.cpp:164
 #, kde-format
 msgid "To contains"
-msgstr ""
+msgstr "To contains"
 
 #: core/widgets/searchlinecommand.cpp:166
 #, kde-format
 msgid "BCC contains"
-msgstr ""
+msgstr "BCC contains"
 
 #: core/widgets/searchlinecommand.cpp:168
 #, kde-format
 msgid "CC contains"
-msgstr ""
+msgstr "CC contains"
 
 #: core/widgets/searchlinecommand.cpp:170
 #, kde-format
 msgid "From contains"
-msgstr ""
+msgstr "From contains"
 
 #: core/widgets/searchlinecommand.cpp:172
-#, fuzzy, kde-format
-#| msgctxt "@title:column Subject of messages"
-#| msgid "Subject"
+#, kde-format
 msgid "Subject contains"
 msgstr "Predmet"
 
 #: core/widgets/searchlinecommand.cpp:174
-#, fuzzy, kde-format
-#| msgctxt "@title:column Subject of messages"
-#| msgid "Subject"
+#, kde-format
 msgid "Body contains"
 msgstr "Predmet"
 
 #: core/widgets/searchlinecommand.cpp:176
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Has Attachment"
+#, kde-format
 msgid "Mail has tag"
 msgstr "Má prílohu"
 
 #: core/widgets/searchlinecommand.cpp:178
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Has Attachment"
+#, kde-format
 msgid "Mail has attachment"
 msgstr "Má prílohu"
 
 #: core/widgets/searchlinecommand.cpp:180
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Status of a message"
-#| msgid "Has Invitation"
+#, kde-format
 msgid "Mail has invitation"
 msgstr "Má pozvánku"
 
 #: core/widgets/searchlinecommand.cpp:182
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Important"
+#, kde-format
 msgid "Mail is important"
 msgstr "Dôležité"
 
 #: core/widgets/searchlinecommand.cpp:184
 #, kde-format
 msgid "Mail is read"
-msgstr ""
+msgstr "Mail is read"
 
 #: core/widgets/searchlinecommand.cpp:186
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgid "Mail is Unread"
 msgstr "Neprečítané"
 
 #: core/widgets/searchlinecommand.cpp:188
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgid "Mail is Ignored"
 msgstr "Neprečítané"
 
 #: core/widgets/searchlinecommand.cpp:190
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgid "Mail is Ham"
 msgstr "Neprečítané"
 
 #: core/widgets/searchlinecommand.cpp:192
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgid "Mail is Spam"
 msgstr "Neprečítané"
 
 #: core/widgets/searchlinecommand.cpp:194
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Has Attachment"
+#, kde-format
 msgid "Mail is watched"
 msgstr "Má prílohu"
 
 #: core/widgets/searchlinecommand.cpp:196
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgid "Mail is replied"
 msgstr "Neprečítané"
 
 #: core/widgets/searchlinecommand.cpp:198
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgid "Mail is forwarded"
 msgstr "Neprečítané"
 
 #: core/widgets/searchlinecommand.cpp:200
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgid "Mail is encrypted"
 msgstr "Neprečítané"
 
 #: core/widgets/searchlinecommand.cpp:202
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgid "Mail is queued"
 msgstr "Neprečítané"
 
 #: core/widgets/searchlinecommand.cpp:204
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgid "Mail is sent"
 msgstr "Neprečítané"
 
 #: core/widgets/searchlinecommand.cpp:206
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgid "Mail is deleted"
 msgstr "Neprečítané"
 
 #: core/widgets/searchlinecommand.cpp:208
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Status of a message"
-#| msgid "Has Invitation"
+#, kde-format
 msgid "Mail is action"
 msgstr "Má pozvánku"
 
 #: core/widgets/searchlinecommand.cpp:218
 #, kde-format
 msgid "AND"
-msgstr ""
+msgstr "AND"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:49
-#, fuzzy, kde-format
-#| msgctxt "@title:column Subject of messages"
-#| msgid "Subject"
+#, kde-format
 msgctxt "@action:button"
 msgid "Subject"
 msgstr "Predmet"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:50
-#, fuzzy, kde-format
-#| msgid "Body"
+#, kde-format
 msgctxt "@action:button"
 msgid "Body"
 msgstr "Telo"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:51
-#, fuzzy, kde-format
-#| msgid "From"
+#, kde-format
 msgctxt "@action:button"
 msgid "From"
 msgstr "Od"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:52
-#, fuzzy, kde-format
-#| msgid "To"
+#, kde-format
 msgctxt "@action:button"
 msgid "To"
 msgstr "Pre"
@@ -1378,104 +1336,82 @@ msgstr "Pre"
 #, kde-format
 msgctxt "@action:button"
 msgid "Cc"
-msgstr ""
+msgstr "Cc"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:54
-#, fuzzy, kde-format
-#| msgid "bcc"
+#, kde-format
 msgctxt "@action:button"
 msgid "Bcc"
 msgstr "Skrytá kópia"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:55
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Has Attachment"
+#, kde-format
 msgctxt "@action:button"
 msgid "Has Attachment"
 msgstr "Má prílohu"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu Status of a message"
-#| msgid "Has Invitation"
+#, kde-format
 msgctxt "@action:button"
 msgid "Has Invitation"
 msgstr "Má pozvánku"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Read"
+#, kde-format
 msgctxt "@action:button"
 msgid "Read"
 msgstr "Prečítané"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:58
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgctxt "@action:button"
 msgid "Unread"
 msgstr "Neprečítané"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Important"
+#, kde-format
 msgctxt "@action:button"
 msgid "Important"
 msgstr "Dôležité"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Ignored"
+#, kde-format
 msgctxt "@action:button"
 msgid "Ignored"
 msgstr "Ignorované"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:61
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Ham"
+#, kde-format
 msgctxt "@action:button"
 msgid "Ham"
 msgstr "Ham"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:62
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Spam"
+#, kde-format
 msgctxt "@action:button"
 msgid "Spam"
 msgstr "Spam"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Watched"
+#, kde-format
 msgctxt "@action:button"
 msgid "Watched"
 msgstr "Sledované"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:64
-#, fuzzy, kde-format
-#| msgid "Replied"
+#, kde-format
 msgctxt "@action:button"
 msgid "Replied"
 msgstr "Odpovedané"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:65
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Forwarded"
+#, kde-format
 msgctxt "@action:button"
 msgid "Forwarded"
 msgstr "Presmerované"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:66
-#, fuzzy, kde-format
-#| msgid "Encryption"
+#, kde-format
 msgctxt "@action:button"
 msgid "Encrypted"
 msgstr "Šifrovanie"
@@ -1484,26 +1420,22 @@ msgstr "Šifrovanie"
 #, kde-format
 msgctxt "@action:button"
 msgid "Queued"
-msgstr ""
+msgstr "Queued"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:68
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Sent"
+#, kde-format
 msgctxt "@action:button"
 msgid "Sent"
 msgstr "Odoslané"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:69
-#, fuzzy, kde-format
-#| msgid "Delete Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "Deleted"
 msgstr "Zmazať tému"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:70
-#, fuzzy, kde-format
-#| msgid "Action Item"
+#, kde-format
 msgctxt "@action:button"
 msgid "Action"
 msgstr "Akčná položka"
@@ -1512,30 +1444,28 @@ msgstr "Akčná položka"
 #, kde-format
 msgctxt "@action:button"
 msgid "Category"
-msgstr ""
+msgstr "Kategória"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Smaller"
-msgstr ""
+msgstr "Smaller"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Larger"
-msgstr ""
+msgstr "Larger"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:75
-#, fuzzy, kde-format
-#| msgid "Size"
+#, kde-format
 msgctxt "@action:button"
 msgid "Size"
 msgstr "Veľkosť"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:76
-#, fuzzy, kde-format
-#| msgid "Folder"
+#, kde-format
 msgctxt "@action:button"
 msgid "Older"
 msgstr "Priečinok"
@@ -1544,7 +1474,7 @@ msgstr "Priečinok"
 #, kde-format
 msgctxt "@action:button"
 msgid "Newer"
-msgstr ""
+msgstr "Newer"
 
 #: core/widgets/searchlinestatus.cpp:81
 #, kde-format
@@ -1562,13 +1492,13 @@ msgstr "Vyčistiť pole rýchleho hľadania pri zmene priečinka"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show or Hide search command line"
-msgstr ""
+msgstr "Show or Hide search command line"
 
 #: core/widgets/searchlinestatus.cpp:104
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
-msgstr ""
+msgstr "Toggle this button ak want show or hide search command line widget."
 
 #: core/widgets/searchlinestatus.cpp:108
 #, kde-format
@@ -1582,8 +1512,7 @@ msgstr ""
 "podľa stavu správ."
 
 #: core/widgets/searchlinestatus.cpp:116
-#, fuzzy, kde-format
-#| msgid "Clear Filter"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "Vyčistiť filter"
@@ -1594,36 +1523,31 @@ msgid "Clear History"
 msgstr "Vyčistiť históriu"
 
 #: core/widgets/searchmessagebybuttons.cpp:36
-#, fuzzy, kde-format
-#| msgid "Full Message"
+#, kde-format
 msgctxt "@action"
 msgid "Full Message"
 msgstr "Plná správa"
 
 #: core/widgets/searchmessagebybuttons.cpp:38
-#, fuzzy, kde-format
-#| msgid "Body"
+#, kde-format
 msgctxt "@action"
 msgid "Body"
 msgstr "Telo"
 
 #: core/widgets/searchmessagebybuttons.cpp:39
-#, fuzzy, kde-format
-#| msgid "Subject"
+#, kde-format
 msgctxt "@action"
 msgid "Subject"
 msgstr "Predmet"
 
 #: core/widgets/searchmessagebybuttons.cpp:41
-#, fuzzy, kde-format
-#| msgid "BCC"
+#, kde-format
 msgctxt "@action"
 msgid "BCC"
 msgstr "Skrytá kópia"
 
 #: core/widgets/searchmessagebybuttons.cpp:42
-#, fuzzy, kde-format
-#| msgid "BCC"
+#, kde-format
 msgctxt "@action"
 msgid "CC"
 msgstr "Skrytá kópia"
@@ -1705,9 +1629,7 @@ msgid "Current Tab is locked."
 msgstr "Aktuálna karta je zamknutá."
 
 #: core/widgets/tablockedwarning.cpp:19
-#, fuzzy, kde-format
-#| msgctxt "@action:inmenu"
-#| msgid "Unlock Tab"
+#, kde-format
 msgid "(Unlock it)"
 msgstr "Odomknúť kartu"
 
@@ -1739,8 +1661,7 @@ msgid "Close tab"
 msgstr "Zatvoriť kartu"
 
 #: pane.cpp:187
-#, fuzzy, kde-format
-#| msgid "Activate Tab %1"
+#, kde-format
 msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr "Aktivovať kartu %1"
@@ -1756,43 +1677,37 @@ msgid "Message List"
 msgstr "Zoznam správ"
 
 #: pane.cpp:234
-#, fuzzy, kde-format
-#| msgid "Create New Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Create New Tab"
 msgstr "Vytvoriť novú kartu"
 
 #: pane.cpp:265
-#, fuzzy, kde-format
-#| msgid "Activate Next Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Activate Next Tab"
 msgstr "Aktivovať nasledujúcu kartu"
 
 #: pane.cpp:275
-#, fuzzy, kde-format
-#| msgid "Activate Previous Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr "Aktivovať predchádzajúcu kartu"
 
 #: pane.cpp:287
-#, fuzzy, kde-format
-#| msgid "Move Tab Left"
+#, kde-format
 msgctxt "@action"
 msgid "Move Tab Left"
 msgstr "Presunúť kartu vľavo"
 
 #: pane.cpp:295
-#, fuzzy, kde-format
-#| msgid "Move Tab Right"
+#, kde-format
 msgctxt "@action"
 msgid "Move Tab Right"
 msgstr "Presunúť kartu vpravo"
 
 #: pane.cpp:305
-#, fuzzy, kde-format
-#| msgid "Close Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Close Tab"
 msgstr "Zavrieť kartu"
@@ -1840,8 +1755,7 @@ msgid "Unknown"
 msgstr "Neznáme"
 
 #: utils/aggregationconfigbutton.cpp:32 utils/themeconfigbutton.cpp:46
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Configure..."
 msgstr "Nastaviť..."
@@ -1852,36 +1766,31 @@ msgid "Groups && Threading"
 msgstr "Skupiny && tvorba vlákien"
 
 #: utils/aggregationeditor.cpp:35
-#, fuzzy, kde-format
-#| msgid "Grouping:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Grouping:"
 msgstr "Zoskupovanie:"
 
 #: utils/aggregationeditor.cpp:41
-#, fuzzy, kde-format
-#| msgid "Group expand policy:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Group expand policy:"
 msgstr "Pravidlá rozbalenia skupiny:"
 
 #: utils/aggregationeditor.cpp:45
-#, fuzzy, kde-format
-#| msgid "Threading:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Threading:"
 msgstr "Tvorba vlákna:"
 
 #: utils/aggregationeditor.cpp:51
-#, fuzzy, kde-format
-#| msgid "Thread leader:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Thread leader:"
 msgstr "Vedúci vlákna:"
 
 #: utils/aggregationeditor.cpp:55
-#, fuzzy, kde-format
-#| msgid "Thread expand policy:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Thread expand policy:"
 msgstr "Pravidlá rozbalenia vlákna:"
@@ -1893,50 +1802,43 @@ msgid "Advanced"
 msgstr "Pokročilé"
 
 #: utils/aggregationeditor.cpp:68
-#, fuzzy, kde-format
-#| msgid "Fill view strategy:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Fill view strategy:"
 msgstr "Vyplniť strátegiu zobrazenia:"
 
 #: utils/configureaggregationsdialog.cpp:102
-#, fuzzy, kde-format
-#| msgid "Customize Message Aggregation Modes"
+#, kde-format
 msgctxt "@title:window"
 msgid "Customize Message Aggregation Modes"
 msgstr "Vlastné režimy zoskupovania správ"
 
 #: utils/configureaggregationsdialog.cpp:123
-#, fuzzy, kde-format
-#| msgid "New Aggregation"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Aggregation"
 msgstr "Nová agregácia"
 
 #: utils/configureaggregationsdialog.cpp:131
-#, fuzzy, kde-format
-#| msgid "Clone Aggregation"
+#, kde-format
 msgctxt "@action:button"
 msgid "Clone Aggregation"
 msgstr "Klonovať agregáciu"
 
 #: utils/configureaggregationsdialog.cpp:144
-#, fuzzy, kde-format
-#| msgid "Export Aggregation..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Export Aggregation..."
 msgstr "Exportovať agregáciu..."
 
 #: utils/configureaggregationsdialog.cpp:151
-#, fuzzy, kde-format
-#| msgid "Import Aggregation..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Import Aggregation..."
 msgstr "Importovať agregáciu..."
 
 #: utils/configureaggregationsdialog.cpp:162
-#, fuzzy, kde-format
-#| msgid "Delete Aggregation"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete Aggregation"
 msgstr "Vymazať agregáciu"
@@ -1952,15 +1854,13 @@ msgid "New Aggregation"
 msgstr "Nová agregácia"
 
 #: utils/configureaggregationsdialog.cpp:415
-#, fuzzy, kde-format
-#| msgid "Import Aggregation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Aggregation"
 msgstr "Importovať agregáciu"
 
 #: utils/configureaggregationsdialog.cpp:448
-#, fuzzy, kde-format
-#| msgid "Export Aggregation"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Aggregation"
 msgstr "Exportovať agregáciu"
@@ -1978,36 +1878,31 @@ msgid "Customize Themes"
 msgstr "Prispôsobiť témy"
 
 #: utils/configurethemesdialog.cpp:119
-#, fuzzy, kde-format
-#| msgid "New Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Theme"
 msgstr "Nová téma"
 
 #: utils/configurethemesdialog.cpp:127
-#, fuzzy, kde-format
-#| msgid "Clone Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "Clone Theme"
 msgstr "Klonovať tému"
 
 #: utils/configurethemesdialog.cpp:140
-#, fuzzy, kde-format
-#| msgid "Export Theme..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Export Theme..."
 msgstr "Exportovať tému..."
 
 #: utils/configurethemesdialog.cpp:147
-#, fuzzy, kde-format
-#| msgid "Import Theme..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Import Theme..."
 msgstr "Importovať tému..."
 
 #: utils/configurethemesdialog.cpp:158
-#, fuzzy, kde-format
-#| msgid "Delete Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete Theme"
 msgstr "Zmazať tému"
@@ -2044,15 +1939,13 @@ msgid "Delete Theme"
 msgstr "Vymazať tému"
 
 #: utils/configurethemesdialog.cpp:438
-#, fuzzy, kde-format
-#| msgid "Import Theme"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Theme"
 msgstr "Importovať tému"
 
 #: utils/configurethemesdialog.cpp:472
-#, fuzzy, kde-format
-#| msgid "Export Theme"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Theme"
 msgstr "Exportovať tému"
@@ -2082,55 +1975,44 @@ msgid "Name:"
 msgstr "Názov:"
 
 #: utils/themeeditor.cpp:76
-#, fuzzy, kde-format
-#| msgid "The label that will be displayed in the column header."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The label that will be displayed in the column header."
 msgstr "Popis, ktorý sa zobrazí v hlavičke stĺpca."
 
 #: utils/themeeditor.cpp:79
-#, fuzzy, kde-format
-#| msgid "Header click sorts messages:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Header click sorts messages:"
 msgstr "Kliknutie na hlavičku triedi správy:"
 
 #: utils/themeeditor.cpp:83
-#, fuzzy, kde-format
-#| msgid ""
-#| "The sorting order that clicking on this column header will switch to."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The sorting order that clicking on this column header will switch to."
 msgstr "Poradie triedenia pri kliknutí na hlavičku stĺpca sa prepne do."
 
 #: utils/themeeditor.cpp:86
-#, fuzzy, kde-format
-#| msgid "Visible by default"
+#, kde-format
 msgctxt "@option:check"
 msgid "Visible by default"
 msgstr "Štandardne viditeľné"
 
 #: utils/themeeditor.cpp:87
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check this if this column should be visible when the theme is selected."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Check this if this column should be visible when the theme is selected."
 msgstr ""
 "Toto zaškrtnúť, ak by mal byť tento stĺpec viditeľný, keď je zvolená téma."
 
 #: utils/themeeditor.cpp:90
-#, fuzzy, kde-format
-#| msgid "Contains \"Sender or Receiver\" field"
+#, kde-format
 msgctxt "@option:check"
 msgid "Contains \"Sender or Receiver\" field"
 msgstr "Obsahuje pole \"Odosielateľ alebo prijímateľ\""
 
 #: utils/themeeditor.cpp:92
-#, fuzzy, kde-format
-#| msgid ""
-#| "Check this if this column label should be updated depending on the folder "
-#| "\"inbound\"/\"outbound\" type."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Check this if this column label should be updated depending on the folder "
@@ -2345,24 +2227,19 @@ msgid "Advanced"
 msgstr "Pokročilé"
 
 #: utils/themeeditor.cpp:1436
-#, fuzzy, kde-format
-#| msgid "Header:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Header:"
 msgstr "Hlavička:"
 
 #: utils/themeeditor.cpp:1442
-#, fuzzy, kde-format
-#| msgid "Icon size:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "Veľkosť ikon:"
 
 #: utils/themeeditor.cpp:1448
-#, fuzzy, kde-format
-#| msgctxt "suffix in a spinbox"
-#| msgid " pixel"
-#| msgid_plural " pixels"
+#, kde-format
 msgctxt "suffix in a spinbox"
 msgid "%v pixel"
 msgid_plural "%v pixels"
@@ -2397,14 +2274,12 @@ msgid "Collapse All Groups"
 msgstr "Zvinúť všetky skupiny"
 
 #: widget.cpp:365
-#, fuzzy, kde-format
-#| msgid "Expand All Groups"
+#, kde-format
 msgid "Expand All Threads"
 msgstr "Rozvinúť všetky skupiny"
 
 #: widget.cpp:367
-#, fuzzy, kde-format
-#| msgid "Collapse All Groups"
+#, kde-format
 msgid "Collapse All Threads"
 msgstr "Zvinúť všetky skupiny"
 
@@ -2424,13 +2299,11 @@ msgid "C&ancel"
 msgstr "&Zrušiť"
 
 #, fuzzy
-#~| msgid "Filter Mails by Status"
 #~ msgctxt "@info:tooltip"
 #~ msgid "Filter Mails by Status"
 #~ msgstr "Filtrovať maily podľa stavu"
 
 #, fuzzy
-#~| msgid "Clear Filter"
 #~ msgctxt "@action:button"
 #~ msgid "Clear Filter"
 #~ msgstr "Vyčistiť filter"
@@ -2442,12 +2315,10 @@ msgstr "&Zrušiť"
 #~ msgstr "Poznámka"
 
 #, fuzzy
-#~| msgid "Clear Filter"
 #~ msgid "Rename Filter"
 #~ msgstr "Vyčistiť filter"
 
 #, fuzzy
-#~| msgid "Filter message by:"
 #~ msgid "Filter Name"
 #~ msgstr "Filtrovať správy podľa:"
 

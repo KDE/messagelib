@@ -17,8 +17,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 20.12.1\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 20.12.1\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
@@ -121,14 +121,13 @@ msgstr "neznámy kľúč"
 #, kde-format
 msgctxt "Compliance: status/type of compliance"
 msgid "Compliance: %1"
-msgstr ""
+msgstr "Compliance: %1"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:38
-#, fuzzy, kde-format
-#| msgid "Encrypted message"
+#, kde-format
 msgctxt "Encrypted message (status/type of compliance)"
 msgid "Encrypted message (%1)"
-msgstr "Zašifrovaná správa"
+msgstr "Encrypted message (%1)"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:40
 msgid "Encrypted message"
@@ -200,17 +199,17 @@ msgid ""
 "Stored DKIM key is different from the current one. Do you want to store this "
 "one too?"
 msgstr ""
+"Stored DKIM key is different from aktuálny one. Do chcete to store this one "
+"too?"
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
-#, fuzzy, kde-format
-#| msgid "Key Changed"
+#, kde-format
 msgctxt "@title:window"
 msgid "Key Changed"
 msgstr "Kľúč sa zmenil"
 
 #: dkim-verify/dkimcheckfulljob.cpp:120
-#, fuzzy, kde-format
-#| msgid "stored: "
+#, kde-format
 msgctxt "@action:button"
 msgid "Store"
 msgstr "uložené:"
@@ -234,12 +233,12 @@ msgstr "SDID"
 #: dkim-verify/dkimmanagerkeymodel.cpp:87
 #, kde-format
 msgid "Inserted"
-msgstr ""
+msgstr "Inserted"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:89
 #, kde-format
 msgid "Last Used"
-msgstr ""
+msgstr "Naposledy použité"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:73
 #, kde-format
@@ -247,8 +246,7 @@ msgid "Copy Key"
 msgstr "Kopírovať kľúč"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:79
-#, fuzzy, kde-format
-#| msgid "Remove Key"
+#, kde-format
 msgid "Remove Key"
 msgid_plural "Remove Keys"
 msgstr[0] "Odstrániť kľúč"
@@ -256,8 +254,7 @@ msgstr[1] "Odstrániť kľúč"
 msgstr[2] "Odstrániť kľúč"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:81
-#, fuzzy, kde-format
-#| msgid "Do you want to delete this key?"
+#, kde-format
 msgid "Do you want to delete this key?"
 msgid_plural "Do you want to delete these keys?"
 msgstr[0] "Chcete tento kľúč odstrániť?"
@@ -265,8 +262,7 @@ msgstr[1] "Chcete tento kľúč odstrániť?"
 msgstr[2] "Chcete tento kľúč odstrániť?"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:82
-#, fuzzy, kde-format
-#| msgid "Delete Key"
+#, kde-format
 msgid "Delete Key"
 msgid_plural "Delete Keys"
 msgstr[0] "Vymazať kľúč"
@@ -280,24 +276,21 @@ msgid "Delete All"
 msgstr "Vymazať všetko"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:94
-#, fuzzy, kde-format
-#| msgid "Do you want to delete all rules?"
+#, kde-format
 msgid "Do you want to delete all keys?"
 msgstr "Chcete odstrániť všetky pravidlá?"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:95
-#, fuzzy, kde-format
-#| msgid "Delete Key"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "Vymazať kľúč"
 
 #: dkim-verify/dkimmanagerkeywidget.cpp:33
-#, fuzzy, kde-format
-#| msgid "Search..."
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Search..."
-msgstr "Hľadať..."
+msgstr "Hľadať"
 
 #: dkim-verify/dkimmanagerulescombobox.cpp:20
 #, kde-format
@@ -315,8 +308,7 @@ msgid "Ignore if not signed"
 msgstr "Ignorovať, ak nie je podpísaný"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:29
-#, fuzzy, kde-format
-#| msgid "Export..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Export..."
 msgstr "Exportovať..."
@@ -328,15 +320,13 @@ msgid "Configure Rule"
 msgstr "Nastaviť pravidlo"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:42
-#, fuzzy, kde-format
-#| msgid "Add Rule..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Add Rule..."
 msgstr "Pridať pravidlo"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:47
-#, fuzzy, kde-format
-#| msgid "Import..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Import..."
 msgstr "Importovať..."
@@ -348,16 +338,14 @@ msgstr "Žiadne pravidlá neboli nájdené"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
 #: dkim-verify/dkimmanagerulesdialog.cpp:82
-#, fuzzy, kde-format
-#| msgid "Export Rules"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "Exportovať pravidlá"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:90
 #: dkim-verify/dkimmanagerulesdialog.cpp:93
-#, fuzzy, kde-format
-#| msgid "Import Rules"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "Importovať pravidlá"
@@ -428,8 +416,7 @@ msgstr "Chcete toto pravidlo odstrániť?"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:214
 #: remote-content/remotecontentconfigurewidget.cpp:92
-#, fuzzy, kde-format
-#| msgid "Delete Rule"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Rule"
 msgstr "Vymazať pravidlo"
@@ -440,8 +427,7 @@ msgid "Do you want to delete all the rules?"
 msgstr "Chcete odstrániť všetky pravidlá?"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:228
-#, fuzzy, kde-format
-#| msgid "Delete Rules"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Rules"
 msgstr "Vymazať pravidlá"
@@ -459,11 +445,10 @@ msgid "Modify Rule"
 msgstr "Upraviť pravidlo"
 
 #: dkim-verify/dkimrulewidget.cpp:20
-#, fuzzy, kde-format
-#| msgid "Enabled"
+#, kde-format
 msgctxt "@option:check"
 msgid "Enabled"
-msgstr "Povolený"
+msgstr "Povolené"
 
 #: dkim-verify/dkimrulewidget.cpp:38
 #, kde-format
@@ -484,7 +469,7 @@ msgstr "Od:"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Use '*' to specify all emails from domain"
-msgstr ""
+msgstr "Use '*' to specify all emails from domain"
 
 #: dkim-verify/dkimrulewidget.cpp:53
 #, kde-format
@@ -507,8 +492,7 @@ msgid "DKIM"
 msgstr "DKIM"
 
 #: dkim-verify/dkimviewermenu.cpp:36
-#, fuzzy, kde-format
-#| msgid "Keep Signature"
+#, kde-format
 msgid "Recheck DKIM Signature"
 msgstr "Ponechať podpis"
 
@@ -550,7 +534,7 @@ msgstr "DKIM: Mal by byť podpísaný %1"
 #: dkim-verify/dkimwidgetinfo.cpp:133
 #, kde-format
 msgid "Body Hash was corrupted."
-msgstr ""
+msgstr "Body Hash was corrupted."
 
 #: dkim-verify/dkimwidgetinfo.cpp:136
 #, kde-format
@@ -560,7 +544,7 @@ msgstr "Doména neexistuje."
 #: dkim-verify/dkimwidgetinfo.cpp:139
 #, kde-format
 msgid "Missing header From."
-msgstr ""
+msgstr "Missing header From."
 
 #: dkim-verify/dkimwidgetinfo.cpp:142
 #, kde-format
@@ -575,17 +559,17 @@ msgstr "Neplatná metóda dotazu."
 #: dkim-verify/dkimwidgetinfo.cpp:148
 #, kde-format
 msgid "Invalid header canonicalization."
-msgstr ""
+msgstr "Invalid header canonicalization."
 
 #: dkim-verify/dkimwidgetinfo.cpp:151
 #, kde-format
 msgid "Invalid body canonicalization."
-msgstr ""
+msgstr "Invalid body canonicalization."
 
 #: dkim-verify/dkimwidgetinfo.cpp:154
 #, kde-format
 msgid "Unknown Body Hash Algorithm."
-msgstr ""
+msgstr "Unknown Body Hash Algorithm."
 
 #: dkim-verify/dkimwidgetinfo.cpp:157
 #, kde-format
@@ -705,8 +689,7 @@ msgid "Date:"
 msgstr "Dátum:"
 
 #: header/grantleeheaderformatter.cpp:239
-#, fuzzy, kde-format
-#| msgid "message"
+#, kde-format
 msgid "Message-Id:"
 msgstr "správa"
 
@@ -909,52 +892,44 @@ msgstr "Adresa pre odpoveď: "
 #, kde-format
 msgctxt "@action"
 msgid "Ignore"
-msgstr ""
+msgstr "Ignorovať"
 
 #: mdn/mdnwarningwidget.cpp:15
-#, fuzzy, kde-format
-#| msgid "Sender:"
+#, kde-format
 msgctxt "@action"
 msgid "Send"
-msgstr "Odosielateľ:"
+msgstr "Odoslať"
 
 #: mdn/mdnwarningwidget.cpp:16
-#, fuzzy, kde-format
-#| msgid "Sender:"
+#, kde-format
 msgctxt "@action"
 msgid "Send Deny"
 msgstr "Odosielateľ:"
 
 #: remote-content/remotecontentconfiguredialog.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Rule"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Remote Content"
 msgstr "Nastaviť pravidlo"
 
 #: remote-content/remotecontentconfigurewidget.cpp:54
-#, fuzzy, kde-format
-#| msgid "Status: "
+#, kde-format
 msgid "Status"
-msgstr "Stav:"
+msgstr "Stav"
 
 #: remote-content/remotecontentconfigurewidget.cpp:91
-#, fuzzy, kde-format
-#| msgid "Do you want to delete this rule?"
+#, kde-format
 msgid "Do you want to delete this rule '%1'?"
-msgstr "Chcete toto pravidlo odstrániť?"
+msgstr "Do chcete to delete this rule '%1'?"
 
 #: remote-content/remotecontentconfigurewidget.cpp:109
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Remote Content"
-msgstr ""
+msgstr "Edit Remote Content"
 
 #: remote-content/remotecontentconfigurewidget.cpp:125
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Configure Rule"
+#, kde-format
 msgctxt "@title:window"
 msgid "Add Remote Content"
 msgstr "Nastaviť pravidlo"
@@ -962,13 +937,13 @@ msgstr "Nastaviť pravidlo"
 #: remote-content/remotecontentconfigurewidget.cpp:134
 #, kde-format
 msgid "An entry already defines this url. Please modify it."
-msgstr ""
+msgstr "An entry already defines this url. Please modify it."
 
 #: remote-content/remotecontentconfigurewidget.cpp:134
 #, kde-format
 msgctxt "@title:window"
 msgid "Add new Url"
-msgstr ""
+msgstr "Add new Url"
 
 #: remote-content/remotecontentmenu.cpp:19
 #, kde-format
@@ -978,32 +953,30 @@ msgstr "Nastaviť"
 #: remote-content/remotecontentmenu.cpp:21
 #, kde-format
 msgid "Remote Content"
-msgstr ""
+msgstr "Remote Content"
 
 #: remote-content/remotecontentmenu.cpp:52
 #, kde-format
 msgid "Authorize %1"
-msgstr ""
+msgstr "Authorize %1"
 
 #: remote-content/remotecontentmenu.cpp:60
 #, kde-format
 msgid "Authorize all Urls"
-msgstr ""
+msgstr "Authorize all Urls"
 
 #: remote-content/remotecontentstatustypecombobox.cpp:12
 #, kde-format
 msgid "Authorized"
-msgstr ""
+msgstr "Authorized"
 
 #: remote-content/remotecontentstatustypecombobox.cpp:13
-#, fuzzy, kde-format
-#| msgid "Block image"
+#, kde-format
 msgid "Blocked"
-msgstr "Zablokovať obrázok"
+msgstr "Blokované"
 
 #: remote-content/remotecontentwidget.cpp:28
-#, fuzzy, kde-format
-#| msgid "Domain:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Domain:"
 msgstr "Doména:"
@@ -1021,29 +994,25 @@ msgstr ""
 "Táto správa môže byť scam. <a href=\"scamdetails\">(Podrobnosti...)</a>"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:41
-#, fuzzy, kde-format
-#| msgid "Move to Trash"
+#, kde-format
 msgctxt "@action"
 msgid "Move to Trash"
 msgstr "Presunúť do koša"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:46
-#, fuzzy, kde-format
-#| msgid "I confirm it's not a scam"
+#, kde-format
 msgctxt "@action"
 msgid "I confirm it's not a scam"
 msgstr "Potvrdzujem, že to nie je scam"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:50
-#, fuzzy, kde-format
-#| msgid "Add email to whitelist"
+#, kde-format
 msgctxt "@action"
 msgid "Add email to whitelist"
 msgstr "Pridať e-mail do whitelistu"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:54
-#, fuzzy, kde-format
-#| msgid "Disable scam detection for all messages"
+#, kde-format
 msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "Zakázať detekciu scamu pre všetky správy"
@@ -1422,22 +1391,19 @@ msgstr "Použiť písmo s pe&vnou šírkou"
 
 #. i18n: ectx: whatsthis, entry (LastSelectedFolder), group (Todo)
 #: settings/messageviewer.kcfg:212
-#, fuzzy, kde-format
-#| msgid "The most recent selected folder using for Todo."
+#, kde-format
 msgid "The most recent selected folder used for Todo."
 msgstr "Najnovší vybraný priečinok pre úlohu."
 
 #. i18n: ectx: whatsthis, entry (LastEventSelectedFolder), group (Event)
 #: settings/messageviewer.kcfg:218
-#, fuzzy, kde-format
-#| msgid "The most recent selected folder using for Event."
+#, kde-format
 msgid "The most recent selected folder used for Event."
 msgstr "Najnovší vybraný priečinok pre úlohu."
 
 #. i18n: ectx: whatsthis, entry (LastNoteSelectedFolder), group (Note)
 #: settings/messageviewer.kcfg:224
-#, fuzzy, kde-format
-#| msgid "The most recent selected folder using for Notes."
+#, kde-format
 msgid "The most recent selected folder used for Notes."
 msgstr "Najnovší vybraný priečinok pre Notes."
 
@@ -1595,8 +1561,7 @@ msgid ""
 msgstr "Súbor s názvom \"%1\" už existuje. Prajete si ho prepísať?"
 
 #: utils/messageviewerutil.cpp:126
-#, fuzzy, kde-format
-#| msgid "Overwrite File?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Prepísať súbor?"
@@ -1613,8 +1578,7 @@ msgid "attachment.1"
 msgstr "príloha.1"
 
 #: utils/messageviewerutil.cpp:182
-#, fuzzy, kde-format
-#| msgid "Save Attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "Uložiť prílohu"
@@ -1639,15 +1603,13 @@ msgid "KMail Question"
 msgstr "KMail otázka"
 
 #: utils/messageviewerutil.cpp:306
-#, fuzzy, kde-format
-#| msgid "Keep Encryption"
+#, kde-format
 msgctxt "@action:button"
 msgid "Keep Encryption"
 msgstr "Ponechať šifrovanie"
 
 #: utils/messageviewerutil.cpp:307 utils/messageviewerutil.cpp:320
-#, fuzzy, kde-format
-#| msgid "Do Not Keep"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do Not Keep"
 msgstr "Neponechať"
@@ -1660,8 +1622,7 @@ msgid ""
 msgstr "Časť správy %1 je podpísaná. Chcete ponechať podpis pri ukladaní?"
 
 #: utils/messageviewerutil.cpp:319
-#, fuzzy, kde-format
-#| msgid "Keep Signature"
+#, kde-format
 msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "Ponechať podpis"
@@ -1678,8 +1639,7 @@ msgstr ""
 "qt>"
 
 #: utils/messageviewerutil.cpp:386
-#, fuzzy, kde-format
-#| msgid "Error saving attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "Chyba pri ukladaní prílohy"
@@ -1700,8 +1660,7 @@ msgid "message"
 msgstr "správa"
 
 #: utils/messageviewerutil.cpp:473
-#, fuzzy, kde-format
-#| msgid "email messages (*.mbox);;all files (*)"
+#, kde-format
 msgid "Mailbox file (*.mbox);;All Files (*)"
 msgstr "e-mailové správy (*.mbox);;všetky súbory (*)"
 
@@ -1719,8 +1678,7 @@ msgid "File %1 could not be loaded."
 msgstr "Súbor %1 nie je možné načítať."
 
 #: utils/messageviewerutil.cpp:509
-#, fuzzy, kde-format
-#| msgid "Error loading message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Chyba pri načítavaní správy"
@@ -1731,8 +1689,7 @@ msgid "File %1 could not be created."
 msgstr "Súbor %1 nie je možné vytvoriť."
 
 #: utils/messageviewerutil.cpp:511 utils/messageviewerutil.cpp:542
-#, fuzzy, kde-format
-#| msgid "Error saving message"
+#, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Chyba pri ukladaní správy"
@@ -1748,11 +1705,10 @@ msgid "Error saving message"
 msgstr "Chyba pri ukladaní správy"
 
 #: utils/messageviewerutil.cpp:586
-#, fuzzy, kde-format
-#| msgid "Delete Key"
+#, kde-format
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
-msgstr "Vymazať kľúč"
+msgstr "Deleted: %1"
 
 #: utils/messageviewerutil.cpp:597
 #, kde-format
@@ -1760,6 +1716,8 @@ msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
 msgstr ""
+"You deleted an attachment from this message. The original MIME headers for "
+"the attachment were:"
 
 #: utils/messageviewerutil.cpp:625
 #, kde-format
@@ -1795,7 +1753,7 @@ msgstr "Veľkosť"
 #: viewer/printmessage.cpp:68
 #, kde-format
 msgid "Could not generate print preview."
-msgstr ""
+msgstr "Could not generate print preview."
 
 #: viewer/printmessage.cpp:104
 #, kde-format
@@ -1935,8 +1893,7 @@ msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "Naozaj chcete spustiť <filename>%1</filename>?"
 
 #: viewer/urlhandlermanager.cpp:867
-#, fuzzy, kde-format
-#| msgid "Execute"
+#, kde-format
 msgctxt "@action:button"
 msgid "Execute"
 msgstr "Spustiť"
@@ -1955,8 +1912,7 @@ msgstr ""
 "Odstránenie prílohy môže zrušiť platnosť digitálneho podpisu na tejto správe."
 
 #: viewer/viewer_p.cpp:347 viewer/viewer_p.cpp:382
-#, fuzzy, kde-format
-#| msgid "Delete Attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "Vymazať prílohu"
@@ -2134,8 +2090,7 @@ msgid "Copy Text"
 msgstr "Kopírovať text"
 
 #: viewer/viewer_p.cpp:1542
-#, fuzzy, kde-format
-#| msgid "Select All Text"
+#, kde-format
 msgctxt "@action"
 msgid "Select All Text"
 msgstr "Vybrať všetok text"
@@ -2156,56 +2111,48 @@ msgid "Show Message Structure"
 msgstr "Ukázať štruktúru správy"
 
 #: viewer/viewer_p.cpp:1569
-#, fuzzy, kde-format
-#| msgid "&View Source"
+#, kde-format
 msgctxt "@action"
 msgid "&View Source"
 msgstr "&Zobraziť zdroj"
 
 #: viewer/viewer_p.cpp:1574
-#, fuzzy, kde-format
-#| msgid "&Save message..."
+#, kde-format
 msgid "&Save Message..."
 msgstr "Uložiť správu..."
 
 #: viewer/viewer_p.cpp:1580
-#, fuzzy, kde-format
-#| msgid "&Save Display Format"
+#, kde-format
 msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "Uložiť formát zobrazenia"
 
 #: viewer/viewer_p.cpp:1584
-#, fuzzy, kde-format
-#| msgid "&Reset Display Format"
+#, kde-format
 msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "Vynulovať formát zobrazenia"
 
 #: viewer/viewer_p.cpp:1591
-#, fuzzy, kde-format
-#| msgid "Scroll Message Up"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "Posunúť správu nahor"
 
 #: viewer/viewer_p.cpp:1596
-#, fuzzy, kde-format
-#| msgid "Scroll Message Down"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "Posunúť správu nadol"
 
 #: viewer/viewer_p.cpp:1601
-#, fuzzy, kde-format
-#| msgid "Scroll Message Up (More)"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "Posunúť správu nahor (viac)"
 
 #: viewer/viewer_p.cpp:1606
-#, fuzzy, kde-format
-#| msgid "Scroll Message Down (More)"
+#, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "Posunúť správu nadol (viac)"
@@ -2221,29 +2168,25 @@ msgid "Toggle display mode between HTML and plain text"
 msgstr "Prepnúť režim zobrazenia medzi HTML a obyčajným textom"
 
 #: viewer/viewer_p.cpp:1623
-#, fuzzy, kde-format
-#| msgid "Load external references"
+#, kde-format
 msgctxt "@action"
 msgid "Load external references"
 msgstr "Načítať externé referencie"
 
 #: viewer/viewer_p.cpp:1629
-#, fuzzy, kde-format
-#| msgid "Speak Text"
+#, kde-format
 msgctxt "@action"
 msgid "Speak Text"
 msgstr "Povedať text"
 
 #: viewer/viewer_p.cpp:1635
-#, fuzzy, kde-format
-#| msgid "Share Text..."
+#, kde-format
 msgctxt "@action"
 msgid "Share Text..."
 msgstr "Zdieľať text..."
 
 #: viewer/viewer_p.cpp:1653
-#, fuzzy, kde-format
-#| msgid "Copy Image Location"
+#, kde-format
 msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "Kopírovať umiestnenie obrázku"
@@ -2279,8 +2222,7 @@ msgid "The network is broken."
 msgstr "Sieť je poškodená."
 
 #: viewer/viewer_p.cpp:1991 viewer/viewer_p.cpp:1994
-#, fuzzy, kde-format
-#| msgid "Check Phishing URL"
+#, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "Skontrolovať podvodné URL"
@@ -2296,8 +2238,7 @@ msgid "This web site is a malware, do you want to continue to show it?"
 msgstr "Táto webová stránka je malvér, chcete pokračovať v jej zobrazovaní?"
 
 #: viewer/viewer_p.cpp:2015
-#, fuzzy, kde-format
-#| msgid "Malware"
+#, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr "Malvér"
@@ -2456,25 +2397,19 @@ msgid "HTML code for displaying the message to the user"
 msgstr "HTML kód pre zobrazenie správy užívateľovi"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
-#, fuzzy, kde-format
-#| msgid "Open folder where attachment was saved"
-#| msgid_plural "Open folder where attachments were saved"
+#, kde-format
 msgctxt "@action - For we don't know if it's one or many attachments"
 msgid "Open folder where attachment was saved"
 msgstr "Otvoriť priečinok, kam sa uložila príloha"
 
 #: widgets/opensavedfilefolderwidget.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "&Open With"
+#, kde-format
 msgctxt "@action"
 msgid "Open File"
-msgstr "&Otvoriť pomocou"
+msgstr "Otvoriť súbor"
 
 #: widgets/opensavedfilefolderwidget.cpp:62
-#, fuzzy, kde-format
-#| msgid "Open folder where attachment was saved"
-#| msgid_plural "Open folder where attachments were saved"
+#, kde-format
 msgctxt "@action"
 msgid "Open folder where attachment was saved"
 msgid_plural "Open folder where attachments were saved"
@@ -2483,28 +2418,24 @@ msgstr[1] "Otvoriť priečinok, kam sa uložila príloha"
 msgstr[2] "Otvoriť priečinok, kam sa uložila príloha"
 
 #: widgets/opensavedfilefolderwidget.cpp:65
-#, fuzzy, kde-format
-#| msgid "Open folder where PDF file was saved"
+#, kde-format
 msgctxt "@action"
 msgid "Open folder where PDF file was saved"
 msgstr "Otvoriť priečinok, kam sa uložila PDF súbor"
 
 #: widgets/opensavedfilefolderwidget.cpp:78
-#, fuzzy, kde-format
-#| msgid "Unable to edit attachment"
+#, kde-format
 msgid "KMail was unable to open the attachment."
 msgstr "Nepodarilo sa upraviť prílohu"
 
 #: widgets/shownextmessagewidget.cpp:17
-#, fuzzy, kde-format
-#| msgid "Next Message"
+#, kde-format
 msgctxt "@action:button"
 msgid "Next Message"
 msgstr "Nasledujúca správa"
 
 #: widgets/shownextmessagewidget.cpp:18
-#, fuzzy, kde-format
-#| msgid "Previous Message"
+#, kde-format
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Predchádzajúca správa"
@@ -2618,33 +2549,26 @@ msgstr "Predchádzajúca správa"
 #~ msgstr "Pozor: Chybný podpis."
 
 #, fuzzy
-#~| msgid "Invalid signature."
 #~ msgid "Invalid signature"
 #~ msgstr "Neplatný podpis."
 
 #, fuzzy
-#~| msgid "Not enough information to check signature validity."
 #~ msgid "Not enough information to check signature validity"
 #~ msgstr "Nedostatočné informácie pre overenie podpisu."
 
 #, fuzzy
-#~| msgid "Signed by <a href='mailto:%1'>%1</a>."
 #~ msgid "Signed by <a href='mailto:%1'>%1</a>"
 #~ msgstr "Podpísal <a href='mailto:%1'>%1</a>."
 
 #, fuzzy
-#~| msgid "Signature is valid."
 #~ msgid "Signature is valid"
 #~ msgstr "Podpis je platný."
 
 #, fuzzy
-#~| msgid "Unknown signature state"
 #~ msgid "Unknown signature state"
 #~ msgstr "Neznámy stav podpisu"
 
 #, fuzzy
-#~| msgctxt "Certificate import failed."
-#~| msgid "Failed: %1 (%2)"
 #~ msgctxt "Status of signature (status/type of compliance)"
 #~ msgid "%1 (%2)"
 #~ msgstr "Zlyhalo: %1 (%2)"
@@ -2750,7 +2674,6 @@ msgstr "Predchádzajúca správa"
 #~ msgstr "&Otvoriť pomocou..."
 
 #, fuzzy
-#~| msgid "Do you want to delete all rules?"
 #~ msgid "Do you want to all rules?"
 #~ msgstr "Chcete odstrániť všetky pravidlá?"
 
@@ -2942,7 +2865,6 @@ msgstr "Predchádzajúca správa"
 #~ msgstr "Nenájdený modul %1."
 
 #, fuzzy
-#~| msgid "Crypto plug-in \"%1\" cannot verify signatures."
 #~ msgid "Crypto plug-in \"%1\" cannot verify signatures."
 #~ msgstr "Šifrovací modul \"%1\" nemôže overovať podpisy."
 
@@ -3264,12 +3186,10 @@ msgstr "Predchádzajúca správa"
 #~ msgstr "Hlavička:"
 
 #, fuzzy
-#~| msgid "Create Todo"
 #~ msgid "Create ToDo"
 #~ msgstr "Vytvoriť úlohu"
 
 #, fuzzy
-#~| msgid "Create Todo"
 #~ msgid "Create To-Do"
 #~ msgstr "Vytvoriť úlohu"
 
@@ -3605,7 +3525,6 @@ msgstr "Predchádzajúca správa"
 #~ msgstr "Ukázať čistú správu"
 
 #, fuzzy
-#~| msgid "*|all files (*)"
 #~ msgid "all files (*)"
 #~ msgstr "*|všetky súbory (*)"
 

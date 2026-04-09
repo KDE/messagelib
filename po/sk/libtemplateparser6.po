@@ -14,8 +14,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 20.12.1\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 20.12.1\n"
 
 #: customtemplates.cpp:74 customtemplates.cpp:125
 #, kde-format
@@ -83,8 +83,7 @@ msgid "A template with same name already exists."
 msgstr "Šablóna s rovnakým názvom už existuje."
 
 #: customtemplates.cpp:254
-#, fuzzy, kde-format
-#| msgid "Cannot create template"
+#, kde-format
 msgctxt "@title:window"
 msgid "Cannot create template"
 msgstr "Nie je možné vytvoriť šablónu"
@@ -231,10 +230,7 @@ msgstr "Použiť inteligentné citovanie"
 
 #. i18n: ectx: label, entry (ReplyUsingVisualFormat), group (TemplateParser)
 #: settings/templateparser.kcfg:15
-#, fuzzy, kde-format
-#| msgid ""
-#| "Reply or forward using the same visual format of the original message "
-#| "(plain text or HTML)"
+#, kde-format
 msgid ""
 "Reply or forward using the same visual format as the original message (plain "
 "text or HTML)"
@@ -580,22 +576,19 @@ msgstr ""
 "Chcete obnoviť aktuálnu šablónu alebo všetky šablóny na predvolené hodnoty?"
 
 #: templatesconfiguration.cpp:103
-#, fuzzy, kde-format
-#| msgid "Reset to default"
+#, kde-format
 msgctxt "@title:window"
 msgid "Reset to default"
 msgstr "Vrátiť na predvolené"
 
 #: templatesconfiguration.cpp:104
-#, fuzzy, kde-format
-#| msgid "Reset Current Template"
+#, kde-format
 msgctxt "@action:button"
 msgid "Reset Current Template"
 msgstr "Vynulovať aktuálnu šablónu"
 
 #: templatesconfiguration.cpp:105
-#, fuzzy, kde-format
-#| msgid "Reset All Templates"
+#, kde-format
 msgctxt "@action:button"
 msgid "Reset All Templates"
 msgstr "Vynulovať všetky šablóny"
@@ -826,12 +819,10 @@ msgstr "Odpovedať všetkým"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, mType)
 #: ui/customtemplates_base.ui:298
-#, fuzzy, kde-format
-#| msgctxt "Message->"
-#| msgid "Forward"
+#, kde-format
 msgctxt "@item:inlistbox Custom template type for message forwards"
 msgid "Forward"
-msgstr "Dopredu"
+msgstr "Preposlať"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1_2)
 #: ui/customtemplates_base.ui:306
@@ -1008,6 +999,5 @@ msgstr ""
 #~ msgstr "Dopredu"
 
 #, fuzzy
-#~| msgid "Reply or forward using HTML if present"
 #~ msgid "Reply or forward using HTML based on Visual Format"
 #~ msgstr "Odpovedať použitím HTML pokiaľ je prítomný"
