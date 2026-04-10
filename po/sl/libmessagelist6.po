@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-05 00:44+0000\n"
+"POT-Creation-Date: 2026-04-10 00:52+0000\n"
 "PO-Revision-Date: 2025-09-16 07:13+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -1727,31 +1727,31 @@ msgctxt "@action"
 msgid "Close Tab"
 msgstr "Zapri zavihek"
 
-#: pane.cpp:526 pane.cpp:824
+#: pane.cpp:528 pane.cpp:830
 #, kde-format
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
 msgstr "Prazno"
 
-#: pane.cpp:716
+#: pane.cpp:719
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "Zapri zavihek"
 
-#: pane.cpp:720
+#: pane.cpp:723
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "Zapri vse druge zavihke"
 
-#: pane.cpp:725
+#: pane.cpp:728
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unlock Tab"
 msgstr "Odkleni zavihek"
 
-#: pane.cpp:725
+#: pane.cpp:728
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Lock Tab"

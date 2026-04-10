@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-05 00:44+0000\n"
+"POT-Creation-Date: 2026-04-10 00:52+0000\n"
 "PO-Revision-Date: 2006-02-06 01:01-0600\n"
 "Last-Translator: Deepayan Sarkar <deepayan@bengalinux.org>\n"
 "Language-Team: Bengali <kde-translation@bengalinux.org>\n"
@@ -1912,20 +1912,20 @@ msgctxt "@action"
 msgid "Close Tab"
 msgstr "স&ব সূত্র গুটিয়ে নাও"
 
-#: pane.cpp:526 pane.cpp:824
+#: pane.cpp:528 pane.cpp:830
 #, fuzzy, kde-format
 #| msgid "Empty"
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
 msgstr "ফাঁকা"
 
-#: pane.cpp:716
+#: pane.cpp:719
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr ""
 
-#: pane.cpp:720
+#: pane.cpp:723
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "C&ollapse All Threads"
@@ -1933,14 +1933,14 @@ msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "স&ব সূত্র গুটিয়ে নাও"
 
-#: pane.cpp:725
+#: pane.cpp:728
 #, fuzzy, kde-format
 #| msgid "Last Search"
 msgctxt "@action:inmenu"
 msgid "Unlock Tab"
 msgstr "শেষ সন্ধান"
 
-#: pane.cpp:725
+#: pane.cpp:728
 #, fuzzy, kde-format
 #| msgid "Last Search"
 msgctxt "@action:inmenu"

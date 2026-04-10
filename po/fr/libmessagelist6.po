@@ -27,7 +27,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-05 00:44+0000\n"
+"POT-Creation-Date: 2026-04-10 00:52+0000\n"
 "PO-Revision-Date: 2026-04-03 14:22+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
@@ -1743,31 +1743,31 @@ msgctxt "@action"
 msgid "Close Tab"
 msgstr "Fermer l'onglet"
 
-#: pane.cpp:526 pane.cpp:824
+#: pane.cpp:528 pane.cpp:830
 #, kde-format
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
 msgstr "Vide"
 
-#: pane.cpp:716
+#: pane.cpp:719
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "Fermer l'onglet"
 
-#: pane.cpp:720
+#: pane.cpp:723
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "Fermer tous les autres onglets"
 
-#: pane.cpp:725
+#: pane.cpp:728
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unlock Tab"
 msgstr "Déverrouiller un onglet"
 
-#: pane.cpp:725
+#: pane.cpp:728
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Lock Tab"

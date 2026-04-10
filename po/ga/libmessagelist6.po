@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim/kmail.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-05 00:44+0000\n"
+"POT-Creation-Date: 2026-04-10 00:52+0000\n"
 "PO-Revision-Date: 2004-12-03 14:52-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -1695,31 +1695,31 @@ msgctxt "@action"
 msgid "Close Tab"
 msgstr ""
 
-#: pane.cpp:526 pane.cpp:824
+#: pane.cpp:528 pane.cpp:830
 #, kde-format
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
 msgstr "Folamh"
 
-#: pane.cpp:716
+#: pane.cpp:719
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "Dún Cluaisín"
 
-#: pane.cpp:720
+#: pane.cpp:723
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "Dún Gach Cluaisín Eile"
 
-#: pane.cpp:725
+#: pane.cpp:728
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unlock Tab"
 msgstr ""
 
-#: pane.cpp:725
+#: pane.cpp:728
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Lock Tab"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail-1.1\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-05 00:44+0000\n"
+"POT-Creation-Date: 2026-04-10 00:52+0000\n"
 "PO-Revision-Date: 2005-01-23 05:51+0100\n"
 "Last-Translator: Jañ-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
@@ -1920,20 +1920,20 @@ msgctxt "@action"
 msgid "Close Tab"
 msgstr "S&eriñ an holl neudoù"
 
-#: pane.cpp:526 pane.cpp:824
+#: pane.cpp:528 pane.cpp:830
 #, fuzzy, kde-format
 #| msgid "Empty"
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
 msgstr "Goullonderiñ"
 
-#: pane.cpp:716
+#: pane.cpp:719
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr ""
 
-#: pane.cpp:720
+#: pane.cpp:723
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "C&ollapse All Threads"
@@ -1941,14 +1941,14 @@ msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "S&eriñ an holl neudoù"
 
-#: pane.cpp:725
+#: pane.cpp:728
 #, fuzzy, kde-format
 #| msgid "Last Search"
 msgctxt "@action:inmenu"
 msgid "Unlock Tab"
 msgstr "Klask diwezhañ"
 
-#: pane.cpp:725
+#: pane.cpp:728
 #, fuzzy, kde-format
 #| msgid "Last Search"
 msgctxt "@action:inmenu"

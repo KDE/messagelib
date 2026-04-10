@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-05 00:44+0000\n"
+"POT-Creation-Date: 2026-04-10 00:52+0000\n"
 "PO-Revision-Date: 2010-09-24 16:29+0530\n"
 "Last-Translator: Rajesh Ranjan <rajesh672@gmail.com>\n"
 "Language-Team: Maithili <bhashaghar@googlegroups.com>\n"
@@ -1760,25 +1760,25 @@ msgctxt "@action"
 msgid "Close Tab"
 msgstr "टैब बन्न करू"
 
-#: pane.cpp:526 pane.cpp:824
+#: pane.cpp:528 pane.cpp:830
 #, kde-format
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
 msgstr "खाली"
 
-#: pane.cpp:716
+#: pane.cpp:719
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "टैब बन्न करू"
 
-#: pane.cpp:720
+#: pane.cpp:723
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr ""
 
-#: pane.cpp:725
+#: pane.cpp:728
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu"
 #| msgid "Close Tab"
@@ -1786,7 +1786,7 @@ msgctxt "@action:inmenu"
 msgid "Unlock Tab"
 msgstr "टैब बन्न करू"
 
-#: pane.cpp:725
+#: pane.cpp:728
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Lock Tab"

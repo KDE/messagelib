@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-05 00:44+0000\n"
+"POT-Creation-Date: 2026-04-10 00:52+0000\n"
 "PO-Revision-Date: 2025-01-07 19:49+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -1710,31 +1710,31 @@ msgctxt "@action"
 msgid "Close Tab"
 msgstr "Pechar a lapela"
 
-#: pane.cpp:526 pane.cpp:824
+#: pane.cpp:528 pane.cpp:830
 #, kde-format
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
 msgstr "Baleira"
 
-#: pane.cpp:716
+#: pane.cpp:719
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr "Pechar a lapela"
 
-#: pane.cpp:720
+#: pane.cpp:723
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "Pechar as outras lapelas"
 
-#: pane.cpp:725
+#: pane.cpp:728
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Unlock Tab"
 msgstr "Desbloquear a lapela"
 
-#: pane.cpp:725
+#: pane.cpp:728
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Lock Tab"

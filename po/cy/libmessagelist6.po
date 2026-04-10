@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-05 00:44+0000\n"
+"POT-Creation-Date: 2026-04-10 00:52+0000\n"
 "PO-Revision-Date: 2004-02-25 13:47+0000\n"
 "Last-Translator: KD at KGyfieithu <kyfieithu@dotmon.com>\n"
 "Language-Team: Cymraeg <cy@li.org>\n"
@@ -1896,20 +1896,20 @@ msgctxt "@action"
 msgid "Close Tab"
 msgstr "Dad-ehangu Po&b Edefyn"
 
-#: pane.cpp:526 pane.cpp:824
+#: pane.cpp:528 pane.cpp:830
 #, fuzzy, kde-format
 #| msgid "Empty"
 msgctxt "@title:tab Empty messagelist"
 msgid "Empty"
 msgstr "Gwag"
 
-#: pane.cpp:716
+#: pane.cpp:719
 #, kde-format
 msgctxt "@action:inmenu"
 msgid "Close Tab"
 msgstr ""
 
-#: pane.cpp:720
+#: pane.cpp:723
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "C&ollapse All Threads"
@@ -1917,14 +1917,14 @@ msgctxt "@action:inmenu"
 msgid "Close All Other Tabs"
 msgstr "Dad-ehangu Po&b Edefyn"
 
-#: pane.cpp:725
+#: pane.cpp:728
 #, fuzzy, kde-format
 #| msgid "Last Search"
 msgctxt "@action:inmenu"
 msgid "Unlock Tab"
 msgstr "Chwiliad Diwethaf"
 
-#: pane.cpp:725
+#: pane.cpp:728
 #, fuzzy, kde-format
 #| msgid "Last Search"
 msgctxt "@action:inmenu"
