@@ -51,7 +51,6 @@ public:
             downloadLocalDatabaseThread->wait();
             delete downloadLocalDatabaseThread;
         }
-        saveConfig();
     }
 
     void initialize()
