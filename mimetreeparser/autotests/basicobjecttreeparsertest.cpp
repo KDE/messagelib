@@ -238,6 +238,44 @@ void ObjectTreeParserTest::testOpenPGPEncrypted()
     QCOMPARE(unencryptedMessage->contents().size(), 0);
 }
 
+template<typename T>
+T *findPart(MessagePart *parent)
+{
+    if (auto enc = qobject_cast<T *>(parent)) {
+        return enc;
+    }
+    const auto parts = parent->subParts();
+    for (const auto &part : parts) {
+        auto ret = findPart<T>(part.get());
+        if (ret) {
+            return ret;
+        }
+    }
+    return nullptr;
+}
+
+void ObjectTreeParserTest::testOpenPGPEncryptedSignedMutilated()
+{
+    // An E-Mail like the above, when sent via Outlook, or some versions of MS Exchange
+    // may be mangled in various ways. We still want to support reading it.
+    const auto msgs = QStringList{u"openpgp-encrypted-signed-outlook-mangled1.mbox"_s, u"openpgp-encrypted-signed-outlook-mangled2.mbox"_s};
+    for (const auto &msg : msgs) {
+        std::shared_ptr<KMime::Message> originalMessage = readAndParseMail(msg);
+
+        NodeHelper nodeHelper;
+        SimpleObjectTreeSource testSource;
+        ObjectTreeParser otp(&testSource, &nodeHelper);
+        testSource.setDecryptMessage(true);
+        otp.parseObjectTree(originalMessage.get());
+
+        // We don't want to assume too much about how this broken mail is
+        // rendered, best. It should contain the decrpyted text, though
+        const auto encrypted = findPart<EncryptedMessagePart>(otp.parsedPart().get());
+        const auto text = findPart<TextMessagePart>(encrypted);
+        QCOMPARE(text->content()->body().data(), "encrypted message text");
+    }
+}
+
 void ObjectTreeParserTest::testOpenPGPEncryptedNotDecrypted()
 {
     std::shared_ptr<KMime::Message> originalMessage = readAndParseMail(u"openpgp-encrypted.mbox"_s);

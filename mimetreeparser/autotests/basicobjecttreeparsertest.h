@@ -24,6 +24,7 @@ private Q_SLOTS:
     void testOpenPGPEncrypted();
     void testOpenPGPEncryptedNotDecrypted();
     void testOpenPGPEncryptedOverrideEncoding();
+    void testOpenPGPEncryptedSignedMutilated();
     void testAsync_data();
     void testAsync();
     void testHtmlContent_data();
