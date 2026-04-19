@@ -294,7 +294,7 @@ ecm_generate_export_header(KPim6MessageComposer
 target_link_libraries(
     KPim6MessageComposer
     PUBLIC
-        KPim6::Mime
+        KF6::Mime
         KPim6::MessageCore
         KPim6::PimCommonAkonadi
         KPim6::AkonadiCore

@@ -107,7 +107,7 @@ ecm_generate_export_header(KPim6TemplateParser
 target_link_libraries(
     KPim6TemplateParser
     PRIVATE
-        KPim6::Mime
+        KF6::Mime
         KPim6::MimeTreeParser
         KPim6::IdentityManagementCore
         KPim6::MessageCore

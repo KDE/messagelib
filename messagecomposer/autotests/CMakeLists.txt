@@ -18,7 +18,7 @@ macro(add_messagecomposer_test _source)
         LINK_LIBRARIES
             KF6::I18n
             KPim6::MailTransport
-            KPim6::Mime
+            KF6::Mime
             KPim6::MessageComposer
             KPim6::MessageCore
             KPim6::TemplateParser
@@ -49,7 +49,7 @@ macro(add_messagecomposer_cryptotest _source)
     target_link_libraries(
         ${_name}
         KF6::I18n
-        KPim6::Mime
+        KF6::Mime
         KPim6::MessageComposer
         KPim6::MessageCore
         KPim6::Libkleo

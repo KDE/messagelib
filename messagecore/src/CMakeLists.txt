@@ -100,7 +100,7 @@ ecm_generate_export_header(KPim6MessageCore
 target_link_libraries(
     KPim6MessageCore
     PUBLIC
-        KPim6::Mime
+        KF6::Mime
     PRIVATE
         KF6::KIOCore
         KF6::Codecs

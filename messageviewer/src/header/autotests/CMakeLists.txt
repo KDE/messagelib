@@ -12,7 +12,7 @@ ecm_add_test(grantleeheaderstyletest.cpp grantleeheaderstyletest.h
         KPim6::GrantleeTheme
         KF6::IconThemes
         KPim6::MessageViewer
-        KPim6::Mime
+        KF6::Mime
         Qt::Test
 )
 
@@ -23,7 +23,7 @@ ecm_add_test(grantleeheaderformattertest.cpp grantleeheaderformattertest.h
         KPim6::GrantleeTheme
         KF6::IconThemes
         KPim6::MessageViewer
-        KPim6::Mime
+        KF6::Mime
         Qt::Test
 )
 

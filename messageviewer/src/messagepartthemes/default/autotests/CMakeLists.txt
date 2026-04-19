@@ -24,7 +24,7 @@ macro(add_messageviewer_crypto_unittest _source)
         KPim6::MessageViewer
         Qt::Test
         KF6::IconThemes
-        KPim6::Mime
+        KF6::Mime
         KPim6::GrantleeTheme
     )
     add_gpg_crypto_test(${_name} messageviewer-messagepartthemes-${_name})
@@ -46,12 +46,12 @@ add_messageviewer_crypto_unittest(unencryptedmessagetest.cpp)
 
 ecm_add_test(quotehtmltest.cpp setupenv.cpp ../plugins/quotehtml.cpp
     TEST_NAME quotehtmltest
-    LINK_LIBRARIES Qt::Test KPim6::MessageViewer KF6::IconThemes KPim6::Mime
+    LINK_LIBRARIES Qt::Test KPim6::MessageViewer KF6::IconThemes KF6::Mime
 )
 
 ecm_add_test(showonlymimeparttest.cpp setupenv.cpp util.cpp testcsshelper.cpp
     TEST_NAME showonlymimeparttest
-    LINK_LIBRARIES Qt::Test KPim6::MessageViewer KF6::IconThemes KPim6::Mime KPim6::GrantleeTheme
+    LINK_LIBRARIES Qt::Test KPim6::MessageViewer KF6::IconThemes KF6::Mime KPim6::GrantleeTheme
 )
 
 ecm_add_test(converthtmltoplaintexttest.cpp ../converthtmltoplaintext.cpp

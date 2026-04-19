@@ -9,7 +9,7 @@ target_sources(
 )
 target_link_libraries(
     viewertest_gui
-    KPim6::Mime
+    KF6::Mime
     KPim6::MessageViewer
     KPim6::GrantleeTheme
     KF6::I18n

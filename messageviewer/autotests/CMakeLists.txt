@@ -12,7 +12,7 @@ macro(add_messageviewer_unittest _source)
     get_filename_component(_name ${_source} NAME_WE)
     ecm_add_test(${_source} setupenv.cpp util.cpp ${_name}.h
         TEST_NAME ${_name}
-        LINK_LIBRARIES KPim6::MessageViewer KPim6::Libkleo QGpgmeQt6 Qt::Test KF6::KIOCore KPim6::Mime KPim6::AkonadiCore KF6::CalendarCore KPim6::WebEngineViewer
+        LINK_LIBRARIES KPim6::MessageViewer KPim6::Libkleo QGpgmeQt6 Qt::Test KF6::KIOCore KF6::Mime KPim6::AkonadiCore KF6::CalendarCore KPim6::WebEngineViewer
     )
 endmacro()
 
@@ -31,7 +31,7 @@ macro(add_messageviewer_mailsourceviewbrowserwidget_unittest _source)
     get_filename_component(_name ${_source} NAME_WE)
     ecm_add_test(${_source} ../src/widgets/mailsourceviewtextbrowserwidget.cpp ../src/findbar/findbarsourceview.cpp ${test_libmessageviewer_SRCS} ${_name}.h
         TEST_NAME ${_name}
-        LINK_LIBRARIES Qt::Test Qt::Gui Qt::Widgets KF6::KIOCore KPim6::Mime KPim6::AkonadiCore KF6::CalendarCore KPim6::PimTextEdit
+        LINK_LIBRARIES Qt::Test Qt::Gui Qt::Widgets KF6::KIOCore KF6::Mime KPim6::AkonadiCore KF6::CalendarCore KPim6::PimTextEdit
         KPim6::PimCommon KPim6::MessageViewer KPim6::WebEngineViewer KF6::SyntaxHighlighting KF6::TextAddonsWidgets
         KF6::I18n KF6::IconThemes
     )
@@ -45,4 +45,4 @@ add_messageviewer_mailsourceviewbrowserwidget_unittest( mailsourceviewtextbrowse
 
 add_akonadi_isolated_test_advanced(viewertest.cpp "" "KPim6::MessageViewer;KF6::XmlGui")
 add_akonadi_isolated_test_advanced(viewergrantleethemesupporttest.cpp "" "KPim6::MessageViewer;KF6::XmlGui")
-add_akonadi_isolated_test_advanced(urlhandlermanagertest.cpp "util.cpp" "KPim6::MessageViewer;KPim6::Libkleo;QGpgmeQt6;KF6::KIOCore;KPim6::Mime;KPim6::AkonadiCore;KF6::CalendarCore;KPim6::WebEngineViewer")
+add_akonadi_isolated_test_advanced(urlhandlermanagertest.cpp "util.cpp" "KPim6::MessageViewer;KPim6::Libkleo;QGpgmeQt6;KF6::KIOCore;KF6::Mime;KPim6::AkonadiCore;KF6::CalendarCore;KPim6::WebEngineViewer")

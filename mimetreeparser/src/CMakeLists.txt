@@ -188,7 +188,7 @@ target_link_libraries(
         KF6::I18n
         KF6::CoreAddons
         KPim6::Libkleo
-        KPim6::Mime
+        KF6::Mime
         Qt::Gui
         QGpgmeQt6
 )

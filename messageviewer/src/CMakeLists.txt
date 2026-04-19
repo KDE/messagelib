@@ -420,7 +420,7 @@ target_link_libraries(
         Qt::Network
         KPim6::WebEngineViewer
         KPim6::GrantleeTheme
-        KPim6::Mime
+        KF6::Mime
         KPim6::Mbox
         KPim6::PimTextEdit
         KPim6::Gravatar

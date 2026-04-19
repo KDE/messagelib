@@ -178,7 +178,7 @@ target_link_libraries(
     PUBLIC
         KPim6::AkonadiCore
         KPim6::AkonadiMime
-        KPim6::Mime
+        KF6::Mime
     PRIVATE
         KPim6::MessageCore
         KPim6::PimCommonAkonadi
