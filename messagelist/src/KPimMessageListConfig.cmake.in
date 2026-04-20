@@ -11,8 +11,8 @@ if(@KF6Mime_FOUND@)
     )
 else()
     find_dependency(
-        "@KMIME_LIB_VERSION@"
         KPim6Mime
+        "@KMIME_LIB_VERSION@"
     )
     if(NOT TARGET KF6::Mime)
         add_library(KF6::Mime ALIAS KPim6::Mime)
