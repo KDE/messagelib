@@ -14,7 +14,6 @@ using namespace Qt::Literals::StringLiterals;
 #include <gpgme++/verificationresult.h>
 
 #include <QPointer>
-#include <QString>
 
 #include "interfaces/bodypart.h"
 

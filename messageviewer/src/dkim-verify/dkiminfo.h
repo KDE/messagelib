@@ -8,7 +8,7 @@
 
 #include "messageviewer_export.h"
 #include <QMetaType>
-#include <QString>
+
 #include <QStringList>
 namespace MessageViewer
 {

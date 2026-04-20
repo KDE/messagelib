@@ -7,7 +7,7 @@
 #pragma once
 
 #include "templateparser_private_export.h"
-#include <QString>
+
 #include <QStringList>
 namespace TemplateParser
 {
