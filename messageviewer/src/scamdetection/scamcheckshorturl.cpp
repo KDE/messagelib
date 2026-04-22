@@ -6,7 +6,6 @@
 */
 
 #include "scamcheckshorturl.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "messageviewer_debug.h"
 #include "scamexpandurljob.h"
@@ -15,7 +14,9 @@ using namespace Qt::Literals::StringLiterals;
 
 #include <QJsonDocument>
 #include <QStandardPaths>
+#include <QUrl>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 QStringList ScamCheckShortUrl::sSupportedServices = QStringList();
 

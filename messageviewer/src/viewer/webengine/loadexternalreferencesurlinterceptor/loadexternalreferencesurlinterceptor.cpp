@@ -6,7 +6,7 @@
 
 #include "loadexternalreferencesurlinterceptor.h"
 #include "remote-content/remotecontentmanager.h"
-
+#include <QUrl>
 using namespace MessageViewer;
 
 LoadExternalReferencesUrlInterceptor::LoadExternalReferencesUrlInterceptor(QObject *parent)

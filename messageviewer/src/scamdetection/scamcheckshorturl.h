@@ -11,8 +11,7 @@
 
 #include <QObject>
 #include <QStringList>
-#include <QUrl>
-
+class QUrl;
 namespace MessageViewer
 {
 /*!

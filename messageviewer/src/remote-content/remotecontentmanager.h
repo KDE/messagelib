@@ -8,7 +8,7 @@
 
 #include "messageviewer_private_export.h"
 #include <QObject>
-#include <QUrl>
+class QUrl;
 namespace MessageViewer
 {
 class RemoteContentInfo;

@@ -17,7 +17,6 @@
 #include <KMime/Message>
 #include <MessageViewer/MDNWarningWidget>
 
-#include <QWidget>
 #include <memory>
 
 namespace Akonadi
