@@ -30,7 +30,6 @@
 #include <KXMLGUIFactory>
 #include <QIcon>
 #include <QMenu>
-#include <QUrl>
 
 #include "core/groupheaderitem.h"
 #include "tagmanager.h"

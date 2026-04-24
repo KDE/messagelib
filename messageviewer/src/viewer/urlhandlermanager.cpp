@@ -51,7 +51,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QMimeDatabase>
 #include <QProcess>
 #include <QStandardPaths>
-#include <QUrl>
+
 #include <QUrlQuery>
 
 #include <algorithm>
