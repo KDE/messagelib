@@ -16,7 +16,6 @@ using namespace Qt::Literals::StringLiterals;
 
 #include <KMime/Message>
 
-#include <KColorScheme>
 #include <KIconLoader>
 #include <KLocalizedString>
 #include <KTextTemplate/Engine>
@@ -339,7 +338,6 @@ public:
     KTextTemplate::Engine *const engine;
     QMap<QByteArray, QSharedPointer<HeaderFormatter>> headerFormatter;
     MessageViewer::HeaderStyleUtil headerStyleUtil;
-    QColor activeColor;
 
     int iconSize;
 };
@@ -472,13 +470,12 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath,
     QColor fontColor(Qt::white);
     QString linkColor = u"white"_s;
 
-    if (!d->activeColor.isValid()) {
-        d->activeColor = KColorScheme(QPalette::Active, KColorScheme::Selection).background().color();
-    }
-    QColor activeColorDark = d->activeColor.darker(130);
+    const QColor activeColor = qApp->palette().highlight().color();
+
+    QColor activeColorDark = activeColor.darker(130);
     // reverse colors for encapsulated
     if (!style->isTopLevel()) {
-        activeColorDark = d->activeColor.darker(50);
+        activeColorDark = activeColor.darker(50);
         fontColor = QColor(Qt::black);
         linkColor = u"black"_s;
     }
