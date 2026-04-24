@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-10 00:52+0000\n"
+"POT-Creation-Date: 2026-04-24 00:45+0000\n"
 "PO-Revision-Date: 2004-02-25 13:47+0000\n"
 "Last-Translator: KD at KGyfieithu <kyfieithu@dotmon.com>\n"
 "Language-Team: Cymraeg <cy@li.org>\n"
@@ -2476,7 +2476,7 @@ msgid_plural "%v pixels"
 msgstr[0] ""
 msgstr[1] ""
 
-#: widget.cpp:212
+#: widget.cpp:211
 #, fuzzy, kde-format
 #| msgctxt "Permissions"
 #| msgid "All"
@@ -2484,59 +2484,59 @@ msgctxt "Item in list of Akonadi tags, to show all e-mails"
 msgid "All"
 msgstr "Popeth"
 
-#: widget.cpp:349
+#: widget.cpp:348
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "C&ollapse All Threads"
 msgid "Collapse Group"
 msgstr "Dad-ehangu Po&b Edefyn"
 
-#: widget.cpp:352
+#: widget.cpp:351
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "Ex&pand All Threads"
 msgid "Expand Group"
 msgstr "Ehangu &Pob Edefyn"
 
-#: widget.cpp:358
+#: widget.cpp:357
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "Ex&pand All Threads"
 msgid "Expand All Groups"
 msgstr "Ehangu &Pob Edefyn"
 
-#: widget.cpp:361
+#: widget.cpp:360
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "C&ollapse All Threads"
 msgid "Collapse All Groups"
 msgstr "Dad-ehangu Po&b Edefyn"
 
-#: widget.cpp:365
+#: widget.cpp:364
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "Ex&pand All Threads"
 msgid "Expand All Threads"
 msgstr "Ehangu &Pob Edefyn"
 
-#: widget.cpp:367
+#: widget.cpp:366
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "C&ollapse All Threads"
 msgid "Collapse All Threads"
 msgstr "Dad-ehangu Po&b Edefyn"
 
-#: widget.cpp:426
+#: widget.cpp:425
 #, kde-format
 msgid "&Move Here"
 msgstr "&Symud Yma"
 
-#: widget.cpp:427
+#: widget.cpp:426
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Copïo Yma"
 
-#: widget.cpp:429
+#: widget.cpp:428
 #, kde-format
 msgid "C&ancel"
 msgstr "Didd&ymu"

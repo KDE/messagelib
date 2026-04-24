@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-10 00:52+0000\n"
+"POT-Creation-Date: 2026-04-24 00:45+0000\n"
 "PO-Revision-Date: 2012-01-28 16:30-0800\n"
 "Last-Translator: Fumiaki Okushi <okushi@kde.gr.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -2362,55 +2362,55 @@ msgid "%v pixel"
 msgid_plural "%v pixels"
 msgstr[0] " ピクセル"
 
-#: widget.cpp:212
+#: widget.cpp:211
 #, kde-format
 msgctxt "Item in list of Akonadi tags, to show all e-mails"
 msgid "All"
 msgstr ""
 
-#: widget.cpp:349
+#: widget.cpp:348
 #, kde-format
 msgid "Collapse Group"
 msgstr "グループをたたむ"
 
-#: widget.cpp:352
+#: widget.cpp:351
 #, kde-format
 msgid "Expand Group"
 msgstr "グループを展開"
 
-#: widget.cpp:358
+#: widget.cpp:357
 #, kde-format
 msgid "Expand All Groups"
 msgstr "すべてのグループを展開"
 
-#: widget.cpp:361
+#: widget.cpp:360
 #, kde-format
 msgid "Collapse All Groups"
 msgstr "すべてのグループをたたむ"
 
-#: widget.cpp:365
+#: widget.cpp:364
 #, fuzzy, kde-format
 #| msgid "Expand All Groups"
 msgid "Expand All Threads"
 msgstr "すべてのグループを展開"
 
-#: widget.cpp:367
+#: widget.cpp:366
 #, fuzzy, kde-format
 #| msgid "Collapse All Groups"
 msgid "Collapse All Threads"
 msgstr "すべてのグループをたたむ"
 
-#: widget.cpp:426
+#: widget.cpp:425
 #, kde-format
 msgid "&Move Here"
 msgstr "ここに移動(&M)"
 
-#: widget.cpp:427
+#: widget.cpp:426
 #, kde-format
 msgid "&Copy Here"
 msgstr "ここにコピー(&C)"
 
-#: widget.cpp:429
+#: widget.cpp:428
 #, kde-format
 msgid "C&ancel"
 msgstr "キャンセル(&A)"

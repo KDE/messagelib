@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-03 00:48+0000\n"
-"PO-Revision-Date: 2026-04-13 21:28+0300\n"
+"PO-Revision-Date: 2026-04-21 14:10+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -113,11 +113,11 @@ msgstr "ההודעה הזאת מוצפנת."
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:7
 msgid "Decrypt Message"
-msgstr "פענוח הודעה"
+msgstr "פיענוח הודעה"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:14
 msgid "Please wait while the message is being decrypted..."
-msgstr "נא להמתין לפענוח ההודעה הזאת…"
+msgstr "נא להמתין לפיענוח ההודעה הזאת…"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:18
 msgid "The message is encrypted for the following keys:"
@@ -164,7 +164,7 @@ msgstr "סיבה: "
 msgid ""
 "No secret key found to decrypt the message. The message is encrypted for the "
 "following keys:"
-msgstr "לא נמצא מפתח סודי לפענוח ההודעה הזאת. ההודעה מוצפנת למפתחות הבאים:"
+msgstr "לא נמצא מפתח סודי לפיענוח ההודעה הזאת. ההודעה מוצפנת למפתחות הבאים:"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:74
 msgid "Could not decrypt the data."
@@ -1202,7 +1202,7 @@ msgstr "יש להפעיל את האפשרות הזאת כדי להציג טקט�
 #: settings/messageviewer.kcfg:78
 #, kde-format
 msgid "Always decrypt messages when viewing or ask before decrypting"
-msgstr "תמיד לפענח הודעות בטרם הצגתן או לשאול לפני פענוח"
+msgstr "תמיד לפענח הודעות בטרם הצגתן או לשאול לפני פיענוח"
 
 #. i18n: ectx: label, entry (MimeTreeMode2), group (Reader)
 #: settings/messageviewer.kcfg:81
@@ -1785,7 +1785,7 @@ msgstr "חיבור החשבון לאינטרנט."
 #: viewer/urlhandlermanager.cpp:418
 #, kde-format
 msgid "Decrypt message."
-msgstr "פענוח הודעה."
+msgstr "פיענוח הודעה."
 
 #: viewer/urlhandlermanager.cpp:420
 #, kde-format
