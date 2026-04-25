@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-03 00:48+0000\n"
+"POT-Creation-Date: 2026-04-25 00:46+0000\n"
 "PO-Revision-Date: 2021-11-05 12:48+0100\n"
 "Last-Translator: Eduard Werner/Edward Wornar <edi.werner@gmx.de>\n"
 "Language-Team: <hsb@li.org>\n"
@@ -485,12 +485,12 @@ msgstr "Steji k dispoziciji"
 msgid "Domain:"
 msgstr "Domena:"
 
-#: dkim-verify/dkimrulewidget.cpp:43 header/grantleeheaderformatter.cpp:184
+#: dkim-verify/dkimrulewidget.cpp:43 header/grantleeheaderformatter.cpp:183
 #, kde-format
 msgid "List-Id:"
 msgstr ""
 
-#: dkim-verify/dkimrulewidget.cpp:47 header/grantleeheaderformatter.cpp:271
+#: dkim-verify/dkimrulewidget.cpp:47 header/grantleeheaderformatter.cpp:270
 #, kde-format
 msgid "From:"
 msgstr "Wot:"
@@ -714,88 +714,88 @@ msgstr ""
 msgid "Not Signed"
 msgstr "Njepodpisane"
 
-#: header/grantleeheaderformatter.cpp:204
+#: header/grantleeheaderformatter.cpp:203
 #, kde-format
 msgid "Subject:"
 msgstr "Tema:"
 
-#: header/grantleeheaderformatter.cpp:224
+#: header/grantleeheaderformatter.cpp:223
 #, kde-format
 msgid "Date:"
 msgstr "Datum:"
 
-#: header/grantleeheaderformatter.cpp:239
+#: header/grantleeheaderformatter.cpp:238
 #, fuzzy, kde-format
 msgid "Message-Id:"
 msgstr "Hłowny dźěl powěsće"
 
-#: header/grantleeheaderformatter.cpp:263
+#: header/grantleeheaderformatter.cpp:262
 #, kde-format
 msgid "To:"
 msgstr "Na:"
 
-#: header/grantleeheaderformatter.cpp:265
+#: header/grantleeheaderformatter.cpp:264
 #, kde-format
 msgid "Reply To:"
 msgstr "Wotmołwić na:"
 
-#: header/grantleeheaderformatter.cpp:267
+#: header/grantleeheaderformatter.cpp:266
 #, kde-format
 msgid "CC:"
 msgstr "Kopija na:"
 
-#: header/grantleeheaderformatter.cpp:269
+#: header/grantleeheaderformatter.cpp:268
 #, kde-format
 msgid "BCC:"
 msgstr "Slepa kopija na: "
 
-#: header/grantleeheaderformatter.cpp:273
+#: header/grantleeheaderformatter.cpp:272
 #, kde-format
 msgid "Sender:"
 msgstr "Wotpósłar:"
 
-#: header/grantleeheaderformatter.cpp:275
+#: header/grantleeheaderformatter.cpp:274
 #, kde-format
 msgid "resent from:"
 msgstr "zaso pósłane wot:"
 
-#: header/grantleeheaderformatter.cpp:277
+#: header/grantleeheaderformatter.cpp:276
 #, kde-format
 msgid "resent to:"
 msgstr "zaso pósłane na:"
 
-#: header/grantleeheaderformatter.cpp:358
+#: header/grantleeheaderformatter.cpp:356
 #, fuzzy, kde-format
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "Signatura je zestarjena."
 
-#: header/grantleeheaderformatter.cpp:448 header/headerstyle_util.cpp:82
+#: header/grantleeheaderformatter.cpp:446 header/headerstyle_util.cpp:82
 #: header/headerstyle_util.cpp:87 header/headerstyle_util.cpp:98
 #, kde-format
 msgid "No Subject"
 msgstr "Žana tema"
 
-#: header/grantleeheaderformatter.cpp:453
+#: header/grantleeheaderformatter.cpp:451
 #, kde-format
 msgid "Spam Status:"
 msgstr "Staw spama:"
 
-#: header/grantleeheaderformatter.cpp:465
+#: header/grantleeheaderformatter.cpp:463
 #, kde-format
 msgid "Printing mode"
 msgstr "Modus ćišćenja"
 
-#: header/grantleeheaderformatter.cpp:507
+#: header/grantleeheaderformatter.cpp:504
 #, kde-format
 msgid "[vcard]"
 msgstr "[wizitka]"
 
-#: header/grantleeheaderformatter.cpp:514
+#: header/grantleeheaderformatter.cpp:511
 #, kde-format
 msgid "Attachments:"
 msgstr "Přiwěški:"
 
-#: header/grantleeheaderformatter.cpp:540
+#: header/grantleeheaderformatter.cpp:537
 #, kde-format
 msgid "Security:"
 msgstr "Wěstosć:"
