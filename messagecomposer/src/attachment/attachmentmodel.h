@@ -11,11 +11,9 @@
 
 #include <QAbstractItemModel>
 
-#include <QUrl>
-
 #include <Akonadi/Item>
 #include <MessageCore/AttachmentPart>
-
+class QUrl;
 namespace MessageComposer
 {
 /*!

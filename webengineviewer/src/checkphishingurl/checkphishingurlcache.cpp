@@ -5,14 +5,15 @@
 */
 
 #include "checkphishingurlcache.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "checkphishingurlutil.h"
 #include "webengineviewer_debug.h"
 #include <KConfig>
 #include <KConfigGroup>
 #include <QMap>
+#include <QUrl>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace WebEngineViewer;
 
 struct UrlCacheInfo {

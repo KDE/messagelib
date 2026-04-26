@@ -8,9 +8,8 @@
 
 #include "webengineviewer_export.h"
 #include <QObject>
-#include <QUrl>
 #include <memory>
-
+class QUrl;
 namespace WebEngineViewer
 {
 class CheckPhishingUrlCachePrivate;

@@ -6,9 +6,9 @@
 #pragma once
 
 #include "webengineviewer_export.h"
-#include <QUrl>
 #include <QWebEngineUrlRequestInfo>
 #include <WebEngineViewer/NetworkPluginUrlInterceptorInterface>
+class QUrl;
 namespace WebEngineViewer
 {
 class WEBENGINEVIEWER_EXPORT BlockExternalResourcesUrlInterceptor : public WebEngineViewer::NetworkPluginUrlInterceptorInterface

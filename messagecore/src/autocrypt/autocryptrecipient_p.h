@@ -7,7 +7,6 @@
 #pragma once
 
 #include <QJsonDocument>
-using namespace Qt::Literals::StringLiterals;
 
 namespace MessageCore
 {

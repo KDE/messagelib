@@ -5,6 +5,7 @@
 */
 
 #include "blockexternalresourcesurlinterceptor.h"
+#include <QUrl>
 using namespace WebEngineViewer;
 
 BlockExternalResourcesUrlInterceptor::BlockExternalResourcesUrlInterceptor(QObject *parent)

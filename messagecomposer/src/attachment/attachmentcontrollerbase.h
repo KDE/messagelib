@@ -15,7 +15,6 @@
 #include "editorwatcher.h"
 
 #include <QObject>
-#include <QUrl>
 
 #include <KService>
 #include <MessageCore/AttachmentPart>
@@ -23,6 +22,7 @@
 class KActionCollection;
 class QAction;
 class KJob;
+class QUrl;
 namespace MessageComposer
 {
 class AttachmentModel;

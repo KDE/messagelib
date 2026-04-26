@@ -9,7 +9,6 @@
  */
 
 #include "attachmentcontrollerbase.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "MessageComposer/AttachmentClipBoardJob"
 #include "MessageComposer/AttachmentFromPublicKeyJob"
@@ -33,6 +32,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QMenu>
 #include <QPointer>
 #include <QTreeView>
+#include <QUrl>
 
 #include "messagecomposer_debug.h"
 #include <KActionCollection>
@@ -66,6 +66,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QActionGroup>
 #include <QFileDialog>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageComposer;
 using namespace MessageCore;
 

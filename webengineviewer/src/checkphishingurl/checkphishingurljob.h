@@ -10,7 +10,7 @@
 #include "webengineviewer_export.h"
 #include <QNetworkReply>
 #include <QObject>
-#include <QUrl>
+class QUrl;
 namespace WebEngineViewer
 {
 class CheckPhishingUrlJobPrivate;

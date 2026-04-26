@@ -5,7 +5,6 @@
 */
 
 #include "searchfullhashjob.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <PimCommon/NetworkManager>
 #include <QJsonDocument>
@@ -14,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <webengineviewer_debug.h>
 
 using namespace WebEngineViewer;
+using namespace Qt::Literals::StringLiterals;
 
 WEBENGINEVIEWER_EXPORT bool webengineview_useCompactJson_SearchFullHashJob = true;
 
