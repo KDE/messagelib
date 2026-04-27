@@ -19,10 +19,7 @@ DKIMManagerKey::DKIMManagerKey(QObject *parent)
     loadKeys();
 }
 
-DKIMManagerKey::~DKIMManagerKey()
-{
-    saveKeys();
-}
+DKIMManagerKey::~DKIMManagerKey() = default;
 
 DKIMManagerKey *DKIMManagerKey::self()
 {
@@ -61,16 +58,7 @@ void DKIMManagerKey::addKey(const KeyInfo &key)
         }
     }
     mKeys.append(key);
-}
-
-void DKIMManagerKey::removeKey(const QString &key)
-{
-    for (const KeyInfo &keyInfo : std::as_const(mKeys)) {
-        if (keyInfo.keyValue == key) {
-            mKeys.removeAll(keyInfo);
-            break;
-        }
-    }
+    saveKeys();
 }
 
 QList<KeyInfo> DKIMManagerKey::keys() const

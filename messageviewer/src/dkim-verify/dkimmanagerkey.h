@@ -71,9 +71,6 @@ public:
     /*!
      */
     void addKey(const KeyInfo &key);
-    /*!
-     */
-    void removeKey(const QString &key);
 
     /*!
      */
