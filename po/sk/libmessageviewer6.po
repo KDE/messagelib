@@ -198,9 +198,7 @@ msgstr "Koniec podpísanej správy"
 msgid ""
 "Stored DKIM key is different from the current one. Do you want to store this "
 "one too?"
-msgstr ""
-"Stored DKIM key is different from aktuálny one. Do chcete to store this one "
-"too?"
+msgstr "Uložený kľúč DKIM sa líši od aktuálneho. Chcete uložiť aj tento?"
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
 #, kde-format
@@ -2902,7 +2900,7 @@ msgstr "Predchádzajúca správa"
 #~ msgstr "Nasledujúci"
 
 #~ msgid "Jump to next match"
-#~ msgstr "Prejsť na ďaľšiu zhodu"
+#~ msgstr "Prejsť na ďalšiu zhodu"
 
 #~ msgctxt "Find and go to the previous search match"
 #~ msgid "Previous"
