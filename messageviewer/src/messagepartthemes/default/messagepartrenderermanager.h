@@ -34,6 +34,11 @@ class MESSAGEVIEWER_EXPORT MessagePartRendererManager : public QObject
     Q_OBJECT
 public:
     /*!
+     * Constructor
+     * \param parent the parent object
+     */
+    explicit MessagePartRendererManager(QObject *parent = nullptr);
+    /*!
      */
     ~MessagePartRendererManager() override;
     /*!
@@ -47,7 +52,6 @@ public:
     [[nodiscard]] KTextTemplate::Context createContext();
 
 private:
-    explicit MessagePartRendererManager(QObject *parent = nullptr);
     MESSAGEVIEWER_NO_EXPORT void initializeRenderer();
     GrantleeTheme::Engine *m_engine = nullptr;
     GlobalContext *const m_globalContext;

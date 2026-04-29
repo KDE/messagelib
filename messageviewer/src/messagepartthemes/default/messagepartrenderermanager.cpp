@@ -110,10 +110,11 @@ MessagePartRendererManager::~MessagePartRendererManager()
     delete m_engine;
 }
 
+Q_GLOBAL_STATIC(MessagePartRendererManager, s_self)
+
 MessagePartRendererManager *MessagePartRendererManager::self()
 {
-    static MessagePartRendererManager s_self;
-    return &s_self;
+    return s_self;
 }
 
 void MessagePartRendererManager::initializeRenderer()
