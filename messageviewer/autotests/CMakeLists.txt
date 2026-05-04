@@ -43,6 +43,15 @@ endmacro()
 add_messageviewer_mailsourceviewbrowserwidget_unittest( mailsourceviewtextbrowserwidgettest.cpp)
 ########### viewertest_gui ###############
 
-add_akonadi_isolated_test_advanced(viewertest.cpp "" "KPim6::MessageViewer;KF6::XmlGui")
-add_akonadi_isolated_test_advanced(viewergrantleethemesupporttest.cpp "" "KPim6::MessageViewer;KF6::XmlGui")
-add_akonadi_isolated_test_advanced(urlhandlermanagertest.cpp "util.cpp" "KPim6::MessageViewer;KPim6::Libkleo;QGpgmeQt6;KF6::KIOCore;KF6::Mime;KPim6::AkonadiCore;KF6::CalendarCore;KPim6::WebEngineViewer")
+add_akonadi_isolated_test(SOURCE viewertest.cpp LINK_LIBRARIES KPim6::MessageViewer KF6::XmlGui)
+add_akonadi_isolated_test(SOURCE viewergrantleethemesupporttest.cpp LINK_LIBRARIES KPim6::MessageViewer KF6::XmlGui)
+add_akonadi_isolated_test(SOURCE urlhandlermanagertest.cpp ADDITIONAL_SOURCES util.cpp LINK_LIBRARIES
+    KPim6::MessageViewer
+    KPim6::Libkleo
+    QGpgmeQt6
+    KF6::KIOCore
+    KF6::Mime
+    KPim6::AkonadiCore
+    KF6::CalendarCore
+    KPim6::WebEngineViewer
+)
