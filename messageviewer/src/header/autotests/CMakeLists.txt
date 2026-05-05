@@ -31,7 +31,7 @@ ecm_add_test(eaitest.cpp eaitest.h
     TEST_NAME eaitest
     LINK_LIBRARIES
         KPim6::MessageViewer
-        KPim6::Mime
+        KF6::Mime
         KF6::Codecs
         Qt::Test
 )
