@@ -15,7 +15,7 @@ Dependencies:
     'pim/kidentitymanagement': '@same'
     'pim/kmailtransport': '@same'
     'pim/kmbox': '@same'
-    'pim/kmime': '@same'
+    'frameworks/kmime': '@same'
     'pim/kpimtextedit': '@same'
     'pim/libgravatar': '@same'
     'pim/libkdepim': '@same'
