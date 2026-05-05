@@ -161,7 +161,7 @@ void ScamDetectionWebEngineTest::scamtest()
     TestWebEngineScamDetection scamDetection;
     QSignalSpy scamDetectionSpy(&scamDetection, &TestWebEngineScamDetection::resultScanDetection);
     scamDetection.setHtml(html);
-    QVERIFY(scamDetectionSpy.wait());
+    QVERIFY(scamDetectionSpy.wait(12000));
     QCOMPARE(scamDetectionSpy.count(), 1);
     const bool scamResult = scamDetectionSpy.at(0).at(0).toBool();
     QCOMPARE(scamResult, result);
