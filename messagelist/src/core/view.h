@@ -357,6 +357,13 @@ public:
 
 protected:
     /**
+     * Reimplemented to notify the message widget when the model is reset (e.g. last
+     * message in a folder deleted), since Qt clears the selection silently without
+     * emitting selectionChanged in that case.
+     */
+    void reset() override;
+
+    /**
      * Reimplemented in order to catch QHelpEvent
      */
     bool event(QEvent *e) override;

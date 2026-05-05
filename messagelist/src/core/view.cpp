@@ -1942,6 +1942,16 @@ void View::slotSelectionChanged(const QItemSelection &, const QItemSelection &)
     d->mWidget->viewSelectionChanged();
 }
 
+void View::reset()
+{
+    QTreeView::reset();
+    // After a model reset the selection model is cleared silently (no selectionChanged
+    // signal is emitted). Explicitly notify the widget so the message viewer is cleared
+    // when the last message in a folder is deleted. See also slotSelectionChanged().
+    d->mWidget->viewMessageSelected(nullptr);
+    d->mWidget->viewSelectionChanged();
+}
+
 void View::mouseDoubleClickEvent(QMouseEvent *e)
 {
     // Perform a hit test
