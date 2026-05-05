@@ -1,11 +1,11 @@
 /*
-  SPDX-FileCopyrightText: 2024-2026 Laurent Montel <montel@kde.org>
+SPDX-FileCopyrightText: 2024-2026 Laurent Montel <montel@kde.org>
 
-  SPDX-License-Identifier: GPL-2.0-or-later
+SPDX-License-Identifier: GPL-2.0-or-later
 */
 
 #include "searchlinecommandbuttonswidget.h"
-
+#include "messagelist_debug.h"
 #include "searchlinecommand.h"
 #include "searchlinecommandflowlayout.h"
 #include <KLocalizedString>
@@ -24,7 +24,11 @@ SearchLineCommandButtonsWidget::SearchLineCommandButtonsWidget(QWidget *parent)
     flowLayout->setHorizontalSpacing(0);
     flowLayout->setVerticalSpacing(0);
     const QList<SearchLineCommandButtonsWidget::ButtonInfo> buttonsList = fillCommandLineText();
-    Q_ASSERT(!buttonsList.isEmpty());
+
+    // Replace debug assert with release-safe check:
+    if (buttonsList.isEmpty()) {
+        qCWarning(MESSAGELIST_LOG) << "SearchLineCommandButtonsWidget: No buttons created";
+    }
     for (const auto &info : std::as_const(buttonsList)) {
         flowLayout->addWidget(createPushButton(info.i18n, info.identifier));
     }
