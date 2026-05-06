@@ -27,7 +27,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-24 00:45+0000\n"
+"POT-Creation-Date: 2026-05-06 00:47+0000\n"
 "PO-Revision-Date: 2026-04-03 14:22+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
@@ -1335,169 +1335,169 @@ msgstr "Le courriel contient une action."
 msgid "AND"
 msgstr "ET"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:49
+#: core/widgets/searchlinecommandbuttonswidget.cpp:53
 #, kde-format
 msgctxt "@action:button"
 msgid "Subject"
 msgstr "Objet"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:50
+#: core/widgets/searchlinecommandbuttonswidget.cpp:54
 #, kde-format
 msgctxt "@action:button"
 msgid "Body"
 msgstr "Corps"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:51
+#: core/widgets/searchlinecommandbuttonswidget.cpp:55
 #, kde-format
 msgctxt "@action:button"
 msgid "From"
 msgstr "De"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:52
+#: core/widgets/searchlinecommandbuttonswidget.cpp:56
 #, kde-format
 msgctxt "@action:button"
 msgid "To"
 msgstr "À"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:53
+#: core/widgets/searchlinecommandbuttonswidget.cpp:57
 #, kde-format
 msgctxt "@action:button"
 msgid "Cc"
 msgstr "CC"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:54
+#: core/widgets/searchlinecommandbuttonswidget.cpp:58
 #, kde-format
 msgctxt "@action:button"
 msgid "Bcc"
 msgstr "Bcc"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:55
+#: core/widgets/searchlinecommandbuttonswidget.cpp:59
 #, kde-format
 msgctxt "@action:button"
 msgid "Has Attachment"
 msgstr "Possède une pièce jointe"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:56
+#: core/widgets/searchlinecommandbuttonswidget.cpp:60
 #, kde-format
 msgctxt "@action:button"
 msgid "Has Invitation"
 msgstr "Contient une invitation."
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:57
+#: core/widgets/searchlinecommandbuttonswidget.cpp:61
 #, kde-format
 msgctxt "@action:button"
 msgid "Read"
 msgstr "Lu"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:58
+#: core/widgets/searchlinecommandbuttonswidget.cpp:62
 #, kde-format
 msgctxt "@action:button"
 msgid "Unread"
 msgstr "Non lu"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:59
+#: core/widgets/searchlinecommandbuttonswidget.cpp:63
 #, kde-format
 msgctxt "@action:button"
 msgid "Important"
 msgstr "Important"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:60
+#: core/widgets/searchlinecommandbuttonswidget.cpp:64
 #, kde-format
 msgctxt "@action:button"
 msgid "Ignored"
 msgstr "Ignoré"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:61
+#: core/widgets/searchlinecommandbuttonswidget.cpp:65
 #, kde-format
 msgctxt "@action:button"
 msgid "Ham"
 msgstr "Fan"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:62
+#: core/widgets/searchlinecommandbuttonswidget.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Spam"
 msgstr "Pourriel"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:63
+#: core/widgets/searchlinecommandbuttonswidget.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Watched"
 msgstr "Lu"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:64
+#: core/widgets/searchlinecommandbuttonswidget.cpp:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Replied"
 msgstr "Répondu"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:65
+#: core/widgets/searchlinecommandbuttonswidget.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "Forwarded"
 msgstr "Transféré"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:66
+#: core/widgets/searchlinecommandbuttonswidget.cpp:70
 #, kde-format
 msgctxt "@action:button"
 msgid "Encrypted"
 msgstr "Chiffré"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:67
+#: core/widgets/searchlinecommandbuttonswidget.cpp:71
 #, kde-format
 msgctxt "@action:button"
 msgid "Queued"
 msgstr "Mis en file d'attente"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:68
+#: core/widgets/searchlinecommandbuttonswidget.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Sent"
 msgstr "Envoyé"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:69
+#: core/widgets/searchlinecommandbuttonswidget.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Deleted"
 msgstr "Supprimé"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:70
+#: core/widgets/searchlinecommandbuttonswidget.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Action"
 msgstr "Action"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:71
+#: core/widgets/searchlinecommandbuttonswidget.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Category"
 msgstr "Catégorie"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:73
+#: core/widgets/searchlinecommandbuttonswidget.cpp:77
 #, kde-format
 msgctxt "@action:button"
 msgid "Smaller"
 msgstr "Plus petit"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:74
+#: core/widgets/searchlinecommandbuttonswidget.cpp:78
 #, kde-format
 msgctxt "@action:button"
 msgid "Larger"
 msgstr "Plus grand"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:75
+#: core/widgets/searchlinecommandbuttonswidget.cpp:79
 #, kde-format
 msgctxt "@action:button"
 msgid "Size"
 msgstr "Taille"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:76
+#: core/widgets/searchlinecommandbuttonswidget.cpp:80
 #, kde-format
 msgctxt "@action:button"
 msgid "Older"
 msgstr "Plus ancien"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:77
+#: core/widgets/searchlinecommandbuttonswidget.cpp:81
 #, kde-format
 msgctxt "@action:button"
 msgid "Newer"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-25 00:46+0000\n"
+"POT-Creation-Date: 2026-05-06 00:47+0000\n"
 "PO-Revision-Date: 2012-12-31 11:12+0700\n"
 "Last-Translator: sutha <sutha@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros>\n"
@@ -1903,7 +1903,7 @@ msgstr "បើក​នៅ​ក្នុង​សៀវភៅ​អាសយដ
 msgid "&Copy Email Address"
 msgstr "ចម្លង​អាសយដ្ឋាន​អ៊ីមែល​"
 
-#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2717
+#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2726
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "បាន​ចម្លង​អាសយដ្ឋាន​ទៅ​ក្ដារតម្បៀតខ្ទាស់ ។"
@@ -2327,17 +2327,17 @@ msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "សារ​ជា​អត្ថបទ​ធម្មតា"
 
-#: viewer/viewer_p.cpp:2723
+#: viewer/viewer_p.cpp:2732
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "បាន​ចម្លង URL ទៅ​ក្ដារតម្បៀតខ្ទាស់ ។"
 
-#: viewer/viewer_p.cpp:2885
+#: viewer/viewer_p.cpp:2894
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "បាន​បរាជ័យ​ផ្ទុក​សារ​ ៖​ %1 ។​"
 
-#: viewer/viewer_p.cpp:2890
+#: viewer/viewer_p.cpp:2899
 #, kde-format
 msgid "Message not found."
 msgstr "រក​មិន​ឃើញ​សារ​ ។"

@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-25 00:46+0000\n"
+"POT-Creation-Date: 2026-05-06 00:47+0000\n"
 "PO-Revision-Date: 2025-05-18 17:01+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -1877,7 +1877,7 @@ msgstr "In adresboek &openen"
 msgid "&Copy Email Address"
 msgstr "E-mailadres &kopiëren"
 
-#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2717
+#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2726
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Adres gekopieerd naar het klembord."
@@ -2288,17 +2288,17 @@ msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Bericht als platte tekst"
 
-#: viewer/viewer_p.cpp:2723
+#: viewer/viewer_p.cpp:2732
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL-adres gekopieerd naar het klembord."
 
-#: viewer/viewer_p.cpp:2885
+#: viewer/viewer_p.cpp:2894
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "Laden van bericht mislukt: %1."
 
-#: viewer/viewer_p.cpp:2890
+#: viewer/viewer_p.cpp:2899
 #, kde-format
 msgid "Message not found."
 msgstr "Bericht niet gevonden."

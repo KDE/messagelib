@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-25 00:46+0000\n"
+"POT-Creation-Date: 2026-05-06 00:47+0000\n"
 "PO-Revision-Date: 2021-01-14 15:48+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -1844,7 +1844,7 @@ msgstr "&Otvoriť v adresári"
 msgid "&Copy Email Address"
 msgstr "&Kopírovať e-mailovú adresu"
 
-#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2717
+#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2726
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Adresa skopírovaná do schránky."
@@ -2252,17 +2252,17 @@ msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Odoslať ako obyčajný text"
 
-#: viewer/viewer_p.cpp:2723
+#: viewer/viewer_p.cpp:2732
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL skopírované do schránky."
 
-#: viewer/viewer_p.cpp:2885
+#: viewer/viewer_p.cpp:2894
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "Načítanie správy zlyhalo: %1."
 
-#: viewer/viewer_p.cpp:2890
+#: viewer/viewer_p.cpp:2899
 #, kde-format
 msgid "Message not found."
 msgstr "Správa sa nenašla."

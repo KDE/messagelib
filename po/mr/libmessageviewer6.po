@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-25 00:46+0000\n"
+"POT-Creation-Date: 2026-05-06 00:47+0000\n"
 "PO-Revision-Date: 2013-04-12 15:14+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -1839,7 +1839,7 @@ msgstr "लिंकच्या पत्त्याची प्रत कर
 msgid "&Copy Email Address"
 msgstr "इमेल पत्त्याची प्रत करा (&C)"
 
-#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2717
+#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2726
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr ""
@@ -2269,17 +2269,17 @@ msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2723
+#: viewer/viewer_p.cpp:2732
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr ""
 
-#: viewer/viewer_p.cpp:2885
+#: viewer/viewer_p.cpp:2894
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr ""
 
-#: viewer/viewer_p.cpp:2890
+#: viewer/viewer_p.cpp:2899
 #, kde-format
 msgid "Message not found."
 msgstr ""

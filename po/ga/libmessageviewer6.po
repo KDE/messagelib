@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim/kmail.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-25 00:46+0000\n"
+"POT-Creation-Date: 2026-05-06 00:47+0000\n"
 "PO-Revision-Date: 2004-12-03 14:52-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -1774,7 +1774,7 @@ msgstr "&Oscail sa Leabhar Seoltaí"
 msgid "&Copy Email Address"
 msgstr "&Cóipeáil an Seoladh Ríomhphoist"
 
-#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2717
+#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2726
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Cóipeáladh an seoladh go dtí an ghearrthaisce."
@@ -2179,17 +2179,17 @@ msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2723
+#: viewer/viewer_p.cpp:2732
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "Cóipeáladh an URL go dtí an ghearrthaisce."
 
-#: viewer/viewer_p.cpp:2885
+#: viewer/viewer_p.cpp:2894
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr ""
 
-#: viewer/viewer_p.cpp:2890
+#: viewer/viewer_p.cpp:2899
 #, kde-format
 msgid "Message not found."
 msgstr "Teachtaireacht gan aimsiú."
