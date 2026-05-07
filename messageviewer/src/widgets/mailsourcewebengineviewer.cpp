@@ -5,13 +5,9 @@
 */
 
 #include "mailsourcewebengineviewer.h"
-using namespace Qt::Literals::StringLiterals;
-
-using namespace MessageViewer;
 
 #include "mailsourceviewtextbrowserwidget.h"
 #include "messageviewer/messageviewerutil.h"
-// #include <TextAddonsWidgets/SlideContainer>
 
 #include <KSyntaxHighlighting/Definition>
 #include <KSyntaxHighlighting/SyntaxHighlighter>
@@ -31,6 +27,7 @@ using namespace MessageViewer;
 #include <QPushButton>
 #include <QWebEnginePage>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 namespace
 {
