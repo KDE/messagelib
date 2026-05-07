@@ -51,7 +51,9 @@ void OpenUrlWithManager::loadUserSettings()
     mOpenWithUrlInfo.reserve(nbElement);
     for (int i = 0; i < nbElement; ++i) {
         OpenWithUrlInfo info;
-        info.setCommand(commands.at(i));
+        if (i < commands.count()) {
+            info.setCommand(commands.at(i));
+        }
         info.setUrl(openWithUrls.at(i));
         if (i < commandLines.count()) {
             info.setCommandLine(commandLines.at(i));
