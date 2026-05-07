@@ -1947,7 +1947,7 @@ void ViewerPrivate::slotUrlOpen(const QUrl &url)
     if (!url.isEmpty()) {
         mClickedUrl = url;
     }
-    const OpenWithUrlInfo openWithInfo = OpenUrlWithManager::self()->openWith(url);
+    const OpenWithUrlInfo openWithInfo = OpenUrlWithManager::self()->openWith(mClickedUrl);
     if (openWithInfo.isValid()) {
         auto job = new OpenUrlWithJob(this);
         job->setInfo(openWithInfo);
