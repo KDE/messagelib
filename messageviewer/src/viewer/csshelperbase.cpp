@@ -322,7 +322,7 @@ QString CSSHelperBase::printCssDefinitions(const HtmlHeadSettings &htmlHeadSetti
               "div.senderpic{\n"
               "  font-size:0.8em ! important;\n"
               "  border:1px solid black ! important;\n"
-              "  background-color:%2 ! important;\n"
+              "  background-color:#ffffff ! important;\n"
               "}\n\n"
 
               "div.senderstatus{\n"
