@@ -75,18 +75,17 @@ void ScamDetectionWebEngine::scanPage(QWebEnginePage *page)
 
 void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
 {
-    bool foundScam = false;
-
     d->mDetails.clear();
     const QVariantList resultList = result.toList();
     if (resultList.count() != 1) {
-        Q_EMIT resultScanDetection(foundScam);
+        Q_EMIT resultScanDetection(false);
         return;
     }
-    static const QRegularExpression ip4regExp(u"\\b[0-9]{1,3}\\.[0-9]{1,3}(?:\\.[0-9]{0,3})?(?:\\.[0-9]{0,3})?"_s);
+    static const QRegularExpression ip4regExp(u"\\b[0-9]{1,3}\\.[0-9]{1,3}(?:\\.[0-9]{1,3})?(?:\\.[0-9]{1,3})?"_s);
     const QVariantMap mapResult = resultList.at(0).toMap();
     const QList<QVariant> lst = mapResult.value(u"anchors"_s).toList();
     for (const QVariant &var : lst) {
+        bool foundScam = false;
         QMap<QString, QVariant> mapVariant = var.toMap();
         // qDebug()<<" mapVariant"<<mapVariant;
 
@@ -234,14 +233,14 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
     if (mapResult.value(u"forms"_s).toInt() > 0) {
         d->mDetails +=
             QLatin1StringView("<li></b>") + i18n("Message contains form element. This is often the case in scam emails.") + QLatin1StringView("</b></li>");
-        foundScam = true;
     }
-    if (foundScam) {
+    const bool hasSomeScam = !d->mDetails.isEmpty();
+    if (hasSomeScam) {
         d->mDetails.prepend(QLatin1StringView("<b>") + i18n("Details:") + QLatin1StringView("</b><ul>"));
         d->mDetails += QLatin1StringView("</ul>");
         Q_EMIT messageMayBeAScam();
     }
-    Q_EMIT resultScanDetection(foundScam);
+    Q_EMIT resultScanDetection(hasSomeScam);
 }
 
 void ScamDetectionWebEngine::showDetails()
