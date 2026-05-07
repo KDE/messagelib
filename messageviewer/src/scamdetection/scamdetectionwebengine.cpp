@@ -43,7 +43,7 @@ static InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFunction)(Ar
 
 static QString addWarningColor(const QString &url)
 {
-    const QString error = u"<font color=#FF0000>%1</font>"_s.arg(url);
+    const QString error = u"<font color=#FF0000>%1</font>"_s.arg(url.toHtmlEscaped());
     return error;
 }
 
