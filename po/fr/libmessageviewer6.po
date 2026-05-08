@@ -29,7 +29,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-06 00:47+0000\n"
+"POT-Creation-Date: 2026-05-08 00:45+0000\n"
 "PO-Revision-Date: 2026-01-03 18:02+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
@@ -1039,8 +1039,8 @@ msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "Désactiver la détection de l'aspect frauduleux pour tous les messages"
 
-#: scamdetection/scamdetectionwebengine.cpp:118
-#: scamdetection/scamdetectionwebengine.cpp:217
+#: scamdetection/scamdetectionwebengine.cpp:117
+#: scamdetection/scamdetectionwebengine.cpp:216
 #, kde-format
 msgid ""
 "This email contains a link which reads as '%1' in the text, but actually "
@@ -1051,7 +1051,7 @@ msgstr ""
 "texte, mais qui en réalité pointe vers « %2 ». C'est souvent le cas dans les "
 "messages frauduleux pour tromper l'utilisateur"
 
-#: scamdetection/scamdetectionwebengine.cpp:131
+#: scamdetection/scamdetectionwebengine.cpp:130
 #, kde-format
 msgid ""
 "This email contains a link which points to a numerical IP address (%1) "
@@ -1062,7 +1062,7 @@ msgstr ""
 "numérique (%1), plutôt qu'une adresse de site web textuelle typique. C'est "
 "souvent le cas dans les messages frauduleux."
 
-#: scamdetection/scamdetectionwebengine.cpp:138
+#: scamdetection/scamdetectionwebengine.cpp:137
 #, kde-format
 msgid ""
 "This email contains a link which points to a hexadecimal IP address (%1) "
@@ -1073,12 +1073,12 @@ msgstr ""
 "hexadécimale (%1), plutôt qu'une adresse de site web textuelle typique. "
 "C'est souvent le cas dans les messages frauduleux."
 
-#: scamdetection/scamdetectionwebengine.cpp:144
+#: scamdetection/scamdetectionwebengine.cpp:143
 #, kde-format
 msgid "This email contains a link (%1) which has a redirection"
 msgstr "Ce courrier électronique contient un lien (%1) qui est redirigé"
 
-#: scamdetection/scamdetectionwebengine.cpp:150
+#: scamdetection/scamdetectionwebengine.cpp:149
 #, kde-format
 msgid ""
 "This email contains a link (%1) which contains multiple http://. This is "
@@ -1087,21 +1087,21 @@ msgstr ""
 "Ce courrier électronique contient un lien (%1) qui contient plusieurs "
 "http://. C'est souvent le cas dans les messages frauduleux."
 
-#: scamdetection/scamdetectionwebengine.cpp:161
+#: scamdetection/scamdetectionwebengine.cpp:160
 #, kde-format
 msgid "This email contains a shorturl (%1). It can redirect to another server."
 msgstr ""
 "Ce courrier électronique contient une URL courte (%1). Elle peut rediriger "
 "vers un autre serveur."
 
-#: scamdetection/scamdetectionwebengine.cpp:236
+#: scamdetection/scamdetectionwebengine.cpp:235
 #, kde-format
 msgid "Message contains form element. This is often the case in scam emails."
 msgstr ""
 "Ce courrier électronique contient un élément de formulaire. C'est souvent le "
 "cas dans les messages frauduleux."
 
-#: scamdetection/scamdetectionwebengine.cpp:240
+#: scamdetection/scamdetectionwebengine.cpp:239
 #, kde-format
 msgid "Details:"
 msgstr "Détails :"
@@ -2431,26 +2431,26 @@ msgstr ""
 msgid "Speak Text"
 msgstr "Énoncer le texte"
 
-#: widgets/mailsourcewebengineviewer.cpp:53
+#: widgets/mailsourcewebengineviewer.cpp:50
 #, kde-format
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
 msgstr "Source brute"
 
-#: widgets/mailsourcewebengineviewer.cpp:54
+#: widgets/mailsourcewebengineviewer.cpp:51
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr ""
 "Message brut et non modifié tel qu'il est enregistré sur le système de "
 "fichiers ou le serveur"
 
-#: widgets/mailsourcewebengineviewer.cpp:57
+#: widgets/mailsourcewebengineviewer.cpp:54
 #, kde-format
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
 msgstr "Source HTML"
 
-#: widgets/mailsourcewebengineviewer.cpp:58
+#: widgets/mailsourcewebengineviewer.cpp:55
 #, kde-format
 msgid "HTML code for displaying the message to the user"
 msgstr "Code HTML pour afficher le message à l'utilisateur"

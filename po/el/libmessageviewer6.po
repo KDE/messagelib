@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-06 00:47+0000\n"
+"POT-Creation-Date: 2026-05-08 00:45+0000\n"
 "PO-Revision-Date: 2024-09-19 17:23+0300\n"
 "Last-Translator: Antonis Geralis <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -1095,8 +1095,8 @@ msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "Απενεργοποίηση εντοπισμού εξαπάτησης"
 
-#: scamdetection/scamdetectionwebengine.cpp:118
-#: scamdetection/scamdetectionwebengine.cpp:217
+#: scamdetection/scamdetectionwebengine.cpp:117
+#: scamdetection/scamdetectionwebengine.cpp:216
 #, kde-format
 msgid ""
 "This email contains a link which reads as '%1' in the text, but actually "
@@ -1107,7 +1107,7 @@ msgstr ""
 "στην πραγματικότητα υποδεικνύει στο «%2». Αυτό συμβαίνει συχνά σε μηνύματα "
 "εξαπάτησης με σκοπό την παραπλάνηση του παραλήπτη "
 
-#: scamdetection/scamdetectionwebengine.cpp:131
+#: scamdetection/scamdetectionwebengine.cpp:130
 #, kde-format
 msgid ""
 "This email contains a link which points to a numerical IP address (%1) "
@@ -1118,7 +1118,7 @@ msgstr ""
 "διεύθυνση IP (%1) αντί μιας τυπικής διεύθυνσης ιστοσελίδας ως κείμενο. Αυτό "
 "συμβαίνει συχνά σε μηνύματα εξαπάτησης."
 
-#: scamdetection/scamdetectionwebengine.cpp:138
+#: scamdetection/scamdetectionwebengine.cpp:137
 #, kde-format
 msgid ""
 "This email contains a link which points to a hexadecimal IP address (%1) "
@@ -1129,12 +1129,12 @@ msgstr ""
 "διεύθυνση IP (%1) αντί μιας τυπικής διεύθυνσης ιστοσελίδας κειμένου. Αυτό "
 "συμβαίνει συχνά σε μηνύματα εξαπάτησης."
 
-#: scamdetection/scamdetectionwebengine.cpp:144
+#: scamdetection/scamdetectionwebengine.cpp:143
 #, kde-format
 msgid "This email contains a link (%1) which has a redirection"
 msgstr "Αυτό το μήνυμα περιέχει ένα δεσμό (%1) ο οποίος έχει μια ανακατεύθυνση"
 
-#: scamdetection/scamdetectionwebengine.cpp:150
+#: scamdetection/scamdetectionwebengine.cpp:149
 #, kde-format
 msgid ""
 "This email contains a link (%1) which contains multiple http://. This is "
@@ -1143,21 +1143,21 @@ msgstr ""
 "Αυτό το μήνυμα περιέχει ένα δεσμό (%1) ο οποίος περιέχει πολλαπλά http://. "
 "Αυτό συμβαίνει συχνά σε μηνύματα εξαπάτησης."
 
-#: scamdetection/scamdetectionwebengine.cpp:161
+#: scamdetection/scamdetectionwebengine.cpp:160
 #, kde-format
 msgid "This email contains a shorturl (%1). It can redirect to another server."
 msgstr ""
 "Αυτό το μήνυμα περιέχει μια συντόμευση (%1). Μπορεί να ανακατευθύνει σε "
 "άλλον εξυπηρετητή."
 
-#: scamdetection/scamdetectionwebengine.cpp:236
+#: scamdetection/scamdetectionwebengine.cpp:235
 #, kde-format
 msgid "Message contains form element. This is often the case in scam emails."
 msgstr ""
 "Το μήνυμα περιέχει αντικείμενο φόρμας. Αυτό συμβαίνει συχνά σε μηνύματα "
 "εξαπάτησης."
 
-#: scamdetection/scamdetectionwebengine.cpp:240
+#: scamdetection/scamdetectionwebengine.cpp:239
 #, kde-format
 msgid "Details:"
 msgstr "Λεπτομέρειες:"
@@ -2511,26 +2511,26 @@ msgstr ""
 msgid "Speak Text"
 msgstr "Εκφώνηση κειμένου"
 
-#: widgets/mailsourcewebengineviewer.cpp:53
+#: widgets/mailsourcewebengineviewer.cpp:50
 #, kde-format
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
 msgstr "Ακατέργαστη πηγή"
 
-#: widgets/mailsourcewebengineviewer.cpp:54
+#: widgets/mailsourcewebengineviewer.cpp:51
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr ""
 "Ακατέργαστο, χωρίς τροποποίηση μήνυμα αφού αποθηκεύεται στο σύστημα αρχείων "
 "ή στον εξυπηρετητή"
 
-#: widgets/mailsourcewebengineviewer.cpp:57
+#: widgets/mailsourcewebengineviewer.cpp:54
 #, kde-format
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
 msgstr "Πηγή HTML"
 
-#: widgets/mailsourcewebengineviewer.cpp:58
+#: widgets/mailsourcewebengineviewer.cpp:55
 #, kde-format
 msgid "HTML code for displaying the message to the user"
 msgstr "Εμφάνιση του μηνύματος στον χρήστη σε HTML κώδικα"

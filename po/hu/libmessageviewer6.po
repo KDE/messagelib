@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-06 00:47+0000\n"
+"POT-Creation-Date: 2026-05-08 00:45+0000\n"
 "PO-Revision-Date: 2025-07-08 22:12+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -1007,8 +1007,8 @@ msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "Becsapásészlelés letiltása minden levélnél"
 
-#: scamdetection/scamdetectionwebengine.cpp:118
-#: scamdetection/scamdetectionwebengine.cpp:217
+#: scamdetection/scamdetectionwebengine.cpp:117
+#: scamdetection/scamdetectionwebengine.cpp:216
 #, kde-format
 msgid ""
 "This email contains a link which reads as '%1' in the text, but actually "
@@ -1019,7 +1019,7 @@ msgstr ""
 "ide mutat: „%2”. Ez gyakran becsapós leveleknél fordul elő, hogy "
 "félrevezessék a címzettet."
 
-#: scamdetection/scamdetectionwebengine.cpp:131
+#: scamdetection/scamdetectionwebengine.cpp:130
 #, kde-format
 msgid ""
 "This email contains a link which points to a numerical IP address (%1) "
@@ -1030,7 +1030,7 @@ msgstr ""
 "címre mutat (%1) a tipikus szöveges weboldalcím helyett. Ez gyakran becsapós "
 "leveleknél fordul elő."
 
-#: scamdetection/scamdetectionwebengine.cpp:138
+#: scamdetection/scamdetectionwebengine.cpp:137
 #, kde-format
 msgid ""
 "This email contains a link which points to a hexadecimal IP address (%1) "
@@ -1041,12 +1041,12 @@ msgstr ""
 "mutat (%1) a tipikus szöveges weboldalcím helyett. Ez gyakran becsapós "
 "leveleknél fordul elő."
 
-#: scamdetection/scamdetectionwebengine.cpp:144
+#: scamdetection/scamdetectionwebengine.cpp:143
 #, kde-format
 msgid "This email contains a link (%1) which has a redirection"
 msgstr "Ez a levél olyan hivatkozást (%1) tartalmaz, amelynek átirányítása van"
 
-#: scamdetection/scamdetectionwebengine.cpp:150
+#: scamdetection/scamdetectionwebengine.cpp:149
 #, kde-format
 msgid ""
 "This email contains a link (%1) which contains multiple http://. This is "
@@ -1055,20 +1055,20 @@ msgstr ""
 "Ez a levél olyan hivatkozást tartalmaz (%1), amely több http:// előtaggal "
 "rendelkezik. Ez gyakran becsapós leveleknél fordul elő."
 
-#: scamdetection/scamdetectionwebengine.cpp:161
+#: scamdetection/scamdetectionwebengine.cpp:160
 #, kde-format
 msgid "This email contains a shorturl (%1). It can redirect to another server."
 msgstr ""
 "Ez a levél rövidített hivatkozást (%1) tartalmaz. Ez átirányíthatja egy "
 "másik kiszolgálóra."
 
-#: scamdetection/scamdetectionwebengine.cpp:236
+#: scamdetection/scamdetectionwebengine.cpp:235
 #, kde-format
 msgid "Message contains form element. This is often the case in scam emails."
 msgstr ""
 "Az levél űrlapelemeket tartalmaz. Ez gyakran becsapós leveleknél fordul elő."
 
-#: scamdetection/scamdetectionwebengine.cpp:240
+#: scamdetection/scamdetectionwebengine.cpp:239
 #, kde-format
 msgid "Details:"
 msgstr "Részletek:"
@@ -2379,26 +2379,26 @@ msgstr ""
 msgid "Speak Text"
 msgstr "Szöveg felolvasása"
 
-#: widgets/mailsourcewebengineviewer.cpp:53
+#: widgets/mailsourcewebengineviewer.cpp:50
 #, kde-format
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
 msgstr "Nyers forrás"
 
-#: widgets/mailsourcewebengineviewer.cpp:54
+#: widgets/mailsourcewebengineviewer.cpp:51
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr ""
 "Nyers, nem módosított levelezés, ahogyan azt a fájlrendszer vagy a "
 "kiszolgáló tárolja"
 
-#: widgets/mailsourcewebengineviewer.cpp:57
+#: widgets/mailsourcewebengineviewer.cpp:54
 #, kde-format
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
 msgstr "HTML-forrás"
 
-#: widgets/mailsourcewebengineviewer.cpp:58
+#: widgets/mailsourcewebengineviewer.cpp:55
 #, kde-format
 msgid "HTML code for displaying the message to the user"
 msgstr "HTML-forrás az üzenet felhasználó előtti megjelenítéséhez"

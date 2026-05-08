@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-06 00:47+0000\n"
+"POT-Creation-Date: 2026-05-08 00:45+0000\n"
 "PO-Revision-Date: 2025-05-22 18:11+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -1032,8 +1032,8 @@ msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "Отключить обнаружение вредоносных писем"
 
-#: scamdetection/scamdetectionwebengine.cpp:118
-#: scamdetection/scamdetectionwebengine.cpp:217
+#: scamdetection/scamdetectionwebengine.cpp:117
+#: scamdetection/scamdetectionwebengine.cpp:216
 #, kde-format
 msgid ""
 "This email contains a link which reads as '%1' in the text, but actually "
@@ -1044,7 +1044,7 @@ msgstr ""
 "указывает на «%2». Таким приёмом часто пользуются злоумышленники, чтобы "
 "ввести получателя в заблуждение."
 
-#: scamdetection/scamdetectionwebengine.cpp:131
+#: scamdetection/scamdetectionwebengine.cpp:130
 #, kde-format
 msgid ""
 "This email contains a link which points to a numerical IP address (%1) "
@@ -1054,7 +1054,7 @@ msgstr ""
 "Письмо содержит ссылку на числовой IP-адрес (%1), а не на обычный адрес "
 "сайта. Это часто встречается во вредных письмах."
 
-#: scamdetection/scamdetectionwebengine.cpp:138
+#: scamdetection/scamdetectionwebengine.cpp:137
 #, kde-format
 msgid ""
 "This email contains a link which points to a hexadecimal IP address (%1) "
@@ -1064,12 +1064,12 @@ msgstr ""
 "Письмо содержит ссылку на шестнадцатеричный IP-адрес (%1), а не на обычный "
 "адрес сайта. Это часто встречается во вредных письмах."
 
-#: scamdetection/scamdetectionwebengine.cpp:144
+#: scamdetection/scamdetectionwebengine.cpp:143
 #, kde-format
 msgid "This email contains a link (%1) which has a redirection"
 msgstr "Письмо содержит ссылку (%1) с перенаправлением"
 
-#: scamdetection/scamdetectionwebengine.cpp:150
+#: scamdetection/scamdetectionwebengine.cpp:149
 #, kde-format
 msgid ""
 "This email contains a link (%1) which contains multiple http://. This is "
@@ -1078,20 +1078,20 @@ msgstr ""
 "Письмо содержит ссылку (%1) с несколькими префиксами http://. Это часто "
 "встречается во вредных письмах."
 
-#: scamdetection/scamdetectionwebengine.cpp:161
+#: scamdetection/scamdetectionwebengine.cpp:160
 #, kde-format
 msgid "This email contains a shorturl (%1). It can redirect to another server."
 msgstr ""
 "Письмо содержит короткую ссылку (%1). Она может перенаправлять на другой "
 "сайт."
 
-#: scamdetection/scamdetectionwebengine.cpp:236
+#: scamdetection/scamdetectionwebengine.cpp:235
 #, kde-format
 msgid "Message contains form element. This is often the case in scam emails."
 msgstr ""
 "Письмо содержит в себе форму. Это часто встречается во вредных письмах."
 
-#: scamdetection/scamdetectionwebengine.cpp:240
+#: scamdetection/scamdetectionwebengine.cpp:239
 #, kde-format
 msgid "Details:"
 msgstr "Подробности:"
@@ -2392,26 +2392,26 @@ msgstr ""
 msgid "Speak Text"
 msgstr "Зачитать текст"
 
-#: widgets/mailsourcewebengineviewer.cpp:53
+#: widgets/mailsourcewebengineviewer.cpp:50
 #, kde-format
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
 msgstr "Необработанный источник"
 
-#: widgets/mailsourcewebengineviewer.cpp:54
+#: widgets/mailsourcewebengineviewer.cpp:51
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr ""
 "Необработанные и неизменённые письма, такие, как это, хранятся в файловой "
 "системе или на сервере"
 
-#: widgets/mailsourcewebengineviewer.cpp:57
+#: widgets/mailsourcewebengineviewer.cpp:54
 #, kde-format
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
 msgstr "Исходный код HTML"
 
-#: widgets/mailsourcewebengineviewer.cpp:58
+#: widgets/mailsourcewebengineviewer.cpp:55
 #, kde-format
 msgid "HTML code for displaying the message to the user"
 msgstr "HTML код для отображения письма пользователю"

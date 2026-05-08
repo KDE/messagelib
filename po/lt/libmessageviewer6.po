@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-06 00:47+0000\n"
+"POT-Creation-Date: 2026-05-08 00:45+0000\n"
 "PO-Revision-Date: 2020-02-06 14:01+0200\n"
 "Last-Translator: tomas.straupis <tomasstraupis@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -1060,8 +1060,8 @@ msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "Išjungti sukčiavimo aptikimą visiems laiškams"
 
-#: scamdetection/scamdetectionwebengine.cpp:118
-#: scamdetection/scamdetectionwebengine.cpp:217
+#: scamdetection/scamdetectionwebengine.cpp:117
+#: scamdetection/scamdetectionwebengine.cpp:216
 #, kde-format
 msgid ""
 "This email contains a link which reads as '%1' in the text, but actually "
@@ -1071,7 +1071,7 @@ msgstr ""
 "Šiame laiške yra nuoroda, kuri tekste skaitoma kaip „%1“, bet iš tikrųjų "
 "rodo į „%2“. Taip dažnai daroma sukčiavimo laiškuose, bandant apgauti gavėją"
 
-#: scamdetection/scamdetectionwebengine.cpp:131
+#: scamdetection/scamdetectionwebengine.cpp:130
 #, kde-format
 msgid ""
 "This email contains a link which points to a numerical IP address (%1) "
@@ -1081,7 +1081,7 @@ msgstr ""
 "Šiame laiške yra nuoroda, kuri rodo į skaitmeninį IP adresą (%1) vietoje "
 "įprasto svetainės adreso. Taip dažnai daroma sukčiavimo laiškuose."
 
-#: scamdetection/scamdetectionwebengine.cpp:138
+#: scamdetection/scamdetectionwebengine.cpp:137
 #, kde-format
 msgid ""
 "This email contains a link which points to a hexadecimal IP address (%1) "
@@ -1091,12 +1091,12 @@ msgstr ""
 "Šiame laiške yra nuoroda, rodanti į šešioliktainį IP adresą (%1) vietoje "
 "įprasto tekstinio svetainės adreso. Taip dažnai daroma sukčiavimo laiškuose."
 
-#: scamdetection/scamdetectionwebengine.cpp:144
+#: scamdetection/scamdetectionwebengine.cpp:143
 #, kde-format
 msgid "This email contains a link (%1) which has a redirection"
 msgstr "Šiame laiške yra nuoroda (%1), kuri yra peradresavimas"
 
-#: scamdetection/scamdetectionwebengine.cpp:150
+#: scamdetection/scamdetectionwebengine.cpp:149
 #, kde-format
 msgid ""
 "This email contains a link (%1) which contains multiple http://. This is "
@@ -1105,18 +1105,18 @@ msgstr ""
 "Šiame laiške yra nuoroda (%1), kurioje yra keli http://. Taip dažnai daroma "
 "sukčiavimo laiškuose."
 
-#: scamdetection/scamdetectionwebengine.cpp:161
+#: scamdetection/scamdetectionwebengine.cpp:160
 #, kde-format
 msgid "This email contains a shorturl (%1). It can redirect to another server."
 msgstr ""
 "Šiame laiške yra trumpas url (%1). Jis gali peradresuoti į kitą serverį."
 
-#: scamdetection/scamdetectionwebengine.cpp:236
+#: scamdetection/scamdetectionwebengine.cpp:235
 #, kde-format
 msgid "Message contains form element. This is often the case in scam emails."
 msgstr "Laiške yra formos elementas. Taip dažnai daroma sukčiavimo laiškuose."
 
-#: scamdetection/scamdetectionwebengine.cpp:240
+#: scamdetection/scamdetectionwebengine.cpp:239
 #, kde-format
 msgid "Details:"
 msgstr "Detalės:"
@@ -2448,26 +2448,26 @@ msgstr ""
 msgid "Speak Text"
 msgstr "Kalbėti tekstą"
 
-#: widgets/mailsourcewebengineviewer.cpp:53
+#: widgets/mailsourcewebengineviewer.cpp:50
 #, kde-format
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
 msgstr "Pilnas šaltinis"
 
-#: widgets/mailsourcewebengineviewer.cpp:54
+#: widgets/mailsourcewebengineviewer.cpp:51
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr ""
 "Žalias, nepakeistas laiškas, toks, koks jis laikomas failų sistemoje "
 "serveryje"
 
-#: widgets/mailsourcewebengineviewer.cpp:57
+#: widgets/mailsourcewebengineviewer.cpp:54
 #, kde-format
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
 msgstr "HTML šaltinis"
 
-#: widgets/mailsourcewebengineviewer.cpp:58
+#: widgets/mailsourcewebengineviewer.cpp:55
 #, kde-format
 msgid "HTML code for displaying the message to the user"
 msgstr "HTML kodas laiško rodymui naudotojui"
