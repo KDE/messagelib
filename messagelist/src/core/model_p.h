@@ -393,7 +393,7 @@ public:
      * time this folder has been open, or we may want to select the first unread message.
      * We also may want to do no pre-selection at all (for example, when the user
      * starts navigating the view before the pre-selection could actually be made
-     * and pre-selecting would confuse him). This member holds the option.
+     * and preselecting would confuse him). This member holds the option.
      *
      * See also setStorageModel() and abortMessagePreSelection()
      */

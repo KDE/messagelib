@@ -2797,7 +2797,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1
             continue;
         }
 
-        // If we're supposed to pre-select a specific message, check if it's this one.
+        // If we're supposed to preselect a specific message, check if it's this one.
         if (msgToSelect != 0 && msgToSelect == mi->uniqueId()) {
             // Found, it's this one.
             // But actually it's not viewable (so not selectable). We must wait
@@ -3058,7 +3058,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass1
         // This MUST NOT be null (otherwise we have a bug somewhere in this file).
         Q_ASSERT(dyingMessage);
 
-        // If we were going to pre-select this message but we were interrupted
+        // If we were going to preselect this message but we were interrupted
         // *before* it was actually made viewable, we just clear the pre-selection pointer
         // and unique id (abort pre-selection).
         if (dyingMessage == mLastSelectedMessageInFolder) {

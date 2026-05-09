@@ -84,7 +84,7 @@ public:
      * time this folder has been open, or we may want to select the first unread message.
      * We also may want to do no pre-selection at all (for example, when the user
      * starts navigating the view before the pre-selection could actually be made
-     * and pre-selecting would confuse him). The pre-selection is applied once
+     * and preselecting would confuse him). The pre-selection is applied once
      * loading is complete.
      */
     void setStorageModel(StorageModel *storageModel, PreSelectionMode preSelectionMode = PreSelectLastSelected);

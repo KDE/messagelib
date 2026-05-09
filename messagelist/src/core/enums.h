@@ -16,7 +16,7 @@ namespace MessageList::Core
  * time this folder has been open, or we may want to select the first unread message.
  * We also may want to do no pre-selection at all (for example, when the user
  * starts navigating the view before the pre-selection could actually be made
- * and pre-selecting would confuse him). This member holds the option.
+ * and preselecting would confuse him). This member holds the option.
  *
  * All the modes except PreSelectNone try to fallback to "PreSelectLastSelected" when the
  * specified item isn't found.
@@ -25,10 +25,10 @@ namespace MessageList::Core
  */
 enum PreSelectionMode {
     PreSelectNone, //< no pre-selection at all
-    PreSelectLastSelected, //< pre-select the last message that was selected in this folder (default)
-    PreSelectFirstUnreadCentered, //< pre-select the first unread message and center it
-    PreSelectNewestCentered, //< pre-select the newest message, by date
-    PreSelectOldestCentered, //< pre-select the oldest message, by date
+    PreSelectLastSelected, //< preselect the last message that was selected in this folder (default)
+    PreSelectFirstUnreadCentered, //< preselect the first unread message and center it
+    PreSelectNewestCentered, //< preselect the newest message, by date
+    PreSelectOldestCentered, //< preselect the oldest message, by date
 };
 
 /**
