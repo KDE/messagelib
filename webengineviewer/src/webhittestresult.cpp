@@ -22,10 +22,10 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  * ============================================================ */
 #include "webhittestresult.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QDebug>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace WebEngineViewer;
 
 class WebEngineViewer::WebHitTestResultPrivate

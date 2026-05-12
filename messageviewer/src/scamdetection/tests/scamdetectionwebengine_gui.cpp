@@ -5,7 +5,6 @@
 */
 
 #include "scamdetectionwebengine_gui.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "scamdetection/scamdetectionwarningwidget.h"
 #include "scamdetection/scamdetectionwebengine.h"
@@ -20,6 +19,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QVBoxLayout>
 #include <QWebEngineView>
 
+using namespace Qt::Literals::StringLiterals;
 ScamDetectionWebEngineTestWidget::ScamDetectionWebEngineTestWidget(const QString &filename, QWidget *parent)
     : QWidget(parent)
 {

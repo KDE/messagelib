@@ -5,9 +5,8 @@
 */
 
 #include "webengineviewwithsafebrowsingsupport.h"
-using namespace Qt::Literals::StringLiterals;
 
-#include "../localdatabasemanager.h"
+#include "localdatabasemanager.h"
 
 #include "webenginepage.h"
 #include "webengineview.h"
@@ -17,6 +16,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QStandardPaths>
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
 WebEngineViewWithSafeBrowsingSupport::WebEngineViewWithSafeBrowsingSupport(QWidget *parent)
     : QWidget(parent)
 {

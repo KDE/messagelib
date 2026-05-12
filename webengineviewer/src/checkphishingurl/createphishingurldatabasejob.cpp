@@ -5,7 +5,6 @@
 */
 
 #include "createphishingurldatabasejob.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "checkphishingurlutil.h"
 #include "updatedatabaseinfo.h"
@@ -15,6 +14,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QJsonDocument>
 #include <QUrlQuery>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace WebEngineViewer;
 
 WEBENGINEVIEWER_EXPORT bool webengineview_useCompactJson_CreatePhishingUrlDataBaseJob = true;

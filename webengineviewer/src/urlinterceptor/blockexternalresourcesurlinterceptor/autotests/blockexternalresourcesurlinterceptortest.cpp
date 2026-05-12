@@ -5,11 +5,11 @@
 */
 
 #include "blockexternalresourcesurlinterceptortest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QStandardPaths>
 #include <QTest>
 #include <WebEngineViewer/BlockExternalResourcesUrlInterceptor>
+using namespace Qt::Literals::StringLiterals;
 QTEST_GUILESS_MAIN(BlockExternalResourcesUrlInterceptorTest)
 BlockExternalResourcesUrlInterceptorTest::BlockExternalResourcesUrlInterceptorTest(QObject *parent)
     : QObject(parent)

@@ -5,7 +5,6 @@
 */
 
 #include "templatesinsertcommandactiontest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "templatescommandmenu.h"
 #include "templatesinsertcommandaction.h"
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTest>
 QTEST_MAIN(TemplatesInsertCommandActionTest)
 
+using namespace Qt::Literals::StringLiterals;
 TemplatesInsertCommandActionTest::TemplatesInsertCommandActionTest(QObject *parent)
     : QObject(parent)
 {

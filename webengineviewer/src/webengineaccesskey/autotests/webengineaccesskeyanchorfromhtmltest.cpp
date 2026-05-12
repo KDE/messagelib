@@ -4,7 +4,6 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "webengineaccesskeyanchorfromhtmltest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../webengineaccesskeyutils.h"
 #include <QHBoxLayout>
@@ -14,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QWebEngineView>
 #include <WebEngineViewer/WebEngineManageScript>
 
+using namespace Qt::Literals::StringLiterals;
 template<typename Arg, typename R, typename C>
 struct InvokeWrapper {
     R *receiver;

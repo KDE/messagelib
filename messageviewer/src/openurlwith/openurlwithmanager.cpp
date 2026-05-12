@@ -5,7 +5,6 @@
 */
 
 #include "openurlwithmanager.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "messageviewer_debug.h"
 #include <KConfigGroup>
@@ -15,6 +14,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QStandardPaths>
 #include <QUrl>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 namespace
 {
@@ -42,7 +42,7 @@ void OpenUrlWithManager::clear()
 void OpenUrlWithManager::loadUserSettings()
 {
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group(config, QLatin1StringView(myOpenUrlWithGroupName));
+    const KConfigGroup group(config, QLatin1StringView(myOpenUrlWithGroupName));
     const QStringList openWithUrls = group.readEntry("Urls", QStringList());
     const QStringList commands = group.readEntry("Commands", QStringList());
     const QStringList commandLines = group.readEntry("CommandLines", QStringList());

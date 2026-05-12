@@ -6,7 +6,6 @@
 */
 
 #include "scamexpandurljob.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "messageviewer_debug.h"
 
@@ -18,6 +17,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QJsonDocument>
 #include <QNetworkAccessManager>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 class MessageViewer::ScamExpandUrlJobPrivate
 {

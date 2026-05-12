@@ -5,7 +5,6 @@
 */
 
 #include "remotecontentconfigurewidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "remotecontentdialog.h"
 #include "remotecontentmanager.h"
@@ -20,6 +19,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTreeWidget>
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 
 RemoteContentWidgetItem::RemoteContentWidgetItem(QTreeWidget *parent)

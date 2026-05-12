@@ -5,7 +5,6 @@
 */
 
 #include "checkphishingurlgui.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QApplication>
 #include <QLabel>
@@ -17,6 +16,7 @@ using namespace Qt::Literals::StringLiterals;
 
 extern WEBENGINEVIEWER_EXPORT bool webengineview_useCompactJson;
 
+using namespace Qt::Literals::StringLiterals;
 CheckPhishingUrlGui::CheckPhishingUrlGui(QWidget *parent)
     : QWidget(parent)
 {

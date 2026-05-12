@@ -5,7 +5,6 @@
 */
 
 #include "testwebengineviewinterceptor.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QApplication>
 #include <QBuffer>
@@ -16,6 +15,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QWebEngineUrlSchemeHandler>
 #include <QWebEngineView>
 
+using namespace Qt::Literals::StringLiterals;
 class CidSchemeHandler : public QWebEngineUrlSchemeHandler
 {
 public:

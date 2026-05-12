@@ -5,11 +5,11 @@
 */
 
 #include "zoomactionmenu.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KActionCollection>
 #include <KLocalizedString>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace WebEngineViewer;
 namespace
 {

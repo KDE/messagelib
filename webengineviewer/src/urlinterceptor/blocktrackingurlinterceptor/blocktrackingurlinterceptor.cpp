@@ -5,11 +5,11 @@
 */
 
 #include "blocktrackingurlinterceptor.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "webengineviewer_block_tracking_url_interceptor_debug.h"
 #include <QWebEngineUrlRequestInfo>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace WebEngineViewer;
 BlockTrackingUrlInterceptor::BlockTrackingUrlInterceptor(QObject *parent)
     : WebEngineViewer::NetworkPluginUrlInterceptorInterface(parent)

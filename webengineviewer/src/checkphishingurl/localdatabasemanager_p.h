@@ -7,7 +7,6 @@
 #pragma once
 
 #include "downloadlocaldatabasethread.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "localdatabasefile.h"
 #include "webengineviewer_debug.h"
@@ -19,6 +18,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QPointer>
 #include <QStandardPaths>
 
+using namespace Qt::Literals::StringLiterals;
 namespace
 {
 inline QString localDataBasePath()

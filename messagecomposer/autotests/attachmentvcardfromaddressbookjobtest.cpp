@@ -6,12 +6,12 @@
 */
 
 #include "attachmentvcardfromaddressbookjobtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KContacts/Addressee>
 #include <MessageComposer/AttachmentVcardFromAddressBookJob>
 #include <QTest>
 
+using namespace Qt::Literals::StringLiterals;
 AttachmentVcardFromAddressBookJobTest::AttachmentVcardFromAddressBookJobTest(QObject *parent)
     : QObject(parent)
 {

@@ -5,7 +5,6 @@
 */
 
 #include "networkurlinterceptorpluginmanager.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "networkpluginurlinterceptor.h"
 #include "webengineviewer_debug.h"
@@ -15,6 +14,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QFileInfo>
 #include <QVariant>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace WebEngineViewer;
 
 class MailNetworkUrlInterceptorPluginInfo

@@ -5,12 +5,12 @@
 */
 
 #include "shownextmessagewidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KLocalizedString>
 #include <QHBoxLayout>
 #include <QPushButton>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 ShowNextMessageWidget::ShowNextMessageWidget(QWidget *parent)
     : QWidget(parent)

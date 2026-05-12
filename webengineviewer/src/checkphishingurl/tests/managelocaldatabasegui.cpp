@@ -5,9 +5,8 @@
 */
 
 #include "managelocaldatabasegui.h"
-using namespace Qt::Literals::StringLiterals;
 
-#include "../localdatabasemanager.h"
+#include "localdatabasemanager.h"
 #include <QStandardPaths>
 
 #include <QApplication>
@@ -15,6 +14,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QPushButton>
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
 ManageLocalDataBaseGui::ManageLocalDataBaseGui(QWidget *parent)
     : QWidget(parent)
     , mDbManager(new WebEngineViewer::LocalDataBaseManager(this))

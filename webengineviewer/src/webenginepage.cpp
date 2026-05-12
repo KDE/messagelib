@@ -5,7 +5,6 @@
 */
 
 #include "webenginepage.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "webenginemanagescript.h"
 #include "webhittest.h"
@@ -24,6 +23,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QWebEngineScriptCollection>
 #include <QWebEngineView>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace WebEngineViewer;
 
 class WebEnginePage::Private

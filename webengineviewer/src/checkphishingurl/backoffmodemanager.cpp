@@ -5,7 +5,6 @@
 */
 
 #include "backoffmodemanager.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "checkphishingurlutil.h"
 #include "webengineviewer_debug.h"
@@ -15,6 +14,7 @@ using namespace Qt::Literals::StringLiterals;
 
 #include <QTimer>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace WebEngineViewer;
 
 Q_GLOBAL_STATIC(BackOffModeManager, s_backOffModeManager)

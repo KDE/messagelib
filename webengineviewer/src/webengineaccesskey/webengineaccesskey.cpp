@@ -5,7 +5,6 @@
 */
 
 #include "webengineaccesskey.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "webengineaccesskeyanchor.h"
 #include "webengineaccesskeyutils.h"
@@ -19,6 +18,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QList>
 #include <QToolTip>
 #include <QWebEngineView>
+using namespace Qt::Literals::StringLiterals;
 using namespace WebEngineViewer;
 template<typename Arg, typename R, typename C>
 struct InvokeWrapperWebAccessKey {

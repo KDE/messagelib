@@ -5,13 +5,13 @@
 */
 
 #include "hashcachemanager.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "checkphishingurlutil.h"
 #include "webengineviewer_debug.h"
 #include <KConfig>
 #include <KConfigGroup>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace WebEngineViewer;
 
 struct HashCacheInfo {

@@ -5,11 +5,11 @@
 */
 
 #include "webhittestresulttest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../webhittestresult.h"
 #include <QTest>
 
+using namespace Qt::Literals::StringLiterals;
 WebHitTestResultTest::WebHitTestResultTest(QObject *parent)
     : QObject(parent)
 {

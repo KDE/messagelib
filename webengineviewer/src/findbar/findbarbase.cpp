@@ -5,7 +5,6 @@
  */
 
 #include "findbarbase.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KStatefulBrush>
 
@@ -27,6 +26,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QToolButton>
 
 using namespace WebEngineViewer;
+using namespace Qt::Literals::StringLiterals;
 
 FindBarBase::FindBarBase(QWidget *parent)
     : QWidget(parent)

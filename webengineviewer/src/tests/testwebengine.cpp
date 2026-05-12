@@ -5,7 +5,6 @@
 */
 
 #include "testwebengine.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "webengineviewer/webhittest.h"
 #include <QApplication>
@@ -16,6 +15,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <WebEngineViewer/WebEnginePage>
 #include <WebEngineViewer/WebHitTestResult>
 
+using namespace Qt::Literals::StringLiterals;
 TestWebEngine::TestWebEngine(QWidget *parent)
     : QWidget(parent)
 {

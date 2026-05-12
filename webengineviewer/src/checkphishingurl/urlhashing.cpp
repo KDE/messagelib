@@ -5,13 +5,13 @@
 */
 
 #include "urlhashing.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QCryptographicHash>
 #include <QDebug>
 
 using namespace Qt::Literals;
 using namespace WebEngineViewer;
+using namespace Qt::Literals::StringLiterals;
 
 UrlHashing::UrlHashing(const QUrl &url)
     : mUrl(url)

@@ -5,11 +5,11 @@
 */
 
 #include "checkphishingurlutil.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QDateTime>
 #include <QtMath>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace WebEngineViewer;
 QString CheckPhishingUrlUtil::apiKey()
 {

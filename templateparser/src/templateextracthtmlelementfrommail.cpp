@@ -5,12 +5,12 @@
 */
 
 #include "templateextracthtmlelementfrommail.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "templateparser_debug.h"
 #include "templatewebenginepage.h"
 #include <QWebEngineScript>
 
+using namespace Qt::Literals::StringLiterals;
 template<typename Arg, typename R, typename C>
 struct InvokeWrapperFunction {
     R *receiver;

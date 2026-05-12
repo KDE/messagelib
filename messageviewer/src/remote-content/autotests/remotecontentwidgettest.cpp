@@ -5,13 +5,13 @@
 */
 
 #include "remotecontentwidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "remote-content/remotecontentstatustypecombobox.h"
 #include "remote-content/remotecontentwidget.h"
 #include <QHBoxLayout>
 #include <QLineEdit>
 #include <QTest>
+using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(RemoteContentWidgetTest)
 RemoteContentWidgetTest::RemoteContentWidgetTest(QObject *parent)
     : QObject(parent)

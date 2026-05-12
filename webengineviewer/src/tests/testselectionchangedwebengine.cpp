@@ -5,7 +5,6 @@
 */
 
 #include "testselectionchangedwebengine.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "webengineview.h"
 #include <QApplication>
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTextEdit>
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
 TestSelectionChangedEngine::TestSelectionChangedEngine(QWidget *parent)
     : QWidget(parent)
 {

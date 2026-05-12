@@ -5,7 +5,6 @@
 */
 
 #include "attachmentjobtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "qtest_messagecomposer.h"
 
@@ -24,6 +23,7 @@ using namespace Qt::Literals::StringLiterals;
 using namespace KMime;
 using namespace MessageComposer;
 using namespace MessageCore;
+using namespace Qt::Literals::StringLiterals;
 
 #define PATH_ATTACHMENTS QLatin1StringView(KDESRCDIR "/attachments/")
 

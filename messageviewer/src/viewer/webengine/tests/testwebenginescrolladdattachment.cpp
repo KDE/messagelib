@@ -5,7 +5,6 @@
 */
 
 #include "testwebenginescrolladdattachment.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KActionCollection>
 #include <QApplication>
@@ -15,6 +14,7 @@ using namespace Qt::Literals::StringLiterals;
 
 #include "messageviewer/mailwebengineview.h"
 
+using namespace Qt::Literals::StringLiterals;
 template<typename Arg, typename R, typename C>
 struct InvokeWrapper {
     R *receiver;

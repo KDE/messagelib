@@ -5,7 +5,6 @@
 */
 
 #include "templatesinsertcommandpushbuttontest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "templatescommandmenu.h"
 #include "templatesinsertcommandpushbutton.h"
@@ -15,6 +14,7 @@ using namespace Qt::Literals::StringLiterals;
 
 QTEST_MAIN(TemplatesInsertCommandPushButtonTest)
 
+using namespace Qt::Literals::StringLiterals;
 TemplatesInsertCommandPushButtonTest::TemplatesInsertCommandPushButtonTest(QObject *parent)
     : QObject(parent)
 {

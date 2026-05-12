@@ -6,7 +6,6 @@
 */
 
 #include "configurewidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "messageviewer_debug.h"
 #include "settings/messageviewersettings.h"
@@ -17,6 +16,7 @@ using namespace Qt::Literals::StringLiterals;
 
 #include <KLocalizedString>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 
 class MessageViewer::ConfigureWidgetPrivate

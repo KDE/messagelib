@@ -5,7 +5,6 @@
 */
 
 #include "signencrypttest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "cryptofunctions.h"
 #include "qtest_messagecomposer.h"
@@ -37,6 +36,7 @@ using namespace Qt::Literals::StringLiterals;
 
 QTEST_MAIN(SignEncryptTest)
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageComposer;
 
 void SignEncryptTest::initMain()

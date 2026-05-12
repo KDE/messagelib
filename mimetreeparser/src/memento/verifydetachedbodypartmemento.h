@@ -7,7 +7,6 @@
 #pragma once
 
 #include "cryptobodypartmemento.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QStringList>
 #include <gpgme++/key.h>
@@ -17,6 +16,7 @@ using namespace Qt::Literals::StringLiterals;
 
 #include "interfaces/bodypart.h"
 
+using namespace Qt::Literals::StringLiterals;
 namespace QGpgME
 {
 class VerifyDetachedJob;

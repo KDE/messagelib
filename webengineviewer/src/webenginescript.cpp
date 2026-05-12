@@ -4,8 +4,8 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "webenginescript.h"
-using namespace Qt::Literals::StringLiterals;
 
+using namespace Qt::Literals::StringLiterals;
 using namespace WebEngineViewer;
 
 QString WebEngineScript::findAllImages()

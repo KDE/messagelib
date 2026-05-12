@@ -5,13 +5,13 @@
 */
 
 #include "templateparseremailaddressrequesterinterfacewidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "templateparseremailaddressrequesterlineedit.h"
 #include <KPluginFactory>
 #include <QHBoxLayout>
 #include <TemplateParser/TemplateParserEmailAddressRequesterBase>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TemplateParser;
 
 TemplateParserEmailAddressRequesterInterfaceWidget::TemplateParserEmailAddressRequesterInterfaceWidget(QWidget *parent)

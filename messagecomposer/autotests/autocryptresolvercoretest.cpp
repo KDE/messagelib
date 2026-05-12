@@ -5,7 +5,6 @@
 */
 
 #include "autocryptresolvercoretest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <MessageComposer/AutocryptKeyResolverCore>
 
@@ -21,6 +20,7 @@ using namespace Qt::Literals::StringLiterals;
 
 QTEST_MAIN(AutocryptKeyResolverCoreTest)
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageComposer;
 
 void AutocryptKeyResolverCoreTest::initMain()

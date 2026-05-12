@@ -5,11 +5,11 @@
 */
 
 #include "templateparserutiltest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "templatesutil.h"
 #include "templatesutil_p.h"
 #include <QTest>
+using namespace Qt::Literals::StringLiterals;
 QTEST_GUILESS_MAIN(TemplateParserUtilTest)
 TemplateParserUtilTest::TemplateParserUtilTest(QObject *parent)
     : QObject(parent)

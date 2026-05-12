@@ -9,8 +9,8 @@
 #include "messageviewer_dkimcheckerdebug.h"
 
 #include <QRegularExpressionMatch>
-using namespace Qt::Literals::StringLiterals;
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 // see https://tools.ietf.org/html/rfc7601
 DKIMAuthenticationStatusInfo::DKIMAuthenticationStatusInfo() = default;

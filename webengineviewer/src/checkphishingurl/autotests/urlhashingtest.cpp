@@ -5,12 +5,12 @@
 */
 
 #include "urlhashingtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../urlhashing.h"
 #include <QTest>
 #include <QUrl>
 
+using namespace Qt::Literals::StringLiterals;
 UrlHashingTest::UrlHashingTest(QObject *parent)
     : QObject(parent)
 {

@@ -5,7 +5,6 @@
 */
 
 #include "messageviewerconfiguresettingspluginmanager.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "messageviewer_debug.h"
 #include "messageviewerconfiguresettingsplugin.h"
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <KPluginMetaData>
 #include <QFileInfo>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 
 class ConfigureSettingsPluginInfo

@@ -5,7 +5,6 @@
 */
 
 #include "createphishingurldatabasegui.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QApplication>
 #include <QComboBox>
@@ -18,6 +17,7 @@ using namespace Qt::Literals::StringLiterals;
 
 extern WEBENGINEVIEWER_EXPORT bool webengineview_useCompactJson_CreatePhishingUrlDataBaseJob;
 
+using namespace Qt::Literals::StringLiterals;
 CreatePhisingUrlDataBaseGui::CreatePhisingUrlDataBaseGui(QWidget *parent)
     : QWidget(parent)
 {

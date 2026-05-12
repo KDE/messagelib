@@ -5,7 +5,6 @@
 */
 
 #include "developertoolwidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "developertool/developertoolwidget.h"
 #include <QTest>
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QWebEngineSettings>
 #include <QWebEngineView>
 QTEST_MAIN(DeveloperToolWidgetTest)
+using namespace Qt::Literals::StringLiterals;
 DeveloperToolWidgetTest::DeveloperToolWidgetTest(QObject *parent)
     : QObject(parent)
 {

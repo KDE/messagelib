@@ -6,7 +6,6 @@
 */
 
 #include "basicobjecttreeparsertest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "setupenv.h"
 #include "util.h"
@@ -19,6 +18,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QProcess>
 #include <QTest>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MimeTreeParser;
 
 QTEST_MAIN(ObjectTreeParserTest)

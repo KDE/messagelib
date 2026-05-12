@@ -5,12 +5,12 @@
 */
 
 #include "searchfullhashjobtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../checkphishingurlutil.h"
 #include "../searchfullhashjob.h"
 #include <QTest>
 
+using namespace Qt::Literals::StringLiterals;
 SearchFullHashJobTest::SearchFullHashJobTest(QObject *parent)
     : QObject(parent)
 {

@@ -4,10 +4,10 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "util.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QFile>
 
+using namespace Qt::Literals::StringLiterals;
 std::shared_ptr<KMime::Message> readAndParseMail(const QString &mailFile)
 {
     QFile file(QLatin1StringView(MAIL_DATA_DIR) + u'/' + mailFile);

@@ -5,7 +5,6 @@
 */
 
 #include "mailman.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "utils.h"
 
@@ -16,6 +15,7 @@ using namespace Qt::Literals::StringLiterals;
 
 #include "mimetreeparser_debug.h"
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MimeTreeParser;
 
 const MailmanBodyPartFormatter *MailmanBodyPartFormatter::self;

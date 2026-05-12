@@ -5,7 +5,6 @@
 */
 
 #include "autocryptheadersjobtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "cryptofunctions.h"
 #include "qtest_messagecomposer.h"
@@ -35,6 +34,7 @@ using namespace Qt::Literals::StringLiterals;
 
 QTEST_MAIN(AutocryptHeadersJobTest)
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageComposer;
 
 void AutocryptHeadersJobTest::initMain()

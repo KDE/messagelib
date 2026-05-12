@@ -5,7 +5,6 @@
 */
 
 #include "viewerpluginmanager.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "messageviewer_debug.h"
 #include "viewerplugin.h"
@@ -16,6 +15,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <PimCommon/PluginUtil>
 #include <QFileInfo>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 
 class ViewerPluginInfo

@@ -3,11 +3,11 @@
 */
 
 #include "invitationsettings.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "settings/messageviewersettings.h"
 #include "ui_invitationsettings.h"
 #include <PimCommon/ConfigureImmutableWidgetUtils>
+using namespace Qt::Literals::StringLiterals;
 using namespace PimCommon::ConfigureImmutableWidgetUtils;
 
 #include <KLocalizedString>

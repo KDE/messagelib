@@ -10,7 +10,6 @@
 */
 
 #include "urlhandlermanager.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../utils/messageviewerutil_p.h"
 #include "interfaces/bodyparturlhandler.h"
@@ -60,6 +59,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <Libkleo/AuditLogViewer>
 #include <chrono>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace std::chrono_literals;
 
 using std::for_each;

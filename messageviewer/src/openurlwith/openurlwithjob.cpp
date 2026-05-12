@@ -5,13 +5,13 @@
 */
 
 #include "openurlwithjob.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "messageviewer_debug.h"
 #include <KIO/CommandLauncherJob>
 #include <KMacroExpander>
 #include <KNotificationJobUiDelegate>
 #include <KShell>
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 OpenUrlWithJob::OpenUrlWithJob(QObject *parent)
     : QObject{parent}

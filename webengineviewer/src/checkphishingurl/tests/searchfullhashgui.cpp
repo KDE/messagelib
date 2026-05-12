@@ -5,7 +5,6 @@
 */
 
 #include "searchfullhashgui.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QApplication>
 #include <QLabel>
@@ -17,6 +16,7 @@ using namespace Qt::Literals::StringLiterals;
 
 extern WEBENGINEVIEWER_EXPORT bool webengineview_useCompactJson_SearchFullHashJob;
 
+using namespace Qt::Literals::StringLiterals;
 SearchFullHashGui::SearchFullHashGui(QWidget *parent)
     : QWidget(parent)
 {
