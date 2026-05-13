@@ -112,6 +112,7 @@ CheckPhishingUrlCache::UrlStatus CheckPhishingUrlCachePrivate::urlStatus(const Q
             if (CheckPhishingUrlUtil::cachedValueStillValid(info.verifyCacheAfterThisTime)) {
                 return info.status;
             } else {
+                mCacheCheckedUrl.remove(url);
                 return CheckPhishingUrlCache::UrlStatus::Unknown;
             }
         } else {
