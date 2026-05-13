@@ -54,6 +54,14 @@ SearchLineStatus::SearchLineStatus(QWidget *parent)
 
 SearchLineStatus::~SearchLineStatus() = default;
 
+void SearchLineStatus::changeEvent(QEvent *e)
+{
+    if (e->type() == QEvent::PaletteChange) {
+        mColorName.clear();
+    }
+    QLineEdit::changeEvent(e);
+}
+
 void SearchLineStatus::keyPressEvent(QKeyEvent *e)
 {
     if (e->key() == Qt::Key_Escape) {

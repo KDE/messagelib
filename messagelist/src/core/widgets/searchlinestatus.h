@@ -40,6 +40,7 @@ Q_SIGNALS:
     void searchCommandActionRequested();
 
 protected:
+    void changeEvent(QEvent *e) override;
     void contextMenuEvent(QContextMenuEvent *e) override;
     void keyPressEvent(QKeyEvent *e) override;
 
