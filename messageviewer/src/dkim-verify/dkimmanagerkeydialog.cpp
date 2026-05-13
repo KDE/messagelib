@@ -42,7 +42,7 @@ DKIMManagerKeyDialog::~DKIMManagerKeyDialog()
 
 void DKIMManagerKeyDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myDKIMManagerKeyDialogConfigGroupName));
+    const KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myDKIMManagerKeyDialogConfigGroupName));
     mManagerWidget->restoreHeaders(group.readEntry("Header", QByteArray()));
     const QSize size = group.readEntry("Size", QSize(600, 400));
     if (size.isValid()) {

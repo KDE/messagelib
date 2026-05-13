@@ -99,7 +99,7 @@ void DKIMManageRulesDialog::slotImport()
 
 void DKIMManageRulesDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myDKIMManageRulesDialogGroupName));
+    const KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myDKIMManageRulesDialogGroupName));
     const QSize size = group.readEntry("Size", QSize(600, 400));
     mRulesWidget->restoreHeaders(group.readEntry("Header", QByteArray()));
     if (size.isValid()) {
