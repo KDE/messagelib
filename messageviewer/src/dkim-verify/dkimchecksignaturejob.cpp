@@ -5,7 +5,6 @@
 */
 
 #include "dkimchecksignaturejob.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "dkimdownloadkeyjob.h"
 #include "dkiminfo.h"
@@ -29,6 +28,7 @@ using namespace Qt::Literals::StringLiterals;
 
 // see https://tools.ietf.org/html/rfc6376
 // #define DEBUG_SIGNATURE_DKIM 1
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 DKIMCheckSignatureJob::DKIMCheckSignatureJob(QObject *parent)
     : QObject(parent)

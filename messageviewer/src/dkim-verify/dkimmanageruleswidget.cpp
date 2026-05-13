@@ -5,7 +5,6 @@
 */
 
 #include "dkimmanageruleswidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "dkimmanagerulescombobox.h"
 #include "dkimruledialog.h"
@@ -20,6 +19,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QPointer>
 #include <QTreeWidget>
 #include <QVBoxLayout>
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 DKIMManageRulesWidgetItem::DKIMManageRulesWidgetItem(QTreeWidget *parent)
     : QTreeWidgetItem(parent)

@@ -5,13 +5,13 @@
 */
 
 #include "dkimmanagerkey.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "dkimutil.h"
 #include <KConfig>
 #include <KConfigGroup>
 #include <QRegularExpression>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 DKIMManagerKey::DKIMManagerKey(QObject *parent)
     : QObject(parent)

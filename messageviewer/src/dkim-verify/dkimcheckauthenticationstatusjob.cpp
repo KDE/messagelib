@@ -5,11 +5,11 @@
 */
 
 #include "dkimcheckauthenticationstatusjob.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "dkimauthenticationstatusinfo.h"
 #include "messageviewer_dkimcheckerdebug.h"
 #include <KMime/Message>
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 // see https://tools.ietf.org/html/rfc7601
 DKIMCheckAuthenticationStatusJob::DKIMCheckAuthenticationStatusJob(QObject *parent)

@@ -6,10 +6,10 @@
 
 #include "dmarcinfo.h"
 #include <QDebug>
-using namespace Qt::Literals::StringLiterals;
 
 #include "messageviewer_dkimcheckerdebug.h"
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 DMARCInfo::DMARCInfo() = default;
 

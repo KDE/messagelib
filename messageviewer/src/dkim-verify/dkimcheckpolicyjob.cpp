@@ -5,12 +5,12 @@
 */
 
 #include "dkimcheckpolicyjob.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "dkim-verify/dkimmanagerrules.h"
 #include "dkim-verify/dmarcmanager.h"
 #include "messageviewer_dkimcheckerdebug.h"
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 DKIMCheckPolicyJob::DKIMCheckPolicyJob(QObject *parent)
     : QObject(parent)

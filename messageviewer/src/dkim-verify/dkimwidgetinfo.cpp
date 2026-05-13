@@ -5,7 +5,6 @@
 */
 
 #include "dkimwidgetinfo.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "dkimmanager.h"
 #include "dkimutil.h"
@@ -16,6 +15,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QHBoxLayout>
 #include <QLabel>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 DKIMWidgetInfo::DKIMWidgetInfo(QWidget *parent)
     : QWidget(parent)

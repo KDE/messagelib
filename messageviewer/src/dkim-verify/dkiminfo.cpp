@@ -5,11 +5,11 @@
 */
 
 #include "dkiminfo.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "dkimutil.h"
 #include "messageviewer_dkimcheckerdebug.h"
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 
 DKIMInfo::DKIMInfo() = default;

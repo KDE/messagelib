@@ -5,7 +5,6 @@
 */
 
 #include "dkimrulewidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "dkimmanagerulescombobox.h"
 #include <KLocalizedString>
@@ -14,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QLineEdit>
 #include <QSpinBox>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 DKIMRuleWidget::DKIMRuleWidget(QWidget *parent)
     : QWidget(parent)

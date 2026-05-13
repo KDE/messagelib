@@ -8,10 +8,10 @@
 */
 
 #include "dkimauthenticationstatusinfoconverter.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "dkimutil.h"
 #include "messageviewer_dkimcheckerdebug.h"
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 
 DKIMAuthenticationStatusInfoConverter::DKIMAuthenticationStatusInfoConverter() = default;

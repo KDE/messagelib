@@ -5,11 +5,11 @@
 */
 
 #include "dkimkeyrecord.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "messageviewer_dkimcheckerdebug.h"
 
 using namespace MessageViewer;
+using namespace Qt::Literals::StringLiterals;
 
 DKIMKeyRecord::DKIMKeyRecord() = default;
 

@@ -5,7 +5,6 @@
 */
 
 #include "dkimmanager.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "dkimcheckfulljob.h"
 #include "dkimmanagerkey.h"
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include "messageviewer_dkimcheckerdebug.h"
 #include <Akonadi/AttributeFactory>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 DKIMManager::DKIMManager(QObject *parent)
     : QObject(parent)

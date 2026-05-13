@@ -5,11 +5,11 @@
 */
 
 #include "dkimutil.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "messageviewer_dkimcheckerdebug.h"
 #include <QRegularExpression>
 
+using namespace Qt::Literals::StringLiterals;
 QString MessageViewer::DKIMUtil::bodyCanonizationRelaxed(QString body)
 {
     /*

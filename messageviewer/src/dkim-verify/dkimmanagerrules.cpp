@@ -5,12 +5,12 @@
 */
 
 #include "dkimmanagerrules.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "dkimutil.h"
 #include <KConfigGroup>
 #include <QRegularExpression>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 DKIMManagerRules::DKIMManagerRules(QObject *parent)
     : QObject(parent)

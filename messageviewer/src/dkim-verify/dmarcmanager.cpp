@@ -5,11 +5,11 @@
 */
 
 #include "dmarcmanager.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "dkimutil.h"
 #include <KConfigGroup>
 #include <KSharedConfig>
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 DMARCManager::DMARCManager()
 {
