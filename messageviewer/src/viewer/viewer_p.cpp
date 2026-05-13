@@ -313,7 +313,7 @@ void ViewerPrivate::openAttachment(KMime::Content *node, const QUrl &url)
     }
 
     if (!mimetype.isValid() || mimetype.name() == QLatin1StringView("application/octet-stream")) {
-        mimetype = MimeTreeParser::Util::mimetype(url.isLocalFile() ? url.toLocalFile() : url.fileName());
+        mimetype = MimeTreeParser::Util::mimetype(atmUrl.isLocalFile() ? atmUrl.toLocalFile() : atmUrl.fileName());
     }
     const KService::Ptr offer = KApplicationTrader::preferredService(mimetype.name());
 
