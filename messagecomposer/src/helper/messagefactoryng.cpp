@@ -602,7 +602,7 @@ std::shared_ptr<KMime::Message> MessageFactoryNG::createMDN(KMime::MDN::ActionMo
         receiptTo = hrd->asUnicodeString();
     }
     if (receiptTo.trimmed().isEmpty()) {
-        return std::shared_ptr<KMime::Message>(new KMime::Message);
+        return {};
     }
     receiptTo.remove(u'\n');
 
