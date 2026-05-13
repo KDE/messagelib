@@ -113,10 +113,10 @@ QList<QPair<int, int>> RichTextComposerSignatures::RichTextComposerSignaturesPri
             // Find the next occurrence of the signature text
             const QString text = richTextComposer->document()->toPlainText();
             const int currentMatch = text.indexOf(sigText, currentSearchPosition);
-            currentSearchPosition = currentMatch + sigText.length();
             if (currentMatch == -1) {
                 break;
             }
+            currentSearchPosition = currentMatch + sigText.length();
 
             signaturePositions.append(QPair<int, int>(currentMatch, currentMatch + sigText.length()));
         }
