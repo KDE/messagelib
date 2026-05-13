@@ -778,12 +778,12 @@ QList<MessageComposer::ComposerJob *> ComposerViewBase::generateCryptoMessages(b
             if (attachment->isSigned()) {
                 signSomething = true;
             } else {
-                doEncryptCompletely = false;
+                doSignCompletely = false;
             }
             if (attachment->isEncrypted()) {
                 encryptSomething = true;
             } else {
-                doSignCompletely = false;
+                doEncryptCompletely = false;
             }
         }
     }
