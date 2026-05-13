@@ -85,7 +85,7 @@ void RemoteContentManager::loadSettings()
 {
     mRemoveContentInfo.clear();
     KSharedConfig::Ptr config = KSharedConfig::openConfig();
-    KConfigGroup group(config, QLatin1StringView(myRemoteContentGroupName));
+    const KConfigGroup group(config, QLatin1StringView(myRemoteContentGroupName));
     const QStringList blockedUrl = group.readEntry("Blocked", QStringList());
     const QStringList authorizedUrl = group.readEntry("Authorized", QStringList());
     mRemoveContentInfo.reserve(blockedUrl.count() + authorizedUrl.count());
