@@ -48,7 +48,7 @@ MimeTreeModel *MimePartTreeView::mimePartModel() const
 
 void MimePartTreeView::restoreMimePartTreeConfig()
 {
-    KConfigGroup grp(KSharedConfig::openStateConfig(), QLatin1StringView(myMimePartTreeViewConfigGroupName));
+    const KConfigGroup grp(KSharedConfig::openStateConfig(), QLatin1StringView(myMimePartTreeViewConfigGroupName));
     header()->restoreState(grp.readEntry("State", QByteArray()));
 }
 
