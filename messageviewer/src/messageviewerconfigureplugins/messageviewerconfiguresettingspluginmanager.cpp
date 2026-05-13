@@ -41,7 +41,7 @@ public:
     void loadPlugin(ConfigureSettingsPluginInfo *item);
     [[nodiscard]] QString configGroupName() const;
     [[nodiscard]] QString configPrefixSettingKey() const;
-    MessageViewerConfigureSettingsPlugin *pluginFromIdentifier(const QString &id);
+    [[nodiscard]] MessageViewerConfigureSettingsPlugin *pluginFromIdentifier(const QString &id);
 
 private:
     QList<TextAddonsWidgets::PluginUtilData> mPluginDataList;
