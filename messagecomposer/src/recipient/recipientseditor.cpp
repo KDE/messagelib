@@ -252,7 +252,7 @@ void RecipientsEditor::slotLineDeleted(int pos)
 {
     bool atLeastOneToLine = false;
     int firstCC = -1;
-    for (int i = pos, total = lines().count(); i < total; ++i) {
+    for (int i = 0, total = lines().count(); i < total; ++i) {
         MultiplyingLine *line = lines().at(i);
         auto rec = qobject_cast<RecipientLineNG *>(line);
         if (rec) {
