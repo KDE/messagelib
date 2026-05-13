@@ -49,7 +49,7 @@ public:
 
     [[nodiscard]] QString configGroupName() const;
     [[nodiscard]] QString configPrefixSettingKey() const;
-    ViewerPlugin *pluginFromIdentifier(const QString &id);
+    [[nodiscard]] ViewerPlugin *pluginFromIdentifier(const QString &id);
 
 private:
     QList<ViewerPluginInfo> mPluginList;
