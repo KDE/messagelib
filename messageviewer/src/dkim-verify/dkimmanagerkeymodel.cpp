@@ -110,7 +110,8 @@ bool DKIMManagerKeyModel::insertKeyInfo(const KeyInfo &keyInfo)
         return key == keyInfo;
     });
     if (it == mKeyInfos.cend()) {
-        beginInsertRows(QModelIndex(), mKeyInfos.count() - 1, mKeyInfos.count());
+        const int row = mKeyInfos.count();
+        beginInsertRows(QModelIndex(), row, row);
         mKeyInfos.append(keyInfo);
         endInsertRows();
     } else {
@@ -125,9 +126,10 @@ void DKIMManagerKeyModel::removeKeyInfo(const QString &keyValue)
         return key.keyValue == keyValue;
     });
     if (it != mKeyInfos.cend()) {
-        beginResetModel();
-        mKeyInfos.removeAll(*it);
-        endResetModel();
+        const int row = static_cast<int>(std::distance(mKeyInfos.cbegin(), it));
+        beginRemoveRows(QModelIndex(), row, row);
+        mKeyInfos.erase(it);
+        endRemoveRows();
     }
 }
 
