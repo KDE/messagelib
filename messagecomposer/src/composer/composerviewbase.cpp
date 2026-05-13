@@ -688,7 +688,9 @@ bool ComposerViewBase::addKeysToContext(const QString &gnupgHome,
             }
         }
     }
-    loop.exec();
+    if (runningJobs > 0) {
+        loop.exec();
+    }
     return true;
 }
 
