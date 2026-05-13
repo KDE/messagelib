@@ -5,7 +5,6 @@
 */
 
 #include "mimetreemodel.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "messageviewer_debug.h"
 
@@ -24,6 +23,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTemporaryDir>
 #include <QUrl>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 
 class Q_DECL_HIDDEN MimeTreeModel::MimeTreeModelPrivate

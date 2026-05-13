@@ -9,7 +9,6 @@
  */
 
 #include "mailsourceviewtextbrowserwidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "findbar/findbarsourceview.h"
 #include "messageviewer/messageviewerutil.h"
@@ -37,6 +36,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QMenu>
 #include <QPushButton>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 MailSourceViewTextBrowserWidget::MailSourceViewTextBrowserWidget(const QString &syntax, QWidget *parent)
     : QWidget(parent)

@@ -6,7 +6,6 @@ SPDX-License-Identifier: GPL-2.0-or-later
 */
 
 #include "attachmentdialog.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KConfigGroup>
 #include <KGuiItem>
@@ -16,6 +15,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QDialog>
 #include <QDialogButtonBox>
 #include <QPushButton>
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 
 //---------------------------------------------------------------------

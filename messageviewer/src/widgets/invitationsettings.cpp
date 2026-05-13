@@ -7,12 +7,12 @@
 #include "settings/messageviewersettings.h"
 #include "ui_invitationsettings.h"
 #include <PimCommon/ConfigureImmutableWidgetUtils>
-using namespace Qt::Literals::StringLiterals;
-using namespace PimCommon::ConfigureImmutableWidgetUtils;
 
 #include <KLocalizedString>
 #include <KMessageBox>
 
+using namespace Qt::Literals::StringLiterals;
+using namespace PimCommon::ConfigureImmutableWidgetUtils;
 using namespace MessageViewer;
 
 class MessageViewer::InvitationSettingsPrivate
