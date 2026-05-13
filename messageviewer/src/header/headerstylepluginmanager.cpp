@@ -43,7 +43,7 @@ public:
     void loadPlugin(HeaderStylePluginInfo *item);
     [[nodiscard]] QString configGroupName() const;
     [[nodiscard]] QString configPrefixSettingKey() const;
-    MessageViewer::HeaderStylePlugin *pluginFromIdentifier(const QString &id);
+    [[nodiscard]] MessageViewer::HeaderStylePlugin *pluginFromIdentifier(const QString &id);
 
 private:
     QList<TextAddonsWidgets::PluginUtilData> mPluginDataList;
