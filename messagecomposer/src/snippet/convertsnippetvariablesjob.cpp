@@ -206,29 +206,29 @@ QString ConvertSnippetVariablesJob::convertVariables(MessageComposer::ComposerVi
                     i += strlen("SHORTDATE");
                     const QString str = composerView->shortDate();
                     result.append(str);
-                } else if (cmd.startsWith(QLatin1StringView("TIME"))) {
-                    i += strlen("TIME");
-                    const QString str = composerView->shortTime();
-                    result.append(str);
                 } else if (cmd.startsWith(QLatin1StringView("TIMELONG"))) {
                     i += strlen("TIMELONG");
                     const QString str = composerView->longTime();
+                    result.append(str);
+                } else if (cmd.startsWith(QLatin1StringView("TIME"))) {
+                    i += strlen("TIME");
+                    const QString str = composerView->shortTime();
                     result.append(str);
                 } else if (cmd.startsWith(QLatin1StringView("ATTACHMENTCOUNT"))) {
                     i += strlen("ATTACHMENTCOUNT");
                     const QString str = QString::number(composerView->attachments().count());
                     result.append(str);
-                } else if (cmd.startsWith(QLatin1StringView("ATTACHMENTNAMES"))) {
-                    i += strlen("ATTACHMENTNAMES");
-                    const QString str = composerView->attachments().names().join(u',');
+                } else if (cmd.startsWith(QLatin1StringView("ATTACHMENTNAMESANDSIZES"))) {
+                    i += strlen("ATTACHMENTNAMESANDSIZES");
+                    const QString str = composerView->attachments().namesAndSize().join(u',');
                     result.append(str);
                 } else if (cmd.startsWith(QLatin1StringView("ATTACHMENTFILENAMES"))) {
                     i += strlen("ATTACHMENTFILENAMES");
                     const QString str = composerView->attachments().fileNames().join(u',');
                     result.append(str);
-                } else if (cmd.startsWith(QLatin1StringView("ATTACHMENTNAMESANDSIZES"))) {
-                    i += strlen("ATTACHMENTNAMESANDSIZES");
-                    const QString str = composerView->attachments().namesAndSize().join(u',');
+                } else if (cmd.startsWith(QLatin1StringView("ATTACHMENTNAMES"))) {
+                    i += strlen("ATTACHMENTNAMES");
+                    const QString str = composerView->attachments().names().join(u',');
                     result.append(str);
                 } else {
                     result.append(convertVariables(cmd, i, c));
