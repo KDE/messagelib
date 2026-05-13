@@ -185,7 +185,7 @@ DKIMAuthenticationStatusInfo::AuthStatusInfo DKIMAuthenticationStatusInfo::parse
     // qDebug() << "propspec_p " << propspec_p;
 
     const QString regexp = DKIMAuthenticationStatusInfoUtil::regexMatchO(propspec_p);
-    static const QRegularExpression reg(regexp);
+    const QRegularExpression reg(regexp);
     if (!reg.isValid()) {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << " reg error : " << reg.errorString();
     } else {
