@@ -53,7 +53,7 @@ public:
     [[nodiscard]] QString configPrefixSettingKey() const;
     [[nodiscard]] QString configGroupName() const;
     [[nodiscard]] QList<TextAddonsWidgets::PluginUtilData> pluginsDataList() const;
-    PluginEditorConvertText *pluginFromIdentifier(const QString &id);
+    [[nodiscard]] PluginEditorConvertText *pluginFromIdentifier(const QString &id);
 
 private:
     QList<TextAddonsWidgets::PluginUtilData> mPluginDataList;

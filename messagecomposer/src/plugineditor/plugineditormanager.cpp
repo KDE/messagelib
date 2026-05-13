@@ -53,7 +53,7 @@ public:
 
     [[nodiscard]] QString configGroupName() const;
     [[nodiscard]] QString configPrefixSettingKey() const;
-    PluginEditor *pluginFromIdentifier(const QString &id);
+    [[nodiscard]] PluginEditor *pluginFromIdentifier(const QString &id);
 
 private:
     QList<PluginEditorInfo> mPluginList;
