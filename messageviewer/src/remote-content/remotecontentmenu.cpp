@@ -5,7 +5,6 @@
 */
 
 #include "remotecontentmenu.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "remote-content/remotecontentmanager.h"
 #include "remotecontentconfiguredialog.h"
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <KLocalizedString>
 #include <QAction>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 RemoteContentMenu::RemoteContentMenu(QWidget *parent)
     : QMenu(parent)

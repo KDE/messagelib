@@ -4,11 +4,11 @@
 */
 
 #include "iconnamecache.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KIconLoader>
 #include <QStandardPaths>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 
 Q_GLOBAL_STATIC(IconNameCache, s_iconNameCache)

@@ -4,7 +4,6 @@
  */
 
 #include "messageviewer/messageviewerutil.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "MessageCore/MessageCoreSettings"
 #include "MessageCore/StringUtil"
@@ -37,6 +36,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTemporaryFile>
 #include <QWidget>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 /** Checks whether @p str contains external references. To be precise,
     we only check whether @p str contains 'xxx="http[s]:' where xxx is
