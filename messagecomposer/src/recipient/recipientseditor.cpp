@@ -164,10 +164,11 @@ void RecipientsEditor::removeRecipient(const QString &recipient, Recipient::Type
     QListIterator<MultiplyingLine *> it(lines());
     MultiplyingLine *line = nullptr;
     while (it.hasNext()) {
-        line = it.next();
-        auto rec = qobject_cast<RecipientLineNG *>(line);
+        auto *candidate = it.next();
+        auto rec = qobject_cast<RecipientLineNG *>(candidate);
         if (rec) {
             if ((rec->recipient()->email() == recipient) && (rec->recipientType() == type)) {
+                line = candidate;
                 break;
             }
         }
