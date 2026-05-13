@@ -96,11 +96,9 @@ void QuickSearchLine::slotSearchEditTextEdited(const QString &text)
     if (text.startsWith(u'"') && text.endsWith(u'"')) {
         minimumStringLength = 5;
     }
-    if (!text.trimmed().isEmpty()) {
-        if (KStringHandler::logicalLength(text) >= minimumStringLength) {
-            mSearchMessageByButtons->setVisible(true);
-            Q_EMIT searchEditTextEdited(text);
-        }
+    if (!text.trimmed().isEmpty() && KStringHandler::logicalLength(text) >= minimumStringLength) {
+        mSearchMessageByButtons->setVisible(true);
+        Q_EMIT searchEditTextEdited(text);
     } else {
         slotClearButtonClicked();
     }
