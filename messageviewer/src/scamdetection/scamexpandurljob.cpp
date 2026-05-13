@@ -16,6 +16,7 @@
 
 #include <QJsonDocument>
 #include <QNetworkAccessManager>
+#include <QUrlQuery>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
@@ -50,7 +51,11 @@ void ScamExpandUrlJob::expandedUrl(const QUrl &url)
         deleteLater();
         return;
     }
-    const QUrl newUrl(u"https://lengthenurl.info/api/longurl/shorturl/?inputURL=%1&format=json"_s.arg(url.url()));
+    QUrl newUrl(u"https://lengthenurl.info/api/longurl/shorturl/"_s);
+    QUrlQuery query;
+    query.addQueryItem(u"inputURL"_s, url.url());
+    query.addQueryItem(u"format"_s, u"json"_s);
+    newUrl.setQuery(query);
 
     qCDebug(MESSAGEVIEWER_LOG) << " newUrl " << newUrl;
     QNetworkReply *reply = d->mNetworkAccessManager->get(QNetworkRequest(newUrl));
