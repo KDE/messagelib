@@ -251,7 +251,7 @@ bool Util::saveContents(QWidget *parent, const QList<KMime::Content *> &contents
                 if (curUrl.isLocalFile()) {
                     fileExists = QFile::exists(curUrl.toLocalFile());
                 } else {
-                    auto job = KIO::stat(url, KIO::StatJob::DestinationSide, KIO::StatDetail::StatBasic);
+                    auto job = KIO::stat(curUrl, KIO::StatJob::DestinationSide, KIO::StatDetail::StatBasic);
                     KJobWidgets::setWindow(job, parent);
                     fileExists = job->exec();
                 }
