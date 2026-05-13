@@ -93,8 +93,10 @@ void RichTextComposerSignatures::cleanWhitespace(const KIdentityManagementCore::
     // Single space lines
     d->cleanWhitespaceHelper(QRegularExpression(QLatin1StringView("[\n]{3,}")), u"\n\n"_s, sig);
 
-    if (!d->richTextComposer->textCursor().hasSelection()) {
-        d->richTextComposer->textCursor().clearSelection();
+    QTextCursor tc = d->richTextComposer->textCursor();
+    if (tc.hasSelection()) {
+        tc.clearSelection();
+        d->richTextComposer->setTextCursor(tc);
     }
 
     cursor.endEditBlock();
