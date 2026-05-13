@@ -162,7 +162,6 @@ target_sources(
         viewer/mimeparttree/mimeparttreeview.cpp
         viewer/mimeparttree/mimetreemodel.cpp
         viewer/viewerpurposemenuwidget.cpp
-        viewer/messagewidgetarea.cpp
         viewer/printmessage.cpp
         viewer/printmessage.h
         widgets/attachmentdialog.cpp
@@ -326,7 +325,6 @@ target_sources(
         viewer/messagedisplayformatattribute.h
         viewer/objecttreeviewersource.h
         viewer/viewer_p.h
-        viewer/messagewidgetarea.h
         viewer/renderer/messageviewerrenderer.h
         viewer/urlhandlermanager.h
         viewer/urlhandlermanager_p.h
