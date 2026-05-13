@@ -54,7 +54,7 @@ DKIMRuleDialog::~DKIMRuleDialog()
 
 void DKIMRuleDialog::readConfig()
 {
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myDKIMRuleDialogConfigGroupName));
+    const KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myDKIMRuleDialogConfigGroupName));
     const QSize size = group.readEntry("Size", QSize(600, 400));
     if (size.isValid()) {
         resize(size);
