@@ -11,7 +11,6 @@
  */
 
 #include "signaturecontroller.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "composer-ng/richtextcomposerng.h"
 #include "composer-ng/richtextcomposersignatures.h"
@@ -22,6 +21,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <KIdentityManagementWidgets/IdentityCombo>
 
 using namespace MessageComposer;
+using namespace Qt::Literals::StringLiterals;
 
 class MessageComposer::SignatureControllerPrivate
 {

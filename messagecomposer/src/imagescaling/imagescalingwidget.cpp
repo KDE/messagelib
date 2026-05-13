@@ -5,7 +5,6 @@
 */
 
 #include "imagescalingwidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "settings/messagecomposersettings.h"
 #include "ui_imagescalingwidget.h"
@@ -19,6 +18,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QList>
 #include <QWhatsThis>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageComposer;
 class MessageComposer::ImageScalingWidgetPrivate
 {

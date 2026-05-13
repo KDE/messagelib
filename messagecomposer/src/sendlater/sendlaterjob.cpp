@@ -5,7 +5,6 @@
 */
 
 #include "sendlaterjob.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "messagecomposer_debug.h"
 #include "sendlaterinterface.h"
@@ -18,6 +17,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <memory>
 
 using namespace MessageComposer;
+using namespace Qt::Literals::StringLiterals;
 
 SendLaterJob::SendLaterJob(QObject *parent)
     : KJob(parent)
