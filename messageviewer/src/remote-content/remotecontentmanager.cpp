@@ -57,10 +57,7 @@ bool RemoteContentManager::isAutorized(const QUrl &url, bool &contains) const
     contains = false;
 
     for (const RemoteContentInfo &info : std::as_const(mRemoveContentInfo)) {
-        if (info.url() == urlToString) {
-            contains = true;
-            return info.status() == RemoteContentInfo::RemoteContentInfoStatus::Authorized;
-        } else if (info.url() == host) {
+        if ((info.url() == urlToString) || (info.url() == host)) {
             contains = true;
             return info.status() == RemoteContentInfo::RemoteContentInfoStatus::Authorized;
         }
@@ -76,10 +73,7 @@ bool RemoteContentManager::isBlocked(const QUrl &url, bool &contains) const
     contains = false;
 
     for (const RemoteContentInfo &info : std::as_const(mRemoveContentInfo)) {
-        if (info.url() == urlToString) {
-            contains = true;
-            return info.status() == RemoteContentInfo::RemoteContentInfoStatus::Blocked;
-        } else if (info.url() == host) {
+        if ((info.url() == urlToString) || (info.url() == host)) {
             contains = true;
             return info.status() == RemoteContentInfo::RemoteContentInfoStatus::Blocked;
         }
