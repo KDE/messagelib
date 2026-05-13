@@ -4321,18 +4321,19 @@ void ModelPrivate::slotStorageModelRowsRemoved(const QModelIndex &parent, int fr
             // The change starts in the middle of the job and ends in the middle or after the job.
             // The first part is unaffected by the shift and ranges from job->currentIndex() to from - 1
             // We use the existing job for this.
+            const int originalEndIndex = job->endIndex();
             job->setEndIndex(from - 1); // stop before the first removed row
 
             Q_ASSERT(job->currentIndex() <= job->endIndex());
 
-            if (to < job->endIndex()) {
+            if (to < originalEndIndex) {
                 // The change ends inside the job and a part of it can be completed.
 
                 // We create a new job for the shifted remaining part. It would actually
-                // range from to + 1 up to job->endIndex(), but we need to shift it down by count.
+                // range from to + 1 up to originalEndIndex, but we need to shift it down by count.
                 // since count = ( to - from ) + 1 so from = to + 1 - count
 
-                auto newJob = new ViewItemJob(from, job->endIndex() - count, job->chunkTimeout(), job->idleInterval(), job->messageCheckCount());
+                auto newJob = new ViewItemJob(from, originalEndIndex - count, job->chunkTimeout(), job->idleInterval(), job->messageCheckCount());
 
                 Q_ASSERT(newJob->currentIndex() < newJob->endIndex());
 
