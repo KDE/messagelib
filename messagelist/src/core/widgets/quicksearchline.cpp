@@ -156,6 +156,8 @@ void QuickSearchLine::resetFilter()
     mSearchEdit->clearFilterButtonClicked();
     mSearchEdit->setLocked(false);
     mSearchStatusButtons->clearFilter();
+    mSearchMessageByButtons->clearFilter();
+    mSearchMessageByButtons->setVisible(false);
 }
 
 void QuickSearchLine::slotFilterActionChanged(const QList<Akonadi::MessageStatus> &lst)
