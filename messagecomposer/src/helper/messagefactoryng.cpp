@@ -409,7 +409,7 @@ std::unique_ptr<KMime::Content> MessageFactoryNG::createForwardAttachmentMessage
     cd->setDisposition(KMime::Headers::CDinline);
     const QString subject = fwdMsg->subject()->asUnicodeString();
     ct->setParameter(QByteArrayLiteral("name"), subject);
-    cd->fromUnicodeString(fwdMsg->from()->asUnicodeString() + QLatin1StringView(": ") + subject);
+    msgPart->contentDescription()->fromUnicodeString(fwdMsg->from()->asUnicodeString() + QLatin1StringView(": ") + subject);
     msgPart->setBody(fwdMsg->encodedContent());
     msgPart->assemble();
 
