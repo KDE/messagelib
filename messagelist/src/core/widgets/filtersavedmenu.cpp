@@ -19,6 +19,8 @@ FilterSavedMenu::FilterSavedMenu(QWidget *parent)
     , mConfigureAction(new QAction(QIcon::fromTheme(u"settings-configure"_s), i18nc("@action", "Configure..."), this))
 {
     connect(this, &FilterSavedMenu::aboutToShow, this, &FilterSavedMenu::slotShowMenu);
+    connect(mSaveAction, &QAction::triggered, this, &FilterSavedMenu::saveFilter);
+    connect(mConfigureAction, &QAction::triggered, this, &FilterSavedMenu::configureFilters);
 }
 
 FilterSavedMenu::~FilterSavedMenu() = default;
@@ -40,8 +42,6 @@ void FilterSavedMenu::slotShowMenu()
     addAction(mSaveAction);
     addSeparator();
     addAction(mConfigureAction);
-    connect(mSaveAction, &QAction::triggered, this, &FilterSavedMenu::saveFilter);
-    connect(mConfigureAction, &QAction::triggered, this, &FilterSavedMenu::configureFilters);
 }
 
 #include "moc_filtersavedmenu.cpp"
