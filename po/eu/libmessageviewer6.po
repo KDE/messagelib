@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-08 00:45+0000\n"
+"POT-Creation-Date: 2026-05-14 00:45+0000\n"
 "PO-Revision-Date: 2025-08-10 22:22+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -1081,17 +1081,17 @@ msgstr ""
 msgid "Details:"
 msgstr "Xehetasunak:"
 
-#: scamdetection/scamexpandurljob.cpp:49
+#: scamdetection/scamexpandurljob.cpp:50
 #, kde-format
 msgid "No network connection detected, we cannot expand url."
 msgstr "Ez da antzeman sare-konexiorik, ezin dugu URLa zabaldu."
 
-#: scamdetection/scamexpandurljob.cpp:79 scamdetection/scamexpandurljob.cpp:85
+#: scamdetection/scamexpandurljob.cpp:84 scamdetection/scamexpandurljob.cpp:90
 #, kde-format
 msgid "Impossible to expand '%1'."
 msgstr "«%1» edatzea ezinezkoa da."
 
-#: scamdetection/scamexpandurljob.cpp:83
+#: scamdetection/scamexpandurljob.cpp:88
 #, kde-format
 msgid "Short url '%1' redirects to '%2'."
 msgstr "«%1» URL laburrak «%2»(e)ra bideratzen du."

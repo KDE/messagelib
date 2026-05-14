@@ -22,7 +22,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-08 00:45+0000\n"
+"POT-Creation-Date: 2026-05-14 00:45+0000\n"
 "PO-Revision-Date: 2025-05-18 17:01+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -1091,19 +1091,19 @@ msgstr ""
 msgid "Details:"
 msgstr "Details:"
 
-#: scamdetection/scamexpandurljob.cpp:49
+#: scamdetection/scamexpandurljob.cpp:50
 #, kde-format
 msgid "No network connection detected, we cannot expand url."
 msgstr ""
 "Geen netwerkverbinding gedetecteerd, een korte URL kan niet geëxpandeerd "
 "worden."
 
-#: scamdetection/scamexpandurljob.cpp:79 scamdetection/scamexpandurljob.cpp:85
+#: scamdetection/scamexpandurljob.cpp:84 scamdetection/scamexpandurljob.cpp:90
 #, kde-format
 msgid "Impossible to expand '%1'."
 msgstr "Uitvouwen van '%1' is niet mogelijk."
 
-#: scamdetection/scamexpandurljob.cpp:83
+#: scamdetection/scamexpandurljob.cpp:88
 #, kde-format
 msgid "Short url '%1' redirects to '%2'."
 msgstr "Korte URL '%1' verwijst naar '%2'."

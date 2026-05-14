@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-06 00:47+0000\n"
+"POT-Creation-Date: 2026-05-14 00:45+0000\n"
 "PO-Revision-Date: 2025-09-17 21:51+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -1463,32 +1463,32 @@ msgctxt "@action:button"
 msgid "Newer"
 msgstr "Nyare"
 
-#: core/widgets/searchlinestatus.cpp:81
+#: core/widgets/searchlinestatus.cpp:89
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Prevent the quick search field from being cleared when changing folders"
 msgstr "Förhindra att snabbsökfältet rensas vid byte av korg"
 
-#: core/widgets/searchlinestatus.cpp:84
+#: core/widgets/searchlinestatus.cpp:92
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear the quick search field when changing folders"
 msgstr "Rensa snabbsökfältet vid byte av korg"
 
-#: core/widgets/searchlinestatus.cpp:103
+#: core/widgets/searchlinestatus.cpp:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show or Hide search command line"
 msgstr "Visa eller dölj sökkommandorad"
 
-#: core/widgets/searchlinestatus.cpp:104
+#: core/widgets/searchlinestatus.cpp:112
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
 msgstr ""
 "Använd knappen om den grafiska kommandoradskomponenten ska visas eller döljas"
 
-#: core/widgets/searchlinestatus.cpp:108
+#: core/widgets/searchlinestatus.cpp:116
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1498,13 +1498,13 @@ msgstr ""
 "Ändra knappen om du vill behålla snabbsökningen låst när du flyttar till "
 "andra korgar, eller när en sökning begränsas enligt brevstatus."
 
-#: core/widgets/searchlinestatus.cpp:116
+#: core/widgets/searchlinestatus.cpp:124
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "Sparat filter"
 
-#: core/widgets/searchlinestatus.cpp:194
+#: core/widgets/searchlinestatus.cpp:202
 #, kde-format
 msgid "Clear History"
 msgstr "Rensa historik"

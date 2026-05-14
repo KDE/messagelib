@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-06 00:47+0000\n"
+"POT-Creation-Date: 2026-05-14 00:45+0000\n"
 "PO-Revision-Date: 2025-11-30 15:21+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
@@ -1468,31 +1468,31 @@ msgctxt "@action:button"
 msgid "Newer"
 msgstr "புதியது"
 
-#: core/widgets/searchlinestatus.cpp:81
+#: core/widgets/searchlinestatus.cpp:89
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Prevent the quick search field from being cleared when changing folders"
 msgstr "வேறு அடைவுக்கு மாறும்போது, விரைதேடல் பட்டை காலியாக்கப்படுவதைத் தடுக்கும்"
 
-#: core/widgets/searchlinestatus.cpp:84
+#: core/widgets/searchlinestatus.cpp:92
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear the quick search field when changing folders"
 msgstr "வேறு அடைவுக்கு மாறும்போது, விரைதேடல் பட்டையைக் காலியாக்கு"
 
-#: core/widgets/searchlinestatus.cpp:103
+#: core/widgets/searchlinestatus.cpp:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show or Hide search command line"
 msgstr "வேக தேடல் உரைப்பெட்டியை காட்டும் அல்லது மறைக்கும்"
 
-#: core/widgets/searchlinestatus.cpp:104
+#: core/widgets/searchlinestatus.cpp:112
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
 msgstr "வேக தேடல் உரைப்பெட்டியை காட்ட அல்லது மறைக்க இந்த பட்டனை அழுத்தவும்."
 
-#: core/widgets/searchlinestatus.cpp:108
+#: core/widgets/searchlinestatus.cpp:116
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1500,13 +1500,13 @@ msgid ""
 "to other folders or when narrowing the search by message status."
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:116
+#: core/widgets/searchlinestatus.cpp:124
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "சேமிக்கப்பட்டுள்ள வடிகட்டி"
 
-#: core/widgets/searchlinestatus.cpp:194
+#: core/widgets/searchlinestatus.cpp:202
 #, kde-format
 msgid "Clear History"
 msgstr "வரலாற்றை காலியாக்கு"

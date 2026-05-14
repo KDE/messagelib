@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-06 00:47+0000\n"
+"POT-Creation-Date: 2026-05-14 00:45+0000\n"
 "PO-Revision-Date: 2025-11-08 22:30+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -1466,25 +1466,25 @@ msgctxt "@action:button"
 msgid "Newer"
 msgstr "Újabb"
 
-#: core/widgets/searchlinestatus.cpp:81
+#: core/widgets/searchlinestatus.cpp:89
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Prevent the quick search field from being cleared when changing folders"
 msgstr "A gyors keresés mező törlésének megakadályozása mappaváltáskor"
 
-#: core/widgets/searchlinestatus.cpp:84
+#: core/widgets/searchlinestatus.cpp:92
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear the quick search field when changing folders"
 msgstr "A gyors keresés mező törlése mappaváltáskor"
 
-#: core/widgets/searchlinestatus.cpp:103
+#: core/widgets/searchlinestatus.cpp:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show or Hide search command line"
 msgstr "A keresési parancssor megjelenítése vagy elrejtése"
 
-#: core/widgets/searchlinestatus.cpp:104
+#: core/widgets/searchlinestatus.cpp:112
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
@@ -1492,7 +1492,7 @@ msgstr ""
 "Váltsa át ezt a gombot, ha szeretné megjeleníteni vagy elrejteni a kereső "
 "parancssor elemet."
 
-#: core/widgets/searchlinestatus.cpp:108
+#: core/widgets/searchlinestatus.cpp:116
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1502,13 +1502,13 @@ msgstr ""
 "Váltsa át ezt a gombot, ha zárolva szeretné tartani a gyors keresést, amikor "
 "másik mappába lép vagy szűkíti az üzenetállapot szerinti keresést."
 
-#: core/widgets/searchlinestatus.cpp:116
+#: core/widgets/searchlinestatus.cpp:124
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "Mentett szűrő"
 
-#: core/widgets/searchlinestatus.cpp:194
+#: core/widgets/searchlinestatus.cpp:202
 #, kde-format
 msgid "Clear History"
 msgstr "Előzmények törlése"

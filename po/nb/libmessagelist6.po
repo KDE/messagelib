@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-06 00:47+0000\n"
+"POT-Creation-Date: 2026-05-14 00:45+0000\n"
 "PO-Revision-Date: 2014-09-13 18:16+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -1466,31 +1466,31 @@ msgctxt "@action:button"
 msgid "Newer"
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:81
+#: core/widgets/searchlinestatus.cpp:89
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Prevent the quick search field from being cleared when changing folders"
 msgstr "Ikke tøm hurtigsøk-feltet når det byttes mapper"
 
-#: core/widgets/searchlinestatus.cpp:84
+#: core/widgets/searchlinestatus.cpp:92
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear the quick search field when changing folders"
 msgstr "Tøm hurtigsøk-feltet når det byttes mapper"
 
-#: core/widgets/searchlinestatus.cpp:103
+#: core/widgets/searchlinestatus.cpp:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show or Hide search command line"
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:104
+#: core/widgets/searchlinestatus.cpp:112
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:108
+#: core/widgets/searchlinestatus.cpp:116
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1500,13 +1500,13 @@ msgstr ""
 "Bruk denne knappen hvis du vil beholde hurtigsøket låst mens du går til "
 "andre mapper, eller når søket innskrenkes etter meldingsstatus."
 
-#: core/widgets/searchlinestatus.cpp:116
+#: core/widgets/searchlinestatus.cpp:124
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:194
+#: core/widgets/searchlinestatus.cpp:202
 #, kde-format
 msgid "Clear History"
 msgstr ""

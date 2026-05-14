@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-06 00:47+0000\n"
+"POT-Creation-Date: 2026-05-14 00:45+0000\n"
 "PO-Revision-Date: 2025-09-16 09:27-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -1475,7 +1475,7 @@ msgctxt "@action:button"
 msgid "Newer"
 msgstr "Mais novo"
 
-#: core/widgets/searchlinestatus.cpp:81
+#: core/widgets/searchlinestatus.cpp:89
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Prevent the quick search field from being cleared when changing folders"
@@ -1483,19 +1483,19 @@ msgstr ""
 "Evita que o conteúdo do campo de pesquisa rápida seja apagado ao mudar de "
 "pasta"
 
-#: core/widgets/searchlinestatus.cpp:84
+#: core/widgets/searchlinestatus.cpp:92
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear the quick search field when changing folders"
 msgstr "Limpar o campo de pesquisa rápida ao mudar de pasta"
 
-#: core/widgets/searchlinestatus.cpp:103
+#: core/widgets/searchlinestatus.cpp:111
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show or Hide search command line"
 msgstr "Mostrar ou ocultar a linha de comando de pesquisa"
 
-#: core/widgets/searchlinestatus.cpp:104
+#: core/widgets/searchlinestatus.cpp:112
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
@@ -1503,7 +1503,7 @@ msgstr ""
 "Alterne este botão se deseja exibir ou ocultar o elemento de pesquisa de "
 "linha de comando."
 
-#: core/widgets/searchlinestatus.cpp:108
+#: core/widgets/searchlinestatus.cpp:116
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1514,13 +1514,13 @@ msgstr ""
 "bloqueada ao mover para outras pastas ou quando deseja refinar a pesquisa "
 "pelo status da mensagem."
 
-#: core/widgets/searchlinestatus.cpp:116
+#: core/widgets/searchlinestatus.cpp:124
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "Filtro salvo"
 
-#: core/widgets/searchlinestatus.cpp:194
+#: core/widgets/searchlinestatus.cpp:202
 #, kde-format
 msgid "Clear History"
 msgstr "Limpar histórico"

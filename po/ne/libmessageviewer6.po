@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-08 00:45+0000\n"
+"POT-Creation-Date: 2026-05-14 00:45+0000\n"
 "PO-Revision-Date: 2007-09-10 16:41+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -1176,17 +1176,17 @@ msgstr ""
 msgid "Details:"
 msgstr "[विस्तृत विवरण]"
 
-#: scamdetection/scamexpandurljob.cpp:49
+#: scamdetection/scamexpandurljob.cpp:50
 #, kde-format
 msgid "No network connection detected, we cannot expand url."
 msgstr ""
 
-#: scamdetection/scamexpandurljob.cpp:79 scamdetection/scamexpandurljob.cpp:85
+#: scamdetection/scamexpandurljob.cpp:84 scamdetection/scamexpandurljob.cpp:90
 #, kde-format
 msgid "Impossible to expand '%1'."
 msgstr ""
 
-#: scamdetection/scamexpandurljob.cpp:83
+#: scamdetection/scamexpandurljob.cpp:88
 #, kde-format
 msgid "Short url '%1' redirects to '%2'."
 msgstr ""

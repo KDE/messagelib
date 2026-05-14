@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-08 00:45+0000\n"
+"POT-Creation-Date: 2026-05-14 00:45+0000\n"
 "PO-Revision-Date: 2014-01-31 19:13+0100\n"
 "Last-Translator: Samir Ribić <megaribi@epn.ba>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -1156,17 +1156,17 @@ msgstr "Poruka sadrži element. To je često slučaj u prijevari e-pošte."
 msgid "Details:"
 msgstr "Detalji:"
 
-#: scamdetection/scamexpandurljob.cpp:49
+#: scamdetection/scamexpandurljob.cpp:50
 #, kde-format
 msgid "No network connection detected, we cannot expand url."
 msgstr "Nema prepoznate mrežne konekcije, ne možemo raširiti url,"
 
-#: scamdetection/scamexpandurljob.cpp:79 scamdetection/scamexpandurljob.cpp:85
+#: scamdetection/scamexpandurljob.cpp:84 scamdetection/scamexpandurljob.cpp:90
 #, kde-format
 msgid "Impossible to expand '%1'."
 msgstr ""
 
-#: scamdetection/scamexpandurljob.cpp:83
+#: scamdetection/scamexpandurljob.cpp:88
 #, kde-format
 msgid "Short url '%1' redirects to '%2'."
 msgstr "Kratki url '%1' preusmjerava na '%2'."
