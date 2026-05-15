@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the messagelib package.
 #
-# SPDX-FileCopyrightText: 2024, 2025 Yaron Shahrabani <sh.yaron@gmail.com>
+# SPDX-FileCopyrightText: 2024-2026 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-14 00:45+0000\n"
-"PO-Revision-Date: 2025-10-05 11:56+0300\n"
+"PO-Revision-Date: 2026-05-14 20:48+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 26.04.0\n"
 
 #: attachment/attachmentcontrollerbase.cpp:168
 #, kde-format
@@ -202,7 +202,7 @@ msgstr "שמירה בשם…"
 #, kde-format
 msgctxt "@action"
 msgid "Attachment Pr&operties..."
-msgstr "מ&אפייני קובץ מצורף..."
+msgstr "מ&אפייני קובץ מצורף…"
 
 #: attachment/attachmentcontrollerbase.cpp:534
 #, kde-format
