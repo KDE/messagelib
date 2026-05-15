@@ -43,8 +43,6 @@ include(ECMGenerateExportHeader)
 include(ECMSetupVersion)
 include(ECMGenerateHeaders)
 
-include(KDEGitCommitHooks)
-include(KDEClangFormat)
 file(
     GLOB_RECURSE ALL_CLANG_FORMAT_SOURCE_FILES
     messagecomposer/*.cpp
