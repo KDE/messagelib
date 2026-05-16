@@ -5,7 +5,6 @@
 
 */
 #include "scamdetectionwebengine.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "MessageViewer/ScamCheckShortUrl"
 #include "scamdetectiondetailsdialog.h"
@@ -20,6 +19,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QWebEnginePage>
 
 using namespace MessageViewer;
+using namespace Qt::Literals::StringLiterals;
 
 template<typename Arg, typename R, typename C>
 struct InvokeWrapper {

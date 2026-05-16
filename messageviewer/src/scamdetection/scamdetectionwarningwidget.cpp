@@ -6,7 +6,6 @@
 */
 
 #include "scamdetectionwarningwidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "settings/messageviewersettings.h"
 
@@ -14,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QAction>
 #include <QMenu>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 
 class MessageViewer::ScamDetectionWarningWidgetPrivate

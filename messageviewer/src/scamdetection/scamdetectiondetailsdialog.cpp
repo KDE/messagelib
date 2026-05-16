@@ -6,7 +6,6 @@
 */
 
 #include "scamdetectiondetailsdialog.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "messageviewer_debug.h"
 #include "settings/messageviewersettings.h"
@@ -30,6 +29,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QWindow>
 #include <memory>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 namespace
 {
