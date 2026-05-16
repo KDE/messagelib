@@ -389,7 +389,12 @@ bool Util::saveContent(QWidget *parent, const KMime::Content *content, const QUr
         ds.setDevice(&file);
     } else {
         // tmp file for upload
-        tf.open();
+        if (!tf.open()) {
+            KMessageBox::error(parent,
+                               xi18nc("1 = error string", "Could not create temporary file: <message>%1</message>", tf.errorString()),
+                               i18nc("@title:window", "Error saving attachment"));
+            return false;
+        }
         ds.setDevice(&tf);
     }
 
@@ -499,7 +504,12 @@ bool Util::saveMessageInMboxAndGetUrl(QUrl &url, const Akonadi::Item::List &retr
             }
         } else {
             // tmp file for upload
-            tf.open();
+            if (!tf.open()) {
+                KMessageBox::error(parent,
+                                   i18nc("1 = error string", "Could not create temporary file: <message>%1</message>", tf.errorString()),
+                                   i18nc("@title:window", "Error saving message"));
+                return false;
+            }
             localFileName = tf.fileName();
         }
 
@@ -514,7 +524,10 @@ bool Util::saveMessageInMboxAndGetUrl(QUrl &url, const Akonadi::Item::List &retr
         }
         for (const Akonadi::Item &item : std::as_const(retrievedMsgs)) {
             if (item.hasPayload<std::shared_ptr<KMime::Message>>()) {
-                mbox.appendMessage(item.payload<std::shared_ptr<KMime::Message>>());
+                if (!mbox.appendMessage(item.payload<std::shared_ptr<KMime::Message>>()).isValid()) {
+                    KMessageBox::error(parent, i18n("We cannot append message to mbox."), i18n("Error saving message"));
+                    return false;
+                }
             }
         }
 
