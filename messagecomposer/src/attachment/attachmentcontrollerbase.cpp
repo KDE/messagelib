@@ -680,7 +680,7 @@ void AttachmentControllerBase::openWith(const KService::Ptr &offer)
                            i18nc("@title:window", "Unable to open attachment"));
         return;
     }
-    QUrl url = QUrl::fromLocalFile(tempFile->fileName());
+    const QUrl url = QUrl::fromLocalFile(tempFile->fileName());
     tempFile->setPermissions(QFile::ReadUser);
     // If offer is null, this will show the "open with" dialog
     auto job = new KIO::ApplicationLauncherJob(offer);
