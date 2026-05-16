@@ -5,12 +5,12 @@
 */
 
 #include "sendlatercreatejob.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "sendlaterinterface.h"
 
 #include <KLocalizedString>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageComposer;
 
 SendLaterCreateJob::SendLaterCreateJob(const SendLaterInfo &info, QObject *parent)

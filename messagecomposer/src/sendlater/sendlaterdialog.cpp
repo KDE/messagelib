@@ -5,7 +5,6 @@
 */
 
 #include "sendlaterdialog.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "sendlaterinfo.h"
 #include "sendlatertimedatewidget_p.h"
@@ -21,6 +20,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QVBoxLayout>
 
 using namespace MessageComposer;
+using namespace Qt::Literals::StringLiterals;
 
 SendLaterDialog::SendLaterDialog(SendLaterInfo *info, QWidget *parent)
     : QDialog(parent)

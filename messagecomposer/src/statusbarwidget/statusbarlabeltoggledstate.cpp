@@ -5,10 +5,10 @@
 */
 
 #include "statusbarlabeltoggledstate.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "messagecomposer_debug.h"
 #include <QMouseEvent>
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageComposer;
 StatusBarLabelToggledState::StatusBarLabelToggledState(QWidget *parent)
     : QLabel(parent)
