@@ -841,7 +841,7 @@ void AttachmentControllerBase::attachmentProperties(const AttachmentPart::Ptr &p
     dialog->setEncryptEnabled(d->encryptEnabled);
     dialog->setSignEnabled(d->signEnabled);
 
-    if (dialog->exec() && dialog) {
+    if (dialog->exec()) {
         d->model->updateAttachment(part);
     }
     delete dialog;
