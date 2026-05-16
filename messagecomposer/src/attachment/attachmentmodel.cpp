@@ -257,7 +257,7 @@ QVariant AttachmentModel::data(const QModelIndex &index, int role) const
                      part->name().isEmpty() ? part->fileName() : part->name(),
                      KIO::convertSize(part->size()),
                      KMime::nameForEncoding(part->encoding()),
-                     QString::fromLatin1(part->mimeType().data()));
+                     QString::fromLatin1(part->mimeType().constData()));
     } else if (role == Qt::CheckStateRole) {
         switch (index.column()) {
         case CompressColumn:
