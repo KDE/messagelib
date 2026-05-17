@@ -490,10 +490,7 @@ QList<ModelInvariantIndex *> *ModelInvariantRowMapper::modelRowsRemoved(int mode
             d->indexDead(dyingInvariant); // will remove from this mapper hashes
             dyingInvariant->d->setRowMapper(nullptr); // invalidate!
             deadInvariants->append(dyingInvariant);
-        } else {
-            // got no dying invariant
-            qCWarning(MESSAGELIST_LOG) << "Could not find invariant to invalidate at current row " << idx;
-        }
+        } // else  got no dying invariant
     }
 
     if (!d->mRowShiftList) {
