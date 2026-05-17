@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-14 00:45+0000\n"
+"POT-Creation-Date: 2026-05-17 00:45+0000\n"
 "PO-Revision-Date: 2020-05-13 12:55+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -1665,8 +1665,8 @@ msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "Säilita allkiri"
 
-#: utils/messageviewerutil.cpp:383 utils/messageviewerutil.cpp:401
-#: utils/messageviewerutil.cpp:419 utils/messageviewerutil.cpp:539
+#: utils/messageviewerutil.cpp:383 utils/messageviewerutil.cpp:406
+#: utils/messageviewerutil.cpp:424 utils/messageviewerutil.cpp:552
 #, kde-kuit-format
 msgctxt "1 = file name, 2 = error string"
 msgid ""
@@ -1676,76 +1676,89 @@ msgstr ""
 "<qt>Faili<br /><filename>%1</filename><br />kirjutamine nurjus<br /><br />"
 "%2</qt>"
 
-#: utils/messageviewerutil.cpp:386
+#: utils/messageviewerutil.cpp:386 utils/messageviewerutil.cpp:395
 #, fuzzy, kde-format
 #| msgid "Error saving attachment"
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "Viga kaasatud faili salvestamisel"
 
-#: utils/messageviewerutil.cpp:404 utils/messageviewerutil.cpp:422
+#: utils/messageviewerutil.cpp:394 utils/messageviewerutil.cpp:509
+#, kde-format, kde-kuit-format
+msgctxt "1 = error string"
+msgid "Could not create temporary file: <message>%1</message>"
+msgstr ""
+
+#: utils/messageviewerutil.cpp:409 utils/messageviewerutil.cpp:427
 #, kde-format
 msgid "Error saving attachment"
 msgstr "Viga kaasatud faili salvestamisel"
 
-#: utils/messageviewerutil.cpp:435
+#: utils/messageviewerutil.cpp:440
 #, kde-format
 msgid "Found no attachments to save."
 msgstr "Ei leitud ühtki kaasatud faili, mida salvestada."
 
-#: utils/messageviewerutil.cpp:451
+#: utils/messageviewerutil.cpp:456
 #, kde-format
 msgid "message"
 msgstr "kiri"
 
-#: utils/messageviewerutil.cpp:473
+#: utils/messageviewerutil.cpp:478
 #, fuzzy, kde-format
 #| msgid "email messages (*.mbox);;all files (*)"
 msgid "Mailbox file (*.mbox);;All Files (*)"
 msgstr "e-kirjad (*.mbox);;kõik failid (*)"
 
-#: utils/messageviewerutil.cpp:484
+#: utils/messageviewerutil.cpp:489
 #, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
 msgstr[0] "Kirja salvestamine"
 msgstr[1] "Kirjade salvestamine"
 
-#: utils/messageviewerutil.cpp:509
-#, kde-format
-msgid "File %1 could not be loaded."
-msgstr "Faili %1 laadimine nurjus."
-
-#: utils/messageviewerutil.cpp:509
-#, fuzzy, kde-format
-#| msgid "Error loading message"
-msgctxt "@title:window"
-msgid "Error loading message"
-msgstr "Tõrge kirja laadimisel"
-
-#: utils/messageviewerutil.cpp:511
-#, kde-format
-msgid "File %1 could not be created."
-msgstr "Faili %1 loomine nurjus."
-
-#: utils/messageviewerutil.cpp:511 utils/messageviewerutil.cpp:542
+#: utils/messageviewerutil.cpp:510 utils/messageviewerutil.cpp:521
+#: utils/messageviewerutil.cpp:555
 #, fuzzy, kde-format
 #| msgid "Error saving message"
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Tõrge kirja salvestamisel"
 
-#: utils/messageviewerutil.cpp:522
+#: utils/messageviewerutil.cpp:519
 #, kde-format
-msgid "We cannot save message."
+msgid "File %1 could not be loaded."
+msgstr "Faili %1 laadimine nurjus."
+
+#: utils/messageviewerutil.cpp:519
+#, fuzzy, kde-format
+#| msgid "Error loading message"
+msgctxt "@title:window"
+msgid "Error loading message"
+msgstr "Tõrge kirja laadimisel"
+
+#: utils/messageviewerutil.cpp:521
+#, kde-format
+msgid "File %1 could not be created."
+msgstr "Faili %1 loomine nurjus."
+
+#: utils/messageviewerutil.cpp:528
+#, fuzzy, kde-format
+#| msgid "We cannot save message."
+msgid "We cannot append message to mbox."
 msgstr "Kirja ei saa salvestada."
 
-#: utils/messageviewerutil.cpp:522
+#: utils/messageviewerutil.cpp:528 utils/messageviewerutil.cpp:535
 #, kde-format
 msgid "Error saving message"
 msgstr "Tõrge kirja salvestamisel"
 
-#: utils/messageviewerutil.cpp:586
+#: utils/messageviewerutil.cpp:535
+#, kde-format
+msgid "We cannot save message."
+msgstr "Kirja ei saa salvestada."
+
+#: utils/messageviewerutil.cpp:599
 #, fuzzy, kde-format
 #| msgctxt "Not able to attend."
 #| msgid "Declined: %1"
@@ -1753,19 +1766,19 @@ msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "Tagasi lükatud: %1"
 
-#: utils/messageviewerutil.cpp:597
+#: utils/messageviewerutil.cpp:610
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:625
+#: utils/messageviewerutil.cpp:638
 #, kde-format
 msgid "Open &with %1"
 msgstr "Ava &rakendusega %1"
 
-#: utils/messageviewerutil.cpp:627
+#: utils/messageviewerutil.cpp:640
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"

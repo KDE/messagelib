@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-14 00:45+0000\n"
+"POT-Creation-Date: 2026-05-17 00:45+0000\n"
 "PO-Revision-Date: 2024-12-20 22:01+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -1603,8 +1603,8 @@ msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "हस्ताक्षरं स्थापयन्तु"
 
-#: utils/messageviewerutil.cpp:383 utils/messageviewerutil.cpp:401
-#: utils/messageviewerutil.cpp:419 utils/messageviewerutil.cpp:539
+#: utils/messageviewerutil.cpp:383 utils/messageviewerutil.cpp:406
+#: utils/messageviewerutil.cpp:424 utils/messageviewerutil.cpp:552
 #, kde-kuit-format
 msgctxt "1 = file name, 2 = error string"
 msgid ""
@@ -1613,91 +1613,104 @@ msgid ""
 msgstr ""
 "<qt>सञ्चिकायां लिखितुं न शक्तवान्<br /><filename> %1</filename><br /><br /> %2</qt>"
 
-#: utils/messageviewerutil.cpp:386
+#: utils/messageviewerutil.cpp:386 utils/messageviewerutil.cpp:395
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "संलग्नकं रक्षितुं त्रुटिः"
 
-#: utils/messageviewerutil.cpp:404 utils/messageviewerutil.cpp:422
+#: utils/messageviewerutil.cpp:394 utils/messageviewerutil.cpp:509
+#, kde-format, kde-kuit-format
+msgctxt "1 = error string"
+msgid "Could not create temporary file: <message>%1</message>"
+msgstr ""
+
+#: utils/messageviewerutil.cpp:409 utils/messageviewerutil.cpp:427
 #, kde-format
 msgid "Error saving attachment"
 msgstr "संलग्नकं रक्षितुं त्रुटिः"
 
-#: utils/messageviewerutil.cpp:435
+#: utils/messageviewerutil.cpp:440
 #, kde-format
 msgid "Found no attachments to save."
 msgstr "रक्षितुं कोऽपि आसक्तिः न प्राप्तः।"
 
-#: utils/messageviewerutil.cpp:451
+#: utils/messageviewerutil.cpp:456
 #, kde-format
 msgid "message"
 msgstr "सन्देशः"
 
-#: utils/messageviewerutil.cpp:473
+#: utils/messageviewerutil.cpp:478
 #, fuzzy, kde-format
 #| msgid "email messages (*.mbox);;all files (*)"
 msgid "Mailbox file (*.mbox);;All Files (*)"
 msgstr "ईमेल सन्देशाः (*.mbox);;सर्वसञ्चिकाः (*)"
 
-#: utils/messageviewerutil.cpp:484
+#: utils/messageviewerutil.cpp:489
 #, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
 msgstr[0] "सन्देशं रक्षतु"
 msgstr[1] "सन्देशान् रक्षन्तु"
 
-#: utils/messageviewerutil.cpp:509
+#: utils/messageviewerutil.cpp:510 utils/messageviewerutil.cpp:521
+#: utils/messageviewerutil.cpp:555
+#, kde-format
+msgctxt "@title:window"
+msgid "Error saving message"
+msgstr "सन्देशस्य रक्षणे त्रुटिः"
+
+#: utils/messageviewerutil.cpp:519
 #, kde-format
 msgid "File %1 could not be loaded."
 msgstr "%1 सञ्चिका लोड् कर्तुं न शक्यते ।"
 
-#: utils/messageviewerutil.cpp:509
+#: utils/messageviewerutil.cpp:519
 #, kde-format
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "सन्देशं लोड् करणं त्रुटिः"
 
-#: utils/messageviewerutil.cpp:511
+#: utils/messageviewerutil.cpp:521
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "%1 सञ्चिका निर्मातुं न शक्यते स्म ।"
 
-#: utils/messageviewerutil.cpp:511 utils/messageviewerutil.cpp:542
+#: utils/messageviewerutil.cpp:528
+#, fuzzy, kde-format
+#| msgid "We cannot save message."
+msgid "We cannot append message to mbox."
+msgstr "वयं सन्देशं रक्षितुं न शक्नुमः।"
+
+#: utils/messageviewerutil.cpp:528 utils/messageviewerutil.cpp:535
 #, kde-format
-msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "सन्देशस्य रक्षणे त्रुटिः"
 
-#: utils/messageviewerutil.cpp:522
+#: utils/messageviewerutil.cpp:535
 #, kde-format
 msgid "We cannot save message."
 msgstr "वयं सन्देशं रक्षितुं न शक्नुमः।"
 
-#: utils/messageviewerutil.cpp:522
-#, kde-format
-msgid "Error saving message"
-msgstr "सन्देशस्य रक्षणे त्रुटिः"
-
-#: utils/messageviewerutil.cpp:586
+#: utils/messageviewerutil.cpp:599
 #, kde-format
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "विलोपितम्: %1"
 
-#: utils/messageviewerutil.cpp:597
+#: utils/messageviewerutil.cpp:610
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
 msgstr "भवान् अस्मात् सन्देशात् एकं संलग्नकं विलोपितवान् । संलग्नकस्य मूल MIME शीर्षकाणि आसन् :"
 
-#: utils/messageviewerutil.cpp:625
+#: utils/messageviewerutil.cpp:638
 #, kde-format
 msgid "Open &with %1"
 msgstr "&%1 इत्यनेन सह उद्घाटयन्तु"
 
-#: utils/messageviewerutil.cpp:627
+#: utils/messageviewerutil.cpp:640
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"

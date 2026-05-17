@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-14 00:45+0000\n"
+"POT-Creation-Date: 2026-05-17 00:45+0000\n"
 "PO-Revision-Date: 2017-12-24 21:47+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -1694,8 +1694,8 @@ msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "Задржи потпис"
 
-#: utils/messageviewerutil.cpp:383 utils/messageviewerutil.cpp:401
-#: utils/messageviewerutil.cpp:419 utils/messageviewerutil.cpp:539
+#: utils/messageviewerutil.cpp:383 utils/messageviewerutil.cpp:406
+#: utils/messageviewerutil.cpp:424 utils/messageviewerutil.cpp:552
 #, kde-kuit-format
 msgctxt "1 = file name, 2 = error string"
 msgid ""
@@ -1704,35 +1704,41 @@ msgid ""
 msgstr ""
 "<qt>Не могу да пишем у фајл<br /><filename>%1</filename><br /><br />%2</qt>"
 
-#: utils/messageviewerutil.cpp:386
+#: utils/messageviewerutil.cpp:386 utils/messageviewerutil.cpp:395
 #, fuzzy, kde-format
 #| msgid "Error saving attachment"
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "Грешка при уписивању прилога"
 
-#: utils/messageviewerutil.cpp:404 utils/messageviewerutil.cpp:422
+#: utils/messageviewerutil.cpp:394 utils/messageviewerutil.cpp:509
+#, kde-format, kde-kuit-format
+msgctxt "1 = error string"
+msgid "Could not create temporary file: <message>%1</message>"
+msgstr ""
+
+#: utils/messageviewerutil.cpp:409 utils/messageviewerutil.cpp:427
 #, kde-format
 msgid "Error saving attachment"
 msgstr "Грешка при уписивању прилога"
 
-#: utils/messageviewerutil.cpp:435
+#: utils/messageviewerutil.cpp:440
 #, kde-format
 msgid "Found no attachments to save."
 msgstr "Нема прилога за уписивање."
 
-#: utils/messageviewerutil.cpp:451
+#: utils/messageviewerutil.cpp:456
 #, kde-format
 msgid "message"
 msgstr "порука"
 
-#: utils/messageviewerutil.cpp:473
+#: utils/messageviewerutil.cpp:478
 #, fuzzy, kde-format
 #| msgid "email messages (*.mbox);;all files (*)"
 msgid "Mailbox file (*.mbox);;All Files (*)"
 msgstr "поруке е‑поште (*.mbox);;сви фајлови (*)"
 
-#: utils/messageviewerutil.cpp:484
+#: utils/messageviewerutil.cpp:489
 #, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
@@ -1741,60 +1747,67 @@ msgstr[1] "&Сачувај поруке"
 msgstr[2] "&Сачувај поруке"
 msgstr[3] "&Сачувај поруку"
 
-#: utils/messageviewerutil.cpp:509
-#, kde-format
-msgid "File %1 could not be loaded."
-msgstr "Фајл %1 не може да се учита."
-
-#: utils/messageviewerutil.cpp:509
-#, fuzzy, kde-format
-#| msgid "Error loading message"
-msgctxt "@title:window"
-msgid "Error loading message"
-msgstr "Грешка при учитавању поруке"
-
-#: utils/messageviewerutil.cpp:511
-#, kde-format
-msgid "File %1 could not be created."
-msgstr "Фајл %1 не може да се направи."
-
-#: utils/messageviewerutil.cpp:511 utils/messageviewerutil.cpp:542
+#: utils/messageviewerutil.cpp:510 utils/messageviewerutil.cpp:521
+#: utils/messageviewerutil.cpp:555
 #, fuzzy, kde-format
 #| msgid "Error saving message"
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Грешка при уписивању поруке"
 
-#: utils/messageviewerutil.cpp:522
+#: utils/messageviewerutil.cpp:519
 #, kde-format
-msgid "We cannot save message."
+msgid "File %1 could not be loaded."
+msgstr "Фајл %1 не може да се учита."
+
+#: utils/messageviewerutil.cpp:519
+#, fuzzy, kde-format
+#| msgid "Error loading message"
+msgctxt "@title:window"
+msgid "Error loading message"
+msgstr "Грешка при учитавању поруке"
+
+#: utils/messageviewerutil.cpp:521
+#, kde-format
+msgid "File %1 could not be created."
+msgstr "Фајл %1 не може да се направи."
+
+#: utils/messageviewerutil.cpp:528
+#, fuzzy, kde-format
+#| msgid "We cannot save message."
+msgid "We cannot append message to mbox."
 msgstr "Не могу да сачувам поруку."
 
-#: utils/messageviewerutil.cpp:522
+#: utils/messageviewerutil.cpp:528 utils/messageviewerutil.cpp:535
 #, kde-format
 msgid "Error saving message"
 msgstr "Грешка при уписивању поруке"
 
-#: utils/messageviewerutil.cpp:586
+#: utils/messageviewerutil.cpp:535
+#, kde-format
+msgid "We cannot save message."
+msgstr "Не могу да сачувам поруку."
+
+#: utils/messageviewerutil.cpp:599
 #, fuzzy, kde-format
 #| msgid "Select All Text"
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "Изабери сав текст"
 
-#: utils/messageviewerutil.cpp:597
+#: utils/messageviewerutil.cpp:610
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:625
+#: utils/messageviewerutil.cpp:638
 #, kde-format
 msgid "Open &with %1"
 msgstr "О&твори помоћу %1|/|О&твори $[инс-п %1]“"
 
-#: utils/messageviewerutil.cpp:627
+#: utils/messageviewerutil.cpp:640
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"

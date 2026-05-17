@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-14 00:45+0000\n"
+"POT-Creation-Date: 2026-05-17 00:45+0000\n"
 "PO-Revision-Date: 2025-06-11 00:22+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1601,8 +1601,8 @@ msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "서명 유지"
 
-#: utils/messageviewerutil.cpp:383 utils/messageviewerutil.cpp:401
-#: utils/messageviewerutil.cpp:419 utils/messageviewerutil.cpp:539
+#: utils/messageviewerutil.cpp:383 utils/messageviewerutil.cpp:406
+#: utils/messageviewerutil.cpp:424 utils/messageviewerutil.cpp:552
 #, kde-kuit-format
 msgctxt "1 = file name, 2 = error string"
 msgid ""
@@ -1611,77 +1611,90 @@ msgid ""
 msgstr ""
 "<qt>파일 <filename>%1</filename>에<br />저장할 수 없음:<br /><br />%2</qt>"
 
-#: utils/messageviewerutil.cpp:386
+#: utils/messageviewerutil.cpp:386 utils/messageviewerutil.cpp:395
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "첨부 파일 저장 오류"
 
-#: utils/messageviewerutil.cpp:404 utils/messageviewerutil.cpp:422
+#: utils/messageviewerutil.cpp:394 utils/messageviewerutil.cpp:509
+#, kde-format, kde-kuit-format
+msgctxt "1 = error string"
+msgid "Could not create temporary file: <message>%1</message>"
+msgstr ""
+
+#: utils/messageviewerutil.cpp:409 utils/messageviewerutil.cpp:427
 #, kde-format
 msgid "Error saving attachment"
 msgstr "첨부 파일 저장 오류"
 
-#: utils/messageviewerutil.cpp:435
+#: utils/messageviewerutil.cpp:440
 #, kde-format
 msgid "Found no attachments to save."
 msgstr "저장할 첨부 파일이 없습니다."
 
-#: utils/messageviewerutil.cpp:451
+#: utils/messageviewerutil.cpp:456
 #, kde-format
 msgid "message"
 msgstr "메시지"
 
-#: utils/messageviewerutil.cpp:473
+#: utils/messageviewerutil.cpp:478
 #, kde-format
 msgid "Mailbox file (*.mbox);;All Files (*)"
 msgstr "Mailbox 파일 (*.mbox);;모든 파일 (*)"
 
-#: utils/messageviewerutil.cpp:484
+#: utils/messageviewerutil.cpp:489
 #, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
 msgstr[0] "메시지 저장"
 
-#: utils/messageviewerutil.cpp:509
+#: utils/messageviewerutil.cpp:510 utils/messageviewerutil.cpp:521
+#: utils/messageviewerutil.cpp:555
+#, kde-format
+msgctxt "@title:window"
+msgid "Error saving message"
+msgstr "메시지 저장 오류"
+
+#: utils/messageviewerutil.cpp:519
 #, kde-format
 msgid "File %1 could not be loaded."
 msgstr "파일 %1을(를) 불러올 수 없습니다."
 
-#: utils/messageviewerutil.cpp:509
+#: utils/messageviewerutil.cpp:519
 #, kde-format
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "메시지 불러오기 오류"
 
-#: utils/messageviewerutil.cpp:511
+#: utils/messageviewerutil.cpp:521
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "파일 %1을(를) 만들 수 없습니다."
 
-#: utils/messageviewerutil.cpp:511 utils/messageviewerutil.cpp:542
+#: utils/messageviewerutil.cpp:528
+#, fuzzy, kde-format
+#| msgid "We cannot save message."
+msgid "We cannot append message to mbox."
+msgstr "메시지를 저장할 수 없습니다."
+
+#: utils/messageviewerutil.cpp:528 utils/messageviewerutil.cpp:535
 #, kde-format
-msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "메시지 저장 오류"
 
-#: utils/messageviewerutil.cpp:522
+#: utils/messageviewerutil.cpp:535
 #, kde-format
 msgid "We cannot save message."
 msgstr "메시지를 저장할 수 없습니다."
 
-#: utils/messageviewerutil.cpp:522
-#, kde-format
-msgid "Error saving message"
-msgstr "메시지 저장 오류"
-
-#: utils/messageviewerutil.cpp:586
+#: utils/messageviewerutil.cpp:599
 #, kde-format
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "삭제됨: %1"
 
-#: utils/messageviewerutil.cpp:597
+#: utils/messageviewerutil.cpp:610
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
@@ -1690,12 +1703,12 @@ msgstr ""
 "메시지에서 첨부 파일을 삭제했습니다. 첨부 파일의 원래 MIME 헤더는 다음과 같습"
 "니다:"
 
-#: utils/messageviewerutil.cpp:625
+#: utils/messageviewerutil.cpp:638
 #, kde-format
 msgid "Open &with %1"
 msgstr "%1(으)로 열기(&W)"
 
-#: utils/messageviewerutil.cpp:627
+#: utils/messageviewerutil.cpp:640
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"

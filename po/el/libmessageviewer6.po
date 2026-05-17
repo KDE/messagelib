@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-14 00:45+0000\n"
+"POT-Creation-Date: 2026-05-17 00:45+0000\n"
 "PO-Revision-Date: 2024-09-19 17:23+0300\n"
 "Last-Translator: Antonis Geralis <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -1739,8 +1739,8 @@ msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "Διατήρηση υπογραφής"
 
-#: utils/messageviewerutil.cpp:383 utils/messageviewerutil.cpp:401
-#: utils/messageviewerutil.cpp:419 utils/messageviewerutil.cpp:539
+#: utils/messageviewerutil.cpp:383 utils/messageviewerutil.cpp:406
+#: utils/messageviewerutil.cpp:424 utils/messageviewerutil.cpp:552
 #, fuzzy, kde-kuit-format
 #| msgctxt "1 = file name, 2 = error string"
 #| msgid "<qt>Could not write to the file<br><filename>%1</filename><br><br>%2"
@@ -1751,28 +1751,34 @@ msgid ""
 msgstr ""
 "<qt>Αδύνατη η εγγραφή του αρχείου <br><filename>%1</filename><br><br>%2"
 
-#: utils/messageviewerutil.cpp:386
+#: utils/messageviewerutil.cpp:386 utils/messageviewerutil.cpp:395
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "Σφάλμα αποθήκευσης συνημμένου"
 
-#: utils/messageviewerutil.cpp:404 utils/messageviewerutil.cpp:422
+#: utils/messageviewerutil.cpp:394 utils/messageviewerutil.cpp:509
+#, kde-format, kde-kuit-format
+msgctxt "1 = error string"
+msgid "Could not create temporary file: <message>%1</message>"
+msgstr ""
+
+#: utils/messageviewerutil.cpp:409 utils/messageviewerutil.cpp:427
 #, kde-format
 msgid "Error saving attachment"
 msgstr "Σφάλμα αποθήκευσης συνημμένου"
 
-#: utils/messageviewerutil.cpp:435
+#: utils/messageviewerutil.cpp:440
 #, kde-format
 msgid "Found no attachments to save."
 msgstr "Δε βρέθηκαν συνημμένα για αποθήκευση."
 
-#: utils/messageviewerutil.cpp:451
+#: utils/messageviewerutil.cpp:456
 #, kde-format
 msgid "message"
 msgstr "μήνυμα"
 
-#: utils/messageviewerutil.cpp:473
+#: utils/messageviewerutil.cpp:478
 #, fuzzy, kde-format
 #| msgid ""
 #| "*.mbox|email messages (*.mbox)\n"
@@ -1782,46 +1788,53 @@ msgstr ""
 "*.mbox|μηνύματα ηλ. ταχυδρομείου (*.mbox)\n"
 "*|όλα τα αρχεία (*)"
 
-#: utils/messageviewerutil.cpp:484
+#: utils/messageviewerutil.cpp:489
 #, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
 msgstr[0] "Αποθήκευση μηνύματος"
 msgstr[1] "Αποθήκευση μηνυμάτων"
 
-#: utils/messageviewerutil.cpp:509
+#: utils/messageviewerutil.cpp:510 utils/messageviewerutil.cpp:521
+#: utils/messageviewerutil.cpp:555
+#, kde-format
+msgctxt "@title:window"
+msgid "Error saving message"
+msgstr "Σφάλμα κατά την αποθήκευση του μηνύματος"
+
+#: utils/messageviewerutil.cpp:519
 #, kde-format
 msgid "File %1 could not be loaded."
 msgstr "Αδύνατη η φόρτωση του αρχείου %1."
 
-#: utils/messageviewerutil.cpp:509
+#: utils/messageviewerutil.cpp:519
 #, kde-format
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Σφάλμα κατά τη φόρτωση του μηνύματος"
 
-#: utils/messageviewerutil.cpp:511
+#: utils/messageviewerutil.cpp:521
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "Αδύνατη η δημιουργία του αρχείου %1."
 
-#: utils/messageviewerutil.cpp:511 utils/messageviewerutil.cpp:542
+#: utils/messageviewerutil.cpp:528
+#, fuzzy, kde-format
+#| msgid "We cannot save message."
+msgid "We cannot append message to mbox."
+msgstr "Αδύνατη η αποθήκευση του μηνύματος."
+
+#: utils/messageviewerutil.cpp:528 utils/messageviewerutil.cpp:535
 #, kde-format
-msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Σφάλμα κατά την αποθήκευση του μηνύματος"
 
-#: utils/messageviewerutil.cpp:522
+#: utils/messageviewerutil.cpp:535
 #, kde-format
 msgid "We cannot save message."
 msgstr "Αδύνατη η αποθήκευση του μηνύματος."
 
-#: utils/messageviewerutil.cpp:522
-#, kde-format
-msgid "Error saving message"
-msgstr "Σφάλμα κατά την αποθήκευση του μηνύματος"
-
-#: utils/messageviewerutil.cpp:586
+#: utils/messageviewerutil.cpp:599
 #, fuzzy, kde-format
 #| msgctxt "Not able to attend."
 #| msgid "Declined: %1"
@@ -1829,19 +1842,19 @@ msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "Απορρίφθηκε: %1 "
 
-#: utils/messageviewerutil.cpp:597
+#: utils/messageviewerutil.cpp:610
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:625
+#: utils/messageviewerutil.cpp:638
 #, kde-format
 msgid "Open &with %1"
 msgstr "Άνοιγμα &με %1"
 
-#: utils/messageviewerutil.cpp:627
+#: utils/messageviewerutil.cpp:640
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"

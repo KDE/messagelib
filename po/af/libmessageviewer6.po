@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail 3_3_branch\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-14 00:45+0000\n"
+"POT-Creation-Date: 2026-05-17 00:45+0000\n"
 "PO-Revision-Date: 2004-11-10 16:33+0200\n"
 "Last-Translator: Frikkie Thirion <frix@expertron.co.za>\n"
 "Language-Team: AFRIKAANS <AF@lia.org.za>\n"
@@ -1617,8 +1617,8 @@ msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "Heg Handtekening Aan"
 
-#: utils/messageviewerutil.cpp:383 utils/messageviewerutil.cpp:401
-#: utils/messageviewerutil.cpp:419 utils/messageviewerutil.cpp:539
+#: utils/messageviewerutil.cpp:383 utils/messageviewerutil.cpp:406
+#: utils/messageviewerutil.cpp:424 utils/messageviewerutil.cpp:552
 #, kde-kuit-format
 msgctxt "1 = file name, 2 = error string"
 msgid ""
@@ -1626,76 +1626,88 @@ msgid ""
 "qt>"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:386
+#: utils/messageviewerutil.cpp:386 utils/messageviewerutil.cpp:395
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "Verwyder lêer aanhangsel"
 
-#: utils/messageviewerutil.cpp:404 utils/messageviewerutil.cpp:422
+#: utils/messageviewerutil.cpp:394 utils/messageviewerutil.cpp:509
+#, kde-format, kde-kuit-format
+msgctxt "1 = error string"
+msgid "Could not create temporary file: <message>%1</message>"
+msgstr ""
+
+#: utils/messageviewerutil.cpp:409 utils/messageviewerutil.cpp:427
 #, fuzzy, kde-format
 msgid "Error saving attachment"
 msgstr "Verwyder lêer aanhangsel"
 
-#: utils/messageviewerutil.cpp:435
+#: utils/messageviewerutil.cpp:440
 #, fuzzy, kde-format
 #| msgid "Show attachments as suggested by sender."
 msgid "Found no attachments to save."
 msgstr "Vertoon aanhangsels soos voorgestel deur die stuurder."
 
-#: utils/messageviewerutil.cpp:451
+#: utils/messageviewerutil.cpp:456
 #, fuzzy, kde-format
 msgid "message"
 msgstr "Skuif boodskappe"
 
-#: utils/messageviewerutil.cpp:473
+#: utils/messageviewerutil.cpp:478
 #, kde-format
 msgid "Mailbox file (*.mbox);;All Files (*)"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:484
+#: utils/messageviewerutil.cpp:489
 #, fuzzy, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
 msgstr[0] "1 boodskap, %2"
 msgstr[1] "1 boodskap, %2"
 
-#: utils/messageviewerutil.cpp:509
+#: utils/messageviewerutil.cpp:510 utils/messageviewerutil.cpp:521
+#: utils/messageviewerutil.cpp:555
+#, fuzzy, kde-format
+#| msgid "Moving messages"
+msgctxt "@title:window"
+msgid "Error saving message"
+msgstr "Skuif boodskappe"
+
+#: utils/messageviewerutil.cpp:519
 #, fuzzy, kde-format
 msgid "File %1 could not be loaded."
 msgstr "Merk gekose boodskappe as ongelees"
 
-#: utils/messageviewerutil.cpp:509
+#: utils/messageviewerutil.cpp:519
 #, fuzzy, kde-format
 #| msgid "Moving messages"
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Skuif boodskappe"
 
-#: utils/messageviewerutil.cpp:511
+#: utils/messageviewerutil.cpp:521
 #, fuzzy, kde-format
 msgid "File %1 could not be created."
 msgstr "Merk gekose boodskappe as ongelees"
 
-#: utils/messageviewerutil.cpp:511 utils/messageviewerutil.cpp:542
+#: utils/messageviewerutil.cpp:528
+#, fuzzy, kde-format
+msgid "We cannot append message to mbox."
+msgstr "Vee boodskappe uit"
+
+#: utils/messageviewerutil.cpp:528 utils/messageviewerutil.cpp:535
 #, fuzzy, kde-format
 #| msgid "Moving messages"
-msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Skuif boodskappe"
 
-#: utils/messageviewerutil.cpp:522
+#: utils/messageviewerutil.cpp:535
 #, fuzzy, kde-format
 msgid "We cannot save message."
 msgstr "Vee boodskappe uit"
 
-#: utils/messageviewerutil.cpp:522
-#, fuzzy, kde-format
-#| msgid "Moving messages"
-msgid "Error saving message"
-msgstr "Skuif boodskappe"
-
-#: utils/messageviewerutil.cpp:586
+#: utils/messageviewerutil.cpp:599
 #, fuzzy, kde-format
 #| msgctxt "MDN type"
 #| msgid "Deleted"
@@ -1703,20 +1715,20 @@ msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "Uitgevee"
 
-#: utils/messageviewerutil.cpp:597
+#: utils/messageviewerutil.cpp:610
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:625
+#: utils/messageviewerutil.cpp:638
 #, fuzzy, kde-format
 #| msgid "&Open with '%1'"
 msgid "Open &with %1"
 msgstr "Maak oop met '%1'"
 
-#: utils/messageviewerutil.cpp:627
+#: utils/messageviewerutil.cpp:640
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
