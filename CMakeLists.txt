@@ -145,7 +145,7 @@ file(
 )
 ecm_check_outbound_license(LICENSES GPL-2.0-only  FILES ${ALL_SOURCE_FILES})
 
-set(KTEXTADDONS_MIN_VERSION "2.0.1")
+set(KTEXTADDONS_MIN_VERSION "2.0.2")
 
 find_package(
     Qt6
