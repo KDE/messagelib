@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-17 00:45+0000\n"
-"PO-Revision-Date: 2025-05-18 08:02+0200\n"
+"PO-Revision-Date: 2026-05-17 06:56+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.9\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
@@ -1663,7 +1663,7 @@ msgstr "Napaka med shranjevanjem priloge"
 #, kde-format, kde-kuit-format
 msgctxt "1 = error string"
 msgid "Could not create temporary file: <message>%1</message>"
-msgstr ""
+msgstr "Ni bilo mogoče ustvariti začasne datoteke: <message>%1</message>"
 
 #: utils/messageviewerutil.cpp:409 utils/messageviewerutil.cpp:427
 #, kde-format
@@ -1683,7 +1683,7 @@ msgstr "sporočilo"
 #: utils/messageviewerutil.cpp:478
 #, kde-format
 msgid "Mailbox file (*.mbox);;All Files (*)"
-msgstr "datoteka poštnega sporočila (*.mbox);;vse datoteke (*)"
+msgstr "Datoteka poštnega sporočila (*.mbox);;Vse datoteke (*)"
 
 #: utils/messageviewerutil.cpp:489
 #, kde-format
@@ -1718,10 +1718,9 @@ msgid "File %1 could not be created."
 msgstr "Datoteke %1 ni bilo mogoče ustvariti."
 
 #: utils/messageviewerutil.cpp:528
-#, fuzzy, kde-format
-#| msgid "We cannot save message."
+#, kde-format
 msgid "We cannot append message to mbox."
-msgstr "Sporočila ni mogoče shraniti."
+msgstr "Ni bilo mogoče dodati sporočila v nabiralnik."
 
 #: utils/messageviewerutil.cpp:528 utils/messageviewerutil.cpp:535
 #, kde-format
