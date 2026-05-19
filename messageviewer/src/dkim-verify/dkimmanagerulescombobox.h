@@ -20,6 +20,6 @@ public:
     void setRuleType(MessageViewer::DKIMRule::RuleType type);
 
 private:
-    void init();
+    MESSAGEVIEWER_NO_EXPORT void init();
 };
 }

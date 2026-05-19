@@ -31,14 +31,14 @@ Q_SIGNALS:
     void result(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult, Akonadi::Item::Id id);
 
 private:
-    void slotCheckSignatureResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
-    void slotCheckAuthenticationStatusResult(const MessageViewer::DKIMAuthenticationStatusInfo &info);
-    void checkSignature(const QList<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> &lst = {});
-    void storeKey(const QString &key, const QString &domain, const QString &selector);
-    void storeInKeyManager(const QString &key, const QString &domain, const QString &selector, bool verify);
-    void storeResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
-    void generateRule(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
-    void checkAuthenticationResults();
+    MESSAGEVIEWER_NO_EXPORT void slotCheckSignatureResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
+    MESSAGEVIEWER_NO_EXPORT void slotCheckAuthenticationStatusResult(const MessageViewer::DKIMAuthenticationStatusInfo &info);
+    MESSAGEVIEWER_NO_EXPORT void checkSignature(const QList<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> &lst = {});
+    MESSAGEVIEWER_NO_EXPORT void storeKey(const QString &key, const QString &domain, const QString &selector);
+    MESSAGEVIEWER_NO_EXPORT void storeInKeyManager(const QString &key, const QString &domain, const QString &selector, bool verify);
+    MESSAGEVIEWER_NO_EXPORT void storeResult(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
+    MESSAGEVIEWER_NO_EXPORT void generateRule(const DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
+    MESSAGEVIEWER_NO_EXPORT void checkAuthenticationResults();
     DKIMCheckPolicy mCheckPolicy;
     std::shared_ptr<KMime::Message> mMessage;
     Akonadi::Item mAkonadiItem;
