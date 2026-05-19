@@ -3,14 +3,14 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025.
+# Yuri Chornoivan <yurchor@ukr.net>, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026.
 # I. Petrouchtchak <fr.ivan@ukrainian-orthodox.org>, 2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-17 00:45+0000\n"
-"PO-Revision-Date: 2025-05-19 09:05+0300\n"
+"PO-Revision-Date: 2026-05-17 12:06+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -1674,7 +1674,7 @@ msgstr "Помилка під час спроби збереження долу�
 #, kde-format, kde-kuit-format
 msgctxt "1 = error string"
 msgid "Could not create temporary file: <message>%1</message>"
-msgstr ""
+msgstr "Не вдалося створити тимчасовий файл: <message>%1</message>"
 
 #: utils/messageviewerutil.cpp:409 utils/messageviewerutil.cpp:427
 #, kde-format
@@ -1729,10 +1729,9 @@ msgid "File %1 could not be created."
 msgstr "Не вдалося створити файл %1."
 
 #: utils/messageviewerutil.cpp:528
-#, fuzzy, kde-format
-#| msgid "We cannot save message."
+#, kde-format
 msgid "We cannot append message to mbox."
-msgstr "Не вдалося зберегти повідомлення."
+msgstr "Не можна дописувати повідомлення до mbox."
 
 #: utils/messageviewerutil.cpp:528 utils/messageviewerutil.cpp:535
 #, kde-format

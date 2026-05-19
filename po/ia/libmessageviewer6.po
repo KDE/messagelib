@@ -1,14 +1,14 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# SPDX-FileCopyrightText: 2010, 2011, 2012, 2013, 2014, 2020, 2021, 2022, 2023, 2024, 2025 g.sora <g.sora@tiscali.it>
+# SPDX-FileCopyrightText: 2010, 2011, 2012, 2013, 2014, 2020, 2021, 2022, 2023, 2024, 2025, 2026 g.sora <g.sora@tiscali.it>
 # giovanni <g.sora@tiscali.it>, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-17 00:45+0000\n"
-"PO-Revision-Date: 2025-05-27 12:37+0200\n"
+"PO-Revision-Date: 2026-05-18 11:49+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
@@ -1663,7 +1663,7 @@ msgstr "Error durante que on salvava attachamento"
 #, kde-format, kde-kuit-format
 msgctxt "1 = error string"
 msgid "Could not create temporary file: <message>%1</message>"
-msgstr ""
+msgstr "Non poteva crear file  temporanee: <message>%1</message>"
 
 #: utils/messageviewerutil.cpp:409 utils/messageviewerutil.cpp:427
 #, kde-format
@@ -1716,10 +1716,9 @@ msgid "File %1 could not be created."
 msgstr "File %1 non poteva esser create"
 
 #: utils/messageviewerutil.cpp:528
-#, fuzzy, kde-format
-#| msgid "We cannot save message."
+#, kde-format
 msgid "We cannot append message to mbox."
-msgstr "Nos non pote salveguardar message."
+msgstr "Nos non pote adjunger message a mbox"
 
 #: utils/messageviewerutil.cpp:528 utils/messageviewerutil.cpp:535
 #, kde-format
