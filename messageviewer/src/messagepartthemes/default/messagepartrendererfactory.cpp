@@ -6,7 +6,6 @@
 */
 
 #include "messagepartrendererfactory.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "messagepartrendererbase.h"
 #include "messagepartrendererfactory_p.h"
@@ -24,6 +23,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QPluginLoader>
 #include <algorithm>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 
 MessagePartRendererFactoryPrivate::~MessagePartRendererFactoryPrivate()

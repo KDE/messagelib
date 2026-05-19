@@ -8,10 +8,10 @@
 */
 
 #include "filehtmlwriter.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "messageviewer_debug.h"
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 
 FileHtmlWriter::FileHtmlWriter(const QString &filename)

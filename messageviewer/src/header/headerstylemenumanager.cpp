@@ -5,7 +5,6 @@
 */
 
 #include "headerstylemenumanager.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "headerstyleinterface.h"
 #include "headerstyleplugin.h"
@@ -20,6 +19,7 @@ using namespace Qt::Literals::StringLiterals;
 
 #include <QActionGroup>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 
 class MessageViewer::HeaderStyleMenuManagerPrivate

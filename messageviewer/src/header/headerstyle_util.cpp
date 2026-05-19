@@ -5,7 +5,6 @@
 */
 
 #include "headerstyle_util.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "messageviewer_debug.h"
 
@@ -26,6 +25,7 @@ using namespace Qt::Literals::StringLiterals;
 
 #include <QBuffer>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageCore;
 
 using namespace MessageViewer;

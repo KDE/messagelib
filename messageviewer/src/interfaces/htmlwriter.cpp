@@ -5,10 +5,10 @@
 */
 
 #include "htmlwriter.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QTextStream>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 
 HtmlWriter::HtmlWriter() = default;

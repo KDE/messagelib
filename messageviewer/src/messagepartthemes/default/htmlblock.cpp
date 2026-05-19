@@ -5,7 +5,6 @@
 */
 
 #include "htmlblock.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "interfaces/htmlwriter.h"
 
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 
 #include <QApplication>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 
 HTMLBlock::HTMLBlock() = default;

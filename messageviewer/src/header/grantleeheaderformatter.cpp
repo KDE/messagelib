@@ -5,7 +5,6 @@
 */
 
 #include "grantleeheaderformatter.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "headerstyle_util.h"
 #include "settings/messageviewersettings.h"
@@ -21,6 +20,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <KTextTemplate/Engine>
 #include <KTextTemplate/MetaType>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageCore;
 
 using namespace MessageViewer;

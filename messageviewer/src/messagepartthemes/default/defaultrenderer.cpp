@@ -5,7 +5,6 @@
 */
 
 #include "defaultrenderer.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "defaultrenderer_p.h"
 
@@ -42,6 +41,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <KTextTemplate/TemplateLoader>
 #include <QUrl>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MimeTreeParser;
 using namespace MessageViewer;
 #ifndef COMPILE_WITH_UNITY_CMAKE_SUPPORT

@@ -5,7 +5,6 @@
 */
 
 #include "messageviewercheckbeforedeletingpluginmanager.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "messageviewer_debug.h"
 #include "messageviewercheckbeforedeletingplugin.h"
@@ -15,6 +14,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QFileInfo>
 
 using namespace MessageViewer;
+using namespace Qt::Literals::StringLiterals;
 
 class CheckBeforeDeletingPluginInfo
 {

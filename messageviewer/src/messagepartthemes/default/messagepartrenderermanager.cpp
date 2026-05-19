@@ -5,7 +5,6 @@
 */
 
 #include "messagepartrenderermanager.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "messageviewer_debug.h"
 #include <GrantleeTheme/GrantleeKi18nLocalizer>
@@ -25,6 +24,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <KTextTemplate/TemplateLoader>
 
 #include <QGuiApplication>
+using namespace Qt::Literals::StringLiterals;
 Q_DECLARE_METATYPE(GpgME::DecryptionResult::Recipient)
 Q_DECLARE_METATYPE(const QGpgME::Protocol *)
 Q_DECLARE_METATYPE(GpgME::Key)

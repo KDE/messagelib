@@ -11,7 +11,6 @@
 */
 
 #include "kxface.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QBuffer>
 #include <QImage>
@@ -21,6 +20,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <cstdlib>
 #include <cstring>
 
+using namespace Qt::Literals::StringLiterals;
 #define GEN(g)                                                                                                                                                 \
     F[h] ^= G.g[k];                                                                                                                                            \
     break

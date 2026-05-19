@@ -5,7 +5,6 @@
 */
 
 #include "plainheaderstyle.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "header/headerstyle_util.h"
 #include "messageviewer/messageviewersettings.h"
@@ -19,6 +18,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QApplication>
 
 using namespace MessageCore;
+using namespace Qt::Literals::StringLiterals;
 
 using namespace MessageViewer;
 

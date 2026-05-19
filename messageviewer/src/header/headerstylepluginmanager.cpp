@@ -5,7 +5,6 @@
 */
 
 #include "headerstylepluginmanager.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "headerstyleplugin.h"
 #include "messageviewer_debug.h"
@@ -14,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <PimCommon/PluginUtil>
 #include <QFileInfo>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 
 class HeaderStylePluginInfo

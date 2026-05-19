@@ -4,7 +4,6 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "webengineparthtmlwriter.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "webengineembedpart.h"
 
@@ -17,6 +16,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTemporaryFile>
 #include <cassert>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 
 WebEnginePartHtmlWriter::WebEnginePartHtmlWriter(MailWebEngineView *view, QObject *parent)
