@@ -478,7 +478,7 @@ bool addressIsInAddressList(const QString &address, const QStringList &addresses
 
     QStringList::ConstIterator end(addresses.constEnd());
     for (QStringList::ConstIterator it = addresses.constBegin(); it != end; ++it) {
-        if (qstricmp(addrSpec.toUtf8().data(), KEmailAddress::extractEmailAddress(*it).toUtf8().data()) == 0) {
+        if (addrSpec.compare(KEmailAddress::extractEmailAddress(*it), Qt::CaseInsensitive) == 0) {
             return true;
         }
     }
