@@ -18,7 +18,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-14 00:45+0000\n"
+"POT-Creation-Date: 2026-05-20 00:46+0000\n"
 "PO-Revision-Date: 2024-09-19 17:23+0300\n"
 "Last-Translator: Antonis Geralis <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -476,7 +476,7 @@ msgstr ""
 "Ένα έξυπνο θέμα πολλαπλών γραμμών και αντικειμένων με στήλη κατάστασης με "
 "δυνατότητα επιλογής"
 
-#: core/manager.cpp:758 core/view.cpp:2272 core/view.cpp:2276
+#: core/manager.cpp:758 core/view.cpp:2282 core/view.cpp:2286
 #, kde-format
 msgid "Status"
 msgstr "Κατάσταση"
@@ -888,163 +888,163 @@ msgstr "Εμφάνιση προκαθορισμένων στηλών"
 msgid "Display Tooltips"
 msgstr "Εμφάνιση υποδείξεων"
 
-#: core/view.cpp:2253 core/view.cpp:2257
+#: core/view.cpp:2263 core/view.cpp:2267
 #: core/widgets/searchmessagebybuttons.cpp:75
 #, kde-format
 msgid "From"
 msgstr "Από"
 
-#: core/view.cpp:2254 core/view.cpp:2258
+#: core/view.cpp:2264 core/view.cpp:2268
 #, kde-format
 msgctxt "Receiver of the email"
 msgid "To"
 msgstr "Προς"
 
-#: core/view.cpp:2255 core/view.cpp:2259
+#: core/view.cpp:2265 core/view.cpp:2269
 #, kde-format
 msgid "Date"
 msgstr "Ημερομηνία"
 
-#: core/view.cpp:2273 core/view.cpp:2277
+#: core/view.cpp:2283 core/view.cpp:2287
 #, kde-format
 msgid "Size"
 msgstr "Μέγεθος"
 
-#: core/view.cpp:2274 core/view.cpp:2278 utils/themeeditor.cpp:191
+#: core/view.cpp:2284 core/view.cpp:2288 utils/themeeditor.cpp:191
 #, kde-format
 msgid "Folder"
 msgstr "Φάκελος"
 
-#: core/view.cpp:2284 core/view.cpp:2286
+#: core/view.cpp:2294 core/view.cpp:2296
 #, kde-format
 msgid "Preview"
 msgstr "Προεπισκόπηση"
 
-#: core/view.cpp:2303
+#: core/view.cpp:2313
 #, kde-format
 msgid "<b>%1</b> reply"
 msgid_plural "<b>%1</b> replies"
 msgstr[0] "<b>%1</b> απάντηση"
 msgstr[1] "<b>%1</b> απαντήσεις"
 
-#: core/view.cpp:2306
+#: core/view.cpp:2316
 #, kde-format
 msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
 msgstr[0] "<b>%1</b> μήνυμα στο υποδένδρο (<b>%2</b> μη αναγνωσμένο)"
 msgstr[1] "<b>%1</b> μηνύματα στο υποδένδρο (<b>%2</b> μη αναγνωσμένα)"
 
-#: core/view.cpp:2343
+#: core/view.cpp:2353
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Threads started on 2008-12-21'"
 msgid "Threads started on %1"
 msgstr "Έναρξη νημάτων στις %1"
 
-#: core/view.cpp:2345
+#: core/view.cpp:2355
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Threads started Yesterday'"
 msgid "Threads started %1"
 msgstr "Έναρξη νημάτων %1"
 
-#: core/view.cpp:2349
+#: core/view.cpp:2359
 #, kde-format
 msgid "Threads with messages dated %1"
 msgstr "Νήματα μηνυμάτων με ημερομηνία %1"
 
-#: core/view.cpp:2359
+#: core/view.cpp:2369
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'"
 msgid "Messages sent on %1"
 msgstr "Απεσταλμένα μηνύματα στις %1"
 
-#: core/view.cpp:2362
+#: core/view.cpp:2372
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Messages received on 2008-12-21'"
 msgid "Messages received on %1"
 msgstr "Παραλαβή μηνυμάτων στις %1"
 
-#: core/view.cpp:2366
+#: core/view.cpp:2376
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent Yesterday'"
 msgid "Messages sent %1"
 msgstr "Απεσταλμένα μηνύματα %1"
 
-#: core/view.cpp:2368
+#: core/view.cpp:2378
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages received Yesterday'"
 msgid "Messages received %1"
 msgstr "Παραλαβή μηνυμάτων %1"
 
-#: core/view.cpp:2377
+#: core/view.cpp:2387
 #, kde-format
 msgid "Threads started within %1"
 msgstr "Έναρξη νημάτων εντός %1"
 
-#: core/view.cpp:2380
+#: core/view.cpp:2390
 #, kde-format
 msgid "Threads containing messages with dates within %1"
 msgstr "Νήματα με μηνύματα με ημερομηνίες εντός %1"
 
-#: core/view.cpp:2388
+#: core/view.cpp:2398
 #, kde-format
 msgid "Messages sent within %1"
 msgstr "Απεσταλμένα μηνύματα εντός %1"
 
-#: core/view.cpp:2390
+#: core/view.cpp:2400
 #, kde-format
 msgid "Messages received within %1"
 msgstr "Παραλαβή μηνυμάτων εντός %1"
 
-#: core/view.cpp:2399
+#: core/view.cpp:2409
 #, kde-format
 msgid "Threads started by %1"
 msgstr "Έναρξη μηνυμάτων από %1"
 
-#: core/view.cpp:2402
+#: core/view.cpp:2412
 #, kde-format
 msgid "Threads with most recent message by %1"
 msgstr "Νήματα με πιο πρόσφατο μήνυμα από %1"
 
-#: core/view.cpp:2411 core/view.cpp:2435
+#: core/view.cpp:2421 core/view.cpp:2445
 #, kde-format
 msgid "Messages sent to %1"
 msgstr "Απεσταλμένα μηνύματα σε %1"
 
-#: core/view.cpp:2413
+#: core/view.cpp:2423
 #, kde-format
 msgid "Messages sent by %1"
 msgstr "Απεσταλμένα μηνύματα από %1"
 
-#: core/view.cpp:2416
+#: core/view.cpp:2426
 #, kde-format
 msgid "Messages received from %1"
 msgstr "Παραλαβή μηνυμάτων από %1"
 
-#: core/view.cpp:2424
+#: core/view.cpp:2434
 #, kde-format
 msgid "Threads directed to %1"
 msgstr "Νήματα κατευθυνόμενα προς %1"
 
-#: core/view.cpp:2427
+#: core/view.cpp:2437
 #, kde-format
 msgid "Threads with most recent message directed to %1"
 msgstr "Νήματα με πιο πρόσφατο μήνυμα κατευθυνόμενο σε %1"
 
-#: core/view.cpp:2437
+#: core/view.cpp:2447
 #, kde-format
 msgid "Messages received by %1"
 msgstr "Παραλαβή μηνυμάτων από %1"
 
-#: core/view.cpp:2463
+#: core/view.cpp:2473
 #, kde-format
 msgid "<b>%1</b> thread"
 msgid_plural "<b>%1</b> threads"
 msgstr[0] "<b>%1</b> νήμα"
 msgstr[1] "<b>%1</b> νήματα"
 
-#: core/view.cpp:2468
+#: core/view.cpp:2478
 #, kde-format
 msgid "<b>%1</b> message (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"

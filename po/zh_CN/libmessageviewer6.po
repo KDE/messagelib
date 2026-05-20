@@ -1634,10 +1634,9 @@ msgid "File %1 could not be created."
 msgstr "文件 %1 无法创建。"
 
 #: utils/messageviewerutil.cpp:528
-#, fuzzy, kde-format
-#| msgid "We cannot save message."
+#, kde-format
 msgid "We cannot append message to mbox."
-msgstr "无法保存信件。"
+msgstr ""
 
 #: utils/messageviewerutil.cpp:528 utils/messageviewerutil.cpp:535
 #, kde-format
