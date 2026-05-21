@@ -28,7 +28,7 @@ public:
     void setHtmlMode(MimeTreeParser::Util::HtmlMode mode, const QList<MimeTreeParser::Util::HtmlMode> &availableModes) override;
     [[nodiscard]] MimeTreeParser::Util::HtmlMode preferredMode() const override;
     [[nodiscard]] int levelQuote() const override;
-    QByteArray overrideCodecName() const override;
+    [[nodiscard]] QByteArray overrideCodecName() const override;
 
     [[nodiscard]] QString createMessageHeader(KMime::Message *message) override;
     const AttachmentStrategy *attachmentStrategy() const override;
