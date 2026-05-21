@@ -16,16 +16,16 @@ class OpenSavedFileFolderWidget : public KMessageWidget
     Q_OBJECT
 public:
     enum class FileType : uint8_t {
-        Attachment,
+        Attachment = 0,
         Pdf,
     };
+    Q_ENUM(FileType)
 
     explicit OpenSavedFileFolderWidget(QWidget *parent = nullptr);
     ~OpenSavedFileFolderWidget() override;
 
     void setUrls(const QList<QUrl> &urls, MessageViewer::OpenSavedFileFolderWidget::FileType fileType);
 
-public:
     void slotShowWarning();
     void slotHideWarning();
 
