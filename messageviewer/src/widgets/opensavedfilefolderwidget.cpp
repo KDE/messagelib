@@ -65,6 +65,7 @@ void OpenSavedFileFolderWidget::setUrls(const QList<QUrl> &urls, FileType fileTy
         mShowFolderAction->setText(i18nc("@action", "Open folder where PDF file was saved"));
         break;
     }
+    slotShowWarning();
 }
 
 void OpenSavedFileFolderWidget::slotOpenFile()

@@ -2457,7 +2457,6 @@ void ViewerPrivate::showSavedFileFolderWidget(const QList<QUrl> &urls, OpenSaved
         createOpenSavedFileFolderWidget();
     }
     mOpenSavedFileFolderWidget->setUrls(urls, fileType);
-    mOpenSavedFileFolderWidget->slotShowWarning();
 }
 
 bool ViewerPrivate::mimePartTreeIsEmpty() const
