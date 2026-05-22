@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-17 00:45+0000\n"
+"POT-Creation-Date: 2026-05-22 00:45+0000\n"
 "PO-Revision-Date: 2024-12-20 22:01+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -1832,7 +1832,7 @@ msgstr "&पतेःपुस्तके उद्घाटयन्तु"
 msgid "&Copy Email Address"
 msgstr "&ईमेल पता प्रतिलिपि कुर्वन्तु"
 
-#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2726
+#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2725
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "पता क्लिप्बोर्ड् प्रति प्रतिलिखितम्।"
@@ -2237,17 +2237,17 @@ msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "सादा पाठरूपेण सन्देशः"
 
-#: viewer/viewer_p.cpp:2732
+#: viewer/viewer_p.cpp:2731
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL प्रतिलिपितः क्लिप्बोर्ड् मध्ये।"
 
-#: viewer/viewer_p.cpp:2894
+#: viewer/viewer_p.cpp:2893
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "सन्देशस्य लोडिंग् विफलम्: %1."
 
-#: viewer/viewer_p.cpp:2899
+#: viewer/viewer_p.cpp:2898
 #, kde-format
 msgid "Message not found."
 msgstr "सन्देशः न लब्धः।"
@@ -2402,7 +2402,7 @@ msgctxt "@action"
 msgid "Open folder where PDF file was saved"
 msgstr "यत्र PDF सञ्चिका रक्षिता आसीत् तत्र पुटं उद्घाटयन्तु"
 
-#: widgets/opensavedfilefolderwidget.cpp:78
+#: widgets/opensavedfilefolderwidget.cpp:79
 #, kde-format
 msgid "KMail was unable to open the attachment."
 msgstr "केमेलः संलग्नकं उद्घाटयितुं असमर्थः आसीत् ।"

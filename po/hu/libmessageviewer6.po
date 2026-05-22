@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-17 00:45+0000\n"
+"POT-Creation-Date: 2026-05-22 00:45+0000\n"
 "PO-Revision-Date: 2025-07-08 22:12+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -1860,7 +1860,7 @@ msgstr "Megny&itás a címjegyzékben"
 msgid "&Copy Email Address"
 msgstr "Az e-mail cím &másolása"
 
-#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2726
+#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2725
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "A címet a vágólapra másoltam."
@@ -2272,17 +2272,17 @@ msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Az üzenet egyszerű szövegként"
 
-#: viewer/viewer_p.cpp:2732
+#: viewer/viewer_p.cpp:2731
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "Az URL-t a vágólapra másoltam."
 
-#: viewer/viewer_p.cpp:2894
+#: viewer/viewer_p.cpp:2893
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "Az üzenet betöltése sikertelen: %1."
 
-#: viewer/viewer_p.cpp:2899
+#: viewer/viewer_p.cpp:2898
 #, kde-format
 msgid "Message not found."
 msgstr "Az üzenet nem található."
@@ -2442,7 +2442,7 @@ msgctxt "@action"
 msgid "Open folder where PDF file was saved"
 msgstr "Mappa megnyitása, ahová a PDF-fájl mentve lett"
 
-#: widgets/opensavedfilefolderwidget.cpp:78
+#: widgets/opensavedfilefolderwidget.cpp:79
 #, kde-format
 msgid "KMail was unable to open the attachment."
 msgstr "A KMail nem tudta megnyitni a mellékletet."

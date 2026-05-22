@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-17 00:45+0000\n"
+"POT-Creation-Date: 2026-05-22 00:45+0000\n"
 "PO-Revision-Date: 2026-05-17 12:06+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -1887,7 +1887,7 @@ msgstr "&Відкрити в адресній книзі"
 msgid "&Copy Email Address"
 msgstr "С&копіювати адресу ел. пошти"
 
-#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2726
+#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2725
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Адресу скопійовано до буфера даних."
@@ -2297,17 +2297,17 @@ msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Повідомлення як простий текст"
 
-#: viewer/viewer_p.cpp:2732
+#: viewer/viewer_p.cpp:2731
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL скопійовано до буфера даних."
 
-#: viewer/viewer_p.cpp:2894
+#: viewer/viewer_p.cpp:2893
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "Помилка під час завантаження повідомлення: %1."
 
-#: viewer/viewer_p.cpp:2899
+#: viewer/viewer_p.cpp:2898
 #, kde-format
 msgid "Message not found."
 msgstr "Повідомлення не знайдено."
@@ -2471,7 +2471,7 @@ msgctxt "@action"
 msgid "Open folder where PDF file was saved"
 msgstr "Відкрити теку, до якої було збережено файл PDF"
 
-#: widgets/opensavedfilefolderwidget.cpp:78
+#: widgets/opensavedfilefolderwidget.cpp:79
 #, kde-format
 msgid "KMail was unable to open the attachment."
 msgstr "KMail не вдалося відкрити долучення."

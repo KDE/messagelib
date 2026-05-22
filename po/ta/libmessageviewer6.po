@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-17 00:45+0000\n"
+"POT-Creation-Date: 2026-05-22 00:45+0000\n"
 "PO-Revision-Date: 2025-05-18 19:02+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -1864,7 +1864,7 @@ msgstr "&முகவரிப்புத்தகத்தில் திற"
 msgid "&Copy Email Address"
 msgstr "மின்னஞ்சல் முகவரியை &நகலெடு"
 
-#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2726
+#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2725
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "பிடிப்புபலகைக்கு முகவரி நகலெடுக்கப்பட்டுள்ளது."
@@ -2273,17 +2273,17 @@ msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "அஞ்சல், சாதாரண உரையாக"
 
-#: viewer/viewer_p.cpp:2732
+#: viewer/viewer_p.cpp:2731
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "பிடிப்புப்பலகைக்கு முகவரி நகலெடுக்கப்பட்டது"
 
-#: viewer/viewer_p.cpp:2894
+#: viewer/viewer_p.cpp:2893
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "அஞ்சலை ஏற்றுவது தோல்வியடைந்தது: %1."
 
-#: viewer/viewer_p.cpp:2899
+#: viewer/viewer_p.cpp:2898
 #, kde-format
 msgid "Message not found."
 msgstr "அஞ்சல் கண்டுபிடிக்கப்படவில்லை."
@@ -2430,7 +2430,7 @@ msgctxt "@action"
 msgid "Open folder where PDF file was saved"
 msgstr "PDF கோப்பை கொண்ட அடைவை திற"
 
-#: widgets/opensavedfilefolderwidget.cpp:78
+#: widgets/opensavedfilefolderwidget.cpp:79
 #, kde-format
 msgid "KMail was unable to open the attachment."
 msgstr "கேமெயிலால் உடனிணைப்பை திறக்க முடியவில்லை."

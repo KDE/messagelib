@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-17 00:45+0000\n"
+"POT-Creation-Date: 2026-05-22 00:45+0000\n"
 "PO-Revision-Date: 2017-12-24 21:47+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -1935,7 +1935,7 @@ msgstr "&Отвори у адресару"
 msgid "&Copy Email Address"
 msgstr "&Копирај адресу е‑поште"
 
-#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2726
+#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2725
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Адреса копирана у клипборд."
@@ -2371,17 +2371,17 @@ msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Порука као обични текст"
 
-#: viewer/viewer_p.cpp:2732
+#: viewer/viewer_p.cpp:2731
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "УРЛ копиран у клипборд."
 
-#: viewer/viewer_p.cpp:2894
+#: viewer/viewer_p.cpp:2893
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "Неуспјешно учитавање поруке: %1."
 
-#: viewer/viewer_p.cpp:2899
+#: viewer/viewer_p.cpp:2898
 #, kde-format
 msgid "Message not found."
 msgstr "Порука није нађена."
@@ -2549,7 +2549,7 @@ msgid "Open folder where PDF file was saved"
 msgstr "Отвори фасциклу где је прилог сачуван"
 
 # >> @title:window
-#: widgets/opensavedfilefolderwidget.cpp:78
+#: widgets/opensavedfilefolderwidget.cpp:79
 #, fuzzy, kde-format
 #| msgid "Unable to edit attachment"
 msgid "KMail was unable to open the attachment."

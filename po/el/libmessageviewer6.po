@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-17 00:45+0000\n"
+"POT-Creation-Date: 2026-05-22 00:45+0000\n"
 "PO-Revision-Date: 2024-09-19 17:23+0300\n"
 "Last-Translator: Antonis Geralis <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -1983,7 +1983,7 @@ msgstr "Άνοιγμα στο βιβλίο &διευθύνσεων"
 msgid "&Copy Email Address"
 msgstr "&Αντιγραφή της διεύθυνσης ηλ. αλληλογραφίας"
 
-#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2726
+#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2725
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Η διεύθυνση αντιγράφτηκε στο πρόχειρο."
@@ -2397,17 +2397,17 @@ msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Μήνυμα ως απλό κείμενο"
 
-#: viewer/viewer_p.cpp:2732
+#: viewer/viewer_p.cpp:2731
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "Το URL αντιγράφτηκε στο πρόχειρο."
 
-#: viewer/viewer_p.cpp:2894
+#: viewer/viewer_p.cpp:2893
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "Η φόρτωση του μηνύματος απέτυχε: %1"
 
-#: viewer/viewer_p.cpp:2899
+#: viewer/viewer_p.cpp:2898
 #, kde-format
 msgid "Message not found."
 msgstr "Το μήνυμα δεν βρέθηκε."
@@ -2575,7 +2575,7 @@ msgctxt "@action"
 msgid "Open folder where PDF file was saved"
 msgstr ""
 
-#: widgets/opensavedfilefolderwidget.cpp:78
+#: widgets/opensavedfilefolderwidget.cpp:79
 #, fuzzy, kde-format
 #| msgid "Unable to edit attachment"
 msgid "KMail was unable to open the attachment."
