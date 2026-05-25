@@ -1646,7 +1646,7 @@ msgstr "Chyba pri ukladaní prílohy"
 #, kde-format, kde-kuit-format
 msgctxt "1 = error string"
 msgid "Could not create temporary file: <message>%1</message>"
-msgstr ""
+msgstr "Nepodarilo sa vytvoriť dočasný súbor: <message>%1</message>"
 
 #: utils/messageviewerutil.cpp:409 utils/messageviewerutil.cpp:427
 #, kde-format
@@ -1700,10 +1700,9 @@ msgid "File %1 could not be created."
 msgstr "Súbor %1 nie je možné vytvoriť."
 
 #: utils/messageviewerutil.cpp:528
-#, fuzzy, kde-format
-#| msgid "We cannot save message."
+#, kde-format
 msgid "We cannot append message to mbox."
-msgstr "Nemôžeme uložiť správu."
+msgstr "Nemôžeme pripojiť správu do mbox."
 
 #: utils/messageviewerutil.cpp:528 utils/messageviewerutil.cpp:535
 #, kde-format
