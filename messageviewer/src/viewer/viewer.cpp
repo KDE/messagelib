@@ -13,6 +13,7 @@
 // #define KMAIL_READER_HTML_DEBUG 1
 
 #include "viewer.h"
+#include "config-messageviewer.h"
 #include "csshelper.h"
 #include "dkim-verify/dkimwidgetinfo.h"
 #include "messageviewer_viewer_format_debug.h"
@@ -21,6 +22,9 @@
 #include "viewer/webengine/mailwebengineview.h"
 #include "viewer_p.h"
 #include "widgets/zoomactionmenu.h"
+#if HAVE_TEXTADDONSWIDGETS_OPENSAVEDFILEFOLDERWIDGET
+#include <TextAddonsWidgets/OpenSavedFileFolderWidget>
+#endif
 #include <Akonadi/ItemFetchJob>
 #include <Akonadi/ItemFetchScope>
 #include <Akonadi/MessageParts>
@@ -706,7 +710,11 @@ void Viewer::setPluginName(const QString &pluginName)
 void Viewer::showOpenAttachmentFolderWidget(const QList<QUrl> &urls)
 {
     Q_D(Viewer);
+#if HAVE_TEXTADDONSWIDGETS_OPENSAVEDFILEFOLDERWIDGET
+    d->showSavedFileFolderWidget(urls, TextAddonsWidgets::OpenSavedFileFolderWidget::FileType::Attachment);
+#else
     d->showSavedFileFolderWidget(urls, MessageViewer::OpenSavedFileFolderWidget::FileType::Attachment);
+#endif
 }
 
 QList<QAction *> Viewer::viewerPluginActionList(ViewerPluginInterface::SpecificFeatureTypes features)

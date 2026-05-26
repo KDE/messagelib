@@ -12,7 +12,12 @@
 #include "messageviewer/viewerplugininterface.h"
 #include "messageviewer_private_export.h"
 #include "viewer.h" //not so nice, it is actually for the enums from MailViewer
+
+#if HAVE_TEXTADDONSWIDGETS_OPENSAVEDFILEFOLDERWIDGET
+#include <TextAddonsWidgets/OpenSavedFileFolderWidget>
+#else
 #include "widgets/opensavedfilefolderwidget.h"
+#endif
 #include <Akonadi/Item>
 #include <Akonadi/Monitor>
 #include <Akonadi/Session>
@@ -426,7 +431,11 @@ public:
     void goOnline();
     void goResourceOnline();
 
-    void showSavedFileFolderWidget(const QList<QUrl> &urls, MessageViewer::OpenSavedFileFolderWidget::FileType fileType);
+#if HAVE_TEXTADDONSWIDGETS_OPENSAVEDFILEFOLDERWIDGET
+    void showSavedFileFolderWidget(const QList<QUrl> &urls, TextAddonsWidgets::OpenSavedFileFolderWidget::FileType fileType);
+#else
+    void showSavedFileFolderWidget(const QList<QUrl> &urls, OpenSavedFileFolderWidget::FileType fileType);
+#endif
 
     [[nodiscard]] bool mimePartTreeIsEmpty() const;
 
@@ -711,7 +720,11 @@ public:
     Akonadi::Item::Id mPreviouslyViewedItemId = -1;
 
     MessageViewer::ScamDetectionWarningWidget *mScamDetectionWarning = nullptr;
+#if HAVE_TEXTADDONSWIDGETS_OPENSAVEDFILEFOLDERWIDGET
+    TextAddonsWidgets::OpenSavedFileFolderWidget *mOpenSavedFileFolderWidget = nullptr;
+#else
     MessageViewer::OpenSavedFileFolderWidget *mOpenSavedFileFolderWidget = nullptr;
+#endif
     WebEngineViewer::SubmittedFormWarningWidget *mSubmittedFormWarning = nullptr;
     WebEngineViewer::TrackingWarningWidget *mMailTrackingWarning = nullptr;
 #if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT

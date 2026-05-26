@@ -325,7 +325,13 @@ void ViewerPrivate::openAttachment(KMime::Content *node, const QUrl &url)
     if (choice == AttachmentDialog::Save) {
         QList<QUrl> urlList;
         if (Util::saveContents(mMainWindow, QList<KMime::Content *>() << node, urlList)) {
-            showSavedFileFolderWidget(urlList, MessageViewer::OpenSavedFileFolderWidget::FileType::Attachment);
+            showSavedFileFolderWidget(urlList,
+#if HAVE_TEXTADDONSWIDGETS_OPENSAVEDFILEFOLDERWIDGET
+                                      TextAddonsWidgets::OpenSavedFileFolderWidget::FileType::Attachment
+#else
+                                      MessageViewer::OpenSavedFileFolderWidget::FileType::Attachment
+#endif
+            );
         }
     } else if (choice == AttachmentDialog::Open) { // Open
         if (offer) {
@@ -1438,7 +1444,11 @@ void ViewerPrivate::createTrackingWarningWidget()
 
 void ViewerPrivate::createOpenSavedFileFolderWidget()
 {
+#if HAVE_TEXTADDONSWIDGETS_OPENSAVEDFILEFOLDERWIDGET
+    mOpenSavedFileFolderWidget = new TextAddonsWidgets::OpenSavedFileFolderWidget(mReaderBox);
+#else
     mOpenSavedFileFolderWidget = new OpenSavedFileFolderWidget(mReaderBox);
+#endif
     mOpenSavedFileFolderWidget->setObjectName(QLatin1StringView("opensavefilefolderwidget"));
     mReaderBoxVBoxLayout->insertWidget(0, mOpenSavedFileFolderWidget);
 }
@@ -2287,7 +2297,13 @@ void ViewerPrivate::exportToPdf(const QString &fileName)
 {
     auto job = new WebEngineViewer::WebEngineExportPdfPageJob(this);
     connect(job, &WebEngineViewer::WebEngineExportPdfPageJob::exportToPdfSuccess, this, [this, fileName]() {
-        showSavedFileFolderWidget({QUrl::fromLocalFile(fileName)}, MessageViewer::OpenSavedFileFolderWidget::FileType::Pdf);
+        showSavedFileFolderWidget({QUrl::fromLocalFile(fileName)},
+#if HAVE_TEXTADDONSWIDGETS_OPENSAVEDFILEFOLDERWIDGET
+                                  TextAddonsWidgets::OpenSavedFileFolderWidget::FileType::Pdf
+#else
+                                  MessageViewer::OpenSavedFileFolderWidget::FileType::Pdf
+#endif
+        );
     });
     job->setEngineView(mViewer);
     job->setPdfPath(fileName);
@@ -2450,8 +2466,11 @@ void ViewerPrivate::slotAttachmentOpen()
         attachmentOpen(content);
     }
 }
-
+#if HAVE_TEXTADDONSWIDGETS_OPENSAVEDFILEFOLDERWIDGET
+void ViewerPrivate::showSavedFileFolderWidget(const QList<QUrl> &urls, TextAddonsWidgets::OpenSavedFileFolderWidget::FileType fileType)
+#else
 void ViewerPrivate::showSavedFileFolderWidget(const QList<QUrl> &urls, OpenSavedFileFolderWidget::FileType fileType)
+#endif
 {
     if (!mOpenSavedFileFolderWidget) {
         createOpenSavedFileFolderWidget();
@@ -2495,7 +2514,13 @@ void ViewerPrivate::slotAttachmentSaveAs()
     const auto contents = selectedContents();
     QList<QUrl> urlList;
     if (Util::saveAttachments(contents, mMainWindow, urlList)) {
-        showSavedFileFolderWidget(urlList, MessageViewer::OpenSavedFileFolderWidget::FileType::Attachment);
+        showSavedFileFolderWidget(urlList,
+#if HAVE_TEXTADDONSWIDGETS_OPENSAVEDFILEFOLDERWIDGET
+                                  TextAddonsWidgets::OpenSavedFileFolderWidget::FileType::Attachment
+#else
+                                  MessageViewer::OpenSavedFileFolderWidget::FileType::Attachment
+#endif
+        );
     }
 }
 
@@ -2504,7 +2529,13 @@ void ViewerPrivate::slotAttachmentSaveAll()
     const auto contents = mMessage->attachments();
     QList<QUrl> urlList;
     if (Util::saveAttachments(contents, mMainWindow, urlList)) {
-        showSavedFileFolderWidget(urlList, MessageViewer::OpenSavedFileFolderWidget::FileType::Attachment);
+        showSavedFileFolderWidget(urlList,
+#if HAVE_TEXTADDONSWIDGETS_OPENSAVEDFILEFOLDERWIDGET
+                                  TextAddonsWidgets::OpenSavedFileFolderWidget::FileType::Attachment
+#else
+                                  MessageViewer::OpenSavedFileFolderWidget::FileType::Attachment
+#endif
+        );
     }
 }
 
@@ -2616,12 +2647,25 @@ void ViewerPrivate::slotHandleAttachment(int choice)
             item.setMimeType(KMime::Message::mimeType());
             QUrl url;
             if (MessageViewer::Util::saveMessageInMboxAndGetUrl(url, Akonadi::Item::List() << item, mMainWindow)) {
-                showSavedFileFolderWidget({url}, MessageViewer::OpenSavedFileFolderWidget::FileType::Attachment);
+                showSavedFileFolderWidget({url},
+#if HAVE_TEXTADDONSWIDGETS_OPENSAVEDFILEFOLDERWIDGET
+                                          TextAddonsWidgets::OpenSavedFileFolderWidget::FileType::Attachment
+#else
+                                          MessageViewer::OpenSavedFileFolderWidget::FileType::Attachment
+#endif
+
+                );
             }
         } else {
             QList<QUrl> urlList;
             if (Util::saveContents(mMainWindow, QList<KMime::Content *>() << mCurrentContent, urlList)) {
-                showSavedFileFolderWidget(urlList, MessageViewer::OpenSavedFileFolderWidget::FileType::Attachment);
+                showSavedFileFolderWidget(urlList,
+#if HAVE_TEXTADDONSWIDGETS_OPENSAVEDFILEFOLDERWIDGET
+                                          TextAddonsWidgets::OpenSavedFileFolderWidget::FileType::Attachment
+#else
+                                          MessageViewer::OpenSavedFileFolderWidget::FileType::Attachment
+#endif
+                );
             }
         }
         break;

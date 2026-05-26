@@ -169,7 +169,6 @@ target_sources(
         widgets/printingsettings.cpp
         widgets/htmlstatusbar.cpp
         widgets/invitationsettings.cpp
-        widgets/opensavedfilefolderwidget.cpp
         widgets/mailsourceviewtextbrowserwidget.cpp
         widgets/shownextmessagewidget.cpp
         widgets/mailsourcewebengineviewer.cpp
@@ -302,7 +301,6 @@ target_sources(
         widgets/shownextmessagewidget.h
         widgets/htmlstatusbar.h
         widgets/printingsettings.h
-        widgets/opensavedfilefolderwidget.h
         widgets/configurewidget.h
         widgets/attachmentdialog.h
         remote-content/remotecontentinfo.h
@@ -354,6 +352,15 @@ target_sources(
         mdn/mdnwarningwidget.cpp
         mdn/mdnwarningwidget.h
 )
+
+if(NOT HAVE_TEXTADDONSWIDGETS_OPENSAVEDFILEFOLDERWIDGET)
+    target_sources(
+        KPim6MessageViewer
+        PRIVATE
+            widgets/opensavedfilefolderwidget.cpp
+            widgets/opensavedfilefolderwidget.h
+    )
+endif()
 
 ecm_qt_declare_logging_category(KPim6MessageViewer HEADER messageviewer_debug.h IDENTIFIER MESSAGEVIEWER_LOG CATEGORY_NAME org.kde.pim.messageviewer
     DESCRIPTION "messagelib (messageviewer)"
