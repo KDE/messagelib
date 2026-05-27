@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-22 00:45+0000\n"
+"POT-Creation-Date: 2026-05-27 00:46+0000\n"
 "PO-Revision-Date: 2026-05-17 11:17+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -1403,7 +1403,7 @@ msgstr ""
 "correctament."
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
-#: settings/messageviewer.kcfg:206 viewer/viewer_p.cpp:1558
+#: settings/messageviewer.kcfg:206 viewer/viewer_p.cpp:1568
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "Usa una lletra d'amplada fi&xa"
@@ -1804,7 +1804,7 @@ msgstr "Impressió del document"
 msgid "Turn on HTML rendering for this message."
 msgstr "Activa la representació HTML per a aquest missatge."
 
-#: viewer/urlhandlermanager.cpp:412 viewer/viewer_p.cpp:1627
+#: viewer/urlhandlermanager.cpp:412 viewer/viewer_p.cpp:1637
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "Carrega les referències externes d'Internet per a aquest missatge."
@@ -1886,7 +1886,7 @@ msgstr "&Obre a la llibreta d'adreces"
 msgid "&Copy Email Address"
 msgstr "&Copia l'adreça de correu"
 
-#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2725
+#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2769
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Adreça copiada al porta-retalls."
@@ -1938,12 +1938,12 @@ msgctxt "@action:button"
 msgid "Execute"
 msgstr "Executa"
 
-#: viewer/viewer.cpp:149
+#: viewer/viewer.cpp:153
 #, kde-format
 msgid "Loading message..."
 msgstr "S'està carregant el missatge..."
 
-#: viewer/viewer_p.cpp:346
+#: viewer/viewer_p.cpp:352
 #, kde-format
 msgid ""
 "Deleting an attachment might invalidate any digital signature on this "
@@ -1952,13 +1952,13 @@ msgstr ""
 "La supressió d'un adjunt pot invalidar qualsevol signatura digital d'aquest "
 "missatge."
 
-#: viewer/viewer_p.cpp:347 viewer/viewer_p.cpp:382
+#: viewer/viewer_p.cpp:353 viewer/viewer_p.cpp:388
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "Supressió d'adjunt"
 
-#: viewer/viewer_p.cpp:381
+#: viewer/viewer_p.cpp:387
 #, kde-format
 msgid ""
 "Deleting an attachment from an encrypted or old-style mailman message is not "
@@ -1967,345 +1967,345 @@ msgstr ""
 "No està permès suprimir un adjunt d'un missatge encriptat o de l'antic estil "
 "del mailman."
 
-#: viewer/viewer_p.cpp:430
+#: viewer/viewer_p.cpp:436
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
 msgstr "&Obre amb"
 
-#: viewer/viewer_p.cpp:448
+#: viewer/viewer_p.cpp:454
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
 msgstr "&Altres..."
 
-#: viewer/viewer_p.cpp:450 viewer/viewer_p.cpp:463
+#: viewer/viewer_p.cpp:456 viewer/viewer_p.cpp:469
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "&Obre amb..."
 
-#: viewer/viewer_p.cpp:527 viewer/viewer_p.cpp:1736
+#: viewer/viewer_p.cpp:533 viewer/viewer_p.cpp:1746
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Obre"
 
-#: viewer/viewer_p.cpp:541 viewer/viewer_p.cpp:1743
+#: viewer/viewer_p.cpp:547 viewer/viewer_p.cpp:1753
 #, kde-format
 msgctxt "to view something"
 msgid "View"
 msgstr "Visualitza"
 
-#: viewer/viewer_p.cpp:549
+#: viewer/viewer_p.cpp:555
 #, kde-format
 msgid "Scroll To"
 msgstr "Desplaça a"
 
-#: viewer/viewer_p.cpp:554
+#: viewer/viewer_p.cpp:560
 #, kde-format
 msgid "Save As..."
 msgstr "Desa com a..."
 
-#: viewer/viewer_p.cpp:560 viewer/viewer_p.cpp:1753
+#: viewer/viewer_p.cpp:566 viewer/viewer_p.cpp:1763
 #, kde-format
 msgid "Copy"
 msgstr "Copia"
 
-#: viewer/viewer_p.cpp:571 viewer/viewer_p.cpp:1757
+#: viewer/viewer_p.cpp:577 viewer/viewer_p.cpp:1767
 #, kde-format
 msgid "Delete Attachment"
 msgstr "Suprimeix l'adjunt"
 
-#: viewer/viewer_p.cpp:582
+#: viewer/viewer_p.cpp:588
 #, kde-format
 msgid "Reply To Author"
 msgstr "Respon a l'autor"
 
-#: viewer/viewer_p.cpp:590
+#: viewer/viewer_p.cpp:596
 #, kde-format
 msgid "Reply To All"
 msgstr "Respon a tots"
 
-#: viewer/viewer_p.cpp:596 viewer/viewer_p.cpp:1762
+#: viewer/viewer_p.cpp:602 viewer/viewer_p.cpp:1772
 #, kde-format
 msgid "Properties"
 msgstr "Propietats"
 
-#: viewer/viewer_p.cpp:732
+#: viewer/viewer_p.cpp:738
 #, kde-format
 msgid "KMail"
 msgstr "KMail"
 
-#: viewer/viewer_p.cpp:732
+#: viewer/viewer_p.cpp:738
 #, kde-format
 msgid "The KDE Mail Client"
 msgstr "El client de correu del KDE"
 
-#: viewer/viewer_p.cpp:1278
+#: viewer/viewer_p.cpp:1284
 #, kde-format
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "Visualització de l'adjunt: %1"
 
-#: viewer/viewer_p.cpp:1480
+#: viewer/viewer_p.cpp:1490
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "&Adjunts"
 
-#: viewer/viewer_p.cpp:1482
+#: viewer/viewer_p.cpp:1492
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "Escolliu l'estil de visualització dels adjunts"
 
-#: viewer/viewer_p.cpp:1485
+#: viewer/viewer_p.cpp:1495
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "Com a i&cones"
 
-#: viewer/viewer_p.cpp:1488
+#: viewer/viewer_p.cpp:1498
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr "Mostra tots els adjunts com a icones. Feu clic per a veure'ls."
 
-#: viewer/viewer_p.cpp:1492
+#: viewer/viewer_p.cpp:1502
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "&Intel·ligents"
 
-#: viewer/viewer_p.cpp:1495
+#: viewer/viewer_p.cpp:1505
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "Mostra els adjunts tal com suggereix el remitent."
 
-#: viewer/viewer_p.cpp:1499
+#: viewer/viewer_p.cpp:1509
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "&Inclosos"
 
-#: viewer/viewer_p.cpp:1502
+#: viewer/viewer_p.cpp:1512
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "Mostra tots els adjunts inclosos (si fos possible)"
 
-#: viewer/viewer_p.cpp:1506
+#: viewer/viewer_p.cpp:1516
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "&Oculta"
 
-#: viewer/viewer_p.cpp:1509
+#: viewer/viewer_p.cpp:1519
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "No mostris els adjunts en el visualitzador de missatges"
 
-#: viewer/viewer_p.cpp:1513
+#: viewer/viewer_p.cpp:1523
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr "Només en la capçalera"
 
-#: viewer/viewer_p.cpp:1516
+#: viewer/viewer_p.cpp:1526
 #, kde-format
 msgid "Show Attachments only in the header of the mail"
 msgstr "Mostra els adjunts només en la capçalera del correu"
 
-#: viewer/viewer_p.cpp:1521
+#: viewer/viewer_p.cpp:1531
 #, kde-format
 msgid "&Set Encoding"
 msgstr "Estableix la co&dificació"
 
-#: viewer/viewer_p.cpp:1526 widgets/configurewidget.cpp:45
+#: viewer/viewer_p.cpp:1536 widgets/configurewidget.cpp:45
 #: widgets/configurewidget.cpp:79
 #, kde-format
 msgid "Auto"
 msgstr "Automàtic"
 
-#: viewer/viewer_p.cpp:1536
+#: viewer/viewer_p.cpp:1546
 #, kde-format
 msgid "Copy Text"
 msgstr "Copia el text"
 
-#: viewer/viewer_p.cpp:1542
+#: viewer/viewer_p.cpp:1552
 #, kde-format
 msgctxt "@action"
 msgid "Select All Text"
 msgstr "Selecciona tot el text"
 
-#: viewer/viewer_p.cpp:1548 viewer/viewer_p.cpp:2071
+#: viewer/viewer_p.cpp:1558 viewer/viewer_p.cpp:2081
 #, kde-format
 msgid "Copy Link Address"
 msgstr "Copia l'adreça de l'enllaç"
 
-#: viewer/viewer_p.cpp:1553
+#: viewer/viewer_p.cpp:1563
 #, kde-format
 msgid "Open URL"
 msgstr "Obre l'URL"
 
-#: viewer/viewer_p.cpp:1564
+#: viewer/viewer_p.cpp:1574
 #, kde-format
 msgid "Show Message Structure"
 msgstr "Mostra l'estructura del missatge"
 
-#: viewer/viewer_p.cpp:1569
+#: viewer/viewer_p.cpp:1579
 #, kde-format
 msgctxt "@action"
 msgid "&View Source"
 msgstr "&Mostra el codi font"
 
-#: viewer/viewer_p.cpp:1574
+#: viewer/viewer_p.cpp:1584
 #, kde-format
 msgid "&Save Message..."
 msgstr "De&sa el missatge..."
 
-#: viewer/viewer_p.cpp:1580
+#: viewer/viewer_p.cpp:1590
 #, kde-format
 msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "De&sa el format de visualització"
 
-#: viewer/viewer_p.cpp:1584
+#: viewer/viewer_p.cpp:1594
 #, kde-format
 msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "&Reinicia el format de visualització"
 
-#: viewer/viewer_p.cpp:1591
+#: viewer/viewer_p.cpp:1601
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "Desplaça el missatge cap amunt"
 
-#: viewer/viewer_p.cpp:1596
+#: viewer/viewer_p.cpp:1606
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "Desplaça el missatge cap avall"
 
-#: viewer/viewer_p.cpp:1601
+#: viewer/viewer_p.cpp:1611
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "Desplaça el missatge cap amunt (més)"
 
-#: viewer/viewer_p.cpp:1606
+#: viewer/viewer_p.cpp:1616
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "Desplaça el missatge cap avall (més)"
 
-#: viewer/viewer_p.cpp:1616
+#: viewer/viewer_p.cpp:1626
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr "Commuta el mode de visualització HTML"
 
-#: viewer/viewer_p.cpp:1620
+#: viewer/viewer_p.cpp:1630
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr "Commuta el mode de visualització entre HTML i text net"
 
-#: viewer/viewer_p.cpp:1623
+#: viewer/viewer_p.cpp:1633
 #, kde-format
 msgctxt "@action"
 msgid "Load external references"
 msgstr "Carrega les referències externes"
 
-#: viewer/viewer_p.cpp:1629
+#: viewer/viewer_p.cpp:1639
 #, kde-format
 msgctxt "@action"
 msgid "Speak Text"
 msgstr "Pronuncia el text"
 
-#: viewer/viewer_p.cpp:1635
+#: viewer/viewer_p.cpp:1645
 #, kde-format
 msgctxt "@action"
 msgid "Share Text..."
 msgstr "Comparteix el text..."
 
-#: viewer/viewer_p.cpp:1653
+#: viewer/viewer_p.cpp:1663
 #, kde-format
 msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "Copia la ubicació de la imatge"
 
-#: viewer/viewer_p.cpp:1659
+#: viewer/viewer_p.cpp:1669
 #, kde-format
 msgid "&Find in Message..."
 msgstr "&Cerca al missatge..."
 
-#: viewer/viewer_p.cpp:1668
+#: viewer/viewer_p.cpp:1678
 #, kde-format
 msgid "Disable Emoticon"
 msgstr "Desactiva les emoticones"
 
-#: viewer/viewer_p.cpp:1733
+#: viewer/viewer_p.cpp:1743
 #, kde-format
 msgid "Save &As..."
 msgstr "&Desa com a..."
 
-#: viewer/viewer_p.cpp:1741
+#: viewer/viewer_p.cpp:1751
 #, kde-format
 msgid "Open With..."
 msgstr "Obre amb..."
 
-#: viewer/viewer_p.cpp:1748
+#: viewer/viewer_p.cpp:1758
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "Desa tots els adjunts..."
 
-#: viewer/viewer_p.cpp:1991
+#: viewer/viewer_p.cpp:2001
 #, kde-format
 msgid "The network is broken."
 msgstr "La xarxa no funciona."
 
-#: viewer/viewer_p.cpp:1991 viewer/viewer_p.cpp:1994
+#: viewer/viewer_p.cpp:2001 viewer/viewer_p.cpp:2004
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "Comprovació d'URL de pesca"
 
-#: viewer/viewer_p.cpp:1994
+#: viewer/viewer_p.cpp:2004
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "L'URL %1 no és vàlid."
 
-#: viewer/viewer_p.cpp:2014
+#: viewer/viewer_p.cpp:2024
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr "Aquest lloc web és maliciós. Voleu continuar mostrant-lo?"
 
-#: viewer/viewer_p.cpp:2015
+#: viewer/viewer_p.cpp:2025
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr "Programari maliciós"
 
-#: viewer/viewer_p.cpp:2069
+#: viewer/viewer_p.cpp:2079
 #, kde-format
 msgid "Copy Email Address"
 msgstr "Copia l'adreça de correu"
 
-#: viewer/viewer_p.cpp:2152
+#: viewer/viewer_p.cpp:2162
 #, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Missatge com a text net"
 
-#: viewer/viewer_p.cpp:2731
+#: viewer/viewer_p.cpp:2775
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL copiat al porta-retalls."
 
-#: viewer/viewer_p.cpp:2893
+#: viewer/viewer_p.cpp:2937
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "Ha fallat en carregar el missatge: %1."
 
-#: viewer/viewer_p.cpp:2898
+#: viewer/viewer_p.cpp:2942
 #, kde-format
 msgid "Message not found."
 msgstr "No s'ha trobat el missatge."

@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-22 00:45+0000\n"
+"POT-Creation-Date: 2026-05-27 00:46+0000\n"
 "PO-Revision-Date: 2002-11-04 10:19SAST\n"
 "Last-Translator: Lwandle Mgidlana <lwandle@translate.org.za>\n"
 "Language-Team: Xhosa <xhosa@translate.org.za>\n"
@@ -1417,7 +1417,7 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
-#: settings/messageviewer.kcfg:206 viewer/viewer_p.cpp:1558
+#: settings/messageviewer.kcfg:206 viewer/viewer_p.cpp:1568
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "Se&benzisa Ubungakanani bamagama Obungatshintshiyo"
@@ -1805,7 +1805,7 @@ msgstr "Usetyenziso lwamaxwebhu"
 msgid "Turn on HTML rendering for this message."
 msgstr "Vula ubuyiselo lwe HTML lwalomyalezo."
 
-#: viewer/urlhandlermanager.cpp:412 viewer/viewer_p.cpp:1627
+#: viewer/urlhandlermanager.cpp:412 viewer/viewer_p.cpp:1637
 #, fuzzy, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr ""
@@ -1897,7 +1897,7 @@ msgstr "Vula kwi Ncwadi Yedilesi"
 msgid "&Copy Email Address"
 msgstr "Idilesi ye Email"
 
-#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2725
+#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2769
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Yazisa okukhutshelweyo kwibhodi eqhotyoshwayo."
@@ -1952,183 +1952,183 @@ msgctxt "@action:button"
 msgid "Execute"
 msgstr "phumeza umyalelo"
 
-#: viewer/viewer.cpp:149
+#: viewer/viewer.cpp:153
 #, fuzzy, kde-format
 msgid "Loading message..."
 msgstr "Ukuhambisa umyalezo %3 we %2 kwi %1."
 
-#: viewer/viewer_p.cpp:346
+#: viewer/viewer_p.cpp:352
 #, kde-format
 msgid ""
 "Deleting an attachment might invalidate any digital signature on this "
 "message."
 msgstr ""
 
-#: viewer/viewer_p.cpp:347 viewer/viewer_p.cpp:382
+#: viewer/viewer_p.cpp:353 viewer/viewer_p.cpp:388
 #, fuzzy, kde-format
 #| msgid "&Remove Attachment"
 msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "&Susa Izincamatheliso"
 
-#: viewer/viewer_p.cpp:381
+#: viewer/viewer_p.cpp:387
 #, kde-format
 msgid ""
 "Deleting an attachment from an encrypted or old-style mailman message is not "
 "supported."
 msgstr ""
 
-#: viewer/viewer_p.cpp:430
+#: viewer/viewer_p.cpp:436
 #, fuzzy, kde-format
 #| msgid "&Open With..."
 msgctxt "@title:menu"
 msgid "&Open With"
 msgstr "&Vula Nge..."
 
-#: viewer/viewer_p.cpp:448
+#: viewer/viewer_p.cpp:454
 #, fuzzy, kde-format
 #| msgid "Other Actio&ns"
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
 msgstr "Ezinye Iintshu&kumo"
 
-#: viewer/viewer_p.cpp:450 viewer/viewer_p.cpp:463
+#: viewer/viewer_p.cpp:456 viewer/viewer_p.cpp:469
 #, fuzzy, kde-format
 #| msgid "&Open With..."
 msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "&Vula Nge..."
 
-#: viewer/viewer_p.cpp:527 viewer/viewer_p.cpp:1736
+#: viewer/viewer_p.cpp:533 viewer/viewer_p.cpp:1746
 #, fuzzy, kde-format
 #| msgid "Open URL"
 msgctxt "to open"
 msgid "Open"
 msgstr "Vula i URL"
 
-#: viewer/viewer_p.cpp:541 viewer/viewer_p.cpp:1743
+#: viewer/viewer_p.cpp:547 viewer/viewer_p.cpp:1753
 #, kde-format
 msgctxt "to view something"
 msgid "View"
 msgstr ""
 
-#: viewer/viewer_p.cpp:549
+#: viewer/viewer_p.cpp:555
 #, kde-format
 msgid "Scroll To"
 msgstr ""
 
-#: viewer/viewer_p.cpp:554
+#: viewer/viewer_p.cpp:560
 #, fuzzy, kde-format
 msgid "Save As..."
 msgstr "Gcina &Njenge..."
 
-#: viewer/viewer_p.cpp:560 viewer/viewer_p.cpp:1753
+#: viewer/viewer_p.cpp:566 viewer/viewer_p.cpp:1763
 #, fuzzy, kde-format
 msgid "Copy"
 msgstr "&Khuphela Ku"
 
-#: viewer/viewer_p.cpp:571 viewer/viewer_p.cpp:1757
+#: viewer/viewer_p.cpp:577 viewer/viewer_p.cpp:1767
 #, fuzzy, kde-format
 #| msgid "&Remove Attachment"
 msgid "Delete Attachment"
 msgstr "&Susa Izincamatheliso"
 
-#: viewer/viewer_p.cpp:582
+#: viewer/viewer_p.cpp:588
 #, fuzzy, kde-format
 msgid "Reply To Author"
 msgstr "&Phendula kubo Bonke..."
 
-#: viewer/viewer_p.cpp:590
+#: viewer/viewer_p.cpp:596
 #, fuzzy, kde-format
 msgid "Reply To All"
 msgstr "&Yisa phambili"
 
-#: viewer/viewer_p.cpp:596 viewer/viewer_p.cpp:1762
+#: viewer/viewer_p.cpp:602 viewer/viewer_p.cpp:1772
 #, fuzzy, kde-format
 msgid "Properties"
 msgstr "Iimpahla..."
 
-#: viewer/viewer_p.cpp:732
+#: viewer/viewer_p.cpp:738
 #, kde-format
 msgid "KMail"
 msgstr "KMail"
 
-#: viewer/viewer_p.cpp:732
+#: viewer/viewer_p.cpp:738
 #, fuzzy, kde-format
 msgid "The KDE Mail Client"
 msgstr "Umxhasi weposi ye KDE"
 
-#: viewer/viewer_p.cpp:1278
+#: viewer/viewer_p.cpp:1284
 #, fuzzy, kde-format
 #| msgid "View Attachment: %1"
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "Bona Uncamathelo: %1"
 
-#: viewer/viewer_p.cpp:1480
+#: viewer/viewer_p.cpp:1490
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "&Uncanyatheliso"
 
-#: viewer/viewer_p.cpp:1482
+#: viewer/viewer_p.cpp:1492
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "Khetha uhlobo loboniso lwezincamathiselo"
 
-#: viewer/viewer_p.cpp:1485
+#: viewer/viewer_p.cpp:1495
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "&Njengeemphawu zemifanekiso"
 
-#: viewer/viewer_p.cpp:1488
+#: viewer/viewer_p.cpp:1498
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr ""
 "Bonisa zonke izincamathiselo njengeemphawu zemifanekiso. Nqakraza ukuze "
 "uzibone."
 
-#: viewer/viewer_p.cpp:1492
+#: viewer/viewer_p.cpp:1502
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "&Iyabukeka"
 
-#: viewer/viewer_p.cpp:1495
+#: viewer/viewer_p.cpp:1505
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "Bonisa izincamathelo njengokuba iphakamiswe ngumthumeli."
 
-#: viewer/viewer_p.cpp:1499
+#: viewer/viewer_p.cpp:1509
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "&Kwi layini"
 
-#: viewer/viewer_p.cpp:1502
+#: viewer/viewer_p.cpp:1512
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "Bonisa izincamathelo kwi layini (ukuba kuyenzeka)"
 
-#: viewer/viewer_p.cpp:1506
+#: viewer/viewer_p.cpp:1516
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "&Fihla"
 
-#: viewer/viewer_p.cpp:1509
+#: viewer/viewer_p.cpp:1519
 #, fuzzy, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "Sukubonisa izincamathiselo kumbonisi womyalezo"
 
-#: viewer/viewer_p.cpp:1513
+#: viewer/viewer_p.cpp:1523
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1516
+#: viewer/viewer_p.cpp:1526
 #, fuzzy, kde-format
 #| msgid "Show all attachments as icons. Click to see them."
 msgid "Show Attachments only in the header of the mail"
@@ -2136,212 +2136,212 @@ msgstr ""
 "Bonisa zonke izincamathiselo njengeemphawu zemifanekiso. Nqakraza ukuze "
 "uzibone."
 
-#: viewer/viewer_p.cpp:1521
+#: viewer/viewer_p.cpp:1531
 #, kde-format
 msgid "&Set Encoding"
 msgstr "Cwangcisa U&sebenziso lwe khowudi"
 
-#: viewer/viewer_p.cpp:1526 widgets/configurewidget.cpp:45
+#: viewer/viewer_p.cpp:1536 widgets/configurewidget.cpp:45
 #: widgets/configurewidget.cpp:79
 #, kde-format
 msgid "Auto"
 msgstr "Okuzenzekelayo"
 
-#: viewer/viewer_p.cpp:1536
+#: viewer/viewer_p.cpp:1546
 #, fuzzy, kde-format
 #| msgid "&Copy To"
 msgid "Copy Text"
 msgstr "&Khuphela Ku"
 
-#: viewer/viewer_p.cpp:1542
+#: viewer/viewer_p.cpp:1552
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Select All Text"
 msgstr "&Khetha Yonke Imiyalezo"
 
-#: viewer/viewer_p.cpp:1548 viewer/viewer_p.cpp:2071
+#: viewer/viewer_p.cpp:1558 viewer/viewer_p.cpp:2081
 #, fuzzy, kde-format
 msgid "Copy Link Address"
 msgstr "Vula kwi Ncwadi Yedilesi"
 
-#: viewer/viewer_p.cpp:1553
+#: viewer/viewer_p.cpp:1563
 #, kde-format
 msgid "Open URL"
 msgstr "Vula i URL"
 
-#: viewer/viewer_p.cpp:1564
+#: viewer/viewer_p.cpp:1574
 #, fuzzy, kde-format
 #| msgid "&Message"
 msgid "Show Message Structure"
 msgstr "&Umyalezo"
 
-#: viewer/viewer_p.cpp:1569
+#: viewer/viewer_p.cpp:1579
 #, fuzzy, kde-format
 #| msgid "&View Source"
 msgctxt "@action"
 msgid "&View Source"
 msgstr "&Bona Imvelaphi "
 
-#: viewer/viewer_p.cpp:1574
+#: viewer/viewer_p.cpp:1584
 #, fuzzy, kde-format
 msgid "&Save Message..."
 msgstr " %1 umyalezo, %2."
 
-#: viewer/viewer_p.cpp:1580
+#: viewer/viewer_p.cpp:1590
 #, fuzzy, kde-format
 #| msgid "&Save as Draft"
 msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "&Gcina njengo Mzombo "
 
-#: viewer/viewer_p.cpp:1584
+#: viewer/viewer_p.cpp:1594
 #, fuzzy, kde-format
 #| msgid "&Save as Draft"
 msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "&Gcina njengo Mzombo "
 
-#: viewer/viewer_p.cpp:1591
+#: viewer/viewer_p.cpp:1601
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
 msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "&Khetha Yonke Imiyalezo"
 
-#: viewer/viewer_p.cpp:1596
+#: viewer/viewer_p.cpp:1606
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
 msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "&Khetha Yonke Imiyalezo"
 
-#: viewer/viewer_p.cpp:1601
+#: viewer/viewer_p.cpp:1611
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
 msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "&Khetha Yonke Imiyalezo"
 
-#: viewer/viewer_p.cpp:1606
+#: viewer/viewer_p.cpp:1616
 #, fuzzy, kde-format
 #| msgid "Select &All Messages"
 msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "&Khetha Yonke Imiyalezo"
 
-#: viewer/viewer_p.cpp:1616
+#: viewer/viewer_p.cpp:1626
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1620
+#: viewer/viewer_p.cpp:1630
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1623
+#: viewer/viewer_p.cpp:1633
 #, kde-format
 msgctxt "@action"
 msgid "Load external references"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1629
+#: viewer/viewer_p.cpp:1639
 #, fuzzy, kde-format
 #| msgid "&Copy To"
 msgctxt "@action"
 msgid "Speak Text"
 msgstr "&Khuphela Ku"
 
-#: viewer/viewer_p.cpp:1635
+#: viewer/viewer_p.cpp:1645
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "Share Text..."
 msgstr "Cima Incwadi eneenkcukacha"
 
-#: viewer/viewer_p.cpp:1653
+#: viewer/viewer_p.cpp:1663
 #, fuzzy, kde-format
 #| msgid "Choose Location"
 msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "Khetha Indawo yesiphelo"
 
-#: viewer/viewer_p.cpp:1659
+#: viewer/viewer_p.cpp:1669
 #, kde-format
 msgid "&Find in Message..."
 msgstr "&Funa kwi Miyalezo..."
 
-#: viewer/viewer_p.cpp:1668
+#: viewer/viewer_p.cpp:1678
 #, kde-format
 msgid "Disable Emoticon"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1733
+#: viewer/viewer_p.cpp:1743
 #, kde-format
 msgid "Save &As..."
 msgstr "Gcina &Njenge..."
 
-#: viewer/viewer_p.cpp:1741
+#: viewer/viewer_p.cpp:1751
 #, kde-format
 msgid "Open With..."
 msgstr "Vula Nge..."
 
-#: viewer/viewer_p.cpp:1748
+#: viewer/viewer_p.cpp:1758
 #, fuzzy, kde-format
 msgid "Save All Attachments..."
 msgstr "&Gcina Izincamatheliso Njenge..."
 
-#: viewer/viewer_p.cpp:1991
+#: viewer/viewer_p.cpp:2001
 #, kde-format
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1991 viewer/viewer_p.cpp:1994
+#: viewer/viewer_p.cpp:2001 viewer/viewer_p.cpp:2004
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1994
+#: viewer/viewer_p.cpp:2004
 #, fuzzy, kde-format
 msgid "The URL %1 is not valid."
 msgstr "Utyikityo luphelelwe lixesha."
 
-#: viewer/viewer_p.cpp:2014
+#: viewer/viewer_p.cpp:2024
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2015
+#: viewer/viewer_p.cpp:2025
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2069
+#: viewer/viewer_p.cpp:2079
 #, fuzzy, kde-format
 #| msgid "Email Address"
 msgid "Copy Email Address"
 msgstr "Idilesi ye Email"
 
-#: viewer/viewer_p.cpp:2152
+#: viewer/viewer_p.cpp:2162
 #, fuzzy, kde-format
 #| msgid "Message as Plain Text"
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Umyalezo njengo Mbhalo Ocacileyo"
 
-#: viewer/viewer_p.cpp:2731
+#: viewer/viewer_p.cpp:2775
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL ikhutshelwa kwibhodi eqhotyoshwayo."
 
-#: viewer/viewer_p.cpp:2893
+#: viewer/viewer_p.cpp:2937
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message loading failed: %1."
 msgstr "Umyalezo watyikitywa ngu %1."
 
-#: viewer/viewer_p.cpp:2898
+#: viewer/viewer_p.cpp:2942
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message not found."
