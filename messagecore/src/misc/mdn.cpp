@@ -23,6 +23,7 @@
 #include "messagecore_version.h"
 
 #include <KCodecs>
+#include <KLazyLocalizedString>
 
 #include <QByteArray>
 #include <QCoreApplication>
@@ -43,46 +44,40 @@ namespace MDN
 struct DispositionMetaData {
     DispositionType dispositionType;
     const char *string;
-    const char *description;
+    const KLazyLocalizedString description;
 };
 
 static constexpr std::array<DispositionMetaData, 6> dispositionTypes = {
     DispositionMetaData{Displayed,
                         "displayed",
-                        QT_TRANSLATE_NOOP("DispositionModifier",
-                                          "The message sent on ${date} to ${to} with subject "
-                                          "\"${subject}\" has been displayed. This is no guarantee that "
-                                          "the message has been read or understood.")},
+                        kli18n("The message sent on ${date} to ${to} with subject "
+                               "\"${subject}\" has been displayed. This is no guarantee that "
+                               "the message has been read or understood.")},
     DispositionMetaData{Deleted,
                         "deleted",
-                        QT_TRANSLATE_NOOP("DispositionModifier",
-                                          "The message sent on ${date} to ${to} with subject "
-                                          "\"${subject}\" has been deleted unseen. This is no guarantee "
-                                          "that the message will not be \"undeleted\" and nonetheless "
-                                          "read later on.")},
+                        kli18n("The message sent on ${date} to ${to} with subject "
+                               "\"${subject}\" has been deleted unseen. This is no guarantee "
+                               "that the message will not be \"undeleted\" and nonetheless "
+                               "read later on.")},
     DispositionMetaData{Dispatched,
                         "dispatched",
-                        QT_TRANSLATE_NOOP("DispositionModifier",
-                                          "The message sent on ${date} to ${to} with subject "
-                                          "\"${subject}\" has been dispatched. This is no guarantee "
-                                          "that the message will not be read later on.")},
+                        kli18n("The message sent on ${date} to ${to} with subject "
+                               "\"${subject}\" has been dispatched. This is no guarantee "
+                               "that the message will not be read later on.")},
     DispositionMetaData{Processed,
                         "processed",
-                        QT_TRANSLATE_NOOP("DispositionModifier",
-                                          "The message sent on ${date} to ${to} with subject "
-                                          "\"${subject}\" has been processed by some automatic means.")},
+                        kli18n("The message sent on ${date} to ${to} with subject "
+                               "\"${subject}\" has been processed by some automatic means.")},
     DispositionMetaData{Denied,
                         "denied",
-                        QT_TRANSLATE_NOOP("DispositionModifier",
-                                          "The message sent on ${date} to ${to} with subject "
-                                          "\"${subject}\" has been acted upon. The sender does not wish "
-                                          "to disclose more details to you than that.")},
+                        kli18n("The message sent on ${date} to ${to} with subject "
+                               "\"${subject}\" has been acted upon. The sender does not wish "
+                               "to disclose more details to you than that.")},
     DispositionMetaData{Failed,
                         "failed",
-                        QT_TRANSLATE_NOOP("DispositionModifier",
-                                          "Generation of a Message Disposition Notification for the "
-                                          "message sent on ${date} to ${to} with subject \"${subject}\" "
-                                          "failed. Reason is given in the Failure: header field below.")}};
+                        kli18n("Generation of a Message Disposition Notification for the "
+                               "message sent on ${date} to ${to} with subject \"${subject}\" "
+                               "failed. Reason is given in the Failure: header field below.")}};
 
 static const char *stringFor(DispositionType d)
 {
@@ -264,7 +259,7 @@ QString descriptionFor(DispositionType d, const QList<DispositionModifier> &)
 {
     for (size_t i = 0; i < dispositionTypes.size(); ++i) {
         if (dispositionTypes[i].dispositionType == d) {
-            return QCoreApplication::translate("DispositionModifier", dispositionTypes[i].description);
+            return dispositionTypes[i].description.toString();
         }
     }
     qCWarning(MESSAGECORE_LOG) << "KMime::MDN::descriptionFor(): No such disposition type:" << static_cast<int>(d);
