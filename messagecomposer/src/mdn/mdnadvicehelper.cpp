@@ -85,7 +85,7 @@ MDNAdviceHelper *MDNAdviceHelper::instance()
     return s_instance;
 }
 
-MDNAdviceHelper::MDNSendingModeInfo MDNAdviceHelper::checkAndSetMDNInfo(const Akonadi::Item &item, KMime::MDN::DispositionType d, bool forceSend)
+MDNAdviceHelper::MDNSendingModeInfo MDNAdviceHelper::checkAndSetMDNInfo(const Akonadi::Item &item, MessageCore::MDN::DispositionType d, bool forceSend)
 {
     std::shared_ptr<KMime::Message> msg = MessageComposer::Util::message(item);
 
@@ -98,14 +98,14 @@ MDNAdviceHelper::MDNSendingModeInfo MDNAdviceHelper::checkAndSetMDNInfo(const Ak
         && item.attribute<Akonadi::MDNStateAttribute>()->mdnState() != Akonadi::MDNStateAttribute::MDNStateUnknown) {
         // if already dealt with, don't do it again.
         const MDNAdviceHelper::MDNSendingModeInfo info{
-            .mode = KMime::MDN::SentAutomatically,
+            .mode = MessageCore::MDN::SentAutomatically,
             .doSend = false,
         };
         return info;
     }
     auto mdnStateAttr = new Akonadi::MDNStateAttribute(Akonadi::MDNStateAttribute::MDNStateUnknown);
 
-    KMime::MDN::SendingMode s = KMime::MDN::SentAutomatically; // set to manual if asked user
+    MessageCore::MDN::SendingMode s = MessageCore::MDN::SentAutomatically; // set to manual if asked user
     bool doSend = false;
     // default:
     int mode = MessageViewer::MessageViewerSettings::self()->defaultPolicy();
@@ -115,35 +115,35 @@ MDNAdviceHelper::MDNSendingModeInfo MDNAdviceHelper::checkAndSetMDNInfo(const Ak
         if (!mode || (mode < 0) || (mode > 3)) {
             // early out for ignore:
             mdnStateAttr->setMDNState(Akonadi::MDNStateAttribute::MDNIgnore);
-            s = KMime::MDN::SentManually;
+            s = MessageCore::MDN::SentManually;
         } else {
             if (MessageFactoryNG::MDNMDNUnknownOption(msg)) {
                 mode = requestAdviceOnMDN("mdnUnknownOption");
-                s = KMime::MDN::SentManually;
+                s = MessageCore::MDN::SentManually;
                 // TODO set type to Failed as well
                 //      and clear modifiers
             }
 
             if (MessageFactoryNG::MDNConfirmMultipleRecipients(msg)) {
                 mode = requestAdviceOnMDN("mdnMultipleAddressesInReceiptTo");
-                s = KMime::MDN::SentManually;
+                s = MessageCore::MDN::SentManually;
             }
 
             if (MessageFactoryNG::MDNReturnPathEmpty(msg)) {
                 mode = requestAdviceOnMDN("mdnReturnPathEmpty");
-                s = KMime::MDN::SentManually;
+                s = MessageCore::MDN::SentManually;
             }
 
             if (MessageFactoryNG::MDNReturnPathNotInRecieptTo(msg)) {
                 mode = requestAdviceOnMDN("mdnReturnPathNotInReceiptTo");
-                s = KMime::MDN::SentManually;
+                s = MessageCore::MDN::SentManually;
             }
 
             if (MessageFactoryNG::MDNRequested(msg)) {
-                if (s != KMime::MDN::SentManually) {
+                if (s != MessageCore::MDN::SentManually) {
                     // don't ask again if user has already been asked. use the users' decision
                     mode = requestAdviceOnMDN("mdnNormalAsk");
-                    s = KMime::MDN::SentManually; // asked user
+                    s = MessageCore::MDN::SentManually; // asked user
                 }
             } else { // if message doesn't have a disposition header, never send anything.
                 mode = 0;
@@ -180,20 +180,20 @@ MDNAdviceHelper::MDNSendingModeInfo MDNAdviceHelper::checkAndSetMDNInfo(const Ak
     return info;
 }
 
-Akonadi::MDNStateAttribute::MDNSentState MDNAdviceHelper::dispositionToSentState(KMime::MDN::DispositionType d)
+Akonadi::MDNStateAttribute::MDNSentState MDNAdviceHelper::dispositionToSentState(MessageCore::MDN::DispositionType d)
 {
     switch (d) {
-    case KMime::MDN::Displayed:
+    case MessageCore::MDN::Displayed:
         return Akonadi::MDNStateAttribute::MDNDisplayed;
-    case KMime::MDN::Deleted:
+    case MessageCore::MDN::Deleted:
         return Akonadi::MDNStateAttribute::MDNDeleted;
-    case KMime::MDN::Dispatched:
+    case MessageCore::MDN::Dispatched:
         return Akonadi::MDNStateAttribute::MDNDispatched;
-    case KMime::MDN::Processed:
+    case MessageCore::MDN::Processed:
         return Akonadi::MDNStateAttribute::MDNProcessed;
-    case KMime::MDN::Denied:
+    case MessageCore::MDN::Denied:
         return Akonadi::MDNStateAttribute::MDNDenied;
-    case KMime::MDN::Failed:
+    case MessageCore::MDN::Failed:
         return Akonadi::MDNStateAttribute::MDNFailed;
     default:
         return Akonadi::MDNStateAttribute::MDNStateUnknown;

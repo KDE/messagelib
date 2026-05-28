@@ -9,8 +9,8 @@
 #pragma once
 
 #include "messagecomposer_export.h"
-#include <KMime/MDN>
 #include <KMime/Message>
+#include <MessageCore/MDN>
 
 #include <Akonadi/Collection>
 #include <Akonadi/Item>
@@ -121,11 +121,12 @@ public:
 
       @return The notification message or 0, if none should be sent, as well as the state of the MDN operation.
     **/
-    [[nodiscard]] std::shared_ptr<KMime::Message> createMDN(KMime::MDN::ActionMode a,
-                                                            KMime::MDN::DispositionType d,
-                                                            KMime::MDN::SendingMode s,
-                                                            int mdnQuoteOriginal = 0,
-                                                            const QList<KMime::MDN::DispositionModifier> &m = QList<KMime::MDN::DispositionModifier>());
+    [[nodiscard]] std::shared_ptr<KMime::Message>
+    createMDN(MessageCore::MDN::ActionMode a,
+              MessageCore::MDN::DispositionType d,
+              MessageCore::MDN::SendingMode s,
+              int mdnQuoteOriginal = 0,
+              const QList<MessageCore::MDN::DispositionModifier> &m = QList<MessageCore::MDN::DispositionModifier>());
 
     /**
      * Create a new forwarded MIME digest. If the user is trying to forward multiple messages

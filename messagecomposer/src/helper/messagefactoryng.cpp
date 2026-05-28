@@ -590,11 +590,11 @@ std::shared_ptr<KMime::Message> MessageFactoryNG::createDeliveryReceipt()
     return receipt;
 }
 
-std::shared_ptr<KMime::Message> MessageFactoryNG::createMDN(KMime::MDN::ActionMode a,
-                                                            KMime::MDN::DispositionType d,
-                                                            KMime::MDN::SendingMode s,
+std::shared_ptr<KMime::Message> MessageFactoryNG::createMDN(MessageCore::MDN::ActionMode a,
+                                                            MessageCore::MDN::DispositionType d,
+                                                            MessageCore::MDN::SendingMode s,
                                                             int mdnQuoteOriginal,
-                                                            const QList<KMime::MDN::DispositionModifier> &m)
+                                                            const QList<MessageCore::MDN::DispositionModifier> &m)
 {
     // extract where to send to:
     QString receiptTo;
@@ -626,7 +626,7 @@ std::shared_ptr<KMime::Message> MessageFactoryNG::createMDN(KMime::MDN::ActionMo
     // Modify the ContentType directly (replaces setAutomaticFields(true))
     contentType->setParameter(QByteArrayLiteral("report-type"), u"disposition-notification"_s);
 
-    const QString description = replaceHeadersInString(mOrigMsg, KMime::MDN::descriptionFor(d, m));
+    const QString description = replaceHeadersInString(mOrigMsg, MessageCore::MDN::descriptionFor(d, m));
 
     // text/plain part:
     auto firstMsgPart = std::make_unique<KMime::Content>();
@@ -646,14 +646,14 @@ std::shared_ptr<KMime::Message> MessageFactoryNG::createMDN(KMime::MDN::ActionMo
     if (auto hrd = mOrigMsg->headerByType("Original-Recipient")) {
         originalRecipient = hrd->as7BitString();
     }
-    secondMsgPart->setBody(KMime::MDN::dispositionNotificationBodyContent(finalRecipient,
-                                                                          originalRecipient,
-                                                                          mOrigMsg->messageID()->as7BitString(), /* Message-ID */
-                                                                          d,
-                                                                          a,
-                                                                          s,
-                                                                          m,
-                                                                          special));
+    secondMsgPart->setBody(MessageCore::MDN::dispositionNotificationBodyContent(finalRecipient,
+                                                                                originalRecipient,
+                                                                                mOrigMsg->messageID()->as7BitString(), /* Message-ID */
+                                                                                d,
+                                                                                a,
+                                                                                s,
+                                                                                m,
+                                                                                special));
     receipt->appendContent(std::move(secondMsgPart));
 
     if ((mdnQuoteOriginal < 0) || (mdnQuoteOriginal > 2)) {

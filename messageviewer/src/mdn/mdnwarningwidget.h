@@ -7,7 +7,7 @@
 #pragma once
 #include "messageviewer_export.h"
 #include <KMessageWidget>
-#include <KMime/MDN>
+#include <MessageCore/MDN>
 
 namespace MessageViewer
 {
@@ -53,12 +53,12 @@ public:
      * \brief Returns the sending mode
      * \return KMime MDN sending mode
      */
-    [[nodiscard]] KMime::MDN::SendingMode sendingMode() const;
+    [[nodiscard]] MessageCore::MDN::SendingMode sendingMode() const;
     /*!
      * \brief Sets the sending mode
      * \param newSendingMode the KMime MDN sending mode
      */
-    void setSendingMode(KMime::MDN::SendingMode newSendingMode);
+    void setSendingMode(MessageCore::MDN::SendingMode newSendingMode);
 
 Q_SIGNALS:
     /*!
@@ -66,7 +66,7 @@ Q_SIGNALS:
      * \param type response type
      * \param sendingMode MDN sending mode
      */
-    void sendResponse(MessageViewer::MDNWarningWidget::ResponseType type, KMime::MDN::SendingMode sendingMode);
+    void sendResponse(MessageViewer::MDNWarningWidget::ResponseType type, MessageCore::MDN::SendingMode sendingMode);
 
 private:
     MESSAGEVIEWER_NO_EXPORT void slotSend();
@@ -75,6 +75,6 @@ private:
     QAction *const mIgnoreAction;
     QAction *const mSendAction;
     QAction *const mSendDenyAction;
-    KMime::MDN::SendingMode mSendingMode = KMime::MDN::SentAutomatically;
+    MessageCore::MDN::SendingMode mSendingMode = MessageCore::MDN::SentAutomatically;
 };
 }

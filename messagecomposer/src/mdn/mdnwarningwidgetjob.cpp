@@ -27,7 +27,7 @@ bool MDNWarningWidgetJob::canStart() const
 bool MDNWarningWidgetJob::start()
 {
     MDNAdviceHelper::MDNMessateInfo mdnInfo;
-    KMime::MDN::SendingMode s = KMime::MDN::SentAutomatically; // set to manual if asked user
+    MessageCore::MDN::SendingMode s = MessageCore::MDN::SentAutomatically; // set to manual if asked user
     bool result = false;
     if (canStart()) {
         std::shared_ptr<KMime::Message> msg = MessageComposer::Util::message(mItem);
@@ -37,28 +37,28 @@ bool MDNWarningWidgetJob::start()
         } else {
             if (MessageComposer::MessageFactoryNG::MDNMDNUnknownOption(msg)) {
                 mdnInfo = MessageComposer::MDNAdviceHelper::instance()->mdnMessageText("mdnUnknownOption");
-                s = KMime::MDN::SentManually;
+                s = MessageCore::MDN::SentManually;
                 // TODO set type to Failed as well
                 //      and clear modifiers
             }
 
             if (MessageComposer::MessageFactoryNG::MDNConfirmMultipleRecipients(msg)) {
                 mdnInfo = MessageComposer::MDNAdviceHelper::instance()->mdnMessageText("mdnMultipleAddressesInReceiptTo");
-                s = KMime::MDN::SentManually;
+                s = MessageCore::MDN::SentManually;
             }
 
             if (MessageComposer::MessageFactoryNG::MDNReturnPathEmpty(msg)) {
                 mdnInfo = MessageComposer::MDNAdviceHelper::instance()->mdnMessageText("mdnReturnPathEmpty");
-                s = KMime::MDN::SentManually;
+                s = MessageCore::MDN::SentManually;
             }
 
             if (MessageComposer::MessageFactoryNG::MDNReturnPathNotInRecieptTo(msg)) {
                 mdnInfo = MessageComposer::MDNAdviceHelper::instance()->mdnMessageText("mdnReturnPathNotInReceiptTo");
-                s = KMime::MDN::SentManually;
+                s = MessageCore::MDN::SentManually;
             }
 
             if (MessageComposer::MessageFactoryNG::MDNRequested(msg)) {
-                if (s != KMime::MDN::SentManually) {
+                if (s != MessageCore::MDN::SentManually) {
                     // don't ask again if user has already been asked. use the users' decision
                     mdnInfo = MessageComposer::MDNAdviceHelper::instance()->mdnMessageText("mdnNormalAsk");
                 }

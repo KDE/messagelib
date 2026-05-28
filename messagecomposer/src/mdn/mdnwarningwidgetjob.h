@@ -8,8 +8,8 @@
 
 #include "messagecomposer_export.h"
 #include <Akonadi/Item>
-#include <KMime/MDN>
 #include <MessageComposer/MDNAdviceHelper>
+#include <MessageCore/MDN>
 #include <QObject>
 namespace MessageComposer
 {
@@ -43,7 +43,7 @@ public:
     [[nodiscard]] bool canStart() const;
 
 Q_SIGNALS:
-    void showMdnInfo(const MessageComposer::MDNAdviceHelper::MDNMessateInfo &mdnInfo, KMime::MDN::SendingMode s);
+    void showMdnInfo(const MessageComposer::MDNAdviceHelper::MDNMessateInfo &mdnInfo, MessageCore::MDN::SendingMode s);
 
 private:
     Akonadi::Item mItem;

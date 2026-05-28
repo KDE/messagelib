@@ -31,6 +31,7 @@ target_sources(
         attachment/attachmentfromurlutils.cpp
         misc/imagecollector.cpp
         misc/mailinglist.cpp
+        misc/mdn.cpp
         utils/stringutil.cpp
         utils/util.cpp
         utils/colorutil.cpp
@@ -38,6 +39,7 @@ target_sources(
         settings/messagecoresettings.cpp
         misc/imagecollector.h
         misc/mailinglist.h
+        misc/mdn.h
         utils/colorutil.h
         utils/dateformatter.h
         utils/stringutil.h
@@ -150,6 +152,7 @@ ecm_generate_headers(MessageCore_Camelcasemisc_HEADERS
     HEADER_NAMES
     ImageCollector
     MailingList
+    MDN
 
     REQUIRED_HEADERS MessageCore_misc_HEADERS
     PREFIX MessageCore

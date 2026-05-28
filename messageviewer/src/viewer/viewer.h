@@ -13,8 +13,8 @@
 #include "messageviewer_export.h"
 #include <MimeTreeParser/Enums>
 
-#include <KMime/MDN>
 #include <KMime/Message>
+#include <MessageCore/MDN>
 #include <MessageViewer/MDNWarningWidget>
 
 #include <memory>
@@ -399,7 +399,7 @@ Q_SIGNALS:
     void zoomChanged(qreal zoomFactor);
     void showNextMessage();
     void showPreviousMessage();
-    void sendResponse(MessageViewer::MDNWarningWidget::ResponseType type, KMime::MDN::SendingMode sendingMode);
+    void sendResponse(MessageViewer::MDNWarningWidget::ResponseType type, MessageCore::MDN::SendingMode sendingMode);
 
 private:
     MESSAGEVIEWER_NO_EXPORT void initialize();

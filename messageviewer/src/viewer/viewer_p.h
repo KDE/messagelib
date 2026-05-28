@@ -21,9 +21,9 @@
 #include <Akonadi/Item>
 #include <Akonadi/Monitor>
 #include <Akonadi/Session>
-#include <KMime/MDN>
 #include <KMime/Message>
 #include <KService>
+#include <MessageCore/MDN>
 #include <MessageViewer/MDNWarningWidget>
 #include <PimCommon/ShareServiceUrlManager>
 #include <QList>
@@ -607,7 +607,7 @@ Q_SIGNALS:
     void zoomChanged(qreal zoomFactor);
     void showNextMessage();
     void showPreviousMessage();
-    void sendResponse(MessageViewer::MDNWarningWidget::ResponseType type, KMime::MDN::SendingMode sendingMode);
+    void sendResponse(MessageViewer::MDNWarningWidget::ResponseType type, MessageCore::MDN::SendingMode sendingMode);
 
 private:
     [[nodiscard]] QString attachmentHtml();

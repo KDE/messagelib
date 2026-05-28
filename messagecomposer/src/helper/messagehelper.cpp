@@ -13,7 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 
 #include <KIdentityManagementCore/Identity>
 #include <KIdentityManagementCore/IdentityManager>
-#include <KMime/MDN>
+#include <MessageCore/MDN>
 
 using namespace MessageCore;
 

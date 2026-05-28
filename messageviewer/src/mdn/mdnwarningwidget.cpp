@@ -63,12 +63,12 @@ void MDNWarningWidget::slotSendDeny()
     Q_EMIT sendResponse(MessageViewer::MDNWarningWidget::ResponseType::SendDeny, mSendingMode);
 }
 
-KMime::MDN::SendingMode MDNWarningWidget::sendingMode() const
+MessageCore::MDN::SendingMode MDNWarningWidget::sendingMode() const
 {
     return mSendingMode;
 }
 
-void MDNWarningWidget::setSendingMode(KMime::MDN::SendingMode newSendingMode)
+void MDNWarningWidget::setSendingMode(MessageCore::MDN::SendingMode newSendingMode)
 {
     mSendingMode = newSendingMode;
 }

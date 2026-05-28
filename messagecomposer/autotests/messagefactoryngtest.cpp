@@ -817,7 +817,8 @@ void MessageFactoryTest::testCreateMDN()
 
     factory.setIdentityManager(mIdentMan);
 
-    std::shared_ptr<KMime::Message> mdn = factory.createMDN(KMime::MDN::AutomaticAction, KMime::MDN::Displayed, KMime::MDN::SentAutomatically);
+    std::shared_ptr<KMime::Message> mdn =
+        factory.createMDN(MessageCore::MDN::AutomaticAction, MessageCore::MDN::Displayed, MessageCore::MDN::SentAutomatically);
 
     QVERIFY(mdn.get());
 
