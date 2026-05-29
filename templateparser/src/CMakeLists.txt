@@ -106,6 +106,8 @@ ecm_generate_export_header(KPim6TemplateParser
 
 target_link_libraries(
     KPim6TemplateParser
+    PUBLIC
+        Qt::Widgets
     PRIVATE
         KF6::Mime
         KPim6::MimeTreeParser

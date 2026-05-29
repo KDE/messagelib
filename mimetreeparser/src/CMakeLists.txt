@@ -183,12 +183,14 @@ ecm_generate_export_header(KPim6MimeTreeParser
 
 target_link_libraries(
     KPim6MimeTreeParser
+    PUBLIC
+        Qt::Core
+        KF6::Mime
     PRIVATE
         KF6::Codecs
         KF6::I18n
         KF6::CoreAddons
         KPim6::Libkleo
-        KF6::Mime
         Qt::Gui
         QGpgmeQt6
 )
