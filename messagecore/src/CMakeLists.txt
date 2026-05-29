@@ -101,17 +101,19 @@ target_link_libraries(
     KPim6MessageCore
     PUBLIC
         KF6::Mime
+        KPim6::MimeTreeParser
+        Qt::Gui
+        KF6::ColorScheme
+        KF6::ConfigGui
+        KPim6::IdentityManagementCore
+        KF6::CoreAddons
+        Qt::Widgets
     PRIVATE
         KF6::KIOCore
         KF6::Codecs
         KF6::Archive
         Qt::Network
         KF6::I18n
-        KPim6::IdentityManagementCore
-        KPim6::MimeTreeParser
-        KF6::ColorScheme
-        KF6::ConfigGui
-        Qt::Widgets
         KPim6::PimTextEdit
 )
 target_link_libraries(KPim6MessageCore PRIVATE QGpgmeQt6)
