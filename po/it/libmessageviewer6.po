@@ -1,5 +1,5 @@
 # translation of libmessageviewer.po to Italian
-# SPDX-FileCopyrightText: 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Luigi Toscano <luigi.toscano@tiscali.it>
+# SPDX-FileCopyrightText: 2009-2026 Luigi Toscano <luigi.toscano@tiscali.it>
 # Alessandro Astarita <aleast@capri.it>, 2002, 2003, 2004, 2005, 2006, 2007.
 # Andrea Rizzi <rizzi@kde.org>, 2004.
 # Federico Zenith <federico.zenith@member.fsf.org>, 2004, 2005.
@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-27 00:46+0000\n"
-"PO-Revision-Date: 2025-05-19 15:04+0200\n"
+"PO-Revision-Date: 2026-05-29 23:26+0200\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.04.0\n"
+"X-Generator: Lokalize 26.04.0\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
@@ -1670,7 +1670,7 @@ msgstr "Errore nel salvataggio dell'allegato"
 #, kde-format, kde-kuit-format
 msgctxt "1 = error string"
 msgid "Could not create temporary file: <message>%1</message>"
-msgstr ""
+msgstr "Impossibile creare il file temporaneo: <message>%1</message>"
 
 #: utils/messageviewerutil.cpp:409 utils/messageviewerutil.cpp:427
 #, kde-format
@@ -1723,10 +1723,9 @@ msgid "File %1 could not be created."
 msgstr "Impossibile creare il file %1."
 
 #: utils/messageviewerutil.cpp:528
-#, fuzzy, kde-format
-#| msgid "We cannot save message."
+#, kde-format
 msgid "We cannot append message to mbox."
-msgstr "Impossibile salvare il messaggio."
+msgstr "Impossibile appendere il messaggio nel file mbox."
 
 #: utils/messageviewerutil.cpp:528 utils/messageviewerutil.cpp:535
 #, kde-format
