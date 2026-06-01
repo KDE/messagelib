@@ -67,7 +67,8 @@ void DMARCPolicyJob::slotCheckSubDomain(const QList<QByteArray> &lst, const QStr
     const QByteArray ba = generateDMARCFromList(lst);
     DMARCInfo info;
     if (info.parseDMARC(QString::fromLocal8Bit(ba))) {
-        if ((info.version() != QLatin1StringView("DMARC1")) || info.policy().isEmpty() || (info.percentage() > 100 || info.percentage() < 0)) {
+        if ((info.version() != QLatin1StringView("DMARC1")) || info.policy().isEmpty()
+            || (info.percentage() != -1 && (info.percentage() > 100 || info.percentage() < 0))) {
             Q_EMIT result({}, mEmailAddress);
             deleteLater();
             return;
@@ -76,8 +77,9 @@ void DMARCPolicyJob::slotCheckSubDomain(const QList<QByteArray> &lst, const QStr
             val.mAdkim = info.adkim();
             val.mPercentage = info.percentage();
             val.mPolicy = info.subDomainPolicy().isEmpty() ? info.policy() : info.subDomainPolicy();
-            // TODO verify it !
-            val.mDomain = domainName;
+            // RFC DMARC discovery keeps the queried RFC5322.From domain as domain,
+            // while the fallback organizational domain is the source of policy.
+            val.mDomain = emailDomain();
             val.mSource = domainName;
             Q_EMIT result(val, mEmailAddress);
             deleteLater();

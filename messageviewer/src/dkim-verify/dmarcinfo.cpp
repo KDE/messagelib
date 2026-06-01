@@ -88,7 +88,11 @@ bool DMARCInfo::parseDMARC(const QString &key)
             //       else
             //         selected = false
             // TODO verify if it's a percentage
-            mPercentage = QStringView(elem).right(elem.length() - 4).toInt();
+            bool ok = false;
+            mPercentage = QStringView(elem).mid(4).toInt(&ok);
+            if (!ok) {
+                return false;
+            }
         } else if (elem.startsWith(QLatin1StringView("sp="))) {
             // sp:  Requested Mail Receiver policy for all subdomains (plain-text;
             //   OPTIONAL).  Indicates the policy to be enacted by the Receiver at
@@ -99,7 +103,12 @@ bool DMARCInfo::parseDMARC(const QString &key)
             //   Note that "sp" will be ignored for DMARC records published on
             //   subdomains of Organizational Domains due to the effect of the
             //   DMARC policy discovery mechanism described in Section 6.6.3.
-            mSubDomainPolicy = elem.right(elem.length() - 3);
+            const QString subDomainPolicy = QStringView(elem).mid(3).toString();
+            if (subDomainPolicy != QLatin1StringView("none") && subDomainPolicy != QLatin1StringView("quarantine")
+                && subDomainPolicy != QLatin1StringView("reject")) {
+                return false;
+            }
+            mSubDomainPolicy = subDomainPolicy;
         }
     }
     if (mAdkim.isEmpty() && mVersion == QLatin1StringView("DMARC1")) {
