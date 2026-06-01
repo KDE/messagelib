@@ -68,6 +68,15 @@ void DMARCInfoTest::shouldTestExtractDkimKeyRecord_data()
     info3.setPolicy(u"none"_s);
     info3.setSubDomainPolicy(u"none"_s);
     QTest::addRow("intel.com") << u"v=DMARC1;p=none;sp=none;fo=1;rua=mailto:dmarc.notification@intel.com"_s << info3 << true;
+
+    MessageViewer::DMARCInfo info4;
+    info4.setVersion(u"DMARC1"_s);
+    info4.setAdkim(u"s"_s);
+    info4.setPolicy(u"reject"_s);
+    QTest::addRow("strict adkim") << u"v=DMARC1; adkim=s; p=reject"_s << info4 << true;
+
+    QTest::addRow("invalid adkim") << u"v=DMARC1; adkim=x; p=reject"_s << MessageViewer::DMARCInfo() << false;
+    QTest::addRow("invalid pct") << u"v=DMARC1; p=reject; pct=abc"_s << MessageViewer::DMARCInfo() << false;
 }
 
 #include "moc_dmarcinfotest.cpp"
