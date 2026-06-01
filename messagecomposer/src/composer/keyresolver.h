@@ -198,7 +198,7 @@ public:
     struct SplitInfo {
         SplitInfo() = default;
 
-        explicit SplitInfo(const QStringList &r)
+        explicit SplitInfo(const QStringList &r) noexcept
             : recipients(r)
         {
         }
