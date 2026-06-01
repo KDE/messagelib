@@ -19,6 +19,15 @@ bool DMARCInfo::parseDMARC(const QString &key)
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Error: key empty";
         return false;
     }
+
+    // Reset state so parsing a second record on the same instance does not
+    // leak values from the first one.
+    mVersion.clear();
+    mAdkim.clear();
+    mPolicy.clear();
+    mSubDomainPolicy.clear();
+    mPercentage = -1;
+
     QString cleanKey = key;
     cleanKey.replace(QLatin1StringView("; "), QLatin1StringView(";"));
     const QStringList items = cleanKey.split(u';', Qt::SkipEmptyParts);
