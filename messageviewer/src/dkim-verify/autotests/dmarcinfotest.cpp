@@ -59,6 +59,7 @@ void DMARCInfoTest::shouldTestExtractDkimKeyRecord_data()
     info2.setVersion(u"DMARC1"_s);
     info2.setAdkim(u"r"_s);
     info2.setPolicy(u"reject"_s);
+    info2.setPercentage(100);
     QTest::addRow("yahoo.com") << u"v=DMARC1; p=reject; pct=100; rua=mailto:dmarc_y_rua@yahoo.com;"_s << info2 << true;
 
     MessageViewer::DMARCInfo info3;
