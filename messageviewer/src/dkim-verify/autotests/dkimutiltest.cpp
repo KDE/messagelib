@@ -66,6 +66,16 @@ void DKIMUtilTest::shouldVerifySubEmailDomain()
         const QString domainName = MessageViewer::DKIMUtil::emailDomain(email);
         QCOMPARE(MessageViewer::DKIMUtil::emailSubDomain(domainName), u"kde.org"_s);
     }
+    {
+        const QString email = u"goo@sub.example.co.uk"_s;
+        const QString domainName = MessageViewer::DKIMUtil::emailDomain(email);
+        QCOMPARE(MessageViewer::DKIMUtil::emailSubDomain(domainName), u"example.co.uk"_s);
+    }
+    {
+        const QString email = u"goo@example.co.uk"_s;
+        const QString domainName = MessageViewer::DKIMUtil::emailDomain(email);
+        QCOMPARE(MessageViewer::DKIMUtil::emailSubDomain(domainName), u"example.co.uk"_s);
+    }
 }
 
 void DKIMUtilTest::shouldConvertAuthenticationMethodEnumToString()

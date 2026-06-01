@@ -8,6 +8,7 @@
 
 #include "messageviewer_dkimcheckerdebug.h"
 #include <QRegularExpression>
+#include <QSet>
 
 using namespace Qt::Literals::StringLiterals;
 QString MessageViewer::DKIMUtil::bodyCanonizationRelaxed(QString body)
@@ -142,16 +143,35 @@ QString MessageViewer::DKIMUtil::emailDomain(const QString &emailDomain)
 
 QString MessageViewer::DKIMUtil::emailSubDomain(const QString &emailDomain)
 {
-    int dotNumber = 0;
-    for (int i = emailDomain.length() - 1; i >= 0; --i) {
-        if (emailDomain.at(i) == u'.') {
-            dotNumber++;
-            if (dotNumber == 2) {
-                return emailDomain.right(emailDomain.length() - i - 1);
-            }
-        }
+    const QString normalizedDomain = emailDomain.trimmed().toLower();
+    if (normalizedDomain.isEmpty()) {
+        return normalizedDomain;
     }
-    return emailDomain;
+
+    const QStringList labels = normalizedDomain.split(u'.', Qt::SkipEmptyParts);
+    if (labels.size() >= 3) {
+        const QString topLevel = labels.last();
+        const QString secondLevel = labels.at(labels.size() - 2);
+        static const QSet<QString> commonCountrySecondLevelDomains = {
+            u"ac"_s,
+            u"co"_s,
+            u"com"_s,
+            u"edu"_s,
+            u"gov"_s,
+            u"mil"_s,
+            u"net"_s,
+            u"org"_s,
+        };
+
+        // Heuristic for domains such as example.co.uk.
+        if (topLevel.length() == 2 && commonCountrySecondLevelDomains.contains(secondLevel)) {
+            return labels.mid(labels.size() - 3).join(u'.');
+        }
+
+        return labels.mid(labels.size() - 2).join(u'.');
+    }
+
+    return normalizedDomain;
 }
 
 QString MessageViewer::DKIMUtil::defaultConfigFileName()
