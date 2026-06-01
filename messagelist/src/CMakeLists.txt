@@ -179,6 +179,7 @@ target_link_libraries(
         KPim6::AkonadiCore
         KPim6::AkonadiMime
         KF6::Mime
+        Qt::Widgets
     PRIVATE
         KPim6::MessageCore
         KPim6::PimCommonAkonadi
