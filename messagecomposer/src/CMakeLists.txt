@@ -557,7 +557,6 @@ ecm_generate_headers(MessageComposer_Camelcasesendlater_HEADERS
 
 ecm_generate_headers(MessageComposer_Camelcasejob_HEADERS
     HEADER_NAMES
-    JobBase
     AbstractEncryptJob
     ContentJobBase
     ComposerJob
