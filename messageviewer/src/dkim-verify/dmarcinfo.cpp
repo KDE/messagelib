@@ -31,14 +31,18 @@ bool DMARCInfo::parseDMARC(const QString &key)
             //      the entire retrieved record MUST be ignored.  It MUST be the first
             //      tag in the list.
             mVersion = elem.right(elem.length() - 2);
-        } else if (elem.startsWith(QLatin1StringView("r="))) {
+        } else if (elem.startsWith(QLatin1StringView("adkim="))) {
             // adkim:  (plain-text; OPTIONAL; default is "r".)  Indicates whether
             //   strict or relaxed DKIM Identifier Alignment mode is required by
             //   the Domain Owner.  See Section 3.1.1 for details.  Valid values
             //   are as follows:
             //      r: relaxed mode
             //      s: strict mode
-            mAdkim = elem.right(elem.length() - 2);
+            const QString adkimValue = QStringView(elem).mid(6).toString();
+            if (adkimValue != QLatin1StringView("r") && adkimValue != QLatin1StringView("s")) {
+                return false;
+            }
+            mAdkim = adkimValue;
         } else if (elem.startsWith(QLatin1StringView("p="))) {
             // p: Requested Mail Receiver policy (plain-text; REQUIRED for policy
             //                    records).  Indicates the policy to be enacted by the Receiver at
@@ -61,8 +65,12 @@ bool DMARCInfo::parseDMARC(const QString &key)
             //                email that fails the DMARC mechanism check.  Rejection SHOULD
             //                occur during the SMTP transaction.  See Section 10.3 for some
             //                discussion of SMTP rejection methods and their implications.
-            mPolicy = elem.right(elem.length() - 2);
-        } else if (elem.startsWith(QLatin1StringView("ptc="))) {
+            const QString policyValue = QStringView(elem).mid(2).toString();
+            if (policyValue != QLatin1StringView("none") && policyValue != QLatin1StringView("quarantine") && policyValue != QLatin1StringView("reject")) {
+                return false;
+            }
+            mPolicy = policyValue;
+        } else if (elem.startsWith(QLatin1StringView("pct="))) {
             // pct:  (plain-text integer between 0 and 100, inclusive; OPTIONAL;
             //      default is 100).  Percentage of messages from the Domain Owner's
             //      mail stream to which the DMARC policy is to be applied.  However,
