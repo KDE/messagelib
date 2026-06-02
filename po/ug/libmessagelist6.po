@@ -8,14 +8,15 @@ msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-20 00:46+0000\n"
-"PO-Revision-Date: 2013-09-08 07:05+0900\n"
-"Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
+"PO-Revision-Date: 2026-06-01 16:21-0400\n"
+"Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.9\n"
 
 #: core/aggregation.cpp:177
 #, kde-format
@@ -133,7 +134,7 @@ msgstr ""
 #, kde-format
 msgctxt "Status of an item"
 msgid "Read"
-msgstr "ئوقۇ"
+msgstr "ئوقۇلغان"
 
 #: core/item.cpp:255 core/messageitem.cpp:491
 #, kde-format
@@ -187,7 +188,7 @@ msgstr "سپەم"
 #, kde-format
 msgctxt "Status of an item"
 msgid "Ham"
-msgstr "Ham"
+msgstr ""
 
 #: core/item.cpp:291
 #, kde-format
@@ -205,13 +206,13 @@ msgstr "پەرۋا قىلمىدى"
 #, kde-format
 msgctxt "Status of an item"
 msgid "Queued"
-msgstr ""
+msgstr "ئۆچىرەت"
 
 #: core/manager.cpp:34 core/model.cpp:336
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
-msgstr "نامەلۇم"
+msgstr "يوچۇن"
 
 #: core/manager.cpp:203
 #, kde-format
@@ -314,7 +315,7 @@ msgstr ""
 #, kde-format
 msgctxt "Default theme name"
 msgid "Classic"
-msgstr "كلاسسىك"
+msgstr "ئەنئەنىۋى"
 
 #: core/manager.cpp:565
 #, kde-format
@@ -325,7 +326,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:column Subject of messages"
 msgid "Subject"
-msgstr "تېما"
+msgstr "ماۋزۇ"
 
 #: core/manager.cpp:602 core/theme.cpp:113
 #, kde-format
@@ -362,12 +363,10 @@ msgid "Size"
 msgstr "چوڭلۇقى"
 
 #: core/manager.cpp:627
-#, fuzzy, kde-format
-#| msgctxt "Attachement indication"
-#| msgid "Attachment"
+#, kde-format
 msgctxt "Attachment indication"
 msgid "Attachment"
-msgstr "قوشۇلما"
+msgstr ""
 
 #: core/manager.cpp:633
 #, kde-format
@@ -581,10 +580,9 @@ msgid "By Important Status"
 msgstr ""
 
 #: core/sortorder.cpp:77
-#, fuzzy, kde-format
-#| msgid "By Action Item Status"
+#, kde-format
 msgid "By Attachment Status"
-msgstr "مەشغۇلات تۈرىنىڭ ھالىتى بويىچە"
+msgstr ""
 
 #: core/sortorder.cpp:89 core/sortorder.cpp:131
 #, kde-format
@@ -649,7 +647,7 @@ msgstr "كېمەيگۈچى"
 #, kde-format
 msgctxt "Description of Type Subject"
 msgid "Subject"
-msgstr "تېما"
+msgstr "ماۋزۇ"
 
 #: core/theme.cpp:110
 #, kde-format
@@ -764,13 +762,13 @@ msgstr ""
 #, kde-format
 msgctxt "Description of Type Folder"
 msgid "Folder"
-msgstr ""
+msgstr "قىسقۇچ"
 
 #: core/theme.cpp:177
 #, kde-format
 msgctxt "Description for an Unknown Type"
 msgid "Unknown"
-msgstr "نامەلۇم"
+msgstr "يوچۇن"
 
 #: core/theme.cpp:836
 #, kde-format
@@ -830,7 +828,7 @@ msgstr ""
 #: core/view.cpp:698 core/widgets/configurefilterswidget.cpp:154
 #, kde-format
 msgid "No result found"
-msgstr ""
+msgstr "ھېچقانداق نەتىجە تېپىلمىدى"
 
 #: core/view.cpp:777
 #, kde-format
@@ -851,7 +849,7 @@ msgstr "كۆرسەتمىلەرنى كۆرسىتىش"
 #: core/widgets/searchmessagebybuttons.cpp:75
 #, kde-format
 msgid "From"
-msgstr "يوللىغۇچى"
+msgstr "كىمدىن"
 
 #: core/view.cpp:2264 core/view.cpp:2268
 #, kde-format
@@ -872,7 +870,7 @@ msgstr "چوڭلۇقى"
 #: core/view.cpp:2284 core/view.cpp:2288 utils/themeeditor.cpp:191
 #, kde-format
 msgid "Folder"
-msgstr ""
+msgstr "قىسقۇچ"
 
 #: core/view.cpp:2294 core/view.cpp:2296
 #, kde-format
@@ -1012,11 +1010,10 @@ msgid "No filter defined."
 msgstr ""
 
 #: core/widgetbase.cpp:198
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Create Filter"
-msgstr "سەپلە…"
+msgstr ""
 
 #: core/widgetbase.cpp:423 messagelistutil.cpp:115
 #, kde-format
@@ -1060,16 +1057,15 @@ msgid "Folder Always Uses This Sort Order"
 msgstr ""
 
 #: core/widgets/configurefiltersdialog.cpp:24
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Configure Filter"
-msgstr "سەپلە…"
+msgstr ""
 
 #: core/widgets/configurefilterswidget.cpp:81
 #, kde-format
 msgid "Remove"
-msgstr ""
+msgstr "چىقىرىۋەت"
 
 #: core/widgets/configurefilterswidget.cpp:84
 #, kde-format
@@ -1077,36 +1073,31 @@ msgid "Do you want to delete this filter?"
 msgstr ""
 
 #: core/widgets/configurefilterswidget.cpp:85
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Remove Filter"
-msgstr "سەپلە…"
+msgstr "سۈزگۈچنى چىقىرىۋەت"
 
 #: core/widgets/filternamedialog.cpp:19
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Filter"
-msgstr ""
+msgstr "سۈزگۈچ تەھرىرلەش"
 
 #: core/widgets/filternamewidget.cpp:32
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox Name of the option"
-#| msgid "Name:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
 msgstr "ئاتى:"
 
 #: core/widgets/filtersavedmenu.cpp:18
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgctxt "@action"
 msgid "Save Filter..."
-msgstr "سەپلە…"
+msgstr "سۈزگۈچ ساقلا…"
 
 #: core/widgets/filtersavedmenu.cpp:19
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgctxt "@action"
 msgid "Configure..."
 msgstr "سەپلە…"
@@ -1126,7 +1117,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action"
 msgid "Do not show again"
-msgstr ""
+msgstr "قايتا كۆرسەتمە"
 
 #: core/widgets/searchcollectionindexingwarning.cpp:39
 #, kde-format
@@ -1151,10 +1142,9 @@ msgid "Size is larger than"
 msgstr ""
 
 #: core/widgets/searchlinecommand.cpp:162
-#, fuzzy, kde-format
-#| msgid "Size"
+#, kde-format
 msgid "Size is"
-msgstr "چوڭلۇقى"
+msgstr ""
 
 #: core/widgets/searchlinecommand.cpp:164
 #, kde-format
@@ -1177,46 +1167,34 @@ msgid "From contains"
 msgstr ""
 
 #: core/widgets/searchlinecommand.cpp:172
-#, fuzzy, kde-format
-#| msgctxt "@title:column Subject of messages"
-#| msgid "Subject"
+#, kde-format
 msgid "Subject contains"
-msgstr "تېما"
+msgstr ""
 
 #: core/widgets/searchlinecommand.cpp:174
-#, fuzzy, kde-format
-#| msgctxt "@title:column Subject of messages"
-#| msgid "Subject"
+#, kde-format
 msgid "Body contains"
-msgstr "تېما"
+msgstr ""
 
 #: core/widgets/searchlinecommand.cpp:176
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Has Attachment"
+#, kde-format
 msgid "Mail has tag"
-msgstr "قوشۇلما بار"
+msgstr ""
 
 #: core/widgets/searchlinecommand.cpp:178
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Has Attachment"
+#, kde-format
 msgid "Mail has attachment"
-msgstr "قوشۇلما بار"
+msgstr ""
 
 #: core/widgets/searchlinecommand.cpp:180
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Has Attachment"
+#, kde-format
 msgid "Mail has invitation"
-msgstr "قوشۇلما بار"
+msgstr ""
 
 #: core/widgets/searchlinecommand.cpp:182
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Important"
+#, kde-format
 msgid "Mail is important"
-msgstr "مۇھىم"
+msgstr ""
 
 #: core/widgets/searchlinecommand.cpp:184
 #, kde-format
@@ -1224,109 +1202,90 @@ msgid "Mail is read"
 msgstr ""
 
 #: core/widgets/searchlinecommand.cpp:186
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgid "Mail is Unread"
-msgstr "ئوقۇلمىغان"
+msgstr ""
 
 #: core/widgets/searchlinecommand.cpp:188
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgid "Mail is Ignored"
-msgstr "ئوقۇلمىغان"
+msgstr ""
 
 #: core/widgets/searchlinecommand.cpp:190
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgid "Mail is Ham"
-msgstr "ئوقۇلمىغان"
+msgstr ""
 
 #: core/widgets/searchlinecommand.cpp:192
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgid "Mail is Spam"
-msgstr "ئوقۇلمىغان"
+msgstr ""
 
 #: core/widgets/searchlinecommand.cpp:194
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Has Attachment"
+#, kde-format
 msgid "Mail is watched"
-msgstr "قوشۇلما بار"
+msgstr ""
 
 #: core/widgets/searchlinecommand.cpp:196
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgid "Mail is replied"
-msgstr "ئوقۇلمىغان"
+msgstr ""
 
 #: core/widgets/searchlinecommand.cpp:198
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgid "Mail is forwarded"
-msgstr "ئوقۇلمىغان"
+msgstr ""
 
 #: core/widgets/searchlinecommand.cpp:200
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgid "Mail is encrypted"
-msgstr "ئوقۇلمىغان"
+msgstr ""
 
 #: core/widgets/searchlinecommand.cpp:202
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgid "Mail is queued"
-msgstr "ئوقۇلمىغان"
+msgstr ""
 
 #: core/widgets/searchlinecommand.cpp:204
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgid "Mail is sent"
-msgstr "ئوقۇلمىغان"
+msgstr ""
 
 #: core/widgets/searchlinecommand.cpp:206
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgid "Mail is deleted"
-msgstr "ئوقۇلمىغان"
+msgstr ""
 
 #: core/widgets/searchlinecommand.cpp:208
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Has Attachment"
+#, kde-format
 msgid "Mail is action"
-msgstr "قوشۇلما بار"
+msgstr ""
 
 #: core/widgets/searchlinecommand.cpp:218
 #, kde-format
 msgid "AND"
-msgstr ""
+msgstr "ۋە"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:53
-#, fuzzy, kde-format
-#| msgctxt "@title:column Subject of messages"
-#| msgid "Subject"
+#, kde-format
 msgctxt "@action:button"
 msgid "Subject"
-msgstr "تېما"
+msgstr "ماۋزۇ"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:54
 #, kde-format
 msgctxt "@action:button"
 msgid "Body"
-msgstr ""
+msgstr "جىسىم"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:55
-#, fuzzy, kde-format
-#| msgid "From"
+#, kde-format
 msgctxt "@action:button"
 msgid "From"
-msgstr "يوللىغۇچى"
+msgstr "كىمدىن"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:56
-#, fuzzy, kde-format
-#| msgctxt "Receiver of the email"
-#| msgid "To"
+#, kde-format
 msgctxt "@action:button"
 msgid "To"
 msgstr "تاپشۇرۇپ ئالغۇچى"
@@ -1335,140 +1294,115 @@ msgstr "تاپشۇرۇپ ئالغۇچى"
 #, kde-format
 msgctxt "@action:button"
 msgid "Cc"
-msgstr ""
+msgstr "كۆچۈرۈپ يوللا"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:58
 #, kde-format
 msgctxt "@action:button"
 msgid "Bcc"
-msgstr ""
+msgstr "مەخپىي كۆچۈرۈپ يوللا"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:59
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Has Attachment"
+#, kde-format
 msgctxt "@action:button"
 msgid "Has Attachment"
 msgstr "قوشۇلما بار"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:60
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Has Attachment"
+#, kde-format
 msgctxt "@action:button"
 msgid "Has Invitation"
-msgstr "قوشۇلما بار"
+msgstr ""
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:61
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Read"
+#, kde-format
 msgctxt "@action:button"
 msgid "Read"
-msgstr "ئوقۇ"
+msgstr "ئوقۇلغان"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:62
-#, fuzzy, kde-format
-#| msgid "Unread"
+#, kde-format
 msgctxt "@action:button"
 msgid "Unread"
 msgstr "ئوقۇلمىغان"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:63
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Important"
+#, kde-format
 msgctxt "@action:button"
 msgid "Important"
 msgstr "مۇھىم"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:64
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Ignored"
+#, kde-format
 msgctxt "@action:button"
 msgid "Ignored"
 msgstr "پەرۋا قىلمىدى"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:65
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Ham"
+#, kde-format
 msgctxt "@action:button"
 msgid "Ham"
-msgstr "Ham"
+msgstr ""
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:66
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Spam"
+#, kde-format
 msgctxt "@action:button"
 msgid "Spam"
 msgstr "سپەم"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:67
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Watched"
+#, kde-format
 msgctxt "@action:button"
 msgid "Watched"
 msgstr "كۆرۈلگەن"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:68
-#, fuzzy, kde-format
-#| msgid "Replied"
+#, kde-format
 msgctxt "@action:button"
 msgid "Replied"
 msgstr "جاۋاب قايتۇرغان"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:69
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Forwarded"
+#, kde-format
 msgctxt "@action:button"
 msgid "Forwarded"
 msgstr "جاۋاب يوللىغان"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:70
-#, fuzzy, kde-format
-#| msgid "Encryption"
+#, kde-format
 msgctxt "@action:button"
 msgid "Encrypted"
-msgstr "شىفىرلاش"
+msgstr "شىفىرلانغان"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:71
 #, kde-format
 msgctxt "@action:button"
 msgid "Queued"
-msgstr ""
+msgstr "ئۆچىرەت"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:72
-#, fuzzy, kde-format
-#| msgctxt "Status of an item"
-#| msgid "Sent"
+#, kde-format
 msgctxt "@action:button"
 msgid "Sent"
 msgstr "ئەۋەتكەنلىرى"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:73
-#, fuzzy, kde-format
-#| msgid "Delete Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "Deleted"
-msgstr "ئۆرنەك ئۆچۈرۈش"
+msgstr "ئۆچۈرۈلدى"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:74
-#, fuzzy, kde-format
-#| msgid "Action Item"
+#, kde-format
 msgctxt "@action:button"
 msgid "Action"
-msgstr "مەشغۇلات تۈرى"
+msgstr "مەشغۇلات"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Category"
-msgstr ""
+msgstr "كاتېگورىيە"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:77
 #, kde-format
@@ -1483,8 +1417,7 @@ msgid "Larger"
 msgstr ""
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:79
-#, fuzzy, kde-format
-#| msgid "Size"
+#, kde-format
 msgctxt "@action:button"
 msgid "Size"
 msgstr "چوڭلۇقى"
@@ -1534,54 +1467,48 @@ msgid ""
 msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:124
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
-msgstr "سەپلە…"
+msgstr ""
 
 #: core/widgets/searchlinestatus.cpp:202
 #, kde-format
 msgid "Clear History"
-msgstr ""
+msgstr "تارىخنى تازىلا"
 
 #: core/widgets/searchmessagebybuttons.cpp:36
-#, fuzzy, kde-format
-#| msgid "Message"
+#, kde-format
 msgctxt "@action"
 msgid "Full Message"
-msgstr "ئۇچۇر"
+msgstr ""
 
 #: core/widgets/searchmessagebybuttons.cpp:38
 #, kde-format
 msgctxt "@action"
 msgid "Body"
-msgstr ""
+msgstr "جىسىم"
 
 #: core/widgets/searchmessagebybuttons.cpp:39
-#, fuzzy, kde-format
-#| msgctxt "@title:column Subject of messages"
-#| msgid "Subject"
+#, kde-format
 msgctxt "@action"
 msgid "Subject"
-msgstr "تېما"
+msgstr "ماۋزۇ"
 
 #: core/widgets/searchmessagebybuttons.cpp:41
 #, kde-format
 msgctxt "@action"
 msgid "BCC"
-msgstr ""
+msgstr "مەخپىي يوللا(BCC)"
 
 #: core/widgets/searchmessagebybuttons.cpp:42
 #, kde-format
 msgctxt "@action"
 msgid "CC"
-msgstr ""
+msgstr "كۆچۈرۈپ يوللا(CC)"
 
 #: core/widgets/searchmessagebybuttons.cpp:73
-#, fuzzy, kde-format
-#| msgctxt "Receiver of the email"
-#| msgid "To"
+#, kde-format
 msgid "To"
 msgstr "تاپشۇرۇپ ئالغۇچى"
 
@@ -1649,7 +1576,7 @@ msgstr "سپەم"
 #, kde-format
 msgctxt "@action:inmenu Status of a message"
 msgid "Ham"
-msgstr "Ham"
+msgstr ""
 
 #: core/widgets/tablockedwarning.cpp:19
 #, kde-format
@@ -1657,10 +1584,9 @@ msgid "Current Tab is locked."
 msgstr ""
 
 #: core/widgets/tablockedwarning.cpp:19
-#, fuzzy, kde-format
-#| msgid "Close Tab"
+#, kde-format
 msgid "(Unlock it)"
-msgstr "بەتكۈچ ياپ"
+msgstr ""
 
 #: messagelistutil.cpp:105
 #, kde-format
@@ -1690,8 +1616,7 @@ msgid "Close tab"
 msgstr "بەتكۈچ ياپ"
 
 #: pane.cpp:187
-#, fuzzy, kde-format
-#| msgid "Activate Tab %1"
+#, kde-format
 msgctxt "@action"
 msgid "Activate Tab %1"
 msgstr "بەتكۈچ %1 نى ئاكتىپلا"
@@ -1707,43 +1632,37 @@ msgid "Message List"
 msgstr "ئۇچۇر تىزىمى"
 
 #: pane.cpp:234
-#, fuzzy, kde-format
-#| msgid "Activate Next Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Create New Tab"
-msgstr "كېيىنكى بەتكۈچنى ئاكتىپلا"
+msgstr ""
 
 #: pane.cpp:265
-#, fuzzy, kde-format
-#| msgid "Activate Next Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Activate Next Tab"
 msgstr "كېيىنكى بەتكۈچنى ئاكتىپلا"
 
 #: pane.cpp:275
-#, fuzzy, kde-format
-#| msgid "Activate Previous Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Activate Previous Tab"
 msgstr "ئالدىنقى بەتكۈچنى ئاكتىپلا"
 
 #: pane.cpp:287
-#, fuzzy, kde-format
-#| msgid "Move Tab Left"
+#, kde-format
 msgctxt "@action"
 msgid "Move Tab Left"
 msgstr "بەتكۈچنى سولغا يۆتكە"
 
 #: pane.cpp:295
-#, fuzzy, kde-format
-#| msgid "Move Tab Right"
+#, kde-format
 msgctxt "@action"
 msgid "Move Tab Right"
 msgstr "بەتكۈچنى ئوڭغا يۆتكە"
 
 #: pane.cpp:305
-#, fuzzy, kde-format
-#| msgid "Close Tab"
+#, kde-format
 msgctxt "@action"
 msgid "Close Tab"
 msgstr "بەتكۈچ ياپ"
@@ -1767,11 +1686,10 @@ msgid "Close All Other Tabs"
 msgstr ""
 
 #: pane.cpp:728
-#, fuzzy, kde-format
-#| msgid "Close Tab"
+#, kde-format
 msgctxt "@action:inmenu"
 msgid "Unlock Tab"
-msgstr "بەتكۈچ ياپ"
+msgstr ""
 
 #: pane.cpp:728
 #, kde-format
@@ -1789,11 +1707,10 @@ msgstr "تېما يوق"
 #, kde-format
 msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
-msgstr "نامەلۇم"
+msgstr "يوچۇن"
 
 #: utils/aggregationconfigbutton.cpp:32 utils/themeconfigbutton.cpp:46
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Configure..."
 msgstr "سەپلە…"
@@ -1804,11 +1721,10 @@ msgid "Groups && Threading"
 msgstr ""
 
 #: utils/aggregationeditor.cpp:35
-#, fuzzy, kde-format
-#| msgid "Grouping:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Grouping:"
-msgstr "گۇرۇپپىلاش:"
+msgstr ""
 
 #: utils/aggregationeditor.cpp:41
 #, kde-format
@@ -1908,28 +1824,25 @@ msgstr ""
 #: utils/configurethemesdialog.cpp:472
 #, kde-format
 msgid "All Files (*)"
-msgstr ""
+msgstr "ھەممە ھۆججەت(*)"
 
 #: utils/configurethemesdialog.cpp:98
-#, fuzzy, kde-format
-#| msgid "Customize Themes"
+#, kde-format
 msgctxt "@title:window"
 msgid "Customize Themes"
-msgstr "ئۆرنەكنى ئۆزلەشتۈرۈش"
+msgstr ""
 
 #: utils/configurethemesdialog.cpp:119
-#, fuzzy, kde-format
-#| msgid "New Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "New Theme"
 msgstr "يېڭى ئۆرنەك"
 
 #: utils/configurethemesdialog.cpp:127
-#, fuzzy, kde-format
-#| msgid "Clone Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "Clone Theme"
-msgstr "ئۆرنەك كۆچۈرۈش"
+msgstr ""
 
 #: utils/configurethemesdialog.cpp:140
 #, kde-format
@@ -1944,11 +1857,10 @@ msgid "Import Theme..."
 msgstr ""
 
 #: utils/configurethemesdialog.cpp:158
-#, fuzzy, kde-format
-#| msgid "Delete Theme"
+#, kde-format
 msgctxt "@action:button"
 msgid "Delete Theme"
-msgstr "ئۆرنەك ئۆچۈرۈش"
+msgstr ""
 
 #: utils/configurethemesdialog.cpp:337
 #, kde-format
@@ -1963,7 +1875,7 @@ msgstr "يېڭى ئۆرنەك"
 #: utils/configurethemesdialog.cpp:357 utils/themeeditor.cpp:1219
 #, kde-format
 msgid "New Column"
-msgstr "يېڭى ئىستون"
+msgstr "يېڭى رەت"
 
 #: utils/configurethemesdialog.cpp:410
 #, kde-format
@@ -1976,25 +1888,22 @@ msgid "Do you want to delete \"%1\"?"
 msgstr ""
 
 #: utils/configurethemesdialog.cpp:412
-#, fuzzy, kde-format
-#| msgid "Delete Theme"
+#, kde-format
 msgctxt "@title:window"
 msgid "Delete Theme"
-msgstr "ئۆرنەك ئۆچۈرۈش"
+msgstr ""
 
 #: utils/configurethemesdialog.cpp:438
-#, fuzzy, kde-format
-#| msgid "Clone Theme"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import Theme"
-msgstr "ئۆرنەك كۆچۈرۈش"
+msgstr ""
 
 #: utils/configurethemesdialog.cpp:472
-#, fuzzy, kde-format
-#| msgid "Clone Theme"
+#, kde-format
 msgctxt "@title:window"
 msgid "Export Theme"
-msgstr "ئۆرنەك كۆچۈرۈش"
+msgstr ""
 
 #: utils/optionseteditor.cpp:27
 #, kde-format
@@ -2112,13 +2021,13 @@ msgstr "يۇمشات"
 #, kde-format
 msgctxt "@action:inmenu Font setting"
 msgid "Bold"
-msgstr ""
+msgstr "توم"
 
 #: utils/themeeditor.cpp:864
 #, kde-format
 msgctxt "@action:inmenu Font setting"
 msgid "Italic"
-msgstr ""
+msgstr "يانتۇ"
 
 #: utils/themeeditor.cpp:871
 #, kde-format
@@ -2135,7 +2044,7 @@ msgstr "كۆڭۈلدىكى"
 #, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Custom..."
-msgstr "ئادەت..."
+msgstr "ئىختىيارىي…"
 
 #: utils/themeeditor.cpp:892
 #, kde-format
@@ -2192,7 +2101,7 @@ msgstr "ئاپتوماتىك"
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Custom..."
-msgstr "ئادەت..."
+msgstr "ئىختىيارىي…"
 
 #: utils/themeeditor.cpp:954
 #, kde-format
@@ -2217,7 +2126,7 @@ msgstr ""
 #: utils/themeeditor.cpp:1166
 #, kde-format
 msgid "Delete Column"
-msgstr "ئىستون ئۆچۈر"
+msgstr "رەت ئۆچۈر"
 
 #: utils/themeeditor.cpp:1172
 #, kde-format
@@ -2237,12 +2146,12 @@ msgstr ""
 #: utils/themeeditor.cpp:1249
 #, kde-format
 msgid "Column Properties"
-msgstr "ئىستون خاسلىقى"
+msgstr "رەت خاسلىقى"
 
 #: utils/themeeditor.cpp:1291
 #, kde-format
 msgid "Appearance"
-msgstr "كۆرۈنۈشى"
+msgstr "قىياپەت"
 
 #: utils/themeeditor.cpp:1295
 #, kde-format
@@ -2264,34 +2173,29 @@ msgid "Advanced"
 msgstr "ئالىي"
 
 #: utils/themeeditor.cpp:1436
-#, fuzzy, kde-format
-#| msgid "Header:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Header:"
-msgstr "قاش"
+msgstr ""
 
 #: utils/themeeditor.cpp:1442
-#, fuzzy, kde-format
-#| msgid "Icon size:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "سىنبەلگە چوڭلۇقى:"
 
 #: utils/themeeditor.cpp:1448
-#, fuzzy, kde-format
-#| msgctxt "suffix in a spinbox"
-#| msgid " pixel"
-#| msgid_plural " pixels"
+#, kde-format
 msgctxt "suffix in a spinbox"
 msgid "%v pixel"
 msgid_plural "%v pixels"
-msgstr[0] " چېكىت"
+msgstr[0] ""
 
 #: widget.cpp:211
 #, kde-format
 msgctxt "Item in list of Akonadi tags, to show all e-mails"
 msgid "All"
-msgstr ""
+msgstr "ھەممىسى"
 
 #: widget.cpp:348
 #, kde-format
@@ -2314,16 +2218,14 @@ msgid "Collapse All Groups"
 msgstr "ھەممە گۇرۇپپىنى قاتلا"
 
 #: widget.cpp:364
-#, fuzzy, kde-format
-#| msgid "Expand All Groups"
+#, kde-format
 msgid "Expand All Threads"
-msgstr "بارلىق گۇرۇپپىنى يېيىش"
+msgstr ""
 
 #: widget.cpp:366
-#, fuzzy, kde-format
-#| msgid "Collapse All Groups"
+#, kde-format
 msgid "Collapse All Threads"
-msgstr "ھەممە گۇرۇپپىنى قاتلا"
+msgstr ""
 
 #: widget.cpp:425
 #, kde-format
@@ -2340,7 +2242,6 @@ msgstr "بۇ جايغا كۆچۈر(&C)"
 msgid "C&ancel"
 msgstr "ۋاز كەچ(&A)"
 
-#, fuzzy
 #~| msgid "Configure..."
 #~ msgctxt "@action:button"
 #~ msgid "Clear Filter"
@@ -2352,7 +2253,6 @@ msgstr "ۋاز كەچ(&A)"
 #~ msgid "Hide tab bar when only one tab is open"
 #~ msgstr "بىر بەتكۈچ ئېچىلغاندا بەتكۈچ بالدىقىنى يوشۇر"
 
-#, fuzzy
 #~| msgid "Configure..."
 #~ msgid "More..."
 #~ msgstr "سەپلە…"

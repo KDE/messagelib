@@ -8,14 +8,15 @@ msgstr ""
 "Project-Id-Version: libtemplateparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-05 00:45+0000\n"
-"PO-Revision-Date: 2013-09-08 07:05+0900\n"
-"Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
+"PO-Revision-Date: 2026-06-01 16:21-0400\n"
+"Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.9\n"
 
 #: customtemplates.cpp:74 customtemplates.cpp:125
 #, kde-format
@@ -39,7 +40,7 @@ msgstr "ھەممىگە جاۋاب ياز"
 #, kde-format
 msgctxt "Message->"
 msgid "Forward"
-msgstr "ئالدى"
+msgstr "ئالدىغا"
 
 #: customtemplates.cpp:79 templatesconfiguration.cpp:75
 #, kde-format
@@ -65,7 +66,7 @@ msgstr ""
 #, kde-format
 msgctxt "Message->"
 msgid "Unknown"
-msgstr "نامەلۇم"
+msgstr "يوچۇن"
 
 #: customtemplates.cpp:254
 #, kde-format
@@ -250,13 +251,13 @@ msgstr ""
 #, kde-format
 msgctxt "@item:intext email To"
 msgid "To:"
-msgstr "خەت تاپشۇرۇۋالغۇچى："
+msgstr "كىمگە:"
 
 #: templateparserjob.cpp:494
 #, kde-format
 msgctxt "@item:intext email CC"
 msgid "CC:"
-msgstr "CC:"
+msgstr "كۆچۈرۈپ يوللا:"
 
 #: templateparserjob.cpp:1146
 #, kde-format
@@ -365,7 +366,7 @@ msgstr ""
 #: templatescommandmenu.cpp:75
 msgctxt "Template value for subject of the message"
 msgid "Subject"
-msgstr "تېما"
+msgstr "ماۋزۇ"
 
 #: templatescommandmenu.cpp:77
 msgid "Quoted Headers"
@@ -394,7 +395,7 @@ msgstr ""
 #: templatescommandmenu.cpp:125
 msgctxt "Template subject command."
 msgid "Subject"
-msgstr "تېما"
+msgstr "ماۋزۇ"
 
 #: templatescommandmenu.cpp:130
 msgid "Pipe Original Message Body and Insert Result as Quoted Text"
@@ -458,7 +459,7 @@ msgstr ""
 
 #: templatescommandmenu.cpp:162
 msgid "Language"
-msgstr ""
+msgstr "تىل"
 
 #: templatescommandmenu.cpp:167
 msgid "Turn Debug On"
@@ -492,13 +493,13 @@ msgstr ""
 #, kde-format
 msgctxt "Miscellaneous template commands menu"
 msgid "Miscellaneous"
-msgstr "باشقىلار"
+msgstr "باشقا"
 
 #: templatescommandmenu.cpp:269
 #, kde-format
 msgctxt "Debug template commands menu"
 msgid "Debug"
-msgstr ""
+msgstr "سازلا"
 
 #: templatesconfiguration.cpp:52
 #, kde-format
@@ -667,7 +668,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:column Type of custom template"
 msgid "Type"
-msgstr "تىپى"
+msgstr "تۈرى"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, mList)
 #: ui/customtemplates_base.ui:152
@@ -681,14 +682,14 @@ msgstr "ئاتى"
 #, kde-format
 msgctxt "@label:textbox Recipient mail address"
 msgid "To:"
-msgstr "خەت تاپشۇرۇۋالغۇچى："
+msgstr "كىمگە:"
 
 #. i18n: ectx: property (text), widget (QLabel, mCCLabel)
 #: ui/customtemplates_base.ui:202
 #, kde-format
 msgctxt "@label"
 msgid "CC:"
-msgstr "CC:"
+msgstr "كۆچۈرۈپ يوللا:"
 
 #. i18n: ectx: property (toolTip), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mToEdit)
 #: ui/customtemplates_base.ui:219
@@ -759,12 +760,10 @@ msgstr "ھەممىگە جاۋاب ياز"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, mType)
 #: ui/customtemplates_base.ui:298
-#, fuzzy, kde-format
-#| msgctxt "Message->"
-#| msgid "Forward"
+#, kde-format
 msgctxt "@item:inlistbox Custom template type for message forwards"
 msgid "Forward"
-msgstr "ئالدى"
+msgstr "ئالدىغا"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1_2)
 #: ui/customtemplates_base.ui:306

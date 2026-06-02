@@ -1,0 +1,133 @@
+# Uyghur translation for libwebengineviewer6.
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the messagelib package.
+# Abduqadir Abliz <sahranbay@gmail.com>, 2026., YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: messagelib\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"PO-Revision-Date: 2026-06-01 16:21-0400\n"
+"Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
+"Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
+"Language: ug\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.9\n"
+
+#: developertool/developertooldialog.cpp:26
+#, kde-format
+msgctxt "@title:window"
+msgid "Developer Tool"
+msgstr ""
+
+#: findbar/findbarbase.cpp:41
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Close"
+msgstr "ياپ"
+
+#: findbar/findbarbase.cpp:44
+#, kde-format
+msgid "Close"
+msgstr "ياپ"
+
+#: findbar/findbarbase.cpp:50
+#, kde-format
+msgctxt "Find text"
+msgid "F&ind:"
+msgstr "ئىزدە(&I)"
+
+#: findbar/findbarbase.cpp:55
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Text to search for"
+msgstr "ئىزدەيدىغان تېكىست"
+
+#: findbar/findbarbase.cpp:60
+#, kde-format
+msgctxt "Find and go to the next search match"
+msgid "Next"
+msgstr "كېيىنكى"
+
+#: findbar/findbarbase.cpp:61
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Jump to next match"
+msgstr "كېيىنكى ماس كەلگەنگە ئاتلا"
+
+#: findbar/findbarbase.cpp:66
+#, kde-format
+msgctxt "Find and go to the previous search match"
+msgid "Previous"
+msgstr "ئالدىنقى"
+
+#: findbar/findbarbase.cpp:67
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Jump to previous match"
+msgstr "ئالدىنقى ماس كەلگەنگە ئاتلا"
+
+#: findbar/findbarbase.cpp:73
+#, kde-format
+msgid "Options"
+msgstr "تاللانما"
+
+#: findbar/findbarbase.cpp:74
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Modify search behavior"
+msgstr "ئىزدەش قىلمىشىنى ئۆزگەرت"
+
+#: findbar/findbarbase.cpp:76
+#, kde-format
+msgid "Case sensitive"
+msgstr "چوڭ كىچىك ھەرپنى پەرقلەندۈر"
+
+#: findbar/findbarbase.cpp:93
+#, kde-format
+msgid "Phrase not found"
+msgstr ""
+
+#: webenginepage.cpp:154
+#, kde-format
+msgctxt "@title:window"
+msgid "Save HTML Page"
+msgstr ""
+
+#: widgets/submittedformwidgets/submittedformwarningwidget.cpp:23
+#, kde-format
+msgid "Submit form is not allowed in mailer. Please open url in a browser."
+msgstr ""
+
+#: widgets/tracking/trackingdetailsdialog.cpp:27
+#, kde-format
+msgctxt "@title:window"
+msgid "Details"
+msgstr "تەپسىلاتى"
+
+#: widgets/tracking/trackingwarningwidget.cpp:21
+#, kde-format
+msgid ""
+"Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
+"\">(Details...)"
+msgstr ""
+
+#: widgets/tracking/trackingwarningwidget.cpp:40
+#, kde-format
+msgid "Details:"
+msgstr "تەپسىلاتى:"
+
+#: widgets/tracking/trackingwarningwidget.cpp:44
+#, kde-format
+msgid "1 tracker from the company %2 (%3)"
+msgid_plural "%1 trackers from the company %2 (%3)"
+msgstr[0] ""
+
+#: widgets/zoomactionmenu.cpp:129
+#, kde-format
+msgid "Zoom"
+msgstr "نىسبەت"

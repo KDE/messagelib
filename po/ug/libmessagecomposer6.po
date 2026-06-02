@@ -8,21 +8,21 @@ msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-14 00:45+0000\n"
-"PO-Revision-Date: 2013-09-08 07:05+0900\n"
-"Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
+"PO-Revision-Date: 2026-06-01 16:20-0400\n"
+"Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.9\n"
 
 #: attachment/attachmentcontrollerbase.cpp:168
-#, fuzzy, kde-format
-#| msgid "Unable to edit attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to compress attachment"
-msgstr "قوشۇلمىنى تەھرىرلىگىلى بولمىدى"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:179
 #, kde-format
@@ -35,35 +35,32 @@ msgstr ""
 #, kde-format
 msgctxt "Do not compress"
 msgid "Keep"
-msgstr "تەگمە"
+msgstr "ساقلاپ قال"
 
 #: attachment/attachmentcontrollerbase.cpp:183
-#, fuzzy, kde-format
-#| msgid "Compress"
+#, kde-format
 msgctxt "@action:button"
 msgid "Compress"
-msgstr "پرېس"
+msgstr "قىس"
 
 #: attachment/attachmentcontrollerbase.cpp:202
 #: attachment/attachmentcontrollerbase.cpp:963
-#, fuzzy, kde-format
-#| msgid "Unable to edit attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach file"
-msgstr "قوشۇلمىنى تەھرىرلىگىلى بولمىدى"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:275
-#, fuzzy, kde-format
-#| msgid "Unable to edit attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to reload attachment"
-msgstr "قوشۇلمىنى تەھرىرلىگىلى بولمىدى"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:322
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
-msgstr "بۇنىڭدا ئاچ(&O)"
+msgstr "ئاچقۇز(&O)"
 
 #: attachment/attachmentcontrollerbase.cpp:342
 #, kde-format
@@ -79,25 +76,22 @@ msgid "&Open With..."
 msgstr "بۇنىڭدا ئاچ(&O)…"
 
 #: attachment/attachmentcontrollerbase.cpp:378
-#, fuzzy, kde-format
-#| msgid "Unable to edit attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach public key"
-msgstr "قوشۇلمىنى تەھرىرلىگىلى بولمىدى"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:392
-#, fuzzy, kde-format
-#| msgid "Unable to edit attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach vCard"
-msgstr "قوشۇلمىنى تەھرىرلىگىلى بولمىدى"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:405
-#, fuzzy, kde-format
-#| msgid "Unable to edit attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach text from clipboard"
-msgstr "قوشۇلمىنى تەھرىرلىگىلى بولمىدى"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:453
 #, kde-format
@@ -135,11 +129,10 @@ msgid "&Attach Directory..."
 msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:473
-#, fuzzy, kde-format
-#| msgid "&Save Attachment As..."
+#, kde-format
 msgctxt "@action"
 msgid "Attach Own vCard"
-msgstr "قوشۇلمىنى باشقا ئاتتا ساقلا(&S)…"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:474
 #, kde-format
@@ -147,22 +140,19 @@ msgid "Own vCard"
 msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:478
-#, fuzzy, kde-format
-#| msgid "&Save Attachment As..."
+#, kde-format
 msgid "&Attach vCards..."
-msgstr "قوشۇلمىنى باشقا ئاتتا ساقلا(&S)…"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:482
-#, fuzzy, kde-format
-#| msgid "&Save Attachment As..."
+#, kde-format
 msgid "&Attach Text From Clipboard..."
-msgstr "قوشۇلمىنى باشقا ئاتتا ساقلا(&S)…"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:483
-#, fuzzy, kde-format
-#| msgid "&Save Attachment As..."
+#, kde-format
 msgid "Attach Text From Clipboard"
-msgstr "قوشۇلمىنى باشقا ئاتتا ساقلا(&S)…"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:495
 #, kde-format
@@ -190,15 +180,13 @@ msgstr "كۆرۈنۈش"
 #, kde-format
 msgctxt "to edit"
 msgid "Edit"
-msgstr "تەھرىرلەش"
+msgstr "تەھرىر"
 
 #: attachment/attachmentcontrollerbase.cpp:519
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "&Open With..."
+#, kde-format
 msgctxt "@action"
 msgid "Edit With..."
-msgstr "بۇنىڭدا ئاچ(&O)…"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:524
 #, kde-format
@@ -211,22 +199,19 @@ msgid "Save As..."
 msgstr "باشقا ئاتتا ساقلا…"
 
 #: attachment/attachmentcontrollerbase.cpp:533
-#, fuzzy, kde-format
-#| msgid "&Save Attachment As..."
+#, kde-format
 msgctxt "@action"
 msgid "Attachment Pr&operties..."
-msgstr "قوشۇلمىنى باشقا ئاتتا ساقلا(&S)…"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:534
-#, fuzzy, kde-format
-#| msgid "Properties"
+#, kde-format
 msgctxt "@action"
 msgid "Properties"
 msgstr "خاسلىق"
 
 #: attachment/attachmentcontrollerbase.cpp:542
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action"
 msgid "Select All"
 msgstr "ھەممىنى تاللا"
@@ -234,7 +219,7 @@ msgstr "ھەممىنى تاللا"
 #: attachment/attachmentcontrollerbase.cpp:545
 #, kde-format
 msgid "Reload"
-msgstr ""
+msgstr "قايتا يۈكلە"
 
 #: attachment/attachmentcontrollerbase.cpp:679
 #: attachment/attachmentcontrollerbase.cpp:705
@@ -245,24 +230,21 @@ msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:680
 #: attachment/attachmentcontrollerbase.cpp:706
-#, fuzzy, kde-format
-#| msgid "Unable to open attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unable to open attachment"
-msgstr "قوشۇلما ھۆججەتنى ئاچالمىدى"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:715
-#, fuzzy, kde-format
-#| msgid "Unable to open attachment"
+#, kde-format
 msgid "KMail was unable to open the attachment"
-msgstr "قوشۇلما ھۆججەتنى ئاچالمىدى"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:757 attachment/editorwatcher.cpp:202
-#, fuzzy, kde-format
-#| msgid "Unable to edit attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unable to edit attachment"
-msgstr "قوشۇلمىنى تەھرىرلىگىلى بولمىدى"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:798
 #, kde-format
@@ -270,11 +252,10 @@ msgid "unnamed"
 msgstr "ئاتسىز"
 
 #: attachment/attachmentcontrollerbase.cpp:801
-#, fuzzy, kde-format
-#| msgid "&Save Attachment As..."
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Attachment As"
-msgstr "قوشۇلمىنى باشقا ئاتتا ساقلا(&S)…"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:824
 #, kde-format
@@ -286,15 +267,13 @@ msgstr ""
 " ئۇنى قاپلامسىز؟"
 
 #: attachment/attachmentcontrollerbase.cpp:825
-#, fuzzy, kde-format
-#| msgid "Save to File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save to File"
-msgstr "ھۆججەتكە ساقلاش"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:826
-#, fuzzy, kde-format
-#| msgid "&Replace"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Replace"
 msgstr "ئالماشتۇر(&R)"
@@ -307,33 +286,29 @@ msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:854
 #: attachment/attachmentcontrollerbase.cpp:933
-#, fuzzy, kde-format
-#| msgid "Attach File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Attach directory"
-msgstr "ھۆججەت قوشۇش"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:855
 #: attachment/attachmentcontrollerbase.cpp:934
-#, fuzzy, kde-format
-#| msgid "Attach"
+#, kde-format
 msgctxt "@action:button"
 msgid "Attach"
 msgstr "قوشۇمچە"
 
 #: attachment/attachmentcontrollerbase.cpp:890
-#, fuzzy, kde-format
-#| msgid "Attach File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Attach Directory"
-msgstr "ھۆججەت قوشۇش"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:898
-#, fuzzy, kde-format
-#| msgid "Attach File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Attach File"
-msgstr "ھۆججەت قوشۇش"
+msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:987
 #, kde-format
@@ -378,13 +353,13 @@ msgstr "كودلاش"
 #, kde-format
 msgctxt "@title column attachment type."
 msgid "Type"
-msgstr "تىپى"
+msgstr "تۈرى"
 
 #: attachment/attachmentmodel.cpp:447
 #, kde-format
 msgctxt "@title column attachment compression checkbox."
 msgid "Compress"
-msgstr "پرېس"
+msgstr "قىس"
 
 #: attachment/attachmentmodel.cpp:449
 #, kde-format
@@ -407,7 +382,7 @@ msgstr ""
 #: attachment/editorwatcher.cpp:66
 #, kde-format
 msgid "Edit with:"
-msgstr ""
+msgstr "ئىشلىتىدىغان تەھرىرلىگۈچ:"
 
 #: attachment/editorwatcher.cpp:200
 #, kde-format
@@ -479,7 +454,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "Auto Resize"
-msgstr ""
+msgstr "چوڭلۇقى ئاپتوماتىك"
 
 #: composer/composerviewbase.cpp:521
 #, kde-format
@@ -593,18 +568,16 @@ msgid "File Attachment Reminder"
 msgstr ""
 
 #: composer/composerviewbase.cpp:1911
-#, fuzzy, kde-format
-#| msgid "Attach File"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Attach File..."
-msgstr "ھۆججەت قوشۇش"
+msgstr ""
 
 #: composer/composerviewbase.cpp:1912
-#, fuzzy, kde-format
-#| msgid "&Send as Is"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Send as Is"
-msgstr "مۇشۇ پېتى يوللا(&S)"
+msgstr ""
 
 #: composer/composerviewbase.cpp:1964
 #, kde-format
@@ -647,18 +620,16 @@ msgid ""
 msgstr ""
 
 #: composer/composerviewbase.cpp:2025
-#, fuzzy, kde-format
-#| msgid "Send &Unencrypted"
+#, kde-format
 msgctxt "@title:window"
 msgid "Send Unsigned?"
-msgstr "شىفىرلىماي ئەۋەت(&U)"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2026
-#, fuzzy, kde-format
-#| msgid "Send &Unencrypted"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &Unsigned"
-msgstr "شىفىرلىماي ئەۋەت(&U)"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2041
 #, kde-format
@@ -693,11 +664,10 @@ msgid "Unsigned-Message Warning"
 msgstr ""
 
 #: composer/composerviewbase.cpp:2053
-#, fuzzy, kde-format
-#| msgid "&Send as Is"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &As Is"
-msgstr "مۇشۇ پېتى يوللا(&S)"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2100
 #, kde-format
@@ -748,18 +718,16 @@ msgstr ""
 
 #: composer/composerviewbase.cpp:2140 composer/keyresolver.cpp:1319
 #: composer/keyresolver.cpp:1360
-#, fuzzy, kde-format
-#| msgid "&Encrypt"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Encrypt"
 msgstr "شىفىرلا(&E)"
 
 #: composer/composerviewbase.cpp:2141
-#, fuzzy, kde-format
-#| msgid "&Encrypt"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Encrypt"
-msgstr "شىفىرلا(&E)"
+msgstr "شىفىرلىما(&N)"
 
 #: composer/composerviewbase.cpp:2161
 #, kde-format
@@ -770,18 +738,16 @@ msgid ""
 msgstr ""
 
 #: composer/composerviewbase.cpp:2167
-#, fuzzy, kde-format
-#| msgid "Send &Unencrypted"
+#, kde-format
 msgctxt "@title:window"
 msgid "Send Unencrypted?"
-msgstr "شىفىرلىماي ئەۋەت(&U)"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2168 composer/keyresolver.cpp:1345
-#, fuzzy, kde-format
-#| msgid "Send &Unencrypted"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &Unencrypted"
-msgstr "شىفىرلىماي ئەۋەت(&U)"
+msgstr ""
 
 #: composer/composerviewbase.cpp:2183
 #, kde-format
@@ -1070,16 +1036,15 @@ msgid "Failed to store a new reminder: %1"
 msgstr ""
 
 #: followupreminder/followupreminderselectdatedialog.cpp:35
-#, fuzzy, kde-format
-#| msgid "Select"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Date"
-msgstr "تاللا(&L)…"
+msgstr ""
 
 #: followupreminder/followupreminderselectdatedialog.cpp:63
 #, kde-format
 msgid "Date:"
-msgstr ""
+msgstr "چېسلا:"
 
 #: followupreminder/followupreminderselectdatedialog.cpp:71
 #, kde-format
@@ -1095,7 +1060,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Invalid date"
-msgstr ""
+msgstr "ئىناۋەتسىز چېسلا"
 
 #: followupreminder/followupreminderselectdatedialog.cpp:109
 #, kde-format
@@ -1135,12 +1100,10 @@ msgid "Select Image Format"
 msgstr ""
 
 #: imagescaling/imagescalingselectformat.cpp:89
-#, fuzzy, kde-format
-#| msgctxt "@action:button Open recipient selection dialog."
-#| msgid "Se&lect..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Select Format..."
-msgstr "تاللا(&L)…"
+msgstr ""
 
 #: imagescaling/imagescalingwidget.cpp:109
 #, kde-format
@@ -1265,7 +1228,7 @@ msgstr ""
 #: imagescaling/ui/imagescalingwidget.ui:237
 #, kde-format
 msgid " KiB"
-msgstr " كىلوبايت"
+msgstr " KiB"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab_3)
 #: imagescaling/ui/imagescalingwidget.ui:263
@@ -1385,11 +1348,10 @@ msgid "No text found in Clipboard"
 msgstr ""
 
 #: job/attachmentclipboardjob.cpp:46
-#, fuzzy, kde-format
-#| msgid "Attach"
+#, kde-format
 msgctxt "@title:window"
 msgid "Define Attachment Name"
-msgstr "قوشۇمچە"
+msgstr ""
 
 #: job/attachmentclipboardjob.cpp:46
 #, kde-format
@@ -1472,21 +1434,19 @@ msgid "Message Disposition Notification Request"
 msgstr ""
 
 #: mdn/mdnadvicedialog.cpp:30
-#, fuzzy, kde-format
-#| msgid "Send &Unencrypted"
+#, kde-format
 msgid "Send \"&denied\""
-msgstr "شىفىرلىماي ئەۋەت(&U)"
+msgstr ""
 
 #: mdn/mdnadvicedialog.cpp:32
 #, kde-format
 msgid "&Ignore"
-msgstr ""
+msgstr "پەرۋا قىلما(&I)"
 
 #: mdn/mdnadvicedialog.cpp:34
-#, fuzzy, kde-format
-#| msgid "&Send as Is"
+#, kde-format
 msgid "&Send"
-msgstr "مۇشۇ پېتى يوللا(&S)"
+msgstr "ئەۋەت(&S)"
 
 #: mdn/mdnadvicehelper.cpp:27
 msgid ""
@@ -1553,12 +1513,10 @@ msgid "&Name:"
 msgstr "ئاتى(&N):"
 
 #: recipient/distributionlistdialog.cpp:125
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "New Distribution List"
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Name of Distribution List"
-msgstr "يېڭى تارقىتىلما تىزىمى"
+msgstr ""
 
 #: recipient/distributionlistdialog.cpp:132
 #, kde-format
@@ -1604,7 +1562,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Address Book"
-msgstr ""
+msgstr "ئادرېس دەپتەر تاللىنىدۇ"
 
 #: recipient/distributionlistdialog.cpp:286
 #, kde-format
@@ -1727,18 +1685,16 @@ msgid "Reply-To:%1"
 msgstr ""
 
 #: recipient/recipientspicker.cpp:51
-#, fuzzy, kde-format
-#| msgid "Recipients"
+#, kde-format
 msgctxt "@title:window"
 msgid "Select Recipient"
-msgstr "تاپشۇرۇۋالغۇچىلار"
+msgstr ""
 
 #: recipient/recipientspicker.cpp:63
-#, fuzzy, kde-format
-#| msgid "Attach File"
+#, kde-format
 msgctxt "@action:button"
 msgid "Search &Directory Service"
-msgstr "ھۆججەت قوشۇش"
+msgstr "مۇندەرىجە ئىزدەش مۇلازىمىتى(&D)"
 
 #: recipient/recipientspicker.cpp:82
 #, kde-format
@@ -1791,38 +1747,38 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Later"
-msgstr ""
+msgstr "كېيىن ئەۋەتىش"
 
 #: sendlater/sendlaterdialog.cpp:50
 #, kde-format
 msgid "Send Later"
-msgstr ""
+msgstr "كېيىن ئەۋەتىش"
 
 #: sendlater/sendlaterdialog.cpp:51
 #, kde-format
 msgctxt "@option:check"
 msgid "Delay"
-msgstr ""
+msgstr "كېچىكتۈر"
 
 #: sendlater/sendlaterdialog.cpp:68
 #, kde-format
 msgid "Days"
-msgstr ""
+msgstr "كۈن"
 
 #: sendlater/sendlaterdialog.cpp:68
 #, kde-format
 msgid "Weeks"
-msgstr ""
+msgstr "ھەپتە"
 
 #: sendlater/sendlaterdialog.cpp:68
 #, kde-format
 msgid "Months"
-msgstr ""
+msgstr "ئاي"
 
 #: sendlater/sendlaterdialog.cpp:68
 #, kde-format
 msgid "Years"
-msgstr ""
+msgstr "يىل"
 
 #: sendlater/sendlaterjob.cpp:34
 #, kde-format
@@ -1841,10 +1797,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, mLabel)
 #: sendlater/ui/sendlaterwidget.ui:29
-#, fuzzy, kde-format
-#| msgid "&Send as Is"
+#, kde-format
 msgid "Send at:"
-msgstr "مۇشۇ پېتى يوللا(&S)"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, mRecurrence)
 #: sendlater/ui/sendlaterwidget.ui:39
@@ -1991,9 +1946,7 @@ msgid ""
 msgstr ""
 
 #: snippet/convertsnippetvariablemenu.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox Recipient of an email message."
-#| msgid "To"
+#, kde-format
 msgid "To"
 msgstr "تاپشۇرۇپ ئالغۇچى"
 
@@ -2020,7 +1973,7 @@ msgstr ""
 #: snippet/convertsnippetvariablemenu.cpp:42
 #, kde-format
 msgid "From"
-msgstr ""
+msgstr "كىمدىن"
 
 #: snippet/convertsnippetvariablemenu.cpp:43
 #, kde-format
@@ -2043,9 +1996,7 @@ msgid "From Field Name"
 msgstr ""
 
 #: snippet/convertsnippetvariablemenu.cpp:57
-#, fuzzy, kde-format
-#| msgctxt "@label:listbox Carbon Copy recipient of an email message."
-#| msgid "CC"
+#, kde-format
 msgid "CC"
 msgstr "كۆچۈرۈپ يوللا(CC)"
 
@@ -2072,7 +2023,7 @@ msgstr ""
 #: snippet/convertsnippetvariablemenu.cpp:73
 #, kde-format
 msgid "Bcc"
-msgstr ""
+msgstr "مەخپىي كۆچۈرۈپ يوللا"
 
 #: snippet/convertsnippetvariablemenu.cpp:74
 #, kde-format
@@ -2095,29 +2046,24 @@ msgid "BCC Field Name"
 msgstr ""
 
 #: snippet/convertsnippetvariablemenu.cpp:89
-#, fuzzy, kde-format
-#| msgid "Attach"
+#, kde-format
 msgid "Attachment"
-msgstr "قوشۇمچە"
+msgstr ""
 
 #: snippet/convertsnippetvariablemenu.cpp:90
-#, fuzzy, kde-format
-#| msgid "&Save Attachment As..."
+#, kde-format
 msgid "Number Of Attachments"
-msgstr "قوشۇلمىنى باشقا ئاتتا ساقلا(&S)…"
+msgstr ""
 
 #: snippet/convertsnippetvariablemenu.cpp:93
-#, fuzzy, kde-format
-#| msgctxt "@title column attachment name."
-#| msgid "Name"
+#, kde-format
 msgid "Names"
 msgstr "ئاتى"
 
 #: snippet/convertsnippetvariablemenu.cpp:96
-#, fuzzy, kde-format
-#| msgid "Filename"
+#, kde-format
 msgid "Filenames"
-msgstr "ھۆججەت ئاتى"
+msgstr ""
 
 #: snippet/convertsnippetvariablemenu.cpp:99
 #, kde-format
@@ -2147,10 +2093,9 @@ msgid "Long Date (%1)"
 msgstr ""
 
 #: snippet/convertsnippetvariablemenu.cpp:113
-#, fuzzy, kde-format
-#| msgid "Custom &Quotes"
+#, kde-format
 msgid "Custom Date (%1)"
-msgstr "ئۆزلەشتۈرگەن تىرناق(&Q)"
+msgstr ""
 
 #: snippet/convertsnippetvariablemenu.cpp:116
 #, kde-format
@@ -2230,12 +2175,12 @@ msgstr ""
 #: snippet/convertsnippetvariablemenu.cpp:171
 #, kde-format
 msgid "Misc"
-msgstr ""
+msgstr "ئارىلاش"
 
 #: snippet/convertsnippetvariablemenu.cpp:172
 #, kde-format
 msgid "Subject"
-msgstr ""
+msgstr "ماۋزۇ"
 
 #: utils/util.cpp:235
 #, kde-format
@@ -2283,7 +2228,6 @@ msgctxt "@action:button"
 msgid "Set Online"
 msgstr ""
 
-#, fuzzy
 #~| msgid "Change Encoding"
 #~ msgctxt "@action:button"
 #~ msgid "Change Encoding"
@@ -2292,52 +2236,44 @@ msgstr ""
 #~ msgid "vCard Import Failed"
 #~ msgstr "vCard ئىمپورت قىلىش مەغلۇپ بولدى"
 
-#, fuzzy
 #~| msgctxt "@action:button"
 #~| msgid "&Insert"
 #~ msgctxt "@title:window"
 #~ msgid "Insert HTML"
 #~ msgstr "قىستۇر(&I)"
 
-#, fuzzy
 #~| msgctxt "@action:button"
 #~| msgid "&Insert"
 #~ msgctxt "@action:button"
 #~ msgid "Insert"
 #~ msgstr "قىستۇر(&I)"
 
-#, fuzzy
 #~| msgctxt "@title:window"
 #~| msgid "Insert File"
 #~ msgctxt "@action"
 #~ msgid "Insert Rule Line"
 #~ msgstr "ھۆججەت قىستۇر"
 
-#, fuzzy
 #~| msgctxt "@label:listbox Blind carbon copy recipient of an email message."
 #~| msgid "BCC"
 #~ msgctxt "@item:inmenu uppercase abc lists"
 #~ msgid "ABC"
 #~ msgstr "مەخپىي يوللا(BCC)"
 
-#, fuzzy
 #~| msgid "Image"
 #~ msgid "Add Image"
 #~ msgstr "سۈرەت"
 
-#, fuzzy
 #~| msgctxt "@action:button"
 #~| msgid "&Insert"
 #~ msgid "Insert HTML"
 #~ msgstr "قىستۇر(&I)"
 
-#, fuzzy
 #~| msgid "Image"
 #~ msgctxt "Start of the filename for an image"
 #~ msgid "image"
 #~ msgstr "سۈرەت"
 
-#, fuzzy
 #~| msgid "Ad&vanced Autocorrection"
 #~ msgid "Add New Autocorrect"
 #~ msgstr "ئالىي ئاپتوماتىك توغرىلاش(&V)"
@@ -2400,7 +2336,6 @@ msgstr ""
 #~ msgid "Accept two uppercase letters in:"
 #~ msgstr "ئىككى چوڭ ھەرپكە قوشۇل:"
 
-#, fuzzy
 #~| msgid "&Add"
 #~ msgid "Add"
 #~ msgstr "قوش(&A)"
