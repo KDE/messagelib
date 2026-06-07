@@ -3,14 +3,14 @@
 # LinuxKorea Co. <kde@linuxkorea.co.kr>, 2000.
 # Louis JANG <louis@mizi.com>, 2001.
 # KIM KyungHeon <tody@teoal.net>, 2002, 2003, 2004.
-# SPDX-FileCopyrightText: 2007, 2009, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Shinjo Park <kde@peremen.name>
+# SPDX-FileCopyrightText: 2007, 2009, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026 Shinjo Park <kde@peremen.name>
 # JungHee Lee <daemul72@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-27 00:46+0000\n"
-"PO-Revision-Date: 2025-06-11 00:22+0200\n"
+"PO-Revision-Date: 2026-05-26 21:48+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 24.12.3\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
@@ -1621,7 +1621,7 @@ msgstr "첨부 파일 저장 오류"
 #, kde-format, kde-kuit-format
 msgctxt "1 = error string"
 msgid "Could not create temporary file: <message>%1</message>"
-msgstr ""
+msgstr "임시 파일을 만들 수 없음: <message>%1</message>"
 
 #: utils/messageviewerutil.cpp:409 utils/messageviewerutil.cpp:427
 #, kde-format
@@ -1673,10 +1673,9 @@ msgid "File %1 could not be created."
 msgstr "파일 %1을(를) 만들 수 없습니다."
 
 #: utils/messageviewerutil.cpp:528
-#, fuzzy, kde-format
-#| msgid "We cannot save message."
+#, kde-format
 msgid "We cannot append message to mbox."
-msgstr "메시지를 저장할 수 없습니다."
+msgstr "mbox에 메시지를 덧붙일 수 없습니다."
 
 #: utils/messageviewerutil.cpp:528 utils/messageviewerutil.cpp:535
 #, kde-format
