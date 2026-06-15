@@ -656,6 +656,7 @@ bool ComposerViewBase::addKeysToContext(const QString &gnupgHome,
                                 if (runningJobs < 1) {
                                     loop.quit();
                                 }
+                                return;
                             }
 
                             auto importJob = proto->importJob();
@@ -1049,7 +1050,9 @@ void ComposerViewBase::slotSendComposeResult(KJob *job)
                 saveMessage(composerJob->resultMessages().at(i), mSaveIn);
             }
         }
-        saveRecentAddresses(composerJob->resultMessages().at(0));
+        if (numberOfMessage > 0) {
+            saveRecentAddresses(composerJob->resultMessages().at(0));
+        }
     } else if (composerJob->error() == MessageComposer::ComposerJob::UserCancelledError) {
         // The job warned the user about something, and the user chose to return
         // to the message.  Nothing to do.
@@ -1173,7 +1176,9 @@ void ComposerViewBase::slotQueueResult(KJob *job)
     }
 
     if (m_pendingQueueJobs == 0) {
-        addFollowupReminder(qjob->message()->messageID(KMime::CreatePolicy::DontCreate)->asUnicodeString());
+        if (auto messageId = qjob->message()->messageID(KMime::CreatePolicy::DontCreate)) {
+            addFollowupReminder(messageId->asUnicodeString());
+        }
         Q_EMIT sentSuccessfully(-1);
     }
 }
@@ -1283,6 +1288,9 @@ void ComposerViewBase::autoSaveMessage()
     if (!m_composerJobs.isEmpty()) {
         // This may happen if e.g. the autosave timer calls applyChanges.
         qCDebug(MESSAGECOMPOSER_LOG) << "Autosave: Called while composer active; ignoring. Number of composer " << m_composerJobs.count();
+        if (m_autoSaveInterval > 0) {
+            updateAutoSave();
+        }
         return;
     }
 
