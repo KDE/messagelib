@@ -20,13 +20,14 @@ bool Utils::resizeImage(MessageCore::AttachmentPart::Ptr part)
     if (!pattern.isEmpty()) {
         // TODO use regexp ?
         const QStringList lstPattern = pattern.split(u';');
+        bool includeMatched = false;
         for (const QString &patternStr : lstPattern) {
             switch (MessageComposer::MessageComposerSettings::self()->filterSourceType()) {
             case MessageComposer::MessageComposerSettings::EnumFilterSourceType::NoFilter:
                 break;
             case MessageComposer::MessageComposerSettings::EnumFilterSourceType::IncludeFilesWithPattern:
-                if (!filename.contains(patternStr)) {
-                    return false;
+                if (filename.contains(patternStr)) {
+                    includeMatched = true;
                 }
                 break;
             case MessageComposer::MessageComposerSettings::EnumFilterSourceType::ExcludeFilesWithPattern:
@@ -35,6 +36,11 @@ bool Utils::resizeImage(MessageCore::AttachmentPart::Ptr part)
                 }
                 break;
             }
+        }
+        if (MessageComposer::MessageComposerSettings::self()->filterSourceType()
+                == MessageComposer::MessageComposerSettings::EnumFilterSourceType::IncludeFilesWithPattern
+            && !includeMatched) {
+            return false;
         }
     }
 
@@ -144,20 +150,20 @@ bool Utils::filterRecipients(const QStringList &recipients)
         }
         for (const QString &emails : recipients) {
             if (!emails.contains(doNotResizeEmailsPattern)) {
-                return false;
+                return true;
             }
         }
-        return true;
+        return false;
     case MessageComposer::MessageComposerSettings::EnumFilterRecipientType::DontResizeOneEmailContainsPattern:
         if (doNotResizeEmailsPattern.isEmpty()) {
             return false;
         }
         for (const QString &emails : recipients) {
             if (emails.contains(doNotResizeEmailsPattern)) {
-                return true;
+                return false;
             }
         }
-        return false;
+        return true;
     }
 
     return false;
