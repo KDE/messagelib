@@ -670,8 +670,8 @@ bool ComposerViewBase::addKeysToContext(const QString &gnupgHome,
                 QStringList patterns;
                 patterns << QString::fromUtf8(k.primaryFingerprint());
                 runningJobs++;
-                exportJob->start(patterns);
                 exportJob->setExportFlags(GpgME::Context::ExportMinimal);
+                exportJob->start(patterns);
             } else {
                 qCDebug(MESSAGECOMPOSER_LOG) << "Adding " << k.primaryFingerprint() << "from Autocrypt storage";
                 const auto recipient = storage->getRecipient(it->second.toUtf8());
