@@ -142,9 +142,11 @@ void RichTextComposerNg::insertFormat(QChar formatChar)
         const QString newText = formatChar + cursor.selectedText() + formatChar;
         cursor.insertText(newText);
     } else {
+        const int insertPos = cursor.position();
         cursor.insertText(QString(formatChar) + QString(formatChar));
+        // Place the caret between both marker characters.
+        cursor.setPosition(insertPos + 1);
     }
-    cursor.setPosition(cursor.position());
     setTextCursor(cursor);
 }
 
