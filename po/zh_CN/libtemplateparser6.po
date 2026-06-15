@@ -514,7 +514,7 @@ msgstr "用外部程序处理"
 #, kde-format
 msgctxt "Miscellaneous template commands menu"
 msgid "Miscellaneous"
-msgstr "杂项"
+msgstr "其他"
 
 #: templatescommandmenu.cpp:269
 #, kde-format
