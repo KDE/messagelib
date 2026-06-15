@@ -1166,11 +1166,7 @@ bool EncryptedMessagePart::okDecryptMIME(KMime::Content &data)
                 setDecryptMessage(false);
             }
 
-#if GPGME_VERSION_NUMBER >= 0x011800 // 1.24.0
             partMetaData()->errorText = QString::fromLocal8Bit(decryptResult.error().asStdString());
-#else
-            partMetaData()->errorText = QString::fromLocal8Bit(decryptResult.error().asString());
-#endif
 
             if (Kleo::DeVSCompliance::isCompliant()) {
                 partMetaData()->isCompliant = decryptResult.isDeVs();

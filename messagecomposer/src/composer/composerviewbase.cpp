@@ -647,11 +647,7 @@ bool ComposerViewBase::addKeysToContext(const QString &gnupgHome,
                             Q_UNUSED(auditLogAsHtml);
                             Q_UNUSED(auditLogError);
                             if (result) {
-#if GPGME_VERSION_NUMBER >= 0x011800 // 1.24.0
                                 qCWarning(MESSAGECOMPOSER_LOG) << "Failed to export " << k.primaryFingerprint() << result.asStdString();
-#else
-                                qCWarning(MESSAGECOMPOSER_LOG) << "Failed to export " << k.primaryFingerprint() << result.asString();
-#endif
                                 --runningJobs;
                                 if (runningJobs < 1) {
                                     loop.quit();
