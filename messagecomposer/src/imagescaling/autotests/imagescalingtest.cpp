@@ -44,6 +44,9 @@ void ImageScalingTest::shouldHaveRenameFile_data()
     QTest::newRow("no rename to jpeg") << u"foo.png"_s << QStringLiteral("foo.png") << QByteArray("image/png") << QStringLiteral("JPG");
     QTest::newRow("rename to jpeg") << u"foo.png"_s << QStringLiteral("foo.jpg") << QByteArray("image/mng") << QStringLiteral("JPG");
     QTest::newRow("rename to png") << u"foo.jpg"_s << QStringLiteral("foo.png") << QByteArray("image/mng") << QStringLiteral("PNG");
+    QTest::newRow("rename jpeg suffix to png") << u"foo.jpeg"_s << QStringLiteral("foo.png") << QByteArray("image/mng") << QStringLiteral("PNG");
+    QTest::newRow("rename uppercase jpg suffix") << u"foo.JPG"_s << QStringLiteral("foo.png") << QByteArray("image/mng") << QStringLiteral("PNG");
+    QTest::newRow("rename uppercase png suffix") << u"foo.PNG"_s << QStringLiteral("foo.jpg") << QByteArray("image/mng") << QStringLiteral("JPG");
 }
 
 void ImageScalingTest::shouldHaveRenameFile()

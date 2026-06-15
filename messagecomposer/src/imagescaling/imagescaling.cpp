@@ -160,20 +160,18 @@ QString ImageScaling::generateNewName()
     if (type.isEmpty()) {
         type = u"PNG"_s;
     }
-    if (d->mName.endsWith(QLatin1StringView(".png"))) {
-        if (type != QLatin1StringView("PNG")) {
-            d->mName.replace(QLatin1StringView(".png"), QLatin1StringView(".jpg"));
-        }
-    } else if (d->mName.endsWith(QLatin1StringView(".jpg"))) {
-        if (type != QLatin1StringView("JPG")) {
-            d->mName.replace(QLatin1StringView(".jpg"), QLatin1StringView(".png"));
+    const bool writeJpg = (type.compare(u"JPG"_s, Qt::CaseInsensitive) == 0);
+    const QString targetExtension = writeJpg ? u"jpg"_s : u"png"_s;
+
+    const QString lowerName = d->mName.toLower();
+    if (lowerName.endsWith(u".png"_s) || lowerName.endsWith(u".jpg"_s) || lowerName.endsWith(u".jpeg"_s)) {
+        const int dotPos = d->mName.lastIndexOf(u'.');
+        if (dotPos != -1) {
+            d->mName = d->mName.left(dotPos + 1) + targetExtension;
         }
     } else {
-        if (type == QLatin1StringView("PNG")) {
-            d->mName += QLatin1StringView(".png");
-        } else {
-            d->mName += QLatin1StringView(".jpg");
-        }
+        d->mName += u'.';
+        d->mName += targetExtension;
     }
     return d->mName;
 }
