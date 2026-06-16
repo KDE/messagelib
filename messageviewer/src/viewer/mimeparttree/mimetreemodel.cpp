@@ -251,7 +251,11 @@ QVariant MimeTreeModel::data(const QModelIndex &index, int role) const
         if (!topLevelMsg) {
             return false;
         }
-        return topLevelMsg->mainBodyPart(content->contentType()->mimeType()) == content;
+        const auto ct = content->contentType();
+        if (!ct) {
+            return false;
+        }
+        return topLevelMsg->mainBodyPart(ct->mimeType()) == content;
     }
     return {};
 }
