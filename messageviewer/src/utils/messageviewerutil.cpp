@@ -222,9 +222,10 @@ bool Util::saveContents(QWidget *parent, const QList<KMime::Content *> &contents
             const QString origFile = curUrl.fileName();
             QString file = origFile;
 
+            int num = renameNumbering.value(origFile, 1);
             while (renameNumbering.contains(file)) {
+                ++num;
                 file = origFile;
-                int num = renameNumbering[file] + 1;
                 int dotIdx = file.lastIndexOf(u'.');
                 file.insert((dotIdx >= 0) ? dotIdx : file.length(), u'_' + QString::number(num));
             }
