@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-09 00:44+0000\n"
+"POT-Creation-Date: 2026-06-16 00:46+0000\n"
 "PO-Revision-Date: 2026-06-01 16:21-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -29,7 +29,7 @@ msgstr "ئاتسىز"
 msgid "Wrong Crypto Plug-In."
 msgstr ""
 
-#: src/messagepart.cpp:815 src/messagepart.cpp:1207
+#: src/messagepart.cpp:815 src/messagepart.cpp:1203
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr ""
@@ -52,17 +52,17 @@ msgid ""
 "<br />Reason: %1"
 msgstr ""
 
-#: src/messagepart.cpp:1209
+#: src/messagepart.cpp:1205
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr ""
 
-#: src/messagepart.cpp:1211
+#: src/messagepart.cpp:1207
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr ""
 
-#: src/messagepart.cpp:1212
+#: src/messagepart.cpp:1208
 #, kde-format
 msgid "Error: %1"
 msgstr "خاتالىق: %1"

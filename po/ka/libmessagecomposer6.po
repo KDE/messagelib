@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-14 00:45+0000\n"
+"POT-Creation-Date: 2026-06-16 00:46+0000\n"
 "PO-Revision-Date: 2025-09-06 05:41+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -467,42 +467,42 @@ msgctxt "@action:button"
 msgid "Do Not Resize"
 msgstr "ზომები არ შეიცვლება"
 
-#: composer/composerviewbase.cpp:729
+#: composer/composerviewbase.cpp:726
 #, kde-format
 msgctxt "@title:window"
 msgid "OpenPGP Key Expired"
 msgstr "OpenPGP გასაღები ვადაგასულია"
 
-#: composer/composerviewbase.cpp:729
+#: composer/composerviewbase.cpp:726
 #, kde-format
 msgctxt "@title:window"
 msgid "S/MIME Certificate Expired"
 msgstr "S/MIME სერტიფიკატი ვადაგასულია"
 
-#: composer/composerviewbase.cpp:731
+#: composer/composerviewbase.cpp:728
 #, kde-format
 msgctxt "@title:window"
 msgid "OpenPGP Key Expires Soon"
 msgstr "OpenPGP გასაღებს ვადა მალე გასდის"
 
-#: composer/composerviewbase.cpp:732
+#: composer/composerviewbase.cpp:729
 #, kde-format
 msgctxt "@title:window"
 msgid "S/MIME Certificate Expires Soon"
 msgstr "S/MIME სერტიფიკატს ვადა მალე გასდის"
 
-#: composer/composerviewbase.cpp:806 composer/composerviewbase.cpp:820
-#: composer/composerviewbase.cpp:852
+#: composer/composerviewbase.cpp:803 composer/composerviewbase.cpp:817
+#: composer/composerviewbase.cpp:849
 #, kde-format
 msgid "Failed to resolve keys. Please report a bug."
 msgstr "გასაღებების ამოხსნის შეცდომა. გთხოვთ, მოგვწეროთ ამის შესახებ."
 
-#: composer/composerviewbase.cpp:1057 composer/composerviewbase.cpp:1328
+#: composer/composerviewbase.cpp:1056 composer/composerviewbase.cpp:1332
 #, kde-format
 msgid "Job cancelled by the user"
 msgstr "დავალება შეწყვეტილია მომხმარებლის მიერ"
 
-#: composer/composerviewbase.cpp:1062
+#: composer/composerviewbase.cpp:1061
 #, kde-format
 msgid ""
 "Could not compose message: %1 \n"
@@ -511,37 +511,37 @@ msgstr ""
 "შეტყობინების შექმნის შეცდომა: %1\n"
 "  შეგვატყობინეთ ამის შესახებ."
 
-#: composer/composerviewbase.cpp:1064
+#: composer/composerviewbase.cpp:1063
 #, kde-format
 msgid "Could not compose message: %1"
 msgstr "შეტყობინების შედგენის შეცდომა: %1"
 
-#: composer/composerviewbase.cpp:1167
+#: composer/composerviewbase.cpp:1166
 #, kde-format
 msgid "There were problems trying to queue the message for sending: %1"
 msgstr "პრობლემა შეტყობინების გასაგზავნ რიგში ჩამატებისას: %1"
 
-#: composer/composerviewbase.cpp:1331
+#: composer/composerviewbase.cpp:1335
 #, kde-format
 msgid "Could not autosave message: %1"
 msgstr "შეტყობინების ავტომატური შენახვის შეცდომა: %1"
 
-#: composer/composerviewbase.cpp:1350
+#: composer/composerviewbase.cpp:1354
 #, kde-format
 msgid "Could not write all data to file."
 msgstr "მონაცემების ფაილში სრულად ჩაწერის შეცდომა."
 
-#: composer/composerviewbase.cpp:1353
+#: composer/composerviewbase.cpp:1357
 #, kde-format
 msgid "Could not finalize the file."
 msgstr "ფაილის დასრულების შეცდომა."
 
-#: composer/composerviewbase.cpp:1357
+#: composer/composerviewbase.cpp:1361
 #, kde-format
 msgid "Could not open file."
 msgstr "ფაილის გახსნის შეცდომა."
 
-#: composer/composerviewbase.cpp:1364
+#: composer/composerviewbase.cpp:1368
 #, kde-format
 msgid ""
 "Autosaving the message as %1 failed.\n"
@@ -552,18 +552,18 @@ msgstr ""
 "%2\n"
 "მიზეზი: %3"
 
-#: composer/composerviewbase.cpp:1370
+#: composer/composerviewbase.cpp:1374
 #, kde-format
 msgctxt "@title:window"
 msgid "Autosaving Message Failed"
 msgstr "შეტყობინების ავტომატური შენახვის შეცდომა"
 
-#: composer/composerviewbase.cpp:1483
+#: composer/composerviewbase.cpp:1487
 #, kde-format
 msgid "Failed to save the message: %1"
 msgstr "შეტყობინების შენახვის შეცდომა: %1"
 
-#: composer/composerviewbase.cpp:1907
+#: composer/composerviewbase.cpp:1911
 #, kde-format
 msgid ""
 "The message you have composed seems to refer to an attached file but you "
@@ -574,25 +574,25 @@ msgstr ""
 "მაგრამ არაფერი მიგიმაგრებიათ.\n"
 "გნებავთ, მიამაგროთ ფაილი თქვენს შეტყობინებას?"
 
-#: composer/composerviewbase.cpp:1910
+#: composer/composerviewbase.cpp:1914
 #, kde-format
 msgctxt "@title:window"
 msgid "File Attachment Reminder"
 msgstr "ფაილის მიმაგრების შეხსენება"
 
-#: composer/composerviewbase.cpp:1911
+#: composer/composerviewbase.cpp:1915
 #, kde-format
 msgctxt "@action:button"
 msgid "&Attach File..."
 msgstr "&ფაილის მიმაგრება..."
 
-#: composer/composerviewbase.cpp:1912
+#: composer/composerviewbase.cpp:1916
 #, kde-format
 msgctxt "@action:button"
 msgid "&Send as Is"
 msgstr "&გაგზავნა, როგორც არის"
 
-#: composer/composerviewbase.cpp:1964
+#: composer/composerviewbase.cpp:1968
 #, kde-format
 msgid ""
 "Examination of the recipient's signing preferences yielded that you be asked "
@@ -603,25 +603,25 @@ msgstr ""
 "შეტყობინების ხელმოწერა, თუ არა.\n"
 "მოვაწერო ხელი ამ შეტყობინებაზე?"
 
-#: composer/composerviewbase.cpp:1970 composer/composerviewbase.cpp:1998
+#: composer/composerviewbase.cpp:1974 composer/composerviewbase.cpp:2002
 #, kde-format
 msgctxt "@title:window"
 msgid "Sign Message?"
 msgstr "მოვაწერო ხელი შეტყობინებას?"
 
-#: composer/composerviewbase.cpp:1971 composer/composerviewbase.cpp:1999
+#: composer/composerviewbase.cpp:1975 composer/composerviewbase.cpp:2003
 #, kde-format
 msgctxt "to sign"
 msgid "&Sign"
 msgstr "&ხელმოწერა"
 
-#: composer/composerviewbase.cpp:1972 composer/composerviewbase.cpp:2000
+#: composer/composerviewbase.cpp:1976 composer/composerviewbase.cpp:2004
 #, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Sign"
 msgstr "&ხელმოწერის გარეშე"
 
-#: composer/composerviewbase.cpp:1993
+#: composer/composerviewbase.cpp:1997
 #, kde-format
 msgid ""
 "There are conflicting signing preferences for these recipients.\n"
@@ -630,7 +630,7 @@ msgstr ""
 "ამ მიმღებებისთვის ურთიერთგამომრიცხავი ხელმოწერის პარამეტრებია არჩეული.\n"
 "მოვაწერო ხელი ამ შეტყობინებას?"
 
-#: composer/composerviewbase.cpp:2020
+#: composer/composerviewbase.cpp:2024
 #, kde-format
 msgid ""
 "You have requested to sign this message, but no valid signing keys have been "
@@ -639,19 +639,19 @@ msgstr ""
 "მოითხოვეთ ამ შეტყობინების ხელმოწერა, მაგრამ ამ ანგარიშისთვის სწორი "
 "ხელმოწერის გასაღებები მითითებული არაა."
 
-#: composer/composerviewbase.cpp:2025
+#: composer/composerviewbase.cpp:2029
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Unsigned?"
 msgstr "გავაგზავნო ხელმოწერის გარეშე?"
 
-#: composer/composerviewbase.cpp:2026
+#: composer/composerviewbase.cpp:2030
 #, kde-format
 msgctxt "@action:button"
 msgid "Send &Unsigned"
 msgstr "&ხელმოწერის გარეშე გაგზავნა"
 
-#: composer/composerviewbase.cpp:2041
+#: composer/composerviewbase.cpp:2045
 #, kde-format
 msgid ""
 "Some parts of this message will not be signed.\n"
@@ -662,7 +662,7 @@ msgstr ""
 "ნაწილობრივ ხელმოწერილი შეტყობინების გაზავნა კი შეიძლება აკრძალული იყოს.\n"
 "მოხდეს ყველა ნაწილის ხელმოწერა?"
 
-#: composer/composerviewbase.cpp:2045
+#: composer/composerviewbase.cpp:2049
 #, kde-format
 msgid ""
 "This message will not be signed.\n"
@@ -673,29 +673,29 @@ msgstr ""
 "ხელმოუწერელი შეტყობინების გაგზავნით შეიძლება წესები დაარღვიოთ.\n"
 "მოვაწერო ხელი შეტყობინებას?"
 
-#: composer/composerviewbase.cpp:2048
+#: composer/composerviewbase.cpp:2052
 #, kde-format
 msgid "&Sign All Parts"
 msgstr "&ყველა ნაწილის ხელმოწერა"
 
-#: composer/composerviewbase.cpp:2048
+#: composer/composerviewbase.cpp:2052
 #, kde-format
 msgid "&Sign"
 msgstr "&ხელმოწერა"
 
-#: composer/composerviewbase.cpp:2051
+#: composer/composerviewbase.cpp:2055
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsigned-Message Warning"
 msgstr "გაფრთხილება ხელმოუწერელი შეტყობინების შესახებ"
 
-#: composer/composerviewbase.cpp:2053
+#: composer/composerviewbase.cpp:2057
 #, kde-format
 msgctxt "@action:button"
 msgid "Send &As Is"
 msgstr "&გაგზავნა, როგორც არის"
 
-#: composer/composerviewbase.cpp:2100
+#: composer/composerviewbase.cpp:2104
 #, kde-format
 msgid ""
 "Valid trusted encryption keys were found for all recipients.\n"
@@ -704,7 +704,7 @@ msgstr ""
 "ყველა მიმღებისთვის აღმოჩენილია სწორი დაშიფვრის გასაღებები.\n"
 "დავშიფრო შეტყობინება?"
 
-#: composer/composerviewbase.cpp:2103
+#: composer/composerviewbase.cpp:2107
 #, kde-format
 msgid ""
 "Examination of the recipient's encryption preferences yielded that you be "
@@ -715,32 +715,32 @@ msgstr ""
 "ეს შეტყობინება, თუ არა.\n"
 "დავშიფრო შეტყობინება?"
 
-#: composer/composerviewbase.cpp:2109 composer/composerviewbase.cpp:2139
+#: composer/composerviewbase.cpp:2113 composer/composerviewbase.cpp:2143
 #, kde-format
 msgid "Encrypt Message?"
 msgstr "დავშიფრო შეტყობინება?"
 
-#: composer/composerviewbase.cpp:2110
+#: composer/composerviewbase.cpp:2114
 #, kde-format
 msgid "Sign && &Encrypt"
 msgstr "დაშიფვრა და ხელმოწერა"
 
-#: composer/composerviewbase.cpp:2110 composer/composerviewbase.cpp:2192
+#: composer/composerviewbase.cpp:2114 composer/composerviewbase.cpp:2196
 #, kde-format
 msgid "&Encrypt"
 msgstr "&დაშიფვრა"
 
-#: composer/composerviewbase.cpp:2111 composer/composerviewbase.cpp:2197
+#: composer/composerviewbase.cpp:2115 composer/composerviewbase.cpp:2201
 #, kde-format
 msgid "&Sign Only"
 msgstr "&მხოლოდ ხელმოწერა"
 
-#: composer/composerviewbase.cpp:2111 composer/composerviewbase.cpp:2197
+#: composer/composerviewbase.cpp:2115 composer/composerviewbase.cpp:2201
 #, kde-format
 msgid "&Send As-Is"
 msgstr "&გაგზავნა, როგორც არის"
 
-#: composer/composerviewbase.cpp:2132
+#: composer/composerviewbase.cpp:2136
 #, kde-format
 msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
@@ -749,20 +749,20 @@ msgstr ""
 "ამ მიმღებებისთვის ურთიერთგამომრიცხავი დაშიფვრის პარამეტრებია არჩეული.\n"
 "მოვაწერო ხელი ამ შეტყობინებას?"
 
-#: composer/composerviewbase.cpp:2140 composer/keyresolver.cpp:1319
+#: composer/composerviewbase.cpp:2144 composer/keyresolver.cpp:1319
 #: composer/keyresolver.cpp:1360
 #, kde-format
 msgctxt "@action:button"
 msgid "&Encrypt"
 msgstr "&დაშიფვრა"
 
-#: composer/composerviewbase.cpp:2141
+#: composer/composerviewbase.cpp:2145
 #, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Encrypt"
 msgstr "&არ დაშიფრო"
 
-#: composer/composerviewbase.cpp:2161
+#: composer/composerviewbase.cpp:2165
 #, kde-format
 msgid ""
 "You have requested to encrypt this message, and to encrypt a copy to "
@@ -772,19 +772,19 @@ msgstr ""
 "მოითხოვეთ ამ შეტყობინების დაშიფვრა და რომ თქვენი ასლიც დაიშიფროს, მაგრამ ამ "
 "ანგარიშისთვის სწორი დაშიფვრის გასაღებები მითითებული არაა."
 
-#: composer/composerviewbase.cpp:2167
+#: composer/composerviewbase.cpp:2171
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Unencrypted?"
 msgstr "გავაგზავნო დაუშიფრავად?"
 
-#: composer/composerviewbase.cpp:2168 composer/keyresolver.cpp:1345
+#: composer/composerviewbase.cpp:2172 composer/keyresolver.cpp:1345
 #, kde-format
 msgctxt "@action:button"
 msgid "Send &Unencrypted"
 msgstr "&დაუშიფრავად გაგზავნა"
 
-#: composer/composerviewbase.cpp:2183
+#: composer/composerviewbase.cpp:2187
 #, kde-format
 msgid ""
 "Some parts of this message will not be encrypted.\n"
@@ -797,7 +797,7 @@ msgstr ""
 "მოხდეს ინფორმაციის გაჟონვა.\n"
 "დავშიფრო მთლიანად?"
 
-#: composer/composerviewbase.cpp:2188
+#: composer/composerviewbase.cpp:2192
 #, kde-format
 msgid ""
 "This message will not be encrypted.\n"
@@ -810,12 +810,12 @@ msgstr ""
 "კონფიდენციალური ინფორმაცია.\n"
 "დავშიფრო შეტყობინება?"
 
-#: composer/composerviewbase.cpp:2192
+#: composer/composerviewbase.cpp:2196
 #, kde-format
 msgid "&Encrypt All Parts"
 msgstr "&ყველა ნაწილის დაშიფვრა"
 
-#: composer/composerviewbase.cpp:2195
+#: composer/composerviewbase.cpp:2199
 #, kde-format
 msgctxt "@title:window"
 msgid "Unencrypted Message Warning"

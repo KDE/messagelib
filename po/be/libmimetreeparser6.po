@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-09 00:44+0000\n"
+"POT-Creation-Date: 2026-06-16 00:46+0000\n"
 "PO-Revision-Date: 2008-01-31 22:13+0200\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -41,7 +41,7 @@ msgstr "Безназоўны"
 msgid "Wrong Crypto Plug-In."
 msgstr "Некарэктнае дапаўненне крыптаграфіі."
 
-#: src/messagepart.cpp:815 src/messagepart.cpp:1207
+#: src/messagepart.cpp:815 src/messagepart.cpp:1203
 #, fuzzy, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Не знойдзена адпаведнага модуля крыптаграфіі."
@@ -65,17 +65,17 @@ msgid ""
 "<br />Reason: %1"
 msgstr "Не атрымоўваецца ўсталяваць сапраўднасць подпісу.<br />Чыннік: %1"
 
-#: src/messagepart.cpp:1209
+#: src/messagepart.cpp:1205
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "Дапаўненне крыптаграфіі \"%1\" ня можа расшыфраваць паведамленні."
 
-#: src/messagepart.cpp:1211
+#: src/messagepart.cpp:1207
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Дапаўненне крыптаграфіі \"%1\" ня можа расшыфраваць дадзеныя."
 
-#: src/messagepart.cpp:1212
+#: src/messagepart.cpp:1208
 #, kde-format
 msgid "Error: %1"
 msgstr "Памылка: %1"

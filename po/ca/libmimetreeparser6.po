@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-09 00:44+0000\n"
+"POT-Creation-Date: 2026-06-16 00:46+0000\n"
 "PO-Revision-Date: 2023-08-18 11:58+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -35,7 +35,7 @@ msgstr "Sense nom"
 msgid "Wrong Crypto Plug-In."
 msgstr "Connector criptogràfic erroni."
 
-#: src/messagepart.cpp:815 src/messagepart.cpp:1207
+#: src/messagepart.cpp:815 src/messagepart.cpp:1203
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "No s'ha trobat cap connector criptogràfic apropiat."
@@ -60,17 +60,17 @@ msgstr ""
 "El missatge està signat, però no es pot comprovar la validesa de la "
 "signatura.<br />Motiu: %1"
 
-#: src/messagepart.cpp:1209
+#: src/messagepart.cpp:1205
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "El connector criptogràfic «%1» no pot desencriptar missatges."
 
-#: src/messagepart.cpp:1211
+#: src/messagepart.cpp:1207
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "El connector criptogràfic «%1» no pot desencriptar les dades."
 
-#: src/messagepart.cpp:1212
+#: src/messagepart.cpp:1208
 #, kde-format
 msgid "Error: %1"
 msgstr "Error: %1"

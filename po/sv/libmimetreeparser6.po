@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-09 00:44+0000\n"
+"POT-Creation-Date: 2026-06-16 00:46+0000\n"
 "PO-Revision-Date: 2016-06-01 18:34+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -28,7 +28,7 @@ msgstr "Namnlös"
 msgid "Wrong Crypto Plug-In."
 msgstr "Felaktigt kryptoinsticksprogram."
 
-#: src/messagepart.cpp:815 src/messagepart.cpp:1207
+#: src/messagepart.cpp:815 src/messagepart.cpp:1203
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Inget lämpligt kryptoinsticksprogram hittades."
@@ -53,17 +53,17 @@ msgstr ""
 "Brevet är signerat, men signaturens giltighet kan inte kontrolleras.<br/> "
 "Orsak: %1"
 
-#: src/messagepart.cpp:1209
+#: src/messagepart.cpp:1205
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "Kryptoinsticksprogrammet \"%1\" kan inte dekryptera några brev."
 
-#: src/messagepart.cpp:1211
+#: src/messagepart.cpp:1207
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Kryptoinsticksprogrammet \"%1\" kunde inte dekryptera data."
 
-#: src/messagepart.cpp:1212
+#: src/messagepart.cpp:1208
 #, kde-format
 msgid "Error: %1"
 msgstr "Fel: %1"
