@@ -253,6 +253,10 @@ namespace
 {
 int pointsToPixel(const QPaintDevice *pd, int pointSize)
 {
+    if (!pd) {
+        // Fallback to 96 DPI when no paint device is available.
+        return (pointSize * 96 + 36) / 72;
+    }
     return (pointSize * pd->logicalDpiY() + 36) / 72;
 }
 }
