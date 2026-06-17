@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-27 00:46+0000\n"
+"POT-Creation-Date: 2026-06-17 00:46+0000\n"
 "PO-Revision-Date: 2012-01-28 16:35-0800\n"
 "Last-Translator: Fumiaki Okushi <okushi@kde.gr.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -1621,7 +1621,7 @@ msgctxt "filename for the %1-th unnamed attachment"
 msgid "attachment.%1"
 msgstr "添付ファイル.%1"
 
-#: utils/messageviewerutil.cpp:304
+#: utils/messageviewerutil.cpp:305
 #, kde-format
 msgid ""
 "The part %1 of the message is encrypted. Do you want to keep the encryption "
@@ -1630,26 +1630,26 @@ msgstr ""
 "このメッセージのパート %1 は暗号化されています。保存時に暗号化されたままにし"
 "ますか？"
 
-#: utils/messageviewerutil.cpp:306 utils/messageviewerutil.cpp:319
+#: utils/messageviewerutil.cpp:307 utils/messageviewerutil.cpp:320
 #, kde-format
 msgid "KMail Question"
 msgstr "KMail の質問"
 
-#: utils/messageviewerutil.cpp:306
+#: utils/messageviewerutil.cpp:307
 #, fuzzy, kde-format
 #| msgid "Keep Encryption"
 msgctxt "@action:button"
 msgid "Keep Encryption"
 msgstr "暗号化したままにする"
 
-#: utils/messageviewerutil.cpp:307 utils/messageviewerutil.cpp:320
+#: utils/messageviewerutil.cpp:308 utils/messageviewerutil.cpp:321
 #, fuzzy, kde-format
 #| msgid "Do Not Keep"
 msgctxt "@action:button"
 msgid "Do Not Keep"
 msgstr "復号する"
 
-#: utils/messageviewerutil.cpp:317
+#: utils/messageviewerutil.cpp:318
 #, kde-format
 msgid ""
 "The part %1 of the message is signed. Do you want to keep the signature when "
@@ -1657,15 +1657,15 @@ msgid ""
 msgstr ""
 "そのメッセージのパート %1 は署名されています。保存時に署名も保存しますか？"
 
-#: utils/messageviewerutil.cpp:319
+#: utils/messageviewerutil.cpp:320
 #, fuzzy, kde-format
 #| msgid "Keep Signature"
 msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "署名を保持"
 
-#: utils/messageviewerutil.cpp:383 utils/messageviewerutil.cpp:406
-#: utils/messageviewerutil.cpp:424 utils/messageviewerutil.cpp:552
+#: utils/messageviewerutil.cpp:384 utils/messageviewerutil.cpp:407
+#: utils/messageviewerutil.cpp:425 utils/messageviewerutil.cpp:553
 #, fuzzy, kde-kuit-format
 #| msgctxt "1 = file name, 2 = error string"
 #| msgid "<qt>Could not write to the file<br><filename>%1</filename><br><br>%2"
@@ -1677,114 +1677,114 @@ msgstr ""
 "<qt>このファイルに書き込めませんでした<br/><filename>%1</filename><br/><br/>"
 "%2"
 
-#: utils/messageviewerutil.cpp:386 utils/messageviewerutil.cpp:395
+#: utils/messageviewerutil.cpp:387 utils/messageviewerutil.cpp:396
 #, fuzzy, kde-format
 #| msgid "Error saving attachment"
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "添付ファイルの保存エラー"
 
-#: utils/messageviewerutil.cpp:394 utils/messageviewerutil.cpp:509
+#: utils/messageviewerutil.cpp:395 utils/messageviewerutil.cpp:510
 #, kde-format, kde-kuit-format
 msgctxt "1 = error string"
 msgid "Could not create temporary file: <message>%1</message>"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:409 utils/messageviewerutil.cpp:427
+#: utils/messageviewerutil.cpp:410 utils/messageviewerutil.cpp:428
 #, kde-format
 msgid "Error saving attachment"
 msgstr "添付ファイルの保存エラー"
 
-#: utils/messageviewerutil.cpp:440
+#: utils/messageviewerutil.cpp:441
 #, kde-format
 msgid "Found no attachments to save."
 msgstr "保存する添付ファイルがありません。"
 
-#: utils/messageviewerutil.cpp:456
+#: utils/messageviewerutil.cpp:457
 #, fuzzy, kde-format
 #| msgid "&Save message"
 msgid "message"
 msgstr "メッセージを保存(&S)"
 
-#: utils/messageviewerutil.cpp:478
+#: utils/messageviewerutil.cpp:479
 #, kde-format
 msgid "Mailbox file (*.mbox);;All Files (*)"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:489
+#: utils/messageviewerutil.cpp:490
 #, fuzzy, kde-format
 #| msgid "&Save message"
 msgid "Save Message"
 msgid_plural "Save Messages"
 msgstr[0] "メッセージを保存(&S)"
 
-#: utils/messageviewerutil.cpp:510 utils/messageviewerutil.cpp:521
-#: utils/messageviewerutil.cpp:555
+#: utils/messageviewerutil.cpp:511 utils/messageviewerutil.cpp:522
+#: utils/messageviewerutil.cpp:556
 #, fuzzy, kde-format
 #| msgid "Error saving attachment"
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "添付ファイルの保存エラー"
 
-#: utils/messageviewerutil.cpp:519
+#: utils/messageviewerutil.cpp:520
 #, fuzzy, kde-format
 #| msgid "The message could not be decrypted."
 msgid "File %1 could not be loaded."
 msgstr "メッセージを復号できませんでした。"
 
-#: utils/messageviewerutil.cpp:519
+#: utils/messageviewerutil.cpp:520
 #, fuzzy, kde-format
 #| msgid "End of signed message"
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "署名付きメッセージの末尾"
 
-#: utils/messageviewerutil.cpp:521
+#: utils/messageviewerutil.cpp:522
 #, fuzzy, kde-format
 #| msgid "The message could not be decrypted."
 msgid "File %1 could not be created."
 msgstr "メッセージを復号できませんでした。"
 
-#: utils/messageviewerutil.cpp:528
+#: utils/messageviewerutil.cpp:529
 #, fuzzy, kde-format
 #| msgid "End of signed message"
 msgid "We cannot append message to mbox."
 msgstr "署名付きメッセージの末尾"
 
-#: utils/messageviewerutil.cpp:528 utils/messageviewerutil.cpp:535
+#: utils/messageviewerutil.cpp:529 utils/messageviewerutil.cpp:536
 #, fuzzy, kde-format
 #| msgid "Error saving attachment"
 msgid "Error saving message"
 msgstr "添付ファイルの保存エラー"
 
-#: utils/messageviewerutil.cpp:535
+#: utils/messageviewerutil.cpp:536
 #, fuzzy, kde-format
 #| msgid "End of signed message"
 msgid "We cannot save message."
 msgstr "署名付きメッセージの末尾"
 
 # ACCELERATOR added by translator
-#: utils/messageviewerutil.cpp:599
+#: utils/messageviewerutil.cpp:600
 #, fuzzy, kde-format
 #| msgid "Select All Text"
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "すべてのテキストを選択(&S)"
 
-#: utils/messageviewerutil.cpp:610
+#: utils/messageviewerutil.cpp:611
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:638
+#: utils/messageviewerutil.cpp:639
 #, fuzzy, kde-format
 #| msgid "&Open with '%1'"
 msgid "Open &with %1"
 msgstr "%1 で開く(&O)"
 
-#: utils/messageviewerutil.cpp:640
+#: utils/messageviewerutil.cpp:641
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
@@ -1795,17 +1795,17 @@ msgstr ""
 msgid "body part"
 msgstr "メッセージ本体"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:264
+#: viewer/mimeparttree/mimetreemodel.cpp:268
 #, kde-format
 msgid "Description"
 msgstr "説明"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:266
+#: viewer/mimeparttree/mimetreemodel.cpp:270
 #, kde-format
 msgid "Type"
 msgstr "タイプ"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:268
+#: viewer/mimeparttree/mimetreemodel.cpp:272
 #, kde-format
 msgid "Size"
 msgstr "サイズ"

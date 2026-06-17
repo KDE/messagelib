@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-27 00:46+0000\n"
+"POT-Creation-Date: 2026-06-17 00:46+0000\n"
 "PO-Revision-Date: 2026-05-17 11:17+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -1610,7 +1610,7 @@ msgctxt "filename for the %1-th unnamed attachment"
 msgid "attachment.%1"
 msgstr "adjunt.%1"
 
-#: utils/messageviewerutil.cpp:304
+#: utils/messageviewerutil.cpp:305
 #, kde-format
 msgid ""
 "The part %1 of the message is encrypted. Do you want to keep the encryption "
@@ -1619,24 +1619,24 @@ msgstr ""
 "La part %1 del missatge està encriptada. Voleu mantindre l'encriptació en "
 "guardar-lo?"
 
-#: utils/messageviewerutil.cpp:306 utils/messageviewerutil.cpp:319
+#: utils/messageviewerutil.cpp:307 utils/messageviewerutil.cpp:320
 #, kde-format
 msgid "KMail Question"
 msgstr "Pregunta de KMail"
 
-#: utils/messageviewerutil.cpp:306
+#: utils/messageviewerutil.cpp:307
 #, kde-format
 msgctxt "@action:button"
 msgid "Keep Encryption"
 msgstr "Mantín l'encriptació"
 
-#: utils/messageviewerutil.cpp:307 utils/messageviewerutil.cpp:320
+#: utils/messageviewerutil.cpp:308 utils/messageviewerutil.cpp:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Keep"
 msgstr "No el mantinges"
 
-#: utils/messageviewerutil.cpp:317
+#: utils/messageviewerutil.cpp:318
 #, kde-format
 msgid ""
 "The part %1 of the message is signed. Do you want to keep the signature when "
@@ -1645,14 +1645,14 @@ msgstr ""
 "La part %1 del missatge està signada. Voleu mantindre la signatura en "
 "guardar-lo?"
 
-#: utils/messageviewerutil.cpp:319
+#: utils/messageviewerutil.cpp:320
 #, kde-format
 msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "Mantín la signatura"
 
-#: utils/messageviewerutil.cpp:383 utils/messageviewerutil.cpp:406
-#: utils/messageviewerutil.cpp:424 utils/messageviewerutil.cpp:552
+#: utils/messageviewerutil.cpp:384 utils/messageviewerutil.cpp:407
+#: utils/messageviewerutil.cpp:425 utils/messageviewerutil.cpp:553
 #, kde-kuit-format
 msgctxt "1 = file name, 2 = error string"
 msgid ""
@@ -1662,91 +1662,91 @@ msgstr ""
 "<qt>No s'ha pogut escriure el fitxer<br /><filename>%1</filename><br /><br />"
 "%2</qt>"
 
-#: utils/messageviewerutil.cpp:386 utils/messageviewerutil.cpp:395
+#: utils/messageviewerutil.cpp:387 utils/messageviewerutil.cpp:396
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "S'ha produït un error mentre es guardava l'adjunt"
 
-#: utils/messageviewerutil.cpp:394 utils/messageviewerutil.cpp:509
+#: utils/messageviewerutil.cpp:395 utils/messageviewerutil.cpp:510
 #, kde-format, kde-kuit-format
 msgctxt "1 = error string"
 msgid "Could not create temporary file: <message>%1</message>"
 msgstr "No s'ha pogut crear un fitxer temporal: <message>%1</message>"
 
-#: utils/messageviewerutil.cpp:409 utils/messageviewerutil.cpp:427
+#: utils/messageviewerutil.cpp:410 utils/messageviewerutil.cpp:428
 #, kde-format
 msgid "Error saving attachment"
 msgstr "S'ha produït un error mentre es guardava l'adjunt"
 
-#: utils/messageviewerutil.cpp:440
+#: utils/messageviewerutil.cpp:441
 #, kde-format
 msgid "Found no attachments to save."
 msgstr "No s'ha trobat cap adjunt per a guardar."
 
-#: utils/messageviewerutil.cpp:456
+#: utils/messageviewerutil.cpp:457
 #, kde-format
 msgid "message"
 msgstr "missatge"
 
 # skip-rule: kct-mailbox
-#: utils/messageviewerutil.cpp:478
+#: utils/messageviewerutil.cpp:479
 #, kde-format
 msgid "Mailbox file (*.mbox);;All Files (*)"
 msgstr "Fitxer «mailbox» (*.mbox);;Tots els fitxers (*)"
 
-#: utils/messageviewerutil.cpp:489
+#: utils/messageviewerutil.cpp:490
 #, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
 msgstr[0] "Guarda el missatge"
 msgstr[1] "Guarda els missatges"
 
-#: utils/messageviewerutil.cpp:510 utils/messageviewerutil.cpp:521
-#: utils/messageviewerutil.cpp:555
+#: utils/messageviewerutil.cpp:511 utils/messageviewerutil.cpp:522
+#: utils/messageviewerutil.cpp:556
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "S'ha produït un error mentre es guardava el missatge"
 
-#: utils/messageviewerutil.cpp:519
+#: utils/messageviewerutil.cpp:520
 #, kde-format
 msgid "File %1 could not be loaded."
 msgstr "El fitxer %1 no s'ha pogut carregar."
 
-#: utils/messageviewerutil.cpp:519
+#: utils/messageviewerutil.cpp:520
 #, kde-format
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "S'ha produït un error mentre es carregava el missatge"
 
-#: utils/messageviewerutil.cpp:521
+#: utils/messageviewerutil.cpp:522
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "No s'ha pogut crear el fitxer %1."
 
-#: utils/messageviewerutil.cpp:528
+#: utils/messageviewerutil.cpp:529
 #, kde-format
 msgid "We cannot append message to mbox."
 msgstr "No s'ha pogut afegir el missatge a «mbox»."
 
-#: utils/messageviewerutil.cpp:528 utils/messageviewerutil.cpp:535
+#: utils/messageviewerutil.cpp:529 utils/messageviewerutil.cpp:536
 #, kde-format
 msgid "Error saving message"
 msgstr "S'ha produït un error mentre es guardava el missatge"
 
-#: utils/messageviewerutil.cpp:535
+#: utils/messageviewerutil.cpp:536
 #, kde-format
 msgid "We cannot save message."
 msgstr "No s'ha pogut guardar el missatge."
 
-#: utils/messageviewerutil.cpp:599
+#: utils/messageviewerutil.cpp:600
 #, kde-format
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "Suprimit: %1"
 
-#: utils/messageviewerutil.cpp:610
+#: utils/messageviewerutil.cpp:611
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
@@ -1755,12 +1755,12 @@ msgstr ""
 "Heu suprimit un adjunt d'este missatge. Les capçaleres MIME originals de "
 "l'adjunt eren:"
 
-#: utils/messageviewerutil.cpp:638
+#: utils/messageviewerutil.cpp:639
 #, kde-format
 msgid "Open &with %1"
 msgstr "Obri a&mb %1"
 
-#: utils/messageviewerutil.cpp:640
+#: utils/messageviewerutil.cpp:641
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
@@ -1771,17 +1771,17 @@ msgstr "%1"
 msgid "body part"
 msgstr "part del cos"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:264
+#: viewer/mimeparttree/mimetreemodel.cpp:268
 #, kde-format
 msgid "Description"
 msgstr "Descripció"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:266
+#: viewer/mimeparttree/mimetreemodel.cpp:270
 #, kde-format
 msgid "Type"
 msgstr "Tipus"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:268
+#: viewer/mimeparttree/mimetreemodel.cpp:272
 #, kde-format
 msgid "Size"
 msgstr "Mida"

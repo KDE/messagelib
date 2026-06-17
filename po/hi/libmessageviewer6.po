@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-27 00:46+0000\n"
+"POT-Creation-Date: 2026-06-17 00:46+0000\n"
 "PO-Revision-Date: 2021-08-13 01:49+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -1649,7 +1649,7 @@ msgctxt "filename for the %1-th unnamed attachment"
 msgid "attachment.%1"
 msgstr "संलग्नक. %1"
 
-#: utils/messageviewerutil.cpp:304
+#: utils/messageviewerutil.cpp:305
 #, kde-format
 msgid ""
 "The part %1 of the message is encrypted. Do you want to keep the encryption "
@@ -1657,26 +1657,26 @@ msgid ""
 msgstr ""
 "संदेश का %1 भाग एनक्रिप्टेड है. सहेजा जाने पर क्या आप हस्ताक्षर को बनाए रखना चाहते हैं?"
 
-#: utils/messageviewerutil.cpp:306 utils/messageviewerutil.cpp:319
+#: utils/messageviewerutil.cpp:307 utils/messageviewerutil.cpp:320
 #, kde-format
 msgid "KMail Question"
 msgstr "के-मेल प्रश्न"
 
-#: utils/messageviewerutil.cpp:306
+#: utils/messageviewerutil.cpp:307
 #, fuzzy, kde-format
 #| msgid "Keep Encryption"
 msgctxt "@action:button"
 msgid "Keep Encryption"
 msgstr "एनक्रिप्शन बनाए रखें"
 
-#: utils/messageviewerutil.cpp:307 utils/messageviewerutil.cpp:320
+#: utils/messageviewerutil.cpp:308 utils/messageviewerutil.cpp:321
 #, fuzzy, kde-format
 #| msgid "Do Not Keep"
 msgctxt "@action:button"
 msgid "Do Not Keep"
 msgstr "रखें नहीं"
 
-#: utils/messageviewerutil.cpp:317
+#: utils/messageviewerutil.cpp:318
 #, kde-format
 msgid ""
 "The part %1 of the message is signed. Do you want to keep the signature when "
@@ -1684,15 +1684,15 @@ msgid ""
 msgstr ""
 "संदेश का %1 भाग हस्ताक्षरित है. सहेजा जाने पर क्या आप हस्ताक्षर को बनाए रखना चाहते हैं?"
 
-#: utils/messageviewerutil.cpp:319
+#: utils/messageviewerutil.cpp:320
 #, fuzzy, kde-format
 #| msgid "Keep Signature"
 msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "हस्ताक्षर रखे रहें"
 
-#: utils/messageviewerutil.cpp:383 utils/messageviewerutil.cpp:406
-#: utils/messageviewerutil.cpp:424 utils/messageviewerutil.cpp:552
+#: utils/messageviewerutil.cpp:384 utils/messageviewerutil.cpp:407
+#: utils/messageviewerutil.cpp:425 utils/messageviewerutil.cpp:553
 #, fuzzy, kde-kuit-format
 #| msgctxt "%2 is detailed error description"
 #| msgid ""
@@ -1706,42 +1706,42 @@ msgstr ""
 "फ़ाइल %1 पर लिख नहीं सका:\n"
 "%2"
 
-#: utils/messageviewerutil.cpp:386 utils/messageviewerutil.cpp:395
+#: utils/messageviewerutil.cpp:387 utils/messageviewerutil.cpp:396
 #, fuzzy, kde-format
 #| msgid "has an attachment"
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "के साथ संलग्नक है"
 
-#: utils/messageviewerutil.cpp:394 utils/messageviewerutil.cpp:509
+#: utils/messageviewerutil.cpp:395 utils/messageviewerutil.cpp:510
 #, kde-format, kde-kuit-format
 msgctxt "1 = error string"
 msgid "Could not create temporary file: <message>%1</message>"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:409 utils/messageviewerutil.cpp:427
+#: utils/messageviewerutil.cpp:410 utils/messageviewerutil.cpp:428
 #, fuzzy, kde-format
 #| msgid "has an attachment"
 msgid "Error saving attachment"
 msgstr "के साथ संलग्नक है"
 
-#: utils/messageviewerutil.cpp:440
+#: utils/messageviewerutil.cpp:441
 #, kde-format
 msgid "Found no attachments to save."
 msgstr "सहेजने के लिए कोई संलग्नक नहीं मिला."
 
-#: utils/messageviewerutil.cpp:456
+#: utils/messageviewerutil.cpp:457
 #, fuzzy, kde-format
 #| msgid "0 messages"
 msgid "message"
 msgstr "0 संदेश"
 
-#: utils/messageviewerutil.cpp:478
+#: utils/messageviewerutil.cpp:479
 #, kde-format
 msgid "Mailbox file (*.mbox);;All Files (*)"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:489
+#: utils/messageviewerutil.cpp:490
 #, fuzzy, kde-format
 #| msgid " message"
 #| msgid_plural " messages"
@@ -1750,70 +1750,70 @@ msgid_plural "Save Messages"
 msgstr[0] "संदेश"
 msgstr[1] "संदेश"
 
-#: utils/messageviewerutil.cpp:510 utils/messageviewerutil.cpp:521
-#: utils/messageviewerutil.cpp:555
+#: utils/messageviewerutil.cpp:511 utils/messageviewerutil.cpp:522
+#: utils/messageviewerutil.cpp:556
 #, fuzzy, kde-format
 #| msgid "Moving messages"
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "संदेश खिसकाया जा रहा है"
 
-#: utils/messageviewerutil.cpp:519
+#: utils/messageviewerutil.cpp:520
 #, fuzzy, kde-format
 msgid "File %1 could not be loaded."
 msgstr "भेजे गए संदेशों को एनक्रिप्टेड भंडारित करें (&p)"
 
-#: utils/messageviewerutil.cpp:519
+#: utils/messageviewerutil.cpp:520
 #, fuzzy, kde-format
 #| msgid "Error while uploading message"
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "संदेश अपलोड करते समय त्रुटि हुई"
 
-#: utils/messageviewerutil.cpp:521
+#: utils/messageviewerutil.cpp:522
 #, fuzzy, kde-format
 msgid "File %1 could not be created."
 msgstr "भेजे गए संदेशों को एनक्रिप्टेड भंडारित करें (&p)"
 
-#: utils/messageviewerutil.cpp:528
+#: utils/messageviewerutil.cpp:529
 #, fuzzy, kde-format
 #| msgid "End of signed message"
 msgid "We cannot append message to mbox."
 msgstr "हस्ताक्षरित संदेश का अंत"
 
-#: utils/messageviewerutil.cpp:528 utils/messageviewerutil.cpp:535
+#: utils/messageviewerutil.cpp:529 utils/messageviewerutil.cpp:536
 #, fuzzy, kde-format
 #| msgid "Moving messages"
 msgid "Error saving message"
 msgstr "संदेश खिसकाया जा रहा है"
 
-#: utils/messageviewerutil.cpp:535
+#: utils/messageviewerutil.cpp:536
 #, fuzzy, kde-format
 #| msgid "End of signed message"
 msgid "We cannot save message."
 msgstr "हस्ताक्षरित संदेश का अंत"
 
-#: utils/messageviewerutil.cpp:599
+#: utils/messageviewerutil.cpp:600
 #, fuzzy, kde-format
 #| msgid "Declined: %1"
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "अस्वीकृत: %1"
 
-#: utils/messageviewerutil.cpp:610
+#: utils/messageviewerutil.cpp:611
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:638
+#: utils/messageviewerutil.cpp:639
 #, fuzzy, kde-format
 #| msgid "&Open with '%1'"
 msgid "Open &with %1"
 msgstr " '%1' के साथ खोलें (&O)"
 
-#: utils/messageviewerutil.cpp:640
+#: utils/messageviewerutil.cpp:641
 #, fuzzy, kde-format
 #| msgid "%"
 msgctxt "@item:inmenu Open With, %1 is application name"
@@ -1825,17 +1825,17 @@ msgstr "%"
 msgid "body part"
 msgstr "मुख्य भाग"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:264
+#: viewer/mimeparttree/mimetreemodel.cpp:268
 #, kde-format
 msgid "Description"
 msgstr "वर्णन"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:266
+#: viewer/mimeparttree/mimetreemodel.cpp:270
 #, kde-format
 msgid "Type"
 msgstr "क़िस्म"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:268
+#: viewer/mimeparttree/mimetreemodel.cpp:272
 #, kde-format
 msgid "Size"
 msgstr "आकार"

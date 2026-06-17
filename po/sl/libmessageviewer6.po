@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-27 00:46+0000\n"
+"POT-Creation-Date: 2026-06-17 00:46+0000\n"
 "PO-Revision-Date: 2026-05-17 06:56+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -1602,7 +1602,7 @@ msgctxt "filename for the %1-th unnamed attachment"
 msgid "attachment.%1"
 msgstr "priloga.%1"
 
-#: utils/messageviewerutil.cpp:304
+#: utils/messageviewerutil.cpp:305
 #, kde-format
 msgid ""
 "The part %1 of the message is encrypted. Do you want to keep the encryption "
@@ -1611,24 +1611,24 @@ msgstr ""
 "Del %1 sporočila je šifriran. Ali želite pri shranjevanju ohraniti "
 "šifriranje?"
 
-#: utils/messageviewerutil.cpp:306 utils/messageviewerutil.cpp:319
+#: utils/messageviewerutil.cpp:307 utils/messageviewerutil.cpp:320
 #, kde-format
 msgid "KMail Question"
 msgstr "Vprašanje KMail"
 
-#: utils/messageviewerutil.cpp:306
+#: utils/messageviewerutil.cpp:307
 #, kde-format
 msgctxt "@action:button"
 msgid "Keep Encryption"
 msgstr "Ohrani šifriranje"
 
-#: utils/messageviewerutil.cpp:307 utils/messageviewerutil.cpp:320
+#: utils/messageviewerutil.cpp:308 utils/messageviewerutil.cpp:321
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Keep"
 msgstr "Ne ohrani"
 
-#: utils/messageviewerutil.cpp:317
+#: utils/messageviewerutil.cpp:318
 #, kde-format
 msgid ""
 "The part %1 of the message is signed. Do you want to keep the signature when "
@@ -1636,14 +1636,14 @@ msgid ""
 msgstr ""
 "Del %1 sporočila je podpisan. Ali želite pri shranjevanju ohraniti podpis?"
 
-#: utils/messageviewerutil.cpp:319
+#: utils/messageviewerutil.cpp:320
 #, kde-format
 msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "Ohrani podpis"
 
-#: utils/messageviewerutil.cpp:383 utils/messageviewerutil.cpp:406
-#: utils/messageviewerutil.cpp:424 utils/messageviewerutil.cpp:552
+#: utils/messageviewerutil.cpp:384 utils/messageviewerutil.cpp:407
+#: utils/messageviewerutil.cpp:425 utils/messageviewerutil.cpp:553
 #, kde-kuit-format
 msgctxt "1 = file name, 2 = error string"
 msgid ""
@@ -1653,39 +1653,39 @@ msgstr ""
 "<qt>Ni bilo mogoče pisati v datoteko<br /><filename>%1</filename><br /><br />"
 "%2</qt>"
 
-#: utils/messageviewerutil.cpp:386 utils/messageviewerutil.cpp:395
+#: utils/messageviewerutil.cpp:387 utils/messageviewerutil.cpp:396
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "Napaka med shranjevanjem priloge"
 
-#: utils/messageviewerutil.cpp:394 utils/messageviewerutil.cpp:509
+#: utils/messageviewerutil.cpp:395 utils/messageviewerutil.cpp:510
 #, kde-format, kde-kuit-format
 msgctxt "1 = error string"
 msgid "Could not create temporary file: <message>%1</message>"
 msgstr "Ni bilo mogoče ustvariti začasne datoteke: <message>%1</message>"
 
-#: utils/messageviewerutil.cpp:409 utils/messageviewerutil.cpp:427
+#: utils/messageviewerutil.cpp:410 utils/messageviewerutil.cpp:428
 #, kde-format
 msgid "Error saving attachment"
 msgstr "Napaka med shranjevanjem priloge"
 
-#: utils/messageviewerutil.cpp:440
+#: utils/messageviewerutil.cpp:441
 #, kde-format
 msgid "Found no attachments to save."
 msgstr "Najdene ni bilo nobene priloge za shraniti."
 
-#: utils/messageviewerutil.cpp:456
+#: utils/messageviewerutil.cpp:457
 #, kde-format
 msgid "message"
 msgstr "sporočilo"
 
-#: utils/messageviewerutil.cpp:478
+#: utils/messageviewerutil.cpp:479
 #, kde-format
 msgid "Mailbox file (*.mbox);;All Files (*)"
 msgstr "Datoteka poštnega sporočila (*.mbox);;Vse datoteke (*)"
 
-#: utils/messageviewerutil.cpp:489
+#: utils/messageviewerutil.cpp:490
 #, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
@@ -1694,51 +1694,51 @@ msgstr[1] "Shrani sporočilo"
 msgstr[2] "Shrani sporočili"
 msgstr[3] "Shrani sporočila"
 
-#: utils/messageviewerutil.cpp:510 utils/messageviewerutil.cpp:521
-#: utils/messageviewerutil.cpp:555
+#: utils/messageviewerutil.cpp:511 utils/messageviewerutil.cpp:522
+#: utils/messageviewerutil.cpp:556
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Napaka med shranjevanjem sporočila"
 
-#: utils/messageviewerutil.cpp:519
+#: utils/messageviewerutil.cpp:520
 #, kde-format
 msgid "File %1 could not be loaded."
 msgstr "Datoteke %1 ni bilo mogoče naložiti."
 
-#: utils/messageviewerutil.cpp:519
+#: utils/messageviewerutil.cpp:520
 #, kde-format
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Napaka med nalaganjem sporočila"
 
-#: utils/messageviewerutil.cpp:521
+#: utils/messageviewerutil.cpp:522
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "Datoteke %1 ni bilo mogoče ustvariti."
 
-#: utils/messageviewerutil.cpp:528
+#: utils/messageviewerutil.cpp:529
 #, kde-format
 msgid "We cannot append message to mbox."
 msgstr "Ni bilo mogoče dodati sporočila v nabiralnik."
 
-#: utils/messageviewerutil.cpp:528 utils/messageviewerutil.cpp:535
+#: utils/messageviewerutil.cpp:529 utils/messageviewerutil.cpp:536
 #, kde-format
 msgid "Error saving message"
 msgstr "Napaka med shranjevanjem sporočila"
 
-#: utils/messageviewerutil.cpp:535
+#: utils/messageviewerutil.cpp:536
 #, kde-format
 msgid "We cannot save message."
 msgstr "Sporočila ni mogoče shraniti."
 
-#: utils/messageviewerutil.cpp:599
+#: utils/messageviewerutil.cpp:600
 #, kde-format
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "Izbrisano: %1"
 
-#: utils/messageviewerutil.cpp:610
+#: utils/messageviewerutil.cpp:611
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
@@ -1747,12 +1747,12 @@ msgstr ""
 "Zbrisali ste prilogo iz tega sporočila. Izvirne glave MIME za prilogo so "
 "bile:"
 
-#: utils/messageviewerutil.cpp:638
+#: utils/messageviewerutil.cpp:639
 #, kde-format
 msgid "Open &with %1"
 msgstr "Odpri &z %1"
 
-#: utils/messageviewerutil.cpp:640
+#: utils/messageviewerutil.cpp:641
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
@@ -1763,17 +1763,17 @@ msgstr "%1"
 msgid "body part"
 msgstr "telo sporočila"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:264
+#: viewer/mimeparttree/mimetreemodel.cpp:268
 #, kde-format
 msgid "Description"
 msgstr "Opis"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:266
+#: viewer/mimeparttree/mimetreemodel.cpp:270
 #, kde-format
 msgid "Type"
 msgstr "Vrsta"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:268
+#: viewer/mimeparttree/mimetreemodel.cpp:272
 #, kde-format
 msgid "Size"
 msgstr "Velikost"
