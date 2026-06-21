@@ -35,7 +35,7 @@ QList<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> DKIMAuthent
     for (const DKIMAuthenticationStatusInfo::AuthStatusInfo &info : lstInfo) {
         DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult convertedResult;
         convertedResult.method = MessageViewer::DKIMUtil::convertAuthenticationMethodStringToEnum(info.method);
-        const QString &infoResult = info.result;
+        const QString infoResult = info.result.toLower();
         convertedResult.infoResult = infoResult;
         if (infoResult == QLatin1StringView("none")) {
             convertedResult.status = DKIMCheckSignatureJob::DKIMStatus::EmailNotSigned;
@@ -60,7 +60,7 @@ QList<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> DKIMAuthent
                 convertedResult.auid = auid;
             }
         } else if (infoResult == QLatin1StringView("fail") || infoResult == QLatin1StringView("policy") || infoResult == QLatin1StringView("neutral")
-                   || infoResult == QLatin1StringView("permerror")) {
+                   || infoResult == QLatin1StringView("softfail") || infoResult == QLatin1StringView("permerror")) {
             convertedResult.status = DKIMCheckSignatureJob::DKIMStatus::Invalid;
             if (!info.reason.isEmpty()) {
                 convertedResult.errorStr = info.reason;
@@ -70,7 +70,6 @@ QList<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> DKIMAuthent
             if (!info.reason.isEmpty()) {
                 convertedResult.errorStr = info.reason;
             }
-            // TODO softfail
         } else {
             qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Invalid result type " << infoResult;
             continue;

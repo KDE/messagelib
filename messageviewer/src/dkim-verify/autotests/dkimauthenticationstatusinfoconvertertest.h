@@ -19,4 +19,6 @@ public:
     ~DKIMAuthenticationStatusInfoConverterTest() override = default;
 private Q_SLOTS:
     void shouldHaveDefaultValues();
+    void shouldConvertSoftFailFromAuthenticationStatus();
+    void shouldConvertSoftFailFromAuthenticationStatus_data();
 };
