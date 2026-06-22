@@ -96,7 +96,6 @@ bool DMARCInfo::parseDMARC(const QString &key)
             //         selected = true
             //       else
             //         selected = false
-            // TODO verify if it's a percentage
             bool ok = false;
             mPercentage = QStringView(elem).mid(4).toInt(&ok);
             if (!ok) {
