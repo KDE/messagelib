@@ -49,9 +49,14 @@ bool DMARCInfo::parseDMARC(const QString &key)
             //      s: strict mode
             const QString adkimValue = QStringView(elem).mid(6).toString();
             if (adkimValue != QLatin1StringView("r") && adkimValue != QLatin1StringView("s")) {
-                return false;
+                if (mVersion == "DMARC1"_L1) {
+                    mAdkim = "r"_L1;
+                } else {
+                    return false;
+                }
+            } else {
+                mAdkim = adkimValue;
             }
-            mAdkim = adkimValue;
         } else if (elem.startsWith(QLatin1StringView("p="))) {
             // p: Requested Mail Receiver policy (plain-text; REQUIRED for policy
             //                    records).  Indicates the policy to be enacted by the Receiver at

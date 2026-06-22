@@ -75,7 +75,13 @@ void DMARCInfoTest::shouldTestExtractDkimKeyRecord_data()
     info4.setPolicy(u"reject"_s);
     QTest::addRow("strict adkim") << u"v=DMARC1; adkim=s; p=reject"_s << info4 << true;
 
-    QTest::addRow("invalid adkim") << u"v=DMARC1; adkim=x; p=reject"_s << MessageViewer::DMARCInfo() << false;
+    MessageViewer::DMARCInfo info5;
+    info5.setVersion(u"DMARC1"_s);
+    info5.setAdkim(u"r"_s);
+    info5.setPolicy(u"reject"_s);
+    info5.setPercentage(-1);
+    QTest::addRow("invalid adkim") << u"v=DMARC1; adkim=x; p=reject"_s << info5 << true;
+
     QTest::addRow("invalid pct") << u"v=DMARC1; p=reject; pct=abc"_s << MessageViewer::DMARCInfo() << false;
 }
 
