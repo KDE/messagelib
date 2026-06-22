@@ -80,7 +80,7 @@ void DKIMManagerKey::loadKeys()
 
     mKeys.clear();
     for (const QString &groupName : keyGroups) {
-        KConfigGroup group = config->group(groupName);
+        const KConfigGroup group = config->group(groupName);
         const QString selector = group.readEntry(u"Selector"_s, QString());
         const QString domain = group.readEntry(u"Domain"_s, QString());
         const QString key = group.readEntry(u"Key"_s, QString());

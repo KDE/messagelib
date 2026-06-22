@@ -206,7 +206,7 @@ QString DKIMHeaderParser::headerType(const QString &str)
 {
     for (int i = mListHeaders.count() - 1; i >= 0; --i) {
         if (mListHeaders.at(i).headerName == str) {
-            DKIMHeaderParser::Header header = mListHeaders.takeAt(i);
+            const DKIMHeaderParser::Header header = mListHeaders.takeAt(i);
             const QString headerValue = header.headerValue;
             return headerValue;
         }

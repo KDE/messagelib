@@ -63,7 +63,7 @@ int DKIMManagerRules::loadRules(const QString &fileName)
     }
     int numberOfRulesAdded = 0;
     for (const QString &groupName : rulesGroups) {
-        KConfigGroup group = config->group(groupName);
+        const KConfigGroup group = config->group(groupName);
         const QStringList signedDomainIdentifier = group.readEntry(u"SignedDomainIdentifier"_s, QStringList());
         const QString from = group.readEntry(u"From"_s, QString());
         const QString domain = group.readEntry(u"Domain"_s, QString());
