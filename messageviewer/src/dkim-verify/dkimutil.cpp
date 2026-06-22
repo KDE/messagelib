@@ -132,7 +132,8 @@ QString MessageViewer::DKIMUtil::cleanString(QString str)
     const QString pattWSP = u"[ \t]"_s;
     // FWS help pattern as specified in Section 2.8 of RFC 6376
     const QString pattFWS = u"(?:"_s + pattWSP + u"*(?:\r\n)?"_s + pattWSP + QStringLiteral("+)");
-    str.replace(QRegularExpression(pattFWS), QString());
+    static QRegularExpression pattFWSRegularExpression(pattFWS);
+    str.replace(pattFWSRegularExpression, QString());
     return str;
 }
 
