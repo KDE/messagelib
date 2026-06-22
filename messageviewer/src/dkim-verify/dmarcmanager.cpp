@@ -49,6 +49,6 @@ void DMARCManager::saveNoServerKeys()
 void DMARCManager::loadNoServerKeys()
 {
     const KSharedConfig::Ptr &config = KSharedConfig::openConfig(MessageViewer::DKIMUtil::defaultConfigFileName(), KConfig::NoGlobals);
-    KConfigGroup grp(config, u"NoExistingDmarcServer"_s);
+    const KConfigGroup grp(config, u"NoExistingDmarcServer"_s);
     mNoDMarcServer = grp.readEntry("AddressList", QStringList());
 }

@@ -73,14 +73,15 @@ void DMARCPolicyJob::slotCheckSubDomain(const QList<QByteArray> &lst, const QStr
             deleteLater();
             return;
         } else {
-            DMARCPolicyJob::DMARCResult val;
-            val.mAdkim = info.adkim();
-            val.mPercentage = info.percentage();
-            val.mPolicy = info.subDomainPolicy().isEmpty() ? info.policy() : info.subDomainPolicy();
-            // RFC DMARC discovery keeps the queried RFC5322.From domain as domain,
-            // while the fallback organizational domain is the source of policy.
-            val.mDomain = emailDomain();
-            val.mSource = domainName;
+            const DMARCPolicyJob::DMARCResult val{
+                .mAdkim = info.adkim(),
+                .mPolicy = info.subDomainPolicy().isEmpty() ? info.policy() : info.subDomainPolicy(),
+                // RFC DMARC discovery keeps the queried RFC5322.From domain as domain,
+                // while the fallback organizational domain is the source of policy.
+                .mDomain = emailDomain(),
+                .mSource = domainName,
+                .mPercentage = info.percentage(),
+            };
             Q_EMIT result(val, mEmailAddress);
             deleteLater();
             return;
