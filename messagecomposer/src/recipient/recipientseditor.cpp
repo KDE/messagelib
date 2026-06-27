@@ -248,7 +248,7 @@ void RecipientsEditor::slotLineAdded(MultiplyingLine *line)
     connect(rec, &RecipientLineNG::countChanged, this, &RecipientsEditor::slotCalculateTotal);
 }
 
-void RecipientsEditor::slotLineDeleted(int pos)
+void RecipientsEditor::slotLineDeleted([[maybe_unused]] int pos)
 {
     bool atLeastOneToLine = false;
     int firstCC = -1;
