@@ -877,7 +877,7 @@ msgstr "Mostra les columnes predeterminades"
 #: core/view.cpp:786
 #, kde-format
 msgid "Display Tooltips"
-msgstr "Mostra els consells"
+msgstr "Mostra els consells d'eina"
 
 #: core/view.cpp:2253 core/view.cpp:2257
 #: core/widgets/searchmessagebybuttons.cpp:75
