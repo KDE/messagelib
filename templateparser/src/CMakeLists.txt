@@ -108,15 +108,16 @@ target_link_libraries(
     KPim6TemplateParser
     PUBLIC
         Qt::Widgets
-    PRIVATE
         KF6::Mime
+        KF6::I18n
+        KF6::TextCustomEditor
+    PRIVATE
         KPim6::MimeTreeParser
         KPim6::IdentityManagementCore
         KPim6::MessageCore
         KF6::XmlGui
         KF6::Completion
         KF6::CoreAddons
-        KF6::I18n
         KF6::Codecs
         KF6::SonnetUi
         KF6::SyntaxHighlighting
