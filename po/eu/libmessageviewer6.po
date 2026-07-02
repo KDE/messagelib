@@ -1,7 +1,7 @@
-# Translation for libmessageviewer.po to Euskara/Basque (eu).
-# Copyright (C) 2003-2024 This file is copyright:
+# Translation for libmessageviewer6.po to Euskara/Basque (eu).
+# Copyright (C) 2003-2026 This file is copyright:
 # This file is distributed under the same license as the messagelib package.
-# SPDX-FileCopyrightText: 2023, 2024, 2025 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2023, 2024, 2025, 2026 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
 #
 # Translator:
 # Marcos  <marcos@euskalgnu.org>, 2003, 2004, 2005.
@@ -9,7 +9,7 @@
 # Marcos <marcos@euskalgnu.org>, 2005.
 # marcos <marcos@euskalgnu.org>, 2006.
 # Iñaki Larrañaga Murgoitio <dooteo@euskalgnu.org>, 2007.
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2021, 2022, 2023, 2024, 2025.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2021, 2022, 2023, 2024, 2025, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
