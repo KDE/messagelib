@@ -222,3 +222,21 @@ install(
     COMPONENT Devel
 )
 ecm_generate_qdoc(KPim6TemplateParser templateparser.qdocconf)
+
+ecm_add_installed_library_check(KPim6TemplateParser
+    PACKAGE_NAME "KPim6TemplateParser"
+    PACKAGE_VERSION ${TEMPLATEPARSER_VERSION}
+    PACKAGE_TARGET_NAMESPACE "KPim6::"
+)
+
+ecm_installed_library_check_include_strings(KPim6TemplateParser
+    HEADERS
+    ${TemplateParser_HEADERS}
+    PREFIX templateparser
+)
+
+ecm_installed_library_check_include_strings(KPim6TemplateParser
+   HEADERS
+   ${TemplateParser_CamelCase_HEADERS}
+    PREFIX TemplateParser
+)

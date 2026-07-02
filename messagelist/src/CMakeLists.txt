@@ -304,3 +304,29 @@ install(
     COMPONENT Devel
 )
 ecm_generate_qdoc(KPim6MessageList messagelist.qdocconf)
+
+ecm_add_installed_library_check(KPim6MessageList
+    PACKAGE_NAME "KPim6MessageList"
+    PACKAGE_VERSION ${MESSAGELIST_VERSION}
+    PACKAGE_TARGET_NAMESPACE "KPim6::"
+)
+
+ecm_installed_library_check_include_strings(KPim6MessageList
+    HEADERS
+    ${MessageList_HEADERS}
+    ${MessageList_widgets_HEADERS}
+    ${MessageList_core_HEADERS}
+    ${MessageList_util_HEADERS}
+
+    PREFIX messagelist
+)
+
+ecm_installed_library_check_include_strings(KPim6MessageList
+    HEADERS
+    ${MessageList_Camelcasewidgets_HEADERS}
+    ${MessageList_CamelCase_HEADERS}
+    ${MessageList_Camelcasecore_HEADERS}
+    ${MessageList_Camelcaseutil_HEADERS}
+
+    PREFIX MessageList
+)

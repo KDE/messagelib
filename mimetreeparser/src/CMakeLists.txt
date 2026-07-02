@@ -244,3 +244,27 @@ install(
     COMPONENT Devel
 )
 ecm_generate_qdoc(KPim6MimeTreeParser mimetreeparser.qdocconf)
+
+ecm_add_installed_library_check(KPim6MimeTreeParser
+    PACKAGE_NAME "KPim6MimeTreeParser"
+    PACKAGE_VERSION ${MIMETREEPARSER_VERSION}
+    PACKAGE_TARGET_NAMESPACE "KPim6::"
+)
+
+ecm_installed_library_check_include_strings(KPim6MimeTreeParser
+    HEADERS
+    ${MimeTreeParser_utils_HEADERS}
+    ${MimeTreeParser_interfaces_HEADERS}
+    ${MimeTreeParser_main_HEADERS}
+    ${MimeTreeParser_temporaryfile_HEADERS}
+    PREFIX mimetreeparser
+)
+
+ecm_installed_library_check_include_strings(KPim6MimeTreeParser
+   HEADERS
+   ${MimeTreeParser_Camelcaseutils_HEADERS}
+   ${MimeTreeParser_Camelcaseinterfaces_HEADERS}
+   ${MimeTreeParser_Camelcasemain_HEADERS}
+   ${MimeTreeParser_Camelcasetemporaryfile_HEADERS}
+    PREFIX MimeTreeParser
+)

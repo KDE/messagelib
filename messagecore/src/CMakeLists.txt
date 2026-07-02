@@ -256,3 +256,31 @@ install(
     COMPONENT Devel
 )
 ecm_generate_qdoc(KPim6MessageCore messagecore.qdocconf)
+
+ecm_add_installed_library_check(KPim6MessageCore
+    PACKAGE_NAME "KPim6MessageComposer"
+    PACKAGE_VERSION ${MESSAGECORE_VERSION}
+    PACKAGE_TARGET_NAMESPACE "KPim6::"
+)
+
+ecm_installed_library_check_include_strings(KPim6MessageCore
+    HEADERS
+    ${MessageCore_autocrypt_HEADERS}
+    ${MessageCore_settings_HEADERS}
+    ${MessageCore_utils_HEADERS}
+    ${CMAKE_CURRENT_BINARY_DIR}/messagecore_export.h
+    ${CMAKE_CURRENT_BINARY_DIR}/globalsettings_messagecore.h
+    ${MessageCore_attachment_HEADERS}
+    ${MessageCore_misc_HEADERS}
+    PREFIX messagecore
+)
+
+ecm_installed_library_check_include_strings(KPim6MessageCore
+   HEADERS
+   ${MessageCore_Camelcaseautocrypt_HEADERS}
+   ${MessageCore_Camelcasesettings_HEADERS}
+   ${MessageCore_Camelcaseutils_HEADERS}
+   ${MessageCore_Camelcaseattachment_HEADERS}
+   ${MessageCore_Camelcasemisc_HEADERS}
+    PREFIX MessageCore
+)

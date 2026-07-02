@@ -391,3 +391,51 @@ install(
     COMPONENT Devel
 )
 ecm_generate_qdoc(KPim6WebEngineViewer webengineviewer.qdocconf)
+
+ecm_add_installed_library_check(KPim6WebEngineViewer
+    PACKAGE_NAME "KPim6WebEngineViewer"
+    PACKAGE_VERSION ${WEBENGINEVIEWER_VERSION}
+    PACKAGE_TARGET_NAMESPACE "KPim6::"
+)
+
+ecm_installed_library_check_version_preprocessor_macros(KPim6WebEngineViewer
+    PREFIX WEBENGINEVIEWER
+    VERSION ${WEBENGINEVIEWER_VERSION}
+    SILENT
+)
+
+ecm_installed_library_check_include_strings(KPim6WebEngineViewer
+    HEADERS
+    ${WebEngineViewer_submittedformwidget_HEADERS}
+    ${WebEngineViewer_developertool_HEADERS}
+    ${WebEngineViewer_tracking_HEADERS}
+    ${WebEngineViewer_blockexternalresourcesurlinterceptor_HEADERS}
+    ${WebEngineViewer_loadexternalreferencesurlinterceptor_HEADERS}
+    ${WebEngineViewer_blocktrackingurlinterceptor_HEADERS}
+    ${WebEngineViewer_webengine_checkurl_HEADERS}
+    ${WebEngineViewer_webengine_accesskey_HEADERS}
+    ${WebEngineViewer_findbar_HEADERS}
+    ${WebEngineViewer_webengine_urlinterceptor_HEADERS}
+    ${WebEngineViewer_webengine_manager_HEADERS}
+    ${WebEngineViewer_webengine_misc_HEADERS}
+    ${WebEngineViewer_widgets_HEADERS}
+    PREFIX webengineviewer
+)
+
+ecm_installed_library_check_include_strings(KPim6WebEngineViewer
+   HEADERS
+   ${WebEngineViewer_Camelsubmittedformwidget_HEADERS}
+   ${WebEngineViewer_Cameldevelopertool_HEADERS}
+   ${WebEngineViewer_Cameltracking_HEADERS}
+   ${WebEngineViewer_Camelblockexternalresourcesurlinterceptor_HEADERS}
+   ${WebEngineViewer_Camelloadexternalreferencesurlinterceptor_HEADERS}
+   ${WebEngineViewer_Camelblocktrackingurlinterceptor_HEADERS}
+   ${WebEngineViewer_Camelcasewebengine_checkurl_HEADERS}
+   ${WebEngineViewer_Camelcasewebengine_accesskey_HEADERS}
+   ${WebEngineViewer_Camelcasewebengine_urlinterceptor_HEADERS}
+   ${WebEngineViewer_Camelcasewebengine_manager_HEADERS}
+   ${WebEngineViewer_Camelcasewebengine_misc_HEADERS}
+   ${WebEngineViewer_Camelfindbar_HEADERS}
+   ${WebEngineViewer_Camelcasewidgets_HEADERS}
+    PREFIX WebEngineViewer
+)

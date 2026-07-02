@@ -419,6 +419,7 @@ target_link_libraries(
         KPim6::Libkleo
         KPim6::MimeTreeParser
         KF6::Service
+        Qt::Widgets
     PRIVATE
         KF6::SyntaxHighlighting
         KF6::ItemViews

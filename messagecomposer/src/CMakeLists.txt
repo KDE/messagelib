@@ -696,3 +696,69 @@ install(
     COMPONENT Devel
 )
 ecm_generate_qdoc(KPim6MessageComposer messagecomposer.qdocconf)
+
+ecm_add_installed_library_check(KPim6MessageComposer
+    PACKAGE_NAME "KPim6MessageComposer"
+    PACKAGE_VERSION ${MESSAGECOMPOSER_VERSION}
+    PACKAGE_TARGET_NAMESPACE "KPim6::"
+)
+
+ecm_installed_library_check_include_strings(KPim6MessageComposer
+    HEADERS
+    ${MessageComposer_mdn_HEADERS}
+    ${MessageComposer_PluginEditorBase_HEADERS}
+    ${MessageComposer_snippet_HEADERS}
+    ${MessageComposer_plugineditorconverttext_HEADERS}
+    ${MessageComposer_plugineditorinit_HEADERS}
+    ${MessageComposer_statusbarwidget_HEADERS}
+    ${MessageComposer_composer_HEADERS}
+    ${MessageComposer_composerng_HEADERS}
+    ${MessageComposer_contactpreference_HEADERS}
+    ${MessageComposer_sender_HEADERS}
+    ${MessageComposer_utils_HEADERS}
+    ${MessageComposer_helper_HEADERS}
+    ${MessageComposer_settings_HEADERS}
+    ${MessageComposer_part_HEADERS}
+    ${MessageComposer_followupreminder_HEADERS}
+    ${MessageComposer_recipient_HEADERS}
+    ${MessageComposer_imagescaling_HEADERS}
+    ${MessageComposer_sendlater_HEADERS}
+    ${MessageComposer_attachement_HEADERS}
+    ${MessageComposer_job_HEADERS}
+    ${MessageComposer_plugineditor_HEADERS}
+    ${MessageComposer_plugineditorcheckbeforesend_HEADERS}
+    ${MessageComposer_plugineditorgrammar_HEADERS}
+    ${MessageComposer_draftstatus_HEADERS}
+
+    PREFIX messagecomposer
+)
+
+ecm_installed_library_check_include_strings(KPim6MessageComposer
+    HEADERS
+    ${MessageComposer_CamelcaseMdn_HEADERS}
+    ${MessageComposer_CamelPluginEditorBase_HEADERS}
+    ${MessageComposer_Camelsnippet_HEADERS}
+    ${MessageComposer_Camelplugineditorconverttext_HEADERS}
+    ${MessageComposer_Camelplugineditorinit_HEADERS}
+    ${MessageComposer_Camelplugineditorcheckbeforesend_HEADERS}
+    ${MessageComposer_Camelcasecomposer_HEADERS}
+    ${MessageComposer_Camelcasecomposerng_HEADERS}
+    ${MessageComposer_Camelcasecontactpreference_HEADERS}
+    ${MessageComposer_Camelcasesender_HEADERS}
+    ${MessageComposer_Camelcaseutils_HEADERS}
+    ${MessageComposer_Camelcasehelper_HEADERS}
+    ${MessageComposer_Camelcasesettings_HEADERS}
+    ${MessageComposer_Camelcasepart_HEADERS}
+    ${MessageComposer_Camelcasefollowupreminder_HEADERS}
+    ${MessageComposer_Camelcaserecipient_HEADERS}
+    ${MessageComposer_Camelcaseimagescaling_HEADERS}
+    ${MessageComposer_Camelcasesendlater_HEADERS}
+    ${MessageComposer_Camelcasejob_HEADERS}
+    ${MessageComposer_Camelcaseattachement_HEADERS}
+    ${MessageComposer_Camelplugineditor_HEADERS}
+    ${MessageComposer_Camelplugineditorgrammar_HEADERS}
+    ${MessageComposer_Camelstatusbarwidget_HEADERS}
+    ${MessageComposer_Camelcasedraftstatus_HEADERS}
+
+    PREFIX MessageComposer
+)
