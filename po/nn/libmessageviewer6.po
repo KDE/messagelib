@@ -2107,12 +2107,12 @@ msgstr "Rull nedover i melding (meir)"
 #: viewer/viewer_p.cpp:1626
 #, kde-format
 msgid "Toggle HTML Display Mode"
-msgstr "Slå av/på vising av Månen"
+msgstr "Slå på/av vising av Månen"
 
 #: viewer/viewer_p.cpp:1630
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
-msgstr "Slå av/på vising av horisontlinja"
+msgstr "Slå på/av vising av horisontlinja"
 
 #: viewer/viewer_p.cpp:1633
 #, kde-format
