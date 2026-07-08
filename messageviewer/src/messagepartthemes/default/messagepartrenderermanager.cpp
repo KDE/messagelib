@@ -112,8 +112,15 @@ MessagePartRendererManager::~MessagePartRendererManager()
 
 MessagePartRendererManager *MessagePartRendererManager::self()
 {
-    static MessagePartRendererManager s_self;
-    return &s_self;
+    static MessagePartRendererManager *s_self = nullptr;
+    if (!s_self) {
+        s_self = new MessagePartRendererManager;
+        connect(QCoreApplication::instance(), &QCoreApplication::aboutToQuit, s_self, []() {
+            delete s_self;
+            s_self = nullptr;
+        });
+    }
+    return s_self;
 }
 
 void MessagePartRendererManager::initializeRenderer()
