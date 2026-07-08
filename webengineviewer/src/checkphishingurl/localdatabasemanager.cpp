@@ -79,7 +79,9 @@ void LocalDataBaseManager::checkUrl(const QUrl &url)
         Q_EMIT checkUrlFinished(url, WebEngineViewer::CheckPhishingUrlUtil::Unknown);
     }
     if (d->mFile.checkFileChanged()) {
-        d->mFile.reload();
+        if (!d->mFile.reload()) {
+            qCWarning(WEBENGINEVIEWER_LOG) << "Impossible to reload file";
+        }
     }
 }
 

@@ -52,7 +52,7 @@ static void testHeaderFile(const QString &data, const QString &absolutePath, con
 
     {
         QFile f(outName);
-        f.open(QIODevice::WriteOnly);
+        QVERIFY(f.open(QIODevice::WriteOnly));
         f.write(header.toUtf8());
         f.close();
     }
