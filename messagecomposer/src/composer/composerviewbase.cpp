@@ -1134,23 +1134,25 @@ void ComposerViewBase::queueMessage(const std::shared_ptr<KMime::Message> &messa
     }
 
     MailTransport::Transport *transport = MailTransport::TransportManager::self()->transportById(infoPart->transportId());
+    // Pass the envelope addresses on as UTF-8. Whether the domain travels as an
+    // a-label or the whole address needs SMTPUTF8 depends on the server, so that
+    // decision belongs to the transport (ksmtp), which alone knows its EHLO reply.
     if (transport && transport->specifySenderOverwriteAddress()) {
-        qjob->addressAttribute().setFrom(
-            KEmailAddress::extractEmailAddress(KEmailAddress::normalizeAddressesAndEncodeIdn(transport->senderOverwriteAddress())));
+        qjob->addressAttribute().setFrom(KEmailAddress::extractEmailAddress(transport->senderOverwriteAddress()));
     } else {
-        qjob->addressAttribute().setFrom(KEmailAddress::extractEmailAddress(KEmailAddress::normalizeAddressesAndEncodeIdn(infoPart->from())));
+        qjob->addressAttribute().setFrom(KEmailAddress::extractEmailAddress(infoPart->from()));
     }
     // if this header is not empty, it contains the real recipient of the message, either the primary or one of the
     //  secondary recipients. so we set that to the transport job, while leaving the message itself alone.
     if (KMime::Headers::Base *realTo = message->headerByType("X-KMail-EncBccRecipients")) {
-        qjob->addressAttribute().setTo(MessageComposer::Util::cleanUpEmailListAndEncoding(realTo->asUnicodeString().split(u'%')));
+        qjob->addressAttribute().setTo(MessageComposer::Util::cleanEmailList(realTo->asUnicodeString().split(u'%')));
         message->removeHeader("X-KMail-EncBccRecipients");
         message->assemble();
         qCDebug(MESSAGECOMPOSER_LOG) << "sending with-bcc encr mail to a/n recipient:" << qjob->addressAttribute().to();
     } else {
-        qjob->addressAttribute().setTo(MessageComposer::Util::cleanUpEmailListAndEncoding(infoPart->to()));
-        qjob->addressAttribute().setCc(MessageComposer::Util::cleanUpEmailListAndEncoding(infoPart->cc()));
-        qjob->addressAttribute().setBcc(MessageComposer::Util::cleanUpEmailListAndEncoding(infoPart->bcc()));
+        qjob->addressAttribute().setTo(MessageComposer::Util::cleanEmailList(infoPart->to()));
+        qjob->addressAttribute().setCc(MessageComposer::Util::cleanEmailList(infoPart->cc()));
+        qjob->addressAttribute().setBcc(MessageComposer::Util::cleanEmailList(infoPart->bcc()));
     }
     if (m_requestDeleveryConfirmation) {
         qjob->addressAttribute().setDeliveryStatusNotification(true);

@@ -187,11 +187,12 @@ void AkonadiSender::sendOrQueueMessage(const std::shared_ptr<KMime::Message> &me
         return;
     }
 
+    // Envelope addresses stay UTF-8; the transport (ksmtp) decides on a-label
+    // versus SMTPUTF8 once it knows what the server announced in its EHLO reply.
     if (transport && transport->specifySenderOverwriteAddress()) {
-        qjob->addressAttribute().setFrom(
-            KEmailAddress::extractEmailAddress(KEmailAddress::normalizeAddressesAndEncodeIdn(transport->senderOverwriteAddress())));
+        qjob->addressAttribute().setFrom(KEmailAddress::extractEmailAddress(transport->senderOverwriteAddress()));
     } else {
-        qjob->addressAttribute().setFrom(KEmailAddress::extractEmailAddress(KEmailAddress::normalizeAddressesAndEncodeIdn(message->from()->asUnicodeString())));
+        qjob->addressAttribute().setFrom(KEmailAddress::extractEmailAddress(message->from()->asUnicodeString()));
     }
 
     MessageComposer::Util::addSendReplyForwardAction(message, qjob);

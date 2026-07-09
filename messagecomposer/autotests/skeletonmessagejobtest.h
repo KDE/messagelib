@@ -16,5 +16,7 @@ private Q_SLOTS:
     void testSubject();
     void testAddresses_data();
     void testAddresses();
+    void testEaiAddresses_data();
+    void testEaiAddresses();
     void testMessageID();
 };

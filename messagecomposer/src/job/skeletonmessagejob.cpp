@@ -18,7 +18,6 @@ using namespace Qt::Literals::StringLiterals;
 
 #include "messagecomposer_debug.h"
 
-#include <KEmailAddress>
 #include <KMime/Message>
 
 using namespace MessageComposer;
@@ -49,12 +48,12 @@ void SkeletonMessageJobPrivate::doStart()
     message = std::make_unique<KMime::Message>();
 
     KMime::Types::Mailbox fromAddress;
-    fromAddress.fromUnicodeString(KEmailAddress::normalizeAddressesAndEncodeIdn(infoPart->from()));
+    fromAddress.fromUnicodeString(infoPart->from());
 
     // From:
     {
         auto from = std::make_unique<KMime::Headers::From>();
-        from->fromUnicodeString(QString::fromUtf8(fromAddress.as7BitString("utf-8")));
+        from->from7BitString(fromAddress.as7BitString("utf-8"));
         message->setHeader(std::move(from));
     }
 
@@ -65,13 +64,13 @@ void SkeletonMessageJobPrivate::doStart()
         const QStringList lstTo = infoPart->to();
         for (const QString &a : lstTo) {
             KMime::Types::Mailbox address;
-            address.fromUnicodeString(KEmailAddress::normalizeAddressesAndEncodeIdn(a));
+            address.fromUnicodeString(a);
             if (!sTo.isEmpty()) {
                 sTo.append(",");
             }
             sTo.append(address.as7BitString("utf-8"));
         }
-        to->fromUnicodeString(QString::fromUtf8(sTo));
+        to->from7BitString(sTo);
         message->setHeader(std::move(to));
     }
 
@@ -82,13 +81,13 @@ void SkeletonMessageJobPrivate::doStart()
         QByteArray sReplyTo;
         for (const QString &a : lstReplyTo) {
             KMime::Types::Mailbox address;
-            address.fromUnicodeString(KEmailAddress::normalizeAddressesAndEncodeIdn(a));
+            address.fromUnicodeString(a);
             if (!sReplyTo.isEmpty()) {
                 sReplyTo.append(",");
             }
             sReplyTo.append(address.as7BitString("utf-8"));
         }
-        replyTo->fromUnicodeString(QString::fromUtf8(sReplyTo));
+        replyTo->from7BitString(sReplyTo);
         message->setHeader(std::move(replyTo));
     }
 
@@ -99,13 +98,13 @@ void SkeletonMessageJobPrivate::doStart()
         const QStringList lstCc = infoPart->cc();
         for (const QString &a : lstCc) {
             KMime::Types::Mailbox address;
-            address.fromUnicodeString(KEmailAddress::normalizeAddressesAndEncodeIdn(a));
+            address.fromUnicodeString(a);
             if (!sCc.isEmpty()) {
                 sCc.append(",");
             }
             sCc.append(address.as7BitString("utf-8"));
         }
-        cc->fromUnicodeString(QString::fromUtf8(sCc));
+        cc->from7BitString(sCc);
         message->setHeader(std::move(cc));
     }
 
@@ -116,13 +115,13 @@ void SkeletonMessageJobPrivate::doStart()
         const QStringList lstBcc = infoPart->bcc();
         for (const QString &a : lstBcc) {
             KMime::Types::Mailbox address;
-            address.fromUnicodeString(KEmailAddress::normalizeAddressesAndEncodeIdn(a));
+            address.fromUnicodeString(a);
             if (!sBcc.isEmpty()) {
                 sBcc.append(",");
             }
             sBcc.append(address.as7BitString("utf-8"));
         }
-        bcc->fromUnicodeString(QString::fromUtf8(sBcc));
+        bcc->from7BitString(sBcc);
         message->setHeader(std::move(bcc));
     }
 
@@ -157,9 +156,18 @@ void SkeletonMessageJobPrivate::doStart()
 
     // Message-ID
     {
-        const auto fromParts = infoPart->from();
         auto messageId = std::make_unique<KMime::Headers::MessageID>();
-        messageId->generate(fromAddress.addrSpec().domain.toUtf8());
+        // The address headers keep the domain as UTF-8, but a
+        // Message-ID is machine-read and may be copied into later,
+        // ASCII-only messages, so it's best to stay with ASCII
+        // here. Needing SMTPUTF8 for an address is one thing, needing
+        // it just for a message-id quite another.
+        const QString domain = fromAddress.addrSpec().domain;
+        QByteArray idnDomain = QUrl::toAce(domain);
+        if (idnDomain.isEmpty()) {
+            idnDomain = domain.toUtf8();
+        }
+        messageId->generate(idnDomain);
         message->setHeader(std::move(messageId));
     }
     // Extras

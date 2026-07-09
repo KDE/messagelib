@@ -9,7 +9,9 @@
 #include <QDebug>
 #include <QTest>
 
+#include <KMime/Headers>
 #include <KMime/Message>
+#include <KMime/Types>
 
 #include <MessageComposer/ComposerJob>
 #include <MessageComposer/GlobalPart>
@@ -188,6 +190,57 @@ void SkeletonMessageJobTest::testAddresses()
         }
         QVERIFY(bcc.isEmpty());
     }
+}
+
+void SkeletonMessageJobTest::testEaiAddresses_data()
+{
+    QTest::addColumn<QString>("input");
+    QTest::addColumn<QString>("expectedLocalPart");
+    QTest::addColumn<QString>("expectedDomain");
+
+    // A fully internationalised address (RFC6531) must survive composition as
+    // raw UTF-8: the localpart may not become an RFC2047 encoded-word (those
+    // are forbidden inside an addr-spec), and the domain may not become an
+    // xn-- a-label (that is a DNS wire form, not for a header a human reads).
+    QTest::newRow("localpart and domain") << u"Grå katt <grå@grå.org>"_s << u"grå"_s << u"grå.org"_s;
+    QTest::newRow("localpart only") << u"Gøril <gøril@example.com>"_s << u"gøril"_s << u"example.com"_s;
+    QTest::newRow("domain only") << u"Arnt <arnt@grå.org>"_s << u"arnt"_s << u"grå.org"_s;
+}
+
+void SkeletonMessageJobTest::testEaiAddresses()
+{
+    ComposerJob composerJob;
+    InfoPart *infoPart = composerJob.infoPart();
+    GlobalPart *globalPart = composerJob.globalPart();
+    Q_ASSERT(infoPart);
+
+    QFETCH(QString, input);
+    QFETCH(QString, expectedLocalPart);
+    QFETCH(QString, expectedDomain);
+
+    infoPart->setFrom(input);
+    infoPart->setTo(QStringList{input});
+    auto sjob = new SkeletonMessageJob(infoPart, globalPart, &composerJob);
+    QVERIFY(sjob->exec());
+    const auto message = sjob->takeMessage();
+
+    const QByteArray wantAddr = '<' + (expectedLocalPart + u'@' + expectedDomain).toUtf8() + '>';
+    const auto check = [&](const QList<KMime::Types::Mailbox> &mailboxes, const QByteArray &raw) {
+        QCOMPARE(mailboxes.size(), 1);
+        const auto addrSpec = mailboxes.first().addrSpec();
+        QCOMPARE(addrSpec.localPart, expectedLocalPart);
+        QCOMPARE(addrSpec.domain, expectedDomain);
+        // And the same thing as bytes on the wire: the addr-spec verbatim in
+        // UTF-8, with no a-label anywhere in the header.
+        QVERIFY(!raw.contains("xn--"));
+        QVERIFY(raw.contains(wantAddr));
+    };
+
+    QVERIFY(message->from(KMime::CreatePolicy::DontCreate));
+    check(message->from()->mailboxes(), message->from()->as7BitString());
+
+    QVERIFY(message->to(KMime::CreatePolicy::DontCreate));
+    check(message->to()->mailboxes(), message->to()->as7BitString());
 }
 
 void SkeletonMessageJobTest::testMessageID()
