@@ -386,6 +386,7 @@ public:
      * Please note that this is NOT set for later jobs: only for the first (possibly huge) one.
      */
     bool mLoading;
+    bool mIsFullFilterRefresh = false;
 
     /**
      * Pre-selection is the action of automatically selecting a message just after the folder

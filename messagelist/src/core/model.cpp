@@ -412,12 +412,16 @@ void ModelPrivate::slotApplyFilter()
 
     QModelIndex idx; // invalid
 
+    mIsFullFilterRefresh = true;
+
     QApplication::setOverrideCursor(Qt::WaitCursor);
     for (const auto child : std::as_const(*childList)) {
         applyFilterToSubtree(child, idx);
     }
 
     QApplication::restoreOverrideCursor();
+
+    mIsFullFilterRefresh = false;
 }
 
 bool ModelPrivate::applyFilterToSubtree(Item *item, const QModelIndex &parentIndex)
@@ -463,7 +467,9 @@ bool ModelPrivate::applyFilterToSubtree(Item *item, const QModelIndex &parentInd
     }
 
     if (item->type() == Item::Message) {
-        if (mFilter->match(static_cast<MessageItem *>(item))) {
+        const bool matches = mFilter->match(static_cast<MessageItem *>(item));
+        const bool isAlreadyVisible = !mView->isRowHidden(thisIndex.row(), parentIndex);
+        if (matches || (!mIsFullFilterRefresh && isAlreadyVisible)) {
             mView->setRowHidden(thisIndex.row(), parentIndex, false);
             return true;
         }
