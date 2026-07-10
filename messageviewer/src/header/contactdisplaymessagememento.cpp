@@ -51,6 +51,7 @@ void ContactDisplayMessageMemento::slotSearchJobFinished(KJob *job)
 
     const int contactSize(searchJob->contacts().size());
     if (contactSize >= 1) {
+        bool useGravatar = true;
         if (contactSize > 1) {
             qCWarning(MESSAGEVIEWER_VIEWER_FORMAT_LOG) << " more than 1 contact was found we return first contact";
         }
@@ -60,6 +61,7 @@ void ContactDisplayMessageMemento::slotSearchJobFinished(KJob *job)
         if (searchPhoto(searchJob->contacts())) {
             // We have a data raw => we can update message
             if (mPhoto.isIntern()) {
+                useGravatar = false;
                 Q_EMIT update(MimeTreeParser::Delayed);
             } else {
                 const QUrl url = QUrl::fromUserInput(mPhoto.url(), QString(), QUrl::AssumeLocalFile);
@@ -84,26 +86,27 @@ void ContactDisplayMessageMemento::slotSearchJobFinished(KJob *job)
                         }
                     }
                     if (ok) {
+                        useGravatar = false;
                         mImageFromUrl = image;
                         Q_EMIT update(MimeTreeParser::Delayed);
                     }
                 }
             }
         }
-    }
-    if (mPhoto.isEmpty() && mPhoto.url().isEmpty()) {
-        // No url, no photo => search gravatar
-        if (Gravatar::GravatarSettings::self()->gravatarSupportEnabled()) {
-            auto resolvUrljob = new Gravatar::GravatarResolvUrlJob(this);
-            resolvUrljob->setEmail(mEmailAddress);
-            resolvUrljob->setUseDefaultPixmap(Gravatar::GravatarSettings::self()->gravatarUseDefaultImage());
-            resolvUrljob->setFallbackGravatar(Gravatar::GravatarSettings::self()->fallbackToGravatar());
-            resolvUrljob->setUseLibravatar(Gravatar::GravatarSettings::self()->libravatarSupportEnabled());
-            if (resolvUrljob->canStart()) {
-                connect(resolvUrljob, &Gravatar::GravatarResolvUrlJob::finished, this, &ContactDisplayMessageMemento::slotGravatarResolvUrlFinished);
-                resolvUrljob->start();
-            } else {
-                resolvUrljob->deleteLater();
+        if (useGravatar) {
+            // No url, no photo => search gravatar
+            if (Gravatar::GravatarSettings::self()->gravatarSupportEnabled()) {
+                auto resolvUrljob = new Gravatar::GravatarResolvUrlJob(this);
+                resolvUrljob->setEmail(mEmailAddress);
+                resolvUrljob->setUseDefaultPixmap(Gravatar::GravatarSettings::self()->gravatarUseDefaultImage());
+                resolvUrljob->setFallbackGravatar(Gravatar::GravatarSettings::self()->fallbackToGravatar());
+                resolvUrljob->setUseLibravatar(Gravatar::GravatarSettings::self()->libravatarSupportEnabled());
+                if (resolvUrljob->canStart()) {
+                    connect(resolvUrljob, &Gravatar::GravatarResolvUrlJob::finished, this, &ContactDisplayMessageMemento::slotGravatarResolvUrlFinished);
+                    resolvUrljob->start();
+                } else {
+                    resolvUrljob->deleteLater();
+                }
             }
         }
     }
