@@ -32,7 +32,11 @@ class MESSAGECOMPOSER_EXPORT RichTextComposerNg : public KPIMTextEdit::RichTextC
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit RichTextComposerNg(QWidget *parent = nullptr);
+    /*!
+     */
     ~RichTextComposerNg() override;
     /*!
      */

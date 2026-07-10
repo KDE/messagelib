@@ -22,6 +22,8 @@ namespace MessageComposer
 class MESSAGECOMPOSER_EXPORT SendLaterInfo
 {
 public:
+    /*!
+     */
     explicit SendLaterInfo() = default;
 
     enum RecurrenceUnit : uint8_t {

@@ -30,8 +30,12 @@ public:
         CallFailed,
     };
 
+    /*!
+     */
     explicit SendLaterJob(QObject *parent = nullptr);
 
+    /*!
+     */
     void start() final;
 
 protected:

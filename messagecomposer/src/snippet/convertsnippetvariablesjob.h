@@ -22,7 +22,11 @@ class MESSAGECOMPOSER_EXPORT ConvertSnippetVariablesJob : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit ConvertSnippetVariablesJob(QObject *parent = nullptr);
+    /*!
+     */
     ~ConvertSnippetVariablesJob() override;
     /*! \brief Starts the conversion of snippet variables. */
     void start();
@@ -50,6 +54,8 @@ public:
     /*! \brief Returns whether the job can be started. */
     [[nodiscard]] bool canStart() const;
 Q_SIGNALS:
+    /*!
+     */
     void textConverted(const QString &str);
 
 private:

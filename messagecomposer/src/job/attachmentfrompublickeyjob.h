@@ -35,9 +35,9 @@ public:
     /*!
      */
     [[nodiscard]] QString fingerprint() const;
-    void setFingerprint(const QString &fingerprint);
     /*!
      */
+    void setFingerprint(const QString &fingerprint);
 
 protected Q_SLOTS:
     /*!

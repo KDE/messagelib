@@ -46,7 +46,6 @@ public:
     void setSkeletonMessage(KMime::Message *skeletonMessage);
     /*!
      */
-
     void setGnupgHome(const QString &path);
 
     /*!

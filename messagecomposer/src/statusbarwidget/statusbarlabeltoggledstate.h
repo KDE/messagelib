@@ -42,9 +42,13 @@ public:
     */
     void setStateString(const QString &toggled, const QString &untoggled);
 Q_SIGNALS:
+    /*!
+     */
     void toggleModeChanged(bool state);
 
 protected:
+    /*!
+     */
     void mousePressEvent(QMouseEvent *ev) override;
 
 private:

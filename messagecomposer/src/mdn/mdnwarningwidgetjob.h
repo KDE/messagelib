@@ -24,7 +24,11 @@ class MESSAGECOMPOSER_EXPORT MDNWarningWidgetJob : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit MDNWarningWidgetJob(QObject *parent = nullptr);
+    /*!
+     */
     ~MDNWarningWidgetJob() override;
 
     /*!

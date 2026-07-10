@@ -39,7 +39,11 @@ class MESSAGECOMPOSER_EXPORT SignatureController : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit SignatureController(QObject *parent = nullptr);
+    /*!
+     */
     ~SignatureController() override;
 
     /*!

@@ -38,10 +38,16 @@ public:
         bool canDeny = false;
     };
 
+    /*!
+     */
     [[nodiscard]] MDNSendingModeInfo checkAndSetMDNInfo(const Akonadi::Item &item, KMime::MDN::DispositionType d, bool forceSend = false);
 
+    /*!
+     */
     [[nodiscard]] static Akonadi::MDNStateAttribute::MDNSentState dispositionToSentState(KMime::MDN::DispositionType d);
 
+    /*!
+     */
     [[nodiscard]] MDNMessateInfo mdnMessageText(const char *what);
 
 private:

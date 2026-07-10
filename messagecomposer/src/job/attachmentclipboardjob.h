@@ -22,10 +22,16 @@ class MESSAGECOMPOSER_EXPORT AttachmentClipBoardJob : public MessageCore::Attach
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit AttachmentClipBoardJob(QObject *parent = nullptr);
+    /*!
+     */
     ~AttachmentClipBoardJob() override;
 
 protected Q_SLOTS:
+    /*!
+     */
     void doStart() override;
 
 private:

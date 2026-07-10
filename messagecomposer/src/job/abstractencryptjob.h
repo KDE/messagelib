@@ -21,6 +21,8 @@ namespace MessageComposer
 class AbstractEncryptJob
 {
 public:
+    /*!
+     */
     virtual ~AbstractEncryptJob() = default;
 
     /**
@@ -33,7 +35,11 @@ public:
      */
     virtual void setRecipients(const QStringList &rec) = 0;
 
+    /*!
+     */
     virtual std::vector<GpgME::Key> encryptionKeys() const = 0;
+    /*!
+     */
     virtual QStringList recipients() const = 0;
 };
 }

@@ -23,12 +23,18 @@ class MESSAGECOMPOSER_EXPORT ConvertSnippetVariableMenu : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit ConvertSnippetVariableMenu(bool onlyMenuForCustomizeAttachmentFileName, QWidget *parentWidget, QObject *parent = nullptr);
+    /*!
+     */
     ~ConvertSnippetVariableMenu() override;
     /*! \brief Returns the menu containing snippet variables. */
     [[nodiscard]] QMenu *menu() const;
 
 Q_SIGNALS:
+    /*!
+     */
     void insertVariable(MessageComposer::ConvertSnippetVariablesUtil::VariableType type);
 
 private:
