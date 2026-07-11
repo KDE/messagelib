@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/messagelib/libmessageviewer6.pot\n"
-"X-Crowdin-File-ID: 49106\n"
+"X-Crowdin-File: /kf6-stable/messages/messagelib/libmessageviewer6.pot\n"
+"X-Crowdin-File-ID: 50334\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
