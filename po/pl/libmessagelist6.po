@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-20 00:46+0000\n"
+"POT-Creation-Date: 2026-07-12 02:38+0000\n"
 "PO-Revision-Date: 2025-11-08 09:38+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
@@ -502,23 +502,23 @@ msgstr "Cztery tygodnie temu"
 msgid "Five Weeks Ago"
 msgstr "Pięć tygodni temu"
 
-#: core/model.cpp:554 utils/themeeditor.cpp:189
+#: core/model.cpp:560 utils/themeeditor.cpp:189
 #, kde-format
 msgid "Receiver"
 msgstr "Adresat"
 
-#: core/model.cpp:556 utils/themeeditor.cpp:188
+#: core/model.cpp:562 utils/themeeditor.cpp:188
 #, kde-format
 msgid "Sender"
 msgstr "Nadawca"
 
-#: core/model.cpp:1377
+#: core/model.cpp:1383
 #, kde-format
 msgctxt "Message Aggregation Group Header: Month name and Year number"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: core/model.cpp:3797
+#: core/model.cpp:3803
 #, kde-format
 msgid "Processed 1 Message of %2"
 msgid_plural "Processed %1 Messages of %2"
@@ -526,7 +526,7 @@ msgstr[0] "Przetworzono %1 wiadomość z %2"
 msgstr[1] "Przetworzono %1 wiadomości z %2"
 msgstr[2] "Przetworzono %1 wiadomości z %2"
 
-#: core/model.cpp:3803 core/model.cpp:3809
+#: core/model.cpp:3809 core/model.cpp:3815
 #, kde-format
 msgid "Threaded 1 Message of %2"
 msgid_plural "Threaded %1 Messages of %2"
@@ -534,7 +534,7 @@ msgstr[0] "Ułożono w wątkach %1 wiadomość z %2"
 msgstr[1] "Ułożono w wątkach %1 wiadomości z %2"
 msgstr[2] "Ułożono w wątkach %1 wiadomości z %2"
 
-#: core/model.cpp:3815
+#: core/model.cpp:3821
 #, kde-format
 msgid "Grouped 1 Thread of %2"
 msgid_plural "Grouped %1 Threads of %2"
@@ -542,7 +542,7 @@ msgstr[0] "Zgrupowano %1 wiadomość z %2"
 msgstr[1] "Zgrupowano %1 wiadomości z %2"
 msgstr[2] "Zgrupowano %1 wiadomości z %2"
 
-#: core/model.cpp:3821
+#: core/model.cpp:3827
 #, kde-format
 msgid "Updated 1 Group of %2"
 msgid_plural "Updated %1 Groups of %2"
@@ -550,7 +550,7 @@ msgstr[0] "Uaktualniono %1 wiadomości z %2"
 msgstr[1] "Uaktualniono %1 wiadomości z %2"
 msgstr[2] "Uaktualniono %1 wiadomości z %2"
 
-#: core/model.cpp:3913
+#: core/model.cpp:3919
 #, kde-format
 msgctxt "@info:status Finished view fill"
 msgid "Ready"

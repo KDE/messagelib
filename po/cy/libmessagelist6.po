@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-20 00:46+0000\n"
+"POT-Creation-Date: 2026-07-12 02:38+0000\n"
 "PO-Revision-Date: 2004-02-25 13:47+0000\n"
 "Last-Translator: KD at KGyfieithu <kyfieithu@dotmon.com>\n"
 "Language-Team: Cymraeg <cy@li.org>\n"
@@ -538,18 +538,18 @@ msgstr ""
 msgid "Five Weeks Ago"
 msgstr ""
 
-#: core/model.cpp:554 utils/themeeditor.cpp:189
+#: core/model.cpp:560 utils/themeeditor.cpp:189
 #, fuzzy, kde-format
 #| msgid "Receiver"
 msgid "Receiver"
 msgstr "Derbyniwr"
 
-#: core/model.cpp:556 utils/themeeditor.cpp:188
+#: core/model.cpp:562 utils/themeeditor.cpp:188
 #, kde-format
 msgid "Sender"
 msgstr "Anfonwr"
 
-#: core/model.cpp:1377
+#: core/model.cpp:1383
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "%1: name; %2: number appended to it to make it unique among a list of "
@@ -559,7 +559,7 @@ msgctxt "Message Aggregation Group Header: Month name and Year number"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: core/model.cpp:3797
+#: core/model.cpp:3803
 #, fuzzy, kde-format
 #| msgid "&Thread Messages"
 msgid "Processed 1 Message of %2"
@@ -567,7 +567,7 @@ msgid_plural "Processed %1 Messages of %2"
 msgstr[0] "&Edafu Negeseuon"
 msgstr[1] "&Edafu Negeseuon"
 
-#: core/model.cpp:3803 core/model.cpp:3809
+#: core/model.cpp:3809 core/model.cpp:3815
 #, fuzzy, kde-format
 #| msgid "&Thread Messages"
 msgid "Threaded 1 Message of %2"
@@ -575,7 +575,7 @@ msgid_plural "Threaded %1 Messages of %2"
 msgstr[0] "&Edafu Negeseuon"
 msgstr[1] "&Edafu Negeseuon"
 
-#: core/model.cpp:3815
+#: core/model.cpp:3821
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "&Expand Thread"
@@ -584,7 +584,7 @@ msgid_plural "Grouped %1 Threads of %2"
 msgstr[0] "&Ehangu Edefyn"
 msgstr[1] "&Ehangu Edefyn"
 
-#: core/model.cpp:3821
+#: core/model.cpp:3827
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "&Expand Thread"
@@ -593,7 +593,7 @@ msgid_plural "Updated %1 Groups of %2"
 msgstr[0] "&Ehangu Edefyn"
 msgstr[1] "&Ehangu Edefyn"
 
-#: core/model.cpp:3913
+#: core/model.cpp:3919
 #, fuzzy, kde-format
 #| msgid "Ready."
 msgctxt "@info:status Finished view fill"

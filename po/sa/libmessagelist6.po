@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-20 00:46+0000\n"
+"POT-Creation-Date: 2026-07-12 02:38+0000\n"
 "PO-Revision-Date: 2024-12-29 22:52+0530\n"
 "Last-Translator: kali <shreekantkalwar@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -494,51 +494,51 @@ msgstr "चतुःसप्ताहपूर्वम्"
 msgid "Five Weeks Ago"
 msgstr "पञ्चसप्ताहपूर्वम्"
 
-#: core/model.cpp:554 utils/themeeditor.cpp:189
+#: core/model.cpp:560 utils/themeeditor.cpp:189
 #, kde-format
 msgid "Receiver"
 msgstr "ग्राहकः"
 
-#: core/model.cpp:556 utils/themeeditor.cpp:188
+#: core/model.cpp:562 utils/themeeditor.cpp:188
 #, kde-format
 msgid "Sender"
 msgstr "प्रेषकः"
 
-#: core/model.cpp:1377
+#: core/model.cpp:1383
 #, kde-format
 msgctxt "Message Aggregation Group Header: Month name and Year number"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: core/model.cpp:3797
+#: core/model.cpp:3803
 #, kde-format
 msgid "Processed 1 Message of %2"
 msgid_plural "Processed %1 Messages of %2"
 msgstr[0] "संसाधितम् 1 %2 इत्यस्य सन्देशः"
 msgstr[1] "%1 %2 इत्यस्य सन्देशाः संसाधिताः"
 
-#: core/model.cpp:3803 core/model.cpp:3809
+#: core/model.cpp:3809 core/model.cpp:3815
 #, kde-format
 msgid "Threaded 1 Message of %2"
 msgid_plural "Threaded %1 Messages of %2"
 msgstr[0] "थ्रेडेड् 1 %2 इत्यस्य सन्देशः"
 msgstr[1] "%1 थ्रेडेड् %2 इत्यस्य सन्देशाः"
 
-#: core/model.cpp:3815
+#: core/model.cpp:3821
 #, kde-format
 msgid "Grouped 1 Thread of %2"
 msgid_plural "Grouped %1 Threads of %2"
 msgstr[0] "समूहीकृतः 1 %2 इत्यस्य थ्रेड्"
 msgstr[1] "समूहीकृतः %1 %2 इत्यस्य धागाः"
 
-#: core/model.cpp:3821
+#: core/model.cpp:3827
 #, kde-format
 msgid "Updated 1 Group of %2"
 msgid_plural "Updated %1 Groups of %2"
 msgstr[0] "%2 इत्यस्य 1 समूहः अद्यतनः"
 msgstr[1] "अद्यतनं %1 %2 इत्यस्य समूहाः"
 
-#: core/model.cpp:3913
+#: core/model.cpp:3919
 #, kde-format
 msgctxt "@info:status Finished view fill"
 msgid "Ready"
