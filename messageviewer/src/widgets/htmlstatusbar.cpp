@@ -10,7 +10,6 @@
 */
 
 #include "htmlstatusbar.h"
-#include "settings/messageviewersettings.h"
 
 #include "MessageCore/MessageCoreSettings"
 
