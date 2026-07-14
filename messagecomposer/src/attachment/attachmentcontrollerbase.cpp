@@ -242,8 +242,12 @@ void AttachmentControllerBase::AttachmentControllerBasePrivate::removeSelectedAt
     Q_ASSERT(selectedParts.count() >= 1);
     // We must store list, otherwise when we remove it changes selectedParts (as selection changed) => it will crash.
     const AttachmentPart::List toRemove = selectedParts;
+    bool ok = true;
     for (const AttachmentPart::Ptr &part : toRemove) {
-        model->removeAttachment(part);
+        ok = model->removeAttachment(part) && ok;
+    }
+    if (!ok) {
+        qCWarning(MESSAGECOMPOSER_LOG) << "Failed to remove at least 1 attachment part";
     }
 }
 
