@@ -712,7 +712,10 @@ bool AttachmentURLHandler::handleDrag(const QUrl &url, ViewerPrivate *window) co
             qCWarning(MESSAGEVIEWER_LOG) << "MBOX: Impossible to open file";
             return false;
         }
-        mbox.appendMessage(item.payload<std::shared_ptr<KMime::Message>>());
+        if (!mbox.appendMessage(item.payload<std::shared_ptr<KMime::Message>>()).isValid()) {
+            qCWarning(MESSAGEVIEWER_LOG) << "MBOX: Unable to append message";
+            return false;
+        }
 
         if (!mbox.save()) {
             qCWarning(MESSAGEVIEWER_LOG) << "MBOX: Impossible to save file";

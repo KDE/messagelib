@@ -32,7 +32,9 @@ TestMailMBoxWebEngine::~TestMailMBoxWebEngine() = default;
 std::shared_ptr<KMime::Message> TestMailMBoxWebEngine::readAndParseMail(const QString &mailFile)
 {
     QFile file(QLatin1StringView(MAIL_DATA_DIR) + u'/' + mailFile);
-    file.open(QIODevice::ReadOnly);
+    if (!file.open(QIODevice::ReadOnly)) {
+        return {};
+    }
     QByteArray ba = file.readAll();
     qDebug() << ba;
     const QByteArray data = ba;
