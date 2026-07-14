@@ -163,7 +163,7 @@ QString MessageComposer::ConvertSnippetVariablesUtil::monthNumber()
 QString MessageComposer::ConvertSnippetVariablesUtil::dayOfMonth()
 {
     const QDate date = QDate::currentDate();
-    return QString::number(date.daysInMonth());
+    return QString::number(date.day());
 }
 
 QString MessageComposer::ConvertSnippetVariablesUtil::weekNumber()
