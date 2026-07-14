@@ -17,6 +17,7 @@
 #include <KIO/Global>
 #include <KLocalizedString>
 
+#include <QFileInfo>
 #include <QIcon>
 #include <QMimeData>
 #include <QMimeDatabase>
@@ -294,7 +295,8 @@ QMimeData *MimeTreeModel::mimeData(const QModelIndexList &indexes) const
 
         auto tempDir = new QTemporaryDir; // Will remove the directory on destruction.
         d->tempDirs.append(tempDir);
-        const QString fileName = tempDir->path() + u'/' + d->descriptionForContent(content);
+        const QString safeName = QFileInfo(d->descriptionForContent(content)).fileName();
+        const QString fileName = tempDir->path() + u'/' + (safeName.isEmpty() ? QStringLiteral("attachment") : safeName);
         QFile f(fileName);
         if (!f.open(QIODevice::WriteOnly)) {
             qCWarning(MESSAGEVIEWER_LOG) << "Cannot write attachment:" << f.errorString();
