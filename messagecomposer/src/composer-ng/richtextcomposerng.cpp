@@ -4,7 +4,6 @@
    SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "richtextcomposerng.h"
-#include "config-messagecomposer.h"
 #include "messagecomposer_debug.h"
 #include "richtextcomposersignatures.h"
 #include "settings/messagecomposersettings.h"
