@@ -70,7 +70,7 @@ MimeTreeParser::Util::HtmlMode MailViewerSource::preferredMode() const
     case MessageViewer::Viewer::ICal:
         return MimeTreeParser::Util::MultipartIcal;
     }
-    Q_ASSERT(true);
+    Q_ASSERT(false);
     return MimeTreeParser::Util::Html;
 }
 
