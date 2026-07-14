@@ -150,9 +150,10 @@ void setAutomaticFields(const std::shared_ptr<KMime::Message> &msg, bool aIsMult
 
     if (aIsMulti || msg->contents().size() > 1) {
         // Set the type to 'Multipart' and the subtype to 'Mixed'
-        msg->contentType(KMime::CreatePolicy::DontCreate)->setMimeType("multipart/mixed");
+        auto contentTypeHeader = msg->contentType(KMime::CreatePolicy::Create);
+        contentTypeHeader->setMimeType("multipart/mixed");
         // Create a random printable string and set it as the boundary parameter
-        msg->contentType(KMime::CreatePolicy::DontCreate)->setBoundary(KMime::multiPartBoundary());
+        contentTypeHeader->setBoundary(KMime::multiPartBoundary());
     }
 }
 }
