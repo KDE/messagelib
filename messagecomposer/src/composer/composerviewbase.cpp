@@ -129,7 +129,11 @@ void ComposerViewBase::setMessage(const std::shared_ptr<KMime::Message> &msg, bo
             if (auto hrd = m_msg->headerByType("X-KMail-UnExpanded-To")) {
                 const QStringList spl = hrd->asUnicodeString().split(u',');
                 for (const QString &addr : spl) {
-                    if (m_recipientsEditor->addRecipient(addr, MessageComposer::Recipient::To)) {
+                    const QString trimmedAddr = addr.trimmed();
+                    if (trimmedAddr.isEmpty()) {
+                        continue;
+                    }
+                    if (m_recipientsEditor->addRecipient(trimmedAddr, MessageComposer::Recipient::To)) {
                         resultTooManyRecipients = true;
                         qCWarning(MESSAGECOMPOSER_LOG) << "Impossible to add recipient.";
                         break;
@@ -141,7 +145,11 @@ void ComposerViewBase::setMessage(const std::shared_ptr<KMime::Message> &msg, bo
             if (auto hrd = m_msg->headerByType("X-KMail-UnExpanded-CC")) {
                 const QStringList spl = hrd->asUnicodeString().split(u',');
                 for (const QString &addr : spl) {
-                    if (m_recipientsEditor->addRecipient(addr, MessageComposer::Recipient::Cc)) {
+                    const QString trimmedAddr = addr.trimmed();
+                    if (trimmedAddr.isEmpty()) {
+                        continue;
+                    }
+                    if (m_recipientsEditor->addRecipient(trimmedAddr, MessageComposer::Recipient::Cc)) {
                         qCWarning(MESSAGECOMPOSER_LOG) << "Impossible to add recipient.";
                         resultTooManyRecipients = true;
                         break;
@@ -153,7 +161,11 @@ void ComposerViewBase::setMessage(const std::shared_ptr<KMime::Message> &msg, bo
             if (auto hrd = m_msg->headerByType("X-KMail-UnExpanded-BCC")) {
                 const QStringList spl = hrd->asUnicodeString().split(u',');
                 for (const QString &addr : spl) {
-                    if (m_recipientsEditor->addRecipient(addr, MessageComposer::Recipient::Bcc)) {
+                    const QString trimmedAddr = addr.trimmed();
+                    if (trimmedAddr.isEmpty()) {
+                        continue;
+                    }
+                    if (m_recipientsEditor->addRecipient(trimmedAddr, MessageComposer::Recipient::Bcc)) {
                         qCWarning(MESSAGECOMPOSER_LOG) << "Impossible to add recipient.";
                         resultTooManyRecipients = true;
                         break;
@@ -165,7 +177,11 @@ void ComposerViewBase::setMessage(const std::shared_ptr<KMime::Message> &msg, bo
             if (auto hrd = m_msg->headerByType("X-KMail-UnExpanded-Reply-To")) {
                 const QStringList spl = hrd->asUnicodeString().split(u',');
                 for (const QString &addr : spl) {
-                    if (m_recipientsEditor->addRecipient(addr, MessageComposer::Recipient::ReplyTo)) {
+                    const QString trimmedAddr = addr.trimmed();
+                    if (trimmedAddr.isEmpty()) {
+                        continue;
+                    }
+                    if (m_recipientsEditor->addRecipient(trimmedAddr, MessageComposer::Recipient::ReplyTo)) {
                         qCWarning(MESSAGECOMPOSER_LOG) << "Impossible to add recipient.";
                         resultTooManyRecipients = true;
                         break;
