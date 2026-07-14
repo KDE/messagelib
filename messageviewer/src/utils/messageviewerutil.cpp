@@ -486,12 +486,7 @@ bool Util::saveMessageInMboxAndGetUrl(QUrl &url, const Akonadi::Item::List &retr
     if (appendMessages) {
         opt |= QFileDialog::DontConfirmOverwrite;
     }
-    QUrl dirUrl = QFileDialog::getSaveFileUrl(parent,
-                                              i18np("Save Message", "Save Messages", retrievedMsgs.count()),
-                                              QUrl::fromLocalFile(localUrl.toString()),
-                                              filter,
-                                              nullptr,
-                                              opt);
+    QUrl dirUrl = QFileDialog::getSaveFileUrl(parent, i18np("Save Message", "Save Messages", retrievedMsgs.count()), localUrl, filter, nullptr, opt);
     if (!dirUrl.isEmpty()) {
         QFile file;
         QTemporaryFile tf;
