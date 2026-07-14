@@ -245,7 +245,7 @@ QString ConvertSnippetVariablesJob::convertVariables(MessageComposer::ComposerVi
 
 QString ConvertSnippetVariablesJob::getNameFromEmail(const QString &address)
 {
-    const QStringList lst = address.split(u", "_s);
+    const QStringList lst = KEmailAddress::splitAddressList(address);
     QStringList resultName;
     for (const QString &str : lst) {
         KMime::Types::Mailbox mailBoxAddress;
