@@ -95,7 +95,10 @@ void HtmlStatusBar::mousePressEvent(QMouseEvent *event)
 {
     if (event->button() == Qt::LeftButton) {
         Q_EMIT clicked();
+        event->accept();
+        return;
     }
+    QLabel::mousePressEvent(event);
 }
 
 QString HtmlStatusBar::message() const
