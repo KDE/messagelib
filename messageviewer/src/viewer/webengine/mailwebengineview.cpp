@@ -73,7 +73,11 @@ MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
     d->mScamDetection = new ScamDetectionWebEngine(this);
     connect(d->mScamDetection, &ScamDetectionWebEngine::messageMayBeAScam, this, &MailWebEngineView::messageMayBeAScam);
     connect(d->mWebViewAccessKey, &WebEngineViewer::WebEngineAccessKey::openUrl, this, &MailWebEngineView::openUrl);
-    connect(this, &MailWebEngineView::loadFinished, this, &MailWebEngineView::slotLoadFinished);
+    connect(this, &MailWebEngineView::loadFinished, this, [this](bool ok) {
+        if (ok) {
+            slotLoadFinished();
+        }
+    });
 
     d->mPageEngine->profile()->installUrlSchemeHandler(QByteArrayLiteral("cid"), new CidSchemeHandler(this));
 
