@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-17 00:46+0000\n"
+"POT-Creation-Date: 2026-07-15 00:46+0000\n"
 "PO-Revision-Date: 2025-05-31 10:35+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -1632,7 +1632,7 @@ msgid "Keep Signature"
 msgstr "Säilytä allekirjoitus"
 
 #: utils/messageviewerutil.cpp:384 utils/messageviewerutil.cpp:407
-#: utils/messageviewerutil.cpp:425 utils/messageviewerutil.cpp:553
+#: utils/messageviewerutil.cpp:425 utils/messageviewerutil.cpp:548
 #, kde-kuit-format
 msgctxt "1 = file name, 2 = error string"
 msgid ""
@@ -1648,7 +1648,7 @@ msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "Virhe liitettä tallennettaessa"
 
-#: utils/messageviewerutil.cpp:395 utils/messageviewerutil.cpp:510
+#: utils/messageviewerutil.cpp:395 utils/messageviewerutil.cpp:505
 #, kde-format, kde-kuit-format
 msgctxt "1 = error string"
 msgid "Could not create temporary file: <message>%1</message>"
@@ -1674,59 +1674,59 @@ msgstr "viesti"
 msgid "Mailbox file (*.mbox);;All Files (*)"
 msgstr "MBOX-tiedostot (*.mbox);;Kaikki tiedostot (*)"
 
-#: utils/messageviewerutil.cpp:490
+#: utils/messageviewerutil.cpp:489
 #, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
 msgstr[0] "Tallenna viesti"
 msgstr[1] "Tallenna viestit"
 
-#: utils/messageviewerutil.cpp:511 utils/messageviewerutil.cpp:522
-#: utils/messageviewerutil.cpp:556
+#: utils/messageviewerutil.cpp:506 utils/messageviewerutil.cpp:517
+#: utils/messageviewerutil.cpp:551
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Virhe viestiä tallennettaessa"
 
-#: utils/messageviewerutil.cpp:520
+#: utils/messageviewerutil.cpp:515
 #, kde-format
 msgid "File %1 could not be loaded."
 msgstr "Tiedostoa %1 ei voitu ladata."
 
-#: utils/messageviewerutil.cpp:520
+#: utils/messageviewerutil.cpp:515
 #, kde-format
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Virhe viestiä ladattaessa"
 
-#: utils/messageviewerutil.cpp:522
+#: utils/messageviewerutil.cpp:517
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "Tiedostoa %1 ei voitu luoda."
 
-#: utils/messageviewerutil.cpp:529
+#: utils/messageviewerutil.cpp:524
 #, fuzzy, kde-format
 #| msgid "We cannot save message."
 msgid "We cannot append message to mbox."
 msgstr "VIestiä ei voi tallentaa."
 
-#: utils/messageviewerutil.cpp:529 utils/messageviewerutil.cpp:536
+#: utils/messageviewerutil.cpp:524 utils/messageviewerutil.cpp:531
 #, kde-format
 msgid "Error saving message"
 msgstr "Virhe tallennettaessa viestiä"
 
-#: utils/messageviewerutil.cpp:536
+#: utils/messageviewerutil.cpp:531
 #, kde-format
 msgid "We cannot save message."
 msgstr "VIestiä ei voi tallentaa."
 
-#: utils/messageviewerutil.cpp:600
+#: utils/messageviewerutil.cpp:595
 #, kde-format
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "Poistettu: %1"
 
-#: utils/messageviewerutil.cpp:611
+#: utils/messageviewerutil.cpp:606
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
@@ -1734,33 +1734,33 @@ msgid ""
 msgstr ""
 "Poistit viestistä liitteen. Liitteen alkuperäiset MIME-otsakkeet olivat:"
 
-#: utils/messageviewerutil.cpp:639
+#: utils/messageviewerutil.cpp:634
 #, kde-format
 msgid "Open &with %1"
 msgstr "Avaa &ohjelmalla %1"
 
-#: utils/messageviewerutil.cpp:641
+#: utils/messageviewerutil.cpp:636
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
 msgstr "%1"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:61
+#: viewer/mimeparttree/mimetreemodel.cpp:62
 #, kde-format
 msgid "body part"
 msgstr "viestirunko"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:268
+#: viewer/mimeparttree/mimetreemodel.cpp:269
 #, kde-format
 msgid "Description"
 msgstr "Kuvaus"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:270
+#: viewer/mimeparttree/mimetreemodel.cpp:271
 #, kde-format
 msgid "Type"
 msgstr "Tyyppi"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:272
+#: viewer/mimeparttree/mimetreemodel.cpp:273
 #, kde-format
 msgid "Size"
 msgstr "Koko"
@@ -2317,7 +2317,7 @@ msgstr "Avaa &ohjelmalla…"
 msgid "Do not ask again"
 msgstr "Älä kysy uudelleen"
 
-#: widgets/htmlstatusbar.cpp:108
+#: widgets/htmlstatusbar.cpp:110
 #, kde-format
 msgctxt ""
 "'HTML Message' with html linebreaks between each letter and in bold text."
@@ -2328,7 +2328,7 @@ msgstr ""
 "<qt><b><br />H<br />T<br />M<br />L<br />-<br />v<br />i<br />e<br /> s<br /"
 ">t<br />i</b></qt>"
 
-#: widgets/htmlstatusbar.cpp:112
+#: widgets/htmlstatusbar.cpp:114
 #, kde-format
 msgctxt "'No HTML Message' with html linebreaks between each letter."
 msgid ""
@@ -2339,7 +2339,7 @@ msgstr ""
 ">i<br />e<br />s<br />t<br />i</qt>"
 
 # ”Raaka viesti” on raaka ilmaus, mutta sopivan lyhyt; ”tekstiviesti” olisi muuten parempi, mutta on vakiintunut (= SMS)
-#: widgets/htmlstatusbar.cpp:117
+#: widgets/htmlstatusbar.cpp:119
 #, kde-format
 msgctxt "'Plain Message' with html linebreaks between each letter."
 msgid ""
@@ -2349,7 +2349,7 @@ msgstr ""
 "<qt><br />R<br />a<br />a<br />k<br />a<br /> <br />v<br />i<br />e<br /"
 ">s<br />t<br />i<br /></qt>"
 
-#: widgets/htmlstatusbar.cpp:121
+#: widgets/htmlstatusbar.cpp:123
 #, kde-format
 msgctxt "'Calendar Message' with html linebreaks between each letter."
 msgid ""
@@ -2359,7 +2359,7 @@ msgstr ""
 "<qt><br />K<br />a<br />l<br />e<br />n<br />t<br />e<br />r<br />i<br /"
 ">v<br />i<br />e<br />s<br />t<br />i<br /></qt>"
 
-#: widgets/htmlstatusbar.cpp:135
+#: widgets/htmlstatusbar.cpp:137
 #, kde-format
 msgid "Click to toggle between HTML, plain text and calendar."
 msgstr ""

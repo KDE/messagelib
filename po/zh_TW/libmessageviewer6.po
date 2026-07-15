@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-17 00:46+0000\n"
+"POT-Creation-Date: 2026-07-15 00:46+0000\n"
 "PO-Revision-Date: 2026-05-21 22:20+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -1589,7 +1589,7 @@ msgid "Keep Signature"
 msgstr "保留簽章"
 
 #: utils/messageviewerutil.cpp:384 utils/messageviewerutil.cpp:407
-#: utils/messageviewerutil.cpp:425 utils/messageviewerutil.cpp:553
+#: utils/messageviewerutil.cpp:425 utils/messageviewerutil.cpp:548
 #, kde-kuit-format
 msgctxt "1 = file name, 2 = error string"
 msgid ""
@@ -1603,7 +1603,7 @@ msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "儲存附件時發生錯誤"
 
-#: utils/messageviewerutil.cpp:395 utils/messageviewerutil.cpp:510
+#: utils/messageviewerutil.cpp:395 utils/messageviewerutil.cpp:505
 #, kde-format, kde-kuit-format
 msgctxt "1 = error string"
 msgid "Could not create temporary file: <message>%1</message>"
@@ -1629,90 +1629,90 @@ msgstr "信件"
 msgid "Mailbox file (*.mbox);;All Files (*)"
 msgstr "Mailbox 檔案 (*.mbox);;所有檔案 (*)"
 
-#: utils/messageviewerutil.cpp:490
+#: utils/messageviewerutil.cpp:489
 #, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
 msgstr[0] "儲存信件"
 
-#: utils/messageviewerutil.cpp:511 utils/messageviewerutil.cpp:522
-#: utils/messageviewerutil.cpp:556
+#: utils/messageviewerutil.cpp:506 utils/messageviewerutil.cpp:517
+#: utils/messageviewerutil.cpp:551
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "儲存信件時發生錯誤"
 
-#: utils/messageviewerutil.cpp:520
+#: utils/messageviewerutil.cpp:515
 #, kde-format
 msgid "File %1 could not be loaded."
 msgstr "檔案 %1 無法被載入。"
 
-#: utils/messageviewerutil.cpp:520
+#: utils/messageviewerutil.cpp:515
 #, kde-format
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "載入信件時發生錯誤"
 
-#: utils/messageviewerutil.cpp:522
+#: utils/messageviewerutil.cpp:517
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "檔案 %1 無法被建立。"
 
-#: utils/messageviewerutil.cpp:529
+#: utils/messageviewerutil.cpp:524
 #, kde-format
 msgid "We cannot append message to mbox."
 msgstr "無法將信件加入 mbox。"
 
-#: utils/messageviewerutil.cpp:529 utils/messageviewerutil.cpp:536
+#: utils/messageviewerutil.cpp:524 utils/messageviewerutil.cpp:531
 #, kde-format
 msgid "Error saving message"
 msgstr "儲存信件時發生錯誤"
 
-#: utils/messageviewerutil.cpp:536
+#: utils/messageviewerutil.cpp:531
 #, kde-format
 msgid "We cannot save message."
 msgstr "無法儲存信件。"
 
-#: utils/messageviewerutil.cpp:600
+#: utils/messageviewerutil.cpp:595
 #, kde-format
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "已刪除：%1"
 
-#: utils/messageviewerutil.cpp:611
+#: utils/messageviewerutil.cpp:606
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
 msgstr "您已從此信件刪除了一個附件。該附件原本的 MIME 標頭為："
 
-#: utils/messageviewerutil.cpp:639
+#: utils/messageviewerutil.cpp:634
 #, kde-format
 msgid "Open &with %1"
 msgstr "用 %1 開啟附件(&W)"
 
-#: utils/messageviewerutil.cpp:641
+#: utils/messageviewerutil.cpp:636
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
 msgstr "%1"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:61
+#: viewer/mimeparttree/mimetreemodel.cpp:62
 #, kde-format
 msgid "body part"
 msgstr "主體部份"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:268
+#: viewer/mimeparttree/mimetreemodel.cpp:269
 #, kde-format
 msgid "Description"
 msgstr "說明"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:270
+#: viewer/mimeparttree/mimetreemodel.cpp:271
 #, kde-format
 msgid "Type"
 msgstr "型態"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:272
+#: viewer/mimeparttree/mimetreemodel.cpp:273
 #, kde-format
 msgid "Size"
 msgstr "大小"
@@ -2264,7 +2264,7 @@ msgstr "開啟方式(&W)..."
 msgid "Do not ask again"
 msgstr "不要再詢問"
 
-#: widgets/htmlstatusbar.cpp:108
+#: widgets/htmlstatusbar.cpp:110
 #, kde-format
 msgctxt ""
 "'HTML Message' with html linebreaks between each letter and in bold text."
@@ -2273,7 +2273,7 @@ msgid ""
 ">a<br />g<br />e</b></qt>"
 msgstr "<qt><b><br />H<br />T<br />M<br />L<br />信<br />件</b></qt>"
 
-#: widgets/htmlstatusbar.cpp:112
+#: widgets/htmlstatusbar.cpp:114
 #, kde-format
 msgctxt "'No HTML Message' with html linebreaks between each letter."
 msgid ""
@@ -2282,7 +2282,7 @@ msgid ""
 msgstr ""
 "<qt><br />非<br /> <br />H<br />T<br />M<br />L<br /> <br />信<br />件</qt>"
 
-#: widgets/htmlstatusbar.cpp:117
+#: widgets/htmlstatusbar.cpp:119
 #, kde-format
 msgctxt "'Plain Message' with html linebreaks between each letter."
 msgid ""
@@ -2290,7 +2290,7 @@ msgid ""
 ">s<br />a<br />g<br />e<br /></qt>"
 msgstr "<qt><b><br />純<br />文<br />字<br />信<br />件</b></qt>"
 
-#: widgets/htmlstatusbar.cpp:121
+#: widgets/htmlstatusbar.cpp:123
 #, kde-format
 msgctxt "'Calendar Message' with html linebreaks between each letter."
 msgid ""
@@ -2298,7 +2298,7 @@ msgid ""
 ">M<br />e<br />s<br />s<br />a<br />g<br />e<br /></qt>"
 msgstr "<qt>行<br />事<br />曆<br />訊<br />息<br /></qt>"
 
-#: widgets/htmlstatusbar.cpp:135
+#: widgets/htmlstatusbar.cpp:137
 #, kde-format
 msgid "Click to toggle between HTML, plain text and calendar."
 msgstr "點擊以在 HTML、純文字與行事曆間切換。"

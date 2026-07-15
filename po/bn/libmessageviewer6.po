@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-17 00:46+0000\n"
+"POT-Creation-Date: 2026-07-15 00:46+0000\n"
 "PO-Revision-Date: 2006-02-06 01:01-0600\n"
 "Last-Translator: Deepayan Sarkar <deepayan@bengalinux.org>\n"
 "Language-Team: Bengali <kde-translation@bengalinux.org>\n"
@@ -1675,7 +1675,7 @@ msgid "Keep Signature"
 msgstr "স্বাক্ষর রাখো"
 
 #: utils/messageviewerutil.cpp:384 utils/messageviewerutil.cpp:407
-#: utils/messageviewerutil.cpp:425 utils/messageviewerutil.cpp:553
+#: utils/messageviewerutil.cpp:425 utils/messageviewerutil.cpp:548
 #, fuzzy, kde-kuit-format
 #| msgctxt "%2 is detailed error description"
 #| msgid ""
@@ -1696,7 +1696,7 @@ msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "একটি অ্যাটাচমেন্ট আছে"
 
-#: utils/messageviewerutil.cpp:395 utils/messageviewerutil.cpp:510
+#: utils/messageviewerutil.cpp:395 utils/messageviewerutil.cpp:505
 #, kde-format, kde-kuit-format
 msgctxt "1 = error string"
 msgid "Could not create temporary file: <message>%1</message>"
@@ -1724,100 +1724,100 @@ msgstr "0 বার্তা"
 msgid "Mailbox file (*.mbox);;All Files (*)"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:490
+#: utils/messageviewerutil.cpp:489
 #, fuzzy, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
 msgstr[0] "একটি বার্তা, %2."
 msgstr[1] "একটি বার্তা, %2."
 
-#: utils/messageviewerutil.cpp:511 utils/messageviewerutil.cpp:522
-#: utils/messageviewerutil.cpp:556
+#: utils/messageviewerutil.cpp:506 utils/messageviewerutil.cpp:517
+#: utils/messageviewerutil.cpp:551
 #, fuzzy, kde-format
 #| msgid "Moving messages"
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "বার্তা সরানো হচ্ছে"
 
-#: utils/messageviewerutil.cpp:520
+#: utils/messageviewerutil.cpp:515
 #, fuzzy, kde-format
 #| msgid "Store sent messages &encrypted"
 msgid "File %1 could not be loaded."
 msgstr "প্রেরিত বার্তা এ&নক্রিপ্ট করা অবস্থায় সংরক্ষণ করো"
 
-#: utils/messageviewerutil.cpp:520
+#: utils/messageviewerutil.cpp:515
 #, fuzzy, kde-format
 #| msgid "Error while uploading message"
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "বার্তা আপলোড করাকালীন সমস্যা"
 
-#: utils/messageviewerutil.cpp:522
+#: utils/messageviewerutil.cpp:517
 #, fuzzy, kde-format
 #| msgid "Store sent messages &encrypted"
 msgid "File %1 could not be created."
 msgstr "প্রেরিত বার্তা এ&নক্রিপ্ট করা অবস্থায় সংরক্ষণ করো"
 
-#: utils/messageviewerutil.cpp:529
+#: utils/messageviewerutil.cpp:524
 #, fuzzy, kde-format
 #| msgid "End of signed message"
 msgid "We cannot append message to mbox."
 msgstr "স্বাক্ষর করা বার্তার শেষ"
 
-#: utils/messageviewerutil.cpp:529 utils/messageviewerutil.cpp:536
+#: utils/messageviewerutil.cpp:524 utils/messageviewerutil.cpp:531
 #, fuzzy, kde-format
 #| msgid "Moving messages"
 msgid "Error saving message"
 msgstr "বার্তা সরানো হচ্ছে"
 
-#: utils/messageviewerutil.cpp:536
+#: utils/messageviewerutil.cpp:531
 #, fuzzy, kde-format
 #| msgid "End of signed message"
 msgid "We cannot save message."
 msgstr "স্বাক্ষর করা বার্তার শেষ"
 
-#: utils/messageviewerutil.cpp:600
+#: utils/messageviewerutil.cpp:595
 #, fuzzy, kde-format
 #| msgid " Line: %1 "
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr " লাইন: %1"
 
-#: utils/messageviewerutil.cpp:611
+#: utils/messageviewerutil.cpp:606
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:639
+#: utils/messageviewerutil.cpp:634
 #, fuzzy, kde-format
 #| msgid "&Open with '%1'"
 msgid "Open &with %1"
 msgstr "'%1' দিয়ে খোলো (&খ)"
 
-#: utils/messageviewerutil.cpp:641
+#: utils/messageviewerutil.cpp:636
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
 msgstr ""
 
-#: viewer/mimeparttree/mimetreemodel.cpp:61
+#: viewer/mimeparttree/mimetreemodel.cpp:62
 #, kde-format
 msgid "body part"
 msgstr "প্রধান অংশ"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:268
+#: viewer/mimeparttree/mimetreemodel.cpp:269
 #, kde-format
 msgid "Description"
 msgstr "বর্ণনা"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:270
+#: viewer/mimeparttree/mimetreemodel.cpp:271
 #, kde-format
 msgid "Type"
 msgstr "ধরন"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:272
+#: viewer/mimeparttree/mimetreemodel.cpp:273
 #, kde-format
 msgid "Size"
 msgstr "মাপ"
@@ -2421,7 +2421,7 @@ msgstr "...দিয়ে খোলো"
 msgid "Do not ask again"
 msgstr ""
 
-#: widgets/htmlstatusbar.cpp:108
+#: widgets/htmlstatusbar.cpp:110
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><b><br>H<br>T<br>M<br>L<br> <br>M<br>e<br>s<br>s<br>a<br>g<br>e</b></"
@@ -2433,7 +2433,7 @@ msgid ""
 ">a<br />g<br />e</b></qt>"
 msgstr "<qt><b><br>এইচ<br>টি<br>এম<br>এল<br> <br>বা<br>র<br>তা<br></b></qt>"
 
-#: widgets/htmlstatusbar.cpp:112
+#: widgets/htmlstatusbar.cpp:114
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><br>N<br>o<br> <br>H<br>T<br>M<br>L<br> "
@@ -2446,7 +2446,7 @@ msgstr ""
 "<qt><b><br>এইচ<br>টি<br>এম<br>এল<br> <br>বা<br>র<br>তা<br></b> <br>ন<br>য়</"
 "qt>"
 
-#: widgets/htmlstatusbar.cpp:117
+#: widgets/htmlstatusbar.cpp:119
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><b><br>H<br>T<br>M<br>L<br> <br>M<br>e<br>s<br>s<br>a<br>g<br>e</b></"
@@ -2457,7 +2457,7 @@ msgid ""
 ">s<br />a<br />g<br />e<br /></qt>"
 msgstr "<qt><b><br>এইচ<br>টি<br>এম<br>এল<br> <br>বা<br>র<br>তা<br></b></qt>"
 
-#: widgets/htmlstatusbar.cpp:121
+#: widgets/htmlstatusbar.cpp:123
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><br>N<br>o<br> <br>H<br>T<br>M<br>L<br> "
@@ -2470,7 +2470,7 @@ msgstr ""
 "<qt><b><br>এইচ<br>টি<br>এম<br>এল<br> <br>বা<br>র<br>তা<br></b> <br>ন<br>য়</"
 "qt>"
 
-#: widgets/htmlstatusbar.cpp:135
+#: widgets/htmlstatusbar.cpp:137
 #, kde-format
 msgid "Click to toggle between HTML, plain text and calendar."
 msgstr ""

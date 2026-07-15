@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-17 00:46+0000\n"
+"POT-Creation-Date: 2026-07-15 00:46+0000\n"
 "PO-Revision-Date: 2026-05-28 21:34+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -1639,7 +1639,7 @@ msgid "Keep Signature"
 msgstr "Запазване на подписа"
 
 #: utils/messageviewerutil.cpp:384 utils/messageviewerutil.cpp:407
-#: utils/messageviewerutil.cpp:425 utils/messageviewerutil.cpp:553
+#: utils/messageviewerutil.cpp:425 utils/messageviewerutil.cpp:548
 #, kde-kuit-format
 msgctxt "1 = file name, 2 = error string"
 msgid ""
@@ -1655,7 +1655,7 @@ msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "Грешка при запазването на прикачения файл"
 
-#: utils/messageviewerutil.cpp:395 utils/messageviewerutil.cpp:510
+#: utils/messageviewerutil.cpp:395 utils/messageviewerutil.cpp:505
 #, kde-format, kde-kuit-format
 msgctxt "1 = error string"
 msgid "Could not create temporary file: <message>%1</message>"
@@ -1681,58 +1681,58 @@ msgstr "съобщение"
 msgid "Mailbox file (*.mbox);;All Files (*)"
 msgstr "Mailbox файл (*.mbox);;всички файлове (*)"
 
-#: utils/messageviewerutil.cpp:490
+#: utils/messageviewerutil.cpp:489
 #, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
 msgstr[0] "Запазване на съобщение"
 msgstr[1] "Запазване на съобщения"
 
-#: utils/messageviewerutil.cpp:511 utils/messageviewerutil.cpp:522
-#: utils/messageviewerutil.cpp:556
+#: utils/messageviewerutil.cpp:506 utils/messageviewerutil.cpp:517
+#: utils/messageviewerutil.cpp:551
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Грешка при запазване на съобщението"
 
-#: utils/messageviewerutil.cpp:520
+#: utils/messageviewerutil.cpp:515
 #, kde-format
 msgid "File %1 could not be loaded."
 msgstr "Файл %1 не можа да бъде зареден."
 
-#: utils/messageviewerutil.cpp:520
+#: utils/messageviewerutil.cpp:515
 #, kde-format
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Грешка при зареждането на съобщението"
 
-#: utils/messageviewerutil.cpp:522
+#: utils/messageviewerutil.cpp:517
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "Файл %1 не можа да бъде създаден."
 
-#: utils/messageviewerutil.cpp:529
+#: utils/messageviewerutil.cpp:524
 #, kde-format
 msgid "We cannot append message to mbox."
 msgstr "Не можем да прикачим съобщение към mbox."
 
-#: utils/messageviewerutil.cpp:529 utils/messageviewerutil.cpp:536
+#: utils/messageviewerutil.cpp:524 utils/messageviewerutil.cpp:531
 #, kde-format
 msgid "Error saving message"
 msgstr "Грешка при запазване на съобщението"
 
-#: utils/messageviewerutil.cpp:536
+#: utils/messageviewerutil.cpp:531
 #, kde-format
 msgid "We cannot save message."
 msgstr "Не можем да запазим съобщение."
 
-#: utils/messageviewerutil.cpp:600
+#: utils/messageviewerutil.cpp:595
 #, kde-format
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "Изтрито: %1"
 
-#: utils/messageviewerutil.cpp:611
+#: utils/messageviewerutil.cpp:606
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
@@ -1741,33 +1741,33 @@ msgstr ""
 "Изтрили сте прикачен файл от това съобщение. Оригиналните MIME заглавия за "
 "на прикачения файл бяха:"
 
-#: utils/messageviewerutil.cpp:639
+#: utils/messageviewerutil.cpp:634
 #, kde-format
 msgid "Open &with %1"
 msgstr "Отваряне &с %1"
 
-#: utils/messageviewerutil.cpp:641
+#: utils/messageviewerutil.cpp:636
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
 msgstr "%1"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:61
+#: viewer/mimeparttree/mimetreemodel.cpp:62
 #, kde-format
 msgid "body part"
 msgstr "тяло"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:268
+#: viewer/mimeparttree/mimetreemodel.cpp:269
 #, kde-format
 msgid "Description"
 msgstr "Описание"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:270
+#: viewer/mimeparttree/mimetreemodel.cpp:271
 #, kde-format
 msgid "Type"
 msgstr "Вид"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:272
+#: viewer/mimeparttree/mimetreemodel.cpp:273
 #, kde-format
 msgid "Size"
 msgstr "Размер"
@@ -2328,7 +2328,7 @@ msgstr "Отваряне &с..."
 msgid "Do not ask again"
 msgstr "Изключване на въпроса"
 
-#: widgets/htmlstatusbar.cpp:108
+#: widgets/htmlstatusbar.cpp:110
 #, kde-format
 msgctxt ""
 "'HTML Message' with html linebreaks between each letter and in bold text."
@@ -2339,7 +2339,7 @@ msgstr ""
 "<qt><b><br />H<br />T<br />M<br />L<br /><br />С<br />ъ<br />о<br />б<br /"
 ">щ<br />е<br />н<br />и<br />e</b></qt>"
 
-#: widgets/htmlstatusbar.cpp:112
+#: widgets/htmlstatusbar.cpp:114
 #, kde-format
 msgctxt "'No HTML Message' with html linebreaks between each letter."
 msgid ""
@@ -2349,7 +2349,7 @@ msgstr ""
 "<qt><br />Н<br />я<br />м<br />а<br /><br />H<br />T<br />M<br />L<br /> "
 "<br />С<br />ъ<br />о<br />б<br />щ<br />е<br />н<br />и<br />e</qt>"
 
-#: widgets/htmlstatusbar.cpp:117
+#: widgets/htmlstatusbar.cpp:119
 #, kde-format
 msgctxt "'Plain Message' with html linebreaks between each letter."
 msgid ""
@@ -2359,7 +2359,7 @@ msgstr ""
 "<qt><br />П<br />р<br />о<br />с<br />т<br />о<br />  <br />С<br />ъ<br /"
 ">о<br />б<br />щ<br />е<br />н<br />и<br />e<br /></qt>"
 
-#: widgets/htmlstatusbar.cpp:121
+#: widgets/htmlstatusbar.cpp:123
 #, kde-format
 msgctxt "'Calendar Message' with html linebreaks between each letter."
 msgid ""
@@ -2369,7 +2369,7 @@ msgstr ""
 "<qt><br />К<br />а<br />л<br />e<br />н<br />д<br />a<br />р<br /><br /"
 ">С<br />ъ<br />о<br />б<br />щ<br />е<br />н<br />и<br />e<br /></qt>"
 
-#: widgets/htmlstatusbar.cpp:135
+#: widgets/htmlstatusbar.cpp:137
 #, kde-format
 msgid "Click to toggle between HTML, plain text and calendar."
 msgstr "Щракнете, за да превключвате между HTML, обикновен текст и календар."

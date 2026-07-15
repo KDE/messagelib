@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-17 00:46+0000\n"
+"POT-Creation-Date: 2026-07-15 00:46+0000\n"
 "PO-Revision-Date: 2026-05-19 08:39+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -1631,7 +1631,7 @@ msgid "Keep Signature"
 msgstr "להשאיר את החתימה"
 
 #: utils/messageviewerutil.cpp:384 utils/messageviewerutil.cpp:407
-#: utils/messageviewerutil.cpp:425 utils/messageviewerutil.cpp:553
+#: utils/messageviewerutil.cpp:425 utils/messageviewerutil.cpp:548
 #, kde-kuit-format
 msgctxt "1 = file name, 2 = error string"
 msgid ""
@@ -1646,7 +1646,7 @@ msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "שגיאה בשמירת הקובץ המצורף"
 
-#: utils/messageviewerutil.cpp:395 utils/messageviewerutil.cpp:510
+#: utils/messageviewerutil.cpp:395 utils/messageviewerutil.cpp:505
 #, kde-format, kde-kuit-format
 msgctxt "1 = error string"
 msgid "Could not create temporary file: <message>%1</message>"
@@ -1672,7 +1672,7 @@ msgstr "הודעה"
 msgid "Mailbox file (*.mbox);;All Files (*)"
 msgstr "קובץ הודעות דוא״ל (‎*.mbox);;כל הקבצים (*)"
 
-#: utils/messageviewerutil.cpp:490
+#: utils/messageviewerutil.cpp:489
 #, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
@@ -1681,84 +1681,84 @@ msgstr[1] "שמירת הודעות"
 msgstr[2] "שמירת הודעות"
 msgstr[3] "שמירת הודעות"
 
-#: utils/messageviewerutil.cpp:511 utils/messageviewerutil.cpp:522
-#: utils/messageviewerutil.cpp:556
+#: utils/messageviewerutil.cpp:506 utils/messageviewerutil.cpp:517
+#: utils/messageviewerutil.cpp:551
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "שגיאה בשמירת ההודעה"
 
-#: utils/messageviewerutil.cpp:520
+#: utils/messageviewerutil.cpp:515
 #, kde-format
 msgid "File %1 could not be loaded."
 msgstr "לא ניתן לטעון את הקובץ %1."
 
-#: utils/messageviewerutil.cpp:520
+#: utils/messageviewerutil.cpp:515
 #, kde-format
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "שגיאה בטעינת הודעה"
 
-#: utils/messageviewerutil.cpp:522
+#: utils/messageviewerutil.cpp:517
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "לא ניתן ליצור את הקובץ %1."
 
-#: utils/messageviewerutil.cpp:529
+#: utils/messageviewerutil.cpp:524
 #, kde-format
 msgid "We cannot append message to mbox."
 msgstr "אי אפשר להוסיף הודעה לסוף ה־mbox."
 
-#: utils/messageviewerutil.cpp:529 utils/messageviewerutil.cpp:536
+#: utils/messageviewerutil.cpp:524 utils/messageviewerutil.cpp:531
 #, kde-format
 msgid "Error saving message"
 msgstr "שגיאה בשמירת הודעה"
 
-#: utils/messageviewerutil.cpp:536
+#: utils/messageviewerutil.cpp:531
 #, kde-format
 msgid "We cannot save message."
 msgstr "לא ניתן לשמור הודעה."
 
-#: utils/messageviewerutil.cpp:600
+#: utils/messageviewerutil.cpp:595
 #, kde-format
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "נמחקו: %1"
 
-#: utils/messageviewerutil.cpp:611
+#: utils/messageviewerutil.cpp:606
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
 msgstr "מחקת קובץ מצורף מההודעה הזאת. כותרות ה־MIME המקורית לקובץ המצורף היו:"
 
-#: utils/messageviewerutil.cpp:639
+#: utils/messageviewerutil.cpp:634
 #, kde-format
 msgid "Open &with %1"
 msgstr "פתיחה &עם %1"
 
-#: utils/messageviewerutil.cpp:641
+#: utils/messageviewerutil.cpp:636
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
 msgstr "%1"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:61
+#: viewer/mimeparttree/mimetreemodel.cpp:62
 #, kde-format
 msgid "body part"
 msgstr "גוף ההודעה"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:268
+#: viewer/mimeparttree/mimetreemodel.cpp:269
 #, kde-format
 msgid "Description"
 msgstr "תיאור"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:270
+#: viewer/mimeparttree/mimetreemodel.cpp:271
 #, kde-format
 msgid "Type"
 msgstr "סוג"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:272
+#: viewer/mimeparttree/mimetreemodel.cpp:273
 #, kde-format
 msgid "Size"
 msgstr "גודל"
@@ -2310,7 +2310,7 @@ msgstr "פתיחה ב&אמצעות…"
 msgid "Do not ask again"
 msgstr "לא לשאול שוב"
 
-#: widgets/htmlstatusbar.cpp:108
+#: widgets/htmlstatusbar.cpp:110
 #, kde-format
 msgctxt ""
 "'HTML Message' with html linebreaks between each letter and in bold text."
@@ -2321,7 +2321,7 @@ msgstr ""
 "<qt><b><br />ה<br />ו<br />ד<br />ע<br />ת<br /> <br />H<br />T<br />M<br /"
 ">L </b></qt>"
 
-#: widgets/htmlstatusbar.cpp:112
+#: widgets/htmlstatusbar.cpp:114
 #, kde-format
 msgctxt "'No HTML Message' with html linebreaks between each letter."
 msgid ""
@@ -2331,7 +2331,7 @@ msgstr ""
 "<qt><br />ל<br />א<br /> <br />ה<br />ו<br />ד<br />ע<br />ת<br /> <br /"
 ">H<br />T<br />M<br />L<br /></qt>"
 
-#: widgets/htmlstatusbar.cpp:117
+#: widgets/htmlstatusbar.cpp:119
 #, kde-format
 msgctxt "'Plain Message' with html linebreaks between each letter."
 msgid ""
@@ -2341,7 +2341,7 @@ msgstr ""
 "<qt><br />ה<br />ו<br />ד<br />ע<br />ה<br /> <br />פ<br />ש<br />ו<br /"
 ">ט<br />ה<br /></qt>"
 
-#: widgets/htmlstatusbar.cpp:121
+#: widgets/htmlstatusbar.cpp:123
 #, kde-format
 msgctxt "'Calendar Message' with html linebreaks between each letter."
 msgid ""
@@ -2351,7 +2351,7 @@ msgstr ""
 "<qt><br />ה<br />ו<br />ד<br />ע<br />ת<br /> <br />ל<br />ו<br />ח<br /> "
 "<br />ש<br />נ<br />ה<br /></qt>"
 
-#: widgets/htmlstatusbar.cpp:135
+#: widgets/htmlstatusbar.cpp:137
 #, kde-format
 msgid "Click to toggle between HTML, plain text and calendar."
 msgstr "יש ללחוץ כדי להחליף בין HTML, טקסט פשוט ולוח שנה."

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-17 00:46+0000\n"
+"POT-Creation-Date: 2026-07-15 00:46+0000\n"
 "PO-Revision-Date: 2007-02-28 14:08+0100\n"
 "Last-Translator: Bozidar Proevski <bobibobi@freemail.com.mk>\n"
 "Language-Team: Macedonian <mkde-l10n@lists.sourceforge.net>\n"
@@ -1706,7 +1706,7 @@ msgid "Keep Signature"
 msgstr "Задржи го потписот"
 
 #: utils/messageviewerutil.cpp:384 utils/messageviewerutil.cpp:407
-#: utils/messageviewerutil.cpp:425 utils/messageviewerutil.cpp:553
+#: utils/messageviewerutil.cpp:425 utils/messageviewerutil.cpp:548
 #, fuzzy, kde-kuit-format
 #| msgctxt "%2 is detailed error description"
 #| msgid ""
@@ -1727,7 +1727,7 @@ msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "има прилог"
 
-#: utils/messageviewerutil.cpp:395 utils/messageviewerutil.cpp:510
+#: utils/messageviewerutil.cpp:395 utils/messageviewerutil.cpp:505
 #, kde-format, kde-kuit-format
 msgctxt "1 = error string"
 msgid "Could not create temporary file: <message>%1</message>"
@@ -1755,7 +1755,7 @@ msgstr "0 пораки"
 msgid "Mailbox file (*.mbox);;All Files (*)"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:490
+#: utils/messageviewerutil.cpp:489
 #, fuzzy, kde-format
 #| msgid " message"
 #| msgid_plural " messages"
@@ -1765,93 +1765,93 @@ msgstr[0] " порака"
 msgstr[1] " порака"
 msgstr[2] " порака"
 
-#: utils/messageviewerutil.cpp:511 utils/messageviewerutil.cpp:522
-#: utils/messageviewerutil.cpp:556
+#: utils/messageviewerutil.cpp:506 utils/messageviewerutil.cpp:517
+#: utils/messageviewerutil.cpp:551
 #, fuzzy, kde-format
 #| msgid "Moving messages"
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Преместување на пораки"
 
-#: utils/messageviewerutil.cpp:520
+#: utils/messageviewerutil.cpp:515
 #, fuzzy, kde-format
 #| msgid "OpenPGP Message - Encrypted"
 msgid "File %1 could not be loaded."
 msgstr "OpenPGP-порака - криптирана"
 
-#: utils/messageviewerutil.cpp:520
+#: utils/messageviewerutil.cpp:515
 #, fuzzy, kde-format
 #| msgid "Error while copying messages."
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Грешка при копирањето на пораки."
 
-#: utils/messageviewerutil.cpp:522
+#: utils/messageviewerutil.cpp:517
 #, fuzzy, kde-format
 #| msgid "OpenPGP Message - Encrypted"
 msgid "File %1 could not be created."
 msgstr "OpenPGP-порака - криптирана"
 
-#: utils/messageviewerutil.cpp:529
+#: utils/messageviewerutil.cpp:524
 #, fuzzy, kde-format
 #| msgid "End of signed message"
 msgid "We cannot append message to mbox."
 msgstr "Крај на потпишаната порака"
 
-#: utils/messageviewerutil.cpp:529 utils/messageviewerutil.cpp:536
+#: utils/messageviewerutil.cpp:524 utils/messageviewerutil.cpp:531
 #, fuzzy, kde-format
 #| msgid "Moving messages"
 msgid "Error saving message"
 msgstr "Преместување на пораки"
 
-#: utils/messageviewerutil.cpp:536
+#: utils/messageviewerutil.cpp:531
 #, fuzzy, kde-format
 #| msgid "End of signed message"
 msgid "We cannot save message."
 msgstr "Крај на потпишаната порака"
 
-#: utils/messageviewerutil.cpp:600
+#: utils/messageviewerutil.cpp:595
 #, fuzzy, kde-format
 #| msgid " Line: %1 "
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr " Линија: %1 "
 
-#: utils/messageviewerutil.cpp:611
+#: utils/messageviewerutil.cpp:606
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:639
+#: utils/messageviewerutil.cpp:634
 #, fuzzy, kde-format
 #| msgid "&Open with '%1'"
 msgid "Open &with %1"
 msgstr "&Отвори со „%1“"
 
-#: utils/messageviewerutil.cpp:641
+#: utils/messageviewerutil.cpp:636
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
 msgstr ""
 
-#: viewer/mimeparttree/mimetreemodel.cpp:61
+#: viewer/mimeparttree/mimetreemodel.cpp:62
 #, kde-format
 msgid "body part"
 msgstr ""
 
-#: viewer/mimeparttree/mimetreemodel.cpp:268
+#: viewer/mimeparttree/mimetreemodel.cpp:269
 #, kde-format
 msgid "Description"
 msgstr "Опис"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:270
+#: viewer/mimeparttree/mimetreemodel.cpp:271
 #, kde-format
 msgid "Type"
 msgstr "Тип"
 
-#: viewer/mimeparttree/mimetreemodel.cpp:272
+#: viewer/mimeparttree/mimetreemodel.cpp:273
 #, kde-format
 msgid "Size"
 msgstr "Големина"
@@ -2462,7 +2462,7 @@ msgstr "Отвори со..."
 msgid "Do not ask again"
 msgstr ""
 
-#: widgets/htmlstatusbar.cpp:108
+#: widgets/htmlstatusbar.cpp:110
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><b><br>H<br>T<br>M<br>L<br> <br>M<br>e<br>s<br>s<br>a<br>g<br>e</b></"
@@ -2475,7 +2475,7 @@ msgid ""
 msgstr ""
 "<qt><b><br>H<br>T<br>M<br>L<br> <br>п<br>о<br>р<br>а<br>к<br>а</b></qt>"
 
-#: widgets/htmlstatusbar.cpp:112
+#: widgets/htmlstatusbar.cpp:114
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><br>N<br>o<br> <br>H<br>T<br>M<br>L<br> "
@@ -2488,7 +2488,7 @@ msgstr ""
 "<qt><br>П<br>о<br>р<br>а<br>к<br>а<br> <br>б<br>е<br>з<br>  "
 "<br>H<br>T<br>M<br>L<br></qt>"
 
-#: widgets/htmlstatusbar.cpp:117
+#: widgets/htmlstatusbar.cpp:119
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><b><br>H<br>T<br>M<br>L<br> <br>M<br>e<br>s<br>s<br>a<br>g<br>e</b></"
@@ -2500,7 +2500,7 @@ msgid ""
 msgstr ""
 "<qt><b><br>H<br>T<br>M<br>L<br> <br>п<br>о<br>р<br>а<br>к<br>а</b></qt>"
 
-#: widgets/htmlstatusbar.cpp:121
+#: widgets/htmlstatusbar.cpp:123
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt><br>N<br>o<br> <br>H<br>T<br>M<br>L<br> "
@@ -2513,7 +2513,7 @@ msgstr ""
 "<qt><br>П<br>о<br>р<br>а<br>к<br>а<br> <br>б<br>е<br>з<br>  "
 "<br>H<br>T<br>M<br>L<br></qt>"
 
-#: widgets/htmlstatusbar.cpp:135
+#: widgets/htmlstatusbar.cpp:137
 #, kde-format
 msgid "Click to toggle between HTML, plain text and calendar."
 msgstr ""
