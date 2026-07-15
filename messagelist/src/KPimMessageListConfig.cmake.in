@@ -4,20 +4,10 @@ find_dependency(
     KPim6Akonadi
     "@AKONADI_VERSION@"
 )
-if(@KF6Mime_FOUND@)
-    find_dependency(
-        KF6Mime
-        "@KF_MIN_VERSION@"
-    )
-else()
-    find_dependency(
-        KPim6Mime
-        "@KMIME_LIB_VERSION@"
-    )
-    if(NOT TARGET KF6::Mime)
-        add_library(KF6::Mime ALIAS KPim6::Mime)
-    endif()
-endif()
+find_dependency(
+    KF6Mime
+    "@KF_MIN_VERSION@"
+)
 find_dependency(
     KPim6AkonadiMime
     "@AKONADIMIME_LIB_VERSION@"
