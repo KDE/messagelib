@@ -353,15 +353,6 @@ target_sources(
         mdn/mdnwarningwidget.h
 )
 
-if(NOT HAVE_TEXTADDONSWIDGETS_OPENSAVEDFILEFOLDERWIDGET)
-    target_sources(
-        KPim6MessageViewer
-        PRIVATE
-            widgets/opensavedfilefolderwidget.cpp
-            widgets/opensavedfilefolderwidget.h
-    )
-endif()
-
 ecm_qt_declare_logging_category(KPim6MessageViewer HEADER messageviewer_debug.h IDENTIFIER MESSAGEVIEWER_LOG CATEGORY_NAME org.kde.pim.messageviewer
     DESCRIPTION "messagelib (messageviewer)"
     OLD_CATEGORY_NAMES log_messageviewer

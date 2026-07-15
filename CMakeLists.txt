@@ -221,10 +221,6 @@ find_package(KF6TextUtils ${KTEXTADDONS_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6TextCustomEditor ${KTEXTADDONS_MIN_VERSION} CONFIG REQUIRED)
 find_package(KF6TextAddonsWidgets ${KTEXTADDONS_MIN_VERSION} CONFIG REQUIRED)
 
-if(${KF6TextAddonsWidgets_VERSION} VERSION_GREATER_EQUAL 2.0.65)
-    set(HAVE_TEXTADDONSWIDGETS_OPENSAVEDFILEFOLDERWIDGET TRUE)
-endif()
-
 option(
     FORCE_DISABLE_AKONADI_SEARCH
     "Disable features and API that require akonadi-search, e.g. because xapian isn't available"

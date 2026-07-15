@@ -22,13 +22,11 @@
 #include "viewer/webengine/mailwebengineview.h"
 #include "viewer_p.h"
 #include "widgets/zoomactionmenu.h"
-#if HAVE_TEXTADDONSWIDGETS_OPENSAVEDFILEFOLDERWIDGET
-#include <TextAddonsWidgets/OpenSavedFileFolderWidget>
-#endif
 #include <Akonadi/ItemFetchJob>
 #include <Akonadi/ItemFetchScope>
 #include <Akonadi/MessageParts>
 #include <QUrl>
+#include <TextAddonsWidgets/OpenSavedFileFolderWidget>
 #include <WebEngineViewer/WebEngineManageScript>
 #include <WebEngineViewer/WebHitTestResult>
 
@@ -710,11 +708,7 @@ void Viewer::setPluginName(const QString &pluginName)
 void Viewer::showOpenAttachmentFolderWidget(const QList<QUrl> &urls)
 {
     Q_D(Viewer);
-#if HAVE_TEXTADDONSWIDGETS_OPENSAVEDFILEFOLDERWIDGET
     d->showSavedFileFolderWidget(urls, TextAddonsWidgets::OpenSavedFileFolderWidget::FileType::Attachment);
-#else
-    d->showSavedFileFolderWidget(urls, MessageViewer::OpenSavedFileFolderWidget::FileType::Attachment);
-#endif
 }
 
 QList<QAction *> Viewer::viewerPluginActionList(ViewerPluginInterface::SpecificFeatureTypes features)
