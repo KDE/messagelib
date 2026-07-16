@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-15 00:46+0000\n"
+"POT-Creation-Date: 2026-07-16 00:45+0000\n"
 "PO-Revision-Date: 2012-12-31 11:12+0700\n"
 "Last-Translator: sutha <sutha@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros>\n"
@@ -1428,7 +1428,7 @@ msgstr ""
 "ដែល​ការ​ឆ្លើយតប​ត្រូវ​បាន​ផ្ញើ​ដោយ​ជោគជ័យ ។"
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
-#: settings/messageviewer.kcfg:206 viewer/viewer_p.cpp:1568
+#: settings/messageviewer.kcfg:206 viewer/viewer_p.cpp:1558
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "ប្រើពុម្ពអក្សរថេរ"
@@ -1834,7 +1834,7 @@ msgstr ""
 msgid "Turn on HTML rendering for this message."
 msgstr "បើក​ការបង្ហាញ HTML សម្រាប់​សារ​នេះ ។"
 
-#: viewer/urlhandlermanager.cpp:412 viewer/viewer_p.cpp:1637
+#: viewer/urlhandlermanager.cpp:412 viewer/viewer_p.cpp:1627
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "ផ្ទុក​សេចក្ដី​យោង​ខាងក្រៅ​ពី អ៊ីនធឺណិត​សម្រាប់សារនេះ ។"
@@ -1916,7 +1916,7 @@ msgstr "បើក​នៅ​ក្នុង​សៀវភៅ​អាសយដ
 msgid "&Copy Email Address"
 msgstr "ចម្លង​អាសយដ្ឋាន​អ៊ីមែល​"
 
-#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2769
+#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2726
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "បាន​ចម្លង​អាសយដ្ឋាន​ទៅ​ក្ដារតម្បៀតខ្ទាស់ ។"
@@ -1969,388 +1969,388 @@ msgctxt "@action:button"
 msgid "Execute"
 msgstr "​ប្រតិបត្តិ"
 
-#: viewer/viewer.cpp:153
+#: viewer/viewer.cpp:151
 #, kde-format
 msgid "Loading message..."
 msgstr "កំពុង​ផ្ទុក​សារ​​..."
 
-#: viewer/viewer_p.cpp:352
+#: viewer/viewer_p.cpp:346
 #, kde-format
 msgid ""
 "Deleting an attachment might invalidate any digital signature on this "
 "message."
 msgstr "លុប​ឯកសារ​ភ្ជាប់​អាច​គ្មាន​សុពលភាព​លើ​ហត្ថលេខា​ឌីជីថល​ណាមួយ​នៅ​លើ​សារ​នេះ ។"
 
-#: viewer/viewer_p.cpp:353 viewer/viewer_p.cpp:388
+#: viewer/viewer_p.cpp:347 viewer/viewer_p.cpp:382
 #, fuzzy, kde-format
 #| msgid "Delete Attachment"
 msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "លុប​ឯកសារ​ភ្ជាប់"
 
-#: viewer/viewer_p.cpp:387
+#: viewer/viewer_p.cpp:381
 #, kde-format
 msgid ""
 "Deleting an attachment from an encrypted or old-style mailman message is not "
 "supported."
 msgstr "លុប​ឯកសារ​ភ្ជាប់​ពី​អ៊ិនគ្រីប​ ឬ​សារ​អ្នក​រត់​សំបុត្រ​រចនាប័ទ្ម​ចាស់​​មិន​ត្រូវ​បា​ន​គាំ​ទ្រ​ ។"
 
-#: viewer/viewer_p.cpp:436
+#: viewer/viewer_p.cpp:430
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
 msgstr "​បើក​ជា​មួយ..."
 
-#: viewer/viewer_p.cpp:454
+#: viewer/viewer_p.cpp:448
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
 msgstr "ផ្សេងទៀត..."
 
-#: viewer/viewer_p.cpp:456 viewer/viewer_p.cpp:469
+#: viewer/viewer_p.cpp:450 viewer/viewer_p.cpp:463
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "​បើក​ជា​មួយ..."
 
-#: viewer/viewer_p.cpp:533 viewer/viewer_p.cpp:1746
+#: viewer/viewer_p.cpp:527 viewer/viewer_p.cpp:1736
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "បើក"
 
-#: viewer/viewer_p.cpp:547 viewer/viewer_p.cpp:1753
+#: viewer/viewer_p.cpp:541 viewer/viewer_p.cpp:1743
 #, kde-format
 msgctxt "to view something"
 msgid "View"
 msgstr "មើល"
 
-#: viewer/viewer_p.cpp:555
+#: viewer/viewer_p.cpp:549
 #, kde-format
 msgid "Scroll To"
 msgstr "រមូរ​ទៅកាន់​"
 
-#: viewer/viewer_p.cpp:560
+#: viewer/viewer_p.cpp:554
 #, kde-format
 msgid "Save As..."
 msgstr "​រក្សាទុកជា..."
 
-#: viewer/viewer_p.cpp:566 viewer/viewer_p.cpp:1763
+#: viewer/viewer_p.cpp:560 viewer/viewer_p.cpp:1753
 #, kde-format
 msgid "Copy"
 msgstr "ចម្លង"
 
-#: viewer/viewer_p.cpp:577 viewer/viewer_p.cpp:1767
+#: viewer/viewer_p.cpp:571 viewer/viewer_p.cpp:1757
 #, kde-format
 msgid "Delete Attachment"
 msgstr "លុប​ឯកសារ​ភ្ជាប់"
 
-#: viewer/viewer_p.cpp:588
+#: viewer/viewer_p.cpp:582
 #, fuzzy, kde-format
 #| msgid "Reply to: "
 msgid "Reply To Author"
 msgstr "ឆ្លើយតប​ទៅ ៖ "
 
-#: viewer/viewer_p.cpp:596
+#: viewer/viewer_p.cpp:590
 #, fuzzy, kde-format
 #| msgid "Reply to: "
 msgid "Reply To All"
 msgstr "ឆ្លើយតប​ទៅ ៖ "
 
-#: viewer/viewer_p.cpp:602 viewer/viewer_p.cpp:1772
+#: viewer/viewer_p.cpp:596 viewer/viewer_p.cpp:1762
 #, kde-format
 msgid "Properties"
 msgstr "​លក្ខណៈ​សម្បត្តិ"
 
-#: viewer/viewer_p.cpp:738
+#: viewer/viewer_p.cpp:732
 #, fuzzy, kde-format
 #| msgid "KMail Error"
 msgid "KMail"
 msgstr "កំហុស KMail"
 
-#: viewer/viewer_p.cpp:738
+#: viewer/viewer_p.cpp:732
 #, fuzzy, kde-format
 #| msgid "The KDE email client."
 msgid "The KDE Mail Client"
 msgstr "កម្មវិធី​អ៊ីមែល​របស់ KDE view"
 
-#: viewer/viewer_p.cpp:1284
+#: viewer/viewer_p.cpp:1278
 #, fuzzy, kde-format
 #| msgid "View Attachment: %1"
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "មើល​ឯកសារ​ភ្ជាប់ ៖ %1"
 
-#: viewer/viewer_p.cpp:1490
+#: viewer/viewer_p.cpp:1480
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "ឯកសារ​ភ្ជាប់"
 
-#: viewer/viewer_p.cpp:1492
+#: viewer/viewer_p.cpp:1482
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "ជ្រើស​រចនាប័ទ្ម​បង្ហាញ​នៃ​ឯកសារ​ភ្ជាប់"
 
-#: viewer/viewer_p.cpp:1495
+#: viewer/viewer_p.cpp:1485
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "ជា​រូបតំណាង"
 
-#: viewer/viewer_p.cpp:1498
+#: viewer/viewer_p.cpp:1488
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr "បង្ហាញ​ឯកសារ​ភ្ជាប់ទាំងអស់​ជា​រូបតំណាង ។ ចុច​ដើម្បី​មើល​ពួកវា ។"
 
-#: viewer/viewer_p.cpp:1502
+#: viewer/viewer_p.cpp:1492
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "ឆ្លាត"
 
-#: viewer/viewer_p.cpp:1505
+#: viewer/viewer_p.cpp:1495
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "បង្ហាញ​ឯកសារ​ភ្ជាប់​ថា​បាន​ផ្ដល់យោបល់​ដោល​អ្នកផ្ញើ ។"
 
-#: viewer/viewer_p.cpp:1509
+#: viewer/viewer_p.cpp:1499
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "នៅក្នុង​បណ្ដាញ"
 
-#: viewer/viewer_p.cpp:1512
+#: viewer/viewer_p.cpp:1502
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "បង្ហាញ​ឯកសារ​ភ្ជាប់​ទាំងអស់​នៅ​ក្នុង​បណ្ដាញ (ប្រសិន​បើ​អាច​ធ្វើ​ទៅ​បាន)"
 
-#: viewer/viewer_p.cpp:1516
+#: viewer/viewer_p.cpp:1506
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "លាក់"
 
-#: viewer/viewer_p.cpp:1519
+#: viewer/viewer_p.cpp:1509
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "កុំ​បង្ហាញ​ឯកសារ​ភ្ជាប់​នៅក្នុង​កម្មវិធី​មើល​សារ"
 
-#: viewer/viewer_p.cpp:1523
+#: viewer/viewer_p.cpp:1513
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr "នៅ​ក្នុង​បឋមកថា​ប៉ុណ្ណោះ​"
 
-#: viewer/viewer_p.cpp:1526
+#: viewer/viewer_p.cpp:1516
 #, kde-format
 msgid "Show Attachments only in the header of the mail"
 msgstr "បង្ហាញ​ឯកសារ​ភ្ជាប់​នៅ​ក្នុង​បឋមកថា​របស់​សំបុត្រ​តែ​ប៉ុណ្ណោះ​​"
 
-#: viewer/viewer_p.cpp:1531
+#: viewer/viewer_p.cpp:1521
 #, kde-format
 msgid "&Set Encoding"
 msgstr "កំណត់​អ៊ិនកូឌីង"
 
-#: viewer/viewer_p.cpp:1536 widgets/configurewidget.cpp:45
+#: viewer/viewer_p.cpp:1526 widgets/configurewidget.cpp:45
 #: widgets/configurewidget.cpp:79
 #, kde-format
 msgid "Auto"
 msgstr "ស្វ័យប្រវត្តិ"
 
-#: viewer/viewer_p.cpp:1546
+#: viewer/viewer_p.cpp:1536
 #, fuzzy, kde-format
 #| msgid "Speak Text"
 msgid "Copy Text"
 msgstr "អត្ថបទ​សំឡេង"
 
-#: viewer/viewer_p.cpp:1552
+#: viewer/viewer_p.cpp:1542
 #, fuzzy, kde-format
 #| msgid "Select All Text"
 msgctxt "@action"
 msgid "Select All Text"
 msgstr "ជ្រើស​អត្ថបទ​ទាំងអស់"
 
-#: viewer/viewer_p.cpp:1558 viewer/viewer_p.cpp:2081
+#: viewer/viewer_p.cpp:1548 viewer/viewer_p.cpp:2071
 #, kde-format
 msgid "Copy Link Address"
 msgstr "ចម្លង​អាសយដ្ឋាន​តំណ"
 
-#: viewer/viewer_p.cpp:1563
+#: viewer/viewer_p.cpp:1553
 #, kde-format
 msgid "Open URL"
 msgstr "​បើក URL"
 
-#: viewer/viewer_p.cpp:1574
+#: viewer/viewer_p.cpp:1564
 #, kde-format
 msgid "Show Message Structure"
 msgstr "បង្ហាញ​រចនាសម្ព័ន្ធ​សារ​"
 
-#: viewer/viewer_p.cpp:1579
+#: viewer/viewer_p.cpp:1569
 #, fuzzy, kde-format
 #| msgid "&View Source"
 msgctxt "@action"
 msgid "&View Source"
 msgstr "មើល​ប្រភព"
 
-#: viewer/viewer_p.cpp:1584
+#: viewer/viewer_p.cpp:1574
 #, fuzzy, kde-format
 #| msgid "&Save message..."
 msgid "&Save Message..."
 msgstr "រក្សាទុក​សារ..."
 
-#: viewer/viewer_p.cpp:1590
+#: viewer/viewer_p.cpp:1580
 #, kde-format
 msgctxt "@action"
 msgid "&Save Display Format"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1594
+#: viewer/viewer_p.cpp:1584
 #, kde-format
 msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1601
+#: viewer/viewer_p.cpp:1591
 #, fuzzy, kde-format
 #| msgid "Scroll Message Up"
 msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "រមូរ​សារ​ឡើងលើ"
 
-#: viewer/viewer_p.cpp:1606
+#: viewer/viewer_p.cpp:1596
 #, fuzzy, kde-format
 #| msgid "Scroll Message Down"
 msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "រមូរ​សារ​ចុះក្រោម"
 
-#: viewer/viewer_p.cpp:1611
+#: viewer/viewer_p.cpp:1601
 #, fuzzy, kde-format
 #| msgid "Scroll Message Up (More)"
 msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "រមូរ​សា​រ​ឡើង​លើ​ (បន្ថែម​ទៀត)"
 
-#: viewer/viewer_p.cpp:1616
+#: viewer/viewer_p.cpp:1606
 #, fuzzy, kde-format
 #| msgid "Scroll Message Down (More)"
 msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "រមូរ​សារ​ចុះក្រោម (បន្ថែម​ទៀត)"
 
-#: viewer/viewer_p.cpp:1626
+#: viewer/viewer_p.cpp:1616
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr "បិទ/បើក​របៀប​បង្ហាញ​របស់​ HTML "
 
-#: viewer/viewer_p.cpp:1630
+#: viewer/viewer_p.cpp:1620
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr "បិទ/​បើក​របៀប​បង្ហាញ​រវាង​អត្ថបទ​ធម្មតា​ និង​ HTML"
 
-#: viewer/viewer_p.cpp:1633
+#: viewer/viewer_p.cpp:1623
 #, kde-format
 msgctxt "@action"
 msgid "Load external references"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1639
+#: viewer/viewer_p.cpp:1629
 #, fuzzy, kde-format
 #| msgid "Speak Text"
 msgctxt "@action"
 msgid "Speak Text"
 msgstr "អត្ថបទ​សំឡេង"
 
-#: viewer/viewer_p.cpp:1645
+#: viewer/viewer_p.cpp:1635
 #, fuzzy, kde-format
 #| msgid "Speak Text"
 msgctxt "@action"
 msgid "Share Text..."
 msgstr "អត្ថបទ​សំឡេង"
 
-#: viewer/viewer_p.cpp:1663
+#: viewer/viewer_p.cpp:1653
 #, fuzzy, kde-format
 #| msgid "Copy Image Location"
 msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "ចម្លង​ទីតាំង​រូបភាព"
 
-#: viewer/viewer_p.cpp:1669
+#: viewer/viewer_p.cpp:1659
 #, kde-format
 msgid "&Find in Message..."
 msgstr "រក​​នៅ​ក្នុង​សារ..."
 
-#: viewer/viewer_p.cpp:1678
+#: viewer/viewer_p.cpp:1668
 #, kde-format
 msgid "Disable Emoticon"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1743
+#: viewer/viewer_p.cpp:1733
 #, kde-format
 msgid "Save &As..."
 msgstr "​រក្សាទុកជា..."
 
-#: viewer/viewer_p.cpp:1751
+#: viewer/viewer_p.cpp:1741
 #, kde-format
 msgid "Open With..."
 msgstr "​បើក​ជាមួយ..."
 
-#: viewer/viewer_p.cpp:1758
+#: viewer/viewer_p.cpp:1748
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "រក្សាទុក​ឯកសារភ្ជាប់​ទាំងអស់..."
 
-#: viewer/viewer_p.cpp:2001
+#: viewer/viewer_p.cpp:1991
 #, kde-format
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:2001 viewer/viewer_p.cpp:2004
+#: viewer/viewer_p.cpp:1991 viewer/viewer_p.cpp:1994
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2004
+#: viewer/viewer_p.cpp:1994
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr ""
 
-#: viewer/viewer_p.cpp:2024
+#: viewer/viewer_p.cpp:2014
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2025
+#: viewer/viewer_p.cpp:2015
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2079
+#: viewer/viewer_p.cpp:2069
 #, kde-format
 msgid "Copy Email Address"
 msgstr "ចម្លង​អាសយដ្ឋាន​អ៊ីមែល​"
 
-#: viewer/viewer_p.cpp:2162
+#: viewer/viewer_p.cpp:2152
 #, fuzzy, kde-format
 #| msgid "Message as Plain Text"
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "សារ​ជា​អត្ថបទ​ធម្មតា"
 
-#: viewer/viewer_p.cpp:2775
+#: viewer/viewer_p.cpp:2732
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "បាន​ចម្លង URL ទៅ​ក្ដារតម្បៀតខ្ទាស់ ។"
 
-#: viewer/viewer_p.cpp:2937
+#: viewer/viewer_p.cpp:2894
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "បាន​បរាជ័យ​ផ្ទុក​សារ​ ៖​ %1 ។​"
 
-#: viewer/viewer_p.cpp:2942
+#: viewer/viewer_p.cpp:2899
 #, kde-format
 msgid "Message not found."
 msgstr "រក​មិន​ឃើញ​សារ​ ។"
@@ -2488,39 +2488,6 @@ msgstr "ប្រភព​របស់​ HTML"
 msgid "HTML code for displaying the message to the user"
 msgstr "កូដ HTML សម្រាប់​បង្ហាញ​សារ​ទៅកាន់​អ្នក​ប្រើ​"
 
-#: widgets/opensavedfilefolderwidget.cpp:26
-#, kde-format
-msgctxt "@action - For we don't know if it's one or many attachments"
-msgid "Open folder where attachment was saved"
-msgstr ""
-
-#: widgets/opensavedfilefolderwidget.cpp:27
-#, fuzzy, kde-format
-#| msgctxt "@title:menu"
-#| msgid "&Open With"
-msgctxt "@action"
-msgid "Open File"
-msgstr "​បើក​ជា​មួយ..."
-
-#: widgets/opensavedfilefolderwidget.cpp:62
-#, kde-format
-msgctxt "@action"
-msgid "Open folder where attachment was saved"
-msgid_plural "Open folder where attachments were saved"
-msgstr[0] ""
-
-#: widgets/opensavedfilefolderwidget.cpp:65
-#, kde-format
-msgctxt "@action"
-msgid "Open folder where PDF file was saved"
-msgstr ""
-
-#: widgets/opensavedfilefolderwidget.cpp:79
-#, fuzzy, kde-format
-#| msgid "Unable to edit attachment"
-msgid "KMail was unable to open the attachment."
-msgstr "មិន​អាច​កែសម្រួល​ឯកសារ​ភ្ជាប់"
-
 #: widgets/shownextmessagewidget.cpp:17
 #, fuzzy, kde-format
 #| msgid "Save Message"
@@ -2535,6 +2502,18 @@ msgstr "រក្សា​ទុក​សារ​"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "ឌិគ្រីប​សារ"
+
+#, fuzzy
+#~| msgctxt "@title:menu"
+#~| msgid "&Open With"
+#~ msgctxt "@action"
+#~ msgid "Open File"
+#~ msgstr "​បើក​ជា​មួយ..."
+
+#, fuzzy
+#~| msgid "Unable to edit attachment"
+#~ msgid "KMail was unable to open the attachment."
+#~ msgstr "មិន​អាច​កែសម្រួល​ឯកសារ​ភ្ជាប់"
 
 #~ msgid "Error: Signature not verified"
 #~ msgstr "មាន​កំហុស ៖ មិនបាន​បញ្ជាក់​ហត្ថលេខាឡើយ"

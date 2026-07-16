@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-15 00:46+0000\n"
+"POT-Creation-Date: 2026-07-16 00:45+0000\n"
 "PO-Revision-Date: 2024-12-20 22:01+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -1363,7 +1363,7 @@ msgstr ""
 "प्रति स्थाप्यन्ते, एकदा उत्तरं सफलतया प्रेषितं जातम् ।"
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
-#: settings/messageviewer.kcfg:206 viewer/viewer_p.cpp:1568
+#: settings/messageviewer.kcfg:206 viewer/viewer_p.cpp:1558
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "Fi&xed Font इत्यस्य उपयोगं कुर्वन्तु"
@@ -1752,7 +1752,7 @@ msgstr "दस्तावेजं मुद्रयन्तु"
 msgid "Turn on HTML rendering for this message."
 msgstr "अस्य सन्देशस्य कृते HTML रेण्डरिंग् चालू कुर्वन्तु ।"
 
-#: viewer/urlhandlermanager.cpp:412 viewer/viewer_p.cpp:1637
+#: viewer/urlhandlermanager.cpp:412 viewer/viewer_p.cpp:1627
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "अस्य सन्देशस्य कृते अन्तर्जालतः बाह्यसन्दर्भान् लोड् कुर्वन्तु ।"
@@ -1832,7 +1832,7 @@ msgstr "&पतेःपुस्तके उद्घाटयन्तु"
 msgid "&Copy Email Address"
 msgstr "&ईमेल पता प्रतिलिपि कुर्वन्तु"
 
-#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2769
+#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2726
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "पता क्लिप्बोर्ड् प्रति प्रतिलिखितम्।"
@@ -1884,370 +1884,370 @@ msgctxt "@action:button"
 msgid "Execute"
 msgstr "प्रभज्"
 
-#: viewer/viewer.cpp:153
+#: viewer/viewer.cpp:151
 #, kde-format
 msgid "Loading message..."
 msgstr "सन्देशः लोड् भवति..."
 
-#: viewer/viewer_p.cpp:352
+#: viewer/viewer_p.cpp:346
 #, kde-format
 msgid ""
 "Deleting an attachment might invalidate any digital signature on this "
 "message."
 msgstr "संलग्नकं विलोपनेन अस्मिन् सन्देशे किमपि अङ्कीयहस्ताक्षरं अमान्यं भवितुम् अर्हति ।"
 
-#: viewer/viewer_p.cpp:353 viewer/viewer_p.cpp:388
+#: viewer/viewer_p.cpp:347 viewer/viewer_p.cpp:382
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "संलग्नकं विलोपयतु"
 
-#: viewer/viewer_p.cpp:387
+#: viewer/viewer_p.cpp:381
 #, kde-format
 msgid ""
 "Deleting an attachment from an encrypted or old-style mailman message is not "
 "supported."
 msgstr "एन्क्रिप्टेड् अथवा पुरातनशैल्याः मेलमैन् सन्देशात् संलग्नकं विलोपनं समर्थितं नास्ति ।"
 
-#: viewer/viewer_p.cpp:436
+#: viewer/viewer_p.cpp:430
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
 msgstr "&Open With"
 
-#: viewer/viewer_p.cpp:454
+#: viewer/viewer_p.cpp:448
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
 msgstr "&इतर..."
 
-#: viewer/viewer_p.cpp:456 viewer/viewer_p.cpp:469
+#: viewer/viewer_p.cpp:450 viewer/viewer_p.cpp:463
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "&Open With..."
 
-#: viewer/viewer_p.cpp:533 viewer/viewer_p.cpp:1746
+#: viewer/viewer_p.cpp:527 viewer/viewer_p.cpp:1736
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "उद्घाटित"
 
-#: viewer/viewer_p.cpp:547 viewer/viewer_p.cpp:1753
+#: viewer/viewer_p.cpp:541 viewer/viewer_p.cpp:1743
 #, kde-format
 msgctxt "to view something"
 msgid "View"
 msgstr "दृश्यं"
 
-#: viewer/viewer_p.cpp:555
+#: viewer/viewer_p.cpp:549
 #, kde-format
 msgid "Scroll To"
 msgstr "Scroll To इति"
 
-#: viewer/viewer_p.cpp:560
+#: viewer/viewer_p.cpp:554
 #, kde-format
 msgid "Save As..."
 msgstr "Save As..."
 
-#: viewer/viewer_p.cpp:566 viewer/viewer_p.cpp:1763
+#: viewer/viewer_p.cpp:560 viewer/viewer_p.cpp:1753
 #, kde-format
 msgid "Copy"
 msgstr "प्रतिलिपि"
 
-#: viewer/viewer_p.cpp:577 viewer/viewer_p.cpp:1767
+#: viewer/viewer_p.cpp:571 viewer/viewer_p.cpp:1757
 #, kde-format
 msgid "Delete Attachment"
 msgstr "संलग्नकं विलोपयतु"
 
-#: viewer/viewer_p.cpp:588
+#: viewer/viewer_p.cpp:582
 #, kde-format
 msgid "Reply To Author"
 msgstr "Reply To लेखकम्"
 
-#: viewer/viewer_p.cpp:596
+#: viewer/viewer_p.cpp:590
 #, kde-format
 msgid "Reply To All"
 msgstr "Reply To All"
 
-#: viewer/viewer_p.cpp:602 viewer/viewer_p.cpp:1772
+#: viewer/viewer_p.cpp:596 viewer/viewer_p.cpp:1762
 #, kde-format
 msgid "Properties"
 msgstr "गुणाः"
 
-#: viewer/viewer_p.cpp:738
+#: viewer/viewer_p.cpp:732
 #, kde-format
 msgid "KMail"
 msgstr "केमेल"
 
-#: viewer/viewer_p.cpp:738
+#: viewer/viewer_p.cpp:732
 #, kde-format
 msgid "The KDE Mail Client"
 msgstr "KDE मेल क्लायन्ट्"
 
-#: viewer/viewer_p.cpp:1284
+#: viewer/viewer_p.cpp:1278
 #, kde-format
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "संलग्नकं पश्यन्तु: %1"
 
-#: viewer/viewer_p.cpp:1490
+#: viewer/viewer_p.cpp:1480
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "&संलग्नकाः"
 
-#: viewer/viewer_p.cpp:1492
+#: viewer/viewer_p.cpp:1482
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "संलग्नकानां प्रदर्शनशैलीं चिनोतु"
 
-#: viewer/viewer_p.cpp:1495
+#: viewer/viewer_p.cpp:1485
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "&चिह्नरूपेण"
 
-#: viewer/viewer_p.cpp:1498
+#: viewer/viewer_p.cpp:1488
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr "सर्वाणि संलग्नकानि चिह्नरूपेण दर्शयन्तु। तानि द्रष्टुं क्लिक् कुर्वन्तु।"
 
-#: viewer/viewer_p.cpp:1502
+#: viewer/viewer_p.cpp:1492
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "&पटु"
 
-#: viewer/viewer_p.cpp:1505
+#: viewer/viewer_p.cpp:1495
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "प्रेषकेन यथा सूचितं तथा संलग्नकानि दर्शयन्तु।"
 
-#: viewer/viewer_p.cpp:1509
+#: viewer/viewer_p.cpp:1499
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "&इन्लाइन्"
 
-#: viewer/viewer_p.cpp:1512
+#: viewer/viewer_p.cpp:1502
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "सर्वाणि संलग्नकानि इनलाइन् दर्शयन्तु (यदि सम्भवति)"
 
-#: viewer/viewer_p.cpp:1516
+#: viewer/viewer_p.cpp:1506
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "&गोपयतु"
 
-#: viewer/viewer_p.cpp:1519
+#: viewer/viewer_p.cpp:1509
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "सन्देशदर्शके संलग्नकानि न दर्शयन्तु"
 
-#: viewer/viewer_p.cpp:1523
+#: viewer/viewer_p.cpp:1513
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr "केवलं शीर्षके"
 
-#: viewer/viewer_p.cpp:1526
+#: viewer/viewer_p.cpp:1516
 #, kde-format
 msgid "Show Attachments only in the header of the mail"
 msgstr "केवलं मेलस्य शीर्षके एव संलग्नकानि दर्शयन्तु"
 
-#: viewer/viewer_p.cpp:1531
+#: viewer/viewer_p.cpp:1521
 #, kde-format
 msgid "&Set Encoding"
 msgstr "&सेट् एन्कोडिंग"
 
-#: viewer/viewer_p.cpp:1536 widgets/configurewidget.cpp:45
+#: viewer/viewer_p.cpp:1526 widgets/configurewidget.cpp:45
 #: widgets/configurewidget.cpp:79
 #, kde-format
 msgid "Auto"
 msgstr "ऑटो"
 
-#: viewer/viewer_p.cpp:1546
+#: viewer/viewer_p.cpp:1536
 #, kde-format
 msgid "Copy Text"
 msgstr "पाठं प्रतिलिपितु"
 
-#: viewer/viewer_p.cpp:1552
+#: viewer/viewer_p.cpp:1542
 #, kde-format
 msgctxt "@action"
 msgid "Select All Text"
 msgstr "All Text इति चिनोतु"
 
-#: viewer/viewer_p.cpp:1558 viewer/viewer_p.cpp:2081
+#: viewer/viewer_p.cpp:1548 viewer/viewer_p.cpp:2071
 #, kde-format
 msgid "Copy Link Address"
 msgstr "लिङ्क पता प्रतिलिपि कुर्वन्तु"
 
-#: viewer/viewer_p.cpp:1563
+#: viewer/viewer_p.cpp:1553
 #, kde-format
 msgid "Open URL"
 msgstr "URL उद्घाटयन्तु"
 
-#: viewer/viewer_p.cpp:1574
+#: viewer/viewer_p.cpp:1564
 #, kde-format
 msgid "Show Message Structure"
 msgstr "सन्देशसंरचना दर्शयतु"
 
-#: viewer/viewer_p.cpp:1579
+#: viewer/viewer_p.cpp:1569
 #, kde-format
 msgctxt "@action"
 msgid "&View Source"
 msgstr "&स्रोत देखें"
 
-#: viewer/viewer_p.cpp:1584
+#: viewer/viewer_p.cpp:1574
 #, kde-format
 msgid "&Save Message..."
 msgstr "&सन्देशं रक्षतु..."
 
-#: viewer/viewer_p.cpp:1590
+#: viewer/viewer_p.cpp:1580
 #, kde-format
 msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "&प्रदर्शन प्रारूपं रक्षतु"
 
-#: viewer/viewer_p.cpp:1594
+#: viewer/viewer_p.cpp:1584
 #, kde-format
 msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "&प्रदर्शन प्रारूपं पुनः सेट् कुर्वन्तु"
 
-#: viewer/viewer_p.cpp:1601
+#: viewer/viewer_p.cpp:1591
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "सन्देशं उपरि स्क्रॉल कुर्वन्तु"
 
-#: viewer/viewer_p.cpp:1606
+#: viewer/viewer_p.cpp:1596
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "सन्देशं अधः स्क्रॉल कुर्वन्तु"
 
-#: viewer/viewer_p.cpp:1611
+#: viewer/viewer_p.cpp:1601
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "सन्देशं उपरि स्क्रॉल कुर्वन्तु (अधिकम्)"
 
-#: viewer/viewer_p.cpp:1616
+#: viewer/viewer_p.cpp:1606
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "सन्देशं अधः स्क्रॉल कुर्वन्तु (अधिकम्)"
 
-#: viewer/viewer_p.cpp:1626
+#: viewer/viewer_p.cpp:1616
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr "HTML प्रदर्शन मोडं टॉगल कुर्वन्तु"
 
-#: viewer/viewer_p.cpp:1630
+#: viewer/viewer_p.cpp:1620
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr "HTML तथा साधारणपाठयोः मध्ये प्रदर्शनविधिं टॉग्ल् कुर्वन्तु"
 
-#: viewer/viewer_p.cpp:1633
+#: viewer/viewer_p.cpp:1623
 #, kde-format
 msgctxt "@action"
 msgid "Load external references"
 msgstr "बाह्यसन्दर्भान् लोडयन्तु"
 
-#: viewer/viewer_p.cpp:1639
+#: viewer/viewer_p.cpp:1629
 #, kde-format
 msgctxt "@action"
 msgid "Speak Text"
 msgstr "पाठं वदतु"
 
-#: viewer/viewer_p.cpp:1645
+#: viewer/viewer_p.cpp:1635
 #, kde-format
 msgctxt "@action"
 msgid "Share Text..."
 msgstr "पाठं साझां कुर्वन्तु..."
 
-#: viewer/viewer_p.cpp:1663
+#: viewer/viewer_p.cpp:1653
 #, kde-format
 msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "प्रतिलिपि चित्रस्थानम्"
 
-#: viewer/viewer_p.cpp:1669
+#: viewer/viewer_p.cpp:1659
 #, kde-format
 msgid "&Find in Message..."
 msgstr "&सन्देशे अन्वेष्टुम्..."
 
-#: viewer/viewer_p.cpp:1678
+#: viewer/viewer_p.cpp:1668
 #, kde-format
 msgid "Disable Emoticon"
 msgstr "इमोटिकॉन् अक्षम करें"
 
-#: viewer/viewer_p.cpp:1743
+#: viewer/viewer_p.cpp:1733
 #, kde-format
 msgid "Save &As..."
 msgstr "Save &As..."
 
-#: viewer/viewer_p.cpp:1751
+#: viewer/viewer_p.cpp:1741
 #, kde-format
 msgid "Open With..."
 msgstr "Open With..."
 
-#: viewer/viewer_p.cpp:1758
+#: viewer/viewer_p.cpp:1748
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "सर्वाणि संलग्नकानि रक्षन्तु..."
 
-#: viewer/viewer_p.cpp:2001
+#: viewer/viewer_p.cpp:1991
 #, kde-format
 msgid "The network is broken."
 msgstr "जालं भग्नम् अस्ति।"
 
-#: viewer/viewer_p.cpp:2001 viewer/viewer_p.cpp:2004
+#: viewer/viewer_p.cpp:1991 viewer/viewer_p.cpp:1994
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "फिशिंग् URL पश्यन्तु"
 
-#: viewer/viewer_p.cpp:2004
+#: viewer/viewer_p.cpp:1994
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "URL %1 वैधः नास्ति ।"
 
-#: viewer/viewer_p.cpp:2024
+#: viewer/viewer_p.cpp:2014
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr "इदं जालस्थलं दुर्गन्धयुक्तं भवति, किं भवन्तः एतत् निरन्तरं दर्शयितुम् इच्छन्ति?"
 
-#: viewer/viewer_p.cpp:2025
+#: viewer/viewer_p.cpp:2015
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr "मालवेयर"
 
-#: viewer/viewer_p.cpp:2079
+#: viewer/viewer_p.cpp:2069
 #, kde-format
 msgid "Copy Email Address"
 msgstr "ईमेल पता प्रतिलिपि कुर्वन्तु"
 
-#: viewer/viewer_p.cpp:2162
+#: viewer/viewer_p.cpp:2152
 #, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "सादा पाठरूपेण सन्देशः"
 
-#: viewer/viewer_p.cpp:2775
+#: viewer/viewer_p.cpp:2732
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL प्रतिलिपितः क्लिप्बोर्ड् मध्ये।"
 
-#: viewer/viewer_p.cpp:2937
+#: viewer/viewer_p.cpp:2894
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "सन्देशस्य लोडिंग् विफलम्: %1."
 
-#: viewer/viewer_p.cpp:2942
+#: viewer/viewer_p.cpp:2899
 #, kde-format
 msgid "Message not found."
 msgstr "सन्देशः न लब्धः।"
@@ -2376,37 +2376,6 @@ msgstr "HTML स्रोतः"
 msgid "HTML code for displaying the message to the user"
 msgstr "उपयोक्त्रे सन्देशं प्रदर्शयितुं HTML कोडः"
 
-#: widgets/opensavedfilefolderwidget.cpp:26
-#, kde-format
-msgctxt "@action - For we don't know if it's one or many attachments"
-msgid "Open folder where attachment was saved"
-msgstr "यत्र संलग्नकं रक्षितम् आसीत् तत्र पुटं उद्घाटयन्तु"
-
-#: widgets/opensavedfilefolderwidget.cpp:27
-#, kde-format
-msgctxt "@action"
-msgid "Open File"
-msgstr "सञ्चिकां उद्घाटयन्तु"
-
-#: widgets/opensavedfilefolderwidget.cpp:62
-#, kde-format
-msgctxt "@action"
-msgid "Open folder where attachment was saved"
-msgid_plural "Open folder where attachments were saved"
-msgstr[0] "यत्र संलग्नकं रक्षितम् आसीत् तत्र पुटं उद्घाटयन्तु"
-msgstr[1] "यत्र संलग्नकानि रक्षितानि आसन् तत्र पुटं उद्घाटयन्तु"
-
-#: widgets/opensavedfilefolderwidget.cpp:65
-#, kde-format
-msgctxt "@action"
-msgid "Open folder where PDF file was saved"
-msgstr "यत्र PDF सञ्चिका रक्षिता आसीत् तत्र पुटं उद्घाटयन्तु"
-
-#: widgets/opensavedfilefolderwidget.cpp:79
-#, kde-format
-msgid "KMail was unable to open the attachment."
-msgstr "केमेलः संलग्नकं उद्घाटयितुं असमर्थः आसीत् ।"
-
 #: widgets/shownextmessagewidget.cpp:17
 #, kde-format
 msgctxt "@action:button"
@@ -2418,6 +2387,27 @@ msgstr "अग्रिमः सन्देशः"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "पूर्वसन्देशः"
+
+#~ msgctxt "@action - For we don't know if it's one or many attachments"
+#~ msgid "Open folder where attachment was saved"
+#~ msgstr "यत्र संलग्नकं रक्षितम् आसीत् तत्र पुटं उद्घाटयन्तु"
+
+#~ msgctxt "@action"
+#~ msgid "Open File"
+#~ msgstr "सञ्चिकां उद्घाटयन्तु"
+
+#~ msgctxt "@action"
+#~ msgid "Open folder where attachment was saved"
+#~ msgid_plural "Open folder where attachments were saved"
+#~ msgstr[0] "यत्र संलग्नकं रक्षितम् आसीत् तत्र पुटं उद्घाटयन्तु"
+#~ msgstr[1] "यत्र संलग्नकानि रक्षितानि आसन् तत्र पुटं उद्घाटयन्तु"
+
+#~ msgctxt "@action"
+#~ msgid "Open folder where PDF file was saved"
+#~ msgstr "यत्र PDF सञ्चिका रक्षिता आसीत् तत्र पुटं उद्घाटयन्तु"
+
+#~ msgid "KMail was unable to open the attachment."
+#~ msgstr "केमेलः संलग्नकं उद्घाटयितुं असमर्थः आसीत् ।"
 
 #~ msgid "Error: Signature not verified"
 #~ msgstr "त्रुटिः : हस्ताक्षरं सत्यापितं न"
