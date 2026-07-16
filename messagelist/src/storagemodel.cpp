@@ -397,8 +397,8 @@ QModelIndex MessageList::StorageModel::parent(const QModelIndex &index) const
 
 int MessageList::StorageModel::rowCount(const QModelIndex &parent) const
 {
-    if (!parent.isValid()) {
-        return d->mModel->rowCount();
+    if (parent.isValid()) {
+        return d->mModel->rowCount(parent);
     }
     return 0; // this model is flat.
 }
