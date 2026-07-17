@@ -373,7 +373,7 @@ bool KMailProtocolURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) con
             w->goResourceOnline();
             return true;
         } else if (urlPath == QLatin1StringView("loadExternal")) {
-            w->setHtmlLoadExtOverride(!w->htmlLoadExtOverride());
+            w->setHtmlLoadExtOverride(true);
             w->update(MimeTreeParser::Force);
             return true;
         } else if (urlPath == QLatin1StringView("decryptMessage")) {
