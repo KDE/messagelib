@@ -2332,7 +2332,3 @@ msgstr ""
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr ""
-
-#~ msgctxt "@action - For we don't know if it's one or many attachments"
-#~ msgid "Open folder where attachment was saved"
-#~ msgstr "打开保存附件的文件夹"
