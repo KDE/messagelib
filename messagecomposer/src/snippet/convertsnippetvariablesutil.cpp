@@ -5,11 +5,11 @@
 */
 
 #include "convertsnippetvariablesutil.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QDateTime>
 #include <QLocale>
 
+using namespace Qt::Literals::StringLiterals;
 QString MessageComposer::ConvertSnippetVariablesUtil::snippetVariableFromEnum(MessageComposer::ConvertSnippetVariablesUtil::VariableType type)
 {
     switch (type) {

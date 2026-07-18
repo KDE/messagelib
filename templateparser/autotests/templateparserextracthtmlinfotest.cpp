@@ -5,13 +5,13 @@
 */
 
 #include "templateparserextracthtmlinfotest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "templateparserextracthtmlinfo.h"
 
 #include <QSignalSpy>
 #include <QTest>
 
+using namespace Qt::Literals::StringLiterals;
 TemplateParserExtractHtmlInfoTest::TemplateParserExtractHtmlInfoTest(QObject *parent)
     : QObject(parent)
 {

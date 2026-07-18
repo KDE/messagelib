@@ -4,7 +4,6 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "searchmessagebybuttonstest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "core/widgets/searchmessagebybuttons.h"
 #include <QButtonGroup>
@@ -12,6 +11,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTest>
 QTEST_MAIN(SearchMessageByButtonsTest)
 using namespace MessageList::Core;
+using namespace Qt::Literals::StringLiterals;
 SearchMessageByButtonsTest::SearchMessageByButtonsTest(QObject *parent)
     : QObject{parent}
 {

@@ -4,13 +4,13 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "util.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QFile>
 #include <QProcess>
 #include <QRegularExpression>
 #include <QTest>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 std::shared_ptr<KMime::Message> Test::readAndParseMail(const QString &mailFile)
 {

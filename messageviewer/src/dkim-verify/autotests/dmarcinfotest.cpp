@@ -5,12 +5,12 @@
 */
 
 #include "dmarcinfotest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "dkim-verify/dmarcinfo.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(DMARCInfoTest)
 
+using namespace Qt::Literals::StringLiterals;
 DMARCInfoTest::DMARCInfoTest(QObject *parent)
     : QObject(parent)
 {

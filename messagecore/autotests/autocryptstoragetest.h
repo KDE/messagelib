@@ -5,7 +5,6 @@
 #pragma once
 
 #include <QDir>
-using namespace Qt::Literals::StringLiterals;
 
 #include <QObject>
 

@@ -5,7 +5,6 @@
 */
 
 #include "urlhandlermanagertest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "util.h"
 #include "viewer/urlhandlermanager_p.h"
@@ -19,6 +18,7 @@ using namespace Qt::Literals::StringLiterals;
 
 #include <QTest>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 
 class TestBodyPartURLHandler : public Interface::BodyPartURLHandler

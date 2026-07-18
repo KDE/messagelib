@@ -4,7 +4,6 @@
   SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "mdnwarningwidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "mdn/mdnwarningwidget.h"
 
@@ -12,6 +11,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QSignalSpy>
 #include <QTest>
 
+using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(MDNWarningWidgetTest)
 Q_DECLARE_METATYPE(MessageViewer::MDNWarningWidget::ResponseType)
 MDNWarningWidgetTest::MDNWarningWidgetTest(QObject *parent)

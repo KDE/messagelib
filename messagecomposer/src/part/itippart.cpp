@@ -5,8 +5,8 @@
 */
 
 #include "itippart.h"
-using namespace Qt::Literals::StringLiterals;
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageComposer;
 
 class ItipPart::ItipPartPrivate

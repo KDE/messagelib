@@ -6,7 +6,6 @@
 */
 
 #include "rendertest-headeronly.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "setupenv.h"
 #include "testcsshelper.h"
@@ -20,6 +19,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QDir>
 #include <QTest>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 
 void RenderTest::initMain()

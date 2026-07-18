@@ -5,7 +5,6 @@
 */
 
 #include "checkrsapublickey.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QCommandLineParser>
 #include <QCoreApplication>
@@ -16,6 +15,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <openssl/err.h>
 #include <openssl/evp.h>
 
+using namespace Qt::Literals::StringLiterals;
 CheckRSAPublicKey::CheckRSAPublicKey(QObject *parent)
     : QObject(parent)
 {

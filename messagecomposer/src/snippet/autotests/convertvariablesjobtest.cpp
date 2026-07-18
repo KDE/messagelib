@@ -5,7 +5,6 @@
 */
 
 #include "convertvariablesjobtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "composer/composerviewbase.h"
 #include "composer/composerviewinterface.h"
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTest>
 QTEST_GUILESS_MAIN(ConvertVariablesJobTest)
 
+using namespace Qt::Literals::StringLiterals;
 ConvertVariablesJobTest::ConvertVariablesJobTest(QObject *parent)
     : QObject(parent)
 {

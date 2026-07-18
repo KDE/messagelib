@@ -5,7 +5,6 @@
 */
 
 #include "mailinglisttest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "messagecore_debug.h"
 #include "misc/mailinglist.h"
@@ -14,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTest>
 
 // TODO add test for static MailingList detect(  const std::shared_ptr<KMime::Message> &message ); and static QString name( ... );
+using namespace Qt::Literals::StringLiterals;
 
 MailingListTest::MailingListTest(QObject *parent)
     : QObject(parent)

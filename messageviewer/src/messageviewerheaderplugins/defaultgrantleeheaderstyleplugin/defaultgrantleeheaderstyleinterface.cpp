@@ -5,7 +5,6 @@
 */
 
 #include "defaultgrantleeheaderstyleinterface.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "globalsettings_base.h"
 #include "messageviewer/headerstyle.h"
@@ -15,6 +14,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <KToggleAction>
 #include <QStandardPaths>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 DefaultGrantleeHeaderStyleInterface::DefaultGrantleeHeaderStyleInterface(MessageViewer::HeaderStylePlugin *plugin, QObject *parent)
     : MessageViewer::HeaderStyleInterface(plugin, parent)

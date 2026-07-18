@@ -5,11 +5,11 @@
 */
 
 #include "plugineditorcheckbeforesendparamstest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <MessageComposer/PluginEditorCheckBeforeSendParams>
 #include <QTest>
 
+using namespace Qt::Literals::StringLiterals;
 PluginEditorCheckBeforeSendParamsTest::PluginEditorCheckBeforeSendParamsTest(QObject *parent)
     : QObject(parent)
 {

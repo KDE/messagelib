@@ -5,13 +5,13 @@
 */
 
 #include "dkiminfotest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "dkim-verify/dkiminfo.h"
 #include <QDebug>
 #include <QTest>
 
 QTEST_GUILESS_MAIN(DKIMInfoTest)
+using namespace Qt::Literals::StringLiterals;
 
 DKIMInfoTest::DKIMInfoTest(QObject *parent)
     : QObject(parent)

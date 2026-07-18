@@ -4,7 +4,6 @@
    SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
 #include "grantleeheaderformattertest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../grantleeheaderformatter.h"
 #include <MessageViewer/GrantleeHeaderStyle>
@@ -18,6 +17,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTest>
 
 using namespace MessageViewer;
+using namespace Qt::Literals::StringLiterals;
 
 QTEST_MAIN(GrantleeHeaderFormatterTest)
 

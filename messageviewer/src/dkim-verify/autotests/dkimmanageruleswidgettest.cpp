@@ -5,7 +5,6 @@
 */
 
 #include "dkimmanageruleswidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "dkim-verify/dkimmanageruleswidget.h"
 
@@ -15,6 +14,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTreeWidget>
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(DKIMManageRulesWidgetTest)
 
 DKIMManageRulesWidgetTest::DKIMManageRulesWidgetTest(QObject *parent)

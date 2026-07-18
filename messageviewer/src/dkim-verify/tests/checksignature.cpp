@@ -5,7 +5,6 @@
 */
 
 #include "checksignature.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QCommandLineParser>
 #include <QCoreApplication>
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QFile>
 #include <QStandardPaths>
 
+using namespace Qt::Literals::StringLiterals;
 CheckSignature::CheckSignature(const QString &fileName, QObject *parent)
     : QObject(parent)
 {

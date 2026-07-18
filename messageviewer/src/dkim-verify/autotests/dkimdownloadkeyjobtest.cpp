@@ -5,12 +5,12 @@
 */
 
 #include "dkimdownloadkeyjobtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "dkim-verify/dkimdownloadkeyjob.h"
 #include <QTest>
 QTEST_MAIN(DKIMDownloadKeyJobTest)
 
+using namespace Qt::Literals::StringLiterals;
 DKIMDownloadKeyJobTest::DKIMDownloadKeyJobTest(QObject *parent)
     : QObject(parent)
 {

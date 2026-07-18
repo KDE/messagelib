@@ -5,7 +5,6 @@
 */
 
 #include "keyresolvertest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../src/composer/keyresolver.h"
 
@@ -21,6 +20,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <gpgme.h>
 
 QTEST_MAIN(KeyResolverTest)
+using namespace Qt::Literals::StringLiterals;
 
 using namespace MessageComposer;
 using namespace Kleo;

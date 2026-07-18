@@ -5,7 +5,6 @@
 */
 
 #include "dkimcheckauthenticationstatusjobtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "dkim-verify/dkimauthenticationstatusinfo.h"
 #include "dkim-verify/dkimcheckauthenticationstatusjob.h"
@@ -17,6 +16,7 @@ using namespace Qt::Literals::StringLiterals;
 
 using namespace std::chrono_literals;
 
+using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(DKIMCheckAuthenticationStatusJobTest)
 
 DKIMCheckAuthenticationStatusJobTest::DKIMCheckAuthenticationStatusJobTest(QObject *parent)

@@ -4,7 +4,6 @@
  */
 
 #include "mailinglist.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "messagecore_debug.h"
 #include <KConfig>
@@ -15,6 +14,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QStringList>
 
 using namespace MessageCore;
+using namespace Qt::Literals::StringLiterals;
 
 using MagicDetectorFunc = QString (*)(const std::shared_ptr<KMime::Message> &, QByteArray &, QString &);
 

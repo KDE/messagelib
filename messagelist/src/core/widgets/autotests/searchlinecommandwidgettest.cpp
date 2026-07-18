@@ -4,7 +4,6 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "searchlinecommandwidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "core/widgets/searchlinecommandbuttonswidget.h"
 #include "core/widgets/searchlinecommandwidget.h"
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QVBoxLayout>
 QTEST_MAIN(SearchLineCommandWidgetTest)
 
+using namespace Qt::Literals::StringLiterals;
 SearchLineCommandWidgetTest::SearchLineCommandWidgetTest(QObject *parent)
     : QObject{parent}
 {

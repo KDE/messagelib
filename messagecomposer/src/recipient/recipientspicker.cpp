@@ -7,7 +7,6 @@
 */
 
 #include "recipientspicker.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "settings/messagecomposersettings.h"
 
@@ -33,6 +32,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QVBoxLayout>
 
 using namespace MessageComposer;
+using namespace Qt::Literals::StringLiterals;
 namespace
 {
 static const char myRecipientsPickerConfigGroupName[] = "RecipientsPicker";

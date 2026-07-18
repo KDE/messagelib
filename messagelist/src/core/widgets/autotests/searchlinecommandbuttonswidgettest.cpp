@@ -5,13 +5,13 @@
 */
 
 #include "searchlinecommandbuttonswidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "core/widgets/searchlinecommandbuttonswidget.h"
 #include "core/widgets/searchlinecommandflowlayout.h"
 #include <QTest>
 QTEST_MAIN(SearchLineCommandButtonsWidgetTest)
 
+using namespace Qt::Literals::StringLiterals;
 SearchLineCommandButtonsWidgetTest::SearchLineCommandButtonsWidgetTest(QObject *parent)
     : QObject{parent}
 {

@@ -10,7 +10,6 @@
 */
 
 #include "recipientseditorsidewidget.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "kwindowpositioner.h"
 #include "recipientspicker.h"
@@ -20,6 +19,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QPushButton>
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageComposer;
 
 RecipientsEditorSideWidget::RecipientsEditorSideWidget(RecipientsEditor *view, QWidget *parent)

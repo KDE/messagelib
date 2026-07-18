@@ -6,7 +6,6 @@
 */
 
 #include "showonlymimeparttest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "setupenv.h"
 #include "testcsshelper.h"
@@ -19,6 +18,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QString>
 #include <QTest>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 
 void ShowOnlyMimePartTest::initTestCase()

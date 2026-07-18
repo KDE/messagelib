@@ -5,7 +5,6 @@
 */
 
 #include "textmessagepartrenderer.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../messagepartrenderermanager.h"
 
@@ -15,6 +14,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <MessageCore/StringUtil>
 
 using namespace MessageViewer;
+using namespace Qt::Literals::StringLiterals;
 
 TextMessagePartRenderer::TextMessagePartRenderer() = default;
 

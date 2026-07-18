@@ -5,13 +5,13 @@
 */
 
 #include "viewertest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "messageviewer/viewer.h"
 #include <KActionCollection>
 #include <QTest>
 #include <qtestmouse.h>
 
+using namespace Qt::Literals::StringLiterals;
 ViewerTest::ViewerTest()
 {
 }

@@ -5,10 +5,10 @@
 */
 
 #include "lookupkey.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QDebug>
 #include <QDnsLookup>
+using namespace Qt::Literals::StringLiterals;
 LookUpKey::LookUpKey(QObject *parent)
     : QObject(parent)
 {

@@ -5,7 +5,6 @@
 */
 
 #include "attachmentpropertiesdialogtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "qtest_messagecore.h"
 
@@ -23,6 +22,7 @@ using namespace KMime;
 #include <MessageCore/AttachmentPropertiesDialog>
 using namespace MessageCore;
 
+using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(AttachmentPropertiesDialogTest)
 
 AttachmentPropertiesDialogTest::AttachmentPropertiesDialogTest(QObject *parent)

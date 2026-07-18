@@ -4,13 +4,13 @@
   SPDX-License-Identifier: GPL-2.0-only
 */
 #include "attachmentupdatejobtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "attachment/attachmentupdatejob.h"
 #include "qtest_messagecore.h"
 #include <MessageCore/AttachmentPart>
 #include <QTest>
 
+using namespace Qt::Literals::StringLiterals;
 #define PATH_ATTACHMENTS QLatin1StringView(KDESRCDIR "/attachments/")
 
 AttachmentUpdateJobTest::AttachmentUpdateJobTest(QObject *parent)

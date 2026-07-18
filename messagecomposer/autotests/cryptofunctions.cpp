@@ -6,7 +6,6 @@
 */
 
 #include "cryptofunctions.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "setupenv.h"
 
@@ -23,6 +22,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <gpgme++/keylistresult.h>
 
 using namespace MessageComposer;
+using namespace Qt::Literals::StringLiterals;
 
 void ComposerTestUtil::verify(bool sign,
                               bool encrypt,

@@ -5,7 +5,6 @@
 */
 
 #include "plugineditorcheckbeforesendmanager.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "messagecomposer_debug.h"
 #include "plugineditorcheckbeforesend.h"
@@ -14,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <PimCommon/PluginUtil>
 #include <QFileInfo>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageComposer;
 
 class PluginEditorCheckBeforeSendInfo

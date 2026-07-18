@@ -3,7 +3,6 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "autocryptrecipienttest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "autocrypt/autocryptrecipient.h"
 #include "autocrypt/autocryptrecipient_p.h"
@@ -24,6 +23,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QStandardPaths>
 #include <QTest>
 
+using namespace Qt::Literals::StringLiterals;
 static std::shared_ptr<KMime::Message> readAndParseMail(const QString &mailFile)
 {
     QFile file(QLatin1StringView(MAIL_DATA_DIR) + u'/' + mailFile);

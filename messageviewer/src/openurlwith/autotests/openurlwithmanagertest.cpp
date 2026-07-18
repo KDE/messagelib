@@ -5,11 +5,11 @@
 */
 
 #include "openurlwithmanagertest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "openurlwith/openurlwithmanager.h"
 #include <QStandardPaths>
 #include <QTest>
+using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(OpenUrlWithManagerTest)
 
 OpenUrlWithManagerTest::OpenUrlWithManagerTest(QObject *parent)

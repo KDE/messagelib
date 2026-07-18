@@ -5,7 +5,6 @@
 */
 
 #include "viewergrantleethemesupporttest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "messageviewer/viewer.h"
 
@@ -15,6 +14,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QStandardPaths>
 #include <QTest>
 
+using namespace Qt::Literals::StringLiterals;
 ViewerGrantleeThemeSupportTest::ViewerGrantleeThemeSupportTest(QObject *parent)
     : QObject(parent)
 {

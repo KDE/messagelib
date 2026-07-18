@@ -5,7 +5,6 @@
 */
 
 #include "followupreminderselectdatedialogtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <Akonadi/CollectionComboBox>
 #include <KDateComboBox>
@@ -18,6 +17,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QPushButton>
 #include <QStandardItemModel>
 
+using namespace Qt::Literals::StringLiterals;
 FollowupReminderSelectDateDialogTest::FollowupReminderSelectDateDialogTest(QObject *parent)
     : QObject(parent)
 {

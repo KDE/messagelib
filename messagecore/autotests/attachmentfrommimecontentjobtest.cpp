@@ -5,7 +5,6 @@
 */
 
 #include "attachmentfrommimecontentjobtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "qtest_messagecore.h"
 
@@ -18,6 +17,7 @@ using namespace KMime;
 
 #include "attachment/attachmentfrommimecontentjob.h"
 using namespace MessageCore;
+using namespace Qt::Literals::StringLiterals;
 
 QTEST_MAIN(AttachmentFromMimeContentJobTest)
 

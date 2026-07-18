@@ -5,7 +5,6 @@
 */
 
 #include "testmaildndattachment.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KActionCollection>
 #include <KMime/Content>
@@ -17,6 +16,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <MessageViewer/MailWebEngineView>
 #include <MessageViewer/Viewer>
 
+using namespace Qt::Literals::StringLiterals;
 TestMailDndAttachment::TestMailDndAttachment(QWidget *parent)
     : QWidget(parent)
 {

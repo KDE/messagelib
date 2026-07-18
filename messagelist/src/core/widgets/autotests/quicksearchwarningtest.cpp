@@ -5,11 +5,11 @@
 */
 
 #include "quicksearchwarningtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../src/core/widgets/quicksearchwarning.h"
 #include <QAction>
 #include <QTest>
+using namespace Qt::Literals::StringLiterals;
 QuickSearchWarningTest::QuickSearchWarningTest(QObject *parent)
     : QObject(parent)
 {

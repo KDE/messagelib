@@ -6,11 +6,11 @@
 */
 
 #include "searchcollectionindexingwarningtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "core/widgets/searchcollectionindexingwarning.h"
 #include <QTest>
 
+using namespace Qt::Literals::StringLiterals;
 SearchCollectionIndexingWarningTest::SearchCollectionIndexingWarningTest(QObject *parent)
     : QObject(parent)
 {

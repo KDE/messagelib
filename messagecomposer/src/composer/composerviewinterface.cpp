@@ -5,12 +5,12 @@
 */
 
 #include "composerviewinterface.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "composerviewbase.h"
 #include "snippet/convertsnippetvariablesutil.h"
 #include <KIO/Global>
 #include <MessageComposer/AttachmentModel>
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageComposer;
 ComposerViewInterface::ComposerViewInterface(ComposerViewBase *composerView)
     : mComposerView(composerView)

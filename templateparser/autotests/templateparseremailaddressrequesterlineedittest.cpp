@@ -5,7 +5,6 @@
 */
 
 #include "templateparseremailaddressrequesterlineedittest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "templateparseremailaddressrequesterlineedit.h"
 #include <QHBoxLayout>
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QSignalSpy>
 #include <QTest>
 
+using namespace Qt::Literals::StringLiterals;
 TemplateParserEmailAddressRequesterLineEditTest::TemplateParserEmailAddressRequesterLineEditTest(QObject *parent)
     : QObject(parent)
 {

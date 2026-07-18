@@ -4,10 +4,10 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "remotecontentinfotest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "remote-content/remotecontentinfo.h"
 #include <QTest>
+using namespace Qt::Literals::StringLiterals;
 QTEST_GUILESS_MAIN(RemoteContentInfoTest)
 RemoteContentInfoTest::RemoteContentInfoTest(QObject *parent)
     : QObject(parent)

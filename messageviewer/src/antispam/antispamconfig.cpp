@@ -9,11 +9,11 @@
 */
 
 #include "antispamconfig.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KConfig>
 #include <KConfigGroup>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 
 AntiSpamConfig *AntiSpamConfig::instance()

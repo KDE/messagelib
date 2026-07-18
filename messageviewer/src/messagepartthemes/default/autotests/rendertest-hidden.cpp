@@ -6,7 +6,6 @@
 */
 
 #include "rendertest-hidden.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "setupenv.h"
 #include "testcsshelper.h"
@@ -21,6 +20,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTest>
 
 using namespace MessageViewer;
+using namespace Qt::Literals::StringLiterals;
 
 void RenderTest::initMain()
 {

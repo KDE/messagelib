@@ -5,7 +5,6 @@
 */
 
 #include "dkimwidgetinfotest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "dkim-verify/dkimwidgetinfo.h"
 #include <MessageViewer/DKIMCheckSignatureJob>
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QLabel>
 #include <QTest>
 
+using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(DKIMWidgetInfoTest)
 DKIMWidgetInfoTest::DKIMWidgetInfoTest(QObject *parent)
     : QObject(parent)

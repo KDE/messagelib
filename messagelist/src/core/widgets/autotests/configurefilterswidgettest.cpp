@@ -5,12 +5,12 @@
 */
 
 #include "configurefilterswidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "core/widgets/configurefilterswidget.h"
 #include <QListWidget>
 #include <QTest>
 #include <QVBoxLayout>
+using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(ConfigureFiltersWidgetTest)
 ConfigureFiltersWidgetTest::ConfigureFiltersWidgetTest(QObject *parent)
     : QObject(parent)

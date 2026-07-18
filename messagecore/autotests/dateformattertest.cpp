@@ -5,7 +5,6 @@
 */
 
 #include <utils/dateformatter.h>
-using namespace Qt::Literals::StringLiterals;
 
 #include <QDateTime>
 #include <QObject>
@@ -14,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 
 using namespace MessageCore;
 
+using namespace Qt::Literals::StringLiterals;
 static void initLocale()
 {
     qputenv("LANG", "en_US.utf-8");

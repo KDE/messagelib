@@ -5,12 +5,12 @@
 */
 
 #include "messageviewerutilstest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "utils/messageviewerutil.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(MessageViewerUtilsTest)
 
+using namespace Qt::Literals::StringLiterals;
 MessageViewerUtilsTest::MessageViewerUtilsTest(QObject *parent)
     : QObject(parent)
 {

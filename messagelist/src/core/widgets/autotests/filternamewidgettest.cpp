@@ -5,13 +5,13 @@
 */
 
 #include "filternamewidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "core/widgets/filternamewidget.h"
 #include <KIconButton>
 #include <QHBoxLayout>
 #include <QLineEdit>
 #include <QTest>
+using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(FilterNameWidgetTest)
 FilterNameWidgetTest::FilterNameWidgetTest(QObject *parent)
     : QObject(parent)

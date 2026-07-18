@@ -5,7 +5,6 @@
 */
 
 #include "autocryptstorage.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "autocryptrecipient_p.h"
 #include "autocryptstorage_p.h"
@@ -17,6 +16,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QUrl>
 #include <autocrypt_debug.h>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageCore;
 
 AutocryptStoragePrivate::AutocryptStoragePrivate()

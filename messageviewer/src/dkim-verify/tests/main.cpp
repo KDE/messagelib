@@ -5,11 +5,11 @@
 */
 
 #include "lookupkey.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QCommandLineParser>
 #include <QCoreApplication>
 #include <QStandardPaths>
+using namespace Qt::Literals::StringLiterals;
 int main(int argc, char **argv)
 {
     QCoreApplication app(argc, argv);

@@ -6,7 +6,6 @@
 */
 
 #include "messagehelper.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "MessageCore/MailingList"
 #include "MessageCore/StringUtil"
@@ -15,6 +14,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <KIdentityManagementCore/IdentityManager>
 #include <KMime/MDN>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageCore;
 
 namespace MessageHelper

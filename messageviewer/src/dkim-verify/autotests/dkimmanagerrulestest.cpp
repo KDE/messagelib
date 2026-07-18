@@ -5,11 +5,11 @@
 */
 
 #include "dkimmanagerrulestest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "dkim-verify/dkimmanagerrules.h"
 #include <QStandardPaths>
 #include <QTest>
+using namespace Qt::Literals::StringLiterals;
 QTEST_GUILESS_MAIN(DKIMManagerRulesTest)
 DKIMManagerRulesTest::DKIMManagerRulesTest(QObject *parent)
     : QObject(parent)

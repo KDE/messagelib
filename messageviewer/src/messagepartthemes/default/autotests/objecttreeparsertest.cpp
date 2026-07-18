@@ -3,7 +3,6 @@
    SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
 #include "objecttreeparsertest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "setupenv.h"
 #include "util.h"
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 
 #include <QTest>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 using namespace MimeTreeParser;
 

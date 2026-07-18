@@ -5,13 +5,13 @@
 */
 
 #include "dkimmanagerkeywidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "dkim-verify/dkimmanagerkeytreeview.h"
 #include "dkim-verify/dkimmanagerkeywidget.h"
 #include <QLineEdit>
 #include <QTest>
 #include <QVBoxLayout>
+using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(DKIMManagerKeyWidgetTest)
 DKIMManagerKeyWidgetTest::DKIMManagerKeyWidgetTest(QObject *parent)
     : QObject(parent)

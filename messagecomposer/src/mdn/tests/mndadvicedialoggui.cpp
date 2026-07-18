@@ -5,10 +5,10 @@
 */
 
 #include "mdn/mdnadvicedialog.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QApplication>
 #include <QDebug>
+using namespace Qt::Literals::StringLiterals;
 int main(int argc, char **argv)
 {
     QApplication app(argc, argv);

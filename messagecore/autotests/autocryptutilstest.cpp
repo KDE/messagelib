@@ -3,7 +3,6 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "autocryptutilstest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "autocrypt/autocryptrecipient_p.h"
 #include "autocrypt/autocryptstorage.h"
@@ -19,6 +18,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTest>
 
 using namespace MessageCore;
+using namespace Qt::Literals::StringLiterals;
 
 QTEST_GUILESS_MAIN(AutocryptUtilsTest)
 

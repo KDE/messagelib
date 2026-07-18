@@ -9,7 +9,6 @@
 */
 
 #include "spamheaderanalyzer.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "antispamconfig.h"
 #include "messageviewer_debug.h"
@@ -19,6 +18,7 @@ using namespace Qt::Literals::StringLiterals;
 
 #include <QRegularExpression>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 
 // static

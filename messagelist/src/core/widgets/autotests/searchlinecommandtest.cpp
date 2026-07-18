@@ -5,11 +5,11 @@
 */
 
 #include "searchlinecommandtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "core/widgets/searchlinecommand.h"
 
 #include <QTest>
+using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(SearchLineCommandTest)
 static void initLocale()
 {

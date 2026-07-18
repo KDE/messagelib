@@ -5,7 +5,6 @@
 */
 
 #include "job/itipjob.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "contentjobbase_p.h"
 #include "job/multipartjob.h"
@@ -17,6 +16,7 @@ using namespace Qt::Literals::StringLiterals;
 
 #include <KMime/Content>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageComposer;
 
 class MessageComposer::ItipJobPrivate : public ContentJobBasePrivate

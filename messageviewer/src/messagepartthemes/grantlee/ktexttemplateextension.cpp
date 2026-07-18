@@ -5,12 +5,12 @@
 */
 
 #include "ktexttemplateextension.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KTextTemplate/Exception>
 #include <KTextTemplate/Parser>
 
 using namespace MessageViewer;
+using namespace Qt::Literals::StringLiterals;
 
 CallbackTag::CallbackTag(const QString &name, QObject *parent)
     : KTextTemplate::Node(parent)

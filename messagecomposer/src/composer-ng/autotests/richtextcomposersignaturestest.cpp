@@ -5,7 +5,6 @@
 */
 
 #include "richtextcomposersignaturestest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../richtextcomposerng.h"
 #include "../richtextcomposersignatures.h"
@@ -14,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTest>
 
 QTEST_MAIN(RichTextComposerSignaturesTest)
+using namespace Qt::Literals::StringLiterals;
 
 RichTextComposerSignaturesTest::RichTextComposerSignaturesTest(QObject *parent)
     : QObject(parent)

@@ -5,7 +5,6 @@
 */
 
 #include "plugineditorgrammarmanager.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "messagecomposer_debug.h"
 #include "plugineditorgrammarcustomtoolsviewinterface.h"
@@ -16,6 +15,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QFileInfo>
 
 using namespace MessageComposer;
+using namespace Qt::Literals::StringLiterals;
 
 class PluginEditorGrammarInfo
 {

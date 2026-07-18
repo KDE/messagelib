@@ -3,7 +3,6 @@
    SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
 #include "aggregationcombobox.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "aggregationcombobox_p.h"
 
@@ -14,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 
 using namespace MessageList::Core;
 using namespace MessageList::Utils;
+using namespace Qt::Literals::StringLiterals;
 
 AggregationComboBox::AggregationComboBox(QWidget *parent)
     : QComboBox(parent)

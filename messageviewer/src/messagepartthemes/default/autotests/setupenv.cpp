@@ -6,7 +6,6 @@
 */
 
 #include "setupenv.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "messagepartthemes/default/messagepartrendererfactory.h"
 
@@ -14,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 
 #include <QIcon>
 #include <QLocale>
+using namespace Qt::Literals::StringLiterals;
 
 void MessageViewer::Test::setupEnv()
 {

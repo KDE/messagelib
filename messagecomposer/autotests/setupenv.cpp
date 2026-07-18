@@ -6,7 +6,6 @@
 */
 
 #include "setupenv.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QGpgME/ExportJob>
 #include <QGpgME/ImportJob>
@@ -21,6 +20,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QStandardPaths>
 #include <QTest>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageComposer;
 
 void Test::setupEnv()

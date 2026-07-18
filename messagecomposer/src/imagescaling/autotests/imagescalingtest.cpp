@@ -5,13 +5,13 @@
 */
 
 #include "imagescalingtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../imagescaling.h"
 #include "settings/messagecomposersettings.h"
 #include <QStandardPaths>
 #include <QTest>
 
+using namespace Qt::Literals::StringLiterals;
 ImageScalingTest::ImageScalingTest(QObject *parent)
     : QObject(parent)
 {

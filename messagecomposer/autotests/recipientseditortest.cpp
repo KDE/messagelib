@@ -5,7 +5,6 @@
 */
 
 #include <QObject>
-using namespace Qt::Literals::StringLiterals;
 
 #include <QTest>
 
@@ -15,6 +14,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <KMime/Types>
 #include <QClipboard>
 
+using namespace Qt::Literals::StringLiterals;
 class RecipientsLineTestFactory : public MessageComposer::RecipientLineFactory
 {
     Q_OBJECT

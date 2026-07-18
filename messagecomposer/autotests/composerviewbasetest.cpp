@@ -5,7 +5,6 @@
 */
 
 #include "composerviewbasetest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "cryptofunctions.h"
 #include "qtest_messagecomposer.h"
@@ -29,6 +28,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QStandardPaths>
 #include <QTest>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageComposer;
 
 Q_DECLARE_METATYPE(Kleo::CryptoMessageFormat)

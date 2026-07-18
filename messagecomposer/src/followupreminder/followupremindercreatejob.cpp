@@ -5,7 +5,6 @@
 */
 
 #include "followupremindercreatejob.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "followupreminderinterface.h"
 #include "messagecomposer_debug.h"
@@ -19,6 +18,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QDBusPendingCallWatcher>
 #include <QDBusPendingReply>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageComposer;
 class MessageComposer::FollowupReminderCreateJobPrivate
 {

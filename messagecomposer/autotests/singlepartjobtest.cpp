@@ -5,7 +5,6 @@
 */
 
 #include "singlepartjobtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QDebug>
 #include <QTest>
@@ -18,6 +17,7 @@ using namespace Qt::Literals::StringLiterals;
 
 using namespace KMime;
 using namespace MessageComposer;
+using namespace Qt::Literals::StringLiterals;
 
 QTEST_MAIN(SinglepartJobTest)
 

@@ -5,7 +5,6 @@
 */
 
 #include "dmarclookupkey.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "dkim-verify/dmarcrecordjob.h"
 #include <QCommandLineParser>
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QDebug>
 #include <QStandardPaths>
 
+using namespace Qt::Literals::StringLiterals;
 DMarcLookUpKey::DMarcLookUpKey(QObject *parent)
     : QObject(parent)
 {

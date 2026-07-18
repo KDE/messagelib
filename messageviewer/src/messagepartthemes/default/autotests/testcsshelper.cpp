@@ -5,13 +5,13 @@
 */
 
 #include "testcsshelper.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QApplication>
 #include <QColor>
 #include <QFont>
 #include <QPalette>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer::Test;
 
 TestCSSHelper::TestCSSHelper(const QPaintDevice *pd)

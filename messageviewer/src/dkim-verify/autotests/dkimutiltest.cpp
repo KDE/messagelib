@@ -5,11 +5,11 @@
 */
 
 #include "dkimutiltest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "dkim-verify/dkimutil.h"
 #include <QTest>
 
+using namespace Qt::Literals::StringLiterals;
 QTEST_GUILESS_MAIN(DKIMUtilTest)
 DKIMUtilTest::DKIMUtilTest(QObject *parent)
     : QObject(parent)

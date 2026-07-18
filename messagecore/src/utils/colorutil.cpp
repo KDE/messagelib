@@ -6,11 +6,11 @@
  */
 
 #include "colorutil.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KColorScheme>
 #include <QApplication>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageCore;
 
 static bool isLightTheme()

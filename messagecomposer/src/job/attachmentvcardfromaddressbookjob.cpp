@@ -5,7 +5,6 @@
 */
 
 #include "attachmentvcardfromaddressbookjob.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <Akonadi/ContactGroupExpandJob>
 #include <KContacts/Addressee>
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <KContacts/VCardConverter>
 #include <KLocalizedString>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageComposer;
 
 class MessageComposer::AttachmentVcardFromAddressBookJobPrivate

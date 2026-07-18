@@ -5,13 +5,13 @@
 */
 
 #include "searchlinestatustest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../src/core/widgets/searchlinestatus.h"
 #include <QCompleter>
 #include <QMenu>
 #include <QTest>
 QTEST_MAIN(SearchLineStatusTest)
+using namespace Qt::Literals::StringLiterals;
 SearchLineStatusTest::SearchLineStatusTest(QObject *parent)
     : QObject(parent)
 {

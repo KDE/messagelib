@@ -6,7 +6,6 @@
 */
 
 #include "utiltest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QStandardPaths>
 #include <QTest>
@@ -14,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 
 #include <MessageComposer/Util>
 using namespace MessageComposer;
+using namespace Qt::Literals::StringLiterals;
 
 QTEST_MAIN(UtilTest)
 

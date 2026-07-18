@@ -3,13 +3,13 @@
    SPDX-License-Identifier: LGPL-2.0-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
 #include "stringutiltest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../src/utils/stringutil.h"
 
 #include <QTest>
 #include <QUrl>
 using namespace MessageCore;
+using namespace Qt::Literals::StringLiterals;
 
 QTEST_MAIN(StringUtilTest)
 #define lineLength 40

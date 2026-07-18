@@ -5,7 +5,6 @@
 */
 
 #include "dkimrulewidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "dkim-verify/dkimmanagerulescombobox.h"
 #include "dkim-verify/dkimrulewidget.h"
@@ -14,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QLineEdit>
 #include <QSpinBox>
 #include <QTest>
+using namespace Qt::Literals::StringLiterals;
 
 QTEST_MAIN(DKIMRuleWidgetTest)
 DKIMRuleWidgetTest::DKIMRuleWidgetTest(QObject *parent)

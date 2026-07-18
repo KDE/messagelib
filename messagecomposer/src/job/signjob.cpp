@@ -6,7 +6,6 @@
 */
 
 #include "job/signjob.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "contentjobbase_p.h"
 #include "job/protectedheadersjob.h"
@@ -27,6 +26,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <gpgme++/signingresult.h>
 
 using namespace MessageComposer;
+using namespace Qt::Literals::StringLiterals;
 
 class MessageComposer::SignJobPrivate : public ContentJobBasePrivate
 {

@@ -5,7 +5,6 @@
 */
 
 #include "attachmentcompressjobtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "qtest_messagecore.h"
 
@@ -16,6 +15,7 @@ using namespace Qt::Literals::StringLiterals;
 
 #include <MessageCore/AttachmentCompressJob>
 using namespace MessageCore;
+using namespace Qt::Literals::StringLiterals;
 
 QTEST_MAIN(AttachmentCompressJobTest)
 

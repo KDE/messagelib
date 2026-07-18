@@ -3,7 +3,6 @@
    SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
 #include "themecombobox.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "utils/themecombobox.h"
 #include "utils/themecombobox_p.h"
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include "messagelistsettings.h"
 #include "storagemodel.h"
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageList::Core;
 using namespace MessageList::Utils;
 

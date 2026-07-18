@@ -5,7 +5,6 @@
 */
 
 #include "sendlaterinfotest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "sendlater/sendlaterinfo.h"
 
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QStandardPaths>
 #include <QTest>
 
+using namespace Qt::Literals::StringLiterals;
 SendLaterInfoTest::SendLaterInfoTest(QObject *parent)
     : QObject(parent)
 {

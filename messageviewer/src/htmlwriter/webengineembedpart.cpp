@@ -5,9 +5,9 @@
 */
 
 #include "webengineembedpart.h"
-using namespace Qt::Literals::StringLiterals;
 
 using namespace MessageViewer;
+using namespace Qt::Literals::StringLiterals;
 
 WebEngineEmbedPart::WebEngineEmbedPart(QObject *parent)
     : QObject(parent)

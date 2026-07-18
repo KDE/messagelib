@@ -6,7 +6,6 @@
 */
 
 #include "unencryptedmessagetest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "setupenv.h"
 #include "util.h"
@@ -18,6 +17,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTest>
 
 using namespace MessageViewer;
+using namespace Qt::Literals::StringLiterals;
 
 QTEST_MAIN(UnencryptedMessageTest)
 

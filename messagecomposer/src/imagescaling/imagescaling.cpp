@@ -5,12 +5,12 @@
 */
 
 #include "imagescaling.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "settings/messagecomposersettings.h"
 #include <QBuffer>
 #include <QImage>
 using namespace MessageComposer;
+using namespace Qt::Literals::StringLiterals;
 
 class MessageComposer::ImageScalingPrivate
 {

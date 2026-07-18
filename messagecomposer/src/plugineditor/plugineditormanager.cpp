@@ -5,7 +5,6 @@
 */
 
 #include "plugineditormanager.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "messagecomposer_debug.h"
 #include "plugineditor.h"
@@ -14,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <PimCommon/PluginUtil>
 #include <QFileInfo>
 using namespace MessageComposer;
+using namespace Qt::Literals::StringLiterals;
 
 class PluginEditorInfo
 {

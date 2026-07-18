@@ -6,11 +6,11 @@
 */
 
 #include "converthtmltoplaintexttest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../converthtmltoplaintext.h"
 #include <QTest>
 
+using namespace Qt::Literals::StringLiterals;
 ConvertHtmlToPlainTextTest::ConvertHtmlToPlainTextTest(QObject *parent)
     : QObject(parent)
 {

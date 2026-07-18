@@ -5,7 +5,6 @@
 */
 
 #include "job/protectedheadersjob.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "contentjobbase_p.h"
 #include "job/singlepartjob.h"
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <KMime/Content>
 #include <KMime/Message>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageComposer;
 
 class MessageComposer::ProtectedHeadersJobPrivate : public ContentJobBasePrivate

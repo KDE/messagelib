@@ -4,13 +4,13 @@
   SPDX-License-Identifier: GPL-2.0-or-later
 */
 #include "searchstatusbuttonstest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "core/widgets/searchstatusbuttons.h"
 #include <QButtonGroup>
 #include <QHBoxLayout>
 #include <QTest>
 QTEST_MAIN(SearchStatusButtonsTest)
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageList::Core;
 SearchStatusButtonsTest::SearchStatusButtonsTest(QObject *parent)
     : QObject{parent}

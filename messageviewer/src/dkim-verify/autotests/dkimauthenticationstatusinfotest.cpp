@@ -5,13 +5,13 @@
 */
 
 #include "dkimauthenticationstatusinfotest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "dkim-verify/dkimauthenticationstatusinfo.h"
 #include <QTest>
 
 QTEST_GUILESS_MAIN(DKIMAuthenticationStatusInfoTest)
 
+using namespace Qt::Literals::StringLiterals;
 DKIMAuthenticationStatusInfoTest::DKIMAuthenticationStatusInfoTest(QObject *parent)
     : QObject(parent)
 {

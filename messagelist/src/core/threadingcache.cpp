@@ -7,7 +7,6 @@
  *******************************************************************************/
 
 #include "threadingcache.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "aggregation.h"
 #include "messagelist_debug.h"
@@ -17,6 +16,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QFile>
 #include <QStandardPaths>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageList::Core;
 
 namespace

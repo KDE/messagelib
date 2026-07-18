@@ -5,7 +5,6 @@
 */
 
 #include "job/skeletonmessagejob.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "settings/messagecomposersettings.h"
 
@@ -19,6 +18,7 @@ using namespace Qt::Literals::StringLiterals;
 #include "messagecomposer_debug.h"
 
 #include <KMime/Message>
+using namespace Qt::Literals::StringLiterals;
 
 using namespace MessageComposer;
 

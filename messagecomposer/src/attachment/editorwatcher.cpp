@@ -5,7 +5,6 @@
 */
 
 #include "editorwatcher.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <config-messagecomposer.h>
 
@@ -34,6 +33,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <chrono>
 
 using namespace std::chrono_literals;
+using namespace Qt::Literals::StringLiterals;
 
 using namespace MessageComposer;
 

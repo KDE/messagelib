@@ -5,7 +5,6 @@
 */
 
 #include "dkimmanagerulesdialogtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "dkim-verify/dkimmanagerulesdialog.h"
 #include "dkim-verify/dkimmanageruleswidget.h"
@@ -14,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QStandardPaths>
 #include <QTest>
 #include <QVBoxLayout>
+using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(DKIMManageRulesDialogTest)
 
 DKIMManageRulesDialogTest::DKIMManageRulesDialogTest(QObject *parent)

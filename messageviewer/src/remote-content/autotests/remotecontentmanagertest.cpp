@@ -5,11 +5,11 @@
 */
 
 #include "remotecontentmanagertest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "remote-content/remotecontentinfo.h"
 #include <QStandardPaths>
 #include <QTest>
+using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(RemoteContentManagerTest)
 RemoteContentManagerTest::RemoteContentManagerTest(QObject *parent)
     : QObject(parent)

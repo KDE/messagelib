@@ -5,7 +5,6 @@
 */
 
 #include "maintextjobtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <QDebug>
 #include <QStandardPaths>
@@ -24,6 +23,7 @@ using namespace Qt::Literals::StringLiterals;
 
 #include <KActionCollection>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageComposer;
 using namespace KMime;
 

@@ -5,7 +5,6 @@
 */
 
 #include "statusbarlabeltoggledstatetest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "MessageComposer/StatusBarLabelToggledState"
 #include <QSignalSpy>
@@ -14,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 
 QTEST_MAIN(StatusBarLabelToggledStateTest)
 
+using namespace Qt::Literals::StringLiterals;
 StatusBarLabelToggledStateTest::StatusBarLabelToggledStateTest(QObject *parent)
     : QObject(parent)
 {

@@ -5,7 +5,6 @@
 */
 
 #include "dkimchecksignaturejobtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "dkim-verify/dkimchecksignaturejob.h"
 #include <QSignalSpy>
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTimer>
 
 using namespace std::chrono_literals;
+using namespace Qt::Literals::StringLiterals;
 
 QTEST_MAIN(DKIMCheckSignatureJobTest)
 // #define USE_EXTRA_CHECK 1

@@ -5,7 +5,6 @@
 */
 
 #include "sendlaterdialogtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "sendlater/sendlaterdialog.h"
 
@@ -16,6 +15,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QStandardPaths>
 #include <QTest>
 
+using namespace Qt::Literals::StringLiterals;
 SendLaterDialogTest::SendLaterDialogTest(QObject *parent)
     : QObject(parent)
 {

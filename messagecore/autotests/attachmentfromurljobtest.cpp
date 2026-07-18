@@ -5,7 +5,6 @@
 */
 
 #include "attachmentfromurljobtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "qtest_messagecore.h"
 
@@ -14,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 #include "attachment/attachmentfromurljob.h"
 #include <MessageCore/StringUtil>
 using namespace MessageCore;
+using namespace Qt::Literals::StringLiterals;
 
 QTEST_MAIN(AttachmentFromUrlJobTest)
 

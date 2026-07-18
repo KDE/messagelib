@@ -6,7 +6,6 @@
 */
 
 #include "signjobtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "cryptofunctions.h"
 #include "qtest_messagecomposer.h"
@@ -29,6 +28,7 @@ using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(SignJobTest)
 
 using namespace MessageComposer;
+using namespace Qt::Literals::StringLiterals;
 
 void SignJobTest::initMain()
 {
