@@ -4,9 +4,24 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #pragma once
+#include "config-messagelist.h"
 #include "messagelist_private_export.h"
 #include <QLayout>
 #include <QList>
+#if HAVE_TEXTADDONSWIDGETS_FLOWLAYOUT
+#include <TextAddonsWidgets/TextAddonsWidgetFlowLayout>
+namespace MessageList::Core
+{
+class MESSAGELIST_TESTS_EXPORT SearchLineCommandFlowLayout : public TextAddonsWidgets::TextAddonsWidgetFlowLayout
+{
+    Q_OBJECT
+
+public:
+    explicit SearchLineCommandFlowLayout(QWidget *parent = nullptr);
+    ~SearchLineCommandFlowLayout() override;
+};
+}
+#else
 namespace MessageList::Core
 {
 class MESSAGELIST_TESTS_EXPORT SearchLineCommandFlowLayout : public QLayout
@@ -47,3 +62,4 @@ private:
     int mVerticalSpacing = -1;
 };
 }
+#endif

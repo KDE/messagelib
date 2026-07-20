@@ -10,6 +10,19 @@
 #include <QWidget>
 using namespace Qt::Literals::StringLiterals;
 using namespace MessageList::Core;
+
+#if HAVE_TEXTADDONSWIDGETS_FLOWLAYOUT
+SearchLineCommandFlowLayout::SearchLineCommandFlowLayout(QWidget *parent)
+    : TextAddonsWidgets::TextAddonsWidgetFlowLayout(parent)
+{
+}
+
+SearchLineCommandFlowLayout::~SearchLineCommandFlowLayout()
+{
+    clearAndDeleteWidgets();
+}
+#else
+
 static int smartSpacing(QObject *parent, QStyle::PixelMetric pm)
 {
     if (!parent) {
@@ -197,5 +210,5 @@ int SearchLineCommandFlowLayout::doFlow(QRect rect, bool effective) const
 
     return y + highest - rect.y() + margins.bottom();
 }
-
+#endif
 #include "moc_searchlinecommandflowlayout.cpp"

@@ -293,6 +293,10 @@ include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
+if(${KF6TextAddonsWidgets_VERSION} VERSION_GREATER_EQUAL 2.1.41)
+    set(HAVE_TEXTADDONSWIDGETS_FLOWLAYOUT TRUE)
+endif()
+
 add_subdirectory(mimetreeparser)
 add_subdirectory(messageviewer)
 add_subdirectory(templateparser)
