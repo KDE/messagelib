@@ -5,8 +5,8 @@
 */
 
 #include "headerstyleplugin.h"
-using namespace Qt::Literals::StringLiterals;
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 class MessageViewer::HeaderStylePluginPrivate
 {

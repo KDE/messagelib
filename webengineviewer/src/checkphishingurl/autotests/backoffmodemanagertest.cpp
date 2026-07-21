@@ -5,7 +5,6 @@
 */
 
 #include "backoffmodemanagertest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../backoffmodemanager.h"
 #include "../checkphishingurlutil.h"
@@ -15,6 +14,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QStandardPaths>
 #include <QTest>
 QTEST_GUILESS_MAIN(BackOffModeManagerTest)
+using namespace Qt::Literals::StringLiterals;
 BackOffModeManagerTest::BackOffModeManagerTest(QObject *parent)
     : QObject(parent)
 {

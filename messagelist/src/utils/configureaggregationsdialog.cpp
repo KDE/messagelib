@@ -7,7 +7,6 @@
  *******************************************************************************/
 
 #include "utils/configureaggregationsdialog.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "utils/configureaggregationsdialog_p.h"
 
@@ -29,6 +28,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QIcon>
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
 namespace MessageList
 {
 namespace Utils

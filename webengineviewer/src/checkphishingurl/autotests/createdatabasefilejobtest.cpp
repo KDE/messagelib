@@ -5,7 +5,6 @@
 */
 
 #include "createdatabasefilejobtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../createdatabasefilejob.h"
 #include "../createphishingurldatabasejob.h"
@@ -15,11 +14,15 @@ using namespace Qt::Literals::StringLiterals;
 #include <QDebug>
 #include <QSignalSpy>
 #include <QTest>
+using namespace Qt::Literals::StringLiterals;
+QTEST_MAIN(CreateDatabaseFileJobTest)
+
 Q_DECLARE_METATYPE(QList<WebEngineViewer::Addition>)
 static QByteArray readJsonFile(const QString &jsonFile)
 {
     QFile file(QLatin1StringView(CHECKPHISHINGURL_DATA_DIR) + u'/' + jsonFile);
-    file.open(QIODevice::ReadOnly);
+    const bool result = file.open(QIODevice::ReadOnly);
+    Q_ASSERT(result);
     Q_ASSERT(file.isOpen());
     const QByteArray data = file.readAll();
     Q_ASSERT(!data.isEmpty());
@@ -428,7 +431,5 @@ void CreateDatabaseFileJobTest::shouldUpdateDataBase()
     QEXPECT_FAIL("", "Expected a success but not", Continue);
     QVERIFY(successCreateDataBase);
 }
-
-QTEST_MAIN(CreateDatabaseFileJobTest)
 
 #include "moc_createdatabasefilejobtest.cpp"

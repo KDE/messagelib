@@ -5,7 +5,6 @@
 */
 
 #include "templatesutil.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "templatesutil_p.h"
 
@@ -15,6 +14,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QRegularExpression>
 #include <QStringList>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TemplateParser;
 
 void TemplateParser::Util::deleteTemplate(const QString &id)

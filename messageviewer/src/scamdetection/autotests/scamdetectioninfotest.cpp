@@ -6,10 +6,10 @@
 */
 
 #include "scamdetectioninfotest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "scamdetection/scamdetectioninfo.h"
 #include <QTest>
+using namespace Qt::Literals::StringLiterals;
 QTEST_GUILESS_MAIN(ScamDetectionInfoTest)
 ScamDetectionInfoTest::ScamDetectionInfoTest(QObject *parent)
     : QObject{parent}

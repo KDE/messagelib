@@ -5,7 +5,6 @@
 */
 
 #include "createphishingurldatabasejobtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../checkphishingurlutil.h"
 #include "../createphishingurldatabasejob.h"
@@ -13,8 +12,10 @@ using namespace Qt::Literals::StringLiterals;
 #include <QSignalSpy>
 #include <QTest>
 
+using namespace Qt::Literals::StringLiterals;
 extern WEBENGINEVIEWER_EXPORT bool webengineview_useCompactJson_CreatePhishingUrlDataBaseJob;
 
+QTEST_MAIN(CreatePhishingUrlDataBaseJobTest)
 static QByteArray readJsonFile(const QString &jsonFile)
 {
     QFile file(QLatin1StringView(CHECKPHISHINGURL_DATA_DIR) + u'/' + jsonFile);
@@ -312,7 +313,5 @@ void CreatePhishingUrlDataBaseJobTest::shouldParseResult()
     QEXPECT_FAIL("test2", "Need to Investigate it", Continue);
     QCOMPARE(spy1.at(0).at(0).value<WebEngineViewer::UpdateDataBaseInfo>(), parseInfo);
 }
-
-QTEST_MAIN(CreatePhishingUrlDataBaseJobTest)
 
 #include "moc_createphishingurldatabasejobtest.cpp"

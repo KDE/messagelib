@@ -8,7 +8,6 @@
 */
 
 #include "bodyformatter/applicationpgpencrypted.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "bodyformatter/applicationpkcs7mime.h"
 #include "bodyformatter/encrypted.h"
@@ -31,6 +30,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <KMime/Content>
 
 using namespace MimeTreeParser;
+using namespace Qt::Literals::StringLiterals;
 
 namespace
 {

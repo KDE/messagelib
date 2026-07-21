@@ -5,7 +5,6 @@
 */
 
 #include "webengineexportpdfpagejobtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "webengineexportpdfpagejob.h"
 #include <QDialog>
@@ -14,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTest>
 #include <QTimer>
 #include <QWebEngineView>
+using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(WebEngineExportPdfPageJobTest)
 WebEngineExportPdfPageJobTest::WebEngineExportPdfPageJobTest(QObject *parent)
     : QObject(parent)

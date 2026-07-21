@@ -5,7 +5,6 @@
 */
 
 #include "messagepart.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "cryptohelper.h"
 #include "job/qgpgmejobexecutor.h"
@@ -39,6 +38,7 @@ using namespace Qt::Literals::StringLiterals;
 
 #include <QUrl>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MimeTreeParser;
 
 //------MessagePart-----------------------

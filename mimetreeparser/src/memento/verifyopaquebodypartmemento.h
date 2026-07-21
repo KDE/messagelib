@@ -7,7 +7,6 @@
 #pragma once
 
 #include "cryptobodypartmemento.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <gpgme++/decryptionresult.h>
 #include <gpgme++/key.h>
@@ -16,6 +15,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QPointer>
 
 #include "interfaces/bodypart.h"
+#include <QStringList>
 
 namespace QGpgME
 {
@@ -23,8 +23,7 @@ class VerifyOpaqueJob;
 class KeyListJob;
 }
 
-#include <QStringList>
-
+using namespace Qt::Literals::StringLiterals;
 namespace MimeTreeParser
 {
 class VerifyOpaqueBodyPartMemento : public CryptoBodyPartMemento

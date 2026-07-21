@@ -6,7 +6,6 @@
 */
 
 #include "nodehelper.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "interfaces/bodypart.h"
 #include "messagepart.h"
@@ -32,6 +31,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <sstream>
 #include <string>
 
+using namespace Qt::Literals::StringLiterals;
 namespace MimeTreeParser
 {
 NodeHelper::NodeHelper()

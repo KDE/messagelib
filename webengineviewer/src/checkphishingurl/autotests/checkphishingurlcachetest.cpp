@@ -5,7 +5,6 @@
 */
 
 #include "checkphishingurlcachetest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../checkphishingurlcache.h"
 #include "../checkphishingurlutil.h"
@@ -13,6 +12,9 @@ using namespace Qt::Literals::StringLiterals;
 #include <KConfigGroup>
 #include <QStandardPaths>
 #include <QTest>
+
+using namespace Qt::Literals::StringLiterals;
+QTEST_MAIN(CheckPhishingUrlCacheTest)
 
 CheckPhishingUrlCacheTest::CheckPhishingUrlCacheTest(QObject *parent)
     : QObject(parent)
@@ -113,7 +115,5 @@ void CheckPhishingUrlCacheTest::shouldStoreValues()
     cache2.clearCache();
     cache->clearCache();
 }
-
-QTEST_MAIN(CheckPhishingUrlCacheTest)
 
 #include "moc_checkphishingurlcachetest.cpp"

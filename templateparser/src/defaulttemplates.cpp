@@ -6,10 +6,10 @@
  */
 
 #include "defaulttemplates.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KLocalizedString>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TemplateParser;
 
 QString DefaultTemplates::defaultNewMessage()

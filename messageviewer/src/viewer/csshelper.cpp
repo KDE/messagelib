@@ -8,7 +8,6 @@
 */
 
 #include "csshelper.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "settings/messageviewersettings.h"
 
@@ -23,6 +22,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QFont>
 #include <QPalette>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 
 static const struct {

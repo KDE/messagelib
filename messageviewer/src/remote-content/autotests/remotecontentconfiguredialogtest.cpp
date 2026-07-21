@@ -5,7 +5,6 @@
 */
 
 #include "remotecontentconfiguredialogtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "remote-content/remotecontentconfiguredialog.h"
 #include "remote-content/remotecontentconfigurewidget.h"
@@ -13,6 +12,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QStandardPaths>
 #include <QTest>
 #include <QVBoxLayout>
+using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(RemoteContentConfigureDialogTest)
 RemoteContentConfigureDialogTest::RemoteContentConfigureDialogTest(QObject *parent)
     : QObject(parent)

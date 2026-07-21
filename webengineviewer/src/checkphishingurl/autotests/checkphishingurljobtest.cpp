@@ -5,7 +5,6 @@
 */
 
 #include "checkphishingurljobtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../checkphishingurljob.h"
 #include "../checkphishingurlutil.h"
@@ -13,6 +12,9 @@ using namespace Qt::Literals::StringLiterals;
 #include <QSignalSpy>
 #include <QTest>
 
+using namespace Qt::Literals::StringLiterals;
+
+QTEST_MAIN(CheckPhishingUrlJobTest)
 CheckPhishingUrlJobTest::CheckPhishingUrlJobTest(QObject *parent)
     : QObject(parent)
 {
@@ -88,7 +90,5 @@ void CheckPhishingUrlJobTest::shouldParseResult()
     QCOMPARE(spy1.at(0).at(1).toUrl(), checkedUrl);
     QCOMPARE(spy1.at(0).at(2).value<uint>(), verifyCacheAfterThisTime);
 }
-
-QTEST_MAIN(CheckPhishingUrlJobTest)
 
 #include "moc_checkphishingurljobtest.cpp"

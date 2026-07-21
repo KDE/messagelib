@@ -5,13 +5,13 @@
 */
 
 #include "remotecontentdialogtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "remote-content/remotecontentdialog.h"
 #include "remote-content/remotecontentwidget.h"
 #include <QDialogButtonBox>
 #include <QTest>
 #include <QVBoxLayout>
+using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(RemoteContentDialogTest)
 
 RemoteContentDialogTest::RemoteContentDialogTest(QObject *parent)

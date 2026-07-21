@@ -5,7 +5,6 @@
 */
 
 #include "viewerplugin_gui.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "viewerplugins/viewerplugintoolmanager.h"
 #include <KActionCollection>
@@ -19,6 +18,7 @@ using namespace Qt::Literals::StringLiterals;
 
 #include "viewerplugins/viewerplugininterface.h"
 
+using namespace Qt::Literals::StringLiterals;
 ViewerPluginTest::ViewerPluginTest(QWidget *parent)
     : QWidget(parent)
 {

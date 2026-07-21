@@ -6,7 +6,6 @@
  */
 
 #include "customtemplates.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "customtemplates_kfg.h"
 #include "globalsettings_templateparser.h"
@@ -22,6 +21,7 @@ using namespace Qt::Literals::StringLiterals;
 
 #include <QWhatsThis>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TemplateParser;
 
 CustomTemplates::CustomTemplates(const QList<KActionCollection *> &actionCollection, QWidget *parent)

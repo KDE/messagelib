@@ -3,11 +3,11 @@
  *
  */
 #include <MessageCore/DateFormatter>
-using namespace Qt::Literals::StringLiterals;
 
 #include <QDebug>
 
 using namespace MessageCore;
+using namespace Qt::Literals::StringLiterals;
 
 #ifndef Q_OS_WIN
 static void initLocale()

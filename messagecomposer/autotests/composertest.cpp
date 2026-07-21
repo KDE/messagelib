@@ -6,8 +6,6 @@
 */
 
 #include "composertest.h"
-using namespace Qt::Literals::StringLiterals;
-
 #include "qtest_messagecomposer.h"
 
 #include <QTest>
@@ -22,7 +20,9 @@ using namespace KMime;
 using namespace MessageComposer;
 
 #include <MessageCore/AttachmentPart>
+
 using MessageCore::AttachmentPart;
+using namespace Qt::Literals::StringLiterals;
 
 QTEST_MAIN(ComposerTest)
 

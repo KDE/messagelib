@@ -4,7 +4,6 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "remotecontentconfigurewidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "remote-content/remotecontentconfigurewidget.h"
 #include <KTreeWidgetSearchLine>
@@ -12,6 +11,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QTest>
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(RemoteContentConfigureWidgetTest)
 RemoteContentConfigureWidgetTest::RemoteContentConfigureWidgetTest(QObject *parent)
     : QObject(parent)

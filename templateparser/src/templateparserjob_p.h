@@ -7,12 +7,12 @@
 #pragma once
 
 #include "templateparserextracthtmlinforesult.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "templateparserjob.h"
 
 #include <KMime/Message>
 
+using namespace Qt::Literals::StringLiterals;
 namespace MimeTreeParser
 {
 class ObjectTreeParser;

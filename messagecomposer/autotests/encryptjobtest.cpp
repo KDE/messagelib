@@ -6,7 +6,6 @@
 */
 
 #include "encryptjobtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "cryptofunctions.h"
 #include "qtest_messagecomposer.h"
@@ -41,6 +40,7 @@ using namespace Qt::Literals::StringLiterals;
 
 QTEST_MAIN(EncryptJobTest)
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageComposer;
 
 void EncryptJobTest::initMain()

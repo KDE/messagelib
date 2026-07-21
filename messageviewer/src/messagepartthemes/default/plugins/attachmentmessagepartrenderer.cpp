@@ -5,7 +5,6 @@
 */
 
 #include "attachmentmessagepartrenderer.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../messagepartrenderermanager.h"
 #include "utils/mimetype.h"
@@ -17,6 +16,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QUrl>
 
 using namespace MessageViewer;
+using namespace Qt::Literals::StringLiterals;
 
 AttachmentMessagePartRenderer::AttachmentMessagePartRenderer() = default;
 

@@ -4,7 +4,6 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #include "testmailwebengineselection.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KActionCollection>
 #include <QApplication>
@@ -15,6 +14,7 @@ using namespace Qt::Literals::StringLiterals;
 
 #include <MessageViewer/MailWebEngineView>
 
+using namespace Qt::Literals::StringLiterals;
 TestMailWebEngineSelection::TestMailWebEngineSelection(QWidget *parent)
     : QWidget(parent)
     , mNumber(0)

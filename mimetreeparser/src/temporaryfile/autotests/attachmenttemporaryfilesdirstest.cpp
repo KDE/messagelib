@@ -5,14 +5,16 @@
 */
 
 #include "attachmenttemporaryfilesdirstest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../attachmenttemporaryfilesdirs.h"
 #include <QDebug>
 #include <QTemporaryDir>
 #include <QTest>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MimeTreeParser;
+
+QTEST_GUILESS_MAIN(AttachmentTemporaryFilesDirsTest)
 
 AttachmentTemporaryFilesDirsTest::AttachmentTemporaryFilesDirsTest(QObject *parent)
     : QObject(parent)
@@ -136,7 +138,5 @@ void AttachmentTemporaryFilesDirsTest::shouldRemoveTemporaryFilesAfterTime()
     QCOMPARE(attachmentDir.temporaryDirs().count(), 0);
     QVERIFY(!QDir(path).exists());
 }
-
-QTEST_GUILESS_MAIN(AttachmentTemporaryFilesDirsTest)
 
 #include "moc_attachmenttemporaryfilesdirstest.cpp"

@@ -5,12 +5,14 @@
 */
 
 #include "templateparseremailaddressrequesterinterfacewidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../src/templateparseremailaddressrequesterinterfacewidget.h"
 #include <QHBoxLayout>
 #include <QTest>
 #include <TemplateParser/TemplateParserEmailAddressRequesterBase>
+using namespace Qt::Literals::StringLiterals;
+
+QTEST_MAIN(TemplateParserEmailAddressRequesterInterfaceWidgetTest)
 
 TemplateParserEmailAddressRequesterInterfaceWidgetTest::TemplateParserEmailAddressRequesterInterfaceWidgetTest(QObject *parent)
     : QObject(parent)
@@ -42,7 +44,5 @@ void TemplateParserEmailAddressRequesterInterfaceWidgetTest::shouldAssignValues(
     QVERIFY(w.text().isEmpty());
     QVERIFY(mTemplateParserEmailBase->text().isEmpty());
 }
-
-QTEST_MAIN(TemplateParserEmailAddressRequesterInterfaceWidgetTest)
 
 #include "moc_templateparseremailaddressrequesterinterfacewidgettest.cpp"

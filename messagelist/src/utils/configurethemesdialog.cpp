@@ -7,7 +7,6 @@
  *******************************************************************************/
 
 #include "utils/configurethemesdialog.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "utils/configurethemesdialog_p.h"
 
@@ -31,6 +30,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QListWidget>
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
 namespace MessageList
 {
 namespace Utils

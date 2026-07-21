@@ -7,7 +7,6 @@
  *******************************************************************************/
 
 #include "utils/themeeditor.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "core/groupheaderitem.h"
 #include "core/messageitem.h"
@@ -48,6 +47,7 @@ using namespace Qt::Literals::StringLiterals;
 
 using namespace MessageList::Utils;
 using namespace MessageList::Core;
+using namespace Qt::Literals::StringLiterals;
 
 static const char gThemeContentItemTypeDndMimeDataFormat[] = "application/x-kmail-messagelistview-theme-contentitem-type";
 

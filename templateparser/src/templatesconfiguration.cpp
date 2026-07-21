@@ -6,7 +6,6 @@
  */
 
 #include "templatesconfiguration.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "globalsettings_templateparser.h"
 #include "templatesconfiguration_kfg.h"
@@ -18,6 +17,7 @@ using namespace Qt::Literals::StringLiterals;
 
 #include <QWhatsThis>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TemplateParser;
 class TemplateParser::TemplatesConfigurationPrivate
 {

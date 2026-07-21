@@ -5,7 +5,6 @@
 */
 
 #include "templateparserjobtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "templateparserjob.h"
 #include "templateparserjob_p.h"
@@ -19,6 +18,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QStandardPaths>
 #include <QTest>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MimeTreeParser;
 
 TemplateParserJobTest::TemplateParserJobTest(QObject *parent)

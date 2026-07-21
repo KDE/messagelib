@@ -3,12 +3,12 @@
    SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
 */
 #include "cryptohelpertest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "cryptohelper.h"
 
 #include <QTest>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MimeTreeParser;
 
 void CryptoHelperTest::testPMFDEmpty()

@@ -9,7 +9,6 @@
 */
 
 #include "bodypartformatterfactory.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "bodypartformatterfactory_p.h"
 #include "interfaces/bodypartformatter.h"
@@ -22,6 +21,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QPluginLoader>
 #include <cassert>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MimeTreeParser;
 
 BodyPartFormatterFactoryPrivate::BodyPartFormatterFactoryPrivate(BodyPartFormatterFactory *factory)

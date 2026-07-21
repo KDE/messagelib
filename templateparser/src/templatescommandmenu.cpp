@@ -5,7 +5,6 @@
 */
 
 #include "templatescommandmenu.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "templateparser_debug.h"
 #include <KActionMenu>
@@ -14,6 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QAction>
 #include <QMenu>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TemplateParser;
 
 struct InsertCommand {

@@ -5,11 +5,13 @@
 */
 
 #include "checkphishingurlutiltest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../checkphishingurlutil.h"
 
 #include <QTest>
+using namespace Qt::Literals::StringLiterals;
+
+QTEST_GUILESS_MAIN(CheckPhishingUrlUtilTest)
 
 CheckPhishingUrlUtilTest::CheckPhishingUrlUtilTest(QObject *parent)
     : QObject(parent)
@@ -78,7 +80,5 @@ void CheckPhishingUrlUtilTest::shouldGenerateBackModeDelay()
     QVERIFY(result >= minuteMin);
     QVERIFY(result <= minuteMax);
 }
-
-QTEST_GUILESS_MAIN(CheckPhishingUrlUtilTest)
 
 #include "moc_checkphishingurlutiltest.cpp"

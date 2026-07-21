@@ -4,7 +4,6 @@
 */
 
 #include "messageviewer/headerstylepluginmanager.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "messageviewer/viewer.h"
 #include <KActionCollection>
@@ -18,6 +17,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QStandardPaths>
 #include <QWebEngineUrlScheme>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 
 int main(int argc, char **argv)

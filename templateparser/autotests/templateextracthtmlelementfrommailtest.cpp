@@ -5,12 +5,14 @@
 */
 
 #include "templateextracthtmlelementfrommailtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "templateextracthtmlelementfrommail.h"
 #include <QSignalSpy>
 #include <QTest>
 
+QTEST_MAIN(TemplateExtractHtmlElementFromMailTest)
+
+using namespace Qt::Literals::StringLiterals;
 TemplateExtractHtmlElementFromMailTest::TemplateExtractHtmlElementFromMailTest(QObject *parent)
     : QObject(parent)
 {
@@ -50,7 +52,5 @@ void TemplateExtractHtmlElementFromMailTest::shouldExtractHtml()
     QCOMPARE(w.headerElement(), header);
     QCOMPARE(w.bodyElement(), body);
 }
-
-QTEST_MAIN(TemplateExtractHtmlElementFromMailTest)
 
 #include "moc_templateextracthtmlelementfrommailtest.cpp"

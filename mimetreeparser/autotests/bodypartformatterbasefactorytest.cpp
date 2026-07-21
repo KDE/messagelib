@@ -5,12 +5,12 @@
 */
 
 #include "bodypartformatterfactory.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "interfaces/bodypartformatter.h"
 
 #include <QTest>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MimeTreeParser;
 
 class DummyFormatter : public Interface::BodyPartFormatter

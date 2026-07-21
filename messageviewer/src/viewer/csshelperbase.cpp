@@ -8,7 +8,6 @@
 */
 
 #include "csshelperbase.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "header/headerstyleplugin.h"
 #include "utils/iconnamecache.h"
@@ -18,6 +17,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QPalette>
 #include <QUrl>
 
+using namespace Qt::Literals::StringLiterals;
 namespace MessageViewer
 {
 namespace

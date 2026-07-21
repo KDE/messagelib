@@ -5,7 +5,6 @@
  */
 
 #include "customtemplatesmenu.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "customtemplates.h"
 #include "customtemplates_kfg.h"
@@ -18,6 +17,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QList>
 #include <QMenu>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace TemplateParser;
 class TemplateParser::CustomTemplatesMenuPrivate
 {

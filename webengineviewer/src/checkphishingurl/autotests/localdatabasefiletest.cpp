@@ -5,7 +5,6 @@
 */
 
 #include "localdatabasefiletest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../createdatabasefilejob.h"
 #include "../localdatabasefile.h"
@@ -13,6 +12,9 @@ using namespace Qt::Literals::StringLiterals;
 #include <QStandardPaths>
 #include <QTest>
 
+QTEST_GUILESS_MAIN(LocalDataBaseFileTest)
+
+using namespace Qt::Literals::StringLiterals;
 LocalDataBaseFileTest::LocalDataBaseFileTest(QObject *parent)
     : QObject(parent)
 {
@@ -108,7 +110,5 @@ void LocalDataBaseFileTest::shouldCheckHashBinaryFile()
         QCOMPARE(resultHash, val);
     }
 }
-
-QTEST_GUILESS_MAIN(LocalDataBaseFileTest)
 
 #include "moc_localdatabasefiletest.cpp"

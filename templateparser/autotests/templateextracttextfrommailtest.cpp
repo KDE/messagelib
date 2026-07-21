@@ -5,12 +5,14 @@
 */
 
 #include "templateextracttextfrommailtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "templateextracttextfrommail.h"
 #include <QSignalSpy>
 #include <QTest>
 
+QTEST_MAIN(TemplateExtractTextFromMailTest)
+
+using namespace Qt::Literals::StringLiterals;
 TemplateExtractTextFromMailTest::TemplateExtractTextFromMailTest(QObject *parent)
     : QObject(parent)
 {
@@ -36,7 +38,5 @@ void TemplateExtractTextFromMailTest::shouldExtractHtml()
     QVERIFY(result);
     QCOMPARE(w.plainText(), u"HTML Text"_s);
 }
-
-QTEST_MAIN(TemplateExtractTextFromMailTest)
 
 #include "moc_templateextracttextfrommailtest.cpp"

@@ -7,13 +7,13 @@
 #pragma once
 
 #include <QByteArray>
-using namespace Qt::Literals::StringLiterals;
 
 #include <QHash>
 #include <QString>
 
 #include <vector>
 
+using namespace Qt::Literals::StringLiterals;
 namespace MessageViewer
 {
 class MessagePartRendererBase;

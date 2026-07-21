@@ -5,7 +5,6 @@
 */
 
 #include "templatestexteditor.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "templatesutil_p.h"
 
@@ -19,6 +18,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QCompleter>
 #include <QFontDatabase>
 #include <QKeyEvent>
+using namespace Qt::Literals::StringLiterals;
 using namespace TemplateParser;
 
 TemplatesTextEditor::TemplatesTextEditor(QWidget *parent)

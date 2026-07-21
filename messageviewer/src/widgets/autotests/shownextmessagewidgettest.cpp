@@ -5,12 +5,12 @@
 */
 
 #include "shownextmessagewidgettest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "widgets/shownextmessagewidget.h"
 #include <QHBoxLayout>
 #include <QPushButton>
 #include <QTest>
+using namespace Qt::Literals::StringLiterals;
 QTEST_MAIN(ShowNextMessageWidgetTest)
 ShowNextMessageWidgetTest::ShowNextMessageWidgetTest(QObject *parent)
     : QObject(parent)

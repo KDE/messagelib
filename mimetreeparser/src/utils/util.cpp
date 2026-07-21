@@ -5,7 +5,6 @@
 */
 
 #include "util.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "mimetreeparser_debug.h"
 
@@ -17,6 +16,7 @@ using namespace Qt::Literals::StringLiterals;
 
 using namespace MimeTreeParser;
 using namespace MimeTreeParser::Util;
+using namespace Qt::Literals::StringLiterals;
 
 bool MimeTreeParser::Util::isTypeBlacklisted(const KMime::Content *node)
 {

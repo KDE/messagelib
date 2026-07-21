@@ -8,8 +8,8 @@
 #include <KIconLoader>
 #include <QStandardPaths>
 
-using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
+using namespace Qt::Literals::StringLiterals;
 
 Q_GLOBAL_STATIC(IconNameCache, s_iconNameCache)
 
