@@ -186,13 +186,13 @@ target_link_libraries(
     PUBLIC
         Qt::Core
         KF6::Mime
+        QGpgmeQt6
     PRIVATE
         KF6::Codecs
         KF6::I18n
         KF6::CoreAddons
         KPim6::Libkleo
         Qt::Gui
-        QGpgmeQt6
 )
 
 install(TARGETS KPim6MimeTreeParser EXPORT KPim6MimeTreeParserTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
