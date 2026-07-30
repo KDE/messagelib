@@ -88,7 +88,7 @@ const Aggregation *Manager::aggregation(const QString &id)
 
 const Aggregation *Manager::defaultAggregation()
 {
-    KConfigGroup conf(MessageListSettings::self()->config(), MessageList::Util::storageModelAggregationsGroup());
+    const KConfigGroup conf(MessageListSettings::self()->config(), MessageList::Util::storageModelAggregationsGroup());
 
     const QString aggregationId = conf.readEntry(u"DefaultSet"_s, "");
 
@@ -169,7 +169,7 @@ const Aggregation *Manager::aggregationForStorageModel(const StorageModel *stora
 
 const Aggregation *Manager::aggregationForStorageModel(const QString &storageId, bool *storageUsesPrivateAggregation)
 {
-    KConfigGroup conf(MessageListSettings::self()->config(), MessageList::Util::storageModelAggregationsGroup());
+    const KConfigGroup conf(MessageListSettings::self()->config(), MessageList::Util::storageModelAggregationsGroup());
 
     const QString aggregationId = conf.readEntry(MessageList::Util::setForStorageModelConfigName().arg(storageId), "");
 
@@ -370,7 +370,7 @@ const Theme *Manager::theme(const QString &id)
 
 const Theme *Manager::defaultTheme()
 {
-    KConfigGroup conf(MessageListSettings::self()->config(), MessageList::Util::storageModelThemesGroup());
+    const KConfigGroup conf(MessageListSettings::self()->config(), MessageList::Util::storageModelThemesGroup());
 
     const QString themeId = conf.readEntry(u"DefaultSet"_s, "");
 
@@ -452,7 +452,7 @@ const Theme *Manager::themeForStorageModel(const StorageModel *storageModel, boo
 
 const Theme *Manager::themeForStorageModel(const QString &id, bool *storageUsesPrivateTheme)
 {
-    KConfigGroup conf(MessageListSettings::self()->config(), MessageList::Util::storageModelThemesGroup());
+    const KConfigGroup conf(MessageListSettings::self()->config(), MessageList::Util::storageModelThemesGroup());
     const QString themeId = conf.readEntry(MessageList::Util::setForStorageModelConfigName().arg(id), "");
 
     Theme *opt = nullptr;

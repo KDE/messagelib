@@ -235,7 +235,7 @@ void SortOrder::readConfig(KConfigGroup &conf, const QString &storageId, bool *s
 {
     SortOrder privateSortOrder;
     SortOrder globalSortOrder;
-    globalSortOrder.readConfigHelper(conf, u"GlobalSortOrder"_s);
+    std::ignore = globalSortOrder.readConfigHelper(conf, u"GlobalSortOrder"_s);
     *storageUsesPrivateSortOrder = privateSortOrder.readConfigHelper(conf, storageId);
     if (*storageUsesPrivateSortOrder) {
         *this = privateSortOrder;
@@ -288,37 +288,37 @@ bool SortOrder::isValidMessageSorting(SortOrder::MessageSorting ms)
 
 const QString SortOrder::nameForSortDirection(SortDirection sortDirection)
 {
-    int index = staticMetaObject.indexOfEnumerator("SortDirection");
+    const int index = staticMetaObject.indexOfEnumerator("SortDirection");
     return QLatin1StringView(staticMetaObject.enumerator(index).valueToKey(sortDirection));
 }
 
 const QString SortOrder::nameForMessageSorting(MessageSorting messageSorting)
 {
-    int index = staticMetaObject.indexOfEnumerator("MessageSorting");
+    const int index = staticMetaObject.indexOfEnumerator("MessageSorting");
     return QLatin1StringView(staticMetaObject.enumerator(index).valueToKey(messageSorting));
 }
 
 const QString SortOrder::nameForGroupSorting(GroupSorting groupSorting)
 {
-    int index = staticMetaObject.indexOfEnumerator("GroupSorting");
+    const int index = staticMetaObject.indexOfEnumerator("GroupSorting");
     return QLatin1StringView(staticMetaObject.enumerator(index).valueToKey(groupSorting));
 }
 
 SortOrder::SortDirection SortOrder::sortDirectionForName(const QString &name)
 {
-    int index = staticMetaObject.indexOfEnumerator("SortDirection");
+    const int index = staticMetaObject.indexOfEnumerator("SortDirection");
     return static_cast<SortDirection>(staticMetaObject.enumerator(index).keyToValue(name.toLatin1().constData()));
 }
 
 SortOrder::MessageSorting SortOrder::messageSortingForName(const QString &name)
 {
-    int index = staticMetaObject.indexOfEnumerator("MessageSorting");
+    const int index = staticMetaObject.indexOfEnumerator("MessageSorting");
     return static_cast<MessageSorting>(staticMetaObject.enumerator(index).keyToValue(name.toLatin1().constData()));
 }
 
 SortOrder::GroupSorting SortOrder::groupSortingForName(const QString &name)
 {
-    int index = staticMetaObject.indexOfEnumerator("GroupSorting");
+    const int index = staticMetaObject.indexOfEnumerator("GroupSorting");
     return static_cast<GroupSorting>(staticMetaObject.enumerator(index).keyToValue(name.toLatin1().constData()));
 }
 

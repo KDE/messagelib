@@ -662,7 +662,7 @@ void Theme::Column::detach()
     if (mSharedRuntimeData->referenceCount() < 2) {
         return; // nothing to detach
     }
-    mSharedRuntimeData->deleteReference();
+    std::ignore = mSharedRuntimeData->deleteReference();
 
     mSharedRuntimeData = new SharedRuntimeData(mVisibleByDefault, -1);
     mSharedRuntimeData->addReference();

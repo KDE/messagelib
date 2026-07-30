@@ -677,7 +677,7 @@ int Model::rowCount(const QModelIndex &parent) const
 class RecursionPreventer
 {
 public:
-    RecursionPreventer(int &counter)
+    explicit RecursionPreventer(int &counter)
         : mCounter(counter)
     {
         mCounter++;
