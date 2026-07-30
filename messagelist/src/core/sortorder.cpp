@@ -219,7 +219,7 @@ SortOrder SortOrder::defaultForAggregation(const Aggregation *aggregation, SortO
     return newSortOrder;
 }
 
-bool SortOrder::readConfigHelper(KConfigGroup &conf, const QString &id)
+bool SortOrder::readConfigHelper(const KConfigGroup &conf, const QString &id)
 {
     if (!conf.hasKey(id + MessageList::Util::messageSortingConfigName())) {
         return false;
@@ -231,7 +231,7 @@ bool SortOrder::readConfigHelper(KConfigGroup &conf, const QString &id)
     return true;
 }
 
-void SortOrder::readConfig(KConfigGroup &conf, const QString &storageId, bool *storageUsesPrivateSortOrder)
+void SortOrder::readConfig(const KConfigGroup &conf, const QString &storageId, bool *storageUsesPrivateSortOrder)
 {
     SortOrder privateSortOrder;
     SortOrder globalSortOrder;

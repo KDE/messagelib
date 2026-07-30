@@ -179,7 +179,7 @@ public:
      *                                    is private for that folder, and false if the
      *                                    sort order is the global sort order.
      */
-    void readConfig(KConfigGroup &conf, const QString &storageId, bool *storageUsesPrivateSortOrder);
+    void readConfig(const KConfigGroup &conf, const QString &storageId, bool *storageUsesPrivateSortOrder);
 
     /**
      * Writes the sort order to a config group.
@@ -200,7 +200,7 @@ private:
     [[nodiscard]] static MessageSorting messageSortingForName(const QString &name);
     [[nodiscard]] static GroupSorting groupSortingForName(const QString &name);
 
-    [[nodiscard]] bool readConfigHelper(KConfigGroup &conf, const QString &id);
+    [[nodiscard]] bool readConfigHelper(const KConfigGroup &conf, const QString &id);
 
     MessageSorting mMessageSorting = SortMessagesByDateTime;
     SortDirection mMessageSortDirection = Descending;
