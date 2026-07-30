@@ -680,30 +680,6 @@ void View::resizeEvent(QResizeEvent *e)
     triggerDelayedSaveThemeColumnState();
 }
 
-void View::paintEvent(QPaintEvent *event)
-{
-#if 0
-    if (/*mFirstResult &&*/ (!model() || model()->rowCount() == 0)) {
-        QPainter p(viewport());
-
-        QFont font = p.font();
-        font.setItalic(true);
-        p.setFont(font);
-
-        if (!d->mTextColor.isValid()) {
-            d->generalPaletteChanged();
-        }
-        p.setPen(d->mTextColor);
-
-        p.drawText(QRect(0, 0, width(), height()), Qt::AlignCenter, i18n("No result found"));
-    } else {
-        QTreeView::paintEvent(event);
-    }
-#else
-    QTreeView::paintEvent(event);
-#endif
-}
-
 void View::modelAboutToEmitLayoutChanged()
 {
     // QHeaderView goes totally NUTS with a layoutChanged() call
