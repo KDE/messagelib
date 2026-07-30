@@ -61,9 +61,9 @@ void ThemeDelegate::setTheme(const Theme *theme)
         mGroupHeaderBackgroundColor = mTheme->groupHeaderBackgroundColor();
         break;
     case Theme::AutoColor: {
-        QPalette pal = mItemView->palette();
-        QColor txt = pal.color(QPalette::Normal, QPalette::Text);
-        QColor bck = pal.color(QPalette::Normal, QPalette::Base);
+        const QPalette pal = mItemView->palette();
+        const QColor txt = pal.color(QPalette::Normal, QPalette::Text);
+        const QColor bck = pal.color(QPalette::Normal, QPalette::Base);
         mGroupHeaderBackgroundColor = QColor((txt.red() + (bck.red() * 3)) / 4, (txt.green() + (bck.green() * 3)) / 4, (txt.blue() + (bck.blue() * 3)) / 4);
         break;
     }
@@ -132,7 +132,7 @@ static inline void paint_right_aligned_elided_text(const QString &text,
     QRect outRct;
 
     if (ci->softenByBlending()) {
-        qreal oldOpacity = painter->opacity();
+        const qreal oldOpacity = painter->opacity();
         painter->setOpacity(0.6);
         painter->drawText(rct, Qt::AlignTop | Qt::AlignRight | Qt::TextSingleLine, elidedText, &outRct);
         painter->setOpacity(oldOpacity);
@@ -185,7 +185,7 @@ static inline void paint_left_aligned_elided_text(const QString &text,
     const QRect rct(left, top, w, sFontHeightCache);
     QRect outRct;
     if (ci->softenByBlending()) {
-        qreal oldOpacity = painter->opacity();
+        const qreal oldOpacity = painter->opacity();
         painter->setOpacity(0.6);
         painter->drawText(rct, Qt::AlignTop | Qt::AlignLeft | Qt::TextSingleLine, elidedText, &outRct);
         painter->setOpacity(oldOpacity);
@@ -447,7 +447,7 @@ static inline void paint_boolean_state_icon(bool enabled,
 
     if (ci->softenByBlendingWhenDisabled()) {
         // still paint, but very soft
-        qreal oldOpacity = painter->opacity();
+        const qreal oldOpacity = painter->opacity();
         painter->setOpacity(0.1);
         paint_permanent_icon(pix, ci, painter, left, top, right, alignOnRight, iconSize);
         painter->setOpacity(oldOpacity);
@@ -710,7 +710,7 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
                 [[fallthrough]];
             case Theme::RoundedRect: {
                 painter->setPen(Qt::NoPen);
-                bool hadAntialiasing = painter->renderHints() & QPainter::Antialiasing;
+                const bool hadAntialiasing = painter->renderHints() & QPainter::Antialiasing;
                 if (!hadAntialiasing) {
                     painter->setRenderHint(QPainter::Antialiasing, true);
                 }
@@ -821,11 +821,11 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
                 if (ci->useCustomColor() && (!(opt.state & QStyle::State_Selected))) {
                     if (usingNonDefaultTextColor) {
                         // merge the colors
-                        QColor nonDefault = defaultPen.color();
-                        QColor custom = ci->customColor();
-                        QColor merged((nonDefault.red() + custom.red()) >> 1,
-                                      (nonDefault.green() + custom.green()) >> 1,
-                                      (nonDefault.blue() + custom.blue()) >> 1);
+                        const QColor nonDefault = defaultPen.color();
+                        const QColor custom = ci->customColor();
+                        const QColor merged((nonDefault.red() + custom.red()) >> 1,
+                                            (nonDefault.green() + custom.green()) >> 1,
+                                            (nonDefault.blue() + custom.blue()) >> 1);
                         painter->setPen(QPen(merged));
                     } else {
                         painter->setPen(QPen(ci->customColor()));
@@ -1028,11 +1028,11 @@ void ThemeDelegate::paint(QPainter *painter, const QStyleOptionViewItem &option,
                 if (ci->useCustomColor() && (!(opt.state & QStyle::State_Selected))) {
                     if (usingNonDefaultTextColor) {
                         // merge the colors
-                        QColor nonDefault = defaultPen.color();
-                        QColor custom = ci->customColor();
-                        QColor merged((nonDefault.red() + custom.red()) >> 1,
-                                      (nonDefault.green() + custom.green()) >> 1,
-                                      (nonDefault.blue() + custom.blue()) >> 1);
+                        const QColor nonDefault = defaultPen.color();
+                        const QColor custom = ci->customColor();
+                        const QColor merged((nonDefault.red() + custom.red()) >> 1,
+                                            (nonDefault.green() + custom.green()) >> 1,
+                                            (nonDefault.blue() + custom.blue()) >> 1);
                         painter->setPen(QPen(merged));
                     } else {
                         painter->setPen(QPen(ci->customColor()));
@@ -1514,7 +1514,7 @@ bool ThemeDelegate::hitTest(const QPoint &viewportPoint, bool exact)
                     return true;
                 }
                 if (!exact) {
-                    QRect inexactRect(mHitContentItemRect.left(), mHitRowRect.top(), mHitContentItemRect.width(), mHitRowRect.height());
+                    const QRect inexactRect(mHitContentItemRect.left(), mHitRowRect.top(), mHitContentItemRect.width(), mHitRowRect.height());
                     if (inexactRect.contains(viewportPoint)) {
                         mHitContentItem = ci;
                         return true;
