@@ -341,10 +341,10 @@ void Filter::save(const KSharedConfig::Ptr &config, const QString &filtername, c
 
 Filter *Filter::load(const KSharedConfig::Ptr &config, int filternumber)
 {
-    KConfigGroup grp(config, u"General"_s);
-    int numberFilter = grp.readEntry("NumberFilter").toInt();
+    const KConfigGroup grp(config, u"General"_s);
+    const int numberFilter = grp.readEntry("NumberFilter").toInt();
     if (filternumber < numberFilter) {
-        KConfigGroup newGroup(config, u"Filter_%1"_s.arg(filternumber));
+        const KConfigGroup newGroup(config, u"Filter_%1"_s.arg(filternumber));
         return loadFromConfigGroup(newGroup);
     }
     return nullptr;

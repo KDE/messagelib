@@ -166,7 +166,7 @@ void SearchLineStatus::updateFilterLineEditBackgroundColor()
 {
     if (mColorName.isEmpty()) {
         const KColorScheme::BackgroundRole bgColorScheme(KColorScheme::PositiveBackground);
-        KStatefulBrush bgBrush(KColorScheme::View, bgColorScheme);
+        const KStatefulBrush bgBrush(KColorScheme::View, bgColorScheme);
         mColorName = bgBrush.brush(palette()).color().name();
     }
     setStyleSheet(mHasFilter ? u"QLineEdit{ background-color:%1 }"_s.arg(mColorName) : QString());

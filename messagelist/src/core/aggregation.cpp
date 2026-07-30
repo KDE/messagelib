@@ -40,9 +40,7 @@ Aggregation::Grouping Aggregation::grouping() const
     return mGrouping;
 }
 
-Aggregation::Aggregation(const Aggregation &opt)
-
-    = default;
+Aggregation::Aggregation(const Aggregation &opt) = default;
 
 Aggregation::Aggregation()
     : mGrouping(NoGrouping)
