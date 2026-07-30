@@ -474,7 +474,7 @@ void Widget::themeSelected(bool)
         return;
     }
 
-    QVariant v = act->data();
+    const QVariant v = act->data();
     const QString id = v.toString();
 
     if (id.isEmpty()) {
