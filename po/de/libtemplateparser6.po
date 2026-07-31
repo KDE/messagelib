@@ -780,7 +780,7 @@ msgid ""
 "When using this template, the default recipients are those you enter here.  "
 "This is a comma-separated list of mail addresses."
 msgstr ""
-"Wenn diese Nachrichtenvorlage benutzt wird, geben Sie hier die Standard-"
+"Wenn diese Nachrichtenvorlage verwendet wird, geben Sie hier die Standard-"
 "Empfänger ein. Geben Sie die Liste der Empfänger durch Kommas getrennt ein."
 
 #. i18n: ectx: property (toolTip), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mCCEdit)
@@ -798,7 +798,7 @@ msgid ""
 "When using this template, the recipients you enter here will by default get "
 "a copy of this message.  This is a comma-separated list of mail addresses."
 msgstr ""
-"Wenn diese Nachrichtenvorlage benutzt wird, geben Sie hier die Standard-"
+"Wenn diese Nachrichtenvorlage verwendet wird, geben Sie hier die Standard-"
 "Empfänger ein, die eine Kopie der Nachricht erhalten sollen. Geben Sie die "
 "Liste der Empfänger durch Kommas getrennt ein."
 

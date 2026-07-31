@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-11 00:45+0000\n"
+"POT-Creation-Date: 2026-07-31 00:46+0000\n"
 "PO-Revision-Date: 2025-01-11 22:49+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -22,114 +22,114 @@ msgstr ""
 "X-Generator: translate-po (https://github.com/zcribe/translate-po)\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: core/aggregation.cpp:177
+#: core/aggregation.cpp:175
 #, kde-format
 msgctxt "No grouping of messages"
 msgid "None"
 msgstr "Neniu"
 
-#: core/aggregation.cpp:178
+#: core/aggregation.cpp:176
 #, kde-format
 msgid "By Exact Date (of Thread Leaders)"
 msgstr "Laŭ Ekzakta Dato (de Fadenaj Gvidantoj)"
 
-#: core/aggregation.cpp:179
+#: core/aggregation.cpp:177
 #, kde-format
 msgid "By Smart Date Ranges (of Thread Leaders)"
 msgstr "De Inteligentaj Datintervaloj (de Fadenaj Gvidantoj)"
 
-#: core/aggregation.cpp:180 core/sortorder.cpp:71
+#: core/aggregation.cpp:178 core/sortorder.cpp:71
 #, kde-format
 msgid "By Smart Sender/Receiver"
 msgstr "De Saĝa Sendanto/Ricevilo"
 
-#: core/aggregation.cpp:181 core/sortorder.cpp:69
+#: core/aggregation.cpp:179 core/sortorder.cpp:69
 #, kde-format
 msgid "By Sender"
 msgstr "De Sendanto"
 
-#: core/aggregation.cpp:182 core/sortorder.cpp:70
+#: core/aggregation.cpp:180 core/sortorder.cpp:70
 #, kde-format
 msgid "By Receiver"
 msgstr "Per Ricevilo"
 
-#: core/aggregation.cpp:191
+#: core/aggregation.cpp:189
 #, kde-format
 msgid "Never Expand Groups"
 msgstr "Neniam Vastigi Grupojn"
 
-#: core/aggregation.cpp:193
+#: core/aggregation.cpp:191
 #, kde-format
 msgid "Expand Recent Groups"
 msgstr "Vastigi Lastatempajn Grupojn"
 
-#: core/aggregation.cpp:195
+#: core/aggregation.cpp:193
 #, kde-format
 msgid "Always Expand Groups"
 msgstr "Ĉiam Vastigi Grupojn"
 
-#: core/aggregation.cpp:201
+#: core/aggregation.cpp:199
 #, kde-format
 msgctxt "No threading of messages"
 msgid "None"
 msgstr "Neniu"
 
-#: core/aggregation.cpp:202
+#: core/aggregation.cpp:200
 #, kde-format
 msgid "Perfect Only"
 msgstr "Nur Perfekta"
 
-#: core/aggregation.cpp:203
+#: core/aggregation.cpp:201
 #, kde-format
 msgid "Perfect and by References"
 msgstr "Perfekta kaj per Referencoj"
 
-#: core/aggregation.cpp:204
+#: core/aggregation.cpp:202
 #, kde-format
 msgid "Perfect, by References and by Subject"
 msgstr "Perfekte, laŭ Referencoj kaj laŭ Temo"
 
-#: core/aggregation.cpp:213
+#: core/aggregation.cpp:211
 #, kde-format
 msgid "Topmost Message"
 msgstr "Plej alta Mesaĝo"
 
-#: core/aggregation.cpp:217
+#: core/aggregation.cpp:215
 #, kde-format
 msgid "Most Recent Message"
 msgstr "Plej lastatempa Mesaĝo"
 
-#: core/aggregation.cpp:227
+#: core/aggregation.cpp:225
 #, kde-format
 msgid "Never Expand Threads"
 msgstr "Neniam Vastigi Fadenojn"
 
-#: core/aggregation.cpp:228
+#: core/aggregation.cpp:226
 #, kde-format
 msgid "Expand Threads With Unread Messages"
 msgstr "Vastigi Fadenojn Kun Nelegitaj Mesaĝoj"
 
-#: core/aggregation.cpp:229
+#: core/aggregation.cpp:227
 #, kde-format
 msgid "Expand Threads With Unread or Important Messages"
 msgstr "Vastigi Fadenojn Kun Nelegitaj aŭ Gravaj Mesaĝoj"
 
-#: core/aggregation.cpp:230
+#: core/aggregation.cpp:228
 #, kde-format
 msgid "Always Expand Threads"
 msgstr "Ĉiam Vastigi Fadenojn"
 
-#: core/aggregation.cpp:235
+#: core/aggregation.cpp:233
 #, kde-format
 msgid "Favor Interactivity"
 msgstr "Favori Interagadon"
 
-#: core/aggregation.cpp:235
+#: core/aggregation.cpp:233
 #, kde-format
 msgid "Favor Speed"
 msgstr "Favori Rapidon"
 
-#: core/aggregation.cpp:235
+#: core/aggregation.cpp:233
 #, kde-format
 msgid "Batch Job (No Interactivity)"
 msgstr "Loka laboro (Neniu Interagado)"
@@ -462,7 +462,7 @@ msgstr "Inteligenta kun Klakebla Statuso"
 msgid "A smart multiline and multi item theme with a clickable status column"
 msgstr "Saĝa plurlinia kaj multobjekta etoso kun klakebla statusa kolumno"
 
-#: core/manager.cpp:758 core/view.cpp:2282 core/view.cpp:2286
+#: core/manager.cpp:758 core/view.cpp:2258 core/view.cpp:2262
 #, kde-format
 msgid "Status"
 msgstr "Stato"
@@ -855,183 +855,178 @@ msgstr "Stilaj Rektanguloj"
 msgid "Styled Joined Rectangles"
 msgstr "Stilaj Kunigitaj Rektanguloj"
 
-#: core/view.cpp:698 core/widgets/configurefilterswidget.cpp:154
-#, kde-format
-msgid "No result found"
-msgstr "Neniu rezulto trovita"
-
-#: core/view.cpp:777
+#: core/view.cpp:753
 #, kde-format
 msgid "Adjust Column Sizes"
 msgstr "Alĝustigi Kolumngrandojn"
 
-#: core/view.cpp:781
+#: core/view.cpp:757
 #, kde-format
 msgid "Show Default Columns"
 msgstr "Montri Defaŭltajn Kolumnojn"
 
-#: core/view.cpp:786
+#: core/view.cpp:762
 #, kde-format
 msgid "Display Tooltips"
 msgstr "Montri Ŝpruchelpilojn"
 
-#: core/view.cpp:2263 core/view.cpp:2267
+#: core/view.cpp:2239 core/view.cpp:2243
 #: core/widgets/searchmessagebybuttons.cpp:75
 #, kde-format
 msgid "From"
 msgstr "De"
 
-#: core/view.cpp:2264 core/view.cpp:2268
+#: core/view.cpp:2240 core/view.cpp:2244
 #, kde-format
 msgctxt "Receiver of the email"
 msgid "To"
 msgstr "Al"
 
-#: core/view.cpp:2265 core/view.cpp:2269
+#: core/view.cpp:2241 core/view.cpp:2245
 #, kde-format
 msgid "Date"
 msgstr "Dato"
 
-#: core/view.cpp:2283 core/view.cpp:2287
+#: core/view.cpp:2259 core/view.cpp:2263
 #, kde-format
 msgid "Size"
 msgstr "Grandeco"
 
-#: core/view.cpp:2284 core/view.cpp:2288 utils/themeeditor.cpp:191
+#: core/view.cpp:2260 core/view.cpp:2264 utils/themeeditor.cpp:191
 #, kde-format
 msgid "Folder"
 msgstr "Leterujo"
 
-#: core/view.cpp:2294 core/view.cpp:2296
+#: core/view.cpp:2270 core/view.cpp:2272
 #, kde-format
 msgid "Preview"
 msgstr "Antaŭrigardo"
 
-#: core/view.cpp:2313
+#: core/view.cpp:2289
 #, kde-format
 msgid "<b>%1</b> reply"
 msgid_plural "<b>%1</b> replies"
 msgstr[0] "<b>%1</b> respondo"
 msgstr[1] "<b>%1</b> respondoj"
 
-#: core/view.cpp:2316
+#: core/view.cpp:2292
 #, kde-format
 msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
 msgstr[0] "<b>%1</b> mesaĝo en subarbo (<b>%2</b> nelegitaj)"
 msgstr[1] "<b>%1</b> mesaĝoj en subarbo (<b>%2</b> nelegitaj)"
 
-#: core/view.cpp:2353
+#: core/view.cpp:2329
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Threads started on 2008-12-21'"
 msgid "Threads started on %1"
 msgstr "Fadenoj komenciĝis je %1"
 
-#: core/view.cpp:2355
+#: core/view.cpp:2331
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Threads started Yesterday'"
 msgid "Threads started %1"
 msgstr "Fadenoj komencitaj %1"
 
-#: core/view.cpp:2359
+#: core/view.cpp:2335
 #, kde-format
 msgid "Threads with messages dated %1"
 msgstr "Fadenoj kun mesaĝoj datitaj %1"
 
-#: core/view.cpp:2369
+#: core/view.cpp:2345
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'"
 msgid "Messages sent on %1"
 msgstr "Mesaĝoj senditaj sur %1"
 
-#: core/view.cpp:2372
+#: core/view.cpp:2348
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Messages received on 2008-12-21'"
 msgid "Messages received on %1"
 msgstr "Mesaĝoj ricevitaj sur %1"
 
-#: core/view.cpp:2376
+#: core/view.cpp:2352
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent Yesterday'"
 msgid "Messages sent %1"
 msgstr "Mesaĝoj senditaj %1"
 
-#: core/view.cpp:2378
+#: core/view.cpp:2354
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages received Yesterday'"
 msgid "Messages received %1"
 msgstr "Mesaĝoj ricevitaj %1"
 
-#: core/view.cpp:2387
+#: core/view.cpp:2363
 #, kde-format
 msgid "Threads started within %1"
 msgstr "Fadenoj komenciĝis ene de %1"
 
-#: core/view.cpp:2390
+#: core/view.cpp:2366
 #, kde-format
 msgid "Threads containing messages with dates within %1"
 msgstr "Fadenoj enhavantaj mesaĝojn kun datoj ene de %1"
 
-#: core/view.cpp:2398
+#: core/view.cpp:2374
 #, kde-format
 msgid "Messages sent within %1"
 msgstr "Mesaĝoj senditaj ene de %1"
 
-#: core/view.cpp:2400
+#: core/view.cpp:2376
 #, kde-format
 msgid "Messages received within %1"
 msgstr "Mesaĝoj ricevitaj ene de %1"
 
-#: core/view.cpp:2409
+#: core/view.cpp:2385
 #, kde-format
 msgid "Threads started by %1"
 msgstr "Fadenoj komencitaj de %1"
 
-#: core/view.cpp:2412
+#: core/view.cpp:2388
 #, kde-format
 msgid "Threads with most recent message by %1"
 msgstr "Fadenoj kun plej lasta mesaĝo de %1"
 
-#: core/view.cpp:2421 core/view.cpp:2445
+#: core/view.cpp:2397 core/view.cpp:2421
 #, kde-format
 msgid "Messages sent to %1"
 msgstr "Mesaĝoj senditaj al %1"
 
-#: core/view.cpp:2423
+#: core/view.cpp:2399
 #, kde-format
 msgid "Messages sent by %1"
 msgstr "Mesaĝoj senditaj de %1"
 
-#: core/view.cpp:2426
+#: core/view.cpp:2402
 #, kde-format
 msgid "Messages received from %1"
 msgstr "Mesaĝoj ricevitaj de %1"
 
-#: core/view.cpp:2434
+#: core/view.cpp:2410
 #, kde-format
 msgid "Threads directed to %1"
 msgstr "Fadenoj direktitaj al %1"
 
-#: core/view.cpp:2437
+#: core/view.cpp:2413
 #, kde-format
 msgid "Threads with most recent message directed to %1"
 msgstr "Fadenoj kun plej lasta mesaĝo direktita al %1"
 
-#: core/view.cpp:2447
+#: core/view.cpp:2423
 #, kde-format
 msgid "Messages received by %1"
 msgstr "Mesaĝoj ricevitaj de %1"
 
-#: core/view.cpp:2473
+#: core/view.cpp:2449
 #, kde-format
 msgid "<b>%1</b> thread"
 msgid_plural "<b>%1</b> threads"
 msgstr[0] "<b>%1</b> fadeno"
 msgstr[1] "<b>%1</b> fadenoj"
 
-#: core/view.cpp:2478
+#: core/view.cpp:2454
 #, kde-format
 msgid "<b>%1</b> message (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
@@ -1111,6 +1106,11 @@ msgstr "Ĉu vi volas forigi ĉi tiun filtrilon?"
 msgctxt "@title:window"
 msgid "Remove Filter"
 msgstr "Forigi Filtrilon"
+
+#: core/widgets/configurefilterswidget.cpp:154
+#, kde-format
+msgid "No result found"
+msgstr "Neniu rezulto trovita"
 
 #: core/widgets/filternamedialog.cpp:19
 #, kde-format

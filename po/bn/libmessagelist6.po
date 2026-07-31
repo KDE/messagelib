@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-11 00:45+0000\n"
+"POT-Creation-Date: 2026-07-31 00:46+0000\n"
 "PO-Revision-Date: 2006-02-06 01:01-0600\n"
 "Last-Translator: Deepayan Sarkar <deepayan@bengalinux.org>\n"
 "Language-Team: Bengali <kde-translation@bengalinux.org>\n"
@@ -15,131 +15,131 @@ msgstr ""
 "X-Generator: KBabel 1.9.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: core/aggregation.cpp:177
+#: core/aggregation.cpp:175
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "No grouping of messages"
 msgid "None"
 msgstr "কিছু না"
 
-#: core/aggregation.cpp:178
+#: core/aggregation.cpp:176
 #, kde-format
 msgid "By Exact Date (of Thread Leaders)"
 msgstr ""
 
-#: core/aggregation.cpp:179
+#: core/aggregation.cpp:177
 #, kde-format
 msgid "By Smart Date Ranges (of Thread Leaders)"
 msgstr ""
 
-#: core/aggregation.cpp:180 core/sortorder.cpp:71
+#: core/aggregation.cpp:178 core/sortorder.cpp:71
 #, fuzzy, kde-format
 #| msgid "Sender/Receiver"
 msgid "By Smart Sender/Receiver"
 msgstr "প্রেরক/গ্রাহক"
 
-#: core/aggregation.cpp:181 core/sortorder.cpp:69
+#: core/aggregation.cpp:179 core/sortorder.cpp:69
 #, fuzzy, kde-format
 #| msgid "Sender"
 msgid "By Sender"
 msgstr "প্রেরক"
 
-#: core/aggregation.cpp:182 core/sortorder.cpp:70
+#: core/aggregation.cpp:180 core/sortorder.cpp:70
 #, fuzzy, kde-format
 #| msgid "Receiver"
 msgid "By Receiver"
 msgstr "গ্রাহক"
 
-#: core/aggregation.cpp:191
+#: core/aggregation.cpp:189
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "&Expand Thread"
 msgid "Never Expand Groups"
 msgstr "সূত্র &সম্প্রসারণ করো"
 
-#: core/aggregation.cpp:193
+#: core/aggregation.cpp:191
 #, fuzzy, kde-format
 #| msgid "Expand the current thread"
 msgid "Expand Recent Groups"
 msgstr "বর্তমান সূত্রটি সম্প্রসারণ করো"
 
-#: core/aggregation.cpp:195
+#: core/aggregation.cpp:193
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "&Expand Thread"
 msgid "Always Expand Groups"
 msgstr "সূত্র &সম্প্রসারণ করো"
 
-#: core/aggregation.cpp:201
+#: core/aggregation.cpp:199
 #, fuzzy, kde-format
 #| msgid "None"
 msgctxt "No threading of messages"
 msgid "None"
 msgstr "কিছু না"
 
-#: core/aggregation.cpp:202
+#: core/aggregation.cpp:200
 #, kde-format
 msgid "Perfect Only"
 msgstr ""
 
-#: core/aggregation.cpp:203
+#: core/aggregation.cpp:201
 #, kde-format
 msgid "Perfect and by References"
 msgstr ""
 
-#: core/aggregation.cpp:204
+#: core/aggregation.cpp:202
 #, kde-format
 msgid "Perfect, by References and by Subject"
 msgstr ""
 
-#: core/aggregation.cpp:213
+#: core/aggregation.cpp:211
 #, fuzzy, kde-format
 msgid "Topmost Message"
 msgstr "বার্তা মুছে ফেলো"
 
-#: core/aggregation.cpp:217
+#: core/aggregation.cpp:215
 #, fuzzy, kde-format
 #| msgid "Important Message"
 msgid "Most Recent Message"
 msgstr "গুরুত্বপূর্ণ বার্তা"
 
-#: core/aggregation.cpp:227
+#: core/aggregation.cpp:225
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "&Expand Thread"
 msgid "Never Expand Threads"
 msgstr "সূত্র &সম্প্রসারণ করো"
 
-#: core/aggregation.cpp:228
+#: core/aggregation.cpp:226
 #, fuzzy, kde-format
 #| msgid "Message List - Unread Messages"
 msgid "Expand Threads With Unread Messages"
 msgstr "বার্তা তালিকা - অপঠিত বার্তা"
 
-#: core/aggregation.cpp:229
+#: core/aggregation.cpp:227
 #, fuzzy, kde-format
 #| msgid "Message List - Unread Messages"
 msgid "Expand Threads With Unread or Important Messages"
 msgstr "বার্তা তালিকা - অপঠিত বার্তা"
 
-#: core/aggregation.cpp:230
+#: core/aggregation.cpp:228
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "&Expand Thread"
 msgid "Always Expand Threads"
 msgstr "সূত্র &সম্প্রসারণ করো"
 
-#: core/aggregation.cpp:235
+#: core/aggregation.cpp:233
 #, kde-format
 msgid "Favor Interactivity"
 msgstr ""
 
-#: core/aggregation.cpp:235
+#: core/aggregation.cpp:233
 #, kde-format
 msgid "Favor Speed"
 msgstr ""
 
-#: core/aggregation.cpp:235
+#: core/aggregation.cpp:233
 #, kde-format
 msgid "Batch Job (No Interactivity)"
 msgstr ""
@@ -494,7 +494,7 @@ msgstr ""
 msgid "A smart multiline and multi item theme with a clickable status column"
 msgstr ""
 
-#: core/manager.cpp:758 core/view.cpp:2282 core/view.cpp:2286
+#: core/manager.cpp:758 core/view.cpp:2258 core/view.cpp:2262
 #, kde-format
 msgid "Status"
 msgstr "স্ট্যাটাস"
@@ -944,64 +944,58 @@ msgstr ""
 msgid "Styled Joined Rectangles"
 msgstr ""
 
-#: core/view.cpp:698 core/widgets/configurefilterswidget.cpp:154
-#, fuzzy, kde-format
-#| msgid "No signature found"
-msgid "No result found"
-msgstr "কোন স্বাক্ষর পাওয়া যায়নি"
-
-#: core/view.cpp:777
+#: core/view.cpp:753
 #, kde-format
 msgid "Adjust Column Sizes"
 msgstr ""
 
-#: core/view.cpp:781
+#: core/view.cpp:757
 #, fuzzy, kde-format
 #| msgid "Show alway&s"
 msgid "Show Default Columns"
 msgstr "&সর্বদা দেখাও"
 
-#: core/view.cpp:786
+#: core/view.cpp:762
 #, fuzzy, kde-format
 msgid "Display Tooltips"
 msgstr "প্রা&পক"
 
-#: core/view.cpp:2263 core/view.cpp:2267
+#: core/view.cpp:2239 core/view.cpp:2243
 #: core/widgets/searchmessagebybuttons.cpp:75
 #, fuzzy, kde-format
 #| msgid "&From"
 msgid "From"
 msgstr "প্রে&রক:"
 
-#: core/view.cpp:2264 core/view.cpp:2268
+#: core/view.cpp:2240 core/view.cpp:2244
 #, fuzzy, kde-format
 #| msgid "To"
 msgctxt "Receiver of the email"
 msgid "To"
 msgstr "গ্রা&হক"
 
-#: core/view.cpp:2265 core/view.cpp:2269
+#: core/view.cpp:2241 core/view.cpp:2245
 #, kde-format
 msgid "Date"
 msgstr "তারিখ"
 
-#: core/view.cpp:2283 core/view.cpp:2287
+#: core/view.cpp:2259 core/view.cpp:2263
 #, kde-format
 msgid "Size"
 msgstr "মাপ"
 
-#: core/view.cpp:2284 core/view.cpp:2288 utils/themeeditor.cpp:191
+#: core/view.cpp:2260 core/view.cpp:2264 utils/themeeditor.cpp:191
 #, kde-format
 msgid "Folder"
 msgstr "ফোল্ডার"
 
-#: core/view.cpp:2294 core/view.cpp:2296
+#: core/view.cpp:2270 core/view.cpp:2272
 #, fuzzy, kde-format
 #| msgid "&Previous Card"
 msgid "Preview"
 msgstr "পূর্ব&বর্তী কার্ড"
 
-#: core/view.cpp:2313
+#: core/view.cpp:2289
 #, fuzzy, kde-format
 #| msgid "<b>Bad</b> signature"
 msgid "<b>%1</b> reply"
@@ -1009,14 +1003,14 @@ msgid_plural "<b>%1</b> replies"
 msgstr[0] "<b>ত্রুটিপূর্ণ</b> স্বাক্ষর"
 msgstr[1] "<b>ত্রুটিপূর্ণ</b> স্বাক্ষর"
 
-#: core/view.cpp:2316
+#: core/view.cpp:2292
 #, kde-format
 msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/view.cpp:2353
+#: core/view.cpp:2329
 #, fuzzy, kde-format
 #| msgid "&Thread Messages"
 msgctxt ""
@@ -1024,27 +1018,27 @@ msgctxt ""
 msgid "Threads started on %1"
 msgstr "বার্তা সূত্র&বদ্ধ করো"
 
-#: core/view.cpp:2355
+#: core/view.cpp:2331
 #, fuzzy, kde-format
 #| msgid "&Thread Messages"
 msgctxt "@info:tooltip Formats to something like 'Threads started Yesterday'"
 msgid "Threads started %1"
 msgstr "বার্তা সূত্র&বদ্ধ করো"
 
-#: core/view.cpp:2359
+#: core/view.cpp:2335
 #, fuzzy, kde-format
 #| msgid "&Threaded message list"
 msgid "Threads with messages dated %1"
 msgstr "সূত্রবদ্ধ বার্তা তালিকা (&স)"
 
-#: core/view.cpp:2369
+#: core/view.cpp:2345
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgctxt "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'"
 msgid "Messages sent on %1"
 msgstr "বার্তা স্বাক্ষর করেছেন %1।"
 
-#: core/view.cpp:2372
+#: core/view.cpp:2348
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgctxt ""
@@ -1052,92 +1046,92 @@ msgctxt ""
 msgid "Messages received on %1"
 msgstr "বার্তা স্বাক্ষর করেছেন %1।"
 
-#: core/view.cpp:2376
+#: core/view.cpp:2352
 #, fuzzy, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent Yesterday'"
 msgid "Messages sent %1"
 msgstr "বার্তা তালিকা"
 
-#: core/view.cpp:2378
+#: core/view.cpp:2354
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgctxt "@info:tooltip Formats to something like 'Messages received Yesterday'"
 msgid "Messages received %1"
 msgstr "বার্তা স্বাক্ষর করেছেন %1।"
 
-#: core/view.cpp:2387
+#: core/view.cpp:2363
 #, fuzzy, kde-format
 #| msgid "Message was signed with key %1."
 msgid "Threads started within %1"
 msgstr "বার্তা কী (Key) %1 ব্যবহার করে স্বাক্ষর করা হয়েছে।"
 
-#: core/view.cpp:2390
+#: core/view.cpp:2366
 #, fuzzy, kde-format
 #| msgid "&Threaded message list"
 msgid "Threads containing messages with dates within %1"
 msgstr "সূত্রবদ্ধ বার্তা তালিকা (&স)"
 
-#: core/view.cpp:2398
+#: core/view.cpp:2374
 #, fuzzy, kde-format
 #| msgid "Message was signed with key %1."
 msgid "Messages sent within %1"
 msgstr "বার্তা কী (Key) %1 ব্যবহার করে স্বাক্ষর করা হয়েছে।"
 
-#: core/view.cpp:2400
+#: core/view.cpp:2376
 #, fuzzy, kde-format
 #| msgid "Message was signed with key %1."
 msgid "Messages received within %1"
 msgstr "বার্তা কী (Key) %1 ব্যবহার করে স্বাক্ষর করা হয়েছে।"
 
-#: core/view.cpp:2409
+#: core/view.cpp:2385
 #, fuzzy, kde-format
 #| msgid "&Thread Messages"
 msgid "Threads started by %1"
 msgstr "বার্তা সূত্র&বদ্ধ করো"
 
-#: core/view.cpp:2412
+#: core/view.cpp:2388
 #, fuzzy, kde-format
 #| msgid "&Threaded message list"
 msgid "Threads with most recent message by %1"
 msgstr "সূত্রবদ্ধ বার্তা তালিকা (&স)"
 
-#: core/view.cpp:2421 core/view.cpp:2445
+#: core/view.cpp:2397 core/view.cpp:2421
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Messages sent to %1"
 msgstr "বার্তা স্বাক্ষর করেছেন %1।"
 
-#: core/view.cpp:2423
+#: core/view.cpp:2399
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Messages sent by %1"
 msgstr "বার্তা স্বাক্ষর করেছেন %1।"
 
-#: core/view.cpp:2426
+#: core/view.cpp:2402
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Messages received from %1"
 msgstr "বার্তা স্বাক্ষর করেছেন %1।"
 
-#: core/view.cpp:2434
+#: core/view.cpp:2410
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Threads directed to %1"
 msgstr "বার্তা স্বাক্ষর করেছেন %1।"
 
-#: core/view.cpp:2437
+#: core/view.cpp:2413
 #, fuzzy, kde-format
 #| msgid "&Threaded message list"
 msgid "Threads with most recent message directed to %1"
 msgstr "সূত্রবদ্ধ বার্তা তালিকা (&স)"
 
-#: core/view.cpp:2447
+#: core/view.cpp:2423
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Messages received by %1"
 msgstr "বার্তা স্বাক্ষর করেছেন %1।"
 
-#: core/view.cpp:2473
+#: core/view.cpp:2449
 #, fuzzy, kde-format
 #| msgid "<b>Bad</b> signature"
 msgid "<b>%1</b> thread"
@@ -1145,7 +1139,7 @@ msgid_plural "<b>%1</b> threads"
 msgstr[0] "<b>ত্রুটিপূর্ণ</b> স্বাক্ষর"
 msgstr[1] "<b>ত্রুটিপূর্ণ</b> স্বাক্ষর"
 
-#: core/view.cpp:2478
+#: core/view.cpp:2454
 #, kde-format
 msgid "<b>%1</b> message (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
@@ -1232,6 +1226,12 @@ msgstr "আপনি কি আবর্জনা ফোল্ডার ফা�
 msgctxt "@title:window"
 msgid "Remove Filter"
 msgstr "ফিল্টারের নাম পাল্টাও"
+
+#: core/widgets/configurefilterswidget.cpp:154
+#, fuzzy, kde-format
+#| msgid "No signature found"
+msgid "No result found"
+msgstr "কোন স্বাক্ষর পাওয়া যায়নি"
 
 #: core/widgets/filternamedialog.cpp:19
 #, fuzzy, kde-format
