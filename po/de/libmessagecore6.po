@@ -88,7 +88,7 @@ msgstr ""
 #, kde-format
 msgid "You may not attach files bigger than %1. Share it with storage service."
 msgstr ""
-"Es können keine Dateien angehängt werden, die größer als %1 sind. Benutzen "
+"Es können keine Dateien angehängt werden, die größer als %1 sind. Verwenden "
 "Sie zur Freigabe den Speicherdienst."
 
 #: attachment/attachmentpropertiesdialog.cpp:133

@@ -184,7 +184,7 @@ msgid ""
 "for this message <a href='kmail:loadExternal'>by clicking here</a>."
 msgstr ""
 "<b>Hinweis:</b> Diese Nachricht im HTML-Format könnte externe Referenzen auf "
-"z. B. Bilder enthalten. Aus Sicherheitsgründen werden externe Referenzen "
+"z. B. Bilder enthalten. Aus Sicherheitsgründen werden externe Referenzen "
 "nicht geladen. Falls der Absender vertrauenswürdig ist, aktivieren Sie "
 "externe Referenzen, indem Sie <a href='kmail:loadExternal'>hier</a> klicken."
 
