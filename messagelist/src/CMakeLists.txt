@@ -59,8 +59,6 @@ target_sources(
         core/widgets/searchlinecommand.cpp
         core/widgets/searchlinecommandbuttonswidget.h
         core/widgets/searchlinecommandbuttonswidget.cpp
-        core/widgets/searchlinecommandflowlayout.cpp
-        core/widgets/searchlinecommandflowlayout.h
         core/widgets/searchlinecommandwidget.h
         core/widgets/searchlinecommandwidget.cpp
         utils/aggregationcombobox.cpp

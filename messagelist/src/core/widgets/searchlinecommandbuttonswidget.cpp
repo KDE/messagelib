@@ -7,17 +7,17 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include "searchlinecommandbuttonswidget.h"
 #include "messagelist_debug.h"
 #include "searchlinecommand.h"
-#include "searchlinecommandflowlayout.h"
 #include <KLocalizedString>
 #include <QEvent>
 #include <QPushButton>
 #include <QVBoxLayout>
+#include <TextAddonsWidgets/TextAddonsWidgetFlowLayout>
 using namespace Qt::Literals::StringLiterals;
 using namespace MessageList::Core;
 SearchLineCommandButtonsWidget::SearchLineCommandButtonsWidget(QWidget *parent)
     : QFrame{parent}
 {
-    auto flowLayout = new SearchLineCommandFlowLayout(this);
+    auto flowLayout = new TextAddonsWidgets::TextAddonsWidgetFlowLayout(this);
     flowLayout->setObjectName(u"flowLayout"_s);
     flowLayout->setContentsMargins({});
     flowLayout->setSpacing(0);
