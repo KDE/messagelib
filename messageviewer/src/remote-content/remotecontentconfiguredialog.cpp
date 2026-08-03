@@ -13,7 +13,7 @@
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
 #include <QWindow>
-
+#include <TextAddonsWidgets/LoadDialogSizeUtils>
 namespace
 {
 static const char myRemoteContentConfigureConfigGroupName[] = "RemoteContentConfigureDialog";
@@ -53,10 +53,7 @@ void RemoteContentConfigureDialog::slotAccept()
 void RemoteContentConfigureDialog::readConfig()
 {
     create(); // ensure a window is created
-    windowHandle()->resize(QSize(600, 200));
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myRemoteContentConfigureConfigGroupName));
-    KWindowConfig::restoreWindowSize(windowHandle(), group);
-    resize(windowHandle()->size()); // workaround for QTBUG-40584
+    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myRemoteContentConfigureConfigGroupName), 600, 200);
 }
 
 void RemoteContentConfigureDialog::writeConfig()

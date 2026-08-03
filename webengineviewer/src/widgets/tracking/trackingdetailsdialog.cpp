@@ -13,6 +13,7 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 #include <QWindow>
+#include <TextAddonsWidgets/LoadDialogSizeUtils>
 #include <TextCustomEditor/RichTextEditorWidget>
 
 using namespace WebEngineViewer;
@@ -51,10 +52,7 @@ TrackingDetailsDialog::~TrackingDetailsDialog()
 void TrackingDetailsDialog::readConfig()
 {
     create(); // ensure a window is created
-    windowHandle()->resize(QSize(600, 400));
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myMailTrackingDetailsDialogConfigGroupName));
-    KWindowConfig::restoreWindowSize(windowHandle(), group);
-    resize(windowHandle()->size()); // workaround for QTBUG-40584
+    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myMailTrackingDetailsDialogConfigGroupName), 600, 400);
 }
 
 void TrackingDetailsDialog::writeConfig()

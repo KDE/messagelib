@@ -13,6 +13,7 @@
 #include <QVBoxLayout>
 #include <QWindow>
 
+#include <TextAddonsWidgets/LoadDialogSizeUtils>
 namespace
 {
 static const char myDeveloperToolDialogConfigGroupName[] = "DeveloperToolDialog";
@@ -51,10 +52,7 @@ QWebEnginePage *DeveloperToolDialog::enginePage() const
 void DeveloperToolDialog::readConfig()
 {
     create(); // ensure a window is created
-    windowHandle()->resize(QSize(800, 600));
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myDeveloperToolDialogConfigGroupName));
-    KWindowConfig::restoreWindowSize(windowHandle(), group);
-    resize(windowHandle()->size()); // workaround for QTBUG-40584
+    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myDeveloperToolDialogConfigGroupName), 800, 600);
 }
 
 void DeveloperToolDialog::writeConfig()

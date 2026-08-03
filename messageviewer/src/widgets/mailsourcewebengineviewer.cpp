@@ -26,6 +26,7 @@
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QWebEnginePage>
+#include <TextAddonsWidgets/LoadDialogSizeUtils>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
@@ -84,10 +85,7 @@ MailSourceWebEngineViewer::~MailSourceWebEngineViewer()
 void MailSourceWebEngineViewer::readConfig()
 {
     create(); // ensure a window is created
-    windowHandle()->resize(QSize(600, 400));
-    const KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myMailSourceWebEngineViewerConfigGroupName));
-    KWindowConfig::restoreWindowSize(windowHandle(), group);
-    resize(windowHandle()->size()); // workaround for QTBUG-40584
+    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myMailSourceWebEngineViewerConfigGroupName), 600, 400);
 }
 
 void MailSourceWebEngineViewer::writeConfig()

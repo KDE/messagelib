@@ -30,6 +30,7 @@
 #include <QLabel>
 #include <QTreeView>
 #include <QVBoxLayout>
+#include <TextAddonsWidgets/LoadDialogSizeUtils>
 
 using namespace MessageComposer;
 using namespace Qt::Literals::StringLiterals;
@@ -207,10 +208,7 @@ void RecipientsPicker::keyPressEvent(QKeyEvent *event)
 void RecipientsPicker::readConfig()
 {
     create(); // ensure a window is created
-    windowHandle()->resize(QSize(300, 200));
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myRecipientsPickerConfigGroupName));
-    KWindowConfig::restoreWindowSize(windowHandle(), group);
-    resize(windowHandle()->size()); // workaround for QTBUG-40584
+    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myRecipientsPickerConfigGroupName), 300, 200);
 }
 
 void RecipientsPicker::writeConfig()

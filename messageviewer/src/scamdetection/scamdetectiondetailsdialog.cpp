@@ -27,6 +27,7 @@
 #include <QTextStream>
 #include <QVBoxLayout>
 #include <QWindow>
+#include <TextAddonsWidgets/LoadDialogSizeUtils>
 #include <memory>
 
 using namespace Qt::Literals::StringLiterals;
@@ -95,10 +96,7 @@ void ScamDetectionDetailsDialog::setDetails(const QString &details)
 void ScamDetectionDetailsDialog::readConfig()
 {
     create(); // ensure a window is created
-    windowHandle()->resize(QSize(600, 200));
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myScamDetectionDetailsDialogConfigGroupName));
-    KWindowConfig::restoreWindowSize(windowHandle(), group);
-    resize(windowHandle()->size()); // workaround for QTBUG-40584
+    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myScamDetectionDetailsDialogConfigGroupName), 600, 200);
 }
 
 void ScamDetectionDetailsDialog::writeConfig()
