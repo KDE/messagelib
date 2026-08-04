@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-16 00:45+0000\n"
+"POT-Creation-Date: 2026-08-04 00:46+0000\n"
 "PO-Revision-Date: 2026-05-18 11:49+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -975,7 +975,7 @@ msgctxt "@label:textbox"
 msgid "Domain:"
 msgstr "Dominio:"
 
-#: scamdetection/scamdetectiondetailsdialog.cpp:42
+#: scamdetection/scamdetectiondetailsdialog.cpp:43
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"
@@ -2402,26 +2402,26 @@ msgstr ""
 msgid "Speak Text"
 msgstr "Pronuncia texto"
 
-#: widgets/mailsourcewebengineviewer.cpp:50
+#: widgets/mailsourcewebengineviewer.cpp:51
 #, kde-format
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
 msgstr "Fonte brute"
 
-#: widgets/mailsourcewebengineviewer.cpp:51
+#: widgets/mailsourcewebengineviewer.cpp:52
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr ""
 "Brute, e-posta sin modifica como il es immagazinate sur le systema de file o "
 "sur le servitor"
 
-#: widgets/mailsourcewebengineviewer.cpp:54
+#: widgets/mailsourcewebengineviewer.cpp:55
 #, kde-format
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
 msgstr "Fonte HTML"
 
-#: widgets/mailsourcewebengineviewer.cpp:55
+#: widgets/mailsourcewebengineviewer.cpp:56
 #, kde-format
 msgid "HTML code for displaying the message to the user"
 msgstr "Codice HTML pro monstrar le message al usator"

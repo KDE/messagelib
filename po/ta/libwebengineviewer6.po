@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2026-08-04 00:46+0000\n"
 "PO-Revision-Date: 2024-10-20 16:16+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 24.08.2\n"
 
-#: developertool/developertooldialog.cpp:26
+#: developertool/developertooldialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Developer Tool"
@@ -103,7 +103,7 @@ msgid "Submit form is not allowed in mailer. Please open url in a browser."
 msgstr ""
 "அஞ்சலிலுள்ள படிவத்தை சமர்பித்தல் அனுமதிக்கபடாத‍து. முகவரியை இணைய உலாவியில் திறக்கவும்."
 
-#: widgets/tracking/trackingdetailsdialog.cpp:27
+#: widgets/tracking/trackingdetailsdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"

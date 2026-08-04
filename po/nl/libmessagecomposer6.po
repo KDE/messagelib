@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-18 00:46+0000\n"
+"POT-Creation-Date: 2026-08-04 00:46+0000\n"
 "PO-Revision-Date: 2025-09-06 09:59+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -1865,46 +1865,46 @@ msgctxt "@info:tooltip %1 list of emails"
 msgid "Reply-To:%1"
 msgstr "Antwoord-aan:%1"
 
-#: recipient/recipientspicker.cpp:51
+#: recipient/recipientspicker.cpp:52
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Recipient"
 msgstr "Ontvanger selecteren"
 
-#: recipient/recipientspicker.cpp:63
+#: recipient/recipientspicker.cpp:64
 #, kde-format
 msgctxt "@action:button"
 msgid "Search &Directory Service"
 msgstr "&Directoryservice doorzoeken"
 
-#: recipient/recipientspicker.cpp:82
+#: recipient/recipientspicker.cpp:83
 #, kde-format
 msgid "Add as &Reply-To"
 msgstr "Toevoegen als &Antwoord-aan"
 
-#: recipient/recipientspicker.cpp:83
+#: recipient/recipientspicker.cpp:84
 #, kde-format
 msgid "Add as &To"
 msgstr "Toevoegen als &Aan"
 
-#: recipient/recipientspicker.cpp:84
+#: recipient/recipientspicker.cpp:85
 #, kde-format
 msgid "Add as CC"
 msgstr "Toevoegen als CC"
 
-#: recipient/recipientspicker.cpp:85
+#: recipient/recipientspicker.cpp:86
 #, kde-format
 msgid "Add as &BCC"
 msgstr "Toevoegen als &BCC"
 
-#: recipient/recipientspicker.cpp:108
+#: recipient/recipientspicker.cpp:109
 #, kde-format
 msgid "%1 selected email"
 msgid_plural "%1 selected emails"
 msgstr[0] "%1 geselecteerd e-mailbericht"
 msgstr[1] "%1 geselecteerde e-mailberichten"
 
-#: recipient/recipientspicker.cpp:175
+#: recipient/recipientspicker.cpp:176
 #, kde-format
 msgid ""
 "You selected 1 recipient. The maximum supported number of recipients is %2.\n"
@@ -1922,7 +1922,7 @@ msgstr[1] ""
 "wordt is %2.\n"
 "Pas de selectie aan."
 
-#: recipient/recipientspicker.cpp:192
+#: recipient/recipientspicker.cpp:193
 #, kde-format
 msgid "You can not add more recipients."
 msgstr "U kunt geen ontvangers meer toevoegen."

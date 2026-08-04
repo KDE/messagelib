@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2026-08-04 00:46+0000\n"
 "PO-Revision-Date: 2024-12-03 12:28+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -30,7 +30,7 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 
-#: developertool/developertooldialog.cpp:26
+#: developertool/developertooldialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Developer Tool"
@@ -117,7 +117,7 @@ msgstr ""
 "Отправка данных форм из почтовой программы не разрешается. Откройте ссылку в "
 "браузере."
 
-#: widgets/tracking/trackingdetailsdialog.cpp:27
+#: widgets/tracking/trackingdetailsdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"

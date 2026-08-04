@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.0\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-18 00:46+0000\n"
+"POT-Creation-Date: 2026-08-04 00:46+0000\n"
 "PO-Revision-Date: 2026-03-09 21:42+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -1841,46 +1841,46 @@ msgctxt "@info:tooltip %1 list of emails"
 msgid "Reply-To:%1"
 msgstr "Yanıt adresi: %1"
 
-#: recipient/recipientspicker.cpp:51
+#: recipient/recipientspicker.cpp:52
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Recipient"
 msgstr "Alıcı Seç"
 
-#: recipient/recipientspicker.cpp:63
+#: recipient/recipientspicker.cpp:64
 #, kde-format
 msgctxt "@action:button"
 msgid "Search &Directory Service"
 msgstr "&Dizin Hizmeti Ara"
 
-#: recipient/recipientspicker.cpp:82
+#: recipient/recipientspicker.cpp:83
 #, kde-format
 msgid "Add as &Reply-To"
 msgstr "Yanıt Adresi Olarak Ekle"
 
-#: recipient/recipientspicker.cpp:83
+#: recipient/recipientspicker.cpp:84
 #, kde-format
 msgid "Add as &To"
 msgstr "&Kime Olarak Ekle"
 
-#: recipient/recipientspicker.cpp:84
+#: recipient/recipientspicker.cpp:85
 #, kde-format
 msgid "Add as CC"
 msgstr "Kopya Olarak Ekle"
 
-#: recipient/recipientspicker.cpp:85
+#: recipient/recipientspicker.cpp:86
 #, kde-format
 msgid "Add as &BCC"
 msgstr "&Gizli Kopya Olarak Ekle"
 
-#: recipient/recipientspicker.cpp:108
+#: recipient/recipientspicker.cpp:109
 #, kde-format
 msgid "%1 selected email"
 msgid_plural "%1 selected emails"
 msgstr[0] "%1 e-posta seçili"
 msgstr[1] "%1 e-posta seçili"
 
-#: recipient/recipientspicker.cpp:175
+#: recipient/recipientspicker.cpp:176
 #, kde-format
 msgid ""
 "You selected 1 recipient. The maximum supported number of recipients is %2.\n"
@@ -1896,7 +1896,7 @@ msgstr[1] ""
 "%1 alıcı seçtiniz. En çok alıcı sayısı %2 olarak ayarlanmış.\n"
 "Lütfen seçimi düzenleyin."
 
-#: recipient/recipientspicker.cpp:192
+#: recipient/recipientspicker.cpp:193
 #, kde-format
 msgid "You can not add more recipients."
 msgstr "Artık alıcı ekleyemezsiniz."

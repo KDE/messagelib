@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-16 00:45+0000\n"
+"POT-Creation-Date: 2026-08-04 00:46+0000\n"
 "PO-Revision-Date: 2020-02-06 14:01+0200\n"
 "Last-Translator: tomas.straupis <tomasstraupis@gmail.com>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -1019,7 +1019,7 @@ msgctxt "@label:textbox"
 msgid "Domain:"
 msgstr "Domenas:"
 
-#: scamdetection/scamdetectiondetailsdialog.cpp:42
+#: scamdetection/scamdetectiondetailsdialog.cpp:43
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"
@@ -2461,26 +2461,26 @@ msgstr ""
 msgid "Speak Text"
 msgstr "Kalbėti tekstą"
 
-#: widgets/mailsourcewebengineviewer.cpp:50
+#: widgets/mailsourcewebengineviewer.cpp:51
 #, kde-format
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
 msgstr "Pilnas šaltinis"
 
-#: widgets/mailsourcewebengineviewer.cpp:51
+#: widgets/mailsourcewebengineviewer.cpp:52
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr ""
 "Žalias, nepakeistas laiškas, toks, koks jis laikomas failų sistemoje "
 "serveryje"
 
-#: widgets/mailsourcewebengineviewer.cpp:54
+#: widgets/mailsourcewebengineviewer.cpp:55
 #, kde-format
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
 msgstr "HTML šaltinis"
 
-#: widgets/mailsourcewebengineviewer.cpp:55
+#: widgets/mailsourcewebengineviewer.cpp:56
 #, kde-format
 msgid "HTML code for displaying the message to the user"
 msgstr "HTML kodas laiško rodymui naudotojui"

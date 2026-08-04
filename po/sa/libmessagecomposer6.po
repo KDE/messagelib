@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-18 00:46+0000\n"
+"POT-Creation-Date: 2026-08-04 00:46+0000\n"
 "PO-Revision-Date: 2024-12-20 21:53+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -1820,46 +1820,46 @@ msgctxt "@info:tooltip %1 list of emails"
 msgid "Reply-To:%1"
 msgstr "उत्तरम्-To:%1"
 
-#: recipient/recipientspicker.cpp:51
+#: recipient/recipientspicker.cpp:52
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Recipient"
 msgstr "प्राप्तकर्ता चयन करें"
 
-#: recipient/recipientspicker.cpp:63
+#: recipient/recipientspicker.cpp:64
 #, kde-format
 msgctxt "@action:button"
 msgid "Search &Directory Service"
 msgstr "अन्वेषण &निर्देशिका सेवा"
 
-#: recipient/recipientspicker.cpp:82
+#: recipient/recipientspicker.cpp:83
 #, kde-format
 msgid "Add as &Reply-To"
 msgstr "&Reply-To इति रूपेण योजयतु"
 
-#: recipient/recipientspicker.cpp:83
+#: recipient/recipientspicker.cpp:84
 #, kde-format
 msgid "Add as &To"
 msgstr "&To इति योजयतु"
 
-#: recipient/recipientspicker.cpp:84
+#: recipient/recipientspicker.cpp:85
 #, kde-format
 msgid "Add as CC"
 msgstr "सीसी इति योजयतु"
 
-#: recipient/recipientspicker.cpp:85
+#: recipient/recipientspicker.cpp:86
 #, kde-format
 msgid "Add as &BCC"
 msgstr "&BCC इति योजयन्तु"
 
-#: recipient/recipientspicker.cpp:108
+#: recipient/recipientspicker.cpp:109
 #, kde-format
 msgid "%1 selected email"
 msgid_plural "%1 selected emails"
 msgstr[0] "%1 इत्यनेन चयनितं ईमेल"
 msgstr[1] "%1 चयनितं ईमेल"
 
-#: recipient/recipientspicker.cpp:175
+#: recipient/recipientspicker.cpp:176
 #, kde-format
 msgid ""
 "You selected 1 recipient. The maximum supported number of recipients is %2.\n"
@@ -1875,7 +1875,7 @@ msgstr[1] ""
 "भवान् %1 प्राप्तकर्तान् चिनोति । अधिकतमसमर्थितप्राप्तकानां संख्या %2 अस्ति ।\n"
 "कृपया चयनं अनुकूलितं कुर्वन्तु।"
 
-#: recipient/recipientspicker.cpp:192
+#: recipient/recipientspicker.cpp:193
 #, kde-format
 msgid "You can not add more recipients."
 msgstr "भवन्तः अधिकान् प्राप्तकर्तान् योजयितुं न शक्नुवन्ति।"

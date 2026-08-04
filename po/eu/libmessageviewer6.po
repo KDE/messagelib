@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-16 00:45+0000\n"
+"POT-Creation-Date: 2026-08-04 00:46+0000\n"
 "PO-Revision-Date: 2026-07-01 22:10+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -980,7 +980,7 @@ msgctxt "@label:textbox"
 msgid "Domain:"
 msgstr "Domeinua:"
 
-#: scamdetection/scamdetectiondetailsdialog.cpp:42
+#: scamdetection/scamdetectiondetailsdialog.cpp:43
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"
@@ -2395,26 +2395,26 @@ msgstr ""
 msgid "Speak Text"
 msgstr "Esan testua"
 
-#: widgets/mailsourcewebengineviewer.cpp:50
+#: widgets/mailsourcewebengineviewer.cpp:51
 #, kde-format
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
 msgstr "Sorburu gordina"
 
-#: widgets/mailsourcewebengineviewer.cpp:51
+#: widgets/mailsourcewebengineviewer.cpp:52
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr ""
 "Pota gordina, aldatu gabe, fitxategi-sisteman edo zerbitzarian gordeta "
 "dagoen bezala"
 
-#: widgets/mailsourcewebengineviewer.cpp:54
+#: widgets/mailsourcewebengineviewer.cpp:55
 #, kde-format
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
 msgstr "HTML sorburua"
 
-#: widgets/mailsourcewebengineviewer.cpp:55
+#: widgets/mailsourcewebengineviewer.cpp:56
 #, kde-format
 msgid "HTML code for displaying the message to the user"
 msgstr "Erabiltzaileari mezua azaltzeko HTML kodea"

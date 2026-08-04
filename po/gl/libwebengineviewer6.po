@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2026-08-04 00:46+0000\n"
 "PO-Revision-Date: 2024-08-03 12:18+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 24.05.2\n"
 
-#: developertool/developertooldialog.cpp:26
+#: developertool/developertooldialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Developer Tool"
@@ -105,7 +105,7 @@ msgstr ""
 "O formulario de envío non se permite no software de correo. Abra o URL nun "
 "navegador."
 
-#: widgets/tracking/trackingdetailsdialog.cpp:27
+#: widgets/tracking/trackingdetailsdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"

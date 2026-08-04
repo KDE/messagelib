@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtemplateparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:53+0000\n"
+"POT-Creation-Date: 2026-08-04 00:46+0000\n"
 "PO-Revision-Date: 2024-08-02 22:29+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Generator: translate-po (https://github.com/zcribe/translate-po)\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: developertool/developertooldialog.cpp:26
+#: developertool/developertooldialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Developer Tool"
@@ -105,7 +105,7 @@ msgstr ""
 "Sendi formularon ne estas permesita en poŝtilo. Bonvolu malfermi URL en "
 "retumilo."
 
-#: widgets/tracking/trackingdetailsdialog.cpp:27
+#: widgets/tracking/trackingdetailsdialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-16 00:45+0000\n"
+"POT-Creation-Date: 2026-08-04 00:46+0000\n"
 "PO-Revision-Date: 2007-02-28 14:08+0100\n"
 "Last-Translator: Bozidar Proevski <bobibobi@freemail.com.mk>\n"
 "Language-Team: Macedonian <mkde-l10n@lists.sourceforge.net>\n"
@@ -1074,7 +1074,7 @@ msgctxt "@label:textbox"
 msgid "Domain:"
 msgstr "Стандард&ен домен:"
 
-#: scamdetection/scamdetectiondetailsdialog.cpp:42
+#: scamdetection/scamdetectiondetailsdialog.cpp:43
 #, fuzzy, kde-format
 #| msgid "[Details]"
 msgctxt "@title:window"
@@ -2536,26 +2536,26 @@ msgstr ""
 msgid "Speak Text"
 msgstr ""
 
-#: widgets/mailsourcewebengineviewer.cpp:50
+#: widgets/mailsourcewebengineviewer.cpp:51
 #, fuzzy, kde-format
 #| msgid "&View Source"
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
 msgstr "&Види го изворниот код"
 
-#: widgets/mailsourcewebengineviewer.cpp:51
+#: widgets/mailsourcewebengineviewer.cpp:52
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr ""
 
-#: widgets/mailsourcewebengineviewer.cpp:54
+#: widgets/mailsourcewebengineviewer.cpp:55
 #, fuzzy, kde-format
 #| msgid "&View Source"
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
 msgstr "&Види го изворниот код"
 
-#: widgets/mailsourcewebengineviewer.cpp:55
+#: widgets/mailsourcewebengineviewer.cpp:56
 #, kde-format
 msgid "HTML code for displaying the message to the user"
 msgstr ""

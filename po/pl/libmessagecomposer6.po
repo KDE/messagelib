@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-18 00:46+0000\n"
+"POT-Creation-Date: 2026-08-04 00:46+0000\n"
 "PO-Revision-Date: 2025-11-08 09:38+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
@@ -1855,39 +1855,39 @@ msgctxt "@info:tooltip %1 list of emails"
 msgid "Reply-To:%1"
 msgstr "Odpowiedz do:%1"
 
-#: recipient/recipientspicker.cpp:51
+#: recipient/recipientspicker.cpp:52
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Recipient"
 msgstr "Wybierz odbiorcę"
 
-#: recipient/recipientspicker.cpp:63
+#: recipient/recipientspicker.cpp:64
 #, kde-format
 msgctxt "@action:button"
 msgid "Search &Directory Service"
 msgstr "&Przeszukaj usługi katalogowe"
 
-#: recipient/recipientspicker.cpp:82
+#: recipient/recipientspicker.cpp:83
 #, kde-format
 msgid "Add as &Reply-To"
 msgstr "Dodaj odpo&wiedź do"
 
-#: recipient/recipientspicker.cpp:83
+#: recipient/recipientspicker.cpp:84
 #, kde-format
 msgid "Add as &To"
 msgstr "Dodaj jako &Do"
 
-#: recipient/recipientspicker.cpp:84
+#: recipient/recipientspicker.cpp:85
 #, kde-format
 msgid "Add as CC"
 msgstr "Dodaj jako DW"
 
-#: recipient/recipientspicker.cpp:85
+#: recipient/recipientspicker.cpp:86
 #, kde-format
 msgid "Add as &BCC"
 msgstr "Dodaj jako &UDW"
 
-#: recipient/recipientspicker.cpp:108
+#: recipient/recipientspicker.cpp:109
 #, kde-format
 msgid "%1 selected email"
 msgid_plural "%1 selected emails"
@@ -1895,7 +1895,7 @@ msgstr[0] "%1 zaznaczona wiadomość"
 msgstr[1] "%1 zaznaczone wiadomości"
 msgstr[2] "%1 zaznaczonych wiadomości"
 
-#: recipient/recipientspicker.cpp:175
+#: recipient/recipientspicker.cpp:176
 #, kde-format
 msgid ""
 "You selected 1 recipient. The maximum supported number of recipients is %2.\n"
@@ -1914,7 +1914,7 @@ msgstr[2] ""
 "Wybrałeś %1 odbiorców. Nieprzekraczalna liczba odbiorców to %2.\n"
 "Dostosuj swój wybór."
 
-#: recipient/recipientspicker.cpp:192
+#: recipient/recipientspicker.cpp:193
 #, kde-format
 msgid "You can not add more recipients."
 msgstr "Nie możesz dodać więcej odbiorców."

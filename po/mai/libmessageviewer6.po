@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-16 00:45+0000\n"
+"POT-Creation-Date: 2026-08-04 00:46+0000\n"
 "PO-Revision-Date: 2010-09-24 16:29+0530\n"
 "Last-Translator: Rajesh Ranjan <rajesh672@gmail.com>\n"
 "Language-Team: Maithili <bhashaghar@googlegroups.com>\n"
@@ -989,7 +989,7 @@ msgctxt "@label:textbox"
 msgid "Domain:"
 msgstr ""
 
-#: scamdetection/scamdetectiondetailsdialog.cpp:42
+#: scamdetection/scamdetectiondetailsdialog.cpp:43
 #, fuzzy, kde-format
 #| msgid "Show Details"
 msgctxt "@title:window"
@@ -2375,7 +2375,7 @@ msgstr ""
 msgid "Speak Text"
 msgstr ""
 
-#: widgets/mailsourcewebengineviewer.cpp:50
+#: widgets/mailsourcewebengineviewer.cpp:51
 #, fuzzy, kde-format
 #| msgctxt "Mail message as shown, in HTML format"
 #| msgid "HTML Source"
@@ -2383,18 +2383,18 @@ msgctxt "Unchanged mail message"
 msgid "Raw Source"
 msgstr "HTML मूल"
 
-#: widgets/mailsourcewebengineviewer.cpp:51
+#: widgets/mailsourcewebengineviewer.cpp:52
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr ""
 
-#: widgets/mailsourcewebengineviewer.cpp:54
+#: widgets/mailsourcewebengineviewer.cpp:55
 #, kde-format
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
 msgstr "HTML मूल"
 
-#: widgets/mailsourcewebengineviewer.cpp:55
+#: widgets/mailsourcewebengineviewer.cpp:56
 #, kde-format
 msgid "HTML code for displaying the message to the user"
 msgstr ""

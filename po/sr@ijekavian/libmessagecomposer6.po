@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-18 00:46+0000\n"
+"POT-Creation-Date: 2026-08-04 00:46+0000\n"
 "PO-Revision-Date: 2017-12-15 12:38+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -1911,42 +1911,42 @@ msgid "Reply-To:%1"
 msgstr ""
 
 # >> @title:window
-#: recipient/recipientspicker.cpp:51
+#: recipient/recipientspicker.cpp:52
 #, fuzzy, kde-format
 #| msgid "Select Recipient"
 msgctxt "@title:window"
 msgid "Select Recipient"
 msgstr "Избор примаоца"
 
-#: recipient/recipientspicker.cpp:63
+#: recipient/recipientspicker.cpp:64
 #, fuzzy, kde-format
 #| msgid "Search &Directory Service"
 msgctxt "@action:button"
 msgid "Search &Directory Service"
 msgstr "Сервис претраге &именика"
 
-#: recipient/recipientspicker.cpp:82
+#: recipient/recipientspicker.cpp:83
 #, fuzzy, kde-format
 #| msgid "Add as &To"
 msgid "Add as &Reply-To"
 msgstr "Додај под &за"
 
-#: recipient/recipientspicker.cpp:83
+#: recipient/recipientspicker.cpp:84
 #, kde-format
 msgid "Add as &To"
 msgstr "Додај под &за"
 
-#: recipient/recipientspicker.cpp:84
+#: recipient/recipientspicker.cpp:85
 #, kde-format
 msgid "Add as CC"
 msgstr "Додај под ЦЦ"
 
-#: recipient/recipientspicker.cpp:85
+#: recipient/recipientspicker.cpp:86
 #, kde-format
 msgid "Add as &BCC"
 msgstr "Додај под БЦЦ"
 
-#: recipient/recipientspicker.cpp:108
+#: recipient/recipientspicker.cpp:109
 #, kde-format
 msgid "%1 selected email"
 msgid_plural "%1 selected emails"
@@ -1955,7 +1955,7 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: recipient/recipientspicker.cpp:175
+#: recipient/recipientspicker.cpp:176
 #, fuzzy, kde-format
 #| msgid ""
 #| "You selected 1 recipient. The maximum supported number of recipients is "
@@ -1983,7 +1983,7 @@ msgstr[3] ""
 "Изабрали сте једног примаоца, а подржано је максимално %2. Прилагодите свој "
 "избор."
 
-#: recipient/recipientspicker.cpp:192
+#: recipient/recipientspicker.cpp:193
 #, fuzzy, kde-format
 #| msgid "No key data for recipients found."
 msgid "You can not add more recipients."

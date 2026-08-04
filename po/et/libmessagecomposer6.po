@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-18 00:46+0000\n"
+"POT-Creation-Date: 2026-08-04 00:46+0000\n"
 "PO-Revision-Date: 2020-05-15 08:18+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -1880,47 +1880,47 @@ msgctxt "@info:tooltip %1 list of emails"
 msgid "Reply-To:%1"
 msgstr "Vastamise aadress: %1"
 
-#: recipient/recipientspicker.cpp:51
+#: recipient/recipientspicker.cpp:52
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Recipient"
 msgstr "Saaja valimine"
 
-#: recipient/recipientspicker.cpp:63
+#: recipient/recipientspicker.cpp:64
 #, fuzzy, kde-format
 #| msgid "Search &Directory Service"
 msgctxt "@action:button"
 msgid "Search &Directory Service"
 msgstr "Kaustaotsin&gu teenus"
 
-#: recipient/recipientspicker.cpp:82
+#: recipient/recipientspicker.cpp:83
 #, kde-format
 msgid "Add as &Reply-To"
 msgstr "L&isa kui \"Vastamise aadress\""
 
-#: recipient/recipientspicker.cpp:83
+#: recipient/recipientspicker.cpp:84
 #, kde-format
 msgid "Add as &To"
 msgstr "L&isa kui \"Kellele\""
 
-#: recipient/recipientspicker.cpp:84
+#: recipient/recipientspicker.cpp:85
 #, kde-format
 msgid "Add as CC"
 msgstr "Lisa kui \"Koopia\""
 
-#: recipient/recipientspicker.cpp:85
+#: recipient/recipientspicker.cpp:86
 #, kde-format
 msgid "Add as &BCC"
 msgstr "Lisa k&ui \"Pimekoopia\""
 
-#: recipient/recipientspicker.cpp:108
+#: recipient/recipientspicker.cpp:109
 #, kde-format
 msgid "%1 selected email"
 msgid_plural "%1 selected emails"
 msgstr[0] ""
 msgstr[1] ""
 
-#: recipient/recipientspicker.cpp:175
+#: recipient/recipientspicker.cpp:176
 #, fuzzy, kde-format
 #| msgid ""
 #| "You selected 1 recipient. The maximum supported number of recipients is "
@@ -1940,7 +1940,7 @@ msgstr[0] ""
 msgstr[1] ""
 "Valisid %1 saajat. Kõige rohkem võib saajaid olla %2. Palun vaata valik üle."
 
-#: recipient/recipientspicker.cpp:192
+#: recipient/recipientspicker.cpp:193
 #, fuzzy, kde-format
 #| msgid "No key data for recipients found."
 msgid "You can not add more recipients."
