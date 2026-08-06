@@ -508,6 +508,11 @@ void SearchLineCommandTest::mustBeUnique()
     }
     {
         MessageList::Core::SearchLineCommand::SearchLineInfo info;
+        info.type = MessageList::Core::SearchLineCommand::HasInvitation;
+        QVERIFY(info.mustBeUnique());
+    }
+    {
+        MessageList::Core::SearchLineCommand::SearchLineInfo info;
         info.type = MessageList::Core::SearchLineCommand::Cc;
         QVERIFY(!info.mustBeUnique());
     }
