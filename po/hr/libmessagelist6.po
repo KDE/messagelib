@@ -908,7 +908,8 @@ msgid "Size"
 msgstr "Veličina"
 
 #: core/view.cpp:2260 core/view.cpp:2264 utils/themeeditor.cpp:191
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Folder"
 msgid "Folder"
 msgstr "Mapa"
 
