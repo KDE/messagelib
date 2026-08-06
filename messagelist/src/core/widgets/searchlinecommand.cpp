@@ -65,7 +65,7 @@ bool SearchLineCommand::mustBeUnique(SearchLineType type)
 {
     return type == HasAttachment || type == IsImportant || type == IsRead || type == IsUnRead || type == IsIgnored || type == IsHam || type == IsSpam
         || type == IsWatched || type == IsReplied || type == IsForwarded || type == IsEncrypted || type == IsQueued || type == IsSent || type == IsDeleted
-        || type == IsAction;
+        || type == IsAction || type == HasInvitation;
 }
 
 bool SearchLineCommand::isEmpty() const
