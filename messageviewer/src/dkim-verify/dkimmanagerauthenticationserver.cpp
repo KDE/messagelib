@@ -21,10 +21,7 @@ DKIMManagerAuthenticationServer::DKIMManagerAuthenticationServer(QObject *parent
 {
 }
 
-DKIMManagerAuthenticationServer::~DKIMManagerAuthenticationServer()
-{
-    save();
-}
+DKIMManagerAuthenticationServer::~DKIMManagerAuthenticationServer() = default;
 
 DKIMManagerAuthenticationServer *DKIMManagerAuthenticationServer::self()
 {
@@ -40,6 +37,7 @@ QStringList DKIMManagerAuthenticationServer::serverList() const
 void DKIMManagerAuthenticationServer::setServerList(const QStringList &serverList)
 {
     mServerList = serverList;
+    save();
 }
 
 void DKIMManagerAuthenticationServer::load()
