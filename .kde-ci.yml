@@ -22,7 +22,6 @@ Dependencies:
     'pim/libkleo': '@same'
     'pim/pimcommon': '@same'
     'frameworks/kcolorscheme': '@latest-kf6'
-    'libraries/qca': '@latest-kf6'
     'libraries/ktextaddons': '@latest-kf6'
 
  - 'on': ['Linux', 'FreeBSD']
