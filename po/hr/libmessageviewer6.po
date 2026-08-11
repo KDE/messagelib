@@ -424,13 +424,15 @@ msgstr ""
 
 #: dkim-verify/dkimmanageruleswidget.cpp:198
 #: remote-content/remotecontentconfigurewidget.cpp:82
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Add..."
 msgid "Add..."
 msgstr "Dodaj …"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:203
 #: remote-content/remotecontentconfigurewidget.cpp:85
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Modify..."
 msgid "Modify..."
 msgstr "Izmijeni …"
 
@@ -964,7 +966,8 @@ msgid "Configure Remote Content"
 msgstr "Sličice mapa"
 
 #: remote-content/remotecontentconfigurewidget.cpp:54
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Status"
 msgid "Status"
 msgstr "Status"
 
@@ -2040,7 +2043,8 @@ msgstr "&Svojstva"
 # pmap: =/nom=KMail/gen=KMaila/dat=KMailu/
 # pmap: =/aku=KMail/lok=KMailu/ins=KMailom/_r=m/_b=j/
 #: viewer/viewer_p.cpp:738
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "KMail"
 msgid "KMail"
 msgstr "KMail"
 
@@ -2246,7 +2250,8 @@ msgid "Copy Image Location"
 msgstr "Odaberite lokaciju"
 
 #: viewer/viewer_p.cpp:1669
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "&Find in Message..."
 msgid "&Find in Message..."
 msgstr "&Nađi u poruci …"
 
