@@ -1044,7 +1044,7 @@ msgstr[0] "موضوع <b>%1</b>"
 msgstr[1] "موضوع <b>واحد</b>"
 msgstr[2] "<b>موضوعان</b>"
 msgstr[3] "<b>%1</b> مواضيع"
-msgstr[4] "<b>%1</b> موضوعاً"
+msgstr[4] "<b>%1</b> موضوعًا"
 msgstr[5] "<b>%1</b> موضوع"
 
 #: core/view.cpp:2454
