@@ -55,6 +55,11 @@ private Q_SLOTS:
 
     void testCreateReplyWithForcedCharset();
 
+    // Digest forward
+    void testCreateForwardDigestMIMEKeepsRawContent();
+    void testCreateForwardDigestMIMECopiesContentID();
+    void testCreateForwardDigestMIMEUsesMessageIdentity();
+
     void cleanupTestCase();
 
 private:

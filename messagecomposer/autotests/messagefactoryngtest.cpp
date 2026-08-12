@@ -28,6 +28,8 @@
 
 #include "globalsettings_templateparser.h"
 
+#include <Akonadi/Item>
+
 #include <QDateTime>
 #include <QDir>
 #include <QLocale>
@@ -974,6 +976,139 @@ void MessageFactoryTest::testCreateReplyWithForcedCharset()
         QCOMPARE(msg->contentType()->charset(), QByteArray("UTF-8"));
         QCOMPARE(msg->body(), QByteArray("\xE2\x82\xAC> Test \xC3\x84"));
     }
+}
+
+void MessageFactoryTest::testCreateForwardDigestMIMEKeepsRawContent()
+{
+    // A message carrying raw UTF-8 bytes in its body, i.e. Content-Transfer-Encoding: 8bit.
+    std::shared_ptr<KMime::Message> origMsg(new KMime::Message);
+    const QByteArray origMail =
+        "From: me@me.me\n"
+        "To: you@you.you\n"
+        "Subject: Test Email Subject\n"
+        "Date: Wed, 12 Aug 2026 10:00:00 +0200\n"
+        "MIME-Version: 1.0\n"
+        "Content-Type: text/plain; charset=\"utf-8\"\n"
+        "Content-Transfer-Encoding: 8bit\n"
+        "\n"
+        "Test \xC3\x84\xE2\x82\xAC\n";
+    origMsg->setContent(origMail);
+    origMsg->parse();
+    origMsg->assemble();
+
+    // The message has no private header fields and no Bcc, so createForwardDigestMIME() strips
+    // nothing and the digest part must carry exactly these bytes.
+    const QByteArray expected = origMsg->encodedContent();
+    QVERIFY(expected.contains("Test \xC3\x84\xE2\x82\xAC"));
+
+    Akonadi::Item item(1);
+    item.setMimeType(KMime::Message::mimeType());
+    item.setPayload<std::shared_ptr<KMime::Message>>(origMsg);
+
+    MessageFactoryNG factory(origMsg, item.id());
+    factory.setIdentityManager(mIdentMan);
+    const auto digest = factory.createForwardDigestMIME(Akonadi::Item::List() << item);
+
+    QVERIFY(digest.second);
+    QCOMPARE(digest.second->contentType()->mimeType(), QByteArray("multipart/digest"));
+    QCOMPARE(digest.second->contents().size(), 1);
+
+    const KMime::Content *part = digest.second->contents().at(0);
+    QCOMPARE(part->contentType()->mimeType(), QByteArray("message/rfc822"));
+
+    // The attached message must be the original MIME bytes verbatim. Feeding them through
+    // Content::fromUnicodeString() re-encodes them via the part's charset, which double-encodes
+    // every byte >= 0x80.
+    QCOMPARE_OR_DIFF(part->body(), expected);
+
+    // A charset parameter is meaningless on message/rfc822 and is what drove the re-encoding.
+    QVERIFY(!part->contentType()->hasParameter("charset"));
+}
+
+void MessageFactoryTest::testCreateForwardDigestMIMECopiesContentID()
+{
+    const auto makeMessage = [](const QByteArray &extraHeader) {
+        std::shared_ptr<KMime::Message> m(new KMime::Message);
+        m->setContent(
+            "From: me@me.me\n"
+            "To: you@you.you\n"
+            "Subject: Test Email Subject\n"
+            + extraHeader + "\nbody\n");
+        m->parse();
+        return m;
+    };
+
+    // One message with a Content-ID, one without.
+    Akonadi::Item withCid(1);
+    withCid.setMimeType(KMime::Message::mimeType());
+    withCid.setPayload<std::shared_ptr<KMime::Message>>(makeMessage("Content-ID: <cid-one@example.com>\n"));
+
+    Akonadi::Item withoutCid(2);
+    withoutCid.setMimeType(KMime::Message::mimeType());
+    const auto plain = makeMessage(QByteArray());
+    withoutCid.setPayload<std::shared_ptr<KMime::Message>>(plain);
+
+    MessageFactoryNG factory(plain, withoutCid.id());
+    factory.setIdentityManager(mIdentMan);
+    const auto digest = factory.createForwardDigestMIME(Akonadi::Item::List() << withCid << withoutCid);
+
+    QVERIFY(digest.second);
+    QCOMPARE(digest.second->contents().size(), 2);
+
+    // An existing Content-ID is carried over...
+    const KMime::Content *first = digest.second->contents().at(0);
+    QVERIFY(first->contentID());
+    QCOMPARE(first->contentID()->identifier(), QByteArray("cid-one@example.com"));
+
+    // ... while a missing one leaves no header behind. Copying it unconditionally made
+    // SingleIdent::setIdentifier() parse "<>" and warn on every ordinary forwarded message.
+    // Note: the pointer must be const, otherwise contentID() defaults to CreatePolicy::Create
+    // and creates the very header being tested for.
+    const KMime::Content *second = digest.second->contents().at(1);
+    QVERIFY(!second->contentID());
+}
+
+void MessageFactoryTest::testCreateForwardDigestMIMEUsesMessageIdentity()
+{
+    // Pick a non-default identity: applyIdentity() only writes X-KMail-Identity for those.
+    uint uoid = 0;
+    for (auto it = mIdentMan->begin(); it != mIdentMan->end(); ++it) {
+        if (it->identityName() == u"test1"_s) {
+            uoid = it->uoid();
+            break;
+        }
+    }
+    QVERIFY(uoid != 0);
+    QVERIFY(uoid != mIdentMan->defaultIdentity().uoid());
+
+    std::shared_ptr<KMime::Message> origMsg(new KMime::Message);
+    const QByteArray origMail = "From: me@me.me\n"
+                                "To: you@you.you\n"
+                                "Subject: Test Email Subject\n"
+                                "X-KMail-Identity: "
+        + QByteArray::number(uoid)
+        + "\n"
+          "\n"
+          "body\n";
+    origMsg->setContent(origMail);
+    origMsg->parse();
+
+    Akonadi::Item item(1);
+    item.setMimeType(KMime::Message::mimeType());
+    item.setPayload<std::shared_ptr<KMime::Message>>(origMsg);
+
+    MessageFactoryNG factory(origMsg, item.id());
+    factory.setIdentityManager(mIdentMan);
+    // No folder identity set, so the one carried by the forwarded message must be used.
+    const auto digest = factory.createForwardDigestMIME(Akonadi::Item::List() << item);
+
+    QVERIFY(digest.first);
+    // applyIdentity() writes X-KMail-Identity for any non-default identity. Before the fix the
+    // extracted id was overwritten by the (unset) folder identity, so the default one was applied
+    // and the header was removed instead.
+    auto identityHeader = digest.first->headerByType("X-KMail-Identity");
+    QVERIFY(identityHeader);
+    QCOMPARE(identityHeader->asUnicodeString(), QString::number(uoid));
 }
 
 #include "moc_messagefactoryngtest.cpp"

@@ -726,18 +726,26 @@ QPair<std::shared_ptr<KMime::Message>, std::unique_ptr<KMime::Content>> MessageF
         auto part = std::make_unique<KMime::Content>();
 
         part->contentType()->setMimeType("message/rfc822");
-        part->contentType(KMime::CreatePolicy::DontCreate)->setCharset(fMsg->contentType()->charset());
-        part->contentID()->setIdentifier(fMsg->contentID()->identifier());
+        // Only copy a Content-ID that actually exists: setIdentifier() on an empty identifier
+        // parses "<>" and just warns.
+        if (const auto origContentID = fMsg->contentID(KMime::CreatePolicy::DontCreate); origContentID && !origContentID->isEmpty()) {
+            part->contentID()->setIdentifier(origContentID->identifier());
+        }
         part->contentDescription()->fromUnicodeString(fMsg->contentDescription()->asUnicodeString());
         part->contentDisposition()->setParameter(QByteArrayLiteral("name"), i18n("forwarded message"));
-        part->fromUnicodeString(QString::fromLatin1(fMsg->encodedContent()));
+        // Set the raw MIME bytes as-is: fromUnicodeString() would re-encode them through the
+        // part's charset, mangling any 8bit content in the forwarded message.
+        part->setBody(fMsg->encodedContent());
         part->assemble();
         MessageComposer::Util::addLinkInformation(msg, item.id(), Akonadi::MessageStatus::statusForwarded());
         digest->appendContent(std::move(part));
     }
     digest->assemble();
 
-    id = mFolderId;
+    // The identity carried by the forwarded messages wins; fall back to the folder identity.
+    if (id == 0) {
+        id = mFolderId;
+    }
     MessageHelper::initHeader(msg, mIdentityManager, id);
 
     //   qCDebug(MESSAGECOMPOSER_LOG) << "digest:" << digest->contents().size() << digest->encodedContent();
