@@ -515,7 +515,7 @@ MessageFactoryNG::createRedirect(const QString &toStr, const QString &ccStr, con
 
     header = std::make_unique<KMime::Headers::Generic>("Resent-To");
     header->fromUnicodeString(toStr);
-    msg->setHeader(std::move(std::move(header)));
+    msg->setHeader(std::move(header));
 
     if (!ccStr.isEmpty()) {
         header = std::make_unique<KMime::Headers::Generic>("Resent-Cc");
