@@ -711,12 +711,12 @@ QPair<std::shared_ptr<KMime::Message>, std::unique_ptr<KMime::Content>> MessageF
     digest->contentDisposition()->setFilename(u"digest"_s);
     digest->fromUnicodeString(mainPartText);
 
-    int id = 0;
+    uint id = 0;
     for (const Akonadi::Item &item : std::as_const(items)) {
         std::shared_ptr<KMime::Message> fMsg = MessageComposer::Util::message(item);
         if (id == 0) {
             if (auto hrd = fMsg->headerByType("X-KMail-Identity")) {
-                id = hrd->asUnicodeString().toInt();
+                id = hrd->asUnicodeString().trimmed().toUInt();
             }
         }
 
