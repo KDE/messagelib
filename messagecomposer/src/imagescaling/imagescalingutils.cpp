@@ -17,9 +17,20 @@ bool Utils::resizeImage(MessageCore::AttachmentPart::Ptr part)
     const QString filename = part->fileName();
     const QString pattern = MessageComposer::MessageComposerSettings::self()->filterSourcePattern();
 
-    if (!pattern.isEmpty()) {
-        // TODO use regexp ?
-        const QStringList lstPattern = pattern.split(u';');
+    // TODO use regexp ?
+    // The pattern list is typed by hand in the config dialog, so blank entries (as in "png;")
+    // are expected. They must be dropped as QString::contains(QString()) matches any file name.
+    const QStringList lstSourcePattern = pattern.split(u';', Qt::SkipEmptyParts);
+    QStringList lstPattern;
+    lstPattern.reserve(lstSourcePattern.count());
+    for (const QString &patternStr : lstSourcePattern) {
+        const QString trimmedPattern = patternStr.trimmed();
+        if (!trimmedPattern.isEmpty()) {
+            lstPattern.append(trimmedPattern);
+        }
+    }
+
+    if (!lstPattern.isEmpty()) {
         bool includeMatched = false;
         for (const QString &patternStr : lstPattern) {
             switch (MessageComposer::MessageComposerSettings::self()->filterSourceType()) {
