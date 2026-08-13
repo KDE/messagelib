@@ -9,20 +9,217 @@
 #include "snippet/convertsnippetvariablesutil.h"
 #include <KEmailAddress>
 #include <KMime/Types>
-#include <QDebug>
 #include <TemplateParser/TemplatesUtil>
 using namespace MessageComposer;
 using namespace Qt::Literals::StringLiterals;
+
+namespace
+{
+template<typename Extract>
+QString namesFromEmail(const QString &address, Extract &&extract)
+{
+    const QStringList lst = KEmailAddress::splitAddressList(address);
+    QStringList resultName;
+    resultName.reserve(lst.count());
+    for (const QString &str : lst) {
+        KMime::Types::Mailbox mailBoxAddress;
+        mailBoxAddress.fromUnicodeString(KEmailAddress::normalizeAddressesAndEncodeIdn(str));
+        const QString name = extract(mailBoxAddress.name());
+        if (!name.isEmpty()) {
+            resultName << name;
+        }
+    }
+    return resultName.join(u", "_s);
+}
+
+QString nameFromEmail(const QString &address)
+{
+    return namesFromEmail(address, [](const QString &name) {
+        return name;
+    });
+}
+
+QString firstNameFromEmail(const QString &address)
+{
+    return namesFromEmail(address, [](const QString &name) {
+        return TemplateParser::Util::getFirstNameFromEmail(name);
+    });
+}
+
+QString lastNameFromEmail(const QString &address)
+{
+    return namesFromEmail(address, [](const QString &name) {
+        return TemplateParser::Util::getLastNameFromEmail(name);
+    });
+}
+
+struct SnippetVariable {
+    // Variable name, without the leading '%'.
+    QString name;
+    // Variables which need a composer view are left as-is when we don't have one.
+    bool requiresComposerView = false;
+    QString (*value)(ComposerViewInterface *composerView) = nullptr;
+};
+
+const QList<SnippetVariable> &snippetVariables()
+{
+    using namespace MessageComposer::ConvertSnippetVariablesUtil;
+    static const QList<SnippetVariable> variables = [] {
+        QList<SnippetVariable> list;
+        // snippetVariableFromEnum() is the single source of truth for the variable names.
+        const auto add = [&list](VariableType type, bool requiresComposerView, QString (*value)(ComposerViewInterface *)) {
+            list.append({snippetVariableFromEnum(type).mid(1), requiresComposerView, value});
+        };
+        add(CcAddr, true, [](ComposerViewInterface *composerView) {
+            return composerView->cc();
+        });
+        add(CcFname, true, [](ComposerViewInterface *composerView) {
+            return firstNameFromEmail(composerView->cc());
+        });
+        add(CcLname, true, [](ComposerViewInterface *composerView) {
+            return lastNameFromEmail(composerView->cc());
+        });
+        add(CcName, true, [](ComposerViewInterface *composerView) {
+            return nameFromEmail(composerView->cc());
+        });
+        add(BccAddr, true, [](ComposerViewInterface *composerView) {
+            return composerView->bcc();
+        });
+        add(BccFname, true, [](ComposerViewInterface *composerView) {
+            return firstNameFromEmail(composerView->bcc());
+        });
+        add(BccLname, true, [](ComposerViewInterface *composerView) {
+            return lastNameFromEmail(composerView->bcc());
+        });
+        add(BccName, true, [](ComposerViewInterface *composerView) {
+            return nameFromEmail(composerView->bcc());
+        });
+        add(ToAddr, true, [](ComposerViewInterface *composerView) {
+            return composerView->to();
+        });
+        add(ToFname, true, [](ComposerViewInterface *composerView) {
+            return firstNameFromEmail(composerView->to());
+        });
+        add(ToLname, true, [](ComposerViewInterface *composerView) {
+            return lastNameFromEmail(composerView->to());
+        });
+        add(ToName, true, [](ComposerViewInterface *composerView) {
+            return nameFromEmail(composerView->to());
+        });
+        add(FromAddr, true, [](ComposerViewInterface *composerView) {
+            return composerView->from();
+        });
+        add(FromFname, true, [](ComposerViewInterface *composerView) {
+            return firstNameFromEmail(composerView->from());
+        });
+        add(FromLname, true, [](ComposerViewInterface *composerView) {
+            return lastNameFromEmail(composerView->from());
+        });
+        add(FromName, true, [](ComposerViewInterface *composerView) {
+            return nameFromEmail(composerView->from());
+        });
+        add(FullSubject, true, [](ComposerViewInterface *composerView) {
+            return composerView->subject();
+        });
+        add(Dow, true, [](ComposerViewInterface *composerView) {
+            return composerView->insertDayOfWeek();
+        });
+        add(Date, true, [](ComposerViewInterface *composerView) {
+            return composerView->longDate();
+        });
+        add(ShortDate, true, [](ComposerViewInterface *composerView) {
+            return composerView->shortDate();
+        });
+        add(Time, true, [](ComposerViewInterface *composerView) {
+            return composerView->shortTime();
+        });
+        add(TimeLong, true, [](ComposerViewInterface *composerView) {
+            return composerView->longTime();
+        });
+        add(AttachmentCount, true, [](ComposerViewInterface *composerView) {
+            return QString::number(composerView->attachments().count());
+        });
+        add(AttachmentName, true, [](ComposerViewInterface *composerView) {
+            return composerView->attachments().names().join(u',');
+        });
+        add(AttachmentFilenames, true, [](ComposerViewInterface *composerView) {
+            return composerView->attachments().fileNames().join(u',');
+        });
+        add(AttachmentNamesAndSizes, true, [](ComposerViewInterface *composerView) {
+            return composerView->attachments().namesAndSize().join(u',');
+        });
+        add(Year, false, [](ComposerViewInterface *) {
+            return year();
+        });
+        add(LastYear, false, [](ComposerViewInterface *) {
+            return lastYear();
+        });
+        add(NextYear, false, [](ComposerViewInterface *) {
+            return nextYear();
+        });
+        add(YearLastMonth, false, [](ComposerViewInterface *) {
+            return yearLastMonth();
+        });
+        add(MonthNumber, false, [](ComposerViewInterface *) {
+            return monthNumber();
+        });
+        add(MonthNameShort, false, [](ComposerViewInterface *) {
+            return monthNameShort();
+        });
+        add(MonthNameLong, false, [](ComposerViewInterface *) {
+            return monthNameLong();
+        });
+        add(LastMonthNameLong, false, [](ComposerViewInterface *) {
+            return lastMonthNameLong();
+        });
+        add(WeekNumber, false, [](ComposerViewInterface *) {
+            return weekNumber();
+        });
+        add(DayNumber, false, [](ComposerViewInterface *) {
+            return dayNumber();
+        });
+        add(DayOfMonth, false, [](ComposerViewInterface *) {
+            return dayOfMonth();
+        });
+        add(DayOfWeek, false, [](ComposerViewInterface *) {
+            return dayOfWeek();
+        });
+        add(DayOfWeekNameShort, false, [](ComposerViewInterface *) {
+            return dayOfWeekNameShort();
+        });
+        add(DayOfWeekNameLong, false, [](ComposerViewInterface *) {
+            return dayOfWeekNameLong();
+        });
+        add(CustomDate, false, [](ComposerViewInterface *) {
+            return customDate();
+        });
+        return list;
+    }();
+    return variables;
+}
+
+const SnippetVariable *findSnippetVariable(QStringView cmd, bool hasComposerView)
+{
+    const SnippetVariable *found = nullptr;
+    for (const SnippetVariable &variable : snippetVariables()) {
+        if (variable.requiresComposerView && !hasComposerView) {
+            continue;
+        }
+        // The longest name wins, so the order of the variables doesn't matter (%TIMELONG vs %TIME).
+        if ((!found || variable.name.size() > found->name.size()) && cmd.startsWith(variable.name)) {
+            found = &variable;
+        }
+    }
+    return found;
+}
+}
 
 ConvertSnippetVariablesJob::ConvertSnippetVariablesJob(QObject *parent)
     : QObject(parent)
 {
 }
 
-ConvertSnippetVariablesJob::~ConvertSnippetVariablesJob()
-{
-    delete mComposerViewInterface;
-}
+ConvertSnippetVariablesJob::~ConvertSnippetVariablesJob() = default;
 
 void ConvertSnippetVariablesJob::setText(const QString &str)
 {
@@ -44,7 +241,7 @@ void ConvertSnippetVariablesJob::start()
         deleteLater();
         return;
     }
-    Q_EMIT textConverted(convertVariables(mComposerViewInterface, mText));
+    Q_EMIT textConverted(convertVariables(mComposerViewInterface.get(), mText));
     deleteLater();
 }
 
@@ -55,244 +252,32 @@ QString ConvertSnippetVariablesJob::text() const
 
 MessageComposer::ComposerViewInterface *ConvertSnippetVariablesJob::composerViewInterface() const
 {
-    return mComposerViewInterface;
+    return mComposerViewInterface.get();
 }
 
 void ConvertSnippetVariablesJob::setComposerViewInterface(MessageComposer::ComposerViewInterface *composerViewInterface)
 {
-    mComposerViewInterface = composerViewInterface;
-}
-
-QString ConvertSnippetVariablesJob::convertVariables(const QString &cmd, qsizetype &i, QChar c)
-{
-    QString result;
-    if (cmd.startsWith(QLatin1StringView("LASTYEAR"))) {
-        i += strlen("LASTYEAR");
-        result.append(MessageComposer::ConvertSnippetVariablesUtil::lastYear());
-    } else if (cmd.startsWith(QLatin1StringView("NEXTYEAR"))) {
-        i += strlen("NEXTYEAR");
-        result.append(MessageComposer::ConvertSnippetVariablesUtil::nextYear());
-    } else if (cmd.startsWith(QLatin1StringView("MONTHNUMBER"))) {
-        i += strlen("MONTHNUMBER");
-        result.append(MessageComposer::ConvertSnippetVariablesUtil::monthNumber());
-    } else if (cmd.startsWith(QLatin1StringView("DAYNUMBER"))) {
-        i += strlen("DAYNUMBER");
-        result.append(MessageComposer::ConvertSnippetVariablesUtil::dayNumber());
-    } else if (cmd.startsWith(QLatin1StringView("CUSTOMDATE"))) {
-        i += strlen("CUSTOMDATE");
-        result.append(MessageComposer::ConvertSnippetVariablesUtil::customDate());
-    } else if (cmd.startsWith(QLatin1StringView("DAYOFMONTH"))) {
-        i += strlen("DAYOFMONTH");
-        result.append(MessageComposer::ConvertSnippetVariablesUtil::dayOfMonth());
-    } else if (cmd.startsWith(QLatin1StringView("WEEKNUMBER"))) {
-        i += strlen("WEEKNUMBER");
-        result.append(MessageComposer::ConvertSnippetVariablesUtil::weekNumber());
-    } else if (cmd.startsWith(QLatin1StringView("MONTHNAMESHORT"))) {
-        i += strlen("MONTHNAMESHORT");
-        result.append(MessageComposer::ConvertSnippetVariablesUtil::monthNameShort());
-    } else if (cmd.startsWith(QLatin1StringView("MONTHNAMELONG"))) {
-        i += strlen("MONTHNAMELONG");
-        result.append(MessageComposer::ConvertSnippetVariablesUtil::monthNameLong());
-    } else if (cmd.startsWith(QLatin1StringView("DAYOFWEEKNAMESHORT"))) {
-        i += strlen("DAYOFWEEKNAMESHORT");
-        result.append(MessageComposer::ConvertSnippetVariablesUtil::dayOfWeekNameShort());
-    } else if (cmd.startsWith(QLatin1StringView("DAYOFWEEKNAMELONG"))) {
-        i += strlen("DAYOFWEEKNAMELONG");
-        result.append(MessageComposer::ConvertSnippetVariablesUtil::dayOfWeekNameLong());
-    } else if (cmd.startsWith(QLatin1StringView("YEARLASTMONTH"))) {
-        i += strlen("YEARLASTMONTH");
-        result.append(MessageComposer::ConvertSnippetVariablesUtil::yearLastMonth());
-    } else if (cmd.startsWith(QLatin1StringView("YEAR"))) {
-        i += strlen("YEAR");
-        result.append(MessageComposer::ConvertSnippetVariablesUtil::year());
-    } else if (cmd.startsWith(QLatin1StringView("DAYOFWEEK"))) {
-        i += strlen("DAYOFWEEK");
-        result.append(MessageComposer::ConvertSnippetVariablesUtil::dayOfWeek());
-    } else if (cmd.startsWith(QLatin1StringView("LASTMONTHNAMELONG"))) {
-        i += strlen("LASTMONTHNAMELONG");
-        result.append(MessageComposer::ConvertSnippetVariablesUtil::lastMonthNameLong());
-    } else {
-        result.append(c);
-    }
-    return result;
+    mComposerViewInterface.reset(composerViewInterface);
 }
 
 QString ConvertSnippetVariablesJob::convertVariables(MessageComposer::ComposerViewInterface *composerView, const QString &text)
 {
     QString result;
+    result.reserve(text.size());
     const qsizetype tmpl_len = text.length();
     for (qsizetype i = 0; i < tmpl_len; ++i) {
         const QChar c = text[i];
         if (c == u'%') {
-            const QString cmd = text.mid(i + 1);
-            if (composerView) {
-                if (cmd.startsWith(QLatin1StringView("CCADDR"))) {
-                    i += strlen("CCADDR");
-                    const QString str = composerView->cc();
-                    result.append(str);
-                } else if (cmd.startsWith(QLatin1StringView("CCFNAME"))) {
-                    i += strlen("CCFNAME");
-                    const QString str = getFirstNameFromEmail(composerView->cc());
-                    result.append(str);
-                } else if (cmd.startsWith(QLatin1StringView("CCLNAME"))) {
-                    i += strlen("CCLNAME");
-                    const QString str = getLastNameFromEmail(composerView->cc());
-                    result.append(str);
-                } else if (cmd.startsWith(QLatin1StringView("CCNAME"))) {
-                    i += strlen("CCNAME");
-                    const QString str = getNameFromEmail(composerView->cc());
-                    result.append(str);
-                } else if (cmd.startsWith(QLatin1StringView("BCCADDR"))) {
-                    i += strlen("BCCADDR");
-                    const QString str = composerView->bcc();
-                    result.append(str);
-                } else if (cmd.startsWith(QLatin1StringView("BCCFNAME"))) {
-                    i += strlen("BCCFNAME");
-                    const QString str = getFirstNameFromEmail(composerView->bcc());
-                    result.append(str);
-                } else if (cmd.startsWith(QLatin1StringView("BCCLNAME"))) {
-                    i += strlen("BCCLNAME");
-                    const QString str = getLastNameFromEmail(composerView->bcc());
-                    result.append(str);
-                } else if (cmd.startsWith(QLatin1StringView("BCCNAME"))) {
-                    i += strlen("BCCNAME");
-                    const QString str = getNameFromEmail(composerView->bcc());
-                    result.append(str);
-                } else if (cmd.startsWith(QLatin1StringView("FULLSUBJECT"))) {
-                    i += strlen("FULLSUBJECT");
-                    const QString str = composerView->subject();
-                    result.append(str);
-                } else if (cmd.startsWith(QLatin1StringView("TOADDR"))) {
-                    i += strlen("TOADDR");
-                    const QString str = composerView->to();
-                    result.append(str);
-                } else if (cmd.startsWith(QLatin1StringView("TOFNAME"))) {
-                    i += strlen("TOFNAME");
-                    const QString str = getFirstNameFromEmail(composerView->to());
-                    result.append(str);
-                } else if (cmd.startsWith(QLatin1StringView("TOLNAME"))) {
-                    i += strlen("TOLNAME");
-                    const QString str = getLastNameFromEmail(composerView->to());
-                    result.append(str);
-                } else if (cmd.startsWith(QLatin1StringView("TONAME"))) {
-                    i += strlen("TONAME");
-                    const QString str = getNameFromEmail(composerView->to());
-                    result.append(str);
-                } else if (cmd.startsWith(QLatin1StringView("FROMADDR"))) {
-                    i += strlen("FROMADDR");
-                    const QString str = composerView->from();
-                    result.append(str);
-                } else if (cmd.startsWith(QLatin1StringView("FROMFNAME"))) {
-                    i += strlen("FROMFNAME");
-                    const QString str = getFirstNameFromEmail(composerView->from());
-                    result.append(str);
-                } else if (cmd.startsWith(QLatin1StringView("FROMLNAME"))) {
-                    i += strlen("FROMLNAME");
-                    const QString str = getLastNameFromEmail(composerView->from());
-                    result.append(str);
-                } else if (cmd.startsWith(QLatin1StringView("FROMNAME"))) {
-                    i += strlen("FROMNAME");
-                    const QString str = getNameFromEmail(composerView->from());
-                    result.append(str);
-                } else if (cmd.startsWith(QLatin1StringView("DOW"))) {
-                    i += strlen("DOW");
-                    const QString str = composerView->insertDayOfWeek();
-                    result.append(str);
-                } else if (cmd.startsWith(QLatin1StringView("DATE"))) {
-                    i += strlen("DATE");
-                    const QString str = composerView->longDate();
-                    result.append(str);
-                } else if (cmd.startsWith(QLatin1StringView("SHORTDATE"))) {
-                    i += strlen("SHORTDATE");
-                    const QString str = composerView->shortDate();
-                    result.append(str);
-                } else if (cmd.startsWith(QLatin1StringView("TIMELONG"))) {
-                    i += strlen("TIMELONG");
-                    const QString str = composerView->longTime();
-                    result.append(str);
-                } else if (cmd.startsWith(QLatin1StringView("TIME"))) {
-                    i += strlen("TIME");
-                    const QString str = composerView->shortTime();
-                    result.append(str);
-                } else if (cmd.startsWith(QLatin1StringView("ATTACHMENTCOUNT"))) {
-                    i += strlen("ATTACHMENTCOUNT");
-                    const QString str = QString::number(composerView->attachments().count());
-                    result.append(str);
-                } else if (cmd.startsWith(QLatin1StringView("ATTACHMENTNAMESANDSIZES"))) {
-                    i += strlen("ATTACHMENTNAMESANDSIZES");
-                    const QString str = composerView->attachments().namesAndSize().join(u',');
-                    result.append(str);
-                } else if (cmd.startsWith(QLatin1StringView("ATTACHMENTFILENAMES"))) {
-                    i += strlen("ATTACHMENTFILENAMES");
-                    const QString str = composerView->attachments().fileNames().join(u',');
-                    result.append(str);
-                } else if (cmd.startsWith(QLatin1StringView("ATTACHMENTNAMES"))) {
-                    i += strlen("ATTACHMENTNAMES");
-                    const QString str = composerView->attachments().names().join(u',');
-                    result.append(str);
-                } else {
-                    result.append(convertVariables(cmd, i, c));
-                }
-            } else {
-                result.append(convertVariables(cmd, i, c));
+            const QStringView cmd = QStringView(text).sliced(i + 1);
+            if (const SnippetVariable *variable = findSnippetVariable(cmd, composerView != nullptr)) {
+                result.append(variable->value(composerView));
+                i += variable->name.size();
+                continue;
             }
-        } else {
-            result.append(c);
         }
+        result.append(c);
     }
     return result;
-}
-
-QString ConvertSnippetVariablesJob::getNameFromEmail(const QString &address)
-{
-    const QStringList lst = KEmailAddress::splitAddressList(address);
-    QStringList resultName;
-    for (const QString &str : lst) {
-        KMime::Types::Mailbox mailBoxAddress;
-        mailBoxAddress.fromUnicodeString(KEmailAddress::normalizeAddressesAndEncodeIdn(str));
-        const QString firstName = mailBoxAddress.name();
-        if (!firstName.isEmpty()) {
-            resultName << firstName;
-        }
-    }
-
-    const QString str = resultName.isEmpty() ? QString() : resultName.join(u", "_s);
-    return str;
-}
-
-QString ConvertSnippetVariablesJob::getFirstNameFromEmail(const QString &address)
-{
-    const QStringList lst = KEmailAddress::splitAddressList(address);
-    QStringList resultName;
-    for (const QString &str : lst) {
-        KMime::Types::Mailbox mailBoxAddress;
-        mailBoxAddress.fromUnicodeString(KEmailAddress::normalizeAddressesAndEncodeIdn(str));
-        const QString firstName = TemplateParser::Util::getFirstNameFromEmail(mailBoxAddress.name());
-        if (!firstName.isEmpty()) {
-            resultName << firstName;
-        }
-    }
-
-    const QString str = resultName.isEmpty() ? QString() : resultName.join(u", "_s);
-    return str;
-}
-
-QString ConvertSnippetVariablesJob::getLastNameFromEmail(const QString &address)
-{
-    const QStringList lst = KEmailAddress::splitAddressList(address);
-    QStringList resultName;
-    for (const QString &str : lst) {
-        KMime::Types::Mailbox newAddress;
-        newAddress.fromUnicodeString(KEmailAddress::normalizeAddressesAndEncodeIdn(str));
-        // qDebug() << "newAddress.name()  " << newAddress.name();
-        const QString lastName = TemplateParser::Util::getLastNameFromEmail(newAddress.name());
-        if (!lastName.isEmpty()) {
-            resultName << lastName;
-        }
-    }
-
-    const QString str = resultName.isEmpty() ? QString() : resultName.join(u", "_s);
-    return str;
 }
 
 #include "moc_convertsnippetvariablesjob.cpp"

@@ -9,6 +9,7 @@
 #include "composer/composerviewbase.h"
 #include "composer/composerviewinterface.h"
 #include "snippet/convertsnippetvariablesjob.h"
+#include "snippet/convertsnippetvariablesutil.h"
 #include <QTest>
 QTEST_GUILESS_MAIN(ConvertVariablesJobTest)
 
@@ -61,7 +62,20 @@ void ConvertVariablesJobTest::shouldConvertVariables_data()
     QTest::newRow("empty") << QString() << QString();
     QTest::newRow("novariable") << u"bla bli blo"_s << QStringLiteral("bla bli blo");
     QTest::newRow("subject") << u"bla bli blo %FULLSUBJECT"_s << QStringLiteral("bla bli blo Subject!!!!");
-    // TODO add more autotests !
+    QTest::newRow("subjecttwice") << u"%FULLSUBJECT %FULLSUBJECT"_s << QStringLiteral("Subject!!!! Subject!!!!");
+    QTest::newRow("subjectfollowedbytext") << u"%FULLSUBJECTbla"_s << QStringLiteral("Subject!!!!bla");
+    QTest::newRow("unknownvariable") << u"%UNKNOWNVARIABLE"_s << QStringLiteral("%UNKNOWNVARIABLE");
+    QTest::newRow("percentbeforevariable") << u"%%FULLSUBJECT"_s << QStringLiteral("%Subject!!!!");
+    // Variables are matched by prefix: make sure the longest name always wins.
+    QTest::newRow("year") << u"%YEAR"_s << MessageComposer::ConvertSnippetVariablesUtil::year();
+    QTest::newRow("yearlastmonth") << u"%YEARLASTMONTH"_s << MessageComposer::ConvertSnippetVariablesUtil::yearLastMonth();
+    QTest::newRow("yearandyearlastmonth") << u"%YEAR %YEARLASTMONTH"_s
+                                          << (MessageComposer::ConvertSnippetVariablesUtil::year() + u' '
+                                              + MessageComposer::ConvertSnippetVariablesUtil::yearLastMonth());
+    QTest::newRow("monthnamelong") << u"%MONTHNAMELONG"_s << MessageComposer::ConvertSnippetVariablesUtil::monthNameLong();
+    QTest::newRow("lastmonthnamelong") << u"%LASTMONTHNAMELONG"_s << MessageComposer::ConvertSnippetVariablesUtil::lastMonthNameLong();
+    QTest::newRow("dayofweeknamelong") << u"%DAYOFWEEKNAMELONG"_s << MessageComposer::ConvertSnippetVariablesUtil::dayOfWeekNameLong();
+    // TODO add CC/BCC/TO autotests !
 }
 
 #include "moc_convertvariablesjobtest.cpp"
