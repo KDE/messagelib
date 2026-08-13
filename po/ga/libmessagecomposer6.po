@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-04 00:46+0000\n"
+"POT-Creation-Date: 2026-08-13 00:51+0000\n"
 "PO-Revision-Date: 2026-02-21 14:33+0000\n"
 "Last-Translator: charlotte <altronic25@protonmail.com>\n"
 "Language-Team: Irish\n"
@@ -1074,7 +1074,7 @@ msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr ""
 
-#: helper/messagefactoryng.cpp:408 helper/messagefactoryng.cpp:732
+#: helper/messagefactoryng.cpp:408 helper/messagefactoryng.cpp:735
 #, kde-format
 msgid "forwarded message"
 msgstr "teachtaireacht curtha ar aghaidh"

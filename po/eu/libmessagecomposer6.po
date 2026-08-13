@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-04 00:46+0000\n"
+"POT-Creation-Date: 2026-08-13 00:51+0000\n"
 "PO-Revision-Date: 2025-09-06 06:52+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -1189,7 +1189,7 @@ msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "Karpeta baliogabea"
 
-#: helper/messagefactoryng.cpp:408 helper/messagefactoryng.cpp:732
+#: helper/messagefactoryng.cpp:408 helper/messagefactoryng.cpp:735
 #, kde-format
 msgid "forwarded message"
 msgstr "birbidalitako mezua"
