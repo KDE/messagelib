@@ -117,6 +117,9 @@ void FollowupReminderCreateJob::writeFollowupReminderInfo()
 
     if (!iface->isValid()) {
         qCWarning(MESSAGECOMPOSER_LOG) << "The FollowUpReminder agent is not running!";
+        setError(KJob::UserDefinedError);
+        setErrorText(i18n("Failed to store a new reminder: the follow-up reminder agent is not running."));
+        emitResult();
         return;
     }
 
