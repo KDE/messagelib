@@ -73,6 +73,7 @@ target_sources(
         utils/themeeditor.cpp
         pane.cpp
         storagemodel.cpp
+        messagemodel.cpp
         widget.cpp
         messagelistutil.cpp
         utils/aggregationconfigbutton.h
@@ -92,6 +93,7 @@ target_sources(
         messagelist_private_export.h
         pane.h
         storagemodel.h
+        messagemodel.h
         widget.h
         messagelistutil.h
         messagelistutil_p.h
@@ -211,6 +213,8 @@ install(TARGETS KPim6MessageList EXPORT KPim6MessageListTargets ${KDE_INSTALL_TA
 
 ecm_generate_headers(MessageList_Camelcasecore_HEADERS
     HEADER_NAMES
+    Aggregation
+    OptionSet
     View
     Enums
     MD5Hash
@@ -246,6 +250,7 @@ ecm_generate_headers(MessageList_CamelCase_HEADERS
     HEADER_NAMES
     Pane
     StorageModel
+    MessageModel
     MessageListUtil
     REQUIRED_HEADERS MessageList_HEADERS
     PREFIX MessageList

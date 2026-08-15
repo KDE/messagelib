@@ -10,6 +10,8 @@
 
 #include <QString>
 
+#include "messagelist_export.h"
+
 class QDataStream;
 
 namespace MessageList
@@ -29,7 +31,7 @@ namespace Core
  * The option set can be "packed" to a string and "unpacked" from a string. This
  * is basically for storing it in a configuration file.
  */
-class OptionSet
+class MESSAGELIST_EXPORT OptionSet
 {
 public:
     explicit OptionSet();
