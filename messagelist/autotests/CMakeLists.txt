@@ -10,3 +10,4 @@ macro(messagelist_unittest _source)
 endmacro()
 
 messagelist_unittest(itemsizetest.cpp)
+messagelist_unittest(messagemodeltest.cpp)
