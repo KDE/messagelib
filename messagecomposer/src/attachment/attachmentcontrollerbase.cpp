@@ -711,8 +711,10 @@ void AttachmentControllerBase::openAttachment(const AttachmentPart::Ptr &part)
     job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, d->wParent));
     job->setDeleteTemporaryFile(true);
     connect(job, &KIO::OpenUrlJob::result, this, [this, tempFile](KJob *job) {
-        if (job->error() == KIO::ERR_USER_CANCELED) {
-            KMessageBox::error(d->wParent, job->errorString(), i18n("KMail was unable to open the attachment"));
+        if (job->error()) {
+            if (job->error() != KIO::ERR_USER_CANCELED) {
+                KMessageBox::error(d->wParent, job->errorString(), i18nc("@title:window", "Unable to open attachment"));
+            }
             delete tempFile;
         } else {
             // The file was opened.  Delete it only when the composer is closed
