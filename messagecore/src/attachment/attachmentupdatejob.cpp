@@ -51,7 +51,7 @@ void AttachmentUpdateJob::AttachmentUpdateJobPrivate::doStart()
 void AttachmentUpdateJob::AttachmentUpdateJobPrivate::loadJobResult(KJob *job)
 {
     if (job->error()) {
-        q->setError(KJob::UserDefinedError);
+        q->setError(job->error());
         q->setErrorText(job->errorString());
         q->emitResult();
         return;
