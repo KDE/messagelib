@@ -686,12 +686,12 @@ void AttachmentControllerBase::openWith(const KService::Ptr &offer)
     auto job = new KIO::ApplicationLauncherJob(offer);
     job->setUrls({url});
     job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, d->wParent));
-    job->start();
     connect(job, &KJob::result, this, [tempFile, job]() {
         if (job->error()) {
             delete tempFile;
         }
     });
+    job->start();
     // Delete the file only when the composer is closed
     // (and this object is destroyed).
     tempFile->setParent(this); // Manages lifetime.
