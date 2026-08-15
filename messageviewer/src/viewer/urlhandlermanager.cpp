@@ -746,9 +746,11 @@ bool AttachmentURLHandler::handleDrag(const QUrl &url, ViewerPrivate *window) co
         drag->exec();
         return true;
     } else {
-#endif
         return false;
     }
+#else
+    return false;
+#endif
 }
 
 bool AttachmentURLHandler::handleContextMenuRequest(const QUrl &url, const QPoint &p, ViewerPrivate *w) const
