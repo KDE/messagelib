@@ -789,8 +789,9 @@ static QString extractAuditLog(const QUrl &url)
         return {};
     }
     QUrlQuery query(url);
-    Q_ASSERT(!query.queryItemValue(u"log"_s).isEmpty());
-    return query.queryItemValue(u"log"_s);
+    const QString value = query.queryItemValue(u"log"_s);
+    Q_ASSERT(!value.isEmpty());
+    return value;
 }
 
 bool ShowAuditLogURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
