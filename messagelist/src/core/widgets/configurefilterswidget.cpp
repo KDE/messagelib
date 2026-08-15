@@ -54,7 +54,7 @@ void ConfigureFiltersWidget::slotConfigureFilter(QListWidgetItem *widgetItem)
         QPointer<FilterNameDialog> dlg = new FilterNameDialog(this);
         dlg->setFilterName(item->text());
         dlg->setIconName(item->iconName());
-        if (dlg->exec()) {
+        if (dlg->exec() && dlg) {
             QString newName = dlg->filterName();
             const QString newIconName = dlg->iconName();
             newName = newName.trimmed();
@@ -151,7 +151,7 @@ void ConfigureFiltersListWidget::paintEvent(QPaintEvent *event)
         font.setItalic(true);
         p.setFont(font);
 
-        p.drawText(QRect(0, 0, width(), height()), Qt::AlignCenter, i18n("No result found"));
+        p.drawText(viewport()->rect(), Qt::AlignCenter, i18n("No result found"));
     } else {
         QListWidget::paintEvent(event);
     }
