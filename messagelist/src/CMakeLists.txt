@@ -103,6 +103,7 @@ target_sources(
         core/filtersavedmanager.h
         core/manager.h
         core/model.h
+        core/modelviewinterface.h
         core/messageitem_p.h
         core/storagemodelbase.h
         core/aggregation.h
