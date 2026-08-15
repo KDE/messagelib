@@ -38,6 +38,7 @@ class Theme;
 class SortOrder;
 class StorageModel;
 class Widget;
+class ViewModelAdapter;
 
 /**
  * The MessageList::View is the real display of the message list. It is
@@ -46,6 +47,7 @@ class Widget;
  */
 class View : public QTreeView
 {
+    friend class ViewModelAdapter;
     friend class Model;
     friend class ModelPrivate;
     Q_OBJECT

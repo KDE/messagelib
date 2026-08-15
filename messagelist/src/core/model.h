@@ -14,6 +14,7 @@
 #include <QMultiHash>
 
 #include "core/enums.h"
+#include "core/modelviewinterface.h"
 
 #include <ctime> // time_t
 #include <memory>
@@ -30,7 +31,6 @@ class Item;
 class MessageItem;
 class Theme;
 class StorageModel;
-class View;
 class ModelPrivate;
 class SortOrder;
 class Aggregation;
@@ -58,9 +58,9 @@ class Model : public QAbstractItemModel
     Q_OBJECT
 public:
     /**
-     * Creates the mighty Model attached to the specified View.
+     * Creates the mighty Model using the supplied view interface.
      */
-    explicit Model(View *pParent);
+    explicit Model(ModelViewInterface *viewInterface, QObject *parent = nullptr);
 
     /**
      * Destroys the mighty model along with the tree of items it manages.

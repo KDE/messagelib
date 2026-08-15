@@ -276,9 +276,9 @@ public:
     Item *mRootItem = nullptr;
 
     /**
-     * The view we're attached to. Shallow pointer (the View owns us).
+     * The view interface we're attached to. Shallow pointer; the owner keeps it alive.
      */
-    View *mView = nullptr;
+    ModelViewInterface *mView = nullptr;
 
     /**
      * The time at the current ViewItemJob step started. Used to compute the time we
