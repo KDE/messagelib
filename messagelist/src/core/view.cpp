@@ -41,12 +41,151 @@
 
 using namespace MessageList::Core;
 using namespace Qt::Literals::StringLiterals;
+
+class MessageList::Core::ViewModelAdapter final : public ModelViewInterface
+{
+public:
+    explicit ViewModelAdapter(View *view)
+        : mView(view)
+    {
+    }
+
+    QModelIndex currentIndex() const override
+    {
+        return mView->currentIndex();
+    }
+
+    QItemSelectionModel *selectionModel() const override
+    {
+        return mView->selectionModel();
+    }
+
+    bool isExpanded(const QModelIndex &index) const override
+    {
+        return mView->isExpanded(index);
+    }
+
+    void expand(const QModelIndex &index) override
+    {
+        mView->expand(index);
+    }
+
+    bool isAnimated() const override
+    {
+        return mView->isAnimated();
+    }
+
+    void setAnimated(bool animated) override
+    {
+        mView->setAnimated(animated);
+    }
+
+    void setRootIsDecorated(bool decorated) override
+    {
+        mView->setRootIsDecorated(decorated);
+    }
+
+    void setRowHidden(int row, const QModelIndex &parent, bool hidden) override
+    {
+        mView->setRowHidden(row, parent, hidden);
+    }
+
+    bool isRowHidden(int row, const QModelIndex &parent) const override
+    {
+        return mView->isRowHidden(row, parent);
+    }
+
+    void ensureDisplayedWithParentsExpanded(Item *item) override
+    {
+        mView->ensureDisplayedWithParentsExpanded(item);
+    }
+
+    Item *messageItemAfter(Item *referenceItem, MessageTypeFilter messageTypeFilter, bool loop) override
+    {
+        return mView->messageItemAfter(referenceItem, messageTypeFilter, loop);
+    }
+
+    Item *messageItemBefore(Item *referenceItem, MessageTypeFilter messageTypeFilter, bool loop) override
+    {
+        return mView->messageItemBefore(referenceItem, messageTypeFilter, loop);
+    }
+
+    int scrollingLockDirection() const override
+    {
+        return mView->scrollingLockDirection();
+    }
+
+    QRect visualRect(const QModelIndex &index) const override
+    {
+        return mView->visualRect(index);
+    }
+
+    QScrollBar *verticalScrollBar() const override
+    {
+        return mView->verticalScrollBar();
+    }
+
+    void ignoreUpdateGeometries(bool ignore) override
+    {
+        mView->ignoreUpdateGeometries(ignore);
+    }
+
+    void updateGeometries() override
+    {
+        mView->updateGeometries();
+    }
+
+    void modelAboutToEmitLayoutChanged() override
+    {
+        mView->modelAboutToEmitLayoutChanged();
+    }
+
+    void modelEmittedLayoutChanged() override
+    {
+        mView->modelEmittedLayoutChanged();
+    }
+
+    void ignoreCurrentChanges(bool ignore) override
+    {
+        mView->ignoreCurrentChanges(ignore);
+    }
+
+    void modelFinishedLoading() override
+    {
+        mView->modelFinishedLoading();
+    }
+
+    bool selectFirstMessageItem(MessageTypeFilter messageTypeFilter, bool centerItem) override
+    {
+        return mView->selectFirstMessageItem(messageTypeFilter, centerItem);
+    }
+
+    void setCurrentMessageItem(MessageItem *item, bool center) override
+    {
+        mView->setCurrentMessageItem(item, center);
+    }
+
+    void setCurrentIndex(const QModelIndex &index) override
+    {
+        mView->setCurrentIndex(index);
+    }
+
+    void slotSelectionChanged(const QItemSelection &current, const QItemSelection &previous) override
+    {
+        mView->slotSelectionChanged(current, previous);
+    }
+
+private:
+    View *const mView;
+};
+
 class View::ViewPrivate
 {
 public:
     ViewPrivate(View *owner, Widget *parent)
         : q(owner)
         , mWidget(parent)
+        , mModelViewAdapter(std::make_unique<ViewModelAdapter>(owner))
         , mDelegate(new Delegate(owner))
     {
     }
@@ -63,6 +202,7 @@ public:
     View *const q;
 
     Widget *const mWidget;
+    std::unique_ptr<ViewModelAdapter> mModelViewAdapter;
     Model *mModel = nullptr;
     Delegate *const mDelegate;
 
@@ -126,7 +266,7 @@ View::View(Widget *pParent)
     header()->setMinimumSectionSize(2); // QTreeView overrides our sections sizes if we set them smaller than this value
     header()->setDefaultSectionSize(2); // QTreeView overrides our sections sizes if we set them smaller than this value
 
-    d->mModel = new Model(this);
+    d->mModel = new Model(d->mModelViewAdapter.get(), this);
     setModel(d->mModel);
 
     connect(d->mModel, &Model::statusMessage, pParent, &Widget::statusMessage);

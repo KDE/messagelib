@@ -305,13 +305,13 @@ public:
 
 using namespace MessageList::Core;
 
-Model::Model(View *pParent)
-    : QAbstractItemModel(pParent)
+Model::Model(ModelViewInterface *viewInterface, QObject *parent)
+    : QAbstractItemModel(parent)
     , d(new ModelPrivate(this))
 {
     d->mRecursionCounterForReset = 0;
     d->mStorageModel = nullptr;
-    d->mView = pParent;
+    d->mView = viewInterface;
     d->mAggregation = nullptr;
     d->mTheme = nullptr;
     d->mSortOrder = nullptr;
