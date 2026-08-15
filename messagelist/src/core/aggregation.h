@@ -11,10 +11,12 @@
 class QDataStream;
 
 #include <QList>
+#include <QObject>
 #include <QPair>
 #include <QString>
 
-#include "core/optionset.h"
+#include "messagelist_export.h"
+#include "optionset.h"
 
 namespace MessageList::Core
 {
@@ -23,8 +25,10 @@ namespace MessageList::Core
  * The set defines the behaviours related to the population of the model, threading
  * of messages and grouping.
  */
-class Aggregation : public OptionSet
+class MESSAGELIST_EXPORT Aggregation : public OptionSet
 {
+    Q_GADGET
+
 public:
     /**
      * Message grouping.
@@ -67,6 +71,7 @@ public:
         PerfectReferencesAndSubject ///< Thread by all of the above and try to match subjects too
         // Never add enum entries in the middle: always add them at the end (numeric values are stored in configuration)
     };
+    Q_ENUM(Threading)
 
     /**
      * The available thread leading options. Meaningless when threading is set to NoThreading.
