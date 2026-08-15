@@ -18,6 +18,7 @@
 
 #include <KConfigGroup>
 #include <KWindowConfig>
+#include <QPointer>
 #include <QShortcut>
 #include <QVBoxLayout>
 #include <QWindow>
@@ -103,9 +104,13 @@ void MailSourceWebEngineViewer::setDisplayedSource(QWebEnginePage *page)
 {
     if (mShowHtmlSource) {
         if (page) {
-            MailSourceViewTextBrowserWidget *browser = mHtmlBrowser;
+            // toHtml() is asynchronous and this dialog is WA_DeleteOnClose, so the
+            // browser can be gone by the time the render process answers.
+            QPointer<MailSourceViewTextBrowserWidget> browser = mHtmlBrowser;
             page->toHtml([browser](const QString &result) {
-                browser->setPlainText(result);
+                if (browser) {
+                    browser->setPlainText(result);
+                }
             });
         }
     }
