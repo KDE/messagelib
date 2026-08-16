@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-13 00:51+0000\n"
+"POT-Creation-Date: 2026-08-16 00:46+0000\n"
 "PO-Revision-Date: 2025-09-06 17:56+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -47,7 +47,7 @@ msgid "Compress"
 msgstr "Стиснути"
 
 #: attachment/attachmentcontrollerbase.cpp:202
-#: attachment/attachmentcontrollerbase.cpp:963
+#: attachment/attachmentcontrollerbase.cpp:965
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach file"
@@ -226,41 +226,37 @@ msgstr "Перезавантажити"
 
 #: attachment/attachmentcontrollerbase.cpp:679
 #: attachment/attachmentcontrollerbase.cpp:705
-#: attachment/attachmentcontrollerbase.cpp:756
+#: attachment/attachmentcontrollerbase.cpp:758
 #, kde-format
 msgid "KMail was unable to write the attachment to a temporary file."
 msgstr "KMail не вдалося записати долучення до тимчасового файла."
 
 #: attachment/attachmentcontrollerbase.cpp:680
 #: attachment/attachmentcontrollerbase.cpp:706
+#: attachment/attachmentcontrollerbase.cpp:716
 #, kde-format
 msgctxt "@title:window"
 msgid "Unable to open attachment"
 msgstr "Не вдалося відкрити долучення"
 
-#: attachment/attachmentcontrollerbase.cpp:715
-#, kde-format
-msgid "KMail was unable to open the attachment"
-msgstr "KMail не вдалося відкрити долучення"
-
-#: attachment/attachmentcontrollerbase.cpp:757 attachment/editorwatcher.cpp:202
+#: attachment/attachmentcontrollerbase.cpp:759 attachment/editorwatcher.cpp:202
 #, kde-format
 msgctxt "@title:window"
 msgid "Unable to edit attachment"
 msgstr "Змінити долучення неможливо"
 
-#: attachment/attachmentcontrollerbase.cpp:798
+#: attachment/attachmentcontrollerbase.cpp:800
 #, kde-format
 msgid "unnamed"
 msgstr "без назви"
 
-#: attachment/attachmentcontrollerbase.cpp:801
+#: attachment/attachmentcontrollerbase.cpp:803
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Attachment As"
 msgstr "Зберегти долучення як"
 
-#: attachment/attachmentcontrollerbase.cpp:824
+#: attachment/attachmentcontrollerbase.cpp:826
 #, kde-format
 msgid ""
 "File %1 exists.\n"
@@ -269,56 +265,56 @@ msgstr ""
 "Файл %1 вже існує.\n"
 "Хочете його замінити?"
 
-#: attachment/attachmentcontrollerbase.cpp:825
+#: attachment/attachmentcontrollerbase.cpp:827
 #, kde-format
 msgctxt "@title:window"
 msgid "Save to File"
 msgstr "Збереження до файла"
 
-#: attachment/attachmentcontrollerbase.cpp:826
+#: attachment/attachmentcontrollerbase.cpp:828
 #, kde-format
 msgctxt "@action:button"
 msgid "&Replace"
 msgstr "З&амінити"
 
-#: attachment/attachmentcontrollerbase.cpp:853
-#: attachment/attachmentcontrollerbase.cpp:932
+#: attachment/attachmentcontrollerbase.cpp:855
+#: attachment/attachmentcontrollerbase.cpp:934
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
 msgstr "Ви справді бажаєте долучити цей каталог, «%1»?"
 
-#: attachment/attachmentcontrollerbase.cpp:854
-#: attachment/attachmentcontrollerbase.cpp:933
+#: attachment/attachmentcontrollerbase.cpp:856
+#: attachment/attachmentcontrollerbase.cpp:935
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach directory"
 msgstr "Долучення каталогу"
 
-#: attachment/attachmentcontrollerbase.cpp:855
-#: attachment/attachmentcontrollerbase.cpp:934
+#: attachment/attachmentcontrollerbase.cpp:857
+#: attachment/attachmentcontrollerbase.cpp:936
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach"
 msgstr "Долучити"
 
-#: attachment/attachmentcontrollerbase.cpp:890
+#: attachment/attachmentcontrollerbase.cpp:892
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach Directory"
 msgstr "Долучення каталогу"
 
-#: attachment/attachmentcontrollerbase.cpp:898
+#: attachment/attachmentcontrollerbase.cpp:900
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach File"
 msgstr "Долучення файла"
 
-#: attachment/attachmentcontrollerbase.cpp:987
+#: attachment/attachmentcontrollerbase.cpp:989
 #, kde-format
 msgid "Attach Public OpenPGP Key"
 msgstr "Долучення відкритого ключа OpenPGP"
 
-#: attachment/attachmentcontrollerbase.cpp:988
+#: attachment/attachmentcontrollerbase.cpp:990
 #, kde-format
 msgid "Select the public key which should be attached."
 msgstr "Виберіть відкритий ключ, який потрібно долучити."
@@ -1150,7 +1146,13 @@ msgstr ""
 "Не вдалося зберегти нове нагадування: сталася помилка під час спроби "
 "створити запис завдання у вашому календарі: %1"
 
-#: followupreminder/followupremindercreatejob.cpp:133
+#: followupreminder/followupremindercreatejob.cpp:121
+#, kde-format
+msgid ""
+"Failed to store a new reminder: the follow-up reminder agent is not running."
+msgstr ""
+
+#: followupreminder/followupremindercreatejob.cpp:136
 #, kde-format
 msgid "Failed to store a new reminder: %1"
 msgstr "Не вдалося зберегти нове нагадування: %1"
@@ -2437,6 +2439,9 @@ msgstr "Агент розподілу пошти працює автономно
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr "Запустити"
+
+#~ msgid "KMail was unable to open the attachment"
+#~ msgstr "KMail не вдалося відкрити долучення"
 
 #~ msgid ""
 #~ "Allow the semicolon character (';') to be used as separator in the "

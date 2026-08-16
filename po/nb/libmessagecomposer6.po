@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-13 00:51+0000\n"
+"POT-Creation-Date: 2026-08-16 00:46+0000\n"
 "PO-Revision-Date: 2014-09-19 22:44+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@nuug.no>\n"
@@ -47,7 +47,7 @@ msgid "Compress"
 msgstr "Komprimer"
 
 #: attachment/attachmentcontrollerbase.cpp:202
-#: attachment/attachmentcontrollerbase.cpp:963
+#: attachment/attachmentcontrollerbase.cpp:965
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach file"
@@ -226,41 +226,37 @@ msgstr "Last på nytt"
 
 #: attachment/attachmentcontrollerbase.cpp:679
 #: attachment/attachmentcontrollerbase.cpp:705
-#: attachment/attachmentcontrollerbase.cpp:756
+#: attachment/attachmentcontrollerbase.cpp:758
 #, kde-format
 msgid "KMail was unable to write the attachment to a temporary file."
 msgstr "KMail klarte ikke skrive vedlegget til en midlertidig fil."
 
 #: attachment/attachmentcontrollerbase.cpp:680
 #: attachment/attachmentcontrollerbase.cpp:706
+#: attachment/attachmentcontrollerbase.cpp:716
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Unable to open attachment"
 msgstr "Kan ikke åpne vedlegg"
 
-#: attachment/attachmentcontrollerbase.cpp:715
-#, fuzzy, kde-format
-msgid "KMail was unable to open the attachment"
-msgstr "KMail klarte ikke åpne vedlegget."
-
-#: attachment/attachmentcontrollerbase.cpp:757 attachment/editorwatcher.cpp:202
+#: attachment/attachmentcontrollerbase.cpp:759 attachment/editorwatcher.cpp:202
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Unable to edit attachment"
 msgstr "Kan ikke redigere vedlegg"
 
-#: attachment/attachmentcontrollerbase.cpp:798
+#: attachment/attachmentcontrollerbase.cpp:800
 #, kde-format
 msgid "unnamed"
 msgstr "uten navn"
 
-#: attachment/attachmentcontrollerbase.cpp:801
+#: attachment/attachmentcontrollerbase.cpp:803
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Save Attachment As"
 msgstr "Lagre vedlegg som"
 
-#: attachment/attachmentcontrollerbase.cpp:824
+#: attachment/attachmentcontrollerbase.cpp:826
 #, kde-format
 msgid ""
 "File %1 exists.\n"
@@ -269,56 +265,56 @@ msgstr ""
 "Fila %1 finnes fra før.\n"
 "Vil du erstatte den?"
 
-#: attachment/attachmentcontrollerbase.cpp:825
+#: attachment/attachmentcontrollerbase.cpp:827
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Save to File"
 msgstr "Lagre til fil"
 
-#: attachment/attachmentcontrollerbase.cpp:826
+#: attachment/attachmentcontrollerbase.cpp:828
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "&Replace"
 msgstr "&Erstatt"
 
-#: attachment/attachmentcontrollerbase.cpp:853
-#: attachment/attachmentcontrollerbase.cpp:932
+#: attachment/attachmentcontrollerbase.cpp:855
+#: attachment/attachmentcontrollerbase.cpp:934
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
 msgstr ""
 
-#: attachment/attachmentcontrollerbase.cpp:854
-#: attachment/attachmentcontrollerbase.cpp:933
+#: attachment/attachmentcontrollerbase.cpp:856
+#: attachment/attachmentcontrollerbase.cpp:935
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach directory"
 msgstr ""
 
-#: attachment/attachmentcontrollerbase.cpp:855
-#: attachment/attachmentcontrollerbase.cpp:934
+#: attachment/attachmentcontrollerbase.cpp:857
+#: attachment/attachmentcontrollerbase.cpp:936
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach"
 msgstr ""
 
-#: attachment/attachmentcontrollerbase.cpp:890
+#: attachment/attachmentcontrollerbase.cpp:892
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach Directory"
 msgstr ""
 
-#: attachment/attachmentcontrollerbase.cpp:898
+#: attachment/attachmentcontrollerbase.cpp:900
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach File"
 msgstr ""
 
-#: attachment/attachmentcontrollerbase.cpp:987
+#: attachment/attachmentcontrollerbase.cpp:989
 #, kde-format
 msgid "Attach Public OpenPGP Key"
 msgstr "Legg ved min offentlige OpenPGP-nøkkel"
 
-#: attachment/attachmentcontrollerbase.cpp:988
+#: attachment/attachmentcontrollerbase.cpp:990
 #, kde-format
 msgid "Select the public key which should be attached."
 msgstr "Velg den offentlige nøkkelen som skal legges ved."
@@ -1138,7 +1134,13 @@ msgid ""
 "new to-do in your calendar: %1"
 msgstr ""
 
-#: followupreminder/followupremindercreatejob.cpp:133
+#: followupreminder/followupremindercreatejob.cpp:121
+#, kde-format
+msgid ""
+"Failed to store a new reminder: the follow-up reminder agent is not running."
+msgstr ""
+
+#: followupreminder/followupremindercreatejob.cpp:136
 #, kde-format
 msgid "Failed to store a new reminder: %1"
 msgstr ""
@@ -2370,3 +2372,7 @@ msgstr "E.postsender frakoblet."
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr ""
+
+#, fuzzy
+#~ msgid "KMail was unable to open the attachment"
+#~ msgstr "KMail klarte ikke åpne vedlegget."

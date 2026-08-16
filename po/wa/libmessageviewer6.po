@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-04 00:46+0000\n"
+"POT-Creation-Date: 2026-08-16 00:46+0000\n"
 "PO-Revision-Date: 2011-08-15 08:58+0200\n"
 "Last-Translator: Jean Cayron <jean.cayron@base.be>\n"
 "Language-Team: Walloon <linux-wa@walon.org>\n"
@@ -1976,46 +1976,46 @@ msgstr ""
 msgid "Lookup the contact in KAddressbook"
 msgstr "Drovi e calpin d' adresses"
 
-#: viewer/urlhandlermanager.cpp:773
+#: viewer/urlhandlermanager.cpp:775
 #, kde-format
 msgid "Attachment: %1"
 msgstr "Ataetchmint: %1"
 
-#: viewer/urlhandlermanager.cpp:776
+#: viewer/urlhandlermanager.cpp:778
 #, fuzzy, kde-format
 #| msgid "Encapsulated message"
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "Messaedje ecapsulé"
 
-#: viewer/urlhandlermanager.cpp:778
+#: viewer/urlhandlermanager.cpp:780
 #, fuzzy, kde-format
 #| msgid "Encapsulated message"
 msgid "Encapsulated Message"
 msgstr "Messaedje ecapsulé"
 
-#: viewer/urlhandlermanager.cpp:781
+#: viewer/urlhandlermanager.cpp:783
 #, fuzzy, kde-format
 #| msgid "Unable to edit attachment"
 msgid "Unnamed attachment"
 msgstr "Dji n' a sepou aspougnî l' ataetchmint"
 
-#: viewer/urlhandlermanager.cpp:816
+#: viewer/urlhandlermanager.cpp:819
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:856
+#: viewer/urlhandlermanager.cpp:859
 #, kde-format
 msgid "Opening URL..."
 msgstr "Dji drove èn URL..."
 
-#: viewer/urlhandlermanager.cpp:865
+#: viewer/urlhandlermanager.cpp:868
 #, fuzzy, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "<qt>Voloz po do bon disfacer l' idintité lomêye <b>%1</b>?</qt>"
 
-#: viewer/urlhandlermanager.cpp:867
+#: viewer/urlhandlermanager.cpp:870
 #, fuzzy, kde-format
 #| msgid "Execute"
 msgctxt "@action:button"
@@ -2536,24 +2536,24 @@ msgstr ""
 msgid "Speak Text"
 msgstr ""
 
-#: widgets/mailsourcewebengineviewer.cpp:51
+#: widgets/mailsourcewebengineviewer.cpp:52
 #, kde-format
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
 msgstr "Sourdant peur"
 
-#: widgets/mailsourcewebengineviewer.cpp:52
+#: widgets/mailsourcewebengineviewer.cpp:53
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr ""
 
-#: widgets/mailsourcewebengineviewer.cpp:55
+#: widgets/mailsourcewebengineviewer.cpp:56
 #, kde-format
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
 msgstr "Sourdant HTML"
 
-#: widgets/mailsourcewebengineviewer.cpp:56
+#: widgets/mailsourcewebengineviewer.cpp:57
 #, kde-format
 msgid "HTML code for displaying the message to the user"
 msgstr ""

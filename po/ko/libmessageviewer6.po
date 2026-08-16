@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-04 00:46+0000\n"
+"POT-Creation-Date: 2026-08-16 00:46+0000\n"
 "PO-Revision-Date: 2026-05-26 21:48+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1839,43 +1839,43 @@ msgstr "클립보드에 주소를 복사했습니다."
 msgid "Lookup the contact in KAddressbook"
 msgstr "KAddressBook에서 연락처 찾기"
 
-#: viewer/urlhandlermanager.cpp:773
+#: viewer/urlhandlermanager.cpp:775
 #, kde-format
 msgid "Attachment: %1"
 msgstr "첨부: %1"
 
-#: viewer/urlhandlermanager.cpp:776
+#: viewer/urlhandlermanager.cpp:778
 #, kde-format
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "캡슐화된 메시지(제목: %1)"
 
-#: viewer/urlhandlermanager.cpp:778
+#: viewer/urlhandlermanager.cpp:780
 #, kde-format
 msgid "Encapsulated Message"
 msgstr "캡슐화된 메시지"
 
-#: viewer/urlhandlermanager.cpp:781
+#: viewer/urlhandlermanager.cpp:783
 #, kde-format
 msgid "Unnamed attachment"
 msgstr "이름 없는 첨부"
 
-#: viewer/urlhandlermanager.cpp:816
+#: viewer/urlhandlermanager.cpp:819
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr "이 작업의 GnuPG 감사 기록 보기"
 
-#: viewer/urlhandlermanager.cpp:856
+#: viewer/urlhandlermanager.cpp:859
 #, kde-format
 msgid "Opening URL..."
 msgstr "URL 여는 중..."
 
-#: viewer/urlhandlermanager.cpp:865
+#: viewer/urlhandlermanager.cpp:868
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "<filename>%1</filename>을(를) 정말로 실행하시겠습니까?"
 
-#: viewer/urlhandlermanager.cpp:867
+#: viewer/urlhandlermanager.cpp:870
 #, kde-format
 msgctxt "@action:button"
 msgid "Execute"
@@ -2344,24 +2344,24 @@ msgstr ""
 msgid "Speak Text"
 msgstr "텍스트 말하기"
 
-#: widgets/mailsourcewebengineviewer.cpp:51
+#: widgets/mailsourcewebengineviewer.cpp:52
 #, kde-format
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
 msgstr "원본 소스"
 
-#: widgets/mailsourcewebengineviewer.cpp:52
+#: widgets/mailsourcewebengineviewer.cpp:53
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr "파일 시스템이나 서버에 저장된 형태의 수정되지 않은 원본 메일 보기"
 
-#: widgets/mailsourcewebengineviewer.cpp:55
+#: widgets/mailsourcewebengineviewer.cpp:56
 #, kde-format
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
 msgstr "HTML 소스"
 
-#: widgets/mailsourcewebengineviewer.cpp:56
+#: widgets/mailsourcewebengineviewer.cpp:57
 #, kde-format
 msgid "HTML code for displaying the message to the user"
 msgstr "사용자에게 메시지를 표시할 때 사용하는 HTML 코드"

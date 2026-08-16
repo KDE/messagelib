@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-04 00:46+0000\n"
+"POT-Creation-Date: 2026-08-16 00:46+0000\n"
 "PO-Revision-Date: 2010-09-24 16:29+0530\n"
 "Last-Translator: Rajesh Ranjan <rajesh672@gmail.com>\n"
 "Language-Team: Maithili <bhashaghar@googlegroups.com>\n"
@@ -1854,48 +1854,48 @@ msgstr ""
 msgid "Lookup the contact in KAddressbook"
 msgstr "लिंक पता नकल करू"
 
-#: viewer/urlhandlermanager.cpp:773
+#: viewer/urlhandlermanager.cpp:775
 #, fuzzy, kde-format
 #| msgid "Attachments:"
 msgid "Attachment: %1"
 msgstr "संलग्नकः"
 
-#: viewer/urlhandlermanager.cpp:776
+#: viewer/urlhandlermanager.cpp:778
 #, fuzzy, kde-format
 #| msgid "Save As..."
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "एहन सहेजू..."
 
-#: viewer/urlhandlermanager.cpp:778
+#: viewer/urlhandlermanager.cpp:780
 #, fuzzy, kde-format
 #| msgid "Save As..."
 msgid "Encapsulated Message"
 msgstr "एहन सहेजू..."
 
-#: viewer/urlhandlermanager.cpp:781
+#: viewer/urlhandlermanager.cpp:783
 #, fuzzy, kde-format
 #| msgid "Save Attachment"
 msgid "Unnamed attachment"
 msgstr "संलग्नक सहेजू"
 
-#: viewer/urlhandlermanager.cpp:816
+#: viewer/urlhandlermanager.cpp:819
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:856
+#: viewer/urlhandlermanager.cpp:859
 #, fuzzy, kde-format
 #| msgid "Open With..."
 msgid "Opening URL..."
 msgstr "एकरासँ खोलू…"
 
-#: viewer/urlhandlermanager.cpp:865
+#: viewer/urlhandlermanager.cpp:868
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:867
+#: viewer/urlhandlermanager.cpp:870
 #, fuzzy, kde-format
 #| msgid "Execute"
 msgctxt "@action:button"
@@ -2375,7 +2375,7 @@ msgstr ""
 msgid "Speak Text"
 msgstr ""
 
-#: widgets/mailsourcewebengineviewer.cpp:51
+#: widgets/mailsourcewebengineviewer.cpp:52
 #, fuzzy, kde-format
 #| msgctxt "Mail message as shown, in HTML format"
 #| msgid "HTML Source"
@@ -2383,18 +2383,18 @@ msgctxt "Unchanged mail message"
 msgid "Raw Source"
 msgstr "HTML मूल"
 
-#: widgets/mailsourcewebengineviewer.cpp:52
+#: widgets/mailsourcewebengineviewer.cpp:53
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr ""
 
-#: widgets/mailsourcewebengineviewer.cpp:55
+#: widgets/mailsourcewebengineviewer.cpp:56
 #, kde-format
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
 msgstr "HTML मूल"
 
-#: widgets/mailsourcewebengineviewer.cpp:56
+#: widgets/mailsourcewebengineviewer.cpp:57
 #, kde-format
 msgid "HTML code for displaying the message to the user"
 msgstr ""

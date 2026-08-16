@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-13 00:51+0000\n"
+"POT-Creation-Date: 2026-08-16 00:46+0000\n"
 "PO-Revision-Date: 2013-10-10 05:09+0600\n"
 "Last-Translator: Sairan Kikkarin <sairan@computer.org>\n"
 "Language-Team: Kazakh <kde-i18n-doc@kde.org>\n"
@@ -45,7 +45,7 @@ msgid "Compress"
 msgstr "Сығу"
 
 #: attachment/attachmentcontrollerbase.cpp:202
-#: attachment/attachmentcontrollerbase.cpp:963
+#: attachment/attachmentcontrollerbase.cpp:965
 #, fuzzy, kde-format
 #| msgid "Failed to attach file"
 msgctxt "@title:window"
@@ -241,45 +241,40 @@ msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:679
 #: attachment/attachmentcontrollerbase.cpp:705
-#: attachment/attachmentcontrollerbase.cpp:756
+#: attachment/attachmentcontrollerbase.cpp:758
 #, kde-format
 msgid "KMail was unable to write the attachment to a temporary file."
 msgstr "KMail тіркемені уақытша файлға жаза алмады."
 
 #: attachment/attachmentcontrollerbase.cpp:680
 #: attachment/attachmentcontrollerbase.cpp:706
+#: attachment/attachmentcontrollerbase.cpp:716
 #, fuzzy, kde-format
 #| msgid "Unable to open attachment"
 msgctxt "@title:window"
 msgid "Unable to open attachment"
 msgstr "Тіркеме ашылмады"
 
-#: attachment/attachmentcontrollerbase.cpp:715
-#, fuzzy, kde-format
-#| msgid "KMail was unable to open the attachment."
-msgid "KMail was unable to open the attachment"
-msgstr "KMail тіркемені аша алмады."
-
-#: attachment/attachmentcontrollerbase.cpp:757 attachment/editorwatcher.cpp:202
+#: attachment/attachmentcontrollerbase.cpp:759 attachment/editorwatcher.cpp:202
 #, fuzzy, kde-format
 #| msgid "Unable to edit attachment"
 msgctxt "@title:window"
 msgid "Unable to edit attachment"
 msgstr "Тіркемені өңдеу мүмкін емес."
 
-#: attachment/attachmentcontrollerbase.cpp:798
+#: attachment/attachmentcontrollerbase.cpp:800
 #, kde-format
 msgid "unnamed"
 msgstr "атаусыз"
 
-#: attachment/attachmentcontrollerbase.cpp:801
+#: attachment/attachmentcontrollerbase.cpp:803
 #, fuzzy, kde-format
 #| msgid "Save Attachment As"
 msgctxt "@title:window"
 msgid "Save Attachment As"
 msgstr "Тіркемені былай &сақтау"
 
-#: attachment/attachmentcontrollerbase.cpp:824
+#: attachment/attachmentcontrollerbase.cpp:826
 #, kde-format
 msgid ""
 "File %1 exists.\n"
@@ -288,63 +283,63 @@ msgstr ""
 "%1 деген файл бар екен.\n"
 "Оны ауыстырмақсыз ба?"
 
-#: attachment/attachmentcontrollerbase.cpp:825
+#: attachment/attachmentcontrollerbase.cpp:827
 #, fuzzy, kde-format
 #| msgid "Save to File"
 msgctxt "@title:window"
 msgid "Save to File"
 msgstr "Файлға сақтау"
 
-#: attachment/attachmentcontrollerbase.cpp:826
+#: attachment/attachmentcontrollerbase.cpp:828
 #, fuzzy, kde-format
 #| msgid "&Replace"
 msgctxt "@action:button"
 msgid "&Replace"
 msgstr "&Ауыстыру"
 
-#: attachment/attachmentcontrollerbase.cpp:853
-#: attachment/attachmentcontrollerbase.cpp:932
+#: attachment/attachmentcontrollerbase.cpp:855
+#: attachment/attachmentcontrollerbase.cpp:934
 #, fuzzy, kde-format
 #| msgid "Do you really want to attach this directory \"%1\" ?"
 msgid "Do you really want to attach this directory \"%1\"?"
 msgstr "\"%1\" қапшығын шын тіркемелексіз бе?"
 
-#: attachment/attachmentcontrollerbase.cpp:854
-#: attachment/attachmentcontrollerbase.cpp:933
+#: attachment/attachmentcontrollerbase.cpp:856
+#: attachment/attachmentcontrollerbase.cpp:935
 #, fuzzy, kde-format
 #| msgid "Attach directory"
 msgctxt "@title:window"
 msgid "Attach directory"
 msgstr "Қапшықты тіркемелеу"
 
-#: attachment/attachmentcontrollerbase.cpp:855
-#: attachment/attachmentcontrollerbase.cpp:934
+#: attachment/attachmentcontrollerbase.cpp:857
+#: attachment/attachmentcontrollerbase.cpp:936
 #, fuzzy, kde-format
 #| msgid "Attach"
 msgctxt "@action:button"
 msgid "Attach"
 msgstr "Тіркемелеу"
 
-#: attachment/attachmentcontrollerbase.cpp:890
+#: attachment/attachmentcontrollerbase.cpp:892
 #, fuzzy, kde-format
 #| msgid "Attach directory"
 msgctxt "@title:window"
 msgid "Attach Directory"
 msgstr "Қапшықты тіркемелеу"
 
-#: attachment/attachmentcontrollerbase.cpp:898
+#: attachment/attachmentcontrollerbase.cpp:900
 #, fuzzy, kde-format
 #| msgid "Attach File"
 msgctxt "@title:window"
 msgid "Attach File"
 msgstr "Файлды тіркемелеу"
 
-#: attachment/attachmentcontrollerbase.cpp:987
+#: attachment/attachmentcontrollerbase.cpp:989
 #, kde-format
 msgid "Attach Public OpenPGP Key"
 msgstr "&Ашық OpenPGP кілтін тіркемелеу"
 
-#: attachment/attachmentcontrollerbase.cpp:988
+#: attachment/attachmentcontrollerbase.cpp:990
 #, kde-format
 msgid "Select the public key which should be attached."
 msgstr "Тіркемелейтін ашық кілтті таңдау."
@@ -1184,7 +1179,13 @@ msgid ""
 "new to-do in your calendar: %1"
 msgstr ""
 
-#: followupreminder/followupremindercreatejob.cpp:133
+#: followupreminder/followupremindercreatejob.cpp:121
+#, kde-format
+msgid ""
+"Failed to store a new reminder: the follow-up reminder agent is not running."
+msgstr ""
+
+#: followupreminder/followupremindercreatejob.cpp:136
 #, fuzzy, kde-format
 #| msgid "Failed to save the message: %1"
 msgid "Failed to store a new reminder: %1"
@@ -2460,6 +2461,11 @@ msgstr "Пошта реттеуш желіден тыс."
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr ""
+
+#, fuzzy
+#~| msgid "KMail was unable to open the attachment."
+#~ msgid "KMail was unable to open the attachment"
+#~ msgstr "KMail тіркемені аша алмады."
 
 #~ msgid ""
 #~ "Allow the semicolon character (';') to be used as separator in the "

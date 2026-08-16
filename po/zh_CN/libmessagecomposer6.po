@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-13 00:51+0000\n"
+"POT-Creation-Date: 2026-08-16 00:46+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -43,7 +43,7 @@ msgid "Compress"
 msgstr "压缩"
 
 #: attachment/attachmentcontrollerbase.cpp:202
-#: attachment/attachmentcontrollerbase.cpp:963
+#: attachment/attachmentcontrollerbase.cpp:965
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach file"
@@ -222,41 +222,37 @@ msgstr "重新加载"
 
 #: attachment/attachmentcontrollerbase.cpp:679
 #: attachment/attachmentcontrollerbase.cpp:705
-#: attachment/attachmentcontrollerbase.cpp:756
+#: attachment/attachmentcontrollerbase.cpp:758
 #, kde-format
 msgid "KMail was unable to write the attachment to a temporary file."
 msgstr "KMail 无法将附件写入临时文件。"
 
 #: attachment/attachmentcontrollerbase.cpp:680
 #: attachment/attachmentcontrollerbase.cpp:706
+#: attachment/attachmentcontrollerbase.cpp:716
 #, kde-format
 msgctxt "@title:window"
 msgid "Unable to open attachment"
 msgstr "无法打开附件"
 
-#: attachment/attachmentcontrollerbase.cpp:715
-#, kde-format
-msgid "KMail was unable to open the attachment"
-msgstr "KMail 无法打开附件"
-
-#: attachment/attachmentcontrollerbase.cpp:757 attachment/editorwatcher.cpp:202
+#: attachment/attachmentcontrollerbase.cpp:759 attachment/editorwatcher.cpp:202
 #, kde-format
 msgctxt "@title:window"
 msgid "Unable to edit attachment"
 msgstr "无法编辑附件"
 
-#: attachment/attachmentcontrollerbase.cpp:798
+#: attachment/attachmentcontrollerbase.cpp:800
 #, kde-format
 msgid "unnamed"
 msgstr "未命名"
 
-#: attachment/attachmentcontrollerbase.cpp:801
+#: attachment/attachmentcontrollerbase.cpp:803
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Attachment As"
 msgstr "附件另存为"
 
-#: attachment/attachmentcontrollerbase.cpp:824
+#: attachment/attachmentcontrollerbase.cpp:826
 #, kde-format
 msgid ""
 "File %1 exists.\n"
@@ -265,56 +261,56 @@ msgstr ""
 "文件 %1 已经存在。\n"
 "您要替换它吗？"
 
-#: attachment/attachmentcontrollerbase.cpp:825
+#: attachment/attachmentcontrollerbase.cpp:827
 #, kde-format
 msgctxt "@title:window"
 msgid "Save to File"
 msgstr "保存到文件"
 
-#: attachment/attachmentcontrollerbase.cpp:826
+#: attachment/attachmentcontrollerbase.cpp:828
 #, kde-format
 msgctxt "@action:button"
 msgid "&Replace"
 msgstr "替换(&R)"
 
-#: attachment/attachmentcontrollerbase.cpp:853
-#: attachment/attachmentcontrollerbase.cpp:932
+#: attachment/attachmentcontrollerbase.cpp:855
+#: attachment/attachmentcontrollerbase.cpp:934
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
 msgstr "您真的想要附加目录“%1”吗？"
 
-#: attachment/attachmentcontrollerbase.cpp:854
-#: attachment/attachmentcontrollerbase.cpp:933
+#: attachment/attachmentcontrollerbase.cpp:856
+#: attachment/attachmentcontrollerbase.cpp:935
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach directory"
 msgstr "附加目录"
 
-#: attachment/attachmentcontrollerbase.cpp:855
-#: attachment/attachmentcontrollerbase.cpp:934
+#: attachment/attachmentcontrollerbase.cpp:857
+#: attachment/attachmentcontrollerbase.cpp:936
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach"
 msgstr "附件"
 
-#: attachment/attachmentcontrollerbase.cpp:890
+#: attachment/attachmentcontrollerbase.cpp:892
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach Directory"
 msgstr "附加目录"
 
-#: attachment/attachmentcontrollerbase.cpp:898
+#: attachment/attachmentcontrollerbase.cpp:900
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach File"
 msgstr "附加文件"
 
-#: attachment/attachmentcontrollerbase.cpp:987
+#: attachment/attachmentcontrollerbase.cpp:989
 #, kde-format
 msgid "Attach Public OpenPGP Key"
 msgstr "附加 OpenPGP 公钥"
 
-#: attachment/attachmentcontrollerbase.cpp:988
+#: attachment/attachmentcontrollerbase.cpp:990
 #, kde-format
 msgid "Select the public key which should be attached."
 msgstr "请选择需要附加的公钥。"
@@ -1104,7 +1100,13 @@ msgid ""
 "new to-do in your calendar: %1"
 msgstr "保存新提醒失败：尝试在日历中创建新待办事宜时发生错误: %1"
 
-#: followupreminder/followupremindercreatejob.cpp:133
+#: followupreminder/followupremindercreatejob.cpp:121
+#, kde-format
+msgid ""
+"Failed to store a new reminder: the follow-up reminder agent is not running."
+msgstr ""
+
+#: followupreminder/followupremindercreatejob.cpp:136
 #, kde-format
 msgid "Failed to store a new reminder: %1"
 msgstr "保存新建提醒失败：%1"
@@ -2311,3 +2313,6 @@ msgstr "邮件签发器离线。"
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr ""
+
+#~ msgid "KMail was unable to open the attachment"
+#~ msgstr "KMail 无法打开附件"

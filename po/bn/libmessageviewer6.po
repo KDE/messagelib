@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-04 00:46+0000\n"
+"POT-Creation-Date: 2026-08-16 00:46+0000\n"
 "PO-Revision-Date: 2006-02-06 01:01-0600\n"
 "Last-Translator: Deepayan Sarkar <deepayan@bengalinux.org>\n"
 "Language-Team: Bengali <kde-translation@bengalinux.org>\n"
@@ -1941,47 +1941,47 @@ msgstr "ঠিকানাটি ক্লীপবোর্ড-এ কপি �
 msgid "Lookup the contact in KAddressbook"
 msgstr "ঠিকানা তালিকায় খোলো"
 
-#: viewer/urlhandlermanager.cpp:773
+#: viewer/urlhandlermanager.cpp:775
 #, kde-format
 msgid "Attachment: %1"
 msgstr "অ্যাটাচমেন্ট: %1"
 
-#: viewer/urlhandlermanager.cpp:776
+#: viewer/urlhandlermanager.cpp:778
 #, fuzzy, kde-format
 #| msgid "End of encapsulated message"
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "অভ্যন্তরীন বার্তার শেষ"
 
-#: viewer/urlhandlermanager.cpp:778
+#: viewer/urlhandlermanager.cpp:780
 #, fuzzy, kde-format
 #| msgid "End of encapsulated message"
 msgid "Encapsulated Message"
 msgstr "অভ্যন্তরীন বার্তার শেষ"
 
-#: viewer/urlhandlermanager.cpp:781
+#: viewer/urlhandlermanager.cpp:783
 #, fuzzy, kde-format
 #| msgid "Name of the attachment:"
 msgid "Unnamed attachment"
 msgstr "অ্যাটাচমেন্ট-এর নাম:"
 
-#: viewer/urlhandlermanager.cpp:816
+#: viewer/urlhandlermanager.cpp:819
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:856
+#: viewer/urlhandlermanager.cpp:859
 #, kde-format
 msgid "Opening URL..."
 msgstr "ইউ-আর-এল খোলা হচ্ছে..."
 
-#: viewer/urlhandlermanager.cpp:865
+#: viewer/urlhandlermanager.cpp:868
 #, fuzzy, kde-kuit-format
 #| msgid "<qt>Do you really want to execute <b>%1</b>?</qt>"
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "<qt>আপনি কি সত্যিই <b>%1</b> চালাতে চান?</qt>"
 
-#: viewer/urlhandlermanager.cpp:867
+#: viewer/urlhandlermanager.cpp:870
 #, fuzzy, kde-format
 #| msgid "Execute"
 msgctxt "@action:button"
@@ -2493,26 +2493,26 @@ msgstr ""
 msgid "Speak Text"
 msgstr ""
 
-#: widgets/mailsourcewebengineviewer.cpp:51
+#: widgets/mailsourcewebengineviewer.cpp:52
 #, fuzzy, kde-format
 #| msgid "&View Source"
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
 msgstr "&উত্‍স দেখাও"
 
-#: widgets/mailsourcewebengineviewer.cpp:52
+#: widgets/mailsourcewebengineviewer.cpp:53
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr ""
 
-#: widgets/mailsourcewebengineviewer.cpp:55
+#: widgets/mailsourcewebengineviewer.cpp:56
 #, fuzzy, kde-format
 #| msgid "&View Source"
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
 msgstr "&উত্‍স দেখাও"
 
-#: widgets/mailsourcewebengineviewer.cpp:56
+#: widgets/mailsourcewebengineviewer.cpp:57
 #, kde-format
 msgid "HTML code for displaying the message to the user"
 msgstr ""
