@@ -65,7 +65,7 @@ protected:
      * \param formatter The BodyPartFormatter to insert.
      * \param priority The priority of the formatter.
      */
-    void insert(const QString &mimeType, const Interface::BodyPartFormatter *formatter, int priority);
+    void insert(const QString &mimeType, std::unique_ptr<const Interface::BodyPartFormatter> &&formatter, int priority);
     /*!
      */
     virtual void loadPlugins();

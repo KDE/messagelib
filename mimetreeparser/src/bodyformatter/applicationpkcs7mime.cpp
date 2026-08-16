@@ -17,16 +17,6 @@
 
 using namespace MimeTreeParser;
 
-const ApplicationPkcs7MimeBodyPartFormatter *ApplicationPkcs7MimeBodyPartFormatter::self;
-
-const Interface::BodyPartFormatter *ApplicationPkcs7MimeBodyPartFormatter::create()
-{
-    if (!self) {
-        self = new ApplicationPkcs7MimeBodyPartFormatter();
-    }
-    return self;
-}
-
 MessagePart::Ptr ApplicationPkcs7MimeBodyPartFormatter::process(Interface::BodyPart &part) const
 {
     KMime::Content *node = part.content();

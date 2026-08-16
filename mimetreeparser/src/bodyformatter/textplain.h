@@ -13,10 +13,7 @@ namespace MimeTreeParser
 {
 class TextPlainBodyPartFormatter : public Interface::BodyPartFormatter
 {
-    static const TextPlainBodyPartFormatter *self;
-
 public:
     [[nodiscard]] MessagePartPtr process(Interface::BodyPart &part) const override;
-    static const Interface::BodyPartFormatter *create();
 };
 }

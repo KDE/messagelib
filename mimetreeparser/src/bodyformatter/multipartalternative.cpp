@@ -13,16 +13,6 @@
 
 using namespace MimeTreeParser;
 
-const MultiPartAlternativeBodyPartFormatter *MultiPartAlternativeBodyPartFormatter::self;
-
-const Interface::BodyPartFormatter *MultiPartAlternativeBodyPartFormatter::create()
-{
-    if (!self) {
-        self = new MultiPartAlternativeBodyPartFormatter();
-    }
-    return self;
-}
-
 MessagePart::Ptr MultiPartAlternativeBodyPartFormatter::process(Interface::BodyPart &part) const
 {
     KMime::Content *node = part.content();

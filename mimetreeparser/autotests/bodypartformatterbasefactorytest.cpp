@@ -26,11 +26,8 @@ class TestFactory : public BodyPartFormatterFactory
 public:
     void loadPlugins() override
     {
-        textCalFormatter = std::make_unique<DummyFormatter>();
-        insert(u"TEXT/CALENDAR"_s, textCalFormatter.get(), 100);
+        insert(u"TEXT/CALENDAR"_s, std::make_unique<DummyFormatter>(), 100);
     }
-
-    std::unique_ptr<DummyFormatter> textCalFormatter;
 };
 
 using namespace MimeTreeParser;
@@ -44,80 +41,76 @@ private Q_SLOTS:
         TestFactory fac;
         auto l = fac.formattersForType(u"application/octet-stream"_s);
         QCOMPARE(l.size(), 3);
-        const auto application_octet_stream_f = l.at(2);
-        QVERIFY(application_octet_stream_f);
+        const auto &application_octet_stream_f = typeid(*l.at(2));
 
         l = fac.formattersForType(u"application/pgp-encrypted"_s);
         // shared-mime-info < 2.4 has application/pgp-encrytped as a subtype of text/plain, 2.4+ doesn't
         // depending of that we get two additional entries for text/plain formatters here
         QVERIFY(l.size() == 4 || l.size() == 6);
-        QVERIFY(l.at(0) != application_octet_stream_f);
-        QCOMPARE(l.at(l.size() - 1), application_octet_stream_f);
+        QCOMPARE_NE(typeid(*l.at(0)), application_octet_stream_f);
+        QCOMPARE(typeid(*l.at(l.size() - 1)), application_octet_stream_f);
 
         l = fac.formattersForType(u"application/unknown"_s);
         QCOMPARE(l.size(), 3);
-        QCOMPARE(l.at(2), application_octet_stream_f);
+        QCOMPARE(typeid(*l.at(2)), application_octet_stream_f);
 
         l = fac.formattersForType(u"text/plain"_s);
         QCOMPARE(l.size(), 5);
-        const auto text_plain_f1 = l.at(0);
-        const auto text_plain_f2 = l.at(1);
-        QVERIFY(text_plain_f1);
-        QVERIFY(text_plain_f2);
+        const auto &text_plain_f1 = typeid(*l.at(0));
+        const auto &text_plain_f2 = typeid(*l.at(1));
         QVERIFY(text_plain_f1 != text_plain_f2);
-        QCOMPARE(l.at(4), application_octet_stream_f);
+        QCOMPARE(typeid(*l.at(4)), application_octet_stream_f);
 
         l = fac.formattersForType(u"text/calendar"_s);
         QCOMPARE(l.size(), 6);
-        QVERIFY(fac.textCalFormatter);
-        QCOMPARE(l.at(0), fac.textCalFormatter.get());
-        QCOMPARE(l.at(1), text_plain_f1);
-        QCOMPARE(l.at(2), text_plain_f2);
-        QCOMPARE(l.at(5), application_octet_stream_f);
+        QVERIFY(dynamic_cast<const DummyFormatter *>(l.at(0)));
+        QCOMPARE(typeid(*l.at(1)), text_plain_f1);
+        QCOMPARE(typeid(*l.at(2)), text_plain_f2);
+        QCOMPARE(typeid(*l.at(5)), application_octet_stream_f);
 
         l = fac.formattersForType(u"text/x-vcalendar"_s);
         QCOMPARE(l.size(), 6);
-        QCOMPARE(l.at(0), fac.textCalFormatter.get());
+        QVERIFY(dynamic_cast<const DummyFormatter *>(l.at(0)));
         l = fac.formattersForType(u"TEXT/X-VCALENDAR"_s);
         QCOMPARE(l.size(), 6);
-        QCOMPARE(l.at(0), fac.textCalFormatter.get());
+        QVERIFY(dynamic_cast<const DummyFormatter *>(l.at(0)));
 
         l = fac.formattersForType(u"text/html"_s);
         QCOMPARE(l.size(), 6);
-        QCOMPARE(l.at(1), text_plain_f1);
-        QCOMPARE(l.at(2), text_plain_f2);
-        QCOMPARE(l.at(5), application_octet_stream_f);
+        QCOMPARE(typeid(*l.at(1)), text_plain_f1);
+        QCOMPARE(typeid(*l.at(2)), text_plain_f2);
+        QCOMPARE(typeid(*l.at(5)), application_octet_stream_f);
 
         l = fac.formattersForType(u"text/rtf"_s);
         QCOMPARE(l.size(), 6);
-        QCOMPARE(l.at(0), application_octet_stream_f);
-        QCOMPARE(l.at(5), application_octet_stream_f);
+        QCOMPARE(typeid(*l.at(0)), application_octet_stream_f);
+        QCOMPARE(typeid(*l.at(5)), application_octet_stream_f);
 
         l = fac.formattersForType(u"multipart/mixed"_s);
         QCOMPARE(l.size(), 1);
-        const auto multipart_mixed_f = l.at(0);
-        QVERIFY(multipart_mixed_f);
+        const auto &multipart_mixed_f = typeid(*l.at(0));
+        // QVERIFY(multipart_mixed_f);
 
         l = fac.formattersForType(u"multipart/random"_s);
         QCOMPARE(l.size(), 1);
-        QCOMPARE(l.at(0), multipart_mixed_f);
+        QCOMPARE(typeid(*l.at(0)), multipart_mixed_f);
 
         l = fac.formattersForType(u"multipart/encrypted"_s);
         QCOMPARE(l.size(), 2);
-        QVERIFY(l.at(0) != multipart_mixed_f);
-        QCOMPARE(l.at(1), multipart_mixed_f);
+        QVERIFY(typeid(*l.at(0)) != multipart_mixed_f);
+        QCOMPARE(typeid(*l.at(1)), multipart_mixed_f);
 
         l = fac.formattersForType(u"image/png"_s);
         QCOMPARE(l.size(), 4);
-        QCOMPARE(l.at(3), application_octet_stream_f);
+        QCOMPARE(typeid(*l.at(3)), application_octet_stream_f);
 
         l = fac.formattersForType(u"vendor/random"_s);
         QCOMPARE(l.size(), 3);
-        QCOMPARE(l.at(2), application_octet_stream_f);
+        QCOMPARE(typeid(*l.at(2)), application_octet_stream_f);
 
         l = fac.formattersForType(u"message/rfc822"_s);
         QCOMPARE(l.size(), 6);
-        QCOMPARE(l.at(5), application_octet_stream_f);
+        QCOMPARE(typeid(*l.at(5)), application_octet_stream_f);
 
         l = fac.formattersForType(u"message/news"_s);
         QCOMPARE(l.size(), 5); // ### news does not inherit rfc822

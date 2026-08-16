@@ -19,9 +19,12 @@ public:
         ForcePGP = 0x1, ///< Always decode PGP data
     };
     Q_DECLARE_FLAGS(EncryptionFlags, EncryptionFlag)
+    explicit EncryptedBodyPartFormatter(EncryptionFlag flag)
+        : mFlags(flag)
+    {
+    }
 
     [[nodiscard]] MessagePartPtr process(Interface::BodyPart &part) const override;
-    static const Interface::BodyPartFormatter *create(EncryptionFlags flags);
 
 private:
     EncryptionFlags mFlags;

@@ -17,16 +17,6 @@
 
 using namespace MimeTreeParser;
 
-const MultiPartSignedBodyPartFormatter *MultiPartSignedBodyPartFormatter::self;
-
-const Interface::BodyPartFormatter *MultiPartSignedBodyPartFormatter::create()
-{
-    if (!self) {
-        self = new MultiPartSignedBodyPartFormatter();
-    }
-    return self;
-}
-
 MessagePart::Ptr MultiPartSignedBodyPartFormatter::process(Interface::BodyPart &part) const
 {
     KMime::Content *node = part.content();

@@ -30,9 +30,8 @@ public:
     /*!
      */
     virtual ~MessagePartRenderPlugin();
-    /*!
-     */
-    virtual MessagePartRendererBase *renderer(int index) = 0;
+    /*! Return a renderer instance for the Nth entry in the plugin metadata. */
+    [[nodiscard]] virtual std::unique_ptr<MessagePartRendererBase> renderer(int index) = 0;
     /*!
      */
     virtual const Interface::BodyPartURLHandler *urlHandler(int idx) const;

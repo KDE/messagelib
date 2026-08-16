@@ -26,15 +26,7 @@
 using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 
-MessagePartRendererFactoryPrivate::~MessagePartRendererFactoryPrivate()
-{
-    QHashIterator<QByteArray, std::vector<RendererInfo>> i(m_renderers);
-    while (i.hasNext()) {
-        i.next();
-        auto renderInfo = i.value();
-        renderInfo.erase(renderInfo.begin(), renderInfo.end());
-    }
-}
+MessagePartRendererFactoryPrivate::~MessagePartRendererFactoryPrivate() = default;
 
 void MessagePartRendererFactoryPrivate::setup()
 {
@@ -64,7 +56,7 @@ void MessagePartRendererFactoryPrivate::loadPlugins()
             continue;
         }
 
-        MessagePartRendererBase *renderer = nullptr;
+        std::unique_ptr<MessagePartRendererBase> renderer;
         for (int i = 0; (renderer = plugin->renderer(i)) && i < pluginData.size(); ++i) {
             const auto metaData = pluginData.at(i).toObject();
             const auto type = metaData.value(QLatin1StringView("type")).toString().toUtf8();
@@ -76,7 +68,7 @@ void MessagePartRendererFactoryPrivate::loadPlugins()
             // priority should always be higher than the built-in ones, otherwise what's the point?
             const auto priority = metaData.value(QLatin1StringView("priority")).toInt() + 100;
             qCDebug(MESSAGEVIEWER_LOG) << "renderer plugin for " << type << mimetype << priority;
-            insert(type, renderer, mimetype, priority);
+            insert(type, std::move(renderer), mimetype, priority);
         }
 
         const Interface::BodyPartURLHandler *handler = nullptr;
@@ -90,12 +82,15 @@ void MessagePartRendererFactoryPrivate::loadPlugins()
 
 void MessagePartRendererFactoryPrivate::initialize_builtin_renderers()
 {
-    insert("MimeTreeParser::MessagePart", new MessagePartRenderer());
-    insert("MimeTreeParser::TextMessagePart", new TextMessagePartRenderer());
-    insert("MimeTreeParser::AttachmentMessagePart", new AttachmentMessagePartRenderer());
+    insert("MimeTreeParser::MessagePart", std::make_unique<MessagePartRenderer>());
+    insert("MimeTreeParser::TextMessagePart", std::make_unique<TextMessagePartRenderer>());
+    insert("MimeTreeParser::AttachmentMessagePart", std::make_unique<AttachmentMessagePartRenderer>());
 }
 
-void MessagePartRendererFactoryPrivate::insert(const QByteArray &type, MessagePartRendererBase *renderer, const QString &mimeType, int priority)
+void MessagePartRendererFactoryPrivate::insert(const QByteArray &type,
+                                               std::unique_ptr<MessagePartRendererBase> &&renderer,
+                                               const QString &mimeType,
+                                               int priority)
 {
     if (type.isEmpty() || !renderer) {
         return;
@@ -105,12 +100,12 @@ void MessagePartRendererFactoryPrivate::insert(const QByteArray &type, MessagePa
     const auto mt = db.mimeTypeForName(mimeType);
 
     RendererInfo info;
-    info.renderer.reset(renderer);
+    info.renderer.reset(renderer.release());
     info.mimeType = mt.isValid() ? mt.name() : mimeType;
     info.priority = priority;
 
     auto &v = m_renderers[type];
-    v.push_back(info);
+    v.push_back(std::move(info));
 }
 
 MessagePartRendererFactory::MessagePartRendererFactory()
@@ -173,7 +168,7 @@ QList<MessagePartRendererBase *> MessagePartRendererFactory::renderersForPart(co
     QList<MessagePartRendererBase *> r;
     r.reserve(candidates.size());
     for (const auto &candidate : candidates) {
-        r.push_back(candidate.renderer.data());
+        r.push_back(candidate.renderer.get());
     }
     return r;
 }

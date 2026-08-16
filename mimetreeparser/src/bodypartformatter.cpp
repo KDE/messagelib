@@ -36,8 +36,6 @@ namespace
 {
 class AnyTypeBodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
 {
-    static const AnyTypeBodyPartFormatter *self;
-
 public:
     MessagePart::Ptr process(Interface::BodyPart &part) const override
     {
@@ -50,31 +48,11 @@ public:
         mp->setIsImage(false);
         return mp;
     }
-
-    static const MimeTreeParser::Interface::BodyPartFormatter *create()
-    {
-        if (!self) {
-            self = new AnyTypeBodyPartFormatter();
-        }
-        return self;
-    }
 };
-
-const AnyTypeBodyPartFormatter *AnyTypeBodyPartFormatter::self = nullptr;
 
 class ImageTypeBodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
 {
-    static const ImageTypeBodyPartFormatter *self;
-
 public:
-    static const MimeTreeParser::Interface::BodyPartFormatter *create()
-    {
-        if (!self) {
-            self = new ImageTypeBodyPartFormatter();
-        }
-        return self;
-    }
-
     MessagePart::Ptr process(Interface::BodyPart &part) const override
     {
         KMime::Content *node = part.content();
@@ -95,26 +73,11 @@ public:
     }
 };
 
-const ImageTypeBodyPartFormatter *ImageTypeBodyPartFormatter::self = nullptr;
-
 class MessageRfc822BodyPartFormatter : public MimeTreeParser::Interface::BodyPartFormatter
 {
-    static const MessageRfc822BodyPartFormatter *self;
-
 public:
     MessagePart::Ptr process(Interface::BodyPart &) const override;
-    static const MimeTreeParser::Interface::BodyPartFormatter *create();
 };
-
-const MessageRfc822BodyPartFormatter *MessageRfc822BodyPartFormatter::self;
-
-const MimeTreeParser::Interface::BodyPartFormatter *MessageRfc822BodyPartFormatter::create()
-{
-    if (!self) {
-        self = new MessageRfc822BodyPartFormatter();
-    }
-    return self;
-}
 
 MessagePart::Ptr MessageRfc822BodyPartFormatter::process(Interface::BodyPart &part) const
 {
@@ -125,31 +88,31 @@ MessagePart::Ptr MessageRfc822BodyPartFormatter::process(Interface::BodyPart &pa
 
 void BodyPartFormatterFactoryPrivate::messageviewer_create_builtin_bodypart_formatters()
 {
-    insert(u"application/pkcs7-mime"_s, ApplicationPkcs7MimeBodyPartFormatter::create());
-    insert(u"application/x-pkcs7-mime"_s, ApplicationPkcs7MimeBodyPartFormatter::create());
-    insert(u"application/pgp-encrypted"_s, ApplicationPGPEncryptedBodyPartFormatter::create());
+    insert(u"application/pkcs7-mime"_s, std::make_unique<ApplicationPkcs7MimeBodyPartFormatter>());
+    insert(u"application/x-pkcs7-mime"_s, std::make_unique<ApplicationPkcs7MimeBodyPartFormatter>());
+    insert(u"application/pgp-encrypted"_s, std::make_unique<ApplicationPGPEncryptedBodyPartFormatter>());
 
-    insert(u"application/octet-stream"_s, ApplicationPkcs7MimeBodyPartFormatter::create());
-    insert(u"application/octet-stream"_s, EncryptedBodyPartFormatter::create(EncryptedBodyPartFormatter::AutoPGP));
-    insert(u"application/octet-stream"_s, AnyTypeBodyPartFormatter::create());
+    insert(u"application/octet-stream"_s, std::make_unique<ApplicationPkcs7MimeBodyPartFormatter>());
+    insert(u"application/octet-stream"_s, std::make_unique<EncryptedBodyPartFormatter>(EncryptedBodyPartFormatter::AutoPGP));
+    insert(u"application/octet-stream"_s, std::make_unique<AnyTypeBodyPartFormatter>());
 
-    insert(u"text/pgp"_s, EncryptedBodyPartFormatter::create(EncryptedBodyPartFormatter::ForcePGP));
-    insert(u"text/html"_s, TextHtmlBodyPartFormatter::create());
-    insert(u"text/rtf"_s, AnyTypeBodyPartFormatter::create());
-    insert(u"text/plain"_s, MailmanBodyPartFormatter::create());
-    insert(u"text/plain"_s, TextPlainBodyPartFormatter::create());
+    insert(u"text/pgp"_s, std::make_unique<EncryptedBodyPartFormatter>(EncryptedBodyPartFormatter::ForcePGP));
+    insert(u"text/html"_s, std::make_unique<TextHtmlBodyPartFormatter>());
+    insert(u"text/rtf"_s, std::make_unique<AnyTypeBodyPartFormatter>());
+    insert(u"text/plain"_s, std::make_unique<MailmanBodyPartFormatter>());
+    insert(u"text/plain"_s, std::make_unique<TextPlainBodyPartFormatter>());
 
-    insert(u"image/png"_s, ImageTypeBodyPartFormatter::create());
-    insert(u"image/jpeg"_s, ImageTypeBodyPartFormatter::create());
-    insert(u"image/gif"_s, ImageTypeBodyPartFormatter::create());
-    insert(u"image/svg+xml"_s, ImageTypeBodyPartFormatter::create());
-    insert(u"image/bmp"_s, ImageTypeBodyPartFormatter::create());
-    insert(u"image/vnd.microsoft.icon"_s, ImageTypeBodyPartFormatter::create());
+    insert(u"image/png"_s, std::make_unique<ImageTypeBodyPartFormatter>());
+    insert(u"image/jpeg"_s, std::make_unique<ImageTypeBodyPartFormatter>());
+    insert(u"image/gif"_s, std::make_unique<ImageTypeBodyPartFormatter>());
+    insert(u"image/svg+xml"_s, std::make_unique<ImageTypeBodyPartFormatter>());
+    insert(u"image/bmp"_s, std::make_unique<ImageTypeBodyPartFormatter>());
+    insert(u"image/vnd.microsoft.icon"_s, std::make_unique<ImageTypeBodyPartFormatter>());
 
-    insert(u"message/rfc822"_s, MessageRfc822BodyPartFormatter::create());
+    insert(u"message/rfc822"_s, std::make_unique<MessageRfc822BodyPartFormatter>());
 
-    insert(u"multipart/alternative"_s, MultiPartAlternativeBodyPartFormatter::create());
-    insert(u"multipart/encrypted"_s, MultiPartEncryptedBodyPartFormatter::create());
-    insert(u"multipart/signed"_s, MultiPartSignedBodyPartFormatter::create());
-    insert(u"multipart/mixed"_s, MultiPartMixedBodyPartFormatter::create());
+    insert(u"multipart/alternative"_s, std::make_unique<MultiPartAlternativeBodyPartFormatter>());
+    insert(u"multipart/encrypted"_s, std::make_unique<MultiPartEncryptedBodyPartFormatter>());
+    insert(u"multipart/signed"_s, std::make_unique<MultiPartSignedBodyPartFormatter>());
+    insert(u"multipart/mixed"_s, std::make_unique<MultiPartMixedBodyPartFormatter>());
 }

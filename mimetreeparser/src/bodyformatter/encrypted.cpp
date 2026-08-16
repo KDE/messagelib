@@ -19,23 +19,6 @@
 
 using namespace MimeTreeParser;
 
-const Interface::BodyPartFormatter *EncryptedBodyPartFormatter::create(EncryptedBodyPartFormatter::EncryptionFlags flags)
-{
-    switch (flags) {
-    case AutoPGP: {
-        static EncryptedBodyPartFormatter self;
-        self.mFlags = flags;
-        return &self;
-    }
-    case ForcePGP: {
-        static EncryptedBodyPartFormatter self;
-        self.mFlags = flags;
-        return &self;
-    }
-    }
-    Q_UNREACHABLE();
-}
-
 MessagePart::Ptr EncryptedBodyPartFormatter::process(Interface::BodyPart &part) const
 {
     KMime::Content *node = part.content();

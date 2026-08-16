@@ -19,16 +19,6 @@
 
 using namespace MimeTreeParser;
 
-const MultiPartEncryptedBodyPartFormatter *MultiPartEncryptedBodyPartFormatter::self;
-
-const Interface::BodyPartFormatter *MultiPartEncryptedBodyPartFormatter::create()
-{
-    if (!self) {
-        self = new MultiPartEncryptedBodyPartFormatter();
-    }
-    return self;
-}
-
 MessagePart::Ptr MultiPartEncryptedBodyPartFormatter::process(Interface::BodyPart &part) const
 {
     KMime::Content *node = part.content();

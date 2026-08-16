@@ -13,11 +13,8 @@ namespace MimeTreeParser
 {
 class MailmanBodyPartFormatter : public Interface::BodyPartFormatter
 {
-    static const MailmanBodyPartFormatter *self;
-
 public:
     [[nodiscard]] MessagePartPtr process(Interface::BodyPart &part) const override;
-    static const Interface::BodyPartFormatter *create();
 
 private:
     [[nodiscard]] bool isMailmanMessage(KMime::Content *curNode) const;

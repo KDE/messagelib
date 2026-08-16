@@ -18,16 +18,6 @@
 using namespace Qt::Literals::StringLiterals;
 using namespace MimeTreeParser;
 
-const MailmanBodyPartFormatter *MailmanBodyPartFormatter::self;
-
-const Interface::BodyPartFormatter *MailmanBodyPartFormatter::create()
-{
-    if (!self) {
-        self = new MailmanBodyPartFormatter();
-    }
-    return self;
-}
-
 bool MailmanBodyPartFormatter::isMailmanMessage(KMime::Content *curNode) const
 {
     if (!curNode || curNode->head().isEmpty()) {

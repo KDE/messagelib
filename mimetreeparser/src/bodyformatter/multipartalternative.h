@@ -13,10 +13,7 @@ namespace MimeTreeParser
 {
 class MultiPartAlternativeBodyPartFormatter : public Interface::BodyPartFormatter
 {
-    static const MultiPartAlternativeBodyPartFormatter *self;
-
 public:
     [[nodiscard]] MessagePartPtr process(Interface::BodyPart &part) const override;
-    static const Interface::BodyPartFormatter *create();
 };
 }

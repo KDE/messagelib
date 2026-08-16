@@ -66,9 +66,8 @@ public:
      */
     virtual ~BodyPartFormatterPlugin();
 
-    /*!
-     */
-    virtual const BodyPartFormatter *bodyPartFormatter(int idx) const = 0;
+    /*! Return a formatter instance for the Nth entry in the plugin metadata. */
+    [[nodiscard]] virtual std::unique_ptr<const BodyPartFormatter> bodyPartFormatter(int idx) const = 0;
 };
 } // namespace Interface
 }

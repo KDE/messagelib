@@ -7,7 +7,6 @@
 #pragma once
 
 #include <QByteArray>
-
 #include <QHash>
 #include <QString>
 
@@ -31,7 +30,7 @@ public:
     void setup();
     void loadPlugins();
     void initialize_builtin_renderers();
-    void insert(const QByteArray &type, MessagePartRendererBase *formatter, const QString &mimeType = QString(), int priority = 0);
+    void insert(const QByteArray &type, std::unique_ptr<MessagePartRendererBase> &&formatter, const QString &mimeType = QString(), int priority = 0);
 
     QHash<QByteArray, std::vector<RendererInfo>> m_renderers;
     QString m_pluginSubdir = u"pim6/messageviewer/bodypartformatter"_s;

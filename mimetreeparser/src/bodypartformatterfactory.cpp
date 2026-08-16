@@ -29,15 +29,7 @@ BodyPartFormatterFactoryPrivate::BodyPartFormatterFactoryPrivate(BodyPartFormatt
 {
 }
 
-BodyPartFormatterFactoryPrivate::~BodyPartFormatterFactoryPrivate()
-{
-    QHashIterator<QString, std::vector<FormatterInfo>> i(registry);
-    while (i.hasNext()) {
-        i.next();
-        auto formatterInfo = i.value();
-        formatterInfo.erase(formatterInfo.begin(), formatterInfo.end());
-    }
-}
+BodyPartFormatterFactoryPrivate::~BodyPartFormatterFactoryPrivate() = default;
 
 void BodyPartFormatterFactoryPrivate::setup()
 {
@@ -48,7 +40,7 @@ void BodyPartFormatterFactoryPrivate::setup()
     assert(!registry.empty());
 }
 
-void BodyPartFormatterFactoryPrivate::insert(const QString &mimeType, const Interface::BodyPartFormatter *formatter, int priority)
+void BodyPartFormatterFactoryPrivate::insert(const QString &mimeType, std::unique_ptr<const Interface::BodyPartFormatter> &&formatter, int priority)
 {
     if (mimeType.isEmpty() || !formatter) {
         return;
@@ -57,24 +49,24 @@ void BodyPartFormatterFactoryPrivate::insert(const QString &mimeType, const Inte
     QMimeDatabase db;
     const auto mt = db.mimeTypeForName(mimeType);
     FormatterInfo info;
-    info.formatter = formatter;
+    info.formatter = std::move(formatter);
     info.priority = priority;
 
     auto &v = registry[mt.isValid() ? mt.name() : mimeType];
-    v.push_back(info);
-    std::stable_sort(v.begin(), v.end(), [](FormatterInfo lhs, FormatterInfo rhs) {
+    v.push_back(std::move(info));
+    std::stable_sort(v.begin(), v.end(), [](const FormatterInfo &lhs, const FormatterInfo &rhs) {
         return lhs.priority > rhs.priority;
     });
 }
 
 void BodyPartFormatterFactoryPrivate::appendFormattersForType(const QString &mimeType, QList<const Interface::BodyPartFormatter *> &formatters)
 {
-    const auto it = registry.constFind(mimeType);
-    if (it == registry.constEnd()) {
+    const auto it = registry.find(mimeType);
+    if (it == registry.end()) {
         return;
     }
-    for (const auto &f : it.value()) {
-        formatters.push_back(f.formatter);
+    for (const auto &f : (*it).second) {
+        formatters.push_back(f.formatter.get());
     }
 }
 
@@ -91,9 +83,9 @@ BodyPartFormatterFactory *BodyPartFormatterFactory::instance()
     return &s_instance;
 }
 
-void BodyPartFormatterFactory::insert(const QString &mimeType, const Interface::BodyPartFormatter *formatter, int priority)
+void BodyPartFormatterFactory::insert(const QString &mimeType, std::unique_ptr<const Interface::BodyPartFormatter> &&formatter, int priority)
 {
-    d->insert(mimeType.toLower(), formatter, priority);
+    d->insert(mimeType.toLower(), std::move(formatter), priority);
 }
 
 QList<const Interface::BodyPartFormatter *> BodyPartFormatterFactory::formattersForType(const QString &mimeType) const
@@ -151,7 +143,7 @@ void BodyPartFormatterFactory::loadPlugins()
             continue;
         }
 
-        const MimeTreeParser::Interface::BodyPartFormatter *bfp = nullptr;
+        std::unique_ptr<const MimeTreeParser::Interface::BodyPartFormatter> bfp;
         for (int i = 0; (bfp = plugin->bodyPartFormatter(i)) && i < formatterData.size(); ++i) {
             const auto metaData = formatterData.at(i).toObject();
             const auto mimetype = metaData.value(QLatin1StringView("mimetype")).toString();
@@ -162,7 +154,7 @@ void BodyPartFormatterFactory::loadPlugins()
             // priority should always be higher than the built-in ones, otherwise what's the point?
             const auto priority = metaData.value(QLatin1StringView("priority")).toInt() + 100;
             qCDebug(MIMETREEPARSER_LOG) << "plugin for " << mimetype << priority;
-            insert(mimetype, bfp, priority);
+            insert(mimetype, std::move(bfp), priority);
         }
     }
 }

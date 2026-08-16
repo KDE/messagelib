@@ -13,16 +13,6 @@
 
 using namespace MimeTreeParser;
 
-const MultiPartMixedBodyPartFormatter *MultiPartMixedBodyPartFormatter::self;
-
-const Interface::BodyPartFormatter *MultiPartMixedBodyPartFormatter::create()
-{
-    if (!self) {
-        self = new MultiPartMixedBodyPartFormatter();
-    }
-    return self;
-}
-
 MessagePart::Ptr MultiPartMixedBodyPartFormatter::process(Interface::BodyPart &part) const
 {
     if (part.content()->contents().isEmpty()) {
