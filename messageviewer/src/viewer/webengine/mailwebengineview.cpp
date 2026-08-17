@@ -21,7 +21,6 @@
 #include <QWebEngineProfile>
 #include <WebEngineViewer/WebHitTest>
 
-#include <QElapsedTimer>
 #include <QPainter>
 #include <QWebEngineUrlScheme>
 
@@ -62,7 +61,6 @@ public:
     WebEngineViewer::BlockTrackingUrlInterceptor *mBlockMailTrackingUrl = nullptr;
     bool mCanStartDrag = false;
     bool mStartedDrag = false;
-    QElapsedTimer *mStartDragTimer = nullptr;
 };
 
 MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
@@ -190,10 +188,6 @@ void MailWebEngineView::forwardMousePressEvent(QMouseEvent *event)
 
             d->mStartedDrag = false;
             if (d->mCanStartDrag) {
-                if (d->mStartDragTimer == nullptr) {
-                    d->mStartDragTimer = new QElapsedTimer;
-                }
-                d->mStartDragTimer->start();
                 event->accept();
             }
         }
@@ -203,20 +197,29 @@ void MailWebEngineView::forwardMousePressEvent(QMouseEvent *event)
 void MailWebEngineView::forwardMouseMoveEvent(QMouseEvent *event)
 {
     if (d->mViewer && !d->mHoveredUrl.isEmpty()) {
-        // If we are potentially handling a drag, deal with that.
-        if (d->mCanStartDrag && (event->buttons() & Qt::LeftButton)) {
-            if ((d->mLastClickPosition - event->pos()).manhattanLength() > QApplication::startDragDistance()) {
-                if (URLHandlerManager::instance()->handleDrag(d->mHoveredUrl, d->mViewer)) {
-                    if (d->mCanStartDrag && d->mStartDragTimer != nullptr) {
-                        if (d->mStartDragTimer->elapsed() > QApplication::startDragTime()) {
-                            d->mStartedDrag = true;
-                        }
-                    }
+        // We set mStartedDrag for any drag (both when the mouse press
+        // is handled by web engine, and if we handle it), so that it doesn't
+        // trigger a click when button is released.
+        if (event->buttons() & Qt::LeftButton) {
+            // To avoid a race between Qt and WebEngine drag detection,
+            // we need to ensure Qt wins. If it does not, we could detect
+            // a click, while the WebEngine detects a drag.
+            // So, we take any movement, and not wait for the distance to
+            // go above startDragDistance.
+            if (event->pos() != d->mLastClickPosition) {
+                d->mStartedDrag = true;
+            }
+
+            // If we can start this drag, swallow the move event.
+            // For links, it must reach the engine to begin the native drag.
+            if (d->mCanStartDrag) {
+                if (d->mStartedDrag && (d->mLastClickPosition - event->pos()).manhattanLength() > QApplication::startDragDistance()
+                    && URLHandlerManager::instance()->handleDrag(d->mHoveredUrl, d->mViewer)) {
                     // If the URL handler manager started a drag, don't handle this in the future
                     d->mCanStartDrag = false;
                 }
+                event->accept();
             }
-            event->accept();
         }
     }
 }
