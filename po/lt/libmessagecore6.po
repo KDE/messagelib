@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: libmessagecore\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-05 00:44+0000\n"
-"PO-Revision-Date: 2024-02-02 23:59+0200\n"
+"PO-Revision-Date: 2026-08-19 02:34+0300\n"
 "Last-Translator: Remigijus Jarmalavičius <remigijus@jarmalavicius.lt>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.9\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -34,17 +34,17 @@ msgstr "<>"
 #: attachment/attachmentcompressjob.cpp:50
 #, kde-format
 msgid "Could not initiate attachment compression."
-msgstr ""
+msgstr "Nepavyko inicijuoti priedo glaudinimo."
 
 #: attachment/attachmentcompressjob.cpp:60
 #, kde-format
 msgid "Could not compress the attachment."
-msgstr ""
+msgstr "Nepavyko glaudinti priedo."
 
 #: attachment/attachmentfromfolderjob.cpp:52
 #, kde-format
 msgid "Could not create compressed file."
-msgstr ""
+msgstr "Nepavyko sukurti glaudinto failo."
 
 #: attachment/attachmentfromfolderjob.cpp:90
 #, kde-format
@@ -52,17 +52,19 @@ msgid ""
 "The resulting attachment would be larger than the maximum allowed size, "
 "aborting."
 msgstr ""
+"Galutinis priedas būtų didesnis nei didžiausias leidžiamas dydis, "
+"nutraukiama."
 
 #: attachment/attachmentfromfolderjob.cpp:100
 #: attachment/attachmentfromfolderjob.cpp:119
 #, kde-format
 msgid "Could not add %1 to the archive"
-msgstr ""
+msgstr "Nepavyko pridėti %1 į archyvą"
 
 #: attachment/attachmentfromfolderjob.cpp:113
 #, kde-format
 msgid "Could not open %1 for reading."
-msgstr ""
+msgstr "Nepavyko atverti %1 skaitymui."
 
 #: attachment/attachmentfromurljob.cpp:69
 #, kde-format
@@ -79,12 +81,14 @@ msgstr "nežinomas"
 #: attachment/attachmentfromurljob.cpp:103
 #, kde-format
 msgid "\"%1\" not found. Please specify the full path."
-msgstr ""
+msgstr "„%1“ nerastas. Nurodykite visą kelias."
 
 #: attachment/attachmentfromurljob.cpp:112
 #, kde-format
 msgid "You may not attach files bigger than %1. Share it with storage service."
 msgstr ""
+"Jūs negalite pridėti failų, didesnių nei %1. Bendrinkite juos su saugyklos "
+"paslauga."
 
 #: attachment/attachmentpropertiesdialog.cpp:133
 #, kde-format
@@ -94,6 +98,10 @@ msgid ""
 "but, sometimes, %1 may not detect the type correctly -- here is where you "
 "can fix that.</p>"
 msgstr ""
+"<p>Failo <em>MIME tipas</em>:</p><p>Įprastai, jums nereikia keisti šios "
+"nuostatos, nes failo tipas yra automatiškai tikrinamas; bet, kartais, gali "
+"būti taip, kad %1 negali teisingai nustatyti tipo – čia galite tai ištaisyti."
+"</p>"
 
 #: attachment/attachmentpropertiesdialog.cpp:141
 #, kde-format
@@ -102,6 +110,9 @@ msgid ""
 "message, a binary file encoded with base64 will take up four thirds the "
 "actual size of the file.</p>"
 msgstr ""
+"<p>Apskaičiuotas priedo dydis:</p><p>Turėkite omenyje, kad el. laiške "
+"dvejetainis failas koduotas naudojant base64 užims keturis trečdalius "
+"faktinio failo dydžio.</p>"
 
 #: attachment/attachmentpropertiesdialog.cpp:146
 #, kde-format
@@ -150,6 +161,9 @@ msgid ""
 "signature will be made with the key that you associated with the currently-"
 "selected identity.</p>"
 msgstr ""
+"<p>Pažymėkite šią parinktį, jei norite, kad ši laiško dalis būtų pasirašyta."
+"</p><p>Parašas bus atliktas naudojant raktą, kurį susiejote su šiuo metu "
+"pasirinkta tapatybe.</p>"
 
 #: attachment/attachmentpropertiesdialog.cpp:185
 #, kde-format
@@ -157,6 +171,8 @@ msgid ""
 "<p>Check this option if you want this message part to be encrypted.</"
 "p><p>The part will be encrypted for the recipients of this message.</p>"
 msgstr ""
+"<p>Pažymėkite šią parinktį, jei norite, kad ši laiško dalis būtų šifruota.</"
+"p><p>Ši dalis bus šifruota šio laiško gavėjams.</p>"
 
 #: attachment/attachmentpropertiesdialog.cpp:305
 #: attachment/attachmentpropertiesdialog.cpp:320
@@ -168,7 +184,7 @@ msgstr "Priedo savybės"
 #: attachment/attachmentupdatejob.cpp:40
 #, kde-format
 msgid "URL is empty."
-msgstr ""
+msgstr "URL yra tuščias."
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: attachment/ui/attachmentpropertiesdialog.ui:39
@@ -282,9 +298,7 @@ msgid ""
 msgstr ""
 
 #: utils/dateformatter.cpp:164
-#, fuzzy, kde-format
-#| msgctxt "a file called 'unknown'"
-#| msgid "unknown"
+#, kde-format
 msgctxt "invalid time specified"
 msgid "unknown"
 msgstr "nežinomas"
@@ -292,24 +306,24 @@ msgstr "nežinomas"
 #: utils/dateformatter.cpp:176
 #, kde-format
 msgid "Today %1"
-msgstr ""
+msgstr "Šiandien %1"
 
 #: utils/dateformatter.cpp:179
 #, kde-format
 msgid "Yesterday %1"
-msgstr ""
+msgstr "Vakar %1"
 
 #: utils/dateformatter.cpp:184
 #, kde-format
 msgctxt "1. weekday, 2. time"
 msgid "%1 %2"
-msgstr ""
+msgstr "%1 %2"
 
 #: utils/stringutil.cpp:397
 #, kde-format
 msgctxt "signal that this email is defined in my identity"
 msgid "Me"
-msgstr ""
+msgstr "Aš"
 
 #~ msgid "Could not read file %1."
 #~ msgstr "Nepavyksta perskaityti failo %1."
