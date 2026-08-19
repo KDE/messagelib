@@ -2372,7 +2372,3 @@ msgstr "E.postsender frakoblet."
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr ""
-
-#, fuzzy
-#~ msgid "KMail was unable to open the attachment"
-#~ msgstr "KMail klarte ikke åpne vedlegget."
