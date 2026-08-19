@@ -2313,6 +2313,3 @@ msgstr "邮件签发器离线。"
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr ""
-
-#~ msgid "KMail was unable to open the attachment"
-#~ msgstr "KMail 无法打开附件"
