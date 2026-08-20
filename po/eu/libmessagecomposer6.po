@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-16 00:46+0000\n"
-"PO-Revision-Date: 2026-08-16 11:20+0200\n"
+"PO-Revision-Date: 2026-08-19 21:32+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -1918,7 +1918,7 @@ msgstr "Mezua beranduago bidaltzeko programatzea huts egin du: %1"
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Later"
-msgstr "Bidali beranduago"
+msgstr "Beranduago bidali"
 
 #: sendlater/sendlaterdialog.cpp:50
 #, kde-format
