@@ -16,6 +16,7 @@
 #include <QLineEdit>
 #include <QPushButton>
 #include <QStandardItemModel>
+#include <QStandardPaths>
 
 using namespace Qt::Literals::StringLiterals;
 FollowupReminderSelectDateDialogTest::FollowupReminderSelectDateDialogTest(QObject *parent)
@@ -24,6 +25,11 @@ FollowupReminderSelectDateDialogTest::FollowupReminderSelectDateDialogTest(QObje
 }
 
 FollowupReminderSelectDateDialogTest::~FollowupReminderSelectDateDialogTest() = default;
+
+void FollowupReminderSelectDateDialogTest::initTestCase()
+{
+    QStandardPaths::setTestModeEnabled(true);
+}
 
 QStandardItemModel *FollowupReminderSelectDateDialogTest::defaultItemModel()
 {

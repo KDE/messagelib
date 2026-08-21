@@ -6,6 +6,7 @@
 
 #include <QObject>
 
+#include <QStandardPaths>
 #include <QTest>
 
 #include "recipient/recipientline.h"
@@ -39,10 +40,16 @@ class RecipientsEditorTest : public QObject
     Q_OBJECT
 
 private Q_SLOTS:
+    void initTestCase();
     void test_addLineOnCommaPress();
     void test_splitStringInputToLines();
     void test_splitPastedListToLines();
 };
+
+void RecipientsEditorTest::initTestCase()
+{
+    QStandardPaths::setTestModeEnabled(true);
+}
 
 void RecipientsEditorTest::test_addLineOnCommaPress()
 {
