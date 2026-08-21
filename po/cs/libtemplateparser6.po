@@ -4,21 +4,22 @@
 # Lukáš Tinkl <ltinkl@redhat.com>, 2010, 2011.
 # Tomáš Chvátal <tomas.chvatal@gmail.com>, 2012.
 # SPDX-FileCopyrightText: 2021, 2023, 2024 Vit Pelcak <vit@pelcak.org>
+# SPDX-FileCopyrightText: 2026 Libor Filípek <libor.filipek@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-05 00:45+0000\n"
-"PO-Revision-Date: 2024-06-05 09:25+0200\n"
-"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
+"PO-Revision-Date: 2026-08-20 23:46+0200\n"
+"Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.05.0\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Poedit 3.9\n"
 
 #: customtemplates.cpp:74 customtemplates.cpp:125
 #, kde-format
@@ -42,7 +43,7 @@ msgstr "Odpověď všem"
 #, kde-format
 msgctxt "Message->"
 msgid "Forward"
-msgstr "Přeposlání"
+msgstr "Přeposlat"
 
 #: customtemplates.cpp:79 templatesconfiguration.cpp:75
 #, kde-format
@@ -63,6 +64,15 @@ msgid ""
 "operations. You cannot bind a keyboard shortcut to <i>Universal</i> "
 "templates.</p></qt>"
 msgstr ""
+"<qt><p>Zde můžete přidávat, upravovat a mazat vlastní šablony zpráv, které "
+"se použijí při psaní odpovědi nebo přeposílání zprávy. Vlastní šablonu "
+"vytvoříte tak, že do vstupního pole zadáte název a stisknete tlačítko '+'. K "
+"šabloně můžete také přiřadit klávesovou zkratku pro rychlejší práci.</"
+"p><p>Šablony zpráv podporují nahrazovací příkazy, které stačí jednoduše "
+"zadat nebo vybrat z nabídky <i>Vložit příkaz</i>.</p><p>Existují čtyři typy "
+"vlastních šablon: <i>Odpovědět</i>, <i>Odpovědět všem</i>, <i>Přeposlat</i> "
+"a <i>Univerzální</i>, kterou lze použít pro všechny druhy operací. K "
+"šablonám <i>Univerzální</i> nelze přiřadit klávesovou zkratku.</p></qt>"
 
 #: customtemplates.cpp:140
 #, kde-format
@@ -73,7 +83,7 @@ msgstr "Neznámý"
 #: customtemplates.cpp:254
 #, kde-format
 msgid "A template with same name already exists."
-msgstr ""
+msgstr "Šablona se stejným názvem již existuje."
 
 #: customtemplates.cpp:254
 #, kde-format
@@ -85,7 +95,7 @@ msgstr "Šablonu nelze vytvořit"
 #, kde-format
 msgctxt "@info"
 msgid "Do you really want to remove template \"%1\"?"
-msgstr ""
+msgstr "Opravdu chcete odstranit šablonu \"%1\"?"
 
 #: customtemplates.cpp:347
 #, kde-format
@@ -277,7 +287,7 @@ msgstr "Komu:"
 #, kde-format
 msgctxt "@item:intext email CC"
 msgid "CC:"
-msgstr "Kopie: "
+msgstr "Kopie:"
 
 #: templateparserjob.cpp:1146
 #, kde-format
@@ -476,7 +486,7 @@ msgstr "Prázdný text"
 
 #: templatescommandmenu.cpp:161
 msgid "Dictionary Language"
-msgstr ""
+msgstr "Jazyk slovníku"
 
 #: templatescommandmenu.cpp:162
 msgid "Language"
@@ -566,7 +576,7 @@ msgstr ""
 #: templatesconfiguration.cpp:102
 #, kde-format
 msgid "Do you want to reset current template or all templates to default?"
-msgstr ""
+msgstr "Chcete obnovit výchozí nastavení aktuální šablony nebo všech šablon?"
 
 #: templatesconfiguration.cpp:103
 #, kde-format
@@ -595,6 +605,12 @@ msgid ""
 "(a)Reply using plain text for quotes to be strictly in plain text\n"
 "(b)Reply using HTML text for quotes being in HTML format if present"
 msgstr ""
+"Kombinované použití příkazů \"Odpovědět v prostém textu\" a \"Odpovědět v "
+"HTML\" není správné. Podle potřeby použijte pouze jeden z výše uvedených "
+"příkazů společně s příkazem \"Odpovědět jako citaci zprávy\"\n"
+"(a) Použijte příkaz \"Odpovědět v prostém textu\", pokud mají být citace "
+"výhradně v prostém textu\n"
+"(b) Použijte příkaz \"Odpovědět v HTML\", pokud jsou citace ve formátu HTML"
 
 #: templatesinsertcommandpushbutton.cpp:20
 #, kde-format
@@ -605,7 +621,7 @@ msgstr "Vlož&it příkaz"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select a command to insert into the template"
-msgstr ""
+msgstr "Vyberte příkaz, který chcete vložit do šablony"
 
 #: templatesinsertcommandpushbutton.cpp:30
 #, kde-format
@@ -615,6 +631,9 @@ msgid ""
 "being edited.  The command will be inserted at the cursor location, so you "
 "want to move your cursor to the desired insertion point first."
 msgstr ""
+"Projděte tuto nabídku a vyhledejte příkaz, který chcete vložit do právě "
+"upravované šablony. Příkaz bude vložen na místo, kde se nachází kurzor, "
+"proto nejprve přesuňte kurzor na požadované místo pro vložení."
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, mName)
 #: ui/customtemplates_base.ui:86
@@ -631,6 +650,8 @@ msgid ""
 "To create a custom template, first enter a name for that template and press "
 "the '+' button."
 msgstr ""
+"Chcete-li vytvořit vlastní šablonu, nejprve zadejte její název a stiskněte "
+"tlačítko '+'."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, mAdd)
 #: ui/customtemplates_base.ui:96
@@ -647,6 +668,8 @@ msgid ""
 "Press this button if you want to create a new custom template with the "
 "specified name"
 msgstr ""
+"Stiskněte toto tlačítko, pokud chcete vytvořit novou vlastní šablonu se "
+"zadaným názvem"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, mRemove)
 #: ui/customtemplates_base.ui:106
@@ -663,6 +686,8 @@ msgid ""
 "Press this button if you want to remove the currently selected custom "
 "template"
 msgstr ""
+"Stiskněte toto tlačítko, pokud chcete odstranit aktuálně vybranou vlastní "
+"šablonu"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, mDuplicate)
 #: ui/customtemplates_base.ui:116
@@ -679,6 +704,8 @@ msgid ""
 "Press this button if you want to duplicate the currently selected custom "
 "template"
 msgstr ""
+"Stiskněte toto tlačítko, pokud chcete duplikovat aktuálně vybranou vlastní "
+"šablonu"
 
 #. i18n: ectx: property (toolTip), widget (QTreeWidget, mList)
 #: ui/customtemplates_base.ui:134
@@ -692,7 +719,7 @@ msgstr "Seznam dostupných vlastních šablon"
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This is a list of all the custom templates available."
-msgstr ""
+msgstr "Toto je seznam všech dostupných vlastních šablon."
 
 #. i18n: ectx: property (text), widget (QTreeWidget, mList)
 #: ui/customtemplates_base.ui:147
@@ -720,7 +747,7 @@ msgstr "Komu:"
 #, kde-format
 msgctxt "@label"
 msgid "CC:"
-msgstr "Kopie: "
+msgstr "Kopie:"
 
 #. i18n: ectx: property (toolTip), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mToEdit)
 #: ui/customtemplates_base.ui:219
@@ -737,6 +764,8 @@ msgid ""
 "When using this template, the default recipients are those you enter here.  "
 "This is a comma-separated list of mail addresses."
 msgstr ""
+"Při použití této šablony budou výchozími příjemci ti, které zde zadáte. "
+"Jedná se o seznam e-mailových adres oddělených čárkami."
 
 #. i18n: ectx: property (toolTip), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mCCEdit)
 #: ui/customtemplates_base.ui:235
@@ -753,6 +782,9 @@ msgid ""
 "When using this template, the recipients you enter here will by default get "
 "a copy of this message.  This is a comma-separated list of mail addresses."
 msgstr ""
+"Při použití této šablony obdrží příjemci, které zde zadáte, ve výchozím "
+"nastavení kopii této zprávy. Jedná se o seznam e-mailových adres oddělených "
+"čárkami."
 
 #. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, mEdit)
 #: ui/customtemplates_base.ui:255
@@ -766,7 +798,7 @@ msgstr "Vlastní šablona"
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "This area contains the associated custom template."
-msgstr ""
+msgstr "V této části se nachází příslušná vlastní šablona."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, mType)
 #: ui/customtemplates_base.ui:283
@@ -840,6 +872,9 @@ msgid ""
 "information about how to create the template, press the \"How does this work?"
 "\" link on this dialog."
 msgstr ""
+"V této části vytvoříte šablonu pro nové e-mailové zprávy.  Další informace o "
+"tom, jak šablonu vytvořit, získáte kliknutím na odkaz \"Jak to funguje?\" v "
+"tomto dialogovém okně."
 
 #. i18n: ectx: attribute (label), widget (QWidget, page_reply)
 #: ui/templatesconfiguration_base.ui:108
@@ -853,7 +888,7 @@ msgstr "Odpovědět odesílateli"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create the template for message replies"
-msgstr ""
+msgstr "Vytvořit šablonu pro odpovědi na zprávy"
 
 #. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, textEdit_reply)
 #: ui/templatesconfiguration_base.ui:149
@@ -864,6 +899,9 @@ msgid ""
 "information about how to create the template, press the \"How does this work?"
 "\" link on this dialog."
 msgstr ""
+"V této části vytvoříte šablonu pro odpovědi na zprávy. Další informace o "
+"tom, jak šablonu vytvořit, získáte kliknutím na odkaz \"Jak to funguje?\" v "
+"tomto dialogovém okně."
 
 #. i18n: ectx: attribute (label), widget (QWidget, page_reply_all)
 #: ui/templatesconfiguration_base.ui:165
@@ -877,7 +915,7 @@ msgstr "Odpovědět všem / do konference"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create the template for replying to all recipients or to a mailing list"
-msgstr ""
+msgstr "Vytvořte šablonu pro odpověď všem příjemcům nebo na distribuční seznam"
 
 #. i18n: ectx: property (whatsThis), widget (TemplateParser::TemplatesTextEdit, textEdit_reply_all)
 #: ui/templatesconfiguration_base.ui:206
@@ -888,6 +926,10 @@ msgid ""
 "a mailing list.  For more information about how to create the template, "
 "press the \"How does this work?\" link on this dialog."
 msgstr ""
+"V této části vytvoříte šablonu pro zprávy typu \"Odpovědět všem\" nebo pro "
+"odpovědi zasílané na konferenční seznam.  Další informace o tom, jak šablonu "
+"vytvořit, získáte kliknutím na odkaz \"Jak to funguje?\" v tomto dialogovém "
+"okně."
 
 #. i18n: ectx: attribute (label), widget (QWidget, page_forward)
 #: ui/templatesconfiguration_base.ui:222
@@ -912,6 +954,9 @@ msgid ""
 "information about how to create the template, press the \"How does this work?"
 "\" link on this dialog."
 msgstr ""
+"V této části vytvoříte šablonu pro přeposílání zpráv.  Další informace o "
+"tom, jak šablonu vytvořit, získáte kliknutím na odkaz \"Jak to funguje?\" v "
+"tomto dialogovém okně."
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #: ui/templatesconfiguration_base.ui:303
@@ -925,7 +970,7 @@ msgstr "&Ukazatel citace:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Set the Prefix for quoted message lines"
-msgstr ""
+msgstr "Nastavte předponu pro řádky citovaných zpráv"
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, lineEdit_quote)
 #: ui/templatesconfiguration_base.ui:326
