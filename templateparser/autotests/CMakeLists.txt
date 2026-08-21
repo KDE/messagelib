@@ -17,7 +17,7 @@ macro(add_templateparser_unittest _source)
         ${_test}
         ${_name}.h
     )
-    ecm_mark_as_test(templateparser-${_name})
+    ecm_mark_as_test(${_name})
     target_link_libraries(
         ${_name}
         KPim6::Libkleo

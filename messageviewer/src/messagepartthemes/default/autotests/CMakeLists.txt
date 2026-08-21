@@ -18,7 +18,7 @@ macro(add_messageviewer_crypto_unittest _source)
         setupenv.cpp
         testcsshelper.cpp
     )
-    ecm_mark_as_test(messageviewer-messagepartthemes-${_name})
+    ecm_mark_as_test(${_name})
     target_link_libraries(
         ${_name}
         KPim6::MessageViewer
