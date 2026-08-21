@@ -10,6 +10,7 @@
 #include <MessageViewer/DKIMCheckSignatureJob>
 #include <QHBoxLayout>
 #include <QLabel>
+#include <QStandardPaths>
 #include <QTest>
 
 using namespace Qt::Literals::StringLiterals;
@@ -17,6 +18,7 @@ QTEST_MAIN(DKIMWidgetInfoTest)
 DKIMWidgetInfoTest::DKIMWidgetInfoTest(QObject *parent)
     : QObject(parent)
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void DKIMWidgetInfoTest::shouldHaveDefaultValues()

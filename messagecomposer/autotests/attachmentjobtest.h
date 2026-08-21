@@ -11,6 +11,9 @@
 class AttachmentJobTest : public QObject
 {
     Q_OBJECT
+public:
+    explicit AttachmentJobTest(QObject *parent = nullptr);
+
 private Q_SLOTS:
     void testAttachment();
     // void testTextCharsetAutodetect_data();

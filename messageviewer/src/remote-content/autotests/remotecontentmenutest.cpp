@@ -6,12 +6,14 @@
 
 #include "remotecontentmenutest.h"
 #include "remote-content/remotecontentmenu.h"
+#include <QStandardPaths>
 #include <QTest>
 
 QTEST_MAIN(RemoteContentMenuTest)
 RemoteContentMenuTest::RemoteContentMenuTest(QObject *parent)
     : QObject(parent)
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void RemoteContentMenuTest::shouldHaveDefaultValues()

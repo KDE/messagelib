@@ -11,6 +11,9 @@
 class ItipJobTest : public QObject
 {
     Q_OBJECT
+public:
+    explicit ItipJobTest(QObject *parent = nullptr);
+
 private Q_SLOTS:
     void testInvitationWithAttachment();
     void testInvitationWithoutAttachment();

@@ -17,6 +17,9 @@ class ComposerJob;
 class ComposerTest : public QObject
 {
     Q_OBJECT
+public:
+    explicit ComposerTest(QObject *parent = nullptr);
+
 private Q_SLOTS:
     void testAttachments();
     void testAutoSave();

@@ -14,11 +14,13 @@ using namespace Qt::Literals::StringLiterals;
 #if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
 #include <TextEditTextToSpeech/TextToSpeechContainerWidget>
 #endif
+#include <QStandardPaths>
 #include <QTest>
 
 MailSourceViewTextBrowserWidgetTest::MailSourceViewTextBrowserWidgetTest(QObject *parent)
     : QObject(parent)
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 MailSourceViewTextBrowserWidgetTest::~MailSourceViewTextBrowserWidgetTest() = default;

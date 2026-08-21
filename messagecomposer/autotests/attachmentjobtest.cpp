@@ -9,6 +9,7 @@
 #include "qtest_messagecomposer.h"
 
 #include <QDebug>
+#include <QStandardPaths>
 #include <QTest>
 
 #include <KMime/Content>
@@ -28,6 +29,12 @@ using namespace Qt::Literals::StringLiterals;
 #define PATH_ATTACHMENTS QLatin1StringView(KDESRCDIR "/attachments/")
 
 QTEST_MAIN(AttachmentJobTest)
+
+AttachmentJobTest::AttachmentJobTest(QObject *parent)
+    : QObject(parent)
+{
+    QStandardPaths::setTestModeEnabled(true);
+}
 
 void AttachmentJobTest::testAttachment()
 {

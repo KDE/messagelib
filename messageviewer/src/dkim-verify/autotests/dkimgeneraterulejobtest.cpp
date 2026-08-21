@@ -6,12 +6,14 @@
 
 #include "dkimgeneraterulejobtest.h"
 #include "dkim-verify/dkimgeneraterulejob.h"
+#include <QStandardPaths>
 #include <QTest>
 QTEST_GUILESS_MAIN(DKIMGenerateRuleJobTest)
 
 DKIMGenerateRuleJobTest::DKIMGenerateRuleJobTest(QObject *parent)
     : QObject(parent)
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void DKIMGenerateRuleJobTest::shouldHaveDefaultValues()

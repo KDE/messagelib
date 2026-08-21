@@ -8,6 +8,7 @@
 #include "composertest.h"
 #include "qtest_messagecomposer.h"
 
+#include <QStandardPaths>
 #include <QTest>
 
 #include <KMime/Headers>
@@ -25,6 +26,12 @@ using MessageCore::AttachmentPart;
 using namespace Qt::Literals::StringLiterals;
 
 QTEST_MAIN(ComposerTest)
+
+ComposerTest::ComposerTest(QObject *parent)
+    : QObject(parent)
+{
+    QStandardPaths::setTestModeEnabled(true);
+}
 
 void ComposerTest::testAttachments()
 {

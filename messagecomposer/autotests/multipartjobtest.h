@@ -11,6 +11,9 @@
 class MultipartJobTest : public QObject
 {
     Q_OBJECT
+public:
+    explicit MultipartJobTest(QObject *parent = nullptr);
+
 private Q_SLOTS:
     void testMultipartMixed();
 };

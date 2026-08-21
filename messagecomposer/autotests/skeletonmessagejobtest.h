@@ -11,6 +11,9 @@
 class SkeletonMessageJobTest : public QObject
 {
     Q_OBJECT
+public:
+    explicit SkeletonMessageJobTest(QObject *parent = nullptr);
+
 private Q_SLOTS:
     void testSubject_data();
     void testSubject();

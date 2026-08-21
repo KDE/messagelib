@@ -7,6 +7,7 @@
 #include "skeletonmessagejobtest.h"
 
 #include <QDebug>
+#include <QStandardPaths>
 #include <QTest>
 
 #include <KMime/Headers>
@@ -22,6 +23,12 @@ using namespace MessageComposer;
 using namespace Qt::Literals::StringLiterals;
 
 QTEST_MAIN(SkeletonMessageJobTest)
+
+SkeletonMessageJobTest::SkeletonMessageJobTest(QObject *parent)
+    : QObject(parent)
+{
+    QStandardPaths::setTestModeEnabled(true);
+}
 
 void SkeletonMessageJobTest::testSubject_data()
 {

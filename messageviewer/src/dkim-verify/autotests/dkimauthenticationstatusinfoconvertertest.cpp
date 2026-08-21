@@ -11,6 +11,7 @@
 #include "dkim-verify/dkimauthenticationstatusinfo.h"
 #include "dkim-verify/dkimauthenticationstatusinfoconverter.h"
 #include "dkim-verify/dkimchecksignaturejob.h"
+#include <QStandardPaths>
 #include <QTest>
 
 using namespace Qt::Literals::StringLiterals;
@@ -20,6 +21,7 @@ QTEST_GUILESS_MAIN(DKIMAuthenticationStatusInfoConverterTest)
 DKIMAuthenticationStatusInfoConverterTest::DKIMAuthenticationStatusInfoConverterTest(QObject *parent)
     : QObject(parent)
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void DKIMAuthenticationStatusInfoConverterTest::shouldHaveDefaultValues()

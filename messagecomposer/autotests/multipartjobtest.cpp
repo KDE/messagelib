@@ -7,6 +7,7 @@
 #include "multipartjobtest.h"
 
 #include <QDebug>
+#include <QStandardPaths>
 #include <QTest>
 
 #include <KMime/Content>
@@ -20,6 +21,12 @@ using namespace KMime;
 using namespace MessageComposer;
 
 QTEST_MAIN(MultipartJobTest)
+
+MultipartJobTest::MultipartJobTest(QObject *parent)
+    : QObject(parent)
+{
+    QStandardPaths::setTestModeEnabled(true);
+}
 
 void MultipartJobTest::testMultipartMixed()
 {

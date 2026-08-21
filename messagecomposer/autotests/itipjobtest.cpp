@@ -9,6 +9,7 @@
 #include "qtest_messagecomposer.h"
 
 #include <QDebug>
+#include <QStandardPaths>
 #include <QTest>
 
 #include <KMime/Content>
@@ -25,6 +26,12 @@ using namespace MessageCore;
 using namespace Qt::Literals::StringLiterals;
 
 QTEST_MAIN(ItipJobTest)
+
+ItipJobTest::ItipJobTest(QObject *parent)
+    : QObject(parent)
+{
+    QStandardPaths::setTestModeEnabled(true);
+}
 
 static QString testItip = QStringLiteral(R"(
 BEGIN:VCALENDAR

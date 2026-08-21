@@ -9,12 +9,14 @@
 
 #include "messageviewerrenderertest.h"
 #include "viewer/renderer/messageviewerrenderer.h"
+#include <QStandardPaths>
 #include <QTest>
 QTEST_MAIN(MessageViewerRendererTest)
 
 MessageViewerRendererTest::MessageViewerRendererTest(QObject *parent)
     : QObject(parent)
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void MessageViewerRendererTest::shouldHaveDefaultValue()

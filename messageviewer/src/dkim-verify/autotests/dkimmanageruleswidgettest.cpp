@@ -10,6 +10,7 @@
 
 #include <KTreeWidgetSearchLine>
 
+#include <QStandardPaths>
 #include <QTest>
 #include <QTreeWidget>
 #include <QVBoxLayout>
@@ -20,6 +21,7 @@ QTEST_MAIN(DKIMManageRulesWidgetTest)
 DKIMManageRulesWidgetTest::DKIMManageRulesWidgetTest(QObject *parent)
     : QObject(parent)
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void DKIMManageRulesWidgetTest::shouldHaveDefaultValues()

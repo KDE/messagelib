@@ -8,6 +8,7 @@
 
 #include "core/widgets/configurefilterswidget.h"
 #include <QListWidget>
+#include <QStandardPaths>
 #include <QTest>
 #include <QVBoxLayout>
 using namespace Qt::Literals::StringLiterals;
@@ -15,6 +16,7 @@ QTEST_MAIN(ConfigureFiltersWidgetTest)
 ConfigureFiltersWidgetTest::ConfigureFiltersWidgetTest(QObject *parent)
     : QObject(parent)
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void ConfigureFiltersWidgetTest::shouldHaveDefaultValues()

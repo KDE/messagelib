@@ -8,6 +8,7 @@
 
 #include "dkim-verify/dkimchecksignaturejob.h"
 #include <QSignalSpy>
+#include <QStandardPaths>
 #include <QTest>
 #include <QTimer>
 
@@ -19,6 +20,7 @@ QTEST_MAIN(DKIMCheckSignatureJobTest)
 DKIMCheckSignatureJobTest::DKIMCheckSignatureJobTest(QObject *parent)
     : QObject(parent)
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void DKIMCheckSignatureJobTest::initTestCase()

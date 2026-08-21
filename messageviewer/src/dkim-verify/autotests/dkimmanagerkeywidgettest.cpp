@@ -9,6 +9,7 @@
 #include "dkim-verify/dkimmanagerkeytreeview.h"
 #include "dkim-verify/dkimmanagerkeywidget.h"
 #include <QLineEdit>
+#include <QStandardPaths>
 #include <QTest>
 #include <QVBoxLayout>
 using namespace Qt::Literals::StringLiterals;
@@ -16,6 +17,7 @@ QTEST_MAIN(DKIMManagerKeyWidgetTest)
 DKIMManagerKeyWidgetTest::DKIMManagerKeyWidgetTest(QObject *parent)
     : QObject(parent)
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void DKIMManagerKeyWidgetTest::shouldHaveDefaultValue()

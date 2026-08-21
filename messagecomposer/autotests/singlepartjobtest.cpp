@@ -7,6 +7,7 @@
 #include "singlepartjobtest.h"
 
 #include <QDebug>
+#include <QStandardPaths>
 #include <QTest>
 
 #include <KMime/Content>
@@ -20,6 +21,12 @@ using namespace MessageComposer;
 using namespace Qt::Literals::StringLiterals;
 
 QTEST_MAIN(SinglepartJobTest)
+
+SinglepartJobTest::SinglepartJobTest(QObject *parent)
+    : QObject(parent)
+{
+    QStandardPaths::setTestModeEnabled(true);
+}
 
 void SinglepartJobTest::testContent()
 {

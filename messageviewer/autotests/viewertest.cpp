@@ -8,12 +8,14 @@
 
 #include "messageviewer/viewer.h"
 #include <KActionCollection>
+#include <QStandardPaths>
 #include <QTest>
 #include <qtestmouse.h>
 
 using namespace Qt::Literals::StringLiterals;
 ViewerTest::ViewerTest()
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void ViewerTest::shouldHaveDefaultValuesOnCreation()

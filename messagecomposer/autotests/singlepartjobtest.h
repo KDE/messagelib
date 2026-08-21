@@ -12,6 +12,9 @@
 class SinglepartJobTest : public QObject
 {
     Q_OBJECT
+public:
+    explicit SinglepartJobTest(QObject *parent = nullptr);
+
 private Q_SLOTS:
     void testContent();
     void testContentDisposition();

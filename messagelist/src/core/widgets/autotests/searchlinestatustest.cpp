@@ -9,12 +9,14 @@
 #include "../src/core/widgets/searchlinestatus.h"
 #include <QCompleter>
 #include <QMenu>
+#include <QStandardPaths>
 #include <QTest>
 QTEST_MAIN(SearchLineStatusTest)
 using namespace Qt::Literals::StringLiterals;
 SearchLineStatusTest::SearchLineStatusTest(QObject *parent)
     : QObject(parent)
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 SearchLineStatusTest::~SearchLineStatusTest() = default;

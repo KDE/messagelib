@@ -6,11 +6,13 @@
 
 #include "dkimmanagerkeytreeviewtest.h"
 #include "dkim-verify/dkimmanagerkeytreeview.h"
+#include <QStandardPaths>
 #include <QTest>
 QTEST_MAIN(DKIMManagerKeyTreeViewTest)
 DKIMManagerKeyTreeViewTest::DKIMManagerKeyTreeViewTest(QObject *parent)
     : QObject{parent}
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void DKIMManagerKeyTreeViewTest::shouldHaveDefaultValues()

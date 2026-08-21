@@ -7,11 +7,13 @@
 #include "dkimcheckfulljobtest.h"
 #include "dkim-verify/dkimcheckfulljob.h"
 
+#include <QStandardPaths>
 #include <QTest>
 QTEST_MAIN(DKIMCheckFullJobTest)
 DKIMCheckFullJobTest::DKIMCheckFullJobTest(QObject *parent)
     : QObject(parent)
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void DKIMCheckFullJobTest::shouldHaveDefaultValues()

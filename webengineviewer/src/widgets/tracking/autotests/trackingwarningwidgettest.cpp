@@ -6,6 +6,7 @@
 
 #include "trackingwarningwidgettest.h"
 #include "widgets/tracking/trackingwarningwidget.h"
+#include <QStandardPaths>
 #include <QTest>
 
 QTEST_MAIN(TrackingWarningWidgetTest)
@@ -13,6 +14,7 @@ QTEST_MAIN(TrackingWarningWidgetTest)
 TrackingWarningWidgetTest::TrackingWarningWidgetTest(QObject *parent)
     : QObject(parent)
 {
+    QStandardPaths::setTestModeEnabled(true);
 }
 
 void TrackingWarningWidgetTest::shouldHaveDefaultValues()
