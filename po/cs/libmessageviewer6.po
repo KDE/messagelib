@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-17 00:46+0000\n"
-"PO-Revision-Date: 2026-08-20 23:33+0200\n"
+"PO-Revision-Date: 2026-08-21 23:32+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 26.04.3\n"
+"X-Generator: Poedit 3.9\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
@@ -116,13 +116,13 @@ msgstr "Skrýt podrobnosti"
 #: messagepartthemes/default/templates/encryptedmessagepart.html:27
 #: messagepartthemes/default/templates/encryptedmessagepart.html:69
 msgid "unknown key"
-msgstr "Neznámý klíč"
+msgstr "neznámý klíč"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:32
 #, kde-format
 msgctxt "Compliance: status/type of compliance"
 msgid "Compliance: %1"
-msgstr ""
+msgstr "Shoda: %1"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:38
 #, kde-format
@@ -151,6 +151,8 @@ msgid ""
 "No secret key found to decrypt the message. The message is encrypted for the "
 "following keys:"
 msgstr ""
+"Nebyly nalezeny žádné tajné klíče k dešifrování zprávy. Zpráva je "
+"zašifrována pomocí následujících klíčů:"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:74
 msgid "Could not decrypt the data."
@@ -219,7 +221,7 @@ msgstr "Klíč DKIM"
 #: dkim-verify/dkimmanagerkeymodel.cpp:83
 #, kde-format
 msgid "Selector"
-msgstr ""
+msgstr "Selektor"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:85
 #: dkim-verify/dkimmanageruleswidget.cpp:75
@@ -466,7 +468,7 @@ msgstr "Z:"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Use '*' to specify all emails from domain"
-msgstr ""
+msgstr "Pomocí znaku '*' můžete určit všechny e-maily z dané domény"
 
 #: dkim-verify/dkimrulewidget.cpp:53
 #, kde-format
@@ -516,32 +518,32 @@ msgstr "DKIM: platný (podepsal %1)"
 #: dkim-verify/dkimwidgetinfo.cpp:109
 #, kde-format
 msgid "DKIM: invalid"
-msgstr ""
+msgstr "DKIM: neplatný"
 
 #: dkim-verify/dkimwidgetinfo.cpp:112
 #, kde-format
 msgid "DKIM: Not signed"
-msgstr ""
+msgstr "DKIM: nepodepsaný"
 
 #: dkim-verify/dkimwidgetinfo.cpp:117
 #, kde-format
 msgid "DKIM: Should Be Signed by %1"
-msgstr ""
+msgstr "DKIM: Měl by být podepsán %1"
 
 #: dkim-verify/dkimwidgetinfo.cpp:133
 #, kde-format
 msgid "Body Hash was corrupted."
-msgstr ""
+msgstr "Tělo hashe bylo poškozeno."
 
 #: dkim-verify/dkimwidgetinfo.cpp:136
 #, kde-format
 msgid "The domain doesn't exist."
-msgstr ""
+msgstr "Doména neexistuje."
 
 #: dkim-verify/dkimwidgetinfo.cpp:139
 #, kde-format
 msgid "Missing header From."
-msgstr ""
+msgstr "Chybí hlavička Od."
 
 #: dkim-verify/dkimwidgetinfo.cpp:142
 #, kde-format
@@ -551,42 +553,42 @@ msgstr "Chybějící podpis."
 #: dkim-verify/dkimwidgetinfo.cpp:145
 #, kde-format
 msgid "Invalid query method."
-msgstr ""
+msgstr "Neplatná metoda dotazu."
 
 #: dkim-verify/dkimwidgetinfo.cpp:148
 #, kde-format
 msgid "Invalid header canonicalization."
-msgstr ""
+msgstr "Neplatná kanonizace hlavičky."
 
 #: dkim-verify/dkimwidgetinfo.cpp:151
 #, kde-format
 msgid "Invalid body canonicalization."
-msgstr ""
+msgstr "Neplatná kanonizace obsahu."
 
 #: dkim-verify/dkimwidgetinfo.cpp:154
 #, kde-format
 msgid "Unknown Body Hash Algorithm."
-msgstr ""
+msgstr "Neznámý algoritmus pro hashování dat."
 
 #: dkim-verify/dkimwidgetinfo.cpp:157
 #, kde-format
 msgid "Signature algorithm is invalid."
-msgstr ""
+msgstr "Algoritmus podpisu je neplatný."
 
 #: dkim-verify/dkimwidgetinfo.cpp:160
 #, kde-format
 msgid "The public key was revoked."
-msgstr ""
+msgstr "Veřejný klíč byl odvolán."
 
 #: dkim-verify/dkimwidgetinfo.cpp:163
 #, kde-format
 msgid "Signature is too large."
-msgstr ""
+msgstr "Podpis je příliš velký."
 
 #: dkim-verify/dkimwidgetinfo.cpp:166
 #, kde-format
 msgid "Hash Algorithm is unsupported."
-msgstr ""
+msgstr "Hashovací algoritmus není podporován."
 
 #: dkim-verify/dkimwidgetinfo.cpp:169
 #, kde-format
@@ -596,32 +598,34 @@ msgstr "Veřejný klíč je příliš malý."
 #: dkim-verify/dkimwidgetinfo.cpp:172
 #, kde-format
 msgid "Impossible to verify signature."
-msgstr ""
+msgstr "Nelze ověřit podpis."
 
 #: dkim-verify/dkimwidgetinfo.cpp:175
 #, kde-format
 msgid "AUID must be in the same domain as SDID (s-flag set in key record)."
 msgstr ""
+"AUID musí být ve stejné doméně jako SDID (v záznamu klíče je nastaven s-"
+"příznak)."
 
 #: dkim-verify/dkimwidgetinfo.cpp:178
 #, kde-format
 msgid "The signing domain is only testing DKIM."
-msgstr ""
+msgstr "Doména, pod kterou je certifikát podepsán, testuje pouze DKIM."
 
 #: dkim-verify/dkimwidgetinfo.cpp:181
 #, kde-format
 msgid "Impossible to download key."
-msgstr ""
+msgstr "Nelze stáhnout klíč."
 
 #: dkim-verify/dkimwidgetinfo.cpp:184 dkim-verify/dkimwidgetinfo.cpp:208
 #, kde-format
 msgid "Hash Algorithm unsafe (sha1)"
-msgstr ""
+msgstr "Nebezpečný hashovací algoritmus (sha1)"
 
 #: dkim-verify/dkimwidgetinfo.cpp:187
 #, kde-format
 msgid "AUID is not in a subdomain of SDID"
-msgstr ""
+msgstr "AUID není v subdoméně SDID"
 
 #: dkim-verify/dkimwidgetinfo.cpp:190
 #, kde-format
@@ -636,12 +640,12 @@ msgstr "Podpis vypršel"
 #: dkim-verify/dkimwidgetinfo.cpp:202
 #, kde-format
 msgid "Signature created in the future"
-msgstr ""
+msgstr "Podpis vytvořený v budoucnosti"
 
 #: dkim-verify/dkimwidgetinfo.cpp:205
 #, kde-format
 msgid "Signature too small"
-msgstr ""
+msgstr "Podpis je příliš malý"
 
 #: dkim-verify/dkimwidgetinfo.cpp:211
 #, kde-format
@@ -702,7 +706,7 @@ msgstr "Odpovědět komu:"
 #: header/grantleeheaderformatter.cpp:266
 #, kde-format
 msgid "CC:"
-msgstr "Kopie: "
+msgstr "Kopie:"
 
 #: header/grantleeheaderformatter.cpp:268
 #, kde-format
@@ -727,7 +731,7 @@ msgstr "přeposlat komu:"
 #: header/grantleeheaderformatter.cpp:356
 #, kde-format
 msgid "Grantlee theme \"%1\" is not valid."
-msgstr ""
+msgstr "Motiv Grantlee \"%1\" není platný."
 
 #: header/grantleeheaderformatter.cpp:446 header/headerstyle_util.cpp:82
 #: header/headerstyle_util.cpp:87 header/headerstyle_util.cpp:98
@@ -802,22 +806,22 @@ msgstr "Žádný spam agent"
 #: header/headerstyle_util.cpp:167
 #, kde-format
 msgid "Spam filter score not a number"
-msgstr ""
+msgstr "Skóre spamového filtru není číselná hodnota"
 
 #: header/headerstyle_util.cpp:170
 #, kde-format
 msgid "Threshold not a valid number"
-msgstr ""
+msgstr "Prahová hodnota není platné číslo"
 
 #: header/headerstyle_util.cpp:173
 #, kde-format
 msgid "Spam filter score could not be extracted from header"
-msgstr ""
+msgstr "Z hlavičky se nepodařilo získat skóre spamového filtru"
 
 #: header/headerstyle_util.cpp:176
 #, kde-format
 msgid "Threshold could not be extracted from header"
-msgstr ""
+msgstr "Z hlavičky se nepodařilo extrahovat prahovou hodnotu"
 
 #: header/headerstyle_util.cpp:179
 #, kde-format
@@ -933,7 +937,7 @@ msgstr "Přidat vzdálený obsah"
 #: remote-content/remotecontentconfigurewidget.cpp:134
 #, kde-format
 msgid "An entry already defines this url. Please modify it."
-msgstr ""
+msgstr "Tato URL adresa je již v databázi zapsána. Upravte ji prosím."
 
 #: remote-content/remotecontentconfigurewidget.cpp:134
 #, kde-format
@@ -1022,7 +1026,7 @@ msgid ""
 "recipient"
 msgstr ""
 "Tato zpráva obsahuje odkaz jenž lze přečíst jako '%1' ale ve skutečnosti "
-"ukazuje na '%2'. To často bývá součástí podvodných zpráv."
+"ukazuje na '%2'. To často bývá součástí podvodných zpráv"
 
 #: scamdetection/scamdetectionwebengine.cpp:130
 #, kde-format
@@ -1047,7 +1051,7 @@ msgstr ""
 #: scamdetection/scamdetectionwebengine.cpp:143
 #, kde-format
 msgid "This email contains a link (%1) which has a redirection"
-msgstr ""
+msgstr "Tento e-mail obsahuje odkaz (%1), který je přesměrován"
 
 #: scamdetection/scamdetectionwebengine.cpp:149
 #, kde-format
@@ -1062,6 +1066,7 @@ msgstr ""
 #, kde-format
 msgid "This email contains a shorturl (%1). It can redirect to another server."
 msgstr ""
+"Tento e-mail obsahuje zkrácený odkaz (%1). Může přesměrovat na jiný server."
 
 #: scamdetection/scamdetectionwebengine.cpp:235
 #, kde-format
@@ -1076,7 +1081,7 @@ msgstr "Podrobnosti:"
 #: scamdetection/scamexpandurljob.cpp:50
 #, kde-format
 msgid "No network connection detected, we cannot expand url."
-msgstr ""
+msgstr "Nebylo zjištěno připojení k síti, nelze rozšířit URL."
 
 #: scamdetection/scamexpandurljob.cpp:84 scamdetection/scamexpandurljob.cpp:90
 #, kde-format
@@ -1086,7 +1091,7 @@ msgstr "Nelze rozvinout '%1'."
 #: scamdetection/scamexpandurljob.cpp:88
 #, kde-format
 msgid "Short url '%1' redirects to '%2'."
-msgstr ""
+msgstr "Zkrácená adresa '%1' přesměrovává na '%2'."
 
 #. i18n: ectx: label, entry (PrintSelectedText), group (Print)
 #: settings/messageviewer.kcfg:7
@@ -1123,6 +1128,8 @@ msgstr "Vždy zobrazit podrobnosti šifrování/podpisu při tisku stránky"
 #, kde-format
 msgid "When we render html do not use font size inferior to minimum size."
 msgstr ""
+"Při vykreslování HTML nepoužívejte velikost písma menší než minimální "
+"velikost."
 
 #. i18n: ectx: label, entry (BodyFont), group (Fonts)
 #: settings/messageviewer.kcfg:32
@@ -1140,7 +1147,7 @@ msgstr "Určuje font pro tisk"
 #: settings/messageviewer.kcfg:42
 #, kde-format
 msgid "Check if url can be a phishing"
-msgstr ""
+msgstr "Zkontrolujte, zda se u dané URL může jednat o phishing"
 
 #. i18n: ectx: label, entry (CloseAfterReplyOrForward), group (Reader)
 #: settings/messageviewer.kcfg:48
@@ -1242,7 +1249,7 @@ msgstr "Jak jsou přílohy zobrazeny"
 #: settings/messageviewer.kcfg:123
 #, kde-format
 msgid "Specifies whether to reuse the quote color, beyond the 3rd level"
-msgstr ""
+msgstr "Určuje, zda se má barva uvozovek použít i nad rámec třetí úrovně"
 
 #. i18n: ectx: label, entry (AccessKeyEnabled), group (Reader)
 #: settings/messageviewer.kcfg:127
@@ -1462,7 +1469,8 @@ msgid ""
 "When this is on, the user will not see the mail composer window. Invitation "
 "mails are sent automatically."
 msgstr ""
-"Pokud zvolíte, uživatel neuvidí okno editoru. Pozvánky se odešlou automaticky"
+"Pokud zvolíte, uživatel neuvidí okno editoru. Pozvánky se odešlou "
+"automaticky."
 
 #. i18n: ectx: property (text), widget (QCheckBox, mAutomaticSending)
 #: ui/invitationsettings.ui:58
@@ -1715,6 +1723,8 @@ msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
 msgstr ""
+"Z této zprávy jste odstranili přílohu. Původní MIME hlavičky této přílohy "
+"byly:"
 
 #: utils/messageviewerutil.cpp:639
 #, kde-format
@@ -1776,7 +1786,7 @@ msgstr "Pracovat připojen."
 #: viewer/urlhandlermanager.cpp:416
 #, kde-format
 msgid "Make account online."
-msgstr ""
+msgstr "Vytvořte si účet online."
 
 #: viewer/urlhandlermanager.cpp:418
 #, kde-format
@@ -1806,7 +1816,7 @@ msgstr "Skrýt podrobnosti šifrování."
 #: viewer/urlhandlermanager.cpp:431
 #, kde-format
 msgid "Open Documentation"
-msgstr ""
+msgstr "Otevřít dokumentaci"
 
 #: viewer/urlhandlermanager.cpp:465
 #, kde-format
@@ -1921,6 +1931,8 @@ msgid ""
 "Deleting an attachment from an encrypted or old-style mailman message is not "
 "supported."
 msgstr ""
+"Odstranění přílohy ze zašifrované zprávy nebo ze zprávy ve starším formátu "
+"mailmanu není podporováno."
 
 #: viewer/viewer_p.cpp:436
 #, kde-format
@@ -1995,7 +2007,7 @@ msgstr "KMail"
 #: viewer/viewer_p.cpp:738
 #, kde-format
 msgid "The KDE Mail Client"
-msgstr "Poštovní klient KDE."
+msgstr "Poštovní klient KDE"
 
 #: viewer/viewer_p.cpp:1284
 #, kde-format
@@ -2007,7 +2019,7 @@ msgstr "Zobrazit přílohu: %1"
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
-msgstr "Přílo&hy "
+msgstr "Přílo&hy"
 
 #: viewer/viewer_p.cpp:1492
 #, kde-format
@@ -2221,7 +2233,7 @@ msgstr "Síť je přerušena."
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
-msgstr "Zkontrolovat URL Phishing "
+msgstr "Zkontrolovat URL Phishing"
 
 #: viewer/viewer_p.cpp:2004
 #, kde-format
@@ -2378,6 +2390,8 @@ msgstr "Zdroj"
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr ""
+"Neupravená, nezpracovaná pošta tak, jak je uložena v souborovém systému nebo "
+"na serveru"
 
 #: widgets/mailsourcewebengineviewer.cpp:54
 #, kde-format
@@ -2388,7 +2402,7 @@ msgstr "HTML zdroj"
 #: widgets/mailsourcewebengineviewer.cpp:55
 #, kde-format
 msgid "HTML code for displaying the message to the user"
-msgstr ""
+msgstr "HTML kód pro zobrazení zprávy uživateli"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
 #, kde-format
