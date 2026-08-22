@@ -770,7 +770,7 @@ void AttachmentControllerBase::editAttachment(AttachmentPart::Ptr part, MessageC
     case MessageComposer::EditorWatcher::NoError:
         // The attachment is being edited.
         // We will clean things up in editDone().
-        d->editorPart[watcher] = part;
+        d->editorPart[watcher] = std::move(part);
         d->editorTempFile[watcher] = tempFile;
 
         // Delete the temp file if the composer is closed (and this object is destroyed).

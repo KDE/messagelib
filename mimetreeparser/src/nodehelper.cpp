@@ -521,7 +521,7 @@ void NodeHelper::registerOverrideHeader(const KMime::Content *message, MessagePa
     if (!mHeaderOverwrite.contains(message)) {
         mHeaderOverwrite[message] = QList<MessagePart::Ptr>();
     }
-    mHeaderOverwrite[message].append(part);
+    mHeaderOverwrite[message].append(std::move(part));
 }
 
 QDateTime NodeHelper::dateHeader(const KMime::Content *message) const

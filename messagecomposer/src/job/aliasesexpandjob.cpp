@@ -140,7 +140,7 @@ void AliasesExpandJob::finishExpansion()
 
         if (result.isEmpty) {
             KEmailAddress::splitAddress(receiver, displayName, addrSpec, comment);
-            mEmailAddressOnly.append(addrSpec);
+            mEmailAddressOnly.append(std::move(addrSpec));
             mEmailAddresses += receiver;
             mEmptyDistributionLists << receiver;
             continue;
@@ -148,7 +148,7 @@ void AliasesExpandJob::finishExpansion()
 
         if (!result.addresses.isEmpty()) {
             KEmailAddress::splitAddress(result.addresses, displayName, addrSpec, comment);
-            mEmailAddressOnly.append(addrSpec);
+            mEmailAddressOnly.append(std::move(addrSpec));
 
             mEmailAddresses += result.addresses;
             continue;
@@ -159,7 +159,7 @@ void AliasesExpandJob::finishExpansion()
         if (!recipientValue.isEmpty()) {
             mEmailAddresses += recipientValue;
             KEmailAddress::splitAddress(recipientValue, displayName, addrSpec, comment);
-            mEmailAddressOnly.append(addrSpec);
+            mEmailAddressOnly.append(std::move(addrSpec));
 
             continue;
         }
@@ -175,7 +175,7 @@ void AliasesExpandJob::finishExpansion()
         } else {
             mEmailAddresses += receiver;
         }
-        mEmailAddressOnly.append(addrSpec);
+        mEmailAddressOnly.append(std::move(addrSpec));
     }
 
     emitResult();

@@ -598,7 +598,7 @@ QString smartQuote(const QString &msg, int maxLineLength)
             oldIndent = indent;
         }
 
-        textParts.append(line);
+        textParts.append(std::move(line));
     }
 
     // Write out anything still pending

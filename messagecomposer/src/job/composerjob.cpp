@@ -567,7 +567,7 @@ void ComposerJob::addAttachmentPart(AttachmentPart::Ptr part, bool autoresizeIma
             }
         }
     }
-    d->attachmentParts.append(part);
+    d->attachmentParts.append(std::move(part));
 }
 
 void ComposerJob::addAttachmentParts(const AttachmentPart::List &parts, bool autoresizeImage)

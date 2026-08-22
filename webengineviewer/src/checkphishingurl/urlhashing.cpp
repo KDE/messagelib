@@ -139,7 +139,7 @@ QHash<QByteArray, QByteArray> UrlHashing::hashList() const
                 QByteArray ba = QCryptographicHash::hash(str.toLatin1(), QCryptographicHash::Sha256);
                 QByteArray baShort = ba;
                 baShort.truncate(4);
-                lst.insert(ba, baShort);
+                lst.insert(std::move(ba), std::move(baShort));
                 // qDebug() << " ba " << ba.toBase64();
             }
         }

@@ -56,8 +56,8 @@ QList<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> DKIMAuthent
                 } else if (auid.isEmpty()) {
                     auid = u'@' + sdid;
                 }
-                convertedResult.sdid = sdid;
-                convertedResult.auid = auid;
+                convertedResult.sdid = std::move(sdid);
+                convertedResult.auid = std::move(auid);
             }
         } else if (infoResult == QLatin1StringView("fail") || infoResult == QLatin1StringView("policy") || infoResult == QLatin1StringView("neutral")
                    || infoResult == QLatin1StringView("softfail") || infoResult == QLatin1StringView("permerror")) {
@@ -74,7 +74,7 @@ QList<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> DKIMAuthent
             qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Invalid result type " << infoResult;
             continue;
         }
-        lstResult.append(convertedResult);
+        lstResult.append(std::move(convertedResult));
     }
 
     return lstResult;

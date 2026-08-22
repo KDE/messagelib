@@ -275,7 +275,7 @@ static QStringList keysAsStrings(const std::vector<GpgME::Key> &keys)
         if (keyLabel.isEmpty()) {
             keyLabel = QString::fromUtf8(userID.id());
         }
-        strings.append(keyLabel);
+        strings.append(std::move(keyLabel));
     }
     return strings;
 }

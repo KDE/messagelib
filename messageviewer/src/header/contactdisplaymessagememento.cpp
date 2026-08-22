@@ -87,7 +87,7 @@ void ContactDisplayMessageMemento::slotSearchJobFinished(KJob *job)
                     }
                     if (ok) {
                         useGravatar = false;
-                        mImageFromUrl = image;
+                        mImageFromUrl = std::move(image);
                         Q_EMIT update(MimeTreeParser::Delayed);
                     }
                 }

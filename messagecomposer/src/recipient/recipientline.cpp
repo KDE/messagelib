@@ -131,7 +131,7 @@ void RecipientLineNG::setData(const MultiplyingLineData::Ptr &data)
     if (rec.isNull()) {
         return;
     }
-    mData = rec;
+    mData = std::move(rec);
     fieldsFromData();
 }
 

@@ -35,7 +35,7 @@ AttachmentJob::AttachmentJob(AttachmentPart::Ptr part, QObject *parent)
     : ContentJobBase(*new AttachmentJobPrivate(this), parent)
 {
     Q_D(AttachmentJob);
-    d->part = part;
+    d->part = std::move(part);
 }
 
 AttachmentJob::~AttachmentJob() = default;

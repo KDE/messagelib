@@ -276,7 +276,7 @@ bool Util::saveContents(QWidget *parent, const QList<KMime::Content *> &contents
                 if (!resultSave) {
                     globalResult = resultSave;
                 } else {
-                    urlList.append(curUrl);
+                    urlList.append(std::move(curUrl));
                 }
             }
         }

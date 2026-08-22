@@ -283,7 +283,7 @@ QList<Removal> CreatePhishingUrlDataBaseJobPrivate::parseRemovals(const QVariant
                             for (const QVariant &var : rawList) {
                                 indexList.append(var.toUInt());
                             }
-                            tmp.indexes = indexList;
+                            tmp.indexes = std::move(indexList);
                         } else {
                             qCDebug(WEBENGINEVIEWER_LOG) << "rawIndicesIt.key() unknown " << rawIndicesIt.key();
                         }

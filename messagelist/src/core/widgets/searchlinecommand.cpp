@@ -250,7 +250,7 @@ SearchLineCommand::SearchLineInfo SearchLineCommand::isAnotherInfo(QString tmp, 
 #endif
             tmp.remove(key);
             tmp.removeLast(); // Remove last space
-            searchLineInfo.argument = tmp;
+            searchLineInfo.argument = std::move(tmp);
             if (!searchLineInfo.argument.isEmpty() && searchLineInfo.type == Unknown) {
                 searchLineInfo.type = Literal;
             }
@@ -399,7 +399,7 @@ void SearchLineCommand::parseSearchLineCommand(const QString &str)
     } else {
         if (!tmp.isEmpty()) {
             searchLineInfo.type = Literal;
-            searchLineInfo.argument = tmp;
+            searchLineInfo.argument = std::move(tmp);
             appendSearchLineInfo(searchLineInfo);
         }
     }
