@@ -44,7 +44,7 @@ void AttachmentJobTest::testAttachment()
     const QByteArray mimeType("x-some/x-type");
     const QByteArray data("la la la");
 
-    AttachmentPart::Ptr part = AttachmentPart::Ptr(new AttachmentPart);
+    const AttachmentPart::Ptr part = AttachmentPart::Ptr(new AttachmentPart);
     part->setName(name);
     part->setFileName(fileName);
     part->setDescription(description);

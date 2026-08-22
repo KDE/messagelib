@@ -34,10 +34,10 @@ void MultipartJobTest::testMultipartMixed()
     auto mjob = new MultipartJob(&composerJob);
     mjob->setMultipartSubtype("mixed");
 
-    QByteArray data1("one");
-    QByteArray data2("two");
-    QByteArray type1("text/plain");
-    QByteArray type2("application/x-mors-ontologica");
+    const QByteArray data1("one");
+    const QByteArray data2("two");
+    const QByteArray type1("text/plain");
+    const QByteArray type2("application/x-mors-ontologica");
 
     {
         auto cjob = new SinglepartJob(mjob);

@@ -39,7 +39,7 @@ void MainTextJobTest::testPlainText()
     ComposerJob composerJob;
     composerJob.globalPart()->setGuiEnabled(false);
     auto textPart = std::make_unique<TextPart>();
-    QString data = u"they said their never they slept their dream"_s;
+    const QString data = u"they said their never they slept their dream"_s;
     textPart->setWrappedPlainText(data);
     auto mjob = new MainTextJob(textPart.get(), &composerJob);
     QVERIFY(mjob->exec());
@@ -58,7 +58,7 @@ void MainTextJobTest::testWrappingErrors()
         ComposerJob composerJob;
         composerJob.globalPart()->setGuiEnabled(false);
         auto textPart = std::make_unique<TextPart>();
-        QString data = u"they said their never they slept their dream"_s;
+        const QString data = u"they said their never they slept their dream"_s;
         textPart->setWordWrappingEnabled(false);
         textPart->setWrappedPlainText(data);
         auto mjob = new MainTextJob(textPart.get(), &composerJob);
@@ -70,7 +70,7 @@ void MainTextJobTest::testWrappingErrors()
         composerJob.globalPart()->setGuiEnabled(false);
         auto textPart = std::make_unique<TextPart>();
         textPart->setWordWrappingEnabled(true);
-        QString data = u"they said their never they slept their dream"_s;
+        const QString data = u"they said their never they slept their dream"_s;
         textPart->setCleanPlainText(data);
         auto mjob = new MainTextJob(textPart.get(), &composerJob);
         QVERIFY(!mjob->exec()); // error: UseWrapping but given only clean text
@@ -83,7 +83,7 @@ void MainTextJobTest::testCustomCharset()
     ComposerJob composerJob;
     composerJob.globalPart()->setGuiEnabled(false);
     auto textPart = std::make_unique<TextPart>();
-    QString data = u"şi el o să se-nchidă cu o frunză de pelin"_s;
+    const QString data = u"şi el o să se-nchidă cu o frunză de pelin"_s;
     textPart->setWrappedPlainText(data);
     auto mjob = new MainTextJob(textPart.get(), &composerJob);
     QVERIFY(mjob->exec());
@@ -93,7 +93,7 @@ void MainTextJobTest::testCustomCharset()
     QVERIFY(result->contentType(KMime::CreatePolicy::DontCreate));
     QCOMPARE(result->contentType()->mimeType(), QByteArray("text/plain"));
     QCOMPARE(result->contentType()->charset(), "utf-8");
-    QByteArray outData = result->body();
+    const QByteArray outData = result->body();
     QStringDecoder dec(QStringDecoder::Utf8);
     QVERIFY(dec.isValid());
     QCOMPARE(dec.decode(outData), data);
@@ -104,7 +104,7 @@ void MainTextJobTest::testNoCharset()
     ComposerJob composerJob;
     composerJob.globalPart()->setGuiEnabled(false);
     auto textPart = std::make_unique<TextPart>();
-    QString data = u"do you still play the accordion?"_s;
+    const QString data = u"do you still play the accordion?"_s;
     textPart->setWrappedPlainText(data);
     auto mjob = new MainTextJob(textPart.get(), &composerJob);
     QSKIP("This tests has been failing for a long time, please someone fix it", SkipSingle);
@@ -118,7 +118,7 @@ void MainTextJobTest::testBadCharset()
     ComposerJob composerJob;
     composerJob.globalPart()->setGuiEnabled(false);
     auto textPart = std::make_unique<TextPart>();
-    QString data = u"el a plâns peste ţară cu lacrima limbii noastre"_s;
+    const QString data = u"el a plâns peste ţară cu lacrima limbii noastre"_s;
     textPart->setWrappedPlainText(data);
     auto mjob = new MainTextJob(textPart.get(), &composerJob);
     QSKIP("This tests has been failing for a long time, please someone fix it", SkipSingle);
@@ -132,7 +132,7 @@ void MainTextJobTest::testFallbackCharset()
     ComposerJob composerJob;
     composerJob.globalPart()->setGuiEnabled(false);
     auto textPart = std::make_unique<TextPart>();
-    QString data = u"and when he falleth..."_s;
+    const QString data = u"and when he falleth..."_s;
     textPart->setWrappedPlainText(data);
     auto mjob = new MainTextJob(textPart.get(), &composerJob);
     QVERIFY(mjob->exec());
@@ -147,7 +147,7 @@ void MainTextJobTest::testFallbackCharset()
 
 void MainTextJobTest::testHtml()
 {
-    QLatin1StringView originalHtml("<html><head></head><body>Test <em>with</em> formatting...<br>The end.</body></html>");
+    const QLatin1StringView originalHtml("<html><head></head><body>Test <em>with</em> formatting...<br>The end.</body></html>");
     MessageComposer::RichTextComposerNg editor;
     editor.createActions(new KActionCollection(this));
     editor.setTextOrHtml(originalHtml);
@@ -205,7 +205,7 @@ void MainTextJobTest::testHtmlWithImages()
     const QString image2Path = QCoreApplication::applicationDirPath() + QLatin1StringView("/image2.png");
     image2.save(image2Path);
 
-    QString data = u"dust in the wind"_s;
+    const QString data = u"dust in the wind"_s;
     editor.setTextOrHtml(data);
     editor.composerControler()->composerImages()->addImage(QUrl::fromLocalFile(image1Path));
     editor.composerControler()->composerImages()->addImage(QUrl::fromLocalFile(image1Path));
@@ -253,7 +253,7 @@ void MainTextJobTest::testHtmlWithImages()
             {
                 Content *html = alternative->contents().at(1);
                 QCOMPARE(html->contentType()->mimeType(), QByteArray("text/html"));
-                QString body = QString::fromLatin1(html->body());
+                const QString body = QString::fromLatin1(html->body());
                 const int idx1 = body.indexOf(u"cid:%1"_s.arg(cid1));
                 const int idx2 = body.indexOf(u"cid:%1"_s.arg(cid2));
                 // qDebug() << " cid1 " << cid1 << "cid2 " << cid2 << " body " << body;

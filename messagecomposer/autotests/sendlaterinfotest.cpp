@@ -21,7 +21,7 @@ SendLaterInfoTest::SendLaterInfoTest(QObject *parent)
 
 void SendLaterInfoTest::shouldHaveDefaultValue()
 {
-    MessageComposer::SendLaterInfo info;
+    const MessageComposer::SendLaterInfo info;
     QCOMPARE(info.itemId(), Akonadi::Item::Id(-1));
     QCOMPARE(info.isRecurrence(), false);
     QVERIFY(!info.dateTime().isValid());
@@ -76,7 +76,7 @@ void SendLaterInfoTest::shouldCopyInfo()
     const QDate date(2014, 1, 1);
     info.setDateTime(QDateTime(date.startOfDay()));
     info.setLastDateTimeSend(QDateTime(date.startOfDay()));
-    MessageComposer::SendLaterInfo copyInfo(info);
+    const MessageComposer::SendLaterInfo copyInfo(info);
     QCOMPARE(info, copyInfo);
 }
 

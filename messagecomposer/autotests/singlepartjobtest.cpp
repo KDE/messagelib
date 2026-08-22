@@ -32,7 +32,7 @@ void SinglepartJobTest::testContent()
 {
     ComposerJob composerJob;
     auto cjob = new SinglepartJob(&composerJob);
-    QByteArray data("birds came flying from the underground");
+    const QByteArray data("birds came flying from the underground");
     cjob->setData(data);
     QVERIFY(cjob->exec());
     const auto result = cjob->takeContent();
@@ -49,9 +49,9 @@ void SinglepartJobTest::testContentDisposition()
 {
     ComposerJob composerJob;
     auto cjob = new SinglepartJob(&composerJob);
-    QByteArray data("birds came flying from the underground");
+    const QByteArray data("birds came flying from the underground");
     cjob->setData(data);
-    QString filename = u"test_ăîşţâ.txt"_s;
+    const QString filename = u"test_ăîşţâ.txt"_s;
     cjob->contentDisposition()->setDisposition(Headers::CDattachment);
     cjob->contentDisposition()->setFilename(filename);
     QVERIFY(cjob->exec());
@@ -69,8 +69,8 @@ void SinglepartJobTest::testContentID()
 {
     ComposerJob composerJob;
     auto cjob = new SinglepartJob(&composerJob);
-    QByteArray data("birds came flying from the underground");
-    QByteArray id("play@cold");
+    const QByteArray data("birds came flying from the underground");
+    const QByteArray id("play@cold");
     cjob->setData(data);
     cjob->contentID()->setIdentifier(id);
     QVERIFY(cjob->exec());
@@ -87,10 +87,10 @@ void SinglepartJobTest::testContentType()
 {
     ComposerJob composerJob;
     auto cjob = new SinglepartJob(&composerJob);
-    QByteArray data("birds came flying from the underground");
+    const QByteArray data("birds came flying from the underground");
     cjob->setData(data);
-    QByteArray mimeType("text/plain");
-    QByteArray charset("utf-8");
+    const QByteArray mimeType("text/plain");
+    const QByteArray charset("utf-8");
     cjob->contentType()->setMimeType(mimeType);
     cjob->contentType()->setCharset(charset);
     QVERIFY(cjob->exec());
@@ -111,7 +111,7 @@ void SinglepartJobTest::testContentTransferEncoding()
     // 7bit if possible.
     {
         auto cjob = new SinglepartJob(&composerJob);
-        QByteArray data("and the sun will set for you...");
+        const QByteArray data("and the sun will set for you...");
         cjob->setData(data);
         QVERIFY(cjob->exec());
         const auto result = cjob->takeContent();
@@ -126,7 +126,7 @@ void SinglepartJobTest::testContentTransferEncoding()
     // quoted-printable if text doesn't fit in 7bit.
     {
         auto cjob = new SinglepartJob(&composerJob);
-        QByteArray data("some long text to make qupr more compact than base64 [ăîşţâ]"); // utf-8
+        const QByteArray data("some long text to make qupr more compact than base64 [ăîşţâ]"); // utf-8
         cjob->setData(data);
         QVERIFY(cjob->exec());
         const auto result = cjob->takeContent();
@@ -141,7 +141,7 @@ void SinglepartJobTest::testContentTransferEncoding()
     // base64 if it's shorter than quoted-printable
     {
         auto cjob = new SinglepartJob(&composerJob);
-        QByteArray data("[ăîşţâ]"); // utf-8
+        const QByteArray data("[ăîşţâ]"); // utf-8
         cjob->setData(data);
         QVERIFY(cjob->exec());
         const auto result = cjob->takeContent();

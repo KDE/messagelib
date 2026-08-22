@@ -204,7 +204,7 @@ void AutocryptHeadersJobTest::testSetGnupgHome()
     std::vector<GpgME::Key> keys;
     exportJob->exec(QStringList({u"bob@autocrypt.example"_s, QStringLiteral("carol@autocrypt.example")}), false, keys);
 
-    QTemporaryDir dir;
+    const QTemporaryDir dir;
     { // test with an empty gnupg Home
         auto tempContent = std::make_unique<KMime::Content>();
         tempContent->setBody(

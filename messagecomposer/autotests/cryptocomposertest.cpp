@@ -69,7 +69,7 @@ void CryptoComposerTest::testOpenPGPMime_data()
     QTest::addColumn<bool>("encrypt");
     QTest::addColumn<Headers::contentEncoding>("cte");
 
-    QString data(u"All happy families are alike; each unhappy family is unhappy in its own way."_s);
+    const QString data(u"All happy families are alike; each unhappy family is unhappy in its own way."_s);
     QTest::newRow("SignOpenPGPMime") << data << true << false << Headers::CE7Bit;
     QTest::newRow("EncryptOpenPGPMime") << data << false << true << Headers::CE7Bit;
     QTest::newRow("SignEncryptOpenPGPMime") << data << true << true << Headers::CE7Bit;
@@ -93,7 +93,7 @@ void CryptoComposerTest::testOpenPGPMime()
     VERIFYEXEC(composerJob);
     QCOMPARE(composerJob->resultMessages().size(), 1);
 
-    std::shared_ptr<KMime::Message> message = composerJob->resultMessages().first();
+    const std::shared_ptr<KMime::Message> message = composerJob->resultMessages().first();
     delete composerJob;
     composerJob = nullptr;
 
@@ -118,11 +118,11 @@ void CryptoComposerTest::testEncryptSameAttachments()
 {
     QFETCH(int, format);
     auto composerJob = new ComposerJob;
-    QString data(u"All happy families are alike; each unhappy family is unhappy in its own way."_s);
+    const QString data(u"All happy families are alike; each unhappy family is unhappy in its own way."_s);
     fillComposerData(composerJob, data);
     fillComposerCryptoData(composerJob);
 
-    AttachmentPart::Ptr attachment = AttachmentPart::Ptr(new AttachmentPart);
+    const AttachmentPart::Ptr attachment = AttachmentPart::Ptr(new AttachmentPart);
     attachment->setData("abc");
     attachment->setMimeType("x-some/x-type");
     attachment->setFileName(QString::fromLocal8Bit("anattachment.txt"));
@@ -136,7 +136,7 @@ void CryptoComposerTest::testEncryptSameAttachments()
     VERIFYEXEC(composerJob);
     QCOMPARE(composerJob->resultMessages().size(), 1);
 
-    std::shared_ptr<KMime::Message> message = composerJob->resultMessages().constFirst();
+    const std::shared_ptr<KMime::Message> message = composerJob->resultMessages().constFirst();
     delete composerJob;
     composerJob = nullptr;
 
@@ -152,7 +152,7 @@ void CryptoComposerTest::testEncryptSameAttachments()
     MimeTreeParser::ObjectTreeParser otp(&testSource, nh.get());
 
     otp.parseObjectTree(message.get());
-    std::shared_ptr<KMime::Message> unencrypted = nh->unencryptedMessage(message);
+    const std::shared_ptr<KMime::Message> unencrypted = nh->unencryptedMessage(message);
 
     KMime::Content *testAttachment = Util::findTypeInMessage(unencrypted.get(), "x-some", "x-type");
 
@@ -171,11 +171,11 @@ void CryptoComposerTest::testEditEncryptAttachments()
 {
     QFETCH(int, format);
     auto composerJob = new ComposerJob;
-    QString data(u"All happy families are alike; each unhappy family is unhappy in its own way."_s);
+    const QString data(u"All happy families are alike; each unhappy family is unhappy in its own way."_s);
     fillComposerData(composerJob, data);
     fillComposerCryptoData(composerJob);
 
-    AttachmentPart::Ptr attachment = AttachmentPart::Ptr(new AttachmentPart);
+    const AttachmentPart::Ptr attachment = AttachmentPart::Ptr(new AttachmentPart);
     const QString fileName = u"anattachment.txt"_s;
     const QByteArray fileData = "abc";
     attachment->setData(fileData);
@@ -191,7 +191,7 @@ void CryptoComposerTest::testEditEncryptAttachments()
     VERIFYEXEC(composerJob);
     QCOMPARE(composerJob->resultMessages().size(), 1);
 
-    std::shared_ptr<KMime::Message> message = composerJob->resultMessages().first();
+    const std::shared_ptr<KMime::Message> message = composerJob->resultMessages().first();
     delete composerJob;
     composerJob = nullptr;
 
@@ -207,11 +207,11 @@ void CryptoComposerTest::testEditEncryptAttachments()
     // Let's load the email to the viewer
     view.setMessage(message, true);
 
-    QModelIndex index = model.index(0, 0);
+    const QModelIndex index = model.index(0, 0);
     QCOMPARE(editor.toPlainText(), data);
     QCOMPARE(model.rowCount(), 1);
     QCOMPARE(model.data(index, AttachmentModel::NameRole).toString(), fileName);
-    AttachmentPart::Ptr part = model.attachments()[0];
+    const AttachmentPart::Ptr part = model.attachments()[0];
     QCOMPARE(part->data(), fileData);
     QCOMPARE(part->fileName(), fileName);
 }
@@ -227,7 +227,7 @@ void CryptoComposerTest::testEditEncryptAndLateAttachments()
 {
     QFETCH(int, format);
     auto composerJob = new ComposerJob;
-    QString data(u"All happy families are alike; each unhappy family is unhappy in its own way."_s);
+    const QString data(u"All happy families are alike; each unhappy family is unhappy in its own way."_s);
     fillComposerData(composerJob, data);
     fillComposerCryptoData(composerJob);
 
@@ -257,7 +257,7 @@ void CryptoComposerTest::testEditEncryptAndLateAttachments()
     VERIFYEXEC(composerJob);
     QCOMPARE(composerJob->resultMessages().size(), 1);
 
-    std::shared_ptr<KMime::Message> message = composerJob->resultMessages().constFirst();
+    const std::shared_ptr<KMime::Message> message = composerJob->resultMessages().constFirst();
     delete composerJob;
     composerJob = nullptr;
 
@@ -296,11 +296,11 @@ void CryptoComposerTest::testSignEncryptLateAttachments()
 {
     QFETCH(int, format);
     auto composerJob = new ComposerJob;
-    QString data(u"All happy families are alike; each unhappy family is unhappy in its own way."_s);
+    const QString data(u"All happy families are alike; each unhappy family is unhappy in its own way."_s);
     fillComposerData(composerJob, data);
     fillComposerCryptoData(composerJob);
 
-    AttachmentPart::Ptr attachment = AttachmentPart::Ptr(new AttachmentPart);
+    const AttachmentPart::Ptr attachment = AttachmentPart::Ptr(new AttachmentPart);
     attachment->setData("abc");
     attachment->setMimeType("x-some/x-type");
     attachment->setFileName(QString::fromLocal8Bit("anattachment.txt"));
@@ -314,7 +314,7 @@ void CryptoComposerTest::testSignEncryptLateAttachments()
     VERIFYEXEC(composerJob);
     QCOMPARE(composerJob->resultMessages().size(), 1);
 
-    std::shared_ptr<KMime::Message> message = composerJob->resultMessages().constFirst();
+    const std::shared_ptr<KMime::Message> message = composerJob->resultMessages().constFirst();
     delete composerJob;
     composerJob = nullptr;
 
@@ -338,7 +338,7 @@ void CryptoComposerTest::testProtectedHeaders_data()
     QTest::addColumn<bool>("encrypt");
     QTest::addColumn<Headers::contentEncoding>("cte");
 
-    QString data(u"All happy families are alike; each unhappy family is unhappy in its own way."_s);
+    const QString data(u"All happy families are alike; each unhappy family is unhappy in its own way."_s);
     QTest::newRow("SignOpenPGPMime") << data << true << false << Headers::CE7Bit;
     QTest::newRow("EncryptOpenPGPMime") << data << false << true << Headers::CE7Bit;
     QTest::newRow("SignEncryptOpenPGPMime") << data << true << true << Headers::CE7Bit;
@@ -362,7 +362,7 @@ void CryptoComposerTest::testProtectedHeaders()
     VERIFYEXEC(composerJob);
     QCOMPARE(composerJob->resultMessages().size(), 1);
 
-    std::shared_ptr<KMime::Message> message = composerJob->resultMessages().first();
+    const std::shared_ptr<KMime::Message> message = composerJob->resultMessages().first();
 
     // parse the result and make sure it is valid in various ways
     MimeTreeParser::SimpleObjectTreeSource testSource;
@@ -415,7 +415,7 @@ void CryptoComposerTest::testBCCEncrypt()
 {
     QFETCH(int, format);
     auto composerJob = new ComposerJob;
-    QString data(u"All happy families are alike; each unhappy family is unhappy in its own way."_s);
+    const QString data(u"All happy families are alike; each unhappy family is unhappy in its own way."_s);
     fillComposerData(composerJob, data);
     composerJob->infoPart()->setBcc(QStringList(u"bcc@bcc.org"_s));
 
@@ -444,8 +444,8 @@ void CryptoComposerTest::testBCCEncrypt()
     VERIFYEXEC(composerJob);
     QCOMPARE(composerJob->resultMessages().size(), 2);
 
-    std::shared_ptr<KMime::Message> primMessage = composerJob->resultMessages().constFirst();
-    std::shared_ptr<KMime::Message> secMessage = composerJob->resultMessages()[1];
+    const std::shared_ptr<KMime::Message> primMessage = composerJob->resultMessages().constFirst();
+    const std::shared_ptr<KMime::Message> secMessage = composerJob->resultMessages()[1];
     delete composerJob;
     composerJob = nullptr;
 
@@ -468,7 +468,7 @@ void CryptoComposerTest::testOpenPGPInline_data()
     QTest::addColumn<bool>("encrypt");
     QTest::addColumn<Headers::contentEncoding>("cte");
 
-    QString data(u"All happy families are alike; each unhappy family is unhappy in its own way."_s);
+    const QString data(u"All happy families are alike; each unhappy family is unhappy in its own way."_s);
     QTest::newRow("SignOpenPGPInline") << data << true << false << Headers::CE7Bit;
     QTest::newRow("EncryptOpenPGPInline") << data << false << true << Headers::CE7Bit;
     QTest::newRow("SignEncryptOpenPGPInline") << data << true << true << Headers::CE7Bit;
@@ -492,7 +492,7 @@ void CryptoComposerTest::testOpenPGPInline()
     VERIFYEXEC(composerJob);
     QCOMPARE(composerJob->resultMessages().size(), 1);
 
-    std::shared_ptr<KMime::Message> message = composerJob->resultMessages().constFirst();
+    const std::shared_ptr<KMime::Message> message = composerJob->resultMessages().constFirst();
     delete composerJob;
     composerJob = nullptr;
 
@@ -515,7 +515,7 @@ void CryptoComposerTest::testSMIME_data()
     QTest::addColumn<bool>("encrypt");
     QTest::addColumn<Headers::contentEncoding>("cte");
 
-    QString data(u"All happy families are alike; each unhappy family is unhappy in its own way."_s);
+    const QString data(u"All happy families are alike; each unhappy family is unhappy in its own way."_s);
     QTest::newRow("SignSMIME") << data << true << false << Headers::CE7Bit;
     QTest::newRow("EncryptSMIME") << data << false << true << Headers::CE7Bit;
     QTest::newRow("SignEncryptSMIME") << data << true << true << Headers::CE7Bit;
@@ -536,7 +536,7 @@ void CryptoComposerTest::testSMIMEOpaque_data()
     QTest::addColumn<bool>("encrypt");
     QTest::addColumn<Headers::contentEncoding>("cte");
 
-    QString data(u"All happy families are alike; each unhappy family is unhappy in its own way."_s);
+    const QString data(u"All happy families are alike; each unhappy family is unhappy in its own way."_s);
     QTest::newRow("SignSMIMEOpaque") << data << true << false << Headers::CE7Bit;
     QTest::newRow("EncryptSMIMEOpaque") << data << false << true << Headers::CE7Bit;
     QTest::newRow("SignEncryptSMIMEOpaque") << data << true << true << Headers::CE7Bit;
@@ -587,7 +587,7 @@ void CryptoComposerTest::testCTEbase64_data()
     QTest::addColumn<bool>("encrypt");
     QTest::addColumn<Headers::contentEncoding>("cte");
 
-    QString data(
+    const QString data(
         QStringLiteral("[ääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääää"
                        "äääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääää"
                        "äääääääääääääääääääääääääääääääääääääääääääääää]"));
@@ -609,7 +609,7 @@ void CryptoComposerTest::testSetGnupgHome_data()
     QTest::addColumn<QString>("data");
     QTest::addColumn<bool>("sign");
 
-    QString data(u"All happy families are alike; each unhappy family is unhappy in its own way."_s);
+    const QString data(u"All happy families are alike; each unhappy family is unhappy in its own way."_s);
 
     QTest::newRow("sign") << data << true;
     QTest::newRow("notsign") << data << false;
@@ -620,10 +620,10 @@ void CryptoComposerTest::testSetGnupgHome()
     QFETCH(QString, data);
     QFETCH(bool, sign);
 
-    bool encrypt(true);
+    const bool encrypt(true);
 
     std::shared_ptr<KMime::Message> message;
-    QTemporaryDir dir;
+    const QTemporaryDir dir;
     {
         auto composerJob = new ComposerJob;
 
@@ -670,7 +670,7 @@ void CryptoComposerTest::testAutocryptHeaders_data()
     QTest::addColumn<bool>("encrypt");
     QTest::addColumn<bool>("sign");
 
-    QString data(u"All happy families are alike; each unhappy family is unhappy in its own way."_s);
+    const QString data(u"All happy families are alike; each unhappy family is unhappy in its own way."_s);
 
     QTest::newRow("encrypt+sign") << data << true << true;
     QTest::newRow("encrypt") << data << true << false;
@@ -687,7 +687,7 @@ void CryptoComposerTest::testAutocryptHeaders()
     std::vector<GpgME::Key> keys = Test::getKeys();
 
     std::shared_ptr<KMime::Message> message;
-    QTemporaryDir dir;
+    const QTemporaryDir dir;
     {
         auto composerJob = new ComposerJob;
 
@@ -745,7 +745,7 @@ void CryptoComposerTest::testAutocryptGossip_data()
     QTest::addColumn<bool>("sign");
     QTest::addColumn<QStringList>("recipients");
 
-    QString data(u"All happy families are alike; each unhappy family is unhappy in its own way."_s);
+    const QString data(u"All happy families are alike; each unhappy family is unhappy in its own way."_s);
 
     QStringList recipients({u"you@you.you"_s});
 
@@ -780,7 +780,7 @@ void CryptoComposerTest::testAutocryptGossip()
         if (recipients.size() > 1) {
             std::unique_ptr<QGpgME::KeyListJob> job(QGpgME::openpgp()->keyListJob(false));
             std::vector<GpgME::Key> eKeys;
-            GpgME::KeyListResult res = job->exec(recipients, false, eKeys);
+            const GpgME::KeyListResult res = job->exec(recipients, false, eKeys);
 
             QVERIFY(!res.error());
             QCOMPARE(eKeys.size(), 1);
@@ -844,7 +844,7 @@ void CryptoComposerTest::fillComposerData(ComposerJob *composerJob, const QStrin
 
 void CryptoComposerTest::fillComposerCryptoData(ComposerJob *composerJob)
 {
-    std::vector<GpgME::Key> keys = MessageComposer::Test::getKeys();
+    const std::vector<GpgME::Key> keys = MessageComposer::Test::getKeys();
 
     // qDebug() << "got num of keys:" << keys.size();
 
@@ -868,7 +868,7 @@ void CryptoComposerTest::runSMIMETest(bool sign, bool enc, bool opaque)
     fillComposerData(composerJob, data);
     composerJob->infoPart()->setFrom(u"test@example.com"_s);
 
-    std::vector<GpgME::Key> keys = MessageComposer::Test::getKeys(true);
+    const std::vector<GpgME::Key> keys = MessageComposer::Test::getKeys(true);
     QStringList recipients;
     recipients << QString::fromLocal8Bit("you@you.you");
     QList<QPair<QStringList, std::vector<GpgME::Key>>> encKeys;
@@ -889,7 +889,7 @@ void CryptoComposerTest::runSMIMETest(bool sign, bool enc, bool opaque)
     QVERIFY(result);
     if (result) {
         QCOMPARE(composerJob->resultMessages().size(), 1);
-        std::shared_ptr<KMime::Message> message = composerJob->resultMessages().constFirst();
+        const std::shared_ptr<KMime::Message> message = composerJob->resultMessages().constFirst();
         delete composerJob;
         composerJob = nullptr;
 

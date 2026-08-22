@@ -58,7 +58,7 @@ void FollowupReminderSelectDateDialogTest::shouldHaveDefaultValue()
 
     auto combobox = dlg.findChild<Akonadi::CollectionComboBox *>(u"collectioncombobox"_s);
     QVERIFY(combobox);
-    QDate currentDate = QDate::currentDate();
+    const QDate currentDate = QDate::currentDate();
     QCOMPARE(datecombobox->date(), currentDate.addDays(1));
 
     auto okButton = dlg.findChild<QPushButton *>(u"ok_button"_s);
@@ -97,7 +97,7 @@ void FollowupReminderSelectDateDialogTest::shouldDisableOkButtonIfDateIsNotValid
 
 void FollowupReminderSelectDateDialogTest::shouldDisableOkButtonIfModelIsEmpty()
 {
-    std::unique_ptr<QStandardItemModel> model(new QStandardItemModel(nullptr));
+    const std::unique_ptr<QStandardItemModel> model(new QStandardItemModel(nullptr));
     MessageComposer::FollowUpReminderSelectDateDialog dlg(nullptr, model.get());
     auto datecombobox = dlg.findChild<KDateComboBox *>(u"datecombobox"_s);
     QVERIFY(datecombobox);

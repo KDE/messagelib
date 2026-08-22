@@ -51,7 +51,7 @@ std::vector<GpgME::Key, std::allocator<GpgME::Key>> Test::getKeys(bool smime)
     Q_ASSERT(job);
 
     std::vector<GpgME::Key> keys;
-    GpgME::KeyListResult res = job->exec(QStringList(), true, keys);
+    const GpgME::KeyListResult res = job->exec(QStringList(), true, keys);
 
     if (!smime) {
         Q_ASSERT(keys.size() == 3);
@@ -94,7 +94,7 @@ std::shared_ptr<KMime::Message> Test::loadMessageFromDataDir(const QString &file
 
 void Test::compareFile(KMime::Content *content, const QString &referenceFile)
 {
-    QFileInfo fi(referenceFile);
+    const QFileInfo fi(referenceFile);
     const QString actualFile = fi.fileName();
     QFile f(actualFile);
     QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
@@ -137,7 +137,7 @@ void Test::populateKeyring(const QString &gnupgHome, const GpgME::Key &key)
             QVERIFY(!result);
             populateKeyring(gnupgHome, keyData);
         });
-    QStringList patterns = {QString::fromUtf8(key.primaryFingerprint())};
+    const QStringList patterns = {QString::fromUtf8(key.primaryFingerprint())};
     exportJob->start(patterns);
     loop.exec();
 }

@@ -21,7 +21,7 @@ AttachmentVcardFromAddressBookJobTest::~AttachmentVcardFromAddressBookJobTest() 
 
 void AttachmentVcardFromAddressBookJobTest::testAttachmentVCardWithInvalidItem()
 {
-    Akonadi::Item item;
+    const Akonadi::Item item;
     auto job = new MessageComposer::AttachmentVcardFromAddressBookJob(item);
     QVERIFY(!job->exec());
     delete job;
@@ -39,7 +39,7 @@ void AttachmentVcardFromAddressBookJobTest::testAttachmentVCardWithValidItem()
     auto job = new MessageComposer::AttachmentVcardFromAddressBookJob(item);
     QVERIFY(job->exec());
 
-    MessageCore::AttachmentPart::Ptr part = job->attachmentPart();
+    const MessageCore::AttachmentPart::Ptr part = job->attachmentPart();
     delete job;
     job = nullptr;
 
@@ -54,7 +54,7 @@ void AttachmentVcardFromAddressBookJobTest::testAttachmentVCardWithValidItem()
 
 void AttachmentVcardFromAddressBookJobTest::testAttachmentVCardWithInvalidVCard()
 {
-    Akonadi::Item item(42);
+    const Akonadi::Item item(42);
     auto job = new MessageComposer::AttachmentVcardFromAddressBookJob(item);
     QVERIFY(!job->exec());
     delete job;
@@ -65,7 +65,7 @@ void AttachmentVcardFromAddressBookJobTest::testAttachmentVCardWithEmptyVCard()
 {
     Akonadi::Item item(42);
     item.setMimeType(KContacts::Addressee::mimeType());
-    KContacts::Addressee address;
+    const KContacts::Addressee address;
     item.setPayload<KContacts::Addressee>(address);
     auto job = new MessageComposer::AttachmentVcardFromAddressBookJob(item);
     QVERIFY(!job->exec());

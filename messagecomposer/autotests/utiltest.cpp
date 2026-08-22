@@ -30,7 +30,7 @@ void UtilTest::shouldTestHasMissingAttachment_data()
     QTest::addColumn<QString>("body");
     QTest::addColumn<bool>("hasMissingAttachment");
 
-    QStringList lstDefaultAttachement{u"attachment"_s, QStringLiteral("att2")};
+    const QStringList lstDefaultAttachement{u"attachment"_s, QStringLiteral("att2")};
     QTest::newRow("emptybody") << lstDefaultAttachement << u"foo"_s << QString() << false;
     QTest::newRow("emptybodyandsubject") << lstDefaultAttachement << QString() << QString() << false;
     QTest::newRow("subjectwithattachmentkeyword") << lstDefaultAttachement << u"attachment foo"_s << QString() << true;

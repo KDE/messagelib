@@ -159,7 +159,7 @@ void EncryptJobTest::testHeaders()
 
     VERIFYEXEC(eJob);
 
-    QByteArray mimeType("multipart/encrypted");
+    const QByteArray mimeType("multipart/encrypted");
 
     auto result = eJob->takeContent();
     result->assemble();
@@ -259,7 +259,7 @@ void EncryptJobTest::testSetGnupgHome()
 
     const QStringList recipients = {u"test@kolab.org"_s};
 
-    QTemporaryDir dir;
+    const QTemporaryDir dir;
     {
         auto tempContent = std::make_unique<KMime::Content>();
         tempContent->setBody("one flew over the cuckoo's nest");

@@ -158,7 +158,7 @@ void ComposerViewBaseTest::testGenerateCryptoMessagesAutocrypt_data()
     QTest::addColumn<bool>("encrypt");
     QTest::addColumn<Kleo::CryptoMessageFormat>("format");
 
-    QString data = u"Hello,\n\nThis is a test message\n\nGreez"_s;
+    const QString data = u"Hello,\n\nThis is a test message\n\nGreez"_s;
 
     QTest::newRow("Plain") << data << false << false << Kleo::AutoFormat;
     QTest::newRow("Sign") << data << true << false << Kleo::AutoFormat;
@@ -242,7 +242,7 @@ void ComposerViewBaseTest::testGenerateCryptoMessagesAutocrypt()
 
 void ComposerViewBaseTest::testGenerateCryptoMessagesAutocryptSMime()
 {
-    QString data = u"Hello,\n\nThis is a test message\n\nGreez"_s;
+    const QString data = u"Hello,\n\nThis is a test message\n\nGreez"_s;
 
     MessageComposer::RichTextComposerNg editor;
     MessageComposer::RecipientsEditor recipientsEditor;
@@ -289,7 +289,7 @@ void ComposerViewBaseTest::testAutocryptKey()
 
     qDebug() << autocryptDir.path();
 
-    QString data = u"Hello,\n\nThis is a test message\n\nGreez"_s;
+    const QString data = u"Hello,\n\nThis is a test message\n\nGreez"_s;
 
     MessageComposer::RichTextComposerNg editor;
     MessageComposer::RecipientsEditor recipientsEditor;

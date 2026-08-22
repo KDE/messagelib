@@ -19,7 +19,7 @@ PluginEditorCheckBeforeSendParamsTest::~PluginEditorCheckBeforeSendParamsTest() 
 
 void PluginEditorCheckBeforeSendParamsTest::shouldHaveDefaultValues()
 {
-    MessageComposer::PluginEditorCheckBeforeSendParams params;
+    const MessageComposer::PluginEditorCheckBeforeSendParams params;
     QVERIFY(params.subject().isEmpty());
     QVERIFY(params.plainText().isEmpty());
     QCOMPARE(params.identity(), static_cast<uint>(0));
@@ -38,12 +38,12 @@ void PluginEditorCheckBeforeSendParamsTest::shouldBeEqual()
     const QString subject(u"foo"_s);
     const QString plainText(u"bla"_s);
     const QString defaultDomain(u"bli"_s);
-    bool isHmlMail = true;
-    bool hasAttachment = true;
-    int transportId = 5;
-    QString to(u"to"_s);
-    QString cc(u"cc"_s);
-    QString bcc(u"bcc"_s);
+    const bool isHmlMail = true;
+    const bool hasAttachment = true;
+    const int transportId = 5;
+    const QString to(u"to"_s);
+    const QString cc(u"cc"_s);
+    const QString bcc(u"bcc"_s);
     params1.setSubject(subject);
     params1.setHtmlMail(isHmlMail);
     params1.setPlainText(plainText);
@@ -54,7 +54,7 @@ void PluginEditorCheckBeforeSendParamsTest::shouldBeEqual()
     params1.setCcAddresses(cc);
     params1.setToAddresses(to);
 
-    MessageComposer::PluginEditorCheckBeforeSendParams params2 = params1;
+    const MessageComposer::PluginEditorCheckBeforeSendParams params2 = params1;
     QCOMPARE(params2, params1);
     QCOMPARE(params2.isHtmlMail(), isHmlMail);
     QCOMPARE(params2.subject(), subject);
@@ -73,13 +73,13 @@ void PluginEditorCheckBeforeSendParamsTest::shouldAssignValue()
     const QString subject(u"foo"_s);
     const QString plainText(u"bla"_s);
     const QString defaultDomain(u"bli"_s);
-    bool isHmlMail = true;
-    bool hasAttachment = true;
-    uint identity = 5;
-    int transportId = 6;
-    QString to(u"to"_s);
-    QString cc(u"cc"_s);
-    QString bcc(u"bcc"_s);
+    const bool isHmlMail = true;
+    const bool hasAttachment = true;
+    const uint identity = 5;
+    const int transportId = 6;
+    const QString to(u"to"_s);
+    const QString cc(u"cc"_s);
+    const QString bcc(u"bcc"_s);
 
     params1.setSubject(subject);
     params1.setHtmlMail(isHmlMail);

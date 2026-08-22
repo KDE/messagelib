@@ -67,20 +67,20 @@ void SkeletonMessageJobTest::testAddresses_data()
     QTest::addColumn<QStringList>("bcc");
 
     {
-        QString from = u"one@example.com"_s;
+        const QString from = u"one@example.com"_s;
         QStringList to;
         to << u"two@example.com"_s;
         QStringList cc;
         cc << u"three@example.com"_s;
         QStringList bcc;
         bcc << u"four@example.com"_s;
-        QString replyto = u"five@example.com"_s;
+        const QString replyto = u"five@example.com"_s;
 
         QTest::newRow("simple single address") << from << QStringList{replyto} << to << cc << bcc;
     }
 
     {
-        QString from = u"one@example.com"_s;
+        const QString from = u"one@example.com"_s;
         QStringList to;
         to << u"two@example.com"_s;
         to << u"two.two@example.com"_s;
@@ -90,13 +90,13 @@ void SkeletonMessageJobTest::testAddresses_data()
         QStringList bcc;
         bcc << u"four@example.com"_s;
         bcc << u"four.four@example.com"_s;
-        QString replyto = u"five@example.com"_s;
+        const QString replyto = u"five@example.com"_s;
 
         QTest::newRow("simple multi address") << from << QStringList{replyto} << to << cc << bcc;
     }
 
     {
-        QString from = u"Me <one@example.com>"_s;
+        const QString from = u"Me <one@example.com>"_s;
         QStringList to;
         to << u"You <two@example.com>"_s;
         to << u"two.two@example.com"_s;
@@ -106,13 +106,13 @@ void SkeletonMessageJobTest::testAddresses_data()
         QStringList bcc;
         bcc << u"And you too <four@example.com>"_s;
         bcc << u"four.four@example.com"_s;
-        QString replyto = u"You over there <five@example.com>"_s;
+        const QString replyto = u"You over there <five@example.com>"_s;
 
         QTest::newRow("named multi address") << from << QStringList{replyto} << to << cc << bcc;
     }
 
     {
-        QString from = u"Şîşkin <one@example.com>"_s;
+        const QString from = u"Şîşkin <one@example.com>"_s;
         QStringList to;
         to << u"Ivan Turbincă <two@example.com>"_s;
         to << u"two.two@example.com"_s;
@@ -122,7 +122,7 @@ void SkeletonMessageJobTest::testAddresses_data()
         QStringList bcc;
         bcc << u"Zburătorul <four@example.com>"_s;
         bcc << u"four.four@example.com"_s;
-        QString replyto = u"Şîşzbură <five@example.com>"_s;
+        const QString replyto = u"Şîşzbură <five@example.com>"_s;
 
         QTest::newRow("non-ascii named multi address") << from << QStringList{replyto} << to << cc << bcc;
     }

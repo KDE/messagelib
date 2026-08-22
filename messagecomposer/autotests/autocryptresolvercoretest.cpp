@@ -161,7 +161,7 @@ void AutocryptKeyResolverCoreTest::testAutocryptKeyResolverPreferNormal()
 void AutocryptKeyResolverCoreTest::testNormalKeyResolver()
 {
     AutocryptKeyResolverCore resolver(/*encrypt=*/true, /*sign=*/false);
-    QString recipient(u"test@kolab.org"_s);
+    const QString recipient(u"test@kolab.org"_s);
     resolver.setRecipients({recipient});
 
     const auto result = resolver.resolve();

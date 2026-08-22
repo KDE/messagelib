@@ -117,7 +117,7 @@ void SignJobTest::testRecommentationRFC3156()
     const std::vector<GpgME::Key> &keys = Test::getKeys();
 
     const QString data = u"=2D Magic foo\nFrom test\n\n-- quaak\nOhno"_s;
-    KMime::Headers::contentEncoding cte = KMime::Headers::CEquPr;
+    const KMime::Headers::contentEncoding cte = KMime::Headers::CEquPr;
 
     ComposerJob composerJob;
     auto sJob = new SignJob(&composerJob);

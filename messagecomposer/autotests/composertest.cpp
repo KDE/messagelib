@@ -37,14 +37,14 @@ void ComposerTest::testAttachments()
 {
     ComposerJob composerJob;
     fillComposerData(&composerJob);
-    AttachmentPart::Ptr attachment = AttachmentPart::Ptr(new AttachmentPart);
+    const AttachmentPart::Ptr attachment = AttachmentPart::Ptr(new AttachmentPart);
     attachment->setData("abc");
     attachment->setMimeType("x-some/x-type");
     composerJob.addAttachmentPart(attachment);
 
     QVERIFY(composerJob.exec());
     QCOMPARE(composerJob.resultMessages().size(), 1);
-    std::shared_ptr<KMime::Message> message = composerJob.resultMessages().constFirst();
+    const std::shared_ptr<KMime::Message> message = composerJob.resultMessages().constFirst();
 
     // multipart/mixed
     {
@@ -70,7 +70,7 @@ void ComposerTest::testAutoSave()
 {
     ComposerJob composerJob;
     fillComposerData(&composerJob);
-    AttachmentPart::Ptr attachment = AttachmentPart::Ptr(new AttachmentPart);
+    const AttachmentPart::Ptr attachment = AttachmentPart::Ptr(new AttachmentPart);
     attachment->setData("abc");
     attachment->setMimeType("x-some/x-type");
     composerJob.addAttachmentPart(attachment);

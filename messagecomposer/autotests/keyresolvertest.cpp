@@ -54,11 +54,11 @@ void KeyResolverTest::testAutocrypt()
     using days = Kleo::chrono::days;
 
     const std::vector<GpgME::Key> &keys = Test::getKeys();
-    std::shared_ptr<ExpiryChecker> expiryChecker{new ExpiryChecker{ExpiryCheckerSettings{days{0}, days{0}, days{0}, days{0}}}};
+    const std::shared_ptr<ExpiryChecker> expiryChecker{new ExpiryChecker{ExpiryCheckerSettings{days{0}, days{0}, days{0}, days{0}}}};
     KeyResolver keyResolver(true, false, true, Kleo::OpenPGPMIMEFormat, expiryChecker);
     keyResolver.setAkonadiLookupEnabled(false);
 
-    QStringList recipients = {u"recipient@autocrypt.example"_s, QStringLiteral("recipient2@autocrypt.example")};
+    const QStringList recipients = {u"recipient@autocrypt.example"_s, QStringLiteral("recipient2@autocrypt.example")};
 
     QFile file1(QLatin1StringView(MAIL_DATA_DIR) + u"/autocrypt/recipient%40autocrypt.example.json"_s);
     QVERIFY(file1.copy(baseDir.filePath(u"recipient%40autocrypt.example.json"_s)));
