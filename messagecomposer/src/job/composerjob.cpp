@@ -117,7 +117,7 @@ void ComposerJobPrivate::composeStep1()
 
         // SkeletonMessageJob is a special job creating a Message instead of a Content.
         Q_ASSERT(skeletonMessage == nullptr);
-        skeletonMessage = std::move(skeletonJob->takeMessage());
+        skeletonMessage = skeletonJob->takeMessage();
         Q_ASSERT(skeletonMessage);
         skeletonMessage->assemble();
 
@@ -349,7 +349,7 @@ void ComposerJobPrivate::contentJobFinished(KJob *job)
         keys = eJob->encryptionKeys();
         recipients = eJob->recipients();
 
-        resultContent = std::move(contentJob->takeContent()); // content() comes from superclass
+        resultContent = contentJob->takeContent(); // content() comes from superclass
         auto headers = std::make_unique<KMime::Message>();
         headers->from(KMime::CreatePolicy::Create)->from7BitString(skeletonMessage->from()->as7BitString());
         headers->to(KMime::CreatePolicy::Create)->from7BitString(skeletonMessage->to()->as7BitString());
@@ -374,7 +374,7 @@ void ComposerJobPrivate::contentJobFinished(KJob *job)
             recipients = firstElement.first;
         }
 
-        resultContent = std::move(contentJob->takeContent());
+        resultContent = contentJob->takeContent();
     }
 
     if (lateAttachmentParts.isEmpty()) {

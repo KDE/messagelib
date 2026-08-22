@@ -67,12 +67,12 @@ Kleo::KeyResolverCore::Result AutocryptKeyResolverCore::resolve()
             const auto key = rec->gpgKey();
             if (!key.isBad() && key.canEncrypt()) {
                 d->autocrypt_keys.push_back(recipient);
-                autocryptKey = std::move(key);
+                autocryptKey = key;
             } else {
                 const auto gossipKey = rec->gossipKey();
                 if (!gossipKey.isBad() && gossipKey.canEncrypt()) {
                     d->gossip_keys.push_back(recipient);
-                    autocryptKey = std::move(gossipKey);
+                    autocryptKey = gossipKey;
                 }
             }
         }
@@ -87,7 +87,7 @@ Kleo::KeyResolverCore::Result AutocryptKeyResolverCore::resolve()
         if (solution == &result.alternative) {
             const auto _tmp = std::move(result.solution);
             result.solution = std::move(result.alternative);
-            result.alternative = std::move(_tmp);
+            result.alternative = _tmp;
         }
     }
 
