@@ -105,7 +105,7 @@ void RecipientsEditorTest::test_splitPastedListToLines()
 
     clipboard->setText(u"test@example.com, \"Vrátil, Daniel\" <dvratil@kde.org>"_s);
 
-    auto lineEdit = editor.lines().at(0)->findChild<MessageComposer::RecipientLineEdit *>();
+    const auto lineEdit = editor.lines().at(0)->findChild<MessageComposer::RecipientLineEdit *>();
     // paste() is protected in KPIM::AddresseeLineEdit
     QMetaObject::invokeMethod(lineEdit, "paste");
 

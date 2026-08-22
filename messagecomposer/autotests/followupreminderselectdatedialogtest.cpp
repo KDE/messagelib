@@ -53,15 +53,15 @@ void FollowupReminderSelectDateDialogTest::shouldHaveDefaultValue()
 {
     auto model = defaultItemModel();
     MessageComposer::FollowUpReminderSelectDateDialog dlg(nullptr, model);
-    auto datecombobox = dlg.findChild<KDateComboBox *>(u"datecombobox"_s);
+    const auto datecombobox = dlg.findChild<KDateComboBox *>(u"datecombobox"_s);
     QVERIFY(datecombobox);
 
-    auto combobox = dlg.findChild<Akonadi::CollectionComboBox *>(u"collectioncombobox"_s);
+    const auto combobox = dlg.findChild<Akonadi::CollectionComboBox *>(u"collectioncombobox"_s);
     QVERIFY(combobox);
     const QDate currentDate = QDate::currentDate();
     QCOMPARE(datecombobox->date(), currentDate.addDays(1));
 
-    auto okButton = dlg.findChild<QPushButton *>(u"ok_button"_s);
+    const auto okButton = dlg.findChild<QPushButton *>(u"ok_button"_s);
     QVERIFY(okButton);
     QVERIFY(okButton->isEnabled());
     delete model;
@@ -71,9 +71,9 @@ void FollowupReminderSelectDateDialogTest::shouldDisableOkButtonIfDateIsEmpty()
 {
     auto model = defaultItemModel();
     MessageComposer::FollowUpReminderSelectDateDialog dlg(nullptr, model);
-    auto datecombobox = dlg.findChild<KDateComboBox *>(u"datecombobox"_s);
+    const auto datecombobox = dlg.findChild<KDateComboBox *>(u"datecombobox"_s);
     QVERIFY(datecombobox);
-    auto okButton = dlg.findChild<QPushButton *>(u"ok_button"_s);
+    const auto okButton = dlg.findChild<QPushButton *>(u"ok_button"_s);
     QVERIFY(okButton->isEnabled());
     datecombobox->lineEdit()->clear();
     QVERIFY(!okButton->isEnabled());
@@ -84,10 +84,10 @@ void FollowupReminderSelectDateDialogTest::shouldDisableOkButtonIfDateIsNotValid
 {
     auto model = defaultItemModel();
     MessageComposer::FollowUpReminderSelectDateDialog dlg(nullptr, model);
-    auto datecombobox = dlg.findChild<KDateComboBox *>(u"datecombobox"_s);
+    const auto datecombobox = dlg.findChild<KDateComboBox *>(u"datecombobox"_s);
     QVERIFY(datecombobox);
     datecombobox->lineEdit()->setText(u" "_s);
-    auto okButton = dlg.findChild<QPushButton *>(u"ok_button"_s);
+    const auto okButton = dlg.findChild<QPushButton *>(u"ok_button"_s);
     QVERIFY(!okButton->isEnabled());
     const QDate date = QDate::currentDate();
     datecombobox->setDate(date);
@@ -99,9 +99,9 @@ void FollowupReminderSelectDateDialogTest::shouldDisableOkButtonIfModelIsEmpty()
 {
     const std::unique_ptr<QStandardItemModel> model(new QStandardItemModel(nullptr));
     MessageComposer::FollowUpReminderSelectDateDialog dlg(nullptr, model.get());
-    auto datecombobox = dlg.findChild<KDateComboBox *>(u"datecombobox"_s);
+    const auto datecombobox = dlg.findChild<KDateComboBox *>(u"datecombobox"_s);
     QVERIFY(datecombobox);
-    auto okButton = dlg.findChild<QPushButton *>(u"ok_button"_s);
+    const auto okButton = dlg.findChild<QPushButton *>(u"ok_button"_s);
     QVERIFY(!okButton->isEnabled());
 
     datecombobox->lineEdit()->setText(u" "_s);
