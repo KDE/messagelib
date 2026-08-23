@@ -4,21 +4,22 @@
 # SPDX-FileCopyrightText: 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2020, 2023, 2024 Vít Pelčák <vit@pelcak.org>
 # Tomáš Chvátal <tomas.chvatal@gmail.com>, 2012.
 # SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Vit Pelcak <vit@pelcak.org>
+# SPDX-FileCopyrightText: 2026 Libor Filípek <libor.filipek@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-22 00:47+0000\n"
-"PO-Revision-Date: 2024-08-20 08:41+0200\n"
-"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
+"PO-Revision-Date: 2026-08-22 23:16+0200\n"
+"Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 26.08.0\n"
 
 #: core/aggregation.cpp:175
 #, kde-format
@@ -208,7 +209,7 @@ msgstr "Ignorováno"
 #, kde-format
 msgctxt "Status of an item"
 msgid "Queued"
-msgstr ""
+msgstr "Ve frontě"
 
 #: core/manager.cpp:34 core/model.cpp:336
 #, kde-format
@@ -228,6 +229,9 @@ msgid ""
 "example, in \"Today\" you will find all the messages arrived today and all "
 "the threads that have been active today."
 msgstr ""
+"Tento pohled využívá inteligentní skupiny časových období. Zprávy jsou "
+"seskupeny do vláken. Například v sekci \"Dnes\" najdete všechny zprávy, "
+"které dorazily dnes, a všechna vlákna, která byla dnes aktivní."
 
 #: core/manager.cpp:216
 #, kde-format
@@ -240,6 +244,9 @@ msgid ""
 "This view uses smart date range groups. Messages are not threaded. So for "
 "example, in \"Today\" you will simply find all the messages arrived today."
 msgstr ""
+"Tento pohled využívá inteligentní skupiny časových období. Zprávy nejsou "
+"seskupeny do vláken. Například v sekci \"Dnes\" najdete jednoduše všechny "
+"zprávy, které dorazily dnes."
 
 #: core/manager.cpp:228
 #, kde-format
@@ -253,6 +260,9 @@ msgid ""
 "\"Today\" you will find all the messages arrived today and all the threads "
 "that have been active today."
 msgstr ""
+"Toto zobrazení využívá seskupení podle jednotlivých dnů. Zprávy jsou "
+"uspořádány do vláken. Například v sekci \"Dnes\" najdete všechny zprávy, "
+"které dorazily dnes, a všechna vlákna, která byla dnes aktivní."
 
 #: core/manager.cpp:241
 #, kde-format
@@ -265,6 +275,9 @@ msgid ""
 "This view uses day-by-day groups. Messages are not threaded. So for example, "
 "in \"Today\" you will simply find all the messages arrived today."
 msgstr ""
+"Toto zobrazení využívá seskupení podle jednotlivých dnů. Zprávy nejsou "
+"uspořádány do vláken. Například v sekci \"Dnes\" najdete jednoduše všechny "
+"zprávy, které dorazily dnes."
 
 #: core/manager.cpp:253
 #, kde-format
@@ -276,6 +289,8 @@ msgstr "Standardní poštovní konference"
 msgid ""
 "This is a plain and old mailing list view: no groups and heavy threading."
 msgstr ""
+"Toto je jednoduché a klasické zobrazení seznamu adresátů: bez skupin a s "
+"rozsáhlým členěním na vlákna."
 
 #: core/manager.cpp:263
 #, kde-format
@@ -288,6 +303,8 @@ msgid ""
 "This is a plain and old list of messages sorted by date: no groups and no "
 "threading."
 msgstr ""
+"Toto je prostý a klasický seznam zpráv seřazených podle data: bez skupin a "
+"bez vláken."
 
 #: core/manager.cpp:275
 #, kde-format
@@ -300,6 +317,8 @@ msgid ""
 "This view groups the messages by senders or receivers (depending on the "
 "folder type). Messages are not threaded."
 msgstr ""
+"V tomto zobrazení jsou zprávy seskupeny podle odesílatelů nebo příjemců (v "
+"závislosti na typu složky). Zprávy nejsou seskupeny do vláken."
 
 #: core/manager.cpp:287
 #, kde-format
@@ -312,6 +331,8 @@ msgid ""
 "This view groups the messages in threads and then groups the threads by the "
 "starting user."
 msgstr ""
+"Toto zobrazení seskupuje zprávy do vláken a tato vlákna pak seskupuje podle "
+"uživatele, který je založil."
 
 #: core/manager.cpp:565
 #, kde-format
@@ -322,7 +343,7 @@ msgstr "Klasický"
 #: core/manager.cpp:565
 #, kde-format
 msgid "A simple, backward compatible, single row theme"
-msgstr ""
+msgstr "Jednoduchý, zpětně kompatibilní, jednořádkový motiv"
 
 #: core/manager.cpp:569
 #, kde-format
@@ -424,7 +445,7 @@ msgstr "Inteligentní"
 #: core/manager.cpp:668
 #, kde-format
 msgid "A smart multiline and multi item theme"
-msgstr ""
+msgstr "Elegantní motiv s více řádky a více položkami"
 
 #: core/manager.cpp:672
 #, kde-format
@@ -434,12 +455,14 @@ msgstr "Zpráva"
 #: core/manager.cpp:753
 #, kde-format
 msgid "Smart with Clickable Status"
-msgstr "Inteligentní s klikacím stavem"
+msgstr "Inteligentní s klikatelným stavem"
 
 #: core/manager.cpp:754
 #, kde-format
 msgid "A smart multiline and multi item theme with a clickable status column"
 msgstr ""
+"Elegantní motiv s více řádky a více položkami, vybavený klikatelným sloupcem "
+"se stavem"
 
 #: core/manager.cpp:758 core/view.cpp:2258 core/view.cpp:2262
 #, kde-format
@@ -548,6 +571,8 @@ msgid ""
 "Enable this option to display tooltips when hovering over an item in the "
 "message list."
 msgstr ""
+"Tuto možnost zapněte, chcete-li zobrazovat popisky při najetí kurzorem na "
+"položku v seznamu zpráv."
 
 #: core/sortorder.cpp:64 core/sortorder.cpp:108
 #, kde-format
@@ -587,7 +612,7 @@ msgstr "Podle stavu Nepřečteno"
 #: core/sortorder.cpp:76
 #, kde-format
 msgid "By Important Status"
-msgstr ""
+msgstr "Podle důležitosti stavu"
 
 #: core/sortorder.cpp:77
 #, kde-format
@@ -619,27 +644,27 @@ msgstr "Sestupně"
 #: core/sortorder.cpp:106
 #, kde-format
 msgid "by Date/Time"
-msgstr "Podle data/času"
+msgstr "podle data/času"
 
 #: core/sortorder.cpp:109
 #, kde-format
 msgid "by Date/Time of Most Recent Message in Group"
-msgstr "Podle data/času nejnovější zprávy ve skupině"
+msgstr "podle data/času nejnovější zprávy ve skupině"
 
 #: core/sortorder.cpp:113
 #, kde-format
 msgid "by Sender/Receiver"
-msgstr "Podle odesilatele/příjemce"
+msgstr "podle odesilatele/příjemce"
 
 #: core/sortorder.cpp:115
 #, kde-format
 msgid "by Sender"
-msgstr "Podle odesilatele"
+msgstr "podle odesilatele"
 
 #: core/sortorder.cpp:117
 #, kde-format
 msgid "by Receiver"
-msgstr "Podle příjemce"
+msgstr "podle příjemce"
 
 #: core/sortorder.cpp:135
 #, kde-format
@@ -731,7 +756,7 @@ msgstr "Ikona sledováno/ignorováno"
 #: core/theme.cpp:152
 #, kde-format
 msgid "Group Header Expand/Collapse Icon"
-msgstr ""
+msgstr "Ikona pro rozbalení/sbalení záhlaví skupiny"
 
 #: core/theme.cpp:155
 #, kde-format
@@ -798,42 +823,42 @@ msgstr "Vždy zobrazovat"
 #: core/theme.cpp:1035
 #, kde-format
 msgid "Plain Rectangles"
-msgstr ""
+msgstr "Prosté obdélníky"
 
 #: core/theme.cpp:1036
 #, kde-format
 msgid "Plain Joined Rectangle"
-msgstr ""
+msgstr "Prostý spojený obdélník"
 
 #: core/theme.cpp:1037
 #, kde-format
 msgid "Rounded Rectangles"
-msgstr ""
+msgstr "Zaoblené obdélníky"
 
 #: core/theme.cpp:1038
 #, kde-format
 msgid "Rounded Joined Rectangle"
-msgstr ""
+msgstr "Zaoblený spojený obdélník"
 
 #: core/theme.cpp:1039
 #, kde-format
 msgid "Gradient Rectangles"
-msgstr ""
+msgstr "Obdélníky s přechodem"
 
 #: core/theme.cpp:1040
 #, kde-format
 msgid "Gradient Joined Rectangle"
-msgstr ""
+msgstr "Spojený obdélník s přechodem"
 
 #: core/theme.cpp:1041
 #, kde-format
 msgid "Styled Rectangles"
-msgstr ""
+msgstr "Zformátované obdélníky"
 
 #: core/theme.cpp:1042
 #, kde-format
 msgid "Styled Joined Rectangles"
-msgstr ""
+msgstr "Zformátované spojené obdélníky"
 
 #: core/view.cpp:753
 #, kde-format
@@ -894,9 +919,9 @@ msgstr[2] "<b>%1</b> odpovědí"
 #, kde-format
 msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
+msgstr[0] "<b>%1</b> zpráva v podstromu (<b>%2</b> nepřečtená)"
+msgstr[1] "<b>%1</b> zprávy v podstromu (<b>%2</b> nepřečtené)"
+msgstr[2] "<b>%1</b> zpráv v podstromu (<b>%2</b> nepřečtených)"
 
 #: core/view.cpp:2329
 #, kde-format
@@ -1144,141 +1169,143 @@ msgid ""
 "Some of the search folders in this query are still being indexed or are "
 "excluded from indexing completely. The results below may be incomplete."
 msgstr ""
+"Některé vyhledávací složky v tomto dotazu se stále indexují nebo jsou z "
+"indexování zcela vyloučeny. Níže uvedené výsledky mohou být neúplné."
 
 #: core/widgets/searchlinecommand.cpp:156
 #, kde-format
 msgid "Literal string"
-msgstr ""
+msgstr "Doslovný řetězec"
 
 #: core/widgets/searchlinecommand.cpp:158
 #, kde-format
 msgid "Size is smaller than"
-msgstr ""
+msgstr "Velikost je menší než"
 
 #: core/widgets/searchlinecommand.cpp:160
 #, kde-format
 msgid "Size is larger than"
-msgstr ""
+msgstr "Velikost je větší než"
 
 #: core/widgets/searchlinecommand.cpp:162
 #, kde-format
 msgid "Size is"
-msgstr ""
+msgstr "Velikost je"
 
 #: core/widgets/searchlinecommand.cpp:164
 #, kde-format
 msgid "To contains"
-msgstr ""
+msgstr "Pro obsahuje"
 
 #: core/widgets/searchlinecommand.cpp:166
 #, kde-format
 msgid "BCC contains"
-msgstr ""
+msgstr "Skrytá kopie obsahuje"
 
 #: core/widgets/searchlinecommand.cpp:168
 #, kde-format
 msgid "CC contains"
-msgstr ""
+msgstr "Kopie obsahuje"
 
 #: core/widgets/searchlinecommand.cpp:170
 #, kde-format
 msgid "From contains"
-msgstr ""
+msgstr "Od obsahuje"
 
 #: core/widgets/searchlinecommand.cpp:172
 #, kde-format
 msgid "Subject contains"
-msgstr ""
+msgstr "Předmět obsahuje"
 
 #: core/widgets/searchlinecommand.cpp:174
 #, kde-format
 msgid "Body contains"
-msgstr ""
+msgstr "Tělo obsahuje"
 
 #: core/widgets/searchlinecommand.cpp:176
 #, kde-format
 msgid "Mail has tag"
-msgstr ""
+msgstr "E-mail obsahuje značku"
 
 #: core/widgets/searchlinecommand.cpp:178
 #, kde-format
 msgid "Mail has attachment"
-msgstr ""
+msgstr "E-mail obsahuje přílohu"
 
 #: core/widgets/searchlinecommand.cpp:180
 #, kde-format
 msgid "Mail has invitation"
-msgstr ""
+msgstr "E-mail obsahuje pozvánku"
 
 #: core/widgets/searchlinecommand.cpp:182
 #, kde-format
 msgid "Mail is important"
-msgstr ""
+msgstr "E-mail je důležitý"
 
 #: core/widgets/searchlinecommand.cpp:184
 #, kde-format
 msgid "Mail is read"
-msgstr ""
+msgstr "E-mail je přečtený"
 
 #: core/widgets/searchlinecommand.cpp:186
 #, kde-format
 msgid "Mail is Unread"
-msgstr ""
+msgstr "E-mail je nepřečtený"
 
 #: core/widgets/searchlinecommand.cpp:188
 #, kde-format
 msgid "Mail is Ignored"
-msgstr ""
+msgstr "E-mail je ignorován"
 
 #: core/widgets/searchlinecommand.cpp:190
 #, kde-format
 msgid "Mail is Ham"
-msgstr ""
+msgstr "E-mail je legitimní"
 
 #: core/widgets/searchlinecommand.cpp:192
 #, kde-format
 msgid "Mail is Spam"
-msgstr ""
+msgstr "E-mail je nevyžádaný"
 
 #: core/widgets/searchlinecommand.cpp:194
 #, kde-format
 msgid "Mail is watched"
-msgstr ""
+msgstr "E-mail je sledován"
 
 #: core/widgets/searchlinecommand.cpp:196
 #, kde-format
 msgid "Mail is replied"
-msgstr ""
+msgstr "Na e-mail bylo odpovězeno"
 
 #: core/widgets/searchlinecommand.cpp:198
 #, kde-format
 msgid "Mail is forwarded"
-msgstr ""
+msgstr "E-mail je přeposlaný"
 
 #: core/widgets/searchlinecommand.cpp:200
 #, kde-format
 msgid "Mail is encrypted"
-msgstr ""
+msgstr "E-mail je šifrovaný"
 
 #: core/widgets/searchlinecommand.cpp:202
 #, kde-format
 msgid "Mail is queued"
-msgstr ""
+msgstr "E-mail je ve frontě"
 
 #: core/widgets/searchlinecommand.cpp:204
 #, kde-format
 msgid "Mail is sent"
-msgstr ""
+msgstr "E-mail je odeslaný"
 
 #: core/widgets/searchlinecommand.cpp:206
 #, kde-format
 msgid "Mail is deleted"
-msgstr ""
+msgstr "E-mail je smazaný"
 
 #: core/widgets/searchlinecommand.cpp:208
 #, kde-format
 msgid "Mail is action"
-msgstr ""
+msgstr "E-mail je akce"
 
 #: core/widgets/searchlinecommand.cpp:218
 #, kde-format
@@ -1289,169 +1316,169 @@ msgstr "A"
 #, kde-format
 msgctxt "@action:button"
 msgid "Subject"
-msgstr ""
+msgstr "Předmět"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:54
 #, kde-format
 msgctxt "@action:button"
 msgid "Body"
-msgstr ""
+msgstr "Tělo"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:55
 #, kde-format
 msgctxt "@action:button"
 msgid "From"
-msgstr ""
+msgstr "Od"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:56
 #, kde-format
 msgctxt "@action:button"
 msgid "To"
-msgstr ""
+msgstr "Komu"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:57
 #, kde-format
 msgctxt "@action:button"
 msgid "Cc"
-msgstr ""
+msgstr "Kopie"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:58
 #, kde-format
 msgctxt "@action:button"
 msgid "Bcc"
-msgstr ""
+msgstr "Skrytá kopie"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:59
 #, kde-format
 msgctxt "@action:button"
 msgid "Has Attachment"
-msgstr ""
+msgstr "Má přílohu"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:60
 #, kde-format
 msgctxt "@action:button"
 msgid "Has Invitation"
-msgstr ""
+msgstr "Má pozvánku"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:61
 #, kde-format
 msgctxt "@action:button"
 msgid "Read"
-msgstr ""
+msgstr "Přečteno"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:62
 #, kde-format
 msgctxt "@action:button"
 msgid "Unread"
-msgstr ""
+msgstr "Nepřečteno"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:63
 #, kde-format
 msgctxt "@action:button"
 msgid "Important"
-msgstr ""
+msgstr "Důležité"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:64
 #, kde-format
 msgctxt "@action:button"
 msgid "Ignored"
-msgstr ""
+msgstr "Ignorováno"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:65
 #, kde-format
 msgctxt "@action:button"
 msgid "Ham"
-msgstr ""
+msgstr "Ham"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:66
 #, kde-format
 msgctxt "@action:button"
 msgid "Spam"
-msgstr ""
+msgstr "Spam"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:67
 #, kde-format
 msgctxt "@action:button"
 msgid "Watched"
-msgstr ""
+msgstr "Sledováno"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:68
 #, kde-format
 msgctxt "@action:button"
 msgid "Replied"
-msgstr ""
+msgstr "Zodpovězeno"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:69
 #, kde-format
 msgctxt "@action:button"
 msgid "Forwarded"
-msgstr ""
+msgstr "Přeposláno"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:70
 #, kde-format
 msgctxt "@action:button"
 msgid "Encrypted"
-msgstr ""
+msgstr "Zašifrováno"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:71
 #, kde-format
 msgctxt "@action:button"
 msgid "Queued"
-msgstr ""
+msgstr "Ve frontě"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:72
 #, kde-format
 msgctxt "@action:button"
 msgid "Sent"
-msgstr ""
+msgstr "Odesláno"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Deleted"
-msgstr ""
+msgstr "Smazáno"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:74
 #, kde-format
 msgctxt "@action:button"
 msgid "Action"
-msgstr ""
+msgstr "Činnost"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Category"
-msgstr ""
+msgstr "Kategorie"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:77
 #, kde-format
 msgctxt "@action:button"
 msgid "Smaller"
-msgstr ""
+msgstr "Menší"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:78
 #, kde-format
 msgctxt "@action:button"
 msgid "Larger"
-msgstr ""
+msgstr "Větší"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:79
 #, kde-format
 msgctxt "@action:button"
 msgid "Size"
-msgstr ""
+msgstr "Velikost"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:80
 #, kde-format
 msgctxt "@action:button"
 msgid "Older"
-msgstr ""
+msgstr "Starší"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:81
 #, kde-format
 msgctxt "@action:button"
 msgid "Newer"
-msgstr ""
+msgstr "Novější"
 
 #: core/widgets/searchlinestatus.cpp:89
 #, kde-format
@@ -1469,13 +1496,15 @@ msgstr "Smazat rychlé hledání při změně složek"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show or Hide search command line"
-msgstr ""
+msgstr "Zobrazit nebo skrýt příkazový řádek pro vyhledávání"
 
 #: core/widgets/searchlinestatus.cpp:112
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
 msgstr ""
+"Tímto tlačítkem můžete přepínat mezi zobrazením a skrytím widgetu "
+"příkazového řádku pro vyhledávání."
 
 #: core/widgets/searchlinestatus.cpp:116
 #, kde-format
@@ -1484,6 +1513,9 @@ msgid ""
 "Toggle this button if you want to keep your quick search locked when moving "
 "to other folders or when narrowing the search by message status."
 msgstr ""
+"Toto tlačítko přepněte, pokud chcete, aby rychlé vyhledávání zůstalo "
+"uzamčené při přechodu do jiných složek nebo při zúžení vyhledávání podle "
+"stavu zprávy."
 
 #: core/widgets/searchlinestatus.cpp:124
 #, kde-format
@@ -1524,7 +1556,7 @@ msgstr "Skrytá kopie"
 #, kde-format
 msgctxt "@action"
 msgid "CC"
-msgstr ""
+msgstr "Kopie"
 
 #: core/widgets/searchmessagebybuttons.cpp:73
 #, kde-format
@@ -1952,7 +1984,7 @@ msgstr "Jméno:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The label that will be displayed in the column header."
-msgstr ""
+msgstr "Název, který se zobrazí v záhlaví sloupce."
 
 #: utils/themeeditor.cpp:79
 #, kde-format
@@ -1964,7 +1996,7 @@ msgstr "Kliknutí na záhlaví třídí zprávy:"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The sorting order that clicking on this column header will switch to."
-msgstr ""
+msgstr "Pořadí, na které se přepne po kliknutí na záhlaví tohoto sloupce."
 
 #: utils/themeeditor.cpp:86
 #, kde-format
@@ -1977,12 +2009,14 @@ msgstr "Implicitně viditelné"
 msgctxt "@info:tooltip"
 msgid "Check this if this column should be visible when the theme is selected."
 msgstr ""
+"Zaškrtněte toto políčko, pokud má být tento sloupec viditelný při výběru "
+"daného motivu."
 
 #: utils/themeeditor.cpp:90
 #, kde-format
 msgctxt "@option:check"
 msgid "Contains \"Sender or Receiver\" field"
-msgstr "Obsahuje pole \"Odesilatel nebo příjemce\""
+msgstr "Obsahuje pole \"Odesílatel nebo příjemce\""
 
 #: utils/themeeditor.cpp:92
 #, kde-format
@@ -1991,6 +2025,8 @@ msgid ""
 "Check this if this column label should be updated depending on the folder "
 "\"inbound\"/\"outbound\" type."
 msgstr ""
+"Zaškrtněte toto políčko, pokud se má název tohoto sloupce aktualizovat v "
+"závislosti na typu složky (\"příchozí\"/\"odchozí\")."
 
 #: utils/themeeditor.cpp:112
 #, kde-format
@@ -2008,6 +2044,8 @@ msgid ""
 "Very long subject very long subject very long subject very long subject very "
 "long subject very long"
 msgstr ""
+"Velmi dlouhý předmět, velmi dlouhý předmět, velmi dlouhý předmět, velmi "
+"dlouhý předmět, velmi dlouhý předmět, velmi dlouhý"
 
 #: utils/themeeditor.cpp:196
 #, kde-format
@@ -2184,6 +2222,10 @@ msgid ""
 "and drop them on the columns in order to compose your theme. Right click on "
 "the items inside the view for more options."
 msgstr ""
+"Klikněte pravým tlačítkem myši na záhlaví, abyste přidali nebo upravili "
+"sloupce. Přetáhněte jednotlivé prvky obsahu a umístěte je do sloupců, abyste "
+"sestavili svůj motiv. Klikněte pravým tlačítkem myši na prvky uvnitř "
+"zobrazení, abyste získali další možnosti."
 
 #: utils/themeeditor.cpp:1432
 #, kde-format
