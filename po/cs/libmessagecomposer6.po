@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-16 00:46+0000\n"
-"PO-Revision-Date: 2026-08-21 23:51+0200\n"
+"PO-Revision-Date: 2026-08-22 11:12+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -498,12 +498,12 @@ msgstr "S/MIME certifikát brzy vyprší"
 #: composer/composerviewbase.cpp:849
 #, kde-format
 msgid "Failed to resolve keys. Please report a bug."
-msgstr ""
+msgstr "Nepodařilo se načíst klíče. Nahlaste prosím chybu."
 
 #: composer/composerviewbase.cpp:1056 composer/composerviewbase.cpp:1332
 #, kde-format
 msgid "Job cancelled by the user"
-msgstr ""
+msgstr "Úloha zrušena uživatelem"
 
 #: composer/composerviewbase.cpp:1061
 #, kde-format
@@ -511,31 +511,34 @@ msgid ""
 "Could not compose message: %1 \n"
 " Please report this bug."
 msgstr ""
+"Nelze vytvořit zprávu: %1 \n"
+"Nahlaste prosím tuto chybu."
 
 #: composer/composerviewbase.cpp:1063
 #, kde-format
 msgid "Could not compose message: %1"
-msgstr ""
+msgstr "Nelze vytvořit zprávu: %1"
 
 #: composer/composerviewbase.cpp:1166
 #, kde-format
 msgid "There were problems trying to queue the message for sending: %1"
 msgstr ""
+"Při pokusu o zařazení zprávy do fronty k odeslání došlo k problémům: %1"
 
 #: composer/composerviewbase.cpp:1335
 #, kde-format
 msgid "Could not autosave message: %1"
-msgstr ""
+msgstr "Nepodařilo se automaticky uložit zprávu: %1"
 
 #: composer/composerviewbase.cpp:1354
 #, kde-format
 msgid "Could not write all data to file."
-msgstr ""
+msgstr "Nepodařilo se zapsat všechna data do souboru."
 
 #: composer/composerviewbase.cpp:1357
 #, kde-format
 msgid "Could not finalize the file."
-msgstr ""
+msgstr "Soubor se nepodařilo dokončit."
 
 #: composer/composerviewbase.cpp:1361
 #, kde-format
@@ -562,7 +565,7 @@ msgstr "Automatické uložení zprávy selhalo"
 #: composer/composerviewbase.cpp:1487
 #, kde-format
 msgid "Failed to save the message: %1"
-msgstr ""
+msgstr "Uložení zprávy se nezdařilo: %1"
 
 #: composer/composerviewbase.cpp:1911
 #, kde-format
@@ -628,6 +631,8 @@ msgid ""
 "There are conflicting signing preferences for these recipients.\n"
 "Sign this message?"
 msgstr ""
+"Pro tyto příjemce existují protichůdné preference podpisu.\n"
+"Podepsat tuto zprávu?"
 
 #: composer/composerviewbase.cpp:2024
 #, kde-format
@@ -635,6 +640,8 @@ msgid ""
 "You have requested to sign this message, but no valid signing keys have been "
 "configured for this identity."
 msgstr ""
+"Požádali jste o podepsání této zprávy, ale pro tuto identitu nebyly "
+"nastaveny žádné platné podpisové klíče."
 
 #: composer/composerviewbase.cpp:2029
 #, kde-format
@@ -655,6 +662,9 @@ msgid ""
 "Sending only partially signed messages might violate site policy.\n"
 "Sign all parts instead?"
 msgstr ""
+"Některé části této zprávy nebudou podepsány.\n"
+"Odesílání pouze částečně podepsaných zpráv může porušovat zásady webu.\n"
+"Podepsat všechny části?"
 
 #: composer/composerviewbase.cpp:2049
 #, kde-format
@@ -663,6 +673,9 @@ msgid ""
 "Sending unsigned message might violate site policy.\n"
 "Sign message instead?"
 msgstr ""
+"Tato zpráva nebude podepsána.\n"
+"Odeslání nepodepsané zprávy může porušovat zásady webu.\n"
+"Chcete zprávu podepsat?"
 
 #: composer/composerviewbase.cpp:2052
 #, kde-format
@@ -692,6 +705,8 @@ msgid ""
 "Valid trusted encryption keys were found for all recipients.\n"
 "Encrypt this message?"
 msgstr ""
+"Pro všechny příjemce byly nalezeny platné důvěryhodné šifrovací klíče.\n"
+"Šifrovat tuto zprávu?"
 
 #: composer/composerviewbase.cpp:2107
 #, kde-format
@@ -735,6 +750,8 @@ msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
 "Encrypt this message?"
 msgstr ""
+"Pro tyto příjemce existují protichůdné preference šifrování.\n"
+"Šifrovat tuto zprávu?"
 
 #: composer/composerviewbase.cpp:2144 composer/keyresolver.cpp:1319
 #: composer/keyresolver.cpp:1360
@@ -756,6 +773,9 @@ msgid ""
 "yourself, but no valid trusted encryption keys have been configured for this "
 "identity."
 msgstr ""
+"Požádali jste o zašifrování této zprávy a zašifrování kopie pro sebe, ale "
+"pro tuto identitu nebyly nakonfigurovány žádné platné důvěryhodné šifrovací "
+"klíče."
 
 #: composer/composerviewbase.cpp:2171
 #, kde-format
@@ -777,6 +797,10 @@ msgid ""
 "leak sensitive information.\n"
 "Encrypt all parts instead?"
 msgstr ""
+"Některé části této zprávy nebudou šifrovány.\n"
+"Odesílání pouze částečně šifrovaných zpráv může porušovat zásady webu a/nebo "
+"vést k úniku citlivých informací.\n"
+"Chcete místo toho zašifrovat všechny části?"
 
 #: composer/composerviewbase.cpp:2192
 #, kde-format
@@ -786,6 +810,10 @@ msgid ""
 "information.\n"
 "Encrypt messages instead?"
 msgstr ""
+"Tato zpráva nebude šifrována.\n"
+"Odesílání nešifrovaných zpráv může porušovat zásady webu a/nebo vést k úniku "
+"citlivých informací.\n"
+"Chcete zprávy místo toho zašifrovat?"
 
 #: composer/composerviewbase.cpp:2196
 #, kde-format
@@ -1067,6 +1095,10 @@ msgid ""
 "external certificates by clicking the button: search for external "
 "certificates.</qt>"
 msgstr ""
+"<qt>Pro \"%1\" nebyl nalezen žádný platný a důvěryhodný šifrovací certifikát."
+"<br/><br/>Vyberte certifikát(y), které mají být použity pro tohoto příjemce. "
+"Pokud v seznamu není žádný vhodný certifikát, můžete také vyhledat externí "
+"certifikáty kliknutím na tlačítko: vyhledat externí certifikáty.</qt>"
 
 #: composer/keyresolver.cpp:1559
 #, kde-format
@@ -1101,7 +1133,7 @@ msgstr "Zvolte složku knihy adres, kam má být nový kontakt uložen:"
 #: followupreminder/followupremindercreatejob.cpp:78
 #, kde-format
 msgid "Wait answer from \"%1\" send to \"%2\""
-msgstr ""
+msgstr "Čekání na odpověď od \"%1\" zaslanou na \"%2\""
 
 #: followupreminder/followupremindercreatejob.cpp:101
 #, kde-format
@@ -1109,6 +1141,8 @@ msgid ""
 "Failed to store a new reminder: an error occurred while trying to create a "
 "new to-do in your calendar: %1"
 msgstr ""
+"Nepodařilo se uložit novou připomínku: při pokusu o vytvoření nového úkolu v "
+"kalendáři došlo k chybě: %1"
 
 #: followupreminder/followupremindercreatejob.cpp:133
 #, kde-format
@@ -1134,7 +1168,7 @@ msgstr "Ukládat úkol v:"
 #: followupreminder/followupreminderselectdatedialog.cpp:105
 #, kde-format
 msgid "The selected date must be greater than the current date."
-msgstr ""
+msgstr "Zvolené datum musí být pozdější než aktuální datum."
 
 #: followupreminder/followupreminderselectdatedialog.cpp:105
 #, kde-format
@@ -1145,7 +1179,7 @@ msgstr "Neplatné datum"
 #: followupreminder/followupreminderselectdatedialog.cpp:109
 #, kde-format
 msgid "The selected folder is not valid."
-msgstr ""
+msgstr "Vybraná složka není platná."
 
 #: followupreminder/followupreminderselectdatedialog.cpp:109
 #, kde-format
@@ -1214,13 +1248,13 @@ msgstr "Vlastní"
 #: imagescaling/imagescalingwidget.cpp:317
 #, kde-format
 msgid "Please verify minimum and maximum values."
-msgstr ""
+msgstr "Zkontrolujte prosím minimální a maximální hodnoty."
 
 #: imagescaling/imagescalingwidget.cpp:317
 #, kde-format
 msgctxt "@title:window"
 msgid "Error in minimum Maximum value"
-msgstr ""
+msgstr "Chyba v minimální nebo maximální hodnotě"
 
 #. i18n: ectx: property (text), widget (QCheckBox, enabledAutoResize)
 #: imagescaling/ui/imagescalingwidget.ui:17
@@ -1358,7 +1392,7 @@ msgstr "Vzorek:"
 #: imagescaling/ui/imagescalingwidget.ui:308
 #, kde-format
 msgid "This line allows to define several pattern. Separate them with ';'."
-msgstr ""
+msgstr "V tomto řádku lze definovat několik vzorů. Oddělte je znakem ';'."
 
 #. i18n: ectx: property (placeholderText), widget (QLineEdit, pattern)
 #. i18n: ectx: property (placeholderText), widget (QLineEdit, resizeEmailsPattern)
@@ -1411,12 +1445,16 @@ msgstr "Nefiltrovat (Všichni příjemci jsou povoleni)"
 #, kde-format
 msgid "Resize if each emails address contains one of the pattern"
 msgstr ""
+"Změnit velikost, pokud každá e-mailová adresa odpovídá některému z "
+"následujících vzorů"
 
 #. i18n: ectx: property (text), widget (QRadioButton, resizeOneEmails)
 #: imagescaling/ui/imagescalingwidget.ui:412
 #, kde-format
 msgid "Resize if one emails address contains one of the pattern"
 msgstr ""
+"Změnit velikost, pokud některá e-mailová adresa odpovídá některému z těchto "
+"vzorů"
 
 #. i18n: ectx: property (text), widget (QRadioButton, doNotResizeEachEmails)
 #: imagescaling/ui/imagescalingwidget.ui:429
@@ -1473,7 +1511,7 @@ msgstr "Probíhá export klíče..."
 #: job/attachmentvcardfromaddressbookjob.cpp:77
 #, kde-format
 msgid "Unknown Contact Type"
-msgstr ""
+msgstr "Neznámý typ kontaktu"
 
 #: job/attachmentvcardfromaddressbookjob.cpp:88
 #, kde-format
@@ -1483,7 +1521,7 @@ msgstr "Neplatný kontakt"
 #: job/attachmentvcardfromaddressbookjob.cpp:104
 #, kde-format
 msgid "Impossible to generate vCard."
-msgstr ""
+msgstr "Nelze vygenerovat vCard."
 
 #: job/autocryptheadersjob.cpp:96
 #, kde-format
@@ -1497,27 +1535,31 @@ msgstr ""
 #: job/composerjob.cpp:290
 #, kde-format
 msgid "No key data for recipients found."
-msgstr ""
+msgstr "Nebyla nalezena žádná data klíčů příjemců."
 
 #: job/maintextjob.cpp:58
 #, kde-format
 msgid "Asked to use word wrapping, but not given wrapped plain text."
 msgstr ""
+"Bylo požadováno použití zalomení řádků, ale nebyl poskytnut zalomený prostý "
+"text."
 
 #: job/maintextjob.cpp:65
 #, kde-format
 msgid "Asked not to use word wrapping, but not given clean plain text."
 msgstr ""
+"Bylo požadováno, aby se nepoužívalo zalomení řádků, ale nebyl poskytnut "
+"čistý prostý text."
 
 #: job/maintextjob.cpp:90
 #, kde-format
 msgid "Could not get text codec for charset \"%1\"."
-msgstr ""
+msgstr "Nepodařilo se načíst textový kodek pro znakovou sadu \"%1\"."
 
 #: job/singlepartjob.cpp:66
 #, kde-format
 msgid "%1 Content-Transfer-Encoding cannot correctly encode this message."
-msgstr ""
+msgstr "%1 Content-Transfer-Encoding nedokáže tuto zprávu správně zakódovat."
 
 #: mdn/mdnadvicedialog.cpp:21
 #, kde-format
@@ -1688,7 +1730,7 @@ msgstr "Zvolte složku knihy adres, kam má být nová skupina kontaktů uložen
 #: recipient/distributionlistdialog.cpp:322
 #, kde-format
 msgid "Unable to create distribution list: %1"
-msgstr ""
+msgstr "Nelze vytvořit distribuční seznam: %1"
 
 #: recipient/recipient.cpp:99
 #, kde-format
@@ -1730,7 +1772,7 @@ msgstr "Vybrat typ příjemce"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Set the list of email addresses to receive this message"
-msgstr ""
+msgstr "Nastavit seznam e-mailových adres, na které má být tato zpráva zaslána"
 
 #: recipient/recipientseditor.cpp:112
 #, kde-format
@@ -1866,7 +1908,7 @@ msgstr[2] ""
 #: recipient/recipientspicker.cpp:192
 #, kde-format
 msgid "You can not add more recipients."
-msgstr ""
+msgstr "Nelze přidat další příjemce."
 
 #: sendlater/sendlatercreatejob.cpp:35
 #, kde-format
@@ -2027,7 +2069,7 @@ msgstr "Podepsat, pokud možno, všechny zprávy"
 #: settings/messagecomposer.kcfg:58
 #, kde-format
 msgid "Enable encryption, if we found keys for all recipients"
-msgstr ""
+msgstr "Zapnout šifrování, pokud byly nalezeny klíče pro všechny příjemce"
 
 #. i18n: ectx: label, entry (CryptoWarningUnencrypted), group (Composer)
 #: settings/messagecomposer.kcfg:62
@@ -2055,6 +2097,8 @@ msgid ""
 "The minimum number of days that the encryption certificate should be valid "
 "before issuing a warning"
 msgstr ""
+"Minimální počet dní, po které by měl být šifrovací certifikát platný, než se "
+"zobrazí varování"
 
 #. i18n: ectx: label, entry (CryptoWarnEncrChaincertNearExpiryThresholdDays), group (Composer)
 #: settings/messagecomposer.kcfg:82
@@ -2063,6 +2107,8 @@ msgid ""
 "The minimum number of days that all certificates in the chain should be "
 "valid before issuing a warning"
 msgstr ""
+"Minimální počet dní, po který by měly být všechny certifikáty v řetězci "
+"platné před zobrazením varování"
 
 #. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
 #: settings/messagecomposer.kcfg:86
@@ -2071,6 +2117,8 @@ msgid ""
 "The minimum number of days that the root certificate should be valid before "
 "issuing a warning"
 msgstr ""
+"Minimální počet dní, po které by měl být kořenový certifikát platný, než se "
+"zobrazí varování"
 
 #. i18n: ectx: label, entry (CryptoShowKeysForApproval), group (Composer)
 #: settings/messagecomposer.kcfg:90
@@ -2078,6 +2126,8 @@ msgstr ""
 msgid ""
 "Always show the list of encryption keys to select the one which will be used"
 msgstr ""
+"Vždy zobrazit seznam šifrovacích klíčů, abyste mohli vybrat ten, který se "
+"použije"
 
 #: snippet/convertsnippetvariablemenu.cpp:27
 #, kde-format
@@ -2322,7 +2372,7 @@ msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
 "forgot to attach his attachment. Do not add space between words."
 msgid "attachment,attached"
-msgstr ""
+msgstr "příloha,přiložený"
 
 #: utils/util.cpp:269
 #, kde-format
@@ -2330,18 +2380,20 @@ msgid ""
 "The mail dispatcher is not set up, so mails cannot be sent. Do you want to "
 "create a mail dispatcher?"
 msgstr ""
+"Poštovní dispečer není nastaven, proto nelze odesílat e-maily. Chcete "
+"vytvořit poštovního dispečera?"
 
 #: utils/util.cpp:270
 #, kde-format
 msgctxt "@title:window"
 msgid "No mail dispatcher."
-msgstr ""
+msgstr "Žádný poštovní dispečer."
 
 #: utils/util.cpp:272
 #, kde-format
 msgctxt "@action:button"
 msgid "Create Mail Dispatcher"
-msgstr ""
+msgstr "Vytvořit poštovního dispečera"
 
 #: utils/util.cpp:287
 #, kde-format
@@ -2349,12 +2401,14 @@ msgid ""
 "The mail dispatcher is offline, so mails cannot be sent. Do you want to make "
 "it online?"
 msgstr ""
+"Poštovní dispečer je odpojen, takže nelze odesílat e-maily. Chcete jej "
+"přepnout do režimu připojen?"
 
 #: utils/util.cpp:288
 #, kde-format
 msgctxt "@title:window"
 msgid "Mail dispatcher offline."
-msgstr ""
+msgstr "Poštovní dispečer je odpojen."
 
 #: utils/util.cpp:289
 #, kde-format
