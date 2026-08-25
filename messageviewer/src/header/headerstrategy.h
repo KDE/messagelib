@@ -36,7 +36,6 @@ public:
     //
     virtual const char *name() const = 0;
 
-    void readConfig();
     //
     // HeaderStrategy interface:
     //

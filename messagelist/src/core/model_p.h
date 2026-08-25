@@ -29,8 +29,6 @@ public:
     {
     }
 
-    void fillView();
-
     /**
      * This is called by MessageList::Manager once in a while.
      * It is a good place to check if the date has changed and

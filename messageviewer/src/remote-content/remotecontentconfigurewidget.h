@@ -38,7 +38,6 @@ public:
     void setStatus(MessageViewer::RemoteContentInfo::RemoteContentInfoStatus type);
 
 private:
-    MESSAGEVIEWER_NO_EXPORT void updateInfo();
     RemoteContentStatusTypeComboBox *const mStatusTypeCombobox;
 };
 
