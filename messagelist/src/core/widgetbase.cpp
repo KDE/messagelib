@@ -90,7 +90,7 @@ public:
 #endif
     TabLockedWarning *tabLockedWarning = nullptr;
     QuickSearchLine *quickSearchLine = nullptr;
-    View *mView = nullptr;
+    std::unique_ptr<View> mView;
     QString mLastAggregationId;
     QString mLastThemeId;
     QTimer *mSearchTimer = nullptr;
@@ -150,11 +150,11 @@ Widget::Widget(QWidget *pParent)
         // Fix icon!
     });
 
-    d->mView = new View(this);
+    d->mView = std::make_unique<View>(this);
     d->mView->setFrameStyle(QFrame::NoFrame);
     d->mView->setSortOrder(&d->mSortOrder);
     d->mView->setObjectName(QLatin1StringView("messagealistview"));
-    g->addWidget(d->mView, 1);
+    g->addWidget(d->mView.get(), 1);
 
     connect(d->mView->header(), &QHeaderView::sectionClicked, this, &Widget::slotViewHeaderSectionClicked);
     d->mSearchTimer = nullptr;
@@ -400,7 +400,7 @@ QLineEdit *Widget::quickSearch() const
 
 View *Widget::view() const
 {
-    return d->mView;
+    return d->mView.get();
 }
 
 void Widget::themeMenuAboutToShow()

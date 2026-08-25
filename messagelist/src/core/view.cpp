@@ -203,7 +203,7 @@ public:
 
     Widget *const mWidget;
     std::unique_ptr<ViewModelAdapter> mModelViewAdapter;
-    Model *mModel = nullptr;
+    std::unique_ptr<Model> mModel;
     Delegate *const mDelegate;
 
     const Aggregation *mAggregation = nullptr; ///< The Aggregation we're using now, shallow pointer
@@ -266,10 +266,10 @@ View::View(Widget *pParent)
     header()->setMinimumSectionSize(2); // QTreeView overrides our sections sizes if we set them smaller than this value
     header()->setDefaultSectionSize(2); // QTreeView overrides our sections sizes if we set them smaller than this value
 
-    d->mModel = new Model(d->mModelViewAdapter.get(), this);
-    setModel(d->mModel);
+    d->mModel = std::make_unique<Model>(d->mModelViewAdapter.get());
+    setModel(d->mModel.get());
 
-    connect(d->mModel, &Model::statusMessage, pParent, &Widget::statusMessage);
+    connect(d->mModel.get(), &Model::statusMessage, pParent, &Widget::statusMessage);
 
     connect(selectionModel(), &QItemSelectionModel::selectionChanged, this, &View::slotSelectionChanged, Qt::UniqueConnection);
 
@@ -311,7 +311,7 @@ View::~View()
 
 Model *View::model() const
 {
-    return d->mModel;
+    return d->mModel.get();
 }
 
 Delegate *View::delegate() const
