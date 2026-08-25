@@ -7,9 +7,9 @@
 #pragma once
 
 #include "webengineviewer_export.h"
-class QDebug;
 #include <QList>
 #include <WebEngineViewer/NetworkPluginUrlInterceptorInterface>
+class QDebug;
 namespace WebEngineViewer
 {
 /*!

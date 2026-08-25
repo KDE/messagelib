@@ -8,7 +8,6 @@
 
 #pragma once
 
-class QDebug;
 #include <QObject>
 #include <QSet>
 #include <QString>
@@ -19,6 +18,7 @@ class QDebug;
 #include <Akonadi/Collection>
 #include <Akonadi/MessageStatus>
 #include <KSharedConfig>
+class QDebug;
 
 namespace MessageList
 {
