@@ -18,6 +18,7 @@ namespace MessageList
 {
 namespace Core
 {
+class GroupHeaderItem;
 class ViewItemJob;
 class ModelInvariantRowMapper;
 class MessageItemSetManager;

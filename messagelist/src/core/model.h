@@ -26,7 +26,6 @@ namespace Core
 using MessageItemSetReference = long;
 
 class Filter;
-class GroupHeaderItem;
 class Item;
 class MessageItem;
 class Theme;
