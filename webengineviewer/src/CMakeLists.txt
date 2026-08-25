@@ -171,6 +171,7 @@ target_link_libraries(
         Qt::WebEngineWidgets
         KPim6::PimCommon
     PRIVATE
+        Qt::PrintSupport
         KF6::CoreAddons
         KF6::XmlGui
         KF6::I18n
