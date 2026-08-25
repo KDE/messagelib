@@ -15,7 +15,6 @@ class QTreeWidget;
 namespace MessageViewer
 {
 class RemoteContentStatusTypeComboBox;
-class RemoteContentInfo;
 /**
  * \class MessageViewer::RemoteContentWidgetItem
  * \inmodule MessageViewer
