@@ -11,3 +11,4 @@ endmacro()
 
 messagelist_unittest(itemsizetest.cpp)
 messagelist_unittest(messagemodeltest.cpp)
+messagelist_unittest(viewtest.cpp)

@@ -15,6 +15,8 @@
 #include <MessageList/QuickSearchLine>
 #include <MessageList/SearchLineCommand>
 
+#include "messagelist_export.h"
+
 class QLineEdit;
 class QActionGroup;
 class QMenu;
@@ -38,7 +40,7 @@ class Filter;
  * Provides a widget which has the messagelist and the most important helper widgets,
  * like the search line and the comboboxes for changing status filtering, aggregation etc.
  */
-class Widget : public QWidget
+class MESSAGELIST_EXPORT Widget : public QWidget
 {
     friend class View;
 
