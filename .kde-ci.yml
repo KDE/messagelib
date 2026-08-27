@@ -4,10 +4,10 @@
 Dependencies:
  - 'on': ['Linux', 'FreeBSD', 'Windows']
    'require':
-    'frameworks/ktexttemplate': '@latest-kf6'
-    'frameworks/extra-cmake-modules': '@latest-kf6'
-    'frameworks/kcontacts': '@latest-kf6'
-    'frameworks/kservice': '@latest-kf6'
+    'frameworks/ktexttemplate': 'Frameworks/6.24'
+    'frameworks/extra-cmake-modules': 'Frameworks/6.24'
+    'frameworks/kcontacts': 'Frameworks/6.24'
+    'frameworks/kservice': 'Frameworks/6.24'
     'pim/akonadi': '@same'
     'pim/akonadi-contacts': '@same'
     'pim/akonadi-mime': '@same'
@@ -21,7 +21,7 @@ Dependencies:
     'pim/libkdepim': '@same'
     'pim/libkleo': '@same'
     'pim/pimcommon': '@same'
-    'frameworks/kcolorscheme': '@latest-kf6'
+    'frameworks/kcolorscheme': 'Frameworks/6.24'
     'libraries/qca': '@latest-kf6'
     'libraries/ktextaddons': '@latest-kf6'
 
