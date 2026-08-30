@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-16 00:46+0000\n"
+"POT-Creation-Date: 2026-08-30 00:48+0000\n"
 "PO-Revision-Date: 2023-03-08 09:12+0000\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <kde-i18n-pt@kde.org>\n"
@@ -1952,43 +1952,43 @@ msgstr "O endereço foi copiado para a área de transferência."
 msgid "Lookup the contact in KAddressbook"
 msgstr "Procurar o contacto no KAddressbook"
 
-#: viewer/urlhandlermanager.cpp:775
+#: viewer/urlhandlermanager.cpp:778
 #, kde-format
 msgid "Attachment: %1"
 msgstr "Anexo: %1"
 
-#: viewer/urlhandlermanager.cpp:778
+#: viewer/urlhandlermanager.cpp:781
 #, kde-format
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "Mensagem Encapsulada (Assunto: %1)"
 
-#: viewer/urlhandlermanager.cpp:780
+#: viewer/urlhandlermanager.cpp:783
 #, kde-format
 msgid "Encapsulated Message"
 msgstr "Mensagem Encapsulada"
 
-#: viewer/urlhandlermanager.cpp:783
+#: viewer/urlhandlermanager.cpp:786
 #, kde-format
 msgid "Unnamed attachment"
 msgstr "Anexo sem nome"
 
-#: viewer/urlhandlermanager.cpp:819
+#: viewer/urlhandlermanager.cpp:822
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr "Mostrar o Registo de Auditoria do GnuPG para esta operação"
 
-#: viewer/urlhandlermanager.cpp:859
+#: viewer/urlhandlermanager.cpp:862
 #, kde-format
 msgid "Opening URL..."
 msgstr "A abrir o URL..."
 
-#: viewer/urlhandlermanager.cpp:868
+#: viewer/urlhandlermanager.cpp:871
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "Deseja realmente executar o <filename>%1</filename>?"
 
-#: viewer/urlhandlermanager.cpp:870
+#: viewer/urlhandlermanager.cpp:873
 #, fuzzy, kde-format
 #| msgid "Execute"
 msgctxt "@action:button"

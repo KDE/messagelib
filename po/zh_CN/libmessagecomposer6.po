@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-16 00:46+0000\n"
+"POT-Creation-Date: 2026-08-30 00:48+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -43,216 +43,216 @@ msgid "Compress"
 msgstr "压缩"
 
 #: attachment/attachmentcontrollerbase.cpp:202
-#: attachment/attachmentcontrollerbase.cpp:965
+#: attachment/attachmentcontrollerbase.cpp:969
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach file"
 msgstr "无法附加文件"
 
-#: attachment/attachmentcontrollerbase.cpp:275
+#: attachment/attachmentcontrollerbase.cpp:279
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to reload attachment"
 msgstr "无法重新加载附件"
 
-#: attachment/attachmentcontrollerbase.cpp:322
+#: attachment/attachmentcontrollerbase.cpp:326
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
 msgstr "打开方式(&O)"
 
-#: attachment/attachmentcontrollerbase.cpp:342
+#: attachment/attachmentcontrollerbase.cpp:346
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
 msgstr "其他(&O)..."
 
-#: attachment/attachmentcontrollerbase.cpp:344
-#: attachment/attachmentcontrollerbase.cpp:352
+#: attachment/attachmentcontrollerbase.cpp:348
+#: attachment/attachmentcontrollerbase.cpp:356
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "打开方式(&O)..."
 
-#: attachment/attachmentcontrollerbase.cpp:378
+#: attachment/attachmentcontrollerbase.cpp:382
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach public key"
 msgstr "无法添加公钥"
 
-#: attachment/attachmentcontrollerbase.cpp:392
+#: attachment/attachmentcontrollerbase.cpp:396
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach vCard"
 msgstr "无法添加 vCard"
 
-#: attachment/attachmentcontrollerbase.cpp:405
+#: attachment/attachmentcontrollerbase.cpp:409
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach text from clipboard"
 msgstr "无法从剪贴板添加文本"
 
-#: attachment/attachmentcontrollerbase.cpp:453
+#: attachment/attachmentcontrollerbase.cpp:457
 #, kde-format
 msgctxt "@action"
 msgid "Attach &Public Key..."
 msgstr "附加公钥(&P)..."
 
-#: attachment/attachmentcontrollerbase.cpp:456
+#: attachment/attachmentcontrollerbase.cpp:460
 #, kde-format
 msgctxt "@action"
 msgid "Attach &My Public Key"
 msgstr "附加我的公钥(&M)"
 
-#: attachment/attachmentcontrollerbase.cpp:459
-#: attachment/attachmentcontrollerbase.cpp:464
-#: attachment/attachmentcontrollerbase.cpp:470
-#: attachment/attachmentcontrollerbase.cpp:479
+#: attachment/attachmentcontrollerbase.cpp:463
+#: attachment/attachmentcontrollerbase.cpp:468
+#: attachment/attachmentcontrollerbase.cpp:474
+#: attachment/attachmentcontrollerbase.cpp:483
 #, kde-format
 msgid "Attach"
 msgstr "附件"
 
-#: attachment/attachmentcontrollerbase.cpp:463
+#: attachment/attachmentcontrollerbase.cpp:467
 #, kde-format
 msgid "&Attach File..."
 msgstr "附加文件(&A)..."
 
-#: attachment/attachmentcontrollerbase.cpp:465
+#: attachment/attachmentcontrollerbase.cpp:469
 #, kde-format
 msgid "Add Attachment..."
 msgstr "添加附件..."
 
-#: attachment/attachmentcontrollerbase.cpp:469
+#: attachment/attachmentcontrollerbase.cpp:473
 #, kde-format
 msgid "&Attach Directory..."
 msgstr "附加目录(&A)..."
 
-#: attachment/attachmentcontrollerbase.cpp:473
+#: attachment/attachmentcontrollerbase.cpp:477
 #, kde-format
 msgctxt "@action"
 msgid "Attach Own vCard"
 msgstr "添加我的vCard"
 
-#: attachment/attachmentcontrollerbase.cpp:474
+#: attachment/attachmentcontrollerbase.cpp:478
 #, kde-format
 msgid "Own vCard"
 msgstr "自己的 vcard"
 
-#: attachment/attachmentcontrollerbase.cpp:478
+#: attachment/attachmentcontrollerbase.cpp:482
 #, kde-format
 msgid "&Attach vCards..."
 msgstr "附加 vCard(&A)..."
 
-#: attachment/attachmentcontrollerbase.cpp:482
+#: attachment/attachmentcontrollerbase.cpp:486
 #, kde-format
 msgid "&Attach Text From Clipboard..."
 msgstr "从剪贴板附加文本... （&A）"
 
-#: attachment/attachmentcontrollerbase.cpp:483
+#: attachment/attachmentcontrollerbase.cpp:487
 #, kde-format
 msgid "Attach Text From Clipboard"
 msgstr "从剪贴板附加文本"
 
-#: attachment/attachmentcontrollerbase.cpp:495
+#: attachment/attachmentcontrollerbase.cpp:499
 #, kde-format
 msgid "&Remove Attachment"
 msgstr "删除附件(&R)"
 
-#: attachment/attachmentcontrollerbase.cpp:496
+#: attachment/attachmentcontrollerbase.cpp:500
 #, kde-format
 msgid "Remove"
 msgstr "删除"
 
-#: attachment/attachmentcontrollerbase.cpp:504
+#: attachment/attachmentcontrollerbase.cpp:508
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "打开"
 
-#: attachment/attachmentcontrollerbase.cpp:509
+#: attachment/attachmentcontrollerbase.cpp:513
 #, kde-format
 msgctxt "to view"
 msgid "View"
 msgstr "查看"
 
-#: attachment/attachmentcontrollerbase.cpp:514
+#: attachment/attachmentcontrollerbase.cpp:518
 #, kde-format
 msgctxt "to edit"
 msgid "Edit"
 msgstr "编辑"
 
-#: attachment/attachmentcontrollerbase.cpp:519
+#: attachment/attachmentcontrollerbase.cpp:523
 #, kde-format
 msgctxt "@action"
 msgid "Edit With..."
 msgstr "编辑方式..."
 
-#: attachment/attachmentcontrollerbase.cpp:524
+#: attachment/attachmentcontrollerbase.cpp:528
 #, kde-format
 msgid "&Save Attachment As..."
 msgstr "附件另存为(&S)..."
 
-#: attachment/attachmentcontrollerbase.cpp:525
+#: attachment/attachmentcontrollerbase.cpp:529
 #, kde-format
 msgid "Save As..."
 msgstr "另存为..."
 
-#: attachment/attachmentcontrollerbase.cpp:533
+#: attachment/attachmentcontrollerbase.cpp:537
 #, kde-format
 msgctxt "@action"
 msgid "Attachment Pr&operties..."
 msgstr "附件属性(&O)..."
 
-#: attachment/attachmentcontrollerbase.cpp:534
+#: attachment/attachmentcontrollerbase.cpp:538
 #, kde-format
 msgctxt "@action"
 msgid "Properties"
 msgstr "属性"
 
-#: attachment/attachmentcontrollerbase.cpp:542
+#: attachment/attachmentcontrollerbase.cpp:546
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
 msgstr "全选"
 
-#: attachment/attachmentcontrollerbase.cpp:545
+#: attachment/attachmentcontrollerbase.cpp:549
 #, kde-format
 msgid "Reload"
 msgstr "重新加载"
 
-#: attachment/attachmentcontrollerbase.cpp:679
-#: attachment/attachmentcontrollerbase.cpp:705
-#: attachment/attachmentcontrollerbase.cpp:758
+#: attachment/attachmentcontrollerbase.cpp:683
+#: attachment/attachmentcontrollerbase.cpp:709
+#: attachment/attachmentcontrollerbase.cpp:762
 #, kde-format
 msgid "KMail was unable to write the attachment to a temporary file."
 msgstr "KMail 无法将附件写入临时文件。"
 
-#: attachment/attachmentcontrollerbase.cpp:680
-#: attachment/attachmentcontrollerbase.cpp:706
-#: attachment/attachmentcontrollerbase.cpp:716
+#: attachment/attachmentcontrollerbase.cpp:684
+#: attachment/attachmentcontrollerbase.cpp:710
+#: attachment/attachmentcontrollerbase.cpp:720
 #, kde-format
 msgctxt "@title:window"
 msgid "Unable to open attachment"
 msgstr "无法打开附件"
 
-#: attachment/attachmentcontrollerbase.cpp:759 attachment/editorwatcher.cpp:202
+#: attachment/attachmentcontrollerbase.cpp:763 attachment/editorwatcher.cpp:202
 #, kde-format
 msgctxt "@title:window"
 msgid "Unable to edit attachment"
 msgstr "无法编辑附件"
 
-#: attachment/attachmentcontrollerbase.cpp:800
+#: attachment/attachmentcontrollerbase.cpp:804
 #, kde-format
 msgid "unnamed"
 msgstr "未命名"
 
-#: attachment/attachmentcontrollerbase.cpp:803
+#: attachment/attachmentcontrollerbase.cpp:807
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Attachment As"
 msgstr "附件另存为"
 
-#: attachment/attachmentcontrollerbase.cpp:826
+#: attachment/attachmentcontrollerbase.cpp:830
 #, kde-format
 msgid ""
 "File %1 exists.\n"
@@ -261,56 +261,56 @@ msgstr ""
 "文件 %1 已经存在。\n"
 "您要替换它吗？"
 
-#: attachment/attachmentcontrollerbase.cpp:827
+#: attachment/attachmentcontrollerbase.cpp:831
 #, kde-format
 msgctxt "@title:window"
 msgid "Save to File"
 msgstr "保存到文件"
 
-#: attachment/attachmentcontrollerbase.cpp:828
+#: attachment/attachmentcontrollerbase.cpp:832
 #, kde-format
 msgctxt "@action:button"
 msgid "&Replace"
 msgstr "替换(&R)"
 
-#: attachment/attachmentcontrollerbase.cpp:855
-#: attachment/attachmentcontrollerbase.cpp:934
+#: attachment/attachmentcontrollerbase.cpp:859
+#: attachment/attachmentcontrollerbase.cpp:938
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
 msgstr "您真的想要附加目录“%1”吗？"
 
-#: attachment/attachmentcontrollerbase.cpp:856
-#: attachment/attachmentcontrollerbase.cpp:935
+#: attachment/attachmentcontrollerbase.cpp:860
+#: attachment/attachmentcontrollerbase.cpp:939
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach directory"
 msgstr "附加目录"
 
-#: attachment/attachmentcontrollerbase.cpp:857
-#: attachment/attachmentcontrollerbase.cpp:936
+#: attachment/attachmentcontrollerbase.cpp:861
+#: attachment/attachmentcontrollerbase.cpp:940
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach"
 msgstr "附件"
 
-#: attachment/attachmentcontrollerbase.cpp:892
+#: attachment/attachmentcontrollerbase.cpp:896
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach Directory"
 msgstr "附加目录"
 
-#: attachment/attachmentcontrollerbase.cpp:900
+#: attachment/attachmentcontrollerbase.cpp:904
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach File"
 msgstr "附加文件"
 
-#: attachment/attachmentcontrollerbase.cpp:989
+#: attachment/attachmentcontrollerbase.cpp:993
 #, kde-format
 msgid "Attach Public OpenPGP Key"
 msgstr "附加 OpenPGP 公钥"
 
-#: attachment/attachmentcontrollerbase.cpp:990
+#: attachment/attachmentcontrollerbase.cpp:994
 #, kde-format
 msgid "Select the public key which should be attached."
 msgstr "请选择需要附加的公钥。"

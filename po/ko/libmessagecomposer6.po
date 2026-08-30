@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-16 00:46+0000\n"
+"POT-Creation-Date: 2026-08-30 00:48+0000\n"
 "PO-Revision-Date: 2025-10-09 01:07+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -43,216 +43,216 @@ msgid "Compress"
 msgstr "압축"
 
 #: attachment/attachmentcontrollerbase.cpp:202
-#: attachment/attachmentcontrollerbase.cpp:965
+#: attachment/attachmentcontrollerbase.cpp:969
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach file"
 msgstr "파일을 첨부할 수 없음"
 
-#: attachment/attachmentcontrollerbase.cpp:275
+#: attachment/attachmentcontrollerbase.cpp:279
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to reload attachment"
 msgstr "첨부 파일을 다시 불러올 수 없음"
 
-#: attachment/attachmentcontrollerbase.cpp:322
+#: attachment/attachmentcontrollerbase.cpp:326
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
 msgstr "다음으로 열기(&O)"
 
-#: attachment/attachmentcontrollerbase.cpp:342
+#: attachment/attachmentcontrollerbase.cpp:346
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
 msgstr "기타(&O)..."
 
-#: attachment/attachmentcontrollerbase.cpp:344
-#: attachment/attachmentcontrollerbase.cpp:352
+#: attachment/attachmentcontrollerbase.cpp:348
+#: attachment/attachmentcontrollerbase.cpp:356
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "다음으로 열기(&O)..."
 
-#: attachment/attachmentcontrollerbase.cpp:378
+#: attachment/attachmentcontrollerbase.cpp:382
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach public key"
 msgstr "공개 키를 첨부할 수 없음"
 
-#: attachment/attachmentcontrollerbase.cpp:392
+#: attachment/attachmentcontrollerbase.cpp:396
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach vCard"
 msgstr "vCard를 첨부할 수 없음"
 
-#: attachment/attachmentcontrollerbase.cpp:405
+#: attachment/attachmentcontrollerbase.cpp:409
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach text from clipboard"
 msgstr "클립보드에 있는 텍스트를 첨부할 수 없음"
 
-#: attachment/attachmentcontrollerbase.cpp:453
+#: attachment/attachmentcontrollerbase.cpp:457
 #, kde-format
 msgctxt "@action"
 msgid "Attach &Public Key..."
 msgstr "공개 키 첨부(&P)..."
 
-#: attachment/attachmentcontrollerbase.cpp:456
+#: attachment/attachmentcontrollerbase.cpp:460
 #, kde-format
 msgctxt "@action"
 msgid "Attach &My Public Key"
 msgstr "내 공개 키 첨부(&M)"
 
-#: attachment/attachmentcontrollerbase.cpp:459
-#: attachment/attachmentcontrollerbase.cpp:464
-#: attachment/attachmentcontrollerbase.cpp:470
-#: attachment/attachmentcontrollerbase.cpp:479
+#: attachment/attachmentcontrollerbase.cpp:463
+#: attachment/attachmentcontrollerbase.cpp:468
+#: attachment/attachmentcontrollerbase.cpp:474
+#: attachment/attachmentcontrollerbase.cpp:483
 #, kde-format
 msgid "Attach"
 msgstr "첨부"
 
-#: attachment/attachmentcontrollerbase.cpp:463
+#: attachment/attachmentcontrollerbase.cpp:467
 #, kde-format
 msgid "&Attach File..."
 msgstr "파일 첨부(&A)..."
 
-#: attachment/attachmentcontrollerbase.cpp:465
+#: attachment/attachmentcontrollerbase.cpp:469
 #, kde-format
 msgid "Add Attachment..."
 msgstr "첨부 파일 추가..."
 
-#: attachment/attachmentcontrollerbase.cpp:469
+#: attachment/attachmentcontrollerbase.cpp:473
 #, kde-format
 msgid "&Attach Directory..."
 msgstr "디렉터리 첨부(&A)..."
 
-#: attachment/attachmentcontrollerbase.cpp:473
+#: attachment/attachmentcontrollerbase.cpp:477
 #, kde-format
 msgctxt "@action"
 msgid "Attach Own vCard"
 msgstr "내 vCard 추가"
 
-#: attachment/attachmentcontrollerbase.cpp:474
+#: attachment/attachmentcontrollerbase.cpp:478
 #, kde-format
 msgid "Own vCard"
 msgstr "내 vCard"
 
-#: attachment/attachmentcontrollerbase.cpp:478
+#: attachment/attachmentcontrollerbase.cpp:482
 #, kde-format
 msgid "&Attach vCards..."
 msgstr "vCard 첨부(&A)..."
 
-#: attachment/attachmentcontrollerbase.cpp:482
+#: attachment/attachmentcontrollerbase.cpp:486
 #, kde-format
 msgid "&Attach Text From Clipboard..."
 msgstr "클립보드에서 텍스트 첨부(&A)..."
 
-#: attachment/attachmentcontrollerbase.cpp:483
+#: attachment/attachmentcontrollerbase.cpp:487
 #, kde-format
 msgid "Attach Text From Clipboard"
 msgstr "클립보드에서 텍스트 첨부"
 
-#: attachment/attachmentcontrollerbase.cpp:495
+#: attachment/attachmentcontrollerbase.cpp:499
 #, kde-format
 msgid "&Remove Attachment"
 msgstr "첨부 삭제(&R)"
 
-#: attachment/attachmentcontrollerbase.cpp:496
+#: attachment/attachmentcontrollerbase.cpp:500
 #, kde-format
 msgid "Remove"
 msgstr "삭제"
 
-#: attachment/attachmentcontrollerbase.cpp:504
+#: attachment/attachmentcontrollerbase.cpp:508
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "열기"
 
-#: attachment/attachmentcontrollerbase.cpp:509
+#: attachment/attachmentcontrollerbase.cpp:513
 #, kde-format
 msgctxt "to view"
 msgid "View"
 msgstr "보기"
 
-#: attachment/attachmentcontrollerbase.cpp:514
+#: attachment/attachmentcontrollerbase.cpp:518
 #, kde-format
 msgctxt "to edit"
 msgid "Edit"
 msgstr "편집"
 
-#: attachment/attachmentcontrollerbase.cpp:519
+#: attachment/attachmentcontrollerbase.cpp:523
 #, kde-format
 msgctxt "@action"
 msgid "Edit With..."
 msgstr "다음으로 편집..."
 
-#: attachment/attachmentcontrollerbase.cpp:524
+#: attachment/attachmentcontrollerbase.cpp:528
 #, kde-format
 msgid "&Save Attachment As..."
 msgstr "다른 이름으로 첨부 파일 저장(&S)..."
 
-#: attachment/attachmentcontrollerbase.cpp:525
+#: attachment/attachmentcontrollerbase.cpp:529
 #, kde-format
 msgid "Save As..."
 msgstr "다른 이름으로 저장..."
 
-#: attachment/attachmentcontrollerbase.cpp:533
+#: attachment/attachmentcontrollerbase.cpp:537
 #, kde-format
 msgctxt "@action"
 msgid "Attachment Pr&operties..."
 msgstr "첨부 속성(&O)..."
 
-#: attachment/attachmentcontrollerbase.cpp:534
+#: attachment/attachmentcontrollerbase.cpp:538
 #, kde-format
 msgctxt "@action"
 msgid "Properties"
 msgstr "속성"
 
-#: attachment/attachmentcontrollerbase.cpp:542
+#: attachment/attachmentcontrollerbase.cpp:546
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
 msgstr "모두 선택"
 
-#: attachment/attachmentcontrollerbase.cpp:545
+#: attachment/attachmentcontrollerbase.cpp:549
 #, kde-format
 msgid "Reload"
 msgstr "새로 고침"
 
-#: attachment/attachmentcontrollerbase.cpp:679
-#: attachment/attachmentcontrollerbase.cpp:705
-#: attachment/attachmentcontrollerbase.cpp:758
+#: attachment/attachmentcontrollerbase.cpp:683
+#: attachment/attachmentcontrollerbase.cpp:709
+#: attachment/attachmentcontrollerbase.cpp:762
 #, kde-format
 msgid "KMail was unable to write the attachment to a temporary file."
 msgstr "KMail이 임시 파일에 첨부를 저장할 수 없습니다."
 
-#: attachment/attachmentcontrollerbase.cpp:680
-#: attachment/attachmentcontrollerbase.cpp:706
-#: attachment/attachmentcontrollerbase.cpp:716
+#: attachment/attachmentcontrollerbase.cpp:684
+#: attachment/attachmentcontrollerbase.cpp:710
+#: attachment/attachmentcontrollerbase.cpp:720
 #, kde-format
 msgctxt "@title:window"
 msgid "Unable to open attachment"
 msgstr "첨부 파일을 열 수 없음"
 
-#: attachment/attachmentcontrollerbase.cpp:759 attachment/editorwatcher.cpp:202
+#: attachment/attachmentcontrollerbase.cpp:763 attachment/editorwatcher.cpp:202
 #, kde-format
 msgctxt "@title:window"
 msgid "Unable to edit attachment"
 msgstr "첨부 파일을 편집할 수 없음"
 
-#: attachment/attachmentcontrollerbase.cpp:800
+#: attachment/attachmentcontrollerbase.cpp:804
 #, kde-format
 msgid "unnamed"
 msgstr "이름 없음"
 
-#: attachment/attachmentcontrollerbase.cpp:803
+#: attachment/attachmentcontrollerbase.cpp:807
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Attachment As"
 msgstr "다른 이름으로 첨부 파일 저장"
 
-#: attachment/attachmentcontrollerbase.cpp:826
+#: attachment/attachmentcontrollerbase.cpp:830
 #, kde-format
 msgid ""
 "File %1 exists.\n"
@@ -261,56 +261,56 @@ msgstr ""
 "파일 %1이(가) 존재합니다.\n"
 "파일을 덮어쓰시겠습니까?"
 
-#: attachment/attachmentcontrollerbase.cpp:827
+#: attachment/attachmentcontrollerbase.cpp:831
 #, kde-format
 msgctxt "@title:window"
 msgid "Save to File"
 msgstr "파일로 저장"
 
-#: attachment/attachmentcontrollerbase.cpp:828
+#: attachment/attachmentcontrollerbase.cpp:832
 #, kde-format
 msgctxt "@action:button"
 msgid "&Replace"
 msgstr "바꾸기(&R)"
 
-#: attachment/attachmentcontrollerbase.cpp:855
-#: attachment/attachmentcontrollerbase.cpp:934
+#: attachment/attachmentcontrollerbase.cpp:859
+#: attachment/attachmentcontrollerbase.cpp:938
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
 msgstr "디렉터리 \"%1\"을(를) 첨부하시겠습니까?"
 
-#: attachment/attachmentcontrollerbase.cpp:856
-#: attachment/attachmentcontrollerbase.cpp:935
+#: attachment/attachmentcontrollerbase.cpp:860
+#: attachment/attachmentcontrollerbase.cpp:939
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach directory"
 msgstr "디렉터리 첨부"
 
-#: attachment/attachmentcontrollerbase.cpp:857
-#: attachment/attachmentcontrollerbase.cpp:936
+#: attachment/attachmentcontrollerbase.cpp:861
+#: attachment/attachmentcontrollerbase.cpp:940
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach"
 msgstr "첨부"
 
-#: attachment/attachmentcontrollerbase.cpp:892
+#: attachment/attachmentcontrollerbase.cpp:896
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach Directory"
 msgstr "디렉터리 첨부"
 
-#: attachment/attachmentcontrollerbase.cpp:900
+#: attachment/attachmentcontrollerbase.cpp:904
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach File"
 msgstr "파일 첨부"
 
-#: attachment/attachmentcontrollerbase.cpp:989
+#: attachment/attachmentcontrollerbase.cpp:993
 #, kde-format
 msgid "Attach Public OpenPGP Key"
 msgstr "공개 OpenPGP 키 첨부"
 
-#: attachment/attachmentcontrollerbase.cpp:990
+#: attachment/attachmentcontrollerbase.cpp:994
 #, kde-format
 msgid "Select the public key which should be attached."
 msgstr "첨부할 공개 키를 선택하십시오."

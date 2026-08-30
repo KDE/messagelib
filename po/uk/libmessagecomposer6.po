@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-16 00:46+0000\n"
+"POT-Creation-Date: 2026-08-30 00:48+0000\n"
 "PO-Revision-Date: 2026-08-16 14:17+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -47,216 +47,216 @@ msgid "Compress"
 msgstr "Стиснути"
 
 #: attachment/attachmentcontrollerbase.cpp:202
-#: attachment/attachmentcontrollerbase.cpp:965
+#: attachment/attachmentcontrollerbase.cpp:969
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach file"
 msgstr "Не вдалося долучити файл"
 
-#: attachment/attachmentcontrollerbase.cpp:275
+#: attachment/attachmentcontrollerbase.cpp:279
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to reload attachment"
 msgstr "Не вдалося перезавантажити долучення"
 
-#: attachment/attachmentcontrollerbase.cpp:322
+#: attachment/attachmentcontrollerbase.cpp:326
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
 msgstr "В&ідкрити за допомогою"
 
-#: attachment/attachmentcontrollerbase.cpp:342
+#: attachment/attachmentcontrollerbase.cpp:346
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
 msgstr "Ін&ша…"
 
-#: attachment/attachmentcontrollerbase.cpp:344
-#: attachment/attachmentcontrollerbase.cpp:352
+#: attachment/attachmentcontrollerbase.cpp:348
+#: attachment/attachmentcontrollerbase.cpp:356
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "Від&крити за допомогою…"
 
-#: attachment/attachmentcontrollerbase.cpp:378
+#: attachment/attachmentcontrollerbase.cpp:382
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach public key"
 msgstr "Не вдалося долучити відкритий ключ"
 
-#: attachment/attachmentcontrollerbase.cpp:392
+#: attachment/attachmentcontrollerbase.cpp:396
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach vCard"
 msgstr "Не вдалося долучити візитівку"
 
-#: attachment/attachmentcontrollerbase.cpp:405
+#: attachment/attachmentcontrollerbase.cpp:409
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach text from clipboard"
 msgstr "Не вдалося долучити текст з буфера обміну даними"
 
-#: attachment/attachmentcontrollerbase.cpp:453
+#: attachment/attachmentcontrollerbase.cpp:457
 #, kde-format
 msgctxt "@action"
 msgid "Attach &Public Key..."
 msgstr "Долучити &відкритий ключ…"
 
-#: attachment/attachmentcontrollerbase.cpp:456
+#: attachment/attachmentcontrollerbase.cpp:460
 #, kde-format
 msgctxt "@action"
 msgid "Attach &My Public Key"
 msgstr "Долучити &мій відкритий ключ"
 
-#: attachment/attachmentcontrollerbase.cpp:459
-#: attachment/attachmentcontrollerbase.cpp:464
-#: attachment/attachmentcontrollerbase.cpp:470
-#: attachment/attachmentcontrollerbase.cpp:479
+#: attachment/attachmentcontrollerbase.cpp:463
+#: attachment/attachmentcontrollerbase.cpp:468
+#: attachment/attachmentcontrollerbase.cpp:474
+#: attachment/attachmentcontrollerbase.cpp:483
 #, kde-format
 msgid "Attach"
 msgstr "Долучити"
 
-#: attachment/attachmentcontrollerbase.cpp:463
+#: attachment/attachmentcontrollerbase.cpp:467
 #, kde-format
 msgid "&Attach File..."
 msgstr "&Долучити файл…"
 
-#: attachment/attachmentcontrollerbase.cpp:465
+#: attachment/attachmentcontrollerbase.cpp:469
 #, kde-format
 msgid "Add Attachment..."
 msgstr "Додати долучення…"
 
-#: attachment/attachmentcontrollerbase.cpp:469
+#: attachment/attachmentcontrollerbase.cpp:473
 #, kde-format
 msgid "&Attach Directory..."
 msgstr "&Долучити каталог…"
 
-#: attachment/attachmentcontrollerbase.cpp:473
+#: attachment/attachmentcontrollerbase.cpp:477
 #, kde-format
 msgctxt "@action"
 msgid "Attach Own vCard"
 msgstr "Долучити власну візитівку"
 
-#: attachment/attachmentcontrollerbase.cpp:474
+#: attachment/attachmentcontrollerbase.cpp:478
 #, kde-format
 msgid "Own vCard"
 msgstr "Власна візитівка"
 
-#: attachment/attachmentcontrollerbase.cpp:478
+#: attachment/attachmentcontrollerbase.cpp:482
 #, kde-format
 msgid "&Attach vCards..."
 msgstr "&Долучити візитівки…"
 
-#: attachment/attachmentcontrollerbase.cpp:482
+#: attachment/attachmentcontrollerbase.cpp:486
 #, kde-format
 msgid "&Attach Text From Clipboard..."
 msgstr "&Долучити текст з буфера обміну…"
 
-#: attachment/attachmentcontrollerbase.cpp:483
+#: attachment/attachmentcontrollerbase.cpp:487
 #, kde-format
 msgid "Attach Text From Clipboard"
 msgstr "Долучити текст з буфера обміну"
 
-#: attachment/attachmentcontrollerbase.cpp:495
+#: attachment/attachmentcontrollerbase.cpp:499
 #, kde-format
 msgid "&Remove Attachment"
 msgstr "&Вилучити долучення"
 
-#: attachment/attachmentcontrollerbase.cpp:496
+#: attachment/attachmentcontrollerbase.cpp:500
 #, kde-format
 msgid "Remove"
 msgstr "Вилучити"
 
-#: attachment/attachmentcontrollerbase.cpp:504
+#: attachment/attachmentcontrollerbase.cpp:508
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Відкрити"
 
-#: attachment/attachmentcontrollerbase.cpp:509
+#: attachment/attachmentcontrollerbase.cpp:513
 #, kde-format
 msgctxt "to view"
 msgid "View"
 msgstr "Переглянути"
 
-#: attachment/attachmentcontrollerbase.cpp:514
+#: attachment/attachmentcontrollerbase.cpp:518
 #, kde-format
 msgctxt "to edit"
 msgid "Edit"
 msgstr "Змінити"
 
-#: attachment/attachmentcontrollerbase.cpp:519
+#: attachment/attachmentcontrollerbase.cpp:523
 #, kde-format
 msgctxt "@action"
 msgid "Edit With..."
 msgstr "Редагувати за допомогою…"
 
-#: attachment/attachmentcontrollerbase.cpp:524
+#: attachment/attachmentcontrollerbase.cpp:528
 #, kde-format
 msgid "&Save Attachment As..."
 msgstr "&Зберегти долучення як…"
 
-#: attachment/attachmentcontrollerbase.cpp:525
+#: attachment/attachmentcontrollerbase.cpp:529
 #, kde-format
 msgid "Save As..."
 msgstr "Зберегти як…"
 
-#: attachment/attachmentcontrollerbase.cpp:533
+#: attachment/attachmentcontrollerbase.cpp:537
 #, kde-format
 msgctxt "@action"
 msgid "Attachment Pr&operties..."
 msgstr "Вла&стивості долучення…"
 
-#: attachment/attachmentcontrollerbase.cpp:534
+#: attachment/attachmentcontrollerbase.cpp:538
 #, kde-format
 msgctxt "@action"
 msgid "Properties"
 msgstr "Властивості"
 
-#: attachment/attachmentcontrollerbase.cpp:542
+#: attachment/attachmentcontrollerbase.cpp:546
 #, kde-format
 msgctxt "@action"
 msgid "Select All"
 msgstr "Позначити все"
 
-#: attachment/attachmentcontrollerbase.cpp:545
+#: attachment/attachmentcontrollerbase.cpp:549
 #, kde-format
 msgid "Reload"
 msgstr "Перезавантажити"
 
-#: attachment/attachmentcontrollerbase.cpp:679
-#: attachment/attachmentcontrollerbase.cpp:705
-#: attachment/attachmentcontrollerbase.cpp:758
+#: attachment/attachmentcontrollerbase.cpp:683
+#: attachment/attachmentcontrollerbase.cpp:709
+#: attachment/attachmentcontrollerbase.cpp:762
 #, kde-format
 msgid "KMail was unable to write the attachment to a temporary file."
 msgstr "KMail не вдалося записати долучення до тимчасового файла."
 
-#: attachment/attachmentcontrollerbase.cpp:680
-#: attachment/attachmentcontrollerbase.cpp:706
-#: attachment/attachmentcontrollerbase.cpp:716
+#: attachment/attachmentcontrollerbase.cpp:684
+#: attachment/attachmentcontrollerbase.cpp:710
+#: attachment/attachmentcontrollerbase.cpp:720
 #, kde-format
 msgctxt "@title:window"
 msgid "Unable to open attachment"
 msgstr "Не вдалося відкрити долучення"
 
-#: attachment/attachmentcontrollerbase.cpp:759 attachment/editorwatcher.cpp:202
+#: attachment/attachmentcontrollerbase.cpp:763 attachment/editorwatcher.cpp:202
 #, kde-format
 msgctxt "@title:window"
 msgid "Unable to edit attachment"
 msgstr "Змінити долучення неможливо"
 
-#: attachment/attachmentcontrollerbase.cpp:800
+#: attachment/attachmentcontrollerbase.cpp:804
 #, kde-format
 msgid "unnamed"
 msgstr "без назви"
 
-#: attachment/attachmentcontrollerbase.cpp:803
+#: attachment/attachmentcontrollerbase.cpp:807
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Attachment As"
 msgstr "Зберегти долучення як"
 
-#: attachment/attachmentcontrollerbase.cpp:826
+#: attachment/attachmentcontrollerbase.cpp:830
 #, kde-format
 msgid ""
 "File %1 exists.\n"
@@ -265,56 +265,56 @@ msgstr ""
 "Файл %1 вже існує.\n"
 "Хочете його замінити?"
 
-#: attachment/attachmentcontrollerbase.cpp:827
+#: attachment/attachmentcontrollerbase.cpp:831
 #, kde-format
 msgctxt "@title:window"
 msgid "Save to File"
 msgstr "Збереження до файла"
 
-#: attachment/attachmentcontrollerbase.cpp:828
+#: attachment/attachmentcontrollerbase.cpp:832
 #, kde-format
 msgctxt "@action:button"
 msgid "&Replace"
 msgstr "З&амінити"
 
-#: attachment/attachmentcontrollerbase.cpp:855
-#: attachment/attachmentcontrollerbase.cpp:934
+#: attachment/attachmentcontrollerbase.cpp:859
+#: attachment/attachmentcontrollerbase.cpp:938
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
 msgstr "Ви справді бажаєте долучити цей каталог, «%1»?"
 
-#: attachment/attachmentcontrollerbase.cpp:856
-#: attachment/attachmentcontrollerbase.cpp:935
+#: attachment/attachmentcontrollerbase.cpp:860
+#: attachment/attachmentcontrollerbase.cpp:939
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach directory"
 msgstr "Долучення каталогу"
 
-#: attachment/attachmentcontrollerbase.cpp:857
-#: attachment/attachmentcontrollerbase.cpp:936
+#: attachment/attachmentcontrollerbase.cpp:861
+#: attachment/attachmentcontrollerbase.cpp:940
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach"
 msgstr "Долучити"
 
-#: attachment/attachmentcontrollerbase.cpp:892
+#: attachment/attachmentcontrollerbase.cpp:896
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach Directory"
 msgstr "Долучення каталогу"
 
-#: attachment/attachmentcontrollerbase.cpp:900
+#: attachment/attachmentcontrollerbase.cpp:904
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach File"
 msgstr "Долучення файла"
 
-#: attachment/attachmentcontrollerbase.cpp:989
+#: attachment/attachmentcontrollerbase.cpp:993
 #, kde-format
 msgid "Attach Public OpenPGP Key"
 msgstr "Долучення відкритого ключа OpenPGP"
 
-#: attachment/attachmentcontrollerbase.cpp:990
+#: attachment/attachmentcontrollerbase.cpp:994
 #, kde-format
 msgid "Select the public key which should be attached."
 msgstr "Виберіть відкритий ключ, який потрібно долучити."

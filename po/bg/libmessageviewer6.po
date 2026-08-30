@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-16 00:46+0000\n"
+"POT-Creation-Date: 2026-08-30 00:48+0000\n"
 "PO-Revision-Date: 2026-05-28 21:34+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -1880,43 +1880,43 @@ msgstr "Адресът е копиран в буфера."
 msgid "Lookup the contact in KAddressbook"
 msgstr "Търсене на контакта в KAddressbook"
 
-#: viewer/urlhandlermanager.cpp:775
+#: viewer/urlhandlermanager.cpp:778
 #, kde-format
 msgid "Attachment: %1"
 msgstr "Прикрепен файл: %1"
 
-#: viewer/urlhandlermanager.cpp:778
+#: viewer/urlhandlermanager.cpp:781
 #, kde-format
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "Инкапсулирано съобщение (Тема:%1)"
 
-#: viewer/urlhandlermanager.cpp:780
+#: viewer/urlhandlermanager.cpp:783
 #, kde-format
 msgid "Encapsulated Message"
 msgstr "Инкапсулирано съобщение"
 
-#: viewer/urlhandlermanager.cpp:783
+#: viewer/urlhandlermanager.cpp:786
 #, kde-format
 msgid "Unnamed attachment"
 msgstr "Неозаглавен прикрепен файл"
 
-#: viewer/urlhandlermanager.cpp:819
+#: viewer/urlhandlermanager.cpp:822
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr "Показване на журналния GnuPG файл за тази операция"
 
-#: viewer/urlhandlermanager.cpp:859
+#: viewer/urlhandlermanager.cpp:862
 #, kde-format
 msgid "Opening URL..."
 msgstr "Отваряне на адрес (URL)..."
 
-#: viewer/urlhandlermanager.cpp:868
+#: viewer/urlhandlermanager.cpp:871
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "Наистина ли искате да изпълните <filename>%1</filename>?"
 
-#: viewer/urlhandlermanager.cpp:870
+#: viewer/urlhandlermanager.cpp:873
 #, kde-format
 msgctxt "@action:button"
 msgid "Execute"

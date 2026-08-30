@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-16 00:46+0000\n"
+"POT-Creation-Date: 2026-08-30 00:48+0000\n"
 "PO-Revision-Date: 2014-09-13 18:21+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@nuug.no>\n"
@@ -1845,43 +1845,43 @@ msgstr "Adressen er kopiert til utklippstavla."
 msgid "Lookup the contact in KAddressbook"
 msgstr "Slå opp kontakten i KAddressbook"
 
-#: viewer/urlhandlermanager.cpp:775
+#: viewer/urlhandlermanager.cpp:778
 #, kde-format
 msgid "Attachment: %1"
 msgstr "Vedlegg: %1"
 
-#: viewer/urlhandlermanager.cpp:778
+#: viewer/urlhandlermanager.cpp:781
 #, kde-format
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "Innkapslet melding (Emne: %1)"
 
-#: viewer/urlhandlermanager.cpp:780
+#: viewer/urlhandlermanager.cpp:783
 #, kde-format
 msgid "Encapsulated Message"
 msgstr "Innkapslet melding"
 
-#: viewer/urlhandlermanager.cpp:783
+#: viewer/urlhandlermanager.cpp:786
 #, kde-format
 msgid "Unnamed attachment"
 msgstr "Vedlegg uten navn"
 
-#: viewer/urlhandlermanager.cpp:819
+#: viewer/urlhandlermanager.cpp:822
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr "Vis GnuPG kontroll-logg for denne handlinga"
 
-#: viewer/urlhandlermanager.cpp:859
+#: viewer/urlhandlermanager.cpp:862
 #, kde-format
 msgid "Opening URL..."
 msgstr "Åpner nettadressen …"
 
-#: viewer/urlhandlermanager.cpp:868
+#: viewer/urlhandlermanager.cpp:871
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "Er det sikkert at du vil kjøre <filename>%1</filename>?"
 
-#: viewer/urlhandlermanager.cpp:870
+#: viewer/urlhandlermanager.cpp:873
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Execute"

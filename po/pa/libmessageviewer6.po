@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-16 00:46+0000\n"
+"POT-Creation-Date: 2026-08-30 00:48+0000\n"
 "PO-Revision-Date: 2009-01-18 17:38+0530\n"
 "Last-Translator: Amanpreet Singh Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjab-l10n@list.sf.net>\n"
@@ -1991,47 +1991,47 @@ msgstr "ਐਡਰੈੱਸ ਕਲਿੱਪਬੋਰਡ ਵਿੱਚ ਕਾਪੀ
 msgid "Lookup the contact in KAddressbook"
 msgstr "ਐਡਰੈੱਸ ਬੁੱਕ ਵਿੱਚ ਖੋਲ੍ਹੋ"
 
-#: viewer/urlhandlermanager.cpp:775
+#: viewer/urlhandlermanager.cpp:778
 #, kde-format
 msgid "Attachment: %1"
 msgstr "ਅਟੈਚਮੈਂਟ: %1"
 
-#: viewer/urlhandlermanager.cpp:778
+#: viewer/urlhandlermanager.cpp:781
 #, fuzzy, kde-format
 #| msgid "Encapsulated message"
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "ਇਨਕੈਪਸੂਲੇਟਡ ਸੁਨੇਹਾ"
 
-#: viewer/urlhandlermanager.cpp:780
+#: viewer/urlhandlermanager.cpp:783
 #, fuzzy, kde-format
 #| msgid "Encapsulated message"
 msgid "Encapsulated Message"
 msgstr "ਇਨਕੈਪਸੂਲੇਟਡ ਸੁਨੇਹਾ"
 
-#: viewer/urlhandlermanager.cpp:783
+#: viewer/urlhandlermanager.cpp:786
 #, fuzzy, kde-format
 #| msgid "Unable to edit attachment"
 msgid "Unnamed attachment"
 msgstr "ਅਟੈਚ ਸੋਧਣ ਤੋਂ ਅਸਮੱਰਥ"
 
-#: viewer/urlhandlermanager.cpp:819
+#: viewer/urlhandlermanager.cpp:822
 #, fuzzy, kde-format
 #| msgid "GnuPG Audit Log for Encryption Operation"
 msgid "Show GnuPG Audit Log for this operation"
 msgstr "ਇੰਕ੍ਰਿਪਸ਼ਨ ਓਪਰੇਸ਼ਨ ਲਈ GnuPG ਆਡਿਟ ਲਾਗ"
 
-#: viewer/urlhandlermanager.cpp:859
+#: viewer/urlhandlermanager.cpp:862
 #, kde-format
 msgid "Opening URL..."
 msgstr "URL ਖੋਲ੍ਹੋ..."
 
-#: viewer/urlhandlermanager.cpp:868
+#: viewer/urlhandlermanager.cpp:871
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "ਕੀ ਤੁਸੀਂ <filename>%1</filename> ਨੂੰ ਚਲਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ? "
 
-#: viewer/urlhandlermanager.cpp:870
+#: viewer/urlhandlermanager.cpp:873
 #, fuzzy, kde-format
 #| msgid "Execute"
 msgctxt "@action:button"

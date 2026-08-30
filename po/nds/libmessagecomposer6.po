@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-16 00:46+0000\n"
+"POT-Creation-Date: 2026-08-30 00:48+0000\n"
 "PO-Revision-Date: 2014-09-18 22:36+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -49,235 +49,235 @@ msgid "Compress"
 msgstr "Komprimeren"
 
 #: attachment/attachmentcontrollerbase.cpp:202
-#: attachment/attachmentcontrollerbase.cpp:965
+#: attachment/attachmentcontrollerbase.cpp:969
 #, fuzzy, kde-format
 #| msgid "Failed to attach file"
 msgctxt "@title:window"
 msgid "Failed to attach file"
 msgstr "Datei lett sik nich bileggen."
 
-#: attachment/attachmentcontrollerbase.cpp:275
+#: attachment/attachmentcontrollerbase.cpp:279
 #, fuzzy, kde-format
 #| msgid "Failed to compress attachment"
 msgctxt "@title:window"
 msgid "Failed to reload attachment"
 msgstr "Bilaag lett sik nich komprimeren."
 
-#: attachment/attachmentcontrollerbase.cpp:322
+#: attachment/attachmentcontrollerbase.cpp:326
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
 msgstr "&Opmaken mit"
 
-#: attachment/attachmentcontrollerbase.cpp:342
+#: attachment/attachmentcontrollerbase.cpp:346
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
 msgstr "&Anner..."
 
-#: attachment/attachmentcontrollerbase.cpp:344
-#: attachment/attachmentcontrollerbase.cpp:352
+#: attachment/attachmentcontrollerbase.cpp:348
+#: attachment/attachmentcontrollerbase.cpp:356
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "&Opmaken mit..."
 
-#: attachment/attachmentcontrollerbase.cpp:378
+#: attachment/attachmentcontrollerbase.cpp:382
 #, fuzzy, kde-format
 #| msgid "Failed to attach public key"
 msgctxt "@title:window"
 msgid "Failed to attach public key"
 msgstr "Apen Slötel lett sik nich bileggen."
 
-#: attachment/attachmentcontrollerbase.cpp:392
+#: attachment/attachmentcontrollerbase.cpp:396
 #, fuzzy, kde-format
 #| msgid "Failed to attach file"
 msgctxt "@title:window"
 msgid "Failed to attach vCard"
 msgstr "Datei lett sik nich bileggen."
 
-#: attachment/attachmentcontrollerbase.cpp:405
+#: attachment/attachmentcontrollerbase.cpp:409
 #, fuzzy, kde-format
 #| msgid "Failed to attach file"
 msgctxt "@title:window"
 msgid "Failed to attach text from clipboard"
 msgstr "Datei lett sik nich bileggen."
 
-#: attachment/attachmentcontrollerbase.cpp:453
+#: attachment/attachmentcontrollerbase.cpp:457
 #, fuzzy, kde-format
 #| msgid "Attach &Public Key..."
 msgctxt "@action"
 msgid "Attach &Public Key..."
 msgstr "A&pen Slötel bileggen..."
 
-#: attachment/attachmentcontrollerbase.cpp:456
+#: attachment/attachmentcontrollerbase.cpp:460
 #, fuzzy, kde-format
 #| msgid "Attach &My Public Key"
 msgctxt "@action"
 msgid "Attach &My Public Key"
 msgstr "E&gen apen Slötel bileggen"
 
-#: attachment/attachmentcontrollerbase.cpp:459
-#: attachment/attachmentcontrollerbase.cpp:464
-#: attachment/attachmentcontrollerbase.cpp:470
-#: attachment/attachmentcontrollerbase.cpp:479
+#: attachment/attachmentcontrollerbase.cpp:463
+#: attachment/attachmentcontrollerbase.cpp:468
+#: attachment/attachmentcontrollerbase.cpp:474
+#: attachment/attachmentcontrollerbase.cpp:483
 #, kde-format
 msgid "Attach"
 msgstr "Bileggen"
 
-#: attachment/attachmentcontrollerbase.cpp:463
+#: attachment/attachmentcontrollerbase.cpp:467
 #, kde-format
 msgid "&Attach File..."
 msgstr "&Datei bileggen..."
 
-#: attachment/attachmentcontrollerbase.cpp:465
+#: attachment/attachmentcontrollerbase.cpp:469
 #, kde-format
 msgid "Add Attachment..."
 msgstr "Bilaag tofögen..."
 
-#: attachment/attachmentcontrollerbase.cpp:469
+#: attachment/attachmentcontrollerbase.cpp:473
 #, fuzzy, kde-format
 #| msgid "Attach directory"
 msgid "&Attach Directory..."
 msgstr "Orner bileggen"
 
-#: attachment/attachmentcontrollerbase.cpp:473
+#: attachment/attachmentcontrollerbase.cpp:477
 #, fuzzy, kde-format
 #| msgid "Attach Own vCard"
 msgctxt "@action"
 msgid "Attach Own vCard"
 msgstr "Egen vCard bileggen"
 
-#: attachment/attachmentcontrollerbase.cpp:474
+#: attachment/attachmentcontrollerbase.cpp:478
 #, kde-format
 msgid "Own vCard"
 msgstr "Egen vCard"
 
-#: attachment/attachmentcontrollerbase.cpp:478
+#: attachment/attachmentcontrollerbase.cpp:482
 #, fuzzy, kde-format
 #| msgid "Attach directory"
 msgid "&Attach vCards..."
 msgstr "Orner bileggen"
 
-#: attachment/attachmentcontrollerbase.cpp:482
+#: attachment/attachmentcontrollerbase.cpp:486
 #, fuzzy, kde-format
 #| msgid "Attach directory"
 msgid "&Attach Text From Clipboard..."
 msgstr "Orner bileggen"
 
-#: attachment/attachmentcontrollerbase.cpp:483
+#: attachment/attachmentcontrollerbase.cpp:487
 #, fuzzy, kde-format
 #| msgid "Attach Own vCard"
 msgid "Attach Text From Clipboard"
 msgstr "Egen vCard bileggen"
 
-#: attachment/attachmentcontrollerbase.cpp:495
+#: attachment/attachmentcontrollerbase.cpp:499
 #, kde-format
 msgid "&Remove Attachment"
 msgstr "Bilaag &wegmaken"
 
-#: attachment/attachmentcontrollerbase.cpp:496
+#: attachment/attachmentcontrollerbase.cpp:500
 #, kde-format
 msgid "Remove"
 msgstr "Wegmaken"
 
-#: attachment/attachmentcontrollerbase.cpp:504
+#: attachment/attachmentcontrollerbase.cpp:508
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Opmaken"
 
-#: attachment/attachmentcontrollerbase.cpp:509
+#: attachment/attachmentcontrollerbase.cpp:513
 #, kde-format
 msgctxt "to view"
 msgid "View"
 msgstr "Ankieken"
 
-#: attachment/attachmentcontrollerbase.cpp:514
+#: attachment/attachmentcontrollerbase.cpp:518
 #, kde-format
 msgctxt "to edit"
 msgid "Edit"
 msgstr "Bewerken"
 
-#: attachment/attachmentcontrollerbase.cpp:519
+#: attachment/attachmentcontrollerbase.cpp:523
 #, fuzzy, kde-format
 #| msgid "Edit With..."
 msgctxt "@action"
 msgid "Edit With..."
 msgstr "Bewerken mit..."
 
-#: attachment/attachmentcontrollerbase.cpp:524
+#: attachment/attachmentcontrollerbase.cpp:528
 #, kde-format
 msgid "&Save Attachment As..."
 msgstr "Bilaag &sekern as..."
 
-#: attachment/attachmentcontrollerbase.cpp:525
+#: attachment/attachmentcontrollerbase.cpp:529
 #, kde-format
 msgid "Save As..."
 msgstr "Sekern as..."
 
-#: attachment/attachmentcontrollerbase.cpp:533
+#: attachment/attachmentcontrollerbase.cpp:537
 #, fuzzy, kde-format
 #| msgid "Attachment Pr&operties..."
 msgctxt "@action"
 msgid "Attachment Pr&operties..."
 msgstr "Bilaag-E&genschappen..."
 
-#: attachment/attachmentcontrollerbase.cpp:534
+#: attachment/attachmentcontrollerbase.cpp:538
 #, fuzzy, kde-format
 #| msgid "Properties"
 msgctxt "@action"
 msgid "Properties"
 msgstr "Egenschappen"
 
-#: attachment/attachmentcontrollerbase.cpp:542
+#: attachment/attachmentcontrollerbase.cpp:546
 #, fuzzy, kde-format
 #| msgid "Select All"
 msgctxt "@action"
 msgid "Select All"
 msgstr "All utsöken"
 
-#: attachment/attachmentcontrollerbase.cpp:545
+#: attachment/attachmentcontrollerbase.cpp:549
 #, kde-format
 msgid "Reload"
 msgstr ""
 
-#: attachment/attachmentcontrollerbase.cpp:679
-#: attachment/attachmentcontrollerbase.cpp:705
-#: attachment/attachmentcontrollerbase.cpp:758
+#: attachment/attachmentcontrollerbase.cpp:683
+#: attachment/attachmentcontrollerbase.cpp:709
+#: attachment/attachmentcontrollerbase.cpp:762
 #, kde-format
 msgid "KMail was unable to write the attachment to a temporary file."
 msgstr "KMail kunn de Bilaag nich as Temporeerdatei schrieven."
 
-#: attachment/attachmentcontrollerbase.cpp:680
-#: attachment/attachmentcontrollerbase.cpp:706
-#: attachment/attachmentcontrollerbase.cpp:716
+#: attachment/attachmentcontrollerbase.cpp:684
+#: attachment/attachmentcontrollerbase.cpp:710
+#: attachment/attachmentcontrollerbase.cpp:720
 #, fuzzy, kde-format
 #| msgid "Unable to open attachment"
 msgctxt "@title:window"
 msgid "Unable to open attachment"
 msgstr "Bilaag lett sik nich opmaken."
 
-#: attachment/attachmentcontrollerbase.cpp:759 attachment/editorwatcher.cpp:202
+#: attachment/attachmentcontrollerbase.cpp:763 attachment/editorwatcher.cpp:202
 #, fuzzy, kde-format
 #| msgid "Unable to edit attachment"
 msgctxt "@title:window"
 msgid "Unable to edit attachment"
 msgstr "Bilaag lett sik nich bewerken."
 
-#: attachment/attachmentcontrollerbase.cpp:800
+#: attachment/attachmentcontrollerbase.cpp:804
 #, kde-format
 msgid "unnamed"
 msgstr "ahn Naam"
 
-#: attachment/attachmentcontrollerbase.cpp:803
+#: attachment/attachmentcontrollerbase.cpp:807
 #, fuzzy, kde-format
 #| msgid "Save Attachment As"
 msgctxt "@title:window"
 msgid "Save Attachment As"
 msgstr "Bilaag sekern as"
 
-#: attachment/attachmentcontrollerbase.cpp:826
+#: attachment/attachmentcontrollerbase.cpp:830
 #, kde-format
 msgid ""
 "File %1 exists.\n"
@@ -286,63 +286,63 @@ msgstr ""
 "Dat gifft de Datei \"%1\" al.\n"
 "Wullt Du ehr överschrieven?"
 
-#: attachment/attachmentcontrollerbase.cpp:827
+#: attachment/attachmentcontrollerbase.cpp:831
 #, fuzzy, kde-format
 #| msgid "Save to File"
 msgctxt "@title:window"
 msgid "Save to File"
 msgstr "As Datei sekern"
 
-#: attachment/attachmentcontrollerbase.cpp:828
+#: attachment/attachmentcontrollerbase.cpp:832
 #, fuzzy, kde-format
 #| msgid "&Replace"
 msgctxt "@action:button"
 msgid "&Replace"
 msgstr "&Utwesseln"
 
-#: attachment/attachmentcontrollerbase.cpp:855
-#: attachment/attachmentcontrollerbase.cpp:934
+#: attachment/attachmentcontrollerbase.cpp:859
+#: attachment/attachmentcontrollerbase.cpp:938
 #, fuzzy, kde-format
 #| msgid "Do you really want to attach this directory \"%1\" ?"
 msgid "Do you really want to attach this directory \"%1\"?"
 msgstr "Wullt Du redig dissen Orner \"%1\" bileggen?"
 
-#: attachment/attachmentcontrollerbase.cpp:856
-#: attachment/attachmentcontrollerbase.cpp:935
+#: attachment/attachmentcontrollerbase.cpp:860
+#: attachment/attachmentcontrollerbase.cpp:939
 #, fuzzy, kde-format
 #| msgid "Attach directory"
 msgctxt "@title:window"
 msgid "Attach directory"
 msgstr "Orner bileggen"
 
-#: attachment/attachmentcontrollerbase.cpp:857
-#: attachment/attachmentcontrollerbase.cpp:936
+#: attachment/attachmentcontrollerbase.cpp:861
+#: attachment/attachmentcontrollerbase.cpp:940
 #, fuzzy, kde-format
 #| msgid "Attach"
 msgctxt "@action:button"
 msgid "Attach"
 msgstr "Bileggen"
 
-#: attachment/attachmentcontrollerbase.cpp:892
+#: attachment/attachmentcontrollerbase.cpp:896
 #, fuzzy, kde-format
 #| msgid "Attach directory"
 msgctxt "@title:window"
 msgid "Attach Directory"
 msgstr "Orner bileggen"
 
-#: attachment/attachmentcontrollerbase.cpp:900
+#: attachment/attachmentcontrollerbase.cpp:904
 #, fuzzy, kde-format
 #| msgid "Attach File"
 msgctxt "@title:window"
 msgid "Attach File"
 msgstr "Datei bileggen"
 
-#: attachment/attachmentcontrollerbase.cpp:989
+#: attachment/attachmentcontrollerbase.cpp:993
 #, kde-format
 msgid "Attach Public OpenPGP Key"
 msgstr "Apen OpenPGP-Slötel bileggen"
 
-#: attachment/attachmentcontrollerbase.cpp:990
+#: attachment/attachmentcontrollerbase.cpp:994
 #, kde-format
 msgid "Select the public key which should be attached."
 msgstr "Söök den apen Slötel ut, den Du bileggen wullt."
