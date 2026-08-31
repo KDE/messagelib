@@ -682,7 +682,8 @@ bool MessageList::Widget::getSelectionStats(Akonadi::Item::List &selectedItems,
     Core::MessageItem *topmost = nullptr;
 
     *allSelectedBelongToSameThread = true;
-
+    selectedVisibleItems.reserve(selected.count());
+    selectedItems.reserve(selected.count());
     for (Core::MessageItem *it : std::as_const(selected)) {
         const Akonadi::Item item = d->itemForRow(it->currentModelIndexRow());
         selectedItems.append(item);
