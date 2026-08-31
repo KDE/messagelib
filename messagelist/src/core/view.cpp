@@ -2340,7 +2340,7 @@ bool View::event(QEvent *e)
     QString txtColorName = txtColor.name();
     QString darkerColorName = darkerColor.name();
     const bool textIsLeftToRight = (QApplication::layoutDirection() == Qt::LeftToRight);
-    const QString textDirection = textIsLeftToRight ? u"left"_s : QStringLiteral("right");
+    const QString textDirection = textIsLeftToRight ? u"left"_s : u"right"_s;
 
     QString tip = u"<table width=\"100%\" border=\"0\" cellpadding=\"2\" cellspacing=\"0\">"_s;
 
@@ -2348,23 +2348,22 @@ bool View::event(QEvent *e)
     case Item::Message: {
         auto mi = static_cast<MessageItem *>(it);
 
-        tip += QStringLiteral(
-                   "<tr>"
-                   "<td bgcolor=\"%1\" align=\"%4\" valign=\"middle\">"
-                   "<div style=\"color: %2; font-weight: bold;\">"
-                   "%3"
-                   "</div>"
-                   "</td>"
-                   "</tr>")
-                   .arg(txtColorName, bckColorName, mi->subject().toHtmlEscaped(), textDirection);
+        tip +=
+            u"<tr>"
+            "<td bgcolor=\"%1\" align=\"%4\" valign=\"middle\">"
+            "<div style=\"color: %2; font-weight: bold;\">"
+            "%3"
+            "</div>"
+            "</td>"
+            "</tr>"_s.arg(txtColorName, bckColorName, mi->subject().toHtmlEscaped(), textDirection);
 
-        tip += QLatin1StringView(
+        tip +=
             "<tr>"
             "<td align=\"center\" valign=\"middle\">"
-            "<table width=\"100%\" border=\"0\" cellpadding=\"2\" cellspacing=\"0\">");
+            "<table width=\"100%\" border=\"0\" cellpadding=\"2\" cellspacing=\"0\">"_L1;
 
-        const QString htmlCodeForStandardRow = QStringLiteral(
-            "<tr>"
+        const QString htmlCodeForStandardRow =
+            u"<tr>"
             "<td align=\"right\" valign=\"top\" width=\"45\">"
             "<div style=\"font-weight: bold;\"><nobr>"
             "%1:"
@@ -2373,7 +2372,7 @@ bool View::event(QEvent *e)
             "<td align=\"left\" valign=\"top\">"
             "%2"
             "</td>"
-            "</tr>");
+            "</tr>"_s;
 
         if (textIsLeftToRight) {
             tip += htmlCodeForStandardRow.arg(i18n("From"), mi->displaySender().toHtmlEscaped());
@@ -2389,7 +2388,7 @@ bool View::event(QEvent *e)
         const QString tags = mi->tagListDescription();
         if (!tags.isEmpty()) {
             if (!status.isEmpty()) {
-                status += QLatin1StringView(", ");
+                status += ", "_L1;
             }
             status += tags;
         }
@@ -2413,10 +2412,10 @@ bool View::event(QEvent *e)
             }
         }
 
-        tip += QLatin1StringView(
+        tip +=
             "</table>"
             "</td>"
-            "</tr>");
+            "</tr>"_L1;
 
         // FIXME: Find a way to show also CC and other header fields ?
 
@@ -2427,20 +2426,19 @@ bool View::event(QEvent *e)
             QString statsText;
 
             statsText = i18np("<b>%1</b> reply", "<b>%1</b> replies", mi->childItemCount());
-            statsText += QLatin1StringView(", ");
+            statsText += ", "_L1;
 
             statsText += i18np("<b>%1</b> message in subtree (<b>%2</b> unread)",
                                "<b>%1</b> messages in subtree (<b>%2</b> unread)",
                                stats.mTotalChildCount,
                                stats.mUnreadChildCount);
 
-            tip += QStringLiteral(
-                       "<tr>"
-                       "<td bgcolor=\"%1\" align=\"%3\" valign=\"middle\">"
-                       "<nobr>%2</nobr>"
-                       "</td>"
-                       "</tr>")
-                       .arg(darkerColorName, statsText, textDirection);
+            tip +=
+                u"<tr>"
+                "<td bgcolor=\"%1\" align=\"%3\" valign=\"middle\">"
+                "<nobr>%2</nobr>"
+                "</td>"
+                "</tr>"_s.arg(darkerColorName, statsText, textDirection);
         }
 
         break;
@@ -2448,15 +2446,14 @@ bool View::event(QEvent *e)
     case Item::GroupHeader: {
         auto ghi = static_cast<GroupHeaderItem *>(it);
 
-        tip += QStringLiteral(
-                   "<tr>"
-                   "<td bgcolor=\"%1\" align=\"%4\" valign=\"middle\">"
-                   "<div style=\"color: %2; font-weight: bold;\">"
-                   "%3"
-                   "</div>"
-                   "</td>"
-                   "</tr>")
-                   .arg(txtColorName, bckColorName, ghi->label(), textDirection);
+        tip +=
+            u"<tr>"
+            "<td bgcolor=\"%1\" align=\"%4\" valign=\"middle\">"
+            "<div style=\"color: %2; font-weight: bold;\">"
+            "%3"
+            "</div>"
+            "</td>"
+            "</tr>"_s.arg(txtColorName, bckColorName, ghi->label(), textDirection);
 
         QString description;
 
@@ -2570,13 +2567,12 @@ bool View::event(QEvent *e)
         }
 
         if (!description.isEmpty()) {
-            tip += QStringLiteral(
-                       "<tr>"
-                       "<td align=\"%2\" valign=\"middle\">"
-                       "%1"
-                       "</td>"
-                       "</tr>")
-                       .arg(description, textDirection);
+            tip +=
+                u"<tr>"
+                "<td align=\"%2\" valign=\"middle\">"
+                "%1"
+                "</td>"
+                "</tr>"_s.arg(description, textDirection);
         }
 
         if (ghi->hasChildren()) {
@@ -2587,19 +2583,18 @@ bool View::event(QEvent *e)
 
             if (d->mAggregation->threading() != Aggregation::NoThreading) {
                 statsText = i18np("<b>%1</b> thread", "<b>%1</b> threads", ghi->childItemCount());
-                statsText += QLatin1StringView(", ");
+                statsText += ", "_L1;
             }
 
             statsText +=
                 i18np("<b>%1</b> message (<b>%2</b> unread)", "<b>%1</b> messages (<b>%2</b> unread)", stats.mTotalChildCount, stats.mUnreadChildCount);
 
-            tip += QStringLiteral(
-                       "<tr>"
-                       "<td bgcolor=\"%1\" align=\"%3\" valign=\"middle\">"
-                       "<nobr>%2</nobr>"
-                       "</td>"
-                       "</tr>")
-                       .arg(darkerColorName, statsText, textDirection);
+            tip +=
+                u"<tr>"
+                "<td bgcolor=\"%1\" align=\"%3\" valign=\"middle\">"
+                "<nobr>%2</nobr>"
+                "</td>"
+                "</tr>"_s.arg(darkerColorName, statsText, textDirection);
         }
 
         break;
@@ -2609,7 +2604,7 @@ bool View::event(QEvent *e)
         break;
     }
 
-    tip += QLatin1StringView("</table>");
+    tip += "</table>"_L1;
 
     QToolTip::showText(he->globalPos(), tip, viewport(), visualRect(idx));
 

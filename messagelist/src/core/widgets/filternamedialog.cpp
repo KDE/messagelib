@@ -11,6 +11,8 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
+
 using namespace MessageList::Core;
 FilterNameDialog::FilterNameDialog(QWidget *parent)
     : QDialog(parent)
@@ -18,9 +20,9 @@ FilterNameDialog::FilterNameDialog(QWidget *parent)
 {
     setWindowTitle(i18nc("@title:window", "Edit Filter"));
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QLatin1StringView("mainLayout"));
+    mainLayout->setObjectName("mainLayout"_L1);
 
-    mFilterNameWidget->setObjectName(QLatin1StringView("mFilterNameWidget"));
+    mFilterNameWidget->setObjectName("mFilterNameWidget"_L1);
     mainLayout->addWidget(mFilterNameWidget);
 
     auto button = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);

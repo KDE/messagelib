@@ -79,6 +79,8 @@
 #include <QTimer>
 #include <QUuid>
 
+using namespace Qt::Literals::StringLiterals;
+
 using namespace MessageComposer;
 
 ComposerViewBase::ComposerViewBase(QObject *parent, QWidget *parentGui)
@@ -232,7 +234,7 @@ void ComposerViewBase::setMessage(const std::shared_ptr<KMime::Message> &msg, bo
         m_editor->setPlainText(otp.plainTextContent());
     } else {
         // Bug 372085 <div id="name"> is replaced in qtextedit by <a id="name">... => break url
-        htmlContent.replace(QRegularExpression(u"<div\\s*id=\".*\">"_s), QStringLiteral("<div>"));
+        htmlContent.replace(QRegularExpression(u"<div\\s*id=\".*\">"_s), u"<div>"_s);
         m_editor->setHtml(htmlContent);
         Q_EMIT enableHtml();
         collectImages(m_msg.get());
@@ -487,16 +489,16 @@ void ComposerViewBase::slotEmailAddressResolved(KJob *job)
             }
         }
         auto header = std::make_unique<KMime::Headers::Generic>("X-KMail-UnExpanded-To");
-        header->from7BitString(unExpandedTo.join(QLatin1StringView(", ")).toLatin1());
+        header->from7BitString(unExpandedTo.join(", "_L1).toLatin1());
         m_msg->setHeader(std::move(header));
         header = std::make_unique<KMime::Headers::Generic>("X-KMail-UnExpanded-CC");
-        header->from7BitString(unExpandedCc.join(QLatin1StringView(", ")).toLatin1());
+        header->from7BitString(unExpandedCc.join(", "_L1).toLatin1());
         m_msg->setHeader(std::move(header));
         header = std::make_unique<KMime::Headers::Generic>("X-KMail-UnExpanded-BCC");
-        header->from7BitString(unExpandedBcc.join(QLatin1StringView(", ")).toLatin1());
+        header->from7BitString(unExpandedBcc.join(", "_L1).toLatin1());
         m_msg->setHeader(std::move(header));
         header = std::make_unique<KMime::Headers::Generic>("X-KMail-UnExpanded-Reply-To");
-        header->from7BitString(unExpandedReplyTo.join(QLatin1StringView(", ")).toLatin1());
+        header->from7BitString(unExpandedReplyTo.join(", "_L1).toLatin1());
         m_msg->setHeader(std::move(header));
         autoresizeImage = false;
     }
@@ -1202,7 +1204,7 @@ void ComposerViewBase::initAutoSave()
     qCDebug(MESSAGECOMPOSER_LOG) << "initialising autosave";
 
     // Ensure that the autosave directory exists.
-    QDir dataDirectory(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1StringView("/kmail2/"));
+    QDir dataDirectory(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/kmail2/"_L1);
     if (!dataDirectory.exists(u"autosave"_s)) {
         qCDebug(MESSAGECOMPOSER_LOG) << "Creating autosave directory.";
         dataDirectory.mkdir(u"autosave"_s);
@@ -1272,10 +1274,10 @@ void ComposerViewBase::cleanupAutoSave()
         qCDebug(MESSAGECOMPOSER_LOG) << "deleting autosave files" << m_autoSaveUUID;
 
         // Delete the autosave files
-        QDir autoSaveDir(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1StringView("/kmail2/autosave"));
+        QDir autoSaveDir(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/kmail2/autosave"_L1);
 
         // Filter out only this composer window's autosave files
-        const QStringList autoSaveFilter{m_autoSaveUUID + QLatin1StringView("*")};
+        const QStringList autoSaveFilter{m_autoSaveUUID + "*"_L1};
         autoSaveDir.setNameFilters(autoSaveFilter);
 
         // Return the files to be removed
@@ -1358,7 +1360,7 @@ void ComposerViewBase::slotAutoSaveComposeResult(KJob *job)
 
 void ComposerViewBase::writeAutoSaveToDisk(const std::shared_ptr<KMime::Message> &message)
 {
-    const QString autosavePath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1StringView("/kmail2/autosave/");
+    const QString autosavePath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/kmail2/autosave/"_L1;
     QDir().mkpath(autosavePath);
     const QString filename = autosavePath + m_autoSaveUUID;
     QSaveFile file(filename);
@@ -1930,8 +1932,8 @@ ComposerViewBase::MissingAttachment ComposerViewBase::checkForMissingAttachments
                                                              "attached file but you have not attached anything.\n"
                                                              "Do you want to attach a file to your message?"),
                                                         i18nc("@title:window", "File Attachment Reminder"),
-                                                        KGuiItem(i18nc("@action:button", "&Attach File..."), QLatin1StringView("mail-attachment")),
-                                                        KGuiItem(i18nc("@action:button", "&Send as Is"), QLatin1StringView("mail-send")));
+                                                        KGuiItem(i18nc("@action:button", "&Attach File..."), "mail-attachment"_L1),
+                                                        KGuiItem(i18nc("@action:button", "&Send as Is"), "mail-send"_L1));
     if (rc == KMessageBox::Cancel) {
         return FoundMissingAttachmentAndCancel;
     }
@@ -2253,7 +2255,7 @@ void ComposerViewBase::addFollowupReminder(const QString &messageId)
             auto job = new MessageComposer::FollowupReminderCreateJob;
             job->setSubject(m_subject);
             job->setMessageId(messageId);
-            job->setTo(mExpandedReplyTo.isEmpty() ? mExpandedTo.join(QLatin1Char(',')) : mExpandedReplyTo.join(u','));
+            job->setTo(mExpandedReplyTo.isEmpty() ? mExpandedTo.join(u',') : mExpandedReplyTo.join(u','));
             job->setFollowUpReminderDate(mFollowUpDate);
             job->setCollectionToDo(mFollowUpCollection);
             job->start();

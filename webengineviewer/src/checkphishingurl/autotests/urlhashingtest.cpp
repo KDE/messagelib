@@ -129,18 +129,18 @@ void UrlHashingTest::shouldGenerateHostPath_data()
     QStringList hosts;
     QStringList paths;
     hosts << u"b.c"_s << u"a.b.c"_s;
-    paths << u"/"_s << u"/1/"_s << QStringLiteral("/1/2.html") << QStringLiteral("/1/2.html?param=1");
+    paths << u"/"_s << u"/1/"_s << u"/1/2.html"_s << u"/1/2.html?param=1"_s;
     QTest::newRow("http://a.b.c/1/2.html?param=1") << u"http://a.b.c/1/2.html?param=1"_s << hosts << paths;
     hosts.clear();
     paths.clear();
-    hosts << u"f.g"_s << u"e.f.g"_s << QStringLiteral("d.e.f.g") << QStringLiteral("c.d.e.f.g") << QStringLiteral("a.b.c.d.e.f.g");
+    hosts << u"f.g"_s << u"e.f.g"_s << u"d.e.f.g"_s << u"c.d.e.f.g"_s << u"a.b.c.d.e.f.g"_s;
     paths << u"/"_s << u"/1.html"_s;
     QTest::newRow("http://a.b.c.d.e.f.g/1.html") << u"http://a.b.c.d.e.f.g/1.html"_s << hosts << paths;
 
     hosts.clear();
     paths.clear();
     hosts << u"a.b"_s;
-    paths << u"/"_s << u"/saw-cgi/"_s << QStringLiteral("/saw-cgi/eBayISAPI.dll/");
+    paths << u"/"_s << u"/saw-cgi/"_s << u"/saw-cgi/eBayISAPI.dll/"_s;
     QTest::newRow("http://a.b/saw-cgi/eBayISAPI.dll/") << u"http://a.b/saw-cgi/eBayISAPI.dll/"_s << hosts << paths;
 }
 

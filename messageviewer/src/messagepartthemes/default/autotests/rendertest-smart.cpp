@@ -92,7 +92,7 @@ void RenderTest::testRenderSmartDetails_data()
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
     const auto l = dir.entryList(QStringList(u"*.mbox"_s), QDir::Files | QDir::Readable | QDir::NoSymLinks);
     for (const QString &file : l) {
-        QString fname = dir.path() + QLatin1StringView("/details/") + file + QLatin1StringView(".html");
+        QString fname = dir.path() + "/details/"_L1 + file + ".html"_L1;
         if (!QFile::exists(fname)) {
             continue;
         }

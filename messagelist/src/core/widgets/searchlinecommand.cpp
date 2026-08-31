@@ -52,7 +52,7 @@ SearchLineCommand::~SearchLineCommand() = default;
 
 bool SearchLineCommand::hasSubType(const QString &v)
 {
-    return v == QLatin1StringView("is") || v == QLatin1StringView("has");
+    return v == "is"_L1 || v == "has"_L1;
 }
 
 bool SearchLineCommand::hasSubType(SearchLineCommand::SearchLineType type)
@@ -236,7 +236,7 @@ SearchLineCommand::SearchLineInfo SearchLineCommand::isAnotherInfo(QString tmp, 
     if (!tmp.contains(u' ')) {
         return {};
     }
-    if (tmp.endsWith(QLatin1StringView("is")) || tmp.endsWith(QLatin1StringView("has"))) {
+    if (tmp.endsWith("is"_L1) || tmp.endsWith("has"_L1)) {
 #ifdef DEBUG_COMMAND_PARSER
         qDebug() << " found has subtype " << tmp;
 #endif
@@ -491,7 +491,7 @@ QDebug operator<<(QDebug d, const MessageList::Core::SearchLineCommand::SearchLi
 QString SearchLineCommand::generateCommandText(SearchLineCommand::SearchLineType type)
 {
     bool needSpace = SearchLineCommand::mustBeUnique(type);
-    return SearchLineCommand::searchLineTypeToString(type) + (needSpace ? u" "_s : QStringLiteral(":"));
+    return SearchLineCommand::searchLineTypeToString(type) + (needSpace ? u" "_s : u":"_s);
 }
 
 QDebug operator<<(QDebug d, const MessageList::Core::SearchLineCommand &command)

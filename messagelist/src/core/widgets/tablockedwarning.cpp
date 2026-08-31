@@ -26,7 +26,7 @@ TabLockedWarning::~TabLockedWarning() = default;
 
 void TabLockedWarning::slotLinkActivated(const QString &contents)
 {
-    if (contents == QLatin1StringView("unlock")) {
+    if (contents == "unlock"_L1) {
         Q_EMIT unlockTabRequested();
     }
 }

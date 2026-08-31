@@ -119,114 +119,102 @@ void QuoteHtmlTest::testQuoteHtml_data()
     QTest::addColumn<int>("quotelevel");
     // No Expand Quotes
     QTest::newRow("simpletext") << u"http"_s << u"<div class=\"noquote\"><div dir=\"ltr\">http</div></div>"_s << false << 1;
-    QTest::newRow("simplequote") << QStringLiteral(
-        ">") << u"<blockquote><div class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarksemptyline\">></span></div></div></blockquote>"_s
-                                 << false << 1;
+    QTest::newRow("simplequote")
+        << u">"_s << u"<blockquote><div class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarksemptyline\">></span></div></div></blockquote>"_s << false
+        << 1;
     QTest::newRow("doublequotewithtext") << u">> sddf"_s
-                                         << QStringLiteral(
-                                                "<blockquote><blockquote><div class=\"quotelevel2\"><div dir=\"ltr\"><span class=\"quotemarks\">>>"
-                                                "</span><font color=\"#007000\">&nbsp;sddf</font></div></div></blockquote></blockquote>")
+                                         << u"<blockquote><blockquote><div class=\"quotelevel2\"><div dir=\"ltr\"><span class=\"quotemarks\">>>"
+                                            "</span><font color=\"#007000\">&nbsp;sddf</font></div></div></blockquote></blockquote>"_s
                                          << false << 1;
     QTest::newRow("doublequote") << u">>"_s
-                                 << QStringLiteral(
-                                        "<blockquote><blockquote><div class=\"quotelevel2\"><div dir=\"ltr\"><span "
-                                        "class=\"quotemarksemptyline\">>></span></div></div></blockquote></blockquote>")
+                                 << u"<blockquote><blockquote><div class=\"quotelevel2\"><div dir=\"ltr\"><span "
+                                    "class=\"quotemarksemptyline\">>></span></div></div></blockquote></blockquote>"_s
                                  << false << 1;
     QTest::newRow("simplespace") << u" "_s << u"<div class=\"noquote\"><div dir=\"ltr\">&nbsp;</div></div>"_s << false << 1;
     QTest::newRow("multispace")
         << u"            Bug ID: 358324"_s
-        << QStringLiteral(
-               "<div class=\"noquote\"><div dir=\"ltr\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bug ID: 358324</div></div>")
+        << u"<div class=\"noquote\"><div dir=\"ltr\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bug ID: 358324</div></div>"_s
         << false << 1;
 
     QTest::newRow("bug-369072")
         << u"test\n>quote1\n>>quote2\n>>>quote3\n>>new quote2\n>new quote1\nnew text"_s
-        << QStringLiteral(
-               "<div class=\"noquote\"><div dir=\"ltr\">test</div>"
-               "</div><blockquote><div class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarks\">></span><font color=\"#008000\">quote1</font></div>"
-               "</div><blockquote><div class=\"quotelevel2\"><div dir=\"ltr\"><span class=\"quotemarks\">>></span><font color=\"#007000\">quote2</font></div>"
-               "</div><blockquote><div class=\"quotelevel3\"><div dir=\"ltr\"><span class=\"quotemarks\">>>></span><font color=\"#006000\">quote3</font></div>"
-               "</div></blockquote><div class=\"quotelevel2\"><div dir=\"ltr\"><span class=\"quotemarks\">>></span><font color=\"#007000\">new "
-               "quote2</font></div>"
-               "</div></blockquote><div class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarks\">></span><font color=\"#008000\">new "
-               "quote1</font></div>"
-               "</div></blockquote><div class=\"noquote\"><div dir=\"ltr\">new text</div></div>")
+        << u"<div class=\"noquote\"><div dir=\"ltr\">test</div>"
+           "</div><blockquote><div class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarks\">></span><font color=\"#008000\">quote1</font></div>"
+           "</div><blockquote><div class=\"quotelevel2\"><div dir=\"ltr\"><span class=\"quotemarks\">>></span><font color=\"#007000\">quote2</font></div>"
+           "</div><blockquote><div class=\"quotelevel3\"><div dir=\"ltr\"><span class=\"quotemarks\">>>></span><font color=\"#006000\">quote3</font></div>"
+           "</div></blockquote><div class=\"quotelevel2\"><div dir=\"ltr\"><span class=\"quotemarks\">>></span><font color=\"#007000\">new "
+           "quote2</font></div>"
+           "</div></blockquote><div class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarks\">></span><font color=\"#008000\">new "
+           "quote1</font></div>"
+           "</div></blockquote><div class=\"noquote\"><div dir=\"ltr\">new text</div></div>"_s
         << false << 1;
 
     // Show Expand Quotes
     QTest::newRow("simpletext-expand") << u"http"_s << u"<div class=\"noquote\"><div dir=\"ltr\">http</div></div>"_s << true << 1;
 
-    QString result = QStringLiteral(
-                         "<blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?0 \"><img src=\"%1\"/></a></div><div "
-                         "class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarksemptyline\">></span></div></div></blockquote>")
-                         .arg(mCollapseIcon);
+    QString result =
+        u"<blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?0 \"><img src=\"%1\"/></a></div><div "
+        "class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarksemptyline\">></span></div></div></blockquote>"_s.arg(mCollapseIcon);
     QTest::newRow("simplequote-expand") << u">"_s << result << true << 1;
     QTest::newRow("simplespace-expand") << u" "_s << u"<div class=\"noquote\"><div dir=\"ltr\">&nbsp;</div></div>"_s << true << 1;
 
     QTest::newRow("bug-369072-expand-quotelevel3")
         << u"test\n>quote1\n>>quote2\n>>>quote3\n>>new quote2\n>new quote1\nnew text"_s
-        << QStringLiteral(
-               "<div class=\"noquote\"><div dir=\"ltr\">test</div>"
-               "</div><blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?0 \"><img src=\"%1\"/></a></div>"
-               "<div class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarks\">></span><font "
-               "color=\"#008000\">quote1</font></div></div><blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?1 \"><img "
-               "src=\"%1\"/></a></div>"
-               "<div class=\"quotelevel2\"><div dir=\"ltr\"><span class=\"quotemarks\">>></span><font "
-               "color=\"#007000\">quote2</font></div></div><blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?2 \"><img "
-               "src=\"%1\"/></a></div>"
-               "<div class=\"quotelevel3\"><div dir=\"ltr\"><span class=\"quotemarks\">>>></span><font "
-               "color=\"#006000\">quote3</font></div></div></blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?1 \"><img "
-               "src=\"%1\"/></a></div>"
-               "<div class=\"quotelevel2\"><div dir=\"ltr\"><span class=\"quotemarks\">>></span><font color=\"#007000\">new "
-               "quote2</font></div></div></blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?0 \"><img src=\"%1\"/></a></div>"
-               "<div class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarks\">></span><font color=\"#008000\">new "
-               "quote1</font></div></div></blockquote><div class=\"noquote\"><div dir=\"ltr\">new text</div></div>")
-               .arg(mCollapseIcon)
+        << u"<div class=\"noquote\"><div dir=\"ltr\">test</div>"
+           "</div><blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?0 \"><img src=\"%1\"/></a></div>"
+           "<div class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarks\">></span><font "
+           "color=\"#008000\">quote1</font></div></div><blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?1 \"><img "
+           "src=\"%1\"/></a></div>"
+           "<div class=\"quotelevel2\"><div dir=\"ltr\"><span class=\"quotemarks\">>></span><font "
+           "color=\"#007000\">quote2</font></div></div><blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?2 \"><img "
+           "src=\"%1\"/></a></div>"
+           "<div class=\"quotelevel3\"><div dir=\"ltr\"><span class=\"quotemarks\">>>></span><font "
+           "color=\"#006000\">quote3</font></div></div></blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?1 \"><img "
+           "src=\"%1\"/></a></div>"
+           "<div class=\"quotelevel2\"><div dir=\"ltr\"><span class=\"quotemarks\">>></span><font color=\"#007000\">new "
+           "quote2</font></div></div></blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?0 \"><img src=\"%1\"/></a></div>"
+           "<div class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarks\">></span><font color=\"#008000\">new "
+           "quote1</font></div></div></blockquote><div class=\"noquote\"><div dir=\"ltr\">new text</div></div>"_s.arg(mCollapseIcon)
         << true << 3;
 
     QTest::newRow("bug-369072-expand-quotelevel2")
         << u"test\n>quote1\n>>quote2\n>>>quote3\n>>new quote2\n>new quote1\nnew text"_s
-        << QStringLiteral(
-               "<div class=\"noquote\"><div dir=\"ltr\">test</div></div><blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?0 \"><img "
-               "src=\"%1\"/></a></div>"
-               "<div class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarks\">></span><font "
-               "color=\"#008000\">quote1</font></div></div><blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?1 \"><img "
-               "src=\"%1\"/></a></div>"
-               "<div class=\"quotelevel2\"><div dir=\"ltr\"><span class=\"quotemarks\">>></span><font "
-               "color=\"#007000\">quote2</font></div></div><blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?-1 \"><img "
-               "src=\"%2\"/></a></div><br/></blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?1 \"><img src=\"%1\"/></a></div>"
-               "<div class=\"quotelevel2\"><div dir=\"ltr\"><span class=\"quotemarks\">>></span><font color=\"#007000\">new "
-               "quote2</font></div></div></blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?0 \"><img src=\"%1\"/></a></div>"
-               "<div class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarks\">></span><font color=\"#008000\">new "
-               "quote1</font></div></div></blockquote><div class=\"noquote\"><div dir=\"ltr\">new text</div></div>")
-               .arg(mCollapseIcon, mExpandIcon)
+        << u"<div class=\"noquote\"><div dir=\"ltr\">test</div></div><blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?0 \"><img "
+           "src=\"%1\"/></a></div>"
+           "<div class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarks\">></span><font "
+           "color=\"#008000\">quote1</font></div></div><blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?1 \"><img "
+           "src=\"%1\"/></a></div>"
+           "<div class=\"quotelevel2\"><div dir=\"ltr\"><span class=\"quotemarks\">>></span><font "
+           "color=\"#007000\">quote2</font></div></div><blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?-1 \"><img "
+           "src=\"%2\"/></a></div><br/></blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?1 \"><img src=\"%1\"/></a></div>"
+           "<div class=\"quotelevel2\"><div dir=\"ltr\"><span class=\"quotemarks\">>></span><font color=\"#007000\">new "
+           "quote2</font></div></div></blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?0 \"><img src=\"%1\"/></a></div>"
+           "<div class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarks\">></span><font color=\"#008000\">new "
+           "quote1</font></div></div></blockquote><div class=\"noquote\"><div dir=\"ltr\">new text</div></div>"_s.arg(mCollapseIcon, mExpandIcon)
         << true << 2;
 
     QTest::newRow("bug-369072-expand-quotelevel1")
         << u"test\n>quote1\n>>quote2\n>>>quote3\n>>new quote2\n>new quote1\nnew text"_s
-        << QStringLiteral(
-               "<div class=\"noquote\"><div dir=\"ltr\">test</div></div><blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?0 \"><img "
-               "src=\"%1\"/></a></div>"
-               "<div class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarks\">></span><font "
-               "color=\"#008000\">quote1</font></div></div><blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?-1 \"><img "
-               "src=\"%2\"/></a></div><br/>"
-               "<blockquote></blockquote></blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?0 \"><img src=\"%1\"/></a></div>"
-               "<div class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarks\">></span><font color=\"#008000\">new "
-               "quote1</font></div></div></blockquote><div class=\"noquote\"><div dir=\"ltr\">new text</div></div>")
-               .arg(mCollapseIcon, mExpandIcon)
+        << u"<div class=\"noquote\"><div dir=\"ltr\">test</div></div><blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?0 \"><img "
+           "src=\"%1\"/></a></div>"
+           "<div class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarks\">></span><font "
+           "color=\"#008000\">quote1</font></div></div><blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?-1 \"><img "
+           "src=\"%2\"/></a></div><br/>"
+           "<blockquote></blockquote></blockquote><div class=\"quotelevelmark\" ><a href=\"kmail:levelquote?0 \"><img src=\"%1\"/></a></div>"
+           "<div class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarks\">></span><font color=\"#008000\">new "
+           "quote1</font></div></div></blockquote><div class=\"noquote\"><div dir=\"ltr\">new text</div></div>"_s.arg(mCollapseIcon, mExpandIcon)
         << true << 1;
 
     QTest::newRow("bug-370452")
         << u"test\n> blo\n>\n>\n>\n> bla\nnew text"_s
-        << QStringLiteral(
-               "<div class=\"noquote\">"
-               "<div dir=\"ltr\">test</div></div>"
-               "<blockquote><div class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarks\">></span><font color=\"#008000\">&nbsp;blo</font></div>"
-               "<div dir=\"ltr\"><span class=\"quotemarksemptyline\">></span></div>"
-               "<div dir=\"ltr\"><span class=\"quotemarksemptyline\">></span></div>"
-               "<div dir=\"ltr\"><span class=\"quotemarksemptyline\">></span></div>"
-               "<div dir=\"ltr\"><span class=\"quotemarks\">></span><font color=\"#008000\">&nbsp;bla</font></div></div></blockquote>"
-               "<div class=\"noquote\"><div dir=\"ltr\">new text</div></div>")
+        << u"<div class=\"noquote\">"
+           "<div dir=\"ltr\">test</div></div>"
+           "<blockquote><div class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarks\">></span><font color=\"#008000\">&nbsp;blo</font></div>"
+           "<div dir=\"ltr\"><span class=\"quotemarksemptyline\">></span></div>"
+           "<div dir=\"ltr\"><span class=\"quotemarksemptyline\">></span></div>"
+           "<div dir=\"ltr\"><span class=\"quotemarksemptyline\">></span></div>"
+           "<div dir=\"ltr\"><span class=\"quotemarks\">></span><font color=\"#008000\">&nbsp;bla</font></div></div></blockquote>"
+           "<div class=\"noquote\"><div dir=\"ltr\">new text</div></div>"_s
         << false << 1;
 }
 

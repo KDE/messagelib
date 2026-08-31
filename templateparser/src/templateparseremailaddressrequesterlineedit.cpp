@@ -8,15 +8,17 @@
 #include <QHBoxLayout>
 #include <QLineEdit>
 
+using namespace Qt::Literals::StringLiterals;
+
 using namespace TemplateParser;
 TemplateParserEmailAddressRequesterLineEdit::TemplateParserEmailAddressRequesterLineEdit(QWidget *parent)
     : TemplateParser::TemplateParserEmailAddressRequesterBase(parent)
     , mLineEdit(new QLineEdit(this))
 {
     auto mainLayout = new QHBoxLayout(this);
-    mainLayout->setObjectName(QLatin1StringView("mainlayout"));
+    mainLayout->setObjectName("mainlayout"_L1);
     mainLayout->setContentsMargins({});
-    mLineEdit->setObjectName(QLatin1StringView("lineedit"));
+    mLineEdit->setObjectName("lineedit"_L1);
     mainLayout->addWidget(mLineEdit);
     connect(mLineEdit, &QLineEdit::textChanged, this, &TemplateParserEmailAddressRequesterLineEdit::textChanged);
 }

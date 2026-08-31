@@ -58,7 +58,7 @@ void KeyResolverTest::testAutocrypt()
     KeyResolver keyResolver(true, false, true, Kleo::OpenPGPMIMEFormat, expiryChecker);
     keyResolver.setAkonadiLookupEnabled(false);
 
-    const QStringList recipients = {u"recipient@autocrypt.example"_s, QStringLiteral("recipient2@autocrypt.example")};
+    const QStringList recipients = {u"recipient@autocrypt.example"_s, u"recipient2@autocrypt.example"_s};
 
     QFile file1(QLatin1StringView(MAIL_DATA_DIR) + u"/autocrypt/recipient%40autocrypt.example.json"_s);
     QVERIFY(file1.copy(baseDir.filePath(u"recipient%40autocrypt.example.json"_s)));

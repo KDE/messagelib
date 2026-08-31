@@ -100,7 +100,8 @@ QString WebEnginePage::refreshCssVariablesScript()
         d->lastColorScheme = KColorScheme(QPalette::Active, KColorScheme::View);
     }
 
-    const auto script = QStringLiteral(R"RAW(
+    const auto script =
+        uR"RAW(
 {
     const root = document.querySelector(':root');
     root.style.setProperty('--kcolorscheme-background', '%1');
@@ -119,22 +120,21 @@ QString WebEnginePage::refreshCssVariablesScript()
     root.style.setProperty('--kcolorscheme-text-disabled', '%14');
     root.style.setProperty('--kcolorscheme-text-link', '%15');
 }
-    )RAW")
-                            .arg(d->lastColorScheme->background(KColorScheme::NormalBackground).color().name(),
-                                 d->lastColorScheme->foreground(KColorScheme::NormalText).color().name(),
-                                 palette.highlight().color().name(),
-                                 palette.highlightedText().color().name(),
-                                 palette.accent().color().name(),
-                                 d->lastColorScheme->foreground(KColorScheme::PositiveText).color().name(),
-                                 d->lastColorScheme->background(KColorScheme::PositiveBackground).color().name(),
-                                 d->lastColorScheme->foreground(KColorScheme::NeutralText).color().name(),
-                                 d->lastColorScheme->background(KColorScheme::NeutralBackground).color().name(),
-                                 d->lastColorScheme->foreground(KColorScheme::NegativeText).color().name(),
-                                 d->lastColorScheme->background(KColorScheme::NegativeBackground).color().name(),
-                                 d->lastColorScheme->foreground(KColorScheme::ActiveText).color().name(),
-                                 d->lastColorScheme->background(KColorScheme::ActiveBackground).color().name(),
-                                 d->lastColorScheme->foreground(KColorScheme::InactiveText).color().name(),
-                                 d->lastColorScheme->foreground(KColorScheme::LinkText).color().name());
+    )RAW"_s.arg(d->lastColorScheme->background(KColorScheme::NormalBackground).color().name(),
+                d->lastColorScheme->foreground(KColorScheme::NormalText).color().name(),
+                palette.highlight().color().name(),
+                palette.highlightedText().color().name(),
+                palette.accent().color().name(),
+                d->lastColorScheme->foreground(KColorScheme::PositiveText).color().name(),
+                d->lastColorScheme->background(KColorScheme::PositiveBackground).color().name(),
+                d->lastColorScheme->foreground(KColorScheme::NeutralText).color().name(),
+                d->lastColorScheme->background(KColorScheme::NeutralBackground).color().name(),
+                d->lastColorScheme->foreground(KColorScheme::NegativeText).color().name(),
+                d->lastColorScheme->background(KColorScheme::NegativeBackground).color().name(),
+                d->lastColorScheme->foreground(KColorScheme::ActiveText).color().name(),
+                d->lastColorScheme->background(KColorScheme::ActiveBackground).color().name(),
+                d->lastColorScheme->foreground(KColorScheme::InactiveText).color().name(),
+                d->lastColorScheme->foreground(KColorScheme::LinkText).color().name());
 
     return script;
 }
@@ -165,13 +165,13 @@ bool WebEnginePage::acceptNavigationRequest(const QUrl &url, NavigationType type
     const QString sch = url.scheme();
 #if 0
     qDebug() << "type" << type << "isMainFrame" << isMainFrame << "scheme" << sch;
-    if (sch != QStringLiteral("data"))
+    if (sch != u"data"_s)
         qDebug() << "url" << url;
 #endif
     if (isMainFrame && type == NavigationTypeLinkClicked) {
         // Schemes other than these will have been sent directly
         // to MailWebEnginePage::urlClicked() and handled there.
-        if (sch != QStringLiteral("kmail") && sch != QStringLiteral("data")) {
+        if (sch != u"kmail"_s && sch != u"data"_s) {
             return false;
         }
 

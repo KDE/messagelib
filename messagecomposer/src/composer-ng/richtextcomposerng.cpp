@@ -238,7 +238,7 @@ void RichTextComposerNgPrivate::fixHtmlFontSize(QString &cleanHtml) const
             const double emValue = ptValue / 12;
             const QString replacement = QString::number(emValue, 'g', 2);
             const int capLen = rmatch.capturedLength(1);
-            cleanHtml.replace(rmatch.capturedStart(1), capLen + 2 /* QLatin1StringView("pt").size() */, replacement + QLatin1StringView("em"));
+            cleanHtml.replace(rmatch.capturedStart(1), capLen + 2 /* QLatin1StringView("pt").size() */, replacement + "em"_L1);
             // advance the offset to just after the last replace
             offset = rmatch.capturedEnd(0) - capLen + replacement.size();
         } else {
@@ -299,9 +299,9 @@ QString RichTextComposerNgPrivate::toCleanHtml() const
 {
     QString result = richtextComposer->toHtml();
 
-    static const QString EMPTYLINEHTML = QStringLiteral(
-        "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
-        "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; \">&nbsp;</p>");
+    static const QString EMPTYLINEHTML =
+        u"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; "
+        "margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; \">&nbsp;</p>"_s;
 
     // Qt inserts various style properties based on the current mode of the editor (underline,
     // bold, etc), but only empty paragraphs *also* have qt-paragraph-type set to 'empty'.

@@ -89,8 +89,8 @@ void BodyPartUrlHandlerManagerTest::testHandleClick_data()
 
     QTest::newRow("completely_empty") << QString() << QString() << KMime::ContentIndex() << false;
     QTest::newRow("empty") << u"x-kmail:"_s << QString() << KMime::ContentIndex() << false;
-    QTest::newRow("pgpkey") << u"x-kmail:/bodypart/1234/2/pgpkey"_s << u"pgpkey"_s << KMime::ContentIndex(QStringLiteral("2")) << true;
-    QTest::newRow("test") << u"x-kmail:/bodypart/1234/1/test"_s << u"test"_s << KMime::ContentIndex(QStringLiteral("1")) << true;
+    QTest::newRow("pgpkey") << u"x-kmail:/bodypart/1234/2/pgpkey"_s << u"pgpkey"_s << KMime::ContentIndex(u"2"_s) << true;
+    QTest::newRow("test") << u"x-kmail:/bodypart/1234/1/test"_s << u"test"_s << KMime::ContentIndex(u"1"_s) << true;
     QTest::newRow("test_with_arguments") << u"x-kmail:/bodypart/1234/1/test?foo=qua"_s << u"test?foo=qua"_s << KMime::ContentIndex(u"1"_s) << true;
 }
 
@@ -104,7 +104,7 @@ void BodyPartUrlHandlerManagerTest::testHandleClick()
     BodyPartURLHandlerManager manager;
     TestBodyPartURLHandler handler;
 
-    manager.registerHandler(&handler, QLatin1StringView(""));
+    manager.registerHandler(&handler, ""_L1);
     Viewer v(nullptr);
     ViewerPrivate vp(&v, nullptr, nullptr);
     const std::shared_ptr<KMime::Message> msg(Test::readAndParseMail(u"encapsulated-with-attachment.mbox"_s));

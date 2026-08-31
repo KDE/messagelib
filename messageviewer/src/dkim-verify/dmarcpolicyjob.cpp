@@ -9,6 +9,8 @@
 #include "dmarcinfo.h"
 #include "dmarcrecordjob.h"
 #include "messageviewer_dkimcheckerdebug.h"
+
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 
 DMARCPolicyJob::DMARCPolicyJob(QObject *parent)
@@ -67,8 +69,7 @@ void DMARCPolicyJob::slotCheckSubDomain(const QList<QByteArray> &lst, const QStr
     const QByteArray ba = generateDMARCFromList(lst);
     DMARCInfo info;
     if (info.parseDMARC(QString::fromLocal8Bit(ba))) {
-        if ((info.version() != QLatin1StringView("DMARC1")) || info.policy().isEmpty()
-            || (info.percentage() != -1 && (info.percentage() > 100 || info.percentage() < 0))) {
+        if ((info.version() != "DMARC1"_L1) || info.policy().isEmpty() || (info.percentage() != -1 && (info.percentage() > 100 || info.percentage() < 0))) {
             Q_EMIT result({}, mEmailAddress);
             deleteLater();
             return;
@@ -120,8 +121,7 @@ void DMARCPolicyJob::slotCheckDomain(const QList<QByteArray> &lst, const QString
     const QByteArray ba = generateDMARCFromList(lst);
     DMARCInfo info;
     if (info.parseDMARC(QString::fromLocal8Bit(ba))) {
-        if ((info.version() != QLatin1StringView("DMARC1")) || info.policy().isEmpty()
-            || (info.percentage() != -1 && (info.percentage() > 100 || info.percentage() < 0))) {
+        if ((info.version() != "DMARC1"_L1) || info.policy().isEmpty() || (info.percentage() != -1 && (info.percentage() > 100 || info.percentage() < 0))) {
             // Invalid
             // Check subdomain
             checkSubDomain(domainName);

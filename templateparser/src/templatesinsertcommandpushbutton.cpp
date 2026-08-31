@@ -10,6 +10,8 @@
 #include "templateparser_debug.h"
 #include <KLocalizedString>
 
+using namespace Qt::Literals::StringLiterals;
+
 using namespace TemplateParser;
 
 TemplatesInsertCommandPushButton::TemplatesInsertCommandPushButton(QWidget *parent, const QString &name)
@@ -19,7 +21,7 @@ TemplatesInsertCommandPushButton::TemplatesInsertCommandPushButton(QWidget *pare
     setObjectName(name);
     setText(i18n("&Insert Command"));
 
-    mMenuCommand->setObjectName(QLatin1StringView("templatescommandmenu"));
+    mMenuCommand->setObjectName("templatescommandmenu"_L1);
     mMenuCommand->fillMenu();
     mMenuCommand->fillSubMenus();
     setMenu(mMenuCommand->menu());

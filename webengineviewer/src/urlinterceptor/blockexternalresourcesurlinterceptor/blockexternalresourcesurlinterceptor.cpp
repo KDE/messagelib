@@ -6,6 +6,8 @@
 
 #include "blockexternalresourcesurlinterceptor.h"
 #include <QUrl>
+
+using namespace Qt::Literals::StringLiterals;
 using namespace WebEngineViewer;
 
 BlockExternalResourcesUrlInterceptor::BlockExternalResourcesUrlInterceptor(QObject *parent)
@@ -28,7 +30,7 @@ bool BlockExternalResourcesUrlInterceptor::interceptRequest(const QUrl &url,
         return false;
     }
     const QString scheme = url.scheme();
-    if (scheme == QLatin1StringView("data") || scheme == QLatin1StringView("file")) {
+    if (scheme == "data"_L1 || scheme == "file"_L1) {
         return false;
     }
 

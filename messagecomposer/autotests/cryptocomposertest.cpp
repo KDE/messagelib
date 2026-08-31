@@ -41,6 +41,8 @@
 #include <QDebug>
 #include <QTest>
 
+using namespace Qt::Literals::StringLiterals;
+
 using namespace KMime;
 using namespace MessageComposer;
 using namespace MessageCore;
@@ -564,9 +566,9 @@ void CryptoComposerTest::testCTEquPr_data()
     QTest::newRow("CTEquPr:Encrypt") << data << false << true << Headers::CE7Bit;
     QTest::newRow("CTEquPr:SignEncrypt") << data << true << true << Headers::CE7Bit;
 
-    data = QStringLiteral(
-        "All happy families are alike;\n\n\n\neach unhappy family is unhappy in its own way.\n--\n hallloasdfasdfsadfsdf asdf sadfasdf sdf sdf sdf sadfasdf "
-        "sdaf daf sdf asdf sadf asdf asdf [ä]");
+    data =
+        u"All happy families are alike;\n\n\n\neach unhappy family is unhappy in its own way.\n--\n hallloasdfasdfsadfsdf asdf sadfasdf sdf sdf sdf sadfasdf "
+        "sdaf daf sdf asdf sadf asdf asdf [ä]"_s;
     QTest::newRow("CTEquPr:Sign:Newline") << data << true << false << Headers::CEquPr;
     QTest::newRow("CTEquPr:Encrypt:Newline") << data << false << true << Headers::CE7Bit;
     QTest::newRow("CTEquPr:SignEncrypt:Newline") << data << true << true << Headers::CE7Bit;
@@ -588,9 +590,9 @@ void CryptoComposerTest::testCTEbase64_data()
     QTest::addColumn<Headers::contentEncoding>("cte");
 
     const QString data(
-        QStringLiteral("[ääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääää"
-                       "äääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääää"
-                       "äääääääääääääääääääääääääääääääääääääääääääääää]"));
+        u"[ääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääää"
+        "äääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääääää"
+        "äääääääääääääääääääääääääääääääääääääääääääääää]"_s);
     QTest::newRow("CTEbase64:Sign") << data << true << false << Headers::CEbase64;
     QTest::newRow("CTEbase64:Encrypt") << data << false << true << Headers::CE7Bit;
     QTest::newRow("CTEbase64:SignEncrypt") << data << true << true << Headers::CE7Bit;

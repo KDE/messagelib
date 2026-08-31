@@ -30,7 +30,7 @@ TagManager *TagManager::self()
 
 void TagManager::init()
 {
-    mMonitor->setObjectName(QLatin1StringView("MessageListTagMonitor"));
+    mMonitor->setObjectName("MessageListTagMonitor"_L1);
     mMonitor->setTypeMonitored(Akonadi::Monitor::Tags);
     connect(mMonitor, &Akonadi::Monitor::tagAdded, this, &TagManager::slotTagsChanged);
     connect(mMonitor, &Akonadi::Monitor::tagRemoved, this, &TagManager::slotTagsChanged);

@@ -8,6 +8,8 @@
 #include "messagelistsettings.h"
 #include <KLocalizedString>
 #include <QAction>
+
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageList::Core;
 
 QuickSearchWarning::QuickSearchWarning(QWidget *parent)
@@ -20,7 +22,7 @@ QuickSearchWarning::QuickSearchWarning(QWidget *parent)
     setPosition(KMessageWidget::Header);
     setText(i18n("The words less than 3 letters are ignored."));
     auto action = new QAction(i18nc("@action", "Do not show again"), this);
-    action->setObjectName(QLatin1StringView("donotshowagain"));
+    action->setObjectName("donotshowagain"_L1);
     connect(action, &QAction::triggered, this, &QuickSearchWarning::slotDoNotRememberIt);
     addAction(action);
 }

@@ -55,14 +55,14 @@ void TemplateExtractHtmlElementFromMail::setHtmlContent(const QString &html)
 
 static QString extractHeaderBodyScript()
 {
-    const QString source = QStringLiteral(
-        "(function() {"
+    const QString source =
+        u"(function() {"
         "var res = {"
         "    body: document.getElementsByTagName('body')[0].innerHTML,"
         "    header: document.getElementsByTagName('head')[0].innerHTML"
         "};"
         "return res;"
-        "})()");
+        "})()"_s;
     return source;
 }
 

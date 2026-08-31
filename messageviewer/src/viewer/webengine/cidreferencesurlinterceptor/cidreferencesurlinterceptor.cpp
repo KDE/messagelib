@@ -10,6 +10,8 @@
 #include <QUrl>
 #include <QWebEngineUrlRequestInfo>
 
+using namespace Qt::Literals::StringLiterals;
+
 // This class is not needed if we get cidschemehandler working,
 // which could also help us avoid having to giving local file access.
 
@@ -24,7 +26,7 @@ CidReferencesUrlInterceptor::~CidReferencesUrlInterceptor() = default;
 bool CidReferencesUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
 {
     const QUrl urlRequestUrl(info.requestUrl());
-    if (urlRequestUrl.scheme() == QLatin1StringView("cid")) {
+    if (urlRequestUrl.scheme() == "cid"_L1) {
         if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeImage) {
             const QUrl newUrl = QUrl(MessageViewer::WebEngineEmbedPart::self()->contentUrl(urlRequestUrl.path()));
             if (!newUrl.isEmpty()) {

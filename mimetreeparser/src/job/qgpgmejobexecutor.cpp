@@ -16,6 +16,8 @@
 
 #include <cassert>
 
+using namespace Qt::Literals::StringLiterals;
+
 using namespace GpgME;
 using namespace MimeTreeParser;
 
@@ -23,7 +25,7 @@ QGpgMEJobExecutor::QGpgMEJobExecutor(QObject *parent)
     : QObject(parent)
     , mEventLoop(new QEventLoop(this))
 {
-    setObjectName(QLatin1StringView("KleoJobExecutor"));
+    setObjectName("KleoJobExecutor"_L1);
 }
 
 GpgME::VerificationResult QGpgMEJobExecutor::exec(QGpgME::VerifyDetachedJob *job, const QByteArray &signature, const QByteArray &signedData)

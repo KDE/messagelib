@@ -53,14 +53,14 @@ void CidUrlRequestInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
 {
     const QUrl urlRequestUrl(info.requestUrl());
     qDebug() << " urlRequestUrl " << urlRequestUrl;
-    if (urlRequestUrl.scheme() == QLatin1StringView("cid")) {
+    if (urlRequestUrl.scheme() == "cid"_L1) {
         qDebug() << " info.resourceType() " << info.resourceType();
         if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeImage) {
             QUrl r;
-            if (urlRequestUrl.url() == QLatin1StringView("cid:resource_src")) {
+            if (urlRequestUrl.url() == "cid:resource_src"_L1) {
                 qDebug() << " from resource src";
                 r = QUrl(u"qrc:audio-volume-medium.png"_s);
-            } else if (urlRequestUrl.url() == QLatin1StringView("cid:local_src")) {
+            } else if (urlRequestUrl.url() == "cid:local_src"_L1) {
                 qDebug() << " from local file";
 #ifdef LOAD_FROM_FILE
                 QImage image(QStringLiteral(PICSRC "/audio-volume-medium.png"));
@@ -78,7 +78,7 @@ void CidUrlRequestInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
             qDebug() << " r " << r;
             info.redirect(r);
         }
-    } else if (urlRequestUrl.scheme() == QLatin1StringView("file")) {
+    } else if (urlRequestUrl.scheme() == "file"_L1) {
         // info.block(true);
     }
 }
@@ -92,8 +92,8 @@ TestWebEngineViewInterceptor::TestWebEngineViewInterceptor(QWidget *parent)
     mWebEngineView = new QWebEngineView(this);
     mWebEngineView->page()->profile()->setUrlRequestInterceptor(new CidUrlRequestInterceptor(this));
 
-    const QString htmlStr = QStringLiteral(
-        "<html>"
+    const QString htmlStr =
+        u"<html>"
         "<head>"
         "<meta http-equiv=\"content-type\" content=\"text/html; charset=UTF-8\">"
         "</head>"
@@ -106,7 +106,7 @@ TestWebEngineViewInterceptor::TestWebEngineViewInterceptor(QWidget *parent)
         "<p>Xcv</p>"
         "<p>bxcvbxcvbxcvb</p>"
         "<br /></body>"
-        "</html>");
+        "</html>"_s;
 
     mWebEngineView->setHtml(htmlStr /*, QUrl(u"file:///"_s)*/);
     vbox->addWidget(mWebEngineView);

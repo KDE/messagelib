@@ -17,6 +17,8 @@
 
 #include <MessageCore/StringUtil>
 
+using namespace Qt::Literals::StringLiterals;
+
 using namespace MessageComposer;
 
 AliasesExpandJob::AliasesExpandJob(const QString &recipients, const QString &defaultDomain, QObject *parent)
@@ -127,7 +129,7 @@ void AliasesExpandJob::finishExpansion()
             continue;
         }
         if (!mEmailAddresses.isEmpty()) {
-            mEmailAddresses += QLatin1StringView(", ");
+            mEmailAddresses += ", "_L1;
         }
 
         const QString receiver = recipient.trimmed();

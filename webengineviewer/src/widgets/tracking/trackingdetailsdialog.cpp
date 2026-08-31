@@ -16,6 +16,8 @@
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
 #include <TextCustomEditor/RichTextEditorWidget>
 
+using namespace Qt::Literals::StringLiterals;
+
 using namespace WebEngineViewer;
 namespace
 {
@@ -30,14 +32,14 @@ TrackingDetailsDialog::TrackingDetailsDialog(QWidget *parent)
     setModal(false);
 
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QLatin1StringView("mainLayout"));
+    mainLayout->setObjectName("mainLayout"_L1);
 
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
-    buttonBox->setObjectName(QLatin1StringView("buttonbox"));
+    buttonBox->setObjectName("buttonbox"_L1);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &TrackingDetailsDialog::reject);
     connect(buttonBox->button(QDialogButtonBox::Close), &QPushButton::clicked, this, &TrackingDetailsDialog::close);
 
-    mDetails->setObjectName(QLatin1StringView("detail"));
+    mDetails->setObjectName("detail"_L1);
     mainLayout->addWidget(mDetails);
     mainLayout->addWidget(buttonBox);
     mDetails->setReadOnly(true);

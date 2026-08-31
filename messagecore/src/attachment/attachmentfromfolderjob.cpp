@@ -65,7 +65,7 @@ void AttachmentFromFolderJob::AttachmentLoadJobPrivate::compressFolder()
     Q_ASSERT(mCompressedFolder == nullptr);
 
     mCompressedFolder = AttachmentPart::Ptr(new AttachmentPart);
-    const QString newName = fileName + QLatin1StringView(".zip");
+    const QString newName = fileName + ".zip"_L1;
     mCompressedFolder->setName(newName);
     mCompressedFolder->setFileName(newName);
     mCompressedFolder->setMimeType("application/zip");

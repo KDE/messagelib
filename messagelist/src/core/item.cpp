@@ -241,7 +241,7 @@ Item *Item::topmostNonRoot()
 static inline void append_string(QString &buffer, const QString &append)
 {
     if (!buffer.isEmpty()) {
-        buffer += QLatin1StringView(", ");
+        buffer += ", "_L1;
     }
     buffer += append;
 }
@@ -624,11 +624,11 @@ int Item::appendChildItem(Model *model, Item *child)
 
 void Item::dump(const QString &prefix)
 {
-    QString out = u"%1 %x VIEWABLE:%2"_s.arg(prefix, d_ptr->mIsViewable ? QStringLiteral("yes") : QStringLiteral("no"));
+    QString out = u"%1 %x VIEWABLE:%2"_s.arg(prefix, d_ptr->mIsViewable ? u"yes"_s : u"no"_s);
     qDebug(out.toUtf8().data(), this);
 
     QString nPrefix(prefix);
-    nPrefix += QLatin1StringView("  ");
+    nPrefix += "  "_L1;
 
     if (!d_ptr->mChildItems) {
         return;

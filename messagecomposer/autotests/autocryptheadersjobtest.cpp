@@ -159,7 +159,7 @@ void AutocryptHeadersJobTest::testAutocryptGossipHeader()
     std::vector<GpgME::Key> ownKeys;
     job->exec(QStringList(QString::fromLatin1(skeletonMessage.from()[0].addresses()[0])), false, ownKeys);
     std::vector<GpgME::Key> keys;
-    job->exec(QStringList({u"bob@autocrypt.example"_s, QStringLiteral("carol@autocrypt.example")}), false, keys);
+    job->exec(QStringList({u"bob@autocrypt.example"_s, u"carol@autocrypt.example"_s}), false, keys);
 
     auto aJob = new AutocryptHeadersJob(&composerJob);
 
@@ -202,7 +202,7 @@ void AutocryptHeadersJobTest::testSetGnupgHome()
     std::vector<GpgME::Key> ownKeys;
     exportJob->exec(QStringList(QString::fromLatin1(skeletonMessage.from()[0].addresses()[0])), false, ownKeys);
     std::vector<GpgME::Key> keys;
-    exportJob->exec(QStringList({u"bob@autocrypt.example"_s, QStringLiteral("carol@autocrypt.example")}), false, keys);
+    exportJob->exec(QStringList({u"bob@autocrypt.example"_s, u"carol@autocrypt.example"_s}), false, keys);
 
     const QTemporaryDir dir;
     { // test with an empty gnupg Home
@@ -277,7 +277,7 @@ void AutocryptHeadersJobTest::testStripSenderKey()
     std::vector<GpgME::Key> ownKeys;
     job->exec(QStringList(QString::fromLatin1(skeletonMessage.from()[0].addresses()[0])), false, ownKeys);
     std::vector<GpgME::Key> keys;
-    job->exec(QStringList({u"bob@autocrypt.example"_s, QStringLiteral("carol@autocrypt.example")}), false, keys);
+    job->exec(QStringList({u"bob@autocrypt.example"_s, u"carol@autocrypt.example"_s}), false, keys);
     keys.push_back(ownKeys[0]);
 
     auto aJob = new AutocryptHeadersJob(&composerJob);

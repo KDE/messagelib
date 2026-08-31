@@ -68,19 +68,19 @@ void HeaderStyleMenuManagerPrivate::readSettings()
         const QString headerStyle = MessageViewer::MessageViewerSettings::self()->headerStyle();
         const QString headerSetDisplayed = MessageViewer::MessageViewerSettings::self()->headerSetDisplayed();
 
-        if ((headerStyle == QLatin1StringView("custom")) && (headerSetDisplayed == QLatin1StringView("custom"))) { // Custom
+        if ((headerStyle == "custom"_L1) && (headerSetDisplayed == "custom"_L1)) { // Custom
             headerStyleName = u"custom"_s;
-        } else if ((headerStyle == QLatin1StringView("plain")) && (headerSetDisplayed == QLatin1StringView("all"))) { // all
+        } else if ((headerStyle == "plain"_L1) && (headerSetDisplayed == "all"_L1)) { // all
             headerStyleName = u"all-headers"_s;
-        } else if ((headerStyle == QLatin1StringView("brief")) && (headerSetDisplayed == QLatin1StringView("brief"))) { // brief
+        } else if ((headerStyle == "brief"_L1) && (headerSetDisplayed == "brief"_L1)) { // brief
             headerStyleName = u"brief"_s;
-        } else if ((headerStyle == QLatin1StringView("fancy")) && (headerSetDisplayed == QLatin1StringView("rich"))) { // fancy
+        } else if ((headerStyle == "fancy"_L1) && (headerSetDisplayed == "rich"_L1)) { // fancy
             headerStyleName = u"fancy"_s;
-        } else if ((headerStyle == QLatin1StringView("grantlee")) && (headerSetDisplayed == QLatin1StringView("grantlee"))) { // grantlee
+        } else if ((headerStyle == "grantlee"_L1) && (headerSetDisplayed == "grantlee"_L1)) { // grantlee
             headerStyleName = u"grantlee"_s;
-        } else if ((headerStyle == QLatin1StringView("plain")) && (headerSetDisplayed == QLatin1StringView("rich"))) { // longheader
+        } else if ((headerStyle == "plain"_L1) && (headerSetDisplayed == "rich"_L1)) { // longheader
             headerStyleName = u"long-header"_s;
-        } else if ((headerStyle == QLatin1StringView("plain")) && (headerSetDisplayed == QLatin1StringView("standard"))) { // Standard
+        } else if ((headerStyle == "plain"_L1) && (headerSetDisplayed == "standard"_L1)) { // Standard
             headerStyleName = u"standards-header"_s;
         } else {
             qCDebug(MESSAGEVIEWER_LOG) << "unknown style : headerstyle " << headerStyle << " headerstrategy :" << headerSetDisplayed;

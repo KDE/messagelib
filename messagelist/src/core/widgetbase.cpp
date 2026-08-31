@@ -49,6 +49,8 @@
 #include <chrono>
 
 #include "core/widgets/searchlinecommand.h"
+
+using namespace Qt::Literals::StringLiterals;
 using namespace std::chrono_literals;
 
 using namespace MessageList::Core;
@@ -118,14 +120,14 @@ Widget::Widget(QWidget *pParent)
     connect(Manager::instance(), &Manager::themesChanged, this, &Widget::themesChanged);
 
     setAutoFillBackground(true);
-    setObjectName(QLatin1StringView("messagelistwidget"));
+    setObjectName("messagelistwidget"_L1);
 
     auto g = new QVBoxLayout(this);
     g->setContentsMargins({});
     g->setSpacing(0);
 
     d->quickSearchLine = new QuickSearchLine(this);
-    d->quickSearchLine->setObjectName(QLatin1StringView("quicksearchline"));
+    d->quickSearchLine->setObjectName("quicksearchline"_L1);
     connect(d->quickSearchLine, &QuickSearchLine::clearButtonClicked, this, &Widget::searchEditClearButtonClicked);
 
     connect(d->quickSearchLine, &QuickSearchLine::searchEditTextEdited, this, &Widget::searchEditTextEdited);
@@ -153,7 +155,7 @@ Widget::Widget(QWidget *pParent)
     d->mView = std::make_unique<View>(this);
     d->mView->setFrameStyle(QFrame::NoFrame);
     d->mView->setSortOrder(&d->mSortOrder);
-    d->mView->setObjectName(QLatin1StringView("messagealistview"));
+    d->mView->setObjectName("messagealistview"_L1);
     g->addWidget(d->mView.get(), 1);
 
     connect(d->mView->header(), &QHeaderView::sectionClicked, this, &Widget::slotViewHeaderSectionClicked);

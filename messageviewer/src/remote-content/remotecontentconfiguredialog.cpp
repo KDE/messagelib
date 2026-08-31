@@ -14,6 +14,8 @@
 #include <QVBoxLayout>
 #include <QWindow>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
+
+using namespace Qt::Literals::StringLiterals;
 namespace
 {
 static const char myRemoteContentConfigureConfigGroupName[] = "RemoteContentConfigureDialog";
@@ -26,13 +28,13 @@ RemoteContentConfigureDialog::RemoteContentConfigureDialog(QWidget *parent)
 {
     setWindowTitle(i18nc("@title:window", "Configure Remote Content"));
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QLatin1StringView("mainLayout"));
+    mainLayout->setObjectName("mainLayout"_L1);
 
-    mRemoteContentConfigureWidget->setObjectName(QLatin1StringView("mRemoteContentConfigureWidget"));
+    mRemoteContentConfigureWidget->setObjectName("mRemoteContentConfigureWidget"_L1);
     mainLayout->addWidget(mRemoteContentConfigureWidget);
 
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
-    buttonBox->setObjectName(QLatin1StringView("buttonBox"));
+    buttonBox->setObjectName("buttonBox"_L1);
     connect(buttonBox, &QDialogButtonBox::accepted, this, &RemoteContentConfigureDialog::slotAccept);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &RemoteContentConfigureDialog::reject);
     mainLayout->addWidget(buttonBox);

@@ -8,6 +8,8 @@
 #include <KLocalizedString>
 #include <QAction>
 
+using namespace Qt::Literals::StringLiterals;
+
 using namespace MessageViewer;
 MDNWarningWidget::MDNWarningWidget(QWidget *parent)
     : KMessageWidget(parent)
@@ -27,9 +29,9 @@ MDNWarningWidget::MDNWarningWidget(QWidget *parent)
     connect(mSendDenyAction, &QAction::triggered, this, &MDNWarningWidget::slotSendDeny);
     addAction(mSendDenyAction);
     mSendDenyAction->setVisible(false); // Hidden by default
-    mIgnoreAction->setObjectName(QLatin1StringView("mIgnoreAction"));
-    mSendAction->setObjectName(QLatin1StringView("mSendAction"));
-    mSendDenyAction->setObjectName(QLatin1StringView("mSendDenyAction"));
+    mIgnoreAction->setObjectName("mIgnoreAction"_L1);
+    mSendAction->setObjectName("mSendAction"_L1);
+    mSendDenyAction->setObjectName("mSendDenyAction"_L1);
 }
 
 MDNWarningWidget::~MDNWarningWidget() = default;

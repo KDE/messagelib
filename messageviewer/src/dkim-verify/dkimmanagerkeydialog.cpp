@@ -11,6 +11,8 @@
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
+
 namespace
 {
 static const char myDKIMManagerKeyDialogConfigGroupName[] = "DKIMManagerKeyDialog";
@@ -22,13 +24,13 @@ DKIMManagerKeyDialog::DKIMManagerKeyDialog(QWidget *parent)
     , mManagerWidget(new DKIMManagerKeyWidget(this))
 {
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QLatin1StringView("mainlayout"));
+    mainLayout->setObjectName("mainlayout"_L1);
 
-    mManagerWidget->setObjectName(QLatin1StringView("managerWidget"));
+    mManagerWidget->setObjectName("managerWidget"_L1);
     mainLayout->addWidget(mManagerWidget);
 
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
-    buttonBox->setObjectName(QLatin1StringView("buttonbox"));
+    buttonBox->setObjectName("buttonbox"_L1);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &DKIMManagerKeyDialog::reject);
     mainLayout->addWidget(buttonBox);
     loadKeys();

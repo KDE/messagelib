@@ -409,7 +409,7 @@ std::unique_ptr<KMime::Content> MessageFactoryNG::createForwardAttachmentMessage
     cd->setDisposition(KMime::Headers::CDinline);
     const QString subject = fwdMsg->subject()->asUnicodeString();
     ct->setParameter(QByteArrayLiteral("name"), subject);
-    msgPart->contentDescription()->fromUnicodeString(fwdMsg->from()->asUnicodeString() + QLatin1StringView(": ") + subject);
+    msgPart->contentDescription()->fromUnicodeString(fwdMsg->from()->asUnicodeString() + ": "_L1 + subject);
     msgPart->setBody(fwdMsg->encodedContent());
     msgPart->assemble();
 
@@ -578,9 +578,9 @@ std::shared_ptr<KMime::Message> MessageFactoryNG::createDeliveryReceipt()
     receipt->subject()->fromUnicodeString(i18n("Receipt: ") + mOrigMsg->subject()->asUnicodeString());
 
     QString str = u"Your message was successfully delivered."_s;
-    str += QLatin1StringView("\n\n---------- Message header follows ----------\n");
+    str += "\n\n---------- Message header follows ----------\n"_L1;
     str += QString::fromLatin1(mOrigMsg->head());
-    str += QLatin1StringView("--------------------------------------------\n");
+    str += "--------------------------------------------\n"_L1;
     // Conversion to toLatin1 is correct here as Mail headers should contain
     // ascii only
     receipt->setBody(str.toLatin1());
@@ -885,7 +885,7 @@ bool MessageFactoryNG::MDNMDNUnknownOption(const std::shared_ptr<KMime::Message>
     if (auto hrd = msg->headerByType("Disposition-Notification-Options")) {
         notificationOptions = hrd->asUnicodeString();
     }
-    if (notificationOptions.contains(QLatin1StringView("required"), Qt::CaseSensitive)) {
+    if (notificationOptions.contains("required"_L1, Qt::CaseSensitive)) {
         // ### hacky; should parse...
         // There is a required option that we don't understand. We need to
         // ask the user what we should do:

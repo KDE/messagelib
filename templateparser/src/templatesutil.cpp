@@ -32,27 +32,23 @@ void TemplateParser::Util::deleteTemplate(const QString &id)
 QStringList TemplateParser::Util::keywordsWithArgs()
 {
     const QStringList keywordsWithArgs = QStringList()
-        << u"%REM=\"\"%-"_s << u"%INSERT=\"\""_s << QStringLiteral("%SYSTEM=\"\"") << QStringLiteral("%QUOTEPIPE=\"\"") << u"%MSGPIPE=\"\""_s
-        << u"%BODYPIPE=\"\""_s << QStringLiteral("%CLEARPIPE=\"\"") << QStringLiteral("%TEXTPIPE=\"\"") << u"%OHEADER=\"\""_s << u"%HEADER=\"\""_s
-        << QStringLiteral("%DICTIONARYLANGUAGE=\"\"") << QStringLiteral("%LANGUAGE=\"\"");
+        << u"%REM=\"\"%-"_s << u"%INSERT=\"\""_s << u"%SYSTEM=\"\""_s << u"%QUOTEPIPE=\"\""_s << u"%MSGPIPE=\"\""_s << u"%BODYPIPE=\"\""_s
+        << u"%CLEARPIPE=\"\""_s << u"%TEXTPIPE=\"\""_s << u"%OHEADER=\"\""_s << u"%HEADER=\"\""_s << u"%DICTIONARYLANGUAGE=\"\""_s << u"%LANGUAGE=\"\""_s;
     return keywordsWithArgs;
 }
 
 QStringList TemplateParser::Util::keywords()
 {
     const QStringList keywords =
-        QStringList() << u"%QUOTE"_s << u"%FORCEDPLAIN"_s << QStringLiteral("%FORCEDHTML") << QStringLiteral("%QHEADERS") << u"%HEADERS"_s << u"%TEXT"_s
-                      << QStringLiteral("%OTEXTSIZE") << QStringLiteral("%OTEXT") << u"%OADDRESSEESADDR"_s << u"%CCADDR"_s << QStringLiteral("%CCNAME")
-                      << QStringLiteral("%CCFNAME") << u"%CCLNAME"_s << u"%TOADDR"_s << QStringLiteral("%TONAME") << QStringLiteral("%TOFNAME") << u"%TOLNAME"_s
-                      << u"%TOLIST"_s << QStringLiteral("%FROMADDR") << QStringLiteral("%FROMNAME") << u"%FROMFNAME"_s << u"%FROMLNAME"_s
-                      << QStringLiteral("%FULLSUBJECT") << QStringLiteral("%MSGID") << u"%HEADER\\( "_s << u"%OCCADDR"_s << QStringLiteral("%OCCNAME")
-                      << QStringLiteral("%OCCFNAME") << u"%OCCLNAME"_s << u"%OTOADDR"_s << QStringLiteral("%OTONAME") << QStringLiteral("%OTOFNAME")
-                      << u"%OTOLNAME"_s << u"%OTOLIST"_s << QStringLiteral("%OTO") << QStringLiteral("%OFROMADDR") << u"%OFROMNAME"_s << u"%OFROMFNAME"_s
-                      << QStringLiteral("%OFROMLNAME") << QStringLiteral("%OFULLSUBJECT") << u"%OFULLSUBJ"_s << u"%OMSGID"_s << QStringLiteral("%DATEEN")
-                      << QStringLiteral("%DATESHORT") << u"%DATE"_s << u"%DOW"_s << QStringLiteral("%TIMELONGEN") << QStringLiteral("%TIMELONG") << u"%TIME"_s
-                      << u"%ODATEEN"_s << QStringLiteral("%ODATESHORT") << QStringLiteral("%ODATE") << u"%ODOW"_s << u"%OTIMELONGEN"_s
-                      << QStringLiteral("%OTIMELONG") << QStringLiteral("%OTIME") << u"%BLANK"_s << u"%NOP"_s << QStringLiteral("%CLEAR")
-                      << QStringLiteral("%DEBUGOFF") << u"%DEBUG"_s << u"%CURSOR"_s << QStringLiteral("%SIGNATURE");
+        QStringList() << u"%QUOTE"_s << u"%FORCEDPLAIN"_s << u"%FORCEDHTML"_s << u"%QHEADERS"_s << u"%HEADERS"_s << u"%TEXT"_s << u"%OTEXTSIZE"_s << u"%OTEXT"_s
+                      << u"%OADDRESSEESADDR"_s << u"%CCADDR"_s << u"%CCNAME"_s << u"%CCFNAME"_s << u"%CCLNAME"_s << u"%TOADDR"_s << u"%TONAME"_s
+                      << u"%TOFNAME"_s << u"%TOLNAME"_s << u"%TOLIST"_s << u"%FROMADDR"_s << u"%FROMNAME"_s << u"%FROMFNAME"_s << u"%FROMLNAME"_s
+                      << u"%FULLSUBJECT"_s << u"%MSGID"_s << u"%HEADER\\( "_s << u"%OCCADDR"_s << u"%OCCNAME"_s << u"%OCCFNAME"_s << u"%OCCLNAME"_s
+                      << u"%OTOADDR"_s << u"%OTONAME"_s << u"%OTOFNAME"_s << u"%OTOLNAME"_s << u"%OTOLIST"_s << u"%OTO"_s << u"%OFROMADDR"_s << u"%OFROMNAME"_s
+                      << u"%OFROMFNAME"_s << u"%OFROMLNAME"_s << u"%OFULLSUBJECT"_s << u"%OFULLSUBJ"_s << u"%OMSGID"_s << u"%DATEEN"_s << u"%DATESHORT"_s
+                      << u"%DATE"_s << u"%DOW"_s << u"%TIMELONGEN"_s << u"%TIMELONG"_s << u"%TIME"_s << u"%ODATEEN"_s << u"%ODATESHORT"_s << u"%ODATE"_s
+                      << u"%ODOW"_s << u"%OTIMELONGEN"_s << u"%OTIMELONG"_s << u"%OTIME"_s << u"%BLANK"_s << u"%NOP"_s << u"%CLEAR"_s << u"%DEBUGOFF"_s
+                      << u"%DEBUG"_s << u"%CURSOR"_s << u"%SIGNATURE"_s;
     return keywords;
 }
 

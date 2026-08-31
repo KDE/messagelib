@@ -67,62 +67,57 @@ void ScamDetectionWebEngineTest::scamtest_data()
 
     // Redirect href
     QTest::newRow("Redirect scam") << u"<html><body><a href=\"http://www.google.fr/url?q=http://www.yahoo.com\">test</a></body></html>"_s << true;
-    QTest::newRow("Redirect no scam") << QStringLiteral(
-        "<html><body><a href=\"kmail:showAuditLog?log=http://www.foo.com%3http://www.bla.com\">test</a></body></html>")
+    QTest::newRow("Redirect no scam") << u"<html><body><a href=\"kmail:showAuditLog?log=http://www.foo.com%3http://www.bla.com\">test</a></body></html>"_s
                                       << false;
 
     // Numeric value
-    QTest::newRow("numeric no scam") << QStringLiteral(
-        "<html><body><a href=\"http://baseball2.2ndhalfplays.com/nested/attribs/\">http://baseball2.2ndhalfplays.com/nested/attribs</html>")
-                                     << false;
+    QTest::newRow("numeric no scam")
+        << u"<html><body><a href=\"http://baseball2.2ndhalfplays.com/nested/attribs/\">http://baseball2.2ndhalfplays.com/nested/attribs</html>"_s << false;
     QTest::newRow("numeric scam1") << u"<html><body><a href=\"http://25.15.55.88/\">test</a></body></html>"_s << true;
     QTest::newRow("numeric scam2") << u"<html><body><a href=\"http://255.0.1.1/\">test</a></body></html>"_s << true;
     QTest::newRow("numeric scam3") << u"<html><body><a href=\"http://1.0.1.1/\">test</a></body></html>"_s << true;
     QTest::newRow("numeric scam4") << u"<html><body><a href=\"http://255.500.1.1/\">test</a></body></html>"_s << true;
-    QTest::newRow("numeric scam5") << QStringLiteral(
-        "<html><body><a href=\"http://baseball.2ndhalfplays.com/nested/attribs/\">http://baseball2.2ndhalfplays.com/nested/attribs</html>")
-                                   << true;
+    QTest::newRow("numeric scam5")
+        << u"<html><body><a href=\"http://baseball.2ndhalfplays.com/nested/attribs/\">http://baseball2.2ndhalfplays.com/nested/attribs</html>"_s << true;
 
-    QTest::newRow("scam") << QStringLiteral(
-        "<html><body><a href=\"http://dfgdgsfdgsfdgsfd.foo.com/#contact@bla.org\">https://www.bli.com/manager/dedicated/index.html#/billing/mean</a></html>")
-                          << true;
+    QTest::newRow("scam")
+        << u"<html><body><a href=\"http://dfgdgsfdgsfdgsfd.foo.com/#contact@bla.org\">https://www.bli.com/manager/dedicated/index.html#/billing/mean</a></html>"_s
+        << true;
 
-    QTest::newRow("scam-amp") << QStringLiteral(
-        "<a "
-        "href=\"https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=gcompris\">https://bugs.kde.org/"
-        "enter_bug.cgi?format=guided&amp;amp;product=gcompris</a></div>")
+    QTest::newRow("scam-amp") << u"<a "
+                                 "href=\"https://bugs.kde.org/enter_bug.cgi?format=guided&amp;product=gcompris\">https://bugs.kde.org/"
+                                 "enter_bug.cgi?format=guided&amp;amp;product=gcompris</a></div>"_s
                               << false;
 
-    QTest::newRow("scam-encoded-url1") << QStringLiteral(
-        "<a href=\"https://github.com/KDAB/KDStateMachineEditor.git|1.2\">https://github.com/KDAB/KDStateMachineEditor.git|1.2</a>")
-                                       << false;
+    QTest::newRow("scam-encoded-url1")
+        << u"<a href=\"https://github.com/KDAB/KDStateMachineEditor.git|1.2\">https://github.com/KDAB/KDStateMachineEditor.git|1.2</a>"_s << false;
 
     QTest::newRow("scam-lowercase") << u"<a href=\"http://www.Kde.org\">http://www.Kde.org</a>"_s << false;
     QTest::newRow("scam-lowercase-2") << u"<a href=\"http://www.Kde.org/KDE/bla\">http://www.Kde.org/KDE/bla</a>"_s << false;
-    QTest::newRow("scam-lowercase-3") << QStringLiteral(
-        "<a href=\"http://code.qt.io/cgit/%7bnon-gerrit%7d/qt-labs/opencl.git\">http://code.qt.io/cgit/%7bnon-gerrit%7d/qt-labs/opencl.git</a>")
-                                      << false;
+    QTest::newRow("scam-lowercase-3")
+        << u"<a href=\"http://code.qt.io/cgit/%7bnon-gerrit%7d/qt-labs/opencl.git\">http://code.qt.io/cgit/%7bnon-gerrit%7d/qt-labs/opencl.git</a>"_s << false;
 
-    QTest::newRow("toplevelrepo") << QStringLiteral(
-        "<a "
-        "href=\"https://www.amazon.fr/gp/goldbox/ref=pe_btn/?nocache=1510065600354\">https://www.amazon.fr/gp/../gp/goldbox/ref=pe_btn/?nocache=1510065600354</"
-        "a>") << false;
+    QTest::newRow("toplevelrepo") << u"<a "
+                                     "href=\"https://www.amazon.fr/gp/goldbox/ref=pe_btn/?nocache=1510065600354\">https://www.amazon.fr/gp/../gp/goldbox/"
+                                     "ref=pe_btn/?nocache=1510065600354</"
+                                     "a>"_s
+                                  << false;
 
-    QTest::newRow("toplevelrepo2") << QStringLiteral(
-        "<a "
-        "href=\"https://www.amazon.fr/gp/../gp/goldbox/ref=pe_btn/?nocache=1510065600354\">https://www.amazon.fr/gp/goldbox/ref=pe_btn/?nocache=1510065600354</"
-        "a>") << false;
-
-    QTest::newRow("toplevelrepo3") << QStringLiteral(
-        "<a href=\"https://www.amazon.fr/gp/../gp/goldbox/ref=pe_d//\">https://www.amazon.fr/gp/../gp/goldbox/ref=pe_d//</a>")
+    QTest::newRow("toplevelrepo2") << u"<a "
+                                      "href=\"https://www.amazon.fr/gp/../gp/goldbox/ref=pe_btn/?nocache=1510065600354\">https://www.amazon.fr/gp/goldbox/"
+                                      "ref=pe_btn/?nocache=1510065600354</"
+                                      "a>"_s
                                    << false;
-    QTest::newRow("endwith%22") << QStringLiteral(
-        "<a href=\"http://www.kde.org/standards/kcfg/1.0/kcfg.xsd\" \"=\"\">http://www.kde.org/standards/kcfg/1.0/kcfg.xsd\"</a>")
+
+    QTest::newRow("toplevelrepo3") << u"<a href=\"https://www.amazon.fr/gp/../gp/goldbox/ref=pe_d//\">https://www.amazon.fr/gp/../gp/goldbox/ref=pe_d//</a>"_s
+                                   << false;
+    QTest::newRow("endwith%22") << u"<a href=\"http://www.kde.org/standards/kcfg/1.0/kcfg.xsd\" \"=\"\">http://www.kde.org/standards/kcfg/1.0/kcfg.xsd\"</a>"_s
                                 << false;
-    QTest::newRow("contains%5C") << QStringLiteral(
-        "<a "
-        "href=\"http://g-ecx.images-amazon.com/images/G/01/barcodes/blank003.jpg%5CnUse\">http://g-ecx.images-amazon.com/images/G/01/barcodes/blank003.jpg/"
-        "nUse</a>") << false;
+    QTest::newRow("contains%5C")
+        << u"<a "
+           "href=\"http://g-ecx.images-amazon.com/images/G/01/barcodes/blank003.jpg%5CnUse\">http://g-ecx.images-amazon.com/images/G/01/barcodes/blank003.jpg/"
+           "nUse</a>"_s
+        << false;
     QTest::newRow("wierd1") << u"<a href=\"http://www.weezevent.com?c=sys_mail\">http://www.weezevent.com?c=sys_mail</a>"_s << false;
 
     QTest::newRow("urlwithport-special443") << u"<a href=\"https://example.com:443/blablabla\">https://example.com:443/blablabla</a>"_s << false;
@@ -132,25 +127,24 @@ void ScamDetectionWebEngineTest::scamtest_data()
     QTest::newRow("urlwithport3") << u"<a href=\"smtps://example.com:465/blablabla\">smtps://example.com:465/blablabla</a>"_s << false;
     QTest::newRow("urlwithport3") << u"<a href=\"imaps://example.com:993/blablabla\">imaps://example.com:993/blablabla</a>"_s << false;
     // Bug:440635
-    QTest::newRow("scam5C") << QStringLiteral(R"(<a href="https://www.google.com/search?q=%5C">https://www.google.com/search?q=%5C</a>)") << false;
-    QTest::newRow("BUG440635") << QStringLiteral(
-        R"(<a href="https://codereview.qt-project.org/q/topic:%22api-change-review-6.2%22+(status:open%20OR%20status:abandoned">https://codereview.qt-project.org/q/topic:%22api-change-review-6.2%22+(status:open%20OR%20status:abandoned</a>)")
-                               << false;
+    QTest::newRow("scam5C") << uR"(<a href="https://www.google.com/search?q=%5C">https://www.google.com/search?q=%5C</a>)"_s << false;
+    QTest::newRow("BUG440635")
+        << uR"(<a href="https://codereview.qt-project.org/q/topic:%22api-change-review-6.2%22+(status:open%20OR%20status:abandoned">https://codereview.qt-project.org/q/topic:%22api-change-review-6.2%22+(status:open%20OR%20status:abandoned</a>)"_s
+        << false;
 
-    QTest::newRow("BUG448029") << QStringLiteral(
-        R"(<a href="https://bugreports.qt.io/issues/?jql=text%20~%20%22gadget%20qml%22">https://bugreports.qt.io/issues/?jql=text%20~%20%22gadget%20qml%22</a>)")
-                               << false;
+    QTest::newRow("BUG448029")
+        << uR"(<a href="https://bugreports.qt.io/issues/?jql=text%20~%20%22gadget%20qml%22">https://bugreports.qt.io/issues/?jql=text%20~%20%22gadget%20qml%22</a>)"_s
+        << false;
 
-    QTest::newRow("BUG448674") << QStringLiteral(
-        R"(<a href="https://bugreports.qt.io/browse/QTBUG-99195" target="_blank" title="https://bugreports.qt.io/browse/qtbug-99195"> https://bugreports.qt.io/browse/QTBUG-99195</a>)")
-                               << false;
+    QTest::newRow("BUG448674")
+        << uR"(<a href="https://bugreports.qt.io/browse/QTBUG-99195" target="_blank" title="https://bugreports.qt.io/browse/qtbug-99195"> https://bugreports.qt.io/browse/QTBUG-99195</a>)"_s
+        << false;
 
-    QTest::newRow("BUG-494603") << QStringLiteral(R"(<a href="https://www.kde.org?rid">https://www.kk.org</a>)") << true;
+    QTest::newRow("BUG-494603") << uR"(<a href="https://www.kde.org?rid">https://www.kk.org</a>)"_s << true;
 
-    QTest::newRow("BUG-510551") << QStringLiteral(R"(<a href="https://example.org/A" title="https://example.org/A">https://example.org/A</a>)") << false;
+    QTest::newRow("BUG-510551") << uR"(<a href="https://example.org/A" title="https://example.org/A">https://example.org/A</a>)"_s << false;
 
-    QTest::newRow("https://www.kde.fr/?eu_business_user=true")
-        << QStringLiteral(R"(<a href="https://www.kde.fr/?eu_business_user=true">https://www.kde.fr/</a>)") << false;
+    QTest::newRow("https://www.kde.fr/?eu_business_user=true") << uR"(<a href="https://www.kde.fr/?eu_business_user=true">https://www.kde.fr/</a>)"_s << false;
 }
 
 void ScamDetectionWebEngineTest::scamtest()

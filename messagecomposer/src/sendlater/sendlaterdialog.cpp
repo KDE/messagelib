@@ -41,7 +41,7 @@ SendLaterDialog::SendLaterDialog(SendLaterInfo *info, QWidget *parent)
 
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     mOkButton = buttonBox->button(QDialogButtonBox::Ok);
-    mOkButton->setObjectName(QLatin1StringView("okbutton"));
+    mOkButton->setObjectName("okbutton"_L1);
     mOkButton->setDefault(true);
     mOkButton->setShortcut(Qt::CTRL | Qt::Key_Return);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &SendLaterDialog::reject);

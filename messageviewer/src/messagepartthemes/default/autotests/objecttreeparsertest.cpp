@@ -43,7 +43,7 @@ void ObjectTreeParserTester::test_HTMLOnlyText()
     testWriter.end();
 
     QVERIFY(otp.plainTextContent().isEmpty());
-    QVERIFY(otp.htmlContent().contains(QLatin1StringView("<b>SOME</b> HTML text.")));
+    QVERIFY(otp.htmlContent().contains("<b>SOME</b> HTML text."_L1));
     QVERIFY(testWriter.data().contains("This is an HTML message. For security reasons, only the raw HTML code is shown."));
     QVERIFY(testWriter.data().contains("SOME* HTML text. <br>"));
     msg.reset();
@@ -69,7 +69,7 @@ void ObjectTreeParserTester::test_HTMLExternal()
         testWriter.end();
 
         QVERIFY(otp.plainTextContent().isEmpty());
-        QVERIFY(otp.htmlContent().contains(QLatin1StringView("<b>SOME</b> HTML text.")));
+        QVERIFY(otp.htmlContent().contains("<b>SOME</b> HTML text."_L1));
         QVERIFY(testWriter.data().contains("<b>SOME</b> HTML text."));
         QVERIFY(testWriter.data().contains(
             "This HTML message may contain external references to images etc. For security/privacy reasons external references are not loaded."));
@@ -87,7 +87,7 @@ void ObjectTreeParserTester::test_HTMLExternal()
         emptySource.render(otp.parsedPart(), false);
         testWriter.end();
 
-        QVERIFY(otp.htmlContent().contains(QLatin1StringView("<b>SOME</b> HTML text.")));
+        QVERIFY(otp.htmlContent().contains("<b>SOME</b> HTML text."_L1));
         QVERIFY(testWriter.data().contains("<b>SOME</b> HTML text."));
         QVERIFY(!testWriter.data().contains(
             "This HTML message may contain external references to images etc. For security/privacy reasons external references are not loaded."));
@@ -113,8 +113,7 @@ void ObjectTreeParserTester::test_Alternative()
         testWriter.end();
 
         QVERIFY(otp.htmlContent().isEmpty());
-        QVERIFY(otp.plainTextContent().contains(
-            QLatin1StringView("If you can see this text it means that your email client couldn't display our newsletter properly.")));
+        QVERIFY(otp.plainTextContent().contains("If you can see this text it means that your email client couldn't display our newsletter properly."_L1));
         QVERIFY(testWriter.data().contains("If you can see this text it means that your email client couldn't display our newsletter properly."));
     }
 
@@ -131,9 +130,8 @@ void ObjectTreeParserTester::test_Alternative()
         emptySource.render(otp.parsedPart(), false);
         testWriter.end();
 
-        QVERIFY(otp.plainTextContent().contains(
-            QLatin1StringView("If you can see this text it means that your email client couldn't display our newsletter properly.")));
-        QVERIFY(otp.htmlContent().contains(QLatin1StringView("Some <span style=\" font-weight:600;\">HTML</span> text</p>")));
+        QVERIFY(otp.plainTextContent().contains("If you can see this text it means that your email client couldn't display our newsletter properly."_L1));
+        QVERIFY(otp.htmlContent().contains("Some <span style=\" font-weight:600;\">HTML</span> text</p>"_L1));
         QVERIFY(testWriter.data().contains("Some <span style=\" font-weight:600;\">HTML</span> text</p>"));
     }
 
@@ -173,7 +171,7 @@ void ObjectTreeParserTester::test_Alternative()
         testWriter.end();
 
         QVERIFY(otp.plainTextContent().isEmpty());
-        QVERIFY(otp.htmlContent().contains(QLatin1StringView("Some <span style=\" font-weight:600;\">HTML</span> text</p>")));
+        QVERIFY(otp.htmlContent().contains("Some <span style=\" font-weight:600;\">HTML</span> text</p>"_L1));
         QVERIFY(testWriter.data().contains("Some <span style=\" font-weight:600;\">HTML</span> text</p>"));
     }
     msg.reset();

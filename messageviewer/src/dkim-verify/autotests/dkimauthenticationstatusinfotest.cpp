@@ -162,10 +162,10 @@ void DKIMAuthenticationStatusInfoTest::shouldParseKey_data()
         lst.append(property3);
 
         info.setListAuthStatusInfo(lst);
-        QTest::addRow("test1") << QStringLiteral(
-            "in68.mail.ovh.net; dkim=pass (2048-bit key; unprotected) header.d=kde.org header.i=@kde.org header.b=\"GMG2ucPx\"; dkim=pass (2048-bit key; "
-            "unprotected) header.d=kde.org header.i=@kde.org header.b=\"I3t3p7Up\"; dkim-atps=neutral")
-                               << info << false << true;
+        QTest::addRow("test1")
+            << u"in68.mail.ovh.net; dkim=pass (2048-bit key; unprotected) header.d=kde.org header.i=@kde.org header.b=\"GMG2ucPx\"; dkim=pass (2048-bit key; "
+               "unprotected) header.d=kde.org header.i=@kde.org header.b=\"I3t3p7Up\"; dkim-atps=neutral"_s
+            << info << false << true;
     }
     {
         MessageViewer::DKIMAuthenticationStatusInfo info;
@@ -218,9 +218,8 @@ void DKIMAuthenticationStatusInfoTest::shouldParseKey_data()
         }
         info.setListAuthStatusInfo(lst);
 
-        QTest::addRow("reason") << QStringLiteral(
-            "example.com; dkim=pass reason=\"good signature\" header.i=@mail-router.example.net; dkim=fail reason=\"bad signature\" "
-            "header.i=@newyork.example.com;")
+        QTest::addRow("reason") << u"example.com; dkim=pass reason=\"good signature\" header.i=@mail-router.example.net; dkim=fail reason=\"bad signature\" "
+                                   "header.i=@newyork.example.com;"_s
                                 << info << false << true;
     }
 
@@ -262,9 +261,8 @@ void DKIMAuthenticationStatusInfoTest::shouldParseKey_data()
         }
         info.setListAuthStatusInfo(lst);
 
-        QTest::addRow("reason2") << QStringLiteral(
-            "example.com; dkim=pass reason=\"good signature\" header.i=@mail-router.example.net; dkim=fail reason=\"bad signature\" "
-            "header.i=@newyork.example.com")
+        QTest::addRow("reason2") << u"example.com; dkim=pass reason=\"good signature\" header.i=@mail-router.example.net; dkim=fail reason=\"bad signature\" "
+                                    "header.i=@newyork.example.com"_s
                                  << info << true << true;
     }
     {

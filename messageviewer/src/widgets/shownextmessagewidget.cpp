@@ -18,16 +18,16 @@ ShowNextMessageWidget::ShowNextMessageWidget(QWidget *parent)
     , mPreviousMessage(new QPushButton(i18nc("@action:button", "Previous Message"), this))
 {
     auto mainLayout = new QHBoxLayout(this);
-    mainLayout->setObjectName(QLatin1StringView("mainlayout"));
+    mainLayout->setObjectName("mainlayout"_L1);
     mainLayout->setContentsMargins({});
 
-    mPreviousMessage->setObjectName(QLatin1StringView("previous_message"));
+    mPreviousMessage->setObjectName("previous_message"_L1);
     mPreviousMessage->setEnabled(false);
     mainLayout->addWidget(mPreviousMessage);
     connect(mPreviousMessage, &QPushButton::clicked, this, &ShowNextMessageWidget::showPreviousMessage);
 
     mainLayout->addStretch(1);
-    mNextMessage->setObjectName(QLatin1StringView("next_message"));
+    mNextMessage->setObjectName("next_message"_L1);
     mNextMessage->setEnabled(false);
     connect(mNextMessage, &QPushButton::clicked, this, &ShowNextMessageWidget::showNextMessage);
     mainLayout->addWidget(mNextMessage);

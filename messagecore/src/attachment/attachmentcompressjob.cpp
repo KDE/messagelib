@@ -16,6 +16,8 @@
 #include <QSharedPointer>
 #include <QTimer>
 
+using namespace Qt::Literals::StringLiterals;
+
 using namespace MessageCore;
 static const mode_t archivePerms = S_IFREG | 0644;
 
@@ -67,8 +69,8 @@ void AttachmentCompressJob::AttachmentCompressJobPrivate::doStart()
     // Create new part.
     Q_ASSERT(mCompressedPart == nullptr);
     mCompressedPart = AttachmentPart::Ptr(new AttachmentPart);
-    mCompressedPart->setName(mOriginalPart->name() + QLatin1StringView(".zip")); // TODO not sure name should be .zipped too
-    mCompressedPart->setFileName(mOriginalPart->fileName() + QLatin1StringView(".zip"));
+    mCompressedPart->setName(mOriginalPart->name() + ".zip"_L1); // TODO not sure name should be .zipped too
+    mCompressedPart->setFileName(mOriginalPart->fileName() + ".zip"_L1);
     mCompressedPart->setDescription(mOriginalPart->description());
     mCompressedPart->setInline(mOriginalPart->isInline());
     mCompressedPart->setMimeType("application/zip");

@@ -37,6 +37,8 @@
 #include <QRegularExpression>
 #include <QStringDecoder>
 
+using namespace Qt::Literals::StringLiterals;
+
 namespace
 {
 Q_DECL_CONSTEXPR inline int pipeTimeout()
@@ -262,20 +264,20 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: -";
                 dnl = true;
                 i += 1;
-            } else if (cmd.startsWith(QLatin1StringView("REM="))) {
+            } else if (cmd.startsWith("REM="_L1)) {
                 // comments
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: REM=";
                 QString q;
                 const int len = parseQuotes(u"REM="_s, cmd, q);
                 i += len;
-            } else if (cmd.startsWith(QLatin1StringView("LANGUAGE="))) {
+            } else if (cmd.startsWith("LANGUAGE="_L1)) {
                 QString q;
                 const int len = parseQuotes(u"LANGUAGE="_s, cmd, q);
                 i += len;
                 if (!q.isEmpty()) {
                     definedLocale = QLocale(q);
                 }
-            } else if (cmd.startsWith(QLatin1StringView("DICTIONARYLANGUAGE="))) {
+            } else if (cmd.startsWith("DICTIONARYLANGUAGE="_L1)) {
                 QString q;
                 const int len = parseQuotes(u"DICTIONARYLANGUAGE="_s, cmd, q);
                 i += len;
@@ -284,10 +286,10 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     header->fromUnicodeString(q);
                     d->mMsg->setHeader(std::move(header));
                 }
-            } else if (cmd.startsWith(QLatin1StringView("INSERT=")) || cmd.startsWith(QLatin1StringView("PUT="))) {
+            } else if (cmd.startsWith("INSERT="_L1) || cmd.startsWith("PUT="_L1)) {
                 QString q;
                 int len = 0;
-                if (cmd.startsWith(QLatin1StringView("INSERT="))) {
+                if (cmd.startsWith("INSERT="_L1)) {
                     // insert content of specified file as is
                     qCDebug(TEMPLATEPARSER_LOG) << "Command: INSERT=";
                     len = parseQuotes(u"INSERT="_s, cmd, q);
@@ -312,7 +314,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 } else if (d->mDebug) {
                     KMessageBox::error(nullptr, i18nc("@info", "Cannot insert content from file %1: %2", path, file.errorString()));
                 }
-            } else if (cmd.startsWith(QLatin1StringView("SYSTEM="))) {
+            } else if (cmd.startsWith("SYSTEM="_L1)) {
                 // insert content of specified file as is
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: SYSTEM=";
                 QString q;
@@ -323,7 +325,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 plainBody.append(str);
                 const QString body = plainTextToHtml(str);
                 htmlBody.append(body);
-            } else if (cmd.startsWith(QLatin1StringView("QUOTEPIPE="))) {
+            } else if (cmd.startsWith("QUOTEPIPE="_L1)) {
                 // pipe message body through command and insert it as quotation
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: QUOTEPIPE=";
                 QString q;
@@ -342,7 +344,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString htmlQuote = quotedHtmlText(htmlStr);
                     htmlBody.append(htmlQuote);
                 }
-            } else if (cmd.startsWith(QLatin1StringView("QUOTE"))) {
+            } else if (cmd.startsWith("QUOTE"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: QUOTE";
                 i += strlen("QUOTE");
                 if (d->mOrigMsg) {
@@ -355,15 +357,15 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString htmlQuote = quotedHtmlText(htmlMessageText(shouldStripSignature(), SelectionAllowed));
                     htmlBody.append(htmlQuote);
                 }
-            } else if (cmd.startsWith(QLatin1StringView("FORCEDPLAIN"))) {
+            } else if (cmd.startsWith("FORCEDPLAIN"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: FORCEDPLAIN";
                 d->mQuotes = ReplyAsPlain;
                 i += strlen("FORCEDPLAIN");
-            } else if (cmd.startsWith(QLatin1StringView("FORCEDHTML"))) {
+            } else if (cmd.startsWith("FORCEDHTML"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: FORCEDHTML";
                 d->mQuotes = ReplyAsHtml;
                 i += strlen("FORCEDHTML");
-            } else if (cmd.startsWith(QLatin1StringView("QHEADERS"))) {
+            } else if (cmd.startsWith("QHEADERS"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: QHEADERS";
                 i += strlen("QHEADERS");
                 if (d->mOrigMsg) {
@@ -378,7 +380,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString str = plainTextToHtml(htmlQuote);
                     htmlBody.append(str);
                 }
-            } else if (cmd.startsWith(QLatin1StringView("HEADERS"))) {
+            } else if (cmd.startsWith("HEADERS"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: HEADERS";
                 i += strlen("HEADERS");
                 if (d->mOrigMsg) {
@@ -387,7 +389,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainTextToHtml(str);
                     htmlBody.append(body);
                 }
-            } else if (cmd.startsWith(QLatin1StringView("TEXTPIPE="))) {
+            } else if (cmd.startsWith("TEXTPIPE="_L1)) {
                 // pipe message body through command and insert it as is
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: TEXTPIPE=";
                 QString q;
@@ -401,7 +403,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString htmlStr = pipe(pipe_cmd, htmlMessageText(shouldStripSignature(), NoSelectionAllowed));
                     htmlBody.append(htmlStr);
                 }
-            } else if (cmd.startsWith(QLatin1StringView("MSGPIPE="))) {
+            } else if (cmd.startsWith("MSGPIPE="_L1)) {
                 // pipe full message through command and insert result as is
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: MSGPIPE=";
                 QString q;
@@ -414,7 +416,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainTextToHtml(str);
                     htmlBody.append(body);
                 }
-            } else if (cmd.startsWith(QLatin1StringView("BODYPIPE="))) {
+            } else if (cmd.startsWith("BODYPIPE="_L1)) {
                 // pipe message body generated so far through command and insert result as is
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: BODYPIPE=";
                 QString q;
@@ -427,7 +429,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 const QString htmlStr = pipe(pipe_cmd, htmlBody);
                 const QString body = plainTextToHtml(htmlStr);
                 htmlBody.append(body);
-            } else if (cmd.startsWith(QLatin1StringView("CLEARPIPE="))) {
+            } else if (cmd.startsWith("CLEARPIPE="_L1)) {
                 // pipe message body generated so far through command and
                 // insert result as is replacing current body
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: CLEARPIPE=";
@@ -444,7 +446,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 auto header = std::make_unique<KMime::Headers::Generic>("X-KMail-CursorPos");
                 header->fromUnicodeString(QString::number(0));
                 d->mMsg->setHeader(std::move(header));
-            } else if (cmd.startsWith(QLatin1StringView("TEXT"))) {
+            } else if (cmd.startsWith("TEXT"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: TEXT";
                 i += strlen("TEXT");
                 if (d->mOrigMsg) {
@@ -454,7 +456,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString htmlStr = htmlMessageText(shouldStripSignature(), NoSelectionAllowed);
                     htmlBody.append(htmlStr);
                 }
-            } else if (cmd.startsWith(QLatin1StringView("OTEXTSIZE"))) {
+            } else if (cmd.startsWith("OTEXTSIZE"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OTEXTSIZE";
                 i += strlen("OTEXTSIZE");
                 if (d->mOrigMsg) {
@@ -463,7 +465,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainTextToHtml(str);
                     htmlBody.append(body);
                 }
-            } else if (cmd.startsWith(QLatin1StringView("OTEXT"))) {
+            } else if (cmd.startsWith("OTEXT"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OTEXT";
                 i += strlen("OTEXT");
                 if (d->mOrigMsg) {
@@ -473,7 +475,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString htmlStr = htmlMessageText(shouldStripSignature(), NoSelectionAllowed);
                     htmlBody.append(htmlStr);
                 }
-            } else if (cmd.startsWith(QLatin1StringView("OADDRESSEESADDR"))) {
+            } else if (cmd.startsWith("OADDRESSEESADDR"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OADDRESSEESADDR";
                 i += strlen("OADDRESSEESADDR");
                 if (d->mOrigMsg) {
@@ -497,21 +499,21 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                         htmlBody.append(str);
                     }
                 }
-            } else if (cmd.startsWith(QLatin1StringView("CCADDR"))) {
+            } else if (cmd.startsWith("CCADDR"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: CCADDR";
                 i += strlen("CCADDR");
                 const QString str = d->mMsg->cc()->asUnicodeString();
                 plainBody.append(str);
                 const QString body = plainTextToHtml(str);
                 htmlBody.append(body);
-            } else if (cmd.startsWith(QLatin1StringView("CCNAME"))) {
+            } else if (cmd.startsWith("CCNAME"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: CCNAME";
                 i += strlen("CCNAME");
                 const QString str = d->mMsg->cc()->displayString();
                 plainBody.append(str);
                 const QString body = plainTextToHtml(str);
                 htmlBody.append(body);
-            } else if (cmd.startsWith(QLatin1StringView("CCFNAME"))) {
+            } else if (cmd.startsWith("CCFNAME"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: CCFNAME";
                 i += strlen("CCFNAME");
                 const QString str = d->mMsg->cc()->displayString();
@@ -519,28 +521,28 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 plainBody.append(firstNameFromEmail);
                 const QString body = plainTextToHtml(firstNameFromEmail);
                 htmlBody.append(body);
-            } else if (cmd.startsWith(QLatin1StringView("CCLNAME"))) {
+            } else if (cmd.startsWith("CCLNAME"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: CCLNAME";
                 i += strlen("CCLNAME");
                 const QString str = d->mMsg->cc()->displayString();
                 plainBody.append(TemplateParser::Util::getLastNameFromEmail(str));
                 const QString body = plainTextToHtml(TemplateParser::Util::getLastNameFromEmail(str));
                 htmlBody.append(body);
-            } else if (cmd.startsWith(QLatin1StringView("TOADDR"))) {
+            } else if (cmd.startsWith("TOADDR"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: TOADDR";
                 i += strlen("TOADDR");
                 const QString str = d->mMsg->to()->asUnicodeString();
                 plainBody.append(str);
                 const QString body = plainTextToHtml(str);
                 htmlBody.append(body);
-            } else if (cmd.startsWith(QLatin1StringView("TONAME"))) {
+            } else if (cmd.startsWith("TONAME"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: TONAME";
                 i += strlen("TONAME");
                 const QString str = (d->mMsg->to()->displayString());
                 plainBody.append(str);
                 const QString body = plainTextToHtml(str);
                 htmlBody.append(body);
-            } else if (cmd.startsWith(QLatin1StringView("TOFNAME"))) {
+            } else if (cmd.startsWith("TOFNAME"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: TOFNAME";
                 i += strlen("TOFNAME");
                 const QString str = d->mMsg->to()->displayString();
@@ -548,35 +550,35 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 plainBody.append(firstNameFromEmail);
                 const QString body = plainTextToHtml(firstNameFromEmail);
                 htmlBody.append(body);
-            } else if (cmd.startsWith(QLatin1StringView("TOLNAME"))) {
+            } else if (cmd.startsWith("TOLNAME"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: TOLNAME";
                 i += strlen("TOLNAME");
                 const QString str = d->mMsg->to()->displayString();
                 plainBody.append(TemplateParser::Util::getLastNameFromEmail(str));
                 const QString body = plainTextToHtml(TemplateParser::Util::getLastNameFromEmail(str));
                 htmlBody.append(body);
-            } else if (cmd.startsWith(QLatin1StringView("TOLIST"))) {
+            } else if (cmd.startsWith("TOLIST"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: TOLIST";
                 i += strlen("TOLIST");
                 const QString str = d->mMsg->to()->asUnicodeString();
                 plainBody.append(str);
                 const QString body = plainTextToHtml(str);
                 htmlBody.append(body);
-            } else if (cmd.startsWith(QLatin1StringView("FROMADDR"))) {
+            } else if (cmd.startsWith("FROMADDR"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: FROMADDR";
                 i += strlen("FROMADDR");
                 const QString str = d->mMsg->from()->asUnicodeString();
                 plainBody.append(str);
                 const QString body = plainTextToHtml(str);
                 htmlBody.append(body);
-            } else if (cmd.startsWith(QLatin1StringView("FROMNAME"))) {
+            } else if (cmd.startsWith("FROMNAME"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: FROMNAME";
                 i += strlen("FROMNAME");
                 const QString str = d->mMsg->from()->displayString();
                 plainBody.append(str);
                 const QString body = plainTextToHtml(str);
                 htmlBody.append(body);
-            } else if (cmd.startsWith(QLatin1StringView("FROMFNAME"))) {
+            } else if (cmd.startsWith("FROMFNAME"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: FROMFNAME";
                 i += strlen("FROMFNAME");
                 const QString str = d->mMsg->from()->displayString();
@@ -584,15 +586,15 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 plainBody.append(firstNameFromEmail);
                 const QString body = plainTextToHtml(firstNameFromEmail);
                 htmlBody.append(body);
-            } else if (cmd.startsWith(QLatin1StringView("FROMLNAME"))) {
+            } else if (cmd.startsWith("FROMLNAME"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: FROMLNAME";
                 i += strlen("FROMLNAME");
                 const QString str = d->mMsg->from()->displayString();
                 plainBody.append(TemplateParser::Util::getLastNameFromEmail(str));
                 const QString body = plainTextToHtml(TemplateParser::Util::getLastNameFromEmail(str));
                 htmlBody.append(body);
-            } else if (cmd.startsWith(QLatin1StringView("FULLSUBJECT")) || cmd.startsWith(QLatin1StringView("FULLSUBJ"))) {
-                if (cmd.startsWith(QLatin1StringView("FULLSUBJ"))) {
+            } else if (cmd.startsWith("FULLSUBJECT"_L1) || cmd.startsWith("FULLSUBJ"_L1)) {
+                if (cmd.startsWith("FULLSUBJ"_L1)) {
                     qCDebug(TEMPLATEPARSER_LOG) << "Command: FULLSUBJ";
                     i += strlen("FULLSUBJ");
                 } else {
@@ -603,14 +605,14 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 plainBody.append(str);
                 const QString body = plainTextToHtml(str);
                 htmlBody.append(body);
-            } else if (cmd.startsWith(QLatin1StringView("MSGID"))) {
+            } else if (cmd.startsWith("MSGID"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: MSGID";
                 i += strlen("MSGID");
                 const QString str = d->mMsg->messageID()->asUnicodeString();
                 plainBody.append(str);
                 const QString body = plainTextToHtml(str);
                 htmlBody.append(body);
-            } else if (cmd.startsWith(QLatin1StringView("OHEADER="))) {
+            } else if (cmd.startsWith("OHEADER="_L1)) {
                 // insert specified content of header from original message
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OHEADER=";
                 QString q;
@@ -626,7 +628,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainTextToHtml(str);
                     htmlBody.append(body);
                 }
-            } else if (cmd.startsWith(QLatin1StringView("HEADER="))) {
+            } else if (cmd.startsWith("HEADER="_L1)) {
                 // insert specified content of header from current message
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: HEADER=";
                 QString q;
@@ -640,7 +642,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 plainBody.append(str);
                 const QString body = plainTextToHtml(str);
                 htmlBody.append(body);
-            } else if (cmd.startsWith(QLatin1StringView("HEADER( "))) {
+            } else if (cmd.startsWith("HEADER( "_L1)) {
                 // insert specified content of header from current message
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: HEADER(";
                 QRegularExpressionMatch match;
@@ -660,7 +662,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainTextToHtml(str);
                     htmlBody.append(body);
                 }
-            } else if (cmd.startsWith(QLatin1StringView("OCCADDR"))) {
+            } else if (cmd.startsWith("OCCADDR"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OCCADDR";
                 i += strlen("OCCADDR");
                 if (d->mOrigMsg) {
@@ -669,7 +671,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainTextToHtml(str);
                     htmlBody.append(body);
                 }
-            } else if (cmd.startsWith(QLatin1StringView("OCCNAME"))) {
+            } else if (cmd.startsWith("OCCNAME"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OCCNAME";
                 i += strlen("OCCNAME");
                 if (d->mOrigMsg) {
@@ -678,7 +680,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainTextToHtml(str);
                     htmlBody.append(body);
                 }
-            } else if (cmd.startsWith(QLatin1StringView("OCCFNAME"))) {
+            } else if (cmd.startsWith("OCCFNAME"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OCCFNAME";
                 i += strlen("OCCFNAME");
                 if (d->mOrigMsg) {
@@ -688,7 +690,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainTextToHtml(firstNameFromEmail);
                     htmlBody.append(body);
                 }
-            } else if (cmd.startsWith(QLatin1StringView("OCCLNAME"))) {
+            } else if (cmd.startsWith("OCCLNAME"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OCCLNAME";
                 i += strlen("OCCLNAME");
                 if (d->mOrigMsg) {
@@ -697,7 +699,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainTextToHtml(TemplateParser::Util::getLastNameFromEmail(str));
                     htmlBody.append(body);
                 }
-            } else if (cmd.startsWith(QLatin1StringView("OTOADDR"))) {
+            } else if (cmd.startsWith("OTOADDR"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OTOADDR";
                 i += strlen("OTOADDR");
                 if (d->mOrigMsg) {
@@ -706,7 +708,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainTextToHtml(str);
                     htmlBody.append(body);
                 }
-            } else if (cmd.startsWith(QLatin1StringView("OTONAME"))) {
+            } else if (cmd.startsWith("OTONAME"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OTONAME";
                 i += strlen("OTONAME");
                 if (d->mOrigMsg) {
@@ -715,7 +717,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainTextToHtml(str);
                     htmlBody.append(body);
                 }
-            } else if (cmd.startsWith(QLatin1StringView("OTOFNAME"))) {
+            } else if (cmd.startsWith("OTOFNAME"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OTOFNAME";
                 i += strlen("OTOFNAME");
                 if (d->mOrigMsg) {
@@ -725,7 +727,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainTextToHtml(firstNameFromEmail);
                     htmlBody.append(body);
                 }
-            } else if (cmd.startsWith(QLatin1StringView("OTOLNAME"))) {
+            } else if (cmd.startsWith("OTOLNAME"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OTOLNAME";
                 i += strlen("OTOLNAME");
                 if (d->mOrigMsg) {
@@ -734,7 +736,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainTextToHtml(TemplateParser::Util::getLastNameFromEmail(str));
                     htmlBody.append(body);
                 }
-            } else if (cmd.startsWith(QLatin1StringView("OTOLIST"))) {
+            } else if (cmd.startsWith("OTOLIST"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OTOLIST";
                 i += strlen("OTOLIST");
                 if (d->mOrigMsg) {
@@ -743,7 +745,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainTextToHtml(str);
                     htmlBody.append(body);
                 }
-            } else if (cmd.startsWith(QLatin1StringView("OTO"))) {
+            } else if (cmd.startsWith("OTO"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OTO";
                 i += strlen("OTO");
                 if (d->mOrigMsg) {
@@ -752,7 +754,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainTextToHtml(str);
                     htmlBody.append(body);
                 }
-            } else if (cmd.startsWith(QLatin1StringView("OFROMADDR"))) {
+            } else if (cmd.startsWith("OFROMADDR"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OFROMADDR";
                 i += strlen("OFROMADDR");
                 if (d->mOrigMsg) {
@@ -761,7 +763,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainTextToHtml(str);
                     htmlBody.append(body);
                 }
-            } else if (cmd.startsWith(QLatin1StringView("OFROMNAME"))) {
+            } else if (cmd.startsWith("OFROMNAME"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OFROMNAME";
                 i += strlen("OFROMNAME");
                 if (d->mOrigMsg) {
@@ -770,7 +772,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainTextToHtml(str);
                     htmlBody.append(body);
                 }
-            } else if (cmd.startsWith(QLatin1StringView("OFROMFNAME"))) {
+            } else if (cmd.startsWith("OFROMFNAME"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OFROMFNAME";
                 i += strlen("OFROMFNAME");
                 if (d->mOrigMsg) {
@@ -780,7 +782,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainTextToHtml(firstNameFromEmail);
                     htmlBody.append(body);
                 }
-            } else if (cmd.startsWith(QLatin1StringView("OFROMLNAME"))) {
+            } else if (cmd.startsWith("OFROMLNAME"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OFROMLNAME";
                 i += strlen("OFROMLNAME");
                 if (d->mOrigMsg) {
@@ -789,8 +791,8 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainTextToHtml(TemplateParser::Util::getLastNameFromEmail(str));
                     htmlBody.append(body);
                 }
-            } else if (cmd.startsWith(QLatin1StringView("OFULLSUBJECT")) || cmd.startsWith(QLatin1StringView("OFULLSUBJ"))) {
-                if (cmd.startsWith(QLatin1StringView("OFULLSUBJECT"))) {
+            } else if (cmd.startsWith("OFULLSUBJECT"_L1) || cmd.startsWith("OFULLSUBJ"_L1)) {
+                if (cmd.startsWith("OFULLSUBJECT"_L1)) {
                     qCDebug(TEMPLATEPARSER_LOG) << "Command: OFULLSUBJECT";
                     i += strlen("OFULLSUBJECT");
                 } else {
@@ -803,7 +805,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainTextToHtml(str);
                     htmlBody.append(body);
                 }
-            } else if (cmd.startsWith(QLatin1StringView("OMSGID"))) {
+            } else if (cmd.startsWith("OMSGID"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OMSGID";
                 i += strlen("OMSGID");
                 if (d->mOrigMsg) {
@@ -812,7 +814,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainTextToHtml(str);
                     htmlBody.append(body);
                 }
-            } else if (cmd.startsWith(QLatin1StringView("DATEEN"))) {
+            } else if (cmd.startsWith("DATEEN"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: DATEEN";
                 i += strlen("DATEEN");
                 const QDateTime date = QDateTime::currentDateTime();
@@ -821,7 +823,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 plainBody.append(str);
                 const QString body = plainTextToHtml(str);
                 htmlBody.append(body);
-            } else if (cmd.startsWith(QLatin1StringView("DATESHORT"))) {
+            } else if (cmd.startsWith("DATESHORT"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: DATESHORT";
                 i += strlen("DATESHORT");
                 const QDateTime date = QDateTime::currentDateTime();
@@ -829,7 +831,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 plainBody.append(str);
                 const QString body = plainTextToHtml(str);
                 htmlBody.append(body);
-            } else if (cmd.startsWith(QLatin1StringView("DATE"))) {
+            } else if (cmd.startsWith("DATE"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: DATE";
                 i += strlen("DATE");
                 const QDateTime date = QDateTime::currentDateTime();
@@ -837,7 +839,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 plainBody.append(str);
                 const QString body = plainTextToHtml(str);
                 htmlBody.append(body);
-            } else if (cmd.startsWith(QLatin1StringView("DOW"))) {
+            } else if (cmd.startsWith("DOW"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: DOW";
                 i += strlen("DOW");
                 const QDateTime date = QDateTime::currentDateTime();
@@ -845,7 +847,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 plainBody.append(str);
                 const QString body = plainTextToHtml(str);
                 htmlBody.append(body);
-            } else if (cmd.startsWith(QLatin1StringView("TIMELONGEN"))) {
+            } else if (cmd.startsWith("TIMELONGEN"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: TIMELONGEN";
                 i += strlen("TIMELONGEN");
                 const QDateTime date = QDateTime::currentDateTime();
@@ -854,7 +856,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 plainBody.append(str);
                 const QString body = plainTextToHtml(str);
                 htmlBody.append(body);
-            } else if (cmd.startsWith(QLatin1StringView("TIMELONG"))) {
+            } else if (cmd.startsWith("TIMELONG"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: TIMELONG";
                 i += strlen("TIMELONG");
                 const QDateTime date = QDateTime::currentDateTime();
@@ -862,7 +864,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 plainBody.append(str);
                 const QString body = plainTextToHtml(str);
                 htmlBody.append(body);
-            } else if (cmd.startsWith(QLatin1StringView("TIME"))) {
+            } else if (cmd.startsWith("TIME"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: TIME";
                 i += strlen("TIME");
                 const QDateTime date = QDateTime::currentDateTime();
@@ -870,7 +872,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 plainBody.append(str);
                 const QString body = plainTextToHtml(str);
                 htmlBody.append(body);
-            } else if (cmd.startsWith(QLatin1StringView("ODATEEN"))) {
+            } else if (cmd.startsWith("ODATEEN"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: ODATEEN";
                 i += strlen("ODATEEN");
                 if (d->mOrigMsg) {
@@ -880,7 +882,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainTextToHtml(str);
                     htmlBody.append(body);
                 }
-            } else if (cmd.startsWith(QLatin1StringView("ODATESHORT"))) {
+            } else if (cmd.startsWith("ODATESHORT"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: ODATESHORT";
                 i += strlen("ODATESHORT");
                 if (d->mOrigMsg) {
@@ -890,7 +892,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainTextToHtml(str);
                     htmlBody.append(body);
                 }
-            } else if (cmd.startsWith(QLatin1StringView("ODATE"))) {
+            } else if (cmd.startsWith("ODATE"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: ODATE";
                 i += strlen("ODATE");
                 if (d->mOrigMsg) {
@@ -900,7 +902,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainTextToHtml(str);
                     htmlBody.append(body);
                 }
-            } else if (cmd.startsWith(QLatin1StringView("ODOW"))) {
+            } else if (cmd.startsWith("ODOW"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: ODOW";
                 i += strlen("ODOW");
                 if (d->mOrigMsg) {
@@ -910,7 +912,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainTextToHtml(str);
                     htmlBody.append(body);
                 }
-            } else if (cmd.startsWith(QLatin1StringView("OTIMELONGEN"))) {
+            } else if (cmd.startsWith("OTIMELONGEN"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OTIMELONGEN";
                 i += strlen("OTIMELONGEN");
                 if (d->mOrigMsg) {
@@ -921,7 +923,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainTextToHtml(str);
                     htmlBody.append(body);
                 }
-            } else if (cmd.startsWith(QLatin1StringView("OTIMELONG"))) {
+            } else if (cmd.startsWith("OTIMELONG"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OTIMELONG";
                 i += strlen("OTIMELONG");
                 if (d->mOrigMsg) {
@@ -931,7 +933,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainTextToHtml(str);
                     htmlBody.append(body);
                 }
-            } else if (cmd.startsWith(QLatin1StringView("OTIME"))) {
+            } else if (cmd.startsWith("OTIME"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: OTIME";
                 i += strlen("OTIME");
                 if (d->mOrigMsg) {
@@ -941,15 +943,15 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                     const QString body = plainTextToHtml(str);
                     htmlBody.append(body);
                 }
-            } else if (cmd.startsWith(QLatin1StringView("BLANK"))) {
+            } else if (cmd.startsWith("BLANK"_L1)) {
                 // do nothing
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: BLANK";
                 i += strlen("BLANK");
-            } else if (cmd.startsWith(QLatin1StringView("NOP"))) {
+            } else if (cmd.startsWith("NOP"_L1)) {
                 // do nothing
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: NOP";
                 i += strlen("NOP");
-            } else if (cmd.startsWith(QLatin1StringView("CLEAR"))) {
+            } else if (cmd.startsWith("CLEAR"_L1)) {
                 // clear body buffer; not too useful yet
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: CLEAR";
                 i += strlen("CLEAR");
@@ -958,17 +960,17 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 auto header = std::make_unique<KMime::Headers::Generic>("X-KMail-CursorPos");
                 header->fromUnicodeString(QString::number(0));
                 d->mMsg->setHeader(std::move(header));
-            } else if (cmd.startsWith(QLatin1StringView("DEBUGOFF"))) {
+            } else if (cmd.startsWith("DEBUGOFF"_L1)) {
                 // turn off debug
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: DEBUGOFF";
                 i += strlen("DEBUGOFF");
                 d->mDebug = false;
-            } else if (cmd.startsWith(QLatin1StringView("DEBUG"))) {
+            } else if (cmd.startsWith("DEBUG"_L1)) {
                 // turn on debug
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: DEBUG";
                 i += strlen("DEBUG");
                 d->mDebug = true;
-            } else if (cmd.startsWith(QLatin1StringView("CURSOR"))) {
+            } else if (cmd.startsWith("CURSOR"_L1)) {
                 // turn on debug
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: CURSOR";
                 int oldI = i;
@@ -987,7 +989,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
                 d->mMsg->setHeader(std::move(header));
                 d->mForceCursorPosition = true;
                 // FIXME HTML part for header remaining
-            } else if (cmd.startsWith(QLatin1StringView("SIGNATURE"))) {
+            } else if (cmd.startsWith("SIGNATURE"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: SIGNATURE";
                 i += strlen("SIGNATURE");
                 plainBody.append(getPlainSignature());
@@ -1007,7 +1009,7 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
         } else {
             plainBody.append(c);
             if (c == u'\n' || c == u'\r') {
-                htmlBody.append(QLatin1StringView("<br />"));
+                htmlBody.append("<br />"_L1);
                 htmlBody.append(c);
                 if (tmpl.size() > i + 1 && ((c == u'\n' && tmpl[i + 1] == u'\r') || (c == u'\r' && tmpl[i + 1] == u'\n'))) {
                     htmlBody.append(tmpl[i + 1]);
@@ -1434,7 +1436,7 @@ QString TemplateParserJob::quotedHtmlText(const QString &selection) const
     // 3) After vertical bar is implemented, If a user wants to edit quoted message,
     // then the <blockquote> tags below should open and close as when required.
 
-    return QLatin1StringView("<blockquote>") + selection + QLatin1StringView("</blockquote>");
+    return "<blockquote>"_L1 + selection + "</blockquote>"_L1;
 }
 
 uint TemplateParserJob::identityUoid(const std::shared_ptr<KMime::Message> &msg) const
@@ -1447,7 +1449,7 @@ uint TemplateParserJob::identityUoid(const std::shared_ptr<KMime::Message> &msg)
     unsigned int id = idString.toUInt(&ok);
 
     if (!ok || id == 0) {
-        id = d->m_identityManager->identityForAddress(msg->to()->asUnicodeString() + QLatin1StringView(", ") + msg->cc()->asUnicodeString()).uoid();
+        id = d->m_identityManager->identityForAddress(msg->to()->asUnicodeString() + ", "_L1 + msg->cc()->asUnicodeString()).uoid();
     }
 
     return id;
@@ -1486,13 +1488,13 @@ void TemplateParserJob::makeValidHtml(QString &body)
     if (!body.contains(regEx)) {
         regEx.setPattern(u"<body.*?>"_s);
         if (!body.contains(regEx)) {
-            body = QLatin1StringView("<body>") + body + QLatin1StringView("<br/></body>");
+            body = "<body>"_L1 + body + "<br/></body>"_L1;
         }
         regEx.setPattern(u"<head.*?>"_s);
         if (!body.contains(regEx)) {
-            body = QLatin1StringView("<head>") + d->mHeadElement + QLatin1StringView("</head>") + body;
+            body = "<head>"_L1 + d->mHeadElement + "</head>"_L1 + body;
         }
-        body = QLatin1StringView("<html>") + body + QLatin1StringView("</html>");
+        body = "<html>"_L1 + body + "</html>"_L1;
     }
 }
 

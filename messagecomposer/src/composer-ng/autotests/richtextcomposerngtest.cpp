@@ -39,9 +39,9 @@ void RichTextComposerNgTest::shouldForceAutoCorrection_data()
     QTest::addColumn<QString>("original");
     QTest::addColumn<QString>("expected");
     // FIXME first char !
-    QTest::newRow("test1") << u"boo bla bli. foo faa"_s << QStringLiteral("boo bla bli. Foo faa");
-    QTest::newRow("test2") << u"boo bla bli.\nfoo faa"_s << QStringLiteral("boo bla bli.\nFoo faa");
-    QTest::newRow("test3") << u"\nboo bla bli.\nfoo faa"_s << QStringLiteral("\nBoo bla bli.\nFoo faa");
+    QTest::newRow("test1") << u"boo bla bli. foo faa"_s << u"boo bla bli. Foo faa"_s;
+    QTest::newRow("test2") << u"boo bla bli.\nfoo faa"_s << u"boo bla bli.\nFoo faa"_s;
+    QTest::newRow("test3") << u"\nboo bla bli.\nfoo faa"_s << u"\nBoo bla bli.\nFoo faa"_s;
 }
 
 void RichTextComposerNgTest::shouldForceAutoCorrection()
@@ -69,12 +69,12 @@ void RichTextComposerNgTest::shouldForceAutoCorrectionWithSelection_data()
     QTest::addColumn<QString>("expected");
     QTest::addColumn<int>("selectionStart");
     QTest::addColumn<int>("selectionEnd");
-    QTest::newRow("noselection") << u"\nboo bla bli.\nfoo faa"_s << QStringLiteral("\nBoo bla bli.\nFoo faa") << 0 << 0;
-    QTest::newRow("noselection2") << u"\nboo bla bli.\nfoo faa"_s << QStringLiteral("\nBoo bla bli.\nFoo faa") << 1 << 1;
-    QTest::newRow("fullselection") << u"\nboo bla bli.\nfoo faa"_s << QStringLiteral("\nBoo bla bli.\nFoo faa") << 0 << 21;
-    QTest::newRow("selection1") << u"\nboo bla bli.\nfoo faa"_s << QStringLiteral("\nBoo bla bli.\nfoo faa") << 0 << 10;
-    QTest::newRow("selection2") << u"\nboo bla bli.\nfoo faa"_s << QStringLiteral("\nboo bla bli.\nfoo faa") << 5 << 10;
-    QTest::newRow("twouppercase") << u"\nBOo bla bli.\nfoo FAa"_s << QStringLiteral("\nBoo bla bli.\nFoo Faa") << 0 << 21;
+    QTest::newRow("noselection") << u"\nboo bla bli.\nfoo faa"_s << u"\nBoo bla bli.\nFoo faa"_s << 0 << 0;
+    QTest::newRow("noselection2") << u"\nboo bla bli.\nfoo faa"_s << u"\nBoo bla bli.\nFoo faa"_s << 1 << 1;
+    QTest::newRow("fullselection") << u"\nboo bla bli.\nfoo faa"_s << u"\nBoo bla bli.\nFoo faa"_s << 0 << 21;
+    QTest::newRow("selection1") << u"\nboo bla bli.\nfoo faa"_s << u"\nBoo bla bli.\nfoo faa"_s << 0 << 10;
+    QTest::newRow("selection2") << u"\nboo bla bli.\nfoo faa"_s << u"\nboo bla bli.\nfoo faa"_s << 5 << 10;
+    QTest::newRow("twouppercase") << u"\nBOo bla bli.\nfoo FAa"_s << u"\nBoo bla bli.\nFoo Faa"_s << 0 << 21;
 }
 
 void RichTextComposerNgTest::shouldForceAutoCorrectionWithSelection()
@@ -122,22 +122,22 @@ void RichTextComposerNgTest::shouldAddSignature_data()
     QTest::addColumn<QString>("expected");
     QTest::addColumn<KIdentityManagementCore::Signature::Placement>("signatureplacement");
     QTest::addColumn<KIdentityManagementCore::Signature::AddedTextFlag>("signatureaddtext");
-    QTest::newRow("startandaddseparator") << u"foo bla, bli\nbb"_s << QStringLiteral("-- \nSignaturefoo bla, bli\nbb")
-                                          << KIdentityManagementCore::Signature::Start << KIdentityManagementCore::Signature::AddSeparator;
+    QTest::newRow("startandaddseparator") << u"foo bla, bli\nbb"_s << u"-- \nSignaturefoo bla, bli\nbb"_s << KIdentityManagementCore::Signature::Start
+                                          << KIdentityManagementCore::Signature::AddSeparator;
 
-    QTest::newRow("startandnewline") << u"foo bla, bli\nbb"_s << QStringLiteral("\n\nSignature\nfoo bla, bli\nbb") << KIdentityManagementCore::Signature::Start
+    QTest::newRow("startandnewline") << u"foo bla, bli\nbb"_s << u"\n\nSignature\nfoo bla, bli\nbb"_s << KIdentityManagementCore::Signature::Start
                                      << KIdentityManagementCore::Signature::AddNewLines;
 
-    QTest::newRow("startandnothing") << u"foo bla, bli\nbb"_s << QStringLiteral("Signaturefoo bla, bli\nbb") << KIdentityManagementCore::Signature::Start
+    QTest::newRow("startandnothing") << u"foo bla, bli\nbb"_s << u"Signaturefoo bla, bli\nbb"_s << KIdentityManagementCore::Signature::Start
                                      << KIdentityManagementCore::Signature::AddNothing;
 
-    QTest::newRow("endandaddseparator") << u"foo bla, bli\nbb"_s << QStringLiteral("foo bla, bli\nbb-- \nSignature") << KIdentityManagementCore::Signature::End
+    QTest::newRow("endandaddseparator") << u"foo bla, bli\nbb"_s << u"foo bla, bli\nbb-- \nSignature"_s << KIdentityManagementCore::Signature::End
                                         << KIdentityManagementCore::Signature::AddSeparator;
 
-    QTest::newRow("endandnewline") << u"foo bla, bli\nbb"_s << QStringLiteral("foo bla, bli\nbb\nSignature") << KIdentityManagementCore::Signature::End
+    QTest::newRow("endandnewline") << u"foo bla, bli\nbb"_s << u"foo bla, bli\nbb\nSignature"_s << KIdentityManagementCore::Signature::End
                                    << KIdentityManagementCore::Signature::AddNewLines;
 
-    QTest::newRow("endandnothing") << u"foo bla, bli\nbb"_s << QStringLiteral("foo bla, bli\nbbSignature") << KIdentityManagementCore::Signature::End
+    QTest::newRow("endandnothing") << u"foo bla, bli\nbb"_s << u"foo bla, bli\nbbSignature"_s << KIdentityManagementCore::Signature::End
                                    << KIdentityManagementCore::Signature::AddNothing;
 
     // TODO test "Add Cursor"
@@ -166,16 +166,14 @@ void RichTextComposerNgTest::shouldAddSpecificSignature_data()
     QTest::addColumn<KIdentityManagementCore::Signature::AddedTextFlag>("signatureaddtext");
     QTest::addColumn<bool>("enablesignature");
     QTest::addColumn<bool>("signaturehtml");
-    QTest::newRow("startandaddseparatordisablenonhtml")
-        << u"foo bla, bli\nbb"_s << QStringLiteral("foo bla, bli\nbb") << KIdentityManagementCore::Signature::Start
-        << KIdentityManagementCore::Signature::AddSeparator << false << false;
+    QTest::newRow("startandaddseparatordisablenonhtml") << u"foo bla, bli\nbb"_s << u"foo bla, bli\nbb"_s << KIdentityManagementCore::Signature::Start
+                                                        << KIdentityManagementCore::Signature::AddSeparator << false << false;
 
-    QTest::newRow("startandaddseparatordisablehtml") << u"foo bla, bli\nbb"_s << QStringLiteral("foo bla, bli\nbb") << KIdentityManagementCore::Signature::Start
+    QTest::newRow("startandaddseparatordisablehtml") << u"foo bla, bli\nbb"_s << u"foo bla, bli\nbb"_s << KIdentityManagementCore::Signature::Start
                                                      << KIdentityManagementCore::Signature::AddSeparator << false << true;
 
-    QTest::newRow("startandaddseparatorenablehtml") << u"foo bla, bli\nbb"_s << QStringLiteral("-- \nSignaturefoo bla, bli\nbb")
-                                                    << KIdentityManagementCore::Signature::Start << KIdentityManagementCore::Signature::AddSeparator << true
-                                                    << true;
+    QTest::newRow("startandaddseparatorenablehtml") << u"foo bla, bli\nbb"_s << u"-- \nSignaturefoo bla, bli\nbb"_s << KIdentityManagementCore::Signature::Start
+                                                    << KIdentityManagementCore::Signature::AddSeparator << true << true;
 }
 
 void RichTextComposerNgTest::shouldAddSpecificSignature()
@@ -206,96 +204,88 @@ void RichTextComposerNgTest::shouldReplaceSignature_data()
     QTest::addColumn<KIdentityManagementCore::Signature::AddedTextFlag>("signatureaddtext");
 
     // Add Separator AtEnd
-    QTest::newRow("newlinebody") << u"Signature"_s << QStringLiteral("\n") << KIdentityManagementCore::Signature::End
-                                 << KIdentityManagementCore::Signature::AddSeparator;
+    QTest::newRow("newlinebody") << u"Signature"_s << u"\n"_s << KIdentityManagementCore::Signature::End << KIdentityManagementCore::Signature::AddSeparator;
     QTest::newRow("emptybody") << u"Signature"_s << QString() << KIdentityManagementCore::Signature::End << KIdentityManagementCore::Signature::AddSeparator;
-    QTest::newRow("spacebody") << u"Signature"_s << QStringLiteral(" ") << KIdentityManagementCore::Signature::End
-                               << KIdentityManagementCore::Signature::AddSeparator;
-    QTest::newRow("simple") << u"Signature"_s << QStringLiteral("foo bla, bli\nbb") << KIdentityManagementCore::Signature::End
+    QTest::newRow("spacebody") << u"Signature"_s << u" "_s << KIdentityManagementCore::Signature::End << KIdentityManagementCore::Signature::AddSeparator;
+    QTest::newRow("simple") << u"Signature"_s << u"foo bla, bli\nbb"_s << KIdentityManagementCore::Signature::End
                             << KIdentityManagementCore::Signature::AddSeparator;
-    QTest::newRow("withnewline") << u"Signature\nnew line"_s << QStringLiteral("foo bla, bli\nbb") << KIdentityManagementCore::Signature::End
+    QTest::newRow("withnewline") << u"Signature\nnew line"_s << u"foo bla, bli\nbb"_s << KIdentityManagementCore::Signature::End
                                  << KIdentityManagementCore::Signature::AddSeparator;
-    QTest::newRow("withnewlineatbegin") << u"\nSignature\nnew line"_s << QStringLiteral("foo bla, bli\nbb") << KIdentityManagementCore::Signature::End
+    QTest::newRow("withnewlineatbegin") << u"\nSignature\nnew line"_s << u"foo bla, bli\nbb"_s << KIdentityManagementCore::Signature::End
                                         << KIdentityManagementCore::Signature::AddSeparator;
-    QTest::newRow("withnewlineatbeginandend") << u"\nSignature\nnew line\n"_s << QStringLiteral("foo bla, bli\nbb") << KIdentityManagementCore::Signature::End
+    QTest::newRow("withnewlineatbeginandend") << u"\nSignature\nnew line\n"_s << u"foo bla, bli\nbb"_s << KIdentityManagementCore::Signature::End
                                               << KIdentityManagementCore::Signature::AddSeparator;
 
     // Add separator AtStart
-    QTest::newRow("newlinebody-2") << u"Signature"_s << QStringLiteral("\n") << KIdentityManagementCore::Signature::Start
+    QTest::newRow("newlinebody-2") << u"Signature"_s << u"\n"_s << KIdentityManagementCore::Signature::Start
                                    << KIdentityManagementCore::Signature::AddSeparator;
     QTest::newRow("emptybody-2") << u"Signature"_s << QString() << KIdentityManagementCore::Signature::Start
                                  << KIdentityManagementCore::Signature::AddSeparator;
-    QTest::newRow("spacebody-2") << u"Signature"_s << QStringLiteral(" ") << KIdentityManagementCore::Signature::Start
-                                 << KIdentityManagementCore::Signature::AddSeparator;
-    QTest::newRow("simple-2") << u"Signature"_s << QStringLiteral("foo bla, bli\nbb") << KIdentityManagementCore::Signature::Start
+    QTest::newRow("spacebody-2") << u"Signature"_s << u" "_s << KIdentityManagementCore::Signature::Start << KIdentityManagementCore::Signature::AddSeparator;
+    QTest::newRow("simple-2") << u"Signature"_s << u"foo bla, bli\nbb"_s << KIdentityManagementCore::Signature::Start
                               << KIdentityManagementCore::Signature::AddSeparator;
-    QTest::newRow("withnewline-2") << u"Signature\nnew line"_s << QStringLiteral("foo bla, bli\nbb") << KIdentityManagementCore::Signature::Start
+    QTest::newRow("withnewline-2") << u"Signature\nnew line"_s << u"foo bla, bli\nbb"_s << KIdentityManagementCore::Signature::Start
                                    << KIdentityManagementCore::Signature::AddSeparator;
-    QTest::newRow("withnewlineatbegin-2") << u"\nSignature\nnew line"_s << QStringLiteral("foo bla, bli\nbb") << KIdentityManagementCore::Signature::Start
+    QTest::newRow("withnewlineatbegin-2") << u"\nSignature\nnew line"_s << u"foo bla, bli\nbb"_s << KIdentityManagementCore::Signature::Start
                                           << KIdentityManagementCore::Signature::AddSeparator;
-    QTest::newRow("withnewlineatbeginandend-2") << u"\nSignature\nnew line\n"_s << QStringLiteral("foo bla, bli\nbb")
-                                                << KIdentityManagementCore::Signature::Start << KIdentityManagementCore::Signature::AddSeparator;
+    QTest::newRow("withnewlineatbeginandend-2") << u"\nSignature\nnew line\n"_s << u"foo bla, bli\nbb"_s << KIdentityManagementCore::Signature::Start
+                                                << KIdentityManagementCore::Signature::AddSeparator;
 
     // Add nothing End
     // FIXME
     // QTest::newRow("newlinebody-3") << u"Signature"_s << QStringLiteral("\n")
     //                             << KIdentityManagementCore::Signature::End << KIdentityManagementCore::Signature::AddNothing;
     QTest::newRow("emptybody-3") << u"Signature"_s << QString() << KIdentityManagementCore::Signature::End << KIdentityManagementCore::Signature::AddNothing;
-    QTest::newRow("spacebody-3") << u"Signature"_s << QStringLiteral(" ") << KIdentityManagementCore::Signature::End
-                                 << KIdentityManagementCore::Signature::AddNothing;
-    QTest::newRow("simple-3") << u"Signature"_s << QStringLiteral("foo bla, bli\nbb") << KIdentityManagementCore::Signature::End
+    QTest::newRow("spacebody-3") << u"Signature"_s << u" "_s << KIdentityManagementCore::Signature::End << KIdentityManagementCore::Signature::AddNothing;
+    QTest::newRow("simple-3") << u"Signature"_s << u"foo bla, bli\nbb"_s << KIdentityManagementCore::Signature::End
                               << KIdentityManagementCore::Signature::AddNothing;
-    QTest::newRow("withnewline-3") << u"Signature\nnew line"_s << QStringLiteral("foo bla, bli\nbb") << KIdentityManagementCore::Signature::End
+    QTest::newRow("withnewline-3") << u"Signature\nnew line"_s << u"foo bla, bli\nbb"_s << KIdentityManagementCore::Signature::End
                                    << KIdentityManagementCore::Signature::AddNothing;
-    QTest::newRow("withnewlineatbegin-3") << u"\nSignature\nnew line"_s << QStringLiteral("foo bla, bli\nbb") << KIdentityManagementCore::Signature::End
+    QTest::newRow("withnewlineatbegin-3") << u"\nSignature\nnew line"_s << u"foo bla, bli\nbb"_s << KIdentityManagementCore::Signature::End
                                           << KIdentityManagementCore::Signature::AddNothing;
-    QTest::newRow("withnewlineatbeginandend-3") << u"\nSignature\nnew line\n"_s << QStringLiteral("foo bla, bli\nbb") << KIdentityManagementCore::Signature::End
+    QTest::newRow("withnewlineatbeginandend-3") << u"\nSignature\nnew line\n"_s << u"foo bla, bli\nbb"_s << KIdentityManagementCore::Signature::End
                                                 << KIdentityManagementCore::Signature::AddNothing;
 
     // Add nothing Start
-    QTest::newRow("newlinebody-4") << u"Signature"_s << QStringLiteral("\n") << KIdentityManagementCore::Signature::Start
-                                   << KIdentityManagementCore::Signature::AddNothing;
+    QTest::newRow("newlinebody-4") << u"Signature"_s << u"\n"_s << KIdentityManagementCore::Signature::Start << KIdentityManagementCore::Signature::AddNothing;
     QTest::newRow("emptybody-4") << u"Signature"_s << QString() << KIdentityManagementCore::Signature::Start << KIdentityManagementCore::Signature::AddNothing;
-    QTest::newRow("spacebody-4") << u"Signature"_s << QStringLiteral(" ") << KIdentityManagementCore::Signature::Start
-                                 << KIdentityManagementCore::Signature::AddNothing;
-    QTest::newRow("simple-4") << u"Signature"_s << QStringLiteral("foo bla, bli\nbb") << KIdentityManagementCore::Signature::Start
+    QTest::newRow("spacebody-4") << u"Signature"_s << u" "_s << KIdentityManagementCore::Signature::Start << KIdentityManagementCore::Signature::AddNothing;
+    QTest::newRow("simple-4") << u"Signature"_s << u"foo bla, bli\nbb"_s << KIdentityManagementCore::Signature::Start
                               << KIdentityManagementCore::Signature::AddNothing;
-    QTest::newRow("withnewline-4") << u"Signature\nnew line"_s << QStringLiteral("foo bla, bli\nbb") << KIdentityManagementCore::Signature::Start
+    QTest::newRow("withnewline-4") << u"Signature\nnew line"_s << u"foo bla, bli\nbb"_s << KIdentityManagementCore::Signature::Start
                                    << KIdentityManagementCore::Signature::AddNothing;
-    QTest::newRow("withnewlineatbegin-4") << u"\nSignature\nnew line"_s << QStringLiteral("foo bla, bli\nbb") << KIdentityManagementCore::Signature::Start
+    QTest::newRow("withnewlineatbegin-4") << u"\nSignature\nnew line"_s << u"foo bla, bli\nbb"_s << KIdentityManagementCore::Signature::Start
                                           << KIdentityManagementCore::Signature::AddNothing;
-    QTest::newRow("withnewlineatbeginandend-4") << u"\nSignature\nnew line\n"_s << QStringLiteral("foo bla, bli\nbb")
-                                                << KIdentityManagementCore::Signature::Start << KIdentityManagementCore::Signature::AddNothing;
+    QTest::newRow("withnewlineatbeginandend-4") << u"\nSignature\nnew line\n"_s << u"foo bla, bli\nbb"_s << KIdentityManagementCore::Signature::Start
+                                                << KIdentityManagementCore::Signature::AddNothing;
 
     // Add newline End
     QTest::newRow("emptybody-5") << u"Signature"_s << QString() << KIdentityManagementCore::Signature::End << KIdentityManagementCore::Signature::AddNewLines;
-    QTest::newRow("newlinebody-5") << u"Signature"_s << QStringLiteral("\n") << KIdentityManagementCore::Signature::End
-                                   << KIdentityManagementCore::Signature::AddNewLines;
-    QTest::newRow("spacebody-5") << u"Signature"_s << QStringLiteral(" ") << KIdentityManagementCore::Signature::End
-                                 << KIdentityManagementCore::Signature::AddNewLines;
-    QTest::newRow("simple-5") << u"Signature"_s << QStringLiteral("foo bla, bli\nbb") << KIdentityManagementCore::Signature::End
+    QTest::newRow("newlinebody-5") << u"Signature"_s << u"\n"_s << KIdentityManagementCore::Signature::End << KIdentityManagementCore::Signature::AddNewLines;
+    QTest::newRow("spacebody-5") << u"Signature"_s << u" "_s << KIdentityManagementCore::Signature::End << KIdentityManagementCore::Signature::AddNewLines;
+    QTest::newRow("simple-5") << u"Signature"_s << u"foo bla, bli\nbb"_s << KIdentityManagementCore::Signature::End
                               << KIdentityManagementCore::Signature::AddNewLines;
-    QTest::newRow("withnewline-5") << u"Signature\nnew line"_s << QStringLiteral("foo bla, bli\nbb") << KIdentityManagementCore::Signature::End
+    QTest::newRow("withnewline-5") << u"Signature\nnew line"_s << u"foo bla, bli\nbb"_s << KIdentityManagementCore::Signature::End
                                    << KIdentityManagementCore::Signature::AddNewLines;
-    QTest::newRow("withnewlineatbegin-5") << u"\nSignature\nnew line"_s << QStringLiteral("foo bla, bli\nbb") << KIdentityManagementCore::Signature::End
+    QTest::newRow("withnewlineatbegin-5") << u"\nSignature\nnew line"_s << u"foo bla, bli\nbb"_s << KIdentityManagementCore::Signature::End
                                           << KIdentityManagementCore::Signature::AddNewLines;
-    QTest::newRow("withnewlineatbeginandend-5") << u"\nSignature\nnew line\n"_s << QStringLiteral("foo bla, bli\nbb") << KIdentityManagementCore::Signature::End
+    QTest::newRow("withnewlineatbeginandend-5") << u"\nSignature\nnew line\n"_s << u"foo bla, bli\nbb"_s << KIdentityManagementCore::Signature::End
                                                 << KIdentityManagementCore::Signature::AddNewLines;
 #if 0 // Need to fix it.
       // Add newline start
     QTest::newRow("emptybody-6") << u"Signature"_s << QString()
                                  << KIdentityManagementCore::Signature::Start << KIdentityManagementCore::Signature::AddNewLines;
-    QTest::newRow("newlinebody-6") << u"Signature"_s << QStringLiteral("\n")
+    QTest::newRow("newlinebody-6") << u"Signature"_s << u"\n"_s
                                    << KIdentityManagementCore::Signature::Start << KIdentityManagementCore::Signature::AddNewLines;
-    QTest::newRow("spacebody-6") << u"Signature"_s << QStringLiteral(" ")
+    QTest::newRow("spacebody-6") << u"Signature"_s << u" "_s
                                  << KIdentityManagementCore::Signature::Start << KIdentityManagementCore::Signature::AddNewLines;
-    QTest::newRow("simple-6") << u"Signature"_s << QStringLiteral("foo bla, bli\nbb")
+    QTest::newRow("simple-6") << u"Signature"_s << u"foo bla, bli\nbb"_s
                               << KIdentityManagementCore::Signature::Start << KIdentityManagementCore::Signature::AddNewLines;
-    QTest::newRow("withnewline-6") << u"Signature\nnew line"_s << QStringLiteral("foo bla, bli\nbb")
+    QTest::newRow("withnewline-6") << u"Signature\nnew line"_s << u"foo bla, bli\nbb"_s
                                    << KIdentityManagementCore::Signature::Start << KIdentityManagementCore::Signature::AddNewLines;
-    QTest::newRow("withnewlineatbegin-6") << u"\nSignature\nnew line"_s << QStringLiteral("foo bla, bli\nbb")
+    QTest::newRow("withnewlineatbegin-6") << u"\nSignature\nnew line"_s << u"foo bla, bli\nbb"_s
                                           << KIdentityManagementCore::Signature::Start << KIdentityManagementCore::Signature::AddNewLines;
-    QTest::newRow("withnewlineatbeginandend6") << u"\nSignature\nnew line\n"_s << QStringLiteral("foo bla, bli\nbb")
+    QTest::newRow("withnewlineatbeginandend6") << u"\nSignature\nnew line\n"_s << u"foo bla, bli\nbb"_s
                                                << KIdentityManagementCore::Signature::Start << KIdentityManagementCore::Signature::AddNewLines;
 #endif
 }
@@ -364,10 +354,10 @@ void RichTextComposerNgTest::shouldLoadSignatureFromFile_data()
     QTest::addColumn<KIdentityManagementCore::Signature::Placement>("signatureplacement");
     QTest::addColumn<KIdentityManagementCore::Signature::AddedTextFlag>("signatureaddtext");
 
-    QTest::newRow("signature1") << u"signature1.txt"_s << QStringLiteral("\n") << KIdentityManagementCore::Signature::End
+    QTest::newRow("signature1") << u"signature1.txt"_s << u"\n"_s << KIdentityManagementCore::Signature::End
                                 << KIdentityManagementCore::Signature::AddSeparator;
 
-    QTest::newRow("signature2") << u"signature2.txt"_s << QStringLiteral("\n") << KIdentityManagementCore::Signature::End
+    QTest::newRow("signature2") << u"signature2.txt"_s << u"\n"_s << KIdentityManagementCore::Signature::End
                                 << KIdentityManagementCore::Signature::AddSeparator;
 }
 
@@ -442,18 +432,17 @@ void RichTextComposerNgTest::shouldLoadSignatureFromCommand_data()
     QTest::addColumn<KIdentityManagementCore::Signature::Placement>("signatureplacement");
     QTest::addColumn<KIdentityManagementCore::Signature::AddedTextFlag>("signatureaddtext");
 
-    QTest::newRow("command1") << u"echo \"foo\""_s << QStringLiteral("\n") << KIdentityManagementCore::Signature::End
-                              << KIdentityManagementCore::Signature::AddSeparator;
-    QTest::newRow("command2") << u"echo \"foo\""_s << QStringLiteral("foo ddd \n") << KIdentityManagementCore::Signature::End
+    QTest::newRow("command1") << u"echo \"foo\""_s << u"\n"_s << KIdentityManagementCore::Signature::End << KIdentityManagementCore::Signature::AddSeparator;
+    QTest::newRow("command2") << u"echo \"foo\""_s << u"foo ddd \n"_s << KIdentityManagementCore::Signature::End
                               << KIdentityManagementCore::Signature::AddSeparator;
     QTest::newRow("command3") << u"echo \"foo\""_s << QString() << KIdentityManagementCore::Signature::End << KIdentityManagementCore::Signature::AddSeparator;
     QTest::newRow("command4") << u"echo \"foo\nsss\""_s << QString() << KIdentityManagementCore::Signature::End
                               << KIdentityManagementCore::Signature::AddSeparator;
-    QTest::newRow("command5") << u"echo \"foo\nsss\n\""_s << QStringLiteral("foo ddd \n") << KIdentityManagementCore::Signature::End
+    QTest::newRow("command5") << u"echo \"foo\nsss\n\""_s << u"foo ddd \n"_s << KIdentityManagementCore::Signature::End
                               << KIdentityManagementCore::Signature::AddSeparator;
 
     // Start
-    QTest::newRow("command6") << u"echo \"foo\nsss\n\""_s << QStringLiteral("foo ddd \n") << KIdentityManagementCore::Signature::Start
+    QTest::newRow("command6") << u"echo \"foo\nsss\n\""_s << u"foo ddd \n"_s << KIdentityManagementCore::Signature::Start
                               << KIdentityManagementCore::Signature::AddSeparator;
 
     // Failed
@@ -528,16 +517,16 @@ void RichTextComposerNgTest::shouldLoadSignatureFromCommand()
 void RichTextComposerNgTest::fixHtmlFontSizeTest()
 {
     MessageComposer::RichTextComposerNg richtextComposerNg;
-    QString str = QStringLiteral(
-        "<span style=\"color: green; font-size: 10pt;\">int font</span> size\n"
+    QString str =
+        u"<span style=\"color: green; font-size: 10pt;\">int font</span> size\n"
         "<span style=\"font-size: 10.8pt; font-family: foo;\">double font</span> size\n"
-        "<span style=\"font-size: 15,2pt;\">invalid font</span> size, left as is\n");
+        "<span style=\"font-size: 15,2pt;\">invalid font</span> size, left as is\n"_s;
 
     richtextComposerNg.fixHtmlFontSize(str);
     const QString expected(
-        QStringLiteral("<span style=\"color: green; font-size:0.83em;\">int font</span> size\n"
-                       "<span style=\"font-size:0.9em; font-family: foo;\">double font</span> size\n"
-                       "<span style=\"font-size: 15,2pt;\">invalid font</span> size, left as is\n"));
+        u"<span style=\"color: green; font-size:0.83em;\">int font</span> size\n"
+        "<span style=\"font-size:0.9em; font-family: foo;\">double font</span> size\n"
+        "<span style=\"font-size: 15,2pt;\">invalid font</span> size, left as is\n"_s);
 
     QCOMPARE(str, expected);
 }
@@ -546,9 +535,9 @@ void RichTextComposerNgTest::toCleanHtmlRegexTest()
 {
     MessageComposer::RichTextComposerNg richtextComposerNg;
     richtextComposerNg.setHtml(
-        QStringLiteral("<p style=\"-qt-paragraph-type:empty\"></p>\n"
-                       "<p>some text</p>\n"
-                       "<p style=\"-qt-paragraph-type:empty\"></p>\n"));
+        u"<p style=\"-qt-paragraph-type:empty\"></p>\n"
+        "<p>some text</p>\n"
+        "<p style=\"-qt-paragraph-type:empty\"></p>\n"_s);
 
     const QString result = richtextComposerNg.toCleanHtml();
     const int idx = result.indexOf(u"<p style=\"-qt-paragraph-type:empty"_s);
@@ -556,12 +545,12 @@ void RichTextComposerNgTest::toCleanHtmlRegexTest()
     // based on the fonts on the system
     const QString resultStripped = result.mid(idx);
 
-    const QString expected = QStringLiteral(
-        "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
+    const QString expected =
+        u"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
         "\">&nbsp;</p>\n"
         "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">some text</p>\n"
         "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; "
-        "\">&nbsp;</p></body></html>");
+        "\">&nbsp;</p></body></html>"_s;
 
     QCOMPARE(resultStripped, expected);
 }

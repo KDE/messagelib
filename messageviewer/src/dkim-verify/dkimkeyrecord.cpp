@@ -21,22 +21,22 @@ bool DKIMKeyRecord::parseKey(const QString &key)
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Error: trying to parse empty key";
         return false;
     }
-    newKey.replace(QLatin1StringView("; "), QLatin1StringView(";"));
+    newKey.replace("; "_L1, ";"_L1);
     const QStringList items = newKey.split(u';');
     for (int i = 0; i < items.count(); ++i) {
         const QString elem = items.at(i).trimmed();
-        if (elem.startsWith(QLatin1StringView("v="))) {
+        if (elem.startsWith("v="_L1)) {
             mVersion = elem.right(elem.length() - 2);
-        } else if (elem.startsWith(QLatin1StringView("h="))) {
+        } else if (elem.startsWith("h="_L1)) {
             // Parse multi array.
             mHashAlgorithm = elem.right(elem.length() - 2).split(u':');
-        } else if (elem.startsWith(QLatin1StringView("k="))) { // Key type (rsa by default)
+        } else if (elem.startsWith("k="_L1)) { // Key type (rsa by default)
             mKeyType = elem.right(elem.length() - 2);
-        } else if (elem.startsWith(QLatin1StringView("n="))) { // Notes (optional empty by default)
+        } else if (elem.startsWith("n="_L1)) { // Notes (optional empty by default)
             mNote = elem.right(elem.length() - 2);
-        } else if (elem.startsWith(QLatin1StringView("p="))) { // Public key
+        } else if (elem.startsWith("p="_L1)) { // Public key
             mPublicKey = elem.right(elem.length() - 2).remove(u' ');
-        } else if (elem.startsWith(QLatin1StringView("s="))) { // Service Default is "*"
+        } else if (elem.startsWith("s="_L1)) { // Service Default is "*"
             // Service Type (plain-text; OPTIONAL; default is "*").  A colon-
             // separated list of service types to which this record applies.
             // Verifiers for a given service type MUST ignore this record if the
@@ -44,11 +44,11 @@ bool DKIMKeyRecord::parseKey(const QString &key)
             // be ignored.  Currently defined service types are as follows:
             const QStringList lst = elem.right(elem.length() - 2).split(u':');
             for (const QString &service : lst) {
-                if (service == u'*' || service == QLatin1StringView("email")) {
+                if (service == u'*' || service == "email"_L1) {
                     mService = service;
                 }
             }
-        } else if (elem.startsWith(QLatin1StringView("t="))) { // Flag
+        } else if (elem.startsWith("t="_L1)) { // Flag
             //            t= Flags, represented as a colon-separated list of names (plain-
             //                  text; OPTIONAL, default is no flags set).  Unrecognized flags MUST
             //                  be ignored.  The defined flags are as follows:

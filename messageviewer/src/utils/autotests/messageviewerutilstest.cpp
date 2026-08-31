@@ -122,8 +122,8 @@ void MessageViewerUtilsTest::shouldExtractHtml_data()
         QTest::newRow("test2") << input << output;
     }
     {
-        const QString input = QStringLiteral(
-            "That's interesting. I don't see new commits or anything relevant to it on the author's releases. I don't actually know why the author uses the "
+        const QString input =
+            u"That's interesting. I don't see new commits or anything relevant to it on the author's releases. I don't actually know why the author uses the "
             "other library as they do seem to have similar data... Maybe some other functions that are easier to use.<br><br><br>All the "
             "best,<br><br>C<br><br><br>-------- Original Message --------<br>On Mar 3, 2020, 09:56, foo wrote:<blockquote "
             "class=\"protonmail_quote\"><br><!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
@@ -137,12 +137,12 @@ void MessageViewerUtilsTest::shouldExtractHtml_data()
             "Sans';\">Except that pendulum and pytzdata is from the same author.</span></p>\r\n<p><span style=\" font-family:'monospace','Noto Sans';\">Do you "
             "have an idea why he not uses pytz, as everybody else?</span></p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>\r\n<p>&nbsp;</p>\r\n<p>-- </p>\r\n<p>T: "
             "@coogor</p>\r\n<p>Matrix: @docb:matrix.org</p>\r\n<p>PGP Fingerprint: 2E7F 3A19 A4A4 844A 3D09 7656 822D EB64 A3BA "
-            "290D</p>\r\n<p>&nbsp;</p>\r\n<p>http://gnuhealth.ghf2020.org</p></body></html></div>");
+            "290D</p>\r\n<p>&nbsp;</p>\r\n<p>http://gnuhealth.ghf2020.org</p></body></html></div>"_s;
         MessageViewer::Util::HtmlMessageInfo output;
         output.extraHead = u"<meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\r\np, li { white-space: pre-wrap; }\r\n</style>"_s;
         output.bodyStyle = u"<body>"_s;
-        output.htmlSource = QStringLiteral(
-            "That's interesting. I don't see new commits or anything relevant to it on the author's releases. I don't actually know why the author uses the "
+        output.htmlSource =
+            u"That's interesting. I don't see new commits or anything relevant to it on the author's releases. I don't actually know why the author uses the "
             "other library as they do seem to have similar data... Maybe some other functions that are easier to use.<br><br><br>All the "
             "best,<br><br>C<br><br><br>-------- Original Message --------<br>On Mar 3, 2020, 09:56, foo wrote:<blockquote "
             "class=\"protonmail_quote\"><br><p>Hey bla,</p>\r\n<p>&nbsp;</p>\r\n<p>how are things going? Done your PhD?</p>\r\n<p>&nbsp;</p>\r\n<p>On a recent "
@@ -154,27 +154,27 @@ void MessageViewerUtilsTest::shouldExtractHtml_data()
             "author.</span></p>\r\n<p><span style=\" font-family:'monospace','Noto Sans';\">Do you have an idea why he not uses pytz, as everybody "
             "else?</span></p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>\r\n<p>&nbsp;</p>\r\n<p>-- </p>\r\n<p>T: @coogor</p>\r\n<p>Matrix: "
             "@docb:matrix.org</p>\r\n<p>PGP Fingerprint: 2E7F 3A19 A4A4 844A 3D09 7656 822D EB64 A3BA "
-            "290D</p>\r\n<p>&nbsp;</p>\r\n<p>http://gnuhealth.ghf2020.org</p>");
+            "290D</p>\r\n<p>&nbsp;</p>\r\n<p>http://gnuhealth.ghf2020.org</p>"_s;
         QTest::newRow("bug418482") << input << output;
     }
     {
-        const QString input = QStringLiteral(
-            "HTML REPLY<br>\nSECOND LINE<br>\n-- <br>\n<html><head><meta http-equiv=\"Content-Type\" content=\"text/plain; charset=utf-8\" /></head><body  "
+        const QString input =
+            u"HTML REPLY<br>\nSECOND LINE<br>\n-- <br>\n<html><head><meta http-equiv=\"Content-Type\" content=\"text/plain; charset=utf-8\" /></head><body  "
             "style=\"overflow-wrap:break-word; word-break: break-word;white-space:pre-wrap;\"><div>You wrote:<blockquote style=\"margin: 0.8ex 0pt 0pt 0.8ex; "
-            "border-left: 1px solid rgb(204, 204, 204); padding-left: 1ex;\">HTML QUOTE\n\nSECOND LINE\n</blockquote></div></body></html>");
+            "border-left: 1px solid rgb(204, 204, 204); padding-left: 1ex;\">HTML QUOTE\n\nSECOND LINE\n</blockquote></div></body></html>"_s;
         MessageViewer::Util::HtmlMessageInfo output;
-        output.htmlSource = QStringLiteral(
-            "HTML REPLY<br>\nSECOND LINE<br>\n-- <br>\n<div>You wrote:<blockquote style=\"margin: 0.8ex 0pt 0pt 0.8ex; border-left: 1px solid rgb(204, 204, "
-            "204); padding-left: 1ex;\">HTML QUOTE\n\nSECOND LINE\n</blockquote></div>");
+        output.htmlSource =
+            u"HTML REPLY<br>\nSECOND LINE<br>\n-- <br>\n<div>You wrote:<blockquote style=\"margin: 0.8ex 0pt 0pt 0.8ex; border-left: 1px solid rgb(204, 204, "
+            "204); padding-left: 1ex;\">HTML QUOTE\n\nSECOND LINE\n</blockquote></div>"_s;
         output.bodyStyle = u"<body  style=\"overflow-wrap:break-word; word-break: break-word;white-space:pre-wrap;\">"_s;
         output.extraHead = u"<meta http-equiv=\"Content-Type\" content=\"text/plain; charset=utf-8\" />"_s;
         QTest::newRow("bug419949") << input << output;
     }
     {
         // Bug head + div
-        const QString input = QStringLiteral(
-            "<html style=\"background: #5555ff;min-height:500px;\">\n<head>\n<style>\nbody div div {display: "
-            "none;}\n</style>\n<div>\n<p><b>goo<\b></p></div><p>ff</p></head><body></body></html>");
+        const QString input =
+            u"<html style=\"background: #5555ff;min-height:500px;\">\n<head>\n<style>\nbody div div {display: "
+            "none;}\n</style>\n<div>\n<p><b>goo<\b></p></div><p>ff</p></head><body></body></html>"_s;
         MessageViewer::Util::HtmlMessageInfo output;
         output.htmlSource = QString();
         output.bodyStyle = u"<body>"_s;
@@ -234,8 +234,8 @@ void MessageViewerUtilsTest::shouldExtractHtmlBenchmark_data()
         QTest::newRow("test2") << input << output;
     }
     {
-        const QString input = QStringLiteral(
-            "That's interesting. I don't see new commits or anything relevant to it on the author's releases. I don't actually know why the author uses the "
+        const QString input =
+            u"That's interesting. I don't see new commits or anything relevant to it on the author's releases. I don't actually know why the author uses the "
             "other library as they do seem to have similar data... Maybe some other functions that are easier to use.<br><br><br>All the "
             "best,<br><br>C<br><br><br>-------- Original Message --------<br>On Mar 3, 2020, 09:56, foo wrote:<blockquote "
             "class=\"protonmail_quote\"><br><!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" "
@@ -249,13 +249,13 @@ void MessageViewerUtilsTest::shouldExtractHtmlBenchmark_data()
             "Sans';\">Except that pendulum and pytzdata is from the same author.</span></p>\r\n<p><span style=\" font-family:'monospace','Noto Sans';\">Do you "
             "have an idea why he not uses pytz, as everybody else?</span></p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>\r\n<p>&nbsp;</p>\r\n<p>-- </p>\r\n<p>T: "
             "@coogor</p>\r\n<p>Matrix: @docb:matrix.org</p>\r\n<p>PGP Fingerprint: 2E7F 3A19 A4A4 844A 3D09 7656 822D EB64 A3BA "
-            "290D</p>\r\n<p>&nbsp;</p>\r\n<p>http://gnuhealth.ghf2020.org</p></body></html></div>");
+            "290D</p>\r\n<p>&nbsp;</p>\r\n<p>http://gnuhealth.ghf2020.org</p></body></html></div>"_s;
         MessageViewer::Util::HtmlMessageInfo output;
         output.extraHead = u"<meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\r\np, li { white-space: pre-wrap; }\r\n</style>"_s;
         output.bodyStyle = u"<body>"_s;
 
-        output.htmlSource = QStringLiteral(
-            "That's interesting. I don't see new commits or anything relevant to it on the author's releases. I don't actually know why the author uses the "
+        output.htmlSource =
+            u"That's interesting. I don't see new commits or anything relevant to it on the author's releases. I don't actually know why the author uses the "
             "other library as they do seem to have similar data... Maybe some other functions that are easier to use.<br><br><br>All the "
             "best,<br><br>C<br><br><br>-------- Original Message --------<br>On Mar 3, 2020, 09:56, foo wrote:<blockquote "
             "class=\"protonmail_quote\"><br><p>Hey bla,</p>\r\n<p>&nbsp;</p>\r\n<p>how are things going? Done your PhD?</p>\r\n<p>&nbsp;</p>\r\n<p>On a recent "
@@ -267,18 +267,18 @@ void MessageViewerUtilsTest::shouldExtractHtmlBenchmark_data()
             "author.</span></p>\r\n<p><span style=\" font-family:'monospace','Noto Sans';\">Do you have an idea why he not uses pytz, as everybody "
             "else?</span></p>\r\n<p>&nbsp;</p>\r\n<p>Thanks</p>\r\n<p>&nbsp;</p>\r\n<p>-- </p>\r\n<p>T: @coogor</p>\r\n<p>Matrix: "
             "@docb:matrix.org</p>\r\n<p>PGP Fingerprint: 2E7F 3A19 A4A4 844A 3D09 7656 822D EB64 A3BA "
-            "290D</p>\r\n<p>&nbsp;</p>\r\n<p>http://gnuhealth.ghf2020.org</p>");
+            "290D</p>\r\n<p>&nbsp;</p>\r\n<p>http://gnuhealth.ghf2020.org</p>"_s;
         QTest::newRow("bug418482") << input << output;
     }
     {
-        const QString input = QStringLiteral(
-            "HTML REPLY<br>\nSECOND LINE<br>\n-- <br>\n<html><head><meta http-equiv=\"Content-Type\" content=\"text/plain; charset=utf-8\" /></head><body  "
+        const QString input =
+            u"HTML REPLY<br>\nSECOND LINE<br>\n-- <br>\n<html><head><meta http-equiv=\"Content-Type\" content=\"text/plain; charset=utf-8\" /></head><body  "
             "style=\"overflow-wrap:break-word; word-break: break-word;white-space:pre-wrap;\"><div>You wrote:<blockquote style=\"margin: 0.8ex 0pt 0pt 0.8ex; "
-            "border-left: 1px solid rgb(204, 204, 204); padding-left: 1ex;\">HTML QUOTE\n\nSECOND LINE\n</blockquote></div></body></html>");
+            "border-left: 1px solid rgb(204, 204, 204); padding-left: 1ex;\">HTML QUOTE\n\nSECOND LINE\n</blockquote></div></body></html>"_s;
         MessageViewer::Util::HtmlMessageInfo output;
-        output.htmlSource = QStringLiteral(
-            "HTML REPLY<br>\nSECOND LINE<br>\n-- <br>\n<div>You wrote:<blockquote style=\"margin: 0.8ex 0pt 0pt 0.8ex; border-left: 1px solid rgb(204, 204, "
-            "204); padding-left: 1ex;\">HTML QUOTE\n\nSECOND LINE\n</blockquote></div>");
+        output.htmlSource =
+            u"HTML REPLY<br>\nSECOND LINE<br>\n-- <br>\n<div>You wrote:<blockquote style=\"margin: 0.8ex 0pt 0pt 0.8ex; border-left: 1px solid rgb(204, 204, "
+            "204); padding-left: 1ex;\">HTML QUOTE\n\nSECOND LINE\n</blockquote></div>"_s;
         output.bodyStyle = u"<body  style=\"overflow-wrap:break-word; word-break: break-word;white-space:pre-wrap;\">"_s;
         output.extraHead = u"<meta http-equiv=\"Content-Type\" content=\"text/plain; charset=utf-8\" />"_s;
         QTest::newRow("bug419949") << input << output;

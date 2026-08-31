@@ -123,7 +123,7 @@ QByteArray ImageScaling::mimetype() const
     } else {
         // Add more mimetype if a day we add more saving format.
         const QString type = MessageComposer::MessageComposerSettings::self()->writeFormat();
-        if (type == QLatin1StringView("JPG")) {
+        if (type == "JPG"_L1) {
             return QByteArrayLiteral("image/jpeg");
         } else {
             return QByteArrayLiteral("image/png");

@@ -42,9 +42,9 @@ void RenderTest::testRenderHeaderOnly_data()
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
     const auto l = dir.entryList(QStringList(u"*.mbox"_s), QDir::Files | QDir::Readable | QDir::NoSymLinks);
     for (const QString &file : l) {
-        QString fname = dir.path() + QLatin1StringView("/headeronly/") + file + u".html"_s;
+        QString fname = dir.path() + "/headeronly/"_L1 + file + u".html"_s;
         if (!QFile::exists(fname)) {
-            fname = dir.path() + u'/' + file + QLatin1StringView(".html");
+            fname = dir.path() + u'/' + file + ".html"_L1;
             if (!QFile::exists(fname)) {
                 continue;
             }

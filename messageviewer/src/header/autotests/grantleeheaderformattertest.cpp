@@ -30,10 +30,10 @@ GrantleeHeaderFormatterTest::GrantleeHeaderFormatterTest(QObject *parent)
 
 static void testHeaderFile(const QString &data, const QString &absolutePath, const QString &name)
 {
-    QString header = QStringLiteral(
-        "<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n"
+    QString header =
+        u"<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\">\n"
         "<html xmlns=\"http://www.w3.org/1999/xhtml\">\n"
-        "<body>\n");
+        "<body>\n"_s;
     header += data + u"</div>\n</div>"_s;
     header += u"\n</body>\n</html>\n"_s;
 
@@ -43,7 +43,7 @@ static void testHeaderFile(const QString &data, const QString &absolutePath, con
     header.replace(QRegularExpression(u"([\n\t ])\\1+"_s), u"\\1"_s);
     header.replace(QRegularExpression(u">\n+[\t ]*"_s), u">"_s);
     header.replace(QRegularExpression(u"[\t ]*\n+[\t ]*<"_s), u"<"_s);
-    header.replace(QLatin1StringView("&nbsp;"), QLatin1StringView("NBSP_ENTITY_PLACEHOLDER")); // xmlling chokes on &nbsp;
+    header.replace("&nbsp;"_L1, "NBSP_ENTITY_PLACEHOLDER"_L1); // xmlling chokes on &nbsp;
 
     QString outName = name + u".out.html"_s;
     QString fName = name + u".html"_s;
@@ -58,7 +58,7 @@ static void testHeaderFile(const QString &data, const QString &absolutePath, con
     }
     // TODO add proper cmake check for xmllint and diff
     {
-        const QStringList args = QStringList() << u"--format"_s << u"--encode"_s << QStringLiteral("UTF8") << u"--output"_s << fName << outName;
+        const QStringList args = QStringList() << u"--format"_s << u"--encode"_s << u"UTF8"_s << u"--output"_s << fName << outName;
         QCOMPARE(QProcess::execute(u"xmllint"_s, args), 0);
     }
 

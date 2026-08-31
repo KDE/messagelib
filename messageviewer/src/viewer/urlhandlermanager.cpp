@@ -114,7 +114,7 @@ static KMime::Content *partNodeFromXKMailUrl(const QUrl &url, ViewerPrivate *w, 
 {
     Q_ASSERT(path);
 
-    if (!w || url.scheme() != QLatin1StringView("x-kmail")) {
+    if (!w || url.scheme() != "x-kmail"_L1) {
         return nullptr;
     }
     const QString urlPath = url.path();
@@ -122,7 +122,7 @@ static KMime::Content *partNodeFromXKMailUrl(const QUrl &url, ViewerPrivate *w, 
     // urlPath format is: /bodypart/<random number>/<part id>/<path>
 
     qCDebug(MESSAGEVIEWER_LOG) << "BodyPartURLHandler: urlPath ==" << urlPath;
-    if (!urlPath.startsWith(QLatin1StringView("/bodypart/"))) {
+    if (!urlPath.startsWith("/bodypart/"_L1)) {
         return nullptr;
     }
 
@@ -357,42 +357,42 @@ QString URLHandlerManager::statusBarMessage(const QUrl &url, ViewerPrivate *w) c
 
 bool KMailProtocolURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
 {
-    if (url.scheme() == QLatin1StringView("kmail")) {
+    if (url.scheme() == "kmail"_L1) {
         if (!w) {
             return false;
         }
         const QString urlPath(url.path());
-        if (urlPath == QLatin1StringView("showHTML")) {
+        if (urlPath == "showHTML"_L1) {
             w->setDisplayFormatMessageOverwrite(MessageViewer::Viewer::Html);
             w->update(MimeTreeParser::Force);
             return true;
-        } else if (urlPath == QLatin1StringView("goOnline")) {
+        } else if (urlPath == "goOnline"_L1) {
             w->goOnline();
             return true;
-        } else if (urlPath == QLatin1StringView("goResourceOnline")) {
+        } else if (urlPath == "goResourceOnline"_L1) {
             w->goResourceOnline();
             return true;
-        } else if (urlPath == QLatin1StringView("loadExternal")) {
+        } else if (urlPath == "loadExternal"_L1) {
             w->setHtmlLoadExtOverride(true);
             w->update(MimeTreeParser::Force);
             return true;
-        } else if (urlPath == QLatin1StringView("decryptMessage")) {
+        } else if (urlPath == "decryptMessage"_L1) {
             w->setDecryptMessageOverwrite(true);
             w->update(MimeTreeParser::Force);
             return true;
-        } else if (urlPath == QLatin1StringView("showSignatureDetails")) {
+        } else if (urlPath == "showSignatureDetails"_L1) {
             w->setShowSignatureDetails(true);
             w->update(MimeTreeParser::Force);
             return true;
-        } else if (urlPath == QLatin1StringView("hideSignatureDetails")) {
+        } else if (urlPath == "hideSignatureDetails"_L1) {
             w->setShowSignatureDetails(false);
             w->update(MimeTreeParser::Force);
             return true;
-        } else if (urlPath == QLatin1StringView("showEncryptionDetails")) {
+        } else if (urlPath == "showEncryptionDetails"_L1) {
             w->setShowEncryptionDetails(true);
             w->update(MimeTreeParser::Force);
             return true;
-        } else if (urlPath == QLatin1StringView("hideEncryptionDetails")) {
+        } else if (urlPath == "hideEncryptionDetails"_L1) {
             w->setShowEncryptionDetails(false);
             w->update(MimeTreeParser::Force);
             return true;
@@ -404,30 +404,30 @@ bool KMailProtocolURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) con
 QString KMailProtocolURLHandler::statusBarMessage(const QUrl &url, ViewerPrivate *) const
 {
     const QString schemeStr = url.scheme();
-    if (schemeStr == QLatin1StringView("kmail")) {
+    if (schemeStr == "kmail"_L1) {
         const QString urlPath(url.path());
-        if (urlPath == QLatin1StringView("showHTML")) {
+        if (urlPath == "showHTML"_L1) {
             return i18n("Turn on HTML rendering for this message.");
-        } else if (urlPath == QLatin1StringView("loadExternal")) {
+        } else if (urlPath == "loadExternal"_L1) {
             return i18n("Load external references from the Internet for this message.");
-        } else if (urlPath == QLatin1StringView("goOnline")) {
+        } else if (urlPath == "goOnline"_L1) {
             return i18n("Work online.");
-        } else if (urlPath == QLatin1StringView("goResourceOnline")) {
+        } else if (urlPath == "goResourceOnline"_L1) {
             return i18n("Make account online.");
-        } else if (urlPath == QLatin1StringView("decryptMessage")) {
+        } else if (urlPath == "decryptMessage"_L1) {
             return i18n("Decrypt message.");
-        } else if (urlPath == QLatin1StringView("showSignatureDetails")) {
+        } else if (urlPath == "showSignatureDetails"_L1) {
             return i18n("Show signature details.");
-        } else if (urlPath == QLatin1StringView("hideSignatureDetails")) {
+        } else if (urlPath == "hideSignatureDetails"_L1) {
             return i18n("Hide signature details.");
-        } else if (urlPath == QLatin1StringView("showEncryptionDetails")) {
+        } else if (urlPath == "showEncryptionDetails"_L1) {
             return i18n("Show encryption details.");
-        } else if (urlPath == QLatin1StringView("hideEncryptionDetails")) {
+        } else if (urlPath == "hideEncryptionDetails"_L1) {
             return i18n("Hide encryption details.");
         } else {
             return {};
         }
-    } else if (schemeStr == QLatin1StringView("help")) {
+    } else if (schemeStr == "help"_L1) {
         return i18n("Open Documentation");
     }
     return {};
@@ -437,7 +437,7 @@ bool ExpandCollapseQuoteURLManager::handleClick(const QUrl &url, ViewerPrivate *
 {
     //  kmail:levelquote/?num      -> the level quote to collapse.
     //  kmail:levelquote/?-num      -> expand all levels quote.
-    if (url.scheme() == QLatin1StringView("kmail") && url.path() == QLatin1StringView("levelquote")) {
+    if (url.scheme() == "kmail"_L1 && url.path() == "levelquote"_L1) {
         const QString levelStr = url.query();
         bool isNumber = false;
         const int levelQuote = levelStr.toInt(&isNumber);
@@ -458,7 +458,7 @@ bool ExpandCollapseQuoteURLManager::handleDrag(const QUrl &url, ViewerPrivate *w
 
 QString ExpandCollapseQuoteURLManager::statusBarMessage(const QUrl &url, ViewerPrivate *) const
 {
-    if (url.scheme() == QLatin1StringView("kmail") && url.path() == QLatin1StringView("levelquote")) {
+    if (url.scheme() == "kmail"_L1 && url.path() == "levelquote"_L1) {
         const QString query = url.query();
         if (query.length() >= 1) {
             if (query[0] == u'-') {
@@ -474,7 +474,7 @@ QString ExpandCollapseQuoteURLManager::statusBarMessage(const QUrl &url, ViewerP
 bool SMimeURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
 {
     QString keyId;
-    if (url.scheme() == QLatin1StringView("key")) {
+    if (url.scheme() == "key"_L1) {
         keyId = url.path();
     }
 
@@ -502,7 +502,7 @@ bool SMimeURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
 QString SMimeURLHandler::statusBarMessage(const QUrl &url, ViewerPrivate *) const
 {
     QString keyId;
-    if (url.scheme() == QLatin1StringView("key")) {
+    if (url.scheme() == "key"_L1) {
         keyId = url.path();
     }
 
@@ -524,7 +524,7 @@ bool HtmlAnchorHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
 
 QString MailToURLHandler::statusBarMessage(const QUrl &url, ViewerPrivate *) const
 {
-    if (url.scheme() == QLatin1StringView("mailto")) {
+    if (url.scheme() == "mailto"_L1) {
         return KEmailAddress::decodeMailtoUrl(url);
     }
     return {};
@@ -553,7 +553,7 @@ static void runKAddressBook(const QUrl &url)
 
 bool ContactUidURLHandler::handleClick(const QUrl &url, ViewerPrivate *) const
 {
-    if (url.scheme() == QLatin1StringView("uid")) {
+    if (url.scheme() == "uid"_L1) {
         runKAddressBook(url);
         return true;
     } else {
@@ -563,7 +563,7 @@ bool ContactUidURLHandler::handleClick(const QUrl &url, ViewerPrivate *) const
 
 bool ContactUidURLHandler::handleContextMenuRequest(const QUrl &url, const QPoint &p, ViewerPrivate *) const
 {
-    if (url.scheme() != QLatin1StringView("uid") || url.path().isEmpty()) {
+    if (url.scheme() != "uid"_L1 || url.path().isEmpty()) {
         return false;
     }
 
@@ -593,7 +593,7 @@ bool ContactUidURLHandler::handleContextMenuRequest(const QUrl &url, const QPoin
 
 QString ContactUidURLHandler::statusBarMessage(const QUrl &url, ViewerPrivate *) const
 {
-    if (url.scheme() == QLatin1StringView("uid")) {
+    if (url.scheme() == "uid"_L1) {
         return i18n("Lookup the contact in KAddressbook");
     } else {
         return {};
@@ -605,7 +605,7 @@ KMime::Content *AttachmentURLHandler::nodeForUrl(const QUrl &url, ViewerPrivate 
     if (!w || !w->mMessage) {
         return nullptr;
     }
-    if (url.scheme() == QLatin1StringView("attachment")) {
+    if (url.scheme() == "attachment"_L1) {
         KMime::Content *node = w->nodeFromUrl(url);
         return node;
     }
@@ -618,7 +618,7 @@ bool AttachmentURLHandler::attachmentIsInHeader(const QUrl &url) const
     QUrlQuery query(url);
     const QString place = query.queryItemValue(u"place"_s).toLower();
     if (!place.isNull()) {
-        inHeader = (place == QLatin1StringView("header"));
+        inHeader = (place == "header"_L1);
     }
     return inHeader;
 }
@@ -788,7 +788,7 @@ QString AttachmentURLHandler::statusBarMessage(const QUrl &url, ViewerPrivate *w
 
 static QString extractAuditLog(const QUrl &url)
 {
-    if (url.scheme() != QLatin1StringView("kmail") || url.path() != QLatin1StringView("showAuditLog")) {
+    if (url.scheme() != "kmail"_L1 || url.path() != "showAuditLog"_L1) {
         return {};
     }
     QUrlQuery query(url);
@@ -843,7 +843,7 @@ bool InternalImageURLHandler::handleDrag(const QUrl &url, ViewerPrivate *window)
 bool InternalImageURLHandler::willHandleDrag(const QUrl &url, ViewerPrivate *window) const
 {
     Q_UNUSED(window)
-    if (url.scheme() == QLatin1StringView("data") && url.path().startsWith(QLatin1StringView("image"))) {
+    if (url.scheme() == "data"_L1 && url.path().startsWith("image"_L1)) {
         return true;
     }
 
@@ -854,18 +854,16 @@ bool InternalImageURLHandler::willHandleDrag(const QUrl &url, ViewerPrivate *win
 bool KRunURLHandler::handleClick(const QUrl &url, ViewerPrivate *w) const
 {
     const QString scheme(url.scheme());
-    if ((scheme == QLatin1StringView("http")) || (scheme == QLatin1StringView("https")) || (scheme == QLatin1StringView("ftp"))
-        || (scheme == QLatin1StringView("file")) || (scheme == QLatin1StringView("ftps")) || (scheme == QLatin1StringView("sftp"))
-        || (scheme == QLatin1StringView("help")) || (scheme == QLatin1StringView("vnc")) || (scheme == QLatin1StringView("smb"))
-        || (scheme == QLatin1StringView("fish")) || (scheme == QLatin1StringView("news")) || (scheme == QLatin1StringView("tel"))
-        || (scheme == QLatin1StringView("geo")) || (scheme == QLatin1StringView("sms"))) {
+    if ((scheme == "http"_L1) || (scheme == "https"_L1) || (scheme == "ftp"_L1) || (scheme == "file"_L1) || (scheme == "ftps"_L1) || (scheme == "sftp"_L1)
+        || (scheme == "help"_L1) || (scheme == "vnc"_L1) || (scheme == "smb"_L1) || (scheme == "fish"_L1) || (scheme == "news"_L1) || (scheme == "tel"_L1)
+        || (scheme == "geo"_L1) || (scheme == "sms"_L1)) {
         PimCommon::BroadcastStatus::instance()->setTransientStatusMsg(i18n("Opening URL..."));
         QTimer::singleShot(2s, PimCommon::BroadcastStatus::instance(), &PimCommon::BroadcastStatus::reset);
 
         QMimeDatabase mimeDb;
         auto mime = mimeDb.mimeTypeForUrl(url);
-        if (mime.name() == QLatin1StringView("application/x-desktop") || mime.name() == QLatin1StringView("application/x-executable")
-            || mime.name() == QLatin1StringView("application/x-ms-dos-executable") || mime.name() == QLatin1StringView("application/x-shellscript")) {
+        if (mime.name() == "application/x-desktop"_L1 || mime.name() == "application/x-executable"_L1 || mime.name() == "application/x-ms-dos-executable"_L1
+            || mime.name() == "application/x-shellscript"_L1) {
             if (KMessageBox::warningTwoActions(
                     nullptr,
                     xi18nc("@info", "Do you really want to execute <filename>%1</filename>?", url.toDisplayString(QUrl::PreferLocalFile)),
@@ -893,5 +891,5 @@ bool EmbeddedImageURLHandler::handleDrag(const QUrl &url, ViewerPrivate *window)
 bool EmbeddedImageURLHandler::willHandleDrag(const QUrl &url, ViewerPrivate *window) const
 {
     Q_UNUSED(window)
-    return url.scheme() == QLatin1StringView("cid");
+    return url.scheme() == "cid"_L1;
 }

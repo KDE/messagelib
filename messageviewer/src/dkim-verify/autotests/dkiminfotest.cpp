@@ -47,9 +47,9 @@ void DKIMInfoTest::shouldTestExtractDkimInfo_data()
     QTest::addColumn<MessageViewer::DKIMInfo>("dkiminforesult");
     QTest::addColumn<bool>("isValid");
     QTest::addRow("empty") << QString() << MessageViewer::DKIMInfo() << false;
-    QString val = QStringLiteral(
-        "a=rsa-sha1; q=dns; d=example.com; i=user@eng.example.com; s=jun2005.eng; c=relaxed/simple; t=1117574938; x=1118006938; h=from:to:subject:date; "
-        "b=dzdVyOfAKCdLXdJOc9G2q8LoXSlEniSbav+yuU4zGeeruD00lszZVoG4ZHRNiYzR");
+    QString val =
+        u"a=rsa-sha1; q=dns; d=example.com; i=user@eng.example.com; s=jun2005.eng; c=relaxed/simple; t=1117574938; x=1118006938; h=from:to:subject:date; "
+        "b=dzdVyOfAKCdLXdJOc9G2q8LoXSlEniSbav+yuU4zGeeruD00lszZVoG4ZHRNiYzR"_s;
     MessageViewer::DKIMInfo info1;
     info1.setVersion(1);
     info1.setQuery(u"dns"_s);
@@ -64,16 +64,16 @@ void DKIMInfoTest::shouldTestExtractDkimInfo_data()
     info1.setAgentOrUserIdentifier(u"user@eng.example.com"_s);
     info1.setIDomain(u"eng.example.com"_s);
     info1.setSignature(u"dzdVyOfAKCdLXdJOc9G2q8LoXSlEniSbav+yuU4zGeeruD00lszZVoG4ZHRNiYzR"_s);
-    info1.setListSignedHeader(QStringList({u"from"_s, u"to"_s, QStringLiteral("subject"), QStringLiteral("date")}));
+    info1.setListSignedHeader(QStringList({u"from"_s, u"to"_s, u"subject"_s, u"date"_s}));
     QTest::addRow("test1") << val << info1 << true;
 
-    val = QStringLiteral(
-        "v=1; a=rsa-sha256; c=relaxed/relaxed; d=example.com; "
+    val =
+        u"v=1; a=rsa-sha256; c=relaxed/relaxed; d=example.com; "
         "h=message-id:content-type:content-type:user-agent:content-disposition:content-transfer-encoding:mime-version:reply-to:references:in-reply-to:subject:"
         "subject"
         ":list-unsubscribe:list-id:from:from:date:date; s=dkim; t=1569945303; x=1570809304; bh=/TC3U+LlxLH3YGxhC7qIHK8PzGl6Zx/8P6OGhDWrcWs=; "
         "b=w4GIjJb/+yEZvzvlw9yIPiuk/eKxAGSKL4WNmgC4D3V9fNyuVOV"
-        "IH06PzqCuU/NwLas3SdAvd3VbTCObAb38KXeXkO7meeyCoR+kDsFzHpSAUg7+IRkeDR+RmarFjXwZAtoX3OMsB8euEprhS9fgGupxCWxwu6VGKJgt3Yu3/cI=");
+        "IH06PzqCuU/NwLas3SdAvd3VbTCObAb38KXeXkO7meeyCoR+kDsFzHpSAUg7+IRkeDR+RmarFjXwZAtoX3OMsB8euEprhS9fgGupxCWxwu6VGKJgt3Yu3/cI="_s;
     MessageViewer::DKIMInfo info2;
     info2.setVersion(1);
     info2.setQuery(u"dns/txt"_s);
@@ -88,8 +88,8 @@ void DKIMInfoTest::shouldTestExtractDkimInfo_data()
     info2.setExpireTime(1570809304);
     info2.setSelector(u"dkim"_s);
     info2.setSignature(
-        QStringLiteral("w4GIjJb/+yEZvzvlw9yIPiuk/eKxAGSKL4WNmgC4D3V9fNyuVOVIH06PzqCuU/"
-                       "NwLas3SdAvd3VbTCObAb38KXeXkO7meeyCoR+kDsFzHpSAUg7+IRkeDR+RmarFjXwZAtoX3OMsB8euEprhS9fgGupxCWxwu6VGKJgt3Yu3/cI="));
+        u"w4GIjJb/+yEZvzvlw9yIPiuk/eKxAGSKL4WNmgC4D3V9fNyuVOVIH06PzqCuU/"
+        "NwLas3SdAvd3VbTCObAb38KXeXkO7meeyCoR+kDsFzHpSAUg7+IRkeDR+RmarFjXwZAtoX3OMsB8euEprhS9fgGupxCWxwu6VGKJgt3Yu3/cI="_s);
     info2.setBodyHash(u"/TC3U+LlxLH3YGxhC7qIHK8PzGl6Zx/8P6OGhDWrcWs="_s);
     info2.setListSignedHeader(QStringList({u"message-id"_s,
                                            u"content-type"_s,
@@ -111,12 +111,12 @@ void DKIMInfoTest::shouldTestExtractDkimInfo_data()
                                            u"date"_s}));
     QTest::addRow("test2") << val << info2 << true;
 
-    val = QStringLiteral(
-        "v=1; a=rsa-sha1; c=relaxed; d=abonnement.radins.com; "
+    val =
+        u"v=1; a=rsa-sha1; c=relaxed; d=abonnement.radins.com; "
         "h=message-id:list-unsubscribe:from:to:reply-to:content-type:subject:content-transfer-encoding:mime-version:date; s=selector1; "
         "bh=vyAg5eFfq019WlDt9csu4bJMC54=; "
         "b=ABKgPqPe/MOGdgR2TJuiVNTLugsL8q/+ky/JxOxwZxnsPbtFnyJ+Y7Gk8bfcBL9myKPNqe7bU6Uy4IiNptn+v34rhVApm6ccoc44UXe/2A5D+6CPJHjFyf/ggjgF/"
-        "BtQGYoMeQwj2+F4+QRxHSPldAcWqLCwlcRN25nPgiSAvWg=");
+        "BtQGYoMeQwj2+F4+QRxHSPldAcWqLCwlcRN25nPgiSAvWg="_s;
     MessageViewer::DKIMInfo info3;
     info3.setVersion(1);
     info3.setQuery(u"dns/txt"_s);
@@ -129,8 +129,8 @@ void DKIMInfoTest::shouldTestExtractDkimInfo_data()
     info3.setHeaderCanonization(MessageViewer::DKIMInfo::Relaxed);
     info3.setSelector(u"selector1"_s);
     info3.setSignature(
-        QStringLiteral("ABKgPqPe/MOGdgR2TJuiVNTLugsL8q/+ky/JxOxwZxnsPbtFnyJ+Y7Gk8bfcBL9myKPNqe7bU6Uy4IiNptn+v34rhVApm6ccoc44UXe/2A5D+6CPJHjFyf/ggjgF/"
-                       "BtQGYoMeQwj2+F4+QRxHSPldAcWqLCwlcRN25nPgiSAvWg="));
+        u"ABKgPqPe/MOGdgR2TJuiVNTLugsL8q/+ky/JxOxwZxnsPbtFnyJ+Y7Gk8bfcBL9myKPNqe7bU6Uy4IiNptn+v34rhVApm6ccoc44UXe/2A5D+6CPJHjFyf/ggjgF/"
+        "BtQGYoMeQwj2+F4+QRxHSPldAcWqLCwlcRN25nPgiSAvWg="_s);
     info3.setBodyHash(u"vyAg5eFfq019WlDt9csu4bJMC54="_s);
     info3.setListSignedHeader(QStringList({u"message-id"_s,
                                            u"list-unsubscribe"_s,

@@ -37,9 +37,9 @@ QList<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> DKIMAuthent
         convertedResult.method = MessageViewer::DKIMUtil::convertAuthenticationMethodStringToEnum(info.method);
         const QString infoResult = info.result.toLower();
         convertedResult.infoResult = infoResult;
-        if (infoResult == QLatin1StringView("none")) {
+        if (infoResult == "none"_L1) {
             convertedResult.status = DKIMCheckSignatureJob::DKIMStatus::EmailNotSigned;
-        } else if (infoResult == QLatin1StringView("pass")) {
+        } else if (infoResult == "pass"_L1) {
             convertedResult.status = DKIMCheckSignatureJob::DKIMStatus::Valid;
             QString sdid;
             QString auid;
@@ -59,13 +59,13 @@ QList<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> DKIMAuthent
                 convertedResult.sdid = std::move(sdid);
                 convertedResult.auid = std::move(auid);
             }
-        } else if (infoResult == QLatin1StringView("fail") || infoResult == QLatin1StringView("policy") || infoResult == QLatin1StringView("neutral")
-                   || infoResult == QLatin1StringView("softfail") || infoResult == QLatin1StringView("permerror")) {
+        } else if (infoResult == "fail"_L1 || infoResult == "policy"_L1 || infoResult == "neutral"_L1 || infoResult == "softfail"_L1
+                   || infoResult == "permerror"_L1) {
             convertedResult.status = DKIMCheckSignatureJob::DKIMStatus::Invalid;
             if (!info.reason.isEmpty()) {
                 convertedResult.errorStr = info.reason;
             }
-        } else if (infoResult == QLatin1StringView("temperror")) {
+        } else if (infoResult == "temperror"_L1) {
             convertedResult.status = DKIMCheckSignatureJob::DKIMStatus::Invalid;
             if (!info.reason.isEmpty()) {
                 convertedResult.errorStr = info.reason;

@@ -11,6 +11,8 @@
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
+
 using namespace MessageList::Core;
 namespace
 {
@@ -23,9 +25,9 @@ ConfigureFiltersDialog::ConfigureFiltersDialog(QWidget *parent)
 {
     setWindowTitle(i18nc("@title:window", "Configure Filter"));
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QLatin1StringView("mainLayout"));
+    mainLayout->setObjectName("mainLayout"_L1);
 
-    mConfigureFiltersWidget->setObjectName(QLatin1StringView("mConfigureFiltersWidget"));
+    mConfigureFiltersWidget->setObjectName("mConfigureFiltersWidget"_L1);
     mainLayout->addWidget(mConfigureFiltersWidget);
 
     auto button = new QDialogButtonBox(QDialogButtonBox::Close, this);

@@ -10,8 +10,8 @@ using namespace WebEngineViewer;
 
 QString WebEngineScript::findAllImages()
 {
-    const QString source = QStringLiteral(
-        "(function() {"
+    const QString source =
+        u"(function() {"
         "var out = [];"
         "var imgs = document.getElementsByTagName('img');"
         "for (var i = 0; i < imgs.length; ++i) {"
@@ -21,15 +21,15 @@ QString WebEngineScript::findAllImages()
         "    });"
         "}"
         "return out;"
-        "})()");
+        "})()"_s;
 
     return source;
 }
 
 QString WebEngineScript::findAllScripts()
 {
-    const QString source = QStringLiteral(
-        "(function() {"
+    const QString source =
+        u"(function() {"
         "var out = [];"
         "var scripts = document.getElementsByTagName('script');"
         "for (var i = 0; i < scripts.length; ++i) {"
@@ -39,15 +39,15 @@ QString WebEngineScript::findAllScripts()
         "    });"
         "}"
         "return out;"
-        "})()");
+        "})()"_s;
 
     return source;
 }
 
 QString WebEngineScript::findAllAnchors()
 {
-    const QString source = QStringLiteral(
-        "(function() {"
+    const QString source =
+        u"(function() {"
         "var out = [];"
         "var anchors = document.getElementsByTagName('a');"
         "for (var i = 0; i < anchors.length; ++i) {"
@@ -59,15 +59,15 @@ QString WebEngineScript::findAllAnchors()
         "    });"
         "}"
         "return out;"
-        "})()");
+        "})()"_s;
 
     return source;
 }
 
 QString WebEngineScript::findAllAnchorsAndForms()
 {
-    const QString source = QStringLiteral(
-        "(function() {"
+    const QString source =
+        u"(function() {"
         "var res = [];"
         "var out = [];"
         "var anchors = document.getElementsByTagName('a');"
@@ -84,7 +84,7 @@ QString WebEngineScript::findAllAnchorsAndForms()
         "    forms:  forms.length"
         "    });"
         "return res;"
-        "})()");
+        "})()"_s;
 
     return source;
 }
@@ -92,33 +92,30 @@ QString WebEngineScript::findAllAnchorsAndForms()
 QString WebEngineScript::setElementByIdVisible(const QString &elementStr, bool visibility)
 {
     if (visibility) {
-        const QString source = QStringLiteral(
-                                   "var element = document.getElementById('%1'); "
-                                   "if (element) { "
-                                   "    element.style.removeProperty( 'display' );"
-                                   "}")
-                                   .arg(elementStr);
+        const QString source =
+            u"var element = document.getElementById('%1'); "
+            "if (element) { "
+            "    element.style.removeProperty( 'display' );"
+            "}"_s.arg(elementStr);
         return source;
     } else {
-        const QString source = QStringLiteral(
-                                   "var element = document.getElementById('%1'); "
-                                   "if (element) { "
-                                   "    element.style.display = \"none\";"
-                                   "}")
-                                   .arg(elementStr);
+        const QString source =
+            u"var element = document.getElementById('%1'); "
+            "if (element) { "
+            "    element.style.display = \"none\";"
+            "}"_s.arg(elementStr);
         return source;
     }
 }
 
 QString WebEngineScript::searchElementPosition(const QString &elementStr)
 {
-    const QString source = QStringLiteral(
-                               "var element = document.getElementById('%1'); "
-                               "if (element) { "
-                               "    var geometry = element.getBoundingClientRect(); "
-                               "    [(geometry.left + window.scrollX), (geometry.top + window.scrollY)]; "
-                               "}")
-                               .arg(elementStr);
+    const QString source =
+        u"var element = document.getElementById('%1'); "
+        "if (element) { "
+        "    var geometry = element.getBoundingClientRect(); "
+        "    [(geometry.left + window.scrollX), (geometry.top + window.scrollY)]; "
+        "}"_s.arg(elementStr);
     return source;
 }
 
@@ -130,12 +127,11 @@ static QString scrollTop()
 QString WebEngineScript::scrollPercentage(int percent)
 {
     const QString source = u"var current = "_s + scrollTop()
-        + QStringLiteral(
-              ";"
+        + u";"
               "var docElement = document.documentElement;"
               "var height = docElement.clientHeight;"
               "var newPosition = current + height * %1 /100;"
-              "window.scrollTo(window.scrollX, newPosition);")
+              "window.scrollTo(window.scrollX, newPosition);"_s
               .arg(percent);
     return source;
 }
@@ -160,23 +156,21 @@ QString WebEngineScript::scrollToPosition(const QPoint &pos)
 
 QString WebEngineScript::removeStyleToElement(const QString &elementStr)
 {
-    const QString source = QStringLiteral(
-                               "var element = document.getElementById('%1'); "
-                               "if (element) { "
-                               "    element.removeAttribute(\"style\");"
-                               "}")
-                               .arg(elementStr);
+    const QString source =
+        u"var element = document.getElementById('%1'); "
+        "if (element) { "
+        "    element.removeAttribute(\"style\");"
+        "}"_s.arg(elementStr);
     return source;
 }
 
 QString WebEngineScript::setStyleToElement(const QString &elementStr, const QString &style)
 {
-    const QString source = QStringLiteral(
-                               "var element = document.getElementById('%1'); "
-                               "if (element) { "
-                               "    element.style = '%2';"
-                               "}")
-                               .arg(elementStr, style);
+    const QString source =
+        u"var element = document.getElementById('%1'); "
+        "if (element) { "
+        "    element.style = '%2';"
+        "}"_s.arg(elementStr, style);
     return source;
 }
 
@@ -188,14 +182,12 @@ QString WebEngineScript::scrollToRelativePosition(qreal pos)
 
 QString WebEngineScript::isScrolledToBottom()
 {
-    return QStringLiteral(
-               "(function() { "
+    return u"(function() { "
                "var docElement = document.documentElement;"
                "var viewportHeight = docElement.clientHeight;"
-               "var isAtBottom = ")
+               "var isAtBottom = "_s
         + scrollTop()
-        + QStringLiteral(
-               " + viewportHeight >= document.body.scrollHeight;"
+        + u" + viewportHeight >= document.body.scrollHeight;"
                "return Boolean(isAtBottom); "
-               "}());");
+               "}());"_s;
 }

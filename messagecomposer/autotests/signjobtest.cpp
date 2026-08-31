@@ -107,7 +107,7 @@ void SignJobTest::testHeaders()
     QVERIFY(result->contentType(KMime::CreatePolicy::DontCreate));
     QCOMPARE(result->contentType()->mimeType(), "multipart/signed");
     QCOMPARE(result->contentType()->charset(), "UTF-8");
-    QVERIFY(result->contentType()->parameter("micalg").startsWith(QLatin1StringView("pgp-sha"))); // sha1 or sha256, depending on GnuPG version
+    QVERIFY(result->contentType()->parameter("micalg").startsWith("pgp-sha"_L1)); // sha1 or sha256, depending on GnuPG version
     QCOMPARE(result->contentType()->parameter("protocol"), QString::fromLocal8Bit("application/pgp-signature"));
     QCOMPARE(result->contentTransferEncoding()->encoding(), KMime::Headers::CE7Bit);
 }

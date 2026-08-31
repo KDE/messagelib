@@ -209,18 +209,18 @@ void quotedHTML(const QString &s, MessageViewer::RenderContext *context, Message
                         if (!curHidden) {
                             // Expand all quotes
                             htmlWriter->write(u"<div class=\"quotelevelmark\" >"_s);
-                            htmlWriter->write(QStringLiteral("<a href=\"kmail:levelquote?%1 \">"
-                                                             "<img src=\"%2\"/></a>")
-                                                  .arg(-1)
-                                                  .arg(expandIconPath));
+                            htmlWriter->write(
+                                u"<a href=\"kmail:levelquote?%1 \">"
+                                "<img src=\"%2\"/></a>"_s.arg(-1)
+                                    .arg(expandIconPath));
                             htmlWriter->write(u"</div><br/>"_s);
                         }
                     } else {
                         htmlWriter->write(u"<div class=\"quotelevelmark\" >"_s);
-                        htmlWriter->write(QStringLiteral("<a href=\"kmail:levelquote?%1 \">"
-                                                         "<img src=\"%2\"/></a>")
-                                              .arg(actQuoteLevel)
-                                              .arg(collapseIconPath));
+                        htmlWriter->write(
+                            u"<a href=\"kmail:levelquote?%1 \">"
+                            "<img src=\"%2\"/></a>"_s.arg(actQuoteLevel)
+                                .arg(collapseIconPath));
                         htmlWriter->write(u"</div>"_s);
                         if (actQuoteLevel < 3) {
                             htmlWriter->write(quoteFontTag[actQuoteLevel]);
@@ -252,7 +252,7 @@ void quotedHTML(const QString &s, MessageViewer::RenderContext *context, Message
                 if (startNewPara) {
                     paraIsRTL = line.isRightToLeft();
                 }
-                htmlWriter->write(u"<div dir=\"%1\">"_s.arg(paraIsRTL ? u"rtl"_s : QStringLiteral("ltr")));
+                htmlWriter->write(u"<div dir=\"%1\">"_s.arg(paraIsRTL ? u"rtl"_s : u"ltr"_s));
                 // if quoteLengh == 0 && foundQuote => a simple quote
                 if (foundQuote) {
                     quoteLength++;

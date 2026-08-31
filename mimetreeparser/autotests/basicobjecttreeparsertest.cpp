@@ -261,8 +261,7 @@ void ObjectTreeParserTest::testOpenPGPEncryptedOverrideEncoding()
     NodeHelper nodeHelper;
     SimpleObjectTreeSource testSource;
     testSource.setDecryptMessage(true);
-    const QString data = QStringLiteral(
-        "german umlauts ISO-8859-15:\n\u00c3\u20ac - a with two dots - utf-8: U+00C3 U20AC\n\u00c3\u009f - eszett or \"sharp s\" - utf-8: U+00C3 U+009F\n");
+    const QString data = u"german umlauts ISO-8859-15:\n\u00c3\u20ac - a with two dots - utf-8: U+00C3 U20AC\n\u00c3\u009f - eszett or \"sharp s\" - utf-8: U+00C3 U+009F\n"_s;
     ObjectTreeParser otp(&testSource, &nodeHelper);
     otp.parseObjectTree(originalMessage.get());
 
@@ -515,7 +514,7 @@ void ObjectTreeParserTest::testHTML()
     otp.parseObjectTree(msg.get());
 
     QCOMPARE(otp.plainTextContent().toLatin1(), "Some HTML text");
-    QVERIFY(otp.htmlContent().contains(QLatin1StringView("Some <span style=\" font-weight:600;\">HTML</span> text")));
+    QVERIFY(otp.htmlContent().contains("Some <span style=\" font-weight:600;\">HTML</span> text"_L1));
 }
 
 void ObjectTreeParserTest::testHTMLasText()
@@ -548,7 +547,7 @@ void ObjectTreeParserTest::testHTMLOnly()
     otp.parseObjectTree(msg.get());
 
     QVERIFY(otp.plainTextContent().isEmpty());
-    QVERIFY(otp.htmlContent().contains(QLatin1StringView("<b>SOME</b> HTML text.")));
+    QVERIFY(otp.htmlContent().contains("<b>SOME</b> HTML text."_L1));
 }
 
 #include "moc_basicobjecttreeparsertest.cpp"

@@ -262,7 +262,7 @@ QString MessageItem::tagListDescription() const
     const auto tags{tagList()};
     for (const Tag *tag : tags) {
         if (!ret.isEmpty()) {
-            ret += QLatin1StringView(", ");
+            ret += ", "_L1;
         }
         ret += tag->name();
     }
@@ -603,7 +603,7 @@ TagCache::TagCache()
     : mMonitor(new Akonadi::Monitor(this))
 {
     mCache.setMaxCost(100);
-    mMonitor->setObjectName(QLatin1StringView("MessageListTagCacheMonitor"));
+    mMonitor->setObjectName("MessageListTagCacheMonitor"_L1);
     mMonitor->setTypeMonitored(Akonadi::Monitor::Tags);
     mMonitor->tagFetchScope().fetchAttribute<Akonadi::TagAttribute>();
     connect(mMonitor, &Akonadi::Monitor::tagAdded, this, &TagCache::onTagAdded);

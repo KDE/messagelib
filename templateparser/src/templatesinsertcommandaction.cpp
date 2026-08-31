@@ -8,6 +8,8 @@
 
 #include <QMenu>
 
+using namespace Qt::Literals::StringLiterals;
+
 using namespace TemplateParser;
 
 TemplatesInsertCommandAction::TemplatesInsertCommandAction(QObject *parent)
@@ -16,7 +18,7 @@ TemplatesInsertCommandAction::TemplatesInsertCommandAction(QObject *parent)
 {
     mMenuCommand->fillMenu();
     mMenuCommand->fillSubMenus();
-    mMenuCommand->setObjectName(QLatin1StringView("templatescommandmenu"));
+    mMenuCommand->setObjectName("templatescommandmenu"_L1);
     connect(mMenuCommand, qOverload<const QString &, int>(&TemplatesCommandMenu::insertCommand), this, &TemplatesInsertCommandAction::insertCommand);
     setMenu(mMenuCommand->menu());
 }

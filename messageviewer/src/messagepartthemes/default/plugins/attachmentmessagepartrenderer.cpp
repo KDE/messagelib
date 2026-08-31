@@ -51,7 +51,7 @@ bool AttachmentMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr 
         iconPath = QUrl::fromLocalFile(mp->temporaryFilePath()).toString();
     } else {
         iconPath = MessageViewer::Util::iconPathForContent(node, KIconLoader::Desktop);
-        if (iconPath.right(14) == QLatin1StringView("mime_empty.png")) {
+        if (iconPath.right(14) == "mime_empty.png"_L1) {
             MimeTreeParser::NodeHelper::magicSetType(node);
             iconPath = MessageViewer::Util::iconPathForContent(node, KIconLoader::Desktop);
         }

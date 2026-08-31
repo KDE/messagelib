@@ -20,9 +20,10 @@ void DKIMUtilTest::shouldTestBodyCanonizationRelaxed()
 {
     QBENCHMARK {
         {
-            QString ba = QStringLiteral(
-                "-- \nLaurent Montel | laurent.montel@kdab.com | KDE/Qt Senior Software Engineer \nKDAB (France) S.A.S., a KDAB Group company\nTel: France +33 "
-                "(0)4 90 84 08 53, http://www.kdab.fr\nKDAB - The Qt, C++ and OpenGL Experts\n\n\n");
+            QString ba =
+                u"-- \nLaurent Montel | laurent.montel@kdab.com | KDE/Qt Senior Software Engineer \nKDAB (France) S.A.S., a KDAB Group company\nTel: France "
+                u"+33 "
+                "(0)4 90 84 08 53, http://www.kdab.fr\nKDAB - The Qt, C++ and OpenGL Experts\n\n\n"_s;
             QString result = MessageViewer::DKIMUtil::bodyCanonizationRelaxed(ba);
 
             QCOMPARE(MessageViewer::DKIMUtil::generateHash(result.toUtf8(), QCryptographicHash::Sha256), "jnEyWN7LwPIBgES0mElYDek3lmyrRtSwUjDR2Ge08Xw=");

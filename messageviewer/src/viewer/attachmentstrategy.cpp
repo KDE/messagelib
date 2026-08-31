@@ -20,6 +20,8 @@
 
 #include "messageviewer_debug.h"
 
+using namespace Qt::Literals::StringLiterals;
+
 using namespace MessageViewer;
 
 static AttachmentStrategy::Display smartDisplay(KMime::Content *node)
@@ -274,17 +276,17 @@ const AttachmentStrategy *AttachmentStrategy::create(Type type)
 const AttachmentStrategy *AttachmentStrategy::create(const QString &type)
 {
     const QString lowerType = type.toLower();
-    if (lowerType == QLatin1StringView("iconic")) {
+    if (lowerType == "iconic"_L1) {
         return iconic();
     }
     // if ( lowerType == "smart" )    return smart(); // not needed, see below
-    if (lowerType == QLatin1StringView("inlined")) {
+    if (lowerType == "inlined"_L1) {
         return inlined();
     }
-    if (lowerType == QLatin1StringView("hidden")) {
+    if (lowerType == "hidden"_L1) {
         return hidden();
     }
-    if (lowerType == QLatin1StringView("headeronly")) {
+    if (lowerType == "headeronly"_L1) {
         return headerOnly();
     }
     // don't kFatal here, b/c the strings are user-provided

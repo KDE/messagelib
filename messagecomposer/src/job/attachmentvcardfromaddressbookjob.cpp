@@ -57,7 +57,7 @@ void AttachmentVcardFromAddressBookJob::doStart()
                 invalidContact();
             } else {
                 const QString contactRealName(contact.realName());
-                const QString attachmentName = (contactRealName.isEmpty() ? u"vcard"_s : contactRealName) + QLatin1StringView(".vcf");
+                const QString attachmentName = (contactRealName.isEmpty() ? u"vcard"_s : contactRealName) + ".vcf"_L1;
 
                 QByteArray data = d->mItem.payloadData();
                 // Workaround about broken kaddressbook fields.
@@ -67,7 +67,7 @@ void AttachmentVcardFromAddressBookJob::doStart()
         } else if (d->mItem.hasPayload<KContacts::ContactGroup>()) {
             const auto group = d->mItem.payload<KContacts::ContactGroup>();
             const QString groupName(group.name());
-            const QString attachmentName = (groupName.isEmpty() ? u"vcard"_s : groupName) + QLatin1StringView(".vcf");
+            const QString attachmentName = (groupName.isEmpty() ? u"vcard"_s : groupName) + ".vcf"_L1;
             auto expandJob = new Akonadi::ContactGroupExpandJob(group, this);
             expandJob->setProperty("groupName", attachmentName);
             connect(expandJob, &KJob::result, this, &AttachmentVcardFromAddressBookJob::slotExpandGroupResult);

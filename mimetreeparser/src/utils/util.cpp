@@ -50,7 +50,7 @@ QMimeType MimeTreeParser::Util::mimetype(const QString &name)
     // consider the filename if mimetype cannot be found by content-type
     const auto mimeTypes = db.mimeTypesForFileName(name);
     for (const auto &mt : mimeTypes) {
-        if (mt.name() != QLatin1StringView("application/octet-stream")) {
+        if (mt.name() != "application/octet-stream"_L1) {
             return mt;
         }
     }
@@ -66,23 +66,23 @@ QString MimeTreeParser::Util::iconNameForMimetype(const QString &mimeType, const
     QString tMimeType = mimeType;
 
     // convert non-registered types to registered types
-    if (mimeType == QLatin1StringView("application/x-vnd.kolab.contact")) {
+    if (mimeType == "application/x-vnd.kolab.contact"_L1) {
         tMimeType = u"text/x-vcard"_s;
-    } else if (mimeType == QLatin1StringView("application/x-vnd.kolab.event")) {
+    } else if (mimeType == "application/x-vnd.kolab.event"_L1) {
         tMimeType = u"application/x-vnd.akonadi.calendar.event"_s;
-    } else if (mimeType == QLatin1StringView("application/x-vnd.kolab.task")) {
+    } else if (mimeType == "application/x-vnd.kolab.task"_L1) {
         tMimeType = u"application/x-vnd.akonadi.calendar.todo"_s;
-    } else if (mimeType == QLatin1StringView("application/x-vnd.kolab.journal")) {
+    } else if (mimeType == "application/x-vnd.kolab.journal"_L1) {
         tMimeType = u"application/x-vnd.akonadi.calendar.journal"_s;
-    } else if (mimeType == QLatin1StringView("application/x-vnd.kolab.note")) {
+    } else if (mimeType == "application/x-vnd.kolab.note"_L1) {
         tMimeType = u"application/x-vnd.akonadi.note"_s;
-    } else if (mimeType == QLatin1StringView("image/jpg")) {
+    } else if (mimeType == "image/jpg"_L1) {
         tMimeType = u"image/jpeg"_s;
-    } else if (mimeType == QLatin1StringView("application/x-pkcs7-signature")) {
+    } else if (mimeType == "application/x-pkcs7-signature"_L1) {
         tMimeType = u"application/pkcs7-signature"_s;
-    } else if (mimeType == QLatin1StringView("message/global")) {
+    } else if (mimeType == "message/global"_L1) {
         tMimeType = u"message/rfc822"_s;
-    } else if (mimeType == QLatin1StringView("text/x-moz-deleted")) {
+    } else if (mimeType == "text/x-moz-deleted"_L1) {
         // Avoid debug warning about unknown mimetype
         // Bug: 468801
         // We need to show unknown icon
@@ -102,7 +102,7 @@ QString MimeTreeParser::Util::iconNameForMimetype(const QString &mimeType, const
         }
     }
     // WorkAround for #199083
-    if (fileName == QLatin1StringView("text-vcard")) {
+    if (fileName == "text-vcard"_L1) {
         fileName = u"text-x-vcard"_s;
     }
 
@@ -112,7 +112,7 @@ QString MimeTreeParser::Util::iconNameForMimetype(const QString &mimeType, const
             fileName = fallbackFileName2;
         }
         if (!fileName.isEmpty()) {
-            fileName = mimeDb.mimeTypeForFile(QLatin1StringView("/tmp/") + fileName).iconName();
+            fileName = mimeDb.mimeTypeForFile("/tmp/"_L1 + fileName).iconName();
         }
     }
 

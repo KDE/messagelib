@@ -324,7 +324,7 @@ void AttachmentControllerBase::AttachmentControllerBasePrivate::createOpenWithMe
 
         if (offers.count() > 1) { // submenu 'open with'
             menu = new QMenu(i18nc("@title:menu", "&Open With"), topMenu);
-            menu->menuAction()->setObjectName(QLatin1StringView("openWith_submenu")); // for the unittest
+            menu->menuAction()->setObjectName("openWith_submenu"_L1); // for the unittest
             topMenu->addMenu(menu);
         }
         // qCDebug(MESSAGECOMPOSER_LOG) << offers.count() << "offers" << topMenu << menu;
@@ -622,9 +622,8 @@ void AttachmentControllerBase::showContextMenu()
             if (mime.isValid()) {
                 parentMimeType = mime.allAncestors();
             }
-            if ((mimetype == QLatin1StringView("text/plain")) || (mimetype == QLatin1StringView("image/png")) || (mimetype == QLatin1StringView("image/jpeg"))
-                || parentMimeType.contains(QLatin1StringView("text/plain")) || parentMimeType.contains(QLatin1StringView("image/png"))
-                || parentMimeType.contains(QLatin1StringView("image/jpeg"))) {
+            if ((mimetype == "text/plain"_L1) || (mimetype == "image/png"_L1) || (mimetype == "image/jpeg"_L1) || parentMimeType.contains("text/plain"_L1)
+                || parentMimeType.contains("image/png"_L1) || parentMimeType.contains("image/jpeg"_L1)) {
                 menu.addAction(d->viewContextAction);
             }
             d->createOpenWithMenu(&menu, d->selectedParts.constFirst());
@@ -933,7 +932,7 @@ void AttachmentControllerBase::showAddAttachmentFileDialog()
             MessageCore::StringUtil::setEncodingFile(urlWithEncoding, QLatin1StringView(encodingName));
             QMimeDatabase mimeDb;
             const auto mimeType = mimeDb.mimeTypeForUrl(urlWithEncoding);
-            if (mimeType.name() == QLatin1StringView("inode/directory")) {
+            if (mimeType.name() == "inode/directory"_L1) {
                 const int rc = KMessageBox::warningTwoActions(d->wParent,
                                                               i18n("Do you really want to attach this directory \"%1\"?", url.toLocalFile()),
                                                               i18nc("@title:window", "Attach directory"),

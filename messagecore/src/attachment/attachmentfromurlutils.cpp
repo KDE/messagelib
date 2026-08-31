@@ -12,13 +12,15 @@
 
 #include <QMimeDatabase>
 
+using namespace Qt::Literals::StringLiterals;
+
 namespace MessageCore
 {
 MessageCore::AttachmentFromUrlBaseJob *AttachmentFromUrlUtils::createAttachmentJob(const QUrl &url, QObject *parent)
 {
     MessageCore::AttachmentFromUrlBaseJob *ajob = nullptr;
     QMimeDatabase db;
-    if (db.mimeTypeForUrl(url).name() == QLatin1StringView("inode/directory")) {
+    if (db.mimeTypeForUrl(url).name() == "inode/directory"_L1) {
         qCDebug(MESSAGECORE_LOG) << "Creating attachment from folder";
         ajob = new MessageCore::AttachmentFromFolderJob(url, parent);
     } else {

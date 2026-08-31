@@ -95,12 +95,10 @@ void ReplyStrategyTest::initTestCase()
 
     mIdentityManager = new KIdentityManagementCore::IdentityManager;
 
-    auto homeIdentity =
-        mIdentityManager->newFromExisting(KIdentityManagementCore::Identity{u"Home Identity"_s, QStringLiteral("Full Home Name"), defaultAddress});
+    auto homeIdentity = mIdentityManager->newFromExisting(KIdentityManagementCore::Identity{u"Home Identity"_s, u"Full Home Name"_s, defaultAddress});
     QVERIFY(mIdentityManager->setAsDefault(homeIdentity.uoid()));
 
-    auto workIdentity =
-        mIdentityManager->newFromExisting(KIdentityManagementCore::Identity{u"Work Identity"_s, QStringLiteral("Full Work Name"), nondefaultAddress});
+    auto workIdentity = mIdentityManager->newFromExisting(KIdentityManagementCore::Identity{u"Work Identity"_s, u"Full Work Name"_s, nondefaultAddress});
 
     mIdentityManager->commit();
 }

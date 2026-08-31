@@ -12,6 +12,8 @@
 #include <QLabel>
 #include <QLineEdit>
 
+using namespace Qt::Literals::StringLiterals;
+
 using namespace MessageList::Core;
 FilterNameWidget::FilterNameWidget(QWidget *parent)
     : QWidget(parent)
@@ -19,18 +21,18 @@ FilterNameWidget::FilterNameWidget(QWidget *parent)
     , mIconButton(new KIconButton(this))
 {
     auto mainLayout = new QHBoxLayout(this);
-    mainLayout->setObjectName(QLatin1StringView("mainLayout"));
+    mainLayout->setObjectName("mainLayout"_L1);
     mainLayout->setContentsMargins({});
 
-    mName->setObjectName(QLatin1StringView("mName"));
+    mName->setObjectName("mName"_L1);
     mName->setClearButtonEnabled(true);
-    mIconButton->setObjectName(QLatin1StringView("mIconButton"));
+    mIconButton->setObjectName("mIconButton"_L1);
     mIconButton->setButtonIconSize(24);
     mIconButton->setFixedSize(32, 32);
     KLineEditEventHandler::catchReturnKey(mName);
 
     auto label = new QLabel(i18nc("@label:textbox", "Name:"), this);
-    label->setObjectName(QLatin1StringView("label"));
+    label->setObjectName("label"_L1);
 
     mainLayout->addWidget(label);
     mainLayout->addWidget(mName);

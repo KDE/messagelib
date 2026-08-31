@@ -239,7 +239,7 @@ QUrl NodeHelper::tempFileUrlFromNode(const KMime::Content *node)
     const QStringList temporaryFiles = mAttachmentFilesDir->temporaryFiles();
     for (const QString &path : temporaryFiles) {
         const int right = path.lastIndexOf(u'/');
-        int left = path.lastIndexOf(QLatin1StringView(".index."), right);
+        int left = path.lastIndexOf(".index."_L1, right);
         if (left != -1) {
             left += 7;
         }
@@ -254,7 +254,7 @@ QUrl NodeHelper::tempFileUrlFromNode(const KMime::Content *node)
 
 QString NodeHelper::createTempDir(const QString &param)
 {
-    auto tempFile = new QTemporaryFile(QDir::tempPath() + QLatin1StringView("/kmail_messageviewer_XXXXXX.index.") + param);
+    auto tempFile = new QTemporaryFile(QDir::tempPath() + "/kmail_messageviewer_XXXXXX.index."_L1 + param);
     tempFile->open();
     const QString fname = tempFile->fileName();
     delete tempFile;
@@ -769,9 +769,9 @@ QString NodeHelper::fixEncoding(const QString &encoding)
     // According to https://www.iana.org/assignments/character-sets, uppercase is
     // preferred in MIME headers
     const QString returnEncodingToUpper = returnEncoding.toUpper();
-    if (returnEncodingToUpper.contains(QLatin1StringView("ISO "))) {
+    if (returnEncodingToUpper.contains("ISO "_L1)) {
         returnEncoding = returnEncodingToUpper;
-        returnEncoding.replace(QLatin1StringView("ISO "), u"ISO-"_s);
+        returnEncoding.replace("ISO "_L1, u"ISO-"_s);
     }
     return returnEncoding;
 }

@@ -299,7 +299,7 @@ QString CustomTemplates::createUniqueName(const QString &name) const
                 found = true;
                 ++counter;
                 uniqueName = name;
-                uniqueName += QLatin1StringView(" (") + QString::number(counter) + QLatin1StringView(")");
+                uniqueName += " ("_L1 + QString::number(counter) + ")"_L1;
                 break;
             }
             lit++;

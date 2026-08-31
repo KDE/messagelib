@@ -583,7 +583,7 @@ static QString canonicalAddress(const QString &_address)
     if (!address.contains(u'@')) {
         // local address
         // return address + '@' + KNetwork::KResolver::localHostName();
-        return address + QLatin1StringView("@localdomain");
+        return address + "@localdomain"_L1;
     } else {
         return address;
     }
@@ -1248,7 +1248,7 @@ void KeyResolver::dump() const
             for (auto kit = sit->keys.begin(), kitEnd = sit->keys.end(); kit != kitEnd; ++kit) {
                 qCDebug(MESSAGECOMPOSER_LOG) << "  " << kit->shortKeyID();
             }
-            qCDebug(MESSAGECOMPOSER_LOG) << "  SplitInfo #" << i << " recipients: " << qPrintable(sit->recipients.join(QLatin1StringView(", ")));
+            qCDebug(MESSAGECOMPOSER_LOG) << "  SplitInfo #" << i << " recipients: " << qPrintable(sit->recipients.join(", "_L1));
         }
     }
 #endif
@@ -1461,7 +1461,7 @@ std::vector<GpgME::Key> KeyResolver::getEncryptionKeys(const QString &person, bo
     const QStringList fingerprints = keysForAddress(address);
 
     if (!fingerprints.empty()) {
-        qCDebug(MESSAGECOMPOSER_LOG) << "Using encryption keys 0x" << fingerprints.join(QLatin1StringView(", 0x")) << "for" << person;
+        qCDebug(MESSAGECOMPOSER_LOG) << "Using encryption keys 0x" << fingerprints.join(", 0x"_L1) << "for" << person;
         std::vector<GpgME::Key> keys = lookup(fingerprints);
         if (!keys.empty()) {
             // Check if all of the keys are trusted and valid encryption keys
@@ -1572,7 +1572,7 @@ std::vector<GpgME::Key> KeyResolver::lookup(const QStringList &patterns, bool se
     if (patterns.empty()) {
         return {};
     }
-    qCDebug(MESSAGECOMPOSER_LOG) << "( \"" << patterns.join(QLatin1StringView("\", \"")) << "\"," << secret << ")";
+    qCDebug(MESSAGECOMPOSER_LOG) << "( \"" << patterns.join("\", \""_L1) << "\"," << secret << ")";
     std::vector<GpgME::Key> result;
     if (mCryptoMessageFormats & (InlineOpenPGPFormat | OpenPGPMIMEFormat)) {
         if (const QGpgME::Protocol *p = QGpgME::openpgp()) {

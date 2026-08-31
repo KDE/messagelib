@@ -27,12 +27,12 @@ static QString check_sender(const std::shared_ptr<KMime::Message> &message, QByt
         return {};
     }
 
-    if (header.left(6) == QLatin1StringView("owner-")) {
+    if (header.left(6) == "owner-"_L1) {
         headerName = "Sender";
         headerValue = header;
         header = header.mid(6, header.indexOf(u'@') - 6);
     } else {
-        const int index = header.indexOf(QLatin1StringView("-owner@ "));
+        const int index = header.indexOf("-owner@ "_L1);
         if (index == -1) {
             return {};
         }
@@ -70,7 +70,7 @@ static QString check_delivered_to(const std::shared_ptr<KMime::Message> &message
     if (auto hrd = message->headerByType("Delivered-To")) {
         header = hrd->asUnicodeString();
     }
-    if (header.isNull() || header.left(13) != QLatin1StringView("mailing list") || header.indexOf(u'@') == -1) {
+    if (header.isNull() || header.left(13) != "mailing list"_L1 || header.indexOf(u'@') == -1) {
         return {};
     }
 
@@ -145,7 +145,7 @@ static QString check_list_post(const std::shared_ptr<KMime::Message> &message, Q
         return {};
     }
 
-    int leftAnglePos = header.indexOf(QLatin1StringView("<mailto:"));
+    int leftAnglePos = header.indexOf("<mailto:"_L1);
     if (leftAnglePos < 0) {
         return {};
     }
@@ -169,7 +169,7 @@ static QString check_mailing_list(const std::shared_ptr<KMime::Message> &message
         return {};
     }
 
-    if (header.left(5) != QLatin1StringView("list ") || header.indexOf(u'@') < 5) {
+    if (header.left(5) != "list "_L1 || header.indexOf(u'@') < 5) {
         return {};
     }
 

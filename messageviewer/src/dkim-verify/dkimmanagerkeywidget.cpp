@@ -15,20 +15,22 @@
 #include <QLineEdit>
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
+
 using namespace MessageViewer;
 DKIMManagerKeyWidget::DKIMManagerKeyWidget(QWidget *parent)
     : QWidget(parent)
     , mDKIMManagerKeyTreeView(new DKIMManagerKeyTreeView(this))
 {
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QLatin1StringView("mainlayout"));
+    mainLayout->setObjectName("mainlayout"_L1);
     mainLayout->setContentsMargins({});
 
-    mDKIMManagerKeyTreeView->setObjectName(QLatin1StringView("mDKIMManagerKeyTreeView"));
+    mDKIMManagerKeyTreeView->setObjectName("mDKIMManagerKeyTreeView"_L1);
 
     auto searchLineEdit = new QLineEdit(this);
     KLineEditEventHandler::catchReturnKey(searchLineEdit);
-    searchLineEdit->setObjectName(QLatin1StringView("searchlineedit"));
+    searchLineEdit->setObjectName("searchlineedit"_L1);
     searchLineEdit->setClearButtonEnabled(true);
     searchLineEdit->setPlaceholderText(i18nc("@info:placeholder", "Search..."));
     mainLayout->addWidget(searchLineEdit);

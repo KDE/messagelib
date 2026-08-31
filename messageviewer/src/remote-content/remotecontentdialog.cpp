@@ -9,19 +9,21 @@
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QVBoxLayout>
+
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 RemoteContentDialog::RemoteContentDialog(QWidget *parent)
     : QDialog(parent)
     , mRemoveContentWidget(new RemoteContentWidget(this))
 {
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QLatin1StringView("mainLayout"));
+    mainLayout->setObjectName("mainLayout"_L1);
 
-    mRemoveContentWidget->setObjectName(QLatin1StringView("mRemoveContentWidget"));
+    mRemoveContentWidget->setObjectName("mRemoveContentWidget"_L1);
     mainLayout->addWidget(mRemoveContentWidget);
 
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
-    buttonBox->setObjectName(QLatin1StringView("buttonBox"));
+    buttonBox->setObjectName("buttonBox"_L1);
     connect(buttonBox, &QDialogButtonBox::accepted, this, &RemoteContentDialog::accept);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &RemoteContentDialog::reject);
     mainLayout->addWidget(buttonBox);

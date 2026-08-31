@@ -99,7 +99,7 @@ void SearchFullHashJob::parse(const QByteArray &replyStr)
 
                 // const QString cacheDuration = map[u"cacheDuration"_s].toString();
 
-                if (threatTypeStr == QLatin1StringView("MALWARE")) {
+                if (threatTypeStr == "MALWARE"_L1) {
                     const QVariantMap urlMap = map[u"threat"_s].toMap();
                     QList<QByteArray> hashList;
                     QMap<QString, QVariant>::const_iterator urlMapIt = urlMap.cbegin();
@@ -197,7 +197,7 @@ QByteArray SearchFullHashJob::jsonRequest() const
 
     QVariantMap threatMap;
     QVariantList platformList;
-    platformList.append(QLatin1StringView("WINDOWS"));
+    platformList.append("WINDOWS"_L1);
     threatMap.insert(u"platformTypes"_s, platformList);
 
     const QVariantList threatTypesList = {u"MALWARE"_s};

@@ -41,7 +41,7 @@ void Test::compareFile(const QString &outFile, const QString &referenceFile)
         content.replace(QRegularExpression(u"([\n\t ])\\1+"_s), u"\\1"_s);
         content.replace(QRegularExpression(u">\n+[\t ]*"_s), u">"_s);
         content.replace(QRegularExpression(u"[\t ]*\n+[\t ]*<"_s), u"<"_s);
-        content.replace(QLatin1StringView("&nbsp;"), QLatin1StringView("NBSP_ENTITY_PLACEHOLDER")); // xmlling chokes on &nbsp;
+        content.replace("&nbsp;"_L1, "NBSP_ENTITY_PLACEHOLDER"_L1); // xmlling chokes on &nbsp;
         QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
         f.write(content.toUtf8());
         f.close();
@@ -49,7 +49,7 @@ void Test::compareFile(const QString &outFile, const QString &referenceFile)
 
     // validate xml and pretty-print for comparison
     // TODO add proper cmake check for xmllint and diff
-    QStringList args = QStringList() << u"--format"_s << u"--encode"_s << QStringLiteral("UTF8") << QStringLiteral("--output") << htmlFile << outFile;
+    QStringList args = QStringList() << u"--format"_s << u"--encode"_s << u"UTF8"_s << u"--output"_s << htmlFile << outFile;
     QCOMPARE(QProcess::execute(u"xmllint"_s, args), 0);
 
     // get rid of system dependent or random paths
@@ -62,7 +62,7 @@ void Test::compareFile(const QString &outFile, const QString &referenceFile)
         content.replace(QRegularExpression(u"src=\"/[^\"]*/([^\"/(?:%2F)]*)\""_s), u"src=\"file:\\1\""_s);
         content.replace(QRegularExpression(u"\"qrc:[^\"]*[/(?:%2F)]([^\"/(?:%2F)]*)\""_s), u"\"file:\\1\""_s);
         content.replace(QRegularExpression(u"(file:///tmp/kmail_messageviewer)(_[^\"]+)(\\.index\\.[^\"]*)"_s), u"\\1\\3"_s);
-        content.replace(QLatin1StringView("NBSP_ENTITY_PLACEHOLDER"), QLatin1StringView("&nbsp;")); // undo above transformation for xmllint
+        content.replace("NBSP_ENTITY_PLACEHOLDER"_L1, "&nbsp;"_L1); // undo above transformation for xmllint
         QVERIFY(f.open(QIODevice::WriteOnly | QIODevice::Truncate));
         f.write(content.toUtf8());
         f.close();

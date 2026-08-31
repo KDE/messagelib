@@ -62,7 +62,7 @@ void WebEnginePartHtmlWriter::end()
     }
     if (data().size() > 1000000) {
         // qDebug() << " load big message ";
-        mTempFile = new QTemporaryFile(QDir::tempPath() + QLatin1StringView("/kmail_messageviewer_XXXXXX.html"));
+        mTempFile = new QTemporaryFile(QDir::tempPath() + "/kmail_messageviewer_XXXXXX.html"_L1);
         if (!mTempFile->open()) {
             qCWarning(MESSAGEVIEWER_LOG) << "Impossible to open temporary file";
         }

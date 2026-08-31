@@ -79,8 +79,8 @@ QString KXFace::fromImage(const QImage &image)
     buffer.open(QIODevice::WriteOnly);
     scaledImg.save(&buffer, "XBM");
     QString xbm(QString::fromLatin1(ba));
-    xbm.remove(0, xbm.indexOf(QLatin1StringView("{")) + 1);
-    xbm.truncate(xbm.indexOf(QLatin1StringView("}")));
+    xbm.remove(0, xbm.indexOf("{"_L1) + 1);
+    xbm.truncate(xbm.indexOf("}"_L1));
     xbm.remove(u' ');
     xbm.remove(u',');
     xbm.remove(u"0x"_s);

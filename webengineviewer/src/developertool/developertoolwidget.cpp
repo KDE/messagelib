@@ -9,6 +9,8 @@
 #include <QWebEnginePage>
 #include <QWebEngineSettings>
 #include <QWebEngineView>
+
+using namespace Qt::Literals::StringLiterals;
 using namespace WebEngineViewer;
 DeveloperToolWidget::DeveloperToolWidget(QWidget *parent)
     : QWidget(parent)
@@ -16,12 +18,12 @@ DeveloperToolWidget::DeveloperToolWidget(QWidget *parent)
     , mEnginePage(new QWebEnginePage(this))
 {
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QLatin1StringView("mainLayout"));
+    mainLayout->setObjectName("mainLayout"_L1);
     mainLayout->setContentsMargins({});
 
-    mWebEngineView->setObjectName(QLatin1StringView("mWebEngineView"));
+    mWebEngineView->setObjectName("mWebEngineView"_L1);
     mainLayout->addWidget(mWebEngineView);
-    mEnginePage->setObjectName(QLatin1StringView("mEnginePage"));
+    mEnginePage->setObjectName("mEnginePage"_L1);
     mEnginePage->settings()->setAttribute(QWebEngineSettings::JavascriptEnabled, true);
 
     mWebEngineView->setPage(mEnginePage);

@@ -7,6 +7,8 @@
 #include "loadexternalreferencesurlinterceptor.h"
 #include <QWebEngineUrlRequestInfo>
 
+using namespace Qt::Literals::StringLiterals;
+
 using namespace WebEngineViewer;
 
 LoadExternalReferencesUrlInterceptor::LoadExternalReferencesUrlInterceptor(QObject *parent)
@@ -20,17 +22,17 @@ bool LoadExternalReferencesUrlInterceptor::interceptRequest(QWebEngineUrlRequest
 {
     const QUrl requestUrl = info.requestUrl();
     const QString scheme = requestUrl.scheme();
-    if (scheme == QLatin1StringView("data") || scheme == QLatin1StringView("file") || scheme == QLatin1StringView("qrc")) {
+    if (scheme == "data"_L1 || scheme == "file"_L1 || scheme == "qrc"_L1) {
         return false;
     }
     const QWebEngineUrlRequestInfo::ResourceType resourceType{info.resourceType()};
     if (mAllowLoadExternalReference) {
-        if (resourceType == QWebEngineUrlRequestInfo::ResourceTypeImage && !requestUrl.isLocalFile() && (scheme != QLatin1StringView("cid"))) {
+        if (resourceType == QWebEngineUrlRequestInfo::ResourceTypeImage && !requestUrl.isLocalFile() && (scheme != "cid"_L1)) {
             return urlIsBlocked(requestUrl);
         }
         return false;
     } else {
-        if (resourceType == QWebEngineUrlRequestInfo::ResourceTypeImage && !requestUrl.isLocalFile() && (scheme != QLatin1StringView("cid"))) {
+        if (resourceType == QWebEngineUrlRequestInfo::ResourceTypeImage && !requestUrl.isLocalFile() && (scheme != "cid"_L1)) {
             return urlIsAuthorized(requestUrl);
         } else if (resourceType == QWebEngineUrlRequestInfo::ResourceTypeFontResource) {
             return true;

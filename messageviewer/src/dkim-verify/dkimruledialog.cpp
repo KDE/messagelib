@@ -14,6 +14,8 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 
+using namespace Qt::Literals::StringLiterals;
+
 namespace
 {
 static const char myDKIMRuleDialogConfigGroupName[] = "DKIMRuleDialog";
@@ -26,13 +28,13 @@ DKIMRuleDialog::DKIMRuleDialog(QWidget *parent)
     setWindowTitle(i18nc("@title:window", "Add Rule"));
 
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QLatin1StringView("mainlayout"));
+    mainLayout->setObjectName("mainlayout"_L1);
 
-    mRuleWidget->setObjectName(QLatin1StringView("rulewidget"));
+    mRuleWidget->setObjectName("rulewidget"_L1);
     mainLayout->addWidget(mRuleWidget);
 
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
-    buttonBox->setObjectName(QLatin1StringView("buttonBox"));
+    buttonBox->setObjectName("buttonBox"_L1);
     mainLayout->addWidget(buttonBox);
 
     mOkButton = buttonBox->button(QDialogButtonBox::Ok);

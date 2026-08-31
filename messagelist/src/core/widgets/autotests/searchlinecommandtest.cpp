@@ -259,8 +259,8 @@ void SearchLineCommandTest::shouldParseInfo_data()
         }
 
         const QString convertStr{
-            QStringLiteral("Subject contains ddd ffff AND From contains laurent <foo@kde.org> AND CC contains test@kde.org AND Mail has attachment AND Literal "
-                           "string literal")};
+            u"Subject contains ddd ffff AND From contains laurent <foo@kde.org> AND CC contains test@kde.org AND Mail has attachment AND Literal "
+            "string literal"_s};
         QTest::newRow("multiple elements2") << str << lstInfo << 5 << convertStr;
     }
 

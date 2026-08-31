@@ -1379,10 +1379,8 @@ void ModelPrivate::attachMessageToGroupHeader(MessageItem *mi)
             if (monthName == mCachedMonthNameLabel.end()) {
                 monthName = mCachedMonthNameLabel.insert(dDate.month(), QLocale::system().standaloneMonthName(dDate.month()));
             }
-            groupLabel = i18nc("Message Aggregation Group Header: Month name and Year number",
-                               "%1 %2",
-                               *monthName,
-                               QLocale::system().toString(dDate, QLatin1StringView("yyyy")));
+            groupLabel =
+                i18nc("Message Aggregation Group Header: Month name and Year number", "%1 %2", *monthName, QLocale::system().toString(dDate, "yyyy"_L1));
         }
         break;
     }

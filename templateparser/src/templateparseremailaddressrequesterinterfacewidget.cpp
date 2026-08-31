@@ -18,7 +18,7 @@ TemplateParserEmailAddressRequesterInterfaceWidget::TemplateParserEmailAddressRe
     : QWidget(parent)
 {
     auto mainLayout = new QHBoxLayout(this);
-    mainLayout->setObjectName(QLatin1StringView("mainlayout"));
+    mainLayout->setObjectName("mainlayout"_L1);
     mainLayout->setContentsMargins({});
     initializeEmailWidget();
     mainLayout->addWidget(mTemplateParserEmailBase);
@@ -34,7 +34,7 @@ void TemplateParserEmailAddressRequesterInterfaceWidget::initializeEmailWidget()
     } else {
         mTemplateParserEmailBase = new TemplateParser::TemplateParserEmailAddressRequesterLineEdit(this);
     }
-    mTemplateParserEmailBase->setObjectName(QLatin1StringView("templateparseremailbase"));
+    mTemplateParserEmailBase->setObjectName("templateparseremailbase"_L1);
     connect(mTemplateParserEmailBase,
             &TemplateParserEmailAddressRequesterBase::textChanged,
             this,

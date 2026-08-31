@@ -21,7 +21,7 @@ DKIMManagerKeyTreeView::DKIMManagerKeyTreeView(QWidget *parent)
     : QTreeView(parent)
     , mManagerKeyProxyModel(new DKIMManagerKeyProxyModel(this))
 {
-    mManagerKeyProxyModel->setObjectName(QLatin1StringView("mManagerKeyProxyModel"));
+    mManagerKeyProxyModel->setObjectName("mManagerKeyProxyModel"_L1);
     setRootIsDecorated(false);
     setAlternatingRowColors(true);
     setSelectionBehavior(QAbstractItemView::SelectRows);

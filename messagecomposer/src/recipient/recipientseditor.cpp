@@ -27,6 +27,8 @@
 #include <QKeyEvent>
 #include <QLayout>
 
+using namespace Qt::Literals::StringLiterals;
+
 using namespace MessageComposer;
 using namespace KPIM;
 
@@ -144,7 +146,7 @@ Recipient::Ptr RecipientsEditor::activeRecipient() const
 
 QString RecipientsEditor::recipientString(Recipient::Type type) const
 {
-    return recipientStringList(type).join(QLatin1StringView(", "));
+    return recipientStringList(type).join(", "_L1);
 }
 
 QStringList RecipientsEditor::recipientStringList(Recipient::Type type) const
@@ -283,7 +285,7 @@ bool RecipientsEditor::eventFilter(QObject *object, QEvent *event)
         // email address per line, which breaks our opportunistic crypto in composer
         if (ke->key() == Qt::Key_Comma) {
             auto line = qobject_cast<RecipientLineNG *>(object->parent());
-            const auto split = KEmailAddress::splitAddressList(line->rawData() + QLatin1StringView(", "));
+            const auto split = KEmailAddress::splitAddressList(line->rawData() + ", "_L1);
             if (split.size() > 1) {
                 addRecipient(QString(), line->recipientType());
                 setFocusBottom();

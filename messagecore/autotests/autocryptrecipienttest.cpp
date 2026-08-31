@@ -88,12 +88,12 @@ void AutocryptRecipientTest::test_firstAutocryptHeader()
     QCOMPARE(obj.value(u"count_no_ach"_s).toInt(), 0);
     QCOMPARE(obj.value(u"prefer_encrypt"_s).toBool(), true);
     QCOMPARE(obj.value(u"keydata"_s).toString(),
-             QStringLiteral("mDMEXEcE6RYJKwYBBAHaRw8BAQdArjWwk3FAqyiFbFBKT4TzXcVBqPTB3gmzlC/"
-                            "Ub7O1u120F2FsaWNlQGF1dG9jcnlwdC5leGFtcGxliJYEExYIAD4WIQTrhbtfozp14V6UTmPyMVUMT0fjjgUCXEcE6QIbAwUJA8JnAAULCQgHAgYVCgkICwIEFgIDAQIeA"
-                            "QIXgAAKCRDyMVUMT0fjjkqLAP9frlijwBJvA+HFnqCZcYIVxlyXzS5Gi5gMTpp37K73jgD/VbKYhkwk9iu689OYH4K7q7LbmdeaJ+RX88Y/"
-                            "ad9hZwy4OARcRwTpEgorBgEEAZdVAQUBAQdAQv8GIa2rSTzgqbXCpDDYMiKRVitCsy203x3sE9+"
-                            "eviIDAQgHiHgEGBYIACAWIQTrhbtfozp14V6UTmPyMVUMT0fjjgUCXEcE6QIbDAAKCRDyMVUMT0fjjlnQAQDFHUs6TIcxrNTtEZFjUFm1M0PJ1Dng/"
-                            "cDW4xN80fsn0QEA22Kr7VkCjeAEC08VSTeV+QFsmz55/lntWkwYWhmvOgE"));
+             u"mDMEXEcE6RYJKwYBBAHaRw8BAQdArjWwk3FAqyiFbFBKT4TzXcVBqPTB3gmzlC/"
+             "Ub7O1u120F2FsaWNlQGF1dG9jcnlwdC5leGFtcGxliJYEExYIAD4WIQTrhbtfozp14V6UTmPyMVUMT0fjjgUCXEcE6QIbAwUJA8JnAAULCQgHAgYVCgkICwIEFgIDAQIeA"
+             "QIXgAAKCRDyMVUMT0fjjkqLAP9frlijwBJvA+HFnqCZcYIVxlyXzS5Gi5gMTpp37K73jgD/VbKYhkwk9iu689OYH4K7q7LbmdeaJ+RX88Y/"
+             "ad9hZwy4OARcRwTpEgorBgEEAZdVAQUBAQdAQv8GIa2rSTzgqbXCpDDYMiKRVitCsy203x3sE9+"
+             "eviIDAQgHiHgEGBYIACAWIQTrhbtfozp14V6UTmPyMVUMT0fjjgUCXEcE6QIbDAAKCRDyMVUMT0fjjlnQAQDFHUs6TIcxrNTtEZFjUFm1M0PJ1Dng/"
+             "cDW4xN80fsn0QEA22Kr7VkCjeAEC08VSTeV+QFsmz55/lntWkwYWhmvOgE"_s);
     QCOMPARE(obj.value(u"autocrypt_timestamp"_s).toString(), u"2019-01-22T12:56:25+01:00"_s);
     QCOMPARE(obj.value(u"last_seen"_s).toString(), u"2019-01-22T12:56:25+01:00"_s);
     QCOMPARE(obj.value(u"counting_since"_s).toString(), u"2019-01-22T12:56:25+01:00"_s);
@@ -122,12 +122,12 @@ void AutocryptRecipientTest::test_fromJson()
     QCOMPARE(obj.value(u"count_no_ach"_s).toInt(), 0);
     QCOMPARE(obj.value(u"prefer_encrypt"_s).toBool(), true);
     QCOMPARE(obj.value(u"keydata"_s).toString(),
-             QStringLiteral("mDMEXEcE6RYJKwYBBAHaRw8BAQdArjWwk3FAqyiFbFBKT4TzXcVBqPTB3gmzlC/"
-                            "Ub7O1u120F2FsaWNlQGF1dG9jcnlwdC5leGFtcGxliJYEExYIAD4WIQTrhbtfozp14V6UTmPyMVUMT0fjjgUCXEcE6QIbAwUJA8JnAAULCQgHAgYVCgkICwIEFgIDAQIeA"
-                            "QIXgAAKCRDyMVUMT0fjjkqLAP9frlijwBJvA+HFnqCZcYIVxlyXzS5Gi5gMTpp37K73jgD/VbKYhkwk9iu689OYH4K7q7LbmdeaJ+RX88Y/"
-                            "ad9hZwy4OARcRwTpEgorBgEEAZdVAQUBAQdAQv8GIa2rSTzgqbXCpDDYMiKRVitCsy203x3sE9+"
-                            "eviIDAQgHiHgEGBYIACAWIQTrhbtfozp14V6UTmPyMVUMT0fjjgUCXEcE6QIbDAAKCRDyMVUMT0fjjlnQAQDFHUs6TIcxrNTtEZFjUFm1M0PJ1Dng/"
-                            "cDW4xN80fsn0QEA22Kr7VkCjeAEC08VSTeV+QFsmz55/lntWkwYWhmvOgE"));
+             u"mDMEXEcE6RYJKwYBBAHaRw8BAQdArjWwk3FAqyiFbFBKT4TzXcVBqPTB3gmzlC/"
+             "Ub7O1u120F2FsaWNlQGF1dG9jcnlwdC5leGFtcGxliJYEExYIAD4WIQTrhbtfozp14V6UTmPyMVUMT0fjjgUCXEcE6QIbAwUJA8JnAAULCQgHAgYVCgkICwIEFgIDAQIeA"
+             "QIXgAAKCRDyMVUMT0fjjkqLAP9frlijwBJvA+HFnqCZcYIVxlyXzS5Gi5gMTpp37K73jgD/VbKYhkwk9iu689OYH4K7q7LbmdeaJ+RX88Y/"
+             "ad9hZwy4OARcRwTpEgorBgEEAZdVAQUBAQdAQv8GIa2rSTzgqbXCpDDYMiKRVitCsy203x3sE9+"
+             "eviIDAQgHiHgEGBYIACAWIQTrhbtfozp14V6UTmPyMVUMT0fjjgUCXEcE6QIbDAAKCRDyMVUMT0fjjlnQAQDFHUs6TIcxrNTtEZFjUFm1M0PJ1Dng/"
+             "cDW4xN80fsn0QEA22Kr7VkCjeAEC08VSTeV+QFsmz55/lntWkwYWhmvOgE"_s);
     QCOMPARE(obj.value(u"autocrypt_timestamp"_s).toString(), u"2019-01-22T12:56:25+01:00"_s);
     QCOMPARE(obj.value(u"last_seen"_s).toString(), u"2019-01-22T12:56:25+01:00"_s);
     QCOMPARE(obj.value(u"counting_since"_s).toString(), u"2019-01-22T12:56:25+01:00"_s);
@@ -215,12 +215,12 @@ void AutocryptRecipientTest::test_initiateWithNoAutocryptHeader()
         QCOMPARE(obj.value(u"count_no_ach"_s).toInt(), 1);
         QCOMPARE(obj.value(u"prefer_encrypt"_s).toBool(), true);
         QCOMPARE(obj.value(u"keydata"_s).toString(),
-                 QStringLiteral("mDMEXEcE6RYJKwYBBAHaRw8BAQdArjWwk3FAqyiFbFBKT4TzXcVBqPTB3gmzlC/"
-                                "Ub7O1u120F2FsaWNlQGF1dG9jcnlwdC5leGFtcGxliJYEExYIAD4WIQTrhbtfozp14V6UTmPyMVUMT0fjjgUCXEcE6QIbAwUJA8JnAAULCQgHAgYVCgkICwIEFgIDA"
-                                "QIeAQIXgAAKCRDyMVUMT0fjjkqLAP9frlijwBJvA+HFnqCZcYIVxlyXzS5Gi5gMTpp37K73jgD/VbKYhkwk9iu689OYH4K7q7LbmdeaJ+RX88Y/"
-                                "ad9hZwy4OARcRwTpEgorBgEEAZdVAQUBAQdAQv8GIa2rSTzgqbXCpDDYMiKRVitCsy203x3sE9+"
-                                "eviIDAQgHiHgEGBYIACAWIQTrhbtfozp14V6UTmPyMVUMT0fjjgUCXEcE6QIbDAAKCRDyMVUMT0fjjlnQAQDFHUs6TIcxrNTtEZFjUFm1M0PJ1Dng/"
-                                "cDW4xN80fsn0QEA22Kr7VkCjeAEC08VSTeV+QFsmz55/lntWkwYWhmvOgE"));
+                 u"mDMEXEcE6RYJKwYBBAHaRw8BAQdArjWwk3FAqyiFbFBKT4TzXcVBqPTB3gmzlC/"
+                 "Ub7O1u120F2FsaWNlQGF1dG9jcnlwdC5leGFtcGxliJYEExYIAD4WIQTrhbtfozp14V6UTmPyMVUMT0fjjgUCXEcE6QIbAwUJA8JnAAULCQgHAgYVCgkICwIEFgIDA"
+                 "QIeAQIXgAAKCRDyMVUMT0fjjkqLAP9frlijwBJvA+HFnqCZcYIVxlyXzS5Gi5gMTpp37K73jgD/VbKYhkwk9iu689OYH4K7q7LbmdeaJ+RX88Y/"
+                 "ad9hZwy4OARcRwTpEgorBgEEAZdVAQUBAQdAQv8GIa2rSTzgqbXCpDDYMiKRVitCsy203x3sE9+"
+                 "eviIDAQgHiHgEGBYIACAWIQTrhbtfozp14V6UTmPyMVUMT0fjjgUCXEcE6QIbDAAKCRDyMVUMT0fjjlnQAQDFHUs6TIcxrNTtEZFjUFm1M0PJ1Dng/"
+                 "cDW4xN80fsn0QEA22Kr7VkCjeAEC08VSTeV+QFsmz55/lntWkwYWhmvOgE"_s);
         QCOMPARE(obj.value(u"autocrypt_timestamp"_s).toString(), u"2019-01-22T12:56:25+01:00"_s);
         QCOMPARE(obj.value(u"counting_since"_s).toString(), u"2011-05-26T01:16:54+01:00"_s);
         QCOMPARE(obj.value(u"last_seen"_s).toString(), u"2019-01-22T12:56:25+01:00"_s);
@@ -401,12 +401,12 @@ void AutocryptRecipientTest::test_setGossipHeader()
 
     QCOMPARE(obj.value(u"gossip_timestamp"_s).toString(), u"2019-01-22T12:56:29+01:00"_s);
     QCOMPARE(obj.value(u"gossip_key"_s).toString(),
-             QStringLiteral("mDMEXEcE6RYJKwYBBAHaRw8BAQdAPPy13Q7Y8w2VPRkksrijrn9o8u59ra1c2CJiHFpbM2G0FWJvYkBhdXRvY3J5cHQuZXhhbXBsZYiWBBMWCAA+"
-                            "FiEE8FQeqC0xAKoa3zse4w5v3UWQH4IFAlxHBOkCGwMFCQPCZwAFCwkIBwIGFQoJCAsCBBYCAwECHgECF4AACgkQ4w5v3UWQH4IfwAEA3lujohz3Nj9afUnaGUXN7YboIz"
-                            "QsmpgGkN8thyb/slIBAKwdJyg1SurKqHnxy3Wl/DBzOrR12/"
-                            "pN7nScn0+"
-                            "x4sgBuDgEXEcE6RIKKwYBBAGXVQEFAQEHQJSU7QErtJOYXsIagw2qwnVbt31ooVEx8Xcb476NCbFjAwEIB4h4BBgWCAAgFiEE8FQeqC0xAKoa3zse4w5v3UWQH4IFAlxHB"
-                            "OkCGwwACgkQ4w5v3UWQH4LlHQEAlwUBfUU8ORC0RAS/dzlZSEm7+ImY12Wv8QGUCx5zPbUA/3YH84ZOAQDbmV/C+R//0WVNbGfav9X5KYmiratYR7oL"));
+             u"mDMEXEcE6RYJKwYBBAHaRw8BAQdAPPy13Q7Y8w2VPRkksrijrn9o8u59ra1c2CJiHFpbM2G0FWJvYkBhdXRvY3J5cHQuZXhhbXBsZYiWBBMWCAA+"
+             "FiEE8FQeqC0xAKoa3zse4w5v3UWQH4IFAlxHBOkCGwMFCQPCZwAFCwkIBwIGFQoJCAsCBBYCAwECHgECF4AACgkQ4w5v3UWQH4IfwAEA3lujohz3Nj9afUnaGUXN7YboIz"
+             "QsmpgGkN8thyb/slIBAKwdJyg1SurKqHnxy3Wl/DBzOrR12/"
+             "pN7nScn0+"
+             "x4sgBuDgEXEcE6RIKKwYBBAGXVQEFAQEHQJSU7QErtJOYXsIagw2qwnVbt31ooVEx8Xcb476NCbFjAwEIB4h4BBgWCAAgFiEE8FQeqC0xAKoa3zse4w5v3UWQH4IFAlxHB"
+             "OkCGwwACgkQ4w5v3UWQH4LlHQEAlwUBfUU8ORC0RAS/dzlZSEm7+ImY12Wv8QGUCx5zPbUA/3YH84ZOAQDbmV/C+R//0WVNbGfav9X5KYmiratYR7oL"_s);
 }
 
 void AutocryptRecipientTest::test_gossipUpdateLogic()

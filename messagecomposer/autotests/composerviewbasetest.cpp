@@ -143,7 +143,7 @@ void ComposerViewBaseTest::testAutoSaveMessage()
         }
     }
 
-    const QString autosavePath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1StringView("/kmail2/autosave/");
+    const QString autosavePath = QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + "/kmail2/autosave/"_L1;
     auto msg = Test::loadMessage(autosavePath + fileName);
     msg->messageID()->from7BitString("<test@autotest.example>");
     msg->date()->from7BitString("Tue, 22 Jan 2019 12:56:25 +0100");

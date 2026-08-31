@@ -8,6 +8,8 @@
 #include "trackingdetailsdialog.h"
 #include <KLocalizedString>
 
+using namespace Qt::Literals::StringLiterals;
+
 using namespace WebEngineViewer;
 TrackingWarningWidget::TrackingWarningWidget(QWidget *parent)
     : KMessageWidget(parent)
@@ -26,7 +28,7 @@ TrackingWarningWidget::~TrackingWarningWidget() = default;
 
 void TrackingWarningWidget::slotShowDetails(const QString &content)
 {
-    if (content == QLatin1StringView("mailtrackingdetails")) {
+    if (content == "mailtrackingdetails"_L1) {
         if (!mMailTrackingDetailDialog) {
             mMailTrackingDetailDialog = new WebEngineViewer::TrackingDetailsDialog;
         }
@@ -37,13 +39,12 @@ void TrackingWarningWidget::slotShowDetails(const QString &content)
 
 QString TrackingWarningWidget::generateDetails() const
 {
-    QString details = QLatin1StringView("<b>") + i18n("Details:") + QLatin1StringView("</b><ul>");
+    QString details = "<b>"_L1 + i18n("Details:") + "</b><ul>"_L1;
 
     for (const auto &[key, value] : mBackLists.asKeyValueRange()) {
-        details +=
-            QLatin1StringView("<li>") + i18np("1 tracker from the company %2 (%3)", "%1 trackers from the company %2 (%3)", value.number, key, value.url);
+        details += "<li>"_L1 + i18np("1 tracker from the company %2 (%3)", "%1 trackers from the company %2 (%3)", value.number, key, value.url);
     }
-    details += QLatin1StringView("</ul>");
+    details += "</ul>"_L1;
     return details;
 }
 

@@ -9,6 +9,8 @@
 
 #include <QDnsLookup>
 
+using namespace Qt::Literals::StringLiterals;
+
 using namespace MessageViewer;
 // see https://tools.ietf.org/html/rfc7489
 DMARCRecordJob::DMARCRecordJob(QObject *parent)
@@ -36,7 +38,7 @@ bool DMARCRecordJob::start()
 
 QString DMARCRecordJob::resolvDnsValue() const
 {
-    const QString name = QLatin1StringView("_dmarc.") + mDomainName;
+    const QString name = "_dmarc."_L1 + mDomainName;
     qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "DMARCRecordJob::resolvDnsValue" << name;
     return name;
 }

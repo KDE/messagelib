@@ -241,7 +241,7 @@ QString MessageComposer::Util::cleanedUpHeaderString(const QString &s)
     // remove invalid characters from the header strings
     QString res(s);
     res.remove(u'\r');
-    res.replace(QLatin1Char('\n'), u' ');
+    res.replace(u'\n', u' ');
     return res.trimmed();
 }
 
@@ -343,9 +343,9 @@ void MessageComposer::Util::addLinkInformation(const std::shared_ptr<KMime::Mess
 
     message += QString::number(id);
     if (status.isReplied()) {
-        type += QLatin1StringView("reply");
+        type += "reply"_L1;
     } else if (status.isForwarded()) {
-        type += QLatin1StringView("forward");
+        type += "forward"_L1;
     }
 
     auto header = std::make_unique<KMime::Headers::Generic>("X-KMail-Link-Message");
@@ -377,9 +377,9 @@ bool MessageComposer::Util::getLinkInformation(const std::shared_ptr<KMime::Mess
     }
 
     for (const QString &typeStr : types) {
-        if (typeStr == QLatin1StringView("reply")) {
+        if (typeStr == "reply"_L1) {
             status << Akonadi::MessageStatus::statusReplied();
-        } else if (typeStr == QLatin1StringView("forward")) {
+        } else if (typeStr == "forward"_L1) {
             status << Akonadi::MessageStatus::statusForwarded();
         }
     }
@@ -409,8 +409,7 @@ bool MessageComposer::Util::hasMissingAttachments(const QStringList &attachmentK
     }
     QStringList attachWordsList = attachmentKeywords;
 
-    QRegularExpression rx(QLatin1StringView("\\b") + attachWordsList.join(QLatin1StringView("\\b|\\b")) + QLatin1StringView("\\b"),
-                          QRegularExpression::CaseInsensitiveOption);
+    QRegularExpression rx("\\b"_L1 + attachWordsList.join("\\b|\\b"_L1) + "\\b"_L1, QRegularExpression::CaseInsensitiveOption);
 
     // check whether the subject contains one of the attachment key words
     // unless the message is a reply or a forwarded message

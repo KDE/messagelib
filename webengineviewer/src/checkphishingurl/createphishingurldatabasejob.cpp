@@ -180,13 +180,13 @@ RiceDeltaEncoding CreatePhishingUrlDataBaseJobPrivate::parseRiceDeltaEncoding(co
     const QMap<QString, QVariant>::const_iterator riceHashesItEnd = map.cend();
     for (; riceHashesIt != riceHashesItEnd; ++riceHashesIt) {
         const QString key = riceHashesIt.key();
-        if (key == QLatin1StringView("firstValue")) {
+        if (key == "firstValue"_L1) {
             riceDeltaEncodingTmp.firstValue = riceHashesIt.value().toByteArray();
-        } else if (key == QLatin1StringView("riceParameter")) {
+        } else if (key == "riceParameter"_L1) {
             riceDeltaEncodingTmp.riceParameter = riceHashesIt.value().toInt();
-        } else if (key == QLatin1StringView("numEntries")) {
+        } else if (key == "numEntries"_L1) {
             riceDeltaEncodingTmp.numberEntries = riceHashesIt.value().toInt();
-        } else if (key == QLatin1StringView("encodedData")) {
+        } else if (key == "encodedData"_L1) {
             riceDeltaEncodingTmp.encodingData = riceHashesIt.value().toByteArray();
         } else {
             qCDebug(WEBENGINEVIEWER_LOG) << " CreatePhishingUrlDataBaseJob::parseRiceDeltaEncoding unknown riceDeltaEncoding key " << key;
@@ -205,21 +205,21 @@ QList<Addition> CreatePhishingUrlDataBaseJobPrivate::parseAdditions(const QVaria
             while (mapIt.hasNext()) {
                 mapIt.next();
                 const QString keyStr = mapIt.key();
-                if (keyStr == QLatin1StringView("compressionType")) {
+                if (keyStr == "compressionType"_L1) {
                     tmp.compressionType = parseCompressionType(mapIt.value().toString());
-                } else if (keyStr == QLatin1StringView("riceHashes")) {
+                } else if (keyStr == "riceHashes"_L1) {
                     RiceDeltaEncoding riceDeltaEncodingTmp = parseRiceDeltaEncoding(mapIt.value().toMap());
                     if (riceDeltaEncodingTmp.isValid()) {
                         tmp.riceDeltaEncoding = riceDeltaEncodingTmp;
                     }
-                } else if (keyStr == QLatin1StringView("rawHashes")) {
+                } else if (keyStr == "rawHashes"_L1) {
                     QMapIterator<QString, QVariant> rawHashesIt(mapIt.value().toMap());
                     while (rawHashesIt.hasNext()) {
                         rawHashesIt.next();
                         const QString key = rawHashesIt.key();
-                        if (key == QLatin1StringView("rawHashes")) {
+                        if (key == "rawHashes"_L1) {
                             tmp.hashString = QByteArray::fromBase64(rawHashesIt.value().toByteArray());
-                        } else if (key == QLatin1StringView("prefixSize")) {
+                        } else if (key == "prefixSize"_L1) {
                             tmp.prefixSize = rawHashesIt.value().toInt();
                         } else {
                             qCDebug(WEBENGINEVIEWER_LOG) << " CreatePhishingUrlDataBaseJob::parseAdditions unknown rawHashes key " << key;
@@ -242,11 +242,11 @@ QList<Addition> CreatePhishingUrlDataBaseJobPrivate::parseAdditions(const QVaria
 UpdateDataBaseInfo::CompressionType CreatePhishingUrlDataBaseJobPrivate::parseCompressionType(const QString &str)
 {
     UpdateDataBaseInfo::CompressionType type(UpdateDataBaseInfo::UnknownCompression);
-    if (str == QLatin1StringView("COMPRESSION_TYPE_UNSPECIFIED")) {
+    if (str == "COMPRESSION_TYPE_UNSPECIFIED"_L1) {
         type = UpdateDataBaseInfo::UnknownCompression;
-    } else if (str == QLatin1StringView("RICE")) {
+    } else if (str == "RICE"_L1) {
         type = UpdateDataBaseInfo::RiceCompression;
-    } else if (str == QLatin1StringView("RAW")) {
+    } else if (str == "RAW"_L1) {
         type = UpdateDataBaseInfo::RawCompression;
     } else {
         qCWarning(WEBENGINEVIEWER_LOG) << "CreatePhishingUrlDataBaseJob::parseCompressionType unknown compression type " << str;
@@ -264,19 +264,19 @@ QList<Removal> CreatePhishingUrlDataBaseJobPrivate::parseRemovals(const QVariant
             while (mapIt.hasNext()) {
                 mapIt.next();
                 const QString keyStr = mapIt.key();
-                if (keyStr == QLatin1StringView("compressionType")) {
+                if (keyStr == "compressionType"_L1) {
                     tmp.compressionType = parseCompressionType(mapIt.value().toString());
-                } else if (keyStr == QLatin1StringView("riceIndices")) {
+                } else if (keyStr == "riceIndices"_L1) {
                     RiceDeltaEncoding riceDeltaEncodingTmp = parseRiceDeltaEncoding(mapIt.value().toMap());
                     if (riceDeltaEncodingTmp.isValid()) {
                         tmp.riceDeltaEncoding = riceDeltaEncodingTmp;
                     }
-                } else if (keyStr == QLatin1StringView("rawIndices")) {
+                } else if (keyStr == "rawIndices"_L1) {
                     const QVariantMap map = mapIt.value().toMap();
                     QMapIterator<QString, QVariant> rawIndicesIt(map);
                     while (rawIndicesIt.hasNext()) {
                         rawIndicesIt.next();
-                        if (rawIndicesIt.key() == QLatin1StringView("indices")) {
+                        if (rawIndicesIt.key() == "indices"_L1) {
                             const QVariantList rawList = rawIndicesIt.value().toList();
                             QList<quint32> indexList;
                             indexList.reserve(rawList.count());
@@ -316,7 +316,7 @@ void CreatePhishingUrlDataBaseJob::parseResult(const QByteArray &value)
             QMapIterator<QString, QVariant> i(answer);
             while (i.hasNext()) {
                 i.next();
-                if (i.key() == QLatin1StringView("listUpdateResponses")) {
+                if (i.key() == "listUpdateResponses"_L1) {
                     const QVariantList info = i.value().toList();
                     if (info.count() == 1) {
                         const QVariant infoVar = info.at(0);
@@ -325,45 +325,45 @@ void CreatePhishingUrlDataBaseJob::parseResult(const QByteArray &value)
                             while (mapIt.hasNext()) {
                                 mapIt.next();
                                 const QString mapKey = mapIt.key();
-                                if (mapKey == QLatin1StringView("additions")) {
+                                if (mapKey == "additions"_L1) {
                                     const QVariantList lst = mapIt.value().toList();
                                     const QList<Addition> addList = d->parseAdditions(lst);
                                     if (!addList.isEmpty()) {
                                         databaseInfo.additionList.append(addList);
                                     }
-                                } else if (mapKey == QLatin1StringView("removals")) {
+                                } else if (mapKey == "removals"_L1) {
                                     const QVariantList lst = mapIt.value().toList();
                                     const QList<Removal> removeList = d->parseRemovals(lst);
                                     if (!removeList.isEmpty()) {
                                         databaseInfo.removalList.append(removeList);
                                     }
-                                } else if (mapKey == QLatin1StringView("checksum")) {
+                                } else if (mapKey == "checksum"_L1) {
                                     QMapIterator<QString, QVariant> mapCheckSum(mapIt.value().toMap());
                                     while (mapCheckSum.hasNext()) {
                                         mapCheckSum.next();
-                                        if (mapCheckSum.key() == QLatin1StringView("sha256")) {
+                                        if (mapCheckSum.key() == "sha256"_L1) {
                                             databaseInfo.sha256 = mapCheckSum.value().toByteArray();
                                         } else {
                                             qCDebug(WEBENGINEVIEWER_LOG) << "Invalid checksum key" << mapCheckSum.key();
                                         }
                                     }
-                                } else if (mapKey == QLatin1StringView("newClientState")) {
+                                } else if (mapKey == "newClientState"_L1) {
                                     databaseInfo.newClientState = mapIt.value().toString();
-                                } else if (mapKey == QLatin1StringView("platformType")) {
+                                } else if (mapKey == "platformType"_L1) {
                                     databaseInfo.platformType = mapIt.value().toString();
-                                } else if (mapKey == QLatin1StringView("responseType")) {
+                                } else if (mapKey == "responseType"_L1) {
                                     const QString str = mapIt.value().toString();
-                                    if (str == QLatin1StringView("FULL_UPDATE")) {
+                                    if (str == "FULL_UPDATE"_L1) {
                                         databaseInfo.responseType = UpdateDataBaseInfo::FullUpdate;
-                                    } else if (str == QLatin1StringView("PARTIAL_UPDATE")) {
+                                    } else if (str == "PARTIAL_UPDATE"_L1) {
                                         databaseInfo.responseType = UpdateDataBaseInfo::PartialUpdate;
                                     } else {
                                         qCDebug(WEBENGINEVIEWER_LOG) << " unknown responsetype " << str;
                                         databaseInfo.responseType = UpdateDataBaseInfo::Unknown;
                                     }
-                                } else if (mapKey == QLatin1StringView("threatEntryType")) {
+                                } else if (mapKey == "threatEntryType"_L1) {
                                     databaseInfo.threatEntryType = mapIt.value().toString();
-                                } else if (mapKey == QLatin1StringView("threatType")) {
+                                } else if (mapKey == "threatType"_L1) {
                                     databaseInfo.threatType = mapIt.value().toString();
                                 } else {
                                     qCDebug(WEBENGINEVIEWER_LOG) << " unknown key " << mapKey;
@@ -371,7 +371,7 @@ void CreatePhishingUrlDataBaseJob::parseResult(const QByteArray &value)
                             }
                         }
                     }
-                } else if (i.key() == QLatin1StringView("minimumWaitDuration")) {
+                } else if (i.key() == "minimumWaitDuration"_L1) {
                     databaseInfo.minimumWaitDuration = i.value().toString();
                 } else {
                     qCDebug(WEBENGINEVIEWER_LOG) << " map key unknown " << i.key();

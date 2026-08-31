@@ -26,7 +26,7 @@ DraftEncryptionState::DraftEncryptionState(const std::shared_ptr<KMime::Message>
 void DraftEncryptionState::setState(bool encrypt)
 {
     auto hdr = std::make_unique<KMime::Headers::Generic>("X-KMail-EncryptActionEnabled");
-    hdr->fromUnicodeString(encrypt ? u"true"_s : QStringLiteral("false"));
+    hdr->fromUnicodeString(encrypt ? u"true"_s : u"false"_s);
     mMsg->setHeader(std::move(hdr));
 }
 
@@ -58,7 +58,7 @@ DraftSignatureState::DraftSignatureState(const std::shared_ptr<KMime::Message> &
 void DraftSignatureState::setState(bool sign)
 {
     auto hdr = std::make_unique<KMime::Headers::Generic>("X-KMail-SignatureActionEnabled");
-    hdr->fromUnicodeString(sign ? u"true"_s : QStringLiteral("false"));
+    hdr->fromUnicodeString(sign ? u"true"_s : u"false"_s);
     mMsg->setHeader(std::move(hdr));
 }
 

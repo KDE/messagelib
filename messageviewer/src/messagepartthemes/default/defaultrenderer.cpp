@@ -263,7 +263,7 @@ void DefaultRendererPrivate::renderSigned(const SignedMessagePart::Ptr &mp, Html
 
             keyWithWithoutURL = u"%1%2</a>"_s.arg(startKeyHREF, QString::fromLatin1(QByteArray(QByteArrayLiteral("0x") + metaData.keyId)));
         } else {
-            keyWithWithoutURL = QLatin1StringView("0x") + QString::fromUtf8(metaData.keyId);
+            keyWithWithoutURL = "0x"_L1 + QString::fromUtf8(metaData.keyId);
         }
         block.setProperty("keyWithWithoutURL", keyWithWithoutURL);
     }
@@ -434,42 +434,42 @@ void DefaultRendererPrivate::renderFactory(const MessagePart::Ptr &msgPart, Html
         return;
     }
 
-    if (className == QLatin1StringView("MimeTreeParser::MessagePartList")) {
+    if (className == "MimeTreeParser::MessagePartList"_L1) {
         auto mp = msgPart.dynamicCast<MessagePartList>();
         if (mp) {
             render(mp, htmlWriter);
         }
-    } else if (className == QLatin1StringView("MimeTreeParser::MimeMessagePart")) {
+    } else if (className == "MimeTreeParser::MimeMessagePart"_L1) {
         auto mp = msgPart.dynamicCast<MimeMessagePart>();
         if (mp) {
             render(mp, htmlWriter);
         }
-    } else if (className == QLatin1StringView("MimeTreeParser::EncapsulatedRfc822MessagePart")) {
+    } else if (className == "MimeTreeParser::EncapsulatedRfc822MessagePart"_L1) {
         auto mp = msgPart.dynamicCast<EncapsulatedRfc822MessagePart>();
         if (mp) {
             render(mp, htmlWriter);
         }
-    } else if (className == QLatin1StringView("MimeTreeParser::HtmlMessagePart")) {
+    } else if (className == "MimeTreeParser::HtmlMessagePart"_L1) {
         auto mp = msgPart.dynamicCast<HtmlMessagePart>();
         if (mp) {
             render(mp, htmlWriter);
         }
-    } else if (className == QLatin1StringView("MimeTreeParser::SignedMessagePart")) {
+    } else if (className == "MimeTreeParser::SignedMessagePart"_L1) {
         auto mp = msgPart.dynamicCast<SignedMessagePart>();
         if (mp) {
             render(mp, htmlWriter);
         }
-    } else if (className == QLatin1StringView("MimeTreeParser::EncryptedMessagePart")) {
+    } else if (className == "MimeTreeParser::EncryptedMessagePart"_L1) {
         auto mp = msgPart.dynamicCast<EncryptedMessagePart>();
         if (mp) {
             render(mp, htmlWriter);
         }
-    } else if (className == QLatin1StringView("MimeTreeParser::AlternativeMessagePart")) {
+    } else if (className == "MimeTreeParser::AlternativeMessagePart"_L1) {
         auto mp = msgPart.dynamicCast<AlternativeMessagePart>();
         if (mp) {
             render(mp, htmlWriter);
         }
-    } else if (className == QLatin1StringView("MimeTreeParser::CertMessagePart")) {
+    } else if (className == "MimeTreeParser::CertMessagePart"_L1) {
         auto mp = msgPart.dynamicCast<CertMessagePart>();
         if (mp) {
             render(mp, htmlWriter);

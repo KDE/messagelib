@@ -10,6 +10,8 @@
 #include <MessageViewer/URLHandler>
 #include <QHash>
 
+using namespace Qt::Literals::StringLiterals;
+
 namespace KMime
 {
 class Content;
@@ -54,7 +56,7 @@ public:
     [[nodiscard]] bool handleClick(const QUrl &, ViewerPrivate *) const override;
     [[nodiscard]] bool handleContextMenuRequest(const QUrl &url, const QPoint &, ViewerPrivate *) const override
     {
-        return url.scheme() == QLatin1StringView("kmail");
+        return url.scheme() == "kmail"_L1;
     }
 
     [[nodiscard]] QString statusBarMessage(const QUrl &, ViewerPrivate *) const override;

@@ -8,6 +8,8 @@
 #include "messageviewer_dkimcheckerdebug.h"
 
 #include <QDnsLookup>
+
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 DKIMDownloadKeyJob::DKIMDownloadKeyJob(QObject *parent)
     : QObject(parent)
@@ -59,7 +61,7 @@ void DKIMDownloadKeyJob::setSelectorName(const QString &selectorName)
 
 QString DKIMDownloadKeyJob::resolvDnsValue() const
 {
-    const QString name = mSelectorName + QLatin1StringView("._domainkey.") + mDomainName;
+    const QString name = mSelectorName + "._domainkey."_L1 + mDomainName;
     qDebug(MESSAGEVIEWER_DKIMCHECKER_LOG) << "DKIMDownloadKeyJob::resolvDnsValue" << name;
     return name;
 }

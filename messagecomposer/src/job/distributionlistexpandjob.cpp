@@ -12,6 +12,8 @@
 #include <Akonadi/ContactGroupExpandJob>
 #include <Akonadi/ContactGroupSearchJob>
 
+using namespace Qt::Literals::StringLiterals;
+
 using namespace MessageComposer;
 
 DistributionListExpandJob::DistributionListExpandJob(const QString &name, QObject *parent)
@@ -31,7 +33,7 @@ void DistributionListExpandJob::start()
 
 QString DistributionListExpandJob::addresses() const
 {
-    return mEmailAddresses.join(QLatin1StringView(", "));
+    return mEmailAddresses.join(", "_L1);
 }
 
 bool DistributionListExpandJob::isEmpty() const

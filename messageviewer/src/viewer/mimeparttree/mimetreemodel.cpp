@@ -98,14 +98,14 @@ public:
             auto iconName = MimeTreeParser::Util::iconNameForMimetype(QLatin1StringView(ct->mimeType()));
 
             auto mimeType = m_mimeDb.mimeTypeForName(QString::fromLatin1(ct->mimeType()));
-            if (!mimeType.isValid() || mimeType.name() == QLatin1StringView("application/octet-stream")) {
+            if (!mimeType.isValid() || mimeType.name() == "application/octet-stream"_L1) {
                 const QString name = descriptionForContent(content);
                 mimeType = MimeTreeParser::Util::mimetype(name);
             }
 
-            if (mimeType.isValid() && mimeType.name().startsWith(QLatin1StringView("multipart/"))) {
+            if (mimeType.isValid() && mimeType.name().startsWith("multipart/"_L1)) {
                 return QIcon::fromTheme(u"folder"_s);
-            } else if (!iconName.isEmpty() && iconName != QLatin1StringView("unknown")) {
+            } else if (!iconName.isEmpty() && iconName != "unknown"_L1) {
                 return QIcon::fromTheme(iconName);
             } else if (mimeType.isValid() && !mimeType.iconName().isEmpty()) {
                 return QIcon::fromTheme(mimeType.iconName());
@@ -296,7 +296,7 @@ QMimeData *MimeTreeModel::mimeData(const QModelIndexList &indexes) const
         auto tempDir = new QTemporaryDir; // Will remove the directory on destruction.
         d->tempDirs.append(tempDir);
         const QString safeName = QFileInfo(d->descriptionForContent(content)).fileName();
-        const QString fileName = tempDir->path() + u'/' + (safeName.isEmpty() ? QStringLiteral("attachment") : safeName);
+        const QString fileName = tempDir->path() + u'/' + (safeName.isEmpty() ? u"attachment"_s : safeName);
         QFile f(fileName);
         if (!f.open(QIODevice::WriteOnly)) {
             qCWarning(MESSAGEVIEWER_LOG) << "Cannot write attachment:" << f.errorString();

@@ -197,12 +197,12 @@ void MainTextJobTest::testHtmlWithImages()
 
     QImage image1(16, 16, QImage::Format_ARGB32_Premultiplied);
     image1.fill(Qt::red);
-    const QString image1Path = QCoreApplication::applicationDirPath() + QLatin1StringView("/image1.png");
+    const QString image1Path = QCoreApplication::applicationDirPath() + "/image1.png"_L1;
     image1.save(image1Path);
 
     QImage image2(16, 16, QImage::Format_ARGB32_Premultiplied);
     image2.fill(Qt::blue);
-    const QString image2Path = QCoreApplication::applicationDirPath() + QLatin1StringView("/image2.png");
+    const QString image2Path = QCoreApplication::applicationDirPath() + "/image2.png"_L1;
     image2.save(image2Path);
 
     const QString data = u"dust in the wind"_s;

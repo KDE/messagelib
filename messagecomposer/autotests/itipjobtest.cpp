@@ -33,7 +33,8 @@ ItipJobTest::ItipJobTest(QObject *parent)
     QStandardPaths::setTestModeEnabled(true);
 }
 
-static QString testItip = QStringLiteral(R"(
+static QString testItip =
+    uR"(
 BEGIN:VCALENDAR
 CALSCALE:GREGORIAN
 METHOD:REQUEST
@@ -47,7 +48,7 @@ SUMMARY:Krypto Party
 DTSTART;VALUE=DATE:20230520
 DTEND;VALUE=DATE:20230520
 END:VEVENT
-END:VCALENDAR)");
+END:VCALENDAR)"_s;
 
 static QString testItipMessage = u"Hi all, let's do some crypto partying!"_s;
 

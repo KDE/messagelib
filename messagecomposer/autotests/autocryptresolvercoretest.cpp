@@ -56,7 +56,7 @@ void AutocryptKeyResolverCoreTest::cleanup()
 
 void AutocryptKeyResolverCoreTest::testAutocryptKeyResolver()
 {
-    QStringList recipients = {u"recipient@autocrypt.example"_s, QStringLiteral("recipient2@autocrypt.example")};
+    QStringList recipients = {u"recipient@autocrypt.example"_s, u"recipient2@autocrypt.example"_s};
 
     QFile file1(QLatin1StringView(MAIL_DATA_DIR) + u"/autocrypt/recipient%40autocrypt.example.json"_s);
     QVERIFY(file1.copy(autocryptDir.filePath(u"recipient%40autocrypt.example.json"_s)));
@@ -81,7 +81,7 @@ void AutocryptKeyResolverCoreTest::testAutocryptKeyResolver()
 
 void AutocryptKeyResolverCoreTest::testAutocryptKeyResolverSkipSender()
 {
-    QStringList recipients = {u"recipient@autocrypt.example"_s, QStringLiteral("recipient2@autocrypt.example")};
+    QStringList recipients = {u"recipient@autocrypt.example"_s, u"recipient2@autocrypt.example"_s};
 
     QFile file1(QLatin1StringView(MAIL_DATA_DIR) + u"/autocrypt/recipient%40autocrypt.example.json"_s);
     QVERIFY(file1.copy(autocryptDir.filePath(u"recipient%40autocrypt.example.json"_s)));
@@ -135,7 +135,7 @@ void AutocryptKeyResolverCoreTest::testAutocryptKeyResolverUnresolved()
 
 void AutocryptKeyResolverCoreTest::testAutocryptKeyResolverPreferNormal()
 {
-    QStringList recipients = {u"recipient@autocrypt.example"_s, QStringLiteral("test@kolab.org")};
+    QStringList recipients = {u"recipient@autocrypt.example"_s, u"test@kolab.org"_s};
     auto key = mKeyCache->findBestByMailBox("test@kolab.org", GpgME::OpenPGP, Kleo::KeyCache::KeyUsage::Encrypt);
 
     QFile file1(QLatin1StringView(MAIL_DATA_DIR) + u"/autocrypt/recipient%40autocrypt.example.json"_s);

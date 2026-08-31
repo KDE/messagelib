@@ -36,7 +36,7 @@ FindBarBase::FindBarBase(QWidget *parent)
 
     auto closeBtn = new QToolButton(this);
     closeBtn->setIcon(QIcon::fromTheme(u"dialog-close"_s));
-    closeBtn->setObjectName(QLatin1StringView("close"));
+    closeBtn->setObjectName("close"_L1);
     closeBtn->setIconSize(QSize(16, 16));
     closeBtn->setToolTip(i18nc("@info:tooltip", "Close"));
 
@@ -51,7 +51,7 @@ FindBarBase::FindBarBase(QWidget *parent)
     lay->addWidget(label);
 
     mSearch = new PimCommon::LineEditWithCompleterNg(this);
-    mSearch->setObjectName(QLatin1StringView("searchline"));
+    mSearch->setObjectName("searchline"_L1);
     mSearch->setToolTip(i18nc("@info:tooltip", "Text to search for"));
     mSearch->setClearButtonEnabled(true);
     label->setBuddy(mSearch);
@@ -59,13 +59,13 @@ FindBarBase::FindBarBase(QWidget *parent)
 
     mFindNextBtn = new QPushButton(QIcon::fromTheme(u"go-down-search"_s), i18nc("Find and go to the next search match", "Next"), this);
     mFindNextBtn->setToolTip(i18nc("@info:tooltip", "Jump to next match"));
-    mFindNextBtn->setObjectName(QLatin1StringView("findnext"));
+    mFindNextBtn->setObjectName("findnext"_L1);
     lay->addWidget(mFindNextBtn);
     mFindNextBtn->setEnabled(false);
 
     mFindPrevBtn = new QPushButton(QIcon::fromTheme(u"go-up-search"_s), i18nc("Find and go to the previous search match", "Previous"), this);
     mFindPrevBtn->setToolTip(i18nc("@info:tooltip", "Jump to previous match"));
-    mFindPrevBtn->setObjectName(QLatin1StringView("findprevious"));
+    mFindPrevBtn->setObjectName("findprevious"_L1);
     lay->addWidget(mFindPrevBtn);
     mFindPrevBtn->setEnabled(false);
 
@@ -87,7 +87,7 @@ FindBarBase::FindBarBase(QWidget *parent)
     connect(mSearch, &QLineEdit::returnPressed, this, &FindBarBase::findNext);
 
     mStatus = new QLabel(this);
-    mStatus->setObjectName(QLatin1StringView("status"));
+    mStatus->setObjectName("status"_L1);
     mStatus->setTextFormat(Qt::PlainText);
     QFontMetrics fm(mStatus->font());
     mNotFoundString = i18n("Phrase not found");

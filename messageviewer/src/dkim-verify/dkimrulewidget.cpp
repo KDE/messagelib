@@ -26,36 +26,36 @@ DKIMRuleWidget::DKIMRuleWidget(QWidget *parent)
     , mRuleType(new DKIMManageRulesComboBox(this))
 {
     auto layout = new QFormLayout(this);
-    layout->setObjectName(QLatin1StringView("layout"));
+    layout->setObjectName("layout"_L1);
     layout->setContentsMargins({});
 
-    mEnabled->setObjectName(QLatin1StringView("enabled"));
+    mEnabled->setObjectName("enabled"_L1);
     mEnabled->setChecked(true);
     layout->addWidget(mEnabled);
 
-    mDomain->setObjectName(QLatin1StringView("domain"));
+    mDomain->setObjectName("domain"_L1);
     mDomain->setClearButtonEnabled(true);
     layout->addRow(i18n("Domain:"), mDomain);
     connect(mDomain, &QLineEdit::textChanged, this, &DKIMRuleWidget::updateOkButton);
 
-    mListId->setObjectName(QLatin1StringView("listid"));
+    mListId->setObjectName("listid"_L1);
     mListId->setClearButtonEnabled(true);
     layout->addRow(i18n("List-Id:"), mListId);
 
-    mFrom->setObjectName(QLatin1StringView("from"));
+    mFrom->setObjectName("from"_L1);
     mFrom->setClearButtonEnabled(true);
     layout->addRow(i18n("From:"), mFrom);
     mFrom->setPlaceholderText(i18nc("@info:placeholder", "Use '*' to specify all emails from domain"));
     connect(mFrom, &QLineEdit::textChanged, this, &DKIMRuleWidget::updateOkButton);
 
-    mSignatureDomainIdentifier->setObjectName(QLatin1StringView("signaturedomainidentifier"));
+    mSignatureDomainIdentifier->setObjectName("signaturedomainidentifier"_L1);
     mSignatureDomainIdentifier->setClearButtonEnabled(true);
     layout->addRow(i18n("SDID:"), mSignatureDomainIdentifier);
 
-    mRuleType->setObjectName(QLatin1StringView("ruletype"));
+    mRuleType->setObjectName("ruletype"_L1);
     layout->addRow(i18n("Rule:"), mRuleType);
 
-    mPriority->setObjectName(QLatin1StringView("priority"));
+    mPriority->setObjectName("priority"_L1);
     mPriority->setMinimum(1);
     mPriority->setMaximum(9999);
     mPriority->setValue(1000); // Default Value

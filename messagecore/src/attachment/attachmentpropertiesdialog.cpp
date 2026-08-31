@@ -223,8 +223,8 @@ void AttachmentPropertiesDialog::AttachmentPropertiesDialogPrivate::populateEnco
 
 void AttachmentPropertiesDialog::AttachmentPropertiesDialogPrivate::populateMimeTypes()
 {
-    const QStringList list = QStringList() << u"text/html"_s << u"text/plain"_s << QStringLiteral("image/gif") << u"image/jpeg"_s << u"image/png"_s
-                                           << QStringLiteral("application/octet-stream") << u"application/x-gunzip"_s << u"application/zip"_s;
+    const QStringList list = QStringList() << u"text/html"_s << u"text/plain"_s << u"image/gif"_s << u"image/jpeg"_s << u"image/png"_s
+                                           << u"application/octet-stream"_s << u"application/x-gunzip"_s << u"application/zip"_s;
 
     ui->mimeType->addItems(list);
 }
@@ -289,7 +289,7 @@ void AttachmentPropertiesDialog::AttachmentPropertiesDialogPrivate::saveToPart()
     mPart->setEncrypted(ui->encrypt->isChecked());
     mPart->setInline(ui->autoDisplay->isChecked());
 
-    if (ui->mimeType->currentText().startsWith(QLatin1StringView("message")) && ui->encoding->itemData(ui->encoding->currentIndex()) != KMime::Headers::CE7Bit
+    if (ui->mimeType->currentText().startsWith("message"_L1) && ui->encoding->itemData(ui->encoding->currentIndex()) != KMime::Headers::CE7Bit
         && ui->encoding->itemData(ui->encoding->currentIndex()) != KMime::Headers::CE8Bit) {
         qCWarning(MESSAGECORE_LOG) << R"(Encoding on message/rfc822 must be "7bit" or "8bit".)";
     }

@@ -422,7 +422,7 @@ void MessageList::Widget::viewDropEvent(QDropEvent *e)
             action = DragMove;
         } else {
             QMenu menu;
-            QAction *moveAction = menu.addAction(QIcon::fromTheme(u"edit-move"_s, QIcon::fromTheme(QStringLiteral("go-jump"))), i18n("&Move Here"));
+            QAction *moveAction = menu.addAction(QIcon::fromTheme(u"edit-move"_s, QIcon::fromTheme(u"go-jump"_s)), i18n("&Move Here"));
             QAction *copyAction = menu.addAction(QIcon::fromTheme(u"edit-copy"_s), i18n("&Copy Here"));
             menu.addSeparator();
             menu.addAction(QIcon::fromTheme(u"dialog-cancel"_s), i18n("C&ancel"));

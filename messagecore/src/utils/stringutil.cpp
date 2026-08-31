@@ -158,7 +158,7 @@ static bool flushPart(QString &msg, QStringList &textParts, const QString &inden
 QList<QPair<QString, QString>> parseMailtoUrl(const QUrl &url)
 {
     QList<QPair<QString, QString>> values;
-    if (url.scheme() != QLatin1StringView("mailto")) {
+    if (url.scheme() != "mailto"_L1) {
         return values;
     }
     QString str = url.toString();
@@ -179,7 +179,7 @@ QList<QPair<QString, QString>> parseMailtoUrl(const QUrl &url)
         QUrlQuery query(str);
         const auto listQuery = query.queryItems(QUrl::FullyDecoded);
         for (const auto &queryItem : listQuery) {
-            if (queryItem.first == QLatin1StringView("to")) {
+            if (queryItem.first == "to"_L1) {
                 toStr << queryItem.second;
                 indexTo = i;
             } else {
@@ -202,7 +202,7 @@ QList<QPair<QString, QString>> parseMailtoUrl(const QUrl &url)
     if (!toStr.isEmpty()) {
         to << toStr;
     }
-    const QString fullTo = to.join(QLatin1StringView(", "));
+    const QString fullTo = to.join(", "_L1);
     if (!fullTo.isEmpty()) {
         QPair<QString, QString> pairElement;
         pairElement.first = u"to"_s;
@@ -302,20 +302,20 @@ QString quoteHtmlChars(const QString &str, bool removeLineBreaks)
     for (int i = 0; i < strLength; ++i) {
         switch (str[i].toLatin1()) {
         case '<':
-            result += QLatin1StringView("&lt;");
+            result += "&lt;"_L1;
             break;
         case '>':
-            result += QLatin1StringView("&gt;");
+            result += "&gt;"_L1;
             break;
         case '&':
-            result += QLatin1StringView("&amp;");
+            result += "&amp;"_L1;
             break;
         case '"':
-            result += QLatin1StringView("&quot;");
+            result += "&quot;"_L1;
             break;
         case '\n':
             if (!removeLineBreaks) {
-                result += QLatin1StringView("<br>");
+                result += "<br>"_L1;
             }
             break;
         case '\r':
@@ -415,10 +415,10 @@ QString emailAddrAsAnchor(const QList<KMime::Types::Mailbox> &mailboxList,
             }
 
             if (link == ShowLink) {
-                result += QLatin1StringView("<a href=\"mailto:")
+                result += "<a href=\"mailto:"_L1
                     + QString::fromLatin1(
                               QUrl::toPercentEncoding(KEmailAddress::encodeMailtoUrl(mailbox.prettyAddress(KMime::Types::Mailbox::QuoteWhenNecessary)).path()))
-                    + QLatin1StringView("\" ") + cssStyle + u'>';
+                    + "\" "_L1 + cssStyle + u'>';
             }
             const bool foundMe = !MessageCore::MessageCoreSettings::self()->displayOwnIdentity() && onlyOneIdentity
                 && (im->identityForAddress(prettyAddressStr) != KIdentityManagementCore::Identity::null());
@@ -433,7 +433,7 @@ QString emailAddrAsAnchor(const QList<KMime::Types::Mailbox> &mailboxList,
                 result += foundMe ? i18nMe : quoteHtmlChars(mailbox.prettyAddress(KMime::Types::Mailbox::QuoteWhenNecessary), true);
             }
             if (link == ShowLink) {
-                result += QLatin1StringView("</a>, ");
+                result += "</a>, "_L1;
             }
         }
     }
@@ -500,7 +500,7 @@ QString guessEmailAddressFromLoginName(const QString &loginName)
     const KUser user(loginName);
     if (user.isValid()) {
         const QString fullName = user.property(KUser::FullName).toString();
-        address = KEmailAddress::quoteNameIfNecessary(fullName) + QLatin1StringView(" <") + address + u'>';
+        address = KEmailAddress::quoteNameIfNecessary(fullName) + " <"_L1 + address + u'>';
     }
 
     return address;
@@ -672,7 +672,7 @@ QString cleanFileName(const QString &name)
     // We also look at the special case of ": ", since converting that to "_ "
     // would look strange, simply "_" looks better.
     // https://issues.kolab.org/issue3805
-    fileName.replace(QLatin1StringView(": "), u"_"_s);
+    fileName.replace(": "_L1, u"_"_s);
     // replace all ':' with '_' because ':' isn't allowed on FAT volumes
     fileName.replace(u':', u'_');
     // better not use a dir-delimiter in a filename

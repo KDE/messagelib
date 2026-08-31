@@ -183,7 +183,7 @@ void EditorWatcher::checkEditDone()
 
     static QStringList readOnlyMimeTypes;
     if (readOnlyMimeTypes.isEmpty()) {
-        readOnlyMimeTypes << u"message/rfc822"_s << QStringLiteral("application/pdf");
+        readOnlyMimeTypes << u"message/rfc822"_s << u"application/pdf"_s;
     }
 
     // protect us against double-deletion by calling this method again while
@@ -191,7 +191,7 @@ void EditorWatcher::checkEditDone()
     mDone = true;
 
     // check if it's a mime type that's mostly handled read-only
-    const bool isReadOnlyMimeType = (readOnlyMimeTypes.contains(mMimeType) || mMimeType.startsWith(QLatin1StringView("image/")));
+    const bool isReadOnlyMimeType = (readOnlyMimeTypes.contains(mMimeType) || mMimeType.startsWith("image/"_L1));
 
     // nobody can edit that fast, we seem to be unable to detect
     // when the editor will be closed

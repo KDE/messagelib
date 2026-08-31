@@ -13,6 +13,8 @@
 #include <KConfigGroup>
 #include <QHeaderView>
 
+using namespace Qt::Literals::StringLiterals;
+
 using namespace MessageViewer;
 namespace
 {
@@ -22,7 +24,7 @@ MimePartTreeView::MimePartTreeView(QWidget *parent)
     : QTreeView(parent)
     , mMimePartModel(new MimeTreeModel(this))
 {
-    setObjectName(QLatin1StringView("mMimePartTree"));
+    setObjectName("mMimePartTree"_L1);
 
     setModel(mMimePartModel);
     setSelectionMode(QAbstractItemView::ExtendedSelection);

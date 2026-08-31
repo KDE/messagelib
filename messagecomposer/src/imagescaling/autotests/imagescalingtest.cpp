@@ -40,13 +40,13 @@ void ImageScalingTest::shouldHaveRenameFile_data()
     QTest::addColumn<QString>("saveasformat");
     QTest::newRow("no rename png when file is empty") << QString() << QString() << QByteArray("image/png") << u"PNG"_s;
     QTest::newRow("no rename jpg when file is empty") << QString() << QString() << QByteArray("image/jpeg") << u"PNG"_s;
-    QTest::newRow("no rename to png") << u"foo.jpeg"_s << QStringLiteral("foo.jpeg") << QByteArray("image/jpeg") << QStringLiteral("PNG");
-    QTest::newRow("no rename to jpeg") << u"foo.png"_s << QStringLiteral("foo.png") << QByteArray("image/png") << QStringLiteral("JPG");
-    QTest::newRow("rename to jpeg") << u"foo.png"_s << QStringLiteral("foo.jpg") << QByteArray("image/mng") << QStringLiteral("JPG");
-    QTest::newRow("rename to png") << u"foo.jpg"_s << QStringLiteral("foo.png") << QByteArray("image/mng") << QStringLiteral("PNG");
-    QTest::newRow("rename jpeg suffix to png") << u"foo.jpeg"_s << QStringLiteral("foo.png") << QByteArray("image/mng") << QStringLiteral("PNG");
-    QTest::newRow("rename uppercase jpg suffix") << u"foo.JPG"_s << QStringLiteral("foo.png") << QByteArray("image/mng") << QStringLiteral("PNG");
-    QTest::newRow("rename uppercase png suffix") << u"foo.PNG"_s << QStringLiteral("foo.jpg") << QByteArray("image/mng") << QStringLiteral("JPG");
+    QTest::newRow("no rename to png") << u"foo.jpeg"_s << u"foo.jpeg"_s << QByteArray("image/jpeg") << u"PNG"_s;
+    QTest::newRow("no rename to jpeg") << u"foo.png"_s << u"foo.png"_s << QByteArray("image/png") << u"JPG"_s;
+    QTest::newRow("rename to jpeg") << u"foo.png"_s << u"foo.jpg"_s << QByteArray("image/mng") << u"JPG"_s;
+    QTest::newRow("rename to png") << u"foo.jpg"_s << u"foo.png"_s << QByteArray("image/mng") << u"PNG"_s;
+    QTest::newRow("rename jpeg suffix to png") << u"foo.jpeg"_s << u"foo.png"_s << QByteArray("image/mng") << u"PNG"_s;
+    QTest::newRow("rename uppercase jpg suffix") << u"foo.JPG"_s << u"foo.png"_s << QByteArray("image/mng") << u"PNG"_s;
+    QTest::newRow("rename uppercase png suffix") << u"foo.PNG"_s << u"foo.jpg"_s << QByteArray("image/mng") << u"JPG"_s;
 }
 
 void ImageScalingTest::shouldHaveRenameFile()

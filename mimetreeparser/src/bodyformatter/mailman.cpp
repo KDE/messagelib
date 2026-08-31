@@ -27,7 +27,7 @@ bool MailmanBodyPartFormatter::isMailmanMessage(KMime::Content *curNode) const
         return true;
     }
     if (KMime::Headers::Base *header = curNode->headerByType("X-Mailer")) {
-        if (header->asUnicodeString().contains(QLatin1StringView("MAILMAN"), Qt::CaseInsensitive)) {
+        if (header->asUnicodeString().contains("MAILMAN"_L1, Qt::CaseInsensitive)) {
             return true;
         }
     }
@@ -88,11 +88,11 @@ MessagePart::Ptr MailmanBodyPartFormatter::process(Interface::BodyPart &part) co
     // to get our embedded RfC822 messages properly inserted
     curNode->contentType()->setMimeType("multipart/digest");
     while (-1 < nextDelim) {
-        int thisEoL = str.indexOf(QLatin1StringView("\nMessage:"), thisDelim, Qt::CaseInsensitive);
+        int thisEoL = str.indexOf("\nMessage:"_L1, thisDelim, Qt::CaseInsensitive);
         if (-1 < thisEoL) {
             thisDelim = thisEoL + 1;
         } else {
-            thisEoL = str.indexOf(QLatin1StringView("\n_____________"), thisDelim, Qt::CaseInsensitive);
+            thisEoL = str.indexOf("\n_____________"_L1, thisDelim, Qt::CaseInsensitive);
             if (-1 < thisEoL) {
                 thisDelim = thisEoL + 1;
             }
@@ -135,7 +135,7 @@ MessagePart::Ptr MailmanBodyPartFormatter::process(Interface::BodyPart &part) co
     }
     // reset current node's Content-Type
     curNode->contentType()->setMimeType("text/plain");
-    int thisEoL = str.indexOf(QLatin1StringView("_____________"), thisDelim);
+    int thisEoL = str.indexOf("_____________"_L1, thisDelim);
     if (-1 < thisEoL) {
         thisDelim = thisEoL;
         thisEoL = str.indexOf(u'\n', thisDelim);

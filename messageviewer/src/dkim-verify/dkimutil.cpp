@@ -40,7 +40,7 @@ QString MessageViewer::DKIMUtil::bodyCanonizationRelaxed(QString body)
     body.replace(reg2, u" "_s);
     static const QRegularExpression reg3(u"((\r\n)+?)$"_s);
     body.replace(QRegularExpression(reg3), u"\r\n"_s);
-    if (body == QLatin1StringView("\r\n")) {
+    if (body == "\r\n"_L1) {
         body.clear();
     }
     return body;
@@ -61,7 +61,7 @@ QString MessageViewer::DKIMUtil::bodyCanonizationSimple(QString body)
     body.replace(u"\n"_s, u"\r\n"_s);
     static const QRegularExpression reg(u"((\r\n)+)?$"_s);
     body.replace(reg, u"\r\n"_s);
-    if (body.endsWith(QLatin1StringView("\r\n"))) { // Remove it from start
+    if (body.endsWith("\r\n"_L1)) { // Remove it from start
         body.chop(2);
     }
     if (body.isEmpty()) {
@@ -115,8 +115,8 @@ QString MessageViewer::DKIMUtil::headerCanonizationRelaxed(const QString &header
     newHeaderValue.replace(reg3, u"\r\n"_s);
     // Perhaps remove tab after headername and before value name
     // newHeaderValue.replace(QRegularExpression(u"[ \t]*:[ \t]"_s), u":"_s);
-    if (newHeaderName == QLatin1StringView("content-type") && removeQuoteOnContentType) { // Remove quote in charset
-        if (newHeaderValue.contains(QLatin1StringView("charset=\""))) {
+    if (newHeaderName == "content-type"_L1 && removeQuoteOnContentType) { // Remove quote in charset
+        if (newHeaderValue.contains("charset=\""_L1)) {
             newHeaderValue.remove(u'"');
         }
     }
@@ -131,7 +131,7 @@ QString MessageViewer::DKIMUtil::cleanString(QString str)
     // WSP help pattern as specified in Section 2.8 of RFC 6376
     const QString pattWSP = u"[ \t]"_s;
     // FWS help pattern as specified in Section 2.8 of RFC 6376
-    const QString pattFWS = u"(?:"_s + pattWSP + u"*(?:\r\n)?"_s + pattWSP + QStringLiteral("+)");
+    const QString pattFWS = u"(?:"_s + pattWSP + u"*(?:\r\n)?"_s + pattWSP + u"+)"_s;
     static const QRegularExpression pattFWSRegularExpression(pattFWS);
     str.replace(pattFWSRegularExpression, QString());
     return str;
@@ -214,19 +214,19 @@ QString MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(Message
 
 MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod MessageViewer::DKIMUtil::convertAuthenticationMethodStringToEnum(const QString &str)
 {
-    if (str == QLatin1StringView("dkim")) {
+    if (str == "dkim"_L1) {
         return MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Dkim;
-    } else if (str == QLatin1StringView("spf")) {
+    } else if (str == "spf"_L1) {
         return MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Spf;
-    } else if (str == QLatin1StringView("dmarc")) {
+    } else if (str == "dmarc"_L1) {
         return MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Dmarc;
-    } else if (str == QLatin1StringView("dkim-atps")) {
+    } else if (str == "dkim-atps"_L1) {
         return MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Dkimatps;
-    } else if (str == QLatin1StringView("auth")) {
+    } else if (str == "auth"_L1) {
         return MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Auth;
-    } else if (str == QLatin1StringView("arc")) {
+    } else if (str == "arc"_L1) {
         return MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::Arc;
-    } else if (str == QLatin1StringView("x-tls")) {
+    } else if (str == "x-tls"_L1) {
         return MessageViewer::DKIMCheckSignatureJob::AuthenticationMethod::XTls;
     } else {
         qCWarning(MESSAGEVIEWER_DKIMCHECKER_LOG) << "Undefined type " << str;

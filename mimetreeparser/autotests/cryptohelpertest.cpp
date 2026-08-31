@@ -51,12 +51,12 @@ void CryptoHelperTest::testPGPBlockType()
             name = u"PRIVATE KEY BLOCK"_s;
             break;
         }
-        QString text = QLatin1StringView("-----BEGIN PGP ") + name + u'\n' + blockText;
+        QString text = "-----BEGIN PGP "_L1 + name + u'\n' + blockText;
         QList<Block> blocks = prepareMessageForDecryption(preString.toLatin1() + text.toLatin1());
         QCOMPARE(blocks.count(), 1);
         QCOMPARE(blocks[0].type(), UnknownBlock);
 
-        text += QLatin1StringView("\n-----END PGP ") + name + u'\n';
+        text += "\n-----END PGP "_L1 + name + u'\n';
         blocks = prepareMessageForDecryption(preString.toLatin1() + text.toLatin1());
         QCOMPARE(blocks.count(), 2);
         QCOMPARE(blocks[1].text(), text.toLatin1());
@@ -89,7 +89,7 @@ void CryptoHelperTest::testDeterminePGPBlockType()
             name = u"PRIVATE KEY BLOCK"_s;
             break;
         }
-        const QString text = QLatin1StringView("-----BEGIN PGP ") + name + u'\n' + blockText + u'\n';
+        const QString text = "-----BEGIN PGP "_L1 + name + u'\n' + blockText + u'\n';
         const Block block = Block(text.toLatin1());
         QCOMPARE(block.text(), text.toLatin1());
         QCOMPARE(block.type(), static_cast<PGPBlockType>(i));

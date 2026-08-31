@@ -130,7 +130,7 @@ void ComposerTest::testBug271192()
     const QString mailbox = u"example@example.com"_s;
     ComposerJob composerJob;
     fillComposerData(&composerJob);
-    composerJob.infoPart()->setTo(QStringList() << (displayName + QLatin1StringView(" <") + mailbox + QLatin1StringView(">")));
+    composerJob.infoPart()->setTo(QStringList() << (displayName + " <"_L1 + mailbox + ">"_L1));
     QVERIFY(composerJob.exec());
     QCOMPARE(composerJob.resultMessages().size(), 1);
     const std::shared_ptr<KMime::Message> message = composerJob.resultMessages().constFirst();

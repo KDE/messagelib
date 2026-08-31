@@ -9,6 +9,8 @@
 #include "webhittestresult.h"
 #include <QWebEnginePage>
 
+using namespace Qt::Literals::StringLiterals;
+
 using namespace WebEngineViewer;
 template<typename Arg, typename R, typename C>
 
@@ -47,8 +49,8 @@ WebHitTest::WebHitTest(QWebEnginePage *page, const QPoint &zoomedPos, const QPoi
     : QObject(parent)
     , d(new WebHitTestPrivate(pos, zoomedPos))
 {
-    QString source = QStringLiteral(
-        "(function() {"
+    QString source =
+        u"(function() {"
         "var e = document.elementFromPoint(%1, %2);"
         "if (!e)"
         "    return;"
@@ -103,7 +105,7 @@ WebHitTest::WebHitTest(QWebEnginePage *page, const QPoint &zoomedPos, const QPoi
         "    e = e.parentElement;"
         "}"
         "return res;"
-        "})()");
+        "})()"_s;
 
     const QString &js = source.arg(d->m_zoomedPos.x()).arg(d->m_zoomedPos.y());
     d->m_pageUrl = page->url();

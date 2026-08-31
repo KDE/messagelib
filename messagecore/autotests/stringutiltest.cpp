@@ -185,8 +185,8 @@ void StringUtilTest::test_SmartQuote_data()
 void StringUtilTest::test_signatureStripping()
 {
     // QStringList tests;
-    const QString test1 = QStringLiteral(
-        "text1\n"
+    const QString test1 =
+        u"text1\n"
         "-- \n"
         "Signature Block1\n"
         "Signature Block1\n\n"
@@ -208,10 +208,10 @@ void StringUtilTest::test_signatureStripping()
         ">> Signature Block 5\n"
         "text6\n"
         "-- \n"
-        "Signature Block 6\n");
+        "Signature Block 6\n"_s;
 
-    const QString test1Result = QStringLiteral(
-        "text1\n"
+    const QString test1Result =
+        u"text1\n"
         "> text2\n"
         ">> text3 -- not a signature block\n"
         ">> text3\n"
@@ -219,12 +219,12 @@ void StringUtilTest::test_signatureStripping()
         ">>-------------\n"
         ">>-- text5 --\n"
         ">>-------------------\n"
-        "text6\n");
+        "text6\n"_s;
 
     QCOMPARE(StringUtil::stripSignature(test1), test1Result);
 
-    const QString test2 = QStringLiteral(
-        "text1\n"
+    const QString test2 =
+        u"text1\n"
         "> text2\n"
         ">> text3 -- not a signature block\n"
         ">> text3\n"
@@ -232,13 +232,13 @@ void StringUtilTest::test_signatureStripping()
         ">>-------------\n"
         ">>-- text5 --\n"
         ">>-------------------\n"
-        "text6\n");
+        "text6\n"_s;
 
     // No actual signature - should stay the same
     QCOMPARE(StringUtil::stripSignature(test2), test2);
 
-    const QString test3 = QStringLiteral(
-        "text1\n"
+    const QString test3 =
+        u"text1\n"
         "-- \n"
         "Signature Block1\n"
         "Signature Block1\n\n"
@@ -257,22 +257,22 @@ void StringUtilTest::test_signatureStripping()
         ">Signature Block 4\n"
         "text5\n"
         "-- \n"
-        "Signature Block 5");
+        "Signature Block 5"_s;
 
-    const QString test3Result = QStringLiteral(
-        "text1\n"
+    const QString test3Result =
+        u"text1\n"
         ">text2\n"
         "> >text3\n"
         "> >text3\n"
         ">>Not Signature Block 3\n"
         "> > Not Signature Block 3\n"
         ">text4\n"
-        "text5\n");
+        "text5\n"_s;
 
     QCOMPARE(StringUtil::stripSignature(test3), test3Result);
 
-    const QString test4 = QStringLiteral(
-        "Text 1\n"
+    const QString test4 =
+        u"Text 1\n"
         "-- \n"
         "First sign\n\n\n"
         "> From: bla\n"
@@ -283,10 +283,10 @@ void StringUtilTest::test_signatureStripping()
         "> Adios\n\n"
         ">> Texto 3\n\n"
         ">> --\n"
-        ">> Not Signature block 3\n");
+        ">> Not Signature block 3\n"_s;
 
-    const QString test4Result = QStringLiteral(
-        "Text 1\n"
+    const QString test4Result =
+        u"Text 1\n"
         "> From: bla\n"
         "> Texto 2\n\n"
         "> Aqui algo de texto.\n\n"
@@ -295,22 +295,22 @@ void StringUtilTest::test_signatureStripping()
         "> Adios\n\n"
         ">> Texto 3\n\n"
         ">> --\n"
-        ">> Not Signature block 3\n");
+        ">> Not Signature block 3\n"_s;
 
     QCOMPARE(StringUtil::stripSignature(test4), test4Result);
 
-    const QString test5 = QStringLiteral(
-        "-- \n"
+    const QString test5 =
+        u"-- \n"
         "-- ACME, Inc\n"
         "-- Joe User\n"
         "-- PHB\n"
         "-- Tel.: 555 1234\n"
-        "--");
+        "--"_s;
 
     QCOMPARE(StringUtil::stripSignature(test5), QString());
 
-    const QString test6 = QStringLiteral(
-        "Text 1\n\n\n\n"
+    const QString test6 =
+        u"Text 1\n\n\n\n"
         "> From: bla\n"
         "> Texto 2\n\n"
         "> Aqui algo de texto.\n\n"
@@ -318,7 +318,7 @@ void StringUtilTest::test_signatureStripping()
         "> Adios\n\n"
         ">> Texto 3\n\n"
         ">> --\n"
-        ">> Not Signature block 3\n");
+        ">> Not Signature block 3\n"_s;
 
     // Again, no actual signature in here
     QCOMPARE(StringUtil::stripSignature(test6), test6);
@@ -360,7 +360,7 @@ void StringUtilTest::test_parseMailtoUrl()
     QCOMPARE(list.count(), numberElement);
     if (numberOfTo > 0) {
         QCOMPARE(!list.at(0).second.isEmpty(), toIsNotEmpty);
-        QCOMPARE(list.at(0).second.split(QLatin1StringView(", "), Qt::SkipEmptyParts).count(), numberOfTo);
+        QCOMPARE(list.at(0).second.split(", "_L1, Qt::SkipEmptyParts).count(), numberOfTo);
     }
 }
 
@@ -371,14 +371,14 @@ void StringUtilTest::test_parseMailtoUrlExtra()
     QList<QPair<QString, QString>> data = StringUtil::parseMailtoUrl(url);
     QCOMPARE(data.size(), 4);
     for (int i = 0; i < 4; ++i) {
-        if (data.at(i).first == QLatin1StringView("to")) {
-            QCOMPARE(data.at(i).second, QLatin1StringView("someone@example.com"));
-        } else if (data.at(i).first == QLatin1StringView("subject")) {
-            QCOMPARE(data.at(i).second, QLatin1StringView("This is the subject"));
-        } else if (data.at(i).first == QLatin1StringView("cc")) {
-            QCOMPARE(data.at(i).second, QLatin1StringView("someone_else@example.com"));
-        } else if (data.at(i).first == QLatin1StringView("body")) {
-            QCOMPARE(data.at(i).second, QLatin1StringView("This is the body"));
+        if (data.at(i).first == "to"_L1) {
+            QCOMPARE(data.at(i).second, "someone@example.com"_L1);
+        } else if (data.at(i).first == "subject"_L1) {
+            QCOMPARE(data.at(i).second, "This is the subject"_L1);
+        } else if (data.at(i).first == "cc"_L1) {
+            QCOMPARE(data.at(i).second, "someone_else@example.com"_L1);
+        } else if (data.at(i).first == "body"_L1) {
+            QCOMPARE(data.at(i).second, "This is the body"_L1);
         }
     }
 }
@@ -390,7 +390,7 @@ void StringUtilTest::test_parseMailToWithUtf8Encoded()
     QList<QPair<QString, QString>> data = StringUtil::parseMailtoUrl(url);
     QCOMPARE(data.size(), 1);
     for (int i = 0; i < 1; ++i) {
-        if (data.at(i).first == QLatin1StringView("to")) {
+        if (data.at(i).first == "to"_L1) {
             QCOMPARE(data.at(i).second, QString::fromUtf8("Mi\u0142osz Vo <raco.cki@foo.com>"));
         }
     }
@@ -403,7 +403,7 @@ void StringUtilTest::test_parseMailToWithUtf8QuotedEncoded()
     QList<QPair<QString, QString>> data = StringUtil::parseMailtoUrl(url);
     QCOMPARE(data.size(), 1);
     for (int i = 0; i < 1; ++i) {
-        if (data.at(i).first == QLatin1StringView("to")) {
+        if (data.at(i).first == "to"_L1) {
             QCOMPARE(data.at(i).second, QString::fromUtf8("foo Cen <bla.cete@kde.com>, Kile Debut <kile.debut@foo.com"));
         }
     }
@@ -416,15 +416,15 @@ void StringUtilTest::test_parseMailToBug366981()
     QList<QPair<QString, QString>> data = StringUtil::parseMailtoUrl(urlDecoded);
     QCOMPARE(data.size(), 3);
     for (int i = 0; i < 3; ++i) {
-        if (data.at(i).first == QLatin1StringView("to")) {
+        if (data.at(i).first == "to"_L1) {
             QCOMPARE(i, 0);
-            QCOMPARE(data.at(i).second, QLatin1StringView("test@test.com"));
-        } else if (data.at(i).first == QLatin1StringView("subject")) {
+            QCOMPARE(data.at(i).second, "test@test.com"_L1);
+        } else if (data.at(i).first == "subject"_L1) {
             QCOMPARE(i, 1);
-            QCOMPARE(data.at(i).second, QLatin1StringView("test"));
-        } else if (data.at(i).first == QLatin1StringView("body")) {
+            QCOMPARE(data.at(i).second, "test"_L1);
+        } else if (data.at(i).first == "body"_L1) {
             QCOMPARE(i, 2);
-            QCOMPARE(data.at(i).second, QLatin1StringView("line1\r\nline2"));
+            QCOMPARE(data.at(i).second, "line1\r\nline2"_L1);
         }
     }
 }
@@ -437,16 +437,16 @@ void StringUtilTest::test_parseDuplicateQueryItems()
     QCOMPARE(values.size(), 5);
     int valueCC = 0;
     for (int i = 0; i < values.size(); ++i) {
-        if (values.at(i).first == QLatin1StringView("to")) {
-            QCOMPARE(values.at(i).second, QLatin1StringView("test@test.com"));
-        } else if (values.at(i).first == QLatin1StringView("subject")) {
-            QCOMPARE(values.at(i).second, QLatin1StringView("test"));
-        } else if (values.at(i).first == QLatin1StringView("body")) {
-            QCOMPARE(values.at(i).second, QLatin1StringView("line1\r\nline2"));
-        } else if (values.at(i).first == QLatin1StringView("cc")) {
+        if (values.at(i).first == "to"_L1) {
+            QCOMPARE(values.at(i).second, "test@test.com"_L1);
+        } else if (values.at(i).first == "subject"_L1) {
+            QCOMPARE(values.at(i).second, "test"_L1);
+        } else if (values.at(i).first == "body"_L1) {
+            QCOMPARE(values.at(i).second, "line1\r\nline2"_L1);
+        } else if (values.at(i).first == "cc"_L1) {
             const QString ccVal = values.at(i).second;
             valueCC++;
-            if ((ccVal != QLatin1StringView("someone_else@example.com")) && (ccVal != QLatin1StringView("someone_else2@example.com"))) {
+            if ((ccVal != "someone_else@example.com"_L1) && (ccVal != "someone_else2@example.com"_L1)) {
                 QVERIFY(false);
             }
         }
@@ -463,18 +463,18 @@ void StringUtilTest::test_parseMAilToBug402378()
     QUrl urlDecoded(QUrl::fromPercentEncoding(ba));
     QList<QPair<QString, QString>> data = StringUtil::parseMailtoUrl(urlDecoded);
     QCOMPARE(data.size(), 6);
-    QCOMPARE(data.at(0).first, QLatin1StringView("body"));
-    QCOMPARE(data.at(0).second, QLatin1StringView("infotbm.com https://www.infotbm.com/fr/routes/id=-0.624162|44.849958"));
-    QCOMPARE(data.at(1).first, QLatin1StringView("type"));
-    QCOMPARE(data.at(1).second, QLatin1StringView("address/datetime=20181226T143038"));
-    QCOMPARE(data.at(2).first, QLatin1StringView("id"));
-    QCOMPARE(data.at(2).second, QLatin1StringView("stop_area:TBT:SA:HTLEV"));
-    QCOMPARE(data.at(3).first, QLatin1StringView("time_type"));
-    QCOMPARE(data.at(3).second, QLatin1StringView("arrival"));
-    QCOMPARE(data.at(4).first, QLatin1StringView("type"));
-    QCOMPARE(data.at(4).second, QLatin1StringView("stop_area/0"));
-    QCOMPARE(data.at(5).first, QLatin1StringView("subject"));
-    QCOMPARE(data.at(5).second, QLatin1StringView("Votre itineraire avec TBM"));
+    QCOMPARE(data.at(0).first, "body"_L1);
+    QCOMPARE(data.at(0).second, "infotbm.com https://www.infotbm.com/fr/routes/id=-0.624162|44.849958"_L1);
+    QCOMPARE(data.at(1).first, "type"_L1);
+    QCOMPARE(data.at(1).second, "address/datetime=20181226T143038"_L1);
+    QCOMPARE(data.at(2).first, "id"_L1);
+    QCOMPARE(data.at(2).second, "stop_area:TBT:SA:HTLEV"_L1);
+    QCOMPARE(data.at(3).first, "time_type"_L1);
+    QCOMPARE(data.at(3).second, "arrival"_L1);
+    QCOMPARE(data.at(4).first, "type"_L1);
+    QCOMPARE(data.at(4).second, "stop_area/0"_L1);
+    QCOMPARE(data.at(5).first, "subject"_L1);
+    QCOMPARE(data.at(5).second, "Votre itineraire avec TBM"_L1);
 }
 
 void StringUtilTest::test_parseMailToBug406208()
@@ -486,10 +486,10 @@ void StringUtilTest::test_parseMailToBug406208()
         // qDebug() << " urlDecoded" << urlDecoded.authority(QUrl::FullyDecoded);
         QList<QPair<QString, QString>> data = StringUtil::parseMailtoUrl(urlDecoded);
         QCOMPARE(data.size(), 2);
-        QCOMPARE(data.at(0).first, QLatin1StringView("body"));
-        QCOMPARE(data.at(0).second, QLatin1StringView("http://www.lecourrierdelarchitecte.com/article_8428"));
-        QCOMPARE(data.at(1).first, QLatin1StringView("subject"));
-        QCOMPARE(data.at(1).second, QLatin1StringView("Le Courrier l'effet #metoo ?"));
+        QCOMPARE(data.at(0).first, "body"_L1);
+        QCOMPARE(data.at(0).second, "http://www.lecourrierdelarchitecte.com/article_8428"_L1);
+        QCOMPARE(data.at(1).first, "subject"_L1);
+        QCOMPARE(data.at(1).second, "Le Courrier l'effet #metoo ?"_L1);
     }
     {
         const QByteArray ba(QByteArrayLiteral(
@@ -498,10 +498,10 @@ void StringUtilTest::test_parseMailToBug406208()
         // qDebug() << " urlDecoded" << urlDecoded.authority(QUrl::FullyDecoded);
         QList<QPair<QString, QString>> data = StringUtil::parseMailtoUrl(urlDecoded);
         QCOMPARE(data.size(), 2);
-        QCOMPARE(data.at(0).first, QLatin1StringView("body"));
-        QCOMPARE(data.at(0).second, QLatin1StringView("http://www.lecourrierdelarchitecte.com/article_8428 ##bla"));
-        QCOMPARE(data.at(1).first, QLatin1StringView("subject"));
-        QCOMPARE(data.at(1).second, QLatin1StringView("Le Courrier l'effet #metoo ?"));
+        QCOMPARE(data.at(0).first, "body"_L1);
+        QCOMPARE(data.at(0).second, "http://www.lecourrierdelarchitecte.com/article_8428 ##bla"_L1);
+        QCOMPARE(data.at(1).first, "subject"_L1);
+        QCOMPARE(data.at(1).second, "Le Courrier l'effet #metoo ?"_L1);
     }
 }
 
@@ -515,17 +515,16 @@ void StringUtilTest::test_parseMailToBug832795()
     QUrl urlDecoded(QUrl::fromPercentEncoding(ba));
     QList<QPair<QString, QString>> data = StringUtil::parseMailtoUrl(urlDecoded);
     QCOMPARE(data.size(), 4);
-    QCOMPARE(data.at(0).first, QLatin1StringView("to"));
-    QCOMPARE(data.at(0).second, QLatin1StringView("832795@bugs.debian.org"));
-    QCOMPARE(data.at(1).first, QLatin1StringView("in-reply-to"));
-    QCOMPARE(data.at(1).second, QLatin1StringView("<146974194340.26747.4814466130640572267.reportbug@portux.lan.naturalnet.de>"));
-    QCOMPARE(data.at(2).first, QLatin1StringView("subject"));
-    QCOMPARE(data.at(2).second, QLatin1StringView("Re: kmail: unescaping mailto: links broken"));
-    QCOMPARE(data.at(3).first, QLatin1StringView("body"));
-    QCOMPARE(
-        data.at(3).second,
-        QLatin1StringView("On Thu, 28 Jul 2016References=<146974194340.26747.4814466130640572267.reportbug@portux.lan.naturalnet.de>body=On Thu, 28 Jul 2016 "
-                          "23:39:03 +0200 Dominik George <nik@naturalnet.de> wrote:\n> Package: kmail\n> Version: 4:16.04.3-1\n"));
+    QCOMPARE(data.at(0).first, "to"_L1);
+    QCOMPARE(data.at(0).second, "832795@bugs.debian.org"_L1);
+    QCOMPARE(data.at(1).first, "in-reply-to"_L1);
+    QCOMPARE(data.at(1).second, "<146974194340.26747.4814466130640572267.reportbug@portux.lan.naturalnet.de>"_L1);
+    QCOMPARE(data.at(2).first, "subject"_L1);
+    QCOMPARE(data.at(2).second, "Re: kmail: unescaping mailto: links broken"_L1);
+    QCOMPARE(data.at(3).first, "body"_L1);
+    QCOMPARE(data.at(3).second,
+             "On Thu, 28 Jul 2016References=<146974194340.26747.4814466130640572267.reportbug@portux.lan.naturalnet.de>body=On Thu, 28 Jul 2016 "
+             "23:39:03 +0200 Dominik George <nik@naturalnet.de> wrote:\n> Package: kmail\n> Version: 4:16.04.3-1\n"_L1);
 }
 
 void StringUtilTest::test_crashXdgemail()
@@ -534,8 +533,8 @@ void StringUtilTest::test_crashXdgemail()
     QUrl urlDecoded(QUrl::fromPercentEncoding(ba));
     QList<QPair<QString, QString>> values = StringUtil::parseMailtoUrl(urlDecoded);
     QCOMPARE(values.size(), 1);
-    QCOMPARE(values.at(0).first, QLatin1StringView("to"));
-    QCOMPARE(values.at(0).second, QLatin1StringView("foo@kde.org, bar@kde.org, baz@kde.org"));
+    QCOMPARE(values.at(0).first, "to"_L1);
+    QCOMPARE(values.at(0).second, "foo@kde.org, bar@kde.org, baz@kde.org"_L1);
 }
 
 void StringUtilTest::test_xdgemail()
@@ -545,34 +544,34 @@ void StringUtilTest::test_xdgemail()
         QUrl urlDecoded(QUrl::fromPercentEncoding(ba));
         QList<QPair<QString, QString>> values = StringUtil::parseMailtoUrl(urlDecoded);
         QCOMPARE(values.size(), 2);
-        QCOMPARE(values.at(0).first, QLatin1StringView("to"));
-        QCOMPARE(values.at(0).second, QLatin1StringView("foo@kde.org, bar@kde.org, baz@kde.org"));
-        QCOMPARE(values.at(1).first, QLatin1StringView("cc"));
-        QCOMPARE(values.at(1).second, QLatin1StringView("bli@kde.org"));
+        QCOMPARE(values.at(0).first, "to"_L1);
+        QCOMPARE(values.at(0).second, "foo@kde.org, bar@kde.org, baz@kde.org"_L1);
+        QCOMPARE(values.at(1).first, "cc"_L1);
+        QCOMPARE(values.at(1).second, "bli@kde.org"_L1);
     }
     {
         const QByteArray ba(QByteArrayLiteral("mailto:foo@kde.org?to=bar@kde.org&to=baz@kde.org&cc=ss@kde.org&bcc=ccs@kde.org"));
         QUrl urlDecoded(QUrl::fromPercentEncoding(ba));
         QList<QPair<QString, QString>> values = StringUtil::parseMailtoUrl(urlDecoded);
         QCOMPARE(values.size(), 3);
-        QCOMPARE(values.at(0).first, QLatin1StringView("to"));
-        QCOMPARE(values.at(0).second, QLatin1StringView("foo@kde.org, bar@kde.org, baz@kde.org"));
-        QCOMPARE(values.at(1).first, QLatin1StringView("cc"));
-        QCOMPARE(values.at(1).second, QLatin1StringView("ss@kde.org"));
-        QCOMPARE(values.at(2).first, QLatin1StringView("bcc"));
-        QCOMPARE(values.at(2).second, QLatin1StringView("ccs@kde.org"));
+        QCOMPARE(values.at(0).first, "to"_L1);
+        QCOMPARE(values.at(0).second, "foo@kde.org, bar@kde.org, baz@kde.org"_L1);
+        QCOMPARE(values.at(1).first, "cc"_L1);
+        QCOMPARE(values.at(1).second, "ss@kde.org"_L1);
+        QCOMPARE(values.at(2).first, "bcc"_L1);
+        QCOMPARE(values.at(2).second, "ccs@kde.org"_L1);
     }
     {
         const QByteArray ba(QByteArrayLiteral("mailto:foo@kde.org?to=bar@kde.org&to=baz@kde.org&cc=ss@kde.org&bcc=ccs@kde.org&to=ff@kde.org"));
         QUrl urlDecoded(QUrl::fromPercentEncoding(ba));
         QList<QPair<QString, QString>> values = StringUtil::parseMailtoUrl(urlDecoded);
         QCOMPARE(values.size(), 3);
-        QCOMPARE(values.at(0).first, QLatin1StringView("cc"));
-        QCOMPARE(values.at(0).second, QLatin1StringView("ss@kde.org"));
-        QCOMPARE(values.at(1).first, QLatin1StringView("bcc"));
-        QCOMPARE(values.at(1).second, QLatin1StringView("ccs@kde.org"));
-        QCOMPARE(values.at(2).first, QLatin1StringView("to"));
-        QCOMPARE(values.at(2).second, QLatin1StringView("foo@kde.org, bar@kde.org, baz@kde.org, ff@kde.org"));
+        QCOMPARE(values.at(0).first, "cc"_L1);
+        QCOMPARE(values.at(0).second, "ss@kde.org"_L1);
+        QCOMPARE(values.at(1).first, "bcc"_L1);
+        QCOMPARE(values.at(1).second, "ccs@kde.org"_L1);
+        QCOMPARE(values.at(2).first, "to"_L1);
+        QCOMPARE(values.at(2).second, "foo@kde.org, bar@kde.org, baz@kde.org, ff@kde.org"_L1);
     }
     {
         // Bug 427697
@@ -584,17 +583,16 @@ void StringUtilTest::test_xdgemail()
         QUrl urlDecoded(QUrl::fromPercentEncoding(ba));
         QList<QPair<QString, QString>> values = StringUtil::parseMailtoUrl(urlDecoded);
         QCOMPARE(values.size(), 4);
-        QCOMPARE(values.at(0).first, QLatin1StringView("to"));
-        QCOMPARE(values.at(0).second, QLatin1StringView("julia.lawall@inria.fr"));
-        QCOMPARE(values.at(1).first, QLatin1StringView("in-reply-to"));
-        QCOMPARE(values.at(1).second, QLatin1StringView("<alpine.DEB.2.22.394.2009272255220.20726@hadrien>"));
-        QCOMPARE(values.at(2).first, QLatin1StringView("cc"));
-        QCOMPARE(
-            values.at(2).second,
-            QLatin1StringView("Gilles.Muller@lip6.fr,cocci@systeme.lip6.fr,corbet@lwn.net,linux-doc@vger.kernel.org,linux-kernel@vger.kernel.org,michal.lkml@"
-                              "markovi.net,nicolas.palix@imag.fr,sylphrenadin@gmail.com"));
-        QCOMPARE(values.at(3).first, QLatin1StringView("subject"));
-        QCOMPARE(values.at(3).second, QLatin1StringView("Re: [Cocci] [PATCH 1/2] scripts: coccicheck: Change default value for\tparallelism"));
+        QCOMPARE(values.at(0).first, "to"_L1);
+        QCOMPARE(values.at(0).second, "julia.lawall@inria.fr"_L1);
+        QCOMPARE(values.at(1).first, "in-reply-to"_L1);
+        QCOMPARE(values.at(1).second, "<alpine.DEB.2.22.394.2009272255220.20726@hadrien>"_L1);
+        QCOMPARE(values.at(2).first, "cc"_L1);
+        QCOMPARE(values.at(2).second,
+                 "Gilles.Muller@lip6.fr,cocci@systeme.lip6.fr,corbet@lwn.net,linux-doc@vger.kernel.org,linux-kernel@vger.kernel.org,michal.lkml@"
+                 "markovi.net,nicolas.palix@imag.fr,sylphrenadin@gmail.com"_L1);
+        QCOMPARE(values.at(3).first, "subject"_L1);
+        QCOMPARE(values.at(3).second, "Re: [Cocci] [PATCH 1/2] scripts: coccicheck: Change default value for\tparallelism"_L1);
     }
     {
         // Bug 427697
@@ -605,12 +603,12 @@ void StringUtilTest::test_xdgemail()
         QList<QPair<QString, QString>> values = StringUtil::parseMailtoUrl(urlDecoded);
         QCOMPARE(values.size(), 3);
         qDebug() << " values " << values;
-        QCOMPARE(values.at(0).first, QLatin1StringView("to"));
-        QCOMPARE(values.at(0).second, QLatin1StringView("cocci@systeme.lip6.fr"));
-        QCOMPARE(values.at(1).first, QLatin1StringView("subject"));
-        QCOMPARE(values.at(1).second, QLatin1StringView("Re: [Cocci] [PATCH] scripts: coccicheck: Refactor display messages on\n coccinelle start up"));
-        QCOMPARE(values.at(2).first, QLatin1StringView("in-reply-to"));
-        QCOMPARE(values.at(2).second, QLatin1StringView("<20201003142012.idwudlhqiv3a4mjj@adolin>"));
+        QCOMPARE(values.at(0).first, "to"_L1);
+        QCOMPARE(values.at(0).second, "cocci@systeme.lip6.fr"_L1);
+        QCOMPARE(values.at(1).first, "subject"_L1);
+        QCOMPARE(values.at(1).second, "Re: [Cocci] [PATCH] scripts: coccicheck: Refactor display messages on\n coccinelle start up"_L1);
+        QCOMPARE(values.at(2).first, "in-reply-to"_L1);
+        QCOMPARE(values.at(2).second, "<20201003142012.idwudlhqiv3a4mjj@adolin>"_L1);
     }
 }
 
@@ -650,7 +648,7 @@ void StringUtilTest::test_replaceMessagePrefix_data()
     QTest::newRow("No default reply forward") << u"AA: Hello World Subject"_s << true << u"New_Prefix:"_s << u"New_Prefix: AA: Hello World Subject"_s;
 
     QTest::newRow("No default reply forward, no replace")
-        << u"AA: Hello World Subject"_s << false << u"New_Prefix:"_s << QStringLiteral("New_Prefix: AA: Hello World Subject");
+        << u"AA: Hello World Subject"_s << false << u"New_Prefix:"_s << u"New_Prefix: AA: Hello World Subject"_s;
 
     QTest::newRow("Default Reply Re:") << u"Re: Hello World Subject"_s << true << u"New_Prefix:"_s << u"New_Prefix: Hello World Subject"_s;
 
@@ -697,10 +695,10 @@ void StringUtilTest::test_formatQuotePrefix_data()
     QTest::addColumn<QString>("result");
 
     QTest::newRow("empty") << QString() << QString() << QString();
-    QTest::newRow("default") << u"> "_s << u"Jon Doe"_s << QStringLiteral("> ");
-    QTest::newRow("initials") << u"| %f |"_s << u"Jon Doe"_s << QStringLiteral("| JD |");
-    QTest::newRow("initials one name") << u"| %f |"_s << u"Jon"_s << QStringLiteral("| Jo |");
-    QTest::newRow("initials one letter") << u"| %f |"_s << u"J"_s << QStringLiteral("| J |");
+    QTest::newRow("default") << u"> "_s << u"Jon Doe"_s << u"> "_s;
+    QTest::newRow("initials") << u"| %f |"_s << u"Jon Doe"_s << u"| JD |"_s;
+    QTest::newRow("initials one name") << u"| %f |"_s << u"Jon"_s << u"| Jo |"_s;
+    QTest::newRow("initials one letter") << u"| %f |"_s << u"J"_s << u"| J |"_s;
     QTest::newRow("initials empty name") << u"| %f |"_s << QString() << u"|  |"_s;
     QTest::newRow("percent") << u"%% %_ %a"_s << QString() << u"%   %a"_s;
 }
@@ -719,12 +717,12 @@ void StringUtilTest::test_parseMailToBug206269()
     QUrl urlDecoded(QUrl::fromPercentEncoding(ba));
     QList<QPair<QString, QString>> data = StringUtil::parseMailtoUrl(urlDecoded);
     QCOMPARE(data.size(), 3);
-    QCOMPARE(data.at(0).first, QLatin1StringView("to"));
-    QCOMPARE(data.at(0).second, QLatin1StringView("team@example.com"));
-    QCOMPARE(data.at(1).first, QLatin1StringView("subject"));
-    QCOMPARE(data.at(1).second, QLatin1StringView("A&B"));
-    QCOMPARE(data.at(2).first, QLatin1StringView("body"));
-    QCOMPARE(data.at(2).second, QLatin1StringView("D&C"));
+    QCOMPARE(data.at(0).first, "to"_L1);
+    QCOMPARE(data.at(0).second, "team@example.com"_L1);
+    QCOMPARE(data.at(1).first, "subject"_L1);
+    QCOMPARE(data.at(1).second, "A&B"_L1);
+    QCOMPARE(data.at(2).first, "body"_L1);
+    QCOMPARE(data.at(2).second, "D&C"_L1);
 }
 
 void StringUtilTest::test_splitAddressField()

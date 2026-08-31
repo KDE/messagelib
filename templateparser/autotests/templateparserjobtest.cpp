@@ -41,7 +41,7 @@ void TemplateParserJobTest::test_convertedHtml_data()
     QDir dir(QStringLiteral(MAIL_DATA_DIR));
     const auto l = dir.entryList(QStringList(u"plain*.mbox"_s), QDir::Files | QDir::Readable | QDir::NoSymLinks);
     for (const QString &file : l) {
-        QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + u'/' + file) << QString(dir.path() + u'/' + file + QLatin1StringView(".html"));
+        QTest::newRow(file.toLatin1().constData()) << QString(dir.path() + u'/' + file) << QString(dir.path() + u'/' + file + ".html"_L1);
     }
 }
 
@@ -475,7 +475,7 @@ void TemplateParserJobTest::test_processWithTemplatesForContent_data()
     QTest::newRow("%REM=\"sdfsfsdsdfsdf\"") << "%REM=\"sdfsfsdsdfsdf\"" << fileName << "" << false;
     QTest::newRow("%CLEAR") << "%CLEAR" << fileName << "" << false;
     QTest::newRow("FOO foo") << "FOO foo" << fileName << "FOO foo" << false;
-    const QString insertFileName = QString(dir.path() + u'/' + QLatin1StringView("insert-file.txt"));
+    const QString insertFileName = QString(dir.path() + u'/' + "insert-file.txt"_L1);
     QString insertFileNameCommand = u"%INSERT=\"%1\""_s.arg(insertFileName);
     QTest::newRow("%INSERT") << insertFileNameCommand << fileName << "test insert file!\n" << false;
     insertFileNameCommand = u"%PUT=\"%1\""_s.arg(insertFileName);
@@ -582,17 +582,15 @@ void TemplateParserJobTest::test_makeValidHtml_data()
     QTest::addColumn<QString>("expected");
 
     QTest::newRow("plain text") << u"Some text\n-- \nSignature"_s << QString()
-                                << QStringLiteral(
-                                       "<html><head></head><body>Some text\n"
-                                       "-- \nSignature<br/></body></html>");
+                                << u"<html><head></head><body>Some text\n"
+                                   "-- \nSignature<br/></body></html>"_s;
 
     QTest::newRow("existing HTML tag") << u"<html><body>Some text\n-- \nSignature</body></html>"_s << QString()
                                        << u"<html><body>Some text\n-- \nSignature</body></html>"_s;
 
     QTest::newRow("existing body tag, no html") << u"<body>Some text\n-- \nSignature</body>"_s << QString()
-                                                << QStringLiteral(
-                                                       "<html><head></head><body>Some text\n"
-                                                       "-- \nSignature</body></html>");
+                                                << u"<html><head></head><body>Some text\n"
+                                                   "-- \nSignature</body></html>"_s;
 }
 
 void TemplateParserJobTest::test_makeValidHtml()

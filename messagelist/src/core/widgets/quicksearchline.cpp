@@ -20,6 +20,8 @@
 #include <QHBoxLayout>
 #include <QPushButton>
 #include <QStandardPaths>
+
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageList::Core;
 QuickSearchLine::QuickSearchLine(QWidget *parent)
     : QWidget(parent)
@@ -57,7 +59,7 @@ QuickSearchLine::QuickSearchLine(QWidget *parent)
 
     connect(mSearchEdit, &SearchLineStatus::forceLostFocus, this, &QuickSearchLine::forceLostFocus);
     mSearchEdit->setPlaceholderText(i18nc("Search for messages.", "Search"));
-    mSearchEdit->setObjectName(QLatin1StringView("quicksearch"));
+    mSearchEdit->setObjectName("quicksearch"_L1);
     mSearchEdit->setClearButtonEnabled(true);
     connect(mSearchMessageByButtons, &SearchMessageByButtons::searchOptionChanged, this, [this]() {
         mSearchEdit->filterAdded();
@@ -69,12 +71,12 @@ QuickSearchLine::QuickSearchLine(QWidget *parent)
     connect(mSearchEdit, &SearchLineStatus::activateFilter, this, &QuickSearchLine::activateFilter);
 
     hbox->addWidget(mSearchEdit);
-    mSearchStatusButtons->setObjectName(QLatin1StringView("mSearchStatusButtons"));
+    mSearchStatusButtons->setObjectName("mSearchStatusButtons"_L1);
     hbox->addWidget(mSearchStatusButtons);
     connect(mSearchStatusButtons, &SearchStatusButtons::filterStatusChanged, this, &QuickSearchLine::slotFilterActionChanged);
 
     // The status filter button. Will be populated later, as populateStatusFilterCombo() is virtual
-    mTagFilterCombo->setObjectName(QLatin1StringView("mTagFilterCombo"));
+    mTagFilterCombo->setObjectName("mTagFilterCombo"_L1);
     mTagFilterCombo->setMaximumWidth(200);
     mTagFilterCombo->hide();
     hbox->addWidget(mTagFilterCombo);

@@ -64,7 +64,7 @@ void CheckPhishingUrlJob::parse(const QByteArray &replyStr)
                         verifyCacheAfterThisTime = WebEngineViewer::CheckPhishingUrlUtil::refreshingCacheAfterThisTime(cacheDurationValue);
                     }
                 }
-                if (threatTypeStr == QLatin1StringView("MALWARE")) {
+                if (threatTypeStr == "MALWARE"_L1) {
                     const QVariantMap urlMap = map[u"threat"_s].toMap();
                     if (urlMap.count() == 1) {
                         if (urlMap[u"url"_s].toString() == d->mUrl.toString()) {

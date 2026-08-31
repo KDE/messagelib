@@ -141,7 +141,7 @@ HeaderStyleUtil::drawSpamMeter(SpamError spamError, double percent, double confi
     QString confidenceString;
     if (spamError == noError) {
         if (confidence >= 0) {
-            confidenceString = QString::number(confidence) + QLatin1StringView("% &nbsp;");
+            confidenceString = QString::number(confidence) + "% &nbsp;"_L1;
             titleText = i18n(
                 "%1% probability of being spam with confidence %3%.\n\n"
                 "Full report:\nProbability=%2\nConfidence=%4",
@@ -150,7 +150,7 @@ HeaderStyleUtil::drawSpamMeter(SpamError spamError, double percent, double confi
                 confidence,
                 confidenceHeader);
         } else { // do not show negative confidence
-            confidenceString = QString() + QLatin1StringView("&nbsp;");
+            confidenceString = QString() + "&nbsp;"_L1;
             titleText = i18n(
                 "%1% probability of being spam.\n\n"
                 "Full report:\nProbability=%2",
@@ -291,7 +291,7 @@ HeaderStyleUtil::xfaceSettings HeaderStyleUtil::xface(const MessageViewer::Heade
             } else if (!photoMemento->photo().url().isEmpty()) {
                 settings.photoURL = photoMemento->photo().url();
                 if (settings.photoURL.startsWith(u'/')) {
-                    settings.photoURL.prepend(QLatin1StringView("file:"));
+                    settings.photoURL.prepend("file:"_L1);
                 }
             } else if (!photoMemento->gravatarPixmap().isNull()) {
                 const QImage photo = photoMemento->gravatarPixmap().toImage();

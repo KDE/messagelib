@@ -13,6 +13,8 @@
 #include <QLabel>
 #include <QLineEdit>
 
+using namespace Qt::Literals::StringLiterals;
+
 using namespace MessageViewer;
 RemoteContentWidget::RemoteContentWidget(QWidget *parent)
     : QWidget(parent)
@@ -20,16 +22,16 @@ RemoteContentWidget::RemoteContentWidget(QWidget *parent)
     , mStatusComboBox(new RemoteContentStatusTypeComboBox(this))
 {
     auto mainLayout = new QHBoxLayout(this);
-    mainLayout->setObjectName(QLatin1StringView("mainLayout"));
+    mainLayout->setObjectName("mainLayout"_L1);
     mainLayout->setContentsMargins({});
 
-    mLineEdit->setObjectName(QLatin1StringView("mLineEdit"));
+    mLineEdit->setObjectName("mLineEdit"_L1);
     mLineEdit->setClearButtonEnabled(true);
     auto label = new QLabel(i18nc("@label:textbox", "Domain:"), this);
     mainLayout->addWidget(label);
     mainLayout->addWidget(mLineEdit);
 
-    mStatusComboBox->setObjectName(QLatin1StringView("mStatusComboBox"));
+    mStatusComboBox->setObjectName("mStatusComboBox"_L1);
     mainLayout->addWidget(mStatusComboBox);
     connect(mLineEdit, &QLineEdit::textChanged, this, &RemoteContentWidget::slotTextChanged);
 }

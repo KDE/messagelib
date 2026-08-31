@@ -14,6 +14,8 @@
 #include <QWindow>
 
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
+
+using namespace Qt::Literals::StringLiterals;
 namespace
 {
 static const char myDeveloperToolDialogConfigGroupName[] = "DeveloperToolDialog";
@@ -26,13 +28,13 @@ DeveloperToolDialog::DeveloperToolDialog(QWidget *parent)
 {
     setWindowTitle(i18nc("@title:window", "Developer Tool"));
     auto mainLayout = new QVBoxLayout(this);
-    mainLayout->setObjectName(QLatin1StringView("mainLayout"));
+    mainLayout->setObjectName("mainLayout"_L1);
 
-    mDeveloperToolWidget->setObjectName(QLatin1StringView("mDeveloperToolWidget"));
+    mDeveloperToolWidget->setObjectName("mDeveloperToolWidget"_L1);
     mainLayout->addWidget(mDeveloperToolWidget);
 
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
-    buttonBox->setObjectName(QLatin1StringView("buttonBox"));
+    buttonBox->setObjectName("buttonBox"_L1);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &DeveloperToolDialog::reject);
     connect(mDeveloperToolWidget, &DeveloperToolWidget::closeRequested, this, &DeveloperToolDialog::reject);
     mainLayout->addWidget(buttonBox);

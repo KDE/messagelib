@@ -80,8 +80,7 @@ void ScamDetectionDetailsDialog::slotSaveAs()
             }
             QTextStream ts(&file);
             QString htmlStr = mDetails->toHtml();
-            htmlStr.replace(QLatin1StringView(R"(meta name="qrichtext" content="1")"),
-                            QLatin1StringView(R"(meta http-equiv="Content-Type" content="text/html; charset=UTF-8")"));
+            htmlStr.replace(R"(meta name="qrichtext" content="1")"_L1, R"(meta http-equiv="Content-Type" content="text/html; charset=UTF-8")"_L1);
             ts << htmlStr;
             file.close();
         }

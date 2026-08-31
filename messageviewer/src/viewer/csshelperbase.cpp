@@ -135,7 +135,7 @@ QString CSSHelperBase::addEndBlockQuote(int numberBlock) const
 {
     QString blockQuote;
     for (int i = 0; i < numberBlock; ++i) {
-        blockQuote += QLatin1StringView("</blockquote>");
+        blockQuote += "</blockquote>"_L1;
     }
     return blockQuote;
 }
@@ -144,7 +144,7 @@ QString CSSHelperBase::addStartBlockQuote(int numberBlock) const
 {
     QString blockQuote;
     for (int i = 0; i < numberBlock; ++i) {
-        blockQuote += QLatin1StringView("<blockquote>");
+        blockQuote += "<blockquote>"_L1;
     }
     return blockQuote;
 }
@@ -173,32 +173,30 @@ QString CSSHelperBase::extraCommonCss(const QString &headerFont) const
     }
     if (result.isEmpty()) {
         // Add default value
-        result = QStringLiteral(
-            "div.header table {\n"
+        result =
+            u"div.header table {\n"
             "  width: 100% ! important;\n"
             "  border-width: 0px ! important;\n"
             "  line-height: normal;\n"
-            "}\n\n");
+            "}\n\n"_s;
     }
     return result;
 }
 
 QString CSSHelperBase::cssDefinitions(const HtmlHeadSettings &htmlHeadSetting) const
 {
-    return commonCssDefinitions() + QLatin1StringView("@media screen {\n\n") + screenCssDefinitions(this, htmlHeadSetting)
-        + QLatin1StringView(
-               "}\n"
-               "@media print {\n\n")
-        + printCssDefinitions(htmlHeadSetting) + QLatin1StringView("}\n");
+    return commonCssDefinitions() + "@media screen {\n\n"_L1 + screenCssDefinitions(this, htmlHeadSetting)
+        + "}\n"
+               "@media print {\n\n"_L1
+        + printCssDefinitions(htmlHeadSetting) + "}\n"_L1;
 }
 
 QString CSSHelperBase::htmlHead(const HtmlHeadSettings &htmlHeadSettings) const
 {
     Q_UNUSED(htmlHeadSettings)
-    return QStringLiteral(
-        "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">\n"
-        "<html><head><title></title></head>\n"
-        "<body>\n");
+    return u"<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">\n"
+           "<html><head><title></title></head>\n"
+           "<body>\n"_s;
 }
 
 QString CSSHelperBase::quoteFontTag(int level) const
@@ -217,19 +215,18 @@ QString CSSHelperBase::quoteFontTag(int level) const
 
 QString CSSHelperBase::fullAddressList() const
 {
-    QString css = QStringLiteral(
-        "input[type=checkbox].addresslist_checkbox {display: none}\n"
+    QString css =
+        u"input[type=checkbox].addresslist_checkbox {display: none}\n"
         ".addresslist_label_short {border: 1px; border-radius: 5px; padding: 0px 10px 0px 10px; white-space: nowrap}\n"
-        ".addresslist_label_full {border: 1px; border-radius: 5px; padding: 0px 10px 0px 10px; white-space: nowrap}\n");
+        ".addresslist_label_full {border: 1px; border-radius: 5px; padding: 0px 10px 0px 10px; white-space: nowrap}\n"_s;
     css += u".addresslist_label_short {background-image:url(%1);\nbackground-repeat: no-repeat}\n"_s.arg(imgShowUrl);
     css += u".addresslist_label_full {background-image:url(%1);\nbackground-repeat: no-repeat}\n\n"_s.arg(imgHideUrl);
-    for (const QString &str : {u"Cc"_s, u"To"_s, QStringLiteral("Bcc")}) {
-        css += QStringLiteral(
-                   "input ~ span.fullFull%1AddressList {display: block}\n"
-                   "input ~ span.shortFull%1AddressList {display: none}\n"
-                   "input:checked ~ span.fullFull%1AddressList {display: none}\n"
-                   "input:checked ~ span.shortFull%1AddressList {display: block}\n\n")
-                   .arg(str);
+    for (const QString &str : {u"Cc"_s, u"To"_s, u"Bcc"_s}) {
+        css +=
+            u"input ~ span.fullFull%1AddressList {display: block}\n"
+            "input ~ span.shortFull%1AddressList {display: none}\n"
+            "input:checked ~ span.fullFull%1AddressList {display: none}\n"
+            "input:checked ~ span.shortFull%1AddressList {display: block}\n\n"_s.arg(str);
     }
     return css;
 }
@@ -275,33 +272,31 @@ QString CSSHelperBase::printCssDefinitions(const HtmlHeadSettings &htmlHeadSetti
     const QFont printFont = bodyFont(htmlHeadSettings.fixedFont, true /* print */);
     QString quoteCSS;
     if (printFont.italic()) {
-        quoteCSS += QLatin1StringView("  font-style: italic ! important;\n");
+        quoteCSS += "  font-style: italic ! important;\n"_L1;
     }
     if (printFont.bold()) {
-        quoteCSS += QLatin1StringView("  font-weight: bold ! important;\n");
+        quoteCSS += "  font-weight: bold ! important;\n"_L1;
     }
     if (!quoteCSS.isEmpty()) {
-        quoteCSS = QLatin1StringView("div.noquote {\n") + quoteCSS + QLatin1StringView("}\n\n");
+        quoteCSS = "div.noquote {\n"_L1 + quoteCSS + "}\n\n"_L1;
     }
     quoteCSS += quoteCssDefinition();
 
     QStringList inlineMessageCss;
     inlineMessageCss.reserve(MESSAGE_TYPE_COUNT);
     for (const auto &msgStyle : inlineMessageStyles) {
-        inlineMessageCss.push_back(QLatin1StringView("div.") + QString::fromLatin1(msgStyle.cssName));
+        inlineMessageCss.push_back("div."_L1 + QString::fromLatin1(msgStyle.cssName));
     }
 
-    return QStringLiteral(
-               "body {\n"
+    return u"body {\n"
                "  font-family: \"%1\" ! important;\n"
                "  font-size: %2pt ! important;\n"
                "  color: #000000 ! important;\n"
                "  background-color: #ffffff ! important\n"
-               "}\n\n")
+               "}\n\n"_s
                .arg(printFont.family(), QString::number(printFont.pointSize()))
         + linkColorDefinition(htmlHeadSettings)
-        + QStringLiteral(
-              "tr.textAtmH,\n"
+        + u"tr.textAtmH,\n"
               "tr.signInProgressH,\n"
               "tr.rfc822H,\n"
               "tr.encrH,\n"
@@ -335,8 +330,8 @@ QString CSSHelperBase::printCssDefinitions(const HtmlHeadSettings &htmlHeadSetti
 
               "div.noprint {\n"
               "  display:none ! important;\n"
-              "}\n\n")
-              .arg(headerFont, extraPrintCss(headerFont), inlineMessageCss.join(QLatin1StringView(", ")))
+              "}\n\n"_s
+              .arg(headerFont, extraPrintCss(headerFont), inlineMessageCss.join(", "_L1))
         + quoteCSS + fullAddressList();
 }
 
@@ -347,29 +342,25 @@ QString CSSHelperBase::linkColorDefinition(const HtmlHeadSettings &htmlHeadSetti
         const QString bgColor = mBackgroundColor.name();
         const QString background = u"  background: %1 ! important;\n"_s.arg(bgColor);
 
-        return QStringLiteral(
-                   "div#headerbox a:link {\n"
-                   "  color: %1 ! important;\n"
-                   "  text-decoration: none ! important;\n"
-                   "}\n\n"
-                   "div#header a:link {\n"
-                   "  color: %1 ! important;\n"
-                   "  text-decoration: none ! important;\n"
-                   "}\n\n"
-                   "div.header {\n"
-                   "    %2"
-                   "}\n\n"
-                   "div#headerbox {\n"
-                   "    %2"
-                   "}\n\n")
-            .arg(linkColor, background);
+        return u"div#headerbox a:link {\n"
+               "  color: %1 ! important;\n"
+               "  text-decoration: none ! important;\n"
+               "}\n\n"
+               "div#header a:link {\n"
+               "  color: %1 ! important;\n"
+               "  text-decoration: none ! important;\n"
+               "}\n\n"
+               "div.header {\n"
+               "    %2"
+               "}\n\n"
+               "div#headerbox {\n"
+               "    %2"
+               "}\n\n"_s.arg(linkColor, background);
     } else {
-        return QStringLiteral(
-                   "a {\n"
-                   "  color: %1 ! important;\n"
-                   "  text-decoration: none ! important;\n"
-                   "}\n\n")
-            .arg(linkColor);
+        return u"a {\n"
+               "  color: %1 ! important;\n"
+               "  text-decoration: none ! important;\n"
+               "}\n\n"_s.arg(linkColor);
     }
 }
 
@@ -379,46 +370,43 @@ QString CSSHelperBase::quoteCssDefinition() const
     QString blockQuote;
     for (int i = 0; i < 9; ++i) {
         blockQuote += u"blockquote "_s;
-        quoteCSS += QStringLiteral(
-                        "%2{\n"
-                        "  margin: 4pt 0 4pt 0;\n"
-                        "  padding: 0 0 0 1em;\n"
-                        "  border-left: 2px solid %1;\n"
-                        "  unicode-bidi: plaintext\n"
-                        "}\n\n")
-                        .arg(quoteColorName(i), blockQuote);
+        quoteCSS +=
+            u"%2{\n"
+            "  margin: 4pt 0 4pt 0;\n"
+            "  padding: 0 0 0 1em;\n"
+            "  border-left: 2px solid %1;\n"
+            "  unicode-bidi: plaintext\n"
+            "}\n\n"_s.arg(quoteColorName(i), blockQuote);
     }
-    quoteCSS += QStringLiteral(
-        ".quotemarks{\n"
+    quoteCSS +=
+        u".quotemarks{\n"
         "  color:transparent;\n"
         "  font-size:0px;\n"
-        "}\n\n");
-    quoteCSS += QStringLiteral(
-        ".quotemarksemptyline{\n"
+        "}\n\n"_s;
+    quoteCSS +=
+        u".quotemarksemptyline{\n"
         "  color:transparent;\n"
         "  font-size:0px;\n"
         "  line-height: 12pt;\n"
-        "}\n\n");
+        "}\n\n"_s;
     return quoteCSS;
 }
 
 QString CSSHelperBase::defaultPrintHeaderFont() const
 {
-    const QString headerFont = QStringLiteral(
-                                   "  font-family: \"%1\" ! important;\n"
-                                   "  font-size: %2pt ! important;\n")
-                                   .arg(mPrintFont.family())
-                                   .arg(mPrintFont.pointSize());
+    const QString headerFont =
+        u"  font-family: \"%1\" ! important;\n"
+        "  font-size: %2pt ! important;\n"_s.arg(mPrintFont.family())
+            .arg(mPrintFont.pointSize());
     return headerFont;
 }
 
 QString CSSHelperBase::defaultScreenHeaderFont() const
 {
-    const QString headerFont = QStringLiteral(
-                                   "  font-family: \"%1\" ! important;\n"
-                                   "  font-size: %2px ! important;\n")
-                                   .arg(mBodyFont.family())
-                                   .arg(pointsToPixel(mPaintDevice, mBodyFont.pointSize()));
+    const QString headerFont =
+        u"  font-family: \"%1\" ! important;\n"
+        "  font-size: %2px ! important;\n"_s.arg(mBodyFont.family())
+            .arg(pointsToPixel(mPaintDevice, mBodyFont.pointSize()));
     return headerFont;
 }
 
@@ -443,26 +431,25 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, const H
     const QString cPgpEncrBColorName = useBrowserColor(htmlHeadSettings) ? u"white"_s : cPgpEncrB.name();
     const QString cPgpOk1BColorName = useBrowserColor(htmlHeadSettings) ? u"white"_s : cPgpOk1B.name();
     const QString cPgpOk0BColorName = useBrowserColor(htmlHeadSettings) ? u"white"_s : cPgpOk0B.name();
-    const QString bodyFontSize = QString::number(pointsToPixel(helper->mPaintDevice, fontSize(htmlHeadSettings.fixedFont))) + QLatin1StringView("px");
+    const QString bodyFontSize = QString::number(pointsToPixel(helper->mPaintDevice, fontSize(htmlHeadSettings.fixedFont))) + "px"_L1;
     const QPalette &pal = QApplication::palette();
 
     QString quoteCSS;
     if (bodyFont(htmlHeadSettings.fixedFont).italic()) {
-        quoteCSS += QLatin1StringView("  font-style: italic ! important;\n");
+        quoteCSS += "  font-style: italic ! important;\n"_L1;
     }
     if (bodyFont(htmlHeadSettings.fixedFont).bold()) {
-        quoteCSS += QLatin1StringView("  font-weight: bold ! important;\n");
+        quoteCSS += "  font-weight: bold ! important;\n"_L1;
     }
     if (!quoteCSS.isEmpty()) {
-        quoteCSS = QLatin1StringView("div.noquote {\n") + quoteCSS + QLatin1StringView("}\n\n");
+        quoteCSS = "div.noquote {\n"_L1 + quoteCSS + "}\n\n"_L1;
     }
 
     // CSS definitions for quote levels 1-3
     for (int i = 0; i < 3; ++i) {
-        quoteCSS += QStringLiteral(
-                        "div.quotelevel%1 {\n"
-                        "  color: %2 ! important;\n")
-                        .arg(QString::number(i + 1), quoteColorName(i));
+        quoteCSS +=
+            u"div.quotelevel%1 {\n"
+            "  color: %2 ! important;\n"_s.arg(QString::number(i + 1), quoteColorName(i));
         if (mQuoteFont.italic()) {
             quoteCSS += u"  font-style: italic ! important;\n"_s;
         }
@@ -470,17 +457,16 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, const H
             quoteCSS += u"  font-weight: bold ! important;\n"_s;
         }
         if (mShrinkQuotes) {
-            quoteCSS += QLatin1StringView("  font-size: ") + QString::fromLatin1(quoteFontSizes[i]) + QLatin1StringView("% ! important;\n");
+            quoteCSS += "  font-size: "_L1 + QString::fromLatin1(quoteFontSizes[i]) + "% ! important;\n"_L1;
         }
         quoteCSS += u"}\n\n"_s;
     }
 
     // CSS definitions for quote levels 4+
     for (int i = 0; i < 3; ++i) {
-        quoteCSS += QStringLiteral(
-                        "div.deepquotelevel%1 {\n"
-                        "  color: %2 ! important;\n")
-                        .arg(QString::number(i + 1), quoteColorName(i));
+        quoteCSS +=
+            u"div.deepquotelevel%1 {\n"
+            "  color: %2 ! important;\n"_s.arg(QString::number(i + 1), quoteColorName(i));
         if (mQuoteFont.italic()) {
             quoteCSS += u"  font-style: italic ! important;\n"_s;
         }
@@ -490,7 +476,7 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, const H
         if (mShrinkQuotes) {
             quoteCSS += u"  font-size: 70% ! important;\n"_s;
         }
-        quoteCSS += QLatin1StringView("}\n\n");
+        quoteCSS += "}\n\n"_L1;
     }
 
     quoteCSS += quoteCssDefinition();
@@ -499,8 +485,8 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, const H
     QString inlineMessageCss;
     for (const auto &msgStyle : inlineMessageStyles) {
         const auto c = cInlineMessage[msgStyle.type];
-        inlineMessageCss += QStringLiteral(
-                                R"(
+        inlineMessageCss +=
+            uR"(
             div.%1 {
                 border: 1px solid rgba(%2, %3, %4) ! important;
                 border-radius: 2px;
@@ -511,16 +497,15 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, const H
                 color: %5 ! important;
                 text-decoration: none ! important;
             }
-         )")
-                                .arg(QString::fromLatin1(msgStyle.cssName))
-                                .arg(c.red())
-                                .arg(c.green())
-                                .arg(c.blue())
-                                .arg(mLinkColor.name());
+         )"_s.arg(QString::fromLatin1(msgStyle.cssName))
+                .arg(c.red())
+                .arg(c.green())
+                .arg(c.blue())
+                .arg(mLinkColor.name());
     }
 
-    const auto scrollBarCss = QStringLiteral(
-        "html::-webkit-scrollbar {\n"
+    const auto scrollBarCss =
+        u"html::-webkit-scrollbar {\n"
         "  /* we'll add padding as \"border\" in the thumb*/\n"
         "    height: 20px;\n"
         "    width: 20px;\n"
@@ -555,19 +540,17 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, const H
 
         "html::-webkit-scrollbar-corner {\n"
         "    background-color: white;\n"
-        "}\n\n");
+        "}\n\n"_s;
 
-    return QStringLiteral(
-               "body {\n"
+    return u"body {\n"
                "  font-family: \"%1\" ! important;\n"
                "  font-size: %2 ! important;\n"
                "  color: %3 ! important;\n"
                "%4"
-               "}\n\n")
+               "}\n\n"_s
                .arg(bodyFont(htmlHeadSettings.fixedFont).family(), bodyFontSize, fgColor, background)
         + linkColorDefinition(htmlHeadSettings)
-        + QStringLiteral(
-              "a.white {\n"
+        + u"a.white {\n"
               "  color: white ! important;\n"
               "}\n\n"
 
@@ -594,10 +577,9 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, const H
               "tr.signInProgressH,\n"
               "tr.rfc822H {\n"
               "%3"
-              "}\n\n")
+              "}\n\n"_s
               .arg(fgColor, bgColor, headerFont)
-        + QStringLiteral(
-              "table.encr {\n"
+        + u"table.encr {\n"
               "  background-color: %1 ! important;\n"
               "}\n\n"
 
@@ -607,10 +589,9 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, const H
               "%4"
               "}\n\n"
 
-              "tr.encrB { background-color: %5 ! important; }\n\n")
+              "tr.encrB { background-color: %5 ! important; }\n\n"_s
               .arg(cPgpEncrF.name(), cPgpEncrH.name(), cPgpEncrHT.name(), headerFont, cPgpEncrBColorName)
-        + QStringLiteral(
-              "table.signOkKeyOk {\n"
+        + u"table.signOkKeyOk {\n"
               "  background-color: %1 ! important;\n"
               "}\n\n"
 
@@ -620,10 +601,9 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, const H
               "%4"
               "}\n\n"
 
-              "tr.signOkKeyOkB { background-color: %5 ! important; }\n\n")
+              "tr.signOkKeyOkB { background-color: %5 ! important; }\n\n"_s
               .arg(cPgpOk1F.name(), cPgpOk1H.name(), cPgpOk1HT.name(), headerFont, cPgpOk1BColorName)
-        + QStringLiteral(
-              "table.signOkKeyBad {\n"
+        + u"table.signOkKeyBad {\n"
               "  background-color: %1 ! important;\n"
               "}\n\n"
 
@@ -633,10 +613,9 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, const H
               "%4"
               "}\n\n"
 
-              "tr.signOkKeyBadB { background-color: %5 ! important; }\n\n")
+              "tr.signOkKeyBadB { background-color: %5 ! important; }\n\n"_s
               .arg(cPgpOk0F.name(), cPgpOk0H.name(), cPgpOk0HT.name(), headerFont, cPgpOk0BColorName)
-        + QStringLiteral(
-              "table.signWarn {\n"
+        + u"table.signWarn {\n"
               "  background-color: %1 ! important;\n"
               "}\n\n"
 
@@ -646,10 +625,9 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, const H
               "%4"
               "}\n\n"
 
-              "tr.signWarnB { background-color: %5 ! important; }\n\n")
+              "tr.signWarnB { background-color: %5 ! important; }\n\n"_s
               .arg(cPgpWarnF.name(), cPgpWarnH.name(), cPgpWarnHT.name(), headerFont, signWarnBColorName)
-        + QStringLiteral(
-              "table.signErr {\n"
+        + u"table.signErr {\n"
               "  background-color: %1 ! important;\n"
               "}\n\n"
 
@@ -659,11 +637,10 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, const H
               "%4"
               "}\n\n"
 
-              "tr.signErrB { background-color: %5 ! important; }\n\n")
+              "tr.signErrB { background-color: %5 ! important; }\n\n"_s
               .arg(cPgpErrF.name(), cPgpErrH.name(), cPgpErrHT.name(), headerFont, cPgpErrBColorName)
         + inlineMessageCss
-        + QStringLiteral(
-              "div.header {\n"
+        + u"div.header {\n"
               "%1"
               "}\n\n"
 
@@ -680,7 +657,7 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, const H
 
               "div.senderstatus{\n"
               "  text-align:center ! important;\n"
-              "}\n\n")
+              "}\n\n"_s
 
               .arg(headerFont, scrollBarCss, extraScreenCss(headerFont), pal.color(QPalette::Highlight).name(), pal.color(QPalette::Window).name())
         + quoteCSS + fullAddressList();
@@ -693,84 +670,82 @@ QString CSSHelperBase::commonCssDefinitions() const
     QStringList inlineMessageCss;
     inlineMessageCss.reserve(MESSAGE_TYPE_COUNT);
     for (const auto &msgStyle : inlineMessageStyles) {
-        inlineMessageCss.push_back(QLatin1StringView("div.") + QString::fromLatin1(msgStyle.cssName));
+        inlineMessageCss.push_back("div."_L1 + QString::fromLatin1(msgStyle.cssName));
     }
-    return QStringLiteral(
-               "div.header {\n"
-               "  margin-bottom: 10pt ! important;\n"
-               "}\n\n"
+    return u"div.header {\n"
+           "  margin-bottom: 10pt ! important;\n"
+           "}\n\n"
 
-               "pre.highlightattachment {\n"
-               "  white-space: pre-wrap;\n"
-               "}\n\n"
+           "pre.highlightattachment {\n"
+           "  white-space: pre-wrap;\n"
+           "}\n\n"
 
-               "table.textAtm {\n"
-               "  margin-top: 10pt ! important;\n"
-               "  margin-bottom: 10pt ! important;\n"
-               "}\n\n"
+           "table.textAtm {\n"
+           "  margin-top: 10pt ! important;\n"
+           "  margin-bottom: 10pt ! important;\n"
+           "}\n\n"
 
-               "tr.textAtmH,\n"
-               "tr.textAtmB,\n"
-               "tr.rfc822B {\n"
-               "  font-weight: normal ! important;\n"
-               "}\n\n"
+           "tr.textAtmH,\n"
+           "tr.textAtmB,\n"
+           "tr.rfc822B {\n"
+           "  font-weight: normal ! important;\n"
+           "}\n\n"
 
-               "tr.signInProgressH,\n"
-               "tr.rfc822H,\n"
-               "tr.encrH,\n"
-               "tr.signOkKeyOkH,\n"
-               "tr.signOkKeyBadH,\n"
-               "tr.signWarnH,\n"
-               "tr.signErrH {\n"
-               "  font-weight: bold ! important;\n"
-               "}\n\n"
+           "tr.signInProgressH,\n"
+           "tr.rfc822H,\n"
+           "tr.encrH,\n"
+           "tr.signOkKeyOkH,\n"
+           "tr.signOkKeyBadH,\n"
+           "tr.signWarnH,\n"
+           "tr.signErrH {\n"
+           "  font-weight: bold ! important;\n"
+           "}\n\n"
 
-               "tr.textAtmH td,\n"
-               "tr.textAtmB td {\n"
-               "  padding: 3px ! important;\n"
-               "}\n\n"
+           "tr.textAtmH td,\n"
+           "tr.textAtmB td {\n"
+           "  padding: 3px ! important;\n"
+           "}\n\n"
 
-               "table.rfc822 {\n"
-               "  width: 100% ! important;\n"
-               "  border: solid 1px black ! important;\n"
-               "  margin-top: 10pt ! important;\n"
-               "  margin-bottom: 10pt ! important;\n"
-               "}\n\n"
+           "table.rfc822 {\n"
+           "  width: 100% ! important;\n"
+           "  border: solid 1px black ! important;\n"
+           "  margin-top: 10pt ! important;\n"
+           "  margin-bottom: 10pt ! important;\n"
+           "}\n\n"
 
-               "table.textAtm,\n"
-               "table.encr,\n"
-               "table.signWarn,\n"
-               "table.signErr,\n"
-               "table.signOkKeyBad,\n"
-               "table.signOkKeyOk,\n"
-               "table.signInProgress,\n"
+           "table.textAtm,\n"
+           "table.encr,\n"
+           "table.signWarn,\n"
+           "table.signErr,\n"
+           "table.signOkKeyBad,\n"
+           "table.signOkKeyOk,\n"
+           "table.signInProgress,\n"
 
-               "%1"
+           "%1"
 
-               "%2 {\n"
-               "  margin: 0px 5% 10px 5% ! important;\n"
-               "  padding: 10px ! important;\n"
-               "  text-align: left ! important;\n"
-               "  line-height: normal;\n"
-               "  min-height: %6px;\n"
-               "}\n\n"
+           "%2 {\n"
+           "  margin: 0px 5% 10px 5% ! important;\n"
+           "  padding: 10px ! important;\n"
+           "  text-align: left ! important;\n"
+           "  line-height: normal;\n"
+           "  min-height: %6px;\n"
+           "}\n\n"
 
-               "hr {\n"
-               "  border: 0;\n"
-               "  height: 0;\n"
-               "  border-top: 1px solid rgba(%3, %4, %5, 0.3);\n"
-               "}\n\n"
+           "hr {\n"
+           "  border: 0;\n"
+           "  height: 0;\n"
+           "  border-top: 1px solid rgba(%3, %4, %5, 0.3);\n"
+           "}\n\n"
 
-               "div.quotelevelmark {\n"
-               "  position: absolute;\n"
-               "  margin-left:-10px;\n"
-               "}\n\n")
-        .arg(extraCommonCss(headerFont))
-        .arg(inlineMessageCss.join(QLatin1StringView(", ")))
-        .arg(mForegroundColor.red())
-        .arg(mForegroundColor.green())
-        .arg(mForegroundColor.blue())
-        .arg(QString::number(48));
+           "div.quotelevelmark {\n"
+           "  position: absolute;\n"
+           "  margin-left:-10px;\n"
+           "}\n\n"_s.arg(extraCommonCss(headerFont))
+               .arg(inlineMessageCss.join(", "_L1))
+               .arg(mForegroundColor.red())
+               .arg(mForegroundColor.green())
+               .arg(mForegroundColor.blue())
+               .arg(QString::number(48));
 }
 
 void CSSHelperBase::setBodyFont(const QFont &font)

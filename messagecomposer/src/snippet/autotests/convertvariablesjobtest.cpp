@@ -60,12 +60,12 @@ void ConvertVariablesJobTest::shouldConvertVariables_data()
     QTest::addColumn<QString>("original");
     QTest::addColumn<QString>("expected");
     QTest::newRow("empty") << QString() << QString();
-    QTest::newRow("novariable") << u"bla bli blo"_s << QStringLiteral("bla bli blo");
-    QTest::newRow("subject") << u"bla bli blo %FULLSUBJECT"_s << QStringLiteral("bla bli blo Subject!!!!");
-    QTest::newRow("subjecttwice") << u"%FULLSUBJECT %FULLSUBJECT"_s << QStringLiteral("Subject!!!! Subject!!!!");
-    QTest::newRow("subjectfollowedbytext") << u"%FULLSUBJECTbla"_s << QStringLiteral("Subject!!!!bla");
-    QTest::newRow("unknownvariable") << u"%UNKNOWNVARIABLE"_s << QStringLiteral("%UNKNOWNVARIABLE");
-    QTest::newRow("percentbeforevariable") << u"%%FULLSUBJECT"_s << QStringLiteral("%Subject!!!!");
+    QTest::newRow("novariable") << u"bla bli blo"_s << u"bla bli blo"_s;
+    QTest::newRow("subject") << u"bla bli blo %FULLSUBJECT"_s << u"bla bli blo Subject!!!!"_s;
+    QTest::newRow("subjecttwice") << u"%FULLSUBJECT %FULLSUBJECT"_s << u"Subject!!!! Subject!!!!"_s;
+    QTest::newRow("subjectfollowedbytext") << u"%FULLSUBJECTbla"_s << u"Subject!!!!bla"_s;
+    QTest::newRow("unknownvariable") << u"%UNKNOWNVARIABLE"_s << u"%UNKNOWNVARIABLE"_s;
+    QTest::newRow("percentbeforevariable") << u"%%FULLSUBJECT"_s << u"%Subject!!!!"_s;
     // Variables are matched by prefix: make sure the longest name always wins.
     QTest::newRow("year") << u"%YEAR"_s << MessageComposer::ConvertSnippetVariablesUtil::year();
     QTest::newRow("yearlastmonth") << u"%YEARLASTMONTH"_s << MessageComposer::ConvertSnippetVariablesUtil::yearLastMonth();

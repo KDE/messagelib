@@ -1204,8 +1204,8 @@ bool EncryptedMessagePart::okDecryptMIME(KMime::Content &data)
         } else if (cannotDecrypt) {
             partMetaData()->errorText = i18n("Crypto plug-in \"%1\" cannot decrypt messages.", cryptPlugLibName);
         } else if (!passphraseError()) {
-            partMetaData()->errorText = i18n("Crypto plug-in \"%1\" could not decrypt the data.", cryptPlugLibName) + QLatin1StringView("<br />")
-                + i18n("Error: %1", partMetaData()->errorText);
+            partMetaData()->errorText =
+                i18n("Crypto plug-in \"%1\" could not decrypt the data.", cryptPlugLibName) + "<br />"_L1 + i18n("Error: %1", partMetaData()->errorText);
         }
     }
     return bDecryptionOk;

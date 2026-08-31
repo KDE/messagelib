@@ -15,6 +15,8 @@
 
 #include "mimetreeparser_debug.h"
 
+using namespace Qt::Literals::StringLiterals;
+
 using namespace MimeTreeParser;
 
 MessagePart::Ptr MultiPartSignedBodyPartFormatter::process(Interface::BodyPart &part) const
@@ -44,10 +46,9 @@ MessagePart::Ptr MultiPartSignedBodyPartFormatter::process(Interface::BodyPart &
     }
 
     const QGpgME::Protocol *protocol = nullptr;
-    if (protocolContentType == QLatin1StringView("application/pkcs7-signature") || protocolContentType == QLatin1StringView("application/x-pkcs7-signature")) {
+    if (protocolContentType == "application/pkcs7-signature"_L1 || protocolContentType == "application/x-pkcs7-signature"_L1) {
         protocol = QGpgME::smime();
-    } else if (protocolContentType == QLatin1StringView("application/pgp-signature")
-               || protocolContentType == QLatin1StringView("application/x-pgp-signature")) {
+    } else if (protocolContentType == "application/pgp-signature"_L1 || protocolContentType == "application/x-pgp-signature"_L1) {
         protocol = QGpgME::openpgp();
     }
 
