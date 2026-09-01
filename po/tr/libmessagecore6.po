@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-05 00:44+0000\n"
+"POT-Creation-Date: 2026-09-01 00:47+0000\n"
 "PO-Revision-Date: 2026-05-02 19:56+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -36,12 +36,12 @@ msgstr ""
 "tulliana@gmail.com, ibrahim@pardus.org.tr, volkangezer@gmail.com, "
 "emir_sari@icloud.com"
 
-#: attachment/attachmentcompressjob.cpp:50
+#: attachment/attachmentcompressjob.cpp:52
 #, kde-format
 msgid "Could not initiate attachment compression."
 msgstr "Ek sıkıştırma süreci başlatılamadı."
 
-#: attachment/attachmentcompressjob.cpp:60
+#: attachment/attachmentcompressjob.cpp:62
 #, kde-format
 msgid "Could not compress the attachment."
 msgstr "Ek sıkıştırılamadı."

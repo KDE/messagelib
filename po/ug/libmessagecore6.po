@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecore\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-05 00:44+0000\n"
+"POT-Creation-Date: 2026-09-01 00:47+0000\n"
 "PO-Revision-Date: 2026-06-01 16:21-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -28,12 +28,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "sahranbay@gmail.com, gheyret@gmail.com"
 
-#: attachment/attachmentcompressjob.cpp:50
+#: attachment/attachmentcompressjob.cpp:52
 #, kde-format
 msgid "Could not initiate attachment compression."
 msgstr "قوشۇلما قىسىشنى دەسلەپلەشتۈرەلمىدى."
 
-#: attachment/attachmentcompressjob.cpp:60
+#: attachment/attachmentcompressjob.cpp:62
 #, kde-format
 msgid "Could not compress the attachment."
 msgstr "قوشۇلمىنى قىسالمىدى."

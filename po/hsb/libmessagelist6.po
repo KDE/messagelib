@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-26 00:49+0000\n"
+"POT-Creation-Date: 2026-09-01 00:47+0000\n"
 "PO-Revision-Date: 2007-05-06 20:54+0200\n"
 "Last-Translator: Eduard Werner/Edward Wornar <edi.werner@gmx.de>\n"
 "Language-Team:  <hsb@li.org>\n"
@@ -443,7 +443,7 @@ msgstr ""
 msgid "A smart multiline and multi item theme with a clickable status column"
 msgstr ""
 
-#: core/manager.cpp:758 core/view.cpp:2398 core/view.cpp:2402
+#: core/manager.cpp:758 core/view.cpp:2397 core/view.cpp:2401
 #, kde-format
 msgid "Status"
 msgstr "Staw"
@@ -503,7 +503,7 @@ msgctxt "Message Aggregation Group Header: Month name and Year number"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: core/model.cpp:3803
+#: core/model.cpp:3801
 #, kde-format
 msgid "Processed 1 Message of %2"
 msgid_plural "Processed %1 Messages of %2"
@@ -512,7 +512,7 @@ msgstr[1] "%1 powěsći z %2 předźěłanej"
 msgstr[2] "%1 powěsće z %2 předźěłane"
 msgstr[3] "%1 powěsći z %2 předźěłanych"
 
-#: core/model.cpp:3809 core/model.cpp:3815
+#: core/model.cpp:3807 core/model.cpp:3813
 #, fuzzy, kde-format
 #| msgid "&Thread Messages"
 msgid "Threaded 1 Message of %2"
@@ -522,7 +522,7 @@ msgstr[1] "Powěsće &skupinkować"
 msgstr[2] "Powěsće &skupinkować"
 msgstr[3] "Powěsće &skupinkować"
 
-#: core/model.cpp:3821
+#: core/model.cpp:3819
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "&Expand Thread"
@@ -533,7 +533,7 @@ msgstr[1] "&Skupinu rozćahnyć"
 msgstr[2] "&Skupinu rozćahnyć"
 msgstr[3] "&Skupinu rozćahnyć"
 
-#: core/model.cpp:3827
+#: core/model.cpp:3825
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "&Expand Thread"
@@ -544,7 +544,7 @@ msgstr[1] "&Skupinu rozćahnyć"
 msgstr[2] "&Skupinu rozćahnyć"
 msgstr[3] "&Skupinu rozćahnyć"
 
-#: core/model.cpp:3919
+#: core/model.cpp:3917
 #, fuzzy, kde-format
 #| msgid "Ready."
 msgctxt "@info:status Finished view fill"
@@ -870,39 +870,39 @@ msgstr "Standardne stołpiki pokazać"
 msgid "Display Tooltips"
 msgstr "Tooltips pokazać"
 
-#: core/view.cpp:2379 core/view.cpp:2383
+#: core/view.cpp:2378 core/view.cpp:2382
 #: core/widgets/searchmessagebybuttons.cpp:75
 #, kde-format
 msgid "From"
 msgstr "Wot"
 
-#: core/view.cpp:2380 core/view.cpp:2384
+#: core/view.cpp:2379 core/view.cpp:2383
 #, kde-format
 msgctxt "Receiver of the email"
 msgid "To"
 msgstr "Na"
 
-#: core/view.cpp:2381 core/view.cpp:2385
+#: core/view.cpp:2380 core/view.cpp:2384
 #, kde-format
 msgid "Date"
 msgstr "Datum"
 
-#: core/view.cpp:2399 core/view.cpp:2403
+#: core/view.cpp:2398 core/view.cpp:2402
 #, kde-format
 msgid "Size"
 msgstr "Wulkosć"
 
-#: core/view.cpp:2400 core/view.cpp:2404 utils/themeeditor.cpp:191
+#: core/view.cpp:2399 core/view.cpp:2403 utils/themeeditor.cpp:191
 #, kde-format
 msgid "Folder"
 msgstr "Zapisk"
 
-#: core/view.cpp:2410 core/view.cpp:2412
+#: core/view.cpp:2409 core/view.cpp:2411
 #, kde-format
 msgid "Preview"
 msgstr "Přehladka"
 
-#: core/view.cpp:2429
+#: core/view.cpp:2428
 #, kde-format
 msgid "<b>%1</b> reply"
 msgid_plural "<b>%1</b> replies"
@@ -911,7 +911,7 @@ msgstr[1] "<b>%1</b> wotmołwje"
 msgstr[2] "<b>%1</b> wotmołwy"
 msgstr[3] "<b>%1</b> wotmołwow"
 
-#: core/view.cpp:2432
+#: core/view.cpp:2431
 #, kde-format
 msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
@@ -920,32 +920,32 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: core/view.cpp:2469
+#: core/view.cpp:2466
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Threads started on 2008-12-21'"
 msgid "Threads started on %1"
 msgstr "Diskusije, kiž su so %1 započeli"
 
-#: core/view.cpp:2471
+#: core/view.cpp:2468
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Threads started Yesterday'"
 msgid "Threads started %1"
 msgstr "Diskusije, kiž su so %1 započeli"
 
-#: core/view.cpp:2475
+#: core/view.cpp:2472
 #, fuzzy, kde-format
 msgid "Threads with messages dated %1"
 msgstr "Powěsće &skupinkować"
 
-#: core/view.cpp:2485
+#: core/view.cpp:2482
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgctxt "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'"
 msgid "Messages sent on %1"
 msgstr "Powěsć bu podpisana wot %1."
 
-#: core/view.cpp:2488
+#: core/view.cpp:2485
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgctxt ""
@@ -953,86 +953,86 @@ msgctxt ""
 msgid "Messages received on %1"
 msgstr "Powěsć bu podpisana wot %1."
 
-#: core/view.cpp:2492
+#: core/view.cpp:2489
 #, fuzzy, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent Yesterday'"
 msgid "Messages sent %1"
 msgstr "Lisćina powěsćow"
 
-#: core/view.cpp:2494
+#: core/view.cpp:2491
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgctxt "@info:tooltip Formats to something like 'Messages received Yesterday'"
 msgid "Messages received %1"
 msgstr "Powěsć bu podpisana wot %1."
 
-#: core/view.cpp:2503
+#: core/view.cpp:2500
 #, fuzzy, kde-format
 msgid "Threads started within %1"
 msgstr "Skupiny jako standard w&očinjene wostajić"
 
-#: core/view.cpp:2506
+#: core/view.cpp:2503
 #, fuzzy, kde-format
 msgid "Threads containing messages with dates within %1"
 msgstr "Powěsće &skupinkować"
 
-#: core/view.cpp:2514
+#: core/view.cpp:2511
 #, fuzzy, kde-format
 #| msgid "Message was signed with key %1."
 msgid "Messages sent within %1"
 msgstr "Powěsć bu podpisana z klučom %1."
 
-#: core/view.cpp:2516
+#: core/view.cpp:2513
 #, fuzzy, kde-format
 #| msgid "Message was signed with key %1."
 msgid "Messages received within %1"
 msgstr "Powěsć bu podpisana z klučom %1."
 
-#: core/view.cpp:2525
+#: core/view.cpp:2522
 #, fuzzy, kde-format
 msgid "Threads started by %1"
 msgstr "Skupiny jako standard w&očinjene wostajić"
 
-#: core/view.cpp:2528
+#: core/view.cpp:2525
 #, fuzzy, kde-format
 msgid "Threads with most recent message by %1"
 msgstr "Powěsće &skupinkować"
 
-#: core/view.cpp:2537 core/view.cpp:2561
+#: core/view.cpp:2534 core/view.cpp:2558
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Messages sent to %1"
 msgstr "Powěsć bu podpisana wot %1."
 
-#: core/view.cpp:2539
+#: core/view.cpp:2536
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Messages sent by %1"
 msgstr "Powěsć bu podpisana wot %1."
 
-#: core/view.cpp:2542
+#: core/view.cpp:2539
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Messages received from %1"
 msgstr "Powěsć bu podpisana wot %1."
 
-#: core/view.cpp:2550
+#: core/view.cpp:2547
 #, fuzzy, kde-format
 msgid "Threads directed to %1"
 msgstr "Skupiny jako standard w&očinjene wostajić"
 
-#: core/view.cpp:2553
+#: core/view.cpp:2550
 #, fuzzy, kde-format
 msgid "Threads with most recent message directed to %1"
 msgstr "Powěsće &skupinkować"
 
-#: core/view.cpp:2563
+#: core/view.cpp:2560
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Messages received by %1"
 msgstr "Powěsć bu podpisana wot %1."
 
-#: core/view.cpp:2589
+#: core/view.cpp:2585
 #, fuzzy, kde-format
 msgid "<b>%1</b> thread"
 msgid_plural "<b>%1</b> threads"
@@ -1041,7 +1041,7 @@ msgstr[1] "Hubjena signatura."
 msgstr[2] "Hubjena signatura."
 msgstr[3] "Hubjena signatura."
 
-#: core/view.cpp:2594
+#: core/view.cpp:2590
 #, kde-format
 msgid "<b>%1</b> message (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
@@ -1050,60 +1050,60 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: core/widgetbase.cpp:198
+#: core/widgetbase.cpp:200
 #, fuzzy, kde-format
 msgid "No filter defined."
 msgstr "Filtrowe akcije"
 
-#: core/widgetbase.cpp:198
+#: core/widgetbase.cpp:200
 #, fuzzy, kde-format
 #| msgid "Create Filter"
 msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "Filter stworić"
 
-#: core/widgetbase.cpp:423 messagelistutil.cpp:115
+#: core/widgetbase.cpp:425 messagelistutil.cpp:115
 #, kde-format
 msgid "Theme"
 msgstr "Tema"
 
-#: core/widgetbase.cpp:444 core/widgetbase.cpp:534
+#: core/widgetbase.cpp:446 core/widgetbase.cpp:536
 #: core/widgets/configurefilterswidget.cpp:76
 #, kde-format
 msgid "Configure..."
 msgstr "Připrawić..."
 
-#: core/widgetbase.cpp:513 messagelistutil.cpp:110
+#: core/widgetbase.cpp:515 messagelistutil.cpp:110
 #, kde-format
 msgid "Aggregation"
 msgstr "Agregacija"
 
-#: core/widgetbase.cpp:596
+#: core/widgetbase.cpp:598
 #, kde-format
 msgid "Message Sort Order"
 msgstr "Sortěrowanje powěsćow"
 
-#: core/widgetbase.cpp:618
+#: core/widgetbase.cpp:620
 #, kde-format
 msgid "Message Sort Direction"
 msgstr "Směr sortěrowanja"
 
-#: core/widgetbase.cpp:635
+#: core/widgetbase.cpp:637
 #, kde-format
 msgid "Group Sort Order"
 msgstr "Sortěrowanje skupin"
 
-#: core/widgetbase.cpp:652
+#: core/widgetbase.cpp:654
 #, kde-format
 msgid "Group Sort Direction"
 msgstr "Směr sortěrowanja skupin"
 
-#: core/widgetbase.cpp:667
+#: core/widgetbase.cpp:669
 #, kde-format
 msgid "Folder Always Uses This Sort Order"
 msgstr "Zapisk so přeco takle sortěruje"
 
-#: core/widgets/configurefiltersdialog.cpp:24
+#: core/widgets/configurefiltersdialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Filter"
@@ -1131,13 +1131,13 @@ msgstr "Filter wotstronić"
 msgid "No result found"
 msgstr "Njejsym ničo namakał"
 
-#: core/widgets/filternamedialog.cpp:19
+#: core/widgets/filternamedialog.cpp:21
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Filter"
 msgstr "Filter wobdźěłać"
 
-#: core/widgets/filternamewidget.cpp:32
+#: core/widgets/filternamewidget.cpp:34
 #, fuzzy, kde-format
 #| msgid "Name:"
 msgctxt "@label:textbox"
@@ -1158,18 +1158,18 @@ msgctxt "@action"
 msgid "Configure..."
 msgstr "Připrawić..."
 
-#: core/widgets/quicksearchline.cpp:59
+#: core/widgets/quicksearchline.cpp:61
 #, kde-format
 msgctxt "Search for messages."
 msgid "Search"
 msgstr "Pytać"
 
-#: core/widgets/quicksearchwarning.cpp:21
+#: core/widgets/quicksearchwarning.cpp:23
 #, kde-format
 msgid "The words less than 3 letters are ignored."
 msgstr "Słowa z mjenje hač třomi pismikami so ignoruja."
 
-#: core/widgets/quicksearchwarning.cpp:22
+#: core/widgets/quicksearchwarning.cpp:24
 #, fuzzy, kde-format
 #| msgid "Do not show again"
 msgctxt "@action"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-16 00:46+0000\n"
+"POT-Creation-Date: 2026-09-01 00:47+0000\n"
 "PO-Revision-Date: 2007-02-28 14:08+0100\n"
 "Last-Translator: Bozidar Proevski <bobibobi@freemail.com.mk>\n"
 "Language-Team: Macedonian <mkde-l10n@lists.sourceforge.net>\n"
@@ -67,7 +67,7 @@ msgstr ""
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "Крипто-приклучокот „%1“ не може да декриптира пораки."
 
-#: src/messagepart.cpp:1207
+#: src/messagepart.cpp:1208
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Крипто-приклучокот „%1“ не можеше да ги декриптира податоците."

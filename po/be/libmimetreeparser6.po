@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-16 00:46+0000\n"
+"POT-Creation-Date: 2026-09-01 00:47+0000\n"
 "PO-Revision-Date: 2008-01-31 22:13+0200\n"
 "Last-Translator: Darafei Praliaskouski <komzpa@gmail.com>\n"
 "Language-Team: Belarusian <i18n@mova.org>\n"
@@ -70,7 +70,7 @@ msgstr "Не атрымоўваецца ўсталяваць сапраўдна�
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "Дапаўненне крыптаграфіі \"%1\" ня можа расшыфраваць паведамленні."
 
-#: src/messagepart.cpp:1207
+#: src/messagepart.cpp:1208
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Дапаўненне крыптаграфіі \"%1\" ня можа расшыфраваць дадзеныя."

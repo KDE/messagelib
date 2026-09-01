@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-05 00:44+0000\n"
+"POT-Creation-Date: 2026-09-01 00:47+0000\n"
 "PO-Revision-Date: 2024-08-02 05:22+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -32,12 +32,12 @@ msgid "Your emails"
 msgstr ""
 "jlp@holodeck1.com,smolejv@gmx.net,andrejm@ubuntu.si,matja.jeran@amis.net"
 
-#: attachment/attachmentcompressjob.cpp:50
+#: attachment/attachmentcompressjob.cpp:52
 #, kde-format
 msgid "Could not initiate attachment compression."
 msgstr "Ni bilo mogoče začeti s stiskanjem priloge."
 
-#: attachment/attachmentcompressjob.cpp:60
+#: attachment/attachmentcompressjob.cpp:62
 #, kde-format
 msgid "Could not compress the attachment."
 msgstr "Priloge ni bilo mogoče stisniti."

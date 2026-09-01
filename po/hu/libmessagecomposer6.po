@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-30 00:48+0000\n"
+"POT-Creation-Date: 2026-09-01 00:47+0000\n"
 "PO-Revision-Date: 2025-11-08 22:31+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -47,7 +47,7 @@ msgid "Compress"
 msgstr "Tömörítés"
 
 #: attachment/attachmentcontrollerbase.cpp:202
-#: attachment/attachmentcontrollerbase.cpp:969
+#: attachment/attachmentcontrollerbase.cpp:968
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach file"
@@ -224,39 +224,39 @@ msgstr "Összes kijelölése"
 msgid "Reload"
 msgstr "Újratöltés"
 
-#: attachment/attachmentcontrollerbase.cpp:683
-#: attachment/attachmentcontrollerbase.cpp:709
-#: attachment/attachmentcontrollerbase.cpp:762
+#: attachment/attachmentcontrollerbase.cpp:682
+#: attachment/attachmentcontrollerbase.cpp:708
+#: attachment/attachmentcontrollerbase.cpp:761
 #, kde-format
 msgid "KMail was unable to write the attachment to a temporary file."
 msgstr "A KMail nem tudta a mellékletet az átmeneti fájlba írni."
 
-#: attachment/attachmentcontrollerbase.cpp:684
-#: attachment/attachmentcontrollerbase.cpp:710
-#: attachment/attachmentcontrollerbase.cpp:720
+#: attachment/attachmentcontrollerbase.cpp:683
+#: attachment/attachmentcontrollerbase.cpp:709
+#: attachment/attachmentcontrollerbase.cpp:719
 #, kde-format
 msgctxt "@title:window"
 msgid "Unable to open attachment"
 msgstr "A melléklet nem nyitható meg"
 
-#: attachment/attachmentcontrollerbase.cpp:763 attachment/editorwatcher.cpp:202
+#: attachment/attachmentcontrollerbase.cpp:762 attachment/editorwatcher.cpp:202
 #, kde-format
 msgctxt "@title:window"
 msgid "Unable to edit attachment"
 msgstr "A melléklet nem szerkeszthető"
 
-#: attachment/attachmentcontrollerbase.cpp:804
+#: attachment/attachmentcontrollerbase.cpp:803
 #, kde-format
 msgid "unnamed"
 msgstr "névtelen"
 
-#: attachment/attachmentcontrollerbase.cpp:807
+#: attachment/attachmentcontrollerbase.cpp:806
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Attachment As"
 msgstr "Melléklet mentése másként"
 
-#: attachment/attachmentcontrollerbase.cpp:830
+#: attachment/attachmentcontrollerbase.cpp:829
 #, kde-format
 msgid ""
 "File %1 exists.\n"
@@ -265,56 +265,56 @@ msgstr ""
 "Már létezik %1 nevű fájl.\n"
 "Szeretné lecserélni?"
 
-#: attachment/attachmentcontrollerbase.cpp:831
+#: attachment/attachmentcontrollerbase.cpp:830
 #, kde-format
 msgctxt "@title:window"
 msgid "Save to File"
 msgstr "Mentés fájlba"
 
-#: attachment/attachmentcontrollerbase.cpp:832
+#: attachment/attachmentcontrollerbase.cpp:831
 #, kde-format
 msgctxt "@action:button"
 msgid "&Replace"
 msgstr "Cse&re"
 
-#: attachment/attachmentcontrollerbase.cpp:859
-#: attachment/attachmentcontrollerbase.cpp:938
+#: attachment/attachmentcontrollerbase.cpp:858
+#: attachment/attachmentcontrollerbase.cpp:937
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
 msgstr "Biztosan csatolni szeretné ezt a mappát: „%1”?"
 
-#: attachment/attachmentcontrollerbase.cpp:860
-#: attachment/attachmentcontrollerbase.cpp:939
+#: attachment/attachmentcontrollerbase.cpp:859
+#: attachment/attachmentcontrollerbase.cpp:938
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach directory"
 msgstr "Mappa csatolása"
 
-#: attachment/attachmentcontrollerbase.cpp:861
-#: attachment/attachmentcontrollerbase.cpp:940
+#: attachment/attachmentcontrollerbase.cpp:860
+#: attachment/attachmentcontrollerbase.cpp:939
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach"
 msgstr "Csatolás"
 
-#: attachment/attachmentcontrollerbase.cpp:896
+#: attachment/attachmentcontrollerbase.cpp:895
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach Directory"
 msgstr "Mappa csatolása"
 
-#: attachment/attachmentcontrollerbase.cpp:904
+#: attachment/attachmentcontrollerbase.cpp:903
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach File"
 msgstr "Fájl csatolása"
 
-#: attachment/attachmentcontrollerbase.cpp:993
+#: attachment/attachmentcontrollerbase.cpp:992
 #, kde-format
 msgid "Attach Public OpenPGP Key"
 msgstr "Nyilvános OpenPGP kulcs csatolása"
 
-#: attachment/attachmentcontrollerbase.cpp:994
+#: attachment/attachmentcontrollerbase.cpp:993
 #, kde-format
 msgid "Select the public key which should be attached."
 msgstr "Válassza ki a csatolni kívánt nyilvános kulcsot."
@@ -392,37 +392,37 @@ msgstr ""
 "A KMail nem képes érzékelni, ha a kiválasztott szerkesztő bezárásra került. "
 "Az adatvesztés elkerülése érdekében a melléklet szerkesztése megszakad."
 
-#: composer/composerviewbase.cpp:343
+#: composer/composerviewbase.cpp:345
 #, kde-format
 msgid "&Keep markup, do not sign/encrypt"
 msgstr "A HTML-kód meg&tartása, aláírás és titkosítás nélkül"
 
-#: composer/composerviewbase.cpp:343
+#: composer/composerviewbase.cpp:345
 #, kde-format
 msgid "&Keep markup, do not encrypt"
 msgstr "A HTML-kód megtartása, titk&osítás nélkül"
 
-#: composer/composerviewbase.cpp:343
+#: composer/composerviewbase.cpp:345
 #, kde-format
 msgid "&Keep markup, do not sign"
 msgstr "A HTML-kód megtartása, a&láírás nélkül"
 
-#: composer/composerviewbase.cpp:344
+#: composer/composerviewbase.cpp:346
 #, kde-format
 msgid "Sign/Encrypt (delete markup)"
 msgstr "Aláírás és titkosítás (a HTML-kód törlése)"
 
-#: composer/composerviewbase.cpp:344
+#: composer/composerviewbase.cpp:346
 #, kde-format
 msgid "Encrypt (delete markup)"
 msgstr "Titkosítás (a HTML-kód törlése)"
 
-#: composer/composerviewbase.cpp:344
+#: composer/composerviewbase.cpp:346
 #, kde-format
 msgid "Sign (delete markup)"
 msgstr "Aláírás (a HTML-kód törlése)"
 
-#: composer/composerviewbase.cpp:346
+#: composer/composerviewbase.cpp:348
 #, kde-format
 msgid ""
 "<qt><p>Inline signing/encrypting of HTML messages is not possible;</p><p>do "
@@ -431,76 +431,76 @@ msgstr ""
 "<qt><p>HTML-es üzeneteket nem lehet közvetlenül, beágyazva aláírni vagy "
 "titkosítani.</p><p>Szeretné eltávolítani a HTML-kódot?</p></qt>"
 
-#: composer/composerviewbase.cpp:348
+#: composer/composerviewbase.cpp:350
 #, kde-format
 msgctxt "@title:window"
 msgid "Sign/Encrypt Message?"
 msgstr "Az üzenet aláírása és titkosítása?"
 
-#: composer/composerviewbase.cpp:524
+#: composer/composerviewbase.cpp:526
 #, kde-format
 msgid "It was not possible to create a message composer."
 msgstr "Az üzenetszerkesztő létrehozása nem lehetséges."
 
-#: composer/composerviewbase.cpp:534
+#: composer/composerviewbase.cpp:536
 #, kde-format
 msgid "Do you want to resize images?"
 msgstr "Szeretné átméretezni a képeket?"
 
-#: composer/composerviewbase.cpp:535
+#: composer/composerviewbase.cpp:537
 #, kde-format
 msgctxt "@title:window"
 msgid "Auto Resize Images"
 msgstr "Képek automatikus átméretezése"
 
-#: composer/composerviewbase.cpp:536
+#: composer/composerviewbase.cpp:538
 #, kde-format
 msgctxt "@action:button"
 msgid "Auto Resize"
 msgstr "Automatikus átméretezése"
 
-#: composer/composerviewbase.cpp:537
+#: composer/composerviewbase.cpp:539
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Resize"
 msgstr "Ne méretezze át"
 
-#: composer/composerviewbase.cpp:742
+#: composer/composerviewbase.cpp:744
 #, kde-format
 msgctxt "@title:window"
 msgid "OpenPGP Key Expired"
 msgstr "Egy OpenPGP kulcs lejárt"
 
-#: composer/composerviewbase.cpp:742
+#: composer/composerviewbase.cpp:744
 #, kde-format
 msgctxt "@title:window"
 msgid "S/MIME Certificate Expired"
 msgstr "Egy S/MIME tanúsítvány lejárt"
 
-#: composer/composerviewbase.cpp:744
+#: composer/composerviewbase.cpp:746
 #, kde-format
 msgctxt "@title:window"
 msgid "OpenPGP Key Expires Soon"
 msgstr "Egy OpenPGP kulcs hamarosan lejár"
 
-#: composer/composerviewbase.cpp:745
+#: composer/composerviewbase.cpp:747
 #, kde-format
 msgctxt "@title:window"
 msgid "S/MIME Certificate Expires Soon"
 msgstr "Egy S/MIME tanúsítvány hamarosan lejár"
 
-#: composer/composerviewbase.cpp:819 composer/composerviewbase.cpp:833
-#: composer/composerviewbase.cpp:865
+#: composer/composerviewbase.cpp:821 composer/composerviewbase.cpp:835
+#: composer/composerviewbase.cpp:867
 #, kde-format
 msgid "Failed to resolve keys. Please report a bug."
 msgstr "Nem sikerült feloldani a kulcsokat. Jelentse a hibát."
 
-#: composer/composerviewbase.cpp:1072 composer/composerviewbase.cpp:1350
+#: composer/composerviewbase.cpp:1074 composer/composerviewbase.cpp:1352
 #, kde-format
 msgid "Job cancelled by the user"
 msgstr "A felhasználó megszakította a feladatot"
 
-#: composer/composerviewbase.cpp:1077
+#: composer/composerviewbase.cpp:1079
 #, kde-format
 msgid ""
 "Could not compose message: %1 \n"
@@ -509,37 +509,37 @@ msgstr ""
 "Nem lehet szerkeszteni az üzenetet: %1 \n"
 " Jelentse ezt a hibát."
 
-#: composer/composerviewbase.cpp:1079
+#: composer/composerviewbase.cpp:1081
 #, kde-format
 msgid "Could not compose message: %1"
 msgstr "Nem lehet szerkeszteni az üzenetet: %1"
 
-#: composer/composerviewbase.cpp:1184
+#: composer/composerviewbase.cpp:1186
 #, kde-format
 msgid "There were problems trying to queue the message for sending: %1"
 msgstr "Hiba történt az üzenet sorba állításakor küldéshez: %1"
 
-#: composer/composerviewbase.cpp:1353
+#: composer/composerviewbase.cpp:1355
 #, kde-format
 msgid "Could not autosave message: %1"
 msgstr "Nem lehet automatikusan menteni az üzenetet: %1"
 
-#: composer/composerviewbase.cpp:1372
+#: composer/composerviewbase.cpp:1374
 #, kde-format
 msgid "Could not write all data to file."
 msgstr "Nem lehet írni minden adatot a fájlba."
 
-#: composer/composerviewbase.cpp:1375
+#: composer/composerviewbase.cpp:1377
 #, kde-format
 msgid "Could not finalize the file."
 msgstr "Nem lehet befejezni a fájlt."
 
-#: composer/composerviewbase.cpp:1379
+#: composer/composerviewbase.cpp:1381
 #, kde-format
 msgid "Could not open file."
 msgstr "Nem lehet megnyitni a fájlt."
 
-#: composer/composerviewbase.cpp:1386
+#: composer/composerviewbase.cpp:1388
 #, kde-format
 msgid ""
 "Autosaving the message as %1 failed.\n"
@@ -550,18 +550,18 @@ msgstr ""
 "%2\n"
 "Ok: %3"
 
-#: composer/composerviewbase.cpp:1392
+#: composer/composerviewbase.cpp:1394
 #, kde-format
 msgctxt "@title:window"
 msgid "Autosaving Message Failed"
 msgstr "Az üzenet automatikus mentése nem sikerült"
 
-#: composer/composerviewbase.cpp:1505
+#: composer/composerviewbase.cpp:1507
 #, kde-format
 msgid "Failed to save the message: %1"
 msgstr "Nem sikerült menteni az üzenetet: %1"
 
-#: composer/composerviewbase.cpp:1929
+#: composer/composerviewbase.cpp:1931
 #, kde-format
 msgid ""
 "The message you have composed seems to refer to an attached file but you "
@@ -572,25 +572,25 @@ msgstr ""
 "sincs csatolva.\n"
 "Szeretne csatolni egy fájlt az üzenethez?"
 
-#: composer/composerviewbase.cpp:1932
+#: composer/composerviewbase.cpp:1934
 #, kde-format
 msgctxt "@title:window"
 msgid "File Attachment Reminder"
 msgstr "Emlékeztető a mellékletekre"
 
-#: composer/composerviewbase.cpp:1933
+#: composer/composerviewbase.cpp:1935
 #, kde-format
 msgctxt "@action:button"
 msgid "&Attach File..."
 msgstr "Fájl cs&atolása…"
 
-#: composer/composerviewbase.cpp:1934
+#: composer/composerviewbase.cpp:1936
 #, kde-format
 msgctxt "@action:button"
 msgid "&Send as Is"
 msgstr "&Küldés így"
 
-#: composer/composerviewbase.cpp:1986
+#: composer/composerviewbase.cpp:1988
 #, kde-format
 msgid ""
 "Examination of the recipient's signing preferences yielded that you be asked "
@@ -601,25 +601,25 @@ msgstr ""
 "program kérdezzen rá, alá szeretné-e írni az üzenetet.\n"
 "Alá szeretné írni az üzenetet?"
 
-#: composer/composerviewbase.cpp:1992 composer/composerviewbase.cpp:2020
+#: composer/composerviewbase.cpp:1994 composer/composerviewbase.cpp:2022
 #, kde-format
 msgctxt "@title:window"
 msgid "Sign Message?"
 msgstr "Aláírja az üzenetet?"
 
-#: composer/composerviewbase.cpp:1993 composer/composerviewbase.cpp:2021
+#: composer/composerviewbase.cpp:1995 composer/composerviewbase.cpp:2023
 #, kde-format
 msgctxt "to sign"
 msgid "&Sign"
 msgstr "&Aláírás"
 
-#: composer/composerviewbase.cpp:1994 composer/composerviewbase.cpp:2022
+#: composer/composerviewbase.cpp:1996 composer/composerviewbase.cpp:2024
 #, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Sign"
 msgstr "&Ne írja alá"
 
-#: composer/composerviewbase.cpp:2015
+#: composer/composerviewbase.cpp:2017
 #, kde-format
 msgid ""
 "There are conflicting signing preferences for these recipients.\n"
@@ -628,7 +628,7 @@ msgstr ""
 "A címzett aláírási beállításai nem egyértelműek.\n"
 "Alá szeretné írni az üzenetet?"
 
-#: composer/composerviewbase.cpp:2042
+#: composer/composerviewbase.cpp:2044
 #, kde-format
 msgid ""
 "You have requested to sign this message, but no valid signing keys have been "
@@ -637,19 +637,19 @@ msgstr ""
 "Az üzenet aláírását kérte, de nincs beállítva érvényes aláírási kulcs ehhez "
 "az azonosítóhoz."
 
-#: composer/composerviewbase.cpp:2047
+#: composer/composerviewbase.cpp:2049
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Unsigned?"
 msgstr "Küldés aláírás nélkül?"
 
-#: composer/composerviewbase.cpp:2048
+#: composer/composerviewbase.cpp:2050
 #, kde-format
 msgctxt "@action:button"
 msgid "Send &Unsigned"
 msgstr "Kül&dés aláírás nélkül"
 
-#: composer/composerviewbase.cpp:2063
+#: composer/composerviewbase.cpp:2065
 #, kde-format
 msgid ""
 "Some parts of this message will not be signed.\n"
@@ -660,7 +660,7 @@ msgstr ""
 "Lehet, hogy ez az Önnél érvényes biztonsági előírások megsértését jelenti.\n"
 "Inkább minden üzenetrészt alá szeretne írni?"
 
-#: composer/composerviewbase.cpp:2067
+#: composer/composerviewbase.cpp:2069
 #, kde-format
 msgid ""
 "This message will not be signed.\n"
@@ -671,29 +671,29 @@ msgstr ""
 "Lehet, hogy ez az Önnél érvényes biztonsági előírások megsértését jelenti.\n"
 "Inkább alá szeretné írni az üzenetet?"
 
-#: composer/composerviewbase.cpp:2070
+#: composer/composerviewbase.cpp:2072
 #, kde-format
 msgid "&Sign All Parts"
 msgstr "Minden rész &aláírása"
 
-#: composer/composerviewbase.cpp:2070
+#: composer/composerviewbase.cpp:2072
 #, kde-format
 msgid "&Sign"
 msgstr "&Aláírás"
 
-#: composer/composerviewbase.cpp:2073
+#: composer/composerviewbase.cpp:2075
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsigned-Message Warning"
 msgstr "Figyelmeztetés - az üzenet nincs aláírva"
 
-#: composer/composerviewbase.cpp:2075
+#: composer/composerviewbase.cpp:2077
 #, kde-format
 msgctxt "@action:button"
 msgid "Send &As Is"
 msgstr "Kü&ldés így"
 
-#: composer/composerviewbase.cpp:2122
+#: composer/composerviewbase.cpp:2124
 #, kde-format
 msgid ""
 "Valid trusted encryption keys were found for all recipients.\n"
@@ -702,7 +702,7 @@ msgstr ""
 "Mindegyik címzetthez választható megbízható titkosítási kulcs.\n"
 "Titkosítani szeretné az üzenetet?"
 
-#: composer/composerviewbase.cpp:2125
+#: composer/composerviewbase.cpp:2127
 #, kde-format
 msgid ""
 "Examination of the recipient's encryption preferences yielded that you be "
@@ -713,32 +713,32 @@ msgstr ""
 "program kérdezzen rá, titkosítani szeretné-e az üzenetet.\n"
 "Titkosítani szeretné az üzenetet?"
 
-#: composer/composerviewbase.cpp:2131 composer/composerviewbase.cpp:2161
+#: composer/composerviewbase.cpp:2133 composer/composerviewbase.cpp:2163
 #, kde-format
 msgid "Encrypt Message?"
 msgstr "Titkosítani szeretné az üzenetet?"
 
-#: composer/composerviewbase.cpp:2132
+#: composer/composerviewbase.cpp:2134
 #, kde-format
 msgid "Sign && &Encrypt"
 msgstr "Aláírás és titkosítás"
 
-#: composer/composerviewbase.cpp:2132 composer/composerviewbase.cpp:2214
+#: composer/composerviewbase.cpp:2134 composer/composerviewbase.cpp:2216
 #, kde-format
 msgid "&Encrypt"
 msgstr "&Titkosítás"
 
-#: composer/composerviewbase.cpp:2133 composer/composerviewbase.cpp:2219
+#: composer/composerviewbase.cpp:2135 composer/composerviewbase.cpp:2221
 #, kde-format
 msgid "&Sign Only"
 msgstr "&Csak aláírás"
 
-#: composer/composerviewbase.cpp:2133 composer/composerviewbase.cpp:2219
+#: composer/composerviewbase.cpp:2135 composer/composerviewbase.cpp:2221
 #, kde-format
 msgid "&Send As-Is"
 msgstr "Elküldés í&gy"
 
-#: composer/composerviewbase.cpp:2154
+#: composer/composerviewbase.cpp:2156
 #, kde-format
 msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
@@ -747,20 +747,20 @@ msgstr ""
 "Ezeknél a címzetteknél nem egyértelműek a titkosítási beállítások.\n"
 "Titkosítani szeretné az üzenetet?"
 
-#: composer/composerviewbase.cpp:2162 composer/keyresolver.cpp:1319
+#: composer/composerviewbase.cpp:2164 composer/keyresolver.cpp:1319
 #: composer/keyresolver.cpp:1360
 #, kde-format
 msgctxt "@action:button"
 msgid "&Encrypt"
 msgstr "&Titkosítás"
 
-#: composer/composerviewbase.cpp:2163
+#: composer/composerviewbase.cpp:2165
 #, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Encrypt"
 msgstr "T&itkosítás nélkül"
 
-#: composer/composerviewbase.cpp:2183
+#: composer/composerviewbase.cpp:2185
 #, kde-format
 msgid ""
 "You have requested to encrypt this message, and to encrypt a copy to "
@@ -771,19 +771,19 @@ msgstr ""
 "nem található az azonosítóhoz beállított érvényes, megbízható titkosítási "
 "kulcs."
 
-#: composer/composerviewbase.cpp:2189
+#: composer/composerviewbase.cpp:2191
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Unencrypted?"
 msgstr "Elküldés titkosítás nélkül?"
 
-#: composer/composerviewbase.cpp:2190 composer/keyresolver.cpp:1345
+#: composer/composerviewbase.cpp:2192 composer/keyresolver.cpp:1345
 #, kde-format
 msgctxt "@action:button"
 msgid "Send &Unencrypted"
 msgstr "Küldés titkosítatlan&ul"
 
-#: composer/composerviewbase.cpp:2205
+#: composer/composerviewbase.cpp:2207
 #, kde-format
 msgid ""
 "Some parts of this message will not be encrypted.\n"
@@ -796,7 +796,7 @@ msgstr ""
 "adatok kikerülését jelenti.\n"
 "Inkább minden üzenetrészt titkosítani szeretne?"
 
-#: composer/composerviewbase.cpp:2210
+#: composer/composerviewbase.cpp:2212
 #, kde-format
 msgid ""
 "This message will not be encrypted.\n"
@@ -809,12 +809,12 @@ msgstr ""
 "biztonsági előírásokat.\n"
 "Inkább titkosítani szeretné az üzenetet?"
 
-#: composer/composerviewbase.cpp:2214
+#: composer/composerviewbase.cpp:2216
 #, kde-format
 msgid "&Encrypt All Parts"
 msgstr "Az összes üzenetrész &titkosítása"
 
-#: composer/composerviewbase.cpp:2217
+#: composer/composerviewbase.cpp:2219
 #, kde-format
 msgctxt "@title:window"
 msgid "Unencrypted Message Warning"
@@ -1151,39 +1151,39 @@ msgstr ""
 msgid "Failed to store a new reminder: %1"
 msgstr "Az új emlékeztető tárolása meghiúsult: %1"
 
-#: followupreminder/followupreminderselectdatedialog.cpp:35
+#: followupreminder/followupreminderselectdatedialog.cpp:37
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Date"
 msgstr "Dátumválasztás"
 
-#: followupreminder/followupreminderselectdatedialog.cpp:63
+#: followupreminder/followupreminderselectdatedialog.cpp:65
 #, kde-format
 msgid "Date:"
 msgstr "Dátum:"
 
-#: followupreminder/followupreminderselectdatedialog.cpp:71
+#: followupreminder/followupreminderselectdatedialog.cpp:73
 #, kde-format
 msgid "Store to-do in:"
 msgstr "Feladat tárolása itt:"
 
-#: followupreminder/followupreminderselectdatedialog.cpp:105
+#: followupreminder/followupreminderselectdatedialog.cpp:107
 #, kde-format
 msgid "The selected date must be greater than the current date."
 msgstr "A kiválasztott dátumnak nagyobbnak kell lennie a jelenlegi dátumnál."
 
-#: followupreminder/followupreminderselectdatedialog.cpp:105
+#: followupreminder/followupreminderselectdatedialog.cpp:107
 #, kde-format
 msgctxt "@title:window"
 msgid "Invalid date"
 msgstr "Érvénytelen dátum"
 
-#: followupreminder/followupreminderselectdatedialog.cpp:109
+#: followupreminder/followupreminderselectdatedialog.cpp:111
 #, kde-format
 msgid "The selected folder is not valid."
 msgstr "A kiválasztott mappa nem érvényes."
 
-#: followupreminder/followupreminderselectdatedialog.cpp:109
+#: followupreminder/followupreminderselectdatedialog.cpp:111
 #, kde-format
 msgctxt "@title:window"
 msgid "Invalid folder"
@@ -1780,7 +1780,7 @@ msgctxt "@info:tooltip"
 msgid "Set the list of email addresses to receive this message"
 msgstr "Adja meg a címzettek e-mail-címeinek listáját"
 
-#: recipient/recipientseditor.cpp:112
+#: recipient/recipientseditor.cpp:114
 #, kde-format
 msgctxt "@info:status"
 msgid "Truncating recipients list to %2 of %1 entry."

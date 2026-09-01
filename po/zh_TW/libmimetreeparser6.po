@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-16 00:46+0000\n"
+"POT-Creation-Date: 2026-09-01 00:47+0000\n"
 "PO-Revision-Date: 2018-12-21 19:37+0800\n"
 "Last-Translator: pan93412 <pan93412@gmail.com>\n"
 "Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
@@ -66,7 +66,7 @@ msgstr "信件已簽署，但無法確認簽章的合法信。<br /> 原因：%1
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "加密外掛程式 %1 無法解密信件。"
 
-#: src/messagepart.cpp:1207
+#: src/messagepart.cpp:1208
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "加密外掛程式 %1 無法解密資料。"

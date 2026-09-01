@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-26 00:49+0000\n"
+"POT-Creation-Date: 2026-09-01 00:47+0000\n"
 "PO-Revision-Date: 2009-01-18 17:38+0530\n"
 "Last-Translator: Amanpreet Singh Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjab-l10n@list.sf.net>\n"
@@ -457,7 +457,7 @@ msgstr ""
 msgid "A smart multiline and multi item theme with a clickable status column"
 msgstr "ਇੱਕ ਫੈਂਸੀ ਮਲਟੀ-ਲਾਈਨ ਅਤੇ ਮਲਟੀ-ਆਈਟਮ ਥੀਮ"
 
-#: core/manager.cpp:758 core/view.cpp:2398 core/view.cpp:2402
+#: core/manager.cpp:758 core/view.cpp:2397 core/view.cpp:2401
 #, kde-format
 msgid "Status"
 msgstr "ਹਾਲਤ"
@@ -517,7 +517,7 @@ msgctxt "Message Aggregation Group Header: Month name and Year number"
 msgid "%1 %2"
 msgstr "%1 #%2"
 
-#: core/model.cpp:3803
+#: core/model.cpp:3801
 #, fuzzy, kde-format
 #| msgid "Threaded %1 Messages of %2"
 msgid "Processed 1 Message of %2"
@@ -525,7 +525,7 @@ msgid_plural "Processed %1 Messages of %2"
 msgstr[0] "%1 ਥਰਿੱਡ %2 ਦੇ ਸੁਨੇਹੇ"
 msgstr[1] "%1 ਥਰਿੱਡ %2 ਦੇ ਸੁਨੇਹੇ"
 
-#: core/model.cpp:3809 core/model.cpp:3815
+#: core/model.cpp:3807 core/model.cpp:3813
 #, fuzzy, kde-format
 #| msgid "Threaded %1 Messages of %2"
 msgid "Threaded 1 Message of %2"
@@ -533,7 +533,7 @@ msgid_plural "Threaded %1 Messages of %2"
 msgstr[0] "%1 ਥਰਿੱਡ %2 ਦੇ ਸੁਨੇਹੇ"
 msgstr[1] "%1 ਥਰਿੱਡ %2 ਦੇ ਸੁਨੇਹੇ"
 
-#: core/model.cpp:3821
+#: core/model.cpp:3819
 #, fuzzy, kde-format
 #| msgid "Grouped %1 Threads of %2"
 msgid "Grouped 1 Thread of %2"
@@ -541,7 +541,7 @@ msgid_plural "Grouped %1 Threads of %2"
 msgstr[0] "%2 ਦੇ ਥਰਿੱਡ %1 ਗਰੁੱਪ"
 msgstr[1] "%2 ਦੇ ਥਰਿੱਡ %1 ਗਰੁੱਪ"
 
-#: core/model.cpp:3827
+#: core/model.cpp:3825
 #, fuzzy, kde-format
 #| msgid "Grouped %1 Threads of %2"
 msgid "Updated 1 Group of %2"
@@ -549,7 +549,7 @@ msgid_plural "Updated %1 Groups of %2"
 msgstr[0] "%2 ਦੇ ਥਰਿੱਡ %1 ਗਰੁੱਪ"
 msgstr[1] "%2 ਦੇ ਥਰਿੱਡ %1 ਗਰੁੱਪ"
 
-#: core/model.cpp:3919
+#: core/model.cpp:3917
 #, kde-format
 msgctxt "@info:status Finished view fill"
 msgid "Ready"
@@ -887,13 +887,13 @@ msgstr "ਡਿਫਾਲਟ ਕਾਲਮ ਵੇਖੋ"
 msgid "Display Tooltips"
 msgstr "ਟੂਲ-ਟਿੱਪ ਵੇਖੋ"
 
-#: core/view.cpp:2379 core/view.cpp:2383
+#: core/view.cpp:2378 core/view.cpp:2382
 #: core/widgets/searchmessagebybuttons.cpp:75
 #, kde-format
 msgid "From"
 msgstr "ਵੱਲੋਂ"
 
-#: core/view.cpp:2380 core/view.cpp:2384
+#: core/view.cpp:2379 core/view.cpp:2383
 #, fuzzy, kde-format
 #| msgctxt "Receiver of the emial"
 #| msgid "To"
@@ -901,36 +901,36 @@ msgctxt "Receiver of the email"
 msgid "To"
 msgstr "ਵੱਲ"
 
-#: core/view.cpp:2381 core/view.cpp:2385
+#: core/view.cpp:2380 core/view.cpp:2384
 #, kde-format
 msgid "Date"
 msgstr "ਮਿਤੀ"
 
-#: core/view.cpp:2399 core/view.cpp:2403
+#: core/view.cpp:2398 core/view.cpp:2402
 #, kde-format
 msgid "Size"
 msgstr "ਸਾਈਜ਼"
 
-#: core/view.cpp:2400 core/view.cpp:2404 utils/themeeditor.cpp:191
+#: core/view.cpp:2399 core/view.cpp:2403 utils/themeeditor.cpp:191
 #, kde-format
 msgid "Folder"
 msgstr "ਫੋਲਡਰ"
 
-#: core/view.cpp:2410 core/view.cpp:2412
+#: core/view.cpp:2409 core/view.cpp:2411
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu Goto previous unread message."
 #| msgid "Previous"
 msgid "Preview"
 msgstr "ਪਿੱਛੇ"
 
-#: core/view.cpp:2429
+#: core/view.cpp:2428
 #, kde-format
 msgid "<b>%1</b> reply"
 msgid_plural "<b>%1</b> replies"
 msgstr[0] "<b>%1</b> ਜਵਾਬ"
 msgstr[1] "<b>%1</b> ਜਵਾਬ"
 
-#: core/view.cpp:2432
+#: core/view.cpp:2431
 #, fuzzy, kde-format
 #| msgid "<b>%1</b> message (<b>%2</b> new + <b>%3</b> unread)"
 #| msgid_plural "<b>%1</b> messages (<b>%2</b> new + <b>%3</b> unread)"
@@ -939,20 +939,20 @@ msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
 msgstr[0] "<b>%1</b> ਸੁਨੇਹਾ (<b>%2</b> ਨਵੇਂ + <b>%3</b> ਨਾ-ਪੜ੍ਹੇ)"
 msgstr[1] "<b>%1</b> ਸੁਨੇਹੇ (<b>%2</b> ਨਵੇਂ + <b>%3</b> ਨਾ-ਪੜ੍ਹੇ)"
 
-#: core/view.cpp:2469
+#: core/view.cpp:2466
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Threads started on 2008-12-21'"
 msgid "Threads started on %1"
 msgstr "ਥਰਿੱਡ %1 ਨੂੰ ਸ਼ੁਰੂ ਹੋਇਆ"
 
-#: core/view.cpp:2471
+#: core/view.cpp:2468
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Threads started Yesterday'"
 msgid "Threads started %1"
 msgstr "ਥਰਿੱਡ %1 ਸ਼ੁਰੂ ਹੋਇਆ"
 
-#: core/view.cpp:2475
+#: core/view.cpp:2472
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "@info:tooltip Formats to something like 'Threads started Yesterday'"
@@ -960,32 +960,32 @@ msgstr "ਥਰਿੱਡ %1 ਸ਼ੁਰੂ ਹੋਇਆ"
 msgid "Threads with messages dated %1"
 msgstr "ਥਰਿੱਡ %1 ਸ਼ੁਰੂ ਹੋਇਆ"
 
-#: core/view.cpp:2485
+#: core/view.cpp:2482
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'"
 msgid "Messages sent on %1"
 msgstr "ਸੁਨੇਹਾ %1 ਨੂੰ ਭੇਜਿਆ"
 
-#: core/view.cpp:2488
+#: core/view.cpp:2485
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Messages received on 2008-12-21'"
 msgid "Messages received on %1"
 msgstr "ਸੁਨੇਹਾ %1 ਨੂੰ ਮਿਲਿਆ"
 
-#: core/view.cpp:2492
+#: core/view.cpp:2489
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent Yesterday'"
 msgid "Messages sent %1"
 msgstr "ਸੁਨੇਹਾ %1 ਭੇਜਿਆ"
 
-#: core/view.cpp:2494
+#: core/view.cpp:2491
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages received Yesterday'"
 msgid "Messages received %1"
 msgstr "ਸੁਨੇਹਾ %1 ਮਿਲਿਆ"
 
-#: core/view.cpp:2503
+#: core/view.cpp:2500
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "@info:tooltip Formats to something like 'Threads started on 2008-12-21'"
@@ -993,22 +993,22 @@ msgstr "ਸੁਨੇਹਾ %1 ਮਿਲਿਆ"
 msgid "Threads started within %1"
 msgstr "ਥਰਿੱਡ %1 ਨੂੰ ਸ਼ੁਰੂ ਹੋਇਆ"
 
-#: core/view.cpp:2506
+#: core/view.cpp:2503
 #, kde-format
 msgid "Threads containing messages with dates within %1"
 msgstr ""
 
-#: core/view.cpp:2514
+#: core/view.cpp:2511
 #, kde-format
 msgid "Messages sent within %1"
 msgstr "ਸੁਨੇਹਾ %1 ਨਾਲ ਭੇਜਿਆ"
 
-#: core/view.cpp:2516
+#: core/view.cpp:2513
 #, kde-format
 msgid "Messages received within %1"
 msgstr "ਸੁਨੇਹਾ %1 ਨਾਲ ਮਿਲਿਆ"
 
-#: core/view.cpp:2525
+#: core/view.cpp:2522
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "@info:tooltip Formats to something like 'Threads started Yesterday'"
@@ -1016,27 +1016,27 @@ msgstr "ਸੁਨੇਹਾ %1 ਨਾਲ ਮਿਲਿਆ"
 msgid "Threads started by %1"
 msgstr "ਥਰਿੱਡ %1 ਸ਼ੁਰੂ ਹੋਇਆ"
 
-#: core/view.cpp:2528
+#: core/view.cpp:2525
 #, kde-format
 msgid "Threads with most recent message by %1"
 msgstr ""
 
-#: core/view.cpp:2537 core/view.cpp:2561
+#: core/view.cpp:2534 core/view.cpp:2558
 #, kde-format
 msgid "Messages sent to %1"
 msgstr "ਸੁਨੇਹੇ %1 ਨੂੰ ਭੇਜੇ"
 
-#: core/view.cpp:2539
+#: core/view.cpp:2536
 #, kde-format
 msgid "Messages sent by %1"
 msgstr "ਸੁਨੇਹਾ %1 ਰਾਹੀਂ ਭੇਜਿਆ"
 
-#: core/view.cpp:2542
+#: core/view.cpp:2539
 #, kde-format
 msgid "Messages received from %1"
 msgstr "ਸੁਨੇਹਾ %1 ਰਾਹੀਂ ਮਿਲਿਆ"
 
-#: core/view.cpp:2550
+#: core/view.cpp:2547
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "@info:tooltip Formats to something like 'Threads started on 2008-12-21'"
@@ -1044,24 +1044,24 @@ msgstr "ਸੁਨੇਹਾ %1 ਰਾਹੀਂ ਮਿਲਿਆ"
 msgid "Threads directed to %1"
 msgstr "ਥਰਿੱਡ %1 ਨੂੰ ਸ਼ੁਰੂ ਹੋਇਆ"
 
-#: core/view.cpp:2553
+#: core/view.cpp:2550
 #, kde-format
 msgid "Threads with most recent message directed to %1"
 msgstr ""
 
-#: core/view.cpp:2563
+#: core/view.cpp:2560
 #, kde-format
 msgid "Messages received by %1"
 msgstr "ਸੁਨੇਹਾ %1 ਰਾਹੀਂ ਮਿਲਿਆ"
 
-#: core/view.cpp:2589
+#: core/view.cpp:2585
 #, kde-format
 msgid "<b>%1</b> thread"
 msgid_plural "<b>%1</b> threads"
 msgstr[0] "<b>%1</b> ਥਰਿੱਡ"
 msgstr[1] "<b>%1</b> ਥਰਿੱਡ"
 
-#: core/view.cpp:2594
+#: core/view.cpp:2590
 #, fuzzy, kde-format
 #| msgid "<b>%1</b> message (<b>%2</b> new + <b>%3</b> unread)"
 #| msgid_plural "<b>%1</b> messages (<b>%2</b> new + <b>%3</b> unread)"
@@ -1070,64 +1070,64 @@ msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
 msgstr[0] "<b>%1</b> ਸੁਨੇਹਾ (<b>%2</b> ਨਵੇਂ + <b>%3</b> ਨਾ-ਪੜ੍ਹੇ)"
 msgstr[1] "<b>%1</b> ਸੁਨੇਹੇ (<b>%2</b> ਨਵੇਂ + <b>%3</b> ਨਾ-ਪੜ੍ਹੇ)"
 
-#: core/widgetbase.cpp:198
+#: core/widgetbase.cpp:200
 #, fuzzy, kde-format
 #| msgid "Log filter actions"
 msgid "No filter defined."
 msgstr "ਲਾਗ ਫਿਲਟਰ ਕਾਰਵਾਈ"
 
-#: core/widgetbase.cpp:198
+#: core/widgetbase.cpp:200
 #, fuzzy, kde-format
 #| msgid "&Create Filter"
 msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "ਫਿਲਟਰ ਬਣਾਓ(&C)"
 
-#: core/widgetbase.cpp:423 messagelistutil.cpp:115
+#: core/widgetbase.cpp:425 messagelistutil.cpp:115
 #, kde-format
 msgid "Theme"
 msgstr "ਥੀਮ"
 
-#: core/widgetbase.cpp:444 core/widgetbase.cpp:534
+#: core/widgetbase.cpp:446 core/widgetbase.cpp:536
 #: core/widgets/configurefilterswidget.cpp:76
 #, kde-format
 msgid "Configure..."
 msgstr "ਸੰਰਚਨਾ..."
 
-#: core/widgetbase.cpp:513 messagelistutil.cpp:110
+#: core/widgetbase.cpp:515 messagelistutil.cpp:110
 #, kde-format
 msgid "Aggregation"
 msgstr ""
 
-#: core/widgetbase.cpp:596
+#: core/widgetbase.cpp:598
 #, kde-format
 msgid "Message Sort Order"
 msgstr "ਸੁਨੇਹਾ ਲੜੀਬੱਧ ਕ੍ਰਮ"
 
-#: core/widgetbase.cpp:618
+#: core/widgetbase.cpp:620
 #, kde-format
 msgid "Message Sort Direction"
 msgstr "ਸੁਨੇਹਾ ਲੜੀਬੱਧ ਦਿਸ਼ਾ"
 
-#: core/widgetbase.cpp:635
+#: core/widgetbase.cpp:637
 #, fuzzy, kde-format
 #| msgid "Default Sort Order"
 msgid "Group Sort Order"
 msgstr "ਡਿਫਾਲਟ ਲੜੀਬੱਧ ਕ੍ਰਮ"
 
-#: core/widgetbase.cpp:652
+#: core/widgetbase.cpp:654
 #, fuzzy, kde-format
 #| msgid "Message Sort Direction"
 msgid "Group Sort Direction"
 msgstr "ਸੁਨੇਹਾ ਲੜੀਬੱਧ ਦਿਸ਼ਾ"
 
-#: core/widgetbase.cpp:667
+#: core/widgetbase.cpp:669
 #, fuzzy, kde-format
 #| msgid "Folder Always Uses This Theme"
 msgid "Folder Always Uses This Sort Order"
 msgstr "ਫੋਲਡਰ ਹਮੇਸ਼ਾਂ ਇਹ ਥੀਮ ਵਰਤਦਾ ਹੈ"
 
-#: core/widgets/configurefiltersdialog.cpp:24
+#: core/widgets/configurefiltersdialog.cpp:26
 #, fuzzy, kde-format
 #| msgid "Configure &Filters..."
 msgctxt "@title:window"
@@ -1158,7 +1158,7 @@ msgstr "ਫਿਲਟਰ ਨਾਂ-ਬਦਲੋ"
 msgid "No result found"
 msgstr "ਕੋਈ ਦਸਤਖਤ ਉਪਲੱਬਧ ਨਹੀਂ"
 
-#: core/widgets/filternamedialog.cpp:19
+#: core/widgets/filternamedialog.cpp:21
 #, fuzzy, kde-format
 #| msgctxt "@action:button"
 #| msgid "Save List..."
@@ -1166,7 +1166,7 @@ msgctxt "@title:window"
 msgid "Edit Filter"
 msgstr "ਲਿਸਟ ਸੰਭਾਲੋ..."
 
-#: core/widgets/filternamewidget.cpp:32
+#: core/widgets/filternamewidget.cpp:34
 #, fuzzy, kde-format
 #| msgctxt "@label:textbox Name of the option"
 #| msgid "Name:"
@@ -1189,18 +1189,18 @@ msgctxt "@action"
 msgid "Configure..."
 msgstr "ਸੰਰਚਨਾ..."
 
-#: core/widgets/quicksearchline.cpp:59
+#: core/widgets/quicksearchline.cpp:61
 #, kde-format
 msgctxt "Search for messages."
 msgid "Search"
 msgstr "ਖੋਜ"
 
-#: core/widgets/quicksearchwarning.cpp:21
+#: core/widgets/quicksearchwarning.cpp:23
 #, kde-format
 msgid "The words less than 3 letters are ignored."
 msgstr ""
 
-#: core/widgets/quicksearchwarning.cpp:22
+#: core/widgets/quicksearchwarning.cpp:24
 #, fuzzy, kde-format
 #| msgid "&Do not show a message preview pane"
 msgctxt "@action"

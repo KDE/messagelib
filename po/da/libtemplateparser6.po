@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-05 00:45+0000\n"
+"POT-Creation-Date: 2026-09-01 00:47+0000\n"
 "PO-Revision-Date: 2020-07-31 18:54+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -268,31 +268,31 @@ msgstr "Brevskabelon til videresend"
 msgid "Quote characters"
 msgstr "Citationstegn"
 
-#: templateparserjob.cpp:313
+#: templateparserjob.cpp:315
 #, kde-format
 msgctxt "@info"
 msgid "Cannot insert content from file %1: %2"
 msgstr "Kan ikke indsætte indhold fra filen %1: %2"
 
-#: templateparserjob.cpp:483
+#: templateparserjob.cpp:485
 #, kde-format
 msgctxt "@item:intext email To"
 msgid "To:"
 msgstr "Til:"
 
-#: templateparserjob.cpp:494
+#: templateparserjob.cpp:496
 #, kde-format
 msgctxt "@item:intext email CC"
 msgid "CC:"
 msgstr "CC:"
 
-#: templateparserjob.cpp:1146
+#: templateparserjob.cpp:1148
 #, kde-format
 msgctxt "@item:intext"
 msgid "Attachment %1"
 msgstr "Bilag %1"
 
-#: templateparserjob.cpp:1354
+#: templateparserjob.cpp:1356
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Pipe command <command>%1</command> failed."
@@ -598,7 +598,7 @@ msgctxt "@action:button"
 msgid "Reset All Templates"
 msgstr "Nulstil alle skabeloner"
 
-#: templatesconfiguration.cpp:363
+#: templatesconfiguration.cpp:362
 #, kde-format
 msgid ""
 "Use of \"Reply using plain text\" and \"Reply using HTML text\" in pairs is "
@@ -613,18 +613,18 @@ msgstr ""
 "(a)Svar med klartekst for at citater kun er klartekst\n"
 "(b)Svar med HTML-tekst for at få citater i HTML-tekst hvis det er til stede"
 
-#: templatesinsertcommandpushbutton.cpp:20
+#: templatesinsertcommandpushbutton.cpp:22
 #, kde-format
 msgid "&Insert Command"
 msgstr "&Indsæt kommando"
 
-#: templatesinsertcommandpushbutton.cpp:28
+#: templatesinsertcommandpushbutton.cpp:30
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select a command to insert into the template"
 msgstr "Vælg en kommando der skal indsættes i skabelonen"
 
-#: templatesinsertcommandpushbutton.cpp:30
+#: templatesinsertcommandpushbutton.cpp:32
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""

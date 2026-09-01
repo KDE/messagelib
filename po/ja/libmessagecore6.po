@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecore\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-05 00:44+0000\n"
+"POT-Creation-Date: 2026-09-01 00:47+0000\n"
 "PO-Revision-Date: 2012-01-28 16:28-0800\n"
 "Last-Translator: Fumiaki Okushi <okushi@kde.gr.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -27,12 +27,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "democtezuma@gmail.com"
 
-#: attachment/attachmentcompressjob.cpp:50
+#: attachment/attachmentcompressjob.cpp:52
 #, kde-format
 msgid "Could not initiate attachment compression."
 msgstr ""
 
-#: attachment/attachmentcompressjob.cpp:60
+#: attachment/attachmentcompressjob.cpp:62
 #, kde-format
 msgid "Could not compress the attachment."
 msgstr "添付ファイルを圧縮できませんでした。"

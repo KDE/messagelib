@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-16 00:46+0000\n"
+"POT-Creation-Date: 2026-09-01 00:47+0000\n"
 "PO-Revision-Date: 2007-09-03 14:00+0330\n"
 "Last-Translator: Nazanin Kazemi <kazemi@itland.ir>\n"
 "Language-Team: Persian <kde-i18n-fa@kde.org>\n"
@@ -66,7 +66,7 @@ msgstr ""
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "وصله رمز »%1« نمی‌تواند پیامها را سرگشایی کند."
 
-#: src/messagepart.cpp:1207
+#: src/messagepart.cpp:1208
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "وصله رمز »%1« نمی‌تواند داده را سرگشایی کند."

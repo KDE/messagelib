@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-05 00:44+0000\n"
+"POT-Creation-Date: 2026-09-01 00:47+0000\n"
 "PO-Revision-Date: 2024-08-02 08:06+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -29,12 +29,12 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "stefan.asserhall@gmail.com"
 
-#: attachment/attachmentcompressjob.cpp:50
+#: attachment/attachmentcompressjob.cpp:52
 #, kde-format
 msgid "Could not initiate attachment compression."
 msgstr "Kunde inte inleda komprimering av bilaga."
 
-#: attachment/attachmentcompressjob.cpp:60
+#: attachment/attachmentcompressjob.cpp:62
 #, kde-format
 msgid "Could not compress the attachment."
 msgstr "Kunde inte komprimera bilagan."

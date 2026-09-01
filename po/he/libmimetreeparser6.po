@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmimetreeparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-16 00:46+0000\n"
+"POT-Creation-Date: 2026-09-01 00:47+0000\n"
 "PO-Revision-Date: 2024-01-06 15:12+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -70,7 +70,7 @@ msgstr "ההודעה חתומה אך לא ניתן לאמת את תוקף החת
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "תוסף ההצפנה „%1” לא יכול לפענח הודעות."
 
-#: src/messagepart.cpp:1207
+#: src/messagepart.cpp:1208
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "תוסף ההצפנה „%1” לא יכול לפענח את הנתונים."

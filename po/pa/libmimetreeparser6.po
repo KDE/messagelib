@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-16 00:46+0000\n"
+"POT-Creation-Date: 2026-09-01 00:47+0000\n"
 "PO-Revision-Date: 2009-01-18 17:38+0530\n"
 "Last-Translator: Amanpreet Singh Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjab-l10n@list.sf.net>\n"
@@ -64,7 +64,7 @@ msgstr "ਦਸਤਖਤੀ ਦੀ ਮਿਆਦ ਦੀ ਜਾਂਚ ਨਹੀਂ 
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "ਕ੍ਰਿਪਟੂ ਪਲੱਗਇਨ \"%1\" ਸ਼ੁਰੂ ਨਹੀਂ ਕੀਤੀ ਜਾ ਸਕੀ।"
 
-#: src/messagepart.cpp:1207
+#: src/messagepart.cpp:1208
 #, fuzzy, kde-format
 #| msgid "Could not write the file %1."
 msgid "Crypto plug-in \"%1\" could not decrypt the data."

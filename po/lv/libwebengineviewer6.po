@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-04 00:46+0000\n"
+"POT-Creation-Date: 2026-09-01 00:47+0000\n"
 "PO-Revision-Date: 2024-09-05 15:36+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "2);\n"
 "X-Generator: Lokalize 24.08.0\n"
 
-#: developertool/developertooldialog.cpp:27
+#: developertool/developertooldialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Developer Tool"
@@ -104,13 +104,13 @@ msgid "Submit form is not allowed in mailer. Please open url in a browser."
 msgstr ""
 "E-pasta sūtīšanas programma neļauj iesniegt formu. Atveriet URL pārlūkā."
 
-#: widgets/tracking/trackingdetailsdialog.cpp:28
+#: widgets/tracking/trackingdetailsdialog.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"
 msgstr "Informācija"
 
-#: widgets/tracking/trackingwarningwidget.cpp:21
+#: widgets/tracking/trackingwarningwidget.cpp:23
 #, kde-format
 msgid ""
 "Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
@@ -119,12 +119,12 @@ msgstr ""
 "Atrasti un bloķēti daži pasta izsekošanas servisi.<a href="
 "\"mailtrackingdetails\">(Informācija...)"
 
-#: widgets/tracking/trackingwarningwidget.cpp:40
+#: widgets/tracking/trackingwarningwidget.cpp:42
 #, kde-format
 msgid "Details:"
 msgstr "Informācija:"
 
-#: widgets/tracking/trackingwarningwidget.cpp:44
+#: widgets/tracking/trackingwarningwidget.cpp:45
 #, kde-format
 msgid "1 tracker from the company %2 (%3)"
 msgid_plural "%1 trackers from the company %2 (%3)"

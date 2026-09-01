@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-16 00:46+0000\n"
+"POT-Creation-Date: 2026-09-01 00:47+0000\n"
 "PO-Revision-Date: 2011-06-22 22:30+0200\n"
 "Last-Translator: Marko Dimjašević <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -63,7 +63,7 @@ msgstr "Nije moguće provjeriti valjanost potpisa."
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "Umetak za kriptiranje „%1“ ne može dekriptirati podatke."
 
-#: src/messagepart.cpp:1207
+#: src/messagepart.cpp:1208
 #, fuzzy, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Umetak za kriptiranje „%1“ ne može dekriptirati podatke."

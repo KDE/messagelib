@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libwebengineviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-04 00:46+0000\n"
+"POT-Creation-Date: 2026-09-01 00:47+0000\n"
 "PO-Revision-Date: 2024-08-01 20:31+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 23.04.3\n"
 
-#: developertool/developertooldialog.cpp:27
+#: developertool/developertooldialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Developer Tool"
@@ -107,13 +107,13 @@ msgstr ""
 "Програма для керування електронною поштою не може надсилати форми. Будь "
 "ласка, відкрийте цю адресу у програмі для перегляду інтернету."
 
-#: widgets/tracking/trackingdetailsdialog.cpp:28
+#: widgets/tracking/trackingdetailsdialog.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"
 msgstr "Подробиці"
 
-#: widgets/tracking/trackingwarningwidget.cpp:21
+#: widgets/tracking/trackingwarningwidget.cpp:23
 #, kde-format
 msgid ""
 "Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
@@ -122,12 +122,12 @@ msgstr ""
 "Виявлено і заблоковано засіб стеження за поштою.<a href=\"mailtrackingdetails"
 "\">(Подробиці…)"
 
-#: widgets/tracking/trackingwarningwidget.cpp:40
+#: widgets/tracking/trackingwarningwidget.cpp:42
 #, kde-format
 msgid "Details:"
 msgstr "Подробиці:"
 
-#: widgets/tracking/trackingwarningwidget.cpp:44
+#: widgets/tracking/trackingwarningwidget.cpp:45
 #, kde-format
 msgid "1 tracker from the company %2 (%3)"
 msgid_plural "%1 trackers from the company %2 (%3)"

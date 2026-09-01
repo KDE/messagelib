@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-26 00:49+0000\n"
+"POT-Creation-Date: 2026-09-01 00:47+0000\n"
 "PO-Revision-Date: 2007-09-03 14:00+0330\n"
 "Last-Translator: Nazanin Kazemi <kazemi@itland.ir>\n"
 "Language-Team: Persian <kde-i18n-fa@kde.org>\n"
@@ -505,7 +505,7 @@ msgstr ""
 msgid "A smart multiline and multi item theme with a clickable status column"
 msgstr ""
 
-#: core/manager.cpp:758 core/view.cpp:2398 core/view.cpp:2402
+#: core/manager.cpp:758 core/view.cpp:2397 core/view.cpp:2401
 #, kde-format
 msgid "Status"
 msgstr "وضعیت"
@@ -567,7 +567,7 @@ msgctxt "Message Aggregation Group Header: Month name and Year number"
 msgid "%1 %2"
 msgstr "نامه: %1"
 
-#: core/model.cpp:3803
+#: core/model.cpp:3801
 #, fuzzy, kde-format
 #| msgid "&Thread Messages"
 msgid "Processed 1 Message of %2"
@@ -575,7 +575,7 @@ msgid_plural "Processed %1 Messages of %2"
 msgstr[0] "پیامهای &رشته‌"
 msgstr[1] ""
 
-#: core/model.cpp:3809 core/model.cpp:3815
+#: core/model.cpp:3807 core/model.cpp:3813
 #, fuzzy, kde-format
 #| msgid "&Thread Messages"
 msgid "Threaded 1 Message of %2"
@@ -583,7 +583,7 @@ msgid_plural "Threaded %1 Messages of %2"
 msgstr[0] "پیامهای &رشته‌"
 msgstr[1] ""
 
-#: core/model.cpp:3821
+#: core/model.cpp:3819
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "&Expand Thread"
@@ -592,7 +592,7 @@ msgid_plural "Grouped %1 Threads of %2"
 msgstr[0] "&گسترش رشته‌"
 msgstr[1] ""
 
-#: core/model.cpp:3827
+#: core/model.cpp:3825
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "&Expand Thread"
@@ -601,7 +601,7 @@ msgid_plural "Updated %1 Groups of %2"
 msgstr[0] "&گسترش رشته‌"
 msgstr[1] ""
 
-#: core/model.cpp:3919
+#: core/model.cpp:3917
 #, fuzzy, kde-format
 #| msgid "Ready."
 msgctxt "@info:status Finished view fill"
@@ -973,42 +973,42 @@ msgstr "&همیشه نمایش بده‌"
 msgid "Display Tooltips"
 msgstr "&ابزارها‌"
 
-#: core/view.cpp:2379 core/view.cpp:2383
+#: core/view.cpp:2378 core/view.cpp:2382
 #: core/widgets/searchmessagebybuttons.cpp:75
 #, fuzzy, kde-format
 #| msgid "&From"
 msgid "From"
 msgstr "&از‌"
 
-#: core/view.cpp:2380 core/view.cpp:2384
+#: core/view.cpp:2379 core/view.cpp:2383
 #, fuzzy, kde-format
 #| msgid "To"
 msgctxt "Receiver of the email"
 msgid "To"
 msgstr "به"
 
-#: core/view.cpp:2381 core/view.cpp:2385
+#: core/view.cpp:2380 core/view.cpp:2384
 #, kde-format
 msgid "Date"
 msgstr "تاریخ"
 
-#: core/view.cpp:2399 core/view.cpp:2403
+#: core/view.cpp:2398 core/view.cpp:2402
 #, kde-format
 msgid "Size"
 msgstr "اندازه"
 
-#: core/view.cpp:2400 core/view.cpp:2404 utils/themeeditor.cpp:191
+#: core/view.cpp:2399 core/view.cpp:2403 utils/themeeditor.cpp:191
 #, kde-format
 msgid "Folder"
 msgstr "پوشه"
 
-#: core/view.cpp:2410 core/view.cpp:2412
+#: core/view.cpp:2409 core/view.cpp:2411
 #, fuzzy, kde-format
 #| msgid "Previous"
 msgid "Preview"
 msgstr "قبلی‌"
 
-#: core/view.cpp:2429
+#: core/view.cpp:2428
 #, fuzzy, kde-format
 #| msgid "<b>Bad</b> signature"
 msgid "<b>%1</b> reply"
@@ -1016,14 +1016,14 @@ msgid_plural "<b>%1</b> replies"
 msgstr[0] "امضای <b>بد</b>"
 msgstr[1] ""
 
-#: core/view.cpp:2432
+#: core/view.cpp:2431
 #, kde-format
 msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/view.cpp:2469
+#: core/view.cpp:2466
 #, fuzzy, kde-format
 #| msgid "Threads default to o&pen"
 msgctxt ""
@@ -1031,27 +1031,27 @@ msgctxt ""
 msgid "Threads started on %1"
 msgstr "&باز کردن رشته‌های پیش‌فرض‌"
 
-#: core/view.cpp:2471
+#: core/view.cpp:2468
 #, fuzzy, kde-format
 #| msgid "Threads default to o&pen"
 msgctxt "@info:tooltip Formats to something like 'Threads started Yesterday'"
 msgid "Threads started %1"
 msgstr "&باز کردن رشته‌های پیش‌فرض‌"
 
-#: core/view.cpp:2475
+#: core/view.cpp:2472
 #, fuzzy, kde-format
 #| msgid "&Threaded message list"
 msgid "Threads with messages dated %1"
 msgstr "فهرست پیام &رشته‌ای‌"
 
-#: core/view.cpp:2485
+#: core/view.cpp:2482
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgctxt "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'"
 msgid "Messages sent on %1"
 msgstr "پیام، توسط %1 امضا شد."
 
-#: core/view.cpp:2488
+#: core/view.cpp:2485
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgctxt ""
@@ -1059,93 +1059,93 @@ msgctxt ""
 msgid "Messages received on %1"
 msgstr "پیام، توسط %1 امضا شد."
 
-#: core/view.cpp:2492
+#: core/view.cpp:2489
 #, fuzzy, kde-format
 #| msgid "&Message Tags"
 msgctxt "@info:tooltip Formats to something like 'Messages sent Yesterday'"
 msgid "Messages sent %1"
 msgstr "برچسبهای &پیام‌"
 
-#: core/view.cpp:2494
+#: core/view.cpp:2491
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgctxt "@info:tooltip Formats to something like 'Messages received Yesterday'"
 msgid "Messages received %1"
 msgstr "پیام، توسط %1 امضا شد."
 
-#: core/view.cpp:2503
+#: core/view.cpp:2500
 #, fuzzy, kde-format
 #| msgid "Threads default to o&pen"
 msgid "Threads started within %1"
 msgstr "&باز کردن رشته‌های پیش‌فرض‌"
 
-#: core/view.cpp:2506
+#: core/view.cpp:2503
 #, fuzzy, kde-format
 #| msgid "&Threaded message list"
 msgid "Threads containing messages with dates within %1"
 msgstr "فهرست پیام &رشته‌ای‌"
 
-#: core/view.cpp:2514
+#: core/view.cpp:2511
 #, fuzzy, kde-format
 #| msgid "Message was signed with key %1."
 msgid "Messages sent within %1"
 msgstr "پیام، با کلید %1 امضا شد."
 
-#: core/view.cpp:2516
+#: core/view.cpp:2513
 #, fuzzy, kde-format
 #| msgid "Message was signed with key %1."
 msgid "Messages received within %1"
 msgstr "پیام، با کلید %1 امضا شد."
 
-#: core/view.cpp:2525
+#: core/view.cpp:2522
 #, fuzzy, kde-format
 #| msgid "Threads default to o&pen"
 msgid "Threads started by %1"
 msgstr "&باز کردن رشته‌های پیش‌فرض‌"
 
-#: core/view.cpp:2528
+#: core/view.cpp:2525
 #, fuzzy, kde-format
 #| msgid "&Threaded message list"
 msgid "Threads with most recent message by %1"
 msgstr "فهرست پیام &رشته‌ای‌"
 
-#: core/view.cpp:2537 core/view.cpp:2561
+#: core/view.cpp:2534 core/view.cpp:2558
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Messages sent to %1"
 msgstr "پیام، توسط %1 امضا شد."
 
-#: core/view.cpp:2539
+#: core/view.cpp:2536
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Messages sent by %1"
 msgstr "پیام، توسط %1 امضا شد."
 
-#: core/view.cpp:2542
+#: core/view.cpp:2539
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Messages received from %1"
 msgstr "پیام، توسط %1 امضا شد."
 
-#: core/view.cpp:2550
+#: core/view.cpp:2547
 #, fuzzy, kde-format
 #| msgid "Threads default to o&pen"
 msgid "Threads directed to %1"
 msgstr "&باز کردن رشته‌های پیش‌فرض‌"
 
-#: core/view.cpp:2553
+#: core/view.cpp:2550
 #, fuzzy, kde-format
 #| msgid "&Threaded message list"
 msgid "Threads with most recent message directed to %1"
 msgstr "فهرست پیام &رشته‌ای‌"
 
-#: core/view.cpp:2563
+#: core/view.cpp:2560
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Messages received by %1"
 msgstr "پیام، توسط %1 امضا شد."
 
-#: core/view.cpp:2589
+#: core/view.cpp:2585
 #, fuzzy, kde-format
 #| msgid "<b>Bad</b> signature"
 msgid "<b>%1</b> thread"
@@ -1153,75 +1153,75 @@ msgid_plural "<b>%1</b> threads"
 msgstr[0] "امضای <b>بد</b>"
 msgstr[1] ""
 
-#: core/view.cpp:2594
+#: core/view.cpp:2590
 #, kde-format
 msgid "<b>%1</b> message (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/widgetbase.cpp:198
+#: core/widgetbase.cpp:200
 #, fuzzy, kde-format
 #| msgid "Log filter actions"
 msgid "No filter defined."
 msgstr "ثبت کنشهای پالایه"
 
-#: core/widgetbase.cpp:198
+#: core/widgetbase.cpp:200
 #, fuzzy, kde-format
 #| msgid "&Create Filter"
 msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "&ایجاد پالایه‌"
 
-#: core/widgetbase.cpp:423 messagelistutil.cpp:115
+#: core/widgetbase.cpp:425 messagelistutil.cpp:115
 #, fuzzy, kde-format
 #| msgid "Time"
 msgid "Theme"
 msgstr "زمان"
 
-#: core/widgetbase.cpp:444 core/widgetbase.cpp:534
+#: core/widgetbase.cpp:446 core/widgetbase.cpp:536
 #: core/widgets/configurefilterswidget.cpp:76
 #, fuzzy, kde-format
 #| msgid "Configure KMail..."
 msgid "Configure..."
 msgstr "پیکربندی KMail..."
 
-#: core/widgetbase.cpp:513 messagelistutil.cpp:110
+#: core/widgetbase.cpp:515 messagelistutil.cpp:110
 #, fuzzy, kde-format
 #| msgid "Suggestions"
 msgid "Aggregation"
 msgstr "پیشنهادها"
 
-#: core/widgetbase.cpp:596
+#: core/widgetbase.cpp:598
 #, fuzzy, kde-format
 #| msgid "Message Part Properties"
 msgid "Message Sort Order"
 msgstr "ویژگیهای جزء پیام"
 
-#: core/widgetbase.cpp:618
+#: core/widgetbase.cpp:620
 #, fuzzy, kde-format
 #| msgid "Message Tag &Icon"
 msgid "Message Sort Direction"
 msgstr "&شمایل برچسب پیام‌"
 
-#: core/widgetbase.cpp:635
+#: core/widgetbase.cpp:637
 #, fuzzy, kde-format
 #| msgid "Delete Folder"
 msgid "Group Sort Order"
 msgstr "حذف پوشه"
 
-#: core/widgetbase.cpp:652
+#: core/widgetbase.cpp:654
 #, fuzzy, kde-format
 #| msgid "Message Tag &Icon"
 msgid "Group Sort Direction"
 msgstr "&شمایل برچسب پیام‌"
 
-#: core/widgetbase.cpp:667
+#: core/widgetbase.cpp:669
 #, kde-format
 msgid "Folder Always Uses This Sort Order"
 msgstr ""
 
-#: core/widgets/configurefiltersdialog.cpp:24
+#: core/widgets/configurefiltersdialog.cpp:26
 #, fuzzy, kde-format
 #| msgid "Configure &Filters..."
 msgctxt "@title:window"
@@ -1252,14 +1252,14 @@ msgstr "تغییر نام پالایه"
 msgid "No result found"
 msgstr "امضایی یافت نشد"
 
-#: core/widgets/filternamedialog.cpp:19
+#: core/widgets/filternamedialog.cpp:21
 #, fuzzy, kde-format
 #| msgid "Edit &File"
 msgctxt "@title:window"
 msgid "Edit Filter"
 msgstr "ویرایش &پرونده‌"
 
-#: core/widgets/filternamewidget.cpp:32
+#: core/widgets/filternamewidget.cpp:34
 #, fuzzy, kde-format
 #| msgid "&Name:"
 msgctxt "@label:textbox"
@@ -1280,19 +1280,19 @@ msgctxt "@action"
 msgid "Configure..."
 msgstr "پیکربندی KMail..."
 
-#: core/widgets/quicksearchline.cpp:59
+#: core/widgets/quicksearchline.cpp:61
 #, fuzzy, kde-format
 #| msgid "Search"
 msgctxt "Search for messages."
 msgid "Search"
 msgstr "جستجو"
 
-#: core/widgets/quicksearchwarning.cpp:21
+#: core/widgets/quicksearchwarning.cpp:23
 #, kde-format
 msgid "The words less than 3 letters are ignored."
 msgstr ""
 
-#: core/widgets/quicksearchwarning.cpp:22
+#: core/widgets/quicksearchwarning.cpp:24
 #, fuzzy, kde-format
 #| msgid "&Do not show a message preview pane"
 msgctxt "@action"

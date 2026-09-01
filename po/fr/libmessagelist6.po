@@ -27,7 +27,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-26 00:49+0000\n"
+"POT-Creation-Date: 2026-09-01 00:47+0000\n"
 "PO-Revision-Date: 2026-04-03 14:22+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
@@ -493,7 +493,7 @@ msgstr ""
 "Un thème intelligent à plusieurs lignes et plusieurs éléments comprenant une "
 "colonne d'état cliquable"
 
-#: core/manager.cpp:758 core/view.cpp:2398 core/view.cpp:2402
+#: core/manager.cpp:758 core/view.cpp:2397 core/view.cpp:2401
 #, kde-format
 msgid "Status"
 msgstr "État"
@@ -549,35 +549,35 @@ msgctxt "Message Aggregation Group Header: Month name and Year number"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: core/model.cpp:3803
+#: core/model.cpp:3801
 #, kde-format
 msgid "Processed 1 Message of %2"
 msgid_plural "Processed %1 Messages of %2"
 msgstr[0] "Traitement de 1 message sur %2"
 msgstr[1] "Traitement de %1 messages sur %2"
 
-#: core/model.cpp:3809 core/model.cpp:3815
+#: core/model.cpp:3807 core/model.cpp:3813
 #, kde-format
 msgid "Threaded 1 Message of %2"
 msgid_plural "Threaded %1 Messages of %2"
 msgstr[0] "Organisation de 1 message sur %2"
 msgstr[1] "Organisation de %1 messages sur %2"
 
-#: core/model.cpp:3821
+#: core/model.cpp:3819
 #, kde-format
 msgid "Grouped 1 Thread of %2"
 msgid_plural "Grouped %1 Threads of %2"
 msgstr[0] "Regroupement de 1 message sur %2"
 msgstr[1] "Regroupement de %1 messages sur %2"
 
-#: core/model.cpp:3827
+#: core/model.cpp:3825
 #, kde-format
 msgid "Updated 1 Group of %2"
 msgid_plural "Updated %1 Groups of %2"
 msgstr[0] "Mise à jour de 1 groupe sur %2"
 msgstr[1] "Mise à jour de %1 groupes sur %2"
 
-#: core/model.cpp:3919
+#: core/model.cpp:3917
 #, kde-format
 msgctxt "@info:status Finished view fill"
 msgid "Ready"
@@ -900,46 +900,46 @@ msgstr "Afficher les colonnes par défaut"
 msgid "Display Tooltips"
 msgstr "Afficher les infobulles"
 
-#: core/view.cpp:2379 core/view.cpp:2383
+#: core/view.cpp:2378 core/view.cpp:2382
 #: core/widgets/searchmessagebybuttons.cpp:75
 #, kde-format
 msgid "From"
 msgstr "De"
 
-#: core/view.cpp:2380 core/view.cpp:2384
+#: core/view.cpp:2379 core/view.cpp:2383
 #, kde-format
 msgctxt "Receiver of the email"
 msgid "To"
 msgstr "À"
 
-#: core/view.cpp:2381 core/view.cpp:2385
+#: core/view.cpp:2380 core/view.cpp:2384
 #, kde-format
 msgid "Date"
 msgstr "Date"
 
-#: core/view.cpp:2399 core/view.cpp:2403
+#: core/view.cpp:2398 core/view.cpp:2402
 #, kde-format
 msgid "Size"
 msgstr "Taille"
 
-#: core/view.cpp:2400 core/view.cpp:2404 utils/themeeditor.cpp:191
+#: core/view.cpp:2399 core/view.cpp:2403 utils/themeeditor.cpp:191
 #, kde-format
 msgid "Folder"
 msgstr "Dossier"
 
-#: core/view.cpp:2410 core/view.cpp:2412
+#: core/view.cpp:2409 core/view.cpp:2411
 #, kde-format
 msgid "Preview"
 msgstr "Aperçu"
 
-#: core/view.cpp:2429
+#: core/view.cpp:2428
 #, kde-format
 msgid "<b>%1</b> reply"
 msgid_plural "<b>%1</b> replies"
 msgstr[0] "<b>%1</b> réponse"
 msgstr[1] "<b>%1</b> réponses"
 
-#: core/view.cpp:2432
+#: core/view.cpp:2431
 #, kde-format
 msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
@@ -947,177 +947,177 @@ msgstr[0] "<b>%1</b> message dans le sous-fil de discussion (<b>%2</b> non lu)"
 msgstr[1] ""
 "<b>%1</b> messages dans le sous-fil de discussion (<b>%2</b> non lu(s))"
 
-#: core/view.cpp:2469
+#: core/view.cpp:2466
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Threads started on 2008-12-21'"
 msgid "Threads started on %1"
 msgstr "Fils de discussion démarrés depuis le %1"
 
-#: core/view.cpp:2471
+#: core/view.cpp:2468
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Threads started Yesterday'"
 msgid "Threads started %1"
 msgstr "Fils de discussion démarrés depuis %1"
 
-#: core/view.cpp:2475
+#: core/view.cpp:2472
 #, kde-format
 msgid "Threads with messages dated %1"
 msgstr "Fils de discussion ayant des messages datés du %1"
 
-#: core/view.cpp:2485
+#: core/view.cpp:2482
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'"
 msgid "Messages sent on %1"
 msgstr "Messages envoyés le %1"
 
-#: core/view.cpp:2488
+#: core/view.cpp:2485
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Messages received on 2008-12-21'"
 msgid "Messages received on %1"
 msgstr "Messages reçus le %1"
 
-#: core/view.cpp:2492
+#: core/view.cpp:2489
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent Yesterday'"
 msgid "Messages sent %1"
 msgstr "Messages envoyés %1"
 
-#: core/view.cpp:2494
+#: core/view.cpp:2491
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages received Yesterday'"
 msgid "Messages received %1"
 msgstr "Messages reçus %1"
 
-#: core/view.cpp:2503
+#: core/view.cpp:2500
 #, kde-format
 msgid "Threads started within %1"
 msgstr "Fils de discussion démarrés depuis le « %1 »"
 
-#: core/view.cpp:2506
+#: core/view.cpp:2503
 #, kde-format
 msgid "Threads containing messages with dates within %1"
 msgstr "Fils de discussion contenant des messages à une date postérieure au %1"
 
-#: core/view.cpp:2514
+#: core/view.cpp:2511
 #, kde-format
 msgid "Messages sent within %1"
 msgstr "Messages envoyés depuis le « %1 »"
 
-#: core/view.cpp:2516
+#: core/view.cpp:2513
 #, kde-format
 msgid "Messages received within %1"
 msgstr "Messages reçus depuis le « %1 »"
 
-#: core/view.cpp:2525
+#: core/view.cpp:2522
 #, kde-format
 msgid "Threads started by %1"
 msgstr "Fils de discussion démarrés par « %1 »"
 
-#: core/view.cpp:2528
+#: core/view.cpp:2525
 #, kde-format
 msgid "Threads with most recent message by %1"
 msgstr "Fils de discussion ayant le plus de messages récents de « %1 »"
 
-#: core/view.cpp:2537 core/view.cpp:2561
+#: core/view.cpp:2534 core/view.cpp:2558
 #, kde-format
 msgid "Messages sent to %1"
 msgstr "Messages envoyés à « %1 »"
 
-#: core/view.cpp:2539
+#: core/view.cpp:2536
 #, kde-format
 msgid "Messages sent by %1"
 msgstr "Messages envoyés par « %1 »"
 
-#: core/view.cpp:2542
+#: core/view.cpp:2539
 #, kde-format
 msgid "Messages received from %1"
 msgstr "Messages reçus de « %1 »"
 
-#: core/view.cpp:2550
+#: core/view.cpp:2547
 #, kde-format
 msgid "Threads directed to %1"
 msgstr "Fils de discussion dirigés vers « %1 »"
 
-#: core/view.cpp:2553
+#: core/view.cpp:2550
 #, kde-format
 msgid "Threads with most recent message directed to %1"
 msgstr ""
 "Fils de discussion ayant le plus de messages récents dirigés vers « %1 »"
 
-#: core/view.cpp:2563
+#: core/view.cpp:2560
 #, kde-format
 msgid "Messages received by %1"
 msgstr "Messages reçus par « %1 »"
 
-#: core/view.cpp:2589
+#: core/view.cpp:2585
 #, kde-format
 msgid "<b>%1</b> thread"
 msgid_plural "<b>%1</b> threads"
 msgstr[0] "<b>%1</b> fil de discussion"
 msgstr[1] "<b>%1</b> fils de discussion"
 
-#: core/view.cpp:2594
+#: core/view.cpp:2590
 #, kde-format
 msgid "<b>%1</b> message (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
 msgstr[0] "<b>%1</b> message (<b>%2</b> non lu)"
 msgstr[1] "<b>%1</b> messages (<b>%2</b> non lu(s))"
 
-#: core/widgetbase.cpp:198
+#: core/widgetbase.cpp:200
 #, kde-format
 msgid "No filter defined."
 msgstr "Aucun filtre défini."
 
-#: core/widgetbase.cpp:198
+#: core/widgetbase.cpp:200
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "Créer un filtre"
 
-#: core/widgetbase.cpp:423 messagelistutil.cpp:115
+#: core/widgetbase.cpp:425 messagelistutil.cpp:115
 #, kde-format
 msgid "Theme"
 msgstr "Thème"
 
-#: core/widgetbase.cpp:444 core/widgetbase.cpp:534
+#: core/widgetbase.cpp:446 core/widgetbase.cpp:536
 #: core/widgets/configurefilterswidget.cpp:76
 #, kde-format
 msgid "Configure..."
 msgstr "Configurer..."
 
-#: core/widgetbase.cpp:513 messagelistutil.cpp:110
+#: core/widgetbase.cpp:515 messagelistutil.cpp:110
 #, kde-format
 msgid "Aggregation"
 msgstr "Agrégat"
 
-#: core/widgetbase.cpp:596
+#: core/widgetbase.cpp:598
 #, kde-format
 msgid "Message Sort Order"
 msgstr "Ordre de tri des messages"
 
-#: core/widgetbase.cpp:618
+#: core/widgetbase.cpp:620
 #, kde-format
 msgid "Message Sort Direction"
 msgstr "Direction de tri des messages"
 
-#: core/widgetbase.cpp:635
+#: core/widgetbase.cpp:637
 #, kde-format
 msgid "Group Sort Order"
 msgstr "Ordre de tri des groupes"
 
-#: core/widgetbase.cpp:652
+#: core/widgetbase.cpp:654
 #, kde-format
 msgid "Group Sort Direction"
 msgstr "Direction de tri des groupes"
 
-#: core/widgetbase.cpp:667
+#: core/widgetbase.cpp:669
 #, kde-format
 msgid "Folder Always Uses This Sort Order"
 msgstr "Le dossier utilise toujours cet ordre de tri"
 
-#: core/widgets/configurefiltersdialog.cpp:24
+#: core/widgets/configurefiltersdialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Filter"
@@ -1144,13 +1144,13 @@ msgstr "Supprimer un filtre"
 msgid "No result found"
 msgstr "Aucun résultat trouvé"
 
-#: core/widgets/filternamedialog.cpp:19
+#: core/widgets/filternamedialog.cpp:21
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Filter"
 msgstr "Modifier un filtre"
 
-#: core/widgets/filternamewidget.cpp:32
+#: core/widgets/filternamewidget.cpp:34
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
@@ -1168,18 +1168,18 @@ msgctxt "@action"
 msgid "Configure..."
 msgstr "Configurer..."
 
-#: core/widgets/quicksearchline.cpp:59
+#: core/widgets/quicksearchline.cpp:61
 #, kde-format
 msgctxt "Search for messages."
 msgid "Search"
 msgstr "Chercher"
 
-#: core/widgets/quicksearchwarning.cpp:21
+#: core/widgets/quicksearchwarning.cpp:23
 #, kde-format
 msgid "The words less than 3 letters are ignored."
 msgstr "Les mots de moins de 3 lettres sont ignorés."
 
-#: core/widgets/quicksearchwarning.cpp:22
+#: core/widgets/quicksearchwarning.cpp:24
 #, kde-format
 msgctxt "@action"
 msgid "Do not show again"

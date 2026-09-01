@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-05 00:45+0000\n"
+"POT-Creation-Date: 2026-09-01 00:47+0000\n"
 "PO-Revision-Date: 2013-09-30 09:50+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@nuug.no>\n"
@@ -268,31 +268,31 @@ msgstr "Meldingsmal for videresending"
 msgid "Quote characters"
 msgstr "Sitattegn"
 
-#: templateparserjob.cpp:313
+#: templateparserjob.cpp:315
 #, kde-format
 msgctxt "@info"
 msgid "Cannot insert content from file %1: %2"
 msgstr "Kan ikke sette inn innhold fra fila %1: %2"
 
-#: templateparserjob.cpp:483
+#: templateparserjob.cpp:485
 #, kde-format
 msgctxt "@item:intext email To"
 msgid "To:"
 msgstr "Til:"
 
-#: templateparserjob.cpp:494
+#: templateparserjob.cpp:496
 #, kde-format
 msgctxt "@item:intext email CC"
 msgid "CC:"
 msgstr "Kopi: "
 
-#: templateparserjob.cpp:1146
+#: templateparserjob.cpp:1148
 #, kde-format
 msgctxt "@item:intext"
 msgid "Attachment %1"
 msgstr "Vedlegg %1"
 
-#: templateparserjob.cpp:1354
+#: templateparserjob.cpp:1356
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Pipe command <command>%1</command> failed."
@@ -593,7 +593,7 @@ msgctxt "@action:button"
 msgid "Reset All Templates"
 msgstr "Tilbakestill alle maler"
 
-#: templatesconfiguration.cpp:363
+#: templatesconfiguration.cpp:362
 #, kde-format
 msgid ""
 "Use of \"Reply using plain text\" and \"Reply using HTML text\" in pairs is "
@@ -609,18 +609,18 @@ msgstr ""
 "(b)Svar med HTML-tekst for at sitert tekst skal være med HTML hvis det er "
 "brukt"
 
-#: templatesinsertcommandpushbutton.cpp:20
+#: templatesinsertcommandpushbutton.cpp:22
 #, kde-format
 msgid "&Insert Command"
 msgstr "Sett &inn kommando"
 
-#: templatesinsertcommandpushbutton.cpp:28
+#: templatesinsertcommandpushbutton.cpp:30
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select a command to insert into the template"
 msgstr "Velg en kommando som skal settes inn i malen"
 
-#: templatesinsertcommandpushbutton.cpp:30
+#: templatesinsertcommandpushbutton.cpp:32
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""

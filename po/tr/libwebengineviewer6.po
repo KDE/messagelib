@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libwebengineviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-04 00:46+0000\n"
+"POT-Creation-Date: 2026-09-01 00:47+0000\n"
 "PO-Revision-Date: 2024-08-01 13:10+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 24.11.70\n"
 
-#: developertool/developertooldialog.cpp:27
+#: developertool/developertooldialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Developer Tool"
@@ -104,13 +104,13 @@ msgstr ""
 "Postalayıcıda, gönderme formuna izin verilmiyor. Lütfen URL’yi bir "
 "tarayıcıda açın."
 
-#: widgets/tracking/trackingdetailsdialog.cpp:28
+#: widgets/tracking/trackingdetailsdialog.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"
 msgstr "Ayrıntılar"
 
-#: widgets/tracking/trackingwarningwidget.cpp:21
+#: widgets/tracking/trackingwarningwidget.cpp:23
 #, kde-format
 msgid ""
 "Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
@@ -119,12 +119,12 @@ msgstr ""
 "Bir posta izleyicisi bulundu ve engellendi.<a href=\"mailtrackingdetails"
 "\">(Ayrıntılar…)"
 
-#: widgets/tracking/trackingwarningwidget.cpp:40
+#: widgets/tracking/trackingwarningwidget.cpp:42
 #, kde-format
 msgid "Details:"
 msgstr "Ayrıntılar:"
 
-#: widgets/tracking/trackingwarningwidget.cpp:44
+#: widgets/tracking/trackingwarningwidget.cpp:45
 #, kde-format
 msgid "1 tracker from the company %2 (%3)"
 msgid_plural "%1 trackers from the company %2 (%3)"

@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-30 00:48+0000\n"
+"POT-Creation-Date: 2026-09-01 00:47+0000\n"
 "PO-Revision-Date: 2026-06-25 14:25+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -300,7 +300,7 @@ msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "Удаление ключей"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:33
+#: dkim-verify/dkimmanagerkeywidget.cpp:35
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search..."
@@ -321,50 +321,50 @@ msgstr "Может быть подписано"
 msgid "Ignore if not signed"
 msgstr "Игнорировать, если не подписано"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:29
+#: dkim-verify/dkimmanagerulesdialog.cpp:31
 #, kde-format
 msgctxt "@action:button"
 msgid "Export..."
 msgstr "Экспорт…"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:31
+#: dkim-verify/dkimmanagerulesdialog.cpp:33
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Rule"
 msgstr "Параметры правила"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:42
+#: dkim-verify/dkimmanagerulesdialog.cpp:44
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Rule..."
 msgstr "Добавить правило…"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:47
+#: dkim-verify/dkimmanagerulesdialog.cpp:49
 #, kde-format
 msgctxt "@action:button"
 msgid "Import..."
 msgstr "Импорт…"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:79
+#: dkim-verify/dkimmanagerulesdialog.cpp:81
 #, kde-format
 msgid "No rules found"
 msgstr "Правил не найдено"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:79
-#: dkim-verify/dkimmanagerulesdialog.cpp:82
+#: dkim-verify/dkimmanagerulesdialog.cpp:81
+#: dkim-verify/dkimmanagerulesdialog.cpp:84
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "Экспорт правил"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:90
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#: dkim-verify/dkimmanagerulesdialog.cpp:92
+#: dkim-verify/dkimmanagerulesdialog.cpp:95
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "Импорт правил"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:93
+#: dkim-verify/dkimmanagerulesdialog.cpp:95
 #, kde-format
 msgid "No rules imported."
 msgstr "Ни одно правило не было импортировано."
@@ -446,13 +446,13 @@ msgctxt "@title:window"
 msgid "Delete Rules"
 msgstr "Удаление правил"
 
-#: dkim-verify/dkimruledialog.cpp:26
+#: dkim-verify/dkimruledialog.cpp:28
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Rule"
 msgstr "Добавление правила"
 
-#: dkim-verify/dkimruledialog.cpp:73
+#: dkim-verify/dkimruledialog.cpp:75
 #, kde-format
 msgctxt "@title:window"
 msgid "Modify Rule"
@@ -866,61 +866,61 @@ msgstr "&Заголовок"
 msgid "Choose display style of message headers"
 msgstr "Выберите формат отображения заголовка"
 
-#: header/plainheaderstyle.cpp:104
+#: header/plainheaderstyle.cpp:103
 #, kde-format
 msgid "Date: "
 msgstr "Дата: "
 
-#: header/plainheaderstyle.cpp:108
+#: header/plainheaderstyle.cpp:107
 #, kde-format
 msgid "From: "
 msgstr "Отправитель: "
 
-#: header/plainheaderstyle.cpp:110
+#: header/plainheaderstyle.cpp:109
 #, kde-format
 msgid "[vCard]"
 msgstr "[vCard]"
 
-#: header/plainheaderstyle.cpp:122
+#: header/plainheaderstyle.cpp:120
 #, kde-format
 msgctxt "To-field of the mailheader."
 msgid "To: "
 msgstr "Получатель: "
 
-#: header/plainheaderstyle.cpp:129
+#: header/plainheaderstyle.cpp:127
 #, kde-format
 msgid "CC: "
 msgstr "Копия: "
 
-#: header/plainheaderstyle.cpp:136
+#: header/plainheaderstyle.cpp:134
 #, kde-format
 msgid "BCC: "
 msgstr "Скрытая копия: "
 
-#: header/plainheaderstyle.cpp:141
+#: header/plainheaderstyle.cpp:139
 #, kde-format
 msgid "Reply to: "
 msgstr "Обратный адрес:"
 
-#: mdn/mdnwarningwidget.cpp:14
+#: mdn/mdnwarningwidget.cpp:16
 #, kde-format
 msgctxt "@action"
 msgid "Ignore"
 msgstr "Игнорировать"
 
-#: mdn/mdnwarningwidget.cpp:15
+#: mdn/mdnwarningwidget.cpp:17
 #, kde-format
 msgctxt "@action"
 msgid "Send"
 msgstr "Отправить"
 
-#: mdn/mdnwarningwidget.cpp:16
+#: mdn/mdnwarningwidget.cpp:18
 #, kde-format
 msgctxt "@action"
 msgid "Send Deny"
 msgstr "Отправить отказ"
 
-#: remote-content/remotecontentconfiguredialog.cpp:27
+#: remote-content/remotecontentconfiguredialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Remote Content"
@@ -989,7 +989,7 @@ msgstr "Авторизован"
 msgid "Blocked"
 msgstr "Блокирован"
 
-#: remote-content/remotecontentwidget.cpp:28
+#: remote-content/remotecontentwidget.cpp:30
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Domain:"
@@ -1033,7 +1033,7 @@ msgid "Disable scam detection for all messages"
 msgstr "Отключить обнаружение вредоносных писем"
 
 #: scamdetection/scamdetectionwebengine.cpp:117
-#: scamdetection/scamdetectionwebengine.cpp:216
+#: scamdetection/scamdetectionwebengine.cpp:214
 #, kde-format
 msgid ""
 "This email contains a link which reads as '%1' in the text, but actually "
@@ -1069,7 +1069,7 @@ msgstr ""
 msgid "This email contains a link (%1) which has a redirection"
 msgstr "Письмо содержит ссылку (%1) с перенаправлением"
 
-#: scamdetection/scamdetectionwebengine.cpp:149
+#: scamdetection/scamdetectionwebengine.cpp:148
 #, kde-format
 msgid ""
 "This email contains a link (%1) which contains multiple http://. This is "
@@ -1078,20 +1078,20 @@ msgstr ""
 "Письмо содержит ссылку (%1) с несколькими префиксами http://. Это часто "
 "встречается во вредных письмах."
 
-#: scamdetection/scamdetectionwebengine.cpp:160
+#: scamdetection/scamdetectionwebengine.cpp:159
 #, kde-format
 msgid "This email contains a shorturl (%1). It can redirect to another server."
 msgstr ""
 "Письмо содержит короткую ссылку (%1). Она может перенаправлять на другой "
 "сайт."
 
-#: scamdetection/scamdetectionwebengine.cpp:235
+#: scamdetection/scamdetectionwebengine.cpp:232
 #, kde-format
 msgid "Message contains form element. This is often the case in scam emails."
 msgstr ""
 "Письмо содержит в себе форму. Это часто встречается во вредных письмах."
 
-#: scamdetection/scamdetectionwebengine.cpp:239
+#: scamdetection/scamdetectionwebengine.cpp:236
 #, kde-format
 msgid "Details:"
 msgstr "Подробности:"
@@ -1404,7 +1404,7 @@ msgstr ""
 "само письмо с приглашением удаляется в корзину."
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
-#: settings/messageviewer.kcfg:206 viewer/viewer_p.cpp:1558
+#: settings/messageviewer.kcfg:206 viewer/viewer_p.cpp:1557
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "&Фиксированный шрифт"
@@ -1572,80 +1572,80 @@ msgstr "&Уровень автоматического сворачивания:
 msgid "&Minimum font size:"
 msgstr "&Минимальный размер шрифта:"
 
-#: utils/messageviewerutil.cpp:123
+#: utils/messageviewerutil.cpp:122
 #, kde-format
 msgid ""
 "A file named \"%1\" already exists. Are you sure you want to overwrite it?"
 msgstr "Файл с именем «%1» уже существует. Заменить его?"
 
-#: utils/messageviewerutil.cpp:126
+#: utils/messageviewerutil.cpp:125
 #, kde-format
 msgctxt "@title:window"
 msgid "Overwrite File?"
 msgstr "Замена файла"
 
-#: utils/messageviewerutil.cpp:159
+#: utils/messageviewerutil.cpp:158
 #, kde-format
 msgid "Save Attachments To"
 msgstr "Сохранить вложение в"
 
-#: utils/messageviewerutil.cpp:176
+#: utils/messageviewerutil.cpp:175
 #, kde-format
 msgctxt "filename for an unnamed attachment"
 msgid "attachment.1"
 msgstr "вложение.1"
 
-#: utils/messageviewerutil.cpp:182
+#: utils/messageviewerutil.cpp:181
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Attachment"
 msgstr "Сохранение вложения"
 
-#: utils/messageviewerutil.cpp:206
+#: utils/messageviewerutil.cpp:205
 #, kde-format
 msgctxt "filename for the %1-th unnamed attachment"
 msgid "attachment.%1"
 msgstr "вложение.%1"
 
-#: utils/messageviewerutil.cpp:305
+#: utils/messageviewerutil.cpp:304
 #, kde-format
 msgid ""
 "The part %1 of the message is encrypted. Do you want to keep the encryption "
 "when saving?"
 msgstr "Часть %1 письма зашифрована. Оставить письмо зашифрованным?"
 
-#: utils/messageviewerutil.cpp:307 utils/messageviewerutil.cpp:320
+#: utils/messageviewerutil.cpp:306 utils/messageviewerutil.cpp:319
 #, kde-format
 msgid "KMail Question"
 msgstr "Вопрос KMail"
 
-#: utils/messageviewerutil.cpp:307
+#: utils/messageviewerutil.cpp:306
 #, kde-format
 msgctxt "@action:button"
 msgid "Keep Encryption"
 msgstr "Оставить зашифрованным"
 
-#: utils/messageviewerutil.cpp:308 utils/messageviewerutil.cpp:321
+#: utils/messageviewerutil.cpp:307 utils/messageviewerutil.cpp:320
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Keep"
 msgstr "Не оставлять"
 
-#: utils/messageviewerutil.cpp:318
+#: utils/messageviewerutil.cpp:317
 #, kde-format
 msgid ""
 "The part %1 of the message is signed. Do you want to keep the signature when "
 "saving?"
 msgstr "Часть %1 письма подписана. Оставить письмо подписанным?"
 
-#: utils/messageviewerutil.cpp:320
+#: utils/messageviewerutil.cpp:319
 #, kde-format
 msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "Оставить подписанным"
 
-#: utils/messageviewerutil.cpp:384 utils/messageviewerutil.cpp:407
-#: utils/messageviewerutil.cpp:425 utils/messageviewerutil.cpp:548
+#: utils/messageviewerutil.cpp:383 utils/messageviewerutil.cpp:406
+#: utils/messageviewerutil.cpp:424 utils/messageviewerutil.cpp:547
 #, kde-kuit-format
 msgctxt "1 = file name, 2 = error string"
 msgid ""
@@ -1655,40 +1655,40 @@ msgstr ""
 "<qt>Не удалось записать в файл<br /><filename>%1</filename><br /><br />%2</"
 "qt>"
 
-#: utils/messageviewerutil.cpp:387 utils/messageviewerutil.cpp:396
+#: utils/messageviewerutil.cpp:386 utils/messageviewerutil.cpp:395
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "Ошибка сохранения вложения"
 
-#: utils/messageviewerutil.cpp:395 utils/messageviewerutil.cpp:505
+#: utils/messageviewerutil.cpp:394 utils/messageviewerutil.cpp:504
 #, kde-format, kde-kuit-format
 msgctxt "1 = error string"
 msgid "Could not create temporary file: <message>%1</message>"
 msgstr "Не удалось создать временный файл:<message>%1</message>"
 
-#: utils/messageviewerutil.cpp:410 utils/messageviewerutil.cpp:428
+#: utils/messageviewerutil.cpp:409 utils/messageviewerutil.cpp:427
 #, kde-format
 msgid "Error saving attachment"
 msgstr "Ошибка сохранения вложения"
 
-#: utils/messageviewerutil.cpp:441
+#: utils/messageviewerutil.cpp:440
 #, kde-format
 msgid "Found no attachments to save."
 msgstr "Не найдены вложения для сохранения."
 
-#: utils/messageviewerutil.cpp:457
+#: utils/messageviewerutil.cpp:456
 #, kde-format
 msgid "message"
 msgstr "письмо"
 
 # BUGME: please capitalize names --aspotashev
-#: utils/messageviewerutil.cpp:479
+#: utils/messageviewerutil.cpp:478
 #, kde-format
 msgid "Mailbox file (*.mbox);;All Files (*)"
 msgstr "Файл почтового ящика (*.mbox);;Все файлы (*)"
 
-#: utils/messageviewerutil.cpp:489
+#: utils/messageviewerutil.cpp:488
 #, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
@@ -1697,63 +1697,63 @@ msgstr[1] "Сохранить письма"
 msgstr[2] "Сохранить письма"
 msgstr[3] "Сохранить письмо"
 
-#: utils/messageviewerutil.cpp:506 utils/messageviewerutil.cpp:517
-#: utils/messageviewerutil.cpp:551
+#: utils/messageviewerutil.cpp:505 utils/messageviewerutil.cpp:516
+#: utils/messageviewerutil.cpp:550
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Ошибка при сохранении письма"
 
-#: utils/messageviewerutil.cpp:515
+#: utils/messageviewerutil.cpp:514
 #, kde-format
 msgid "File %1 could not be loaded."
 msgstr "Не удалось загрузить файл «%1»."
 
-#: utils/messageviewerutil.cpp:515
+#: utils/messageviewerutil.cpp:514
 #, kde-format
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Ошибка при загрузке письма"
 
-#: utils/messageviewerutil.cpp:517
+#: utils/messageviewerutil.cpp:516
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "Не удалось создать файл «%1»."
 
-#: utils/messageviewerutil.cpp:524
+#: utils/messageviewerutil.cpp:523
 #, kde-format
 msgid "We cannot append message to mbox."
 msgstr "Ошибка при сохранении письма в mbox."
 
-#: utils/messageviewerutil.cpp:524 utils/messageviewerutil.cpp:531
+#: utils/messageviewerutil.cpp:523 utils/messageviewerutil.cpp:530
 #, kde-format
 msgid "Error saving message"
 msgstr "Ошибка при сохранении письма"
 
-#: utils/messageviewerutil.cpp:531
+#: utils/messageviewerutil.cpp:530
 #, kde-format
 msgid "We cannot save message."
 msgstr "Сохранить письмо не удалось."
 
-#: utils/messageviewerutil.cpp:595
+#: utils/messageviewerutil.cpp:594
 #, kde-format
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "Удалено: %1"
 
-#: utils/messageviewerutil.cpp:606
+#: utils/messageviewerutil.cpp:605
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
 msgstr "Вы удалили вложение из этого письма. Исходные MIME-заголовки вложения:"
 
-#: utils/messageviewerutil.cpp:634
+#: utils/messageviewerutil.cpp:633
 #, kde-format
 msgid "Open &with %1"
 msgstr "&Открыть в программе %1"
 
-#: utils/messageviewerutil.cpp:636
+#: utils/messageviewerutil.cpp:635
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
@@ -1795,7 +1795,7 @@ msgstr "Печать документа"
 msgid "Turn on HTML rendering for this message."
 msgstr "Включить показ HTML этого письма."
 
-#: viewer/urlhandlermanager.cpp:412 viewer/viewer_p.cpp:1627
+#: viewer/urlhandlermanager.cpp:412 viewer/viewer_p.cpp:1626
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "Позволить загружать внешние ссылки из сети."
@@ -1878,7 +1878,7 @@ msgstr "&Открыть в адресной книге"
 msgid "&Copy Email Address"
 msgstr "Копировать &адрес электронной почты"
 
-#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2726
+#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2722
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Адрес скопирован в буфер обмена."
@@ -1913,18 +1913,18 @@ msgstr "Безымянное вложение"
 msgid "Show GnuPG Audit Log for this operation"
 msgstr "Показать журнал аудита GnuPG для этой операции"
 
-#: viewer/urlhandlermanager.cpp:862
+#: viewer/urlhandlermanager.cpp:860
 #, kde-format
 msgid "Opening URL..."
 msgstr "Открытие ссылки..."
 
-#: viewer/urlhandlermanager.cpp:871
+#: viewer/urlhandlermanager.cpp:869
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "Выполнить программу <filename>%1</filename>?"
 
-#: viewer/urlhandlermanager.cpp:873
+#: viewer/urlhandlermanager.cpp:871
 #, kde-format
 msgctxt "@action:button"
 msgid "Execute"
@@ -1977,328 +1977,328 @@ msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "&Открыть в..."
 
-#: viewer/viewer_p.cpp:527 viewer/viewer_p.cpp:1736
+#: viewer/viewer_p.cpp:527 viewer/viewer_p.cpp:1735
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Открыть"
 
-#: viewer/viewer_p.cpp:541 viewer/viewer_p.cpp:1743
+#: viewer/viewer_p.cpp:540 viewer/viewer_p.cpp:1742
 #, kde-format
 msgctxt "to view something"
 msgid "View"
 msgstr "Просмотреть"
 
-#: viewer/viewer_p.cpp:549
+#: viewer/viewer_p.cpp:548
 #, kde-format
 msgid "Scroll To"
 msgstr "Прокрутить к"
 
-#: viewer/viewer_p.cpp:554
+#: viewer/viewer_p.cpp:553
 #, kde-format
 msgid "Save As..."
 msgstr "Сохранить как..."
 
-#: viewer/viewer_p.cpp:560 viewer/viewer_p.cpp:1753
+#: viewer/viewer_p.cpp:559 viewer/viewer_p.cpp:1752
 #, kde-format
 msgid "Copy"
 msgstr "Копировать"
 
-#: viewer/viewer_p.cpp:571 viewer/viewer_p.cpp:1757
+#: viewer/viewer_p.cpp:570 viewer/viewer_p.cpp:1756
 #, kde-format
 msgid "Delete Attachment"
 msgstr "Удалить вложение"
 
-#: viewer/viewer_p.cpp:582
+#: viewer/viewer_p.cpp:581
 #, kde-format
 msgid "Reply To Author"
 msgstr "Ответить автору"
 
-#: viewer/viewer_p.cpp:590
+#: viewer/viewer_p.cpp:589
 #, kde-format
 msgid "Reply To All"
 msgstr "Ответить всем"
 
-#: viewer/viewer_p.cpp:596 viewer/viewer_p.cpp:1762
+#: viewer/viewer_p.cpp:595 viewer/viewer_p.cpp:1761
 #, kde-format
 msgid "Properties"
 msgstr "Свойства"
 
-#: viewer/viewer_p.cpp:732
+#: viewer/viewer_p.cpp:731
 #, kde-format
 msgid "KMail"
 msgstr "KMail"
 
-#: viewer/viewer_p.cpp:732
+#: viewer/viewer_p.cpp:731
 #, kde-format
 msgid "The KDE Mail Client"
 msgstr "Почтовый клиент от KDE"
 
-#: viewer/viewer_p.cpp:1278
+#: viewer/viewer_p.cpp:1277
 #, kde-format
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "Просмотр вложения: %1"
 
-#: viewer/viewer_p.cpp:1480
+#: viewer/viewer_p.cpp:1479
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "&Вложения"
 
-#: viewer/viewer_p.cpp:1482
+#: viewer/viewer_p.cpp:1481
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "Выберите стиль показа вложений"
 
-#: viewer/viewer_p.cpp:1485
+#: viewer/viewer_p.cpp:1484
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "В виде &значков"
 
-#: viewer/viewer_p.cpp:1488
+#: viewer/viewer_p.cpp:1487
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr "Показывать вложения в виде значков, которые нужно нажать для просмотра"
 
-#: viewer/viewer_p.cpp:1492
+#: viewer/viewer_p.cpp:1491
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "&Интеллектуально"
 
-#: viewer/viewer_p.cpp:1495
+#: viewer/viewer_p.cpp:1494
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "Показывать вложения в том виде, как это предполагалось отправителем"
 
-#: viewer/viewer_p.cpp:1499
+#: viewer/viewer_p.cpp:1498
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "&В тексте"
 
-#: viewer/viewer_p.cpp:1502
+#: viewer/viewer_p.cpp:1501
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "Показывать содержимое вложений в тексте письма (если это возможно)"
 
-#: viewer/viewer_p.cpp:1506
+#: viewer/viewer_p.cpp:1505
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "&Не показывать"
 
-#: viewer/viewer_p.cpp:1509
+#: viewer/viewer_p.cpp:1508
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "Не показывать вложения в письме"
 
-#: viewer/viewer_p.cpp:1513
+#: viewer/viewer_p.cpp:1512
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr "Только в заголовках"
 
-#: viewer/viewer_p.cpp:1516
+#: viewer/viewer_p.cpp:1515
 #, kde-format
 msgid "Show Attachments only in the header of the mail"
 msgstr "Показывать вложения только в заголовках письма"
 
-#: viewer/viewer_p.cpp:1521
+#: viewer/viewer_p.cpp:1520
 #, kde-format
 msgid "&Set Encoding"
 msgstr "&Установить кодировку"
 
-#: viewer/viewer_p.cpp:1526 widgets/configurewidget.cpp:45
+#: viewer/viewer_p.cpp:1525 widgets/configurewidget.cpp:45
 #: widgets/configurewidget.cpp:79
 #, kde-format
 msgid "Auto"
 msgstr "Авто"
 
-#: viewer/viewer_p.cpp:1536
+#: viewer/viewer_p.cpp:1535
 #, kde-format
 msgid "Copy Text"
 msgstr "Копировать текст"
 
-#: viewer/viewer_p.cpp:1542
+#: viewer/viewer_p.cpp:1541
 #, kde-format
 msgctxt "@action"
 msgid "Select All Text"
 msgstr "Выделить весь текст"
 
-#: viewer/viewer_p.cpp:1548 viewer/viewer_p.cpp:2071
+#: viewer/viewer_p.cpp:1547 viewer/viewer_p.cpp:2067
 #, kde-format
 msgid "Copy Link Address"
 msgstr "Скопировать адрес ссылки"
 
-#: viewer/viewer_p.cpp:1553
+#: viewer/viewer_p.cpp:1552
 #, kde-format
 msgid "Open URL"
 msgstr "Открыть"
 
-#: viewer/viewer_p.cpp:1564
+#: viewer/viewer_p.cpp:1563
 #, kde-format
 msgid "Show Message Structure"
 msgstr "Показать структуру письма"
 
 # простой текст/исходный текст? --aspotashev
-#: viewer/viewer_p.cpp:1569
+#: viewer/viewer_p.cpp:1568
 #, kde-format
 msgctxt "@action"
 msgid "&View Source"
 msgstr "Просмотр &исходного текста письма…"
 
-#: viewer/viewer_p.cpp:1574
+#: viewer/viewer_p.cpp:1573
 #, kde-format
 msgid "&Save Message..."
 msgstr "&Сохранить письмо…"
 
-#: viewer/viewer_p.cpp:1580
+#: viewer/viewer_p.cpp:1579
 #, kde-format
 msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "С&охранить формат отображения"
 
-#: viewer/viewer_p.cpp:1584
+#: viewer/viewer_p.cpp:1583
 #, kde-format
 msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "С&бросить формат отображения"
 
-#: viewer/viewer_p.cpp:1591
+#: viewer/viewer_p.cpp:1590
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "Прокрутить письмо вверх"
 
-#: viewer/viewer_p.cpp:1596
+#: viewer/viewer_p.cpp:1595
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "Прокрутить письмо вниз"
 
-#: viewer/viewer_p.cpp:1601
+#: viewer/viewer_p.cpp:1600
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "Прокрутить письмо вверх (с переходом)"
 
-#: viewer/viewer_p.cpp:1606
+#: viewer/viewer_p.cpp:1605
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "Прокрутить письмо вниз (с переходом)"
 
-#: viewer/viewer_p.cpp:1616
+#: viewer/viewer_p.cpp:1615
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr "Переключить в режим отображения HTML"
 
-#: viewer/viewer_p.cpp:1620
+#: viewer/viewer_p.cpp:1619
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr "Переключить между HTML и текстовым режимами отображения"
 
-#: viewer/viewer_p.cpp:1623
+#: viewer/viewer_p.cpp:1622
 #, kde-format
 msgctxt "@action"
 msgid "Load external references"
 msgstr "Загрузить внешние ресурсы"
 
-#: viewer/viewer_p.cpp:1629
+#: viewer/viewer_p.cpp:1628
 #, kde-format
 msgctxt "@action"
 msgid "Speak Text"
 msgstr "Зачитать текст"
 
-#: viewer/viewer_p.cpp:1635
+#: viewer/viewer_p.cpp:1634
 #, kde-format
 msgctxt "@action"
 msgid "Share Text..."
 msgstr "Опубликовать текст…"
 
-#: viewer/viewer_p.cpp:1653
+#: viewer/viewer_p.cpp:1652
 #, kde-format
 msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "Копировать расположение изображения"
 
-#: viewer/viewer_p.cpp:1659
+#: viewer/viewer_p.cpp:1658
 #, kde-format
 msgid "&Find in Message..."
 msgstr "&Найти в письме..."
 
-#: viewer/viewer_p.cpp:1668
+#: viewer/viewer_p.cpp:1667
 #, kde-format
 msgid "Disable Emoticon"
 msgstr "Отключить смайлики"
 
-#: viewer/viewer_p.cpp:1733
+#: viewer/viewer_p.cpp:1732
 #, kde-format
 msgid "Save &As..."
 msgstr "Сохранить &как..."
 
-#: viewer/viewer_p.cpp:1741
+#: viewer/viewer_p.cpp:1740
 #, kde-format
 msgid "Open With..."
 msgstr "Открыть в..."
 
-#: viewer/viewer_p.cpp:1748
+#: viewer/viewer_p.cpp:1747
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "Сохранить все вложения..."
 
-#: viewer/viewer_p.cpp:1991
+#: viewer/viewer_p.cpp:1988
 #, kde-format
 msgid "The network is broken."
 msgstr "Нет подключения к сети."
 
-#: viewer/viewer_p.cpp:1991 viewer/viewer_p.cpp:1994
+#: viewer/viewer_p.cpp:1988 viewer/viewer_p.cpp:1991
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "Проверка фишинговых ссылок"
 
-#: viewer/viewer_p.cpp:1994
+#: viewer/viewer_p.cpp:1991
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "Некорректная ссылка %1."
 
-#: viewer/viewer_p.cpp:2014
+#: viewer/viewer_p.cpp:2011
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr "Этот веб-сайт вредоносный, продолжить?"
 
-#: viewer/viewer_p.cpp:2015
+#: viewer/viewer_p.cpp:2012
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr "Вредоносный сайт"
 
-#: viewer/viewer_p.cpp:2069
+#: viewer/viewer_p.cpp:2065
 #, kde-format
 msgid "Copy Email Address"
 msgstr "Копировать адрес электронной почты"
 
-#: viewer/viewer_p.cpp:2152
+#: viewer/viewer_p.cpp:2148
 #, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Письмо в виде обычного текста"
 
-#: viewer/viewer_p.cpp:2732
+#: viewer/viewer_p.cpp:2728
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "Ссылка скопирована в буфер обмена."
 
-#: viewer/viewer_p.cpp:2894
+#: viewer/viewer_p.cpp:2890
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "Не удалось загрузить письмо: %1."
 
-#: viewer/viewer_p.cpp:2899
+#: viewer/viewer_p.cpp:2895
 #, kde-format
 msgid "Message not found."
 msgstr "Письмо не найдено."

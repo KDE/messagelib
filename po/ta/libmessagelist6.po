@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-26 00:49+0000\n"
+"POT-Creation-Date: 2026-09-01 00:47+0000\n"
 "PO-Revision-Date: 2025-11-30 15:21+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
@@ -458,7 +458,7 @@ msgstr ""
 msgid "A smart multiline and multi item theme with a clickable status column"
 msgstr ""
 
-#: core/manager.cpp:758 core/view.cpp:2398 core/view.cpp:2402
+#: core/manager.cpp:758 core/view.cpp:2397 core/view.cpp:2401
 #, kde-format
 msgid "Status"
 msgstr "நிலை"
@@ -514,35 +514,35 @@ msgctxt "Message Aggregation Group Header: Month name and Year number"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: core/model.cpp:3803
+#: core/model.cpp:3801
 #, kde-format
 msgid "Processed 1 Message of %2"
 msgid_plural "Processed %1 Messages of %2"
 msgstr[0] "%2 அஞ்சல்களில் 1 செயலுக்குள்ளாக்கப்பட்டுள்ளது"
 msgstr[1] "%2 அஞ்சல்களில் %1 செயலுக்குள்ளாக்கப்பட்டுள்ளன"
 
-#: core/model.cpp:3809 core/model.cpp:3815
+#: core/model.cpp:3807 core/model.cpp:3813
 #, kde-format
 msgid "Threaded 1 Message of %2"
 msgid_plural "Threaded %1 Messages of %2"
 msgstr[0] "%2 அஞ்சல்களில் 1 தொடராக்கப்பட்டுள்ளது"
 msgstr[1] "%2 அஞ்சல்களில் %1 தொடராக்கப்பட்டுள்ளன"
 
-#: core/model.cpp:3821
+#: core/model.cpp:3819
 #, kde-format
 msgid "Grouped 1 Thread of %2"
 msgid_plural "Grouped %1 Threads of %2"
 msgstr[0] "%2 தொடர்களில் 1 தொகுக்கப்பட்டுள்ளது"
 msgstr[1] "%2 தொடர்களில் %1 தொகுக்கப்பட்டுள்ளன"
 
-#: core/model.cpp:3827
+#: core/model.cpp:3825
 #, kde-format
 msgid "Updated 1 Group of %2"
 msgid_plural "Updated %1 Groups of %2"
 msgstr[0] "%2 தொகுப்புகளில் 1 புதுப்பிக்கப்பட்டுள்ளது"
 msgstr[1] "%2 தொகுப்புகளில் %1 புதுப்பிக்கப்பட்டுள்ளன"
 
-#: core/model.cpp:3919
+#: core/model.cpp:3917
 #, kde-format
 msgctxt "@info:status Finished view fill"
 msgid "Ready"
@@ -866,222 +866,222 @@ msgstr "இயல்பிருப்பு நெடுவரிசைகள�
 msgid "Display Tooltips"
 msgstr "கருவித்துப்புகளை காட்டு"
 
-#: core/view.cpp:2379 core/view.cpp:2383
+#: core/view.cpp:2378 core/view.cpp:2382
 #: core/widgets/searchmessagebybuttons.cpp:75
 #, kde-format
 msgid "From"
 msgstr "அனுப்புநர்"
 
-#: core/view.cpp:2380 core/view.cpp:2384
+#: core/view.cpp:2379 core/view.cpp:2383
 #, kde-format
 msgctxt "Receiver of the email"
 msgid "To"
 msgstr "பெறுநர்"
 
-#: core/view.cpp:2381 core/view.cpp:2385
+#: core/view.cpp:2380 core/view.cpp:2384
 #, kde-format
 msgid "Date"
 msgstr "தேதி"
 
-#: core/view.cpp:2399 core/view.cpp:2403
+#: core/view.cpp:2398 core/view.cpp:2402
 #, kde-format
 msgid "Size"
 msgstr "அளவு"
 
-#: core/view.cpp:2400 core/view.cpp:2404 utils/themeeditor.cpp:191
+#: core/view.cpp:2399 core/view.cpp:2403 utils/themeeditor.cpp:191
 #, kde-format
 msgid "Folder"
 msgstr "அடைவு"
 
-#: core/view.cpp:2410 core/view.cpp:2412
+#: core/view.cpp:2409 core/view.cpp:2411
 #, kde-format
 msgid "Preview"
 msgstr "முன்னோட்டம்"
 
-#: core/view.cpp:2429
+#: core/view.cpp:2428
 #, kde-format
 msgid "<b>%1</b> reply"
 msgid_plural "<b>%1</b> replies"
 msgstr[0] "<b>%1</b> பதில்"
 msgstr[1] "<b>%1</b> பதில்கள்"
 
-#: core/view.cpp:2432
+#: core/view.cpp:2431
 #, kde-format
 msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
 msgstr[0] "தொகுப்பில் <b>%1</b> அஞ்சல் (படிக்காதவை <b>%2</b>)"
 msgstr[1] "தொகுப்பில் <b>%1</b> அஞ்சல்கள் (படிக்காதவை <b>%2</b>)"
 
-#: core/view.cpp:2469
+#: core/view.cpp:2466
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Threads started on 2008-12-21'"
 msgid "Threads started on %1"
 msgstr "தொடர்கள் %1 அன்று தொடங்கியன"
 
-#: core/view.cpp:2471
+#: core/view.cpp:2468
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Threads started Yesterday'"
 msgid "Threads started %1"
 msgstr "தொடர்கள் %1 தொடங்கியன"
 
-#: core/view.cpp:2475
+#: core/view.cpp:2472
 #, kde-format
 msgid "Threads with messages dated %1"
 msgstr "%1 அன்று வந்த அஞ்சல்களைக் கொண்ட தொடர்கள்"
 
-#: core/view.cpp:2485
+#: core/view.cpp:2482
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'"
 msgid "Messages sent on %1"
 msgstr "%1 அன்று அனுப்பிய அஞ்சல்கள்"
 
-#: core/view.cpp:2488
+#: core/view.cpp:2485
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Messages received on 2008-12-21'"
 msgid "Messages received on %1"
 msgstr "%1 அன்று பெற்ற அஞ்சல்கள்"
 
-#: core/view.cpp:2492
+#: core/view.cpp:2489
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent Yesterday'"
 msgid "Messages sent %1"
 msgstr "%1 அனுப்பிய அஞ்சல்கள்"
 
-#: core/view.cpp:2494
+#: core/view.cpp:2491
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages received Yesterday'"
 msgid "Messages received %1"
 msgstr "%1 பெற்ற அஞ்சல்கள்"
 
-#: core/view.cpp:2503
+#: core/view.cpp:2500
 #, kde-format
 msgid "Threads started within %1"
 msgstr "%1-க்குள் துவக்கிய தொடர்கள்"
 
-#: core/view.cpp:2506
+#: core/view.cpp:2503
 #, kde-format
 msgid "Threads containing messages with dates within %1"
 msgstr "%1-க்குள் உட்பட்ட தேதிகளிலான அஞ்சல்களைக் கொண்ட தொடர்கள்"
 
-#: core/view.cpp:2514
+#: core/view.cpp:2511
 #, kde-format
 msgid "Messages sent within %1"
 msgstr "%1-க்குள் அனுப்பிய அஞ்சல்கள்"
 
-#: core/view.cpp:2516
+#: core/view.cpp:2513
 #, kde-format
 msgid "Messages received within %1"
 msgstr "%1-க்குள் பெற்ற அஞ்சல்கள்"
 
-#: core/view.cpp:2525
+#: core/view.cpp:2522
 #, kde-format
 msgid "Threads started by %1"
 msgstr "%1 தொடக்கிய தொடர்கள்"
 
-#: core/view.cpp:2528
+#: core/view.cpp:2525
 #, kde-format
 msgid "Threads with most recent message by %1"
 msgstr "எத்தொடர்களின் மிகச்சமீபமான அஞ்சலை %1 எழுதினார்"
 
-#: core/view.cpp:2537 core/view.cpp:2561
+#: core/view.cpp:2534 core/view.cpp:2558
 #, kde-format
 msgid "Messages sent to %1"
 msgstr "%1-க்கு அனுப்பிய அஞ்சல்கள்"
 
-#: core/view.cpp:2539
+#: core/view.cpp:2536
 #, kde-format
 msgid "Messages sent by %1"
 msgstr "%1 அனுப்பிய அஞ்சல்கள்"
 
-#: core/view.cpp:2542
+#: core/view.cpp:2539
 #, kde-format
 msgid "Messages received from %1"
 msgstr "%1-இலிருந்து பெறப்பட்ட அஞ்சல்கள்"
 
-#: core/view.cpp:2550
+#: core/view.cpp:2547
 #, kde-format
 msgid "Threads directed to %1"
 msgstr "%1 பெறவேண்டிய தொடர்கள்"
 
-#: core/view.cpp:2553
+#: core/view.cpp:2550
 #, kde-format
 msgid "Threads with most recent message directed to %1"
 msgstr "%1 பெற வேண்டிய அஞ்சலை மிகச்சமீபமானதாக‍க் கொண்ட தொடர்கள்"
 
-#: core/view.cpp:2563
+#: core/view.cpp:2560
 #, kde-format
 msgid "Messages received by %1"
 msgstr "%1 பெற்ற அஞ்சல்கள்"
 
-#: core/view.cpp:2589
+#: core/view.cpp:2585
 #, kde-format
 msgid "<b>%1</b> thread"
 msgid_plural "<b>%1</b> threads"
 msgstr[0] "<b>%1</b> தொடர்"
 msgstr[1] "<b>%1</b> தொடர்கள்"
 
-#: core/view.cpp:2594
+#: core/view.cpp:2590
 #, kde-format
 msgid "<b>%1</b> message (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
 msgstr[0] "<b>%1</b> அஞ்சல் (படிக்காதவை <b>%2</b>)"
 msgstr[1] "<b>%1</b> அஞ்சல்கள் (படிக்காதவை <b>%2</b>)"
 
-#: core/widgetbase.cpp:198
+#: core/widgetbase.cpp:200
 #, kde-format
 msgid "No filter defined."
 msgstr "எந்த வடிகட்டியும் வரையறுக்கப்படவில்லை."
 
-#: core/widgetbase.cpp:198
+#: core/widgetbase.cpp:200
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "வடிகட்டியை உருவாக்குவது"
 
-#: core/widgetbase.cpp:423 messagelistutil.cpp:115
+#: core/widgetbase.cpp:425 messagelistutil.cpp:115
 #, kde-format
 msgid "Theme"
 msgstr "தோற்றத்திட்டம்"
 
-#: core/widgetbase.cpp:444 core/widgetbase.cpp:534
+#: core/widgetbase.cpp:446 core/widgetbase.cpp:536
 #: core/widgets/configurefilterswidget.cpp:76
 #, kde-format
 msgid "Configure..."
 msgstr "அமை..."
 
-#: core/widgetbase.cpp:513 messagelistutil.cpp:110
+#: core/widgetbase.cpp:515 messagelistutil.cpp:110
 #, kde-format
 msgid "Aggregation"
 msgstr "தொகுப்புமுறை"
 
-#: core/widgetbase.cpp:596
+#: core/widgetbase.cpp:598
 #, kde-format
 msgid "Message Sort Order"
 msgstr "அஞ்சல்களை வரிசைப்படுத்தும் முறை"
 
-#: core/widgetbase.cpp:618
+#: core/widgetbase.cpp:620
 #, kde-format
 msgid "Message Sort Direction"
 msgstr "அஞ்சல்களை வரிசைப்படுத்துவதன் திசை"
 
-#: core/widgetbase.cpp:635
+#: core/widgetbase.cpp:637
 #, kde-format
 msgid "Group Sort Order"
 msgstr "தொகுப்புகளை வரிசைப்படுத்தும் முறை"
 
-#: core/widgetbase.cpp:652
+#: core/widgetbase.cpp:654
 #, kde-format
 msgid "Group Sort Direction"
 msgstr "தொகுப்புகளை வரிசைப்படுத்துவதற்கான திசை"
 
-#: core/widgetbase.cpp:667
+#: core/widgetbase.cpp:669
 #, kde-format
 msgid "Folder Always Uses This Sort Order"
 msgstr "இவ்வடைவு எப்போதும் இம்முறையிலேயே வரிசைப்படுத்துப்பட வேண்டும்"
 
-#: core/widgets/configurefiltersdialog.cpp:24
+#: core/widgets/configurefiltersdialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Filter"
@@ -1108,13 +1108,13 @@ msgstr "வடிகட்டியை நீக்குவது"
 msgid "No result found"
 msgstr "எதுவும் கண்டுபிடிக்கப்படவில்லை"
 
-#: core/widgets/filternamedialog.cpp:19
+#: core/widgets/filternamedialog.cpp:21
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Filter"
 msgstr "வடிகட்டியை திருத்துவது"
 
-#: core/widgets/filternamewidget.cpp:32
+#: core/widgets/filternamewidget.cpp:34
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Name:"
@@ -1132,18 +1132,18 @@ msgctxt "@action"
 msgid "Configure..."
 msgstr "அமை..."
 
-#: core/widgets/quicksearchline.cpp:59
+#: core/widgets/quicksearchline.cpp:61
 #, kde-format
 msgctxt "Search for messages."
 msgid "Search"
 msgstr "தேடு"
 
-#: core/widgets/quicksearchwarning.cpp:21
+#: core/widgets/quicksearchwarning.cpp:23
 #, kde-format
 msgid "The words less than 3 letters are ignored."
 msgstr "மூன்றைவிட குறைவான எழுத்துகளுடைய சொற்கள் பொருட்படுத்தப்படா"
 
-#: core/widgets/quicksearchwarning.cpp:22
+#: core/widgets/quicksearchwarning.cpp:24
 #, kde-format
 msgctxt "@action"
 msgid "Do not show again"

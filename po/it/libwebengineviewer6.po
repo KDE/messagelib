@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-04 00:46+0000\n"
+"POT-Creation-Date: 2026-09-01 00:47+0000\n"
 "PO-Revision-Date: 2024-08-01 21:59+0200\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 22.12.3\n"
 
-#: developertool/developertooldialog.cpp:27
+#: developertool/developertooldialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Developer Tool"
@@ -104,13 +104,13 @@ msgstr ""
 "L'invio di moduli non è permesso nel programma di posta. Aprire l'indirizzo "
 "in un browser."
 
-#: widgets/tracking/trackingdetailsdialog.cpp:28
+#: widgets/tracking/trackingdetailsdialog.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"
 msgstr "Dettagli"
 
-#: widgets/tracking/trackingwarningwidget.cpp:21
+#: widgets/tracking/trackingwarningwidget.cpp:23
 #, kde-format
 msgid ""
 "Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
@@ -119,12 +119,12 @@ msgstr ""
 "Un tracciatore di messaggi di posta è stato individuato e bloccato.<a href="
 "\"mailtrackingdetails\">(dettagli...)"
 
-#: widgets/tracking/trackingwarningwidget.cpp:40
+#: widgets/tracking/trackingwarningwidget.cpp:42
 #, kde-format
 msgid "Details:"
 msgstr "Dettagli:"
 
-#: widgets/tracking/trackingwarningwidget.cpp:44
+#: widgets/tracking/trackingwarningwidget.cpp:45
 #, kde-format
 msgid "1 tracker from the company %2 (%3)"
 msgid_plural "%1 trackers from the company %2 (%3)"

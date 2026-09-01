@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-04 00:46+0000\n"
+"POT-Creation-Date: 2026-09-01 00:47+0000\n"
 "PO-Revision-Date: 2024-08-20 00:34+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 23.08.5\n"
 
-#: developertool/developertooldialog.cpp:27
+#: developertool/developertooldialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Developer Tool"
@@ -102,13 +102,13 @@ msgstr "HTML 페이지 저장"
 msgid "Submit form is not allowed in mailer. Please open url in a browser."
 msgstr "메일 작성기에서 폼을 제출할 수 없습니다. 브라우저로 URL을 여십시오."
 
-#: widgets/tracking/trackingdetailsdialog.cpp:28
+#: widgets/tracking/trackingdetailsdialog.cpp:30
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"
 msgstr "자세히"
 
-#: widgets/tracking/trackingwarningwidget.cpp:21
+#: widgets/tracking/trackingwarningwidget.cpp:23
 #, kde-format
 msgid ""
 "Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
@@ -117,12 +117,12 @@ msgstr ""
 "일부 메일 추적기가 감지되어 차단되었습니다.<a href=\"mailtrackingdetails"
 "\">(자세한 정보...)"
 
-#: widgets/tracking/trackingwarningwidget.cpp:40
+#: widgets/tracking/trackingwarningwidget.cpp:42
 #, kde-format
 msgid "Details:"
 msgstr "자세한 정보:"
 
-#: widgets/tracking/trackingwarningwidget.cpp:44
+#: widgets/tracking/trackingwarningwidget.cpp:45
 #, kde-format
 msgid "1 tracker from the company %2 (%3)"
 msgid_plural "%1 trackers from the company %2 (%3)"
