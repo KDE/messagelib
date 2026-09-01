@@ -712,11 +712,11 @@ Util::HtmlMessageInfo Util::processHtml(const QString &htmlSource)
     QString textBeforeDoctype;
     if (indexDoctype > 0) {
         textBeforeDoctype = s.left(indexDoctype);
-        s.remove(textBeforeDoctype);
+        s.remove(0, indexDoctype);
     }
     const QString capturedString = matchDocType.captured();
     if (!capturedString.isEmpty()) {
-        s = s.remove(capturedString).trimmed();
+        s = s.remove(0, matchDocType.capturedLength()).trimmed();
     }
     static QRegularExpression htmlRegularExpression = QRegularExpression(u"<html[^>]*>"_s, QRegularExpression::CaseInsensitiveOption);
     s = s.remove(htmlRegularExpression).trimmed();
@@ -760,11 +760,13 @@ Util::HtmlMessageInfo Util::processHtml(const QString &htmlSource)
         messageInfo.bodyStyle = matchBody.captured();
     }
     // Some mail has </div>$ at end
-    static QRegularExpression htmlDivRegularExpression = QRegularExpression(u"(</html></div>|</html>)$"_s, QRegularExpression::CaseInsensitiveOption);
-    s = s.remove(htmlDivRegularExpression).trimmed();
-    // s = s.remove(QRegularExpression(u"</html>$"_s, QRegularExpression::CaseInsensitiveOption)).trimmed();
-    static QRegularExpression bodyEndRegularExpression = QRegularExpression(u"</body>$"_s, QRegularExpression::CaseInsensitiveOption);
-    s = s.remove(bodyEndRegularExpression).trimmed();
+    const static QStringList lst = {u"</html></div>"_s, u"</html>"_s, u"</body>"_s};
+    for (const auto &l : lst) {
+        if (s.endsWith(l, Qt::CaseInsensitive)) {
+            s.chop(l.length());
+            s = s.trimmed();
+        }
+    }
     messageInfo.htmlSource = textBeforeDoctype + s;
     return messageInfo;
 }
