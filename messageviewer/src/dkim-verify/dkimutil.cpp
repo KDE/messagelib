@@ -39,7 +39,7 @@ QString MessageViewer::DKIMUtil::bodyCanonizationRelaxed(QString body)
     static const QRegularExpression reg2(u"[ \t]+"_s);
     body.replace(reg2, u" "_s);
     static const QRegularExpression reg3(u"((\r\n)+?)$"_s);
-    body.replace(QRegularExpression(reg3), u"\r\n"_s);
+    body.replace(reg3, u"\r\n"_s);
     if (body == "\r\n"_L1) {
         body.clear();
     }
