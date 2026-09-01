@@ -30,6 +30,7 @@
 
 #include <QObject>
 #include <QTimer>
+class QFontMetrics;
 namespace KIO
 {
 class Job;
@@ -367,7 +368,7 @@ public:
       @return The override codec or 0 if auto-detection is selected. */
     [[nodiscard]] QByteArray overrideCodecName() const;
 
-    [[nodiscard]] QString renderAttachments(KMime::Content *node, const QColor &bgColor) const;
+    [[nodiscard]] QString renderAttachments(KMime::Content *node, const QColor &bgColor, const QFontMetrics &fm) const;
 
     KMime::Content *findContentByType(KMime::Content *content, const QByteArray &type); // TODO(Andras) move to MimeTreeParser::NodeHelper
 

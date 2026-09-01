@@ -1834,7 +1834,7 @@ static QColor nextColor(const QColor &c)
     return nullptr;
 }
 
-QString ViewerPrivate::renderAttachments(KMime::Content *node, const QColor &bgColor) const
+QString ViewerPrivate::renderAttachments(KMime::Content *node, const QColor &bgColor, const QFontMetrics &fm) const
 {
     if (!node) {
         return {};
@@ -1844,7 +1844,7 @@ QString ViewerPrivate::renderAttachments(KMime::Content *node, const QColor &bgC
     KMime::Content *child = node->contents().isEmpty() ? nullptr : node->contents().at(0);
 
     if (child) {
-        const QString subHtml = renderAttachments(child, nextColor(bgColor));
+        const QString subHtml = renderAttachments(child, nextColor(bgColor), fm);
         if (!subHtml.isEmpty()) {
             QString margin;
             if (node != mMessage.get() || headerStylePlugin()->hasMargin()) {
@@ -1887,8 +1887,6 @@ QString ViewerPrivate::renderAttachments(KMime::Content *node, const QColor &bgC
             if (elidedTextSize == -1) {
                 html += info.label;
             } else {
-                QFont bodyFont = cssHelper()->bodyFont(mHtmlHeadSettings.fixedFont);
-                QFontMetrics fm(bodyFont);
                 html += fm.elidedText(info.label, Qt::ElideRight, elidedTextSize);
             }
             html += "</a></span></div> "_L1;
@@ -1896,12 +1894,12 @@ QString ViewerPrivate::renderAttachments(KMime::Content *node, const QColor &bgC
     }
 
     for (KMime::Content *extraNode : mNodeHelper->extraContents(node)) {
-        html += renderAttachments(extraNode, bgColor);
+        html += renderAttachments(extraNode, bgColor, fm);
     }
 
     KMime::Content *next = nextSibling(node);
     if (next) {
-        html += renderAttachments(next, nextColor(bgColor));
+        html += renderAttachments(next, nextColor(bgColor), fm);
     }
 
     return html;
@@ -2394,7 +2392,9 @@ void ViewerPrivate::initializeColorFromScheme()
 QString ViewerPrivate::attachmentHtml()
 {
     initializeColorFromScheme();
-    QString html = renderAttachments(mMessage.get(), mBackgroundAttachment);
+    const QFont bodyFont = cssHelper()->bodyFont(mHtmlHeadSettings.fixedFont);
+    const QFontMetrics fm(bodyFont);
+    QString html = renderAttachments(mMessage.get(), mBackgroundAttachment, fm);
     if (!html.isEmpty()) {
         html.prepend(headerStylePlugin()->attachmentHtml());
     }
