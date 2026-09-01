@@ -92,7 +92,7 @@ MessagePart::Ptr MailmanBodyPartFormatter::process(Interface::BodyPart &part) co
         if (-1 < thisEoL) {
             thisDelim = thisEoL + 1;
         } else {
-            thisEoL = str.indexOf("\n_____________"_L1, thisDelim, Qt::CaseInsensitive);
+            thisEoL = str.indexOf("\n_____________"_L1, thisDelim, Qt::CaseSensitive);
             if (-1 < thisEoL) {
                 thisDelim = thisEoL + 1;
             }
