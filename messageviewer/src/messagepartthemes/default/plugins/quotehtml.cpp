@@ -55,7 +55,7 @@ static bool looksLikeParaBreak(const QString &s, int newLinePos)
     if (nextEnd == -1) {
         nextEnd = length;
     }
-    QString nextLine = s.mid(nextStart, nextEnd - nextStart);
+    QStringView nextLine = QStringView(s).mid(nextStart, nextEnd - nextStart);
     length = nextLine.length();
     // search for first word in next line
     int wordStart;
@@ -133,7 +133,9 @@ void quotedHTML(const QString &s, MessageViewer::RenderContext *context, Message
 
     QString collapseIconPath;
     QString expandIconPath;
-    if (context->showExpandQuotesMark()) {
+    const bool contextShowExpandQuotesMark = context->showExpandQuotesMark();
+    const int contextLevelQuote = context->levelQuote();
+    if (contextShowExpandQuotesMark) {
         collapseIconPath = MessageViewer::IconNameCache::instance()->iconPathFromLocal(u"quotecollapse.png"_s);
         expandIconPath = MessageViewer::IconNameCache::instance()->iconPathFromLocal(u"quoteexpand.png"_s);
     }
@@ -141,12 +143,12 @@ void quotedHTML(const QString &s, MessageViewer::RenderContext *context, Message
     int previousQuoteDepth = -1;
     while (beg < length) {
         /* search next occurrence of '\n' */
-        pos = s.indexOf(u'\n', beg, Qt::CaseInsensitive);
+        pos = s.indexOf(u'\n', beg, Qt::CaseSensitive);
         if (pos == -1) {
             pos = length;
         }
 
-        QString line(s.mid(beg, pos - beg));
+        QStringView line(QStringView(s).mid(beg, pos - beg));
         beg = pos + 1;
 
         bool foundQuote = false;
@@ -179,7 +181,7 @@ void quotedHTML(const QString &s, MessageViewer::RenderContext *context, Message
         bool actHidden = false;
 
         // This quoted line needs be hidden
-        if (context->showExpandQuotesMark() && context->levelQuote() >= 0 && context->levelQuote() <= actQuoteLevel) {
+        if (contextShowExpandQuotesMark && contextLevelQuote >= 0 && contextLevelQuote <= actQuoteLevel) {
             actHidden = true;
         }
 
@@ -199,7 +201,7 @@ void quotedHTML(const QString &s, MessageViewer::RenderContext *context, Message
             if (actQuoteLevel == -1) {
                 htmlWriter->write(normalStartTag);
             } else {
-                if (context->showExpandQuotesMark()) {
+                if (contextShowExpandQuotesMark) {
                     // Add blockquote
                     if (previousQuoteDepth < actQuoteLevel) {
                         htmlWriter->write(cssHelper->addStartBlockQuote(actQuoteLevel - previousQuoteDepth));
@@ -248,26 +250,27 @@ void quotedHTML(const QString &s, MessageViewer::RenderContext *context, Message
         if (!actHidden) {
             // don't write empty <div ...></div> blocks (they have zero height)
             // ignore ^M DOS linebreaks
-            if (!line.remove(u'\015').isEmpty()) {
+            QString currentLine = line.toString();
+            if (!currentLine.remove(u'\015').isEmpty()) {
                 if (startNewPara) {
-                    paraIsRTL = line.isRightToLeft();
+                    paraIsRTL = currentLine.isRightToLeft();
                 }
                 htmlWriter->write(u"<div dir=\"%1\">"_s.arg(paraIsRTL ? u"rtl"_s : u"ltr"_s));
                 // if quoteLengh == 0 && foundQuote => a simple quote
                 if (foundQuote) {
                     quoteLength++;
-                    const int rightString = (line.length()) - quoteLength;
+                    const int rightString = (currentLine.length()) - quoteLength;
                     if (rightString > 0) {
-                        htmlWriter->write(u"<span class=\"quotemarks\">%1</span>"_s.arg(line.left(quoteLength)));
+                        htmlWriter->write(u"<span class=\"quotemarks\">%1</span>"_s.arg(currentLine.left(quoteLength)));
                         htmlWriter->write(u"<font color=\"%1\">"_s.arg(cssHelper->quoteColorName(actQuoteLevel)));
-                        const QString str = KTextToHTML::convertToHtml(line.right(rightString), convertFlags, 4096, 512);
+                        const QString str = KTextToHTML::convertToHtml(currentLine.right(rightString), convertFlags, 4096, 512);
                         htmlWriter->write(str);
                         htmlWriter->write(u"</font>"_s);
                     } else {
-                        htmlWriter->write(u"<span class=\"quotemarksemptyline\">%1</span>"_s.arg(line.left(quoteLength)));
+                        htmlWriter->write(u"<span class=\"quotemarksemptyline\">%1</span>"_s.arg(currentLine.left(quoteLength)));
                     }
                 } else {
-                    htmlWriter->write(KTextToHTML::convertToHtml(line, convertFlags, 4096, 512));
+                    htmlWriter->write(KTextToHTML::convertToHtml(currentLine, convertFlags, 4096, 512));
                 }
 
                 htmlWriter->write(u"</div>"_s);
