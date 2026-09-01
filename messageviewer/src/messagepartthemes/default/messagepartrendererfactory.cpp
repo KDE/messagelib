@@ -143,7 +143,7 @@ QList<MessagePartRendererBase *> MessagePartRendererFactory::renderersForPart(co
     // remove candidates with a mimetype set that don't match the mimetype of the part
     candidates.erase(std::remove_if(candidates.begin(),
                                     candidates.end(),
-                                    [ancestors](const RendererInfo &info) {
+                                    [&ancestors](const RendererInfo &info) {
                                         if (info.mimeType.isEmpty()) {
                                             return false;
                                         }
@@ -152,7 +152,7 @@ QList<MessagePartRendererBase *> MessagePartRendererFactory::renderersForPart(co
                      candidates.end());
 
     // sort most specific mimetpypes first
-    std::stable_sort(candidates.begin(), candidates.end(), [ancestors](const RendererInfo &lhs, const RendererInfo &rhs) {
+    std::stable_sort(candidates.begin(), candidates.end(), [&ancestors](const RendererInfo &lhs, const RendererInfo &rhs) {
         if (lhs.mimeType == rhs.mimeType) {
             return lhs.priority > rhs.priority;
         }
