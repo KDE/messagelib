@@ -1890,10 +1890,9 @@ void ComposerViewBase::collectImages(KMime::Content *root)
                     qCDebug(MESSAGECOMPOSER_LOG) << "found image in multipart/related : " << node->contentType()->name();
                     QImage img;
                     img.loadFromData(node->decodedBody());
-                    m_editor->composerControler()->composerImages()->loadImage(
-                        img,
-                        QString::fromLatin1(QByteArray(QByteArrayLiteral("cid:") + node->contentID()->identifier())),
-                        node->contentType()->name());
+                    m_editor->composerControler()->composerImages()->loadImage(img,
+                                                                               QString::fromLatin1(QByteArrayLiteral("cid:") + node->contentID()->identifier()),
+                                                                               node->contentType()->name());
                 }
             }
         }
