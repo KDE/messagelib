@@ -118,7 +118,6 @@ QString DateFormatterPrivate::custom(const QDateTime &t) const
     }
 
     int z = mCustomFormat.indexOf(u'Z');
-    QDateTime dt;
     QString ret = mCustomFormat;
 
     if (z != -1) {

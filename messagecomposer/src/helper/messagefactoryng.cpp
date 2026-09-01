@@ -196,9 +196,8 @@ void MessageFactoryNG::createReplyAsync()
         }
 
         // strip all my addresses from the list of recipients
-        const QList<KMime::Types::Mailbox> recipients = toList;
 
-        toList = stripMyAddressesFromAddressList(recipients, mIdentityManager);
+        toList = stripMyAddressesFromAddressList(toList, mIdentityManager);
         break;
     }
     case MessageComposer::ReplyAll:

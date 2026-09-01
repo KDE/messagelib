@@ -427,10 +427,7 @@ bool MessageComposer::Util::hasMissingAttachments(const QStringList &attachmentK
         }
     }
 
-    if (!gotMatch) {
-        return false;
-    }
-    return true;
+    return gotMatch;
 }
 
 static QStringList encodeIdn(const QStringList &emails)

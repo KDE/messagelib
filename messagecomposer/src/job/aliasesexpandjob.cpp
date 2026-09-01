@@ -110,7 +110,7 @@ void AliasesExpandJob::slotNicknameExpansionDone(KJob *job)
     const QString recipient = searchJob->property("recipient").toString();
 
     for (const KContacts::Addressee &contact : contacts) {
-        if (contact.nickName().toLower() == recipient.toLower()) {
+        if (contact.nickName().compare(recipient, Qt::CaseInsensitive) == 0) {
             mNicknameExpansionResults.insert(recipient, contact.fullEmail());
             break;
         }
