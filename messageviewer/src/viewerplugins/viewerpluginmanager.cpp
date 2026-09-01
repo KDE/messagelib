@@ -111,7 +111,7 @@ bool ViewerPluginManagerPrivate::initializePluginList()
 
         if (pluginVersion() == data.version()) {
             info.plugin = nullptr;
-            mPluginList.push_back(info);
+            mPluginList.push_back(std::move(info));
         } else {
             qCWarning(MESSAGEVIEWER_LOG) << "Plugin name :" << data.name() << " doesn't have correct plugin version. Please update it";
         }
