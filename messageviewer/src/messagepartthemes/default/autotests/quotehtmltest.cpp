@@ -216,6 +216,11 @@ void QuoteHtmlTest::testQuoteHtml_data()
            "<div dir=\"ltr\"><span class=\"quotemarks\">></span><font color=\"#008000\">&nbsp;bla</font></div></div></blockquote>"
            "<div class=\"noquote\"><div dir=\"ltr\">new text</div></div>"_s
         << false << 1;
+
+    QTest::newRow("crlf-quote") << u"> blo\r"_s
+                                << u"<blockquote><div class=\"quotelevel1\"><div dir=\"ltr\"><span class=\"quotemarks\">></span><font "
+                                   "color=\"#008000\">&nbsp;blo</font></div></div></blockquote>"_s
+                                << false << 1;
 }
 
 void QuoteHtmlTest::testQuoteHtml()

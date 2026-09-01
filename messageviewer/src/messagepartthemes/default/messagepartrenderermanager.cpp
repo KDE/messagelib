@@ -142,11 +142,20 @@ void MessagePartRendererManager::initializeRenderer()
 }
 KTextTemplate::Template MessagePartRendererManager::loadByName(const QString &name)
 {
+    // This is called for every rendered message part, and KTextTemplate::FileSystemTemplateLoader re-reads and
+    // re-parses the template on each call. Our templates live in messagepartthemes.qrc and never change at
+    // runtime, so parse each of them only once.
+    auto it = m_templates.constFind(name);
+    if (it != m_templates.constEnd()) {
+        return it.value();
+    }
+
     KTextTemplate::Template t = m_engine->loadByName(name);
     if (t->error()) {
         qCWarning(MESSAGEVIEWER_LOG) << t->errorString() << ". Searched in subdir mimetreeparser/themes/default in these locations"
                                      << QStandardPaths::standardLocations(QStandardPaths::GenericDataLocation);
     }
+    m_templates.insert(name, t);
     return t;
 }
 KTextTemplate::Context MessagePartRendererManager::createContext()

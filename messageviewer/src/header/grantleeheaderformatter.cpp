@@ -20,6 +20,9 @@
 #include <KTextTemplate/Engine>
 #include <KTextTemplate/MetaType>
 
+#include <QDateTime>
+#include <QFileInfo>
+
 using namespace Qt::Literals::StringLiterals;
 using namespace MessageCore;
 
@@ -334,6 +337,42 @@ public:
     {
         headerFormatter[header] = formatter;
     }
+
+    struct CachedTemplate {
+        KTextTemplate::Template headerTemplate;
+        QDateTime lastModified;
+        qint64 size = -1;
+    };
+    QHash<QString, CachedTemplate> templateCache;
+
+    /* KTextTemplate::FileSystemTemplateLoader re-reads and re-parses the template file on every
+     * loadByName() call, and this runs for every displayed message. Keep the parsed template around,
+     * keyed on the file's modification time and size so that editing a theme on disk (the header theme
+     * editor does exactly that) is still picked up without restarting. */
+    KTextTemplate::Template loadTemplate(const QString &absolutePath, const QString &filename)
+    {
+        const QString key = absolutePath + u'/' + filename;
+        const QFileInfo fileInfo(key);
+        if (!fileInfo.exists()) {
+            // Let the engine produce its "template not found" error template, and do not cache that.
+            templateLoader->setTemplateDirs(QStringList() << absolutePath);
+            return engine->loadByName(filename);
+        }
+
+        const auto it = templateCache.constFind(key);
+        if (it != templateCache.constEnd() && it->size == fileInfo.size() && it->lastModified == fileInfo.lastModified()) {
+            return it->headerTemplate;
+        }
+
+        templateLoader->setTemplateDirs(QStringList() << absolutePath);
+        CachedTemplate cached;
+        cached.headerTemplate = engine->loadByName(filename);
+        cached.lastModified = fileInfo.lastModified();
+        cached.size = fileInfo.size();
+        templateCache.insert(key, cached);
+        return cached.headerTemplate;
+    }
+
     QSharedPointer<KTextTemplate::FileSystemTemplateLoader> templateLoader;
     KTextTemplate::Engine *const engine;
     QMap<QByteArray, QSharedPointer<HeaderFormatter>> headerFormatter;
@@ -356,8 +395,7 @@ QString GrantleeHeaderFormatter::toHtml(const GrantleeHeaderFormatter::GrantleeH
         errorMessage = i18n("Grantlee theme \"%1\" is not valid.", settings.theme.name());
         return errorMessage;
     }
-    d->templateLoader->setTemplateDirs(QStringList() << settings.theme.absolutePath());
-    KTextTemplate::Template headerTemplate = d->engine->loadByName(settings.theme.themeFilename());
+    KTextTemplate::Template headerTemplate = d->loadTemplate(settings.theme.absolutePath(), settings.theme.themeFilename());
     if (headerTemplate->error()) {
         errorMessage = headerTemplate->errorString();
         return errorMessage;
@@ -378,8 +416,7 @@ QString GrantleeHeaderFormatter::toHtml(const QStringList &displayExtraHeaders,
                                         KMime::Message *message,
                                         bool isPrinting) const
 {
-    d->templateLoader->setTemplateDirs(QStringList() << absolutPath);
-    KTextTemplate::Template headerTemplate = d->engine->loadByName(filename);
+    KTextTemplate::Template headerTemplate = d->loadTemplate(absolutPath, filename);
     if (headerTemplate->error()) {
         return headerTemplate->errorString();
     }

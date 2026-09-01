@@ -10,6 +10,7 @@
 
 #include <KTextTemplate/Template>
 
+#include <QHash>
 #include <QMetaType>
 
 #include <functional>
@@ -49,6 +50,7 @@ public:
 private:
     explicit MessagePartRendererManager(QObject *parent = nullptr);
     MESSAGEVIEWER_NO_EXPORT void initializeRenderer();
+    QHash<QString, KTextTemplate::Template> m_templates;
     GrantleeTheme::Engine *m_engine = nullptr;
     GlobalContext *const m_globalContext;
 };

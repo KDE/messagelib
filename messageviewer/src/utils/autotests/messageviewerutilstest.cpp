@@ -122,6 +122,13 @@ void MessageViewerUtilsTest::shouldExtractHtml_data()
         QTest::newRow("test2") << input << output;
     }
     {
+        const QString input = u"<html><head></head><body>foo</BODY></HTML>"_s;
+        MessageViewer::Util::HtmlMessageInfo output;
+        output.htmlSource = u"foo"_s;
+        output.bodyStyle = u"<body>"_s;
+        QTest::newRow("uppercase-closing-tags") << input << output;
+    }
+    {
         const QString input =
             u"That's interesting. I don't see new commits or anything relevant to it on the author's releases. I don't actually know why the author uses the "
             "other library as they do seem to have similar data... Maybe some other functions that are easier to use.<br><br><br>All the "
