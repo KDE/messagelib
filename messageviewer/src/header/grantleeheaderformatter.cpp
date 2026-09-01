@@ -529,12 +529,13 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath,
         headerObject.insert(u"photourl"_s, xface.photoURL);
     }
 
-    for (QString header : std::as_const(displayExtraHeaders)) {
+    for (const QString &header : std::as_const(displayExtraHeaders)) {
         const QByteArray baHeader = header.toLocal8Bit();
         if (auto hrd = message->headerByType(baHeader.constData())) {
             // Grantlee doesn't support '-' in variable name => remove it.
-            header.remove(u'-');
-            headerObject.insert(header, hrd->asUnicodeString());
+            QString h = header;
+            h.remove(u'-');
+            headerObject.insert(h, hrd->asUnicodeString());
         }
     }
 

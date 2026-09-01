@@ -407,9 +407,7 @@ bool MessageComposer::Util::hasMissingAttachments(const QStringList &attachmentK
     if (!doc) {
         return false;
     }
-    QStringList attachWordsList = attachmentKeywords;
-
-    QRegularExpression rx("\\b"_L1 + attachWordsList.join("\\b|\\b"_L1) + "\\b"_L1, QRegularExpression::CaseInsensitiveOption);
+    const QRegularExpression rx("\\b"_L1 + attachmentKeywords.join("\\b|\\b"_L1) + "\\b"_L1, QRegularExpression::CaseInsensitiveOption);
 
     // check whether the subject contains one of the attachment key words
     // unless the message is a reply or a forwarded message
