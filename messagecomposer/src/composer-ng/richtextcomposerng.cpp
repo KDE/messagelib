@@ -183,12 +183,13 @@ bool RichTextComposerNg::processModifyText(QKeyEvent *e)
 {
     if (d->autoCorrection && d->autoCorrection->autoCorrectionSettings()->isEnabledAutoCorrection()) {
         if ((e->key() == Qt::Key_Space) || (e->key() == Qt::Key_Enter) || (e->key() == Qt::Key_Return)) {
-            if (!isLineQuoted(textCursor().block().text()) && !textCursor().hasSelection()) {
-                const QTextCharFormat initialTextFormat = textCursor().charFormat();
+            QTextCursor cur = textCursor();
+            if (!isLineQuoted(cur.block().text()) && !cur.hasSelection()) {
+                const QTextCharFormat initialTextFormat = cur.charFormat();
                 const bool richText = (textMode() == RichTextComposer::Rich);
-                int position = textCursor().position();
+                int position = cur.position();
                 const bool addSpace = d->autoCorrection->autocorrect(richText, *document(), position);
-                QTextCursor cur = textCursor();
+                cur = textCursor();
                 cur.setPosition(position);
                 const bool spacePressed = (e->key() == Qt::Key_Space);
                 if (overwriteMode() && spacePressed) {
@@ -258,7 +259,8 @@ MessageComposer::PluginEditorConvertTextInterface::ConvertTextStatus RichTextCom
 void RichTextComposerNg::fillComposerTextPart(MessageComposer::TextPart *textPart)
 {
     const bool wasConverted = convertPlainText(textPart) == MessageComposer::PluginEditorConvertTextInterface::ConvertTextStatus::Converted;
-    if (composerControler()->isFormattingUsed() && !wasConverted) {
+    const bool isFormattingUsed = composerControler()->isFormattingUsed();
+    if (isFormattingUsed && !wasConverted) {
         if (MessageComposer::MessageComposerSettings::self()->improvePlainTextOfHtmlMessage()) {
             KPIMTextEdit::PlainTextMarkupBuilder pb;
 
@@ -280,7 +282,7 @@ void RichTextComposerNg::fillComposerTextPart(MessageComposer::TextPart *textPar
     }
 
     textPart->setWordWrappingEnabled(lineWrapMode() == QTextEdit::FixedColumnWidth);
-    if (composerControler()->isFormattingUsed() && !wasConverted) {
+    if (isFormattingUsed && !wasConverted) {
         KPIMTextEdit::TextHTMLBuilder pb;
 
         KPIMTextEdit::MarkupDirector pmd(&pb);
