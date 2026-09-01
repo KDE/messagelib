@@ -133,20 +133,12 @@ void CSSHelperBase::recalculatePGPColors()
 
 QString CSSHelperBase::addEndBlockQuote(int numberBlock) const
 {
-    QString blockQuote;
-    for (int i = 0; i < numberBlock; ++i) {
-        blockQuote += "</blockquote>"_L1;
-    }
-    return blockQuote;
+    return u"</blockquote>"_s.repeated(numberBlock);
 }
 
 QString CSSHelperBase::addStartBlockQuote(int numberBlock) const
 {
-    QString blockQuote;
-    for (int i = 0; i < numberBlock; ++i) {
-        blockQuote += "<blockquote>"_L1;
-    }
-    return blockQuote;
+    return u"<blockquote>"_s.repeated(numberBlock);
 }
 
 QString CSSHelperBase::extraScreenCss(const QString &headerFont) const
