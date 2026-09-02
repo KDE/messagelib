@@ -12,6 +12,7 @@
 
 #include <QSharedData>
 #include <QStringList>
+#include <kmime/content.h>
 
 using namespace MessageCore;
 using namespace Qt::Literals::StringLiterals;
@@ -21,7 +22,11 @@ using MagicDetectorFunc = QString (*)(const std::shared_ptr<KMime::Message> &, Q
 /* Sender: (owner-([^@]+)|([^@+]-owner)@ */
 static QString check_sender(const std::shared_ptr<KMime::Message> &message, QByteArray &headerName, QString &headerValue)
 {
-    QString header = message->sender()->asUnicodeString();
+    auto sender = message->sender(KMime::DontCreate);
+    if (!sender) {
+        return {};
+    }
+    QString header = sender->asUnicodeString();
 
     if (header.isEmpty()) {
         return {};

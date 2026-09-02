@@ -395,7 +395,9 @@ QString emailAddrAsAnchor(const QList<KMime::Types::Mailbox> &mailboxList,
     KIdentityManagementCore::IdentityManager *im = KIdentityManagementCore::IdentityManager::self();
 
     const QString i18nMe = i18nc("signal that this email is defined in my identity", "Me");
-    const bool onlyOneIdentity = (im->identities().count() == 1);
+    // Don't create a list only for make sure we have one identity.
+    const bool onlyOneIdentity = im->begin() + 1 == im->end();
+    const bool useMe = !MessageCore::MessageCoreSettings::self()->displayOwnIdentity() && onlyOneIdentity;
     for (const KMime::Types::Mailbox &mailbox : mailboxList) {
         const QString prettyAddressStr = mailbox.prettyAddress();
         if (!prettyAddressStr.isEmpty()) {
@@ -420,8 +422,7 @@ QString emailAddrAsAnchor(const QList<KMime::Types::Mailbox> &mailboxList,
                               QUrl::toPercentEncoding(KEmailAddress::encodeMailtoUrl(mailbox.prettyAddress(KMime::Types::Mailbox::QuoteWhenNecessary)).path()))
                     + "\" "_L1 + cssStyle + u'>';
             }
-            const bool foundMe = !MessageCore::MessageCoreSettings::self()->displayOwnIdentity() && onlyOneIdentity
-                && (im->identityForAddress(prettyAddressStr) != KIdentityManagementCore::Identity::null());
+            const bool foundMe = useMe && (im->identityForAddress(prettyAddressStr) != KIdentityManagementCore::Identity::null());
 
             if (display == DisplayNameOnly) {
                 if (!mailbox.name().isEmpty()) { // Fallback to the email address when the name is not set.

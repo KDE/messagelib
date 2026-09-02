@@ -43,7 +43,6 @@ AttachmentFromFolderJob::AttachmentLoadJobPrivate::AttachmentLoadJobPrivate(Atta
 void AttachmentFromFolderJob::AttachmentLoadJobPrivate::compressFolder()
 {
     qCDebug(MESSAGECORE_LOG) << "starting compression";
-    QString fileName = q->url().fileName();
     QByteArray array;
     QBuffer dev(&array);
     mZip.reset(new KZip(&dev));
@@ -56,16 +55,16 @@ void AttachmentFromFolderJob::AttachmentLoadJobPrivate::compressFolder()
     mZip->setCompression(mCompression);
     const QString filename = q->url().fileName();
     if (!mZip->writeDir(filename, QString(), QString(), 040755, mArchiveTime, mArchiveTime, mArchiveTime)) {
-        qCWarning(MESSAGECORE_LOG) << " Impossible to write file " << fileName;
+        qCWarning(MESSAGECORE_LOG) << " Impossible to write file " << filename;
     }
     qCDebug(MESSAGECORE_LOG) << "writing root directory : " << filename;
-    addEntity(QDir(q->url().path()).entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot | QDir::NoSymLinks | QDir::Files, QDir::DirsFirst), fileName + u'/');
+    addEntity(QDir(q->url().path()).entryInfoList(QDir::Dirs | QDir::NoDotAndDotDot | QDir::NoSymLinks | QDir::Files, QDir::DirsFirst), filename + u'/');
     mZip->close();
 
     Q_ASSERT(mCompressedFolder == nullptr);
 
     mCompressedFolder = AttachmentPart::Ptr(new AttachmentPart);
-    const QString newName = fileName + ".zip"_L1;
+    const QString newName = filename + ".zip"_L1;
     mCompressedFolder->setName(newName);
     mCompressedFolder->setFileName(newName);
     mCompressedFolder->setMimeType("application/zip");
