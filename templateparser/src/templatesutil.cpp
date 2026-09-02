@@ -138,7 +138,8 @@ QString TemplateParser::Util::removeSpaceAtBegin(const QString &selection)
 {
     QString content = selection;
     // Remove blank lines at the beginning:
-    const int firstNonWS = content.indexOf(QRegularExpression(u"\\S"_s));
+    static const QRegularExpression reg(u"\\S"_s);
+    const int firstNonWS = content.indexOf(reg);
     const int lineStart = content.lastIndexOf(u'\n', firstNonWS);
     if (lineStart >= 0) {
         content.remove(0, lineStart);
