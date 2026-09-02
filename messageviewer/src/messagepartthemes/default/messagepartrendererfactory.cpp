@@ -130,7 +130,8 @@ QList<MessagePartRendererBase *> MessagePartRendererFactory::renderersForPart(co
 {
     d->setup();
 
-    const auto mtName = mp->content() ? QString::fromUtf8(mp->content()->contentType()->mimeType().toLower()) : QString();
+    const auto contentType = mp->content() ? mp->content()->contentType(KMime::CreatePolicy::DontCreate) : nullptr;
+    const auto mtName = contentType ? QString::fromUtf8(contentType->mimeType().toLower()) : QString();
     QMimeDatabase db;
     const auto mt = db.mimeTypeForName(mtName);
     auto ancestors = mt.allAncestors();

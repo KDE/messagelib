@@ -101,7 +101,7 @@ MessagePart::Ptr EncryptedBodyPartFormatter::process(Interface::BodyPart &part) 
             NodeHelper::magicSetType(tempNode.get());
             if (node->topLevel()->textContent() != node && node->contentDisposition(KMime::CreatePolicy::DontCreate)
                 && !tempNode->contentDisposition(KMime::CreatePolicy::DontCreate)) {
-                tempNode->contentDisposition()->setDisposition(node->contentDisposition()->disposition());
+                tempNode->contentDisposition()->setDisposition(node->contentDisposition(KMime::CreatePolicy::DontCreate)->disposition());
                 const auto fname = node->contentDisposition(KMime::CreatePolicy::DontCreate)->filename();
                 if (!fname.isEmpty()) {
                     tempNode->contentDisposition(KMime::CreatePolicy::DontCreate)->setFilename(fname);

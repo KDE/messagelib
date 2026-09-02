@@ -432,7 +432,8 @@ bool TextMessagePart::hasLabel() const
 
 QString TextMessagePart::label() const
 {
-    const QString name = content()->contentType()->name();
+    const auto ct = content()->contentType(KMime::CreatePolicy::DontCreate);
+    const QString name = ct ? ct->name() : QString();
     QString label = name.isEmpty() ? NodeHelper::fileName(content()) : name;
     if (label.isEmpty()) {
         label = i18nc("display name for an unnamed attachment", "Unnamed");
@@ -442,7 +443,8 @@ QString TextMessagePart::label() const
 
 QString TextMessagePart::comment() const
 {
-    const QString comment = content()->contentDescription()->asUnicodeString();
+    const auto cd = content()->contentDescription(KMime::CreatePolicy::DontCreate);
+    const QString comment = cd ? cd->asUnicodeString() : QString();
     if (comment == label()) {
         return {};
     }

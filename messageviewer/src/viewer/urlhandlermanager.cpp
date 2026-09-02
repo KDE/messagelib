@@ -650,7 +650,7 @@ bool AttachmentURLHandler::handleShiftClick(const QUrl &url, ViewerPrivate *wind
     if (!window) {
         return false;
     }
-    if (node->contentType()->mimeType() == "text/x-moz-deleted") {
+    if (const auto ct = node->contentType(KMime::CreatePolicy::DontCreate); ct && ct->mimeType() == "text/x-moz-deleted") {
         return false;
     }
 

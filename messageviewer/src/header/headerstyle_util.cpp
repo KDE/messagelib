@@ -267,7 +267,8 @@ HeaderStyleUtil::xfaceSettings HeaderStyleUtil::xface(const MessageViewer::Heade
         ContactDisplayMessageMemento *photoMemento =
             dynamic_cast<ContactDisplayMessageMemento *>(style->nodeHelper()->bodyPartMemento(message, "contactphoto"));
         if (!photoMemento) {
-            const QString email = QString::fromUtf8(KEmailAddress::firstEmailAddress(message->from()->as7BitString()));
+            const auto from = message->from(KMime::CreatePolicy::DontCreate);
+            const QString email = from ? QString::fromUtf8(KEmailAddress::firstEmailAddress(from->as7BitString())) : QString();
             photoMemento = new ContactDisplayMessageMemento(email);
             style->nodeHelper()->setBodyPartMemento(message, "contactphoto", photoMemento);
             QObject::connect(photoMemento, SIGNAL(update(MimeTreeParser::UpdateMode)), style->sourceObject(), SLOT(update(MimeTreeParser::UpdateMode)));

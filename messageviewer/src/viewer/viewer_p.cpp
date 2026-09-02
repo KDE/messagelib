@@ -301,7 +301,8 @@ void ViewerPrivate::openAttachment(KMime::Content *node, const QUrl &url)
     // determine the MIME type of the attachment
     // prefer the value of the Content-Type header
     QMimeDatabase mimeDb;
-    auto mimetype = mimeDb.mimeTypeForName(QString::fromLatin1(node->contentType()->mimeType().toLower()));
+    const auto nodeContentType = node->contentType(KMime::CreatePolicy::DontCreate);
+    auto mimetype = mimeDb.mimeTypeForName(QString::fromLatin1(nodeContentType ? nodeContentType->mimeType().toLower() : QByteArray()));
 
     // special case treatment on mac and windows
     QUrl atmUrl = url;
@@ -608,7 +609,8 @@ KService::Ptr ViewerPrivate::getServiceOffer(KMime::Content *content)
 {
     const QString fileName = mNodeHelper->writeNodeToTempFile(content);
 
-    const QString contentTypeStr = QLatin1StringView(content->contentType()->mimeType());
+    const auto contentType = content->contentType(KMime::CreatePolicy::DontCreate);
+    const QString contentTypeStr = contentType ? QString::fromLatin1(contentType->mimeType()) : QString();
 
     // determine the MIME type of the attachment
     // prefer the value of the Content-Type header
@@ -1267,11 +1269,15 @@ void ViewerPrivate::setMessagePart(KMime::Content *node)
     if (node) {
         mMessagePartNode = node;
         if (node->bodyIsMessage()) {
-            mMainWindow->setWindowTitle(node->bodyAsMessage()->subject()->asUnicodeString());
+            if (const auto subject = node->bodyAsMessage()->subject(KMime::CreatePolicy::DontCreate)) {
+                mMainWindow->setWindowTitle(subject->asUnicodeString());
+            }
         } else {
             QString windowTitle = MimeTreeParser::NodeHelper::fileName(node);
             if (windowTitle.isEmpty()) {
-                windowTitle = node->contentDescription()->asUnicodeString();
+                if (const auto contentDescription = node->contentDescription(KMime::CreatePolicy::DontCreate)) {
+                    windowTitle = contentDescription->asUnicodeString();
+                }
             }
             if (!windowTitle.isEmpty()) {
                 mMainWindow->setWindowTitle(i18nc("@title:window", "View Attachment: %1", windowTitle));
@@ -1851,7 +1857,8 @@ QString ViewerPrivate::renderAttachments(KMime::Content *node, const QColor &bgC
                 margin = u"padding:2px; margin:2px; "_s;
             }
             const QString align = headerStylePlugin()->alignment();
-            const QByteArray mediaTypeLower = node->contentType()->mediaType().toLower();
+            const auto nodeContentType = node->contentType(KMime::CreatePolicy::DontCreate);
+            const QByteArray mediaTypeLower = nodeContentType ? nodeContentType->mediaType().toLower() : QByteArray();
             const bool result = (mediaTypeLower == "message" || mediaTypeLower == "multipart" || node == mMessage.get());
             if (result) {
                 html +=
@@ -1909,7 +1916,7 @@ KMime::Content *ViewerPrivate::findContentByType(KMime::Content *content, const 
 {
     const auto list = content->contents();
     for (KMime::Content *c : list) {
-        if (c->contentType()->mimeType() == type) {
+        if (const auto ct = c->contentType(KMime::CreatePolicy::DontCreate); ct && ct->mimeType() == type) {
             return c;
         }
     }
@@ -2243,9 +2250,8 @@ void ViewerPrivate::attachmentView(KMime::Content *atmNode)
         const bool isEncapsulatedMessage = atmNode->parent() && atmNode->parent()->bodyIsMessage();
         if (isEncapsulatedMessage) {
             attachmentViewMessage(atmNode->parent()->bodyAsMessage());
-        } else if ((qstricmp(atmNode->contentType()->mediaType().constData(), "text") == 0)
-                   && ((qstricmp(atmNode->contentType()->subType().constData(), "x-vcard") == 0)
-                       || (qstricmp(atmNode->contentType()->subType().constData(), "directory") == 0))) {
+        } else if (const auto ct = atmNode->contentType(KMime::CreatePolicy::DontCreate); ct && (qstricmp(ct->mediaType().constData(), "text") == 0)
+                   && ((qstricmp(ct->subType().constData(), "x-vcard") == 0) || (qstricmp(ct->subType().constData(), "directory") == 0))) {
             setMessagePart(atmNode);
         } else {
             Q_EMIT showReader(atmNode, htmlMail(), overrideEncoding());
@@ -2316,7 +2322,8 @@ void ViewerPrivate::slotPrintMessage()
     connect(printMessage, &PrintMessage::printingFinished, this, &ViewerPrivate::printingFinished);
     printMessage->setParentWidget(q);
     printMessage->setView(mViewer);
-    printMessage->setDocumentName(filterCharsFromFilename(mMessage->subject()->asUnicodeString()));
+    const auto subject = mMessage->subject(KMime::CreatePolicy::DontCreate);
+    printMessage->setDocumentName(filterCharsFromFilename(subject ? subject->asUnicodeString() : QString()));
     printMessage->print();
 }
 
@@ -2995,7 +3002,8 @@ void ViewerPrivate::slotMessageMayBeAScam()
         }
         if (mMessageItem.hasPayload<std::shared_ptr<KMime::Message>>()) {
             auto message = mMessageItem.payload<std::shared_ptr<KMime::Message>>();
-            const QString email = QLatin1StringView(KEmailAddress::firstEmailAddress(message->from()->as7BitString()));
+            const auto from = message->from(KMime::CreatePolicy::DontCreate);
+            const QString email = from ? QString::fromLatin1(KEmailAddress::firstEmailAddress(from->as7BitString())) : QString();
             const QStringList lst = MessageViewer::MessageViewerSettings::self()->scamDetectionWhiteList();
             if (lst.contains(email)) {
                 return;
@@ -3037,7 +3045,8 @@ void ViewerPrivate::slotAddToWhiteList()
     if (mMessageItem.isValid()) {
         if (mMessageItem.hasPayload<std::shared_ptr<KMime::Message>>()) {
             auto message = mMessageItem.payload<std::shared_ptr<KMime::Message>>();
-            const QString email = QLatin1StringView(KEmailAddress::firstEmailAddress(message->from()->as7BitString()));
+            const auto from = message->from(KMime::CreatePolicy::DontCreate);
+            const QString email = from ? QString::fromLatin1(KEmailAddress::firstEmailAddress(from->as7BitString())) : QString();
             QStringList lst = MessageViewer::MessageViewerSettings::self()->scamDetectionWhiteList();
             if (lst.contains(email)) {
                 return;

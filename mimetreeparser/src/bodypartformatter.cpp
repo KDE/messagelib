@@ -63,7 +63,8 @@ public:
 
         auto preferredMode = part.source()->preferredMode();
         const bool isHtmlPreferred = (preferredMode == Util::Html) || (preferredMode == Util::MultipartHtml);
-        if (node->parent() && node->parent()->contentType()->subType() == "related" && isHtmlPreferred) {
+        const auto parentContentType = node->parent() ? node->parent()->contentType(KMime::CreatePolicy::DontCreate) : nullptr;
+        if (parentContentType && parentContentType->subType() == "related" && isHtmlPreferred) {
             part.nodeHelper()->setNodeDisplayedEmbedded(node, true);
             part.nodeHelper()->setNodeDisplayedHidden(node, true);
             return mp;

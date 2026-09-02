@@ -292,7 +292,8 @@ void MessageList::StorageModel::fillMessageItemThreadingData(MessageList::Core::
 
     switch (subset) {
     case PerfectThreadingReferencesAndSubject: {
-        const QString subject = mail->subject()->asUnicodeString();
+        const auto subjectHeader = mail->subject(KMime::CreatePolicy::DontCreate);
+        const QString subject = subjectHeader ? subjectHeader->asUnicodeString() : QString();
         const QString strippedSubject = MessageCore::StringUtil::stripOffPrefixes(subject);
         mi->setStrippedSubjectMD5(md5Encode(strippedSubject));
         mi->setSubjectIsPrefixed(subject != strippedSubject);
@@ -300,16 +301,20 @@ void MessageList::StorageModel::fillMessageItemThreadingData(MessageList::Core::
     }
         [[fallthrough]];
     case PerfectThreadingPlusReferences: {
-        const auto refs = mail->references()->identifiers();
-        if (!refs.isEmpty()) {
-            mi->setReferencesIdMD5(md5Encode(refs.first()));
+        if (const auto references = mail->references(KMime::CreatePolicy::DontCreate)) {
+            const auto refs = references->identifiers();
+            if (!refs.isEmpty()) {
+                mi->setReferencesIdMD5(md5Encode(refs.first()));
+            }
         }
     }
         [[fallthrough]];
     // fall through
     case PerfectThreadingOnly: {
-        mi->setMessageIdMD5(md5Encode(mail->messageID()->identifier()));
-        if (auto inReplyTos = mail->inReplyTo()) {
+        if (const auto messageID = mail->messageID(KMime::CreatePolicy::DontCreate)) {
+            mi->setMessageIdMD5(md5Encode(messageID->identifier()));
+        }
+        if (const auto inReplyTos = mail->inReplyTo(KMime::CreatePolicy::DontCreate)) {
             if (!inReplyTos->identifiers().isEmpty()) {
                 mi->setInReplyToIdMD5(md5Encode(inReplyTos->identifiers().constFirst()));
             }

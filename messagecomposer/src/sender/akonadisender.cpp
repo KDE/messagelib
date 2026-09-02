@@ -24,6 +24,7 @@
 #include <MailTransport/Transport>
 #include <MailTransport/TransportManager>
 #include <MessageCore/StringUtil>
+#include <kmime/content.h>
 using namespace KMime::Types;
 using namespace KPIM;
 using namespace MessageComposer;
@@ -42,7 +43,9 @@ static QStringList addrSpecListToStringList(const QList<KMime::Types::AddrSpec> 
 
 static void extractSenderToCCAndBcc(const std::shared_ptr<KMime::Message> &aMsg, QString &sender, QStringList &to, QStringList &cc, QStringList &bcc)
 {
-    sender = aMsg->sender()->asUnicodeString();
+    if (const auto senderHeader = aMsg->sender(KMime::CreatePolicy::DontCreate)) {
+        sender = senderHeader->asUnicodeString();
+    }
     if (aMsg->headerByType("X-KMail-Recipients")) {
         // extended BCC handling to prevent TOs and CCs from seeing
         // BBC information by looking at source of an OpenPGP encrypted mail
@@ -192,7 +195,10 @@ void AkonadiSender::sendOrQueueMessage(const std::shared_ptr<KMime::Message> &me
     if (transport && transport->specifySenderOverwriteAddress()) {
         qjob->addressAttribute().setFrom(KEmailAddress::extractEmailAddress(transport->senderOverwriteAddress()));
     } else {
-        qjob->addressAttribute().setFrom(KEmailAddress::extractEmailAddress(message->from()->asUnicodeString()));
+        const auto from = message->from(KMime::DontCreate);
+        if (from) {
+            qjob->addressAttribute().setFrom(KEmailAddress::extractEmailAddress(from->asUnicodeString()));
+        }
     }
 
     MessageComposer::Util::addSendReplyForwardAction(message, qjob);
