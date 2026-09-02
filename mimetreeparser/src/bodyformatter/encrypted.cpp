@@ -84,7 +84,7 @@ MessagePart::Ptr EncryptedBodyPartFormatter::process(Interface::BodyPart &part) 
             codecName = part.source()->overrideCodecName();
         }
 
-        mp->startDecryption(node->decodedBody(), codecName);
+        mp->startDecryption(content, codecName);
         qCDebug(MIMETREEPARSER_LOG) << "decrypted, signed?:" << messagePart->isSigned;
 
         if (!messagePart->inProgress) {
