@@ -454,6 +454,8 @@ void TemplateParserJobTest::test_processWithTemplatesForContent_data()
     QTest::newRow("%ODATEEN") << "%ODATEEN" << fileName << QLocale::c().toString(QDate(2011, 8, 7), QLocale::LongFormat) << false;
     QTest::newRow("%OFULLSUBJ") << "%OFULLSUBJ" << fileName << "Plain Message Test" << false;
     QTest::newRow("%OFULLSUBJECT") << "%OFULLSUBJECT" << fileName << "Plain Message Test" << false;
+    QTest::newRow("%FULLSUBJ") << "%FULLSUBJ" << fileName << QString() << false;
+    QTest::newRow("%FULLSUBJECT") << "%FULLSUBJECT" << fileName << QString() << false;
     QTest::newRow("%OFROMFNAME") << "%OFROMFNAME" << fileName << "Sudhendu" << false;
     QTest::newRow("%OFROMLNAME") << "%OFROMLNAME" << fileName << "Kumar" << false;
     QTest::newRow("%OFROMNAME") << "%OFROMNAME" << fileName << "Sudhendu Kumar" << false;

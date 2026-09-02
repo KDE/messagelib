@@ -607,26 +607,26 @@ void TemplateParserJob::slotExtractInfoDone(const TemplateParserExtractHtmlInfoR
             } else if (cmd.startsWith("FROMLNAME"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: FROMLNAME";
                 i += strlen("FROMLNAME");
-                const QString str = d->mMsg->from()->displayString();
+                const QString str = headerDisplayString(d->mMsg->from(KMime::CreatePolicy::DontCreate));
                 plainBody.append(TemplateParser::Util::getLastNameFromEmail(str));
                 const QString body = plainTextToHtml(TemplateParser::Util::getLastNameFromEmail(str));
                 htmlBody.append(body);
             } else if (cmd.startsWith("FULLSUBJECT"_L1) || cmd.startsWith("FULLSUBJ"_L1)) {
-                if (cmd.startsWith("FULLSUBJ"_L1)) {
-                    qCDebug(TEMPLATEPARSER_LOG) << "Command: FULLSUBJ";
-                    i += strlen("FULLSUBJ");
-                } else {
+                if (cmd.startsWith("FULLSUBJECT"_L1)) {
                     qCDebug(TEMPLATEPARSER_LOG) << "Command: FULLSUBJECT";
                     i += strlen("FULLSUBJECT");
+                } else {
+                    qCDebug(TEMPLATEPARSER_LOG) << "Command: FULLSUBJ";
+                    i += strlen("FULLSUBJ");
                 }
-                const QString str = d->mMsg->subject()->asUnicodeString();
+                const QString str = headerAsUnicodeString(d->mMsg->subject(KMime::CreatePolicy::DontCreate));
                 plainBody.append(str);
                 const QString body = plainTextToHtml(str);
                 htmlBody.append(body);
             } else if (cmd.startsWith("MSGID"_L1)) {
                 qCDebug(TEMPLATEPARSER_LOG) << "Command: MSGID";
                 i += strlen("MSGID");
-                const QString str = d->mMsg->messageID()->asUnicodeString();
+                const QString str = headerAsUnicodeString(d->mMsg->messageID(KMime::CreatePolicy::DontCreate));
                 plainBody.append(str);
                 const QString body = plainTextToHtml(str);
                 htmlBody.append(body);
