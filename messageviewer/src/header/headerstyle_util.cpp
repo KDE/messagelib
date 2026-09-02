@@ -47,7 +47,8 @@ QString HeaderStyleUtil::strToHtml(const QString &str, KTextToHTML::Options flag
 // Prepare the date string
 QString HeaderStyleUtil::dateString(KMime::Message *message, HeaderStyleUtilDateFormat dateFormat)
 {
-    return dateString(message->date()->dateTime(), dateFormat);
+    const auto date = message->date(KMime::CreatePolicy::DontCreate);
+    return dateString(date ? date->dateTime() : QDateTime(), dateFormat);
 }
 
 QString HeaderStyleUtil::dateString(const QDateTime &dateTime, HeaderStyleUtilDateFormat dateFormat)

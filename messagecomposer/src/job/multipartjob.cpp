@@ -55,15 +55,16 @@ void MultipartJob::process()
     d->resultContent->contentTransferEncoding()->setEncoding(KMime::Headers::CE7Bit);
     d->resultContent->setPreamble("This is a multi-part message in MIME format.\n");
     for (auto &c : d->subjobContents) {
-        const auto cte = c->contentTransferEncoding();
+        const auto cte = c->contentTransferEncoding(KMime::CreatePolicy::DontCreate);
         d->resultContent->appendContent(std::move(c));
-        if (cte->encoding() == KMime::Headers::CE8Bit) {
+        if (cte && cte->encoding() == KMime::Headers::CE8Bit) {
             d->resultContent->contentTransferEncoding()->setEncoding(KMime::Headers::CE8Bit);
             break;
         }
     }
-    qCDebug(MESSAGECOMPOSER_LOG) << "Created" << d->resultContent->contentType()->mimeType() << "content with" << d->resultContent->contents().count()
-                                 << "subjobContents.";
+    if (const auto ct = d->resultContent->contentType(KMime::CreatePolicy::DontCreate)) {
+        qCDebug(MESSAGECOMPOSER_LOG) << "Created" << ct->mimeType() << "content with" << d->resultContent->contents().count() << "subjobContents.";
+    }
     emitResult();
 }
 

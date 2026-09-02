@@ -113,16 +113,24 @@ void ComposerViewBase::setMessage(const std::shared_ptr<KMime::Message> &msg, bo
     m_msg = msg;
     if (m_recipientsEditor) {
         m_recipientsEditor->clear();
-        bool resultTooManyRecipients = m_recipientsEditor->setRecipientString(m_msg->to()->mailboxes(), MessageComposer::Recipient::To);
-        if (!resultTooManyRecipients) {
-            resultTooManyRecipients = m_recipientsEditor->setRecipientString(m_msg->cc()->mailboxes(), MessageComposer::Recipient::Cc);
+        bool resultTooManyRecipients = false;
+        if (const auto to = m_msg->to(KMime::CreatePolicy::DontCreate)) {
+            resultTooManyRecipients = m_recipientsEditor->setRecipientString(to->mailboxes(), MessageComposer::Recipient::To);
         }
         if (!resultTooManyRecipients) {
-            resultTooManyRecipients =
-                m_recipientsEditor->setRecipientString(m_msg->bcc(KMime::CreatePolicy::Create)->mailboxes(), MessageComposer::Recipient::Bcc);
+            if (const auto cc = m_msg->cc(KMime::CreatePolicy::DontCreate)) {
+                resultTooManyRecipients = m_recipientsEditor->setRecipientString(cc->mailboxes(), MessageComposer::Recipient::Cc);
+            }
         }
         if (!resultTooManyRecipients) {
-            resultTooManyRecipients = m_recipientsEditor->setRecipientString(m_msg->replyTo()->mailboxes(), MessageComposer::Recipient::ReplyTo);
+            if (const auto bcc = m_msg->bcc(KMime::CreatePolicy::DontCreate)) {
+                resultTooManyRecipients = m_recipientsEditor->setRecipientString(bcc->mailboxes(), MessageComposer::Recipient::Bcc);
+            }
+        }
+        if (!resultTooManyRecipients) {
+            if (const auto replyTo = m_msg->replyTo(KMime::CreatePolicy::DontCreate)) {
+                resultTooManyRecipients = m_recipientsEditor->setRecipientString(replyTo->mailboxes(), MessageComposer::Recipient::ReplyTo);
+            }
         }
         m_recipientsEditor->setFocusBottom();
 
@@ -1883,16 +1891,23 @@ void ComposerViewBase::collectImages(KMime::Content *root)
 {
     if (KMime::Content *n = Util::findTypeInMessage(root, "multipart", "alternative")) {
         KMime::Content *parentnode = n->parent();
-        if (parentnode && parentnode->contentType()->isMultipart() && parentnode->contentType()->subType() == "related") {
+        if (!parentnode) {
+            return;
+        }
+        const auto parentCt = parentnode->contentType(KMime::CreatePolicy::DontCreate);
+        if (parentCt && parentCt->isMultipart() && parentCt->subType() == "related") {
             const auto nodes = parentnode->contents();
             for (auto node : nodes) {
-                if (node->contentType()->isImage()) {
-                    qCDebug(MESSAGECOMPOSER_LOG) << "found image in multipart/related : " << node->contentType()->name();
+                const auto ct = node->contentType(KMime::CreatePolicy::DontCreate);
+                if (ct && ct->isImage()) {
+                    qCDebug(MESSAGECOMPOSER_LOG) << "found image in multipart/related : " << ct->name();
                     QImage img;
                     img.loadFromData(node->decodedBody());
-                    m_editor->composerControler()->composerImages()->loadImage(img,
-                                                                               QString::fromLatin1(QByteArrayLiteral("cid:") + node->contentID()->identifier()),
-                                                                               node->contentType()->name());
+                    const auto cid = node->contentID(KMime::CreatePolicy::DontCreate);
+                    m_editor->composerControler()->composerImages()->loadImage(
+                        img,
+                        QString::fromLatin1(QByteArrayLiteral("cid:") + (cid ? cid->identifier() : QByteArray())),
+                        ct->name());
                 }
             }
         }
