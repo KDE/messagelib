@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecore\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-01 00:47+0000\n"
+"POT-Creation-Date: 2026-09-02 00:45+0000\n"
 "PO-Revision-Date: 2024-08-03 07:26+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
@@ -317,23 +317,23 @@ msgstr ""
 "La maksimuma grandeco en bitoj kiujn retpoŝtaj aldonaĵoj rajtas havi (-1 por "
 "neniu limo)"
 
-#: utils/dateformatter.cpp:164
+#: utils/dateformatter.cpp:163
 #, kde-format
 msgctxt "invalid time specified"
 msgid "unknown"
 msgstr "nekonata"
 
-#: utils/dateformatter.cpp:176
+#: utils/dateformatter.cpp:175
 #, kde-format
 msgid "Today %1"
 msgstr "Hodiaŭ %1"
 
-#: utils/dateformatter.cpp:179
+#: utils/dateformatter.cpp:178
 #, kde-format
 msgid "Yesterday %1"
 msgstr "Hieraŭ %1"
 
-#: utils/dateformatter.cpp:184
+#: utils/dateformatter.cpp:183
 #, kde-format
 msgctxt "1. weekday, 2. time"
 msgid "%1 %2"

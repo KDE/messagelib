@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-01 00:47+0000\n"
+"POT-Creation-Date: 2026-09-02 00:45+0000\n"
 "PO-Revision-Date: 2026-08-29 21:08+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
@@ -562,7 +562,7 @@ msgstr "Automatyczne zapisywanie wiadomości nie powiodło się."
 msgid "Failed to save the message: %1"
 msgstr "Nieudany zapis wiadomości: %1"
 
-#: composer/composerviewbase.cpp:1931
+#: composer/composerviewbase.cpp:1930
 #, kde-format
 msgid ""
 "The message you have composed seems to refer to an attached file but you "
@@ -573,25 +573,25 @@ msgstr ""
 "w niej załącznika.\n"
 "Czy masz zamiar załączyć plik do twojej wiadomości?"
 
-#: composer/composerviewbase.cpp:1934
+#: composer/composerviewbase.cpp:1933
 #, kde-format
 msgctxt "@title:window"
 msgid "File Attachment Reminder"
 msgstr "Przypomnienie o załączeniu pliku"
 
-#: composer/composerviewbase.cpp:1935
+#: composer/composerviewbase.cpp:1934
 #, kde-format
 msgctxt "@action:button"
 msgid "&Attach File..."
 msgstr "Z&ałącz plik..."
 
-#: composer/composerviewbase.cpp:1936
+#: composer/composerviewbase.cpp:1935
 #, kde-format
 msgctxt "@action:button"
 msgid "&Send as Is"
 msgstr "Wyślij &bez zmian"
 
-#: composer/composerviewbase.cpp:1988
+#: composer/composerviewbase.cpp:1987
 #, kde-format
 msgid ""
 "Examination of the recipient's signing preferences yielded that you be asked "
@@ -602,25 +602,25 @@ msgstr ""
 "program powinien zapytać czy chcesz podpisać tą wiadomość.\n"
 "Czy podpisać tą wiadomość?"
 
-#: composer/composerviewbase.cpp:1994 composer/composerviewbase.cpp:2022
+#: composer/composerviewbase.cpp:1993 composer/composerviewbase.cpp:2021
 #, kde-format
 msgctxt "@title:window"
 msgid "Sign Message?"
 msgstr "Czy podpisać wiadomość?"
 
-#: composer/composerviewbase.cpp:1995 composer/composerviewbase.cpp:2023
+#: composer/composerviewbase.cpp:1994 composer/composerviewbase.cpp:2022
 #, kde-format
 msgctxt "to sign"
 msgid "&Sign"
 msgstr "Podpi&sz"
 
-#: composer/composerviewbase.cpp:1996 composer/composerviewbase.cpp:2024
+#: composer/composerviewbase.cpp:1995 composer/composerviewbase.cpp:2023
 #, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Sign"
 msgstr "&Nie podpisuj"
 
-#: composer/composerviewbase.cpp:2017
+#: composer/composerviewbase.cpp:2016
 #, kde-format
 msgid ""
 "There are conflicting signing preferences for these recipients.\n"
@@ -629,7 +629,7 @@ msgstr ""
 "Istnieją sprzeczne preferencje dotyczące podpisywania dla tych odbiorców.\n"
 "Czy podpisać wiadomość?"
 
-#: composer/composerviewbase.cpp:2044
+#: composer/composerviewbase.cpp:2043
 #, kde-format
 msgid ""
 "You have requested to sign this message, but no valid signing keys have been "
@@ -638,19 +638,19 @@ msgstr ""
 "Zażądano podpisania tej wiadomości, ale nie ustawiono żadnych prawidłowych "
 "kluczy dla tej tożsamości."
 
-#: composer/composerviewbase.cpp:2049
+#: composer/composerviewbase.cpp:2048
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Unsigned?"
 msgstr "Czy wysłać niepodpisaną?"
 
-#: composer/composerviewbase.cpp:2050
+#: composer/composerviewbase.cpp:2049
 #, kde-format
 msgctxt "@action:button"
 msgid "Send &Unsigned"
 msgstr "Wyślij &niepodpisaną"
 
-#: composer/composerviewbase.cpp:2065
+#: composer/composerviewbase.cpp:2064
 #, kde-format
 msgid ""
 "Some parts of this message will not be signed.\n"
@@ -662,7 +662,7 @@ msgstr ""
 "strony.\n"
 "Czy wobec tego podpisać wszystkie części?"
 
-#: composer/composerviewbase.cpp:2069
+#: composer/composerviewbase.cpp:2068
 #, kde-format
 msgid ""
 "This message will not be signed.\n"
@@ -674,29 +674,29 @@ msgstr ""
 "strony.\n"
 "Czy wobec tego podpisać wszystkie części?"
 
-#: composer/composerviewbase.cpp:2072
+#: composer/composerviewbase.cpp:2071
 #, kde-format
 msgid "&Sign All Parts"
 msgstr "Podpi&sz wszystkie części"
 
-#: composer/composerviewbase.cpp:2072
+#: composer/composerviewbase.cpp:2071
 #, kde-format
 msgid "&Sign"
 msgstr "Podpi&sz"
 
-#: composer/composerviewbase.cpp:2075
+#: composer/composerviewbase.cpp:2074
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsigned-Message Warning"
 msgstr "Ostrzeżenie o niepodpisanej wiadomości"
 
-#: composer/composerviewbase.cpp:2077
+#: composer/composerviewbase.cpp:2076
 #, kde-format
 msgctxt "@action:button"
 msgid "Send &As Is"
 msgstr "Wyślij &bez zmian"
 
-#: composer/composerviewbase.cpp:2124
+#: composer/composerviewbase.cpp:2123
 #, kde-format
 msgid ""
 "Valid trusted encryption keys were found for all recipients.\n"
@@ -706,7 +706,7 @@ msgstr ""
 "odbiorców.\n"
 "Czy zaszyfrować tą wiadomość?"
 
-#: composer/composerviewbase.cpp:2127
+#: composer/composerviewbase.cpp:2126
 #, kde-format
 msgid ""
 "Examination of the recipient's encryption preferences yielded that you be "
@@ -717,32 +717,32 @@ msgstr ""
 "program powinien zapytać czy chcesz zaszyfrować tą wiadomość.\n"
 "Czy zaszyfrować tą wiadomość?"
 
-#: composer/composerviewbase.cpp:2133 composer/composerviewbase.cpp:2163
+#: composer/composerviewbase.cpp:2132 composer/composerviewbase.cpp:2162
 #, kde-format
 msgid "Encrypt Message?"
 msgstr "Czy zaszyfrować wiadomość?"
 
-#: composer/composerviewbase.cpp:2134
+#: composer/composerviewbase.cpp:2133
 #, kde-format
 msgid "Sign && &Encrypt"
 msgstr "Podpisz i zaszyfruj"
 
-#: composer/composerviewbase.cpp:2134 composer/composerviewbase.cpp:2216
+#: composer/composerviewbase.cpp:2133 composer/composerviewbase.cpp:2215
 #, kde-format
 msgid "&Encrypt"
 msgstr "Za&szyfruj"
 
-#: composer/composerviewbase.cpp:2135 composer/composerviewbase.cpp:2221
+#: composer/composerviewbase.cpp:2134 composer/composerviewbase.cpp:2220
 #, kde-format
 msgid "&Sign Only"
 msgstr "Tylko podpi&sz"
 
-#: composer/composerviewbase.cpp:2135 composer/composerviewbase.cpp:2221
+#: composer/composerviewbase.cpp:2134 composer/composerviewbase.cpp:2220
 #, kde-format
 msgid "&Send As-Is"
 msgstr "Wyślij &bez zmian"
 
-#: composer/composerviewbase.cpp:2156
+#: composer/composerviewbase.cpp:2155
 #, kde-format
 msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
@@ -751,20 +751,20 @@ msgstr ""
 "Istnieją sprzeczne preferencje dotyczące szyfrowania dla tych odbiorców.\n"
 "Czy zaszyfrować wiadomość?"
 
-#: composer/composerviewbase.cpp:2164 composer/keyresolver.cpp:1319
+#: composer/composerviewbase.cpp:2163 composer/keyresolver.cpp:1319
 #: composer/keyresolver.cpp:1360
 #, kde-format
 msgctxt "@action:button"
 msgid "&Encrypt"
 msgstr "Za&szyfruj"
 
-#: composer/composerviewbase.cpp:2165
+#: composer/composerviewbase.cpp:2164
 #, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Encrypt"
 msgstr "&Nie szyfruj"
 
-#: composer/composerviewbase.cpp:2185
+#: composer/composerviewbase.cpp:2184
 #, kde-format
 msgid ""
 "You have requested to encrypt this message, and to encrypt a copy to "
@@ -774,19 +774,19 @@ msgstr ""
 "Zażądano zaszyfrowania tej wiadomości i zaszyfrowania kopii dla siebie, ale "
 "nie ustawiono żadnych prawidłowych zaufanych kluczy dla tej tożsamości."
 
-#: composer/composerviewbase.cpp:2191
+#: composer/composerviewbase.cpp:2190
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Unencrypted?"
 msgstr "Czy wysłać niezaszyfrowaną?"
 
-#: composer/composerviewbase.cpp:2192 composer/keyresolver.cpp:1345
+#: composer/composerviewbase.cpp:2191 composer/keyresolver.cpp:1345
 #, kde-format
 msgctxt "@action:button"
 msgid "Send &Unencrypted"
 msgstr "&Wyślij niezaszyfrowaną"
 
-#: composer/composerviewbase.cpp:2207
+#: composer/composerviewbase.cpp:2206
 #, kde-format
 msgid ""
 "Some parts of this message will not be encrypted.\n"
@@ -799,7 +799,7 @@ msgstr ""
 "strony.\n"
 "Czy wobec tego zaszyfrować wszystkie części?"
 
-#: composer/composerviewbase.cpp:2212
+#: composer/composerviewbase.cpp:2211
 #, kde-format
 msgid ""
 "This message will not be encrypted.\n"
@@ -812,12 +812,12 @@ msgstr ""
 "strony.\n"
 "Czy wobec tego zaszyfrować wszystkie części?"
 
-#: composer/composerviewbase.cpp:2216
+#: composer/composerviewbase.cpp:2215
 #, kde-format
 msgid "&Encrypt All Parts"
 msgstr "Zaszyfruj wszystki&e części"
 
-#: composer/composerviewbase.cpp:2219
+#: composer/composerviewbase.cpp:2218
 #, kde-format
 msgctxt "@title:window"
 msgid "Unencrypted Message Warning"
@@ -1200,17 +1200,17 @@ msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "Nieprawidłowy katalog"
 
-#: helper/messagefactoryng.cpp:408 helper/messagefactoryng.cpp:735
+#: helper/messagefactoryng.cpp:407 helper/messagefactoryng.cpp:734
 #, kde-format
 msgid "forwarded message"
 msgstr "wiadomość przekierowana"
 
-#: helper/messagefactoryng.cpp:578
+#: helper/messagefactoryng.cpp:577
 #, kde-format
 msgid "Receipt: "
 msgstr "Odbiór:"
 
-#: helper/messagefactoryng.cpp:704
+#: helper/messagefactoryng.cpp:703
 #, kde-format
 msgid ""
 "\n"

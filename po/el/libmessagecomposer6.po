@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-01 00:47+0000\n"
+"POT-Creation-Date: 2026-09-02 00:45+0000\n"
 "PO-Revision-Date: 2024-09-19 17:22+0300\n"
 "Last-Translator: Antonis Geralis <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -564,7 +564,7 @@ msgstr "Η αυτόματη αποθήκευση του μηνύματος απ�
 msgid "Failed to save the message: %1"
 msgstr "Αποτυχία αποστολής του μηνύματος: %1"
 
-#: composer/composerviewbase.cpp:1931
+#: composer/composerviewbase.cpp:1930
 #, kde-format
 msgid ""
 "The message you have composed seems to refer to an attached file but you "
@@ -575,25 +575,25 @@ msgstr ""
 "αλλά δεν έχετε επισυνάψει τίποτα.\n"
 "Επιθυμείτε να επισυνάψετε ένα αρχείο στο μήνυμά σας;"
 
-#: composer/composerviewbase.cpp:1934
+#: composer/composerviewbase.cpp:1933
 #, kde-format
 msgctxt "@title:window"
 msgid "File Attachment Reminder"
 msgstr "Υπενθύμιση επισύναψης αρχείου"
 
-#: composer/composerviewbase.cpp:1935
+#: composer/composerviewbase.cpp:1934
 #, kde-format
 msgctxt "@action:button"
 msgid "&Attach File..."
 msgstr "Επισύν&αψη αρχείου..."
 
-#: composer/composerviewbase.cpp:1936
+#: composer/composerviewbase.cpp:1935
 #, kde-format
 msgctxt "@action:button"
 msgid "&Send as Is"
 msgstr "&Αποστολή όπως είναι"
 
-#: composer/composerviewbase.cpp:1988
+#: composer/composerviewbase.cpp:1987
 #, kde-format
 msgid ""
 "Examination of the recipient's signing preferences yielded that you be asked "
@@ -604,25 +604,25 @@ msgstr ""
 "ερώτηση αν θα υπογράψετε ή όχι αυτό το μήνυμα.\n"
 "Θα το υπογράψετε αυτό το μήνυμα;"
 
-#: composer/composerviewbase.cpp:1994 composer/composerviewbase.cpp:2022
+#: composer/composerviewbase.cpp:1993 composer/composerviewbase.cpp:2021
 #, kde-format
 msgctxt "@title:window"
 msgid "Sign Message?"
 msgstr "Θα υπογράψετε το μήνυμα;"
 
-#: composer/composerviewbase.cpp:1995 composer/composerviewbase.cpp:2023
+#: composer/composerviewbase.cpp:1994 composer/composerviewbase.cpp:2022
 #, kde-format
 msgctxt "to sign"
 msgid "&Sign"
 msgstr "Υ&πογραφή"
 
-#: composer/composerviewbase.cpp:1996 composer/composerviewbase.cpp:2024
+#: composer/composerviewbase.cpp:1995 composer/composerviewbase.cpp:2023
 #, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Sign"
 msgstr "Να μη&ν υπογραφεί"
 
-#: composer/composerviewbase.cpp:2017
+#: composer/composerviewbase.cpp:2016
 #, kde-format
 msgid ""
 "There are conflicting signing preferences for these recipients.\n"
@@ -631,7 +631,7 @@ msgstr ""
 "Υπάρχει σύγκρουση προτιμήσεων υπογραφών για αυτούς τους παραλήπτες.\n"
 "Θα το υπογράψετε αυτό το μήνυμα;"
 
-#: composer/composerviewbase.cpp:2044
+#: composer/composerviewbase.cpp:2043
 #, kde-format
 msgid ""
 "You have requested to sign this message, but no valid signing keys have been "
@@ -640,19 +640,19 @@ msgstr ""
 "Ζητήσατε να υπογράψετε αυτό το μήνυμα, αλλά δεν έχουν διαμορφωθεί έγκυρα "
 "κλειδιά υπογραφής για την ταυτότητα αυτή."
 
-#: composer/composerviewbase.cpp:2049
+#: composer/composerviewbase.cpp:2048
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Unsigned?"
 msgstr "Να αποσταλεί χωρίς υπογραφή;"
 
-#: composer/composerviewbase.cpp:2050
+#: composer/composerviewbase.cpp:2049
 #, kde-format
 msgctxt "@action:button"
 msgid "Send &Unsigned"
 msgstr "Να αποσταλεί &χωρίς υπογραφή"
 
-#: composer/composerviewbase.cpp:2065
+#: composer/composerviewbase.cpp:2064
 #, kde-format
 msgid ""
 "Some parts of this message will not be signed.\n"
@@ -664,7 +664,7 @@ msgstr ""
 "πολιτική του ιστοχώρου.\n"
 "Να υπογραφούν όλα τα τμήματα;"
 
-#: composer/composerviewbase.cpp:2069
+#: composer/composerviewbase.cpp:2068
 #, kde-format
 msgid ""
 "This message will not be signed.\n"
@@ -676,29 +676,29 @@ msgstr ""
 "ιστοχώρου.\n"
 "Να υπογραφεί το μήνυμα;"
 
-#: composer/composerviewbase.cpp:2072
+#: composer/composerviewbase.cpp:2071
 #, kde-format
 msgid "&Sign All Parts"
 msgstr "Να &υπογραφούν όλα τα τμήματα"
 
-#: composer/composerviewbase.cpp:2072
+#: composer/composerviewbase.cpp:2071
 #, kde-format
 msgid "&Sign"
 msgstr "&Υπογραφή"
 
-#: composer/composerviewbase.cpp:2075
+#: composer/composerviewbase.cpp:2074
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsigned-Message Warning"
 msgstr "Προειδοποίηση ανυπόγραφου μηνύματος"
 
-#: composer/composerviewbase.cpp:2077
+#: composer/composerviewbase.cpp:2076
 #, kde-format
 msgctxt "@action:button"
 msgid "Send &As Is"
 msgstr "&Αποστολή όπως είναι"
 
-#: composer/composerviewbase.cpp:2124
+#: composer/composerviewbase.cpp:2123
 #, kde-format
 msgid ""
 "Valid trusted encryption keys were found for all recipients.\n"
@@ -707,7 +707,7 @@ msgstr ""
 "Έγκυρα έμπιστα κλειδιά κρυπτογράφησης βρέθηκαν για όλους τους παραλήπτες.\n"
 "Να κρυπτογραφηθεί αυτό το μήνυμα;"
 
-#: composer/composerviewbase.cpp:2127
+#: composer/composerviewbase.cpp:2126
 #, kde-format
 msgid ""
 "Examination of the recipient's encryption preferences yielded that you be "
@@ -718,32 +718,32 @@ msgstr ""
 "απευθύνεται η ερώτηση αν θα κρυπτογραφήσετε ή όχι αυτό το μήνυμα.\n"
 "Να κρυπτογραφηθεί αυτό το μήνυμα;"
 
-#: composer/composerviewbase.cpp:2133 composer/composerviewbase.cpp:2163
+#: composer/composerviewbase.cpp:2132 composer/composerviewbase.cpp:2162
 #, kde-format
 msgid "Encrypt Message?"
 msgstr "Να κρυπτογραφηθεί το μήνυμα;"
 
-#: composer/composerviewbase.cpp:2134
+#: composer/composerviewbase.cpp:2133
 #, kde-format
 msgid "Sign && &Encrypt"
 msgstr "Υπογραφή && &Κρυπτογράφηση"
 
-#: composer/composerviewbase.cpp:2134 composer/composerviewbase.cpp:2216
+#: composer/composerviewbase.cpp:2133 composer/composerviewbase.cpp:2215
 #, kde-format
 msgid "&Encrypt"
 msgstr "&Κρυπτογράφηση"
 
-#: composer/composerviewbase.cpp:2135 composer/composerviewbase.cpp:2221
+#: composer/composerviewbase.cpp:2134 composer/composerviewbase.cpp:2220
 #, kde-format
 msgid "&Sign Only"
 msgstr "&Υπογραφή μόνο"
 
-#: composer/composerviewbase.cpp:2135 composer/composerviewbase.cpp:2221
+#: composer/composerviewbase.cpp:2134 composer/composerviewbase.cpp:2220
 #, kde-format
 msgid "&Send As-Is"
 msgstr "Απο&στολή όπως είναι"
 
-#: composer/composerviewbase.cpp:2156
+#: composer/composerviewbase.cpp:2155
 #, kde-format
 msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
@@ -752,20 +752,20 @@ msgstr ""
 "Υπάρχει σύγκρουση προτιμήσεων κρυπτογράφησης για αυτούς τους παραλήπτες.\n"
 "Να κρυπτογραφηθεί αυτό το μήνυμα;"
 
-#: composer/composerviewbase.cpp:2164 composer/keyresolver.cpp:1319
+#: composer/composerviewbase.cpp:2163 composer/keyresolver.cpp:1319
 #: composer/keyresolver.cpp:1360
 #, kde-format
 msgctxt "@action:button"
 msgid "&Encrypt"
 msgstr "&Κρυπτογράφηση"
 
-#: composer/composerviewbase.cpp:2165
+#: composer/composerviewbase.cpp:2164
 #, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Encrypt"
 msgstr "Να μη&ν κρυπτογραφηθεί"
 
-#: composer/composerviewbase.cpp:2185
+#: composer/composerviewbase.cpp:2184
 #, kde-format
 msgid ""
 "You have requested to encrypt this message, and to encrypt a copy to "
@@ -776,19 +776,19 @@ msgstr ""
 "αντίγραφο για εσάς, αλλά δεν έχουν διαμορφωθεί έγκυρα έμπιστα κλειδιά "
 "κρυπτογράφησης για αυτήν την ταυτότητα."
 
-#: composer/composerviewbase.cpp:2191
+#: composer/composerviewbase.cpp:2190
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Unencrypted?"
 msgstr "Να αποσταλεί μη κρυπτογραφημένο;"
 
-#: composer/composerviewbase.cpp:2192 composer/keyresolver.cpp:1345
+#: composer/composerviewbase.cpp:2191 composer/keyresolver.cpp:1345
 #, kde-format
 msgctxt "@action:button"
 msgid "Send &Unencrypted"
 msgstr "Αποστολή μη κρυπτογρ&αφημένου"
 
-#: composer/composerviewbase.cpp:2207
+#: composer/composerviewbase.cpp:2206
 #, kde-format
 msgid ""
 "Some parts of this message will not be encrypted.\n"
@@ -801,7 +801,7 @@ msgstr ""
 "πολιτική του ιστοχώρου ή/και συμβάλλει στη διαρροή ευαίσθητων πληροφοριών.\n"
 "Να κρυπτογραφηθούν όλα τα τμήματα;"
 
-#: composer/composerviewbase.cpp:2212
+#: composer/composerviewbase.cpp:2211
 #, kde-format
 msgid ""
 "This message will not be encrypted.\n"
@@ -814,12 +814,12 @@ msgstr ""
 "ιστοχώρου ή/και συμβάλλει στη διαρροή ευαίσθητων πληροφοριών.\n"
 "Να κρυπτογραφηθούν τα μηνύματα;"
 
-#: composer/composerviewbase.cpp:2216
+#: composer/composerviewbase.cpp:2215
 #, kde-format
 msgid "&Encrypt All Parts"
 msgstr "Να &κρυπτογραφηθούν όλα τα τμήματα"
 
-#: composer/composerviewbase.cpp:2219
+#: composer/composerviewbase.cpp:2218
 #, kde-format
 msgctxt "@title:window"
 msgid "Unencrypted Message Warning"
@@ -1207,17 +1207,17 @@ msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "Μη έγκυρος φάκελος"
 
-#: helper/messagefactoryng.cpp:408 helper/messagefactoryng.cpp:735
+#: helper/messagefactoryng.cpp:407 helper/messagefactoryng.cpp:734
 #, kde-format
 msgid "forwarded message"
 msgstr "προωθημένο μήνυμα"
 
-#: helper/messagefactoryng.cpp:578
+#: helper/messagefactoryng.cpp:577
 #, kde-format
 msgid "Receipt: "
 msgstr "Απόδειξη:"
 
-#: helper/messagefactoryng.cpp:704
+#: helper/messagefactoryng.cpp:703
 #, kde-format
 msgid ""
 "\n"

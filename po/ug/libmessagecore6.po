@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecore\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-01 00:47+0000\n"
+"POT-Creation-Date: 2026-09-02 00:45+0000\n"
 "PO-Revision-Date: 2026-06-01 16:21-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -278,23 +278,23 @@ msgid ""
 "no limit)"
 msgstr ""
 
-#: utils/dateformatter.cpp:164
+#: utils/dateformatter.cpp:163
 #, kde-format
 msgctxt "invalid time specified"
 msgid "unknown"
 msgstr "يوچۇن"
 
-#: utils/dateformatter.cpp:176
+#: utils/dateformatter.cpp:175
 #, kde-format
 msgid "Today %1"
 msgstr ""
 
-#: utils/dateformatter.cpp:179
+#: utils/dateformatter.cpp:178
 #, kde-format
 msgid "Yesterday %1"
 msgstr ""
 
-#: utils/dateformatter.cpp:184
+#: utils/dateformatter.cpp:183
 #, kde-format
 msgctxt "1. weekday, 2. time"
 msgid "%1 %2"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-01 00:47+0000\n"
+"POT-Creation-Date: 2026-09-02 00:45+0000\n"
 "PO-Revision-Date: 2017-12-24 21:47+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -476,12 +476,12 @@ msgstr ""
 msgid "Domain:"
 msgstr ""
 
-#: dkim-verify/dkimrulewidget.cpp:43 header/grantleeheaderformatter.cpp:183
+#: dkim-verify/dkimrulewidget.cpp:43 header/grantleeheaderformatter.cpp:186
 #, kde-format
 msgid "List-Id:"
 msgstr "ID liste:"
 
-#: dkim-verify/dkimrulewidget.cpp:47 header/grantleeheaderformatter.cpp:270
+#: dkim-verify/dkimrulewidget.cpp:47 header/grantleeheaderformatter.cpp:273
 #, kde-format
 msgid "From:"
 msgstr "Od:"
@@ -710,93 +710,93 @@ msgstr ""
 msgid "Not Signed"
 msgstr ""
 
-#: header/grantleeheaderformatter.cpp:203
+#: header/grantleeheaderformatter.cpp:206
 #, kde-format
 msgid "Subject:"
 msgstr "Tema:"
 
-#: header/grantleeheaderformatter.cpp:223
+#: header/grantleeheaderformatter.cpp:226
 #, kde-format
 msgid "Date:"
 msgstr "Datum:"
 
-#: header/grantleeheaderformatter.cpp:238
+#: header/grantleeheaderformatter.cpp:241
 #, fuzzy, kde-format
 #| msgid "message"
 msgid "Message-Id:"
 msgstr "poruka"
 
-#: header/grantleeheaderformatter.cpp:262
+#: header/grantleeheaderformatter.cpp:265
 #, kde-format
 msgid "To:"
 msgstr "Za:"
 
-#: header/grantleeheaderformatter.cpp:264
+#: header/grantleeheaderformatter.cpp:267
 #, fuzzy, kde-format
 #| msgid "Reply to:"
 msgid "Reply To:"
 msgstr "Odogovor na:"
 
-#: header/grantleeheaderformatter.cpp:266
+#: header/grantleeheaderformatter.cpp:269
 #, kde-format
 msgid "CC:"
 msgstr "CC:"
 
-#: header/grantleeheaderformatter.cpp:268
+#: header/grantleeheaderformatter.cpp:271
 #, kde-format
 msgid "BCC:"
 msgstr "BCC:"
 
-#: header/grantleeheaderformatter.cpp:272
+#: header/grantleeheaderformatter.cpp:275
 #, kde-format
 msgid "Sender:"
 msgstr "Pošiljalac: "
 
-#: header/grantleeheaderformatter.cpp:274
+#: header/grantleeheaderformatter.cpp:277
 #, fuzzy, kde-format
 #| msgid "resent from"
 msgid "resent from:"
 msgstr "ponovo poslato iz"
 
-#: header/grantleeheaderformatter.cpp:276
+#: header/grantleeheaderformatter.cpp:279
 #, fuzzy, kde-format
 #| msgid "resent from"
 msgid "resent to:"
 msgstr "ponovo poslato iz"
 
 # @info
-#: header/grantleeheaderformatter.cpp:356
+#: header/grantleeheaderformatter.cpp:395
 #, kde-format
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "Grantleejeva „%1 “tema nije dobra."
 
-#: header/grantleeheaderformatter.cpp:446 header/headerstyle_util.cpp:82
+#: header/grantleeheaderformatter.cpp:483 header/headerstyle_util.cpp:82
 #: header/headerstyle_util.cpp:87 header/headerstyle_util.cpp:98
 #, kde-format
 msgid "No Subject"
 msgstr "bez teme"
 
-#: header/grantleeheaderformatter.cpp:451
+#: header/grantleeheaderformatter.cpp:488
 #, kde-format
 msgid "Spam Status:"
 msgstr "Stanje spama:"
 
-#: header/grantleeheaderformatter.cpp:463
+#: header/grantleeheaderformatter.cpp:500
 #, kde-format
 msgid "Printing mode"
 msgstr "Režim štampanja"
 
-#: header/grantleeheaderformatter.cpp:504
+#: header/grantleeheaderformatter.cpp:542
 #, kde-format
 msgid "[vcard]"
 msgstr "[vCard]"
 
-#: header/grantleeheaderformatter.cpp:511
+#: header/grantleeheaderformatter.cpp:549
 #, kde-format
 msgid "Attachments:"
 msgstr "Prilozi:"
 
-#: header/grantleeheaderformatter.cpp:537
+#: header/grantleeheaderformatter.cpp:575
 #, kde-format
 msgid "Security:"
 msgstr ""
@@ -2196,7 +2196,7 @@ msgctxt "@action"
 msgid "Select All Text"
 msgstr "Izaberi sav tekst"
 
-#: viewer/viewer_p.cpp:1547 viewer/viewer_p.cpp:2067
+#: viewer/viewer_p.cpp:1547 viewer/viewer_p.cpp:2065
 #, kde-format
 msgid "Copy Link Address"
 msgstr "Kopiraj adresu veze"
@@ -2330,41 +2330,41 @@ msgstr "Otvori pomoću..."
 msgid "Save All Attachments..."
 msgstr "Sačuvaj sve priloge..."
 
-#: viewer/viewer_p.cpp:1988
+#: viewer/viewer_p.cpp:1986
 #, kde-format
 msgid "The network is broken."
 msgstr "Mreža je pokvarena."
 
-#: viewer/viewer_p.cpp:1988 viewer/viewer_p.cpp:1991
+#: viewer/viewer_p.cpp:1986 viewer/viewer_p.cpp:1989
 #, fuzzy, kde-format
 #| msgid "Check Phishing URL"
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "Provera URL‑a protiv prevare"
 
-#: viewer/viewer_p.cpp:1991
+#: viewer/viewer_p.cpp:1989
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "URL %1 nije dobar."
 
-#: viewer/viewer_p.cpp:2011
+#: viewer/viewer_p.cpp:2009
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr "Ovaj sajt sadrži malver, želite li zaista da ga posetite?"
 
-#: viewer/viewer_p.cpp:2012
+#: viewer/viewer_p.cpp:2010
 #, fuzzy, kde-format
 #| msgid "Malware"
 msgctxt "@title:window"
 msgid "Malware"
 msgstr "Malver"
 
-#: viewer/viewer_p.cpp:2065
+#: viewer/viewer_p.cpp:2063
 #, kde-format
 msgid "Copy Email Address"
 msgstr "Kopiraj adresu e‑pošte"
 
-#: viewer/viewer_p.cpp:2148
+#: viewer/viewer_p.cpp:2146
 #, fuzzy, kde-format
 #| msgid "Message as Plain Text"
 msgctxt "@title:window"

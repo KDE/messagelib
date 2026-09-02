@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-01 00:47+0000\n"
+"POT-Creation-Date: 2026-09-02 00:45+0000\n"
 "PO-Revision-Date: 2025-05-19 10:18+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -458,12 +458,12 @@ msgstr "Activado."
 msgid "Domain:"
 msgstr "Dominio:"
 
-#: dkim-verify/dkimrulewidget.cpp:43 header/grantleeheaderformatter.cpp:183
+#: dkim-verify/dkimrulewidget.cpp:43 header/grantleeheaderformatter.cpp:186
 #, kde-format
 msgid "List-Id:"
 msgstr "Identificador de lista:"
 
-#: dkim-verify/dkimrulewidget.cpp:47 header/grantleeheaderformatter.cpp:270
+#: dkim-verify/dkimrulewidget.cpp:47 header/grantleeheaderformatter.cpp:273
 #, kde-format
 msgid "From:"
 msgstr "De:"
@@ -682,88 +682,88 @@ msgstr "%1: válido."
 msgid "Not Signed"
 msgstr "Non asinado"
 
-#: header/grantleeheaderformatter.cpp:203
+#: header/grantleeheaderformatter.cpp:206
 #, kde-format
 msgid "Subject:"
 msgstr "Asunto:"
 
-#: header/grantleeheaderformatter.cpp:223
+#: header/grantleeheaderformatter.cpp:226
 #, kde-format
 msgid "Date:"
 msgstr "Data:"
 
-#: header/grantleeheaderformatter.cpp:238
+#: header/grantleeheaderformatter.cpp:241
 #, kde-format
 msgid "Message-Id:"
 msgstr "Identificador da mensaxe:"
 
-#: header/grantleeheaderformatter.cpp:262
+#: header/grantleeheaderformatter.cpp:265
 #, kde-format
 msgid "To:"
 msgstr "Para:"
 
-#: header/grantleeheaderformatter.cpp:264
+#: header/grantleeheaderformatter.cpp:267
 #, kde-format
 msgid "Reply To:"
 msgstr "Responder a:"
 
-#: header/grantleeheaderformatter.cpp:266
+#: header/grantleeheaderformatter.cpp:269
 #, kde-format
 msgid "CC:"
 msgstr "Copia:"
 
-#: header/grantleeheaderformatter.cpp:268
+#: header/grantleeheaderformatter.cpp:271
 #, kde-format
 msgid "BCC:"
 msgstr "Copia agochada:"
 
-#: header/grantleeheaderformatter.cpp:272
+#: header/grantleeheaderformatter.cpp:275
 #, kde-format
 msgid "Sender:"
 msgstr "Remitente:"
 
-#: header/grantleeheaderformatter.cpp:274
+#: header/grantleeheaderformatter.cpp:277
 #, kde-format
 msgid "resent from:"
 msgstr "reenviado desde:"
 
-#: header/grantleeheaderformatter.cpp:276
+#: header/grantleeheaderformatter.cpp:279
 #, kde-format
 msgid "resent to:"
 msgstr "reenviado a:"
 
-#: header/grantleeheaderformatter.cpp:356
+#: header/grantleeheaderformatter.cpp:395
 #, kde-format
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "O tema de Grantlee «%1» non é correcto."
 
-#: header/grantleeheaderformatter.cpp:446 header/headerstyle_util.cpp:82
+#: header/grantleeheaderformatter.cpp:483 header/headerstyle_util.cpp:82
 #: header/headerstyle_util.cpp:87 header/headerstyle_util.cpp:98
 #, kde-format
 msgid "No Subject"
 msgstr "Sen asunto"
 
-#: header/grantleeheaderformatter.cpp:451
+#: header/grantleeheaderformatter.cpp:488
 #, kde-format
 msgid "Spam Status:"
 msgstr "Estado do correo lixo:"
 
-#: header/grantleeheaderformatter.cpp:463
+#: header/grantleeheaderformatter.cpp:500
 #, kde-format
 msgid "Printing mode"
 msgstr "Modo de impresión"
 
-#: header/grantleeheaderformatter.cpp:504
+#: header/grantleeheaderformatter.cpp:542
 #, kde-format
 msgid "[vcard]"
 msgstr "[vcard]"
 
-#: header/grantleeheaderformatter.cpp:511
+#: header/grantleeheaderformatter.cpp:549
 #, kde-format
 msgid "Attachments:"
 msgstr "Anexos:"
 
-#: header/grantleeheaderformatter.cpp:537
+#: header/grantleeheaderformatter.cpp:575
 #, kde-format
 msgid "Security:"
 msgstr "Seguridade:"
@@ -2121,7 +2121,7 @@ msgctxt "@action"
 msgid "Select All Text"
 msgstr "Seleccionar todo o texto"
 
-#: viewer/viewer_p.cpp:1547 viewer/viewer_p.cpp:2067
+#: viewer/viewer_p.cpp:1547 viewer/viewer_p.cpp:2065
 #, kde-format
 msgid "Copy Link Address"
 msgstr "Copiar o enderezo da ligazón"
@@ -2242,39 +2242,39 @@ msgstr "Abrir con…"
 msgid "Save All Attachments..."
 msgstr "Gardar todos os anexos…"
 
-#: viewer/viewer_p.cpp:1988
+#: viewer/viewer_p.cpp:1986
 #, kde-format
 msgid "The network is broken."
 msgstr "A rede está rota."
 
-#: viewer/viewer_p.cpp:1988 viewer/viewer_p.cpp:1991
+#: viewer/viewer_p.cpp:1986 viewer/viewer_p.cpp:1989
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "Comprobar o URL de estafa"
 
-#: viewer/viewer_p.cpp:1991
+#: viewer/viewer_p.cpp:1989
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "O URL %1 non é válido."
 
-#: viewer/viewer_p.cpp:2011
+#: viewer/viewer_p.cpp:2009
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr "Este sitio web ten código malicioso, quere amosalo aínda así?"
 
-#: viewer/viewer_p.cpp:2012
+#: viewer/viewer_p.cpp:2010
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr "Código malicioso"
 
-#: viewer/viewer_p.cpp:2065
+#: viewer/viewer_p.cpp:2063
 #, kde-format
 msgid "Copy Email Address"
 msgstr "Copiar o enderezo de correo"
 
-#: viewer/viewer_p.cpp:2148
+#: viewer/viewer_p.cpp:2146
 #, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"

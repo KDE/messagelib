@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-01 00:47+0000\n"
+"POT-Creation-Date: 2026-09-02 00:45+0000\n"
 "PO-Revision-Date: 2025-10-05 11:35+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -305,23 +305,23 @@ msgid ""
 "no limit)"
 msgstr "הגודל המרבי המותר בסיביות לקבצים מצורפים להודעה (‎-1 לביטול ההגבלה)"
 
-#: utils/dateformatter.cpp:164
+#: utils/dateformatter.cpp:163
 #, kde-format
 msgctxt "invalid time specified"
 msgid "unknown"
 msgstr "לא_ידוע"
 
-#: utils/dateformatter.cpp:176
+#: utils/dateformatter.cpp:175
 #, kde-format
 msgid "Today %1"
 msgstr "היום ב־%1"
 
-#: utils/dateformatter.cpp:179
+#: utils/dateformatter.cpp:178
 #, kde-format
 msgid "Yesterday %1"
 msgstr "אתמול ב־%1"
 
-#: utils/dateformatter.cpp:184
+#: utils/dateformatter.cpp:183
 #, kde-format
 msgctxt "1. weekday, 2. time"
 msgid "%1 %2"

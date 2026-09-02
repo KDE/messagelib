@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-01 00:47+0000\n"
+"POT-Creation-Date: 2026-09-02 00:45+0000\n"
 "PO-Revision-Date: 2024-12-03 12:47+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -325,23 +325,23 @@ msgstr ""
 "Максимальный размер вложений в письме в битах (-1 означает отсутствие "
 "ограничения)"
 
-#: utils/dateformatter.cpp:164
+#: utils/dateformatter.cpp:163
 #, kde-format
 msgctxt "invalid time specified"
 msgid "unknown"
 msgstr "неизвестно"
 
-#: utils/dateformatter.cpp:176
+#: utils/dateformatter.cpp:175
 #, kde-format
 msgid "Today %1"
 msgstr "Сегодня %1"
 
-#: utils/dateformatter.cpp:179
+#: utils/dateformatter.cpp:178
 #, kde-format
 msgid "Yesterday %1"
 msgstr "Вчера %1"
 
-#: utils/dateformatter.cpp:184
+#: utils/dateformatter.cpp:183
 #, kde-format
 msgctxt "1. weekday, 2. time"
 msgid "%1 %2"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-01 00:47+0000\n"
+"POT-Creation-Date: 2026-09-02 00:45+0000\n"
 "PO-Revision-Date: 2024-11-09 20:04+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -317,23 +317,23 @@ msgstr ""
 "Максималният размер в бита, които са позволени да имат (-1 за без "
 "ограничения)"
 
-#: utils/dateformatter.cpp:164
+#: utils/dateformatter.cpp:163
 #, kde-format
 msgctxt "invalid time specified"
 msgid "unknown"
 msgstr "неизвестно"
 
-#: utils/dateformatter.cpp:176
+#: utils/dateformatter.cpp:175
 #, kde-format
 msgid "Today %1"
 msgstr "Днес %1"
 
-#: utils/dateformatter.cpp:179
+#: utils/dateformatter.cpp:178
 #, kde-format
 msgid "Yesterday %1"
 msgstr "Вчера %1"
 
-#: utils/dateformatter.cpp:184
+#: utils/dateformatter.cpp:183
 #, kde-format
 msgctxt "1. weekday, 2. time"
 msgid "%1 %2"
