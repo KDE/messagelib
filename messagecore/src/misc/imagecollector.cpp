@@ -32,9 +32,9 @@ void MessageCore::ImageCollector::collectImagesFrom(KMime::Content *node)
         return;
     }
 
-    if (const auto ct = node->contentType(KMime::CreatePolicy::DontCreate); ct->isImage() && node->parent()) {
+    if (const auto ct = node->contentType(KMime::CreatePolicy::DontCreate); ct && ct->isImage() && node->parent()) {
         const KMime::Content *parent = node->parent();
-        if (const auto parentCt = parent->contentType(); parentCt->isMultipart() && parentCt->isSubtype("related")) {
+        if (const auto parentCt = parent->contentType(); parentCt && parentCt->isMultipart() && parentCt->isSubtype("related")) {
             qCWarning(MESSAGECORE_LOG) << "Adding image" << node->contentID(KMime::CreatePolicy::DontCreate);
             d->mImages.push_back(node);
         }
