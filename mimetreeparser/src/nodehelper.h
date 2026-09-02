@@ -311,7 +311,6 @@ private:
 
 private:
     QList<const KMime::Content *> mProcessedNodes;
-    QList<const KMime::Content *> mNodesUnderProcess;
     QMap<const KMime::Content *, KMMsgEncryptionState> mEncryptionState;
     QMap<const KMime::Content *, KMMsgSignatureState> mSignatureState;
     QSet<const KMime::Content *> mDisplayEmbeddedNodes;
