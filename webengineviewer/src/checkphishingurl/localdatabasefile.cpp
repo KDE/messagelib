@@ -136,8 +136,8 @@ QByteArray LocalDataBaseFile::searchHash(const QByteArray &hashToSearch)
             const char *hashCharStar = getCharStar(hashOffset);
             const int cmp = qstrcmp(hashCharStar, hashToSearch.constData());
             currentValue = QByteArray(hashCharStar);
-            qCWarning(WEBENGINEVIEWER_LOG) << "search " << hashToSearch.toBase64() << " begin " << begin << " end " << end << " hashCharStar"
-                                           << currentValue.toBase64();
+            // qCWarning(WEBENGINEVIEWER_LOG) << "search " << hashToSearch.toBase64() << " begin " << begin << " end " << end << " hashCharStar"
+            //                                << currentValue.toBase64();
             if (end == begin) {
                 return currentValue;
             }
