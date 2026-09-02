@@ -1506,16 +1506,15 @@ void TemplateParserJob::makeValidHtml(QString &body)
         return;
     }
 
-    QRegularExpression regEx;
+    static const QRegularExpression regEx(u"<html.*?>"_s);
+    static const QRegularExpression regEx1(u"<body.*?>"_s);
+    static const QRegularExpression regEx2(u"<head.*?>"_s);
 
-    regEx.setPattern(u"<html.*?>"_s);
     if (!body.contains(regEx)) {
-        regEx.setPattern(u"<body.*?>"_s);
-        if (!body.contains(regEx)) {
+        if (!body.contains(regEx1)) {
             body = "<body>"_L1 + body + "<br/></body>"_L1;
         }
-        regEx.setPattern(u"<head.*?>"_s);
-        if (!body.contains(regEx)) {
+        if (!body.contains(regEx2)) {
             body = "<head>"_L1 + d->mHeadElement + "</head>"_L1 + body;
         }
         body = "<html>"_L1 + body + "</html>"_L1;
