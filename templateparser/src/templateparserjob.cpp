@@ -1495,8 +1495,7 @@ bool TemplateParserJob::isHtmlSignature() const
 
 QString TemplateParserJob::plainTextToHtml(const QString &body)
 {
-    QString str = body;
-    str = str.toHtmlEscaped();
+    QString str = body.toHtmlEscaped();
     str.replace(u'\n', u"<br />\n"_s);
     return str;
 }
