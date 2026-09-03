@@ -102,17 +102,21 @@ void SaveContactPreferenceJob::slotSearchContact(KJob *job)
         item.setPayload<KContacts::Addressee>(contact);
 
         auto createJob = new Akonadi::ItemCreateJob(item, targetCollection);
-        connect(createJob, &Akonadi::ContactSearchJob::result, this, &SaveContactPreferenceJob::slotModifyCreateItem);
+        connect(createJob, &Akonadi::ItemCreateJob::result, this, &SaveContactPreferenceJob::slotModifyCreateItem);
     } else {
         Akonadi::Item item = items.first();
 
-        auto contact = item.payload<KContacts::Addressee>();
-        d->mPref.fillAddressee(contact);
+        if (item.hasPayload<KContacts::Addressee>()) {
+            auto contact = item.payload<KContacts::Addressee>();
+            d->mPref.fillAddressee(contact);
 
-        item.setPayload<KContacts::Addressee>(contact);
+            item.setPayload<KContacts::Addressee>(contact);
 
-        auto itemModifyJob = new Akonadi::ItemModifyJob(item);
-        connect(itemModifyJob, &Akonadi::ContactSearchJob::result, this, &SaveContactPreferenceJob::slotModifyCreateItem);
+            auto itemModifyJob = new Akonadi::ItemModifyJob(item);
+            connect(itemModifyJob, &Akonadi::ItemModifyJob::result, this, &SaveContactPreferenceJob::slotModifyCreateItem);
+        } else {
+            deleteLater();
+        }
     }
 }
 
