@@ -732,7 +732,7 @@ QList<MessageComposer::ComposerJob *> ComposerViewBase::generateCryptoMessages(b
     connect(expiryChecker().get(),
             &Kleo::ExpiryChecker::expiryMessage,
             this,
-            [&canceled](const GpgME::Key &key, QString msg, Kleo::ExpiryChecker::ExpiryInformation info, bool isNewMessage) {
+            [&canceled](const GpgME::Key &key, const QString &msg, Kleo::ExpiryChecker::ExpiryInformation info, bool isNewMessage) {
                 if (!isNewMessage) {
                     return;
                 }

@@ -106,7 +106,7 @@ void DKIMManagerKeyModel::clear()
 bool DKIMManagerKeyModel::insertKeyInfo(const KeyInfo &keyInfo)
 {
     bool found = false;
-    auto it = std::find_if(mKeyInfos.cbegin(), mKeyInfos.cend(), [keyInfo](const KeyInfo &key) {
+    auto it = std::find_if(mKeyInfos.cbegin(), mKeyInfos.cend(), [&keyInfo](const KeyInfo &key) {
         return key == keyInfo;
     });
     if (it == mKeyInfos.cend()) {
@@ -122,7 +122,7 @@ bool DKIMManagerKeyModel::insertKeyInfo(const KeyInfo &keyInfo)
 
 void DKIMManagerKeyModel::removeKeyInfo(const QString &keyValue)
 {
-    auto it = std::find_if(mKeyInfos.cbegin(), mKeyInfos.cend(), [keyValue](const KeyInfo &key) {
+    auto it = std::find_if(mKeyInfos.cbegin(), mKeyInfos.cend(), [&keyValue](const KeyInfo &key) {
         return key.keyValue == keyValue;
     });
     if (it != mKeyInfos.cend()) {
@@ -140,7 +140,7 @@ void DKIMManagerKeyModel::removeKeyInfos(const QStringList &keyInfos)
     }
     beginResetModel();
     for (const auto &keyInfo : keyInfos) {
-        auto it = std::find_if(mKeyInfos.cbegin(), mKeyInfos.cend(), [keyInfo](const KeyInfo &key) {
+        auto it = std::find_if(mKeyInfos.cbegin(), mKeyInfos.cend(), [&keyInfo](const KeyInfo &key) {
             return key.keyValue == keyInfo;
         });
         if (it != mKeyInfos.cend()) {
