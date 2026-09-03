@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-02 00:45+0000\n"
+"POT-Creation-Date: 2026-09-03 00:44+0000\n"
 "PO-Revision-Date: 2024-09-08 12:46+0200\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -37,12 +37,12 @@ msgstr "உடனிணைப்பை சுருக்கும் பணி�
 msgid "Could not compress the attachment."
 msgstr "உடனிணைப்பை சுருக்க முடியவில்லை."
 
-#: attachment/attachmentfromfolderjob.cpp:52
+#: attachment/attachmentfromfolderjob.cpp:51
 #, kde-format
 msgid "Could not create compressed file."
 msgstr "சுருக்கப்பட்ட கோப்பை உருவாக்க முடியவில்லை."
 
-#: attachment/attachmentfromfolderjob.cpp:90
+#: attachment/attachmentfromfolderjob.cpp:89
 #, kde-format
 msgid ""
 "The resulting attachment would be larger than the maximum allowed size, "
@@ -51,13 +51,13 @@ msgstr ""
 "முடிவாக கிடைக்கும் உடனிணைப்பு, அனுமதிக்கப்படும் அதிகபட்ச அளவைவிட பெரியதாக இருப்பதால் "
 "இச்செயல் கைவிடப்படுகிறது."
 
-#: attachment/attachmentfromfolderjob.cpp:100
-#: attachment/attachmentfromfolderjob.cpp:119
+#: attachment/attachmentfromfolderjob.cpp:99
+#: attachment/attachmentfromfolderjob.cpp:118
 #, kde-format
 msgid "Could not add %1 to the archive"
 msgstr "%1 என்பதை காப்பகத்தில் சேர்க்க முடியவில்லை"
 
-#: attachment/attachmentfromfolderjob.cpp:113
+#: attachment/attachmentfromfolderjob.cpp:112
 #, kde-format
 msgid "Could not open %1 for reading."
 msgstr "%1 என்பதை படிப்பதற்கு திறக்க முடியவில்லை."

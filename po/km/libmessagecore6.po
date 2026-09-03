@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecore\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-02 00:45+0000\n"
+"POT-Creation-Date: 2026-09-03 00:44+0000\n"
 "PO-Revision-Date: 2012-06-19 09:11+0700\n"
 "Last-Translator: Sophea <sophea@khmeros.info>\n"
 "Language-Team: Khmer <>\n"
@@ -41,25 +41,25 @@ msgstr "មិន​អាច​ចាប់ផ្ដើម​ការ​បង
 msgid "Could not compress the attachment."
 msgstr "មិន​អាច​បង្ហាប់​ឯកសារ​ភ្ជាប់ ។"
 
-#: attachment/attachmentfromfolderjob.cpp:52
+#: attachment/attachmentfromfolderjob.cpp:51
 #, kde-format
 msgid "Could not create compressed file."
 msgstr "មិន​អាច​បង្កើត​ឯកសារ​បង្ហាប់ ។"
 
-#: attachment/attachmentfromfolderjob.cpp:90
+#: attachment/attachmentfromfolderjob.cpp:89
 #, kde-format
 msgid ""
 "The resulting attachment would be larger than the maximum allowed size, "
 "aborting."
 msgstr "ការ​បង្ហាញ​ឯកសារ​ភ្ជាប់​គួរតែ​ធំជាង​ទំហំ​អតិបរមា​ដែល​បាន​អនុញ្ញាត ការ​បោះបង់ ។"
 
-#: attachment/attachmentfromfolderjob.cpp:100
-#: attachment/attachmentfromfolderjob.cpp:119
+#: attachment/attachmentfromfolderjob.cpp:99
+#: attachment/attachmentfromfolderjob.cpp:118
 #, kde-format
 msgid "Could not add %1 to the archive"
 msgstr "មិន​អាច​បន្ថែម %1 ទៅកាន់​ប័ណ្ណសារ​បានទេ"
 
-#: attachment/attachmentfromfolderjob.cpp:113
+#: attachment/attachmentfromfolderjob.cpp:112
 #, kde-format
 msgid "Could not open %1 for reading."
 msgstr "មិន​អាច​បើក %1 សម្រាប់​អាន​បាន​ទេ ។"

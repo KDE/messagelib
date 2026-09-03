@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecore\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-02 00:45+0000\n"
+"POT-Creation-Date: 2026-09-03 00:44+0000\n"
 "PO-Revision-Date: 2017-09-28 18:00+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -40,25 +40,25 @@ msgstr "Не могу да покренем компресију прилога.
 msgid "Could not compress the attachment."
 msgstr "Не могу да компресујем прилог."
 
-#: attachment/attachmentfromfolderjob.cpp:52
+#: attachment/attachmentfromfolderjob.cpp:51
 #, kde-format
 msgid "Could not create compressed file."
 msgstr "Не могу да направим компресовани фајл."
 
-#: attachment/attachmentfromfolderjob.cpp:90
+#: attachment/attachmentfromfolderjob.cpp:89
 #, kde-format
 msgid ""
 "The resulting attachment would be larger than the maximum allowed size, "
 "aborting."
 msgstr "Резултујући прилог био би већи од највећег дозвољеног, обустављам."
 
-#: attachment/attachmentfromfolderjob.cpp:100
-#: attachment/attachmentfromfolderjob.cpp:119
+#: attachment/attachmentfromfolderjob.cpp:99
+#: attachment/attachmentfromfolderjob.cpp:118
 #, kde-format
 msgid "Could not add %1 to the archive"
 msgstr "Не могу да додам ‘%1’ у архиву."
 
-#: attachment/attachmentfromfolderjob.cpp:113
+#: attachment/attachmentfromfolderjob.cpp:112
 #, kde-format
 msgid "Could not open %1 for reading."
 msgstr "Не могу да отворим ‘%1’ за читање."

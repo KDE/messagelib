@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-01 00:47+0000\n"
+"POT-Creation-Date: 2026-09-03 00:44+0000\n"
 "PO-Revision-Date: 2009-08-15 14:38+0300\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Română <kde-i18n-ro@kde.org>\n"
@@ -18,35 +18,35 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2;\n"
 
-#: src/messagepart.cpp:438
+#: src/messagepart.cpp:439
 #, kde-format
 msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "Nedenumit"
 
-#: src/messagepart.cpp:704 src/messagepart.cpp:749 src/messagepart.cpp:988
+#: src/messagepart.cpp:706 src/messagepart.cpp:751 src/messagepart.cpp:990
 #, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr "Modul criptografic greșit."
 
-#: src/messagepart.cpp:815 src/messagepart.cpp:1203
+#: src/messagepart.cpp:817 src/messagepart.cpp:1205
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Nu a fost găsit niciun modul criptografic corespunzător."
 
-#: src/messagepart.cpp:817
+#: src/messagepart.cpp:819
 #, kde-format
 msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
 msgid "No %1 plug-in was found."
 msgstr "Nu a fost găsit niciun modul %1."
 
-#: src/messagepart.cpp:820
+#: src/messagepart.cpp:822
 #, fuzzy, kde-format
 #| msgid "Crypto plug-in \"%1\" cannot verify signatures."
 msgid "Crypto plug-in \"%1\" cannot verify signatures."
 msgstr "Modulul criptografic „%1” nu poate verifica semnăturile."
 
-#: src/messagepart.cpp:823
+#: src/messagepart.cpp:825
 #, kde-format
 msgid ""
 "The message is signed, but the validity of the signature cannot be verified."
@@ -55,17 +55,17 @@ msgstr ""
 "Mesajul este semnat, însă validitatea semnăturii nu poate fi verificată. "
 "<br />Motiv: %1"
 
-#: src/messagepart.cpp:1205
+#: src/messagepart.cpp:1207
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "Modulul criptografic „%1” nu poate decripta mesajele."
 
-#: src/messagepart.cpp:1208
+#: src/messagepart.cpp:1210
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Modulul criptografic „%1” nu poate decripta datele."
 
-#: src/messagepart.cpp:1208
+#: src/messagepart.cpp:1210
 #, kde-format
 msgid "Error: %1"
 msgstr "Eroare: %1"

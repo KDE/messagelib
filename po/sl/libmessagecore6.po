@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-02 00:45+0000\n"
+"POT-Creation-Date: 2026-09-03 00:44+0000\n"
 "PO-Revision-Date: 2024-08-02 05:22+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -42,12 +42,12 @@ msgstr "Ni bilo mogoče začeti s stiskanjem priloge."
 msgid "Could not compress the attachment."
 msgstr "Priloge ni bilo mogoče stisniti."
 
-#: attachment/attachmentfromfolderjob.cpp:52
+#: attachment/attachmentfromfolderjob.cpp:51
 #, kde-format
 msgid "Could not create compressed file."
 msgstr "Ni bilo mogoče ustvariti stisnjene datoteke."
 
-#: attachment/attachmentfromfolderjob.cpp:90
+#: attachment/attachmentfromfolderjob.cpp:89
 #, kde-format
 msgid ""
 "The resulting attachment would be larger than the maximum allowed size, "
@@ -55,13 +55,13 @@ msgid ""
 msgstr ""
 "Končna priloga bi bila večja kot je največja dovoljena velikost, prekinjanje."
 
-#: attachment/attachmentfromfolderjob.cpp:100
-#: attachment/attachmentfromfolderjob.cpp:119
+#: attachment/attachmentfromfolderjob.cpp:99
+#: attachment/attachmentfromfolderjob.cpp:118
 #, kde-format
 msgid "Could not add %1 to the archive"
 msgstr "%1 ni bilo mogoče dodati v arhiv"
 
-#: attachment/attachmentfromfolderjob.cpp:113
+#: attachment/attachmentfromfolderjob.cpp:112
 #, kde-format
 msgid "Could not open %1 for reading."
 msgstr "%1 ni mogoče odpreti za branje."

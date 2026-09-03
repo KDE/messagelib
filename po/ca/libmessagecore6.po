@@ -3,14 +3,14 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# SPDX-FileCopyrightText: 2009, 2010, 2011 Manuel Tortosa Moreno <manutortosa@gmail.com>
-# SPDX-FileCopyrightText: 2010, 2011, 2012, 2015, 2017, 2018, 2024 Josep M. Ferrer <txemaq@gmail.com>
-# SPDX-FileCopyrightText: 2013, 2014, 2016, 2019, 2020 Antoni Bella Pérez <antonibella5@yahoo.com>
+# SPDX-FileCopyrightText: 2009-2011 Manuel Tortosa Moreno <manutortosa@gmail.com>
+# SPDX-FileCopyrightText: 2010-2012, 2015, 2017-2018, 2024 Josep M. Ferrer <txemaq@gmail.com>
+# SPDX-FileCopyrightText: 2013-2014, 2016, 2019-2020 Antoni Bella Pérez <antonibella5@yahoo.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-02 00:45+0000\n"
+"POT-Creation-Date: 2026-09-03 00:44+0000\n"
 "PO-Revision-Date: 2024-08-02 12:52+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -42,12 +42,12 @@ msgstr "No s'ha pogut iniciar la compressió de l'adjunt."
 msgid "Could not compress the attachment."
 msgstr "No s'ha pogut comprimir l'adjunt."
 
-#: attachment/attachmentfromfolderjob.cpp:52
+#: attachment/attachmentfromfolderjob.cpp:51
 #, kde-format
 msgid "Could not create compressed file."
 msgstr "No s'ha pogut crear el fitxer comprimit."
 
-#: attachment/attachmentfromfolderjob.cpp:90
+#: attachment/attachmentfromfolderjob.cpp:89
 #, kde-format
 msgid ""
 "The resulting attachment would be larger than the maximum allowed size, "
@@ -55,13 +55,13 @@ msgid ""
 msgstr ""
 "L'adjunt resultant serà més gran que la mida màxima permesa, s'interromp."
 
-#: attachment/attachmentfromfolderjob.cpp:100
-#: attachment/attachmentfromfolderjob.cpp:119
+#: attachment/attachmentfromfolderjob.cpp:99
+#: attachment/attachmentfromfolderjob.cpp:118
 #, kde-format
 msgid "Could not add %1 to the archive"
 msgstr "No s'ha pogut afegir %1 a l'arxiu"
 
-#: attachment/attachmentfromfolderjob.cpp:113
+#: attachment/attachmentfromfolderjob.cpp:112
 #, kde-format
 msgid "Could not open %1 for reading."
 msgstr "No s'ha pogut obrir %1 per a lectura."

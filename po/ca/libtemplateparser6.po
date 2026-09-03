@@ -3,14 +3,14 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# SPDX-FileCopyrightText: 2011, 2012, 2014, 2015, 2020, 2021, 2023, 2024, 2026 Josep M. Ferrer <txemaq@gmail.com>
+# SPDX-FileCopyrightText: 2011-2012, 2014-2015, 2020-2021, 2023-2024, 2026 Josep M. Ferrer <txemaq@gmail.com>
 # SPDX-FileCopyrightText: 2011 Manuel Tortosa <manutortosa@chakra-project.org>
-# SPDX-FileCopyrightText: 2013, 2014, 2015, 2018, 2020, 2021 Antoni Bella Pérez <antonibella5@yahoo.com>
+# SPDX-FileCopyrightText: 2013-2015, 2018, 2020-2021 Antoni Bella Pérez <antonibella5@yahoo.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-01 00:47+0000\n"
+"POT-Creation-Date: 2026-09-03 00:44+0000\n"
 "PO-Revision-Date: 2026-03-05 11:29+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -274,31 +274,31 @@ msgstr "Plantilla de missatges per als reenviaments"
 msgid "Quote characters"
 msgstr "Caràcters de citació"
 
-#: templateparserjob.cpp:315
+#: templateparserjob.cpp:333
 #, kde-format
 msgctxt "@info"
 msgid "Cannot insert content from file %1: %2"
 msgstr "No es pot inserir el contingut del fitxer %1: %2"
 
-#: templateparserjob.cpp:485
+#: templateparserjob.cpp:503
 #, kde-format
 msgctxt "@item:intext email To"
 msgid "To:"
 msgstr "A:"
 
-#: templateparserjob.cpp:496
+#: templateparserjob.cpp:514
 #, kde-format
 msgctxt "@item:intext email CC"
 msgid "CC:"
 msgstr "CC:"
 
-#: templateparserjob.cpp:1148
+#: templateparserjob.cpp:1170
 #, kde-format
 msgctxt "@item:intext"
 msgid "Attachment %1"
 msgstr "Adjunt %1"
 
-#: templateparserjob.cpp:1356
+#: templateparserjob.cpp:1378
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Pipe command <command>%1</command> failed."

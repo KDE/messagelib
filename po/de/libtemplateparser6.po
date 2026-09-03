@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtemplateparser6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-01 00:47+0000\n"
+"POT-Creation-Date: 2026-09-03 00:44+0000\n"
 "PO-Revision-Date: 2024-11-11 18:20+0100\n"
 "Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -270,31 +270,31 @@ msgstr "Nachrichtenvorlage für Weiterleitung"
 msgid "Quote characters"
 msgstr "Zitatzeichen"
 
-#: templateparserjob.cpp:315
+#: templateparserjob.cpp:333
 #, kde-format
 msgctxt "@info"
 msgid "Cannot insert content from file %1: %2"
 msgstr "Inhalt aus Datei %1 kann nicht eingefügt werden: %2"
 
-#: templateparserjob.cpp:485
+#: templateparserjob.cpp:503
 #, kde-format
 msgctxt "@item:intext email To"
 msgid "To:"
 msgstr "An:"
 
-#: templateparserjob.cpp:496
+#: templateparserjob.cpp:514
 #, kde-format
 msgctxt "@item:intext email CC"
 msgid "CC:"
 msgstr "Kopie:"
 
-#: templateparserjob.cpp:1148
+#: templateparserjob.cpp:1170
 #, kde-format
 msgctxt "@item:intext"
 msgid "Attachment %1"
 msgstr "Anhang %1"
 
-#: templateparserjob.cpp:1356
+#: templateparserjob.cpp:1378
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Pipe command <command>%1</command> failed."

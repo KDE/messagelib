@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-01 00:47+0000\n"
+"POT-Creation-Date: 2026-09-03 00:44+0000\n"
 "PO-Revision-Date: 2026-08-19 01:49+0300\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
@@ -22,34 +22,34 @@ msgstr ""
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
 "X-Generator: Poedit 3.9\n"
 
-#: src/messagepart.cpp:438
+#: src/messagepart.cpp:439
 #, kde-format
 msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
 msgstr "Nepavadintas"
 
-#: src/messagepart.cpp:704 src/messagepart.cpp:749 src/messagepart.cpp:988
+#: src/messagepart.cpp:706 src/messagepart.cpp:751 src/messagepart.cpp:990
 #, kde-format
 msgid "Wrong Crypto Plug-In."
 msgstr "Neteisingas šifravimo įskiepis."
 
-#: src/messagepart.cpp:815 src/messagepart.cpp:1203
+#: src/messagepart.cpp:817 src/messagepart.cpp:1205
 #, kde-format
 msgid "No appropriate crypto plug-in was found."
 msgstr "Nerasta jokio tinkamo šifravimo įskiepio."
 
-#: src/messagepart.cpp:817
+#: src/messagepart.cpp:819
 #, kde-format
 msgctxt "%1 is either 'OpenPGP' or 'S/MIME'"
 msgid "No %1 plug-in was found."
 msgstr "Nerasta jokio %1 įskiepio."
 
-#: src/messagepart.cpp:820
+#: src/messagepart.cpp:822
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot verify signatures."
 msgstr "Šifravimo įskiepis „%1“ negali tikrinti parašų."
 
-#: src/messagepart.cpp:823
+#: src/messagepart.cpp:825
 #, kde-format
 msgid ""
 "The message is signed, but the validity of the signature cannot be verified."
@@ -58,17 +58,17 @@ msgstr ""
 "Laiškas pasirašytas, tačiau parašo galiojimas negali būti patikrintas.<br /"
 ">Priežastis: %1"
 
-#: src/messagepart.cpp:1205
+#: src/messagepart.cpp:1207
 #, kde-format
 msgid "Crypto plug-in \"%1\" cannot decrypt messages."
 msgstr "Šifravimo įskiepis „%1“ negali iššifruoti laiškų."
 
-#: src/messagepart.cpp:1208
+#: src/messagepart.cpp:1210
 #, kde-format
 msgid "Crypto plug-in \"%1\" could not decrypt the data."
 msgstr "Šifravimo įskiepiui „%1“ nepavyko iššifruoti duomenų."
 
-#: src/messagepart.cpp:1208
+#: src/messagepart.cpp:1210
 #, kde-format
 msgid "Error: %1"
 msgstr "Klaida: %1"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-01 00:47+0000\n"
+"POT-Creation-Date: 2026-09-03 00:44+0000\n"
 "PO-Revision-Date: 2024-12-20 21:53+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -268,31 +268,31 @@ msgstr "अग्रे कृते सन्देशस्य टेम्प
 msgid "Quote characters"
 msgstr "उद्धरण वर्ण"
 
-#: templateparserjob.cpp:315
+#: templateparserjob.cpp:333
 #, kde-format
 msgctxt "@info"
 msgid "Cannot insert content from file %1: %2"
 msgstr "%1: %2 सञ्चिकातः सामग्रीं सम्मिलितुं न शक्यते"
 
-#: templateparserjob.cpp:485
+#: templateparserjob.cpp:503
 #, kde-format
 msgctxt "@item:intext email To"
 msgid "To:"
 msgstr "इत्यस्मै:"
 
-#: templateparserjob.cpp:496
+#: templateparserjob.cpp:514
 #, kde-format
 msgctxt "@item:intext email CC"
 msgid "CC:"
 msgstr "सी. सी."
 
-#: templateparserjob.cpp:1148
+#: templateparserjob.cpp:1170
 #, kde-format
 msgctxt "@item:intext"
 msgid "Attachment %1"
 msgstr "आसक्तिः %1"
 
-#: templateparserjob.cpp:1356
+#: templateparserjob.cpp:1378
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Pipe command <command>%1</command> failed."

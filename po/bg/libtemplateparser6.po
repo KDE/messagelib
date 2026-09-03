@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-01 00:47+0000\n"
+"POT-Creation-Date: 2026-09-03 00:44+0000\n"
 "PO-Revision-Date: 2025-10-24 22:07+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -269,31 +269,31 @@ msgstr "Шаблон за препращане"
 msgid "Quote characters"
 msgstr "Символи за цитиране"
 
-#: templateparserjob.cpp:315
+#: templateparserjob.cpp:333
 #, kde-format
 msgctxt "@info"
 msgid "Cannot insert content from file %1: %2"
 msgstr "Не може да се вмъкне съдържание от файл %1: %2"
 
-#: templateparserjob.cpp:485
+#: templateparserjob.cpp:503
 #, kde-format
 msgctxt "@item:intext email To"
 msgid "To:"
 msgstr "До:"
 
-#: templateparserjob.cpp:496
+#: templateparserjob.cpp:514
 #, kde-format
 msgctxt "@item:intext email CC"
 msgid "CC:"
 msgstr "Копие до:"
 
-#: templateparserjob.cpp:1148
+#: templateparserjob.cpp:1170
 #, kde-format
 msgctxt "@item:intext"
 msgid "Attachment %1"
 msgstr "Прикачен файл %1"
 
-#: templateparserjob.cpp:1356
+#: templateparserjob.cpp:1378
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Pipe command <command>%1</command> failed."

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecore6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-02 00:45+0000\n"
+"POT-Creation-Date: 2026-09-03 00:44+0000\n"
 "PO-Revision-Date: 2024-11-11 18:53+0100\n"
 "Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -41,12 +41,12 @@ msgstr "Der Anhang kann nicht komprimiert werden."
 msgid "Could not compress the attachment."
 msgstr "Der Anhang kann nicht komprimiert werden."
 
-#: attachment/attachmentfromfolderjob.cpp:52
+#: attachment/attachmentfromfolderjob.cpp:51
 #, kde-format
 msgid "Could not create compressed file."
 msgstr "Die komprimierte Datei kann nicht gelesen werden."
 
-#: attachment/attachmentfromfolderjob.cpp:90
+#: attachment/attachmentfromfolderjob.cpp:89
 #, kde-format
 msgid ""
 "The resulting attachment would be larger than the maximum allowed size, "
@@ -55,13 +55,13 @@ msgstr ""
 "Die resultierende Größe des Anhangs wird größer sein als die erlaubte Größe. "
 "Abbruch."
 
-#: attachment/attachmentfromfolderjob.cpp:100
-#: attachment/attachmentfromfolderjob.cpp:119
+#: attachment/attachmentfromfolderjob.cpp:99
+#: attachment/attachmentfromfolderjob.cpp:118
 #, kde-format
 msgid "Could not add %1 to the archive"
 msgstr "%1 kann nicht zum Archiv hinzugefügt werden."
 
-#: attachment/attachmentfromfolderjob.cpp:113
+#: attachment/attachmentfromfolderjob.cpp:112
 #, kde-format
 msgid "Could not open %1 for reading."
 msgstr "%1 lässt sich nicht zum Lesen öffnen."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-01 00:47+0000\n"
+"POT-Creation-Date: 2026-09-03 00:44+0000\n"
 "PO-Revision-Date: 2025-10-05 11:38+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -266,31 +266,31 @@ msgstr "תבנית הודעה להעברה"
 msgid "Quote characters"
 msgstr "תווי ציטוט"
 
-#: templateparserjob.cpp:315
+#: templateparserjob.cpp:333
 #, kde-format
 msgctxt "@info"
 msgid "Cannot insert content from file %1: %2"
 msgstr "לא ניתן להוסיף תוכן מהקובץ %1: %2"
 
-#: templateparserjob.cpp:485
+#: templateparserjob.cpp:503
 #, kde-format
 msgctxt "@item:intext email To"
 msgid "To:"
 msgstr "אל:"
 
-#: templateparserjob.cpp:496
+#: templateparserjob.cpp:514
 #, kde-format
 msgctxt "@item:intext email CC"
 msgid "CC:"
 msgstr "עותק:"
 
-#: templateparserjob.cpp:1148
+#: templateparserjob.cpp:1170
 #, kde-format
 msgctxt "@item:intext"
 msgid "Attachment %1"
 msgstr "קובץ מצורף %1"
 
-#: templateparserjob.cpp:1356
+#: templateparserjob.cpp:1378
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Pipe command <command>%1</command> failed."

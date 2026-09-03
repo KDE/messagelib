@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-02 00:45+0000\n"
+"POT-Creation-Date: 2026-09-03 00:44+0000\n"
 "PO-Revision-Date: 2024-12-20 21:53+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -390,37 +390,37 @@ msgstr ""
 "KMail चयनितः सम्पादकः कदा बन्दः भवति इति ज्ञातुं असमर्थः अस्ति । दत्तांशहानिः न भवेत् "
 "इति कृत्वा संलग्नकस्य सम्पादनं निरस्तं भविष्यति ।"
 
-#: composer/composerviewbase.cpp:345
+#: composer/composerviewbase.cpp:353
 #, kde-format
 msgid "&Keep markup, do not sign/encrypt"
 msgstr "&मार्कअपं स्थापयन्तु, हस्ताक्षरं/गोपनं न कुर्वन्तु"
 
-#: composer/composerviewbase.cpp:345
+#: composer/composerviewbase.cpp:353
 #, kde-format
 msgid "&Keep markup, do not encrypt"
 msgstr "&मार्कअपं स्थापयतु, एन्क्रिप्ट् न कुर्वन्तु"
 
-#: composer/composerviewbase.cpp:345
+#: composer/composerviewbase.cpp:353
 #, kde-format
 msgid "&Keep markup, do not sign"
 msgstr "&मार्कअपं स्थापयन्तु, हस्ताक्षरं न कुर्वन्तु"
 
-#: composer/composerviewbase.cpp:346
+#: composer/composerviewbase.cpp:354
 #, kde-format
 msgid "Sign/Encrypt (delete markup)"
 msgstr "हस्ताक्षर/गुप्तीकरण (मार्कअप विलोपनम्)"
 
-#: composer/composerviewbase.cpp:346
+#: composer/composerviewbase.cpp:354
 #, kde-format
 msgid "Encrypt (delete markup)"
 msgstr "एन्क्रिप्ट् (मार्कअप विलोपनम्)"
 
-#: composer/composerviewbase.cpp:346
+#: composer/composerviewbase.cpp:354
 #, kde-format
 msgid "Sign (delete markup)"
 msgstr "हस्ताक्षरं कुर्वन्तु (मार्कअपं विलोपयन्तु)"
 
-#: composer/composerviewbase.cpp:348
+#: composer/composerviewbase.cpp:356
 #, kde-format
 msgid ""
 "<qt><p>Inline signing/encrypting of HTML messages is not possible;</p><p>do "
@@ -429,76 +429,76 @@ msgstr ""
 "<qt><p>HTML सन्देशानां आन्तरिकहस्ताक्षरीकरणं/गोपनीकरणं सम्भवं नास्ति;</p><p> किं भवन्तः "
 "स्वस्य मार्कअपं विलोपयितुम् इच्छन्ति?</p></qt>"
 
-#: composer/composerviewbase.cpp:350
+#: composer/composerviewbase.cpp:358
 #, kde-format
 msgctxt "@title:window"
 msgid "Sign/Encrypt Message?"
 msgstr "सन्देशं हस्ताक्षरं/गोपनं कुर्वन्तु?"
 
-#: composer/composerviewbase.cpp:526
+#: composer/composerviewbase.cpp:534
 #, kde-format
 msgid "It was not possible to create a message composer."
 msgstr "सन्देशरचयिता निर्मातुं न शक्यते स्म ।"
 
-#: composer/composerviewbase.cpp:536
+#: composer/composerviewbase.cpp:544
 #, kde-format
 msgid "Do you want to resize images?"
 msgstr "किं भवान् चित्राणां आकारं परिवर्तयितुम् इच्छति ?"
 
-#: composer/composerviewbase.cpp:537
+#: composer/composerviewbase.cpp:545
 #, kde-format
 msgctxt "@title:window"
 msgid "Auto Resize Images"
 msgstr "स्वतः चित्राणि आकारान्तरं कुर्वन्तु"
 
-#: composer/composerviewbase.cpp:538
+#: composer/composerviewbase.cpp:546
 #, kde-format
 msgctxt "@action:button"
 msgid "Auto Resize"
 msgstr "स्वतः आकारं परिवर्तयतु"
 
-#: composer/composerviewbase.cpp:539
+#: composer/composerviewbase.cpp:547
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Resize"
 msgstr "आकारं न परिवर्तयन्तु"
 
-#: composer/composerviewbase.cpp:744
+#: composer/composerviewbase.cpp:752
 #, kde-format
 msgctxt "@title:window"
 msgid "OpenPGP Key Expired"
 msgstr "OpenPGP कुञ्जी समाप्तम्"
 
-#: composer/composerviewbase.cpp:744
+#: composer/composerviewbase.cpp:752
 #, kde-format
 msgctxt "@title:window"
 msgid "S/MIME Certificate Expired"
 msgstr "S/MIME प्रमाणपत्रस्य अवधिः समाप्तः"
 
-#: composer/composerviewbase.cpp:746
+#: composer/composerviewbase.cpp:754
 #, kde-format
 msgctxt "@title:window"
 msgid "OpenPGP Key Expires Soon"
 msgstr "OpenPGP कीलस्य अवधिः शीघ्रमेव समाप्तः भवति"
 
-#: composer/composerviewbase.cpp:747
+#: composer/composerviewbase.cpp:755
 #, kde-format
 msgctxt "@title:window"
 msgid "S/MIME Certificate Expires Soon"
 msgstr "S/MIME प्रमाणपत्रस्य अवधिः शीघ्रमेव समाप्तः भविष्यति"
 
-#: composer/composerviewbase.cpp:821 composer/composerviewbase.cpp:835
-#: composer/composerviewbase.cpp:867
+#: composer/composerviewbase.cpp:829 composer/composerviewbase.cpp:843
+#: composer/composerviewbase.cpp:875
 #, kde-format
 msgid "Failed to resolve keys. Please report a bug."
 msgstr "कीलानां समाधानं कर्तुं असफलम्। कृपया दोषं निवेदयन्तु।"
 
-#: composer/composerviewbase.cpp:1074 composer/composerviewbase.cpp:1352
+#: composer/composerviewbase.cpp:1082 composer/composerviewbase.cpp:1360
 #, kde-format
 msgid "Job cancelled by the user"
 msgstr "उपयोक्त्रा रद्दं कृतं कार्यम्"
 
-#: composer/composerviewbase.cpp:1079
+#: composer/composerviewbase.cpp:1087
 #, kde-format
 msgid ""
 "Could not compose message: %1 \n"
@@ -507,37 +507,37 @@ msgstr ""
 "सन्देशं रचयितुं न शक्तवान्: %1 \n"
 " कृपया एतत् दोषं निवेदयन्तु।"
 
-#: composer/composerviewbase.cpp:1081
+#: composer/composerviewbase.cpp:1089
 #, kde-format
 msgid "Could not compose message: %1"
 msgstr "सन्देशं रचयितुं न शक्तवान्: %1"
 
-#: composer/composerviewbase.cpp:1186
+#: composer/composerviewbase.cpp:1194
 #, kde-format
 msgid "There were problems trying to queue the message for sending: %1"
 msgstr "प्रेषणार्थं सन्देशं कतारं स्थापयितुं प्रयतमाने समस्याः आसन्: %1"
 
-#: composer/composerviewbase.cpp:1355
+#: composer/composerviewbase.cpp:1363
 #, kde-format
 msgid "Could not autosave message: %1"
 msgstr "सन्देशं स्वयमेव रक्षितुं न शक्तम्: %1"
 
-#: composer/composerviewbase.cpp:1374
+#: composer/composerviewbase.cpp:1382
 #, kde-format
 msgid "Could not write all data to file."
 msgstr "सर्वाणि दत्तांशं सञ्चिकायां लिखितुं न शक्तवान् ।"
 
-#: composer/composerviewbase.cpp:1377
+#: composer/composerviewbase.cpp:1385
 #, kde-format
 msgid "Could not finalize the file."
 msgstr "सञ्चिकां अन्तिमरूपेण स्थापयितुं न शक्तवान् ।"
 
-#: composer/composerviewbase.cpp:1381
+#: composer/composerviewbase.cpp:1389
 #, kde-format
 msgid "Could not open file."
 msgstr "सञ्चिकां उद्घाटयितुं न शक्तवान्।"
 
-#: composer/composerviewbase.cpp:1388
+#: composer/composerviewbase.cpp:1396
 #, kde-format
 msgid ""
 "Autosaving the message as %1 failed.\n"
@@ -548,18 +548,18 @@ msgstr ""
 "%2\n"
 "कारणम् : %3"
 
-#: composer/composerviewbase.cpp:1394
+#: composer/composerviewbase.cpp:1402
 #, kde-format
 msgctxt "@title:window"
 msgid "Autosaving Message Failed"
 msgstr "स्वतः रक्षणं सन्देशं विफलम्"
 
-#: composer/composerviewbase.cpp:1507
+#: composer/composerviewbase.cpp:1515
 #, kde-format
 msgid "Failed to save the message: %1"
 msgstr "सन्देशं रक्षितुं असफलम्: %1"
 
-#: composer/composerviewbase.cpp:1930
+#: composer/composerviewbase.cpp:1945
 #, kde-format
 msgid ""
 "The message you have composed seems to refer to an attached file but you "
@@ -569,25 +569,25 @@ msgstr ""
 "भवता रचितः सन्देशः संलग्नसञ्चिकां निर्दिशति इव किन्तु भवता किमपि संलग्नं न कृतम् ।\n"
 "किं भवान् स्वसन्देशे सञ्चिकां संलग्नं कर्तुम् इच्छति ?"
 
-#: composer/composerviewbase.cpp:1933
+#: composer/composerviewbase.cpp:1948
 #, kde-format
 msgctxt "@title:window"
 msgid "File Attachment Reminder"
 msgstr "सञ्चिका संलग्नक स्मरणम्"
 
-#: composer/composerviewbase.cpp:1934
+#: composer/composerviewbase.cpp:1949
 #, kde-format
 msgctxt "@action:button"
 msgid "&Attach File..."
 msgstr "&सञ्चिका संलग्नं कुर्वन्तु..."
 
-#: composer/composerviewbase.cpp:1935
+#: composer/composerviewbase.cpp:1950
 #, kde-format
 msgctxt "@action:button"
 msgid "&Send as Is"
 msgstr "&Is इति प्रेषयतु"
 
-#: composer/composerviewbase.cpp:1987
+#: composer/composerviewbase.cpp:2002
 #, kde-format
 msgid ""
 "Examination of the recipient's signing preferences yielded that you be asked "
@@ -598,25 +598,25 @@ msgstr ""
 "वा न वा इति ।\n"
 "अस्मिन् सन्देशे हस्ताक्षरं कुर्वन्तु?"
 
-#: composer/composerviewbase.cpp:1993 composer/composerviewbase.cpp:2021
+#: composer/composerviewbase.cpp:2008 composer/composerviewbase.cpp:2036
 #, kde-format
 msgctxt "@title:window"
 msgid "Sign Message?"
 msgstr "हस्ताक्षरं सन्देशः?"
 
-#: composer/composerviewbase.cpp:1994 composer/composerviewbase.cpp:2022
+#: composer/composerviewbase.cpp:2009 composer/composerviewbase.cpp:2037
 #, kde-format
 msgctxt "to sign"
 msgid "&Sign"
 msgstr "&चिह्नम्‌"
 
-#: composer/composerviewbase.cpp:1995 composer/composerviewbase.cpp:2023
+#: composer/composerviewbase.cpp:2010 composer/composerviewbase.cpp:2038
 #, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Sign"
 msgstr "हस्ताक्षरं कुर्वन्तु &न कुर्वन्तु"
 
-#: composer/composerviewbase.cpp:2016
+#: composer/composerviewbase.cpp:2031
 #, kde-format
 msgid ""
 "There are conflicting signing preferences for these recipients.\n"
@@ -625,7 +625,7 @@ msgstr ""
 "एतेषां प्राप्तकानां कृते परस्परविरोधिनः हस्ताक्षरप्राथमिकताः सन्ति ।\n"
 "अस्मिन् सन्देशे हस्ताक्षरं कुर्वन्तु?"
 
-#: composer/composerviewbase.cpp:2043
+#: composer/composerviewbase.cpp:2058
 #, kde-format
 msgid ""
 "You have requested to sign this message, but no valid signing keys have been "
@@ -634,19 +634,19 @@ msgstr ""
 "भवता एतत् सन्देशं हस्ताक्षरं कर्तुं अनुरोधः कृतः, परन्तु अस्य परिचयस्य कृते वैधहस्ताक्षरकुंजी "
 "विन्यस्ताः न सन्ति ।"
 
-#: composer/composerviewbase.cpp:2048
+#: composer/composerviewbase.cpp:2063
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Unsigned?"
 msgstr "अहस्ताक्षरितं प्रेषयतु?"
 
-#: composer/composerviewbase.cpp:2049
+#: composer/composerviewbase.cpp:2064
 #, kde-format
 msgctxt "@action:button"
 msgid "Send &Unsigned"
 msgstr "प्रेषयतु &अनहस्ताक्षरितम्"
 
-#: composer/composerviewbase.cpp:2064
+#: composer/composerviewbase.cpp:2079
 #, kde-format
 msgid ""
 "Some parts of this message will not be signed.\n"
@@ -657,7 +657,7 @@ msgstr ""
 "केवलं आंशिकरूपेण हस्ताक्षरितसन्देशान् प्रेषयित्वा साइट् नीतिस्य उल्लङ्घनं भवितुम् अर्हति ।\n"
 "तस्य स्थाने सर्वेषु भागेषु हस्ताक्षरं कुर्वन्तु?"
 
-#: composer/composerviewbase.cpp:2068
+#: composer/composerviewbase.cpp:2083
 #, kde-format
 msgid ""
 "This message will not be signed.\n"
@@ -668,29 +668,29 @@ msgstr ""
 "अहस्ताक्षरितं सन्देशं प्रेषयित्वा साइट् नीतेः उल्लङ्घनं भवितुम् अर्हति ।\n"
 "तस्य स्थाने सन्देशे हस्ताक्षरं कुर्वन्तु?"
 
-#: composer/composerviewbase.cpp:2071
+#: composer/composerviewbase.cpp:2086
 #, kde-format
 msgid "&Sign All Parts"
 msgstr "&सभी भागों पर हस्ताक्षर करें"
 
-#: composer/composerviewbase.cpp:2071
+#: composer/composerviewbase.cpp:2086
 #, kde-format
 msgid "&Sign"
 msgstr "&चिह्नम्‌"
 
-#: composer/composerviewbase.cpp:2074
+#: composer/composerviewbase.cpp:2089
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsigned-Message Warning"
 msgstr "अहस्ताक्षरित-सन्देश चेतावनी"
 
-#: composer/composerviewbase.cpp:2076
+#: composer/composerviewbase.cpp:2091
 #, kde-format
 msgctxt "@action:button"
 msgid "Send &As Is"
 msgstr "प्रेषयतु &यथा अस्ति"
 
-#: composer/composerviewbase.cpp:2123
+#: composer/composerviewbase.cpp:2138
 #, kde-format
 msgid ""
 "Valid trusted encryption keys were found for all recipients.\n"
@@ -699,7 +699,7 @@ msgstr ""
 "सर्वेषां प्राप्तकर्तानां कृते वैधविश्वसनीयगुप्तीकरणकुंजीः प्राप्ताः ।\n"
 "एतत् सन्देशं एन्क्रिप्ट् कुर्वन्तु?"
 
-#: composer/composerviewbase.cpp:2126
+#: composer/composerviewbase.cpp:2141
 #, kde-format
 msgid ""
 "Examination of the recipient's encryption preferences yielded that you be "
@@ -710,32 +710,32 @@ msgstr ""
 "इति ।\n"
 "एतत् सन्देशं एन्क्रिप्ट् कुर्वन्तु?"
 
-#: composer/composerviewbase.cpp:2132 composer/composerviewbase.cpp:2162
+#: composer/composerviewbase.cpp:2147 composer/composerviewbase.cpp:2177
 #, kde-format
 msgid "Encrypt Message?"
 msgstr "सन्देशं एन्क्रिप्ट् कुर्वन्तु?"
 
-#: composer/composerviewbase.cpp:2133
+#: composer/composerviewbase.cpp:2148
 #, kde-format
 msgid "Sign && &Encrypt"
 msgstr "हस्ताक्षरं && &Encrypt"
 
-#: composer/composerviewbase.cpp:2133 composer/composerviewbase.cpp:2215
+#: composer/composerviewbase.cpp:2148 composer/composerviewbase.cpp:2230
 #, kde-format
 msgid "&Encrypt"
 msgstr "&गुप्तीकरण"
 
-#: composer/composerviewbase.cpp:2134 composer/composerviewbase.cpp:2220
+#: composer/composerviewbase.cpp:2149 composer/composerviewbase.cpp:2235
 #, kde-format
 msgid "&Sign Only"
 msgstr "&केवलं हस्ताक्षरं कुर्वन्तु"
 
-#: composer/composerviewbase.cpp:2134 composer/composerviewbase.cpp:2220
+#: composer/composerviewbase.cpp:2149 composer/composerviewbase.cpp:2235
 #, kde-format
 msgid "&Send As-Is"
 msgstr "&यथावत् प्रेषयतु"
 
-#: composer/composerviewbase.cpp:2155
+#: composer/composerviewbase.cpp:2170
 #, kde-format
 msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
@@ -744,20 +744,20 @@ msgstr ""
 "एतेषां ग्राहकानाम् कृते परस्परविरोधिनः एन्क्रिप्शन-प्राथमिकताः सन्ति ।\n"
 "एतत् सन्देशं एन्क्रिप्ट् कुर्वन्तु?"
 
-#: composer/composerviewbase.cpp:2163 composer/keyresolver.cpp:1319
+#: composer/composerviewbase.cpp:2178 composer/keyresolver.cpp:1319
 #: composer/keyresolver.cpp:1360
 #, kde-format
 msgctxt "@action:button"
 msgid "&Encrypt"
 msgstr "&गुप्तीकरण"
 
-#: composer/composerviewbase.cpp:2164
+#: composer/composerviewbase.cpp:2179
 #, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Encrypt"
 msgstr "एन्क्रिप्ट् कुर्वन्तु &न कुर्वन्तु"
 
-#: composer/composerviewbase.cpp:2184
+#: composer/composerviewbase.cpp:2199
 #, kde-format
 msgid ""
 "You have requested to encrypt this message, and to encrypt a copy to "
@@ -767,19 +767,19 @@ msgstr ""
 "भवता एतत् सन्देशं गोपनीयं कर्तुं, प्रतिलिपिं च स्वस्य कृते गोपनं कर्तुं प्रार्थितं, परन्तु अस्य "
 "परिचयस्य कृते वैधविश्वसनीयगुप्तीकरणकुंजी विन्यस्तं नास्ति ।"
 
-#: composer/composerviewbase.cpp:2190
+#: composer/composerviewbase.cpp:2205
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Unencrypted?"
 msgstr "अगुप्तं प्रेषयतु?"
 
-#: composer/composerviewbase.cpp:2191 composer/keyresolver.cpp:1345
+#: composer/composerviewbase.cpp:2206 composer/keyresolver.cpp:1345
 #, kde-format
 msgctxt "@action:button"
 msgid "Send &Unencrypted"
 msgstr "प्रेषयतु &अगुप्तम्"
 
-#: composer/composerviewbase.cpp:2206
+#: composer/composerviewbase.cpp:2221
 #, kde-format
 msgid ""
 "Some parts of this message will not be encrypted.\n"
@@ -792,7 +792,7 @@ msgstr ""
 "संवेदनशीलसूचनाः लीकं कर्तुं शक्नुवन्ति ।\n"
 "तस्य स्थाने सर्वान् भागान् एन्क्रिप्ट् कुर्वन्तु?"
 
-#: composer/composerviewbase.cpp:2211
+#: composer/composerviewbase.cpp:2226
 #, kde-format
 msgid ""
 "This message will not be encrypted.\n"
@@ -805,12 +805,12 @@ msgstr ""
 "अर्हन्ति ।\n"
 "तस्य स्थाने सन्देशान् एन्क्रिप्ट् कुर्वन्तु?"
 
-#: composer/composerviewbase.cpp:2215
+#: composer/composerviewbase.cpp:2230
 #, kde-format
 msgid "&Encrypt All Parts"
 msgstr "&सर्वभागाः एन्क्रिप्ट् कुर्वन्तु"
 
-#: composer/composerviewbase.cpp:2218
+#: composer/composerviewbase.cpp:2233
 #, kde-format
 msgctxt "@title:window"
 msgid "Unencrypted Message Warning"
@@ -1177,17 +1177,17 @@ msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "अमान्यपुटम्"
 
-#: helper/messagefactoryng.cpp:407 helper/messagefactoryng.cpp:734
+#: helper/messagefactoryng.cpp:428 helper/messagefactoryng.cpp:757
 #, kde-format
 msgid "forwarded message"
 msgstr "अग्रे प्रेषितः सन्देशः"
 
-#: helper/messagefactoryng.cpp:577
+#: helper/messagefactoryng.cpp:599
 #, kde-format
 msgid "Receipt: "
 msgstr "प्राप्त: "
 
-#: helper/messagefactoryng.cpp:703
+#: helper/messagefactoryng.cpp:726
 #, kde-format
 msgid ""
 "\n"
