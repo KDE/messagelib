@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:53+0000\n"
-"PO-Revision-Date: 2019-03-13 03:38+0100\n"
+"PO-Revision-Date: 2026-09-05 02:15+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: lt\n"
 "Language: lt\n"
@@ -17,97 +17,100 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
+"X-Generator: Poedit 3.9\n"
 
 #: developertool/developertooldialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Developer Tool"
-msgstr ""
+msgstr "Plėtotojo įrankis"
 
 #: findbar/findbarbase.cpp:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
-msgstr ""
+msgstr "Užverti"
 
 #: findbar/findbarbase.cpp:44
 #, kde-format
 msgid "Close"
-msgstr ""
+msgstr "Užverti"
 
 #: findbar/findbarbase.cpp:50
 #, kde-format
 msgctxt "Find text"
 msgid "F&ind:"
-msgstr ""
+msgstr "&Rasti:"
 
 #: findbar/findbarbase.cpp:55
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Text to search for"
-msgstr ""
+msgstr "Tekstas, kurio ieškoti"
 
 #: findbar/findbarbase.cpp:60
 #, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
-msgstr ""
+msgstr "Kita"
 
 #: findbar/findbarbase.cpp:61
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to next match"
-msgstr ""
+msgstr "Peršokti prie kitos atitikties"
 
 #: findbar/findbarbase.cpp:66
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
-msgstr ""
+msgstr "Ankstesnė"
 
 #: findbar/findbarbase.cpp:67
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to previous match"
-msgstr ""
+msgstr "Peršokti prie ankstesnės atitikties"
 
 #: findbar/findbarbase.cpp:73
 #, kde-format
 msgid "Options"
-msgstr ""
+msgstr "Parinktys"
 
 #: findbar/findbarbase.cpp:74
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify search behavior"
-msgstr ""
+msgstr "Modifikuoti paieškos elgseną"
 
 #: findbar/findbarbase.cpp:76
 #, kde-format
 msgid "Case sensitive"
-msgstr ""
+msgstr "Skirti raidžių dydį"
 
 #: findbar/findbarbase.cpp:93
 #, kde-format
 msgid "Phrase not found"
-msgstr ""
+msgstr "Frazė nerasta"
 
 #: webenginepage.cpp:154
 #, kde-format
 msgctxt "@title:window"
 msgid "Save HTML Page"
-msgstr ""
+msgstr "Įrašyti HTML puslapį"
 
 #: widgets/submittedformwidgets/submittedformwarningwidget.cpp:23
 #, kde-format
 msgid "Submit form is not allowed in mailer. Please open url in a browser."
 msgstr ""
+"Pateikimo formą neleidžiama atvaizduoti pašto programoje. Atverkite URL "
+"adresą saityno naršyklėje."
 
 #: widgets/tracking/trackingdetailsdialog.cpp:27
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"
-msgstr ""
+msgstr "Išsamiau"
 
 #: widgets/tracking/trackingwarningwidget.cpp:21
 #, kde-format
@@ -115,22 +118,24 @@ msgid ""
 "Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
 "\">(Details...)"
 msgstr ""
+"Buvo rastas ir užblokuotas kažkoks seklys.<a href=\"mailtrackingdetails"
+"\">(Išsamiau...)"
 
 #: widgets/tracking/trackingwarningwidget.cpp:40
 #, kde-format
 msgid "Details:"
-msgstr ""
+msgstr "Išsamiau:"
 
 #: widgets/tracking/trackingwarningwidget.cpp:44
 #, kde-format
 msgid "1 tracker from the company %2 (%3)"
 msgid_plural "%1 trackers from the company %2 (%3)"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "1 seklys iš kompanijos %2 (%3)"
+msgstr[1] "%1 sekliai iš kompanijos %2 (%3)"
+msgstr[2] "%1 seklių iš kompanijos %2 (%3)"
+msgstr[3] "%1 seklys iš kompanijos %2 (%3)"
 
 #: widgets/zoomactionmenu.cpp:129
 #, kde-format
 msgid "Zoom"
-msgstr ""
+msgstr "Mastelis"
