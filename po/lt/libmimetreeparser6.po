@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-16 00:46+0000\n"
-"PO-Revision-Date: 2026-08-19 01:48+0300\n"
+"PO-Revision-Date: 2026-09-05 21:59+0300\n"
 "Last-Translator: Mindaugas Baranauskas <opensuse.lietuviu.kalba@gmail.com>\n"
 "Language-Team: lt <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -26,7 +26,7 @@ msgstr ""
 #, kde-format
 msgctxt "display name for an unnamed attachment"
 msgid "Unnamed"
-msgstr "Nepavadintas"
+msgstr "Be pavadinimo"
 
 #: src/messagepart.cpp:704 src/messagepart.cpp:749 src/messagepart.cpp:988
 #, kde-format
