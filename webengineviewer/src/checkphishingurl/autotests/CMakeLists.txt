@@ -16,7 +16,7 @@ ecm_add_test(createphishingurldatabasejobtest.cpp createphishingurldatabasejobte
 
 ecm_add_test(localdatabasemanagertest.cpp localdatabasemanagertest.h ${testwebengineviewer_webengine_common_SRCS}
     TEST_NAME localdatabasemanagertest
-    LINK_LIBRARIES Qt::Test KPim6::WebEngineViewer
+    LINK_LIBRARIES Qt::Test KPim6::WebEngineViewer KF6::ConfigCore
 )
 
 ecm_add_test(searchfullhashjobtest.cpp searchfullhashjobtest.h ${testwebengineviewer_webengine_common_SRCS}
