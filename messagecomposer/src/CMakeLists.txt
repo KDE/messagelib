@@ -303,7 +303,6 @@ target_link_libraries(
         KPim6::PimTextEdit
         KPim6::AkonadiMime
         KPim6::Libkleo
-        KPim6::MessageList
     PRIVATE
         KPim6::MailTransport
         KPim6::PimTextEdit
@@ -322,7 +321,7 @@ target_link_libraries(
         KF6::GuiAddons
         KF6::Codecs
         ${Inotify_LIBRARIES}
-        KF6::TextAutoCorrectionWidgets
+        KF6::TextAutoCorrectionCore
         KF6::TextAddonsWidgets
 )
 
