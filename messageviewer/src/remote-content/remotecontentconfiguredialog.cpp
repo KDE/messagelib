@@ -54,14 +54,20 @@ void RemoteContentConfigureDialog::slotAccept()
 
 void RemoteContentConfigureDialog::readConfig()
 {
+#if TEXTADDONSWIDGETS_VERSION >= QT_VERSION_CHECK(2, 1, 49)
+    TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myRemoteContentConfigureConfigGroupName), QSize(600, 200));
+#else
     create(); // ensure a window is created
     TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myRemoteContentConfigureConfigGroupName), 600, 200);
+#endif
 }
 
 void RemoteContentConfigureDialog::writeConfig()
 {
+#if TEXTADDONSWIDGETS_VERSION < QT_VERSION_CHECK(2, 1, 49)
     KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myRemoteContentConfigureConfigGroupName));
     KWindowConfig::saveWindowSize(windowHandle(), group);
+#endif
 }
 
 #include "moc_remotecontentconfiguredialog.cpp"

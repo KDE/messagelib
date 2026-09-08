@@ -94,14 +94,20 @@ void ScamDetectionDetailsDialog::setDetails(const QString &details)
 
 void ScamDetectionDetailsDialog::readConfig()
 {
+#if TEXTADDONSWIDGETS_VERSION >= QT_VERSION_CHECK(2, 1, 49)
+    TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myScamDetectionDetailsDialogConfigGroupName), QSize(600, 200));
+#else
     create(); // ensure a window is created
     TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myScamDetectionDetailsDialogConfigGroupName), 600, 200);
+#endif
 }
 
 void ScamDetectionDetailsDialog::writeConfig()
 {
+#if TEXTADDONSWIDGETS_VERSION < QT_VERSION_CHECK(2, 1, 49)
     KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myScamDetectionDetailsDialogConfigGroupName));
     KWindowConfig::saveWindowSize(windowHandle(), group);
+#endif
 }
 
 #include "moc_scamdetectiondetailsdialog.cpp"

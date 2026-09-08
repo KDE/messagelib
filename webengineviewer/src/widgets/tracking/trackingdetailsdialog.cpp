@@ -53,14 +53,20 @@ TrackingDetailsDialog::~TrackingDetailsDialog()
 
 void TrackingDetailsDialog::readConfig()
 {
+#if TEXTADDONSWIDGETS_VERSION >= QT_VERSION_CHECK(2, 1, 49)
+    TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myMailTrackingDetailsDialogConfigGroupName), QSize(600, 400));
+#else
     create(); // ensure a window is created
     TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myMailTrackingDetailsDialogConfigGroupName), 600, 400);
+#endif
 }
 
 void TrackingDetailsDialog::writeConfig()
 {
+#if TEXTADDONSWIDGETS_VERSION < QT_VERSION_CHECK(2, 1, 49)
     KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myMailTrackingDetailsDialogConfigGroupName));
     KWindowConfig::saveWindowSize(windowHandle(), group);
+#endif
 }
 
 void TrackingDetailsDialog::setDetails(const QString &details)

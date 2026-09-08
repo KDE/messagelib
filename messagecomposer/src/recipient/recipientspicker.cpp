@@ -207,14 +207,20 @@ void RecipientsPicker::keyPressEvent(QKeyEvent *event)
 
 void RecipientsPicker::readConfig()
 {
+#if TEXTADDONSWIDGETS_VERSION >= QT_VERSION_CHECK(2, 1, 49)
+    TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myRecipientsPickerConfigGroupName), QSize(300, 200));
+#else
     create(); // ensure a window is created
     TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myRecipientsPickerConfigGroupName), 300, 200);
+#endif
 }
 
 void RecipientsPicker::writeConfig()
 {
+#if TEXTADDONSWIDGETS_VERSION < QT_VERSION_CHECK(2, 1, 49)
     KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myRecipientsPickerConfigGroupName));
     KWindowConfig::saveWindowSize(windowHandle(), group);
+#endif
 }
 
 void RecipientsPicker::slotSearchLDAP()
