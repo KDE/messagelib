@@ -2431,6 +2431,3 @@ msgstr "Диспечерът на поща е офлайн."
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr "Включване онлайн"
-
-#~ msgid "KMail was unable to open the attachment"
-#~ msgstr "KMail не можа да отвори прикачения файл."
