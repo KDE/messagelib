@@ -1198,7 +1198,7 @@ msgstr ""
 #: core/widgets/searchlinecommand.cpp:156
 #, kde-format
 msgid "Literal string"
-msgstr "Chaîne littérale"
+msgstr "Chaine littérale"
 
 #: core/widgets/searchlinecommand.cpp:158
 #, kde-format
