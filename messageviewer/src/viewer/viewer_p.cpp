@@ -69,6 +69,7 @@
 // Qt includes
 #include <QActionGroup>
 #include <QClipboard>
+#include <QDir>
 #include <QItemSelectionModel>
 #include <QMimeDatabase>
 #include <QPrintDialog>
@@ -637,6 +638,7 @@ QList<KMime::Content *> ViewerPrivate::selectedContents() const
 void ViewerPrivate::attachmentOpenWith(const KMime::Content *node, const KService::Ptr &offer)
 {
     QString name = mNodeHelper->writeNodeToTempFile(node);
+    QString tmpDirPath;
 
     // Make sure that it will not deleted when we switch from message.
     auto tmpDir = new QTemporaryDir(QDir::tempPath() + "/kmail_messageviewer_attachment_XXXXXX"_L1);
@@ -652,6 +654,7 @@ void ViewerPrivate::attachmentOpenWith(const KMime::Content *node, const KServic
             qCDebug(MESSAGEVIEWER_LOG) << " File was not able to copy: filename: " << name << " to " << path;
         } else {
             name = newPath;
+            tmpDirPath = path;
         }
         f.close();
     } else {
@@ -664,11 +667,15 @@ void ViewerPrivate::attachmentOpenWith(const KMime::Content *node, const KServic
 
     auto job = new KIO::ApplicationLauncherJob(offer);
     job->setUrls({url});
+    job->setRunFlags(KIO::ApplicationLauncherJob::DeleteTemporaryFiles);
     job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, mMainWindow));
     job->start();
-    connect(job, &KJob::result, this, [url, job]() {
+    connect(job, &KJob::result, this, [url, tmpDirPath, job]() {
         if (job->error()) {
             QFile::remove(url.toLocalFile());
+            if (!tmpDirPath.isEmpty()) {
+                QDir().rmdir(tmpDirPath);
+            }
         }
     });
 }
