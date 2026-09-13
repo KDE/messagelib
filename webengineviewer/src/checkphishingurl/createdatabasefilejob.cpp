@@ -56,7 +56,7 @@ void CreateDatabaseFileJobPrivate::createFileFromFullUpdate(const QList<Addition
                 Addition tmp;
                 tmp.hashString = m;
                 tmp.prefixSize = add.prefixSize;
-                itemToStore << tmp;
+                itemToStore << std::move(tmp);
 
                 // We store index as 8 octets.
                 hashStartPosition += 8;

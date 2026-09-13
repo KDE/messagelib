@@ -293,7 +293,7 @@ QList<Removal> CreatePhishingUrlDataBaseJobPrivate::parseRemovals(const QVariant
                 }
             }
             if (tmp.isValid()) {
-                removalList.append(tmp);
+                removalList.append(std::move(tmp));
             }
         } else {
             qCDebug(WEBENGINEVIEWER_LOG) << " CreatePhishingUrlDataBaseJob::parseRemovals not parsing type " << v.typeName();

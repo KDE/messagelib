@@ -191,7 +191,7 @@ QList<WebEngineViewer::Addition> LocalDataBaseFile::extractAllInfo() const
         tmp.prefixSize = tmp.hashString.size();
         tmp.compressionType = WebEngineViewer::UpdateDataBaseInfo::RawCompression;
         index += 8; // next index based on quint64
-        lst.append(tmp);
+        lst.append(std::move(tmp));
     }
     return lst;
 }
