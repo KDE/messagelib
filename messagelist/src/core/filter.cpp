@@ -160,7 +160,7 @@ QList<SearchLineCommand::SearchLineInfo> Filter::searchLineCommands() const
     const QString text = mSearchString;
     QList<SearchLineCommand::SearchLineInfo> infos;
     if (mOptions & SearchMessageByButtons::SearchAgainstBody) {
-        const SearchLineCommand::SearchLineInfo i{
+        SearchLineCommand::SearchLineInfo i{
             .type = SearchLineCommand::SearchLineType::Body,
             .argument = mSearchString,
         };
@@ -169,7 +169,7 @@ QList<SearchLineCommand::SearchLineInfo> Filter::searchLineCommands() const
         }
     }
     if (mOptions & SearchMessageByButtons::SearchAgainstSubject) {
-        const SearchLineCommand::SearchLineInfo i{
+        SearchLineCommand::SearchLineInfo i{
             .type = SearchLineCommand::SearchLineType::Subject,
             .argument = mSearchString,
         };
@@ -178,7 +178,7 @@ QList<SearchLineCommand::SearchLineInfo> Filter::searchLineCommands() const
         }
     }
     if (mOptions & SearchMessageByButtons::SearchAgainstBcc) {
-        const SearchLineCommand::SearchLineInfo i{
+        SearchLineCommand::SearchLineInfo i{
             .type = SearchLineCommand::SearchLineType::Bcc,
             .argument = mSearchString,
         };
@@ -187,7 +187,7 @@ QList<SearchLineCommand::SearchLineInfo> Filter::searchLineCommands() const
         }
     }
     if (mOptions & SearchMessageByButtons::SearchAgainstCc) {
-        const SearchLineCommand::SearchLineInfo i{
+        SearchLineCommand::SearchLineInfo i{
             .type = SearchLineCommand::SearchLineType::Cc,
             .argument = mSearchString,
         };
