@@ -29,6 +29,7 @@ private:
 QList<QAction *> NetworkUrlInterceptorManagerPrivate::interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const
 {
     QList<QAction *> lstActions;
+    lstActions.reserve(mListInterface.count());
     for (const WebEngineViewer::NetworkPluginUrlInterceptorInterface *interface : std::as_const(mListInterface)) {
         lstActions.append(interface->interceptorUrlActions(result));
     }
