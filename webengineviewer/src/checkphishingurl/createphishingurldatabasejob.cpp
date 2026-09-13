@@ -79,7 +79,7 @@ void CreatePhishingUrlDataBaseJob::setDataBaseState(const QString &value)
 void CreatePhishingUrlDataBaseJob::slotError(QNetworkReply::NetworkError error)
 {
     auto reply = qobject_cast<QNetworkReply *>(sender());
-    qWarning() << " error " << error << " error string : " << reply->errorString();
+    // qWarning() << " error " << error << " error string : " << reply->errorString();
     reply->deleteLater();
     deleteLater();
 }

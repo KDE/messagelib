@@ -105,7 +105,7 @@ bool Addition::isValid() const
             qCWarning(WEBENGINEVIEWER_LOG) << "Prefix size is not correct";
             valid = false;
         } else if ((hashString.size() % static_cast<int>(prefixSize)) != 0) {
-            qDebug() << " hashString.size() " << hashString.size() << "prefixSize " << prefixSize;
+            // qDebug() << " hashString.size() " << hashString.size() << "prefixSize " << prefixSize;
             qCWarning(WEBENGINEVIEWER_LOG) << "it's not a correct hash value";
             valid = false;
         } else {
