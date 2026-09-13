@@ -28,7 +28,7 @@ inline QString localDataBasePath()
 
 inline QString databaseFullPath()
 {
-    return localDataBasePath() + u'/' + WebEngineViewer::CheckPhishingUrlUtil::databaseFileName();
+    return localDataBasePath() + WebEngineViewer::CheckPhishingUrlUtil::databaseFileName();
 }
 }
 
