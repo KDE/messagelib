@@ -29,8 +29,7 @@ bool BlockTrackingUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &inf
     if (urlRequestUrl.scheme() != "data"_L1) {
         qCDebug(WEBENGINEVIEWER_BLOCK_TRACKING_URL_LOG) << " Tracking url " << urlRequestUrl;
     }
-    for (int i = 0, total = mBackList.size(); i < total; ++i) {
-        const auto blackListinfo{mBackList.at(i)};
+    for (const auto &blackListinfo : std::as_const(mBackList)) {
         if (urlRequestUrl.url().startsWith(blackListinfo.mCompanyUrl)) {
             qCDebug(WEBENGINEVIEWER_BLOCK_TRACKING_URL_LOG) << " found tracker " << blackListinfo;
             Q_EMIT trackingFound(blackListinfo);
