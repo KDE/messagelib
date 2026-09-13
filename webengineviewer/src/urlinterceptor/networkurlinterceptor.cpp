@@ -32,9 +32,7 @@ void NetworkUrlInterceptorPrivate::addInterceptor(NetworkPluginUrlInterceptorInt
 
 void NetworkUrlInterceptorPrivate::removeInterceptor(NetworkPluginUrlInterceptorInterface *interceptor)
 {
-    if (listInterceptor.contains(interceptor)) {
-        listInterceptor.removeOne(interceptor);
-    }
+    listInterceptor.removeOne(interceptor);
 }
 
 void NetworkUrlInterceptorPrivate::interceptRequest(QWebEngineUrlRequestInfo &info)
