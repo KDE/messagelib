@@ -26,7 +26,7 @@ QString UrlHashing::canonicalizeUrl(QUrl url)
         return {};
     }
     QString path = url.path();
-    if (url.path().isEmpty()) {
+    if (path.isEmpty()) {
         url.setPath(u"/"_s);
     } else {
         // First, remove tab (0x09), CR (0x0d), and LF (0x0a) characters from the URL. Do not remove escape sequences for these characters (e.g. '%0a').

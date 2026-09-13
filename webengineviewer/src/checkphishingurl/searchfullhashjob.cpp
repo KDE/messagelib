@@ -106,8 +106,7 @@ void SearchFullHashJob::parse(const QByteArray &replyStr)
                     const QMap<QString, QVariant>::const_iterator urlMapItEnd = urlMap.cend();
                     hashList.reserve(urlMap.count());
                     for (; urlMapIt != urlMapItEnd; ++urlMapIt) {
-                        const QByteArray hashStr = urlMapIt.value().toByteArray();
-                        hashList << hashStr;
+                        hashList << urlMapIt.value().toByteArray();
                     }
 
                     if (d->foundExactHash(hashList)) {
