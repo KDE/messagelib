@@ -23,6 +23,7 @@ class BackOffModeManagerPrivate;
  */
 class WEBENGINEVIEWER_EXPORT BackOffModeManager : public QObject
 {
+    Q_OBJECT
 public:
     /*! Constructs a BackOffModeManager object. */
     explicit BackOffModeManager(QObject *parent = nullptr);
