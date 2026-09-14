@@ -408,7 +408,8 @@ bool DefaultRendererPrivate::renderWithFactory(const QMetaObject *mo, const Mess
     if (!mRendererFactory) {
         return false;
     }
-    for (auto r : mRendererFactory->renderersForPart(mo, msgPart)) {
+    const auto renderers = mRendererFactory->renderersForPart(mo, msgPart);
+    for (auto r : renderers) {
         if (r->render(msgPart, htmlWriter, this)) {
             return true;
         }

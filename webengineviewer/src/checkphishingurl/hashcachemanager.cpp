@@ -69,7 +69,7 @@ void HashCacheManagerPrivate::save()
     QList<QByteArray> lstOk;
     QList<double> lstOkDuration;
 
-    for (const auto &[key, value] : mHashList.asKeyValueRange()) {
+    for (const auto &[key, value] : std::as_const(mHashList).asKeyValueRange()) {
         switch (value.status) {
         case HashCacheManager::UrlOk:
             lstOk << key;

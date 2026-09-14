@@ -364,8 +364,10 @@ void TemplateParserJobTest::test_forwardedAttachments()
         referenceMsg->parse();
 
         QCOMPARE(msg->contents().size(), referenceMsg->contents().size());
-        for (int i = 1; i < msg->contents().size(); i++) {
-            QCOMPARE(msg->contents()[i]->encodedContent(), referenceMsg->contents()[i]->encodedContent());
+        const auto msgContents = msg->contents();
+        const auto referenceMsgContents = referenceMsg->contents();
+        for (int i = 1; i < msgContents.size(); i++) {
+            QCOMPARE(msgContents.at(i)->encodedContent(), referenceMsgContents.at(i)->encodedContent());
         }
         referenceMsg.reset();
     } else {

@@ -444,7 +444,7 @@ void StringUtilTest::test_parseDuplicateQueryItems()
         } else if (values.at(i).first == "body"_L1) {
             QCOMPARE(values.at(i).second, "line1\r\nline2"_L1);
         } else if (values.at(i).first == "cc"_L1) {
-            const QString ccVal = values.at(i).second;
+            const QString &ccVal = values.at(i).second;
             valueCC++;
             if ((ccVal != "someone_else@example.com"_L1) && (ccVal != "someone_else2@example.com"_L1)) {
                 QVERIFY(false);

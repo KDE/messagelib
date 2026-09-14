@@ -30,6 +30,7 @@
 #include <algorithm>
 #include <sstream>
 #include <string>
+#include <utility>
 
 using namespace Qt::Literals::StringLiterals;
 namespace MimeTreeParser
@@ -43,7 +44,7 @@ NodeHelper::NodeHelper()
 
 NodeHelper::~NodeHelper()
 {
-    for (auto att : mListAttachmentTemporaryDirs) {
+    for (const auto &att : std::as_const(mListAttachmentTemporaryDirs)) {
         if (att) {
             att->forceCleanTempFiles();
             delete att;

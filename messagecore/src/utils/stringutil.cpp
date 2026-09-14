@@ -120,7 +120,7 @@ static bool flushPart(QString &msg, QStringList &textParts, const QString &inden
 
     QString text;
 
-    for (const QString &line : textParts) {
+    for (const QString &line : std::as_const(textParts)) {
         // An empty line in the input means that an empty line should be in the output as well.
         // Therefore, we write all of our text so far to the msg.
         if (line.isEmpty()) {
@@ -568,7 +568,7 @@ QString smartQuote(const QString &msg, int maxLineLength)
             if (!textParts.isEmpty()) {
                 for (int i = textParts.count() - 1; i >= 0; i--) {
                     // Check if we have found the From line
-                    const QString textPartElement(textParts[i]);
+                    const QString textPartElement(textParts.at(i));
                     if (textPartElement.endsWith(u':')) {
                         fromLine = oldIndent + textPartElement + u'\n';
                         textParts.removeAt(i);

@@ -991,7 +991,7 @@ public:
         if (Q_UNLIKELY(mPixmaps.isEmpty())) {
             populatePixmapCache();
         }
-        return mPixmaps[icon];
+        return mPixmaps.at(icon);
     }
 
 protected:

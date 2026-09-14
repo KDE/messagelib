@@ -50,7 +50,7 @@ void LocalDataBaseManager::checkUrl(const QUrl &url)
         QHashIterator<QByteArray, QByteArray> i(hashList);
         while (i.hasNext()) {
             i.next();
-            const QByteArray ba = i.value();
+            const QByteArray &ba = i.value();
             QByteArray result = d->mFile.searchHash(ba);
             if (ba.contains(result)) {
                 conflictHashs.insert(i.key().toBase64(), ba.toBase64());

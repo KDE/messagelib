@@ -902,9 +902,7 @@ void AttachmentControllerBase::showAddAttachmentFileDialog()
 {
     const auto urls = QFileDialog::getOpenFileUrls(d->wParent, i18nc("@title:window", "Attach File"));
     if (!urls.isEmpty()) {
-        const int numberOfFiles(urls.count());
-        for (int i = 0; i < numberOfFiles; ++i) {
-            const QUrl url = urls.at(i);
+        for (const QUrl &url : urls) {
             std::optional<QStringConverter::Encoding> encoding;
 
             QFile file(url.toLocalFile());

@@ -231,8 +231,7 @@ void WebEngineAccessKey::keyReleaseEvent(QKeyEvent *e)
 void WebEngineAccessKey::hideAccessKeys()
 {
     if (!d->mAccessKeyLabels.isEmpty()) {
-        for (int i = 0, count = d->mAccessKeyLabels.count(); i < count; ++i) {
-            QLabel *label = d->mAccessKeyLabels[i];
+        for (QLabel *label : std::as_const(d->mAccessKeyLabels)) {
             label->hide();
             label->deleteLater();
         }

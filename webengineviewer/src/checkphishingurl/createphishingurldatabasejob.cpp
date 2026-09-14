@@ -179,7 +179,7 @@ RiceDeltaEncoding CreatePhishingUrlDataBaseJobPrivate::parseRiceDeltaEncoding(co
     QMap<QString, QVariant>::const_iterator riceHashesIt = map.cbegin();
     const QMap<QString, QVariant>::const_iterator riceHashesItEnd = map.cend();
     for (; riceHashesIt != riceHashesItEnd; ++riceHashesIt) {
-        const QString key = riceHashesIt.key();
+        const QString &key = riceHashesIt.key();
         if (key == "firstValue"_L1) {
             riceDeltaEncodingTmp.firstValue = riceHashesIt.value().toByteArray();
         } else if (key == "riceParameter"_L1) {
@@ -204,7 +204,7 @@ QList<Addition> CreatePhishingUrlDataBaseJobPrivate::parseAdditions(const QVaria
             Addition tmp;
             while (mapIt.hasNext()) {
                 mapIt.next();
-                const QString keyStr = mapIt.key();
+                const QString &keyStr = mapIt.key();
                 if (keyStr == "compressionType"_L1) {
                     tmp.compressionType = parseCompressionType(mapIt.value().toString());
                 } else if (keyStr == "riceHashes"_L1) {
@@ -216,7 +216,7 @@ QList<Addition> CreatePhishingUrlDataBaseJobPrivate::parseAdditions(const QVaria
                     QMapIterator<QString, QVariant> rawHashesIt(mapIt.value().toMap());
                     while (rawHashesIt.hasNext()) {
                         rawHashesIt.next();
-                        const QString key = rawHashesIt.key();
+                        const QString &key = rawHashesIt.key();
                         if (key == "rawHashes"_L1) {
                             tmp.hashString = QByteArray::fromBase64(rawHashesIt.value().toByteArray());
                         } else if (key == "prefixSize"_L1) {
@@ -263,7 +263,7 @@ QList<Removal> CreatePhishingUrlDataBaseJobPrivate::parseRemovals(const QVariant
             QMapIterator<QString, QVariant> mapIt(v.toMap());
             while (mapIt.hasNext()) {
                 mapIt.next();
-                const QString keyStr = mapIt.key();
+                const QString &keyStr = mapIt.key();
                 if (keyStr == "compressionType"_L1) {
                     tmp.compressionType = parseCompressionType(mapIt.value().toString());
                 } else if (keyStr == "riceIndices"_L1) {
@@ -324,7 +324,7 @@ void CreatePhishingUrlDataBaseJob::parseResult(const QByteArray &value)
                             QMapIterator<QString, QVariant> mapIt(infoVar.toMap());
                             while (mapIt.hasNext()) {
                                 mapIt.next();
-                                const QString mapKey = mapIt.key();
+                                const QString &mapKey = mapIt.key();
                                 if (mapKey == "additions"_L1) {
                                     const QVariantList lst = mapIt.value().toList();
                                     const QList<Addition> addList = d->parseAdditions(lst);

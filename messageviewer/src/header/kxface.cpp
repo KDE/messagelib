@@ -88,54 +88,55 @@ QString KXFace::fromImage(const QImage &image)
     xbm.truncate(576);
     QString tmp = QLatin1StringView(xbm.toLatin1());
     int len = tmp.length();
+    QChar *const xbmData = tmp.data();
     for (int i = 0; i < len; ++i) {
-        switch (tmp[i].toLatin1()) {
+        switch (xbmData[i].toLatin1()) {
         case '1':
-            tmp[i] = u'8';
+            xbmData[i] = u'8';
             break;
         case '2':
-            tmp[i] = u'4';
+            xbmData[i] = u'4';
             break;
         case '3':
-            tmp[i] = u'c';
+            xbmData[i] = u'c';
             break;
         case '4':
-            tmp[i] = u'2';
+            xbmData[i] = u'2';
             break;
         case '5':
-            tmp[i] = u'a';
+            xbmData[i] = u'a';
             break;
         case '7':
-            tmp[i] = u'e';
+            xbmData[i] = u'e';
             break;
         case '8':
-            tmp[i] = u'1';
+            xbmData[i] = u'1';
             break;
         case 'A':
         case 'a':
-            tmp[i] = u'5';
+            xbmData[i] = u'5';
             break;
         case 'B':
         case 'b':
-            tmp[i] = u'd';
+            xbmData[i] = u'd';
             break;
         case 'C':
         case 'c':
-            tmp[i] = u'3';
+            xbmData[i] = u'3';
             break;
         case 'D':
         case 'd':
-            tmp[i] = u'b';
+            xbmData[i] = u'b';
             break;
         case 'E':
         case 'e':
-            tmp[i] = u'7';
+            xbmData[i] = u'7';
             break;
         }
         if (i % 2) {
-            QChar t = tmp[i];
-            tmp[i] = tmp[i - 1];
-            tmp[i - 1] = t;
+            QChar t = xbmData[i];
+            xbmData[i] = xbmData[i - 1];
+            xbmData[i - 1] = t;
         }
     }
     tmp.replace(QRegularExpression(u"(\\w{12})"_s), u"\\1\n"_s);

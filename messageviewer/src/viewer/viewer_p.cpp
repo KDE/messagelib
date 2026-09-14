@@ -1907,7 +1907,8 @@ QString ViewerPrivate::renderAttachments(KMime::Content *node, const QColor &bgC
         }
     }
 
-    for (KMime::Content *extraNode : mNodeHelper->extraContents(node)) {
+    const QList<KMime::Content *> extraNodes = mNodeHelper->extraContents(node);
+    for (KMime::Content *extraNode : extraNodes) {
         html += renderAttachments(extraNode, bgColor, fm);
     }
 

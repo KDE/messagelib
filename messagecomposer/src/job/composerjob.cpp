@@ -295,8 +295,7 @@ QList<ContentJobBase *> ComposerJobPrivate::createEncryptJobs(ContentJobBase *co
 
     const int encDataSize = encData.size();
     jobs.reserve(encDataSize);
-    for (int i = 0; i < encDataSize; ++i) {
-        QPair<QStringList, std::vector<GpgME::Key>> recipients = encData[i];
+    for (const auto &recipients : std::as_const(encData)) {
         qCDebug(MESSAGECOMPOSER_LOG) << "got first list of recipients:" << recipients.first;
         ContentJobBase *subJob = nullptr;
         if (doSign) {
@@ -381,7 +380,7 @@ void ComposerJobPrivate::contentJobFinished(KJob *job)
         skeletonMessage = std::move(headers);
     } else { // just use the saved headers from before
         if (!encData.isEmpty()) {
-            const auto firstElement = encData.at(0);
+            const auto &firstElement = encData.at(0);
             qCDebug(MESSAGECOMPOSER_LOG) << "setting enc data:" << firstElement.first << "with num keys:" << firstElement.second.size();
             keys = firstElement.second;
             recipients = firstElement.first;

@@ -72,7 +72,8 @@ QStringList OpenUrlWithManager::openUrlWithListPath() const
 
 void OpenUrlWithManager::loadGlobalSettings()
 {
-    for (const QString &path : openUrlWithListPath()) {
+    const QStringList lstPath = openUrlWithListPath();
+    for (const QString &path : lstPath) {
         QDir dir(path);
         const QStringList entries = dir.entryList({u"*.openurl"_s});
         for (const QString &entry : entries) {

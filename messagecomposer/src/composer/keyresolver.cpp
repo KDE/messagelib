@@ -1657,7 +1657,7 @@ MessageComposer::ContactPreference KeyResolver::lookupContactPreferences(const Q
 
     const KContacts::Addressee::List res = job->contacts();
     if (!res.isEmpty()) {
-        KContacts::Addressee addr = res.at(0);
+        const KContacts::Addressee &addr = res.at(0);
         pref.fillFromAddressee(addr);
     }
 

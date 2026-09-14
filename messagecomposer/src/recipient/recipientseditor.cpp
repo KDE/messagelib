@@ -254,8 +254,9 @@ void RecipientsEditor::slotLineDeleted([[maybe_unused]] int pos)
 {
     bool atLeastOneToLine = false;
     int firstCC = -1;
-    for (int i = 0, total = lines().count(); i < total; ++i) {
-        MultiplyingLine *line = lines().at(i);
+    const auto currentLines = lines();
+    for (int i = 0, total = currentLines.count(); i < total; ++i) {
+        MultiplyingLine *line = currentLines.at(i);
         auto rec = qobject_cast<RecipientLineNG *>(line);
         if (rec) {
             if (rec->recipientType() == Recipient::To) {
@@ -267,7 +268,7 @@ void RecipientsEditor::slotLineDeleted([[maybe_unused]] int pos)
     }
 
     if (!atLeastOneToLine && (firstCC >= 0)) {
-        auto firstCCLine = qobject_cast<RecipientLineNG *>(lines().at(firstCC));
+        auto firstCCLine = qobject_cast<RecipientLineNG *>(currentLines.at(firstCC));
         if (firstCCLine) {
             firstCCLine->setRecipientType(Recipient::To);
         }

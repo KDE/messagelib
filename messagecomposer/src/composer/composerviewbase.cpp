@@ -1064,16 +1064,16 @@ void ComposerViewBase::slotSendComposeResult(KJob *job)
         Q_ASSERT(m_composerJobs.contains(composerJob));
         // The messages were composed successfully.
         qCDebug(MESSAGECOMPOSER_LOG) << "NoError.";
-        const int numberOfMessage(composerJob->resultMessages().size());
-        for (int i = 0; i < numberOfMessage; ++i) {
+        const auto resultMessages = composerJob->resultMessages();
+        for (const auto &resultMessage : resultMessages) {
             if (mSaveIn == MessageComposer::MessageSender::SaveInNone) {
-                queueMessage(composerJob->resultMessages().at(i), composerJob);
+                queueMessage(resultMessage, composerJob);
             } else {
-                saveMessage(composerJob->resultMessages().at(i), mSaveIn);
+                saveMessage(resultMessage, mSaveIn);
             }
         }
-        if (numberOfMessage > 0) {
-            saveRecentAddresses(composerJob->resultMessages().at(0));
+        if (!resultMessages.isEmpty()) {
+            saveRecentAddresses(resultMessages.constFirst());
         }
     } else if (composerJob->error() == MessageComposer::ComposerJob::UserCancelledError) {
         // The job warned the user about something, and the user chose to return
@@ -1963,7 +1963,7 @@ void ComposerViewBase::markAllAttachmentsForSigning(bool sign)
 {
     if (m_attachmentModel) {
         const auto attachments = m_attachmentModel->attachments();
-        for (MessageCore::AttachmentPart::Ptr attachment : attachments) {
+        for (const MessageCore::AttachmentPart::Ptr &attachment : attachments) {
             attachment->setSigned(sign);
         }
     }
@@ -1973,7 +1973,7 @@ void ComposerViewBase::markAllAttachmentsForEncryption(bool encrypt)
 {
     if (m_attachmentModel) {
         const auto attachments = m_attachmentModel->attachments();
-        for (MessageCore::AttachmentPart::Ptr attachment : attachments) {
+        for (const MessageCore::AttachmentPart::Ptr &attachment : attachments) {
             attachment->setEncrypted(encrypt);
         }
     }

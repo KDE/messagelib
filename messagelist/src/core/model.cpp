@@ -2539,7 +2539,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass4
     int endIndex = job->endIndex();
 
     while (curIndex <= endIndex) {
-        MessageItem *mi = mUnassignedMessageListForPass4[curIndex];
+        MessageItem *mi = mUnassignedMessageListForPass4.at(curIndex);
         if (!mi->parent()) {
             // Unassigned item: thread leader, insert into the proper group.
             // Locate the group (or root if no grouping requested)
@@ -2584,7 +2584,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass3
 
     while (curIndex <= endIndex) {
         // If we're here, then threading is requested for sure.
-        auto mi = mUnassignedMessageListForPass3[curIndex];
+        auto mi = mUnassignedMessageListForPass3.at(curIndex);
         if ((!mi->parent()) || (mi->threadingStatus() == MessageItem::ParentMissing)) {
             // Parent is missing (either "physically" with the item being not attached or "logically"
             // with the item being attached to a group or directly to the root.
@@ -2667,7 +2667,7 @@ ModelPrivate::ViewItemJobResult ModelPrivate::viewItemJobStepInternalForJobPass2
 
     while (curIndex <= endIndex) {
         // If we're here, then threading is requested for sure.
-        auto mi = mUnassignedMessageListForPass2[curIndex];
+        auto mi = mUnassignedMessageListForPass2.at(curIndex);
         // The item may or may not have a parent.
         // If it has no parent or it has a temporary one (mi->parent() && mi->threadingStatus() == MessageItem::ParentMissing)
         // then we attempt to (re-)thread it. Otherwise we just do nothing (the job has already been done by the previous steps).
