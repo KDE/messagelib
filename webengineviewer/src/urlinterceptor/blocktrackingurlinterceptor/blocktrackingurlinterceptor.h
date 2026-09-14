@@ -8,6 +8,7 @@
 
 #include "webengineviewer_export.h"
 #include <QList>
+#include <QRegularExpression>
 #include <WebEngineViewer/NetworkPluginUrlInterceptorInterface>
 class QDebug;
 namespace WebEngineViewer
@@ -29,13 +30,13 @@ public:
         TrackerBlackList(const QString &company, const QString &pattern, const QString &url)
             : mCompanyName(company)
             , mCompanyUrl(url)
-            , mPattern(pattern)
+            , mPattern(pattern, QRegularExpression::CaseInsensitiveOption)
         {
         }
 
         QString mCompanyName;
         QString mCompanyUrl;
-        QString mPattern;
+        QRegularExpression mPattern;
     };
 
     explicit BlockTrackingUrlInterceptor(QObject *parent = nullptr);
