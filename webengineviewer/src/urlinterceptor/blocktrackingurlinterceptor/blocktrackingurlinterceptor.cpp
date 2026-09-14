@@ -22,10 +22,14 @@ BlockTrackingUrlInterceptor::~BlockTrackingUrlInterceptor() = default;
 
 bool BlockTrackingUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &info)
 {
+    return interceptRequest(info.requestUrl());
+}
+
+bool BlockTrackingUrlInterceptor::interceptRequest(const QUrl &urlRequestUrl)
+{
     if (!mEnabledMailTrackingInterceptor) {
         return false;
     }
-    const QUrl urlRequestUrl(info.requestUrl());
     if (urlRequestUrl.scheme() != "data"_L1) {
         qCDebug(WEBENGINEVIEWER_BLOCK_TRACKING_URL_LOG) << " Tracking url " << urlRequestUrl;
     }
@@ -73,8 +77,9 @@ void BlockTrackingUrlInterceptor::initializeList()
         {u"Intercom"_s, uR"(via\.intercom\.io\/o|\/\/.*\.intercom-\w+\.com(\/via)?\/)"_s, u"https://www.intercom.com"_s},
         {u"LaunchBit"_s, uR"(launchbit\.com\/taz-pixel)"_s, u"https://launchbit.com"_s},
         {u"Litmus"_s, uR"(emltrk\.com)"_s, u"https://www.litmus.com"_s},
-        {u"MailChimp"_s, uR"(list-manage\.com\/track|\/track\/open\.php\?u=)"_s, u"https://mailchimp.com"_s},
-        {u"Mailgun"_s, uR"(\/e\/o\/[A-Za-z0-9+\/=]+)"_s, u"https://www.mailgun.com"_s},
+        {u"MailChimp"_s, uR"(list-manage\d*\.com\/track)"_s, u"https://mailchimp.com"_s},
+        // Segment sends through Mailgun, so exclude its host here to keep the more precise Segment entry reachable.
+        {u"Mailgun"_s, uR"((?<!segment\.com)\/e\/o\/[A-Za-z0-9+\/=]+)"_s, u"https://www.mailgun.com"_s},
         {u"Mailjet"_s, uR"(\/\/links\..*\/oo\/|\.mjt\.lu\/|\/oo\/.*\.gif)"_s, u"https://www.mailjet.com"_s},
         {u"Mailspring"_s, uR"(getmailspring\.com\/open)"_s, u"https://getmailspring.com"_s},
         {u"Mailtrack.io"_s, uR"(mailtrack\.io\/trace|mltrk\.io\/pixel\/)"_s, u"https://mailtrack.io"_s},

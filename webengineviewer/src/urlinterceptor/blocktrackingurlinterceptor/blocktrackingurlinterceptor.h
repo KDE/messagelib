@@ -11,6 +11,7 @@
 #include <QRegularExpression>
 #include <WebEngineViewer/NetworkPluginUrlInterceptorInterface>
 class QDebug;
+class QUrl;
 namespace WebEngineViewer
 {
 /*!
@@ -44,6 +45,8 @@ public:
     ~BlockTrackingUrlInterceptor() override;
     /*! Intercepts URL requests. */
     [[nodiscard]] bool interceptRequest(QWebEngineUrlRequestInfo &info) override;
+    /*! Intercepts a request for the given URL. Used by autotest only. */
+    [[nodiscard]] bool interceptRequest(const QUrl &url);
 
     /*! Returns whether mail tracking interception is enabled. */
     [[nodiscard]] bool enabledMailTrackingInterceptor() const;
