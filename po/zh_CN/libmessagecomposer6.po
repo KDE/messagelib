@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-03 00:44+0000\n"
+"POT-Creation-Date: 2026-09-15 00:45+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -43,7 +43,7 @@ msgid "Compress"
 msgstr "压缩"
 
 #: attachment/attachmentcontrollerbase.cpp:202
-#: attachment/attachmentcontrollerbase.cpp:968
+#: attachment/attachmentcontrollerbase.cpp:966
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach file"
@@ -274,20 +274,20 @@ msgid "&Replace"
 msgstr "替换(&R)"
 
 #: attachment/attachmentcontrollerbase.cpp:858
-#: attachment/attachmentcontrollerbase.cpp:937
+#: attachment/attachmentcontrollerbase.cpp:935
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
 msgstr "您真的想要附加目录“%1”吗？"
 
 #: attachment/attachmentcontrollerbase.cpp:859
-#: attachment/attachmentcontrollerbase.cpp:938
+#: attachment/attachmentcontrollerbase.cpp:936
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach directory"
 msgstr "附加目录"
 
 #: attachment/attachmentcontrollerbase.cpp:860
-#: attachment/attachmentcontrollerbase.cpp:939
+#: attachment/attachmentcontrollerbase.cpp:937
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach"
@@ -305,12 +305,12 @@ msgctxt "@title:window"
 msgid "Attach File"
 msgstr "附加文件"
 
-#: attachment/attachmentcontrollerbase.cpp:992
+#: attachment/attachmentcontrollerbase.cpp:990
 #, kde-format
 msgid "Attach Public OpenPGP Key"
 msgstr "附加 OpenPGP 公钥"
 
-#: attachment/attachmentcontrollerbase.cpp:993
+#: attachment/attachmentcontrollerbase.cpp:991
 #, kde-format
 msgid "Select the public key which should be attached."
 msgstr "请选择需要附加的公钥。"

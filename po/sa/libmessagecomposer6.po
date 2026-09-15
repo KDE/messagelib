@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-03 00:44+0000\n"
+"POT-Creation-Date: 2026-09-15 00:45+0000\n"
 "PO-Revision-Date: 2024-12-20 21:53+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -45,7 +45,7 @@ msgid "Compress"
 msgstr "संपीडयन्तु"
 
 #: attachment/attachmentcontrollerbase.cpp:202
-#: attachment/attachmentcontrollerbase.cpp:968
+#: attachment/attachmentcontrollerbase.cpp:966
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach file"
@@ -276,20 +276,20 @@ msgid "&Replace"
 msgstr "&प्रत्याहृ"
 
 #: attachment/attachmentcontrollerbase.cpp:858
-#: attachment/attachmentcontrollerbase.cpp:937
+#: attachment/attachmentcontrollerbase.cpp:935
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
 msgstr "किं भवान् वास्तवमेव एतत् निर्देशिकां \"%1\" संलग्नं कर्तुम् इच्छति?"
 
 #: attachment/attachmentcontrollerbase.cpp:859
-#: attachment/attachmentcontrollerbase.cpp:938
+#: attachment/attachmentcontrollerbase.cpp:936
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach directory"
 msgstr "निर्देशिका संलग्नं कुर्वन्तु"
 
 #: attachment/attachmentcontrollerbase.cpp:860
-#: attachment/attachmentcontrollerbase.cpp:939
+#: attachment/attachmentcontrollerbase.cpp:937
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach"
@@ -307,12 +307,12 @@ msgctxt "@title:window"
 msgid "Attach File"
 msgstr "सञ्चिका संलग्नं कुर्वन्तु"
 
-#: attachment/attachmentcontrollerbase.cpp:992
+#: attachment/attachmentcontrollerbase.cpp:990
 #, kde-format
 msgid "Attach Public OpenPGP Key"
 msgstr "सार्वजनिक OpenPGP कुञ्जी संलग्नं कुर्वन्तु"
 
-#: attachment/attachmentcontrollerbase.cpp:993
+#: attachment/attachmentcontrollerbase.cpp:991
 #, kde-format
 msgid "Select the public key which should be attached."
 msgstr "सार्वजनिककुंजी चिनोतु यत् संलग्नं भवेत् ।"

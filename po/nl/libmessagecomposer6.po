@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-03 00:44+0000\n"
+"POT-Creation-Date: 2026-09-15 00:45+0000\n"
 "PO-Revision-Date: 2026-08-16 14:50+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -47,7 +47,7 @@ msgid "Compress"
 msgstr "Comprimeren"
 
 #: attachment/attachmentcontrollerbase.cpp:202
-#: attachment/attachmentcontrollerbase.cpp:968
+#: attachment/attachmentcontrollerbase.cpp:966
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach file"
@@ -278,20 +278,20 @@ msgid "&Replace"
 msgstr "Ve&rvangen"
 
 #: attachment/attachmentcontrollerbase.cpp:858
-#: attachment/attachmentcontrollerbase.cpp:937
+#: attachment/attachmentcontrollerbase.cpp:935
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
 msgstr "Wilt u deze map \"%1\" echt bijvoegen?"
 
 #: attachment/attachmentcontrollerbase.cpp:859
-#: attachment/attachmentcontrollerbase.cpp:938
+#: attachment/attachmentcontrollerbase.cpp:936
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach directory"
 msgstr "Map bijvoegen"
 
 #: attachment/attachmentcontrollerbase.cpp:860
-#: attachment/attachmentcontrollerbase.cpp:939
+#: attachment/attachmentcontrollerbase.cpp:937
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach"
@@ -309,12 +309,12 @@ msgctxt "@title:window"
 msgid "Attach File"
 msgstr "Bestand bijvoegen"
 
-#: attachment/attachmentcontrollerbase.cpp:992
+#: attachment/attachmentcontrollerbase.cpp:990
 #, kde-format
 msgid "Attach Public OpenPGP Key"
 msgstr "Publieke OpenPGP-sleutel bijvoegen"
 
-#: attachment/attachmentcontrollerbase.cpp:993
+#: attachment/attachmentcontrollerbase.cpp:991
 #, kde-format
 msgid "Select the public key which should be attached."
 msgstr "Selecteer de sleutel die moet worden bijgevoegd."

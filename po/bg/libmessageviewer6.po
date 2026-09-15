@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-12 00:46+0000\n"
+"POT-Creation-Date: 2026-09-15 00:45+0000\n"
 "PO-Revision-Date: 2026-05-28 21:34+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -1870,7 +1870,7 @@ msgstr "&Отваряне в адресника"
 msgid "&Copy Email Address"
 msgstr "&Копиране на имейл адрес"
 
-#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2736
+#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2737
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Адресът е копиран в буфера."
@@ -2121,7 +2121,7 @@ msgctxt "@action"
 msgid "Select All Text"
 msgstr "Избиране на целия текст"
 
-#: viewer/viewer_p.cpp:1560 viewer/viewer_p.cpp:2079
+#: viewer/viewer_p.cpp:1560 viewer/viewer_p.cpp:2080
 #, kde-format
 msgid "Copy Link Address"
 msgstr "Копиране на адреса на нишка"
@@ -2242,56 +2242,56 @@ msgstr "Отваряне с..."
 msgid "Save All Attachments..."
 msgstr "Запис на всички прикрепени файлове..."
 
-#: viewer/viewer_p.cpp:2000
+#: viewer/viewer_p.cpp:2001
 #, kde-format
 msgid "The network is broken."
 msgstr "Мрежата е прекъсната."
 
-#: viewer/viewer_p.cpp:2000 viewer/viewer_p.cpp:2003
+#: viewer/viewer_p.cpp:2001 viewer/viewer_p.cpp:2004
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "Проверяване на URL адреса за фишинг"
 
-#: viewer/viewer_p.cpp:2003
+#: viewer/viewer_p.cpp:2004
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "URL адресът %1 не е валиден."
 
-#: viewer/viewer_p.cpp:2023
+#: viewer/viewer_p.cpp:2024
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 "Този ​​уеб сайт е злонамерен софтуер, искате ли да продължите да го показвате?"
 
-#: viewer/viewer_p.cpp:2024
+#: viewer/viewer_p.cpp:2025
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr "Зловреден софтуер"
 
-#: viewer/viewer_p.cpp:2077
+#: viewer/viewer_p.cpp:2078
 #, kde-format
 msgid "Copy Email Address"
 msgstr "Копиране адреса на е-пощата"
 
-#: viewer/viewer_p.cpp:2160
+#: viewer/viewer_p.cpp:2161
 #, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Съобщение като обикновен текст"
 
-#: viewer/viewer_p.cpp:2742
+#: viewer/viewer_p.cpp:2743
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "Адресът (URL) е копиран в буфера."
 
-#: viewer/viewer_p.cpp:2904
+#: viewer/viewer_p.cpp:2905
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "Зареждането на съобщението е неуспешно:%1."
 
-#: viewer/viewer_p.cpp:2909
+#: viewer/viewer_p.cpp:2910
 #, kde-format
 msgid "Message not found."
 msgstr "Съобщението не е намерено."

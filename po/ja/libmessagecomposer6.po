@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-03 00:44+0000\n"
+"POT-Creation-Date: 2026-09-15 00:45+0000\n"
 "PO-Revision-Date: 2012-01-28 16:26-0800\n"
 "Last-Translator: Fumiaki Okushi <okushi@kde.gr.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -45,7 +45,7 @@ msgid "Compress"
 msgstr "圧縮"
 
 #: attachment/attachmentcontrollerbase.cpp:202
-#: attachment/attachmentcontrollerbase.cpp:968
+#: attachment/attachmentcontrollerbase.cpp:966
 #, fuzzy, kde-format
 #| msgid "Failed to attach file"
 msgctxt "@title:window"
@@ -298,13 +298,13 @@ msgid "&Replace"
 msgstr "置換(&R)"
 
 #: attachment/attachmentcontrollerbase.cpp:858
-#: attachment/attachmentcontrollerbase.cpp:937
+#: attachment/attachmentcontrollerbase.cpp:935
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
 msgstr ""
 
 #: attachment/attachmentcontrollerbase.cpp:859
-#: attachment/attachmentcontrollerbase.cpp:938
+#: attachment/attachmentcontrollerbase.cpp:936
 #, fuzzy, kde-format
 #| msgid "Attach directory"
 msgctxt "@title:window"
@@ -312,7 +312,7 @@ msgid "Attach directory"
 msgstr "ディレクトリを添付"
 
 #: attachment/attachmentcontrollerbase.cpp:860
-#: attachment/attachmentcontrollerbase.cpp:939
+#: attachment/attachmentcontrollerbase.cpp:937
 #, fuzzy, kde-format
 #| msgid "Attach"
 msgctxt "@action:button"
@@ -333,12 +333,12 @@ msgctxt "@title:window"
 msgid "Attach File"
 msgstr "ファイルを添付"
 
-#: attachment/attachmentcontrollerbase.cpp:992
+#: attachment/attachmentcontrollerbase.cpp:990
 #, kde-format
 msgid "Attach Public OpenPGP Key"
 msgstr ""
 
-#: attachment/attachmentcontrollerbase.cpp:993
+#: attachment/attachmentcontrollerbase.cpp:991
 #, kde-format
 msgid "Select the public key which should be attached."
 msgstr ""

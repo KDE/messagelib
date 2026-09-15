@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-12 00:46+0000\n"
+"POT-Creation-Date: 2026-09-15 00:45+0000\n"
 "PO-Revision-Date: 2024-12-20 22:01+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -1832,7 +1832,7 @@ msgstr "&पतेःपुस्तके उद्घाटयन्तु"
 msgid "&Copy Email Address"
 msgstr "&ईमेल पता प्रतिलिपि कुर्वन्तु"
 
-#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2736
+#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2737
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "पता क्लिप्बोर्ड् प्रति प्रतिलिखितम्।"
@@ -2078,7 +2078,7 @@ msgctxt "@action"
 msgid "Select All Text"
 msgstr "All Text इति चिनोतु"
 
-#: viewer/viewer_p.cpp:1560 viewer/viewer_p.cpp:2079
+#: viewer/viewer_p.cpp:1560 viewer/viewer_p.cpp:2080
 #, kde-format
 msgid "Copy Link Address"
 msgstr "लिङ्क पता प्रतिलिपि कुर्वन्तु"
@@ -2199,55 +2199,55 @@ msgstr "Open With..."
 msgid "Save All Attachments..."
 msgstr "सर्वाणि संलग्नकानि रक्षन्तु..."
 
-#: viewer/viewer_p.cpp:2000
+#: viewer/viewer_p.cpp:2001
 #, kde-format
 msgid "The network is broken."
 msgstr "जालं भग्नम् अस्ति।"
 
-#: viewer/viewer_p.cpp:2000 viewer/viewer_p.cpp:2003
+#: viewer/viewer_p.cpp:2001 viewer/viewer_p.cpp:2004
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "फिशिंग् URL पश्यन्तु"
 
-#: viewer/viewer_p.cpp:2003
+#: viewer/viewer_p.cpp:2004
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "URL %1 वैधः नास्ति ।"
 
-#: viewer/viewer_p.cpp:2023
+#: viewer/viewer_p.cpp:2024
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr "इदं जालस्थलं दुर्गन्धयुक्तं भवति, किं भवन्तः एतत् निरन्तरं दर्शयितुम् इच्छन्ति?"
 
-#: viewer/viewer_p.cpp:2024
+#: viewer/viewer_p.cpp:2025
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr "मालवेयर"
 
-#: viewer/viewer_p.cpp:2077
+#: viewer/viewer_p.cpp:2078
 #, kde-format
 msgid "Copy Email Address"
 msgstr "ईमेल पता प्रतिलिपि कुर्वन्तु"
 
-#: viewer/viewer_p.cpp:2160
+#: viewer/viewer_p.cpp:2161
 #, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "सादा पाठरूपेण सन्देशः"
 
-#: viewer/viewer_p.cpp:2742
+#: viewer/viewer_p.cpp:2743
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL प्रतिलिपितः क्लिप्बोर्ड् मध्ये।"
 
-#: viewer/viewer_p.cpp:2904
+#: viewer/viewer_p.cpp:2905
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "सन्देशस्य लोडिंग् विफलम्: %1."
 
-#: viewer/viewer_p.cpp:2909
+#: viewer/viewer_p.cpp:2910
 #, kde-format
 msgid "Message not found."
 msgstr "सन्देशः न लब्धः।"

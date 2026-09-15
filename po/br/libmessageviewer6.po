@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail-1.1\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-12 00:46+0000\n"
+"POT-Creation-Date: 2026-09-15 00:45+0000\n"
 "PO-Revision-Date: 2005-01-23 05:51+0100\n"
 "Last-Translator: Jañ-Mai Drapier <jan-mai.drapier@mail.dotcom.fr>\n"
 "Language-Team: Brezhoneg <Suav.Icb@wanadoo.fr>\n"
@@ -1920,7 +1920,7 @@ msgstr "Digeriñ er c'harned chomlec'hioù"
 msgid "&Copy Email Address"
 msgstr "Chomlec'h postel"
 
-#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2736
+#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2737
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Chomlec'h eilet er golver."
@@ -2180,7 +2180,7 @@ msgctxt "@action"
 msgid "Select All Text"
 msgstr "Dibabit an &holl gemennadoù"
 
-#: viewer/viewer_p.cpp:1560 viewer/viewer_p.cpp:2079
+#: viewer/viewer_p.cpp:1560 viewer/viewer_p.cpp:2080
 #, kde-format
 msgid "Copy Link Address"
 msgstr "Eilañ chomlec'h al liamm"
@@ -2314,59 +2314,59 @@ msgstr "Digeriñ gant ..."
 msgid "Save All Attachments..."
 msgstr "Enrollañ an holl stagadennoù ..."
 
-#: viewer/viewer_p.cpp:2000
+#: viewer/viewer_p.cpp:2001
 #, kde-format
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:2000 viewer/viewer_p.cpp:2003
+#: viewer/viewer_p.cpp:2001 viewer/viewer_p.cpp:2004
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2003
+#: viewer/viewer_p.cpp:2004
 #, fuzzy, kde-format
 #| msgid "The signature file is not valid"
 msgid "The URL %1 is not valid."
 msgstr "N'eo ket mat ar restr sinadur"
 
-#: viewer/viewer_p.cpp:2023
+#: viewer/viewer_p.cpp:2024
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2024
+#: viewer/viewer_p.cpp:2025
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2077
+#: viewer/viewer_p.cpp:2078
 #, fuzzy, kde-format
 #| msgid "Email Address"
 msgid "Copy Email Address"
 msgstr "Chomlec'h postel"
 
-#: viewer/viewer_p.cpp:2160
+#: viewer/viewer_p.cpp:2161
 #, fuzzy, kde-format
 #| msgid "Message as Plain Text"
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Kemennad plaen"
 
-#: viewer/viewer_p.cpp:2742
+#: viewer/viewer_p.cpp:2743
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL eilet er golver."
 
-#: viewer/viewer_p.cpp:2904
+#: viewer/viewer_p.cpp:2905
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message loading failed: %1."
 msgstr "Sinet eo bet ar c'hemennad gant %1."
 
-#: viewer/viewer_p.cpp:2909
+#: viewer/viewer_p.cpp:2910
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message not found."

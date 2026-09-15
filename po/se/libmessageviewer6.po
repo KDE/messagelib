@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-12 00:46+0000\n"
+"POT-Creation-Date: 2026-09-15 00:45+0000\n"
 "PO-Revision-Date: 2011-10-30 01:38+0200\n"
 "Last-Translator: Børre Gaup <boerre@skolelinux.no>\n"
 "Language-Team: Northern Sami <l10n-no@nuug.no>\n"
@@ -1777,7 +1777,7 @@ msgstr ""
 msgid "&Copy Email Address"
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2736
+#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2737
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Čujuhus mángejuvvon čuohposgirjái."
@@ -2023,7 +2023,7 @@ msgctxt "@action"
 msgid "Select All Text"
 msgstr "Merke visot teavstta"
 
-#: viewer/viewer_p.cpp:1560 viewer/viewer_p.cpp:2079
+#: viewer/viewer_p.cpp:1560 viewer/viewer_p.cpp:2080
 #, kde-format
 msgid "Copy Link Address"
 msgstr "Máŋge čujuhusa"
@@ -2144,55 +2144,55 @@ msgstr "Raba geavahettiin …"
 msgid "Save All Attachments..."
 msgstr "Vurke buot &mildosiid nugo …"
 
-#: viewer/viewer_p.cpp:2000
+#: viewer/viewer_p.cpp:2001
 #, kde-format
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:2000 viewer/viewer_p.cpp:2003
+#: viewer/viewer_p.cpp:2001 viewer/viewer_p.cpp:2004
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2003
+#: viewer/viewer_p.cpp:2004
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr ""
 
-#: viewer/viewer_p.cpp:2023
+#: viewer/viewer_p.cpp:2024
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2024
+#: viewer/viewer_p.cpp:2025
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2077
+#: viewer/viewer_p.cpp:2078
 #, kde-format
 msgid "Copy Email Address"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2160
+#: viewer/viewer_p.cpp:2161
 #, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2742
+#: viewer/viewer_p.cpp:2743
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL mángejuvvon čuohposgirjái."
 
-#: viewer/viewer_p.cpp:2904
+#: viewer/viewer_p.cpp:2905
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr ""
 
-#: viewer/viewer_p.cpp:2909
+#: viewer/viewer_p.cpp:2910
 #, kde-format
 msgid "Message not found."
 msgstr ""

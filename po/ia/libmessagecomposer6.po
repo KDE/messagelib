@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-03 00:44+0000\n"
-"PO-Revision-Date: 2026-01-23 16:19+0100\n"
+"POT-Creation-Date: 2026-09-15 00:45+0000\n"
+"PO-Revision-Date: 2026-09-14 17:10+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: attachment/attachmentcontrollerbase.cpp:168
 #, kde-format
@@ -47,7 +47,7 @@ msgid "Compress"
 msgstr "Comprime"
 
 #: attachment/attachmentcontrollerbase.cpp:202
-#: attachment/attachmentcontrollerbase.cpp:968
+#: attachment/attachmentcontrollerbase.cpp:966
 #, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach file"
@@ -278,20 +278,20 @@ msgid "&Replace"
 msgstr "&Reimplacia"
 
 #: attachment/attachmentcontrollerbase.cpp:858
-#: attachment/attachmentcontrollerbase.cpp:937
+#: attachment/attachmentcontrollerbase.cpp:935
 #, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
 msgstr "Tu vermente vole attachar iste directorio \"%1\"?"
 
 #: attachment/attachmentcontrollerbase.cpp:859
-#: attachment/attachmentcontrollerbase.cpp:938
+#: attachment/attachmentcontrollerbase.cpp:936
 #, kde-format
 msgctxt "@title:window"
 msgid "Attach directory"
 msgstr "Attacha directorio"
 
 #: attachment/attachmentcontrollerbase.cpp:860
-#: attachment/attachmentcontrollerbase.cpp:939
+#: attachment/attachmentcontrollerbase.cpp:937
 #, kde-format
 msgctxt "@action:button"
 msgid "Attach"
@@ -309,12 +309,12 @@ msgctxt "@title:window"
 msgid "Attach File"
 msgstr "Attacha File"
 
-#: attachment/attachmentcontrollerbase.cpp:992
+#: attachment/attachmentcontrollerbase.cpp:990
 #, kde-format
 msgid "Attach Public OpenPGP Key"
 msgstr "Attacha clave public OpenPGP"
 
-#: attachment/attachmentcontrollerbase.cpp:993
+#: attachment/attachmentcontrollerbase.cpp:991
 #, kde-format
 msgid "Select the public key which should be attached."
 msgstr "Selige le clave public que essera attachate."
@@ -1152,6 +1152,8 @@ msgstr ""
 msgid ""
 "Failed to store a new reminder: the follow-up reminder agent is not running."
 msgstr ""
+"Falleva le immagazinage de un nove memento: le agente de memento  de "
+"sequimento non es in execution."
 
 #: followupreminder/followupremindercreatejob.cpp:136
 #, kde-format

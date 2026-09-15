@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-12 00:46+0000\n"
+"POT-Creation-Date: 2026-09-15 00:45+0000\n"
 "PO-Revision-Date: 2007-02-28 14:08+0100\n"
 "Last-Translator: Bozidar Proevski <bobibobi@freemail.com.mk>\n"
 "Language-Team: Macedonian <mkde-l10n@lists.sourceforge.net>\n"
@@ -1967,7 +1967,7 @@ msgstr "Отвори во адресарот"
 msgid "&Copy Email Address"
 msgstr "Е-поштенска адреса"
 
-#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2736
+#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2737
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Адресата е копирана на таблата со исечоци."
@@ -2231,7 +2231,7 @@ msgctxt "@action"
 msgid "Select All Text"
 msgstr "Избери го целиот текст"
 
-#: viewer/viewer_p.cpp:1560 viewer/viewer_p.cpp:2079
+#: viewer/viewer_p.cpp:1560 viewer/viewer_p.cpp:2080
 #, kde-format
 msgid "Copy Link Address"
 msgstr "Копирај адреса на врска"
@@ -2366,59 +2366,59 @@ msgstr "Отвори со..."
 msgid "Save All Attachments..."
 msgstr "Зачувај ги сите прилози..."
 
-#: viewer/viewer_p.cpp:2000
+#: viewer/viewer_p.cpp:2001
 #, kde-format
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:2000 viewer/viewer_p.cpp:2003
+#: viewer/viewer_p.cpp:2001 viewer/viewer_p.cpp:2004
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2003
+#: viewer/viewer_p.cpp:2004
 #, fuzzy, kde-format
 #| msgid "The signature file is not valid"
 msgid "The URL %1 is not valid."
 msgstr "Датотеката со потпис не е валидна"
 
-#: viewer/viewer_p.cpp:2023
+#: viewer/viewer_p.cpp:2024
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2024
+#: viewer/viewer_p.cpp:2025
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2077
+#: viewer/viewer_p.cpp:2078
 #, fuzzy, kde-format
 #| msgid "Email Address"
 msgid "Copy Email Address"
 msgstr "Е-поштенска адреса"
 
-#: viewer/viewer_p.cpp:2160
+#: viewer/viewer_p.cpp:2161
 #, fuzzy, kde-format
 #| msgid "Message as Plain Text"
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Пораката како обичен текст"
 
-#: viewer/viewer_p.cpp:2742
+#: viewer/viewer_p.cpp:2743
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL е копиран на таблата со исечоци."
 
-#: viewer/viewer_p.cpp:2904
+#: viewer/viewer_p.cpp:2905
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message loading failed: %1."
 msgstr "Пораката е потпишана од %1."
 
-#: viewer/viewer_p.cpp:2909
+#: viewer/viewer_p.cpp:2910
 #, fuzzy, kde-format
 #| msgid "Message was signed by %1."
 msgid "Message not found."

@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-12 00:46+0000\n"
+"POT-Creation-Date: 2026-09-15 00:45+0000\n"
 "PO-Revision-Date: 2026-05-19 08:39+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -1859,7 +1859,7 @@ msgstr "פתיחה ב&פנקס הכתובות"
 msgid "&Copy Email Address"
 msgstr "ה&עתקת כתובת דוא״ל"
 
-#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2736
+#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2737
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "הכתובת הועתקה ללוח הגזירים."
@@ -2105,7 +2105,7 @@ msgctxt "@action"
 msgid "Select All Text"
 msgstr "בחירה בכל הטקסט"
 
-#: viewer/viewer_p.cpp:1560 viewer/viewer_p.cpp:2079
+#: viewer/viewer_p.cpp:1560 viewer/viewer_p.cpp:2080
 #, kde-format
 msgid "Copy Link Address"
 msgstr "העתק כתובת הקישור"
@@ -2226,55 +2226,55 @@ msgstr "פתיחה באמצעות…"
 msgid "Save All Attachments..."
 msgstr "שמירת כל המצורפים…"
 
-#: viewer/viewer_p.cpp:2000
+#: viewer/viewer_p.cpp:2001
 #, kde-format
 msgid "The network is broken."
 msgstr "הרשת פגומה."
 
-#: viewer/viewer_p.cpp:2000 viewer/viewer_p.cpp:2003
+#: viewer/viewer_p.cpp:2001 viewer/viewer_p.cpp:2004
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "בדיקת כתובת דיוג"
 
-#: viewer/viewer_p.cpp:2003
+#: viewer/viewer_p.cpp:2004
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "הכתובת %1 שגויה."
 
-#: viewer/viewer_p.cpp:2023
+#: viewer/viewer_p.cpp:2024
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr "זה אתר זדוני, להמשיך להציג אותו?"
 
-#: viewer/viewer_p.cpp:2024
+#: viewer/viewer_p.cpp:2025
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr "נוזקה"
 
-#: viewer/viewer_p.cpp:2077
+#: viewer/viewer_p.cpp:2078
 #, kde-format
 msgid "Copy Email Address"
 msgstr "העתקת כתובת דוא״ל"
 
-#: viewer/viewer_p.cpp:2160
+#: viewer/viewer_p.cpp:2161
 #, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "הודעה כטקסט פשוט"
 
-#: viewer/viewer_p.cpp:2742
+#: viewer/viewer_p.cpp:2743
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "הכתובת הועתקה ללוח הגזירים."
 
-#: viewer/viewer_p.cpp:2904
+#: viewer/viewer_p.cpp:2905
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "טעינת הודעה נכשלה: %1."
 
-#: viewer/viewer_p.cpp:2909
+#: viewer/viewer_p.cpp:2910
 #, kde-format
 msgid "Message not found."
 msgstr "ההודעה לא נמצאה."
