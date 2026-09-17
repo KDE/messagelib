@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-15 00:45+0000\n"
-"PO-Revision-Date: 2014-11-10 19:34+0200\n"
+"PO-Revision-Date: 2026-09-16 16:26+0300\n"
 "Last-Translator: Liudas Ališauskas <liudas@aksioma.lt>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -20,14 +20,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Lokalize 1.5\n"
+"X-Generator: Poedit 3.9\n"
 
 #: attachment/attachmentcontrollerbase.cpp:168
-#, fuzzy, kde-format
-#| msgid "Failed to compress attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to compress attachment"
-msgstr "Nepavyko suspausti priedo"
+msgstr "Nepavyko glaudinti priedo"
 
 #: attachment/attachmentcontrollerbase.cpp:179
 #, kde-format
@@ -35,40 +34,39 @@ msgid ""
 "The compressed attachment is larger than the original. Do you want to keep "
 "the original one?"
 msgstr ""
+"Glaudintas priedas yra didesnis nei pradinis. Ar norite palikti pradinį "
+"priedą?"
 
 #: attachment/attachmentcontrollerbase.cpp:182
 #, kde-format
 msgctxt "Do not compress"
 msgid "Keep"
-msgstr "Palikti"
+msgstr "Palikti kaip yra"
 
 #: attachment/attachmentcontrollerbase.cpp:183
-#, fuzzy, kde-format
-#| msgid "Compress"
+#, kde-format
 msgctxt "@action:button"
 msgid "Compress"
-msgstr "Suspausti"
+msgstr "Glaudinti"
 
 #: attachment/attachmentcontrollerbase.cpp:202
 #: attachment/attachmentcontrollerbase.cpp:966
-#, fuzzy, kde-format
-#| msgid "Failed to attach file"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to attach file"
 msgstr "Nepavyko pridėti failo"
 
 #: attachment/attachmentcontrollerbase.cpp:279
-#, fuzzy, kde-format
-#| msgid "Failed to compress attachment"
+#, kde-format
 msgctxt "@title:window"
 msgid "Failed to reload attachment"
-msgstr "Nepavyko suspausti priedo"
+msgstr "Nepavyko įkelti priedo iš naujo"
 
 #: attachment/attachmentcontrollerbase.cpp:326
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
-msgstr "&Atverti su"
+msgstr "&Atverti naudojant"
 
 #: attachment/attachmentcontrollerbase.cpp:346
 #, kde-format
@@ -81,7 +79,7 @@ msgstr "&Kita..."
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
-msgstr "&Atverti su..."
+msgstr "&Atverti naudojant..."
 
 #: attachment/attachmentcontrollerbase.cpp:382
 #, fuzzy, kde-format
@@ -124,12 +122,12 @@ msgstr "Prisegti &mano viešąjį raktą"
 #: attachment/attachmentcontrollerbase.cpp:483
 #, kde-format
 msgid "Attach"
-msgstr "Prisegti"
+msgstr "Pridėti"
 
 #: attachment/attachmentcontrollerbase.cpp:467
 #, kde-format
 msgid "&Attach File..."
-msgstr "Prisegti &failą..."
+msgstr "&Pridėti failą..."
 
 #: attachment/attachmentcontrollerbase.cpp:469
 #, kde-format
@@ -137,10 +135,9 @@ msgid "Add Attachment..."
 msgstr "Pridėti priedą..."
 
 #: attachment/attachmentcontrollerbase.cpp:473
-#, fuzzy, kde-format
-#| msgid "Attach directory"
+#, kde-format
 msgid "&Attach Directory..."
-msgstr "Prisegti direktoriją"
+msgstr "&Pridėti katalogą..."
 
 #: attachment/attachmentcontrollerbase.cpp:477
 #, fuzzy, kde-format
@@ -150,7 +147,7 @@ msgid "Attach Own vCard"
 msgstr "Pridėti savo vCard"
 
 #: attachment/attachmentcontrollerbase.cpp:478
-#, kde-format
+#, fuzzy, kde-format
 msgid "Own vCard"
 msgstr "Savo vCard"
 
@@ -175,12 +172,12 @@ msgstr "Pridėti savo vCard"
 #: attachment/attachmentcontrollerbase.cpp:499
 #, kde-format
 msgid "&Remove Attachment"
-msgstr "Pašalinti priedą..."
+msgstr "Ša&linti priedą"
 
 #: attachment/attachmentcontrollerbase.cpp:500
 #, kde-format
 msgid "Remove"
-msgstr "Pašalinti"
+msgstr "Šalinti"
 
 #: attachment/attachmentcontrollerbase.cpp:508
 #, kde-format
@@ -192,20 +189,19 @@ msgstr "Atverti"
 #, kde-format
 msgctxt "to view"
 msgid "View"
-msgstr "Rodymas"
+msgstr "Rodyti"
 
 #: attachment/attachmentcontrollerbase.cpp:518
 #, kde-format
 msgctxt "to edit"
 msgid "Edit"
-msgstr "Keisti"
+msgstr "Taisyti"
 
 #: attachment/attachmentcontrollerbase.cpp:523
-#, fuzzy, kde-format
-#| msgid "Edit With..."
+#, kde-format
 msgctxt "@action"
 msgid "Edit With..."
-msgstr "Keisti su..."
+msgstr "Taisyti naudojant..."
 
 #: attachment/attachmentcontrollerbase.cpp:528
 #, kde-format
@@ -218,35 +214,32 @@ msgid "Save As..."
 msgstr "Įrašyti kaip..."
 
 #: attachment/attachmentcontrollerbase.cpp:537
-#, fuzzy, kde-format
-#| msgid "Attachment Pr&operties..."
+#, kde-format
 msgctxt "@action"
 msgid "Attachment Pr&operties..."
-msgstr "Priedo savybės..."
+msgstr "Pried&o savybės..."
 
 #: attachment/attachmentcontrollerbase.cpp:538
-#, fuzzy, kde-format
-#| msgid "Properties"
+#, kde-format
 msgctxt "@action"
 msgid "Properties"
 msgstr "Savybės"
 
 #: attachment/attachmentcontrollerbase.cpp:546
-#, fuzzy, kde-format
-#| msgid "Select All"
+#, kde-format
 msgctxt "@action"
 msgid "Select All"
-msgstr "Pažymėti viską"
+msgstr "Žymėti viską"
 
 #: attachment/attachmentcontrollerbase.cpp:549
 #, kde-format
 msgid "Reload"
-msgstr ""
+msgstr "Įkelti iš naujo"
 
 #: attachment/attachmentcontrollerbase.cpp:682
 #: attachment/attachmentcontrollerbase.cpp:708
 #: attachment/attachmentcontrollerbase.cpp:761
-#, kde-format
+#, fuzzy, kde-format
 msgid "KMail was unable to write the attachment to a temporary file."
 msgstr "KMail nepavyko įrašyti priedo į laikiną failą."
 
@@ -267,16 +260,15 @@ msgid "Unable to edit attachment"
 msgstr "Negalima keisti priedo"
 
 #: attachment/attachmentcontrollerbase.cpp:803
-#, kde-format
+#, fuzzy, kde-format
 msgid "unnamed"
 msgstr "bevardis"
 
 #: attachment/attachmentcontrollerbase.cpp:806
-#, fuzzy, kde-format
-#| msgid "Save Attachment As"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Attachment As"
-msgstr "&rašyti priedą kaip"
+msgstr "Įrašyti priedą kaip"
 
 #: attachment/attachmentcontrollerbase.cpp:829
 #, kde-format
@@ -284,72 +276,65 @@ msgid ""
 "File %1 exists.\n"
 "Do you want to replace it?"
 msgstr ""
-"Failas %1 egzistuoja.\n"
-"Ar norite jį pakeiti?"
+"Failas %1 jau yra.\n"
+"Ar norite jį pakeisti?"
 
 #: attachment/attachmentcontrollerbase.cpp:830
-#, fuzzy, kde-format
-#| msgid "Save to File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Save to File"
 msgstr "Įrašyti į failą"
 
 #: attachment/attachmentcontrollerbase.cpp:831
-#, fuzzy, kde-format
-#| msgid "&Replace"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Replace"
-msgstr "&Keisti"
+msgstr "&Pakeisti"
 
 #: attachment/attachmentcontrollerbase.cpp:858
 #: attachment/attachmentcontrollerbase.cpp:935
-#, fuzzy, kde-format
-#| msgid "Do you really want to attach this directory \"%1\" ?"
+#, kde-format
 msgid "Do you really want to attach this directory \"%1\"?"
-msgstr "Ar tikrai norite pridėti šią direktoriją „%1“ ?"
+msgstr "Ar tikrai norite pridėti šį katalogą „%1“?"
 
 #: attachment/attachmentcontrollerbase.cpp:859
 #: attachment/attachmentcontrollerbase.cpp:936
-#, fuzzy, kde-format
-#| msgid "Attach directory"
+#, kde-format
 msgctxt "@title:window"
 msgid "Attach directory"
-msgstr "Prisegti direktoriją"
+msgstr "Pridėti katalogą"
 
 #: attachment/attachmentcontrollerbase.cpp:860
 #: attachment/attachmentcontrollerbase.cpp:937
-#, fuzzy, kde-format
-#| msgid "Attach"
+#, kde-format
 msgctxt "@action:button"
 msgid "Attach"
-msgstr "Prisegti"
+msgstr "Pridėti"
 
 #: attachment/attachmentcontrollerbase.cpp:895
-#, fuzzy, kde-format
-#| msgid "Attach directory"
+#, kde-format
 msgctxt "@title:window"
 msgid "Attach Directory"
-msgstr "Prisegti direktoriją"
+msgstr "Pridėti katalogą"
 
 #: attachment/attachmentcontrollerbase.cpp:903
-#, fuzzy, kde-format
-#| msgid "Attach File"
+#, kde-format
 msgctxt "@title:window"
 msgid "Attach File"
-msgstr "Prisegti failą"
+msgstr "Pridėti failą"
 
 #: attachment/attachmentcontrollerbase.cpp:990
-#, kde-format
+#, fuzzy, kde-format
 msgid "Attach Public OpenPGP Key"
 msgstr "Prisegti viešąjį OpenPGP raktą"
 
 #: attachment/attachmentcontrollerbase.cpp:991
-#, kde-format
+#, fuzzy, kde-format
 msgid "Select the public key which should be attached."
 msgstr "Pasirinkite viešą raktą, kuris turėtų būti pridėtas."
 
 #: attachment/attachmentmodel.cpp:122
-#, kde-format
+#, fuzzy, kde-format
 msgid "unnamed attachment"
 msgstr "neįvardytas priedas"
 
@@ -363,7 +348,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title column attachment name."
 msgid "Name"
-msgstr "Vardas"
+msgstr "Pavadinimas"
 
 #: attachment/attachmentmodel.cpp:441
 #, kde-format
@@ -387,7 +372,7 @@ msgstr "Tipas"
 #, kde-format
 msgctxt "@title column attachment compression checkbox."
 msgid "Compress"
-msgstr "Suspausti"
+msgstr "Glaudinti"
 
 #: attachment/attachmentmodel.cpp:449
 #, kde-format
@@ -408,10 +393,9 @@ msgid "Suggest Automatic Display"
 msgstr "Siūlyti automatinį rodymą"
 
 #: attachment/editorwatcher.cpp:66
-#, fuzzy, kde-format
-#| msgid "Edit With..."
+#, kde-format
 msgid "Edit with:"
-msgstr "Keisti su..."
+msgstr "Taisyti naudojant:"
 
 #: attachment/editorwatcher.cpp:200
 #, kde-format
@@ -446,7 +430,7 @@ msgid "Encrypt (delete markup)"
 msgstr ""
 
 #: composer/composerviewbase.cpp:354
-#, kde-format
+#, fuzzy, kde-format
 msgid "Sign (delete markup)"
 msgstr "Pasirašyti (trinti pažymėjimą)"
 
@@ -458,8 +442,7 @@ msgid ""
 msgstr ""
 
 #: composer/composerviewbase.cpp:358
-#, fuzzy, kde-format
-#| msgid "Sign/Encrypt Message?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sign/Encrypt Message?"
 msgstr "Pasirašyti/Šifruoti laišką?"
@@ -472,7 +455,7 @@ msgstr ""
 #: composer/composerviewbase.cpp:544
 #, kde-format
 msgid "Do you want to resize images?"
-msgstr ""
+msgstr "Ar norite keisti paveikslų dydžius?"
 
 #: composer/composerviewbase.cpp:545
 #, fuzzy, kde-format
@@ -482,17 +465,16 @@ msgid "Auto Resize Images"
 msgstr "Paveikslėlių auto dydžiai"
 
 #: composer/composerviewbase.cpp:546
-#, fuzzy, kde-format
-#| msgid "Auto Resize Images"
+#, kde-format
 msgctxt "@action:button"
 msgid "Auto Resize"
-msgstr "Paveikslėlių auto dydžiai"
+msgstr "Automatiškai keisti dydį"
 
 #: composer/composerviewbase.cpp:547
 #, kde-format
 msgctxt "@action:button"
 msgid "Do Not Resize"
-msgstr ""
+msgstr "Nekeisti dydį"
 
 #: composer/composerviewbase.cpp:752
 #, fuzzy, kde-format
@@ -524,17 +506,17 @@ msgstr "S/MIME liudijimo galiojimas baigėsi"
 
 #: composer/composerviewbase.cpp:829 composer/composerviewbase.cpp:843
 #: composer/composerviewbase.cpp:875
-#, kde-format
+#, fuzzy, kde-format
 msgid "Failed to resolve keys. Please report a bug."
 msgstr "Nepavyko nustatyti raktų. Prašome pranešti apie klaidą."
 
 #: composer/composerviewbase.cpp:1082 composer/composerviewbase.cpp:1360
-#, kde-format
+#, fuzzy, kde-format
 msgid "Job cancelled by the user"
 msgstr "Užduotis atšaukta naudotojo"
 
 #: composer/composerviewbase.cpp:1087
-#, kde-format
+#, fuzzy, kde-format
 msgid ""
 "Could not compose message: %1 \n"
 " Please report this bug."
@@ -543,7 +525,7 @@ msgstr ""
 " Prašome pranešti apie šią klaidą."
 
 #: composer/composerviewbase.cpp:1089
-#, kde-format
+#, fuzzy, kde-format
 msgid "Could not compose message: %1"
 msgstr "Nepavyko sukurti laiško: %1"
 
@@ -553,17 +535,17 @@ msgid "There were problems trying to queue the message for sending: %1"
 msgstr ""
 
 #: composer/composerviewbase.cpp:1363
-#, kde-format
+#, fuzzy, kde-format
 msgid "Could not autosave message: %1"
 msgstr "Nepavyko automatiškai išsaugoti laiško: %1"
 
 #: composer/composerviewbase.cpp:1382
 #, kde-format
 msgid "Could not write all data to file."
-msgstr "Nepavyko įrašyti visų "
+msgstr "Nepavyko rašyti visų duomenų į failą."
 
 #: composer/composerviewbase.cpp:1385
-#, kde-format
+#, fuzzy, kde-format
 msgid "Could not finalize the file."
 msgstr "Nepavyko baigti failo."
 
@@ -590,7 +572,7 @@ msgstr "Automatinis laiško išsaugojimas nepavyko"
 #: composer/composerviewbase.cpp:1515
 #, kde-format
 msgid "Failed to save the message: %1"
-msgstr "Nepavyko išsaugoti laiško: %1"
+msgstr "Nepavyko įrašyti laiško: %1"
 
 #: composer/composerviewbase.cpp:1945
 #, kde-format
@@ -601,25 +583,22 @@ msgid ""
 msgstr ""
 
 #: composer/composerviewbase.cpp:1948
-#, fuzzy, kde-format
-#| msgid "File Attachment Reminder"
+#, kde-format
 msgctxt "@title:window"
 msgid "File Attachment Reminder"
-msgstr "Failų pridėjimo priminimas"
+msgstr "Priminimas apie failo pridėjimą"
 
 #: composer/composerviewbase.cpp:1949
-#, fuzzy, kde-format
-#| msgid "&Attach File..."
+#, kde-format
 msgctxt "@action:button"
 msgid "&Attach File..."
-msgstr "Prisegti &failą..."
+msgstr "&Pridėti failą..."
 
 #: composer/composerviewbase.cpp:1950
-#, fuzzy, kde-format
-#| msgid "&Send as Is"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Send as Is"
-msgstr "Siųsti k&aip yra"
+msgstr "&Siųsti esamu pavidalu"
 
 #: composer/composerviewbase.cpp:2002
 #, kde-format
@@ -630,8 +609,7 @@ msgid ""
 msgstr ""
 
 #: composer/composerviewbase.cpp:2008 composer/composerviewbase.cpp:2036
-#, fuzzy, kde-format
-#| msgid "Sign Message?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Sign Message?"
 msgstr "Pasirašyti laišką?"
@@ -640,14 +618,13 @@ msgstr "Pasirašyti laišką?"
 #, kde-format
 msgctxt "to sign"
 msgid "&Sign"
-msgstr "&Pasirašyti"
+msgstr "Pa&sirašyti"
 
 #: composer/composerviewbase.cpp:2010 composer/composerviewbase.cpp:2038
-#, fuzzy, kde-format
-#| msgid "Do &Not Encrypt"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Sign"
-msgstr "&Nešifruoti"
+msgstr "&Nepasirašyti"
 
 #: composer/composerviewbase.cpp:2031
 #, kde-format
@@ -664,15 +641,13 @@ msgid ""
 msgstr ""
 
 #: composer/composerviewbase.cpp:2063
-#, fuzzy, kde-format
-#| msgid "Send Unsigned?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Send Unsigned?"
 msgstr "Siųsti nepasirašytą?"
 
 #: composer/composerviewbase.cpp:2064
-#, fuzzy, kde-format
-#| msgid "Send &Unsigned"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &Unsigned"
 msgstr "Siųsti &nepasirašytą"
@@ -701,21 +676,19 @@ msgstr ""
 #: composer/composerviewbase.cpp:2086
 #, kde-format
 msgid "&Sign"
-msgstr "&Pasirašyti"
+msgstr "Pa&sirašyti"
 
 #: composer/composerviewbase.cpp:2089
-#, fuzzy, kde-format
-#| msgid "Unsigned-Message Warning"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unsigned-Message Warning"
-msgstr "Nepasirašyto laiško perspėjimas"
+msgstr "Įspėjimas apie nepasirašytą laišką"
 
 #: composer/composerviewbase.cpp:2091
-#, fuzzy, kde-format
-#| msgid "Send &As Is"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &As Is"
-msgstr "Siųsti k&aip yra"
+msgstr "Siųsti es&amu pavidalu"
 
 #: composer/composerviewbase.cpp:2138
 #, kde-format
@@ -740,12 +713,12 @@ msgstr "Šifruoti laišką?"
 #: composer/composerviewbase.cpp:2148
 #, kde-format
 msgid "Sign && &Encrypt"
-msgstr "Pasirašyti &ir Užšifruoti"
+msgstr "Pasirašyti ir ši&fruoti"
 
 #: composer/composerviewbase.cpp:2148 composer/composerviewbase.cpp:2230
 #, kde-format
 msgid "&Encrypt"
-msgstr "&Šifruoti"
+msgstr "Ši&fruoti"
 
 #: composer/composerviewbase.cpp:2149 composer/composerviewbase.cpp:2235
 #, kde-format
@@ -755,7 +728,7 @@ msgstr ""
 #: composer/composerviewbase.cpp:2149 composer/composerviewbase.cpp:2235
 #, kde-format
 msgid "&Send As-Is"
-msgstr "&Siųsti kaip yra"
+msgstr "&Siųsti esamu pavidalu"
 
 #: composer/composerviewbase.cpp:2170
 #, kde-format
@@ -766,15 +739,13 @@ msgstr ""
 
 #: composer/composerviewbase.cpp:2178 composer/keyresolver.cpp:1319
 #: composer/keyresolver.cpp:1360
-#, fuzzy, kde-format
-#| msgid "&Encrypt"
+#, kde-format
 msgctxt "@action:button"
 msgid "&Encrypt"
-msgstr "&Šifruoti"
+msgstr "Ši&fruoti"
 
 #: composer/composerviewbase.cpp:2179
-#, fuzzy, kde-format
-#| msgid "Do &Not Encrypt"
+#, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Encrypt"
 msgstr "&Nešifruoti"
@@ -788,15 +759,13 @@ msgid ""
 msgstr ""
 
 #: composer/composerviewbase.cpp:2205
-#, fuzzy, kde-format
-#| msgid "Send Unencrypted?"
+#, kde-format
 msgctxt "@title:window"
 msgid "Send Unencrypted?"
-msgstr "Siųsti &nešifruotą?"
+msgstr "Siųsti nešifruotą?"
 
 #: composer/composerviewbase.cpp:2206 composer/keyresolver.cpp:1345
-#, fuzzy, kde-format
-#| msgid "Send &Unencrypted"
+#, kde-format
 msgctxt "@action:button"
 msgid "Send &Unencrypted"
 msgstr "Siųsti &nešifruotą"
@@ -822,14 +791,13 @@ msgstr ""
 #: composer/composerviewbase.cpp:2230
 #, kde-format
 msgid "&Encrypt All Parts"
-msgstr "&Šifruoti visas dalis"
+msgstr "Ši&fruoti visas dalis"
 
 #: composer/composerviewbase.cpp:2233
-#, fuzzy, kde-format
-#| msgid "Unencrypted Message Warning"
+#, kde-format
 msgctxt "@title:window"
 msgid "Unencrypted Message Warning"
-msgstr "Nepasirašyto laiško perspėjimas"
+msgstr "Įspėjimas apie nešifruotą laišką"
 
 #: composer/keyresolver.cpp:314
 #, kde-format
@@ -993,7 +961,7 @@ msgid "Missing Key Warning"
 msgstr "Trūkstamo rakto įspėjimas"
 
 #: composer/keyresolver.cpp:1335
-#, kde-format
+#, fuzzy, kde-format
 msgid ""
 "You did not select an encryption key for the recipient of this message; "
 "therefore, the message will not be encrypted."
@@ -1002,7 +970,7 @@ msgstr ""
 "siunčiamas neužšifruotas."
 
 #: composer/keyresolver.cpp:1339
-#, kde-format
+#, fuzzy, kde-format
 msgid ""
 "You did not select an encryption key for any of the recipients of this "
 "message; therefore, the message will not be encrypted."
@@ -1119,7 +1087,7 @@ msgstr "Pažymėti viską"
 #: followupreminder/followupreminderselectdatedialog.cpp:65
 #, kde-format
 msgid "Date:"
-msgstr ""
+msgstr "Data:"
 
 #: followupreminder/followupreminderselectdatedialog.cpp:73
 #, kde-format
@@ -1129,32 +1097,32 @@ msgstr ""
 #: followupreminder/followupreminderselectdatedialog.cpp:107
 #, kde-format
 msgid "The selected date must be greater than the current date."
-msgstr ""
+msgstr "Pasirinkta data privalo būti vėliau nei dabartinė data."
 
 #: followupreminder/followupreminderselectdatedialog.cpp:107
 #, kde-format
 msgctxt "@title:window"
 msgid "Invalid date"
-msgstr ""
+msgstr "Netinkama data"
 
 #: followupreminder/followupreminderselectdatedialog.cpp:111
 #, kde-format
 msgid "The selected folder is not valid."
-msgstr ""
+msgstr "Pasirinktas aplankas yra netinkamas."
 
 #: followupreminder/followupreminderselectdatedialog.cpp:111
 #, kde-format
 msgctxt "@title:window"
 msgid "Invalid folder"
-msgstr ""
+msgstr "Netinkamas aplankas"
 
 #: helper/messagefactoryng.cpp:428 helper/messagefactoryng.cpp:757
-#, kde-format
+#, fuzzy, kde-format
 msgid "forwarded message"
 msgstr "Persiųstas laiškas"
 
 #: helper/messagefactoryng.cpp:599
-#, kde-format
+#, fuzzy, kde-format
 msgid "Receipt: "
 msgstr "Gavimas: "
 
@@ -1195,7 +1163,7 @@ msgid ""
 msgstr ""
 
 #: imagescaling/imagescalingwidget.cpp:189
-#, kde-format
+#, fuzzy, kde-format
 msgid "Custom"
 msgstr "Pasirinktas"
 
@@ -1214,19 +1182,19 @@ msgstr ""
 #: imagescaling/ui/imagescalingwidget.ui:17
 #, kde-format
 msgid "Automatically resize images"
-msgstr "Automatiškai keisti paveikslėlių dydį"
+msgstr "Automatiškai keisti paveikslų dydį"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
 #: imagescaling/ui/imagescalingwidget.ui:28
 #, kde-format
 msgid "General"
-msgstr "Bendri"
+msgstr "Bendra"
 
 #. i18n: ectx: property (text), widget (QCheckBox, KeepImageRatio)
 #: imagescaling/ui/imagescalingwidget.ui:34
 #, kde-format
 msgid "Keep ratio"
-msgstr "Išlaikyti santykį"
+msgstr "Išlaikyti proporcijas"
 
 #. i18n: ectx: property (text), widget (QCheckBox, AskBeforeResizing)
 #: imagescaling/ui/imagescalingwidget.ui:41
@@ -1244,11 +1212,11 @@ msgstr ""
 #: imagescaling/ui/imagescalingwidget.ui:89
 #, kde-format
 msgid "Image"
-msgstr "Paveikslėlis"
+msgstr "Paveikslas"
 
 #. i18n: ectx: property (text), widget (QCheckBox, ReduceImageToMaximum)
 #: imagescaling/ui/imagescalingwidget.ui:95
-#, kde-format
+#, fuzzy, kde-format
 msgid "Reduce image to maximum dimension:"
 msgstr "Sumažinti paveikslėlį iki didžiausių išmatavimų:"
 
@@ -1278,7 +1246,7 @@ msgstr " piks."
 
 #. i18n: ectx: property (text), widget (QCheckBox, EnlargeImageToMinimum)
 #: imagescaling/ui/imagescalingwidget.ui:163
-#, kde-format
+#, fuzzy, kde-format
 msgid "Enlarge image to minimum dimension"
 msgstr "Padidint paveikslėlį iki mažiausių išmatavimų"
 
@@ -1362,11 +1330,11 @@ msgstr ""
 #: imagescaling/ui/imagescalingwidget.ui:326
 #, kde-format
 msgid "Image Format"
-msgstr "Paveikslėlio formatas"
+msgstr "Paveikslo formatas"
 
 #. i18n: ectx: property (text), widget (QCheckBox, resizeImageWithFormats)
 #: imagescaling/ui/imagescalingwidget.ui:332
-#, kde-format
+#, fuzzy, kde-format
 msgid "Resize all images with one of these formats"
 msgstr "Keisti paveikslėlių dydį su vienu iš šių formatų"
 
@@ -1431,10 +1399,9 @@ msgid "Define Attachment Name"
 msgstr "Failų pridėjimo priminimas"
 
 #: job/attachmentclipboardjob.cpp:46
-#, fuzzy, kde-format
-#| msgid "File Attachment Reminder"
+#, kde-format
 msgid "Attachment Name:"
-msgstr "Failų pridėjimo priminimas"
+msgstr "Priedo pavadinimas:"
 
 #: job/attachmentclipboardjob.cpp:49
 #, kde-format
@@ -1442,7 +1409,7 @@ msgid "Clipboard Text"
 msgstr ""
 
 #: job/attachmentfrompublickeyjob.cpp:50
-#, kde-format
+#, fuzzy, kde-format
 msgid "OpenPGP key 0x%1"
 msgstr "OpenPGP raktas 0x%1"
 
@@ -1496,7 +1463,7 @@ msgid "Asked not to use word wrapping, but not given clean plain text."
 msgstr ""
 
 #: job/maintextjob.cpp:90
-#, kde-format
+#, fuzzy, kde-format
 msgid "Could not get text codec for charset \"%1\"."
 msgstr "Nepavyko gauti teksto kodeko ženklų rinkiniui \"%1\"."
 
@@ -1520,13 +1487,12 @@ msgstr "Siųsti &nepasirašytą"
 #: mdn/mdnadvicedialog.cpp:32
 #, kde-format
 msgid "&Ignore"
-msgstr ""
+msgstr "Nepa&isyti"
 
 #: mdn/mdnadvicedialog.cpp:34
-#, fuzzy, kde-format
-#| msgid "&Send as Is"
+#, kde-format
 msgid "&Send"
-msgstr "Siųsti k&aip yra"
+msgstr "&Siųsti"
 
 #: mdn/mdnadvicehelper.cpp:27
 msgid ""
@@ -1575,19 +1541,19 @@ msgid ""
 msgstr ""
 
 #: recipient/distributionlistdialog.cpp:96
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Save Distribution List"
 msgstr "Išsaugoti platinimo sąrašą"
 
 #: recipient/distributionlistdialog.cpp:107
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Save List"
 msgstr "Įrašyti sąrašą"
 
 #: recipient/distributionlistdialog.cpp:121
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@label:textbox Name of the distribution list."
 msgid "&Name:"
 msgstr "&Vardas:"
@@ -1621,13 +1587,13 @@ msgid ""
 msgstr ""
 
 #: recipient/distributionlistdialog.cpp:251
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "New Distribution List"
 msgstr "Naujas platinimo sąrašas"
 
 #: recipient/distributionlistdialog.cpp:252
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@label:textbox"
 msgid "Please enter name:"
 msgstr "Prašome įvesti vardą:"
@@ -1641,7 +1607,7 @@ msgid ""
 msgstr ""
 
 #: recipient/distributionlistdialog.cpp:285
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Select Address Book"
 msgstr "Parinkti adresų knygą"
@@ -1652,24 +1618,24 @@ msgid "Select the address book folder to store the contact group in:"
 msgstr ""
 
 #: recipient/distributionlistdialog.cpp:322
-#, kde-format
+#, fuzzy, kde-format
 msgid "Unable to create distribution list: %1"
 msgstr "Nepavyko sukurti platinimo sąrašo: %1"
 
 #: recipient/recipient.cpp:99
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@label:listbox Recipient of an email message."
 msgid "To"
 msgstr "Kam"
 
 #: recipient/recipient.cpp:101
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@label:listbox Carbon Copy recipient of an email message."
 msgid "CC"
 msgstr "CC"
 
 #: recipient/recipient.cpp:103
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@label:listbox Blind carbon copy recipient of an email message."
 msgid "BCC"
 msgstr "BCC"
@@ -1687,7 +1653,7 @@ msgid "<placeholder>Undefined Recipient Type</placeholder>"
 msgstr ""
 
 #: recipient/recipientline.cpp:71
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@label:listbox"
 msgid "Select type of recipient"
 msgstr "Pasirinkti gavėjo tipą"
@@ -1709,13 +1675,13 @@ msgstr[2] ""
 msgstr[3] ""
 
 #: recipient/recipientseditorsidewidget.cpp:29
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Save List..."
 msgstr "Įrašyti sąrašą..."
 
 #: recipient/recipientseditorsidewidget.cpp:30
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@action:button Open recipient selection dialog."
 msgid "Se&lect..."
 msgstr "Pasirin&kti..."
@@ -1733,13 +1699,13 @@ msgid "Select recipients from address book"
 msgstr ""
 
 #: recipient/recipientseditorsidewidget.cpp:78
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info:status No recipients selected"
 msgid "No recipients"
 msgstr "Nėra gavėjų"
 
 #: recipient/recipientseditorsidewidget.cpp:80
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info:status Number of recipients selected"
 msgid "1 recipient"
 msgid_plural "%1 recipients"
@@ -1793,17 +1759,17 @@ msgid "Add as &Reply-To"
 msgstr "Įtraukti kaip &Kam"
 
 #: recipient/recipientspicker.cpp:84
-#, kde-format
+#, fuzzy, kde-format
 msgid "Add as &To"
 msgstr "Įtraukti kaip &Kam"
 
 #: recipient/recipientspicker.cpp:85
-#, kde-format
+#, fuzzy, kde-format
 msgid "Add as CC"
 msgstr "Įtraukti kaip CC"
 
 #: recipient/recipientspicker.cpp:86
-#, kde-format
+#, fuzzy, kde-format
 msgid "Add as &BCC"
 msgstr "Įtraukti kaip &BCC"
 
@@ -1833,7 +1799,7 @@ msgstr[3] ""
 #: recipient/recipientspicker.cpp:193
 #, kde-format
 msgid "You can not add more recipients."
-msgstr ""
+msgstr "Negalite pridėti daugiau gavėjų."
 
 #: sendlater/sendlatercreatejob.cpp:35
 #, fuzzy, kde-format
@@ -1845,38 +1811,38 @@ msgstr "Nepavyko išsaugoti laiško: %1"
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Later"
-msgstr ""
+msgstr "Siųsti vėliau"
 
 #: sendlater/sendlaterdialog.cpp:50
 #, kde-format
 msgid "Send Later"
-msgstr ""
+msgstr "Siųsti vėliau"
 
 #: sendlater/sendlaterdialog.cpp:51
 #, kde-format
 msgctxt "@option:check"
 msgid "Delay"
-msgstr ""
+msgstr "Atidėti"
 
 #: sendlater/sendlaterdialog.cpp:68
 #, kde-format
 msgid "Days"
-msgstr ""
+msgstr "Dienas"
 
 #: sendlater/sendlaterdialog.cpp:68
 #, kde-format
 msgid "Weeks"
-msgstr ""
+msgstr "Savaites"
 
 #: sendlater/sendlaterdialog.cpp:68
 #, kde-format
 msgid "Months"
-msgstr ""
+msgstr "Mėnesius"
 
 #: sendlater/sendlaterdialog.cpp:68
 #, kde-format
 msgid "Years"
-msgstr ""
+msgstr "Metus"
 
 #: sendlater/sendlaterjob.cpp:34
 #, kde-format
@@ -1895,16 +1861,15 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, mLabel)
 #: sendlater/ui/sendlaterwidget.ui:29
-#, fuzzy, kde-format
-#| msgid "&Send as Is"
+#, kde-format
 msgid "Send at:"
-msgstr "Siųsti k&aip yra"
+msgstr "Kada siųsti:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mRecurrence)
 #: sendlater/ui/sendlaterwidget.ui:39
 #, kde-format
 msgid "Repeat every:"
-msgstr ""
+msgstr "Kartoti kas:"
 
 #. i18n: ectx: label, entry (ActivateQuickTextFormat), group (Composer)
 #: settings/messagecomposer.kcfg:6
@@ -1914,7 +1879,7 @@ msgstr ""
 
 #. i18n: ectx: label, entry (QuoteSelectionOnly), group (Composer)
 #: settings/messagecomposer.kcfg:10
-#, kde-format
+#, fuzzy, kde-format
 msgid "Only quote selected text when replying"
 msgstr "Atsakant cituoti tik pažymėtą tekstą"
 
@@ -1922,17 +1887,17 @@ msgstr "Atsakant cituoti tik pažymėtą tekstą"
 #: settings/messagecomposer.kcfg:14
 #, kde-format
 msgid "A&utomatically insert signature"
-msgstr "A&utomatiškai įdėti parašą"
+msgstr "A&utomatiškai įterpti parašą"
 
 #. i18n: ectx: label, entry (PrependSignature), group (Composer)
 #: settings/messagecomposer.kcfg:18
-#, kde-format
+#, fuzzy, kde-format
 msgid "Insert signature above quoted text"
 msgstr "Pridėti parašą virš cituojamo teksto"
 
 #. i18n: ectx: label, entry (DashDashSignature), group (Composer)
 #: settings/messagecomposer.kcfg:22
-#, kde-format
+#, fuzzy, kde-format
 msgid "Prepend separator to signature"
 msgstr "Pridėti skirtuką prie parašo"
 
@@ -1953,7 +1918,7 @@ msgstr ""
 
 #. i18n: ectx: label, entry (ShowRecentAddressesInComposer), group (Composer)
 #: settings/messagecomposer.kcfg:31
-#, kde-format
+#, fuzzy, kde-format
 msgid "Use recent addresses for autocompletion"
 msgstr "Naudoti paskiausius adresus auto užbaigimui"
 
@@ -1967,19 +1932,19 @@ msgstr ""
 
 #. i18n: ectx: label, entry (MaximumRecipients), group (Composer)
 #: settings/messagecomposer.kcfg:36
-#, kde-format
+#, fuzzy, kde-format
 msgid "Maximum number of recipient entries:"
 msgstr "Didžiausias gavėjų skaičius:"
 
 #. i18n: ectx: label, entry (WordWrap), group (Composer)
 #: settings/messagecomposer.kcfg:40
-#, kde-format
+#, fuzzy, kde-format
 msgid "Word &wrap at column:"
 msgstr "Kelti &žodžius nuo stulpelio:"
 
 #. i18n: ectx: label, entry (ImprovePlainTextOfHtmlMessage), group (Composer)
 #: settings/messagecomposer.kcfg:50
-#, kde-format
+#, fuzzy, kde-format
 msgid "Improve plain text version of HTML message"
 msgstr "Pagerinti HTML laiško paprastąjį tekstą"
 
@@ -2009,7 +1974,7 @@ msgstr ""
 
 #. i18n: ectx: label, entry (CryptoWarnWhenNearExpire), group (Composer)
 #: settings/messagecomposer.kcfg:70
-#, kde-format
+#, fuzzy, kde-format
 msgid "Warn if certificates/keys expire soon (configure thresholds below)"
 msgstr ""
 "Perspėti, jei liudijimai/raktai netrukus baigs galioti (slenksčius "
@@ -2152,16 +2117,14 @@ msgid "BCC Field Name"
 msgstr ""
 
 #: snippet/convertsnippetvariablemenu.cpp:89
-#, fuzzy, kde-format
-#| msgid "File Attachment Reminder"
+#, kde-format
 msgid "Attachment"
-msgstr "Failų pridėjimo priminimas"
+msgstr "Priedas"
 
 #: snippet/convertsnippetvariablemenu.cpp:90
-#, fuzzy, kde-format
-#| msgid "&Remove Attachment"
+#, kde-format
 msgid "Number Of Attachments"
-msgstr "Pašalinti priedą..."
+msgstr "Priedų skaičius"
 
 #: snippet/convertsnippetvariablemenu.cpp:93
 #, fuzzy, kde-format
@@ -2294,7 +2257,7 @@ msgid "Subject"
 msgstr ""
 
 #: utils/util.cpp:235
-#, kde-format
+#, fuzzy, kde-format
 msgctxt ""
 "comma-separated list of keywords that are used to detect whether the user "
 "forgot to attach his attachment. Do not add space between words."
