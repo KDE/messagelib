@@ -59,7 +59,7 @@ MessageViewerCheckBeforeDeletingParameters &MessageViewerCheckBeforeDeletingPara
 
 bool MessageViewerCheckBeforeDeletingParameters::operator==(const MessageViewerCheckBeforeDeletingParameters &other) const
 {
-    return (d->mType == other.deleteType()) && (d->mList == other.items());
+    return (d->mType == other.d->mType) && (d->mList == other.d->mList);
 }
 
 bool MessageViewerCheckBeforeDeletingParameters::isValid() const

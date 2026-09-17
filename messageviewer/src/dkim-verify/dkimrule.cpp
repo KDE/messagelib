@@ -77,8 +77,8 @@ void DKIMRule::setListId(const QString &listId)
 
 bool DKIMRule::operator==(const DKIMRule &other) const
 {
-    if (other.domain() == mDomain && other.signedDomainIdentifier() == mSignedDomainIdentifier && other.from() == mFrom && other.listId() == mListId
-        && other.ruleType() == mRuleType && other.enabled() == mEnabled && other.priority() == mPriority) {
+    if (other.mDomain == mDomain && other.mSignedDomainIdentifier == mSignedDomainIdentifier && other.mFrom == mFrom && other.mListId == mListId
+        && other.mRuleType == mRuleType && other.mEnabled == mEnabled && other.mPriority == mPriority) {
         return true;
     }
     return false;

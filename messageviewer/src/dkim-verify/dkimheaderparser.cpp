@@ -135,7 +135,7 @@ void DKIMHeaderParser::setWasAlreadyParsed(bool wasAlreadyParsed)
 
 bool DKIMHeaderParser::operator==(const DKIMHeaderParser &other) const
 {
-    return other.head() == mHead && other.listHeaders() == mListHeaders && other.wasAlreadyParsed() == mWasAlreadyParsed;
+    return other.mHead == mHead && other.mListHeaders == mListHeaders && other.mWasAlreadyParsed == mWasAlreadyParsed;
 }
 
 QByteArray DKIMHeaderParser::head() const

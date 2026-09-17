@@ -371,9 +371,10 @@ MailingList &MailingList::operator=(const MailingList &other)
 
 bool MailingList::operator==(const MailingList &other) const
 {
-    return other.features() == d->mFeatures && other.handler() == d->mHandler && other.postUrls() == d->mPostUrls && other.subscribeUrls() == d->mSubscribeUrls
-        && other.unsubscribeUrls() == d->mUnsubscribeUrls && other.helpUrls() == d->mHelpUrls && other.archiveUrls() == d->mArchiveUrls
-        && other.ownerUrls() == d->mOwnerUrls && other.archivedAtUrls() == d->mArchivedAtUrls && other.id() == d->mId;
+    return other.d->mFeatures == d->mFeatures && other.d->mHandler == d->mHandler && other.d->mPostUrls == d->mPostUrls
+        && other.d->mSubscribeUrls == d->mSubscribeUrls && other.d->mUnsubscribeUrls == d->mUnsubscribeUrls && other.d->mHelpUrls == d->mHelpUrls
+        && other.d->mArchiveUrls == d->mArchiveUrls && other.d->mOwnerUrls == d->mOwnerUrls && other.d->mArchivedAtUrls == d->mArchivedAtUrls
+        && other.d->mId == d->mId;
 }
 
 MailingList::~MailingList() = default;

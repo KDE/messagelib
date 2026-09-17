@@ -140,8 +140,8 @@ void DKIMKeyRecord::setFlags(const QStringList &flags)
 
 bool DKIMKeyRecord::operator==(const DKIMKeyRecord &other) const
 {
-    return mVersion == other.version() && mNote == other.note() && mPublicKey == other.publicKey() && mService == other.service()
-        && mHashAlgorithm == other.hashAlgorithm() && mFlags == other.flags();
+    return mVersion == other.mVersion && mNote == other.mNote && mPublicKey == other.mPublicKey && mService == other.mService
+        && mHashAlgorithm == other.mHashAlgorithm && mFlags == other.mFlags;
 }
 
 QStringList DKIMKeyRecord::hashAlgorithm() const

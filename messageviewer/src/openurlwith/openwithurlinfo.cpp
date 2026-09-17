@@ -59,8 +59,8 @@ void OpenWithUrlInfo::setCommandLine(const QString &newCommandLine)
 
 bool OpenWithUrlInfo::operator==(const OpenWithUrlInfo &other) const
 {
-    return mCommandLine == other.commandLine() && mCommand == other.command() && mUrl == other.url() && mIsLocalOpenWithInfo == other.isLocalOpenWithInfo()
-        && mEnabled == other.enabled();
+    return mCommandLine == other.mCommandLine && mCommand == other.mCommand && mUrl == other.mUrl && mIsLocalOpenWithInfo == other.mIsLocalOpenWithInfo
+        && mEnabled == other.mEnabled;
 }
 
 bool OpenWithUrlInfo::isLocalOpenWithInfo() const

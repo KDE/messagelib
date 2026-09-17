@@ -179,12 +179,11 @@ void DKIMInfo::setBodyCanonization(CanonicalizationType bodyCanonization)
 
 bool DKIMInfo::operator==(const DKIMInfo &other) const
 {
-    return mVersion == other.version() && mHashingAlgorithm == other.hashingAlgorithm() && mSigningAlgorithm == other.signingAlgorithm()
-        && mDomain == other.domain() && mSelector == other.selector() && mBodyHash == other.bodyHash() && mSignatureTimeStamp == other.signatureTimeStamp()
-        && mExpireTime == other.expireTime() && mQuery == other.query() && mSignature == other.signature()
-        && mAgentOrUserIdentifier == other.agentOrUserIdentifier() && mBodyLengthCount == other.bodyLengthCount()
-        && mListSignedHeader == other.listSignedHeader() && mHeaderCanonization == other.headerCanonization() && mBodyCanonization == other.bodyCanonization()
-        && mIDomain == other.iDomain();
+    return mVersion == other.mVersion && mHashingAlgorithm == other.mHashingAlgorithm && mSigningAlgorithm == other.mSigningAlgorithm
+        && mDomain == other.mDomain && mSelector == other.mSelector && mBodyHash == other.mBodyHash && mSignatureTimeStamp == other.mSignatureTimeStamp
+        && mExpireTime == other.mExpireTime && mQuery == other.mQuery && mSignature == other.mSignature
+        && mAgentOrUserIdentifier == other.mAgentOrUserIdentifier && mBodyLengthCount == other.mBodyLengthCount && mListSignedHeader == other.mListSignedHeader
+        && mHeaderCanonization == other.mHeaderCanonization && mBodyCanonization == other.mBodyCanonization && mIDomain == other.mIDomain;
 }
 
 DKIMInfo::CanonicalizationType DKIMInfo::headerCanonization() const
