@@ -856,8 +856,8 @@ QList<MessageComposer::ComposerJob *> ComposerViewBase::generateCryptoMessages(b
         auto composerJob = new MessageComposer::ComposerJob;
         if (m_cryptoMessageFormat & Kleo::OpenPGPMIMEFormat) {
             composerJob->setAutocryptEnabled(autocryptEnabled());
-            if (!keyResolver->encryptToSelfKeysFor(Kleo::OpenPGPMIMEFormat).empty()) {
-                composerJob->setSenderEncryptionKey(keyResolver->encryptToSelfKeysFor(Kleo::OpenPGPMIMEFormat)[0]);
+            if (const auto selfKeys = keyResolver->encryptToSelfKeysFor(Kleo::OpenPGPMIMEFormat); !selfKeys.empty()) {
+                composerJob->setSenderEncryptionKey(selfKeys[0]);
             }
         }
         composerJobs.append(composerJob);
@@ -905,7 +905,9 @@ QList<MessageComposer::ComposerJob *> ComposerViewBase::generateCryptoMessages(b
                 composerJob->setEncryptionKeys(data);
                 if (concreteFormat & Kleo::OpenPGPMIMEFormat && autocryptEnabled()) {
                     composerJob->setAutocryptEnabled(autocryptEnabled());
-                    composerJob->setSenderEncryptionKey(keyResolver->encryptToSelfKeysFor(concreteFormat)[0]);
+                    if (const auto selfKeys = keyResolver->encryptToSelfKeysFor(concreteFormat); !selfKeys.empty()) {
+                        composerJob->setSenderEncryptionKey(selfKeys[0]);
+                    }
                     QTemporaryDir dir;
                     bool specialGnupgHome = addKeysToContext(dir.path(), data, keyResolver->useAutocrypt());
                     if (specialGnupgHome) {
