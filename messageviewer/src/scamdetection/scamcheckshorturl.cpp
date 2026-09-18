@@ -13,6 +13,7 @@
 #include <QFile>
 
 #include <QJsonDocument>
+#include <QJsonObject>
 #include <QStandardPaths>
 #include <QUrl>
 
@@ -53,8 +54,7 @@ void ScamCheckShortUrl::loadLongUrlServices()
             qCDebug(MESSAGEVIEWER_LOG) << " Error during read longurlServices.json";
             return;
         }
-        const QMap<QString, QVariant> response = json.toVariant().toMap();
-        sSupportedServices = response.keys();
+        sSupportedServices = json.object().keys();
     } else {
         qCDebug(MESSAGEVIEWER_LOG) << " json file \'longurlServices.json\' not found";
     }

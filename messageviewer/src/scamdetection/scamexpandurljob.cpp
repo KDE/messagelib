@@ -15,8 +15,10 @@
 #include <KLocalizedString>
 
 #include <QJsonDocument>
+#include <QJsonObject>
 #include <QNetworkAccessManager>
 #include <QUrlQuery>
+#include <QVariant>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
@@ -66,19 +68,19 @@ void ScamExpandUrlJob::expandedUrl(const QUrl &url)
 void ScamExpandUrlJob::slotExpandFinished(QNetworkReply *reply)
 {
     QUrl shortUrl;
-    if (!reply->property("shortUrl").isNull()) {
-        shortUrl.setUrl(reply->property("shortUrl").toString());
+    const QVariant shortUrlVariant = reply->property("shortUrl");
+    if (!shortUrlVariant.isNull()) {
+        shortUrl.setUrl(shortUrlVariant.toString());
     }
     const QByteArray ba = reply->readAll();
     // qDebug() << " reply->readAll()" << ba;
     QJsonDocument jsonDoc = QJsonDocument::fromJson(ba);
     reply->deleteLater();
     if (!jsonDoc.isNull()) {
-        const QMap<QString, QVariant> map = jsonDoc.toVariant().toMap();
         QUrl longUrl;
-        const QVariant longUrlVar = map.value(u"LongURL"_s);
-        if (longUrlVar.isValid()) {
-            longUrl.setUrl(longUrlVar.toString());
+        const QString longUrlVar = jsonDoc.object().value(u"LongURL"_s).toString();
+        if (!longUrlVar.isEmpty()) {
+            longUrl.setUrl(longUrlVar);
         } else {
             qCWarning(MESSAGEVIEWER_LOG) << "JSon is not correct" << ba;
             PimCommon::BroadcastStatus::instance()->setStatusMsg(i18n("Impossible to expand \'%1\'.", shortUrl.url()));
