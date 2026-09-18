@@ -28,9 +28,9 @@ bool CidReferencesUrlInterceptor::interceptRequest(QWebEngineUrlRequestInfo &inf
     const QUrl urlRequestUrl(info.requestUrl());
     if (urlRequestUrl.scheme() == "cid"_L1) {
         if (info.resourceType() == QWebEngineUrlRequestInfo::ResourceTypeImage) {
-            const QUrl newUrl = QUrl(MessageViewer::WebEngineEmbedPart::self()->contentUrl(urlRequestUrl.path()));
-            if (!newUrl.isEmpty()) {
-                info.redirect(newUrl);
+            const QString contentUrl = MessageViewer::WebEngineEmbedPart::self()->contentUrl(urlRequestUrl.path());
+            if (!contentUrl.isEmpty()) {
+                info.redirect(QUrl(contentUrl));
             }
         }
     }
