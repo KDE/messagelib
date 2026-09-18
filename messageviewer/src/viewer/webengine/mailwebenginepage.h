@@ -6,6 +6,7 @@
 #pragma once
 
 #include "messageviewer_export.h"
+#include <QWebEnginePermission>
 #include <WebEngineViewer/WebEnginePage>
 
 namespace MessageViewer

@@ -21,30 +21,14 @@
 #include <QWebEngineProfile>
 #include <WebEngineViewer/WebHitTest>
 
-#include <QElapsedTimer>
+#include <QApplication>
+#include <QImage>
 #include <QPainter>
 #include <QWebEngineUrlScheme>
 
 #include <WebEngineViewer/WebHitTestResult>
 
 using namespace MessageViewer;
-template<typename Arg, typename R, typename C>
-struct InvokeWrapper {
-    R *receiver;
-    void (C::*memberFunction)(Arg);
-    void operator()(Arg result)
-    {
-        (receiver->*memberFunction)(result);
-    }
-};
-
-template<typename Arg, typename R, typename C>
-
-static InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFunction)(Arg))
-{
-    InvokeWrapper<Arg, R, C> wrapper = {receiver, memberFunction};
-    return wrapper;
-}
 
 class MessageViewer::MailWebEngineViewPrivate
 {
@@ -62,7 +46,6 @@ public:
     WebEngineViewer::BlockTrackingUrlInterceptor *mBlockMailTrackingUrl = nullptr;
     bool mCanStartDrag = false;
     bool mStartedDrag = false;
-    QElapsedTimer *mStartDragTimer = nullptr;
 };
 
 MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
@@ -223,8 +206,9 @@ void MailWebEngineView::forwardMouseMoveEvent(QMouseEvent *event)
 
 void MailWebEngineView::forwardMouseReleaseEvent(QMouseEvent *event)
 {
-    Q_UNUSED(event)
-
+    if (event->button() != Qt::LeftButton) {
+        return;
+    }
     if (!d->mStartedDrag && d->mHoveredUrl.isValid()) {
         Q_EMIT d->mPageEngine->urlClicked(d->mHoveredUrl);
     }
@@ -291,7 +275,9 @@ void MailWebEngineView::isScrolledToBottom()
 {
     page()->runJavaScript(WebEngineViewer::WebEngineScript::isScrolledToBottom(),
                           WebEngineViewer::WebEngineManageScript::scriptWordId(),
-                          invoke(this, &MailWebEngineView::handleIsScrolledToBottom));
+                          [this](const QVariant &result) {
+                              handleIsScrolledToBottom(result);
+                          });
 }
 
 void MailWebEngineView::setElementByIdVisible(const QString &id, bool visible)
@@ -313,7 +299,9 @@ void MailWebEngineView::scrollToAnchor(const QString &anchor)
 {
     page()->runJavaScript(WebEngineViewer::WebEngineScript::searchElementPosition(anchor),
                           WebEngineViewer::WebEngineManageScript::scriptWordId(),
-                          invoke(this, &MailWebEngineView::handleScrollToAnchor));
+                          [this](const QVariant &result) {
+                              handleScrollToAnchor(result);
+                          });
 }
 
 void MailWebEngineView::handleIsScrolledToBottom(const QVariant &result)

@@ -683,12 +683,14 @@ QString Util::parseBodyStyle(const QString &style)
             const QStringView styleStr = QStringView(style).mid(indexStyle + 7, indexEnd - (indexStyle + 7));
             const auto lstStyle = styleStr.split(u';', Qt::SkipEmptyParts);
             QStringList lst;
+            lst.reserve(lstStyle.size());
             for (const auto &bodyStyle : lstStyle) {
-                // qDebug() << " bodyStyle : " << bodyStyle;
-                if (!bodyStyle.trimmed().contains("white-space"_L1) && !bodyStyle.trimmed().contains("text-align"_L1)) {
-                    lst.append(bodyStyle.toString().trimmed());
+                const QStringView trimmed = bodyStyle.trimmed();
+                if (!trimmed.contains("white-space"_L1) && !trimmed.contains("text-align"_L1)) {
+                    lst.append(trimmed.toString());
                 }
             }
+
             if (!lst.isEmpty()) {
                 // qDebug() << " lst " << lst;
                 return u" style=\"%1"_s.arg(lst.join(u';')) + u";\""_s;
