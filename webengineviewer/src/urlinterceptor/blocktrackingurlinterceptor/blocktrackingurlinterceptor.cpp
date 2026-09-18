@@ -14,7 +14,6 @@ using namespace WebEngineViewer;
 BlockTrackingUrlInterceptor::BlockTrackingUrlInterceptor(QObject *parent)
     : WebEngineViewer::NetworkPluginUrlInterceptorInterface(parent)
 {
-    qRegisterMetaType<WebEngineViewer::BlockTrackingUrlInterceptor::TrackerBlackList>();
     initializeList();
 }
 
