@@ -173,10 +173,6 @@ void MailWebEngineView::forwardMousePressEvent(QMouseEvent *event)
 
             d->mStartedDrag = false;
             if (d->mCanStartDrag) {
-                if (d->mStartDragTimer == nullptr) {
-                    d->mStartDragTimer = new QElapsedTimer;
-                }
-                d->mStartDragTimer->start();
                 event->accept();
             }
         }
@@ -190,11 +186,8 @@ void MailWebEngineView::forwardMouseMoveEvent(QMouseEvent *event)
         if (d->mCanStartDrag && (event->buttons() & Qt::LeftButton)) {
             if ((d->mLastClickPosition - event->pos()).manhattanLength() > QApplication::startDragDistance()) {
                 if (URLHandlerManager::instance()->handleDrag(d->mHoveredUrl, d->mViewer)) {
-                    if (d->mCanStartDrag && d->mStartDragTimer != nullptr) {
-                        if (d->mStartDragTimer->elapsed() > QApplication::startDragTime()) {
-                            d->mStartedDrag = true;
-                        }
-                    }
+                    // handleDrag() is blocking (QDrag::exec()): when it returns true the drag is over.
+                    d->mStartedDrag = true;
                     // If the URL handler manager started a drag, don't handle this in the future
                     d->mCanStartDrag = false;
                 }
