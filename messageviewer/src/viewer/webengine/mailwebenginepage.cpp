@@ -36,8 +36,6 @@ void MailWebEnginePage::initialize()
     settings()->setAttribute(QWebEngineSettings::WebGLEnabled, enableElement);
     settings()->setAttribute(QWebEngineSettings::AutoLoadIconsForPage, enableElement);
     settings()->setAttribute(QWebEngineSettings::Accelerated2dCanvasEnabled, enableElement);
-    settings()->setAttribute(QWebEngineSettings::WebGLEnabled, enableElement);
-
     settings()->setAttribute(QWebEngineSettings::FocusOnNavigationEnabled, enableElement);
     settings()->setAttribute(QWebEngineSettings::AllowRunningInsecureContent, enableElement);
     settings()->setAttribute(QWebEngineSettings::PdfViewerEnabled, enableElement);
