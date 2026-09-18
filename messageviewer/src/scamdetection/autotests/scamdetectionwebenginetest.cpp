@@ -145,6 +145,19 @@ void ScamDetectionWebEngineTest::scamtest_data()
     QTest::newRow("BUG-510551") << uR"(<a href="https://example.org/A" title="https://example.org/A">https://example.org/A</a>)"_s << false;
 
     QTest::newRow("https://www.kde.fr/?eu_business_user=true") << uR"(<a href="https://www.kde.fr/?eu_business_user=true">https://www.kde.fr/</a>)"_s << false;
+
+    // Invisible characters in the link text: it reads as example.com but points to example.org.
+    QTest::newRow("invisible-leading-space") << uR"(<a href="https://example.org"> https://example.com</a>)"_s << true;
+    QTest::newRow("invisible-zwnj-leading") << uR"(<a href="https://example.org">&zwnj;https://example.com</a>)"_s << true;
+    QTest::newRow("invisible-zwnj-trailing") << uR"(<a href="https://example.org">https://example.com&zwnj;</a>)"_s << true;
+    QTest::newRow("invisible-zwnj-middle") << uR"(<a href="https://example.org">ht&zwnj;tps://example.com</a>)"_s << true;
+    QTest::newRow("invisible-zwsp-middle") << uR"(<a href="https://example.org">https://example&#8203;.com</a>)"_s << true;
+    QTest::newRow("invisible-softhyphen-middle") << uR"(<a href="https://example.org">https://exam&shy;ple.com</a>)"_s << true;
+    QTest::newRow("invisible-bidi-override") << uR"(<a href="https://example.org">https://&#8237;example.com</a>)"_s << true;
+    // ... but an invisible character in a link text matching its own href is not a scam
+    // (mailers do insert them to allow soft wrapping of long urls).
+    QTest::newRow("invisible-zwnj-middle-nonscam") << uR"(<a href="https://example.com">ht&zwnj;tps://example.com</a>)"_s << false;
+    QTest::newRow("invisible-softhyphen-nonscam") << uR"(<a href="https://example.com">https://exam&shy;ple.com</a>)"_s << false;
 }
 
 void ScamDetectionWebEngineTest::scamtest()

@@ -41,6 +41,29 @@ static InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFunction)(Ar
     return wrapper;
 }
 
+// Zero-width and other invisible formatting characters (ZWSP, ZWNJ, ZWJ, BOM, soft hyphen,
+// bidi overrides, tag characters...) are not rendered at all: a link text can look exactly
+// like an url on screen while not comparing equal to it. Strip them (and the surrounding
+// whitespace) before comparing the displayed text with the real href, otherwise
+// <a href="https://example.org">ht&zwnj;tps://example.com</a> would go unnoticed.
+// foundInvisibleCharacters is only ever set to true, never cleared, so that the same flag can be
+// accumulated over the several strings displayed for a given anchor.
+static QString sanitizeDisplayedUrl(const QString &text, bool *foundInvisibleCharacters = nullptr)
+{
+    const QList<uint> ucs4 = text.toUcs4();
+    QList<char32_t> filtered;
+    filtered.reserve(ucs4.size());
+    for (const char32_t c : ucs4) {
+        if (QChar::category(c) != QChar::Other_Format) {
+            filtered.append(c);
+        }
+    }
+    if (foundInvisibleCharacters && filtered.size() != ucs4.size()) {
+        *foundInvisibleCharacters = true;
+    }
+    return QString::fromUcs4(filtered.constData(), filtered.size()).trimmed();
+}
+
 static QString addWarningColor(const QString &url)
 {
     const QString error = u"<font color=#FF0000>%1</font>"_s.arg(url.toHtmlEscaped());
@@ -86,11 +109,12 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
     const QList<QVariant> lst = mapResult.value(u"anchors"_s).toList();
     for (const QVariant &var : lst) {
         bool foundScam = false;
+        bool foundInvisibleCharacters = false;
         QMap<QString, QVariant> mapVariant = var.toMap();
         // qDebug()<<" mapVariant"<<mapVariant;
 
         // 1) detect if title has a url and title != href
-        const QString title = mapVariant.value(u"title"_s).toString();
+        const QString title = sanitizeDisplayedUrl(mapVariant.value(u"title"_s).toString(), &foundInvisibleCharacters);
         QString href = mapVariant.value(u"src"_s).toString();
         if (!QUrl(href).toString().contains("kmail:showAuditLog"_L1)) {
             href = href.toLower();
@@ -161,7 +185,7 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
             }
         }
         if (!foundScam) {
-            QUrl displayUrl = QUrl(mapVariant.value(u"text"_s).toString());
+            QUrl displayUrl = QUrl(sanitizeDisplayedUrl(mapVariant.value(u"text"_s).toString(), &foundInvisibleCharacters));
             // Special case if https + port 443 it will return url without port
             QString text = (displayUrl.port() == 443 && displayUrl.scheme() == "https"_L1)
                 ? displayUrl.toDisplayString(QUrl::StripTrailingSlash | QUrl::NormalizePathSegments | QUrl::RemovePort)
@@ -226,6 +250,12 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
                     }
                 }
             }
+        }
+        if (foundScam && foundInvisibleCharacters) {
+            d->mDetails += "<li>"_L1
+                + i18n("The text of this link contains invisible characters, which are not displayed but make it look different from the address it really "
+                       "points to. This is often the case in scam emails.")
+                + "</li>"_L1;
         }
     }
     if (mapResult.value(u"forms"_s).toInt() > 0) {
