@@ -19,10 +19,7 @@ bool LoadExternalReferencesUrlInterceptor::urlIsBlocked(const QUrl &requestedUrl
 {
     const QUrl url = requestedUrl.adjusted(QUrl::RemovePath | QUrl::RemovePort | QUrl::RemoveQuery);
     bool contains = false;
-    if (MessageViewer::RemoteContentManager::self()->isBlocked(url, contains)) {
-        return true;
-    }
-    return false;
+    return MessageViewer::RemoteContentManager::self()->isBlocked(url, contains);
 }
 
 bool LoadExternalReferencesUrlInterceptor::urlIsAuthorized(const QUrl &requestedUrl)
