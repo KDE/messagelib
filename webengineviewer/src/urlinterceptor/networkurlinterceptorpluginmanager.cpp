@@ -118,6 +118,7 @@ QList<WebEngineViewer::NetworkPluginUrlInterceptor *> NetworkUrlInterceptorPlugi
 {
     QList<WebEngineViewer::NetworkPluginUrlInterceptor *> lst;
     QList<MailNetworkUrlInterceptorPluginInfo>::ConstIterator end(mPluginList.constEnd());
+    lst.reserve(mPluginList.count());
     for (QList<MailNetworkUrlInterceptorPluginInfo>::ConstIterator it = mPluginList.constBegin(); it != end; ++it) {
         if (auto plugin = (*it).plugin) {
             lst << plugin;
