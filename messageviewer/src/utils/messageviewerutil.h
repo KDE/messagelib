@@ -59,10 +59,7 @@ struct HtmlMessageInfo {
     QString htmlSource;
     QString extraHead;
     QString bodyStyle;
-    [[nodiscard]] bool operator==(const HtmlMessageInfo &other) const
-    {
-        return other.htmlSource == htmlSource && other.extraHead == extraHead && other.bodyStyle == bodyStyle;
-    }
+    [[nodiscard]] bool operator==(const HtmlMessageInfo &other) const = default;
 };
 
 [[nodiscard]] MESSAGEVIEWER_EXPORT HtmlMessageInfo processHtml(const QString &htmlSource);
