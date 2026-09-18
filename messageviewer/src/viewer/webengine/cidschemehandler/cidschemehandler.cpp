@@ -5,6 +5,7 @@
 */
 
 #include "cidschemehandler.h"
+#include <QWebEngineUrlRequestJob>
 using namespace MessageViewer;
 
 CidSchemeHandler::CidSchemeHandler(QObject *parent)
@@ -16,7 +17,9 @@ CidSchemeHandler::~CidSchemeHandler() = default;
 
 void CidSchemeHandler::requestStarted(QWebEngineUrlRequestJob *job)
 {
-    Q_UNUSED(job)
+    // cid: urls for images are redirected by CidReferencesUrlInterceptor before reaching us.
+    // Anything else can't be resolved: fail the job explicitly, otherwise it is never answered.
+    job->fail(QWebEngineUrlRequestJob::UrlNotFound);
 }
 
 #include "moc_cidschemehandler.cpp"
