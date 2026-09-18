@@ -141,7 +141,7 @@ QString WebEnginePage::refreshCssVariablesScript()
 
 WebEngineViewer::WebHitTest *WebEnginePage::hitTestContent(const QPoint &pos)
 {
-    return new WebHitTest(this, mapToViewport(pos), pos);
+    return new WebHitTest(this, mapToViewport(pos), pos, this);
 }
 
 QPoint WebEnginePage::mapToViewport(const QPoint &pos) const
