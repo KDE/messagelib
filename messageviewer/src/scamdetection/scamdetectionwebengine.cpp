@@ -116,7 +116,7 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
         // 1) detect if title has a url and title != href
         const QString title = sanitizeDisplayedUrl(mapVariant.value(u"title"_s).toString(), &foundInvisibleCharacters);
         QString href = mapVariant.value(u"src"_s).toString();
-        if (!QUrl(href).toString().contains("kmail:showAuditLog"_L1)) {
+        if (!href.contains("kmail:showAuditLog"_L1)) {
             href = href.toLower();
         }
         const QUrl url(href);
@@ -146,6 +146,7 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
                 }
             }
         }
+        const QString urlString = url.toString();
         if (!foundScam) {
             // 2) detect if url href has ip and not server name.
             const QString hostname = url.host();
@@ -163,14 +164,14 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
                            addWarningColor(hostname))
                     + "</li>"_L1;
                 foundScam = true;
-            } else if (url.toString().contains("url?q="_L1)) { // 4) redirect url.
-                d->mDetails += "<li>"_L1 + i18n("This email contains a link (%1) which has a redirection", addWarningColor(url.toString())) + "</li>"_L1;
+            } else if (urlString.contains("url?q="_L1)) { // 4) redirect url.
+                d->mDetails += "<li>"_L1 + i18n("This email contains a link (%1) which has a redirection", addWarningColor(urlString)) + "</li>"_L1;
                 foundScam = true;
-            } else if ((url.toString().count(u"http://"_s) > 1) || (url.toString().count(u"https://"_s) > 1)) { // 5) more that 1 http in url.
-                if (!url.toString().contains("kmail:showAuditLog"_L1)) {
+            } else if ((urlString.count(u"http://"_s) > 1) || (urlString.count(u"https://"_s) > 1)) { // 5) more that 1 http in url.
+                if (!urlString.contains("kmail:showAuditLog"_L1)) {
                     d->mDetails += "<li>"_L1
                         + i18n("This email contains a link (%1) which contains multiple http://. This is often the case in scam emails.",
-                               addWarningColor(url.toString()))
+                               addWarningColor(urlString))
                         + "</li>"_L1;
                     foundScam = true;
                 }
@@ -180,7 +181,7 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
         if (!foundScam) {
             if (ScamCheckShortUrl::isShortUrl(url)) {
                 d->mDetails +=
-                    "<li>"_L1 + i18n("This email contains a shorturl (%1). It can redirect to another server.", addWarningColor(url.toString())) + "</li>"_L1;
+                    "<li>"_L1 + i18n("This email contains a shorturl (%1). It can redirect to another server.", addWarningColor(urlString)) + "</li>"_L1;
                 foundScam = true;
             }
         }
@@ -259,7 +260,7 @@ void ScamDetectionWebEngine::handleScanPage(const QVariant &result)
         }
     }
     if (mapResult.value(u"forms"_s).toInt() > 0) {
-        d->mDetails += "<li></b>"_L1 + i18n("Message contains form element. This is often the case in scam emails.") + "</b></li>"_L1;
+        d->mDetails += "<li><b>"_L1 + i18n("Message contains form element. This is often the case in scam emails.") + "</b></li>"_L1;
     }
     const bool hasSomeScam = !d->mDetails.isEmpty();
     if (hasSomeScam) {
