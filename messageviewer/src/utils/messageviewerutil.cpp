@@ -398,7 +398,7 @@ bool Util::saveContent(QWidget *parent, const KMime::Content *content, const QUr
         ds.setDevice(&tf);
     }
 
-    const int bytesWritten = ds.writeRawData(data.data(), data.size());
+    const qint64 bytesWritten = ds.writeRawData(data.data(), data.size());
     if (bytesWritten != data.size()) {
         auto f = static_cast<QFile *>(ds.device());
         KMessageBox::error(parent,
