@@ -243,6 +243,7 @@ View::View(Widget *pParent)
     setSelectionMode(QAbstractItemView::ExtendedSelection);
     viewport()->setAcceptDrops(true);
 
+#if !defined(Q_OS_MAC)
     d->mScroller = QScroller::scroller(viewport());
     QScrollerProperties scrollerProp;
     scrollerProp.setScrollMetric(QScrollerProperties::AcceleratingFlickMaximumTime, 0.2); // QTBUG-88249
@@ -254,6 +255,7 @@ View::View(Widget *pParent)
     viewport()->grabGesture(d->mTwoFingerTap);
     viewport()->grabGesture(Qt::TapGesture);
     viewport()->grabGesture(Qt::TapAndHoldGesture);
+#endif
 
     d->mRubberBand = new QRubberBand(QRubberBand::Rectangle, this);
 
