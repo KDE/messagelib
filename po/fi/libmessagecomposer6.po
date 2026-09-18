@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-15 00:45+0000\n"
+"POT-Creation-Date: 2026-09-18 00:46+0000\n"
 "PO-Revision-Date: 2026-01-12 14:31+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -497,12 +497,12 @@ msgstr "S/MIME-varmenne vanhenee pian"
 msgid "Failed to resolve keys. Please report a bug."
 msgstr "Avaimia ei saatu ratkaistuksi: ilmoita viasta."
 
-#: composer/composerviewbase.cpp:1082 composer/composerviewbase.cpp:1360
+#: composer/composerviewbase.cpp:1084 composer/composerviewbase.cpp:1362
 #, kde-format
 msgid "Job cancelled by the user"
 msgstr "Käyttäjä perui työn"
 
-#: composer/composerviewbase.cpp:1087
+#: composer/composerviewbase.cpp:1089
 #, kde-format
 msgid ""
 "Could not compose message: %1 \n"
@@ -511,37 +511,37 @@ msgstr ""
 "Viestiä ei voi luoda: %1 \n"
 " Ilmoita tämä virheenä."
 
-#: composer/composerviewbase.cpp:1089
+#: composer/composerviewbase.cpp:1091
 #, kde-format
 msgid "Could not compose message: %1"
 msgstr "Viestiä ei voitu luoda: %1"
 
-#: composer/composerviewbase.cpp:1194
+#: composer/composerviewbase.cpp:1196
 #, kde-format
 msgid "There were problems trying to queue the message for sending: %1"
 msgstr "Viestin asettamisessa jonoon sattui virheitä: %1"
 
-#: composer/composerviewbase.cpp:1363
+#: composer/composerviewbase.cpp:1365
 #, kde-format
 msgid "Could not autosave message: %1"
 msgstr "Viestiä ei voitu automaattitallentaa: %1"
 
-#: composer/composerviewbase.cpp:1382
+#: composer/composerviewbase.cpp:1384
 #, kde-format
 msgid "Could not write all data to file."
 msgstr "Kaikkea dataa ei voitu kirjoittaa tiedostoon."
 
-#: composer/composerviewbase.cpp:1385
+#: composer/composerviewbase.cpp:1387
 #, kde-format
 msgid "Could not finalize the file."
 msgstr "Tiedostoa ei voitu viimeistellä."
 
-#: composer/composerviewbase.cpp:1389
+#: composer/composerviewbase.cpp:1391
 #, kde-format
 msgid "Could not open file."
 msgstr "Tiedostoa ei voitu avata."
 
-#: composer/composerviewbase.cpp:1396
+#: composer/composerviewbase.cpp:1398
 #, kde-format
 msgid ""
 "Autosaving the message as %1 failed.\n"
@@ -552,18 +552,18 @@ msgstr ""
 "%2\n"
 "Syy: %3"
 
-#: composer/composerviewbase.cpp:1402
+#: composer/composerviewbase.cpp:1404
 #, kde-format
 msgctxt "@title:window"
 msgid "Autosaving Message Failed"
 msgstr "Viestin automaattitallennus epäonnistui"
 
-#: composer/composerviewbase.cpp:1515
+#: composer/composerviewbase.cpp:1517
 #, kde-format
 msgid "Failed to save the message: %1"
 msgstr "Viestiä ei voitu tallentaa: %1"
 
-#: composer/composerviewbase.cpp:1945
+#: composer/composerviewbase.cpp:1947
 #, kde-format
 msgid ""
 "The message you have composed seems to refer to an attached file but you "
@@ -574,25 +574,25 @@ msgstr ""
 "mitään.\n"
 "Haluatko liittää tiedoston viestiisi?"
 
-#: composer/composerviewbase.cpp:1948
+#: composer/composerviewbase.cpp:1950
 #, kde-format
 msgctxt "@title:window"
 msgid "File Attachment Reminder"
 msgstr "Tiedostoliitemuistutus"
 
-#: composer/composerviewbase.cpp:1949
+#: composer/composerviewbase.cpp:1951
 #, kde-format
 msgctxt "@action:button"
 msgid "&Attach File..."
 msgstr "&Liitä tiedosto…"
 
-#: composer/composerviewbase.cpp:1950
+#: composer/composerviewbase.cpp:1952
 #, kde-format
 msgctxt "@action:button"
 msgid "&Send as Is"
 msgstr "Lä&hetä sellaisenaan"
 
-#: composer/composerviewbase.cpp:2002
+#: composer/composerviewbase.cpp:2004
 #, kde-format
 msgid ""
 "Examination of the recipient's signing preferences yielded that you be asked "
@@ -603,25 +603,25 @@ msgstr ""
 "päättää, allekirjoittaako viesti.\n"
 "Allekirjoitetaanko viesti?"
 
-#: composer/composerviewbase.cpp:2008 composer/composerviewbase.cpp:2036
+#: composer/composerviewbase.cpp:2010 composer/composerviewbase.cpp:2038
 #, kde-format
 msgctxt "@title:window"
 msgid "Sign Message?"
 msgstr "Allekirjoitetaanko viesti?"
 
-#: composer/composerviewbase.cpp:2009 composer/composerviewbase.cpp:2037
+#: composer/composerviewbase.cpp:2011 composer/composerviewbase.cpp:2039
 #, kde-format
 msgctxt "to sign"
 msgid "&Sign"
 msgstr "&Allekirjoita"
 
-#: composer/composerviewbase.cpp:2010 composer/composerviewbase.cpp:2038
+#: composer/composerviewbase.cpp:2012 composer/composerviewbase.cpp:2040
 #, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Sign"
 msgstr "&Älä allekirjoita"
 
-#: composer/composerviewbase.cpp:2031
+#: composer/composerviewbase.cpp:2033
 #, kde-format
 msgid ""
 "There are conflicting signing preferences for these recipients.\n"
@@ -630,7 +630,7 @@ msgstr ""
 "Vastaanottajien allekirjoitusasetuksissa on ristiriitoja.\n"
 "Allekirjoitetaanko viesti?"
 
-#: composer/composerviewbase.cpp:2058
+#: composer/composerviewbase.cpp:2060
 #, kde-format
 msgid ""
 "You have requested to sign this message, but no valid signing keys have been "
@@ -639,19 +639,19 @@ msgstr ""
 "Olet pyytänyt allekirjoittaa viestin, mutta tälle henkilöydelle ei ole "
 "määritetty kelvollisia allekirjoitusavaimia."
 
-#: composer/composerviewbase.cpp:2063
+#: composer/composerviewbase.cpp:2065
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Unsigned?"
 msgstr "Lähetetäänkö allekirjoittamatta?"
 
-#: composer/composerviewbase.cpp:2064
+#: composer/composerviewbase.cpp:2066
 #, kde-format
 msgctxt "@action:button"
 msgid "Send &Unsigned"
 msgstr "Lähetä &allekirjoittamatta"
 
-#: composer/composerviewbase.cpp:2079
+#: composer/composerviewbase.cpp:2081
 #, kde-format
 msgid ""
 "Some parts of this message will not be signed.\n"
@@ -663,7 +663,7 @@ msgstr ""
 "palvelinkäytänteiden vastaista.\n"
 "Allekirjoitetaanko siis kaikki osat?"
 
-#: composer/composerviewbase.cpp:2083
+#: composer/composerviewbase.cpp:2085
 #, kde-format
 msgid ""
 "This message will not be signed.\n"
@@ -675,29 +675,29 @@ msgstr ""
 "vastaista.\n"
 "Allekirjoitetaanko siis viesti?"
 
-#: composer/composerviewbase.cpp:2086
+#: composer/composerviewbase.cpp:2088
 #, kde-format
 msgid "&Sign All Parts"
 msgstr "&Allekirjoita kaikki osat"
 
-#: composer/composerviewbase.cpp:2086
+#: composer/composerviewbase.cpp:2088
 #, kde-format
 msgid "&Sign"
 msgstr "Allekirjoita"
 
-#: composer/composerviewbase.cpp:2089
+#: composer/composerviewbase.cpp:2091
 #, kde-format
 msgctxt "@title:window"
 msgid "Unsigned-Message Warning"
 msgstr "Varoitus allekirjoittamattomasta viestistä"
 
-#: composer/composerviewbase.cpp:2091
+#: composer/composerviewbase.cpp:2093
 #, kde-format
 msgctxt "@action:button"
 msgid "Send &As Is"
 msgstr "Lä&hetä sellaisenaan"
 
-#: composer/composerviewbase.cpp:2138
+#: composer/composerviewbase.cpp:2140
 #, kde-format
 msgid ""
 "Valid trusted encryption keys were found for all recipients.\n"
@@ -706,7 +706,7 @@ msgstr ""
 "Kaikille vastaanottajille löytyi kelvollinen luotettava salausavain.\n"
 "Salataanko viesti?"
 
-#: composer/composerviewbase.cpp:2141
+#: composer/composerviewbase.cpp:2143
 #, kde-format
 msgid ""
 "Examination of the recipient's encryption preferences yielded that you be "
@@ -717,32 +717,32 @@ msgstr ""
 "päättää, salataanko viesti.\n"
 "Salataanko viesti?"
 
-#: composer/composerviewbase.cpp:2147 composer/composerviewbase.cpp:2177
+#: composer/composerviewbase.cpp:2149 composer/composerviewbase.cpp:2179
 #, kde-format
 msgid "Encrypt Message?"
 msgstr "Salataanko viesti?"
 
-#: composer/composerviewbase.cpp:2148
+#: composer/composerviewbase.cpp:2150
 #, kde-format
 msgid "Sign && &Encrypt"
 msgstr "Allekirjoita ja salaa"
 
-#: composer/composerviewbase.cpp:2148 composer/composerviewbase.cpp:2230
+#: composer/composerviewbase.cpp:2150 composer/composerviewbase.cpp:2232
 #, kde-format
 msgid "&Encrypt"
 msgstr "&Salaa"
 
-#: composer/composerviewbase.cpp:2149 composer/composerviewbase.cpp:2235
+#: composer/composerviewbase.cpp:2151 composer/composerviewbase.cpp:2237
 #, kde-format
 msgid "&Sign Only"
 msgstr "&Vain allekirjoita"
 
-#: composer/composerviewbase.cpp:2149 composer/composerviewbase.cpp:2235
+#: composer/composerviewbase.cpp:2151 composer/composerviewbase.cpp:2237
 #, kde-format
 msgid "&Send As-Is"
 msgstr "Lähetä &sellaisenaan"
 
-#: composer/composerviewbase.cpp:2170
+#: composer/composerviewbase.cpp:2172
 #, kde-format
 msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
@@ -751,20 +751,20 @@ msgstr ""
 "Vastaanottajien salausasetuksissa on ristiriitoja.\n"
 "Salataanko viesti?"
 
-#: composer/composerviewbase.cpp:2178 composer/keyresolver.cpp:1319
+#: composer/composerviewbase.cpp:2180 composer/keyresolver.cpp:1319
 #: composer/keyresolver.cpp:1360
 #, kde-format
 msgctxt "@action:button"
 msgid "&Encrypt"
 msgstr "&Salaa"
 
-#: composer/composerviewbase.cpp:2179
+#: composer/composerviewbase.cpp:2181
 #, kde-format
 msgctxt "@action:button"
 msgid "Do &Not Encrypt"
 msgstr "&Älä salaa"
 
-#: composer/composerviewbase.cpp:2199
+#: composer/composerviewbase.cpp:2201
 #, kde-format
 msgid ""
 "You have requested to encrypt this message, and to encrypt a copy to "
@@ -774,19 +774,19 @@ msgstr ""
 "Olet pyytänyt salata viestin ja kopion itsellesi, mutta tälle henkilöydelle "
 "ei ole määritetty kelvollisia salausavaimia."
 
-#: composer/composerviewbase.cpp:2205
+#: composer/composerviewbase.cpp:2207
 #, kde-format
 msgctxt "@title:window"
 msgid "Send Unencrypted?"
 msgstr "Lähetetäänkö salaamatta?"
 
-#: composer/composerviewbase.cpp:2206 composer/keyresolver.cpp:1345
+#: composer/composerviewbase.cpp:2208 composer/keyresolver.cpp:1345
 #, kde-format
 msgctxt "@action:button"
 msgid "Send &Unencrypted"
 msgstr "Lä&hetä salaamattomana"
 
-#: composer/composerviewbase.cpp:2221
+#: composer/composerviewbase.cpp:2223
 #, kde-format
 msgid ""
 "Some parts of this message will not be encrypted.\n"
@@ -799,7 +799,7 @@ msgstr ""
 "vastaista ja aiheuttaa tietovuodon.\n"
 "Salataanko siis kaikki osat?"
 
-#: composer/composerviewbase.cpp:2226
+#: composer/composerviewbase.cpp:2228
 #, kde-format
 msgid ""
 "This message will not be encrypted.\n"
@@ -812,12 +812,12 @@ msgstr ""
 "ja aiheuttaa tietovuodon.\n"
 "Salataanko viesti kuitenkin?"
 
-#: composer/composerviewbase.cpp:2230
+#: composer/composerviewbase.cpp:2232
 #, kde-format
 msgid "&Encrypt All Parts"
 msgstr "&Salaa kaikki osat"
 
-#: composer/composerviewbase.cpp:2233
+#: composer/composerviewbase.cpp:2235
 #, kde-format
 msgctxt "@title:window"
 msgid "Unencrypted Message Warning"
