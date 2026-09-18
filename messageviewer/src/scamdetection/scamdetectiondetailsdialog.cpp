@@ -82,6 +82,7 @@ void ScamDetectionDetailsDialog::slotSaveAs()
             QString htmlStr = mDetails->toHtml();
             htmlStr.replace(R"(meta name="qrichtext" content="1")"_L1, R"(meta http-equiv="Content-Type" content="text/html; charset=UTF-8")"_L1);
             ts << htmlStr;
+            ts.flush();
             file.close();
         }
     }
