@@ -554,6 +554,8 @@ bool Util::saveMessageInMboxAndGetUrl(QUrl &url, const Akonadi::Item::List &retr
             file.close();
         }
         url = localUrl;
+    } else {
+        return false;
     }
     return true;
 }
