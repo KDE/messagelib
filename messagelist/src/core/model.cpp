@@ -353,8 +353,6 @@ Model::Model(ModelViewInterface *viewInterface, QObject *parent)
 
 Model::~Model()
 {
-    setStorageModel(nullptr);
-
     d->clearJobList();
     d->mOldestItem = nullptr;
     d->mNewestItem = nullptr;
