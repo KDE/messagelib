@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-16 00:46+0000\n"
+"POT-Creation-Date: 2026-09-19 02:41+0000\n"
 "PO-Revision-Date: 2017-12-15 12:38+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -544,12 +544,12 @@ msgstr "С/МИМЕ сертификат ускоро истиче"
 msgid "Failed to resolve keys. Please report a bug."
 msgstr "Неуспело разрешавање кључева. Пријавите ово као грешку."
 
-#: composer/composerviewbase.cpp:1056 composer/composerviewbase.cpp:1332
+#: composer/composerviewbase.cpp:1058 composer/composerviewbase.cpp:1334
 #, kde-format
 msgid "Job cancelled by the user"
 msgstr "Корисник је отказао посао"
 
-#: composer/composerviewbase.cpp:1061
+#: composer/composerviewbase.cpp:1063
 #, kde-format
 msgid ""
 "Could not compose message: %1 \n"
@@ -558,38 +558,38 @@ msgstr ""
 "Не могу да саставим поруку: %1 \n"
 "Пријавите ово као грешку."
 
-#: composer/composerviewbase.cpp:1063
+#: composer/composerviewbase.cpp:1065
 #, kde-format
 msgid "Could not compose message: %1"
 msgstr "Не могу да саставим поруку: %1"
 
-#: composer/composerviewbase.cpp:1166
+#: composer/composerviewbase.cpp:1168
 #, kde-format
 msgid "There were problems trying to queue the message for sending: %1"
 msgstr "Проблеми при покушају приправљања поруке за слање: %1"
 
-#: composer/composerviewbase.cpp:1335
+#: composer/composerviewbase.cpp:1337
 #, kde-format
 msgid "Could not autosave message: %1"
 msgstr "Не могу да аутоматски сачувам поруку: %1"
 
-#: composer/composerviewbase.cpp:1354
+#: composer/composerviewbase.cpp:1356
 #, kde-format
 msgid "Could not write all data to file."
 msgstr "Не могу да упишем све податке у фајл."
 
-#: composer/composerviewbase.cpp:1357
+#: composer/composerviewbase.cpp:1359
 #, kde-format
 msgid "Could not finalize the file."
 msgstr "Не могу да довршим фајл."
 
-#: composer/composerviewbase.cpp:1361
+#: composer/composerviewbase.cpp:1363
 #, kde-format
 msgid "Could not open file."
 msgstr "Не могу да отворим фајл."
 
 # >> %1 file name, %2 error message
-#: composer/composerviewbase.cpp:1368
+#: composer/composerviewbase.cpp:1370
 #, kde-format
 msgid ""
 "Autosaving the message as %1 failed.\n"
@@ -600,19 +600,19 @@ msgstr ""
 "%2\n"
 "Разлог: %3"
 
-#: composer/composerviewbase.cpp:1374
+#: composer/composerviewbase.cpp:1376
 #, fuzzy, kde-format
 #| msgid "Autosaving Message Failed"
 msgctxt "@title:window"
 msgid "Autosaving Message Failed"
 msgstr "Аутоматско уписивање поруке није успело"
 
-#: composer/composerviewbase.cpp:1487
+#: composer/composerviewbase.cpp:1489
 #, kde-format
 msgid "Failed to save the message: %1"
 msgstr "Неуспело уписивање поруке: %1"
 
-#: composer/composerviewbase.cpp:1911
+#: composer/composerviewbase.cpp:1913
 #, kde-format
 msgid ""
 "The message you have composed seems to refer to an attached file but you "
@@ -623,28 +623,28 @@ msgstr ""
 "нисте приложили.\n"
 "Желите ли да приложите фајл уз поруку?"
 
-#: composer/composerviewbase.cpp:1914
+#: composer/composerviewbase.cpp:1916
 #, fuzzy, kde-format
 #| msgid "File Attachment Reminder"
 msgctxt "@title:window"
 msgid "File Attachment Reminder"
 msgstr "Подсетник за прилагање фајла"
 
-#: composer/composerviewbase.cpp:1915
+#: composer/composerviewbase.cpp:1917
 #, fuzzy, kde-format
 #| msgid "&Attach File..."
 msgctxt "@action:button"
 msgid "&Attach File..."
 msgstr "&Приложи фајл..."
 
-#: composer/composerviewbase.cpp:1916
+#: composer/composerviewbase.cpp:1918
 #, fuzzy, kde-format
 #| msgid "&Send as Is"
 msgctxt "@action:button"
 msgid "&Send as Is"
 msgstr "Пош&аљи како јесте"
 
-#: composer/composerviewbase.cpp:1968
+#: composer/composerviewbase.cpp:1970
 #, kde-format
 msgid ""
 "Examination of the recipient's signing preferences yielded that you be asked "
@@ -655,27 +655,27 @@ msgstr ""
 "питати желите ли да потпишете поруку или не.\n"
 "Потписати поруку?"
 
-#: composer/composerviewbase.cpp:1974 composer/composerviewbase.cpp:2002
+#: composer/composerviewbase.cpp:1976 composer/composerviewbase.cpp:2004
 #, fuzzy, kde-format
 #| msgid "Sign Message?"
 msgctxt "@title:window"
 msgid "Sign Message?"
 msgstr "Потписати поруку?"
 
-#: composer/composerviewbase.cpp:1975 composer/composerviewbase.cpp:2003
+#: composer/composerviewbase.cpp:1977 composer/composerviewbase.cpp:2005
 #, kde-format
 msgctxt "to sign"
 msgid "&Sign"
 msgstr "&Потпиши"
 
-#: composer/composerviewbase.cpp:1976 composer/composerviewbase.cpp:2004
+#: composer/composerviewbase.cpp:1978 composer/composerviewbase.cpp:2006
 #, fuzzy, kde-format
 #| msgid "Do &Not Sign"
 msgctxt "@action:button"
 msgid "Do &Not Sign"
 msgstr "&Не потписуј"
 
-#: composer/composerviewbase.cpp:1997
+#: composer/composerviewbase.cpp:1999
 #, kde-format
 msgid ""
 "There are conflicting signing preferences for these recipients.\n"
@@ -684,7 +684,7 @@ msgstr ""
 "Неке поставке потписивања у сукобу су за ове примаоце.\n"
 "Потписати ову поруку?"
 
-#: composer/composerviewbase.cpp:2024
+#: composer/composerviewbase.cpp:2026
 #, kde-format
 msgid ""
 "You have requested to sign this message, but no valid signing keys have been "
@@ -693,14 +693,14 @@ msgstr ""
 "Затражили сте потписивање ове поруке, али за овај идентитет није подешен "
 "ваљан кључ за потписивање."
 
-#: composer/composerviewbase.cpp:2029
+#: composer/composerviewbase.cpp:2031
 #, fuzzy, kde-format
 #| msgid "Send Unsigned?"
 msgctxt "@title:window"
 msgid "Send Unsigned?"
 msgstr "Послати нешифровано?"
 
-#: composer/composerviewbase.cpp:2030
+#: composer/composerviewbase.cpp:2032
 #, fuzzy, kde-format
 #| msgid "Send &Unsigned"
 msgctxt "@action:button"
@@ -708,7 +708,7 @@ msgid "Send &Unsigned"
 msgstr "Пошаљи &нешифровано"
 
 # skip-rule: t-website
-#: composer/composerviewbase.cpp:2045
+#: composer/composerviewbase.cpp:2047
 #, kde-format
 msgid ""
 "Some parts of this message will not be signed.\n"
@@ -720,7 +720,7 @@ msgstr ""
 "Радије потписати све делове?"
 
 # skip-rule: t-website
-#: composer/composerviewbase.cpp:2049
+#: composer/composerviewbase.cpp:2051
 #, kde-format
 msgid ""
 "This message will not be signed.\n"
@@ -731,31 +731,31 @@ msgstr ""
 "Слање непотписане поруке може нарушити локалне смернице.\n"
 "Радије потписати поруку?"
 
-#: composer/composerviewbase.cpp:2052
+#: composer/composerviewbase.cpp:2054
 #, kde-format
 msgid "&Sign All Parts"
 msgstr "&Потпиши све делове"
 
-#: composer/composerviewbase.cpp:2052
+#: composer/composerviewbase.cpp:2054
 #, kde-format
 msgid "&Sign"
 msgstr "&Потпиши"
 
-#: composer/composerviewbase.cpp:2055
+#: composer/composerviewbase.cpp:2057
 #, fuzzy, kde-format
 #| msgid "Unsigned-Message Warning"
 msgctxt "@title:window"
 msgid "Unsigned-Message Warning"
 msgstr "Упозорење о непотписаној поруци"
 
-#: composer/composerviewbase.cpp:2057
+#: composer/composerviewbase.cpp:2059
 #, fuzzy, kde-format
 #| msgid "Send &As Is"
 msgctxt "@action:button"
 msgid "Send &As Is"
 msgstr "Пошаљи &како јесте"
 
-#: composer/composerviewbase.cpp:2104
+#: composer/composerviewbase.cpp:2106
 #, kde-format
 msgid ""
 "Valid trusted encryption keys were found for all recipients.\n"
@@ -764,7 +764,7 @@ msgstr ""
 "Нађени су ваљани поуздани шифрарски кључеви за све примаоце.\n"
 "Шифровати ову поруку?"
 
-#: composer/composerviewbase.cpp:2107
+#: composer/composerviewbase.cpp:2109
 #, kde-format
 msgid ""
 "Examination of the recipient's encryption preferences yielded that you be "
@@ -775,32 +775,32 @@ msgstr ""
 "питати желите ли да шифрујете ову поруку.\n"
 "Шифровати ову поруку?"
 
-#: composer/composerviewbase.cpp:2113 composer/composerviewbase.cpp:2143
+#: composer/composerviewbase.cpp:2115 composer/composerviewbase.cpp:2145
 #, kde-format
 msgid "Encrypt Message?"
 msgstr "Шифровати поруку?"
 
-#: composer/composerviewbase.cpp:2114
+#: composer/composerviewbase.cpp:2116
 #, kde-format
 msgid "Sign && &Encrypt"
 msgstr "Потпиши &и шифруј"
 
-#: composer/composerviewbase.cpp:2114 composer/composerviewbase.cpp:2196
+#: composer/composerviewbase.cpp:2116 composer/composerviewbase.cpp:2198
 #, kde-format
 msgid "&Encrypt"
 msgstr "Ши&фруј"
 
-#: composer/composerviewbase.cpp:2115 composer/composerviewbase.cpp:2201
+#: composer/composerviewbase.cpp:2117 composer/composerviewbase.cpp:2203
 #, kde-format
 msgid "&Sign Only"
 msgstr "Само &потпиши"
 
-#: composer/composerviewbase.cpp:2115 composer/composerviewbase.cpp:2201
+#: composer/composerviewbase.cpp:2117 composer/composerviewbase.cpp:2203
 #, kde-format
 msgid "&Send As-Is"
 msgstr "Пошаљи &како јесте"
 
-#: composer/composerviewbase.cpp:2136
+#: composer/composerviewbase.cpp:2138
 #, kde-format
 msgid ""
 "There are conflicting encryption preferences for these recipients.\n"
@@ -809,7 +809,7 @@ msgstr ""
 "Неке поставке шифровања у сукобу су за ове примаоце.\n"
 "Шифровати ову поруку?"
 
-#: composer/composerviewbase.cpp:2144 composer/keyresolver.cpp:1319
+#: composer/composerviewbase.cpp:2146 composer/keyresolver.cpp:1319
 #: composer/keyresolver.cpp:1360
 #, fuzzy, kde-format
 #| msgid "&Encrypt"
@@ -817,14 +817,14 @@ msgctxt "@action:button"
 msgid "&Encrypt"
 msgstr "Ши&фруј"
 
-#: composer/composerviewbase.cpp:2145
+#: composer/composerviewbase.cpp:2147
 #, fuzzy, kde-format
 #| msgid "Do &Not Encrypt"
 msgctxt "@action:button"
 msgid "Do &Not Encrypt"
 msgstr "&Не шифруј"
 
-#: composer/composerviewbase.cpp:2165
+#: composer/composerviewbase.cpp:2167
 #, kde-format
 msgid ""
 "You have requested to encrypt this message, and to encrypt a copy to "
@@ -834,14 +834,14 @@ msgstr ""
 "Затражили сте шифровање ове поруке, али да би се копија шифровала вама "
 "самима, за овај идентитет није подешен ваљан поуздан кључ за шифровање."
 
-#: composer/composerviewbase.cpp:2171
+#: composer/composerviewbase.cpp:2173
 #, fuzzy, kde-format
 #| msgid "Send Unencrypted?"
 msgctxt "@title:window"
 msgid "Send Unencrypted?"
 msgstr "Послати нешифровано?"
 
-#: composer/composerviewbase.cpp:2172 composer/keyresolver.cpp:1345
+#: composer/composerviewbase.cpp:2174 composer/keyresolver.cpp:1345
 #, fuzzy, kde-format
 #| msgid "Send &Unencrypted"
 msgctxt "@action:button"
@@ -849,7 +849,7 @@ msgid "Send &Unencrypted"
 msgstr "Пошаљи &нешифровано"
 
 # skip-rule: t-website
-#: composer/composerviewbase.cpp:2187
+#: composer/composerviewbase.cpp:2189
 #, kde-format
 msgid ""
 "Some parts of this message will not be encrypted.\n"
@@ -863,7 +863,7 @@ msgstr ""
 "Радије шифровати све делове?"
 
 # skip-rule: t-website
-#: composer/composerviewbase.cpp:2192
+#: composer/composerviewbase.cpp:2194
 #, kde-format
 msgid ""
 "This message will not be encrypted.\n"
@@ -876,12 +876,12 @@ msgstr ""
 "осетљиве информације.\n"
 "Радије шифровати поруку?"
 
-#: composer/composerviewbase.cpp:2196
+#: composer/composerviewbase.cpp:2198
 #, kde-format
 msgid "&Encrypt All Parts"
 msgstr "Шифруј &све делове"
 
-#: composer/composerviewbase.cpp:2199
+#: composer/composerviewbase.cpp:2201
 #, fuzzy, kde-format
 #| msgid "Unencrypted Message Warning"
 msgctxt "@title:window"
