@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-15 00:45+0000\n"
+"POT-Creation-Date: 2026-09-19 00:46+0000\n"
 "PO-Revision-Date: 2020-07-31 19:58+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -1050,8 +1050,8 @@ msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "Deaktivér svindeldetektion for alle breve"
 
-#: scamdetection/scamdetectionwebengine.cpp:117
-#: scamdetection/scamdetectionwebengine.cpp:214
+#: scamdetection/scamdetectionwebengine.cpp:141
+#: scamdetection/scamdetectionwebengine.cpp:239
 #, kde-format
 msgid ""
 "This email contains a link which reads as '%1' in the text, but actually "
@@ -1062,7 +1062,7 @@ msgstr ""
 "faktisk peger på \"%2\". Dette forekommer ofte i svindel-e-mails for at "
 "snyde modtageren"
 
-#: scamdetection/scamdetectionwebengine.cpp:130
+#: scamdetection/scamdetectionwebengine.cpp:155
 #, kde-format
 msgid ""
 "This email contains a link which points to a numerical IP address (%1) "
@@ -1073,7 +1073,7 @@ msgstr ""
 "stedet for en typisk webadresse i tekstformat. Dette forekommer ofte i "
 "svindel-e-mails."
 
-#: scamdetection/scamdetectionwebengine.cpp:137
+#: scamdetection/scamdetectionwebengine.cpp:162
 #, kde-format
 msgid ""
 "This email contains a link which points to a hexadecimal IP address (%1) "
@@ -1084,12 +1084,12 @@ msgstr ""
 "(%1), i stedet for en typisk webadresse i tekstformat. Dette forekommer ofte "
 "i svindel-e-mails."
 
-#: scamdetection/scamdetectionwebengine.cpp:143
+#: scamdetection/scamdetectionwebengine.cpp:168
 #, kde-format
 msgid "This email contains a link (%1) which has a redirection"
 msgstr "Den e-mail indeholder et link (%1) som har en omdirigering"
 
-#: scamdetection/scamdetectionwebengine.cpp:148
+#: scamdetection/scamdetectionwebengine.cpp:173
 #, kde-format
 msgid ""
 "This email contains a link (%1) which contains multiple http://. This is "
@@ -1098,35 +1098,43 @@ msgstr ""
 "Denne e-mail indeholder et link (%1) som indeholder flere \"http://\". Dette "
 "forekommer ofte i svindel-e-mails."
 
-#: scamdetection/scamdetectionwebengine.cpp:159
+#: scamdetection/scamdetectionwebengine.cpp:184
 #, kde-format
 msgid "This email contains a shorturl (%1). It can redirect to another server."
 msgstr ""
 "Denne e-mail indeholder en afkortet URL (%1). Den kan omdirigere til en "
 "anden server."
 
-#: scamdetection/scamdetectionwebengine.cpp:232
+#: scamdetection/scamdetectionwebengine.cpp:257
+#, kde-format
+msgid ""
+"The text of this link contains invisible characters, which are not displayed "
+"but make it look different from the address it really points to. This is "
+"often the case in scam emails."
+msgstr ""
+
+#: scamdetection/scamdetectionwebengine.cpp:263
 #, kde-format
 msgid "Message contains form element. This is often the case in scam emails."
 msgstr ""
 "Brevet indeholder et form-element. Dette forekommer ofte i svindel-e-mails."
 
-#: scamdetection/scamdetectionwebengine.cpp:236
+#: scamdetection/scamdetectionwebengine.cpp:267
 #, kde-format
 msgid "Details:"
 msgstr "Detaljer:"
 
-#: scamdetection/scamexpandurljob.cpp:50
+#: scamdetection/scamexpandurljob.cpp:52
 #, kde-format
 msgid "No network connection detected, we cannot expand url."
 msgstr "Ingen netværksforbindelse detekteret, vi kan ikke folde URL'en ud."
 
-#: scamdetection/scamexpandurljob.cpp:84 scamdetection/scamexpandurljob.cpp:90
+#: scamdetection/scamexpandurljob.cpp:86 scamdetection/scamexpandurljob.cpp:92
 #, kde-format
 msgid "Impossible to expand '%1'."
 msgstr "Kan ikke folde \"%1\" ud."
 
-#: scamdetection/scamexpandurljob.cpp:88
+#: scamdetection/scamexpandurljob.cpp:90
 #, kde-format
 msgid "Short url '%1' redirects to '%2'."
 msgstr "Den korte URL \"%1\" omdirigerer til \"%2\"."
@@ -1768,7 +1776,7 @@ msgstr "Fejl ved gemning af brev"
 msgid "We cannot save message."
 msgstr "Vi kan ikke gemme brevet."
 
-#: utils/messageviewerutil.cpp:594
+#: utils/messageviewerutil.cpp:596
 #, fuzzy, kde-format
 #| msgctxt "Not able to attend."
 #| msgid "Declined: %1"
@@ -1776,19 +1784,19 @@ msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "Afslået: %1"
 
-#: utils/messageviewerutil.cpp:605
+#: utils/messageviewerutil.cpp:607
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:633
+#: utils/messageviewerutil.cpp:635
 #, kde-format
 msgid "Open &with %1"
 msgstr "Åbn &med %1"
 
-#: utils/messageviewerutil.cpp:635
+#: utils/messageviewerutil.cpp:637
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"

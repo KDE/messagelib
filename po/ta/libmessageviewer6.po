@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-15 00:45+0000\n"
+"POT-Creation-Date: 2026-09-19 00:46+0000\n"
 "PO-Revision-Date: 2025-05-18 19:02+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -1024,8 +1024,8 @@ msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "மோசடிகளை கண்டறியும் கூறை அனைத்து அஞ்சல்களுக்கும் முடக்கு"
 
-#: scamdetection/scamdetectionwebengine.cpp:117
-#: scamdetection/scamdetectionwebengine.cpp:214
+#: scamdetection/scamdetectionwebengine.cpp:141
+#: scamdetection/scamdetectionwebengine.cpp:239
 #, kde-format
 msgid ""
 "This email contains a link which reads as '%1' in the text, but actually "
@@ -1035,7 +1035,7 @@ msgstr ""
 "இந்த அஞ்சலில் '%1' என்ற உரையை கொண்ட இணைப்பு, உண்மையில் '%2' என்பதை சுட்டுகிறது. இது, "
 "படிப்பவர்களை ஏமாற்றும் ஓர் முயற்சியாக இருக்கலாம்"
 
-#: scamdetection/scamdetectionwebengine.cpp:130
+#: scamdetection/scamdetectionwebengine.cpp:155
 #, kde-format
 msgid ""
 "This email contains a link which points to a numerical IP address (%1) "
@@ -1045,7 +1045,7 @@ msgstr ""
 "இந்த அஞ்சலில், சாதாரண இணையதள முகவரிக்கு பதிலாக, எண்ணுரு IP முகவரியை (%1-ஐ) சுட்டும் "
 "ஓர் இணைப்புள்ளது. பெரும்பாலும், மோசடி அஞ்சல்களிலேயே இவ்வாறு இருக்கும்."
 
-#: scamdetection/scamdetectionwebengine.cpp:137
+#: scamdetection/scamdetectionwebengine.cpp:162
 #, kde-format
 msgid ""
 "This email contains a link which points to a hexadecimal IP address (%1) "
@@ -1055,12 +1055,12 @@ msgstr ""
 "இந்த அஞ்சலில், சாதாரண இணையதள முகவரிக்கு பதிலாக, பதினறும எண்ணுரு IP முகவரியை (%1-"
 "ஐ) சுட்டும் ஓர் இணைப்புள்ளது. பெரும்பாலும், மோசடி அஞ்சல்களிலேயே இவ்வாறு இருக்கும்."
 
-#: scamdetection/scamdetectionwebengine.cpp:143
+#: scamdetection/scamdetectionwebengine.cpp:168
 #, kde-format
 msgid "This email contains a link (%1) which has a redirection"
 msgstr "இந்த அஞ்சலில் ஓர் இணைப்பு (%1) வழிமாற்றத்தை கொண்டுள்ளது"
 
-#: scamdetection/scamdetectionwebengine.cpp:148
+#: scamdetection/scamdetectionwebengine.cpp:173
 #, kde-format
 msgid ""
 "This email contains a link (%1) which contains multiple http://. This is "
@@ -1069,34 +1069,42 @@ msgstr ""
 "இந்த அஞ்சலில் ஓர் இணைப்பு (%1) http:// என்ற சரத்தை பலமுறை கொண்டுள்ளது. பெரும்பாலும், "
 "மோசடி அஞ்சல்களிலேயே இவ்வாறு இருக்கும்."
 
-#: scamdetection/scamdetectionwebengine.cpp:159
+#: scamdetection/scamdetectionwebengine.cpp:184
 #, kde-format
 msgid "This email contains a shorturl (%1). It can redirect to another server."
 msgstr ""
 "இந்த அஞ்சல் ஓர் சுருக்கப்பட்ட முகவரியை கொண்டுள்ளது (%1). அது வேறு சேவையகத்திற்கு "
 "வழிமாற்றலாம்."
 
-#: scamdetection/scamdetectionwebengine.cpp:232
+#: scamdetection/scamdetectionwebengine.cpp:257
+#, kde-format
+msgid ""
+"The text of this link contains invisible characters, which are not displayed "
+"but make it look different from the address it really points to. This is "
+"often the case in scam emails."
+msgstr ""
+
+#: scamdetection/scamdetectionwebengine.cpp:263
 #, kde-format
 msgid "Message contains form element. This is often the case in scam emails."
 msgstr "அஞ்சலில் ஓர் படிவம் உள்ளது. பெரும்பாலும், மோசடி அஞ்சல்களிலேயே இவ்வாறு இருக்கும்."
 
-#: scamdetection/scamdetectionwebengine.cpp:236
+#: scamdetection/scamdetectionwebengine.cpp:267
 #, kde-format
 msgid "Details:"
 msgstr "விவரங்கள்:"
 
-#: scamdetection/scamexpandurljob.cpp:50
+#: scamdetection/scamexpandurljob.cpp:52
 #, kde-format
 msgid "No network connection detected, we cannot expand url."
 msgstr "பிணைய இணைப்பு இல்லாததால் முகவரியை விரிவுபடுத்த முடியாது."
 
-#: scamdetection/scamexpandurljob.cpp:84 scamdetection/scamexpandurljob.cpp:90
+#: scamdetection/scamexpandurljob.cpp:86 scamdetection/scamexpandurljob.cpp:92
 #, kde-format
 msgid "Impossible to expand '%1'."
 msgstr "'%1' தனை விரிவுபடுத்த முடியாது."
 
-#: scamdetection/scamexpandurljob.cpp:88
+#: scamdetection/scamexpandurljob.cpp:90
 #, kde-format
 msgid "Short url '%1' redirects to '%2'."
 msgstr "'%1' என்ற சுருக்கப்பட்ட முகவரி, '%2' என்பதற்கு வழிமாற்றுகிறது."
@@ -1721,13 +1729,13 @@ msgstr "அஞ்சலை சேமிப்பதில் சிக்கல�
 msgid "We cannot save message."
 msgstr "அஞ்சலை சேமிக்க முடியாது."
 
-#: utils/messageviewerutil.cpp:594
+#: utils/messageviewerutil.cpp:596
 #, kde-format
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "நீக்கப்பட்டது: %1"
 
-#: utils/messageviewerutil.cpp:605
+#: utils/messageviewerutil.cpp:607
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
@@ -1736,12 +1744,12 @@ msgstr ""
 "இந்த அஞ்சலிலிருந்த ஓர் உடனிணைப்பை நீக்கியுள்ளீர். உடனிணைப்புக்கு இருந்த MIME "
 "தலைப்புப்புலங்கள்:"
 
-#: utils/messageviewerutil.cpp:633
+#: utils/messageviewerutil.cpp:635
 #, kde-format
 msgid "Open &with %1"
 msgstr "%1 &என்பதால திற"
 
-#: utils/messageviewerutil.cpp:635
+#: utils/messageviewerutil.cpp:637
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"

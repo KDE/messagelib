@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-15 00:45+0000\n"
+"POT-Creation-Date: 2026-09-19 00:46+0000\n"
 "PO-Revision-Date: 2007-09-10 16:41+0545\n"
 "Last-Translator: Nabin Gautam <nabin@mpp.org.np>\n"
 "Language-Team: Nepali <info@mpp.org.np>\n"
@@ -1123,8 +1123,8 @@ msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "सन्देश मेट्नुहोस्"
 
-#: scamdetection/scamdetectionwebengine.cpp:117
-#: scamdetection/scamdetectionwebengine.cpp:214
+#: scamdetection/scamdetectionwebengine.cpp:141
+#: scamdetection/scamdetectionwebengine.cpp:239
 #, kde-format
 msgid ""
 "This email contains a link which reads as '%1' in the text, but actually "
@@ -1132,7 +1132,7 @@ msgid ""
 "recipient"
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:130
+#: scamdetection/scamdetectionwebengine.cpp:155
 #, kde-format
 msgid ""
 "This email contains a link which points to a numerical IP address (%1) "
@@ -1140,7 +1140,7 @@ msgid ""
 "emails."
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:137
+#: scamdetection/scamdetectionwebengine.cpp:162
 #, kde-format
 msgid ""
 "This email contains a link which points to a hexadecimal IP address (%1) "
@@ -1148,45 +1148,53 @@ msgid ""
 "emails."
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:143
+#: scamdetection/scamdetectionwebengine.cpp:168
 #, kde-format
 msgid "This email contains a link (%1) which has a redirection"
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:148
+#: scamdetection/scamdetectionwebengine.cpp:173
 #, kde-format
 msgid ""
 "This email contains a link (%1) which contains multiple http://. This is "
 "often the case in scam emails."
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:159
+#: scamdetection/scamdetectionwebengine.cpp:184
 #, kde-format
 msgid "This email contains a shorturl (%1). It can redirect to another server."
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:232
+#: scamdetection/scamdetectionwebengine.cpp:257
+#, kde-format
+msgid ""
+"The text of this link contains invisible characters, which are not displayed "
+"but make it look different from the address it really points to. This is "
+"often the case in scam emails."
+msgstr ""
+
+#: scamdetection/scamdetectionwebengine.cpp:263
 #, kde-format
 msgid "Message contains form element. This is often the case in scam emails."
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:236
+#: scamdetection/scamdetectionwebengine.cpp:267
 #, fuzzy, kde-format
 #| msgid "[Details]"
 msgid "Details:"
 msgstr "[विस्तृत विवरण]"
 
-#: scamdetection/scamexpandurljob.cpp:50
+#: scamdetection/scamexpandurljob.cpp:52
 #, kde-format
 msgid "No network connection detected, we cannot expand url."
 msgstr ""
 
-#: scamdetection/scamexpandurljob.cpp:84 scamdetection/scamexpandurljob.cpp:90
+#: scamdetection/scamexpandurljob.cpp:86 scamdetection/scamexpandurljob.cpp:92
 #, kde-format
 msgid "Impossible to expand '%1'."
 msgstr ""
 
-#: scamdetection/scamexpandurljob.cpp:88
+#: scamdetection/scamexpandurljob.cpp:90
 #, kde-format
 msgid "Short url '%1' redirects to '%2'."
 msgstr ""
@@ -1843,27 +1851,27 @@ msgstr "सन्देश सार्दैछ"
 msgid "We cannot save message."
 msgstr "चिन्ह लगाएका सन्देशको अन्त्यमा"
 
-#: utils/messageviewerutil.cpp:594
+#: utils/messageviewerutil.cpp:596
 #, fuzzy, kde-format
 #| msgid "Declined: %1"
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "घटाइएको: %1 "
 
-#: utils/messageviewerutil.cpp:605
+#: utils/messageviewerutil.cpp:607
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:633
+#: utils/messageviewerutil.cpp:635
 #, fuzzy, kde-format
 #| msgid "&Open with '%1'"
 msgid "Open &with %1"
 msgstr "'%1' सँग खोल्नुहोस्"
 
-#: utils/messageviewerutil.cpp:635
+#: utils/messageviewerutil.cpp:637
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-15 00:45+0000\n"
+"POT-Creation-Date: 2026-09-19 00:46+0000\n"
 "PO-Revision-Date: 2021-01-14 15:48+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -1015,8 +1015,8 @@ msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "Zakázať detekciu scamu pre všetky správy"
 
-#: scamdetection/scamdetectionwebengine.cpp:117
-#: scamdetection/scamdetectionwebengine.cpp:214
+#: scamdetection/scamdetectionwebengine.cpp:141
+#: scamdetection/scamdetectionwebengine.cpp:239
 #, kde-format
 msgid ""
 "This email contains a link which reads as '%1' in the text, but actually "
@@ -1026,7 +1026,7 @@ msgstr ""
 "Táto správa obsahuje odkaz, ktorý sa zobrazuje v texte ako '%1' ale ukazuje "
 "na '%2'. Toto je často prípad scamu, ktorý sa snaží oklamať prijímateľa."
 
-#: scamdetection/scamdetectionwebengine.cpp:130
+#: scamdetection/scamdetectionwebengine.cpp:155
 #, kde-format
 msgid ""
 "This email contains a link which points to a numerical IP address (%1) "
@@ -1036,7 +1036,7 @@ msgstr ""
 "Táto správa obsahuje odkaz, ktorý ukazuje na numerickú IP adresu (%1) "
 "namiesto typickej textovej webovej adresy. Toto je často prípad scamu."
 
-#: scamdetection/scamdetectionwebengine.cpp:137
+#: scamdetection/scamdetectionwebengine.cpp:162
 #, kde-format
 msgid ""
 "This email contains a link which points to a hexadecimal IP address (%1) "
@@ -1046,12 +1046,12 @@ msgstr ""
 "Táto správa obsahuje odkaz, ktorý ukazuje na hexadecimálnu IP adresu (%1) "
 "namiesto typickej textovej webovej adresy. Toto je často prípad scamu."
 
-#: scamdetection/scamdetectionwebengine.cpp:143
+#: scamdetection/scamdetectionwebengine.cpp:168
 #, kde-format
 msgid "This email contains a link (%1) which has a redirection"
 msgstr "Táto správa obsahuje odkaz (%1), ktorý má presmerovanie"
 
-#: scamdetection/scamdetectionwebengine.cpp:148
+#: scamdetection/scamdetectionwebengine.cpp:173
 #, kde-format
 msgid ""
 "This email contains a link (%1) which contains multiple http://. This is "
@@ -1060,32 +1060,40 @@ msgstr ""
 "Táto správa obsahuje odkaz (%1), ktorý obsahuje viac http://. Toto je často "
 "prípad scamu."
 
-#: scamdetection/scamdetectionwebengine.cpp:159
+#: scamdetection/scamdetectionwebengine.cpp:184
 #, kde-format
 msgid "This email contains a shorturl (%1). It can redirect to another server."
 msgstr "Táto správa obsahuje odkaz (%1). Môže presmerovať na iný server."
 
-#: scamdetection/scamdetectionwebengine.cpp:232
+#: scamdetection/scamdetectionwebengine.cpp:257
+#, kde-format
+msgid ""
+"The text of this link contains invisible characters, which are not displayed "
+"but make it look different from the address it really points to. This is "
+"often the case in scam emails."
+msgstr ""
+
+#: scamdetection/scamdetectionwebengine.cpp:263
 #, kde-format
 msgid "Message contains form element. This is often the case in scam emails."
 msgstr "Správa obsahuje prvok formulára. Toto je často prípad scamov."
 
-#: scamdetection/scamdetectionwebengine.cpp:236
+#: scamdetection/scamdetectionwebengine.cpp:267
 #, kde-format
 msgid "Details:"
 msgstr "Podrobnosti:"
 
-#: scamdetection/scamexpandurljob.cpp:50
+#: scamdetection/scamexpandurljob.cpp:52
 #, kde-format
 msgid "No network connection detected, we cannot expand url."
 msgstr "Nebolo zistené sieťové pripojenie, nemôžeme expandovať url."
 
-#: scamdetection/scamexpandurljob.cpp:84 scamdetection/scamexpandurljob.cpp:90
+#: scamdetection/scamexpandurljob.cpp:86 scamdetection/scamexpandurljob.cpp:92
 #, kde-format
 msgid "Impossible to expand '%1'."
 msgstr "Nemožno rozšíriť '%1'."
 
-#: scamdetection/scamexpandurljob.cpp:88
+#: scamdetection/scamexpandurljob.cpp:90
 #, kde-format
 msgid "Short url '%1' redirects to '%2'."
 msgstr "Krátke url '%1' presmeruje na '%2'."
@@ -1714,13 +1722,13 @@ msgstr "Chyba pri ukladaní správy"
 msgid "We cannot save message."
 msgstr "Nemôžeme uložiť správu."
 
-#: utils/messageviewerutil.cpp:594
+#: utils/messageviewerutil.cpp:596
 #, kde-format
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "Deleted: %1"
 
-#: utils/messageviewerutil.cpp:605
+#: utils/messageviewerutil.cpp:607
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
@@ -1729,12 +1737,12 @@ msgstr ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
 
-#: utils/messageviewerutil.cpp:633
+#: utils/messageviewerutil.cpp:635
 #, kde-format
 msgid "Open &with %1"
 msgstr "&Otvoriť pomocou %1"
 
-#: utils/messageviewerutil.cpp:635
+#: utils/messageviewerutil.cpp:637
 #, kde-format
 msgctxt "@item:inmenu Open With, %1 is application name"
 msgid "%1"
