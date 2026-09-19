@@ -918,10 +918,8 @@ void Pane::PanePrivate::updateTabControls()
 
     q->setTabsClosable(true);
     const int numberOfTab(q->count());
-    if (numberOfTab == 1) {
-        q->tabBar()->tabButton(0, QTabBar::RightSide)->setEnabled(false);
-    } else if (numberOfTab > 1) {
-        q->tabBar()->tabButton(0, QTabBar::RightSide)->setEnabled(true);
+    if (auto *btn = q->tabBar()->tabButton(0, QTabBar::RightSide); btn != nullptr) {
+        btn->setEnabled(numberOfTab > 1);
     }
 }
 
