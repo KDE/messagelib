@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagelist\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-19 00:46+0000\n"
+"POT-Creation-Date: 2026-09-20 00:46+0000\n"
 "PO-Revision-Date: 2025-09-16 10:30+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -508,23 +508,23 @@ msgstr "Чотири тижні тому"
 msgid "Five Weeks Ago"
 msgstr "П’ять тижнів тому"
 
-#: core/model.cpp:560 utils/themeeditor.cpp:189
+#: core/model.cpp:558 utils/themeeditor.cpp:189
 #, kde-format
 msgid "Receiver"
 msgstr "Отримувач"
 
-#: core/model.cpp:562 utils/themeeditor.cpp:188
+#: core/model.cpp:560 utils/themeeditor.cpp:188
 #, kde-format
 msgid "Sender"
 msgstr "Відправник"
 
-#: core/model.cpp:1383
+#: core/model.cpp:1381
 #, kde-format
 msgctxt "Message Aggregation Group Header: Month name and Year number"
 msgid "%1 %2"
 msgstr "%1 %2 року"
 
-#: core/model.cpp:3801
+#: core/model.cpp:3799
 #, kde-format
 msgid "Processed 1 Message of %2"
 msgid_plural "Processed %1 Messages of %2"
@@ -533,7 +533,7 @@ msgstr[1] "Оброблено %1 повідомлення з %2"
 msgstr[2] "Оброблено %1 повідомлень з %2"
 msgstr[3] "Оброблено %1 повідомлення з %2"
 
-#: core/model.cpp:3807 core/model.cpp:3813
+#: core/model.cpp:3805 core/model.cpp:3811
 #, kde-format
 msgid "Threaded 1 Message of %2"
 msgid_plural "Threaded %1 Messages of %2"
@@ -542,7 +542,7 @@ msgstr[1] "Розподілено за гілками %1 повідомленн�
 msgstr[2] "Розподілено за гілками %1 повідомлень з %2"
 msgstr[3] "Розподілено за гілками %1 повідомлення з %2"
 
-#: core/model.cpp:3819
+#: core/model.cpp:3817
 #, kde-format
 msgid "Grouped 1 Thread of %2"
 msgid_plural "Grouped %1 Threads of %2"
@@ -551,7 +551,7 @@ msgstr[1] "Розподілено за групами %1 гілки з %2"
 msgstr[2] "Розподілено за групами %1 гілок з %2"
 msgstr[3] "Розподілено за групами %1 гілку з %2"
 
-#: core/model.cpp:3825
+#: core/model.cpp:3823
 #, kde-format
 msgid "Updated 1 Group of %2"
 msgid_plural "Updated %1 Groups of %2"
@@ -560,7 +560,7 @@ msgstr[1] "Оновлено %1 групи з %2"
 msgstr[2] "Оновлено %1 груп з %2"
 msgstr[3] "Оновлено %1 групу з %2"
 
-#: core/model.cpp:3917
+#: core/model.cpp:3915
 #, kde-format
 msgctxt "@info:status Finished view fill"
 msgid "Ready"

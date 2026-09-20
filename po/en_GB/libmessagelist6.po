@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-19 00:46+0000\n"
+"POT-Creation-Date: 2026-09-20 00:46+0000\n"
 "PO-Revision-Date: 2024-11-01 13:56+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -500,51 +500,51 @@ msgstr "Four Weeks Ago"
 msgid "Five Weeks Ago"
 msgstr "Five Weeks Ago"
 
-#: core/model.cpp:560 utils/themeeditor.cpp:189
+#: core/model.cpp:558 utils/themeeditor.cpp:189
 #, kde-format
 msgid "Receiver"
 msgstr "Receiver"
 
-#: core/model.cpp:562 utils/themeeditor.cpp:188
+#: core/model.cpp:560 utils/themeeditor.cpp:188
 #, kde-format
 msgid "Sender"
 msgstr "Sender"
 
-#: core/model.cpp:1383
+#: core/model.cpp:1381
 #, kde-format
 msgctxt "Message Aggregation Group Header: Month name and Year number"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: core/model.cpp:3801
+#: core/model.cpp:3799
 #, kde-format
 msgid "Processed 1 Message of %2"
 msgid_plural "Processed %1 Messages of %2"
 msgstr[0] "Processed 1 Message of %2"
 msgstr[1] "Processed %1 Messages of %2"
 
-#: core/model.cpp:3807 core/model.cpp:3813
+#: core/model.cpp:3805 core/model.cpp:3811
 #, kde-format
 msgid "Threaded 1 Message of %2"
 msgid_plural "Threaded %1 Messages of %2"
 msgstr[0] "Threaded 1 Message of %2"
 msgstr[1] "Threaded %1 Messages of %2"
 
-#: core/model.cpp:3819
+#: core/model.cpp:3817
 #, kde-format
 msgid "Grouped 1 Thread of %2"
 msgid_plural "Grouped %1 Threads of %2"
 msgstr[0] "Grouped 1 Thread of %2"
 msgstr[1] "Grouped %1 Threads of %2"
 
-#: core/model.cpp:3825
+#: core/model.cpp:3823
 #, kde-format
 msgid "Updated 1 Group of %2"
 msgid_plural "Updated %1 Groups of %2"
 msgstr[0] "Updated 1 Group of %2"
 msgstr[1] "Updated %1 Groups of %2"
 
-#: core/model.cpp:3917
+#: core/model.cpp:3915
 #, kde-format
 msgctxt "@info:status Finished view fill"
 msgid "Ready"

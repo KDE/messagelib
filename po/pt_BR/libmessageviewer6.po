@@ -18,15 +18,15 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-19 00:46+0000\n"
-"PO-Revision-Date: 2026-05-17 07:14-0300\n"
+"PO-Revision-Date: 2026-09-19 08:03-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
-"Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
+"Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 26.04.1\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
@@ -1083,6 +1083,9 @@ msgid ""
 "but make it look different from the address it really points to. This is "
 "often the case in scam emails."
 msgstr ""
+"O texto deste link contém caracteres invisíveis que, embora não sejam "
+"exibidos, fazem com que ele pareça diferente do endereço para o qual "
+"realmente aponta. Isso é comum em e-mails de golpe."
 
 #: scamdetection/scamdetectionwebengine.cpp:263
 #, kde-format
