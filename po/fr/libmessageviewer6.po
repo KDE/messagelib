@@ -30,7 +30,7 @@ msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-19 00:46+0000\n"
-"PO-Revision-Date: 2026-05-18 10:10+0200\n"
+"PO-Revision-Date: 2026-09-20 10:09+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -40,7 +40,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: &\n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 26.04.1\n"
+"X-Generator: Lokalize 26.08.0\n"
 "X-Text-Markup: kde4\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
@@ -1101,6 +1101,9 @@ msgid ""
 "but make it look different from the address it really points to. This is "
 "often the case in scam emails."
 msgstr ""
+"Le texte de ce lien contient des caractères non visibles qui ne peuvent être "
+"affichés. Il ne correspond pas du tout à l'adresse vers laquelle il pointe "
+"réellement. C’est souvent le cas dans les courriels frauduleux."
 
 #: scamdetection/scamdetectionwebengine.cpp:263
 #, kde-format
