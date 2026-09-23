@@ -17,6 +17,10 @@
 
 #include <MessageCore/StringUtil>
 #include <MimeTreeParser/NodeHelper>
+#include <textutils_version.h>
+#if TEXTUTILS_VERSION >= QT_VERSION_CHECK(2, 2, 0)
+#include <TextUtils/TextUtilsTextToHtml>
+#endif
 
 #include <MessageCore/MessageCoreSettings>
 
@@ -41,7 +45,12 @@ QString HeaderStyleUtil::directionOf(const QString &str) const
 
 QString HeaderStyleUtil::strToHtml(const QString &str, KTextToHTML::Options flags)
 {
+#if TEXTUTILS_VERSION >= QT_VERSION_CHECK(2, 2, 0)
+    // Both option enums share the same values
+    return TextUtils::TextUtilsTextToHtml::convertToHtml(str, TextUtils::TextUtilsTextToHtml::Options::fromInt(flags.toInt()), 4096, 512);
+#else
     return KTextToHTML::convertToHtml(str, flags, 4096, 512);
+#endif
 }
 
 // Prepare the date string

@@ -12,7 +12,14 @@
 #include <MessageViewer/HtmlWriter>
 #include <MessageViewer/MessagePartRendererBase>
 
+#include <textutils_version.h>
+#if TEXTUTILS_VERSION >= QT_VERSION_CHECK(2, 2, 0)
+#include <TextUtils/TextUtilsTextToHtml>
+namespace TextToHtml = TextUtils::TextUtilsTextToHtml;
+#else
 #include <KTextToHTML>
+namespace TextToHtml = KTextToHTML;
+#endif
 
 #include <QSharedPointer>
 using namespace Qt::Literals::StringLiterals;
@@ -100,9 +107,9 @@ void quotedHTML(const QString &s, MessageViewer::RenderContext *context, Message
     const auto cssHelper = context->cssHelper();
     Q_ASSERT(cssHelper);
 
-    KTextToHTML::Options convertFlags = KTextToHTML::PreserveSpaces | KTextToHTML::HighlightText | KTextToHTML::ConvertPhoneNumbers;
+    TextToHtml::Options convertFlags = TextToHtml::PreserveSpaces | TextToHtml::HighlightText | TextToHtml::ConvertPhoneNumbers;
     if (context->showEmoticons()) {
-        convertFlags |= KTextToHTML::ReplaceSmileys;
+        convertFlags |= TextToHtml::ReplaceSmileys;
     }
 
     const QString normalStartTag = cssHelper->nonQuotedFontTag();
@@ -263,14 +270,14 @@ void quotedHTML(const QString &s, MessageViewer::RenderContext *context, Message
                     if (rightString > 0) {
                         htmlWriter->write(u"<span class=\"quotemarks\">%1</span>"_s.arg(currentLine.left(quoteLength)));
                         htmlWriter->write(u"<font color=\"%1\">"_s.arg(cssHelper->quoteColorName(actQuoteLevel)));
-                        const QString str = KTextToHTML::convertToHtml(currentLine.right(rightString), convertFlags, 4096, 512);
+                        const QString str = TextToHtml::convertToHtml(currentLine.right(rightString), convertFlags, 4096, 512);
                         htmlWriter->write(str);
                         htmlWriter->write(u"</font>"_s);
                     } else {
                         htmlWriter->write(u"<span class=\"quotemarksemptyline\">%1</span>"_s.arg(currentLine.left(quoteLength)));
                     }
                 } else {
-                    htmlWriter->write(KTextToHTML::convertToHtml(currentLine, convertFlags, 4096, 512));
+                    htmlWriter->write(TextToHtml::convertToHtml(currentLine, convertFlags, 4096, 512));
                 }
 
                 htmlWriter->write(u"</div>"_s);

@@ -430,6 +430,7 @@ target_link_libraries(
         KF6::Codecs
         KPim6::AkonadiContactWidgets
         KF6::TextTemplate
+        KF6::TextUtils
         Qt::PrintSupport
         KF6::Notifications
         KF6::TextAddonsWidgets
