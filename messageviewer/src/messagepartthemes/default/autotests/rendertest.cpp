@@ -6,6 +6,10 @@
 */
 #include <QProcess>
 
+#include <gpgme++/engineinfo.h>
+
+#include <gpgme.h>
+
 static QString renderTreeHelper(const MimeTreeParser::MessagePart::Ptr &messagePart, QString indent)
 {
     const QString line = u"%1 * %3\n"_s.arg(indent, QString::fromUtf8(messagePart->metaObject()->className()));
@@ -57,6 +61,13 @@ void RenderTest::testRender()
         || mailFileName == u"smime-signed-apple.mbox"_s) {
         QSKIP("FIXME: Failing for too long");
     }
+
+    // Skip one test for GpgME < 2.2.0 and GnuPG < 2.5.22 because the expected result is only created with GpgME >= 2.2.0 and GnuPG 2.5.22
+#if GPGME_VERSION_NUMBER < 0x020200
+    if ((GpgME::engineInfo(GpgME::GpgEngine).engineVersion() < "2.5.22") && (mailFileName == "openpgp-signed-apple.mbox"_L1)) {
+        QSKIP("The expected results are only created with GpgME 2.2.0 or later and GnuPG 2.5.22 or later");
+    }
+#endif
 
     // const QString htmlFileName = outFileName + u".html"_s;
     const bool bAsync = !asyncFileName.isEmpty();
