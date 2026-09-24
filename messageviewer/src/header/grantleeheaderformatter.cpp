@@ -206,7 +206,7 @@ public:
         return i18n("Subject:");
     }
 
-    QVariant format(KMime::Message *message, MimeTreeParser::NodeHelper *nodeHelper, [[maybe_unused]] bool showEmoticons) override
+    QVariant format(KMime::Message *message, MimeTreeParser::NodeHelper *nodeHelper, bool showEmoticons) override
     {
         KTextToHTML::Options flags = KTextToHTML::PreserveSpaces;
         if (showEmoticons) {
