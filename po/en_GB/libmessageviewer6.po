@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-19 00:46+0000\n"
+"POT-Creation-Date: 2026-09-24 00:46+0000\n"
 "PO-Revision-Date: 2024-08-03 12:53+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -725,8 +725,8 @@ msgstr "resent to:"
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "Grantlee theme \"%1\" is not valid."
 
-#: header/grantleeheaderformatter.cpp:483 header/headerstyle_util.cpp:83
-#: header/headerstyle_util.cpp:88 header/headerstyle_util.cpp:99
+#: header/grantleeheaderformatter.cpp:483 header/headerstyle_util.cpp:92
+#: header/headerstyle_util.cpp:97 header/headerstyle_util.cpp:108
 #, kde-format
 msgid "No Subject"
 msgstr "No Subject"
@@ -756,30 +756,30 @@ msgstr "Attachments:"
 msgid "Security:"
 msgstr "Security:"
 
-#: header/headerstyle_util.cpp:58
+#: header/headerstyle_util.cpp:67
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "Unknown"
 
-#: header/headerstyle_util.cpp:147
-#, kde-format
-msgid ""
-"%1% probability of being spam with confidence %3%.\n"
-"\n"
-"Full report:\n"
-"Probability=%2\n"
-"Confidence=%4"
-msgstr ""
-"%1% probability of being spam with confidence %3%.\n"
-"\n"
-"Full report:\n"
-"Probability=%2\n"
-"Confidence=%4"
-
 #: header/headerstyle_util.cpp:156
 #, kde-format
 msgid ""
+"%1% probability of being spam with confidence %3%.\n"
+"\n"
+"Full report:\n"
+"Probability=%2\n"
+"Confidence=%4"
+msgstr ""
+"%1% probability of being spam with confidence %3%.\n"
+"\n"
+"Full report:\n"
+"Probability=%2\n"
+"Confidence=%4"
+
+#: header/headerstyle_util.cpp:165
+#, kde-format
+msgid ""
 "%1% probability of being spam.\n"
 "\n"
 "Full report:\n"
@@ -790,37 +790,37 @@ msgstr ""
 "Full report:\n"
 "Probability=%2"
 
-#: header/headerstyle_util.cpp:165
+#: header/headerstyle_util.cpp:174
 #, kde-format
 msgid "No Spam agent"
 msgstr "No Spam agent"
 
-#: header/headerstyle_util.cpp:168
+#: header/headerstyle_util.cpp:177
 #, kde-format
 msgid "Spam filter score not a number"
 msgstr "Spam filter score not a number"
 
-#: header/headerstyle_util.cpp:171
+#: header/headerstyle_util.cpp:180
 #, kde-format
 msgid "Threshold not a valid number"
 msgstr "Threshold not a valid number"
 
-#: header/headerstyle_util.cpp:174
+#: header/headerstyle_util.cpp:183
 #, kde-format
 msgid "Spam filter score could not be extracted from header"
 msgstr "Spam filter score could not be extracted from header"
 
-#: header/headerstyle_util.cpp:177
+#: header/headerstyle_util.cpp:186
 #, kde-format
 msgid "Threshold could not be extracted from header"
 msgstr "Threshold could not be extracted from header"
 
-#: header/headerstyle_util.cpp:180
+#: header/headerstyle_util.cpp:189
 #, kde-format
 msgid "Error evaluating spam score"
 msgstr "Error evaluating spam score"
 
-#: header/headerstyle_util.cpp:185
+#: header/headerstyle_util.cpp:194
 #, kde-format
 msgid ""
 "%1.\n"

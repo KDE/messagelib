@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-19 00:46+0000\n"
+"POT-Creation-Date: 2026-09-24 00:46+0000\n"
 "PO-Revision-Date: 2025-05-19 10:18+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -737,8 +737,8 @@ msgstr "reenviado a:"
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "O tema de Grantlee «%1» non é correcto."
 
-#: header/grantleeheaderformatter.cpp:483 header/headerstyle_util.cpp:83
-#: header/headerstyle_util.cpp:88 header/headerstyle_util.cpp:99
+#: header/grantleeheaderformatter.cpp:483 header/headerstyle_util.cpp:92
+#: header/headerstyle_util.cpp:97 header/headerstyle_util.cpp:108
 #, kde-format
 msgid "No Subject"
 msgstr "Sen asunto"
@@ -768,13 +768,13 @@ msgstr "Anexos:"
 msgid "Security:"
 msgstr "Seguridade:"
 
-#: header/headerstyle_util.cpp:58
+#: header/headerstyle_util.cpp:67
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "Descoñecida"
 
-#: header/headerstyle_util.cpp:147
+#: header/headerstyle_util.cpp:156
 #, kde-format
 msgid ""
 "%1% probability of being spam with confidence %3%.\n"
@@ -788,7 +788,7 @@ msgstr ""
 "Informe completo:\n"
 "Probabilidade=%2|n Fiabilidade=%4"
 
-#: header/headerstyle_util.cpp:156
+#: header/headerstyle_util.cpp:165
 #, kde-format
 msgid ""
 "%1% probability of being spam.\n"
@@ -801,38 +801,38 @@ msgstr ""
 "Informe completo:\n"
 "Probabilidade=%2"
 
-#: header/headerstyle_util.cpp:165
+#: header/headerstyle_util.cpp:174
 #, kde-format
 msgid "No Spam agent"
 msgstr "Non hai axente de correo lixo"
 
-#: header/headerstyle_util.cpp:168
+#: header/headerstyle_util.cpp:177
 #, kde-format
 msgid "Spam filter score not a number"
 msgstr "A puntuación do filtro de correo lixo non é un número"
 
-#: header/headerstyle_util.cpp:171
+#: header/headerstyle_util.cpp:180
 #, kde-format
 msgid "Threshold not a valid number"
 msgstr "O limiar non é un número correcto"
 
-#: header/headerstyle_util.cpp:174
+#: header/headerstyle_util.cpp:183
 #, kde-format
 msgid "Spam filter score could not be extracted from header"
 msgstr ""
 "Non foi posíbel extraer da cabeceira a puntuación do filtro de correo lixo"
 
-#: header/headerstyle_util.cpp:177
+#: header/headerstyle_util.cpp:186
 #, kde-format
 msgid "Threshold could not be extracted from header"
 msgstr "Non foi posíbel extraer da cabeceira o limiar"
 
-#: header/headerstyle_util.cpp:180
+#: header/headerstyle_util.cpp:189
 #, kde-format
 msgid "Error evaluating spam score"
 msgstr "Produciuse un erro ao avaliar a puntuación de correo lixo"
 
-#: header/headerstyle_util.cpp:185
+#: header/headerstyle_util.cpp:194
 #, kde-format
 msgid ""
 "%1.\n"

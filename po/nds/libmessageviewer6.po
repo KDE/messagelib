@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-19 00:46+0000\n"
+"POT-Creation-Date: 2026-09-24 00:46+0000\n"
 "PO-Revision-Date: 2014-08-15 15:48+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -801,8 +801,8 @@ msgstr "nieg loosstüert vun"
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "Grantlee-Muster \"%1\" gellt nich."
 
-#: header/grantleeheaderformatter.cpp:483 header/headerstyle_util.cpp:83
-#: header/headerstyle_util.cpp:88 header/headerstyle_util.cpp:99
+#: header/grantleeheaderformatter.cpp:483 header/headerstyle_util.cpp:92
+#: header/headerstyle_util.cpp:97 header/headerstyle_util.cpp:108
 #, kde-format
 msgid "No Subject"
 msgstr "Keen Bedraap"
@@ -833,13 +833,13 @@ msgstr "Bilagen:"
 msgid "Security:"
 msgstr "Sekerheit"
 
-#: header/headerstyle_util.cpp:58
+#: header/headerstyle_util.cpp:67
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "Nich begäng"
 
-#: header/headerstyle_util.cpp:147
+#: header/headerstyle_util.cpp:156
 #, kde-format
 msgid ""
 "%1% probability of being spam with confidence %3%.\n"
@@ -854,7 +854,7 @@ msgstr ""
 "Wohrschienlich: %2\n"
 "Vertroen: %4"
 
-#: header/headerstyle_util.cpp:156
+#: header/headerstyle_util.cpp:165
 #, kde-format
 msgid ""
 "%1% probability of being spam.\n"
@@ -867,37 +867,37 @@ msgstr ""
 "Heel Bericht:\n"
 "Wohrschienlich: %2"
 
-#: header/headerstyle_util.cpp:165
+#: header/headerstyle_util.cpp:174
 #, kde-format
 msgid "No Spam agent"
 msgstr "Keen Warven-Hölper"
 
-#: header/headerstyle_util.cpp:168
+#: header/headerstyle_util.cpp:177
 #, kde-format
 msgid "Spam filter score not a number"
 msgstr "Warvenfilter-Pünkt is keen Tall"
 
-#: header/headerstyle_util.cpp:171
+#: header/headerstyle_util.cpp:180
 #, kde-format
 msgid "Threshold not a valid number"
 msgstr "Süll is keen gellen Tall"
 
-#: header/headerstyle_util.cpp:174
+#: header/headerstyle_util.cpp:183
 #, kde-format
 msgid "Spam filter score could not be extracted from header"
 msgstr "Warvenfilter-Pünkt laat sik nich ut Koppregen ruttrecken"
 
-#: header/headerstyle_util.cpp:177
+#: header/headerstyle_util.cpp:186
 #, kde-format
 msgid "Threshold could not be extracted from header"
 msgstr "Süll lett sik nich ut Koppregen ruttrecken"
 
-#: header/headerstyle_util.cpp:180
+#: header/headerstyle_util.cpp:189
 #, kde-format
 msgid "Error evaluating spam score"
 msgstr "Fehler bi't Beweerten vun de Warvenfilter-Pünkt"
 
-#: header/headerstyle_util.cpp:185
+#: header/headerstyle_util.cpp:194
 #, kde-format
 msgid ""
 "%1.\n"

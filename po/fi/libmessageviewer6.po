@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-19 00:46+0000\n"
+"POT-Creation-Date: 2026-09-24 00:46+0000\n"
 "PO-Revision-Date: 2025-05-31 10:35+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -732,8 +732,8 @@ msgstr "uudelleenlähetetty osoitteeseen:"
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "Grantlee-teema ”%1” ei ole kelvollinen."
 
-#: header/grantleeheaderformatter.cpp:483 header/headerstyle_util.cpp:83
-#: header/headerstyle_util.cpp:88 header/headerstyle_util.cpp:99
+#: header/grantleeheaderformatter.cpp:483 header/headerstyle_util.cpp:92
+#: header/headerstyle_util.cpp:97 header/headerstyle_util.cpp:108
 #, kde-format
 msgid "No Subject"
 msgstr "Ei aihetta"
@@ -763,13 +763,13 @@ msgstr "Liitteet:"
 msgid "Security:"
 msgstr "Turvallisuus:"
 
-#: header/headerstyle_util.cpp:58
+#: header/headerstyle_util.cpp:67
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "Tuntematon"
 
-#: header/headerstyle_util.cpp:147
+#: header/headerstyle_util.cpp:156
 #, kde-format
 msgid ""
 "%1% probability of being spam with confidence %3%.\n"
@@ -784,7 +784,7 @@ msgstr ""
 "Todennäköisyys = %2\n"
 "Luotettavuus = %4"
 
-#: header/headerstyle_util.cpp:156
+#: header/headerstyle_util.cpp:165
 #, kde-format
 msgid ""
 "%1% probability of being spam.\n"
@@ -797,37 +797,37 @@ msgstr ""
 "Koko raportti:\n"
 "Todennäköisyys = %2"
 
-#: header/headerstyle_util.cpp:165
+#: header/headerstyle_util.cpp:174
 #, kde-format
 msgid "No Spam agent"
 msgstr "Ei roskapostiagentti"
 
-#: header/headerstyle_util.cpp:168
+#: header/headerstyle_util.cpp:177
 #, kde-format
 msgid "Spam filter score not a number"
 msgstr "Roskapostisuodattimen arvo ei ole luku"
 
-#: header/headerstyle_util.cpp:171
+#: header/headerstyle_util.cpp:180
 #, kde-format
 msgid "Threshold not a valid number"
 msgstr "Kynnysarvo ei ole kelvollinen luku"
 
-#: header/headerstyle_util.cpp:174
+#: header/headerstyle_util.cpp:183
 #, kde-format
 msgid "Spam filter score could not be extracted from header"
 msgstr "Roskapostisuodattimen arvoa ei saatu luetuksi otsakkeesta"
 
-#: header/headerstyle_util.cpp:177
+#: header/headerstyle_util.cpp:186
 #, kde-format
 msgid "Threshold could not be extracted from header"
 msgstr "Kynnysarvoa ei saatu luetuksi otsakkeesta"
 
-#: header/headerstyle_util.cpp:180
+#: header/headerstyle_util.cpp:189
 #, kde-format
 msgid "Error evaluating spam score"
 msgstr "Virhe laskettaessa roskapostiarvoa"
 
-#: header/headerstyle_util.cpp:185
+#: header/headerstyle_util.cpp:194
 #, kde-format
 msgid ""
 "%1.\n"

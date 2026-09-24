@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-19 00:46+0000\n"
+"POT-Creation-Date: 2026-09-24 00:46+0000\n"
 "PO-Revision-Date: 2012-01-28 16:35-0800\n"
 "Last-Translator: Fumiaki Okushi <okushi@kde.gr.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -787,8 +787,8 @@ msgstr "(%1 から再送)"
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr ""
 
-#: header/grantleeheaderformatter.cpp:483 header/headerstyle_util.cpp:83
-#: header/headerstyle_util.cpp:88 header/headerstyle_util.cpp:99
+#: header/grantleeheaderformatter.cpp:483 header/headerstyle_util.cpp:92
+#: header/headerstyle_util.cpp:97 header/headerstyle_util.cpp:108
 #, kde-format
 msgid "No Subject"
 msgstr "件名なし"
@@ -819,13 +819,13 @@ msgstr "添付ファイル:"
 msgid "Security:"
 msgstr ""
 
-#: header/headerstyle_util.cpp:58
+#: header/headerstyle_util.cpp:67
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "不明"
 
-#: header/headerstyle_util.cpp:147
+#: header/headerstyle_util.cpp:156
 #, kde-format
 msgid ""
 "%1% probability of being spam with confidence %3%.\n"
@@ -840,7 +840,7 @@ msgstr ""
 "可能性=%2\n"
 "確かさ=%4"
 
-#: header/headerstyle_util.cpp:156
+#: header/headerstyle_util.cpp:165
 #, kde-format
 msgid ""
 "%1% probability of being spam.\n"
@@ -853,38 +853,38 @@ msgstr ""
 "詳細レポート:\n"
 "可能性=%2"
 
-#: header/headerstyle_util.cpp:165
+#: header/headerstyle_util.cpp:174
 #, kde-format
 msgid "No Spam agent"
 msgstr ""
 
-#: header/headerstyle_util.cpp:168
+#: header/headerstyle_util.cpp:177
 #, kde-format
 msgid "Spam filter score not a number"
 msgstr ""
 
-#: header/headerstyle_util.cpp:171
+#: header/headerstyle_util.cpp:180
 #, kde-format
 msgid "Threshold not a valid number"
 msgstr ""
 
-#: header/headerstyle_util.cpp:174
+#: header/headerstyle_util.cpp:183
 #, kde-format
 msgid "Spam filter score could not be extracted from header"
 msgstr ""
 
-#: header/headerstyle_util.cpp:177
+#: header/headerstyle_util.cpp:186
 #, kde-format
 msgid "Threshold could not be extracted from header"
 msgstr ""
 
-#: header/headerstyle_util.cpp:180
+#: header/headerstyle_util.cpp:189
 #, fuzzy, kde-format
 #| msgid "End of signed message"
 msgid "Error evaluating spam score"
 msgstr "署名付きメッセージの末尾"
 
-#: header/headerstyle_util.cpp:185
+#: header/headerstyle_util.cpp:194
 #, kde-format
 msgid ""
 "%1.\n"

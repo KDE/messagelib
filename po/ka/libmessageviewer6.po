@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-19 00:46+0000\n"
+"POT-Creation-Date: 2026-09-24 00:46+0000\n"
 "PO-Revision-Date: 2026-09-19 06:18+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -726,8 +726,8 @@ msgstr "გადაგზავნილია ვისთან:"
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "Grantlee-ის თემა \"%1\" არასწორია."
 
-#: header/grantleeheaderformatter.cpp:483 header/headerstyle_util.cpp:83
-#: header/headerstyle_util.cpp:88 header/headerstyle_util.cpp:99
+#: header/grantleeheaderformatter.cpp:483 header/headerstyle_util.cpp:92
+#: header/headerstyle_util.cpp:97 header/headerstyle_util.cpp:108
 #, kde-format
 msgid "No Subject"
 msgstr "სათაურის გარეშე"
@@ -757,13 +757,13 @@ msgstr "მიმაგრებული ფაილები:"
 msgid "Security:"
 msgstr "უსაფრთხოება:"
 
-#: header/headerstyle_util.cpp:58
+#: header/headerstyle_util.cpp:67
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "უცნობი"
 
-#: header/headerstyle_util.cpp:147
+#: header/headerstyle_util.cpp:156
 #, kde-format
 msgid ""
 "%1% probability of being spam with confidence %3%.\n"
@@ -778,7 +778,7 @@ msgstr ""
 "ალბათობა=%2\n"
 "სიმართლის შანსი=%4"
 
-#: header/headerstyle_util.cpp:156
+#: header/headerstyle_util.cpp:165
 #, kde-format
 msgid ""
 "%1% probability of being spam.\n"
@@ -791,37 +791,37 @@ msgstr ""
 "სრული ანგარიში:\n"
 "ალბათობა=%2"
 
-#: header/headerstyle_util.cpp:165
+#: header/headerstyle_util.cpp:174
 #, kde-format
 msgid "No Spam agent"
 msgstr "სპამის აგენტის გარეშე"
 
-#: header/headerstyle_util.cpp:168
+#: header/headerstyle_util.cpp:177
 #, kde-format
 msgid "Spam filter score not a number"
 msgstr "სპამის ფილტრის ქულა რიცხვი არაა"
 
-#: header/headerstyle_util.cpp:171
+#: header/headerstyle_util.cpp:180
 #, kde-format
 msgid "Threshold not a valid number"
 msgstr "ზღვარი არასწორი რიცხვია"
 
-#: header/headerstyle_util.cpp:174
+#: header/headerstyle_util.cpp:183
 #, kde-format
 msgid "Spam filter score could not be extracted from header"
 msgstr "თავსართებიდან სპამის ფილტრის ქულების გამოღების შეცდომა"
 
-#: header/headerstyle_util.cpp:177
+#: header/headerstyle_util.cpp:186
 #, kde-format
 msgid "Threshold could not be extracted from header"
 msgstr "თავსართიდან ზღვრის გამოღება შეუძლებელია"
 
-#: header/headerstyle_util.cpp:180
+#: header/headerstyle_util.cpp:189
 #, kde-format
 msgid "Error evaluating spam score"
 msgstr "სპამის ქულების შეფასების შეცდომა"
 
-#: header/headerstyle_util.cpp:185
+#: header/headerstyle_util.cpp:194
 #, kde-format
 msgid ""
 "%1.\n"

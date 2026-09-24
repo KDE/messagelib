@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-19 00:46+0000\n"
+"POT-Creation-Date: 2026-09-24 00:46+0000\n"
 "PO-Revision-Date: 2012-12-31 11:12+0700\n"
 "Last-Translator: sutha <sutha@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros>\n"
@@ -783,8 +783,8 @@ msgstr "(បានផ្ញើ​ឡើងវិញ​ពី %1)"
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr ""
 
-#: header/grantleeheaderformatter.cpp:483 header/headerstyle_util.cpp:83
-#: header/headerstyle_util.cpp:88 header/headerstyle_util.cpp:99
+#: header/grantleeheaderformatter.cpp:483 header/headerstyle_util.cpp:92
+#: header/headerstyle_util.cpp:97 header/headerstyle_util.cpp:108
 #, kde-format
 msgid "No Subject"
 msgstr "​គ្មាន​ប្រធាន​បទ"
@@ -815,13 +815,13 @@ msgstr "ឯកសារ​ភ្ជាប់ ៖"
 msgid "Security:"
 msgstr ""
 
-#: header/headerstyle_util.cpp:58
+#: header/headerstyle_util.cpp:67
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "​(មិន​ស្គាល់)"
 
-#: header/headerstyle_util.cpp:147
+#: header/headerstyle_util.cpp:156
 #, kde-format
 msgid ""
 "%1% probability of being spam with confidence %3%.\n"
@@ -836,7 +836,7 @@ msgstr ""
 "ប្រហែលជា=%2\n"
 "សេចក្ដីទុកចិត្ត=%4"
 
-#: header/headerstyle_util.cpp:156
+#: header/headerstyle_util.cpp:165
 #, kde-format
 msgid ""
 "%1% probability of being spam.\n"
@@ -849,37 +849,37 @@ msgstr ""
 "របាយការណ៍​ពេញលេញ ៖\n"
 "ប្រហែល​ជា​=%2"
 
-#: header/headerstyle_util.cpp:165
+#: header/headerstyle_util.cpp:174
 #, kde-format
 msgid "No Spam agent"
 msgstr "គ្មាន​ភ្នាក់​ងារ​សារ​ឥត​បាន​ការ"
 
-#: header/headerstyle_util.cpp:168
+#: header/headerstyle_util.cpp:177
 #, kde-format
 msgid "Spam filter score not a number"
 msgstr "ពិន្ទុ​​តម្រង​សារ​ឥត​បាន​ការ​មិនមែន​ជា​លេខ​ទេ"
 
-#: header/headerstyle_util.cpp:171
+#: header/headerstyle_util.cpp:180
 #, kde-format
 msgid "Threshold not a valid number"
 msgstr "កម្រិត​ពន្លឺ​មិនមែន​ជា​លេខ​ត្រឹមត្រូវ​ឡើយ"
 
-#: header/headerstyle_util.cpp:174
+#: header/headerstyle_util.cpp:183
 #, kde-format
 msgid "Spam filter score could not be extracted from header"
 msgstr "ពិន្ទុ​តម្រង​សារ​ឥត​បាន​ការ​មិន​​អាច​ត្រូវ​បាន​ស្រង់​ចេញពី​បឋមកថា​ឡើយ​​"
 
-#: header/headerstyle_util.cpp:177
+#: header/headerstyle_util.cpp:186
 #, kde-format
 msgid "Threshold could not be extracted from header"
 msgstr "កម្រិត​ពន្លឺ​មិន​អាច​ត្រូវ​បាន​ស្រង់​ចេញ​ពី​បឋមកថា​ទេ"
 
-#: header/headerstyle_util.cpp:180
+#: header/headerstyle_util.cpp:189
 #, kde-format
 msgid "Error evaluating spam score"
 msgstr "កំហុស​ក្នុង​ការ​វាយ​តម្លៃ​ពិន្ទុ​សារ​ឥតបានការ"
 
-#: header/headerstyle_util.cpp:185
+#: header/headerstyle_util.cpp:194
 #, kde-format
 msgid ""
 "%1.\n"

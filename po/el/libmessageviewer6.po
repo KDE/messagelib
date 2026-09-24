@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-19 00:46+0000\n"
+"POT-Creation-Date: 2026-09-24 00:46+0000\n"
 "PO-Revision-Date: 2024-09-19 17:23+0300\n"
 "Last-Translator: Antonis Geralis <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -798,8 +798,8 @@ msgstr "επαναποστολή από"
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "Το θέμα Grantlee «%1» δεν είναι έγκυρο."
 
-#: header/grantleeheaderformatter.cpp:483 header/headerstyle_util.cpp:83
-#: header/headerstyle_util.cpp:88 header/headerstyle_util.cpp:99
+#: header/grantleeheaderformatter.cpp:483 header/headerstyle_util.cpp:92
+#: header/headerstyle_util.cpp:97 header/headerstyle_util.cpp:108
 #, kde-format
 msgid "No Subject"
 msgstr "Κανένα θέμα"
@@ -829,13 +829,13 @@ msgstr "Συνημμένα:"
 msgid "Security:"
 msgstr "Ασφάλεια:"
 
-#: header/headerstyle_util.cpp:58
+#: header/headerstyle_util.cpp:67
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "Άγνωστο"
 
-#: header/headerstyle_util.cpp:147
+#: header/headerstyle_util.cpp:156
 #, kde-format
 msgid ""
 "%1% probability of being spam with confidence %3%.\n"
@@ -850,7 +850,7 @@ msgstr ""
 "Πιθανότητα=%2\n"
 "Βαθμός εμπιστοσύνης=%4"
 
-#: header/headerstyle_util.cpp:156
+#: header/headerstyle_util.cpp:165
 #, kde-format
 msgid ""
 "%1% probability of being spam.\n"
@@ -863,40 +863,40 @@ msgstr ""
 "Πλήρης αναφορά:\n"
 "Πιθανότητα=%2"
 
-#: header/headerstyle_util.cpp:165
+#: header/headerstyle_util.cpp:174
 #, kde-format
 msgid "No Spam agent"
 msgstr "Χωρίς πρόγραμμα-πελάτη διαχωρισμού ανεπιθύμητης αλληλογραφίας"
 
-#: header/headerstyle_util.cpp:168
+#: header/headerstyle_util.cpp:177
 #, kde-format
 msgid "Spam filter score not a number"
 msgstr ""
 "Η βαθμολογία του φίλτρου ανεπιθύμητης αλληλογραφίας δεν είναι έγκυρος αριθμός"
 
-#: header/headerstyle_util.cpp:171
+#: header/headerstyle_util.cpp:180
 #, kde-format
 msgid "Threshold not a valid number"
 msgstr "Η τιμή του κατωφλίου δεν είναι έγκυρος αριθμός"
 
-#: header/headerstyle_util.cpp:174
+#: header/headerstyle_util.cpp:183
 #, kde-format
 msgid "Spam filter score could not be extracted from header"
 msgstr ""
 "Η βαθμολογία του φίλτρου ανεπιθύμητης αλληλογραφίας δεν αποσπάσθηκε από την "
 "επικεφαλίδα"
 
-#: header/headerstyle_util.cpp:177
+#: header/headerstyle_util.cpp:186
 #, kde-format
 msgid "Threshold could not be extracted from header"
 msgstr "Ο αριθμός κατωφλίου δεν αποσπάσθηκε από την επικεφαλίδα"
 
-#: header/headerstyle_util.cpp:180
+#: header/headerstyle_util.cpp:189
 #, kde-format
 msgid "Error evaluating spam score"
 msgstr "Σφάλμα κατά τον υπολογισμό βαθμολογίας της ανεπιθύμητης αλληλογραφίας"
 
-#: header/headerstyle_util.cpp:185
+#: header/headerstyle_util.cpp:194
 #, kde-format
 msgid ""
 "%1.\n"

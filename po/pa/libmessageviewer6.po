@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-19 00:46+0000\n"
+"POT-Creation-Date: 2026-09-24 00:46+0000\n"
 "PO-Revision-Date: 2009-01-18 17:38+0530\n"
 "Last-Translator: Amanpreet Singh Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjab-l10n@list.sf.net>\n"
@@ -827,8 +827,8 @@ msgstr "(%1 ਵਲੋਂ ਮੁੜ-ਭੇਜਿਆ)"
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "ਦਸਤਖਤ ਫਾਇਲ ਜਾਇਜ਼ ਨਹੀਂ ਹੈ"
 
-#: header/grantleeheaderformatter.cpp:483 header/headerstyle_util.cpp:83
-#: header/headerstyle_util.cpp:88 header/headerstyle_util.cpp:99
+#: header/grantleeheaderformatter.cpp:483 header/headerstyle_util.cpp:92
+#: header/headerstyle_util.cpp:97 header/headerstyle_util.cpp:108
 #, kde-format
 msgid "No Subject"
 msgstr "ਕੋਈ ਵਿਸ਼ਾ ਨਹੀਂ"
@@ -861,13 +861,13 @@ msgstr "ਅਟੈਚਮੈਂਟ:"
 msgid "Security:"
 msgstr "ਸੁਰੱਖਿਆ"
 
-#: header/headerstyle_util.cpp:58
+#: header/headerstyle_util.cpp:67
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "ਅਣਜਾਣ"
 
-#: header/headerstyle_util.cpp:147
+#: header/headerstyle_util.cpp:156
 #, kde-format
 msgid ""
 "%1% probability of being spam with confidence %3%.\n"
@@ -882,7 +882,7 @@ msgstr ""
 "ਸੰਭਾਵਨਾ=%2\n"
 "ਹੌਸਲਾ=%4"
 
-#: header/headerstyle_util.cpp:156
+#: header/headerstyle_util.cpp:165
 #, fuzzy, kde-format
 #| msgid ""
 #| "%1% probability of being spam.\n"
@@ -900,38 +900,38 @@ msgstr ""
 "ਪੂਰੀ ਰਿਪੋਰਟ:\n"
 "%2"
 
-#: header/headerstyle_util.cpp:165
+#: header/headerstyle_util.cpp:174
 #, kde-format
 msgid "No Spam agent"
 msgstr ""
 
-#: header/headerstyle_util.cpp:168
+#: header/headerstyle_util.cpp:177
 #, kde-format
 msgid "Spam filter score not a number"
 msgstr ""
 
-#: header/headerstyle_util.cpp:171
+#: header/headerstyle_util.cpp:180
 #, kde-format
 msgid "Threshold not a valid number"
 msgstr ""
 
-#: header/headerstyle_util.cpp:174
+#: header/headerstyle_util.cpp:183
 #, kde-format
 msgid "Spam filter score could not be extracted from header"
 msgstr ""
 
-#: header/headerstyle_util.cpp:177
+#: header/headerstyle_util.cpp:186
 #, kde-format
 msgid "Threshold could not be extracted from header"
 msgstr ""
 
-#: header/headerstyle_util.cpp:180
+#: header/headerstyle_util.cpp:189
 #, fuzzy, kde-format
 #| msgid "Error while uploading message"
 msgid "Error evaluating spam score"
 msgstr "ਸੁਨੇਹਾ ਅੱਪਲੋਡ ਕਰਨ ਦੌਰਾਨ ਗਲਤੀ"
 
-#: header/headerstyle_util.cpp:185
+#: header/headerstyle_util.cpp:194
 #, kde-format
 msgid ""
 "%1.\n"
