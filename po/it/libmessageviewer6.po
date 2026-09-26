@@ -1,5 +1,4 @@
 # translation of libmessageviewer.po to Italian
-# SPDX-FileCopyrightText: 2009-2026 Luigi Toscano <luigi.toscano@tiscali.it>
 # Alessandro Astarita <aleast@capri.it>, 2002, 2003, 2004, 2005, 2006, 2007.
 # Andrea Rizzi <rizzi@kde.org>, 2004.
 # Federico Zenith <federico.zenith@member.fsf.org>, 2004, 2005.
@@ -7,12 +6,13 @@
 # Alessandro Pasotti <ale.pas@tiscalinet.it>, 2006.
 # Vincenzo Reale <smart2128vr@gmail.com>, 2007, 2008.
 # Nicola Ruggero <nicola@nxnt.org>, 2007.
+# SPDX-FileCopyrightText: 2009-2026 Luigi Toscano <luigi.toscano@tiscali.it>
 msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-24 00:46+0000\n"
-"PO-Revision-Date: 2026-05-29 23:26+0200\n"
+"PO-Revision-Date: 2026-09-19 22:20+0200\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -1080,6 +1080,9 @@ msgid ""
 "but make it look different from the address it really points to. This is "
 "often the case in scam emails."
 msgstr ""
+"Il testo di questo collegamento contiene dei caratteri invisibili, che non "
+"sono mostrati ma lo rendono differente dall'indirizzo a cui punta. Succede "
+"di solito con i messaggi di posta truffaldini."
 
 #: scamdetection/scamdetectionwebengine.cpp:263
 #, kde-format
