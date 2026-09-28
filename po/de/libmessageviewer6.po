@@ -11,21 +11,22 @@
 # SPDX-FileCopyrightText: 2011 Torbjörn Klatt <torbjoern@torbjoern-klatt.de>
 # SPDX-FileCopyrightText: 2021 Jürgen Jäckle <divmails1@gmx.net>
 # SPDX-FileCopyrightText: 2024 Johannes Obermayr <johannesobermayr@gmx.de>
-# Intevation GmbH, 2010, 2011.
+# SPDX-FileCopyrightText: 2026 Philipp Kiemle <l10n.daphipz@fastmail.de>
+# SPDX-FileCopyrightText: 2010-2011 Intevation GmbH
 msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-17 00:46+0000\n"
-"PO-Revision-Date: 2024-11-11 18:33+0100\n"
-"Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
+"PO-Revision-Date: 2026-09-23 11:11+0200\n"
+"Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
@@ -105,7 +106,7 @@ msgstr "Nachricht entschlüsseln"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:14
 msgid "Please wait while the message is being decrypted..."
-msgstr "Bitte warten Sie, während die Nachricht entschlüsselt wird ..."
+msgstr "Bitte warten Sie, während die Nachricht entschlüsselt wird …"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:18
 msgid "The message is encrypted for the following keys:"
@@ -190,7 +191,7 @@ msgstr ""
 
 #: messagepartthemes/default/templates/signedmessagepart.html:5
 msgid "Please wait while the signature is being verified..."
-msgstr "Bitte warten Sie, während die Signatur überprüft wird ..."
+msgstr "Bitte warten Sie, während die Signatur überprüft wird …"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:17
 msgid "End of signed message"
@@ -291,7 +292,7 @@ msgstr "Schlüssel löschen"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search..."
-msgstr "Suchen …"
+msgstr "Suchen …"
 
 #: dkim-verify/dkimmanagerulescombobox.cpp:20
 #, kde-format
@@ -312,7 +313,7 @@ msgstr "Ignorieren, wenn nicht signiert"
 #, kde-format
 msgctxt "@action:button"
 msgid "Export..."
-msgstr "Exportieren …"
+msgstr "Exportieren …"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:31
 #, kde-format
@@ -324,13 +325,13 @@ msgstr "Regel einrichten"
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Rule..."
-msgstr "Regel hinzufügen …"
+msgstr "Regel hinzufügen …"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:47
 #, kde-format
 msgctxt "@action:button"
 msgid "Import..."
-msgstr "Importieren …"
+msgstr "Importieren …"
 
 #: dkim-verify/dkimmanagerulesdialog.cpp:79
 #, kde-format
@@ -391,13 +392,13 @@ msgstr "Priorität"
 #: remote-content/remotecontentconfigurewidget.cpp:82
 #, kde-format
 msgid "Add..."
-msgstr "Hinzufügen ..."
+msgstr "Hinzufügen …"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:203
 #: remote-content/remotecontentconfigurewidget.cpp:85
 #, kde-format
 msgid "Modify..."
-msgstr "Ändern ..."
+msgstr "Ändern …"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:207
 #, kde-format
@@ -470,7 +471,7 @@ msgstr "Von:"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Use '*' to specify all emails from domain"
-msgstr ""
+msgstr "Verwenden Sie „*“, um alle E-Mails der Domain anzugeben"
 
 #: dkim-verify/dkimrulewidget.cpp:53
 #, kde-format
@@ -505,7 +506,7 @@ msgstr "DKIM-Schlüssel aktualisieren"
 #: dkim-verify/dkimviewermenu.cpp:43
 #, kde-format
 msgid "Rules..."
-msgstr "Regeln ..."
+msgstr "Regeln …"
 
 #: dkim-verify/dkimwidgetinfo.cpp:96
 #, kde-format
@@ -994,7 +995,7 @@ msgstr "Details"
 msgid "This message may be a scam. <a href=\"scamdetails\">(Details...)</a>"
 msgstr ""
 "Diese Nachricht könnte eine betrügerische E-Mail sein. <a href=\"scamdetails"
-"\">(Details...)</a>"
+"\">(Details …)</a>"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:41
 #, kde-format
@@ -1018,7 +1019,7 @@ msgstr "E-Mail-Adresse zur Positivliste hinzufügen"
 #, kde-format
 msgctxt "@action"
 msgid "Disable scam detection for all messages"
-msgstr "Erkennung von betrügerischen E-Mails für alle Nachrichten abschalten"
+msgstr "Erkennung von betrügerischen E-Mails für alle Nachrichten deaktivieren"
 
 #: scamdetection/scamdetectionwebengine.cpp:117
 #: scamdetection/scamdetectionwebengine.cpp:216
@@ -1675,7 +1676,7 @@ msgstr "Fehler beim Speichern des Anhangs"
 #, kde-format, kde-kuit-format
 msgctxt "1 = error string"
 msgid "Could not create temporary file: <message>%1</message>"
-msgstr ""
+msgstr "Die temporäre Datei kann nicht erstellt werden: <message>%1</message>"
 
 #: utils/messageviewerutil.cpp:410 utils/messageviewerutil.cpp:428
 #, kde-format
@@ -1693,10 +1694,9 @@ msgid "message"
 msgstr "Nachricht"
 
 #: utils/messageviewerutil.cpp:479
-#, fuzzy, kde-format
-#| msgid "email messages (*.mbox);;all files (*)"
+#, kde-format
 msgid "Mailbox file (*.mbox);;All Files (*)"
-msgstr "E-Mail-Nachrichten (*.mbox);;*|Alle Dateien (*)"
+msgstr "Mailbox-Datei (*.mbox);;Alle Dateien (*)"
 
 #: utils/messageviewerutil.cpp:490
 #, kde-format
@@ -1756,6 +1756,8 @@ msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
 "the attachment were:"
 msgstr ""
+"Sie haben einen Anhang aus dieser Nachricht entfernt. Die ursprünglichen "
+"MIME-Header für den Anhang lauteten:"
 
 #: utils/messageviewerutil.cpp:639
 #, kde-format
@@ -1924,7 +1926,7 @@ msgstr "GnuPG-Prüfprotokoll für diese Operation anzeigen"
 #: viewer/urlhandlermanager.cpp:856
 #, kde-format
 msgid "Opening URL..."
-msgstr "Adresse wird aufgerufen ..."
+msgstr "Adresse wird geöffnet …"
 
 #: viewer/urlhandlermanager.cpp:865
 #, kde-kuit-format
@@ -1941,7 +1943,7 @@ msgstr "Ausführen"
 #: viewer/viewer.cpp:153
 #, kde-format
 msgid "Loading message..."
-msgstr "Nachricht wird geladen ..."
+msgstr "Nachricht wird geladen …"
 
 #: viewer/viewer_p.cpp:352
 #, kde-format
@@ -1977,13 +1979,13 @@ msgstr "Öff&nen mit"
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
-msgstr "&Weitere ..."
+msgstr "&Weitere …"
 
 #: viewer/viewer_p.cpp:456 viewer/viewer_p.cpp:469
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
-msgstr "Öff&nen mit ..."
+msgstr "Öff&nen mit …"
 
 #: viewer/viewer_p.cpp:533 viewer/viewer_p.cpp:1746
 #, kde-format
@@ -2005,7 +2007,7 @@ msgstr "Gehe zu"
 #: viewer/viewer_p.cpp:560
 #, kde-format
 msgid "Save As..."
-msgstr "Speichern &unter ..."
+msgstr "Speichern unter …"
 
 #: viewer/viewer_p.cpp:566 viewer/viewer_p.cpp:1763
 #, kde-format
@@ -2160,7 +2162,7 @@ msgstr "Nachr&ichtencode ansehen"
 #: viewer/viewer_p.cpp:1584
 #, kde-format
 msgid "&Save Message..."
-msgstr "Nachricht &speichern ..."
+msgstr "Nachricht &speichern …"
 
 #: viewer/viewer_p.cpp:1590
 #, kde-format
@@ -2224,7 +2226,7 @@ msgstr "Text vorlesen"
 #, kde-format
 msgctxt "@action"
 msgid "Share Text..."
-msgstr "Text teilen …"
+msgstr "Text teilen …"
 
 #: viewer/viewer_p.cpp:1663
 #, kde-format
@@ -2235,7 +2237,7 @@ msgstr "Bildadresse kopieren"
 #: viewer/viewer_p.cpp:1669
 #, kde-format
 msgid "&Find in Message..."
-msgstr "In Na&chricht suchen ..."
+msgstr "In Na&chricht suchen …"
 
 #: viewer/viewer_p.cpp:1678
 #, kde-format
@@ -2245,17 +2247,17 @@ msgstr "Emoticons deaktivieren"
 #: viewer/viewer_p.cpp:1743
 #, kde-format
 msgid "Save &As..."
-msgstr "Speichern &unter ..."
+msgstr "Speichern &unter …"
 
 #: viewer/viewer_p.cpp:1751
 #, kde-format
 msgid "Open With..."
-msgstr "Öffnen mit ..."
+msgstr "Öffnen mit …"
 
 #: viewer/viewer_p.cpp:1758
 #, kde-format
 msgid "Save All Attachments..."
-msgstr "Alle A&nhänge speichern ..."
+msgstr "Alle Anhänge speichern …"
 
 #: viewer/viewer_p.cpp:2001
 #, kde-format
@@ -2337,7 +2339,7 @@ msgstr "&Öffnen mit  „%1“"
 #: widgets/attachmentdialog.cpp:47
 #, kde-format
 msgid "Open &With..."
-msgstr "Öffnen &mit ..."
+msgstr "Öffnen &mit …"
 
 #: widgets/attachmentdialog.cpp:69
 #, kde-format
