@@ -26,7 +26,6 @@ public:
 
 private:
     void readConfig();
-    void writeConfig();
     MailSourceViewTextBrowserWidget *const mRawBrowser;
     QTabWidget *mTabWidget = nullptr;
     MailSourceViewTextBrowserWidget *mHtmlBrowser = nullptr;

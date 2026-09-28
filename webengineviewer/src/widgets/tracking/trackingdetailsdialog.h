@@ -37,7 +37,6 @@ public:
     void setDetails(const QString &details);
 
 private:
-    WEBENGINEVIEWER_NO_EXPORT void writeConfig();
     WEBENGINEVIEWER_NO_EXPORT void readConfig();
 
     TextCustomEditor::RichTextEditorWidget *const mDetails;

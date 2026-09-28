@@ -43,7 +43,6 @@ Q_SIGNALS:
 
 protected:
     void readConfig();
-    void writeConfig();
 
     void pick(Recipient::Type);
 

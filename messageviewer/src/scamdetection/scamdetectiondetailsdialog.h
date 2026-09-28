@@ -27,7 +27,6 @@ public:
 
 private:
     void slotSaveAs();
-    void writeConfig();
     void readConfig();
     TextCustomEditor::RichTextEditorWidget *const mDetails;
 };

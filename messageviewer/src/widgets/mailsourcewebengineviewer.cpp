@@ -16,14 +16,10 @@
 #include <KLocalizedString>
 #include <QTabWidget>
 
-#include <KConfigGroup>
-#include <KWindowConfig>
 #include <QPointer>
 #include <QShortcut>
 #include <QVBoxLayout>
-#include <QWindow>
 
-#include <KSharedConfig>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QWebEnginePage>
@@ -78,27 +74,11 @@ MailSourceWebEngineViewer::MailSourceWebEngineViewer(QWidget *parent)
     readConfig();
 }
 
-MailSourceWebEngineViewer::~MailSourceWebEngineViewer()
-{
-    writeConfig();
-}
+MailSourceWebEngineViewer::~MailSourceWebEngineViewer() = default;
 
 void MailSourceWebEngineViewer::readConfig()
 {
-#if TEXTADDONSWIDGETS_VERSION >= QT_VERSION_CHECK(2, 1, 49)
     TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myMailSourceWebEngineViewerConfigGroupName), QSize(600, 400));
-#else
-    create(); // ensure a window is created
-    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myMailSourceWebEngineViewerConfigGroupName), 600, 400);
-#endif
-}
-
-void MailSourceWebEngineViewer::writeConfig()
-{
-#if TEXTADDONSWIDGETS_VERSION < QT_VERSION_CHECK(2, 1, 49)
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myMailSourceWebEngineViewerConfigGroupName));
-    KWindowConfig::saveWindowSize(windowHandle(), group);
-#endif
 }
 
 void MailSourceWebEngineViewer::setRawSource(const QString &source)

@@ -12,14 +12,8 @@
 #include <MessageViewer/HtmlWriter>
 #include <MessageViewer/MessagePartRendererBase>
 
-#include <textutils_version.h>
-#if TEXTUTILS_VERSION >= QT_VERSION_CHECK(2, 2, 0)
 #include <TextUtils/TextUtilsTextToHtml>
 namespace TextToHtml = TextUtils::TextUtilsTextToHtml;
-#else
-#include <KTextToHTML>
-namespace TextToHtml = KTextToHTML;
-#endif
 
 #include <QSharedPointer>
 using namespace Qt::Literals::StringLiterals;

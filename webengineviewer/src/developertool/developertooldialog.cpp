@@ -5,13 +5,9 @@
 */
 #include "developertooldialog.h"
 #include "developertoolwidget.h"
-#include <KConfigGroup>
 #include <KLocalizedString>
-#include <KSharedConfig>
-#include <KWindowConfig>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
-#include <QWindow>
 
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
 
@@ -41,10 +37,7 @@ DeveloperToolDialog::DeveloperToolDialog(QWidget *parent)
     readConfig();
 }
 
-DeveloperToolDialog::~DeveloperToolDialog()
-{
-    writeConfig();
-}
+DeveloperToolDialog::~DeveloperToolDialog() = default;
 
 QWebEnginePage *DeveloperToolDialog::enginePage() const
 {
@@ -53,20 +46,7 @@ QWebEnginePage *DeveloperToolDialog::enginePage() const
 
 void DeveloperToolDialog::readConfig()
 {
-#if TEXTADDONSWIDGETS_VERSION >= QT_VERSION_CHECK(2, 1, 49)
     TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myDeveloperToolDialogConfigGroupName), QSize(800, 600));
-#else
-    create(); // ensure a window is created
-    TextAddonsWidgets::LoadDialogSizeUtils::loadDialogSizeScaled(this, QLatin1StringView(myDeveloperToolDialogConfigGroupName), 800, 600);
-#endif
-}
-
-void DeveloperToolDialog::writeConfig()
-{
-#if TEXTADDONSWIDGETS_VERSION < QT_VERSION_CHECK(2, 1, 49)
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myDeveloperToolDialogConfigGroupName));
-    KWindowConfig::saveWindowSize(windowHandle(), group);
-#endif
 }
 
 #include "moc_developertooldialog.cpp"

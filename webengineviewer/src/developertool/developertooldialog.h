@@ -25,7 +25,6 @@ public:
 
 private:
     WEBENGINEVIEWER_NO_EXPORT void readConfig();
-    WEBENGINEVIEWER_NO_EXPORT void writeConfig();
     DeveloperToolWidget *const mDeveloperToolWidget;
 };
 }

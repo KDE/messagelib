@@ -154,7 +154,7 @@ file(
 )
 ecm_check_outbound_license(LICENSES GPL-2.0-only  FILES ${ALL_SOURCE_FILES})
 
-set(KTEXTADDONS_MIN_VERSION "2.1.2")
+set(KTEXTADDONS_MIN_VERSION "2.2.0")
 
 find_package(
     Qt6
@@ -300,10 +300,6 @@ include_directories(
     ${CMAKE_CURRENT_BINARY_DIR}
     ${CMAKE_CURRENT_SOURCE_DIR}
 )
-
-if(${KF6TextAddonsWidgets_VERSION} VERSION_GREATER_EQUAL 2.1.41)
-    set(HAVE_TEXTADDONSWIDGETS_FLOWLAYOUT TRUE)
-endif()
 
 add_subdirectory(mimetreeparser)
 add_subdirectory(messageviewer)
