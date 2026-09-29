@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-18 00:46+0000\n"
+"POT-Creation-Date: 2026-09-29 00:46+0000\n"
 "PO-Revision-Date: 2026-08-17 19:28+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -1822,39 +1822,39 @@ msgctxt "@info:tooltip %1 list of emails"
 msgid "Reply-To:%1"
 msgstr "ردّ على: :%1"
 
-#: recipient/recipientspicker.cpp:52
+#: recipient/recipientspicker.cpp:49
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Recipient"
 msgstr "اختر المستلم:"
 
-#: recipient/recipientspicker.cpp:64
+#: recipient/recipientspicker.cpp:61
 #, kde-format
 msgctxt "@action:button"
 msgid "Search &Directory Service"
 msgstr "ابحث &خدمة الدليل"
 
-#: recipient/recipientspicker.cpp:83
+#: recipient/recipientspicker.cpp:80
 #, kde-format
 msgid "Add as &Reply-To"
 msgstr "أضف كـ&رد على"
 
-#: recipient/recipientspicker.cpp:84
+#: recipient/recipientspicker.cpp:81
 #, kde-format
 msgid "Add as &To"
 msgstr "أضف كـ إ&لى"
 
-#: recipient/recipientspicker.cpp:85
+#: recipient/recipientspicker.cpp:82
 #, kde-format
 msgid "Add as CC"
 msgstr "أضف ك&نسخة"
 
-#: recipient/recipientspicker.cpp:86
+#: recipient/recipientspicker.cpp:83
 #, kde-format
 msgid "Add as &BCC"
 msgstr "أضف كنسخة &مخفية"
 
-#: recipient/recipientspicker.cpp:109
+#: recipient/recipientspicker.cpp:103
 #, kde-format
 msgid "%1 selected email"
 msgid_plural "%1 selected emails"
@@ -1865,7 +1865,7 @@ msgstr[3] "%1 بريد إلكتروني محدد"
 msgstr[4] "%1 بريد إلكتروني محدد"
 msgstr[5] "%1 بريد إلكتروني محدد"
 
-#: recipient/recipientspicker.cpp:176
+#: recipient/recipientspicker.cpp:170
 #, kde-format
 msgid ""
 "You selected 1 recipient. The maximum supported number of recipients is %2.\n"
@@ -1893,7 +1893,7 @@ msgstr[5] ""
 "حدّدت %1 مستلم. أقصى عدد مدعوم من المستلمين هو %2.\n"
 " رجاءً عدّل التّحديد."
 
-#: recipient/recipientspicker.cpp:193
+#: recipient/recipientspicker.cpp:187
 #, kde-format
 msgid "You can not add more recipients."
 msgstr "يمكنك إضافة المزيد من المستلمين."

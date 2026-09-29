@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-24 00:46+0000\n"
+"POT-Creation-Date: 2026-09-29 00:46+0000\n"
 "PO-Revision-Date: 2026-09-22 00:13+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -720,8 +720,8 @@ msgstr "重新送出到："
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "Grantlee 主題 %1 無效。"
 
-#: header/grantleeheaderformatter.cpp:483 header/headerstyle_util.cpp:92
-#: header/headerstyle_util.cpp:97 header/headerstyle_util.cpp:108
+#: header/grantleeheaderformatter.cpp:483 header/headerstyle_util.cpp:85
+#: header/headerstyle_util.cpp:90 header/headerstyle_util.cpp:101
 #, kde-format
 msgid "No Subject"
 msgstr "沒有主題"
@@ -751,13 +751,13 @@ msgstr "附加檔："
 msgid "Security:"
 msgstr "安全性："
 
-#: header/headerstyle_util.cpp:67
+#: header/headerstyle_util.cpp:60
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "未知"
 
-#: header/headerstyle_util.cpp:156
+#: header/headerstyle_util.cpp:149
 #, kde-format
 msgid ""
 "%1% probability of being spam with confidence %3%.\n"
@@ -772,7 +772,7 @@ msgstr ""
 "可能性=%2\n"
 "可信度=%4"
 
-#: header/headerstyle_util.cpp:165
+#: header/headerstyle_util.cpp:158
 #, kde-format
 msgid ""
 "%1% probability of being spam.\n"
@@ -785,37 +785,37 @@ msgstr ""
 "完整報告：\n"
 "可能性=%2"
 
-#: header/headerstyle_util.cpp:174
+#: header/headerstyle_util.cpp:167
 #, kde-format
 msgid "No Spam agent"
 msgstr "沒有處理垃圾信代理程式"
 
-#: header/headerstyle_util.cpp:177
+#: header/headerstyle_util.cpp:170
 #, kde-format
 msgid "Spam filter score not a number"
 msgstr "垃圾信過濾的評分非數字"
 
-#: header/headerstyle_util.cpp:180
+#: header/headerstyle_util.cpp:173
 #, kde-format
 msgid "Threshold not a valid number"
 msgstr "下限值非有效的數字"
 
-#: header/headerstyle_util.cpp:183
+#: header/headerstyle_util.cpp:176
 #, kde-format
 msgid "Spam filter score could not be extracted from header"
 msgstr "垃圾信過濾的評分並非從標頭取出"
 
-#: header/headerstyle_util.cpp:186
+#: header/headerstyle_util.cpp:179
 #, kde-format
 msgid "Threshold could not be extracted from header"
 msgstr "下限制並非從標頭取出"
 
-#: header/headerstyle_util.cpp:189
+#: header/headerstyle_util.cpp:182
 #, kde-format
 msgid "Error evaluating spam score"
 msgstr "計算垃圾信評分時發生錯誤"
 
-#: header/headerstyle_util.cpp:194
+#: header/headerstyle_util.cpp:187
 #, kde-format
 msgid ""
 "%1.\n"
@@ -893,7 +893,7 @@ msgctxt "@action"
 msgid "Send Deny"
 msgstr "送出拒絕"
 
-#: remote-content/remotecontentconfiguredialog.cpp:29
+#: remote-content/remotecontentconfiguredialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Remote Content"
@@ -968,7 +968,7 @@ msgctxt "@label:textbox"
 msgid "Domain:"
 msgstr "網域："
 
-#: scamdetection/scamdetectiondetailsdialog.cpp:43
+#: scamdetection/scamdetectiondetailsdialog.cpp:40
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"
@@ -2335,24 +2335,24 @@ msgstr ""
 msgid "Speak Text"
 msgstr "唸出文字"
 
-#: widgets/mailsourcewebengineviewer.cpp:52
+#: widgets/mailsourcewebengineviewer.cpp:48
 #, kde-format
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
 msgstr "原始來源"
 
-#: widgets/mailsourcewebengineviewer.cpp:53
+#: widgets/mailsourcewebengineviewer.cpp:49
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr "原始的，儲存於檔案系統或伺服器上，未變更的信件"
 
-#: widgets/mailsourcewebengineviewer.cpp:56
+#: widgets/mailsourcewebengineviewer.cpp:52
 #, kde-format
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
 msgstr "HTML 來源"
 
-#: widgets/mailsourcewebengineviewer.cpp:57
+#: widgets/mailsourcewebengineviewer.cpp:53
 #, kde-format
 msgid "HTML code for displaying the message to the user"
 msgstr "顯示信件給使用者的 HTML 碼"

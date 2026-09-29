@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-18 00:46+0000\n"
+"POT-Creation-Date: 2026-09-29 00:46+0000\n"
 "PO-Revision-Date: 2026-08-22 11:12+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -1850,39 +1850,39 @@ msgctxt "@info:tooltip %1 list of emails"
 msgid "Reply-To:%1"
 msgstr "Odpovědět komu:%1"
 
-#: recipient/recipientspicker.cpp:52
+#: recipient/recipientspicker.cpp:49
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Recipient"
 msgstr "Vyberte příjemce"
 
-#: recipient/recipientspicker.cpp:64
+#: recipient/recipientspicker.cpp:61
 #, kde-format
 msgctxt "@action:button"
 msgid "Search &Directory Service"
 msgstr "Prohledat a&dresářovou službu"
 
-#: recipient/recipientspicker.cpp:83
+#: recipient/recipientspicker.cpp:80
 #, kde-format
 msgid "Add as &Reply-To"
 msgstr "Přidat jako &Komu"
 
-#: recipient/recipientspicker.cpp:84
+#: recipient/recipientspicker.cpp:81
 #, kde-format
 msgid "Add as &To"
 msgstr "Přidat jako '&Komu'"
 
-#: recipient/recipientspicker.cpp:85
+#: recipient/recipientspicker.cpp:82
 #, kde-format
 msgid "Add as CC"
 msgstr "Přidat jako 'Kopie:'"
 
-#: recipient/recipientspicker.cpp:86
+#: recipient/recipientspicker.cpp:83
 #, kde-format
 msgid "Add as &BCC"
 msgstr "Přidat jako '&Slepá kopie'"
 
-#: recipient/recipientspicker.cpp:109
+#: recipient/recipientspicker.cpp:103
 #, kde-format
 msgid "%1 selected email"
 msgid_plural "%1 selected emails"
@@ -1890,7 +1890,7 @@ msgstr[0] "%1 vybraný e-mail"
 msgstr[1] "%1 vybrané e-maily"
 msgstr[2] "%1 vybraných e-mailů"
 
-#: recipient/recipientspicker.cpp:176
+#: recipient/recipientspicker.cpp:170
 #, kde-format
 msgid ""
 "You selected 1 recipient. The maximum supported number of recipients is %2.\n"
@@ -1909,7 +1909,7 @@ msgstr[2] ""
 "Zvolili jste %1 příjemců. Maximální podporovaný počet příjemců je %2.\n"
 "Prosím upravte výběr."
 
-#: recipient/recipientspicker.cpp:193
+#: recipient/recipientspicker.cpp:187
 #, kde-format
 msgid "You can not add more recipients."
 msgstr "Nelze přidat další příjemce."

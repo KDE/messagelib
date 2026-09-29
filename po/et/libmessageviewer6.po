@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-24 00:46+0000\n"
+"POT-Creation-Date: 2026-09-29 00:46+0000\n"
 "PO-Revision-Date: 2020-05-13 12:55+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -743,8 +743,8 @@ msgstr "Ümber suunatud aadressile:"
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "Grantlee teema \"%1\" ei ole kõlblik."
 
-#: header/grantleeheaderformatter.cpp:483 header/headerstyle_util.cpp:92
-#: header/headerstyle_util.cpp:97 header/headerstyle_util.cpp:108
+#: header/grantleeheaderformatter.cpp:483 header/headerstyle_util.cpp:85
+#: header/headerstyle_util.cpp:90 header/headerstyle_util.cpp:101
 #, kde-format
 msgid "No Subject"
 msgstr "Teema puudub"
@@ -774,13 +774,13 @@ msgstr "Kaasatud failid:"
 msgid "Security:"
 msgstr "Turvalisus:"
 
-#: header/headerstyle_util.cpp:67
+#: header/headerstyle_util.cpp:60
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "Teadmata"
 
-#: header/headerstyle_util.cpp:156
+#: header/headerstyle_util.cpp:149
 #, kde-format
 msgid ""
 "%1% probability of being spam with confidence %3%.\n"
@@ -795,7 +795,7 @@ msgstr ""
 "Tõenäosus=%2\n"
 "Kindlus=%4"
 
-#: header/headerstyle_util.cpp:165
+#: header/headerstyle_util.cpp:158
 #, kde-format
 msgid ""
 "%1% probability of being spam.\n"
@@ -808,37 +808,37 @@ msgstr ""
 "Täielik aruanne:\n"
 "Tõenäosus=%2"
 
-#: header/headerstyle_util.cpp:174
+#: header/headerstyle_util.cpp:167
 #, kde-format
 msgid "No Spam agent"
 msgstr "Rämpsposti agent puudub"
 
-#: header/headerstyle_util.cpp:177
+#: header/headerstyle_util.cpp:170
 #, kde-format
 msgid "Spam filter score not a number"
 msgstr "Rämpsposti filtri tulemus ei ole arv"
 
-#: header/headerstyle_util.cpp:180
+#: header/headerstyle_util.cpp:173
 #, kde-format
 msgid "Threshold not a valid number"
 msgstr "Lävi ei ole korrektne arv"
 
-#: header/headerstyle_util.cpp:183
+#: header/headerstyle_util.cpp:176
 #, kde-format
 msgid "Spam filter score could not be extracted from header"
 msgstr "Rämpsposti filtri tulemuse hankimine päisest nurjus"
 
-#: header/headerstyle_util.cpp:186
+#: header/headerstyle_util.cpp:179
 #, kde-format
 msgid "Threshold could not be extracted from header"
 msgstr "Läve hankimine päisest nurjus"
 
-#: header/headerstyle_util.cpp:189
+#: header/headerstyle_util.cpp:182
 #, kde-format
 msgid "Error evaluating spam score"
 msgstr "Viga rämpsposti tulemuse hindamisel"
 
-#: header/headerstyle_util.cpp:194
+#: header/headerstyle_util.cpp:187
 #, kde-format
 msgid ""
 "%1.\n"
@@ -920,7 +920,7 @@ msgctxt "@action"
 msgid "Send Deny"
 msgstr "Saada kohe"
 
-#: remote-content/remotecontentconfiguredialog.cpp:29
+#: remote-content/remotecontentconfiguredialog.cpp:25
 #, fuzzy, kde-format
 #| msgid "Template content"
 msgctxt "@title:window"
@@ -1004,7 +1004,7 @@ msgctxt "@label:textbox"
 msgid "Domain:"
 msgstr "Domeen:"
 
-#: scamdetection/scamdetectiondetailsdialog.cpp:43
+#: scamdetection/scamdetectiondetailsdialog.cpp:40
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"
@@ -2450,24 +2450,24 @@ msgstr ""
 msgid "Speak Text"
 msgstr "Loe tekst ette"
 
-#: widgets/mailsourcewebengineviewer.cpp:52
+#: widgets/mailsourcewebengineviewer.cpp:48
 #, kde-format
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
 msgstr "Toortekst"
 
-#: widgets/mailsourcewebengineviewer.cpp:53
+#: widgets/mailsourcewebengineviewer.cpp:49
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr "Muutmata toorkiri, nagu see on salvestatud failisüsteemis või serveris"
 
-#: widgets/mailsourcewebengineviewer.cpp:56
+#: widgets/mailsourcewebengineviewer.cpp:52
 #, kde-format
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
 msgstr "HTML-kood"
 
-#: widgets/mailsourcewebengineviewer.cpp:57
+#: widgets/mailsourcewebengineviewer.cpp:53
 #, kde-format
 msgid "HTML code for displaying the message to the user"
 msgstr "HTML-kood kirja kuvamiseks kasutajale"

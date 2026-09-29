@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-24 00:46+0000\n"
+"POT-Creation-Date: 2026-09-29 00:46+0000\n"
 "PO-Revision-Date: 2025-05-19 10:18+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -737,8 +737,8 @@ msgstr "reenviado a:"
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "O tema de Grantlee «%1» non é correcto."
 
-#: header/grantleeheaderformatter.cpp:483 header/headerstyle_util.cpp:92
-#: header/headerstyle_util.cpp:97 header/headerstyle_util.cpp:108
+#: header/grantleeheaderformatter.cpp:483 header/headerstyle_util.cpp:85
+#: header/headerstyle_util.cpp:90 header/headerstyle_util.cpp:101
 #, kde-format
 msgid "No Subject"
 msgstr "Sen asunto"
@@ -768,13 +768,13 @@ msgstr "Anexos:"
 msgid "Security:"
 msgstr "Seguridade:"
 
-#: header/headerstyle_util.cpp:67
+#: header/headerstyle_util.cpp:60
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "Descoñecida"
 
-#: header/headerstyle_util.cpp:156
+#: header/headerstyle_util.cpp:149
 #, kde-format
 msgid ""
 "%1% probability of being spam with confidence %3%.\n"
@@ -788,7 +788,7 @@ msgstr ""
 "Informe completo:\n"
 "Probabilidade=%2|n Fiabilidade=%4"
 
-#: header/headerstyle_util.cpp:165
+#: header/headerstyle_util.cpp:158
 #, kde-format
 msgid ""
 "%1% probability of being spam.\n"
@@ -801,38 +801,38 @@ msgstr ""
 "Informe completo:\n"
 "Probabilidade=%2"
 
-#: header/headerstyle_util.cpp:174
+#: header/headerstyle_util.cpp:167
 #, kde-format
 msgid "No Spam agent"
 msgstr "Non hai axente de correo lixo"
 
-#: header/headerstyle_util.cpp:177
+#: header/headerstyle_util.cpp:170
 #, kde-format
 msgid "Spam filter score not a number"
 msgstr "A puntuación do filtro de correo lixo non é un número"
 
-#: header/headerstyle_util.cpp:180
+#: header/headerstyle_util.cpp:173
 #, kde-format
 msgid "Threshold not a valid number"
 msgstr "O limiar non é un número correcto"
 
-#: header/headerstyle_util.cpp:183
+#: header/headerstyle_util.cpp:176
 #, kde-format
 msgid "Spam filter score could not be extracted from header"
 msgstr ""
 "Non foi posíbel extraer da cabeceira a puntuación do filtro de correo lixo"
 
-#: header/headerstyle_util.cpp:186
+#: header/headerstyle_util.cpp:179
 #, kde-format
 msgid "Threshold could not be extracted from header"
 msgstr "Non foi posíbel extraer da cabeceira o limiar"
 
-#: header/headerstyle_util.cpp:189
+#: header/headerstyle_util.cpp:182
 #, kde-format
 msgid "Error evaluating spam score"
 msgstr "Produciuse un erro ao avaliar a puntuación de correo lixo"
 
-#: header/headerstyle_util.cpp:194
+#: header/headerstyle_util.cpp:187
 #, kde-format
 msgid ""
 "%1.\n"
@@ -910,7 +910,7 @@ msgctxt "@action"
 msgid "Send Deny"
 msgstr "Enviar a denegación"
 
-#: remote-content/remotecontentconfiguredialog.cpp:29
+#: remote-content/remotecontentconfiguredialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Remote Content"
@@ -985,7 +985,7 @@ msgctxt "@label:textbox"
 msgid "Domain:"
 msgstr "Dominio:"
 
-#: scamdetection/scamdetectiondetailsdialog.cpp:43
+#: scamdetection/scamdetectiondetailsdialog.cpp:40
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"
@@ -2408,26 +2408,26 @@ msgstr ""
 msgid "Speak Text"
 msgstr "Ler o texto"
 
-#: widgets/mailsourcewebengineviewer.cpp:52
+#: widgets/mailsourcewebengineviewer.cpp:48
 #, kde-format
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
 msgstr "Fonte crúa"
 
-#: widgets/mailsourcewebengineviewer.cpp:53
+#: widgets/mailsourcewebengineviewer.cpp:49
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr ""
 "Mensaxe crúa, sen modificar, tal e como se almacena no sistema de ficheiros "
 "ou no servidor"
 
-#: widgets/mailsourcewebengineviewer.cpp:56
+#: widgets/mailsourcewebengineviewer.cpp:52
 #, kde-format
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
 msgstr "Fonte en HTML"
 
-#: widgets/mailsourcewebengineviewer.cpp:57
+#: widgets/mailsourcewebengineviewer.cpp:53
 #, kde-format
 msgid "HTML code for displaying the message to the user"
 msgstr "Código HTML para lle amosar a mensaxe á persoa usuaria."

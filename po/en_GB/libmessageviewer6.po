@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-24 00:46+0000\n"
+"POT-Creation-Date: 2026-09-29 00:46+0000\n"
 "PO-Revision-Date: 2024-08-03 12:53+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -725,8 +725,8 @@ msgstr "resent to:"
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "Grantlee theme \"%1\" is not valid."
 
-#: header/grantleeheaderformatter.cpp:483 header/headerstyle_util.cpp:92
-#: header/headerstyle_util.cpp:97 header/headerstyle_util.cpp:108
+#: header/grantleeheaderformatter.cpp:483 header/headerstyle_util.cpp:85
+#: header/headerstyle_util.cpp:90 header/headerstyle_util.cpp:101
 #, kde-format
 msgid "No Subject"
 msgstr "No Subject"
@@ -756,13 +756,13 @@ msgstr "Attachments:"
 msgid "Security:"
 msgstr "Security:"
 
-#: header/headerstyle_util.cpp:67
+#: header/headerstyle_util.cpp:60
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "Unknown"
 
-#: header/headerstyle_util.cpp:156
+#: header/headerstyle_util.cpp:149
 #, kde-format
 msgid ""
 "%1% probability of being spam with confidence %3%.\n"
@@ -777,7 +777,7 @@ msgstr ""
 "Probability=%2\n"
 "Confidence=%4"
 
-#: header/headerstyle_util.cpp:165
+#: header/headerstyle_util.cpp:158
 #, kde-format
 msgid ""
 "%1% probability of being spam.\n"
@@ -790,37 +790,37 @@ msgstr ""
 "Full report:\n"
 "Probability=%2"
 
-#: header/headerstyle_util.cpp:174
+#: header/headerstyle_util.cpp:167
 #, kde-format
 msgid "No Spam agent"
 msgstr "No Spam agent"
 
-#: header/headerstyle_util.cpp:177
+#: header/headerstyle_util.cpp:170
 #, kde-format
 msgid "Spam filter score not a number"
 msgstr "Spam filter score not a number"
 
-#: header/headerstyle_util.cpp:180
+#: header/headerstyle_util.cpp:173
 #, kde-format
 msgid "Threshold not a valid number"
 msgstr "Threshold not a valid number"
 
-#: header/headerstyle_util.cpp:183
+#: header/headerstyle_util.cpp:176
 #, kde-format
 msgid "Spam filter score could not be extracted from header"
 msgstr "Spam filter score could not be extracted from header"
 
-#: header/headerstyle_util.cpp:186
+#: header/headerstyle_util.cpp:179
 #, kde-format
 msgid "Threshold could not be extracted from header"
 msgstr "Threshold could not be extracted from header"
 
-#: header/headerstyle_util.cpp:189
+#: header/headerstyle_util.cpp:182
 #, kde-format
 msgid "Error evaluating spam score"
 msgstr "Error evaluating spam score"
 
-#: header/headerstyle_util.cpp:194
+#: header/headerstyle_util.cpp:187
 #, kde-format
 msgid ""
 "%1.\n"
@@ -898,7 +898,7 @@ msgctxt "@action"
 msgid "Send Deny"
 msgstr "Send Deny"
 
-#: remote-content/remotecontentconfiguredialog.cpp:29
+#: remote-content/remotecontentconfiguredialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Remote Content"
@@ -973,7 +973,7 @@ msgctxt "@label:textbox"
 msgid "Domain:"
 msgstr "Domain:"
 
-#: scamdetection/scamdetectiondetailsdialog.cpp:43
+#: scamdetection/scamdetectiondetailsdialog.cpp:40
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"
@@ -2394,25 +2394,25 @@ msgstr ""
 msgid "Speak Text"
 msgstr "Speak Text"
 
-#: widgets/mailsourcewebengineviewer.cpp:52
+#: widgets/mailsourcewebengineviewer.cpp:48
 #, kde-format
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
 msgstr "Raw Source"
 
-#: widgets/mailsourcewebengineviewer.cpp:53
+#: widgets/mailsourcewebengineviewer.cpp:49
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr ""
 "Raw, unmodified mail as it is stored on the filesystem or on the server"
 
-#: widgets/mailsourcewebengineviewer.cpp:56
+#: widgets/mailsourcewebengineviewer.cpp:52
 #, kde-format
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
 msgstr "HTML Source"
 
-#: widgets/mailsourcewebengineviewer.cpp:57
+#: widgets/mailsourcewebengineviewer.cpp:53
 #, kde-format
 msgid "HTML code for displaying the message to the user"
 msgstr "HTML code for displaying the message to the user"

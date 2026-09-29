@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-24 00:46+0000\n"
+"POT-Creation-Date: 2026-09-29 00:46+0000\n"
 "PO-Revision-Date: 2025-07-08 22:12+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -724,8 +724,8 @@ msgstr "újracímezve:"
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "A(z) „%1” Grantlee téma nem érvényes."
 
-#: header/grantleeheaderformatter.cpp:483 header/headerstyle_util.cpp:92
-#: header/headerstyle_util.cpp:97 header/headerstyle_util.cpp:108
+#: header/grantleeheaderformatter.cpp:483 header/headerstyle_util.cpp:85
+#: header/headerstyle_util.cpp:90 header/headerstyle_util.cpp:101
 #, kde-format
 msgid "No Subject"
 msgstr "Nincs tárgy"
@@ -755,13 +755,13 @@ msgstr "Mellékletek:"
 msgid "Security:"
 msgstr "Biztonság:"
 
-#: header/headerstyle_util.cpp:67
+#: header/headerstyle_util.cpp:60
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "Ismeretlen"
 
-#: header/headerstyle_util.cpp:156
+#: header/headerstyle_util.cpp:149
 #, kde-format
 msgid ""
 "%1% probability of being spam with confidence %3%.\n"
@@ -776,7 +776,7 @@ msgstr ""
 "Valószínűség=%2\n"
 "Konfidencia=%4"
 
-#: header/headerstyle_util.cpp:165
+#: header/headerstyle_util.cpp:158
 #, kde-format
 msgid ""
 "%1% probability of being spam.\n"
@@ -789,37 +789,37 @@ msgstr ""
 "Részletes jelentés:\n"
 "Valószínűség=%2"
 
-#: header/headerstyle_util.cpp:174
+#: header/headerstyle_util.cpp:167
 #, kde-format
 msgid "No Spam agent"
 msgstr "Nem kéretlenüzenet-kezelő"
 
-#: header/headerstyle_util.cpp:177
+#: header/headerstyle_util.cpp:170
 #, kde-format
 msgid "Spam filter score not a number"
 msgstr "A szűrési pontérték nem szám"
 
-#: header/headerstyle_util.cpp:180
+#: header/headerstyle_util.cpp:173
 #, kde-format
 msgid "Threshold not a valid number"
 msgstr "A küszöbérték érvénytelen szám"
 
-#: header/headerstyle_util.cpp:183
+#: header/headerstyle_util.cpp:176
 #, kde-format
 msgid "Spam filter score could not be extracted from header"
 msgstr "A szűrési pontérték nem olvasható ki a fejlécből"
 
-#: header/headerstyle_util.cpp:186
+#: header/headerstyle_util.cpp:179
 #, kde-format
 msgid "Threshold could not be extracted from header"
 msgstr "A küszöbértéket nem sikerült kiolvasni a fejlécből"
 
-#: header/headerstyle_util.cpp:189
+#: header/headerstyle_util.cpp:182
 #, kde-format
 msgid "Error evaluating spam score"
 msgstr "Hiba a levélszemétpontszám kiértékelésekor"
 
-#: header/headerstyle_util.cpp:194
+#: header/headerstyle_util.cpp:187
 #, kde-format
 msgid ""
 "%1.\n"
@@ -897,7 +897,7 @@ msgctxt "@action"
 msgid "Send Deny"
 msgstr "Elutasítás küldése"
 
-#: remote-content/remotecontentconfiguredialog.cpp:29
+#: remote-content/remotecontentconfiguredialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Remote Content"
@@ -972,7 +972,7 @@ msgctxt "@label:textbox"
 msgid "Domain:"
 msgstr "Tartomány:"
 
-#: scamdetection/scamdetectiondetailsdialog.cpp:43
+#: scamdetection/scamdetectiondetailsdialog.cpp:40
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"
@@ -2400,26 +2400,26 @@ msgstr ""
 msgid "Speak Text"
 msgstr "Szöveg felolvasása"
 
-#: widgets/mailsourcewebengineviewer.cpp:52
+#: widgets/mailsourcewebengineviewer.cpp:48
 #, kde-format
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
 msgstr "Nyers forrás"
 
-#: widgets/mailsourcewebengineviewer.cpp:53
+#: widgets/mailsourcewebengineviewer.cpp:49
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr ""
 "Nyers, nem módosított levelezés, ahogyan azt a fájlrendszer vagy a "
 "kiszolgáló tárolja"
 
-#: widgets/mailsourcewebengineviewer.cpp:56
+#: widgets/mailsourcewebengineviewer.cpp:52
 #, kde-format
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
 msgstr "HTML-forrás"
 
-#: widgets/mailsourcewebengineviewer.cpp:57
+#: widgets/mailsourcewebengineviewer.cpp:53
 #, kde-format
 msgid "HTML code for displaying the message to the user"
 msgstr "HTML-forrás az üzenet felhasználó előtti megjelenítéséhez"

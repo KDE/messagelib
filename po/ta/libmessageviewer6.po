@@ -23,7 +23,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-24 00:46+0000\n"
+"POT-Creation-Date: 2026-09-29 00:46+0000\n"
 "PO-Revision-Date: 2026-09-20 13:53+0200\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
@@ -739,8 +739,8 @@ msgstr "மீளனுப்பிபோதான பெறுநர்:"
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "\"%1\" என்ற Grantlee திட்டம் செல்லுபடியாகாதது."
 
-#: header/grantleeheaderformatter.cpp:483 header/headerstyle_util.cpp:92
-#: header/headerstyle_util.cpp:97 header/headerstyle_util.cpp:108
+#: header/grantleeheaderformatter.cpp:483 header/headerstyle_util.cpp:85
+#: header/headerstyle_util.cpp:90 header/headerstyle_util.cpp:101
 #, kde-format
 msgid "No Subject"
 msgstr "தலைப்பு இல்லை"
@@ -771,13 +771,13 @@ msgstr "உடனிணைப்புகள்:"
 msgid "Security:"
 msgstr "பாதுகாப்பு:"
 
-#: header/headerstyle_util.cpp:67
+#: header/headerstyle_util.cpp:60
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "தெரியாதது"
 
-#: header/headerstyle_util.cpp:156
+#: header/headerstyle_util.cpp:149
 #, kde-format
 msgid ""
 "%1% probability of being spam with confidence %3%.\n"
@@ -792,7 +792,7 @@ msgstr ""
 "நிகழ்தகவு=%2\n"
 "நம்பகம்=%4"
 
-#: header/headerstyle_util.cpp:165
+#: header/headerstyle_util.cpp:158
 #, kde-format
 msgid ""
 "%1% probability of being spam.\n"
@@ -805,37 +805,37 @@ msgstr ""
 "முழு அறிக்கை:\n"
 "நிகழ்தகவு=%2"
 
-#: header/headerstyle_util.cpp:174
+#: header/headerstyle_util.cpp:167
 #, kde-format
 msgid "No Spam agent"
 msgstr "ஸ்பேம் வகைப்படுத்தும் சேவை இல்லை"
 
-#: header/headerstyle_util.cpp:177
+#: header/headerstyle_util.cpp:170
 #, kde-format
 msgid "Spam filter score not a number"
 msgstr "ஸ்பேம் வடிகட்டி மதிப்பெண் எண்ணாக இல்லை"
 
-#: header/headerstyle_util.cpp:180
+#: header/headerstyle_util.cpp:173
 #, kde-format
 msgid "Threshold not a valid number"
 msgstr "மாறுநிலை செல்லுபடியாகும் எண்ணில்லை"
 
-#: header/headerstyle_util.cpp:183
+#: header/headerstyle_util.cpp:176
 #, kde-format
 msgid "Spam filter score could not be extracted from header"
 msgstr "ஸ்பேம் வடிகட்டி இட்ட மதிப்பெண்ணை தலைப்புப்புலங்களிலிருந்து கண்டறிய முடியவில்லை"
 
-#: header/headerstyle_util.cpp:186
+#: header/headerstyle_util.cpp:179
 #, kde-format
 msgid "Threshold could not be extracted from header"
 msgstr "மாறுநிலையை தலைப்புப்புலங்களிலிருந்து கண்டறிய முடியவில்லை"
 
-#: header/headerstyle_util.cpp:189
+#: header/headerstyle_util.cpp:182
 #, kde-format
 msgid "Error evaluating spam score"
 msgstr "ஸ்பேம் மதிப்பெண்ணை கண்டறிவதில் சிக்கல்"
 
-#: header/headerstyle_util.cpp:194
+#: header/headerstyle_util.cpp:187
 #, kde-format
 msgid ""
 "%1.\n"
@@ -913,7 +913,7 @@ msgctxt "@action"
 msgid "Send Deny"
 msgstr "மறுத்த‍தாக பதிலளி"
 
-#: remote-content/remotecontentconfiguredialog.cpp:29
+#: remote-content/remotecontentconfiguredialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Remote Content"
@@ -988,7 +988,7 @@ msgctxt "@label:textbox"
 msgid "Domain:"
 msgstr "ஆள்களம்:"
 
-#: scamdetection/scamdetectiondetailsdialog.cpp:43
+#: scamdetection/scamdetectiondetailsdialog.cpp:40
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"
@@ -2390,24 +2390,24 @@ msgstr ""
 msgid "Speak Text"
 msgstr "உரையைப் பேச்சாக்கு"
 
-#: widgets/mailsourcewebengineviewer.cpp:52
+#: widgets/mailsourcewebengineviewer.cpp:48
 #, kde-format
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
 msgstr "வடிவமைக்கப்படா மூலம்"
 
-#: widgets/mailsourcewebengineviewer.cpp:53
+#: widgets/mailsourcewebengineviewer.cpp:49
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr "கோப்பகத்திலோ சேவையகத்திலோ சேமிக்கப்பட்டுள்ளவாறே அஞ்சலை காட்டும்"
 
-#: widgets/mailsourcewebengineviewer.cpp:56
+#: widgets/mailsourcewebengineviewer.cpp:52
 #, kde-format
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
 msgstr "HTML மூலம்"
 
-#: widgets/mailsourcewebengineviewer.cpp:57
+#: widgets/mailsourcewebengineviewer.cpp:53
 #, kde-format
 msgid "HTML code for displaying the message to the user"
 msgstr "பயனருக்கு அஞ்சலை காட்ட பயன்படுத்தப்படும் HTML நிரல்தொடர்"

@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# SPDX-FileCopyrightText: 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Shinjo Park <kde@peremen.name>
+# SPDX-FileCopyrightText: 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026 Shinjo Park <kde@peremen.name>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-18 00:46+0000\n"
-"PO-Revision-Date: 2025-10-09 01:07+0200\n"
+"POT-Creation-Date: 2026-09-29 00:46+0000\n"
+"PO-Revision-Date: 2026-09-29 00:32+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 24.12.3\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: attachment/attachmentcontrollerbase.cpp:168
 #, kde-format
@@ -1126,6 +1126,7 @@ msgstr ""
 msgid ""
 "Failed to store a new reminder: the follow-up reminder agent is not running."
 msgstr ""
+"새 알림을 저장할 수 없습니다. 후속 작업 알림 에이전트가 실행 중이 아닙니다."
 
 #: followupreminder/followupremindercreatejob.cpp:136
 #, kde-format
@@ -1813,45 +1814,45 @@ msgctxt "@info:tooltip %1 list of emails"
 msgid "Reply-To:%1"
 msgstr "답장 주소: %1"
 
-#: recipient/recipientspicker.cpp:52
+#: recipient/recipientspicker.cpp:49
 #, kde-format
 msgctxt "@title:window"
 msgid "Select Recipient"
 msgstr "받는 사람 선택"
 
-#: recipient/recipientspicker.cpp:64
+#: recipient/recipientspicker.cpp:61
 #, kde-format
 msgctxt "@action:button"
 msgid "Search &Directory Service"
 msgstr "디렉터리 서비스 검색(&D)"
 
-#: recipient/recipientspicker.cpp:83
+#: recipient/recipientspicker.cpp:80
 #, kde-format
 msgid "Add as &Reply-To"
 msgstr "답장 받을 주소로 추가(&R)"
 
-#: recipient/recipientspicker.cpp:84
+#: recipient/recipientspicker.cpp:81
 #, kde-format
 msgid "Add as &To"
 msgstr "받는 사람으로 추가(&T)"
 
-#: recipient/recipientspicker.cpp:85
+#: recipient/recipientspicker.cpp:82
 #, kde-format
 msgid "Add as CC"
 msgstr "참조로 추가"
 
-#: recipient/recipientspicker.cpp:86
+#: recipient/recipientspicker.cpp:83
 #, kde-format
 msgid "Add as &BCC"
 msgstr "숨은 참조로 추가(&B)"
 
-#: recipient/recipientspicker.cpp:109
+#: recipient/recipientspicker.cpp:103
 #, kde-format
 msgid "%1 selected email"
 msgid_plural "%1 selected emails"
 msgstr[0] "선택한 이메일 %1개"
 
-#: recipient/recipientspicker.cpp:176
+#: recipient/recipientspicker.cpp:170
 #, kde-format
 msgid ""
 "You selected 1 recipient. The maximum supported number of recipients is %2.\n"
@@ -1864,7 +1865,7 @@ msgstr[0] ""
 "받는 사람 %1명을 선택했습니다. 최대로 지원하는 받는 사람 수는 %2명입니다.\n"
 "선택을 조정하십시오."
 
-#: recipient/recipientspicker.cpp:193
+#: recipient/recipientspicker.cpp:187
 #, kde-format
 msgid "You can not add more recipients."
 msgstr "받는 사람을 추가할 수 없습니다."

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libwebengineviewer6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-01 00:47+0000\n"
+"POT-Creation-Date: 2026-09-29 00:46+0000\n"
 "PO-Revision-Date: 2026-09-23 22:14+0200\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 26.08.1\n"
 
-#: developertool/developertooldialog.cpp:29
+#: developertool/developertooldialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Developer Tool"
@@ -106,7 +106,7 @@ msgstr ""
 "Formulareingabe ist im E-Mail-Programm nicht erlaubt, Bitte öffnen Sie die "
 "URL im Browser."
 
-#: widgets/tracking/trackingdetailsdialog.cpp:30
+#: widgets/tracking/trackingdetailsdialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"

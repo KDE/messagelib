@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-24 00:46+0000\n"
-"PO-Revision-Date: 2026-05-18 11:49+0200\n"
+"POT-Creation-Date: 2026-09-29 00:46+0000\n"
+"PO-Revision-Date: 2026-09-28 12:12+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -134,7 +134,7 @@ msgstr "Monstrar Detalios"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:48
 msgid "Encrypted message (decryption not possible)"
-msgstr "Message Cryptate(decryptation non es possibile)"
+msgstr "Message Cryptate (decryptation non es possibile)"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:51
 msgid "Reason: "
@@ -727,8 +727,8 @@ msgstr "re-inviate a:"
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "Thema de Grantlee \"%1\" es invalide."
 
-#: header/grantleeheaderformatter.cpp:483 header/headerstyle_util.cpp:92
-#: header/headerstyle_util.cpp:97 header/headerstyle_util.cpp:108
+#: header/grantleeheaderformatter.cpp:483 header/headerstyle_util.cpp:85
+#: header/headerstyle_util.cpp:90 header/headerstyle_util.cpp:101
 #, kde-format
 msgid "No Subject"
 msgstr "Necun Subjecto"
@@ -758,13 +758,13 @@ msgstr "Attachamentos:"
 msgid "Security:"
 msgstr "Securitate:"
 
-#: header/headerstyle_util.cpp:67
+#: header/headerstyle_util.cpp:60
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "Incognite"
 
-#: header/headerstyle_util.cpp:156
+#: header/headerstyle_util.cpp:149
 #, kde-format
 msgid ""
 "%1% probability of being spam with confidence %3%.\n"
@@ -779,7 +779,7 @@ msgstr ""
 "Probabilitate=%2\n"
 "Confidentia=%4"
 
-#: header/headerstyle_util.cpp:165
+#: header/headerstyle_util.cpp:158
 #, kde-format
 msgid ""
 "%1% probability of being spam.\n"
@@ -792,37 +792,37 @@ msgstr ""
 "Reporto complete:\n"
 "Probabilitate=%2"
 
-#: header/headerstyle_util.cpp:174
+#: header/headerstyle_util.cpp:167
 #, kde-format
 msgid "No Spam agent"
 msgstr "Necun Agente de Spam"
 
-#: header/headerstyle_util.cpp:177
+#: header/headerstyle_util.cpp:170
 #, kde-format
 msgid "Spam filter score not a number"
 msgstr "Punctuage de filtro de spam non un numero"
 
-#: header/headerstyle_util.cpp:180
+#: header/headerstyle_util.cpp:173
 #, kde-format
 msgid "Threshold not a valid number"
 msgstr "Limine non un numero valide"
 
-#: header/headerstyle_util.cpp:183
+#: header/headerstyle_util.cpp:176
 #, kde-format
 msgid "Spam filter score could not be extracted from header"
 msgstr "Punctuage de filtro de spam non pote esser extrahite ex capite"
 
-#: header/headerstyle_util.cpp:186
+#: header/headerstyle_util.cpp:179
 #, kde-format
 msgid "Threshold could not be extracted from header"
 msgstr "Limine non pote esser extrahite ex capite"
 
-#: header/headerstyle_util.cpp:189
+#: header/headerstyle_util.cpp:182
 #, kde-format
 msgid "Error evaluating spam score"
 msgstr "Error in valutar punctuage de spam"
 
-#: header/headerstyle_util.cpp:194
+#: header/headerstyle_util.cpp:187
 #, kde-format
 msgid ""
 "%1.\n"
@@ -900,7 +900,7 @@ msgctxt "@action"
 msgid "Send Deny"
 msgstr "Refusa invia"
 
-#: remote-content/remotecontentconfiguredialog.cpp:29
+#: remote-content/remotecontentconfiguredialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Remote Content"
@@ -975,7 +975,7 @@ msgctxt "@label:textbox"
 msgid "Domain:"
 msgstr "Dominio:"
 
-#: scamdetection/scamdetectiondetailsdialog.cpp:43
+#: scamdetection/scamdetectiondetailsdialog.cpp:40
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"
@@ -1073,6 +1073,10 @@ msgid ""
 "but make it look different from the address it really points to. This is "
 "often the case in scam emails."
 msgstr ""
+"Le texto de iste ligamine contine characteres invisibile, que non es "
+"monstrate sed face lo parer differente del adresse al qual illo puncta  "
+"vermente. Isto es frequentemente le caso in messages electronic  de fraude "
+"(scam)."
 
 #: scamdetection/scamdetectionwebengine.cpp:263
 #, kde-format
@@ -2410,26 +2414,26 @@ msgstr ""
 msgid "Speak Text"
 msgstr "Pronuncia texto"
 
-#: widgets/mailsourcewebengineviewer.cpp:52
+#: widgets/mailsourcewebengineviewer.cpp:48
 #, kde-format
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
 msgstr "Fonte brute"
 
-#: widgets/mailsourcewebengineviewer.cpp:53
+#: widgets/mailsourcewebengineviewer.cpp:49
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr ""
 "Brute, e-posta sin modifica como il es immagazinate sur le systema de file o "
 "sur le servitor"
 
-#: widgets/mailsourcewebengineviewer.cpp:56
+#: widgets/mailsourcewebengineviewer.cpp:52
 #, kde-format
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
 msgstr "Fonte HTML"
 
-#: widgets/mailsourcewebengineviewer.cpp:57
+#: widgets/mailsourcewebengineviewer.cpp:53
 #, kde-format
 msgid "HTML code for displaying the message to the user"
 msgstr "Codice HTML pro monstrar le message al usator"

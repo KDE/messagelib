@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-01 00:47+0000\n"
+"POT-Creation-Date: 2026-09-29 00:46+0000\n"
 "PO-Revision-Date: 2024-03-27 23:36+0100\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: Asturian <alministradores@softastur.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 24.02.1\n"
 
-#: developertool/developertooldialog.cpp:29
+#: developertool/developertooldialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Developer Tool"
@@ -102,7 +102,7 @@ msgstr ""
 msgid "Submit form is not allowed in mailer. Please open url in a browser."
 msgstr ""
 
-#: widgets/tracking/trackingdetailsdialog.cpp:30
+#: widgets/tracking/trackingdetailsdialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"

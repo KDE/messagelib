@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-01 00:47+0000\n"
+"POT-Creation-Date: 2026-09-29 00:46+0000\n"
 "PO-Revision-Date: 2024-12-13 19:09+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n>2);\n"
 
-#: developertool/developertooldialog.cpp:29
+#: developertool/developertooldialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Developer Tool"
@@ -102,7 +102,7 @@ msgstr "HTML पृष्ठं रक्षतु"
 msgid "Submit form is not allowed in mailer. Please open url in a browser."
 msgstr "मेलकर्तायां प्रपत्रं प्रस्तूय अनुमतं नास्ति। कृपया ब्राउजरे url उद्घाटयन्तु।"
 
-#: widgets/tracking/trackingdetailsdialog.cpp:30
+#: widgets/tracking/trackingdetailsdialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"

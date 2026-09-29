@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-01 00:47+0000\n"
+"POT-Creation-Date: 2026-09-29 00:46+0000\n"
 "PO-Revision-Date: 2026-09-05 02:15+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: lt\n"
@@ -19,7 +19,7 @@ msgstr ""
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
 "X-Generator: Poedit 3.9\n"
 
-#: developertool/developertooldialog.cpp:29
+#: developertool/developertooldialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Developer Tool"
@@ -106,7 +106,7 @@ msgstr ""
 "Pateikimo formą neleidžiama atvaizduoti pašto programoje. Atverkite URL "
 "adresą saityno naršyklėje."
 
-#: widgets/tracking/trackingdetailsdialog.cpp:30
+#: widgets/tracking/trackingdetailsdialog.cpp:26
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"
