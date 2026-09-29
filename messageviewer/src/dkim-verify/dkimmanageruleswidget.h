@@ -6,7 +6,7 @@
 
 #pragma once
 #include "messageviewer_export.h"
-#include <MessageViewer/DKIMRule>
+#include <MessageCore/DKIMRule>
 #include <QTreeWidgetItem>
 #include <QWidget>
 class QTreeWidget;
@@ -42,14 +42,14 @@ public:
 
     /*!
      */
-    [[nodiscard]] MessageViewer::DKIMRule rule() const;
+    [[nodiscard]] MessageCore::DKIMRule rule() const;
     /*!
      */
-    void setRule(const MessageViewer::DKIMRule &rule);
+    void setRule(const MessageCore::DKIMRule &rule);
 
 private:
     MESSAGEVIEWER_NO_EXPORT void updateInfo();
-    MessageViewer::DKIMRule mRule;
+    MessageCore::DKIMRule mRule;
     DKIMManageRulesComboBox *const mRuleTypeCombobox;
 };
 
@@ -88,7 +88,7 @@ public:
     void addRule();
     /*!
      */
-    [[nodiscard]] QList<MessageViewer::DKIMRule> rules() const;
+    [[nodiscard]] QList<MessageCore::DKIMRule> rules() const;
 
     /*!
      */

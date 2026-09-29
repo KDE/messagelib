@@ -10,6 +10,11 @@ ecm_setup_version(PROJECT VARIABLE_PREFIX MESSAGECORE
 add_definitions(-DTRANSLATION_DOMAIN=\"libmessagecore6\")
 
 add_library(KPim6MessageCore)
+
+if(BUILD_TESTING)
+    add_subdirectory(dkim-verify/autotests)
+    add_subdirectory(dkim-verify/tests)
+endif()
 add_library(KPim6::MessageCore ALIAS KPim6MessageCore)
 
 ########### next target ###############
@@ -17,6 +22,60 @@ target_sources(
     KPim6MessageCore
     PRIVATE
         autocrypt/autocryptutils.cpp
+        dkim-verify/dkiminfo.cpp
+        dkim-verify/dkiminfo.h
+        dkim-verify/dkimmanagerkey.cpp
+        dkim-verify/dkimmanagerkey.h
+        dkim-verify/dkimmanagerkeymodel.cpp
+        dkim-verify/dkimmanagerkeymodel.h
+        dkim-verify/dkimmanagerkeyproxymodel.cpp
+        dkim-verify/dkimmanagerkeyproxymodel.h
+        dkim-verify/dkimdownloadkeyjob.cpp
+        dkim-verify/dkimdownloadkeyjob.h
+        dkim-verify/dkimchecksignaturejob.cpp
+        dkim-verify/dkimchecksignaturejob.h
+        dkim-verify/dkimcheckauthenticationstatusjob.cpp
+        dkim-verify/dkimcheckauthenticationstatusjob.h
+        dkim-verify/dkimauthenticationstatusinfo.cpp
+        dkim-verify/dkimauthenticationstatusinfo.h
+        dkim-verify/dkimutil.cpp
+        dkim-verify/dkimutil.h
+        dkim-verify/dkimkeyrecord.cpp
+        dkim-verify/dkimkeyrecord.h
+        dkim-verify/dkimmanager.cpp
+        dkim-verify/dkimmanager.h
+        dkim-verify/dkimresultattribute.cpp
+        dkim-verify/dkimresultattribute.h
+        dkim-verify/dkimstoreresultjob.cpp
+        dkim-verify/dkimstoreresultjob.h
+        dkim-verify/dkimheaderparser.cpp
+        dkim-verify/dkimheaderparser.h
+        dkim-verify/dkimcheckpolicy.cpp
+        dkim-verify/dkimcheckpolicy.h
+        dkim-verify/dmarcrecordjob.cpp
+        dkim-verify/dmarcrecordjob.h
+        dkim-verify/dmarcinfo.cpp
+        dkim-verify/dmarcinfo.h
+        dkim-verify/dmarcpolicyjob.cpp
+        dkim-verify/dmarcpolicyjob.h
+        dkim-verify/dkimcheckpolicyjob.cpp
+        dkim-verify/dkimcheckpolicyjob.h
+        dkim-verify/dkimrule.cpp
+        dkim-verify/dkimrule.h
+        dkim-verify/dkimmanagerrules.cpp
+        dkim-verify/dkimmanagerrules.h
+        dkim-verify/dkimgeneraterulejob.cpp
+        dkim-verify/dkimgeneraterulejob.h
+        dkim-verify/dkimauthenticationstatusinfoutil.cpp
+        dkim-verify/dkimauthenticationstatusinfoutil.h
+        dkim-verify/dkimcheckfulljob.cpp
+        dkim-verify/dkimcheckfulljob.h
+        dkim-verify/dkimauthenticationstatusinfoconverter.cpp
+        dkim-verify/dkimauthenticationstatusinfoconverter.h
+        dkim-verify/dkimmanagerauthenticationserver.cpp
+        dkim-verify/dkimmanagerauthenticationserver.h
+        dkim-verify/dmarcmanager.cpp
+        dkim-verify/dmarcmanager.h
         autocrypt/autocryptrecipient.cpp
         autocrypt/autocryptstorage.cpp
         attachment/attachmentcompressjob.cpp
@@ -76,6 +135,11 @@ ecm_qt_declare_logging_category(KPim6MessageCore HEADER messagecore_debug.h IDEN
     EXPORT MESSAGELIB
 )
 
+ecm_qt_declare_logging_category(KPim6MessageCore HEADER messagecore_dkimcheckerdebug.h IDENTIFIER MESSAGECORE_DKIMCHECKER_LOG CATEGORY_NAME org.kde.pim.messagecore_dkimchecker
+    DESCRIPTION "messagelib (messagecore DKIM checker)"
+    EXPORT MESSAGELIB
+)
+
 ecm_qt_declare_logging_category(KPim6MessageCore HEADER autocrypt_debug.h IDENTIFIER AUTOCRYPT_LOG CATEGORY_NAME org.kde.pim.messagecore.autocrypt
     DESCRIPTION "messagelib (messagecore.autocrypt)"
     EXPORT MESSAGELIB
@@ -101,6 +165,9 @@ target_link_libraries(
     KPim6MessageCore
     PUBLIC
         KF6::Mime
+        KPim6::AkonadiCore
+        KPim6::AkonadiMime
+        KF6::ConfigCore
         KPim6::MimeTreeParser
         Qt::Gui
         KF6::ColorScheme
@@ -113,6 +180,7 @@ target_link_libraries(
         KF6::Codecs
         KF6::Archive
         Qt::Network
+        OpenSSL::SSL
         KF6::I18n
         KPim6::PimTextEdit
 )
@@ -131,6 +199,8 @@ endif()
 
 target_include_directories(
     KPim6MessageCore
+    PUBLIC
+        "$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>"
     INTERFACE
         "$<INSTALL_INTERFACE:${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageCore/>"
 )
@@ -147,6 +217,25 @@ set_target_properties(
 )
 
 install(TARGETS KPim6MessageCore EXPORT KPim6MessageCoreTargets ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
+
+ecm_generate_headers(MessageCore_Camelcasedkim_HEADERS
+    HEADER_NAMES
+    DKIMManagerKey
+    DKIMCheckSignatureJob
+    DKIMManager
+    DKIMKeyRecord
+    DKIMInfo
+    DKIMCheckPolicy
+    DKIMManagerRules
+    DKIMRule
+    DKIMHeaderParser
+    DKIMManagerAuthenticationServer
+    DMARCInfo
+    DMARCPolicyJob
+    REQUIRED_HEADERS MessageCore_dkim_HEADERS
+    PREFIX MessageCore
+    RELATIVE dkim-verify
+)
 
 ecm_generate_headers(MessageCore_Camelcasemisc_HEADERS
     HEADER_NAMES
@@ -205,6 +294,7 @@ ecm_generate_headers(MessageCore_Camelcaseautocrypt_HEADERS
 install(
     FILES
         ${MessageCore_Camelcaseautocrypt_HEADERS}
+        ${MessageCore_Camelcasedkim_HEADERS}
         ${MessageCore_Camelcasesettings_HEADERS}
         ${MessageCore_Camelcaseutils_HEADERS}
         ${MessageCore_Camelcaseattachment_HEADERS}
@@ -216,6 +306,7 @@ install(
 install(
     FILES
         ${MessageCore_autocrypt_HEADERS}
+        ${MessageCore_dkim_HEADERS}
         ${MessageCore_settings_HEADERS}
         ${MessageCore_utils_HEADERS}
         ${CMAKE_CURRENT_BINARY_DIR}/messagecore_export.h
@@ -265,6 +356,7 @@ ecm_add_installed_library_check(KPim6MessageCore
 
 ecm_installed_library_check_include_strings(KPim6MessageCore
     HEADERS
+    ${MessageCore_dkim_HEADERS}
     ${MessageCore_autocrypt_HEADERS}
     ${MessageCore_settings_HEADERS}
     ${MessageCore_utils_HEADERS}
@@ -277,6 +369,7 @@ ecm_installed_library_check_include_strings(KPim6MessageCore
 
 ecm_installed_library_check_include_strings(KPim6MessageCore
    HEADERS
+   ${MessageCore_Camelcasedkim_HEADERS}
    ${MessageCore_Camelcaseautocrypt_HEADERS}
    ${MessageCore_Camelcasesettings_HEADERS}
    ${MessageCore_Camelcaseutils_HEADERS}

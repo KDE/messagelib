@@ -62,80 +62,26 @@ endif()
 target_sources(
     KPim6MessageViewer
     PRIVATE
-        dkim-verify/dkiminfo.cpp
-        dkim-verify/dkimmanagerkey.cpp
         dkim-verify/dkimmanagerkeywidget.cpp
         dkim-verify/dkimmanagerkeydialog.cpp
-        dkim-verify/dkimdownloadkeyjob.cpp
-        dkim-verify/dkimchecksignaturejob.cpp
-        dkim-verify/dkimcheckauthenticationstatusjob.cpp
-        dkim-verify/dkimauthenticationstatusinfo.cpp
-        dkim-verify/dkimutil.cpp
-        dkim-verify/dkimkeyrecord.cpp
-        dkim-verify/dkimmanager.cpp
-        dkim-verify/dkimresultattribute.cpp
         dkim-verify/dkimwidgetinfo.cpp
-        dkim-verify/dkimstoreresultjob.cpp
-        dkim-verify/dkimheaderparser.cpp
-        dkim-verify/dkimcheckpolicy.cpp
-        dkim-verify/dmarcrecordjob.cpp
-        dkim-verify/dmarcinfo.cpp
-        dkim-verify/dmarcpolicyjob.cpp
-        dkim-verify/dkimcheckpolicyjob.cpp
-        dkim-verify/dkimrule.cpp
-        dkim-verify/dkimmanagerrules.cpp
-        dkim-verify/dkimgeneraterulejob.cpp
-        dkim-verify/dkimauthenticationstatusinfoutil.cpp
-        dkim-verify/dkimcheckfulljob.cpp
-        dkim-verify/dkimauthenticationstatusinfoconverter.cpp
-        dkim-verify/dkimmanagerauthenticationserver.cpp
         dkim-verify/dkimviewermenu.cpp
         dkim-verify/dkimmanagerulescombobox.cpp
         dkim-verify/dkimmanagerulesdialog.cpp
         dkim-verify/dkimmanageruleswidget.cpp
         dkim-verify/dkimruledialog.cpp
         dkim-verify/dkimrulewidget.cpp
-        dkim-verify/dmarcmanager.cpp
-        dkim-verify/dkimcheckpolicy.h
-        dkim-verify/dkimauthenticationstatusinfoconverter.h
-        dkim-verify/dkimkeyrecord.h
-        dkim-verify/dkimauthenticationstatusinfoutil.h
-        dkim-verify/dkimmanagerauthenticationserver.h
         dkim-verify/dkimviewermenu.h
-        dkim-verify/dkimauthenticationstatusinfo.h
-        dkim-verify/dkimcheckauthenticationstatusjob.h
-        dkim-verify/dkimresultattribute.h
-        dkim-verify/dmarcrecordjob.h
-        dkim-verify/dkimmanagerkey.h
-        dkim-verify/dkimstoreresultjob.h
-        dkim-verify/dkimutil.h
-        dkim-verify/dmarcmanager.h
         dkim-verify/dkimmanagerulesdialog.h
         dkim-verify/dkimmanagerkeydialog.h
-        dkim-verify/dkimdownloadkeyjob.h
-        dkim-verify/dkimchecksignaturejob.h
         dkim-verify/dkimmanagerulescombobox.h
         dkim-verify/dkimruledialog.h
-        dkim-verify/dkimmanagerrules.h
-        dkim-verify/dkiminfo.h
-        dkim-verify/dkimcheckfulljob.h
         dkim-verify/dkimmanageruleswidget.h
-        dkim-verify/dmarcinfo.h
         dkim-verify/dkimrulewidget.h
-        dkim-verify/dkimgeneraterulejob.h
-        dkim-verify/dkimmanager.h
-        dkim-verify/dkimheaderparser.h
         dkim-verify/dkimwidgetinfo.h
-        dkim-verify/dkimrule.h
-        dkim-verify/dkimcheckpolicyjob.h
         dkim-verify/dkimmanagerkeywidget.h
-        dkim-verify/dmarcpolicyjob.h
-        dkim-verify/dkimmanagerkeymodel.h
-        dkim-verify/dkimmanagerkeymodel.cpp
         dkim-verify/dkimmanagerkeytreeview.h
         dkim-verify/dkimmanagerkeytreeview.cpp
-        dkim-verify/dkimmanagerkeyproxymodel.h
-        dkim-verify/dkimmanagerkeyproxymodel.cpp
 )
 
 if(DEBUG_SIGNATURE)
@@ -435,7 +381,6 @@ target_link_libraries(
         KF6::Notifications
         KF6::TextAddonsWidgets
         KF6::ColorScheme
-        OpenSSL::SSL
 )
 
 if(TARGET KF6::TextEditTextToSpeech)
@@ -481,19 +426,9 @@ ecm_generate_headers(MessageViewer_Camelcasescam_HEADERS
 
 ecm_generate_headers(MessageViewer_Cameldkimverify_HEADERS
     HEADER_NAMES
-    DKIMManagerKey
-    DKIMCheckSignatureJob
-    DKIMManager
     DKIMManagerKeyWidget
     DKIMManagerKeyDialog
-    DKIMKeyRecord
-    DKIMInfo
     DKIMWidgetInfo
-    DKIMCheckPolicy
-    DKIMManagerRules
-    DKIMRule
-    DKIMHeaderParser
-    DKIMManagerAuthenticationServer
     DKIMViewerMenu
     DKIMManageRulesDialog
     DKIMManageRulesWidget

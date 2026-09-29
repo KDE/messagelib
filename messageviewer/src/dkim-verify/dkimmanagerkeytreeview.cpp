@@ -6,8 +6,8 @@
 
 #include "dkimmanagerkeytreeview.h"
 
-#include "dkimmanagerkeymodel.h"
-#include "dkimmanagerkeyproxymodel.h"
+#include "dkim-verify/dkimmanagerkeymodel.h"
+#include "dkim-verify/dkimmanagerkeyproxymodel.h"
 #include <KLocalizedString>
 #include <KMessageBox>
 
@@ -19,7 +19,7 @@ using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 DKIMManagerKeyTreeView::DKIMManagerKeyTreeView(QWidget *parent)
     : QTreeView(parent)
-    , mManagerKeyProxyModel(new DKIMManagerKeyProxyModel(this))
+    , mManagerKeyProxyModel(new MessageCore::DKIMManagerKeyProxyModel(this))
 {
     mManagerKeyProxyModel->setObjectName("mManagerKeyProxyModel"_L1);
     setRootIsDecorated(false);
@@ -39,9 +39,9 @@ void DKIMManagerKeyTreeView::setFilterStr(const QString &str)
     mManagerKeyProxyModel->setFilterText(str);
 }
 
-QList<MessageViewer::KeyInfo> DKIMManagerKeyTreeView::keyInfos() const
+QList<MessageCore::KeyInfo> DKIMManagerKeyTreeView::keyInfos() const
 {
-    return mManagerKeyModel ? mManagerKeyModel->keyInfos() : QList<MessageViewer::KeyInfo>();
+    return mManagerKeyModel ? mManagerKeyModel->keyInfos() : QList<MessageCore::KeyInfo>();
 }
 
 void DKIMManagerKeyTreeView::clear()
@@ -51,13 +51,13 @@ void DKIMManagerKeyTreeView::clear()
     }
 }
 
-void DKIMManagerKeyTreeView::setKeyModel(DKIMManagerKeyModel *model)
+void DKIMManagerKeyTreeView::setKeyModel(MessageCore::DKIMManagerKeyModel *model)
 {
     mManagerKeyModel = model;
     mManagerKeyProxyModel->setSourceModel(mManagerKeyModel);
     setModel(mManagerKeyProxyModel);
-    setColumnHidden(DKIMManagerKeyModel::LastUsedDateTimeRole, true);
-    setColumnHidden(DKIMManagerKeyModel::StoredAtDateTimeRole, true);
+    setColumnHidden(MessageCore::DKIMManagerKeyModel::LastUsedDateTimeRole, true);
+    setColumnHidden(MessageCore::DKIMManagerKeyModel::StoredAtDateTimeRole, true);
 }
 
 void DKIMManagerKeyTreeView::slotCustomContextMenuRequested(const QPoint &pos)
@@ -71,7 +71,7 @@ void DKIMManagerKeyTreeView::slotCustomContextMenuRequested(const QPoint &pos)
     if (index.isValid()) {
         if (selectedItemCount == 1) {
             menu.addAction(QIcon::fromTheme(u"edit-copy"_s), i18n("Copy Key"), this, [index, this]() {
-                QApplication::clipboard()->setText(mManagerKeyModel->index(index.row()).data(DKIMManagerKeyModel::KeyRole).toString());
+                QApplication::clipboard()->setText(mManagerKeyModel->index(index.row()).data(MessageCore::DKIMManagerKeyModel::KeyRole).toString());
             });
             menu.addSeparator();
         }
@@ -114,7 +114,7 @@ void DKIMManagerKeyTreeView::deleteSelectedItems()
     QStringList lst;
     lst.reserve(selectedIndexes.count());
     for (const auto &index : selectedIndexes) {
-        const auto info = mManagerKeyProxyModel->mapToSource(mManagerKeyProxyModel->index(index.row(), DKIMManagerKeyModel::KeyRole));
+        const auto info = mManagerKeyProxyModel->mapToSource(mManagerKeyProxyModel->index(index.row(), MessageCore::DKIMManagerKeyModel::KeyRole));
         lst.append(info.data().toString());
     }
     mManagerKeyModel->removeKeyInfos(lst);

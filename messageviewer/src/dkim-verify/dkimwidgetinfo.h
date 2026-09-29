@@ -6,9 +6,9 @@
 
 #pragma once
 
-#include "dkimchecksignaturejob.h"
 #include "messageviewer_export.h"
 #include <Akonadi/Item>
+#include <MessageCore/DKIMCheckSignatureJob>
 #include <QWidget>
 class QLabel;
 namespace MessageViewer
@@ -32,7 +32,7 @@ public:
     ~DKIMWidgetInfo() override;
     /*!
      */
-    void setResult(const MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult &checkResult, Akonadi::Item::Id id);
+    void setResult(const MessageCore::DKIMCheckSignatureJob::CheckSignatureResult &checkResult, Akonadi::Item::Id id);
     /*!
      */
     void clear();
@@ -46,7 +46,7 @@ public:
 
     /*!
      */
-    [[nodiscard]] MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult result() const;
+    [[nodiscard]] MessageCore::DKIMCheckSignatureJob::CheckSignatureResult result() const;
     /*!
      */
     void updatePalette();
@@ -55,7 +55,7 @@ private:
     MESSAGEVIEWER_NO_EXPORT void updateInfo();
     MESSAGEVIEWER_NO_EXPORT void updateToolTip();
     MESSAGEVIEWER_NO_EXPORT void initColors();
-    MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult mResult;
+    MessageCore::DKIMCheckSignatureJob::CheckSignatureResult mResult;
     QLabel *const mLabel;
     QColor mWarningColor;
     QColor mErrorColor;

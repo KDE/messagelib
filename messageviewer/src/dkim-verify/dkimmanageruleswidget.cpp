@@ -13,7 +13,7 @@
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KTreeWidgetSearchLine>
-#include <MessageViewer/DKIMManagerRules>
+#include <MessageCore/DKIMManagerRules>
 #include <QHeaderView>
 #include <QMenu>
 #include <QPointer>
@@ -30,9 +30,9 @@ DKIMManageRulesWidgetItem::DKIMManageRulesWidgetItem(QTreeWidget *parent)
 
 DKIMManageRulesWidgetItem::~DKIMManageRulesWidgetItem() = default;
 
-MessageViewer::DKIMRule DKIMManageRulesWidgetItem::rule() const
+MessageCore::DKIMRule DKIMManageRulesWidgetItem::rule() const
 {
-    MessageViewer::DKIMRule rule;
+    MessageCore::DKIMRule rule;
     rule.setEnabled(checkState(ColumnType::Enabled) == Qt::Checked);
     rule.setDomain(text(ColumnType::Domain));
     rule.setFrom(text(ColumnType::From));
@@ -43,7 +43,7 @@ MessageViewer::DKIMRule DKIMManageRulesWidgetItem::rule() const
     return rule;
 }
 
-void DKIMManageRulesWidgetItem::setRule(const MessageViewer::DKIMRule &rule)
+void DKIMManageRulesWidgetItem::setRule(const MessageCore::DKIMRule &rule)
 {
     if (mRule != rule) {
         mRule = rule;
@@ -96,9 +96,9 @@ DKIMManageRulesWidget::~DKIMManageRulesWidget() = default;
 
 void DKIMManageRulesWidget::updateRules()
 {
-    const QList<MessageViewer::DKIMRule> rules = MessageViewer::DKIMManagerRules::self()->rules();
+    const QList<MessageCore::DKIMRule> rules = MessageCore::DKIMManagerRules::self()->rules();
 
-    for (const MessageViewer::DKIMRule &rule : rules) {
+    for (const MessageCore::DKIMRule &rule : rules) {
         auto item = new DKIMManageRulesWidgetItem(mTreeWidget);
         item->setRule(rule);
     }
@@ -114,9 +114,9 @@ void DKIMManageRulesWidget::loadSettings()
     updateRules();
 }
 
-QList<MessageViewer::DKIMRule> DKIMManageRulesWidget::rules() const
+QList<MessageCore::DKIMRule> DKIMManageRulesWidget::rules() const
 {
-    QList<MessageViewer::DKIMRule> rules;
+    QList<MessageCore::DKIMRule> rules;
     const int total = mTreeWidget->topLevelItemCount();
     rules.reserve(total);
     for (int i = 0; i < total; ++i) {
@@ -129,7 +129,7 @@ QList<MessageViewer::DKIMRule> DKIMManageRulesWidget::rules() const
 
 void DKIMManageRulesWidget::saveSettings()
 {
-    MessageViewer::DKIMManagerRules::self()->saveRules(rules());
+    MessageCore::DKIMManagerRules::self()->saveRules(rules());
 }
 
 QByteArray DKIMManageRulesWidget::saveHeaders() const
@@ -146,7 +146,7 @@ void DKIMManageRulesWidget::addRule()
 {
     QPointer<DKIMRuleDialog> dlg = new DKIMRuleDialog(this);
     if (dlg->exec()) {
-        const MessageViewer::DKIMRule rule = dlg->rule();
+        const MessageCore::DKIMRule rule = dlg->rule();
         if (rule.isValid()) {
             auto item = new DKIMManageRulesWidgetItem(mTreeWidget);
             item->setRule(rule);
@@ -163,7 +163,7 @@ void DKIMManageRulesWidget::duplicateRule(DKIMManageRulesWidgetItem *rulesItem)
     QPointer<DKIMRuleDialog> dlg = new DKIMRuleDialog(this);
     dlg->loadRule(rulesItem->rule());
     if (dlg->exec()) {
-        const MessageViewer::DKIMRule rule = dlg->rule();
+        const MessageCore::DKIMRule rule = dlg->rule();
         if (rule.isValid()) {
             auto item = new DKIMManageRulesWidgetItem(mTreeWidget);
             item->setRule(rule);
@@ -183,7 +183,7 @@ void DKIMManageRulesWidget::modifyRule(DKIMManageRulesWidgetItem *rulesItem)
     QPointer<DKIMRuleDialog> dlg = new DKIMRuleDialog(this);
     dlg->loadRule(rulesItem->rule());
     if (dlg->exec()) {
-        const MessageViewer::DKIMRule rule = dlg->rule();
+        const MessageCore::DKIMRule rule = dlg->rule();
         if (rule.isValid()) {
             rulesItem->setRule(rule);
         }

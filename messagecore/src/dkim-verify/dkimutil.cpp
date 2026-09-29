@@ -1,0 +1,235 @@
+/*
+   SPDX-FileCopyrightText: 2018-2026 Laurent Montel <montel@kde.org>
+
+   SPDX-License-Identifier: LGPL-2.0-or-later
+*/
+
+#include "dkimutil.h"
+
+#include "messagecore_dkimcheckerdebug.h"
+#include <QRegularExpression>
+#include <QSet>
+
+using namespace Qt::Literals::StringLiterals;
+QString MessageCore::DKIMUtil::bodyCanonizationRelaxed(QString body)
+{
+    /*
+     * canonicalize the body using the relaxed algorithm
+     * specified in Section 3.4.4 of RFC 6376
+     */
+    /*
+        a.  Reduce whitespace:
+
+            *  Ignore all whitespace at the end of lines.  Implementations
+                MUST NOT remove the CRLF at the end of the line.
+
+            *  Reduce all sequences of WSP within a line to a single SP
+                character.
+
+        b.  Ignore all empty lines at the end of the message body.  "Empty
+            line" is defined in Section 3.4.3.  If the body is non-empty but
+            does not end with a CRLF, a CRLF is added.  (For email, this is
+            only possible when using extensions to SMTP or non-SMTP transport
+            mechanisms.)
+        */
+
+    body.replace(u"\n"_s, u"\r\n"_s);
+    static const QRegularExpression reg1(u"[ \t]+\r\n"_s);
+    body.replace(reg1, u"\r\n"_s);
+    static const QRegularExpression reg2(u"[ \t]+"_s);
+    body.replace(reg2, u" "_s);
+    static const QRegularExpression reg3(u"((\r\n)+?)$"_s);
+    body.replace(reg3, u"\r\n"_s);
+    if (body == "\r\n"_L1) {
+        body.clear();
+    }
+    return body;
+}
+
+QString MessageCore::DKIMUtil::bodyCanonizationSimple(QString body)
+{
+    //    The "simple" body canonicalization algorithm ignores all empty lines
+    //       at the end of the message body.  An empty line is a line of zero
+    //       length after removal of the line terminator.  If there is no body or
+    //       no trailing CRLF on the message body, a CRLF is added.  It makes no
+    //       other changes to the message body.  In more formal terms, the
+    //       "simple" body canonicalization algorithm converts "*CRLF" at the end
+    //       of the body to a single "CRLF".
+
+    //       Note that a completely empty or missing body is canonicalized as a
+    //       single "CRLF"; that is, the canonicalized length will be 2 octets.
+    body.replace(u"\n"_s, u"\r\n"_s);
+    static const QRegularExpression reg(u"((\r\n)+)?$"_s);
+    body.replace(reg, u"\r\n"_s);
+    if (body.endsWith("\r\n"_L1)) { // Remove it from start
+        body.chop(2);
+    }
+    if (body.isEmpty()) {
+        body = u"\r\n"_s;
+    }
+    return body;
+}
+
+QByteArray MessageCore::DKIMUtil::generateHash(const QByteArray &body, QCryptographicHash::Algorithm algo)
+{
+    return QCryptographicHash::hash(body, algo).toBase64();
+}
+
+QString MessageCore::DKIMUtil::headerCanonizationSimple(const QString &headerName, const QString &headerValue)
+{
+    // TODO verify it lower it ?
+    return headerName + u':' + headerValue;
+}
+
+QString MessageCore::DKIMUtil::headerCanonizationRelaxed(const QString &headerName, const QString &headerValue, bool removeQuoteOnContentType)
+{
+    //    The "relaxed" header canonicalization algorithm MUST apply the
+    //       following steps in order:
+
+    //       o  Convert all header field names (not the header field values) to
+    //          lowercase.  For example, convert "SUBJect: AbC" to "subject: AbC".
+
+    //       o  Unfold all header field continuation lines as described in
+    //          [RFC5322]; in particular, lines with terminators embedded in
+    //          continued header field values (that is, CRLF sequences followed by
+    //          WSP) MUST be interpreted without the CRLF.  Implementations MUST
+    //          NOT remove the CRLF at the end of the header field value.
+
+    //       o  Convert all sequences of one or more WSP characters to a single SP
+    //          character.  WSP characters here include those before and after a
+    //          line folding boundary.
+
+    //       o  Delete all WSP characters at the end of each unfolded header field
+    //          value.
+
+    //       o  Delete any WSP characters remaining before and after the colon
+    //          separating the header field name from the header field value.  The
+    //          colon separator MUST be retained.
+    QString newHeaderName = headerName.toLower();
+    QString newHeaderValue = headerValue;
+    static const QRegularExpression reg1(u"\r\n[ \t]+"_s);
+    newHeaderValue.replace(reg1, u" "_s);
+    static const QRegularExpression reg2(u"[ \t]+"_s);
+    newHeaderValue.replace(reg2, u" "_s);
+    static const QRegularExpression reg3(u"[ \t]+\r\n"_s);
+    newHeaderValue.replace(reg3, u"\r\n"_s);
+    // Perhaps remove tab after headername and before value name
+    // newHeaderValue.replace(QRegularExpression(u"[ \t]*:[ \t]"_s), u":"_s);
+    if (newHeaderName == "content-type"_L1 && removeQuoteOnContentType) { // Remove quote in charset
+        if (newHeaderValue.contains("charset=\""_L1)) {
+            newHeaderValue.remove(u'"');
+        }
+    }
+    // Remove extra space.
+    newHeaderValue = newHeaderValue.trimmed();
+    return newHeaderName + u':' + newHeaderValue;
+}
+
+QString MessageCore::DKIMUtil::cleanString(QString str)
+{
+    // Move as static ?
+    // WSP help pattern as specified in Section 2.8 of RFC 6376
+    const QString pattWSP = u"[ \t]"_s;
+    // FWS help pattern as specified in Section 2.8 of RFC 6376
+    const QString pattFWS = u"(?:"_s + pattWSP + u"*(?:\r\n)?"_s + pattWSP + u"+)"_s;
+    static const QRegularExpression pattFWSRegularExpression(pattFWS);
+    str.replace(pattFWSRegularExpression, QString());
+    return str;
+}
+
+QString MessageCore::DKIMUtil::emailDomain(const QString &emailDomain)
+{
+    return emailDomain.right(emailDomain.length() - emailDomain.indexOf(u'@') - 1);
+}
+
+QString MessageCore::DKIMUtil::emailSubDomain(const QString &emailDomain)
+{
+    const QString normalizedDomain = emailDomain.trimmed().toLower();
+    if (normalizedDomain.isEmpty()) {
+        return normalizedDomain;
+    }
+
+    const QStringList labels = normalizedDomain.split(u'.', Qt::SkipEmptyParts);
+    if (labels.size() >= 3) {
+        const QString topLevel = labels.last();
+        const QString secondLevel = labels.at(labels.size() - 2);
+        static const QSet<QString> commonCountrySecondLevelDomains = {
+            u"ac"_s,
+            u"co"_s,
+            u"com"_s,
+            u"edu"_s,
+            u"gov"_s,
+            u"mil"_s,
+            u"net"_s,
+            u"org"_s,
+        };
+
+        // Heuristic for domains such as example.co.uk.
+        if (topLevel.length() == 2 && commonCountrySecondLevelDomains.contains(secondLevel)) {
+            return labels.mid(labels.size() - 3).join(u'.');
+        }
+
+        return labels.mid(labels.size() - 2).join(u'.');
+    }
+
+    return normalizedDomain;
+}
+
+QString MessageCore::DKIMUtil::defaultConfigFileName()
+{
+    return u"dkimsettingsrc"_s;
+}
+
+QString MessageCore::DKIMUtil::convertAuthenticationMethodEnumToString(MessageCore::DKIMCheckSignatureJob::AuthenticationMethod method)
+{
+    QString methodStr;
+    switch (method) {
+    case MessageCore::DKIMCheckSignatureJob::AuthenticationMethod::Unknown:
+        qCWarning(MESSAGECORE_DKIMCHECKER_LOG) << "Undefined type";
+        break;
+    case MessageCore::DKIMCheckSignatureJob::AuthenticationMethod::Dkim:
+        methodStr = u"dkim"_s;
+        break;
+    case MessageCore::DKIMCheckSignatureJob::AuthenticationMethod::Spf:
+        methodStr = u"spf"_s;
+        break;
+    case MessageCore::DKIMCheckSignatureJob::AuthenticationMethod::Dmarc:
+        methodStr = u"dmarc"_s;
+        break;
+    case MessageCore::DKIMCheckSignatureJob::AuthenticationMethod::Dkimatps:
+        methodStr = u"dkim-atps"_s;
+        break;
+    case MessageCore::DKIMCheckSignatureJob::AuthenticationMethod::Auth:
+        methodStr = u"auth"_s;
+        break;
+    case MessageCore::DKIMCheckSignatureJob::AuthenticationMethod::XTls:
+        methodStr = u"x-tls"_s;
+        break;
+    case MessageCore::DKIMCheckSignatureJob::AuthenticationMethod::Arc:
+        methodStr = u"arc"_s;
+        break;
+    }
+    return methodStr;
+}
+
+MessageCore::DKIMCheckSignatureJob::AuthenticationMethod MessageCore::DKIMUtil::convertAuthenticationMethodStringToEnum(const QString &str)
+{
+    if (str == "dkim"_L1) {
+        return MessageCore::DKIMCheckSignatureJob::AuthenticationMethod::Dkim;
+    } else if (str == "spf"_L1) {
+        return MessageCore::DKIMCheckSignatureJob::AuthenticationMethod::Spf;
+    } else if (str == "dmarc"_L1) {
+        return MessageCore::DKIMCheckSignatureJob::AuthenticationMethod::Dmarc;
+    } else if (str == "dkim-atps"_L1) {
+        return MessageCore::DKIMCheckSignatureJob::AuthenticationMethod::Dkimatps;
+    } else if (str == "auth"_L1) {
+        return MessageCore::DKIMCheckSignatureJob::AuthenticationMethod::Auth;
+    } else if (str == "arc"_L1) {
+        return MessageCore::DKIMCheckSignatureJob::AuthenticationMethod::Arc;
+    } else if (str == "x-tls"_L1) {
+        return MessageCore::DKIMCheckSignatureJob::AuthenticationMethod::XTls;
+    } else {
+        qCWarning(MESSAGECORE_DKIMCHECKER_LOG) << "Undefined type " << str;
+        return MessageCore::DKIMCheckSignatureJob::AuthenticationMethod::Unknown;
+    }
+}

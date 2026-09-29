@@ -1,0 +1,26 @@
+/*
+   SPDX-FileCopyrightText: 2019-2026 Laurent Montel <montel@kde.org>
+
+   SPDX-License-Identifier: LGPL-2.0-or-later
+*/
+
+#include "dkimgeneraterulejobtest.h"
+#include "dkim-verify/dkimgeneraterulejob.h"
+#include <QStandardPaths>
+#include <QTest>
+QTEST_GUILESS_MAIN(DKIMGenerateRuleJobTest)
+
+DKIMGenerateRuleJobTest::DKIMGenerateRuleJobTest(QObject *parent)
+    : QObject(parent)
+{
+    QStandardPaths::setTestModeEnabled(true);
+}
+
+void DKIMGenerateRuleJobTest::shouldHaveDefaultValues()
+{
+    MessageCore::DKIMGenerateRuleJob job;
+    QVERIFY(!job.canStart());
+    QVERIFY(!job.result().isValid());
+}
+
+#include "moc_dkimgeneraterulejobtest.cpp"

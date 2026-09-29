@@ -5,8 +5,8 @@
 */
 
 #include "dkimmanagerulesdialog.h"
-#include "dkimmanagerrules.h"
 #include "dkimmanageruleswidget.h"
+#include <MessageCore/DKIMManagerRules>
 
 #include <KConfigGroup>
 #include <KLocalizedString>
@@ -83,7 +83,7 @@ void DKIMManageRulesDialog::slotExport()
     }
     const QString fileName = QFileDialog::getSaveFileName(this, i18nc("@title:window", "Export Rules"));
     if (!fileName.isEmpty()) {
-        MessageViewer::DKIMManagerRules::self()->exportRules(fileName, rules);
+        MessageCore::DKIMManagerRules::self()->exportRules(fileName, rules);
     }
 }
 
@@ -91,7 +91,7 @@ void DKIMManageRulesDialog::slotImport()
 {
     const QString fileName = QFileDialog::getOpenFileName(this, i18nc("@title:window", "Import Rules"));
     if (!fileName.isEmpty()) {
-        if (MessageViewer::DKIMManagerRules::self()->importRules(fileName) == 0) {
+        if (MessageCore::DKIMManagerRules::self()->importRules(fileName) == 0) {
             KMessageBox::error(this, i18n("No rules imported."), i18nc("@title:window", "Import Rules"));
         } else {
             mRulesWidget->updateRules();

@@ -6,17 +6,19 @@
 
 #include "dkimwidgetinfo.h"
 
-#include "dkimmanager.h"
-#include "dkimutil.h"
+#include "dkim-verify/dkimutil.h"
 #include "messageviewer_dkimcheckerdebug.h"
 #include <KColorScheme>
 #include <KLocalizedString>
+#include <MessageCore/DKIMManager>
 
 #include <QHBoxLayout>
 #include <QLabel>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
+using MessageCore::DKIMCheckSignatureJob;
+using MessageCore::DKIMManager;
 DKIMWidgetInfo::DKIMWidgetInfo(QWidget *parent)
     : QWidget(parent)
     , mLabel(new QLabel(this))
@@ -50,7 +52,7 @@ void DKIMWidgetInfo::initColors()
     mDefaultColor = Qt::transparent; // colorScheme.background(KColorScheme::ActiveBackground).color();
 }
 
-MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult DKIMWidgetInfo::result() const
+MessageCore::DKIMCheckSignatureJob::CheckSignatureResult DKIMWidgetInfo::result() const
 {
     return mResult;
 }
@@ -232,7 +234,7 @@ void DKIMWidgetInfo::updateToolTip()
                 case DKIMCheckSignatureJob::AuthenticationMethod::Dkimatps: {
                     const QString str = i18nc("method name: info about it from parsing",
                                               "%1: %2",
-                                              MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method),
+                                              MessageCore::DKIMUtil::convertAuthenticationMethodEnumToString(result.method),
                                               result.infoResult);
                     if (!tooltipList.contains(str)) {
                         tooltipList.append(str);
@@ -256,7 +258,7 @@ void DKIMWidgetInfo::updateToolTip()
                 case DKIMCheckSignatureJob::AuthenticationMethod::Auth:
                 case DKIMCheckSignatureJob::AuthenticationMethod::Arc:
                 case DKIMCheckSignatureJob::AuthenticationMethod::Dkimatps: {
-                    const QString str = i18n("%1: None", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method));
+                    const QString str = i18n("%1: None", MessageCore::DKIMUtil::convertAuthenticationMethodEnumToString(result.method));
                     if (!tooltipList.contains(str)) {
                         tooltipList.append(str);
                     }
@@ -271,7 +273,7 @@ void DKIMWidgetInfo::updateToolTip()
                 }
                 case DKIMCheckSignatureJob::AuthenticationMethod::Dkim: {
                     const QString str =
-                        i18n("%1: Valid (Signed by %2)", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method), result.sdid);
+                        i18n("%1: Valid (Signed by %2)", MessageCore::DKIMUtil::convertAuthenticationMethodEnumToString(result.method), result.sdid);
                     if (!tooltipList.contains(str)) {
                         tooltipList.append(str);
                     }
@@ -280,7 +282,7 @@ void DKIMWidgetInfo::updateToolTip()
                 case DKIMCheckSignatureJob::AuthenticationMethod::Spf: {
                     const QString str = i18nc("method name: info about it from parsing",
                                               "%1: %2",
-                                              MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method),
+                                              MessageCore::DKIMUtil::convertAuthenticationMethodEnumToString(result.method),
                                               result.infoResult);
                     if (!tooltipList.contains(str)) {
                         tooltipList.append(str);
@@ -293,7 +295,7 @@ void DKIMWidgetInfo::updateToolTip()
                 case DKIMCheckSignatureJob::AuthenticationMethod::Arc:
                 case DKIMCheckSignatureJob::AuthenticationMethod::Dkimatps:
                 case DKIMCheckSignatureJob::AuthenticationMethod::Dmarc: {
-                    const QString str = i18n("%1: Valid", MessageViewer::DKIMUtil::convertAuthenticationMethodEnumToString(result.method));
+                    const QString str = i18n("%1: Valid", MessageCore::DKIMUtil::convertAuthenticationMethodEnumToString(result.method));
                     if (!tooltipList.contains(str)) {
                         tooltipList.append(str);
                     }

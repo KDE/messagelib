@@ -1,0 +1,74 @@
+/*
+   SPDX-FileCopyrightText: 2018-2026 Laurent Montel <montel@kde.org>
+
+   SPDX-License-Identifier: LGPL-2.0-or-later
+*/
+
+#include "dkimcheckauthenticationstatusjobtest.h"
+
+#include "dkim-verify/dkimauthenticationstatusinfo.h"
+#include "dkim-verify/dkimcheckauthenticationstatusjob.h"
+#include <KMime/Message>
+#include <QSignalSpy>
+#include <QTest>
+#include <QTimer>
+#include <chrono>
+
+using namespace std::chrono_literals;
+
+using namespace Qt::Literals::StringLiterals;
+QTEST_MAIN(DKIMCheckAuthenticationStatusJobTest)
+
+DKIMCheckAuthenticationStatusJobTest::DKIMCheckAuthenticationStatusJobTest(QObject *parent)
+    : QObject(parent)
+{
+}
+
+void DKIMCheckAuthenticationStatusJobTest::initTestCase()
+{
+    qRegisterMetaType<MessageCore::DKIMAuthenticationStatusInfo>();
+}
+
+void DKIMCheckAuthenticationStatusJobTest::shouldHaveDefaultValues()
+{
+    MessageCore::DKIMCheckAuthenticationStatusJob job;
+    QVERIFY(!job.canStart());
+    QVERIFY(!job.useRelaxedParsing());
+}
+
+void DKIMCheckAuthenticationStatusJobTest::shouldTestMail_data()
+{
+    QTest::addColumn<QString>("fileName");
+    QTest::addColumn<QString>("currentPath");
+    QTest::addColumn<bool>("relaxedParsing");
+    const QString curPath = QStringLiteral(DKIM_DATA_DIR "/");
+
+    QTest::addRow("dkim2") << u"dkim2.mbox"_s << curPath << false;
+    QTest::addRow("notsigned") << u"notsigned.mbox"_s << curPath << false;
+    QTest::addRow("broken1") << u"broken1.mbox"_s << curPath << false;
+}
+
+void DKIMCheckAuthenticationStatusJobTest::shouldTestMail()
+{
+    QFETCH(QString, fileName);
+    QFETCH(QString, currentPath);
+    QFETCH(bool, relaxedParsing);
+    auto msg = new KMime::Message;
+    QFile file(currentPath + fileName);
+    QVERIFY(file.open(QIODevice::ReadOnly));
+    msg->setContent(file.readAll());
+    msg->parse();
+
+    auto job = new MessageCore::DKIMCheckAuthenticationStatusJob(this);
+    MessageCore::DKIMHeaderParser mHeaderParser;
+    mHeaderParser.setHead(msg->head());
+    mHeaderParser.parse();
+    job->setHeaderParser(mHeaderParser);
+    job->setUseRelaxedParsing(relaxedParsing);
+    QSignalSpy dkimSignatureSpy(job, &MessageCore::DKIMCheckAuthenticationStatusJob::result);
+    QTimer::singleShot(10ms, job, &MessageCore::DKIMCheckAuthenticationStatusJob::start);
+    QVERIFY(dkimSignatureSpy.wait());
+    delete msg;
+}
+
+#include "moc_dkimcheckauthenticationstatusjobtest.cpp"
