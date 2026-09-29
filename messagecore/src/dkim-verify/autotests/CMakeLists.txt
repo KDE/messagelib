@@ -1,0 +1,36 @@
+# SPDX-License-Identifier: CC0-1.0
+# SPDX-FileCopyrightText: none
+add_definitions(-DDKIM_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data")
+
+macro(add_messagecore_dkim_verify_unittest source)
+    get_filename_component(name ${source} NAME_WE)
+    ecm_add_test(${source} ${name}.h
+        TEST_NAME ${name}
+        LINK_LIBRARIES KPim6::MessageCore Qt::Test OpenSSL::SSL
+    )
+endmacro()
+
+add_messagecore_dkim_verify_unittest(dkiminfotest.cpp)
+add_messagecore_dkim_verify_unittest(dkimmanagerkeytest.cpp)
+add_messagecore_dkim_verify_unittest(dkimdownloadkeyjobtest.cpp)
+add_messagecore_dkim_verify_unittest(dkimchecksignaturejobtest.cpp)
+add_messagecore_dkim_verify_unittest(dkimcheckauthenticationstatusjobtest.cpp)
+add_messagecore_dkim_verify_unittest(dkimauthenticationstatusinfotest.cpp)
+add_messagecore_dkim_verify_unittest(dkimutiltest.cpp)
+add_messagecore_dkim_verify_unittest(dkimkeyrecordtest.cpp)
+add_messagecore_dkim_verify_unittest(dkimmanagertest.cpp)
+add_messagecore_dkim_verify_unittest(dkimstoreresultjobtest.cpp)
+add_messagecore_dkim_verify_unittest(dkimresultattributetest.cpp)
+add_messagecore_dkim_verify_unittest(dkimheaderparsertest.cpp)
+add_messagecore_dkim_verify_unittest(dkimcheckpolicytest.cpp)
+add_messagecore_dkim_verify_unittest(dmarcinfotest.cpp)
+add_messagecore_dkim_verify_unittest(dmarcpolicyjobtest.cpp)
+add_messagecore_dkim_verify_unittest(dkimcheckpolicyjobtest.cpp)
+add_messagecore_dkim_verify_unittest(dkimruletest.cpp)
+add_messagecore_dkim_verify_unittest(dkimmanagerrulestest.cpp)
+add_messagecore_dkim_verify_unittest(dkimgeneraterulejobtest.cpp)
+add_messagecore_dkim_verify_unittest(dkimauthenticationstatusinfoutiltest.cpp)
+add_messagecore_dkim_verify_unittest(dkimcheckfulljobtest.cpp)
+add_messagecore_dkim_verify_unittest(dkimauthenticationstatusinfoconvertertest.cpp)
+add_messagecore_dkim_verify_unittest(dkimmanagerauthenticationservertest.cpp)
+add_messagecore_dkim_verify_unittest(dmarcrecordjobtest.cpp)

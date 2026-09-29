@@ -4,13 +4,16 @@
    SPDX-License-Identifier: LGPL-2.0-or-later
 */
 #pragma once
-#include "dkimmanagerkey.h"
 #include "messageviewer_private_export.h"
+#include <MessageCore/DKIMManagerKey>
 #include <QTreeView>
-namespace MessageViewer
+namespace MessageCore
 {
 class DKIMManagerKeyProxyModel;
 class DKIMManagerKeyModel;
+}
+namespace MessageViewer
+{
 class MESSAGEVIEWER_TESTS_EXPORT DKIMManagerKeyTreeView : public QTreeView
 {
     Q_OBJECT
@@ -20,16 +23,16 @@ public:
 
     void setFilterStr(const QString &str);
 
-    void setKeyModel(DKIMManagerKeyModel *model);
+    void setKeyModel(MessageCore::DKIMManagerKeyModel *model);
 
-    [[nodiscard]] QList<MessageViewer::KeyInfo> keyInfos() const;
+    [[nodiscard]] QList<MessageCore::KeyInfo> keyInfos() const;
 
     void clear();
 
 private:
     MESSAGEVIEWER_NO_EXPORT void deleteSelectedItems();
     MESSAGEVIEWER_NO_EXPORT void slotCustomContextMenuRequested(const QPoint &pos);
-    DKIMManagerKeyProxyModel *const mManagerKeyProxyModel;
-    DKIMManagerKeyModel *mManagerKeyModel = nullptr;
+    MessageCore::DKIMManagerKeyProxyModel *const mManagerKeyProxyModel;
+    MessageCore::DKIMManagerKeyModel *mManagerKeyModel = nullptr;
 };
 }

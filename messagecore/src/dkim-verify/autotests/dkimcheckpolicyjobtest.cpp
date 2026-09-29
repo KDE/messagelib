@@ -1,0 +1,27 @@
+/*
+   SPDX-FileCopyrightText: 2019-2026 Laurent Montel <montel@kde.org>
+
+   SPDX-License-Identifier: LGPL-2.0-or-later
+*/
+
+#include "dkimcheckpolicyjobtest.h"
+#include "dkim-verify/dkimcheckpolicyjob.h"
+#include <QStandardPaths>
+#include <QTest>
+
+QTEST_GUILESS_MAIN(DKIMCheckPolicyJobTest)
+DKIMCheckPolicyJobTest::DKIMCheckPolicyJobTest(QObject *parent)
+    : QObject(parent)
+{
+    QStandardPaths::setTestModeEnabled(true);
+}
+
+void DKIMCheckPolicyJobTest::shouldHaveDefaultValues()
+{
+    MessageCore::DKIMCheckPolicyJob job;
+    QVERIFY(job.emailAddress().isEmpty());
+    QVERIFY(!job.canStart());
+    QVERIFY(!job.checkResult().isValid());
+}
+
+#include "moc_dkimcheckpolicyjobtest.cpp"

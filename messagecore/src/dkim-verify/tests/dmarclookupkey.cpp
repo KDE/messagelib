@@ -1,0 +1,60 @@
+/*
+   SPDX-FileCopyrightText: 2019-2026 Laurent Montel <montel@kde.org>
+
+   SPDX-License-Identifier: LGPL-2.0-or-later
+*/
+
+#include "dmarclookupkey.h"
+
+#include "dkim-verify/dmarcrecordjob.h"
+#include <QCommandLineParser>
+#include <QCoreApplication>
+#include <QDebug>
+#include <QStandardPaths>
+
+using namespace Qt::Literals::StringLiterals;
+DMarcLookUpKey::DMarcLookUpKey(QObject *parent)
+    : QObject(parent)
+{
+}
+
+DMarcLookUpKey::~DMarcLookUpKey() = default;
+
+void DMarcLookUpKey::lookUpDomain(const QString &domain)
+{
+    auto job = new MessageCore::DMARCRecordJob(this);
+    job->setDomainName(domain);
+    connect(job, &MessageCore::DMARCRecordJob::success, this, [](const QList<QByteArray> &lst, const QString &domainName) {
+        qDebug() << "domainName: " << domainName << " lst " << lst;
+    });
+    connect(job, &MessageCore::DMARCRecordJob::error, this, [](const QString &err, const QString &domainName) {
+        qDebug() << "error: " << err << " domain " << domainName;
+    });
+    if (!job->start()) {
+        qWarning() << " impossible to start job";
+    }
+}
+
+int main(int argc, char **argv)
+{
+    QCoreApplication app(argc, argv);
+    QStandardPaths::setTestModeEnabled(true);
+    QCommandLineParser parser;
+    parser.addVersionOption();
+    parser.addHelpOption();
+    parser.addPositionalArgument(u"server address"_s, u"add specific server address"_s);
+    parser.process(app);
+
+    if (!parser.positionalArguments().isEmpty()) {
+        const QStringList lst = parser.positionalArguments();
+        for (const QString &str : lst) {
+            auto d = new DMarcLookUpKey();
+            d->lookUpDomain(str);
+        }
+    }
+
+    app.exec();
+    return 0;
+}
+
+#include "moc_dmarclookupkey.cpp"

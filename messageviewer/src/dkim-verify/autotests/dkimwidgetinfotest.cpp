@@ -7,7 +7,7 @@
 #include "dkimwidgetinfotest.h"
 
 #include "dkim-verify/dkimwidgetinfo.h"
-#include <MessageViewer/DKIMCheckSignatureJob>
+#include <MessageCore/DKIMCheckSignatureJob>
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QStandardPaths>
@@ -40,17 +40,17 @@ void DKIMWidgetInfoTest::shouldClearWidget()
 {
     MessageViewer::DKIMWidgetInfo w;
     auto mLabel = w.findChild<QLabel *>(u"label"_s);
-    MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult result;
+    MessageCore::DKIMCheckSignatureJob::CheckSignatureResult result;
     result.fromEmail = u"bla"_s;
     result.sdid = u"bli"_s;
-    result.status = MessageViewer::DKIMCheckSignatureJob::DKIMStatus::NeedToBeSigned;
-    result.error = MessageViewer::DKIMCheckSignatureJob::DKIMError::CorruptedBodyHash;
-    result.warning = MessageViewer::DKIMCheckSignatureJob::DKIMWarning::HashAlgorithmUnsafe;
+    result.status = MessageCore::DKIMCheckSignatureJob::DKIMStatus::NeedToBeSigned;
+    result.error = MessageCore::DKIMCheckSignatureJob::DKIMError::CorruptedBodyHash;
+    result.warning = MessageCore::DKIMCheckSignatureJob::DKIMWarning::HashAlgorithmUnsafe;
     w.setResult(result, -1);
     QVERIFY(!mLabel->text().isEmpty());
     w.clear();
     QVERIFY(mLabel->text().isEmpty());
-    QCOMPARE(w.result(), MessageViewer::DKIMCheckSignatureJob::CheckSignatureResult());
+    QCOMPARE(w.result(), MessageCore::DKIMCheckSignatureJob::CheckSignatureResult());
 }
 
 #include "moc_dkimwidgetinfotest.cpp"

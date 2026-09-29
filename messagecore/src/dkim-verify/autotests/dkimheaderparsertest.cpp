@@ -1,0 +1,46 @@
+/*
+   SPDX-FileCopyrightText: 2019-2026 Laurent Montel <montel@kde.org>
+
+   SPDX-License-Identifier: LGPL-2.0-or-later
+*/
+
+#include "dkimheaderparsertest.h"
+
+#include "dkim-verify/dkimheaderparser.h"
+#include <QTest>
+
+using namespace Qt::Literals::StringLiterals;
+QTEST_GUILESS_MAIN(DKIMHeaderParserTest)
+DKIMHeaderParserTest::DKIMHeaderParserTest(QObject *parent)
+    : QObject(parent)
+{
+}
+
+void DKIMHeaderParserTest::shouldHaveDefaultValues()
+{
+    MessageCore::DKIMHeaderParser parser;
+    QVERIFY(parser.head().isEmpty());
+    QVERIFY(parser.headerType(u"bla"_s).isEmpty());
+    QVERIFY(!parser.wasAlreadyParsed());
+}
+
+void DKIMHeaderParserTest::shouldChangeWasAlreadyParsedBoolean()
+{
+    MessageCore::DKIMHeaderParser parser;
+    parser.setHead(QByteArray());
+    parser.parse();
+    QVERIFY(parser.wasAlreadyParsed());
+}
+
+void DKIMHeaderParserTest::shouldAssignElement()
+{
+    MessageCore::DKIMHeaderParser parser;
+    parser.setHead(QByteArray("blobli"));
+    parser.parse();
+    QVERIFY(parser.wasAlreadyParsed());
+
+    MessageCore::DKIMHeaderParser parser2 = parser;
+    QCOMPARE(parser2, parser);
+}
+
+#include "moc_dkimheaderparsertest.cpp"

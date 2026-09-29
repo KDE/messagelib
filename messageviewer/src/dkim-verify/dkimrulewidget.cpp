@@ -69,7 +69,7 @@ void DKIMRuleWidget::updateOkButton()
     Q_EMIT updateOkButtonRequested(!mFrom->text().trimmed().isEmpty() && !mDomain->text().trimmed().isEmpty());
 }
 
-void DKIMRuleWidget::loadRule(const MessageViewer::DKIMRule &rule)
+void DKIMRuleWidget::loadRule(const MessageCore::DKIMRule &rule)
 {
     mEnabled->setChecked(rule.enabled());
     mDomain->setText(rule.domain());
@@ -80,9 +80,9 @@ void DKIMRuleWidget::loadRule(const MessageViewer::DKIMRule &rule)
     mPriority->setValue(rule.priority());
 }
 
-MessageViewer::DKIMRule DKIMRuleWidget::rule() const
+MessageCore::DKIMRule DKIMRuleWidget::rule() const
 {
-    MessageViewer::DKIMRule rule;
+    MessageCore::DKIMRule rule;
     rule.setEnabled(mEnabled->isChecked());
     rule.setDomain(mDomain->text());
     rule.setSignedDomainIdentifier(mSignatureDomainIdentifier->text().split(u' '));

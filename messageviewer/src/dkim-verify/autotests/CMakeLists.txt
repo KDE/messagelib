@@ -1,41 +1,16 @@
 # SPDX-License-Identifier: CC0-1.0
 # SPDX-FileCopyrightText: none
-add_definitions(-DDKIM_DATA_DIR="${CMAKE_CURRENT_SOURCE_DIR}/data")
-
 macro(add_messageviewer_dkim_verify_unittest _source)
     get_filename_component(_name ${_source} NAME_WE)
     ecm_add_test(${_source} ${_name}.h
         TEST_NAME ${_name}
-        LINK_LIBRARIES KPim6::MessageViewer KPim6::WebEngineViewer KPim6::Libkleo QGpgmeQt6 Qt::Test KF6::ItemViews OpenSSL::SSL
+        LINK_LIBRARIES KPim6::MessageViewer KPim6::WebEngineViewer KPim6::Libkleo QGpgmeQt6 Qt::Test KF6::ItemViews
     )
 endmacro()
 
-add_messageviewer_dkim_verify_unittest(dkiminfotest.cpp)
-add_messageviewer_dkim_verify_unittest(dkimmanagerkeytest.cpp)
 add_messageviewer_dkim_verify_unittest(dkimmanagerkeywidgettest.cpp)
 add_messageviewer_dkim_verify_unittest(dkimmanagerkeydialogtest.cpp)
-add_messageviewer_dkim_verify_unittest(dkimdownloadkeyjobtest.cpp)
-add_messageviewer_dkim_verify_unittest(dkimchecksignaturejobtest.cpp)
-add_messageviewer_dkim_verify_unittest(dkimcheckauthenticationstatusjobtest.cpp)
-add_messageviewer_dkim_verify_unittest(dkimauthenticationstatusinfotest.cpp)
-add_messageviewer_dkim_verify_unittest(dkimkeyrecordtest.cpp)
-add_messageviewer_dkim_verify_unittest(dkimmanagertest.cpp)
-add_messageviewer_dkim_verify_unittest(dkimutiltest.cpp)
-add_messageviewer_dkim_verify_unittest(dkimstoreresultjobtest.cpp)
-add_messageviewer_dkim_verify_unittest(dkimresultattributetest.cpp)
-add_messageviewer_dkim_verify_unittest(dkimheaderparsertest.cpp)
-add_messageviewer_dkim_verify_unittest(dkimcheckpolicytest.cpp)
-add_messageviewer_dkim_verify_unittest(dmarcinfotest.cpp)
-add_messageviewer_dkim_verify_unittest(dmarcpolicyjobtest.cpp)
-add_messageviewer_dkim_verify_unittest(dkimcheckpolicyjobtest.cpp)
-add_messageviewer_dkim_verify_unittest(dkimruletest.cpp)
-add_messageviewer_dkim_verify_unittest(dkimmanagerrulestest.cpp)
 add_messageviewer_dkim_verify_unittest(dkimwidgetinfotest.cpp)
-add_messageviewer_dkim_verify_unittest(dkimgeneraterulejobtest.cpp)
-add_messageviewer_dkim_verify_unittest(dkimauthenticationstatusinfoutiltest.cpp)
-add_messageviewer_dkim_verify_unittest(dkimcheckfulljobtest.cpp)
-add_messageviewer_dkim_verify_unittest(dkimauthenticationstatusinfoconvertertest.cpp)
-add_messageviewer_dkim_verify_unittest(dkimmanagerauthenticationservertest.cpp)
 add_messageviewer_dkim_verify_unittest(dkimviewermenutest.cpp)
 add_messageviewer_dkim_verify_unittest(dkimmanagerulescomboboxtest.cpp)
 add_messageviewer_dkim_verify_unittest(dkimmanagerulesdialogtest.cpp)

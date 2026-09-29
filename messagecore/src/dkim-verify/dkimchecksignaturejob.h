@@ -1,0 +1,220 @@
+/*
+   SPDX-FileCopyrightText: 2018-2026 Laurent Montel <montel@kde.org>
+
+   SPDX-License-Identifier: LGPL-2.0-or-later
+*/
+
+#pragma once
+
+#include "messagecore_export.h"
+#include <KMime/Message>
+#include <MessageCore/DKIMCheckPolicy>
+#include <MessageCore/DKIMHeaderParser>
+#include <MessageCore/DKIMInfo>
+#include <MessageCore/DKIMKeyRecord>
+#include <QObject>
+
+namespace MessageCore
+{
+/*!
+ * \class MessageCore::DKIMCheckSignatureJob
+ * \inmodule MessageCore
+ * \inheaderfile MessageCore/DKIMCheckSignatureJob
+ * \brief The DKIMCheckSignatureJob class
+ * \author Laurent Montel <montel@kde.org>
+ */
+class MESSAGECORE_EXPORT DKIMCheckSignatureJob : public QObject
+{
+    Q_OBJECT
+public:
+    enum class DKIMStatus : uint8_t {
+        Unknown = 0,
+        Valid = 1,
+        Invalid = 2,
+        EmailNotSigned = 3,
+        NeedToBeSigned = 4,
+    };
+    Q_ENUM(DKIMStatus)
+
+    enum class DKIMError : uint8_t {
+        Any = 0,
+        CorruptedBodyHash = 1,
+        DomainNotExist = 2,
+        MissingFrom = 3,
+        MissingSignature = 4,
+        InvalidQueryMethod = 5,
+        InvalidHeaderCanonicalization = 6,
+        InvalidBodyCanonicalization = 7,
+        InvalidBodyHashAlgorithm = 8,
+        InvalidSignAlgorithm = 9,
+        PublicKeyWasRevoked = 10,
+        SignatureTooLarge = 11,
+        InsupportedHashAlgorithm = 12,
+        PublicKeyTooSmall = 13,
+        ImpossibleToVerifySignature = 14,
+        DomainI = 15,
+        TestKeyMode = 16,
+        ImpossibleToDownloadKey = 17,
+        HashAlgorithmUnsafeSha1 = 18,
+        IDomainError = 19,
+        PublicKeyConversionError = 20,
+    };
+    Q_ENUM(DKIMError)
+    enum class DKIMWarning : uint8_t {
+        Any = 0,
+        SignatureExpired = 1,
+        SignatureCreatedInFuture = 2,
+        SignatureTooSmall = 3,
+        HashAlgorithmUnsafe = 4,
+        PublicRsaKeyTooSmall = 5,
+    };
+    Q_ENUM(DKIMWarning)
+
+    enum class AuthenticationMethod : uint8_t {
+        Unknown = 0,
+        Dkim = 1,
+        Spf = 2,
+        Dmarc = 3,
+        Dkimatps = 4,
+        Auth = 5,
+        XTls = 6,
+        Arc = 7,
+    };
+    Q_ENUM(AuthenticationMethod)
+
+    struct MESSAGECORE_EXPORT DKIMCheckSignatureAuthenticationResult {
+        QString errorStr;
+        QString infoResult;
+        AuthenticationMethod method = AuthenticationMethod::Unknown;
+        DKIMCheckSignatureJob::DKIMStatus status = DKIMCheckSignatureJob::DKIMStatus::Unknown;
+        QString sdid; // Signing Domain Identifier
+        QString auid; // DKIM MAY optionally provide a single responsible Agent or User Identifier (AUID).
+        [[nodiscard]] bool operator==(const DKIMCheckSignatureAuthenticationResult &other) const;
+        [[nodiscard]] bool isValid() const;
+    };
+
+    struct MESSAGECORE_EXPORT CheckSignatureResult {
+        [[nodiscard]] bool isValid() const;
+
+        [[nodiscard]] bool operator==(const CheckSignatureResult &other) const;
+
+        [[nodiscard]] bool operator!=(const CheckSignatureResult &other) const;
+
+        DKIMCheckSignatureJob::DKIMError error = DKIMCheckSignatureJob::DKIMError::Any;
+        DKIMCheckSignatureJob::DKIMWarning warning = DKIMCheckSignatureJob::DKIMWarning::Any;
+        DKIMCheckSignatureJob::DKIMStatus status = DKIMCheckSignatureJob::DKIMStatus::Unknown;
+        QString sdid; // Signing Domain Identifier
+        QString auid; // DKIM MAY optionally provide a single responsible Agent or User Identifier (AUID).
+        QString fromEmail;
+
+        QList<DKIMCheckSignatureAuthenticationResult> listSignatureAuthenticationResult;
+    };
+
+    /*!
+     */
+    explicit DKIMCheckSignatureJob(QObject *parent = nullptr);
+    /*!
+     */
+    ~DKIMCheckSignatureJob() override;
+    /*!
+     */
+    void start();
+
+    /*!
+     */
+    [[nodiscard]] QString dkimValue() const;
+
+    /*!
+     */
+    [[nodiscard]] DKIMCheckSignatureJob::DKIMStatus status() const;
+    /*!
+     */
+    void setStatus(MessageCore::DKIMCheckSignatureJob::DKIMStatus status);
+
+    /*!
+     */
+    [[nodiscard]] MessageCore::DKIMCheckSignatureJob::DKIMStatus checkSignature(const MessageCore::DKIMInfo &info);
+
+    /*!
+     */
+    [[nodiscard]] DKIMCheckSignatureJob::DKIMError error() const;
+
+    /*!
+     */
+    [[nodiscard]] std::shared_ptr<KMime::Message> message() const;
+    /*!
+     */
+    void setMessage(const std::shared_ptr<KMime::Message> &message);
+
+    /*!
+     */
+    [[nodiscard]] DKIMCheckSignatureJob::DKIMWarning warning() const;
+    /*!
+     */
+    void setWarning(MessageCore::DKIMCheckSignatureJob::DKIMWarning warning);
+
+    /*!
+     */
+    [[nodiscard]] QString headerCanonizationResult() const;
+
+    /*!
+     */
+    [[nodiscard]] QString bodyCanonizationResult() const;
+
+    /*!
+     */
+    [[nodiscard]] DKIMCheckPolicy policy() const;
+    /*!
+     */
+    void setPolicy(const DKIMCheckPolicy &policy);
+
+    /*!
+     */
+    void setHeaderParser(const DKIMHeaderParser &headerParser);
+
+    /*!
+     */
+    void setCheckSignatureAuthenticationResult(const QList<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> &lst);
+
+Q_SIGNALS:
+    /*!
+     */
+    void result(const MessageCore::DKIMCheckSignatureJob::CheckSignatureResult &checkResult);
+    /*!
+     */
+    void storeKey(const QString &key, const QString &domain, const QString &selector);
+
+private:
+    MESSAGECORE_NO_EXPORT void downloadKey(const DKIMInfo &info);
+    MESSAGECORE_NO_EXPORT void slotDownloadKeyDone(const QList<QByteArray> &lst, const QString &domain, const QString &selector);
+    MESSAGECORE_NO_EXPORT void parseDKIMKeyRecord(const QString &str, const QString &domain, const QString &selector, bool storeKeyValue = true);
+    [[nodiscard]] MESSAGECORE_NO_EXPORT QString headerCanonizationSimple() const;
+    [[nodiscard]] MESSAGECORE_NO_EXPORT QString headerCanonizationRelaxed(bool removeQuoteOnContentType) const;
+    [[nodiscard]] MESSAGECORE_NO_EXPORT QString bodyCanonizationRelaxed() const;
+    [[nodiscard]] MESSAGECORE_NO_EXPORT QString bodyCanonizationSimple() const;
+    [[nodiscard]] MESSAGECORE_NO_EXPORT MessageCore::DKIMCheckSignatureJob::CheckSignatureResult createCheckResult() const;
+    MESSAGECORE_NO_EXPORT void verifySignature();
+    MESSAGECORE_NO_EXPORT void verifyRSASignature();
+    MESSAGECORE_NO_EXPORT void verifyEd25519Signature();
+    MESSAGECORE_NO_EXPORT void computeHeaderCanonization(bool removeQuoteOnContentType);
+    MESSAGECORE_NO_EXPORT void verificationFailed(DKIMError error);
+
+    QList<DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult> mCheckSignatureAuthenticationResult;
+    DKIMCheckPolicy mPolicy;
+    DKIMHeaderParser mHeaderParser;
+    std::shared_ptr<KMime::Message> mMessage;
+    QString mFromEmail;
+    DKIMInfo mDkimInfo;
+    DKIMKeyRecord mDkimKeyRecord;
+    QString mDkimValue;
+    QString mHeaderCanonizationResult;
+    QString mBodyCanonizationResult;
+    DKIMCheckSignatureJob::DKIMError mError = DKIMCheckSignatureJob::DKIMError::Any;
+    DKIMCheckSignatureJob::DKIMWarning mWarning = DKIMCheckSignatureJob::DKIMWarning::Any;
+    DKIMCheckSignatureJob::DKIMStatus mStatus = DKIMCheckSignatureJob::DKIMStatus::Unknown;
+};
+}
+MESSAGECORE_EXPORT QDebug operator<<(QDebug d, const MessageCore::DKIMCheckSignatureJob::CheckSignatureResult &t);
+MESSAGECORE_EXPORT QDebug operator<<(QDebug d, const MessageCore::DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult &t);
+Q_DECLARE_METATYPE(MessageCore::DKIMCheckSignatureJob::CheckSignatureResult)
+Q_DECLARE_TYPEINFO(MessageCore::DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult, Q_RELOCATABLE_TYPE);

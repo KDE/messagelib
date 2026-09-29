@@ -35,6 +35,7 @@
 #include <KLocalizedString>
 
 #include <QAction>
+#include <QGuiApplication>
 
 #include <Akonadi/MDNStateAttribute>
 

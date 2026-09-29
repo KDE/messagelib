@@ -7,7 +7,7 @@
 #pragma once
 
 #include "messageviewer_private_export.h"
-#include <MessageViewer/DKIMRule>
+#include <MessageCore/DKIMRule>
 #include <QDialog>
 class QPushButton;
 namespace MessageViewer
@@ -20,8 +20,8 @@ public:
     explicit DKIMRuleDialog(QWidget *parent = nullptr);
     ~DKIMRuleDialog() override;
 
-    [[nodiscard]] MessageViewer::DKIMRule rule() const;
-    void loadRule(const MessageViewer::DKIMRule &rule);
+    [[nodiscard]] MessageCore::DKIMRule rule() const;
+    void loadRule(const MessageCore::DKIMRule &rule);
 
 private:
     MESSAGEVIEWER_NO_EXPORT void writeConfig();

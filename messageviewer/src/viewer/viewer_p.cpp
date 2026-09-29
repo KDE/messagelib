@@ -146,11 +146,11 @@
 #include <GrantleeTheme/GrantleeTheme>
 #include <GrantleeTheme/GrantleeThemeManager>
 
-#include "dkim-verify/dkimmanager.h"
 #include "dkim-verify/dkimmanagerulesdialog.h"
 #include "dkim-verify/dkimresultattribute.h"
 #include "dkim-verify/dkimviewermenu.h"
 #include "dkim-verify/dkimwidgetinfo.h"
+#include <MessageCore/DKIMManager>
 
 #include "remote-content/remotecontentmenu.h"
 #include <chrono>
@@ -177,6 +177,35 @@ static InvokeWrapper<Arg, R, C> invoke(R *receiver, void (C::*memberFun)(Arg))
 {
     InvokeWrapper<Arg, R, C> wrapper = {receiver, memberFun};
     return wrapper;
+}
+
+static MessageCore::DKIMCheckPolicy dkimCheckPolicyFromSettings()
+{
+    using Settings = MessageViewer::MessageViewerSettings;
+    Settings::self();
+    MessageCore::DKIMCheckPolicy policy;
+    policy.setRsaSha1Policy(Settings::policyRsaSha1());
+    policy.setVerifySignatureWhenOnlyTest(Settings::verifySignatureWhenOnlyTest());
+    policy.setSaveDkimResult(Settings::saveDkimResult());
+    policy.setSaveKey(Settings::saveKey());
+    policy.setAutogenerateRule(Settings::autogenerateRule());
+    policy.setCheckIfEmailShouldBeSigned(Settings::checkIfEmailShouldBeSigned());
+    policy.setUseDMarc(Settings::useDMarc());
+    policy.setUseDefaultRules(Settings::useDefaultRules());
+    policy.setUseAuthenticationResults(Settings::useAuthenticationResults());
+    policy.setUseRelaxedParsing(Settings::useRelaxedParsingAuthenticationResults());
+    policy.setUseOnlyAuthenticationResults(Settings::useOnlyAuthenticationResults());
+    policy.setAutogenerateRuleOnlyIfSenderInSDID(Settings::autogenerateRuleOnlyIfSenderOnSDID());
+    policy.setPublicRsaTooSmallPolicy(Settings::publicRsaTooSmall());
+    policy.setKeyChangeApproval([](const QString &, const QString &, const QString &) {
+        const int answer = KMessageBox::warningTwoActions(nullptr,
+                                                          i18n("Stored DKIM key is different from the current one. Do you want to store this one too?"),
+                                                          i18nc("@title:window", "Key Changed"),
+                                                          KGuiItem(i18nc("@action:button", "Store")),
+                                                          KStandardGuiItem::discard());
+        return answer != KMessageBox::ButtonCode::SecondaryAction;
+    });
+    return policy;
 }
 
 ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow, KActionCollection *actionCollection)
@@ -240,7 +269,7 @@ ViewerPrivate::ViewerPrivate(Viewer *aParent, QWidget *mainWindow, KActionCollec
     fs.fetchAttribute<Akonadi::ErrorAttribute>();
     fs.fetchAttribute<MessageViewer::MessageDisplayFormatAttribute>();
     fs.fetchAttribute<MessageViewer::ScamAttribute>();
-    fs.fetchAttribute<MessageViewer::DKIMResultAttribute>();
+    fs.fetchAttribute<MessageCore::DKIMResultAttribute>();
     fs.fetchAttribute<Akonadi::MDNStateAttribute>();
     mMonitor.setItemFetchScope(fs);
     connect(&mMonitor, &Akonadi::Monitor::itemChanged, this, &ViewerPrivate::slotItemChanged);
@@ -1232,7 +1261,8 @@ void ViewerPrivate::setMessageItem(const Akonadi::Item &item, MimeTreeParser::Up
                 mDkimWidgetInfo->clear();
             } else {
                 mDkimWidgetInfo->setCurrentItemId(mMessageItem.id());
-                MessageViewer::DKIMManager::self()->checkDKim(mMessageItem);
+                MessageCore::DKIMManager::self()->setPolicy(dkimCheckPolicyFromSettings());
+                MessageCore::DKIMManager::self()->checkDKim(mMessageItem);
             }
         }
     }
@@ -3118,7 +3148,8 @@ DKIMViewerMenu *ViewerPrivate::dkimViewerMenu()
             if (!mDkimViewerMenu) {
                 mDkimViewerMenu = new MessageViewer::DKIMViewerMenu(this);
                 connect(mDkimViewerMenu, &DKIMViewerMenu::recheckSignature, this, [this]() {
-                    MessageViewer::DKIMManager::self()->checkDKim(mMessageItem);
+                    MessageCore::DKIMManager::self()->setPolicy(dkimCheckPolicyFromSettings());
+                    MessageCore::DKIMManager::self()->checkDKim(mMessageItem);
                 });
                 connect(mDkimViewerMenu, &DKIMViewerMenu::updateDkimKey, this, []() {
                     qWarning() << " Unimplemented yet updateDkimKey";

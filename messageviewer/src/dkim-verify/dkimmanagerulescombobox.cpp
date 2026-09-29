@@ -17,17 +17,17 @@ DKIMManageRulesComboBox::~DKIMManageRulesComboBox() = default;
 
 void DKIMManageRulesComboBox::init()
 {
-    addItem(i18n("Must be signed"), QVariant::fromValue(MessageViewer::DKIMRule::RuleType::MustBeSigned));
-    addItem(i18n("Can be signed"), QVariant::fromValue(MessageViewer::DKIMRule::RuleType::CanBeSigned));
-    addItem(i18n("Ignore if not signed"), QVariant::fromValue(MessageViewer::DKIMRule::RuleType::IgnoreEmailNotSigned));
+    addItem(i18n("Must be signed"), QVariant::fromValue(MessageCore::DKIMRule::RuleType::MustBeSigned));
+    addItem(i18n("Can be signed"), QVariant::fromValue(MessageCore::DKIMRule::RuleType::CanBeSigned));
+    addItem(i18n("Ignore if not signed"), QVariant::fromValue(MessageCore::DKIMRule::RuleType::IgnoreEmailNotSigned));
 }
 
-MessageViewer::DKIMRule::RuleType DKIMManageRulesComboBox::ruleType() const
+MessageCore::DKIMRule::RuleType DKIMManageRulesComboBox::ruleType() const
 {
-    return currentData().value<MessageViewer::DKIMRule::RuleType>();
+    return currentData().value<MessageCore::DKIMRule::RuleType>();
 }
 
-void DKIMManageRulesComboBox::setRuleType(MessageViewer::DKIMRule::RuleType type)
+void DKIMManageRulesComboBox::setRuleType(MessageCore::DKIMRule::RuleType type)
 {
     const int index = findData(QVariant::fromValue(type));
     if (index != -1) {

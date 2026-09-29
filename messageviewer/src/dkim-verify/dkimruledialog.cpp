@@ -70,13 +70,13 @@ void DKIMRuleDialog::writeConfig()
     group.sync();
 }
 
-void DKIMRuleDialog::loadRule(const MessageViewer::DKIMRule &rule)
+void DKIMRuleDialog::loadRule(const MessageCore::DKIMRule &rule)
 {
     setWindowTitle(i18nc("@title:window", "Modify Rule"));
     mRuleWidget->loadRule(rule);
 }
 
-MessageViewer::DKIMRule DKIMRuleDialog::rule() const
+MessageCore::DKIMRule DKIMRuleDialog::rule() const
 {
     return mRuleWidget->rule();
 }

@@ -5,9 +5,9 @@
 */
 
 #include "dkimmanagerkeywidget.h"
-#include "dkimmanagerkey.h"
-#include "dkimmanagerkeymodel.h"
+#include "dkim-verify/dkimmanagerkeymodel.h"
 #include "dkimmanagerkeytreeview.h"
+#include <MessageCore/DKIMManagerKey>
 
 #include <KLineEditEventHandler>
 #include <KLocalizedString>
@@ -53,14 +53,14 @@ void DKIMManagerKeyWidget::restoreHeaders(const QByteArray &header)
 
 void DKIMManagerKeyWidget::loadKeys()
 {
-    auto model = new DKIMManagerKeyModel(this);
-    model->setKeyInfos(DKIMManagerKey::self()->keys());
+    auto model = new MessageCore::DKIMManagerKeyModel(this);
+    model->setKeyInfos(MessageCore::DKIMManagerKey::self()->keys());
     mDKIMManagerKeyTreeView->setKeyModel(model);
 }
 
 void DKIMManagerKeyWidget::saveKeys()
 {
-    DKIMManagerKey::self()->saveKeys(mDKIMManagerKeyTreeView->keyInfos());
+    MessageCore::DKIMManagerKey::self()->saveKeys(mDKIMManagerKeyTreeView->keyInfos());
 }
 
 void DKIMManagerKeyWidget::resetKeys()

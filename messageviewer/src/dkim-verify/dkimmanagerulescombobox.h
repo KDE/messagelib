@@ -6,7 +6,7 @@
 
 #pragma once
 #include "messageviewer_private_export.h"
-#include <MessageViewer/DKIMRule>
+#include <MessageCore/DKIMRule>
 #include <QComboBox>
 namespace MessageViewer
 {
@@ -16,8 +16,8 @@ class MESSAGEVIEWER_TESTS_EXPORT DKIMManageRulesComboBox : public QComboBox
 public:
     explicit DKIMManageRulesComboBox(QWidget *parent = nullptr);
     ~DKIMManageRulesComboBox() override;
-    [[nodiscard]] MessageViewer::DKIMRule::RuleType ruleType() const;
-    void setRuleType(MessageViewer::DKIMRule::RuleType type);
+    [[nodiscard]] MessageCore::DKIMRule::RuleType ruleType() const;
+    void setRuleType(MessageCore::DKIMRule::RuleType type);
 
 private:
     MESSAGEVIEWER_NO_EXPORT void init();

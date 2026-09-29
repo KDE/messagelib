@@ -6,7 +6,7 @@
 
 #pragma once
 #include "messageviewer_private_export.h"
-#include <MessageViewer/DKIMRule>
+#include <MessageCore/DKIMRule>
 #include <QWidget>
 class QCheckBox;
 class QLineEdit;
@@ -20,8 +20,8 @@ class MESSAGEVIEWER_TESTS_EXPORT DKIMRuleWidget : public QWidget
 public:
     explicit DKIMRuleWidget(QWidget *parent = nullptr);
     ~DKIMRuleWidget() override;
-    void loadRule(const MessageViewer::DKIMRule &rule);
-    [[nodiscard]] MessageViewer::DKIMRule rule() const;
+    void loadRule(const MessageCore::DKIMRule &rule);
+    [[nodiscard]] MessageCore::DKIMRule rule() const;
 
 Q_SIGNALS:
     void updateOkButtonRequested(bool enabled);

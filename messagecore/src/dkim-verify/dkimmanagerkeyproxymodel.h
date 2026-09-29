@@ -1,0 +1,28 @@
+/*
+   SPDX-FileCopyrightText: 2023-2026 Laurent Montel <montel@kde.org>
+
+   SPDX-License-Identifier: LGPL-2.0-or-later
+*/
+#pragma once
+
+#include "messagecore_export.h"
+#include <QSortFilterProxyModel>
+namespace MessageCore
+{
+class MESSAGECORE_EXPORT DKIMManagerKeyProxyModel : public QSortFilterProxyModel
+{
+public:
+    explicit DKIMManagerKeyProxyModel(QObject *parent = nullptr);
+    ~DKIMManagerKeyProxyModel() override;
+
+    [[nodiscard]] QString filterText() const;
+    void setFilterText(const QString &newFilterText);
+
+protected:
+    bool lessThan(const QModelIndex &source_left, const QModelIndex &source_right) const override;
+    bool filterAcceptsRow(int source_row, const QModelIndex &source_parent) const override;
+
+private:
+    QString mFilterText;
+};
+}
