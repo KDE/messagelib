@@ -121,7 +121,7 @@ target_link_libraries(
         KF6::Codecs
         KF6::SonnetUi
         KF6::SyntaxHighlighting
-        Qt::WebEngineWidgets
+        Qt::WebEngineCore
         KPim6::PimTextEdit
         Gpgmepp
 )
