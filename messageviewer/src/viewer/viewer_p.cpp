@@ -49,6 +49,7 @@
 #include <KApplicationTrader>
 #include <KEmailAddress>
 #include <KFileItemActions>
+#include <KFileItemListProperties>
 #include <KIO/ApplicationLauncherJob>
 #include <KIO/JobUiDelegateFactory>
 #include <KIO/OpenUrlJob>
@@ -415,63 +416,6 @@ void ViewerPrivate::scrollToAnchor(const QString &anchor)
     mViewer->scrollToAnchor(anchor);
 }
 
-void ViewerPrivate::createOpenWithMenu(QMenu *topMenu, const QString &contentTypeStr, bool fromCurrentContent)
-{
-    const KService::List offers = KFileItemActions::associatedApplications(QStringList() << contentTypeStr);
-    if (!offers.isEmpty()) {
-        QMenu *menu = topMenu;
-        auto actionGroup = new QActionGroup(menu);
-
-        if (fromCurrentContent) {
-            connect(actionGroup, &QActionGroup::triggered, this, &ViewerPrivate::slotOpenWithActionCurrentContent);
-        } else {
-            connect(actionGroup, &QActionGroup::triggered, this, &ViewerPrivate::slotOpenWithAction);
-        }
-
-        if (offers.count() > 1) { // submenu 'open with'
-            menu = new QMenu(i18nc("@title:menu", "&Open With"), topMenu);
-            menu->menuAction()->setObjectName("openWith_submenu"_L1); // for the unittest
-            topMenu->addMenu(menu);
-        }
-        // qCDebug(MESSAGEVIEWER_LOG) << offers.count() << "offers" << topMenu << menu;
-
-        for (const KService::Ptr &ser : offers) {
-            QAction *act = MessageViewer::Util::createAppAction(ser,
-                                                                // no submenu -> prefix single offer
-                                                                menu == topMenu,
-                                                                actionGroup,
-                                                                menu);
-            menu->addAction(act);
-        }
-
-        QString openWithActionName;
-        if (menu != topMenu) { // submenu
-            menu->addSeparator();
-            openWithActionName = i18nc("@action:inmenu Open With", "&Other...");
-        } else {
-            openWithActionName = i18nc("@title:menu", "&Open With...");
-        }
-        auto openWithAct = new QAction(menu);
-        openWithAct->setText(openWithActionName);
-        if (fromCurrentContent) {
-            connect(openWithAct, &QAction::triggered, this, &ViewerPrivate::slotOpenWithDialogCurrentContent);
-        } else {
-            connect(openWithAct, &QAction::triggered, this, &ViewerPrivate::slotOpenWithDialog);
-        }
-
-        menu->addAction(openWithAct);
-    } else { // no app offers -> Open With...
-        auto act = new QAction(topMenu);
-        act->setText(i18nc("@title:menu", "&Open With..."));
-        if (fromCurrentContent) {
-            connect(act, &QAction::triggered, this, &ViewerPrivate::slotOpenWithDialogCurrentContent);
-        } else {
-            connect(act, &QAction::triggered, this, &ViewerPrivate::slotOpenWithDialog);
-        }
-        topMenu->addAction(act);
-    }
-}
-
 void ViewerPrivate::slotOpenWithDialogCurrentContent()
 {
     if (!mCurrentContent) {
@@ -525,13 +469,9 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
     }
 
     QMenu menu;
-
-    QAction *action = menu.addAction(QIcon::fromTheme(u"document-open"_s), i18nc("to open", "Open"));
-    action->setEnabled(!deletedAttachment);
-    connect(action, &QAction::triggered, this, [this]() {
-        slotHandleAttachment(Viewer::Open);
-    });
-    createOpenWithMenu(&menu, contentTypeStr, true);
+    KFileItemActions actions;
+    actions.setItemListProperties(KFileItemListProperties({KFileItem(QUrl::fromLocalFile(mNodeHelper->writeNodeToTempFile(node)), contentTypeStr)}));
+    actions.insertOpenWithActionsTo(nullptr, &menu, {});
 
     const QMimeDatabase mimeDb;
     const auto mimetype = mimeDb.mimeTypeForName(contentTypeStr);
@@ -539,7 +479,7 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
         const QStringList parentMimeType = mimetype.parentMimeTypes();
         if ((contentTypeStr == "text/plain"_L1) || (contentTypeStr == "image/png"_L1) || (contentTypeStr == "image/jpeg"_L1)
             || parentMimeType.contains("text/plain"_L1) || parentMimeType.contains("image/png"_L1) || parentMimeType.contains("image/jpeg"_L1)) {
-            action = menu.addAction(i18nc("to view something", "View"));
+            auto action = menu.addAction(i18nc("to view something", "View"));
             action->setEnabled(!deletedAttachment);
             connect(action, &QAction::triggered, this, [this]() {
                 slotHandleAttachment(Viewer::View);
@@ -547,7 +487,7 @@ void ViewerPrivate::showAttachmentPopup(KMime::Content *node, const QString &nam
         }
     }
 
-    action = menu.addAction(i18n("Scroll To"));
+    auto action = menu.addAction(i18n("Scroll To"));
     connect(action, &QAction::triggered, this, [this]() {
         slotHandleAttachment(Viewer::ScrollTo);
     });
@@ -1740,18 +1680,15 @@ void ViewerPrivate::showContextMenu(const KMime::Content *content, const QPoint 
     const auto hasAttachments = KMime::hasAttachment(mMessage.get());
 
     QMenu popup;
+    KFileItemActions actions;
 
     if (!content->isTopLevel() || isAttachment) {
         popup.addAction(QIcon::fromTheme(u"document-save-as"_s), i18n("Save &As..."), this, &ViewerPrivate::slotAttachmentSaveAs);
 
         if (isAttachment) {
-            popup.addAction(QIcon::fromTheme(u"document-open"_s), i18nc("to open", "Open"), this, &ViewerPrivate::slotAttachmentOpen);
-
-            if (selectedContents().count() == 1) {
-                createOpenWithMenu(&popup, ct ? QLatin1StringView(ct->mimeType()) : QString(), false);
-            } else {
-                popup.addAction(i18n("Open With..."), this, &ViewerPrivate::slotAttachmentOpenWith);
-            }
+            actions.setItemListProperties(
+                KFileItemListProperties({KFileItem(QUrl::fromLocalFile(mNodeHelper->writeNodeToTempFile(content)), QLatin1StringView(ct->mimeType()))}));
+            actions.insertOpenWithActionsTo(nullptr, &popup, {});
             popup.addAction(i18nc("to view something", "View"), this, &ViewerPrivate::slotAttachmentView);
         }
     }

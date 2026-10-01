@@ -293,7 +293,6 @@ public:
 private:
     /** HTML initialization. */
     void initHtmlWidget();
-    void createOpenWithMenu(QMenu *topMenu, const QString &contentTypeStr, bool fromCurrentContent);
 
 public:
     void updatePalette();
