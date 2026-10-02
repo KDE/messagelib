@@ -70,7 +70,7 @@ using namespace Qt::Literals::StringLiterals;
 using namespace MessageComposer;
 using namespace MessageCore;
 
-class MessageComposer::AttachmentControllerBase::AttachmentControllerBasePrivate
+class MessageComposer::AttachmentControllerBasePrivate
 {
 public:
     explicit AttachmentControllerBasePrivate(AttachmentControllerBase *qq);
@@ -132,12 +132,12 @@ public:
     bool signEnabled = false;
 };
 
-AttachmentControllerBase::AttachmentControllerBasePrivate::AttachmentControllerBasePrivate(AttachmentControllerBase *qq)
+AttachmentControllerBasePrivate::AttachmentControllerBasePrivate(AttachmentControllerBase *qq)
     : q(qq)
 {
 }
 
-AttachmentControllerBase::AttachmentControllerBasePrivate::~AttachmentControllerBasePrivate() = default;
+AttachmentControllerBasePrivate::~AttachmentControllerBasePrivate() = default;
 
 void AttachmentControllerBase::setSelectedParts(const AttachmentPart::List &selectedParts)
 {
@@ -157,12 +157,12 @@ void AttachmentControllerBase::setSelectedParts(const AttachmentPart::List &sele
     d->propertiesContextAction->setEnabled(selectedCount == 1);
 }
 
-void AttachmentControllerBase::AttachmentControllerBasePrivate::attachmentRemoved(const AttachmentPart::Ptr &part)
+void AttachmentControllerBasePrivate::attachmentRemoved(const AttachmentPart::Ptr &part)
 {
     uncompressedParts.remove(part);
 }
 
-void AttachmentControllerBase::AttachmentControllerBasePrivate::compressJobResult(KJob *job)
+void AttachmentControllerBasePrivate::compressJobResult(KJob *job)
 {
     if (job->error()) {
         KMessageBox::error(wParent, job->errorString(), i18nc("@title:window", "Failed to compress attachment"));
@@ -196,7 +196,7 @@ void AttachmentControllerBase::AttachmentControllerBasePrivate::compressJobResul
     }
 }
 
-void AttachmentControllerBase::AttachmentControllerBasePrivate::loadJobResult(KJob *job)
+void AttachmentControllerBasePrivate::loadJobResult(KJob *job)
 {
     if (job->error()) {
         KMessageBox::error(wParent, job->errorString(), i18nc("@title:window", "Failed to attach file"));
@@ -209,7 +209,7 @@ void AttachmentControllerBase::AttachmentControllerBasePrivate::loadJobResult(KJ
     q->addAttachment(part);
 }
 
-void AttachmentControllerBase::AttachmentControllerBasePrivate::openSelectedAttachments()
+void AttachmentControllerBasePrivate::openSelectedAttachments()
 {
     Q_ASSERT(selectedParts.count() >= 1);
     for (const AttachmentPart::Ptr &part : std::as_const(selectedParts)) {
@@ -217,7 +217,7 @@ void AttachmentControllerBase::AttachmentControllerBasePrivate::openSelectedAtta
     }
 }
 
-void AttachmentControllerBase::AttachmentControllerBasePrivate::viewSelectedAttachments()
+void AttachmentControllerBasePrivate::viewSelectedAttachments()
 {
     Q_ASSERT(selectedParts.count() >= 1);
     for (const AttachmentPart::Ptr &part : std::as_const(selectedParts)) {
@@ -225,19 +225,19 @@ void AttachmentControllerBase::AttachmentControllerBasePrivate::viewSelectedAtta
     }
 }
 
-void AttachmentControllerBase::AttachmentControllerBasePrivate::editSelectedAttachment()
+void AttachmentControllerBasePrivate::editSelectedAttachment()
 {
     Q_ASSERT(selectedParts.count() == 1);
     q->editAttachment(selectedParts.constFirst(), MessageComposer::EditorWatcher::NoOpenWithDialog);
 }
 
-void AttachmentControllerBase::AttachmentControllerBasePrivate::editSelectedAttachmentWith()
+void AttachmentControllerBasePrivate::editSelectedAttachmentWith()
 {
     Q_ASSERT(selectedParts.count() == 1);
     q->editAttachment(selectedParts.constFirst(), MessageComposer::EditorWatcher::OpenWithDialog);
 }
 
-void AttachmentControllerBase::AttachmentControllerBasePrivate::removeSelectedAttachments()
+void AttachmentControllerBasePrivate::removeSelectedAttachments()
 {
     Q_ASSERT(selectedParts.count() >= 1);
     // We must store list, otherwise when we remove it changes selectedParts (as selection changed) => it will crash.
@@ -251,29 +251,29 @@ void AttachmentControllerBase::AttachmentControllerBasePrivate::removeSelectedAt
     }
 }
 
-void AttachmentControllerBase::AttachmentControllerBasePrivate::saveSelectedAttachmentAs()
+void AttachmentControllerBasePrivate::saveSelectedAttachmentAs()
 {
     Q_ASSERT(selectedParts.count() == 1);
     q->saveAttachmentAs(selectedParts.constFirst());
 }
 
-void AttachmentControllerBase::AttachmentControllerBasePrivate::selectedAttachmentProperties()
+void AttachmentControllerBasePrivate::selectedAttachmentProperties()
 {
     Q_ASSERT(selectedParts.count() == 1);
     q->attachmentProperties(selectedParts.constFirst());
 }
 
-void AttachmentControllerBase::AttachmentControllerBasePrivate::reloadAttachment()
+void AttachmentControllerBasePrivate::reloadAttachment()
 {
     Q_ASSERT(selectedParts.count() == 1);
     auto ajob = new AttachmentUpdateJob(selectedParts.constFirst(), q);
-    connect(ajob, &AttachmentUpdateJob::result, q, [this](KJob *job) {
+    QObject::connect(ajob, &AttachmentUpdateJob::result, q, [this](KJob *job) {
         updateJobResult(job);
     });
     ajob->start();
 }
 
-void AttachmentControllerBase::AttachmentControllerBasePrivate::updateJobResult(KJob *job)
+void AttachmentControllerBasePrivate::updateJobResult(KJob *job)
 {
     if (job->error()) {
         KMessageBox::error(wParent, job->errorString(), i18nc("@title:window", "Failed to reload attachment"));
@@ -292,7 +292,7 @@ void AttachmentControllerBase::AttachmentControllerBasePrivate::updateJobResult(
     }
 }
 
-void AttachmentControllerBase::AttachmentControllerBasePrivate::editDone(MessageComposer::EditorWatcher *watcher)
+void AttachmentControllerBasePrivate::editDone(MessageComposer::EditorWatcher *watcher)
 {
     AttachmentPart::Ptr part = editorPart.take(watcher);
     Q_ASSERT(part);
@@ -313,14 +313,14 @@ void AttachmentControllerBase::AttachmentControllerBasePrivate::editDone(Message
     // The watcher deletes itself.
 }
 
-void AttachmentControllerBase::AttachmentControllerBasePrivate::createOpenWithMenu(QMenu *topMenu, const AttachmentPart::Ptr &part)
+void AttachmentControllerBasePrivate::createOpenWithMenu(QMenu *topMenu, const AttachmentPart::Ptr &part)
 {
     const QString contentTypeStr = QString::fromLatin1(part->mimeType());
     const KService::List offers = KFileItemActions::associatedApplications(QStringList() << contentTypeStr);
     if (!offers.isEmpty()) {
         QMenu *menu = topMenu;
         auto actionGroup = new QActionGroup(menu);
-        connect(actionGroup, &QActionGroup::triggered, q, &AttachmentControllerBase::slotOpenWithAction);
+        QObject::connect(actionGroup, &QActionGroup::triggered, q, &AttachmentControllerBase::slotOpenWithAction);
 
         if (offers.count() > 1) { // submenu 'open with'
             menu = new QMenu(i18nc("@title:menu", "&Open With"), topMenu);
@@ -373,7 +373,7 @@ void AttachmentControllerBase::exportPublicKey(const QString &fingerprint)
     ajob->start();
 }
 
-void AttachmentControllerBase::AttachmentControllerBasePrivate::attachPublicKeyJobResult(KJob *job)
+void AttachmentControllerBasePrivate::attachPublicKeyJobResult(KJob *job)
 {
     // The only reason we can't use loadJobResult() and need a separate method
     // is that we want to show the proper caption ("public key" instead of "file")...
@@ -389,7 +389,7 @@ void AttachmentControllerBase::AttachmentControllerBasePrivate::attachPublicKeyJ
     q->addAttachment(part);
 }
 
-void AttachmentControllerBase::AttachmentControllerBasePrivate::attachVcardFromAddressBook(KJob *job)
+void AttachmentControllerBasePrivate::attachVcardFromAddressBook(KJob *job)
 {
     if (job->error()) {
         qCDebug(MESSAGECOMPOSER_LOG) << " Error during when get vCard";
@@ -402,7 +402,7 @@ void AttachmentControllerBase::AttachmentControllerBasePrivate::attachVcardFromA
     q->addAttachment(part);
 }
 
-void AttachmentControllerBase::AttachmentControllerBasePrivate::attachClipBoardElement(KJob *job)
+void AttachmentControllerBasePrivate::attachClipBoardElement(KJob *job)
 {
     if (job->error()) {
         qCDebug(MESSAGECOMPOSER_LOG) << " Error during when get try to attach text from clipboard";
@@ -738,7 +738,7 @@ void AttachmentControllerBase::viewAttachment(const AttachmentPart::Ptr &part)
     attachmentJob->start();
 }
 
-void AttachmentControllerBase::AttachmentControllerBasePrivate::slotAttachmentContentCreated(KJob *job)
+void AttachmentControllerBasePrivate::slotAttachmentContentCreated(KJob *job)
 {
     if (!job->error()) {
         MessageComposer::AttachmentJob *attachmentJob = qobject_cast<MessageComposer::AttachmentJob *>(job);

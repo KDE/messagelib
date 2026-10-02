@@ -26,6 +26,8 @@ class QUrl;
 namespace MessageComposer
 {
 class AttachmentModel;
+class AttachmentControllerBasePrivate;
+
 /*!
  * \class MessageComposer::AttachmentControllerBase
  * \inmodule MessageComposer
@@ -126,7 +128,7 @@ private:
     MESSAGECOMPOSER_NO_EXPORT void slotOpenWithAction(QAction *act);
 
 private:
-    class AttachmentControllerBasePrivate;
+    friend class AttachmentControllerBasePrivate;
     std::unique_ptr<AttachmentControllerBasePrivate> const d;
 };
 } //
