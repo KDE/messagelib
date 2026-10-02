@@ -229,6 +229,7 @@ void TemplateParserJob::processWithTemplate(const QString &tmpl)
     if (!mp) {
         qCWarning(TEMPLATEPARSER_LOG) << "Invalid message! mp is null ";
         Q_EMIT parsingFailed();
+        deleteLater();
         return;
     }
 
