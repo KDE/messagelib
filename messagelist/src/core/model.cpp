@@ -4270,7 +4270,7 @@ void ModelPrivate::slotStorageModelRowsRemoved(const QModelIndex &parent, int fr
 
     int jobCount = mViewItemJobs.count();
 
-    if (mRootItem && from == 0 && count == mRootItem->childItemCount() && jobCount == 0) {
+    if (mRootItem && jobCount == 0 && mRootItem->childItemCount() == 1 && mRootItem->childItem(0)->childItemCount() == 1) {
         clear();
         return;
     }
