@@ -1,6 +1,6 @@
 # Translation of kmail.po to Finnish
 # KDE Finnish translation sprint participants:
-# SPDX-FileCopyrightText: 2009, 2010, 2011, 2012, 2013, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Tommi Nieminen <translator@legisign.org>
+# SPDX-FileCopyrightText: 2009, 2010, 2011, 2012, 2013, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026 Tommi Nieminen <translator@legisign.org>
 # Teemu Rytilahti <teemu.rytilahti@d5k.net>, 2003.
 # Eero Häkkinen <eero.hakkinen@iki.fi>, 2003.
 # Kim Enkovaara <kim.enkovaara@iki.fi>, 2003, 2005, 2006.
@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-29 00:46+0000\n"
-"PO-Revision-Date: 2025-05-31 10:35+0300\n"
+"PO-Revision-Date: 2026-08-25 10:37+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -25,7 +25,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
@@ -1660,7 +1660,7 @@ msgstr "Virhe liitettä tallennettaessa"
 #, kde-format, kde-kuit-format
 msgctxt "1 = error string"
 msgid "Could not create temporary file: <message>%1</message>"
-msgstr ""
+msgstr "Väliaikaistiedostoa ei voitu luoda: <message>%1</message>"
 
 #: utils/messageviewerutil.cpp:409 utils/messageviewerutil.cpp:427
 #, kde-format
@@ -1713,10 +1713,9 @@ msgid "File %1 could not be created."
 msgstr "Tiedostoa %1 ei voitu luoda."
 
 #: utils/messageviewerutil.cpp:523
-#, fuzzy, kde-format
-#| msgid "We cannot save message."
+#, kde-format
 msgid "We cannot append message to mbox."
-msgstr "VIestiä ei voi tallentaa."
+msgstr "VIestiä ei voi lisätä mboxiin."
 
 #: utils/messageviewerutil.cpp:523 utils/messageviewerutil.cpp:530
 #, kde-format

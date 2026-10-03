@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-29 00:46+0000\n"
-"PO-Revision-Date: 2026-01-12 14:31+0200\n"
+"PO-Revision-Date: 2026-08-25 10:37+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -1147,6 +1147,8 @@ msgstr ""
 msgid ""
 "Failed to store a new reminder: the follow-up reminder agent is not running."
 msgstr ""
+"Uuden muistutuksen tallettaminen epäonnistui: muistutusten seuranta-agentti "
+"ei ole käynnissä."
 
 #: followupreminder/followupremindercreatejob.cpp:136
 #, kde-format
