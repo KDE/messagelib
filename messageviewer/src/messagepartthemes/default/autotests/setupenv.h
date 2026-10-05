@@ -8,13 +8,14 @@
 #pragma once
 
 #include <MimeTreeParser/BodyPartFormatterFactory>
-using namespace Qt::Literals::StringLiterals;
 
 #include <MimeTreeParser/ObjectTreeSource>
 #include <gpgme++/key.h>
 
 #include <MessageViewer/AttachmentStrategy>
 #include <MessageViewer/ObjectTreeEmptySource>
+
+using namespace Qt::Literals::StringLiterals;
 
 namespace MessageViewer
 {

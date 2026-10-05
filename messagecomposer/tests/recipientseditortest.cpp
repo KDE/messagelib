@@ -7,7 +7,6 @@
 */
 
 #include "recipientseditortest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <MessageComposer/RecipientsEditor>
 
@@ -23,6 +22,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QPushButton>
 #include <QTextEdit>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageComposer;
 
 Composer::Composer(QWidget *parent)

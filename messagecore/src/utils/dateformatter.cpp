@@ -13,10 +13,10 @@
 */
 
 #include "dateformatter.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <KLocalizedString>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageCore;
 
 namespace MessageCore

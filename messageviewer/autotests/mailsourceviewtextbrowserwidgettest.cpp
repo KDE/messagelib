@@ -7,8 +7,6 @@
 #include "mailsourceviewtextbrowserwidgettest.h"
 #include "config-messageviewer.h"
 
-using namespace Qt::Literals::StringLiterals;
-
 #include "../src/findbar/findbarsourceview.h"
 #include "../src/widgets/mailsourceviewtextbrowserwidget.h"
 #if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
@@ -16,6 +14,8 @@ using namespace Qt::Literals::StringLiterals;
 #endif
 #include <QStandardPaths>
 #include <QTest>
+
+using namespace Qt::Literals::StringLiterals;
 
 MailSourceViewTextBrowserWidgetTest::MailSourceViewTextBrowserWidgetTest(QObject *parent)
     : QObject(parent)

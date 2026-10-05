@@ -8,7 +8,6 @@
 #pragma once
 
 #include "MessageComposer/Recipient"
-using namespace Qt::Literals::StringLiterals;
 
 #include "messagecomposer/messagesender.h"
 #include "messagecomposer_export.h"
@@ -20,6 +19,8 @@ using namespace Qt::Literals::StringLiterals;
 #include <QList>
 #include <QObject>
 #include <QUrl>
+
+using namespace Qt::Literals::StringLiterals;
 
 class QTimer;
 class KJob;

@@ -5,7 +5,6 @@
 */
 
 #include "testwebengineaccesskey.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../mailwebengineview.h"
 
@@ -17,6 +16,8 @@ using namespace Qt::Literals::StringLiterals;
 
 #include <QLabel>
 #include <QPushButton>
+
+using namespace Qt::Literals::StringLiterals;
 
 TestWidget::TestWidget(QWidget *parent)
     : QWidget(parent)

@@ -5,10 +5,12 @@
 */
 
 #include "dmarcrecordjobtest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "dkim-verify/dmarcrecordjob.h"
 #include <QTest>
+
+using namespace Qt::Literals::StringLiterals;
+
 QTEST_GUILESS_MAIN(DMARCRecordJobTest)
 
 DMARCRecordJobTest::DMARCRecordJobTest(QObject *parent)

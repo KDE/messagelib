@@ -7,7 +7,6 @@
  *******************************************************************************/
 
 #include "core/themedelegate.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "core/groupheaderitem.h"
 #include "core/messageitem.h"
@@ -26,6 +25,7 @@ using namespace Qt::Literals::StringLiterals;
 #include <QPixmap>
 #include <QStyle>
 
+using namespace Qt::Literals::StringLiterals;
 using namespace MessageList::Core;
 
 static const int gGroupHeaderOuterVerticalMargin = 1;

@@ -5,10 +5,11 @@
 */
 
 #include "webengineembedparttest.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "../webengineembedpart.h"
 #include <QTest>
+
+using namespace Qt::Literals::StringLiterals;
 
 WebEngineEmbedPartTest::WebEngineEmbedPartTest(QObject *parent)
     : QObject(parent)

@@ -7,12 +7,13 @@
 #pragma once
 
 #include "interfaces/htmlwriter.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include <MessageViewer/CSSHelper>
 #include <MessageViewer/CSSHelperBase>
 
 #include <KMime/Message>
+
+using namespace Qt::Literals::StringLiterals;
 
 namespace MessageViewer
 {

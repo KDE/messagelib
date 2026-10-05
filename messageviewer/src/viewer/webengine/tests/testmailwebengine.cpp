@@ -5,7 +5,6 @@
 */
 
 #include "testmailwebengine.h"
-using namespace Qt::Literals::StringLiterals;
 
 #include "viewer/printmessage.h"
 #include "webenginescript.h"
@@ -20,6 +19,8 @@ using namespace Qt::Literals::StringLiterals;
 
 #include <MessageViewer/MailWebEngineView>
 #include <WebEngineViewer/WebEngineManageScript>
+
+using namespace Qt::Literals::StringLiterals;
 
 TestMailWebEngine::TestMailWebEngine(QWidget *parent)
     : QWidget(parent)
