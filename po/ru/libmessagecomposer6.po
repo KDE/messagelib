@@ -67,20 +67,20 @@ msgstr "Ошибка повторной загрузки вложения"
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
-msgstr "&Открыть в..."
+msgstr "&Открыть в"
 
 #: attachment/attachmentcontrollerbase.cpp:342
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
-msgstr "&Другое..."
+msgstr "&Другое…"
 
 #: attachment/attachmentcontrollerbase.cpp:344
 #: attachment/attachmentcontrollerbase.cpp:352
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
-msgstr "&Открыть в..."
+msgstr "&Открыть в…"
 
 #: attachment/attachmentcontrollerbase.cpp:378
 #, kde-format
@@ -123,17 +123,17 @@ msgstr "Вложить"
 #: attachment/attachmentcontrollerbase.cpp:463
 #, kde-format
 msgid "&Attach File..."
-msgstr "Вло&жить файл..."
+msgstr "Вло&жить файл…"
 
 #: attachment/attachmentcontrollerbase.cpp:465
 #, kde-format
 msgid "Add Attachment..."
-msgstr "Добавить вложение..."
+msgstr "Добавить вложение…"
 
 #: attachment/attachmentcontrollerbase.cpp:469
 #, kde-format
 msgid "&Attach Directory..."
-msgstr "Вложить &папку..."
+msgstr "Вложить &папку…"
 
 #: attachment/attachmentcontrollerbase.cpp:473
 #, kde-format
@@ -149,12 +149,12 @@ msgstr "Вложить мою визитку"
 #: attachment/attachmentcontrollerbase.cpp:478
 #, kde-format
 msgid "&Attach vCards..."
-msgstr "Влож&ить электронные визитки..."
+msgstr "Влож&ить электронные визитки…"
 
 #: attachment/attachmentcontrollerbase.cpp:482
 #, kde-format
 msgid "&Attach Text From Clipboard..."
-msgstr "Вложить текст из бу&фера обмена..."
+msgstr "Вложить текст из бу&фера обмена…"
 
 #: attachment/attachmentcontrollerbase.cpp:483
 #, kde-format
@@ -198,12 +198,12 @@ msgstr "Редактировать в…"
 #: attachment/attachmentcontrollerbase.cpp:524
 #, kde-format
 msgid "&Save Attachment As..."
-msgstr "Сохранить в&ложение как..."
+msgstr "Сохранить в&ложение как…"
 
 #: attachment/attachmentcontrollerbase.cpp:525
 #, kde-format
 msgid "Save As..."
-msgstr "Сохранить как..."
+msgstr "Сохранить как…"
 
 #: attachment/attachmentcontrollerbase.cpp:533
 #, kde-format
@@ -504,7 +504,7 @@ msgstr "Срок действия сертификата S/MIME истекает
 #: composer/composerviewbase.cpp:849
 #, kde-format
 msgid "Failed to resolve keys. Please report a bug."
-msgstr "Не удалось разобрать ключи. Сообщите об ошибке разработчикам."
+msgstr "Не удалось определить ключи. Сообщите об ошибке разработчикам."
 
 #: composer/composerviewbase.cpp:1058 composer/composerviewbase.cpp:1334
 #, kde-format
@@ -1025,7 +1025,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Missing Key Warning"
-msgstr "Предупреждение о потере ключа"
+msgstr "Предупреждение об отсутствии ключа"
 
 #: composer/keyresolver.cpp:1335
 #, kde-format
@@ -1042,7 +1042,7 @@ msgid ""
 "You did not select an encryption key for any of the recipients of this "
 "message; therefore, the message will not be encrypted."
 msgstr ""
-"Не выбран ключ шифрования для одного из получателей этого письма, поэтому "
+"Не выбран ключ шифрования ни для одного из получателей этого письма, поэтому "
 "оно не будет зашифровано."
 
 #: composer/keyresolver.cpp:1352
@@ -1123,7 +1123,7 @@ msgstr "Выбор имени"
 #: contactpreference/savecontactpreferencejob.cpp:72
 #, kde-format
 msgid "Which name shall the contact '%1' have in your address book?"
-msgstr "Имя контакта «%1» в адресной книге."
+msgstr "Под каким именем сохранить контакт «%1» в адресной книге?"
 
 #: contactpreference/savecontactpreferencejob.cpp:84
 #, kde-format
@@ -1143,8 +1143,8 @@ msgid ""
 "Failed to store a new reminder: an error occurred while trying to create a "
 "new to-do in your calendar: %1"
 msgstr ""
-"Не удалось сохранить напоминание: при создании задачи в календаре «%1» "
-"произошла ошибка"
+"Не удалось сохранить напоминание: при создании задачи в календаре произошла "
+"ошибка: %1"
 
 #: followupreminder/followupremindercreatejob.cpp:133
 #, kde-format
@@ -1329,7 +1329,7 @@ msgstr " пикс."
 #: imagescaling/ui/imagescalingwidget.ui:163
 #, kde-format
 msgid "Enlarge image to minimum dimension"
-msgstr "Увеличить изображение до заданного размера:"
+msgstr "Увеличить изображение до заданного размера"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: imagescaling/ui/imagescalingwidget.ui:174
@@ -1395,7 +1395,7 @@ msgstr "Шаблон:"
 #: imagescaling/ui/imagescalingwidget.ui:308
 #, kde-format
 msgid "This line allows to define several pattern. Separate them with ';'."
-msgstr "В этой строке возможно задать список шаблонов через «;»."
+msgstr "В этой строке можно задать список шаблонов через «;»."
 
 #. i18n: ectx: property (placeholderText), widget (QLineEdit, pattern)
 #. i18n: ectx: property (placeholderText), widget (QLineEdit, resizeEmailsPattern)
@@ -1503,7 +1503,7 @@ msgstr "<p>При попытке экспорта ключа произошла 
 #: job/attachmentfrompublickeyjob.cpp:107
 #, kde-format
 msgid "Exporting key..."
-msgstr "Экспорт ключа..."
+msgstr "Экспорт ключа…"
 
 #: job/attachmentvcardfromaddressbookjob.cpp:77
 #, kde-format
@@ -1558,13 +1558,13 @@ msgstr "Не удалось получить текстовый кодек дл�
 #: job/singlepartjob.cpp:66
 #, kde-format
 msgid "%1 Content-Transfer-Encoding cannot correctly encode this message."
-msgstr "%1 не удалось правильно расшифровать это письмо."
+msgstr "Кодировка передачи %1 не позволяет правильно закодировать это письмо."
 
 #: mdn/mdnadvicedialog.cpp:21
 #, kde-format
 msgctxt "@title:window"
 msgid "Message Disposition Notification Request"
-msgstr "Запрос уведомления о доставке письма"
+msgstr "Запрос уведомления об обработке письма"
 
 #: mdn/mdnadvicedialog.cpp:30
 #, kde-format
@@ -1644,7 +1644,7 @@ msgid ""
 msgstr ""
 "Это письмо содержит запрос на уведомление о получении сообщения,\n"
 "но обратный адрес отличается от адреса, на который запрашивается "
-"уведомление,\n"
+"уведомление.\n"
 "Можно проигнорировать этот запрос или позволить\n"
 "KMail отправить отказ или нормальный ответ."
 
@@ -1652,7 +1652,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Distribution List"
-msgstr "Сохранение списка получателей"
+msgstr "Сохранение списка распространения"
 
 #: recipient/distributionlistdialog.cpp:107
 #, kde-format
@@ -1670,7 +1670,7 @@ msgstr "&Название:"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Name of Distribution List"
-msgstr "Название списка получателей"
+msgstr "Название списка распространения"
 
 #: recipient/distributionlistdialog.cpp:132
 #, kde-format
@@ -1697,7 +1697,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:window"
 msgid "New Distribution List"
-msgstr "Создание списка получателей"
+msgstr "Создание списка распространения"
 
 #: recipient/distributionlistdialog.cpp:252
 #, kde-format
@@ -1712,8 +1712,8 @@ msgid ""
 "<para>Distribution list with the given name <resource>%1</resource> already "
 "exists. Please select a different name.</para>"
 msgstr ""
-"<para>Список получателей с названием <resource>%1</resource> уже существует. "
-"Выберите другое название.</para>"
+"<para>Список распространения с названием <resource>%1</resource> уже "
+"существует. Выберите другое название.</para>"
 
 #: recipient/distributionlistdialog.cpp:285
 #, kde-format
@@ -1788,13 +1788,13 @@ msgstr[3] "Усечение списка получателей до %2 из %1 
 #, kde-format
 msgctxt "@action:button"
 msgid "Save List..."
-msgstr "Сохранить список..."
+msgstr "Сохранить список…"
 
 #: recipient/recipientseditorsidewidget.cpp:30
 #, kde-format
 msgctxt "@action:button Open recipient selection dialog."
 msgid "Se&lect..."
-msgstr "&Выбрать..."
+msgstr "&Выбрать…"
 
 #: recipient/recipientseditorsidewidget.cpp:47
 #, kde-format
@@ -1884,10 +1884,10 @@ msgstr "Добавить &скрытую копию"
 #, kde-format
 msgid "%1 selected email"
 msgid_plural "%1 selected emails"
-msgstr[0] "%1 выбранное сообщение"
-msgstr[1] "%1 выбранных сообщения"
-msgstr[2] "%1 выбранных сообщений"
-msgstr[3] "%1 выбранное сообщение"
+msgstr[0] "%1 выбранный адрес"
+msgstr[1] "%1 выбранных адреса"
+msgstr[2] "%1 выбранных адресов"
+msgstr[3] "%1 выбранный адрес"
 
 #: recipient/recipientspicker.cpp:175
 #, kde-format
@@ -1907,7 +1907,7 @@ msgstr[1] ""
 "%2.\n"
 "Выберите ещё раз."
 msgstr[2] ""
-"Выбраны %1 получателей. Максимальное поддерживаемое количество получателей — "
+"Выбрано %1 получателей. Максимальное поддерживаемое количество получателей — "
 "%2.\n"
 "Выберите ещё раз."
 msgstr[3] ""
@@ -2109,7 +2109,7 @@ msgid ""
 "The minimum number of days that the encryption certificate should be valid "
 "before issuing a warning"
 msgstr ""
-"Минимальное количество дней работы сертификата шифрования перед появлением "
+"Минимальное количество дней действия сертификата шифрования перед появлением "
 "предупреждения"
 
 #. i18n: ectx: label, entry (CryptoWarnEncrChaincertNearExpiryThresholdDays), group (Composer)
@@ -2119,8 +2119,8 @@ msgid ""
 "The minimum number of days that all certificates in the chain should be "
 "valid before issuing a warning"
 msgstr ""
-"Минимальное количество дней работы всех сертификатов перед появлением "
-"предупреждения"
+"Минимальное количество дней действия всех сертификатов в цепочке перед "
+"появлением предупреждения"
 
 #. i18n: ectx: label, entry (CryptoWarnEncrRootNearExpiryThresholdDays), group (Composer)
 #: settings/messagecomposer.kcfg:86
@@ -2129,7 +2129,7 @@ msgid ""
 "The minimum number of days that the root certificate should be valid before "
 "issuing a warning"
 msgstr ""
-"Минимальное количество дней работы корневого сертификата перед появлением "
+"Минимальное количество дней действия корневого сертификата перед появлением "
 "предупреждения"
 
 #. i18n: ectx: label, entry (CryptoShowKeysForApproval), group (Composer)
@@ -2428,7 +2428,7 @@ msgstr "Диспетчер писем работает в автономном �
 #, kde-format
 msgctxt "@action:button"
 msgid "Set Online"
-msgstr "Запустить"
+msgstr "Подключиться к сети"
 
 # BUGME: "компоновщик" -- неправильный перевод, нужно исправить --aspotashev
 #~ msgid ""

@@ -53,7 +53,7 @@ msgid "1 new certificate was imported."
 msgid_plural "%1 new certificates were imported."
 msgstr[0] "%1 сертификат импортирован."
 msgstr[1] "%1 сертификата импортированы."
-msgstr[2] "%1 сертификатов импортированы."
+msgstr[2] "%1 сертификатов импортировано."
 msgstr[3] "Один сертификат импортирован."
 
 #: messagepartthemes/default/templates/certmessagepart.html:16
@@ -62,7 +62,7 @@ msgid "1 certificate was unchanged."
 msgid_plural "%1 certificates were unchanged."
 msgstr[0] "%1 сертификат не был изменён."
 msgstr[1] "%1 сертификата не были изменены."
-msgstr[2] "%1 сертификатов не были изменены."
+msgstr[2] "%1 сертификатов не было изменено."
 msgstr[3] "Один сертификат не был изменён."
 
 #: messagepartthemes/default/templates/certmessagepart.html:19
@@ -71,7 +71,7 @@ msgid "1 new secret key was imported."
 msgid_plural "%1 new secret keys were imported."
 msgstr[0] "%1 закрытый ключ импортирован."
 msgstr[1] "%1 закрытых ключа импортированы."
-msgstr[2] "%1 закрытых ключей импортированы."
+msgstr[2] "%1 закрытых ключей импортировано."
 msgstr[3] "Один закрытый ключ импортирован."
 
 #: messagepartthemes/default/templates/certmessagepart.html:22
@@ -80,12 +80,12 @@ msgid "1 secret key was unchanged."
 msgid_plural "%1 secret keys were unchanged."
 msgstr[0] "%1 закрытый ключ не был изменён."
 msgstr[1] "%1 закрытых ключа не были изменены."
-msgstr[2] "%1 закрытых ключей не были изменены."
+msgstr[2] "%1 закрытых ключей не было изменено."
 msgstr[3] "Один закрытый ключ не был изменён."
 
 #: messagepartthemes/default/templates/certmessagepart.html:28
 msgid "Sorry, no details on certificate import available."
-msgstr "Подробности о процессе импорта сертификатов не доступны."
+msgstr "Подробности о процессе импорта сертификатов недоступны."
 
 #: messagepartthemes/default/templates/certmessagepart.html:30
 msgid "Certificate import details:"
@@ -116,7 +116,7 @@ msgstr "Расшифровать письмо"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:14
 msgid "Please wait while the message is being decrypted..."
-msgstr "Дождитесь окончания расшифровки письма..."
+msgstr "Дождитесь окончания расшифровки письма…"
 
 #: messagepartthemes/default/templates/encryptedmessagepart.html:18
 msgid "The message is encrypted for the following keys:"
@@ -183,7 +183,7 @@ msgid ""
 "clicking here</a>."
 msgstr ""
 "<b>Примечание:</b> это письмо в формате HTML. По соображениям безопасности "
-"код письма отображается в текстовом виде. Чтобы включить показ HTML для "
+"код письма показывается в текстовом виде. Чтобы включить показ HTML для "
 "отправителя этого письма, нажмите <a href='kmail:showHTML'>здесь</a>."
 
 #: messagepartthemes/default/templates/htmlmessagepart.html:12
@@ -200,7 +200,7 @@ msgstr ""
 
 #: messagepartthemes/default/templates/signedmessagepart.html:5
 msgid "Please wait while the signature is being verified..."
-msgstr "Дождитесь окончания проверки подписи письма..."
+msgstr "Дождитесь окончания проверки подписи письма…"
 
 #: messagepartthemes/default/templates/signedmessagepart.html:17
 msgid "End of signed message"
@@ -211,7 +211,7 @@ msgstr "Конец подписанного письма"
 msgid ""
 "Stored DKIM key is different from the current one. Do you want to store this "
 "one too?"
-msgstr "Текущий ключ DKIM отличается от сохранённого. Сохранить текущий ключ?"
+msgstr "Текущий ключ DKIM отличается от сохранённого. Сохранить и этот ключ?"
 
 #: dkim-verify/dkimcheckfulljob.cpp:119
 #, kde-format
@@ -244,12 +244,12 @@ msgstr "SDID"
 #: dkim-verify/dkimmanagerkeymodel.cpp:87
 #, kde-format
 msgid "Inserted"
-msgstr "Вставленное"
+msgstr "Добавлено"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:89
 #, kde-format
 msgid "Last Used"
-msgstr "Последнее использованное"
+msgstr "Последнее использование"
 
 #: dkim-verify/dkimmanagerkeytreeview.cpp:73
 #, kde-format
@@ -309,7 +309,7 @@ msgstr "Поиск…"
 #: dkim-verify/dkimmanagerulescombobox.cpp:20
 #, kde-format
 msgid "Must be signed"
-msgstr "Должно было быть подписано"
+msgstr "Должно быть подписано"
 
 #: dkim-verify/dkimmanagerulescombobox.cpp:21
 #, kde-format
@@ -404,13 +404,13 @@ msgstr "Приоритет"
 #: remote-content/remotecontentconfigurewidget.cpp:82
 #, kde-format
 msgid "Add..."
-msgstr "Добавить..."
+msgstr "Добавить…"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:203
 #: remote-content/remotecontentconfigurewidget.cpp:85
 #, kde-format
 msgid "Modify..."
-msgstr "Изменить..."
+msgstr "Изменить…"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:207
 #, kde-format
@@ -518,7 +518,7 @@ msgstr "Обновить ключ DKIM"
 #: dkim-verify/dkimviewermenu.cpp:43
 #, kde-format
 msgid "Rules..."
-msgstr "Правила..."
+msgstr "Правила…"
 
 #: dkim-verify/dkimwidgetinfo.cpp:96
 #, kde-format
@@ -583,7 +583,7 @@ msgstr "Неверная канонизация тела письма"
 #: dkim-verify/dkimwidgetinfo.cpp:154
 #, kde-format
 msgid "Unknown Body Hash Algorithm."
-msgstr "Неизвестный алгоритм подсчёта контрольный суммы тела письма"
+msgstr "Неизвестный алгоритм подсчёта контрольной суммы тела письма"
 
 #: dkim-verify/dkimwidgetinfo.cpp:157
 #, kde-format
@@ -603,7 +603,7 @@ msgstr "Слишком длинная подпись"
 #: dkim-verify/dkimwidgetinfo.cpp:166
 #, kde-format
 msgid "Hash Algorithm is unsupported."
-msgstr "Неподдерживаемый алгоритм подсчёта контрольный суммы тела письма"
+msgstr "Неподдерживаемый алгоритм подсчёта контрольной суммы тела письма"
 
 #: dkim-verify/dkimwidgetinfo.cpp:169
 #, kde-format
@@ -715,7 +715,7 @@ msgstr "Кому:"
 #: header/grantleeheaderformatter.cpp:264
 #, kde-format
 msgid "Reply To:"
-msgstr "Обратный адрес"
+msgstr "Обратный адрес:"
 
 #: header/grantleeheaderformatter.cpp:266
 #, kde-format
@@ -745,7 +745,7 @@ msgstr "получатель пересылки:"
 #: header/grantleeheaderformatter.cpp:356
 #, kde-format
 msgid "Grantlee theme \"%1\" is not valid."
-msgstr "Тема Grantlee «%1» не годится."
+msgstr "Тема Grantlee «%1» недействительна."
 
 #: header/grantleeheaderformatter.cpp:446 header/headerstyle_util.cpp:82
 #: header/headerstyle_util.cpp:87 header/headerstyle_util.cpp:98
@@ -859,12 +859,12 @@ msgstr ""
 #, kde-format
 msgctxt "View->"
 msgid "&Headers"
-msgstr "&Заголовок"
+msgstr "&Заголовки"
 
 #: header/headerstylemenumanager.cpp:109
 #, kde-format
 msgid "Choose display style of message headers"
-msgstr "Выберите формат отображения заголовка"
+msgstr "Выберите формат показа заголовков"
 
 #: header/plainheaderstyle.cpp:104
 #, kde-format
@@ -900,7 +900,7 @@ msgstr "Скрытая копия: "
 #: header/plainheaderstyle.cpp:141
 #, kde-format
 msgid "Reply to: "
-msgstr "Обратный адрес:"
+msgstr "Обратный адрес: "
 
 #: mdn/mdnwarningwidget.cpp:14
 #, kde-format
@@ -957,7 +957,7 @@ msgstr "Запись уже определяет этот адрес. Измен
 #, kde-format
 msgctxt "@title:window"
 msgid "Add new Url"
-msgstr "Добавление нового URL-адрес"
+msgstr "Добавление нового URL-адреса"
 
 #: remote-content/remotecontentmenu.cpp:19
 #, kde-format
@@ -972,22 +972,22 @@ msgstr "Удалённое содержимое"
 #: remote-content/remotecontentmenu.cpp:52
 #, kde-format
 msgid "Authorize %1"
-msgstr "Авторизовать %1"
+msgstr "Разрешить %1"
 
 #: remote-content/remotecontentmenu.cpp:60
 #, kde-format
 msgid "Authorize all Urls"
-msgstr "Авторизовать все URL-адреса"
+msgstr "Разрешить все URL-адреса"
 
 #: remote-content/remotecontentstatustypecombobox.cpp:12
 #, kde-format
 msgid "Authorized"
-msgstr "Авторизован"
+msgstr "Разрешено"
 
 #: remote-content/remotecontentstatustypecombobox.cpp:13
 #, kde-format
 msgid "Blocked"
-msgstr "Блокирован"
+msgstr "Заблокировано"
 
 #: remote-content/remotecontentwidget.cpp:28
 #, kde-format
@@ -1005,8 +1005,8 @@ msgstr "Сведения"
 #, kde-format
 msgid "This message may be a scam. <a href=\"scamdetails\">(Details...)</a>"
 msgstr ""
-"Это сообщение может быть вредоносным. <a href=\"scamdetails"
-"\">(Подробнее...)</a>"
+"Это сообщение может быть вредоносным. <a href=\"scamdetails\">(Подробнее…)</"
+"a>"
 
 #: scamdetection/scamdetectionwarningwidget.cpp:41
 #, kde-format
@@ -1147,7 +1147,7 @@ msgstr "При печати всегда выводить сведения о п
 #: settings/messageviewer.kcfg:28
 #, kde-format
 msgid "When we render html do not use font size inferior to minimum size."
-msgstr "При отображении html ограничить минимальный размер шрифта заданным."
+msgstr "При показе HTML ограничить минимальный размер шрифта заданным."
 
 #. i18n: ectx: label, entry (BodyFont), group (Fonts)
 #: settings/messageviewer.kcfg:32
@@ -1171,7 +1171,7 @@ msgstr "Проверять фишинговые ссылки"
 #: settings/messageviewer.kcfg:48
 #, kde-format
 msgid "Close message window after replying or forwarding"
-msgstr "Закрывать окно редактора писем после ответа или пересылки письма"
+msgstr "Закрывать окно письма после ответа или пересылки письма"
 
 #. i18n: ectx: label, entry (ShowExpandQuotesMark), group (Reader)
 #: settings/messageviewer.kcfg:62
@@ -1237,13 +1237,13 @@ msgstr "Всегда"
 #: settings/messageviewer.kcfg:99 settings/messageviewer.kcfg:103
 #, kde-format
 msgid "What style of headers should be displayed"
-msgstr "Стиль отображения заголовков"
+msgstr "Стиль показа заголовков"
 
 #. i18n: ectx: label, entry (headerSetDisplayed), group (Reader)
 #: settings/messageviewer.kcfg:107
 #, kde-format
 msgid "How much of headers should be displayed"
-msgstr "Количество отображаемых заголовков"
+msgstr "Количество показываемых заголовков"
 
 #. i18n: ectx: label, entry (htmlMail), group (Reader)
 #: settings/messageviewer.kcfg:111
@@ -1261,7 +1261,7 @@ msgstr "Разрешить загрузку из Интернета внешни
 #: settings/messageviewer.kcfg:119
 #, kde-format
 msgid "How attachments are shown"
-msgstr "Режим отображения вложений"
+msgstr "Режим показа вложений"
 
 #. i18n: ectx: label, entry (RecycleQuoteColors), group (Reader)
 #: settings/messageviewer.kcfg:123
@@ -1297,14 +1297,14 @@ msgstr "Список разрешённых адресов подозрител�
 #: settings/messageviewer.kcfg:139
 #, kde-format
 msgid "Scan emails for tracking URLs"
-msgstr "Проверить письма на наличие отслеживающих URL"
+msgstr "Проверять письма на наличие отслеживающих URL"
 
 #. i18n: ectx: label, entry (notSendWhenEncrypted), group (MDN)
 #: settings/messageviewer.kcfg:145
 #, kde-format
 msgid "Do not send MDNs in response to encrypted messages"
 msgstr ""
-"Не посылать уведомления о доставке, запрашиваемые зашифрованными письмами"
+"Не посылать уведомления об обработке, запрашиваемые зашифрованными письмами"
 
 #. i18n: ectx: label, entry (LegacyMangleFromToHeaders), group (Invitations)
 #: settings/messageviewer.kcfg:165
@@ -1534,7 +1534,7 @@ msgstr "Всегда выводить сведения о подписи и ши
 #: ui/settings.ui:19
 #, kde-format
 msgid "Viewer settings"
-msgstr "Настройки просмотра"
+msgstr "Параметры просмотра"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: ui/settings.ui:47
@@ -1558,7 +1558,7 @@ msgstr "У&меньшить размер шрифта для цитируемо�
 #: ui/settings.ui:93
 #, kde-format
 msgid "Show &expand/collapse quote marks"
-msgstr "Значки для п&оказа и скрытия блоков цитирования"
+msgstr "П&оказывать значки сворачивания блоков цитирования"
 
 #. i18n: ectx: property (text), widget (QLabel, collapseQuoteLevelLabel)
 #: ui/settings.ui:121
@@ -1587,7 +1587,7 @@ msgstr "Замена файла"
 #: utils/messageviewerutil.cpp:159
 #, kde-format
 msgid "Save Attachments To"
-msgstr "Сохранить вложение в"
+msgstr "Сохранить вложения в"
 
 #: utils/messageviewerutil.cpp:176
 #, kde-format
@@ -1809,7 +1809,7 @@ msgstr "Работа в сети."
 #: viewer/urlhandlermanager.cpp:416
 #, kde-format
 msgid "Make account online."
-msgstr "Придать учётной записи сетевой статус"
+msgstr "Перевести учётную запись в сетевой режим."
 
 #: viewer/urlhandlermanager.cpp:418
 #, kde-format
@@ -1855,8 +1855,8 @@ msgstr "Скрыть весь цитируемый текст."
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""
-"Невозможно запустить менеджер сертификатов. Проверьте правильность установки "
-"программы."
+"Невозможно запустить диспетчер сертификатов. Проверьте правильность "
+"установки программы."
 
 #: viewer/urlhandlermanager.cpp:495
 #, kde-format
@@ -1916,7 +1916,7 @@ msgstr "Показать журнал аудита GnuPG для этой опе�
 #: viewer/urlhandlermanager.cpp:856
 #, kde-format
 msgid "Opening URL..."
-msgstr "Открытие ссылки..."
+msgstr "Открытие ссылки…"
 
 #: viewer/urlhandlermanager.cpp:865
 #, kde-kuit-format
@@ -1933,7 +1933,7 @@ msgstr "Выполнить"
 #: viewer/viewer.cpp:153
 #, kde-format
 msgid "Loading message..."
-msgstr "Загрузка письма..."
+msgstr "Загрузка письма…"
 
 #: viewer/viewer_p.cpp:352
 #, kde-format
@@ -1956,26 +1956,26 @@ msgid ""
 "Deleting an attachment from an encrypted or old-style mailman message is not "
 "supported."
 msgstr ""
-"Удаление вложения из зашифрованного письма или письма из почтового агента "
-"старого стиля не поддерживается."
+"Удаление вложения из зашифрованного письма или письма старого формата "
+"mailman не поддерживается."
 
 #: viewer/viewer_p.cpp:436
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
-msgstr "&Открыть в..."
+msgstr "&Открыть в"
 
 #: viewer/viewer_p.cpp:454
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
-msgstr "&Другое..."
+msgstr "&Другое…"
 
 #: viewer/viewer_p.cpp:456 viewer/viewer_p.cpp:469
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
-msgstr "&Открыть в..."
+msgstr "&Открыть в…"
 
 #: viewer/viewer_p.cpp:533 viewer/viewer_p.cpp:1746
 #, kde-format
@@ -1997,7 +1997,7 @@ msgstr "Прокрутить к"
 #: viewer/viewer_p.cpp:560
 #, kde-format
 msgid "Save As..."
-msgstr "Сохранить как..."
+msgstr "Сохранить как…"
 
 #: viewer/viewer_p.cpp:566 viewer/viewer_p.cpp:1763
 #, kde-format
@@ -2159,13 +2159,13 @@ msgstr "&Сохранить письмо…"
 #, kde-format
 msgctxt "@action"
 msgid "&Save Display Format"
-msgstr "С&охранить формат отображения"
+msgstr "С&охранить формат показа"
 
 #: viewer/viewer_p.cpp:1594
 #, kde-format
 msgctxt "@action"
 msgid "&Reset Display Format"
-msgstr "С&бросить формат отображения"
+msgstr "С&бросить формат показа"
 
 #: viewer/viewer_p.cpp:1601
 #, kde-format
@@ -2194,12 +2194,12 @@ msgstr "Прокрутить письмо вниз (с переходом)"
 #: viewer/viewer_p.cpp:1626
 #, kde-format
 msgid "Toggle HTML Display Mode"
-msgstr "Переключить в режим отображения HTML"
+msgstr "Переключить режим показа HTML"
 
 #: viewer/viewer_p.cpp:1630
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
-msgstr "Переключить между HTML и текстовым режимами отображения"
+msgstr "Переключить между HTML и текстовым режимами показа"
 
 #: viewer/viewer_p.cpp:1633
 #, kde-format
@@ -2228,7 +2228,7 @@ msgstr "Копировать расположение изображения"
 #: viewer/viewer_p.cpp:1669
 #, kde-format
 msgid "&Find in Message..."
-msgstr "&Найти в письме..."
+msgstr "&Найти в письме…"
 
 #: viewer/viewer_p.cpp:1678
 #, kde-format
@@ -2238,17 +2238,17 @@ msgstr "Отключить смайлики"
 #: viewer/viewer_p.cpp:1743
 #, kde-format
 msgid "Save &As..."
-msgstr "Сохранить &как..."
+msgstr "Сохранить &как…"
 
 #: viewer/viewer_p.cpp:1751
 #, kde-format
 msgid "Open With..."
-msgstr "Открыть в..."
+msgstr "Открыть в…"
 
 #: viewer/viewer_p.cpp:1758
 #, kde-format
 msgid "Save All Attachments..."
-msgstr "Сохранить все вложения..."
+msgstr "Сохранить все вложения…"
 
 #: viewer/viewer_p.cpp:2001
 #, kde-format
@@ -2327,7 +2327,7 @@ msgstr "&Открыть с помощью «%1»"
 #: widgets/attachmentdialog.cpp:47
 #, kde-format
 msgid "Open &With..."
-msgstr "Открыть &в..."
+msgstr "Открыть &в…"
 
 #: widgets/attachmentdialog.cpp:69
 #, kde-format
@@ -2371,7 +2371,8 @@ msgid ""
 "<qt><br />C<br />a<br />l<br />e<br />n<br />d<br />a<br />r<br /> <br /"
 ">M<br />e<br />s<br />s<br />a<br />g<br />e<br /></qt>"
 msgstr ""
-"<qt><br />К<br />а<br />л<br />е<br />н<br />д<br />а<br />р<br />ь<br /</qt>"
+"<qt><br />К<br />а<br />л<br />е<br />н<br />д<br />а<br />р<br />ь<br /></"
+"qt>"
 
 #: widgets/htmlstatusbar.cpp:135
 #, kde-format
@@ -2414,8 +2415,8 @@ msgstr "Необработанный источник"
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr ""
-"Необработанные и неизменённые письма, такие, как это, хранятся в файловой "
-"системе или на сервере"
+"Необработанное, неизменённое письмо в том виде, в каком оно хранится в "
+"файловой системе или на сервере"
 
 #: widgets/mailsourcewebengineviewer.cpp:54
 #, kde-format
@@ -2426,7 +2427,7 @@ msgstr "Исходный код HTML"
 #: widgets/mailsourcewebengineviewer.cpp:55
 #, kde-format
 msgid "HTML code for displaying the message to the user"
-msgstr "HTML код для отображения письма пользователю"
+msgstr "HTML-код для показа письма пользователю"
 
 #: widgets/opensavedfilefolderwidget.cpp:26
 #, kde-format
