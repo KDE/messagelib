@@ -69,7 +69,7 @@ msgstr "Никогда не разворачивать группы"
 #: core/aggregation.cpp:191
 #, kde-format
 msgid "Expand Recent Groups"
-msgstr "Развернуть группы с непрочитанными письмами"
+msgstr "Разворачивать недавние группы"
 
 #: core/aggregation.cpp:193
 #, kde-format
@@ -120,7 +120,7 @@ msgstr "Разворачивать дискуссии с непрочитанн�
 #: core/aggregation.cpp:227
 #, kde-format
 msgid "Expand Threads With Unread or Important Messages"
-msgstr "Разворачивать дискуссии с новыми и непрочитанными письмами"
+msgstr "Разворачивать дискуссии с непрочитанными или важными письмами"
 
 #: core/aggregation.cpp:228
 #, kde-format
@@ -200,7 +200,7 @@ msgstr "Спам"
 #, kde-format
 msgctxt "Status of an item"
 msgid "Ham"
-msgstr "не спам"
+msgstr "Не спам"
 
 #: core/item.cpp:291
 #, kde-format
@@ -328,9 +328,7 @@ msgid ""
 "folder type). Messages are not threaded."
 msgstr ""
 "Этот тип группирует письма по их отправителям или получателям (в зависимости "
-"от типа папки). Группы сортируются по именам отправителей или получателей "
-"или по их адресам электронной почты. Письма не группируются по дискуссиям, с "
-"показом последних писем внизу."
+"от типа папки). Письма не группируются по дискуссиям."
 
 #: core/manager.cpp:287
 #, kde-format
@@ -343,8 +341,7 @@ msgid ""
 "This view groups the messages in threads and then groups the threads by the "
 "starting user."
 msgstr ""
-"Этот тип группирует письма по дискуссиям, а дискуссии — по их инициаторам. "
-"Группы сортируются по имени или адресу электронной почты."
+"Этот тип группирует письма по дискуссиям, а дискуссии — по их инициаторам."
 
 #: core/manager.cpp:565
 #, kde-format
@@ -427,7 +424,7 @@ msgstr "На контроле"
 #: core/manager.cpp:651
 #, kde-format
 msgid "Spam/Ham"
-msgstr "Спам"
+msgstr "Спам/не спам"
 
 #: core/manager.cpp:653
 #, kde-format
@@ -578,7 +575,7 @@ msgstr "Готово"
 #: core/settings.kcfg:7
 #, kde-format
 msgid "Display tooltips for messages and group headers"
-msgstr "Всплывающие подсказки у писем и заголовков групп"
+msgstr "Показывать всплывающие подсказки для писем и заголовков групп"
 
 #. i18n: ectx: whatsthis, entry (MessageToolTipEnabled), group (MessageListView)
 #: core/settings.kcfg:8
@@ -618,7 +615,7 @@ msgstr "По размеру"
 #: core/sortorder.cpp:74
 #, kde-format
 msgid "By Action Item Status"
-msgstr "По типу"
+msgstr "По состоянию «На контроле»"
 
 #: core/sortorder.cpp:75
 #, kde-format
@@ -779,12 +776,12 @@ msgstr "Значок сворачивания и разворачивания г
 #: core/theme.cpp:155
 #, kde-format
 msgid "Encryption State Icon"
-msgstr "Значок статуса шифрования"
+msgstr "Значок состояния шифрования"
 
 #: core/theme.cpp:158
 #, kde-format
 msgid "Signature State Icon"
-msgstr "Значок статуса подписи"
+msgstr "Значок состояния подписи"
 
 #: core/theme.cpp:161
 #, kde-format
@@ -891,7 +888,7 @@ msgstr "Показать столбцы по умолчанию"
 #: core/view.cpp:904
 #, kde-format
 msgid "Display Tooltips"
-msgstr "Всплывающие подсказки"
+msgstr "Показывать всплывающие подсказки"
 
 #: core/view.cpp:2380 core/view.cpp:2384
 #: core/widgets/searchmessagebybuttons.cpp:75
@@ -994,7 +991,7 @@ msgstr "Дискуссии, начатые %1"
 #: core/view.cpp:2505
 #, kde-format
 msgid "Threads containing messages with dates within %1"
-msgstr "Дискуссии, содержащие письма от %1"
+msgstr "Дискуссии, содержащие письма за %1"
 
 # BUGME: what is %1 exactly here?
 #: core/view.cpp:2513
@@ -1016,7 +1013,7 @@ msgstr "Дискуссии, начатые %1"
 #: core/view.cpp:2527
 #, kde-format
 msgid "Threads with most recent message by %1"
-msgstr "Дискуссии, содержащие письма от %1"
+msgstr "Дискуссии с последним письмом от %1"
 
 #: core/view.cpp:2536 core/view.cpp:2560
 #, kde-format
@@ -1036,12 +1033,12 @@ msgstr "Письма, полученные от %1"
 #: core/view.cpp:2549
 #, kde-format
 msgid "Threads directed to %1"
-msgstr "Дискуссии, начатые %1"
+msgstr "Дискуссии, адресованные %1"
 
 #: core/view.cpp:2552
 #, kde-format
 msgid "Threads with most recent message directed to %1"
-msgstr "Дискуссии с последним письмом от %1"
+msgstr "Дискуссии с последним письмом, адресованным %1"
 
 #: core/view.cpp:2562
 #, kde-format
@@ -1086,7 +1083,7 @@ msgstr "Тема"
 #: core/widgets/configurefilterswidget.cpp:76
 #, kde-format
 msgid "Configure..."
-msgstr "Настроить..."
+msgstr "Настроить…"
 
 #: core/widgetbase.cpp:515 messagelistutil.cpp:110
 #, kde-format
@@ -1495,7 +1492,7 @@ msgstr "Размер"
 #, kde-format
 msgctxt "@action:button"
 msgid "Older"
-msgstr "Старее"
+msgstr "Старше"
 
 #: core/widgets/searchlinecommandbuttonswidget.cpp:81
 #, kde-format
@@ -1525,7 +1522,7 @@ msgstr "Показать или скрыть командную строку п�
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
-msgstr "Показать или скрыть виджет поиска командной строки."
+msgstr "Показать или скрыть виджет командной строки поиска."
 
 #: core/widgets/searchlinestatus.cpp:116
 #, kde-format
@@ -1789,7 +1786,7 @@ msgstr "Настроить…"
 #: utils/aggregationeditor.cpp:31
 #, kde-format
 msgid "Groups && Threading"
-msgstr "Группировка и сортировка"
+msgstr "Группы и дискуссии"
 
 #: utils/aggregationeditor.cpp:35
 #, kde-format
@@ -1980,7 +1977,7 @@ msgstr "Экспорт темы"
 #, kde-format
 msgctxt "@title:tab General options of a view mode"
 msgid "General"
-msgstr "Главное"
+msgstr "Общие"
 
 #: utils/optionseteditor.cpp:31
 #, kde-format
@@ -2121,7 +2118,7 @@ msgstr "По умолчанию"
 #, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Custom..."
-msgstr "Другой..."
+msgstr "Другой…"
 
 #: utils/themeeditor.cpp:892
 #, kde-format
@@ -2178,12 +2175,12 @@ msgstr "Стандартный цвет"
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Custom..."
-msgstr "Другой..."
+msgstr "Другой…"
 
 #: utils/themeeditor.cpp:954
 #, kde-format
 msgid "Background Color"
-msgstr "Альтернативный цвет фона"
+msgstr "Цвет фона"
 
 #: utils/themeeditor.cpp:974
 #, kde-format
@@ -2193,12 +2190,12 @@ msgstr "Стиль заголовка"
 #: utils/themeeditor.cpp:1160
 #, kde-format
 msgid "Column Properties..."
-msgstr "Свойства столбца..."
+msgstr "Свойства столбца…"
 
 #: utils/themeeditor.cpp:1163
 #, kde-format
 msgid "Add Column..."
-msgstr "Добавить столбец..."
+msgstr "Добавить столбец…"
 
 #: utils/themeeditor.cpp:1166
 #, kde-format
@@ -2323,7 +2320,7 @@ msgstr "Копировать с&юда"
 #: widget.cpp:428
 #, kde-format
 msgid "C&ancel"
-msgstr "О&тменить"
+msgstr "О&тмена"
 
 #, fuzzy
 #~ msgctxt "@info:tooltip"

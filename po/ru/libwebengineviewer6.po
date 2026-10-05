@@ -130,7 +130,7 @@ msgid ""
 "\">(Details...)"
 msgstr ""
 "Был обнаружен и заблокирован трекер почты.<a href=\"mailtrackingdetails"
-"\">(Подробности...)"
+"\">(Подробности…)"
 
 #: widgets/tracking/trackingwarningwidget.cpp:42
 #, kde-format

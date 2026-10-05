@@ -150,7 +150,7 @@ msgid ""
 "%3\n"
 "%4"
 msgstr ""
-"В письме от %1 %2 Вы написали:\n"
+"В письме от %1 %2 вы написали:\n"
 "%3\n"
 "%4"
 
@@ -525,7 +525,7 @@ msgstr "Текущее письмо"
 #: templatescommandmenu.cpp:242
 #, kde-format
 msgid "Process with External Programs"
-msgstr "Процесс с внешними программами"
+msgstr "Обработка внешними программами"
 
 #: templatescommandmenu.cpp:255
 #, kde-format
@@ -549,7 +549,7 @@ msgid ""
 msgstr ""
 "<p>Здесь можно создавать и управлять шаблонами при создании новых писем, "
 "ответов или пересылаемых писем.</p><p>Шаблоны писем поддерживают замену "
-"переменных путем простого ввода или выбора их из меню <i>Вставить "
+"переменных путём простого ввода или выбора их из меню <i>Вставить "
 "переменную</i>.</p>"
 
 #: templatesconfiguration.cpp:60
@@ -558,8 +558,8 @@ msgid ""
 "<p>Templates specified here are folder-specific. They override both global "
 "templates and per-identity templates.</p>"
 msgstr ""
-"<p>Указанные здесь шаблоны являются специальными папками. Они переопределяют "
-"общие шаблоны и шаблоны профилей.</p>"
+"<p>Указанные здесь шаблоны относятся к папке. Они переопределяют общие "
+"шаблоны и шаблоны профилей.</p>"
 
 #: templatesconfiguration.cpp:65
 #, kde-format
@@ -568,8 +568,8 @@ msgid ""
 "templates, but can be overridden by per-folder templates if they are "
 "specified.</p>"
 msgstr ""
-"<p>Указанные здесь шаблоны являются специальными папками. Они переопределяют "
-"общие шаблоны, но могут быть заменены заданными шаблонами папок.</p>"
+"<p>Указанные здесь шаблоны относятся к профилю. Они переопределяют общие "
+"шаблоны, но могут быть заменены заданными шаблонами папок.</p>"
 
 #: templatesconfiguration.cpp:70
 #, kde-format
@@ -583,7 +583,7 @@ msgstr ""
 #: templatesconfiguration.cpp:102
 #, kde-format
 msgid "Do you want to reset current template or all templates to default?"
-msgstr "Сбросить в настройки по умолчанию текущий шаблон или все шаблоны?"
+msgstr "Сбросить текущий шаблон или все шаблоны к значениям по умолчанию?"
 
 #: templatesconfiguration.cpp:103
 #, kde-format
@@ -768,8 +768,8 @@ msgid ""
 "When using this template, the default recipients are those you enter here.  "
 "This is a comma-separated list of mail addresses."
 msgstr ""
-"При использовании этого шаблона введенные здесь получатели являются "
-"получателями по умолчанию. Это список адресов электронной почты, разделенный "
+"При использовании этого шаблона введённые здесь получатели являются "
+"получателями по умолчанию. Это список адресов электронной почты, разделённый "
 "запятыми."
 
 #. i18n: ectx: property (toolTip), widget (TemplateParser::TemplateParserEmailAddressRequesterInterfaceWidget, mCCEdit)
@@ -787,8 +787,8 @@ msgid ""
 "When using this template, the recipients you enter here will by default get "
 "a copy of this message.  This is a comma-separated list of mail addresses."
 msgstr ""
-"При использовании этого шаблона введенные здесь получатели получат копию "
-"этого письма по умолчанию. Это список адресов электронной почты, разделенный "
+"При использовании этого шаблона введённые здесь получатели получат копию "
+"этого письма по умолчанию. Это список адресов электронной почты, разделённый "
 "запятыми."
 
 #. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, mEdit)
