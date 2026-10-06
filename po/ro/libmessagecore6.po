@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-03 00:44+0000\n"
+"POT-Creation-Date: 2026-10-06 00:48+0000\n"
 "PO-Revision-Date: 2013-01-10 15:48+0200\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -228,6 +228,31 @@ msgstr "Criptează acest atașament"
 #, kde-format
 msgid "Sign this attachment"
 msgstr "Semnează acest atașament"
+
+#: dkim-verify/dkimmanagerkeymodel.cpp:81
+#, kde-format
+msgid "DKIM Key"
+msgstr ""
+
+#: dkim-verify/dkimmanagerkeymodel.cpp:83
+#, kde-format
+msgid "Selector"
+msgstr ""
+
+#: dkim-verify/dkimmanagerkeymodel.cpp:85
+#, kde-format
+msgid "SDID"
+msgstr ""
+
+#: dkim-verify/dkimmanagerkeymodel.cpp:87
+#, kde-format
+msgid "Inserted"
+msgstr ""
+
+#: dkim-verify/dkimmanagerkeymodel.cpp:89
+#, kde-format
+msgid "Last Used"
+msgstr ""
 
 #. i18n: ectx: whatsthis, entry (OverrideCharacterEncoding), group (Reader)
 #: settings/messagecore.kcfg:25

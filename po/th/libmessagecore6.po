@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecore\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-03 00:44+0000\n"
+"POT-Creation-Date: 2026-10-06 00:48+0000\n"
 "PO-Revision-Date: 2010-02-28 11:07+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -257,6 +257,31 @@ msgstr "เข้ารหัสสิ่งที่แนบมาด้วย
 #, kde-format
 msgid "Sign this attachment"
 msgstr "เซ็นสิ่งที่แนบมาด้วยนี้"
+
+#: dkim-verify/dkimmanagerkeymodel.cpp:81
+#, kde-format
+msgid "DKIM Key"
+msgstr ""
+
+#: dkim-verify/dkimmanagerkeymodel.cpp:83
+#, kde-format
+msgid "Selector"
+msgstr ""
+
+#: dkim-verify/dkimmanagerkeymodel.cpp:85
+#, kde-format
+msgid "SDID"
+msgstr ""
+
+#: dkim-verify/dkimmanagerkeymodel.cpp:87
+#, kde-format
+msgid "Inserted"
+msgstr ""
+
+#: dkim-verify/dkimmanagerkeymodel.cpp:89
+#, kde-format
+msgid "Last Used"
+msgstr ""
 
 #. i18n: ectx: whatsthis, entry (OverrideCharacterEncoding), group (Reader)
 #: settings/messagecore.kcfg:25

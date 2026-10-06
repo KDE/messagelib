@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-29 00:46+0000\n"
+"POT-Creation-Date: 2026-10-06 00:48+0000\n"
 "PO-Revision-Date: 2023-03-08 09:12+0000\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <kde-i18n-pt@kde.org>\n"
@@ -227,53 +227,6 @@ msgstr "Verifique por favor enquanto a assinatura é verificada..."
 msgid "End of signed message"
 msgstr "Fim da mensagem assinada"
 
-#: dkim-verify/dkimcheckfulljob.cpp:118
-#, kde-format
-msgid ""
-"Stored DKIM key is different from the current one. Do you want to store this "
-"one too?"
-msgstr ""
-"A chave de DKIM guardada é diferente da actual. Deseja guardar esta também?"
-
-#: dkim-verify/dkimcheckfulljob.cpp:119
-#, fuzzy, kde-format
-#| msgid "Key Changed"
-msgctxt "@title:window"
-msgid "Key Changed"
-msgstr "Chave Modificada"
-
-#: dkim-verify/dkimcheckfulljob.cpp:120
-#, kde-format
-msgctxt "@action:button"
-msgid "Store"
-msgstr "Guardar"
-
-#: dkim-verify/dkimmanagerkeymodel.cpp:81
-#, kde-format
-msgid "DKIM Key"
-msgstr "Chave de DKIM"
-
-#: dkim-verify/dkimmanagerkeymodel.cpp:83
-#, kde-format
-msgid "Selector"
-msgstr "Selector"
-
-#: dkim-verify/dkimmanagerkeymodel.cpp:85
-#: dkim-verify/dkimmanageruleswidget.cpp:75
-#, kde-format
-msgid "SDID"
-msgstr "SDID"
-
-#: dkim-verify/dkimmanagerkeymodel.cpp:87
-#, kde-format
-msgid "Inserted"
-msgstr "Inserida"
-
-#: dkim-verify/dkimmanagerkeymodel.cpp:89
-#, kde-format
-msgid "Last Used"
-msgstr "Última Utilização"
-
 #: dkim-verify/dkimmanagerkeytreeview.cpp:73
 #, kde-format
 msgid "Copy Key"
@@ -415,6 +368,11 @@ msgstr "De"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:75
 #, kde-format
+msgid "SDID"
+msgstr "SDID"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:75
+#, kde-format
 msgid "Rule type"
 msgstr "Tipo de regra"
 
@@ -547,175 +505,175 @@ msgstr "Actualizar a Chave DKIM"
 msgid "Rules..."
 msgstr "Regras..."
 
-#: dkim-verify/dkimwidgetinfo.cpp:96
+#: dkim-verify/dkimwidgetinfo.cpp:98
 #, kde-format
 msgid "Unknown"
 msgstr "Desconhecida"
 
-#: dkim-verify/dkimwidgetinfo.cpp:102
+#: dkim-verify/dkimwidgetinfo.cpp:104
 #, kde-format
 msgid "DKIM: valid (signed by %1)"
 msgstr "DKIM: válida (assinada por %1)"
 
-#: dkim-verify/dkimwidgetinfo.cpp:109
+#: dkim-verify/dkimwidgetinfo.cpp:111
 #, kde-format
 msgid "DKIM: invalid"
 msgstr "DKIM: inválida"
 
-#: dkim-verify/dkimwidgetinfo.cpp:112
+#: dkim-verify/dkimwidgetinfo.cpp:114
 #, kde-format
 msgid "DKIM: Not signed"
 msgstr "DKIM: não assinada"
 
-#: dkim-verify/dkimwidgetinfo.cpp:117
+#: dkim-verify/dkimwidgetinfo.cpp:119
 #, kde-format
 msgid "DKIM: Should Be Signed by %1"
 msgstr "DKIM: Deveria Estar Assinado por %1"
 
-#: dkim-verify/dkimwidgetinfo.cpp:133
+#: dkim-verify/dkimwidgetinfo.cpp:135
 #, kde-format
 msgid "Body Hash was corrupted."
 msgstr "O código do conteúdo foi danificado."
 
-#: dkim-verify/dkimwidgetinfo.cpp:136
+#: dkim-verify/dkimwidgetinfo.cpp:138
 #, kde-format
 msgid "The domain doesn't exist."
 msgstr "O domínio não existe."
 
-#: dkim-verify/dkimwidgetinfo.cpp:139
+#: dkim-verify/dkimwidgetinfo.cpp:141
 #, kde-format
 msgid "Missing header From."
 msgstr "Falta o cabeçalho De."
 
-#: dkim-verify/dkimwidgetinfo.cpp:142
+#: dkim-verify/dkimwidgetinfo.cpp:144
 #, kde-format
 msgid "Missing signature."
 msgstr "Falta a assinatura."
 
-#: dkim-verify/dkimwidgetinfo.cpp:145
+#: dkim-verify/dkimwidgetinfo.cpp:147
 #, kde-format
 msgid "Invalid query method."
 msgstr "Método de consulta inválido."
 
-#: dkim-verify/dkimwidgetinfo.cpp:148
+#: dkim-verify/dkimwidgetinfo.cpp:150
 #, kde-format
 msgid "Invalid header canonicalization."
 msgstr "Normalização do cabeçalho inválida."
 
-#: dkim-verify/dkimwidgetinfo.cpp:151
+#: dkim-verify/dkimwidgetinfo.cpp:153
 #, kde-format
 msgid "Invalid body canonicalization."
 msgstr "Normalização do conteúdo inválida."
 
-#: dkim-verify/dkimwidgetinfo.cpp:154
+#: dkim-verify/dkimwidgetinfo.cpp:156
 #, kde-format
 msgid "Unknown Body Hash Algorithm."
 msgstr "Algoritmo de codificação do conteúdo desconhecido."
 
-#: dkim-verify/dkimwidgetinfo.cpp:157
+#: dkim-verify/dkimwidgetinfo.cpp:159
 #, kde-format
 msgid "Signature algorithm is invalid."
 msgstr "O algoritmo da assinatura é inválido."
 
-#: dkim-verify/dkimwidgetinfo.cpp:160
+#: dkim-verify/dkimwidgetinfo.cpp:162
 #, kde-format
 msgid "The public key was revoked."
 msgstr "A chave pública foi revogada."
 
-#: dkim-verify/dkimwidgetinfo.cpp:163
+#: dkim-verify/dkimwidgetinfo.cpp:165
 #, kde-format
 msgid "Signature is too large."
 msgstr "A assinatura é demasiado grande."
 
-#: dkim-verify/dkimwidgetinfo.cpp:166
+#: dkim-verify/dkimwidgetinfo.cpp:168
 #, kde-format
 msgid "Hash Algorithm is unsupported."
 msgstr "O algoritmo de codificação não é suportado."
 
-#: dkim-verify/dkimwidgetinfo.cpp:169
+#: dkim-verify/dkimwidgetinfo.cpp:171
 #, kde-format
 msgid "Public key is too small."
 msgstr "A chave pública é demasiado pequena."
 
-#: dkim-verify/dkimwidgetinfo.cpp:172
+#: dkim-verify/dkimwidgetinfo.cpp:174
 #, kde-format
 msgid "Impossible to verify signature."
 msgstr "É impossível verificar a assinatura."
 
-#: dkim-verify/dkimwidgetinfo.cpp:175
+#: dkim-verify/dkimwidgetinfo.cpp:177
 #, kde-format
 msgid "AUID must be in the same domain as SDID (s-flag set in key record)."
 msgstr ""
 "O AUID deve ser no mesmo domínio do SDID (a opção 's' definida no registo da "
 "chave)."
 
-#: dkim-verify/dkimwidgetinfo.cpp:178
+#: dkim-verify/dkimwidgetinfo.cpp:180
 #, kde-format
 msgid "The signing domain is only testing DKIM."
 msgstr "O domínio da assinatura só está a testar o DKIM."
 
-#: dkim-verify/dkimwidgetinfo.cpp:181
+#: dkim-verify/dkimwidgetinfo.cpp:183
 #, kde-format
 msgid "Impossible to download key."
 msgstr "Não é possível obter a chave."
 
-#: dkim-verify/dkimwidgetinfo.cpp:184 dkim-verify/dkimwidgetinfo.cpp:208
+#: dkim-verify/dkimwidgetinfo.cpp:186 dkim-verify/dkimwidgetinfo.cpp:210
 #, kde-format
 msgid "Hash Algorithm unsafe (sha1)"
 msgstr "O algoritmo de codificação é inseguro (SHA1)"
 
-#: dkim-verify/dkimwidgetinfo.cpp:187
+#: dkim-verify/dkimwidgetinfo.cpp:189
 #, kde-format
 msgid "AUID is not in a subdomain of SDID"
 msgstr "O AUID não está num sub-domínio do SDID"
 
-#: dkim-verify/dkimwidgetinfo.cpp:190
+#: dkim-verify/dkimwidgetinfo.cpp:192
 #, kde-format
 msgid "Problem during converting public key"
 msgstr "Problemas ao converter a chave pública"
 
-#: dkim-verify/dkimwidgetinfo.cpp:199
+#: dkim-verify/dkimwidgetinfo.cpp:201
 #, kde-format
 msgid "Signature expired"
 msgstr "Assinatura expirada"
 
-#: dkim-verify/dkimwidgetinfo.cpp:202
+#: dkim-verify/dkimwidgetinfo.cpp:204
 #, kde-format
 msgid "Signature created in the future"
 msgstr "A assinatura foi criada no futuro"
 
-#: dkim-verify/dkimwidgetinfo.cpp:205
+#: dkim-verify/dkimwidgetinfo.cpp:207
 #, kde-format
 msgid "Signature too small"
 msgstr "A assinatura é demasiado pequena"
 
-#: dkim-verify/dkimwidgetinfo.cpp:211
+#: dkim-verify/dkimwidgetinfo.cpp:213
 #, kde-format
 msgid "Public Key too small"
 msgstr "A chave pública é demasiado pequena"
 
-#: dkim-verify/dkimwidgetinfo.cpp:234 dkim-verify/dkimwidgetinfo.cpp:282
+#: dkim-verify/dkimwidgetinfo.cpp:236 dkim-verify/dkimwidgetinfo.cpp:284
 #, kde-format
 msgctxt "method name: info about it from parsing"
 msgid "%1: %2"
 msgstr "%1: %2"
 
-#: dkim-verify/dkimwidgetinfo.cpp:259
+#: dkim-verify/dkimwidgetinfo.cpp:261
 #, kde-format
 msgid "%1: None"
 msgstr "%1: Nenhuma"
 
-#: dkim-verify/dkimwidgetinfo.cpp:274
+#: dkim-verify/dkimwidgetinfo.cpp:276
 #, kde-format
 msgid "%1: Valid (Signed by %2)"
 msgstr "%1: Válida (Assinada por %2)"
 
-#: dkim-verify/dkimwidgetinfo.cpp:296
+#: dkim-verify/dkimwidgetinfo.cpp:298
 #, kde-format
 msgid "%1: Valid"
 msgstr "%1: Válida"
 
-#: dkim-verify/dkimwidgetinfo.cpp:310
+#: dkim-verify/dkimwidgetinfo.cpp:312
 #, kde-format
 msgid "Not Signed"
 msgstr "Não Assinada"
@@ -1455,7 +1413,7 @@ msgstr ""
 "sido enviada a resposta com sucesso."
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
-#: settings/messageviewer.kcfg:206 viewer/viewer_p.cpp:1570
+#: settings/messageviewer.kcfg:206 viewer/viewer_p.cpp:1600
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "Usar um Tipo de &Letra Monoespaçado"
@@ -1868,7 +1826,7 @@ msgstr "Imprimir o Documento"
 msgid "Turn on HTML rendering for this message."
 msgstr "Activar a representação de HTML para esta mensagem."
 
-#: viewer/urlhandlermanager.cpp:412 viewer/viewer_p.cpp:1639
+#: viewer/urlhandlermanager.cpp:412 viewer/viewer_p.cpp:1669
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "Carrega as referências externas da Internet para esta mensagem."
@@ -1950,7 +1908,7 @@ msgstr "Abrir n&o Livro de Endereços"
 msgid "&Copy Email Address"
 msgstr "&Copiar o Endereço de E-mail"
 
-#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2737
+#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2767
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "O endereço foi copiado para a área de transferência."
@@ -2003,12 +1961,33 @@ msgctxt "@action:button"
 msgid "Execute"
 msgstr "Executar"
 
-#: viewer/viewer.cpp:151
+#: viewer/viewer.cpp:152
 #, kde-format
 msgid "Loading message..."
 msgstr "A carregar a mensagem..."
 
-#: viewer/viewer_p.cpp:348
+#: viewer/viewer_p.cpp:202
+#, kde-format
+msgid ""
+"Stored DKIM key is different from the current one. Do you want to store this "
+"one too?"
+msgstr ""
+"A chave de DKIM guardada é diferente da actual. Deseja guardar esta também?"
+
+#: viewer/viewer_p.cpp:203
+#, fuzzy, kde-format
+#| msgid "Key Changed"
+msgctxt "@title:window"
+msgid "Key Changed"
+msgstr "Chave Modificada"
+
+#: viewer/viewer_p.cpp:204
+#, kde-format
+msgctxt "@action:button"
+msgid "Store"
+msgstr "Guardar"
+
+#: viewer/viewer_p.cpp:377
 #, kde-format
 msgid ""
 "Deleting an attachment might invalidate any digital signature on this "
@@ -2017,14 +1996,14 @@ msgstr ""
 "A remoção de um anexo poderá invalidar as assinaturas digitais desta "
 "mensagem."
 
-#: viewer/viewer_p.cpp:349 viewer/viewer_p.cpp:384
+#: viewer/viewer_p.cpp:378 viewer/viewer_p.cpp:413
 #, fuzzy, kde-format
 #| msgid "Delete Attachment"
 msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "Apagar o Anexo"
 
-#: viewer/viewer_p.cpp:383
+#: viewer/viewer_p.cpp:412
 #, kde-format
 msgid ""
 "Deleting an attachment from an encrypted or old-style mailman message is not "
@@ -2033,361 +2012,361 @@ msgstr ""
 "A remoção de um anexo de uma mensagem antiga do 'mailman' ou encriptada não "
 "é suportada."
 
-#: viewer/viewer_p.cpp:432
+#: viewer/viewer_p.cpp:461
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
 msgstr "A&brir Com"
 
-#: viewer/viewer_p.cpp:450
+#: viewer/viewer_p.cpp:479
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
 msgstr "&Outro..."
 
-#: viewer/viewer_p.cpp:452 viewer/viewer_p.cpp:465
+#: viewer/viewer_p.cpp:481 viewer/viewer_p.cpp:494
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "Abrir C&om..."
 
-#: viewer/viewer_p.cpp:529 viewer/viewer_p.cpp:1748
+#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1778
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Abrir"
 
-#: viewer/viewer_p.cpp:542 viewer/viewer_p.cpp:1755
+#: viewer/viewer_p.cpp:571 viewer/viewer_p.cpp:1785
 #, kde-format
 msgctxt "to view something"
 msgid "View"
 msgstr "Ver"
 
-#: viewer/viewer_p.cpp:550
+#: viewer/viewer_p.cpp:579
 #, kde-format
 msgid "Scroll To"
 msgstr "Deslocar Para"
 
-#: viewer/viewer_p.cpp:555
+#: viewer/viewer_p.cpp:584
 #, kde-format
 msgid "Save As..."
 msgstr "Gravar Como..."
 
-#: viewer/viewer_p.cpp:561 viewer/viewer_p.cpp:1765
+#: viewer/viewer_p.cpp:590 viewer/viewer_p.cpp:1795
 #, kde-format
 msgid "Copy"
 msgstr "Copiar"
 
-#: viewer/viewer_p.cpp:572 viewer/viewer_p.cpp:1769
+#: viewer/viewer_p.cpp:601 viewer/viewer_p.cpp:1799
 #, kde-format
 msgid "Delete Attachment"
 msgstr "Apagar o Anexo"
 
-#: viewer/viewer_p.cpp:583
+#: viewer/viewer_p.cpp:612
 #, kde-format
 msgid "Reply To Author"
 msgstr "Responder ao Autor"
 
-#: viewer/viewer_p.cpp:591
+#: viewer/viewer_p.cpp:620
 #, kde-format
 msgid "Reply To All"
 msgstr "Responder a Todos"
 
-#: viewer/viewer_p.cpp:597 viewer/viewer_p.cpp:1774
+#: viewer/viewer_p.cpp:626 viewer/viewer_p.cpp:1804
 #, kde-format
 msgid "Properties"
 msgstr "Propriedades"
 
-#: viewer/viewer_p.cpp:740
+#: viewer/viewer_p.cpp:769
 #, kde-format
 msgid "KMail"
 msgstr "KMail"
 
-#: viewer/viewer_p.cpp:740
+#: viewer/viewer_p.cpp:769
 #, kde-format
 msgid "The KDE Mail Client"
 msgstr "O Cliente de E-mail do KDE"
 
-#: viewer/viewer_p.cpp:1290
+#: viewer/viewer_p.cpp:1320
 #, kde-format
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "Ver o Anexo: %1"
 
-#: viewer/viewer_p.cpp:1492
+#: viewer/viewer_p.cpp:1522
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "&Anexos"
 
-#: viewer/viewer_p.cpp:1494
+#: viewer/viewer_p.cpp:1524
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "Selecciona o estilo de apresentação dos anexos"
 
-#: viewer/viewer_p.cpp:1497
+#: viewer/viewer_p.cpp:1527
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "&Como Ícones"
 
-#: viewer/viewer_p.cpp:1500
+#: viewer/viewer_p.cpp:1530
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr "Mostra todos os anexos como ícones. Carregue neles para os ver."
 
-#: viewer/viewer_p.cpp:1504
+#: viewer/viewer_p.cpp:1534
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "Inteli&gentes"
 
-#: viewer/viewer_p.cpp:1507
+#: viewer/viewer_p.cpp:1537
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "Mostra os anexos tal como foi sugerido pelo remetente."
 
-#: viewer/viewer_p.cpp:1511
+#: viewer/viewer_p.cpp:1541
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "&Incorporados"
 
-#: viewer/viewer_p.cpp:1514
+#: viewer/viewer_p.cpp:1544
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "Mostra todos os anexos incorporados (se possível)"
 
-#: viewer/viewer_p.cpp:1518
+#: viewer/viewer_p.cpp:1548
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "&Escondidos"
 
-#: viewer/viewer_p.cpp:1521
+#: viewer/viewer_p.cpp:1551
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "Não mostra os anexos no visualizador da mensagem"
 
-#: viewer/viewer_p.cpp:1525
+#: viewer/viewer_p.cpp:1555
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr "Apenas no Cabeçalho"
 
-#: viewer/viewer_p.cpp:1528
+#: viewer/viewer_p.cpp:1558
 #, kde-format
 msgid "Show Attachments only in the header of the mail"
 msgstr "Mostrar os anexos apenas no cabeçalho da mensagem"
 
-#: viewer/viewer_p.cpp:1533
+#: viewer/viewer_p.cpp:1563
 #, kde-format
 msgid "&Set Encoding"
 msgstr "E&scolher a Codificação"
 
-#: viewer/viewer_p.cpp:1538 widgets/configurewidget.cpp:45
+#: viewer/viewer_p.cpp:1568 widgets/configurewidget.cpp:45
 #: widgets/configurewidget.cpp:79
 #, kde-format
 msgid "Auto"
 msgstr "Auto"
 
-#: viewer/viewer_p.cpp:1548
+#: viewer/viewer_p.cpp:1578
 #, kde-format
 msgid "Copy Text"
 msgstr "Copiar o Texto"
 
-#: viewer/viewer_p.cpp:1554
+#: viewer/viewer_p.cpp:1584
 #, fuzzy, kde-format
 #| msgid "Select All Text"
 msgctxt "@action"
 msgid "Select All Text"
 msgstr "Seleccionar Todo o Texto"
 
-#: viewer/viewer_p.cpp:1560 viewer/viewer_p.cpp:2080
+#: viewer/viewer_p.cpp:1590 viewer/viewer_p.cpp:2110
 #, kde-format
 msgid "Copy Link Address"
 msgstr "Copiar o Endereço da Ligação"
 
-#: viewer/viewer_p.cpp:1565
+#: viewer/viewer_p.cpp:1595
 #, kde-format
 msgid "Open URL"
 msgstr "Abrir o URL"
 
-#: viewer/viewer_p.cpp:1576
+#: viewer/viewer_p.cpp:1606
 #, kde-format
 msgid "Show Message Structure"
 msgstr "Mostrar a Estrutura da Mensagem"
 
-#: viewer/viewer_p.cpp:1581
+#: viewer/viewer_p.cpp:1611
 #, fuzzy, kde-format
 #| msgid "&View Source"
 msgctxt "@action"
 msgid "&View Source"
 msgstr "&Ver o Código"
 
-#: viewer/viewer_p.cpp:1586
+#: viewer/viewer_p.cpp:1616
 #, kde-format
 msgid "&Save Message..."
 msgstr "&Gravar a Mensagem..."
 
-#: viewer/viewer_p.cpp:1592
+#: viewer/viewer_p.cpp:1622
 #, fuzzy, kde-format
 #| msgid "&Save Display Format"
 msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "&Gravar o Formato de Visualização"
 
-#: viewer/viewer_p.cpp:1596
+#: viewer/viewer_p.cpp:1626
 #, fuzzy, kde-format
 #| msgid "&Reset Display Format"
 msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "&Repor o Formato de Visualização"
 
-#: viewer/viewer_p.cpp:1603
+#: viewer/viewer_p.cpp:1633
 #, fuzzy, kde-format
 #| msgid "Scroll Message Up"
 msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "Subir na Mensagem"
 
-#: viewer/viewer_p.cpp:1608
+#: viewer/viewer_p.cpp:1638
 #, fuzzy, kde-format
 #| msgid "Scroll Message Down"
 msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "Descer na Mensagem"
 
-#: viewer/viewer_p.cpp:1613
+#: viewer/viewer_p.cpp:1643
 #, fuzzy, kde-format
 #| msgid "Scroll Message Up (More)"
 msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "Subir (Mais) na Mensagem"
 
-#: viewer/viewer_p.cpp:1618
+#: viewer/viewer_p.cpp:1648
 #, fuzzy, kde-format
 #| msgid "Scroll Message Down (More)"
 msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "Descer (Mais) na Mensagem"
 
-#: viewer/viewer_p.cpp:1628
+#: viewer/viewer_p.cpp:1658
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr "Comutar o Modo de Visualização em HTML"
 
-#: viewer/viewer_p.cpp:1632
+#: viewer/viewer_p.cpp:1662
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr "Comuta o modo de visualização entre HTML e texto simples"
 
-#: viewer/viewer_p.cpp:1635
+#: viewer/viewer_p.cpp:1665
 #, fuzzy, kde-format
 #| msgid "Load external references"
 msgctxt "@action"
 msgid "Load external references"
 msgstr "Carregar as referências externas"
 
-#: viewer/viewer_p.cpp:1641
+#: viewer/viewer_p.cpp:1671
 #, fuzzy, kde-format
 #| msgid "Speak Text"
 msgctxt "@action"
 msgid "Speak Text"
 msgstr "Falar o Texto"
 
-#: viewer/viewer_p.cpp:1647
+#: viewer/viewer_p.cpp:1677
 #, fuzzy, kde-format
 #| msgid "Share Text..."
 msgctxt "@action"
 msgid "Share Text..."
 msgstr "Partilhar o Texto..."
 
-#: viewer/viewer_p.cpp:1665
+#: viewer/viewer_p.cpp:1695
 #, fuzzy, kde-format
 #| msgid "Copy Image Location"
 msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "Copiar a Localização da Imagem"
 
-#: viewer/viewer_p.cpp:1671
+#: viewer/viewer_p.cpp:1701
 #, kde-format
 msgid "&Find in Message..."
 msgstr "&Procurar na Mensagem..."
 
-#: viewer/viewer_p.cpp:1680
+#: viewer/viewer_p.cpp:1710
 #, kde-format
 msgid "Disable Emoticon"
 msgstr "Desactivar o Ícone Emotivo"
 
-#: viewer/viewer_p.cpp:1745
+#: viewer/viewer_p.cpp:1775
 #, kde-format
 msgid "Save &As..."
 msgstr "Gr&avar Como..."
 
-#: viewer/viewer_p.cpp:1753
+#: viewer/viewer_p.cpp:1783
 #, kde-format
 msgid "Open With..."
 msgstr "Abrir Com..."
 
-#: viewer/viewer_p.cpp:1760
+#: viewer/viewer_p.cpp:1790
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "Gravar Todos os Anexos..."
 
-#: viewer/viewer_p.cpp:2001
+#: viewer/viewer_p.cpp:2031
 #, kde-format
 msgid "The network is broken."
 msgstr "A rede está com problemas."
 
-#: viewer/viewer_p.cpp:2001 viewer/viewer_p.cpp:2004
+#: viewer/viewer_p.cpp:2031 viewer/viewer_p.cpp:2034
 #, fuzzy, kde-format
 #| msgid "Check Phishing URL"
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "Verificar o URL de Burla"
 
-#: viewer/viewer_p.cpp:2004
+#: viewer/viewer_p.cpp:2034
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "O URL %1 não é válido."
 
-#: viewer/viewer_p.cpp:2024
+#: viewer/viewer_p.cpp:2054
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 "Esta página Web contém 'malware' (aplicações maliciosas); deseja continuar a "
 "apresentá-la?"
 
-#: viewer/viewer_p.cpp:2025
+#: viewer/viewer_p.cpp:2055
 #, fuzzy, kde-format
 #| msgid "Malware"
 msgctxt "@title:window"
 msgid "Malware"
 msgstr "'Software' malicioso"
 
-#: viewer/viewer_p.cpp:2078
+#: viewer/viewer_p.cpp:2108
 #, kde-format
 msgid "Copy Email Address"
 msgstr "Copiar o Endereço de E-mail"
 
-#: viewer/viewer_p.cpp:2161
+#: viewer/viewer_p.cpp:2191
 #, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Mensagem como Texto Simples"
 
-#: viewer/viewer_p.cpp:2743
+#: viewer/viewer_p.cpp:2773
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "O URL foi copiado para a área de transferência."
 
-#: viewer/viewer_p.cpp:2905
+#: viewer/viewer_p.cpp:2935
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "O carregamento da mensagem foi mal-sucedido: %1."
 
-#: viewer/viewer_p.cpp:2910
+#: viewer/viewer_p.cpp:2940
 #, kde-format
 msgid "Message not found."
 msgstr "A mensagem não foi encontrada."
@@ -2533,6 +2512,18 @@ msgstr "Mensagem Seguinte"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Mensagem Anterior"
+
+#~ msgid "DKIM Key"
+#~ msgstr "Chave de DKIM"
+
+#~ msgid "Selector"
+#~ msgstr "Selector"
+
+#~ msgid "Inserted"
+#~ msgstr "Inserida"
+
+#~ msgid "Last Used"
+#~ msgstr "Última Utilização"
 
 #, fuzzy
 #~| msgid "Open folder where attachment was saved"

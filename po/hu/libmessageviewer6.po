@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-29 00:46+0000\n"
+"POT-Creation-Date: 2026-10-06 00:48+0000\n"
 "PO-Revision-Date: 2025-07-08 22:12+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -187,52 +187,6 @@ msgstr "Kis türelmet, az üzenet e-aláírásának ellenőrzése folyik…"
 msgid "End of signed message"
 msgstr "Az aláírt üzenet vége"
 
-#: dkim-verify/dkimcheckfulljob.cpp:118
-#, kde-format
-msgid ""
-"Stored DKIM key is different from the current one. Do you want to store this "
-"one too?"
-msgstr ""
-"A tárolt DKIM kulcs különbözik a jelenlegitől. Szeretné tárolni ezt is?"
-
-#: dkim-verify/dkimcheckfulljob.cpp:119
-#, kde-format
-msgctxt "@title:window"
-msgid "Key Changed"
-msgstr "Kulcs módosítva"
-
-#: dkim-verify/dkimcheckfulljob.cpp:120
-#, kde-format
-msgctxt "@action:button"
-msgid "Store"
-msgstr "Tárolás"
-
-#: dkim-verify/dkimmanagerkeymodel.cpp:81
-#, kde-format
-msgid "DKIM Key"
-msgstr "DKIM kulcs"
-
-#: dkim-verify/dkimmanagerkeymodel.cpp:83
-#, kde-format
-msgid "Selector"
-msgstr "Kiválasztó"
-
-#: dkim-verify/dkimmanagerkeymodel.cpp:85
-#: dkim-verify/dkimmanageruleswidget.cpp:75
-#, kde-format
-msgid "SDID"
-msgstr "SDID"
-
-#: dkim-verify/dkimmanagerkeymodel.cpp:87
-#, kde-format
-msgid "Inserted"
-msgstr "Beszúrva"
-
-#: dkim-verify/dkimmanagerkeymodel.cpp:89
-#, kde-format
-msgid "Last Used"
-msgstr "Utoljára használva"
-
 #: dkim-verify/dkimmanagerkeytreeview.cpp:73
 #, kde-format
 msgid "Copy Key"
@@ -368,6 +322,11 @@ msgstr "Feladó"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:75
 #, kde-format
+msgid "SDID"
+msgstr "SDID"
+
+#: dkim-verify/dkimmanageruleswidget.cpp:75
+#, kde-format
 msgid "Rule type"
 msgstr "Szabálytípus"
 
@@ -496,175 +455,175 @@ msgstr "DKIM kulcs frissítése"
 msgid "Rules..."
 msgstr "Szabályok…"
 
-#: dkim-verify/dkimwidgetinfo.cpp:96
+#: dkim-verify/dkimwidgetinfo.cpp:98
 #, kde-format
 msgid "Unknown"
 msgstr "Ismeretlen"
 
-#: dkim-verify/dkimwidgetinfo.cpp:102
+#: dkim-verify/dkimwidgetinfo.cpp:104
 #, kde-format
 msgid "DKIM: valid (signed by %1)"
 msgstr "DKIM: érvényes (aláíró: %1)"
 
-#: dkim-verify/dkimwidgetinfo.cpp:109
+#: dkim-verify/dkimwidgetinfo.cpp:111
 #, kde-format
 msgid "DKIM: invalid"
 msgstr "DKIM: érvénytelen"
 
-#: dkim-verify/dkimwidgetinfo.cpp:112
+#: dkim-verify/dkimwidgetinfo.cpp:114
 #, kde-format
 msgid "DKIM: Not signed"
 msgstr "DKIM: nincs aláírva"
 
-#: dkim-verify/dkimwidgetinfo.cpp:117
+#: dkim-verify/dkimwidgetinfo.cpp:119
 #, kde-format
 msgid "DKIM: Should Be Signed by %1"
 msgstr "DKIM: %1 által aláírtnak kellene lennie"
 
-#: dkim-verify/dkimwidgetinfo.cpp:133
+#: dkim-verify/dkimwidgetinfo.cpp:135
 #, kde-format
 msgid "Body Hash was corrupted."
 msgstr "A törzs kivonata sérült."
 
-#: dkim-verify/dkimwidgetinfo.cpp:136
+#: dkim-verify/dkimwidgetinfo.cpp:138
 #, kde-format
 msgid "The domain doesn't exist."
 msgstr "A tartomány nem létezik."
 
-#: dkim-verify/dkimwidgetinfo.cpp:139
+#: dkim-verify/dkimwidgetinfo.cpp:141
 #, kde-format
 msgid "Missing header From."
 msgstr "Hiányzó Feladó fejléc."
 
-#: dkim-verify/dkimwidgetinfo.cpp:142
+#: dkim-verify/dkimwidgetinfo.cpp:144
 #, kde-format
 msgid "Missing signature."
 msgstr "Hiányzó aláírás."
 
-#: dkim-verify/dkimwidgetinfo.cpp:145
+#: dkim-verify/dkimwidgetinfo.cpp:147
 #, kde-format
 msgid "Invalid query method."
 msgstr "Érvénytelen lekérdezési mód."
 
-#: dkim-verify/dkimwidgetinfo.cpp:148
+#: dkim-verify/dkimwidgetinfo.cpp:150
 #, kde-format
 msgid "Invalid header canonicalization."
 msgstr "Érvénytelen fejléc-kanonikalizáció."
 
-#: dkim-verify/dkimwidgetinfo.cpp:151
+#: dkim-verify/dkimwidgetinfo.cpp:153
 #, kde-format
 msgid "Invalid body canonicalization."
 msgstr "Érvénytelen törzskanonikalizáció."
 
-#: dkim-verify/dkimwidgetinfo.cpp:154
+#: dkim-verify/dkimwidgetinfo.cpp:156
 #, kde-format
 msgid "Unknown Body Hash Algorithm."
 msgstr "A törzs hash algoritmusa ismeretlen."
 
-#: dkim-verify/dkimwidgetinfo.cpp:157
+#: dkim-verify/dkimwidgetinfo.cpp:159
 #, kde-format
 msgid "Signature algorithm is invalid."
 msgstr "Az aláíró algoritmus érvénytelen."
 
-#: dkim-verify/dkimwidgetinfo.cpp:160
+#: dkim-verify/dkimwidgetinfo.cpp:162
 #, kde-format
 msgid "The public key was revoked."
 msgstr "A nyilvános kulcsot visszavonták."
 
-#: dkim-verify/dkimwidgetinfo.cpp:163
+#: dkim-verify/dkimwidgetinfo.cpp:165
 #, kde-format
 msgid "Signature is too large."
 msgstr "Az aláírás túl nagy."
 
-#: dkim-verify/dkimwidgetinfo.cpp:166
+#: dkim-verify/dkimwidgetinfo.cpp:168
 #, kde-format
 msgid "Hash Algorithm is unsupported."
 msgstr "A hash algoritmus nem támogatott."
 
-#: dkim-verify/dkimwidgetinfo.cpp:169
+#: dkim-verify/dkimwidgetinfo.cpp:171
 #, kde-format
 msgid "Public key is too small."
 msgstr "A nyilvános kulcs túl kicsi."
 
-#: dkim-verify/dkimwidgetinfo.cpp:172
+#: dkim-verify/dkimwidgetinfo.cpp:174
 #, kde-format
 msgid "Impossible to verify signature."
 msgstr "Lehetetlen ellenőrizni az aláírást."
 
-#: dkim-verify/dkimwidgetinfo.cpp:175
+#: dkim-verify/dkimwidgetinfo.cpp:177
 #, kde-format
 msgid "AUID must be in the same domain as SDID (s-flag set in key record)."
 msgstr ""
 "Az AUID-nak és az SDID-nek ugyanabban a tartományban kell lenniük (s-jelző "
 "beállítva a kulcsrekordban)."
 
-#: dkim-verify/dkimwidgetinfo.cpp:178
+#: dkim-verify/dkimwidgetinfo.cpp:180
 #, kde-format
 msgid "The signing domain is only testing DKIM."
 msgstr "Az aláíró tartomány csak DKIM-et ellenőriz."
 
-#: dkim-verify/dkimwidgetinfo.cpp:181
+#: dkim-verify/dkimwidgetinfo.cpp:183
 #, kde-format
 msgid "Impossible to download key."
 msgstr "Lehetetlen letölteni a kulcsot."
 
-#: dkim-verify/dkimwidgetinfo.cpp:184 dkim-verify/dkimwidgetinfo.cpp:208
+#: dkim-verify/dkimwidgetinfo.cpp:186 dkim-verify/dkimwidgetinfo.cpp:210
 #, kde-format
 msgid "Hash Algorithm unsafe (sha1)"
 msgstr "A hash algoritmus nem biztonságos (sha1)"
 
-#: dkim-verify/dkimwidgetinfo.cpp:187
+#: dkim-verify/dkimwidgetinfo.cpp:189
 #, kde-format
 msgid "AUID is not in a subdomain of SDID"
 msgstr "Az AUID nem az SDID egy résztartománya"
 
-#: dkim-verify/dkimwidgetinfo.cpp:190
+#: dkim-verify/dkimwidgetinfo.cpp:192
 #, kde-format
 msgid "Problem during converting public key"
 msgstr "Hiba a nyilvános kulcs átalakításakor"
 
-#: dkim-verify/dkimwidgetinfo.cpp:199
+#: dkim-verify/dkimwidgetinfo.cpp:201
 #, kde-format
 msgid "Signature expired"
 msgstr "Lejárt aláírás"
 
-#: dkim-verify/dkimwidgetinfo.cpp:202
+#: dkim-verify/dkimwidgetinfo.cpp:204
 #, kde-format
 msgid "Signature created in the future"
 msgstr "Jövőben létrehozott aláírás"
 
-#: dkim-verify/dkimwidgetinfo.cpp:205
+#: dkim-verify/dkimwidgetinfo.cpp:207
 #, kde-format
 msgid "Signature too small"
 msgstr "Túl kicsi aláírás"
 
-#: dkim-verify/dkimwidgetinfo.cpp:211
+#: dkim-verify/dkimwidgetinfo.cpp:213
 #, kde-format
 msgid "Public Key too small"
 msgstr "Túl kicsi nyilvános kulcs"
 
-#: dkim-verify/dkimwidgetinfo.cpp:234 dkim-verify/dkimwidgetinfo.cpp:282
+#: dkim-verify/dkimwidgetinfo.cpp:236 dkim-verify/dkimwidgetinfo.cpp:284
 #, kde-format
 msgctxt "method name: info about it from parsing"
 msgid "%1: %2"
 msgstr "%1: %2"
 
-#: dkim-verify/dkimwidgetinfo.cpp:259
+#: dkim-verify/dkimwidgetinfo.cpp:261
 #, kde-format
 msgid "%1: None"
 msgstr "%1: Nincs"
 
-#: dkim-verify/dkimwidgetinfo.cpp:274
+#: dkim-verify/dkimwidgetinfo.cpp:276
 #, kde-format
 msgid "%1: Valid (Signed by %2)"
 msgstr "%1: Érvényes (aláíró: %2)"
 
-#: dkim-verify/dkimwidgetinfo.cpp:296
+#: dkim-verify/dkimwidgetinfo.cpp:298
 #, kde-format
 msgid "%1: Valid"
 msgstr "%1: Érvényes"
 
-#: dkim-verify/dkimwidgetinfo.cpp:310
+#: dkim-verify/dkimwidgetinfo.cpp:312
 #, kde-format
 msgid "Not Signed"
 msgstr "Nincs aláírva"
@@ -1389,7 +1348,7 @@ msgstr ""
 "mailek, miután elküldte rájuk a választ."
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
-#: settings/messageviewer.kcfg:206 viewer/viewer_p.cpp:1570
+#: settings/messageviewer.kcfg:206 viewer/viewer_p.cpp:1600
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "Állandó szé&lességű betűtípus"
@@ -1786,7 +1745,7 @@ msgstr "Dokumentum nyomtatása"
 msgid "Turn on HTML rendering for this message."
 msgstr "A HTML üzenetmegjelenítés bekapcsolása."
 
-#: viewer/urlhandlermanager.cpp:412 viewer/viewer_p.cpp:1639
+#: viewer/urlhandlermanager.cpp:412 viewer/viewer_p.cpp:1669
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "Az üzenet külső internetes hivatkozásainak betöltése."
@@ -1868,7 +1827,7 @@ msgstr "Megny&itás a címjegyzékben"
 msgid "&Copy Email Address"
 msgstr "Az e-mail cím &másolása"
 
-#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2737
+#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2767
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "A címet a vágólapra másoltam."
@@ -1920,12 +1879,32 @@ msgctxt "@action:button"
 msgid "Execute"
 msgstr "Végrehajtás"
 
-#: viewer/viewer.cpp:151
+#: viewer/viewer.cpp:152
 #, kde-format
 msgid "Loading message..."
 msgstr "Üzenet betöltése…"
 
-#: viewer/viewer_p.cpp:348
+#: viewer/viewer_p.cpp:202
+#, kde-format
+msgid ""
+"Stored DKIM key is different from the current one. Do you want to store this "
+"one too?"
+msgstr ""
+"A tárolt DKIM kulcs különbözik a jelenlegitől. Szeretné tárolni ezt is?"
+
+#: viewer/viewer_p.cpp:203
+#, kde-format
+msgctxt "@title:window"
+msgid "Key Changed"
+msgstr "Kulcs módosítva"
+
+#: viewer/viewer_p.cpp:204
+#, kde-format
+msgctxt "@action:button"
+msgid "Store"
+msgstr "Tárolás"
+
+#: viewer/viewer_p.cpp:377
 #, kde-format
 msgid ""
 "Deleting an attachment might invalidate any digital signature on this "
@@ -1934,13 +1913,13 @@ msgstr ""
 "Ha töröl egy mellékletet egy üzenetből, érvénytelenné válnak az üzenet "
 "digitális aláírásai."
 
-#: viewer/viewer_p.cpp:349 viewer/viewer_p.cpp:384
+#: viewer/viewer_p.cpp:378 viewer/viewer_p.cpp:413
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "Melléklet törlése"
 
-#: viewer/viewer_p.cpp:383
+#: viewer/viewer_p.cpp:412
 #, kde-format
 msgid ""
 "Deleting an attachment from an encrypted or old-style mailman message is not "
@@ -1949,348 +1928,348 @@ msgstr ""
 "Titkosított vagy régi stílusú mailman üzenet mellékletének törlése nem "
 "támogatott."
 
-#: viewer/viewer_p.cpp:432
+#: viewer/viewer_p.cpp:461
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With"
 msgstr "Megnyitás e&zzel"
 
-#: viewer/viewer_p.cpp:450
+#: viewer/viewer_p.cpp:479
 #, kde-format
 msgctxt "@action:inmenu Open With"
 msgid "&Other..."
 msgstr "&Egyéb…"
 
-#: viewer/viewer_p.cpp:452 viewer/viewer_p.cpp:465
+#: viewer/viewer_p.cpp:481 viewer/viewer_p.cpp:494
 #, kde-format
 msgctxt "@title:menu"
 msgid "&Open With..."
 msgstr "Megnyitás e&zzel…"
 
-#: viewer/viewer_p.cpp:529 viewer/viewer_p.cpp:1748
+#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1778
 #, kde-format
 msgctxt "to open"
 msgid "Open"
 msgstr "Megnyitás"
 
-#: viewer/viewer_p.cpp:542 viewer/viewer_p.cpp:1755
+#: viewer/viewer_p.cpp:571 viewer/viewer_p.cpp:1785
 #, kde-format
 msgctxt "to view something"
 msgid "View"
 msgstr "Nézet"
 
-#: viewer/viewer_p.cpp:550
+#: viewer/viewer_p.cpp:579
 #, kde-format
 msgid "Scroll To"
 msgstr "Görgetés ide:"
 
-#: viewer/viewer_p.cpp:555
+#: viewer/viewer_p.cpp:584
 #, kde-format
 msgid "Save As..."
 msgstr "Mentés másként..."
 
-#: viewer/viewer_p.cpp:561 viewer/viewer_p.cpp:1765
+#: viewer/viewer_p.cpp:590 viewer/viewer_p.cpp:1795
 #, kde-format
 msgid "Copy"
 msgstr "Másolás"
 
-#: viewer/viewer_p.cpp:572 viewer/viewer_p.cpp:1769
+#: viewer/viewer_p.cpp:601 viewer/viewer_p.cpp:1799
 #, kde-format
 msgid "Delete Attachment"
 msgstr "A melléklet törlése"
 
-#: viewer/viewer_p.cpp:583
+#: viewer/viewer_p.cpp:612
 #, kde-format
 msgid "Reply To Author"
 msgstr "Válasz a feladónak"
 
-#: viewer/viewer_p.cpp:591
+#: viewer/viewer_p.cpp:620
 #, kde-format
 msgid "Reply To All"
 msgstr "Válasz mindenkinek"
 
-#: viewer/viewer_p.cpp:597 viewer/viewer_p.cpp:1774
+#: viewer/viewer_p.cpp:626 viewer/viewer_p.cpp:1804
 #, kde-format
 msgid "Properties"
 msgstr "Tulajdonságok"
 
-#: viewer/viewer_p.cpp:740
+#: viewer/viewer_p.cpp:769
 #, kde-format
 msgid "KMail"
 msgstr "KMail"
 
-#: viewer/viewer_p.cpp:740
+#: viewer/viewer_p.cpp:769
 #, kde-format
 msgid "The KDE Mail Client"
 msgstr "A KDE levelezőkliense"
 
-#: viewer/viewer_p.cpp:1290
+#: viewer/viewer_p.cpp:1320
 #, kde-format
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "Melléklet megtekintése: %1"
 
-#: viewer/viewer_p.cpp:1492
+#: viewer/viewer_p.cpp:1522
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "M&ellékletek"
 
-#: viewer/viewer_p.cpp:1494
+#: viewer/viewer_p.cpp:1524
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "Válassza ki a mellékletek megjelenítési módját"
 
-#: viewer/viewer_p.cpp:1497
+#: viewer/viewer_p.cpp:1527
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "&Ikonként"
 
-#: viewer/viewer_p.cpp:1500
+#: viewer/viewer_p.cpp:1530
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr "A mellékletek ikonként jelennek meg, melyek kattintással megnyithatók."
 
-#: viewer/viewer_p.cpp:1504
+#: viewer/viewer_p.cpp:1534
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "A feladó által &javasolt módon"
 
-#: viewer/viewer_p.cpp:1507
+#: viewer/viewer_p.cpp:1537
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "A mellékletek a feladó által javasolt módon jelenjenek meg."
 
-#: viewer/viewer_p.cpp:1511
+#: viewer/viewer_p.cpp:1541
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "Beá&gyazva"
 
-#: viewer/viewer_p.cpp:1514
+#: viewer/viewer_p.cpp:1544
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr ""
 "A mellékletek tartalma közvetlenül a szövegben jelenjen meg, ha lehetséges."
 
-#: viewer/viewer_p.cpp:1518
+#: viewer/viewer_p.cpp:1548
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "&Elrejtés"
 
-#: viewer/viewer_p.cpp:1521
+#: viewer/viewer_p.cpp:1551
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "Az üzenetablakban ne legyenek láthatóak a mellékletek"
 
-#: viewer/viewer_p.cpp:1525
+#: viewer/viewer_p.cpp:1555
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr "Csak a fejlécben"
 
-#: viewer/viewer_p.cpp:1528
+#: viewer/viewer_p.cpp:1558
 #, kde-format
 msgid "Show Attachments only in the header of the mail"
 msgstr "Mellékletek megjelenítése csak a levél fejlécében"
 
-#: viewer/viewer_p.cpp:1533
+#: viewer/viewer_p.cpp:1563
 #, kde-format
 msgid "&Set Encoding"
 msgstr "A kó&dolás beállítása"
 
-#: viewer/viewer_p.cpp:1538 widgets/configurewidget.cpp:45
+#: viewer/viewer_p.cpp:1568 widgets/configurewidget.cpp:45
 #: widgets/configurewidget.cpp:79
 #, kde-format
 msgid "Auto"
 msgstr "automatikus"
 
-#: viewer/viewer_p.cpp:1548
+#: viewer/viewer_p.cpp:1578
 #, kde-format
 msgid "Copy Text"
 msgstr "Szöveg másolása"
 
-#: viewer/viewer_p.cpp:1554
+#: viewer/viewer_p.cpp:1584
 #, kde-format
 msgctxt "@action"
 msgid "Select All Text"
 msgstr "Minden szöveg kijelölése"
 
-#: viewer/viewer_p.cpp:1560 viewer/viewer_p.cpp:2080
+#: viewer/viewer_p.cpp:1590 viewer/viewer_p.cpp:2110
 #, kde-format
 msgid "Copy Link Address"
 msgstr "A link címének kimásolása"
 
-#: viewer/viewer_p.cpp:1565
+#: viewer/viewer_p.cpp:1595
 #, kde-format
 msgid "Open URL"
 msgstr "URL megnyitása"
 
-#: viewer/viewer_p.cpp:1576
+#: viewer/viewer_p.cpp:1606
 #, kde-format
 msgid "Show Message Structure"
 msgstr "Üzenetstruktúra megjelenítése"
 
-#: viewer/viewer_p.cpp:1581
+#: viewer/viewer_p.cpp:1611
 #, kde-format
 msgctxt "@action"
 msgid "&View Source"
 msgstr "Forrás &megtekintése"
 
-#: viewer/viewer_p.cpp:1586
+#: viewer/viewer_p.cpp:1616
 #, kde-format
 msgid "&Save Message..."
 msgstr "Üzenet &mentése…"
 
-#: viewer/viewer_p.cpp:1592
+#: viewer/viewer_p.cpp:1622
 #, kde-format
 msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "Megjelenítési formátum menté&se"
 
-#: viewer/viewer_p.cpp:1596
+#: viewer/viewer_p.cpp:1626
 #, kde-format
 msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "Megjelenítési formátum &visszaállítása"
 
-#: viewer/viewer_p.cpp:1603
+#: viewer/viewer_p.cpp:1633
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "Felfelé görrgetés"
 
-#: viewer/viewer_p.cpp:1608
+#: viewer/viewer_p.cpp:1638
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "Lefelé görgetés"
 
-#: viewer/viewer_p.cpp:1613
+#: viewer/viewer_p.cpp:1643
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "Felfelé görgetés (többet)"
 
-#: viewer/viewer_p.cpp:1618
+#: viewer/viewer_p.cpp:1648
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "Lefelé görgetés (többet)"
 
-#: viewer/viewer_p.cpp:1628
+#: viewer/viewer_p.cpp:1658
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr "HTML-megjelenítési mód be/ki"
 
-#: viewer/viewer_p.cpp:1632
+#: viewer/viewer_p.cpp:1662
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr "Megjelenítési mód váltása HTML és egyszerű szöveg között"
 
-#: viewer/viewer_p.cpp:1635
+#: viewer/viewer_p.cpp:1665
 #, kde-format
 msgctxt "@action"
 msgid "Load external references"
 msgstr "Külső hivatkozások betöltése"
 
-#: viewer/viewer_p.cpp:1641
+#: viewer/viewer_p.cpp:1671
 #, kde-format
 msgctxt "@action"
 msgid "Speak Text"
 msgstr "Szöveg felolvasása"
 
-#: viewer/viewer_p.cpp:1647
+#: viewer/viewer_p.cpp:1677
 #, kde-format
 msgctxt "@action"
 msgid "Share Text..."
 msgstr "Szöveg megosztása…"
 
-#: viewer/viewer_p.cpp:1665
+#: viewer/viewer_p.cpp:1695
 #, kde-format
 msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "Kép címének másolása"
 
-#: viewer/viewer_p.cpp:1671
+#: viewer/viewer_p.cpp:1701
 #, kde-format
 msgid "&Find in Message..."
 msgstr "Ker&esés az üzenet szövegében..."
 
-#: viewer/viewer_p.cpp:1680
+#: viewer/viewer_p.cpp:1710
 #, kde-format
 msgid "Disable Emoticon"
 msgstr "Hangulatjelek kikapcsolása"
 
-#: viewer/viewer_p.cpp:1745
+#: viewer/viewer_p.cpp:1775
 #, kde-format
 msgid "Save &As..."
 msgstr "Mentés m&int..."
 
-#: viewer/viewer_p.cpp:1753
+#: viewer/viewer_p.cpp:1783
 #, kde-format
 msgid "Open With..."
 msgstr "Megnyitás ezzel..."
 
-#: viewer/viewer_p.cpp:1760
+#: viewer/viewer_p.cpp:1790
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "Az összes melléklet mentése…"
 
-#: viewer/viewer_p.cpp:2001
+#: viewer/viewer_p.cpp:2031
 #, kde-format
 msgid "The network is broken."
 msgstr "A hálózat nem működik."
 
-#: viewer/viewer_p.cpp:2001 viewer/viewer_p.cpp:2004
+#: viewer/viewer_p.cpp:2031 viewer/viewer_p.cpp:2034
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "Adathalász URL ellenőrzése"
 
-#: viewer/viewer_p.cpp:2004
+#: viewer/viewer_p.cpp:2034
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "A(z) %1 URL-cím érvénytelen."
 
-#: viewer/viewer_p.cpp:2024
+#: viewer/viewer_p.cpp:2054
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 "A weboldal káros tevékenységet folytat, biztosan folytatni szeretné a "
 "megjelenítését?"
 
-#: viewer/viewer_p.cpp:2025
+#: viewer/viewer_p.cpp:2055
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr "Malware"
 
-#: viewer/viewer_p.cpp:2078
+#: viewer/viewer_p.cpp:2108
 #, kde-format
 msgid "Copy Email Address"
 msgstr "E-mail cím másolása"
 
-#: viewer/viewer_p.cpp:2161
+#: viewer/viewer_p.cpp:2191
 #, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Az üzenet egyszerű szövegként"
 
-#: viewer/viewer_p.cpp:2743
+#: viewer/viewer_p.cpp:2773
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "Az URL-t a vágólapra másoltam."
 
-#: viewer/viewer_p.cpp:2905
+#: viewer/viewer_p.cpp:2935
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "Az üzenet betöltése sikertelen: %1."
 
-#: viewer/viewer_p.cpp:2910
+#: viewer/viewer_p.cpp:2940
 #, kde-format
 msgid "Message not found."
 msgstr "Az üzenet nem található."
@@ -2435,6 +2414,18 @@ msgstr "Következő üzenet"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Előző üzenet"
+
+#~ msgid "DKIM Key"
+#~ msgstr "DKIM kulcs"
+
+#~ msgid "Selector"
+#~ msgstr "Kiválasztó"
+
+#~ msgid "Inserted"
+#~ msgstr "Beszúrva"
+
+#~ msgid "Last Used"
+#~ msgstr "Utoljára használva"
 
 #~ msgctxt "@action - For we don't know if it's one or many attachments"
 #~ msgid "Open folder where attachment was saved"

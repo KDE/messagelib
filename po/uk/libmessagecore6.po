@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecore\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-03 00:44+0000\n"
+"POT-Creation-Date: 2026-10-06 00:48+0000\n"
 "PO-Revision-Date: 2024-08-02 09:25+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -262,6 +262,31 @@ msgstr "Зашифрувати це долучення"
 #, kde-format
 msgid "Sign this attachment"
 msgstr "Підписати це долучення"
+
+#: dkim-verify/dkimmanagerkeymodel.cpp:81
+#, kde-format
+msgid "DKIM Key"
+msgstr ""
+
+#: dkim-verify/dkimmanagerkeymodel.cpp:83
+#, kde-format
+msgid "Selector"
+msgstr ""
+
+#: dkim-verify/dkimmanagerkeymodel.cpp:85
+#, kde-format
+msgid "SDID"
+msgstr ""
+
+#: dkim-verify/dkimmanagerkeymodel.cpp:87
+#, kde-format
+msgid "Inserted"
+msgstr ""
+
+#: dkim-verify/dkimmanagerkeymodel.cpp:89
+#, kde-format
+msgid "Last Used"
+msgstr ""
 
 #. i18n: ectx: whatsthis, entry (OverrideCharacterEncoding), group (Reader)
 #: settings/messagecore.kcfg:25
