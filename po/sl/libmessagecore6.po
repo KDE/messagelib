@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-06 00:48+0000\n"
-"PO-Revision-Date: 2024-08-02 05:22+0200\n"
+"PO-Revision-Date: 2026-10-06 11:04+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
-"X-Generator: Poedit 3.4.4\n"
+"X-Generator: Poedit 3.9\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -264,27 +264,27 @@ msgstr "Podpiši to prilogo"
 #: dkim-verify/dkimmanagerkeymodel.cpp:81
 #, kde-format
 msgid "DKIM Key"
-msgstr ""
+msgstr "Ključ DKIM"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:83
 #, kde-format
 msgid "Selector"
-msgstr ""
+msgstr "Selektor"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:85
 #, kde-format
 msgid "SDID"
-msgstr ""
+msgstr "SDID"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:87
 #, kde-format
 msgid "Inserted"
-msgstr ""
+msgstr "Vstavljeno"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:89
 #, kde-format
 msgid "Last Used"
-msgstr ""
+msgstr "Zadnje uporabljeno"
 
 #. i18n: ectx: whatsthis, entry (OverrideCharacterEncoding), group (Reader)
 #: settings/messagecore.kcfg:25

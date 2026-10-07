@@ -1,15 +1,15 @@
-# Copyright (C) YEAR This_file_is_part_of_KDE
-# This file is distributed under the same license as the PACKAGE package.
+# Spanish translations for libmessagecore6.po package.
+# Copyright (C) 2009-2026 This file is copyright:
+# This file is distributed under the same license as the messagelib package.
 #
-# Javier Vinal <fjvinal@gmail.com>, 2009, 2010, 2011.
-# Javier Viñal <fjvinal@gmail.com>, 2010, 2012, 2013, 2014, 2015, 2016, 2018.
+# SPDX-FileCopyrightText: 2009-2016, 2018 Javier Viñal <fjvinal@gmail.com>
 # SPDX-FileCopyrightText: 2019, 2023-2024, 2026 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
-"Project-Id-Version: libmessagecore\n"
+"Project-Id-Version: libmessagecore6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-06 00:48+0000\n"
-"PO-Revision-Date: 2026-09-29 11:44+0200\n"
+"PO-Revision-Date: 2026-10-06 12:28+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -266,27 +266,27 @@ msgstr "Firmar este adjunto"
 #: dkim-verify/dkimmanagerkeymodel.cpp:81
 #, kde-format
 msgid "DKIM Key"
-msgstr ""
+msgstr "Clave DKIM"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:83
 #, kde-format
 msgid "Selector"
-msgstr ""
+msgstr "Selector"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:85
 #, kde-format
 msgid "SDID"
-msgstr ""
+msgstr "SDID"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:87
 #, kde-format
 msgid "Inserted"
-msgstr ""
+msgstr "Insertada"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:89
 #, kde-format
 msgid "Last Used"
-msgstr ""
+msgstr "Último uso"
 
 #. i18n: ectx: whatsthis, entry (OverrideCharacterEncoding), group (Reader)
 #: settings/messagecore.kcfg:25

@@ -2,27 +2,27 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# SPDX-FileCopyrightText: 2009, 2010, 2024 Freek de Kruijf <freekdekruijf@kde.nl>
+# SPDX-FileCopyrightText: 2009-2010, 2024, 2026 Freek de Kruijf <freekdekruijf@kde.nl>
 # Freek de Kruijf <freekdekruijf@kde.nl>, 2010, 2011, 2013, 2014, 2015, 2016, 2018, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecore\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-06 00:48+0000\n"
-"PO-Revision-Date: 2024-08-02 13:05+0200\n"
+"PO-Revision-Date: 2026-10-06 11:10+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 26.08.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
 msgid "Your names"
-msgstr "Freek de Kruijf - t/m 2024"
+msgstr "Freek de Kruijf - t/m 2026"
 
 #, kde-format
 msgctxt "EMAIL OF TRANSLATORS"
@@ -266,27 +266,27 @@ msgstr "Deze bijlage ondertekenen"
 #: dkim-verify/dkimmanagerkeymodel.cpp:81
 #, kde-format
 msgid "DKIM Key"
-msgstr ""
+msgstr "DKIM-sleutel"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:83
 #, kde-format
 msgid "Selector"
-msgstr ""
+msgstr "Selector"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:85
 #, kde-format
 msgid "SDID"
-msgstr ""
+msgstr "SDID"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:87
 #, kde-format
 msgid "Inserted"
-msgstr ""
+msgstr "Ingevoegd"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:89
 #, kde-format
 msgid "Last Used"
-msgstr ""
+msgstr "Laatst gebruikt"
 
 #. i18n: ectx: whatsthis, entry (OverrideCharacterEncoding), group (Reader)
 #: settings/messagecore.kcfg:25
