@@ -2425,15 +2425,3 @@ msgstr "Следващо съобщение"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Предишно съобщение"
-
-#~ msgid "DKIM Key"
-#~ msgstr "DKIM ключ"
-
-#~ msgid "Selector"
-#~ msgstr "Селектор"
-
-#~ msgid "Inserted"
-#~ msgstr "Обърнат"
-
-#~ msgid "Last Used"
-#~ msgstr "Последно използване"
