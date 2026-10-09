@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the messagelib package.
 #
-# SPDX-FileCopyrightText: 2024 Mincho Kondarev <mkondarev@yahoo.de>
+# SPDX-FileCopyrightText: 2024, 2026 Mincho Kondarev <mkondarev@yahoo.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-06 00:48+0000\n"
-"PO-Revision-Date: 2024-11-09 20:04+0100\n"
+"PO-Revision-Date: 2026-10-08 16:01+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -261,27 +261,27 @@ msgid "Sign this attachment"
 msgstr "Подписване на този прикачен файл"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:81
-#, fuzzy, kde-format
+#, kde-format
 msgid "DKIM Key"
 msgstr "DKIM ключ"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:83
-#, fuzzy, kde-format
+#, kde-format
 msgid "Selector"
 msgstr "Селектор"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:85
-#, fuzzy, kde-format
+#, kde-format
 msgid "SDID"
 msgstr "SDID"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:87
-#, fuzzy, kde-format
+#, kde-format
 msgid "Inserted"
 msgstr "Вмъкнато"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:89
-#, fuzzy, kde-format
+#, kde-format
 msgid "Last Used"
 msgstr "Последно използвано"
 

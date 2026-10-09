@@ -1,7 +1,7 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 # Geoffray Levasseur <geoffray.levasseurbrandin@numericable.fr>, 2009, 2010, 2011, 2013, 2014.
-# SPDX-FileCopyrightText: 2012, 2013, 2024 Xavier Besnard <xavier.besnard@kde.org>
+# SPDX-FileCopyrightText: 2012-2013, 2024, 2026 Xavier Besnard <xavier.besnard@kde.org>
 # Sebastien Renard <renard@kde.org>, 2013.
 # Vincent Pinon <vpinon@kde.org>, 2017, 2018.
 # Simon Depiets <sdepiets@gmail.com>, 2019.
@@ -12,9 +12,9 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-06 00:48+0000\n"
-"PO-Revision-Date: 2024-08-04 14:19+0200\n"
+"PO-Revision-Date: 2026-10-07 17:54+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
-"Language-Team: French <French <kde-francophone@kde.org>>\n"
+"Language-Team: fr\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: &\n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 26.08.1\n"
 "X-Text-Markup: kde4\n"
 
 #, kde-format
@@ -276,27 +276,27 @@ msgstr "Signer cette pièce jointe"
 #: dkim-verify/dkimmanagerkeymodel.cpp:81
 #, kde-format
 msgid "DKIM Key"
-msgstr ""
+msgstr "Clé DKIM"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:83
 #, kde-format
 msgid "Selector"
-msgstr ""
+msgstr "Sélecteur"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:85
 #, kde-format
 msgid "SDID"
-msgstr ""
+msgstr "SDID"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:87
 #, kde-format
 msgid "Inserted"
-msgstr ""
+msgstr "Inséré"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:89
 #, kde-format
 msgid "Last Used"
-msgstr ""
+msgstr "Utilisés dernièrement"
 
 #. i18n: ectx: whatsthis, entry (OverrideCharacterEncoding), group (Reader)
 #: settings/messagecore.kcfg:25
