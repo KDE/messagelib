@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4.2\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-06 00:48+0000\n"
+"POT-Creation-Date: 2026-10-11 00:52+0000\n"
 "PO-Revision-Date: 2025-07-08 22:12+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -1348,7 +1348,7 @@ msgstr ""
 "mailek, miután elküldte rájuk a választ."
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
-#: settings/messageviewer.kcfg:206 viewer/viewer_p.cpp:1600
+#: settings/messageviewer.kcfg:206 viewer/viewer_p.cpp:1540
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "Állandó szé&lességű betűtípus"
@@ -1745,7 +1745,7 @@ msgstr "Dokumentum nyomtatása"
 msgid "Turn on HTML rendering for this message."
 msgstr "A HTML üzenetmegjelenítés bekapcsolása."
 
-#: viewer/urlhandlermanager.cpp:412 viewer/viewer_p.cpp:1669
+#: viewer/urlhandlermanager.cpp:412 viewer/viewer_p.cpp:1609
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "Az üzenet külső internetes hivatkozásainak betöltése."
@@ -1827,7 +1827,7 @@ msgstr "Megny&itás a címjegyzékben"
 msgid "&Copy Email Address"
 msgstr "Az e-mail cím &másolása"
 
-#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2767
+#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2704
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "A címet a vágólapra másoltam."
@@ -1884,7 +1884,7 @@ msgstr "Végrehajtás"
 msgid "Loading message..."
 msgstr "Üzenet betöltése…"
 
-#: viewer/viewer_p.cpp:202
+#: viewer/viewer_p.cpp:203
 #, kde-format
 msgid ""
 "Stored DKIM key is different from the current one. Do you want to store this "
@@ -1892,19 +1892,19 @@ msgid ""
 msgstr ""
 "A tárolt DKIM kulcs különbözik a jelenlegitől. Szeretné tárolni ezt is?"
 
-#: viewer/viewer_p.cpp:203
+#: viewer/viewer_p.cpp:204
 #, kde-format
 msgctxt "@title:window"
 msgid "Key Changed"
 msgstr "Kulcs módosítva"
 
-#: viewer/viewer_p.cpp:204
+#: viewer/viewer_p.cpp:205
 #, kde-format
 msgctxt "@action:button"
 msgid "Store"
 msgstr "Tárolás"
 
-#: viewer/viewer_p.cpp:377
+#: viewer/viewer_p.cpp:378
 #, kde-format
 msgid ""
 "Deleting an attachment might invalidate any digital signature on this "
@@ -1913,13 +1913,13 @@ msgstr ""
 "Ha töröl egy mellékletet egy üzenetből, érvénytelenné válnak az üzenet "
 "digitális aláírásai."
 
-#: viewer/viewer_p.cpp:378 viewer/viewer_p.cpp:413
+#: viewer/viewer_p.cpp:379 viewer/viewer_p.cpp:414
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "Melléklet törlése"
 
-#: viewer/viewer_p.cpp:412
+#: viewer/viewer_p.cpp:413
 #, kde-format
 msgid ""
 "Deleting an attachment from an encrypted or old-style mailman message is not "
@@ -1928,348 +1928,319 @@ msgstr ""
 "Titkosított vagy régi stílusú mailman üzenet mellékletének törlése nem "
 "támogatott."
 
-#: viewer/viewer_p.cpp:461
-#, kde-format
-msgctxt "@title:menu"
-msgid "&Open With"
-msgstr "Megnyitás e&zzel"
-
-#: viewer/viewer_p.cpp:479
-#, kde-format
-msgctxt "@action:inmenu Open With"
-msgid "&Other..."
-msgstr "&Egyéb…"
-
-#: viewer/viewer_p.cpp:481 viewer/viewer_p.cpp:494
-#, kde-format
-msgctxt "@title:menu"
-msgid "&Open With..."
-msgstr "Megnyitás e&zzel…"
-
-#: viewer/viewer_p.cpp:558 viewer/viewer_p.cpp:1778
-#, kde-format
-msgctxt "to open"
-msgid "Open"
-msgstr "Megnyitás"
-
-#: viewer/viewer_p.cpp:571 viewer/viewer_p.cpp:1785
+#: viewer/viewer_p.cpp:511 viewer/viewer_p.cpp:1722
 #, kde-format
 msgctxt "to view something"
 msgid "View"
 msgstr "Nézet"
 
-#: viewer/viewer_p.cpp:579
+#: viewer/viewer_p.cpp:519
 #, kde-format
 msgid "Scroll To"
 msgstr "Görgetés ide:"
 
-#: viewer/viewer_p.cpp:584
+#: viewer/viewer_p.cpp:524
 #, kde-format
 msgid "Save As..."
 msgstr "Mentés másként..."
 
-#: viewer/viewer_p.cpp:590 viewer/viewer_p.cpp:1795
+#: viewer/viewer_p.cpp:530 viewer/viewer_p.cpp:1732
 #, kde-format
 msgid "Copy"
 msgstr "Másolás"
 
-#: viewer/viewer_p.cpp:601 viewer/viewer_p.cpp:1799
+#: viewer/viewer_p.cpp:541 viewer/viewer_p.cpp:1736
 #, kde-format
 msgid "Delete Attachment"
 msgstr "A melléklet törlése"
 
-#: viewer/viewer_p.cpp:612
+#: viewer/viewer_p.cpp:552
 #, kde-format
 msgid "Reply To Author"
 msgstr "Válasz a feladónak"
 
-#: viewer/viewer_p.cpp:620
+#: viewer/viewer_p.cpp:560
 #, kde-format
 msgid "Reply To All"
 msgstr "Válasz mindenkinek"
 
-#: viewer/viewer_p.cpp:626 viewer/viewer_p.cpp:1804
+#: viewer/viewer_p.cpp:566 viewer/viewer_p.cpp:1741
 #, kde-format
 msgid "Properties"
 msgstr "Tulajdonságok"
 
-#: viewer/viewer_p.cpp:769
+#: viewer/viewer_p.cpp:709
 #, kde-format
 msgid "KMail"
 msgstr "KMail"
 
-#: viewer/viewer_p.cpp:769
+#: viewer/viewer_p.cpp:709
 #, kde-format
 msgid "The KDE Mail Client"
 msgstr "A KDE levelezőkliense"
 
-#: viewer/viewer_p.cpp:1320
+#: viewer/viewer_p.cpp:1260
 #, kde-format
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "Melléklet megtekintése: %1"
 
-#: viewer/viewer_p.cpp:1522
+#: viewer/viewer_p.cpp:1462
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "M&ellékletek"
 
-#: viewer/viewer_p.cpp:1524
+#: viewer/viewer_p.cpp:1464
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "Válassza ki a mellékletek megjelenítési módját"
 
-#: viewer/viewer_p.cpp:1527
+#: viewer/viewer_p.cpp:1467
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "&Ikonként"
 
-#: viewer/viewer_p.cpp:1530
+#: viewer/viewer_p.cpp:1470
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr "A mellékletek ikonként jelennek meg, melyek kattintással megnyithatók."
 
-#: viewer/viewer_p.cpp:1534
+#: viewer/viewer_p.cpp:1474
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "A feladó által &javasolt módon"
 
-#: viewer/viewer_p.cpp:1537
+#: viewer/viewer_p.cpp:1477
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "A mellékletek a feladó által javasolt módon jelenjenek meg."
 
-#: viewer/viewer_p.cpp:1541
+#: viewer/viewer_p.cpp:1481
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "Beá&gyazva"
 
-#: viewer/viewer_p.cpp:1544
+#: viewer/viewer_p.cpp:1484
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr ""
 "A mellékletek tartalma közvetlenül a szövegben jelenjen meg, ha lehetséges."
 
-#: viewer/viewer_p.cpp:1548
+#: viewer/viewer_p.cpp:1488
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "&Elrejtés"
 
-#: viewer/viewer_p.cpp:1551
+#: viewer/viewer_p.cpp:1491
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "Az üzenetablakban ne legyenek láthatóak a mellékletek"
 
-#: viewer/viewer_p.cpp:1555
+#: viewer/viewer_p.cpp:1495
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr "Csak a fejlécben"
 
-#: viewer/viewer_p.cpp:1558
+#: viewer/viewer_p.cpp:1498
 #, kde-format
 msgid "Show Attachments only in the header of the mail"
 msgstr "Mellékletek megjelenítése csak a levél fejlécében"
 
-#: viewer/viewer_p.cpp:1563
+#: viewer/viewer_p.cpp:1503
 #, kde-format
 msgid "&Set Encoding"
 msgstr "A kó&dolás beállítása"
 
-#: viewer/viewer_p.cpp:1568 widgets/configurewidget.cpp:45
+#: viewer/viewer_p.cpp:1508 widgets/configurewidget.cpp:45
 #: widgets/configurewidget.cpp:79
 #, kde-format
 msgid "Auto"
 msgstr "automatikus"
 
-#: viewer/viewer_p.cpp:1578
+#: viewer/viewer_p.cpp:1518
 #, kde-format
 msgid "Copy Text"
 msgstr "Szöveg másolása"
 
-#: viewer/viewer_p.cpp:1584
+#: viewer/viewer_p.cpp:1524
 #, kde-format
 msgctxt "@action"
 msgid "Select All Text"
 msgstr "Minden szöveg kijelölése"
 
-#: viewer/viewer_p.cpp:1590 viewer/viewer_p.cpp:2110
+#: viewer/viewer_p.cpp:1530 viewer/viewer_p.cpp:2047
 #, kde-format
 msgid "Copy Link Address"
 msgstr "A link címének kimásolása"
 
-#: viewer/viewer_p.cpp:1595
+#: viewer/viewer_p.cpp:1535
 #, kde-format
 msgid "Open URL"
 msgstr "URL megnyitása"
 
-#: viewer/viewer_p.cpp:1606
+#: viewer/viewer_p.cpp:1546
 #, kde-format
 msgid "Show Message Structure"
 msgstr "Üzenetstruktúra megjelenítése"
 
-#: viewer/viewer_p.cpp:1611
+#: viewer/viewer_p.cpp:1551
 #, kde-format
 msgctxt "@action"
 msgid "&View Source"
 msgstr "Forrás &megtekintése"
 
-#: viewer/viewer_p.cpp:1616
+#: viewer/viewer_p.cpp:1556
 #, kde-format
 msgid "&Save Message..."
 msgstr "Üzenet &mentése…"
 
-#: viewer/viewer_p.cpp:1622
+#: viewer/viewer_p.cpp:1562
 #, kde-format
 msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "Megjelenítési formátum menté&se"
 
-#: viewer/viewer_p.cpp:1626
+#: viewer/viewer_p.cpp:1566
 #, kde-format
 msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "Megjelenítési formátum &visszaállítása"
 
-#: viewer/viewer_p.cpp:1633
+#: viewer/viewer_p.cpp:1573
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "Felfelé görrgetés"
 
-#: viewer/viewer_p.cpp:1638
+#: viewer/viewer_p.cpp:1578
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "Lefelé görgetés"
 
-#: viewer/viewer_p.cpp:1643
+#: viewer/viewer_p.cpp:1583
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "Felfelé görgetés (többet)"
 
-#: viewer/viewer_p.cpp:1648
+#: viewer/viewer_p.cpp:1588
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "Lefelé görgetés (többet)"
 
-#: viewer/viewer_p.cpp:1658
+#: viewer/viewer_p.cpp:1598
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr "HTML-megjelenítési mód be/ki"
 
-#: viewer/viewer_p.cpp:1662
+#: viewer/viewer_p.cpp:1602
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr "Megjelenítési mód váltása HTML és egyszerű szöveg között"
 
-#: viewer/viewer_p.cpp:1665
+#: viewer/viewer_p.cpp:1605
 #, kde-format
 msgctxt "@action"
 msgid "Load external references"
 msgstr "Külső hivatkozások betöltése"
 
-#: viewer/viewer_p.cpp:1671
+#: viewer/viewer_p.cpp:1611
 #, kde-format
 msgctxt "@action"
 msgid "Speak Text"
 msgstr "Szöveg felolvasása"
 
-#: viewer/viewer_p.cpp:1677
+#: viewer/viewer_p.cpp:1617
 #, kde-format
 msgctxt "@action"
 msgid "Share Text..."
 msgstr "Szöveg megosztása…"
 
-#: viewer/viewer_p.cpp:1695
+#: viewer/viewer_p.cpp:1635
 #, kde-format
 msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "Kép címének másolása"
 
-#: viewer/viewer_p.cpp:1701
+#: viewer/viewer_p.cpp:1641
 #, kde-format
 msgid "&Find in Message..."
 msgstr "Ker&esés az üzenet szövegében..."
 
-#: viewer/viewer_p.cpp:1710
+#: viewer/viewer_p.cpp:1650
 #, kde-format
 msgid "Disable Emoticon"
 msgstr "Hangulatjelek kikapcsolása"
 
-#: viewer/viewer_p.cpp:1775
+#: viewer/viewer_p.cpp:1716
 #, kde-format
 msgid "Save &As..."
 msgstr "Mentés m&int..."
 
-#: viewer/viewer_p.cpp:1783
-#, kde-format
-msgid "Open With..."
-msgstr "Megnyitás ezzel..."
-
-#: viewer/viewer_p.cpp:1790
+#: viewer/viewer_p.cpp:1727
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "Az összes melléklet mentése…"
 
-#: viewer/viewer_p.cpp:2031
+#: viewer/viewer_p.cpp:1968
 #, kde-format
 msgid "The network is broken."
 msgstr "A hálózat nem működik."
 
-#: viewer/viewer_p.cpp:2031 viewer/viewer_p.cpp:2034
+#: viewer/viewer_p.cpp:1968 viewer/viewer_p.cpp:1971
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "Adathalász URL ellenőrzése"
 
-#: viewer/viewer_p.cpp:2034
+#: viewer/viewer_p.cpp:1971
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "A(z) %1 URL-cím érvénytelen."
 
-#: viewer/viewer_p.cpp:2054
+#: viewer/viewer_p.cpp:1991
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 "A weboldal káros tevékenységet folytat, biztosan folytatni szeretné a "
 "megjelenítését?"
 
-#: viewer/viewer_p.cpp:2055
+#: viewer/viewer_p.cpp:1992
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr "Malware"
 
-#: viewer/viewer_p.cpp:2108
+#: viewer/viewer_p.cpp:2045
 #, kde-format
 msgid "Copy Email Address"
 msgstr "E-mail cím másolása"
 
-#: viewer/viewer_p.cpp:2191
+#: viewer/viewer_p.cpp:2128
 #, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Az üzenet egyszerű szövegként"
 
-#: viewer/viewer_p.cpp:2773
+#: viewer/viewer_p.cpp:2710
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "Az URL-t a vágólapra másoltam."
 
-#: viewer/viewer_p.cpp:2935
+#: viewer/viewer_p.cpp:2872
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "Az üzenet betöltése sikertelen: %1."
 
-#: viewer/viewer_p.cpp:2940
+#: viewer/viewer_p.cpp:2877
 #, kde-format
 msgid "Message not found."
 msgstr "Az üzenet nem található."
@@ -2414,6 +2385,25 @@ msgstr "Következő üzenet"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Előző üzenet"
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With"
+#~ msgstr "Megnyitás e&zzel"
+
+#~ msgctxt "@action:inmenu Open With"
+#~ msgid "&Other..."
+#~ msgstr "&Egyéb…"
+
+#~ msgctxt "@title:menu"
+#~ msgid "&Open With..."
+#~ msgstr "Megnyitás e&zzel…"
+
+#~ msgctxt "to open"
+#~ msgid "Open"
+#~ msgstr "Megnyitás"
+
+#~ msgid "Open With..."
+#~ msgstr "Megnyitás ezzel..."
 
 #~ msgid "DKIM Key"
 #~ msgstr "DKIM kulcs"
