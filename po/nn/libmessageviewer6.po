@@ -2296,22 +2296,3 @@ msgstr "Dekrypter melding"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Rull oppover i melding"
-
-#~ msgctxt "@title:menu"
-#~ msgid "&Open With"
-#~ msgstr "&Opna med"
-
-#~ msgctxt "@action:inmenu Open With"
-#~ msgid "&Other..."
-#~ msgstr "&Anna …"
-
-#~ msgctxt "@title:menu"
-#~ msgid "&Open With..."
-#~ msgstr "O&pna med …"
-
-#~ msgctxt "to open"
-#~ msgid "Open"
-#~ msgstr "Opna"
-
-#~ msgid "Open With..."
-#~ msgstr "Opna med …"

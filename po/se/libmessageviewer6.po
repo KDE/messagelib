@@ -2278,18 +2278,3 @@ msgstr ""
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr ""
-
-#~ msgctxt "@title:menu"
-#~ msgid "&Open With"
-#~ msgstr "&Raba geavahettiin"
-
-#~ msgctxt "@title:menu"
-#~ msgid "&Open With..."
-#~ msgstr "&Raba geavahettiin …"
-
-#~ msgctxt "to open"
-#~ msgid "Open"
-#~ msgstr "Raba"
-
-#~ msgid "Open With..."
-#~ msgstr "Raba geavahettiin …"
