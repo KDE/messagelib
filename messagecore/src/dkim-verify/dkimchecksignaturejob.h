@@ -89,14 +89,14 @@ public:
         DKIMCheckSignatureJob::DKIMStatus status = DKIMCheckSignatureJob::DKIMStatus::Unknown;
         QString sdid; // Signing Domain Identifier
         QString auid; // DKIM MAY optionally provide a single responsible Agent or User Identifier (AUID).
-        [[nodiscard]] bool operator==(const DKIMCheckSignatureAuthenticationResult &other) const;
+        [[nodiscard]] bool operator==(const DKIMCheckSignatureAuthenticationResult &other) const = default;
         [[nodiscard]] bool isValid() const;
     };
 
     struct MESSAGECORE_EXPORT CheckSignatureResult {
         [[nodiscard]] bool isValid() const;
 
-        [[nodiscard]] bool operator==(const CheckSignatureResult &other) const;
+        [[nodiscard]] bool operator==(const CheckSignatureResult &other) const = default;
 
         [[nodiscard]] bool operator!=(const CheckSignatureResult &other) const;
 

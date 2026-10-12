@@ -59,7 +59,7 @@ struct WEBENGINEVIEWER_EXPORT RiceDeltaEncoding {
     /*! Constructs a RiceDeltaEncoding object. */
     RiceDeltaEncoding();
     /*! Compares this object with another. */
-    [[nodiscard]] bool operator==(const RiceDeltaEncoding &other) const;
+    [[nodiscard]] bool operator==(const RiceDeltaEncoding &other) const = default;
     /*! Returns whether this is a valid encoding. */
     [[nodiscard]] bool isValid() const;
     /*! First value in the encoding. */

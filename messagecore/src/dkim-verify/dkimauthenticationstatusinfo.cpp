@@ -244,12 +244,6 @@ void DKIMAuthenticationStatusInfo::setReasonSpec(const QString &reasonSpec)
     mReasonSpec = reasonSpec;
 }
 
-bool DKIMAuthenticationStatusInfo::operator==(const DKIMAuthenticationStatusInfo &other) const
-{
-    return mAuthservId == other.mAuthservId && mAuthVersion == other.mAuthVersion && mReasonSpec == other.mReasonSpec
-        && mListAuthStatusInfo == other.mListAuthStatusInfo;
-}
-
 QList<DKIMAuthenticationStatusInfo::AuthStatusInfo> DKIMAuthenticationStatusInfo::listAuthStatusInfo() const
 {
     return mListAuthStatusInfo;

@@ -35,7 +35,7 @@ public:
     [[nodiscard]] const QString &commandLine() const;
     void setCommandLine(const QString &newCommandLine);
 
-    [[nodiscard]] bool operator==(const OpenWithUrlInfo &other) const;
+    [[nodiscard]] bool operator==(const OpenWithUrlInfo &other) const = default;
 
     [[nodiscard]] bool isLocalOpenWithInfo() const;
     void setIsLocalOpenWithInfo(bool newLocalOpenWith);

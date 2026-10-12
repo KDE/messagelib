@@ -139,12 +139,6 @@ RiceDeltaEncoding::RiceDeltaEncoding()
 {
 }
 
-bool RiceDeltaEncoding::operator==(const RiceDeltaEncoding &other) const
-{
-    return (firstValue == other.firstValue) && (encodingData == other.encodingData) && (riceParameter == other.riceParameter)
-        && (numberEntries == other.numberEntries);
-}
-
 bool RiceDeltaEncoding::isValid() const
 {
     if (!firstValue.isEmpty() && !encodingData.isEmpty() && ((riceParameter >= 2 && riceParameter <= 28) || (riceParameter == 0 && numberEntries == 0))) {

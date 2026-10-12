@@ -65,7 +65,7 @@ public:
 
     /*!
      */
-    [[nodiscard]] bool operator==(const DMARCInfo &other) const;
+    [[nodiscard]] bool operator==(const DMARCInfo &other) const = default;
 
 private:
     QString mVersion;

@@ -783,12 +783,6 @@ bool DKIMCheckSignatureJob::CheckSignatureResult::isValid() const
     return status != DKIMCheckSignatureJob::DKIMStatus::Unknown;
 }
 
-bool DKIMCheckSignatureJob::CheckSignatureResult::operator==(const DKIMCheckSignatureJob::CheckSignatureResult &other) const
-{
-    return error == other.error && warning == other.warning && status == other.status && fromEmail == other.fromEmail && auid == other.auid
-        && sdid == other.sdid && listSignatureAuthenticationResult == other.listSignatureAuthenticationResult;
-}
-
 bool DKIMCheckSignatureJob::CheckSignatureResult::operator!=(const DKIMCheckSignatureJob::CheckSignatureResult &other) const
 {
     return !CheckSignatureResult::operator==(other);
@@ -815,12 +809,6 @@ QDebug operator<<(QDebug d, const DKIMCheckSignatureJob::DKIMCheckSignatureAuthe
     d << " auid " << t.auid;
     d << " inforesult " << t.infoResult;
     return d;
-}
-
-bool DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult::operator==(const DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult &other) const
-{
-    return errorStr == other.errorStr && method == other.method && status == other.status && sdid == other.sdid && auid == other.auid
-        && infoResult == other.infoResult;
 }
 
 bool DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult::isValid() const

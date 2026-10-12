@@ -63,7 +63,7 @@ public:
         QString argument;
         void clear();
         [[nodiscard]] bool isValid() const;
-        [[nodiscard]] bool operator==(const SearchLineInfo &other) const;
+        [[nodiscard]] bool operator==(const SearchLineInfo &other) const = default;
         [[nodiscard]] bool isValidDate() const;
         [[nodiscard]] bool mustBeUnique() const;
         [[nodiscard]] qint64 convertArgumentAsSize() const;

@@ -59,7 +59,7 @@ public:
     [[nodiscard]] QString reasonSpec() const;
     void setReasonSpec(const QString &reasonSpec);
 
-    [[nodiscard]] bool operator==(const DKIMAuthenticationStatusInfo &other) const;
+    [[nodiscard]] bool operator==(const DKIMAuthenticationStatusInfo &other) const = default;
 
     [[nodiscard]] QList<AuthStatusInfo> listAuthStatusInfo() const;
     void setListAuthStatusInfo(const QList<AuthStatusInfo> &listAuthStatusInfo);

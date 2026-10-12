@@ -457,11 +457,6 @@ bool SearchLineCommand::SearchLineInfo::isValid() const
     return false;
 }
 
-bool SearchLineCommand::SearchLineInfo::operator==(const SearchLineInfo &other) const
-{
-    return type == other.type && argument == other.argument;
-}
-
 bool SearchLineCommand::SearchLineInfo::isValidDate() const
 {
     if (argument.isEmpty()) {

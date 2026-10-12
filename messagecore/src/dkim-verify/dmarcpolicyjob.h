@@ -20,11 +20,7 @@ public:
             return !mAdkim.isEmpty() && !mPolicy.isEmpty() && !mDomain.isEmpty() && !mSource.isEmpty();
         }
 
-        [[nodiscard]] bool operator==(const DMARCPolicyJob::DMARCResult &other) const
-        {
-            return mAdkim == other.mAdkim && mPolicy == other.mPolicy && mDomain == other.mDomain && mSource == other.mSource
-                && mPercentage == other.mPercentage;
-        }
+        [[nodiscard]] bool operator==(const DMARCPolicyJob::DMARCResult &other) const = default;
 
         [[nodiscard]] bool operator!=(const DMARCPolicyJob::DMARCResult &other) const
         {
