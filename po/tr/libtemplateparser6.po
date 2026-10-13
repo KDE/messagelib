@@ -5,13 +5,13 @@
 # H. İbrahim Güngör <ibrahim@pardus.org.tr>, 2011.
 # Volkan Gezer <volkangezer@gmail.com>, 2013-2014.
 # Kaan Ozdincer <kaanozdincer@gmail.com>, 2014.
-# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025, 2026 Emir SARI <emir_sari@icloud.com>
+# SPDX-FileCopyrightText: 2022-2026 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kdepim-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-05 00:45+0000\n"
-"PO-Revision-Date: 2026-05-02 18:53+0300\n"
+"PO-Revision-Date: 2026-10-12 11:57+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.08.0\n"
 "(http: //www.transifex.com/projects/p/kdepim-k-tr/language/tr/)\n"
 
 #: customtemplates.cpp:74 customtemplates.cpp:125
@@ -400,15 +400,15 @@ msgstr "Konu"
 
 #: templatescommandmenu.cpp:77
 msgid "Quoted Headers"
-msgstr "Alıntılanan Üstbilgiler"
+msgstr "Alıntılanan Üst Bilgiler"
 
 #: templatescommandmenu.cpp:79
 msgid "Headers as Is"
-msgstr "Üstbilgi Olduğu Gibi"
+msgstr "Üst Bilgi Olduğu Gibi"
 
 #: templatescommandmenu.cpp:81 templatescommandmenu.cpp:127
 msgid "Header Content"
-msgstr "Üstbilgi İçeriği"
+msgstr "Üst Bilgi İçeriği"
 
 #: templatescommandmenu.cpp:83
 msgid "Reply as Quoted Plain Text"
@@ -437,7 +437,7 @@ msgstr "Özgün İleti Gövdesini Alarak Olduğu Gibi Ekle"
 
 #: templatescommandmenu.cpp:134
 msgid "Pipe Original Message with Headers and Insert Result as Is"
-msgstr "Özgün İletiyi Üstbilgiyle Alarak Olduğu Gibi Ekle"
+msgstr "Özgün İletiyi Üst Bilgiyle Alarak Olduğu Gibi Ekle"
 
 #: templatescommandmenu.cpp:136
 msgid "Pipe Current Message Body and Insert Result as Is"
