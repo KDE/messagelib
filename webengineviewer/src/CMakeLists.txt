@@ -15,6 +15,8 @@ include_directories(
 add_library(KPim6WebEngineViewer)
 add_library(KPim6::WebEngineViewer ALIAS KPim6WebEngineViewer)
 
+target_compile_features(KPim6WebEngineViewer INTERFACE cxx_std_20)
+
 # precompiled headers support
 if(ENABLE_PCH)
     target_precompile_headers(
