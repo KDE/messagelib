@@ -403,7 +403,6 @@ ecm_add_installed_library_check(KPim6WebEngineViewer
 ecm_installed_library_check_version_preprocessor_macros(KPim6WebEngineViewer
     PREFIX WEBENGINEVIEWER
     VERSION ${WEBENGINEVIEWER_VERSION}
-    SILENT
 )
 
 ecm_installed_library_check_include_strings(KPim6WebEngineViewer
