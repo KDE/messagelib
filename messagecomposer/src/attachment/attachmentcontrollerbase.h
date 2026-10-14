@@ -120,13 +120,10 @@ protected:
     void enableAttachPublicKey(bool enable);
     void enableAttachMyPublicKey(bool enable);
     void byteArrayToRemoteFile(const QByteArray &aData, const QUrl &aURL, bool overwrite = false);
-    void openWith(const KService::Ptr &offer = KService::Ptr());
 
 private:
     MESSAGECOMPOSER_NO_EXPORT void attachDirectory(const QUrl &url);
     MESSAGECOMPOSER_NO_EXPORT void slotPutResult(KJob *job);
-    MESSAGECOMPOSER_NO_EXPORT void slotOpenWithDialog();
-    MESSAGECOMPOSER_NO_EXPORT void slotOpenWithAction(QAction *act);
 
 private:
     friend class AttachmentControllerBasePrivate;

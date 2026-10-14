@@ -49,7 +49,6 @@ saveMessageInMboxAndGetUrl(QUrl &url, const Akonadi::Item::List &retrievedMsgs, 
  */
 [[nodiscard]] MESSAGEVIEWER_EXPORT int deleteAttachments(const QList<KMime::Content *> &contents);
 
-[[nodiscard]] MESSAGEVIEWER_EXPORT QAction *createAppAction(const KService::Ptr &service, bool singleOffer, QActionGroup *actionGroup, QObject *parent);
 struct HtmlMessageInfo {
     QString htmlSource;
     QString extraHead;

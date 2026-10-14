@@ -35,6 +35,7 @@
 #include <KActionCollection>
 #include <KActionMenu>
 #include <KFileItemActions>
+#include <KFileItemListProperties>
 #include <KIO/ApplicationLauncherJob>
 #include <KLocalizedString>
 #include <KMessageBox>
@@ -89,7 +90,6 @@ public:
     void attachVcardFromAddressBook(KJob *job);
     void attachClipBoardElement(KJob *job);
     void selectedAllAttachment();
-    void createOpenWithMenu(QMenu *topMenu, const AttachmentPart::Ptr &part);
     void reloadAttachment();
     void updateJobResult(KJob *);
 
@@ -100,10 +100,12 @@ public:
     QHash<MessageComposer::EditorWatcher *, AttachmentPart::Ptr> editorPart;
     QHash<MessageComposer::EditorWatcher *, QTemporaryFile *> editorTempFile;
 
+    QString tempFileForAttachment(const AttachmentPart::Ptr &part);
+    std::map<AttachmentPart::Ptr, std::unique_ptr<QTemporaryFile>> m_tempFiles;
+
     KActionCollection *mActionCollection = nullptr;
     QAction *attachPublicKeyAction = nullptr;
     QAction *attachMyPublicKeyAction = nullptr;
-    QAction *openContextAction = nullptr;
     QAction *viewContextAction = nullptr;
     QAction *editContextAction = nullptr;
     QAction *editWithContextAction = nullptr;
@@ -141,7 +143,6 @@ void AttachmentControllerBase::setSelectedParts(const AttachmentPart::List &sele
     const int selectedCount = selectedParts.count();
     const bool enableEditAction = (selectedCount == 1) && (!selectedParts.first()->isMessageOrMessageCollection());
 
-    d->openContextAction->setEnabled(selectedCount > 0);
     d->viewContextAction->setEnabled(selectedCount > 0);
     d->editContextAction->setEnabled(enableEditAction);
     d->editWithContextAction->setEnabled(enableEditAction);
@@ -306,53 +307,8 @@ void AttachmentControllerBasePrivate::editDone(MessageComposer::EditorWatcher *w
     }
 
     delete tempFile;
+    m_tempFiles.erase(part); // make sure we get the new version for viewing next time as well
     // The watcher deletes itself.
-}
-
-void AttachmentControllerBasePrivate::createOpenWithMenu(QMenu *topMenu, const AttachmentPart::Ptr &part)
-{
-    const QString contentTypeStr = QString::fromLatin1(part->mimeType());
-    const KService::List offers = KFileItemActions::associatedApplications(QStringList() << contentTypeStr);
-    if (!offers.isEmpty()) {
-        QMenu *menu = topMenu;
-        auto actionGroup = new QActionGroup(menu);
-        QObject::connect(actionGroup, &QActionGroup::triggered, q, &AttachmentControllerBase::slotOpenWithAction);
-
-        if (offers.count() > 1) { // submenu 'open with'
-            menu = new QMenu(i18nc("@title:menu", "&Open With"), topMenu);
-            menu->menuAction()->setObjectName("openWith_submenu"_L1); // for the unittest
-            topMenu->addMenu(menu);
-        }
-        // qCDebug(MESSAGECOMPOSER_LOG) << offers.count() << "offers" << topMenu << menu;
-
-        KService::List::ConstIterator it = offers.constBegin();
-        KService::List::ConstIterator end = offers.constEnd();
-        for (; it != end; ++it) {
-            QAction *act = MessageViewer::Util::createAppAction(*it,
-                                                                // no submenu -> prefix single offer
-                                                                menu == topMenu,
-                                                                actionGroup,
-                                                                menu);
-            menu->addAction(act);
-        }
-
-        QString openWithActionName;
-        if (menu != topMenu) { // submenu
-            menu->addSeparator();
-            openWithActionName = i18nc("@action:inmenu Open With", "&Other...");
-        } else {
-            openWithActionName = i18nc("@title:menu", "&Open With...");
-        }
-        auto openWithAct = new QAction(menu);
-        openWithAct->setText(openWithActionName);
-        QObject::connect(openWithAct, &QAction::triggered, q, &AttachmentControllerBase::slotOpenWithDialog);
-        menu->addAction(openWithAct);
-    } else { // no app offers -> Open With...
-        auto act = new QAction(topMenu);
-        act->setText(i18nc("@title:menu", "&Open With..."));
-        QObject::connect(act, &QAction::triggered, q, &AttachmentControllerBase::slotOpenWithDialog);
-        topMenu->addAction(act);
-    }
 }
 
 void AttachmentControllerBase::exportPublicKey(const QString &fingerprint)
@@ -411,21 +367,35 @@ void AttachmentControllerBasePrivate::attachClipBoardElement(KJob *job)
     q->addAttachment(part);
 }
 
-static QTemporaryFile *dumpAttachmentToTempFile(const AttachmentPart::Ptr &part) // local
+static std::unique_ptr<QTemporaryFile> dumpAttachmentToTempFile(const AttachmentPart::Ptr &part) // local
 {
-    auto file = new QTemporaryFile;
+    auto file = std::make_unique<QTemporaryFile>();
     if (!file->open()) {
         qCCritical(MESSAGECOMPOSER_LOG) << "Could not open tempfile" << file->fileName();
-        delete file;
-        return nullptr;
+        return {};
     }
     if (file->write(part->data()) == -1) {
         qCCritical(MESSAGECOMPOSER_LOG) << "Could not dump attachment to tempfile.";
-        delete file;
-        return nullptr;
+        return {};
     }
     file->flush();
+    file->setPermissions(QFile::ReadUser);
     return file;
+}
+
+QString AttachmentControllerBasePrivate::tempFileForAttachment(const AttachmentPart::Ptr &part)
+{
+    const auto it = m_tempFiles.find(part);
+    if (it != m_tempFiles.end()) {
+        return (*it).second->fileName();
+    }
+    QString fileName;
+    auto f = dumpAttachmentToTempFile(part);
+    if (f) {
+        fileName = f->fileName();
+        m_tempFiles[part] = std::move(f);
+    }
+    return fileName;
 }
 
 AttachmentControllerBase::AttachmentControllerBase(MessageComposer::AttachmentModel *model, QWidget *wParent, KActionCollection *actionCollection)
@@ -499,11 +469,6 @@ void AttachmentControllerBase::createActions()
     });
     connect(d->removeContextAction, &QAction::triggered, this, [this]() {
         d->removeSelectedAttachments();
-    });
-
-    d->openContextAction = new QAction(i18nc("to open", "Open"), this);
-    connect(d->openContextAction, &QAction::triggered, this, [this]() {
-        d->openSelectedAttachments();
     });
 
     d->viewContextAction = new QAction(i18nc("to view", "View"), this);
@@ -606,6 +571,7 @@ void AttachmentControllerBase::showContextMenu()
 
     const int numberOfParts(d->selectedParts.count());
     QMenu menu;
+    KFileItemActions actions;
 
     const bool enableEditAction = (numberOfParts == 1) && (!d->selectedParts.first()->isMessageOrMessageCollection());
 
@@ -622,9 +588,11 @@ void AttachmentControllerBase::showContextMenu()
                 || parentMimeType.contains("image/png"_L1) || parentMimeType.contains("image/jpeg"_L1)) {
                 menu.addAction(d->viewContextAction);
             }
-            d->createOpenWithMenu(&menu, d->selectedParts.constFirst());
+
+            actions.setItemListProperties(
+                KFileItemListProperties({KFileItem(QUrl::fromLocalFile(d->tempFileForAttachment(d->selectedParts.constFirst())), mimetype)}));
+            actions.insertOpenWithActionsTo(nullptr, &menu, {});
         }
-        menu.addAction(d->openContextAction);
     }
     if (enableEditAction) {
         menu.addAction(d->editWithContextAction);
@@ -657,68 +625,23 @@ void AttachmentControllerBase::showContextMenu()
     menu.exec(QCursor::pos());
 }
 
-void AttachmentControllerBase::slotOpenWithDialog()
-{
-    openWith();
-}
-
-void AttachmentControllerBase::slotOpenWithAction(QAction *act)
-{
-    auto app = act->data().value<KService::Ptr>();
-    Q_ASSERT(d->selectedParts.count() == 1);
-
-    openWith(app);
-}
-
-void AttachmentControllerBase::openWith(const KService::Ptr &offer)
-{
-    QTemporaryFile *tempFile = dumpAttachmentToTempFile(d->selectedParts.constFirst());
-    if (!tempFile) {
-        KMessageBox::error(d->wParent,
-                           i18n("KMail was unable to write the attachment to a temporary file."),
-                           i18nc("@title:window", "Unable to open attachment"));
-        return;
-    }
-    const QUrl url = QUrl::fromLocalFile(tempFile->fileName());
-    tempFile->setPermissions(QFile::ReadUser);
-    // If offer is null, this will show the "open with" dialog
-    auto job = new KIO::ApplicationLauncherJob(offer);
-    job->setUrls({url});
-    job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, d->wParent));
-    connect(job, &KJob::result, this, [tempFile, job]() {
-        if (job->error()) {
-            delete tempFile;
-        }
-    });
-    job->start();
-    // Delete the file only when the composer is closed
-    // (and this object is destroyed).
-    tempFile->setParent(this); // Manages lifetime.
-}
-
 void AttachmentControllerBase::openAttachment(const AttachmentPart::Ptr &part)
 {
-    QTemporaryFile *tempFile = dumpAttachmentToTempFile(part);
-    if (!tempFile) {
+    const auto fileName = d->tempFileForAttachment(part);
+    if (fileName.isEmpty()) {
         KMessageBox::error(d->wParent,
                            i18n("KMail was unable to write the attachment to a temporary file."),
                            i18nc("@title:window", "Unable to open attachment"));
         return;
     }
-    tempFile->setPermissions(QFile::ReadUser);
-    auto job = new KIO::OpenUrlJob(QUrl::fromLocalFile(tempFile->fileName()), QString::fromLatin1(part->mimeType()));
+    auto job = new KIO::OpenUrlJob(QUrl::fromLocalFile(fileName), QString::fromLatin1(part->mimeType()));
     job->setUiDelegate(KIO::createDefaultJobUiDelegate(KJobUiDelegate::AutoHandlingEnabled, d->wParent));
     job->setDeleteTemporaryFile(true);
-    connect(job, &KIO::OpenUrlJob::result, this, [this, tempFile](KJob *job) {
+    connect(job, &KIO::OpenUrlJob::result, this, [this](KJob *job) {
         if (job->error()) {
             if (job->error() != KIO::ERR_USER_CANCELED) {
                 KMessageBox::error(d->wParent, job->errorString(), i18nc("@title:window", "Unable to open attachment"));
             }
-            delete tempFile;
-        } else {
-            // The file was opened.  Delete it only when the composer is closed
-            // (and this object is destroyed).
-            tempFile->setParent(this); // Manages lifetime.
         }
     });
     job->start();
@@ -751,13 +674,20 @@ void AttachmentControllerBasePrivate::slotAttachmentContentCreated(KJob *job)
 
 void AttachmentControllerBase::editAttachment(AttachmentPart::Ptr part, MessageComposer::EditorWatcher::OpenWithOption openWithOption)
 {
-    QTemporaryFile *tempFile = dumpAttachmentToTempFile(part);
+    std::unique_ptr<QTemporaryFile> tempFile;
+    if (auto it = d->m_tempFiles.find(part); it != d->m_tempFiles.end()) {
+        tempFile = std::move((*it).second);
+        d->m_tempFiles.erase(it);
+    } else {
+        tempFile = dumpAttachmentToTempFile(part);
+    }
     if (!tempFile) {
         KMessageBox::error(d->wParent,
                            i18n("KMail was unable to write the attachment to a temporary file."),
                            i18nc("@title:window", "Unable to edit attachment"));
         return;
     }
+    tempFile->setPermissions(QFile::ReadUser | QFile::WriteUser);
 
     auto watcher =
         new MessageComposer::EditorWatcher(QUrl::fromLocalFile(tempFile->fileName()), QString::fromLatin1(part->mimeType()), openWithOption, this, d->wParent);
@@ -770,10 +700,9 @@ void AttachmentControllerBase::editAttachment(AttachmentPart::Ptr part, MessageC
         // The attachment is being edited.
         // We will clean things up in editDone().
         d->editorPart[watcher] = std::move(part);
-        d->editorTempFile[watcher] = tempFile;
-
         // Delete the temp file if the composer is closed (and this object is destroyed).
         tempFile->setParent(this); // Manages lifetime.
+        d->editorTempFile[watcher] = tempFile.release();
         break;
     case MessageComposer::EditorWatcher::CannotStart:
         qCWarning(MESSAGECOMPOSER_LOG) << "Could not start EditorWatcher.";
@@ -782,7 +711,6 @@ void AttachmentControllerBase::editAttachment(AttachmentPart::Ptr part, MessageC
     case MessageComposer::EditorWatcher::Canceled:
     case MessageComposer::EditorWatcher::NoServiceFound:
         delete watcher;
-        delete tempFile;
         break;
     }
 }

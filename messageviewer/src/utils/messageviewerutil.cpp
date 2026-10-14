@@ -628,23 +628,6 @@ int Util::deleteAttachments(const QList<KMime::Content *> &nodes)
     return updatedCount;
 }
 
-QAction *Util::createAppAction(const KService::Ptr &service, bool singleOffer, QActionGroup *actionGroup, QObject *parent)
-{
-    QString actionName(service->name().replace(u'&', u"&&"_s));
-    if (singleOffer) {
-        actionName = i18n("Open &with %1", actionName);
-    } else {
-        actionName = i18nc("@item:inmenu Open With, %1 is application name", "%1", actionName);
-    }
-
-    auto act = new QAction(parent);
-    act->setIcon(QIcon::fromTheme(service->icon()));
-    act->setText(actionName);
-    actionGroup->addAction(act);
-    act->setData(QVariant::fromValue(service));
-    return act;
-}
-
 bool Util::excludeExtraHeader(const QString &s)
 {
     static QRegularExpression divRef(u"</div>"_s, QRegularExpression::CaseInsensitiveOption);
