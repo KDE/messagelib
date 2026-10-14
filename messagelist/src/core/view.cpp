@@ -243,7 +243,7 @@ View::View(Widget *pParent)
     setSelectionMode(QAbstractItemView::ExtendedSelection);
     viewport()->setAcceptDrops(true);
 
-#if !defined(Q_OS_MAC)
+#if !defined(Q_OS_MACOS)
     d->mScroller = QScroller::scroller(viewport());
     QScrollerProperties scrollerProp;
     scrollerProp.setScrollMetric(QScrollerProperties::AcceleratingFlickMaximumTime, 0.2); // QTBUG-88249
