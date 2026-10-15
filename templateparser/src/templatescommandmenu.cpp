@@ -199,6 +199,7 @@ QMenu *TemplatesCommandMenu::menu() const
 
 void TemplatesCommandMenu::fillMenu()
 {
+    delete mMenu;
     mMenu = new KActionMenu(i18n("Insert Command"), this);
 }
 
@@ -286,7 +287,6 @@ TemplatesCommandMenu::MenuTypes TemplatesCommandMenu::type() const
 void TemplatesCommandMenu::setType(MenuTypes type)
 {
     mType = type;
-    delete mMenu;
     mWasInitialized = false;
     fillMenu();
     fillSubMenus();
