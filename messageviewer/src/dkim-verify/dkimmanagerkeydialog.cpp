@@ -31,9 +31,10 @@ DKIMManagerKeyDialog::DKIMManagerKeyDialog(QWidget *parent)
     mManagerWidget->setObjectName("managerWidget"_L1);
     mainLayout->addWidget(mManagerWidget);
 
-    auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
+    auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok | QDialogButtonBox::Cancel, this);
     buttonBox->setObjectName("buttonbox"_L1);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &DKIMManagerKeyDialog::reject);
+    connect(buttonBox, &QDialogButtonBox::accepted, this, &DKIMManagerKeyDialog::slotAccept);
     mainLayout->addWidget(buttonBox);
     loadKeys();
     readConfig();

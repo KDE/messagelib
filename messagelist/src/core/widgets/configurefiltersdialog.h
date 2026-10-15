@@ -22,7 +22,6 @@ public:
 
 private:
     void readConfig();
-    void writeConfig();
     ConfigureFiltersWidget *const mConfigureFiltersWidget;
 };
 
