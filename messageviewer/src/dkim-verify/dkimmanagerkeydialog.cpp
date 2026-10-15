@@ -11,6 +11,8 @@
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
 
+#include <TextAddonsWidgets/LoadDialogSizeUtils>
+
 using namespace Qt::Literals::StringLiterals;
 
 namespace
@@ -46,17 +48,13 @@ void DKIMManagerKeyDialog::readConfig()
 {
     const KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myDKIMManagerKeyDialogConfigGroupName));
     mManagerWidget->restoreHeaders(group.readEntry("Header", QByteArray()));
-    const QSize size = group.readEntry("Size", QSize(600, 400));
-    if (size.isValid()) {
-        resize(size);
-    }
+    TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myDKIMManagerKeyDialogConfigGroupName), QSize(600, 400));
 }
 
 void DKIMManagerKeyDialog::writeConfig()
 {
     KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myDKIMManagerKeyDialogConfigGroupName));
     group.writeEntry("Header", mManagerWidget->saveHeaders());
-    group.writeEntry("Size", size());
     group.sync();
 }
 

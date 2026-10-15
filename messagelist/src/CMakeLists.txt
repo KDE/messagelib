@@ -192,6 +192,7 @@ target_link_libraries(
         KF6::TextWidgets
         KF6::TextUtils
         KF6::ColorScheme
+        KF6::TextAddonsWidgets
 )
 
 if(NOT FORCE_DISABLE_AKONADI_SEARCH)

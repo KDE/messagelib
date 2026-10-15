@@ -17,6 +17,8 @@
 #include <QPushButton>
 #include <QVBoxLayout>
 
+#include <TextAddonsWidgets/LoadDialogSizeUtils>
+
 using namespace Qt::Literals::StringLiterals;
 
 namespace
@@ -102,18 +104,14 @@ void DKIMManageRulesDialog::slotImport()
 void DKIMManageRulesDialog::readConfig()
 {
     const KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myDKIMManageRulesDialogGroupName));
-    const QSize size = group.readEntry("Size", QSize(600, 400));
     mRulesWidget->restoreHeaders(group.readEntry("Header", QByteArray()));
-    if (size.isValid()) {
-        resize(size);
-    }
+    TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myDKIMManageRulesDialogGroupName), QSize(600, 400));
 }
 
 void DKIMManageRulesDialog::writeConfig()
 {
     KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myDKIMManageRulesDialogGroupName));
     group.writeEntry("Header", mRulesWidget->saveHeaders());
-    group.writeEntry("Size", size());
     group.sync();
 }
 

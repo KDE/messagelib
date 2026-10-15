@@ -5,11 +5,11 @@
 */
 #include "configurefiltersdialog.h"
 #include "configurefilterswidget.h"
-#include <KConfigGroup>
 #include <KLocalizedString>
-#include <KSharedConfig>
 #include <QDialogButtonBox>
 #include <QVBoxLayout>
+
+#include <TextAddonsWidgets/LoadDialogSizeUtils>
 
 using namespace Qt::Literals::StringLiterals;
 
@@ -36,25 +36,11 @@ ConfigureFiltersDialog::ConfigureFiltersDialog(QWidget *parent)
     readConfig();
 }
 
-ConfigureFiltersDialog::~ConfigureFiltersDialog()
-{
-    writeConfig();
-}
+ConfigureFiltersDialog::~ConfigureFiltersDialog() = default;
 
 void ConfigureFiltersDialog::readConfig()
 {
-    const KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myConfigureFiltersDialogConfigGroupName));
-    const QSize size = group.readEntry("Size", QSize(600, 400));
-    if (size.isValid()) {
-        resize(size);
-    }
-}
-
-void ConfigureFiltersDialog::writeConfig()
-{
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myConfigureFiltersDialogConfigGroupName));
-    group.writeEntry("Size", size());
-    group.sync();
+    TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myConfigureFiltersDialogConfigGroupName), QSize(600, 400));
 }
 
 #include "moc_configurefiltersdialog.cpp"

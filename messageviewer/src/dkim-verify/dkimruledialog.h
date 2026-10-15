@@ -27,7 +27,6 @@ public:
     void loadRule(const MessageCore::DKIMRule &rule);
 
 private:
-    MESSAGEVIEWER_NO_EXPORT void writeConfig();
     MESSAGEVIEWER_NO_EXPORT void readConfig();
     DKIMRuleWidget *const mRuleWidget;
     QPushButton *mOkButton = nullptr;

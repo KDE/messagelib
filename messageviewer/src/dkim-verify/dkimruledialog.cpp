@@ -7,13 +7,13 @@
 #include "dkimruledialog.h"
 #include "dkimrulewidget.h"
 
-#include <KConfigGroup>
 #include <KLocalizedString>
-#include <KSharedConfig>
 #include <MessageCore/DKIMRule>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QVBoxLayout>
+
+#include <TextAddonsWidgets/LoadDialogSizeUtils>
 
 using namespace Qt::Literals::StringLiterals;
 
@@ -50,25 +50,11 @@ DKIMRuleDialog::DKIMRuleDialog(QWidget *parent)
     readConfig();
 }
 
-DKIMRuleDialog::~DKIMRuleDialog()
-{
-    writeConfig();
-}
+DKIMRuleDialog::~DKIMRuleDialog() = default;
 
 void DKIMRuleDialog::readConfig()
 {
-    const KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myDKIMRuleDialogConfigGroupName));
-    const QSize size = group.readEntry("Size", QSize(600, 400));
-    if (size.isValid()) {
-        resize(size);
-    }
-}
-
-void DKIMRuleDialog::writeConfig()
-{
-    KConfigGroup group(KSharedConfig::openStateConfig(), QLatin1StringView(myDKIMRuleDialogConfigGroupName));
-    group.writeEntry("Size", size());
-    group.sync();
+    TextAddonsWidgets::LoadDialogSizeUtils::manageDialogSize(this, QLatin1StringView(myDKIMRuleDialogConfigGroupName), QSize(600, 400));
 }
 
 void DKIMRuleDialog::loadRule(const MessageCore::DKIMRule &rule)
