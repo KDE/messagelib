@@ -383,12 +383,13 @@ void DefaultRendererPrivate::render(const CertMessagePart::Ptr &mp, HtmlWriter *
 
     auto end(imports.end());
     for (auto it = imports.begin(); it != end; ++it) {
-        auto key(new QObject(mp.data()));
+        auto key(new QObject(&block));
         key->setProperty("error", Kleo::Formatting::errorAsString(it->error()));
         key->setProperty("status", (*it).status());
         key->setProperty("fingerprint", QLatin1StringView((*it).fingerprint()));
         keylist << QVariant::fromValue(key);
     }
+    block.setProperty("imports", keylist);
 
     HTMLBlock::Ptr aBlock;
     if (mp->isAttachment()) {
