@@ -446,15 +446,13 @@ void ConfigureThemesDialog::ConfigureThemesDialogPrivate::importThemeButtonClick
             while (idx < cnt) {
                 const QString data = grp.readEntry(u"Set%1"_s.arg(idx), QString());
                 if (!data.isEmpty()) {
-                    auto set = new Theme();
-                    if (set->loadFromString(data)) {
-                        set->setReadOnly(false);
-                        set->detach(); // detach shared data
-                        set->generateUniqueId(); // regenerate id so it becomes different
-                        set->setName(uniqueNameForTheme(set->name()));
-                        (void)new ThemeListWidgetItem(mThemeList, *set);
-                    } else {
-                        delete set;
+                    Theme set;
+                    if (set.loadFromString(data)) {
+                        set.setReadOnly(false);
+                        set.detach(); // detach shared data
+                        set.generateUniqueId(); // regenerate id so it becomes different
+                        set.setName(uniqueNameForTheme(set.name()));
+                        (void)new ThemeListWidgetItem(mThemeList, set);
                     }
                 }
                 ++idx;
