@@ -33,7 +33,6 @@ TrackingDetailsDialog::TrackingDetailsDialog(QWidget *parent)
     auto buttonBox = new QDialogButtonBox(QDialogButtonBox::Close, this);
     buttonBox->setObjectName("buttonbox"_L1);
     connect(buttonBox, &QDialogButtonBox::rejected, this, &TrackingDetailsDialog::reject);
-    connect(buttonBox->button(QDialogButtonBox::Close), &QPushButton::clicked, this, &TrackingDetailsDialog::close);
 
     mDetails->setObjectName("detail"_L1);
     mainLayout->addWidget(mDetails);
