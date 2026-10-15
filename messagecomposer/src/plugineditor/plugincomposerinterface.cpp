@@ -5,10 +5,7 @@
 */
 
 #include "plugincomposerinterface.h"
-#include "composer/composerattachmentinterface.h"
-#include "composer/composerviewbase.h"
 #include "composer/composerviewinterface.h"
-#include <MessageComposer/AttachmentModel>
 #include <MessageComposer/ConvertSnippetVariablesJob>
 using namespace MessageComposer;
 

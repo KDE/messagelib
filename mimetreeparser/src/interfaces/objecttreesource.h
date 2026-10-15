@@ -11,6 +11,8 @@
 #include <MimeTreeParser/Util>
 
 #include <KMime/Message>
+#include <QByteArray>
+#include <QList>
 #include <QSharedPointer>
 #include <QStringDecoder>
 

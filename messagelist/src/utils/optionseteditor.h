@@ -15,11 +15,6 @@ class KTextEdit;
 
 namespace MessageList
 {
-namespace Core
-{
-class OptionSet;
-} // namespace Core
-
 namespace Utils
 {
 /**

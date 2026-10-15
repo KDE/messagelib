@@ -13,7 +13,6 @@
 namespace MessageComposer
 {
 class PluginEditorCheckBeforeSendInterfacePrivate;
-class PluginEditorCheckBeforeSendParams;
 /*!
  \class MessageComposer::PluginEditorCheckBeforeSendInterface
  \inmodule MessageComposer

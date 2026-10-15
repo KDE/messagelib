@@ -10,7 +10,7 @@
 #include "utils/mimetype.h"
 
 #include "interfaces/htmlwriter.h"
-#include <MessageCore/StringUtil>
+#include <MimeTreeParser/NodeHelper>
 
 #include <KIconLoader>
 #include <QUrl>

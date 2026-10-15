@@ -12,11 +12,6 @@
 
 namespace MessageList
 {
-namespace Core
-{
-class Manager;
-} // namespace Core
-
 namespace Utils
 {
 /**

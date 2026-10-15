@@ -6,13 +6,13 @@
 
 #pragma once
 
-#include "updatedatabaseinfo.h"
 #include "webengineviewer_export.h"
 #include <QObject>
 #include <memory>
 namespace WebEngineViewer
 {
 class CreateDatabaseFileJobPrivate;
+struct UpdateDataBaseInfo;
 /*!
  * \class WebEngineViewer::CreateDatabaseFileJob
  * \inmodule WebEngineViewer

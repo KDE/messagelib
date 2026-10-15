@@ -5,7 +5,10 @@
 */
 
 #include "networkurlinterceptormanager.h"
+#include "networkpluginurlinterceptor.h"
+#include "networkpluginurlinterceptorinterface.h"
 #include "networkurlinterceptorpluginmanager.h"
+#include <WebEngineViewer/WebHitTestResult>
 
 using namespace WebEngineViewer;
 

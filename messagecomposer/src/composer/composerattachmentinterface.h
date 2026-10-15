@@ -8,6 +8,7 @@
 
 #include "messagecomposer_export.h"
 #include <QObject>
+#include <QStringList>
 
 namespace MessageComposer
 {

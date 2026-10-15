@@ -10,8 +10,6 @@
 
 #include "templateparserjob.h"
 
-#include <KMime/Message>
-
 using namespace Qt::Literals::StringLiterals;
 namespace MimeTreeParser
 {

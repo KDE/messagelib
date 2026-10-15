@@ -13,6 +13,7 @@
 #include "messageviewer/viewer.h"
 
 #include <QObject>
+#include <memory>
 
 namespace MessageViewer
 {

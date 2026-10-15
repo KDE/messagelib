@@ -7,7 +7,6 @@
 
 #include "templatesinsertcommandpushbutton.h"
 
-#include "templateparser_debug.h"
 #include <KLocalizedString>
 
 using namespace Qt::Literals::StringLiterals;

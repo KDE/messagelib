@@ -19,6 +19,8 @@
 #include <QPixmap>
 #include <QString>
 
+#include <memory>
+
 namespace Akonadi
 {
 class Item;

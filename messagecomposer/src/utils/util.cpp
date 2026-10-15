@@ -15,7 +15,6 @@
 #include "job/singlepartjob.h"
 
 #include <QRegularExpression>
-#include <QStringEncoder>
 #include <QTextBlock>
 #include <QTextDocument>
 

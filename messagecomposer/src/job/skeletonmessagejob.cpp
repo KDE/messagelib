@@ -6,13 +6,10 @@
 
 #include "job/skeletonmessagejob.h"
 
-#include "settings/messagecomposersettings.h"
-
 #include "job/jobbase_p.h"
 #include "part/globalpart.h"
 #include "part/infopart.h"
 
-#include <QHostInfo>
 #include <QUrl>
 
 #include "messagecomposer_debug.h"

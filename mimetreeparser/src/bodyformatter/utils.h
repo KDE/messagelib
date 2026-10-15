@@ -9,7 +9,10 @@
 #include "interfaces/bodypart.h"
 #include "messagepart.h"
 
-#include <KMime/Content>
+namespace KMime
+{
+class Content;
+}
 
 namespace MimeTreeParser
 {

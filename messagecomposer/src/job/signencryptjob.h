@@ -20,6 +20,7 @@
 namespace KMime
 {
 class Content;
+class Message;
 }
 
 namespace MessageComposer

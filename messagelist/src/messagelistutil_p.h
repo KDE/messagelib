@@ -7,10 +7,10 @@
 
 #pragma once
 
-#include <QObject>
 #include <QString>
 
 class QMenu;
+class QObject;
 
 namespace MessageList
 {

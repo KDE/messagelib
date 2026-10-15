@@ -38,11 +38,9 @@
 #include <KStandardActions>
 #include <QAction>
 #include <QHBoxLayout>
-#include <QPrintPreviewDialog>
 #include <QVBoxLayout>
 
 #include <Akonadi/ErrorAttribute>
-#include <Akonadi/ItemCreateJob>
 #include <Akonadi/ItemModifyJob>
 #include <Akonadi/MessageFlags>
 #include <Akonadi/SpecialMailCollections>
@@ -55,9 +53,7 @@
 #include <KIO/OpenUrlJob>
 #include <KLocalizedString>
 #include <KMessageBox>
-#include <KMimeTypeChooser>
 #include <KSelectAction>
-#include <KSharedConfig>
 #include <KStandardGuiItem>
 #include <KToggleAction>
 #include <MessageCore/Util>
@@ -73,11 +69,8 @@
 #include <QDir>
 #include <QItemSelectionModel>
 #include <QMimeDatabase>
-#include <QPrintDialog>
-#include <QPrinter>
 #include <QSplitter>
-#include <QTreeView>
-#include <QWheelEvent>
+#include <QStringDecoder>
 // libkdepim
 #include <MessageCore/AttachmentPropertiesDialog>
 #include <PimCommon/BroadcastStatus>
@@ -86,7 +79,6 @@
 #include <Akonadi/Collection>
 #include <Akonadi/ItemFetchJob>
 #include <Akonadi/ItemFetchScope>
-#include <Akonadi/MessageParts>
 #include <Akonadi/MessageStatus>
 
 #include <KIdentityManagementCore/Identity>
@@ -116,18 +108,10 @@
 #include <WebEngineViewer/WebHitTestResult>
 
 #include "interfaces/htmlwriter.h"
-#include <MimeTreeParser/BodyPart>
 #include <MimeTreeParser/NodeHelper>
 #include <MimeTreeParser/ObjectTreeParser>
 
-#include <MessageCore/StringUtil>
-
 #include <MessageCore/MessageCoreSettings>
-
-#include <Akonadi/AgentInstance>
-#include <Akonadi/AgentManager>
-#include <Akonadi/CollectionFetchJob>
-#include <Akonadi/CollectionFetchScope>
 
 #include <PimCommon/PurposeMenuMessageWidget>
 
@@ -138,7 +122,6 @@
 #include "viewerplugins/viewerplugininterface.h"
 #include <Akonadi/MDNStateAttribute>
 #include <QApplication>
-#include <QStandardPaths>
 #include <QWebEngineSettings>
 #include <WebEngineViewer/DeveloperToolDialog>
 #include <WebEngineViewer/TrackingWarningWidget>

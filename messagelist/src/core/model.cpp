@@ -41,7 +41,6 @@
 #include "messagelist_debug.h"
 #include <config-messagelist.h>
 
-#include "MessageCore/StringUtil"
 #include <Akonadi/Item>
 #include <Akonadi/MessageStatus>
 #include <MessageCore/DateFormatter>

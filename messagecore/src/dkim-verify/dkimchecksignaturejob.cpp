@@ -16,7 +16,6 @@
 #include <KEmailAddress>
 #include <QCryptographicHash>
 #include <QDateTime>
-#include <QFile>
 #include <QRegularExpression>
 
 #include <openssl/bn.h>
@@ -32,6 +31,10 @@
 
 // see https://tools.ietf.org/html/rfc6376
 // #define DEBUG_SIGNATURE_DKIM 1
+#ifdef DEBUG_SIGNATURE_DKIM
+#include <QFile>
+#include <QTextStream>
+#endif
 using namespace Qt::Literals::StringLiterals;
 using namespace MessageCore;
 DKIMCheckSignatureJob::DKIMCheckSignatureJob(QObject *parent)

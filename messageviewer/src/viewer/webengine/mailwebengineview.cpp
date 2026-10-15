@@ -13,6 +13,7 @@
 #include "webengineviewer/webengineaccesskey.h"
 #include "webengineviewer/webenginescript.h"
 #include <WebEngineViewer/BlockExternalResourcesUrlInterceptor>
+#include <WebEngineViewer/BlockTrackingUrlInterceptor>
 #include <WebEngineViewer/InterceptorManager>
 #include <WebEngineViewer/WebEngineManageScript>
 
@@ -24,6 +25,7 @@
 #include <QApplication>
 #include <QImage>
 #include <QPainter>
+#include <QVariant>
 #include <QWebEngineUrlScheme>
 
 #include <WebEngineViewer/WebHitTestResult>

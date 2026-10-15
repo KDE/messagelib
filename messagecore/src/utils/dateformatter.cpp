@@ -15,6 +15,10 @@
 #include "dateformatter.h"
 
 #include <KLocalizedString>
+#include <QLocale>
+
+#include <cstdio>
+#include <cstdlib>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace MessageCore;

@@ -43,9 +43,7 @@
 
 #include <algorithm>
 #include <cassert>
-#include <ctime>
 #include <functional>
-#include <iostream>
 #include <iterator>
 #include <map>
 #include <memory>

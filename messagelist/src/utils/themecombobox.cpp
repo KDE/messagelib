@@ -4,13 +4,14 @@
 */
 #include "themecombobox.h"
 
-#include "utils/themecombobox.h"
 #include "utils/themecombobox_p.h"
 
 #include "core/manager.h"
+#include "core/storagemodelbase.h"
 #include "core/theme.h"
 #include "messagelistsettings.h"
-#include "storagemodel.h"
+
+#include <KConfigGroup>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace MessageList::Core;

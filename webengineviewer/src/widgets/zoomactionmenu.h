@@ -8,6 +8,7 @@
 
 #include "webengineviewer_export.h"
 #include <KActionMenu>
+#include <memory>
 class KActionCollection;
 namespace WebEngineViewer
 {

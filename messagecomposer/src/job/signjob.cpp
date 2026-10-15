@@ -13,7 +13,6 @@
 
 #include <QGpgME/Protocol>
 #include <QGpgME/SignJob>
-#include <QList>
 
 #include "messagecomposer_debug.h"
 #include <KMime/Content>
@@ -21,7 +20,6 @@
 #include <KMime/Message>
 #include <Libkleo/Formatting>
 
-#include <gpgme++/encryptionresult.h>
 #include <gpgme++/global.h>
 #include <gpgme++/signingresult.h>
 

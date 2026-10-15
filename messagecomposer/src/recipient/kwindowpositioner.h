@@ -7,7 +7,9 @@
 */
 #pragma once
 
-#include <QWidget>
+#include <QObject>
+
+class QWidget;
 
 namespace MessageComposer
 {

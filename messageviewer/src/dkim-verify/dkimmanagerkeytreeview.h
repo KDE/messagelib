@@ -5,12 +5,13 @@
 */
 #pragma once
 #include "messageviewer_private_export.h"
-#include <MessageCore/DKIMManagerKey>
+#include <QList>
 #include <QTreeView>
 namespace MessageCore
 {
 class DKIMManagerKeyProxyModel;
 class DKIMManagerKeyModel;
+struct KeyInfo;
 }
 namespace MessageViewer
 {

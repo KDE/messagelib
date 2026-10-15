@@ -7,7 +7,6 @@
  *******************************************************************************/
 
 #include "utils/optionseteditor.h"
-#include "core/optionset.h"
 
 #include <QGridLayout>
 #include <QLabel>
@@ -17,7 +16,6 @@
 #include <QLineEdit>
 
 using namespace MessageList::Utils;
-using namespace MessageList::Core;
 
 OptionSetEditor::OptionSetEditor(QWidget *parent)
     : QTabWidget(parent)

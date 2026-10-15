@@ -9,8 +9,8 @@
 
 #include "messageviewer_export.h"
 #include <QObject>
-#include <QVariant>
 #include <memory>
+class QVariant;
 class QWebEnginePage;
 namespace MessageViewer
 {

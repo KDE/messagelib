@@ -30,7 +30,6 @@ namespace Core
 {
 class Item;
 class GroupHeaderItem;
-class MessageItem;
 class FakeItem;
 class ModelInvariantRowMapper;
 } // namespace Core

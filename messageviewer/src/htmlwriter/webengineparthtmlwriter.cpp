@@ -7,7 +7,6 @@
 
 #include "webengineembedpart.h"
 
-#include "messageviewer/messageviewerutil.h"
 #include "messageviewer_debug.h"
 #include "viewer/webengine/mailwebengineview.h"
 #include <QUrl>

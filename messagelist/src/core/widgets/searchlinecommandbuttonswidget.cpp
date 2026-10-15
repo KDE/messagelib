@@ -8,9 +8,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include "messagelist_debug.h"
 #include "searchlinecommand.h"
 #include <KLocalizedString>
-#include <QEvent>
 #include <QPushButton>
-#include <QVBoxLayout>
 #include <TextAddonsWidgets/TextAddonsWidgetFlowLayout>
 using namespace Qt::Literals::StringLiterals;
 using namespace MessageList::Core;

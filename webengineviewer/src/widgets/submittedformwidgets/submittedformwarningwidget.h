@@ -11,7 +11,6 @@
 
 namespace WebEngineViewer
 {
-class SubmittedFormWarningWidgetPrivate;
 class WEBENGINEVIEWER_EXPORT SubmittedFormWarningWidget : public KMessageWidget
 {
     Q_OBJECT

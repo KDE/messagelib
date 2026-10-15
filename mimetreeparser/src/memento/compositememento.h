@@ -8,7 +8,7 @@
 
 #include "cryptobodypartmemento.h"
 
-#include <memory>
+#include <algorithm>
 #include <type_traits>
 
 namespace MimeTreeParser

@@ -10,6 +10,8 @@
 #include <KMime/Message>
 #include <QObject>
 
+#include <memory>
+
 namespace TemplateParser
 {
 /*!

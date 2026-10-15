@@ -8,14 +8,14 @@
 
 #pragma once
 
-#include "messageitem.h"
+#include "aggregation.h"
 #include <QHash>
 
 namespace MessageList
 {
 namespace Core
 {
-class Aggregation;
+class MessageItem;
 
 class ThreadingCache
 {

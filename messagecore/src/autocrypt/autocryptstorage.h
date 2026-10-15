@@ -12,6 +12,8 @@
 
 #include <QSharedPointer>
 
+#include <memory>
+
 class AutocryptStorageTest;
 class AutocryptUtilsTest;
 

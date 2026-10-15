@@ -6,7 +6,6 @@
 
 #include "viewerplugininterface.h"
 #include "utils/messageviewerutil_p.h"
-#include <QAction>
 using namespace MessageViewer;
 
 class MessageViewer::ViewerPluginInterfacePrivate

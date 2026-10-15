@@ -9,7 +9,6 @@
 #include "utils/messageviewerutil_p.h"
 #include <KActionMenu>
 #include <KToggleAction>
-#include <QAction>
 #include <QActionGroup>
 using namespace MessageViewer;
 

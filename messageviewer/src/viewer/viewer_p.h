@@ -23,7 +23,6 @@
 #include <PimCommon/ShareServiceUrlManager>
 #include <QList>
 #include <QPointer>
-#include <QStringDecoder>
 #include <QUrl>
 #include <TextAddonsWidgets/OpenSavedFileFolderWidget>
 #include <WebEngineViewer/CheckPhishingUrlUtil>
@@ -31,16 +30,11 @@
 #include <QObject>
 #include <QTimer>
 class QFontMetrics;
-namespace KIO
-{
-class Job;
-}
 
 class QAction;
 class KActionCollection;
 class KSelectAction;
 class KToggleAction;
-class QMenu;
 class KActionMenu;
 
 class QPoint;
@@ -71,7 +65,6 @@ class TextToSpeechContainerWidget;
 
 namespace MimeTreeParser
 {
-class ObjectTreeParser;
 class NodeHelper;
 }
 namespace MessageViewer
@@ -94,7 +87,6 @@ namespace MessageViewer
 class AttachmentStrategy;
 class HeaderStylePlugin;
 class HtmlWriter;
-class CSSHelper;
 class MessageViewerRenderer;
 class MailWebEngineView;
 class WebEnginePartHtmlWriter;
@@ -106,7 +98,6 @@ class ViewerPluginToolManager;
 class MailSourceWebEngineViewer;
 class ShowNextMessageWidget;
 class RemoteContentMenu;
-class MDNWarningWidget;
 /**
 \brief Private class for the Viewer, the main widget in the messageviewer library.
 

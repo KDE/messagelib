@@ -6,8 +6,10 @@
 
 #pragma once
 
-#include "viewer/viewer_p.h"
+#include "messageviewer/viewer.h"
+#include <Akonadi/Item>
 #include <QObject>
+class KJob;
 namespace Akonadi
 {
 class Session;

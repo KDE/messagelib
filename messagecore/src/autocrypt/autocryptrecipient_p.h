@@ -6,6 +6,8 @@
 
 #pragma once
 
+#include <QByteArray>
+#include <QDateTime>
 #include <QJsonDocument>
 
 namespace MessageCore

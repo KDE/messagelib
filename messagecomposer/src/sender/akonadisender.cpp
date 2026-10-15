@@ -14,8 +14,6 @@
 #include "settings/messagecomposersettings.h"
 #include "utils/util_p.h"
 
-#include <Libkdepim/ProgressManager>
-
 #include <Akonadi/DispatcherInterface>
 #include <Akonadi/MessageQueueJob>
 #include <KEmailAddress>
@@ -24,9 +22,9 @@
 #include <MailTransport/Transport>
 #include <MailTransport/TransportManager>
 #include <MessageCore/StringUtil>
+#include <QSet>
 #include <kmime/content.h>
 using namespace KMime::Types;
-using namespace KPIM;
 using namespace MessageComposer;
 
 static QStringList addrSpecListToStringList(const QList<KMime::Types::AddrSpec> &l, bool allowEmpty = false)

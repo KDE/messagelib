@@ -15,11 +15,6 @@ class QWidget;
 class QActionGroup;
 class QAction;
 
-namespace KMime
-{
-class Message;
-}
-
 namespace MessageViewer
 {
 /*!

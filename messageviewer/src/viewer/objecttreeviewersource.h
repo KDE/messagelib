@@ -8,13 +8,9 @@
 #pragma once
 
 #include "objecttreeemptysource.h"
-#include <QStringDecoder>
-class QString;
 
 namespace MessageViewer
 {
-class AttachmentStrategy;
-class HtmlWriter;
 class ViewerPrivate;
 
 /** An ObjectTreeParser source working on a MailViewer object */

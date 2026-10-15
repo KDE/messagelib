@@ -15,7 +15,6 @@ class QAction;
 namespace MessageViewer
 {
 class ViewerPluginToolManagerPrivate;
-class ViewerPluginInterface;
 /*!
  * \class MessageViewer::ViewerPluginToolManager
  * \inmodule MessageViewer

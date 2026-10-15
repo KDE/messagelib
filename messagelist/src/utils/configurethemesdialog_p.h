@@ -10,6 +10,7 @@
 
 #include "utils/configurethemesdialog.h"
 class QListWidgetItem;
+class QPushButton;
 namespace MessageList
 {
 namespace Core

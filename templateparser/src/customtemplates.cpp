@@ -17,6 +17,7 @@
 
 #include <KLocalizedString>
 #include <KMessageBox>
+#include <QCursor>
 #include <QIcon>
 
 #include <QWhatsThis>

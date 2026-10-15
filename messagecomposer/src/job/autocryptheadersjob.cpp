@@ -8,9 +8,6 @@
 
 #include "contentjobbase_p.h"
 
-#include "job/singlepartjob.h"
-#include "utils/util_p.h"
-
 #include <QGpgME/ExportJob>
 #include <QGpgME/Protocol>
 #include <gpgme++/context.h>
@@ -19,6 +16,7 @@
 #include <KLocalizedString>
 #include <KMime/Content>
 #include <KMime/Headers>
+#include <KMime/Message>
 #include <Libkleo/Formatting>
 
 #include <QByteArray>

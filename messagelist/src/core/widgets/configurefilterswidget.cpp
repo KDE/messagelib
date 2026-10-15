@@ -10,6 +10,7 @@
 #include "filternamedialog.h"
 #include <KLocalizedString>
 #include <KMessageBox>
+#include <QCursor>
 #include <QMenu>
 #include <QPainter>
 #include <QPointer>

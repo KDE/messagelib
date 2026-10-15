@@ -17,6 +17,9 @@
 #include "messageviewer/viewer.h"
 #include "messageviewer_export.h"
 
+class QDateTime;
+class QImage;
+
 namespace MessageViewer
 {
 /*!

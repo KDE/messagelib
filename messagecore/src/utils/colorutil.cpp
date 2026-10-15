@@ -8,14 +8,15 @@
 #include "colorutil.h"
 
 #include <KColorScheme>
-#include <QApplication>
+#include <QGuiApplication>
+#include <QPalette>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace MessageCore;
 
 static bool isLightTheme()
 {
-    return qApp->palette().color(QPalette::Window).value() >= 128;
+    return QGuiApplication::palette().color(QPalette::Window).value() >= 128;
 }
 
 Q_GLOBAL_STATIC(ColorUtil, s_self)

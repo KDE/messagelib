@@ -6,11 +6,14 @@
 
 #pragma once
 #include "messageviewer_private_export.h"
-#include <MessageCore/DKIMRule>
 #include <QWidget>
 class QCheckBox;
 class QLineEdit;
 class QSpinBox;
+namespace MessageCore
+{
+class DKIMRule;
+}
 namespace MessageViewer
 {
 class DKIMManageRulesComboBox;

@@ -11,7 +11,10 @@
 #include <QElapsedTimer>
 #include <QObject>
 #include <QTimer>
+
+#include <cstdint>
 class KProcess;
+class QWidget;
 
 namespace MessageComposer
 {

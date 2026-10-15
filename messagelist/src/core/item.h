@@ -13,11 +13,8 @@
 
 #include <ctime> // for time_t
 
-#include <KMime/Headers>
-
 #include <Akonadi/MessageStatus>
 
-#include "core/model.h"
 #include "messagelist_export.h"
 
 namespace MessageList
@@ -25,6 +22,7 @@ namespace MessageList
 namespace Core
 {
 class ItemPrivate;
+class Model;
 
 /*!
  * \class MessageList::Core::Item

@@ -5,7 +5,6 @@
 */
 
 #include "messagefactoryforwardjob.h"
-#include <KIdentityManagementCore/IdentityManager>
 #include <TemplateParser/TemplateParserJob>
 
 using namespace MessageComposer;

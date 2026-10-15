@@ -8,6 +8,7 @@
 
 #include "../createdatabasefilejob.h"
 #include "../localdatabasefile.h"
+#include "../updatedatabaseinfo.h"
 #include <QSignalSpy>
 #include <QStandardPaths>
 #include <QTest>

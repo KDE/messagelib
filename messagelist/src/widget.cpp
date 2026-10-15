@@ -11,6 +11,7 @@
 #include <Akonadi/ItemMoveJob>
 
 #include "core/messageitem.h"
+#include "core/model.h"
 #include "core/view.h"
 #include "storagemodel.h"
 #include <messagelistsettings.h>
@@ -24,21 +25,19 @@
 #include <QUrlQuery>
 
 #include "messagelist_debug.h"
-#include <KJob>
+#include <KConfigGroup>
 #include <KLocalizedString>
 #include <KXMLGUIClient>
 #include <KXMLGUIFactory>
+#include <QCursor>
 #include <QIcon>
 #include <QMenu>
 
 #include "core/groupheaderitem.h"
 #include "tagmanager.h"
 
-#include <Akonadi/Monitor>
 #include <Akonadi/Tag>
 #include <Akonadi/TagAttribute>
-#include <Akonadi/TagFetchJob>
-#include <Akonadi/TagFetchScope>
 using namespace Qt::Literals::StringLiterals;
 
 namespace MessageList

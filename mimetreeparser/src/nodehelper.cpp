@@ -16,7 +16,6 @@
 #include <KMime/Content>
 
 #include <KCharsets>
-#include <KLocalizedString>
 #include <QTemporaryFile>
 
 #include <QDir>
@@ -28,8 +27,6 @@
 #include <QMimeDatabase>
 #include <QMimeType>
 #include <algorithm>
-#include <sstream>
-#include <string>
 #include <utility>
 
 using namespace Qt::Literals::StringLiterals;

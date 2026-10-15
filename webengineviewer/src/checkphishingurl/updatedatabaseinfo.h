@@ -7,8 +7,11 @@
 #pragma once
 
 #include "webengineviewer_export.h"
+#include <QByteArray>
 #include <QList>
+#include <QMetaType>
 #include <QObject>
+#include <QString>
 namespace WebEngineViewer
 {
 struct Addition;

@@ -8,8 +8,6 @@
 #include "header/grantleeheaderformatter.h"
 #include <GrantleeTheme/GrantleeTheme>
 
-#include <KMime/Message>
-
 using namespace MessageViewer;
 class MessageViewer::GrantleeHeaderStylePrivate
 {

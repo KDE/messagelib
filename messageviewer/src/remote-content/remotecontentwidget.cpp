@@ -8,7 +8,6 @@
 #include "remotecontentstatustypecombobox.h"
 
 #include <KLocalizedString>
-#include <QCheckBox>
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QLineEdit>

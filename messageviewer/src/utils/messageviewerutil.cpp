@@ -5,7 +5,6 @@
 
 #include "messageviewer/messageviewerutil.h"
 
-#include "MessageCore/MessageCoreSettings"
 #include "MessageCore/StringUtil"
 #include "messageviewer_debug.h"
 #include "messageviewerutil_p.h"
@@ -28,10 +27,11 @@
 #include <KRecentDirs>
 #include <QAction>
 #include <QActionGroup>
-#include <QDBusConnectionInterface>
+#include <QDataStream>
 #include <QDesktopServices>
 #include <QFileDialog>
 #include <QIcon>
+#include <QPointer>
 #include <QRegularExpression>
 #include <QTemporaryFile>
 #include <QWidget>

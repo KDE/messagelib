@@ -13,7 +13,10 @@
 #include <QGpgME/DataProvider>
 #include <QGpgME/Protocol>
 #include <QJsonObject>
+#include <gpgme++/context.h>
 #include <gpgme++/data.h>
+
+#include <cassert>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace MessageCore;

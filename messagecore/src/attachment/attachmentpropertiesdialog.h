@@ -14,6 +14,13 @@
 
 #include <QDialog>
 
+#include <memory>
+
+namespace KMime
+{
+class Content;
+}
+
 namespace MessageCore
 {
 /*!

@@ -6,7 +6,6 @@
 
 #include "ktexttemplateextension.h"
 
-#include <KTextTemplate/Exception>
 #include <KTextTemplate/Parser>
 
 using namespace MessageViewer;

@@ -13,16 +13,6 @@
 #include "mimetreeparser/bodypart.h"
 #include "mimetreeparser_export.h"
 
-namespace KMime
-{
-class Content;
-}
-
-namespace MimeTreeParser
-{
-class NodeHelper;
-}
-
 namespace MimeTreeParser
 {
 /**

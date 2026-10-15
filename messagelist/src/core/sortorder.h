@@ -9,7 +9,7 @@
 
 #include "core/aggregation.h"
 
-#include <KConfigGroup>
+class KConfigGroup;
 
 namespace MessageList
 {

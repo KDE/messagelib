@@ -12,6 +12,7 @@
 #include <Akonadi/ContactGroupSearchJob>
 #include <Akonadi/ContactSearchJob>
 #include <Akonadi/ItemCreateJob>
+#include <KContacts/ContactGroup>
 #include <KEmailAddress>
 
 #include "messagecomposer_debug.h"
@@ -26,6 +27,7 @@
 #include <QHBoxLayout>
 #include <QHeaderView>
 #include <QLabel>
+#include <QPointer>
 #include <QPushButton>
 #include <QTreeWidget>
 #include <QTreeWidgetItem>

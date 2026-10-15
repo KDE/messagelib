@@ -16,6 +16,7 @@
 
 #include <QPointer>
 #include <QRegularExpression>
+#include <QVariant>
 #include <QWebEnginePage>
 
 using namespace MessageViewer;

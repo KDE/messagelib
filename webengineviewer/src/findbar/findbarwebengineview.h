@@ -7,6 +7,7 @@
 
 #include "findbarbase.h"
 #include "webengineviewer_export.h"
+#include <memory>
 
 class QWebEngineView;
 

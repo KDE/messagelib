@@ -8,10 +8,17 @@
 
 #pragma once
 
+#include "md5hash.h"
 #include "model.h"
 #include "threadingcache.h"
+#include <QDate>
+#include <QHash>
+#include <QMap>
+#include <QMultiHash>
 #include <QTimer>
 #include <config-messagelist.h>
+
+#include <ctime> // time_t
 
 class QElapsedTimer;
 namespace MessageList

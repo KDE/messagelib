@@ -19,6 +19,8 @@
 
 #include <gpgme++/key.h>
 
+#include <map>
+#include <memory>
 #include <vector>
 
 #include <QSharedPointer>

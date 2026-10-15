@@ -11,6 +11,8 @@
 
 #include "messagecomposer_export.h"
 
+class QDebug;
+
 namespace MessageComposer
 {
 /*!

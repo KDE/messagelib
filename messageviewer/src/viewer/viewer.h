@@ -16,6 +16,7 @@
 #include <KMime/MDN>
 #include <KMime/Message>
 #include <MessageViewer/MDNWarningWidget>
+#include <QWidget>
 
 #include <memory>
 
@@ -23,6 +24,7 @@ namespace Akonadi
 {
 class Item;
 class ItemFetchJob;
+class Session;
 }
 
 namespace KIdentityManagementCore
@@ -47,7 +49,6 @@ class WebHitTestResult;
 
 namespace MessageViewer
 {
-class WebHitTestResult;
 class DKIMWidgetInfo;
 class DKIMViewerMenu;
 class AttachmentStrategy;
@@ -56,7 +57,6 @@ class CSSHelper;
 class ViewerPrivate;
 class Viewer;
 class RemoteContentMenu;
-class MDNWarningWidget;
 
 /*!
  * An interface to plug in a handler that is called when

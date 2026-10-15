@@ -14,6 +14,8 @@ class KActionCollection;
 class QWheelEvent;
 class QResizeEvent;
 class QKeyEvent;
+class QUrl;
+class QVariant;
 class QWebEngineView;
 namespace WebEngineViewer
 {

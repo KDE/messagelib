@@ -6,8 +6,12 @@
 
 #pragma once
 
-#include <KMime/Message>
 #include <QTreeView>
+
+namespace KMime
+{
+class Content;
+}
 
 namespace MessageViewer
 {

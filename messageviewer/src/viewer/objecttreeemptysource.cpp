@@ -7,10 +7,7 @@
 
 #include "objecttreeemptysource.h"
 #include "viewer/attachmentstrategy.h"
-#include "viewer/csshelperbase.h"
-#include "viewer/viewer_p.h"
 
-#include <MimeTreeParser/BodyPartFormatter>
 #include <MimeTreeParser/BodyPartFormatterFactory>
 
 #include "messagepartthemes/default/defaultrenderer.h"

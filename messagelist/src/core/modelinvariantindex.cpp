@@ -8,7 +8,6 @@
 
 #include "core/modelinvariantindex.h"
 #include "core/modelinvariantindex_p.h"
-#include "core/modelinvariantrowmapper.h"
 #include "core/modelinvariantrowmapper_p.h"
 
 using namespace MessageList::Core;

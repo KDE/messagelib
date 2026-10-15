@@ -15,6 +15,7 @@
 #include <Akonadi/Tag>
 #include <KJob>
 #include <QCache>
+#include <QHash>
 
 namespace MessageList
 {

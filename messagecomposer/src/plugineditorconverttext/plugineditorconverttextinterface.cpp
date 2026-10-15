@@ -8,8 +8,6 @@
 #include "plugineditorconverterbeforeconvertingdata.h"
 #include "plugineditorconverterinitialdata.h"
 
-#include <KActionCollection>
-
 using namespace MessageComposer;
 
 class MessageComposer::PluginEditorConvertTextInterfacePrivate

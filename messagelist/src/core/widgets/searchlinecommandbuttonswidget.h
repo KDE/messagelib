@@ -8,7 +8,7 @@
 
 #include "messagelist_private_export.h"
 #include <QFrame>
-#include <QHash>
+#include <QList>
 class QPushButton;
 namespace MessageList::Core
 {

@@ -21,24 +21,19 @@
 #include "viewer/attachmentstrategy.h"
 #include "viewer/csshelperbase.h"
 
-#include "htmlwriter/bufferedhtmlwriter.h"
+#include "interfaces/htmlwriter.h"
 #include <MimeTreeParser/MessagePart>
 #include <MimeTreeParser/ObjectTreeParser>
 
 #include <QGpgME/Protocol>
 
 #include <Libkleo/Formatting>
-#include <MessageCore/StringUtil>
 
-#include <KEmailAddress>
 #include <KIconLoader>
 #include <KLocalizedString>
 
 #include <KTextTemplate/Context>
-#include <KTextTemplate/Engine>
-#include <KTextTemplate/MetaType>
 #include <KTextTemplate/Template>
-#include <KTextTemplate/TemplateLoader>
 #include <QUrl>
 
 using namespace Qt::Literals::StringLiterals;

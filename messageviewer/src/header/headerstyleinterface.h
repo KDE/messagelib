@@ -15,7 +15,6 @@ class QActionGroup;
 class KActionMenu;
 namespace MessageViewer
 {
-class HeaderStyle;
 class HeaderStylePlugin;
 /*!
  * \class MessageViewer::HeaderStyleInterface

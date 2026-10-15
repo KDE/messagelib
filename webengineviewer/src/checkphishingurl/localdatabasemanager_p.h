@@ -14,7 +14,9 @@
 #include <KConfig>
 #include <KConfigGroup>
 
+#include <QDateTime>
 #include <QDir>
+#include <QFileInfo>
 #include <QPointer>
 #include <QStandardPaths>
 

@@ -10,6 +10,7 @@
 #include <GrantleeTheme/GrantleeTheme>
 #include <KTextTemplate/TemplateLoader>
 #include <QString>
+#include <memory>
 namespace KMime
 {
 class Message;

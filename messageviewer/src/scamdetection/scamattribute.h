@@ -30,7 +30,6 @@ public:
     [[nodiscard]] bool operator==(const ScamAttribute &other) const;
 
 private:
-    friend class ScamAttributePrivate;
     std::unique_ptr<ScamAttributePrivate> const d;
 };
 }

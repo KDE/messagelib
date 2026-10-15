@@ -66,7 +66,6 @@
 #include <QGpgME/Protocol>
 #include <gpgme++/context.h>
 #include <gpgme++/importresult.h>
-#include <gpgme.h>
 
 #include <KLocalizedString>
 #include <KMessageBox>
@@ -74,6 +73,8 @@
 
 #include "followupreminder/followupremindercreatejob.h"
 #include <QDir>
+#include <QImage>
+#include <QRegularExpression>
 #include <QStandardPaths>
 #include <QTemporaryDir>
 #include <QTimer>

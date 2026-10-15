@@ -15,8 +15,9 @@
 #include <QIcon>
 #include <QLineEdit>
 
-#include <QApplication>
+#include <QAction>
 #include <QEvent>
+#include <QGuiApplication>
 #include <QHBoxLayout>
 #include <QKeyEvent>
 #include <QLabel>

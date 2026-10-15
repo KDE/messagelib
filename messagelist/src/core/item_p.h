@@ -9,6 +9,7 @@
 #pragma once
 
 #include "core/item.h"
+#include "core/model.h"
 
 #include "MessageCore/StringUtil"
 

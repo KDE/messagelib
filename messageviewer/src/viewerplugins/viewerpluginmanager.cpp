@@ -11,7 +11,6 @@
 
 #include <KPluginFactory>
 #include <KPluginMetaData>
-#include <KSharedConfig>
 #include <PimCommon/PluginUtil>
 #include <QFileInfo>
 

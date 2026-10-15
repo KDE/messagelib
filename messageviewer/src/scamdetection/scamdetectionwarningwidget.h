@@ -10,6 +10,7 @@
 #include "messageviewer_private_export.h"
 
 #include <KMessageWidget>
+#include <memory>
 
 namespace MessageViewer
 {

@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include <Akonadi/ServerManager>
+#include <QString>
 
 namespace MessageComposer
 {

@@ -15,11 +15,7 @@
 #include <Libkleo/Enum>
 
 class QTextDocument;
-
-namespace KMime
-{
-class Content;
-}
+class QWidget;
 
 namespace MessageComposer
 {

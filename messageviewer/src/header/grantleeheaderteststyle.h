@@ -21,8 +21,6 @@ class GrantleeHeaderTestStylePrivate;
  */
 class MESSAGEVIEWER_EXPORT GrantleeHeaderTestStyle : public HeaderStyle
 {
-    friend class GrantleeHeaderStyle;
-
 public:
     /*!
      */

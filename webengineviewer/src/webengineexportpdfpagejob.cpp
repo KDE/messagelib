@@ -6,7 +6,6 @@
 
 #include "webengineexportpdfpagejob.h"
 #include "webengineviewer_debug.h"
-#include <KLocalizedString>
 #include <QPageSetupDialog>
 #include <QPrinter>
 #include <QWebEngineView>

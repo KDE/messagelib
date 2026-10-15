@@ -15,6 +15,7 @@
 #include <Akonadi/ContactSearchJob>
 #include <Akonadi/ItemCreateJob>
 #include <Akonadi/ItemModifyJob>
+#include <KContacts/Addressee>
 
 #include "messagecomposer_debug.h"
 #include <QPointer>

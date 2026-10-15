@@ -131,7 +131,6 @@ class TemplateParserJobPrivate;
 class TEMPLATEPARSER_EXPORT TemplateParserJob : public QObject
 {
     Q_OBJECT
-    friend class TemplateParserJobTest;
 
 public:
     enum Mode : uint8_t {

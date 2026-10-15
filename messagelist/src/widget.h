@@ -7,7 +7,6 @@
 #pragma once
 
 #include <Akonadi/Item>
-#include <MessageList/QuickSearchLine>
 #include <MessageList/SearchLineCommand>
 #include <MessageList/View>
 #include <MessageList/WidgetBase>
@@ -17,8 +16,6 @@
 #include "messagelist_export.h"
 #include <QList>
 class KXMLGUIClient;
-class QWidget;
-class KJob;
 namespace MessageList
 {
 /*!

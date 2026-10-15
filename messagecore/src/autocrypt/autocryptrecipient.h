@@ -11,8 +11,14 @@
 #include <KMime/Headers>
 
 #include <gpgme++/data.h>
+#include <gpgme++/key.h>
 
+#include <QByteArray>
+#include <QDateTime>
 #include <QJsonDocument>
+#include <QSharedPointer>
+
+#include <memory>
 
 namespace MessageCore
 {

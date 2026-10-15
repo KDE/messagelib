@@ -20,8 +20,6 @@
 
 #include <gpgme++/encryptionresult.h>
 #include <gpgme++/global.h>
-#include <gpgme++/signingresult.h>
-#include <sstream>
 
 using namespace MessageComposer;
 

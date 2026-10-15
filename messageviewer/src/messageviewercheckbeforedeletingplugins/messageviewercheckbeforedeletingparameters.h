@@ -7,6 +7,7 @@
 #pragma once
 #include "messageviewer_export.h"
 #include <Akonadi/Item>
+#include <cstdint>
 namespace MessageViewer
 {
 class MessageViewerCheckBeforeDeletingParametersPrivate;

@@ -16,6 +16,8 @@
 
 #include <QStringList>
 
+#include <memory>
+
 namespace MessageComposer
 {
 

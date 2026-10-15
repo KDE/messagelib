@@ -14,6 +14,7 @@
 #include "settings/messagecomposersettings.h"
 #include <MessageComposer/Util>
 
+#include <Akonadi/MessageStatus>
 #include <KCursorSaver>
 
 #include <KIdentityManagementCore/Identity>
@@ -24,12 +25,10 @@
 #include <KEmailAddress>
 #include <KLocalizedString>
 #include <MessageCore/DateFormatter>
-#include <MessageCore/MailingList>
 #include <MessageCore/StringUtil>
 #include <MessageCore/Util>
+#include <QLocale>
 #include <QRegularExpression>
-#include <QStringDecoder>
-#include <QStringEncoder>
 
 using namespace MessageComposer;
 using namespace Qt::Literals::StringLiterals;

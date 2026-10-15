@@ -7,7 +7,10 @@
 */
 
 #include "riceencodingdecoder.h"
+#include "updatedatabaseinfo.h"
 #include "webengineviewer_debug.h"
+
+#include <algorithm>
 
 #ifdef WIN32
 #include <Winsock2.h>

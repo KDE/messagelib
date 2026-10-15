@@ -11,7 +11,6 @@
 #include "interfaces/htmlwriter.h"
 #include <KTextTemplate/Context>
 #include <KTextTemplate/Template>
-#include <MessageCore/StringUtil>
 
 using namespace MessageViewer;
 using namespace Qt::Literals::StringLiterals;

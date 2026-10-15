@@ -6,6 +6,7 @@
 
 #include "downloadlocaldatabasethread.h"
 #include "createdatabasefilejob.h"
+#include "updatedatabaseinfo.h"
 #include "webengineviewer_debug.h"
 using namespace WebEngineViewer;
 

@@ -14,6 +14,8 @@
 #include <MimeTreeParser/MessagePart>
 #include <MimeTreeParser/NodeHelper>
 
+#include <QHash>
+
 namespace MessageCore
 {
 /*!

@@ -6,13 +6,12 @@
 #include "mailinglist.h"
 
 #include "messagecore_debug.h"
-#include <KConfig>
 #include <KConfigGroup>
+#include <KMime/Message>
 #include <QUrl>
 
 #include <QSharedData>
 #include <QStringList>
-#include <kmime/content.h>
 
 using namespace MessageCore;
 using namespace Qt::Literals::StringLiterals;

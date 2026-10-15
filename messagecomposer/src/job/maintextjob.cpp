@@ -11,7 +11,6 @@
 #include "job/singlepartjob.h"
 #include "part/globalpart.h"
 #include "part/textpart.h"
-#include "utils/util.h"
 
 #include <QStringEncoder>
 

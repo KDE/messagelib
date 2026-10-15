@@ -12,7 +12,7 @@
 
 #include <Akonadi/EmailAddressSelectionWidget>
 #include <Akonadi/RecipientsPickerWidget>
-#include <KContacts/ContactGroup>
+#include <KContacts/Addressee>
 #include <PimCommonAkonadi/LdapSearchDialog>
 
 #include "messagecomposer_debug.h"

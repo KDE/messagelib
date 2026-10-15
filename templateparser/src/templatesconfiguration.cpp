@@ -7,6 +7,7 @@
 
 #include "templatesconfiguration.h"
 
+#include "defaulttemplates.h"
 #include "globalsettings_templateparser.h"
 #include "templatesconfiguration_kfg.h"
 #include <TextCustomEditor/PlainTextEditor>
@@ -15,6 +16,7 @@
 #include <KLocalizedString>
 #include <KMessageBox>
 
+#include <QCursor>
 #include <QWhatsThis>
 
 using namespace Qt::Literals::StringLiterals;

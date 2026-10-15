@@ -17,9 +17,9 @@
 #include <KColorScheme>
 #include <KConfig>
 #include <KConfigGroup>
-#include <QApplication>
 
 #include <QFont>
+#include <QFontDatabase>
 #include <QPalette>
 
 using namespace Qt::Literals::StringLiterals;

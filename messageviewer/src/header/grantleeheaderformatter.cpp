@@ -20,8 +20,12 @@
 #include <KTextTemplate/Engine>
 #include <KTextTemplate/MetaType>
 
+#include <QApplication>
+#include <QColor>
 #include <QDateTime>
 #include <QFileInfo>
+#include <QUrl>
+#include <QVariantHash>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace MessageCore;

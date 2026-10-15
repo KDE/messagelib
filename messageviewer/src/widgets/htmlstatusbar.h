@@ -9,7 +9,6 @@
 */
 #pragma once
 
-#include "messageviewer/messageviewerutil.h"
 #include <MimeTreeParser/Util>
 #include <QLabel>
 class QMouseEvent;

@@ -23,6 +23,7 @@ class KActionCollection;
 class QAction;
 class KJob;
 class QUrl;
+class QWidget;
 namespace MessageComposer
 {
 class AttachmentModel;

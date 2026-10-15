@@ -13,7 +13,6 @@
 #include "messagelistsettings.h"
 
 #include "MessageCore/MessageCoreSettings"
-#include "MessageCore/StringUtil"
 
 #include <KColorScheme>
 #include <QAbstractItemView>

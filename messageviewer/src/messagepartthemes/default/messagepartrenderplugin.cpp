@@ -6,8 +6,6 @@
 
 #include "messagepartrenderplugin.h"
 
-#include "interfaces/bodyparturlhandler.h"
-
 using namespace MessageViewer;
 
 MessagePartRenderPlugin::~MessagePartRenderPlugin() = default;

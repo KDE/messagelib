@@ -13,6 +13,7 @@
 
 class KActionCollection;
 class KActionMenu;
+class QWidget;
 
 namespace TemplateParser
 {

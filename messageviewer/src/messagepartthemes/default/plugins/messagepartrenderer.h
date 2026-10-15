@@ -8,8 +8,6 @@
 
 #include "../messagepartrendererbase.h"
 
-#include <QSharedPointer>
-
 namespace MessageViewer
 {
 class MessagePartRenderer : public MessagePartRendererBase

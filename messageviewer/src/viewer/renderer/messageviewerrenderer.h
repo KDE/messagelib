@@ -10,7 +10,7 @@
 #pragma once
 
 #include "messageviewer_private_export.h"
-#include <QWidget>
+class QWidget;
 namespace MessageViewer
 {
 class CSSHelper;

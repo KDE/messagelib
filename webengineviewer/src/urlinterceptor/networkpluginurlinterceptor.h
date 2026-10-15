@@ -9,6 +9,7 @@
 #include "webengineviewer_export.h"
 #include <QObject>
 class QWebEngineView;
+class QWidget;
 namespace WebEngineViewer
 {
 class NetworkPluginUrlInterceptorInterface;

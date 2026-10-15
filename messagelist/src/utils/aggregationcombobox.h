@@ -11,7 +11,6 @@ namespace MessageList
 {
 namespace Core
 {
-class Aggregation;
 class StorageModel;
 }
 

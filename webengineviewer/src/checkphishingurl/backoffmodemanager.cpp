@@ -12,6 +12,7 @@
 #include <KConfig>
 #include <KConfigGroup>
 
+#include <QDateTime>
 #include <QTimer>
 
 using namespace Qt::Literals::StringLiterals;

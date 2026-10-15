@@ -11,7 +11,6 @@
 #include "partnodebodypart.h"
 #include "nodehelper.h"
 #include "objecttreeparser.h"
-#include <KMime/Content>
 
 using namespace MimeTreeParser;
 

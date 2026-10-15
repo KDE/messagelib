@@ -15,6 +15,8 @@
 
 #include <Akonadi/Collection>
 
+#include <memory>
+
 namespace MessageCore
 {
 class DateFormatter;

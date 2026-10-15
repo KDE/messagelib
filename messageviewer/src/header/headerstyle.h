@@ -17,6 +17,7 @@
 #include <KMime/Message>
 #include <memory>
 
+class QObject;
 class QString;
 
 namespace MimeTreeParser

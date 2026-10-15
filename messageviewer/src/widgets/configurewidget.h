@@ -11,8 +11,6 @@
 
 #include <QWidget>
 
-class KConfigDialogManager;
-
 namespace MessageViewer
 {
 class ConfigureWidgetPrivate;

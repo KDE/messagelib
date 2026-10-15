@@ -10,6 +10,8 @@
 #include "messagecore_export.h"
 #include <KJob>
 
+#include <memory>
+
 namespace MessageCore
 {
 /*!

@@ -14,6 +14,8 @@
 #include <QSharedDataPointer>
 #include <QString>
 
+#include <memory>
+
 class KConfigGroup;
 
 namespace MessageCore

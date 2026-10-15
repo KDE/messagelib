@@ -7,8 +7,6 @@
 #include "simpleobjecttreesource.h"
 
 #include <MimeTreeParser/BodyPartFormatterFactory>
-#include <MimeTreeParser/MessagePart>
-#include <MimeTreeParser/ObjectTreeSource>
 
 using namespace MimeTreeParser;
 

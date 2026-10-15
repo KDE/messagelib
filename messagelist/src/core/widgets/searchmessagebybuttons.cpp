@@ -9,7 +9,6 @@
 #include <KLocalizedString>
 #include <QButtonGroup>
 #include <QHBoxLayout>
-#include <QLabel>
 #include <QToolButton>
 
 using namespace MessageList::Core;

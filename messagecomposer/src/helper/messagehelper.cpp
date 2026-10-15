@@ -7,12 +7,10 @@
 
 #include "messagehelper.h"
 
-#include "MessageCore/MailingList"
 #include "MessageCore/StringUtil"
 
 #include <KIdentityManagementCore/Identity>
 #include <KIdentityManagementCore/IdentityManager>
-#include <KMime/MDN>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace MessageCore;

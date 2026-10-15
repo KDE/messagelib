@@ -8,8 +8,10 @@
 
 #include "core/aggregation.h"
 #include "core/manager.h"
+#include "core/storagemodelbase.h"
 #include "messagelistsettings.h"
-#include "storagemodel.h"
+
+#include <KConfigGroup>
 
 using namespace MessageList::Core;
 using namespace MessageList::Utils;

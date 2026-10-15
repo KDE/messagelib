@@ -11,7 +11,6 @@
 #include "config-messageviewer.h"
 #include <KSyntaxHighlighting/Repository>
 #include <QPlainTextEdit>
-#include <QSyntaxHighlighter>
 namespace TextAddonsWidgets
 {
 class SlideContainer;

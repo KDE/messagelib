@@ -8,13 +8,10 @@
 
 #include "cryptobodypartmemento.h"
 
-#include <gpgme++/decryptionresult.h>
 #include <gpgme++/key.h>
 #include <gpgme++/verificationresult.h>
 
 #include <QPointer>
-
-#include "interfaces/bodypart.h"
 #include <QStringList>
 
 namespace QGpgME
@@ -23,7 +20,6 @@ class VerifyOpaqueJob;
 class KeyListJob;
 }
 
-using namespace Qt::Literals::StringLiterals;
 namespace MimeTreeParser
 {
 class VerifyOpaqueBodyPartMemento : public CryptoBodyPartMemento

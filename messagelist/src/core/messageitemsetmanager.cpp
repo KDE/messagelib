@@ -7,7 +7,6 @@
  *******************************************************************************/
 
 #include "core/messageitemsetmanager.h"
-#include "core/messageitem.h"
 
 using namespace MessageList::Core;
 

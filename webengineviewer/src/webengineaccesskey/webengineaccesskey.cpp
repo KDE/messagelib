@@ -12,7 +12,6 @@
 
 #include <KActionCollection>
 #include <QAction>
-#include <QDebug>
 #include <QKeyEvent>
 #include <QLabel>
 #include <QList>

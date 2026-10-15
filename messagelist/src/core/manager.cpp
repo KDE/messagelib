@@ -21,7 +21,7 @@
 #include "messagelistutil_p.h"
 
 #include "messagelist_debug.h"
-#include <KConfig>
+#include <KConfigGroup>
 #include <KLocalizedString>
 
 using namespace MessageList::Core;

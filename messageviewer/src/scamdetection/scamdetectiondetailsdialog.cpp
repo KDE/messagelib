@@ -17,6 +17,7 @@
 #include <QUrl>
 
 #include <KStandardGuiItem>
+#include <QFile>
 #include <QFileDialog>
 
 #include <KGuiItem>

@@ -8,7 +8,6 @@
 
 #include "dkimheaderparser.h"
 #include "messagecore_private_export.h"
-#include <Akonadi/Item>
 #include <QObject>
 namespace MessageCore
 {

@@ -14,6 +14,7 @@ SPDX-License-Identifier: GPL-2.0-or-later
 #include <KSharedConfig>
 #include <QDialog>
 #include <QDialogButtonBox>
+#include <QIcon>
 #include <QPushButton>
 using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;

@@ -9,14 +9,11 @@
 #pragma once
 
 #include <QAbstractItemModel>
-#include <QHash>
 #include <QList>
-#include <QMultiHash>
 
 #include "core/enums.h"
 #include "core/modelviewinterface.h"
 
-#include <ctime> // time_t
 #include <memory>
 
 namespace MessageList

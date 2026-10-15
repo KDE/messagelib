@@ -11,7 +11,6 @@
 #include "mailsourceviewtextbrowserwidget.h"
 
 #include "findbar/findbarsourceview.h"
-#include "messageviewer/messageviewerutil.h"
 #include "messageviewer_debug.h"
 #include <TextAddonsWidgets/SlideContainer>
 #if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
@@ -34,7 +33,6 @@
 
 #include <QFontDatabase>
 #include <QMenu>
-#include <QPushButton>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;

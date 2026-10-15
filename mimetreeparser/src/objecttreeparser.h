@@ -18,8 +18,6 @@
 
 #include <gpgme++/verificationresult.h>
 
-class QString;
-
 namespace KMime
 {
 class Content;
@@ -27,8 +25,6 @@ class Content;
 
 namespace MimeTreeParser
 {
-class PartMetaData;
-class ViewerPrivate;
 class NodeHelper;
 class MessagePart;
 class MimeMessagePart;

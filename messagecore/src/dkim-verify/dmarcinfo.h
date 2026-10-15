@@ -8,6 +8,7 @@
 
 #include "messagecore_export.h"
 #include <QMetaType>
+#include <QString>
 class QDebug;
 namespace MessageCore
 {

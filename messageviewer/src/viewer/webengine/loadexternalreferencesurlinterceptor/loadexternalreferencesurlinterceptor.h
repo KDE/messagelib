@@ -6,7 +6,6 @@
 #pragma once
 
 #include <WebEngineViewer/LoadExternalReferencesUrlInterceptor>
-#include <WebEngineViewer/NetworkPluginUrlInterceptorInterface>
 namespace MessageViewer
 {
 class LoadExternalReferencesUrlInterceptor : public WebEngineViewer::LoadExternalReferencesUrlInterceptor

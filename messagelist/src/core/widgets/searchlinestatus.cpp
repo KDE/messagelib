@@ -17,14 +17,11 @@
 #include <KLocalizedString>
 #include <QAbstractItemView>
 #include <QAction>
-#include <QActionGroup>
 #include <QCompleter>
 #include <QContextMenuEvent>
+#include <QIcon>
 #include <QMenu>
-#include <QPushButton>
-#include <QStandardPaths>
 #include <QStringListModel>
-#include <QWidgetAction>
 using namespace Qt::Literals::StringLiterals;
 
 static const char qLineEditclearButtonActionNameC[] = "_q_qlineeditclearaction";

@@ -9,6 +9,7 @@
 #include <QSharedPointer>
 
 #include <functional>
+#include <memory>
 
 namespace KMime
 {

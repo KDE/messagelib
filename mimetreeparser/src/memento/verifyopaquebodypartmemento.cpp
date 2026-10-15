@@ -5,6 +5,7 @@
 */
 
 #include "verifyopaquebodypartmemento.h"
+#include "mimetreeparser_debug.h"
 
 #include <QGpgME/KeyListJob>
 #include <QGpgME/VerifyOpaqueJob>
@@ -16,7 +17,6 @@
 using namespace QGpgME;
 using namespace GpgME;
 using namespace MimeTreeParser;
-using namespace Qt::Literals::StringLiterals;
 
 VerifyOpaqueBodyPartMemento::VerifyOpaqueBodyPartMemento(VerifyOpaqueJob *job, KeyListJob *klj, const QByteArray &signature)
     : m_signature(signature)

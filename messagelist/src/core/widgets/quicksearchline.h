@@ -21,7 +21,6 @@ namespace Core
 class SearchLineStatus;
 class Filter;
 class SearchStatusButtons;
-class SearchMessageByButtons;
 class SearchLineCommandWidget;
 /*!
  * \class MessageList::Core::QuickSearchLine

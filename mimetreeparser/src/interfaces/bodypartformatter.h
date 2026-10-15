@@ -12,7 +12,10 @@
 
 #include "mimetreeparser_export.h"
 
+#include <QObject>
 #include <QSharedPointer>
+
+#include <memory>
 
 #include "mimetreeparser/objecttreeparser.h"
 

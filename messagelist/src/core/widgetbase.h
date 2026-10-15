@@ -18,7 +18,6 @@
 #include "messagelist_export.h"
 
 class QLineEdit;
-class QActionGroup;
 class QMenu;
 
 namespace Akonadi

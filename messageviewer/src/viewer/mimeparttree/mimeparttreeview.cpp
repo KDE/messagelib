@@ -11,6 +11,7 @@
 #include <KMime/Content>
 
 #include <KConfigGroup>
+#include <KSharedConfig>
 #include <QHeaderView>
 
 using namespace Qt::Literals::StringLiterals;

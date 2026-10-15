@@ -18,8 +18,6 @@
 #include <QComboBox>
 #include <QEvent>
 #include <QHBoxLayout>
-#include <QPushButton>
-#include <QStandardPaths>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace MessageList::Core;

@@ -10,9 +10,11 @@
 #include "dkim-verify/dkimmanagerkeyproxymodel.h"
 #include <KLocalizedString>
 #include <KMessageBox>
+#include <MessageCore/DKIMManagerKey>
 
 #include <QApplication>
 #include <QClipboard>
+#include <QCursor>
 #include <QMenu>
 
 using namespace Qt::Literals::StringLiterals;

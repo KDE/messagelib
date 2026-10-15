@@ -10,9 +10,10 @@
 #include <KLocalizedString>
 
 #include <QBuffer>
+#include <QDateTime>
 #include <QDir>
+#include <QFile>
 #include <QScopedPointer>
-#include <QSharedPointer>
 
 static const mode_t archivePermsAttachment = S_IFREG | 0644;
 

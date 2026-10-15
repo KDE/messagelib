@@ -8,10 +8,13 @@
 #include "checkphishingurlutil.h"
 #include "localdatabasefile.h"
 #include "riceencodingdecoder.h"
+#include "updatedatabaseinfo.h"
 #include "webengineviewer_debug.h"
 
 #include <QCryptographicHash>
 #include <QFile>
+
+#include <algorithm>
 
 using namespace WebEngineViewer;
 

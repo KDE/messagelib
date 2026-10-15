@@ -13,8 +13,6 @@
 
 #include <QPointer>
 
-#include "interfaces/bodypart.h"
-
 namespace QGpgME
 {
 class DecryptVerifyJob;

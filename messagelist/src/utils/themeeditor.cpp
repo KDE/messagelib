@@ -20,7 +20,6 @@
 
 #include <QActionGroup>
 #include <QCheckBox>
-#include <QCursor>
 #include <QDrag>
 #include <QGridLayout>
 #include <QGroupBox>

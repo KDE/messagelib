@@ -7,7 +7,6 @@
 #include "networkurlinterceptor.h"
 #include "networkpluginurlinterceptorinterface.h"
 
-#include <QDebug>
 #include <QList>
 
 using namespace WebEngineViewer;

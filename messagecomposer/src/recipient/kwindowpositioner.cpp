@@ -10,6 +10,7 @@
 
 #include "messagecomposer_debug.h"
 #include <QScreen>
+#include <QWidget>
 
 using namespace MessageComposer;
 KWindowPositioner::KWindowPositioner(QWidget *master, QWidget *slave, Mode mode)

@@ -7,10 +7,8 @@
 #pragma once
 
 #include "messagelist_private_export.h"
-#include "quicksearchline.h"
-#include <Akonadi/MessageStatus>
-#include <QIcon>
 #include <QLineEdit>
+#include <QStringList>
 class QStringListModel;
 class QAction;
 namespace MessageList::Core

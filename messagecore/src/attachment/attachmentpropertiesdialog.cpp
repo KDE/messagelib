@@ -22,9 +22,12 @@
 #include <KLocalizedString>
 #include <QDesktopServices>
 #include <QDialogButtonBox>
+#include <QIcon>
 #include <QMimeDatabase>
 #include <QMimeType>
+#include <QPixmap>
 #include <QPushButton>
+#include <QStyle>
 #include <QUrlQuery>
 #include <QVBoxLayout>
 

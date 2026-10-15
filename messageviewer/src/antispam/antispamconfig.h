@@ -10,10 +10,10 @@
 
 #pragma once
 
+#include <QByteArray>
 #include <QList>
 #include <QRegularExpression>
-
-class QString;
+#include <QString>
 
 namespace MessageViewer
 {
@@ -97,8 +97,6 @@ private:
 };
 using SpamAgents = QList<SpamAgent>;
 
-class AntiSpamConfigSingletonProvider;
-
 /**
     @short Singleton to manage loading the kmail.antispamrc file.
     \author Patrick Audley <paudley@blackcat.ca>
@@ -110,8 +108,6 @@ class AntiSpamConfigSingletonProvider;
   */
 class AntiSpamConfig
 {
-    friend class AntiSpamConfigSingletonProvider;
-
 private:
     AntiSpamConfig();
 

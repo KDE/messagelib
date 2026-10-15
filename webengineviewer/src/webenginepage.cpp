@@ -12,16 +12,15 @@
 #include <KLocalizedString>
 
 #include <KColorScheme>
-#include <QEventLoop>
 #include <QFileDialog>
+#include <QFileInfo>
 #include <QGuiApplication>
-#include <QPointer>
-#include <QPrinter>
-#include <QTimer>
 #include <QWebEngineDownloadRequest>
 #include <QWebEngineProfile>
 #include <QWebEngineScriptCollection>
 #include <QWebEngineView>
+
+#include <optional>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace WebEngineViewer;

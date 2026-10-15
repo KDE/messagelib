@@ -9,10 +9,13 @@
 
 #include <QList>
 #include <QStringList>
+
+#include <memory>
 class QUrl;
 
 namespace KMime
 {
+class Message;
 namespace Types
 {
 class Address;

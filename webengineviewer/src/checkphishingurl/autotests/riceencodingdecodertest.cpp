@@ -6,6 +6,7 @@
 
 #include "riceencodingdecodertest.h"
 #include "../riceencodingdecoder.h"
+#include "../updatedatabaseinfo.h"
 #include <QList>
 #include <QTest>
 

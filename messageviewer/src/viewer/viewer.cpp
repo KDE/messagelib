@@ -13,7 +13,6 @@
 // #define KMAIL_READER_HTML_DEBUG 1
 
 #include "viewer.h"
-#include "config-messageviewer.h"
 #include "csshelper.h"
 #include "dkim-verify/dkimwidgetinfo.h"
 #include "messageviewer_viewer_format_debug.h"

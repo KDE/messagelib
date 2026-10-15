@@ -12,7 +12,6 @@
 #include <WebEngineViewer/CheckPhishingUrlUtil>
 namespace WebEngineViewer
 {
-class WebEngineView;
 class LocalDataBaseManagerPrivate;
 /*!
  * \class WebEngineViewer::LocalDataBaseManager

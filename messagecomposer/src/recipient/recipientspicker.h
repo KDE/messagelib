@@ -9,7 +9,6 @@
 
 #include <MessageComposer/Recipient>
 
-#include <KContacts/Addressee>
 #include <QDialog>
 
 class QPushButton;

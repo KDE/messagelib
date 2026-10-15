@@ -10,6 +10,7 @@
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KSharedConfig>
+#include <MessageCore/DKIMRule>
 #include <QDialogButtonBox>
 #include <QPushButton>
 #include <QVBoxLayout>

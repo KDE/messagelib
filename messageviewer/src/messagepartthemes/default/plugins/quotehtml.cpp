@@ -15,7 +15,6 @@
 #include <TextUtils/TextUtilsTextToHtml>
 namespace TextToHtml = TextUtils::TextUtilsTextToHtml;
 
-#include <QSharedPointer>
 using namespace Qt::Literals::StringLiterals;
 
 /** Check if the newline at position @p newLinePos in string @p s

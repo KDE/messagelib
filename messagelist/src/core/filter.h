@@ -13,8 +13,8 @@
 #include <QString>
 
 #include "core/widgets/searchlinecommand.h"
+#include "core/widgets/searchmessagebybuttons.h"
 #include "messagelist_export.h"
-#include "widgets/quicksearchline.h"
 #include <Akonadi/Collection>
 #include <Akonadi/MessageStatus>
 #include <KSharedConfig>

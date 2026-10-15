@@ -9,6 +9,7 @@
 #include "../createdatabasefilejob.h"
 #include "../createphishingurldatabasejob.h"
 #include "../localdatabasefile.h"
+#include "../updatedatabaseinfo.h"
 #include <QStandardPaths>
 
 #include <QDebug>

@@ -6,8 +6,6 @@
 
 #include "draftstatus.h"
 
-#include <MessageCore/AutocryptUtils>
-
 using namespace MessageComposer;
 using namespace Qt::Literals::StringLiterals;
 

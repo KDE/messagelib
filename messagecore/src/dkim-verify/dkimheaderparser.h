@@ -10,6 +10,7 @@
 
 #include <QByteArray>
 #include <QList>
+#include <QString>
 namespace MessageCore
 {
 /*!

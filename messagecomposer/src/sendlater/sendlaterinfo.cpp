@@ -6,6 +6,8 @@
 
 #include "sendlaterinfo.h"
 
+#include <QDebug>
+
 using namespace MessageComposer;
 
 bool SendLaterInfo::isValid() const

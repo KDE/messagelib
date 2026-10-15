@@ -8,11 +8,12 @@
 
 #include <QByteArray>
 #include <QHash>
+#include <QSharedPointer>
 #include <QString>
 
+#include <memory>
 #include <vector>
 
-using namespace Qt::Literals::StringLiterals;
 namespace MessageViewer
 {
 class MessagePartRendererBase;
@@ -33,6 +34,6 @@ public:
     void insert(const QByteArray &type, std::unique_ptr<MessagePartRendererBase> &&formatter, const QString &mimeType = QString(), int priority = 0);
 
     QHash<QByteArray, std::vector<RendererInfo>> m_renderers;
-    QString m_pluginSubdir = u"pim6/messageviewer/bodypartformatter"_s;
+    QString m_pluginSubdir = QStringLiteral("pim6/messageviewer/bodypartformatter");
 };
 }

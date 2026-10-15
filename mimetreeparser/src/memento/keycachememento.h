@@ -9,7 +9,7 @@
 #include "cryptobodypartmemento.h"
 #include <Libkleo/KeyCache>
 
-#include <QString>
+#include <memory>
 
 namespace MimeTreeParser
 {

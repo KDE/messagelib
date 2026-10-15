@@ -9,6 +9,7 @@
 #include "messageviewer_export.h"
 #include <QObject>
 #include <TextAddonsWidgets/PluginUtil>
+#include <memory>
 namespace MessageViewer
 {
 class HeaderStylePlugin;

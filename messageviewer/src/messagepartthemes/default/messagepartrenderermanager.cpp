@@ -14,7 +14,6 @@
 
 #include <gpgme++/decryptionresult.h>
 #include <gpgme++/key.h>
-#include <gpgme++/verificationresult.h>
 
 #include <QGpgME/Protocol>
 

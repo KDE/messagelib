@@ -6,7 +6,6 @@
 
 #pragma once
 
-#include "dkimauthenticationstatusinfo.h"
 #include "dkimchecksignaturejob.h"
 #include "messagecore_private_export.h"
 #include <Akonadi/Item>
@@ -14,6 +13,7 @@
 #include <QObject>
 namespace MessageCore
 {
+class DKIMAuthenticationStatusInfo;
 class MESSAGECORE_EXPORT DKIMCheckFullJob : public QObject
 {
     Q_OBJECT

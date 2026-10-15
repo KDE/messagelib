@@ -7,10 +7,6 @@
 
 #include "objecttreeviewersource.h"
 #include "csshelper.h"
-#include <MimeTreeParser/BodyPartFormatterFactory>
-
-#include "messagepartthemes/default/defaultrenderer.h"
-#include <MimeTreeParser/BodyPartFormatter>
 
 #include "settings/messageviewersettings.h"
 #include "viewer/viewer_p.h"

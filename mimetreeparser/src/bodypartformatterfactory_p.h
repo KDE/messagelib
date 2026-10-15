@@ -10,6 +10,10 @@
 
 #pragma once
 
+#include <QList>
+#include <QString>
+
+#include <memory>
 #include <unordered_map>
 #include <vector>
 

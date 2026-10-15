@@ -5,10 +5,16 @@
 
 #pragma once
 
-#include <KMime/Content>
+#include <QList>
 class QUrl;
 class QWidget;
 class QAction;
+class QString;
+
+namespace KMime
+{
+class Content;
+}
 
 namespace MessageViewer
 {

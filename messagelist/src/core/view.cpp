@@ -20,8 +20,6 @@
 #include "messagelistutil.h"
 #include "messagelistutil_p.h"
 
-#include <MessageCore/StringUtil>
-
 #include <Akonadi/Item>
 #include <KTwoFingerTap>
 #include <QApplication>
@@ -30,7 +28,6 @@
 #include <QHelpEvent>
 #include <QLineEdit>
 #include <QMenu>
-#include <QPainter>
 #include <QScrollBar>
 #include <QScroller>
 #include <QTimer>

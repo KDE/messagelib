@@ -9,7 +9,6 @@
 #include <KDateComboBox>
 #include <KLocalizedString>
 #include <KMessageBox>
-#include <KSharedConfig>
 
 #include <Akonadi/CollectionComboBox>
 
@@ -18,6 +17,7 @@
 #include <QDialogButtonBox>
 #include <QFormLayout>
 #include <QLineEdit>
+#include <QPushButton>
 #include <QVBoxLayout>
 
 using namespace Qt::Literals::StringLiterals;

@@ -17,6 +17,7 @@
 #include <KLocalizedString>
 
 #include <KSharedConfig>
+#include <QCursor>
 #include <QMouseEvent>
 
 using namespace MessageViewer;

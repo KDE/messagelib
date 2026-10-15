@@ -6,6 +6,7 @@
 
 #include "plugineditorgrammarcustomtoolsviewinterface.h"
 #include <KPIMTextEdit/RichTextComposer>
+#include <QDebug>
 using namespace MessageComposer;
 class MessageComposer::PluginEditorGrammarCustomToolsViewInterfacePrivate
 {

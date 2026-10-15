@@ -7,8 +7,6 @@
 #include "messageviewercheckbeforedeletinginterface.h"
 #include "messageviewercheckbeforedeletingparameters.h"
 
-#include <QAction>
-
 using namespace MessageViewer;
 
 class MessageViewer::MessageViewerCheckBeforeDeletingInterfacePrivate

@@ -7,7 +7,6 @@
 #include "job/singlepartjob.h"
 
 #include "contentjobbase_p.h"
-#include "part/globalpart.h"
 
 #include "messagecomposer_debug.h"
 #include <KLocalizedString>

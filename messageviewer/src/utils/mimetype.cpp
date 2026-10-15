@@ -8,11 +8,9 @@
 #include "utils/mimetype.h"
 #include "utils/iconnamecache.h"
 
-#include <MimeTreeParser/NodeHelper>
 #include <MimeTreeParser/Util>
 
 #include <KIconLoader>
-#include <KMime/Content>
 
 QString MessageViewer::Util::iconPathForMimetype(const QString &mimeType, int iconSize, const QString &fallbackFileName1, const QString &fallbackFileName2)
 {

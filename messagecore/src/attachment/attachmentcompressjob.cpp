@@ -13,7 +13,6 @@
 
 #include <QBuffer>
 #include <QDateTime>
-#include <QSharedPointer>
 #include <QTimer>
 
 using namespace Qt::Literals::StringLiterals;

@@ -11,11 +11,9 @@
 #include "utils/comboboxutils.h"
 
 #include <KTextEdit>
-#include <QCheckBox>
 #include <QGridLayout>
 #include <QLabel>
 #include <QLineEdit>
-#include <QPushButton>
 
 #include <KLocalizedString>
 #include <QComboBox>

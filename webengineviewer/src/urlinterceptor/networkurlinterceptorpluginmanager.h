@@ -10,6 +10,7 @@
 #include <QList>
 #include <QObject>
 #include <TextAddonsWidgets/PluginUtil>
+#include <memory>
 namespace WebEngineViewer
 {
 class NetworkUrlInterceptorPluginManagerPrivate;

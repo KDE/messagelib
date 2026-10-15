@@ -8,7 +8,9 @@
 
 #pragma once
 
+#include <QList>
 #include <QPair>
+#include <QString>
 
 class QComboBox;
 

@@ -10,7 +10,7 @@
 
 #include "core/modelinvariantrowmapper.h"
 
-#include <QTime>
+#include <QHash>
 #include <QTimer>
 
 namespace MessageList

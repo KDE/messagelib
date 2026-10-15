@@ -7,9 +7,12 @@
 #pragma once
 
 #include "messageviewer_private_export.h"
-#include <MessageCore/DKIMRule>
 #include <QDialog>
 class QPushButton;
+namespace MessageCore
+{
+class DKIMRule;
+}
 namespace MessageViewer
 {
 class DKIMRuleWidget;

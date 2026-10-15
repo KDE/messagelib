@@ -8,6 +8,8 @@
 
 #include "messageviewer_private_export.h"
 #include <QMetaType>
+#include <QString>
+#include <cstdint>
 class QDebug;
 namespace MessageViewer
 {

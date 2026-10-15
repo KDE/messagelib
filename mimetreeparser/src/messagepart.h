@@ -23,19 +23,9 @@
 
 #include <memory>
 
-namespace GpgME
-{
-class ImportResult;
-}
-
 namespace QGpgME
 {
 class Protocol;
-}
-
-namespace KMime
-{
-class Content;
 }
 
 namespace Kleo

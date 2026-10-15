@@ -8,6 +8,7 @@
 
 #include "dkimmanagerulescombobox.h"
 #include <KLocalizedString>
+#include <MessageCore/DKIMRule>
 #include <QCheckBox>
 #include <QFormLayout>
 #include <QLineEdit>

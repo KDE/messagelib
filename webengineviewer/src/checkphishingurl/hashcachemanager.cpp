@@ -10,6 +10,7 @@
 #include "webengineviewer_debug.h"
 #include <KConfig>
 #include <KConfigGroup>
+#include <QMap>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace WebEngineViewer;

@@ -10,6 +10,7 @@
 
 namespace KIdentityManagementCore
 {
+class Identity;
 class IdentityManager;
 }
 

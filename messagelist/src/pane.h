@@ -20,12 +20,6 @@
 class KXMLGUIClient;
 class QAbstractItemModel;
 class QItemSelectionModel;
-class QItemSelection;
-
-namespace KPIM
-{
-class MessageStatus;
-}
 
 namespace MessageList
 {

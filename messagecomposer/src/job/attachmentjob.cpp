@@ -10,8 +10,6 @@
 #include "job/attachmentjob.h"
 #include "contentjobbase_p.h"
 #include "job/singlepartjob.h"
-#include "part/globalpart.h"
-#include "utils/util.h"
 
 #include "messagecomposer_debug.h"
 

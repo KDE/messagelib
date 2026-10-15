@@ -6,11 +6,12 @@
 
 #pragma once
 
-#include "updatedatabaseinfo.h"
 #include "webengineviewer_private_export.h"
+#include <QByteArray>
 #include <QList>
 namespace WebEngineViewer
 {
+struct RiceDeltaEncoding;
 // https://developers.google.com/safe-browsing/v4/compression
 class RiceDecoder
 {

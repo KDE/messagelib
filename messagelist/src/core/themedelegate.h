@@ -21,8 +21,6 @@ namespace MessageList
 {
 namespace Core
 {
-class Item;
-
 /**
  * The ThemeDelegate paints the message list view message and group items by
  * using the supplied Theme.

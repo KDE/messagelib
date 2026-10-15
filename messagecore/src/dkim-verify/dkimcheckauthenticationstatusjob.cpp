@@ -8,7 +8,6 @@
 
 #include "dkimauthenticationstatusinfo.h"
 #include "messagecore_dkimcheckerdebug.h"
-#include <KMime/Message>
 using namespace Qt::Literals::StringLiterals;
 using namespace MessageCore;
 // see https://tools.ietf.org/html/rfc7601

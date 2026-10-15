@@ -9,9 +9,10 @@
 #include "threadingcache.h"
 
 #include "aggregation.h"
+#include "messageitem.h"
 #include "messagelist_debug.h"
 
-#include <QDebug>
+#include <QDataStream>
 #include <QDir>
 #include <QFile>
 #include <QStandardPaths>

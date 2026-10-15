@@ -7,6 +7,8 @@
 #include "dkimheaderparser.h"
 #include <QChar>
 
+#include <cstring>
+
 using namespace MessageCore;
 
 DKIMHeaderParser::DKIMHeaderParser() = default;

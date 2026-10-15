@@ -14,7 +14,7 @@
 
 #include <QButtonGroup>
 #include <QComboBox>
-#include <QImageWriter>
+#include <QCursor>
 #include <QList>
 #include <QWhatsThis>
 

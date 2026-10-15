@@ -10,6 +10,7 @@
 #include "webengineviewer_export.h"
 #include <QNetworkReply>
 #include <QObject>
+#include <memory>
 class QUrl;
 namespace WebEngineViewer
 {

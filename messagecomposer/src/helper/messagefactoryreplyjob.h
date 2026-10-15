@@ -7,9 +7,13 @@
 #pragma once
 
 #include <Akonadi/Collection>
-#include <KIdentityManagementCore/IdentityManager>
 #include <KMime/Message>
 #include <QObject>
+
+namespace KIdentityManagementCore
+{
+class IdentityManager;
+}
 
 namespace MessageComposer
 {

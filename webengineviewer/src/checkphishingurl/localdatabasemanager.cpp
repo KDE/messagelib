@@ -10,10 +10,6 @@
 #include "urlhashing.h"
 #include "webengineviewer_debug.h"
 
-#include <KSharedConfig>
-
-#include <QCryptographicHash>
-
 using namespace WebEngineViewer;
 
 Q_GLOBAL_STATIC(LocalDataBaseManagerPrivate, s_localDataBaseManager)

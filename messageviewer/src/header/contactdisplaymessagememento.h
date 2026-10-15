@@ -11,7 +11,9 @@
 #include <KContacts/Addressee>
 #include <KContacts/Picture>
 
+#include <QImage>
 #include <QObject>
+#include <QPixmap>
 #include <QPointer>
 
 class KJob;

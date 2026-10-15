@@ -6,17 +6,16 @@
 
 #pragma once
 
-#include "networkpluginurlinterceptor.h"
-#include "networkpluginurlinterceptorinterface.h"
 #include "webengineviewer_export.h"
 #include <QList>
 #include <QObject>
-#include <WebEngineViewer/WebHitTestResult>
 #include <memory>
 class KActionCollection;
+class QAction;
 class QWebEngineView;
 namespace WebEngineViewer
 {
+class NetworkPluginUrlInterceptorInterface;
 class WebHitTestResult;
 class NetworkUrlInterceptorManagerPrivate;
 /*!

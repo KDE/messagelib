@@ -9,6 +9,7 @@
 
 #include "messagelistutil_p.h"
 
+#include <KConfigGroup>
 #include <KLocalizedString>
 
 #include <QMetaEnum>

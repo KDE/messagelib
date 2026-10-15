@@ -14,9 +14,6 @@
 
 #include <QPointer>
 
-#include "interfaces/bodypart.h"
-
-using namespace Qt::Literals::StringLiterals;
 namespace QGpgME
 {
 class VerifyDetachedJob;

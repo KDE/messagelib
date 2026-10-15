@@ -8,6 +8,7 @@
 
 #include "messagecomposer_export.h"
 #include <KMime/Message>
+#include <memory>
 namespace MessageComposer
 {
 /*!

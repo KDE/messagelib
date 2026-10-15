@@ -7,6 +7,7 @@
 #pragma once
 #include "messagecore_export.h"
 #include <QObject>
+class QUrl;
 namespace MessageCore
 {
 class AttachmentFromUrlBaseJob;

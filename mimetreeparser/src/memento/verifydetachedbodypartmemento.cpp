@@ -5,6 +5,7 @@
 */
 
 #include "verifydetachedbodypartmemento.h"
+#include "mimetreeparser_debug.h"
 
 #include <QGpgME/KeyListJob>
 #include <QGpgME/VerifyDetachedJob>
@@ -13,7 +14,6 @@
 
 #include <cassert>
 
-using namespace Qt::Literals::StringLiterals;
 using namespace QGpgME;
 using namespace GpgME;
 using namespace MimeTreeParser;

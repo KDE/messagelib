@@ -11,9 +11,6 @@
 #include "job/singlepartjob.h"
 #include "part/itippart.h"
 
-#include <KLocalizedString>
-#include <KMessageBox>
-
 #include <KMime/Content>
 
 using namespace Qt::Literals::StringLiterals;

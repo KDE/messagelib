@@ -13,6 +13,7 @@
 #include <MessageCore/StringUtil>
 #include <TextUtils/ConvertText>
 
+#include <KConfigGroup>
 #include <KRandom>
 #if !FORCE_DISABLE_AKONADI_SEARCH
 #include <PIM/emailquery.h>

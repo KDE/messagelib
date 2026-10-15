@@ -14,7 +14,6 @@
 #include "core/manager.h"
 #include "core/messageitem.h"
 #include "core/model.h"
-#include "core/optionset.h"
 #include "core/storagemodelbase.h"
 #include "core/theme.h"
 #include "core/view.h"

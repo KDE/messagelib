@@ -9,7 +9,8 @@
 #pragma once
 
 #include "utils/configureaggregationsdialog.h"
-#include <QListWidgetItem>
+class QListWidgetItem;
+class QPushButton;
 namespace MessageList
 {
 namespace Core

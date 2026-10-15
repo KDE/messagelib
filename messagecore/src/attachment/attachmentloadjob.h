@@ -12,6 +12,8 @@
 
 #include <KJob>
 
+#include <memory>
+
 namespace MessageCore
 {
 /*!

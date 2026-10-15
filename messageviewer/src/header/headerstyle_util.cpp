@@ -19,6 +19,7 @@
 #include <MimeTreeParser/NodeHelper>
 #include <TextUtils/TextUtilsTextToHtml>
 
+#include <MessageCore/DateFormatter>
 #include <MessageCore/MessageCoreSettings>
 
 #include <KEmailAddress>

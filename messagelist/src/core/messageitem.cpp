@@ -17,7 +17,6 @@
 #include <KIconLoader>
 #include <KLocalizedString>
 #include <QIcon>
-#include <QPointer>
 using namespace Qt::Literals::StringLiterals;
 
 using namespace MessageList::Core;

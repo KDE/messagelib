@@ -12,6 +12,7 @@
 #include <PimCommon/NetworkManager>
 
 #include <QJsonDocument>
+#include <QNetworkAccessManager>
 #include <QUrlQuery>
 
 using namespace Qt::Literals::StringLiterals;

@@ -16,6 +16,9 @@
 
 #include <QComboBox>
 
+class QIcon;
+class KConfig;
+
 namespace MessageComposer
 {
 class RecipientComboBox : public QComboBox

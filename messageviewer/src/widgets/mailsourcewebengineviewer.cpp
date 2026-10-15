@@ -7,11 +7,6 @@
 #include "mailsourcewebengineviewer.h"
 
 #include "mailsourceviewtextbrowserwidget.h"
-#include "messageviewer/messageviewerutil.h"
-
-#include <KSyntaxHighlighting/Definition>
-#include <KSyntaxHighlighting/SyntaxHighlighter>
-#include <KSyntaxHighlighting/Theme>
 
 #include <KLocalizedString>
 #include <QTabWidget>

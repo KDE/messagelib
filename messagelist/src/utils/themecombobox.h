@@ -13,7 +13,6 @@ namespace MessageList
 namespace Core
 {
 class StorageModel;
-class Theme;
 } // namespace Core
 
 namespace Utils

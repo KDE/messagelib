@@ -15,20 +15,17 @@
 #include "MessageComposer/AttachmentJob"
 #include "MessageComposer/AttachmentVcardFromAddressBookJob"
 #include "MessageComposer/ComposerJob"
-#include "MessageComposer/GlobalPart"
 #include <MessageComposer/AttachmentModel>
 
 #include <MessageViewer/MessageViewerUtil>
 
-#include <MimeTreeParser/NodeHelper>
-
 #include <MessageCore/StringUtil>
 
-#include <Akonadi/ItemFetchJob>
 #include <KIO/JobUiDelegateFactory>
 #include <QIcon>
 #include <QStringConverter>
 
+#include <QCursor>
 #include <QMenu>
 #include <QPointer>
 #include <QTreeView>
@@ -43,7 +40,6 @@
 #include <KMessageBox>
 #include <QAction>
 #include <QMimeDatabase>
-#include <QPushButton>
 #include <QTemporaryFile>
 
 #include <Libkleo/KeySelectionDialog>

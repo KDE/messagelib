@@ -8,8 +8,6 @@
 
 #pragma once
 
-#include <QHash>
-
 #include <QList>
 #include <QObject>
 
@@ -19,7 +17,6 @@ namespace MessageList
 {
 namespace Core
 {
-class ModelInvariantRowMapper;
 class ModelInvariantRowMapperPrivate;
 
 /**

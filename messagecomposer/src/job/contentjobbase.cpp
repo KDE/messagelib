@@ -9,8 +9,6 @@
 
 #include "messagecomposer_debug.h"
 
-#include <KMime/Content>
-
 using namespace MessageComposer;
 
 void ContentJobBasePrivate::init(QObject *parent)

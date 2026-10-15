@@ -11,11 +11,6 @@
 #include <KMime/Message>
 #include <Libkleo/Enum>
 
-namespace KMime
-{
-class Content;
-}
-
 namespace Akonadi
 {
 class MessageQueueJob;

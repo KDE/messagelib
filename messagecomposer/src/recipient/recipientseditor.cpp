@@ -24,6 +24,7 @@
 #include <KMessageBox>
 #include <KMime/Headers>
 
+#include <QApplication>
 #include <QKeyEvent>
 #include <QLayout>
 

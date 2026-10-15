@@ -9,6 +9,7 @@
 
 #include "messageviewerrenderer.h"
 #include "viewer/csshelper.h"
+#include <QWidget>
 using namespace MessageViewer;
 MessageViewerRenderer::MessageViewerRenderer() = default;
 

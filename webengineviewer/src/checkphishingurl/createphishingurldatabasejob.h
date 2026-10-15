@@ -11,6 +11,7 @@
 #include <QSslError>
 
 #include "webengineviewer_export.h"
+#include <memory>
 namespace WebEngineViewer
 {
 struct UpdateDataBaseInfo;

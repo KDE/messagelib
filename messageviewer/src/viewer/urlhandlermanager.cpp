@@ -24,7 +24,6 @@
 #include <MimeTreeParser/PartNodeBodyPart>
 
 #include <Akonadi/OpenEmailAddressJob>
-#include <MessageCore/StringUtil>
 #include <PimCommon/BroadcastStatus>
 
 #include <TextAddonsWidgets/ExecutableUtils>
@@ -50,6 +49,7 @@
 #include <QMimeDatabase>
 #include <QProcess>
 #include <QStandardPaths>
+#include <QTimer>
 
 #include <QUrlQuery>
 
@@ -65,7 +65,6 @@ using namespace std::chrono_literals;
 using std::for_each;
 using std::remove;
 using namespace MessageViewer;
-using namespace MessageCore;
 
 URLHandlerManager *URLHandlerManager::self = nullptr;
 

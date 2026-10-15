@@ -10,6 +10,8 @@
 
 #include <QtPlugin>
 
+#include <memory>
+
 namespace MessageViewer
 {
 namespace Interface

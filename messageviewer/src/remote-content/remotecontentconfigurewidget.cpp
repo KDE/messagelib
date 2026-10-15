@@ -13,6 +13,7 @@
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KTreeWidgetSearchLine>
+#include <QCursor>
 #include <QHeaderView>
 #include <QMenu>
 #include <QPointer>

@@ -16,6 +16,7 @@
 
 #include <KPluginMetaData>
 #include <QJsonArray>
+#include <QJsonObject>
 #include <QMimeDatabase>
 
 #include <QPluginLoader>
