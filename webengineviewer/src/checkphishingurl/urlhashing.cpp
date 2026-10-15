@@ -7,6 +7,7 @@
 #include "urlhashing.h"
 
 #include <QCryptographicHash>
+#include <QHash>
 
 using namespace Qt::Literals;
 using namespace WebEngineViewer;
