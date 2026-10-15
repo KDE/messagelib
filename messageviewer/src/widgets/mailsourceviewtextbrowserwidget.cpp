@@ -126,13 +126,13 @@ void MailSourceViewTextBrowser::contextMenuEvent(QContextMenuEvent *event)
     QMenu *popup = createStandardContextMenu();
     if (popup) {
         popup->addSeparator();
-        popup->addAction(KStandardActions::find(this, &MailSourceViewTextBrowser::findText, this));
+        popup->addAction(KStandardActions::find(this, &MailSourceViewTextBrowser::findText, popup));
 #if HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT
         popup->addSeparator();
         popup->addAction(QIcon::fromTheme(u"preferences-desktop-text-to-speech"_s), i18n("Speak Text"), this, &MailSourceViewTextBrowser::slotSpeakText);
 #endif
         popup->addSeparator();
-        popup->addAction(KStandardActions::saveAs(this, &MailSourceViewTextBrowser::slotSaveAs, this));
+        popup->addAction(KStandardActions::saveAs(this, &MailSourceViewTextBrowser::slotSaveAs, popup));
 
         popup->exec(event->globalPos());
         delete popup;

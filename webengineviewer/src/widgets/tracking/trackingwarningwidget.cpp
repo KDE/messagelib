@@ -30,7 +30,7 @@ void TrackingWarningWidget::slotShowDetails(const QString &content)
 {
     if (content == "mailtrackingdetails"_L1) {
         if (!mMailTrackingDetailDialog) {
-            mMailTrackingDetailDialog = new WebEngineViewer::TrackingDetailsDialog;
+            mMailTrackingDetailDialog = new WebEngineViewer::TrackingDetailsDialog(this);
         }
         mMailTrackingDetailDialog->setDetails(generateDetails());
         mMailTrackingDetailDialog->show();

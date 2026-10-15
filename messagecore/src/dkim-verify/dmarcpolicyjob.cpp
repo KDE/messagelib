@@ -88,6 +88,7 @@ void DMARCPolicyJob::slotCheckSubDomain(const QList<QByteArray> &lst, const QStr
             return;
         }
     }
+    deleteLater();
     Q_EMIT result({}, mEmailAddress);
 }
 

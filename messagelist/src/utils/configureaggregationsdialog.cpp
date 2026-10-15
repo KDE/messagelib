@@ -424,14 +424,12 @@ void ConfigureAggregationsDialog::ConfigureAggregationsDialogPrivate::importAggr
             while (idx < cnt) {
                 const QString data = grp.readEntry(u"Set%1"_s.arg(idx), QString());
                 if (!data.isEmpty()) {
-                    auto set = new Aggregation();
-                    if (set->loadFromString(data)) {
-                        set->setReadOnly(false);
-                        set->generateUniqueId(); // regenerate id so it becomes different
-                        set->setName(uniqueNameForAggregation(set->name()));
-                        (void)new AggregationListWidgetItem(mAggregationList, *set);
-                    } else {
-                        delete set; // b0rken
+                    Aggregation set;
+                    if (set.loadFromString(data)) {
+                        set.setReadOnly(false);
+                        set.generateUniqueId(); // regenerate id so it becomes different
+                        set.setName(uniqueNameForAggregation(set.name()));
+                        (void)new AggregationListWidgetItem(mAggregationList, set);
                     }
                 }
                 ++idx;

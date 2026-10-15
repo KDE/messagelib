@@ -8,6 +8,7 @@
 #include "messageviewer_export.h"
 #include <Akonadi/Item>
 #include <cstdint>
+#include <memory>
 namespace MessageViewer
 {
 class MessageViewerCheckBeforeDeletingParametersPrivate;
@@ -63,6 +64,6 @@ public:
     [[nodiscard]] bool isValid() const;
 
 private:
-    MessageViewerCheckBeforeDeletingParametersPrivate *const d;
+    std::unique_ptr<MessageViewerCheckBeforeDeletingParametersPrivate> const d;
 };
 }

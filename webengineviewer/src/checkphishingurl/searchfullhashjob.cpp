@@ -85,7 +85,6 @@ void SearchFullHashJob::parse(const QByteArray &replyStr)
         const QVariantMap answer = document.toVariant().toMap();
         if (answer.isEmpty()) {
             Q_EMIT result(WebEngineViewer::CheckPhishingUrlUtil::Ok, d->mUrl);
-            return;
         } else {
             const QVariantList info = answer.value(u"matches"_s).toList();
             // TODO

@@ -42,9 +42,8 @@ void RemoteContentMenu::setUrls(const QStringList &urls)
 
 void RemoteContentMenu::updateMenu()
 {
-    for (auto act : std::as_const(mListAction)) {
-        removeAction(act);
-    }
+    qDeleteAll(mListAction);
+    mListAction.clear();
     const auto numberOfUrl{mUrls.count()};
     if (numberOfUrl > 0) {
         mListAction.reserve(numberOfUrl + 3);
