@@ -335,7 +335,7 @@ void DistributionListDialog::slotTitleChanged(const QString &text)
 
 namespace
 {
-static const char myDistributionListDialogGroupName[] = "DistributionListDialog";
+const char myDistributionListDialogGroupName[] = "DistributionListDialog";
 }
 
 void DistributionListDialog::readConfig()

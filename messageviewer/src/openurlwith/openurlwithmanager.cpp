@@ -18,7 +18,7 @@ using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 namespace
 {
-static const char myOpenUrlWithGroupName[] = "OpenUrlWith";
+const char myOpenUrlWithGroupName[] = "OpenUrlWith";
 }
 OpenUrlWithManager::OpenUrlWithManager(QObject *parent)
     : QObject{parent}

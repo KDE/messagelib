@@ -14,7 +14,7 @@
 using namespace Qt::Literals::StringLiterals;
 namespace
 {
-static const char myDeveloperToolDialogConfigGroupName[] = "DeveloperToolDialog";
+const char myDeveloperToolDialogConfigGroupName[] = "DeveloperToolDialog";
 }
 
 using namespace WebEngineViewer;

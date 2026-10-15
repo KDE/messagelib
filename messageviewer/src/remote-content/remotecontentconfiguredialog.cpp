@@ -14,7 +14,7 @@
 using namespace Qt::Literals::StringLiterals;
 namespace
 {
-static const char myRemoteContentConfigureConfigGroupName[] = "RemoteContentConfigureDialog";
+const char myRemoteContentConfigureConfigGroupName[] = "RemoteContentConfigureDialog";
 }
 
 using namespace MessageViewer;

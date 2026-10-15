@@ -19,7 +19,7 @@ using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 namespace
 {
-static const char myMimePartTreeViewConfigGroupName[] = "MimePartTree";
+const char myMimePartTreeViewConfigGroupName[] = "MimePartTree";
 }
 MimePartTreeView::MimePartTreeView(QWidget *parent)
     : QTreeView(parent)

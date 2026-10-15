@@ -33,7 +33,7 @@ using namespace MessageComposer;
 using namespace Qt::Literals::StringLiterals;
 namespace
 {
-static const char myRecipientsPickerConfigGroupName[] = "RecipientsPicker";
+const char myRecipientsPickerConfigGroupName[] = "RecipientsPicker";
 }
 RecipientsPicker::RecipientsPicker(QWidget *parent)
     : QDialog(parent)

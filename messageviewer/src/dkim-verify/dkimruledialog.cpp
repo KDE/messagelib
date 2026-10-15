@@ -19,7 +19,7 @@ using namespace Qt::Literals::StringLiterals;
 
 namespace
 {
-static const char myDKIMRuleDialogConfigGroupName[] = "DKIMRuleDialog";
+const char myDKIMRuleDialogConfigGroupName[] = "DKIMRuleDialog";
 }
 using namespace MessageViewer;
 DKIMRuleDialog::DKIMRuleDialog(QWidget *parent)

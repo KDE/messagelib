@@ -17,7 +17,7 @@ using namespace Qt::Literals::StringLiterals;
 using namespace WebEngineViewer;
 namespace
 {
-static const char myMailTrackingDetailsDialogConfigGroupName[] = "MailTrackingDetailsDialog";
+const char myMailTrackingDetailsDialogConfigGroupName[] = "MailTrackingDetailsDialog";
 }
 TrackingDetailsDialog::TrackingDetailsDialog(QWidget *parent)
     : QDialog(parent)

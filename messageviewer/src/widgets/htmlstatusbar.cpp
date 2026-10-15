@@ -23,7 +23,7 @@
 using namespace MessageViewer;
 namespace
 {
-static const char myHtmlStatusBarConfigGroupName[] = "Reader";
+const char myHtmlStatusBarConfigGroupName[] = "Reader";
 }
 HtmlStatusBar::HtmlStatusBar(QWidget *parent)
     : QLabel(parent)

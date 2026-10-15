@@ -15,7 +15,7 @@ using namespace Qt::Literals::StringLiterals;
 
 namespace
 {
-static const char myDKIMManagerKeyDialogConfigGroupName[] = "DKIMManagerKeyDialog";
+const char myDKIMManagerKeyDialogConfigGroupName[] = "DKIMManagerKeyDialog";
 }
 
 using namespace MessageViewer;

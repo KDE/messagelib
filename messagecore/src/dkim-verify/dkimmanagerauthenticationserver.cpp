@@ -14,7 +14,7 @@ using namespace Qt::Literals::StringLiterals;
 using namespace MessageCore;
 namespace
 {
-static const char myDKIMManagerAuthenticationServerConfigGroupName[] = "AuthenticationServer";
+const char myDKIMManagerAuthenticationServerConfigGroupName[] = "AuthenticationServer";
 }
 DKIMManagerAuthenticationServer::DKIMManagerAuthenticationServer(QObject *parent)
     : QObject(parent)

@@ -59,7 +59,7 @@ inline int getValueOf(const QColor &c)
     return v;
 }
 
-static const struct {
+const struct {
     CSSHelperBase::InlineMessageType type;
     const char *cssName;
 } inlineMessageStyles[] = {{CSSHelperBase::Positive, "inlineMessagePositive"},

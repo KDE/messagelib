@@ -13,7 +13,7 @@ using namespace Qt::Literals::StringLiterals;
 
 namespace
 {
-static const char myScamDetectionWhiteListGroupName[] = "ScamDetectionWhiteList";
+const char myScamDetectionWhiteListGroupName[] = "ScamDetectionWhiteList";
 }
 using namespace MessageViewer;
 ScamDetectionWhiteListSettingsManager::ScamDetectionWhiteListSettingsManager(QObject *parent)

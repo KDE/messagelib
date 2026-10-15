@@ -16,7 +16,7 @@ using namespace Qt::Literals::StringLiterals;
 using namespace MessageList::Core;
 namespace
 {
-static const char myConfigureFiltersDialogConfigGroupName[] = "ConfigureFiltersDialog";
+const char myConfigureFiltersDialogConfigGroupName[] = "ConfigureFiltersDialog";
 }
 
 ConfigureFiltersDialog::ConfigureFiltersDialog(QWidget *parent)

@@ -32,7 +32,7 @@ using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 namespace
 {
-static const char myScamDetectionDetailsDialogConfigGroupName[] = "ScamDetectionDetailsDialog";
+const char myScamDetectionDetailsDialogConfigGroupName[] = "ScamDetectionDetailsDialog";
 }
 ScamDetectionDetailsDialog::ScamDetectionDetailsDialog(QWidget *parent)
     : QDialog(parent)

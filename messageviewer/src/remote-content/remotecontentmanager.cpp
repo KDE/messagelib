@@ -15,7 +15,7 @@ using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 namespace
 {
-static const char myRemoteContentGroupName[] = "RemoteContent";
+const char myRemoteContentGroupName[] = "RemoteContent";
 }
 RemoteContentManager::RemoteContentManager(QObject *parent)
     : QObject(parent)

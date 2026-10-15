@@ -24,7 +24,7 @@ using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 namespace
 {
-static const char myMailSourceWebEngineViewerConfigGroupName[] = "MailSourceWebEngineViewer";
+const char myMailSourceWebEngineViewerConfigGroupName[] = "MailSourceWebEngineViewer";
 }
 MailSourceWebEngineViewer::MailSourceWebEngineViewer(QWidget *parent)
     : QDialog(parent)
