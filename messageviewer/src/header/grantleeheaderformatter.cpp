@@ -550,7 +550,7 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath,
 
     if (messageHasAttachment) {
         const QString iconPath = MessageViewer::IconNameCache::instance()->iconPath(u"mail-attachment"_s, KIconLoader::Toolbar);
-        const QString html = u"<img height=\"%2\" width=\"%2\" src=\"%1\"></a>"_s.arg(iconPath, QString::number(d->iconSize));
+        const QString html = u"<img height=\"%2\" width=\"%2\" src=\"%1\">"_s.arg(iconPath, QString::number(d->iconSize));
         headerObject.insert(u"attachmentIcon"_s, html);
     }
 
@@ -558,7 +558,7 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath,
     headerObject.insert(u"messageIsSigned"_s, messageIsSigned);
     if (messageIsSigned) {
         const QString iconPath = MessageViewer::IconNameCache::instance()->iconPath(u"mail-signed"_s, KIconLoader::Toolbar);
-        const QString html = u"<img height=\"%2\" width=\"%2\" src=\"%1\"></a>"_s.arg(iconPath, QString::number(d->iconSize));
+        const QString html = u"<img height=\"%2\" width=\"%2\" src=\"%1\">"_s.arg(iconPath, QString::number(d->iconSize));
         headerObject.insert(u"signedIcon"_s, html);
     }
 
@@ -566,7 +566,7 @@ QString GrantleeHeaderFormatter::format(const QString &absolutePath,
     headerObject.insert(u"messageIsEncrypted"_s, messageIsEncrypted);
     if (messageIsEncrypted) {
         const QString iconPath = MessageViewer::IconNameCache::instance()->iconPath(u"mail-encrypted"_s, KIconLoader::Toolbar);
-        const QString html = u"<img height=\"%2\" width=\"%2\" src=\"%1\"></a>"_s.arg(iconPath, QString::number(d->iconSize));
+        const QString html = u"<img height=\"%2\" width=\"%2\" src=\"%1\">"_s.arg(iconPath, QString::number(d->iconSize));
         headerObject.insert(u"encryptedIcon"_s, html);
     }
 
