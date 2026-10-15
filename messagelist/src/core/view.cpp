@@ -2455,13 +2455,13 @@ bool View::event(QEvent *e)
             "</tr>"_s.arg(txtColorName, bckColorName, ghi->label(), textDirection);
 
         QString description;
-
+        static const QRegularExpression reg(u"[0-9]"_s);
         switch (d->mAggregation->grouping()) {
         case Aggregation::GroupByDate:
             if (d->mAggregation->threading() != Aggregation::NoThreading) {
                 switch (d->mAggregation->threadLeader()) {
                 case Aggregation::TopmostMessage:
-                    if (ghi->label().contains(QRegularExpression(u"[0-9]"_s))) {
+                    if (ghi->label().contains(reg)) {
                         description = i18nc("@info:tooltip Formats to something like 'Threads started on 2008-12-21'", "Threads started on %1", ghi->label());
                     } else {
                         description = i18nc("@info:tooltip Formats to something like 'Threads started Yesterday'", "Threads started %1", ghi->label());
@@ -2475,7 +2475,6 @@ bool View::event(QEvent *e)
                     break;
                 }
             } else {
-                static const QRegularExpression reg(u"[0-9]"_s);
                 if (ghi->label().contains(reg)) {
                     if (storageModel()->containsOutboundMessages()) {
                         description = i18nc("@info:tooltip Formats to something like 'Messages sent on 2008-12-21'", "Messages sent on %1", ghi->label());
