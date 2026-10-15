@@ -87,6 +87,7 @@ MessagePart::Ptr MailmanBodyPartFormatter::process(Interface::BodyPart &part) co
     // temporarily change current node's Content-Type
     // to get our embedded RfC822 messages properly inserted
     curNode->contentType()->setMimeType("multipart/digest");
+    constexpr auto subSearch = "\nSubject:"_L1;
     while (-1 < nextDelim) {
         int thisEoL = str.indexOf("\nMessage:"_L1, thisDelim, Qt::CaseInsensitive);
         if (-1 < thisEoL) {
@@ -109,8 +110,7 @@ MessagePart::Ptr MailmanBodyPartFormatter::process(Interface::BodyPart &part) co
         partStr = u"Content-Type: message/rfc822\nContent-Description: embedded message\n\n"_s;
         partStr += QStringView(str).mid(thisDelim, nextDelim - thisDelim);
         QString subject = u"embedded message"_s;
-        QString subSearch = u"\nSubject:"_s;
-        int subPos = partStr.indexOf(subSearch, 0, Qt::CaseInsensitive);
+        const int subPos = partStr.indexOf(subSearch, 0, Qt::CaseInsensitive);
         if (-1 < subPos) {
             subject = partStr.mid(subPos + subSearch.length());
             thisEoL = subject.indexOf(u'\n');
