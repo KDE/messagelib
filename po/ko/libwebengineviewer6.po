@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-29 00:46+0000\n"
+"POT-Creation-Date: 2026-10-16 00:49+0000\n"
 "PO-Revision-Date: 2024-08-20 00:34+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -23,75 +23,75 @@ msgctxt "@title:window"
 msgid "Developer Tool"
 msgstr "개발자 도구"
 
-#: findbar/findbarbase.cpp:41
+#: findbar/findbarbase.cpp:42
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "닫기"
 
-#: findbar/findbarbase.cpp:44
+#: findbar/findbarbase.cpp:45
 #, kde-format
 msgid "Close"
 msgstr "닫기"
 
-#: findbar/findbarbase.cpp:50
+#: findbar/findbarbase.cpp:51
 #, kde-format
 msgctxt "Find text"
 msgid "F&ind:"
 msgstr "찾기(&I):"
 
-#: findbar/findbarbase.cpp:55
+#: findbar/findbarbase.cpp:56
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "검색할 문자열"
 
-#: findbar/findbarbase.cpp:60
+#: findbar/findbarbase.cpp:61
 #, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
 msgstr "다음"
 
-#: findbar/findbarbase.cpp:61
+#: findbar/findbarbase.cpp:62
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "다음 일치로 이동"
 
-#: findbar/findbarbase.cpp:66
+#: findbar/findbarbase.cpp:67
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
 msgstr "이전"
 
-#: findbar/findbarbase.cpp:67
+#: findbar/findbarbase.cpp:68
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "이전 일치로 이동"
 
-#: findbar/findbarbase.cpp:73
+#: findbar/findbarbase.cpp:74
 #, kde-format
 msgid "Options"
 msgstr "옵션"
 
-#: findbar/findbarbase.cpp:74
+#: findbar/findbarbase.cpp:75
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "검색 방식 변경"
 
-#: findbar/findbarbase.cpp:76
+#: findbar/findbarbase.cpp:77
 #, kde-format
 msgid "Case sensitive"
 msgstr "대소문자 구분"
 
-#: findbar/findbarbase.cpp:93
+#: findbar/findbarbase.cpp:94
 #, kde-format
 msgid "Phrase not found"
 msgstr "검색어를 찾을 수 없음"
 
-#: webenginepage.cpp:154
+#: webenginepage.cpp:153
 #, kde-format
 msgctxt "@title:window"
 msgid "Save HTML Page"
@@ -109,10 +109,13 @@ msgid "Details"
 msgstr "자세히"
 
 #: widgets/tracking/trackingwarningwidget.cpp:23
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
+#| "\">(Details...)"
 msgid ""
 "Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
-"\">(Details...)"
+"\">(Details...)</a>"
 msgstr ""
 "일부 메일 추적기가 감지되어 차단되었습니다.<a href=\"mailtrackingdetails"
 "\">(자세한 정보...)"

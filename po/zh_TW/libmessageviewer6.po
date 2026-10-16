@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-11 00:52+0000\n"
+"POT-Creation-Date: 2026-10-16 00:49+0000\n"
 "PO-Revision-Date: 2026-09-22 00:13+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -189,41 +189,41 @@ msgstr "檢查 %1 封信件的簽章中，請稍候..."
 msgid "End of signed message"
 msgstr "已簽署信件的尾端"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:73
+#: dkim-verify/dkimmanagerkeytreeview.cpp:75
 #, kde-format
 msgid "Copy Key"
 msgstr "複製金鑰"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:79
+#: dkim-verify/dkimmanagerkeytreeview.cpp:81
 #, kde-format
 msgid "Remove Key"
 msgid_plural "Remove Keys"
 msgstr[0] "移除金鑰"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:81
+#: dkim-verify/dkimmanagerkeytreeview.cpp:83
 #, kde-format
 msgid "Do you want to delete this key?"
 msgid_plural "Do you want to delete these keys?"
 msgstr[0] "您真的要刪除這些金鑰嗎？"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:82
+#: dkim-verify/dkimmanagerkeytreeview.cpp:84
 #, kde-format
 msgid "Delete Key"
 msgid_plural "Delete Keys"
 msgstr[0] "刪除金鑰"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:92
+#: dkim-verify/dkimmanagerkeytreeview.cpp:94
 #: dkim-verify/dkimmanageruleswidget.cpp:225
 #, kde-format
 msgid "Delete All"
 msgstr "全部刪除"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:94
+#: dkim-verify/dkimmanagerkeytreeview.cpp:96
 #, kde-format
 msgid "Do you want to delete all keys?"
 msgstr "您真的要刪除所有金鑰嗎？"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:95
+#: dkim-verify/dkimmanagerkeytreeview.cpp:97
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Keys"
@@ -250,56 +250,56 @@ msgstr "可以簽署"
 msgid "Ignore if not signed"
 msgstr "若未簽署則忽略"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:31
+#: dkim-verify/dkimmanagerulesdialog.cpp:33
 #, kde-format
 msgctxt "@action:button"
 msgid "Export..."
 msgstr "匯出..."
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:33
+#: dkim-verify/dkimmanagerulesdialog.cpp:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Rule"
 msgstr "設定規則"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:44
+#: dkim-verify/dkimmanagerulesdialog.cpp:46
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Rule..."
 msgstr "新增規則..."
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:49
+#: dkim-verify/dkimmanagerulesdialog.cpp:51
 #, kde-format
 msgctxt "@action:button"
 msgid "Import..."
 msgstr "匯入..."
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:81
+#: dkim-verify/dkimmanagerulesdialog.cpp:83
 #, kde-format
 msgid "No rules found"
 msgstr "找不到規則"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:81
-#: dkim-verify/dkimmanagerulesdialog.cpp:84
+#: dkim-verify/dkimmanagerulesdialog.cpp:83
+#: dkim-verify/dkimmanagerulesdialog.cpp:86
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "匯出規則"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:92
-#: dkim-verify/dkimmanagerulesdialog.cpp:95
+#: dkim-verify/dkimmanagerulesdialog.cpp:94
+#: dkim-verify/dkimmanagerulesdialog.cpp:97
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "匯入規則"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:95
+#: dkim-verify/dkimmanagerulesdialog.cpp:97
 #, kde-format
 msgid "No rules imported."
 msgstr "未匯入任何規則。"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:75
-#: remote-content/remotecontentconfigurewidget.cpp:54
+#: remote-content/remotecontentconfigurewidget.cpp:55
 #, kde-format
 msgid "Domain"
 msgstr "網域"
@@ -335,13 +335,13 @@ msgid "Priority"
 msgstr "優先權"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:198
-#: remote-content/remotecontentconfigurewidget.cpp:82
+#: remote-content/remotecontentconfigurewidget.cpp:83
 #, kde-format
 msgid "Add..."
 msgstr "新增..."
 
 #: dkim-verify/dkimmanageruleswidget.cpp:203
-#: remote-content/remotecontentconfigurewidget.cpp:85
+#: remote-content/remotecontentconfigurewidget.cpp:86
 #, kde-format
 msgid "Modify..."
 msgstr "變更..."
@@ -352,7 +352,7 @@ msgid "Duplicate Rule"
 msgstr "建立規則複本"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:211
-#: remote-content/remotecontentconfigurewidget.cpp:89
+#: remote-content/remotecontentconfigurewidget.cpp:90
 #, kde-format
 msgid "Remove Rule"
 msgstr "移除規則"
@@ -363,7 +363,7 @@ msgid "Do you want to delete this rule?"
 msgstr "您要刪除這個規則嗎？"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:214
-#: remote-content/remotecontentconfigurewidget.cpp:92
+#: remote-content/remotecontentconfigurewidget.cpp:93
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Rule"
@@ -380,56 +380,56 @@ msgctxt "@title:window"
 msgid "Delete Rules"
 msgstr "刪除規則"
 
-#: dkim-verify/dkimruledialog.cpp:28
+#: dkim-verify/dkimruledialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Rule"
 msgstr "新增規則"
 
-#: dkim-verify/dkimruledialog.cpp:75
+#: dkim-verify/dkimruledialog.cpp:62
 #, kde-format
 msgctxt "@title:window"
 msgid "Modify Rule"
 msgstr "變更規則"
 
-#: dkim-verify/dkimrulewidget.cpp:20
+#: dkim-verify/dkimrulewidget.cpp:21
 #, kde-format
 msgctxt "@option:check"
 msgid "Enabled"
 msgstr "已啟用"
 
-#: dkim-verify/dkimrulewidget.cpp:38
+#: dkim-verify/dkimrulewidget.cpp:39
 #, kde-format
 msgid "Domain:"
 msgstr "網域："
 
-#: dkim-verify/dkimrulewidget.cpp:43 header/grantleeheaderformatter.cpp:186
+#: dkim-verify/dkimrulewidget.cpp:44 header/grantleeheaderformatter.cpp:190
 #, kde-format
 msgid "List-Id:"
 msgstr "郵件論壇 ID (List-Id)："
 
-#: dkim-verify/dkimrulewidget.cpp:47 header/grantleeheaderformatter.cpp:273
+#: dkim-verify/dkimrulewidget.cpp:48 header/grantleeheaderformatter.cpp:277
 #, kde-format
 msgid "From:"
 msgstr "寄件者："
 
-#: dkim-verify/dkimrulewidget.cpp:48
+#: dkim-verify/dkimrulewidget.cpp:49
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Use '*' to specify all emails from domain"
 msgstr "使用 '*' 來指定來自網域的所有郵件"
 
-#: dkim-verify/dkimrulewidget.cpp:53
+#: dkim-verify/dkimrulewidget.cpp:54
 #, kde-format
 msgid "SDID:"
 msgstr "SDID："
 
-#: dkim-verify/dkimrulewidget.cpp:56
+#: dkim-verify/dkimrulewidget.cpp:57
 #, kde-format
 msgid "Rule:"
 msgstr "規則："
 
-#: dkim-verify/dkimrulewidget.cpp:62
+#: dkim-verify/dkimrulewidget.cpp:63
 #, kde-format
 msgid "Priority:"
 msgstr "優先權："
@@ -625,99 +625,99 @@ msgstr "%1: 有效"
 msgid "Not Signed"
 msgstr "未簽署"
 
-#: header/grantleeheaderformatter.cpp:206
+#: header/grantleeheaderformatter.cpp:210
 #, kde-format
 msgid "Subject:"
 msgstr "主題："
 
-#: header/grantleeheaderformatter.cpp:226
+#: header/grantleeheaderformatter.cpp:230
 #, kde-format
 msgid "Date:"
 msgstr "日期："
 
-#: header/grantleeheaderformatter.cpp:241
+#: header/grantleeheaderformatter.cpp:245
 #, kde-format
 msgid "Message-Id:"
 msgstr "信件代碼："
 
-#: header/grantleeheaderformatter.cpp:265
+#: header/grantleeheaderformatter.cpp:269
 #, kde-format
 msgid "To:"
 msgstr "收件者："
 
-#: header/grantleeheaderformatter.cpp:267
+#: header/grantleeheaderformatter.cpp:271
 #, kde-format
 msgid "Reply To:"
 msgstr "回覆給："
 
-#: header/grantleeheaderformatter.cpp:269
+#: header/grantleeheaderformatter.cpp:273
 #, kde-format
 msgid "CC:"
 msgstr "副本："
 
-#: header/grantleeheaderformatter.cpp:271
+#: header/grantleeheaderformatter.cpp:275
 #, kde-format
 msgid "BCC:"
 msgstr "密件副本："
 
-#: header/grantleeheaderformatter.cpp:275
+#: header/grantleeheaderformatter.cpp:279
 #, kde-format
 msgid "Sender:"
 msgstr "寄件者："
 
-#: header/grantleeheaderformatter.cpp:277
+#: header/grantleeheaderformatter.cpp:281
 #, kde-format
 msgid "resent from:"
 msgstr "重新送出從："
 
-#: header/grantleeheaderformatter.cpp:279
+#: header/grantleeheaderformatter.cpp:283
 #, kde-format
 msgid "resent to:"
 msgstr "重新送出到："
 
-#: header/grantleeheaderformatter.cpp:395
+#: header/grantleeheaderformatter.cpp:399
 #, kde-format
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "Grantlee 主題 %1 無效。"
 
-#: header/grantleeheaderformatter.cpp:483 header/headerstyle_util.cpp:85
-#: header/headerstyle_util.cpp:90 header/headerstyle_util.cpp:101
+#: header/grantleeheaderformatter.cpp:487 header/headerstyle_util.cpp:86
+#: header/headerstyle_util.cpp:91 header/headerstyle_util.cpp:102
 #, kde-format
 msgid "No Subject"
 msgstr "沒有主題"
 
-#: header/grantleeheaderformatter.cpp:488
+#: header/grantleeheaderformatter.cpp:492
 #, kde-format
 msgid "Spam Status:"
 msgstr "垃圾信判讀狀態："
 
-#: header/grantleeheaderformatter.cpp:500
+#: header/grantleeheaderformatter.cpp:504
 #, kde-format
 msgid "Printing mode"
 msgstr "列印模式"
 
-#: header/grantleeheaderformatter.cpp:542
+#: header/grantleeheaderformatter.cpp:546
 #, kde-format
 msgid "[vcard]"
 msgstr "[vcard]"
 
-#: header/grantleeheaderformatter.cpp:549
+#: header/grantleeheaderformatter.cpp:553
 #, kde-format
 msgid "Attachments:"
 msgstr "附加檔："
 
-#: header/grantleeheaderformatter.cpp:575
+#: header/grantleeheaderformatter.cpp:579
 #, kde-format
 msgid "Security:"
 msgstr "安全性："
 
-#: header/headerstyle_util.cpp:60
+#: header/headerstyle_util.cpp:61
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "未知"
 
-#: header/headerstyle_util.cpp:149
+#: header/headerstyle_util.cpp:150
 #, kde-format
 msgid ""
 "%1% probability of being spam with confidence %3%.\n"
@@ -732,7 +732,7 @@ msgstr ""
 "可能性=%2\n"
 "可信度=%4"
 
-#: header/headerstyle_util.cpp:158
+#: header/headerstyle_util.cpp:159
 #, kde-format
 msgid ""
 "%1% probability of being spam.\n"
@@ -745,37 +745,37 @@ msgstr ""
 "完整報告：\n"
 "可能性=%2"
 
-#: header/headerstyle_util.cpp:167
+#: header/headerstyle_util.cpp:168
 #, kde-format
 msgid "No Spam agent"
 msgstr "沒有處理垃圾信代理程式"
 
-#: header/headerstyle_util.cpp:170
+#: header/headerstyle_util.cpp:171
 #, kde-format
 msgid "Spam filter score not a number"
 msgstr "垃圾信過濾的評分非數字"
 
-#: header/headerstyle_util.cpp:173
+#: header/headerstyle_util.cpp:174
 #, kde-format
 msgid "Threshold not a valid number"
 msgstr "下限值非有效的數字"
 
-#: header/headerstyle_util.cpp:176
+#: header/headerstyle_util.cpp:177
 #, kde-format
 msgid "Spam filter score could not be extracted from header"
 msgstr "垃圾信過濾的評分並非從標頭取出"
 
-#: header/headerstyle_util.cpp:179
+#: header/headerstyle_util.cpp:180
 #, kde-format
 msgid "Threshold could not be extracted from header"
 msgstr "下限制並非從標頭取出"
 
-#: header/headerstyle_util.cpp:182
+#: header/headerstyle_util.cpp:183
 #, kde-format
 msgid "Error evaluating spam score"
 msgstr "計算垃圾信評分時發生錯誤"
 
-#: header/headerstyle_util.cpp:187
+#: header/headerstyle_util.cpp:188
 #, kde-format
 msgid ""
 "%1.\n"
@@ -859,34 +859,34 @@ msgctxt "@title:window"
 msgid "Configure Remote Content"
 msgstr "設定遠端內容"
 
-#: remote-content/remotecontentconfigurewidget.cpp:54
+#: remote-content/remotecontentconfigurewidget.cpp:55
 #, kde-format
 msgid "Status"
 msgstr "狀態"
 
-#: remote-content/remotecontentconfigurewidget.cpp:91
+#: remote-content/remotecontentconfigurewidget.cpp:92
 #, kde-format
 msgid "Do you want to delete this rule '%1'?"
 msgstr "您要刪除 '%1' 這個規則嗎？"
 
-#: remote-content/remotecontentconfigurewidget.cpp:109
+#: remote-content/remotecontentconfigurewidget.cpp:110
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Remote Content"
 msgstr "編輯遠端內容"
 
-#: remote-content/remotecontentconfigurewidget.cpp:125
+#: remote-content/remotecontentconfigurewidget.cpp:126
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Remote Content"
 msgstr "新增遠端內容"
 
-#: remote-content/remotecontentconfigurewidget.cpp:134
+#: remote-content/remotecontentconfigurewidget.cpp:135
 #, kde-format
 msgid "An entry already defines this url. Please modify it."
 msgstr "已經有項目定義這個網址了。請修改它。"
 
-#: remote-content/remotecontentconfigurewidget.cpp:134
+#: remote-content/remotecontentconfigurewidget.cpp:135
 #, kde-format
 msgctxt "@title:window"
 msgid "Add new Url"
@@ -902,12 +902,12 @@ msgstr "設定"
 msgid "Remote Content"
 msgstr "遠端內容"
 
-#: remote-content/remotecontentmenu.cpp:52
+#: remote-content/remotecontentmenu.cpp:51
 #, kde-format
 msgid "Authorize %1"
 msgstr "授權 %1"
 
-#: remote-content/remotecontentmenu.cpp:60
+#: remote-content/remotecontentmenu.cpp:59
 #, kde-format
 msgid "Authorize all Urls"
 msgstr "授權所有網址"
@@ -922,13 +922,13 @@ msgstr "已授權"
 msgid "Blocked"
 msgstr "已封鎖"
 
-#: remote-content/remotecontentwidget.cpp:30
+#: remote-content/remotecontentwidget.cpp:29
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Domain:"
 msgstr "網域："
 
-#: scamdetection/scamdetectiondetailsdialog.cpp:40
+#: scamdetection/scamdetectiondetailsdialog.cpp:41
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"
@@ -963,8 +963,8 @@ msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "為所有信件關閉偵測詐騙信件的功能"
 
-#: scamdetection/scamdetectionwebengine.cpp:141
-#: scamdetection/scamdetectionwebengine.cpp:239
+#: scamdetection/scamdetectionwebengine.cpp:142
+#: scamdetection/scamdetectionwebengine.cpp:240
 #, kde-format
 msgid ""
 "This email contains a link which reads as '%1' in the text, but actually "
@@ -974,7 +974,7 @@ msgstr ""
 "此信件包含了一個連結，連結文字為 '%1'，但實際上指向 '%2'。通常這是詐騙郵件的"
 "手法，要誤導收信人。"
 
-#: scamdetection/scamdetectionwebengine.cpp:155
+#: scamdetection/scamdetectionwebengine.cpp:156
 #, kde-format
 msgid ""
 "This email contains a link which points to a numerical IP address (%1) "
@@ -984,7 +984,7 @@ msgstr ""
 "此信件包含了一個指向一個 IP 位址（%1）而非主機名稱的連結。通常這是詐騙郵件裡"
 "常用的方式。"
 
-#: scamdetection/scamdetectionwebengine.cpp:162
+#: scamdetection/scamdetectionwebengine.cpp:163
 #, kde-format
 msgid ""
 "This email contains a link which points to a hexadecimal IP address (%1) "
@@ -994,12 +994,12 @@ msgstr ""
 "此信件包含了一個指向一個以十六進位顯示的 IP 位址（%1）而非主機名稱的連結。通"
 "常這是詐騙郵件裡常用的方式。"
 
-#: scamdetection/scamdetectionwebengine.cpp:168
+#: scamdetection/scamdetectionwebengine.cpp:169
 #, kde-format
 msgid "This email contains a link (%1) which has a redirection"
 msgstr "此信件包含了一個會重新導向的連結（%1）"
 
-#: scamdetection/scamdetectionwebengine.cpp:173
+#: scamdetection/scamdetectionwebengine.cpp:174
 #, kde-format
 msgid ""
 "This email contains a link (%1) which contains multiple http://. This is "
@@ -1007,12 +1007,12 @@ msgid ""
 msgstr ""
 "此信件包含了一個包含多個 http:// 的連結（%1）。通常這是詐騙郵件裡常用的方式。"
 
-#: scamdetection/scamdetectionwebengine.cpp:184
+#: scamdetection/scamdetectionwebengine.cpp:185
 #, kde-format
 msgid "This email contains a shorturl (%1). It can redirect to another server."
 msgstr "此信件包含了一個短網址（%1）。它會重新導向到另一個伺服器。"
 
-#: scamdetection/scamdetectionwebengine.cpp:257
+#: scamdetection/scamdetectionwebengine.cpp:258
 #, kde-format
 msgid ""
 "The text of this link contains invisible characters, which are not displayed "
@@ -1022,12 +1022,12 @@ msgstr ""
 "這個連結的文字包含不可見的字元，它們本身不被顯示但使文字看起來跟它實際指向的"
 "網址不一樣。這經常代表它是來自垃圾信。"
 
-#: scamdetection/scamdetectionwebengine.cpp:263
+#: scamdetection/scamdetectionwebengine.cpp:264
 #, kde-format
 msgid "Message contains form element. This is often the case in scam emails."
 msgstr "信件中包含了表單元素。通常這是詐騙郵件裡常用的方式。"
 
-#: scamdetection/scamdetectionwebengine.cpp:267
+#: scamdetection/scamdetectionwebengine.cpp:268
 #, kde-format
 msgid "Details:"
 msgstr "詳細資料："
@@ -1323,7 +1323,7 @@ msgid ""
 msgstr "勾選此項目的話，已接收的邀請信函會在回覆成功送出後移到垃圾桶。"
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
-#: settings/messageviewer.kcfg:206 viewer/viewer_p.cpp:1540
+#: settings/messageviewer.kcfg:206 viewer/viewer_p.cpp:1523
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "使用固定寬度文字(&X)"
@@ -1656,17 +1656,6 @@ msgid ""
 "the attachment were:"
 msgstr "您已從此信件刪除了一個附件。該附件原本的 MIME 標頭為："
 
-#: utils/messageviewerutil.cpp:635
-#, kde-format
-msgid "Open &with %1"
-msgstr "用 %1 開啟附件(&W)"
-
-#: utils/messageviewerutil.cpp:637
-#, kde-format
-msgctxt "@item:inmenu Open With, %1 is application name"
-msgid "%1"
-msgstr "%1"
-
 #: viewer/mimeparttree/mimetreemodel.cpp:62
 #, kde-format
 msgid "body part"
@@ -1698,502 +1687,502 @@ msgctxt "@title:window"
 msgid "Print Document"
 msgstr "列印文件"
 
-#: viewer/urlhandlermanager.cpp:410
+#: viewer/urlhandlermanager.cpp:409
 #, kde-format
 msgid "Turn on HTML rendering for this message."
 msgstr "顯示信件的 HTML 格式。"
 
-#: viewer/urlhandlermanager.cpp:412 viewer/viewer_p.cpp:1609
+#: viewer/urlhandlermanager.cpp:411 viewer/viewer_p.cpp:1592
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "從網路上下載遠端連結。"
 
-#: viewer/urlhandlermanager.cpp:414
+#: viewer/urlhandlermanager.cpp:413
 #, kde-format
 msgid "Work online."
 msgstr "線上工作"
 
-#: viewer/urlhandlermanager.cpp:416
+#: viewer/urlhandlermanager.cpp:415
 #, kde-format
 msgid "Make account online."
 msgstr "讓帳號上線。"
 
-#: viewer/urlhandlermanager.cpp:418
+#: viewer/urlhandlermanager.cpp:417
 #, kde-format
 msgid "Decrypt message."
 msgstr "解密信件"
 
-#: viewer/urlhandlermanager.cpp:420
+#: viewer/urlhandlermanager.cpp:419
 #, kde-format
 msgid "Show signature details."
 msgstr "顯示簽章詳情。"
 
-#: viewer/urlhandlermanager.cpp:422
+#: viewer/urlhandlermanager.cpp:421
 #, kde-format
 msgid "Hide signature details."
 msgstr "隱藏簽章詳情。"
 
-#: viewer/urlhandlermanager.cpp:424
+#: viewer/urlhandlermanager.cpp:423
 #, kde-format
 msgid "Show encryption details."
 msgstr "顯示加密詳情。"
 
-#: viewer/urlhandlermanager.cpp:426
+#: viewer/urlhandlermanager.cpp:425
 #, kde-format
 msgid "Hide encryption details."
 msgstr "隱藏加密詳情。"
 
-#: viewer/urlhandlermanager.cpp:431
+#: viewer/urlhandlermanager.cpp:430
 #, kde-format
 msgid "Open Documentation"
 msgstr "開啟說明文件"
 
-#: viewer/urlhandlermanager.cpp:465
+#: viewer/urlhandlermanager.cpp:464
 #, kde-format
 msgid "Expand all quoted text."
 msgstr "展開引言。"
 
-#: viewer/urlhandlermanager.cpp:467
+#: viewer/urlhandlermanager.cpp:466
 #, kde-format
 msgid "Collapse quoted text."
 msgstr "折疊引言。"
 
-#: viewer/urlhandlermanager.cpp:493
+#: viewer/urlhandlermanager.cpp:492
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr "無法啟動憑證管理員。請檢查安裝是否完全！"
 
-#: viewer/urlhandlermanager.cpp:495
+#: viewer/urlhandlermanager.cpp:494
 #, kde-format
 msgid "KMail Error"
 msgstr "KMail 錯誤"
 
-#: viewer/urlhandlermanager.cpp:512
+#: viewer/urlhandlermanager.cpp:511
 #, kde-format
 msgid "Show certificate 0x%1"
 msgstr "顯示憑證 0x%1"
 
-#: viewer/urlhandlermanager.cpp:571
+#: viewer/urlhandlermanager.cpp:570
 #, kde-format
 msgid "&Open in Address Book"
 msgstr "開啟通訊錄(&O)"
 
-#: viewer/urlhandlermanager.cpp:573
+#: viewer/urlhandlermanager.cpp:572
 #, kde-format
 msgid "&Copy Email Address"
 msgstr "複製電子郵件地址(&C)"
 
-#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2704
+#: viewer/urlhandlermanager.cpp:585 viewer/viewer_p.cpp:2687
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "信件位址已複製到剪貼簿。"
 
-#: viewer/urlhandlermanager.cpp:597
+#: viewer/urlhandlermanager.cpp:596
 #, kde-format
 msgid "Lookup the contact in KAddressbook"
 msgstr "在 KAddressbook 中尋找聯絡人"
 
-#: viewer/urlhandlermanager.cpp:778
+#: viewer/urlhandlermanager.cpp:777
 #, kde-format
 msgid "Attachment: %1"
 msgstr "附件： %1"
 
-#: viewer/urlhandlermanager.cpp:781
+#: viewer/urlhandlermanager.cpp:780
 #, kde-format
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "封裝信件（主題：%1）"
 
-#: viewer/urlhandlermanager.cpp:783
+#: viewer/urlhandlermanager.cpp:782
 #, kde-format
 msgid "Encapsulated Message"
 msgstr "封裝信件"
 
-#: viewer/urlhandlermanager.cpp:786
+#: viewer/urlhandlermanager.cpp:785
 #, kde-format
 msgid "Unnamed attachment"
 msgstr "未命名附件"
 
-#: viewer/urlhandlermanager.cpp:822
+#: viewer/urlhandlermanager.cpp:821
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr "顯示此操作的 GnuPG 稽核紀錄"
 
-#: viewer/urlhandlermanager.cpp:860
+#: viewer/urlhandlermanager.cpp:859
 #, kde-format
 msgid "Opening URL..."
 msgstr "正在開啟 URL..."
 
-#: viewer/urlhandlermanager.cpp:869
+#: viewer/urlhandlermanager.cpp:868
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "您確定要執行 <filename>%1</filename> 嗎？"
 
-#: viewer/urlhandlermanager.cpp:871
+#: viewer/urlhandlermanager.cpp:870
 #, kde-format
 msgctxt "@action:button"
 msgid "Execute"
 msgstr "執行"
 
-#: viewer/viewer.cpp:152
+#: viewer/viewer.cpp:151
 #, kde-format
 msgid "Loading message..."
 msgstr "載入信件中..."
 
-#: viewer/viewer_p.cpp:203
+#: viewer/viewer_p.cpp:186
 #, kde-format
 msgid ""
 "Stored DKIM key is different from the current one. Do you want to store this "
 "one too?"
 msgstr "已儲存的 DKIM 金鑰與目前金鑰不同。您是否要也儲存這一個金鑰？"
 
-#: viewer/viewer_p.cpp:204
+#: viewer/viewer_p.cpp:187
 #, kde-format
 msgctxt "@title:window"
 msgid "Key Changed"
 msgstr "金鑰已變更"
 
-#: viewer/viewer_p.cpp:205
+#: viewer/viewer_p.cpp:188
 #, kde-format
 msgctxt "@action:button"
 msgid "Store"
 msgstr "保存"
 
-#: viewer/viewer_p.cpp:378
+#: viewer/viewer_p.cpp:361
 #, kde-format
 msgid ""
 "Deleting an attachment might invalidate any digital signature on this "
 "message."
 msgstr "刪除附件可能造成此信件的簽章不正確。"
 
-#: viewer/viewer_p.cpp:379 viewer/viewer_p.cpp:414
+#: viewer/viewer_p.cpp:362 viewer/viewer_p.cpp:397
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "刪除附件"
 
-#: viewer/viewer_p.cpp:413
+#: viewer/viewer_p.cpp:396
 #, kde-format
 msgid ""
 "Deleting an attachment from an encrypted or old-style mailman message is not "
 "supported."
 msgstr "不支援從已加密或舊式 mailman 信件中刪除附件的功能。"
 
-#: viewer/viewer_p.cpp:511 viewer/viewer_p.cpp:1722
+#: viewer/viewer_p.cpp:494 viewer/viewer_p.cpp:1705
 #, kde-format
 msgctxt "to view something"
 msgid "View"
 msgstr "檢視"
 
-#: viewer/viewer_p.cpp:519
+#: viewer/viewer_p.cpp:502
 #, kde-format
 msgid "Scroll To"
 msgstr "捲軸至"
 
-#: viewer/viewer_p.cpp:524
+#: viewer/viewer_p.cpp:507
 #, kde-format
 msgid "Save As..."
 msgstr "另存新檔..."
 
-#: viewer/viewer_p.cpp:530 viewer/viewer_p.cpp:1732
+#: viewer/viewer_p.cpp:513 viewer/viewer_p.cpp:1715
 #, kde-format
 msgid "Copy"
 msgstr "複製"
 
-#: viewer/viewer_p.cpp:541 viewer/viewer_p.cpp:1736
+#: viewer/viewer_p.cpp:524 viewer/viewer_p.cpp:1719
 #, kde-format
 msgid "Delete Attachment"
 msgstr "移除附件"
 
-#: viewer/viewer_p.cpp:552
+#: viewer/viewer_p.cpp:535
 #, kde-format
 msgid "Reply To Author"
 msgstr "回覆給原作者"
 
-#: viewer/viewer_p.cpp:560
+#: viewer/viewer_p.cpp:543
 #, kde-format
 msgid "Reply To All"
 msgstr "回覆給全部"
 
-#: viewer/viewer_p.cpp:566 viewer/viewer_p.cpp:1741
+#: viewer/viewer_p.cpp:549 viewer/viewer_p.cpp:1724
 #, kde-format
 msgid "Properties"
 msgstr "屬性"
 
-#: viewer/viewer_p.cpp:709
+#: viewer/viewer_p.cpp:692
 #, kde-format
 msgid "KMail"
 msgstr "KMail"
 
-#: viewer/viewer_p.cpp:709
+#: viewer/viewer_p.cpp:692
 #, kde-format
 msgid "The KDE Mail Client"
 msgstr "KDE 信件用戶端"
 
-#: viewer/viewer_p.cpp:1260
+#: viewer/viewer_p.cpp:1243
 #, kde-format
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "檢視附件：%1"
 
-#: viewer/viewer_p.cpp:1462
+#: viewer/viewer_p.cpp:1445
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "檢視附件(&A)"
 
-#: viewer/viewer_p.cpp:1464
+#: viewer/viewer_p.cpp:1447
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "選擇附件的顯示方式"
 
-#: viewer/viewer_p.cpp:1467
+#: viewer/viewer_p.cpp:1450
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "圖示型附件(&A)"
 
-#: viewer/viewer_p.cpp:1470
+#: viewer/viewer_p.cpp:1453
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr "附件以小圖示表示，點擊開啟。"
 
-#: viewer/viewer_p.cpp:1474
+#: viewer/viewer_p.cpp:1457
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "智慧型附件(&S)"
 
-#: viewer/viewer_p.cpp:1477
+#: viewer/viewer_p.cpp:1460
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "附件以寄件者建議的方式表示"
 
-#: viewer/viewer_p.cpp:1481
+#: viewer/viewer_p.cpp:1464
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "內含式附件(&I)"
 
-#: viewer/viewer_p.cpp:1484
+#: viewer/viewer_p.cpp:1467
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "附件直接顯示在信件裡(如果可以的話)"
 
-#: viewer/viewer_p.cpp:1488
+#: viewer/viewer_p.cpp:1471
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "隱藏附件(&H)"
 
-#: viewer/viewer_p.cpp:1491
+#: viewer/viewer_p.cpp:1474
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "不在預覽信件時顯示附件"
 
-#: viewer/viewer_p.cpp:1495
+#: viewer/viewer_p.cpp:1478
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr "只在標頭顯示"
 
-#: viewer/viewer_p.cpp:1498
+#: viewer/viewer_p.cpp:1481
 #, kde-format
 msgid "Show Attachments only in the header of the mail"
 msgstr "只在信件的標頭顯示附件"
 
-#: viewer/viewer_p.cpp:1503
+#: viewer/viewer_p.cpp:1486
 #, kde-format
 msgid "&Set Encoding"
 msgstr "設定編碼(&S)"
 
-#: viewer/viewer_p.cpp:1508 widgets/configurewidget.cpp:45
+#: viewer/viewer_p.cpp:1491 widgets/configurewidget.cpp:45
 #: widgets/configurewidget.cpp:79
 #, kde-format
 msgid "Auto"
 msgstr "自動"
 
-#: viewer/viewer_p.cpp:1518
+#: viewer/viewer_p.cpp:1501
 #, kde-format
 msgid "Copy Text"
 msgstr "複製文字"
 
-#: viewer/viewer_p.cpp:1524
+#: viewer/viewer_p.cpp:1507
 #, kde-format
 msgctxt "@action"
 msgid "Select All Text"
 msgstr "選取所有文字"
 
-#: viewer/viewer_p.cpp:1530 viewer/viewer_p.cpp:2047
+#: viewer/viewer_p.cpp:1513 viewer/viewer_p.cpp:2030
 #, kde-format
 msgid "Copy Link Address"
 msgstr "複製連結位址"
 
-#: viewer/viewer_p.cpp:1535
+#: viewer/viewer_p.cpp:1518
 #, kde-format
 msgid "Open URL"
 msgstr "開啟 URL"
 
-#: viewer/viewer_p.cpp:1546
+#: viewer/viewer_p.cpp:1529
 #, kde-format
 msgid "Show Message Structure"
 msgstr "信件結構列表"
 
-#: viewer/viewer_p.cpp:1551
+#: viewer/viewer_p.cpp:1534
 #, kde-format
 msgctxt "@action"
 msgid "&View Source"
 msgstr "檢視原始碼(&V)"
 
-#: viewer/viewer_p.cpp:1556
+#: viewer/viewer_p.cpp:1539
 #, kde-format
 msgid "&Save Message..."
 msgstr "儲存信件(&S)..."
 
-#: viewer/viewer_p.cpp:1562
+#: viewer/viewer_p.cpp:1545
 #, kde-format
 msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "儲存顯示格式(&S)"
 
-#: viewer/viewer_p.cpp:1566
+#: viewer/viewer_p.cpp:1549
 #, kde-format
 msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "重設顯示格式(&R)"
 
-#: viewer/viewer_p.cpp:1573
+#: viewer/viewer_p.cpp:1556
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "將信件上捲"
 
-#: viewer/viewer_p.cpp:1578
+#: viewer/viewer_p.cpp:1561
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "將信件下捲"
 
-#: viewer/viewer_p.cpp:1583
+#: viewer/viewer_p.cpp:1566
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "將信件上捲更多"
 
-#: viewer/viewer_p.cpp:1588
+#: viewer/viewer_p.cpp:1571
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "將信件下捲更多"
 
-#: viewer/viewer_p.cpp:1598
+#: viewer/viewer_p.cpp:1581
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr "切換 HTML 顯示模式"
 
-#: viewer/viewer_p.cpp:1602
+#: viewer/viewer_p.cpp:1585
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr "在 HTML 與純文字顯示模式間切換"
 
-#: viewer/viewer_p.cpp:1605
+#: viewer/viewer_p.cpp:1588
 #, kde-format
 msgctxt "@action"
 msgid "Load external references"
 msgstr "載入遠端參考"
 
-#: viewer/viewer_p.cpp:1611
+#: viewer/viewer_p.cpp:1594
 #, kde-format
 msgctxt "@action"
 msgid "Speak Text"
 msgstr "唸出文字"
 
-#: viewer/viewer_p.cpp:1617
+#: viewer/viewer_p.cpp:1600
 #, kde-format
 msgctxt "@action"
 msgid "Share Text..."
 msgstr "分享文字..."
 
-#: viewer/viewer_p.cpp:1635
+#: viewer/viewer_p.cpp:1618
 #, kde-format
 msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "複製影像位置"
 
-#: viewer/viewer_p.cpp:1641
+#: viewer/viewer_p.cpp:1624
 #, kde-format
 msgid "&Find in Message..."
 msgstr "在信件中尋找(&F)..."
 
-#: viewer/viewer_p.cpp:1650
+#: viewer/viewer_p.cpp:1633
 #, kde-format
 msgid "Disable Emoticon"
 msgstr "停用表情符號"
 
-#: viewer/viewer_p.cpp:1716
+#: viewer/viewer_p.cpp:1699
 #, kde-format
 msgid "Save &As..."
 msgstr "另存新檔(&A)..."
 
-#: viewer/viewer_p.cpp:1727
+#: viewer/viewer_p.cpp:1710
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "儲存所有附件..."
 
-#: viewer/viewer_p.cpp:1968
+#: viewer/viewer_p.cpp:1951
 #, kde-format
 msgid "The network is broken."
 msgstr "網路損壞。"
 
-#: viewer/viewer_p.cpp:1968 viewer/viewer_p.cpp:1971
+#: viewer/viewer_p.cpp:1951 viewer/viewer_p.cpp:1954
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr "檢查釣魚網址"
 
-#: viewer/viewer_p.cpp:1971
+#: viewer/viewer_p.cpp:1954
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr "網址 %1 無效。"
 
-#: viewer/viewer_p.cpp:1991
+#: viewer/viewer_p.cpp:1974
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr "這網站為惡意網站，你仍然要繼續顯示它嗎？"
 
-#: viewer/viewer_p.cpp:1992
+#: viewer/viewer_p.cpp:1975
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr "惡意網站"
 
-#: viewer/viewer_p.cpp:2045
+#: viewer/viewer_p.cpp:2028
 #, kde-format
 msgid "Copy Email Address"
 msgstr "複製電子郵件地址"
 
-#: viewer/viewer_p.cpp:2128
+#: viewer/viewer_p.cpp:2111
 #, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "作為純文字送出信件"
 
-#: viewer/viewer_p.cpp:2710
+#: viewer/viewer_p.cpp:2693
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "URL 已複製到剪貼簿。"
 
-#: viewer/viewer_p.cpp:2872
+#: viewer/viewer_p.cpp:2855
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "信件載入失敗：%1。"
 
-#: viewer/viewer_p.cpp:2877
+#: viewer/viewer_p.cpp:2860
 #, kde-format
 msgid "Message not found."
 msgstr "找不到信件。"
 
-#: widgets/attachmentdialog.cpp:28
+#: widgets/attachmentdialog.cpp:29
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2203,28 +2192,28 @@ msgstr ""
 "要開啟附件 <filename>%1</filename> 嗎？<nl/>請注意，開啟附件可能會危害您系統"
 "的安全。"
 
-#: widgets/attachmentdialog.cpp:33
+#: widgets/attachmentdialog.cpp:34
 #, kde-format
 msgctxt "@title:window"
 msgid "Open Attachment?"
 msgstr "開啟附件？"
 
-#: widgets/attachmentdialog.cpp:40
+#: widgets/attachmentdialog.cpp:41
 #, kde-format
 msgid "&Open With '%1'"
 msgstr "用 '%1' 開啟附件(&O)"
 
-#: widgets/attachmentdialog.cpp:47
+#: widgets/attachmentdialog.cpp:48
 #, kde-format
 msgid "Open &With..."
 msgstr "開啟方式(&W)..."
 
-#: widgets/attachmentdialog.cpp:69
+#: widgets/attachmentdialog.cpp:70
 #, kde-format
 msgid "Do not ask again"
 msgstr "不要再詢問"
 
-#: widgets/htmlstatusbar.cpp:110
+#: widgets/htmlstatusbar.cpp:111
 #, kde-format
 msgctxt ""
 "'HTML Message' with html linebreaks between each letter and in bold text."
@@ -2233,7 +2222,7 @@ msgid ""
 ">a<br />g<br />e</b></qt>"
 msgstr "<qt><b><br />H<br />T<br />M<br />L<br />信<br />件</b></qt>"
 
-#: widgets/htmlstatusbar.cpp:114
+#: widgets/htmlstatusbar.cpp:115
 #, kde-format
 msgctxt "'No HTML Message' with html linebreaks between each letter."
 msgid ""
@@ -2242,7 +2231,7 @@ msgid ""
 msgstr ""
 "<qt><br />非<br /> <br />H<br />T<br />M<br />L<br /> <br />信<br />件</qt>"
 
-#: widgets/htmlstatusbar.cpp:119
+#: widgets/htmlstatusbar.cpp:120
 #, kde-format
 msgctxt "'Plain Message' with html linebreaks between each letter."
 msgid ""
@@ -2250,7 +2239,7 @@ msgid ""
 ">s<br />a<br />g<br />e<br /></qt>"
 msgstr "<qt><b><br />純<br />文<br />字<br />信<br />件</b></qt>"
 
-#: widgets/htmlstatusbar.cpp:123
+#: widgets/htmlstatusbar.cpp:124
 #, kde-format
 msgctxt "'Calendar Message' with html linebreaks between each letter."
 msgid ""
@@ -2258,7 +2247,7 @@ msgid ""
 ">M<br />e<br />s<br />s<br />a<br />g<br />e<br /></qt>"
 msgstr "<qt>行<br />事<br />曆<br />訊<br />息<br /></qt>"
 
-#: widgets/htmlstatusbar.cpp:137
+#: widgets/htmlstatusbar.cpp:138
 #, kde-format
 msgid "Click to toggle between HTML, plain text and calendar."
 msgstr "點擊以在 HTML、純文字與行事曆間切換。"
@@ -2280,29 +2269,29 @@ msgstr ""
 "就必需用這種方式。<br /> 不過，使用這種方式，其他軟體收信的人就有可能看到一團"
 "糟的東西。</qt>"
 
-#: widgets/mailsourceviewtextbrowserwidget.cpp:134
+#: widgets/mailsourceviewtextbrowserwidget.cpp:132
 #, kde-format
 msgid "Speak Text"
 msgstr "唸出文字"
 
-#: widgets/mailsourcewebengineviewer.cpp:48
+#: widgets/mailsourcewebengineviewer.cpp:43
 #, kde-format
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
 msgstr "原始來源"
 
-#: widgets/mailsourcewebengineviewer.cpp:49
+#: widgets/mailsourcewebengineviewer.cpp:44
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr "原始的，儲存於檔案系統或伺服器上，未變更的信件"
 
-#: widgets/mailsourcewebengineviewer.cpp:52
+#: widgets/mailsourcewebengineviewer.cpp:47
 #, kde-format
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
 msgstr "HTML 來源"
 
-#: widgets/mailsourcewebengineviewer.cpp:53
+#: widgets/mailsourcewebengineviewer.cpp:48
 #, kde-format
 msgid "HTML code for displaying the message to the user"
 msgstr "顯示信件給使用者的 HTML 碼"
@@ -2318,6 +2307,13 @@ msgstr "下一封信件"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "上一封信件"
+
+#~ msgid "Open &with %1"
+#~ msgstr "用 %1 開啟附件(&W)"
+
+#~ msgctxt "@item:inmenu Open With, %1 is application name"
+#~ msgid "%1"
+#~ msgstr "%1"
 
 #~ msgctxt "@title:menu"
 #~ msgid "&Open With"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-06 00:48+0000\n"
+"POT-Creation-Date: 2026-10-16 00:49+0000\n"
 "PO-Revision-Date: 2024-09-08 12:46+0200\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -27,22 +27,22 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "Kde-l10n-ta@kde.org"
 
-#: attachment/attachmentcompressjob.cpp:52
+#: attachment/attachmentcompressjob.cpp:51
 #, kde-format
 msgid "Could not initiate attachment compression."
 msgstr "உடனிணைப்பை சுருக்கும் பணியை துவக்க முடியவில்லை."
 
-#: attachment/attachmentcompressjob.cpp:62
+#: attachment/attachmentcompressjob.cpp:61
 #, kde-format
 msgid "Could not compress the attachment."
 msgstr "உடனிணைப்பை சுருக்க முடியவில்லை."
 
-#: attachment/attachmentfromfolderjob.cpp:51
+#: attachment/attachmentfromfolderjob.cpp:52
 #, kde-format
 msgid "Could not create compressed file."
 msgstr "சுருக்கப்பட்ட கோப்பை உருவாக்க முடியவில்லை."
 
-#: attachment/attachmentfromfolderjob.cpp:89
+#: attachment/attachmentfromfolderjob.cpp:90
 #, kde-format
 msgid ""
 "The resulting attachment would be larger than the maximum allowed size, "
@@ -51,13 +51,13 @@ msgstr ""
 "முடிவாக கிடைக்கும் உடனிணைப்பு, அனுமதிக்கப்படும் அதிகபட்ச அளவைவிட பெரியதாக இருப்பதால் "
 "இச்செயல் கைவிடப்படுகிறது."
 
-#: attachment/attachmentfromfolderjob.cpp:99
-#: attachment/attachmentfromfolderjob.cpp:118
+#: attachment/attachmentfromfolderjob.cpp:100
+#: attachment/attachmentfromfolderjob.cpp:119
 #, kde-format
 msgid "Could not add %1 to the archive"
 msgstr "%1 என்பதை காப்பகத்தில் சேர்க்க முடியவில்லை"
 
-#: attachment/attachmentfromfolderjob.cpp:112
+#: attachment/attachmentfromfolderjob.cpp:113
 #, kde-format
 msgid "Could not open %1 for reading."
 msgstr "%1 என்பதை படிப்பதற்கு திறக்க முடியவில்லை."
@@ -86,7 +86,7 @@ msgstr ""
 "%1-ஐ விட பெரிய கோப்புகளை உடனிணைக்க முடியாது. ஏதாவதொரு சேமிப்பக சேவையின் மூலம் அதை "
 "பகிருங்கள்."
 
-#: attachment/attachmentpropertiesdialog.cpp:133
+#: attachment/attachmentpropertiesdialog.cpp:136
 #, kde-format
 msgid ""
 "<p>The <em>MIME type</em> of the file:</p><p>Normally, you do not need to "
@@ -98,7 +98,7 @@ msgstr ""
 "கண்டறியப்படுவதால் இத்தேர்வை நீங்கள் மாற்றும் தேவை இருக்காது. ஆனால் சிலசமயம், கோப்புவகையை "
 "%1 தவறாக கண்டறியலாம் — அவ்வாறு நடந்தால், இத்தேர்வை கொண்டு அதை சரி செய்யலாம்.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:141
+#: attachment/attachmentpropertiesdialog.cpp:144
 #, kde-format
 msgid ""
 "<p>The estimated size of the attachment:</p><p>Note that, in an email "
@@ -108,7 +108,7 @@ msgstr ""
 "<p>உடனிணைப்பின் உத்தேசமான அளவு:</p><p> அஞ்சலில் base64 முறையில் இணைக்கப்படும் கோப்பு, "
 "உண்மையான அளவைவிட 33% அதிகமான இடத்தை எடுக்கும் என்பதை நினைவில் கொள்ளுங்கள்.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:146
+#: attachment/attachmentpropertiesdialog.cpp:149
 #, kde-format
 msgid ""
 "<p>The file name of the part:</p><p>Although this defaults to the name of "
@@ -120,7 +120,7 @@ msgstr ""
 "இதை மாற்றுவதன் மூலம் இணைக்கப்படும் கோப்பை மாற்ற முடியாது. மாறாக, பெறுநர் இக்கோப்பை "
 "வட்டுக்கு சேமிக்கும்போது அவரது அஞ்சல் செயலி பரிந்துரைக்கும் பெயரையே இது குறிக்கும்.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:153
+#: attachment/attachmentpropertiesdialog.cpp:156
 #, kde-format
 msgid ""
 "<p>A description of the part:</p><p>This is just an informational "
@@ -132,7 +132,7 @@ msgstr ""
 "கோப்பின் உள்ளடக்கத்தை விவரிக்கும்; அஞ்சலின் உடனிணைப்புகளை பட்டியலிடும்போது, பெரும்பாலான "
 "அஞ்சல் செயலிகள் பக்கத்தில் இதை காட்டும்.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:160
+#: attachment/attachmentpropertiesdialog.cpp:163
 #, kde-format
 msgid ""
 "<p>The transport encoding of this part:</p><p>Normally, you do not need to "
@@ -144,7 +144,7 @@ msgid ""
 "p>"
 msgstr ""
 
-#: attachment/attachmentpropertiesdialog.cpp:171
+#: attachment/attachmentpropertiesdialog.cpp:174
 #, kde-format
 msgid ""
 "<p>Check this option if you want to suggest to the recipient the automatic "
@@ -154,7 +154,7 @@ msgid ""
 "default \"attachment\".</p>"
 msgstr ""
 
-#: attachment/attachmentpropertiesdialog.cpp:179
+#: attachment/attachmentpropertiesdialog.cpp:182
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be signed.</p><p>The "
@@ -162,15 +162,15 @@ msgid ""
 "selected identity.</p>"
 msgstr ""
 
-#: attachment/attachmentpropertiesdialog.cpp:185
+#: attachment/attachmentpropertiesdialog.cpp:188
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be encrypted.</"
 "p><p>The part will be encrypted for the recipients of this message.</p>"
 msgstr ""
 
-#: attachment/attachmentpropertiesdialog.cpp:305
-#: attachment/attachmentpropertiesdialog.cpp:320
+#: attachment/attachmentpropertiesdialog.cpp:308
+#: attachment/attachmentpropertiesdialog.cpp:323
 #, kde-format
 msgctxt "@title:window"
 msgid "Attachment Properties"
@@ -240,27 +240,27 @@ msgstr "இதை மறையாக்கம் செய்"
 msgid "Sign this attachment"
 msgstr "இதற்கு கையொப்பமிடு"
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:81
+#: dkim-verify/dkimmanagerkeymodel.cpp:82
 #, kde-format
 msgid "DKIM Key"
 msgstr ""
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:83
+#: dkim-verify/dkimmanagerkeymodel.cpp:84
 #, kde-format
 msgid "Selector"
 msgstr ""
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:85
+#: dkim-verify/dkimmanagerkeymodel.cpp:86
 #, kde-format
 msgid "SDID"
 msgstr ""
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:87
+#: dkim-verify/dkimmanagerkeymodel.cpp:88
 #, kde-format
 msgid "Inserted"
 msgstr ""
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:89
+#: dkim-verify/dkimmanagerkeymodel.cpp:90
 #, kde-format
 msgid "Last Used"
 msgstr ""
@@ -317,23 +317,23 @@ msgid ""
 "no limit)"
 msgstr "அஞ்சல் உடனிணைப்புகளின் அதிகபட்ச அளவு (பிட்டுகளில்; -1 என்றால் வரம்பில்லாமல்)"
 
-#: utils/dateformatter.cpp:163
+#: utils/dateformatter.cpp:167
 #, kde-format
 msgctxt "invalid time specified"
 msgid "unknown"
 msgstr "தெரியாதது"
 
-#: utils/dateformatter.cpp:175
+#: utils/dateformatter.cpp:179
 #, kde-format
 msgid "Today %1"
 msgstr "இன்று %1"
 
-#: utils/dateformatter.cpp:178
+#: utils/dateformatter.cpp:182
 #, kde-format
 msgid "Yesterday %1"
 msgstr "நேற்று %1"
 
-#: utils/dateformatter.cpp:183
+#: utils/dateformatter.cpp:187
 #, kde-format
 msgctxt "1. weekday, 2. time"
 msgid "%1 %2"

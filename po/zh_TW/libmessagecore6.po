@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-06 00:48+0000\n"
+"POT-Creation-Date: 2026-10-16 00:49+0000\n"
 "PO-Revision-Date: 2024-08-03 14:40+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -30,35 +30,35 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "franklin@goodhorse.idv.tw, mail@kisaragi-hiu.com"
 
-#: attachment/attachmentcompressjob.cpp:52
+#: attachment/attachmentcompressjob.cpp:51
 #, kde-format
 msgid "Could not initiate attachment compression."
 msgstr "無法初始化附件壓縮。"
 
-#: attachment/attachmentcompressjob.cpp:62
+#: attachment/attachmentcompressjob.cpp:61
 #, kde-format
 msgid "Could not compress the attachment."
 msgstr "無法壓縮附件。"
 
-#: attachment/attachmentfromfolderjob.cpp:51
+#: attachment/attachmentfromfolderjob.cpp:52
 #, kde-format
 msgid "Could not create compressed file."
 msgstr "無法建立壓縮檔。"
 
-#: attachment/attachmentfromfolderjob.cpp:89
+#: attachment/attachmentfromfolderjob.cpp:90
 #, kde-format
 msgid ""
 "The resulting attachment would be larger than the maximum allowed size, "
 "aborting."
 msgstr "結果的附件會超過允許的最大大小，因此將中止動作。"
 
-#: attachment/attachmentfromfolderjob.cpp:99
-#: attachment/attachmentfromfolderjob.cpp:118
+#: attachment/attachmentfromfolderjob.cpp:100
+#: attachment/attachmentfromfolderjob.cpp:119
 #, kde-format
 msgid "Could not add %1 to the archive"
 msgstr "無法將 %1 新增到歸檔。"
 
-#: attachment/attachmentfromfolderjob.cpp:112
+#: attachment/attachmentfromfolderjob.cpp:113
 #, kde-format
 msgid "Could not open %1 for reading."
 msgstr "無法開啟讀取 %1。"
@@ -85,7 +85,7 @@ msgstr "找不到 %1。請指定完整路徑。"
 msgid "You may not attach files bigger than %1. Share it with storage service."
 msgstr "您可能不能附加大於 %1 的檔案。請使用儲存服務分享。"
 
-#: attachment/attachmentpropertiesdialog.cpp:133
+#: attachment/attachmentpropertiesdialog.cpp:136
 #, kde-format
 msgid ""
 "<p>The <em>MIME type</em> of the file:</p><p>Normally, you do not need to "
@@ -96,7 +96,7 @@ msgstr ""
 "<p>檔案的 <em>MIME 型態</em>：</p> <p>通常您不需要去改變這個設定，系統會自動"
 "偵測檔案型態。但是有時候 %1 無法正確偵測，您可以在這裡修正。</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:141
+#: attachment/attachmentpropertiesdialog.cpp:144
 #, kde-format
 msgid ""
 "<p>The estimated size of the attachment:</p><p>Note that, in an email "
@@ -106,7 +106,7 @@ msgstr ""
 "<p>附件的估計大小：</p> <p>注意，在信件中，用 base64 編碼一個非文字檔時，產生"
 "的大小會比原來的大四分之三。</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:146
+#: attachment/attachmentpropertiesdialog.cpp:149
 #, kde-format
 msgid ""
 "<p>The file name of the part:</p><p>Although this defaults to the name of "
@@ -117,7 +117,7 @@ msgstr ""
 "<p>此部份的檔案名稱</p> <p>雖然通常是指附檔本身的檔名，但是並不盡然。更正確地"
 "說，它只是用於建議收件者在儲存的時候使用什麼名稱。</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:153
+#: attachment/attachmentpropertiesdialog.cpp:156
 #, kde-format
 msgid ""
 "<p>A description of the part:</p><p>This is just an informational "
@@ -128,7 +128,7 @@ msgstr ""
 "<p>此部份的說明：</p> <p>這是一些關於此部份的資訊，通常會顯示在附件圖示的說"
 "明。</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:160
+#: attachment/attachmentpropertiesdialog.cpp:163
 #, kde-format
 msgid ""
 "<p>The transport encoding of this part:</p><p>Normally, you do not need to "
@@ -144,7 +144,7 @@ msgstr ""
 "例如 PostScript 檔內以文字為主，使用 quoted-printable 而不是預設的 base64 可"
 "以省下約 25% 的大小。</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:171
+#: attachment/attachmentpropertiesdialog.cpp:174
 #, kde-format
 msgid ""
 "<p>Check this option if you want to suggest to the recipient the automatic "
@@ -157,7 +157,7 @@ msgstr ""
 "選項。</p> <p>技術上，這只消在 <em>Content-Disposition</em> 標頭上使用 "
 "inline 而不是用 attachment 即可。</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:179
+#: attachment/attachmentpropertiesdialog.cpp:182
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be signed.</p><p>The "
@@ -167,15 +167,15 @@ msgstr ""
 "<p>如果您要簽署這部份，就勾選這個選項。</p> <p>系統會使用您發信的身份指定的簽"
 "章來簽署。</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:185
+#: attachment/attachmentpropertiesdialog.cpp:188
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be encrypted.</"
 "p><p>The part will be encrypted for the recipients of this message.</p>"
 msgstr "<p>如果您要將這部份加密，就勾選此選項。</p> <p>這部份將會被加密。</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:305
-#: attachment/attachmentpropertiesdialog.cpp:320
+#: attachment/attachmentpropertiesdialog.cpp:308
+#: attachment/attachmentpropertiesdialog.cpp:323
 #, kde-format
 msgctxt "@title:window"
 msgid "Attachment Properties"
@@ -245,27 +245,27 @@ msgstr "加密此附件"
 msgid "Sign this attachment"
 msgstr "簽署此附件"
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:81
+#: dkim-verify/dkimmanagerkeymodel.cpp:82
 #, kde-format
 msgid "DKIM Key"
 msgstr ""
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:83
+#: dkim-verify/dkimmanagerkeymodel.cpp:84
 #, kde-format
 msgid "Selector"
 msgstr ""
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:85
+#: dkim-verify/dkimmanagerkeymodel.cpp:86
 #, kde-format
 msgid "SDID"
 msgstr ""
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:87
+#: dkim-verify/dkimmanagerkeymodel.cpp:88
 #, kde-format
 msgid "Inserted"
 msgstr ""
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:89
+#: dkim-verify/dkimmanagerkeymodel.cpp:90
 #, kde-format
 msgid "Last Used"
 msgstr ""
@@ -324,23 +324,23 @@ msgid ""
 "no limit)"
 msgstr "電子郵件允許附件大小（以位元為單位，-1 表示不限制）"
 
-#: utils/dateformatter.cpp:163
+#: utils/dateformatter.cpp:167
 #, kde-format
 msgctxt "invalid time specified"
 msgid "unknown"
 msgstr "未知"
 
-#: utils/dateformatter.cpp:175
+#: utils/dateformatter.cpp:179
 #, kde-format
 msgid "Today %1"
 msgstr "今天 %1"
 
-#: utils/dateformatter.cpp:178
+#: utils/dateformatter.cpp:182
 #, kde-format
 msgid "Yesterday %1"
 msgstr "昨天 %1"
 
-#: utils/dateformatter.cpp:183
+#: utils/dateformatter.cpp:187
 #, kde-format
 msgctxt "1. weekday, 2. time"
 msgid "%1 %2"

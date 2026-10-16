@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtemplateparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-03 00:46+0000\n"
+"POT-Creation-Date: 2026-10-16 00:49+0000\n"
 "PO-Revision-Date: 2010-09-24 16:29+0530\n"
 "Last-Translator: Rajesh Ranjan <rajesh672@gmail.com>\n"
 "Language-Team: Maithili <bhashaghar@googlegroups.com>\n"
@@ -19,36 +19,36 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "\n"
 
-#: customtemplates.cpp:74 customtemplates.cpp:125
+#: customtemplates.cpp:75 customtemplates.cpp:126
 #, kde-format
 msgctxt "Message->"
 msgid "Universal"
 msgstr "सार्वभौमिक"
 
-#: customtemplates.cpp:75 customtemplates.cpp:131
+#: customtemplates.cpp:76 customtemplates.cpp:132
 #, kde-format
 msgctxt "Message->"
 msgid "Reply"
 msgstr "जवाब"
 
-#: customtemplates.cpp:76 customtemplates.cpp:134
+#: customtemplates.cpp:77 customtemplates.cpp:135
 #, kde-format
 msgctxt "Message->"
 msgid "Reply to All"
 msgstr ""
 
-#: customtemplates.cpp:77 customtemplates.cpp:137
+#: customtemplates.cpp:78 customtemplates.cpp:138
 #, kde-format
 msgctxt "Message->"
 msgid "Forward"
 msgstr "आगाँक तरफ"
 
-#: customtemplates.cpp:79 templatesconfiguration.cpp:75
+#: customtemplates.cpp:80 templatesconfiguration.cpp:77
 #, kde-format
 msgid "<a href=\"whatsthis\">How does this work?</a>"
 msgstr ""
 
-#: customtemplates.cpp:89
+#: customtemplates.cpp:90
 #, kde-format
 msgid ""
 "<qt><p>Here you can add, edit, and delete custom message templates to use "
@@ -63,30 +63,30 @@ msgid ""
 "templates.</p></qt>"
 msgstr ""
 
-#: customtemplates.cpp:140
+#: customtemplates.cpp:141
 #, kde-format
 msgctxt "Message->"
 msgid "Unknown"
 msgstr "अज्ञात"
 
-#: customtemplates.cpp:254
+#: customtemplates.cpp:255
 #, kde-format
 msgid "A template with same name already exists."
 msgstr ""
 
-#: customtemplates.cpp:254
+#: customtemplates.cpp:255
 #, kde-format
 msgctxt "@title:window"
 msgid "Cannot create template"
 msgstr ""
 
-#: customtemplates.cpp:346
+#: customtemplates.cpp:347
 #, kde-format
 msgctxt "@info"
 msgid "Do you really want to remove template \"%1\"?"
 msgstr ""
 
-#: customtemplates.cpp:347
+#: customtemplates.cpp:348
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Template?"
@@ -471,39 +471,39 @@ msgstr ""
 msgid "Turn Debug Off"
 msgstr ""
 
-#: templatescommandmenu.cpp:202
+#: templatescommandmenu.cpp:203
 #, kde-format
 msgid "Insert Command"
 msgstr "कमांड भरू"
 
-#: templatescommandmenu.cpp:215
+#: templatescommandmenu.cpp:216
 #, kde-format
 msgid "Original Message"
 msgstr ""
 
-#: templatescommandmenu.cpp:229
+#: templatescommandmenu.cpp:230
 #, kde-format
 msgid "Current Message"
 msgstr ""
 
-#: templatescommandmenu.cpp:242
+#: templatescommandmenu.cpp:243
 #, kde-format
 msgid "Process with External Programs"
 msgstr ""
 
-#: templatescommandmenu.cpp:255
+#: templatescommandmenu.cpp:256
 #, kde-format
 msgctxt "Miscellaneous template commands menu"
 msgid "Miscellaneous"
 msgstr "विविध"
 
-#: templatescommandmenu.cpp:269
+#: templatescommandmenu.cpp:270
 #, kde-format
 msgctxt "Debug template commands menu"
 msgid "Debug"
 msgstr ""
 
-#: templatesconfiguration.cpp:52
+#: templatesconfiguration.cpp:54
 #, kde-format
 msgid ""
 "<p>Here you can create and manage templates to use when composing new "
@@ -512,14 +512,14 @@ msgid ""
 "<i>Insert command</i> menu.</p>"
 msgstr ""
 
-#: templatesconfiguration.cpp:60
+#: templatesconfiguration.cpp:62
 #, kde-format
 msgid ""
 "<p>Templates specified here are folder-specific. They override both global "
 "templates and per-identity templates.</p>"
 msgstr ""
 
-#: templatesconfiguration.cpp:65
+#: templatesconfiguration.cpp:67
 #, kde-format
 msgid ""
 "<p>Templates specified here are identity-specific. They override global "
@@ -527,37 +527,37 @@ msgid ""
 "specified.</p>"
 msgstr ""
 
-#: templatesconfiguration.cpp:70
+#: templatesconfiguration.cpp:72
 #, kde-format
 msgid ""
 "<p>These are global (default) templates. They can be overridden by per-"
 "identity templates or per-folder templates if they are specified.</p>"
 msgstr ""
 
-#: templatesconfiguration.cpp:102
+#: templatesconfiguration.cpp:104
 #, kde-format
 msgid "Do you want to reset current template or all templates to default?"
 msgstr ""
 
-#: templatesconfiguration.cpp:103
+#: templatesconfiguration.cpp:105
 #, kde-format
 msgctxt "@title:window"
 msgid "Reset to default"
 msgstr ""
 
-#: templatesconfiguration.cpp:104
+#: templatesconfiguration.cpp:106
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset Current Template"
 msgstr ""
 
-#: templatesconfiguration.cpp:105
+#: templatesconfiguration.cpp:107
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset All Templates"
 msgstr ""
 
-#: templatesconfiguration.cpp:362
+#: templatesconfiguration.cpp:364
 #, kde-format
 msgid ""
 "Use of \"Reply using plain text\" and \"Reply using HTML text\" in pairs is "
@@ -567,18 +567,18 @@ msgid ""
 "(b)Reply using HTML text for quotes being in HTML format if present"
 msgstr ""
 
-#: templatesinsertcommandpushbutton.cpp:22
+#: templatesinsertcommandpushbutton.cpp:21
 #, kde-format
 msgid "&Insert Command"
 msgstr ""
 
-#: templatesinsertcommandpushbutton.cpp:30
+#: templatesinsertcommandpushbutton.cpp:29
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select a command to insert into the template"
 msgstr ""
 
-#: templatesinsertcommandpushbutton.cpp:32
+#: templatesinsertcommandpushbutton.cpp:31
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""

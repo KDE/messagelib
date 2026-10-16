@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-11 00:52+0000\n"
+"POT-Creation-Date: 2026-10-16 00:49+0000\n"
 "PO-Revision-Date: 2010-09-24 16:29+0530\n"
 "Last-Translator: Rajesh Ranjan <rajesh672@gmail.com>\n"
 "Language-Team: Maithili <bhashaghar@googlegroups.com>\n"
@@ -198,45 +198,45 @@ msgstr ""
 msgid "End of signed message"
 msgstr "एहन सहेजू..."
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:73
+#: dkim-verify/dkimmanagerkeytreeview.cpp:75
 #, fuzzy, kde-format
 #| msgid "Copy"
 msgid "Copy Key"
 msgstr "कापी करू"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:79
+#: dkim-verify/dkimmanagerkeytreeview.cpp:81
 #, kde-format
 msgid "Remove Key"
 msgid_plural "Remove Keys"
 msgstr[0] ""
 msgstr[1] ""
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:81
+#: dkim-verify/dkimmanagerkeytreeview.cpp:83
 #, kde-format
 msgid "Do you want to delete this key?"
 msgid_plural "Do you want to delete these keys?"
 msgstr[0] ""
 msgstr[1] ""
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:82
+#: dkim-verify/dkimmanagerkeytreeview.cpp:84
 #, kde-format
 msgid "Delete Key"
 msgid_plural "Delete Keys"
 msgstr[0] ""
 msgstr[1] ""
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:92
+#: dkim-verify/dkimmanagerkeytreeview.cpp:94
 #: dkim-verify/dkimmanageruleswidget.cpp:225
 #, kde-format
 msgid "Delete All"
 msgstr ""
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:94
+#: dkim-verify/dkimmanagerkeytreeview.cpp:96
 #, kde-format
 msgid "Do you want to delete all keys?"
 msgstr ""
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:95
+#: dkim-verify/dkimmanagerkeytreeview.cpp:97
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Keys"
@@ -263,62 +263,62 @@ msgstr ""
 msgid "Ignore if not signed"
 msgstr ""
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:31
+#: dkim-verify/dkimmanagerulesdialog.cpp:33
 #, fuzzy, kde-format
 #| msgid "&Import"
 msgctxt "@action:button"
 msgid "Export..."
 msgstr "आयात करू (&I)"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:33
+#: dkim-verify/dkimmanagerulesdialog.cpp:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Rule"
 msgstr ""
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:44
+#: dkim-verify/dkimmanagerulesdialog.cpp:46
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Rule..."
 msgstr ""
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:49
+#: dkim-verify/dkimmanagerulesdialog.cpp:51
 #, fuzzy, kde-format
 #| msgid "&Import"
 msgctxt "@action:button"
 msgid "Import..."
 msgstr "आयात करू (&I)"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:81
+#: dkim-verify/dkimmanagerulesdialog.cpp:83
 #, fuzzy, kde-format
 #| msgid "Show Details"
 msgid "No rules found"
 msgstr "विवरण देखाबू"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:81
-#: dkim-verify/dkimmanagerulesdialog.cpp:84
+#: dkim-verify/dkimmanagerulesdialog.cpp:83
+#: dkim-verify/dkimmanagerulesdialog.cpp:86
 #, fuzzy, kde-format
 #| msgid "&Import"
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "आयात करू (&I)"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:92
-#: dkim-verify/dkimmanagerulesdialog.cpp:95
+#: dkim-verify/dkimmanagerulesdialog.cpp:94
+#: dkim-verify/dkimmanagerulesdialog.cpp:97
 #, fuzzy, kde-format
 #| msgid "&Import"
 msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "आयात करू (&I)"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:95
+#: dkim-verify/dkimmanagerulesdialog.cpp:97
 #, fuzzy, kde-format
 #| msgid "Show Details"
 msgid "No rules imported."
 msgstr "विवरण देखाबू"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:75
-#: remote-content/remotecontentconfigurewidget.cpp:54
+#: remote-content/remotecontentconfigurewidget.cpp:55
 #, kde-format
 msgid "Domain"
 msgstr ""
@@ -354,13 +354,13 @@ msgid "Priority"
 msgstr ""
 
 #: dkim-verify/dkimmanageruleswidget.cpp:198
-#: remote-content/remotecontentconfigurewidget.cpp:82
+#: remote-content/remotecontentconfigurewidget.cpp:83
 #, kde-format
 msgid "Add..."
 msgstr ""
 
 #: dkim-verify/dkimmanageruleswidget.cpp:203
-#: remote-content/remotecontentconfigurewidget.cpp:85
+#: remote-content/remotecontentconfigurewidget.cpp:86
 #, kde-format
 msgid "Modify..."
 msgstr ""
@@ -371,7 +371,7 @@ msgid "Duplicate Rule"
 msgstr ""
 
 #: dkim-verify/dkimmanageruleswidget.cpp:211
-#: remote-content/remotecontentconfigurewidget.cpp:89
+#: remote-content/remotecontentconfigurewidget.cpp:90
 #, kde-format
 msgid "Remove Rule"
 msgstr ""
@@ -382,7 +382,7 @@ msgid "Do you want to delete this rule?"
 msgstr ""
 
 #: dkim-verify/dkimmanageruleswidget.cpp:214
-#: remote-content/remotecontentconfigurewidget.cpp:92
+#: remote-content/remotecontentconfigurewidget.cpp:93
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Rule"
@@ -399,56 +399,56 @@ msgctxt "@title:window"
 msgid "Delete Rules"
 msgstr ""
 
-#: dkim-verify/dkimruledialog.cpp:28
+#: dkim-verify/dkimruledialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Rule"
 msgstr ""
 
-#: dkim-verify/dkimruledialog.cpp:75
+#: dkim-verify/dkimruledialog.cpp:62
 #, kde-format
 msgctxt "@title:window"
 msgid "Modify Rule"
 msgstr ""
 
-#: dkim-verify/dkimrulewidget.cpp:20
+#: dkim-verify/dkimrulewidget.cpp:21
 #, kde-format
 msgctxt "@option:check"
 msgid "Enabled"
 msgstr ""
 
-#: dkim-verify/dkimrulewidget.cpp:38
+#: dkim-verify/dkimrulewidget.cpp:39
 #, kde-format
 msgid "Domain:"
 msgstr ""
 
-#: dkim-verify/dkimrulewidget.cpp:43 header/grantleeheaderformatter.cpp:186
+#: dkim-verify/dkimrulewidget.cpp:44 header/grantleeheaderformatter.cpp:190
 #, kde-format
 msgid "List-Id:"
 msgstr ""
 
-#: dkim-verify/dkimrulewidget.cpp:47 header/grantleeheaderformatter.cpp:273
+#: dkim-verify/dkimrulewidget.cpp:48 header/grantleeheaderformatter.cpp:277
 #, kde-format
 msgid "From:"
 msgstr ""
 
-#: dkim-verify/dkimrulewidget.cpp:48
+#: dkim-verify/dkimrulewidget.cpp:49
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Use '*' to specify all emails from domain"
 msgstr ""
 
-#: dkim-verify/dkimrulewidget.cpp:53
+#: dkim-verify/dkimrulewidget.cpp:54
 #, kde-format
 msgid "SDID:"
 msgstr ""
 
-#: dkim-verify/dkimrulewidget.cpp:56
+#: dkim-verify/dkimrulewidget.cpp:57
 #, kde-format
 msgid "Rule:"
 msgstr ""
 
-#: dkim-verify/dkimrulewidget.cpp:62
+#: dkim-verify/dkimrulewidget.cpp:63
 #, kde-format
 msgid "Priority:"
 msgstr ""
@@ -655,95 +655,95 @@ msgstr ""
 msgid "Not Signed"
 msgstr ""
 
-#: header/grantleeheaderformatter.cpp:206
+#: header/grantleeheaderformatter.cpp:210
 #, kde-format
 msgid "Subject:"
 msgstr ""
 
-#: header/grantleeheaderformatter.cpp:226
+#: header/grantleeheaderformatter.cpp:230
 #, fuzzy, kde-format
 #| msgid "Date: "
 msgid "Date:"
 msgstr "दिनांक: "
 
-#: header/grantleeheaderformatter.cpp:241
+#: header/grantleeheaderformatter.cpp:245
 #, fuzzy, kde-format
 #| msgid "Save As..."
 msgid "Message-Id:"
 msgstr "एहन सहेजू..."
 
-#: header/grantleeheaderformatter.cpp:265
+#: header/grantleeheaderformatter.cpp:269
 #, kde-format
 msgid "To:"
 msgstr ""
 
-#: header/grantleeheaderformatter.cpp:267
+#: header/grantleeheaderformatter.cpp:271
 #, kde-format
 msgid "Reply To:"
 msgstr ""
 
-#: header/grantleeheaderformatter.cpp:269
+#: header/grantleeheaderformatter.cpp:273
 #, kde-format
 msgid "CC:"
 msgstr ""
 
-#: header/grantleeheaderformatter.cpp:271
+#: header/grantleeheaderformatter.cpp:275
 #, kde-format
 msgid "BCC:"
 msgstr ""
 
-#: header/grantleeheaderformatter.cpp:275
+#: header/grantleeheaderformatter.cpp:279
 #, kde-format
 msgid "Sender:"
 msgstr ""
 
-#: header/grantleeheaderformatter.cpp:277
+#: header/grantleeheaderformatter.cpp:281
 #, kde-format
 msgid "resent from:"
 msgstr ""
 
-#: header/grantleeheaderformatter.cpp:279
+#: header/grantleeheaderformatter.cpp:283
 #, kde-format
 msgid "resent to:"
 msgstr ""
 
-#: header/grantleeheaderformatter.cpp:395
+#: header/grantleeheaderformatter.cpp:399
 #, kde-format
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr ""
 
-#: header/grantleeheaderformatter.cpp:483 header/headerstyle_util.cpp:85
-#: header/headerstyle_util.cpp:90 header/headerstyle_util.cpp:101
+#: header/grantleeheaderformatter.cpp:487 header/headerstyle_util.cpp:86
+#: header/headerstyle_util.cpp:91 header/headerstyle_util.cpp:102
 #, kde-format
 msgid "No Subject"
 msgstr ""
 
-#: header/grantleeheaderformatter.cpp:488
+#: header/grantleeheaderformatter.cpp:492
 #, kde-format
 msgid "Spam Status:"
 msgstr ""
 
-#: header/grantleeheaderformatter.cpp:500
+#: header/grantleeheaderformatter.cpp:504
 #, kde-format
 msgid "Printing mode"
 msgstr ""
 
-#: header/grantleeheaderformatter.cpp:542
+#: header/grantleeheaderformatter.cpp:546
 #, kde-format
 msgid "[vcard]"
 msgstr ""
 
-#: header/grantleeheaderformatter.cpp:549
+#: header/grantleeheaderformatter.cpp:553
 #, kde-format
 msgid "Attachments:"
 msgstr "संलग्नकः"
 
-#: header/grantleeheaderformatter.cpp:575
+#: header/grantleeheaderformatter.cpp:579
 #, kde-format
 msgid "Security:"
 msgstr ""
 
-#: header/headerstyle_util.cpp:60
+#: header/headerstyle_util.cpp:61
 #, fuzzy, kde-format
 #| msgctxt "Status of message unknown."
 #| msgid "(unknown)"
@@ -751,7 +751,7 @@ msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "(अज्ञात)"
 
-#: header/headerstyle_util.cpp:149
+#: header/headerstyle_util.cpp:150
 #, kde-format
 msgid ""
 "%1% probability of being spam with confidence %3%.\n"
@@ -761,7 +761,7 @@ msgid ""
 "Confidence=%4"
 msgstr ""
 
-#: header/headerstyle_util.cpp:158
+#: header/headerstyle_util.cpp:159
 #, kde-format
 msgid ""
 "%1% probability of being spam.\n"
@@ -770,37 +770,37 @@ msgid ""
 "Probability=%2"
 msgstr ""
 
-#: header/headerstyle_util.cpp:167
+#: header/headerstyle_util.cpp:168
 #, kde-format
 msgid "No Spam agent"
 msgstr ""
 
-#: header/headerstyle_util.cpp:170
+#: header/headerstyle_util.cpp:171
 #, kde-format
 msgid "Spam filter score not a number"
 msgstr ""
 
-#: header/headerstyle_util.cpp:173
+#: header/headerstyle_util.cpp:174
 #, kde-format
 msgid "Threshold not a valid number"
 msgstr ""
 
-#: header/headerstyle_util.cpp:176
+#: header/headerstyle_util.cpp:177
 #, kde-format
 msgid "Spam filter score could not be extracted from header"
 msgstr ""
 
-#: header/headerstyle_util.cpp:179
+#: header/headerstyle_util.cpp:180
 #, kde-format
 msgid "Threshold could not be extracted from header"
 msgstr ""
 
-#: header/headerstyle_util.cpp:182
+#: header/headerstyle_util.cpp:183
 #, kde-format
 msgid "Error evaluating spam score"
 msgstr ""
 
-#: header/headerstyle_util.cpp:187
+#: header/headerstyle_util.cpp:188
 #, kde-format
 msgid ""
 "%1.\n"
@@ -880,34 +880,34 @@ msgctxt "@title:window"
 msgid "Configure Remote Content"
 msgstr ""
 
-#: remote-content/remotecontentconfigurewidget.cpp:54
+#: remote-content/remotecontentconfigurewidget.cpp:55
 #, kde-format
 msgid "Status"
 msgstr ""
 
-#: remote-content/remotecontentconfigurewidget.cpp:91
+#: remote-content/remotecontentconfigurewidget.cpp:92
 #, kde-format
 msgid "Do you want to delete this rule '%1'?"
 msgstr ""
 
-#: remote-content/remotecontentconfigurewidget.cpp:109
+#: remote-content/remotecontentconfigurewidget.cpp:110
 #, kde-format
 msgctxt "@title:window"
 msgid "Edit Remote Content"
 msgstr ""
 
-#: remote-content/remotecontentconfigurewidget.cpp:125
+#: remote-content/remotecontentconfigurewidget.cpp:126
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Remote Content"
 msgstr ""
 
-#: remote-content/remotecontentconfigurewidget.cpp:134
+#: remote-content/remotecontentconfigurewidget.cpp:135
 #, kde-format
 msgid "An entry already defines this url. Please modify it."
 msgstr ""
 
-#: remote-content/remotecontentconfigurewidget.cpp:134
+#: remote-content/remotecontentconfigurewidget.cpp:135
 #, kde-format
 msgctxt "@title:window"
 msgid "Add new Url"
@@ -923,12 +923,12 @@ msgstr ""
 msgid "Remote Content"
 msgstr ""
 
-#: remote-content/remotecontentmenu.cpp:52
+#: remote-content/remotecontentmenu.cpp:51
 #, kde-format
 msgid "Authorize %1"
 msgstr ""
 
-#: remote-content/remotecontentmenu.cpp:60
+#: remote-content/remotecontentmenu.cpp:59
 #, kde-format
 msgid "Authorize all Urls"
 msgstr ""
@@ -943,13 +943,13 @@ msgstr ""
 msgid "Blocked"
 msgstr ""
 
-#: remote-content/remotecontentwidget.cpp:30
+#: remote-content/remotecontentwidget.cpp:29
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Domain:"
 msgstr ""
 
-#: scamdetection/scamdetectiondetailsdialog.cpp:40
+#: scamdetection/scamdetectiondetailsdialog.cpp:41
 #, fuzzy, kde-format
 #| msgid "Show Details"
 msgctxt "@title:window"
@@ -985,8 +985,8 @@ msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:141
-#: scamdetection/scamdetectionwebengine.cpp:239
+#: scamdetection/scamdetectionwebengine.cpp:142
+#: scamdetection/scamdetectionwebengine.cpp:240
 #, kde-format
 msgid ""
 "This email contains a link which reads as '%1' in the text, but actually "
@@ -994,7 +994,7 @@ msgid ""
 "recipient"
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:155
+#: scamdetection/scamdetectionwebengine.cpp:156
 #, kde-format
 msgid ""
 "This email contains a link which points to a numerical IP address (%1) "
@@ -1002,7 +1002,7 @@ msgid ""
 "emails."
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:162
+#: scamdetection/scamdetectionwebengine.cpp:163
 #, kde-format
 msgid ""
 "This email contains a link which points to a hexadecimal IP address (%1) "
@@ -1010,24 +1010,24 @@ msgid ""
 "emails."
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:168
+#: scamdetection/scamdetectionwebengine.cpp:169
 #, kde-format
 msgid "This email contains a link (%1) which has a redirection"
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:173
+#: scamdetection/scamdetectionwebengine.cpp:174
 #, kde-format
 msgid ""
 "This email contains a link (%1) which contains multiple http://. This is "
 "often the case in scam emails."
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:184
+#: scamdetection/scamdetectionwebengine.cpp:185
 #, kde-format
 msgid "This email contains a shorturl (%1). It can redirect to another server."
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:257
+#: scamdetection/scamdetectionwebengine.cpp:258
 #, kde-format
 msgid ""
 "The text of this link contains invisible characters, which are not displayed "
@@ -1035,12 +1035,12 @@ msgid ""
 "often the case in scam emails."
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:263
+#: scamdetection/scamdetectionwebengine.cpp:264
 #, kde-format
 msgid "Message contains form element. This is often the case in scam emails."
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:267
+#: scamdetection/scamdetectionwebengine.cpp:268
 #, fuzzy, kde-format
 #| msgid "Show Details"
 msgid "Details:"
@@ -1328,7 +1328,7 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
-#: settings/messageviewer.kcfg:206 viewer/viewer_p.cpp:1540
+#: settings/messageviewer.kcfg:206 viewer/viewer_p.cpp:1523
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr ""
@@ -1676,18 +1676,6 @@ msgid ""
 "the attachment were:"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:635
-#, fuzzy, kde-format
-#| msgid "&Open with '%1'"
-msgid "Open &with %1"
-msgstr " '%1' केर सँग खोलू (&O)"
-
-#: utils/messageviewerutil.cpp:637
-#, kde-format
-msgctxt "@item:inmenu Open With, %1 is application name"
-msgid "%1"
-msgstr ""
-
 #: viewer/mimeparttree/mimetreemodel.cpp:62
 #, kde-format
 msgid "body part"
@@ -1719,370 +1707,370 @@ msgctxt "@title:window"
 msgid "Print Document"
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:410
+#: viewer/urlhandlermanager.cpp:409
 #, kde-format
 msgid "Turn on HTML rendering for this message."
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:412 viewer/viewer_p.cpp:1609
+#: viewer/urlhandlermanager.cpp:411 viewer/viewer_p.cpp:1592
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:414
+#: viewer/urlhandlermanager.cpp:413
 #, kde-format
 msgid "Work online."
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:416
+#: viewer/urlhandlermanager.cpp:415
 #, kde-format
 msgid "Make account online."
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:418
+#: viewer/urlhandlermanager.cpp:417
 #, fuzzy, kde-format
 #| msgid "Save As..."
 msgid "Decrypt message."
 msgstr "एहन सहेजू..."
 
-#: viewer/urlhandlermanager.cpp:420
+#: viewer/urlhandlermanager.cpp:419
 #, fuzzy, kde-format
 #| msgid "Show Details"
 msgid "Show signature details."
 msgstr "विवरण देखाबू"
 
-#: viewer/urlhandlermanager.cpp:422
+#: viewer/urlhandlermanager.cpp:421
 #, fuzzy, kde-format
 #| msgid "Hide Details"
 msgid "Hide signature details."
 msgstr "विवरणसभ नुकाबू"
 
-#: viewer/urlhandlermanager.cpp:424
+#: viewer/urlhandlermanager.cpp:423
 #, fuzzy, kde-format
 #| msgid "Show Details"
 msgid "Show encryption details."
 msgstr "विवरण देखाबू"
 
-#: viewer/urlhandlermanager.cpp:426
+#: viewer/urlhandlermanager.cpp:425
 #, fuzzy, kde-format
 #| msgid "Hide Details"
 msgid "Hide encryption details."
 msgstr "विवरणसभ नुकाबू"
 
-#: viewer/urlhandlermanager.cpp:431
+#: viewer/urlhandlermanager.cpp:430
 #, kde-format
 msgid "Open Documentation"
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:465
+#: viewer/urlhandlermanager.cpp:464
 #, kde-format
 msgid "Expand all quoted text."
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:467
+#: viewer/urlhandlermanager.cpp:466
 #, kde-format
 msgid "Collapse quoted text."
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:493
+#: viewer/urlhandlermanager.cpp:492
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:495
+#: viewer/urlhandlermanager.cpp:494
 #, kde-format
 msgid "KMail Error"
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:512
+#: viewer/urlhandlermanager.cpp:511
 #, kde-format
 msgid "Show certificate 0x%1"
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:571
+#: viewer/urlhandlermanager.cpp:570
 #, fuzzy, kde-format
 #| msgid "Copy Link Address"
 msgid "&Open in Address Book"
 msgstr "लिंक पता नकल करू"
 
-#: viewer/urlhandlermanager.cpp:573
+#: viewer/urlhandlermanager.cpp:572
 #, fuzzy, kde-format
 #| msgid "Copy Email Address"
 msgid "&Copy Email Address"
 msgstr "इ-मेल पता नकल करू"
 
-#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2704
+#: viewer/urlhandlermanager.cpp:585 viewer/viewer_p.cpp:2687
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:597
+#: viewer/urlhandlermanager.cpp:596
 #, fuzzy, kde-format
 #| msgid "Copy Link Address"
 msgid "Lookup the contact in KAddressbook"
 msgstr "लिंक पता नकल करू"
 
-#: viewer/urlhandlermanager.cpp:778
+#: viewer/urlhandlermanager.cpp:777
 #, fuzzy, kde-format
 #| msgid "Attachments:"
 msgid "Attachment: %1"
 msgstr "संलग्नकः"
 
-#: viewer/urlhandlermanager.cpp:781
+#: viewer/urlhandlermanager.cpp:780
 #, fuzzy, kde-format
 #| msgid "Save As..."
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "एहन सहेजू..."
 
-#: viewer/urlhandlermanager.cpp:783
+#: viewer/urlhandlermanager.cpp:782
 #, fuzzy, kde-format
 #| msgid "Save As..."
 msgid "Encapsulated Message"
 msgstr "एहन सहेजू..."
 
-#: viewer/urlhandlermanager.cpp:786
+#: viewer/urlhandlermanager.cpp:785
 #, fuzzy, kde-format
 #| msgid "Save Attachment"
 msgid "Unnamed attachment"
 msgstr "संलग्नक सहेजू"
 
-#: viewer/urlhandlermanager.cpp:822
+#: viewer/urlhandlermanager.cpp:821
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:860
+#: viewer/urlhandlermanager.cpp:859
 #, fuzzy, kde-format
 #| msgid "Open With..."
 msgid "Opening URL..."
 msgstr "एकरासँ खोलू…"
 
-#: viewer/urlhandlermanager.cpp:869
+#: viewer/urlhandlermanager.cpp:868
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:871
+#: viewer/urlhandlermanager.cpp:870
 #, fuzzy, kde-format
 #| msgid "Execute"
 msgctxt "@action:button"
 msgid "Execute"
 msgstr "चलाउ"
 
-#: viewer/viewer.cpp:152
+#: viewer/viewer.cpp:151
 #, fuzzy, kde-format
 #| msgid "Save As..."
 msgid "Loading message..."
 msgstr "एहन सहेजू..."
 
-#: viewer/viewer_p.cpp:203
+#: viewer/viewer_p.cpp:186
 #, kde-format
 msgid ""
 "Stored DKIM key is different from the current one. Do you want to store this "
 "one too?"
 msgstr ""
 
-#: viewer/viewer_p.cpp:204
+#: viewer/viewer_p.cpp:187
 #, kde-format
 msgctxt "@title:window"
 msgid "Key Changed"
 msgstr ""
 
-#: viewer/viewer_p.cpp:205
+#: viewer/viewer_p.cpp:188
 #, kde-format
 msgctxt "@action:button"
 msgid "Store"
 msgstr ""
 
-#: viewer/viewer_p.cpp:378
+#: viewer/viewer_p.cpp:361
 #, kde-format
 msgid ""
 "Deleting an attachment might invalidate any digital signature on this "
 "message."
 msgstr ""
 
-#: viewer/viewer_p.cpp:379 viewer/viewer_p.cpp:414
+#: viewer/viewer_p.cpp:362 viewer/viewer_p.cpp:397
 #, fuzzy, kde-format
 #| msgid "Save Attachment"
 msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "संलग्नक सहेजू"
 
-#: viewer/viewer_p.cpp:413
+#: viewer/viewer_p.cpp:396
 #, kde-format
 msgid ""
 "Deleting an attachment from an encrypted or old-style mailman message is not "
 "supported."
 msgstr ""
 
-#: viewer/viewer_p.cpp:511 viewer/viewer_p.cpp:1722
+#: viewer/viewer_p.cpp:494 viewer/viewer_p.cpp:1705
 #, kde-format
 msgctxt "to view something"
 msgid "View"
 msgstr "दृश्य"
 
-#: viewer/viewer_p.cpp:519
+#: viewer/viewer_p.cpp:502
 #, kde-format
 msgid "Scroll To"
 msgstr ""
 
-#: viewer/viewer_p.cpp:524
+#: viewer/viewer_p.cpp:507
 #, kde-format
 msgid "Save As..."
 msgstr "एहन सहेजू..."
 
-#: viewer/viewer_p.cpp:530 viewer/viewer_p.cpp:1732
+#: viewer/viewer_p.cpp:513 viewer/viewer_p.cpp:1715
 #, kde-format
 msgid "Copy"
 msgstr "कापी करू"
 
-#: viewer/viewer_p.cpp:541 viewer/viewer_p.cpp:1736
+#: viewer/viewer_p.cpp:524 viewer/viewer_p.cpp:1719
 #, fuzzy, kde-format
 #| msgid "Save Attachment"
 msgid "Delete Attachment"
 msgstr "संलग्नक सहेजू"
 
-#: viewer/viewer_p.cpp:552
+#: viewer/viewer_p.cpp:535
 #, kde-format
 msgid "Reply To Author"
 msgstr ""
 
-#: viewer/viewer_p.cpp:560
+#: viewer/viewer_p.cpp:543
 #, kde-format
 msgid "Reply To All"
 msgstr ""
 
-#: viewer/viewer_p.cpp:566 viewer/viewer_p.cpp:1741
+#: viewer/viewer_p.cpp:549 viewer/viewer_p.cpp:1724
 #, kde-format
 msgid "Properties"
 msgstr "गुण"
 
-#: viewer/viewer_p.cpp:709
+#: viewer/viewer_p.cpp:692
 #, kde-format
 msgid "KMail"
 msgstr ""
 
-#: viewer/viewer_p.cpp:709
+#: viewer/viewer_p.cpp:692
 #, kde-format
 msgid "The KDE Mail Client"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1260
+#: viewer/viewer_p.cpp:1243
 #, fuzzy, kde-format
 #| msgid "Attachments:"
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "संलग्नकः"
 
-#: viewer/viewer_p.cpp:1462
+#: viewer/viewer_p.cpp:1445
 #, fuzzy, kde-format
 #| msgid "Attachments:"
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "संलग्नकः"
 
-#: viewer/viewer_p.cpp:1464
+#: viewer/viewer_p.cpp:1447
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1467
+#: viewer/viewer_p.cpp:1450
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1470
+#: viewer/viewer_p.cpp:1453
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1474
+#: viewer/viewer_p.cpp:1457
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1477
+#: viewer/viewer_p.cpp:1460
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1481
+#: viewer/viewer_p.cpp:1464
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1484
+#: viewer/viewer_p.cpp:1467
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1488
+#: viewer/viewer_p.cpp:1471
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "नुकाबू (&H)"
 
-#: viewer/viewer_p.cpp:1491
+#: viewer/viewer_p.cpp:1474
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1495
+#: viewer/viewer_p.cpp:1478
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1498
+#: viewer/viewer_p.cpp:1481
 #, kde-format
 msgid "Show Attachments only in the header of the mail"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1503
+#: viewer/viewer_p.cpp:1486
 #, kde-format
 msgid "&Set Encoding"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1508 widgets/configurewidget.cpp:45
+#: viewer/viewer_p.cpp:1491 widgets/configurewidget.cpp:45
 #: widgets/configurewidget.cpp:79
 #, kde-format
 msgid "Auto"
 msgstr "स्वचालित"
 
-#: viewer/viewer_p.cpp:1518
+#: viewer/viewer_p.cpp:1501
 #, fuzzy, kde-format
 #| msgid "Copy"
 msgid "Copy Text"
 msgstr "कापी करू"
 
-#: viewer/viewer_p.cpp:1524
+#: viewer/viewer_p.cpp:1507
 #, kde-format
 msgctxt "@action"
 msgid "Select All Text"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1530 viewer/viewer_p.cpp:2047
+#: viewer/viewer_p.cpp:1513 viewer/viewer_p.cpp:2030
 #, kde-format
 msgid "Copy Link Address"
 msgstr "लिंक पता नकल करू"
 
-#: viewer/viewer_p.cpp:1535
+#: viewer/viewer_p.cpp:1518
 #, fuzzy, kde-format
 #| msgctxt "to open"
 #| msgid "Open"
 msgid "Open URL"
 msgstr "खोलू"
 
-#: viewer/viewer_p.cpp:1546
+#: viewer/viewer_p.cpp:1529
 #, kde-format
 msgid "Show Message Structure"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1551
+#: viewer/viewer_p.cpp:1534
 #, fuzzy, kde-format
 #| msgctxt "Mail message as shown, in HTML format"
 #| msgid "HTML Source"
@@ -2090,160 +2078,160 @@ msgctxt "@action"
 msgid "&View Source"
 msgstr "HTML मूल"
 
-#: viewer/viewer_p.cpp:1556
+#: viewer/viewer_p.cpp:1539
 #, fuzzy, kde-format
 #| msgid "Save As..."
 msgid "&Save Message..."
 msgstr "एहन सहेजू..."
 
-#: viewer/viewer_p.cpp:1562
+#: viewer/viewer_p.cpp:1545
 #, kde-format
 msgctxt "@action"
 msgid "&Save Display Format"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1566
+#: viewer/viewer_p.cpp:1549
 #, kde-format
 msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1573
+#: viewer/viewer_p.cpp:1556
 #, fuzzy, kde-format
 #| msgid "Save As..."
 msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "एहन सहेजू..."
 
-#: viewer/viewer_p.cpp:1578
+#: viewer/viewer_p.cpp:1561
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1583
+#: viewer/viewer_p.cpp:1566
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1588
+#: viewer/viewer_p.cpp:1571
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1598
+#: viewer/viewer_p.cpp:1581
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1602
+#: viewer/viewer_p.cpp:1585
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1605
+#: viewer/viewer_p.cpp:1588
 #, kde-format
 msgctxt "@action"
 msgid "Load external references"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1611
+#: viewer/viewer_p.cpp:1594
 #, fuzzy, kde-format
 #| msgid "Copy"
 msgctxt "@action"
 msgid "Speak Text"
 msgstr "कापी करू"
 
-#: viewer/viewer_p.cpp:1617
+#: viewer/viewer_p.cpp:1600
 #, kde-format
 msgctxt "@action"
 msgid "Share Text..."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1635
+#: viewer/viewer_p.cpp:1618
 #, kde-format
 msgctxt "@action"
 msgid "Copy Image Location"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1641
+#: viewer/viewer_p.cpp:1624
 #, fuzzy, kde-format
 #| msgid "Save As..."
 msgid "&Find in Message..."
 msgstr "एहन सहेजू..."
 
-#: viewer/viewer_p.cpp:1650
+#: viewer/viewer_p.cpp:1633
 #, kde-format
 msgid "Disable Emoticon"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1716
+#: viewer/viewer_p.cpp:1699
 #, kde-format
 msgid "Save &As..."
 msgstr "एहिना सहेजू... (&A)..."
 
-#: viewer/viewer_p.cpp:1727
+#: viewer/viewer_p.cpp:1710
 #, fuzzy, kde-format
 #| msgid "Save Attachment"
 msgid "Save All Attachments..."
 msgstr "संलग्नक सहेजू"
 
-#: viewer/viewer_p.cpp:1968
+#: viewer/viewer_p.cpp:1951
 #, kde-format
 msgid "The network is broken."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1968 viewer/viewer_p.cpp:1971
+#: viewer/viewer_p.cpp:1951 viewer/viewer_p.cpp:1954
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1971
+#: viewer/viewer_p.cpp:1954
 #, kde-format
 msgid "The URL %1 is not valid."
 msgstr ""
 
-#: viewer/viewer_p.cpp:1991
+#: viewer/viewer_p.cpp:1974
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1992
+#: viewer/viewer_p.cpp:1975
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2045
+#: viewer/viewer_p.cpp:2028
 #, kde-format
 msgid "Copy Email Address"
 msgstr "इ-मेल पता नकल करू"
 
-#: viewer/viewer_p.cpp:2128
+#: viewer/viewer_p.cpp:2111
 #, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr ""
 
-#: viewer/viewer_p.cpp:2710
+#: viewer/viewer_p.cpp:2693
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr ""
 
-#: viewer/viewer_p.cpp:2872
+#: viewer/viewer_p.cpp:2855
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr ""
 
-#: viewer/viewer_p.cpp:2877
+#: viewer/viewer_p.cpp:2860
 #, kde-format
 msgid "Message not found."
 msgstr ""
 
-#: widgets/attachmentdialog.cpp:28
+#: widgets/attachmentdialog.cpp:29
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2251,31 +2239,31 @@ msgid ""
 "may compromise your system's security."
 msgstr ""
 
-#: widgets/attachmentdialog.cpp:33
+#: widgets/attachmentdialog.cpp:34
 #, fuzzy, kde-format
 #| msgid "Save Attachment"
 msgctxt "@title:window"
 msgid "Open Attachment?"
 msgstr "संलग्नक सहेजू"
 
-#: widgets/attachmentdialog.cpp:40
+#: widgets/attachmentdialog.cpp:41
 #, fuzzy, kde-format
 #| msgid "&Open with '%1'"
 msgid "&Open With '%1'"
 msgstr " '%1' केर सँग खोलू (&O)"
 
-#: widgets/attachmentdialog.cpp:47
+#: widgets/attachmentdialog.cpp:48
 #, fuzzy, kde-format
 #| msgid "Open With..."
 msgid "Open &With..."
 msgstr "एकरासँ खोलू…"
 
-#: widgets/attachmentdialog.cpp:69
+#: widgets/attachmentdialog.cpp:70
 #, kde-format
 msgid "Do not ask again"
 msgstr "फिनु नहि पूछू"
 
-#: widgets/htmlstatusbar.cpp:110
+#: widgets/htmlstatusbar.cpp:111
 #, kde-format
 msgctxt ""
 "'HTML Message' with html linebreaks between each letter and in bold text."
@@ -2284,7 +2272,7 @@ msgid ""
 ">a<br />g<br />e</b></qt>"
 msgstr ""
 
-#: widgets/htmlstatusbar.cpp:114
+#: widgets/htmlstatusbar.cpp:115
 #, kde-format
 msgctxt "'No HTML Message' with html linebreaks between each letter."
 msgid ""
@@ -2292,7 +2280,7 @@ msgid ""
 ">e<br />s<br />s<br />a<br />g<br />e</qt>"
 msgstr ""
 
-#: widgets/htmlstatusbar.cpp:119
+#: widgets/htmlstatusbar.cpp:120
 #, kde-format
 msgctxt "'Plain Message' with html linebreaks between each letter."
 msgid ""
@@ -2300,7 +2288,7 @@ msgid ""
 ">s<br />a<br />g<br />e<br /></qt>"
 msgstr ""
 
-#: widgets/htmlstatusbar.cpp:123
+#: widgets/htmlstatusbar.cpp:124
 #, kde-format
 msgctxt "'Calendar Message' with html linebreaks between each letter."
 msgid ""
@@ -2308,7 +2296,7 @@ msgid ""
 ">M<br />e<br />s<br />s<br />a<br />g<br />e<br /></qt>"
 msgstr ""
 
-#: widgets/htmlstatusbar.cpp:137
+#: widgets/htmlstatusbar.cpp:138
 #, kde-format
 msgid "Click to toggle between HTML, plain text and calendar."
 msgstr ""
@@ -2326,12 +2314,12 @@ msgid ""
 "be able to work with this.</qt>"
 msgstr ""
 
-#: widgets/mailsourceviewtextbrowserwidget.cpp:134
+#: widgets/mailsourceviewtextbrowserwidget.cpp:132
 #, kde-format
 msgid "Speak Text"
 msgstr ""
 
-#: widgets/mailsourcewebengineviewer.cpp:48
+#: widgets/mailsourcewebengineviewer.cpp:43
 #, fuzzy, kde-format
 #| msgctxt "Mail message as shown, in HTML format"
 #| msgid "HTML Source"
@@ -2339,18 +2327,18 @@ msgctxt "Unchanged mail message"
 msgid "Raw Source"
 msgstr "HTML मूल"
 
-#: widgets/mailsourcewebengineviewer.cpp:49
+#: widgets/mailsourcewebengineviewer.cpp:44
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr ""
 
-#: widgets/mailsourcewebengineviewer.cpp:52
+#: widgets/mailsourcewebengineviewer.cpp:47
 #, kde-format
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
 msgstr "HTML मूल"
 
-#: widgets/mailsourcewebengineviewer.cpp:53
+#: widgets/mailsourcewebengineviewer.cpp:48
 #, kde-format
 msgid "HTML code for displaying the message to the user"
 msgstr ""
@@ -2369,6 +2357,11 @@ msgstr "एहन सहेजू..."
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "पछिला"
+
+#, fuzzy
+#~| msgid "&Open with '%1'"
+#~ msgid "Open &with %1"
+#~ msgstr " '%1' केर सँग खोलू (&O)"
 
 #, fuzzy
 #~| msgid "&Open With..."

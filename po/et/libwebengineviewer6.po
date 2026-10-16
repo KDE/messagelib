@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-29 00:46+0000\n"
+"POT-Creation-Date: 2026-10-16 00:49+0000\n"
 "PO-Revision-Date: 2016-08-18 01:09+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-i18n-doc@kde.org>\n"
@@ -23,80 +23,80 @@ msgctxt "@title:window"
 msgid "Developer Tool"
 msgstr ""
 
-#: findbar/findbarbase.cpp:41
+#: findbar/findbarbase.cpp:42
 #, fuzzy, kde-format
 #| msgid "Close"
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Sulge"
 
-#: findbar/findbarbase.cpp:44
+#: findbar/findbarbase.cpp:45
 #, kde-format
 msgid "Close"
 msgstr "Sulge"
 
-#: findbar/findbarbase.cpp:50
+#: findbar/findbarbase.cpp:51
 #, kde-format
 msgctxt "Find text"
 msgid "F&ind:"
 msgstr "Ots&ing:"
 
-#: findbar/findbarbase.cpp:55
+#: findbar/findbarbase.cpp:56
 #, fuzzy, kde-format
 #| msgid "Text to search for"
 msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "Otsitav tekst"
 
-#: findbar/findbarbase.cpp:60
+#: findbar/findbarbase.cpp:61
 #, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
 msgstr "Järgmine"
 
-#: findbar/findbarbase.cpp:61
+#: findbar/findbarbase.cpp:62
 #, fuzzy, kde-format
 #| msgid "Jump to next match"
 msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "Hüppamine järgmisele sobivusele"
 
-#: findbar/findbarbase.cpp:66
+#: findbar/findbarbase.cpp:67
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
 msgstr "Eelmine"
 
-#: findbar/findbarbase.cpp:67
+#: findbar/findbarbase.cpp:68
 #, fuzzy, kde-format
 #| msgid "Jump to previous match"
 msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "Hüppamine eelmisele sobivusele"
 
-#: findbar/findbarbase.cpp:73
+#: findbar/findbarbase.cpp:74
 #, kde-format
 msgid "Options"
 msgstr "Valikud"
 
-#: findbar/findbarbase.cpp:74
+#: findbar/findbarbase.cpp:75
 #, fuzzy, kde-format
 #| msgid "Modify search behavior"
 msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "Otsingu käitumise muutmine"
 
-#: findbar/findbarbase.cpp:76
+#: findbar/findbarbase.cpp:77
 #, kde-format
 msgid "Case sensitive"
 msgstr "Tõstutundlik"
 
-#: findbar/findbarbase.cpp:93
+#: findbar/findbarbase.cpp:94
 #, kde-format
 msgid "Phrase not found"
 msgstr "Fraasi ei leitud"
 
-#: webenginepage.cpp:154
+#: webenginepage.cpp:153
 #, fuzzy, kde-format
 #| msgid "Save HTML Page"
 msgctxt "@title:window"
@@ -118,7 +118,7 @@ msgstr ""
 #, kde-format
 msgid ""
 "Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
-"\">(Details...)"
+"\">(Details...)</a>"
 msgstr ""
 
 #: widgets/tracking/trackingwarningwidget.cpp:42

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-03 00:46+0000\n"
+"POT-Creation-Date: 2026-10-16 00:49+0000\n"
 "PO-Revision-Date: 2024-05-18 16:44+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -21,36 +21,36 @@ msgstr ""
 "X-Generator: Lokalize 24.04.70\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: customtemplates.cpp:74 customtemplates.cpp:125
+#: customtemplates.cpp:75 customtemplates.cpp:126
 #, kde-format
 msgctxt "Message->"
 msgid "Universal"
 msgstr "通用"
 
-#: customtemplates.cpp:75 customtemplates.cpp:131
+#: customtemplates.cpp:76 customtemplates.cpp:132
 #, kde-format
 msgctxt "Message->"
 msgid "Reply"
 msgstr "回覆"
 
-#: customtemplates.cpp:76 customtemplates.cpp:134
+#: customtemplates.cpp:77 customtemplates.cpp:135
 #, kde-format
 msgctxt "Message->"
 msgid "Reply to All"
 msgstr "全部回覆"
 
-#: customtemplates.cpp:77 customtemplates.cpp:137
+#: customtemplates.cpp:78 customtemplates.cpp:138
 #, kde-format
 msgctxt "Message->"
 msgid "Forward"
 msgstr "轉寄"
 
-#: customtemplates.cpp:79 templatesconfiguration.cpp:75
+#: customtemplates.cpp:80 templatesconfiguration.cpp:77
 #, kde-format
 msgid "<a href=\"whatsthis\">How does this work?</a>"
 msgstr "<a href=\"whatsthis\">這是怎麼運作的？</a>"
 
-#: customtemplates.cpp:89
+#: customtemplates.cpp:90
 #, kde-format
 msgid ""
 "<qt><p>Here you can add, edit, and delete custom message templates to use "
@@ -70,30 +70,30 @@ msgstr ""
 "可。</p> <p>有四種型態的自訂樣本：<i>回覆</i>、<i>全部回覆</i>、<i>轉寄</i>與"
 "<i>通用</i>。您無法指定<i>通用</i>的樣本。</p></qt>"
 
-#: customtemplates.cpp:140
+#: customtemplates.cpp:141
 #, kde-format
 msgctxt "Message->"
 msgid "Unknown"
 msgstr "未知"
 
-#: customtemplates.cpp:254
+#: customtemplates.cpp:255
 #, kde-format
 msgid "A template with same name already exists."
 msgstr "已經有同名的樣本存在。"
 
-#: customtemplates.cpp:254
+#: customtemplates.cpp:255
 #, kde-format
 msgctxt "@title:window"
 msgid "Cannot create template"
 msgstr "無法建立樣本"
 
-#: customtemplates.cpp:346
+#: customtemplates.cpp:347
 #, kde-format
 msgctxt "@info"
 msgid "Do you really want to remove template \"%1\"?"
 msgstr "您確定要移除樣本 %1 嗎？"
 
-#: customtemplates.cpp:347
+#: customtemplates.cpp:348
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Template?"
@@ -493,39 +493,39 @@ msgstr "開啟除錯"
 msgid "Turn Debug Off"
 msgstr "關閉除錯"
 
-#: templatescommandmenu.cpp:202
+#: templatescommandmenu.cpp:203
 #, kde-format
 msgid "Insert Command"
 msgstr "插入命令"
 
-#: templatescommandmenu.cpp:215
+#: templatescommandmenu.cpp:216
 #, kde-format
 msgid "Original Message"
 msgstr "原始信件"
 
-#: templatescommandmenu.cpp:229
+#: templatescommandmenu.cpp:230
 #, kde-format
 msgid "Current Message"
 msgstr "目前信件"
 
-#: templatescommandmenu.cpp:242
+#: templatescommandmenu.cpp:243
 #, kde-format
 msgid "Process with External Programs"
 msgstr "以外部程式處理"
 
-#: templatescommandmenu.cpp:255
+#: templatescommandmenu.cpp:256
 #, kde-format
 msgctxt "Miscellaneous template commands menu"
 msgid "Miscellaneous"
 msgstr "雜項"
 
-#: templatescommandmenu.cpp:269
+#: templatescommandmenu.cpp:270
 #, kde-format
 msgctxt "Debug template commands menu"
 msgid "Debug"
 msgstr "偵錯"
 
-#: templatesconfiguration.cpp:52
+#: templatesconfiguration.cpp:54
 #, kde-format
 msgid ""
 "<p>Here you can create and manage templates to use when composing new "
@@ -536,7 +536,7 @@ msgstr ""
 "<p>您可以在此建立與管理用於編寫、回覆與轉寄信件時的信件樣本。</p> <p>信件樣本"
 "支援替代指令，只要輸入或從選單中選取<i>插入指令</i>即可。</p>"
 
-#: templatesconfiguration.cpp:60
+#: templatesconfiguration.cpp:62
 #, kde-format
 msgid ""
 "<p>Templates specified here are folder-specific. They override both global "
@@ -545,7 +545,7 @@ msgstr ""
 "<p>在此指定的樣本為個別資料夾指定的樣本。它們會覆蓋全域樣本與每個身份的樣本的"
 "設定。</p>"
 
-#: templatesconfiguration.cpp:65
+#: templatesconfiguration.cpp:67
 #, kde-format
 msgid ""
 "<p>Templates specified here are identity-specific. They override global "
@@ -555,7 +555,7 @@ msgstr ""
 "<p>在此指定的樣本為個別身份指定的樣本。它們會覆蓋全域樣本與每個資料夾的樣本的"
 "設定。</p>"
 
-#: templatesconfiguration.cpp:70
+#: templatesconfiguration.cpp:72
 #, kde-format
 msgid ""
 "<p>These are global (default) templates. They can be overridden by per-"
@@ -564,30 +564,30 @@ msgstr ""
 "<p>在此指定的樣本為全域（預設）樣本。它們會被每個資料夾與每個身份的樣本的設定"
 "覆蓋掉。</p>"
 
-#: templatesconfiguration.cpp:102
+#: templatesconfiguration.cpp:104
 #, kde-format
 msgid "Do you want to reset current template or all templates to default?"
 msgstr "您確定要重置目前的樣本或所有的樣本回到預設值嗎？"
 
-#: templatesconfiguration.cpp:103
+#: templatesconfiguration.cpp:105
 #, kde-format
 msgctxt "@title:window"
 msgid "Reset to default"
 msgstr "重設為預設值"
 
-#: templatesconfiguration.cpp:104
+#: templatesconfiguration.cpp:106
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset Current Template"
 msgstr "重設目前的樣本"
 
-#: templatesconfiguration.cpp:105
+#: templatesconfiguration.cpp:107
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset All Templates"
 msgstr "重設所有的樣本"
 
-#: templatesconfiguration.cpp:362
+#: templatesconfiguration.cpp:364
 #, kde-format
 msgid ""
 "Use of \"Reply using plain text\" and \"Reply using HTML text\" in pairs is "
@@ -601,18 +601,18 @@ msgstr ""
 "(a) 選擇用純文字回覆時，引言會是純文字\n"
 "(b) 選擇用 HTML 回覆時，會看引言原本的格式，若為 HTML 則用 HTML 格式"
 
-#: templatesinsertcommandpushbutton.cpp:22
+#: templatesinsertcommandpushbutton.cpp:21
 #, kde-format
 msgid "&Insert Command"
 msgstr "插入命令(&I)"
 
-#: templatesinsertcommandpushbutton.cpp:30
+#: templatesinsertcommandpushbutton.cpp:29
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select a command to insert into the template"
 msgstr "選擇要插入此樣本的指令"
 
-#: templatesinsertcommandpushbutton.cpp:32
+#: templatesinsertcommandpushbutton.cpp:31
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""

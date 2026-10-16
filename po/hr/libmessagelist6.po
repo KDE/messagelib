@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-20 00:46+0000\n"
+"POT-Creation-Date: 2026-10-16 00:49+0000\n"
 "PO-Revision-Date: 2011-07-22 17:18+0200\n"
 "Last-Translator: Marko Dimjašević <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -38,17 +38,17 @@ msgstr "Po egzaktnom datumu (predvodnik niti)"
 msgid "By Smart Date Ranges (of Thread Leaders)"
 msgstr "Pametno po rasponima datuma (predvodnik niti)"
 
-#: core/aggregation.cpp:178 core/sortorder.cpp:71
+#: core/aggregation.cpp:178 core/sortorder.cpp:72
 #, kde-format
 msgid "By Smart Sender/Receiver"
 msgstr "Pametno po pošiljatelju/primatelju"
 
-#: core/aggregation.cpp:179 core/sortorder.cpp:69
+#: core/aggregation.cpp:179 core/sortorder.cpp:70
 #, kde-format
 msgid "By Sender"
 msgstr "Po pošiljatelju"
 
-#: core/aggregation.cpp:180 core/sortorder.cpp:70
+#: core/aggregation.cpp:180 core/sortorder.cpp:71
 #, kde-format
 msgid "By Receiver"
 msgstr "Po primatelju"
@@ -134,13 +134,13 @@ msgstr "Favoriziraj brzinu"
 msgid "Batch Job (No Interactivity)"
 msgstr "Naredbeni posao (nema interaktivnosti)"
 
-#: core/item.cpp:253 core/messageitem.cpp:491
+#: core/item.cpp:253 core/messageitem.cpp:490
 #, kde-format
 msgctxt "Status of an item"
 msgid "Read"
 msgstr "Pročitana"
 
-#: core/item.cpp:255 core/messageitem.cpp:491
+#: core/item.cpp:255 core/messageitem.cpp:490
 #, kde-format
 msgctxt "Status of an item"
 msgid "Unread"
@@ -158,7 +158,7 @@ msgctxt "Status of an item"
 msgid "Action Item"
 msgstr "Akcijska stavka"
 
-#: core/item.cpp:267 core/messageitem.cpp:489
+#: core/item.cpp:267 core/messageitem.cpp:488
 #, kde-format
 msgctxt "Status of an item"
 msgid "Replied"
@@ -212,7 +212,7 @@ msgctxt "Status of an item"
 msgid "Queued"
 msgstr "&Niz"
 
-#: core/manager.cpp:34 core/model.cpp:336
+#: core/manager.cpp:34 core/model.cpp:335
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
@@ -469,63 +469,63 @@ msgid "A smart multiline and multi item theme with a clickable status column"
 msgstr ""
 "Elegantna više retkovna i više stavačna tema s klikabilnim statusnim stupcem"
 
-#: core/manager.cpp:758 core/view.cpp:2399 core/view.cpp:2403
+#: core/manager.cpp:758 core/view.cpp:2396 core/view.cpp:2400
 #, kde-format
 msgid "Status"
 msgstr "Status"
 
-#: core/model.cpp:334
+#: core/model.cpp:333
 #, kde-format
 msgid "Today"
 msgstr "Danas"
 
-#: core/model.cpp:335
+#: core/model.cpp:334
 #, kde-format
 msgid "Yesterday"
 msgstr "Jučer"
 
-#: core/model.cpp:337
+#: core/model.cpp:336
 #, kde-format
 msgid "Last Week"
 msgstr "Protekli tjedan"
 
-#: core/model.cpp:338
+#: core/model.cpp:337
 #, kde-format
 msgid "Two Weeks Ago"
 msgstr "Prije dva tjedna"
 
-#: core/model.cpp:339
+#: core/model.cpp:338
 #, kde-format
 msgid "Three Weeks Ago"
 msgstr "Prije tri tjedna"
 
-#: core/model.cpp:340
+#: core/model.cpp:339
 #, kde-format
 msgid "Four Weeks Ago"
 msgstr "Prije četiri tjedna"
 
-#: core/model.cpp:341
+#: core/model.cpp:340
 #, kde-format
 msgid "Five Weeks Ago"
 msgstr "Prije pet tjedna"
 
-#: core/model.cpp:558 utils/themeeditor.cpp:189
+#: core/model.cpp:557 utils/themeeditor.cpp:188
 #, kde-format
 msgid "Receiver"
 msgstr "Primatelj"
 
-#: core/model.cpp:560 utils/themeeditor.cpp:188
+#: core/model.cpp:559 utils/themeeditor.cpp:187
 #, kde-format
 msgid "Sender"
 msgstr "Pošiljatelj"
 
-#: core/model.cpp:1381
+#: core/model.cpp:1380
 #, kde-format
 msgctxt "Message Aggregation Group Header: Month name and Year number"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: core/model.cpp:3799
+#: core/model.cpp:3798
 #, kde-format
 msgid "Processed 1 Message of %2"
 msgid_plural "Processed %1 Messages of %2"
@@ -533,7 +533,7 @@ msgstr[0] "Obrađena %1 poruka od %2"
 msgstr[1] "Obrađene %1 poruke od %2"
 msgstr[2] "Obrađeno %1 poruka od %2"
 
-#: core/model.cpp:3805 core/model.cpp:3811
+#: core/model.cpp:3804 core/model.cpp:3810
 #, kde-format
 msgid "Threaded 1 Message of %2"
 msgid_plural "Threaded %1 Messages of %2"
@@ -541,7 +541,7 @@ msgstr[0] "U niti je %1 poruka od %2"
 msgstr[1] "U niti su %1 poruke od %2"
 msgstr[2] "U niti je %1 poruka od %2"
 
-#: core/model.cpp:3817
+#: core/model.cpp:3816
 #, kde-format
 msgid "Grouped 1 Thread of %2"
 msgid_plural "Grouped %1 Threads of %2"
@@ -549,7 +549,7 @@ msgstr[0] "Grupirana je %1 nit od %2"
 msgstr[1] "Grupirane su %1 niti od %2"
 msgstr[2] "Grupirano je %1 niti od %2"
 
-#: core/model.cpp:3823
+#: core/model.cpp:3822
 #, kde-format
 msgid "Updated 1 Group of %2"
 msgid_plural "Updated %1 Groups of %2"
@@ -557,7 +557,7 @@ msgstr[0] "Ažurirana %1 grupa %2"
 msgstr[1] "Ažurirane %1 grupe %2"
 msgstr[2] "Ažurirano %1 grupa %2"
 
-#: core/model.cpp:3915
+#: core/model.cpp:3914
 #, kde-format
 msgctxt "@info:status Finished view fill"
 msgid "Ready"
@@ -579,107 +579,107 @@ msgstr ""
 "Omogućite ovu opciju kako biste prikazali info-oblačiće prilikom prelaska "
 "mišem iznad stavke u listi poruka."
 
-#: core/sortorder.cpp:64 core/sortorder.cpp:108
+#: core/sortorder.cpp:65 core/sortorder.cpp:109
 #, kde-format
 msgid "None (Storage Order)"
 msgstr "Ništa (redoslijed pohrane)"
 
-#: core/sortorder.cpp:65
+#: core/sortorder.cpp:66
 #, kde-format
 msgid "By Date/Time"
 msgstr "Po datumu/vremenu"
 
-#: core/sortorder.cpp:67
+#: core/sortorder.cpp:68
 #, kde-format
 msgid "By Date/Time of Most Recent in Subtree"
 msgstr "Po datumu/vremenu najnovije u podstablu"
 
-#: core/sortorder.cpp:72
+#: core/sortorder.cpp:73
 #, kde-format
 msgid "By Subject"
 msgstr "Po temi"
 
-#: core/sortorder.cpp:73
+#: core/sortorder.cpp:74
 #, kde-format
 msgid "By Size"
 msgstr "Po veličini"
 
-#: core/sortorder.cpp:74
+#: core/sortorder.cpp:75
 #, kde-format
 msgid "By Action Item Status"
 msgstr "Po akcijskoj stavci statusa"
 
-#: core/sortorder.cpp:75
+#: core/sortorder.cpp:76
 #, kde-format
 msgid "By Unread Status"
-msgstr "Po statusu nepročitanih"
-
-#: core/sortorder.cpp:76
-#, fuzzy, kde-format
-#| msgid "By Unread Status"
-msgid "By Important Status"
 msgstr "Po statusu nepročitanih"
 
 #: core/sortorder.cpp:77
 #, fuzzy, kde-format
 #| msgid "By Unread Status"
+msgid "By Important Status"
+msgstr "Po statusu nepročitanih"
+
+#: core/sortorder.cpp:78
+#, fuzzy, kde-format
+#| msgid "By Unread Status"
 msgid "By Attachment Status"
 msgstr "Po statusu nepročitanih"
 
-#: core/sortorder.cpp:89 core/sortorder.cpp:131
+#: core/sortorder.cpp:90 core/sortorder.cpp:132
 #, kde-format
 msgid "Least Recent on Top"
 msgstr "Najstarija na vrh"
 
-#: core/sortorder.cpp:90 core/sortorder.cpp:132
+#: core/sortorder.cpp:91 core/sortorder.cpp:133
 #, kde-format
 msgid "Most Recent on Top"
 msgstr "Najnovija na vrh"
 
-#: core/sortorder.cpp:94
+#: core/sortorder.cpp:95
 #, kde-format
 msgctxt "Sort order for messages"
 msgid "Ascending"
 msgstr "Uzlazno"
 
-#: core/sortorder.cpp:95
+#: core/sortorder.cpp:96
 #, kde-format
 msgctxt "Sort order for messages"
 msgid "Descending"
 msgstr "Silazno"
 
-#: core/sortorder.cpp:106
+#: core/sortorder.cpp:107
 #, kde-format
 msgid "by Date/Time"
 msgstr "po datumu/vremenu"
 
-#: core/sortorder.cpp:109
+#: core/sortorder.cpp:110
 #, kde-format
 msgid "by Date/Time of Most Recent Message in Group"
 msgstr "po datumu/vremenu najnovije poruke u grupi"
 
-#: core/sortorder.cpp:113
+#: core/sortorder.cpp:114
 #, kde-format
 msgid "by Sender/Receiver"
 msgstr "po pošiljatelju/primatelju"
 
-#: core/sortorder.cpp:115
+#: core/sortorder.cpp:116
 #, kde-format
 msgid "by Sender"
 msgstr "po pošiljatelju"
 
-#: core/sortorder.cpp:117
+#: core/sortorder.cpp:118
 #, kde-format
 msgid "by Receiver"
 msgstr "po primatelju"
 
-#: core/sortorder.cpp:135
+#: core/sortorder.cpp:136
 #, kde-format
 msgctxt "Sort order for mail groups"
 msgid "Ascending"
 msgstr "Uzlazno"
 
-#: core/sortorder.cpp:136
+#: core/sortorder.cpp:137
 #, kde-format
 msgctxt "Sort order for mail groups"
 msgid "Descending"
@@ -868,28 +868,28 @@ msgstr "Stilizirani pravokutnici"
 msgid "Styled Joined Rectangles"
 msgstr "Stilizirani spojeni pravokutnici"
 
-#: core/view.cpp:895
+#: core/view.cpp:892
 #, kde-format
 msgid "Adjust Column Sizes"
 msgstr "Uskladi veličine stupaca"
 
-#: core/view.cpp:899
+#: core/view.cpp:896
 #, kde-format
 msgid "Show Default Columns"
 msgstr "Prikaži zadane stupce"
 
-#: core/view.cpp:904
+#: core/view.cpp:901
 #, kde-format
 msgid "Display Tooltips"
 msgstr "Prikaži info-oblačiće"
 
-#: core/view.cpp:2380 core/view.cpp:2384
-#: core/widgets/searchmessagebybuttons.cpp:75
+#: core/view.cpp:2377 core/view.cpp:2381
+#: core/widgets/searchmessagebybuttons.cpp:74
 #, kde-format
 msgid "From"
 msgstr "Od"
 
-#: core/view.cpp:2381 core/view.cpp:2385
+#: core/view.cpp:2378 core/view.cpp:2382
 #, fuzzy, kde-format
 #| msgctxt "Receiver of the emial"
 #| msgid "To"
@@ -897,28 +897,28 @@ msgctxt "Receiver of the email"
 msgid "To"
 msgstr "Za"
 
-#: core/view.cpp:2382 core/view.cpp:2386
+#: core/view.cpp:2379 core/view.cpp:2383
 #, kde-format
 msgid "Date"
 msgstr "Datum"
 
-#: core/view.cpp:2400 core/view.cpp:2404
+#: core/view.cpp:2397 core/view.cpp:2401
 #, kde-format
 msgid "Size"
 msgstr "Veličina"
 
-#: core/view.cpp:2401 core/view.cpp:2405 utils/themeeditor.cpp:191
+#: core/view.cpp:2398 core/view.cpp:2402 utils/themeeditor.cpp:190
 #, fuzzy, kde-format
 #| msgid "Folder"
 msgid "Folder"
 msgstr "Mapa"
 
-#: core/view.cpp:2411 core/view.cpp:2413
+#: core/view.cpp:2408 core/view.cpp:2410
 #, kde-format
 msgid "Preview"
 msgstr "Pregled"
 
-#: core/view.cpp:2430
+#: core/view.cpp:2427
 #, kde-format
 msgid "<b>%1</b> reply"
 msgid_plural "<b>%1</b> replies"
@@ -926,7 +926,7 @@ msgstr[0] "<b>%1</b> odgovor"
 msgstr[1] "<b>%1</b> odgovora"
 msgstr[2] "<b>%1</b> odgovora"
 
-#: core/view.cpp:2433
+#: core/view.cpp:2430
 #, kde-format
 msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
@@ -934,110 +934,110 @@ msgstr[0] "<b>%1</b> poruka u podstablu (<b>%2</b> nepročitanih)"
 msgstr[1] "<b>%1</b> poruke u podstablu (<b>%2</b> nepročitanih)"
 msgstr[2] "<b>%1</b> poruka u podstablu (<b>%2</b> nepročitanih)"
 
-#: core/view.cpp:2468
+#: core/view.cpp:2465
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Threads started on 2008-12-21'"
 msgid "Threads started on %1"
 msgstr "Niti započete na %1"
 
-#: core/view.cpp:2470
+#: core/view.cpp:2467
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Threads started Yesterday'"
 msgid "Threads started %1"
 msgstr "Niti započete %1"
 
-#: core/view.cpp:2474
+#: core/view.cpp:2471
 #, kde-format
 msgid "Threads with messages dated %1"
 msgstr "Niti s porukama datuma %1"
 
-#: core/view.cpp:2484
+#: core/view.cpp:2480
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'"
 msgid "Messages sent on %1"
 msgstr "Poruke poslane %1"
 
-#: core/view.cpp:2487
+#: core/view.cpp:2483
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Messages received on 2008-12-21'"
 msgid "Messages received on %1"
 msgstr "Poruke primljene %1"
 
-#: core/view.cpp:2491
+#: core/view.cpp:2487
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent Yesterday'"
 msgid "Messages sent %1"
 msgstr "Poruke poslane %1"
 
-#: core/view.cpp:2493
+#: core/view.cpp:2489
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages received Yesterday'"
 msgid "Messages received %1"
 msgstr "Poruke primljene %1"
 
-#: core/view.cpp:2502
+#: core/view.cpp:2498
 #, kde-format
 msgid "Threads started within %1"
 msgstr "Niti započete unutar %1"
 
-#: core/view.cpp:2505
+#: core/view.cpp:2501
 #, kde-format
 msgid "Threads containing messages with dates within %1"
 msgstr "Niti koje sadrže poruke s datumima unutar %1"
 
-#: core/view.cpp:2513
+#: core/view.cpp:2509
 #, kde-format
 msgid "Messages sent within %1"
 msgstr "Poruke poslane unutar %1"
 
-#: core/view.cpp:2515
+#: core/view.cpp:2511
 #, kde-format
 msgid "Messages received within %1"
 msgstr "Poruke primljene unutar %1"
 
-#: core/view.cpp:2524
+#: core/view.cpp:2520
 #, kde-format
 msgid "Threads started by %1"
 msgstr "Niti započete od %1"
 
-#: core/view.cpp:2527
+#: core/view.cpp:2523
 #, kde-format
 msgid "Threads with most recent message by %1"
 msgstr "Niti s najnovijom porukom od %1"
 
-#: core/view.cpp:2536 core/view.cpp:2560
+#: core/view.cpp:2532 core/view.cpp:2556
 #, kde-format
 msgid "Messages sent to %1"
 msgstr "Poruke poslane %1"
 
-#: core/view.cpp:2538
+#: core/view.cpp:2534
 #, kde-format
 msgid "Messages sent by %1"
 msgstr "Poruke koje je poslao %1"
 
-#: core/view.cpp:2541
+#: core/view.cpp:2537
 #, kde-format
 msgid "Messages received from %1"
 msgstr "Poruke primljene od %1"
 
-#: core/view.cpp:2549
+#: core/view.cpp:2545
 #, kde-format
 msgid "Threads directed to %1"
 msgstr "Niti usmjerene za %1"
 
-#: core/view.cpp:2552
+#: core/view.cpp:2548
 #, kde-format
 msgid "Threads with most recent message directed to %1"
 msgstr "Niti s najnovijom porukom usmjerene za %1"
 
-#: core/view.cpp:2562
+#: core/view.cpp:2558
 #, kde-format
 msgid "Messages received by %1"
 msgstr "Poruke primljene od %1"
 
-#: core/view.cpp:2587
+#: core/view.cpp:2583
 #, kde-format
 msgid "<b>%1</b> thread"
 msgid_plural "<b>%1</b> threads"
@@ -1045,7 +1045,7 @@ msgstr[0] "<b>%1</b> nit"
 msgstr[1] "<b>%1</b> niti"
 msgstr[2] "<b>%1</b> nit"
 
-#: core/view.cpp:2592
+#: core/view.cpp:2588
 #, kde-format
 msgid "<b>%1</b> message (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
@@ -1053,55 +1053,55 @@ msgstr[0] "<b>%1</b> poruka (<b>%2</b> nepročitanih)"
 msgstr[1] "<b>%1</b> poruke (<b>%2</b> nepročitanih)"
 msgstr[2] "<b>%1</b> poruka (<b>%2</b> nepročitanih)"
 
-#: core/widgetbase.cpp:200
+#: core/widgetbase.cpp:199
 #, kde-format
 msgid "No filter defined."
 msgstr ""
 
-#: core/widgetbase.cpp:200
+#: core/widgetbase.cpp:199
 #, fuzzy, kde-format
 #| msgid "&Create Filter"
 msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "&Napravi filtar"
 
-#: core/widgetbase.cpp:425 messagelistutil.cpp:115
+#: core/widgetbase.cpp:424 messagelistutil.cpp:115
 #, kde-format
 msgid "Theme"
 msgstr "Tema"
 
-#: core/widgetbase.cpp:446 core/widgetbase.cpp:536
-#: core/widgets/configurefilterswidget.cpp:76
+#: core/widgetbase.cpp:445 core/widgetbase.cpp:535
+#: core/widgets/configurefilterswidget.cpp:77
 #, kde-format
 msgid "Configure..."
 msgstr "Podesi…"
 
-#: core/widgetbase.cpp:515 messagelistutil.cpp:110
+#: core/widgetbase.cpp:514 messagelistutil.cpp:110
 #, kde-format
 msgid "Aggregation"
 msgstr "Agregacija"
 
-#: core/widgetbase.cpp:598
+#: core/widgetbase.cpp:597
 #, kde-format
 msgid "Message Sort Order"
 msgstr "Ključ sortiranja poruka"
 
-#: core/widgetbase.cpp:620
+#: core/widgetbase.cpp:619
 #, kde-format
 msgid "Message Sort Direction"
 msgstr "Smjer sortiranja poruka"
 
-#: core/widgetbase.cpp:637
+#: core/widgetbase.cpp:636
 #, kde-format
 msgid "Group Sort Order"
 msgstr "Ključ sortiranja grupa"
 
-#: core/widgetbase.cpp:654
+#: core/widgetbase.cpp:653
 #, kde-format
 msgid "Group Sort Direction"
 msgstr "Smjer sortiranja grupa"
 
-#: core/widgetbase.cpp:669
+#: core/widgetbase.cpp:668
 #, kde-format
 msgid "Folder Always Uses This Sort Order"
 msgstr "Mapa uvijek koristi ovaj ključ sortiranja"
@@ -1113,25 +1113,25 @@ msgctxt "@title:window"
 msgid "Configure Filter"
 msgstr "Namjesti &filtere …"
 
-#: core/widgets/configurefilterswidget.cpp:80
+#: core/widgets/configurefilterswidget.cpp:81
 #, fuzzy, kde-format
 msgid "Remove"
 msgstr "U&Kloni"
 
-#: core/widgets/configurefilterswidget.cpp:83
+#: core/widgets/configurefilterswidget.cpp:84
 #, fuzzy, kde-format
 #| msgid "Are you sure you want to empty the trash folder?"
 msgid "Do you want to delete this filter?"
 msgstr "Jeste li sigurni da želite ispraznitimapu za smeće?"
 
-#: core/widgets/configurefilterswidget.cpp:84
+#: core/widgets/configurefilterswidget.cpp:85
 #, fuzzy, kde-format
 #| msgid "Rename Filter"
 msgctxt "@title:window"
 msgid "Remove Filter"
 msgstr "Promijeni ime filtera"
 
-#: core/widgets/configurefilterswidget.cpp:153
+#: core/widgets/configurefilterswidget.cpp:154
 #, fuzzy, kde-format
 #| msgid "No signature found"
 msgid "No result found"
@@ -1165,7 +1165,7 @@ msgctxt "@action"
 msgid "Configure..."
 msgstr "Podesi…"
 
-#: core/widgets/quicksearchline.cpp:61
+#: core/widgets/quicksearchline.cpp:59
 #, kde-format
 msgctxt "Search for messages."
 msgid "Search"
@@ -1349,7 +1349,7 @@ msgstr "Ima pozivnicu"
 msgid "AND"
 msgstr ""
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:53
+#: core/widgets/searchlinecommandbuttonswidget.cpp:51
 #, fuzzy, kde-format
 #| msgctxt "@title:column Subject of messages"
 #| msgid "Subject"
@@ -1357,20 +1357,20 @@ msgctxt "@action:button"
 msgid "Subject"
 msgstr "Tema"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:54
+#: core/widgets/searchlinecommandbuttonswidget.cpp:52
 #, kde-format
 msgctxt "@action:button"
 msgid "Body"
 msgstr ""
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:55
+#: core/widgets/searchlinecommandbuttonswidget.cpp:53
 #, fuzzy, kde-format
 #| msgid "From"
 msgctxt "@action:button"
 msgid "From"
 msgstr "Od"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:56
+#: core/widgets/searchlinecommandbuttonswidget.cpp:54
 #, fuzzy, kde-format
 #| msgctxt "Receiver of the emial"
 #| msgid "To"
@@ -1378,19 +1378,19 @@ msgctxt "@action:button"
 msgid "To"
 msgstr "Za"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:57
+#: core/widgets/searchlinecommandbuttonswidget.cpp:55
 #, kde-format
 msgctxt "@action:button"
 msgid "Cc"
 msgstr ""
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:58
+#: core/widgets/searchlinecommandbuttonswidget.cpp:56
 #, kde-format
 msgctxt "@action:button"
 msgid "Bcc"
 msgstr ""
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:59
+#: core/widgets/searchlinecommandbuttonswidget.cpp:57
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Has Attachment"
@@ -1398,7 +1398,7 @@ msgctxt "@action:button"
 msgid "Has Attachment"
 msgstr "Ima privitak"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:60
+#: core/widgets/searchlinecommandbuttonswidget.cpp:58
 #, fuzzy, kde-format
 #| msgctxt "@action:inmenu Status of a message"
 #| msgid "Has Invitation"
@@ -1406,7 +1406,7 @@ msgctxt "@action:button"
 msgid "Has Invitation"
 msgstr "Ima pozivnicu"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:61
+#: core/widgets/searchlinecommandbuttonswidget.cpp:59
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Read"
@@ -1414,14 +1414,14 @@ msgctxt "@action:button"
 msgid "Read"
 msgstr "Pročitana"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:62
+#: core/widgets/searchlinecommandbuttonswidget.cpp:60
 #, fuzzy, kde-format
 #| msgid "Unread"
 msgctxt "@action:button"
 msgid "Unread"
 msgstr "Nepročitana"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:63
+#: core/widgets/searchlinecommandbuttonswidget.cpp:61
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Important"
@@ -1429,7 +1429,7 @@ msgctxt "@action:button"
 msgid "Important"
 msgstr "Važna"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:64
+#: core/widgets/searchlinecommandbuttonswidget.cpp:62
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Ignored"
@@ -1437,7 +1437,7 @@ msgctxt "@action:button"
 msgid "Ignored"
 msgstr "Ignorirana"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:65
+#: core/widgets/searchlinecommandbuttonswidget.cpp:63
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Ham"
@@ -1445,7 +1445,7 @@ msgctxt "@action:button"
 msgid "Ham"
 msgstr "Ham"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:66
+#: core/widgets/searchlinecommandbuttonswidget.cpp:64
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Spam"
@@ -1453,7 +1453,7 @@ msgctxt "@action:button"
 msgid "Spam"
 msgstr "Neželjena poruka"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:67
+#: core/widgets/searchlinecommandbuttonswidget.cpp:65
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Watched"
@@ -1461,14 +1461,14 @@ msgctxt "@action:button"
 msgid "Watched"
 msgstr "Nadgledana"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:68
+#: core/widgets/searchlinecommandbuttonswidget.cpp:66
 #, fuzzy, kde-format
 #| msgid "Replied"
 msgctxt "@action:button"
 msgid "Replied"
 msgstr "Odgovorena"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:69
+#: core/widgets/searchlinecommandbuttonswidget.cpp:67
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Forwarded"
@@ -1476,20 +1476,20 @@ msgctxt "@action:button"
 msgid "Forwarded"
 msgstr "Proslijeđena"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:70
+#: core/widgets/searchlinecommandbuttonswidget.cpp:68
 #, fuzzy, kde-format
 #| msgid "Encrypt"
 msgctxt "@action:button"
 msgid "Encrypted"
 msgstr "Kriptiraj"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:71
+#: core/widgets/searchlinecommandbuttonswidget.cpp:69
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Queued"
 msgstr "&Niz"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:72
+#: core/widgets/searchlinecommandbuttonswidget.cpp:70
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Sent"
@@ -1497,7 +1497,7 @@ msgctxt "@action:button"
 msgid "Sent"
 msgstr "Poslana"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:73
+#: core/widgets/searchlinecommandbuttonswidget.cpp:71
 #, fuzzy, kde-format
 #| msgctxt "MDN type"
 #| msgid "Deleted"
@@ -1505,76 +1505,76 @@ msgctxt "@action:button"
 msgid "Deleted"
 msgstr "Obrisano"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:74
+#: core/widgets/searchlinecommandbuttonswidget.cpp:72
 #, fuzzy, kde-format
 #| msgid "Action Item"
 msgctxt "@action:button"
 msgid "Action"
 msgstr "Akcijska stavka"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:75
+#: core/widgets/searchlinecommandbuttonswidget.cpp:73
 #, kde-format
 msgctxt "@action:button"
 msgid "Category"
 msgstr ""
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:77
+#: core/widgets/searchlinecommandbuttonswidget.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Smaller"
 msgstr ""
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:78
+#: core/widgets/searchlinecommandbuttonswidget.cpp:76
 #, kde-format
 msgctxt "@action:button"
 msgid "Larger"
 msgstr ""
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:79
+#: core/widgets/searchlinecommandbuttonswidget.cpp:77
 #, fuzzy, kde-format
 #| msgid "Size"
 msgctxt "@action:button"
 msgid "Size"
 msgstr "Veličina"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:80
+#: core/widgets/searchlinecommandbuttonswidget.cpp:78
 #, fuzzy, kde-format
 #| msgid "Folder"
 msgctxt "@action:button"
 msgid "Older"
 msgstr "Mapa"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:81
+#: core/widgets/searchlinecommandbuttonswidget.cpp:79
 #, kde-format
 msgctxt "@action:button"
 msgid "Newer"
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:89
+#: core/widgets/searchlinestatus.cpp:86
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Prevent the quick search field from being cleared when changing folders"
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:92
+#: core/widgets/searchlinestatus.cpp:89
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear the quick search field when changing folders"
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:111
+#: core/widgets/searchlinestatus.cpp:108
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Show or Hide search command line"
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:112
+#: core/widgets/searchlinestatus.cpp:109
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:116
+#: core/widgets/searchlinestatus.cpp:113
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1582,32 +1582,32 @@ msgid ""
 "to other folders or when narrowing the search by message status."
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:124
+#: core/widgets/searchlinestatus.cpp:121
 #, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "&Napravi filtar"
 
-#: core/widgets/searchlinestatus.cpp:202
+#: core/widgets/searchlinestatus.cpp:199
 #, fuzzy, kde-format
 #| msgid "&Create Filter"
 msgid "Clear History"
 msgstr "&Napravi filtar"
 
-#: core/widgets/searchmessagebybuttons.cpp:36
+#: core/widgets/searchmessagebybuttons.cpp:35
 #, fuzzy, kde-format
 #| msgid "&Full message"
 msgctxt "@action"
 msgid "Full Message"
 msgstr "&Cijela poruka"
 
-#: core/widgets/searchmessagebybuttons.cpp:38
+#: core/widgets/searchmessagebybuttons.cpp:37
 #, kde-format
 msgctxt "@action"
 msgid "Body"
 msgstr ""
 
-#: core/widgets/searchmessagebybuttons.cpp:39
+#: core/widgets/searchmessagebybuttons.cpp:38
 #, fuzzy, kde-format
 #| msgctxt "Description of Type Subject"
 #| msgid "Subject"
@@ -1615,19 +1615,19 @@ msgctxt "@action"
 msgid "Subject"
 msgstr "Tema"
 
-#: core/widgets/searchmessagebybuttons.cpp:41
+#: core/widgets/searchmessagebybuttons.cpp:40
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "BCC"
 msgstr "&BCC"
 
-#: core/widgets/searchmessagebybuttons.cpp:42
+#: core/widgets/searchmessagebybuttons.cpp:41
 #, fuzzy, kde-format
 msgctxt "@action"
 msgid "CC"
 msgstr "&Kopija"
 
-#: core/widgets/searchmessagebybuttons.cpp:73
+#: core/widgets/searchmessagebybuttons.cpp:72
 #, fuzzy, kde-format
 #| msgctxt "Receiver of the emial"
 #| msgid "To"
@@ -1848,127 +1848,127 @@ msgctxt "@action:button"
 msgid "Configure..."
 msgstr "Podesi…"
 
-#: utils/aggregationeditor.cpp:31
+#: utils/aggregationeditor.cpp:29
 #, kde-format
 msgid "Groups && Threading"
 msgstr "Grupe && niti"
 
-#: utils/aggregationeditor.cpp:35
+#: utils/aggregationeditor.cpp:33
 #, fuzzy, kde-format
 #| msgid "Grouping:"
 msgctxt "@label:textbox"
 msgid "Grouping:"
 msgstr "Grupiranje:"
 
-#: utils/aggregationeditor.cpp:41
+#: utils/aggregationeditor.cpp:39
 #, fuzzy, kde-format
 #| msgid "Group expand policy:"
 msgctxt "@label:textbox"
 msgid "Group expand policy:"
 msgstr "Politika proširivanja grupa:"
 
-#: utils/aggregationeditor.cpp:45
+#: utils/aggregationeditor.cpp:43
 #, fuzzy, kde-format
 #| msgid "Threading:"
 msgctxt "@label:textbox"
 msgid "Threading:"
 msgstr "Niti:"
 
-#: utils/aggregationeditor.cpp:51
+#: utils/aggregationeditor.cpp:49
 #, fuzzy, kde-format
 #| msgid "Thread leader:"
 msgctxt "@label:textbox"
 msgid "Thread leader:"
 msgstr "Predvodnik niti:"
 
-#: utils/aggregationeditor.cpp:55
+#: utils/aggregationeditor.cpp:53
 #, fuzzy, kde-format
 #| msgid "Thread expand policy:"
 msgctxt "@label:textbox"
 msgid "Thread expand policy:"
 msgstr "Politika proširivanja niti:"
 
-#: utils/aggregationeditor.cpp:64
+#: utils/aggregationeditor.cpp:62
 #, kde-format
 msgctxt "@title:tab Advanced settings tab for aggregation mode"
 msgid "Advanced"
 msgstr "Napredno"
 
-#: utils/aggregationeditor.cpp:68
+#: utils/aggregationeditor.cpp:66
 #, fuzzy, kde-format
 #| msgid "Fill view strategy:"
 msgctxt "@label:textbox"
 msgid "Fill view strategy:"
 msgstr "Strategija punjenja prikaza:"
 
-#: utils/configureaggregationsdialog.cpp:102
+#: utils/configureaggregationsdialog.cpp:103
 #, fuzzy, kde-format
 #| msgid "Customize Message Aggregation Modes"
 msgctxt "@title:window"
 msgid "Customize Message Aggregation Modes"
 msgstr "Prilagodi načine agregacija poruka"
 
-#: utils/configureaggregationsdialog.cpp:123
+#: utils/configureaggregationsdialog.cpp:124
 #, fuzzy, kde-format
 #| msgid "New Aggregation"
 msgctxt "@action:button"
 msgid "New Aggregation"
 msgstr "Nova agregacija"
 
-#: utils/configureaggregationsdialog.cpp:131
+#: utils/configureaggregationsdialog.cpp:132
 #, fuzzy, kde-format
 #| msgid "Clone Aggregation"
 msgctxt "@action:button"
 msgid "Clone Aggregation"
 msgstr "Kopiraj agregaciju"
 
-#: utils/configureaggregationsdialog.cpp:144
+#: utils/configureaggregationsdialog.cpp:145
 #, fuzzy, kde-format
 #| msgid "Aggregation"
 msgctxt "@action:button"
 msgid "Export Aggregation..."
 msgstr "Agregacija"
 
-#: utils/configureaggregationsdialog.cpp:151
+#: utils/configureaggregationsdialog.cpp:152
 #, fuzzy, kde-format
 #| msgid "Aggregation"
 msgctxt "@action:button"
 msgid "Import Aggregation..."
 msgstr "Agregacija"
 
-#: utils/configureaggregationsdialog.cpp:162
+#: utils/configureaggregationsdialog.cpp:163
 #, fuzzy, kde-format
 #| msgid "Delete Aggregation"
 msgctxt "@action:button"
 msgid "Delete Aggregation"
 msgstr "Izbriši agregaciju"
 
-#: utils/configureaggregationsdialog.cpp:345
+#: utils/configureaggregationsdialog.cpp:346
 #, kde-format
 msgid "Unnamed Aggregation"
 msgstr "Neimenovana agregacija"
 
-#: utils/configureaggregationsdialog.cpp:362
+#: utils/configureaggregationsdialog.cpp:363
 #, kde-format
 msgid "New Aggregation"
 msgstr "Nova agregacija"
 
-#: utils/configureaggregationsdialog.cpp:415
+#: utils/configureaggregationsdialog.cpp:416
 #, fuzzy, kde-format
 #| msgid "Aggregation"
 msgctxt "@title:window"
 msgid "Import Aggregation"
 msgstr "Agregacija"
 
-#: utils/configureaggregationsdialog.cpp:448
+#: utils/configureaggregationsdialog.cpp:447
 #, fuzzy, kde-format
 #| msgid "Aggregation"
 msgctxt "@title:window"
 msgid "Export Aggregation"
 msgstr "Agregacija"
 
-#: utils/configureaggregationsdialog.cpp:448
-#: utils/configurethemesdialog.cpp:472
+#: utils/configureaggregationsdialog.cpp:447
+#: utils/configurethemesdialog.cpp:470
 #, fuzzy, kde-format
 #| msgid "&All Fields"
 msgid "All Files (*)"
@@ -2026,7 +2026,7 @@ msgstr "Neimenovana tema"
 msgid "New Theme"
 msgstr "Nova tema"
 
-#: utils/configurethemesdialog.cpp:357 utils/themeeditor.cpp:1219
+#: utils/configurethemesdialog.cpp:357 utils/themeeditor.cpp:1218
 #, kde-format
 msgid "New Column"
 msgstr "Novi stupac"
@@ -2055,52 +2055,52 @@ msgctxt "@title:window"
 msgid "Import Theme"
 msgstr "&Uvoz poruka..."
 
-#: utils/configurethemesdialog.cpp:472
+#: utils/configurethemesdialog.cpp:470
 #, fuzzy, kde-format
 #| msgid "Expire Folder"
 msgctxt "@title:window"
 msgid "Export Theme"
 msgstr "Izbaci stare poruke iz mape"
 
-#: utils/optionseteditor.cpp:27
+#: utils/optionseteditor.cpp:25
 #, kde-format
 msgctxt "@title:tab General options of a view mode"
 msgid "General"
 msgstr "Opće"
 
-#: utils/optionseteditor.cpp:31
+#: utils/optionseteditor.cpp:29
 #, kde-format
 msgctxt "@label:textbox Name of the option"
 msgid "Name:"
 msgstr "Naziv:"
 
-#: utils/optionseteditor.cpp:40
+#: utils/optionseteditor.cpp:38
 #, kde-format
 msgctxt "@label:textbox Description of the option"
 msgid "Description:"
 msgstr "Opis:"
 
-#: utils/themeeditor.cpp:72
+#: utils/themeeditor.cpp:71
 #, kde-format
 msgctxt "@label:textbox Property name"
 msgid "Name:"
 msgstr "Naziv:"
 
-#: utils/themeeditor.cpp:76
+#: utils/themeeditor.cpp:75
 #, fuzzy, kde-format
 #| msgid "The label that will be displayed in the column header."
 msgctxt "@info:tooltip"
 msgid "The label that will be displayed in the column header."
 msgstr "Natpis koji će biti prikazan u zaglavlju stupca."
 
-#: utils/themeeditor.cpp:79
+#: utils/themeeditor.cpp:78
 #, fuzzy, kde-format
 #| msgid "Header click sorts messages:"
 msgctxt "@label:textbox"
 msgid "Header click sorts messages:"
 msgstr "Klik na zaglavlje sortira poruke:"
 
-#: utils/themeeditor.cpp:83
+#: utils/themeeditor.cpp:82
 #, fuzzy, kde-format
 #| msgid ""
 #| "The sorting order that clicking on this column header will switch to."
@@ -2108,14 +2108,14 @@ msgctxt "@info:tooltip"
 msgid "The sorting order that clicking on this column header will switch to."
 msgstr "Ključ sortiranja koji će se postaviti klikom na zaglavlje ovog stupca."
 
-#: utils/themeeditor.cpp:86
+#: utils/themeeditor.cpp:85
 #, fuzzy, kde-format
 #| msgid "Visible by default"
 msgctxt "@option:check"
 msgid "Visible by default"
 msgstr "Vidljivo po zadanom"
 
-#: utils/themeeditor.cpp:87
+#: utils/themeeditor.cpp:86
 #, fuzzy, kde-format
 #| msgid ""
 #| "Check this if this column should be visible when the theme is selected."
@@ -2124,14 +2124,14 @@ msgid "Check this if this column should be visible when the theme is selected."
 msgstr ""
 "Ovo obilježite ako bi ovaj stupac trebao biti vidljiv kad je tema odabrana."
 
-#: utils/themeeditor.cpp:90
+#: utils/themeeditor.cpp:89
 #, fuzzy, kde-format
 #| msgid "Contains \"Sender or Receiver\" field"
 msgctxt "@option:check"
 msgid "Contains \"Sender or Receiver\" field"
 msgstr "Sadrži polje \"primatelj ili pošiljatelj\""
 
-#: utils/themeeditor.cpp:92
+#: utils/themeeditor.cpp:91
 #, fuzzy, kde-format
 #| msgid ""
 #| "Check this if this column label should be updated depending on the folder "
@@ -2144,17 +2144,17 @@ msgstr ""
 "Ovo obilježite ako bi se natpis ovog stupca trebao ažurirati ovisno o "
 "\"dolaznoj\"/\"odlaznoj\" vrsti mape."
 
-#: utils/themeeditor.cpp:112
+#: utils/themeeditor.cpp:111
 #, kde-format
 msgid "Unnamed Column"
 msgstr "Neimenovani stupac"
 
-#: utils/themeeditor.cpp:177
+#: utils/themeeditor.cpp:176
 #, kde-format
 msgid "Message Group"
 msgstr "Grupa poruka"
 
-#: utils/themeeditor.cpp:181 utils/themeeditor.cpp:190
+#: utils/themeeditor.cpp:180 utils/themeeditor.cpp:189
 #, kde-format
 msgid ""
 "Very long subject very long subject very long subject very long subject very "
@@ -2163,68 +2163,68 @@ msgstr ""
 "Vrlo duga tema vrlo duga tema vrlo duga tema vrlo duga tema vrlo duga tema "
 "vrlo duga tema"
 
-#: utils/themeeditor.cpp:196
+#: utils/themeeditor.cpp:195
 #, kde-format
 msgid "Sample Tag 1"
 msgstr "Primjerna oznaka 1"
 
-#: utils/themeeditor.cpp:197
+#: utils/themeeditor.cpp:196
 #, kde-format
 msgid "Sample Tag 2"
 msgstr "Primjerna oznaka 2"
 
-#: utils/themeeditor.cpp:198
+#: utils/themeeditor.cpp:197
 #, kde-format
 msgid "Sample Tag 3"
 msgstr "Primjerna oznaka 3"
 
-#: utils/themeeditor.cpp:413
+#: utils/themeeditor.cpp:412
 #, kde-format
 msgctxt "Indicates whether or not a header label is visible"
 msgid "Visible"
 msgstr "Vidljivo"
 
-#: utils/themeeditor.cpp:853
+#: utils/themeeditor.cpp:852
 #, kde-format
 msgctxt "@action:inmenu soften the text color"
 msgid "Soften"
 msgstr "Ublaži"
 
-#: utils/themeeditor.cpp:860
+#: utils/themeeditor.cpp:859
 #, kde-format
 msgctxt "@action:inmenu Font setting"
 msgid "Bold"
 msgstr ""
 
-#: utils/themeeditor.cpp:864
+#: utils/themeeditor.cpp:863
 #, kde-format
 msgctxt "@action:inmenu Font setting"
 msgid "Italic"
 msgstr ""
 
-#: utils/themeeditor.cpp:871
+#: utils/themeeditor.cpp:870
 #, kde-format
 msgid "Font"
 msgstr "Pismo"
 
-#: utils/themeeditor.cpp:879
+#: utils/themeeditor.cpp:878
 #, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Default"
 msgstr "Zadana"
 
-#: utils/themeeditor.cpp:884
+#: utils/themeeditor.cpp:883
 #, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Custom..."
 msgstr "Prilagođena…"
 
-#: utils/themeeditor.cpp:892
+#: utils/themeeditor.cpp:891
 #, kde-format
 msgid "Foreground Color"
 msgstr "Boja prednjeg plana"
 
-#: utils/themeeditor.cpp:901
+#: utils/themeeditor.cpp:900
 #, kde-format
 msgctxt ""
 "Hide a mark if the mail does not have the attribute, e.g. Important mark on "
@@ -2232,7 +2232,7 @@ msgctxt ""
 msgid "Hide"
 msgstr "Sakrij"
 
-#: utils/themeeditor.cpp:908
+#: utils/themeeditor.cpp:907
 #, kde-format
 msgctxt ""
 "Keep a empty space in the list if the mail does not have the attribute, e.g. "
@@ -2240,7 +2240,7 @@ msgctxt ""
 msgid "Keep Empty Space"
 msgstr "Sačuvaj prazan prostor"
 
-#: utils/themeeditor.cpp:915
+#: utils/themeeditor.cpp:914
 #, kde-format
 msgctxt ""
 "Show the icon softened in the list if the mail does not have the attribute, "
@@ -2248,91 +2248,91 @@ msgctxt ""
 msgid "Keep Softened Icon"
 msgstr "Sačuvaj ublaženu ikonu"
 
-#: utils/themeeditor.cpp:923
+#: utils/themeeditor.cpp:922
 #, kde-format
 msgid "When Disabled"
 msgstr "Kad je onemogućeno"
 
-#: utils/themeeditor.cpp:929
+#: utils/themeeditor.cpp:928
 #, kde-format
 msgid "Group Header"
 msgstr "Zaglavlje grupe"
 
-#: utils/themeeditor.cpp:936
+#: utils/themeeditor.cpp:935
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "None"
 msgstr "Nijedna"
 
-#: utils/themeeditor.cpp:941
+#: utils/themeeditor.cpp:940
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Automatic"
 msgstr "Automatska"
 
-#: utils/themeeditor.cpp:946
+#: utils/themeeditor.cpp:945
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Custom..."
 msgstr "Prilagođena…"
 
-#: utils/themeeditor.cpp:954
+#: utils/themeeditor.cpp:953
 #, kde-format
 msgid "Background Color"
 msgstr "Boja pozadine"
 
-#: utils/themeeditor.cpp:974
+#: utils/themeeditor.cpp:973
 #, kde-format
 msgid "Background Style"
 msgstr "Stil pozadine"
 
-#: utils/themeeditor.cpp:1160
+#: utils/themeeditor.cpp:1159
 #, fuzzy, kde-format
 #| msgid "Folder Properties"
 msgid "Column Properties..."
 msgstr "Svojstva mape"
 
-#: utils/themeeditor.cpp:1163
+#: utils/themeeditor.cpp:1162
 #, kde-format
 msgid "Add Column..."
 msgstr "Dodaj stupac…"
 
-#: utils/themeeditor.cpp:1166
+#: utils/themeeditor.cpp:1165
 #, kde-format
 msgid "Delete Column"
 msgstr "Izbriši stupac"
 
-#: utils/themeeditor.cpp:1172
+#: utils/themeeditor.cpp:1171
 #, kde-format
 msgid "Move Column to Left"
 msgstr ""
 
-#: utils/themeeditor.cpp:1176
+#: utils/themeeditor.cpp:1175
 #, kde-format
 msgid "Move Column to Right"
 msgstr ""
 
-#: utils/themeeditor.cpp:1225
+#: utils/themeeditor.cpp:1224
 #, kde-format
 msgid "Add New Column"
 msgstr "Dodaj novi stupac"
 
-#: utils/themeeditor.cpp:1249
+#: utils/themeeditor.cpp:1248
 #, kde-format
 msgid "Column Properties"
 msgstr "Svojstva stupca"
 
-#: utils/themeeditor.cpp:1291
+#: utils/themeeditor.cpp:1290
 #, kde-format
 msgid "Appearance"
 msgstr "Izgled"
 
-#: utils/themeeditor.cpp:1295
+#: utils/themeeditor.cpp:1294
 #, kde-format
 msgid "Content Items"
 msgstr "Stavke sadržaja"
 
-#: utils/themeeditor.cpp:1422
+#: utils/themeeditor.cpp:1421
 #, kde-format
 msgid ""
 "Right click on the header to add or modify columns. Drag the content items "
@@ -2343,27 +2343,27 @@ msgstr ""
 "Povucite sadržajne stavke i ispustite ih na stupce kako biste složili svoju "
 "temu. Napravite desni klik na stavke unutar prikaza za više opcija."
 
-#: utils/themeeditor.cpp:1432
+#: utils/themeeditor.cpp:1431
 #, kde-format
 msgctxt "@title:tab Advanced theme settings"
 msgid "Advanced"
 msgstr "Napredno"
 
-#: utils/themeeditor.cpp:1436
+#: utils/themeeditor.cpp:1435
 #, fuzzy, kde-format
 #| msgid "Header:"
 msgctxt "@label:textbox"
 msgid "Header:"
 msgstr "Zaglavlje:"
 
-#: utils/themeeditor.cpp:1442
+#: utils/themeeditor.cpp:1441
 #, fuzzy, kde-format
 #| msgid "Icon size:"
 msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "Veličina ikone:"
 
-#: utils/themeeditor.cpp:1448
+#: utils/themeeditor.cpp:1447
 #, fuzzy, kde-format
 #| msgctxt "suffix in a spinbox"
 #| msgid " pixel"
@@ -2375,53 +2375,53 @@ msgstr[0] " piksel"
 msgstr[1] " piksela"
 msgstr[2] " piksela"
 
-#: widget.cpp:211
+#: widget.cpp:210
 #, fuzzy, kde-format
 msgctxt "Item in list of Akonadi tags, to show all e-mails"
 msgid "All"
 msgstr "Dozvole"
 
-#: widget.cpp:348
+#: widget.cpp:347
 #, kde-format
 msgid "Collapse Group"
 msgstr "Sklopi grupu"
 
-#: widget.cpp:351
+#: widget.cpp:350
 #, kde-format
 msgid "Expand Group"
 msgstr "Proširi grupu"
 
-#: widget.cpp:357
+#: widget.cpp:356
 #, kde-format
 msgid "Expand All Groups"
 msgstr "Proširi sve grupe"
 
-#: widget.cpp:360
+#: widget.cpp:359
 #, kde-format
 msgid "Collapse All Groups"
 msgstr "Sklopi sve grupe"
 
-#: widget.cpp:364
+#: widget.cpp:363
 #, fuzzy, kde-format
 msgid "Expand All Threads"
 msgstr "R&aširi sve lance"
 
-#: widget.cpp:366
+#: widget.cpp:365
 #, fuzzy, kde-format
 msgid "Collapse All Threads"
 msgstr "S&ažmi sve lance"
 
-#: widget.cpp:425
+#: widget.cpp:424
 #, kde-format
 msgid "&Move Here"
 msgstr "&Premjesti ovdje"
 
-#: widget.cpp:426
+#: widget.cpp:425
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Kopiraj ovdje"
 
-#: widget.cpp:428
+#: widget.cpp:427
 #, kde-format
 msgid "C&ancel"
 msgstr "P&rekini"

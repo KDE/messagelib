@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-29 00:46+0000\n"
+"POT-Creation-Date: 2026-10-16 00:49+0000\n"
 "PO-Revision-Date: 2024-08-04 09:12+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -26,75 +26,75 @@ msgctxt "@title:window"
 msgid "Developer Tool"
 msgstr "Garatzailearen tresna"
 
-#: findbar/findbarbase.cpp:41
+#: findbar/findbarbase.cpp:42
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Itxi"
 
-#: findbar/findbarbase.cpp:44
+#: findbar/findbarbase.cpp:45
 #, kde-format
 msgid "Close"
 msgstr "Itxi"
 
-#: findbar/findbarbase.cpp:50
+#: findbar/findbarbase.cpp:51
 #, kde-format
 msgctxt "Find text"
 msgid "F&ind:"
 msgstr "B&ilatu:"
 
-#: findbar/findbarbase.cpp:55
+#: findbar/findbarbase.cpp:56
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "Bilatu beharreko testua"
 
-#: findbar/findbarbase.cpp:60
+#: findbar/findbarbase.cpp:61
 #, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
 msgstr "Hurrengoa"
 
-#: findbar/findbarbase.cpp:61
+#: findbar/findbarbase.cpp:62
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "Joan hurrengo bat-etortzera"
 
-#: findbar/findbarbase.cpp:66
+#: findbar/findbarbase.cpp:67
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
 msgstr "Aurrekoa"
 
-#: findbar/findbarbase.cpp:67
+#: findbar/findbarbase.cpp:68
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "Joan aurreko bat-etortzera"
 
-#: findbar/findbarbase.cpp:73
+#: findbar/findbarbase.cpp:74
 #, kde-format
 msgid "Options"
 msgstr "Aukerak"
 
-#: findbar/findbarbase.cpp:74
+#: findbar/findbarbase.cpp:75
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "Aldatu bilaketaren jokabidea"
 
-#: findbar/findbarbase.cpp:76
+#: findbar/findbarbase.cpp:77
 #, kde-format
 msgid "Case sensitive"
 msgstr "Bereizi maiuskulak"
 
-#: findbar/findbarbase.cpp:93
+#: findbar/findbarbase.cpp:94
 #, kde-format
 msgid "Phrase not found"
 msgstr "Esaldia ez da aurkitu"
 
-#: webenginepage.cpp:154
+#: webenginepage.cpp:153
 #, kde-format
 msgctxt "@title:window"
 msgid "Save HTML Page"
@@ -114,10 +114,13 @@ msgid "Details"
 msgstr "Xehetasunak"
 
 #: widgets/tracking/trackingwarningwidget.cpp:23
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
+#| "\">(Details...)"
 msgid ""
 "Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
-"\">(Details...)"
+"\">(Details...)</a>"
 msgstr ""
 "Posta aztarnari bat aurkitu eta oztopatu da.<a href=\"mailtrackingdetails"
 "\">(Xehetasunak...)"

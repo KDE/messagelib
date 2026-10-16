@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-03 00:46+0000\n"
+"POT-Creation-Date: 2026-10-16 00:49+0000\n"
 "PO-Revision-Date: 2013-09-30 09:50+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@nuug.no>\n"
@@ -19,36 +19,36 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 
-#: customtemplates.cpp:74 customtemplates.cpp:125
+#: customtemplates.cpp:75 customtemplates.cpp:126
 #, kde-format
 msgctxt "Message->"
 msgid "Universal"
 msgstr "Universal"
 
-#: customtemplates.cpp:75 customtemplates.cpp:131
+#: customtemplates.cpp:76 customtemplates.cpp:132
 #, kde-format
 msgctxt "Message->"
 msgid "Reply"
 msgstr "Svar"
 
-#: customtemplates.cpp:76 customtemplates.cpp:134
+#: customtemplates.cpp:77 customtemplates.cpp:135
 #, kde-format
 msgctxt "Message->"
 msgid "Reply to All"
 msgstr "Svar til alle"
 
-#: customtemplates.cpp:77 customtemplates.cpp:137
+#: customtemplates.cpp:78 customtemplates.cpp:138
 #, kde-format
 msgctxt "Message->"
 msgid "Forward"
 msgstr "Forover"
 
-#: customtemplates.cpp:79 templatesconfiguration.cpp:75
+#: customtemplates.cpp:80 templatesconfiguration.cpp:77
 #, kde-format
 msgid "<a href=\"whatsthis\">How does this work?</a>"
 msgstr "<a href=\"whatsthis\">Hvordan virker dette?</a>"
 
-#: customtemplates.cpp:89
+#: customtemplates.cpp:90
 #, kde-format
 msgid ""
 "<qt><p>Here you can add, edit, and delete custom message templates to use "
@@ -73,30 +73,30 @@ msgstr ""
 "handlinger. Det kan ikke kobles en tastekombinasjon til <i>Universal</i>-"
 "maler.</p></qt>"
 
-#: customtemplates.cpp:140
+#: customtemplates.cpp:141
 #, kde-format
 msgctxt "Message->"
 msgid "Unknown"
 msgstr "Ukjent"
 
-#: customtemplates.cpp:254
+#: customtemplates.cpp:255
 #, kde-format
 msgid "A template with same name already exists."
 msgstr "Det finnes fra før en mal med dette navnet."
 
-#: customtemplates.cpp:254
+#: customtemplates.cpp:255
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Cannot create template"
 msgstr "Kan ikke opprette mal"
 
-#: customtemplates.cpp:346
+#: customtemplates.cpp:347
 #, kde-format
 msgctxt "@info"
 msgid "Do you really want to remove template \"%1\"?"
 msgstr "Er du sikker på at du vil slette malen «%1»?"
 
-#: customtemplates.cpp:347
+#: customtemplates.cpp:348
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Template?"
@@ -497,39 +497,39 @@ msgstr "Slå på feilsøking"
 msgid "Turn Debug Off"
 msgstr "Slå av feilsøking"
 
-#: templatescommandmenu.cpp:202
+#: templatescommandmenu.cpp:203
 #, kde-format
 msgid "Insert Command"
 msgstr "Sett inn kommando"
 
-#: templatescommandmenu.cpp:215
+#: templatescommandmenu.cpp:216
 #, kde-format
 msgid "Original Message"
 msgstr "Opprinnelig melding"
 
-#: templatescommandmenu.cpp:229
+#: templatescommandmenu.cpp:230
 #, kde-format
 msgid "Current Message"
 msgstr "Gjeldende melding"
 
-#: templatescommandmenu.cpp:242
+#: templatescommandmenu.cpp:243
 #, kde-format
 msgid "Process with External Programs"
 msgstr "Behandle med eksterne programmer"
 
-#: templatescommandmenu.cpp:255
+#: templatescommandmenu.cpp:256
 #, kde-format
 msgctxt "Miscellaneous template commands menu"
 msgid "Miscellaneous"
 msgstr "Diverse"
 
-#: templatescommandmenu.cpp:269
+#: templatescommandmenu.cpp:270
 #, kde-format
 msgctxt "Debug template commands menu"
 msgid "Debug"
 msgstr ""
 
-#: templatesconfiguration.cpp:52
+#: templatesconfiguration.cpp:54
 #, kde-format
 msgid ""
 "<p>Here you can create and manage templates to use when composing new "
@@ -542,7 +542,7 @@ msgstr ""
 "I meldingsmalene kan du bruke utdata fra kommandoer enten ved å taste dem "
 "inn eller ved å velge dem fra menyen <i>Sett inn kommando</i>.</p>"
 
-#: templatesconfiguration.cpp:60
+#: templatesconfiguration.cpp:62
 #, kde-format
 msgid ""
 "<p>Templates specified here are folder-specific. They override both global "
@@ -551,7 +551,7 @@ msgstr ""
 "<p>Maler som oppgis her er spesielle for mappa. De overstyrer både globale "
 "maler og identitetsmaler hvis de er oppgitt.</p>"
 
-#: templatesconfiguration.cpp:65
+#: templatesconfiguration.cpp:67
 #, kde-format
 msgid ""
 "<p>Templates specified here are identity-specific. They override global "
@@ -561,7 +561,7 @@ msgstr ""
 "<p>Maler som oppgis her er spesielle for identiteten. De overstyrer globale "
 "maler, men kan overstyres av mappemaler hvis de er oppgitt.</p>"
 
-#: templatesconfiguration.cpp:70
+#: templatesconfiguration.cpp:72
 #, kde-format
 msgid ""
 "<p>These are global (default) templates. They can be overridden by per-"
@@ -570,30 +570,30 @@ msgstr ""
 "<p>Dette er globale (standard-) mapper. De kan overstyres av identitetsmaler "
 "eller mappemaler dersom de er oppgitt.</p>"
 
-#: templatesconfiguration.cpp:102
+#: templatesconfiguration.cpp:104
 #, kde-format
 msgid "Do you want to reset current template or all templates to default?"
 msgstr "Vil du nullstille gjeldende mal eller alle maler til standardverdier?"
 
-#: templatesconfiguration.cpp:103
+#: templatesconfiguration.cpp:105
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Reset to default"
 msgstr "Tilbakestill til standard"
 
-#: templatesconfiguration.cpp:104
+#: templatesconfiguration.cpp:106
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Reset Current Template"
 msgstr "Tilbakestill gjeldende mal"
 
-#: templatesconfiguration.cpp:105
+#: templatesconfiguration.cpp:107
 #, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Reset All Templates"
 msgstr "Tilbakestill alle maler"
 
-#: templatesconfiguration.cpp:362
+#: templatesconfiguration.cpp:364
 #, kde-format
 msgid ""
 "Use of \"Reply using plain text\" and \"Reply using HTML text\" in pairs is "
@@ -609,18 +609,18 @@ msgstr ""
 "(b)Svar med HTML-tekst for at sitert tekst skal være med HTML hvis det er "
 "brukt"
 
-#: templatesinsertcommandpushbutton.cpp:22
+#: templatesinsertcommandpushbutton.cpp:21
 #, kde-format
 msgid "&Insert Command"
 msgstr "Sett &inn kommando"
 
-#: templatesinsertcommandpushbutton.cpp:30
+#: templatesinsertcommandpushbutton.cpp:29
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select a command to insert into the template"
 msgstr "Velg en kommando som skal settes inn i malen"
 
-#: templatesinsertcommandpushbutton.cpp:32
+#: templatesinsertcommandpushbutton.cpp:31
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""

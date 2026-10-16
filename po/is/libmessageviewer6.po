@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-11 00:52+0000\n"
+"POT-Creation-Date: 2026-10-16 00:49+0000\n"
 "PO-Revision-Date: 2026-03-25 11:59+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -196,44 +196,44 @@ msgstr "Hinkraðu við á meðan verið er að sannreyna undirritunina..."
 msgid "End of signed message"
 msgstr "Lok undirritaðra skilaboða"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:73
+#: dkim-verify/dkimmanagerkeytreeview.cpp:75
 #, kde-format
 msgid "Copy Key"
 msgstr "Afrita lykil"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:79
+#: dkim-verify/dkimmanagerkeytreeview.cpp:81
 #, kde-format
 msgid "Remove Key"
 msgid_plural "Remove Keys"
 msgstr[0] "Fjarlægja lykil"
 msgstr[1] "Fjarlægja lykla"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:81
+#: dkim-verify/dkimmanagerkeytreeview.cpp:83
 #, kde-format
 msgid "Do you want to delete this key?"
 msgid_plural "Do you want to delete these keys?"
 msgstr[0] ""
 msgstr[1] ""
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:82
+#: dkim-verify/dkimmanagerkeytreeview.cpp:84
 #, kde-format
 msgid "Delete Key"
 msgid_plural "Delete Keys"
 msgstr[0] "Eyða lykli"
 msgstr[1] "Eyða lyklum"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:92
+#: dkim-verify/dkimmanagerkeytreeview.cpp:94
 #: dkim-verify/dkimmanageruleswidget.cpp:225
 #, kde-format
 msgid "Delete All"
 msgstr "Eyða öllum"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:94
+#: dkim-verify/dkimmanagerkeytreeview.cpp:96
 #, kde-format
 msgid "Do you want to delete all keys?"
 msgstr "Viltu eyða öllum lyklum?"
 
-#: dkim-verify/dkimmanagerkeytreeview.cpp:95
+#: dkim-verify/dkimmanagerkeytreeview.cpp:97
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Keys"
@@ -260,56 +260,56 @@ msgstr "Er hægt að undirrita"
 msgid "Ignore if not signed"
 msgstr "Hunsa ef óundirritað"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:31
+#: dkim-verify/dkimmanagerulesdialog.cpp:33
 #, kde-format
 msgctxt "@action:button"
 msgid "Export..."
 msgstr "Flytja út..."
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:33
+#: dkim-verify/dkimmanagerulesdialog.cpp:35
 #, kde-format
 msgctxt "@title:window"
 msgid "Configure Rule"
 msgstr "Grunnstilla reglu"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:44
+#: dkim-verify/dkimmanagerulesdialog.cpp:46
 #, kde-format
 msgctxt "@action:button"
 msgid "Add Rule..."
 msgstr "Bæta við reglu..."
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:49
+#: dkim-verify/dkimmanagerulesdialog.cpp:51
 #, kde-format
 msgctxt "@action:button"
 msgid "Import..."
 msgstr "Flytja inn..."
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:81
+#: dkim-verify/dkimmanagerulesdialog.cpp:83
 #, kde-format
 msgid "No rules found"
 msgstr "Engar reglur fundust"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:81
-#: dkim-verify/dkimmanagerulesdialog.cpp:84
+#: dkim-verify/dkimmanagerulesdialog.cpp:83
+#: dkim-verify/dkimmanagerulesdialog.cpp:86
 #, kde-format
 msgctxt "@title:window"
 msgid "Export Rules"
 msgstr "Flytja út reglur"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:92
-#: dkim-verify/dkimmanagerulesdialog.cpp:95
+#: dkim-verify/dkimmanagerulesdialog.cpp:94
+#: dkim-verify/dkimmanagerulesdialog.cpp:97
 #, kde-format
 msgctxt "@title:window"
 msgid "Import Rules"
 msgstr "Flytja inn reglur"
 
-#: dkim-verify/dkimmanagerulesdialog.cpp:95
+#: dkim-verify/dkimmanagerulesdialog.cpp:97
 #, kde-format
 msgid "No rules imported."
 msgstr "Engar reglur fluttar inn."
 
 #: dkim-verify/dkimmanageruleswidget.cpp:75
-#: remote-content/remotecontentconfigurewidget.cpp:54
+#: remote-content/remotecontentconfigurewidget.cpp:55
 #, kde-format
 msgid "Domain"
 msgstr "Lén"
@@ -345,13 +345,13 @@ msgid "Priority"
 msgstr "Forgangur"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:198
-#: remote-content/remotecontentconfigurewidget.cpp:82
+#: remote-content/remotecontentconfigurewidget.cpp:83
 #, kde-format
 msgid "Add..."
 msgstr "Bæta við..."
 
 #: dkim-verify/dkimmanageruleswidget.cpp:203
-#: remote-content/remotecontentconfigurewidget.cpp:85
+#: remote-content/remotecontentconfigurewidget.cpp:86
 #, kde-format
 msgid "Modify..."
 msgstr "Breyta..."
@@ -362,7 +362,7 @@ msgid "Duplicate Rule"
 msgstr "Tvítaka reglu"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:211
-#: remote-content/remotecontentconfigurewidget.cpp:89
+#: remote-content/remotecontentconfigurewidget.cpp:90
 #, kde-format
 msgid "Remove Rule"
 msgstr "Fjarlægja reglu"
@@ -373,7 +373,7 @@ msgid "Do you want to delete this rule?"
 msgstr "Viltu eyða þessari reglu?"
 
 #: dkim-verify/dkimmanageruleswidget.cpp:214
-#: remote-content/remotecontentconfigurewidget.cpp:92
+#: remote-content/remotecontentconfigurewidget.cpp:93
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Rule"
@@ -390,56 +390,56 @@ msgctxt "@title:window"
 msgid "Delete Rules"
 msgstr "Eyða reglum"
 
-#: dkim-verify/dkimruledialog.cpp:28
+#: dkim-verify/dkimruledialog.cpp:29
 #, kde-format
 msgctxt "@title:window"
 msgid "Add Rule"
 msgstr "Bæta við reglu"
 
-#: dkim-verify/dkimruledialog.cpp:75
+#: dkim-verify/dkimruledialog.cpp:62
 #, kde-format
 msgctxt "@title:window"
 msgid "Modify Rule"
 msgstr "Breyta reglu"
 
-#: dkim-verify/dkimrulewidget.cpp:20
+#: dkim-verify/dkimrulewidget.cpp:21
 #, kde-format
 msgctxt "@option:check"
 msgid "Enabled"
 msgstr "Virkjað"
 
-#: dkim-verify/dkimrulewidget.cpp:38
+#: dkim-verify/dkimrulewidget.cpp:39
 #, kde-format
 msgid "Domain:"
 msgstr "Lén:"
 
-#: dkim-verify/dkimrulewidget.cpp:43 header/grantleeheaderformatter.cpp:186
+#: dkim-verify/dkimrulewidget.cpp:44 header/grantleeheaderformatter.cpp:190
 #, kde-format
 msgid "List-Id:"
 msgstr ""
 
-#: dkim-verify/dkimrulewidget.cpp:47 header/grantleeheaderformatter.cpp:273
+#: dkim-verify/dkimrulewidget.cpp:48 header/grantleeheaderformatter.cpp:277
 #, kde-format
 msgid "From:"
 msgstr "Frá:"
 
-#: dkim-verify/dkimrulewidget.cpp:48
+#: dkim-verify/dkimrulewidget.cpp:49
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Use '*' to specify all emails from domain"
 msgstr ""
 
-#: dkim-verify/dkimrulewidget.cpp:53
+#: dkim-verify/dkimrulewidget.cpp:54
 #, kde-format
 msgid "SDID:"
 msgstr "SDID:"
 
-#: dkim-verify/dkimrulewidget.cpp:56
+#: dkim-verify/dkimrulewidget.cpp:57
 #, kde-format
 msgid "Rule:"
 msgstr "Regla:"
 
-#: dkim-verify/dkimrulewidget.cpp:62
+#: dkim-verify/dkimrulewidget.cpp:63
 #, kde-format
 msgid "Priority:"
 msgstr "Forgangur:"
@@ -639,101 +639,101 @@ msgstr "%1: Gilt"
 msgid "Not Signed"
 msgstr "Ekki undirritað"
 
-#: header/grantleeheaderformatter.cpp:206
+#: header/grantleeheaderformatter.cpp:210
 #, kde-format
 msgid "Subject:"
 msgstr "Viðfangsefni:"
 
-#: header/grantleeheaderformatter.cpp:226
+#: header/grantleeheaderformatter.cpp:230
 #, kde-format
 msgid "Date:"
 msgstr "Dagsetning:"
 
-#: header/grantleeheaderformatter.cpp:241
+#: header/grantleeheaderformatter.cpp:245
 #, kde-format
 msgid "Message-Id:"
 msgstr "Auðkenni skilaboða:"
 
-#: header/grantleeheaderformatter.cpp:265
+#: header/grantleeheaderformatter.cpp:269
 #, kde-format
 msgid "To:"
 msgstr "Til:"
 
-#: header/grantleeheaderformatter.cpp:267
+#: header/grantleeheaderformatter.cpp:271
 #, fuzzy, kde-format
 #| msgid "&Reply To"
 msgid "Reply To:"
 msgstr "Senda sva&r til"
 
-#: header/grantleeheaderformatter.cpp:269
+#: header/grantleeheaderformatter.cpp:273
 #, kde-format
 msgid "CC:"
 msgstr "Afrit (Cc):"
 
-#: header/grantleeheaderformatter.cpp:271
+#: header/grantleeheaderformatter.cpp:275
 #, kde-format
 msgid "BCC:"
 msgstr "Dulið afrit (Bcc):"
 
-#: header/grantleeheaderformatter.cpp:275
+#: header/grantleeheaderformatter.cpp:279
 #, kde-format
 msgid "Sender:"
 msgstr "Sendandi:"
 
-#: header/grantleeheaderformatter.cpp:277
+#: header/grantleeheaderformatter.cpp:281
 #, kde-format
 msgid "resent from:"
 msgstr "endursent frá:"
 
-#: header/grantleeheaderformatter.cpp:279
+#: header/grantleeheaderformatter.cpp:283
 #, kde-format
 msgid "resent to:"
 msgstr "endursent til:"
 
-#: header/grantleeheaderformatter.cpp:395
+#: header/grantleeheaderformatter.cpp:399
 #, fuzzy, kde-format
 #| msgid "The signature file is not valid"
 msgid "Grantlee theme \"%1\" is not valid."
 msgstr "Undirritunarskráin er ekki gild"
 
-#: header/grantleeheaderformatter.cpp:483 header/headerstyle_util.cpp:85
-#: header/headerstyle_util.cpp:90 header/headerstyle_util.cpp:101
+#: header/grantleeheaderformatter.cpp:487 header/headerstyle_util.cpp:86
+#: header/headerstyle_util.cpp:91 header/headerstyle_util.cpp:102
 #, kde-format
 msgid "No Subject"
 msgstr "Ekkert viðfangsefni"
 
-#: header/grantleeheaderformatter.cpp:488
+#: header/grantleeheaderformatter.cpp:492
 #, kde-format
 msgid "Spam Status:"
 msgstr "Staða ruslpósts:"
 
-#: header/grantleeheaderformatter.cpp:500
+#: header/grantleeheaderformatter.cpp:504
 #, kde-format
 msgid "Printing mode"
 msgstr "Prentunarhamur"
 
-#: header/grantleeheaderformatter.cpp:542
+#: header/grantleeheaderformatter.cpp:546
 #, kde-format
 msgid "[vcard]"
 msgstr "[vcard]"
 
-#: header/grantleeheaderformatter.cpp:549
+#: header/grantleeheaderformatter.cpp:553
 #, kde-format
 msgid "Attachments:"
 msgstr "Viðhengi:"
 
-#: header/grantleeheaderformatter.cpp:575
+#: header/grantleeheaderformatter.cpp:579
 #, kde-format
 msgid "Security:"
 msgstr "Öryggi:"
 
-#: header/headerstyle_util.cpp:60
+#: header/headerstyle_util.cpp:61
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "Óþekkt"
 
-#: header/headerstyle_util.cpp:149
+#: header/headerstyle_util.cpp:150
 #, fuzzy, kde-format
 msgid ""
 "%1% probability of being spam with confidence %3%.\n"
@@ -747,7 +747,7 @@ msgstr ""
 "Full skýrsla:\n"
 "%2"
 
-#: header/headerstyle_util.cpp:158
+#: header/headerstyle_util.cpp:159
 #, fuzzy, kde-format
 msgid ""
 "%1% probability of being spam.\n"
@@ -760,37 +760,37 @@ msgstr ""
 "Full skýrsla:\n"
 "%2"
 
-#: header/headerstyle_util.cpp:167
+#: header/headerstyle_util.cpp:168
 #, kde-format
 msgid "No Spam agent"
 msgstr ""
 
-#: header/headerstyle_util.cpp:170
+#: header/headerstyle_util.cpp:171
 #, kde-format
 msgid "Spam filter score not a number"
 msgstr ""
 
-#: header/headerstyle_util.cpp:173
+#: header/headerstyle_util.cpp:174
 #, kde-format
 msgid "Threshold not a valid number"
 msgstr ""
 
-#: header/headerstyle_util.cpp:176
+#: header/headerstyle_util.cpp:177
 #, kde-format
 msgid "Spam filter score could not be extracted from header"
 msgstr ""
 
-#: header/headerstyle_util.cpp:179
+#: header/headerstyle_util.cpp:180
 #, kde-format
 msgid "Threshold could not be extracted from header"
 msgstr ""
 
-#: header/headerstyle_util.cpp:182
+#: header/headerstyle_util.cpp:183
 #, kde-format
 msgid "Error evaluating spam score"
 msgstr "Villa við að meta ruslpóststig"
 
-#: header/headerstyle_util.cpp:187
+#: header/headerstyle_util.cpp:188
 #, kde-format
 msgid ""
 "%1.\n"
@@ -871,34 +871,34 @@ msgctxt "@title:window"
 msgid "Configure Remote Content"
 msgstr "&Innihald möppu:"
 
-#: remote-content/remotecontentconfigurewidget.cpp:54
+#: remote-content/remotecontentconfigurewidget.cpp:55
 #, kde-format
 msgid "Status"
 msgstr "Staða"
 
-#: remote-content/remotecontentconfigurewidget.cpp:91
+#: remote-content/remotecontentconfigurewidget.cpp:92
 #, kde-format
 msgid "Do you want to delete this rule '%1'?"
 msgstr "Viltu eyða þessari reglu '%1'?"
 
-#: remote-content/remotecontentconfigurewidget.cpp:109
+#: remote-content/remotecontentconfigurewidget.cpp:110
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Edit Remote Content"
 msgstr "&Innihald möppu:"
 
-#: remote-content/remotecontentconfigurewidget.cpp:125
+#: remote-content/remotecontentconfigurewidget.cpp:126
 #, fuzzy, kde-format
 msgctxt "@title:window"
 msgid "Add Remote Content"
 msgstr "&Innihald möppu:"
 
-#: remote-content/remotecontentconfigurewidget.cpp:134
+#: remote-content/remotecontentconfigurewidget.cpp:135
 #, kde-format
 msgid "An entry already defines this url. Please modify it."
 msgstr ""
 
-#: remote-content/remotecontentconfigurewidget.cpp:134
+#: remote-content/remotecontentconfigurewidget.cpp:135
 #, fuzzy, kde-format
 #| msgid "View Columns"
 msgctxt "@title:window"
@@ -915,12 +915,12 @@ msgstr "Grunnstilla"
 msgid "Remote Content"
 msgstr "Fjartengt efni"
 
-#: remote-content/remotecontentmenu.cpp:52
+#: remote-content/remotecontentmenu.cpp:51
 #, kde-format
 msgid "Authorize %1"
 msgstr "Heimila %1"
 
-#: remote-content/remotecontentmenu.cpp:60
+#: remote-content/remotecontentmenu.cpp:59
 #, kde-format
 msgid "Authorize all Urls"
 msgstr ""
@@ -935,13 +935,13 @@ msgstr "Heimilað"
 msgid "Blocked"
 msgstr "Lokað á"
 
-#: remote-content/remotecontentwidget.cpp:30
+#: remote-content/remotecontentwidget.cpp:29
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Domain:"
 msgstr "Lén:"
 
-#: scamdetection/scamdetectiondetailsdialog.cpp:40
+#: scamdetection/scamdetectiondetailsdialog.cpp:41
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"
@@ -978,8 +978,8 @@ msgctxt "@action"
 msgid "Disable scam detection for all messages"
 msgstr "Eyða bréfum"
 
-#: scamdetection/scamdetectionwebengine.cpp:141
-#: scamdetection/scamdetectionwebengine.cpp:239
+#: scamdetection/scamdetectionwebengine.cpp:142
+#: scamdetection/scamdetectionwebengine.cpp:240
 #, kde-format
 msgid ""
 "This email contains a link which reads as '%1' in the text, but actually "
@@ -987,7 +987,7 @@ msgid ""
 "recipient"
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:155
+#: scamdetection/scamdetectionwebengine.cpp:156
 #, kde-format
 msgid ""
 "This email contains a link which points to a numerical IP address (%1) "
@@ -995,7 +995,7 @@ msgid ""
 "emails."
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:162
+#: scamdetection/scamdetectionwebengine.cpp:163
 #, kde-format
 msgid ""
 "This email contains a link which points to a hexadecimal IP address (%1) "
@@ -1003,24 +1003,24 @@ msgid ""
 "emails."
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:168
+#: scamdetection/scamdetectionwebengine.cpp:169
 #, kde-format
 msgid "This email contains a link (%1) which has a redirection"
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:173
+#: scamdetection/scamdetectionwebengine.cpp:174
 #, kde-format
 msgid ""
 "This email contains a link (%1) which contains multiple http://. This is "
 "often the case in scam emails."
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:184
+#: scamdetection/scamdetectionwebengine.cpp:185
 #, kde-format
 msgid "This email contains a shorturl (%1). It can redirect to another server."
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:257
+#: scamdetection/scamdetectionwebengine.cpp:258
 #, kde-format
 msgid ""
 "The text of this link contains invisible characters, which are not displayed "
@@ -1028,12 +1028,12 @@ msgid ""
 "often the case in scam emails."
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:263
+#: scamdetection/scamdetectionwebengine.cpp:264
 #, kde-format
 msgid "Message contains form element. This is often the case in scam emails."
 msgstr ""
 
-#: scamdetection/scamdetectionwebengine.cpp:267
+#: scamdetection/scamdetectionwebengine.cpp:268
 #, kde-format
 msgid "Details:"
 msgstr "Nánar:"
@@ -1343,7 +1343,7 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: label, entry (UseFixedFont), group (Composer)
-#: settings/messageviewer.kcfg:206 viewer/viewer_p.cpp:1540
+#: settings/messageviewer.kcfg:206 viewer/viewer_p.cpp:1523
 #, kde-format
 msgid "Use Fi&xed Font"
 msgstr "Nota &jafnbreitt letur"
@@ -1708,17 +1708,6 @@ msgid ""
 "the attachment were:"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:635
-#, kde-format
-msgid "Open &with %1"
-msgstr "Opna &með %1"
-
-#: utils/messageviewerutil.cpp:637
-#, kde-format
-msgctxt "@item:inmenu Open With, %1 is application name"
-msgid "%1"
-msgstr "%1"
-
 #: viewer/mimeparttree/mimetreemodel.cpp:62
 #, kde-format
 msgid "body part"
@@ -1750,518 +1739,518 @@ msgctxt "@title:window"
 msgid "Print Document"
 msgstr "Prenta skjal"
 
-#: viewer/urlhandlermanager.cpp:410
+#: viewer/urlhandlermanager.cpp:409
 #, kde-format
 msgid "Turn on HTML rendering for this message."
 msgstr "Virkja HTML-myndgerð í þessum skilaboðum."
 
-#: viewer/urlhandlermanager.cpp:412 viewer/viewer_p.cpp:1609
+#: viewer/urlhandlermanager.cpp:411 viewer/viewer_p.cpp:1592
 #, kde-format
 msgid "Load external references from the Internet for this message."
 msgstr "Hlaða inn utanaðkomandi tilvísunum af netinu fyrir þessi skilaboð."
 
-#: viewer/urlhandlermanager.cpp:414
+#: viewer/urlhandlermanager.cpp:413
 #, kde-format
 msgid "Work online."
 msgstr "Vinna nettengt."
 
-#: viewer/urlhandlermanager.cpp:416
+#: viewer/urlhandlermanager.cpp:415
 #, fuzzy, kde-format
 #| msgid "from checked accounts only"
 msgid "Make account online."
 msgstr "bara frá athuguðum tengingum"
 
-#: viewer/urlhandlermanager.cpp:418
+#: viewer/urlhandlermanager.cpp:417
 #, kde-format
 msgid "Decrypt message."
 msgstr "Afkóða skilaboð."
 
-#: viewer/urlhandlermanager.cpp:420
+#: viewer/urlhandlermanager.cpp:419
 #, fuzzy, kde-format
 #| msgid "&Enable signature"
 msgid "Show signature details."
 msgstr "Setja &undirskrift"
 
-#: viewer/urlhandlermanager.cpp:422
+#: viewer/urlhandlermanager.cpp:421
 #, fuzzy, kde-format
 #| msgid "&Enable signature"
 msgid "Hide signature details."
 msgstr "Setja &undirskrift"
 
-#: viewer/urlhandlermanager.cpp:424
+#: viewer/urlhandlermanager.cpp:423
 #, fuzzy, kde-format
 #| msgid "&Enable signature"
 msgid "Show encryption details."
 msgstr "Setja &undirskrift"
 
-#: viewer/urlhandlermanager.cpp:426
+#: viewer/urlhandlermanager.cpp:425
 #, fuzzy, kde-format
 #| msgid "&Enable signature"
 msgid "Hide encryption details."
 msgstr "Setja &undirskrift"
 
-#: viewer/urlhandlermanager.cpp:431
+#: viewer/urlhandlermanager.cpp:430
 #, fuzzy, kde-format
 #| msgid "Documentation"
 msgid "Open Documentation"
 msgstr "Handbækur"
 
-#: viewer/urlhandlermanager.cpp:465
+#: viewer/urlhandlermanager.cpp:464
 #, kde-format
 msgid "Expand all quoted text."
 msgstr "Opna allan tilvitnaðan texta."
 
-#: viewer/urlhandlermanager.cpp:467
+#: viewer/urlhandlermanager.cpp:466
 #, kde-format
 msgid "Collapse quoted text."
 msgstr "Fella saman tilvitnaðan texta."
 
-#: viewer/urlhandlermanager.cpp:493
+#: viewer/urlhandlermanager.cpp:492
 #, kde-format
 msgid "Could not start certificate manager. Please check your installation."
 msgstr "Gat ekki ræst skilríkjastjóra.  Athugaðu uppsetninguna þína."
 
-#: viewer/urlhandlermanager.cpp:495
+#: viewer/urlhandlermanager.cpp:494
 #, kde-format
 msgid "KMail Error"
 msgstr "KMail villuboð"
 
-#: viewer/urlhandlermanager.cpp:512
+#: viewer/urlhandlermanager.cpp:511
 #, kde-format
 msgid "Show certificate 0x%1"
 msgstr "Sýna skilríki 0x%1"
 
-#: viewer/urlhandlermanager.cpp:571
+#: viewer/urlhandlermanager.cpp:570
 #, fuzzy, kde-format
 #| msgid "Open in Address Book"
 msgid "&Open in Address Book"
 msgstr "Opna í vistfangaskrá"
 
-#: viewer/urlhandlermanager.cpp:573
+#: viewer/urlhandlermanager.cpp:572
 #, fuzzy, kde-format
 #| msgid "Email Address"
 msgid "&Copy Email Address"
 msgstr "Netfang"
 
-#: viewer/urlhandlermanager.cpp:586 viewer/viewer_p.cpp:2704
+#: viewer/urlhandlermanager.cpp:585 viewer/viewer_p.cpp:2687
 #, kde-format
 msgid "Address copied to clipboard."
 msgstr "Netfang afritað á klemmuspjaldið."
 
-#: viewer/urlhandlermanager.cpp:597
+#: viewer/urlhandlermanager.cpp:596
 #, fuzzy, kde-format
 #| msgid "Open in Address Book"
 msgid "Lookup the contact in KAddressbook"
 msgstr "Opna í vistfangaskrá"
 
-#: viewer/urlhandlermanager.cpp:778
+#: viewer/urlhandlermanager.cpp:777
 #, kde-format
 msgid "Attachment: %1"
 msgstr "Viðhengi: %1"
 
-#: viewer/urlhandlermanager.cpp:781
+#: viewer/urlhandlermanager.cpp:780
 #, kde-format
 msgid "Encapsulated Message (Subject: %1)"
 msgstr "Innifalin skilaboð (Viðfangsefni: %1)"
 
-#: viewer/urlhandlermanager.cpp:783
+#: viewer/urlhandlermanager.cpp:782
 #, kde-format
 msgid "Encapsulated Message"
 msgstr "Innifalin skilaboð"
 
-#: viewer/urlhandlermanager.cpp:786
+#: viewer/urlhandlermanager.cpp:785
 #, kde-format
 msgid "Unnamed attachment"
 msgstr "Ónefnt viðhengi"
 
-#: viewer/urlhandlermanager.cpp:822
+#: viewer/urlhandlermanager.cpp:821
 #, kde-format
 msgid "Show GnuPG Audit Log for this operation"
 msgstr ""
 
-#: viewer/urlhandlermanager.cpp:860
+#: viewer/urlhandlermanager.cpp:859
 #, kde-format
 msgid "Opening URL..."
 msgstr "Opna slóð..."
 
-#: viewer/urlhandlermanager.cpp:869
+#: viewer/urlhandlermanager.cpp:868
 #, fuzzy, kde-kuit-format
 #| msgid "<qt>Do you really want to execute <b>%1</b>?</qt>"
 msgctxt "@info"
 msgid "Do you really want to execute <filename>%1</filename>?"
 msgstr "<qt>Viltu örugglega keyra <b>%1</b>?</qt>"
 
-#: viewer/urlhandlermanager.cpp:871
+#: viewer/urlhandlermanager.cpp:870
 #, kde-format
 msgctxt "@action:button"
 msgid "Execute"
 msgstr "Framkvæma"
 
-#: viewer/viewer.cpp:152
+#: viewer/viewer.cpp:151
 #, kde-format
 msgid "Loading message..."
 msgstr "Hleð inn skilaboðum..."
 
-#: viewer/viewer_p.cpp:203
+#: viewer/viewer_p.cpp:186
 #, kde-format
 msgid ""
 "Stored DKIM key is different from the current one. Do you want to store this "
 "one too?"
 msgstr ""
 
-#: viewer/viewer_p.cpp:204
+#: viewer/viewer_p.cpp:187
 #, kde-format
 msgctxt "@title:window"
 msgid "Key Changed"
 msgstr "Lykill breyttist"
 
-#: viewer/viewer_p.cpp:205
+#: viewer/viewer_p.cpp:188
 #, kde-format
 msgctxt "@action:button"
 msgid "Store"
 msgstr "Geyma"
 
-#: viewer/viewer_p.cpp:378
+#: viewer/viewer_p.cpp:361
 #, kde-format
 msgid ""
 "Deleting an attachment might invalidate any digital signature on this "
 "message."
 msgstr ""
 
-#: viewer/viewer_p.cpp:379 viewer/viewer_p.cpp:414
+#: viewer/viewer_p.cpp:362 viewer/viewer_p.cpp:397
 #, kde-format
 msgctxt "@title:window"
 msgid "Delete Attachment"
 msgstr "Eyða viðhengi"
 
-#: viewer/viewer_p.cpp:413
+#: viewer/viewer_p.cpp:396
 #, kde-format
 msgid ""
 "Deleting an attachment from an encrypted or old-style mailman message is not "
 "supported."
 msgstr ""
 
-#: viewer/viewer_p.cpp:511 viewer/viewer_p.cpp:1722
+#: viewer/viewer_p.cpp:494 viewer/viewer_p.cpp:1705
 #, kde-format
 msgctxt "to view something"
 msgid "View"
 msgstr "Skoða"
 
-#: viewer/viewer_p.cpp:519
+#: viewer/viewer_p.cpp:502
 #, kde-format
 msgid "Scroll To"
 msgstr "Skruna að"
 
-#: viewer/viewer_p.cpp:524
+#: viewer/viewer_p.cpp:507
 #, kde-format
 msgid "Save As..."
 msgstr "Vista sem..."
 
-#: viewer/viewer_p.cpp:530 viewer/viewer_p.cpp:1732
+#: viewer/viewer_p.cpp:513 viewer/viewer_p.cpp:1715
 #, kde-format
 msgid "Copy"
 msgstr "Afrit"
 
-#: viewer/viewer_p.cpp:541 viewer/viewer_p.cpp:1736
+#: viewer/viewer_p.cpp:524 viewer/viewer_p.cpp:1719
 #, kde-format
 msgid "Delete Attachment"
 msgstr "Eyða viðhengi"
 
-#: viewer/viewer_p.cpp:552
+#: viewer/viewer_p.cpp:535
 #, kde-format
 msgid "Reply To Author"
 msgstr "Svara sendanda"
 
-#: viewer/viewer_p.cpp:560
+#: viewer/viewer_p.cpp:543
 #, kde-format
 msgid "Reply To All"
 msgstr "Svara öllum"
 
-#: viewer/viewer_p.cpp:566 viewer/viewer_p.cpp:1741
+#: viewer/viewer_p.cpp:549 viewer/viewer_p.cpp:1724
 #, kde-format
 msgid "Properties"
 msgstr "Eiginleikar"
 
-#: viewer/viewer_p.cpp:709
+#: viewer/viewer_p.cpp:692
 #, kde-format
 msgid "KMail"
 msgstr "KMail"
 
-#: viewer/viewer_p.cpp:709
+#: viewer/viewer_p.cpp:692
 #, kde-format
 msgid "The KDE Mail Client"
 msgstr "KDE-póstforritið"
 
-#: viewer/viewer_p.cpp:1260
+#: viewer/viewer_p.cpp:1243
 #, kde-format
 msgctxt "@title:window"
 msgid "View Attachment: %1"
 msgstr "Skoða viðhengi: %1"
 
-#: viewer/viewer_p.cpp:1462
+#: viewer/viewer_p.cpp:1445
 #, kde-format
 msgctxt "View->"
 msgid "&Attachments"
 msgstr "&Viðhengi"
 
-#: viewer/viewer_p.cpp:1464
+#: viewer/viewer_p.cpp:1447
 #, kde-format
 msgid "Choose display style of attachments"
 msgstr "Veldu sýnisnið viðhengja"
 
-#: viewer/viewer_p.cpp:1467
+#: viewer/viewer_p.cpp:1450
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&As Icons"
 msgstr "&Sem táknmyndir"
 
-#: viewer/viewer_p.cpp:1470
+#: viewer/viewer_p.cpp:1453
 #, kde-format
 msgid "Show all attachments as icons. Click to see them."
 msgstr "Sýna öll viðhengi sem táknmyndir. smella til að skoða þau."
 
-#: viewer/viewer_p.cpp:1474
+#: viewer/viewer_p.cpp:1457
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Smart"
 msgstr "&Snjöll"
 
-#: viewer/viewer_p.cpp:1477
+#: viewer/viewer_p.cpp:1460
 #, kde-format
 msgid "Show attachments as suggested by sender."
 msgstr "Sýna viðhengi samkv. tillögu sendanda."
 
-#: viewer/viewer_p.cpp:1481
+#: viewer/viewer_p.cpp:1464
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Inline"
 msgstr "&Innfelld"
 
-#: viewer/viewer_p.cpp:1484
+#: viewer/viewer_p.cpp:1467
 #, kde-format
 msgid "Show all attachments inline (if possible)"
 msgstr "Sýna öll viðengi innfeld (ef hægt)"
 
-#: viewer/viewer_p.cpp:1488
+#: viewer/viewer_p.cpp:1471
 #, kde-format
 msgctxt "View->attachments->"
 msgid "&Hide"
 msgstr "&Falin"
 
-#: viewer/viewer_p.cpp:1491
+#: viewer/viewer_p.cpp:1474
 #, kde-format
 msgid "Do not show attachments in the message viewer"
 msgstr "Ekki sýna viðhengi í skilaboðaskoðaranum"
 
-#: viewer/viewer_p.cpp:1495
+#: viewer/viewer_p.cpp:1478
 #, kde-format
 msgctxt "View->attachments->"
 msgid "In Header Only"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1498
+#: viewer/viewer_p.cpp:1481
 #, fuzzy, kde-format
 #| msgid "Show all attachments as icons. Click to see them."
 msgid "Show Attachments only in the header of the mail"
 msgstr "Sýna öll viðhengi sem táknmyndir. smella til að skoða þau."
 
-#: viewer/viewer_p.cpp:1503
+#: viewer/viewer_p.cpp:1486
 #, kde-format
 msgid "&Set Encoding"
 msgstr "Velja stafa&töflu"
 
-#: viewer/viewer_p.cpp:1508 widgets/configurewidget.cpp:45
+#: viewer/viewer_p.cpp:1491 widgets/configurewidget.cpp:45
 #: widgets/configurewidget.cpp:79
 #, kde-format
 msgid "Auto"
 msgstr "Sjálfvirkt"
 
-#: viewer/viewer_p.cpp:1518
+#: viewer/viewer_p.cpp:1501
 #, kde-format
 msgid "Copy Text"
 msgstr "Afrita texta"
 
-#: viewer/viewer_p.cpp:1524
+#: viewer/viewer_p.cpp:1507
 #, kde-format
 msgctxt "@action"
 msgid "Select All Text"
 msgstr "Velja allan texta"
 
-#: viewer/viewer_p.cpp:1530 viewer/viewer_p.cpp:2047
+#: viewer/viewer_p.cpp:1513 viewer/viewer_p.cpp:2030
 #, kde-format
 msgid "Copy Link Address"
 msgstr "Afrita vistfang tengils"
 
-#: viewer/viewer_p.cpp:1535
+#: viewer/viewer_p.cpp:1518
 #, kde-format
 msgid "Open URL"
 msgstr "Opna slóð"
 
-#: viewer/viewer_p.cpp:1546
+#: viewer/viewer_p.cpp:1529
 #, kde-format
 msgid "Show Message Structure"
 msgstr "Sýna uppbyggingu skilaboða"
 
-#: viewer/viewer_p.cpp:1551
+#: viewer/viewer_p.cpp:1534
 #, kde-format
 msgctxt "@action"
 msgid "&View Source"
 msgstr "S&koða frumkóða"
 
-#: viewer/viewer_p.cpp:1556
+#: viewer/viewer_p.cpp:1539
 #, kde-format
 msgid "&Save Message..."
 msgstr "Vi&sta skilaboðin"
 
-#: viewer/viewer_p.cpp:1562
+#: viewer/viewer_p.cpp:1545
 #, fuzzy, kde-format
 #| msgid "&Save as Draft"
 msgctxt "@action"
 msgid "&Save Display Format"
 msgstr "&Vista sem uppkast"
 
-#: viewer/viewer_p.cpp:1566
+#: viewer/viewer_p.cpp:1549
 #, fuzzy, kde-format
 #| msgid "&Save as Draft"
 msgctxt "@action"
 msgid "&Reset Display Format"
 msgstr "&Vista sem uppkast"
 
-#: viewer/viewer_p.cpp:1573
+#: viewer/viewer_p.cpp:1556
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up"
 msgstr "Skruna skilaboð upp"
 
-#: viewer/viewer_p.cpp:1578
+#: viewer/viewer_p.cpp:1561
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down"
 msgstr "Skruna skilaboð niður"
 
-#: viewer/viewer_p.cpp:1583
+#: viewer/viewer_p.cpp:1566
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Up (More)"
 msgstr "Skruna skilaboð upp (meira)"
 
-#: viewer/viewer_p.cpp:1588
+#: viewer/viewer_p.cpp:1571
 #, kde-format
 msgctxt "@action"
 msgid "Scroll Message Down (More)"
 msgstr "Skruna skilaboð niður (meira)"
 
-#: viewer/viewer_p.cpp:1598
+#: viewer/viewer_p.cpp:1581
 #, kde-format
 msgid "Toggle HTML Display Mode"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1602
+#: viewer/viewer_p.cpp:1585
 #, kde-format
 msgid "Toggle display mode between HTML and plain text"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1605
+#: viewer/viewer_p.cpp:1588
 #, fuzzy, kde-format
 #| msgid "Load External References"
 msgctxt "@action"
 msgid "Load external references"
 msgstr "Hlaða inn utanaðkomandi tilvísunum"
 
-#: viewer/viewer_p.cpp:1611
+#: viewer/viewer_p.cpp:1594
 #, kde-format
 msgctxt "@action"
 msgid "Speak Text"
 msgstr "Lesa texta upphátt"
 
-#: viewer/viewer_p.cpp:1617
+#: viewer/viewer_p.cpp:1600
 #, kde-format
 msgctxt "@action"
 msgid "Share Text..."
 msgstr "Deila texta..."
 
-#: viewer/viewer_p.cpp:1635
+#: viewer/viewer_p.cpp:1618
 #, fuzzy, kde-format
 #| msgid "Choose Location"
 msgctxt "@action"
 msgid "Copy Image Location"
 msgstr "Veldu staðsetningu"
 
-#: viewer/viewer_p.cpp:1641
+#: viewer/viewer_p.cpp:1624
 #, kde-format
 msgid "&Find in Message..."
 msgstr "&Finna í skilaboðum..."
 
-#: viewer/viewer_p.cpp:1650
+#: viewer/viewer_p.cpp:1633
 #, kde-format
 msgid "Disable Emoticon"
 msgstr "Gera tjáningartákn óvirk"
 
-#: viewer/viewer_p.cpp:1716
+#: viewer/viewer_p.cpp:1699
 #, kde-format
 msgid "Save &As..."
 msgstr "Vista &sem..."
 
-#: viewer/viewer_p.cpp:1727
+#: viewer/viewer_p.cpp:1710
 #, kde-format
 msgid "Save All Attachments..."
 msgstr "Vista öll viðhengi..."
 
-#: viewer/viewer_p.cpp:1968
+#: viewer/viewer_p.cpp:1951
 #, kde-format
 msgid "The network is broken."
 msgstr "Netið er bilað."
 
-#: viewer/viewer_p.cpp:1968 viewer/viewer_p.cpp:1971
+#: viewer/viewer_p.cpp:1951 viewer/viewer_p.cpp:1954
 #, kde-format
 msgctxt "@title:window"
 msgid "Check Phishing URL"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1971
+#: viewer/viewer_p.cpp:1954
 #, fuzzy, kde-format
 #| msgid "The signature file is not valid"
 msgid "The URL %1 is not valid."
 msgstr "Undirritunarskráin er ekki gild"
 
-#: viewer/viewer_p.cpp:1991
+#: viewer/viewer_p.cpp:1974
 #, kde-format
 msgid "This web site is a malware, do you want to continue to show it?"
 msgstr ""
 
-#: viewer/viewer_p.cpp:1992
+#: viewer/viewer_p.cpp:1975
 #, kde-format
 msgctxt "@title:window"
 msgid "Malware"
 msgstr "Spilliforrit"
 
-#: viewer/viewer_p.cpp:2045
+#: viewer/viewer_p.cpp:2028
 #, kde-format
 msgid "Copy Email Address"
 msgstr "Afrita netfang"
 
-#: viewer/viewer_p.cpp:2128
+#: viewer/viewer_p.cpp:2111
 #, kde-format
 msgctxt "@title:window"
 msgid "Message as Plain Text"
 msgstr "Skilaboð sem hreinn texti"
 
-#: viewer/viewer_p.cpp:2710
+#: viewer/viewer_p.cpp:2693
 #, kde-format
 msgid "URL copied to clipboard."
 msgstr "Slóð afrituð á klemmuspjaldið."
 
-#: viewer/viewer_p.cpp:2872
+#: viewer/viewer_p.cpp:2855
 #, kde-format
 msgid "Message loading failed: %1."
 msgstr "Hleðsla skilaboða mistókst: %1."
 
-#: viewer/viewer_p.cpp:2877
+#: viewer/viewer_p.cpp:2860
 #, kde-format
 msgid "Message not found."
 msgstr "Skilaboðin fundust ekki."
 
-#: widgets/attachmentdialog.cpp:28
+#: widgets/attachmentdialog.cpp:29
 #, kde-kuit-format
 msgctxt "@info"
 msgid ""
@@ -2271,28 +2260,28 @@ msgstr ""
 "Opna viðhengið <filename>%1</filename>?<nl/>Hafðu í huga að þú getur ógnað "
 "öryggi kerfisins með því að opna viðhengi."
 
-#: widgets/attachmentdialog.cpp:33
+#: widgets/attachmentdialog.cpp:34
 #, kde-format
 msgctxt "@title:window"
 msgid "Open Attachment?"
 msgstr "Opna viðhengi?"
 
-#: widgets/attachmentdialog.cpp:40
+#: widgets/attachmentdialog.cpp:41
 #, kde-format
 msgid "&Open With '%1'"
 msgstr "&Opna með '%1'"
 
-#: widgets/attachmentdialog.cpp:47
+#: widgets/attachmentdialog.cpp:48
 #, kde-format
 msgid "Open &With..."
 msgstr "Opna &með..."
 
-#: widgets/attachmentdialog.cpp:69
+#: widgets/attachmentdialog.cpp:70
 #, kde-format
 msgid "Do not ask again"
 msgstr "Ekki spyrja aftur"
 
-#: widgets/htmlstatusbar.cpp:110
+#: widgets/htmlstatusbar.cpp:111
 #, kde-format
 msgctxt ""
 "'HTML Message' with html linebreaks between each letter and in bold text."
@@ -2303,7 +2292,7 @@ msgstr ""
 "<qt><b><br />H<br />T<br />M<br />L<br />-<br />s<br />k<br />i<br />l<br /"
 ">a<br />b<br />o</b>ð</b></qt>"
 
-#: widgets/htmlstatusbar.cpp:114
+#: widgets/htmlstatusbar.cpp:115
 #, kde-format
 msgctxt "'No HTML Message' with html linebreaks between each letter."
 msgid ""
@@ -2313,7 +2302,7 @@ msgstr ""
 "<qt><br />E<br />k<br />k<br />i<br /> <br />H<br />T<br />M<br />L<br />-"
 "<br />s<br />k<br />i<br />l<br />a<br />b<br />o</b>ð</qt>"
 
-#: widgets/htmlstatusbar.cpp:119
+#: widgets/htmlstatusbar.cpp:120
 #, kde-format
 msgctxt "'Plain Message' with html linebreaks between each letter."
 msgid ""
@@ -2323,7 +2312,7 @@ msgstr ""
 "<qt><br />H<br />r<br />e<br />i<br />n<br /> <br />s<br />k<br />i<br /"
 ">l<br />a<br />b<br />o</b>ð<br /></qt>"
 
-#: widgets/htmlstatusbar.cpp:123
+#: widgets/htmlstatusbar.cpp:124
 #, kde-format
 msgctxt "'Calendar Message' with html linebreaks between each letter."
 msgid ""
@@ -2333,7 +2322,7 @@ msgstr ""
 "<qt><br />D<br />a<br />g<br />a<br />t<br />a<br />l<br />s<br />-<br /"
 ">s<br />k<br />i<br />l<br />a<br />b<br />o</b>ð</qt>"
 
-#: widgets/htmlstatusbar.cpp:137
+#: widgets/htmlstatusbar.cpp:138
 #, kde-format
 msgid "Click to toggle between HTML, plain text and calendar."
 msgstr ""
@@ -2358,29 +2347,29 @@ msgstr ""
 "póstforrit sem skilur þau. <br />Fólk með samhæfð póstforrit munu eftir sem "
 "áður geta unnið eðlilega með þau.</qt>"
 
-#: widgets/mailsourceviewtextbrowserwidget.cpp:134
+#: widgets/mailsourceviewtextbrowserwidget.cpp:132
 #, kde-format
 msgid "Speak Text"
 msgstr "Lesa texta upphátt"
 
-#: widgets/mailsourcewebengineviewer.cpp:48
+#: widgets/mailsourcewebengineviewer.cpp:43
 #, kde-format
 msgctxt "Unchanged mail message"
 msgid "Raw Source"
 msgstr "Frumtexti"
 
-#: widgets/mailsourcewebengineviewer.cpp:49
+#: widgets/mailsourcewebengineviewer.cpp:44
 #, kde-format
 msgid "Raw, unmodified mail as it is stored on the filesystem or on the server"
 msgstr ""
 
-#: widgets/mailsourcewebengineviewer.cpp:52
+#: widgets/mailsourcewebengineviewer.cpp:47
 #, kde-format
 msgctxt "Mail message as shown, in HTML format"
 msgid "HTML Source"
 msgstr "HTML-frumkóði"
 
-#: widgets/mailsourcewebengineviewer.cpp:53
+#: widgets/mailsourcewebengineviewer.cpp:48
 #, kde-format
 msgid "HTML code for displaying the message to the user"
 msgstr ""
@@ -2396,6 +2385,13 @@ msgstr "Næstu skilaboð"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Fyrri skilaboð"
+
+#~ msgid "Open &with %1"
+#~ msgstr "Opna &með %1"
+
+#~ msgctxt "@item:inmenu Open With, %1 is application name"
+#~ msgid "%1"
+#~ msgstr "%1"
 
 #~ msgctxt "@title:menu"
 #~ msgid "&Open With"

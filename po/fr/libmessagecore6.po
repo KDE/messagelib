@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-06 00:48+0000\n"
+"POT-Creation-Date: 2026-10-16 00:49+0000\n"
 "PO-Revision-Date: 2026-10-07 17:54+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
@@ -35,22 +35,22 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "geoffray.levasseurbrandin@numericable.fr, sdepiets@gmail.com"
 
-#: attachment/attachmentcompressjob.cpp:52
+#: attachment/attachmentcompressjob.cpp:51
 #, kde-format
 msgid "Could not initiate attachment compression."
 msgstr "Impossible d'initialiser la compression de pièces jointes."
 
-#: attachment/attachmentcompressjob.cpp:62
+#: attachment/attachmentcompressjob.cpp:61
 #, kde-format
 msgid "Could not compress the attachment."
 msgstr "Impossible de compresser les pièces jointes."
 
-#: attachment/attachmentfromfolderjob.cpp:51
+#: attachment/attachmentfromfolderjob.cpp:52
 #, kde-format
 msgid "Could not create compressed file."
 msgstr "Impossible de créer un fichier compressé."
 
-#: attachment/attachmentfromfolderjob.cpp:89
+#: attachment/attachmentfromfolderjob.cpp:90
 #, kde-format
 msgid ""
 "The resulting attachment would be larger than the maximum allowed size, "
@@ -59,13 +59,13 @@ msgstr ""
 "La taille totale des pièces jointes est supérieure au maximum autorisé, "
 "abandon."
 
-#: attachment/attachmentfromfolderjob.cpp:99
-#: attachment/attachmentfromfolderjob.cpp:118
+#: attachment/attachmentfromfolderjob.cpp:100
+#: attachment/attachmentfromfolderjob.cpp:119
 #, kde-format
 msgid "Could not add %1 to the archive"
 msgstr "Impossible d'ajouter %1 à l'archive"
 
-#: attachment/attachmentfromfolderjob.cpp:112
+#: attachment/attachmentfromfolderjob.cpp:113
 #, kde-format
 msgid "Could not open %1 for reading."
 msgstr "Impossible d'ouvrir %1 en lecture."
@@ -94,7 +94,7 @@ msgstr ""
 "Vous ne devriez pas joindre de fichiers de plus de %1. Vous devriez les "
 "partager à l'aide de services de stockage."
 
-#: attachment/attachmentpropertiesdialog.cpp:133
+#: attachment/attachmentpropertiesdialog.cpp:136
 #, kde-format
 msgid ""
 "<p>The <em>MIME type</em> of the file:</p><p>Normally, you do not need to "
@@ -107,7 +107,7 @@ msgstr ""
 "automatiquement. Mais quelques fois, %1 pourrait ne pas détecter le type "
 "correctement -- cette option existe pour que vous puissiez corriger cela.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:141
+#: attachment/attachmentpropertiesdialog.cpp:144
 #, kde-format
 msgid ""
 "<p>The estimated size of the attachment:</p><p>Note that, in an email "
@@ -118,7 +118,7 @@ msgstr ""
 "dans un courrier électronique, un fichier binaire encodé avec une base 64 "
 "prendra jusqu'aux quatre tiers de la taille annoncée du fichier.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:146
+#: attachment/attachmentpropertiesdialog.cpp:149
 #, kde-format
 msgid ""
 "<p>The file name of the part:</p><p>Although this defaults to the name of "
@@ -132,7 +132,7 @@ msgstr ""
 "électronique du destinataire lors d'un enregistrement de la section sur le "
 "disque.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:153
+#: attachment/attachmentpropertiesdialog.cpp:156
 #, kde-format
 msgid ""
 "<p>A description of the part:</p><p>This is just an informational "
@@ -145,7 +145,7 @@ msgstr ""
 "clients de courriers électroniques afficheront ces informations dans leur "
 "aperçu de messages aux coté de l'icône pièce jointe.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:160
+#: attachment/attachmentpropertiesdialog.cpp:163
 #, kde-format
 msgid ""
 "<p>The transport encoding of this part:</p><p>Normally, you do not need to "
@@ -165,7 +165,7 @@ msgstr ""
 "lieu de « base64 » par défaut, permettra d'économiser jusqu'à 25 % de la "
 "taille du message résultant.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:171
+#: attachment/attachmentpropertiesdialog.cpp:174
 #, kde-format
 msgid ""
 "<p>Check this option if you want to suggest to the recipient the automatic "
@@ -181,7 +181,7 @@ msgstr ""
 "Disposition</em> de l'en-tête de cette section avec « dans le texte » au "
 "lieu de « pièce jointe » par défaut.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:179
+#: attachment/attachmentpropertiesdialog.cpp:182
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be signed.</p><p>The "
@@ -192,7 +192,7 @@ msgstr ""
 "soit signée.</p><p>La signature sera faite avec la clé que vous avez "
 "associée avec l'identité actuellement sélectionné.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:185
+#: attachment/attachmentpropertiesdialog.cpp:188
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be encrypted.</"
@@ -202,8 +202,8 @@ msgstr ""
 "soit chiffrée.</p><p>Cette section sera chiffrée pour les destinataires de "
 "ce message.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:305
-#: attachment/attachmentpropertiesdialog.cpp:320
+#: attachment/attachmentpropertiesdialog.cpp:308
+#: attachment/attachmentpropertiesdialog.cpp:323
 #, kde-format
 msgctxt "@title:window"
 msgid "Attachment Properties"
@@ -273,27 +273,27 @@ msgstr "Chiffrer cette pièce jointe"
 msgid "Sign this attachment"
 msgstr "Signer cette pièce jointe"
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:81
+#: dkim-verify/dkimmanagerkeymodel.cpp:82
 #, kde-format
 msgid "DKIM Key"
 msgstr "Clé DKIM"
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:83
+#: dkim-verify/dkimmanagerkeymodel.cpp:84
 #, kde-format
 msgid "Selector"
 msgstr "Sélecteur"
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:85
+#: dkim-verify/dkimmanagerkeymodel.cpp:86
 #, kde-format
 msgid "SDID"
 msgstr "SDID"
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:87
+#: dkim-verify/dkimmanagerkeymodel.cpp:88
 #, kde-format
 msgid "Inserted"
 msgstr "Inséré"
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:89
+#: dkim-verify/dkimmanagerkeymodel.cpp:90
 #, kde-format
 msgid "Last Used"
 msgstr "Utilisés dernièrement"
@@ -355,23 +355,23 @@ msgstr ""
 "La taille maximale en octets autorisée pour les pièces jointes (-1 pour "
 "illimité)"
 
-#: utils/dateformatter.cpp:163
+#: utils/dateformatter.cpp:167
 #, kde-format
 msgctxt "invalid time specified"
 msgid "unknown"
 msgstr "inconnu"
 
-#: utils/dateformatter.cpp:175
+#: utils/dateformatter.cpp:179
 #, kde-format
 msgid "Today %1"
 msgstr "Aujourd'hui %1"
 
-#: utils/dateformatter.cpp:178
+#: utils/dateformatter.cpp:182
 #, kde-format
 msgid "Yesterday %1"
 msgstr "Hier %1"
 
-#: utils/dateformatter.cpp:183
+#: utils/dateformatter.cpp:187
 #, kde-format
 msgctxt "1. weekday, 2. time"
 msgid "%1 %2"

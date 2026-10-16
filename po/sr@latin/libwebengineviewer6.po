@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libwebengineviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-29 00:46+0000\n"
+"POT-Creation-Date: 2026-10-16 00:49+0000\n"
 "PO-Revision-Date: 2016-06-19 15:36+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -24,83 +24,83 @@ msgctxt "@title:window"
 msgid "Developer Tool"
 msgstr ""
 
-#: findbar/findbarbase.cpp:41
+#: findbar/findbarbase.cpp:42
 #, fuzzy, kde-format
 #| msgid "Close"
 msgctxt "@info:tooltip"
 msgid "Close"
 msgstr "Zatvori"
 
-#: findbar/findbarbase.cpp:44
+#: findbar/findbarbase.cpp:45
 #, kde-format
 msgid "Close"
 msgstr "Zatvori"
 
-#: findbar/findbarbase.cpp:50
+#: findbar/findbarbase.cpp:51
 #, kde-format
 msgctxt "Find text"
 msgid "F&ind:"
 msgstr "&Nađi:"
 
 # >> @info:tooltip
-#: findbar/findbarbase.cpp:55
+#: findbar/findbarbase.cpp:56
 #, fuzzy, kde-format
 #| msgid "Text to search for"
 msgctxt "@info:tooltip"
 msgid "Text to search for"
 msgstr "Tekst koji se traži."
 
-#: findbar/findbarbase.cpp:60
+#: findbar/findbarbase.cpp:61
 #, kde-format
 msgctxt "Find and go to the next search match"
 msgid "Next"
 msgstr "Sledeće"
 
-#: findbar/findbarbase.cpp:61
+#: findbar/findbarbase.cpp:62
 #, fuzzy, kde-format
 #| msgid "Jump to next match"
 msgctxt "@info:tooltip"
 msgid "Jump to next match"
 msgstr "Skoči na sledeće poklapanje"
 
-#: findbar/findbarbase.cpp:66
+#: findbar/findbarbase.cpp:67
 #, kde-format
 msgctxt "Find and go to the previous search match"
 msgid "Previous"
 msgstr "Prethodno"
 
-#: findbar/findbarbase.cpp:67
+#: findbar/findbarbase.cpp:68
 #, fuzzy, kde-format
 #| msgid "Jump to previous match"
 msgctxt "@info:tooltip"
 msgid "Jump to previous match"
 msgstr "Skoči na prethodno poklapanje"
 
-#: findbar/findbarbase.cpp:73
+#: findbar/findbarbase.cpp:74
 #, kde-format
 msgid "Options"
 msgstr "Opcije"
 
 # >> @info:tooltip
-#: findbar/findbarbase.cpp:74
+#: findbar/findbarbase.cpp:75
 #, fuzzy, kde-format
 #| msgid "Modify search behavior"
 msgctxt "@info:tooltip"
 msgid "Modify search behavior"
 msgstr "Izmenite ponašanje pretrage."
 
-#: findbar/findbarbase.cpp:76
+#: findbar/findbarbase.cpp:77
 #, kde-format
 msgid "Case sensitive"
 msgstr "Razlikuj veličinu slova"
 
-#: findbar/findbarbase.cpp:93
+#: findbar/findbarbase.cpp:94
 #, kde-format
 msgid "Phrase not found"
 msgstr "Izraz nije nađen."
 
 # >> @title:window
-#: webenginepage.cpp:154
+#: webenginepage.cpp:153
 #, fuzzy, kde-format
 #| msgid "Save HTML Page"
 msgctxt "@title:window"
@@ -122,7 +122,7 @@ msgstr ""
 #, kde-format
 msgid ""
 "Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
-"\">(Details...)"
+"\">(Details...)</a>"
 msgstr ""
 
 #: widgets/tracking/trackingwarningwidget.cpp:42

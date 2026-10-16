@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-20 00:46+0000\n"
+"POT-Creation-Date: 2026-10-16 00:49+0000\n"
 "PO-Revision-Date: 2025-03-03 20:07+0700\n"
 "Last-Translator: Pongsakorn S. <kde@xerusion.me>\n"
 "Language-Team: Thai\n"
@@ -37,17 +37,17 @@ msgstr "ตามวันที่จริง (ของตัวนำเธ�
 msgid "By Smart Date Ranges (of Thread Leaders)"
 msgstr "ตามช่วงวันที่แบบสมาร์ท (ตามตัวนำเธรด)"
 
-#: core/aggregation.cpp:178 core/sortorder.cpp:71
+#: core/aggregation.cpp:178 core/sortorder.cpp:72
 #, kde-format
 msgid "By Smart Sender/Receiver"
 msgstr "ตามผู้ส่ง/ผู้รับ"
 
-#: core/aggregation.cpp:179 core/sortorder.cpp:69
+#: core/aggregation.cpp:179 core/sortorder.cpp:70
 #, kde-format
 msgid "By Sender"
 msgstr "ตามผู้ส่ง"
 
-#: core/aggregation.cpp:180 core/sortorder.cpp:70
+#: core/aggregation.cpp:180 core/sortorder.cpp:71
 #, kde-format
 msgid "By Receiver"
 msgstr "ตามผู้รับ"
@@ -133,13 +133,13 @@ msgstr ""
 msgid "Batch Job (No Interactivity)"
 msgstr ""
 
-#: core/item.cpp:253 core/messageitem.cpp:491
+#: core/item.cpp:253 core/messageitem.cpp:490
 #, kde-format
 msgctxt "Status of an item"
 msgid "Read"
 msgstr "อ่านแล้ว"
 
-#: core/item.cpp:255 core/messageitem.cpp:491
+#: core/item.cpp:255 core/messageitem.cpp:490
 #, kde-format
 msgctxt "Status of an item"
 msgid "Unread"
@@ -157,7 +157,7 @@ msgctxt "Status of an item"
 msgid "Action Item"
 msgstr "รายการการกระทำ"
 
-#: core/item.cpp:267 core/messageitem.cpp:489
+#: core/item.cpp:267 core/messageitem.cpp:488
 #, kde-format
 msgctxt "Status of an item"
 msgid "Replied"
@@ -213,7 +213,7 @@ msgctxt "Status of an item"
 msgid "Queued"
 msgstr "อยู่ในคิวแล้ว"
 
-#: core/manager.cpp:34 core/model.cpp:336
+#: core/manager.cpp:34 core/model.cpp:335
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
@@ -465,87 +465,87 @@ msgstr "แฟนซีพร้อมด้วยสถานะที่คล
 msgid "A smart multiline and multi item theme with a clickable status column"
 msgstr "ธีมแฟนซีแบบหลายบรรทัดและหลายรายการ พร้อมด้วยคอลัมน์สถานะที่สามารถคลิกได้"
 
-#: core/manager.cpp:758 core/view.cpp:2399 core/view.cpp:2403
+#: core/manager.cpp:758 core/view.cpp:2396 core/view.cpp:2400
 #, kde-format
 msgid "Status"
 msgstr "สถานะ"
 
-#: core/model.cpp:334
+#: core/model.cpp:333
 #, kde-format
 msgid "Today"
 msgstr "วันนี้"
 
-#: core/model.cpp:335
+#: core/model.cpp:334
 #, kde-format
 msgid "Yesterday"
 msgstr "เมื่อวานนี้"
 
-#: core/model.cpp:337
+#: core/model.cpp:336
 #, kde-format
 msgid "Last Week"
 msgstr "อาทิตย์ก่อน"
 
-#: core/model.cpp:338
+#: core/model.cpp:337
 #, kde-format
 msgid "Two Weeks Ago"
 msgstr "สองอาทิตย์ก่อน"
 
-#: core/model.cpp:339
+#: core/model.cpp:338
 #, kde-format
 msgid "Three Weeks Ago"
 msgstr "สามอาทิตย์ก่อน"
 
-#: core/model.cpp:340
+#: core/model.cpp:339
 #, kde-format
 msgid "Four Weeks Ago"
 msgstr "สี่อาทิตย์ก่อน"
 
-#: core/model.cpp:341
+#: core/model.cpp:340
 #, kde-format
 msgid "Five Weeks Ago"
 msgstr "ห้าอาทิตย์ก่อน"
 
-#: core/model.cpp:558 utils/themeeditor.cpp:189
+#: core/model.cpp:557 utils/themeeditor.cpp:188
 #, kde-format
 msgid "Receiver"
 msgstr "ผู้รับ"
 
-#: core/model.cpp:560 utils/themeeditor.cpp:188
+#: core/model.cpp:559 utils/themeeditor.cpp:187
 #, kde-format
 msgid "Sender"
 msgstr "ผู้ส่ง"
 
-#: core/model.cpp:1381
+#: core/model.cpp:1380
 #, kde-format
 msgctxt "Message Aggregation Group Header: Month name and Year number"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: core/model.cpp:3799
+#: core/model.cpp:3798
 #, kde-format
 msgid "Processed 1 Message of %2"
 msgid_plural "Processed %1 Messages of %2"
 msgstr[0] "ประมวลผลแล้ว %1 ฉบับ จากทั้งหมด %2 ฉบับ"
 
-#: core/model.cpp:3805 core/model.cpp:3811
+#: core/model.cpp:3804 core/model.cpp:3810
 #, kde-format
 msgid "Threaded 1 Message of %2"
 msgid_plural "Threaded %1 Messages of %2"
 msgstr[0] "จัดเธรดแล้ว %1 ฉบับ จากทั้งหมด %2 ฉบับ"
 
-#: core/model.cpp:3817
+#: core/model.cpp:3816
 #, kde-format
 msgid "Grouped 1 Thread of %2"
 msgid_plural "Grouped %1 Threads of %2"
 msgstr[0] "จัดกลุ่มแล้ว %1 เธรด จากทั้งหมด %2 เธรด"
 
-#: core/model.cpp:3823
+#: core/model.cpp:3822
 #, kde-format
 msgid "Updated 1 Group of %2"
 msgid_plural "Updated %1 Groups of %2"
 msgstr[0] "ปรับปรุงแล้ว %1 กลุ่ม จากทั้งหมด %2 กลุ่ม"
 
-#: core/model.cpp:3915
+#: core/model.cpp:3914
 #, kde-format
 msgctxt "@info:status Finished view fill"
 msgid "Ready"
@@ -567,108 +567,108 @@ msgstr ""
 "เปิดใช้ตัวเลือกนี้เพื่อให้แสดงกล่องผุดแสดงทูลทิป "
 "เมื่อมีการเคลื่อนเมาส์มาอยู่เหนือรายการในช่องแสดงรายการจดหมาย"
 
-#: core/sortorder.cpp:64 core/sortorder.cpp:108
+#: core/sortorder.cpp:65 core/sortorder.cpp:109
 #, kde-format
 msgid "None (Storage Order)"
 msgstr "ไม่เรียง (เรียงลำดับตามสื่อจัดเก็บข้อมูล)"
 
-#: core/sortorder.cpp:65
+#: core/sortorder.cpp:66
 #, kde-format
 msgid "By Date/Time"
 msgstr "ตามวันที่/เวลา"
 
-#: core/sortorder.cpp:67
+#: core/sortorder.cpp:68
 #, kde-format
 msgid "By Date/Time of Most Recent in Subtree"
 msgstr "ตามวันที่/เวลาครั้งล่าสุดในผังต้นไม้ย่อย"
 
-#: core/sortorder.cpp:72
+#: core/sortorder.cpp:73
 #, kde-format
 msgid "By Subject"
 msgstr "ตามชื่อเรื่อง"
 
-#: core/sortorder.cpp:73
+#: core/sortorder.cpp:74
 #, kde-format
 msgid "By Size"
 msgstr "ตามขนาด"
 
-#: core/sortorder.cpp:74
+#: core/sortorder.cpp:75
 #, kde-format
 msgid "By Action Item Status"
 msgstr "ตามสถานะรายการการกระทำ"
 
-#: core/sortorder.cpp:75
+#: core/sortorder.cpp:76
 #, fuzzy, kde-format
 #| msgid "By New/Unread Status"
 msgid "By Unread Status"
 msgstr "ตามสถานะจดหมายให่/ยังไม่ได้อ่าน"
 
-#: core/sortorder.cpp:76
+#: core/sortorder.cpp:77
 #, fuzzy, kde-format
 #| msgid "By New/Unread Status"
 msgid "By Important Status"
 msgstr "ตามสถานะจดหมายให่/ยังไม่ได้อ่าน"
 
-#: core/sortorder.cpp:77
+#: core/sortorder.cpp:78
 #, fuzzy, kde-format
 #| msgid "By New/Unread Status"
 msgid "By Attachment Status"
 msgstr "ตามสถานะจดหมายให่/ยังไม่ได้อ่าน"
 
-#: core/sortorder.cpp:89 core/sortorder.cpp:131
+#: core/sortorder.cpp:90 core/sortorder.cpp:132
 #, kde-format
 msgid "Least Recent on Top"
 msgstr "ที่เป็นล่าสุดน้อยที่สุดอยู่ด้านบน"
 
-#: core/sortorder.cpp:90 core/sortorder.cpp:132
+#: core/sortorder.cpp:91 core/sortorder.cpp:133
 #, kde-format
 msgid "Most Recent on Top"
 msgstr "ที่เป็นล่าสุดมากที่สุดอยู่ด้านบน"
 
-#: core/sortorder.cpp:94
+#: core/sortorder.cpp:95
 #, kde-format
 msgctxt "Sort order for messages"
 msgid "Ascending"
 msgstr "เรียงจากน้อยไปหามาก"
 
-#: core/sortorder.cpp:95
+#: core/sortorder.cpp:96
 #, kde-format
 msgctxt "Sort order for messages"
 msgid "Descending"
 msgstr "เรียงจากมากไปหาน้อย"
 
-#: core/sortorder.cpp:106
+#: core/sortorder.cpp:107
 #, kde-format
 msgid "by Date/Time"
 msgstr "ตามวันที่/เวลา"
 
-#: core/sortorder.cpp:109
+#: core/sortorder.cpp:110
 #, kde-format
 msgid "by Date/Time of Most Recent Message in Group"
 msgstr "ตามวันที่/เวลาของจดหมายที่เป็นล่าสุดมากที่สุดในกลุ่ม"
 
-#: core/sortorder.cpp:113
+#: core/sortorder.cpp:114
 #, kde-format
 msgid "by Sender/Receiver"
 msgstr "ตามผู้ส่ง/ผู้รับ"
 
-#: core/sortorder.cpp:115
+#: core/sortorder.cpp:116
 #, kde-format
 msgid "by Sender"
 msgstr "ตามผู้ส่ง"
 
-#: core/sortorder.cpp:117
+#: core/sortorder.cpp:118
 #, kde-format
 msgid "by Receiver"
 msgstr "ตามผู้รับ"
 
-#: core/sortorder.cpp:135
+#: core/sortorder.cpp:136
 #, kde-format
 msgctxt "Sort order for mail groups"
 msgid "Ascending"
 msgstr "เรียงจากน้อยไปหามาก"
 
-#: core/sortorder.cpp:136
+#: core/sortorder.cpp:137
 #, kde-format
 msgctxt "Sort order for mail groups"
 msgid "Descending"
@@ -861,28 +861,28 @@ msgstr "สี่เหลี่ยมแบบมีรูปแบบ"
 msgid "Styled Joined Rectangles"
 msgstr "สี่เหลี่ยมแบบมีรูปแบบที่เชื่อมกัน"
 
-#: core/view.cpp:895
+#: core/view.cpp:892
 #, kde-format
 msgid "Adjust Column Sizes"
 msgstr "ปรับขนาดของคอลัมน์"
 
-#: core/view.cpp:899
+#: core/view.cpp:896
 #, kde-format
 msgid "Show Default Columns"
 msgstr "แสดงคอลัมน์ปริยาย"
 
-#: core/view.cpp:904
+#: core/view.cpp:901
 #, kde-format
 msgid "Display Tooltips"
 msgstr "แสดงทูลทิป"
 
-#: core/view.cpp:2380 core/view.cpp:2384
-#: core/widgets/searchmessagebybuttons.cpp:75
+#: core/view.cpp:2377 core/view.cpp:2381
+#: core/widgets/searchmessagebybuttons.cpp:74
 #, kde-format
 msgid "From"
 msgstr "จาก"
 
-#: core/view.cpp:2381 core/view.cpp:2385
+#: core/view.cpp:2378 core/view.cpp:2382
 #, fuzzy, kde-format
 #| msgctxt "Receiver of the emial"
 #| msgid "To"
@@ -890,33 +890,33 @@ msgctxt "Receiver of the email"
 msgid "To"
 msgstr "ถึง"
 
-#: core/view.cpp:2382 core/view.cpp:2386
+#: core/view.cpp:2379 core/view.cpp:2383
 #, kde-format
 msgid "Date"
 msgstr "วันที่"
 
-#: core/view.cpp:2400 core/view.cpp:2404
+#: core/view.cpp:2397 core/view.cpp:2401
 #, kde-format
 msgid "Size"
 msgstr "ขนาด"
 
-#: core/view.cpp:2401 core/view.cpp:2405 utils/themeeditor.cpp:191
+#: core/view.cpp:2398 core/view.cpp:2402 utils/themeeditor.cpp:190
 #, kde-format
 msgid "Folder"
 msgstr "โฟลเดอร์"
 
-#: core/view.cpp:2411 core/view.cpp:2413
+#: core/view.cpp:2408 core/view.cpp:2410
 #, kde-format
 msgid "Preview"
 msgstr "แสดงตัวอย่าง"
 
-#: core/view.cpp:2430
+#: core/view.cpp:2427
 #, kde-format
 msgid "<b>%1</b> reply"
 msgid_plural "<b>%1</b> replies"
 msgstr[0] "ตอบกลับ <b>%1</b> ฉบับ"
 
-#: core/view.cpp:2433
+#: core/view.cpp:2430
 #, fuzzy, kde-format
 #| msgid "<b>%1</b> message in subtree (<b>%2</b> new + <b>%3</b> unread)"
 #| msgid_plural ""
@@ -927,116 +927,116 @@ msgstr[0] ""
 "จดหมาย <b>%1</b> ฉบับในผังต้นไม้ย่อย (จดหมายใหม่ <b>%2</b> ฉบับ + ยังไม่อ่าน<b>%3</b> "
 "ฉบับ)"
 
-#: core/view.cpp:2468
+#: core/view.cpp:2465
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Threads started on 2008-12-21'"
 msgid "Threads started on %1"
 msgstr "เธรดต่าง ๆ ที่เริ่มเมื่อ %1"
 
-#: core/view.cpp:2470
+#: core/view.cpp:2467
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Threads started Yesterday'"
 msgid "Threads started %1"
 msgstr "เธรดต่าง ๆ ที่เริ่มเมื่อ %1"
 
-#: core/view.cpp:2474
+#: core/view.cpp:2471
 #, kde-format
 msgid "Threads with messages dated %1"
 msgstr "เธรดต่าง ๆ ที่มีจดหมายของวันที่ %1"
 
-#: core/view.cpp:2484
+#: core/view.cpp:2480
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'"
 msgid "Messages sent on %1"
 msgstr "จดหมายต่าง ๆ ที่ถูกส่งเมื่อ %1"
 
-#: core/view.cpp:2487
+#: core/view.cpp:2483
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Messages received on 2008-12-21'"
 msgid "Messages received on %1"
 msgstr "จดหมายต่าง ๆ ที่ได้รับเมื่อ %1"
 
-#: core/view.cpp:2491
+#: core/view.cpp:2487
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent Yesterday'"
 msgid "Messages sent %1"
 msgstr "จดหมายต่าง ๆ ที่ถูกส่งเมื่อ %1"
 
-#: core/view.cpp:2493
+#: core/view.cpp:2489
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages received Yesterday'"
 msgid "Messages received %1"
 msgstr "จดหมายต่าง ๆ ได้รับเมื่อ %1"
 
-#: core/view.cpp:2502
+#: core/view.cpp:2498
 #, kde-format
 msgid "Threads started within %1"
 msgstr "เธรดต่าง ๆ ที่เริ่มในช่วง %1"
 
-#: core/view.cpp:2505
+#: core/view.cpp:2501
 #, kde-format
 msgid "Threads containing messages with dates within %1"
 msgstr "เธรดต่าง ๆ ที่มีจดหมายที่มีวันที่ต่าง ๆ ในช่วง %1"
 
-#: core/view.cpp:2513
+#: core/view.cpp:2509
 #, kde-format
 msgid "Messages sent within %1"
 msgstr "จดหมายต่าง ๆ ที่ถูกส่งในช่วง %1"
 
-#: core/view.cpp:2515
+#: core/view.cpp:2511
 #, kde-format
 msgid "Messages received within %1"
 msgstr "จดหมายต่าง ๆ ที่ได้รับในช่วง %1"
 
-#: core/view.cpp:2524
+#: core/view.cpp:2520
 #, kde-format
 msgid "Threads started by %1"
 msgstr "เธรดต่าง ๆ  ที่เริ่มโดย %1"
 
-#: core/view.cpp:2527
+#: core/view.cpp:2523
 #, kde-format
 msgid "Threads with most recent message by %1"
 msgstr "เธรดต่าง ๆ ที่มีจดหมายล่าสุดโดย %1 มากที่สุด"
 
-#: core/view.cpp:2536 core/view.cpp:2560
+#: core/view.cpp:2532 core/view.cpp:2556
 #, kde-format
 msgid "Messages sent to %1"
 msgstr "จดหมายต่าง ๆ ที่ถูกส่งไปยัง %1"
 
-#: core/view.cpp:2538
+#: core/view.cpp:2534
 #, kde-format
 msgid "Messages sent by %1"
 msgstr "จดหมายต่าง ๆ ที่ถูกส่งโดย %1"
 
-#: core/view.cpp:2541
+#: core/view.cpp:2537
 #, kde-format
 msgid "Messages received from %1"
 msgstr "จดหมายต่าง ๆ ที่ได้รับจาก %1"
 
-#: core/view.cpp:2549
+#: core/view.cpp:2545
 #, kde-format
 msgid "Threads directed to %1"
 msgstr "เธรดต่าง ๆ ที่ส่งตรงไปยัง %1"
 
-#: core/view.cpp:2552
+#: core/view.cpp:2548
 #, kde-format
 msgid "Threads with most recent message directed to %1"
 msgstr "เธรดต่าง ๆ ที่มีจดหมายที่ส่งตรงไปยัง %1 มากที่สุด"
 
-#: core/view.cpp:2562
+#: core/view.cpp:2558
 #, kde-format
 msgid "Messages received by %1"
 msgstr "จดหมายต่าง ๆ ที่ได้รับโดย %1"
 
-#: core/view.cpp:2587
+#: core/view.cpp:2583
 #, kde-format
 msgid "<b>%1</b> thread"
 msgid_plural "<b>%1</b> threads"
 msgstr[0] "เธรด <b>%1</b> เธรด"
 
-#: core/view.cpp:2592
+#: core/view.cpp:2588
 #, fuzzy, kde-format
 #| msgid "<b>%1</b> message (<b>%2</b> new + <b>%3</b> unread)"
 #| msgid_plural "<b>%1</b> messages (<b>%2</b> new + <b>%3</b> unread)"
@@ -1045,55 +1045,55 @@ msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
 msgstr[0] ""
 "จดหมาย <b>%1</b> ฉบับ (จดหมายใหม่ <b>%2</b> ฉบับ + ยังไม่อ่าน <b>%3</b> ฉบับ)"
 
-#: core/widgetbase.cpp:200
+#: core/widgetbase.cpp:199
 #, fuzzy, kde-format
 msgid "No filter defined."
 msgstr "การกระทำเมื่อกรอง"
 
-#: core/widgetbase.cpp:200
+#: core/widgetbase.cpp:199
 #, fuzzy, kde-format
 #| msgid "&Create Filter"
 msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "สร้างตัวกรองใหม่"
 
-#: core/widgetbase.cpp:425 messagelistutil.cpp:115
+#: core/widgetbase.cpp:424 messagelistutil.cpp:115
 #, kde-format
 msgid "Theme"
 msgstr "ธีม"
 
-#: core/widgetbase.cpp:446 core/widgetbase.cpp:536
-#: core/widgets/configurefilterswidget.cpp:76
+#: core/widgetbase.cpp:445 core/widgetbase.cpp:535
+#: core/widgets/configurefilterswidget.cpp:77
 #, kde-format
 msgid "Configure..."
 msgstr "ปรับแต่ง..."
 
-#: core/widgetbase.cpp:515 messagelistutil.cpp:110
+#: core/widgetbase.cpp:514 messagelistutil.cpp:110
 #, kde-format
 msgid "Aggregation"
 msgstr "การรวมกัน"
 
-#: core/widgetbase.cpp:598
+#: core/widgetbase.cpp:597
 #, kde-format
 msgid "Message Sort Order"
 msgstr "การเรียงลำดับจดหมาย"
 
-#: core/widgetbase.cpp:620
+#: core/widgetbase.cpp:619
 #, kde-format
 msgid "Message Sort Direction"
 msgstr "ทิศทางการเรียงลำดับของจดหมาย"
 
-#: core/widgetbase.cpp:637
+#: core/widgetbase.cpp:636
 #, kde-format
 msgid "Group Sort Order"
 msgstr "การเรียงลำดับของกลุ่ม"
 
-#: core/widgetbase.cpp:654
+#: core/widgetbase.cpp:653
 #, kde-format
 msgid "Group Sort Direction"
 msgstr "ทิศทางการเรียงลำดับของกลุ่ม"
 
-#: core/widgetbase.cpp:669
+#: core/widgetbase.cpp:668
 #, kde-format
 msgid "Folder Always Uses This Sort Order"
 msgstr "โฟลเดอร์จะใช้การเรียงลำดับนี้เสมอ"
@@ -1105,25 +1105,25 @@ msgctxt "@title:window"
 msgid "Configure Filter"
 msgstr "ปรับแต่งตัวกรอง..."
 
-#: core/widgets/configurefilterswidget.cpp:80
+#: core/widgets/configurefilterswidget.cpp:81
 #, kde-format
 msgid "Remove"
 msgstr "ลบ"
 
-#: core/widgets/configurefilterswidget.cpp:83
+#: core/widgets/configurefilterswidget.cpp:84
 #, fuzzy, kde-format
 #| msgid "Are you sure you want to empty the trash folder?"
 msgid "Do you want to delete this filter?"
 msgstr "คุณแน่ใจหรือว่าต้องการจะเทถังขยะทิ้ง ?"
 
-#: core/widgets/configurefilterswidget.cpp:84
+#: core/widgets/configurefilterswidget.cpp:85
 #, fuzzy, kde-format
 #| msgid "Rename Filter"
 msgctxt "@title:window"
 msgid "Remove Filter"
 msgstr "เปลี่ยนชื่อตัวกรอง"
 
-#: core/widgets/configurefilterswidget.cpp:153
+#: core/widgets/configurefilterswidget.cpp:154
 #, fuzzy, kde-format
 #| msgid "No signature found"
 msgid "No result found"
@@ -1158,7 +1158,7 @@ msgctxt "@action"
 msgid "Configure..."
 msgstr "ปรับแต่ง..."
 
-#: core/widgets/quicksearchline.cpp:61
+#: core/widgets/quicksearchline.cpp:59
 #, kde-format
 msgctxt "Search for messages."
 msgid "Search"
@@ -1350,7 +1350,7 @@ msgstr "ตัวเลือกขั้นสูง"
 msgid "AND"
 msgstr ""
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:53
+#: core/widgets/searchlinecommandbuttonswidget.cpp:51
 #, fuzzy, kde-format
 #| msgctxt "@title:column Subject of messages"
 #| msgid "Subject"
@@ -1358,20 +1358,20 @@ msgctxt "@action:button"
 msgid "Subject"
 msgstr "เรื่อง"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:54
+#: core/widgets/searchlinecommandbuttonswidget.cpp:52
 #, kde-format
 msgctxt "@action:button"
 msgid "Body"
 msgstr ""
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:55
+#: core/widgets/searchlinecommandbuttonswidget.cpp:53
 #, fuzzy, kde-format
 #| msgid "From"
 msgctxt "@action:button"
 msgid "From"
 msgstr "จาก"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:56
+#: core/widgets/searchlinecommandbuttonswidget.cpp:54
 #, fuzzy, kde-format
 #| msgctxt "Receiver of the emial"
 #| msgid "To"
@@ -1379,19 +1379,19 @@ msgctxt "@action:button"
 msgid "To"
 msgstr "ถึง"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:57
+#: core/widgets/searchlinecommandbuttonswidget.cpp:55
 #, kde-format
 msgctxt "@action:button"
 msgid "Cc"
 msgstr ""
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:58
+#: core/widgets/searchlinecommandbuttonswidget.cpp:56
 #, kde-format
 msgctxt "@action:button"
 msgid "Bcc"
 msgstr ""
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:59
+#: core/widgets/searchlinecommandbuttonswidget.cpp:57
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Has Attachment"
@@ -1399,14 +1399,14 @@ msgctxt "@action:button"
 msgid "Has Attachment"
 msgstr "มีสิ่งที่แนบมาด้วย"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:60
+#: core/widgets/searchlinecommandbuttonswidget.cpp:58
 #, fuzzy, kde-format
 #| msgid "Advanced Options"
 msgctxt "@action:button"
 msgid "Has Invitation"
 msgstr "ตัวเลือกขั้นสูง"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:61
+#: core/widgets/searchlinecommandbuttonswidget.cpp:59
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Read"
@@ -1414,7 +1414,7 @@ msgctxt "@action:button"
 msgid "Read"
 msgstr "อ่านแล้ว"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:62
+#: core/widgets/searchlinecommandbuttonswidget.cpp:60
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Unread"
@@ -1422,7 +1422,7 @@ msgctxt "@action:button"
 msgid "Unread"
 msgstr "ยังไม่ได้อ่าน"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:63
+#: core/widgets/searchlinecommandbuttonswidget.cpp:61
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Important"
@@ -1430,7 +1430,7 @@ msgctxt "@action:button"
 msgid "Important"
 msgstr "จดหมายสำคัญ"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:64
+#: core/widgets/searchlinecommandbuttonswidget.cpp:62
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Ignored"
@@ -1438,7 +1438,7 @@ msgctxt "@action:button"
 msgid "Ignored"
 msgstr "ไม่สนใจ"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:65
+#: core/widgets/searchlinecommandbuttonswidget.cpp:63
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Ham"
@@ -1446,7 +1446,7 @@ msgctxt "@action:button"
 msgid "Ham"
 msgstr "อาจจะเป็นสแปม"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:66
+#: core/widgets/searchlinecommandbuttonswidget.cpp:64
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Spam"
@@ -1454,7 +1454,7 @@ msgctxt "@action:button"
 msgid "Spam"
 msgstr "สแปม"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:67
+#: core/widgets/searchlinecommandbuttonswidget.cpp:65
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Watched"
@@ -1462,14 +1462,14 @@ msgctxt "@action:button"
 msgid "Watched"
 msgstr "ติดตามอ่าน"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:68
+#: core/widgets/searchlinecommandbuttonswidget.cpp:66
 #, fuzzy, kde-format
 #| msgid "Replied"
 msgctxt "@action:button"
 msgid "Replied"
 msgstr "ตอบกลับแล้ว"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:69
+#: core/widgets/searchlinecommandbuttonswidget.cpp:67
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Forwarded"
@@ -1477,14 +1477,14 @@ msgctxt "@action:button"
 msgid "Forwarded"
 msgstr "ส่งต่อแล้ว"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:70
+#: core/widgets/searchlinecommandbuttonswidget.cpp:68
 #, fuzzy, kde-format
 #| msgid "Encrypt"
 msgctxt "@action:button"
 msgid "Encrypted"
 msgstr "การเข้ารหัส"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:71
+#: core/widgets/searchlinecommandbuttonswidget.cpp:69
 #, fuzzy, kde-format
 #| msgctxt "message status"
 #| msgid "Queued"
@@ -1492,7 +1492,7 @@ msgctxt "@action:button"
 msgid "Queued"
 msgstr "อยู่ในคิวแล้ว"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:72
+#: core/widgets/searchlinecommandbuttonswidget.cpp:70
 #, fuzzy, kde-format
 #| msgctxt "Status of an item"
 #| msgid "Sent"
@@ -1500,7 +1500,7 @@ msgctxt "@action:button"
 msgid "Sent"
 msgstr "ส่งแล้ว"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:73
+#: core/widgets/searchlinecommandbuttonswidget.cpp:71
 #, fuzzy, kde-format
 #| msgctxt "MDN type"
 #| msgid "Deleted"
@@ -1508,78 +1508,78 @@ msgctxt "@action:button"
 msgid "Deleted"
 msgstr "ลบแล้ว"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:74
+#: core/widgets/searchlinecommandbuttonswidget.cpp:72
 #, fuzzy, kde-format
 #| msgid "Action Item"
 msgctxt "@action:button"
 msgid "Action"
 msgstr "รายการการกระทำ"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:75
+#: core/widgets/searchlinecommandbuttonswidget.cpp:73
 #, fuzzy, kde-format
 #| msgid "is in category"
 msgctxt "@action:button"
 msgid "Category"
 msgstr "อยู่ในหมวดหมู่"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:77
+#: core/widgets/searchlinecommandbuttonswidget.cpp:75
 #, kde-format
 msgctxt "@action:button"
 msgid "Smaller"
 msgstr ""
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:78
+#: core/widgets/searchlinecommandbuttonswidget.cpp:76
 #, kde-format
 msgctxt "@action:button"
 msgid "Larger"
 msgstr ""
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:79
+#: core/widgets/searchlinecommandbuttonswidget.cpp:77
 #, fuzzy, kde-format
 #| msgid "Size"
 msgctxt "@action:button"
 msgid "Size"
 msgstr "ขนาด"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:80
+#: core/widgets/searchlinecommandbuttonswidget.cpp:78
 #, fuzzy, kde-format
 #| msgid "Folder"
 msgctxt "@action:button"
 msgid "Older"
 msgstr "โฟลเดอร์"
 
-#: core/widgets/searchlinecommandbuttonswidget.cpp:81
+#: core/widgets/searchlinecommandbuttonswidget.cpp:79
 #, kde-format
 msgctxt "@action:button"
 msgid "Newer"
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:89
+#: core/widgets/searchlinestatus.cpp:86
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Prevent the quick search field from being cleared when changing folders"
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:92
+#: core/widgets/searchlinestatus.cpp:89
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Clear the quick search field when changing folders"
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:111
+#: core/widgets/searchlinestatus.cpp:108
 #, fuzzy, kde-format
 #| msgid "Show folder quick search line edit"
 msgctxt "@info:tooltip"
 msgid "Show or Hide search command line"
 msgstr "แสดงช่องค้นหาด่วนของโฟลเดอร์"
 
-#: core/widgets/searchlinestatus.cpp:112
+#: core/widgets/searchlinestatus.cpp:109
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid "Toggle this button if you want show or hide search command line widget."
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:116
+#: core/widgets/searchlinestatus.cpp:113
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""
@@ -1587,33 +1587,33 @@ msgid ""
 "to other folders or when narrowing the search by message status."
 msgstr ""
 
-#: core/widgets/searchlinestatus.cpp:124
+#: core/widgets/searchlinestatus.cpp:121
 #, fuzzy, kde-format
 #| msgid "Save List..."
 msgctxt "@info:tooltip"
 msgid "Saved Filter"
 msgstr "บันทึกรายการ..."
 
-#: core/widgets/searchlinestatus.cpp:202
+#: core/widgets/searchlinestatus.cpp:199
 #, fuzzy, kde-format
 #| msgid "&Create Filter"
 msgid "Clear History"
 msgstr "สร้างตัวกรองใหม่"
 
-#: core/widgets/searchmessagebybuttons.cpp:36
+#: core/widgets/searchmessagebybuttons.cpp:35
 #, fuzzy, kde-format
 #| msgid "Full message"
 msgctxt "@action"
 msgid "Full Message"
 msgstr "เต็มฉบับ"
 
-#: core/widgets/searchmessagebybuttons.cpp:38
+#: core/widgets/searchmessagebybuttons.cpp:37
 #, kde-format
 msgctxt "@action"
 msgid "Body"
 msgstr ""
 
-#: core/widgets/searchmessagebybuttons.cpp:39
+#: core/widgets/searchmessagebybuttons.cpp:38
 #, fuzzy, kde-format
 #| msgctxt "@title:column Subject of messages"
 #| msgid "Subject"
@@ -1621,21 +1621,21 @@ msgctxt "@action"
 msgid "Subject"
 msgstr "เรื่อง"
 
-#: core/widgets/searchmessagebybuttons.cpp:41
+#: core/widgets/searchmessagebybuttons.cpp:40
 #, fuzzy, kde-format
 #| msgid "BCC"
 msgctxt "@action"
 msgid "BCC"
 msgstr "ซ่อนสำเนาถึง"
 
-#: core/widgets/searchmessagebybuttons.cpp:42
+#: core/widgets/searchmessagebybuttons.cpp:41
 #, fuzzy, kde-format
 #| msgid "CC"
 msgctxt "@action"
 msgid "CC"
 msgstr "สำเนาถึง"
 
-#: core/widgets/searchmessagebybuttons.cpp:73
+#: core/widgets/searchmessagebybuttons.cpp:72
 #, fuzzy, kde-format
 #| msgctxt "Receiver of the emial"
 #| msgid "To"
@@ -1866,127 +1866,127 @@ msgctxt "@action:button"
 msgid "Configure..."
 msgstr "ปรับแต่ง..."
 
-#: utils/aggregationeditor.cpp:31
+#: utils/aggregationeditor.cpp:29
 #, kde-format
 msgid "Groups && Threading"
 msgstr "กลุ่มต่าง ๆ และการจัดเธรด"
 
-#: utils/aggregationeditor.cpp:35
+#: utils/aggregationeditor.cpp:33
 #, fuzzy, kde-format
 #| msgid "Grouping:"
 msgctxt "@label:textbox"
 msgid "Grouping:"
 msgstr "การจัดกลุ่ม:"
 
-#: utils/aggregationeditor.cpp:41
+#: utils/aggregationeditor.cpp:39
 #, fuzzy, kde-format
 #| msgid "Group expand policy:"
 msgctxt "@label:textbox"
 msgid "Group expand policy:"
 msgstr "นโยบายการขยายกลุ่ม:"
 
-#: utils/aggregationeditor.cpp:45
+#: utils/aggregationeditor.cpp:43
 #, fuzzy, kde-format
 #| msgid "Threading:"
 msgctxt "@label:textbox"
 msgid "Threading:"
 msgstr "การจัดเธรด:"
 
-#: utils/aggregationeditor.cpp:51
+#: utils/aggregationeditor.cpp:49
 #, fuzzy, kde-format
 #| msgid "Thread leader:"
 msgctxt "@label:textbox"
 msgid "Thread leader:"
 msgstr "ตัวนำเธรด:"
 
-#: utils/aggregationeditor.cpp:55
+#: utils/aggregationeditor.cpp:53
 #, fuzzy, kde-format
 #| msgid "Thread expand policy:"
 msgctxt "@label:textbox"
 msgid "Thread expand policy:"
 msgstr "นโยบายการขยายเธรด:"
 
-#: utils/aggregationeditor.cpp:64
+#: utils/aggregationeditor.cpp:62
 #, kde-format
 msgctxt "@title:tab Advanced settings tab for aggregation mode"
 msgid "Advanced"
 msgstr "ตั้งค่าขั้นสูง"
 
-#: utils/aggregationeditor.cpp:68
+#: utils/aggregationeditor.cpp:66
 #, fuzzy, kde-format
 #| msgid "Fill view strategy:"
 msgctxt "@label:textbox"
 msgid "Fill view strategy:"
 msgstr "กลยุทธการวาดมุมมอง:"
 
-#: utils/configureaggregationsdialog.cpp:102
+#: utils/configureaggregationsdialog.cpp:103
 #, fuzzy, kde-format
 #| msgid "Customize Message Aggregation Modes"
 msgctxt "@title:window"
 msgid "Customize Message Aggregation Modes"
 msgstr "กำหนดโหมดการรวมกันของจดหมายเอง"
 
-#: utils/configureaggregationsdialog.cpp:123
+#: utils/configureaggregationsdialog.cpp:124
 #, fuzzy, kde-format
 #| msgid "New Aggregation"
 msgctxt "@action:button"
 msgid "New Aggregation"
 msgstr "การรวมกันตัวใหม่"
 
-#: utils/configureaggregationsdialog.cpp:131
+#: utils/configureaggregationsdialog.cpp:132
 #, fuzzy, kde-format
 #| msgid "Clone Aggregation"
 msgctxt "@action:button"
 msgid "Clone Aggregation"
 msgstr "โคลนการรวมกัน"
 
-#: utils/configureaggregationsdialog.cpp:144
+#: utils/configureaggregationsdialog.cpp:145
 #, fuzzy, kde-format
 #| msgid "Aggregation"
 msgctxt "@action:button"
 msgid "Export Aggregation..."
 msgstr "การรวมกัน"
 
-#: utils/configureaggregationsdialog.cpp:151
+#: utils/configureaggregationsdialog.cpp:152
 #, fuzzy, kde-format
 #| msgid "Aggregation"
 msgctxt "@action:button"
 msgid "Import Aggregation..."
 msgstr "การรวมกัน"
 
-#: utils/configureaggregationsdialog.cpp:162
+#: utils/configureaggregationsdialog.cpp:163
 #, fuzzy, kde-format
 #| msgid "Delete Aggregation"
 msgctxt "@action:button"
 msgid "Delete Aggregation"
 msgstr "ลบการรวมกัน"
 
-#: utils/configureaggregationsdialog.cpp:345
+#: utils/configureaggregationsdialog.cpp:346
 #, kde-format
 msgid "Unnamed Aggregation"
 msgstr "การรวมกันที่ยังไม่มีชื่อ"
 
-#: utils/configureaggregationsdialog.cpp:362
+#: utils/configureaggregationsdialog.cpp:363
 #, kde-format
 msgid "New Aggregation"
 msgstr "การรวมกันตัวใหม่"
 
-#: utils/configureaggregationsdialog.cpp:415
+#: utils/configureaggregationsdialog.cpp:416
 #, fuzzy, kde-format
 #| msgid "Aggregation"
 msgctxt "@title:window"
 msgid "Import Aggregation"
 msgstr "การรวมกัน"
 
-#: utils/configureaggregationsdialog.cpp:448
+#: utils/configureaggregationsdialog.cpp:447
 #, fuzzy, kde-format
 #| msgid "Aggregation"
 msgctxt "@title:window"
 msgid "Export Aggregation"
 msgstr "การรวมกัน"
 
-#: utils/configureaggregationsdialog.cpp:448
-#: utils/configurethemesdialog.cpp:472
+#: utils/configureaggregationsdialog.cpp:447
+#: utils/configurethemesdialog.cpp:470
 #, fuzzy, kde-format
 #| msgid "&All Fields"
 msgid "All Files (*)"
@@ -2044,7 +2044,7 @@ msgstr "ธีมที่ยังไม่มีชื่อ"
 msgid "New Theme"
 msgstr "ธีมตัวใหม่"
 
-#: utils/configurethemesdialog.cpp:357 utils/themeeditor.cpp:1219
+#: utils/configurethemesdialog.cpp:357 utils/themeeditor.cpp:1218
 #, kde-format
 msgid "New Column"
 msgstr "คอลัมน์ใหม่"
@@ -2073,52 +2073,52 @@ msgctxt "@title:window"
 msgid "Import Theme"
 msgstr "นำเข้าจดหมาย..."
 
-#: utils/configurethemesdialog.cpp:472
+#: utils/configurethemesdialog.cpp:470
 #, fuzzy, kde-format
 #| msgid "Export Filters"
 msgctxt "@title:window"
 msgid "Export Theme"
 msgstr "ส่งออกการกรอง"
 
-#: utils/optionseteditor.cpp:27
+#: utils/optionseteditor.cpp:25
 #, kde-format
 msgctxt "@title:tab General options of a view mode"
 msgid "General"
 msgstr "ทั่วไป"
 
-#: utils/optionseteditor.cpp:31
+#: utils/optionseteditor.cpp:29
 #, kde-format
 msgctxt "@label:textbox Name of the option"
 msgid "Name:"
 msgstr "ชื่อ:"
 
-#: utils/optionseteditor.cpp:40
+#: utils/optionseteditor.cpp:38
 #, kde-format
 msgctxt "@label:textbox Description of the option"
 msgid "Description:"
 msgstr "คำอธิบาย:"
 
-#: utils/themeeditor.cpp:72
+#: utils/themeeditor.cpp:71
 #, kde-format
 msgctxt "@label:textbox Property name"
 msgid "Name:"
 msgstr "ชื่อ:"
 
-#: utils/themeeditor.cpp:76
+#: utils/themeeditor.cpp:75
 #, fuzzy, kde-format
 #| msgid "The label that will be displayed in the column header."
 msgctxt "@info:tooltip"
 msgid "The label that will be displayed in the column header."
 msgstr "ป้ายที่จะถูกแสดงในหัวคอลัมน์"
 
-#: utils/themeeditor.cpp:79
+#: utils/themeeditor.cpp:78
 #, fuzzy, kde-format
 #| msgid "Header click sorts messages:"
 msgctxt "@label:textbox"
 msgid "Header click sorts messages:"
 msgstr "เมื่อคลิกที่ส่วนหัวให้เรียงลำดับจดหมาย:"
 
-#: utils/themeeditor.cpp:83
+#: utils/themeeditor.cpp:82
 #, fuzzy, kde-format
 #| msgid ""
 #| "The sorting order that clicking on this column header will switch to."
@@ -2126,14 +2126,14 @@ msgctxt "@info:tooltip"
 msgid "The sorting order that clicking on this column header will switch to."
 msgstr "จะมีการเปลี่ยนการเรียงลำดับตามส่วนหัวเมื่อมีการคลิกที่หัวคอลัมน์"
 
-#: utils/themeeditor.cpp:86
+#: utils/themeeditor.cpp:85
 #, fuzzy, kde-format
 #| msgid "Visible by default"
 msgctxt "@option:check"
 msgid "Visible by default"
 msgstr "มองเห็นได้โดยปริยาย"
 
-#: utils/themeeditor.cpp:87
+#: utils/themeeditor.cpp:86
 #, fuzzy, kde-format
 #| msgid ""
 #| "Check this if this column should be visible when the theme is selected."
@@ -2141,14 +2141,14 @@ msgctxt "@info:tooltip"
 msgid "Check this if this column should be visible when the theme is selected."
 msgstr "กาเลือกตัวเลือกนี้หากต้องการให้มองเห็นคอลัมน์ได้เมื่อมีการเลือกธีมแล้ว"
 
-#: utils/themeeditor.cpp:90
+#: utils/themeeditor.cpp:89
 #, fuzzy, kde-format
 #| msgid "Contains \"Sender or Receiver\" field"
 msgctxt "@option:check"
 msgid "Contains \"Sender or Receiver\" field"
 msgstr "มีช่องข้อมูล \"ผู้ส่งหรือผู้รับ\""
 
-#: utils/themeeditor.cpp:92
+#: utils/themeeditor.cpp:91
 #, fuzzy, kde-format
 #| msgid ""
 #| "Check this if this column label should be updated depending on the folder "
@@ -2161,17 +2161,17 @@ msgstr ""
 "กาเลือกตัวเลือกนี้ หากต้องการให้มีการปรับปรุงป้ายของคอลัมน์ โดยขึ้นอยู่กับประเภทโฟลเดอร์ "
 "\"เข้ามาภายใน\"/\"ส่งออกภายนอก\""
 
-#: utils/themeeditor.cpp:112
+#: utils/themeeditor.cpp:111
 #, kde-format
 msgid "Unnamed Column"
 msgstr "คอลัมน์ที่ยังไม่มีชื่อ"
 
-#: utils/themeeditor.cpp:177
+#: utils/themeeditor.cpp:176
 #, kde-format
 msgid "Message Group"
 msgstr "กลุ่มจดหมาย"
 
-#: utils/themeeditor.cpp:181 utils/themeeditor.cpp:190
+#: utils/themeeditor.cpp:180 utils/themeeditor.cpp:189
 #, kde-format
 msgid ""
 "Very long subject very long subject very long subject very long subject very "
@@ -2180,70 +2180,70 @@ msgstr ""
 "ชื่อเรื่องที่ยาวมาก ชื่อเรื่องที่ยาวมาก ชื่อเรื่องที่ยาวมาก ชื่อเรื่องที่ยาวมาก ชื่อเรื่องที่ยาวมาก "
 "ชื่อเรื่องที่ยาวมาก ชื่อเรื่องที่ยาวมาก"
 
-#: utils/themeeditor.cpp:196
+#: utils/themeeditor.cpp:195
 #, kde-format
 msgid "Sample Tag 1"
 msgstr "ป้ายตัวอย่าง 1"
 
-#: utils/themeeditor.cpp:197
+#: utils/themeeditor.cpp:196
 #, kde-format
 msgid "Sample Tag 2"
 msgstr "ป้ายตัวอย่าง 2"
 
-#: utils/themeeditor.cpp:198
+#: utils/themeeditor.cpp:197
 #, kde-format
 msgid "Sample Tag 3"
 msgstr "ป้ายตัวอย่าง 3"
 
-#: utils/themeeditor.cpp:413
+#: utils/themeeditor.cpp:412
 #, kde-format
 msgctxt "Indicates whether or not a header label is visible"
 msgid "Visible"
 msgstr "มองเห็นได้"
 
-#: utils/themeeditor.cpp:853
+#: utils/themeeditor.cpp:852
 #, kde-format
 msgctxt "@action:inmenu soften the text color"
 msgid "Soften"
 msgstr "นุ่มนวล"
 
-#: utils/themeeditor.cpp:860
+#: utils/themeeditor.cpp:859
 #, fuzzy, kde-format
 #| msgid "&Bold"
 msgctxt "@action:inmenu Font setting"
 msgid "Bold"
 msgstr "ตัวหนา"
 
-#: utils/themeeditor.cpp:864
+#: utils/themeeditor.cpp:863
 #, fuzzy, kde-format
 #| msgid "&Italic"
 msgctxt "@action:inmenu Font setting"
 msgid "Italic"
 msgstr "ตัวเอียง"
 
-#: utils/themeeditor.cpp:871
+#: utils/themeeditor.cpp:870
 #, kde-format
 msgid "Font"
 msgstr "แบบอักษร"
 
-#: utils/themeeditor.cpp:879
+#: utils/themeeditor.cpp:878
 #, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Default"
 msgstr "ค่าปริยาย"
 
-#: utils/themeeditor.cpp:884
+#: utils/themeeditor.cpp:883
 #, kde-format
 msgctxt "@action:inmenu Foreground color setting"
 msgid "Custom..."
 msgstr "กำหนดเอง..."
 
-#: utils/themeeditor.cpp:892
+#: utils/themeeditor.cpp:891
 #, kde-format
 msgid "Foreground Color"
 msgstr "สีพื้นหน้า"
 
-#: utils/themeeditor.cpp:901
+#: utils/themeeditor.cpp:900
 #, kde-format
 msgctxt ""
 "Hide a mark if the mail does not have the attribute, e.g. Important mark on "
@@ -2251,7 +2251,7 @@ msgctxt ""
 msgid "Hide"
 msgstr "ซ่อน"
 
-#: utils/themeeditor.cpp:908
+#: utils/themeeditor.cpp:907
 #, kde-format
 msgctxt ""
 "Keep a empty space in the list if the mail does not have the attribute, e.g. "
@@ -2259,7 +2259,7 @@ msgctxt ""
 msgid "Keep Empty Space"
 msgstr "คงช่องว่างไว้"
 
-#: utils/themeeditor.cpp:915
+#: utils/themeeditor.cpp:914
 #, kde-format
 msgctxt ""
 "Show the icon softened in the list if the mail does not have the attribute, "
@@ -2267,91 +2267,91 @@ msgctxt ""
 msgid "Keep Softened Icon"
 msgstr "คงไอคอนที่ถูกทำให้นุ่มนวลไว้"
 
-#: utils/themeeditor.cpp:923
+#: utils/themeeditor.cpp:922
 #, kde-format
 msgid "When Disabled"
 msgstr "เมื่อถูกปิดการใช้งาน"
 
-#: utils/themeeditor.cpp:929
+#: utils/themeeditor.cpp:928
 #, kde-format
 msgid "Group Header"
 msgstr "ส่วนหัวของกลุ่ม"
 
-#: utils/themeeditor.cpp:936
+#: utils/themeeditor.cpp:935
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "None"
 msgstr "ไม่มี"
 
-#: utils/themeeditor.cpp:941
+#: utils/themeeditor.cpp:940
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Automatic"
 msgstr "อัตโนมัติ"
 
-#: utils/themeeditor.cpp:946
+#: utils/themeeditor.cpp:945
 #, kde-format
 msgctxt "@action:inmenu Group header background color setting"
 msgid "Custom..."
 msgstr "กำหนดเอง..."
 
-#: utils/themeeditor.cpp:954
+#: utils/themeeditor.cpp:953
 #, kde-format
 msgid "Background Color"
 msgstr "สีพื้นหลัง"
 
-#: utils/themeeditor.cpp:974
+#: utils/themeeditor.cpp:973
 #, kde-format
 msgid "Background Style"
 msgstr "รูปแบบของพื้นหลัง"
 
-#: utils/themeeditor.cpp:1160
+#: utils/themeeditor.cpp:1159
 #, fuzzy, kde-format
 #| msgid "Properties"
 msgid "Column Properties..."
 msgstr "คุณสมบัติ"
 
-#: utils/themeeditor.cpp:1163
+#: utils/themeeditor.cpp:1162
 #, kde-format
 msgid "Add Column..."
 msgstr "เพิ่มคอลัมน์..."
 
-#: utils/themeeditor.cpp:1166
+#: utils/themeeditor.cpp:1165
 #, kde-format
 msgid "Delete Column"
 msgstr "ลบคอลัมน์"
 
-#: utils/themeeditor.cpp:1172
+#: utils/themeeditor.cpp:1171
 #, kde-format
 msgid "Move Column to Left"
 msgstr ""
 
-#: utils/themeeditor.cpp:1176
+#: utils/themeeditor.cpp:1175
 #, kde-format
 msgid "Move Column to Right"
 msgstr ""
 
-#: utils/themeeditor.cpp:1225
+#: utils/themeeditor.cpp:1224
 #, kde-format
 msgid "Add New Column"
 msgstr "เพิ่มคอลัมน์ใหม่"
 
-#: utils/themeeditor.cpp:1249
+#: utils/themeeditor.cpp:1248
 #, kde-format
 msgid "Column Properties"
 msgstr "คุณสมบัติของคอลัมน์"
 
-#: utils/themeeditor.cpp:1291
+#: utils/themeeditor.cpp:1290
 #, kde-format
 msgid "Appearance"
 msgstr "รูปลักษณ์"
 
-#: utils/themeeditor.cpp:1295
+#: utils/themeeditor.cpp:1294
 #, kde-format
 msgid "Content Items"
 msgstr "รายการต่าง ๆ ของเนื้อหา"
 
-#: utils/themeeditor.cpp:1422
+#: utils/themeeditor.cpp:1421
 #, kde-format
 msgid ""
 "Right click on the header to add or modify columns. Drag the content items "
@@ -2362,27 +2362,27 @@ msgstr ""
 "และหย่อนพวกมันไปบนคอลัมน์เพื่อประกอบเป็นธีมของคุณเอง "
 "คลิกเมาส์ปุ่มขวาบนรายการภายในมุมมองเพื่อดูตัวเลือกอื่น ๆ เพิ่มเติม"
 
-#: utils/themeeditor.cpp:1432
+#: utils/themeeditor.cpp:1431
 #, kde-format
 msgctxt "@title:tab Advanced theme settings"
 msgid "Advanced"
 msgstr "ตั้งค่าขั้นสูง"
 
-#: utils/themeeditor.cpp:1436
+#: utils/themeeditor.cpp:1435
 #, fuzzy, kde-format
 #| msgid "Header:"
 msgctxt "@label:textbox"
 msgid "Header:"
 msgstr "ส่วนหัว:"
 
-#: utils/themeeditor.cpp:1442
+#: utils/themeeditor.cpp:1441
 #, fuzzy, kde-format
 #| msgid "Icon size:"
 msgctxt "@label:textbox"
 msgid "Icon size:"
 msgstr "ขนาดไอคอน:"
 
-#: utils/themeeditor.cpp:1448
+#: utils/themeeditor.cpp:1447
 #, fuzzy, kde-format
 #| msgctxt "suffix in a spinbox"
 #| msgid " pixel"
@@ -2392,7 +2392,7 @@ msgid "%v pixel"
 msgid_plural "%v pixels"
 msgstr[0] " พิกเซล"
 
-#: widget.cpp:211
+#: widget.cpp:210
 #, fuzzy, kde-format
 #| msgctxt "Permissions"
 #| msgid "All"
@@ -2400,53 +2400,53 @@ msgctxt "Item in list of Akonadi tags, to show all e-mails"
 msgid "All"
 msgstr "ทั้งหมด"
 
-#: widget.cpp:348
+#: widget.cpp:347
 #, fuzzy, kde-format
 #| msgid "Collapse All Groups"
 msgid "Collapse Group"
 msgstr "ย่อเก็บกลุ่มทั้งหมด"
 
-#: widget.cpp:351
+#: widget.cpp:350
 #, fuzzy, kde-format
 #| msgid "Expand All Groups"
 msgid "Expand Group"
 msgstr "ขยายกลุ่มทั้งหมด"
 
-#: widget.cpp:357
+#: widget.cpp:356
 #, kde-format
 msgid "Expand All Groups"
 msgstr "ขยายกลุ่มทั้งหมด"
 
-#: widget.cpp:360
+#: widget.cpp:359
 #, kde-format
 msgid "Collapse All Groups"
 msgstr "ย่อเก็บกลุ่มทั้งหมด"
 
-#: widget.cpp:364
+#: widget.cpp:363
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "Ex&pand All Threads"
 msgid "Expand All Threads"
 msgstr "ขยายเธรดทั้งหมด"
 
-#: widget.cpp:366
+#: widget.cpp:365
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "C&ollapse All Threads"
 msgid "Collapse All Threads"
 msgstr "ย่อเก็บเธรดทั้งหมด"
 
-#: widget.cpp:425
+#: widget.cpp:424
 #, kde-format
 msgid "&Move Here"
 msgstr "ย้าย&มาไว้ที่นี่"
 
-#: widget.cpp:426
+#: widget.cpp:425
 #, kde-format
 msgid "&Copy Here"
 msgstr "&คัดลอกไว้ที่นี่"
 
-#: widget.cpp:428
+#: widget.cpp:427
 #, kde-format
 msgid "C&ancel"
 msgstr "&ยกเลิก"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-03 00:46+0000\n"
+"POT-Creation-Date: 2026-10-16 00:49+0000\n"
 "PO-Revision-Date: 2024-05-18 01:16+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -19,36 +19,36 @@ msgstr ""
 "X-Generator: Lokalize 24.02.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: customtemplates.cpp:74 customtemplates.cpp:125
+#: customtemplates.cpp:75 customtemplates.cpp:126
 #, kde-format
 msgctxt "Message->"
 msgid "Universal"
 msgstr "Universal"
 
-#: customtemplates.cpp:75 customtemplates.cpp:131
+#: customtemplates.cpp:76 customtemplates.cpp:132
 #, kde-format
 msgctxt "Message->"
 msgid "Reply"
 msgstr "Responder"
 
-#: customtemplates.cpp:76 customtemplates.cpp:134
+#: customtemplates.cpp:77 customtemplates.cpp:135
 #, kde-format
 msgctxt "Message->"
 msgid "Reply to All"
 msgstr "Responder a todos"
 
-#: customtemplates.cpp:77 customtemplates.cpp:137
+#: customtemplates.cpp:78 customtemplates.cpp:138
 #, kde-format
 msgctxt "Message->"
 msgid "Forward"
 msgstr "Reenviar"
 
-#: customtemplates.cpp:79 templatesconfiguration.cpp:75
+#: customtemplates.cpp:80 templatesconfiguration.cpp:77
 #, kde-format
 msgid "<a href=\"whatsthis\">How does this work?</a>"
 msgstr "<a href=\"whatsthis\">¿Cómo funciona esto?</a>"
 
-#: customtemplates.cpp:89
+#: customtemplates.cpp:90
 #, kde-format
 msgid ""
 "<qt><p>Here you can add, edit, and delete custom message templates to use "
@@ -74,30 +74,30 @@ msgstr ""
 "asignar un atajo de teclado a las plantillas del tipo <i>Universal</i>.</p></"
 "qt>"
 
-#: customtemplates.cpp:140
+#: customtemplates.cpp:141
 #, kde-format
 msgctxt "Message->"
 msgid "Unknown"
 msgstr "Desconocido"
 
-#: customtemplates.cpp:254
+#: customtemplates.cpp:255
 #, kde-format
 msgid "A template with same name already exists."
 msgstr "Ya existe una plantilla con ese nombre."
 
-#: customtemplates.cpp:254
+#: customtemplates.cpp:255
 #, kde-format
 msgctxt "@title:window"
 msgid "Cannot create template"
 msgstr "No se puede crear la plantilla"
 
-#: customtemplates.cpp:346
+#: customtemplates.cpp:347
 #, kde-format
 msgctxt "@info"
 msgid "Do you really want to remove template \"%1\"?"
 msgstr "¿Realmente quiere eliminar la plantilla «%1»?"
 
-#: customtemplates.cpp:347
+#: customtemplates.cpp:348
 #, kde-format
 msgctxt "@title:window"
 msgid "Remove Template?"
@@ -506,39 +506,39 @@ msgstr "Activar la depuración"
 msgid "Turn Debug Off"
 msgstr "Desactivar la depuración"
 
-#: templatescommandmenu.cpp:202
+#: templatescommandmenu.cpp:203
 #, kde-format
 msgid "Insert Command"
 msgstr "Insertar orden"
 
-#: templatescommandmenu.cpp:215
+#: templatescommandmenu.cpp:216
 #, kde-format
 msgid "Original Message"
 msgstr "Mensaje original"
 
-#: templatescommandmenu.cpp:229
+#: templatescommandmenu.cpp:230
 #, kde-format
 msgid "Current Message"
 msgstr "Mensaje actual"
 
-#: templatescommandmenu.cpp:242
+#: templatescommandmenu.cpp:243
 #, kde-format
 msgid "Process with External Programs"
 msgstr "Procesar con programas externos"
 
-#: templatescommandmenu.cpp:255
+#: templatescommandmenu.cpp:256
 #, kde-format
 msgctxt "Miscellaneous template commands menu"
 msgid "Miscellaneous"
 msgstr "Varios"
 
-#: templatescommandmenu.cpp:269
+#: templatescommandmenu.cpp:270
 #, kde-format
 msgctxt "Debug template commands menu"
 msgid "Debug"
 msgstr "Depurar"
 
-#: templatesconfiguration.cpp:52
+#: templatesconfiguration.cpp:54
 #, kde-format
 msgid ""
 "<p>Here you can create and manage templates to use when composing new "
@@ -551,7 +551,7 @@ msgstr ""
 "plantillas de mensajes admiten órdenes de sustitución, bien sencillamente "
 "tecléelas o selecciónelas desde el menú <i>Insertar orden</i>.</p>"
 
-#: templatesconfiguration.cpp:60
+#: templatesconfiguration.cpp:62
 #, kde-format
 msgid ""
 "<p>Templates specified here are folder-specific. They override both global "
@@ -560,7 +560,7 @@ msgstr ""
 "<p>Las plantillas indicadas aquí son específicas de cada carpeta. Sustituyen "
 "tanto a las plantillas globales como a las plantillas por identidad.</p>"
 
-#: templatesconfiguration.cpp:65
+#: templatesconfiguration.cpp:67
 #, kde-format
 msgid ""
 "<p>Templates specified here are identity-specific. They override global "
@@ -571,7 +571,7 @@ msgstr ""
 "Sustituyen a las plantillas globales, pero se pueden sustituir por "
 "plantillas por carpeta, si se indican.</p>"
 
-#: templatesconfiguration.cpp:70
+#: templatesconfiguration.cpp:72
 #, kde-format
 msgid ""
 "<p>These are global (default) templates. They can be overridden by per-"
@@ -581,32 +581,32 @@ msgstr ""
 "por plantillas por identidad o por plantillas por carpeta si alguna de estas "
 "está especificada.</p>"
 
-#: templatesconfiguration.cpp:102
+#: templatesconfiguration.cpp:104
 #, kde-format
 msgid "Do you want to reset current template or all templates to default?"
 msgstr ""
 "¿Quiere reiniciar la plantilla actual o todas las plantillas a las "
 "predeterminadas?"
 
-#: templatesconfiguration.cpp:103
+#: templatesconfiguration.cpp:105
 #, kde-format
 msgctxt "@title:window"
 msgid "Reset to default"
 msgstr "Reiniciar a la predeterminada"
 
-#: templatesconfiguration.cpp:104
+#: templatesconfiguration.cpp:106
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset Current Template"
 msgstr "Reiniciar plantilla actual"
 
-#: templatesconfiguration.cpp:105
+#: templatesconfiguration.cpp:107
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset All Templates"
 msgstr "Reiniciar todas las plantillas"
 
-#: templatesconfiguration.cpp:362
+#: templatesconfiguration.cpp:364
 #, kde-format
 msgid ""
 "Use of \"Reply using plain text\" and \"Reply using HTML text\" in pairs is "
@@ -623,18 +623,18 @@ msgstr ""
 "texto sin formato\n"
 "(b)Responda usando texto HTML para citas en las que esté presente texto HTML"
 
-#: templatesinsertcommandpushbutton.cpp:22
+#: templatesinsertcommandpushbutton.cpp:21
 #, kde-format
 msgid "&Insert Command"
 msgstr "&Insertar orden"
 
-#: templatesinsertcommandpushbutton.cpp:30
+#: templatesinsertcommandpushbutton.cpp:29
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Select a command to insert into the template"
 msgstr "Seleccione una orden para insertar en la plantilla"
 
-#: templatesinsertcommandpushbutton.cpp:32
+#: templatesinsertcommandpushbutton.cpp:31
 #, kde-format
 msgctxt "@info:whatsthis"
 msgid ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecore\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-06 00:48+0000\n"
+"POT-Creation-Date: 2026-10-16 00:49+0000\n"
 "PO-Revision-Date: 2014-04-08 23:07+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -29,22 +29,22 @@ msgctxt "EMAIL OF TRANSLATORS"
 msgid "Your emails"
 msgstr "m.j.wiese@web.de"
 
-#: attachment/attachmentcompressjob.cpp:52
+#: attachment/attachmentcompressjob.cpp:51
 #, kde-format
 msgid "Could not initiate attachment compression."
 msgstr "Komprimeren vun de Bilaag lett sik nich torechtmaken."
 
-#: attachment/attachmentcompressjob.cpp:62
+#: attachment/attachmentcompressjob.cpp:61
 #, kde-format
 msgid "Could not compress the attachment."
 msgstr "De Bilaag lett sik nich komprimeren."
 
-#: attachment/attachmentfromfolderjob.cpp:51
+#: attachment/attachmentfromfolderjob.cpp:52
 #, kde-format
 msgid "Could not create compressed file."
 msgstr "Komprimeert Datei lett sik nich opstellen."
 
-#: attachment/attachmentfromfolderjob.cpp:89
+#: attachment/attachmentfromfolderjob.cpp:90
 #, kde-format
 msgid ""
 "The resulting attachment would be larger than the maximum allowed size, "
@@ -53,13 +53,13 @@ msgstr ""
 "De rutkamen Grött wöör grötter wesen as de tohööchst tolaten Grött, warrt "
 "afbraken."
 
-#: attachment/attachmentfromfolderjob.cpp:99
-#: attachment/attachmentfromfolderjob.cpp:118
+#: attachment/attachmentfromfolderjob.cpp:100
+#: attachment/attachmentfromfolderjob.cpp:119
 #, kde-format
 msgid "Could not add %1 to the archive"
 msgstr "\"%1\" lett sik nich na't Archiev tofögen."
 
-#: attachment/attachmentfromfolderjob.cpp:112
+#: attachment/attachmentfromfolderjob.cpp:113
 #, kde-format
 msgid "Could not open %1 for reading."
 msgstr "\"%1\" lett sik nich lesen."
@@ -88,7 +88,7 @@ msgstr ""
 "Dateien mit en Grött vun mehr as %1 laat sik nich bileggen. Du kannst de "
 "över en Datenaflaagdeenst delen."
 
-#: attachment/attachmentpropertiesdialog.cpp:133
+#: attachment/attachmentpropertiesdialog.cpp:136
 #, kde-format
 msgid ""
 "<p>The <em>MIME type</em> of the file:</p><p>Normally, you do not need to "
@@ -100,7 +100,7 @@ msgstr ""
 "ännern, de Typ vun de Datei warrt automaatsch faststellt. Wenn %1 dat "
 "villicht doch maal nich richtig maakt, kannst Du dat hier richten.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:141
+#: attachment/attachmentpropertiesdialog.cpp:144
 #, kde-format
 msgid ""
 "<p>The estimated size of the attachment:</p><p>Note that, in an email "
@@ -111,7 +111,7 @@ msgstr ""
 "en Nettbreef, de mit Base64 kodeert is, bet to veer Drüddel vun de "
 "Dateigrött bruukt.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:146
+#: attachment/attachmentpropertiesdialog.cpp:149
 #, kde-format
 msgid ""
 "<p>The file name of the part:</p><p>Although this defaults to the name of "
@@ -124,7 +124,7 @@ msgstr ""
 "Dat Feld is en Vörslag för den Adressaat sien Nettpostprogramm, den dat "
 "bruken kann, wenn de Deel na de Fastplaat sekert warrn schall.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:153
+#: attachment/attachmentpropertiesdialog.cpp:156
 #, kde-format
 msgid ""
 "<p>A description of the part:</p><p>This is just an informational "
@@ -137,7 +137,7 @@ msgstr ""
 "mehrsten Nettpostprogrammen wiest disse Informatschoon binnen de Narichten-"
 "Vöransicht blang dat Bilaag-Lüttbild.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:160
+#: attachment/attachmentpropertiesdialog.cpp:163
 #, kde-format
 msgid ""
 "<p>The transport encoding of this part:</p><p>Normally, you do not need to "
@@ -155,7 +155,7 @@ msgstr ""
 "to 25% lütter maken, wenn Du hier \"Quoted Printable\" un nich dat "
 "vörinstellte \"Base 64\" utsöchst.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:171
+#: attachment/attachmentpropertiesdialog.cpp:174
 #, kde-format
 msgid ""
 "<p>Check this option if you want to suggest to the recipient the automatic "
@@ -170,7 +170,7 @@ msgstr ""
 "Disposition\") op <i>inbett</i> (\"inline\") sett, un nich op den "
 "Standardweert <i>Bilaag</i> (\"attachment\").</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:179
+#: attachment/attachmentpropertiesdialog.cpp:182
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be signed.</p><p>The "
@@ -181,7 +181,7 @@ msgstr ""
 "de Ünnerschrift warrt de Slötel bruukt, den Du för de aktuelle Identiteet "
 "fastleggt hest.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:185
+#: attachment/attachmentpropertiesdialog.cpp:188
 #, kde-format
 msgid ""
 "<p>Check this option if you want this message part to be encrypted.</"
@@ -190,8 +190,8 @@ msgstr ""
 "<p>Maak dit an, wenn Du dissen Narichtendeel verslöteln wullt.</p><p>De Deel "
 "warrt för all Adressaten vun de Naricht verslötelt.</p>"
 
-#: attachment/attachmentpropertiesdialog.cpp:305
-#: attachment/attachmentpropertiesdialog.cpp:320
+#: attachment/attachmentpropertiesdialog.cpp:308
+#: attachment/attachmentpropertiesdialog.cpp:323
 #, fuzzy, kde-format
 #| msgid "Attachment Properties"
 msgctxt "@title:window"
@@ -262,27 +262,27 @@ msgstr "Disse Bilaag verslöteln"
 msgid "Sign this attachment"
 msgstr "Disse Bilaag ünnerschrieven"
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:81
+#: dkim-verify/dkimmanagerkeymodel.cpp:82
 #, kde-format
 msgid "DKIM Key"
 msgstr ""
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:83
+#: dkim-verify/dkimmanagerkeymodel.cpp:84
 #, kde-format
 msgid "Selector"
 msgstr ""
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:85
+#: dkim-verify/dkimmanagerkeymodel.cpp:86
 #, kde-format
 msgid "SDID"
 msgstr ""
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:87
+#: dkim-verify/dkimmanagerkeymodel.cpp:88
 #, kde-format
 msgid "Inserted"
 msgstr ""
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:89
+#: dkim-verify/dkimmanagerkeymodel.cpp:90
 #, kde-format
 msgid "Last Used"
 msgstr ""
@@ -342,7 +342,7 @@ msgid ""
 "no limit)"
 msgstr ""
 
-#: utils/dateformatter.cpp:163
+#: utils/dateformatter.cpp:167
 #, fuzzy, kde-format
 #| msgctxt "a file called 'unknown'"
 #| msgid "unknown"
@@ -350,17 +350,17 @@ msgctxt "invalid time specified"
 msgid "unknown"
 msgstr "nich begäng"
 
-#: utils/dateformatter.cpp:175
+#: utils/dateformatter.cpp:179
 #, kde-format
 msgid "Today %1"
 msgstr ""
 
-#: utils/dateformatter.cpp:178
+#: utils/dateformatter.cpp:182
 #, kde-format
 msgid "Yesterday %1"
 msgstr ""
 
-#: utils/dateformatter.cpp:183
+#: utils/dateformatter.cpp:187
 #, kde-format
 msgctxt "1. weekday, 2. time"
 msgid "%1 %2"
