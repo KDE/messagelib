@@ -124,16 +124,13 @@ msgid "Details"
 msgstr "Подробности"
 
 #: widgets/tracking/trackingwarningwidget.cpp:23
-#, fuzzy, kde-format
-#| msgid ""
-#| "Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
-#| "\">(Details...)"
+#, kde-format
 msgid ""
 "Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
 "\">(Details...)</a>"
 msgstr ""
 "Был обнаружен и заблокирован трекер почты.<a href=\"mailtrackingdetails"
-"\">(Подробности…)"
+"\">(Подробности…)</a>"
 
 #: widgets/tracking/trackingwarningwidget.cpp:42
 #, kde-format

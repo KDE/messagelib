@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-16 00:49+0000\n"
-"PO-Revision-Date: 2024-08-01 06:02+0200\n"
+"PO-Revision-Date: 2026-10-16 06:19+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.10\n"
 
 #: developertool/developertooldialog.cpp:25
 #, kde-format
@@ -112,16 +112,13 @@ msgid "Details"
 msgstr "დეტალები"
 
 #: widgets/tracking/trackingwarningwidget.cpp:23
-#, fuzzy, kde-format
-#| msgid ""
-#| "Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
-#| "\">(Details...)"
+#, kde-format
 msgid ""
 "Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
 "\">(Details...)</a>"
 msgstr ""
-"აღმოჩენილია რამდენიმე ელფოსტი შედეგი და ისინი დაიბლოკა. <a href="
-"\"mailtrackingdetails\">(დეტალები...)"
+"აღმოჩენილია რამდენიმე ელფოსტის ტრეკერი და ისინი დაიბლოკა. <a href="
+"\"mailtrackingdetails\">(დეტალები...)</a>"
 
 #: widgets/tracking/trackingwarningwidget.cpp:42
 #, kde-format

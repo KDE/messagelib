@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# SPDX-FileCopyrightText: 2022, 2024 Emir SARI <emir_sari@icloud.com>
+# SPDX-FileCopyrightText: 2022, 2024, 2026 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: libwebengineviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-16 00:49+0000\n"
-"PO-Revision-Date: 2024-08-01 13:10+0300\n"
+"PO-Revision-Date: 2026-10-16 19:23+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.11.70\n"
+"X-Generator: Lokalize 26.08.0\n"
 
 #: developertool/developertooldialog.cpp:25
 #, kde-format
@@ -111,16 +111,13 @@ msgid "Details"
 msgstr "Ayrıntılar"
 
 #: widgets/tracking/trackingwarningwidget.cpp:23
-#, fuzzy, kde-format
-#| msgid ""
-#| "Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
-#| "\">(Details...)"
+#, kde-format
 msgid ""
 "Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
 "\">(Details...)</a>"
 msgstr ""
 "Bir posta izleyicisi bulundu ve engellendi.<a href=\"mailtrackingdetails"
-"\">(Ayrıntılar…)"
+"\">(Ayrıntılar…)</a>"
 
 #: widgets/tracking/trackingwarningwidget.cpp:42
 #, kde-format

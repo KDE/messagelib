@@ -1,14 +1,15 @@
-# Copyright (C) YEAR This_file_is_part_of_KDE
-# This file is distributed under the same license as the PACKAGE package.
+# Spanish translations for libwebengineviewer6.po package.
+# Copyright (C) 2016-2026 This file is copyright:
+# This file is distributed under the same license as the messagelib package.
 #
-# Javier Vinal <fjvinal@gmail.com>, 2016.
-# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2016 Javier Vinal <fjvinal@gmail.com>
+# SPDX-FileCopyrightText: 2021-2024, 2026 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: libwebengineviewer6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-16 00:49+0000\n"
-"PO-Revision-Date: 2024-08-01 04:34+0200\n"
+"PO-Revision-Date: 2026-10-17 00:40+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -16,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #: developertool/developertooldialog.cpp:25
 #, kde-format
@@ -112,16 +113,13 @@ msgid "Details"
 msgstr "Detalles"
 
 #: widgets/tracking/trackingwarningwidget.cpp:23
-#, fuzzy, kde-format
-#| msgid ""
-#| "Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
-#| "\">(Details...)"
+#, kde-format
 msgid ""
 "Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
 "\">(Details...)</a>"
 msgstr ""
 "Se han encontrado y bloqueado algunos rastreadores de correo. <a href="
-"\"mailtrackingdetails\">(Detalles...)"
+"\"mailtrackingdetails\">(Detalles…)</a>"
 
 #: widgets/tracking/trackingwarningwidget.cpp:42
 #, kde-format
@@ -139,12 +137,3 @@ msgstr[1] "%1 rastreadores de la compañía %2 (%3)"
 #, kde-format
 msgid "Zoom"
 msgstr "Zum"
-
-#~ msgid "Reset"
-#~ msgstr "Reiniciar"
-
-#~ msgid "&Zoom In"
-#~ msgstr "&Acercar"
-
-#~ msgid "Zoom &Out"
-#~ msgstr "Ale&jar"

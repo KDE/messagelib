@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-16 00:49+0000\n"
-"PO-Revision-Date: 2026-08-20 23:14+0200\n"
+"PO-Revision-Date: 2026-10-17 01:09+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 26.04.3\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #: developertool/developertooldialog.cpp:25
 #, kde-format
@@ -113,16 +113,13 @@ msgid "Details"
 msgstr "Podrobnosti"
 
 #: widgets/tracking/trackingwarningwidget.cpp:23
-#, fuzzy, kde-format
-#| msgid ""
-#| "Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
-#| "\">(Details...)"
+#, kde-format
 msgid ""
 "Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
 "\">(Details...)</a>"
 msgstr ""
 "Byl zjištěn a zablokován nějaký e-mailový sledovač.<a href="
-"\"mailtrackingdetails\">(Podrobnosti...)"
+"\"mailtrackingdetails\">(Podrobnosti...)</a>"
 
 #: widgets/tracking/trackingwarningwidget.cpp:42
 #, kde-format
