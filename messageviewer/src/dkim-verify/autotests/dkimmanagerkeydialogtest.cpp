@@ -36,7 +36,7 @@ void DKIMManagerKeyDialogTest::shouldHaveDefaultValue()
 
     auto buttonBox = dlg.findChild<QDialogButtonBox *>(u"buttonbox"_s);
     QVERIFY(buttonBox);
-    QCOMPARE(buttonBox->standardButtons(), QDialogButtonBox::StandardButtons{QDialogButtonBox::Close});
+    QCOMPARE(buttonBox->standardButtons(), QDialogButtonBox::StandardButtons{QDialogButtonBox::Ok | QDialogButtonBox::Cancel});
 }
 
 #include "moc_dkimmanagerkeydialogtest.cpp"
