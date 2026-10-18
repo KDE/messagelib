@@ -107,7 +107,7 @@ void CustomTemplatesMenu::update()
         QString nameAction(*it);
         nameAction.replace(u'&', u"&&"_s);
 
-        const QString nameActionName = nameAction.replace(u' ', u'_');
+        const QString nameActionName = QString(nameAction).replace(u' ', u'_');
 
         QAction *action = nullptr;
         switch (t.type()) {
