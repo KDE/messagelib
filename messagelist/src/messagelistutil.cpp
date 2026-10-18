@@ -142,7 +142,7 @@ QString MessageList::Util::contentSummary(const Akonadi::Item &item)
         return {};
     }
     if (lines.count() == 1 && content.length() > 100) {
-        return content.left(100);
+        return content.left(100).toHtmlEscaped();
     }
     QString ret;
     for (const QString &line : lines) {
