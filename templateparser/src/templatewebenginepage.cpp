@@ -26,7 +26,6 @@ TemplateWebEnginePage::TemplateWebEnginePage(QObject *parent)
     settings()->setAttribute(QWebEngineSettings::HyperlinkAuditingEnabled, false);
     settings()->setAttribute(QWebEngineSettings::FullScreenSupportEnabled, false);
     settings()->setAttribute(QWebEngineSettings::ScreenCaptureEnabled, false);
-    settings()->setAttribute(QWebEngineSettings::WebGLEnabled, false);
     settings()->setAttribute(QWebEngineSettings::AutoLoadIconsForPage, false);
     settings()->setAttribute(QWebEngineSettings::Accelerated2dCanvasEnabled, false);
     settings()->setAttribute(QWebEngineSettings::WebGLEnabled, false);
