@@ -213,8 +213,6 @@ if(TARGET KF6::TextEditTextToSpeech)
     set(HAVE_KTEXTADDONS_TEXT_TO_SPEECH_SUPPORT TRUE)
 endif()
 
-find_package(KF6TextAddonsWidgets ${KTEXTADDONS_MIN_VERSION} CONFIG)
-
 find_package(KF6TextAutoCorrectionWidgets ${KTEXTADDONS_MIN_VERSION} CONFIG REQUIRED)
 
 find_package(KF6TextUtils ${KTEXTADDONS_MIN_VERSION} CONFIG REQUIRED)
