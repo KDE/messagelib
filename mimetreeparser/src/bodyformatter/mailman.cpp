@@ -18,7 +18,7 @@
 using namespace Qt::Literals::StringLiterals;
 using namespace MimeTreeParser;
 
-bool MailmanBodyPartFormatter::isMailmanMessage(KMime::Content *curNode) const
+bool MailmanBodyPartFormatter::isMailmanMessage(KMime::Content *curNode)
 {
     if (!curNode || curNode->head().isEmpty()) {
         return false;

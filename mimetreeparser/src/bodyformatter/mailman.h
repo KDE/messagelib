@@ -17,6 +17,6 @@ public:
     [[nodiscard]] MessagePartPtr process(Interface::BodyPart &part) const override;
 
 private:
-    [[nodiscard]] bool isMailmanMessage(KMime::Content *curNode) const;
+    [[nodiscard]] static bool isMailmanMessage(KMime::Content *curNode);
 };
 }
