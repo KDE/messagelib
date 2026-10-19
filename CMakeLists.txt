@@ -5,7 +5,7 @@ set(PIM_VERSION "6.8.42")
 
 project(Messagelib VERSION ${PIM_VERSION})
 
-set(KF_MIN_VERSION "6.29.0")
+set(KF_MIN_VERSION "6.30.0")
 set(QT_REQUIRED_VERSION "6.9.0")
 
 set(MESSAGELIB_LIB_VERSION ${PIM_VERSION})
@@ -32,10 +32,6 @@ set(ECM_MIN_VERSION ${KF_MIN_VERSION})
 
 find_package(ECM ${ECM_MIN_VERSION} CONFIG REQUIRED)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
-set(CMAKE_MODULE_PATH
-    ${CMAKE_CURRENT_SOURCE_DIR}/cmake/ecmcopy
-    ${ECM_MODULE_PATH}
-)
 include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
