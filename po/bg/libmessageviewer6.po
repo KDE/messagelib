@@ -2385,29 +2385,3 @@ msgstr "Следващо съобщение"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Предишно съобщение"
-
-#~ msgid "Open &with %1"
-#~ msgstr "Отваряне &с %1"
-
-#~ msgctxt "@item:inmenu Open With, %1 is application name"
-#~ msgid "%1"
-#~ msgstr "%1"
-
-#~ msgctxt "@title:menu"
-#~ msgid "&Open With"
-#~ msgstr "&Отваряне с"
-
-#~ msgctxt "@action:inmenu Open With"
-#~ msgid "&Other..."
-#~ msgstr "Други..."
-
-#~ msgctxt "@title:menu"
-#~ msgid "&Open With..."
-#~ msgstr "&Отваряне с..."
-
-#~ msgctxt "to open"
-#~ msgid "Open"
-#~ msgstr "Отваряне"
-
-#~ msgid "Open With..."
-#~ msgstr "Отваряне с..."

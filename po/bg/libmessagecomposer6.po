@@ -2404,19 +2404,3 @@ msgstr "Диспечерът на поща е офлайн."
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr "Включване онлайн"
-
-#~ msgctxt "@title:menu"
-#~ msgid "&Open With"
-#~ msgstr "&Отваряне с"
-
-#~ msgctxt "@action:inmenu Open With"
-#~ msgid "&Other..."
-#~ msgstr "Други..."
-
-#~ msgctxt "@title:menu"
-#~ msgid "&Open With..."
-#~ msgstr "&Отваряне с..."
-
-#~ msgctxt "to open"
-#~ msgid "Open"
-#~ msgstr "Отваряне"
