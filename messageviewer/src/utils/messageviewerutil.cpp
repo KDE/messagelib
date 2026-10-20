@@ -368,7 +368,16 @@ bool Util::saveContent(QWidget *parent, const KMime::Content *content, const QUr
         data = KMime::CRLFtoLF(cstr);
     }
 #else
-    const QByteArray data = content->decodedBody();
+    QByteArray data;
+    if (content->bodyIsMessage()) {
+        // Encapsulated message (message/rfc822): its body was parsed into bodyAsMessage(), decodedBody() is empty
+        data = content->encodedBody();
+    } else if (!content->contents().empty()) {
+        // Multipart content: save it with its subparts
+        data = content->encodedContent();
+    } else {
+        data = content->decodedBody();
+    }
     qCWarning(MESSAGEVIEWER_LOG) << "Port the encryption/signature handling when saving a KMime::Content.";
 #endif
     QDataStream ds;
