@@ -227,7 +227,7 @@ void AttachmentPropertiesDialog::AttachmentPropertiesDialogPrivate::populateEnco
 void AttachmentPropertiesDialog::AttachmentPropertiesDialogPrivate::populateMimeTypes()
 {
     const QStringList list = QStringList() << u"text/html"_s << u"text/plain"_s << u"image/gif"_s << u"image/jpeg"_s << u"image/png"_s
-                                           << u"application/octet-stream"_s << u"application/x-gunzip"_s << u"application/zip"_s;
+                                           << u"application/octet-stream"_s << u"application/x-gzip"_s << u"application/zip"_s;
 
     ui->mimeType->addItems(list);
 }
