@@ -66,7 +66,7 @@ void AttachmentFromUrlJob::AttachmentLoadJobPrivate::transferJobResult(KJob *job
         const QMimeDatabase db;
         const auto mimeType = db.mimeTypeForName(mimeTypeName);
         if (mimeType.isValid()) {
-            fileName = i18nc("a file called 'unknown.ext'", "unknown%1", mimeType.preferredSuffix());
+            fileName = i18nc("a file called 'unknown.ext'", "unknown.%1", mimeType.preferredSuffix());
         } else {
             fileName = i18nc("a file called 'unknown'", "unknown");
         }
