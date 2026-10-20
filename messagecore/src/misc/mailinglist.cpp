@@ -259,28 +259,10 @@ static QStringList headerToAddress(const QString &header)
 class Q_DECL_HIDDEN MessageCore::MailingList::MailingListPrivate : public QSharedData
 {
 public:
-    MailingListPrivate()
-        : mFeatures(None)
+    MailingListPrivate() = default;
+    MailingListPrivate(const MailingListPrivate &other) = default;
 
-    {
-    }
-
-    MailingListPrivate(const MailingListPrivate &other)
-        : QSharedData(other)
-    {
-        mFeatures = other.mFeatures;
-        mHandler = other.mHandler;
-        mPostUrls = other.mPostUrls;
-        mSubscribeUrls = other.mSubscribeUrls;
-        mUnsubscribeUrls = other.mUnsubscribeUrls;
-        mHelpUrls = other.mHelpUrls;
-        mArchiveUrls = other.mArchiveUrls;
-        mOwnerUrls = other.mOwnerUrls;
-        mArchivedAtUrls = other.mArchivedAtUrls;
-        mId = other.mId;
-    }
-
-    Features mFeatures;
+    Features mFeatures{None};
     Handler mHandler{KMail};
     QList<QUrl> mPostUrls;
     QList<QUrl> mSubscribeUrls;
@@ -359,14 +341,7 @@ MailingList::MailingList(const MailingList &other)
 
     = default;
 
-MailingList &MailingList::operator=(const MailingList &other)
-{
-    if (this != &other) {
-        d = other.d;
-    }
-
-    return *this;
-}
+MailingList &MailingList::operator=(const MailingList &other) = default;
 
 bool MailingList::operator==(const MailingList &other) const
 {

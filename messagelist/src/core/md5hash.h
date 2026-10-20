@@ -30,16 +30,8 @@ public:
 
         std::memcpy(&data, ba.constData(), sizeof(MD5Hash));
     }
-    inline MD5Hash(const MD5Hash &other)
-    {
-        std::memcpy(&data, &other.data, sizeof(MD5Hash));
-    }
-
-    inline MD5Hash &operator=(const MD5Hash &other)
-    {
-        std::memcpy(&data, &other.data, sizeof(MD5Hash));
-        return *this;
-    }
+    MD5Hash(const MD5Hash &other) = default;
+    MD5Hash &operator=(const MD5Hash &other) = default;
 
     inline bool operator==(MD5Hash other) const
     {
