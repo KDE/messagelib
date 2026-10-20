@@ -114,6 +114,18 @@ static inline const QFont &cachedFont(const Theme::ContentItem *ci, const Item *
     return (!bold && !italic) ? sFontCache[Normal] : (bold && !italic) ? sFontCache[Bold] : (!bold && italic) ? sFontCache[Italic] : sFontCache[BoldItalic];
 }
 
+// Draw on the baseline of the base font: drawText(QRect, ...) uses the ascent of the
+// tallest fallback font in the line (e.g. emoji), which shifts and clips the text (bug 495639)
+static inline int paint_text_on_baseline(QPainter *painter, const QRect &rct, Qt::Alignment alignment, const QString &text)
+{
+    const QFontMetrics fontMetrics = painter->fontMetrics();
+    const int textWidth = fontMetrics.horizontalAdvance(text);
+    const Qt::Alignment visualAlignment = QStyle::visualAlignment(painter->layoutDirection(), alignment);
+    const int x = (visualAlignment & Qt::AlignRight) ? rct.left() + rct.width() - textWidth : rct.left();
+    painter->drawText(QPoint(x, rct.top() + fontMetrics.ascent()), text);
+    return textWidth;
+}
+
 static inline void paint_right_aligned_elided_text(const QString &text,
                                                    Theme::ContentItem *ci,
                                                    QPainter *painter,
@@ -128,20 +140,20 @@ static inline void paint_right_aligned_elided_text(const QString &text,
     const int w = right - left;
     const QString elidedText = fontMetrics.elidedText(text, layoutDir == Qt::LeftToRight ? Qt::ElideLeft : Qt::ElideRight, w);
     const QRect rct(left, top, w, sFontHeightCache);
-    QRect outRct;
+    int textWidth = 0;
 
     if (ci->softenByBlending()) {
         const qreal oldOpacity = painter->opacity();
         painter->setOpacity(0.6);
-        painter->drawText(rct, Qt::AlignTop | Qt::AlignRight | Qt::TextSingleLine, elidedText, &outRct);
+        textWidth = paint_text_on_baseline(painter, rct, Qt::AlignRight, elidedText);
         painter->setOpacity(oldOpacity);
     } else {
-        painter->drawText(rct, Qt::AlignTop | Qt::AlignRight | Qt::TextSingleLine, elidedText, &outRct);
+        textWidth = paint_text_on_baseline(painter, rct, Qt::AlignRight, elidedText);
     }
     if (layoutDir == Qt::LeftToRight) {
-        right -= outRct.width() + gHorizontalItemSpacing;
+        right -= textWidth + gHorizontalItemSpacing;
     } else {
-        left += outRct.width() + gHorizontalItemSpacing;
+        left += textWidth + gHorizontalItemSpacing;
     }
 }
 
@@ -182,19 +194,19 @@ static inline void paint_left_aligned_elided_text(const QString &text,
     const int w = right - left;
     const QString elidedText = fontMetrics.elidedText(text, layoutDir == Qt::LeftToRight ? Qt::ElideRight : Qt::ElideLeft, w);
     const QRect rct(left, top, w, sFontHeightCache);
-    QRect outRct;
+    int textWidth = 0;
     if (ci->softenByBlending()) {
         const qreal oldOpacity = painter->opacity();
         painter->setOpacity(0.6);
-        painter->drawText(rct, Qt::AlignTop | Qt::AlignLeft | Qt::TextSingleLine, elidedText, &outRct);
+        textWidth = paint_text_on_baseline(painter, rct, Qt::AlignLeft, elidedText);
         painter->setOpacity(oldOpacity);
     } else {
-        painter->drawText(rct, Qt::AlignTop | Qt::AlignLeft | Qt::TextSingleLine, elidedText, &outRct);
+        textWidth = paint_text_on_baseline(painter, rct, Qt::AlignLeft, elidedText);
     }
     if (layoutDir == Qt::LeftToRight) {
-        left += outRct.width() + gHorizontalItemSpacing;
+        left += textWidth + gHorizontalItemSpacing;
     } else {
-        right -= outRct.width() + gHorizontalItemSpacing;
+        right -= textWidth + gHorizontalItemSpacing;
     }
 }
 
