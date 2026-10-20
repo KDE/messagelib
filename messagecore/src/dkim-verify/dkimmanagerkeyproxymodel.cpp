@@ -62,3 +62,5 @@ void DKIMManagerKeyProxyModel::setFilterText(const QString &newFilterText)
 #endif
     }
 }
+
+#include "moc_dkimmanagerkeyproxymodel.cpp"

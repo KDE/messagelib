@@ -11,6 +11,7 @@ namespace MessageCore
 {
 class MESSAGECORE_EXPORT DKIMManagerKeyProxyModel : public QSortFilterProxyModel
 {
+    Q_OBJECT
 public:
     explicit DKIMManagerKeyProxyModel(QObject *parent = nullptr);
     ~DKIMManagerKeyProxyModel() override;
