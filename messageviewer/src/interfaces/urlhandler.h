@@ -14,7 +14,7 @@
 class QString;
 class QPoint;
 
-namespace MessasgeViewer
+namespace MessageViewer
 {
 class ViewerPrivate;
 }
