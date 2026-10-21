@@ -5,11 +5,11 @@
 */
 
 #include "webengineaccesskeyutils.h"
-
+using namespace Qt::Literals::StringLiterals;
 QString WebEngineViewer::WebEngineAccessKeyUtils::accessKeyScript()
 {
-    const QString script = QString::fromLatin1(
-        "(function() {"
+    const QString script =
+        u"(function() {"
         "var out = [];"
         "var matches = document.querySelectorAll(\"a[href], area,button:not([disabled]), "
         "input:not([disabled]):not([hidden]),label[for],legend,select:not([disabled]),textarea:not([disabled])\");"
@@ -24,6 +24,6 @@ QString WebEngineViewer::WebEngineAccessKeyUtils::accessKeyScript()
         "       target: matches[i].getAttribute('target')"
         "       });"
         "}"
-        "return out;})()");
+        "return out;})()"_s;
     return script;
 }
