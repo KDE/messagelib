@@ -21,7 +21,6 @@ TextMessagePartRenderer::~TextMessagePartRenderer() = default;
 
 bool TextMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr &msgPart, HtmlWriter *htmlWriter, RenderContext *context) const
 {
-    Q_UNUSED(context)
     auto mp = msgPart.dynamicCast<MimeTreeParser::TextMessagePart>();
     if (!mp) {
         return false;
@@ -34,7 +33,6 @@ bool TextMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr &msgPa
     if (context->displayHint(msgPart) != MimeTreeParser::NoIcon) {
         return context->renderWithFactory<MimeTreeParser::AttachmentMessagePart>(mp, htmlWriter);
     }
-    KTextTemplate::Template t;
     KTextTemplate::Context c = MessagePartRendererManager::self()->createContext();
     c.insert(u"block"_s, msgPart.data());
     c.insert(u"showOnlyOneMimePart"_s, context->showOnlyOneMimePart());
@@ -42,7 +40,7 @@ bool TextMessagePartRenderer::render(const MimeTreeParser::MessagePartPtr &msgPa
                  context->renderSubParts(mp, htmlWriter);
              }));
 
-    t = MessagePartRendererManager::self()->loadByName(u"textmessagepart.html"_s);
+    KTextTemplate::Template t = MessagePartRendererManager::self()->loadByName(u"textmessagepart.html"_s);
     KTextTemplate::OutputStream s(htmlWriter->stream());
     t->render(&s, &c);
     return true;
