@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-21 00:52+0000\n"
 "PO-Revision-Date: 2024-08-02 08:06+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -65,9 +65,11 @@ msgid "Could not open %1 for reading."
 msgstr "Kunde inte öppna %1 för läsning."
 
 #: attachment/attachmentfromurljob.cpp:69
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "a file called 'unknown.ext'"
+#| msgid "unknown%1"
 msgctxt "a file called 'unknown.ext'"
-msgid "unknown%1"
+msgid "unknown.%1"
 msgstr "okänd%1"
 
 #: attachment/attachmentfromurljob.cpp:71

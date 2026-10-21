@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecore\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-21 00:52+0000\n"
 "PO-Revision-Date: 2026-10-06 11:10+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -65,9 +65,11 @@ msgid "Could not open %1 for reading."
 msgstr "Kon %1 niet openen om te lezen."
 
 #: attachment/attachmentfromurljob.cpp:69
-#, kde-format
+#, fuzzy, kde-format
+#| msgctxt "a file called 'unknown.ext'"
+#| msgid "unknown%1"
 msgctxt "a file called 'unknown.ext'"
-msgid "unknown%1"
+msgid "unknown.%1"
 msgstr "onbekend%1"
 
 #: attachment/attachmentfromurljob.cpp:71

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mimos\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-21 00:52+0000\n"
 "PO-Revision-Date: 2005-11-23 18:09+0800\n"
 "Last-Translator: MIMOS <opensource@mimos.my>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -1686,8 +1686,8 @@ msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "Tandatangan"
 
-#: utils/messageviewerutil.cpp:383 utils/messageviewerutil.cpp:406
-#: utils/messageviewerutil.cpp:424 utils/messageviewerutil.cpp:547
+#: utils/messageviewerutil.cpp:392 utils/messageviewerutil.cpp:415
+#: utils/messageviewerutil.cpp:433 utils/messageviewerutil.cpp:556
 #, fuzzy, kde-kuit-format
 #| msgctxt "%2 is detailed error description"
 #| msgid ""
@@ -1701,101 +1701,101 @@ msgstr ""
 "Fail tidak dapat ditulis %1:\n"
 "%2"
 
-#: utils/messageviewerutil.cpp:386 utils/messageviewerutil.cpp:395
+#: utils/messageviewerutil.cpp:395 utils/messageviewerutil.cpp:404
 #, fuzzy, kde-format
 #| msgid "has an attachment"
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "ada lampiran"
 
-#: utils/messageviewerutil.cpp:394 utils/messageviewerutil.cpp:504
+#: utils/messageviewerutil.cpp:403 utils/messageviewerutil.cpp:513
 #, kde-format, kde-kuit-format
 msgctxt "1 = error string"
 msgid "Could not create temporary file: <message>%1</message>"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:409 utils/messageviewerutil.cpp:427
+#: utils/messageviewerutil.cpp:418 utils/messageviewerutil.cpp:436
 #, fuzzy, kde-format
 #| msgid "has an attachment"
 msgid "Error saving attachment"
 msgstr "ada lampiran"
 
-#: utils/messageviewerutil.cpp:440
+#: utils/messageviewerutil.cpp:449
 #, kde-format
 msgid "Found no attachments to save."
 msgstr "Tidak menemui lampiran untuk disimpan."
 
-#: utils/messageviewerutil.cpp:456
+#: utils/messageviewerutil.cpp:465
 #, fuzzy, kde-format
 #| msgid "0 messages"
 msgid "message"
 msgstr "0 mesej"
 
-#: utils/messageviewerutil.cpp:478
+#: utils/messageviewerutil.cpp:487
 #, kde-format
 msgid "Mailbox file (*.mbox);;All Files (*)"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:488
+#: utils/messageviewerutil.cpp:497
 #, fuzzy, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
 msgstr[0] "_n: 1 mesej, %2."
 msgstr[1] "_n: 1 mesej, %2."
 
-#: utils/messageviewerutil.cpp:505 utils/messageviewerutil.cpp:516
-#: utils/messageviewerutil.cpp:550
+#: utils/messageviewerutil.cpp:514 utils/messageviewerutil.cpp:525
+#: utils/messageviewerutil.cpp:559
 #, fuzzy, kde-format
 #| msgid "Moving messages"
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Mengalihkan mesej"
 
-#: utils/messageviewerutil.cpp:514
+#: utils/messageviewerutil.cpp:523
 #, fuzzy, kde-format
 #| msgid "Store sent messages encry&pted"
 msgid "File %1 could not be loaded."
 msgstr "Stor mesej yang dihantar dalam bentuk &disulitkan"
 
-#: utils/messageviewerutil.cpp:514
+#: utils/messageviewerutil.cpp:523
 #, fuzzy, kde-format
 #| msgid "Error while uploading message"
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Ralat semasa memuat naik mesej"
 
-#: utils/messageviewerutil.cpp:516
+#: utils/messageviewerutil.cpp:525
 #, fuzzy, kde-format
 #| msgid "Store sent messages encry&pted"
 msgid "File %1 could not be created."
 msgstr "Stor mesej yang dihantar dalam bentuk &disulitkan"
 
-#: utils/messageviewerutil.cpp:523
+#: utils/messageviewerutil.cpp:532
 #, fuzzy, kde-format
 #| msgid "End of signed message"
 msgid "We cannot append message to mbox."
 msgstr "Penghujung mesej bertandatangan"
 
-#: utils/messageviewerutil.cpp:523 utils/messageviewerutil.cpp:530
+#: utils/messageviewerutil.cpp:532 utils/messageviewerutil.cpp:539
 #, fuzzy, kde-format
 #| msgid "Moving messages"
 msgid "Error saving message"
 msgstr "Mengalihkan mesej"
 
-#: utils/messageviewerutil.cpp:530
+#: utils/messageviewerutil.cpp:539
 #, fuzzy, kde-format
 #| msgid "End of signed message"
 msgid "We cannot save message."
 msgstr "Penghujung mesej bertandatangan"
 
-#: utils/messageviewerutil.cpp:596
+#: utils/messageviewerutil.cpp:605
 #, fuzzy, kde-format
 #| msgid " Line: %1 "
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "Baris: %1 "
 
-#: utils/messageviewerutil.cpp:607
+#: utils/messageviewerutil.cpp:616
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "

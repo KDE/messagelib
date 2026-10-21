@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-21 00:52+0000\n"
 "PO-Revision-Date: 2026-09-22 00:13+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -1558,8 +1558,8 @@ msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "保留簽章"
 
-#: utils/messageviewerutil.cpp:383 utils/messageviewerutil.cpp:406
-#: utils/messageviewerutil.cpp:424 utils/messageviewerutil.cpp:547
+#: utils/messageviewerutil.cpp:392 utils/messageviewerutil.cpp:415
+#: utils/messageviewerutil.cpp:433 utils/messageviewerutil.cpp:556
 #, kde-kuit-format
 msgctxt "1 = file name, 2 = error string"
 msgid ""
@@ -1567,89 +1567,89 @@ msgid ""
 "qt>"
 msgstr "<qt>無法寫入檔案<br /><filename>%1</filename><br /><br />%2</qt>"
 
-#: utils/messageviewerutil.cpp:386 utils/messageviewerutil.cpp:395
+#: utils/messageviewerutil.cpp:395 utils/messageviewerutil.cpp:404
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "儲存附件時發生錯誤"
 
-#: utils/messageviewerutil.cpp:394 utils/messageviewerutil.cpp:504
+#: utils/messageviewerutil.cpp:403 utils/messageviewerutil.cpp:513
 #, kde-format, kde-kuit-format
 msgctxt "1 = error string"
 msgid "Could not create temporary file: <message>%1</message>"
 msgstr "無法建立暫存檔：<message>%1</message>"
 
-#: utils/messageviewerutil.cpp:409 utils/messageviewerutil.cpp:427
+#: utils/messageviewerutil.cpp:418 utils/messageviewerutil.cpp:436
 #, kde-format
 msgid "Error saving attachment"
 msgstr "儲存附件時發生錯誤"
 
-#: utils/messageviewerutil.cpp:440
+#: utils/messageviewerutil.cpp:449
 #, kde-format
 msgid "Found no attachments to save."
 msgstr "找不到附檔"
 
-#: utils/messageviewerutil.cpp:456
+#: utils/messageviewerutil.cpp:465
 #, kde-format
 msgid "message"
 msgstr "信件"
 
-#: utils/messageviewerutil.cpp:478
+#: utils/messageviewerutil.cpp:487
 #, kde-format
 msgid "Mailbox file (*.mbox);;All Files (*)"
 msgstr "Mailbox 檔案 (*.mbox);;所有檔案 (*)"
 
-#: utils/messageviewerutil.cpp:488
+#: utils/messageviewerutil.cpp:497
 #, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
 msgstr[0] "儲存信件"
 
-#: utils/messageviewerutil.cpp:505 utils/messageviewerutil.cpp:516
-#: utils/messageviewerutil.cpp:550
+#: utils/messageviewerutil.cpp:514 utils/messageviewerutil.cpp:525
+#: utils/messageviewerutil.cpp:559
 #, kde-format
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "儲存信件時發生錯誤"
 
-#: utils/messageviewerutil.cpp:514
+#: utils/messageviewerutil.cpp:523
 #, kde-format
 msgid "File %1 could not be loaded."
 msgstr "檔案 %1 無法被載入。"
 
-#: utils/messageviewerutil.cpp:514
+#: utils/messageviewerutil.cpp:523
 #, kde-format
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "載入信件時發生錯誤"
 
-#: utils/messageviewerutil.cpp:516
+#: utils/messageviewerutil.cpp:525
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "檔案 %1 無法被建立。"
 
-#: utils/messageviewerutil.cpp:523
+#: utils/messageviewerutil.cpp:532
 #, kde-format
 msgid "We cannot append message to mbox."
 msgstr "無法將信件加入 mbox。"
 
-#: utils/messageviewerutil.cpp:523 utils/messageviewerutil.cpp:530
+#: utils/messageviewerutil.cpp:532 utils/messageviewerutil.cpp:539
 #, kde-format
 msgid "Error saving message"
 msgstr "儲存信件時發生錯誤"
 
-#: utils/messageviewerutil.cpp:530
+#: utils/messageviewerutil.cpp:539
 #, kde-format
 msgid "We cannot save message."
 msgstr "無法儲存信件。"
 
-#: utils/messageviewerutil.cpp:596
+#: utils/messageviewerutil.cpp:605
 #, kde-format
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "已刪除：%1"
 
-#: utils/messageviewerutil.cpp:607
+#: utils/messageviewerutil.cpp:616
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "

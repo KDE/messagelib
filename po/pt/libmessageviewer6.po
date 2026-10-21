@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-21 00:52+0000\n"
 "PO-Revision-Date: 2023-03-08 09:12+0000\n"
 "Last-Translator: Pedro Morais <morais@kde.org>\n"
 "Language-Team: pt <kde-i18n-pt@kde.org>\n"
@@ -1671,8 +1671,8 @@ msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "Manter Assinatura"
 
-#: utils/messageviewerutil.cpp:383 utils/messageviewerutil.cpp:406
-#: utils/messageviewerutil.cpp:424 utils/messageviewerutil.cpp:547
+#: utils/messageviewerutil.cpp:392 utils/messageviewerutil.cpp:415
+#: utils/messageviewerutil.cpp:433 utils/messageviewerutil.cpp:556
 #, kde-kuit-format
 msgctxt "1 = file name, 2 = error string"
 msgid ""
@@ -1682,89 +1682,89 @@ msgstr ""
 "<qt>Não foi possível gravar o ficheiro<br/><filename>%1</filename><br/><br/>"
 "%2</qt>"
 
-#: utils/messageviewerutil.cpp:386 utils/messageviewerutil.cpp:395
+#: utils/messageviewerutil.cpp:395 utils/messageviewerutil.cpp:404
 #, fuzzy, kde-format
 #| msgid "Error saving attachment"
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "Erro ao gravar o anexo"
 
-#: utils/messageviewerutil.cpp:394 utils/messageviewerutil.cpp:504
+#: utils/messageviewerutil.cpp:403 utils/messageviewerutil.cpp:513
 #, kde-format, kde-kuit-format
 msgctxt "1 = error string"
 msgid "Could not create temporary file: <message>%1</message>"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:409 utils/messageviewerutil.cpp:427
+#: utils/messageviewerutil.cpp:418 utils/messageviewerutil.cpp:436
 #, kde-format
 msgid "Error saving attachment"
 msgstr "Erro ao gravar o anexo"
 
-#: utils/messageviewerutil.cpp:440
+#: utils/messageviewerutil.cpp:449
 #, kde-format
 msgid "Found no attachments to save."
 msgstr "Não foram encontrados anexos para gravar."
 
-#: utils/messageviewerutil.cpp:456
+#: utils/messageviewerutil.cpp:465
 #, kde-format
 msgid "message"
 msgstr "mensagem"
 
-#: utils/messageviewerutil.cpp:478
+#: utils/messageviewerutil.cpp:487
 #, fuzzy, kde-format
 #| msgid "email messages (*.mbox);;all files (*)"
 msgid "Mailbox file (*.mbox);;All Files (*)"
 msgstr "mensagens de e-mail (*.mbox);;todos os ficheiros (*)"
 
-#: utils/messageviewerutil.cpp:488
+#: utils/messageviewerutil.cpp:497
 #, kde-format
 msgid "Save Message"
 msgid_plural "Save Messages"
 msgstr[0] "Gravar a Mensagem"
 msgstr[1] "Gravar as Mensagens"
 
-#: utils/messageviewerutil.cpp:505 utils/messageviewerutil.cpp:516
-#: utils/messageviewerutil.cpp:550
+#: utils/messageviewerutil.cpp:514 utils/messageviewerutil.cpp:525
+#: utils/messageviewerutil.cpp:559
 #, fuzzy, kde-format
 #| msgid "Error saving message"
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "Erro ao gravar a mensagem"
 
-#: utils/messageviewerutil.cpp:514
+#: utils/messageviewerutil.cpp:523
 #, kde-format
 msgid "File %1 could not be loaded."
 msgstr "Não foi possível carregar o ficheiro %1."
 
-#: utils/messageviewerutil.cpp:514
+#: utils/messageviewerutil.cpp:523
 #, fuzzy, kde-format
 #| msgid "Error loading message"
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "Erro ao carregar a mensagem"
 
-#: utils/messageviewerutil.cpp:516
+#: utils/messageviewerutil.cpp:525
 #, kde-format
 msgid "File %1 could not be created."
 msgstr "Não foi possível criar o ficheiro %1."
 
-#: utils/messageviewerutil.cpp:523
+#: utils/messageviewerutil.cpp:532
 #, fuzzy, kde-format
 #| msgid "We cannot save message."
 msgid "We cannot append message to mbox."
 msgstr "Não é possível gravar a mensagem."
 
-#: utils/messageviewerutil.cpp:523 utils/messageviewerutil.cpp:530
+#: utils/messageviewerutil.cpp:532 utils/messageviewerutil.cpp:539
 #, kde-format
 msgid "Error saving message"
 msgstr "Erro ao gravar a mensagem"
 
-#: utils/messageviewerutil.cpp:530
+#: utils/messageviewerutil.cpp:539
 #, kde-format
 msgid "We cannot save message."
 msgstr "Não é possível gravar a mensagem."
 
-#: utils/messageviewerutil.cpp:596
+#: utils/messageviewerutil.cpp:605
 #, fuzzy, kde-format
 #| msgid "Delete Key"
 #| msgid_plural "Delete Keys"
@@ -1772,7 +1772,7 @@ msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr "Apagar a Chave"
 
-#: utils/messageviewerutil.cpp:607
+#: utils/messageviewerutil.cpp:616
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "

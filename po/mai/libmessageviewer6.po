@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-21 00:52+0000\n"
 "PO-Revision-Date: 2010-09-24 16:29+0530\n"
 "Last-Translator: Rajesh Ranjan <rajesh672@gmail.com>\n"
 "Language-Team: Maithili <bhashaghar@googlegroups.com>\n"
@@ -1569,8 +1569,8 @@ msgctxt "@action:button"
 msgid "Keep Signature"
 msgstr "विवरण देखाबू"
 
-#: utils/messageviewerutil.cpp:383 utils/messageviewerutil.cpp:406
-#: utils/messageviewerutil.cpp:424 utils/messageviewerutil.cpp:547
+#: utils/messageviewerutil.cpp:392 utils/messageviewerutil.cpp:415
+#: utils/messageviewerutil.cpp:433 utils/messageviewerutil.cpp:556
 #, kde-kuit-format
 msgctxt "1 = file name, 2 = error string"
 msgid ""
@@ -1578,42 +1578,42 @@ msgid ""
 "qt>"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:386 utils/messageviewerutil.cpp:395
+#: utils/messageviewerutil.cpp:395 utils/messageviewerutil.cpp:404
 #, fuzzy, kde-format
 #| msgid "Save Attachment"
 msgctxt "@title:window"
 msgid "Error saving attachment"
 msgstr "संलग्नक सहेजू"
 
-#: utils/messageviewerutil.cpp:394 utils/messageviewerutil.cpp:504
+#: utils/messageviewerutil.cpp:403 utils/messageviewerutil.cpp:513
 #, kde-format, kde-kuit-format
 msgctxt "1 = error string"
 msgid "Could not create temporary file: <message>%1</message>"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:409 utils/messageviewerutil.cpp:427
+#: utils/messageviewerutil.cpp:418 utils/messageviewerutil.cpp:436
 #, fuzzy, kde-format
 #| msgid "Save Attachment"
 msgid "Error saving attachment"
 msgstr "संलग्नक सहेजू"
 
-#: utils/messageviewerutil.cpp:440
+#: utils/messageviewerutil.cpp:449
 #, kde-format
 msgid "Found no attachments to save."
 msgstr ""
 
-#: utils/messageviewerutil.cpp:456
+#: utils/messageviewerutil.cpp:465
 #, fuzzy, kde-format
 #| msgid "Save As..."
 msgid "message"
 msgstr "एहन सहेजू..."
 
-#: utils/messageviewerutil.cpp:478
+#: utils/messageviewerutil.cpp:487
 #, kde-format
 msgid "Mailbox file (*.mbox);;All Files (*)"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:488
+#: utils/messageviewerutil.cpp:497
 #, fuzzy, kde-format
 #| msgid "Save As..."
 msgid "Save Message"
@@ -1621,55 +1621,55 @@ msgid_plural "Save Messages"
 msgstr[0] "एहन सहेजू..."
 msgstr[1] "एहन सहेजू..."
 
-#: utils/messageviewerutil.cpp:505 utils/messageviewerutil.cpp:516
-#: utils/messageviewerutil.cpp:550
+#: utils/messageviewerutil.cpp:514 utils/messageviewerutil.cpp:525
+#: utils/messageviewerutil.cpp:559
 #, fuzzy, kde-format
 #| msgid "Save Attachment"
 msgctxt "@title:window"
 msgid "Error saving message"
 msgstr "संलग्नक सहेजू"
 
-#: utils/messageviewerutil.cpp:514
+#: utils/messageviewerutil.cpp:523
 #, kde-format
 msgid "File %1 could not be loaded."
 msgstr ""
 
-#: utils/messageviewerutil.cpp:514
+#: utils/messageviewerutil.cpp:523
 #, fuzzy, kde-format
 #| msgid "Save As..."
 msgctxt "@title:window"
 msgid "Error loading message"
 msgstr "एहन सहेजू..."
 
-#: utils/messageviewerutil.cpp:516
+#: utils/messageviewerutil.cpp:525
 #, kde-format
 msgid "File %1 could not be created."
 msgstr ""
 
-#: utils/messageviewerutil.cpp:523
+#: utils/messageviewerutil.cpp:532
 #, fuzzy, kde-format
 #| msgid "Save As..."
 msgid "We cannot append message to mbox."
 msgstr "एहन सहेजू..."
 
-#: utils/messageviewerutil.cpp:523 utils/messageviewerutil.cpp:530
+#: utils/messageviewerutil.cpp:532 utils/messageviewerutil.cpp:539
 #, kde-format
 msgid "Error saving message"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:530
+#: utils/messageviewerutil.cpp:539
 #, fuzzy, kde-format
 #| msgid "Save As..."
 msgid "We cannot save message."
 msgstr "एहन सहेजू..."
 
-#: utils/messageviewerutil.cpp:596
+#: utils/messageviewerutil.cpp:605
 #, kde-format
 msgctxt "Argument is the original name of the deleted attachment"
 msgid "Deleted: %1"
 msgstr ""
 
-#: utils/messageviewerutil.cpp:607
+#: utils/messageviewerutil.cpp:616
 #, kde-format
 msgid ""
 "You deleted an attachment from this message. The original MIME headers for "
