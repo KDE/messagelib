@@ -21,12 +21,15 @@ using namespace MessageViewer;
 DKIMManagerKeyWidget::DKIMManagerKeyWidget(QWidget *parent)
     : QWidget(parent)
     , mDKIMManagerKeyTreeView(new DKIMManagerKeyTreeView(this))
+    , mModel(new MessageCore::DKIMManagerKeyModel(this))
 {
     auto mainLayout = new QVBoxLayout(this);
     mainLayout->setObjectName("mainlayout"_L1);
     mainLayout->setContentsMargins({});
 
     mDKIMManagerKeyTreeView->setObjectName("mDKIMManagerKeyTreeView"_L1);
+
+    mDKIMManagerKeyTreeView->setKeyModel(mModel);
 
     auto searchLineEdit = new QLineEdit(this);
     KLineEditEventHandler::catchReturnKey(searchLineEdit);
@@ -53,9 +56,7 @@ void DKIMManagerKeyWidget::restoreHeaders(const QByteArray &header)
 
 void DKIMManagerKeyWidget::loadKeys()
 {
-    auto model = new MessageCore::DKIMManagerKeyModel(this);
-    model->setKeyInfos(MessageCore::DKIMManagerKey::self()->keys());
-    mDKIMManagerKeyTreeView->setKeyModel(model);
+    mModel->setKeyInfos(MessageCore::DKIMManagerKey::self()->keys());
 }
 
 void DKIMManagerKeyWidget::saveKeys()

@@ -7,6 +7,11 @@
 
 #include "messageviewer_export.h"
 #include <QWidget>
+namespace MessageCore
+{
+class DKIMManagerKeyModel;
+}
+
 namespace MessageViewer
 {
 class DKIMManagerKeyTreeView;
@@ -46,5 +51,6 @@ public:
 
 private:
     DKIMManagerKeyTreeView *const mDKIMManagerKeyTreeView;
+    MessageCore::DKIMManagerKeyModel *const mModel;
 };
 }
