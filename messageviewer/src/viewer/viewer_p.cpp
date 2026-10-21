@@ -1624,7 +1624,7 @@ void ViewerPrivate::createActions()
     mFindInMessageAction = new QAction(QIcon::fromTheme(u"edit-find"_s), i18n("&Find in Message..."), this);
     ac->addAction(u"find_in_messages"_s, mFindInMessageAction);
     connect(mFindInMessageAction, &QAction::triggered, this, &ViewerPrivate::slotFind);
-    ac->setDefaultShortcut(mFindInMessageAction, KStandardShortcut::find().first());
+    ac->setDefaultShortcuts(mFindInMessageAction, KStandardShortcut::find());
 
     mShareServiceUrlMenu = mShareServiceManager->menu();
     ac->addAction(u"shareservice_menu"_s, mShareServiceUrlMenu);
