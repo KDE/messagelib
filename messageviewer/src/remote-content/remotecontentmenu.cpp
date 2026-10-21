@@ -20,6 +20,7 @@ RemoteContentMenu::RemoteContentMenu(QWidget *parent)
 {
     setTitle(i18n("Remote Content"));
     connect(this, &QMenu::aboutToShow, this, &RemoteContentMenu::updateMenu);
+    connect(mConfigureRemoteContentAction, &QAction::triggered, this, &RemoteContentMenu::slotConfigure);
 }
 
 RemoteContentMenu::~RemoteContentMenu() = default;
@@ -67,7 +68,6 @@ void RemoteContentMenu::updateMenu()
         mListAction << addSeparator();
     }
     addAction(mConfigureRemoteContentAction);
-    connect(mConfigureRemoteContentAction, &QAction::triggered, this, &RemoteContentMenu::slotConfigure);
 }
 
 void RemoteContentMenu::authorize(const QString &url)
