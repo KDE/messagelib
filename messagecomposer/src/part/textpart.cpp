@@ -13,7 +13,7 @@ class TextPart::TextPartPrivate
 public:
     TextPartPrivate() = default;
 
-    KPIMTextEdit::ImageList embeddedImages;
+    EmbeddedImageList embeddedImages;
     QString cleanPlainText;
     QString wrappedPlainText;
     QString cleanHtml;
@@ -109,12 +109,12 @@ bool TextPart::hasEmbeddedImages() const
     return !d->embeddedImages.isEmpty();
 }
 
-KPIMTextEdit::ImageList TextPart::embeddedImages() const
+EmbeddedImageList TextPart::embeddedImages() const
 {
     return d->embeddedImages;
 }
 
-void TextPart::setEmbeddedImages(const KPIMTextEdit::ImageList &images)
+void TextPart::setEmbeddedImages(const EmbeddedImageList &images)
 {
     d->embeddedImages = images;
 }

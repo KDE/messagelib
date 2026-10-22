@@ -35,7 +35,7 @@ public:
     [[nodiscard]] bool encodeTexts();
     [[nodiscard]] SinglepartJob *createPlainTextJob();
     [[nodiscard]] SinglepartJob *createHtmlJob();
-    [[nodiscard]] SinglepartJob *createImageJob(const QSharedPointer<KPIMTextEdit::EmbeddedImage> &image);
+    [[nodiscard]] SinglepartJob *createImageJob(const EmbeddedImage &image);
 
     const TextPart *textPart = nullptr;
     QByteArray chosenCharset;
@@ -112,23 +112,33 @@ SinglepartJob *MainTextJobPrivate::createHtmlJob()
     auto cjob = new SinglepartJob; // No parent.
     cjob->contentType()->setMimeType("text/html");
     cjob->contentType()->setCharset(chosenCharset);
-    const QByteArray data = KPIMTextEdit::RichTextComposerImages::imageNamesToContentIds(encodedHtml, textPart->embeddedImages());
+    QByteArray data = encodedHtml;
+    const auto images = textPart->embeddedImages();
+    for (const auto &image : images) {
+        // HTML is encoded as UTF-8 above. Quote the name to avoid replacing a
+        // name which is only a substring of another image's name.
+        if (!image.imageName.isEmpty()) {
+            const QByteArray oldName = '"' + image.imageName.toUtf8() + '"';
+            const QByteArray newName = '"' + QByteArray("cid:") + image.contentID.toLatin1() + '"';
+            data.replace(oldName, newName);
+        }
+    }
     cjob->setData(data);
     // TODO standard recommends Content-ID.
     return cjob;
 }
 
-SinglepartJob *MainTextJobPrivate::createImageJob(const QSharedPointer<KPIMTextEdit::EmbeddedImage> &image)
+SinglepartJob *MainTextJobPrivate::createImageJob(const EmbeddedImage &image)
 {
     // The image is a PNG encoded with base64.
     auto cjob = new SinglepartJob; // No parent.
     cjob->contentType()->setMimeType("image/png");
-    cjob->contentType()->setName(image->imageName);
+    cjob->contentType()->setName(image.imageName);
     cjob->contentTransferEncoding()->setEncoding(KMime::Headers::CEbase64);
     cjob->setDataIsEncoded(true); // It is already encoded.
-    cjob->contentID()->setIdentifier(image->contentID.toLatin1());
+    cjob->contentID()->setIdentifier(image.contentID.toLatin1());
     qCDebug(MESSAGECOMPOSER_LOG) << "cid" << cjob->contentID()->identifier();
-    cjob->setData(image->image);
+    cjob->setData(image.image);
     return cjob;
 }
 
@@ -196,7 +206,7 @@ void MainTextJob::doStart()
             multipartJob->setMultipartSubtype("related");
             multipartJob->appendSubjob(alternativeJob);
             const auto embeddedImages = d->textPart->embeddedImages();
-            for (const QSharedPointer<KPIMTextEdit::EmbeddedImage> &image : embeddedImages) {
+            for (const auto &image : embeddedImages) {
                 multipartJob->appendSubjob(d->createImageJob(image));
             }
             appendSubjob(multipartJob);

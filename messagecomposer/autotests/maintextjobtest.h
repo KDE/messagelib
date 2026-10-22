@@ -26,4 +26,6 @@ private Q_SLOTS:
     // html tests:
     void testHtml();
     void testHtmlWithImages();
+    void testEmbeddedImageData_data();
+    void testEmbeddedImageData();
 };

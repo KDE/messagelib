@@ -215,17 +215,15 @@ void MainTextJobTest::testHtmlWithImages()
     auto composerJob = new ComposerJob;
     composerJob->globalPart()->setGuiEnabled(false);
     auto textPart = new TextPart;
+    editor.fillComposerTextPart(textPart);
     textPart->setWordWrappingEnabled(false);
-    textPart->setCleanPlainText(editor.composerControler()->toCleanPlainText());
-    textPart->setCleanHtml(editor.composerControler()->toCleanHtml());
-    // only get once, are regenerated on call with new contentID each time
-    const KPIMTextEdit::ImageList images = editor.composerControler()->composerImages()->embeddedImages();
+    QVERIFY(textPart->cleanPlainText().contains(data));
+    const EmbeddedImageList images = textPart->embeddedImages();
     QCOMPARE(images.count(), 2);
-    const QString cid1 = images[0]->contentID;
-    const QString cid2 = images[1]->contentID;
-    const QString name1 = images[0]->imageName;
-    const QString name2 = images[1]->imageName;
-    textPart->setEmbeddedImages(images);
+    const QString cid1 = images[0].contentID;
+    const QString cid2 = images[1].contentID;
+    const QString name1 = images[0].imageName;
+    const QString name2 = images[1].imageName;
     auto mjob = new MainTextJob(textPart, composerJob);
     QVERIFY(mjob->exec());
     const auto result = mjob->takeContent();
@@ -247,7 +245,7 @@ void MainTextJobTest::testHtmlWithImages()
             {
                 Content *plain = alternative->contents().at(0);
                 QCOMPARE(plain->contentType()->mimeType(), QByteArray("text/plain"));
-                QCOMPARE(QString::fromLatin1(plain->body()), data);
+                QCOMPARE(QString::fromLatin1(plain->body()), textPart->cleanPlainText());
             }
             // text/html
             {
@@ -285,6 +283,43 @@ void MainTextJobTest::testHtmlWithImages()
     }
     delete textPart;
     delete composerJob;
+}
+
+void MainTextJobTest::testEmbeddedImageData_data()
+{
+    QTest::addColumn<QString>("imageName");
+    QTest::newRow("ascii") << u"image.png"_s;
+    QTest::newRow("unicode") << u"café-日本語.png"_s;
+}
+
+void MainTextJobTest::testEmbeddedImageData()
+{
+    QFETCH(QString, imageName);
+
+    const QByteArray pngData = QByteArray::fromHex("89504e470d0a1a0a");
+    TextPart textPart;
+    textPart.setWordWrappingEnabled(false);
+    textPart.setCleanPlainText(u"An embedded image"_s);
+    textPart.setCleanHtml(u"<img src=\"%1\"><img src=\"prefix-%1\"><img src=\"cid:existing\">"_s.arg(imageName));
+    textPart.setEmbeddedImages({{pngData.toBase64(), u"image@example.org"_s, imageName}});
+
+    MainTextJob job(&textPart);
+    QVERIFY(job.exec());
+    const auto result = job.takeContent();
+    result->assemble();
+    QCOMPARE(result->contentType()->mimeType(), QByteArray("multipart/related"));
+    QCOMPARE(result->contents().size(), 2);
+    const auto alternative = result->contents().at(0);
+    QCOMPARE(alternative->contentType()->mimeType(), QByteArray("multipart/alternative"));
+    QCOMPARE(alternative->contents().size(), 2);
+    const auto html = alternative->contents().at(1);
+    QCOMPARE(html->decodedBody(), u"<img src=\"cid:image@example.org\"><img src=\"prefix-%1\"><img src=\"cid:existing\">"_s.arg(imageName).toUtf8());
+    const auto image = result->contents().at(1);
+    QCOMPARE(image->contentType()->mimeType(), QByteArray("image/png"));
+    QCOMPARE(image->contentType()->name(), imageName);
+    QCOMPARE(image->contentID()->identifier(), QByteArray("image@example.org"));
+    QCOMPARE(image->contentTransferEncoding()->encoding(), KMime::Headers::CEbase64);
+    QCOMPARE(image->decodedBody(), pngData);
 }
 
 #include "moc_maintextjobtest.cpp"

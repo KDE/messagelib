@@ -8,9 +8,9 @@
 
 #include <QString>
 
+#include "embeddedimage.h"
 #include "messagecomposer_export.h"
 #include "messagepart.h"
-#include <KPIMTextEdit/RichTextComposerImages>
 
 #include <memory>
 
@@ -38,7 +38,7 @@ class MESSAGECOMPOSER_EXPORT TextPart : public MessagePart
     Q_PROPERTY(QString cleanHtml READ cleanHtml WRITE setCleanHtml NOTIFY cleanHtmlChanged)
     Q_PROPERTY(bool isHtmlUsed READ isHtmlUsed NOTIFY cleanHtmlChanged)
     Q_PROPERTY(bool hasEmbeddedImages READ hasEmbeddedImages NOTIFY embeddedImagesChanged)
-    Q_PROPERTY(KPIMTextEdit::ImageList embeddedImages READ embeddedImages WRITE setEmbeddedImages NOTIFY embeddedImagesChanged)
+    Q_PROPERTY(MessageComposer::EmbeddedImageList embeddedImages READ embeddedImages WRITE setEmbeddedImages NOTIFY embeddedImagesChanged)
 
 public:
     /*! \brief Constructs a TextPart.
@@ -88,11 +88,11 @@ public:
     /*! \brief Returns whether the message has embedded images. */
     [[nodiscard]] bool hasEmbeddedImages() const;
     /*! \brief Returns the list of embedded images. */
-    [[nodiscard]] KPIMTextEdit::ImageList embeddedImages() const;
+    [[nodiscard]] EmbeddedImageList embeddedImages() const;
     /*! \brief Sets the list of embedded images.
         \param images The list of images to embed.
     */
-    void setEmbeddedImages(const KPIMTextEdit::ImageList &images);
+    void setEmbeddedImages(const EmbeddedImageList &images);
 
 Q_SIGNALS:
     /*! \brief Emitted when the word wrapping setting changes. */

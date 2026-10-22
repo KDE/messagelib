@@ -293,7 +293,13 @@ void RichTextComposerNg::fillComposerTextPart(MessageComposer::TextPart *textPar
         textPart->setCleanHtml(cleanHtml);
         // qDebug() << " cleanHtml  grantlee builder" << cleanHtml;
         // qDebug() << " d->toCleanHtml() " << d->toCleanHtml();
-        textPart->setEmbeddedImages(composerControler()->composerImages()->embeddedImages());
+        const auto editorImages = composerControler()->composerImages()->embeddedImages();
+        EmbeddedImageList images;
+        images.reserve(editorImages.size());
+        for (const auto &image : editorImages) {
+            images.append({image->image, image->contentID, image->imageName});
+        }
+        textPart->setEmbeddedImages(images);
     }
 }
 

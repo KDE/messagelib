@@ -236,6 +236,7 @@ target_sources(
         part/infopart.h
         part/itippart.h
         part/textpart.h
+        part/embeddedimage.h
         part/messagepart.h
         part/globalpart.h
         sender/akonadisender.h
@@ -504,6 +505,7 @@ ecm_generate_headers(MessageComposer_Camelcasesettings_HEADERS
 
 ecm_generate_headers(MessageComposer_Camelcasepart_HEADERS
     HEADER_NAMES
+    EmbeddedImage
     TextPart
     GlobalPart
     InfoPart
