@@ -55,3 +55,9 @@ add_akonadi_isolated_test(SOURCE urlhandlermanagertest.cpp ADDITIONAL_SOURCES ut
     KF6::CalendarCore
     KPim6::WebEngineViewer
 )
+
+ecm_add_test(mailwebengineviewtest.cpp
+    TEST_NAME mailwebengineviewtest
+    LINK_LIBRARIES KPim6::MessageViewer KPim6::WebEngineViewer Qt::Test KF6::XmlGui
+)
+target_include_directories(mailwebengineviewtest PRIVATE ${CMAKE_CURRENT_BINARY_DIR}/../src)

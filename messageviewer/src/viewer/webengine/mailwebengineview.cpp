@@ -206,6 +206,7 @@ void MailWebEngineView::forwardMouseReleaseEvent(QMouseEvent *event)
     }
     if (!d->mStartedDrag && d->mHoveredUrl.isValid()) {
         Q_EMIT d->mPageEngine->urlClicked(d->mHoveredUrl);
+        event->accept();
     }
     d->mStartedDrag = false;
     d->mCanStartDrag = false;
