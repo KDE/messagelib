@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessageviewer6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-21 00:52+0000\n"
+"POT-Creation-Date: 2026-10-22 00:51+0000\n"
 "PO-Revision-Date: 2026-09-23 11:11+0200\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -240,7 +240,7 @@ msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "Schlüssel löschen"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:35
+#: dkim-verify/dkimmanagerkeywidget.cpp:38
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search..."
@@ -915,12 +915,12 @@ msgstr "Einrichten"
 msgid "Remote Content"
 msgstr "Entfernter Inhalt"
 
-#: remote-content/remotecontentmenu.cpp:51
+#: remote-content/remotecontentmenu.cpp:52
 #, kde-format
 msgid "Authorize %1"
 msgstr "%1 autorisieren"
 
-#: remote-content/remotecontentmenu.cpp:59
+#: remote-content/remotecontentmenu.cpp:60
 #, kde-format
 msgid "Authorize all Urls"
 msgstr "Alle URLs autorisieren"

@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-21 00:52+0000\n"
+"POT-Creation-Date: 2026-10-22 00:51+0000\n"
 "PO-Revision-Date: 2026-10-12 11:37+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -241,7 +241,7 @@ msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "Anahtarları Sil"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:35
+#: dkim-verify/dkimmanagerkeywidget.cpp:38
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search..."
@@ -916,12 +916,12 @@ msgstr "Yapılandır"
 msgid "Remote Content"
 msgstr "Uzak İçerik"
 
-#: remote-content/remotecontentmenu.cpp:51
+#: remote-content/remotecontentmenu.cpp:52
 #, kde-format
 msgid "Authorize %1"
 msgstr "%1 Kimliğini Doğrula"
 
-#: remote-content/remotecontentmenu.cpp:59
+#: remote-content/remotecontentmenu.cpp:60
 #, kde-format
 msgid "Authorize all Urls"
 msgstr "Tüm URL’lerin Kimliğini Doğrula"

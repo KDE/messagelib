@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-21 00:52+0000\n"
+"POT-Creation-Date: 2026-10-22 00:51+0000\n"
 "PO-Revision-Date: 2021-08-13 01:49+0530\n"
 "Last-Translator: Raghavendra Kamath <raghu@raghukamath.com>\n"
 "Language-Team: kde-hindi\n"
@@ -247,7 +247,7 @@ msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "मिटाएँ"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:35
+#: dkim-verify/dkimmanagerkeywidget.cpp:38
 #, fuzzy, kde-format
 #| msgid "Search"
 msgctxt "@info:placeholder"
@@ -990,12 +990,12 @@ msgstr "के-मेल कॉन्फ़िगर करें..."
 msgid "Remote Content"
 msgstr "टैम्प्लेट सामग्री"
 
-#: remote-content/remotecontentmenu.cpp:51
+#: remote-content/remotecontentmenu.cpp:52
 #, kde-format
 msgid "Authorize %1"
 msgstr ""
 
-#: remote-content/remotecontentmenu.cpp:59
+#: remote-content/remotecontentmenu.cpp:60
 #, kde-format
 msgid "Authorize all Urls"
 msgstr ""

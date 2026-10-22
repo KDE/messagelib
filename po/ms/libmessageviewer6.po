@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Mimos\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-21 00:52+0000\n"
+"POT-Creation-Date: 2026-10-22 00:51+0000\n"
 "PO-Revision-Date: 2005-11-23 18:09+0800\n"
 "Last-Translator: MIMOS <opensource@mimos.my>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -265,7 +265,7 @@ msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "Dihapuskan"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:35
+#: dkim-verify/dkimmanagerkeywidget.cpp:38
 #, fuzzy, kde-format
 msgctxt "@info:placeholder"
 msgid "Search..."
@@ -993,12 +993,12 @@ msgstr "&Konfigur KMail..."
 msgid "Remote Content"
 msgstr "Kandungan &folder"
 
-#: remote-content/remotecontentmenu.cpp:51
+#: remote-content/remotecontentmenu.cpp:52
 #, kde-format
 msgid "Authorize %1"
 msgstr ""
 
-#: remote-content/remotecontentmenu.cpp:59
+#: remote-content/remotecontentmenu.cpp:60
 #, kde-format
 msgid "Authorize all Urls"
 msgstr ""

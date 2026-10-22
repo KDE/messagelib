@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-21 00:52+0000\n"
+"POT-Creation-Date: 2026-10-22 00:51+0000\n"
 "PO-Revision-Date: 2025-06-21 13:08+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -241,7 +241,7 @@ msgctxt "@title:window"
 msgid "Delete Keys"
 msgstr "Dzēst atslēgas"
 
-#: dkim-verify/dkimmanagerkeywidget.cpp:35
+#: dkim-verify/dkimmanagerkeywidget.cpp:38
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Search..."
@@ -916,12 +916,12 @@ msgstr "Konfigurēt"
 msgid "Remote Content"
 msgstr "Tiešsaistes saturs"
 
-#: remote-content/remotecontentmenu.cpp:51
+#: remote-content/remotecontentmenu.cpp:52
 #, kde-format
 msgid "Authorize %1"
 msgstr "Autorizēt %1"
 
-#: remote-content/remotecontentmenu.cpp:59
+#: remote-content/remotecontentmenu.cpp:60
 #, kde-format
 msgid "Authorize all Urls"
 msgstr "Autorizēt visas URL"

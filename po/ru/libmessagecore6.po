@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-21 00:52+0000\n"
-"PO-Revision-Date: 2026-10-06 08:28+0200\n"
+"PO-Revision-Date: 2026-10-21 16:02+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Basealt Translation Team\n"
 "Language: ru\n"
@@ -71,12 +71,10 @@ msgid "Could not open %1 for reading."
 msgstr "Не удалось открыть %1 для чтения."
 
 #: attachment/attachmentfromurljob.cpp:69
-#, fuzzy, kde-format
-#| msgctxt "a file called 'unknown.ext'"
-#| msgid "unknown%1"
+#, kde-format
 msgctxt "a file called 'unknown.ext'"
 msgid "unknown.%1"
-msgstr "неизвестный%1"
+msgstr "неизвестный.%1"
 
 # [https://bugs.kde.org/show_bug.cgi?id=268376] filed -> file --aspotashev
 #: attachment/attachmentfromurljob.cpp:71
