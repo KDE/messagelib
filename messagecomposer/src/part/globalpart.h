@@ -32,13 +32,6 @@ public:
     /*! \brief Destroys the GlobalPart. */
     ~GlobalPart() override;
 
-    // default true
-    /*! \brief Returns whether the GUI is enabled for user interaction. */
-    [[nodiscard]] bool isGuiEnabled() const;
-    /*! \brief Sets whether the GUI is enabled.
-        \param enabled True to enable GUI.
-    */
-    void setGuiEnabled(bool enabled);
     /*! \brief Returns the parent widget for GUI operations. */
     [[nodiscard]] QWidget *parentWidgetForGui() const;
     /*! \brief Sets the parent widget for GUI operations.

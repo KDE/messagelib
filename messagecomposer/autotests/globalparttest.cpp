@@ -17,7 +17,6 @@ GlobalPartTest::~GlobalPartTest() = default;
 void GlobalPartTest::shouldHaveDefaultValue()
 {
     MessageComposer::GlobalPart globalpart;
-    QVERIFY(globalpart.isGuiEnabled());
     QVERIFY(!globalpart.parentWidgetForGui());
     QVERIFY(!globalpart.MDNRequested());
     QVERIFY(!globalpart.requestDeleveryConfirmation());

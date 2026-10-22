@@ -14,7 +14,6 @@ public:
     GlobalPartPrivate() = default;
 
     QWidget *parentWidgetForGui = nullptr;
-    bool guiEnabled = true;
     bool MDNRequested = false;
     bool requestDeleveryConfirmation = false;
 };
@@ -26,16 +25,6 @@ GlobalPart::GlobalPart(QObject *parent)
 }
 
 GlobalPart::~GlobalPart() = default;
-
-bool GlobalPart::isGuiEnabled() const
-{
-    return d->guiEnabled;
-}
-
-void GlobalPart::setGuiEnabled(bool enabled)
-{
-    d->guiEnabled = enabled;
-}
 
 QWidget *GlobalPart::parentWidgetForGui() const
 {

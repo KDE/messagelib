@@ -16,7 +16,6 @@
 #include <KPIMTextEdit/RichTextComposerControler>
 #include <KPIMTextEdit/RichTextComposerImages>
 #include <MessageComposer/ComposerJob>
-#include <MessageComposer/GlobalPart>
 #include <MessageComposer/MainTextJob>
 #include <MessageComposer/RichTextComposerNg>
 #include <MessageComposer/TextPart>
@@ -37,7 +36,6 @@ void MainTextJobTest::initTestCase()
 void MainTextJobTest::testPlainText()
 {
     ComposerJob composerJob;
-    composerJob.globalPart()->setGuiEnabled(false);
     auto textPart = std::make_unique<TextPart>();
     const QString data = u"they said their never they slept their dream"_s;
     textPart->setWrappedPlainText(data);
@@ -56,7 +54,6 @@ void MainTextJobTest::testWrappingErrors()
 {
     {
         ComposerJob composerJob;
-        composerJob.globalPart()->setGuiEnabled(false);
         auto textPart = std::make_unique<TextPart>();
         const QString data = u"they said their never they slept their dream"_s;
         textPart->setWordWrappingEnabled(false);
@@ -67,7 +64,6 @@ void MainTextJobTest::testWrappingErrors()
     }
     {
         ComposerJob composerJob;
-        composerJob.globalPart()->setGuiEnabled(false);
         auto textPart = std::make_unique<TextPart>();
         textPart->setWordWrappingEnabled(true);
         const QString data = u"they said their never they slept their dream"_s;
@@ -81,7 +77,6 @@ void MainTextJobTest::testWrappingErrors()
 void MainTextJobTest::testCustomCharset()
 {
     ComposerJob composerJob;
-    composerJob.globalPart()->setGuiEnabled(false);
     auto textPart = std::make_unique<TextPart>();
     const QString data = u"şi el o să se-nchidă cu o frunză de pelin"_s;
     textPart->setWrappedPlainText(data);
@@ -102,7 +97,6 @@ void MainTextJobTest::testCustomCharset()
 void MainTextJobTest::testNoCharset()
 {
     ComposerJob composerJob;
-    composerJob.globalPart()->setGuiEnabled(false);
     auto textPart = std::make_unique<TextPart>();
     const QString data = u"do you still play the accordion?"_s;
     textPart->setWrappedPlainText(data);
@@ -116,7 +110,6 @@ void MainTextJobTest::testNoCharset()
 void MainTextJobTest::testBadCharset()
 {
     ComposerJob composerJob;
-    composerJob.globalPart()->setGuiEnabled(false);
     auto textPart = std::make_unique<TextPart>();
     const QString data = u"el a plâns peste ţară cu lacrima limbii noastre"_s;
     textPart->setWrappedPlainText(data);
@@ -130,7 +123,6 @@ void MainTextJobTest::testBadCharset()
 void MainTextJobTest::testFallbackCharset()
 {
     ComposerJob composerJob;
-    composerJob.globalPart()->setGuiEnabled(false);
     auto textPart = std::make_unique<TextPart>();
     const QString data = u"and when he falleth..."_s;
     textPart->setWrappedPlainText(data);
@@ -154,7 +146,6 @@ void MainTextJobTest::testHtml()
     QVERIFY(editor.composerControler()->isFormattingUsed());
 
     auto composerJob = new ComposerJob;
-    composerJob->globalPart()->setGuiEnabled(false);
     auto textPart = std::make_unique<TextPart>();
     textPart->setWordWrappingEnabled(false);
     textPart->setCleanPlainText(editor.composerControler()->toCleanPlainText());
@@ -213,7 +204,6 @@ void MainTextJobTest::testHtmlWithImages()
     editor.composerControler()->composerImages()->addImage(QUrl::fromLocalFile(image2Path));
 
     auto composerJob = new ComposerJob;
-    composerJob->globalPart()->setGuiEnabled(false);
     auto textPart = new TextPart;
     textPart->setWordWrappingEnabled(false);
     textPart->setCleanPlainText(editor.composerControler()->toCleanPlainText());
