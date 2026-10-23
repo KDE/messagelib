@@ -219,7 +219,10 @@ void SearchLineStatus::slotInsertCommand(const QString &command)
 void SearchLineStatus::loadSearchLineCommand()
 {
     for (int i = SearchLineCommand::SearchLineType::To; i <= SearchLineCommand::SearchLineType::Category; ++i) {
-        mCommandLineListCompletion.append(SearchLineCommand::generateCommandText(static_cast<SearchLineCommand::SearchLineType>(i)));
+        const QString result = SearchLineCommand::generateCommandText(static_cast<SearchLineCommand::SearchLineType>(i));
+        if (!result.isEmpty()) {
+            mCommandLineListCompletion.append(result);
+        }
     }
 }
 

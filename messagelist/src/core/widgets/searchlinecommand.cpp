@@ -485,8 +485,10 @@ QDebug operator<<(QDebug d, const MessageList::Core::SearchLineCommand::SearchLi
 
 QString SearchLineCommand::generateCommandText(SearchLineCommand::SearchLineType type)
 {
-    bool needSpace = SearchLineCommand::mustBeUnique(type);
-    return SearchLineCommand::searchLineTypeToString(type) + (needSpace ? u" "_s : u":"_s);
+    const bool needSpace = SearchLineCommand::mustBeUnique(type);
+    const QString str = SearchLineCommand::searchLineTypeToString(type);
+
+    return str.isEmpty() ? QString() : str + (needSpace ? u" "_s : u":"_s);
 }
 
 QDebug operator<<(QDebug d, const MessageList::Core::SearchLineCommand &command)
