@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: libmessagecore\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-21 00:52+0000\n"
-"PO-Revision-Date: 2026-10-07 15:41+0200\n"
+"PO-Revision-Date: 2026-10-22 13:32+0200\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -70,12 +70,10 @@ msgid "Could not open %1 for reading."
 msgstr "Impossibile aprire %1 in lettura."
 
 #: attachment/attachmentfromurljob.cpp:69
-#, fuzzy, kde-format
-#| msgctxt "a file called 'unknown.ext'"
-#| msgid "unknown%1"
+#, kde-format
 msgctxt "a file called 'unknown.ext'"
 msgid "unknown.%1"
-msgstr "sconosciuto%1"
+msgstr "sconosciuto.%1"
 
 #: attachment/attachmentfromurljob.cpp:71
 #, kde-format

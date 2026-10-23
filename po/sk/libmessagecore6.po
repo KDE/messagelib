@@ -61,12 +61,10 @@ msgid "Could not open %1 for reading."
 msgstr "Nepodarilo sa otvoriť %1 pre čítanie."
 
 #: attachment/attachmentfromurljob.cpp:69
-#, fuzzy, kde-format
-#| msgctxt "a file called 'unknown.ext'"
-#| msgid "unknown%1"
+#, kde-format
 msgctxt "a file called 'unknown.ext'"
 msgid "unknown.%1"
-msgstr "neznáme%1"
+msgstr "neznáme.%1"
 
 #: attachment/attachmentfromurljob.cpp:71
 #, kde-format
@@ -259,27 +257,27 @@ msgstr "Podpísať túto prílohu"
 #: dkim-verify/dkimmanagerkeymodel.cpp:82
 #, kde-format
 msgid "DKIM Key"
-msgstr ""
+msgstr "Kľúč DKIM"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:84
 #, kde-format
 msgid "Selector"
-msgstr ""
+msgstr "Selektor"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:86
 #, kde-format
 msgid "SDID"
-msgstr ""
+msgstr "SDID"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:88
 #, kde-format
 msgid "Inserted"
-msgstr ""
+msgstr "Vložené"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:90
 #, kde-format
 msgid "Last Used"
-msgstr ""
+msgstr "Naposledy použité"
 
 #. i18n: ectx: whatsthis, entry (OverrideCharacterEncoding), group (Reader)
 #: settings/messagecore.kcfg:25

@@ -1032,6 +1032,9 @@ msgid ""
 "but make it look different from the address it really points to. This is "
 "often the case in scam emails."
 msgstr ""
+"Text tohto odkazu obsahuje neviditeľné znaky, ktoré sa nezobrazujú, ale "
+"spôsobujú, že vyzerá inak ako adresa, na ktorú v skutočnosti odkazuje. To je "
+"často prípad podvodných e-mailov."
 
 #: scamdetection/scamdetectionwebengine.cpp:264
 #, kde-format
