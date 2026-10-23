@@ -99,6 +99,7 @@ void AttachmentFromPublicKeyJob::doStart()
     const GpgME::Error error = job->start(QStringList(d->fingerprint));
     if (error) {
         d->emitGpgError(error);
+        job->deleteLater();
         // TODO check autodeletion policy of Kleo::Jobs...
         return;
     } else if (uiDelegate()) {
