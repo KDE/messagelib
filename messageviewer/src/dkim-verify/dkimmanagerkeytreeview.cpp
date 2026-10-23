@@ -73,7 +73,7 @@ void DKIMManagerKeyTreeView::slotCustomContextMenuRequested(const QPoint &pos)
     if (index.isValid()) {
         if (selectedItemCount == 1) {
             menu.addAction(QIcon::fromTheme(u"edit-copy"_s), i18n("Copy Key"), this, [index, this]() {
-                QApplication::clipboard()->setText(mManagerKeyModel->index(index.row()).data(MessageCore::DKIMManagerKeyModel::KeyRole).toString());
+                QApplication::clipboard()->setText(mManagerKeyModel->index(index.row(), MessageCore::DKIMManagerKeyModel::KeyRole).data().toString());
             });
             menu.addSeparator();
         }
