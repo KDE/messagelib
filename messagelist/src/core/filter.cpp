@@ -158,7 +158,6 @@ void Filter::setCurrentFolder(const Akonadi::Collection &folder)
 
 QList<SearchLineCommand::SearchLineInfo> Filter::searchLineCommands() const
 {
-    const QString text = mSearchString;
     QList<SearchLineCommand::SearchLineInfo> infos;
     if (mOptions & SearchMessageByButtons::SearchAgainstBody) {
         SearchLineCommand::SearchLineInfo i{
@@ -300,7 +299,7 @@ QList<SearchLineCommand::SearchLineInfo> Filter::searchLineCommands() const
     }
 #endif
     SearchLineCommand command;
-    command.parseSearchLineCommand(text);
+    command.parseSearchLineCommand(mSearchString);
     infos += command.searchLineInfo();
     return infos;
 }
