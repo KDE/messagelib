@@ -592,7 +592,7 @@ void Filter::setSearchString(const QString &search, SearchMessageByButtons::Sear
     }
     bool needToSplitString = false;
     QString newStr = mSearchString;
-    if (mSearchString.startsWith(u'"') && mSearchString.startsWith(u'"')) {
+    if (mSearchString.startsWith(u'"') && mSearchString.endsWith(u'"') && newStr.length() >= 2) {
         newStr.remove(0, 1);
         newStr.remove(newStr.length() - 1, 1);
         mSearchList = QStringList() << newStr;
