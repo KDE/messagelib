@@ -56,13 +56,12 @@ TemplatesConfiguration::TemplatesConfiguration(QWidget *parent, const QString &n
         "<p>The message templates support substitution commands, "
         "either simply type them or select them from "
         "the <i>Insert command</i> menu.</p>");
-    const QString templateConfigurationName(name);
-    if (templateConfigurationName == "folder-templates"_L1) {
+    if (name == "folder-templates"_L1) {
         d->mHelpString += i18n(
             "<p>Templates specified here are folder-specific. "
             "They override both global templates and per-identity "
             "templates.</p>");
-    } else if (templateConfigurationName == "identity-templates"_L1) {
+    } else if (name == "identity-templates"_L1) {
         d->mHelpString += i18n(
             "<p>Templates specified here are identity-specific. "
             "They override global templates, but can be overridden by "
