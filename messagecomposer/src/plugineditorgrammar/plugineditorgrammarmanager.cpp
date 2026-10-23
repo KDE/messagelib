@@ -12,7 +12,6 @@
 #include <KPluginMetaData>
 #include <PimCommon/CustomToolsPlugin>
 #include <PimCommon/PluginUtil>
-#include <QFileInfo>
 
 using namespace MessageComposer;
 using namespace Qt::Literals::StringLiterals;
@@ -23,7 +22,6 @@ public:
     PluginEditorGrammarInfo() = default;
 
     TextAddonsWidgets::PluginUtilData pluginData;
-    QString metaDataFileNameBaseName;
     QString metaDataFileName;
     KPluginMetaData data;
     PimCommon::CustomToolsPlugin *plugin = nullptr;
@@ -97,7 +95,6 @@ void PluginEditorGrammarManagerPrivate::initializePlugins()
                                                                                         info.pluginData.mEnableByDefault,
                                                                                         info.pluginData.mIdentifier);
         info.isEnabled = isPluginActivated;
-        info.metaDataFileNameBaseName = QFileInfo(data.fileName()).baseName();
         info.metaDataFileName = data.fileName();
         info.data = data;
         if (pluginEditorGrammarVersion() == data.version()) {

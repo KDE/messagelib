@@ -11,7 +11,6 @@
 #include <KPluginFactory>
 #include <KPluginMetaData>
 #include <PimCommon/PluginUtil>
-#include <QFileInfo>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace MessageComposer;
@@ -23,7 +22,6 @@ public:
 
     KPluginMetaData data;
     TextAddonsWidgets::PluginUtilData pluginData;
-    QString metaDataFileNameBaseName;
     QString metaDataFileName;
     PluginEditorCheckBeforeSend *plugin = nullptr;
     bool isEnabled = true;
@@ -95,7 +93,6 @@ void PluginEditorCheckBeforeSendManagerPrivate::initializePlugins()
                                                                                         info.pluginData.mEnableByDefault,
                                                                                         info.pluginData.mIdentifier);
         info.isEnabled = isPluginActivated;
-        info.metaDataFileNameBaseName = QFileInfo(data.fileName()).baseName();
         info.metaDataFileName = data.fileName();
         info.data = data;
         if (pluginVersion() == data.version()) {
