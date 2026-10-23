@@ -23,7 +23,6 @@ public:
     MailNetworkUrlInterceptorPluginInfo() = default;
 
     KPluginMetaData data;
-    QString metaDataFileNameBaseName;
     QString metaDataFileName;
     TextAddonsWidgets::PluginUtilData pluginData;
     WebEngineViewer::NetworkPluginUrlInterceptor *plugin = nullptr;
@@ -97,7 +96,6 @@ void NetworkUrlInterceptorPluginManagerPrivate::initializePluginList()
                                                                                         info.pluginData.mEnableByDefault,
                                                                                         info.pluginData.mIdentifier);
         info.isEnabled = isPluginActivated;
-        info.metaDataFileNameBaseName = QFileInfo(data.fileName()).baseName();
         info.metaDataFileName = data.fileName();
         info.data = data;
 

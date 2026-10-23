@@ -129,8 +129,9 @@ bool WebEngineAccessKeyPrivate::checkForAccessKey(QKeyEvent *event)
     }
     const QChar key = text.at(0).toUpper();
     bool handled = false;
-    if (mAccessKeyNodes.contains(key)) {
-        WebEngineViewer::WebEngineAccessKeyAnchor element = mAccessKeyNodes.value(key);
+    const auto it = mAccessKeyNodes.constFind(key);
+    if (it != mAccessKeyNodes.constEnd()) {
+        const WebEngineViewer::WebEngineAccessKeyAnchor element = *it;
         if (element.tagName().compare("A"_L1, Qt::CaseInsensitive) == 0) {
             const QString linkKey(linkElementKey(element, mWebEngine->url()));
             if (!linkKey.isEmpty()) {

@@ -93,13 +93,13 @@ void RemoteContentManager::loadSettings()
         RemoteContentInfo info;
         info.setUrl(url);
         info.setStatus(RemoteContentInfo::RemoteContentInfoStatus::Blocked);
-        mRemoveContentInfo.append(info);
+        mRemoveContentInfo.append(std::move(info));
     }
     for (const QString &url : authorizedUrl) {
         RemoteContentInfo info;
         info.setUrl(url);
         info.setStatus(RemoteContentInfo::RemoteContentInfoStatus::Authorized);
-        mRemoveContentInfo.append(info);
+        mRemoveContentInfo.append(std::move(info));
     }
 }
 
