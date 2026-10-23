@@ -42,7 +42,7 @@ MessagePart::Ptr ApplicationPkcs7MimeBodyPartFormatter::process(Interface::BodyP
         return {};
     }
 
-    const QString smimeType = node->contentType(KMime::CreatePolicy::DontCreate)->parameter("smime-type").toLower();
+    const QString smimeType = ct->parameter("smime-type").toLower();
 
     if (smimeType == "certs-only"_L1) {
         part.processResult()->setNeverDisplayInline(true);
