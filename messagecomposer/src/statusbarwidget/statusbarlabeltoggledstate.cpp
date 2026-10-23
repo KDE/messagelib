@@ -53,7 +53,6 @@ void StatusBarLabelToggledState::updateLabel()
 
 void StatusBarLabelToggledState::mousePressEvent(QMouseEvent *ev)
 {
-    Q_UNUSED(ev)
     if (ev->button() == Qt::LeftButton) {
         setToggleMode(!mToggleMode);
     }
