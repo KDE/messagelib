@@ -211,8 +211,8 @@ void AutocryptHeadersJob::process()
             d->finishOnLastSubJob();
         });
         d->subJobs++;
-        job->start(QStringList(QString::fromLatin1(d->recipientKey.primaryFingerprint())));
         job->setExportFlags(GpgME::Context::ExportMinimal);
+        job->start(QStringList(QString::fromLatin1(d->recipientKey.primaryFingerprint())));
     }
 
     const auto keys = d->gossipKeys;
@@ -253,8 +253,8 @@ void AutocryptHeadersJob::process()
         });
 
         d->subJobs++;
-        gossipJob->start(QStringList(QString::fromLatin1(key.primaryFingerprint())));
         gossipJob->setExportFlags(GpgME::Context::ExportMinimal);
+        gossipJob->start(QStringList(QString::fromLatin1(key.primaryFingerprint())));
     }
     if (d->subJobs == 0) {
         d->resultContent = std::move(d->content);
