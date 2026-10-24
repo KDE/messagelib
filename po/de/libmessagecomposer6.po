@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-24 00:51+0000\n"
 "PO-Revision-Date: 2026-09-22 18:46+0200\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -1505,7 +1505,7 @@ msgstr ""
 "<p>Beim Exportieren des Schlüssels ist ein Fehler aufgetreten:</p><p><b>%1</"
 "b></p>"
 
-#: job/attachmentfrompublickeyjob.cpp:107
+#: job/attachmentfrompublickeyjob.cpp:108
 #, kde-format
 msgid "Exporting key..."
 msgstr "Schlüssel wird exportiert …"
@@ -2268,7 +2268,6 @@ msgid "Date/Time"
 msgstr "Datum/Zeit"
 
 #: snippet/convertsnippetvariablemenu.cpp:104
-#: snippet/convertsnippetvariablemenu.cpp:157
 #, kde-format
 msgid "Day Of Week (%1)"
 msgstr "Wochentag (%1)"
@@ -2347,6 +2346,12 @@ msgstr "Vollständiger Name des Monats (%1)"
 #, kde-format
 msgid "Last Month Name Long (%1)"
 msgstr "Vollständiger Name des letzten Monats (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:157
+#, fuzzy, kde-format
+#| msgid "Day Of Week Name Short (%1)"
+msgid "Day Of Week Number (%1)"
+msgstr "Abgekürzter Wochentag (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:160
 #, kde-format

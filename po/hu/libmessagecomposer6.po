@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-24 00:51+0000\n"
 "PO-Revision-Date: 2025-11-08 22:31+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -1477,7 +1477,7 @@ msgstr ""
 "<p>Hiba történt a kulcsnak a modulból történő exportálásakor:</p><p><b>%1</"
 "b></p>"
 
-#: job/attachmentfrompublickeyjob.cpp:107
+#: job/attachmentfrompublickeyjob.cpp:108
 #, kde-format
 msgid "Exporting key..."
 msgstr "Kulcs exportálása…"
@@ -2237,7 +2237,6 @@ msgid "Date/Time"
 msgstr "Dátum/Idő"
 
 #: snippet/convertsnippetvariablemenu.cpp:104
-#: snippet/convertsnippetvariablemenu.cpp:157
 #, kde-format
 msgid "Day Of Week (%1)"
 msgstr "Hét napja (%1)"
@@ -2316,6 +2315,12 @@ msgstr "Hónap hosszú neve (%1)"
 #, kde-format
 msgid "Last Month Name Long (%1)"
 msgstr "Előző hónap hosszú neve (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:157
+#, fuzzy, kde-format
+#| msgid "Day Of Week Name Short (%1)"
+msgid "Day Of Week Number (%1)"
+msgstr "Hét napjának rövid neve (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:160
 #, kde-format

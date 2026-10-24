@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-24 00:51+0000\n"
 "PO-Revision-Date: 2017-12-15 12:38+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -1554,7 +1554,7 @@ msgid ""
 "p><p><b>%1</b></p>"
 msgstr "<p>Greška u pokušaju izvoženja ključa iz pozadine:</p><p><b>%1</b></p>"
 
-#: job/attachmentfrompublickeyjob.cpp:107
+#: job/attachmentfrompublickeyjob.cpp:108
 #, kde-format
 msgid "Exporting key..."
 msgstr "Izvozim ključ..."
@@ -2331,7 +2331,6 @@ msgid "Date/Time"
 msgstr ""
 
 #: snippet/convertsnippetvariablemenu.cpp:104
-#: snippet/convertsnippetvariablemenu.cpp:157
 #, kde-format
 msgid "Day Of Week (%1)"
 msgstr ""
@@ -2409,6 +2408,11 @@ msgstr ""
 #: snippet/convertsnippetvariablemenu.cpp:154
 #, kde-format
 msgid "Last Month Name Long (%1)"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:157
+#, kde-format
+msgid "Day Of Week Number (%1)"
 msgstr ""
 
 #: snippet/convertsnippetvariablemenu.cpp:160

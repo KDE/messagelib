@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-24 00:51+0000\n"
 "PO-Revision-Date: 2026-09-14 17:10+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -1484,7 +1484,7 @@ msgstr ""
 "<p>Un error occurreva durante que on tentava de exportar le clave ex le  "
 "retro-administration:</p><p><b>%1</b></p>"
 
-#: job/attachmentfrompublickeyjob.cpp:107
+#: job/attachmentfrompublickeyjob.cpp:108
 #, kde-format
 msgid "Exporting key..."
 msgstr "Exportante clave..."
@@ -2246,7 +2246,6 @@ msgid "Date/Time"
 msgstr "Data/Tempore"
 
 #: snippet/convertsnippetvariablemenu.cpp:104
-#: snippet/convertsnippetvariablemenu.cpp:157
 #, kde-format
 msgid "Day Of Week (%1)"
 msgstr "Die de septimana (%1)"
@@ -2325,6 +2324,12 @@ msgstr "Nomine longe de mense (%1)"
 #, kde-format
 msgid "Last Month Name Long (%1)"
 msgstr "Nomine de ultime mense (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:157
+#, fuzzy, kde-format
+#| msgid "Day Of Week Name Short (%1)"
+msgid "Day Of Week Number (%1)"
+msgstr "Nomine breve de Die de septimana (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:160
 #, kde-format

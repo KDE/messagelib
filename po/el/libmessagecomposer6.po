@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-24 00:51+0000\n"
 "PO-Revision-Date: 2024-09-19 17:22+0300\n"
 "Last-Translator: Antonis Geralis <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -1506,7 +1506,7 @@ msgstr ""
 "<p>Παρουσιάστηκε ένα σφάλμα κατά την προσπάθεια εξαγωγής του κλειδιού από το "
 "σύστημα:</p><p><b>%1</b></p>"
 
-#: job/attachmentfrompublickeyjob.cpp:107
+#: job/attachmentfrompublickeyjob.cpp:108
 #, kde-format
 msgid "Exporting key..."
 msgstr "Εξαγωγή κλειδιού..."
@@ -2259,7 +2259,6 @@ msgid "Date/Time"
 msgstr "Ημερομηνία/ώρα"
 
 #: snippet/convertsnippetvariablemenu.cpp:104
-#: snippet/convertsnippetvariablemenu.cpp:157
 #, kde-format
 msgid "Day Of Week (%1)"
 msgstr "Ημέρα της εβδομάδας (%1)"
@@ -2340,6 +2339,12 @@ msgstr "Όνομα μήνα πλήρες (%1)"
 #, kde-format
 msgid "Last Month Name Long (%1)"
 msgstr "Όνομα προηγούμενου μήνα πλήρες (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:157
+#, fuzzy, kde-format
+#| msgid "Day Of Week Name Short (%1)"
+msgid "Day Of Week Number (%1)"
+msgstr "Ημέρα της εβδομάδας όνομα σύντομο (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:160
 #, kde-format

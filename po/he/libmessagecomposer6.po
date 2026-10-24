@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-24 00:51+0000\n"
 "PO-Revision-Date: 2026-08-16 08:03+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -1449,7 +1449,7 @@ msgid ""
 "p><p><b>%1</b></p>"
 msgstr "<p>אירעה שגיאה בניסיון לייצא את המפתח מהמנגנון:</p><p><b>%1</b></p>"
 
-#: job/attachmentfrompublickeyjob.cpp:107
+#: job/attachmentfrompublickeyjob.cpp:108
 #, kde-format
 msgid "Exporting key..."
 msgstr "המפתח מיוצא…"
@@ -2194,7 +2194,6 @@ msgid "Date/Time"
 msgstr "תאריך/שעה"
 
 #: snippet/convertsnippetvariablemenu.cpp:104
-#: snippet/convertsnippetvariablemenu.cpp:157
 #, kde-format
 msgid "Day Of Week (%1)"
 msgstr "היום בשבוע (%1)"
@@ -2273,6 +2272,12 @@ msgstr "שם חודש ארוך (%1)"
 #, kde-format
 msgid "Last Month Name Long (%1)"
 msgstr "שם החודש הקודם ארוך (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:157
+#, fuzzy, kde-format
+#| msgid "Day Of Week Name Short (%1)"
+msgid "Day Of Week Number (%1)"
+msgstr "יום בשבוע קצר (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:160
 #, kde-format

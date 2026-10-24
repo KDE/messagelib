@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-24 00:51+0000\n"
 "PO-Revision-Date: 2026-08-29 21:08+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
@@ -1488,7 +1488,7 @@ msgid ""
 msgstr ""
 "<p>Wystąpił błąd podczas próby eksportu klucza z modułu:</p><p><b>%1</b></p>"
 
-#: job/attachmentfrompublickeyjob.cpp:107
+#: job/attachmentfrompublickeyjob.cpp:108
 #, kde-format
 msgid "Exporting key..."
 msgstr "Eksportowanie klucza..."
@@ -2251,7 +2251,6 @@ msgid "Date/Time"
 msgstr "Data/czas"
 
 #: snippet/convertsnippetvariablemenu.cpp:104
-#: snippet/convertsnippetvariablemenu.cpp:157
 #, kde-format
 msgid "Day Of Week (%1)"
 msgstr "Dzień tygodnia (%1)"
@@ -2330,6 +2329,12 @@ msgstr "Długa nazwa miesiąca (%1)"
 #, kde-format
 msgid "Last Month Name Long (%1)"
 msgstr "Długa nazwa poprzedniego miesiąca (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:157
+#, fuzzy, kde-format
+#| msgid "Day Of Week Name Short (%1)"
+msgid "Day Of Week Number (%1)"
+msgstr "Krótka nazwa dnia tygodnia (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:160
 #, kde-format

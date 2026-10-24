@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-24 00:51+0000\n"
 "PO-Revision-Date: 2026-09-16 16:26+0300\n"
 "Last-Translator: Liudas Ališauskas <liudas@aksioma.lt>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -1393,7 +1393,7 @@ msgid ""
 "p><p><b>%1</b></p>"
 msgstr ""
 
-#: job/attachmentfrompublickeyjob.cpp:107
+#: job/attachmentfrompublickeyjob.cpp:108
 #, kde-format
 msgid "Exporting key..."
 msgstr "Eksportuojamas raktas..."
@@ -2124,7 +2124,6 @@ msgid "Date/Time"
 msgstr ""
 
 #: snippet/convertsnippetvariablemenu.cpp:104
-#: snippet/convertsnippetvariablemenu.cpp:157
 #, kde-format
 msgid "Day Of Week (%1)"
 msgstr ""
@@ -2202,6 +2201,11 @@ msgstr ""
 #: snippet/convertsnippetvariablemenu.cpp:154
 #, kde-format
 msgid "Last Month Name Long (%1)"
+msgstr ""
+
+#: snippet/convertsnippetvariablemenu.cpp:157
+#, kde-format
+msgid "Day Of Week Number (%1)"
 msgstr ""
 
 #: snippet/convertsnippetvariablemenu.cpp:160

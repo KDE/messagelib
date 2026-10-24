@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-24 00:51+0000\n"
 "PO-Revision-Date: 2026-09-15 14:28+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -1425,7 +1425,7 @@ msgid ""
 "p><p><b>%1</b></p>"
 msgstr "<p>從後端匯出金鑰時發生錯誤：</p> <p><b>%1</b></p>"
 
-#: job/attachmentfrompublickeyjob.cpp:107
+#: job/attachmentfrompublickeyjob.cpp:108
 #, kde-format
 msgid "Exporting key..."
 msgstr "匯出金鑰中..."
@@ -2150,7 +2150,6 @@ msgid "Date/Time"
 msgstr "日期/時間"
 
 #: snippet/convertsnippetvariablemenu.cpp:104
-#: snippet/convertsnippetvariablemenu.cpp:157
 #, kde-format
 msgid "Day Of Week (%1)"
 msgstr "星期幾 (%1)"
@@ -2229,6 +2228,12 @@ msgstr "月份長名稱 (%1)"
 #, kde-format
 msgid "Last Month Name Long (%1)"
 msgstr "上個月的月份長名稱 (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:157
+#, fuzzy, kde-format
+#| msgid "Day Of Week Name Short (%1)"
+msgid "Day Of Week Number (%1)"
+msgstr "星期幾的短名稱 (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:160
 #, kde-format

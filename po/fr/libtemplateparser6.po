@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-24 00:51+0000\n"
 "PO-Revision-Date: 2024-05-18 09:49+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -48,7 +48,7 @@ msgctxt "Message->"
 msgid "Forward"
 msgstr "Faire suivre"
 
-#: customtemplates.cpp:80 templatesconfiguration.cpp:77
+#: customtemplates.cpp:80 templatesconfiguration.cpp:76
 #, kde-format
 msgid "<a href=\"whatsthis\">How does this work?</a>"
 msgstr "<a href=\"whatsthis\">Comment est-ce que cela fonctionne ?</a>"
@@ -561,7 +561,7 @@ msgstr ""
 "simplement en les saisissant ou en les sélectionnant depuis le menu "
 "<i>Insérer une commande</i>.</p>"
 
-#: templatesconfiguration.cpp:62
+#: templatesconfiguration.cpp:61
 #, kde-format
 msgid ""
 "<p>Templates specified here are folder-specific. They override both global "
@@ -570,7 +570,7 @@ msgstr ""
 "<p>Les modèles spécifiés ici sont spécifiques à un dossier. Ils écrasent à "
 "la fois les modèles globaux et les modèles par identité.</p>"
 
-#: templatesconfiguration.cpp:67
+#: templatesconfiguration.cpp:66
 #, kde-format
 msgid ""
 "<p>Templates specified here are identity-specific. They override global "
@@ -581,7 +581,7 @@ msgstr ""
 "les modèles globaux mais peuvent être écrasés par des modèles par dossier si "
 "il y en a.</p>"
 
-#: templatesconfiguration.cpp:72
+#: templatesconfiguration.cpp:71
 #, kde-format
 msgid ""
 "<p>These are global (default) templates. They can be overridden by per-"
@@ -590,32 +590,32 @@ msgstr ""
 "<p>Ces modèles sont globaux (par défaut). Ils peuvent être écrasés par des "
 "modèles par identité ou par dossier, si il y en a.</p>"
 
-#: templatesconfiguration.cpp:104
+#: templatesconfiguration.cpp:103
 #, kde-format
 msgid "Do you want to reset current template or all templates to default?"
 msgstr ""
 "Voulez-vous ré-initialiser le modèle actuel ou tous les modèles avec les "
 "valeurs par défaut ?"
 
-#: templatesconfiguration.cpp:105
+#: templatesconfiguration.cpp:104
 #, kde-format
 msgctxt "@title:window"
 msgid "Reset to default"
 msgstr "Ré-initialiser aux valeurs par défaut"
 
-#: templatesconfiguration.cpp:106
+#: templatesconfiguration.cpp:105
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset Current Template"
 msgstr "Ré-initialiser le modèle courant"
 
-#: templatesconfiguration.cpp:107
+#: templatesconfiguration.cpp:106
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset All Templates"
 msgstr "Ré-initialiser tous les modèles"
 
-#: templatesconfiguration.cpp:364
+#: templatesconfiguration.cpp:363
 #, kde-format
 msgid ""
 "Use of \"Reply using plain text\" and \"Reply using HTML text\" in pairs is "

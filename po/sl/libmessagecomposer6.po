@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-24 00:51+0000\n"
 "PO-Revision-Date: 2026-08-16 07:58+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -1480,7 +1480,7 @@ msgid ""
 msgstr ""
 "<p>Med izvažanjem ključa iz zaledja je prišlo do napake:</p><p><b>%1</b></p>"
 
-#: job/attachmentfrompublickeyjob.cpp:107
+#: job/attachmentfrompublickeyjob.cpp:108
 #, kde-format
 msgid "Exporting key..."
 msgstr "Izvažanje ključa …"
@@ -2253,7 +2253,6 @@ msgid "Date/Time"
 msgstr "Datum/Čas"
 
 #: snippet/convertsnippetvariablemenu.cpp:104
-#: snippet/convertsnippetvariablemenu.cpp:157
 #, kde-format
 msgid "Day Of Week (%1)"
 msgstr "Dan v tednu (%1)"
@@ -2332,6 +2331,12 @@ msgstr "Dolgo ime meseca (%1)"
 #, kde-format
 msgid "Last Month Name Long (%1)"
 msgstr "Dolgo ime zadnjega meseca (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:157
+#, fuzzy, kde-format
+#| msgid "Day Of Week Name Short (%1)"
+msgid "Day Of Week Number (%1)"
+msgstr "Kratki dan v tednu (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:160
 #, kde-format

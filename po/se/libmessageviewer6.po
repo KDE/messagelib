@@ -2267,10 +2267,3 @@ msgstr ""
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr ""
-
-#~ msgid "Open &with %1"
-#~ msgstr "Raba %1 &prográmmain"
-
-#~ msgctxt "@item:inmenu Open With, %1 is application name"
-#~ msgid "%1"
-#~ msgstr "%1"

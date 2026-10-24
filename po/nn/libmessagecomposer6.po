@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-24 00:51+0000\n"
 "PO-Revision-Date: 2026-07-05 16:30+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@nuug.no>\n"
@@ -1387,7 +1387,7 @@ msgid ""
 "p><p><b>%1</b></p>"
 msgstr ""
 
-#: job/attachmentfrompublickeyjob.cpp:107
+#: job/attachmentfrompublickeyjob.cpp:108
 #, kde-format
 msgid "Exporting key..."
 msgstr ""
@@ -2097,7 +2097,6 @@ msgid "Date/Time"
 msgstr ""
 
 #: snippet/convertsnippetvariablemenu.cpp:104
-#: snippet/convertsnippetvariablemenu.cpp:157
 #, kde-format
 msgid "Day Of Week (%1)"
 msgstr ""
@@ -2177,6 +2176,11 @@ msgstr ""
 msgid "Last Month Name Long (%1)"
 msgstr ""
 
+#: snippet/convertsnippetvariablemenu.cpp:157
+#, kde-format
+msgid "Day Of Week Number (%1)"
+msgstr ""
+
 #: snippet/convertsnippetvariablemenu.cpp:160
 #, kde-format
 msgid "Day Of Week Name Short (%1)"
@@ -2247,15 +2251,3 @@ msgstr ""
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr ""
-
-#~ msgctxt "@title:menu"
-#~ msgid "&Open With"
-#~ msgstr "&Opna med"
-
-#~ msgctxt "@action:inmenu Open With"
-#~ msgid "&Other..."
-#~ msgstr "&Anna …"
-
-#~ msgctxt "@title:menu"
-#~ msgid "&Open With..."
-#~ msgstr "O&pna med …"

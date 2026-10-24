@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-24 00:51+0000\n"
 "PO-Revision-Date: 2020-05-15 08:18+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -1530,7 +1530,7 @@ msgid ""
 msgstr ""
 "<p>Tekkis viga võtme eksportimisel taustaprogrammist:</p><p><b>%1</b></p>"
 
-#: job/attachmentfrompublickeyjob.cpp:107
+#: job/attachmentfrompublickeyjob.cpp:108
 #, kde-format
 msgid "Exporting key..."
 msgstr "Võtme eksport..."
@@ -2284,7 +2284,6 @@ msgid "Date/Time"
 msgstr "Kuupäev/kellaaeg"
 
 #: snippet/convertsnippetvariablemenu.cpp:104
-#: snippet/convertsnippetvariablemenu.cpp:157
 #, fuzzy, kde-format
 #| msgid "Day Of Week"
 msgid "Day Of Week (%1)"
@@ -2377,6 +2376,12 @@ msgstr "Kuu pikk nimi"
 #| msgid "Month Name Long"
 msgid "Last Month Name Long (%1)"
 msgstr "Kuu pikk nimi"
+
+#: snippet/convertsnippetvariablemenu.cpp:157
+#, fuzzy, kde-format
+#| msgid "Day Of Week Name Short"
+msgid "Day Of Week Number (%1)"
+msgstr "Nädalapäev lühidalt"
 
 #: snippet/convertsnippetvariablemenu.cpp:160
 #, fuzzy, kde-format

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-24 00:51+0000\n"
 "PO-Revision-Date: 2026-08-16 14:17+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -1488,7 +1488,7 @@ msgstr ""
 "<p>Під час спроби експортування ключа за допомогою допоміжної програми "
 "сталася помилка:</p><p><b>%1</b></p>"
 
-#: job/attachmentfrompublickeyjob.cpp:107
+#: job/attachmentfrompublickeyjob.cpp:108
 #, kde-format
 msgid "Exporting key..."
 msgstr "Експортування ключа…"
@@ -2260,7 +2260,6 @@ msgid "Date/Time"
 msgstr "Дата й час"
 
 #: snippet/convertsnippetvariablemenu.cpp:104
-#: snippet/convertsnippetvariablemenu.cpp:157
 #, kde-format
 msgid "Day Of Week (%1)"
 msgstr "День тижня (%1)"
@@ -2339,6 +2338,12 @@ msgstr "Повна назва місяця (%1)"
 #, kde-format
 msgid "Last Month Name Long (%1)"
 msgstr "Повна назва попереднього місяця (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:157
+#, fuzzy, kde-format
+#| msgid "Day Of Week Name Short (%1)"
+msgid "Day Of Week Number (%1)"
+msgstr "Скорочена назва дня тижня (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:160
 #, kde-format

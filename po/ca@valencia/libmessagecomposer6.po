@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-24 00:51+0000\n"
 "PO-Revision-Date: 2026-09-06 17:21+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -1492,7 +1492,7 @@ msgstr ""
 "<p>S'ha produït un error mentre es provava d'exportar la clau des del dorsal:"
 "</p><p><b>%1</b></p>"
 
-#: job/attachmentfrompublickeyjob.cpp:107
+#: job/attachmentfrompublickeyjob.cpp:108
 #, kde-format
 msgid "Exporting key..."
 msgstr "S'està exportant la clau…"
@@ -2263,7 +2263,6 @@ msgid "Date/Time"
 msgstr "Data/hora"
 
 #: snippet/convertsnippetvariablemenu.cpp:104
-#: snippet/convertsnippetvariablemenu.cpp:157
 #, kde-format
 msgid "Day Of Week (%1)"
 msgstr "Dia de la setmana (%1)"
@@ -2342,6 +2341,12 @@ msgstr "Nom llarg del mes (%1)"
 #, kde-format
 msgid "Last Month Name Long (%1)"
 msgstr "Nom llarg de l'últim mes (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:157
+#, fuzzy, kde-format
+#| msgid "Day Of Week Name Short (%1)"
+msgid "Day Of Week Number (%1)"
+msgstr "Nom curt del dia de la setmana (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:160
 #, kde-format

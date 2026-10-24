@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-24 00:51+0000\n"
 "PO-Revision-Date: 2024-12-20 21:53+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -1459,7 +1459,7 @@ msgid ""
 "p><p><b>%1</b></p>"
 msgstr "<p>पृष्ठभागात् कीलं निर्यातयितुं प्रयतमाने त्रुटिः अभवत्:</p><p> <b>%1</b></p>"
 
-#: job/attachmentfrompublickeyjob.cpp:107
+#: job/attachmentfrompublickeyjob.cpp:108
 #, kde-format
 msgid "Exporting key..."
 msgstr "कुञ्जी निर्यातयति..."
@@ -2199,7 +2199,6 @@ msgid "Date/Time"
 msgstr "तिथि/समय"
 
 #: snippet/convertsnippetvariablemenu.cpp:104
-#: snippet/convertsnippetvariablemenu.cpp:157
 #, kde-format
 msgid "Day Of Week (%1)"
 msgstr "सप्ताहस्य दिवसः (%1) ."
@@ -2278,6 +2277,12 @@ msgstr "मासस्य नाम दीर्घः (%1) ."
 #, kde-format
 msgid "Last Month Name Long (%1)"
 msgstr "अन्तिममासस्य नाम दीर्घः (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:157
+#, fuzzy, kde-format
+#| msgid "Day Of Week Name Short (%1)"
+msgid "Day Of Week Number (%1)"
+msgstr "सप्ताहस्य दिवसस्य नाम लघु (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:160
 #, kde-format

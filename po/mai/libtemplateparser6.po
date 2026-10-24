@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtemplateparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-24 00:51+0000\n"
 "PO-Revision-Date: 2010-09-24 16:29+0530\n"
 "Last-Translator: Rajesh Ranjan <rajesh672@gmail.com>\n"
 "Language-Team: Maithili <bhashaghar@googlegroups.com>\n"
@@ -43,7 +43,7 @@ msgctxt "Message->"
 msgid "Forward"
 msgstr "आगाँक तरफ"
 
-#: customtemplates.cpp:80 templatesconfiguration.cpp:77
+#: customtemplates.cpp:80 templatesconfiguration.cpp:76
 #, kde-format
 msgid "<a href=\"whatsthis\">How does this work?</a>"
 msgstr ""
@@ -512,14 +512,14 @@ msgid ""
 "<i>Insert command</i> menu.</p>"
 msgstr ""
 
-#: templatesconfiguration.cpp:62
+#: templatesconfiguration.cpp:61
 #, kde-format
 msgid ""
 "<p>Templates specified here are folder-specific. They override both global "
 "templates and per-identity templates.</p>"
 msgstr ""
 
-#: templatesconfiguration.cpp:67
+#: templatesconfiguration.cpp:66
 #, kde-format
 msgid ""
 "<p>Templates specified here are identity-specific. They override global "
@@ -527,37 +527,37 @@ msgid ""
 "specified.</p>"
 msgstr ""
 
-#: templatesconfiguration.cpp:72
+#: templatesconfiguration.cpp:71
 #, kde-format
 msgid ""
 "<p>These are global (default) templates. They can be overridden by per-"
 "identity templates or per-folder templates if they are specified.</p>"
 msgstr ""
 
-#: templatesconfiguration.cpp:104
+#: templatesconfiguration.cpp:103
 #, kde-format
 msgid "Do you want to reset current template or all templates to default?"
 msgstr ""
 
-#: templatesconfiguration.cpp:105
+#: templatesconfiguration.cpp:104
 #, kde-format
 msgctxt "@title:window"
 msgid "Reset to default"
 msgstr ""
 
-#: templatesconfiguration.cpp:106
+#: templatesconfiguration.cpp:105
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset Current Template"
 msgstr ""
 
-#: templatesconfiguration.cpp:107
+#: templatesconfiguration.cpp:106
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset All Templates"
 msgstr ""
 
-#: templatesconfiguration.cpp:364
+#: templatesconfiguration.cpp:363
 #, kde-format
 msgid ""
 "Use of \"Reply using plain text\" and \"Reply using HTML text\" in pairs is "

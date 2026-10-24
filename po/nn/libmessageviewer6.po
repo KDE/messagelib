@@ -2285,10 +2285,3 @@ msgstr "Dekrypter melding"
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr "Rull oppover i melding"
-
-#~ msgid "Open &with %1"
-#~ msgstr "Opna &med %1"
-
-#~ msgctxt "@item:inmenu Open With, %1 is application name"
-#~ msgid "%1"
-#~ msgstr "%1"

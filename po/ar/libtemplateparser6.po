@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-24 00:51+0000\n"
 "PO-Revision-Date: 2024-10-14 20:31+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -43,7 +43,7 @@ msgctxt "Message->"
 msgid "Forward"
 msgstr "تمرير"
 
-#: customtemplates.cpp:80 templatesconfiguration.cpp:77
+#: customtemplates.cpp:80 templatesconfiguration.cpp:76
 #, kde-format
 msgid "<a href=\"whatsthis\">How does this work?</a>"
 msgstr "<a href=\"whatsthis\">كيف يعمل هذا؟</a>"
@@ -541,7 +541,7 @@ msgstr ""
 "أو عند تمرير الرسائل.</p><p>تدعم قوالب الرسائل أوامر الاستبدال، يمكنك "
 "كتابتها أو اختيارها من قائمة ”أدرِج أمرًا“.</p>"
 
-#: templatesconfiguration.cpp:62
+#: templatesconfiguration.cpp:61
 #, kde-format
 msgid ""
 "<p>Templates specified here are folder-specific. They override both global "
@@ -550,7 +550,7 @@ msgstr ""
 "<p>القوالب المحدّدة هنا خاصّة لكل مجلد. تُلغي هذه القوالب القوالب العمومية "
 "والقوالب الخاصّة لكل هويّة.</p>"
 
-#: templatesconfiguration.cpp:67
+#: templatesconfiguration.cpp:66
 #, kde-format
 msgid ""
 "<p>Templates specified here are identity-specific. They override global "
@@ -560,7 +560,7 @@ msgstr ""
 "<p>القوالب المحدّدة هنا خاصّة لكل هويّة. تُلغي هذه القوالب القوالب العمومية، "
 "ولكن يمكن للقوالب الخاصّة لكل مجلد الكتابة فوقها إن حُدّدت.</p>"
 
-#: templatesconfiguration.cpp:72
+#: templatesconfiguration.cpp:71
 #, kde-format
 msgid ""
 "<p>These are global (default) templates. They can be overridden by per-"
@@ -569,30 +569,30 @@ msgstr ""
 "<p>هذه هي القوالب العمومية (المبدئية). يمكن أن تكتب فوقها القوالب الخاصّة لكل "
 "هوية/مجلد إن حُدّدت.</p>"
 
-#: templatesconfiguration.cpp:104
+#: templatesconfiguration.cpp:103
 #, kde-format
 msgid "Do you want to reset current template or all templates to default?"
 msgstr "أتريد تصفير القالب الحالي إلى المبدئيات، أم كل القوالب؟"
 
-#: templatesconfiguration.cpp:105
+#: templatesconfiguration.cpp:104
 #, kde-format
 msgctxt "@title:window"
 msgid "Reset to default"
 msgstr "التصفير إلى المبدئيات"
 
-#: templatesconfiguration.cpp:106
+#: templatesconfiguration.cpp:105
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset Current Template"
 msgstr "صفّر القالب الحالي"
 
-#: templatesconfiguration.cpp:107
+#: templatesconfiguration.cpp:106
 #, kde-format
 msgctxt "@action:button"
 msgid "Reset All Templates"
 msgstr "صفّر كل القوالب"
 
-#: templatesconfiguration.cpp:364
+#: templatesconfiguration.cpp:363
 #, kde-format
 msgid ""
 "Use of \"Reply using plain text\" and \"Reply using HTML text\" in pairs is "

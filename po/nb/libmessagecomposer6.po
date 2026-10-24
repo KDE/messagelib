@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-24 00:51+0000\n"
 "PO-Revision-Date: 2014-09-19 22:44+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@nuug.no>\n"
@@ -1468,7 +1468,7 @@ msgid ""
 msgstr ""
 "<p>En feil oppsto under eksport av nøkkelen fra motoren:</p><p><b>%1</b></p>"
 
-#: job/attachmentfrompublickeyjob.cpp:107
+#: job/attachmentfrompublickeyjob.cpp:108
 #, kde-format
 msgid "Exporting key..."
 msgstr "Eksporterer nøkkel …"
@@ -2189,7 +2189,6 @@ msgid "Date/Time"
 msgstr ""
 
 #: snippet/convertsnippetvariablemenu.cpp:104
-#: snippet/convertsnippetvariablemenu.cpp:157
 #, kde-format
 msgid "Day Of Week (%1)"
 msgstr ""
@@ -2269,6 +2268,11 @@ msgstr ""
 msgid "Last Month Name Long (%1)"
 msgstr ""
 
+#: snippet/convertsnippetvariablemenu.cpp:157
+#, kde-format
+msgid "Day Of Week Number (%1)"
+msgstr ""
+
 #: snippet/convertsnippetvariablemenu.cpp:160
 #, kde-format
 msgid "Day Of Week Name Short (%1)"
@@ -2345,19 +2349,3 @@ msgstr "E.postsender frakoblet."
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr ""
-
-#~ msgctxt "@title:menu"
-#~ msgid "&Open With"
-#~ msgstr "&Åpne med"
-
-#~ msgctxt "@action:inmenu Open With"
-#~ msgid "&Other..."
-#~ msgstr "&Annet …"
-
-#~ msgctxt "@title:menu"
-#~ msgid "&Open With..."
-#~ msgstr "&Åpne med …"
-
-#~ msgctxt "to open"
-#~ msgid "Open"
-#~ msgstr "Åpne"

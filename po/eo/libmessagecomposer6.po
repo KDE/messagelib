@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-10-24 00:51+0000\n"
 "PO-Revision-Date: 2024-08-23 21:45+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
@@ -1467,7 +1467,7 @@ msgstr ""
 "<p>Okazis eraro dum provado eksporti la ŝlosilon el la backend:</p><p><b>%1</"
 "b></p>"
 
-#: job/attachmentfrompublickeyjob.cpp:107
+#: job/attachmentfrompublickeyjob.cpp:108
 #, kde-format
 msgid "Exporting key..."
 msgstr "Eksportante ŝlosilon..."
@@ -2218,7 +2218,6 @@ msgid "Date/Time"
 msgstr "Dato Tempo"
 
 #: snippet/convertsnippetvariablemenu.cpp:104
-#: snippet/convertsnippetvariablemenu.cpp:157
 #, kde-format
 msgid "Day Of Week (%1)"
 msgstr "Semajntago (%1)"
@@ -2297,6 +2296,12 @@ msgstr "Monata Nomo Longa (%1)"
 #, kde-format
 msgid "Last Month Name Long (%1)"
 msgstr "Lastmonata Nomo Longa (%1)"
+
+#: snippet/convertsnippetvariablemenu.cpp:157
+#, fuzzy, kde-format
+#| msgid "Day Of Week Name Short (%1)"
+msgid "Day Of Week Number (%1)"
+msgstr "Tago de la Semajna Nomo Mallonga (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:160
 #, kde-format
