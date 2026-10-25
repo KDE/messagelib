@@ -11,14 +11,14 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-24 00:51+0000\n"
-"PO-Revision-Date: 2026-09-06 17:21+0200\n"
+"PO-Revision-Date: 2026-10-24 12:49+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.04.0\n"
+"X-Generator: Lokalize 26.08.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
 
@@ -2341,10 +2341,9 @@ msgid "Last Month Name Long (%1)"
 msgstr "Nom llarg del darrer mes (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:157
-#, fuzzy, kde-format
-#| msgid "Day Of Week Name Short (%1)"
+#, kde-format
 msgid "Day Of Week Number (%1)"
-msgstr "Nom curt del dia de la setmana (%1)"
+msgstr "Número del dia de setmana (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:160
 #, kde-format

@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-24 00:51+0000\n"
-"PO-Revision-Date: 2026-08-22 11:12+0200\n"
+"PO-Revision-Date: 2026-10-24 10:31+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Poedit 3.9\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #: attachment/attachmentcontrollerbase.cpp:165
 #, kde-format
@@ -2318,10 +2318,9 @@ msgid "Last Month Name Long (%1)"
 msgstr "Dlouhý název minulého měsíce (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:157
-#, fuzzy, kde-format
-#| msgid "Day Of Week Name Short (%1)"
+#, kde-format
 msgid "Day Of Week Number (%1)"
-msgstr "Krátký název dne týdne (%1)"
+msgstr "Číslo dne v týdnu (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:160
 #, kde-format
