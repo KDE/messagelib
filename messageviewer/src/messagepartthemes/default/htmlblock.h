@@ -86,8 +86,8 @@ protected:
     [[nodiscard]] QString exitString() const override;
 
 private:
-    void internalEnter();
-    void internalExit();
+    MESSAGEVIEWER_NO_EXPORT void internalEnter();
+    MESSAGEVIEWER_NO_EXPORT void internalExit();
 
     KMime::Content *const mNode;
     HtmlWriter *const mWriter;

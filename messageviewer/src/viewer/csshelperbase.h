@@ -131,19 +131,19 @@ protected:
     QString imgHideUrl;
 
 private:
-    [[nodiscard]] QString quoteCssDefinition() const;
-    [[nodiscard]] int fontSize(bool fixed, bool print = false) const;
+    [[nodiscard]] MESSAGEVIEWER_NO_EXPORT QString quoteCssDefinition() const;
+    [[nodiscard]] MESSAGEVIEWER_NO_EXPORT int fontSize(bool fixed, bool print = false) const;
     // returns CSS rules specific to the print media type
-    [[nodiscard]] QString printCssDefinitions(const HtmlHeadSettings &) const;
+    [[nodiscard]] MESSAGEVIEWER_NO_EXPORT QString printCssDefinitions(const HtmlHeadSettings &) const;
     // returns CSS rules specific to the screen media type
-    [[nodiscard]] QString screenCssDefinitions(const CSSHelperBase *helper, const HtmlHeadSettings &) const;
+    [[nodiscard]] MESSAGEVIEWER_NO_EXPORT QString screenCssDefinitions(const CSSHelperBase *helper, const HtmlHeadSettings &) const;
     // returns CSS rules common to both screen and print media types
-    [[nodiscard]] QString commonCssDefinitions() const;
-    [[nodiscard]] QString fullAddressList() const;
-    [[nodiscard]] QString linkColorDefinition(const HtmlHeadSettings &htmlHeadSettings) const;
-    [[nodiscard]] QString defaultScreenHeaderFont() const;
-    [[nodiscard]] QString defaultPrintHeaderFont() const;
-    [[nodiscard]] bool useBrowserColor(const HtmlHeadSettings &htmlHeadSettings) const;
+    [[nodiscard]] MESSAGEVIEWER_NO_EXPORT QString commonCssDefinitions() const;
+    [[nodiscard]] MESSAGEVIEWER_NO_EXPORT QString fullAddressList() const;
+    [[nodiscard]] MESSAGEVIEWER_NO_EXPORT QString linkColorDefinition(const HtmlHeadSettings &htmlHeadSettings) const;
+    [[nodiscard]] MESSAGEVIEWER_NO_EXPORT QString defaultScreenHeaderFont() const;
+    [[nodiscard]] MESSAGEVIEWER_NO_EXPORT QString defaultPrintHeaderFont() const;
+    [[nodiscard]] MESSAGEVIEWER_NO_EXPORT bool useBrowserColor(const HtmlHeadSettings &htmlHeadSettings) const;
 
     const QPaintDevice *mPaintDevice = nullptr;
     const HeaderStylePlugin *mHeaderPlugin = nullptr;

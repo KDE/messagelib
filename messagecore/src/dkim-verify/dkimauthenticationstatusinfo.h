@@ -67,7 +67,7 @@ public:
     [[nodiscard]] bool checkResultKeyword(const QString &value, const QString &resultKeyword) const;
 
 private:
-    [[nodiscard]] AuthStatusInfo parseAuthResultInfo(QString &valueKey, bool relaxingParsing);
+    [[nodiscard]] MESSAGECORE_NO_EXPORT AuthStatusInfo parseAuthResultInfo(QString &valueKey, bool relaxingParsing);
     QList<AuthStatusInfo> mListAuthStatusInfo;
     QString mAuthservId;
     QString mReasonSpec;

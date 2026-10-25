@@ -35,7 +35,7 @@ public:
     void unregisterHandler(const Interface::BodyPartURLHandler *handler);
 
 private:
-    [[nodiscard]] QList<const Interface::BodyPartURLHandler *> handlersForPart(KMime::Content *node) const;
+    [[nodiscard]] MESSAGEVIEWER_NO_EXPORT QList<const Interface::BodyPartURLHandler *> handlersForPart(KMime::Content *node) const;
 
     using BodyPartHandlerList = QHash<QByteArray, QList<const Interface::BodyPartURLHandler *>>;
     BodyPartHandlerList mHandlers;
@@ -178,8 +178,8 @@ public:
     [[nodiscard]] QString statusBarMessage(const QUrl &, ViewerPrivate *) const override;
 
 private:
-    KMime::Content *nodeForUrl(const QUrl &url, ViewerPrivate *w) const;
-    bool attachmentIsInHeader(const QUrl &url) const;
+    MESSAGEVIEWER_NO_EXPORT KMime::Content *nodeForUrl(const QUrl &url, ViewerPrivate *w) const;
+    MESSAGEVIEWER_NO_EXPORT bool attachmentIsInHeader(const QUrl &url) const;
 };
 
 class MESSAGEVIEWER_TESTS_EXPORT ShowAuditLogURLHandler : public MimeTreeParser::URLHandler

@@ -308,29 +308,29 @@ private:
 
     BigInt B;
 
-    void RevPush(const Prob *p);
-    void BigPush(Prob *p);
-    [[nodiscard]] int BigPop(const Prob *p);
-    void BigDiv(unsigned char a, unsigned char *r);
-    void BigMul(unsigned char a);
-    void BigAdd(unsigned char a);
-    void BigClear();
+    MESSAGEVIEWER_NO_EXPORT void RevPush(const Prob *p);
+    MESSAGEVIEWER_NO_EXPORT void BigPush(Prob *p);
+    [[nodiscard]] MESSAGEVIEWER_NO_EXPORT int BigPop(const Prob *p);
+    MESSAGEVIEWER_NO_EXPORT void BigDiv(unsigned char a, unsigned char *r);
+    MESSAGEVIEWER_NO_EXPORT void BigMul(unsigned char a);
+    MESSAGEVIEWER_NO_EXPORT void BigAdd(unsigned char a);
+    MESSAGEVIEWER_NO_EXPORT void BigClear();
 
-    [[nodiscard]] QByteArray WriteFace();
-    void UnCompAll(char *fbuf);
-    void UnCompress(char *f, int wid, int hei, int lev);
-    void BigWrite(char *fbuf);
-    void BigRead(char *fbuf);
-    void ReadFace(char *fbuf);
-    void GenFace();
-    void UnGenFace();
-    void Gen(char *f);
-    void PopGreys(char *f, int wid, int hei);
-    void CompAll(char *fbuf);
-    void Compress(char *f, int wid, int hei, int lev);
-    [[nodiscard]] int AllWhite(char *f, int wid, int hei);
-    [[nodiscard]] int AllBlack(char *f, int wid, int hei);
-    [[nodiscard]] int Same(char *f, int wid, int hei);
-    void PushGreys(char *f, int wid, int hei);
+    [[nodiscard]] MESSAGEVIEWER_NO_EXPORT QByteArray WriteFace();
+    MESSAGEVIEWER_NO_EXPORT void UnCompAll(char *fbuf);
+    MESSAGEVIEWER_NO_EXPORT void UnCompress(char *f, int wid, int hei, int lev);
+    MESSAGEVIEWER_NO_EXPORT void BigWrite(char *fbuf);
+    MESSAGEVIEWER_NO_EXPORT void BigRead(char *fbuf);
+    MESSAGEVIEWER_NO_EXPORT void ReadFace(char *fbuf);
+    MESSAGEVIEWER_NO_EXPORT void GenFace();
+    MESSAGEVIEWER_NO_EXPORT void UnGenFace();
+    MESSAGEVIEWER_NO_EXPORT void Gen(char *f);
+    MESSAGEVIEWER_NO_EXPORT void PopGreys(char *f, int wid, int hei);
+    MESSAGEVIEWER_NO_EXPORT void CompAll(char *fbuf);
+    MESSAGEVIEWER_NO_EXPORT void Compress(char *f, int wid, int hei, int lev);
+    [[nodiscard]] MESSAGEVIEWER_NO_EXPORT int AllWhite(char *f, int wid, int hei);
+    [[nodiscard]] MESSAGEVIEWER_NO_EXPORT int AllBlack(char *f, int wid, int hei);
+    [[nodiscard]] MESSAGEVIEWER_NO_EXPORT int Same(char *f, int wid, int hei);
+    MESSAGEVIEWER_NO_EXPORT void PushGreys(char *f, int wid, int hei);
 };
 }

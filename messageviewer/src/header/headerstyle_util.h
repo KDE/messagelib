@@ -79,9 +79,9 @@ public:
     [[nodiscard]] xfaceSettings xface(const HeaderStyle *style, KMime::Message *message) const;
 
 private:
-    void updateXFaceSettings(QImage photo, xfaceSettings &settings) const;
-    [[nodiscard]] QString
+    MESSAGEVIEWER_NO_EXPORT void updateXFaceSettings(QImage photo, xfaceSettings &settings) const;
+    [[nodiscard]] MESSAGEVIEWER_NO_EXPORT QString
     drawSpamMeter(SpamError spamError, double percent, double confidence, const QString &filterHeader, const QString &confidenceHeader) const;
-    [[nodiscard]] QString imgToDataUrl(const QImage &image) const;
+    [[nodiscard]] MESSAGEVIEWER_NO_EXPORT QString imgToDataUrl(const QImage &image) const;
 };
 }

@@ -242,37 +242,38 @@ public:
     void setContactPreferences(const QString &address, const ContactPreference &preference);
 
 private:
-    void dump() const;
-    [[nodiscard]] std::vector<Item> getEncryptionItems(const QStringList &recipients);
-    [[nodiscard]] std::vector<GpgME::Key> getEncryptionKeys(const QString &recipient, bool quiet) const;
+    MESSAGECOMPOSER_NO_EXPORT void dump() const;
+    [[nodiscard]] MESSAGECOMPOSER_NO_EXPORT std::vector<Item> getEncryptionItems(const QStringList &recipients);
+    [[nodiscard]] MESSAGECOMPOSER_NO_EXPORT std::vector<GpgME::Key> getEncryptionKeys(const QString &recipient, bool quiet) const;
 
-    [[nodiscard]] ResolverResult showKeyApprovalDialog(bool &finalySendUnencrypted);
+    [[nodiscard]] MESSAGECOMPOSER_NO_EXPORT ResolverResult showKeyApprovalDialog(bool &finalySendUnencrypted);
 
-    [[nodiscard]] bool encryptionPossible() const;
-    [[nodiscard]] bool signingPossible() const;
-    [[nodiscard]] ResolverResult resolveEncryptionKeys(bool signingRequested, bool &finalySendUnencrypted);
-    [[nodiscard]] ResolverResult resolveSigningKeysForEncryption();
-    [[nodiscard]] ResolverResult resolveSigningKeysForSigningOnly();
-    void collapseAllSplitInfos();
-    void addToAllSplitInfos(const std::vector<GpgME::Key> &keys, unsigned int formats);
-    void addKeys(const std::vector<Item> &items, Kleo::CryptoMessageFormat f);
-    void addKeys(const std::vector<Item> &items);
-    [[nodiscard]] QStringList allRecipients() const;
-    [[nodiscard]] std::vector<GpgME::Key> signingKeysFor(Kleo::CryptoMessageFormat f) const;
+    [[nodiscard]] MESSAGECOMPOSER_NO_EXPORT bool encryptionPossible() const;
+    [[nodiscard]] MESSAGECOMPOSER_NO_EXPORT bool signingPossible() const;
+    [[nodiscard]] MESSAGECOMPOSER_NO_EXPORT ResolverResult resolveEncryptionKeys(bool signingRequested, bool &finalySendUnencrypted);
+    [[nodiscard]] MESSAGECOMPOSER_NO_EXPORT ResolverResult resolveSigningKeysForEncryption();
+    [[nodiscard]] MESSAGECOMPOSER_NO_EXPORT ResolverResult resolveSigningKeysForSigningOnly();
+    MESSAGECOMPOSER_NO_EXPORT void collapseAllSplitInfos();
+    MESSAGECOMPOSER_NO_EXPORT void addToAllSplitInfos(const std::vector<GpgME::Key> &keys, unsigned int formats);
+    MESSAGECOMPOSER_NO_EXPORT void addKeys(const std::vector<Item> &items, Kleo::CryptoMessageFormat f);
+    MESSAGECOMPOSER_NO_EXPORT void addKeys(const std::vector<Item> &items);
+    [[nodiscard]] MESSAGECOMPOSER_NO_EXPORT QStringList allRecipients() const;
+    [[nodiscard]] MESSAGECOMPOSER_NO_EXPORT std::vector<GpgME::Key> signingKeysFor(Kleo::CryptoMessageFormat f) const;
 
-    [[nodiscard]] std::vector<GpgME::Key> lookup(const QStringList &patterns, bool secret = false) const;
+    [[nodiscard]] MESSAGECOMPOSER_NO_EXPORT std::vector<GpgME::Key> lookup(const QStringList &patterns, bool secret = false) const;
 
-    [[nodiscard]] std::vector<GpgME::Key>
+    [[nodiscard]] MESSAGECOMPOSER_NO_EXPORT std::vector<GpgME::Key>
     selectKeys(const QString &person, const QString &msg, const std::vector<GpgME::Key> &selectedKeys = std::vector<GpgME::Key>()) const;
 
-    [[nodiscard]] QStringList keysForAddress(const QString &address) const;
-    void setKeysForAddress(const QString &address, const QStringList &pgpKeyFingerprints, const QStringList &smimeCertFingerprints) const;
+    [[nodiscard]] MESSAGECOMPOSER_NO_EXPORT QStringList keysForAddress(const QString &address) const;
+    MESSAGECOMPOSER_NO_EXPORT void
+    setKeysForAddress(const QString &address, const QStringList &pgpKeyFingerprints, const QStringList &smimeCertFingerprints) const;
 
-    [[nodiscard]] bool encryptToSelf() const;
-    [[nodiscard]] bool showApprovalDialog() const;
+    [[nodiscard]] MESSAGECOMPOSER_NO_EXPORT bool encryptToSelf() const;
+    [[nodiscard]] MESSAGECOMPOSER_NO_EXPORT bool showApprovalDialog() const;
 
-    [[nodiscard]] ContactPreference lookupContactPreferences(const QString &address) const;
-    void saveContactPreference(const QString &email, const ContactPreference &pref) const;
+    [[nodiscard]] MESSAGECOMPOSER_NO_EXPORT ContactPreference lookupContactPreferences(const QString &address) const;
+    MESSAGECOMPOSER_NO_EXPORT void saveContactPreference(const QString &email, const ContactPreference &pref) const;
 
 private:
     class EncryptionPreferenceCounter;

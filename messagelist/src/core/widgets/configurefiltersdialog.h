@@ -21,7 +21,7 @@ public:
     ~ConfigureFiltersDialog() override;
 
 private:
-    void readConfig();
+    MESSAGELIST_NO_EXPORT void readConfig();
     ConfigureFiltersWidget *const mConfigureFiltersWidget;
 };
 

@@ -264,7 +264,7 @@ protected Q_SLOTS:
     void slotSaveFilter();
 
 private:
-    void slotActivateFilter(Filter *f);
+    MESSAGELIST_NO_EXPORT void slotActivateFilter(Filter *f);
     class WidgetPrivate;
     std::unique_ptr<WidgetPrivate> const d;
 };

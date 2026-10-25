@@ -35,7 +35,7 @@ public:
     void requestSync();
 
 private Q_SLOTS:
-    void slotSyncNow();
+    MESSAGECOMPOSER_NO_EXPORT void slotSyncNow();
 
 private:
     MessageComposerSettings();

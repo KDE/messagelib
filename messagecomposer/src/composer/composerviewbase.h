@@ -280,27 +280,27 @@ Q_SIGNALS:
     void tooManyRecipient(bool);
 
 private:
-    void slotEmailAddressResolved(KJob *);
-    void slotSendComposeResult(KJob *);
-    void slotQueueResult(KJob *job);
-    void slotCreateItemResult(KJob *);
-    void slotAutoSaveComposeResult(KJob *job);
-    void slotFccCollectionCheckResult(KJob *job);
-    void slotSaveMessage(KJob *job);
+    MESSAGECOMPOSER_NO_EXPORT void slotEmailAddressResolved(KJob *);
+    MESSAGECOMPOSER_NO_EXPORT void slotSendComposeResult(KJob *);
+    MESSAGECOMPOSER_NO_EXPORT void slotQueueResult(KJob *job);
+    MESSAGECOMPOSER_NO_EXPORT void slotCreateItemResult(KJob *);
+    MESSAGECOMPOSER_NO_EXPORT void slotAutoSaveComposeResult(KJob *job);
+    MESSAGECOMPOSER_NO_EXPORT void slotFccCollectionCheckResult(KJob *job);
+    MESSAGECOMPOSER_NO_EXPORT void slotSaveMessage(KJob *job);
 
-    [[nodiscard]] Akonadi::Collection defaultSpecialTarget() const;
+    [[nodiscard]] MESSAGECOMPOSER_NO_EXPORT Akonadi::Collection defaultSpecialTarget() const;
     /**
      * Searches the mime tree, where root is the root node, for embedded images,
      * extracts them froom the body and adds them to the editor.
      */
-    void collectImages(KMime::Content *root);
-    [[nodiscard]] bool inlineSigningEncryptionSelected() const;
+    MESSAGECOMPOSER_NO_EXPORT void collectImages(KMime::Content *root);
+    [[nodiscard]] MESSAGECOMPOSER_NO_EXPORT bool inlineSigningEncryptionSelected() const;
     /**
      * Applies the user changes to the message object of the composer
      * and signs/encrypts the message if activated.
      * Disables the controls of the composer window.
      */
-    void readyForSending();
+    MESSAGECOMPOSER_NO_EXPORT void readyForSending();
 
     enum RecipientExpansion : uint8_t {
         UseExpandedRecipients,
@@ -308,25 +308,26 @@ private:
     };
     void fillComposer(MessageComposer::ComposerJob *composer, ComposerViewBase::RecipientExpansion expansion, bool autoresize);
     [[nodiscard]] QList<MessageComposer::ComposerJob *> generateCryptoMessages(bool &wasCanceled);
-    void fillGlobalPart(MessageComposer::GlobalPart *globalPart);
-    void fillInfoPart(MessageComposer::InfoPart *part, RecipientExpansion expansion);
-    void queueMessage(const std::shared_ptr<KMime::Message> &message, MessageComposer::ComposerJob *composer);
-    void saveMessage(const std::shared_ptr<KMime::Message> &message, MessageComposer::MessageSender::SaveIn saveIn);
-    void saveRecentAddresses(const std::shared_ptr<KMime::Message> &ptr);
-    void
+    MESSAGECOMPOSER_NO_EXPORT void fillGlobalPart(MessageComposer::GlobalPart *globalPart);
+    MESSAGECOMPOSER_NO_EXPORT void fillInfoPart(MessageComposer::InfoPart *part, RecipientExpansion expansion);
+    MESSAGECOMPOSER_NO_EXPORT void queueMessage(const std::shared_ptr<KMime::Message> &message, MessageComposer::ComposerJob *composer);
+    MESSAGECOMPOSER_NO_EXPORT void saveMessage(const std::shared_ptr<KMime::Message> &message, MessageComposer::MessageSender::SaveIn saveIn);
+    MESSAGECOMPOSER_NO_EXPORT void saveRecentAddresses(const std::shared_ptr<KMime::Message> &ptr);
+    MESSAGECOMPOSER_NO_EXPORT void
     updateRecipients(const KIdentityManagementCore::Identity &ident, const KIdentityManagementCore::Identity &oldIdent, MessageComposer::Recipient::Type type);
 
-    void markAllAttachmentsForSigning(bool sign);
-    void markAllAttachmentsForEncryption(bool encrypt);
-    bool determineWhetherToSign(bool doSignCompletely, KeyResolver *keyResolver, bool signSomething, bool &result, bool &canceled);
-    bool determineWhetherToEncrypt(bool doEncryptCompletely, KeyResolver *keyResolver, bool encryptSomething, bool signSomething, bool &result, bool &canceled);
+    MESSAGECOMPOSER_NO_EXPORT void markAllAttachmentsForSigning(bool sign);
+    MESSAGECOMPOSER_NO_EXPORT void markAllAttachmentsForEncryption(bool encrypt);
+    MESSAGECOMPOSER_NO_EXPORT bool determineWhetherToSign(bool doSignCompletely, KeyResolver *keyResolver, bool signSomething, bool &result, bool &canceled);
+    MESSAGECOMPOSER_NO_EXPORT bool
+    determineWhetherToEncrypt(bool doEncryptCompletely, KeyResolver *keyResolver, bool encryptSomething, bool signSomething, bool &result, bool &canceled);
 
     /**
      * Writes out autosave data to the disk from the KMime::Message message.
      * Also appends the msgNum to the filename as a message can have a number of
      * KMime::Messages
      */
-    void writeAutoSaveToDisk(const std::shared_ptr<KMime::Message> &message);
+    MESSAGECOMPOSER_NO_EXPORT void writeAutoSaveToDisk(const std::shared_ptr<KMime::Message> &message);
 
     /**
      * Returns the autosave interval in milliseconds (as needed for QTimer).
@@ -336,13 +337,13 @@ private:
     /**
      * Initialize autosaving (timer and filename).
      */
-    void initAutoSave();
-    void addFollowupReminder(const QString &messageId);
-    void addSendLaterItem(const Akonadi::Item &item);
+    MESSAGECOMPOSER_NO_EXPORT void initAutoSave();
+    MESSAGECOMPOSER_NO_EXPORT void addFollowupReminder(const QString &messageId);
+    MESSAGECOMPOSER_NO_EXPORT void addSendLaterItem(const Akonadi::Item &item);
 
-    bool addKeysToContext(const QString &gnupgHome,
-                          const QList<QPair<QStringList, std::vector<GpgME::Key>>> &data,
-                          const std::map<QByteArray, QString> &autocryptMap);
+    MESSAGECOMPOSER_NO_EXPORT bool addKeysToContext(const QString &gnupgHome,
+                                                    const QList<QPair<QStringList, std::vector<GpgME::Key>>> &data,
+                                                    const std::map<QByteArray, QString> &autocryptMap);
 
     void setAkonadiLookupEnabled(bool akonadiLookupEnabled);
 

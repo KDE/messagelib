@@ -36,7 +36,7 @@ public:
     [[nodiscard]] QString iconPathFromLocal(const QString &name) const;
 
 private:
-    [[nodiscard]] QString picsPath() const;
+    [[nodiscard]] MESSAGEVIEWER_NO_EXPORT QString picsPath() const;
 
     class Entry
     {

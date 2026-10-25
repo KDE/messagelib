@@ -601,7 +601,7 @@ private:
      * returns true if the decryption was successful
      * if used in async mode, check if mMetaData.inPogress is true, it initiates a running decryption process.
      */
-    [[nodiscard]] bool okDecryptMIME(KMime::Content &data);
+    [[nodiscard]] MIMETREEPARSER_NO_EXPORT bool okDecryptMIME(KMime::Content &data);
 
 protected:
     bool mPassphraseError;

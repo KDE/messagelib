@@ -283,7 +283,7 @@ public:
 
 private:
     /** HTML initialization. */
-    void initHtmlWidget();
+    MESSAGEVIEWER_NO_EXPORT void initHtmlWidget();
 
 public:
     void updatePalette();
@@ -448,36 +448,36 @@ public:
     void mdnWarningAnimatedHide();
 
 private Q_SLOTS:
-    void slotActivatePlugin(MessageViewer::ViewerPluginInterface *interface);
-    void slotModifyItemDone(KJob *job);
-    void slotMessageMayBeAScam();
-    void slotMessageIsNotAScam();
-    void slotAddToWhiteList();
-    void slotItemChanged(const Akonadi::Item &item, const QSet<QByteArray> &partIdentifiers);
-    void slotItemMoved(const Akonadi::Item &, const Akonadi::Collection &, const Akonadi::Collection &);
+    MESSAGEVIEWER_NO_EXPORT void slotActivatePlugin(MessageViewer::ViewerPluginInterface *interface);
+    MESSAGEVIEWER_NO_EXPORT void slotModifyItemDone(KJob *job);
+    MESSAGEVIEWER_NO_EXPORT void slotMessageMayBeAScam();
+    MESSAGEVIEWER_NO_EXPORT void slotMessageIsNotAScam();
+    MESSAGEVIEWER_NO_EXPORT void slotAddToWhiteList();
+    MESSAGEVIEWER_NO_EXPORT void slotItemChanged(const Akonadi::Item &item, const QSet<QByteArray> &partIdentifiers);
+    MESSAGEVIEWER_NO_EXPORT void slotItemMoved(const Akonadi::Item &, const Akonadi::Collection &, const Akonadi::Collection &);
 
-    void itemModifiedResult(KJob *job);
+    MESSAGEVIEWER_NO_EXPORT void itemModifiedResult(KJob *job);
 
-    void slotClear();
+    MESSAGEVIEWER_NO_EXPORT void slotClear();
 
-    void slotMessageRendered();
+    MESSAGEVIEWER_NO_EXPORT void slotMessageRendered();
 
-    void slotOpenWithAction(QAction *act);
+    MESSAGEVIEWER_NO_EXPORT void slotOpenWithAction(QAction *act);
 
-    void slotOpenWithActionCurrentContent(QAction *act);
+    MESSAGEVIEWER_NO_EXPORT void slotOpenWithActionCurrentContent(QAction *act);
 
-    void slotOpenWithDialog();
+    MESSAGEVIEWER_NO_EXPORT void slotOpenWithDialog();
 
-    void slotOpenWithDialogCurrentContent();
+    MESSAGEVIEWER_NO_EXPORT void slotOpenWithDialogCurrentContent();
 
-    void saveSplitterSizes() const;
+    MESSAGEVIEWER_NO_EXPORT void saveSplitterSizes() const;
 
-    void slotRefreshMessage(const Akonadi::Item &item);
-    void slotServiceUrlSelected(PimCommon::ShareServiceUrlManager::ServiceType serviceType);
-    void slotStyleChanged(MessageViewer::HeaderStylePlugin *plugin);
-    void slotStyleUpdated();
-    void slotWheelZoomChanged(int numSteps);
-    void slotToggleEmoticons();
+    MESSAGEVIEWER_NO_EXPORT void slotRefreshMessage(const Akonadi::Item &item);
+    MESSAGEVIEWER_NO_EXPORT void slotServiceUrlSelected(PimCommon::ShareServiceUrlManager::ServiceType serviceType);
+    MESSAGEVIEWER_NO_EXPORT void slotStyleChanged(MessageViewer::HeaderStylePlugin *plugin);
+    MESSAGEVIEWER_NO_EXPORT void slotStyleUpdated();
+    MESSAGEVIEWER_NO_EXPORT void slotWheelZoomChanged(int numSteps);
+    MESSAGEVIEWER_NO_EXPORT void slotToggleEmoticons();
 
 public Q_SLOTS:
     /** An URL has been activate with a click. */
@@ -593,32 +593,32 @@ Q_SIGNALS:
     void sendResponse(MessageViewer::MDNWarningWidget::ResponseType type, KMime::MDN::SendingMode sendingMode);
 
 private:
-    [[nodiscard]] QString attachmentHtml();
-    void initializeColorFromScheme();
+    [[nodiscard]] MESSAGEVIEWER_NO_EXPORT QString attachmentHtml();
+    MESSAGEVIEWER_NO_EXPORT void initializeColorFromScheme();
 
-    void replyMessageToAuthor(KMime::Content *atmNode);
-    void replyMessageToAll(KMime::Content *atmNode);
-    void replyMessage(KMime::Content *atmNode, bool replyToAll);
-    [[nodiscard]] bool urlIsAMalwareButContinue();
-    [[nodiscard]] bool messageIsInSpecialFolder() const;
+    MESSAGEVIEWER_NO_EXPORT void replyMessageToAuthor(KMime::Content *atmNode);
+    MESSAGEVIEWER_NO_EXPORT void replyMessageToAll(KMime::Content *atmNode);
+    MESSAGEVIEWER_NO_EXPORT void replyMessage(KMime::Content *atmNode, bool replyToAll);
+    [[nodiscard]] MESSAGEVIEWER_NO_EXPORT bool urlIsAMalwareButContinue();
+    [[nodiscard]] MESSAGEVIEWER_NO_EXPORT bool messageIsInSpecialFolder() const;
 
-    void slotCheckedUrlFinished(const QUrl &url, WebEngineViewer::CheckPhishingUrlUtil::UrlStatus status);
+    MESSAGEVIEWER_NO_EXPORT void slotCheckedUrlFinished(const QUrl &url, WebEngineViewer::CheckPhishingUrlUtil::UrlStatus status);
 
-    void adaptHtmlHeadSettings();
-    void slotDelayPrintPreview();
-    void applyZoomValue(qreal factor, bool saveConfig = true);
-    void slotZoomChanged(qreal zoom);
-    void assignMessageItem(const Akonadi::Item &item);
-    void slotUrlBlocked(const QUrl &url);
-    void updateColorFromScheme();
-    void updateMessageAfterDeletingAttachments(std::shared_ptr<KMime::Message> &message);
-    void createSubmittedFormWarning();
-    void createPurposeMenuMessageWidget();
-    void createOpenSavedFileFolderWidget();
-    void createTrackingWarningWidget();
-    void createShowNextMessageWidget();
-    void createMdnWarningWidget();
-    void createScamDetectionWarningWidget();
+    MESSAGEVIEWER_NO_EXPORT void adaptHtmlHeadSettings();
+    MESSAGEVIEWER_NO_EXPORT void slotDelayPrintPreview();
+    MESSAGEVIEWER_NO_EXPORT void applyZoomValue(qreal factor, bool saveConfig = true);
+    MESSAGEVIEWER_NO_EXPORT void slotZoomChanged(qreal zoom);
+    MESSAGEVIEWER_NO_EXPORT void assignMessageItem(const Akonadi::Item &item);
+    MESSAGEVIEWER_NO_EXPORT void slotUrlBlocked(const QUrl &url);
+    MESSAGEVIEWER_NO_EXPORT void updateColorFromScheme();
+    MESSAGEVIEWER_NO_EXPORT void updateMessageAfterDeletingAttachments(std::shared_ptr<KMime::Message> &message);
+    MESSAGEVIEWER_NO_EXPORT void createSubmittedFormWarning();
+    MESSAGEVIEWER_NO_EXPORT void createPurposeMenuMessageWidget();
+    MESSAGEVIEWER_NO_EXPORT void createOpenSavedFileFolderWidget();
+    MESSAGEVIEWER_NO_EXPORT void createTrackingWarningWidget();
+    MESSAGEVIEWER_NO_EXPORT void createShowNextMessageWidget();
+    MESSAGEVIEWER_NO_EXPORT void createMdnWarningWidget();
+    MESSAGEVIEWER_NO_EXPORT void createScamDetectionWarningWidget();
 
     MimeTreeParser::NodeHelper *mNodeHelper = nullptr;
     bool mHtmlMailGlobalSetting = false;
