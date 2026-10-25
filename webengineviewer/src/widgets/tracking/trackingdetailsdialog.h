@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "webengineviewer_export.h"
+#include "webengineviewer_private_export.h"
 #include <QDialog>
 
 namespace TextCustomEditor
@@ -24,7 +24,7 @@ namespace WebEngineViewer
  * \brief The TrackingDetailsDialog class
  * \author Laurent Montel <montel@kde.org>
  */
-class WEBENGINEVIEWER_EXPORT TrackingDetailsDialog : public QDialog
+class WEBENGINEVIEWER_TESTS_EXPORT TrackingDetailsDialog : public QDialog
 {
     Q_OBJECT
 public:

@@ -14,7 +14,7 @@
 
 namespace MessageCore
 {
-class MESSAGECORE_EXPORT DKIMAuthenticationStatusInfoConverter
+class MESSAGECORE_TESTS_EXPORT DKIMAuthenticationStatusInfoConverter
 {
 public:
     DKIMAuthenticationStatusInfoConverter();

@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "messagecomposer_export.h"
+#include "messagecomposer_private_export.h"
 #include <QByteArray>
 #include <memory>
 
@@ -20,7 +20,7 @@ class ImageScalingPrivate;
  * \brief The ImageScaling class
  * \author Laurent Montel <montel@kde.org>
  */
-class MESSAGECOMPOSER_EXPORT ImageScaling
+class MESSAGECOMPOSER_TESTS_EXPORT ImageScaling
 {
 public:
     /*!

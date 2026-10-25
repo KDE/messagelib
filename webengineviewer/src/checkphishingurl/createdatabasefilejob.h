@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "webengineviewer_export.h"
+#include "webengineviewer_private_export.h"
 #include <QObject>
 #include <memory>
 namespace WebEngineViewer
@@ -21,7 +21,7 @@ struct UpdateDataBaseInfo;
  * \brief The CreateDatabaseFileJob class
  * \author Laurent Montel <montel@kde.org>
  */
-class WEBENGINEVIEWER_EXPORT CreateDatabaseFileJob : public QObject
+class WEBENGINEVIEWER_TESTS_EXPORT CreateDatabaseFileJob : public QObject
 {
     Q_OBJECT
 public:

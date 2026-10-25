@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "messagecore_export.h"
+#include "messagecore_private_export.h"
 
 #include "MessageCore/AttachmentFromUrlBaseJob"
 
@@ -20,7 +20,7 @@ namespace MessageCore
  *
  * \author Constantin Berzan <exit3219@gmail.com>
  */
-class MESSAGECORE_EXPORT AttachmentFromUrlJob : public AttachmentFromUrlBaseJob
+class MESSAGECORE_TESTS_EXPORT AttachmentFromUrlJob : public AttachmentFromUrlBaseJob
 {
     Q_OBJECT
 

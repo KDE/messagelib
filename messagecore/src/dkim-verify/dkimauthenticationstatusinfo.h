@@ -13,7 +13,7 @@
 class QDebug;
 namespace MessageCore
 {
-class MESSAGECORE_EXPORT DKIMAuthenticationStatusInfo
+class MESSAGECORE_TESTS_EXPORT DKIMAuthenticationStatusInfo
 {
 public:
     DKIMAuthenticationStatusInfo();
@@ -78,4 +78,4 @@ Q_DECLARE_METATYPE(MessageCore::DKIMAuthenticationStatusInfo)
 Q_DECLARE_TYPEINFO(MessageCore::DKIMAuthenticationStatusInfo::AuthStatusInfo, Q_RELOCATABLE_TYPE);
 /*!
  */
-MESSAGECORE_EXPORT QDebug operator<<(QDebug d, const MessageCore::DKIMAuthenticationStatusInfo &t);
+MESSAGECORE_TESTS_EXPORT QDebug operator<<(QDebug d, const MessageCore::DKIMAuthenticationStatusInfo &t);

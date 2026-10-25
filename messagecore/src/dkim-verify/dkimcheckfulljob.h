@@ -14,7 +14,7 @@
 namespace MessageCore
 {
 class DKIMAuthenticationStatusInfo;
-class MESSAGECORE_EXPORT DKIMCheckFullJob : public QObject
+class MESSAGECORE_TESTS_EXPORT DKIMCheckFullJob : public QObject
 {
     Q_OBJECT
 public:

@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "messageviewer_export.h"
+#include "messageviewer_private_export.h"
 #include <GrantleeTheme/GrantleeTheme>
 #include <KTextTemplate/TemplateLoader>
 #include <QString>
@@ -26,7 +26,7 @@ class HeaderStyle;
  * \brief The GrantleeHeaderFormatter class
  * \author Laurent Montel <montel@kde.org>
  */
-class MESSAGEVIEWER_EXPORT GrantleeHeaderFormatter
+class MESSAGEVIEWER_TESTS_EXPORT GrantleeHeaderFormatter
 {
 public:
     struct GrantleeHeaderFormatterSettings {

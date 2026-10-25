@@ -11,7 +11,7 @@
 #include <QObject>
 namespace MessageCore
 {
-class MESSAGECORE_EXPORT DKIMGenerateRuleJob : public QObject
+class MESSAGECORE_TESTS_EXPORT DKIMGenerateRuleJob : public QObject
 {
     Q_OBJECT
 public:

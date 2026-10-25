@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "messagecore_export.h"
+#include "messagecore_private_export.h"
 #include <QObject>
 class QDnsLookup;
 namespace MessageCore
@@ -18,7 +18,7 @@ namespace MessageCore
  * \brief The DKIMDownloadKeyJob class
  * \author Laurent Montel <montel@kde.org>
  */
-class MESSAGECORE_EXPORT DKIMDownloadKeyJob : public QObject
+class MESSAGECORE_TESTS_EXPORT DKIMDownloadKeyJob : public QObject
 {
     Q_OBJECT
 public:

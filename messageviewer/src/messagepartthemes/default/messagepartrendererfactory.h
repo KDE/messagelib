@@ -7,7 +7,7 @@
 
 #pragma once
 
-#include "messageviewer_export.h"
+#include "messageviewer_private_export.h"
 
 #include <MimeTreeParser/MessagePart>
 
@@ -24,7 +24,7 @@ class MessagePartRendererFactoryPrivate;
  * \inmodule MessageViewer
  * \inheaderfile MessageViewer/MessagePartRendererFactory
  */
-class MESSAGEVIEWER_EXPORT MessagePartRendererFactory
+class MESSAGEVIEWER_TESTS_EXPORT MessagePartRendererFactory
 {
 public:
     /*!

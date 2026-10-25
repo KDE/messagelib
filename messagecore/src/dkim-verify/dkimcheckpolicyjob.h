@@ -8,7 +8,7 @@
 
 #include "dkimchecksignaturejob.h"
 #include "dmarcpolicyjob.h"
-#include "messagecore_export.h"
+#include "messagecore_private_export.h"
 #include <QObject>
 namespace MessageCore
 {
@@ -19,7 +19,7 @@ namespace MessageCore
  * \brief The DKIMCheckPolicyJob class
  * \author Laurent Montel <montel@kde.org>
  */
-class MESSAGECORE_EXPORT DKIMCheckPolicyJob : public QObject
+class MESSAGECORE_TESTS_EXPORT DKIMCheckPolicyJob : public QObject
 {
     Q_OBJECT
 public:

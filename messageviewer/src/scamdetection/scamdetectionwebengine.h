@@ -7,7 +7,7 @@
 
 #pragma once
 
-#include "messageviewer_export.h"
+#include "messageviewer_private_export.h"
 #include <QObject>
 #include <memory>
 class QVariant;
@@ -22,7 +22,7 @@ class ScamDetectionWebEnginePrivate;
  * \brief The ScamDetectionWebEngine class
  * \author Laurent Montel <montel@kde.org>
  */
-class MESSAGEVIEWER_EXPORT ScamDetectionWebEngine : public QObject
+class MESSAGEVIEWER_TESTS_EXPORT ScamDetectionWebEngine : public QObject
 {
     Q_OBJECT
 public:

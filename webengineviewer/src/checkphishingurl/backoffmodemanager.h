@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "webengineviewer_export.h"
+#include "webengineviewer_private_export.h"
 #include <QObject>
 #include <memory>
 namespace WebEngineViewer
@@ -21,7 +21,7 @@ class BackOffModeManagerPrivate;
  * \brief The BackOffModeManager class
  * \author Laurent Montel <montel@kde.org>
  */
-class WEBENGINEVIEWER_EXPORT BackOffModeManager : public QObject
+class WEBENGINEVIEWER_TESTS_EXPORT BackOffModeManager : public QObject
 {
     Q_OBJECT
 public:

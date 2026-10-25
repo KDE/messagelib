@@ -8,7 +8,7 @@
 #pragma once
 
 #include "messageviewer/viewer.h"
-#include "messageviewer_export.h"
+#include "messageviewer_private_export.h"
 #include <Akonadi/Attribute>
 namespace MessageViewer
 {
@@ -20,7 +20,7 @@ class MessageDisplayFormatAttributePrivate;
  * \brief The MessageDisplayFormatAttribute class
  * \author Laurent Montel <montel@kde.org>
  */
-class MESSAGEVIEWER_EXPORT MessageDisplayFormatAttribute : public Akonadi::Attribute
+class MESSAGEVIEWER_TESTS_EXPORT MessageDisplayFormatAttribute : public Akonadi::Attribute
 {
 public:
     explicit MessageDisplayFormatAttribute();

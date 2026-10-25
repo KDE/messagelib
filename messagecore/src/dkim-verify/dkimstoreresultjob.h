@@ -13,7 +13,7 @@
 class KJob;
 namespace MessageCore
 {
-class MESSAGECORE_EXPORT DKIMStoreResultJob : public QObject
+class MESSAGECORE_TESTS_EXPORT DKIMStoreResultJob : public QObject
 {
     Q_OBJECT
 public:

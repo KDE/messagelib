@@ -11,7 +11,7 @@
 class QDnsLookup;
 namespace MessageCore
 {
-class MESSAGECORE_EXPORT DMARCRecordJob : public QObject
+class MESSAGECORE_TESTS_EXPORT DMARCRecordJob : public QObject
 {
     Q_OBJECT
 public:

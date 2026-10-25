@@ -6,7 +6,7 @@
 
 #pragma once
 
-#include "templateparser_export.h"
+#include "templateparser_private_export.h"
 #include <QObject>
 namespace TemplateParser
 {
@@ -18,7 +18,7 @@ class TemplateWebEnginePage;
  * \brief The TemplateExtractTextFromMail class
  * \author Laurent Montel <montel@kde.org>
  */
-class TEMPLATEPARSER_EXPORT TemplateExtractTextFromMail : public QObject
+class TEMPLATEPARSER_TESTS_EXPORT TemplateExtractTextFromMail : public QObject
 {
     Q_OBJECT
 public:
