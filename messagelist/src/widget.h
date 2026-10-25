@@ -13,7 +13,6 @@
 
 #include <KMime/Message>
 
-#include "messagelist_export.h"
 #include <QList>
 class KXMLGUIClient;
 namespace MessageList
@@ -30,7 +29,7 @@ namespace MessageList
  * used if available.
  *
  */
-class MESSAGELIST_EXPORT Widget : public MessageList::Core::Widget
+class Widget : public MessageList::Core::Widget
 {
     Q_OBJECT
 
@@ -396,9 +395,9 @@ protected:
     void viewMessageStatusChangeRequest(MessageList::Core::MessageItem *msg, Akonadi::MessageStatus set, Akonadi::MessageStatus clear) override;
 
 private:
-    MESSAGELIST_NO_EXPORT void slotCollapseItem();
-    MESSAGELIST_NO_EXPORT void slotExpandItem();
-    MESSAGELIST_NO_EXPORT void slotTagsFetched(const Akonadi::Tag::List &tags);
+    void slotCollapseItem();
+    void slotExpandItem();
+    void slotTagsFetched(const Akonadi::Tag::List &tags);
 
 Q_SIGNALS:
     /*!

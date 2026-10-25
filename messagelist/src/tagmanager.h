@@ -6,7 +6,6 @@
 
 #pragma once
 
-#include "messagelist_export.h"
 #include <Akonadi/Tag>
 #include <QMap>
 #include <QObject>
@@ -26,7 +25,7 @@ namespace Core
  *
  * \brief The TagManager class
  */
-class MESSAGELIST_EXPORT TagManager : public QObject
+class TagManager : public QObject
 {
     Q_OBJECT
 public:

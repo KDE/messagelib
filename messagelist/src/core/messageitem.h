@@ -12,7 +12,6 @@
 #include "core/md5hash.h"
 #include "core/modelinvariantindex.h"
 
-#include "messagelist_export.h"
 #include "theme.h"
 #include <QColor>
 #include <QFont>
@@ -38,7 +37,7 @@ class MessageItemPrivate;
  *
  * \brief The MessageItem class
  */
-class MESSAGELIST_EXPORT MessageItem : public Item, public ModelInvariantIndex
+class MessageItem : public Item, public ModelInvariantIndex
 {
 public:
     /*!
@@ -48,7 +47,7 @@ public:
      *
      * \brief Represents a message tag.
      */
-    class MESSAGELIST_EXPORT Tag
+    class Tag
     {
     public:
         /*!
@@ -338,9 +337,9 @@ protected:
     explicit MessageItem(MessageItemPrivate *dd);
 
 private:
-    MESSAGELIST_NO_EXPORT const QFont &font() const;
+    const QFont &font() const;
 
-    [[nodiscard]] MESSAGELIST_NO_EXPORT QString accessibleTextForField(Theme::ContentItem::Type field);
+    [[nodiscard]] QString accessibleTextForField(Theme::ContentItem::Type field);
 
     Q_DECLARE_PRIVATE(MessageItem)
 };

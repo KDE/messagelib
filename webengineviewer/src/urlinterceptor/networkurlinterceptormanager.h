@@ -6,7 +6,6 @@
 
 #pragma once
 
-#include "webengineviewer_export.h"
 #include <QList>
 #include <QObject>
 #include <memory>
@@ -26,7 +25,7 @@ class NetworkUrlInterceptorManagerPrivate;
  * \brief The NetworkUrlInterceptorManager class
  * \author Laurent Montel <montel@kde.org>
  */
-class WEBENGINEVIEWER_EXPORT NetworkUrlInterceptorManager : public QObject
+class NetworkUrlInterceptorManager : public QObject
 {
     Q_OBJECT
 public:

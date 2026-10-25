@@ -10,8 +10,6 @@
 
 #pragma once
 
-#include "messagecomposer_export.h"
-
 #include <KJob>
 
 #include <QStringList>
@@ -29,7 +27,7 @@ class EmailAddressResolveJobPrivate;
 
  A job to resolve nicknames, distribution lists and email addresses for queued emails.
  */
-class MESSAGECOMPOSER_EXPORT EmailAddressResolveJob : public KJob
+class EmailAddressResolveJob : public KJob
 {
     Q_OBJECT
 
@@ -102,7 +100,7 @@ public:
     [[nodiscard]] QStringList expandedReplyTo() const;
 
 private:
-    MESSAGECOMPOSER_NO_EXPORT void slotAliasExpansionDone(KJob *);
+    void slotAliasExpansionDone(KJob *);
     std::unique_ptr<EmailAddressResolveJobPrivate> const d;
 };
 }

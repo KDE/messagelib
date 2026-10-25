@@ -14,7 +14,6 @@
 
 #include "core/widgets/searchlinecommand.h"
 #include "core/widgets/searchmessagebybuttons.h"
-#include "messagelist_export.h"
 #include <Akonadi/Collection>
 #include <Akonadi/MessageStatus>
 #include <KSharedConfig>
@@ -130,4 +129,4 @@ private:
 } // namespace Core
 } // namespace MessageList
 
-MESSAGELIST_EXPORT QDebug operator<<(QDebug d, const MessageList::Core::Filter &t);
+QDebug operator<<(QDebug d, const MessageList::Core::Filter &t);

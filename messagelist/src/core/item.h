@@ -15,8 +15,6 @@
 
 #include <Akonadi/MessageStatus>
 
-#include "messagelist_export.h"
-
 namespace MessageList
 {
 namespace Core
@@ -34,7 +32,7 @@ class Model;
  * This class stores basic information needed in all the subclasses which
  * at the moment of writing are MessageItem and GroupHeaderItem.
  */
-class MESSAGELIST_EXPORT Item
+class Item
 {
     friend class Model;
     friend class ModelPrivate;
