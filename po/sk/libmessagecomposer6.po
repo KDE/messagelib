@@ -2313,10 +2313,9 @@ msgid "Last Month Name Long (%1)"
 msgstr "Názov posledného mesiaca dlhý (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:157
-#, fuzzy, kde-format
-#| msgid "Day Of Week Name Short (%1)"
+#, kde-format
 msgid "Day Of Week Number (%1)"
-msgstr "Deň v týždni krátky názov (%1)"
+msgstr "Číslo dňa v týždni (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:160
 #, kde-format
