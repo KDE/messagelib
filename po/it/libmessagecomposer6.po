@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-24 00:51+0000\n"
-"PO-Revision-Date: 2026-08-16 22:49+0200\n"
+"PO-Revision-Date: 2026-10-24 22:31+0200\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -2344,10 +2344,9 @@ msgid "Last Month Name Long (%1)"
 msgstr "Nome lungo del mese precedente (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:157
-#, fuzzy, kde-format
-#| msgid "Day Of Week Name Short (%1)"
+#, kde-format
 msgid "Day Of Week Number (%1)"
-msgstr "Nome breve del giorno della settimana (%1)"
+msgstr "Numero del giorno della settimana (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:160
 #, kde-format
