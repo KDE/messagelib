@@ -21,7 +21,7 @@ qhp.projects            = webengineviewer
 qhp.webengineviewer.file                = webengineviewer.qhp
 qhp.webengineviewer.namespace           = org.kde.webengineviewer.$QT_VERSION_TAG
 qhp.webengineviewer.virtualFolder       = webengineviewer
-qhp.webengineviewer.indexTitle          = webengineviewer
+qhp.webengineviewer.indexTitle          = WebEngineViewer
 qhp.webengineviewer.indexRoot           =
 
 qhp.webengineviewer.subprojects         = classes

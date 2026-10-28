@@ -21,7 +21,7 @@ qhp.projects            = messagecomposer
 qhp.messagecomposer.file                = messagecomposer.qhp
 qhp.messagecomposer.namespace           = org.kde.messagecomposer.$QT_VERSION_TAG
 qhp.messagecomposer.virtualFolder       = messagecomposer
-qhp.messagecomposer.indexTitle          = messagecomposer
+qhp.messagecomposer.indexTitle          = MessageComposer
 qhp.messagecomposer.indexRoot           =
 
 qhp.messagecomposer.subprojects         = classes

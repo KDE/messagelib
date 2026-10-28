@@ -21,7 +21,7 @@ qhp.projects            = messagelist
 qhp.messagelist.file                = messagelist.qhp
 qhp.messagelist.namespace           = org.kde.messagelist.$QT_VERSION_TAG
 qhp.messagelist.virtualFolder       = messagelist
-qhp.messagelist.indexTitle          = messagelist
+qhp.messagelist.indexTitle          = MessageList
 qhp.messagelist.indexRoot           =
 
 qhp.messagelist.subprojects         = classes

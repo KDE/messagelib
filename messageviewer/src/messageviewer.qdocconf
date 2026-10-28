@@ -21,7 +21,7 @@ qhp.projects            = messageviewer
 qhp.messageviewer.file                = messageviewer.qhp
 qhp.messageviewer.namespace           = org.kde.messageviewer.$QT_VERSION_TAG
 qhp.messageviewer.virtualFolder       = messageviewer
-qhp.messageviewer.indexTitle          = messageviewer
+qhp.messageviewer.indexTitle          = MessageViewer
 qhp.messageviewer.indexRoot           =
 
 qhp.messageviewer.subprojects         = classes

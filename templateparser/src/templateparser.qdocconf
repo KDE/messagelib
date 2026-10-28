@@ -21,7 +21,7 @@ qhp.projects            = templateparser
 qhp.templateparser.file                = templateparser.qhp
 qhp.templateparser.namespace           = org.kde.templateparser.$QT_VERSION_TAG
 qhp.templateparser.virtualFolder       = templateparser
-qhp.templateparser.indexTitle          = templateparser
+qhp.templateparser.indexTitle          = TemplateParser
 qhp.templateparser.indexRoot           =
 
 qhp.templateparser.subprojects         = classes

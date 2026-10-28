@@ -21,7 +21,7 @@ qhp.projects            = messagecore
 qhp.messagecore.file                = messagecore.qhp
 qhp.messagecore.namespace           = org.kde.messagecore.$QT_VERSION_TAG
 qhp.messagecore.virtualFolder       = messagecore
-qhp.messagecore.indexTitle          = messagecore
+qhp.messagecore.indexTitle          = MessageCore
 qhp.messagecore.indexRoot           =
 
 qhp.messagecore.subprojects         = classes

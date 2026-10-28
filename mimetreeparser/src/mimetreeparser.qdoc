@@ -1,9 +1,9 @@
 /*!
-    \module TemplateParser
-    \title TemplateParser C++ Classes
+    \module MimeTreeParser
+    \title MimeTreeParser C++ Classes
     \ingroup modules
     \cmakepackage KPim6
-    \cmakecomponent TemplateParser
+    \cmakecomponent MimeTreeParser
 
-    \brief TemplateParser provides Template Parser Library.
+    \brief MimeTreeParser provides MIME tree parser library.
 */
