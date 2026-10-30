@@ -152,10 +152,10 @@ bool RichTextComposerSignatures::replaceSignature(const KIdentityManagementCore:
         // If the new signature is completely empty, we also want to remove the
         // signature separator, so include it in the selection
         int additionalMove = 0;
-        if (newSig.rawText().isEmpty() && text.mid(currentMatch - 4, 4) == "-- \n"_L1) {
+        if (newSig.rawText().isEmpty() && QStringView(text).mid(currentMatch - 4, 4) == "-- \n"_L1) {
             cursor.movePosition(QTextCursor::PreviousCharacter, QTextCursor::MoveAnchor, 4);
             additionalMove = 4;
-        } else if (newSig.rawText().isEmpty() && text.mid(currentMatch - 1, 1) == u'\n') {
+        } else if (newSig.rawText().isEmpty() && QStringView(text).mid(currentMatch - 1, 1) == u'\n') {
             cursor.movePosition(QTextCursor::PreviousCharacter, QTextCursor::MoveAnchor, 1);
             additionalMove = 1;
         }

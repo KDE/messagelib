@@ -31,7 +31,7 @@ static QString check_sender(const std::shared_ptr<KMime::Message> &message, QByt
         return {};
     }
 
-    if (header.left(6) == "owner-"_L1) {
+    if (header.startsWith("owner-"_L1)) {
         headerName = "Sender";
         headerValue = header;
         header = header.mid(6, header.indexOf(u'@') - 6);
@@ -74,7 +74,7 @@ static QString check_delivered_to(const std::shared_ptr<KMime::Message> &message
     if (auto hrd = message->headerByType("Delivered-To")) {
         header = hrd->asUnicodeString();
     }
-    if (header.isNull() || header.left(13) != "mailing list"_L1 || header.indexOf(u'@') == -1) {
+    if (header.isNull() || !header.startsWith("mailing list"_L1) || header.indexOf(u'@') == -1) {
         return {};
     }
 
@@ -173,7 +173,7 @@ static QString check_mailing_list(const std::shared_ptr<KMime::Message> &message
         return {};
     }
 
-    if (header.left(5) != "list "_L1 || header.indexOf(u'@') < 5) {
+    if (!header.startsWith("list "_L1) || header.indexOf(u'@') < 5) {
         return {};
     }
 

@@ -361,7 +361,7 @@ QString CSSHelperBase::quoteCssDefinition() const
     QString quoteCSS;
     QString blockQuote;
     for (int i = 0; i < 9; ++i) {
-        blockQuote += u"blockquote "_s;
+        blockQuote += u"blockquote ";
         quoteCSS +=
             u"%2{\n"
             "  margin: 4pt 0 4pt 0;\n"
@@ -443,15 +443,15 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, const H
             u"div.quotelevel%1 {\n"
             "  color: %2 ! important;\n"_s.arg(QString::number(i + 1), quoteColorName(i));
         if (mQuoteFont.italic()) {
-            quoteCSS += u"  font-style: italic ! important;\n"_s;
+            quoteCSS += u"  font-style: italic ! important;\n";
         }
         if (mQuoteFont.bold()) {
-            quoteCSS += u"  font-weight: bold ! important;\n"_s;
+            quoteCSS += u"  font-weight: bold ! important;\n";
         }
         if (mShrinkQuotes) {
             quoteCSS += "  font-size: "_L1 + QString::fromLatin1(quoteFontSizes[i]) + "% ! important;\n"_L1;
         }
-        quoteCSS += u"}\n\n"_s;
+        quoteCSS += u"}\n\n";
     }
 
     // CSS definitions for quote levels 4+
@@ -460,13 +460,13 @@ QString CSSHelperBase::screenCssDefinitions(const CSSHelperBase *helper, const H
             u"div.deepquotelevel%1 {\n"
             "  color: %2 ! important;\n"_s.arg(QString::number(i + 1), quoteColorName(i));
         if (mQuoteFont.italic()) {
-            quoteCSS += u"  font-style: italic ! important;\n"_s;
+            quoteCSS += u"  font-style: italic ! important;\n";
         }
         if (mQuoteFont.bold()) {
-            quoteCSS += u"  font-weight: bold ! important;\n"_s;
+            quoteCSS += u"  font-weight: bold ! important;\n";
         }
         if (mShrinkQuotes) {
-            quoteCSS += u"  font-size: 70% ! important;\n"_s;
+            quoteCSS += u"  font-size: 70% ! important;\n";
         }
         quoteCSS += "}\n\n"_L1;
     }
