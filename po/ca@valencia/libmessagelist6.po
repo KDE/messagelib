@@ -562,7 +562,8 @@ msgstr "Fet"
 #: core/settings.kcfg:7
 #, kde-format
 msgid "Display tooltips for messages and group headers"
-msgstr "Mostra els consells per a les capçaleres dels missatges i dels grups"
+msgstr ""
+"Mostra els consells d'eina per a les capçaleres dels missatges i dels grups"
 
 #. i18n: ectx: whatsthis, entry (MessageToolTipEnabled), group (MessageListView)
 #: core/settings.kcfg:8
@@ -571,8 +572,8 @@ msgid ""
 "Enable this option to display tooltips when hovering over an item in the "
 "message list."
 msgstr ""
-"Marqueu esta opció per a mostrar els consells en passar per damunt d'un "
-"element en la llista de missatges."
+"Marqueu esta opció per a mostrar els consells d'eina en passar per damunt "
+"d'un element en la llista de missatges."
 
 #: core/sortorder.cpp:64 core/sortorder.cpp:108
 #, kde-format
