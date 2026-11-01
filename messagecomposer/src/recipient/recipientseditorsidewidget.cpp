@@ -138,7 +138,7 @@ void RecipientsEditorSideWidget::updateTotalToolTip()
         text += i18nc("@info:tooltip %1 list of emails", "Reply-To:%1", replyTo);
     }
 
-    mTotalLabel->setToolTip(u"<html><head><body>%1</body></head></html>"_s.arg(text));
+    mTotalLabel->setToolTip(u"<html><body>%1</body></html>"_s.arg(text));
 }
 
 void RecipientsEditorSideWidget::pickRecipient()
