@@ -1,14 +1,14 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 # Safa Alfulaij <safa1996alfulaij@gmail.com>, 2016, 2018.
-# SPDX-FileCopyrightText: 2021, 2024, 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2021, 2024-2026 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-21 00:52+0000\n"
-"PO-Revision-Date: 2025-10-15 20:37+0400\n"
+"PO-Revision-Date: 2026-10-31 20:09+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -63,12 +63,10 @@ msgid "Could not open %1 for reading."
 msgstr "تعذّر فتح %1 للقراءة."
 
 #: attachment/attachmentfromurljob.cpp:69
-#, fuzzy, kde-format
-#| msgctxt "a file called 'unknown.ext'"
-#| msgid "unknown%1"
+#, kde-format
 msgctxt "a file called 'unknown.ext'"
 msgid "unknown.%1"
-msgstr "مجهول%1"
+msgstr "مجهول.%1"
 
 #: attachment/attachmentfromurljob.cpp:71
 #, kde-format
@@ -256,27 +254,27 @@ msgstr "وقّع هذا المرفق"
 #: dkim-verify/dkimmanagerkeymodel.cpp:82
 #, kde-format
 msgid "DKIM Key"
-msgstr ""
+msgstr "مفتاح DKIM"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:84
 #, kde-format
 msgid "Selector"
-msgstr ""
+msgstr "المُحدِّد"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:86
 #, kde-format
 msgid "SDID"
-msgstr ""
+msgstr "SDID"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:88
 #, kde-format
 msgid "Inserted"
-msgstr ""
+msgstr "مُدرَج"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:90
 #, kde-format
 msgid "Last Used"
-msgstr ""
+msgstr "آخر استخدام"
 
 #. i18n: ectx: whatsthis, entry (OverrideCharacterEncoding), group (Reader)
 #: settings/messagecore.kcfg:25
