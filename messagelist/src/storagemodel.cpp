@@ -26,6 +26,7 @@
 #include <QUrl>
 
 #include <QAbstractItemModel>
+#include <QAbstractProxyModel>
 #include <QAtomicInt>
 #include <QCryptographicHash>
 #include <QFontDatabase>
@@ -76,6 +77,11 @@ std::shared_ptr<KMime::Message> messageForItem(const Akonadi::Item &item)
 static QAtomicInt _k_attributeInitialized;
 
 MessageList::StorageModel::StorageModel(QAbstractItemModel *model, QItemSelectionModel *selectionModel, QObject *parent)
+    : StorageModel(model, selectionModel, nullptr, parent)
+{
+}
+
+MessageList::StorageModel::StorageModel(QAbstractItemModel *model, QItemSelectionModel *selectionModel, QAbstractProxyModel *itemFilterModel, QObject *parent)
     : Core::StorageModel(parent)
     , d(new StorageModelPrivate(this))
 {
@@ -95,7 +101,13 @@ MessageList::StorageModel::StorageModel(QAbstractItemModel *model, QItemSelectio
     itemFilter->addMimeTypeInclusionFilter(u"message/rfc822"_s);
     itemFilter->setHeaderGroup(EntityTreeModel::ItemListHeaders);
 
-    d->mModel = itemFilter;
+    if (itemFilterModel) {
+        itemFilterModel->setParent(this);
+        itemFilterModel->setSourceModel(itemFilter);
+        d->mModel = itemFilterModel;
+    } else {
+        d->mModel = itemFilter;
+    }
 
     qCDebug(MESSAGELIST_LOG) << "Using model:" << model->metaObject()->className();
 
@@ -474,9 +486,13 @@ std::shared_ptr<KMime::Message> MessageList::StorageModel::messageForRow(int row
 
 Collection MessageList::StorageModel::parentCollectionForRow(int row) const
 {
-    auto mimeProxy = static_cast<QAbstractProxyModel *>(d->mModel);
-    // This is index mapped to Akonadi::SelectionProxyModel
-    const QModelIndex childrenFilterIndex = mimeProxy->mapToSource(d->mModel->index(row, 0));
+    // Map down through the item filters to Akonadi::SelectionProxyModel
+    QModelIndex childrenFilterIndex = d->mModel->index(row, 0);
+    for (const QAbstractItemModel *model = d->mModel; model != d->mChildrenFilterModel;) {
+        const auto proxy = static_cast<const QAbstractProxyModel *>(model);
+        childrenFilterIndex = proxy->mapToSource(childrenFilterIndex);
+        model = proxy->sourceModel();
+    }
     Q_ASSERT(childrenFilterIndex.isValid());
 
     auto childrenProxy = static_cast<QAbstractProxyModel *>(d->mChildrenFilterModel);

@@ -15,6 +15,7 @@
 #include <QList>
 
 class QAbstractItemModel;
+class QAbstractProxyModel;
 class QItemSelectionModel;
 
 namespace MessageList
@@ -43,6 +44,16 @@ public:
      * \param parent The parent object.
      */
     explicit StorageModel(QAbstractItemModel *model, QItemSelectionModel *selectionModel, QObject *parent = nullptr);
+    /*!
+     * \brief Create a StorageModel wrapping the specified folder, with an extra item filter.
+     * \param model The item model.
+     * \param selectionModel The selection model.
+     * \param itemFilterModel A proxy stacked on top of the message items, used to hide some of them.
+     * Its source model is set by the StorageModel, which takes ownership of it. Can be null.
+     * \param parent The parent object.
+     * \since 6.9
+     */
+    explicit StorageModel(QAbstractItemModel *model, QItemSelectionModel *selectionModel, QAbstractProxyModel *itemFilterModel, QObject *parent = nullptr);
     /*!
      * \brief Destructor.
      */
