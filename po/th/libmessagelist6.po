@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-11-03 00:56+0000\n"
 "PO-Revision-Date: 2025-03-03 20:07+0700\n"
 "Last-Translator: Pongsakorn S. <kde@xerusion.me>\n"
 "Language-Team: Thai\n"
@@ -1847,13 +1847,13 @@ msgctxt "@action:inmenu"
 msgid "Lock Tab"
 msgstr "ค้นหาล่าสุด"
 
-#: storagemodel.cpp:220
+#: storagemodel.cpp:232
 #, kde-format
 msgctxt "displayed as subject when the subject of a mail is empty"
 msgid "No Subject"
 msgstr "ไม่มีชื่อเรื่อง"
 
-#: storagemodel.cpp:221
+#: storagemodel.cpp:233
 #, kde-format
 msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
