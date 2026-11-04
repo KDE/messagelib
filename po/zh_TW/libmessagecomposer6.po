@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-24 00:51+0000\n"
-"PO-Revision-Date: 2026-09-15 14:28+0900\n"
+"PO-Revision-Date: 2026-11-03 20:39+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -2230,10 +2230,9 @@ msgid "Last Month Name Long (%1)"
 msgstr "上個月的月份長名稱 (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:157
-#, fuzzy, kde-format
-#| msgid "Day Of Week Name Short (%1)"
+#, kde-format
 msgid "Day Of Week Number (%1)"
-msgstr "星期幾的短名稱 (%1)"
+msgstr "星期幾的數字 (%1)"
 
 #: snippet/convertsnippetvariablemenu.cpp:160
 #, kde-format

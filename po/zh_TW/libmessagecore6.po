@@ -4,20 +4,20 @@
 # Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv dot tw>, 2009, 2010.
 # Franklin Weng <franklin@goodhorse.idv.tw>, 2010, 2011, 2013, 2014, 2015.
 # pan93412 <pan93412@gmail.com>, 2019.
-# SPDX-FileCopyrightText: 2023, 2024 Kisaragi Hiu <mail@kisaragi-hiu.com>
+# SPDX-FileCopyrightText: 2023-2024, 2026 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-21 00:52+0000\n"
-"PO-Revision-Date: 2024-08-03 14:40+0900\n"
+"PO-Revision-Date: 2026-11-03 20:38+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.04.70\n"
+"X-Generator: Lokalize 26.11.70\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #, kde-format
@@ -64,12 +64,10 @@ msgid "Could not open %1 for reading."
 msgstr "無法開啟讀取 %1。"
 
 #: attachment/attachmentfromurljob.cpp:69
-#, fuzzy, kde-format
-#| msgctxt "a file called 'unknown.ext'"
-#| msgid "unknown%1"
+#, kde-format
 msgctxt "a file called 'unknown.ext'"
 msgid "unknown.%1"
-msgstr "不明的%1"
+msgstr "不明.%1"
 
 #: attachment/attachmentfromurljob.cpp:71
 #, kde-format
@@ -250,27 +248,27 @@ msgstr "簽署此附件"
 #: dkim-verify/dkimmanagerkeymodel.cpp:82
 #, kde-format
 msgid "DKIM Key"
-msgstr ""
+msgstr "DKIM 金鑰"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:84
 #, kde-format
 msgid "Selector"
-msgstr ""
+msgstr "選擇器"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:86
 #, kde-format
 msgid "SDID"
-msgstr ""
+msgstr "SDID"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:88
 #, kde-format
 msgid "Inserted"
-msgstr ""
+msgstr "已插入"
 
 #: dkim-verify/dkimmanagerkeymodel.cpp:90
 #, kde-format
 msgid "Last Used"
-msgstr ""
+msgstr "最近使用"
 
 #. i18n: ectx: whatsthis, entry (OverrideCharacterEncoding), group (Reader)
 #: settings/messagecore.kcfg:25
