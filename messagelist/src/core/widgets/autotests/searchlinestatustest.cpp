@@ -39,14 +39,14 @@ void SearchLineStatusTest::shouldAddCompletionItem()
 {
     MessageList::Core::SearchLineStatus w;
     w.addCompletionItem(u"ff"_s);
-    QCOMPARE(w.completer()->model()->rowCount(), 26);
+    QCOMPARE(w.completer()->model()->rowCount(), 25);
 
     // Don't add same element
     w.addCompletionItem(u"ff"_s);
-    QCOMPARE(w.completer()->model()->rowCount(), 26);
+    QCOMPARE(w.completer()->model()->rowCount(), 25);
 
     w.addCompletionItem(u"ffss"_s);
-    QCOMPARE(w.completer()->model()->rowCount(), 27);
+    QCOMPARE(w.completer()->model()->rowCount(), 26);
 }
 
 void SearchLineStatusTest::shouldClearCompleter()
@@ -55,9 +55,9 @@ void SearchLineStatusTest::shouldClearCompleter()
     for (int i = 0; i < 10; ++i) {
         w.addCompletionItem(u"ff%1"_s.arg(i));
     }
-    QCOMPARE(w.completer()->model()->rowCount(), 35);
+    QCOMPARE(w.completer()->model()->rowCount(), 34);
     w.slotClearHistory();
-    QCOMPARE(w.completer()->model()->rowCount(), 25);
+    QCOMPARE(w.completer()->model()->rowCount(), 24);
 }
 
 #include "moc_searchlinestatustest.cpp"
