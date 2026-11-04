@@ -4,7 +4,7 @@
 ecm_setup_version(PROJECT VARIABLE_PREFIX MESSAGECORE
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/messagecore_version.h"
     PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim6MessageCoreConfigVersion.cmake"
-    SOVERSION 6
+    SOVERSION  ${PROJECT_SOVERSION}
 )
 
 add_definitions(-DTRANSLATION_DOMAIN=\"libmessagecore6\")

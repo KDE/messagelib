@@ -4,7 +4,7 @@
 ecm_setup_version(PROJECT VARIABLE_PREFIX TEMPLATEPARSER
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/templateparser_version.h"
     PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim6TemplateParserConfigVersion.cmake"
-    SOVERSION 6
+    SOVERSION  ${PROJECT_SOVERSION}
 )
 
 add_definitions(-DTRANSLATION_DOMAIN=\"libtemplateparser6\")

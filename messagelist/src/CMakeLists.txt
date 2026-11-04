@@ -4,7 +4,7 @@
 ecm_setup_version(PROJECT VARIABLE_PREFIX MESSAGELIST
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/messagelist_version.h"
     PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim6MessageListConfigVersion.cmake"
-    SOVERSION 6
+    SOVERSION  ${PROJECT_SOVERSION}
 )
 
 option(KDEPIM_FOLDEROPEN_PROFILE "Enable debug output for timing folder loading" FALSE)

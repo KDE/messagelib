@@ -3,7 +3,7 @@
 ecm_setup_version(PROJECT VARIABLE_PREFIX MIMETREEPARSER
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/mimetreeparser_version.h"
     PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim6MimeTreeParserConfigVersion.cmake"
-    SOVERSION 6
+    SOVERSION  ${PROJECT_SOVERSION}
 )
 
 add_definitions(-DTRANSLATION_DOMAIN=\"libmimetreeparser6\")

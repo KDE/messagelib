@@ -3,7 +3,7 @@
 ecm_setup_version(PROJECT VARIABLE_PREFIX WEBENGINEVIEWER
     VERSION_HEADER "${CMAKE_CURRENT_BINARY_DIR}/webengineviewer_version.h"
     PACKAGE_VERSION_FILE "${CMAKE_CURRENT_BINARY_DIR}/KPim6WebEngineViewerConfigVersion.cmake"
-    SOVERSION 6
+    SOVERSION  ${PROJECT_SOVERSION}
 )
 
 add_definitions(-DTRANSLATION_DOMAIN=\"libwebengineviewer6\")
