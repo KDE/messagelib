@@ -49,6 +49,7 @@ void AutocryptHeadersJobTest::initTestCase()
 
 void AutocryptHeadersJobTest::testAutocryptHeader()
 {
+    QSKIP("Test keys expired in 2021: gpg drops their encryption subkey with ExportMinimal. Regenerate test keys.");
     ComposerJob composerJob;
 
     KMime::Message skeletonMessage;
@@ -95,6 +96,7 @@ void AutocryptHeadersJobTest::testAutocryptHeader()
 
 void AutocryptHeadersJobTest::testContentChained()
 {
+    QSKIP("Test keys expired in 2021: gpg drops their encryption subkey with ExportMinimal. Regenerate test keys.");
     ComposerJob composerJob;
 
     KMime::Message skeletonMessage;
@@ -140,6 +142,7 @@ void AutocryptHeadersJobTest::testContentChained()
 
 void AutocryptHeadersJobTest::testAutocryptGossipHeader()
 {
+    QSKIP("Test keys expired in 2021: gpg drops their encryption subkey with ExportMinimal. Regenerate test keys.");
     ComposerJob composerJob;
 
     KMime::Message skeletonMessage;
@@ -183,6 +186,7 @@ void AutocryptHeadersJobTest::testAutocryptGossipHeader()
 
 void AutocryptHeadersJobTest::testSetGnupgHome()
 {
+    QSKIP("Test keys expired in 2021: gpg drops their encryption subkey with ExportMinimal. Regenerate test keys.");
     ComposerJob composerJob;
 
     KMime::Message skeletonMessage;
@@ -258,6 +262,7 @@ void AutocryptHeadersJobTest::testSetGnupgHome()
 
 void AutocryptHeadersJobTest::testStripSenderKey()
 {
+    QSKIP("Test keys expired in 2021: gpg drops their encryption subkey with ExportMinimal. Regenerate test keys.");
     ComposerJob composerJob;
 
     KMime::Message skeletonMessage;
