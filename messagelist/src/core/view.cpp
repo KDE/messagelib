@@ -2744,9 +2744,10 @@ void View::ViewPrivate::onPressed(QMouseEvent *e)
 
         switch (e->button()) {
         case Qt::LeftButton:
-            // if we have multi selection then the meaning of hitting
-            // the content item is quite unclear.
-            if (mDelegate->hitContentItem() && (q->selectedIndexes().count() > 1)) {
+            // Clickable icons always toggle the status of the hit message (and don't select it).
+            // Other content items only do so when more than one index is selected: note that
+            // selectedIndexes() contains one index per column, not per row.
+            if (mDelegate->hitContentItem() && (mDelegate->hitContentItem()->isClickable() || q->selectedIndexes().count() > 1)) {
                 qCDebug(MESSAGELIST_LOG) << "Left hit with selectedIndexes().count() == " << q->selectedIndexes().count();
 
                 switch (mDelegate->hitContentItem()->type()) {
