@@ -79,10 +79,10 @@ void MessageList::Util::deleteConfig(const QString &collectionId)
     storageModelOrder.deleteEntry(collectionId + messageSortingConfigName());
 
     KConfigGroup storageModelTheme(MessageListSettings::self()->config(), MessageList::Util::storageModelThemesGroup());
-    storageModelTheme.deleteEntry(collectionId + setForStorageModelConfigName());
+    storageModelTheme.deleteEntry(setForStorageModelConfigName().arg(collectionId));
 
     KConfigGroup storageModelAggregation(MessageListSettings::self()->config(), MessageList::Util::storageModelAggregationsGroup());
-    storageModelAggregation.deleteEntry(collectionId + setForStorageModelConfigName());
+    storageModelAggregation.deleteEntry(setForStorageModelConfigName().arg(collectionId));
 }
 
 QColor MessageList::Util::unreadDefaultMessageColor()
