@@ -95,10 +95,10 @@ void DKIMCheckFullJob::storeKey(const QString &key, const QString &domain, const
         // Nothing
         break;
     case DKIMCheckPolicy::Save:
-        storeInKeyManager(key, selector, domain, false);
+        storeInKeyManager(key, domain, selector, false);
         break;
     case DKIMCheckPolicy::SaveAndCompare:
-        storeInKeyManager(key, selector, domain, true);
+        storeInKeyManager(key, domain, selector, true);
         break;
     }
 }
