@@ -11,6 +11,7 @@
 #include "core/storagemodelbase.h"
 #include "messagelistsettings.h"
 
+#include <Akonadi/Collection>
 #include <KConfigGroup>
 
 using namespace MessageList::Core;

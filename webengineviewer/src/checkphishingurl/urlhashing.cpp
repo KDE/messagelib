@@ -9,7 +9,6 @@
 #include <QCryptographicHash>
 #include <QHash>
 
-using namespace Qt::Literals;
 using namespace WebEngineViewer;
 using namespace Qt::Literals::StringLiterals;
 

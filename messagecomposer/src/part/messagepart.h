@@ -10,8 +10,6 @@
 
 #include <QObject>
 
-#include <KMime/Headers>
-
 namespace MessageComposer
 {
 /*!

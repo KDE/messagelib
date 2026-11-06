@@ -6,6 +6,7 @@
 #pragma once
 
 #include "webengineviewer_export.h"
+#include <QUrl>
 #include <WebEngineViewer/NetworkPluginUrlInterceptorInterface>
 namespace WebEngineViewer
 {

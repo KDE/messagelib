@@ -6,6 +6,8 @@
 
 #include "keycachememento.h"
 
+#include <Libkleo/KeyCache>
+
 #include <QTimer>
 
 using namespace MimeTreeParser;

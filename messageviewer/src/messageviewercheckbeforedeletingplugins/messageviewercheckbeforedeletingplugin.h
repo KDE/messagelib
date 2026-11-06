@@ -9,6 +9,7 @@
 #include "messageviewer_export.h"
 #include <QObject>
 #include <memory>
+class QWidget;
 namespace MessageViewer
 {
 class MessageViewerCheckBeforeDeletingInterface;

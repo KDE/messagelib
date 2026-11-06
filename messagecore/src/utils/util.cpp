@@ -5,6 +5,7 @@
 
 #include "util.h"
 
+#include <KIdentityManagementCore/Identity>
 #include <KIdentityManagementCore/IdentityManager>
 
 #include <KMime/Message>

@@ -9,7 +9,6 @@
 #include "contentjobbase_p.h"
 #include "job/multipartjob.h"
 #include "job/singlepartjob.h"
-#include "part/globalpart.h"
 #include "part/textpart.h"
 
 #include <QStringEncoder>

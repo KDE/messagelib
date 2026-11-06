@@ -5,9 +5,12 @@
 #pragma once
 
 #include "messagelist_export.h"
-#include <Akonadi/Collection>
 #include <QComboBox>
 #include <memory>
+namespace Akonadi
+{
+class Collection;
+}
 namespace MessageList
 {
 namespace Core

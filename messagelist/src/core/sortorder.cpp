@@ -14,6 +14,8 @@
 
 #include <QMetaEnum>
 
+#include <tuple>
+
 using namespace Qt::Literals::StringLiterals;
 using namespace MessageList::Core;
 

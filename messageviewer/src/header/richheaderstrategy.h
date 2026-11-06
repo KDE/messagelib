@@ -12,7 +12,6 @@
 #pragma once
 #include "messageviewer/headerstrategy.h"
 #include "messageviewer_export.h"
-#include <QStringList>
 //
 namespace MessageViewer
 {

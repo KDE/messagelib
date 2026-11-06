@@ -6,8 +6,8 @@
 
 #include "attachmentclipboardjob.h"
 #include <KLocalizedString>
-#include <QApplication>
 #include <QClipboard>
+#include <QGuiApplication>
 #include <QInputDialog>
 
 using namespace MessageComposer;
@@ -35,7 +35,7 @@ void AttachmentClipBoardJob::addAttachment(const QByteArray &data, const QString
 
 void AttachmentClipBoardJob::doStart()
 {
-    QClipboard *clip = QApplication::clipboard();
+    QClipboard *clip = QGuiApplication::clipboard();
     const QString clipText = clip->text();
     if (clipText.isEmpty()) {
         setError(KJob::UserDefinedError);

@@ -8,6 +8,9 @@
 
 #include "templateparser_export.h"
 #include "ui_templatesconfiguration_base.h"
+
+#include <memory>
+
 class QPlainTextEdit;
 namespace TemplateParser
 {

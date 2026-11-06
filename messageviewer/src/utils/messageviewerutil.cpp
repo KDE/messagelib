@@ -26,11 +26,9 @@
 #include <KMime/Message>
 #include <KRecentDirs>
 #include <QAction>
-#include <QActionGroup>
 #include <QDataStream>
 #include <QDesktopServices>
 #include <QFileDialog>
-#include <QIcon>
 #include <QPointer>
 #include <QRegularExpression>
 #include <QTemporaryFile>

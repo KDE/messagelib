@@ -7,7 +7,6 @@
 
 #pragma once
 
-#include "config-messagelist.h"
 #include "messagelist_export.h"
 #include "searchmessagebybuttons.h"
 #include <Akonadi/MessageStatus>

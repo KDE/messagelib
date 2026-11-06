@@ -8,6 +8,9 @@
 
 #include "messagecomposer_export.h"
 #include <QString>
+
+#include <cstdint>
+
 class QAction;
 
 namespace MessageComposer

@@ -7,10 +7,14 @@
 #pragma once
 
 #include "templateparser_export.h"
-#include <KMime/Message>
 #include <QObject>
 
 #include <memory>
+
+namespace KMime
+{
+class Message;
+}
 
 namespace TemplateParser
 {

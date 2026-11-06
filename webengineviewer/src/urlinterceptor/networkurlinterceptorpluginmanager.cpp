@@ -11,7 +11,6 @@
 #include <KPluginFactory>
 #include <KPluginMetaData>
 #include <PimCommon/PluginUtil>
-#include <QFileInfo>
 #include <QVariant>
 
 using namespace Qt::Literals::StringLiterals;

@@ -5,6 +5,9 @@
 */
 
 #include "webengineaccesskeyanchor.h"
+
+#include <QVariant>
+
 using namespace Qt::Literals::StringLiterals;
 
 using namespace WebEngineViewer;

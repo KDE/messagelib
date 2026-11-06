@@ -9,11 +9,16 @@
 
 #include "messageviewer_private_export.h"
 
-#include <MimeTreeParser/MessagePart>
-
 #include <QList>
+#include <QSharedPointer>
 
 #include <memory>
+
+namespace MimeTreeParser
+{
+class MessagePart;
+using MessagePartPtr = QSharedPointer<MessagePart>;
+}
 
 namespace MessageViewer
 {
@@ -47,7 +52,7 @@ public:
 
     /*!
      */
-    [[nodiscard]] QList<MessagePartRendererBase *> renderersForPart(const QMetaObject *mo, const MimeTreeParser::MessagePart::Ptr &mp) const;
+    [[nodiscard]] QList<MessagePartRendererBase *> renderersForPart(const QMetaObject *mo, const MimeTreeParser::MessagePartPtr &mp) const;
 
 private:
     Q_DISABLE_COPY(MessagePartRendererFactory)

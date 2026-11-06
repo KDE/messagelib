@@ -8,8 +8,6 @@
 #include "viewerplugin.h"
 #include "viewerpluginmanager.h"
 
-#include <QList>
-
 using namespace MessageViewer;
 
 class MessageViewer::ViewerPluginToolManagerPrivate

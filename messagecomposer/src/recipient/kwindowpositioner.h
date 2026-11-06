@@ -9,6 +9,8 @@
 
 #include <QObject>
 
+#include <cstdint>
+
 class QWidget;
 
 namespace MessageComposer

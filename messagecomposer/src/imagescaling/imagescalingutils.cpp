@@ -7,7 +7,9 @@
 #include "imagescalingutils.h"
 #include "settings/messagecomposersettings.h"
 
+#include <QDate>
 #include <QFileInfo>
+#include <QTime>
 
 using namespace MessageComposer;
 using namespace Qt::Literals::StringLiterals;

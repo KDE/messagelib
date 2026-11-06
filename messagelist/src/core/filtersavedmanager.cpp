@@ -9,6 +9,8 @@
 #include "filter.h"
 #include <KConfigGroup>
 #include <KSharedConfig>
+#include <QAction>
+#include <QIcon>
 #include <QMenu>
 #include <QRegularExpression>
 using namespace Qt::Literals::StringLiterals;

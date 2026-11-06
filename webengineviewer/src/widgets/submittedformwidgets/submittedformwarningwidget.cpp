@@ -10,7 +10,6 @@
 #include <KLocalizedString>
 
 using namespace WebEngineViewer;
-using namespace Qt::Literals::StringLiterals;
 
 SubmittedFormWarningWidget::SubmittedFormWarningWidget(QWidget *parent)
     : KMessageWidget(parent)

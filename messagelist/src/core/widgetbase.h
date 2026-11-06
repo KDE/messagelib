@@ -12,8 +12,8 @@
 #include <QWidget>
 
 #include <MessageList/Enums>
-#include <MessageList/QuickSearchLine>
 #include <MessageList/SearchLineCommand>
+#include <MessageList/SearchMessageByButtons>
 
 #include "messagelist_export.h"
 

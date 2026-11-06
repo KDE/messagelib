@@ -9,6 +9,8 @@
 #include "webengineviewer_export.h"
 #include <QWebEngineView>
 #include <WebEngineViewer/BlockTrackingUrlInterceptor>
+
+#include <memory>
 namespace WebEngineViewer
 {
 class WebEngineViewPrivate;

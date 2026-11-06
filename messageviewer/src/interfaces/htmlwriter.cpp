@@ -8,7 +8,6 @@
 
 #include <QTextStream>
 
-using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 
 HtmlWriter::HtmlWriter() = default;

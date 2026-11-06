@@ -15,8 +15,8 @@
 #include "messagecore_debug.h"
 #include <KAboutData>
 
-#include <KMime/Content>
 #include <KMime/Headers>
+#include <KMime/Util>
 
 #include <KIO/Global>
 #include <KLocalizedString>

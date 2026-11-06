@@ -7,6 +7,7 @@
 #pragma once
 
 #include <Libkleo/Enum>
+#include <QStringList>
 
 #include "messagecomposer_export.h"
 

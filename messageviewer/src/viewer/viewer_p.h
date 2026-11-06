@@ -15,7 +15,6 @@
 
 #include <Akonadi/Item>
 #include <Akonadi/Monitor>
-#include <Akonadi/Session>
 #include <KMime/MDN>
 #include <KMime/Message>
 #include <KService>
@@ -41,6 +40,11 @@ class QPoint;
 class QSplitter;
 class QModelIndex;
 class QVBoxLayout;
+
+namespace Akonadi
+{
+class Session;
+}
 
 namespace PimCommon
 {

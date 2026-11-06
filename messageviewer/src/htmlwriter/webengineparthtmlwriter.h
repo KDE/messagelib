@@ -8,8 +8,6 @@
 #include "bufferedhtmlwriter.h"
 #include <QObject>
 
-#include <QByteArray>
-#include <QString>
 class QTemporaryFile;
 namespace MessageViewer
 {

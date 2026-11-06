@@ -8,6 +8,8 @@
 
 #include "webengineviewer_export.h"
 #include <QWebEnginePage>
+
+#include <memory>
 class QWebEngineDownloadRequest;
 namespace WebEngineViewer
 {

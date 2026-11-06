@@ -6,6 +6,7 @@
 
 #include "texthtml.h"
 
+#include "interfaces/bodypart.h"
 #include "messagepart.h"
 #include "objecttreeparser.h"
 

@@ -11,6 +11,7 @@
 #include <KEmailAddress>
 #include <KLocalizedString>
 #include <KMime/Headers>
+#include <KMime/Message>
 
 #include "messagecore_debug.h"
 #include <KUser>

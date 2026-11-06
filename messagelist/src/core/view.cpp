@@ -28,6 +28,8 @@
 #include <QHelpEvent>
 #include <QLineEdit>
 #include <QMenu>
+#include <QRegularExpression>
+#include <QRubberBand>
 #include <QScrollBar>
 #include <QScroller>
 #include <QTimer>

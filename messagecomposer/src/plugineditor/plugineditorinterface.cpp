@@ -9,6 +9,11 @@
 
 using namespace MessageComposer;
 
+namespace MessageComposer
+{
+class PluginEditor;
+}
+
 class MessageComposer::PluginEditorInterfacePrivate
 {
 public:

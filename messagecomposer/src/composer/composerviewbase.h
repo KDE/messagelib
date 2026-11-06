@@ -16,11 +16,10 @@
 #include <KMime/Message>
 
 #include <Libkleo/Enum>
+#include <QDate>
 #include <QList>
 #include <QObject>
 #include <QUrl>
-
-using namespace Qt::Literals::StringLiterals;
 
 class QTimer;
 class KJob;
@@ -55,6 +54,11 @@ class IdentityManager;
 namespace Kleo
 {
 class ExpiryChecker;
+}
+
+namespace GpgME
+{
+class Key;
 }
 
 namespace MessageComposer

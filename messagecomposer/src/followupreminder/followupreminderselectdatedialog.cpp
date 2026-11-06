@@ -10,6 +10,7 @@
 #include <KLocalizedString>
 #include <KMessageBox>
 
+#include <Akonadi/Collection>
 #include <Akonadi/CollectionComboBox>
 
 #include <KCalendarCore/Todo>

@@ -8,9 +8,9 @@
 #include "messagecomposer_export.h"
 
 #include <KJob>
-#include <QUrl>
 
 class QTextEdit;
+class QUrl;
 
 namespace KIO
 {

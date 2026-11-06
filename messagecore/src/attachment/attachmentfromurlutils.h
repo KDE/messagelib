@@ -6,7 +6,7 @@
 
 #pragma once
 #include "messagecore_export.h"
-#include <QObject>
+class QObject;
 class QUrl;
 namespace MessageCore
 {

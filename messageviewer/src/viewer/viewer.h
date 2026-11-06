@@ -55,7 +55,6 @@ class AttachmentStrategy;
 class HeaderStylePlugin;
 class CSSHelper;
 class ViewerPrivate;
-class Viewer;
 class RemoteContentMenu;
 
 /*!

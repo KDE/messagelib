@@ -8,7 +8,7 @@
 
 #include "messageviewer_private_export.h"
 #include <GrantleeTheme/GrantleeTheme>
-#include <KTextTemplate/TemplateLoader>
+#include <KTextTemplate/Template>
 #include <QString>
 #include <memory>
 namespace KMime

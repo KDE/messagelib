@@ -18,6 +18,8 @@
 #include <QDateTime>
 #include <QRegularExpression>
 
+#include <optional>
+
 #include <openssl/bn.h>
 #ifdef LIBRESSL_VERSION_NUMBER
 #include <openssl/x509.h>

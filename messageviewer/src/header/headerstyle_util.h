@@ -8,13 +8,10 @@
 
 #include <KTextToHTML>
 #include <QString>
-#include <QVariantHash>
 
 #include "messageviewer/spamheaderanalyzer.h"
 #include <KMime/Message>
 
-#include "messageviewer/headerstyle.h"
-#include "messageviewer/viewer.h"
 #include "messageviewer_export.h"
 
 class QDateTime;
@@ -22,6 +19,7 @@ class QImage;
 
 namespace MessageViewer
 {
+class HeaderStyle;
 /*!
  * \class MessageViewer::HeaderStyleUtil
  * \inmodule MessageViewer

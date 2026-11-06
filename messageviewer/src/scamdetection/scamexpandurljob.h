@@ -10,6 +10,7 @@
 #include "messageviewer_export.h"
 #include <QNetworkReply>
 #include <QObject>
+#include <memory>
 namespace MessageViewer
 {
 class ScamExpandUrlJobPrivate;

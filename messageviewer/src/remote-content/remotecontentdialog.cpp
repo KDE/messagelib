@@ -5,6 +5,7 @@
 */
 
 #include "remotecontentdialog.h"
+#include "remotecontentinfo.h"
 #include "remotecontentwidget.h"
 #include <QDialogButtonBox>
 #include <QPushButton>

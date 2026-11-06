@@ -8,7 +8,6 @@
 
 #include <QNetworkReply>
 #include <QObject>
-#include <QSslError>
 
 #include "webengineviewer_export.h"
 #include <memory>

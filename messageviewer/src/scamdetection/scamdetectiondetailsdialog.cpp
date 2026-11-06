@@ -8,7 +8,6 @@
 #include "scamdetectiondetailsdialog.h"
 
 #include "messageviewer_debug.h"
-#include "settings/messageviewersettings.h"
 
 #include <TextCustomEditor/RichTextEditorWidget>
 

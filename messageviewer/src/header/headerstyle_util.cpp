@@ -13,8 +13,6 @@
 
 #include "header/headerstyle.h"
 
-#include "settings/messageviewersettings.h"
-
 #include <MessageCore/StringUtil>
 #include <MimeTreeParser/NodeHelper>
 #include <TextUtils/TextUtilsTextToHtml>

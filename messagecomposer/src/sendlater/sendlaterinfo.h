@@ -9,6 +9,8 @@
 #include <Akonadi/Item>
 #include <QDateTime>
 
+#include <cstdint>
+
 #include "messagecomposer_export.h"
 
 class QDebug;

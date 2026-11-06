@@ -10,6 +10,7 @@
 #include "messageviewer_export.h"
 
 #include <QWidget>
+#include <memory>
 
 namespace MessageViewer
 {

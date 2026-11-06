@@ -8,7 +8,6 @@
 
 #include "messagecomposer_export.h"
 #include <MessageComposer/PluginEditorBase>
-#include <QObject>
 
 namespace MessageComposer
 {

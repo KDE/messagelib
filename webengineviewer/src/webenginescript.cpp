@@ -5,6 +5,8 @@
 */
 #include "webenginescript.h"
 
+#include <QPoint>
+
 using namespace Qt::Literals::StringLiterals;
 using namespace WebEngineViewer;
 

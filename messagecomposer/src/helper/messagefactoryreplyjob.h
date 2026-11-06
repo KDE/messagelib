@@ -7,8 +7,13 @@
 #pragma once
 
 #include <Akonadi/Collection>
-#include <KMime/Message>
 #include <QObject>
+#include <memory>
+
+namespace KMime
+{
+class Message;
+}
 
 namespace KIdentityManagementCore
 {

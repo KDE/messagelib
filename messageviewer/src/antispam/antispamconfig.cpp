@@ -12,6 +12,7 @@
 
 #include <KConfig>
 #include <KConfigGroup>
+#include <QStringList>
 
 using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;

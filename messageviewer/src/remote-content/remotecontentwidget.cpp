@@ -5,6 +5,7 @@
 */
 
 #include "remotecontentwidget.h"
+#include "remotecontentinfo.h"
 #include "remotecontentstatustypecombobox.h"
 
 #include <KLocalizedString>

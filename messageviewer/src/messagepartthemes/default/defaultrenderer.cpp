@@ -14,12 +14,10 @@
 
 #include "converthtmltoplaintext.h"
 #include "htmlblock.h"
-#include "messagepartrendererbase.h"
 #include "messagepartrendererfactory.h"
 #include "messagepartrenderermanager.h"
 #include "utils/iconnamecache.h"
 #include "viewer/attachmentstrategy.h"
-#include "viewer/csshelperbase.h"
 
 #include "interfaces/htmlwriter.h"
 #include <MimeTreeParser/MessagePart>

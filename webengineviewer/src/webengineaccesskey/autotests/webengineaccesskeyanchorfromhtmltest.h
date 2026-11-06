@@ -6,6 +6,7 @@
 #pragma once
 
 #include <QObject>
+#include <QVariant>
 #include <QWidget>
 
 #include "../webengineaccesskeyanchor.h"

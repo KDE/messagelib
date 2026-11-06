@@ -10,11 +10,6 @@
 
 #include <MimeTreeParser/MessagePart>
 
-#include <map>
-#include <memory>
-
-#include <QSharedPointer>
-
 namespace MessageViewer
 {
 class CSSHelperBase;

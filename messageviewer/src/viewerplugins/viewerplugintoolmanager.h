@@ -8,10 +8,9 @@
 
 #include "messageviewer_export.h"
 #include "viewerplugininterface.h"
-#include <Akonadi/Item>
 #include <QObject>
+#include <memory>
 class KActionCollection;
-class QAction;
 namespace MessageViewer
 {
 class ViewerPluginToolManagerPrivate;

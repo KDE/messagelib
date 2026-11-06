@@ -17,6 +17,8 @@
 #include "messagelist_debug.h"
 #include <KLocalizedString>
 
+#include <tuple>
+
 using namespace Qt::Literals::StringLiterals;
 using namespace MessageList::Core;
 

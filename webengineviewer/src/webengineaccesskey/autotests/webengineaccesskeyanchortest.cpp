@@ -7,6 +7,7 @@
 #include "webengineaccesskeyanchortest.h"
 #include "../webengineaccesskeyanchor.h"
 #include <QTest>
+#include <QVariant>
 
 WebEngineAccessKeyAnchorTest::WebEngineAccessKeyAnchorTest(QObject *parent)
     : QObject(parent)

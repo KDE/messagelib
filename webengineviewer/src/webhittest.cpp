@@ -7,6 +7,7 @@
 #include "webhittest.h"
 #include "webenginemanagescript.h"
 #include "webhittestresult.h"
+#include <QPoint>
 #include <QWebEnginePage>
 
 using namespace Qt::Literals::StringLiterals;

@@ -13,9 +13,12 @@
 #include <QMap>
 #include <QObject>
 
-#include <Akonadi/Collection>
-
 #include <memory>
+
+namespace Akonadi
+{
+class Collection;
+}
 
 namespace MessageCore
 {

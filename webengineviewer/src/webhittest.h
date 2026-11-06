@@ -8,8 +8,8 @@
 
 #include "webengineviewer_export.h"
 #include <QObject>
-#include <QPoint>
 #include <memory>
+class QPoint;
 class QWebEnginePage;
 namespace WebEngineViewer
 {

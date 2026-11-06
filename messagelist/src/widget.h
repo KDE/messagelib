@@ -11,10 +11,15 @@
 #include <MessageList/View>
 #include <MessageList/WidgetBase>
 
-#include <KMime/Message>
-
 #include <QList>
+
+#include <memory>
+
 class KXMLGUIClient;
+namespace KMime
+{
+class Message;
+}
 namespace MessageList
 {
 /*!

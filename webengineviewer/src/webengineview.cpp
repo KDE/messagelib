@@ -6,10 +6,8 @@
 
 #include "webengineview.h"
 #include "checkphishingurl/localdatabasemanager.h"
-#include "webenginemanagescript.h"
 #include "webenginenavigationrequestinterceptor.h"
 #include "webengineviewer_debug.h"
-#include <QEvent>
 #include <QKeyEvent>
 #include <QMouseEvent>
 #include <QTimer>

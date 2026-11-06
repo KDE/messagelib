@@ -25,7 +25,6 @@
 
 #include "webengineviewer_export.h"
 #include <QRect>
-#include <QString>
 #include <QUrl>
 #include <QVariant>
 #include <memory>

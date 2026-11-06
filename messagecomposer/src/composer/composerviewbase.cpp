@@ -73,6 +73,7 @@
 
 #include "followupreminder/followupremindercreatejob.h"
 #include <QDir>
+#include <QEventLoop>
 #include <QImage>
 #include <QRegularExpression>
 #include <QStandardPaths>

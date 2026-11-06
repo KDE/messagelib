@@ -9,6 +9,9 @@
 #include "messagecomposer_export.h"
 #include <QObject>
 #include <TextAddonsWidgets/PluginUtil>
+
+#include <memory>
+
 namespace MessageComposer
 {
 class PluginEditorCheckBeforeSendManagerPrivate;

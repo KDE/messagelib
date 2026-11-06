@@ -7,9 +7,10 @@
 #pragma once
 
 #include "messagecomposer_export.h"
-#include <KMime/Message>
 #include <MessageComposer/PluginActionType>
 #include <QObject>
+
+#include <memory>
 
 namespace KPIMTextEdit
 {

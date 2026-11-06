@@ -12,7 +12,7 @@
 
 #include "messagecore_export.h"
 
-#include <QObject>
+#include <QtClassHelperMacros>
 #include <memory>
 #include <vector>
 namespace KMime

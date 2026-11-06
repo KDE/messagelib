@@ -20,6 +20,7 @@
 #include <QAbstractItemModel>
 #include <QAbstractProxyModel>
 #include <QApplication>
+#include <QHash>
 #include <QHeaderView>
 #include <QItemSelectionModel>
 #include <QMouseEvent>
@@ -28,7 +29,6 @@
 #include <QToolButton>
 
 #include "core/model.h"
-#include "core/widgets/quicksearchline.h"
 #include "messagelistsettings.h"
 #include "messagelistutil_p.h"
 #include "storagemodel.h"

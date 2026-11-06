@@ -10,7 +10,6 @@
 #include <QByteArray>
 #include <QList>
 #include <QMetaType>
-#include <QObject>
 #include <QString>
 namespace WebEngineViewer
 {

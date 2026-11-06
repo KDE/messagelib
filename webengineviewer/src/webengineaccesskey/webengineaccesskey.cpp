@@ -14,8 +14,8 @@
 #include <QAction>
 #include <QKeyEvent>
 #include <QLabel>
-#include <QList>
 #include <QToolTip>
+#include <QVariant>
 #include <QWebEngineView>
 using namespace Qt::Literals::StringLiterals;
 using namespace WebEngineViewer;

@@ -10,7 +10,6 @@
 
 namespace WebEngineViewer
 {
-class WebEnginePage;
 class WebEngineNavigationRequestInterceptor : public QWebEnginePage
 {
     Q_OBJECT

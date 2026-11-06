@@ -7,7 +7,9 @@
 #pragma once
 
 #include <QRect>
-#include <QVariant>
+#include <QString>
+
+class QVariant;
 
 namespace WebEngineViewer
 {

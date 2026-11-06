@@ -9,7 +9,6 @@
 #include "dkimchecksignaturejob.h"
 #include "messagecore_export.h"
 #include <Akonadi/Item>
-#include <KMime/Message>
 #include <QObject>
 
 namespace MessageCore

@@ -18,6 +18,7 @@
 #include <Akonadi/MessageStatus>
 #include <KSharedConfig>
 class QDebug;
+class KConfigGroup;
 
 namespace MessageList
 {

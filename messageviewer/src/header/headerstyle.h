@@ -14,11 +14,15 @@
 #include "messageviewer_export.h"
 
 #include <Akonadi/MessageStatus>
-#include <KMime/Message>
 #include <memory>
 
 class QObject;
 class QString;
+
+namespace KMime
+{
+class Message;
+}
 
 namespace MimeTreeParser
 {

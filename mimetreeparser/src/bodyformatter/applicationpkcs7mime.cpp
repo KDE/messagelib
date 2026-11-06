@@ -6,12 +6,15 @@
 
 #include "applicationpkcs7mime.h"
 
+#include "interfaces/bodypart.h"
 #include "messagepart.h"
 #include "objecttreeparser.h"
 
 #include <QGpgME/Protocol>
 
 #include <KMime/Content>
+
+#include <QStringDecoder>
 
 #include "mimetreeparser_debug.h"
 

@@ -10,11 +10,11 @@
 #include "config-messagelist.h"
 #include "core/messageitem.h"
 #include "tagmanager.h"
-#include <MessageCore/StringUtil>
 #include <TextUtils/ConvertText>
 
 #include <KConfigGroup>
 #include <KRandom>
+#include <QDebug>
 #if !FORCE_DISABLE_AKONADI_SEARCH
 #include <PIM/emailquery.h>
 #include <PIM/resultiterator.h>

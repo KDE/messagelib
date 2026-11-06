@@ -10,7 +10,7 @@
 #include "messageitem_p.h"
 
 #include "messagelist_debug.h"
-#include <Akonadi/Item>
+#include <Akonadi/Monitor>
 #include <Akonadi/TagAttribute>
 #include <Akonadi/TagFetchJob>
 #include <Akonadi/TagFetchScope>

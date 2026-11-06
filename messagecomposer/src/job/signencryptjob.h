@@ -10,7 +10,6 @@
 #include "abstractencryptjob.h"
 #include "contentjobbase.h"
 #include "messagecomposer_export.h"
-#include <KMime/Message>
 
 #include <Libkleo/Enum>
 

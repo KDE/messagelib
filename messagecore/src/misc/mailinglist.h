@@ -7,16 +7,21 @@
 
 #include "messagecore_export.h"
 
-#include <KMime/Message>
 #include <QUrl>
 
 #include <QByteArray>
+#include <QList>
+#include <QMetaType>
 #include <QSharedDataPointer>
 #include <QString>
 
 #include <memory>
 
 class KConfigGroup;
+namespace KMime
+{
+class Message;
+}
 
 namespace MessageCore
 {

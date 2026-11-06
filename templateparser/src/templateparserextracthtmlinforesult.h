@@ -8,7 +8,6 @@
 
 #include "templateparser_export.h"
 #include <QMetaType>
-#include <QObject>
 #include <QString>
 struct TEMPLATEPARSER_EXPORT TemplateParserExtractHtmlInfoResult {
     void clear();

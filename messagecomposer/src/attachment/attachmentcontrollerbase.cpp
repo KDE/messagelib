@@ -17,8 +17,6 @@
 #include "MessageComposer/ComposerJob"
 #include <MessageComposer/AttachmentModel>
 
-#include <MessageViewer/MessageViewerUtil>
-
 #include <MessageCore/StringUtil>
 
 #include <KIO/JobUiDelegateFactory>
@@ -36,7 +34,6 @@
 #include <KActionMenu>
 #include <KFileItemActions>
 #include <KFileItemListProperties>
-#include <KIO/ApplicationLauncherJob>
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <QAction>
@@ -50,9 +47,9 @@
 #include "messagecore/attachmentupdatejob.h"
 #include <Akonadi/EmailAddressSelectionDialog>
 #include <Akonadi/EmailAddressSelectionWidget>
-#include <KIO/JobUiDelegate>
 #include <KIO/OpenUrlJob>
 #include <KIO/StoredTransferJob>
+#include <KJobUiDelegate>
 #include <MessageCore/AttachmentCompressJob>
 #include <MessageCore/AttachmentFromUrlUtils>
 #include <MessageCore/AttachmentPropertiesDialog>
@@ -60,7 +57,6 @@
 #include <KJob>
 #include <KMime/Content>
 
-#include <QActionGroup>
 #include <QFileDialog>
 
 using namespace Qt::Literals::StringLiterals;

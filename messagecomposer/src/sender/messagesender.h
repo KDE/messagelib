@@ -9,7 +9,16 @@
 
 #pragma once
 
-#include <KMime/Message>
+#include <QObject>
+
+#include <cstdint>
+#include <memory>
+
+namespace KMime
+{
+class Message;
+}
+
 using namespace Qt::Literals::StringLiterals;
 
 namespace MessageComposer

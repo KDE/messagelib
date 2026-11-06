@@ -8,8 +8,8 @@
 
 #pragma once
 
+#include <QtGlobal> // defines uint, at least.
 #include <memory>
-#include <qglobal.h> // defines uint, at least.
 namespace MessageList
 {
 namespace Core

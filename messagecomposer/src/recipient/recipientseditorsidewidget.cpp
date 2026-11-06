@@ -12,6 +12,7 @@
 #include "recipientseditorsidewidget.h"
 
 #include "kwindowpositioner.h"
+#include "recipientseditor.h"
 #include "recipientspicker.h"
 
 #include <KLocalizedString>

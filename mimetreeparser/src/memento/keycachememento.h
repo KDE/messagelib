@@ -7,9 +7,14 @@
 #pragma once
 
 #include "cryptobodypartmemento.h"
-#include <Libkleo/KeyCache>
+#include <gpgme++/global.h>
 
 #include <memory>
+
+namespace Kleo
+{
+class KeyCache;
+}
 
 namespace MimeTreeParser
 {

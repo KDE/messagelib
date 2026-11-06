@@ -23,7 +23,6 @@
 #include <memory>
 #include <vector>
 
-#include <QSharedPointer>
 #include <QStringList>
 
 namespace Kleo

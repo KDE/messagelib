@@ -8,6 +8,8 @@
 #include "messagecomposer_export.h"
 #include <QString>
 
+#include <cstdint>
+
 namespace MessageComposer
 {
 /*! \namespace ConvertSnippetVariablesUtil

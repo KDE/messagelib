@@ -13,6 +13,7 @@
 class KActionCollection;
 class QActionGroup;
 class KActionMenu;
+class QWidget;
 namespace MessageViewer
 {
 class HeaderStyle;

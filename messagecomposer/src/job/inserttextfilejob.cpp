@@ -12,6 +12,7 @@
 
 #include <QPointer>
 #include <QStringDecoder>
+#include <QUrl>
 
 using namespace MessageComposer;
 class MessageComposer::InsertTextFileJobPrivate

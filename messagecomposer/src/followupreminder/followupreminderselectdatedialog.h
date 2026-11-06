@@ -8,14 +8,16 @@
 
 #include "messagecomposer_export.h"
 
-#include <Akonadi/Collection>
-
+#include <QDate>
 #include <QDialog>
-#include <QPushButton>
 
 #include <memory>
 
 class QAbstractItemModel;
+namespace Akonadi
+{
+class Collection;
+}
 
 namespace MessageComposer
 {

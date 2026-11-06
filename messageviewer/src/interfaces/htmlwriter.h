@@ -12,8 +12,8 @@
 #include "messageviewer_export.h"
 
 #include <QByteArray>
+#include <QtGlobal>
 #include <memory>
-#include <qglobal.h>
 class QIODevice;
 class QString;
 class QTextStream;

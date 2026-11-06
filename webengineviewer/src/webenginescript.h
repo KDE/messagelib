@@ -6,8 +6,8 @@
 #pragma once
 
 #include "webengineviewer_export.h"
-#include <QPoint>
 #include <QString>
+class QPoint;
 
 namespace WebEngineViewer
 {

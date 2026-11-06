@@ -11,7 +11,9 @@
 
 #pragma once
 
-#include "recipientseditor.h"
+#include "recipient.h"
+
+#include <QWidget>
 
 class QLabel;
 class QPushButton;
@@ -21,6 +23,7 @@ namespace MessageComposer
 class KWindowPositioner;
 
 class RecipientsPicker;
+class RecipientsEditor;
 
 class RecipientsEditorSideWidget : public QWidget
 {

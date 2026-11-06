@@ -20,22 +20,20 @@
 #include "bodyformatter/utils.h"
 
 #include <KMime/Content>
-#include <KMime/Types>
 #include <Libkleo/Compliance>
 #include <Libkleo/KeyCache>
 
-#include <QGpgME/DN>
 #include <QGpgME/ImportJob>
 #include <QGpgME/Protocol>
 #include <QGpgME/VerifyDetachedJob>
 #include <QGpgME/VerifyOpaqueJob>
 
 #include <gpgme++/key.h>
-#include <gpgme++/keylistresult.h>
 #include <gpgme.h>
 
 #include <KLocalizedString>
 
+#include <QStringDecoder>
 #include <QUrl>
 
 using namespace Qt::Literals::StringLiterals;

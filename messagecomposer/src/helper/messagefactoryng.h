@@ -14,8 +14,8 @@
 
 #include <Akonadi/Collection>
 #include <Akonadi/Item>
-#include <Akonadi/MessageStatus>
 #include <QList>
+#include <QObject>
 
 namespace KIdentityManagementCore
 {

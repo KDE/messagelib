@@ -7,6 +7,8 @@
 #include "dkimmanagerkeymodel.h"
 #include <KLocalizedString>
 #include <QLocale>
+
+#include <algorithm>
 using namespace MessageCore;
 
 DKIMManagerKeyModel::DKIMManagerKeyModel(QObject *parent)

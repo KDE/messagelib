@@ -6,12 +6,15 @@
 
 #include "multipartsigned.h"
 
+#include "interfaces/bodypart.h"
 #include "messagepart.h"
 #include "objecttreeparser.h"
 
 #include <KMime/Content>
 
 #include <QGpgME/Protocol>
+
+#include <QStringDecoder>
 
 #include "mimetreeparser_debug.h"
 

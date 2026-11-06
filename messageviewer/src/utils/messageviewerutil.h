@@ -9,11 +9,8 @@
 #include <Akonadi/Item>
 #include <KMime/Content>
 #include <KService>
-#include <QStringConverter>
 class QUrl;
 class QWidget;
-class QActionGroup;
-class QAction;
 
 namespace MessageViewer
 {

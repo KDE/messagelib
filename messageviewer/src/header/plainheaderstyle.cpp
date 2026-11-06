@@ -7,7 +7,6 @@
 #include "plainheaderstyle.h"
 
 #include "header/headerstyle_util.h"
-#include "messageviewer/messageviewersettings.h"
 
 #include "header/headerstrategy.h"
 

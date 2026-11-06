@@ -13,8 +13,8 @@
 #include <QTreeView>
 
 #include "messagelist/enums.h"
-#include "messagelist/quicksearchline.h"
 #include "messagelist/searchlinecommand.h"
+#include "messagelist/searchmessagebybuttons.h"
 
 class QMenu;
 

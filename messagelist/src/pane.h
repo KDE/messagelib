@@ -8,18 +8,23 @@
 
 #include "messagelist/enums.h"
 #include "messagelist/view.h"
-#include <QHash>
 #include <QList>
 #include <QTabWidget>
 
 #include "messagelist_export.h"
 #include <Akonadi/Collection>
 #include <Akonadi/Item>
-#include <KMime/Message>
+
+#include <memory>
 
 class KXMLGUIClient;
 class QAbstractItemModel;
 class QItemSelectionModel;
+
+namespace KMime
+{
+class Message;
+}
 
 namespace MessageList
 {

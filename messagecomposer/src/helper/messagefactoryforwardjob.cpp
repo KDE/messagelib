@@ -5,6 +5,7 @@
 */
 
 #include "messagefactoryforwardjob.h"
+#include <KMime/Message>
 #include <TemplateParser/TemplateParserJob>
 
 using namespace MessageComposer;

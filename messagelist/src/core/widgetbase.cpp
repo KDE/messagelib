@@ -17,6 +17,7 @@
 #include "core/storagemodelbase.h"
 #include "core/theme.h"
 #include "core/view.h"
+#include "core/widgets/quicksearchline.h"
 #include "core/widgets/quicksearchwarning.h"
 #if !FORCE_DISABLE_AKONADI_SEARCH
 #include "core/widgets/searchcollectionindexingwarning.h"

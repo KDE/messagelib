@@ -16,6 +16,7 @@
 #include <Akonadi/ItemModifyJob>
 #include <Akonadi/MessageFolderAttribute>
 #include <Akonadi/SelectionProxyModel>
+#include <KMime/Message>
 
 #include "core/md5hash.h"
 #include "core/messageitem.h"

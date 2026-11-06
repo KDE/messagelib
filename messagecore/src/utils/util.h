@@ -6,7 +6,7 @@
 
 #include "messagecore_export.h"
 
-#include <KIdentityManagementCore/Identity>
+#include <QtTypes>
 
 namespace KIdentityManagementCore
 {

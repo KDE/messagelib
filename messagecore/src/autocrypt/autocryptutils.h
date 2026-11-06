@@ -6,15 +6,18 @@
 
 #pragma once
 
-#include "autocryptrecipient.h"
-
 #include "messagecore_export.h"
 
 #include <KMime/Headers>
 #include <MimeTreeParser/MessagePart>
-#include <MimeTreeParser/NodeHelper>
 
+#include <QDateTime>
 #include <QHash>
+
+namespace MimeTreeParser
+{
+class NodeHelper;
+}
 
 namespace MessageCore
 {

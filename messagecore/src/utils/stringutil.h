@@ -5,11 +5,13 @@
 #pragma once
 
 #include "messagecore_export.h"
-#include <KMime/Message>
 
+#include <QByteArray>
 #include <QList>
+#include <QPair>
 #include <QStringList>
 
+#include <cstdint>
 #include <memory>
 class QUrl;
 

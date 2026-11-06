@@ -21,6 +21,7 @@
 #include "messagelistutil_p.h"
 
 #include "messagelist_debug.h"
+#include <Akonadi/Collection>
 #include <KConfigGroup>
 #include <KLocalizedString>
 

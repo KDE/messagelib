@@ -10,11 +10,11 @@
 
 #pragma once
 
-#include <gpgme++/context.h>
+#include <gpgme++/error.h>
 #include <gpgme++/verificationresult.h>
 
 #include <QDateTime>
-#include <QStringList>
+#include <QString>
 
 namespace MimeTreeParser
 {

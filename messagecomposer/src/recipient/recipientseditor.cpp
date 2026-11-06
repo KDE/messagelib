@@ -22,7 +22,7 @@
 #include <KEmailAddress>
 #include <KLocalizedString>
 #include <KMessageBox>
-#include <KMime/Headers>
+#include <KMime/Types>
 
 #include <QApplication>
 #include <QKeyEvent>

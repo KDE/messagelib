@@ -6,7 +6,6 @@
 
 #pragma once
 
-#include "interfaces/bodypart.h"
 #include "interfaces/bodypartformatter.h"
 
 namespace MimeTreeParser

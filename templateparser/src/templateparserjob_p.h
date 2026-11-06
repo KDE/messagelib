@@ -10,7 +10,6 @@
 
 #include "templateparserjob.h"
 
-using namespace Qt::Literals::StringLiterals;
 namespace MimeTreeParser
 {
 class ObjectTreeParser;
@@ -37,7 +36,7 @@ public:
     MimeTreeParser::ObjectTreeParser *mOtp = nullptr;
     MimeTreeParser::SimpleObjectTreeSource *mEmptySource = nullptr;
     QString mSelection;
-    QString mQuoteString = u"> "_s;
+    QString mQuoteString = QStringLiteral("> ");
     QString mTo;
     QString mCC;
     QString mHeadElement;

@@ -9,18 +9,12 @@
 
 #include "messagecomposer_export.h"
 
-#include <Akonadi/Item>
 #include <KMime/Headers>
 #include <KMime/Message>
 
 namespace KIdentityManagementCore
 {
 class IdentityManager;
-}
-
-namespace KMime
-{
-class Message;
 }
 
 /**

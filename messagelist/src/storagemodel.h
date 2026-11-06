@@ -11,12 +11,18 @@
 
 #include <Akonadi/Collection>
 #include <Akonadi/Item>
-#include <KMime/Message>
 #include <QList>
+
+#include <memory>
 
 class QAbstractItemModel;
 class QAbstractProxyModel;
 class QItemSelectionModel;
+
+namespace KMime
+{
+class Message;
+}
 
 namespace MessageList
 {

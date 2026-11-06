@@ -17,6 +17,9 @@
 
 #include <QSharedPointer>
 #include <QString>
+
+#include <cstdint>
+
 namespace MessageComposer
 {
 /** Represents a mail recipient. */

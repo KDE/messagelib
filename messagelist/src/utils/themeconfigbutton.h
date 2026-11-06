@@ -6,6 +6,7 @@
 
 #include "messagelist_export.h"
 #include <QPushButton>
+#include <memory>
 
 namespace MessageList
 {

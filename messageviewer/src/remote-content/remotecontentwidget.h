@@ -7,11 +7,11 @@
 #pragma once
 
 #include "messageviewer_private_export.h"
-#include "remotecontentinfo.h"
 #include <QWidget>
 class QLineEdit;
 namespace MessageViewer
 {
+class RemoteContentInfo;
 class RemoteContentStatusTypeComboBox;
 class MESSAGEVIEWER_TESTS_EXPORT RemoteContentWidget : public QWidget
 {

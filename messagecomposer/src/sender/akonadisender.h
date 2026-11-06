@@ -11,8 +11,6 @@
 
 #include <QObject>
 
-#include <KMime/Message>
-
 class KJob;
 
 namespace MessageComposer

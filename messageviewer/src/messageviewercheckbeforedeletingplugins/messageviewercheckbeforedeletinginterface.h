@@ -10,8 +10,10 @@
 #include <Akonadi/Item>
 #include <QList>
 #include <QObject>
+#include <memory>
 class QAction;
 class KActionCollection;
+class QWidget;
 namespace MessageViewer
 {
 class MessageViewerCheckBeforeDeletingParameters;

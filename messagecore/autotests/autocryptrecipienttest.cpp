@@ -8,6 +8,7 @@
 #include "autocrypt/autocryptrecipient_p.h"
 #include "autocrypt/autocryptutils.h"
 
+#include <MimeTreeParser/NodeHelper>
 #include <MimeTreeParser/ObjectTreeParser>
 #include <MimeTreeParser/SimpleObjectTreeSource>
 

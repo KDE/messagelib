@@ -9,6 +9,7 @@
 #pragma once
 
 #include <QDialog>
+#include <memory>
 
 namespace MessageList
 {

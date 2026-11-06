@@ -8,7 +8,6 @@
 
 #include "threadingcache.h"
 
-#include "aggregation.h"
 #include "messageitem.h"
 #include "messagelist_debug.h"
 

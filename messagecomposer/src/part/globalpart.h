@@ -8,8 +8,9 @@
 
 #include "messagepart.h"
 
-#include <QByteArray>
 #include <memory>
+
+class QWidget;
 
 namespace MessageComposer
 {

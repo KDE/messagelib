@@ -7,7 +7,6 @@
 #include "trackingdetailsdialog.h"
 #include <KLocalizedString>
 #include <QDialogButtonBox>
-#include <QPushButton>
 #include <QVBoxLayout>
 #include <TextAddonsWidgets/LoadDialogSizeUtils>
 #include <TextCustomEditor/RichTextEditorWidget>

@@ -16,8 +16,6 @@
 #include "mimetreeparser/nodehelper.h"
 #include "mimetreeparser/objecttreesource.h"
 
-#include <gpgme++/verificationresult.h>
-
 namespace KMime
 {
 class Content;
@@ -25,12 +23,9 @@ class Content;
 
 namespace MimeTreeParser
 {
-class NodeHelper;
 class MessagePart;
-class MimeMessagePart;
 
 using MessagePartPtr = QSharedPointer<MessagePart>;
-using MimeMessagePartPtr = QSharedPointer<MimeMessagePart>;
 /**
  * \class MimeTreeParser::ProcessResult
  * \inmodule MimeTreeParser

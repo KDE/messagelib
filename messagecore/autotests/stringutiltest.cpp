@@ -6,6 +6,8 @@
 
 #include "../src/utils/stringutil.h"
 
+#include <KMime/Types>
+
 #include <QTest>
 #include <QUrl>
 using namespace MessageCore;

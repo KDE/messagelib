@@ -13,8 +13,6 @@
 // #define KMAIL_READER_HTML_DEBUG 1
 
 #include "viewer.h"
-#include "csshelper.h"
-#include "dkim-verify/dkimwidgetinfo.h"
 #include "messageviewer_viewer_format_debug.h"
 #include "viewer/mimeparttree/mimeparttreeview.h"
 #include "viewer/mimeparttree/mimetreemodel.h"
@@ -24,16 +22,15 @@
 #include <Akonadi/ItemFetchJob>
 #include <Akonadi/ItemFetchScope>
 #include <Akonadi/MessageParts>
+#include <Akonadi/Session>
 #include <QUrl>
 #include <TextAddonsWidgets/OpenSavedFileFolderWidget>
 #include <WebEngineViewer/WebEngineManageScript>
-#include <WebEngineViewer/WebHitTestResult>
 
 #include <Akonadi/ErrorAttribute>
 
 #include <KLocalizedString>
 
-#include <QAction>
 #include <QGuiApplication>
 
 #include <Akonadi/MDNStateAttribute>

@@ -14,7 +14,6 @@
 #include <QByteArray>
 #include <QList>
 #include <QSharedPointer>
-#include <QStringDecoder>
 
 namespace MimeTreeParser
 {

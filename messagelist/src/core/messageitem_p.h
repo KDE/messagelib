@@ -11,11 +11,15 @@
 #include "item_p.h"
 #include "messageitem.h"
 #include <Akonadi/Item>
-#include <Akonadi/Monitor>
 #include <Akonadi/Tag>
-#include <KJob>
 #include <QCache>
 #include <QHash>
+
+class KJob;
+namespace Akonadi
+{
+class Monitor;
+}
 
 namespace MessageList
 {

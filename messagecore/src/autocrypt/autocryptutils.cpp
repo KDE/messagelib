@@ -10,6 +10,8 @@
 
 #include "autocrypt_debug.h"
 
+#include <MimeTreeParser/NodeHelper>
+
 using namespace MessageCore;
 
 HeaderMixupNodeHelper::HeaderMixupNodeHelper(MimeTreeParser::NodeHelper *n, KMime::Content *m)

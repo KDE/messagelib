@@ -9,9 +9,9 @@
 #include <QDialog>
 
 #include "messageviewer_private_export.h"
-#include "remote-content/remotecontentinfo.h"
 namespace MessageViewer
 {
+class RemoteContentInfo;
 class RemoteContentWidget;
 /**
  * \class MessageViewer::RemoteContentDialog

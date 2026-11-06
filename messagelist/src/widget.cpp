@@ -9,6 +9,7 @@
 #include <Akonadi/Collection>
 #include <Akonadi/ItemCopyJob>
 #include <Akonadi/ItemMoveJob>
+#include <KMime/Message>
 
 #include "core/messageitem.h"
 #include "core/model.h"

@@ -8,6 +8,7 @@
 
 #include "downloadlocaldatabasethread.h"
 
+#include "checkphishingurlutil.h"
 #include "localdatabasefile.h"
 #include "webengineviewer_debug.h"
 

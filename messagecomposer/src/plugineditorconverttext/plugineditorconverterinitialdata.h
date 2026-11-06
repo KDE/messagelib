@@ -7,8 +7,13 @@
 #pragma once
 
 #include "messagecomposer_export.h"
-#include <KMime/Message>
 #include <memory>
+
+namespace KMime
+{
+class Message;
+}
+
 namespace MessageComposer
 {
 /*!

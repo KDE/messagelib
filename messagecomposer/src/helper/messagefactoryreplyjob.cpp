@@ -6,6 +6,7 @@
 
 #include "messagefactoryreplyjob.h"
 #include "settings/messagecomposersettings.h"
+#include <KMime/Message>
 #include <TemplateParser/TemplateParserJob>
 
 using namespace MessageComposer;

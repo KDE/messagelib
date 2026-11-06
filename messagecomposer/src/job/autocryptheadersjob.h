@@ -14,7 +14,6 @@
 
 namespace KMime
 {
-class Content;
 class Message;
 }
 

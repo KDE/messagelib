@@ -11,7 +11,6 @@
 #include <KPIMTextEdit/PlainTextMarkupBuilder>
 #include <QTextDocument>
 
-using namespace Qt::Literals::StringLiterals;
 using namespace MimeTreeParser;
 ConvertHtmlToPlainText::ConvertHtmlToPlainText() = default;
 

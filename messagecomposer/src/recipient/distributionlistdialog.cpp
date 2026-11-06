@@ -30,7 +30,6 @@
 #include <QPointer>
 #include <QPushButton>
 #include <QTreeWidget>
-#include <QTreeWidgetItem>
 #include <QVBoxLayout>
 
 using namespace MessageComposer;

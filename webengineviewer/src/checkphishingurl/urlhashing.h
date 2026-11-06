@@ -7,7 +7,6 @@
 #pragma once
 
 #include "webengineviewer_private_export.h"
-#include <QString>
 #include <QUrl>
 
 namespace WebEngineViewer

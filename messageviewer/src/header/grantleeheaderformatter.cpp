@@ -6,8 +6,8 @@
 
 #include "grantleeheaderformatter.h"
 
+#include "headerstyle.h"
 #include "headerstyle_util.h"
-#include "settings/messageviewersettings.h"
 #include "utils/iconnamecache.h"
 
 #include <MessageCore/StringUtil>
@@ -24,6 +24,7 @@
 #include <QColor>
 #include <QDateTime>
 #include <QFileInfo>
+#include <QPalette>
 #include <QUrl>
 #include <QVariantHash>
 

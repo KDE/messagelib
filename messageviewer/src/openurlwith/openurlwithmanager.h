@@ -10,6 +10,7 @@
 #include "openwithurlinfo.h"
 #include <QList>
 #include <QObject>
+class QUrl;
 namespace MessageViewer
 {
 /*!

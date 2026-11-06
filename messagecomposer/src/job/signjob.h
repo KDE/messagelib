@@ -10,7 +10,6 @@
 #include "contentjobbase.h"
 #include "messagecomposer_export.h"
 #include <Libkleo/Enum>
-#include <MessageComposer/InfoPart>
 
 #include <gpgme++/key.h>
 #include <vector>

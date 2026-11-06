@@ -6,8 +6,8 @@
 
 #pragma once
 
-#include "webengineviewer/networkpluginurlinterceptor.h"
 #include "webengineviewer_export.h"
+#include <QObject>
 #include <memory>
 class KActionCollection;
 class QWebEngineView;

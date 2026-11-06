@@ -9,6 +9,8 @@
 
 #include "templateparser_export.h"
 
+#include <QIcon>
+#include <QKeySequence>
 #include <QStyledItemDelegate>
 #include <QTreeWidgetItem>
 #include <QWidget>

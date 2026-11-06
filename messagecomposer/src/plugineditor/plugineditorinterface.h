@@ -20,7 +20,6 @@ class RichTextEditor;
 namespace MessageComposer
 {
 class PluginEditorInterfacePrivate;
-class PluginEditor;
 class PluginComposerInterface;
 /*!
  \class MessageComposer::PluginEditorInterface

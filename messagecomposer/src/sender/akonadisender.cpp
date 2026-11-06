@@ -19,11 +19,11 @@
 #include <KEmailAddress>
 #include <KIdentityManagementCore/Identity>
 #include <KIdentityManagementCore/IdentityManager>
+#include <KMime/Message>
 #include <MailTransport/Transport>
 #include <MailTransport/TransportManager>
 #include <MessageCore/StringUtil>
 #include <QSet>
-#include <kmime/content.h>
 using namespace KMime::Types;
 using namespace MessageComposer;
 

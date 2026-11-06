@@ -10,7 +10,6 @@
 #include <Akonadi/Item>
 #include <KJob>
 #include <QDate>
-#include <QObject>
 
 #include "messagecomposer_export.h"
 

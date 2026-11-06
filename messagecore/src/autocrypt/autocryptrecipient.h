@@ -8,9 +8,6 @@
 
 #include "messagecore_export.h"
 
-#include <KMime/Headers>
-
-#include <gpgme++/data.h>
 #include <gpgme++/key.h>
 
 #include <QByteArray>
@@ -19,6 +16,11 @@
 #include <QSharedPointer>
 
 #include <memory>
+
+namespace KMime::Headers
+{
+class Base;
+}
 
 namespace MessageCore
 {

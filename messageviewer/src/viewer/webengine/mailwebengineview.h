@@ -6,7 +6,6 @@
 
 #pragma once
 #include "messageviewer_export.h"
-#include <WebEngineViewer/BlockTrackingUrlInterceptor>
 #include <WebEngineViewer/WebEngineView>
 
 class KActionCollection;
