@@ -872,7 +872,7 @@ void NodeHelper::cleanFromExtraNodes(KMime::Content *node)
         const auto children = node->contents();
         for (KMime::Content *c : children) {
             if (c->encodedContent() == s) {
-                node->takeContent(c).release();
+                node->takeContent(c);
             }
         }
     }
