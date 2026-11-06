@@ -138,84 +138,70 @@ QString MessageComposer::ConvertSnippetVariablesUtil::insertDayOfWeek()
 
 QString MessageComposer::ConvertSnippetVariablesUtil::lastYear()
 {
-    const QDate date = QDate::currentDate();
-    return QString::number(date.year() - 1);
+    return QString::number(QDate::currentDate().year() - 1);
 }
 
 QString MessageComposer::ConvertSnippetVariablesUtil::nextYear()
 {
-    const QDate date = QDate::currentDate();
-    return QString::number(date.year() + 1);
+    return QString::number(QDate::currentDate().year() + 1);
 }
 
 QString MessageComposer::ConvertSnippetVariablesUtil::dayNumber()
 {
-    const QDate date = QDate::currentDate();
-    return QString::number(date.day());
+    return QString::number(QDate::currentDate().day());
 }
 
 QString MessageComposer::ConvertSnippetVariablesUtil::monthNumber()
 {
-    const QDate date = QDate::currentDate();
-    return QString::number(date.month());
+    return QString::number(QDate::currentDate().month());
 }
 
 QString MessageComposer::ConvertSnippetVariablesUtil::dayOfMonth()
 {
-    const QDate date = QDate::currentDate();
-    return QString::number(date.day());
+    return QString::number(QDate::currentDate().day());
 }
 
 QString MessageComposer::ConvertSnippetVariablesUtil::weekNumber()
 {
-    const QDate date = QDate::currentDate();
-    return QString::number(date.weekNumber());
+    return QString::number(QDate::currentDate().weekNumber());
 }
 
 QString MessageComposer::ConvertSnippetVariablesUtil::monthNameShort()
 {
-    const QDate date = QDate::currentDate();
-    return date.toString(u"MMM"_s);
+    return QDate::currentDate().toString(u"MMM"_s);
 }
 
 QString MessageComposer::ConvertSnippetVariablesUtil::monthNameLong()
 {
-    const QDate date = QDate::currentDate();
-    return date.toString(u"MMMM"_s);
+    return QDate::currentDate().toString(u"MMMM"_s);
 }
 
 QString MessageComposer::ConvertSnippetVariablesUtil::lastMonthNameLong()
 {
-    const QDate date = QDate::currentDate().addMonths(-1);
-    return date.toString(u"MMMM"_s);
+    return QDate::currentDate().addMonths(-1).toString(u"MMMM"_s);
 }
 
 QString MessageComposer::ConvertSnippetVariablesUtil::dayOfWeekNameShort()
 {
-    const QDate date = QDate::currentDate();
-    return date.toString(u"ddd"_s);
+    return QDate::currentDate().toString(u"ddd"_s);
 }
 
 QString MessageComposer::ConvertSnippetVariablesUtil::dayOfWeekNameLong()
 {
-    const QDate date = QDate::currentDate();
-    return date.toString(u"dddd"_s);
+    return QDate::currentDate().toString(u"dddd"_s);
 }
 
 QString MessageComposer::ConvertSnippetVariablesUtil::yearLastMonth()
 {
-    const QDate date = QDate::currentDate();
-    return date.toString(date.toString(u"yyyy-MMM"_s));
+    return QDate::currentDate().addMonths(-1).toString(u"yyyy-MMM"_s);
 }
 
 QString MessageComposer::ConvertSnippetVariablesUtil::year()
 {
-    const QDate date = QDate::currentDate();
-    return date.toString(QString::number(date.year()));
+    return QString::number(QDate::currentDate().year());
 }
 
 QString MessageComposer::ConvertSnippetVariablesUtil::dayOfWeek()
 {
-    const QDate date = QDate::currentDate();
-    return date.toString(QString::number(date.dayOfWeek()));
+    return QString::number(QDate::currentDate().dayOfWeek());
 }
