@@ -11,7 +11,6 @@
 #include <QGuiApplication>
 #include <QPalette>
 
-using namespace Qt::Literals::StringLiterals;
 using namespace MessageCore;
 
 static bool isLightTheme()

@@ -10,7 +10,6 @@
 
 #include <KLocalizedString>
 
-using namespace Qt::Literals::StringLiterals;
 using namespace MessageComposer;
 
 SendLaterCreateJob::SendLaterCreateJob(const SendLaterInfo &info, QObject *parent)

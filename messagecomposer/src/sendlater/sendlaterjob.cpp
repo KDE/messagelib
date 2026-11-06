@@ -17,7 +17,6 @@
 #include <memory>
 
 using namespace MessageComposer;
-using namespace Qt::Literals::StringLiterals;
 
 SendLaterJob::SendLaterJob(QObject *parent)
     : KJob(parent)

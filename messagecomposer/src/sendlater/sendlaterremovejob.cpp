@@ -10,7 +10,6 @@
 
 #include <KLocalizedString>
 
-using namespace Qt::Literals::StringLiterals;
 using namespace MessageComposer;
 
 SendLaterRemoveJob::SendLaterRemoveJob(Akonadi::Item::Id item, QObject *parent)
