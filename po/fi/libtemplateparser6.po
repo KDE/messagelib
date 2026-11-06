@@ -578,7 +578,6 @@ msgstr ""
 msgid "Do you want to reset current template or all templates to default?"
 msgstr ""
 "Haluatko palauttaa nykyisen mallipohjan tai kaikki mallipohjat oletuksiinsa?"
-"Haluatko palauttaa nykyisen mallipohjan tai kaikki mallipohjat oletuksiinsa?"
 
 #: templatesconfiguration.cpp:104
 #, kde-format
