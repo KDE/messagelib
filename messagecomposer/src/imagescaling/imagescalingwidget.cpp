@@ -134,7 +134,7 @@ void ImageScalingWidget::slotHelpLinkClicked(const QString &)
 void ImageScalingWidget::slotSourceFilterAbstractButtonClicked(QAbstractButton *button)
 {
     if (button) {
-        const int buttonId = d->mRecipientFilterGroup->id(button);
+        const int buttonId = d->mSourceFilenameFilterGroup->id(button);
         slotSourceFilterClicked(buttonId);
     }
 }
