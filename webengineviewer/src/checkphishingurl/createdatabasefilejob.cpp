@@ -171,7 +171,7 @@ void CreateDatabaseFileJobPrivate::removeElementFromDataBase(const QList<Removal
             }
             break;
         case UpdateDataBaseInfo::RiceCompression:
-            indexToRemove = WebEngineViewer::RiceEncodingDecoder::decodeRiceIndiceDelta(removeItem.riceDeltaEncoding);
+            indexToRemove += WebEngineViewer::RiceEncodingDecoder::decodeRiceIndiceDelta(removeItem.riceDeltaEncoding);
             break;
         case UpdateDataBaseInfo::UnknownCompression:
             qCWarning(WEBENGINEVIEWER_LOG) << " Unknown compression type defined in removal elements. It's a bug!";
