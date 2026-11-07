@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-03 00:56+0000\n"
+"POT-Creation-Date: 2026-11-07 00:59+0000\n"
 "PO-Revision-Date: 2026-03-25 12:10+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -39,17 +39,17 @@ msgstr "بالتّاريخ الدّقيق (لفاتحات المواضيع)"
 msgid "By Smart Date Ranges (of Thread Leaders)"
 msgstr "بمدى التّاريخ الذّكيّ (لفاتحات المواضيع)"
 
-#: core/aggregation.cpp:178 core/sortorder.cpp:72
+#: core/aggregation.cpp:178 core/sortorder.cpp:74
 #, kde-format
 msgid "By Smart Sender/Receiver"
 msgstr "بالمرسل/المستلم الذّكيّ"
 
-#: core/aggregation.cpp:179 core/sortorder.cpp:70
+#: core/aggregation.cpp:179 core/sortorder.cpp:72
 #, kde-format
 msgid "By Sender"
 msgstr "بالمرسل"
 
-#: core/aggregation.cpp:180 core/sortorder.cpp:71
+#: core/aggregation.cpp:180 core/sortorder.cpp:73
 #, kde-format
 msgid "By Receiver"
 msgstr "بالمستلم"
@@ -213,18 +213,18 @@ msgctxt "Status of an item"
 msgid "Queued"
 msgstr "مصطفّ"
 
-#: core/manager.cpp:34 core/model.cpp:335
+#: core/manager.cpp:35 core/model.cpp:335
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "مجهول"
 
-#: core/manager.cpp:203
+#: core/manager.cpp:204
 #, kde-format
 msgid "Current Activity, Threaded"
 msgstr "النّشاط الحاليّ، في مواضيع"
 
-#: core/manager.cpp:204
+#: core/manager.cpp:205
 #, kde-format
 msgid ""
 "This view uses smart date range groups. Messages are threaded. So for "
@@ -234,12 +234,12 @@ msgstr ""
 "يستخدم هذا المنظور مجموعات مدى التّاريخ الذّكيّة. تُجمع الرّسائل في مواضيع. فمثلًا "
 "ستجد في ”اليوم“ كلّ الرّسائل التي استُلمت اليوم وكلّ المواضيع النّشطة اليوم."
 
-#: core/manager.cpp:216
+#: core/manager.cpp:217
 #, kde-format
 msgid "Current Activity, Flat"
 msgstr "النّشاط الحاليّ، مسطّح"
 
-#: core/manager.cpp:217
+#: core/manager.cpp:218
 #, kde-format
 msgid ""
 "This view uses smart date range groups. Messages are not threaded. So for "
@@ -248,12 +248,12 @@ msgstr ""
 "يستخدم هذا المنظور مجموعات مدى التّاريخ الذّكيّة. لا تُجمع الرّسائل في مواضيع. "
 "فمثلًا ستجد في ”اليوم“ كلّ الرّسائل التي استُلمت اليوم فحسب."
 
-#: core/manager.cpp:228
+#: core/manager.cpp:229
 #, kde-format
 msgid "Activity by Date, Threaded"
 msgstr "النّشاط حسب التّاريخ، في مواضيع"
 
-#: core/manager.cpp:229
+#: core/manager.cpp:230
 #, kde-format
 msgid ""
 "This view uses day-by-day groups. Messages are threaded. So for example, in "
@@ -263,12 +263,12 @@ msgstr ""
 "يستخدم هذا المنظور مجموعات يوميّة. تُجمع الرّسائل في مواضيع. فمثلًا ستجد في "
 "”اليوم“ كلّ الرّسائل التي استُلمت اليوم وكلّ المواضيع النّشطة اليوم."
 
-#: core/manager.cpp:241
+#: core/manager.cpp:242
 #, kde-format
 msgid "Activity by Date, Flat"
 msgstr "النّشاط حسب التّاريخ، مسطّح"
 
-#: core/manager.cpp:242
+#: core/manager.cpp:243
 #, kde-format
 msgid ""
 "This view uses day-by-day groups. Messages are not threaded. So for example, "
@@ -277,23 +277,23 @@ msgstr ""
 "يستخدم هذا المنظور مجموعات يوميّة. لا تُجمع الرّسائل في مواضيع. فمثلًا ستجد في "
 "”اليوم“ كلّ الرّسائل التي استُلمت اليوم فحسب."
 
-#: core/manager.cpp:253
+#: core/manager.cpp:254
 #, kde-format
 msgid "Standard Mailing List"
 msgstr "قائمة بريديّة قياسيّة"
 
-#: core/manager.cpp:254
+#: core/manager.cpp:255
 #, kde-format
 msgid ""
 "This is a plain and old mailing list view: no groups and heavy threading."
 msgstr "هذا عرض عادي وقديم لقائمة بريدية: لا توجد مجموعات وترابط كثيف."
 
-#: core/manager.cpp:263
+#: core/manager.cpp:264
 #, kde-format
 msgid "Flat Date View"
 msgstr "عرض التاريخ المسطح"
 
-#: core/manager.cpp:264
+#: core/manager.cpp:265
 #, kde-format
 msgid ""
 "This is a plain and old list of messages sorted by date: no groups and no "
@@ -302,12 +302,12 @@ msgstr ""
 "هذه قائمة عادية وقديمة من الرسائل مرتبة حسب التاريخ: لا توجد مجموعات ولا "
 "سلاسل رسائل."
 
-#: core/manager.cpp:275
+#: core/manager.cpp:276
 #, kde-format
 msgid "Senders/Receivers, Flat"
 msgstr "المرسلون/المستلمون، مسطّح"
 
-#: core/manager.cpp:276
+#: core/manager.cpp:277
 #, kde-format
 msgid ""
 "This view groups the messages by senders or receivers (depending on the "
@@ -316,12 +316,12 @@ msgstr ""
 "يجمع هذا العرض الرسائل حسب المرسلين أو المستقبلين (حسب نوع المجلد). الرسائل "
 "ليست مترابطة."
 
-#: core/manager.cpp:287
+#: core/manager.cpp:288
 #, kde-format
 msgid "Thread Starters"
 msgstr "فاتحات المواضيع"
 
-#: core/manager.cpp:288
+#: core/manager.cpp:289
 #, kde-format
 msgid ""
 "This view groups the messages in threads and then groups the threads by the "
@@ -329,135 +329,135 @@ msgid ""
 msgstr ""
 "يجمع هذا العرض الرسائل في المواضيع ثم يجمع المواضيع بواسطة المستخدم البادئ."
 
-#: core/manager.cpp:565
+#: core/manager.cpp:566
 #, kde-format
 msgctxt "Default theme name"
 msgid "Classic"
 msgstr "تقليديّ"
 
-#: core/manager.cpp:565
+#: core/manager.cpp:566
 #, kde-format
 msgid "A simple, backward compatible, single row theme"
 msgstr "سمة صف واحد بسيطة ومتوافقة مع الإصدارات السابقة"
 
-#: core/manager.cpp:569
+#: core/manager.cpp:570
 #, kde-format
 msgctxt "@title:column Subject of messages"
 msgid "Subject"
 msgstr "الموضوع"
 
-#: core/manager.cpp:602 core/theme.cpp:113
+#: core/manager.cpp:603 core/theme.cpp:115
 #, kde-format
 msgid "Sender/Receiver"
 msgstr "المرسل/المستلم"
 
-#: core/manager.cpp:609
+#: core/manager.cpp:610
 #, kde-format
 msgctxt "Sender of a message"
 msgid "Sender"
 msgstr "المرسل"
 
-#: core/manager.cpp:611
+#: core/manager.cpp:612
 #, kde-format
 msgctxt "Receiver of a message"
 msgid "Receiver"
 msgstr "المستلم"
 
-#: core/manager.cpp:617
+#: core/manager.cpp:618
 #, kde-format
 msgctxt "Date of a message"
 msgid "Date"
 msgstr "التّاريخ"
 
-#: core/manager.cpp:619
+#: core/manager.cpp:620
 #, kde-format
 msgid "Most Recent Date"
 msgstr "أكثر التّواريخ حداثة"
 
-#: core/manager.cpp:625
+#: core/manager.cpp:626
 #, kde-format
 msgctxt "Size of a message"
 msgid "Size"
 msgstr "الحجم"
 
-#: core/manager.cpp:627
+#: core/manager.cpp:628
 #, kde-format
 msgctxt "Attachment indication"
 msgid "Attachment"
 msgstr "مرفقات"
 
-#: core/manager.cpp:633
+#: core/manager.cpp:634
 #, kde-format
 msgid "Read/Unread"
 msgstr "مقروء/غير مقروء"
 
-#: core/manager.cpp:638
+#: core/manager.cpp:639
 #, kde-format
 msgid "Replied"
 msgstr "رُدّ عليها"
 
-#: core/manager.cpp:640
+#: core/manager.cpp:641
 #, kde-format
 msgctxt "Message importance indication"
 msgid "Important"
 msgstr "مهمّة"
 
-#: core/manager.cpp:646
+#: core/manager.cpp:647
 #, kde-format
 msgid "Action Item"
 msgstr "عنصر إجرائيّ"
 
-#: core/manager.cpp:651
+#: core/manager.cpp:652
 #, kde-format
 msgid "Spam/Ham"
 msgstr "البريد المزعج / غير المزعج"
 
-#: core/manager.cpp:653
+#: core/manager.cpp:654
 #, kde-format
 msgid "Watched/Ignored"
 msgstr "مشاهدة/تجاهل"
 
-#: core/manager.cpp:658
+#: core/manager.cpp:659
 #, kde-format
 msgid "Encryption"
 msgstr "التّعمية"
 
-#: core/manager.cpp:659
+#: core/manager.cpp:660
 #, kde-format
 msgid "Signature"
 msgstr "التّوقيع"
 
-#: core/manager.cpp:660
+#: core/manager.cpp:661
 #, kde-format
 msgid "Tag List"
 msgstr "قائمة الوسوم"
 
-#: core/manager.cpp:668
+#: core/manager.cpp:669
 #, kde-format
 msgid "Smart"
 msgstr "ذكيّ"
 
-#: core/manager.cpp:668
+#: core/manager.cpp:669
 #, kde-format
 msgid "A smart multiline and multi item theme"
 msgstr "موضوع ذكي متعدد السطور ومتعدد العناصر"
 
-#: core/manager.cpp:672
+#: core/manager.cpp:673
 #, kde-format
 msgid "Message"
 msgstr "الرسالة"
 
-#: core/manager.cpp:753
+#: core/manager.cpp:754
 #, kde-format
 msgid "Smart with Clickable Status"
 msgstr "ذكي مع حالة قابلة للنقر"
 
-#: core/manager.cpp:754
+#: core/manager.cpp:755
 #, kde-format
 msgid "A smart multiline and multi item theme with a clickable status column"
 msgstr "موضوع ذكي متعدد الأسطر ومتعدد العناصر مع عمود حالة قابل للنقر عليه"
 
-#: core/manager.cpp:758 core/view.cpp:2396 core/view.cpp:2400
+#: core/manager.cpp:759 core/view.cpp:2398 core/view.cpp:2402
 #, kde-format
 msgid "Status"
 msgstr "الحالة"
@@ -578,340 +578,340 @@ msgid ""
 msgstr ""
 "مكّن هذا الخيار لعرض تلميحات عند تمرير المؤشّر على عنصر في قائمة الرّسائل."
 
-#: core/sortorder.cpp:65 core/sortorder.cpp:109
+#: core/sortorder.cpp:67 core/sortorder.cpp:111
 #, kde-format
 msgid "None (Storage Order)"
 msgstr "بلا (ترتيب التّخزين)"
 
-#: core/sortorder.cpp:66
+#: core/sortorder.cpp:68
 #, kde-format
 msgid "By Date/Time"
 msgstr "بالتّاريخ والوقت"
 
-#: core/sortorder.cpp:68
+#: core/sortorder.cpp:70
 #, kde-format
 msgid "By Date/Time of Most Recent in Subtree"
 msgstr "حسب التاريخ/الوقت الأحدث في الشجرة الفرعية"
 
-#: core/sortorder.cpp:73
+#: core/sortorder.cpp:75
 #, kde-format
 msgid "By Subject"
 msgstr "بالموضوع"
 
-#: core/sortorder.cpp:74
+#: core/sortorder.cpp:76
 #, kde-format
 msgid "By Size"
 msgstr "بالحجم"
 
-#: core/sortorder.cpp:75
+#: core/sortorder.cpp:77
 #, kde-format
 msgid "By Action Item Status"
 msgstr "بحالة العنصر الإجرائيّ"
 
-#: core/sortorder.cpp:76
+#: core/sortorder.cpp:78
 #, kde-format
 msgid "By Unread Status"
 msgstr "بحالة غير المقروء"
 
-#: core/sortorder.cpp:77
+#: core/sortorder.cpp:79
 #, kde-format
 msgid "By Important Status"
 msgstr "بحالة الأهمّية"
 
-#: core/sortorder.cpp:78
+#: core/sortorder.cpp:80
 #, kde-format
 msgid "By Attachment Status"
 msgstr "بحالة المرفقات"
 
-#: core/sortorder.cpp:90 core/sortorder.cpp:132
+#: core/sortorder.cpp:92 core/sortorder.cpp:134
 #, kde-format
 msgid "Least Recent on Top"
 msgstr "الأقدم في الأعلى"
 
-#: core/sortorder.cpp:91 core/sortorder.cpp:133
+#: core/sortorder.cpp:93 core/sortorder.cpp:135
 #, kde-format
 msgid "Most Recent on Top"
 msgstr "الأحدث في الأعلى"
 
-#: core/sortorder.cpp:95
+#: core/sortorder.cpp:97
 #, kde-format
 msgctxt "Sort order for messages"
 msgid "Ascending"
 msgstr "تصاعديًّا"
 
-#: core/sortorder.cpp:96
+#: core/sortorder.cpp:98
 #, kde-format
 msgctxt "Sort order for messages"
 msgid "Descending"
 msgstr "تنازليًّا"
 
-#: core/sortorder.cpp:107
+#: core/sortorder.cpp:109
 #, kde-format
 msgid "by Date/Time"
 msgstr "بالتّاريخ والوقت"
 
-#: core/sortorder.cpp:110
+#: core/sortorder.cpp:112
 #, kde-format
 msgid "by Date/Time of Most Recent Message in Group"
 msgstr "حسب تاريخ/وقت أحدث رسالة في المجموعة"
 
-#: core/sortorder.cpp:114
+#: core/sortorder.cpp:116
 #, kde-format
 msgid "by Sender/Receiver"
 msgstr "بالمرسل/المستلم"
 
-#: core/sortorder.cpp:116
+#: core/sortorder.cpp:118
 #, kde-format
 msgid "by Sender"
 msgstr "بالمرسل"
 
-#: core/sortorder.cpp:118
+#: core/sortorder.cpp:120
 #, kde-format
 msgid "by Receiver"
 msgstr "بالمستلم"
 
-#: core/sortorder.cpp:136
+#: core/sortorder.cpp:138
 #, kde-format
 msgctxt "Sort order for mail groups"
 msgid "Ascending"
 msgstr "تصاعديًّا"
 
-#: core/sortorder.cpp:137
+#: core/sortorder.cpp:139
 #, kde-format
 msgctxt "Sort order for mail groups"
 msgid "Descending"
 msgstr "تنازليًّا"
 
-#: core/theme.cpp:107
+#: core/theme.cpp:109
 #, kde-format
 msgctxt "Description of Type Subject"
 msgid "Subject"
 msgstr "الموضوع"
 
-#: core/theme.cpp:110
+#: core/theme.cpp:112
 #, kde-format
 msgctxt "Description of Type Date"
 msgid "Date"
 msgstr "التّاريخ"
 
-#: core/theme.cpp:116
+#: core/theme.cpp:118
 #, kde-format
 msgctxt "Description of Type Sender"
 msgid "Sender"
 msgstr "المرسل"
 
-#: core/theme.cpp:119
+#: core/theme.cpp:121
 #, kde-format
 msgctxt "Description of Type Receiver"
 msgid "Receiver"
 msgstr "المستلم"
 
-#: core/theme.cpp:122
+#: core/theme.cpp:124
 #, kde-format
 msgctxt "Description of Type Size"
 msgid "Size"
 msgstr "الحجم"
 
-#: core/theme.cpp:125
+#: core/theme.cpp:127
 #, kde-format
 msgid "Unread/Read Icon"
 msgstr "أيقونة غير مقروءة/مقروءة"
 
-#: core/theme.cpp:128
+#: core/theme.cpp:130
 #, kde-format
 msgid "Attachment Icon"
 msgstr "أيقونة المرفقات"
 
-#: core/theme.cpp:131
+#: core/theme.cpp:133
 #, kde-format
 msgid "Replied/Forwarded Icon"
 msgstr "أيقونة ”رُدّ عليها/مُرّرت“"
 
-#: core/theme.cpp:134
+#: core/theme.cpp:136
 #, kde-format
 msgid "Combined New/Unread/Read/Replied/Forwarded Icon"
 msgstr "رمز جديد/غير مقروء/مقروء/تم الرد عليه/معاد توجيهه"
 
-#: core/theme.cpp:137
+#: core/theme.cpp:139
 #, kde-format
 msgid "Action Item Icon"
 msgstr "أيقونة العناصر الإجرائيّة"
 
-#: core/theme.cpp:140
+#: core/theme.cpp:142
 #, kde-format
 msgid "Important Icon"
 msgstr "أيقونة الأهميّة"
 
-#: core/theme.cpp:143
+#: core/theme.cpp:145
 #, kde-format
 msgid "Group Header Label"
 msgstr "تسمية رأس المجموعة"
 
-#: core/theme.cpp:146
+#: core/theme.cpp:148
 #, kde-format
 msgid "Spam/Ham Icon"
 msgstr "أيقونة البريد العشوائي/لحم الخنزير"
 
-#: core/theme.cpp:149
+#: core/theme.cpp:151
 #, kde-format
 msgid "Watched/Ignored Icon"
 msgstr "أيقونة المشاهدة/التجاهل"
 
-#: core/theme.cpp:152
+#: core/theme.cpp:154
 #, kde-format
 msgid "Group Header Expand/Collapse Icon"
 msgstr "أيقونة توسيع/طوي ترويسة المجموعات"
 
-#: core/theme.cpp:155
+#: core/theme.cpp:157
 #, kde-format
 msgid "Encryption State Icon"
 msgstr "أيقونة حالة التّعمية"
 
-#: core/theme.cpp:158
+#: core/theme.cpp:160
 #, kde-format
 msgid "Signature State Icon"
 msgstr "أيقونة حالة التّوقيع"
 
-#: core/theme.cpp:161
+#: core/theme.cpp:163
 #, kde-format
 msgid "Vertical Separation Line"
 msgstr "خط الفصل العمودي"
 
-#: core/theme.cpp:164
+#: core/theme.cpp:166
 #, kde-format
 msgid "Horizontal Spacer"
 msgstr "المُباعد الأفقيّ"
 
-#: core/theme.cpp:167
+#: core/theme.cpp:169
 #, kde-format
 msgid "Max Date"
 msgstr "التاريخ الأقصى"
 
-#: core/theme.cpp:170
+#: core/theme.cpp:172
 #, kde-format
 msgid "Message Tags"
 msgstr "وسوم الرّسائل"
 
-#: core/theme.cpp:173
+#: core/theme.cpp:175
 #, kde-format
 msgid "Invitation Icon"
 msgstr "أيقونة الدّعوات"
 
-#: core/theme.cpp:175
+#: core/theme.cpp:177
 #, kde-format
 msgctxt "Description of Type Folder"
 msgid "Folder"
 msgstr "المجلّد"
 
-#: core/theme.cpp:177
+#: core/theme.cpp:179
 #, kde-format
 msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "مجهول"
 
-#: core/theme.cpp:836
+#: core/theme.cpp:838
 #, kde-format
 msgid "Unread"
 msgstr "غير المقروء"
 
-#: core/theme.cpp:1030
+#: core/theme.cpp:1032
 #, kde-format
 msgid "Never Show"
 msgstr "لا تظهر أبدًا"
 
-#: core/theme.cpp:1030
+#: core/theme.cpp:1032
 #, kde-format
 msgid "Always Show"
 msgstr "أظهر دائمًا"
 
-#: core/theme.cpp:1035
+#: core/theme.cpp:1037
 #, kde-format
 msgid "Plain Rectangles"
 msgstr "المستطيلات العادية"
 
-#: core/theme.cpp:1036
+#: core/theme.cpp:1038
 #, kde-format
 msgid "Plain Joined Rectangle"
 msgstr "مستطيل متصل عادي"
 
-#: core/theme.cpp:1037
+#: core/theme.cpp:1039
 #, kde-format
 msgid "Rounded Rectangles"
 msgstr "مستطيلات مستديرة الزوايا"
 
-#: core/theme.cpp:1038
+#: core/theme.cpp:1040
 #, kde-format
 msgid "Rounded Joined Rectangle"
 msgstr "مستطيل متصل مدور"
 
-#: core/theme.cpp:1039
+#: core/theme.cpp:1041
 #, kde-format
 msgid "Gradient Rectangles"
 msgstr "المستطيلات المتدرجة"
 
-#: core/theme.cpp:1040
+#: core/theme.cpp:1042
 #, kde-format
 msgid "Gradient Joined Rectangle"
 msgstr "مستطيل متصل متدرج"
 
-#: core/theme.cpp:1041
+#: core/theme.cpp:1043
 #, kde-format
 msgid "Styled Rectangles"
 msgstr "المستطيلات المصممة"
 
-#: core/theme.cpp:1042
+#: core/theme.cpp:1044
 #, kde-format
 msgid "Styled Joined Rectangles"
 msgstr "المستطيلات المنضمة المصممة"
 
-#: core/view.cpp:892
+#: core/view.cpp:894
 #, kde-format
 msgid "Adjust Column Sizes"
 msgstr "اضبط أحجام الأعمدة"
 
-#: core/view.cpp:896
+#: core/view.cpp:898
 #, kde-format
 msgid "Show Default Columns"
 msgstr "اعرض الأعمدة المبدئيّة"
 
-#: core/view.cpp:901
+#: core/view.cpp:903
 #, kde-format
 msgid "Display Tooltips"
 msgstr "اعرض التّلميحات"
 
-#: core/view.cpp:2377 core/view.cpp:2381
+#: core/view.cpp:2379 core/view.cpp:2383
 #: core/widgets/searchmessagebybuttons.cpp:74
 #, kde-format
 msgid "From"
 msgstr "من"
 
-#: core/view.cpp:2378 core/view.cpp:2382
+#: core/view.cpp:2380 core/view.cpp:2384
 #, kde-format
 msgctxt "Receiver of the email"
 msgid "To"
 msgstr "إلى"
 
-#: core/view.cpp:2379 core/view.cpp:2383
+#: core/view.cpp:2381 core/view.cpp:2385
 #, kde-format
 msgid "Date"
 msgstr "التّاريخ"
 
-#: core/view.cpp:2397 core/view.cpp:2401
+#: core/view.cpp:2399 core/view.cpp:2403
 #, kde-format
 msgid "Size"
 msgstr "الحجم"
 
-#: core/view.cpp:2398 core/view.cpp:2402 utils/themeeditor.cpp:190
+#: core/view.cpp:2400 core/view.cpp:2404 utils/themeeditor.cpp:190
 #, kde-format
 msgid "Folder"
 msgstr "المجلد"
 
-#: core/view.cpp:2408 core/view.cpp:2410
+#: core/view.cpp:2410 core/view.cpp:2412
 #, kde-format
 msgid "Preview"
 msgstr "معاينة"
 
-#: core/view.cpp:2427
+#: core/view.cpp:2429
 #, kde-format
 msgid "<b>%1</b> reply"
 msgid_plural "<b>%1</b> replies"
@@ -922,7 +922,7 @@ msgstr[3] "<b>%1</b> ردود"
 msgstr[4] "<b>%1</b> ردًّا"
 msgstr[5] "<b>%1</b> ردّ"
 
-#: core/view.cpp:2430
+#: core/view.cpp:2432
 #, kde-format
 msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
@@ -933,110 +933,110 @@ msgstr[3] "<b>%1</b> رسائل في شجرة فرعية (<b>%2</b> غير مق�
 msgstr[4] "<b>%1</b> رسالة في شجرة فرعية (<b>%2</b> غير مقروءة)"
 msgstr[5] "<b>%1</b> رسالة في شجرة فرعية (<b>%2</b> غير مقروءة)"
 
-#: core/view.cpp:2465
+#: core/view.cpp:2467
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Threads started on 2008-12-21'"
 msgid "Threads started on %1"
 msgstr "المواضيع بدأت في %1"
 
-#: core/view.cpp:2467
+#: core/view.cpp:2469
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Threads started Yesterday'"
 msgid "Threads started %1"
 msgstr "بدأت المواضيع %1"
 
-#: core/view.cpp:2471
+#: core/view.cpp:2473
 #, kde-format
 msgid "Threads with messages dated %1"
 msgstr "مؤشرات الرسائل ذات الرسائل بتاريخ %1"
 
-#: core/view.cpp:2480
+#: core/view.cpp:2482
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'"
 msgid "Messages sent on %1"
 msgstr "الرّسائل المرسلة في %1"
 
-#: core/view.cpp:2483
+#: core/view.cpp:2485
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Messages received on 2008-12-21'"
 msgid "Messages received on %1"
 msgstr "الرّسائل المستلمة في %1"
 
-#: core/view.cpp:2487
+#: core/view.cpp:2489
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent Yesterday'"
 msgid "Messages sent %1"
 msgstr "الرّسائل المرسلة %1"
 
-#: core/view.cpp:2489
+#: core/view.cpp:2491
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages received Yesterday'"
 msgid "Messages received %1"
 msgstr "الرّسائل المستلمة %1"
 
-#: core/view.cpp:2498
+#: core/view.cpp:2500
 #, kde-format
 msgid "Threads started within %1"
 msgstr "المواضيع بدأت خلال %1"
 
-#: core/view.cpp:2501
+#: core/view.cpp:2503
 #, kde-format
 msgid "Threads containing messages with dates within %1"
 msgstr "مؤشرات الترابط التي تحتوي على رسائل ذات تواريخ ضمن %1"
 
-#: core/view.cpp:2509
+#: core/view.cpp:2511
 #, kde-format
 msgid "Messages sent within %1"
 msgstr "الرسائل المرسلة خلال %1"
 
-#: core/view.cpp:2511
+#: core/view.cpp:2513
 #, kde-format
 msgid "Messages received within %1"
 msgstr "الرسائل المستلمة خلال %1"
 
-#: core/view.cpp:2520
+#: core/view.cpp:2522
 #, kde-format
 msgid "Threads started by %1"
 msgstr "المواضيع التي بدأت بواسطة %1"
 
-#: core/view.cpp:2523
+#: core/view.cpp:2525
 #, kde-format
 msgid "Threads with most recent message by %1"
 msgstr "المواضيع ذات الرسالة الأحدث بواسطة %1"
 
-#: core/view.cpp:2532 core/view.cpp:2556
+#: core/view.cpp:2534 core/view.cpp:2558
 #, kde-format
 msgid "Messages sent to %1"
 msgstr "الرّسائل المرسلة إلى %1"
 
-#: core/view.cpp:2534
+#: core/view.cpp:2536
 #, kde-format
 msgid "Messages sent by %1"
 msgstr "الرّسائل المرسلة من %1"
 
-#: core/view.cpp:2537
+#: core/view.cpp:2539
 #, kde-format
 msgid "Messages received from %1"
 msgstr "الرّسائل المستلمة من %1"
 
-#: core/view.cpp:2545
+#: core/view.cpp:2547
 #, kde-format
 msgid "Threads directed to %1"
 msgstr "المواضيع الموجهة إلى %1"
 
-#: core/view.cpp:2548
+#: core/view.cpp:2550
 #, kde-format
 msgid "Threads with most recent message directed to %1"
 msgstr "المواضيع ذات الرسالة الأحدث موجهة إلى %1"
 
-#: core/view.cpp:2558
+#: core/view.cpp:2560
 #, kde-format
 msgid "Messages received by %1"
 msgstr "الرسائل المستلمة بواسطة %1"
 
-#: core/view.cpp:2583
+#: core/view.cpp:2585
 #, kde-format
 msgid "<b>%1</b> thread"
 msgid_plural "<b>%1</b> threads"
@@ -1047,7 +1047,7 @@ msgstr[3] "<b>%1</b> مواضيع"
 msgstr[4] "<b>%1</b> موضوعًا"
 msgstr[5] "<b>%1</b> موضوع"
 
-#: core/view.cpp:2588
+#: core/view.cpp:2590
 #, kde-format
 msgid "<b>%1</b> message (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
@@ -1058,54 +1058,54 @@ msgstr[3] "<b>%1</b> رسائل (<b>%2</b> غير مقروءة)"
 msgstr[4] "<b>%1</b> رسالة (<b>%2</b> غير مقروءة)"
 msgstr[5] "<b>%1</b> رسالة (<b>%2</b> غير مقروءة)"
 
-#: core/widgetbase.cpp:199
+#: core/widgetbase.cpp:200
 #, kde-format
 msgid "No filter defined."
 msgstr "لم يعرف أي مرشح."
 
-#: core/widgetbase.cpp:199
+#: core/widgetbase.cpp:200
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "أنشئ مرشّحًا"
 
-#: core/widgetbase.cpp:424 messagelistutil.cpp:115
+#: core/widgetbase.cpp:425 messagelistutil.cpp:115
 #, kde-format
 msgid "Theme"
 msgstr "السمة"
 
-#: core/widgetbase.cpp:445 core/widgetbase.cpp:535
+#: core/widgetbase.cpp:446 core/widgetbase.cpp:536
 #: core/widgets/configurefilterswidget.cpp:77
 #, kde-format
 msgid "Configure..."
 msgstr "اضبط..."
 
-#: core/widgetbase.cpp:514 messagelistutil.cpp:110
+#: core/widgetbase.cpp:515 messagelistutil.cpp:110
 #, kde-format
 msgid "Aggregation"
 msgstr "التّجميع"
 
-#: core/widgetbase.cpp:597
+#: core/widgetbase.cpp:598
 #, kde-format
 msgid "Message Sort Order"
 msgstr "ترتيب فرز الرّسائل"
 
-#: core/widgetbase.cpp:619
+#: core/widgetbase.cpp:620
 #, kde-format
 msgid "Message Sort Direction"
 msgstr "اتّجاه فرز الرّسائل"
 
-#: core/widgetbase.cpp:636
+#: core/widgetbase.cpp:637
 #, kde-format
 msgid "Group Sort Order"
 msgstr "ترتيب فرز المجموعات"
 
-#: core/widgetbase.cpp:653
+#: core/widgetbase.cpp:654
 #, kde-format
 msgid "Group Sort Direction"
 msgstr "اتّجاه فرز المجموعات"
 
-#: core/widgetbase.cpp:668
+#: core/widgetbase.cpp:669
 #, kde-format
 msgid "Folder Always Uses This Sort Order"
 msgstr "يستخدم المجلد دائمًا ترتيب الفرز هذا"
@@ -1760,13 +1760,13 @@ msgctxt "@action:inmenu"
 msgid "Lock Tab"
 msgstr "اقفل اللسان"
 
-#: storagemodel.cpp:232
+#: storagemodel.cpp:233
 #, kde-format
 msgctxt "displayed as subject when the subject of a mail is empty"
 msgid "No Subject"
 msgstr "لا موضوع"
 
-#: storagemodel.cpp:233
+#: storagemodel.cpp:234
 #, kde-format
 msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
@@ -2267,53 +2267,53 @@ msgstr[3] "%v بكسل"
 msgstr[4] "%v بكسل"
 msgstr[5] "%v بكسل"
 
-#: widget.cpp:210
+#: widget.cpp:211
 #, kde-format
 msgctxt "Item in list of Akonadi tags, to show all e-mails"
 msgid "All"
 msgstr "الكلّ"
 
-#: widget.cpp:347
+#: widget.cpp:348
 #, kde-format
 msgid "Collapse Group"
 msgstr "اطوِ المجموعة"
 
-#: widget.cpp:350
+#: widget.cpp:351
 #, kde-format
 msgid "Expand Group"
 msgstr "وسّع المجموعة"
 
-#: widget.cpp:356
+#: widget.cpp:357
 #, kde-format
 msgid "Expand All Groups"
 msgstr "وسّع كلّ المجموعات"
 
-#: widget.cpp:359
+#: widget.cpp:360
 #, kde-format
 msgid "Collapse All Groups"
 msgstr "اطوِ كلّ المجموعات"
 
-#: widget.cpp:363
+#: widget.cpp:364
 #, kde-format
 msgid "Expand All Threads"
 msgstr "وسّع كلّ المواضيع"
 
-#: widget.cpp:365
+#: widget.cpp:366
 #, kde-format
 msgid "Collapse All Threads"
 msgstr "اطوِ كلّ المواضيع"
 
-#: widget.cpp:424
+#: widget.cpp:425
 #, kde-format
 msgid "&Move Here"
 msgstr "ان&قل هنا"
 
-#: widget.cpp:425
+#: widget.cpp:426
 #, kde-format
 msgid "&Copy Here"
 msgstr "ان&سخ هنا"
 
-#: widget.cpp:427
+#: widget.cpp:428
 #, kde-format
 msgid "C&ancel"
 msgstr "أ&لغِ"

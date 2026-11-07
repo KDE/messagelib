@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-03 00:56+0000\n"
+"POT-Creation-Date: 2026-11-07 00:59+0000\n"
 "PO-Revision-Date: 2025-10-09 01:07+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -36,17 +36,17 @@ msgstr "정확한 날짜로 (스레드 첫 메시지의)"
 msgid "By Smart Date Ranges (of Thread Leaders)"
 msgstr "똑똑한 날짜 범위로 (스레드 첫 메시지의)"
 
-#: core/aggregation.cpp:178 core/sortorder.cpp:72
+#: core/aggregation.cpp:178 core/sortorder.cpp:74
 #, kde-format
 msgid "By Smart Sender/Receiver"
 msgstr "똑똑한 보내는 사람/받는 사람으로"
 
-#: core/aggregation.cpp:179 core/sortorder.cpp:70
+#: core/aggregation.cpp:179 core/sortorder.cpp:72
 #, kde-format
 msgid "By Sender"
 msgstr "보내는 사람으로"
 
-#: core/aggregation.cpp:180 core/sortorder.cpp:71
+#: core/aggregation.cpp:180 core/sortorder.cpp:73
 #, kde-format
 msgid "By Receiver"
 msgstr "받는 사람으로"
@@ -210,18 +210,18 @@ msgctxt "Status of an item"
 msgid "Queued"
 msgstr "대기열에 추가됨"
 
-#: core/manager.cpp:34 core/model.cpp:335
+#: core/manager.cpp:35 core/model.cpp:335
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "알 수 없음"
 
-#: core/manager.cpp:203
+#: core/manager.cpp:204
 #, kde-format
 msgid "Current Activity, Threaded"
 msgstr "현재 활동, 스레드"
 
-#: core/manager.cpp:204
+#: core/manager.cpp:205
 #, kde-format
 msgid ""
 "This view uses smart date range groups. Messages are threaded. So for "
@@ -232,12 +232,12 @@ msgstr ""
 "다. 예를 들어 \"오늘\" 항목에서는 오늘 받은 메시지와 오늘 도착한 글이 있는 스"
 "레드를 보여 줍니다."
 
-#: core/manager.cpp:216
+#: core/manager.cpp:217
 #, kde-format
 msgid "Current Activity, Flat"
 msgstr "현재 활동, 단계 없음"
 
-#: core/manager.cpp:217
+#: core/manager.cpp:218
 #, kde-format
 msgid ""
 "This view uses smart date range groups. Messages are not threaded. So for "
@@ -246,12 +246,12 @@ msgstr ""
 "이 보기는 똑똑한 날짜 그룹을 사용합니다. 메시지는 스레드를 기준으로 묶이지 않"
 "습니다. 예를 들어 \"오늘\" 항목에서는 오늘 받은 메시지를 보여 줍니다."
 
-#: core/manager.cpp:228
+#: core/manager.cpp:229
 #, kde-format
 msgid "Activity by Date, Threaded"
 msgstr "날짜별 활동, 스레드"
 
-#: core/manager.cpp:229
+#: core/manager.cpp:230
 #, kde-format
 msgid ""
 "This view uses day-by-day groups. Messages are threaded. So for example, in "
@@ -262,12 +262,12 @@ msgstr ""
 "를 들어 \"오늘\" 항목에서는 오늘 받은 메시지와 오늘 도착한 글이 있는 스레드"
 "를 보여 줍니다."
 
-#: core/manager.cpp:241
+#: core/manager.cpp:242
 #, kde-format
 msgid "Activity by Date, Flat"
 msgstr "날짜별 활동, 단계 없음"
 
-#: core/manager.cpp:242
+#: core/manager.cpp:243
 #, kde-format
 msgid ""
 "This view uses day-by-day groups. Messages are not threaded. So for example, "
@@ -276,24 +276,24 @@ msgstr ""
 "이 보기는 날짜별 그룹을 사용합니다. 메시지는 스레드를 기준으로 묶이지 않습니"
 "다. 예를 들어 \"오늘\" 항목에서는 오늘 받은 메시지를 보여 줍니다."
 
-#: core/manager.cpp:253
+#: core/manager.cpp:254
 #, kde-format
 msgid "Standard Mailing List"
 msgstr "표준 메일링 리스트"
 
-#: core/manager.cpp:254
+#: core/manager.cpp:255
 #, kde-format
 msgid ""
 "This is a plain and old mailing list view: no groups and heavy threading."
 msgstr ""
 "평범한 메일링 리스트 보기입니다. 그룹으로 묶지 않고 스레드를 많이 사용합니다."
 
-#: core/manager.cpp:263
+#: core/manager.cpp:264
 #, kde-format
 msgid "Flat Date View"
 msgstr "단계 없는 날짜 보기"
 
-#: core/manager.cpp:264
+#: core/manager.cpp:265
 #, kde-format
 msgid ""
 "This is a plain and old list of messages sorted by date: no groups and no "
@@ -302,12 +302,12 @@ msgstr ""
 "날짜 순으로 정렬한 평범한 메일링 리스트 보기입니다. 그룹으로 묶지 않고 스레드"
 "를 사용하지 않습니다."
 
-#: core/manager.cpp:275
+#: core/manager.cpp:276
 #, kde-format
 msgid "Senders/Receivers, Flat"
 msgstr "보내는 사람/받는 사람, 단계 없음"
 
-#: core/manager.cpp:276
+#: core/manager.cpp:277
 #, kde-format
 msgid ""
 "This view groups the messages by senders or receivers (depending on the "
@@ -316,12 +316,12 @@ msgstr ""
 "이 보기는 메시지를 보내는 사람과 받는 사람 기준으로 (폴더 종류에 따라 다름) "
 "묶습니다. 스레드를 사용하지 않습니다."
 
-#: core/manager.cpp:287
+#: core/manager.cpp:288
 #, kde-format
 msgid "Thread Starters"
 msgstr "스레드 시작한 사람"
 
-#: core/manager.cpp:288
+#: core/manager.cpp:289
 #, kde-format
 msgid ""
 "This view groups the messages in threads and then groups the threads by the "
@@ -329,135 +329,135 @@ msgid ""
 msgstr ""
 "이 보기는 스레드로 메시지를 묶으며 스레드를 시작한 사람을 기준으로 묶습니다."
 
-#: core/manager.cpp:565
+#: core/manager.cpp:566
 #, kde-format
 msgctxt "Default theme name"
 msgid "Classic"
 msgstr "고전"
 
-#: core/manager.cpp:565
+#: core/manager.cpp:566
 #, kde-format
 msgid "A simple, backward compatible, single row theme"
 msgstr "평범한 한 줄 테마"
 
-#: core/manager.cpp:569
+#: core/manager.cpp:570
 #, kde-format
 msgctxt "@title:column Subject of messages"
 msgid "Subject"
 msgstr "제목"
 
-#: core/manager.cpp:602 core/theme.cpp:113
+#: core/manager.cpp:603 core/theme.cpp:115
 #, kde-format
 msgid "Sender/Receiver"
 msgstr "보낸 사람/받는 사람"
 
-#: core/manager.cpp:609
+#: core/manager.cpp:610
 #, kde-format
 msgctxt "Sender of a message"
 msgid "Sender"
 msgstr "보낸 사람"
 
-#: core/manager.cpp:611
+#: core/manager.cpp:612
 #, kde-format
 msgctxt "Receiver of a message"
 msgid "Receiver"
 msgstr "받는 사람"
 
-#: core/manager.cpp:617
+#: core/manager.cpp:618
 #, kde-format
 msgctxt "Date of a message"
 msgid "Date"
 msgstr "날짜"
 
-#: core/manager.cpp:619
+#: core/manager.cpp:620
 #, kde-format
 msgid "Most Recent Date"
 msgstr "최근 날짜"
 
-#: core/manager.cpp:625
+#: core/manager.cpp:626
 #, kde-format
 msgctxt "Size of a message"
 msgid "Size"
 msgstr "크기"
 
-#: core/manager.cpp:627
+#: core/manager.cpp:628
 #, kde-format
 msgctxt "Attachment indication"
 msgid "Attachment"
 msgstr "첨부"
 
-#: core/manager.cpp:633
+#: core/manager.cpp:634
 #, kde-format
 msgid "Read/Unread"
 msgstr "읽은 상태"
 
-#: core/manager.cpp:638
+#: core/manager.cpp:639
 #, kde-format
 msgid "Replied"
 msgstr "답장 보냈음"
 
-#: core/manager.cpp:640
+#: core/manager.cpp:641
 #, kde-format
 msgctxt "Message importance indication"
 msgid "Important"
 msgstr "중요함"
 
-#: core/manager.cpp:646
+#: core/manager.cpp:647
 #, kde-format
 msgid "Action Item"
 msgstr "동작 항목"
 
-#: core/manager.cpp:651
+#: core/manager.cpp:652
 #, kde-format
 msgid "Spam/Ham"
 msgstr "스팸/햄"
 
-#: core/manager.cpp:653
+#: core/manager.cpp:654
 #, kde-format
 msgid "Watched/Ignored"
 msgstr "주시함/무시됨"
 
-#: core/manager.cpp:658
+#: core/manager.cpp:659
 #, kde-format
 msgid "Encryption"
 msgstr "암호화"
 
-#: core/manager.cpp:659
+#: core/manager.cpp:660
 #, kde-format
 msgid "Signature"
 msgstr "서명"
 
-#: core/manager.cpp:660
+#: core/manager.cpp:661
 #, kde-format
 msgid "Tag List"
 msgstr "태그 목록"
 
-#: core/manager.cpp:668
+#: core/manager.cpp:669
 #, kde-format
 msgid "Smart"
 msgstr "스마트"
 
-#: core/manager.cpp:668
+#: core/manager.cpp:669
 #, kde-format
 msgid "A smart multiline and multi item theme"
 msgstr "보기 좋은 여러 줄 여러 항목 테마"
 
-#: core/manager.cpp:672
+#: core/manager.cpp:673
 #, kde-format
 msgid "Message"
 msgstr "메시지"
 
-#: core/manager.cpp:753
+#: core/manager.cpp:754
 #, kde-format
 msgid "Smart with Clickable Status"
 msgstr "클릭할 수 있는 상태가 있는 보기 좋은 스타일"
 
-#: core/manager.cpp:754
+#: core/manager.cpp:755
 #, kde-format
 msgid "A smart multiline and multi item theme with a clickable status column"
 msgstr "클릭할 수 있는 상태 열이 있는 보기 좋은 여러 줄 여러 항목 테마"
 
-#: core/manager.cpp:758 core/view.cpp:2396 core/view.cpp:2400
+#: core/manager.cpp:759 core/view.cpp:2398 core/view.cpp:2402
 #, kde-format
 msgid "Status"
 msgstr "상태"
@@ -558,514 +558,514 @@ msgid ""
 msgstr ""
 "이 옵션을 사용하면 메시지 목록의 항목을 지나다닐 때 풍선 도움말을 표시합니다."
 
-#: core/sortorder.cpp:65 core/sortorder.cpp:109
+#: core/sortorder.cpp:67 core/sortorder.cpp:111
 #, kde-format
 msgid "None (Storage Order)"
 msgstr "없음(저장된 순서)"
 
-#: core/sortorder.cpp:66
+#: core/sortorder.cpp:68
 #, kde-format
 msgid "By Date/Time"
 msgstr "날짜/시간순"
 
-#: core/sortorder.cpp:68
+#: core/sortorder.cpp:70
 #, kde-format
 msgid "By Date/Time of Most Recent in Subtree"
 msgstr "하위 트리 최근 항목의 날짜/시간 순"
 
-#: core/sortorder.cpp:73
+#: core/sortorder.cpp:75
 #, kde-format
 msgid "By Subject"
 msgstr "제목 순"
 
-#: core/sortorder.cpp:74
+#: core/sortorder.cpp:76
 #, kde-format
 msgid "By Size"
 msgstr "크기 순"
 
-#: core/sortorder.cpp:75
+#: core/sortorder.cpp:77
 #, kde-format
 msgid "By Action Item Status"
 msgstr "동작 항목 상태 순"
 
-#: core/sortorder.cpp:76
+#: core/sortorder.cpp:78
 #, kde-format
 msgid "By Unread Status"
 msgstr "읽음 상태 순"
 
-#: core/sortorder.cpp:77
+#: core/sortorder.cpp:79
 #, kde-format
 msgid "By Important Status"
 msgstr "중요한 상태 순"
 
-#: core/sortorder.cpp:78
+#: core/sortorder.cpp:80
 #, kde-format
 msgid "By Attachment Status"
 msgstr "첨부 상태 순"
 
-#: core/sortorder.cpp:90 core/sortorder.cpp:132
+#: core/sortorder.cpp:92 core/sortorder.cpp:134
 #, kde-format
 msgid "Least Recent on Top"
 msgstr "오래된 항목을 위로"
 
-#: core/sortorder.cpp:91 core/sortorder.cpp:133
+#: core/sortorder.cpp:93 core/sortorder.cpp:135
 #, kde-format
 msgid "Most Recent on Top"
 msgstr "최근 항목을 위로"
 
-#: core/sortorder.cpp:95
+#: core/sortorder.cpp:97
 #, kde-format
 msgctxt "Sort order for messages"
 msgid "Ascending"
 msgstr "오름차순"
 
-#: core/sortorder.cpp:96
+#: core/sortorder.cpp:98
 #, kde-format
 msgctxt "Sort order for messages"
 msgid "Descending"
 msgstr "내림차순"
 
-#: core/sortorder.cpp:107
+#: core/sortorder.cpp:109
 #, kde-format
 msgid "by Date/Time"
 msgstr "날짜/시간 순"
 
-#: core/sortorder.cpp:110
+#: core/sortorder.cpp:112
 #, kde-format
 msgid "by Date/Time of Most Recent Message in Group"
 msgstr "그룹의 최근 메시지의 날짜/시간 순"
 
-#: core/sortorder.cpp:114
+#: core/sortorder.cpp:116
 #, kde-format
 msgid "by Sender/Receiver"
 msgstr "보내는 사람/받는 사람 순"
 
-#: core/sortorder.cpp:116
+#: core/sortorder.cpp:118
 #, kde-format
 msgid "by Sender"
 msgstr "보내는 사람 순"
 
-#: core/sortorder.cpp:118
+#: core/sortorder.cpp:120
 #, kde-format
 msgid "by Receiver"
 msgstr "받는 사람 순"
 
-#: core/sortorder.cpp:136
+#: core/sortorder.cpp:138
 #, kde-format
 msgctxt "Sort order for mail groups"
 msgid "Ascending"
 msgstr "오름차순"
 
-#: core/sortorder.cpp:137
+#: core/sortorder.cpp:139
 #, kde-format
 msgctxt "Sort order for mail groups"
 msgid "Descending"
 msgstr "내림차순"
 
-#: core/theme.cpp:107
+#: core/theme.cpp:109
 #, kde-format
 msgctxt "Description of Type Subject"
 msgid "Subject"
 msgstr "제목"
 
-#: core/theme.cpp:110
+#: core/theme.cpp:112
 #, kde-format
 msgctxt "Description of Type Date"
 msgid "Date"
 msgstr "날짜"
 
-#: core/theme.cpp:116
+#: core/theme.cpp:118
 #, kde-format
 msgctxt "Description of Type Sender"
 msgid "Sender"
 msgstr "보낸 사람"
 
-#: core/theme.cpp:119
+#: core/theme.cpp:121
 #, kde-format
 msgctxt "Description of Type Receiver"
 msgid "Receiver"
 msgstr "받는 사람"
 
-#: core/theme.cpp:122
+#: core/theme.cpp:124
 #, kde-format
 msgctxt "Description of Type Size"
 msgid "Size"
 msgstr "크기"
 
-#: core/theme.cpp:125
+#: core/theme.cpp:127
 #, kde-format
 msgid "Unread/Read Icon"
 msgstr "읽음/읽지 않음 아이콘"
 
-#: core/theme.cpp:128
+#: core/theme.cpp:130
 #, kde-format
 msgid "Attachment Icon"
 msgstr "첨부 아이콘"
 
-#: core/theme.cpp:131
+#: core/theme.cpp:133
 #, kde-format
 msgid "Replied/Forwarded Icon"
 msgstr "답장함/전달됨 아이콘"
 
-#: core/theme.cpp:134
+#: core/theme.cpp:136
 #, kde-format
 msgid "Combined New/Unread/Read/Replied/Forwarded Icon"
 msgstr "병합된 새/읽지 않음/읽음/답장함/전달함 아이콘"
 
-#: core/theme.cpp:137
+#: core/theme.cpp:139
 #, kde-format
 msgid "Action Item Icon"
 msgstr "동작 항목 아이콘"
 
-#: core/theme.cpp:140
+#: core/theme.cpp:142
 #, kde-format
 msgid "Important Icon"
 msgstr "중요함 아이콘"
 
-#: core/theme.cpp:143
+#: core/theme.cpp:145
 #, kde-format
 msgid "Group Header Label"
 msgstr "그룹 머리글 이름표"
 
-#: core/theme.cpp:146
+#: core/theme.cpp:148
 #, kde-format
 msgid "Spam/Ham Icon"
 msgstr "스팸/햄 아이콘"
 
-#: core/theme.cpp:149
+#: core/theme.cpp:151
 #, kde-format
 msgid "Watched/Ignored Icon"
 msgstr "주시/무시 아이콘"
 
-#: core/theme.cpp:152
+#: core/theme.cpp:154
 #, kde-format
 msgid "Group Header Expand/Collapse Icon"
 msgstr "그룹 머리글 펴기/접기 아이콘"
 
-#: core/theme.cpp:155
+#: core/theme.cpp:157
 #, kde-format
 msgid "Encryption State Icon"
 msgstr "암호화 상태 아이콘"
 
-#: core/theme.cpp:158
+#: core/theme.cpp:160
 #, kde-format
 msgid "Signature State Icon"
 msgstr "서명 상태 아이콘"
 
-#: core/theme.cpp:161
+#: core/theme.cpp:163
 #, kde-format
 msgid "Vertical Separation Line"
 msgstr "수직 구분선"
 
-#: core/theme.cpp:164
+#: core/theme.cpp:166
 #, kde-format
 msgid "Horizontal Spacer"
 msgstr "수평 공백"
 
-#: core/theme.cpp:167
+#: core/theme.cpp:169
 #, kde-format
 msgid "Max Date"
 msgstr "최대 날짜"
 
-#: core/theme.cpp:170
+#: core/theme.cpp:172
 #, kde-format
 msgid "Message Tags"
 msgstr "메시지 태그"
 
-#: core/theme.cpp:173
+#: core/theme.cpp:175
 #, kde-format
 msgid "Invitation Icon"
 msgstr "초대장 아이콘"
 
-#: core/theme.cpp:175
+#: core/theme.cpp:177
 #, kde-format
 msgctxt "Description of Type Folder"
 msgid "Folder"
 msgstr "폴더"
 
-#: core/theme.cpp:177
+#: core/theme.cpp:179
 #, kde-format
 msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "알 수 없음"
 
-#: core/theme.cpp:836
+#: core/theme.cpp:838
 #, kde-format
 msgid "Unread"
 msgstr "읽지 않음"
 
-#: core/theme.cpp:1030
+#: core/theme.cpp:1032
 #, kde-format
 msgid "Never Show"
 msgstr "보지 않음"
 
-#: core/theme.cpp:1030
+#: core/theme.cpp:1032
 #, kde-format
 msgid "Always Show"
 msgstr "항상 보임"
 
-#: core/theme.cpp:1035
+#: core/theme.cpp:1037
 #, kde-format
 msgid "Plain Rectangles"
 msgstr "평범한 사각형"
 
-#: core/theme.cpp:1036
+#: core/theme.cpp:1038
 #, kde-format
 msgid "Plain Joined Rectangle"
 msgstr "평범한 연결된 사각형"
 
-#: core/theme.cpp:1037
+#: core/theme.cpp:1039
 #, kde-format
 msgid "Rounded Rectangles"
 msgstr "둥근 사각형"
 
-#: core/theme.cpp:1038
+#: core/theme.cpp:1040
 #, kde-format
 msgid "Rounded Joined Rectangle"
 msgstr "둥근 연결된 사각형"
 
-#: core/theme.cpp:1039
+#: core/theme.cpp:1041
 #, kde-format
 msgid "Gradient Rectangles"
 msgstr "그라데이션이 있는 사각형"
 
-#: core/theme.cpp:1040
+#: core/theme.cpp:1042
 #, kde-format
 msgid "Gradient Joined Rectangle"
 msgstr "그라데이션이 있는 연결된 사각형"
 
-#: core/theme.cpp:1041
+#: core/theme.cpp:1043
 #, kde-format
 msgid "Styled Rectangles"
 msgstr "스타일된 사각형"
 
-#: core/theme.cpp:1042
+#: core/theme.cpp:1044
 #, kde-format
 msgid "Styled Joined Rectangles"
 msgstr "스타일된 연결된 사각형"
 
-#: core/view.cpp:892
+#: core/view.cpp:894
 #, kde-format
 msgid "Adjust Column Sizes"
 msgstr "열 크기 조절"
 
-#: core/view.cpp:896
+#: core/view.cpp:898
 #, kde-format
 msgid "Show Default Columns"
 msgstr "기본 열 보기"
 
-#: core/view.cpp:901
+#: core/view.cpp:903
 #, kde-format
 msgid "Display Tooltips"
 msgstr "표시 풍선 도움말"
 
-#: core/view.cpp:2377 core/view.cpp:2381
+#: core/view.cpp:2379 core/view.cpp:2383
 #: core/widgets/searchmessagebybuttons.cpp:74
 #, kde-format
 msgid "From"
 msgstr "보낸 사람"
 
-#: core/view.cpp:2378 core/view.cpp:2382
+#: core/view.cpp:2380 core/view.cpp:2384
 #, kde-format
 msgctxt "Receiver of the email"
 msgid "To"
 msgstr "받는 사람"
 
-#: core/view.cpp:2379 core/view.cpp:2383
+#: core/view.cpp:2381 core/view.cpp:2385
 #, kde-format
 msgid "Date"
 msgstr "날짜"
 
-#: core/view.cpp:2397 core/view.cpp:2401
+#: core/view.cpp:2399 core/view.cpp:2403
 #, kde-format
 msgid "Size"
 msgstr "크기"
 
-#: core/view.cpp:2398 core/view.cpp:2402 utils/themeeditor.cpp:190
+#: core/view.cpp:2400 core/view.cpp:2404 utils/themeeditor.cpp:190
 #, kde-format
 msgid "Folder"
 msgstr "폴더"
 
-#: core/view.cpp:2408 core/view.cpp:2410
+#: core/view.cpp:2410 core/view.cpp:2412
 #, kde-format
 msgid "Preview"
 msgstr "미리 보기"
 
-#: core/view.cpp:2427
+#: core/view.cpp:2429
 #, kde-format
 msgid "<b>%1</b> reply"
 msgid_plural "<b>%1</b> replies"
 msgstr[0] "답장 <b>%1개</b>"
 
-#: core/view.cpp:2430
+#: core/view.cpp:2432
 #, kde-format
 msgid "<b>%1</b> message in subtree (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages in subtree (<b>%2</b> unread)"
 msgstr[0] "하위 트리의 메시지 <b>%1개</b> (<b>%2개</b> 읽지 않음)"
 
-#: core/view.cpp:2465
+#: core/view.cpp:2467
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Threads started on 2008-12-21'"
 msgid "Threads started on %1"
 msgstr "스레드가 %1에 시작됨"
 
-#: core/view.cpp:2467
+#: core/view.cpp:2469
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Threads started Yesterday'"
 msgid "Threads started %1"
 msgstr "스레드가 %1 시작됨"
 
-#: core/view.cpp:2471
+#: core/view.cpp:2473
 #, kde-format
 msgid "Threads with messages dated %1"
 msgstr "%1에 받은 메시지가 있는 스레드"
 
-#: core/view.cpp:2480
+#: core/view.cpp:2482
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'"
 msgid "Messages sent on %1"
 msgstr "%1에 보낸 메시지"
 
-#: core/view.cpp:2483
+#: core/view.cpp:2485
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Messages received on 2008-12-21'"
 msgid "Messages received on %1"
 msgstr "%1에 받은 메시지"
 
-#: core/view.cpp:2487
+#: core/view.cpp:2489
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent Yesterday'"
 msgid "Messages sent %1"
 msgstr "%1 보낸 메시지"
 
-#: core/view.cpp:2489
+#: core/view.cpp:2491
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages received Yesterday'"
 msgid "Messages received %1"
 msgstr "%1 받은 메시지"
 
-#: core/view.cpp:2498
+#: core/view.cpp:2500
 #, kde-format
 msgid "Threads started within %1"
 msgstr "%1 안에 시작된 스레드"
 
-#: core/view.cpp:2501
+#: core/view.cpp:2503
 #, kde-format
 msgid "Threads containing messages with dates within %1"
 msgstr "%1 안에 받은 메시지가 들어 있는 스레드"
 
-#: core/view.cpp:2509
+#: core/view.cpp:2511
 #, kde-format
 msgid "Messages sent within %1"
 msgstr "%1 안에 보낸 메시지"
 
-#: core/view.cpp:2511
+#: core/view.cpp:2513
 #, kde-format
 msgid "Messages received within %1"
 msgstr "%1 안에 받은 메시지"
 
-#: core/view.cpp:2520
+#: core/view.cpp:2522
 #, kde-format
 msgid "Threads started by %1"
 msgstr "%1 님이 시작한 스레드"
 
-#: core/view.cpp:2523
+#: core/view.cpp:2525
 #, kde-format
 msgid "Threads with most recent message by %1"
 msgstr "%1이(가) 마지막으로 보낸 메시지가 있는 스레드"
 
-#: core/view.cpp:2532 core/view.cpp:2556
+#: core/view.cpp:2534 core/view.cpp:2558
 #, kde-format
 msgid "Messages sent to %1"
 msgstr "%1에게 보낸 메시지"
 
-#: core/view.cpp:2534
+#: core/view.cpp:2536
 #, kde-format
 msgid "Messages sent by %1"
 msgstr "%1 님이 보낸 메시지"
 
-#: core/view.cpp:2537
+#: core/view.cpp:2539
 #, kde-format
 msgid "Messages received from %1"
 msgstr "%1에게 받은 메시지"
 
-#: core/view.cpp:2545
+#: core/view.cpp:2547
 #, kde-format
 msgid "Threads directed to %1"
 msgstr "%1에게 보낸 스레드"
 
-#: core/view.cpp:2548
+#: core/view.cpp:2550
 #, kde-format
 msgid "Threads with most recent message directed to %1"
 msgstr "%1에게 마지막으로 보낸 메시지가 있는 스레드"
 
-#: core/view.cpp:2558
+#: core/view.cpp:2560
 #, kde-format
 msgid "Messages received by %1"
 msgstr "%1이(가) 받은 메시지"
 
-#: core/view.cpp:2583
+#: core/view.cpp:2585
 #, kde-format
 msgid "<b>%1</b> thread"
 msgid_plural "<b>%1</b> threads"
 msgstr[0] "스레드 <b>%1개</b>"
 
-#: core/view.cpp:2588
+#: core/view.cpp:2590
 #, kde-format
 msgid "<b>%1</b> message (<b>%2</b> unread)"
 msgid_plural "<b>%1</b> messages (<b>%2</b> unread)"
 msgstr[0] "메시지 <b>%1개</b> (<b>%2개</b> 읽지 않음)"
 
-#: core/widgetbase.cpp:199
+#: core/widgetbase.cpp:200
 #, kde-format
 msgid "No filter defined."
 msgstr "필터가 정의되지 않았습니다."
 
-#: core/widgetbase.cpp:199
+#: core/widgetbase.cpp:200
 #, kde-format
 msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "필터 만들기"
 
-#: core/widgetbase.cpp:424 messagelistutil.cpp:115
+#: core/widgetbase.cpp:425 messagelistutil.cpp:115
 #, kde-format
 msgid "Theme"
 msgstr "테마"
 
-#: core/widgetbase.cpp:445 core/widgetbase.cpp:535
+#: core/widgetbase.cpp:446 core/widgetbase.cpp:536
 #: core/widgets/configurefilterswidget.cpp:77
 #, kde-format
 msgid "Configure..."
 msgstr "설정..."
 
-#: core/widgetbase.cpp:514 messagelistutil.cpp:110
+#: core/widgetbase.cpp:515 messagelistutil.cpp:110
 #, kde-format
 msgid "Aggregation"
 msgstr "분류"
 
-#: core/widgetbase.cpp:597
+#: core/widgetbase.cpp:598
 #, kde-format
 msgid "Message Sort Order"
 msgstr "메시지 정렬 순서"
 
-#: core/widgetbase.cpp:619
+#: core/widgetbase.cpp:620
 #, kde-format
 msgid "Message Sort Direction"
 msgstr "메시지 정렬 방향"
 
-#: core/widgetbase.cpp:636
+#: core/widgetbase.cpp:637
 #, kde-format
 msgid "Group Sort Order"
 msgstr "그룹 정렬 순서"
 
-#: core/widgetbase.cpp:653
+#: core/widgetbase.cpp:654
 #, kde-format
 msgid "Group Sort Direction"
 msgstr "그룹 정렬 방향"
 
-#: core/widgetbase.cpp:668
+#: core/widgetbase.cpp:669
 #, kde-format
 msgid "Folder Always Uses This Sort Order"
 msgstr "폴더에서 항상 이 정렬 순서 사용"
@@ -1720,13 +1720,13 @@ msgctxt "@action:inmenu"
 msgid "Lock Tab"
 msgstr "탭 잠금"
 
-#: storagemodel.cpp:232
+#: storagemodel.cpp:233
 #, kde-format
 msgctxt "displayed as subject when the subject of a mail is empty"
 msgid "No Subject"
 msgstr "제목 없음"
 
-#: storagemodel.cpp:233
+#: storagemodel.cpp:234
 #, kde-format
 msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
@@ -2220,53 +2220,53 @@ msgid "%v pixel"
 msgid_plural "%v pixels"
 msgstr[0] "%v픽셀"
 
-#: widget.cpp:210
+#: widget.cpp:211
 #, kde-format
 msgctxt "Item in list of Akonadi tags, to show all e-mails"
 msgid "All"
 msgstr "모두"
 
-#: widget.cpp:347
+#: widget.cpp:348
 #, kde-format
 msgid "Collapse Group"
 msgstr "그룹 접기"
 
-#: widget.cpp:350
+#: widget.cpp:351
 #, kde-format
 msgid "Expand Group"
 msgstr "그룹 펴기"
 
-#: widget.cpp:356
+#: widget.cpp:357
 #, kde-format
 msgid "Expand All Groups"
 msgstr "모든 그룹 펴기"
 
-#: widget.cpp:359
+#: widget.cpp:360
 #, kde-format
 msgid "Collapse All Groups"
 msgstr "모든 그룹 접기"
 
-#: widget.cpp:363
+#: widget.cpp:364
 #, kde-format
 msgid "Expand All Threads"
 msgstr "모든 스레드 펴기"
 
-#: widget.cpp:365
+#: widget.cpp:366
 #, kde-format
 msgid "Collapse All Threads"
 msgstr "모든 스레드 접기"
 
-#: widget.cpp:424
+#: widget.cpp:425
 #, kde-format
 msgid "&Move Here"
 msgstr "여기로 이동(&M)"
 
-#: widget.cpp:425
+#: widget.cpp:426
 #, kde-format
 msgid "&Copy Here"
 msgstr "여기에 복사(&C)"
 
-#: widget.cpp:427
+#: widget.cpp:428
 #, kde-format
 msgid "C&ancel"
 msgstr "취소(&A)"

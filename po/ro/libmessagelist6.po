@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kmail\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-03 00:56+0000\n"
+"POT-Creation-Date: 2026-11-07 00:59+0000\n"
 "PO-Revision-Date: 2022-02-17 14:12+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian\n"
@@ -35,19 +35,19 @@ msgstr ""
 msgid "By Smart Date Ranges (of Thread Leaders)"
 msgstr ""
 
-#: core/aggregation.cpp:178 core/sortorder.cpp:72
+#: core/aggregation.cpp:178 core/sortorder.cpp:74
 #, fuzzy, kde-format
 #| msgid "by Smart Sender/Receiver"
 msgid "By Smart Sender/Receiver"
 msgstr "după expeditor/destinatar inteligent"
 
-#: core/aggregation.cpp:179 core/sortorder.cpp:70
+#: core/aggregation.cpp:179 core/sortorder.cpp:72
 #, fuzzy, kde-format
 #| msgid "by Sender"
 msgid "By Sender"
 msgstr "după expeditor"
 
-#: core/aggregation.cpp:180 core/sortorder.cpp:71
+#: core/aggregation.cpp:180 core/sortorder.cpp:73
 #, fuzzy, kde-format
 #| msgid "by Receiver"
 msgid "By Receiver"
@@ -212,19 +212,19 @@ msgctxt "Status of an item"
 msgid "Queued"
 msgstr ""
 
-#: core/manager.cpp:34 core/model.cpp:335
+#: core/manager.cpp:35 core/model.cpp:335
 #, kde-format
 msgctxt "Unknown date"
 msgid "Unknown"
 msgstr "Necunoscută"
 
-#: core/manager.cpp:203
+#: core/manager.cpp:204
 #, fuzzy, kde-format
 #| msgid "Current Activity, Flat"
 msgid "Current Activity, Threaded"
 msgstr "Activitate curentă, simplu"
 
-#: core/manager.cpp:204
+#: core/manager.cpp:205
 #, kde-format
 msgid ""
 "This view uses smart date range groups. Messages are threaded. So for "
@@ -232,25 +232,25 @@ msgid ""
 "the threads that have been active today."
 msgstr ""
 
-#: core/manager.cpp:216
+#: core/manager.cpp:217
 #, kde-format
 msgid "Current Activity, Flat"
 msgstr "Activitate curentă, simplu"
 
-#: core/manager.cpp:217
+#: core/manager.cpp:218
 #, kde-format
 msgid ""
 "This view uses smart date range groups. Messages are not threaded. So for "
 "example, in \"Today\" you will simply find all the messages arrived today."
 msgstr ""
 
-#: core/manager.cpp:228
+#: core/manager.cpp:229
 #, fuzzy, kde-format
 #| msgid "Activity by Date, Flat"
 msgid "Activity by Date, Threaded"
 msgstr "Activitate după dată, simplu"
 
-#: core/manager.cpp:229
+#: core/manager.cpp:230
 #, kde-format
 msgid ""
 "This view uses day-by-day groups. Messages are threaded. So for example, in "
@@ -258,117 +258,117 @@ msgid ""
 "that have been active today."
 msgstr ""
 
-#: core/manager.cpp:241
+#: core/manager.cpp:242
 #, kde-format
 msgid "Activity by Date, Flat"
 msgstr "Activitate după dată, simplu"
 
-#: core/manager.cpp:242
+#: core/manager.cpp:243
 #, kde-format
 msgid ""
 "This view uses day-by-day groups. Messages are not threaded. So for example, "
 "in \"Today\" you will simply find all the messages arrived today."
 msgstr ""
 
-#: core/manager.cpp:253
+#: core/manager.cpp:254
 #, kde-format
 msgid "Standard Mailing List"
 msgstr "Lista de discuții standard"
 
-#: core/manager.cpp:254
+#: core/manager.cpp:255
 #, kde-format
 msgid ""
 "This is a plain and old mailing list view: no groups and heavy threading."
 msgstr ""
 
-#: core/manager.cpp:263
+#: core/manager.cpp:264
 #, kde-format
 msgid "Flat Date View"
 msgstr "Vizualizare simplă după dată"
 
-#: core/manager.cpp:264
+#: core/manager.cpp:265
 #, kde-format
 msgid ""
 "This is a plain and old list of messages sorted by date: no groups and no "
 "threading."
 msgstr ""
 
-#: core/manager.cpp:275
+#: core/manager.cpp:276
 #, kde-format
 msgid "Senders/Receivers, Flat"
 msgstr "Expeditori/Destinatari, simplu"
 
-#: core/manager.cpp:276
+#: core/manager.cpp:277
 #, kde-format
 msgid ""
 "This view groups the messages by senders or receivers (depending on the "
 "folder type). Messages are not threaded."
 msgstr ""
 
-#: core/manager.cpp:287
+#: core/manager.cpp:288
 #, kde-format
 msgid "Thread Starters"
 msgstr "Începători de fire"
 
-#: core/manager.cpp:288
+#: core/manager.cpp:289
 #, kde-format
 msgid ""
 "This view groups the messages in threads and then groups the threads by the "
 "starting user."
 msgstr ""
 
-#: core/manager.cpp:565
+#: core/manager.cpp:566
 #, kde-format
 msgctxt "Default theme name"
 msgid "Classic"
 msgstr "Clasică"
 
-#: core/manager.cpp:565
+#: core/manager.cpp:566
 #, kde-format
 msgid "A simple, backward compatible, single row theme"
 msgstr ""
 
-#: core/manager.cpp:569
+#: core/manager.cpp:570
 #, kde-format
 msgctxt "@title:column Subject of messages"
 msgid "Subject"
 msgstr "Subiect"
 
-#: core/manager.cpp:602 core/theme.cpp:113
+#: core/manager.cpp:603 core/theme.cpp:115
 #, kde-format
 msgid "Sender/Receiver"
 msgstr "Expeditor/Destinatar"
 
-#: core/manager.cpp:609
+#: core/manager.cpp:610
 #, kde-format
 msgctxt "Sender of a message"
 msgid "Sender"
 msgstr "Expeditor"
 
-#: core/manager.cpp:611
+#: core/manager.cpp:612
 #, kde-format
 msgctxt "Receiver of a message"
 msgid "Receiver"
 msgstr "Destinatar"
 
-#: core/manager.cpp:617
+#: core/manager.cpp:618
 #, kde-format
 msgctxt "Date of a message"
 msgid "Date"
 msgstr "Dată"
 
-#: core/manager.cpp:619
+#: core/manager.cpp:620
 #, kde-format
 msgid "Most Recent Date"
 msgstr "Data cea mai recentă"
 
-#: core/manager.cpp:625
+#: core/manager.cpp:626
 #, kde-format
 msgctxt "Size of a message"
 msgid "Size"
 msgstr "Dimensiune"
 
-#: core/manager.cpp:627
+#: core/manager.cpp:628
 #, fuzzy, kde-format
 #| msgctxt "Attachement indication"
 #| msgid "Attachment"
@@ -376,81 +376,81 @@ msgctxt "Attachment indication"
 msgid "Attachment"
 msgstr "Atașament"
 
-#: core/manager.cpp:633
+#: core/manager.cpp:634
 #, fuzzy, kde-format
 #| msgid "New/Unread"
 msgid "Read/Unread"
 msgstr "Nou/necitit"
 
-#: core/manager.cpp:638
+#: core/manager.cpp:639
 #, kde-format
 msgid "Replied"
 msgstr "Răspuns"
 
-#: core/manager.cpp:640
+#: core/manager.cpp:641
 #, kde-format
 msgctxt "Message importance indication"
 msgid "Important"
 msgstr "Important"
 
-#: core/manager.cpp:646
+#: core/manager.cpp:647
 #, kde-format
 msgid "Action Item"
 msgstr "Element acțiune"
 
-#: core/manager.cpp:651
+#: core/manager.cpp:652
 #, kde-format
 msgid "Spam/Ham"
 msgstr "Spam/Ham"
 
-#: core/manager.cpp:653
+#: core/manager.cpp:654
 #, kde-format
 msgid "Watched/Ignored"
 msgstr "Urmărit/Ignorat"
 
-#: core/manager.cpp:658
+#: core/manager.cpp:659
 #, kde-format
 msgid "Encryption"
 msgstr "Criptare"
 
-#: core/manager.cpp:659
+#: core/manager.cpp:660
 #, kde-format
 msgid "Signature"
 msgstr "Semnătură"
 
-#: core/manager.cpp:660
+#: core/manager.cpp:661
 #, kde-format
 msgid "Tag List"
 msgstr "Listă de marcaje"
 
-#: core/manager.cpp:668
+#: core/manager.cpp:669
 #, kde-format
 msgid "Smart"
 msgstr "Inteligentă"
 
-#: core/manager.cpp:668
+#: core/manager.cpp:669
 #, kde-format
 msgid "A smart multiline and multi item theme"
 msgstr "O temă multilinie și multielement inteligentă"
 
-#: core/manager.cpp:672
+#: core/manager.cpp:673
 #, kde-format
 msgid "Message"
 msgstr "Mesaj"
 
-#: core/manager.cpp:753
+#: core/manager.cpp:754
 #, kde-format
 msgid "Smart with Clickable Status"
 msgstr "Inteligentă cu stare apăsabilă"
 
-#: core/manager.cpp:754
+#: core/manager.cpp:755
 #, kde-format
 msgid "A smart multiline and multi item theme with a clickable status column"
 msgstr ""
 "O temă multilinie și multielement inteligentă, cu o coloană de stare "
 "apăsabilă"
 
-#: core/manager.cpp:758 core/view.cpp:2396 core/view.cpp:2400
+#: core/manager.cpp:759 core/view.cpp:2398 core/view.cpp:2402
 #, kde-format
 msgid "Status"
 msgstr "Stare"
@@ -560,348 +560,348 @@ msgstr ""
 "Activați această opțiune pentru a afișa indicii la planarea deasupra unui "
 "element în lista mesajelor."
 
-#: core/sortorder.cpp:65 core/sortorder.cpp:109
+#: core/sortorder.cpp:67 core/sortorder.cpp:111
 #, kde-format
 msgid "None (Storage Order)"
 msgstr "Niciuna (ordinea stocării)"
 
-#: core/sortorder.cpp:66
+#: core/sortorder.cpp:68
 #, kde-format
 msgid "By Date/Time"
 msgstr "După dată/oră"
 
-#: core/sortorder.cpp:68
+#: core/sortorder.cpp:70
 #, kde-format
 msgid "By Date/Time of Most Recent in Subtree"
 msgstr "După data/ora celui mai recent în subarbore"
 
-#: core/sortorder.cpp:73
+#: core/sortorder.cpp:75
 #, kde-format
 msgid "By Subject"
 msgstr "După subiect"
 
-#: core/sortorder.cpp:74
+#: core/sortorder.cpp:76
 #, kde-format
 msgid "By Size"
 msgstr "După dimensiune"
 
-#: core/sortorder.cpp:75
+#: core/sortorder.cpp:77
 #, kde-format
 msgid "By Action Item Status"
 msgstr "După starea elementului de acțiune"
 
-#: core/sortorder.cpp:76
+#: core/sortorder.cpp:78
 #, kde-format
 msgid "By Unread Status"
 msgstr "După starea „necitit”"
 
-#: core/sortorder.cpp:77
+#: core/sortorder.cpp:79
 #, kde-format
 msgid "By Important Status"
 msgstr "După starea „important”"
 
-#: core/sortorder.cpp:78
+#: core/sortorder.cpp:80
 #, fuzzy, kde-format
 #| msgid "By Important Status"
 msgid "By Attachment Status"
 msgstr "După starea „important”"
 
-#: core/sortorder.cpp:90 core/sortorder.cpp:132
+#: core/sortorder.cpp:92 core/sortorder.cpp:134
 #, kde-format
 msgid "Least Recent on Top"
 msgstr "Cel mai puțin recent în vârf"
 
-#: core/sortorder.cpp:91 core/sortorder.cpp:133
+#: core/sortorder.cpp:93 core/sortorder.cpp:135
 #, kde-format
 msgid "Most Recent on Top"
 msgstr "Cel mai recent în vârf"
 
-#: core/sortorder.cpp:95
+#: core/sortorder.cpp:97
 #, kde-format
 msgctxt "Sort order for messages"
 msgid "Ascending"
 msgstr "Crescător"
 
-#: core/sortorder.cpp:96
+#: core/sortorder.cpp:98
 #, kde-format
 msgctxt "Sort order for messages"
 msgid "Descending"
 msgstr "Descrescător"
 
-#: core/sortorder.cpp:107
+#: core/sortorder.cpp:109
 #, kde-format
 msgid "by Date/Time"
 msgstr "după dată/oră"
 
-#: core/sortorder.cpp:110
+#: core/sortorder.cpp:112
 #, kde-format
 msgid "by Date/Time of Most Recent Message in Group"
 msgstr "după data/ora majorității mesajelor recente din grup"
 
-#: core/sortorder.cpp:114
+#: core/sortorder.cpp:116
 #, kde-format
 msgid "by Sender/Receiver"
 msgstr "după expeditor/destinatar"
 
-#: core/sortorder.cpp:116
+#: core/sortorder.cpp:118
 #, kde-format
 msgid "by Sender"
 msgstr "după expeditor"
 
-#: core/sortorder.cpp:118
+#: core/sortorder.cpp:120
 #, kde-format
 msgid "by Receiver"
 msgstr "după destinatar"
 
-#: core/sortorder.cpp:136
+#: core/sortorder.cpp:138
 #, kde-format
 msgctxt "Sort order for mail groups"
 msgid "Ascending"
 msgstr "Crescător"
 
-#: core/sortorder.cpp:137
+#: core/sortorder.cpp:139
 #, kde-format
 msgctxt "Sort order for mail groups"
 msgid "Descending"
 msgstr "Descrescător"
 
-#: core/theme.cpp:107
+#: core/theme.cpp:109
 #, kde-format
 msgctxt "Description of Type Subject"
 msgid "Subject"
 msgstr "Subiect"
 
-#: core/theme.cpp:110
+#: core/theme.cpp:112
 #, kde-format
 msgctxt "Description of Type Date"
 msgid "Date"
 msgstr "Dată"
 
-#: core/theme.cpp:116
+#: core/theme.cpp:118
 #, kde-format
 msgctxt "Description of Type Sender"
 msgid "Sender"
 msgstr "Expeditor"
 
-#: core/theme.cpp:119
+#: core/theme.cpp:121
 #, kde-format
 msgctxt "Description of Type Receiver"
 msgid "Receiver"
 msgstr "Destinatar"
 
-#: core/theme.cpp:122
+#: core/theme.cpp:124
 #, kde-format
 msgctxt "Description of Type Size"
 msgid "Size"
 msgstr "Dimensiunea"
 
-#: core/theme.cpp:125
+#: core/theme.cpp:127
 #, kde-format
 msgid "Unread/Read Icon"
 msgstr "Pictogramă necitit/citit"
 
-#: core/theme.cpp:128
+#: core/theme.cpp:130
 #, kde-format
 msgid "Attachment Icon"
 msgstr "Pictogramă Atașament"
 
-#: core/theme.cpp:131
+#: core/theme.cpp:133
 #, kde-format
 msgid "Replied/Forwarded Icon"
 msgstr "Pictogramă Răspuns/Înaintat"
 
-#: core/theme.cpp:134
+#: core/theme.cpp:136
 #, kde-format
 msgid "Combined New/Unread/Read/Replied/Forwarded Icon"
 msgstr "Pictogramă combinată Nou/Necitit/Citit/Răspuns/Înaintat"
 
-#: core/theme.cpp:137
+#: core/theme.cpp:139
 #, kde-format
 msgid "Action Item Icon"
 msgstr "Pictogramă Element acțiune"
 
-#: core/theme.cpp:140
+#: core/theme.cpp:142
 #, kde-format
 msgid "Important Icon"
 msgstr "Pictocramă Important"
 
-#: core/theme.cpp:143
+#: core/theme.cpp:145
 #, fuzzy, kde-format
 #| msgid "&Groupware"
 msgid "Group Header Label"
 msgstr "&Colaborare"
 
-#: core/theme.cpp:146
+#: core/theme.cpp:148
 #, kde-format
 msgid "Spam/Ham Icon"
 msgstr "Pictogramă Spam/Ham"
 
-#: core/theme.cpp:149
+#: core/theme.cpp:151
 #, kde-format
 msgid "Watched/Ignored Icon"
 msgstr "Pictogramă Urmărit/Ignorat"
 
-#: core/theme.cpp:152
+#: core/theme.cpp:154
 #, kde-format
 msgid "Group Header Expand/Collapse Icon"
 msgstr ""
 
-#: core/theme.cpp:155
+#: core/theme.cpp:157
 #, kde-format
 msgid "Encryption State Icon"
 msgstr "Pictogramă Starea criptării"
 
-#: core/theme.cpp:158
+#: core/theme.cpp:160
 #, kde-format
 msgid "Signature State Icon"
 msgstr "Pictogramă Stare semnătură"
 
-#: core/theme.cpp:161
+#: core/theme.cpp:163
 #, kde-format
 msgid "Vertical Separation Line"
 msgstr "Linie de separare verticală"
 
-#: core/theme.cpp:164
+#: core/theme.cpp:166
 #, kde-format
 msgid "Horizontal Spacer"
 msgstr "Spațiator orizontal"
 
-#: core/theme.cpp:167
+#: core/theme.cpp:169
 #, fuzzy, kde-format
 #| msgid "Date"
 msgid "Max Date"
 msgstr "Data"
 
-#: core/theme.cpp:170
+#: core/theme.cpp:172
 #, kde-format
 msgid "Message Tags"
 msgstr "Marcaje mesaj"
 
-#: core/theme.cpp:173
+#: core/theme.cpp:175
 #, kde-format
 msgid "Invitation Icon"
 msgstr "Pictogramă invitație"
 
-#: core/theme.cpp:175
+#: core/theme.cpp:177
 #, kde-format
 msgctxt "Description of Type Folder"
 msgid "Folder"
 msgstr "Dosar"
 
-#: core/theme.cpp:177
+#: core/theme.cpp:179
 #, kde-format
 msgctxt "Description for an Unknown Type"
 msgid "Unknown"
 msgstr "Necunoscut"
 
-#: core/theme.cpp:836
+#: core/theme.cpp:838
 #, kde-format
 msgid "Unread"
 msgstr "Necitit"
 
-#: core/theme.cpp:1030
+#: core/theme.cpp:1032
 #, kde-format
 msgid "Never Show"
 msgstr "Nu afișa niciodată"
 
-#: core/theme.cpp:1030
+#: core/theme.cpp:1032
 #, kde-format
 msgid "Always Show"
 msgstr "Arată întotdeauna"
 
-#: core/theme.cpp:1035
+#: core/theme.cpp:1037
 #, kde-format
 msgid "Plain Rectangles"
 msgstr "Dreptunghiuri simple"
 
-#: core/theme.cpp:1036
+#: core/theme.cpp:1038
 #, fuzzy, kde-format
 #| msgid "Plain Rectangles"
 msgid "Plain Joined Rectangle"
 msgstr "Dreptunghiuri simple"
 
-#: core/theme.cpp:1037
+#: core/theme.cpp:1039
 #, kde-format
 msgid "Rounded Rectangles"
 msgstr "Dreptunghiuri rotunjite"
 
-#: core/theme.cpp:1038
+#: core/theme.cpp:1040
 #, fuzzy, kde-format
 #| msgid "Rounded Rectangles"
 msgid "Rounded Joined Rectangle"
 msgstr "Dreptunghiuri rotunjite"
 
-#: core/theme.cpp:1039
+#: core/theme.cpp:1041
 #, fuzzy, kde-format
 #| msgid "Plain Rectangles"
 msgid "Gradient Rectangles"
 msgstr "Dreptunghiuri simple"
 
-#: core/theme.cpp:1040
+#: core/theme.cpp:1042
 #, fuzzy, kde-format
 #| msgid "Rounded Rectangles"
 msgid "Gradient Joined Rectangle"
 msgstr "Dreptunghiuri rotunjite"
 
-#: core/theme.cpp:1041
+#: core/theme.cpp:1043
 #, kde-format
 msgid "Styled Rectangles"
 msgstr "Dreptunghiuri stilate"
 
-#: core/theme.cpp:1042
+#: core/theme.cpp:1044
 #, fuzzy, kde-format
 #| msgid "Styled Rectangles"
 msgid "Styled Joined Rectangles"
 msgstr "Dreptunghiuri stilate"
 
-#: core/view.cpp:892
+#: core/view.cpp:894
 #, kde-format
 msgid "Adjust Column Sizes"
 msgstr "Ajustează dimensiunile coloanelor"
 
-#: core/view.cpp:896
+#: core/view.cpp:898
 #, kde-format
 msgid "Show Default Columns"
 msgstr "Afișează coloane implicite"
 
-#: core/view.cpp:901
+#: core/view.cpp:903
 #, kde-format
 msgid "Display Tooltips"
 msgstr "Arată indicii"
 
-#: core/view.cpp:2377 core/view.cpp:2381
+#: core/view.cpp:2379 core/view.cpp:2383
 #: core/widgets/searchmessagebybuttons.cpp:74
 #, kde-format
 msgid "From"
 msgstr "De la"
 
-#: core/view.cpp:2378 core/view.cpp:2382
+#: core/view.cpp:2380 core/view.cpp:2384
 #, kde-format
 msgctxt "Receiver of the email"
 msgid "To"
 msgstr "Către"
 
-#: core/view.cpp:2379 core/view.cpp:2383
+#: core/view.cpp:2381 core/view.cpp:2385
 #, kde-format
 msgid "Date"
 msgstr "Data"
 
-#: core/view.cpp:2397 core/view.cpp:2401
+#: core/view.cpp:2399 core/view.cpp:2403
 #, kde-format
 msgid "Size"
 msgstr "Dimensiune"
 
-#: core/view.cpp:2398 core/view.cpp:2402 utils/themeeditor.cpp:190
+#: core/view.cpp:2400 core/view.cpp:2404 utils/themeeditor.cpp:190
 #, kde-format
 msgid "Folder"
 msgstr "Dosar"
 
-#: core/view.cpp:2408 core/view.cpp:2410
+#: core/view.cpp:2410 core/view.cpp:2412
 #, kde-format
 msgid "Preview"
 msgstr "Previzualizare"
 
-#: core/view.cpp:2427
+#: core/view.cpp:2429
 #, kde-format
 msgid "<b>%1</b> reply"
 msgid_plural "<b>%1</b> replies"
@@ -909,7 +909,7 @@ msgstr[0] "<b>%1</b> răspuns"
 msgstr[1] "<b>%1</b> răspunsuri"
 msgstr[2] "<b>%1</b> de răspunsuri"
 
-#: core/view.cpp:2430
+#: core/view.cpp:2432
 #, fuzzy, kde-format
 #| msgid "<b>%1</b> message in subtree (<b>%2</b> new + <b>%3</b> unread)"
 #| msgid_plural ""
@@ -921,51 +921,51 @@ msgstr[1] "<b>%1</b> mesaje în subarbore (<b>%2</b> noi + <b>%3</b> necitite)"
 msgstr[2] ""
 "<b>%1</b> de mesaje în subarbore (<b>%2</b> noi + <b>%3</b> necitite)"
 
-#: core/view.cpp:2465
+#: core/view.cpp:2467
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Threads started on 2008-12-21'"
 msgid "Threads started on %1"
 msgstr "Fire începute la %1"
 
-#: core/view.cpp:2467
+#: core/view.cpp:2469
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Threads started Yesterday'"
 msgid "Threads started %1"
 msgstr "Fire începute %1"
 
-#: core/view.cpp:2471
+#: core/view.cpp:2473
 #, fuzzy, kde-format
 #| msgid "&Threaded message list"
 msgid "Threads with messages dated %1"
 msgstr "Listă mesaje în&lănțuite"
 
-#: core/view.cpp:2480
+#: core/view.cpp:2482
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent on 2008-12-21'"
 msgid "Messages sent on %1"
 msgstr "Mesaje expediate la %1"
 
-#: core/view.cpp:2483
+#: core/view.cpp:2485
 #, kde-format
 msgctxt ""
 "@info:tooltip Formats to something like 'Messages received on 2008-12-21'"
 msgid "Messages received on %1"
 msgstr "Mesaje primite la %1"
 
-#: core/view.cpp:2487
+#: core/view.cpp:2489
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages sent Yesterday'"
 msgid "Messages sent %1"
 msgstr "Mesaje expediate %1"
 
-#: core/view.cpp:2489
+#: core/view.cpp:2491
 #, kde-format
 msgctxt "@info:tooltip Formats to something like 'Messages received Yesterday'"
 msgid "Messages received %1"
 msgstr "Mesaje primite %1"
 
-#: core/view.cpp:2498
+#: core/view.cpp:2500
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "@info:tooltip Formats to something like 'Threads started on 2008-12-21'"
@@ -973,65 +973,65 @@ msgstr "Mesaje primite %1"
 msgid "Threads started within %1"
 msgstr "Fire începute la %1"
 
-#: core/view.cpp:2501
+#: core/view.cpp:2503
 #, fuzzy, kde-format
 #| msgid "&Threaded message list"
 msgid "Threads containing messages with dates within %1"
 msgstr "Listă mesaje în&lănțuite"
 
-#: core/view.cpp:2509
+#: core/view.cpp:2511
 #, fuzzy, kde-format
 msgid "Messages sent within %1"
 msgstr "Mesajul a fost semnat de"
 
-#: core/view.cpp:2511
+#: core/view.cpp:2513
 #, kde-format
 msgid "Messages received within %1"
 msgstr "Mesaje recepționate între %1"
 
-#: core/view.cpp:2520
+#: core/view.cpp:2522
 #, kde-format
 msgid "Threads started by %1"
 msgstr "Fire începute de %1"
 
-#: core/view.cpp:2523
+#: core/view.cpp:2525
 #, fuzzy, kde-format
 #| msgid "&Threaded message list"
 msgid "Threads with most recent message by %1"
 msgstr "Listă mesaje în&lănțuite"
 
-#: core/view.cpp:2532 core/view.cpp:2556
+#: core/view.cpp:2534 core/view.cpp:2558
 #, kde-format
 msgid "Messages sent to %1"
 msgstr "Mesaje expediate către %1"
 
-#: core/view.cpp:2534
+#: core/view.cpp:2536
 #, kde-format
 msgid "Messages sent by %1"
 msgstr "Mesaje expediate de %1"
 
-#: core/view.cpp:2537
+#: core/view.cpp:2539
 #, kde-format
 msgid "Messages received from %1"
 msgstr "Mesaje primite de la %1"
 
-#: core/view.cpp:2545
+#: core/view.cpp:2547
 #, kde-format
 msgid "Threads directed to %1"
 msgstr "Fire direcționate către %1"
 
-#: core/view.cpp:2548
+#: core/view.cpp:2550
 #, fuzzy, kde-format
 #| msgid "&Threaded message list"
 msgid "Threads with most recent message directed to %1"
 msgstr "Listă mesaje în&lănțuite"
 
-#: core/view.cpp:2558
+#: core/view.cpp:2560
 #, kde-format
 msgid "Messages received by %1"
 msgstr "Mesaje primite de %1"
 
-#: core/view.cpp:2583
+#: core/view.cpp:2585
 #, kde-format
 msgid "<b>%1</b> thread"
 msgid_plural "<b>%1</b> threads"
@@ -1039,7 +1039,7 @@ msgstr[0] "<b>%1</b> fir"
 msgstr[1] "<b>%1</b> fire"
 msgstr[2] "<b>%1</b> de fire"
 
-#: core/view.cpp:2588
+#: core/view.cpp:2590
 #, fuzzy, kde-format
 #| msgid "<b>%1</b> message (<b>%2</b> new + <b>%3</b> unread)"
 #| msgid_plural "<b>%1</b> messages (<b>%2</b> new + <b>%3</b> unread)"
@@ -1049,55 +1049,55 @@ msgstr[0] "<b>%1</b> mesaj (<b>%2</b> noi + <b>%3</b> necitite)"
 msgstr[1] "<b>%1</b> mesaje (<b>%2</b> noi + <b>%3</b> necitite)"
 msgstr[2] "<b>%1</b> de mesaje (<b>%2</b> noi + <b>%3</b> necitite)"
 
-#: core/widgetbase.cpp:199
+#: core/widgetbase.cpp:200
 #, kde-format
 msgid "No filter defined."
 msgstr ""
 
-#: core/widgetbase.cpp:199
+#: core/widgetbase.cpp:200
 #, fuzzy, kde-format
 #| msgid "&Create Filter"
 msgctxt "@title:window"
 msgid "Create Filter"
 msgstr "&Creează filtru"
 
-#: core/widgetbase.cpp:424 messagelistutil.cpp:115
+#: core/widgetbase.cpp:425 messagelistutil.cpp:115
 #, kde-format
 msgid "Theme"
 msgstr "Tematică"
 
-#: core/widgetbase.cpp:445 core/widgetbase.cpp:535
+#: core/widgetbase.cpp:446 core/widgetbase.cpp:536
 #: core/widgets/configurefilterswidget.cpp:77
 #, kde-format
 msgid "Configure..."
 msgstr "Configurare..."
 
-#: core/widgetbase.cpp:514 messagelistutil.cpp:110
+#: core/widgetbase.cpp:515 messagelistutil.cpp:110
 #, kde-format
 msgid "Aggregation"
 msgstr "Agregare"
 
-#: core/widgetbase.cpp:597
+#: core/widgetbase.cpp:598
 #, kde-format
 msgid "Message Sort Order"
 msgstr "Ordinea de sortare a mesajelor"
 
-#: core/widgetbase.cpp:619
+#: core/widgetbase.cpp:620
 #, kde-format
 msgid "Message Sort Direction"
 msgstr "Direcția de sortare a mesajelor"
 
-#: core/widgetbase.cpp:636
+#: core/widgetbase.cpp:637
 #, kde-format
 msgid "Group Sort Order"
 msgstr "Ordinea de sortare a grupurilor"
 
-#: core/widgetbase.cpp:653
+#: core/widgetbase.cpp:654
 #, kde-format
 msgid "Group Sort Direction"
 msgstr "Direcția de sortare a grupurilor"
 
-#: core/widgetbase.cpp:668
+#: core/widgetbase.cpp:669
 #, kde-format
 msgid "Folder Always Uses This Sort Order"
 msgstr "Dosarul utilizează întotdeauna această ordine de sortare"
@@ -1839,13 +1839,13 @@ msgctxt "@action:inmenu"
 msgid "Lock Tab"
 msgstr "Blochează căutarea"
 
-#: storagemodel.cpp:232
+#: storagemodel.cpp:233
 #, kde-format
 msgctxt "displayed as subject when the subject of a mail is empty"
 msgid "No Subject"
 msgstr "Fără subiect"
 
-#: storagemodel.cpp:233
+#: storagemodel.cpp:234
 #, kde-format
 msgctxt "displayed when a mail has unknown sender, receiver or date"
 msgid "Unknown"
@@ -2381,7 +2381,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: widget.cpp:210
+#: widget.cpp:211
 #, fuzzy, kde-format
 #| msgctxt "Permissions"
 #| msgid "All"
@@ -2389,53 +2389,53 @@ msgctxt "Item in list of Akonadi tags, to show all e-mails"
 msgid "All"
 msgstr "Tot"
 
-#: widget.cpp:347
+#: widget.cpp:348
 #, fuzzy, kde-format
 #| msgid "Collapse All Groups"
 msgid "Collapse Group"
 msgstr "Restrânge toate grupurile"
 
-#: widget.cpp:350
+#: widget.cpp:351
 #, fuzzy, kde-format
 #| msgid "Expand All Groups"
 msgid "Expand Group"
 msgstr "Desfășoară toate grupurile"
 
-#: widget.cpp:356
+#: widget.cpp:357
 #, kde-format
 msgid "Expand All Groups"
 msgstr "Desfășoară toate grupurile"
 
-#: widget.cpp:359
+#: widget.cpp:360
 #, kde-format
 msgid "Collapse All Groups"
 msgstr "Restrânge toate grupurile"
 
-#: widget.cpp:363
+#: widget.cpp:364
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "Ex&pand All Threads"
 msgid "Expand All Threads"
 msgstr "Des&fășoară toate firele"
 
-#: widget.cpp:365
+#: widget.cpp:366
 #, fuzzy, kde-format
 #| msgctxt "View->"
 #| msgid "C&ollapse All Threads"
 msgid "Collapse All Threads"
 msgstr "Res&trânge toate firele"
 
-#: widget.cpp:424
+#: widget.cpp:425
 #, kde-format
 msgid "&Move Here"
 msgstr "&Mută aici"
 
-#: widget.cpp:425
+#: widget.cpp:426
 #, kde-format
 msgid "&Copy Here"
 msgstr "&Copiază aici"
 
-#: widget.cpp:427
+#: widget.cpp:428
 #, kde-format
 msgid "C&ancel"
 msgstr "R&enunță"
