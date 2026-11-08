@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-11-06 07:20+0000\n"
 "PO-Revision-Date: 2026-10-16 14:49+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -98,12 +98,12 @@ msgctxt "@title:window"
 msgid "Save HTML Page"
 msgstr "שמירת עמוד HTML"
 
-#: widgets/submittedformwidgets/submittedformwarningwidget.cpp:23
+#: widgets/submittedformwidgets/submittedformwarningwidget.cpp:22
 #, kde-format
 msgid "Submit form is not allowed in mailer. Please open url in a browser."
 msgstr "אסור להגיש טפסים במנגנון הדוא״ל. נא לפתוח כתובת בדפדפן."
 
-#: widgets/tracking/trackingdetailsdialog.cpp:26
+#: widgets/tracking/trackingdetailsdialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"

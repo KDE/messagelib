@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-11-06 07:20+0000\n"
 "PO-Revision-Date: 2024-10-17 13:00+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -98,13 +98,13 @@ msgctxt "@title:window"
 msgid "Save HTML Page"
 msgstr "Tallenna HTML-sivuksi"
 
-#: widgets/submittedformwidgets/submittedformwarningwidget.cpp:23
+#: widgets/submittedformwidgets/submittedformwarningwidget.cpp:22
 #, kde-format
 msgid "Submit form is not allowed in mailer. Please open url in a browser."
 msgstr ""
 "Lomakkeen lähetystä ei sallita postiohjelmassa. Avaa verkko-osoite selaimeen."
 
-#: widgets/tracking/trackingdetailsdialog.cpp:26
+#: widgets/tracking/trackingdetailsdialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"

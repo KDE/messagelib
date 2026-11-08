@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libtemplateparser\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-11-06 07:20+0000\n"
 "PO-Revision-Date: 2024-08-02 22:29+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: esperanto <kde-i18n-eo@kde.org>\n"
@@ -98,14 +98,14 @@ msgctxt "@title:window"
 msgid "Save HTML Page"
 msgstr "Konservi HTML-paĝon"
 
-#: widgets/submittedformwidgets/submittedformwarningwidget.cpp:23
+#: widgets/submittedformwidgets/submittedformwarningwidget.cpp:22
 #, kde-format
 msgid "Submit form is not allowed in mailer. Please open url in a browser."
 msgstr ""
 "Sendi formularon ne estas permesita en poŝtilo. Bonvolu malfermi URL en "
 "retumilo."
 
-#: widgets/tracking/trackingdetailsdialog.cpp:26
+#: widgets/tracking/trackingdetailsdialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"

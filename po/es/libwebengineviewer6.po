@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libwebengineviewer6\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-11-06 07:20+0000\n"
 "PO-Revision-Date: 2026-10-17 00:40+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -99,14 +99,14 @@ msgctxt "@title:window"
 msgid "Save HTML Page"
 msgstr "Guardar página HTML"
 
-#: widgets/submittedformwidgets/submittedformwarningwidget.cpp:23
+#: widgets/submittedformwidgets/submittedformwarningwidget.cpp:22
 #, kde-format
 msgid "Submit form is not allowed in mailer. Please open url in a browser."
 msgstr ""
 "El envío de formularios no se permite en el gestor de correo. Abra la URL en "
 "un navegador."
 
-#: widgets/tracking/trackingdetailsdialog.cpp:26
+#: widgets/tracking/trackingdetailsdialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libwebengineviewer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-16 00:49+0000\n"
+"POT-Creation-Date: 2026-11-06 07:20+0000\n"
 "PO-Revision-Date: 2026-11-03 20:37+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -97,12 +97,12 @@ msgctxt "@title:window"
 msgid "Save HTML Page"
 msgstr "儲存 HTML 頁面"
 
-#: widgets/submittedformwidgets/submittedformwarningwidget.cpp:23
+#: widgets/submittedformwidgets/submittedformwarningwidget.cpp:22
 #, kde-format
 msgid "Submit form is not allowed in mailer. Please open url in a browser."
 msgstr "郵件工具裡不允許提交表單。請在瀏覽器開啟網址。"
 
-#: widgets/tracking/trackingdetailsdialog.cpp:26
+#: widgets/tracking/trackingdetailsdialog.cpp:25
 #, kde-format
 msgctxt "@title:window"
 msgid "Details"

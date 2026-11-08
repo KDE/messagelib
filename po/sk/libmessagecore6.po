@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecore\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-21 00:52+0000\n"
+"POT-Creation-Date: 2026-11-07 00:59+0000\n"
 "PO-Revision-Date: 2020-10-20 17:18+0200\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -254,27 +254,27 @@ msgstr "Šifrovať túto prílohu"
 msgid "Sign this attachment"
 msgstr "Podpísať túto prílohu"
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:82
+#: dkim-verify/dkimmanagerkeymodel.cpp:84
 #, kde-format
 msgid "DKIM Key"
 msgstr "Kľúč DKIM"
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:84
+#: dkim-verify/dkimmanagerkeymodel.cpp:86
 #, kde-format
 msgid "Selector"
 msgstr "Selektor"
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:86
+#: dkim-verify/dkimmanagerkeymodel.cpp:88
 #, kde-format
 msgid "SDID"
 msgstr "SDID"
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:88
+#: dkim-verify/dkimmanagerkeymodel.cpp:90
 #, kde-format
 msgid "Inserted"
 msgstr "Vložené"
 
-#: dkim-verify/dkimmanagerkeymodel.cpp:90
+#: dkim-verify/dkimmanagerkeymodel.cpp:92
 #, kde-format
 msgid "Last Used"
 msgstr "Naposledy použité"
@@ -357,7 +357,7 @@ msgctxt "1. weekday, 2. time"
 msgid "%1 %2"
 msgstr "%1 %2"
 
-#: utils/stringutil.cpp:397
+#: utils/stringutil.cpp:398
 #, kde-format
 msgctxt "signal that this email is defined in my identity"
 msgid "Me"
