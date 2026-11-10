@@ -58,8 +58,8 @@ CSSHelper::CSSHelper(const QPaintDevice *pd)
 
     QFont defaultFont = QFontDatabase::systemFont(QFontDatabase::GeneralFont);
     QFont defaultFixedFont = QFontDatabase::systemFont(QFontDatabase::FixedFont);
-    mBodyFont = MessageCore::MessageCoreSettings::self()->useDefaultFonts() ? defaultFont : MessageViewer ::MessageViewerSettings::self()->bodyFont();
-    mPrintFont = MessageCore::MessageCoreSettings::self()->useDefaultFonts() ? defaultFont : MessageViewer ::MessageViewerSettings::self()->printFont();
+    mBodyFont = MessageCore::MessageCoreSettings::self()->useDefaultFonts() ? defaultFont : MessageViewer::MessageViewerSettings::self()->bodyFont();
+    mPrintFont = MessageCore::MessageCoreSettings::self()->useDefaultFonts() ? defaultFont : MessageViewer::MessageViewerSettings::self()->printFont();
     mFixedFont = mFixedPrintFont = defaultFixedFont;
     defaultFont.setItalic(true);
     mQuoteFont = defaultFont;

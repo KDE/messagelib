@@ -58,7 +58,7 @@ MimeTreeParser::Util::HtmlMode MailViewerSource::preferredMode() const
     switch (mViewer->displayFormatMessageOverwrite()) {
     case MessageViewer::Viewer::UseGlobalSetting:
     case MessageViewer::Viewer::Unknown:
-        return mViewer->htmlMailGlobalSetting() ? MimeTreeParser::Util::Html : MimeTreeParser::Util ::Normal;
+        return mViewer->htmlMailGlobalSetting() ? MimeTreeParser::Util::Html : MimeTreeParser::Util::Normal;
     case MessageViewer::Viewer::Html:
         return MimeTreeParser::Util::MultipartHtml;
     case MessageViewer::Viewer::Text:
