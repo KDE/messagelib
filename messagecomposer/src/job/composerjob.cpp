@@ -55,7 +55,7 @@ public:
     void composeFinalStep(std::unique_ptr<KMime::Content> &&content);
 
     QString gnupgHome;
-    QList<QPair<QStringList, std::vector<GpgME::Key>>> encData;
+    QList<std::pair<QStringList, std::vector<GpgME::Key>>> encData;
     GpgME::Key senderEncryptionKey;
     std::vector<GpgME::Key> signers;
     AttachmentPart::List attachmentParts;
@@ -622,7 +622,7 @@ void ComposerJob::setSigningKeys(const std::vector<GpgME::Key> &signers)
     d->signers = signers;
 }
 
-void ComposerJob::setEncryptionKeys(const QList<QPair<QStringList, std::vector<GpgME::Key>>> &encData)
+void ComposerJob::setEncryptionKeys(const QList<std::pair<QStringList, std::vector<GpgME::Key>>> &encData)
 {
     Q_D(ComposerJob);
 

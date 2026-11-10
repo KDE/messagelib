@@ -10,8 +10,8 @@
 
 #include <QColor>
 #include <QList>
-#include <QPair>
 #include <QString>
+#include <utility>
 
 #include "core/optionset.h"
 #include "core/sortorder.h"
@@ -955,7 +955,7 @@ public:
      * The returned descriptors are pairs in that the first item is the localized description
      * of the option value and the second item is the integer option value itself.
      */
-    static QList<QPair<QString, int>> enumerateGroupHeaderBackgroundStyles();
+    static QList<std::pair<QString, int>> enumerateGroupHeaderBackgroundStyles();
 
     /**
      * Returns the currently set ViewHeaderPolicy
@@ -984,7 +984,7 @@ public:
      * The returned descriptors are pairs in that the first item is the localized description
      * of the option value and the second item is the integer option value itself.
      */
-    static QList<QPair<QString, int>> enumerateViewHeaderPolicyOptions();
+    static QList<std::pair<QString, int>> enumerateViewHeaderPolicyOptions();
 
     inline const QPixmap *pixmap(ThemeIcon icon) const
     {

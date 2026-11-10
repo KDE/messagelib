@@ -123,7 +123,7 @@ public:
      * The returned descriptors are pairs in that the first item is the localized description
      * of the option value and the second item is the integer option value itself.
      */
-    [[nodiscard]] static QList<QPair<QString, int>> enumerateMessageSortingOptions(Aggregation::Threading t);
+    [[nodiscard]] static QList<std::pair<QString, int>> enumerateMessageSortingOptions(Aggregation::Threading t);
 
     /**
      * Enumerates the available message sorting directions for the specified MessageSorting option.
@@ -131,7 +131,7 @@ public:
      * of the option value and the second item is the integer option value itself.
      * If the returned list is empty then the value of the option is meaningless in the current context.
      */
-    [[nodiscard]] static QList<QPair<QString, int>> enumerateMessageSortDirectionOptions(MessageSorting ms);
+    [[nodiscard]] static QList<std::pair<QString, int>> enumerateMessageSortDirectionOptions(MessageSorting ms);
 
     /**
      * Enumerates the group sorting options compatible with the specified Grouping.
@@ -139,7 +139,7 @@ public:
      * of the option value and the second item is the integer option value itself.
      * If the returned list is empty then the value of the option is meaningless in the current context.
      */
-    [[nodiscard]] static QList<QPair<QString, int>> enumerateGroupSortingOptions(Aggregation::Grouping g);
+    [[nodiscard]] static QList<std::pair<QString, int>> enumerateGroupSortingOptions(Aggregation::Grouping g);
 
     /**
      * Enumerates the group sort direction options compatible with the specified Grouping and GroupSorting.
@@ -147,7 +147,7 @@ public:
      * of the option value and the second item is the integer option value itself.
      * If the returned list is empty then the value of the option is meaningless in the current context.
      */
-    [[nodiscard]] static QList<QPair<QString, int>> enumerateGroupSortDirectionOptions(Aggregation::Grouping g, GroupSorting groupSorting);
+    [[nodiscard]] static QList<std::pair<QString, int>> enumerateGroupSortDirectionOptions(Aggregation::Grouping g, GroupSorting groupSorting);
 
     /**
      * Checks if this sort order can be used in combination with the given aggregation.

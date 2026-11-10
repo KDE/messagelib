@@ -100,7 +100,7 @@ public:
     /*! \brief Sets the keys to use for encrypting the message.
         \param data List of recipient key lists.
     */
-    void setEncryptionKeys(const QList<QPair<QStringList, std::vector<GpgME::Key>>> &data);
+    void setEncryptionKeys(const QList<std::pair<QStringList, std::vector<GpgME::Key>>> &data);
 
     /*! \brief Enables or disables Autocrypt support for this message.
         \param autocryptEnabled True to enable Autocrypt.

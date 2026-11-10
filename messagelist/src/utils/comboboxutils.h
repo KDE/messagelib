@@ -9,8 +9,8 @@
 #pragma once
 
 #include <QList>
-#include <QPair>
 #include <QString>
+#include <utility>
 
 class QComboBox;
 
@@ -28,7 +28,7 @@ namespace ComboBoxUtils
  * Each option descriptor contains a description string and a distinct integer (possibly enum)
  * identifier value.
  */
-void fillIntegerOptionCombo(QComboBox *combo, const QList<QPair<QString, int>> &optionDescriptors);
+void fillIntegerOptionCombo(QComboBox *combo, const QList<std::pair<QString, int>> &optionDescriptors);
 
 /**
  * Returns the identifier of the currently selected option in the specified combo.

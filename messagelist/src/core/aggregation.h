@@ -12,8 +12,8 @@ class QDataStream;
 
 #include <QList>
 #include <QObject>
-#include <QPair>
 #include <QString>
+#include <utility>
 
 #include "messagelist_export.h"
 #include "optionset.h"
@@ -155,7 +155,7 @@ public:
      * pairs in that the first item is the localized description of the
      * option value and the second item is the integer option value itself.
      */
-    static QList<QPair<QString, int>> enumerateGroupingOptions();
+    static QList<std::pair<QString, int>> enumerateGroupingOptions();
 
     /**
      * Returns the current GroupExpandPolicy.
@@ -180,7 +180,7 @@ public:
      * of the option value and the second item is the integer option value itself.
      * If the returned list is empty then the value of the option is meaningless in the current context.
      */
-    static QList<QPair<QString, int>> enumerateGroupExpandPolicyOptions(Grouping g);
+    static QList<std::pair<QString, int>> enumerateGroupExpandPolicyOptions(Grouping g);
 
     /**
      * Returns the current threading method.
@@ -203,7 +203,7 @@ public:
      * The returned descriptors are pairs in that the first item is the localized description
      * of the option value and the second item is the integer option value itself.
      */
-    static QList<QPair<QString, int>> enumerateThreadingOptions();
+    static QList<std::pair<QString, int>> enumerateThreadingOptions();
 
     /**
      * Returns the current thread leader determination method.
@@ -230,7 +230,7 @@ public:
      * of the option value and the second item is the integer option value itself.
      * If the returned list is empty then the value of the option is meaningless in the current context.
      */
-    static QList<QPair<QString, int>> enumerateThreadLeaderOptions(Grouping g, Threading t);
+    static QList<std::pair<QString, int>> enumerateThreadLeaderOptions(Grouping g, Threading t);
 
     /**
      * Returns the current thread expand policy.
@@ -256,7 +256,7 @@ public:
      * of the option value and the second item is the integer option value itself.
      * If the returned list is empty then the value of the option is meaningless in the current context.
      */
-    static QList<QPair<QString, int>> enumerateThreadExpandPolicyOptions(Threading t);
+    static QList<std::pair<QString, int>> enumerateThreadExpandPolicyOptions(Threading t);
 
     /**
      * Returns the current fill view strategy.
@@ -279,7 +279,7 @@ public:
      * The returned descriptors are pairs in that the first item is the localized description
      * of the option value and the second item is the integer option value itself.
      */
-    static QList<QPair<QString, int>> enumerateFillViewStrategyOptions();
+    static QList<std::pair<QString, int>> enumerateFillViewStrategyOptions();
 
     /**
      * Pure virtual reimplemented from OptionSet.

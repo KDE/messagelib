@@ -1027,12 +1027,12 @@ void Theme::setGroupHeaderBackgroundStyle(Theme::GroupHeaderBackgroundStyle grou
     mGroupHeaderBackgroundStyle = groupHeaderBackgroundStyle;
 }
 
-QList<QPair<QString, int>> Theme::enumerateViewHeaderPolicyOptions()
+QList<std::pair<QString, int>> Theme::enumerateViewHeaderPolicyOptions()
 {
     return {{i18n("Never Show"), NeverShowHeader}, {i18n("Always Show"), ShowHeaderAlways}};
 }
 
-QList<QPair<QString, int>> Theme::enumerateGroupHeaderBackgroundStyles()
+QList<std::pair<QString, int>> Theme::enumerateGroupHeaderBackgroundStyles()
 {
     return {{i18n("Plain Rectangles"), PlainRect},
             {i18n("Plain Joined Rectangle"), PlainJoinedRect},

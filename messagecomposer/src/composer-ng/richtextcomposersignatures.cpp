@@ -23,7 +23,7 @@ public:
     }
 
     void cleanWhitespaceHelper(const QRegularExpression &regExp, const QString &newText, const KIdentityManagementCore::Signature &sig);
-    [[nodiscard]] QList<QPair<int, int>> signaturePositions(const KIdentityManagementCore::Signature &sig) const;
+    [[nodiscard]] QList<std::pair<int, int>> signaturePositions(const KIdentityManagementCore::Signature &sig) const;
     RichTextComposerNg *const richTextComposer;
 };
 
@@ -61,8 +61,8 @@ void RichTextComposerSignatures::RichTextComposerSignaturesPrivate::cleanWhitesp
         }
         // Skip text inside signatures
         bool insideSignature = false;
-        const QList<QPair<int, int>> sigPositions = signaturePositions(sig);
-        for (const QPair<int, int> &position : sigPositions) {
+        const QList<std::pair<int, int>> sigPositions = signaturePositions(sig);
+        for (const std::pair<int, int> &position : sigPositions) {
             if (cursor.position() >= position.first && cursor.position() <= position.second) {
                 insideSignature = true;
             }
@@ -102,9 +102,10 @@ void RichTextComposerSignatures::cleanWhitespace(const KIdentityManagementCore::
     cursor.endEditBlock();
 }
 
-QList<QPair<int, int>> RichTextComposerSignatures::RichTextComposerSignaturesPrivate::signaturePositions(const KIdentityManagementCore::Signature &sig) const
+QList<std::pair<int, int>>
+RichTextComposerSignatures::RichTextComposerSignaturesPrivate::signaturePositions(const KIdentityManagementCore::Signature &sig) const
 {
-    QList<QPair<int, int>> signaturePositions;
+    QList<std::pair<int, int>> signaturePositions;
     if (!sig.rawText().isEmpty()) {
         const QString sigText = sig.toPlainText();
 
@@ -118,7 +119,7 @@ QList<QPair<int, int>> RichTextComposerSignatures::RichTextComposerSignaturesPri
             }
             currentSearchPosition = currentMatch + sigText.length();
 
-            signaturePositions.append(QPair<int, int>(currentMatch, currentMatch + sigText.length()));
+            signaturePositions.append(std::pair<int, int>(currentMatch, currentMatch + sigText.length()));
         }
     }
     return signaturePositions;

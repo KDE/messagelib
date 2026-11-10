@@ -375,7 +375,8 @@ void MessageFactoryNG::createForwardAsync()
     job->start();
 }
 
-QPair<std::shared_ptr<KMime::Message>, std::vector<std::unique_ptr<KMime::Content>>> MessageFactoryNG::createAttachedForward(const Akonadi::Item::List &items)
+std::pair<std::shared_ptr<KMime::Message>, std::vector<std::unique_ptr<KMime::Content>>>
+MessageFactoryNG::createAttachedForward(const Akonadi::Item::List &items)
 {
     // create forwarded message with original message as attachment
     // remove headers that shouldn't be forwarded
@@ -716,7 +717,7 @@ std::shared_ptr<KMime::Message> MessageFactoryNG::createMDN(KMime::MDN::ActionMo
     return receipt;
 }
 
-QPair<std::shared_ptr<KMime::Message>, std::unique_ptr<KMime::Content>> MessageFactoryNG::createForwardDigestMIME(const Akonadi::Item::List &items)
+std::pair<std::shared_ptr<KMime::Message>, std::unique_ptr<KMime::Content>> MessageFactoryNG::createForwardDigestMIME(const Akonadi::Item::List &items)
 {
     std::shared_ptr<KMime::Message> msg(new KMime::Message);
     auto digest = std::make_unique<KMime::Content>();

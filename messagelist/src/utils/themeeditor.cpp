@@ -956,10 +956,10 @@ void ThemePreviewWidget::mousePressEvent(QMouseEvent *e)
                 childmenu = new QMenu(&menu);
 
                 grp = new QActionGroup(childmenu);
-                QList<QPair<QString, int>> styles = Theme::enumerateGroupHeaderBackgroundStyles();
-                QList<QPair<QString, int>>::ConstIterator end(styles.constEnd());
+                QList<std::pair<QString, int>> styles = Theme::enumerateGroupHeaderBackgroundStyles();
+                QList<std::pair<QString, int>>::ConstIterator end(styles.constEnd());
 
-                for (QList<QPair<QString, int>>::ConstIterator it = styles.constBegin(); it != end; ++it) {
+                for (QList<std::pair<QString, int>>::ConstIterator it = styles.constBegin(); it != end; ++it) {
                     act = childmenu->addAction((*it).first);
                     act->setData(QVariant((*it).second));
                     act->setCheckable(true);

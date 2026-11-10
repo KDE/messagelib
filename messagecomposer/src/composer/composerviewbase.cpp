@@ -633,7 +633,7 @@ inline bool cryptoWarningUnencrypted(const KIdentityManagementCore::Identity &id
 } // nameless namespace
 
 bool ComposerViewBase::addKeysToContext(const QString &gnupgHome,
-                                        const QList<QPair<QStringList, std::vector<GpgME::Key>>> &data,
+                                        const QList<std::pair<QStringList, std::vector<GpgME::Key>>> &data,
                                         const std::map<QByteArray, QString> &autocryptMap)
 {
     bool needSpecialContext = false;
@@ -897,10 +897,10 @@ QList<MessageComposer::ComposerJob *> ComposerViewBase::generateCryptoMessages(b
 
             if (encryptSomething || autocryptEnabled()) {
                 auto end(encData.end());
-                QList<QPair<QStringList, std::vector<GpgME::Key>>> data;
+                QList<std::pair<QStringList, std::vector<GpgME::Key>>> data;
                 data.reserve(encData.size());
                 for (auto it = encData.begin(); it != end; ++it) {
-                    QPair<QStringList, std::vector<GpgME::Key>> p(it->recipients, it->keys);
+                    std::pair<QStringList, std::vector<GpgME::Key>> p(it->recipients, it->keys);
                     data.append(p);
                     qCDebug(MESSAGECOMPOSER_LOG) << "got resolved keys for:" << it->recipients;
                 }

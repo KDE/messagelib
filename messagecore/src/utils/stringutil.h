@@ -8,8 +8,8 @@
 
 #include <QByteArray>
 #include <QList>
-#include <QPair>
 #include <QStringList>
+#include <utility>
 
 #include <cstdint>
 #include <memory>
@@ -44,7 +44,7 @@ namespace StringUtil
 /*!
  * Parses a mailto: url and extracts the information in the QMap (field name as key).
  */
-[[nodiscard]] MESSAGECORE_EXPORT QList<QPair<QString, QString>> parseMailtoUrl(const QUrl &url);
+[[nodiscard]] MESSAGECORE_EXPORT QList<std::pair<QString, QString>> parseMailtoUrl(const QUrl &url);
 
 /*!
  * Strips the signature blocks from a message text. "-- " is considered as a signature block separator.

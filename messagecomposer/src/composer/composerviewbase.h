@@ -346,7 +346,7 @@ private:
     MESSAGECOMPOSER_NO_EXPORT void addSendLaterItem(const Akonadi::Item &item);
 
     MESSAGECOMPOSER_NO_EXPORT bool addKeysToContext(const QString &gnupgHome,
-                                                    const QList<QPair<QStringList, std::vector<GpgME::Key>>> &data,
+                                                    const QList<std::pair<QStringList, std::vector<GpgME::Key>>> &data,
                                                     const std::map<QByteArray, QString> &autocryptMap);
 
     void setAkonadiLookupEnabled(bool akonadiLookupEnabled);

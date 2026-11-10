@@ -156,9 +156,9 @@ static bool flushPart(QString &msg, QStringList &textParts, const QString &inden
     return appendEmptyLine;
 }
 
-QList<QPair<QString, QString>> parseMailtoUrl(const QUrl &url)
+QList<std::pair<QString, QString>> parseMailtoUrl(const QUrl &url)
 {
-    QList<QPair<QString, QString>> values;
+    QList<std::pair<QString, QString>> values;
     if (url.scheme() != "mailto"_L1) {
         return values;
     }
@@ -190,7 +190,7 @@ QList<QPair<QString, QString>> parseMailtoUrl(const QUrl &url)
                         values[i - 1].second = values[i - 1].second + u"&"_s + queryItem.first;
                     }
                 } else {
-                    QPair<QString, QString> pairElement;
+                    std::pair<QString, QString> pairElement;
                     pairElement.first = queryItem.first.toLower();
                     pairElement.second = queryItem.second;
                     values.append(pairElement);
@@ -205,7 +205,7 @@ QList<QPair<QString, QString>> parseMailtoUrl(const QUrl &url)
     }
     const QString fullTo = to.join(", "_L1);
     if (!fullTo.isEmpty()) {
-        QPair<QString, QString> pairElement;
+        std::pair<QString, QString> pairElement;
         pairElement.first = u"to"_s;
         pairElement.second = fullTo;
         if (indexTo != -1) {

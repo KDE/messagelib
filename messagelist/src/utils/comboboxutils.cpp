@@ -15,16 +15,16 @@
 using namespace Qt::Literals::StringLiterals;
 using namespace MessageList::Utils;
 
-void ComboBoxUtils::fillIntegerOptionCombo(QComboBox *combo, const QList<QPair<QString, int>> &optionDescriptors)
+void ComboBoxUtils::fillIntegerOptionCombo(QComboBox *combo, const QList<std::pair<QString, int>> &optionDescriptors)
 {
     int val = getIntegerOptionComboValue(combo, -1);
     combo->clear();
     int valIdx = -1;
     int idx = 0;
 
-    QList<QPair<QString, int>>::ConstIterator end(optionDescriptors.end());
+    QList<std::pair<QString, int>>::ConstIterator end(optionDescriptors.end());
 
-    for (QList<QPair<QString, int>>::ConstIterator it = optionDescriptors.constBegin(); it != end; ++it) {
+    for (QList<std::pair<QString, int>>::ConstIterator it = optionDescriptors.constBegin(); it != end; ++it) {
         if (val == (*it).second) {
             valIdx = idx;
         }

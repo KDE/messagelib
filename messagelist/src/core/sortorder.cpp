@@ -61,9 +61,9 @@ void SortOrder::setMessageSortDirection(SortOrder::SortDirection messageSortDire
     mMessageSortDirection = messageSortDirection;
 }
 
-QList<QPair<QString, int>> SortOrder::enumerateMessageSortingOptions(Aggregation::Threading t)
+QList<std::pair<QString, int>> SortOrder::enumerateMessageSortingOptions(Aggregation::Threading t)
 {
-    QList<QPair<QString, int>> ret;
+    QList<std::pair<QString, int>> ret;
     ret.append({i18n("None (Storage Order)"), SortOrder::NoMessageSorting});
     ret.append({i18n("By Date/Time"), SortOrder::SortMessagesByDateTime});
     if (t != Aggregation::NoThreading) {
@@ -81,9 +81,9 @@ QList<QPair<QString, int>> SortOrder::enumerateMessageSortingOptions(Aggregation
     return ret;
 }
 
-QList<QPair<QString, int>> SortOrder::enumerateMessageSortDirectionOptions(MessageSorting ms)
+QList<std::pair<QString, int>> SortOrder::enumerateMessageSortDirectionOptions(MessageSorting ms)
 {
-    QList<QPair<QString, int>> ret;
+    QList<std::pair<QString, int>> ret;
     if (ms == SortOrder::NoMessageSorting) {
         return ret;
     }
@@ -99,9 +99,9 @@ QList<QPair<QString, int>> SortOrder::enumerateMessageSortDirectionOptions(Messa
     return ret;
 }
 
-QList<QPair<QString, int>> SortOrder::enumerateGroupSortingOptions(Aggregation::Grouping g)
+QList<std::pair<QString, int>> SortOrder::enumerateGroupSortingOptions(Aggregation::Grouping g)
 {
-    QList<QPair<QString, int>> ret;
+    QList<std::pair<QString, int>> ret;
     if (g == Aggregation::NoGrouping) {
         return ret;
     }
@@ -123,9 +123,9 @@ QList<QPair<QString, int>> SortOrder::enumerateGroupSortingOptions(Aggregation::
     return ret;
 }
 
-QList<QPair<QString, int>> SortOrder::enumerateGroupSortDirectionOptions(Aggregation::Grouping g, GroupSorting gs)
+QList<std::pair<QString, int>> SortOrder::enumerateGroupSortDirectionOptions(Aggregation::Grouping g, GroupSorting gs)
 {
-    QList<QPair<QString, int>> ret;
+    QList<std::pair<QString, int>> ret;
     if (g == Aggregation::NoGrouping || gs == SortOrder::NoGroupSorting) {
         return ret;
     }
@@ -140,7 +140,7 @@ QList<QPair<QString, int>> SortOrder::enumerateGroupSortDirectionOptions(Aggrega
     return ret;
 }
 
-using OptionList = QList<QPair<QString, int>>;
+using OptionList = QList<std::pair<QString, int>>;
 static bool optionListHasOption(const OptionList &optionList, int optionValue, int defaultOptionValue)
 {
     for (const auto &pair : optionList) {

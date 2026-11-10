@@ -85,7 +85,7 @@ public:
      * If no list is passed, use the original message passed in the MessageFactoryNG
      *  constructor.
      */
-    [[nodiscard]] QPair<std::shared_ptr<KMime::Message>, std::vector<std::unique_ptr<KMime::Content>>>
+    [[nodiscard]] std::pair<std::shared_ptr<KMime::Message>, std::vector<std::unique_ptr<KMime::Content>>>
     createAttachedForward(const Akonadi::Item::List &items = Akonadi::Item::List());
 
     /** Create a new message that is a redirect to this message, filling all
@@ -137,7 +137,7 @@ public:
      *
      * @param msgs List of messages to be composed into a digest
      */
-    [[nodiscard]] QPair<std::shared_ptr<KMime::Message>, std::unique_ptr<KMime::Content>> createForwardDigestMIME(const Akonadi::Item::List &items);
+    [[nodiscard]] std::pair<std::shared_ptr<KMime::Message>, std::unique_ptr<KMime::Content>> createForwardDigestMIME(const Akonadi::Item::List &items);
 
     /**
      * Set the identity manager to be used when creating messages.

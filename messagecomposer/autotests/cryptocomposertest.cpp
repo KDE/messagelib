@@ -433,9 +433,9 @@ void CryptoComposerTest::testBCCEncrypt()
     std::vector<GpgME::Key> skeys;
     skeys.push_back(keys[2]);
 
-    QList<QPair<QStringList, std::vector<GpgME::Key>>> encKeys;
-    encKeys.append(QPair<QStringList, std::vector<GpgME::Key>>(primRecipients, pkeys));
-    encKeys.append(QPair<QStringList, std::vector<GpgME::Key>>(secondRecipients, skeys));
+    QList<std::pair<QStringList, std::vector<GpgME::Key>>> encKeys;
+    encKeys.append(std::pair<QStringList, std::vector<GpgME::Key>>(primRecipients, pkeys));
+    encKeys.append(std::pair<QStringList, std::vector<GpgME::Key>>(secondRecipients, skeys));
 
     composerJob->setSignAndEncrypt(true, true);
     composerJob->setCryptoMessageFormat((Kleo::CryptoMessageFormat)format);
@@ -790,7 +790,7 @@ void CryptoComposerTest::testAutocryptGossip()
             eKeys.push_back(keys[0]);
             eKeys.push_back(keys[1]);
 
-            QList<QPair<QStringList, std::vector<GpgME::Key>>> encKeys;
+            QList<std::pair<QStringList, std::vector<GpgME::Key>>> encKeys;
             encKeys.append({recipients, eKeys});
 
             composerJob->setEncryptionKeys(encKeys);
@@ -853,8 +853,8 @@ void CryptoComposerTest::fillComposerCryptoData(ComposerJob *composerJob)
     QStringList recipients;
     recipients << QString::fromLocal8Bit("you@you.you");
 
-    QList<QPair<QStringList, std::vector<GpgME::Key>>> encKeys;
-    encKeys.append(QPair<QStringList, std::vector<GpgME::Key>>(recipients, keys));
+    QList<std::pair<QStringList, std::vector<GpgME::Key>>> encKeys;
+    encKeys.append(std::pair<QStringList, std::vector<GpgME::Key>>(recipients, keys));
 
     composerJob->setEncryptionKeys(encKeys);
     composerJob->setSigningKeys(keys);
@@ -873,8 +873,8 @@ void CryptoComposerTest::runSMIMETest(bool sign, bool enc, bool opaque)
     const std::vector<GpgME::Key> keys = MessageComposer::Test::getKeys(true);
     QStringList recipients;
     recipients << QString::fromLocal8Bit("you@you.you");
-    QList<QPair<QStringList, std::vector<GpgME::Key>>> encKeys;
-    encKeys.append(QPair<QStringList, std::vector<GpgME::Key>>(recipients, keys));
+    QList<std::pair<QStringList, std::vector<GpgME::Key>>> encKeys;
+    encKeys.append(std::pair<QStringList, std::vector<GpgME::Key>>(recipients, keys));
     composerJob->setEncryptionKeys(encKeys);
     composerJob->setSigningKeys(keys);
     composerJob->setSignAndEncrypt(sign, enc);
