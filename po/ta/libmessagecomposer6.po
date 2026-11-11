@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-07 00:59+0000\n"
+"POT-Creation-Date: 2026-11-11 01:03+0000\n"
 "PO-Revision-Date: 2024-09-08 12:49+0200\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -1115,17 +1115,17 @@ msgctxt "@title:window"
 msgid "Invalid folder"
 msgstr "செல்லுபடியாகாத அடைவு"
 
-#: helper/messagefactoryng.cpp:427 helper/messagefactoryng.cpp:756
+#: helper/messagefactoryng.cpp:428 helper/messagefactoryng.cpp:757
 #, kde-format
 msgid "forwarded message"
 msgstr "முன்னனுப்பப்பட்ட அஞ்சல்"
 
-#: helper/messagefactoryng.cpp:598
+#: helper/messagefactoryng.cpp:599
 #, kde-format
 msgid "Receipt: "
 msgstr ""
 
-#: helper/messagefactoryng.cpp:725
+#: helper/messagefactoryng.cpp:726
 #, kde-format
 msgid ""
 "\n"
