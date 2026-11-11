@@ -253,7 +253,11 @@ QUrl NodeHelper::tempFileUrlFromNode(const KMime::Content *node)
 QString NodeHelper::createTempDir(const QString &param)
 {
     auto tempFile = new QTemporaryFile(QDir::tempPath() + "/kmail_messageviewer_XXXXXX.index."_L1 + param);
-    tempFile->open();
+    if (!tempFile->open()) {
+        qCWarning(MIMETREEPARSER_LOG) << "Impossible to open temporary file" << tempFile->errorString();
+        delete tempFile;
+        return {};
+    }
     const QString fname = tempFile->fileName();
     delete tempFile;
 
@@ -1044,9 +1048,10 @@ std::shared_ptr<KMime::Message> NodeHelper::unencryptedMessage(const std::shared
 #if 0
         qCDebug(MIMETREEPARSER_LOG) << "Resulting data is:" << resultingData;
         QFile bla("stripped.mbox");
-        bla.open(QIODevice::WriteOnly);
-        bla.write(resultingData);
-        bla.close();
+        if (bla.open(QIODevice::WriteOnly)) {
+            bla.write(resultingData);
+            bla.close();
+        }
 #endif
         std::shared_ptr<KMime::Message> newMessage(new KMime::Message);
         newMessage->setContent(resultingData);

@@ -5,14 +5,17 @@
 */
 #include "util.h"
 
+#include <QDebug>
 #include <QFile>
 
 using namespace Qt::Literals::StringLiterals;
 std::shared_ptr<KMime::Message> readAndParseMail(const QString &mailFile)
 {
     QFile file(QLatin1StringView(MAIL_DATA_DIR) + u'/' + mailFile);
-    file.open(QIODevice::ReadOnly);
-    Q_ASSERT(file.isOpen());
+    if (!file.open(QIODevice::ReadOnly)) {
+        qWarning() << "Impossible to open" << file.fileName();
+        return {};
+    }
     const QByteArray data = KMime::CRLFtoLF(file.readAll());
     Q_ASSERT(!data.isEmpty());
     std::shared_ptr<KMime::Message> msg(new KMime::Message);

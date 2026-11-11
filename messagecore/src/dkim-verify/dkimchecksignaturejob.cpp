@@ -158,10 +158,11 @@ void DKIMCheckSignatureJob::start()
     }
 #ifdef DEBUG_SIGNATURE_DKIM
     QFile caFile(u"/tmp/bodycanon-kmail.txt"_s);
-    caFile.open(QIODevice::WriteOnly | QIODevice::Text);
-    QTextStream outStream(&caFile);
-    outStream << mBodyCanonizationResult;
-    caFile.close();
+    if (caFile.open(QIODevice::WriteOnly | QIODevice::Text)) {
+        QTextStream outStream(&caFile);
+        outStream << mBodyCanonizationResult;
+        caFile.close();
+    }
 #endif
 
     QByteArray resultHash;
@@ -267,10 +268,11 @@ void DKIMCheckSignatureJob::computeHeaderCanonization(bool removeQuoteOnContentT
     }
 #ifdef DEBUG_SIGNATURE_DKIM
     QFile headerFile(u"/tmp/headercanon-kmail-%1.txt"_s.arg(removeQuoteOnContentType ? "removequote"_L1 : "withquote"_L1));
-    headerFile.open(QIODevice::WriteOnly | QIODevice::Text);
-    QTextStream outHeaderStream(&headerFile);
-    outHeaderStream << mHeaderCanonizationResult;
-    headerFile.close();
+    if (headerFile.open(QIODevice::WriteOnly | QIODevice::Text)) {
+        QTextStream outHeaderStream(&headerFile);
+        outHeaderStream << mHeaderCanonizationResult;
+        headerFile.close();
+    }
 #endif
 }
 

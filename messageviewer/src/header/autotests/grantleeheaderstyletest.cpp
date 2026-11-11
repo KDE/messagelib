@@ -46,7 +46,7 @@ static void testHeaderFile(const HeaderStyle &style, KMime::Message *msg, const 
 
     {
         QFile f(outName);
-        f.open(QIODevice::WriteOnly);
+        QVERIFY(f.open(QIODevice::WriteOnly));
         f.write(header.toUtf8());
         f.close();
     }

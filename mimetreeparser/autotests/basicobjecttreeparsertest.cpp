@@ -51,7 +51,7 @@ static void testMessagePartTree(const MessagePart::Ptr &messagePart, const QStri
 
     {
         QFile f(outTreeFileName);
-        f.open(QIODevice::WriteOnly);
+        QVERIFY(f.open(QIODevice::WriteOnly));
         f.write(renderedTree.toUtf8());
         f.close();
     }
