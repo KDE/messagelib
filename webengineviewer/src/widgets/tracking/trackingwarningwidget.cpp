@@ -20,7 +20,7 @@ TrackingWarningWidget::TrackingWarningWidget(QWidget *parent)
     setWordWrap(true);
     setPosition(KMessageWidget::Header);
 
-    setText(i18n("Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails\">(Details...)</a>"));
+    setText(i18n("A Mail Tracker was detected and blocked. See the <a href=\"mailtrackingdetails\">(Details...)</a>"));
     connect(this, &TrackingWarningWidget::linkActivated, this, &TrackingWarningWidget::slotShowDetails);
 }
 
