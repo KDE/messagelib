@@ -2101,7 +2101,7 @@ msgstr "Rull meldinga nedover (mer)"
 #: viewer/viewer_p.cpp:1582
 #, kde-format
 msgid "Toggle HTML Display Mode"
-msgstr "Slå HTML-visning av/på"
+msgstr "Slå HTML-visning på/av"
 
 #: viewer/viewer_p.cpp:1586
 #, kde-format
