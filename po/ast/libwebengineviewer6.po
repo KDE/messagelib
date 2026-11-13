@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-07 07:55+0000\n"
+"POT-Creation-Date: 2026-11-12 19:25+0000\n"
 "PO-Revision-Date: 2024-03-27 23:36+0100\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: Asturian <alministradores@softastur.org>\n"
@@ -111,8 +111,8 @@ msgstr ""
 #: widgets/tracking/trackingwarningwidget.cpp:23
 #, kde-format
 msgid ""
-"Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
-"\">(Details...)</a>"
+"A Mail Tracker was detected and blocked. See the <a href="
+"\"mailtrackingdetails\">(Details...)</a>"
 msgstr ""
 
 #: widgets/tracking/trackingwarningwidget.cpp:42
