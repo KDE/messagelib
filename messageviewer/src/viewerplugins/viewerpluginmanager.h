@@ -43,7 +43,6 @@ public:
     [[nodiscard]] QString pluginName() const;
 
 private:
-    Q_DISABLE_COPY(ViewerPluginManager)
     std::unique_ptr<ViewerPluginManagerPrivate> const d;
 };
 }

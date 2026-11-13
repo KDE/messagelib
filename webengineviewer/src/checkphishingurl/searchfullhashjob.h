@@ -60,7 +60,6 @@ private:
     WEBENGINEVIEWER_NO_EXPORT void slotError(QNetworkReply::NetworkError error);
     WEBENGINEVIEWER_NO_EXPORT void slotCheckUrlFinished(QNetworkReply *reply);
 
-    Q_DISABLE_COPY(SearchFullHashJob)
     std::unique_ptr<SearchFullHashJobPrivate> const d;
 };
 }

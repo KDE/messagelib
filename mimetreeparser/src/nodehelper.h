@@ -290,7 +290,6 @@ Q_SIGNALS:
     void update(MimeTreeParser::UpdateMode);
 
 private:
-    Q_DISABLE_COPY(NodeHelper)
     MIMETREEPARSER_NO_EXPORT bool unencryptedMessage_helper(const KMime::Content *node, QByteArray &resultingData, bool addHeaders, int recursionLevel = 1);
 
     MIMETREEPARSER_NO_EXPORT void mergeExtraNodes(KMime::Content *node);
