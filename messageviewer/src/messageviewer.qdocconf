@@ -9,6 +9,24 @@ documentationinheaders = true
 headerdirs += .
 sourcedirs += .
 
+excludedirs += \
+    dkim-verify/autotests \
+    dkim-verify/tests \
+    header/autotests \
+    htmlwriter/autotests \
+    mdn/autotests \
+    messagepartthemes/default/autotests \
+    openurlwith/autotests \
+    remote-content/autotests \
+    scamdetection/autotests \
+    scamdetection/tests \
+    utils/autotests \
+    viewer/autotests \
+    viewer/renderer/autotests \
+    viewer/webengine/tests \
+    viewerplugins/tests \
+    widgets/autotests
+
 outputformats = HTML
 
 depends += \

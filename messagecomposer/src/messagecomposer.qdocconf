@@ -9,10 +9,28 @@ documentationinheaders = true
 headerdirs += .
 sourcedirs += .
 
+excludedirs += \
+    composer-ng/autotests \
+    composer/autotests \
+    contactpreference/autotests \
+    imagescaling/autotests \
+    imagescaling/tests \
+    mdn/autotests \
+    mdn/tests \
+    plugineditor/autotests \
+    snippet/autotests \
+    statusbarwidget/autotests
+
 outputformats = HTML
 
 depends += \
-    qtcore
+    qtcore \
+    messagecore \
+    messagelist \
+    messageviewer \
+    mimetreeparser \
+    templateparser \
+    webengineviewer
 
 navigation.landingpage = "MessageComposer"
 

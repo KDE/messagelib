@@ -9,6 +9,18 @@ documentationinheaders = true
 headerdirs += .
 sourcedirs += .
 
+excludedirs += \
+    autotests \
+    checkphishingurl/autotests \
+    checkphishingurl/tests \
+    developertool/autotests \
+    findbar/autotests \
+    tests \
+    urlinterceptor/blockexternalresourcesurlinterceptor/autotests \
+    urlinterceptor/blocktrackingurlinterceptor/autotests \
+    webengineaccesskey/autotests \
+    widgets/tracking/autotests
+
 outputformats = HTML
 
 depends += \

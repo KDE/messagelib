@@ -9,6 +9,9 @@ documentationinheaders = true
 headerdirs += .
 sourcedirs += .
 
+excludedirs += \
+    core/widgets/autotests
+
 outputformats = HTML
 
 depends += \

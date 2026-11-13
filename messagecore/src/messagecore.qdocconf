@@ -9,6 +9,10 @@ documentationinheaders = true
 headerdirs += .
 sourcedirs += .
 
+excludedirs += \
+    dkim-verify/autotests \
+    dkim-verify/tests
+
 outputformats = HTML
 
 depends += \
