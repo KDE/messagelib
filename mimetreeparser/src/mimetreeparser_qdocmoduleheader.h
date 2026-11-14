@@ -1,0 +1,40 @@
+/*
+  SPDX-FileCopyrightText: 2026 Laurent Montel <montel@kde.org>
+
+  SPDX-License-Identifier: GPL-2.0-or-later
+*/
+
+// Module header for qdoc PCH
+#include "bodyformatter/applicationpgpencrypted.h"
+#include "bodyformatter/applicationpkcs7mime.h"
+#include "bodyformatter/encrypted.h"
+#include "bodyformatter/mailman.h"
+#include "bodyformatter/multipartalternative.h"
+#include "bodyformatter/multipartencrypted.h"
+#include "bodyformatter/multipartmixed.h"
+#include "bodyformatter/multipartsigned.h"
+#include "bodyformatter/texthtml.h"
+#include "bodyformatter/textplain.h"
+#include "bodyformatter/utils.h"
+#include "bodypartformatterfactory.h"
+#include "bodypartformatterfactory_p.h"
+#include "cryptohelper.h"
+#include "enums.h"
+#include "interfaces/bodypart.h"
+#include "interfaces/bodypartformatter.h"
+#include "interfaces/objecttreesource.h"
+#include "job/qgpgmejobexecutor.h"
+#include "memento/compositememento.h"
+#include "memento/cryptobodypartmemento.h"
+#include "memento/decryptverifybodypartmemento.h"
+#include "memento/keycachememento.h"
+#include "memento/verifydetachedbodypartmemento.h"
+#include "memento/verifyopaquebodypartmemento.h"
+#include "messagepart.h"
+#include "nodehelper.h"
+#include "objecttreeparser.h"
+#include "partmetadata.h"
+#include "partnodebodypart.h"
+#include "simpleobjecttreesource.h"
+#include "temporaryfile/attachmenttemporaryfilesdirs.h"
+#include "utils/util.h"

@@ -1,6 +1,7 @@
 include($KDE_DOCS/global/qt-module-defaults.qdocconf)
 
 project = WebEngineViewer
+moduleheader = webengineviewer_qdocmoduleheader.h
 description = WebEngineViewer provides WebEngineViewer Library.
 
 

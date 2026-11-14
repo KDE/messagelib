@@ -1,6 +1,7 @@
 include($KDE_DOCS/global/qt-module-defaults.qdocconf)
 
 project = MessageViewer
+moduleheader = messageviewer_qdocmoduleheader.h
 description = MessageViewer provides MessageViewer Library.
 
 

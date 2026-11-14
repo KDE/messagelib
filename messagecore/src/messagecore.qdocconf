@@ -1,6 +1,7 @@
 include($KDE_DOCS/global/qt-module-defaults.qdocconf)
 
 project = MessageCore
+moduleheader = messagecore_qdocmoduleheader.h
 description = MessageCore provides MessageCore Library.
 
 

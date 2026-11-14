@@ -1,6 +1,7 @@
 include($KDE_DOCS/global/qt-module-defaults.qdocconf)
 
 project = MessageList
+moduleheader = messagelist_qdocmoduleheader.h
 description = MessageList provides message list Library.
 
 

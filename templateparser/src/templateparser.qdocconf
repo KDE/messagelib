@@ -1,6 +1,7 @@
 include($KDE_DOCS/global/qt-module-defaults.qdocconf)
 
 project = TemplateParser
+moduleheader = templateparser_qdocmoduleheader.h
 description = TemplateParser provides TemplateParser Library.
 
 
