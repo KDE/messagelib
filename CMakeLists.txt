@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: CC0-1.0
 # SPDX-FileCopyrightText: none
 cmake_minimum_required(VERSION 3.29)
-set(PIM_VERSION "6.8.80")
+set(PIM_VERSION "6.8.90")
 
 project(Messagelib VERSION ${PIM_VERSION})
 # use a different SOVERSION for each minor release because we don't guarantee any ABI stability;
