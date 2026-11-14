@@ -7,16 +7,16 @@ msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-12 19:25+0000\n"
-"PO-Revision-Date: 2026-10-16 14:49+0300\n"
+"PO-Revision-Date: 2026-11-13 13:53+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
-"Language-Team: צוות התרגום של KDE ישראל\n"
+"Language-Team: Hebrew <kde-l10n-he@kde.org>\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 26.08.1\n"
+"X-Generator: Lokalize 26.08.3\n"
 
 #: developertool/developertooldialog.cpp:25
 #, kde-format
@@ -110,14 +110,13 @@ msgid "Details"
 msgstr "פרטים"
 
 #: widgets/tracking/trackingwarningwidget.cpp:23
-#, fuzzy, kde-format
-#| msgid ""
-#| "Some Mail Tracker was found and was blocked.<a href=\"mailtrackingdetails"
-#| "\">(Details...)</a>"
+#, kde-format
 msgid ""
 "A Mail Tracker was detected and blocked. See the <a href="
 "\"mailtrackingdetails\">(Details...)</a>"
-msgstr "נמצא מרגל דוא״ל והוא נחסם.<a href=\"mailtrackingdetails\">(פרטים…)</a>"
+msgstr ""
+"נמצא מרגל דוא״ל והוא נחסם. כדאי לעיין ב<a href=\"mailtrackingdetails"
+"\">(פרטים…)</a>"
 
 #: widgets/tracking/trackingwarningwidget.cpp:42
 #, kde-format
