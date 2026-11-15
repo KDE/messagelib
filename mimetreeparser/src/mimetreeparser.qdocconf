@@ -7,7 +7,21 @@ description = MimeTreeParser provides MimeTreeParser Library.
 
 documentationinheaders = true
 
-headerdirs += .
+headers += \
+    bodypartformatterfactory.h \
+    enums.h \
+    interfaces/bodypart.h \
+    interfaces/bodypartformatter.h \
+    interfaces/objecttreesource.h \
+    messagepart.h \
+    mimetreeparser_qdocmoduleheader.h \
+    nodehelper.h \
+    objecttreeparser.h \
+    partmetadata.h \
+    partnodebodypart.h \
+    simpleobjecttreesource.h \
+    temporaryfile/attachmenttemporaryfilesdirs.h \
+    utils/util.h
 sourcedirs += .
 
 excludedirs += \

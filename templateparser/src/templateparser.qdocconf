@@ -7,7 +7,21 @@ description = TemplateParser provides TemplateParser Library.
 
 documentationinheaders = true
 
-headerdirs += .
+headers += \
+    customtemplates.h \
+    customtemplatesmenu.h \
+    defaulttemplates.h \
+    templateconvertcommandjob.h \
+    templateparser_qdocmoduleheader.h \
+    templateparseremailaddressrequesterbase.h \
+    templateparserextracthtmlinforesult.h \
+    templateparserjob.h \
+    templatescommandmenu.h \
+    templatesconfiguration.h \
+    templatesinsertcommandaction.h \
+    templatesinsertcommandpushbutton.h \
+    templatestextedit.h \
+    templatesutil.h
 sourcedirs += .
 
 outputformats = HTML

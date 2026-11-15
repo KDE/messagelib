@@ -7,7 +7,39 @@ description = WebEngineViewer provides WebEngineViewer Library.
 
 documentationinheaders = true
 
-headerdirs += .
+headers += \
+    checkphishingurl/checkphishingurlcache.h \
+    checkphishingurl/checkphishingurljob.h \
+    checkphishingurl/checkphishingurlutil.h \
+    checkphishingurl/createphishingurldatabasejob.h \
+    checkphishingurl/hashcachemanager.h \
+    checkphishingurl/localdatabasemanager.h \
+    checkphishingurl/searchfullhashjob.h \
+    checkphishingurl/updatedatabaseinfo.h \
+    developertool/developertooldialog.h \
+    findbar/findbarbase.h \
+    findbar/findbarwebengineview.h \
+    networkmanager/interceptormanager.h \
+    urlinterceptor/blockexternalresourcesurlinterceptor/blockexternalresourcesurlinterceptor.h \
+    urlinterceptor/blocktrackingurlinterceptor/blocktrackingurlinterceptor.h \
+    urlinterceptor/loadexternalreferencesurlinterceptor/loadexternalreferencesurlinterceptor.h \
+    urlinterceptor/networkpluginurlinterceptor.h \
+    urlinterceptor/networkpluginurlinterceptorconfigurewidget.h \
+    urlinterceptor/networkpluginurlinterceptorinterface.h \
+    urlinterceptor/networkurlinterceptor.h \
+    urlinterceptor/networkurlinterceptorpluginmanager.h \
+    webengineaccesskey/webengineaccesskey.h \
+    webengineexportpdfpagejob.h \
+    webenginemanagescript.h \
+    webenginepage.h \
+    webenginescript.h \
+    webengineview.h \
+    webengineviewer_qdocmoduleheader.h \
+    webhittest.h \
+    webhittestresult.h \
+    widgets/submittedformwidgets/submittedformwarningwidget.h \
+    widgets/tracking/trackingwarningwidget.h \
+    widgets/zoomactionmenu.h
 sourcedirs += .
 
 excludedirs += \

@@ -7,7 +7,26 @@ description = MessageList provides message list Library.
 
 documentationinheaders = true
 
-headerdirs += .
+headers += \
+    core/aggregation.h \
+    core/enums.h \
+    core/md5hash.h \
+    core/optionset.h \
+    core/storagemodelbase.h \
+    core/view.h \
+    core/widgetbase.h \
+    core/widgets/quicksearchline.h \
+    core/widgets/searchlinecommand.h \
+    core/widgets/searchmessagebybuttons.h \
+    messagelist_qdocmoduleheader.h \
+    messagelistutil.h \
+    messagemodel.h \
+    pane.h \
+    storagemodel.h \
+    utils/aggregationcombobox.h \
+    utils/aggregationconfigbutton.h \
+    utils/themecombobox.h \
+    utils/themeconfigbutton.h
 sourcedirs += .
 
 excludedirs += \

@@ -7,7 +7,37 @@ description = MessageCore provides MessageCore Library.
 
 documentationinheaders = true
 
-headerdirs += .
+headers += \
+    attachment/attachmentcompressjob.h \
+    attachment/attachmentfromurlbasejob.h \
+    attachment/attachmentfromurlutils.h \
+    attachment/attachmentloadjob.h \
+    attachment/attachmentpart.h \
+    attachment/attachmentpropertiesdialog.h \
+    attachment/attachmentupdatejob.h \
+    autocrypt/autocryptrecipient.h \
+    autocrypt/autocryptstorage.h \
+    autocrypt/autocryptutils.h \
+    dkim-verify/dkimcheckpolicy.h \
+    dkim-verify/dkimchecksignaturejob.h \
+    dkim-verify/dkimheaderparser.h \
+    dkim-verify/dkiminfo.h \
+    dkim-verify/dkimkeyrecord.h \
+    dkim-verify/dkimmanager.h \
+    dkim-verify/dkimmanagerauthenticationserver.h \
+    dkim-verify/dkimmanagerkey.h \
+    dkim-verify/dkimmanagerrules.h \
+    dkim-verify/dkimrule.h \
+    dkim-verify/dmarcinfo.h \
+    dkim-verify/dmarcpolicyjob.h \
+    messagecore_qdocmoduleheader.h \
+    misc/imagecollector.h \
+    misc/mailinglist.h \
+    settings/messagecoresettings.h \
+    utils/colorutil.h \
+    utils/dateformatter.h \
+    utils/stringutil.h \
+    utils/util.h
 sourcedirs += .
 
 excludedirs += \
