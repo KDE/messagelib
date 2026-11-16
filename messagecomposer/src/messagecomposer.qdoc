@@ -2,8 +2,8 @@
     \module MessageComposer
     \title MessageComposer C++ Classes
     \ingroup modules
-    \cmakepackage KPim6
-    \cmakecomponent MessageComposer
+    \cmakepackage KPim6MessageComposer
+    \cmaketargetitem KPim6::MessageComposer
 
     \brief MessageComposer provides MessageComposer Library.
 */

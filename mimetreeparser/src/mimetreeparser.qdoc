@@ -2,8 +2,8 @@
     \module MimeTreeParser
     \title MimeTreeParser C++ Classes
     \ingroup modules
-    \cmakepackage KPim6
-    \cmakecomponent MimeTreeParser
+    \cmakepackage KPim6MimeTreeParser
+    \cmaketargetitem KPim6::MimeTreeParser
 
     \brief MimeTreeParser provides MIME tree parser library.
 */

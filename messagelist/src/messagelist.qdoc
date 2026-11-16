@@ -2,8 +2,8 @@
     \module MessageList
     \title MessageList C++ Classes
     \ingroup modules
-    \cmakepackage KPim6
-    \cmakecomponent MessageList
+    \cmakepackage KPim6MessageList
+    \cmaketargetitem KPim6::MessageList
 
     \brief MessageList provides message list Library.
 */

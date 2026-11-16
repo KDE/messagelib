@@ -2,8 +2,8 @@
     \module TemplateParser
     \title TemplateParser C++ Classes
     \ingroup modules
-    \cmakepackage KPim6
-    \cmakecomponent TemplateParser
+    \cmakepackage KPim6TemplateParser
+    \cmaketargetitem KPim6::TemplateParser
 
     \brief TemplateParser provides Template Parser Library.
 */
