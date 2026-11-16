@@ -1,0 +1,51 @@
+/*!
+    \page messagelib-index.html
+    \title MessageLib
+
+    MessageLib is a set of libraries to compose, parse, display and manage email
+    messages. It contains MessageComposer, MessageCore, MessageList, MessageViewer,
+    MimeTreeParser, TemplateParser and WebEngineViewer.
+
+    \section1 Using the Module
+
+    \include {module-use.qdocinc} {using the c++ api}
+
+    \section2 Building with CMake
+
+    Each library is provided by its own CMake package. Use the \c {find_package()}
+    command to locate the libraries you need:
+
+    \code
+    find_package(KPim6MessageComposer REQUIRED)
+    find_package(KPim6MessageCore REQUIRED)
+    find_package(KPim6MessageList REQUIRED)
+    find_package(KPim6MessageViewer REQUIRED)
+    find_package(KPim6MimeTreeParser REQUIRED)
+    find_package(KPim6TemplateParser REQUIRED)
+    find_package(KPim6WebEngineViewer REQUIRED)
+
+    target_link_libraries(mytarget PRIVATE
+        KPim6::MessageComposer
+        KPim6::MessageCore
+        KPim6::MessageList
+        KPim6::MessageViewer
+        KPim6::MimeTreeParser
+        KPim6::TemplateParser
+        KPim6::WebEngineViewer
+    )
+    \endcode
+
+    For more details, see the \l {https://doc.qt.io/qt-6/cmake-manual.html}{Build with CMake} overview.
+
+    \section1 API Reference
+
+    \list
+        \li \l{MessageComposer C++ Classes}
+        \li \l{MessageCore C++ Classes}
+        \li \l{MessageList C++ Classes}
+        \li \l{MessageViewer C++ Classes}
+        \li \l{TemplateParser C++ Classes}
+        \li \l{MimeTreeParser C++ Classes}
+        \li \l{WebEngineViewer C++ Classes}
+    \endlist
+*/
