@@ -605,13 +605,6 @@ install(
 
 install(
     FILES
-        ${MessageViewer_dkimverify_HEADERS}
-    DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageViewer/messageviewer
-    COMPONENT Devel
-)
-
-install(
-    FILES
         ${MessageViewer_Camelcasemdnwarningwidget_HEADERS}
         ${MessageViewer_CamelcaseCheckBeforeDeletingPlugin_HEADERS}
         ${MessageViewer_CamelcaseConfigurePlugins_HEADERS}
@@ -633,25 +626,30 @@ install(
     COMPONENT Devel
 )
 
+set(MESSAGEVIEWER_FILES
+    ${MessageViewer_dkimverify_HEADERS}
+    ${MessageViewer_mdnwarningwidget_HEADERS}
+    ${MessageViewer_CheckBeforeDeletingPlugin_HEADERS}
+    ${MessageViewer_ConfigurePlugins_HEADERS}
+    ${MessageViewer_webengine_HEADERS}
+    ${MessageViewer_scam_HEADERS}
+    ${MessageViewer_viewerplugin_HEADERS}
+    ${MessageViewer_settings_HEADERS}
+    ${MessageViewer_header_HEADERS}
+    ${MessageViewer_utils_HEADERS}
+    ${MessageViewer_interfaces_HEADERS}
+    ${MessageViewer_htmlwriter_HEADERS}
+    ${MessageViewer_viewer_HEADERS}
+    ${MessageViewer_widgets_HEADERS}
+    ${MessageViewer_antispam_HEADERS}
+    ${MessageViewer_renderer_HEADERS}
+    ${MessageViewer_remotecontent_HEADERS}
+    ${MessageViewer_openurlwith_HEADERS}
+)
+
 install(
     FILES
-        ${MessageViewer_mdnwarningwidget_HEADERS}
-        ${MessageViewer_CheckBeforeDeletingPlugin_HEADERS}
-        ${MessageViewer_ConfigurePlugins_HEADERS}
-        ${MessageViewer_webengine_HEADERS}
-        ${MessageViewer_scam_HEADERS}
-        ${MessageViewer_viewerplugin_HEADERS}
-        ${MessageViewer_settings_HEADERS}
-        ${MessageViewer_header_HEADERS}
-        ${MessageViewer_utils_HEADERS}
-        ${MessageViewer_interfaces_HEADERS}
-        ${MessageViewer_htmlwriter_HEADERS}
-        ${MessageViewer_viewer_HEADERS}
-        ${MessageViewer_widgets_HEADERS}
-        ${MessageViewer_antispam_HEADERS}
-        ${MessageViewer_renderer_HEADERS}
-        ${MessageViewer_remotecontent_HEADERS}
-        ${MessageViewer_openurlwith_HEADERS}
+        ${MESSAGEVIEWER_FILES}
         ${CMAKE_CURRENT_BINARY_DIR}/messageviewer_export.h
         ${CMAKE_CURRENT_BINARY_DIR}/globalsettings_messageviewer.h
         ${CMAKE_CURRENT_BINARY_DIR}/messageviewer_debug.h

@@ -148,12 +148,16 @@ install(
     COMPONENT Devel
 )
 
+set(MIMETREEPARSER_FILES
+    ${MimeTreeParser_utils_HEADERS}
+    ${MimeTreeParser_interfaces_HEADERS}
+    ${MimeTreeParser_main_HEADERS}
+    ${MimeTreeParser_temporaryfile_HEADERS}
+)
+
 install(
     FILES
-        ${MimeTreeParser_utils_HEADERS}
-        ${MimeTreeParser_interfaces_HEADERS}
-        ${MimeTreeParser_main_HEADERS}
-        ${MimeTreeParser_temporaryfile_HEADERS}
+        ${MIMETREEPARSER_FILES}
         ${CMAKE_CURRENT_BINARY_DIR}/mimetreeparser_export.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MimeTreeParser/mimetreeparser
     COMPONENT Devel
@@ -253,10 +257,7 @@ ecm_add_installed_library_check(KPim6MimeTreeParser
 
 ecm_installed_library_check_include_strings(KPim6MimeTreeParser
     HEADERS
-    ${MimeTreeParser_utils_HEADERS}
-    ${MimeTreeParser_interfaces_HEADERS}
-    ${MimeTreeParser_main_HEADERS}
-    ${MimeTreeParser_temporaryfile_HEADERS}
+    ${MIMETREEPARSER_FILES}
     PREFIX mimetreeparser
 )
 

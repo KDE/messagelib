@@ -303,16 +303,20 @@ install(
     COMPONENT Devel
 )
 
+set(MESSAGECORE_FILES
+    ${MessageCore_autocrypt_HEADERS}
+    ${MessageCore_dkim_HEADERS}
+    ${MessageCore_settings_HEADERS}
+    ${MessageCore_utils_HEADERS}
+    ${MessageCore_attachment_HEADERS}
+    ${MessageCore_misc_HEADERS}
+)
+
 install(
     FILES
-        ${MessageCore_autocrypt_HEADERS}
-        ${MessageCore_dkim_HEADERS}
-        ${MessageCore_settings_HEADERS}
-        ${MessageCore_utils_HEADERS}
+        ${MESSAGECORE_FILES}
         ${CMAKE_CURRENT_BINARY_DIR}/messagecore_export.h
         ${CMAKE_CURRENT_BINARY_DIR}/globalsettings_messagecore.h
-        ${MessageCore_attachment_HEADERS}
-        ${MessageCore_misc_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageCore/messagecore
     COMPONENT Devel
 )
@@ -356,14 +360,9 @@ ecm_add_installed_library_check(KPim6MessageCore
 
 ecm_installed_library_check_include_strings(KPim6MessageCore
     HEADERS
-    ${MessageCore_dkim_HEADERS}
-    ${MessageCore_autocrypt_HEADERS}
-    ${MessageCore_settings_HEADERS}
-    ${MessageCore_utils_HEADERS}
+    ${MESSAGECORE_FILES}
     ${CMAKE_CURRENT_BINARY_DIR}/messagecore_export.h
     ${CMAKE_CURRENT_BINARY_DIR}/globalsettings_messagecore.h
-    ${MessageCore_attachment_HEADERS}
-    ${MessageCore_misc_HEADERS}
     PREFIX messagecore
 )
 

@@ -345,21 +345,25 @@ install(
     COMPONENT Devel
 )
 
+set(WEBENGINEVIEWER_FILES
+    ${WebEngineViewer_submittedformwidget_HEADERS}
+    ${WebEngineViewer_developertool_HEADERS}
+    ${WebEngineViewer_tracking_HEADERS}
+    ${WebEngineViewer_blockexternalresourcesurlinterceptor_HEADERS}
+    ${WebEngineViewer_loadexternalreferencesurlinterceptor_HEADERS}
+    ${WebEngineViewer_blocktrackingurlinterceptor_HEADERS}
+    ${WebEngineViewer_webengine_checkurl_HEADERS}
+    ${WebEngineViewer_webengine_accesskey_HEADERS}
+    ${WebEngineViewer_findbar_HEADERS}
+    ${WebEngineViewer_webengine_urlinterceptor_HEADERS}
+    ${WebEngineViewer_webengine_manager_HEADERS}
+    ${WebEngineViewer_webengine_misc_HEADERS}
+    ${WebEngineViewer_widgets_HEADERS}
+)
+
 install(
     FILES
-        ${WebEngineViewer_submittedformwidget_HEADERS}
-        ${WebEngineViewer_developertool_HEADERS}
-        ${WebEngineViewer_tracking_HEADERS}
-        ${WebEngineViewer_blockexternalresourcesurlinterceptor_HEADERS}
-        ${WebEngineViewer_loadexternalreferencesurlinterceptor_HEADERS}
-        ${WebEngineViewer_blocktrackingurlinterceptor_HEADERS}
-        ${WebEngineViewer_webengine_checkurl_HEADERS}
-        ${WebEngineViewer_webengine_accesskey_HEADERS}
-        ${WebEngineViewer_findbar_HEADERS}
-        ${WebEngineViewer_webengine_urlinterceptor_HEADERS}
-        ${WebEngineViewer_webengine_manager_HEADERS}
-        ${WebEngineViewer_webengine_misc_HEADERS}
-        ${WebEngineViewer_widgets_HEADERS}
+        ${WEBENGINEVIEWER_FILES}
         ${CMAKE_CURRENT_BINARY_DIR}/webengineviewer_export.h
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/WebEngineViewer/webengineviewer
     COMPONENT Devel
@@ -409,19 +413,7 @@ ecm_installed_library_check_version_preprocessor_macros(KPim6WebEngineViewer
 
 ecm_installed_library_check_include_strings(KPim6WebEngineViewer
     HEADERS
-    ${WebEngineViewer_submittedformwidget_HEADERS}
-    ${WebEngineViewer_developertool_HEADERS}
-    ${WebEngineViewer_tracking_HEADERS}
-    ${WebEngineViewer_blockexternalresourcesurlinterceptor_HEADERS}
-    ${WebEngineViewer_loadexternalreferencesurlinterceptor_HEADERS}
-    ${WebEngineViewer_blocktrackingurlinterceptor_HEADERS}
-    ${WebEngineViewer_webengine_checkurl_HEADERS}
-    ${WebEngineViewer_webengine_accesskey_HEADERS}
-    ${WebEngineViewer_findbar_HEADERS}
-    ${WebEngineViewer_webengine_urlinterceptor_HEADERS}
-    ${WebEngineViewer_webengine_manager_HEADERS}
-    ${WebEngineViewer_webengine_misc_HEADERS}
-    ${WebEngineViewer_widgets_HEADERS}
+    ${WEBENGINEVIEWER_FILES}
     PREFIX webengineviewer
 )
 

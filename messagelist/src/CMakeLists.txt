@@ -267,15 +267,19 @@ install(
     COMPONENT Devel
 )
 
+set(MESSAGELIST_FILES
+    ${MessageList_HEADERS}
+    ${MessageList_widgets_HEADERS}
+    ${MessageList_core_HEADERS}
+    ${MessageList_util_HEADERS}
+)
+
 install(
     FILES
-        ${MessageList_HEADERS}
-        ${MessageList_widgets_HEADERS}
+        ${MESSAGELIST_FILES}
         ${CMAKE_CURRENT_BINARY_DIR}/messagelist_export.h
         ${CMAKE_CURRENT_BINARY_DIR}/messagelistsettings.h
         ${CMAKE_CURRENT_BINARY_DIR}/config-messagelist.h
-        ${MessageList_core_HEADERS}
-        ${MessageList_util_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageList/messagelist
     COMPONENT Devel
 )
@@ -318,10 +322,7 @@ ecm_add_installed_library_check(KPim6MessageList
 
 ecm_installed_library_check_include_strings(KPim6MessageList
     HEADERS
-    ${MessageList_HEADERS}
-    ${MessageList_widgets_HEADERS}
-    ${MessageList_core_HEADERS}
-    ${MessageList_util_HEADERS}
+    ${MESSAGELIST_FILES}
 
     PREFIX messagelist
 )

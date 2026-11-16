@@ -631,35 +631,39 @@ install(
     COMPONENT Devel
 )
 
+set(MESSAGECOMPOSER_FILES
+    ${MessageComposer_mdn_HEADERS}
+    ${MessageComposer_PluginEditorBase_HEADERS}
+    ${MessageComposer_snippet_HEADERS}
+    ${MessageComposer_plugineditorconverttext_HEADERS}
+    ${MessageComposer_plugineditorinit_HEADERS}
+    ${MessageComposer_statusbarwidget_HEADERS}
+    ${MessageComposer_composer_HEADERS}
+    ${MessageComposer_composerng_HEADERS}
+    ${MessageComposer_contactpreference_HEADERS}
+    ${MessageComposer_sender_HEADERS}
+    ${MessageComposer_utils_HEADERS}
+    ${MessageComposer_helper_HEADERS}
+    ${MessageComposer_settings_HEADERS}
+    ${MessageComposer_part_HEADERS}
+    ${MessageComposer_followupreminder_HEADERS}
+    ${MessageComposer_recipient_HEADERS}
+    ${MessageComposer_imagescaling_HEADERS}
+    ${MessageComposer_sendlater_HEADERS}
+    ${MessageComposer_attachement_HEADERS}
+    ${MessageComposer_job_HEADERS}
+    ${MessageComposer_plugineditor_HEADERS}
+    ${MessageComposer_plugineditorcheckbeforesend_HEADERS}
+    ${MessageComposer_plugineditorgrammar_HEADERS}
+    ${MessageComposer_draftstatus_HEADERS}
+)
+
 install(
     FILES
-        ${MessageComposer_mdn_HEADERS}
-        ${MessageComposer_PluginEditorBase_HEADERS}
-        ${MessageComposer_snippet_HEADERS}
-        ${MessageComposer_plugineditorconverttext_HEADERS}
-        ${MessageComposer_plugineditorinit_HEADERS}
-        ${MessageComposer_statusbarwidget_HEADERS}
+        ${MESSAGECOMPOSER_FILES}
         ${CMAKE_CURRENT_BINARY_DIR}/messagecomposer_export.h
         ${CMAKE_CURRENT_BINARY_DIR}/messagecomposersettings_base.h
         ${CMAKE_CURRENT_BINARY_DIR}/messagecomposer_debug.h
-        ${MessageComposer_composer_HEADERS}
-        ${MessageComposer_composerng_HEADERS}
-        ${MessageComposer_contactpreference_HEADERS}
-        ${MessageComposer_sender_HEADERS}
-        ${MessageComposer_utils_HEADERS}
-        ${MessageComposer_helper_HEADERS}
-        ${MessageComposer_settings_HEADERS}
-        ${MessageComposer_part_HEADERS}
-        ${MessageComposer_followupreminder_HEADERS}
-        ${MessageComposer_recipient_HEADERS}
-        ${MessageComposer_imagescaling_HEADERS}
-        ${MessageComposer_sendlater_HEADERS}
-        ${MessageComposer_attachement_HEADERS}
-        ${MessageComposer_job_HEADERS}
-        ${MessageComposer_plugineditor_HEADERS}
-        ${MessageComposer_plugineditorcheckbeforesend_HEADERS}
-        ${MessageComposer_plugineditorgrammar_HEADERS}
-        ${MessageComposer_draftstatus_HEADERS}
     DESTINATION ${KDE_INSTALL_INCLUDEDIR}/KPim6/MessageComposer/messagecomposer
     COMPONENT Devel
 )
@@ -704,30 +708,7 @@ ecm_add_installed_library_check(KPim6MessageComposer
 
 ecm_installed_library_check_include_strings(KPim6MessageComposer
     HEADERS
-    ${MessageComposer_mdn_HEADERS}
-    ${MessageComposer_PluginEditorBase_HEADERS}
-    ${MessageComposer_snippet_HEADERS}
-    ${MessageComposer_plugineditorconverttext_HEADERS}
-    ${MessageComposer_plugineditorinit_HEADERS}
-    ${MessageComposer_statusbarwidget_HEADERS}
-    ${MessageComposer_composer_HEADERS}
-    ${MessageComposer_composerng_HEADERS}
-    ${MessageComposer_contactpreference_HEADERS}
-    ${MessageComposer_sender_HEADERS}
-    ${MessageComposer_utils_HEADERS}
-    ${MessageComposer_helper_HEADERS}
-    ${MessageComposer_settings_HEADERS}
-    ${MessageComposer_part_HEADERS}
-    ${MessageComposer_followupreminder_HEADERS}
-    ${MessageComposer_recipient_HEADERS}
-    ${MessageComposer_imagescaling_HEADERS}
-    ${MessageComposer_sendlater_HEADERS}
-    ${MessageComposer_attachement_HEADERS}
-    ${MessageComposer_job_HEADERS}
-    ${MessageComposer_plugineditor_HEADERS}
-    ${MessageComposer_plugineditorcheckbeforesend_HEADERS}
-    ${MessageComposer_plugineditorgrammar_HEADERS}
-    ${MessageComposer_draftstatus_HEADERS}
+    ${MESSAGECOMPOSER_FILES}
 
     PREFIX messagecomposer
 )
