@@ -381,13 +381,12 @@ target_link_libraries(
         KF6::Notifications
         KF6::TextAddonsWidgets
         KF6::ColorScheme
+        QGpgmeQt6
 )
 
 if(TARGET KF6::TextEditTextToSpeech)
     target_link_libraries(KPim6MessageViewer PRIVATE KF6::TextEditTextToSpeech)
 endif()
-
-target_link_libraries(KPim6MessageViewer PRIVATE QGpgmeQt6)
 
 set_target_properties(
     KPim6MessageViewer

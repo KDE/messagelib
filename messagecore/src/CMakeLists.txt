@@ -183,8 +183,8 @@ target_link_libraries(
         OpenSSL::SSL
         KF6::I18n
         KPim6::PimTextEdit
+        QGpgmeQt6
 )
-target_link_libraries(KPim6MessageCore PRIVATE QGpgmeQt6)
 
 # precompiled headers support
 if(ENABLE_PCH)
