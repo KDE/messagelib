@@ -201,10 +201,9 @@ QList<Addition> CreatePhishingUrlDataBaseJobPrivate::parseAdditions(const QVaria
     QList<Addition> additionList;
     for (const QVariant &v : lst) {
         if (v.canConvert<QVariantMap>()) {
-            QMapIterator<QString, QVariant> mapIt(v.toMap());
+            const QVariantMap vMap = v.toMap();
             Addition tmp;
-            while (mapIt.hasNext()) {
-                mapIt.next();
+            for (auto mapIt = vMap.cbegin(), mapItEnd = vMap.cend(); mapIt != mapItEnd; ++mapIt) {
                 const QString &keyStr = mapIt.key();
                 if (keyStr == "compressionType"_L1) {
                     tmp.compressionType = parseCompressionType(mapIt.value().toString());
@@ -214,9 +213,8 @@ QList<Addition> CreatePhishingUrlDataBaseJobPrivate::parseAdditions(const QVaria
                         tmp.riceDeltaEncoding = riceDeltaEncodingTmp;
                     }
                 } else if (keyStr == "rawHashes"_L1) {
-                    QMapIterator<QString, QVariant> rawHashesIt(mapIt.value().toMap());
-                    while (rawHashesIt.hasNext()) {
-                        rawHashesIt.next();
+                    const QVariantMap rawHashesMap = mapIt.value().toMap();
+                    for (auto rawHashesIt = rawHashesMap.cbegin(), rawHashesItEnd = rawHashesMap.cend(); rawHashesIt != rawHashesItEnd; ++rawHashesIt) {
                         const QString &key = rawHashesIt.key();
                         if (key == "rawHashes"_L1) {
                             tmp.hashString = QByteArray::fromBase64(rawHashesIt.value().toByteArray());
@@ -261,9 +259,8 @@ QList<Removal> CreatePhishingUrlDataBaseJobPrivate::parseRemovals(const QVariant
     for (const QVariant &v : lst) {
         if (v.canConvert<QVariantMap>()) {
             Removal tmp;
-            QMapIterator<QString, QVariant> mapIt(v.toMap());
-            while (mapIt.hasNext()) {
-                mapIt.next();
+            const QVariantMap vMap = v.toMap();
+            for (auto mapIt = vMap.cbegin(), mapItEnd = vMap.cend(); mapIt != mapItEnd; ++mapIt) {
                 const QString &keyStr = mapIt.key();
                 if (keyStr == "compressionType"_L1) {
                     tmp.compressionType = parseCompressionType(mapIt.value().toString());
@@ -274,9 +271,7 @@ QList<Removal> CreatePhishingUrlDataBaseJobPrivate::parseRemovals(const QVariant
                     }
                 } else if (keyStr == "rawIndices"_L1) {
                     const QVariantMap map = mapIt.value().toMap();
-                    QMapIterator<QString, QVariant> rawIndicesIt(map);
-                    while (rawIndicesIt.hasNext()) {
-                        rawIndicesIt.next();
+                    for (auto rawIndicesIt = map.cbegin(), rawIndicesItEnd = map.cend(); rawIndicesIt != rawIndicesItEnd; ++rawIndicesIt) {
                         if (rawIndicesIt.key() == "indices"_L1) {
                             const QVariantList rawList = rawIndicesIt.value().toList();
                             QList<quint32> indexList;
@@ -314,17 +309,14 @@ void CreatePhishingUrlDataBaseJob::parseResult(const QByteArray &value)
         if (answer.isEmpty()) {
             Q_EMIT finished(databaseInfo, InvalidData);
         } else {
-            QMapIterator<QString, QVariant> i(answer);
-            while (i.hasNext()) {
-                i.next();
+            for (auto i = answer.cbegin(), end = answer.cend(); i != end; ++i) {
                 if (i.key() == "listUpdateResponses"_L1) {
                     const QVariantList info = i.value().toList();
                     if (info.count() == 1) {
                         const QVariant infoVar = info.at(0);
                         if (infoVar.canConvert<QVariantMap>()) {
-                            QMapIterator<QString, QVariant> mapIt(infoVar.toMap());
-                            while (mapIt.hasNext()) {
-                                mapIt.next();
+                            const QVariantMap infoMap = infoVar.toMap();
+                            for (auto mapIt = infoMap.cbegin(), mapItEnd = infoMap.cend(); mapIt != mapItEnd; ++mapIt) {
                                 const QString &mapKey = mapIt.key();
                                 if (mapKey == "additions"_L1) {
                                     const QVariantList lst = mapIt.value().toList();
@@ -339,9 +331,9 @@ void CreatePhishingUrlDataBaseJob::parseResult(const QByteArray &value)
                                         databaseInfo.removalList.append(removeList);
                                     }
                                 } else if (mapKey == "checksum"_L1) {
-                                    QMapIterator<QString, QVariant> mapCheckSum(mapIt.value().toMap());
-                                    while (mapCheckSum.hasNext()) {
-                                        mapCheckSum.next();
+                                    const QVariantMap checkSumMap = mapIt.value().toMap();
+                                    for (auto mapCheckSum = checkSumMap.cbegin(), mapCheckSumEnd = checkSumMap.cend(); mapCheckSum != mapCheckSumEnd;
+                                         ++mapCheckSum) {
                                         if (mapCheckSum.key() == "sha256"_L1) {
                                             databaseInfo.sha256 = mapCheckSum.value().toByteArray();
                                         } else {

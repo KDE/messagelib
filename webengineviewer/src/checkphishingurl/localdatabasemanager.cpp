@@ -44,9 +44,7 @@ void LocalDataBaseManager::checkUrl(const QUrl &url)
         QHash<QByteArray, QByteArray> hashList = urlHashing.hashList();
         QHash<QByteArray, QByteArray> conflictHashs;
 
-        QHashIterator<QByteArray, QByteArray> i(hashList);
-        while (i.hasNext()) {
-            i.next();
+        for (auto i = hashList.cbegin(), end = hashList.cend(); i != end; ++i) {
             const QByteArray &ba = i.value();
             QByteArray result = d->mFile.searchHash(ba);
             if (ba.contains(result)) {

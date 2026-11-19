@@ -89,12 +89,10 @@ bool ViewerPluginManagerPrivate::initializePluginList()
     plugins += KPluginMetaData::findPlugins(u"pim6/messageviewer/viewercommonplugin"_s);
 
     const TextAddonsWidgets::PluginUtil::PluginsStateList pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
-    QListIterator<KPluginMetaData> i(plugins);
-    i.toBack();
-    while (i.hasPrevious()) {
+    for (auto it = plugins.crbegin(), end = plugins.crend(); it != end; ++it) {
         ViewerPluginInfo info;
 
-        const KPluginMetaData data = i.previous();
+        const KPluginMetaData &data = *it;
 
         // 1) get plugin data => name/description etc.
         info.pluginData = TextAddonsWidgets::PluginUtil::createPluginMetaData(data);

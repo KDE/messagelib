@@ -164,10 +164,9 @@ QStringList RecipientsEditor::recipientStringList(Recipient::Type type) const
 void RecipientsEditor::removeRecipient(const QString &recipient, Recipient::Type type)
 {
     // search a line which matches recipient and type
-    QListIterator<MultiplyingLine *> it(lines());
+    const QList<MultiplyingLine *> lineList = lines();
     MultiplyingLine *line = nullptr;
-    while (it.hasNext()) {
-        auto *candidate = it.next();
+    for (auto *candidate : lineList) {
         auto rec = qobject_cast<RecipientLineNG *>(candidate);
         if (rec) {
             if ((rec->recipient()->email() == recipient) && (rec->recipientType() == type)) {

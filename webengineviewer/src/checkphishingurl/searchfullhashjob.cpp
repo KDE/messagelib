@@ -207,9 +207,7 @@ QByteArray SearchFullHashJob::jsonRequest() const
     QVariantList threatEntriesList;
 
     QVariantMap hashUrlMap;
-    QHashIterator<QByteArray, QByteArray> i(d->mHashs);
-    while (i.hasNext()) {
-        i.next();
+    for (auto i = d->mHashs.cbegin(), end = d->mHashs.cend(); i != end; ++i) {
         hashUrlMap.insert(u"hash"_s, i.value());
     }
     threatEntriesList.append(hashUrlMap);

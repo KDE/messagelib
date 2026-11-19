@@ -78,14 +78,12 @@ void NetworkUrlInterceptorPluginManagerPrivate::initializePluginList()
 {
     const QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(u"pim6/webengineviewer/urlinterceptor"_s);
 
-    QListIterator<KPluginMetaData> i(plugins);
-    i.toBack();
     const TextAddonsWidgets::PluginUtil::PluginsStateList pair = PimCommon::PluginUtil::loadPluginSetting(configGroupName(), configPrefixSettingKey());
 
-    while (i.hasPrevious()) {
+    for (auto it = plugins.crbegin(), end = plugins.crend(); it != end; ++it) {
         MailNetworkUrlInterceptorPluginInfo info;
 
-        const KPluginMetaData data = i.previous();
+        const KPluginMetaData &data = *it;
 
         // 1) get plugin data => name/description etc.
         info.pluginData = TextAddonsWidgets::PluginUtil::createPluginMetaData(data);

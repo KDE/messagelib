@@ -206,14 +206,15 @@ void ComposerJobPrivate::composeStep2()
         mainJob = mainContentJob;
     } else {
         // We have attachments.  Create a multipart/mixed content.
-        QMutableListIterator<AttachmentPart::Ptr> iter(attachmentParts);
-        while (iter.hasNext()) {
-            AttachmentPart::Ptr part = iter.next();
+        for (auto iter = attachmentParts.begin(); iter != attachmentParts.end();) {
+            const AttachmentPart::Ptr part = *iter;
             qCDebug(MESSAGECOMPOSER_LOG) << "Checking attachment crypto policy... signed: " << part->isSigned() << " isEncrypted : " << part->isEncrypted();
             if (!noCrypto && !autoSaving && (sign != part->isSigned() || encrypt != part->isEncrypted())) { // different policy
                 qCDebug(MESSAGECOMPOSER_LOG) << "got attachment with different crypto policy!";
                 lateAttachmentParts.append(part);
-                iter.remove();
+                iter = attachmentParts.erase(iter);
+            } else {
+                ++iter;
             }
         }
         auto multipartJob = new MultipartJob(q);
