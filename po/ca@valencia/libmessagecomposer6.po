@@ -468,7 +468,7 @@ msgstr "El certificat S/MIME venç prompte"
 #: composer/composerviewbase.cpp:877
 #, kde-format
 msgid "Failed to resolve keys. Please report a bug."
-msgstr "No s'ha pogut resoldre les claus. Informeu de l'error."
+msgstr "No s'han pogut resoldre les claus. Informeu de l'error."
 
 #: composer/composerviewbase.cpp:1086 composer/composerviewbase.cpp:1364
 #, kde-format
