@@ -6,6 +6,7 @@
 
 #include "dmarcinfo.h"
 #include <QDebug>
+#include <QList>
 
 #include "messagecore_dkimcheckerdebug.h"
 
