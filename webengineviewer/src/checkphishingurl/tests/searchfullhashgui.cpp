@@ -7,6 +7,7 @@
 #include "searchfullhashgui.h"
 
 #include <QApplication>
+#include <QHash>
 #include <QLabel>
 #include <QLineEdit>
 #include <QPlainTextEdit>

@@ -17,6 +17,7 @@
 
 #include <QList>
 #include <QMap>
+#include <QObject>
 #include <QPointer>
 #include <QSet>
 

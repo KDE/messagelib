@@ -6,6 +6,7 @@
 
 #include "webengineaccesskeyanchor.h"
 
+#include <QMap>
 #include <QVariant>
 
 using namespace Qt::Literals::StringLiterals;

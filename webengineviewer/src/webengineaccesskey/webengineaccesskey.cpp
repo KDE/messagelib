@@ -14,6 +14,7 @@
 #include <QAction>
 #include <QKeyEvent>
 #include <QLabel>
+#include <QMultiHash>
 #include <QToolTip>
 #include <QVariant>
 #include <QWebEngineView>

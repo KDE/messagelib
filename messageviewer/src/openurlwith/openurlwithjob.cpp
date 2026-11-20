@@ -11,6 +11,7 @@
 #include <KMacroExpander>
 #include <KNotificationJobUiDelegate>
 #include <KShell>
+#include <QHash>
 using namespace Qt::Literals::StringLiterals;
 using namespace MessageViewer;
 OpenUrlWithJob::OpenUrlWithJob(QObject *parent)

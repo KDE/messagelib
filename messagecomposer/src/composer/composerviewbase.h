@@ -18,6 +18,7 @@
 #include <Libkleo/Enum>
 #include <QDate>
 #include <QList>
+#include <QMap>
 #include <QObject>
 #include <QUrl>
 

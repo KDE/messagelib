@@ -7,6 +7,7 @@
 #include "searchfullhashjob.h"
 
 #include <PimCommon/NetworkManager>
+#include <QHash>
 #include <QJsonDocument>
 #include <QNetworkAccessManager>
 #include <QUrlQuery>

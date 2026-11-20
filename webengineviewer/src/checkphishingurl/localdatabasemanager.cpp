@@ -9,6 +9,7 @@
 #include "updatedatabaseinfo.h"
 #include "urlhashing.h"
 #include "webengineviewer_debug.h"
+#include <QHash>
 
 using namespace WebEngineViewer;
 
