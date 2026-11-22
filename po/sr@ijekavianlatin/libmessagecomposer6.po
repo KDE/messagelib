@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-11 01:03+0000\n"
+"POT-Creation-Date: 2026-11-22 01:06+0000\n"
 "PO-Revision-Date: 2017-12-15 12:38+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -1584,7 +1584,7 @@ msgid ""
 "p><p><b>No valid key found for user %1 (%2)</b></p>"
 msgstr "<p>Greška u pokušaju izvoženja ključa iz pozadine:</p><p><b>%1</b></p>"
 
-#: job/composerjob.cpp:290
+#: job/composerjob.cpp:291
 #, kde-format
 msgid "No key data for recipients found."
 msgstr "Nema podataka o ključu primaoca."

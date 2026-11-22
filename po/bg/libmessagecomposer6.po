@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-11 01:03+0000\n"
+"POT-Creation-Date: 2026-11-22 01:06+0000\n"
 "PO-Revision-Date: 2026-10-24 08:33+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -1514,7 +1514,7 @@ msgstr ""
 "<p>Възникна грешка при опит за експортиране на ключа от бекенда:</"
 "p><p><b>Няма валиден ключ за потребител %1 (%2)</b></p>"
 
-#: job/composerjob.cpp:290
+#: job/composerjob.cpp:291
 #, kde-format
 msgid "No key data for recipients found."
 msgstr "Няма намерени ключови данни за получатели."

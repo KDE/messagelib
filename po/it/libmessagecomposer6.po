@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libmessagecomposer\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-11 01:03+0000\n"
+"POT-Creation-Date: 2026-11-22 01:06+0000\n"
 "PO-Revision-Date: 2026-10-24 22:31+0200\n"
 "Last-Translator: Luigi Toscano <luigi.toscano@tiscali.it>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -1521,7 +1521,7 @@ msgstr ""
 "<p>Si è verificato un errore durante l'esportazione della chiave dal modulo:"
 "</p><p><b>Nessuna chiave valida trovata per l'utente %1 (%2)</b></p>"
 
-#: job/composerjob.cpp:290
+#: job/composerjob.cpp:291
 #, kde-format
 msgid "No key data for recipients found."
 msgstr ""

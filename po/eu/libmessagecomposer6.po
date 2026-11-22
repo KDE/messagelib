@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: messagelib\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-11 01:03+0000\n"
+"POT-Creation-Date: 2026-11-22 01:06+0000\n"
 "PO-Revision-Date: 2026-08-19 21:32+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -1510,7 +1510,7 @@ msgstr ""
 "<p>Errore bat gertatu da bizkarraldekotik gakoa esportatzen saiatzean:</"
 "p><p><b>Ez da aurkitu %1 (%2) erabiltzailearentzako gako baliodunik</b></p>"
 
-#: job/composerjob.cpp:290
+#: job/composerjob.cpp:291
 #, kde-format
 msgid "No key data for recipients found."
 msgstr "Ez da hartzaileentzako gako-daturik aurkitu."

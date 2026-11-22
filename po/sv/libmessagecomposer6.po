@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-11 01:03+0000\n"
+"POT-Creation-Date: 2026-11-22 01:06+0000\n"
 "PO-Revision-Date: 2026-08-16 07:35+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -1505,7 +1505,7 @@ msgstr ""
 "<p>Ett fel uppstod vid försök att exportera nyckeln från bakgrundsprogrammet:"
 "</p><p><b>Ingen giltig nyckel hittades för användare %1 (%2)</b></p>"
 
-#: job/composerjob.cpp:290
+#: job/composerjob.cpp:291
 #, kde-format
 msgid "No key data for recipients found."
 msgstr "Ingen nyckeldata för mottagare hittades."
