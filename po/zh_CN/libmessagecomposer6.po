@@ -2290,19 +2290,3 @@ msgstr "邮件签发器离线。"
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr ""
-
-#~ msgctxt "@title:menu"
-#~ msgid "&Open With"
-#~ msgstr "打开方式(&O)"
-
-#~ msgctxt "@action:inmenu Open With"
-#~ msgid "&Other..."
-#~ msgstr "其他(&O)..."
-
-#~ msgctxt "@title:menu"
-#~ msgid "&Open With..."
-#~ msgstr "打开方式(&O)..."
-
-#~ msgctxt "to open"
-#~ msgid "Open"
-#~ msgstr "打开"

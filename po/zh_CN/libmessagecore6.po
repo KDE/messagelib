@@ -61,12 +61,10 @@ msgid "Could not open %1 for reading."
 msgstr "无法打开 %1 进行读取。"
 
 #: attachment/attachmentfromurljob.cpp:69
-#, fuzzy, kde-format
-#| msgctxt "a file called 'unknown.ext'"
-#| msgid "unknown%1"
+#, kde-format
 msgctxt "a file called 'unknown.ext'"
 msgid "unknown.%1"
-msgstr "未知%1"
+msgstr ""
 
 #: attachment/attachmentfromurljob.cpp:71
 #, kde-format
