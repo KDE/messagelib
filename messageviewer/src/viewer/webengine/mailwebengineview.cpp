@@ -48,6 +48,7 @@ public:
     WebEngineViewer::BlockTrackingUrlInterceptor *mBlockMailTrackingUrl = nullptr;
     bool mCanStartDrag = false;
     bool mStartedDrag = false;
+    bool mPressConsumed = false;
 };
 
 MailWebEngineView::MailWebEngineView(KActionCollection *ac, QWidget *parent)
@@ -174,6 +175,7 @@ void MailWebEngineView::forwardMousePressEvent(QMouseEvent *event)
             d->mLastClickPosition = event->pos();
 
             d->mStartedDrag = false;
+            d->mPressConsumed = d->mCanStartDrag;
             if (d->mCanStartDrag) {
                 event->accept();
             }
@@ -204,12 +206,15 @@ void MailWebEngineView::forwardMouseReleaseEvent(QMouseEvent *event)
     if (event->button() != Qt::LeftButton) {
         return;
     }
-    if (!d->mStartedDrag && d->mHoveredUrl.isValid()) {
+    // Only open the url here when the press was consumed (draggable url): otherwise
+    // the web engine saw the click and acceptNavigationRequest() already handles it.
+    if (d->mPressConsumed && !d->mStartedDrag && d->mHoveredUrl.isValid()) {
         Q_EMIT d->mPageEngine->urlClicked(d->mHoveredUrl);
         event->accept();
     }
     d->mStartedDrag = false;
     d->mCanStartDrag = false;
+    d->mPressConsumed = false;
 }
 
 void MailWebEngineView::forwardKeyPressEvent(QKeyEvent *e)

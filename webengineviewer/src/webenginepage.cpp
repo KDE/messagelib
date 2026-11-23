@@ -161,19 +161,13 @@ void WebEnginePage::saveHtml(QWebEngineDownloadRequest *download)
 
 bool WebEnginePage::acceptNavigationRequest(const QUrl &url, NavigationType type, bool isMainFrame)
 {
-    const QString sch = url.scheme();
 #if 0
+    const QString sch = url.scheme();
     qDebug() << "type" << type << "isMainFrame" << isMainFrame << "scheme" << sch;
     if (sch != u"data"_s)
         qDebug() << "url" << url;
 #endif
     if (isMainFrame && type == NavigationTypeLinkClicked) {
-        // Schemes other than these will have been sent directly
-        // to MailWebEnginePage::urlClicked() and handled there.
-        if (sch != u"kmail"_s && sch != u"data"_s) {
-            return false;
-        }
-
         Q_EMIT urlClicked(url);
         return false;
     }
