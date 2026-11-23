@@ -27,8 +27,8 @@ bool MimeTreeParser::Util::isTypeBlacklisted(const KMime::Content *node)
         typeBlacklisted = KMime::isCryptoPart(node);
     }
     typeBlacklisted = typeBlacklisted || node == node->topLevel();
-    const bool firstTextChildOfEncapsulatedMsg = mediaTypeLower == "text" && contentType && contentType->subType().toLower() == "plain" && node->parent()
-        && node->parent()->contentType() && node->parent()->contentType()->mediaType().toLower() == "message";
+    const bool firstTextChildOfEncapsulatedMsg = mediaTypeLower == "text" && contentType && contentType->subType().compare("plain", Qt::CaseInsensitive) == 0
+        && node->parent() && node->parent()->contentType() && node->parent()->contentType()->mediaType().compare("message", Qt::CaseInsensitive) == 0;
     return typeBlacklisted || firstTextChildOfEncapsulatedMsg;
 }
 

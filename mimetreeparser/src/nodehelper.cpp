@@ -303,7 +303,8 @@ bool NodeHelper::isInEncapsulatedMessage(const KMime::Content *node)
     const KMime::Content *const topLevel = node->topLevel();
     const KMime::Content *cur = node;
     while (cur && cur != topLevel) {
-        const bool parentIsMessage = cur->parent() && cur->parent()->contentType() && cur->parent()->contentType()->mimeType().toLower() == "message/rfc822";
+        const bool parentIsMessage =
+            cur->parent() && cur->parent()->contentType() && cur->parent()->contentType()->mimeType().compare("message/rfc822", Qt::CaseInsensitive) == 0;
         if (parentIsMessage && cur->parent() != topLevel) {
             return true;
         }
@@ -557,7 +558,7 @@ QByteArray NodeHelper::codecName(const KMime::Content *node) const
 
         // utf-8 is a superset of us-ascii, so we don't lose anything if we use it instead
         // utf-8 is so widely used nowadays that it's a good guess to use it to fix issues with broken clients.
-        if (c.toLower() == "us-ascii") {
+        if (c.compare("us-ascii", Qt::CaseInsensitive) == 0) {
             c = "utf-8";
         }
         if (QStringDecoder codec(c.constData()); !codec.isValid()) {
