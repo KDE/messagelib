@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: kdepim-kde4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-24 00:51+0000\n"
-"PO-Revision-Date: 2026-10-12 11:57+0300\n"
+"PO-Revision-Date: 2026-11-23 18:16+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 26.08.0\n"
+"X-Generator: Lokalize 26.08.2\n"
 "(http: //www.transifex.com/projects/p/kdepim-k-tr/language/tr/)\n"
 
 #: customtemplates.cpp:75 customtemplates.cpp:126
@@ -127,12 +127,12 @@ msgstr "(özel şablon yok)"
 #: defaulttemplates.cpp:17
 #, kde-format
 msgid "Default new message template"
-msgstr "Öntanımlı yeni ileti şablonu"
+msgstr "Varsayılan yeni ileti şablonu"
 
 #: defaulttemplates.cpp:22
 #, kde-format
 msgid "Default reply template"
-msgstr "Öntanımlı yanıtlama şablonu"
+msgstr "Varsayılan yanıtlama şablonu"
 
 #: defaulttemplates.cpp:27
 #, kde-format
@@ -151,7 +151,7 @@ msgstr ""
 #: defaulttemplates.cpp:38
 #, kde-format
 msgid "Default reply all template"
-msgstr "Öntanımlı tümünü yanıtlama şablonu"
+msgstr "Varsayılan tümünü yanıtlama şablonu"
 
 #: defaulttemplates.cpp:42
 #, kde-format
@@ -170,7 +170,7 @@ msgstr ""
 #: defaulttemplates.cpp:54
 #, kde-format
 msgid "Default forward template"
-msgstr "Öntanımlı iletme şablonu"
+msgstr "Varsayılan iletme şablonu"
 
 #: defaulttemplates.cpp:61
 #, kde-format
@@ -569,21 +569,21 @@ msgid ""
 "<p>These are global (default) templates. They can be overridden by per-"
 "identity templates or per-folder templates if they are specified.</p>"
 msgstr ""
-"<p>Buradakiler evrensel (öntanımlı) şablonlardır. Belirtildiği takdirde, "
+"<p>Buradakiler evrensel (varsayılan) şablonlardır. Belirtildiği takdirde, "
 "kimlik veya klasöre bağlı şablonlar tarafından yok sayılabilirler.</p>"
 
 #: templatesconfiguration.cpp:103
 #, kde-format
 msgid "Do you want to reset current template or all templates to default?"
 msgstr ""
-"Geçerli şablonu mı yoksa tüm şablonları mı öntanımlılarına sıfırlamak "
+"Geçerli şablonu mı yoksa tüm şablonları mı varsayılanlarına sıfırlamak "
 "istersiniz?"
 
 #: templatesconfiguration.cpp:104
 #, kde-format
 msgctxt "@title:window"
 msgid "Reset to default"
-msgstr "Öntanımlıya Sıfırla"
+msgstr "Varsayılana Sıfırla"
 
 #: templatesconfiguration.cpp:105
 #, kde-format
@@ -782,7 +782,7 @@ msgid ""
 "a copy of this message.  This is a comma-separated list of mail addresses."
 msgstr ""
 "Bu şablonu kullanırken, buraya girdiğiniz alıcılar bu iletinin bir kopyasını "
-"öntanımlı olarak alacaklardır. Bu, posta adreslerinin virgülle ayrılmış bir "
+"varsayılan olarak alacaklardır. Bu, posta adreslerinin virgülle ayrılmış bir "
 "listesidir."
 
 #. i18n: ectx: property (toolTip), widget (TemplateParser::TemplatesTextEdit, mEdit)
