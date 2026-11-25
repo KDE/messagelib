@@ -22,8 +22,12 @@ namespace MessageCore
  * \author Laurent Montel <montel@kde.org>
  */
 struct MESSAGECORE_EXPORT KeyInfo {
+    /*!
+     */
     KeyInfo() = default;
 
+    /*!
+     */
     KeyInfo(const QString &key, const QString &sel, const QString &dom, const QDateTime &storedAt = {}, const QDateTime &lastUsed = {})
         : keyValue(key)
         , selector(sel)
@@ -33,12 +37,26 @@ struct MESSAGECORE_EXPORT KeyInfo {
     {
     }
 
+    /*!
+     */
     QString keyValue;
+    /*!
+     */
     QString selector;
+    /*!
+     */
     QString domain;
+    /*!
+     */
     QDateTime storedAtDateTime;
+    /*!
+     */
     QDateTime lastUsedDateTime;
+    /*!
+     */
     [[nodiscard]] bool operator==(const KeyInfo &) const;
+    /*!
+     */
     [[nodiscard]] bool operator!=(const KeyInfo &) const;
 };
 

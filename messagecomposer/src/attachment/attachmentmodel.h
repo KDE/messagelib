@@ -27,6 +27,8 @@ class MESSAGECOMPOSER_EXPORT AttachmentModel : public QAbstractItemModel
     Q_OBJECT
 
 public:
+    /*!
+     */
     enum {
         AttachmentPartRole = Qt::UserRole,
         NameRole,
@@ -39,8 +41,8 @@ public:
         AutoDisplayRole,
     };
 
-    /**
-     * @todo: get rid of columns and use the roles instead.
+    /*!
+     * TODO: get rid of columns and use the roles instead.
      */
     enum Column {
         NameColumn,
@@ -81,6 +83,8 @@ public:
     [[nodiscard]] Qt::DropActions supportedDropActions() const override;
 
     /// for the save/discard warning
+    /*!
+     */
     [[nodiscard]] bool isModified() const;
     /*! \brief Sets whether the model has been modified and needs saving.
         \param modified True if modified, false otherwise.

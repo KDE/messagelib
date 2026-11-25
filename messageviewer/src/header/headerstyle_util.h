@@ -30,18 +30,35 @@ class HeaderStyle;
 class MESSAGEVIEWER_EXPORT HeaderStyleUtil
 {
 public:
+    /*!
+     */
     HeaderStyleUtil();
+    /*!
+     * \class MessageViewer::HeaderStyleUtil::xfaceSettings
+     * \inmodule MessageViewer
+     * \inheaderfile MessageViewer/HeaderStyle_Util
+     */
     struct xfaceSettings {
+        /*!
+         */
         xfaceSettings()
             : photoWidth(60)
             , photoHeight(60)
         {
         }
 
+        /*!
+         */
         QString photoURL;
+        /*!
+         */
         int photoWidth;
+        /*!
+         */
         int photoHeight;
     };
+    /*!
+     */
     enum HeaderStyleUtilDateFormat : uint8_t {
         ShortDate, /*!< Locale Short date format, e.g. 08-04-2007 */
         LongDate, /*!< Locale Long date format, e.g. Sunday 08 April 2007 */
@@ -54,26 +71,50 @@ public:
         CustomDate
     };
 
+    /*!
+     */
     [[nodiscard]] QString directionOf(const QString &str) const;
 
+    /*!
+     */
     [[nodiscard]] static QString strToHtml(const QString &str, KTextToHTML::Options flags = KTextToHTML::PreserveSpaces);
+    /*!
+     */
     [[nodiscard]] static QString dateString(KMime::Message *message, HeaderStyleUtilDateFormat dateFormat);
+    /*!
+     */
     [[nodiscard]] static QString dateString(const QDateTime &date, HeaderStyleUtilDateFormat dateFormat);
 
+    /*!
+     */
     [[nodiscard]] QString subjectString(KMime::Message *message, KTextToHTML::Options flags = KTextToHTML::PreserveSpaces) const;
 
+    /*!
+     */
     [[nodiscard]] QString subjectDirectionString(KMime::Message *message) const;
 
+    /*!
+     */
     [[nodiscard]] QString spamStatus(KMime::Message *message) const;
 
+    /*!
+     */
     [[nodiscard]] static QString dateStr(const QDateTime &dateTime);
 
+    /*!
+     */
     [[nodiscard]] static QString dateShortStr(const QDateTime &dateTime);
 
+    /*!
+     */
     [[nodiscard]] MESSAGEVIEWER_DEPRECATED static QSharedPointer<KMime::Headers::Generics::MailboxList> resentFromList(KMime::Message *message);
 
+    /*!
+     */
     [[nodiscard]] MESSAGEVIEWER_DEPRECATED static QSharedPointer<KMime::Headers::Generics::MailboxList> resentToList(KMime::Message *message);
 
+    /*!
+     */
     [[nodiscard]] xfaceSettings xface(const HeaderStyle *style, KMime::Message *message) const;
 
 private:

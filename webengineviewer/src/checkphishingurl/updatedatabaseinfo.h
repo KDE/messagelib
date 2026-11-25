@@ -15,18 +15,27 @@ namespace WebEngineViewer
 {
 struct Addition;
 struct Removal;
+/*!
+ * \class WebEngineViewer::UpdateDataBaseInfo
+ * \inmodule WebEngineViewer
+ * \inheaderfile WebEngineViewer/UpdateDataBaseInfo
+ */
 struct WEBENGINEVIEWER_EXPORT UpdateDataBaseInfo {
     /*! Constructs an UpdateDataBaseInfo object. */
     UpdateDataBaseInfo();
     /*! Returns whether this is a valid update info. */
     [[nodiscard]] bool isValid() const;
 
+    /*!
+     */
     enum ResponseType : uint8_t {
         Unknown = 0,
         FullUpdate = 1,
         PartialUpdate = 2,
     };
 
+    /*!
+     */
     enum CompressionType : uint8_t {
         UnknownCompression = 0,
         RiceCompression = 1,
@@ -57,6 +66,11 @@ struct WEBENGINEVIEWER_EXPORT UpdateDataBaseInfo {
     [[nodiscard]] bool operator==(const UpdateDataBaseInfo &other) const;
 };
 
+/*!
+ * \class WebEngineViewer::RiceDeltaEncoding
+ * \inmodule WebEngineViewer
+ * \inheaderfile WebEngineViewer/UpdateDataBaseInfo
+ */
 struct WEBENGINEVIEWER_EXPORT RiceDeltaEncoding {
     /*! Constructs a RiceDeltaEncoding object. */
     RiceDeltaEncoding();
@@ -74,6 +88,11 @@ struct WEBENGINEVIEWER_EXPORT RiceDeltaEncoding {
     int numberEntries;
 };
 
+/*!
+ * \class WebEngineViewer::Addition
+ * \inmodule WebEngineViewer
+ * \inheaderfile WebEngineViewer/UpdateDataBaseInfo
+ */
 struct WEBENGINEVIEWER_EXPORT Addition {
     /*! Constructs an Addition object. */
     Addition();
@@ -94,6 +113,11 @@ struct WEBENGINEVIEWER_EXPORT Addition {
     int prefixSize;
 };
 
+/*!
+ * \class WebEngineViewer::Removal
+ * \inmodule WebEngineViewer
+ * \inheaderfile WebEngineViewer/UpdateDataBaseInfo
+ */
 struct WEBENGINEVIEWER_EXPORT Removal {
     /*! Constructs a Removal object. */
     Removal();

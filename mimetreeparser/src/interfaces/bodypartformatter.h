@@ -24,6 +24,11 @@ namespace MimeTreeParser
 class MessagePart;
 using MessagePartPtr = QSharedPointer<MessagePart>;
 
+/*!
+ * \namespace MimeTreeParser::Interface
+ * \inmodule MimeTreeParser
+ * \inheaderfile MimeTreeParser/BodyPartFormatter
+ */
 namespace Interface
 {
 class BodyPart;

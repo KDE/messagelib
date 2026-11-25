@@ -32,6 +32,8 @@ class TEMPLATEPARSER_EXPORT CustomTemplates : public QWidget
 {
     Q_OBJECT
 public:
+    /*!
+     */
     enum Type {
         TUniversal,
         TReply,
@@ -103,9 +105,16 @@ private:
     Ui_CustomTemplatesBase *const mUi;
 };
 
+/*!
+ * \class TemplateParser::CustomTemplateItem
+ * \inmodule TemplateParser
+ * \inheaderfile TemplateParser/CustomTemplates
+ */
 class CustomTemplateItem : public QTreeWidgetItem
 {
 public:
+    /*!
+     */
     explicit CustomTemplateItem(QTreeWidget *parent,
                                 const QString &name,
                                 const QString &content,
@@ -113,23 +122,49 @@ public:
                                 CustomTemplates::Type type,
                                 const QString &to,
                                 const QString &cc);
+    /*!
+     */
     ~CustomTemplateItem() override;
+    /*!
+     */
     void setCustomType(CustomTemplates::Type type);
+    /*!
+     */
     [[nodiscard]] CustomTemplates::Type customType() const;
 
+    /*!
+     */
     [[nodiscard]] QString to() const;
+    /*!
+     */
     [[nodiscard]] QString cc() const;
 
+    /*!
+     */
     void setTo(const QString &);
+    /*!
+     */
     void setCc(const QString &);
 
+    /*!
+     */
     [[nodiscard]] QString content() const;
+    /*!
+     */
     void setContent(const QString &);
 
+    /*!
+     */
     [[nodiscard]] QKeySequence shortcut() const;
+    /*!
+     */
     void setShortcut(const QKeySequence &);
 
+    /*!
+     */
     [[nodiscard]] QString oldName() const;
+    /*!
+     */
     void setOldName(const QString &);
 
 private:
@@ -139,14 +174,27 @@ private:
     QString mTo, mCC;
 };
 
+/*!
+ * \class TemplateParser::CustomTemplateItemDelegate
+ * \inmodule TemplateParser
+ * \inheaderfile TemplateParser/CustomTemplates
+ */
 class CustomTemplateItemDelegate : public QStyledItemDelegate
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit CustomTemplateItemDelegate(QObject *parent = nullptr);
+    /*!
+     */
     ~CustomTemplateItemDelegate() override;
+    /*!
+     */
     [[nodiscard]] QWidget *createEditor(QWidget *parent, const QStyleOptionViewItem &option, const QModelIndex &index) const override;
 
+    /*!
+     */
     void setModelData(QWidget *editor, QAbstractItemModel *model, const QModelIndex &index) const override;
 };
 }

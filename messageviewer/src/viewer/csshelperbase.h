@@ -29,8 +29,17 @@ class HeaderStylePlugin;
 class MESSAGEVIEWER_EXPORT CSSHelperBase
 {
 public:
+    /*!
+     * \class MessageViewer::CSSHelperBase::HtmlHeadSettings
+     * \inmodule MessageViewer
+     * \inheaderfile MessageViewer/CSSHelperBase
+     */
     struct MESSAGEVIEWER_EXPORT HtmlHeadSettings {
+        /*!
+         */
         bool fixedFont = false;
+        /*!
+         */
         bool htmlFormat = true;
     };
     /*! Construct a CSSHelper object and set its font and color settings to
@@ -38,6 +47,8 @@ public:
         Sub-Classes should put their config loading here.
      */
     explicit CSSHelperBase(const QPaintDevice *pd);
+    /*!
+     */
     virtual ~CSSHelperBase();
 
     /*! Returns HTML head including style sheet definitions and the
@@ -54,26 +65,50 @@ public:
         information suitable for non-quoted text */
     [[nodiscard]] QString nonQuotedFontTag() const;
 
+    /*!
+     */
     [[nodiscard]] QFont bodyFont(bool fixedFont = false, bool printing = false) const;
 
+    /*!
+     */
     void setBodyFont(const QFont &font);
+    /*!
+     */
     void setPrintFont(const QFont &font);
 
     /*! Returns the quote color for the given level, where level ranges from 0 to 2 **/
     [[nodiscard]] QColor quoteColor(int level) const;
+    /*!
+     */
     [[nodiscard]] QString quoteColorName(int level) const;
 
+    /*!
+     */
     [[nodiscard]] QColor pgpWarnColor() const;
 
+    /*!
+     */
     [[nodiscard]] QString addEndBlockQuote(int numberBlock) const;
+    /*!
+     */
     [[nodiscard]] QString addStartBlockQuote(int numberBlock) const;
 
+    /*!
+     */
     [[nodiscard]] QString extraScreenCss(const QString &headerFont) const;
+    /*!
+     */
     [[nodiscard]] QString extraPrintCss(const QString &headerFont) const;
+    /*!
+     */
     [[nodiscard]] QString extraCommonCss(const QString &headerFont) const;
 
+    /*!
+     */
     void setHeaderPlugin(const HeaderStylePlugin *headerPlugin);
 
+    /*!
+     */
     enum InlineMessageType {
         Positive,
         Information,
@@ -82,6 +117,8 @@ public:
         MESSAGE_TYPE_COUNT
     };
 
+    /*!
+     */
     [[nodiscard]] const HeaderStylePlugin *headerPlugin() const;
 
 protected:
@@ -90,44 +127,114 @@ protected:
     void recalculatePGPColors();
 
 protected:
+    /*!
+     */
     QFont mBodyFont;
+    /*!
+     */
     QFont mPrintFont;
+    /*!
+     */
     QFont mFixedFont;
+    /*!
+     */
     QFont mFixedPrintFont;
+    /*!
+     */
     QFont mQuoteFont;
+    /*!
+     */
     QColor mQuoteColor[3];
+    /*!
+     */
     bool mRecycleQuoteColors = false;
+    /*!
+     */
     bool mShrinkQuotes = false;
+    /*!
+     */
     bool mUseBrowserColor = false;
+    /*!
+     */
     QColor mForegroundColor;
+    /*!
+     */
     QColor mLinkColor;
+    /*!
+     */
     QColor mBackgroundColor;
     // colors for PGP (Frame, Header, HeaderText, Body)
+    /*!
+     */
     QColor cPgpOk1F;
+    /*!
+     */
     QColor cPgpOk1H;
+    /*!
+     */
     QColor cPgpOk1HT;
+    /*!
+     */
     QColor cPgpOk1B;
+    /*!
+     */
     QColor cPgpOk0F;
+    /*!
+     */
     QColor cPgpOk0H;
+    /*!
+     */
     QColor cPgpOk0HT;
+    /*!
+     */
     QColor cPgpOk0B;
+    /*!
+     */
     QColor cPgpWarnF;
+    /*!
+     */
     QColor cPgpWarnH;
+    /*!
+     */
     QColor cPgpWarnHT;
+    /*!
+     */
     QColor cPgpWarnB;
+    /*!
+     */
     QColor cPgpErrF;
+    /*!
+     */
     QColor cPgpErrH;
+    /*!
+     */
     QColor cPgpErrHT;
+    /*!
+     */
     QColor cPgpErrB;
+    /*!
+     */
     QColor cPgpEncrF;
+    /*!
+     */
     QColor cPgpEncrH;
+    /*!
+     */
     QColor cPgpEncrHT;
+    /*!
+     */
     QColor cPgpEncrB;
 
     // colors for inline message boxes, see KMessageWidget or Kirigami::InlineMessage
+    /*!
+     */
     QColor cInlineMessage[MESSAGE_TYPE_COUNT];
 
+    /*!
+     */
     QString imgShowUrl;
+    /*!
+     */
     QString imgHideUrl;
 
 private:

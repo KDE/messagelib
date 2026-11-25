@@ -187,7 +187,11 @@ public:
      */
     [[nodiscard]] bool isMessageOrMessageCollection() const;
 
+    /*!
+     */
     void setUrl(const QUrl &url);
+    /*!
+     */
     [[nodiscard]] QUrl url() const;
 
 private:

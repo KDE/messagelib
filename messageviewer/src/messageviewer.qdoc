@@ -7,3 +7,9 @@
 
     \brief MessageViewer provides MessageViewer Library.
 */
+
+/*!
+    \namespace MessageViewer
+    \inmodule MessageViewer
+    \brief The MessageViewer namespace contains the classes of the MessageViewer module.
+*/

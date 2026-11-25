@@ -46,11 +46,24 @@ namespace Util
                                                                const QString &fallbackFileName1 = QString(),
                                                                const QString &fallbackFileName2 = QString());
 
+/*!
+ */
 [[nodiscard]] QString MESSAGEVIEWER_EXPORT iconPathForContent(const KMime::Content *node, int iconSize);
 
+/*!
+ * \class MessageViewer::Util::AttachmentDisplayInfo
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/MimeType
+ */
 struct AttachmentDisplayInfo {
+    /*!
+     */
     QString label;
+    /*!
+     */
     QString icon;
+    /*!
+     */
     bool displayInHeader = false;
 };
 

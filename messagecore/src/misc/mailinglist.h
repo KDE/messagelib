@@ -71,6 +71,8 @@ public:
      */
     static MailingList detect(const std::shared_ptr<KMime::Message> &message);
 
+    /*!
+     */
     static QString name(const std::shared_ptr<KMime::Message> &message, QByteArray &headerName, QString &headerValue);
 
 public:
@@ -89,6 +91,8 @@ public:
      */
     MailingList &operator=(const MailingList &other);
 
+    /*!
+     */
     [[nodiscard]] bool operator==(const MailingList &other) const;
     /*!
      * Destroys the mailing list.

@@ -96,14 +96,27 @@ private:
 // Make sure the whole content is relative, so that nothing is painted over the header
 // if a malicious message uses absolute positioning.
 // Also force word wrapping, which is useful for printing, see https://issues.kolab.org/issue3992.
+/*!
+ * \class MessageViewer::RootBlock
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/HtmlBlock
+ */
 class RootBlock : public HTMLBlock
 {
 public:
+    /*!
+     */
     explicit RootBlock(HtmlWriter *writer);
+    /*!
+     */
     ~RootBlock() override;
 
 protected:
+    /*!
+     */
     [[nodiscard]] QString enterString() const override;
+    /*!
+     */
     [[nodiscard]] QString exitString() const override;
 
 private:

@@ -12,13 +12,23 @@
 
 namespace MessageComposer
 {
+/*!
+ * \class MessageComposer::MDNAdviceHelper
+ * \inmodule MessageComposer
+ * \inheaderfile MessageComposer/MDNAdviceHelper
+ */
 class MESSAGECOMPOSER_EXPORT MDNAdviceHelper : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     static MDNAdviceHelper *instance();
 
-    /**
+    /*!
+     * \class MessageComposer::MDNAdviceHelper::MDNSendingModeInfo
+     * \inmodule MessageComposer
+     * \inheaderfile MessageComposer/MDNAdviceHelper
      * Checks the MDN headers to see if the user needs to be asked for any
      * confirmations. Will ask the user if action is required.
      *
@@ -29,12 +39,25 @@ public:
      * to what the user has selected.
      */
     struct MDNSendingModeInfo {
+        /*!
+         */
         KMime::MDN::SendingMode mode = KMime::MDN::SentAutomatically;
+        /*!
+         */
         bool doSend = false;
     };
 
+    /*!
+     * \class MessageComposer::MDNAdviceHelper::MDNMessateInfo
+     * \inmodule MessageComposer
+     * \inheaderfile MessageComposer/MDNAdviceHelper
+     */
     struct MDNMessateInfo {
+        /*!
+         */
         QString message;
+        /*!
+         */
         bool canDeny = false;
     };
 

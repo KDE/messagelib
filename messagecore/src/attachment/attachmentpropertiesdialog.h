@@ -88,7 +88,11 @@ public:
     [[nodiscard]] bool isSignEnabled() const;
 
 public Q_SLOTS:
+    /*!
+     */
     void accept() override;
+    /*!
+     */
     void slotHelp();
 
 private:

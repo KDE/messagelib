@@ -38,10 +38,20 @@ public:
     /*! \brief Applies the preference data to a KContacts contact. */
     void fillAddressee(KContacts::Addressee &contact) const;
 
+    /*!
+     */
     Kleo::EncryptionPreference encryptionPreference = Kleo::UnknownPreference;
+    /*!
+     */
     Kleo::SigningPreference signingPreference = Kleo::UnknownSigningPreference;
+    /*!
+     */
     Kleo::CryptoMessageFormat cryptoMessageFormat = Kleo::AutoFormat;
+    /*!
+     */
     QStringList pgpKeyFingerprints;
+    /*!
+     */
     QStringList smimeCertFingerprints;
 };
 }

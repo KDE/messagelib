@@ -33,6 +33,8 @@ class MESSAGECOMPOSER_EXPORT PluginEditorInterface : public PimCommon::AbstractG
 {
     Q_OBJECT
 public:
+    /*!
+     */
     enum ApplyOnFieldType {
         Composer = 1,
         EmailFields = 2,

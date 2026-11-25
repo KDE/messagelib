@@ -7,3 +7,9 @@
 
     \brief TemplateParser provides Template Parser Library.
 */
+
+/*!
+    \namespace TemplateParser
+    \inmodule TemplateParser
+    \brief The TemplateParser namespace contains the classes of the TemplateParser module.
+*/

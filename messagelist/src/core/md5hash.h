@@ -13,14 +13,23 @@ namespace MessageList
 namespace Core
 {
 
-/** Compact storage of the result of an MD5 hash computation, for use in the threading code. */
+/*!
+ * \class MessageList::Core::MD5Hash
+ * \inmodule MessageList
+ * \inheaderfile MessageList/MD5Hash
+ *
+ * Compact storage of the result of an MD5 hash computation, for use in the threading code. */
 class MD5Hash
 {
 public:
+    /*!
+     */
     inline MD5Hash()
     {
         std::memset(&data, 0, sizeof(MD5Hash));
     }
+    /*!
+     */
     inline MD5Hash(QByteArrayView ba)
     {
         if (ba.size() != sizeof(MD5Hash)) {
@@ -30,19 +39,29 @@ public:
 
         std::memcpy(&data, ba.constData(), sizeof(MD5Hash));
     }
+    /*!
+     */
     MD5Hash(const MD5Hash &other) = default;
+    /*!
+     */
     MD5Hash &operator=(const MD5Hash &other) = default;
 
+    /*!
+     */
     inline bool operator==(MD5Hash other) const
     {
         return std::memcmp(&data, &other.data, sizeof(MD5Hash)) == 0;
     }
 
+    /*!
+     */
     inline bool isEmpty() const
     {
         return *reinterpret_cast<const quint64 *>(&data) == 0 && *(reinterpret_cast<const quint64 *>(&data) + 1) == 0;
     }
 
+    /*!
+     */
     uint8_t data[16];
 };
 

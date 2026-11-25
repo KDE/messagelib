@@ -11,6 +11,11 @@
 
 namespace WebEngineViewer
 {
+/*!
+ * \class WebEngineViewer::SubmittedFormWarningWidget
+ * \inmodule WebEngineViewer
+ * \inheaderfile WebEngineViewer/SubmittedFormWarningWidget
+ */
 class WEBENGINEVIEWER_EXPORT SubmittedFormWarningWidget : public KMessageWidget
 {
     Q_OBJECT

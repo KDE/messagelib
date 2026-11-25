@@ -30,6 +30,8 @@ public:
      */
     explicit SendLaterInfo() = default;
 
+    /*!
+     */
     enum RecurrenceUnit : uint8_t {
         Days = 0,
         Weeks,
@@ -89,10 +91,18 @@ public:
     /*! \brief Returns the subject of the scheduled message. */
     [[nodiscard]] QString subject() const;
 
+    /*!
+     */
     void setTo(const QString &to);
+    /*!
+     */
     [[nodiscard]] QString to() const;
 
+    /*!
+     */
     bool operator==(const SendLaterInfo &other) const;
+    /*!
+     */
     inline bool operator!=(const SendLaterInfo &other) const
     {
         return !(*this == other);

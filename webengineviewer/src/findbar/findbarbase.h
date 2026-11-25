@@ -86,18 +86,42 @@ protected Q_SLOTS:
     void slotClearSearch();
 
 protected:
+    /*!
+     */
     void updatePalette();
+    /*!
+     */
     void addToCompletion(const QString &text);
+    /*!
+     */
     QString mNotFoundString;
+    /*!
+     */
     QString mPositiveBackground;
+    /*!
+     */
     QString mNegativeBackground;
+    /*!
+     */
     QString mLastSearchStr;
+    /*!
+     */
     PimCommon::LineEditWithCompleterNg *mSearch = nullptr;
+    /*!
+     */
     QAction *mCaseSensitiveAct = nullptr;
 
+    /*!
+     */
     QPushButton *mFindPrevBtn = nullptr;
+    /*!
+     */
     QPushButton *mFindNextBtn = nullptr;
+    /*!
+     */
     QMenu *mOptionsMenu = nullptr;
+    /*!
+     */
     QLabel *mStatus = nullptr;
 };
 }

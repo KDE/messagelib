@@ -53,45 +53,49 @@ public:
      */
     void setIdentityCombo(KIdentityManagementWidgets::IdentityCombo *combo);
 
-    /** Temporarily disable identity tracking, useful for initial loading for example. */
+    /*! Temporarily disable identity tracking, useful for initial loading for example. */
     void suspend();
-    /** Resume identity change tracking after a previous call to suspend(). */
+    /*! Resume identity change tracking after a previous call to suspend(). */
     void resume();
 
-    /** Adds the given signature to the editor, taking user preferences into account.
+    /*! Adds the given signature to the editor, taking user preferences into account.
      */
     void applySignature(const KIdentityManagementCore::Signature &signature);
 
 public Q_SLOTS:
-    /**
+    /*!
      * Append signature to the end of the text in the editor.
      */
     void appendSignature();
 
-    /**
+    /*!
      * Prepend signature at the beginning of the text in the editor.
      */
     void prependSignature();
 
-    /**
+    /*!
      * Insert signature at the cursor position of the text in the editor.
      */
     void insertSignatureAtCursor();
 
+    /*!
+     */
     void cleanSpace();
 
 Q_SIGNALS:
-    /**
+    /*!
      * A HTML signature is about to be inserted, so enable HTML support in the editor.
      */
     void enableHtml();
+    /*!
+     */
     void signatureAdded();
 
 private:
-    /**
+    /*!
      * Helper to insert the signature of the current identity arbitrarily
      * in the editor, connecting slot functions to KMeditor::insertSignature().
-     * @param placement the position of the signature
+     * \param placement the position of the signature
      */
     MESSAGECOMPOSER_NO_EXPORT void insertSignatureHelper(KIdentityManagementCore::Signature::Placement placement);
     MESSAGECOMPOSER_NO_EXPORT void identityChanged(uint id);

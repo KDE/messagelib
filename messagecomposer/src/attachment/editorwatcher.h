@@ -18,7 +18,10 @@ class QWidget;
 
 namespace MessageComposer
 {
-/**
+/*!
+ * \class MessageComposer::EditorWatcher
+ * \inmodule MessageComposer
+ * \inheaderfile MessageComposer/EditorWatcher
   Starts an editor for the given URL and emits an signal when
   editing has been finished. Both, the editor process as well
   as the edited file are watched to work with as many as possible
@@ -28,10 +31,14 @@ class EditorWatcher : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     enum OpenWithOption : uint8_t {
         OpenWithDialog,
         NoOpenWithDialog,
     };
+    /*!
+     */
     enum ErrorEditorWatcher : uint8_t {
         Unknown = 0,
         Canceled,
@@ -40,18 +47,20 @@ public:
         NoError,
     };
 
-    /**
+    /*!
      * Constructs an EditorWatcher.
-     * @param url the given URL.
-     * @param mimeType the data MIME type.
-     * @param option the open option.
-     * @param parent the parent object of this EditorWatcher, which will take care of deleting
+     * \param url the given URL.
+     * \param mimeType the data MIME type.
+     * \param option the open option.
+     * \param parent the parent object of this EditorWatcher, which will take care of deleting
      *               this EditorWatcher if the parent is deleted.
-     * @param parentWidget the parent widget of this EditorWatcher, which will be used as the parent
+     * \param parentWidget the parent widget of this EditorWatcher, which will be used as the parent
      *                     widget for message dialogs.
      */
     explicit EditorWatcher(const QUrl &url, const QString &mimeType, OpenWithOption option, QObject *parent, QWidget *parentWidget);
 
+    /*!
+     */
     ~EditorWatcher() override;
     /*!
      */

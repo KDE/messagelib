@@ -44,6 +44,8 @@ protected:
     /*! Constructs a LocalDataBaseManager with the given implementation. */
     explicit LocalDataBaseManager(LocalDataBaseManagerPrivate *impl, QObject *parent = nullptr);
 
+    /*!
+     */
     LocalDataBaseManagerPrivate *const d;
 };
 }

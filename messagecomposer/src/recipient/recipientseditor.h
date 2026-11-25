@@ -39,7 +39,11 @@ public:
         \param parent The parent object.
     */
     explicit RecipientLineFactory(QObject *parent);
+    /*!
+     */
     KPIM::MultiplyingLine *newLine(QWidget *parent) override;
+    /*!
+     */
     int maximumRecipients() override;
 };
 
@@ -92,19 +96,19 @@ public:
     */
     [[nodiscard]] QStringList recipientStringList(Recipient::Type) const;
 
-    /** Adds a recipient (or multiple recipients) to one line of the editor.
-        @param recipient The recipient(s) you want to add.
-        @param type      The recipient type.
+    /*! Adds a recipient (or multiple recipients) to one line of the editor.
+        \param recipient The recipient(s) you want to add.
+        \param type      The recipient type.
     */
     bool addRecipient(const QString &recipient, Recipient::Type type);
 
-    /** Removes the recipient provided it can be found and has the given type.
-        @param recipient The recipient(s) you want to remove.
-        @param type      The recipient type.
+    /*! Removes the recipient provided it can be found and has the given type.
+        \param recipient The recipient(s) you want to remove.
+        \param type      The recipient type.
     */
     void removeRecipient(const QString &recipient, Recipient::Type type);
 
-    /**
+    /*!
      * Sets the config file used for storing recent addresses.
      */
     void setRecentAddressConfig(KConfig *config);
@@ -118,16 +122,30 @@ public:
 protected Q_SLOTS:
     friend class RecipientLineFactory;
 
+    /*!
+     */
     void slotPickedRecipient(const MessageComposer::Recipient &, bool &tooManyAddress);
+    /*!
+     */
     void slotLineAdded(KPIM::MultiplyingLine *);
+    /*!
+     */
     void slotLineDeleted(int pos);
+    /*!
+     */
     void slotCalculateTotal();
+    /*!
+     */
     void addRecipient(MessageComposer::RecipientLineNG *, const QString &);
 
 protected:
+    /*!
+     */
     bool eventFilter(QObject *object, QEvent *event) override;
 
 Q_SIGNALS:
+    /*!
+     */
     void focusInRecipientLineEdit();
 
 private:

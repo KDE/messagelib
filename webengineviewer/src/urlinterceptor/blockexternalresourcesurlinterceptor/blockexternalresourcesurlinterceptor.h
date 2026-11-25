@@ -11,6 +11,11 @@
 class QUrl;
 namespace WebEngineViewer
 {
+/*!
+ * \class WebEngineViewer::BlockExternalResourcesUrlInterceptor
+ * \inmodule WebEngineViewer
+ * \inheaderfile WebEngineViewer/BlockExternalResourcesUrlInterceptor
+ */
 class WEBENGINEVIEWER_EXPORT BlockExternalResourcesUrlInterceptor : public WebEngineViewer::NetworkPluginUrlInterceptorInterface
 {
     Q_OBJECT

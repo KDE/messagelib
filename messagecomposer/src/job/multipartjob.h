@@ -40,6 +40,8 @@ public:
     void setMultipartSubtype(const QByteArray &subtype);
 
 protected Q_SLOTS:
+    /*!
+     */
     void process() override;
 
 private:

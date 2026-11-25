@@ -24,14 +24,26 @@ class MESSAGEVIEWER_EXPORT PrintingSettings : public QWidget
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit PrintingSettings(QWidget *parent = nullptr);
+    /*!
+     */
     ~PrintingSettings() override;
 
+    /*!
+     */
     void save();
+    /*!
+     */
     void doLoadFromGlobalSettings();
+    /*!
+     */
     void doResetToDefaultsOther();
 
 Q_SIGNALS:
+    /*!
+     */
     void changed();
 
 private:

@@ -13,7 +13,7 @@ namespace MimeTreeParser
 {
 class SimpleObjectTreeSourcePrivate;
 
-/**
+/*!
  * \class MimeTreeParser::SimpleObjectTreeSource
  * \inmodule MimeTreeParser
  * \inheaderfile MimeTreeParser/SimpleObjectTreeSource

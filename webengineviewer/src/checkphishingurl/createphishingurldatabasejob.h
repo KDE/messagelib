@@ -28,11 +28,15 @@ class WEBENGINEVIEWER_EXPORT CreatePhishingUrlDataBaseJob : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     enum DataBaseDownloadType : uint8_t {
         FullDataBase = 0,
         UpdateDataBase = 1,
     };
 
+    /*!
+     */
     enum DataBaseDownloadResult : uint8_t {
         InvalidData = 0,
         ValidData = 1,
@@ -40,11 +44,15 @@ public:
         BrokenNetwork = 3,
     };
 
+    /*!
+     */
     enum ContraintsCompressionType : uint8_t {
         RawCompression = 0,
         RiceCompression = 1,
     };
 
+    /*!
+     */
     explicit CreatePhishingUrlDataBaseJob(QObject *parent = nullptr);
     /*! Destroys the CreatePhishingUrlDataBaseJob object. */
     ~CreatePhishingUrlDataBaseJob() override;

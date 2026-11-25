@@ -27,14 +27,22 @@ class Viewer;
 
 namespace MessageViewer
 {
+/*!
+ * \namespace MessageViewer::Interface
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/BodyPartURLHandler
+ */
 namespace Interface
 {
-/**
- * @short An interface to body part reader link handlers
+/*!
+ * \class MessageViewer::Interface::BodyPartURLHandler
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/BodyPartURLHandler
+ * \brief An interface to body part reader link handlers
  * \author Marc Mutz <mutz@kde.org>
  *
  * This interface is a condensed of variant of the more general
- * @see URLHandler interface, designed to make bodypart-dependent
+ * \sa URLHandler interface, designed to make bodypart-dependent
  * link operations possible without exposing KMail-internal
  * classes.
  *
@@ -56,29 +64,33 @@ namespace Interface
 class BodyPartURLHandler
 {
 public:
+    /*!
+     */
     virtual ~BodyPartURLHandler() = default;
 
+    /*!
+     */
     virtual QString name() const = 0;
-    /** Called when LMB-clicking on a link in the reader. Should
+    /*! Called when LMB-clicking on a link in the reader. Should
     start processing equivalent to "opening" the link.
 
-    @return true if the click was handled by this handler, false
+    \return true if the click was handled by this handler, false
     otherwise.
     */
     virtual bool handleClick(MessageViewer::Viewer *viewerInstance, MimeTreeParser::Interface::BodyPart *part, const QString &path) const = 0;
 
-    /** Called when RMB-clicking on a link in the reader. Should
+    /*! Called when RMB-clicking on a link in the reader. Should
     show a context menu at the specified point with the
     specified widget as parent.
 
-    @return true if the right-click was handled by this handler,
+    \return true if the right-click was handled by this handler,
     false otherwise.
     */
     virtual bool handleContextMenuRequest(MimeTreeParser::Interface::BodyPart *part, const QString &path, const QPoint &p) const = 0;
 
-    /** Called when hovering over a link.
+    /*! Called when hovering over a link.
 
-        @return a string to be shown in the status bar while
+        \return a string to be shown in the status bar while
     hovering over this link or QString() if the link was not
     handled by this handler.
     */

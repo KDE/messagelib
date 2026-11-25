@@ -9,12 +9,29 @@
 #include "templateparser_export.h"
 #include <QMetaType>
 #include <QString>
+/*!
+ * \class TemplateParserExtractHtmlInfoResult
+ * \inmodule TemplateParser
+ * \inheaderfile TemplateParser/TemplateParserExtractHtmlInfoResult
+ */
 struct TEMPLATEPARSER_EXPORT TemplateParserExtractHtmlInfoResult {
+    /*!
+     */
     void clear();
+    /*!
+     */
     QString mBodyElement;
+    /*!
+     */
     QString mHeaderElement;
+    /*!
+     */
     QString mHtmlElement;
+    /*!
+     */
     QString mPlainText;
+    /*!
+     */
     QString mTemplate;
 };
 Q_DECLARE_METATYPE(TemplateParserExtractHtmlInfoResult)

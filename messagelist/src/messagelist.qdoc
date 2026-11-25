@@ -7,3 +7,9 @@
 
     \brief MessageList provides message list Library.
 */
+
+/*!
+    \namespace MessageList
+    \inmodule MessageList
+    \brief The MessageList namespace contains the classes of the MessageList module.
+*/

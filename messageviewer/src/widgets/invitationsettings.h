@@ -22,14 +22,28 @@ class MESSAGEVIEWER_EXPORT InvitationSettings : public QWidget
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit InvitationSettings(QWidget *parent = nullptr);
+    /*!
+     */
     ~InvitationSettings() override;
+    /*!
+     */
     void save();
+    /*!
+     */
     [[nodiscard]] QString helpAnchor() const;
+    /*!
+     */
     void doLoadFromGlobalSettings();
+    /*!
+     */
     void doResetToDefaultsOther();
 
 Q_SIGNALS:
+    /*!
+     */
     void changed();
 
 private:

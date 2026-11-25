@@ -12,6 +12,11 @@ class QWebEnginePage;
 namespace WebEngineViewer
 {
 class DeveloperToolWidget;
+/*!
+ * \class WebEngineViewer::DeveloperToolDialog
+ * \inmodule WebEngineViewer
+ * \inheaderfile WebEngineViewer/DeveloperToolDialog
+ */
 class WEBENGINEVIEWER_EXPORT DeveloperToolDialog : public QDialog
 {
     Q_OBJECT

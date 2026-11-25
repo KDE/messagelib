@@ -13,6 +13,11 @@
 #include <QObject>
 namespace MessageViewer
 {
+/*!
+ * \class MessageViewer::ScamDetectionWhiteListSettingsManager
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/ScamDetectionWhiteListSettingsManager
+ */
 class MESSAGEVIEWER_EXPORT ScamDetectionWhiteListSettingsManager : public QObject
 {
     Q_OBJECT

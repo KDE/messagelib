@@ -133,6 +133,8 @@ class TEMPLATEPARSER_EXPORT TemplateParserJob : public QObject
     Q_OBJECT
 
 public:
+    /*!
+     */
     enum Mode : uint8_t {
         NewMessage,
         Reply,
@@ -140,11 +142,15 @@ public:
         Forward,
     };
 
+    /*!
+     */
     enum AllowSelection : uint8_t {
         SelectionAllowed,
         NoSelectionAllowed,
     };
 
+    /*!
+     */
     enum Quotes : uint8_t {
         ReplyAsOriginalMessage,
         ReplyAsPlain,

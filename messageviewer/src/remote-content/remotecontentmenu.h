@@ -21,18 +21,34 @@ class MESSAGEVIEWER_EXPORT RemoteContentMenu : public QMenu
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit RemoteContentMenu(QWidget *parent = nullptr);
+    /*!
+     */
     ~RemoteContentMenu() override;
 
+    /*!
+     */
     void updateMenu();
 
+    /*!
+     */
     [[nodiscard]] QStringList urls() const;
+    /*!
+     */
     void setUrls(const QStringList &urls);
 
+    /*!
+     */
     void clearUrls();
+    /*!
+     */
     void appendUrl(const QString &url);
 
 Q_SIGNALS:
+    /*!
+     */
     void updateEmail();
 
 private:

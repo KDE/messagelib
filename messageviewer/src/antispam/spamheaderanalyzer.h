@@ -29,8 +29,11 @@ enum SpamError {
     couldNotConvertConfidenceToFloat
 };
 
-/**
-    @short A simple tuple of error, agent, score, confidence and header.
+/*!
+ * \class MessageViewer::SpamScore
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/SpamHeaderAnalyzer
+    \brief A simple tuple of error, agent, score, confidence and header.
 
     The score returned is positive if no error has occurred.
     error values indicate the following errors:
@@ -46,6 +49,8 @@ enum SpamError {
 class SpamScore
 {
 public:
+    /*!
+     */
     SpamScore()
         : mError(noError)
         , mScore(-2.0)
@@ -53,6 +58,8 @@ public:
     {
     }
 
+    /*!
+     */
     SpamScore(const QString &agent, SpamError error, float score, float confidence, const QString &header, const QString &cheader)
         : mAgent(agent)
         , mError(error)
@@ -63,31 +70,43 @@ public:
     {
     }
 
+    /*!
+     */
     [[nodiscard]] QString agent() const
     {
         return mAgent;
     }
 
+    /*!
+     */
     [[nodiscard]] float score() const
     {
         return mScore;
     }
 
+    /*!
+     */
     [[nodiscard]] float confidence() const
     {
         return mConfidence;
     }
 
+    /*!
+     */
     [[nodiscard]] SpamError error() const
     {
         return mError;
     }
 
+    /*!
+     */
     [[nodiscard]] QString spamHeader() const
     {
         return mHeader;
     }
 
+    /*!
+     */
     [[nodiscard]] QString confidenceHeader() const
     {
         return mConfidenceHeader;
@@ -103,17 +122,20 @@ private:
 };
 using SpamScores = QList<SpamScore>;
 
-/**
-    @short Flyweight for analysing spam headers.
+/*!
+ * \class MessageViewer::SpamHeaderAnalyzer
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/SpamHeaderAnalyzer
+    \brief Flyweight for analysing spam headers.
     \author Patrick Audley <paudley@blackcat.ca>
   */
 class SpamHeaderAnalyzer
 {
 public:
-    /**
-      @short Extract scores from known anti-spam headers
-      @param message A KMime::Message to examine
-      @return A list of detected scores. See SpamScore
+    /*!
+      \brief Extract scores from known anti-spam headers
+      \param message A KMime::Message to examine
+      \return A list of detected scores. See SpamScore
     */
     static SpamScores getSpamScores(KMime::Message *message);
 };

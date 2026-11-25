@@ -30,7 +30,11 @@ public:
     explicit SendLaterRemoveJob(Akonadi::Item::Id item, QObject *parent = nullptr);
 
 protected:
+    /*!
+     */
     [[nodiscard]] QDBusPendingReply<> doCall(OrgFreedesktopAkonadiSendLaterAgentInterface *iface) override;
+    /*!
+     */
     [[nodiscard]] QString getErrorString(Error error, const QString &detail) const override;
 
 private:

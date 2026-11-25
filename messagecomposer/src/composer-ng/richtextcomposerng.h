@@ -65,11 +65,17 @@ public:
      */
     [[nodiscard]] QString toCleanHtml() const;
 
+    /*!
+     */
     void forceAutoCorrection(bool selectedText = false) override;
 
+    /*!
+     */
     [[nodiscard]] virtual MessageComposer::PluginEditorConvertTextInterface::ConvertTextStatus convertPlainText(MessageComposer::TextPart *textPart);
 
 protected:
+    /*!
+     */
     bool processModifyText(QKeyEvent *event) override;
 
 private:

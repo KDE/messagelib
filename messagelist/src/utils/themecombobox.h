@@ -34,21 +34,41 @@ class MESSAGELIST_EXPORT ThemeComboBox : public QComboBox
     Q_OBJECT
 
 public:
+    /*!
+     */
     explicit ThemeComboBox(QWidget *parent);
+    /*!
+     */
     ~ThemeComboBox() override;
 
+    /*!
+     */
     QString currentTheme() const;
 
+    /*!
+     */
     void writeDefaultConfig() const;
 
+    /*!
+     */
     void writeStorageModelConfig(MessageList::Core::StorageModel *storageModel, bool isPrivateSetting) const;
+    /*!
+     */
     void writeStorageModelConfig(const QString &id, bool isPrivateSetting) const;
 
+    /*!
+     */
     void readStorageModelConfig(const Akonadi::Collection &col, bool &isPrivateSetting);
+    /*!
+     */
     void readStorageModelConfig(MessageList::Core::StorageModel *storageModel, bool &isPrivateSetting);
 
 public Q_SLOTS:
+    /*!
+     */
     void slotLoadThemes();
+    /*!
+     */
     void selectDefault();
 
 private:

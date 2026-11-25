@@ -23,7 +23,7 @@ class BodyPartFormatter;
 
 class BodyPartFormatterFactoryPrivate;
 
-/**
+/*!
  * \class MimeTreeParser::BodyPartFormatterFactory
  * \inmodule MimeTreeParser
  * \inheaderfile MimeTreeParser/BodyPartFormatterFactory

@@ -18,9 +18,17 @@ class QDataStream;
 #include "messagelist_export.h"
 #include "optionset.h"
 
+/*!
+ * \namespace MessageList::Core
+ * \inmodule MessageList
+ * \inheaderfile MessageList/Aggregation
+ */
 namespace MessageList::Core
 {
-/**
+/*!
+ * \class MessageList::Core::Aggregation
+ * \inmodule MessageList
+ * \inheaderfile MessageList/Aggregation
  * A set of aggregation options that can be applied to the MessageList::Model in a single shot.
  * The set defines the behaviours related to the population of the model, threading
  * of messages and grouping.
@@ -30,7 +38,7 @@ class MESSAGELIST_EXPORT Aggregation : public OptionSet
     Q_GADGET
 
 public:
-    /**
+    /*!
      * Message grouping.
      * If you add values here please look at the implementations of the enumerate* functions
      * and add appropriate descriptors.
@@ -47,7 +55,7 @@ public:
         // TODO: Group by message unread status: "Unread messages", "Read messages" (maybe "New" ?)
     };
 
-    /**
+    /*!
      * The available group expand policies.
      * If you add values here please look at the implementations of the enumerate* functions
      * and add appropriate descriptors.
@@ -59,7 +67,7 @@ public:
         // Never add enum entries in the middle: always add them at the end (numeric values are stored in configuration)
     };
 
-    /**
+    /*!
      * The available threading methods.
      * If you add values here please look at the implementations of the enumerate* functions
      * and add appropriate descriptors.
@@ -73,7 +81,7 @@ public:
     };
     Q_ENUM(Threading)
 
-    /**
+    /*!
      * The available thread leading options. Meaningless when threading is set to NoThreading.
      * If you add values here please look at the implementations of the enumerate* functions
      * and add appropriate descriptors.
@@ -85,7 +93,7 @@ public:
         // Never add enum entries in the middle: always add them at the end (numeric values are stored in configuration)
     };
 
-    /**
+    /*!
      * The available thread expand policies. Meaningless when threading is set to NoThreading.
      * If you add values here please look at the implementations of the enumerate* functions
      * and add appropriate descriptors.
@@ -99,7 +107,7 @@ public:
         // Never add enum entries in the middle: always add them at the end (numeric values are stored in configuration)
     };
 
-    /**
+    /*!
      * The available fill view strategies.
      * If you add values here please look at the implementations of the enumerate* functions
      * and add appropriate descriptors.
@@ -120,8 +128,14 @@ private:
     FillViewStrategy mFillViewStrategy;
 
 public:
+    /*!
+     */
     explicit Aggregation();
+    /*!
+     */
     explicit Aggregation(const Aggregation &opt);
+    /*!
+     */
     explicit Aggregation(const QString &name,
                          const QString &description,
                          Grouping grouping,
@@ -131,18 +145,20 @@ public:
                          ThreadExpandPolicy threadExpandPolicy,
                          FillViewStrategy fillViewStrategy,
                          bool readOnly);
+    /*!
+     */
     [[nodiscard]] static bool compareName(Aggregation *agg1, Aggregation *agg2)
     {
         return agg1->name() < agg2->name();
     }
 
 public:
-    /**
+    /*!
      * Returns the currently set Grouping option.
      */
     [[nodiscard]] Grouping grouping() const;
 
-    /**
+    /*!
      * Sets the Grouping option.
      */
     void setGrouping(Grouping g)
@@ -150,14 +166,14 @@ public:
         mGrouping = g;
     }
 
-    /**
+    /*!
      * Enumerates the available grouping options as a QList of
      * pairs in that the first item is the localized description of the
      * option value and the second item is the integer option value itself.
      */
     static QList<std::pair<QString, int>> enumerateGroupingOptions();
 
-    /**
+    /*!
      * Returns the current GroupExpandPolicy.
      */
     [[nodiscard]] GroupExpandPolicy groupExpandPolicy() const
@@ -165,7 +181,7 @@ public:
         return mGroupExpandPolicy;
     }
 
-    /**
+    /*!
      * Sets the GroupExpandPolicy for the groups.
      * Note that this option has no meaning if grouping is set to NoGrouping.
      */
@@ -174,7 +190,7 @@ public:
         mGroupExpandPolicy = groupExpandPolicy;
     }
 
-    /**
+    /*!
      * Enumerates the group sort direction options compatible with the specified Grouping.
      * The returned descriptors are pairs in that the first item is the localized description
      * of the option value and the second item is the integer option value itself.
@@ -182,7 +198,7 @@ public:
      */
     static QList<std::pair<QString, int>> enumerateGroupExpandPolicyOptions(Grouping g);
 
-    /**
+    /*!
      * Returns the current threading method.
      */
     [[nodiscard]] Threading threading() const
@@ -190,7 +206,7 @@ public:
         return mThreading;
     }
 
-    /**
+    /*!
      * Sets the threading method option.
      */
     void setThreading(Threading t)
@@ -198,14 +214,14 @@ public:
         mThreading = t;
     }
 
-    /**
+    /*!
      * Enumerates the available threading method options.
      * The returned descriptors are pairs in that the first item is the localized description
      * of the option value and the second item is the integer option value itself.
      */
     static QList<std::pair<QString, int>> enumerateThreadingOptions();
 
-    /**
+    /*!
      * Returns the current thread leader determination method.
      */
     [[nodiscard]] ThreadLeader threadLeader() const
@@ -213,7 +229,7 @@ public:
         return mThreadLeader;
     }
 
-    /**
+    /*!
      * Sets the current thread leader determination method.
      * Please note that when Threading is set to NoThreading this value is meaningless
      * and by policy should be set to TopmostMessage.
@@ -223,7 +239,7 @@ public:
         mThreadLeader = tl;
     }
 
-    /**
+    /*!
      * Enumerates the thread leader determination methods compatible with the specified Threading
      * and the specified Grouping options.
      * The returned descriptors are pairs in that the first item is the localized description
@@ -232,7 +248,7 @@ public:
      */
     static QList<std::pair<QString, int>> enumerateThreadLeaderOptions(Grouping g, Threading t);
 
-    /**
+    /*!
      * Returns the current thread expand policy.
      */
     ThreadExpandPolicy threadExpandPolicy() const
@@ -240,7 +256,7 @@ public:
         return mThreadExpandPolicy;
     }
 
-    /**
+    /*!
      * Sets the current thread expand policy.
      * Please note that when Threading is set to NoThreading this value is meaningless
      * and by policy should be set to NeverExpandThreads.
@@ -250,7 +266,7 @@ public:
         mThreadExpandPolicy = threadExpandPolicy;
     }
 
-    /**
+    /*!
      * Enumerates the thread expand policies compatible with the specified Threading option.
      * The returned descriptors are pairs in that the first item is the localized description
      * of the option value and the second item is the integer option value itself.
@@ -258,7 +274,7 @@ public:
      */
     static QList<std::pair<QString, int>> enumerateThreadExpandPolicyOptions(Threading t);
 
-    /**
+    /*!
      * Returns the current fill view strategy.
      */
     [[nodiscard]] FillViewStrategy fillViewStrategy() const
@@ -266,7 +282,7 @@ public:
         return mFillViewStrategy;
     }
 
-    /**
+    /*!
      * Sets the current fill view strategy.
      */
     void setFillViewStrategy(FillViewStrategy fillViewStrategy)
@@ -274,19 +290,19 @@ public:
         mFillViewStrategy = fillViewStrategy;
     }
 
-    /**
+    /*!
      * Enumerates the fill view strategies.
      * The returned descriptors are pairs in that the first item is the localized description
      * of the option value and the second item is the integer option value itself.
      */
     static QList<std::pair<QString, int>> enumerateFillViewStrategyOptions();
 
-    /**
+    /*!
      * Pure virtual reimplemented from OptionSet.
      */
     void save(QDataStream &stream) const override;
 
-    /**
+    /*!
      * Pure virtual reimplemented from OptionSet.
      */
     bool load(QDataStream &stream) override;

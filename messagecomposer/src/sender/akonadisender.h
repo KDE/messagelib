@@ -35,7 +35,7 @@ public:
     ~AkonadiSender() override;
 
 protected:
-    /**
+    /*!
     Send given message. The message is either queued or sent
     immediately. The default behaviour, as selected with
     setSendImmediate(), can be overwritten with the parameter
@@ -48,14 +48,14 @@ protected:
     */
     [[nodiscard]] bool doSend(const std::shared_ptr<KMime::Message> &msg, short sendNow) override;
 
-    /**
+    /*!
     Send queued messages, using the specified transport or the
     default, if none is given.
     */
     [[nodiscard]] bool doSendQueued(int transportId = -1) override;
 
 private:
-    /**
+    /*!
     Queue or send immediately one message using MailTransport::MessageQueueJob.
     */
     MESSAGECOMPOSER_NO_EXPORT void sendOrQueueMessage(const std::shared_ptr<KMime::Message> &msg,

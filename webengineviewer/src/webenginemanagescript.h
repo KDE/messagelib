@@ -12,10 +12,15 @@
 namespace WebEngineViewer
 {
 /*!
+ * \class WebEngineViewer::WebEngineManageScript
+ * \inmodule WebEngineViewer
+ * \inheaderfile WebEngineViewer/WebEngineManageScript
  * \brief The WebEngineManageScript class
  * \author Laurent Montel <montel@kde.org>
  */
 struct WEBENGINEVIEWER_EXPORT WebEngineManageScript {
+    /*!
+     */
     static quint32 scriptWordId()
     {
         return QWebEngineScript::UserWorld + 1;

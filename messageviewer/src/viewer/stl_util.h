@@ -11,8 +11,15 @@
 
 namespace MessageViewer
 {
+/*!
+ * \class MessageViewer::DeleteAndSetToZero
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/Stl_Util
+ */
 template<typename T>
 struct DeleteAndSetToZero {
+    /*!
+     */
     void operator()(const T *&t)
     {
         delete t;

@@ -7,3 +7,9 @@
 
     \brief MimeTreeParser provides MIME tree parser library.
 */
+
+/*!
+    \namespace MimeTreeParser
+    \inmodule MimeTreeParser
+    \brief The MimeTreeParser namespace contains the classes of the MimeTreeParser module.
+*/

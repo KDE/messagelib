@@ -26,7 +26,7 @@ namespace MimeTreeParser
 class MessagePart;
 
 using MessagePartPtr = QSharedPointer<MessagePart>;
-/**
+/*!
  * \class MimeTreeParser::ProcessResult
  * \inmodule MimeTreeParser
  * \inheaderfile MimeTreeParser/ProcessResult
@@ -100,7 +100,7 @@ private:
     NodeHelper *mNodeHelper;
 };
 
-/**
+/*!
 \brief Parses messages and generates HTML display code out of them
 
 \par Introduction
@@ -272,7 +272,7 @@ is used to mark an attachment in the body with a yellow border when the user cli
 in the header. Finally, parseObjectTree() creates an anchor with the id 'att%1', which is used in
 the Viewer to scroll to the attachment.
 */
-/**
+/*!
  * \class MimeTreeParser::ObjectTreeParser
  * \inmodule MimeTreeParser
  * \inheaderfile MimeTreeParser/ObjectTreeParser
@@ -283,9 +283,9 @@ the Viewer to scroll to the attachment.
  */
 class MIMETREEPARSER_EXPORT ObjectTreeParser
 {
-    /**
-     * @internal
-     * Copies the context of @p other, but not it's rawDecryptedBody, plainTextContent or htmlContent.
+    /*!
+     * \internal
+     * Copies the context of \a other, but not it's rawDecryptedBody, plainTextContent or htmlContent.
      */
     ObjectTreeParser(const ObjectTreeParser &other);
 
@@ -318,16 +318,18 @@ public:
      */
     [[nodiscard]] bool allowAsync() const;
 
+    /*!
+     */
     [[nodiscard]] bool hasPendingAsyncJobs() const;
 
-    /**
+    /*!
      * The text of the message, ie. what would appear in the
      * composer's text editor if this was edited or replied to.
      * This is usually the content of the first text/plain MIME part.
      */
     [[nodiscard]] QString plainTextContent() const;
 
-    /**
+    /*!
      * Similar to plainTextContent(), but returns the HTML source of the first text/html MIME part.
      *
      * Not to be confused with the HTML code that the message viewer widget displays, that HTML
@@ -335,18 +337,22 @@ public:
      */
     [[nodiscard]] QString htmlContent() const;
 
+    /*!
+     */
     [[nodiscard]] NodeHelper *nodeHelper() const;
 
-    /** Parse beginning at a given node and recursively parsing
+    /*! Parse beginning at a given node and recursively parsing
       the children of that node and it's next sibling. */
     void parseObjectTree(KMime::Content *node, bool parseOnlySingleNode = false);
+    /*!
+     */
     [[nodiscard]] MessagePartPtr parsedPart() const;
 
 private:
     MIMETREEPARSER_NO_EXPORT void extractNodeInfos(KMime::Content *curNode, bool isFirstTextPart);
     MIMETREEPARSER_NO_EXPORT void setPlainTextContent(const QString &plainTextContent);
 
-    /**
+    /*!
      * Does the actual work for parseObjectTree. Unlike parseObjectTree(), this does not change the
      * top-level content.
      */
@@ -354,7 +360,7 @@ private:
     MIMETREEPARSER_NO_EXPORT MessagePartPtr processType(KMime::Content *node, MimeTreeParser::ProcessResult &processResult, const QByteArray &mimeType);
 
 private:
-    /** ctor helper */
+    /*! ctor helper */
     MIMETREEPARSER_NO_EXPORT void init();
 
     MIMETREEPARSER_NO_EXPORT QByteArray codecNameFor(KMime::Content *node) const;

@@ -15,6 +15,11 @@
 
 namespace MessageComposer
 {
+/*!
+ * \class MessageComposer::MDNAdviceDialog
+ * \inmodule MessageComposer
+ * \inheaderfile MessageComposer/MDNAdviceDialog
+ */
 class MESSAGECOMPOSER_EXPORT MDNAdviceDialog : public QDialog
 {
     Q_OBJECT

@@ -10,40 +10,80 @@
 #include <QObject>
 namespace MessageCore
 {
+/*!
+ * \class MessageCore::DMARCPolicyJob
+ * \inmodule MessageCore
+ * \inheaderfile MessageCore/DMARCPolicyJob
+ */
 class MESSAGECORE_EXPORT DMARCPolicyJob : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     * \class MessageCore::DMARCPolicyJob::DMARCResult
+     * \inmodule MessageCore
+     * \inheaderfile MessageCore/DMARCPolicyJob
+     */
     struct DMARCResult {
+        /*!
+         */
         bool isValid() const
         {
             return !mAdkim.isEmpty() && !mPolicy.isEmpty() && !mDomain.isEmpty() && !mSource.isEmpty();
         }
 
+        /*!
+         */
         [[nodiscard]] bool operator==(const DMARCPolicyJob::DMARCResult &other) const = default;
 
+        /*!
+         */
         [[nodiscard]] bool operator!=(const DMARCPolicyJob::DMARCResult &other) const
         {
             return !DMARCResult::operator==(other);
         }
 
+        /*!
+         */
         QString mAdkim;
+        /*!
+         */
         QString mPolicy;
+        /*!
+         */
         QString mDomain;
+        /*!
+         */
         QString mSource;
+        /*!
+         */
         int mPercentage = -1;
     };
 
+    /*!
+     */
     explicit DMARCPolicyJob(QObject *parent = nullptr);
+    /*!
+     */
     ~DMARCPolicyJob() override;
 
+    /*!
+     */
     [[nodiscard]] bool canStart() const;
+    /*!
+     */
     [[nodiscard]] bool start();
 
+    /*!
+     */
     [[nodiscard]] QString emailAddress() const;
+    /*!
+     */
     void setEmailAddress(const QString &emailAddress);
 
 Q_SIGNALS:
+    /*!
+     */
     void result(const MessageCore::DMARCPolicyJob::DMARCResult &value, const QString &emailAddress);
 
 private:

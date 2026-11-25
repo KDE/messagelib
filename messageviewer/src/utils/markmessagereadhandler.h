@@ -18,6 +18,9 @@
 namespace MessageViewer
 {
 /*!
+ * \class MessageViewer::MarkMessageReadHandler
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/MarkMessageReadHandler
  * \brief A viewer handler to mark viewed messages as read.
  */
 class MESSAGEVIEWER_EXPORT MarkMessageReadHandler : public QObject, public AbstractMessageLoadedHandler

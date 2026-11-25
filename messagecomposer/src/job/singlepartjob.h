@@ -50,9 +50,9 @@ public:
     /*!
      */
     void setData(const QByteArray &data);
-    /** Indicated the data set with setData() is already encoded with the selected
+    /*! Indicated the data set with setData() is already encoded with the selected
      *  content transfer encoding.
-     *  @default @c false
+     *  @default \c false
      */
     void setDataIsEncoded(bool encoded);
 

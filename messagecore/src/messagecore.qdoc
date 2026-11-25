@@ -7,3 +7,9 @@
 
     \brief MessageCore provides MessageCore Library.
 */
+
+/*!
+    \namespace MessageCore
+    \inmodule MessageCore
+    \brief The MessageCore namespace contains the classes of the MessageCore module.
+*/

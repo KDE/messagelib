@@ -7,3 +7,9 @@
 
     \brief WebEngineViewer provides WebEngine viewer Library.
 */
+
+/*!
+    \namespace WebEngineViewer
+    \inmodule WebEngineViewer
+    \brief The WebEngineViewer namespace contains the classes of the WebEngineViewer module.
+*/

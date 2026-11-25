@@ -26,8 +26,17 @@ class WEBENGINEVIEWER_EXPORT BlockTrackingUrlInterceptor : public WebEngineViewe
 {
     Q_OBJECT
 public:
+    /*!
+     * \class WebEngineViewer::BlockTrackingUrlInterceptor::TrackerBlackList
+     * \inmodule WebEngineViewer
+     * \inheaderfile WebEngineViewer/BlockTrackingUrlInterceptor
+     */
     struct TrackerBlackList {
+        /*!
+         */
         TrackerBlackList() = default;
+        /*!
+         */
         TrackerBlackList(const QString &company, const QString &pattern, const QString &url)
             : mCompanyName(company)
             , mCompanyUrl(url)
@@ -35,11 +44,19 @@ public:
         {
         }
 
+        /*!
+         */
         QString mCompanyName;
+        /*!
+         */
         QString mCompanyUrl;
+        /*!
+         */
         QRegularExpression mPattern;
     };
 
+    /*!
+     */
     explicit BlockTrackingUrlInterceptor(QObject *parent = nullptr);
     /*! Destroys the BlockTrackingUrlInterceptor object. */
     ~BlockTrackingUrlInterceptor() override;

@@ -27,12 +27,12 @@ namespace Interface
 {
 class ObjectTreeSource;
 
-/**
+/*!
  * \class MimeTreeParser::Interface::BodyPartMemento
  * \inmodule MimeTreeParser
  * \inheaderfile MimeTreeParser/BodyPartMemento
  *
- * @short interface of classes that implement status for BodyPartFormatters.
+ * \brief interface of classes that implement status for BodyPartFormatters.
  */
 class MIMETREEPARSER_EXPORT BodyPartMemento
 {
@@ -48,12 +48,12 @@ public:
     virtual void detach() = 0;
 };
 
-/**
+/*!
  * \class MimeTreeParser::Interface::BodyPart
  * \inmodule MimeTreeParser
  * \inheaderfile MimeTreeParser/BodyPart
  *
- * @short interface of message body parts.
+ * \brief interface of message body parts.
  */
 class MIMETREEPARSER_EXPORT BodyPart
 {

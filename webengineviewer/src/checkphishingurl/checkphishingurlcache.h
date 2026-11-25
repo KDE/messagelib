@@ -14,6 +14,9 @@ namespace WebEngineViewer
 {
 class CheckPhishingUrlCachePrivate;
 /*!
+ * \class WebEngineViewer::CheckPhishingUrlCache
+ * \inmodule WebEngineViewer
+ * \inheaderfile WebEngineViewer/CheckPhishingUrlCache
  * \brief The CheckPhishingUrlCache class
  * \author Laurent Montel <montel@kde.org>
  */
@@ -26,12 +29,16 @@ public:
     /*! Returns the singleton instance. */
     static CheckPhishingUrlCache *self();
 
+    /*!
+     */
     enum class UrlStatus : uint8_t {
         UrlOk = 0,
         MalWare = 1,
         Unknown = 2,
     };
 
+    /*!
+     */
     ~CheckPhishingUrlCache() override;
 
     /*! Adds a URL checking result to the cache. If correctUrl is true it stores as UrlOk, otherwise MalWare. */

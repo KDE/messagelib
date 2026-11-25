@@ -95,16 +95,30 @@ class MESSAGECOMPOSER_EXPORT PluginEditorGrammarCustomToolsViewInterface : publi
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit PluginEditorGrammarCustomToolsViewInterface(QWidget *parent = nullptr);
+    /*!
+     */
     ~PluginEditorGrammarCustomToolsViewInterface() override;
 
+    /*!
+     */
     void setParentWidget(QWidget *parent);
+    /*!
+     */
     [[nodiscard]] QWidget *parentWidget() const;
 
+    /*!
+     */
     [[nodiscard]] KPIMTextEdit::RichTextComposer *richTextEditor() const;
+    /*!
+     */
     void setRichTextEditor(KPIMTextEdit::RichTextComposer *richTextEditor);
 
 Q_SIGNALS:
+    /*!
+     */
     void replaceText(const MessageComposer::PluginGrammarAction &act);
 
 private:

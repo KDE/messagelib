@@ -25,18 +25,26 @@ public:
      */
     DKIMCheckPolicy();
 
+    /*!
+     */
     enum SaveKeyMode {
         NotSaving = 0,
         Save = 1,
         SaveAndCompare = 2
     };
+    /*!
+     */
     enum StrengthPolicy {
         Nothing = 0,
         Warning = 1,
         Error = 2
     };
     using KeyChangeApproval = std::function<bool(const QString &, const QString &, const QString &)>;
+    /*!
+     */
     void setKeyChangeApproval(KeyChangeApproval approval);
+    /*!
+     */
     [[nodiscard]] const KeyChangeApproval &keyChangeApproval() const;
 
     /*!

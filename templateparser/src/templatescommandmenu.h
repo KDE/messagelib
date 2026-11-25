@@ -34,6 +34,8 @@ public:
      */
     ~TemplatesCommandMenu() override;
 
+    /*!
+     */
     enum MenuType : uint8_t {
         ReplyForwardMessage = 1,
         CurrentMessage = 2,
@@ -45,6 +47,8 @@ public:
     Q_FLAG(MenuType)
     Q_DECLARE_FLAGS(MenuTypes, MenuType)
     // TODO: apidox for all these enums
+    /*!
+     */
     enum Command : uint8_t {
         CDnl = 1,
         CRem,
@@ -163,6 +167,8 @@ public Q_SLOTS:
     void slotInsertCommand(TemplateParser::TemplatesCommandMenu::Command cmd);
 
 protected:
+    /*!
+     */
     KActionMenu *mMenu = nullptr;
 
 private:

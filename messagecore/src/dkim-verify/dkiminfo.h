@@ -23,13 +23,19 @@ class MESSAGECORE_EXPORT DKIMInfo
 {
     Q_GADGET
 public:
+    /*!
+     */
     DKIMInfo();
 
+    /*!
+     */
     enum CanonicalizationType : uint8_t {
         Unknown,
         Simple,
         Relaxed,
     };
+    /*!
+     */
     enum class HashingAlgorithmType : uint8_t {
         Any,
         Sha1,

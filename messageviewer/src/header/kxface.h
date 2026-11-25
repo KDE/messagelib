@@ -26,21 +26,56 @@
 // #define MAXWORDS ((PIXELS * 2 + BITSPERWORD - 1) / BITSPERWORD)
 // #define BITSPERWORD 8
 
+/*!
+ * \class guesses
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/KXFace
+ */
 using Guesses = struct guesses {
+    /*!
+     */
     char g_00[1 << 12];
+    /*!
+     */
     char g_01[1 << 7];
+    /*!
+     */
     char g_02[1 << 2];
+    /*!
+     */
     char g_10[1 << 9];
+    /*!
+     */
     char g_20[1 << 6];
+    /*!
+     */
     char g_30[1 << 8];
+    /*!
+     */
     char g_40[1 << 10];
+    /*!
+     */
     char g_11[1 << 5];
+    /*!
+     */
     char g_21[1 << 3];
+    /*!
+     */
     char g_31[1 << 5];
+    /*!
+     */
     char g_41[1 << 6];
+    /*!
+     */
     char g_12[1 << 1];
+    /*!
+     */
     char g_22[1 << 0];
+    /*!
+     */
     char g_32[1 << 2];
+    /*!
+     */
     char g_42[1 << 2];
 };
 
@@ -227,8 +262,17 @@ static const Guesses G = {
         1,
     }};
 
+/*!
+ * \class prob
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/KXFace
+ */
 using Prob = struct prob {
+    /*!
+     */
     int p_range;
+    /*!
+     */
     int p_offset;
 };
 
@@ -273,7 +317,11 @@ class MESSAGEVIEWER_EXPORT KXFace : public QObject
     Q_OBJECT
 
 public:
+    /*!
+     */
     KXFace();
+    /*!
+     */
     ~KXFace() override;
 
     /*!

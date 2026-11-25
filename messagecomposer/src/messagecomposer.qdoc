@@ -7,3 +7,15 @@
 
     \brief MessageComposer provides MessageComposer Library.
 */
+
+/*!
+    \namespace MessageComposer
+    \inmodule MessageComposer
+    \brief The MessageComposer namespace contains the classes of the MessageComposer module.
+*/
+
+/*!
+    \namespace MessageHelper
+    \inmodule MessageComposer
+    \brief The MessageHelper namespace contains the classes of the MessageComposer module.
+*/

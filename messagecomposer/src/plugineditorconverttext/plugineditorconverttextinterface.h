@@ -42,6 +42,8 @@ public:
      */
     ~PluginEditorConvertTextInterface() override;
 
+    /*!
+     */
     enum class ConvertTextStatus : uint8_t {
         NotConverted,
         Converted,

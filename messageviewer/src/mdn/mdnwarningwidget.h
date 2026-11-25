@@ -22,6 +22,8 @@ class MESSAGEVIEWER_EXPORT MDNWarningWidget : public KMessageWidget
 {
     Q_OBJECT
 public:
+    /*!
+     */
     enum ResponseType : uint8_t {
         Ignore = 0,
         Send = 1,

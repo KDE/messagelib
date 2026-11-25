@@ -21,13 +21,27 @@ namespace MessageViewer
 namespace Util
 {
 // return true if we should proceed, false if we should abort
+/*!
+ */
 [[nodiscard]] MESSAGEVIEWER_EXPORT bool containsExternalReferences(const QString &str, const QString &extraHead);
+/*!
+ */
 [[nodiscard]] bool MESSAGEVIEWER_EXPORT checkOverwrite(const QUrl &url, QWidget *w);
+/*!
+ */
 [[nodiscard]] MESSAGEVIEWER_EXPORT bool
 saveMessageInMboxAndGetUrl(QUrl &url, const Akonadi::Item::List &retrievedMsgs, QWidget *parent, bool appendMessages = false);
+/*!
+ */
 [[nodiscard]] MESSAGEVIEWER_EXPORT bool saveMessageInMbox(const Akonadi::Item::List &retrievedMsgs, QWidget *parent, bool appendMessages = false);
+/*!
+ */
 [[nodiscard]] MESSAGEVIEWER_EXPORT bool excludeExtraHeader(const QString &s);
+/*!
+ */
 [[nodiscard]] MESSAGEVIEWER_EXPORT QString generateMboxFileName(const Akonadi::Item &msgBase);
+/*!
+ */
 [[nodiscard]] MESSAGEVIEWER_EXPORT bool saveAttachments(const QList<KMime::Content *> &contents, QWidget *parent, QList<QUrl> &saveUrl);
 /*!
  * \brief Replaces the \\ node message part by an empty attachment with information about deleted attachment.
@@ -46,15 +60,34 @@ saveMessageInMboxAndGetUrl(QUrl &url, const Akonadi::Item::List &retrievedMsgs, 
  */
 [[nodiscard]] MESSAGEVIEWER_EXPORT int deleteAttachments(const QList<KMime::Content *> &contents);
 
+/*!
+ * \class MessageViewer::Util::HtmlMessageInfo
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/MessageViewerUtil
+ */
 struct HtmlMessageInfo {
+    /*!
+     */
     QString htmlSource;
+    /*!
+     */
     QString extraHead;
+    /*!
+     */
     QString bodyStyle;
+    /*!
+     */
     [[nodiscard]] bool operator==(const HtmlMessageInfo &other) const = default;
 };
 
+/*!
+ */
 [[nodiscard]] MESSAGEVIEWER_EXPORT HtmlMessageInfo processHtml(const QString &htmlSource);
+/*!
+ */
 [[nodiscard]] MESSAGEVIEWER_EXPORT QString generateFileNameForExtension(const Akonadi::Item &msgBase, const QString &extension);
+/*!
+ */
 [[nodiscard]] MESSAGEVIEWER_EXPORT QString parseBodyStyle(const QString &style);
 }
 }

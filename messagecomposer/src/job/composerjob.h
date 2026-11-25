@@ -120,6 +120,8 @@ public:
 
     /// Sets if this message being composed is an auto-saved message
     ///  if so, might need different handling, such as no crypto attachments.
+    /*!
+     */
     void setAutoSave(bool isAutoSave);
     /*! \brief Returns whether this message is being auto-saved. */
     [[nodiscard]] bool autoSave() const;

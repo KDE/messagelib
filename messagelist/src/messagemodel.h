@@ -22,7 +22,10 @@ class QItemSelectionModel;
 
 namespace MessageList
 {
-/**
+/*!
+ * \class MessageList::MessageModel
+ * \inmodule MessageList
+ * \inheaderfile MessageList/MessageModel
  * Public hierarchical message model for custom, non-widget user interfaces.
  *
  * Use this model for consumers such as Qt Quick that need the MessageList
@@ -42,12 +45,20 @@ class MESSAGELIST_EXPORT MessageModel : public QIdentityProxyModel
     Q_OBJECT
 
 public:
+    /*!
+     */
     explicit MessageModel(QObject *parent = nullptr);
+    /*!
+     */
     ~MessageModel() override;
 
+    /*!
+     */
     void setEntityTreeModel(QAbstractItemModel *model);
+    /*!
+     */
     void setCollectionSelectionModel(QItemSelectionModel *selectionModel);
-    /**
+    /*!
      * Sets how message relationships are inferred. Use NoThreading for a flat
      * list, PerfectOnly for In-Reply-To matching, PerfectAndReferences to also
      * use References, or PerfectReferencesAndSubject to additionally use
@@ -55,9 +66,17 @@ public:
      */
     void setThreading(Core::Aggregation::Threading threading);
 
+    /*!
+     */
     [[nodiscard]] Core::Aggregation::Threading threading() const;
+    /*!
+     */
     [[nodiscard]] QModelIndex indexForItemId(Akonadi::Item::Id id) const;
+    /*!
+     */
     [[nodiscard]] QModelIndex threadRoot(const QModelIndex &index) const;
+    /*!
+     */
     [[nodiscard]] QList<Akonadi::Item::Id> threadItemIds(const QModelIndex &index) const;
 
 private:

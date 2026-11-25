@@ -22,7 +22,7 @@
 
 namespace MessageComposer
 {
-/** Represents a mail recipient. */
+/*! Represents a mail recipient. */
 class RecipientPrivate;
 /*!
  * \class MessageComposer::Recipient
@@ -36,6 +36,8 @@ public:
     using Ptr = QSharedPointer<Recipient>;
     using List = QList<Recipient::Ptr>;
 
+    /*!
+     */
     enum Type : uint8_t {
         To,
         Cc,

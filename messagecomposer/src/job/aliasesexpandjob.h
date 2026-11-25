@@ -33,31 +33,31 @@ class MESSAGECOMPOSER_EXPORT AliasesExpandJob : public KJob
     Q_OBJECT
 
 public:
-    /**
+    /*!
      * Creates a new aliases expand job.
      *
-     * @param recipients The comma separated list of recipient.
-     * @param defaultDomain The default domain that shall be used when expanding aliases.
-     * @param parent The parent object.
+     * \param recipients The comma separated list of recipient.
+     * \param defaultDomain The default domain that shall be used when expanding aliases.
+     * \param parent The parent object.
      */
     explicit AliasesExpandJob(const QString &recipients, const QString &defaultDomain, QObject *parent = nullptr);
 
-    /**
+    /*!
      * Destroys the aliases expand job.
      */
     ~AliasesExpandJob() override;
 
-    /**
+    /*!
      * Starts the job.
      */
     void start() override;
 
-    /**
+    /*!
      * Returns the expanded email addresses.
      */
     [[nodiscard]] QString addresses() const;
 
-    /**
+    /*!
      * Returns the list of distribution lists that resolved to an empty member list.
      */
     [[nodiscard]] QStringList emptyDistributionLists() const;

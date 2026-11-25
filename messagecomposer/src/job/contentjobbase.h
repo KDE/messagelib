@@ -37,7 +37,7 @@ public:
     /*! \brief Destroys the ContentJobBase. */
     ~ContentJobBase() override;
 
-    /**
+    /*!
       Starts processing this ContentJobBase asynchronously.
       This processes all children in order first, then calls process().
       Emits finished() after all processing is done, and the
@@ -45,36 +45,38 @@ public:
     */
     void start() override;
 
-    /**
+    /*!
       Get the resulting KMime::Content that the ContentJobBase has generated.
     */
     [[nodiscard]] const std::unique_ptr<KMime::Content> &content() const;
-    /**
+    /*!
       Move the generated KMime::Content object out of the job.
     */
     [[nodiscard]] std::unique_ptr<KMime::Content> &&takeContent();
 
-    /**
+    /*!
       This is meant to be used instead of KCompositeJob::addSubjob(), making
       it possible to add subjobs from the outside.
-      Transfers ownership of the @p job to this object.
+      Transfers ownership of the \a job to this object.
     */
     bool appendSubjob(ContentJobBase *job);
 
 protected:
+    /*!
+     */
     ContentJobBase(ContentJobBasePrivate &dd, QObject *parent);
 
-    /** Use appendSubjob() instead. */
+    /*! Use appendSubjob() instead. */
     bool addSubjob(KJob *job) override;
 
 protected Q_SLOTS:
-    /**
+    /*!
       Reimplement to do additional stuff before processing children, such as
       adding more subjobs.  Remember to call the base implementation.
     */
     virtual void doStart();
 
-    /**
+    /*!
       This is called after all the children have been processed.
       (You must use their resulting contents, or delete them.)
       Reimplement in subclasses to process concrete content.  Call
@@ -82,6 +84,8 @@ protected Q_SLOTS:
     */
     virtual void process() = 0;
 
+    /*!
+     */
     void slotResult(KJob *job) override;
 
 private:

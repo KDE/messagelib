@@ -25,15 +25,29 @@ class MESSAGEVIEWER_EXPORT MessageViewerConfigureSettingsPluginManager : public 
 {
     Q_OBJECT
 public:
+    /*!
+     */
     static MessageViewerConfigureSettingsPluginManager *self();
 
+    /*!
+     */
     ~MessageViewerConfigureSettingsPluginManager() override;
 
+    /*!
+     */
     [[nodiscard]] QList<MessageViewer::MessageViewerConfigureSettingsPlugin *> pluginsList() const;
 
+    /*!
+     */
     [[nodiscard]] QList<TextAddonsWidgets::PluginUtilData> pluginsDataList() const;
+    /*!
+     */
     [[nodiscard]] QString configPrefixSettingKey() const;
+    /*!
+     */
     [[nodiscard]] QString configGroupName() const;
+    /*!
+     */
     [[nodiscard]] MessageViewerConfigureSettingsPlugin *pluginFromIdentifier(const QString &id);
 
 private:

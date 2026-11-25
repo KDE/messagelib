@@ -66,7 +66,11 @@ protected:
     /*!
      */
     void addActionToMenu(KActionMenu *menu, QActionGroup *actionGroup);
+    /*!
+     */
     QList<KToggleAction *> mAction;
+    /*!
+     */
     HeaderStylePlugin *const mHeaderStylePlugin;
 };
 }

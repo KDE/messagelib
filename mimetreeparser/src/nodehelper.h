@@ -36,7 +36,7 @@ class BodyPartMemento;
 
 namespace MimeTreeParser
 {
-/**
+/*!
  * \class MimeTreeParser::NodeHelper
  * \inmodule MimeTreeParser
  * \inheaderfile MimeTreeParser/NodeHelper
@@ -100,7 +100,7 @@ public:
      */
     [[nodiscard]] PartMetaData partMetaData(const KMime::Content *node);
 
-    /**
+    /*!
      *  Set the 'Content-Type' by mime-magic from the contents of the body.
      *  If autoDecode is true the decoded body will be used for mime type
      *  determination (this does not change the body itself).
@@ -132,25 +132,25 @@ public:
      */
     [[nodiscard]] QDateTime dateHeader(const KMime::Content *message) const;
 
-    /** Attach an extra node to an existing node */
+    /*! Attach an extra node to an existing node */
     void attachExtraContent(const KMime::Content *topLevelNode, std::unique_ptr<KMime::Content> &&content);
 
     /*!
      */
     void cleanExtraContent(const KMime::Content *topLevelNode);
 
-    /** Get the extra nodes attached to the @param topLevelNode and all sub-nodes of @param topLevelNode */
+    /*! Get the extra nodes attached to the \param topLevelNode and all sub-nodes of \param topLevelNode */
     [[nodiscard]] QList<KMime::Content *> extraContents(const KMime::Content *topLevelNode) const;
 
-    /** Return a modified message (node tree) starting from @param topLevelNode that has the original nodes and the extra nodes.
+    /*! Return a modified message (node tree) starting from \param topLevelNode that has the original nodes and the extra nodes.
         The caller has the responsibility to delete the new message.
      */
     [[nodiscard]] KMime::Message *messageWithExtraContent(KMime::Content *topLevelNode);
 
-    /** Get a codec suitable for this message part */
+    /*! Get a codec suitable for this message part */
     [[nodiscard]] QByteArray codecName(const KMime::Content *node) const;
 
-    /** Set the charset the user selected for the message to display */
+    /*! Set the charset the user selected for the message to display */
     void setOverrideCodec(const KMime::Content *node, const QByteArray &codec);
 
     /*!
@@ -163,40 +163,50 @@ public:
 
     // A flag to remember if the node was embedded. This is useful for attachment nodes, the reader
     // needs to know if they were displayed inline or not.
+    /*!
+     */
     [[nodiscard]] bool isNodeDisplayedEmbedded(const KMime::Content *node) const;
+    /*!
+     */
     void setNodeDisplayedEmbedded(const KMime::Content *node, bool displayedEmbedded);
 
     // Same as above, but this time determines if the node was hidden or not
+    /*!
+     */
     [[nodiscard]] bool isNodeDisplayedHidden(const KMime::Content *node) const;
+    /*!
+     */
     void setNodeDisplayedHidden(const KMime::Content *node, bool displayedHidden);
 
-    /**
+    /*!
      * Writes the given message part to a temporary file and returns the
      * name of this file or QString() if writing failed.
      */
     QString writeNodeToTempFile(const KMime::Content *node);
 
+    /*!
+     */
     [[nodiscard]] QString writeFileToTempFile(const KMime::Content *node, const QString &filename);
 
-    /**
+    /*!
      * Returns the temporary file path and name where this node was saved, or an empty url
      * if it wasn't saved yet with writeNodeToTempFile()
      */
     [[nodiscard]] QUrl tempFileUrlFromNode(const KMime::Content *node);
 
-    /**
+    /*!
      * Creates a temporary dir for saving attachments, etc.
      * Will be automatically deleted when another message is viewed.
-     * @param param Optional part of the directory name.
+     * \param param Optional part of the directory name.
      */
     [[nodiscard]] QString createTempDir(const QString &param = QString());
 
-    /**
+    /*!
      * Cleanup the attachment temp files
      */
     void removeTempFiles();
 
-    /**
+    /*!
      * Add a file to the list of managed temporary files
      */
     void addTempFile(const QString &file);
@@ -215,32 +225,32 @@ public:
      */
     [[nodiscard]] QString asHREF(const KMime::Content *node) const;
 
-    /**
-     * @return true if this node is a child or an encapsulated message
+    /*!
+     * \return true if this node is a child or an encapsulated message
      */
     [[nodiscard]] static bool isInEncapsulatedMessage(const KMime::Content *node);
 
-    /**
+    /*!
      * Returns the charset for the given node. If no charset is specified
      * for the node, the defaultCharset() is returned.
      */
     [[nodiscard]] static QByteArray charset(const KMime::Content *node);
 
-    /**
+    /*!
      * Returns a usable filename for a node, that can be the filename from the
      * content disposition header, or if that one is empty, the name from the
      * content type header.
      */
     [[nodiscard]] static QString fileName(const KMime::Content *node);
 
-    /**
+    /*!
      * Fixes an encoding received by a KDE function and returns the proper,
      * MIME-compliant encoding name instead.
-     * @see encodingForName
+     * \sa encodingForName
      */
     [[nodiscard]] static QString fixEncoding(const QString &encoding); // TODO(Andras) move to a utility class?
 
-    /**
+    /*!
      * Drop-in replacement for KCharsets::encodingForName(). The problem with
      * the KCharsets function is that it returns "human-readable" encoding names
      * like "ISO 8859-15" instead of valid encoding names like "ISO-8859-15".
@@ -248,7 +258,7 @@ public:
      */
     [[nodiscard]] static QString encodingForName(const QString &descriptiveName); // TODO(Andras) move to a utility class?
 
-    /**
+    /*!
      * Return a list of the supported encodings
      */
     [[nodiscard]] static QStringList supportedEncodings(); // TODO(Andras) move to a utility class?
@@ -261,8 +271,8 @@ public:
      */
     [[nodiscard]] KMime::Content *decryptedNodeForContent(const KMime::Content *content) const;
 
-    /**
-     * This function returns the unencrypted message that is based on @p originalMessage.
+    /*!
+     * This function returns the unencrypted message that is based on \a originalMessage.
      * All encrypted MIME parts are removed and replaced by their decrypted plain-text versions.
      * Encrypted parts that are within signed parts are not replaced, since that would invalidate
      * the signature.
@@ -271,19 +281,21 @@ public:
      * current NodeHelper before, because parseObjectTree() actually decrypts the message and stores
      * the decrypted nodes by calling attachExtraContent().
      *
-     * @return the unencrypted message or an invalid pointer if the original message didn't contain
+     * \return the unencrypted message or an invalid pointer if the original message didn't contain
      *         a part that needed to be modified.
      */
     [[nodiscard]] std::shared_ptr<KMime::Message> unencryptedMessage(const std::shared_ptr<KMime::Message> &originalMessage);
 
-    /**
+    /*!
      * Returns a list of attachments of attached extra content nodes.
      * This is mainly useful is order to get attachments of encrypted messages.
      * Note that this does not include attachments from the primary node tree.
-     * @see KMime::Content::attachments().
+     * \sa KMime::Content::attachments().
      */
     [[nodiscard]] QList<KMime::Content *> attachmentsOfExtraContents() const;
 
+    /*!
+     */
     [[nodiscard]] QString extractAttachmentIndex(const QString &path) const;
 Q_SIGNALS:
     /*!
@@ -296,14 +308,14 @@ private:
     MIMETREEPARSER_NO_EXPORT void mergeExtraNodes(KMime::Content *node);
     MIMETREEPARSER_NO_EXPORT void cleanFromExtraNodes(KMime::Content *node);
 
-    /** Creates a persistent index string that bridges the gap between the
+    /*! Creates a persistent index string that bridges the gap between the
         permanent nodes and the temporary ones.
 
         Used internally for robust indexing.
     **/
     [[nodiscard]] QString persistentIndex(const KMime::Content *node) const;
 
-    /** Translates the persistentIndex into a node back
+    /*! Translates the persistentIndex into a node back
 
         node: any node of the actually message to what the persistentIndex is interpreded
     **/

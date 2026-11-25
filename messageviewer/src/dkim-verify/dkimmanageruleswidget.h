@@ -23,6 +23,8 @@ class DKIMManageRulesComboBox;
 class MESSAGEVIEWER_EXPORT DKIMManageRulesWidgetItem : public QTreeWidgetItem
 {
 public:
+    /*!
+     */
     enum ColumnType : uint8_t {
         Enabled = 0,
         Domain = 1,

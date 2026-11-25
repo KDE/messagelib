@@ -58,13 +58,20 @@ class ViewerPrivate;
 class RemoteContentMenu;
 
 /*!
+ * \class MessageViewer::AbstractMessageLoadedHandler
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/Viewer
  * An interface to plug in a handler that is called when
  * an message item has been loaded into the view.
  */
 class MESSAGEVIEWER_EXPORT AbstractMessageLoadedHandler
 {
 public:
+    /*!
+     */
     AbstractMessageLoadedHandler();
+    /*!
+     */
     virtual ~AbstractMessageLoadedHandler();
 
     /*!
@@ -76,6 +83,8 @@ public:
     virtual void setItem(const Akonadi::Item &item) = 0;
 
 protected:
+    /*!
+     */
     Akonadi::Session *session() const;
 
 private:
@@ -87,6 +96,9 @@ private:
 };
 
 /*!
+ * \class MessageViewer::Viewer
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/Viewer
  * This is the main widget for the viewer.
  * See the documentation of ViewerPrivate for implementation details.
  * See Mainpage.dox for an overview of the classes in the messageviewer library.
@@ -105,6 +117,8 @@ public:
      * \a actionCollection the action collection where the widget's actions will belong to
      */
     explicit Viewer(QWidget *parent, QWidget *widget = nullptr, KActionCollection *actionCollection = nullptr);
+    /*!
+     */
     ~Viewer() override;
 
     /*!
@@ -117,6 +131,8 @@ public:
      */
     [[nodiscard]] Akonadi::Item messageItem() const;
 
+    /*!
+     */
     enum DisplayFormatMessage {
         UseGlobalSetting = 0,
         Text = 1,
@@ -126,6 +142,8 @@ public:
     };
     Q_ENUM(DisplayFormatMessage)
 
+    /*!
+     */
     enum AttachmentAction {
         Open = 1,
         OpenWith,
@@ -140,6 +158,8 @@ public:
     };
     Q_ENUM(AttachmentAction)
 
+    /*!
+     */
     enum ResourceOnlineMode {
         AllResources = 0,
         SelectedResource = 1,
@@ -184,6 +204,8 @@ public:
      */
     void clear(MimeTreeParser::UpdateMode updateMode = MimeTreeParser::Delayed);
 
+    /*!
+     */
     void update(MimeTreeParser::UpdateMode updateMode = MimeTreeParser::Delayed);
 
     /*!
@@ -192,10 +214,14 @@ public:
      */
     void printMessage(const Akonadi::Item &msg);
 
+    /*!
+     */
     void printPreviewMessage(const Akonadi::Item &message);
 
     /*! Print the currently displayed message */
     void print();
+    /*!
+     */
     void printPreview();
 
     /*! Get the html override setting */
@@ -241,9 +267,15 @@ public:
     /*! Returns true if the message view is scrolled to the bottom. */
     void atBottom();
 
+    /*!
+     */
     [[nodiscard]] bool isFixedFont() const;
+    /*!
+     */
     void setUseFixedFont(bool useFixedFont);
 
+    /*!
+     */
     [[nodiscard]] QWidget *mainWindow();
 
     /*! Enforce message decryption. */
@@ -253,51 +285,119 @@ public:
      * Initiates a delete, by sending a signal to delete the message item */
     void deleteMessage();
 
+    /*!
+     */
     [[nodiscard]] const AttachmentStrategy *attachmentStrategy() const;
+    /*!
+     */
     void setAttachmentStrategy(const AttachmentStrategy *strategy);
 
+    /*!
+     */
     [[nodiscard]] QString overrideEncoding() const;
+    /*!
+     */
     void setOverrideEncoding(const QString &encoding);
+    /*!
+     */
     [[nodiscard]] CSSHelper *cssHelper() const;
+    /*!
+     */
     void setPrinting(bool enable);
 
+    /*!
+     */
     void selectAll();
+    /*!
+     */
     void copySelectionToClipboard();
 
+    /*!
+     */
     void setZoomFactor(qreal zoomFactor);
 
+    /*!
+     */
     [[nodiscard]] KToggleAction *toggleFixFontAction() const;
 
+    /*!
+     */
     [[nodiscard]] KToggleAction *toggleMimePartTreeAction() const;
 
+    /*!
+     */
     [[nodiscard]] QAction *selectAllAction() const;
+    /*!
+     */
     [[nodiscard]] QAction *copyURLAction() const;
+    /*!
+     */
     [[nodiscard]] QAction *copyAction() const;
+    /*!
+     */
     [[nodiscard]] QAction *urlOpenAction() const;
+    /*!
+     */
     [[nodiscard]] QAction *speakTextAction() const;
+    /*!
+     */
     [[nodiscard]] QAction *copyImageLocation() const;
+    /*!
+     */
     [[nodiscard]] QAction *viewSourceAction() const;
+    /*!
+     */
     [[nodiscard]] QAction *findInMessageAction() const;
+    /*!
+     */
     [[nodiscard]] QAction *saveAsAction() const;
+    /*!
+     */
     [[nodiscard]] QAction *saveMessageDisplayFormatAction() const;
+    /*!
+     */
     [[nodiscard]] QAction *resetMessageDisplayFormatAction() const;
+    /*!
+     */
     [[nodiscard]] QAction *shareTextAction() const;
 
+    /*!
+     */
     [[nodiscard]] QAction *developmentToolsAction() const;
+    /*!
+     */
     [[nodiscard]] KToggleAction *disableEmoticonAction() const;
+    /*!
+     */
     [[nodiscard]] KActionMenu *shareServiceUrlMenu() const;
+    /*!
+     */
     [[nodiscard]] HeaderStylePlugin *headerStylePlugin() const;
+    /*!
+     */
     [[nodiscard]] MessageViewer::DKIMViewerMenu *dkimViewerMenu();
 
+    /*!
+     */
     [[nodiscard]] MessageViewer::RemoteContentMenu *remoteContentMenu() const;
 
+    /*!
+     */
     void setPluginName(const QString &pluginName);
 
+    /*!
+     */
     void writeConfig(bool withSync = true);
 
+    /*!
+     */
     [[nodiscard]] QUrl urlClicked() const;
+    /*!
+     */
     [[nodiscard]] QUrl imageUrlClicked() const;
 
+    /*!
+     */
     void readConfig();
 
     /*! A QAIM tree model of the message structure. */
@@ -323,43 +423,95 @@ public:
      */
     void removeMessageLoadedHandler(AbstractMessageLoadedHandler *handler);
 
+    /*!
+     */
     [[nodiscard]] QString selectedText() const;
 
+    /*!
+     */
     void saveMainFrameScreenshotInFile(const QString &filename);
+    /*!
+     */
     [[nodiscard]] bool mimePartTreeIsEmpty() const;
 
+    /*!
+     */
     void showOpenAttachmentFolderWidget(const QList<QUrl> &urls);
+    /*!
+     */
     [[nodiscard]] QList<QAction *> viewerPluginActionList(MessageViewer::ViewerPluginInterface::SpecificFeatureTypes features);
+    /*!
+     */
     [[nodiscard]] QList<QAction *> interceptorUrlActions(const WebEngineViewer::WebHitTestResult &result) const;
 
+    /*!
+     */
     void runJavaScript(const QString &code);
+    /*!
+     */
     void setPrintElementBackground(bool printElementBackground);
 
+    /*!
+     */
     [[nodiscard]] bool printingMode() const;
 
+    /*!
+     */
     [[nodiscard]] bool showSignatureDetails() const;
+    /*!
+     */
     void setShowSignatureDetails(bool showDetails);
 
+    /*!
+     */
     [[nodiscard]] qreal webViewZoomFactor() const;
+    /*!
+     */
     void setWebViewZoomFactor(qreal factor);
 
+    /*!
+     */
     [[nodiscard]] bool showEncryptionDetails() const;
+    /*!
+     */
     void setShowEncryptionDetails(bool showDetails);
 
+    /*!
+     */
     void hasMultiMessages(bool messages);
+    /*!
+     */
     void updateShowMultiMessagesButton(bool enablePreviousButton, bool enableNextButton);
+    /*!
+     */
     [[nodiscard]] MessageViewer::DKIMWidgetInfo *dkimWidgetInfo();
 
+    /*!
+     */
     void exportToPdf(const QString &fileName);
 
+    /*!
+     */
     void showDevelopmentTools();
 
+    /*!
+     */
     void setIdentityManager(KIdentityManagementCore::IdentityManager *ident);
+    /*!
+     */
     void setFolderIdentity(uint folderIdentity);
+    /*!
+     */
     void showMdnInformations(const QString &message, bool canDeny);
+    /*!
+     */
     void mdnWarningAnimatedHide();
 Q_SIGNALS:
+    /*!
+     */
     void moveMessageToTrash();
+    /*!
+     */
     void pageIsScrolledToBottom(bool);
 
     /*!
@@ -370,6 +522,8 @@ Q_SIGNALS:
 
     /*! The user presses the right mouse button. 'url' may be 0. */
     void popupMenu(const Akonadi::Item &msg, const QUrl &url, const QUrl &imageUrl, const QPoint &mousePos);
+    /*!
+     */
     void displayPopupMenu(const Akonadi::Item &msg, const WebEngineViewer::WebHitTestResult &result, const QPoint &mousePos);
     /*!
      * The message viewer handles some types of urls itself, most notably http(s)
@@ -377,27 +531,51 @@ Q_SIGNALS:
      */
     void urlClicked(const Akonadi::Item &, const QUrl &);
 
+    /*!
+     */
     void requestConfigSync();
 
     /// Emitted when the content should be shown in a separate window
+    /*!
+     */
     void showReader(KMime::Content *aMsgPart, bool aHTML, const QString &encoding);
 
     /// Emitted when the message should be shown in a separate window
+    /*!
+     */
     void showMessage(const std::shared_ptr<KMime::Message> &message, const QString &encoding);
 
+    /*!
+     */
     void replyMessageTo(const std::shared_ptr<KMime::Message> &message, bool replyToAll);
 
+    /*!
+     */
     void deleteMessage(const Akonadi::Item &);
 
     /// Emitted when the item, previously set with setMessageItem, has been removed.
+    /*!
+     */
     void itemRemoved();
 
+    /*!
+     */
     void makeResourceOnline(MessageViewer::Viewer::ResourceOnlineMode mode);
 
+    /*!
+     */
     void printingFinished();
+    /*!
+     */
     void zoomChanged(qreal zoomFactor);
+    /*!
+     */
     void showNextMessage();
+    /*!
+     */
     void showPreviousMessage();
+    /*!
+     */
     void sendResponse(MessageViewer::MDNWarningWidget::ResponseType type, KMime::MDN::SendingMode sendingMode);
 
 private:
@@ -413,29 +591,63 @@ public Q_SLOTS:
      * the methods take the absolute value of
      */
     void slotScrollUp();
+    /*!
+     */
     void slotScrollDown();
+    /*!
+     */
     void slotScrollPrior();
+    /*!
+     */
     void slotScrollNext();
+    /*!
+     */
     void slotJumpDown();
+    /*!
+     */
     void slotFind();
+    /*!
+     */
     void slotSaveMessage();
+    /*!
+     */
     void slotAttachmentSaveAs();
+    /*!
+     */
     void slotAttachmentSaveAll();
+    /*!
+     */
     void slotShowMessageSource();
+    /*!
+     */
     void slotZoomIn();
+    /*!
+     */
     void slotZoomOut();
+    /*!
+     */
     void slotZoomReset();
+    /*!
+     */
     void slotChangeDisplayMail(MessageViewer::Viewer::DisplayFormatMessage, bool);
 
 protected:
     /*! Some necessary event handling. */
     void closeEvent(QCloseEvent *) override;
+    /*!
+     */
     void resizeEvent(QResizeEvent *) override;
     /*! Watch for palette changes */
     [[nodiscard]] bool event(QEvent *e) override;
+    /*!
+     */
     [[nodiscard]] bool eventFilter(QObject *obj, QEvent *event) override;
+    /*!
+     */
     void changeEvent(QEvent *event) override;
 
+    /*!
+     */
     ViewerPrivate *const d_ptr;
 };
 }

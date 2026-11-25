@@ -72,28 +72,68 @@ public:
 
 public Q_SLOTS:
     /// model sets these
+    /*!
+     */
     void setEncryptEnabled(bool enabled);
+    /*!
+     */
     void setSignEnabled(bool enabled);
     /// compression is async...
+    /*!
+     */
     void compressAttachment(const MessageCore::AttachmentPart::Ptr &part, bool compress);
+    /*!
+     */
     void showContextMenu();
+    /*!
+     */
     void openAttachment(const MessageCore::AttachmentPart::Ptr &part);
+    /*!
+     */
     void viewAttachment(const MessageCore::AttachmentPart::Ptr &part);
+    /*!
+     */
     void editAttachment(MessageCore::AttachmentPart::Ptr part,
                         MessageComposer::EditorWatcher::OpenWithOption option = MessageComposer::EditorWatcher::NoOpenWithDialog);
+    /*!
+     */
     void editAttachmentWith(const MessageCore::AttachmentPart::Ptr &part);
+    /*!
+     */
     void saveAttachmentAs(const MessageCore::AttachmentPart::Ptr &part);
+    /*!
+     */
     void attachmentProperties(const MessageCore::AttachmentPart::Ptr &part);
+    /*!
+     */
     void showAddAttachmentFileDialog();
+    /*!
+     */
     void showAddAttachmentCompressedDirectoryDialog();
     /// sets sign, encrypt, shows properties dialog if so configured
+    /*!
+     */
     void addAttachment(const MessageCore::AttachmentPart::Ptr &part);
+    /*!
+     */
     void addAttachment(const QUrl &url);
+    /*!
+     */
     void addAttachmentUrlSync(const QUrl &url);
+    /*!
+     */
     void addAttachments(const QList<QUrl> &urls);
+    /*!
+     */
     void showAttachPublicKeyDialog();
+    /*!
+     */
     void showAttachVcard();
+    /*!
+     */
     void showAttachClipBoard();
+    /*!
+     */
     virtual void attachMyPublicKey();
 
 Q_SIGNALS:
@@ -116,9 +156,17 @@ Q_SIGNALS:
     void fileAttached();
 
 protected:
+    /*!
+     */
     void exportPublicKey(const QString &fingerprint);
+    /*!
+     */
     void enableAttachPublicKey(bool enable);
+    /*!
+     */
     void enableAttachMyPublicKey(bool enable);
+    /*!
+     */
     void byteArrayToRemoteFile(const QByteArray &aData, const QUrl &aURL, bool overwrite = false);
 
 private:

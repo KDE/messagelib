@@ -58,6 +58,8 @@ protected:
     void setAttachmentPart(const AttachmentPart::Ptr &part);
 
 protected Q_SLOTS:
+    /*!
+     */
     virtual void doStart() = 0;
 
 private:

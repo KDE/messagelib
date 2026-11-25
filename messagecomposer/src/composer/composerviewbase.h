@@ -84,13 +84,21 @@ class MESSAGECOMPOSER_EXPORT ComposerViewBase : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit ComposerViewBase(QObject *parent = nullptr, QWidget *widget = nullptr);
+    /*!
+     */
     ~ComposerViewBase() override;
 
+    /*!
+     */
     enum Confirmation : uint8_t {
         LetUserConfirm,
         NoConfirmationNeeded,
     };
+    /*!
+     */
     enum MissingAttachment : uint8_t {
         NoMissingAttachmentFound,
         FoundMissingAttachmentAndSending,
@@ -98,190 +106,296 @@ public:
         FoundMissingAttachmentAndCancel,
     };
 
+    /*!
+     */
     enum FailedType : uint8_t {
         Sending,
         AutoSave,
     };
 
-    /**
+    /*!
      * Set the message to be opened in the composer window, and set the internal data structures to
      *  keep track of it.
      */
     void setMessage(const std::shared_ptr<KMime::Message> &newMsg, bool allowDecryption);
 
+    /*!
+     */
     void updateTemplate(const std::shared_ptr<KMime::Message> &msg);
 
-    /**
+    /*!
      * Send the message with the specified method, saving it in the specified folder.
      */
     void send(MessageComposer::MessageSender::SendMethod method, MessageComposer::MessageSender::SaveIn saveIn, bool checkMailDispatcher = true);
 
-    /**
+    /*!
      * Returns true if there is at least one composer job running.
      */
     [[nodiscard]] bool isComposing() const;
 
-    /**
+    /*!
      * Add the given attachment to the message.
      */
     void addAttachment(const QUrl &url, const QString &comment, bool sync);
+    /*!
+     */
     void addAttachment(const QString &name, const QString &filename, const QString &charset, const QByteArray &data, const QByteArray &mimeType);
-    /**
-     * @param part is only read from, ownership remains with the caller.
+    /*!
+     * \param part is only read from, ownership remains with the caller.
      */
     void addAttachmentPart(const KMime::Content *part);
 
+    /*!
+     */
     void fillComposer(MessageComposer::ComposerJob *composer);
 
-    /**
+    /*!
      * Header fields in recipients editor.
      */
     [[nodiscard]] QString to() const;
+    /*!
+     */
     [[nodiscard]] QString cc() const;
+    /*!
+     */
     [[nodiscard]] QString bcc() const;
+    /*!
+     */
     [[nodiscard]] QString from() const;
+    /*!
+     */
     [[nodiscard]] QString replyTo() const;
+    /*!
+     */
     [[nodiscard]] QString subject() const;
 
+    /*!
+     */
     [[nodiscard]] const KIdentityManagementCore::Identity &currentIdentity() const;
+    /*!
+     */
     [[nodiscard]] bool autocryptEnabled() const;
 
-    /**
+    /*!
      * The following are for setting the various options and widgets in the
      *  composer.
      */
     void setAttachmentModel(MessageComposer::AttachmentModel *model);
+    /*!
+     */
     [[nodiscard]] MessageComposer::AttachmentModel *attachmentModel();
 
+    /*!
+     */
     void setAttachmentController(MessageComposer::AttachmentControllerBase *controller);
+    /*!
+     */
     [[nodiscard]] MessageComposer::AttachmentControllerBase *attachmentController();
 
+    /*!
+     */
     void setRecipientsEditor(MessageComposer::RecipientsEditor *recEditor);
+    /*!
+     */
     [[nodiscard]] MessageComposer::RecipientsEditor *recipientsEditor();
 
+    /*!
+     */
     void setSignatureController(MessageComposer::SignatureController *sigController);
+    /*!
+     */
     [[nodiscard]] MessageComposer::SignatureController *signatureController();
 
+    /*!
+     */
     void setIdentityCombo(KIdentityManagementWidgets::IdentityCombo *identCombo);
+    /*!
+     */
     [[nodiscard]] KIdentityManagementWidgets::IdentityCombo *identityCombo();
 
+    /*!
+     */
     void setIdentityManager(KIdentityManagementCore::IdentityManager *identMan);
+    /*!
+     */
     [[nodiscard]] KIdentityManagementCore::IdentityManager *identityManager() const;
 
+    /*!
+     */
     void setEditor(MessageComposer::RichTextComposerNg *editor);
+    /*!
+     */
     [[nodiscard]] MessageComposer::RichTextComposerNg *editor() const;
 
+    /*!
+     */
     void setTransportCombo(MailTransport::TransportComboBox *transpCombo);
+    /*!
+     */
     [[nodiscard]] MailTransport::TransportComboBox *transportComboBox() const;
 
+    /*!
+     */
     void setFccCombo(Akonadi::CollectionComboBox *fcc);
+    /*!
+     */
     [[nodiscard]] Akonadi::CollectionComboBox *fccCombo() const;
+    /*!
+     */
     void setFcc(const Akonadi::Collection &id);
 
+    /*!
+     */
     [[nodiscard]] Sonnet::DictionaryComboBox *dictionary() const;
+    /*!
+     */
     void setDictionary(Sonnet::DictionaryComboBox *dictionary);
 
-    /**
+    /*!
      * Widgets for editing differ in client classes, so
      *  values are set before sending.
      */
     void setFrom(const QString &from);
+    /*!
+     */
     void setSubject(const QString &subject);
 
-    /**
+    /*!
      * The following are various settings the user can modify when composing a message. If they are not set,
      *  the default values will be used.
      */
     void setCryptoOptions(bool sign, bool encrypt, Kleo::CryptoMessageFormat format, bool neverEncryptDrafts = false);
+    /*!
+     */
     void setMDNRequested(bool mdnRequested);
+    /*!
+     */
     void setUrgent(bool urgent);
 
+    /*!
+     */
     void setAutoSaveInterval(int interval);
+    /*!
+     */
     void setCustomHeader(const QMap<QByteArray, QString> &customHeader);
 
-    /**
+    /*!
      * Enables/disables autosaving depending on the value of the autosave
      * interval.
      */
     void updateAutoSave();
 
-    /**
+    /*!
      * Sets the filename to use when autosaving something. This is used when the client recovers
      * the autosave files: It calls this method, so that the composer uses the same filename again.
      * That way, the recovered autosave file is properly cleaned up in cleanupAutoSave():
      */
     void setAutoSaveFileName(const QString &fileName);
 
-    /**
+    /*!
      * Stop autosaving and delete the autosaved message.
      */
     void cleanupAutoSave();
 
+    /*!
+     */
     void setParentWidgetForGui(QWidget *);
 
-    /**
+    /*!
      * Check if the mail has references to attachments, but no attachments are added to it.
      * If missing attachments are found, a dialog to add new attachments is shown.
-     * @param attachmentKeywords a list with the keywords that indicate an attachment should be present
-     * @return NoMissingAttachmentFound, if there is attachment in email
+     * \param attachmentKeywords a list with the keywords that indicate an attachment should be present
+     * \return NoMissingAttachmentFound, if there is attachment in email
      *         FoundMissingAttachmentAndCancelSending, if mail might miss attachment but sending
      *         FoundMissingAttachmentAndAddedAttachment, if mail might miss attachment and we added an attachment
      *         FoundMissingAttachmentAndCancel, if mail might miss attachment and cancel sending
      */
     [[nodiscard]] ComposerViewBase::MissingAttachment checkForMissingAttachments(const QStringList &attachmentKeywords);
 
+    /*!
+     */
     [[nodiscard]] bool hasMissingAttachments(const QStringList &attachmentKeywords);
 
+    /*!
+     */
     void setSendLaterInfo(SendLaterInfo *info);
+    /*!
+     */
     [[nodiscard]] SendLaterInfo *sendLaterInfo() const;
+    /*!
+     */
     void saveMailSettings();
 
+    /*!
+     */
     [[nodiscard]] QDate followUpDate() const;
+    /*!
+     */
     void setFollowUpDate(const QDate &followUpDate);
 
+    /*!
+     */
     void clearFollowUp();
 
+    /*!
+     */
     [[nodiscard]] Akonadi::Collection followUpCollection() const;
+    /*!
+     */
     void setFollowUpCollection(const Akonadi::Collection &followUpCollection);
 
+    /*!
+     */
     [[nodiscard]] std::shared_ptr<KMime::Message> msg() const;
 
+    /*!
+     */
     [[nodiscard]] bool requestDeleveryConfirmation() const;
+    /*!
+     */
     void setRequestDeleveryConfirmation(bool requestDeleveryConfirmation);
 
+    /*!
+     */
     [[nodiscard]] std::shared_ptr<Kleo::ExpiryChecker> expiryChecker();
 
 public Q_SLOTS:
+    /*!
+     */
     void identityChanged(const KIdentityManagementCore::Identity &ident, const KIdentityManagementCore::Identity &oldIdent, bool msgCleared = false);
 
-    /**
+    /*!
      * Save the message.
      */
     void autoSaveMessage();
 
 Q_SIGNALS:
-    /**
+    /*!
      * Message sending completed successfully.
      */
     void sentSuccessfully(Akonadi::Item::Id id);
-    /**
+    /*!
      * Message sending failed with given error message.
      */
     void failed(const QString &errorMessage, MessageComposer::ComposerViewBase::FailedType type = Sending);
 
-    /**
+    /*!
      * The composer was modified. This can happen behind the users' back
      *  when, for example, and autosaved message was recovered.
      */
     void modified(bool isModified);
 
-    /**
+    /*!
      * Enabling or disabling HTML in the editor is affected
      *  by various client options, so when that would otherwise happen,
      *  hand it off to the client to enact it for real.
      */
     void disableHtml(MessageComposer::ComposerViewBase::Confirmation);
+    /*!
+     */
     void enableHtml();
+    /*!
+     */
     void tooManyRecipient(bool);
 
 private:
@@ -294,13 +408,13 @@ private:
     MESSAGECOMPOSER_NO_EXPORT void slotSaveMessage(KJob *job);
 
     [[nodiscard]] MESSAGECOMPOSER_NO_EXPORT Akonadi::Collection defaultSpecialTarget() const;
-    /**
+    /*!
      * Searches the mime tree, where root is the root node, for embedded images,
      * extracts them froom the body and adds them to the editor.
      */
     MESSAGECOMPOSER_NO_EXPORT void collectImages(KMime::Content *root);
     [[nodiscard]] MESSAGECOMPOSER_NO_EXPORT bool inlineSigningEncryptionSelected() const;
-    /**
+    /*!
      * Applies the user changes to the message object of the composer
      * and signs/encrypts the message if activated.
      * Disables the controls of the composer window.
@@ -327,19 +441,19 @@ private:
     MESSAGECOMPOSER_NO_EXPORT bool
     determineWhetherToEncrypt(bool doEncryptCompletely, KeyResolver *keyResolver, bool encryptSomething, bool signSomething, bool &result, bool &canceled);
 
-    /**
+    /*!
      * Writes out autosave data to the disk from the KMime::Message message.
      * Also appends the msgNum to the filename as a message can have a number of
      * KMime::Messages
      */
     MESSAGECOMPOSER_NO_EXPORT void writeAutoSaveToDisk(const std::shared_ptr<KMime::Message> &message);
 
-    /**
+    /*!
      * Returns the autosave interval in milliseconds (as needed for QTimer).
      */
     int autoSaveInterval() const;
 
-    /**
+    /*!
      * Initialize autosaving (timer and filename).
      */
     MESSAGECOMPOSER_NO_EXPORT void initAutoSave();

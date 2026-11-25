@@ -30,7 +30,11 @@ namespace MessageViewer
 class MESSAGEVIEWER_EXPORT HtmlWriter
 {
 public:
+    /*!
+     */
     HtmlWriter();
+    /*!
+     */
     virtual ~HtmlWriter();
 
     /*! Signal the begin of stuff to write.
@@ -72,8 +76,12 @@ public:
      */
     virtual void embedPart(const QByteArray &contentId, const QString &url) = 0;
 
+    /*!
+     */
     virtual void setExtraHead(const QString &str) = 0;
 
+    /*!
+     */
     virtual void setStyleBody(const QString &styleBody) = 0;
 
 private:

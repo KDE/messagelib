@@ -61,6 +61,8 @@ public:
     void setStyleBody(const QString &styleBody) override;
 
 protected:
+    /*!
+     */
     QByteArray m_data;
 
 private:

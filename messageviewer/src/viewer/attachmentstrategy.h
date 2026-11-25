@@ -43,6 +43,8 @@ public:
     //
     // Factory methods:
     //
+    /*!
+     */
     enum Type {
         Iconic,
         Smart,
@@ -104,6 +106,8 @@ public:
     // Behavioral:
     //
 
+    /*!
+     */
     enum Display {
         None,
         AsIcon,

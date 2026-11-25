@@ -25,21 +25,47 @@ class MESSAGEVIEWER_EXPORT ViewerPluginManager : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit ViewerPluginManager(QObject *parent = nullptr);
+    /*!
+     */
     ~ViewerPluginManager() override;
+    /*!
+     */
     static ViewerPluginManager *self();
 
+    /*!
+     */
     [[nodiscard]] QList<MessageViewer::ViewerPlugin *> pluginsList() const;
+    /*!
+     */
     [[nodiscard]] QList<TextAddonsWidgets::PluginUtilData> pluginsDataList() const;
 
+    /*!
+     */
     [[nodiscard]] bool initializePluginList();
 
+    /*!
+     */
     [[nodiscard]] QString configGroupName() const;
+    /*!
+     */
     [[nodiscard]] QString configPrefixSettingKey() const;
+    /*!
+     */
     [[nodiscard]] MessageViewer::ViewerPlugin *pluginFromIdentifier(const QString &id);
+    /*!
+     */
     [[nodiscard]] QString pluginDirectory() const;
+    /*!
+     */
     void setPluginDirectory(const QString &directory);
+    /*!
+     */
     void setPluginName(const QString &pluginName);
+    /*!
+     */
     [[nodiscard]] QString pluginName() const;
 
 private:

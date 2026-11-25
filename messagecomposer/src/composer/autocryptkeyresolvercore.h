@@ -14,6 +14,11 @@ namespace MessageComposer
 {
 class AutocryptKeyResolverCorePrivate;
 
+/*!
+ * \class MessageComposer::AutocryptKeyResolverCore
+ * \inmodule MessageComposer
+ * \inheaderfile MessageComposer/AutocryptKeyResolverCore
+ */
 class MESSAGECOMPOSER_EXPORT AutocryptKeyResolverCore : public Kleo::KeyResolverCore
 {
 public:

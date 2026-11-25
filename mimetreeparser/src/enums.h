@@ -8,7 +8,7 @@
 
 namespace MimeTreeParser
 {
-/**
+/*!
  * The display update mode: Force updates the display immediately, Delayed updates
  * after some time (150ms by default)
  */
@@ -17,7 +17,7 @@ enum UpdateMode {
     Delayed,
 };
 
-/** Flags for the encryption state. */
+/*! Flags for the encryption state. */
 typedef enum {
     KMMsgEncryptionStateUnknown = ' ',
     KMMsgNotEncrypted = 'N',
@@ -26,7 +26,7 @@ typedef enum {
     KMMsgEncryptionProblematic = 'X'
 } KMMsgEncryptionState;
 
-/** Flags for the signature state. */
+/*! Flags for the signature state. */
 typedef enum {
     KMMsgSignatureStateUnknown = ' ',
     KMMsgNotSigned = 'N',

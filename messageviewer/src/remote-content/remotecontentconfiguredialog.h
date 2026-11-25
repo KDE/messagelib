@@ -22,7 +22,11 @@ class MESSAGEVIEWER_EXPORT RemoteContentConfigureDialog : public QDialog
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit RemoteContentConfigureDialog(QWidget *parent = nullptr);
+    /*!
+     */
     ~RemoteContentConfigureDialog() override;
 
 private:

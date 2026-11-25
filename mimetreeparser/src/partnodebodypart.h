@@ -15,12 +15,12 @@
 
 namespace MimeTreeParser
 {
-/**
+/*!
  * \class MimeTreeParser::PartNodeBodyPart
  * \inmodule MimeTreeParser
  * \inheaderfile MimeTreeParser/PartNodeBodyPart
  *
- * @short an implementation of the BodyPart interface using KMime::Content's
+ * \brief an implementation of the BodyPart interface using KMime::Content's
  */
 class MIMETREEPARSER_EXPORT PartNodeBodyPart : public Interface::BodyPart
 {

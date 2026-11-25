@@ -22,14 +22,28 @@ class MESSAGEVIEWER_EXPORT MessageViewerConfigureSettingsPluginWidget : public Q
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit MessageViewerConfigureSettingsPluginWidget(QWidget *parent = nullptr);
+    /*!
+     */
     ~MessageViewerConfigureSettingsPluginWidget() override;
 
+    /*!
+     */
     virtual void loadSettings() = 0;
+    /*!
+     */
     virtual void saveSettings() = 0;
+    /*!
+     */
     virtual void resetSettings() = 0;
+    /*!
+     */
     [[nodiscard]] virtual QString helpAnchor() const;
 Q_SIGNALS:
+    /*!
+     */
     void configureChanged();
 };
 }

@@ -27,6 +27,8 @@ class MESSAGECORE_EXPORT DKIMCheckSignatureJob : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     enum class DKIMStatus : uint8_t {
         Unknown = 0,
         Valid = 1,
@@ -36,6 +38,8 @@ public:
     };
     Q_ENUM(DKIMStatus)
 
+    /*!
+     */
     enum class DKIMError : uint8_t {
         Any = 0,
         CorruptedBodyHash = 1,
@@ -60,6 +64,8 @@ public:
         PublicKeyConversionError = 20,
     };
     Q_ENUM(DKIMError)
+    /*!
+     */
     enum class DKIMWarning : uint8_t {
         Any = 0,
         SignatureExpired = 1,
@@ -70,6 +76,8 @@ public:
     };
     Q_ENUM(DKIMWarning)
 
+    /*!
+     */
     enum class AuthenticationMethod : uint8_t {
         Unknown = 0,
         Dkim = 1,
@@ -82,31 +90,77 @@ public:
     };
     Q_ENUM(AuthenticationMethod)
 
+    /*!
+     * \class MessageCore::DKIMCheckSignatureJob::DKIMCheckSignatureAuthenticationResult
+     * \inmodule MessageCore
+     * \inheaderfile MessageCore/DKIMCheckSignatureJob
+     */
     struct MESSAGECORE_EXPORT DKIMCheckSignatureAuthenticationResult {
+        /*!
+         */
         QString errorStr;
+        /*!
+         */
         QString infoResult;
+        /*!
+         */
         AuthenticationMethod method = AuthenticationMethod::Unknown;
+        /*!
+         */
         DKIMCheckSignatureJob::DKIMStatus status = DKIMCheckSignatureJob::DKIMStatus::Unknown;
+        /*!
+         */
         QString sdid; // Signing Domain Identifier
+        /*!
+         */
         QString auid; // DKIM MAY optionally provide a single responsible Agent or User Identifier (AUID).
+        /*!
+         */
         [[nodiscard]] bool operator==(const DKIMCheckSignatureAuthenticationResult &other) const = default;
+        /*!
+         */
         [[nodiscard]] bool isValid() const;
     };
 
+    /*!
+     * \class MessageCore::DKIMCheckSignatureJob::CheckSignatureResult
+     * \inmodule MessageCore
+     * \inheaderfile MessageCore/DKIMCheckSignatureJob
+     */
     struct MESSAGECORE_EXPORT CheckSignatureResult {
+        /*!
+         */
         [[nodiscard]] bool isValid() const;
 
+        /*!
+         */
         [[nodiscard]] bool operator==(const CheckSignatureResult &other) const = default;
 
+        /*!
+         */
         [[nodiscard]] bool operator!=(const CheckSignatureResult &other) const;
 
+        /*!
+         */
         DKIMCheckSignatureJob::DKIMError error = DKIMCheckSignatureJob::DKIMError::Any;
+        /*!
+         */
         DKIMCheckSignatureJob::DKIMWarning warning = DKIMCheckSignatureJob::DKIMWarning::Any;
+        /*!
+         */
         DKIMCheckSignatureJob::DKIMStatus status = DKIMCheckSignatureJob::DKIMStatus::Unknown;
+        /*!
+         */
         QString sdid; // Signing Domain Identifier
+        /*!
+         */
         QString auid; // DKIM MAY optionally provide a single responsible Agent or User Identifier (AUID).
+        /*!
+         */
         QString fromEmail;
 
+        /*!
+         */
         QList<DKIMCheckSignatureAuthenticationResult> listSignatureAuthenticationResult;
     };
 

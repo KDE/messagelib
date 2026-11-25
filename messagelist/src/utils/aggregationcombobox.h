@@ -18,6 +18,11 @@ namespace Core
 class StorageModel;
 }
 
+/*!
+ * \namespace MessageList::Utils
+ * \inmodule MessageList
+ * \inheaderfile MessageList/AggregationComboBox
+ */
 namespace Utils
 {
 class AggregationComboBoxPrivate;
@@ -33,22 +38,44 @@ class MESSAGELIST_EXPORT AggregationComboBox : public QComboBox
     Q_OBJECT
 
 public:
+    /*!
+     */
     explicit AggregationComboBox(QWidget *parent);
+    /*!
+     */
     ~AggregationComboBox() override;
 
+    /*!
+     */
     [[nodiscard]] QString currentAggregation() const;
 
+    /*!
+     */
     void writeDefaultConfig() const;
 
+    /*!
+     */
     void writeStorageModelConfig(MessageList::Core::StorageModel *storageModel, bool isPrivateSetting) const;
+    /*!
+     */
     void writeStorageModelConfig(const QString &id, bool isPrivateSetting) const;
 
+    /*!
+     */
     void readStorageModelConfig(MessageList::Core::StorageModel *storageModel, bool &isPrivateSetting);
+    /*!
+     */
     void readStorageModelConfig(const Akonadi::Collection &col, bool &isPrivateSetting);
+    /*!
+     */
     void readStorageModelConfig(const QString &id, bool &isPrivateSetting);
 
 public:
+    /*!
+     */
     void selectDefault();
+    /*!
+     */
     void slotLoadAggregations();
 
 private:

@@ -24,12 +24,20 @@ class MESSAGEVIEWER_EXPORT MessageViewerConfigureSettingsPlugin : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit MessageViewerConfigureSettingsPlugin(QObject *parent = nullptr);
+    /*!
+     */
     ~MessageViewerConfigureSettingsPlugin() override;
 
+    /*!
+     */
     virtual void showConfigureDialog(QWidget *parent);
 
 Q_SIGNALS:
+    /*!
+     */
     void configChanged();
 
 private:

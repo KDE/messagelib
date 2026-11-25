@@ -115,6 +115,8 @@ Q_SIGNALS:
     void activateFilter(MessageList::Core::Filter *f);
 
 protected:
+    /*!
+     */
     bool eventFilter(QObject *object, QEvent *e) override;
 
 private:

@@ -32,6 +32,8 @@ public:
      */
     ~MessageViewerCheckBeforeDeletingParameters();
 
+    /*!
+     */
     enum DeleteType : uint8_t {
         Unknown = 0,
         MoveToTrash = 1,

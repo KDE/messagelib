@@ -21,13 +21,22 @@ class Message;
 
 namespace MessageComposer
 {
+/*!
+ * \class MessageComposer::MessageSender
+ * \inmodule MessageComposer
+ * \inheaderfile MessageComposer/MessageSender
+ */
 class MessageSender
 {
     Q_GADGET
 protected:
+    /*!
+     */
     virtual ~MessageSender() = 0;
 
 public:
+    /*!
+     */
     enum SendMethod {
         SendDefault = -1,
         SendImmediate = true,
@@ -35,6 +44,8 @@ public:
     };
     Q_ENUM(SendMethod)
 
+    /*!
+     */
     enum SaveIn : uint8_t {
         SaveInNone,
         SaveInDrafts,
@@ -43,24 +54,24 @@ public:
     };
     Q_ENUM(SaveIn)
 
-    /**
+    /*!
        Send given message.
 
-       The message is either queued (@p method == SendLater) or sent
-       immediately (@p method = SendImmediate). The default behaviour,
+       The message is either queued (\a method == SendLater) or sent
+       immediately (\a method = SendImmediate). The default behaviour,
        as selected with setSendImmediate(), can be overwritten with the
-       parameter @p method.  The sender takes ownership of the given
+       parameter \a method.  The sender takes ownership of the given
        message on success, so DO NOT DELETE OR MODIFY the message
        further.
 
-       @return true on success.
+       \return true on success.
     */
     [[nodiscard]] bool send(const std::shared_ptr<KMime::Message> &msg, SendMethod method = SendDefault)
     {
         return doSend(msg, method);
     }
 
-    /**
+    /*!
        Start sending all queued messages.
 
        FIXME: what does success mean here, if it's only _start_ sending?
@@ -68,7 +79,7 @@ public:
        Optionally a transport can be specified that will be used as the
        default transport.
 
-       @return true on success.
+       \return true on success.
     */
     [[nodiscard]] bool sendQueued(int transportId = -1)
     {
@@ -76,7 +87,11 @@ public:
     }
 
 protected:
+    /*!
+     */
     [[nodiscard]] virtual bool doSend(const std::shared_ptr<KMime::Message> &msg, short sendNow) = 0;
+    /*!
+     */
     [[nodiscard]] virtual bool doSendQueued(int transportId) = 0;
 };
 

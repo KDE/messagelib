@@ -25,6 +25,8 @@ namespace MessageViewer
 class MESSAGEVIEWER_EXPORT HeaderStrategy
 {
 protected:
+    /*!
+     */
     HeaderStrategy();
 
 public:
@@ -34,11 +36,15 @@ public:
     //
     // Methods for handling the strategies:
     //
+    /*!
+     */
     virtual const char *name() const = 0;
 
     //
     // HeaderStrategy interface:
     //
+    /*!
+     */
     enum DefaultPolicy : uint8_t {
         Display,
         Hide,

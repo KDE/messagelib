@@ -47,6 +47,8 @@ public:
     [[nodiscard]] bool canStart() const;
 
 Q_SIGNALS:
+    /*!
+     */
     void showMdnInfo(const MessageComposer::MDNAdviceHelper::MDNMessateInfo &mdnInfo, KMime::MDN::SendingMode s);
 
 private:

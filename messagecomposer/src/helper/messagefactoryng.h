@@ -24,7 +24,7 @@ class IdentityManager;
 
 namespace MessageComposer
 {
-/**
+/*!
  * Enumeration that defines the available reply "modes"
  */
 enum ReplyStrategy : uint8_t {
@@ -40,7 +40,10 @@ enum MDNAdvice : uint8_t {
     MDNSendDenied,
     MDNSend,
 };
-/**
+/*!
+ * \class MessageComposer::MessageFactoryNG
+ * \inmodule MessageComposer
+ * \inheaderfile MessageComposer/MessageFactoryNG
  * Contains various factory methods for creating new messages such as replies, MDNs, forwards, etc.
  */
 class MESSAGECOMPOSER_EXPORT MessageFactoryNG : public QObject
@@ -49,8 +52,17 @@ class MESSAGECOMPOSER_EXPORT MessageFactoryNG : public QObject
 public:
     /// Small helper structure which encapsulates the KMime::Message created when creating a reply, and
     /// the reply mode
+    /*!
+     * \class MessageComposer::MessageFactoryNG::MessageReply
+     * \inmodule MessageComposer
+     * \inheaderfile MessageComposer/MessageFactoryNG
+     */
     struct MessageReply {
+        /*!
+         */
         std::shared_ptr<KMime::Message> msg = nullptr; ///< The actual reply message
+        /*!
+         */
         bool replyAll = false; ///< If true, the "reply all" template was used, otherwise the normal reply
         ///  template
     };
@@ -65,7 +77,7 @@ public:
      */
     ~MessageFactoryNG() override;
 
-    /**
+    /*!
      * Create a new message that is a reply to this message, filling all
      * required header fields with the proper values. The returned message
      * is not stored in any folder. Marks this message as replied.
@@ -73,12 +85,12 @@ public:
      */
     void createReplyAsync();
 
-    /** Create a new message that is a forward of this message, filling all
+    /*! Create a new message that is a forward of this message, filling all
     required header fields with the proper values. The returned message
     is not stored in any folder. Marks this message as forwarded. */
     void createForwardAsync();
 
-    /**
+    /*!
      * Create a forward from the given list of messages, attaching each
      *  message to be forwarded to the new forwarded message.
      *
@@ -88,7 +100,7 @@ public:
     [[nodiscard]] std::pair<std::shared_ptr<KMime::Message>, std::vector<std::unique_ptr<KMime::Content>>>
     createAttachedForward(const Akonadi::Item::List &items = Akonadi::Item::List());
 
-    /** Create a new message that is a redirect to this message, filling all
+    /*! Create a new message that is a redirect to this message, filling all
     required header fields with the proper values. The returned message
     is not stored in any folder. Marks this message as replied.
     Redirects differ from forwards so they are forwarded to some other
@@ -102,24 +114,26 @@ public:
                                                                  const QString &fcc = QString(),
                                                                  int identity = -1);
 
+    /*!
+     */
     [[nodiscard]] std::shared_ptr<KMime::Message> createResend();
 
-    /** Create a new message that is a delivery receipt of this message,
+    /*! Create a new message that is a delivery receipt of this message,
       filling required header fields with the proper values. The
       returned message is not stored in any folder. */
     [[nodiscard]] std::shared_ptr<KMime::Message> createDeliveryReceipt();
 
-    /** Create a new message that is a MDN for this message, filling all
+    /*! Create a new message that is a MDN for this message, filling all
       required fields with proper values. The returned message is not
       stored in any folder.
 
-      @param a Use AutomaticAction for filtering and ManualAction for
+      \param a Use AutomaticAction for filtering and ManualAction for
                user-induced events.
-      @param d See docs for KMime::MDN::DispositionType
-      @param s See docs for KMime::MDN::SendingMode (in KMail, use MDNAdvideDialog to ask the user for this parameter)
-      @param m See docs for KMime::MDN::DispositionModifier
+      \param d See docs for KMime::MDN::DispositionType
+      \param s See docs for KMime::MDN::SendingMode (in KMail, use MDNAdvideDialog to ask the user for this parameter)
+      \param m See docs for KMime::MDN::DispositionModifier
 
-      @return The notification message or 0, if none should be sent, as well as the state of the MDN operation.
+      \return The notification message or 0, if none should be sent, as well as the state of the MDN operation.
     **/
     [[nodiscard]] std::shared_ptr<KMime::Message> createMDN(KMime::MDN::ActionMode a,
                                                             KMime::MDN::DispositionType d,
@@ -127,7 +141,7 @@ public:
                                                             int mdnQuoteOriginal = 0,
                                                             const QList<KMime::MDN::DispositionModifier> &m = QList<KMime::MDN::DispositionModifier>());
 
-    /**
+    /*!
      * Create a new forwarded MIME digest. If the user is trying to forward multiple messages
      *  at once all inline, they can choose to have them be compiled into a single digest
      *  message.
@@ -135,68 +149,68 @@ public:
      * This will return a header message and individual message parts to be set as
      *  attachments.
      *
-     * @param msgs List of messages to be composed into a digest
+     * \param msgs List of messages to be composed into a digest
      */
     [[nodiscard]] std::pair<std::shared_ptr<KMime::Message>, std::unique_ptr<KMime::Content>> createForwardDigestMIME(const Akonadi::Item::List &items);
 
-    /**
+    /*!
      * Set the identity manager to be used when creating messages.
      * Required to be set before create* is called, otherwise the created messages
      *  might have the wrong identity data.
      */
     void setIdentityManager(KIdentityManagementCore::IdentityManager *ident);
 
-    /**
+    /*!
      * Set the reply strategy to use. Default is ReplySmart.
      */
     void setReplyStrategy(MessageComposer::ReplyStrategy replyStrategy);
 
-    /**
+    /*!
      * Set the selection to be used to  base the reply on.
      */
     void setSelection(const QString &selection);
 
-    /**
+    /*!
      * Whether to quote the original message in the reply.
      *  Default is to quote.
      */
     void setQuote(bool quote);
 
-    /**
+    /*!
      * Set the template to be used when creating the reply. Default is to not
      *  use any template at all.
      */
     void setTemplate(const QString &templ);
 
-    /**
+    /*!
      * Set extra mailinglist addresses to send the created message to.
      * Any mailing-list addresses specified in the original message
      * itself will be added by MessageFactoryNG, so no need to add those manually.
      */
     void setMailingListAddresses(const QList<KMime::Types::Mailbox> &listAddresses);
 
-    /**
+    /*!
      *  Set the identity that is set for the folder in which the given message is.
      *   It is used as a fallback when finding the identity if it can't be found in
      *   any other way.
-     *   @param folderIdentityId an uoid of KIdentityManagementCore::Identity
+     *   \param folderIdentityId an uoid of KIdentityManagementCore::Identity
      */
     void setFolderIdentity(uint folderIdentityId);
 
-    /**
+    /*!
      * Whether or not to put the reply to a message in the same folder as the message itself.
      *  If so, specify the folder id in which to put them. Default is -1, which means to not put
      *  replies in the same folder at all.
      */
     void putRepliesInSameFolder(Akonadi::Item::Id parentColId = -1);
 
-    /**
+    /*!
      * When creating MDNs, the user needs to be asked for confirmation in specific
      *  cases according to RFC 2298.
      */
     [[nodiscard]] static bool MDNRequested(const std::shared_ptr<KMime::Message> &msg);
 
-    /**
+    /*!
      * If sending an MDN requires confirmation due to multiple addresses.
      *
      * RFC 2298: [ Confirmation from the user SHOULD be obtained (or no
@@ -205,7 +219,7 @@ public:
      */
     [[nodiscard]] static bool MDNConfirmMultipleRecipients(const std::shared_ptr<KMime::Message> &msg);
 
-    /**
+    /*!
      *
      * If sending an MDN requires confirmation due to discrepancy between MDN
      *  header and Return-Path header.
@@ -217,14 +231,20 @@ public:
      * header in the message [...]
      */
     [[nodiscard]] static bool MDNReturnPathEmpty(const std::shared_ptr<KMime::Message> &msg);
+    /*!
+     */
     [[nodiscard]] static bool MDNReturnPathNotInRecieptTo(const std::shared_ptr<KMime::Message> &msg);
 
-    /**
+    /*!
      * If the MDN headers contain options that KMail can't parse
      */
     [[nodiscard]] static bool MDNMDNUnknownOption(const std::shared_ptr<KMime::Message> &msg);
 
+    /*!
+     */
     [[nodiscard]] bool replyAsHtml() const;
+    /*!
+     */
     void setReplyAsHtml(bool replyAsHtml);
 
 Q_SIGNALS:
@@ -238,7 +258,7 @@ Q_SIGNALS:
 private:
     MESSAGECOMPOSER_NO_EXPORT void slotCreateReplyDone(const std::shared_ptr<KMime::Message> &msg, bool replyAll);
     MESSAGECOMPOSER_NO_EXPORT void slotCreateForwardDone(const std::shared_ptr<KMime::Message> &msg);
-    /** @return the UOID of the identity for this message.
+    /*! \return the UOID of the identity for this message.
       Searches the "x-kmail-identity" header and if that fails,
       searches with KIdentityManagementCore::IdentityManager::identityForAddress()
     **/

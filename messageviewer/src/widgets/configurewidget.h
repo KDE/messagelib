@@ -16,6 +16,9 @@ namespace MessageViewer
 {
 class ConfigureWidgetPrivate;
 /*!
+ * \class MessageViewer::ConfigureWidget
+ * \inmodule MessageViewer
+ * \inheaderfile MessageViewer/ConfigureWidget
  * Configure widget that can be used in a KConfigDialog.
  *
  * \author Andras Mantia <andras@kdab.net>
@@ -24,8 +27,12 @@ class MESSAGEVIEWER_EXPORT ConfigureWidget : public QWidget
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit ConfigureWidget(QWidget *parent = nullptr);
 
+    /*!
+     */
     ~ConfigureWidget() override;
 
     //
@@ -35,7 +42,11 @@ public:
     // required by KConfigDialogManager.
     //
 
+    /*!
+     */
     void writeConfig();
+    /*!
+     */
     void readConfig();
 
 Q_SIGNALS:

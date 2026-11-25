@@ -12,12 +12,17 @@
 #include <gpgme++/key.h>
 #include <vector>
 
-/**
+/*!
  * Simple interface that both EncryptJob and SignEncryptJob implement
  * so the composer can extract some encryption-specific job info from them
  */
 namespace MessageComposer
 {
+/*!
+ * \class MessageComposer::AbstractEncryptJob
+ * \inmodule MessageComposer
+ * \inheaderfile MessageComposer/AbstractEncryptJob
+ */
 class AbstractEncryptJob
 {
 public:
@@ -25,12 +30,12 @@ public:
      */
     virtual ~AbstractEncryptJob() = default;
 
-    /**
+    /*!
      * Set the list of encryption keys that should be used.
      */
     virtual void setEncryptionKeys(const std::vector<GpgME::Key> &keys) = 0;
 
-    /**
+    /*!
      * Set the recipients that this message should be encrypted to.
      */
     virtual void setRecipients(const QStringList &rec) = 0;

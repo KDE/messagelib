@@ -13,7 +13,7 @@
 namespace MimeTreeParser
 {
 class AttachmentTemporaryFilesDirsPrivate;
-/**
+/*!
  * \class MimeTreeParser::AttachmentTemporaryFilesDirs
  * \inmodule MimeTreeParser
  * \inheaderfile MimeTreeParser/AttachmentTemporaryFilesDirs

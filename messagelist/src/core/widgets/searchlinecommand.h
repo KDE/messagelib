@@ -23,6 +23,8 @@ class MESSAGELIST_EXPORT SearchLineCommand
 {
     Q_GADGET
 public:
+    /*!
+     */
     enum SearchLineType : uint8_t {
         Unknown = 0,
         HasStateOrAttachment,
@@ -58,14 +60,35 @@ public:
         NewerThan,
     };
     Q_ENUM(SearchLineType)
+    /*!
+     * \class MessageList::Core::SearchLineCommand::SearchLineInfo
+     * \inmodule MessageList
+     * \inheaderfile MessageList/SearchLineCommand
+     */
     struct MESSAGELIST_EXPORT SearchLineInfo {
+        /*!
+         */
         SearchLineType type = SearchLineType::Unknown;
+        /*!
+         */
         QString argument;
+        /*!
+         */
         void clear();
+        /*!
+         */
         [[nodiscard]] bool isValid() const;
+        /*!
+         */
         [[nodiscard]] bool operator==(const SearchLineInfo &other) const = default;
+        /*!
+         */
         [[nodiscard]] bool isValidDate() const;
+        /*!
+         */
         [[nodiscard]] bool mustBeUnique() const;
+        /*!
+         */
         [[nodiscard]] qint64 convertArgumentAsSize() const;
     };
     /*!

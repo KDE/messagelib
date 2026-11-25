@@ -17,22 +17,22 @@ namespace KIdentityManagementCore
 class IdentityManager;
 }
 
-/**
+/*!
  * Contains random helper methods when dealing with messages.
  * TODO: cleanup and organize, along with similar methods in messageviewer.
  */
 namespace MessageHelper
 {
-/** Initialize header fields. Should be called on new messages
+/*! Initialize header fields. Should be called on new messages
     if they are not set manually. E.g. before composing. Calling
     of setAutomaticFields(), see below, is still required. */
 void MESSAGECOMPOSER_EXPORT initHeader(const std::shared_ptr<KMime::Message> &message, const KIdentityManagementCore::IdentityManager *identMan, uint id = 0);
 
-/** Set the from, to, cc, bcc, encryption etc headers as specified in the
+/*! Set the from, to, cc, bcc, encryption etc headers as specified in the
  * given identity. */
 void applyIdentity(const std::shared_ptr<KMime::Message> &message, const KIdentityManagementCore::IdentityManager *identMan, uint id);
 
-/** Initialize headers fields according to the identity and the transport
+/*! Initialize headers fields according to the identity and the transport
    header of the given original message */
 void initFromMessage(const std::shared_ptr<KMime::Message> &msg,
                      const std::shared_ptr<KMime::Message> &orgiMsg,
@@ -40,9 +40,11 @@ void initFromMessage(const std::shared_ptr<KMime::Message> &msg,
                      uint id,
                      bool idHeaders = true);
 
+/*!
+ */
 MESSAGECOMPOSER_EXPORT QList<KMime::Types::AddrSpec> extractAddrSpecs(const std::shared_ptr<const KMime::Message> &msg, const QByteArray &header);
 
-/** Set fields that are either automatically set (Message-id)
+/*! Set fields that are either automatically set (Message-id)
     or that do not change from one message to another (MIME-Version).
     Call this method before sending *after* all changes to the message
     are done because this method does things different if there are

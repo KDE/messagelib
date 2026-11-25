@@ -10,7 +10,7 @@
 
 namespace MessageList::Core
 {
-/**
+/*!
  * Pre-selection is the action of automatically selecting a message just after the folder
  * has finished loading. We may want to select the message that was selected the last
  * time this folder has been open, or we may want to select the first unread message.
@@ -31,7 +31,7 @@ enum PreSelectionMode {
     PreSelectOldestCentered, //< preselect the oldest message, by date
 };
 
-/**
+/*!
  * This enum is used in the view message selection functions (for instance View::nextMessageItem()).
  */
 enum MessageTypeFilter {
@@ -39,7 +39,7 @@ enum MessageTypeFilter {
     MessageTypeUnreadOnly, //< Select only unread messages
 };
 
-/**
+/*!
  * This enum is used in the view message selection functions (for instance View::selectNextMessage())
  */
 enum ExistingSelectionBehaviour {

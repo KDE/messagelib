@@ -23,6 +23,8 @@ class MESSAGEVIEWER_EXPORT ScamDetectionInfo
 {
     Q_GADGET
 public:
+    /*!
+     */
     enum ScamDetectionField : uint8_t {
         None = 0,
         DisableAll = 1,

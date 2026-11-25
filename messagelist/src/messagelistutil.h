@@ -17,13 +17,28 @@ class Item;
 }
 namespace MessageList
 {
+/*!
+ * \namespace MessageList::Util
+ * \inmodule MessageList
+ * \inheaderfile MessageList/MessageListUtil
+ */
 namespace Util
 {
+/*!
+ */
 MESSAGELIST_EXPORT void deleteConfig(const QString &collectionId);
+/*!
+ */
 MESSAGELIST_EXPORT QColor unreadDefaultMessageColor();
+/*!
+ */
 MESSAGELIST_EXPORT QColor importantDefaultMessageColor();
+/*!
+ */
 MESSAGELIST_EXPORT QColor todoDefaultMessageColor();
 /// Returns the first few lines of the actual email text if available.
+/*!
+ */
 MESSAGELIST_EXPORT QString contentSummary(const Akonadi::Item &item);
 }
 }

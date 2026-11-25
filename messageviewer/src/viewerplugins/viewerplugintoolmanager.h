@@ -25,19 +25,39 @@ class MESSAGEVIEWER_EXPORT ViewerPluginToolManager : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit ViewerPluginToolManager(QWidget *parentWidget, QObject *parent = nullptr);
+    /*!
+     */
     ~ViewerPluginToolManager() override;
 
+    /*!
+     */
     void closeAllTools();
 
+    /*!
+     */
     void createView();
+    /*!
+     */
     void setActionCollection(KActionCollection *ac);
 
+    /*!
+     */
     void setPluginName(const QString &pluginName);
+    /*!
+     */
     [[nodiscard]] QString pluginName() const;
+    /*!
+     */
     [[nodiscard]] bool initializePluginList();
+    /*!
+     */
     [[nodiscard]] QList<QAction *> viewerPluginActionList(ViewerPluginInterface::SpecificFeatureTypes features) const;
 
+    /*!
+     */
     void updateActions(const Akonadi::Item &messageItem);
 
     /*!
@@ -45,9 +65,15 @@ public:
      */
     void refreshActionList();
 
+    /*!
+     */
     void setPluginDirectory(const QString &directory);
+    /*!
+     */
     [[nodiscard]] QString pluginDirectory() const;
 Q_SIGNALS:
+    /*!
+     */
     void activatePlugin(MessageViewer::ViewerPluginInterface *);
 
 private:

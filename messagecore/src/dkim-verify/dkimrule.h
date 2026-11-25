@@ -23,6 +23,8 @@ class MESSAGECORE_EXPORT DKIMRule
 {
     Q_GADGET
 public:
+    /*!
+     */
     enum class RuleType : uint8_t {
         Unknown = 0,
         MustBeSigned = 1,

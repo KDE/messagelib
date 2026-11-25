@@ -41,7 +41,7 @@ namespace Interface
 {
 class ObjectTreeSource;
 }
-/**
+/*!
  * \class MimeTreeParser::MessagePart
  * \inmodule MimeTreeParser
  * \inheaderfile MimeTreeParser/MessagePart
@@ -106,15 +106,15 @@ public:
      */
     [[nodiscard]] virtual QString htmlContent() const;
 
-    /** The KMime::Content* node that's represented by this part.
-     *  Can be @c nullptr, e.g. for sub-parts of an inline signed body part.
+    /*! The KMime::Content* node that's represented by this part.
+     *  Can be \c nullptr, e.g. for sub-parts of an inline signed body part.
      */
     [[nodiscard]] KMime::Content *content() const;
     /*!
      */
     void setContent(KMime::Content *node);
 
-    /** The KMime::Content* node that's the source of this part.
+    /*! The KMime::Content* node that's the source of this part.
      *  This is not necessarily the same as content(), for example for
      *  broken-up multipart nodes.
      */
@@ -125,12 +125,12 @@ public:
     /*!
      */
     [[nodiscard]] bool isAttachment() const;
-    /** @see KMime::Content::index() */
+    /*! \sa KMime::Content::index() */
     [[nodiscard]] QString attachmentIndex() const;
-    /** @see NodeHelper::asHREF */
+    /*! \sa NodeHelper::asHREF */
     [[nodiscard]] QString attachmentLink() const;
 
-    /** Returns a string representation of an URL that can be used
+    /*! Returns a string representation of an URL that can be used
      *  to invoke a BodyPartURLHandler for this body part.
      */
     [[nodiscard]] QString makeLink(const QString &path) const;
@@ -213,12 +213,14 @@ protected:
      */
     [[nodiscard]] QString renderInternalText() const;
 
+    /*!
+     */
     ObjectTreeParser *mOtp = nullptr;
 
 private:
     std::unique_ptr<MessagePartPrivate> d;
 };
-/**
+/*!
  * \class MimeTreeParser::MimeMessagePart
  * \inmodule MimeTreeParser
  * \inheaderfile MimeTreeParser/MessagePart
@@ -262,7 +264,7 @@ public:
 private:
     const bool mOnlyOneMimePart;
 };
-/**
+/*!
  * \class MimeTreeParser::MessagePartList
  * \inmodule MimeTreeParser
  * \inheaderfile MimeTreeParser/MessagePart
@@ -307,7 +309,7 @@ enum IconType {
     IconExternal,
     IconInline
 };
-/**
+/*!
  * \class MimeTreeParser::TextMessagePart
  * \inmodule MimeTreeParser
  * \inheaderfile MimeTreeParser/MessagePart
@@ -336,20 +338,32 @@ public:
      */
     ~TextMessagePart() override;
 
+    /*!
+     */
     KMMsgSignatureState signatureState() const;
+    /*!
+     */
     KMMsgEncryptionState encryptionState() const;
 
+    /*!
+     */
     [[nodiscard]] bool decryptMessage() const;
 
+    /*!
+     */
     [[nodiscard]] bool showLink() const;
+    /*!
+     */
     [[nodiscard]] bool isFirstTextPart() const;
+    /*!
+     */
     [[nodiscard]] bool hasLabel() const;
 
-    /** The attachment filename, or the closest approximation thereof we have. */
+    /*! The attachment filename, or the closest approximation thereof we have. */
     [[nodiscard]] QString label() const;
-    /** A description of this attachment, if provided. */
+    /*! A description of this attachment, if provided. */
     [[nodiscard]] QString comment() const;
-    /** Temporary file containing the part content. */
+    /*! Temporary file containing the part content. */
     [[nodiscard]] QString temporaryFilePath() const;
 
 private:
@@ -359,7 +373,7 @@ private:
     KMMsgEncryptionState mEncryptionState;
     const bool mDecryptMessage;
 };
-/**
+/*!
  * \class MimeTreeParser::AttachmentMessagePart
  * \inmodule MimeTreeParser
  * \inheaderfile MimeTreeParser/MessagePart
@@ -383,7 +397,7 @@ public:
      */
     ~AttachmentMessagePart() override;
 };
-/**
+/*!
  * \class MimeTreeParser::HtmlMessagePart
  * \inmodule MimeTreeParser
  * \inheaderfile MimeTreeParser/MessagePart
@@ -407,19 +421,29 @@ public:
      */
     ~HtmlMessagePart() override;
 
+    /*!
+     */
     [[nodiscard]] QString text() const override;
+    /*!
+     */
     [[nodiscard]] QString plaintextContent() const override;
 
+    /*!
+     */
     void fix() const override;
+    /*!
+     */
     [[nodiscard]] bool isHtml() const override;
 
+    /*!
+     */
     [[nodiscard]] QString bodyHtml() const;
 
 private:
     QString mBodyHTML;
     QByteArray mCharset;
 };
-/**
+/*!
  * \class MimeTreeParser::AlternativeMessagePart
  * \inmodule MimeTreeParser
  * \inheaderfile MimeTreeParser/MessagePart
@@ -443,20 +467,38 @@ public:
      */
     ~AlternativeMessagePart() override;
 
+    /*!
+     */
     [[nodiscard]] QString text() const override;
 
+    /*!
+     */
     [[nodiscard]] Util::HtmlMode preferredMode() const;
+    /*!
+     */
     void setPreferredMode(Util::HtmlMode preferredMode);
 
+    /*!
+     */
     [[nodiscard]] bool isHtml() const override;
 
+    /*!
+     */
     [[nodiscard]] QString plaintextContent() const override;
+    /*!
+     */
     [[nodiscard]] QString htmlContent() const override;
 
+    /*!
+     */
     [[nodiscard]] QList<Util::HtmlMode> availableModes();
 
+    /*!
+     */
     void fix() const override;
 
+    /*!
+     */
     const QMap<Util::HtmlMode, MimeMessagePart::Ptr> &childParts() const;
 
 private:
@@ -465,7 +507,7 @@ private:
     QMap<Util::HtmlMode, KMime::Content *> mChildNodes;
     QMap<Util::HtmlMode, MimeMessagePart::Ptr> mChildParts;
 };
-/**
+/*!
  * \class MimeTreeParser::CertMessagePart
  * \inmodule MimeTreeParser
  * \inheaderfile MimeTreeParser/MessagePart
@@ -490,8 +532,12 @@ public:
      */
     ~CertMessagePart() override;
 
+    /*!
+     */
     [[nodiscard]] QString text() const override;
 
+    /*!
+     */
     const GpgME::ImportResult &importResult() const;
 
 private:
@@ -499,7 +545,7 @@ private:
     GpgME::ImportResult mImportResult;
     const QGpgME::Protocol *mCryptoProto;
 };
-/**
+/*!
  * \class MimeTreeParser::EncapsulatedRfc822MessagePart
  * \inmodule MimeTreeParser
  * \inheaderfile MimeTreeParser/MessagePart
@@ -523,16 +569,22 @@ public:
      */
     ~EncapsulatedRfc822MessagePart() override;
 
+    /*!
+     */
     [[nodiscard]] QString text() const override;
 
+    /*!
+     */
     void fix() const override;
 
+    /*!
+     */
     const std::shared_ptr<KMime::Message> message() const;
 
 private:
     const std::shared_ptr<KMime::Message> mMessage;
 };
-/**
+/*!
  * \class MimeTreeParser::EncryptedMessagePart
  * \inmodule MimeTreeParser
  * \inheaderfile MimeTreeParser/MessagePart
@@ -563,60 +615,120 @@ public:
      */
     ~EncryptedMessagePart() override;
 
+    /*!
+     */
     [[nodiscard]] QString text() const override;
 
+    /*!
+     */
     void setDecryptMessage(bool decrypt);
+    /*!
+     */
     [[nodiscard]] bool decryptMessage() const;
 
+    /*!
+     */
     void setIsEncrypted(bool encrypted);
+    /*!
+     */
     [[nodiscard]] bool isEncrypted() const;
 
+    /*!
+     */
     [[nodiscard]] bool isDecryptable() const;
 
+    /*!
+     */
     [[nodiscard]] bool isNoSecKey() const;
+    /*!
+     */
     [[nodiscard]] bool passphraseError() const;
 
+    /*!
+     */
     void startDecryption(const QByteArray &text, QByteArrayView aCodec);
+    /*!
+     */
     void startDecryption(KMime::Content *data = nullptr);
 
+    /*!
+     */
     void setMementoName(const QByteArray &name);
+    /*!
+     */
     [[nodiscard]] QByteArray mementoName() const;
 
+    /*!
+     */
     [[nodiscard]] QString plaintextContent() const override;
+    /*!
+     */
     [[nodiscard]] QString htmlContent() const override;
 
+    /*!
+     */
     const QGpgME::Protocol *cryptoProto() const;
+    /*!
+     */
     [[nodiscard]] QString fromAddress() const;
 
+    /*!
+     */
     const std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key>> &decryptRecipients() const;
 
+    /*!
+     */
     [[nodiscard]] bool hasHeader(const char *headerType) const override;
+    /*!
+     */
     const KMime::Headers::Base *header(const char *headerType) const override;
+    /*!
+     */
     QList<KMime::Headers::Base *> headers(const char *headerType) const override;
 
+    /*!
+     */
     QByteArray mDecryptedData;
 
 private:
-    /** Handles the decryption of a given content
+    /*! Handles the decryption of a given content
      * returns true if the decryption was successful
      * if used in async mode, check if mMetaData.inPogress is true, it initiates a running decryption process.
      */
     [[nodiscard]] MIMETREEPARSER_NO_EXPORT bool okDecryptMIME(KMime::Content &data);
 
 protected:
+    /*!
+     */
     bool mPassphraseError;
+    /*!
+     */
     bool mNoSecKey;
+    /*!
+     */
     bool mDecryptMessage;
+    /*!
+     */
     const QGpgME::Protocol *mCryptoProto;
+    /*!
+     */
     QString mFromAddress;
+    /*!
+     */
     QByteArray mVerifiedText;
+    /*!
+     */
     QByteArray mMementoName;
+    /*!
+     */
     std::vector<std::pair<GpgME::DecryptionResult::Recipient, GpgME::Key>> mDecryptRecipients;
+    /*!
+     */
     std::shared_ptr<const Kleo::KeyCache> mKeyCache;
 
     friend class EncryptedBodyPartFormatter;
 };
-/**
+/*!
  * \class MimeTreeParser::SignedMessagePart
  * \inmodule MimeTreeParser
  * \inheaderfile MimeTreeParser/MessagePart
@@ -644,30 +756,60 @@ public:
      */
     ~SignedMessagePart() override;
 
+    /*!
+     */
     void setIsSigned(bool isSigned);
+    /*!
+     */
     [[nodiscard]] bool isSigned() const;
 
+    /*!
+     */
     void startVerification(const QByteArray &text, QByteArrayView aCodec);
+    /*!
+     */
     void startVerificationDetached(const QByteArray &text, KMime::Content *textNode, const QByteArray &signature);
 
+    /*!
+     */
     void setMementoName(const QByteArray &name);
+    /*!
+     */
     [[nodiscard]] QByteArray mementoName() const;
 
+    /*!
+     */
     QByteArray mDecryptedData;
+    /*!
+     */
     std::vector<GpgME::Signature> mSignatures;
 
+    /*!
+     */
     [[nodiscard]] QString plaintextContent() const override;
+    /*!
+     */
     [[nodiscard]] QString htmlContent() const override;
 
+    /*!
+     */
     const QGpgME::Protocol *cryptoProto() const;
+    /*!
+     */
     [[nodiscard]] QString fromAddress() const;
 
+    /*!
+     */
     [[nodiscard]] bool hasHeader(const char *headerType) const override;
+    /*!
+     */
     const KMime::Headers::Base *header(const char *headerType) const override;
+    /*!
+     */
     [[nodiscard]] QList<KMime::Headers::Base *> headers(const char *headerType) const override;
 
 private:
-    /** Handles the verification of data
+    /*! Handles the verification of data
      * If signature is empty it is handled as inline signature otherwise as detached signature mode.
      * Returns true if the verification was successful and the block is signed.
      * If used in async mode, check if mMetaData.inProgress is true, it initiates a running verification process.
@@ -677,10 +819,20 @@ private:
     MIMETREEPARSER_NO_EXPORT void setVerificationResult(const CompositeMemento *m, KMime::Content *textNode);
 
 protected:
+    /*!
+     */
     const QGpgME::Protocol *mCryptoProto;
+    /*!
+     */
     QString mFromAddress;
+    /*!
+     */
     QByteArray mVerifiedText;
+    /*!
+     */
     QByteArray mMementoName;
+    /*!
+     */
     std::shared_ptr<const Kleo::KeyCache> mKeyCache;
 
     friend EncryptedMessagePart;

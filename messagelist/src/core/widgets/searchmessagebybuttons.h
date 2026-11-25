@@ -24,6 +24,8 @@ class MESSAGELIST_EXPORT SearchMessageByButtons : public QWidget
 {
     Q_OBJECT
 public:
+    /*!
+     */
     enum SearchOption : uint8_t {
         SearchEveryWhere = 1,
         SearchAgainstBody = 2,

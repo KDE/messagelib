@@ -27,8 +27,14 @@ class MESSAGEVIEWER_EXPORT ViewerPluginInterface : public QObject
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit ViewerPluginInterface(QObject *parent = nullptr);
+    /*!
+     */
     ~ViewerPluginInterface() override;
+    /*!
+     */
     enum SpecificFeatureType {
         None = 0,
         NeedSelection = 2,
@@ -39,27 +45,57 @@ public:
     Q_DECLARE_FLAGS(SpecificFeatureTypes, SpecificFeatureType)
     Q_FLAG(SpecificFeatureTypes)
 
+    /*!
+     */
     virtual void execute();
 
+    /*!
+     */
     virtual void setText(const QString &text);
+    /*!
+     */
     virtual QList<QAction *> actions() const;
+    /*!
+     */
     virtual void setUrl(const QUrl &url);
+    /*!
+     */
     virtual void setMessage(const std::shared_ptr<KMime::Message> &value);
+    /*!
+     */
     virtual void setMessageItem(const Akonadi::Item &item);
+    /*!
+     */
     virtual void setCurrentCollection(const Akonadi::Collection &col);
+    /*!
+     */
     virtual void closePlugin();
+    /*!
+     */
     virtual ViewerPluginInterface::SpecificFeatureTypes featureTypes() const = 0;
+    /*!
+     */
     virtual void updateAction(const Akonadi::Item &item);
+    /*!
+     */
     virtual void refreshActionList(KActionCollection *ac);
 
 protected:
+    /*!
+     */
     virtual void showWidget();
+    /*!
+     */
     void addHelpTextAction(QAction *act, const QString &text);
 
 protected Q_SLOTS:
+    /*!
+     */
     void slotActivatePlugin();
 
 Q_SIGNALS:
+    /*!
+     */
     void activatePlugin(MessageViewer::ViewerPluginInterface *);
 
 private:

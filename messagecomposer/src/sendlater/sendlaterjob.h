@@ -25,6 +25,8 @@ class MESSAGECOMPOSER_EXPORT SendLaterJob : public KJob
 {
     Q_OBJECT
 public:
+    /*!
+     */
     enum Error {
         AgentNotAvailable = KJob::UserDefinedError,
         CallFailed,

@@ -21,16 +21,27 @@ class KConfig;
 
 namespace MessageComposer
 {
+/*!
+ * \class MessageComposer::RecipientComboBox
+ * \inmodule MessageComposer
+ * \inheaderfile MessageComposer/RecipientLine
+ */
 class RecipientComboBox : public QComboBox
 {
     Q_OBJECT
 public:
+    /*!
+     */
     explicit RecipientComboBox(QWidget *parent);
 
 Q_SIGNALS:
+    /*!
+     */
     void rightPressed();
 
 protected:
+    /*!
+     */
     void keyPressEvent(QKeyEvent *ev) override;
 };
 /*!
@@ -141,7 +152,7 @@ public:
     */
     void setIcon(const QIcon &icon, const QString &tooltip = QString());
 
-    /**
+    /*!
      * Sets the config file used for storing recent addresses.
      */
     void setRecentAddressConfig(KConfig *config);

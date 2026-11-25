@@ -196,6 +196,8 @@ enum AddressMode : uint8_t {
  */
 [[nodiscard]] MESSAGECORE_EXPORT QString stripOffPrefixes(const QString &subject);
 
+/*!
+ */
 MESSAGECORE_EXPORT void setEncodingFile(QUrl &url, const QString &encoding);
 
 /*! Check for prefixes \a prefixRegExps in #subject(). If none

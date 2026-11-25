@@ -39,7 +39,10 @@ enum ResolverResult : uint8_t {
     Ok = 1,
     Canceled = 2,
 };
-/**
+/*!
+ * \class MessageComposer::KeyResolver
+ * \inmodule MessageComposer
+ * \inheaderfile MessageComposer/KeyResolver
      \short A class to resolve signing/encryption keys w.r.t. per-recipient preferences
 
      \section Step 1: Set the information needed
@@ -115,11 +118,22 @@ enum ResolverResult : uint8_t {
 class MESSAGECOMPOSER_EXPORT KeyResolver
 {
 public:
+    /*!
+     */
     KeyResolver(bool encToSelf, bool showApproval, bool oppEncryption, unsigned int format, const std::shared_ptr<Kleo::ExpiryChecker> &expiryChecker);
 
+    /*!
+     */
     ~KeyResolver();
 
+    /*!
+     * \class MessageComposer::KeyResolver::Item
+     * \inmodule MessageComposer
+     * \inheaderfile MessageComposer/KeyResolver
+     */
     struct Item : public Kleo::KeyApprovalDialog::Item {
+        /*!
+         */
         Item()
             : Kleo::KeyApprovalDialog::Item()
             , signPref(Kleo::UnknownSigningPreference)
@@ -128,6 +142,8 @@ public:
         {
         }
 
+        /*!
+         */
         Item(const QString &a, Kleo::EncryptionPreference e, Kleo::SigningPreference s, Kleo::CryptoMessageFormat f)
             : Kleo::KeyApprovalDialog::Item(a, std::vector<GpgME::Key>(), e)
             , signPref(s)
@@ -136,6 +152,8 @@ public:
         {
         }
 
+        /*!
+         */
         Item(const QString &a, const std::vector<GpgME::Key> &k, Kleo::EncryptionPreference e, Kleo::SigningPreference s, Kleo::CryptoMessageFormat f)
             : Kleo::KeyApprovalDialog::Item(a, k, e)
             , signPref(s)
@@ -144,96 +162,121 @@ public:
         {
         }
 
+        /*!
+         */
         Kleo::SigningPreference signPref;
+        /*!
+         */
         Kleo::CryptoMessageFormat format;
+        /*!
+         */
         bool needKeys;
     };
 
-    /**
+    /*!
        Set the fingerprints of keys to be used for encrypting to
        self. Also looks them up and complains if they're not usable or
        found.
     */
     [[nodiscard]] ResolverResult setEncryptToSelfKeys(const QStringList &fingerprints);
-    /**
+    /*!
         Set the fingerprints of keys to be used for signing. Also
         looks them up and complains if they're not usable or found.
     */
     [[nodiscard]] ResolverResult setSigningKeys(const QStringList &fingerprints);
-    /**
+    /*!
        Set the list of primary (To/CC) recipient addresses. Also looks
        up possible keys, but doesn't interact with the user.
     */
     void setPrimaryRecipients(const QStringList &addresses);
-    /**
+    /*!
        Set the list of secondary (BCC) recipient addresses. Also looks
        up possible keys, but doesn't interact with the user.
     */
     void setSecondaryRecipients(const QStringList &addresses);
 
-    /**
+    /*!
        Determine whether to sign or not, depending on the
        per-recipient signing preferences, as well as the availability
        of usable signing keys.
     */
     [[nodiscard]] Kleo::Action checkSigningPreferences(bool signingRequested) const;
-    /**
+    /*!
        Determine whether to encrypt or not, depending on the
        per-recipient encryption preferences, as well as the availability
        of usable encryption keys.
     */
     [[nodiscard]] Kleo::Action checkEncryptionPreferences(bool encryptionRequested) const;
 
-    /**
+    /*!
        Queries the user for missing keys and displays a key approval
        dialog if needed.
     */
     [[nodiscard]] ResolverResult resolveAllKeys(bool &signingRequested, bool &encryptionRequested);
 
-    /**
-       @return the signing keys to use (if any) for the given message
+    /*!
+       \return the signing keys to use (if any) for the given message
        format.
     */
     [[nodiscard]] std::vector<GpgME::Key> signingKeys(Kleo::CryptoMessageFormat f) const;
 
+    /*!
+     * \class MessageComposer::KeyResolver::SplitInfo
+     * \inmodule MessageComposer
+     * \inheaderfile MessageComposer/KeyResolver
+     */
     struct SplitInfo {
+        /*!
+         */
         SplitInfo() = default;
 
+        /*!
+         */
         explicit SplitInfo(const QStringList &r) noexcept
             : recipients(r)
         {
         }
 
+        /*!
+         */
         SplitInfo(const QStringList &r, const std::vector<GpgME::Key> &k)
             : recipients(r)
             , keys(k)
         {
         }
 
+        /*!
+         */
         QStringList recipients;
+        /*!
+         */
         std::vector<GpgME::Key> keys;
     };
-    /** @return the found distinct sets of items for format \a f.  The
+    /*! \return the found distinct sets of items for format \a f.  The
         returned vector will contain more than one item only if
         secondary recipients have been specified.
     */
     [[nodiscard]] std::vector<SplitInfo> encryptionItems(Kleo::CryptoMessageFormat f) const;
 
+    /*!
+     */
     [[nodiscard]] std::vector<GpgME::Key> encryptToSelfKeysFor(Kleo::CryptoMessageFormat f) const;
 
-    /** If Autocrypt keys are used to find valid PGP Keys
+    /*! If Autocrypt keys are used to find valid PGP Keys
      */
     void setAutocryptEnabled(bool autocryptEnabled);
 
+    /*!
+     */
     [[nodiscard]] std::map<QByteArray, QString> useAutocrypt() const;
 
-    /** Disable ContactSearchJob in KeyResolver.
+    /*! Disable ContactSearchJob in KeyResolver.
         A usecase is that ests won't fireup an Akonadi instance only for this feature.
         @default is true: The ContactSearchJob is executed.
      */
     void setAkonadiLookupEnabled(bool akonadiLookupEnabled);
 
-    /** Sets crypto preferences for given email address.
+    /*! Sets crypto preferences for given email address.
      * This is an alternative to setting crypto preferences for a contact when Akonadi
      * lookup is disabled - useful mostly for testing cases when it's not possible to
      * index contacts on demand.

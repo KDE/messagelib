@@ -22,26 +22,54 @@ class MESSAGEVIEWER_EXPORT OpenWithUrlInfo
 {
     Q_GADGET
 public:
+    /*!
+     */
     OpenWithUrlInfo();
+    /*!
+     */
     ~OpenWithUrlInfo();
 
+    /*!
+     */
     [[nodiscard]] const QString &command() const;
+    /*!
+     */
     void setCommand(const QString &newCommand);
 
+    /*!
+     */
     [[nodiscard]] const QString &url() const;
+    /*!
+     */
     void setUrl(const QString &newUrl);
 
+    /*!
+     */
     [[nodiscard]] bool isValid() const;
 
+    /*!
+     */
     [[nodiscard]] const QString &commandLine() const;
+    /*!
+     */
     void setCommandLine(const QString &newCommandLine);
 
+    /*!
+     */
     [[nodiscard]] bool operator==(const OpenWithUrlInfo &other) const = default;
 
+    /*!
+     */
     [[nodiscard]] bool isLocalOpenWithInfo() const;
+    /*!
+     */
     void setIsLocalOpenWithInfo(bool newLocalOpenWith);
 
+    /*!
+     */
     [[nodiscard]] bool enabled() const;
+    /*!
+     */
     void setEnabled(bool newEnabled);
 
 private:

@@ -32,6 +32,8 @@ class MESSAGECOMPOSER_EXPORT JobBase : public KCompositeJob
 public:
     using List = QList<JobBase *>;
 
+    /*!
+     */
     enum Error {
         BugError = UserDefinedError + 1,
         IncompleteError,
@@ -51,7 +53,11 @@ public:
     GlobalPart *globalPart();
 
 protected:
+    /*!
+     */
     JobBasePrivate *const d_ptr;
+    /*!
+     */
     JobBase(JobBasePrivate &dd, QObject *parent);
 
 private:
