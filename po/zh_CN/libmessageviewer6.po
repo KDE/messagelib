@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/messagelib/libmessageviewer6.pot\n"
-"X-Crowdin-File-ID: 49106\n"
+"X-Crowdin-File: /kf6-stable/messages/messagelib/libmessageviewer6.pot\n"
+"X-Crowdin-File-ID: 50334\n"
 
 #: messagepartthemes/default/templates/certmessagepart.html:2
 msgid "Sorry, certificate could not be imported."
@@ -2279,29 +2279,3 @@ msgstr ""
 msgctxt "@action:button"
 msgid "Previous Message"
 msgstr ""
-
-#~ msgid "Open &with %1"
-#~ msgstr "用 %1 打开(&W)"
-
-#~ msgctxt "@item:inmenu Open With, %1 is application name"
-#~ msgid "%1"
-#~ msgstr "%1"
-
-#~ msgctxt "@title:menu"
-#~ msgid "&Open With"
-#~ msgstr "打开方式(&O)"
-
-#~ msgctxt "@action:inmenu Open With"
-#~ msgid "&Other..."
-#~ msgstr "其他(&O)..."
-
-#~ msgctxt "@title:menu"
-#~ msgid "&Open With..."
-#~ msgstr "打开方式(&O)..."
-
-#~ msgctxt "to open"
-#~ msgid "Open"
-#~ msgstr "打开"
-
-#~ msgid "Open With..."
-#~ msgstr "打开方式..."

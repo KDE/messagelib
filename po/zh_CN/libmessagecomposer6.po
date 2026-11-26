@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/messagelib/libmessagecomposer6.pot\n"
-"X-Crowdin-File-ID: 49058\n"
+"X-Crowdin-File: /kf6-stable/messages/messagelib/libmessagecomposer6.pot\n"
+"X-Crowdin-File-ID: 51598\n"
 
 #: attachment/attachmentcontrollerbase.cpp:161
 #, kde-format
@@ -2290,19 +2290,3 @@ msgstr "邮件签发器离线。"
 msgctxt "@action:button"
 msgid "Set Online"
 msgstr ""
-
-#~ msgctxt "@title:menu"
-#~ msgid "&Open With"
-#~ msgstr "打开方式(&O)"
-
-#~ msgctxt "@action:inmenu Open With"
-#~ msgid "&Other..."
-#~ msgstr "其他(&O)..."
-
-#~ msgctxt "@title:menu"
-#~ msgid "&Open With..."
-#~ msgstr "打开方式(&O)..."
-
-#~ msgctxt "to open"
-#~ msgid "Open"
-#~ msgstr "打开"
