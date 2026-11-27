@@ -767,9 +767,9 @@ void Model::setStorageModel(StorageModel *storageModel, PreSelectionMode preSele
 
     if (d->mStorageModel) {
         // Disconnect all signals from old storageModel
-        std::for_each(d->mStorageModelConnections.cbegin(), d->mStorageModelConnections.cend(), [](const QMetaObject::Connection &c) -> bool {
-            return QObject::disconnect(c);
-        });
+        for (auto &c : d->mStorageModelConnections) {
+            QObject::disconnect(c);
+        }
         d->mStorageModelConnections.clear();
     }
 
